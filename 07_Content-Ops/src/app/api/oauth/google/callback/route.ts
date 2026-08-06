@@ -64,6 +64,12 @@ export async function GET(req: NextRequest) {
   const externalUserId = channel?.id || "unknown";
 
   const expiresAt = new Date(Date.now() + Number(tokenBody.expires_in || 3600) * 1000);
+  // Prefer scopes Google actually returned — never assume force-ssl was granted.
+  const actualScopes =
+    typeof tokenBody.scope === "string" && tokenBody.scope.trim()
+      ? tokenBody.scope.split(/\s+/).filter(Boolean)
+      : YOUTUBE_SCOPES;
+  const scopesJson = JSON.stringify(actualScopes);
   await prisma.platformConnection.upsert({
     where: {
       platform_externalUserId: {
@@ -84,7 +90,7 @@ export async function GET(req: NextRequest) {
         ? `https://www.youtube.com/channel/${channel.id}`
         : null,
       connectionStatus: "connected",
-      grantedScopes: JSON.stringify(YOUTUBE_SCOPES),
+      grantedScopes: scopesJson,
       accessTokenEncrypted: encryptSecret(tokenBody.access_token),
       refreshTokenEncrypted: tokenBody.refresh_token
         ? encryptSecret(tokenBody.refresh_token)
@@ -98,7 +104,7 @@ export async function GET(req: NextRequest) {
       accountUsername: channel?.snippet?.customUrl,
       avatarUrl: channel?.snippet?.thumbnails?.default?.url,
       connectionStatus: "connected",
-      grantedScopes: JSON.stringify(YOUTUBE_SCOPES),
+      grantedScopes: scopesJson,
       accessTokenEncrypted: encryptSecret(tokenBody.access_token),
       refreshTokenEncrypted: tokenBody.refresh_token
         ? encryptSecret(tokenBody.refresh_token)

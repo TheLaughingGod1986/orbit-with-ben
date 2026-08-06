@@ -3,6 +3,8 @@
  * Orbit YouTube package upload — Data API for everything it can do,
  * plus a Studio finish checklist for ABC / pin / Related / end screens.
  *
+ * Hardened for recovery mode + canonical registry (ONE package = ONE video ID).
+ *
  * Usage:
  *   npm run youtube:package -- \
  *     --package ../../02_Video-Projects/004_.../11_Upload-Package \
@@ -14,6 +16,7 @@
  */
 import fs from "fs";
 import path from "path";
+import { createHash } from "crypto";
 import { prisma } from "../src/lib/storage/prisma";
 import { getEnv, isDryRun } from "../src/lib/env";
 import { decryptSecret } from "../src/lib/security/token-crypto";
@@ -25,6 +28,20 @@ import {
   loadYouTubePackage,
   postYouTubeTopLevelComment,
 } from "../src/lib/publishing/youtube-package";
+import {
+  evaluateRecoveryGate,
+  loadYouTubeRecoveryConfig,
+  calendarDayKey,
+  findScheduleCollision,
+} from "../src/lib/publishing/youtube-recovery";
+import {
+  fingerprintSourceFile,
+  loadCanonicalRegistry,
+  lookupCanonicalConflicts,
+  saveCanonicalRegistry,
+  upsertCanonicalRecord,
+} from "../src/lib/publishing/youtube-registry";
+import { hasForceSslScope, parseGrantedScopes } from "../src/lib/publishing/youtube-oauth";
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -44,14 +61,46 @@ function parseBool(v: string | undefined, fallback: boolean): boolean {
   throw new Error(`Invalid boolean: ${v}`);
 }
 
+function packageContentId(packageDir: string, format: string, title: string): string {
+  const base = path.basename(path.resolve(packageDir, ".."));
+  const slug = createHash("sha1").update(`${base}|${format}|${title}`).digest("hex").slice(0, 10);
+  return `${base}:${format}:${slug}`;
+}
+
+/** Ambiguous upload resolution — never blind-retry. */
+export async function findExistingUploadByTitle(input: {
+  accessToken: string;
+  title: string;
+  maxResults?: number;
+}): Promise<{ id: string; title: string; publishedAt: string }[]> {
+  const q = encodeURIComponent(input.title.slice(0, 80));
+  const res = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&forMine=true&type=video&maxResults=${input.maxResults || 10}&q=${q}`,
+    { headers: { Authorization: `Bearer ${input.accessToken}` } },
+  );
+  const body = await res.json();
+  return (body.items || []).map((it: any) => ({
+    id: it.id?.videoId as string,
+    title: it.snippet?.title as string,
+    publishedAt: it.snippet?.publishedAt as string,
+  }));
+}
+
 async function main() {
   getEnv();
   const packageDir = arg("package");
   if (!packageDir) {
     console.error(
-      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--dry-run]",
+      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--content-id ID] [--allow-recovery-exception] [--skip-comment] [--dry-run]",
     );
     process.exit(1);
+  }
+
+  if (flag("replace") || flag("reupload") || flag("delete-and-reupload")) {
+    console.error(
+      "UPLOAD BLOCKED: Replacement / reupload flags are forbidden. ONE CONTENT PACKAGE = ONE YOUTUBE VIDEO ID.",
+    );
+    process.exit(20);
   }
 
   const dryRun = flag("dry-run") || isDryRun();
@@ -74,6 +123,78 @@ async function main() {
     },
   });
 
+  if (!fs.existsSync(resolved.videoPath)) {
+    console.error(`UPLOAD BLOCKED: video file missing: ${resolved.videoPath}`);
+    process.exit(21);
+  }
+
+  const fingerprint = fingerprintSourceFile(resolved.videoPath);
+  const internalContentId =
+    arg("content-id") || packageContentId(resolved.packageDir, resolved.format, resolved.title);
+
+  const registry = loadCanonicalRegistry();
+  const conflict = lookupCanonicalConflicts({
+    registry,
+    internalContentId,
+    sourceFileFingerprint: fingerprint,
+  });
+  if (conflict.blocked) {
+    console.error(conflict.reason);
+    console.error(
+      JSON.stringify(
+        {
+          matched: {
+            internalContentId: conflict.matched?.internalContentId,
+            youtubeVideoId: conflict.matched?.youtubeVideoId,
+          },
+        },
+        null,
+        2,
+      ),
+    );
+    process.exit(22);
+  }
+
+  const recovery = loadYouTubeRecoveryConfig();
+  const dayKey = calendarDayKey(new Date(), recovery.timezone);
+  // Count registry shorts with upload/schedule on this calendar day (best-effort)
+  const shortsToday = registry.records.filter((r) => {
+    if (r.contentType !== "shorts") return false;
+    const ts = r.scheduledPublishTimestamp || r.uploadTimestamp;
+    if (!ts) return false;
+    return calendarDayKey(new Date(ts), recovery.timezone) === dayKey;
+  }).length;
+  const longsDuring = registry.records.filter((r) => {
+    if (r.contentType !== "longform" || !r.uploadTimestamp) return false;
+    const t = new Date(r.uploadTimestamp).getTime();
+    const start = new Date(recovery.startedAt).getTime();
+    return t >= start;
+  }).length;
+
+  const collision = findScheduleCollision({
+    proposedPublishAt: resolved.scheduledAt,
+    existing: registry.records.map((r) => ({
+      youtubeVideoId: r.youtubeVideoId,
+      scheduledPublishTimestamp: r.scheduledPublishTimestamp,
+    })),
+  });
+
+  const gate = evaluateRecoveryGate({
+    config: recovery,
+    format: resolved.format,
+    shortsPublishedOrScheduledToday: shortsToday,
+    longsUploadedDuringRecovery: longsDuring,
+    isReplacementUpload: false,
+    isDuplicateFingerprint: false,
+    alreadyHasCanonicalVideoId: false,
+    scheduleCollision: collision.collision,
+    scheduleCollisionWith: collision.withVideoId,
+  });
+  if (gate.blocked && !flag("allow-recovery-exception")) {
+    console.error(gate.errors.join("\n"));
+    process.exit(23);
+  }
+
   const connection = await prisma.platformConnection.findFirst({
     where: {
       platform: "youtube_shorts",
@@ -87,6 +208,18 @@ async function main() {
       "No connected YouTube account. Connect Google OAuth on /settings/connections (reconnect after scope updates).",
     );
     process.exit(1);
+  }
+
+  const scopes = parseGrantedScopes(connection.grantedScopes);
+  if (!hasForceSslScope(scopes)) {
+    const msg =
+      "youtube.force-ssl not granted. Run: npm run youtube:verify-oauth -- --print-auth-url";
+    if (dryRun) {
+      console.error(`WARNING: ${msg}`);
+    } else {
+      console.error(`UPLOAD BLOCKED: ${msg}`);
+      process.exit(24);
+    }
   }
 
   const adapter = new YouTubePublishingAdapter();
@@ -111,30 +244,78 @@ async function main() {
 
   const hashtagsJson = JSON.stringify(resolved.tags);
 
-  const upload = await adapter.publish(
-    {
-      id: `pkg-${Date.now()}`,
-      platform: "youtube_shorts",
+  let upload;
+  try {
+    upload = await adapter.publish(
+      {
+        id: `pkg-${Date.now()}`,
+        platform: "youtube_shorts",
+        title: resolved.title,
+        caption: resolved.description,
+        hashtags: hashtagsJson,
+        uploadStatus: "ready",
+        privacyStatus: resolved.privacy,
+        madeForKids: resolved.madeForKids,
+        mediaFilePath: resolved.videoPath,
+        scheduledAt: resolved.scheduledAt,
+        thumbnailPath: resolved.thumbnailPath,
+        contentFormat: resolved.format,
+      },
+      fresh,
+      {
+        dryRun,
+        workerId: "youtube-package-upload-cli",
+        jobId: `pkg-${Date.now()}`,
+        attemptNumber: 1,
+        accessToken,
+      },
+    );
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error(
+      "UPLOAD UNCERTAIN: request failed before a confirmed video ID. Do NOT retry blindly.",
+    );
+    console.error(message);
+    if (!dryRun) {
+      const existing = await findExistingUploadByTitle({
+        accessToken,
+        title: resolved.title,
+      });
+      console.error(
+        JSON.stringify(
+          {
+            remediation:
+              "Compare search hits below with duration/title. Retry only if no matching upload exists.",
+            searchHits: existing.slice(0, 5),
+          },
+          null,
+          2,
+        ),
+      );
+    }
+    process.exit(25);
+  }
+
+  // Persist canonical ID immediately on success
+  if (!dryRun && upload.success && upload.platformPostId) {
+    const next = upsertCanonicalRecord(registry, {
+      internalContentId,
+      contentType: resolved.format,
+      sourceFileFingerprint: fingerprint,
       title: resolved.title,
-      caption: resolved.description,
-      hashtags: hashtagsJson,
-      uploadStatus: "ready",
+      youtubeVideoId: upload.platformPostId,
+      uploadTimestamp: new Date().toISOString(),
+      scheduledPublishTimestamp: resolved.scheduledAt?.toISOString() || null,
       privacyStatus: resolved.privacy,
-      madeForKids: resolved.madeForKids,
-      mediaFilePath: resolved.videoPath,
-      scheduledAt: resolved.scheduledAt,
-      thumbnailPath: resolved.thumbnailPath,
-      contentFormat: resolved.format,
-    },
-    fresh,
-    {
-      dryRun,
-      workerId: "youtube-package-upload-cli",
-      jobId: `pkg-${Date.now()}`,
-      attemptNumber: 1,
-      accessToken,
-    },
-  );
+      packageVersion: "package-cli",
+      metadataVersion: "v1",
+      relatedLongFormVideoId: resolved.relatedVideoId,
+      lastVerificationTimestamp: new Date().toISOString(),
+      lastApiResponseStatus: "uploaded",
+      packagePath: resolved.packageDir,
+    });
+    saveCanonicalRegistry(next);
+  }
 
   let firstCommentPosted = false;
   let commentMessage: string | null = null;
@@ -189,6 +370,16 @@ async function main() {
     ok: upload.success,
     dryRun,
     method: "youtube_data_api_package",
+    recovery: {
+      active: gate.recoveryActive,
+      blocked: gate.blocked,
+      endsAt: gate.endsAt,
+    },
+    registry: {
+      internalContentId,
+      sourceFileFingerprint: fingerprint,
+      youtubeVideoId: upload.platformPostId || null,
+    },
     upload: {
       published: upload.published,
       scheduledOnPlatform: upload.scheduledOnPlatform || false,
@@ -227,7 +418,15 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify(result, null, 2));
   console.error(`Wrote ${outPath}`);
 
-  if (!upload.success) process.exit(1);
+  if (!upload.success) {
+    // If a video ID somehow exists in the message/summary, do not advise retry
+    if (upload.platformPostId) {
+      console.error(
+        `UPLOAD FAILED AFTER VIDEO ID ${upload.platformPostId} — do not create a replacement. Inspect/update that ID.`,
+      );
+    }
+    process.exit(1);
+  }
 }
 
 main()
