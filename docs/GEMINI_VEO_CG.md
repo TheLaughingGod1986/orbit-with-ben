@@ -15,7 +15,6 @@ ElevenLabs Image & Video remains banned for CG (cost, Explore/Eiffel, American s
 
 ```bash
 cd 04_Audio/tools
-# venv optional but recommended
 pip install playwright
 playwright install chromium
 
@@ -25,6 +24,18 @@ python3 orbit_aistudio_veo_ui.py --login
 
 Profile default: `~/code/youtube/.playwright-aistudio-profile`  
 Override: `export ORBIT_AISTUDIO_PROFILE=/path/to/profile`
+
+### Paid API key (required for Veo)
+
+Google One **Ultra** signs you into Studio, but **Veo GenerateVideo still needs a paid Gemini API key selected** in the Playground (button: “No API key selected”). Ultra alone does not unlock Veo.
+
+1. Open https://aistudio.google.com/api-keys (same Ultra account)
+2. **Create API key** in an imported project
+3. **Set up billing** / link a paid project (Cloud billing)
+4. In Veo Playground, open the key control and **select that paid key**
+5. Re-run `orbit_aistudio_veo_ui.py --probe`
+
+If Create key says “request is suspicious”, finish key + billing **manually** in the browser (automation is often blocked there).
 
 ## Generate
 

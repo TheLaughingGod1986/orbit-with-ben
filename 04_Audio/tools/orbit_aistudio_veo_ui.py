@@ -339,24 +339,134 @@ def set_aspect_and_duration(
             pass
 
 
+def ensure_api_key_linked(page) -> dict:
+    """Veo in AI Studio requires a paid Gemini API key selected (Ultra login alone is not enough).
+
+    Returns status dict. Does not invent keys — opens the picker so a billed key can be chosen.
+    """
+    status = {"needed": False, "selected": False, "message": ""}
+    try:
+        body = page.locator("body").inner_text(timeout=4000)[:2500].lower()
+    except Exception:
+        body = ""
+    need = (
+        "requires a paid api key" in body
+        or "select an api key" in body
+        or page.locator('button[aria-label="No API key selected"]').count() > 0
+    )
+    status["needed"] = bool(need)
+    if not need and page.locator('button[aria-label*="API key" i]').count():
+        # Already may have a key — treat as ok
+        aria = ""
+        try:
+            aria = page.locator('button[aria-label*="API key" i]').first.get_attribute("aria-label") or ""
+        except Exception:
+            pass
+        if aria and "no api key" not in aria.lower():
+            status["selected"] = True
+            status["message"] = aria
+            return status
+
+    # Open key picker
+    for name in ("No API key selected", "Get API key", "API key"):
+        try:
+            page.get_by_role("button", name=name).click(timeout=2000)
+            page.wait_for_timeout(800)
+            break
+        except Exception:
+            continue
+
+    # Prefer an existing key option if present
+    picked = page.evaluate(
+        """() => {
+          const opts = [...document.querySelectorAll('button,[role="option"],mat-option,li')];
+          const hit = opts.find(el => {
+            const t = ((el.innerText||'') + ' ' + (el.getAttribute('aria-label')||'')).trim();
+            const r = el.getBoundingClientRect();
+            if (r.width < 40 || r.height < 16) return false;
+            if (/No API key selected|Get API key|Create key|Import|Set up billing|Link a paid/i.test(t)) return false;
+            return /AIza|API key|\\\\.\\.\\.|projects\\//i.test(t) || /\\\\w{4}\\\\.\\\\.\\\\.\\\\w{4}/.test(t);
+          });
+          if (hit) { hit.click(); return (hit.innerText||'').slice(0,120); }
+          return '';
+        }"""
+    )
+    if picked:
+        status["selected"] = True
+        status["message"] = f"picked:{picked}"
+        page.wait_for_timeout(500)
+        return status
+
+    status["message"] = (
+        "AI Studio Veo needs a paid Gemini API key selected in the UI "
+        "(button shows 'No API key selected'). Create/link one under "
+        "aistudio.google.com/api-keys with billing, then re-run. "
+        "Ultra login alone does not unlock Veo GenerateVideo."
+    )
+    return status
+
+
 def click_run(page) -> bool:
     dismiss(page)
-    if click_first(page, SEL["run"], timeout_ms=10_000):
+    # Cookie / consent banners sit over the Run control
+    try:
+        page.get_by_role("button", name="Understood").click(timeout=1500)
+        page.wait_for_timeout(300)
+    except Exception:
+        pass
+    dismiss(page)
+
+    # AI Studio Run button often has no aria-label — text is "Run" + shortcut glyphs
+    for loc in (
+        page.locator("ms-run-button button").first,
+        page.locator("button.ctrl-enter-submits").first,
+        page.get_by_role("button", name="Run").first,
+        page.locator('button:has-text("Run")').first,
+    ):
+        try:
+            if loc.count() == 0:
+                continue
+            loc.scroll_into_view_if_needed(timeout=3000)
+            if loc.is_enabled(timeout=2000):
+                loc.click(timeout=8000)
+                return True
+        except Exception:
+            continue
+
+    if click_first(page, SEL["run"], timeout_ms=8_000):
         return True
-    return bool(
+
+    clicked = bool(
         page.evaluate(
             """() => {
               const hit = [...document.querySelectorAll('button')].find(b => {
                 const a = (b.getAttribute('aria-label') || '').trim();
-                const t = (b.innerText || '').trim();
-                return a === 'Run' || /^Run$/i.test(t) || /^Generate$/i.test(t);
+                const t = (b.innerText || '').trim().split('\\n')[0].trim();
+                const cls = (b.className || '').toString();
+                if (b.disabled) return false;
+                return a === 'Run' || /^Run$/i.test(t) || /^Generate$/i.test(t)
+                  || cls.includes('ctrl-enter-submits');
               });
-              if (!hit || hit.disabled) return false;
+              if (!hit) return false;
               hit.click();
               return true;
             }"""
         )
     )
+    if clicked:
+        return True
+
+    # Shortcut fallback (AI Studio: ⌘/Ctrl + Enter)
+    try:
+        page.keyboard.press("Meta+Enter")
+        page.wait_for_timeout(400)
+        return True
+    except Exception:
+        try:
+            page.keyboard.press("Control+Enter")
+            return True
+        except Exception:
+            return False
 
 
 def gallery_ready_count(page) -> int:
@@ -392,6 +502,16 @@ def wait_for_video(page, *, before_count: int, timeout_s: int = 480) -> None:
             body = page.locator("body").inner_text(timeout=2000)[:2000].lower()
             if "quota" in body and ("exceed" in body or "limit" in body):
                 raise RuntimeError("AI Studio quota / rate limit — wait or check Ultra plan")
+            if "permission denied" in body:
+                raise RuntimeError(
+                    "AI Studio Veo permission denied — link a paid Gemini API key "
+                    "(button: No API key selected → Create key / Set up billing)."
+                )
+            if "requires a paid api key" in body or "select an api key" in body:
+                raise RuntimeError(
+                    "AI Studio Veo requires a paid API key selected in the UI "
+                    "(Ultra login alone is not enough)."
+                )
             if "something went wrong" in body or "failed to generate" in body:
                 raise RuntimeError("AI Studio reported generation failure")
         except RuntimeError:
@@ -442,6 +562,10 @@ def generate_clip(
             "Run once with --login (headed) on the Ultra Google account:\n"
             "  python3 04_Audio/tools/orbit_aistudio_veo_ui.py --login"
         )
+
+    key_status = ensure_api_key_linked(page)
+    if key_status.get("needed") and not key_status.get("selected"):
+        raise RuntimeError(key_status.get("message") or "Paid API key not selected in AI Studio")
 
     before = gallery_ready_count(page)
     set_aspect_and_duration(
