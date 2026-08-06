@@ -38,12 +38,12 @@ Slight eye/mouth/proportion drift on an otherwise orange cream-eye floater may s
 
 ## Canonical still (file lock)
 
-- **Use:** `01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-v01.png` (+ `…-16x9-v01.png` for widescreen Flow/Veo).
+- **Use:** `01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-v01.png` (+ `…-16x9-v01.png` for widescreen Flow/Veo). Folder/filename are legacy — **CG engine is Google Flow Veo, not Seedance**.
 - **Never use:** anything under `05_Seedance-References/_Rejected/` — especially former `orbit-cg-canonical-*` (white chest disc / two-sphere / headphone redesign).
 
 ## Next-video generation rules
 
-1. Always attach the Orbit Seedance reference (`orbit-seedance-reference-16x9-v01.png`) and the identity lock text in every prompt.
+1. Always attach the Orbit identity still (`orbit-seedance-reference-16x9-v01.png`) and the identity lock text in every **Flow Veo** prompt. Do not generate with Seedance.
 2. Generate → **character QA frame check** before staging into Selected / master.
 3. Prefer fewer on-model takes over dense off-model coverage.
 4. If VO needs more picture than on-model motion allows: play each on-model clip once, then that scene’s unique still board (cutscene no-loop rules) — never “fix” with a redesign.

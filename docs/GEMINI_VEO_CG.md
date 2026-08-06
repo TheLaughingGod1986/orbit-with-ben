@@ -49,7 +49,7 @@ python3 02_Video-Projects/_template_NNN_Episode-Slug/07_Edit-Project/_generate_v
   --beats beats.json --out-dir ../04_Generated-Clips/01_Raw --limit 1
 ```
 
-Helper flow: new project → Settings (Never confirm + **Veo 3.1 - Quality** + 16:9) → Agent Instruction identity lock → **attach Seedance Orbit ref in the prompt** (`orbit-seedance-reference-16x9-v01.png` only — never `_Rejected/orbit-cg-canonical-*`) → image-to-video prompt → Create → poll media → download → **strip audio**.
+Helper flow: new project → Settings (Never confirm + **Veo 3.1 - Quality** + 16:9) → Agent Instruction identity lock → **attach Orbit identity still in the prompt** (`orbit-seedance-reference-16x9-v01.png` — legacy filename; **not** Seedance generation; never `_Rejected/orbit-cg-canonical-*`) → image-to-video prompt → Create → poll media → download → **strip audio**.
 
 **Video model lock:** Flow CG must use **Veo 3.x** (`Veo 3.1 - Quality` / Fast / Lite). Never Omni Flash or Nano Banana for Orbit motion clips. Override: `ORBIT_FLOW_VEO_MODEL='Veo 3.1 - Fast'`.
 
