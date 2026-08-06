@@ -97,6 +97,7 @@ def launch_context(playwright, *, headed: bool, profile: Path, slow_mo: int = 0)
         "accept_downloads": True,
         "args": args,
         "slow_mo": slow_mo or 0,
+        "permissions": ["clipboard-read", "clipboard-write"],
     }
     # Prefer installed Chrome (matches Ultra Google session better)
     try:
@@ -104,6 +105,12 @@ def launch_context(playwright, *, headed: bool, profile: Path, slow_mo: int = 0)
     except Exception:
         ctx = playwright.chromium.launch_persistent_context(**kwargs)
     page = ctx.pages[0] if ctx.pages else ctx.new_page()
+    try:
+        ctx.grant_permissions(
+            ["clipboard-read", "clipboard-write"], origin="https://labs.google"
+        )
+    except Exception:
+        pass
     return ctx, page
 
 
@@ -531,7 +538,23 @@ def attach_orbit_to_prompt(page, ref: Path) -> bool:
 
     up = page.locator('button:has-text("Upload media")')
     if up.count() == 0:
+        # Picker may not have opened — retry once
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(400)
+        _open_create_picker(page)
+        page.wait_for_timeout(600)
+        up = page.locator('button:has-text("Upload media")')
+    if up.count() == 0:
         up = page.locator('button:has-text("Upload")')
+    if up.count() == 0:
+        # Last resort: any visible file input after forcing Add Media header
+        try:
+            upload_orbit_ref(page, ref)
+        except Exception:
+            pass
+        _open_create_picker(page)
+        page.wait_for_timeout(800)
+        up = page.locator('button:has-text("Upload media")')
     if up.count() == 0:
         raise RuntimeError("Upload media not found in Create picker")
 
@@ -640,25 +663,29 @@ def ensure_orbit_agent_instruction(page) -> None:
 
 
 def flow_prompt(scene_prompt: str) -> str:
-    """Wrap a scene prompt with Flow image-to-video identity lock."""
+    """Wrap a scene prompt with Flow image-to-video identity lock.
+
+    Keep this short — Agent Instruction already holds the full identity lock.
+    Long typed prompts stall Playwright and desync the Create picker.
+    """
     body = scene_prompt.strip()
     if "IMAGE-TO-VIDEO" in body or "ORBIT IDENTITY LOCK" in body:
         return body
-    return f"{FLOW_I2V_PREFACE} {body} {ORBIT_AGENT_INSTRUCTION}"
+    return (
+        f"{FLOW_I2V_PREFACE} {body} "
+        "Match the attached Seedance Orbit image exactly. Silent picture only."
+    )
 
 
 def set_prompt(page, prompt: str) -> None:
-    """Type into the Flow agent editor without wiping an attached image chip."""
+    """Paste into the Flow agent editor without wiping an attached image chip."""
     ensure_agent_session(page)
     box = editor_box(page)
     if not box or not editor_usable(page):
         raise RuntimeError("Flow prompt editor not visible (open agent session)")
     # Click toward the right of the editor so we don't focus/remove the chip
-    # (chip sits top-left of the composer).
     page.mouse.click(box["x"] + min(box["w"] - 40, 180), box["y"] + max(6, box["h"] / 2))
-    page.wait_for_timeout(150)
-    # Clear text only via slate selection of text nodes — avoid Meta+A which can
-    # also remove the media attachment chip in Flow's composer.
+    page.wait_for_timeout(120)
     page.evaluate(
         """() => {
           const ed = document.querySelector('[data-slate-editor="true"]');
@@ -673,9 +700,19 @@ def set_prompt(page, prompt: str) -> None:
         }"""
     )
     page.keyboard.press("Backspace")
-    page.wait_for_timeout(100)
-    page.keyboard.type(prompt, delay=2)
-    page.wait_for_timeout(300)
+    page.wait_for_timeout(80)
+    # Clipboard paste is much faster than per-char type for long locks
+    try:
+        page.evaluate(
+            """async (text) => {
+              await navigator.clipboard.writeText(text);
+            }""",
+            prompt,
+        )
+        page.keyboard.press("Meta+V")
+    except Exception:
+        page.keyboard.type(prompt, delay=0)
+    page.wait_for_timeout(250)
 
 
 def submit_create(page) -> None:
@@ -860,11 +897,13 @@ def generate_clip(
     ensure_agent_session(page)
     ensure_orbit_agent_instruction(page)
     ensure_agent_session(page)
-    # Prompt text first, then bind Seedance via Add to Prompt (required).
-    # Do not rely on header Add Media / library-only upload.
-    set_prompt(page, flow_prompt(prompt))
+    # Bind Seedance chip first, then paste prompt text (keeps chip stable).
     attached = attach_orbit_to_prompt(page, ref)
-    # Re-check chip survived; if Flow dropped it, abort rather than off-model gen
+    set_prompt(page, flow_prompt(prompt))
+    if _prompt_attachment_count(page) < 1:
+        # Prompt paste may have dropped chip — re-attach once
+        print("  chip missing after prompt paste — re-attaching", flush=True)
+        attached = attach_orbit_to_prompt(page, ref)
     if _prompt_attachment_count(page) < 1:
         raise RuntimeError("Orbit prompt chip missing after attach — aborting")
     submit_create(page)
