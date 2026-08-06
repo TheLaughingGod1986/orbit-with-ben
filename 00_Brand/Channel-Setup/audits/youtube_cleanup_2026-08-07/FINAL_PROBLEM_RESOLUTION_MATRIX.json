@@ -1,0 +1,237 @@
+{
+  "auditedAt": "2026-08-06T23:31:49.529Z",
+  "verdictPrerequisite": "All must be FIXED or FIXED WITH MONITORING for CLEAN",
+  "counts": {
+    "FIXED": 1,
+    "FIXED WITH MONITORING": 7,
+    "PARTIALLY FIXED": 9,
+    "NOT FIXED": 9,
+    "UNVERIFIABLE": 2
+  },
+  "problems": [
+    {
+      "n": 1,
+      "problem": "Competing public long-form uploads",
+      "previousEvidence": "RCs6MMxF3ko privatized; 3xrxdmaOwJI public (FINAL_SHELF_VERIFY)",
+      "currentEvidence": "RCs6MMxF3ko PUBLIC; 3xrxdmaOwJI PRIVATE; oEmbed confirms",
+      "status": "NOT FIXED",
+      "residualRisk": "High \u2014 smooth-CFR shelf inverted approved canon"
+    },
+    {
+      "n": 2,
+      "problem": "Duplicate public Shorts",
+      "previousEvidence": "IwpO privatized; JRfh/L2OF public",
+      "currentEvidence": "IwpO33AJaPQ PUBLIC; JRfhE6yWom4+L2OFjL4neOo PRIVATE; also extra public Fermi Shorts ['IwpO33AJaPQ', 'RCs6MMxF3ko', 'UWwNKYf_aU8', 'dPMJQp2gMNc', 'rFJoOdQAc9c', 'z-DLqoSoEBo']",
+      "status": "NOT FIXED",
+      "residualRisk": "High"
+    },
+    {
+      "n": 3,
+      "problem": "Canonical Shorts demoted/privatized/replaced",
+      "previousEvidence": "POST_OAUTH PASS restored JRfh/L2OF",
+      "currentEvidence": "Canonical BH Shorts private again",
+      "status": "NOT FIXED",
+      "residualRisk": "High"
+    },
+    {
+      "n": 4,
+      "problem": "Duplicate scheduled uploads",
+      "previousEvidence": "Held twins to Dec 31; NF01 kept Aug 7",
+      "currentEvidence": "Held twins still Dec 31; active go-lives distinct IDs \u2014 PASS for known BH set",
+      "status": "FIXED WITH MONITORING",
+      "residualRisk": "Medium \u2014 many private twin titles remain uploadable via CDP scripts"
+    },
+    {
+      "n": 5,
+      "problem": "Scheduled publishing collisions",
+      "previousEvidence": "Same-slot NF01 collision held",
+      "currentEvidence": "No same-minute collision for NF01; Aug 11 two Shorts same day",
+      "status": "FIXED WITH MONITORING",
+      "residualRisk": "Low for known BH; calendar dense Aug 11\u201325"
+    },
+    {
+      "n": 6,
+      "problem": "CDP/browser automation creating replacements",
+      "previousEvidence": "Four DISABLED__ smooth scripts",
+      "currentEvidence": "DISABLED__ exit hard; MANY other CDP upload/replace scripts still reachable under Schedule/ and audits/",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "Critical \u2014 alternate CDP paths still runnable"
+    },
+    {
+      "n": 7,
+      "problem": "Upload retry creating multiple YouTube IDs",
+      "previousEvidence": "Package path hardened + tests",
+      "currentEvidence": "youtube:package has ambiguous-stop; youtube:upload lacks recovery/fingerprint gates",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "High if youtube:upload used"
+    },
+    {
+      "n": 8,
+      "problem": "Thin/incomplete metadata on replacement batches",
+      "previousEvidence": "Zero-tag held batch documented",
+      "currentEvidence": "Held IDs still missing tags/lang; public dupes IwpO/RCs6 tags=0",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "Medium"
+    },
+    {
+      "n": 9,
+      "problem": "Incorrect/inconsistent category",
+      "previousEvidence": "Adapter defaults category 27",
+      "currentEvidence": "Canonical Fermi long=27; most Shorts+smooth long still categoryId 22",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "Medium for discovery"
+    },
+    {
+      "n": 10,
+      "problem": "Incorrect/inconsistent language",
+      "previousEvidence": "Adapter defaults en-GB",
+      "currentEvidence": "Live assets mostly defaultLanguage=en not en-GB; BH long audio en-US",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "Low-Medium"
+    },
+    {
+      "n": 11,
+      "problem": "Missing notifySubscribers behaviour",
+      "previousEvidence": "Adapter sets notifySubscribers on public insert",
+      "currentEvidence": "Code present; cannot re-verify historical uploads",
+      "status": "FIXED WITH MONITORING",
+      "residualRisk": "Low for new package uploads"
+    },
+    {
+      "n": 12,
+      "problem": "Missing/insufficient OAuth permissions",
+      "previousEvidence": "force-ssl documented required",
+      "currentEvidence": "OAUTH_VERIFY_LAST forceSslGranted=false; scopes upload+readonly only",
+      "status": "NOT FIXED",
+      "residualRisk": "Critical \u2014 videos.update unavailable"
+    },
+    {
+      "n": 13,
+      "problem": "videos.update unavailable",
+      "previousEvidence": "403 scope insufficient historically",
+      "currentEvidence": "Still unavailable without force-ssl",
+      "status": "NOT FIXED",
+      "residualRisk": "Critical"
+    },
+    {
+      "n": 14,
+      "problem": "Canonical IDs not persisted immediately",
+      "previousEvidence": "Package upload persists registry",
+      "currentEvidence": "Code+tests; live shelf still drifted outside package path",
+      "status": "FIXED WITH MONITORING",
+      "residualRisk": "Medium if CDP used"
+    },
+    {
+      "n": 15,
+      "problem": "Local registries disagreeing with YouTube",
+      "previousEvidence": "Aligned at POST_OAUTH",
+      "currentEvidence": "Registry still says BH trio public; live private; unexpected public extras",
+      "status": "NOT FIXED",
+      "residualRisk": "High"
+    },
+    {
+      "n": 16,
+      "problem": "Old duplicate IDs remaining eligible for upload",
+      "previousEvidence": "Recovery blocks + registry",
+      "currentEvidence": "Fingerprint/content-id gates in package; CDP scripts can still upload",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "High"
+    },
+    {
+      "n": 17,
+      "problem": "Held assets accidentally becoming publishable",
+      "previousEvidence": "Dec 31 holds",
+      "currentEvidence": "Held five still private+Dec31; PASS",
+      "status": "FIXED WITH MONITORING",
+      "residualRisk": "Low unless visibility CDP run"
+    },
+    {
+      "n": 18,
+      "problem": "Public videos wrong privacy status",
+      "previousEvidence": "Shelf PASS",
+      "currentEvidence": "Shelf FAIL \u2014 5/6 expected public wrong for BH; 2 expected private are public",
+      "status": "NOT FIXED",
+      "residualRisk": "Critical"
+    },
+    {
+      "n": 19,
+      "problem": "Incorrect related-video relationships for Shorts",
+      "previousEvidence": "Studio finish required \u2192 3xrxdmaOwJI",
+      "currentEvidence": "API cannot read Related; Studio not re-checked this audit",
+      "status": "UNVERIFIABLE",
+      "residualRisk": "Medium"
+    },
+    {
+      "n": 20,
+      "problem": "Missing Studio finishing steps",
+      "previousEvidence": "STUDIO_MANUAL_FINISH.md remains",
+      "currentEvidence": "Still listed as remaining manual work",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "Medium"
+    },
+    {
+      "n": 21,
+      "problem": "Incorrect made-for-kids settings",
+      "previousEvidence": "madeForKids false on samples",
+      "currentEvidence": "All sampled known IDs madeForKids=false",
+      "status": "FIXED",
+      "residualRisk": "Low"
+    },
+    {
+      "n": 22,
+      "problem": "Incorrect thumbnails on episodes",
+      "previousEvidence": "Deferred historically",
+      "currentEvidence": "No automatic thumb replace; mapping not fully verified this audit",
+      "status": "UNVERIFIABLE",
+      "residualRisk": "Medium"
+    },
+    {
+      "n": 23,
+      "problem": "Stale schedule records",
+      "previousEvidence": "Cadence docs vs API",
+      "currentEvidence": "Live schedule inventory captured; local cadence docs modified uncommitted \u2014 possible drift",
+      "status": "FIXED WITH MONITORING",
+      "residualRisk": "Medium"
+    },
+    {
+      "n": 24,
+      "problem": "Hidden alternate publishing commands",
+      "previousEvidence": "youtube:package approved",
+      "currentEvidence": "youtube:upload still in package.json without recovery gates; docs mention it",
+      "status": "NOT FIXED",
+      "residualRisk": "High"
+    },
+    {
+      "n": 25,
+      "problem": "Bulk replacement scripts remaining reachable",
+      "previousEvidence": "Four DISABLED__",
+      "currentEvidence": "Only smooth-CFR quartet quarantined; JWST replace + audits/_replace_shorts_v02_youtube.py etc still present",
+      "status": "NOT FIXED",
+      "residualRisk": "Critical"
+    },
+    {
+      "n": 26,
+      "problem": "Ambiguous upload failures causing blind retries",
+      "previousEvidence": "Package path stops + search-before-retry",
+      "currentEvidence": "Covered in youtube:package + tests; not in youtube:upload",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "Medium"
+    },
+    {
+      "n": 27,
+      "problem": "Multiple packages pointing at same planned slot",
+      "previousEvidence": "NF01 collision held",
+      "currentEvidence": "Active vs held title pairs exist by design; Aug calendar dense",
+      "status": "FIXED WITH MONITORING",
+      "residualRisk": "Medium"
+    },
+    {
+      "n": 28,
+      "problem": "One content package producing more than one YouTube ID",
+      "previousEvidence": "ONE VIDEO=ONE UPLOAD rule + registry",
+      "currentEvidence": "Rule+tests; live evidence shows many historical multi-IDs per title; risk remains via CDP",
+      "status": "PARTIALLY FIXED",
+      "residualRisk": "High"
+    }
+  ]
+}

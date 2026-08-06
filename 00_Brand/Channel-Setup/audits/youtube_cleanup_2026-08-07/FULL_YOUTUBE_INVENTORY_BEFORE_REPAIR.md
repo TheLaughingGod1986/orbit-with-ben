@@ -1,6 +1,6 @@
 # Full YouTube Inventory — BEFORE REPAIR
 
-Generated: 2026-08-06T23:35:36.913Z
+Generated: 2026-08-06T23:51:47.361Z
 
 Channel: Orbit with Ben (`UC_esArsDKd3GJvOkeO0DUog`)
 
@@ -9,8 +9,8 @@ Channel: Orbit with Ben (`UC_esArsDKd3GJvOkeO0DUog`)
 | Bucket | Count |
 |--------|------:|
 | Total | 91 |
-| Public | 9 |
-| Private (no publishAt) | 49 |
+| Public | 8 |
+| Private (no publishAt) | 50 |
 | Unlisted | 0 |
 | Scheduled (has publishAt) | 33 |
 | Shorts (≤60s) | 84 |
@@ -21,26 +21,24 @@ Channel: Orbit with Ben (`UC_esArsDKd3GJvOkeO0DUog`)
 | Classification | Count |
 |----------------|------:|
 | UNKNOWN_REQUIRES_REVIEW | 74 |
-| DUPLICATE_PRIVATE | 5 |
+| DUPLICATE_PRIVATE | 7 |
+| CANONICAL_PUBLIC | 6 |
 | CANONICAL_SCHEDULED | 4 |
-| CANONICAL_PRIVATE | 3 |
-| CANONICAL_PUBLIC | 3 |
-| DUPLICATE_PUBLIC | 2 |
 
 ## Full classification table
 
 | Video ID | Content | Current state | Classification | Confidence | Proposed action |
 |----------|---------|---------------|----------------|------------|-----------------|
 | IqII5mVGdrs | v002-bh-short-02 | scheduled:private:2026-12-31T11:30:00Z | DUPLICATE_PRIVATE | HIGH | DO_NOT_TOUCH — already held |
-| RCs6MMxF3ko | v002-bh-long | public | DUPLICATE_PUBLIC | HIGH | PRIVATE — verified duplicate of 3xrxdmaOwJI |
+| RCs6MMxF3ko | v002-bh-long | private | DUPLICATE_PRIVATE | HIGH | KEEP_PRIVATE |
 | 2uT3wXJLybw | v002-bh-nf-point | scheduled:private:2026-12-31T11:30:00Z | DUPLICATE_PRIVATE | HIGH | DO_NOT_TOUCH — already held |
 | wOlnj7nZWJM | v002-bh-nf02 | scheduled:private:2026-12-31T11:30:00Z | DUPLICATE_PRIVATE | HIGH | DO_NOT_TOUCH — already held |
 | lIHb_tyxQSM | v002-bh-nf-look-back | scheduled:private:2026-12-31T11:30:00Z | DUPLICATE_PRIVATE | HIGH | DO_NOT_TOUCH — already held |
 | 2C-eiSMsBLc | v002-bh-nf01 | scheduled:private:2026-12-31T11:30:00Z | DUPLICATE_PRIVATE | HIGH | DO_NOT_TOUCH — already held |
-| IwpO33AJaPQ | v002-bh-short-01 | public | DUPLICATE_PUBLIC | HIGH | PRIVATE — verified duplicate of JRfhE6yWom4 |
-| L2OFjL4neOo | v002-bh-short-02 | private | CANONICAL_PRIVATE | EXACT | RESTORE_PUBLIC — accidentally privatized canonical |
-| JRfhE6yWom4 | v002-bh-short-01 | private | CANONICAL_PRIVATE | EXACT | RESTORE_PUBLIC — accidentally privatized canonical |
-| 3xrxdmaOwJI | v002-bh-long | private | CANONICAL_PRIVATE | EXACT | RESTORE_PUBLIC — accidentally privatized canonical |
+| IwpO33AJaPQ | v002-bh-short-01 | private | DUPLICATE_PRIVATE | HIGH | KEEP_PRIVATE |
+| L2OFjL4neOo | v002-bh-short-02 | public | CANONICAL_PUBLIC | EXACT | DO_NOT_TOUCH |
+| JRfhE6yWom4 | v002-bh-short-01 | public | CANONICAL_PUBLIC | EXACT | DO_NOT_TOUCH |
+| 3xrxdmaOwJI | v002-bh-long | public | CANONICAL_PUBLIC | EXACT | DO_NOT_TOUCH |
 | mGwSCdgxQO4 | OTHER | scheduled:private:2026-12-31T11:30:00Z | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | 8DxCTXUlw74 | FERMI | scheduled:private:2026-08-11T11:30:00Z | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | B2STcIAF1lY | v002-bh-B2STcIAF1lY | scheduled:private:2026-08-09T10:30:00Z | CANONICAL_SCHEDULED | HIGH | DO_NOT_TOUCH — recovery schedule |
@@ -107,10 +105,10 @@ Channel: Orbit with Ben (`UC_esArsDKd3GJvOkeO0DUog`)
 | b8-X_FyJnHM | FERMI | scheduled:private:2026-08-12T17:00:00Z | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | --CxhjNqtSY | FERMI | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | MO19iXYCu0c | FERMI | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
-| z-DLqoSoEBo | FERMI | public | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
+| z-DLqoSoEBo | FERMI | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | zc79sRBCDnU | FERMI | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | z8-haBeF6mI | FERMI | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
-| UWwNKYf_aU8 | FERMI | public | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
+| UWwNKYf_aU8 | FERMI | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | 5nMieBeymKU | BLACK_HOLE | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | olnaYqeOtFs | OTHER | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |
 | 80S5E-AWFhA | OTHER | private | UNKNOWN_REQUIRES_REVIEW | LOW | DO_NOT_TOUCH — classify manually |

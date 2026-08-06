@@ -1,0 +1,137 @@
+{
+  "auditedAt": "2026-08-06T23:31:49.529Z",
+  "branch": "cursor/youtube-channel-cleanup-9055",
+  "commit": "edddb72dbd94d265dace4895caefd90f3c9db3a3",
+  "verdict": "NOT CLEAN",
+  "passCriteriaFailed": [
+    "public assets do not match approved catalogue",
+    "duplicates publicly visible (IwpO33AJaPQ, RCs6MMxF3ko + extra Fermi Shorts)",
+    "canonical IDs disagree across registry vs YouTube",
+    "OAuth force-ssl missing; videos.update FAIL",
+    "replacement/CDP scripts still reachable",
+    "alternate youtube:upload path ungated",
+    "historical problems include NOT FIXED / PARTIALLY FIXED / UNVERIFIABLE",
+    "unexplained drift vs FINAL_SHELF_VERIFY / registry"
+  ],
+  "mutationsApplied": [],
+  "mutationPolicy": "REPORT DO NOT MUTATE \u2014 restore requires force-ssl or Studio CDP; CDP previously caused this drift",
+  "shelfVerify": {
+    "ok": false,
+    "publicCount": 5,
+    "unexpectedPublic": [
+      "IwpO33AJaPQ",
+      "RCs6MMxF3ko"
+    ]
+  },
+  "oauth": {
+    "forceSslGranted": false,
+    "scopes": [
+      "youtube.upload",
+      "youtube.readonly"
+    ],
+    "videosUpdate": "FAIL"
+  },
+  "tests": {
+    "passed": 64,
+    "failed": 0,
+    "files": 7
+  },
+  "recovery": {
+    "recoveryMode": true,
+    "startedAt": "2026-08-07T00:00:00+02:00",
+    "timezone": "Europe/Paris",
+    "durationDays": 7,
+    "maxShortsPerDay": 1,
+    "maxLongsDuringRecovery": 0,
+    "replacementUploadsAllowed": false,
+    "duplicateUploadsAllowed": false,
+    "bulkMetadataUpdatesAllowed": false,
+    "deleteAndReuploadAllowed": false,
+    "minimumEvaluationWindowHours": 72,
+    "canonicalPublicIds": [
+      "Mo93x0fxB1Q",
+      "1HuV8o3gOss",
+      "KcKBixwmcV4",
+      "3xrxdmaOwJI",
+      "JRfhE6yWom4",
+      "L2OFjL4neOo"
+    ],
+    "heldVideoIds": [
+      "2C-eiSMsBLc",
+      "IqII5mVGdrs",
+      "lIHb_tyxQSM",
+      "wOlnj7nZWJM",
+      "2uT3wXJLybw"
+    ],
+    "notes": "Stabilization after duplicate CDP replace storm. Existing scheduled go-lives (NF01 + supporting Shorts already on calendar) are allowed; no NEW API inserts beyond recovery gates."
+  },
+  "inventorySummary": {
+    "videoCount": 91,
+    "byPrivacy": {
+      "public": 9,
+      "private": 82,
+      "unlisted": 0
+    },
+    "publicIds": [
+      {
+        "id": "Mo93x0fxB1Q",
+        "title": "Why Haven't We Found Aliens Yet? The Fermi Paradox Explained | Orbit's Cosmic Journey",
+        "duration": "PT18M32S",
+        "views": "6"
+      },
+      {
+        "id": "1HuV8o3gOss",
+        "title": "Why Haven't We Found Aliens Yet? #FermiParadox #Space #Shorts",
+        "duration": "PT44S",
+        "views": "38"
+      },
+      {
+        "id": "KcKBixwmcV4",
+        "title": "What If the First Alien Clue Is Already Here?",
+        "duration": "PT49S",
+        "views": "97"
+      },
+      {
+        "id": "IwpO33AJaPQ",
+        "title": "Cross This Line and You Never Come Back",
+        "duration": "PT45S",
+        "views": "0"
+      },
+      {
+        "id": "RCs6MMxF3ko",
+        "title": "What Happens If You Fall Into a Black Hole? Orbit's Cosmic Journey",
+        "duration": "PT21M13S",
+        "views": "0"
+      },
+      {
+        "id": "rFJoOdQAc9c",
+        "title": "Don't Look Up: The Zoo Hypothesis #Shorts #Aliens #Science",
+        "duration": "PT44S",
+        "views": "46"
+      },
+      {
+        "id": "dPMJQp2gMNc",
+        "title": "Space Is Rude About Distance",
+        "duration": "PT41S",
+        "views": "17"
+      },
+      {
+        "id": "z-DLqoSoEBo",
+        "title": "Why haven't we found aliens yet? The answer is terrifying #FermiParadox #Space #Shorts",
+        "duration": "PT44S",
+        "views": "99"
+      },
+      {
+        "id": "UWwNKYf_aU8",
+        "title": "This Is Why We Haven't Met Aliens Yet #space #aliens #fermiparadox",
+        "duration": "PT41S",
+        "views": "18"
+      }
+    ]
+  },
+  "missingEvidenceFiles": [
+    "CANONICAL_ASSET_MAP.json",
+    "LOCAL_YOUTUBE_CONTENT_MAP.json",
+    "FULL_CATALOGUE_REPAIR_REPORT.md"
+  ]
+}

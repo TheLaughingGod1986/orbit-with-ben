@@ -195,15 +195,33 @@ describe("canonical registry", () => {
     );
   });
 
+  it("blocks historical duplicate IDs from becoming upload targets", () => {
+    const registry: CanonicalRegistryFile = {
+      version: 2,
+      updatedAt: new Date().toISOString(),
+      records: seedOrbitCanonicalRecords(),
+      historicalDuplicateIdsGlobal: ["RCs6MMxF3ko", "IwpO33AJaPQ", "z-DLqoSoEBo"],
+    };
+    const r = lookupCanonicalConflicts({ registry, youtubeVideoId: "RCs6MMxF3ko" });
+    expect(r.blocked).toBe(true);
+    expect(r.reason).toContain("historical duplicate");
+    expect(
+      lookupCanonicalConflicts({ registry, youtubeVideoId: "IwpO33AJaPQ" }).blocked,
+    ).toBe(true);
+  });
+
   it("refuses silent canonical id replacement", () => {
     const registry: CanonicalRegistryFile = {
       version: 1,
       updatedAt: new Date().toISOString(),
       records: seedOrbitCanonicalRecords(),
     };
+    const bhShort = seedOrbitCanonicalRecords().find(
+      (r) => r.internalContentId === "v002-bh-short-01",
+    )!;
     expect(() =>
       upsertCanonicalRecord(registry, {
-        ...seedOrbitCanonicalRecords()[4],
+        ...bhShort,
         youtubeVideoId: "NEWID12345",
       }),
     ).toThrow(/Refusing to replace canonical YouTube ID/);
@@ -293,6 +311,87 @@ describe("quarantined CDP scripts", () => {
       );
     expect(enabled).toEqual([]);
   });
+
+  it("quarantines inverted cleanup and YouTube replace scripts", () => {
+    const paths = [
+      path.resolve(
+        process.cwd(),
+        "../00_Brand/Channel-Setup/audits/youtube_cleanup_2026-08-07/_cleanup_visibility_cdp.py",
+      ),
+      path.resolve(
+        process.cwd(),
+        "../00_Brand/Channel-Setup/audits/_replace_shorts_v02_youtube.py",
+      ),
+      path.resolve(
+        process.cwd(),
+        "../00_Brand/Channel-Setup/audits/youtube_smooth_canon_2026-08-07/_canon_smooth_bh_v01.py",
+      ),
+    ];
+    for (const p of paths) {
+      expect(fs.existsSync(p)).toBe(true);
+      const head = fs.readFileSync(p, "utf8").slice(0, 500);
+      expect(head).toMatch(/SystemExit|DISABLED/);
+    }
+  });
+});
+
+describe("ambiguous upload retry protection", () => {
+  it("documents that blind --replace/--reupload flags are rejected by package CLI source", () => {
+    const src = fs.readFileSync(
+      path.resolve(process.cwd(), "scripts/youtube-package-upload.ts"),
+      "utf8",
+    );
+    expect(src).toContain('flag("replace")');
+    expect(src).toContain("UPLOAD BLOCKED: Replacement / reupload flags are forbidden");
+    expect(src).toContain("findExistingUploadByTitle");
+  });
+});
+
+describe("held-video and recovery config persistence", () => {
+  it("keeps recovery mode + Dec 31 holds in config", () => {
+    const cfg = JSON.parse(
+      fs.readFileSync(
+        path.resolve(process.cwd(), "../00_Brand/Channel-Setup/YOUTUBE_RECOVERY_MODE.json"),
+        "utf8",
+      ),
+    ) as {
+      recoveryMode: boolean;
+      maxShortsPerDay: number;
+      heldVideoIds: string[];
+      replacementUploadsAllowed: boolean;
+    };
+    expect(cfg.recoveryMode).toBe(true);
+    expect(cfg.maxShortsPerDay).toBe(1);
+    expect(cfg.replacementUploadsAllowed).toBe(false);
+    expect(cfg.heldVideoIds).toEqual(
+      expect.arrayContaining([
+        "2C-eiSMsBLc",
+        "IqII5mVGdrs",
+        "lIHb_tyxQSM",
+        "wOlnj7nZWJM",
+        "2uT3wXJLybw",
+      ]),
+    );
+  });
+});
+
+describe("registry persistence shape", () => {
+  it("persists historicalDuplicateIds on disk registry", () => {
+    const reg = JSON.parse(
+      fs.readFileSync(
+        path.resolve(process.cwd(), "../00_Brand/Channel-Setup/YOUTUBE_CANONICAL_REGISTRY.json"),
+        "utf8",
+      ),
+    ) as {
+      version: number;
+      records: { youtubeVideoId: string; historicalDuplicateIds?: string[] }[];
+      historicalDuplicateIdsGlobal?: string[];
+    };
+    expect(reg.version).toBeGreaterThanOrEqual(2);
+    expect(reg.historicalDuplicateIdsGlobal?.length || 0).toBeGreaterThan(0);
+    const bh = reg.records.find((r) => r.youtubeVideoId === "3xrxdmaOwJI");
+    expect(bh?.historicalDuplicateIds).toEqual(expect.arrayContaining(["RCs6MMxF3ko"]));
+  });
 });
 
 describe("shelf expectation fixture", () => {
@@ -310,5 +409,24 @@ describe("shelf expectation fixture", () => {
     expect(publicIds).toEqual(
       ["1HuV8o3gOss", "3xrxdmaOwJI", "JRfhE6yWom4", "KcKBixwmcV4", "L2OFjL4neOo", "Mo93x0fxB1Q"].sort(),
     );
+  });
+
+  it("post-repair shelf verify keeps approved BH+Fermi core public and dupes private", () => {
+    const verifyPath = path.resolve(
+      process.cwd(),
+      "../00_Brand/Channel-Setup/audits/youtube_cleanup_2026-08-07/POST_REPAIR_SHELF_VERIFY.json",
+    );
+    expect(fs.existsSync(verifyPath)).toBe(true);
+    const verify = JSON.parse(fs.readFileSync(verifyPath, "utf8")) as {
+      ok: boolean;
+      rows: { id: string; status: string; expect: string }[];
+    };
+    expect(verify.ok).toBe(true);
+    for (const id of ["3xrxdmaOwJI", "JRfhE6yWom4", "L2OFjL4neOo", "Mo93x0fxB1Q"]) {
+      expect(verify.rows.find((r) => r.id === id)?.status).toBe("PASS");
+    }
+    for (const id of ["RCs6MMxF3ko", "IwpO33AJaPQ", "z-DLqoSoEBo", "UWwNKYf_aU8"]) {
+      expect(verify.rows.find((r) => r.id === id)?.status).toBe("PASS");
+    }
   });
 });

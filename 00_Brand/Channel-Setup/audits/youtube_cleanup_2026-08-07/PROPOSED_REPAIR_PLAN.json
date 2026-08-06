@@ -1,106 +1,6 @@
 {
-  "generatedAt": "2026-08-06T23:35:36.915Z",
+  "generatedAt": "2026-08-06T23:51:47.364Z",
   "safe": [
-    {
-      "videoId": "RCs6MMxF3ko",
-      "before": {
-        "privacy": "public",
-        "publishAt": null,
-        "title": "What Happens If You Fall Into a Black Hole? Orbit's Cosmic Journey",
-        "categoryId": "22",
-        "defaultLanguage": "en",
-        "defaultAudioLanguage": "en",
-        "tagsCount": 0
-      },
-      "after": {
-        "privacy": "private",
-        "publishAt": null
-      },
-      "reason": "PRIVATE — verified duplicate of 3xrxdmaOwJI",
-      "evidence": "DUPLICATE_PUBLIC/HIGH",
-      "confidence": "HIGH",
-      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
-    },
-    {
-      "videoId": "IwpO33AJaPQ",
-      "before": {
-        "privacy": "public",
-        "publishAt": null,
-        "title": "Cross This Line and You Never Come Back",
-        "categoryId": "22",
-        "defaultLanguage": "en",
-        "defaultAudioLanguage": "en",
-        "tagsCount": 0
-      },
-      "after": {
-        "privacy": "private",
-        "publishAt": null
-      },
-      "reason": "PRIVATE — verified duplicate of JRfhE6yWom4",
-      "evidence": "DUPLICATE_PUBLIC/HIGH",
-      "confidence": "HIGH",
-      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
-    },
-    {
-      "videoId": "L2OFjL4neOo",
-      "before": {
-        "privacy": "private",
-        "publishAt": null,
-        "title": "Falling In Wouldn't Feel Like Falling",
-        "categoryId": "22",
-        "defaultLanguage": "en",
-        "defaultAudioLanguage": "en",
-        "tagsCount": 15
-      },
-      "after": {
-        "privacy": "public",
-        "publishAt": null
-      },
-      "reason": "RESTORE_PUBLIC — accidentally privatized canonical",
-      "evidence": "CANONICAL_PRIVATE/EXACT",
-      "confidence": "EXACT",
-      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
-    },
-    {
-      "videoId": "JRfhE6yWom4",
-      "before": {
-        "privacy": "private",
-        "publishAt": null,
-        "title": "Why This Line Is a Point of No Return #Space #Shorts",
-        "categoryId": "22",
-        "defaultLanguage": "en",
-        "defaultAudioLanguage": "en",
-        "tagsCount": 16
-      },
-      "after": {
-        "privacy": "public",
-        "publishAt": null
-      },
-      "reason": "RESTORE_PUBLIC — accidentally privatized canonical",
-      "evidence": "CANONICAL_PRIVATE/EXACT",
-      "confidence": "EXACT",
-      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
-    },
-    {
-      "videoId": "3xrxdmaOwJI",
-      "before": {
-        "privacy": "private",
-        "publishAt": null,
-        "title": "What Happens If You Fall Into a Black Hole? Orbit's Cosmic Journey",
-        "categoryId": "27",
-        "defaultLanguage": "en",
-        "defaultAudioLanguage": "en-US",
-        "tagsCount": 22
-      },
-      "after": {
-        "privacy": "public",
-        "publishAt": null
-      },
-      "reason": "RESTORE_PUBLIC — accidentally privatized canonical",
-      "evidence": "CANONICAL_PRIVATE/EXACT",
-      "confidence": "EXACT",
-      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
-    },
     {
       "videoId": "Mo93x0fxB1Q",
       "before": {
@@ -207,6 +107,23 @@
       "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
     },
     {
+      "videoId": "RCs6MMxF3ko",
+      "before": {
+        "privacy": "private",
+        "publishAt": null,
+        "title": "What Happens If You Fall Into a Black Hole? Orbit's Cosmic Journey",
+        "categoryId": "22",
+        "defaultLanguage": "en",
+        "defaultAudioLanguage": "en",
+        "tagsCount": 0
+      },
+      "after": null,
+      "reason": "KEEP_PRIVATE",
+      "evidence": "DUPLICATE_PRIVATE/HIGH",
+      "confidence": "HIGH",
+      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
+    },
+    {
       "videoId": "2uT3wXJLybw",
       "before": {
         "privacy": "private",
@@ -272,6 +189,74 @@
       "reason": "DO_NOT_TOUCH — already held",
       "evidence": "DUPLICATE_PRIVATE/HIGH",
       "confidence": "HIGH",
+      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
+    },
+    {
+      "videoId": "IwpO33AJaPQ",
+      "before": {
+        "privacy": "private",
+        "publishAt": null,
+        "title": "Cross This Line and You Never Come Back",
+        "categoryId": "22",
+        "defaultLanguage": "en",
+        "defaultAudioLanguage": "en",
+        "tagsCount": 0
+      },
+      "after": null,
+      "reason": "KEEP_PRIVATE",
+      "evidence": "DUPLICATE_PRIVATE/HIGH",
+      "confidence": "HIGH",
+      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
+    },
+    {
+      "videoId": "L2OFjL4neOo",
+      "before": {
+        "privacy": "public",
+        "publishAt": null,
+        "title": "Falling In Wouldn't Feel Like Falling",
+        "categoryId": "22",
+        "defaultLanguage": "en",
+        "defaultAudioLanguage": "en",
+        "tagsCount": 15
+      },
+      "after": null,
+      "reason": "DO_NOT_TOUCH",
+      "evidence": "CANONICAL_PUBLIC/EXACT",
+      "confidence": "EXACT",
+      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
+    },
+    {
+      "videoId": "JRfhE6yWom4",
+      "before": {
+        "privacy": "public",
+        "publishAt": null,
+        "title": "Why This Line Is a Point of No Return #Space #Shorts",
+        "categoryId": "22",
+        "defaultLanguage": "en",
+        "defaultAudioLanguage": "en",
+        "tagsCount": 16
+      },
+      "after": null,
+      "reason": "DO_NOT_TOUCH",
+      "evidence": "CANONICAL_PUBLIC/EXACT",
+      "confidence": "EXACT",
+      "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
+    },
+    {
+      "videoId": "3xrxdmaOwJI",
+      "before": {
+        "privacy": "public",
+        "publishAt": null,
+        "title": "What Happens If You Fall Into a Black Hole? Orbit's Cosmic Journey",
+        "categoryId": "27",
+        "defaultLanguage": "en",
+        "defaultAudioLanguage": "en-US",
+        "tagsCount": 22
+      },
+      "after": null,
+      "reason": "DO_NOT_TOUCH",
+      "evidence": "CANONICAL_PUBLIC/EXACT",
+      "confidence": "EXACT",
       "rollbackMethod": "videos.update privacyStatus/publishAt back to before values (requires force-ssl) or Studio CDP"
     },
     {
@@ -1399,7 +1384,7 @@
     {
       "videoId": "z-DLqoSoEBo",
       "before": {
-        "privacy": "public",
+        "privacy": "private",
         "publishAt": null,
         "title": "Why haven't we found aliens yet? The answer is terrifying #FermiParadox #Space #Shorts",
         "categoryId": "22",
@@ -1450,7 +1435,7 @@
     {
       "videoId": "UWwNKYf_aU8",
       "before": {
-        "privacy": "public",
+        "privacy": "private",
         "publishAt": null,
         "title": "This Is Why We Haven't Met Aliens Yet #space #aliens #fermiparadox",
         "categoryId": "22",

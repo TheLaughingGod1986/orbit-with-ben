@@ -146,6 +146,7 @@ async function main() {
           matched: {
             internalContentId: conflict.matched?.internalContentId,
             youtubeVideoId: conflict.matched?.youtubeVideoId,
+            historicalDuplicateIds: conflict.matched?.historicalDuplicateIds,
           },
         },
         null,
@@ -153,6 +154,19 @@ async function main() {
       ),
     );
     process.exit(22);
+  }
+
+  // Block any attempt to target a known historical duplicate ID via flags.
+  const forcedVideoId = arg("video-id") || arg("youtube-id");
+  if (forcedVideoId) {
+    const histBlock = lookupCanonicalConflicts({
+      registry,
+      youtubeVideoId: forcedVideoId,
+    });
+    if (histBlock.blocked) {
+      console.error(histBlock.reason);
+      process.exit(22);
+    }
   }
 
   const recovery = loadYouTubeRecoveryConfig();

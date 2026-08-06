@@ -1,3 +1,5 @@
+raise SystemExit("DISABLED: YouTube replace/reupload path quarantined. ONE CONTENT ITEM = ONE YOUTUBE VIDEO ID. Use npm run youtube:package metadata update workflow only.")
+
 #!/usr/bin/env python3
 """Replace Orbit Shorts on YouTube Studio with kinetic-caption v02 files.
 
