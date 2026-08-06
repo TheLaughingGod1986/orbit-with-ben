@@ -146,6 +146,63 @@ def editor_box(page) -> dict | None:
     )
 
 
+def editor_usable(page) -> bool:
+    """True when the agent prompt editor is on-screen and wide enough to type."""
+    box = editor_box(page)
+    if not box or box["w"] < 50:
+        return False
+    # Closed session leaves a 0×0 or off-viewport editor node in the DOM
+    try:
+        vw = page.viewport_size["width"] if page.viewport_size else 1440
+    except Exception:
+        vw = 1440
+    return 0 <= box["x"] < vw - 40 and box["y"] > 0
+
+
+def ensure_agent_session(page) -> None:
+    """Make sure the right-hand agent session + prompt bar are open."""
+    if editor_usable(page):
+        return
+    # History → pick latest, or New session
+    if click_visible(page, "history"):
+        page.wait_for_timeout(800)
+        page.evaluate(
+            """() => {
+              // Click first session row if a list appeared
+              for (const el of document.querySelectorAll('button,div,[role="button"]')) {
+                const t = (el.innerText || '').trim();
+                const r = el.getBoundingClientRect();
+                if (r.width > 120 && r.height > 24 && r.x > 900 &&
+                    /untitled|session|orbit|video|cinematic/i.test(t) &&
+                    t.length < 80) {
+                  el.click();
+                  return true;
+                }
+              }
+              return false;
+            }"""
+        )
+        page.wait_for_timeout(1000)
+    if editor_usable(page):
+        return
+    if click_visible(page, "new session") or click_visible(page, "edit_square"):
+        page.wait_for_timeout(1500)
+    if not editor_usable(page):
+        # Last resort: click anywhere that looks like the chat reopen control
+        page.evaluate(
+            """() => {
+              for (const b of document.querySelectorAll('button')) {
+                const t = (b.innerText || '').trim().replace(/\\n/g, ' ');
+                if (/new session|untitled session|menu.*history/i.test(t)) {
+                  b.click();
+                  return;
+                }
+              }
+            }"""
+        )
+        page.wait_for_timeout(1200)
+
+
 def ensure_project(page) -> str:
     """Land inside a Flow project editor. Returns project URL."""
     if "/project/" not in (page.url or ""):
@@ -170,15 +227,14 @@ def ensure_project(page) -> str:
     # Wait for agent prompt
     deadline = time.time() + 40
     while time.time() < deadline:
-        box = editor_box(page)
-        if box and box["w"] > 50:
+        ensure_agent_session(page)
+        if editor_usable(page):
             break
-        # Session may be closed — reopen
-        if click_visible(page, "new session") or click_visible(page, "edit_square"):
-            page.wait_for_timeout(1500)
         page.wait_for_timeout(500)
     if "/project/" not in page.url:
         raise RuntimeError(f"Not in Flow project: {page.url}")
+    if not editor_usable(page):
+        raise RuntimeError("Flow agent prompt editor not visible — open a session in the UI")
     return page.url
 
 
@@ -278,8 +334,9 @@ def upload_orbit_ref(page, ref: Path) -> bool:
 
 
 def set_prompt(page, prompt: str) -> None:
+    ensure_agent_session(page)
     box = editor_box(page)
-    if not box or box["w"] < 40:
+    if not box or not editor_usable(page):
         raise RuntimeError("Flow prompt editor not visible (open agent session)")
     page.mouse.click(box["x"] + 24, box["y"] + max(6, box["h"] / 2))
     page.wait_for_timeout(150)
@@ -464,14 +521,12 @@ def generate_clip(
         )
 
     print(f"  flow: {url}", flush=True)
+    ensure_agent_session(page)
     before = collect_media_ids(page)
     configure_veo_settings(page, model=model)
+    ensure_agent_session(page)
     attached = upload_orbit_ref(page, ref)
-    # Ensure prompt visible after upload
-    box = editor_box(page)
-    if not box or box["w"] < 40:
-        click_visible(page, "new session")
-        page.wait_for_timeout(1200)
+    ensure_agent_session(page)
     set_prompt(page, prompt)
     submit_create(page)
     print("  submitted Create", flush=True)
@@ -535,6 +590,7 @@ def dump_probe(page, out_dir: Path) -> dict:
         "url": page.url,
         "logged_in": looks_logged_in(page),
         "editor": editor_box(page),
+        "editor_usable": editor_usable(page),
         "ultra": page.locator('button:has-text("ULTRA")').count() > 0,
         "screenshot": str(shot),
         "html": str(html),
