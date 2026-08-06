@@ -418,14 +418,17 @@ def _prompt_attachment_count(page) -> int:
           const ed = document.querySelector('[data-slate-editor="true"]');
           if (!ed) return 0;
           const er = ed.getBoundingClientRect();
-          // Attachment chips sit in the prompt composer: above/beside the editor
-          // or inside the bottom composer strip.
-          return [...document.querySelectorAll('img,video,[role="img"]')].filter(i => {
+          // Attachment chips sit just above the slate editor in the composer.
+          return [...document.querySelectorAll('img')].filter(i => {
             const r = i.getBoundingClientRect();
-            if (r.width < 24 || r.height < 24 || r.width > 320) return false;
-            const nearY = r.y >= er.y - 220 && r.bottom <= er.bottom + 80;
-            const nearX = r.x >= er.x - 40 && r.x <= er.right + 40;
-            return nearY && nearX;
+            if (r.width < 24 || r.height < 24 || r.width > 200) return false;
+            // Exclude avatar / header chrome
+            if (r.y < 60) return false;
+            const nearY = r.y >= er.y - 280 && r.bottom <= er.bottom + 100;
+            const nearX = r.x >= er.x - 60 && r.x <= er.right + 60;
+            const src = i.currentSrc || i.src || '';
+            const isMedia = /media\\.getMediaUrlRedirect|blob:|data:image/i.test(src);
+            return nearY && nearX && isMedia;
           }).length;
         }"""
     )
@@ -449,12 +452,65 @@ def _assert_seedance_ref(ref: Path) -> Path:
     return p
 
 
+def _open_create_picker(page) -> None:
+    """Open the prompt '+' / Create asset picker."""
+    ensure_agent_session(page)
+    clicked = page.evaluate(
+        """() => {
+          const ed = document.querySelector('[data-slate-editor="true"]');
+          const er = ed ? ed.getBoundingClientRect() : {y: 700, bottom: 900};
+          for (const i of document.querySelectorAll('i.google-symbols, span.google-symbols')) {
+            const t = (i.textContent || '').trim();
+            if (t !== 'add_2' && t !== 'add') continue;
+            const b = i.closest('button');
+            if (!b) continue;
+            const r = b.getBoundingClientRect();
+            if (r.y >= er.y - 160 && r.y <= er.bottom + 120) {
+              b.click();
+              return true;
+            }
+          }
+          return false;
+        }"""
+    )
+    if not clicked:
+        btn = page.locator('button:has-text("add_2")')
+        if btn.count():
+            btn.first.click(timeout=5000)
+    page.wait_for_timeout(700)
+
+
+def _wait_add_to_prompt_enabled(page, *, timeout_s: float = 90) -> bool:
+    """Wait until Flow finishes processing the upload and enables Add to Prompt."""
+    t0 = time.time()
+    while time.time() - t0 < timeout_s:
+        st = page.evaluate(
+            """() => {
+              const btns = [...document.querySelectorAll('button')].filter(b =>
+                /^Add to Prompt$/i.test((b.innerText || '').trim())
+              );
+              if (!btns.length) return {found: false};
+              const b = btns[btns.length - 1];
+              const disabled =
+                b.disabled ||
+                b.getAttribute('aria-disabled') === 'true' ||
+                /disabled/i.test(b.className || '');
+              return {found: true, disabled};
+            }"""
+        )
+        if st.get("found") and not st.get("disabled"):
+            return True
+        page.wait_for_timeout(1500)
+    return False
+
+
 def attach_orbit_to_prompt(page, ref: Path) -> bool:
     """Attach Orbit Seedance image into the agent prompt (required for identity).
 
-    Library-only upload is not enough — Flow invents a near-miss mascot unless the
-    reference is bound to the prompt as an ingredient / attachment.
-    Aborts if no prompt attachment chip/thumbnail is visible.
+    Flow path that works (2026-08):
+      + Create → Upload media → wait until thumbnail ready → **Add to Prompt**
+
+    Library-only / header Add Media is not enough. Aborts if no prompt chip.
     """
     ref = _assert_seedance_ref(ref)
     if not ref.exists():
@@ -463,76 +519,83 @@ def attach_orbit_to_prompt(page, ref: Path) -> bool:
     before = _prompt_attachment_count(page)
     print(f"  attaching Orbit ref: {ref.name}", flush=True)
 
-    # Prefer any existing file input, else open + Create → Upload media
-    fi = page.locator('input[type="file"]')
-    uploaded = False
-    if fi.count():
+    _open_create_picker(page)
+
+    uploads_tab = page.locator('button:has-text("Uploads")')
+    if uploads_tab.count():
         try:
-            fi.last.set_input_files(str(ref))
-            uploaded = True
-            page.wait_for_timeout(2500)
-        except Exception as e:
-            print(f"  direct file input failed: {e}", flush=True)
+            uploads_tab.first.click(timeout=3000)
+            page.wait_for_timeout(400)
+        except Exception:
+            pass
 
-    if not uploaded or _prompt_attachment_count(page) <= before:
-        # + control in prompt composer (Material "add_2" / add)
-        page.evaluate(
-            """() => {
-              const ed = document.querySelector('[data-slate-editor="true"]');
-              const er = ed ? ed.getBoundingClientRect() : {y: 700, bottom: 900};
-              for (const b of document.querySelectorAll('button')) {
-                const t = (b.innerText || b.getAttribute('aria-label') || '').trim();
-                const r = b.getBoundingClientRect();
-                if (r.width < 2 || r.height < 2) continue;
-                const nearComposer = r.y >= er.y - 120 && r.y <= er.bottom + 100;
-                if (nearComposer && /add_2|^\\+$|add media|attach|upload/i.test(t)) {
-                  b.click(); return true;
-                }
-              }
-              return false;
-            }"""
+    up = page.locator('button:has-text("Upload media")')
+    if up.count() == 0:
+        up = page.locator('button:has-text("Upload")')
+    if up.count() == 0:
+        raise RuntimeError("Upload media not found in Create picker")
+
+    try:
+        with page.expect_file_chooser(timeout=12_000) as fc:
+            up.last.click(force=True)
+        fc.value.set_files(str(ref))
+    except Exception:
+        fi = page.locator('input[type="file"]')
+        if fi.count() == 0:
+            raise RuntimeError("Could not upload Orbit to Create picker")
+        fi.last.set_input_files(str(ref))
+
+    print("  uploaded — waiting for Add to Prompt…", flush=True)
+    if not _wait_add_to_prompt_enabled(page, timeout_s=90):
+        raise RuntimeError(
+            "Flow never enabled Add to Prompt after Orbit upload "
+            "(thumbnail still processing?)"
         )
-        page.wait_for_timeout(800)
-        # Prefer "Upload media" / "Uploads" over clicking library tiles
-        # (library click often opens Nano Banana image editor).
-        up = page.locator('button:has-text("Upload media")')
-        if up.count() == 0:
-            up = page.locator(
-                'button:has-text("Upload"), [role="menuitem"]:has-text("Upload")'
-            )
-        if up.count():
-            try:
-                with page.expect_file_chooser(timeout=10_000) as fc:
-                    up.last.click(force=True)
-                fc.value.set_files(str(ref))
-                uploaded = True
-            except Exception:
-                fi = page.locator('input[type="file"]')
-                if fi.count() == 0:
-                    raise RuntimeError("Could not attach Orbit to prompt")
-                fi.last.set_input_files(str(ref))
-                uploaded = True
-        page.wait_for_timeout(3500)
 
-    # Escape any leftover picker / Nano Banana overlay without clearing the chip
+    page.evaluate(
+        """() => {
+          const name = 'orbit-seedance';
+          for (const el of document.querySelectorAll('div,button,li,[role="option"]')) {
+            const t = (el.innerText || '').trim();
+            if (t.toLowerCase().includes(name) && t.length < 160) {
+              try { el.click(); } catch (e) {}
+              return true;
+            }
+          }
+          return false;
+        }"""
+    )
+    page.wait_for_timeout(400)
+    add = page.locator('button:has-text("Add to Prompt")')
+    if add.count() == 0:
+        raise RuntimeError("Add to Prompt button missing")
+    add.last.click(force=True)
+    page.wait_for_timeout(1500)
+
     for _ in range(2):
         body = ""
         try:
             body = page.locator("body").inner_text(timeout=2000)[:2500]
         except Exception:
             pass
-        if "What do you want to change" in body or "Nano Banana" in body:
+        if "Add to Prompt" in body or "Search assets" in body or "Upload media" in body:
             page.keyboard.press("Escape")
             page.wait_for_timeout(500)
-            ensure_agent_session(page)
+        else:
+            break
 
+    ensure_agent_session(page)
     attached = _prompt_attachment_count(page) > before
+    if not attached:
+        page.wait_for_timeout(2000)
+        attached = _prompt_attachment_count(page) > before
+
     print(f"  prompt attachment visible={attached} (was {before})", flush=True)
     if not attached:
         raise RuntimeError(
             "Orbit Seedance reference did not attach to the Flow prompt — aborting "
-            "to avoid off-model mascot generation. Re-run headed and confirm the "
-            "image chip appears on the prompt before Create."
+            "to avoid off-model mascot generation. Confirm Add to Prompt produced "
+            "an image chip above the prompt before Create."
         )
     return True
 
@@ -585,15 +648,32 @@ def flow_prompt(scene_prompt: str) -> str:
 
 
 def set_prompt(page, prompt: str) -> None:
+    """Type into the Flow agent editor without wiping an attached image chip."""
     ensure_agent_session(page)
     box = editor_box(page)
     if not box or not editor_usable(page):
         raise RuntimeError("Flow prompt editor not visible (open agent session)")
-    page.mouse.click(box["x"] + 24, box["y"] + max(6, box["h"] / 2))
+    # Click toward the right of the editor so we don't focus/remove the chip
+    # (chip sits top-left of the composer).
+    page.mouse.click(box["x"] + min(box["w"] - 40, 180), box["y"] + max(6, box["h"] / 2))
     page.wait_for_timeout(150)
-    page.keyboard.press("Meta+A")
+    # Clear text only via slate selection of text nodes — avoid Meta+A which can
+    # also remove the media attachment chip in Flow's composer.
+    page.evaluate(
+        """() => {
+          const ed = document.querySelector('[data-slate-editor="true"]');
+          if (!ed) return;
+          ed.focus();
+          const sel = window.getSelection();
+          if (!sel) return;
+          const range = document.createRange();
+          range.selectNodeContents(ed);
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }"""
+    )
     page.keyboard.press("Backspace")
-    # Chunk type for long prompts (Slate)
+    page.wait_for_timeout(100)
     page.keyboard.type(prompt, delay=2)
     page.wait_for_timeout(300)
 
@@ -780,17 +860,15 @@ def generate_clip(
     ensure_agent_session(page)
     ensure_orbit_agent_instruction(page)
     ensure_agent_session(page)
-    # Library upload (backup) + prompt attachment (required for identity)
-    try:
-        upload_orbit_ref(page, ref)
-    except Exception as e:
-        print(f"  library upload skipped: {e}", flush=True)
-    ensure_agent_session(page)
-    attached = attach_orbit_to_prompt(page, ref)
-    ensure_agent_session(page)
+    # Prompt text first, then bind Seedance via Add to Prompt (required).
+    # Do not rely on header Add Media / library-only upload.
     set_prompt(page, flow_prompt(prompt))
+    attached = attach_orbit_to_prompt(page, ref)
+    # Re-check chip survived; if Flow dropped it, abort rather than off-model gen
+    if _prompt_attachment_count(page) < 1:
+        raise RuntimeError("Orbit prompt chip missing after attach — aborting")
     submit_create(page)
-    print("  submitted Create (identity-locked)", flush=True)
+    print("  submitted Create (identity-locked, Seedance attached)", flush=True)
     media_id = wait_and_download(
         page, dest, before_ids=before, timeout_s=timeout_s
     )
