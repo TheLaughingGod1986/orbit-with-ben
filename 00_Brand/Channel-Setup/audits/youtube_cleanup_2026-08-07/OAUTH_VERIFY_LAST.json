@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "scopesBefore": [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube.readonly"
+  ],
+  "forceSslGranted": false,
+  "missingScopes": [
+    "https://www.googleapis.com/auth/youtube.force-ssl"
+  ],
+  "reconnectRequired": true,
+  "authorizationUrl": "[redacted-from-disk-optional]",
+  "remediation": "Open authorizationUrl while Content Ops is running, complete consent, then re-run npm run youtube:verify-oauth",
+  "note": "Tokens are never printed. State must go through /api/oauth/google/start for CSRF — prefer that UI path.",
+  "preferredReconnect": "https://will-mapping-science-drops.trycloudflare.com/settings/connections"
+}

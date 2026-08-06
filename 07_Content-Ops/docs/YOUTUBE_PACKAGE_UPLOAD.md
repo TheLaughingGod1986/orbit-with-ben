@@ -41,6 +41,24 @@ Single-file uploads without a package: `npm run youtube:upload`.
 
 Requires Google reconnect after scope update so `youtube.force-ssl` is granted (comments + playlists + **videos.update** for cleanup).
 
+## Recovery + OAuth safeguards (2026-08-07)
+
+```bash
+# Detect force-ssl + safe no-op videos.update on canonical BH long
+npm run youtube:verify-oauth
+
+# Compare live shelf vs FINAL_SHELF_VERIFY.json (read-only)
+npm run youtube:shelf-verify
+
+# Non-destructive recovery checkpoint (24h|48h|72h|day7|live)
+npm run youtube:recovery-status -- --checkpoint 72h
+```
+
+Config: `00_Brand/Channel-Setup/YOUTUBE_RECOVERY_MODE.json`  
+Registry: `00_Brand/Channel-Setup/YOUTUBE_CANONICAL_REGISTRY.json`
+
+`youtube:package` blocks: replacements, duplicate fingerprints, held mutations, >1 Short/day in recovery, schedule-minute collisions, and blind retries after uncertain uploads.
+
 ## Hard rules (2026-08-07 lock)
 
 1. **ONE VIDEO = ONE UPLOAD** — never CDP-replace a live public ID.
