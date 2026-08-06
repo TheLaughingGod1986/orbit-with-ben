@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+raise SystemExit(
+    "DISABLED: _cleanup_visibility_cdp.py uses INVERTED canonical IDs "
+    "(promotes RCs6MMxF3ko/IwpO33AJaPQ and demotes 3xrxdmaOwJI/JRfhE6yWom4/L2OFjL4neOo). "
+    "This caused shelf drift. Use APPROVED FINAL_SHELF_VERIFY canonicals only. "
+    "See FULL_CATALOGUE_REPAIR_REPORT.md."
+)
+
+
+# --- ORIGINAL QUARANTINED SOURCE BELOW ---
+#!/usr/bin/env python3
 """Orbit cleanup: restore canonical public shelf + privatize/hold duplicates.
 
 ONE VIDEO = ONE UPLOAD. Uses Studio CDP (API lacks force-ssl update scope).
