@@ -49,9 +49,9 @@ python3 02_Video-Projects/_template_NNN_Episode-Slug/07_Edit-Project/_generate_v
   --beats beats.json --out-dir ../04_Generated-Clips/01_Raw --limit 1
 ```
 
-Helper flow: new project → Settings (Never confirm + **Veo 3.1 - Fast** + 16:9) → upload Orbit ref → prompt → Create → poll media → download → **strip audio**.
+Helper flow: new project → Settings (Never confirm + **Veo 3.1 - Fast** + 16:9) → Agent Instruction identity lock → **attach Orbit ref in the prompt** (not library-only) → image-to-video prompt → Create → poll media → download → **strip audio**.
 
-Always strip audio (helper does this). Mix British VO from ElevenLabs in the edit.
+**Character QA (blocking):** reject clips with white chest disc, two-sphere head/body split, ear rings/headphones, legs, or missing cream circular eyes — regenerate; do not ship near-miss mascots.
 
 ## Debug
 

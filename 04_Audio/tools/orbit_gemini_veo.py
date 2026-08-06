@@ -65,7 +65,9 @@ IDENTITY_LOCK = (
 NEGATIVE = (
     "Eiffel Tower, Paris, lattice iron tower, blueprint, parchment, paper schematic, "
     "architectural drawing, Explore gallery overlay, white helmet, white belly, "
-    "mustard charcoal redesign, legs, feet, walking, biped, HUD text, face text, "
+    "large white chest disc, white circular chest port, mustard charcoal redesign, "
+    "separate head and body spheres, neck joint split body, ear rings, headphones, "
+    "side head discs, legs, feet, walking, biped, HUD text, face text, "
     "Orbit lettering, blank visor, neon outline only face, slit LED eyes, "
     "socket ring eyes, cyan crescent eyes, different robot species, photoreal human, "
     "dialogue, speech, talking, narrator, lip sync"

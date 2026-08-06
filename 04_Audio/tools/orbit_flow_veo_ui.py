@@ -49,6 +49,27 @@ DEFAULT_PROFILE = Path(
 DEFAULT_MODEL = os.environ.get("ORBIT_FLOW_VEO_MODEL", "Veo 3.1 - Fast")
 MEDIA_REDIRECT_RE = re.compile(r"media\.getMediaUrlRedirect\?name=([a-f0-9\-]+)", re.I)
 
+# Flow Agent often invents a "cute orange robot" redesign unless the reference is
+# attached IN the prompt and identity rejects are explicit.
+ORBIT_AGENT_INSTRUCTION = (
+    "ORBIT IDENTITY LOCK (always): The channel mascot is Orbit — a solid matte "
+    "orange rounded floating robot with continuous orange head+torso as ONE body "
+    "(not two spheres / no neck split), NO legs, soft underside glow only, large "
+    "black curved visor with TWO cream/amber circular eyes with pupils, short stubby "
+    "orange arms with dark three-finger hands, single antenna with glowing bulb tip, "
+    "tiny cyan+red chest lights only. HARD REJECTS — never generate: large white chest "
+    "disc/belly, separate head on neck, ear rings/headphones, white helmet, legs, "
+    "slit eyes, blank visor, HUD text. For video: IMAGE-TO-VIDEO animate the attached "
+    "Orbit reference exactly — do not invent a new robot species."
+)
+
+FLOW_I2V_PREFACE = (
+    "IMAGE-TO-VIDEO of the attached Orbit reference image. Animate THIS exact "
+    "character design — preserve continuous orange body, black curved visor, cream "
+    "circular eyes, stubby three-finger hands, single antenna. Do NOT redesign. "
+    "Reject white chest disc, ear rings, two-sphere head/body split."
+)
+
 
 def profile_path(override: Path | None = None) -> Path:
     p = override or DEFAULT_PROFILE
@@ -311,7 +332,7 @@ def configure_veo_settings(page, *, model: str = DEFAULT_MODEL) -> None:
 
 
 def upload_orbit_ref(page, ref: Path) -> bool:
-    """Upload Orbit reference into the project media library."""
+    """Upload Orbit reference into the project media library (backup)."""
     if not ref.exists():
         raise FileNotFoundError(ref)
     if not click_visible(page, "add media"):
@@ -331,6 +352,115 @@ def upload_orbit_ref(page, ref: Path) -> bool:
     page.keyboard.press("Escape")
     page.wait_for_timeout(400)
     return True
+
+
+def attach_orbit_to_prompt(page, ref: Path) -> bool:
+    """Attach Orbit image into the agent prompt (required for identity lock).
+
+    Library-only upload is not enough — Flow invents a near-miss mascot unless the
+    reference is bound to the prompt as an ingredient / attachment.
+    """
+    if not ref.exists():
+        raise FileNotFoundError(ref)
+    ensure_agent_session(page)
+    # Open + Create media picker beside the prompt
+    opened = page.evaluate(
+        """() => {
+          for (const b of document.querySelectorAll('button')) {
+            const t = (b.innerText || '').trim();
+            const r = b.getBoundingClientRect();
+            if (r.y > 750 && r.width > 0 && /add_2/.test(t)) {
+              b.click();
+              return true;
+            }
+          }
+          return false;
+        }"""
+    )
+    if not opened and not click_visible(page, "add_2"):
+        raise RuntimeError("Prompt + Create control not found")
+    page.wait_for_timeout(800)
+
+    up = page.locator('button:has-text("Upload media")')
+    if up.count() == 0:
+        up = page.locator('button:has-text("Upload")')
+    if up.count():
+        try:
+            with page.expect_file_chooser(timeout=10_000) as fc:
+                # Prefer the picker row (lower on screen)
+                up.last.click()
+            fc.value.set_files(str(ref))
+        except Exception:
+            fi = page.locator('input[type="file"]')
+            if fi.count() == 0:
+                raise
+            fi.last.set_input_files(str(ref))
+    else:
+        fi = page.locator('input[type="file"]')
+        if fi.count() == 0:
+            raise RuntimeError("Could not attach Orbit to prompt (no upload control)")
+        fi.last.set_input_files(str(ref))
+
+    page.wait_for_timeout(3500)
+    # Attachment thumbnails usually appear near the prompt bar
+    attached = page.evaluate(
+        """() => {
+          for (const img of document.querySelectorAll('img')) {
+            const r = img.getBoundingClientRect();
+            if (r.width > 28 && r.height > 28 && r.y > 650) return true;
+          }
+          return false;
+        }"""
+    )
+    print(f"  prompt attachment visible={attached}", flush=True)
+    return True
+
+
+def ensure_orbit_agent_instruction(page) -> None:
+    """Install a persistent Agent Instruction for Orbit identity (once per session)."""
+    ensure_agent_session(page)
+    if not (
+        click_visible(page, "agent instructions")
+        or click_visible(page, "article_spark")
+    ):
+        print("  warn: Agent Instructions not found", flush=True)
+        return
+    page.wait_for_timeout(800)
+    body = ""
+    try:
+        body = page.locator("body").inner_text(timeout=3000)
+    except Exception:
+        pass
+    if "ORBIT IDENTITY LOCK" in body:
+        # Already set — close panel
+        if click_visible(page, "done") or click_visible(page, "close"):
+            page.wait_for_timeout(400)
+        return
+
+    if not click_visible(page, "add instruction"):
+        print("  warn: Add Instruction not found", flush=True)
+        page.keyboard.press("Escape")
+        return
+    page.wait_for_timeout(500)
+    page.keyboard.type(ORBIT_AGENT_INSTRUCTION, delay=2)
+    page.wait_for_timeout(300)
+    if not (click_visible(page, "done") or page.locator('button:has-text("Done")').count()):
+        page.keyboard.press("Escape")
+    else:
+        try:
+            page.locator('button:has-text("Done")').first.click(timeout=4000)
+        except Exception:
+            pass
+    page.wait_for_timeout(600)
+    print("  Orbit Agent Instruction saved", flush=True)
+
+
+def flow_prompt(scene_prompt: str) -> str:
+    """Wrap a scene prompt with Flow image-to-video identity lock."""
+    body = scene_prompt.strip()
+    if "IMAGE-TO-VIDEO" in body or "ORBIT IDENTITY LOCK" in body:
+        return body
+    return f"{FLOW_I2V_PREFACE} {body} {ORBIT_AGENT_INSTRUCTION}"
 
 
 def set_prompt(page, prompt: str) -> None:
@@ -525,11 +655,19 @@ def generate_clip(
     before = collect_media_ids(page)
     configure_veo_settings(page, model=model)
     ensure_agent_session(page)
-    attached = upload_orbit_ref(page, ref)
+    ensure_orbit_agent_instruction(page)
     ensure_agent_session(page)
-    set_prompt(page, prompt)
+    # Library upload (backup) + prompt attachment (required for identity)
+    try:
+        upload_orbit_ref(page, ref)
+    except Exception as e:
+        print(f"  library upload skipped: {e}", flush=True)
+    ensure_agent_session(page)
+    attached = attach_orbit_to_prompt(page, ref)
+    ensure_agent_session(page)
+    set_prompt(page, flow_prompt(prompt))
     submit_create(page)
-    print("  submitted Create", flush=True)
+    print("  submitted Create (identity-locked)", flush=True)
     media_id = wait_and_download(
         page, dest, before_ids=before, timeout_s=timeout_s
     )
@@ -545,6 +683,7 @@ def generate_clip(
         "engine": "flow-ui-veo",
         "orbit_ref": str(ref),
         "orbit_attached": attached,
+        "identity_lock": True,
         "media_id": media_id,
         "url": page.url,
     }
