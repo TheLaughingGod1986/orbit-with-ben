@@ -1,4 +1,4 @@
-# Episode template — Growth System v2 + AI Studio Veo (Ultra)
+# Episode template — Growth System v2 + Google Flow Veo (Ultra)
 
 Copy this folder to start a new long:
 
@@ -19,9 +19,9 @@ cp -R 02_Video-Projects/_template_NNN_Episode-Slug \
    ```
 4. **PASS only then:**
    - VO → ElevenLabs Ben Orbit Narrator → `02_Voiceover/`
-   - CG → AI Studio Veo UI (Ultra):
+   - CG → Google Flow Veo UI (Ultra):
      ```bash
-     # One-time: python3 04_Audio/tools/orbit_aistudio_veo_ui.py --login
+     # One-time: python3 04_Audio/tools/orbit_flow_veo_ui.py --login
      cd 07_Edit-Project
      python3 _generate_veo_from_beats.py --beats beats.json --out-dir ../04_Generated-Clips/01_Raw
      ```
@@ -32,10 +32,9 @@ cp -R 02_Video-Projects/_template_NNN_Episode-Slug \
 
 | Job | Tool |
 |-----|------|
-| CG | AI Studio Veo UI / Ultra (`orbit_aistudio_veo_ui.py`) |
-| CG fallback | Gemini API (`orbit_gemini_veo.py` — `--engine api`) |
+| CG | Google Flow Veo UI / Ultra (`orbit_flow_veo_ui.py`) |
+| CG secondary | AI Studio UI (`--engine aistudio`) |
+| CG last resort | Gemini API (`orbit_gemini_veo.py` — `--engine api`) |
 | VO | ElevenLabs TTS only |
 | Gate | `npm run gate:episode` |
 | Brief | `npm run brief:next -- --file metrics.json` |
-
-Docs: `YOUTUBE_GROWTH_SYSTEM_V2.md` · `docs/GEMINI_VEO_CG.md`

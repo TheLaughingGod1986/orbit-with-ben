@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Orbit CG helpers + optional Gemini Veo API fallback.
 
-DEFAULT picture path for new episodes is AI Studio Ultra UI:
-  04_Audio/tools/orbit_aistudio_veo_ui.py
+DEFAULT picture path for new episodes is Google Flow Ultra UI:
+  04_Audio/tools/orbit_flow_veo_ui.py
 
-This module still owns shared prompt locks (`build_prompt`, IDENTITY_LOCK,
-NEGATIVE, strip_audio) and an optional API path when the UI is unavailable.
+Secondary UI: AI Studio (`orbit_aistudio_veo_ui.py`) — often needs a paid API key.
+This module owns shared prompt locks (`build_prompt`, IDENTITY_LOCK,
+NEGATIVE, strip_audio) and an optional API path when UIs are unavailable.
 API billing is separate from Google One Ultra — avoid for routine clip volume.
 
 Do NOT use ElevenLabs Image & Video for CG.
@@ -15,8 +16,8 @@ Channel VO stays on ElevenLabs TTS → Ben Orbit Narrator (see orbit_voice.py).
 API fallback auth (optional):
   export GEMINI_API_KEY=...   # or GOOGLE_API_KEY
 
-Examples (prefer UI):
-  python3 04_Audio/tools/orbit_aistudio_veo_ui.py --probe
+Examples (prefer Flow UI):
+  python3 04_Audio/tools/orbit_flow_veo_ui.py --probe
 
 API fallback:
   python3 04_Audio/tools/orbit_gemini_veo.py --probe

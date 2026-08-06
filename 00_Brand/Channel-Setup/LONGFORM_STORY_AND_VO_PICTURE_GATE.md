@@ -146,11 +146,11 @@ Watch with VO only once, then picture+VO:
 2. Full script with `[VISUAL MUST]` / `[ORBIT ACTS]` / `[TEACH]`  
 3. Scene board / prompts from those markers only  
 4. ElevenLabs **VO** (Ben Orbit Narrator) → lock duration  
-5. Picture gen via **AI Studio Veo UI / Ultra** (`orbit_aistudio_veo_ui.py`) / edit **matched to VO timeline** — not ElevenLabs Image & Video; API key only as fallback  
+5. Picture gen via **Google Flow Veo UI / Ultra** (`orbit_flow_veo_ui.py`) / edit **matched to VO timeline** — not ElevenLabs Image & Video; AI Studio / API key only as fallback  
 6. Chapter cards + brand sting + subscribe outro  
 7. QA gate → `PRODUCTION_CHECKLIST_V2.md` → package → schedule  
 
-**Do not** lock VO or spend **AI Studio Ultra / Veo** credits until steps 0 and 0b are signed off.
+**Do not** lock VO or spend **Flow Ultra / Veo** credits until steps 0 and 0b are signed off.
 
 Templates: `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` · `SCRIPT_REVIEW_SCORECARD.md` · `PRODUCTION_CHECKLIST_V2.md` · `VIDEO_PACKAGE_TEMPLATE.md` · cutscenes: `CUTSCENE_RULES.md`
 

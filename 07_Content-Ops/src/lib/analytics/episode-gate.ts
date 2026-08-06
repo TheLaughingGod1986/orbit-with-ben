@@ -234,11 +234,11 @@ export function gateEpisode(opts: {
   const envExample = path.join(projectDir, "07_Edit-Project", ".env.example");
   if (!exists(envExample) && !exists(path.join(projectDir, "07_Edit-Project", ".env"))) {
     checks.push({
-      id: "aistudio_env",
+      id: "flow_env",
       ok: true,
       severity: "warn",
       message:
-        "No 07_Edit-Project/.env.example — ensure AI Studio Ultra login (orbit_aistudio_veo_ui.py --login) before Veo spend.",
+        "No 07_Edit-Project/.env.example — ensure Google Flow Ultra login (orbit_flow_veo_ui.py --login) before Veo spend.",
     });
   }
 

@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Orbit — next video kickoff (Growth System v2)
 
-When the user asks to **build / start / plan the next video**, **new episode**, **next long**, or similar — **do this first**. Do not jump to VO, AI Studio Veo, Seedance, or picture gen.
+When the user asks to **build / start / plan the next video**, **new episode**, **next long**, or similar — **do this first**. Do not jump to VO, Flow Veo, Seedance, or picture gen.
 
 ## Step 0 — gate (blocking)
 
@@ -20,7 +20,7 @@ When the user asks to **build / start / plan the next video**, **new episode**, 
    cd 07_Content-Ops && npm run review:script -- --file <script.md>
    ```
    Below 90 = **REJECT** — rewrite. Do not generate audio/video.
-8. **Episode gate (blocking CLI)** before VO / AI Studio Veo:
+8. **Episode gate (blocking CLI)** before VO / Flow Veo:
    ```bash
    cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/<NNN_Slug>
    ```
@@ -32,9 +32,9 @@ Copy `02_Video-Projects/_template_NNN_Episode-Slug/` → `02_Video-Projects/NNN_
 
 ## Then produce
 
-VO (**ElevenLabs** Ben Orbit Narrator) → picture (**AI Studio Veo UI / Ultra** via `orbit_aistudio_veo_ui.py` / template `_generate_veo_from_beats.py`, silent) → edit → `templates/PRODUCTION_CHECKLIST_V2.md` → YouTube package upload.
+VO (**ElevenLabs** Ben Orbit Narrator) → picture (**Google Flow Veo UI / Ultra** via `orbit_flow_veo_ui.py` / template `_generate_veo_from_beats.py`, silent) → edit → `templates/PRODUCTION_CHECKLIST_V2.md` → YouTube package upload.
 
-Do **not** use ElevenLabs Image & Video for CG. Do **not** default to `GEMINI_API_KEY` (API is fallback only).
+Do **not** use ElevenLabs Image & Video for CG. Do **not** default to `GEMINI_API_KEY` (Flow first; AI Studio / API are fallbacks only).
 
 After shipping, refresh the next brief from Studio metrics:
 

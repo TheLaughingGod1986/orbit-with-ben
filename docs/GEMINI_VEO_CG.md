@@ -1,13 +1,18 @@
-# Orbit CG — Google AI Studio Veo UI (Ultra)
+# Orbit CG — Google Flow Veo UI (Ultra)
 
 **Locked:** 2026-08-06  
-**CG (default):** Google AI Studio Veo via Playwright (`orbit_aistudio_veo_ui.py`) using **Google One → AI Ultra**  
-**CG (fallback only):** Gemini API key via `orbit_gemini_veo.py` — billed separately; avoid for routine work  
+**CG (default):** Google Flow Veo via Playwright (`orbit_flow_veo_ui.py`) using **Google One → AI Ultra** Flow credits  
+**CG (secondary):** AI Studio Veo UI (`orbit_aistudio_veo_ui.py`) — often needs a **paid Gemini API key** selected even on Ultra  
+**CG (last resort):** Gemini API key via `orbit_gemini_veo.py` — billed separately; avoid for routine work  
 **VO:** ElevenLabs TTS — Ben Orbit Narrator only (unchanged)
 
-## Why Ultra UI (not API)
+## Why Flow (not API / not AI Studio alone)
 
-Google One AI Ultra boosts **AI Studio web** quotas. The Gemini **API** (`GEMINI_API_KEY`) is a different billing path and is usually more expensive for episode clip volume. Automate the Studio UI so Ultra applies.
+Google One AI Ultra includes **Flow** credits for Veo. Automate `labs.google/fx/tools/flow` so Ultra applies.
+
+AI Studio’s Veo playground frequently still requires a **paid API key** in the UI (“No API key selected”) even when the ULTRA badge is visible — that path is secondary.
+
+The Gemini **API** (`GEMINI_API_KEY`) is a different billing path and is usually more expensive for episode clip volume.
 
 ElevenLabs Image & Video remains banned for CG (cost, Explore/Eiffel, American speech).
 
@@ -16,57 +21,52 @@ ElevenLabs Image & Video remains banned for CG (cost, Explore/Eiffel, American s
 ```bash
 cd 04_Audio/tools
 pip install playwright
-playwright install chromium
+playwright install chromium   # or use channel=chrome via the helper
 
 # Headed login with the Ultra Google account — saves cookies to profile
-python3 orbit_aistudio_veo_ui.py --login
+python3 orbit_flow_veo_ui.py --login
 ```
 
 Profile default: `~/code/youtube/.playwright-aistudio-profile`  
-Override: `export ORBIT_AISTUDIO_PROFILE=/path/to/profile`
+(same Google session works for Flow + AI Studio)  
+Override: `export ORBIT_FLOW_PROFILE=/path/to/profile`
 
-### Paid API key (required for Veo)
-
-Google One **Ultra** signs you into Studio, but **Veo GenerateVideo still needs a paid Gemini API key selected** in the Playground (button: “No API key selected”). Ultra alone does not unlock Veo.
-
-1. Open https://aistudio.google.com/api-keys (same Ultra account)
-2. **Create API key** in an imported project
-3. **Set up billing** / link a paid project (Cloud billing)
-4. In Veo Playground, open the key control and **select that paid key**
-5. Re-run `orbit_aistudio_veo_ui.py --probe`
-
-If Create key says “request is suspicious”, finish key + billing **manually** in the browser (automation is often blocked there).
+Confirm the **ULTRA** badge on Flow after login.
 
 ## Generate
 
 ```bash
-# Probe one silent Orbit clip (Ultra UI)
-python3 04_Audio/tools/orbit_aistudio_veo_ui.py --probe
+# Probe one silent Orbit clip (Flow Ultra)
+python3 04_Audio/tools/orbit_flow_veo_ui.py --probe
 
 # Custom scene
-python3 04_Audio/tools/orbit_aistudio_veo_ui.py \
+python3 04_Audio/tools/orbit_flow_veo_ui.py \
   --prompt "Orbit stands on Europa ice, cream eyes wide, Jupiter huge in sky" \
   --out /tmp/europa_orbit.mp4
 
-# Episode beats (template)
+# Episode beats (template — engine=flow default)
 python3 02_Video-Projects/_template_NNN_Episode-Slug/07_Edit-Project/_generate_veo_from_beats.py \
   --beats beats.json --out-dir ../04_Generated-Clips/01_Raw --limit 1
 ```
+
+Helper flow: new project → Settings (Never confirm + **Veo 3.1 - Fast** + 16:9) → upload Orbit ref → prompt → Create → poll media → download → **strip audio**.
 
 Always strip audio (helper does this). Mix British VO from ElevenLabs in the edit.
 
 ## Debug
 
 ```bash
-python3 04_Audio/tools/orbit_aistudio_veo_ui.py --dump-ui /tmp/aistudio_dump --headed
-python3 04_Audio/tools/orbit_aistudio_veo_ui.py --dry-run --probe
+python3 04_Audio/tools/orbit_flow_veo_ui.py --dump-ui /tmp/flow_dump --headed
+python3 04_Audio/tools/orbit_flow_veo_ui.py --dry-run --probe
 ```
 
-## Optional API fallback
-
-Only if the UI automation is broken:
+## Secondary / fallback
 
 ```bash
+# AI Studio UI (may require paid API key in Playground)
+python3 04_Audio/tools/orbit_aistudio_veo_ui.py --probe
+
+# API last resort
 export GEMINI_API_KEY=...
 python3 04_Audio/tools/orbit_gemini_veo.py --probe
 # or

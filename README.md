@@ -16,7 +16,7 @@ asking the biggest questions in the universe.*
 **Flywheel / release:** `CONTENT_FLYWHEEL_TEMPLATE.md` · `RELEASE_WEEK_CHECKLIST.md`  
 **Video backlog:** `00_Brand/Channel-Setup/VIDEO_BACKLOG.json`  
 **Long-form quality gate (8–12 min · cold open · VO–picture):** `00_Brand/Channel-Setup/LONGFORM_STORY_AND_VO_PICTURE_GATE.md`  
-**CG = AI Studio Veo UI / Ultra** (`04_Audio/tools/orbit_aistudio_veo_ui.py` · `docs/GEMINI_VEO_CG.md`) · **VO = ElevenLabs** Ben Orbit Narrator  
+**CG = Google Flow Veo UI / Ultra** (`04_Audio/tools/orbit_flow_veo_ui.py` · `docs/GEMINI_VEO_CG.md`) · **VO = ElevenLabs** Ben Orbit Narrator  
 **Pre-build vidIQ audit (blocking before gen):** `00_Brand/Channel-Setup/PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`
 **Retention & growth (locked going forward):** `00_Brand/Channel-Setup/RETENTION_AND_GROWTH_LOCKED.md`  
 **Script reviewer (≥90):** `cd 07_Content-Ops && npm run review:script -- --file <script.md>`  

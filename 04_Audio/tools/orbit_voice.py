@@ -26,10 +26,10 @@ DESCRIPTION = (
     "theatrical, never trailer-like."
 )
 
-# Append to every AI Studio Veo / Seedance prompt (never ElevenLabs Image & Video for new CG).
+# Append to every Flow / AI Studio Veo / Seedance prompt (never EL Image & Video for new CG).
 # Video models often invent American narration — never use that audio.
 # Channel VO = ElevenLabs Ben Orbit Narrator only (VOICE_ID above).
-# Default CG engine: orbit_aistudio_veo_ui.py (Ultra UI). API = fallback only.
+# Default CG engine: orbit_flow_veo_ui.py (Ultra Flow). API = last-resort only.
 CG_SILENT_AUDIO_BLOCK = (
     "SILENT PICTURE ONLY: no dialogue, no narration, no voiceover, no spoken "
     "words, no lip sync speech, no American or any-language talking. No announcer. "

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Orbit CG via Google AI Studio Veo UI (Ultra plan — default picture path).
+"""Orbit CG via Google AI Studio Veo UI (secondary Ultra path).
 
-Uses Playwright against aistudio.google.com so Google One → AI Ultra quotas apply.
-Do NOT use GEMINI_API_KEY for routine episode CG — API billing is separate/expensive.
+Prefer Google Flow for routine CG:
+  04_Audio/tools/orbit_flow_veo_ui.py
+
+AI Studio often still requires a paid Gemini API key selected in the Playground
+even when the ULTRA badge is visible. Keep this helper as a secondary UI path.
 
 Channel VO stays on ElevenLabs TTS → Ben Orbit Narrator (see orbit_voice.py).
 
@@ -11,11 +14,9 @@ One-time auth (headed):
 
 Generate:
   python3 04_Audio/tools/orbit_aistudio_veo_ui.py --probe
-  python3 04_Audio/tools/orbit_aistudio_veo_ui.py \\
-    --prompt "Orbit floats beside JWST…" --out /tmp/orbit_test.mp4
 
-Optional API fallback (only if UI is broken):
-  python3 04_Audio/tools/orbit_gemini_veo.py --probe
+Preferred default:
+  python3 04_Audio/tools/orbit_flow_veo_ui.py --probe
 """
 from __future__ import annotations
 
@@ -150,21 +151,16 @@ def looks_logged_in(page) -> bool:
     low = body.lower()
     if "sign in" in low and ("google account" in low or "to continue to" in low):
         return False
-    # Studio chrome / Ultra markers
-    if any(
-        x in low
-        for x in (
-            "google ai studio",
-            "enter a prompt",
-            "generate video",
-            "run settings",
-            "veo",
-            "prompt gallery",
-        )
-    ):
+    # Marketing landing ("Get started") is not a real Studio session
+    if "get started" in low and "generate videos with veo" not in low and "ms-video" not in (page.content()[:2000].lower() if False else ""):
+        if page.locator("ms-video-prompt").count() == 0 and page.locator("ms-run-button").count() == 0:
+            if "playground" not in low and "untitled prompt" not in low:
+                return False
+    if page.locator("ms-video-prompt").count() or page.locator("ms-run-button").count():
         return True
-    # Signed-in studio often has avatar / settings without the marketing sign-in wall
-    return "sign in with google" not in low
+    if any(x in low for x in ("untitled prompt", "run settings", "playground", "benoats@", "ultra")):
+        return True
+    return "sign in with google" not in low and "aistudio.google.com" in url
 
 
 def navigate_video_studio(page, model: str = DEFAULT_MODEL) -> str:

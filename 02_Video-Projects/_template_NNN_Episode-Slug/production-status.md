@@ -14,4 +14,4 @@
 
 - [ ] Pre-build vidIQ signed  
 - [ ] Script ≥ 90  
-- [ ] AI Studio Ultra login (`orbit_aistudio_veo_ui.py --login`)  
+- [ ] Google Flow Ultra login (`orbit_flow_veo_ui.py --login`)  
