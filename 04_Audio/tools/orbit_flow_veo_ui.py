@@ -46,7 +46,10 @@ DEFAULT_PROFILE = Path(
         ),
     )
 )
-DEFAULT_MODEL = os.environ.get("ORBIT_FLOW_VEO_MODEL", "Veo 3.1 - Fast")
+DEFAULT_MODEL = os.environ.get("ORBIT_FLOW_VEO_MODEL", "Veo 3.1 - Quality")
+# Flow video CG must stay on Veo 3.x — never Omni Flash / Nano Banana for Orbit motion.
+VEO3_MODEL_RE = re.compile(r"^Veo\s*3(\.\d+)?\s*-\s*(Lite|Fast|Quality)$", re.I)
+FORBIDDEN_VIDEO_MODELS = ("Omni Flash", "Nano Banana", "Nano Banana 2")
 MEDIA_REDIRECT_RE = re.compile(r"media\.getMediaUrlRedirect\?name=([a-f0-9\-]+)", re.I)
 
 # Flow Agent often invents a "cute orange robot" redesign unless the reference is

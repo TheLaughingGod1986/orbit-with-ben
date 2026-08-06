@@ -49,9 +49,13 @@ python3 02_Video-Projects/_template_NNN_Episode-Slug/07_Edit-Project/_generate_v
   --beats beats.json --out-dir ../04_Generated-Clips/01_Raw --limit 1
 ```
 
-Helper flow: new project → Settings (Never confirm + **Veo 3.1 - Fast** + 16:9) → Agent Instruction identity lock → **attach Orbit ref in the prompt** (not library-only) → image-to-video prompt → Create → poll media → download → **strip audio**.
+Helper flow: new project → Settings (Never confirm + **Veo 3.1 - Quality** + 16:9) → Agent Instruction identity lock → **attach Orbit ref in the prompt** (not library-only) → image-to-video prompt → Create → poll media → download → **strip audio**.
+
+**Video model lock:** Flow CG must use **Veo 3.x** (`Veo 3.1 - Quality` / Fast / Lite). Never Omni Flash or Nano Banana for Orbit motion clips. Override: `ORBIT_FLOW_VEO_MODEL='Veo 3.1 - Fast'`.
 
 **Character QA (blocking):** reject clips with white chest disc, two-sphere head/body split, ear rings/headphones, legs, or missing cream circular eyes — regenerate; do not ship near-miss mascots.
+
+Always strip audio (helper does this). Mix British VO from ElevenLabs in the edit.
 
 ## Debug
 
