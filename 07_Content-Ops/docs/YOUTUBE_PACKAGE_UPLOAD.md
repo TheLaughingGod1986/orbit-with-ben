@@ -39,7 +39,18 @@ Single-file uploads without a package: `npm run youtube:upload`.
 | First comment text | yes (`commentThreads.insert`) |
 | Playlist add | yes (`playlistItems.insert`) |
 
-Requires Google reconnect after scope update so `youtube.force-ssl` is granted (comments + playlists).
+Requires Google reconnect after scope update so `youtube.force-ssl` is granted (comments + playlists + **videos.update** for cleanup).
+
+## Hard rules (2026-08-07 lock)
+
+1. **ONE VIDEO = ONE UPLOAD** — never CDP-replace a live public ID.
+2. Demote old IDs to private (or 31 Dec hold) before shipping a new ID.
+3. Post-upload `assertYouTubeVideoState` runs automatically in the adapter.
+4. Default category **Education (27)** · `defaultAudioLanguage=en-GB`.
+5. `notifySubscribers=true` only for immediate public uploads (not scheduled `publishAt`).
+6. Quarantined scripts live under `11_Upload-Package/Schedule/DISABLED__*` — do not run.
+
+Stabilization plan: `00_Brand/Channel-Setup/audits/youtube_cleanup_2026-08-07/RECOVERY_7_DAY.md`.
 
 ## Studio finish (required gaps)
 

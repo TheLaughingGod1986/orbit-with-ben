@@ -1,0 +1,105 @@
+{
+  "ok": false,
+  "items": [
+    {
+      "id": "IwpO33AJaPQ",
+      "target": "private",
+      "before": "Visibility Public",
+      "after": "Visibility Private",
+      "oembed_public": false,
+      "ok": true,
+      "strategies": [
+        "role_radio",
+        {
+          "hit": {
+            "x": 919,
+            "y": 337,
+            "t": "Private",
+            "w": 79.4609375,
+            "h": 26
+          }
+        },
+        "done",
+        {
+          "save_click": true,
+          "i": 0
+        }
+      ]
+    },
+    {
+      "id": "RCs6MMxF3ko",
+      "target": "private",
+      "before": "Visibility Public",
+      "after": "Visibility Private",
+      "oembed_public": false,
+      "ok": true,
+      "strategies": [
+        "role_radio",
+        {
+          "hit": {
+            "x": 919,
+            "y": 337,
+            "t": "Private",
+            "w": 79.4609375,
+            "h": 26
+          }
+        },
+        "done",
+        {
+          "save_click": true,
+          "i": 0
+        }
+      ]
+    },
+    {
+      "id": "JRfhE6yWom4",
+      "target": "public",
+      "before": "Visibility Private",
+      "after": "Visibility Private",
+      "oembed_public": false,
+      "ok": false,
+      "strategies": [
+        "role_radio",
+        {
+          "hit": {
+            "x": 919,
+            "y": 457,
+            "t": "Public",
+            "w": 500,
+            "h": 26
+          }
+        },
+        "done_fail:TimeoutError",
+        {
+          "save_click": false,
+          "i": 0
+        }
+      ]
+    },
+    {
+      "id": "L2OFjL4neOo",
+      "target": "public",
+      "before": "Visibility Private",
+      "after": "Visibility Public",
+      "oembed_public": true,
+      "ok": true,
+      "strategies": [
+        "role_radio",
+        {
+          "hit": {
+            "x": 919,
+            "y": 457,
+            "t": "Public",
+            "w": 500,
+            "h": 26
+          }
+        },
+        "done",
+        {
+          "save_click": true,
+          "i": 0
+        }
+      ]
+    }
+  ]
+}

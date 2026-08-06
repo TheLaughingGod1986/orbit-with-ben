@@ -213,6 +213,44 @@ describe("youtube dry-run publish", () => {
     expect(result.scheduledOnPlatform).toBe(true);
     expect(result.scheduledFor).toBe(publishAt.toISOString());
     expect(result.responseSummary).toContain("publishAt");
+    expect(result.responseSummary).toContain("categoryId");
+    expect(result.responseSummary).toContain("en-GB");
+  });
+
+  it("dry-run public immediate upload sets notifySubscribers true", async () => {
+    const adapter = new YouTubePublishingAdapter();
+    const result = await adapter.publish(
+      {
+        id: "post-public",
+        platform: "youtube_shorts",
+        title: "Public Short",
+        caption: "hello",
+        uploadStatus: "ready",
+        privacyStatus: "public",
+        madeForKids: false,
+        mediaFilePath: "/tmp/does-not-need-to-exist-for-dry-run.mp4",
+      },
+      {
+        id: "conn1",
+        platform: "youtube_shorts",
+        connectionStatus: "connected",
+        grantedScopes: JSON.stringify([
+          "https://www.googleapis.com/auth/youtube.upload",
+          "https://www.googleapis.com/auth/youtube.readonly",
+        ]),
+        accessTokenEncrypted: encryptSecret("fake"),
+      },
+      {
+        dryRun: true,
+        workerId: "test",
+        jobId: "job-public",
+        attemptNumber: 1,
+        accessToken: "fake",
+      },
+    );
+    expect(result.success).toBe(true);
+    expect(result.responseSummary).toContain('"notifySubscribers":true');
+    expect(result.responseSummary).toContain('"categoryId":"27"');
   });
 });
 
