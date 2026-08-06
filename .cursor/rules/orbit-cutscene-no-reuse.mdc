@@ -25,12 +25,12 @@ Before locking an episode edit, size the clip inventory so **usable 1× motion c
 - Example: ~10–12 min VO picture ≈ need **~75–100+ unique 8s clips** (scale up for longer VO).
 - If coverage is short: add **new unique variants** (extra prompts / p1/p2/p3 takes) — never stretch, loop, or long-still the gap.
 
-## Gemini Veo generation guards (default CG path)
+## AI Studio Veo UI guards (default CG path — Ultra)
 
-1. Use **`04_Audio/tools/orbit_gemini_veo.py`** (native Gemini API). **Not** ElevenLabs Image & Video.
-2. **Start frame + ASSET = Orbit only.** Abort if non-Orbit refs bind. Forbid **Eiffel Tower / Paris / architectural blueprints / parchment schematics**.
+1. Use **`04_Audio/tools/orbit_aistudio_veo_ui.py`** (Playwright → AI Studio with Ultra). **Not** ElevenLabs Image & Video. **Not** API key as default (`orbit_gemini_veo.py` = fallback only).
+2. **Start / prompt image = Orbit only.** Abort if non-Orbit refs bind. Forbid **Eiffel Tower / Paris / architectural blueprints / parchment schematics**.
 3. Prompt lock: no readable text / logos / UI; **SILENT PICTURE ONLY**; British VO mixed in edit from ElevenLabs.
-4. `generate_audio=False` + strip audio on download. Spot-check first ~1s and last ~2s; quarantine rejects.
+4. Strip audio on download. Spot-check first ~1s and last ~2s; quarantine rejects.
 5. In edit: optional soft **tail trim (~2–2.5s)** when inventory already covers VO without long stills.
 
 ## Legacy
@@ -41,6 +41,6 @@ ElevenLabs Omni / in-app Veo Playwright scripts (`_generate_omni_*.py`) are lega
 
 - Slow-mo stretch fixed “lag” but was wrong; **1× motion** is correct.
 - Root cause of static feel: **too few unique clips for VO length**.
-- Fix path: **regenerate more unique motion plates** via Gemini Veo, rebuild master + Shorts, keep ElevenLabs VO/music.
+- Fix path: **regenerate more unique motion plates** via AI Studio Veo (Ultra), rebuild master + Shorts, keep ElevenLabs VO/music.
 
-Builders reference: `CUTSCENE_RULES.md`, `_build_broadcast_noloop_v02.py`, `orbit_gemini_veo.py`.
+Builders reference: `CUTSCENE_RULES.md`, `_build_broadcast_noloop_v02.py`, `orbit_aistudio_veo_ui.py`.

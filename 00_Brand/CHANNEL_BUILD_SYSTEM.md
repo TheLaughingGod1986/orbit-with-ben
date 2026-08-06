@@ -110,9 +110,10 @@ Canonical: `Channel-Setup/PUBLISHING_AND_SHORTS_STRATEGY.md` · `docs/ORBIT_GROW
 
 ## Production stack
 
-**CG (default):** Google **Gemini Veo API** — `04_Audio/tools/orbit_gemini_veo.py`  
+**CG (default):** Google **AI Studio Veo UI** (Ultra) — `04_Audio/tools/orbit_aistudio_veo_ui.py`  
+**CG (fallback):** Gemini API key — `orbit_gemini_veo.py` (separate billing)  
 **VO (locked):** **ElevenLabs TTS** — Ben Orbit Narrator only  
-**Also:** Seedance (legacy/character refs) · Midjourney/image gen · CapCut / Premiere  
+**Also:** Seedance (legacy/character refs) · Midjourney/image gen · CapCut / Premiere
 
 **Do not** use ElevenLabs Image & Video for new CG (cost + American speech + Explore contamination).
 

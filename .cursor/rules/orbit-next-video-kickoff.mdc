@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Orbit — next video kickoff (Growth System v2)
 
-When the user asks to **build / start / plan the next video**, **new episode**, **next long**, or similar — **do this first**. Do not jump to VO, Gemini Veo, Seedance, or picture gen.
+When the user asks to **build / start / plan the next video**, **new episode**, **next long**, or similar — **do this first**. Do not jump to VO, AI Studio Veo, Seedance, or picture gen.
 
 ## Step 0 — gate (blocking)
 
@@ -20,7 +20,7 @@ When the user asks to **build / start / plan the next video**, **new episode**, 
    cd 07_Content-Ops && npm run review:script -- --file <script.md>
    ```
    Below 90 = **REJECT** — rewrite. Do not generate audio/video.
-8. **Episode gate (blocking CLI)** before VO / Gemini Veo:
+8. **Episode gate (blocking CLI)** before VO / AI Studio Veo:
    ```bash
    cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/<NNN_Slug>
    ```
@@ -32,9 +32,9 @@ Copy `02_Video-Projects/_template_NNN_Episode-Slug/` → `02_Video-Projects/NNN_
 
 ## Then produce
 
-VO (**ElevenLabs** Ben Orbit Narrator) → picture (**Gemini Veo API** via `orbit_gemini_veo.py` / template `_generate_veo_from_beats.py`, silent) → edit → `templates/PRODUCTION_CHECKLIST_V2.md` → YouTube package upload.
+VO (**ElevenLabs** Ben Orbit Narrator) → picture (**AI Studio Veo UI / Ultra** via `orbit_aistudio_veo_ui.py` / template `_generate_veo_from_beats.py`, silent) → edit → `templates/PRODUCTION_CHECKLIST_V2.md` → YouTube package upload.
 
-Do **not** use ElevenLabs Image & Video for CG.
+Do **not** use ElevenLabs Image & Video for CG. Do **not** default to `GEMINI_API_KEY` (API is fallback only).
 
 After shipping, refresh the next brief from Studio metrics:
 
@@ -61,4 +61,4 @@ Once the **YouTube** long (and Shorts cluster) schedule is locked:
 
 “Build next video” · “Next episode” · “Start V0xx” · “New long-form” · “Growth System v2 first”
 
-Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md` · `RETENTION_AND_GROWTH_LOCKED.md` · `LONGFORM_STORY_AND_VO_PICTURE_GATE.md` · `docs/GEMINI_VEO_CG.md`
+Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md` · `RETENTION_AND_GROWTH_LOCKED.md` · `LONGFORM_STORY_AND_VO_PICTURE_GATE.md` · `docs/GEMINI_VEO_CG.md` (Ultra UI default)

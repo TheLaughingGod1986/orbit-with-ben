@@ -1,30 +1,33 @@
 ---
-description: Orbit CG via Gemini Veo API — ElevenLabs is VO-only
+description: Orbit CG via AI Studio Veo UI (Ultra) — ElevenLabs is VO-only
 alwaysApply: true
 ---
 
-# Orbit — CG generation = Gemini Veo (locked)
+# Orbit — CG generation = AI Studio Veo UI / Ultra (locked)
 
-**Picture (CG / motion clips):** native **Google Gemini Veo API**  
+**Picture (CG / motion clips):** **Google AI Studio Veo UI** via Playwright — uses **Google One → AI Ultra** quotas  
 **Narration (VO):** **ElevenLabs TTS only** — Ben Orbit Narrator (`kDch6ACCIpqgQ0NsU9kk`)
 
 ## Do this
 
-1. Generate CG with `04_Audio/tools/orbit_gemini_veo.py` (or episode wrappers that import it).
-2. Auth: `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) in env / `07_Edit-Project/.env`.
-3. Always attach Orbit reference as **start frame + ASSET**; append `CG_SILENT_AUDIO_BLOCK` from `orbit_voice.py`.
-4. Set `generate_audio=False`; **strip audio** after download (`strip_cg_native_audio.py` / helper in `orbit_gemini_veo.py`).
+1. Generate CG with `04_Audio/tools/orbit_aistudio_veo_ui.py` (or episode wrappers / `_generate_veo_from_beats.py`).
+2. Auth: one-time `python3 orbit_aistudio_veo_ui.py --login` on the Ultra Google account (persistent profile — no API key for routine CG).
+3. Always attach Orbit reference as start/prompt image; append `CG_SILENT_AUDIO_BLOCK` via `orbit_gemini_veo.build_prompt()`.
+4. **Strip audio** after download (`strip_cg_native_audio.py` / helpers).
 5. Mix British VO later from ElevenLabs — never use Veo speech.
 
 ## Do not
 
+- Use **`GEMINI_API_KEY` / Gemini API Veo** as the default path — API is billed separately and is usually more expensive than Ultra UI for episode volume. API helper (`orbit_gemini_veo.py`) is **fallback only**.
 - Use **ElevenLabs Image & Video** (Omni / Veo Fast in the EL UI) for new CG — costly, Explore/Eiffel contamination, American speech.
 - Treat Veo/Omni native speech as channel VO.
-- Skip the Growth System v2 gate (vidIQ + script ≥90) before spending Gemini Veo credits.
+- Skip the Growth System v2 gate (vidIQ + script ≥90) before spending Ultra / Veo credits.
 
 ## Legacy
 
-Existing `_generate_omni_*.py` / Playwright EL Image-Video scripts are **legacy**. Prefer Gemini Veo for all new episodes and regenerations.
+Existing `_generate_omni_*.py` / Playwright EL Image-Video scripts are **legacy**. Prefer AI Studio Ultra UI for all new episodes and regenerations.
 
-Canonical helper: `04_Audio/tools/orbit_gemini_veo.py`  
+Canonical helper: `04_Audio/tools/orbit_aistudio_veo_ui.py`  
+Shared prompt lock: `04_Audio/tools/orbit_gemini_veo.py` (`build_prompt`)  
+Docs: `docs/GEMINI_VEO_CG.md`  
 VO lock: `.cursor/rules/orbit-british-vo-lock.mdc` · `04_Audio/tools/orbit_voice.py`

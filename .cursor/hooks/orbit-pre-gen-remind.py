@@ -7,8 +7,9 @@ import re
 import sys
 
 GEN_RE = re.compile(
-    r"(veo|omni|_generate_|elevenlabs|orbit_voice|orbit_gemini_veo|text_to_speech|"
-    r"seedance|generate_vo|vidiq_score|ultra.?credit|generate_videos)",
+    r"(veo|omni|_generate_|elevenlabs|orbit_voice|orbit_gemini_veo|orbit_aistudio_veo|"
+    r"text_to_speech|seedance|generate_vo|vidiq_score|ultra.?credit|generate_videos|"
+    r"aistudio)",
     re.I,
 )
 
@@ -24,10 +25,11 @@ def main() -> None:
 
     if GEN_RE.search(command):
         msg = (
-            "Orbit Growth System v2 gate: before ElevenLabs VO or Gemini Veo CG spend, "
+            "Orbit Growth System v2 gate: before ElevenLabs VO or AI Studio Veo CG spend, "
             "confirm (1) pre-build vidIQ audit signed off, (2) script reviewer ≥90, "
             "(3) cold open 5/15/30s + Orbit agency. "
-            "CG = Gemini Veo API only (not EL Image & Video). "
+            "CG = AI Studio Ultra UI (orbit_aistudio_veo_ui.py) — not EL Image & Video; "
+            "API key is fallback only. "
             "VO = ElevenLabs Ben Orbit Narrator. "
             "See YOUTUBE_GROWTH_SYSTEM_V2.md · orbit-gemini-veo-cg.mdc."
         )

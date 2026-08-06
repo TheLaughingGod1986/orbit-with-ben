@@ -1,6 +1,6 @@
 /**
  * Episode production gate — Growth System v2.
- * Blocks VO / Gemini Veo until audit + script ≥90 + markers are present.
+ * Blocks VO / AI Studio Veo until audit + script ≥90 + markers are present.
  */
 
 import fs from "fs";
@@ -234,10 +234,11 @@ export function gateEpisode(opts: {
   const envExample = path.join(projectDir, "07_Edit-Project", ".env.example");
   if (!exists(envExample) && !exists(path.join(projectDir, "07_Edit-Project", ".env"))) {
     checks.push({
-      id: "gemini_env",
+      id: "aistudio_env",
       ok: true,
       severity: "warn",
-      message: "No 07_Edit-Project/.env.example — ensure GEMINI_API_KEY before Veo spend.",
+      message:
+        "No 07_Edit-Project/.env.example — ensure AI Studio Ultra login (orbit_aistudio_veo_ui.py --login) before Veo spend.",
     });
   }
 
@@ -250,7 +251,7 @@ export function formatGateMarkdown(result: EpisodeGateResult): string {
   const lines = [
     `# Episode gate — ${path.basename(result.projectDir)}`,
     "",
-    `**Decision:** ${result.passed ? "PASS" : "BLOCK"} — VO / Gemini Veo ${result.passed ? "allowed" : "blocked"}`,
+    `**Decision:** ${result.passed ? "PASS" : "BLOCK"} — VO / AI Studio Veo ${result.passed ? "allowed" : "blocked"}`,
     "",
     "| Check | Status | Detail |",
     "|---|---|---|",

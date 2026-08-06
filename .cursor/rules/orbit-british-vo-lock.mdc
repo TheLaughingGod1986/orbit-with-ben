@@ -1,5 +1,5 @@
 ---
-description: Lock ElevenLabs to British VO only — CG is Gemini Veo
+description: Lock ElevenLabs to British VO only — CG is AI Studio Ultra UI
 alwaysApply: true
 ---
 
@@ -18,15 +18,15 @@ When generating or regenerating any Orbit **narration**:
 
 Target character: warm, articulate British educational narrator — calm authority, cinematic curiosity, restrained mystery. Never theatrical / trailer-like.
 
-## CG — Gemini Veo API (not ElevenLabs Image & Video)
+## CG — AI Studio Veo UI / Ultra (not ElevenLabs Image & Video)
 
-**Default picture path:** native Gemini Veo via `04_Audio/tools/orbit_gemini_veo.py`.
+**Default picture path:** Google AI Studio Veo via Playwright (`04_Audio/tools/orbit_aistudio_veo_ui.py`) on **Google One → AI Ultra**.
 
 - CG clips must be **silent picture** (or ambience only) — **no dialogue, no narration, no VO** in the video model.
 - Always append `CG_SILENT_AUDIO_BLOCK` / use `build_prompt()` from `orbit_gemini_veo.py`.
-- `generate_audio=False` + strip audio on download.
-- Channel narration is mixed later from **Ben Orbit Narrator** (ElevenLabs TTS) only.
-- **Do not** use ElevenLabs Image & Video (Omni / in-app Veo) for new CG — use Gemini API Veo instead.
+- Strip audio on download. Mix British VO later from **Ben Orbit Narrator** only.
+- **Do not** use ElevenLabs Image & Video (Omni / in-app Veo) for new CG.
+- **Do not** default to `GEMINI_API_KEY` / API Veo — Ultra UI is the cost path; API is fallback only.
 - Never treat Veo native speech as usable VO.
 
-See also: `.cursor/rules/orbit-gemini-veo-cg.mdc`
+See also: `.cursor/rules/orbit-gemini-veo-cg.mdc` · `docs/GEMINI_VEO_CG.md`

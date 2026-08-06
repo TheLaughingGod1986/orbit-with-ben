@@ -2,7 +2,8 @@
 """LEGACY — ElevenLabs Image & Video Gemini Omni Flash for JWST.
 
 DO NOT USE FOR NEW EPISODES OR REGENS.
-Default CG path: 04_Audio/tools/orbit_gemini_veo.py (native Gemini Veo API).
+Default CG path: 04_Audio/tools/orbit_aistudio_veo_ui.py (AI Studio Ultra UI).
+API fallback: 04_Audio/tools/orbit_gemini_veo.py (GEMINI_API_KEY — avoid for routine).
 VO remains ElevenLabs TTS (Ben Orbit Narrator) — that is separate from this script.
 
 Kept only for historical inventory / debugging of already-generated Omni clips.

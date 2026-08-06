@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Generate silent Orbit CG clips via Gemini Veo from a beats JSON file.
+"""Generate silent Orbit CG clips via AI Studio Veo UI (Ultra) from beats JSON.
+
+Default CG path for new episodes. Uses Google AI Studio in a Playwright browser
+with your Google One → AI Ultra session — not GEMINI_API_KEY.
 
 Copy this into a new episode's 07_Edit-Project/ (or run from template).
 
-Requires:
-  export GEMINI_API_KEY=...
-  pip install google-genai
+Requires (one-time):
+  python3 04_Audio/tools/orbit_aistudio_veo_ui.py --login
+  pip install playwright && playwright install chromium
 
 beats.json example:
   [
@@ -16,6 +19,9 @@ beats.json example:
 Usage:
   python3 _generate_veo_from_beats.py --beats beats.json --out-dir ../04_Generated-Clips/01_Raw --dry-run
   python3 _generate_veo_from_beats.py --beats beats.json --out-dir ../04_Generated-Clips/01_Raw --limit 1
+
+Optional API fallback (expensive — only if UI broken):
+  python3 _generate_veo_from_beats.py --engine api --beats … --out-dir …
 """
 from __future__ import annotations
 
@@ -24,16 +30,16 @@ import json
 import sys
 from pathlib import Path
 
-# Prefer repo tools path (works from template copy under 02_Video-Projects/…)
 HERE = Path(__file__).resolve().parent
 REPO = HERE
 for _ in range(6):
-    if (REPO / "04_Audio" / "tools" / "orbit_gemini_veo.py").exists():
+    if (REPO / "04_Audio" / "tools" / "orbit_aistudio_veo_ui.py").exists():
         break
     REPO = REPO.parent
 TOOLS = REPO / "04_Audio" / "tools"
 sys.path.insert(0, str(TOOLS))
 
+import orbit_aistudio_veo_ui as studio  # noqa: E402
 import orbit_gemini_veo as veo  # noqa: E402
 
 
@@ -44,6 +50,14 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--skip-existing", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--headed", action="store_true")
+    ap.add_argument("--profile", type=Path, default=None)
+    ap.add_argument(
+        "--engine",
+        choices=("ui", "api"),
+        default="ui",
+        help="ui = AI Studio Ultra (default); api = Gemini API key fallback",
+    )
     ap.add_argument("--env-file", type=Path, default=HERE / ".env")
     args = ap.parse_args()
 
@@ -56,33 +70,72 @@ def main() -> None:
         pass_id = row.get("pass", "p0")
         slug = row["slug"]
         beat_id = row.get("id", slug)
-        dest = args.out_dir / f"{pass_id}_{beat_id}_{slug}_gemini-veo_v01_raw.mp4"
+        tag = "aistudio-veo" if args.engine == "ui" else "gemini-api-veo"
+        dest = args.out_dir / f"{pass_id}_{beat_id}_{slug}_{tag}_v01_raw.mp4"
         prompt = veo.build_prompt(row["prompt"], pass_id=pass_id)
         queue.append((pass_id, beat_id, slug, prompt, dest))
 
-    print(f"queue {len(queue)} · model={veo.DEFAULT_MODEL} · ref={veo.ORBIT_REF.name}")
+    print(
+        f"queue {len(queue)} · engine={args.engine} · "
+        f"model={studio.DEFAULT_MODEL if args.engine == 'ui' else veo.DEFAULT_MODEL} · "
+        f"ref={veo.ORBIT_REF.name}"
+    )
     if args.dry_run:
         for pass_id, beat_id, slug, prompt, dest in queue:
             print(f"  {pass_id} {beat_id} → {dest.name} ({len(prompt)} chars)")
         return
 
-    client = veo.make_client(args.env_file)
     ok = fail = 0
-    for i, (pass_id, beat_id, slug, prompt, dest) in enumerate(queue, 1):
-        print(f"\n=== [{i}/{len(queue)}] {pass_id} {beat_id} {slug} ===", flush=True)
-        if args.skip_existing and veo.already_done(dest):
-            print("SKIP existing")
-            ok += 1
-            continue
-        try:
-            meta = veo.generate_clip(client, prompt, dest)
-            print(f"SAVED {dest} ({meta['bytes']}) in {meta['seconds']}s")
-            ok += 1
-        except Exception as e:
-            fail += 1
-            print(f"FAIL: {e}")
-            if fail >= 3:
-                break
+
+    if args.engine == "api":
+        client = veo.make_client(args.env_file)
+        for i, (pass_id, beat_id, slug, prompt, dest) in enumerate(queue, 1):
+            print(f"\n=== [{i}/{len(queue)}] {pass_id} {beat_id} {slug} ===", flush=True)
+            if args.skip_existing and veo.already_done(dest):
+                print("SKIP existing")
+                ok += 1
+                continue
+            try:
+                meta = veo.generate_clip(client, prompt, dest)
+                print(f"SAVED {dest} ({meta['bytes']}) in {meta['seconds']}s")
+                ok += 1
+            except Exception as e:
+                fail += 1
+                print(f"FAIL: {e}")
+                if fail >= 3:
+                    break
+    else:
+        from playwright.sync_api import sync_playwright
+
+        profile = studio.profile_path(args.profile)
+        with sync_playwright() as p:
+            ctx, page = studio.launch_context(
+                p, headed=args.headed, profile=profile
+            )
+            try:
+                for i, (pass_id, beat_id, slug, prompt, dest) in enumerate(queue, 1):
+                    print(
+                        f"\n=== [{i}/{len(queue)}] {pass_id} {beat_id} {slug} ===",
+                        flush=True,
+                    )
+                    if args.skip_existing and veo.already_done(dest):
+                        print("SKIP existing")
+                        ok += 1
+                        continue
+                    try:
+                        meta = studio.generate_clip(page, prompt, dest)
+                        print(
+                            f"SAVED {dest} ({meta['bytes']}) in {meta['seconds']}s"
+                        )
+                        ok += 1
+                    except Exception as e:
+                        fail += 1
+                        print(f"FAIL: {e}")
+                        if fail >= 3:
+                            break
+            finally:
+                ctx.close()
+
     print(f"done ok={ok} fail={fail}")
     if fail:
         raise SystemExit(1)

@@ -1,18 +1,25 @@
 #!/usr/bin/env python3
-"""Orbit CG via native Gemini Veo API (default picture path).
+"""Orbit CG helpers + optional Gemini Veo API fallback.
 
-Canonical for new episodes. Do NOT use ElevenLabs Image & Video for CG —
-that path baked American speech, Explore/Eiffel refs, and high cost.
+DEFAULT picture path for new episodes is AI Studio Ultra UI:
+  04_Audio/tools/orbit_aistudio_veo_ui.py
+
+This module still owns shared prompt locks (`build_prompt`, IDENTITY_LOCK,
+NEGATIVE, strip_audio) and an optional API path when the UI is unavailable.
+API billing is separate from Google One Ultra — avoid for routine clip volume.
+
+Do NOT use ElevenLabs Image & Video for CG.
 
 Channel VO stays on ElevenLabs TTS → Ben Orbit Narrator (see orbit_voice.py).
 
-Auth:
+API fallback auth (optional):
   export GEMINI_API_KEY=...   # or GOOGLE_API_KEY
-  # optional: project Edit-Project/.env
 
-Examples:
+Examples (prefer UI):
+  python3 04_Audio/tools/orbit_aistudio_veo_ui.py --probe
+
+API fallback:
   python3 04_Audio/tools/orbit_gemini_veo.py --probe
-  python3 04_Audio/tools/orbit_gemini_veo.py --prompt "Orbit floats beside JWST…" --out /tmp/orbit_test.mp4
 """
 from __future__ import annotations
 

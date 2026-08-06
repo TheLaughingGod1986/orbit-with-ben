@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Strip baked-in Veo speech from downloaded CG clips (keep picture only).
 
-Default CG path is Gemini Veo API (`orbit_gemini_veo.py`) with generate_audio=False;
-still strip as a safety net. Channel VO is British Ben Orbit Narrator (ElevenLabs) mixed in edit.
+Default CG path is AI Studio Veo UI (`orbit_aistudio_veo_ui.py`); still strip as a
+safety net. Channel VO is British Ben Orbit Narrator (ElevenLabs) mixed in edit.
 
 Usage:
   python3 04_Audio/tools/strip_cg_native_audio.py path/to/clip.mp4
