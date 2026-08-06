@@ -2,8 +2,8 @@
 """Orbit CG via Google Flow Veo UI (Ultra plan — default picture path).
 
 Uses Playwright against labs.google/fx/tools/flow so Google One → AI Ultra
-Flow credits apply (Veo 3.1). Prefer this over AI Studio (needs billed API key)
-and over GEMINI_API_KEY (separate billing).
+Flow credits apply (**Veo 3.1** only — never Omni Flash / Nano Banana for Orbit CG).
+Prefer this over AI Studio (needs billed API key) and over GEMINI_API_KEY (separate billing).
 
 Channel VO stays on ElevenLabs TTS → Ben Orbit Narrator (see orbit_voice.py).
 
@@ -52,25 +52,29 @@ VEO3_MODEL_RE = re.compile(r"^Veo\s*3(\.\d+)?\s*-\s*(Lite|Fast|Quality)$", re.I)
 FORBIDDEN_VIDEO_MODELS = ("Omni Flash", "Nano Banana", "Nano Banana 2")
 MEDIA_REDIRECT_RE = re.compile(r"media\.getMediaUrlRedirect\?name=([a-f0-9\-]+)", re.I)
 
-# Flow Agent often invents a "cute orange robot" redesign unless the reference is
-# attached IN the prompt and identity rejects are explicit.
+# Flow Agent invents a near-miss redesign unless the Seedance reference is
+# attached IN the prompt. Never use quarantine plates under
+# 05_Seedance-References/_Rejected/ (white-chest two-sphere fake "canonical").
 ORBIT_AGENT_INSTRUCTION = (
-    "ORBIT IDENTITY LOCK (always): The channel mascot is Orbit — a solid matte "
-    "orange rounded floating robot with continuous orange head+torso as ONE body "
-    "(not two spheres / no neck split), NO legs, soft underside glow only, large "
-    "black curved visor with TWO cream/amber circular eyes with pupils, short stubby "
-    "orange arms with dark three-finger hands, single antenna with glowing bulb tip, "
-    "tiny cyan+red chest lights only. HARD REJECTS — never generate: large white chest "
-    "disc/belly, separate head on neck, ear rings/headphones, white helmet, legs, "
-    "slit eyes, blank visor, HUD text. For video: IMAGE-TO-VIDEO animate the attached "
-    "Orbit reference exactly — do not invent a new robot species."
+    "ORBIT IDENTITY LOCK (always): Match the attached Seedance Orbit reference "
+    "exactly. Orbit is ONE continuous matte orange sphere/egg body (head and torso "
+    "are the same piece — no neck, no two stacked spheres), NO legs, soft orange "
+    "underside glow only, large black curved visor with TWO cream/white circular "
+    "eyes with dark pupils, integrated side nubs (not headphones), single thin "
+    "antenna with glowing bulb tip, solid orange chest (tiny vents OK — NO large "
+    "white chest disc). Short stubby orange arms with dark three-finger hands may "
+    "appear in motion. HARD REJECTS — never generate: large white/pale chest disc, "
+    "glowing white belly plate, separate head on neck, ear rings/headphones/side "
+    "discs, white helmet, legs, slit eyes, blank visor, HUD text. For video: "
+    "IMAGE-TO-VIDEO animate the attached Orbit reference exactly — do not invent "
+    "a new robot species."
 )
 
 FLOW_I2V_PREFACE = (
-    "IMAGE-TO-VIDEO of the attached Orbit reference image. Animate THIS exact "
-    "character design — preserve continuous orange body, black curved visor, cream "
-    "circular eyes, stubby three-finger hands, single antenna. Do NOT redesign. "
-    "Reject white chest disc, ear rings, two-sphere head/body split."
+    "IMAGE-TO-VIDEO of the attached Orbit Seedance reference. Animate THIS exact "
+    "single continuous orange sphere character — black curved visor, cream circular "
+    "eyes, integrated side nubs, single antenna, solid orange chest. Do NOT redesign. "
+    "Reject white chest disc, ear rings/headphones, two-sphere head/body split."
 )
 
 
@@ -262,8 +266,39 @@ def ensure_project(page) -> str:
     return page.url
 
 
+def assert_veo3_model(model: str) -> str:
+    """Require a Flow Veo 3.x video model label (Lite / Fast / Quality)."""
+    label = (model or "").strip()
+    if any(bad.lower() in label.lower() for bad in FORBIDDEN_VIDEO_MODELS):
+        raise RuntimeError(
+            f"Refusing non-Veo video model {label!r}. Orbit CG must use Veo 3 "
+            f"(e.g. 'Veo 3.1 - Quality'). Override: ORBIT_FLOW_VEO_MODEL=..."
+        )
+    if not VEO3_MODEL_RE.match(label):
+        raise RuntimeError(
+            f"Expected a Veo 3 model like 'Veo 3.1 - Quality', got {label!r}"
+        )
+    return label
+
+
+def read_selected_video_model(page) -> str | None:
+    """Read the currently selected Flow video-generation model label."""
+    return page.evaluate(
+        """() => {
+          for (const b of document.querySelectorAll('button')) {
+            const t = (b.innerText || '').trim().replace(/\\n/g, ' ');
+            if (/Veo 3|Omni Flash/.test(t) && /arrow_drop_down/.test(t)) {
+              return t.replace(/\\s*arrow_drop_down\\s*/i, '').trim();
+            }
+          }
+          return null;
+        }"""
+    )
+
+
 def configure_veo_settings(page, *, model: str = DEFAULT_MODEL) -> None:
-    """Open agent Settings → Never confirm → Veo model → 16:9 x1 → Save."""
+    """Open agent Settings → Never confirm → Veo 3 model → 16:9 x1 → Save."""
+    model = assert_veo3_model(model)
     if not click_visible(page, "tune"):
         # Fallback: Settings near prompt
         if not click_visible(page, "settings"):
@@ -304,9 +339,9 @@ def configure_veo_settings(page, *, model: str = DEFAULT_MODEL) -> None:
     )
     page.wait_for_timeout(200)
 
-    # Model dropdown (Omni Flash or already-Veo)
+    # Model dropdown (Omni Flash default → must switch to Veo 3.x)
     model_btn = page.locator(
-        'button:has-text("Omni Flash"), button:has-text("Veo 3.1")'
+        'button:has-text("Omni Flash"), button:has-text("Veo 3")'
     )
     if model_btn.count() == 0:
         raise RuntimeError("Flow video model dropdown not found")
@@ -316,16 +351,25 @@ def configure_veo_settings(page, *, model: str = DEFAULT_MODEL) -> None:
         page.wait_for_timeout(700)
         item = page.get_by_role("menuitem", name=model)
         if item.count() == 0:
-            # Partial match
             item = page.locator(f'[role="menuitem"]:has-text("{model}")')
         if item.count() == 0:
-            raise RuntimeError(f"Model menu item not found: {model}")
+            raise RuntimeError(f"Veo 3 model menu item not found: {model}")
         item.first.click(timeout=5000)
         page.wait_for_timeout(300)
 
+    selected = read_selected_video_model(page) or ""
+    if "Veo 3" not in selected:
+        # Dropdown may still show truncated text — re-read button
+        selected = (model_btn.last.inner_text() or "").replace("\n", " ")
+    if "Veo 3" not in selected:
+        raise RuntimeError(
+            f"Flow video model is still {selected!r} — must be Veo 3.x "
+            f"(not Omni Flash / Nano Banana)"
+        )
+    print(f"  video model locked: {selected}", flush=True)
+
     save = page.locator('button:has-text("Save")')
     if save.count() == 0:
-        # Back arrow also exits settings after changes
         back = page.locator('button:has-text("Back")')
         if back.count():
             back.first.click(timeout=5000)
@@ -337,7 +381,6 @@ def configure_veo_settings(page, *, model: str = DEFAULT_MODEL) -> None:
 
     box = editor_box(page)
     if not box or box["w"] < 50:
-        # Settings may still be open — try Back
         if page.get_by_text("Confirm before generating").count():
             back = page.locator('button:has-text("arrow_back")')
             if back.count():
@@ -369,25 +412,56 @@ def upload_orbit_ref(page, ref: Path) -> bool:
 
 
 def _prompt_attachment_count(page) -> int:
+    """Count image chips near the agent prompt editor (not the whole page)."""
     return page.evaluate(
-        """() => [...document.querySelectorAll('img')].filter(i => {
-          const r = i.getBoundingClientRect();
-          return r.width > 28 && r.height > 28 && r.y > 650;
-        }).length"""
+        """() => {
+          const ed = document.querySelector('[data-slate-editor="true"]');
+          if (!ed) return 0;
+          const er = ed.getBoundingClientRect();
+          // Attachment chips sit in the prompt composer: above/beside the editor
+          // or inside the bottom composer strip.
+          return [...document.querySelectorAll('img,video,[role="img"]')].filter(i => {
+            const r = i.getBoundingClientRect();
+            if (r.width < 24 || r.height < 24 || r.width > 320) return false;
+            const nearY = r.y >= er.y - 220 && r.bottom <= er.bottom + 80;
+            const nearX = r.x >= er.x - 40 && r.x <= er.right + 40;
+            return nearY && nearX;
+          }).length;
+        }"""
     )
 
 
+def _assert_seedance_ref(ref: Path) -> Path:
+    """Refuse quarantine / redesign plates as Orbit identity refs."""
+    p = ref.resolve()
+    bad_markers = ("_rejected", "orbit-cg-canonical", "flow-ingredient-plain")
+    low = str(p).lower()
+    if any(m in low for m in bad_markers):
+        raise RuntimeError(
+            f"Refused off-model Orbit plate: {p}\n"
+            "Use orbit-seedance-reference-16x9-v01.png (or portrait v01)."
+        )
+    if "seedance-reference" not in low and "orbit-seedance" not in low:
+        print(
+            f"  warn: unexpected Orbit ref name (prefer Seedance): {p.name}",
+            flush=True,
+        )
+    return p
+
+
 def attach_orbit_to_prompt(page, ref: Path) -> bool:
-    """Attach Orbit image into the agent prompt (required for identity lock).
+    """Attach Orbit Seedance image into the agent prompt (required for identity).
 
     Library-only upload is not enough — Flow invents a near-miss mascot unless the
     reference is bound to the prompt as an ingredient / attachment.
     Aborts if no prompt attachment chip/thumbnail is visible.
     """
+    ref = _assert_seedance_ref(ref)
     if not ref.exists():
         raise FileNotFoundError(ref)
     ensure_agent_session(page)
     before = _prompt_attachment_count(page)
+    print(f"  attaching Orbit ref: {ref.name}", flush=True)
 
     # Prefer any existing file input, else open + Create → Upload media
     fi = page.locator('input[type="file"]')
@@ -401,12 +475,17 @@ def attach_orbit_to_prompt(page, ref: Path) -> bool:
             print(f"  direct file input failed: {e}", flush=True)
 
     if not uploaded or _prompt_attachment_count(page) <= before:
+        # + control in prompt composer (Material "add_2" / add)
         page.evaluate(
             """() => {
+              const ed = document.querySelector('[data-slate-editor="true"]');
+              const er = ed ? ed.getBoundingClientRect() : {y: 700, bottom: 900};
               for (const b of document.querySelectorAll('button')) {
-                const t = (b.innerText || '').trim();
+                const t = (b.innerText || b.getAttribute('aria-label') || '').trim();
                 const r = b.getBoundingClientRect();
-                if (r.y > 750 && r.width > 0 && /add_2/.test(t)) {
+                if (r.width < 2 || r.height < 2) continue;
+                const nearComposer = r.y >= er.y - 120 && r.y <= er.bottom + 100;
+                if (nearComposer && /add_2|^\\+$|add media|attach|upload/i.test(t)) {
                   b.click(); return true;
                 }
               }
@@ -414,9 +493,13 @@ def attach_orbit_to_prompt(page, ref: Path) -> bool:
             }"""
         )
         page.wait_for_timeout(800)
+        # Prefer "Upload media" / "Uploads" over clicking library tiles
+        # (library click often opens Nano Banana image editor).
         up = page.locator('button:has-text("Upload media")')
         if up.count() == 0:
-            up = page.locator('button:has-text("Upload")')
+            up = page.locator(
+                'button:has-text("Upload"), [role="menuitem"]:has-text("Upload")'
+            )
         if up.count():
             try:
                 with page.expect_file_chooser(timeout=10_000) as fc:
@@ -429,15 +512,27 @@ def attach_orbit_to_prompt(page, ref: Path) -> bool:
                     raise RuntimeError("Could not attach Orbit to prompt")
                 fi.last.set_input_files(str(ref))
                 uploaded = True
-        page.wait_for_timeout(3000)
+        page.wait_for_timeout(3500)
+
+    # Escape any leftover picker / Nano Banana overlay without clearing the chip
+    for _ in range(2):
+        body = ""
+        try:
+            body = page.locator("body").inner_text(timeout=2000)[:2500]
+        except Exception:
+            pass
+        if "What do you want to change" in body or "Nano Banana" in body:
+            page.keyboard.press("Escape")
+            page.wait_for_timeout(500)
+            ensure_agent_session(page)
 
     attached = _prompt_attachment_count(page) > before
-    print(f"  prompt attachment visible={attached}", flush=True)
+    print(f"  prompt attachment visible={attached} (was {before})", flush=True)
     if not attached:
         raise RuntimeError(
-            "Orbit reference did not attach to the Flow prompt — aborting to avoid "
-            "off-model mascot generation. Re-run headed and confirm the image chip "
-            "appears above the prompt before Create."
+            "Orbit Seedance reference did not attach to the Flow prompt — aborting "
+            "to avoid off-model mascot generation. Re-run headed and confirm the "
+            "image chip appears on the prompt before Create."
         )
     return True
 
@@ -658,8 +753,9 @@ def generate_clip(
     reuse_project: bool = False,
 ) -> dict:
     """Generate one silent Veo clip via Google Flow Ultra UI."""
-    ref = orbit_ref or veo.ORBIT_REF
+    ref = _assert_seedance_ref(orbit_ref or veo.ORBIT_REF)
     t0 = time.time()
+    print(f"  orbit identity ref: {ref}", flush=True)
 
     if reuse_project and "/project/" in (page.url or ""):
         url = page.url
@@ -677,6 +773,7 @@ def generate_clip(
         )
 
     print(f"  flow: {url}", flush=True)
+    model = assert_veo3_model(model)
     ensure_agent_session(page)
     before = collect_media_ids(page)
     configure_veo_settings(page, model=model)

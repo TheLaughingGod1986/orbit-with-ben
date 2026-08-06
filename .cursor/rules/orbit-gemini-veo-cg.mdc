@@ -12,7 +12,7 @@ alwaysApply: true
 
 1. Generate CG with `04_Audio/tools/orbit_flow_veo_ui.py` (or episode wrappers / `_generate_veo_from_beats.py`).
 2. Auth: one-time `python3 orbit_flow_veo_ui.py --login` on the Ultra Google account (persistent profile — no API key for routine CG).
-3. Agent settings: **Never** confirm · **Veo 3.1** (Quality default; Fast/Lite OK) · 16:9 · **attach Orbit reference in the prompt** · silent prompt via `orbit_gemini_veo.build_prompt()`. Never use Omni Flash / Nano Banana for Orbit CG video.
+3. Agent settings: **Never** confirm · **Veo 3.1** (Quality default; Fast/Lite OK) · 16:9 · **attach Seedance Orbit reference in the prompt** (`orbit-seedance-reference-16x9-v01.png` only — never `_Rejected/orbit-cg-canonical-*`) · silent prompt via `orbit_gemini_veo.build_prompt()`. Never use Omni Flash / Nano Banana for Orbit CG video.
 4. **Strip audio** after download (`strip_cg_native_audio.py` / helpers).
 5. Mix British VO later from ElevenLabs — never use Veo speech.
 

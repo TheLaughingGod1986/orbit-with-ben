@@ -33,15 +33,22 @@ import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-ORBIT_REF_CG = (
-    REPO
-    / "01_Orbit-Character/05_Seedance-References/orbit-cg-canonical-16x9-v01.png"
-)
+# TRUE identity lock — single continuous orange sphere (Seedance).
+# Never prefer quarantine plates under 05_Seedance-References/_Rejected/
+# (orbit-cg-canonical-* is a white-chest / two-sphere redesign — hard reject).
 ORBIT_REF_SEEDANCE = (
     REPO
     / "01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png"
 )
-ORBIT_REF = ORBIT_REF_CG if ORBIT_REF_CG.exists() else ORBIT_REF_SEEDANCE
+ORBIT_REF_SEEDANCE_PORTRAIT = (
+    REPO
+    / "01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-v01.png"
+)
+ORBIT_REF = (
+    ORBIT_REF_SEEDANCE
+    if ORBIT_REF_SEEDANCE.exists()
+    else ORBIT_REF_SEEDANCE_PORTRAIT
+)
 
 # Default paid/preview model — override with ORBIT_VEO_MODEL
 DEFAULT_MODEL = os.environ.get("ORBIT_VEO_MODEL", "veo-3.1-fast-generate-preview")
@@ -53,12 +60,15 @@ except ImportError:
     from orbit_voice import CG_PREFACE, CG_SILENT_AUDIO_BLOCK
 
 IDENTITY_LOCK = (
-    "CRITICAL ORBIT IDENTITY — match the attached reference image exactly, "
-    "full-CG Orbit in every frame: solid matte ORANGE rounded floating robot "
-    "(continuous orange head+torso). NO LEGS — hover only with soft underside glow. "
-    "Large black CURVED VISOR with TWO cream/amber expressive circular eyes with pupils. "
-    "Short stubby orange arms with dark three-finger hands. "
-    "Single antenna with glowing bulb tip. Cyan+red chest lights OK. "
+    "CRITICAL ORBIT IDENTITY — match the attached Seedance reference image exactly, "
+    "full-CG Orbit in every frame: ONE continuous matte ORANGE sphere/egg body "
+    "(head and torso are the same piece — no neck, no two stacked spheres). "
+    "NO LEGS — hover only with soft orange underside glow. "
+    "Large black CURVED VISOR with TWO cream/white expressive circular eyes with pupils. "
+    "Integrated side nubs (NOT headphones / ear rings). "
+    "Solid orange chest — tiny vents OK; NO large white chest disc. "
+    "Short stubby orange arms with dark three-finger hands when arms appear. "
+    "Single thin antenna with glowing bulb tip. "
     "Emotion via cream eyes and body language only."
 )
 
