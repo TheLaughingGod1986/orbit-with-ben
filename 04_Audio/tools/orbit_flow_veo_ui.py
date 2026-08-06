@@ -267,11 +267,22 @@ def configure_veo_settings(page, *, model: str = DEFAULT_MODEL) -> None:
             raise RuntimeError("Flow Settings (tune) button not found")
     page.wait_for_timeout(900)
 
-    # Never auto-spend confirmations
-    never = page.locator('button:has-text("Never")')
-    if never.count():
-        never.first.click(timeout=5000)
-        page.wait_for_timeout(200)
+    # Never auto-spend confirmations (JS avoids header intercepts)
+    page.evaluate(
+        """() => {
+          for (const b of document.querySelectorAll('button')) {
+            const t = (b.innerText || '').trim().replace(/\\n/g, ' ');
+            if (/Never/.test(t) && /confirm|credits|Agent will generate/i.test(t)) {
+              b.click(); return true;
+            }
+          }
+          for (const el of document.querySelectorAll('span,label,div')) {
+            if ((el.innerText || '').trim() === 'Never') { el.click(); return true; }
+          }
+          return false;
+        }"""
+    )
+    page.wait_for_timeout(200)
 
     # Video defaults: 16:9 + x1 (video section is lower in the panel)
     page.evaluate(
@@ -354,65 +365,77 @@ def upload_orbit_ref(page, ref: Path) -> bool:
     return True
 
 
+def _prompt_attachment_count(page) -> int:
+    return page.evaluate(
+        """() => [...document.querySelectorAll('img')].filter(i => {
+          const r = i.getBoundingClientRect();
+          return r.width > 28 && r.height > 28 && r.y > 650;
+        }).length"""
+    )
+
+
 def attach_orbit_to_prompt(page, ref: Path) -> bool:
     """Attach Orbit image into the agent prompt (required for identity lock).
 
     Library-only upload is not enough — Flow invents a near-miss mascot unless the
     reference is bound to the prompt as an ingredient / attachment.
+    Aborts if no prompt attachment chip/thumbnail is visible.
     """
     if not ref.exists():
         raise FileNotFoundError(ref)
     ensure_agent_session(page)
-    # Open + Create media picker beside the prompt
-    opened = page.evaluate(
-        """() => {
-          for (const b of document.querySelectorAll('button')) {
-            const t = (b.innerText || '').trim();
-            const r = b.getBoundingClientRect();
-            if (r.y > 750 && r.width > 0 && /add_2/.test(t)) {
-              b.click();
-              return true;
-            }
-          }
-          return false;
-        }"""
-    )
-    if not opened and not click_visible(page, "add_2"):
-        raise RuntimeError("Prompt + Create control not found")
-    page.wait_for_timeout(800)
+    before = _prompt_attachment_count(page)
 
-    up = page.locator('button:has-text("Upload media")')
-    if up.count() == 0:
-        up = page.locator('button:has-text("Upload")')
-    if up.count():
+    # Prefer any existing file input, else open + Create → Upload media
+    fi = page.locator('input[type="file"]')
+    uploaded = False
+    if fi.count():
         try:
-            with page.expect_file_chooser(timeout=10_000) as fc:
-                # Prefer the picker row (lower on screen)
-                up.last.click()
-            fc.value.set_files(str(ref))
-        except Exception:
-            fi = page.locator('input[type="file"]')
-            if fi.count() == 0:
-                raise
             fi.last.set_input_files(str(ref))
-    else:
-        fi = page.locator('input[type="file"]')
-        if fi.count() == 0:
-            raise RuntimeError("Could not attach Orbit to prompt (no upload control)")
-        fi.last.set_input_files(str(ref))
+            uploaded = True
+            page.wait_for_timeout(2500)
+        except Exception as e:
+            print(f"  direct file input failed: {e}", flush=True)
 
-    page.wait_for_timeout(3500)
-    # Attachment thumbnails usually appear near the prompt bar
-    attached = page.evaluate(
-        """() => {
-          for (const img of document.querySelectorAll('img')) {
-            const r = img.getBoundingClientRect();
-            if (r.width > 28 && r.height > 28 && r.y > 650) return true;
-          }
-          return false;
-        }"""
-    )
+    if not uploaded or _prompt_attachment_count(page) <= before:
+        page.evaluate(
+            """() => {
+              for (const b of document.querySelectorAll('button')) {
+                const t = (b.innerText || '').trim();
+                const r = b.getBoundingClientRect();
+                if (r.y > 750 && r.width > 0 && /add_2/.test(t)) {
+                  b.click(); return true;
+                }
+              }
+              return false;
+            }"""
+        )
+        page.wait_for_timeout(800)
+        up = page.locator('button:has-text("Upload media")')
+        if up.count() == 0:
+            up = page.locator('button:has-text("Upload")')
+        if up.count():
+            try:
+                with page.expect_file_chooser(timeout=10_000) as fc:
+                    up.last.click(force=True)
+                fc.value.set_files(str(ref))
+                uploaded = True
+            except Exception:
+                fi = page.locator('input[type="file"]')
+                if fi.count() == 0:
+                    raise RuntimeError("Could not attach Orbit to prompt")
+                fi.last.set_input_files(str(ref))
+                uploaded = True
+        page.wait_for_timeout(3000)
+
+    attached = _prompt_attachment_count(page) > before
     print(f"  prompt attachment visible={attached}", flush=True)
+    if not attached:
+        raise RuntimeError(
+            "Orbit reference did not attach to the Flow prompt — aborting to avoid "
+            "off-model mascot generation. Re-run headed and confirm the image chip "
+            "appears above the prompt before Create."
+        )
     return True
 
 
