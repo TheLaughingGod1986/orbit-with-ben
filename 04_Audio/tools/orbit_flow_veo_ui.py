@@ -52,11 +52,11 @@ VEO3_MODEL_RE = re.compile(r"^Veo\s*3(\.\d+)?\s*-\s*(Lite|Fast|Quality)$", re.I)
 FORBIDDEN_VIDEO_MODELS = ("Omni Flash", "Nano Banana", "Nano Banana 2")
 MEDIA_REDIRECT_RE = re.compile(r"media\.getMediaUrlRedirect\?name=([a-f0-9\-]+)", re.I)
 
-# Flow Agent invents a near-miss redesign unless the Seedance reference is
-# attached IN the prompt. Never use quarantine plates under
+# Flow Agent invents a near-miss redesign unless the Orbit identity still is
+# attached IN the prompt. CG = Flow Veo (not Seedance). Never use plates under
 # 05_Seedance-References/_Rejected/ (white-chest two-sphere fake "canonical").
 ORBIT_AGENT_INSTRUCTION = (
-    "ORBIT IDENTITY LOCK (always): Match the attached Seedance Orbit reference "
+    "ORBIT IDENTITY LOCK (always): Match the attached Orbit identity reference "
     "exactly. Orbit is ONE continuous matte orange sphere/egg body (head and torso "
     "are the same piece — no neck, no two stacked spheres), NO legs, soft orange "
     "underside glow only, large black curved visor with TWO cream/white circular "
@@ -71,7 +71,7 @@ ORBIT_AGENT_INSTRUCTION = (
 )
 
 FLOW_I2V_PREFACE = (
-    "IMAGE-TO-VIDEO of the attached Orbit Seedance reference. Animate THIS exact "
+    "IMAGE-TO-VIDEO of the attached Orbit identity reference. Animate THIS exact "
     "single continuous orange sphere character — black curved visor, cream circular "
     "eyes, integrated side nubs, single antenna, solid orange chest. Do NOT redesign. "
     "Reject white chest disc, ear rings/headphones, two-sphere head/body split."
@@ -441,7 +441,7 @@ def _prompt_attachment_count(page) -> int:
     )
 
 
-def _assert_seedance_ref(ref: Path) -> Path:
+def _assert_orbit_identity_ref(ref: Path) -> Path:
     """Refuse quarantine / redesign plates as Orbit identity refs."""
     p = ref.resolve()
     bad_markers = ("_rejected", "orbit-cg-canonical", "flow-ingredient-plain")
@@ -449,14 +449,18 @@ def _assert_seedance_ref(ref: Path) -> Path:
     if any(m in low for m in bad_markers):
         raise RuntimeError(
             f"Refused off-model Orbit plate: {p}\n"
-            "Use orbit-seedance-reference-16x9-v01.png (or portrait v01)."
+            "Use orbit-seedance-reference-16x9-v01.png (legacy filename — "
+            "identity still only; CG engine is Flow Veo, not Seedance)."
         )
     if "seedance-reference" not in low and "orbit-seedance" not in low:
         print(
-            f"  warn: unexpected Orbit ref name (prefer Seedance): {p.name}",
+            f"  warn: unexpected Orbit identity ref name: {p.name}",
             flush=True,
         )
     return p
+
+# Back-compat alias
+_assert_seedance_ref = _assert_orbit_identity_ref
 
 
 def _open_create_picker(page) -> None:
@@ -512,14 +516,17 @@ def _wait_add_to_prompt_enabled(page, *, timeout_s: float = 90) -> bool:
 
 
 def attach_orbit_to_prompt(page, ref: Path) -> bool:
-    """Attach Orbit Seedance image into the agent prompt (required for identity).
+    """Attach Orbit identity still into the agent prompt (required for identity).
+
+    CG engine is Google Flow Veo — not Seedance. The still file may still be
+    named orbit-seedance-reference-*.png (legacy path only).
 
     Flow path that works (2026-08):
       + Create → Upload media → wait until thumbnail ready → **Add to Prompt**
 
     Library-only / header Add Media is not enough. Aborts if no prompt chip.
     """
-    ref = _assert_seedance_ref(ref)
+    ref = _assert_orbit_identity_ref(ref)
     if not ref.exists():
         raise FileNotFoundError(ref)
     ensure_agent_session(page)
@@ -616,7 +623,7 @@ def attach_orbit_to_prompt(page, ref: Path) -> bool:
     print(f"  prompt attachment visible={attached} (was {before})", flush=True)
     if not attached:
         raise RuntimeError(
-            "Orbit Seedance reference did not attach to the Flow prompt — aborting "
+            "Orbit identity reference did not attach to the Flow prompt — aborting "
             "to avoid off-model mascot generation. Confirm Add to Prompt produced "
             "an image chip above the prompt before Create."
         )
@@ -673,7 +680,7 @@ def flow_prompt(scene_prompt: str) -> str:
         return body
     return (
         f"{FLOW_I2V_PREFACE} {body} "
-        "Match the attached Seedance Orbit image exactly. Silent picture only."
+        "Match the attached Orbit identity image exactly. Silent picture only."
     )
 
 
@@ -870,7 +877,7 @@ def generate_clip(
     reuse_project: bool = False,
 ) -> dict:
     """Generate one silent Veo clip via Google Flow Ultra UI."""
-    ref = _assert_seedance_ref(orbit_ref or veo.ORBIT_REF)
+    ref = _assert_orbit_identity_ref(orbit_ref or veo.ORBIT_REF)
     t0 = time.time()
     print(f"  orbit identity ref: {ref}", flush=True)
 
@@ -897,7 +904,7 @@ def generate_clip(
     ensure_agent_session(page)
     ensure_orbit_agent_instruction(page)
     ensure_agent_session(page)
-    # Bind Seedance chip first, then paste prompt text (keeps chip stable).
+    # Bind Orbit identity chip first, then paste prompt text (keeps chip stable).
     attached = attach_orbit_to_prompt(page, ref)
     set_prompt(page, flow_prompt(prompt))
     if _prompt_attachment_count(page) < 1:
@@ -907,7 +914,7 @@ def generate_clip(
     if _prompt_attachment_count(page) < 1:
         raise RuntimeError("Orbit prompt chip missing after attach — aborting")
     submit_create(page)
-    print("  submitted Create (identity-locked, Seedance attached)", flush=True)
+    print("  submitted Create (identity-locked, Orbit ref attached)", flush=True)
     media_id = wait_and_download(
         page, dest, before_ids=before, timeout_s=timeout_s
     )

@@ -33,22 +33,27 @@ import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-# TRUE identity lock — single continuous orange sphere (Seedance).
-# Never prefer quarantine plates under 05_Seedance-References/_Rejected/
+# TRUE identity lock still — single continuous orange sphere.
+# File lives under 05_Seedance-References/ (legacy folder name only).
+# CG engine is Google Flow Veo — NOT Seedance / ElevenLabs Image & Video.
+# Never prefer quarantine plates under …/_Rejected/
 # (orbit-cg-canonical-* is a white-chest / two-sphere redesign — hard reject).
-ORBIT_REF_SEEDANCE = (
+ORBIT_REF_IDENTITY = (
     REPO
     / "01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png"
 )
-ORBIT_REF_SEEDANCE_PORTRAIT = (
+ORBIT_REF_IDENTITY_PORTRAIT = (
     REPO
     / "01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-v01.png"
 )
 ORBIT_REF = (
-    ORBIT_REF_SEEDANCE
-    if ORBIT_REF_SEEDANCE.exists()
-    else ORBIT_REF_SEEDANCE_PORTRAIT
+    ORBIT_REF_IDENTITY
+    if ORBIT_REF_IDENTITY.exists()
+    else ORBIT_REF_IDENTITY_PORTRAIT
 )
+# Back-compat aliases
+ORBIT_REF_SEEDANCE = ORBIT_REF_IDENTITY
+ORBIT_REF_SEEDANCE_PORTRAIT = ORBIT_REF_IDENTITY_PORTRAIT
 
 # Default paid/preview model — override with ORBIT_VEO_MODEL
 DEFAULT_MODEL = os.environ.get("ORBIT_VEO_MODEL", "veo-3.1-fast-generate-preview")
@@ -60,7 +65,7 @@ except ImportError:
     from orbit_voice import CG_PREFACE, CG_SILENT_AUDIO_BLOCK
 
 IDENTITY_LOCK = (
-    "CRITICAL ORBIT IDENTITY — match the attached Seedance reference image exactly, "
+    "CRITICAL ORBIT IDENTITY — match the attached Orbit identity reference image exactly, "
     "full-CG Orbit in every frame: ONE continuous matte ORANGE sphere/egg body "
     "(head and torso are the same piece — no neck, no two stacked spheres). "
     "NO LEGS — hover only with soft orange underside glow. "
