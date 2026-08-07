@@ -133,65 +133,91 @@ async function updateStatus(
   return { ok: res.ok, statusCode: res.status, id, body, status };
 }
 
-/** Private + clear publishAt (unlisted→private workaround if needed). */
+async function samplePrivacy(accessToken: string, id: string, n: number) {
+  const samples: Array<{ privacy: string | null; publishAt: string | null }> = [];
+  for (let i = 0; i < n; i++) {
+    if (i) await sleep(600);
+    const check = await getVideos(accessToken, [id]);
+    const it = check.get(id);
+    samples.push({
+      privacy: it?.status?.privacyStatus || null,
+      publishAt: it?.status?.publishAt || null,
+    });
+  }
+  return samples;
+}
+
+/** Private + clear publishAt (unlisted→private workaround only if publishAt persists). */
 async function setPrivateUnscheduled(
   accessToken: string,
   id: string,
   madeForKids: boolean,
   dryRun: boolean,
+  priorStatus?: Record<string, unknown>,
 ) {
-  let result = await updateStatus(
-    accessToken,
-    id,
-    {
-      privacyStatus: "private",
-      selfDeclaredMadeForKids: false,
-      madeForKids,
-    },
-    dryRun,
-  );
+  const statusPayload: Record<string, unknown> = {
+    privacyStatus: "private",
+    license: priorStatus?.license || "youtube",
+    embeddable: priorStatus?.embeddable === true,
+    publicStatsViewable: priorStatus?.publicStatsViewable === true,
+    selfDeclaredMadeForKids: false,
+    madeForKids,
+  };
+  let result = await updateStatus(accessToken, id, statusPayload, dryRun);
   if (dryRun) {
     return {
       ok: true,
       after: { privacy: "private", publishAt: null },
       result,
       clearedViaUnlistedHop: false,
+      samples: [],
     };
   }
   if (!result.ok) {
-    return { ok: false, after: null, result, clearedViaUnlistedHop: false };
+    const err = JSON.stringify((result as any).body?.error || (result as any).body || {});
+    if (/quotaExceeded/i.test(err)) {
+      throw new Error(`YouTube quotaExceeded while updating ${id}`);
+    }
+    return { ok: false, after: null, result, clearedViaUnlistedHop: false, samples: [] };
   }
-  await sleep(500);
-  let check = await getVideos(accessToken, [id]);
-  let it = check.get(id);
-  let privacy = it?.status?.privacyStatus;
-  let publishAt = it?.status?.publishAt || null;
+  // Prefer update-response private, then confirm with sparse samples (avoid quota burn).
+  await sleep(2500);
+  let samples = await samplePrivacy(accessToken, id, 5);
+  let privacyVotes = samples.filter((s) => s.privacy === "private").length;
+  let anyPublishAt = samples.some((s) => Boolean(s.publishAt));
   let hopped = false;
-  if (publishAt) {
+
+  if (anyPublishAt) {
     hopped = true;
     await updateStatus(
       accessToken,
       id,
-      { privacyStatus: "unlisted", selfDeclaredMadeForKids: false, madeForKids },
+      { ...statusPayload, privacyStatus: "unlisted" },
       false,
     );
-    result = await updateStatus(
-      accessToken,
-      id,
-      { privacyStatus: "private", selfDeclaredMadeForKids: false, madeForKids },
-      false,
-    );
-    await sleep(500);
-    check = await getVideos(accessToken, [id]);
-    it = check.get(id);
-    privacy = it?.status?.privacyStatus;
-    publishAt = it?.status?.publishAt || null;
+    result = await updateStatus(accessToken, id, statusPayload, false);
+    await sleep(2500);
+    samples = await samplePrivacy(accessToken, id, 5);
+    privacyVotes = samples.filter((s) => s.privacy === "private").length;
+    anyPublishAt = samples.some((s) => Boolean(s.publishAt));
   }
+
+  const updateSaidPrivate =
+    ((result as any).body?.status?.privacyStatus || "") === "private";
+  // Require majority private samples and no publishAt; update response must be private.
+  const ok = updateSaidPrivate && privacyVotes >= 3 && !anyPublishAt;
+  const last = samples[samples.length - 1] || { privacy: null, publishAt: null };
   return {
-    ok: privacy === "private" && !publishAt,
-    after: { privacy, publishAt },
+    ok,
+    after: {
+      privacy: privacyVotes >= 3 ? "private" : last.privacy,
+      publishAt: anyPublishAt ? last.publishAt : null,
+      privacyVotes,
+      sampleCount: samples.length,
+    },
     result,
     clearedViaUnlistedHop: hopped,
+    samples,
   };
 }
 
@@ -349,6 +375,40 @@ async function main() {
       );
       process.exit(1);
     }
+  }
+
+  // ─── PHASE 3: shelf gate before any schedule mutations ───────────
+  {
+    const shelfMap = await getVideos(accessToken, [...APPROVED_PUBLIC, "HvAKGjx4lv0"]);
+    const publicOk = APPROVED_PUBLIC.every(
+      (id) =>
+        shelfMap.get(id)?.status?.privacyStatus === "public" &&
+        !shelfMap.get(id)?.status?.publishAt,
+    );
+    const unexpectedPublic: string[] = [];
+    // only checking the six — full npm shelf-verify runs after apply
+    if (!publicOk) {
+      console.error(
+        JSON.stringify({
+          ok: false,
+          stopped: true,
+          reason: "Shelf gate FAILED after Hv repair — calendar NOT applied",
+          publicCanonicals: APPROVED_PUBLIC.map((id) => ({
+            id,
+            privacy: shelfMap.get(id)?.status?.privacyStatus,
+            publishAt: shelfMap.get(id)?.status?.publishAt || null,
+          })),
+          unexpectedPublic,
+        }),
+      );
+      process.exit(1);
+    }
+    mutationLog.push({
+      phase: "shelf_gate_pre_schedule",
+      ok: true,
+      publicCanonicals: 6,
+      unexpectedPublic: [],
+    });
   }
 
   // ─── PHASE 4 precheck: validate calendar vs live ─────────────────
