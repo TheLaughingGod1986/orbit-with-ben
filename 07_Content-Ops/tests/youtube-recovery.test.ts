@@ -24,6 +24,16 @@ import {
   type CanonicalRegistryFile,
 } from "../src/lib/publishing/youtube-registry";
 import { assertYouTubeVideoState } from "../src/lib/publishing/adapters/youtube";
+import {
+  assertYouTubeMutationAllowed,
+  isYouTubePublishingFrozen,
+  loadYouTubePublishingFreeze,
+} from "../src/lib/publishing/youtube-freeze";
+import {
+  assertNotPlaceholderHoldPublishAt,
+  assertScheduleCadence,
+  isPlaceholderHoldPublishAt,
+} from "../src/lib/publishing/youtube-schedule-guards";
 
 const recoveryBase: YouTubeRecoveryConfig = {
   recoveryMode: true,
@@ -259,6 +269,30 @@ describe("assertYouTubeVideoState (mocked)", () => {
   });
 });
 
+describe("emergency publishing freeze", () => {
+  it("loads freeze config and fail-closes mutations", () => {
+    const cfg = loadYouTubePublishingFreeze();
+    expect(cfg.youtubePublishingFrozen).toBe(true);
+    expect(isYouTubePublishingFrozen(cfg)).toBe(true);
+    expect(() => assertYouTubeMutationAllowed({ operation: "test" })).toThrow(
+      /YOUTUBE MUTATION BLOCKED/,
+    );
+    expect(() =>
+      assertYouTubeMutationAllowed({ allowEmergencyUnfreeze: true, operation: "test" }),
+    ).not.toThrow();
+  });
+
+  it("keeps youtube:upload as a hard-disabled stub", () => {
+    const upload = fs.readFileSync(
+      path.resolve(process.cwd(), "scripts/youtube-api-upload.ts"),
+      "utf8",
+    );
+    expect(upload).toContain("DISABLED");
+    expect(upload).toContain("youtube:package");
+    expect(upload).not.toContain("YouTubePublishingAdapter");
+  });
+});
+
 describe("quarantined CDP scripts", () => {
   const scheduleDir = path.resolve(
     process.cwd(),
@@ -316,21 +350,26 @@ describe("quarantined CDP scripts", () => {
     const paths = [
       path.resolve(
         process.cwd(),
-        "../00_Brand/Channel-Setup/audits/youtube_cleanup_2026-08-07/_cleanup_visibility_cdp.py",
+        "../00_Brand/Channel-Setup/audits/youtube_cleanup_2026-08-07/DISABLED___cleanup_visibility_cdp.py",
       ),
       path.resolve(
         process.cwd(),
-        "../00_Brand/Channel-Setup/audits/_replace_shorts_v02_youtube.py",
+        "../00_Brand/Channel-Setup/audits/DISABLED___replace_shorts_v02_youtube.py",
       ),
       path.resolve(
         process.cwd(),
-        "../00_Brand/Channel-Setup/audits/youtube_smooth_canon_2026-08-07/_canon_smooth_bh_v01.py",
+        "../00_Brand/Channel-Setup/audits/youtube_smooth_canon_2026-08-07/DISABLED___canon_smooth_bh_v01.py",
       ),
     ];
     for (const p of paths) {
-      expect(fs.existsSync(p)).toBe(true);
-      const head = fs.readFileSync(p, "utf8").slice(0, 500);
-      expect(head).toMatch(/SystemExit|DISABLED/);
+      // Accept either DISABLED__ rename or in-place SystemExit stub
+      const alt = p
+        .replace("/DISABLED___", "/")
+        .replace("DISABLED___", "");
+      const target = fs.existsSync(p) ? p : alt;
+      expect(fs.existsSync(target)).toBe(true);
+      const head = fs.readFileSync(target, "utf8").slice(0, 500);
+      expect(head).toMatch(/SystemExit|DISABLED|permanently disabled/);
     }
   });
 });
@@ -391,6 +430,97 @@ describe("registry persistence shape", () => {
     expect(reg.historicalDuplicateIdsGlobal?.length || 0).toBeGreaterThan(0);
     const bh = reg.records.find((r) => r.youtubeVideoId === "3xrxdmaOwJI");
     expect(bh?.historicalDuplicateIds).toEqual(expect.arrayContaining(["RCs6MMxF3ko"]));
+  });
+});
+
+describe("placeholder hold date ban", () => {
+  it("detects 31 Dec placeholder publishAt", () => {
+    expect(isPlaceholderHoldPublishAt("2026-12-31T11:30:00Z")).toBe(true);
+    expect(isPlaceholderHoldPublishAt("2026-12-31T12:30:00+01:00")).toBe(true);
+    expect(isPlaceholderHoldPublishAt("2026-08-14T17:00:00Z")).toBe(false);
+    expect(isPlaceholderHoldPublishAt(null)).toBe(false);
+  });
+
+  it("throws SCHEDULE BLOCKED for placeholder holds", () => {
+    expect(() => assertNotPlaceholderHoldPublishAt("2026-12-31T11:30:00Z")).toThrow(
+      /SCHEDULE BLOCKED/,
+    );
+  });
+
+  it("blocks cadence when placeholder, historical duplicate, or short-day exceeded", () => {
+    const future = new Date(Date.now() + 86_400_000).toISOString();
+    expect(
+      assertScheduleCadence({
+        format: "shorts",
+        publishAtIso: "2026-12-31T11:30:00Z",
+        shortsOnSameDay: 0,
+      }).ok,
+    ).toBe(false);
+
+    expect(() =>
+      assertScheduleCadence({
+        format: "shorts",
+        publishAtIso: future,
+        shortsOnSameDay: 0,
+        isHistoricalDuplicate: true,
+      }),
+    ).not.toThrow();
+    expect(
+      assertScheduleCadence({
+        format: "shorts",
+        publishAtIso: future,
+        shortsOnSameDay: 0,
+        isHistoricalDuplicate: true,
+      }).errors.some((e) => /historical duplicate/i.test(e)),
+    ).toBe(true);
+
+    expect(
+      assertScheduleCadence({
+        format: "shorts",
+        publishAtIso: future,
+        shortsOnSameDay: 1,
+        maxShortsPerDay: 1,
+      }).errors.some((e) => /Short\/day/i.test(e)),
+    ).toBe(true);
+
+    expect(
+      assertScheduleCadence({
+        format: "longform",
+        publishAtIso: future,
+        shortsOnSameDay: 0,
+        longsInSameWeek: 1,
+        maxLongsPerWeek: 1,
+      }).errors.some((e) => /long\/week/i.test(e)),
+    ).toBe(true);
+
+    expect(
+      assertScheduleCadence({
+        format: "shorts",
+        publishAtIso: future,
+        shortsOnSameDay: 0,
+        sameMinuteCollision: true,
+      }).ok,
+    ).toBe(false);
+  });
+
+  it("emergency-repair no longer assigns Dec 31 holds", () => {
+    const src = fs.readFileSync(
+      path.resolve(process.cwd(), "scripts/youtube-emergency-repair.ts"),
+      "utf8",
+    );
+    expect(src).toContain("placeholder_holds_forbidden");
+    expect(src).toContain("report_imminent_no_placeholder_hold");
+    expect(src).not.toMatch(/action:\s*"hold_schedule_dec31"/);
+  });
+
+  it("shelf-verify expects former holds to be private without publishAt", () => {
+    const src = fs.readFileSync(
+      path.resolve(process.cwd(), "scripts/youtube-shelf-verify.ts"),
+      "utf8",
+    );
+    expect(src).toContain('role: "canonical_future_unscheduled"');
+    expect(src).toContain('role: "historical_dupe_unscheduled"');
+    expect(src).not.toMatch(/publishAt:\s*"2026-12-31T11:30:00Z"/);
   });
 });
 

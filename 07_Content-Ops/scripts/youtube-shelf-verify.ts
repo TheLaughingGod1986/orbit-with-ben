@@ -34,12 +34,23 @@ const EXPECTED: Expected[] = [
   { id: "L2OFjL4neOo", privacy: "public", publishAt: null, role: "bh_short_canonical" },
   { id: "IwpO33AJaPQ", privacy: "private", publishAt: null, role: "privatized_dupe" },
   { id: "RCs6MMxF3ko", privacy: "private", publishAt: null, role: "privatized_dupe_long" },
-  { id: "2C-eiSMsBLc", privacy: "private", publishAt: "2026-12-31T11:30:00Z", role: "held" },
-  { id: "IqII5mVGdrs", privacy: "private", publishAt: "2026-12-31T11:30:00Z", role: "held" },
-  { id: "lIHb_tyxQSM", privacy: "private", publishAt: "2026-12-31T11:30:00Z", role: "held" },
-  { id: "wOlnj7nZWJM", privacy: "private", publishAt: "2026-12-31T11:30:00Z", role: "held" },
-  { id: "2uT3wXJLybw", privacy: "private", publishAt: "2026-12-31T11:30:00Z", role: "held" },
-  { id: "tUAdhOnMW2g", privacy: "private", publishAt: "2026-08-07T10:30:00Z", role: "canonical_nf01" },
+  // Former Dec-31 quarantine holds — must be private + unscheduled after schedule repair
+  { id: "2C-eiSMsBLc", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
+  { id: "IqII5mVGdrs", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
+  { id: "lIHb_tyxQSM", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
+  { id: "wOlnj7nZWJM", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
+  { id: "2uT3wXJLybw", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
+  { id: "tUAdhOnMW2g", privacy: "private", publishAt: null, role: "canonical_future_unscheduled" },
+];
+
+/** Must remain non-public during approved six-shelf recovery (unless separately registered). */
+const MUST_NOT_BE_PUBLIC = [
+  "RCs6MMxF3ko",
+  "IwpO33AJaPQ",
+  "z-DLqoSoEBo",
+  "UWwNKYf_aU8",
+  "dPMJQp2gMNc",
+  "rFJoOdQAc9c",
 ];
 
 async function main() {
@@ -64,7 +75,7 @@ async function main() {
   const fresh = await prisma.platformConnection.findUnique({ where: { id: connection.id } });
   const token = decryptSecret(fresh!.accessTokenEncrypted!);
 
-  const ids = EXPECTED.map((e) => e.id);
+  const ids = Array.from(new Set([...EXPECTED.map((e) => e.id), ...MUST_NOT_BE_PUBLIC]));
   const res = await fetch(
     `https://www.googleapis.com/youtube/v3/videos?part=status,snippet,statistics&id=${ids.join(",")}`,
     { headers: { Authorization: `Bearer ${token}` } },
@@ -93,13 +104,14 @@ async function main() {
     const privacyOk = actual.privacy === exp.privacy;
     const publishOk =
       exp.publishAt == null ? actual.publishAt == null : actual.publishAt === exp.publishAt;
-    // Held videos may stay private with Dec 31 publishAt — allow private without publishAt only as WARNING
     let status: "PASS" | "WARNING" | "FAIL" = privacyOk && publishOk ? "PASS" : "FAIL";
     let detail = "";
-    if (exp.role === "held" && privacyOk && actual.publishAt?.startsWith("2026-12-31")) {
-      status = "PASS";
+    // Fail closed if any watched ID still has a Dec-31 placeholder hold
+    if (actual.publishAt?.startsWith("2026-12-31")) {
+      status = "FAIL";
+      detail = `placeholder hold publishAt still present: ${actual.publishAt}`;
     } else if (exp.role === "canonical_nf01" && actual.publishAt === "2026-08-07T10:30:00Z") {
-      // may already have gone public if past air time
+      // legacy expected schedule (pre-emergency hold)
       if (actual.privacy === "public" && !actual.publishAt) {
         status = "WARNING";
         detail = "NF01 already public (scheduled time passed) — still canonical; not a duplicate";
@@ -119,18 +131,30 @@ async function main() {
       r.role !== "canonical_nf01",
   );
 
+  const extraPublicFromWatchlist: string[] = [];
+  for (const id of MUST_NOT_BE_PUBLIC) {
+    const it = byId.get(id) as any;
+    if (it?.status?.privacyStatus === "public") extraPublicFromWatchlist.push(id);
+  }
+
   const recovery = loadYouTubeRecoveryConfig();
   const baselineExists = fs.existsSync(BASELINE);
 
   const summary = {
-    ok: rows.every((r) => r.status !== "FAIL") && unexpectedPublic.length === 0,
+    ok:
+      rows.every((r) => r.status !== "FAIL") &&
+      unexpectedPublic.length === 0 &&
+      extraPublicFromWatchlist.length === 0,
     verifiedAt: new Date().toISOString(),
     publicCount,
     expectedPublic: 6,
     recoveryMode: recovery.recoveryMode,
     baselineFile: baselineExists ? BASELINE : null,
     rows,
-    unexpectedPublic: unexpectedPublic.map((r) => r.id),
+    unexpectedPublic: Array.from(
+      new Set([...unexpectedPublic.map((r) => r.id), ...extraPublicFromWatchlist]),
+    ),
+    extraPublicFromWatchlist,
   };
 
   fs.mkdirSync(AUDIT, { recursive: true });

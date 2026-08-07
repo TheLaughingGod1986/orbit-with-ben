@@ -96,6 +96,19 @@ async function main() {
     process.exit(1);
   }
 
+  try {
+    const { assertYouTubeMutationAllowed } = await import(
+      "../src/lib/publishing/youtube-freeze"
+    );
+    assertYouTubeMutationAllowed({
+      allowEmergencyUnfreeze: flag("allow-emergency-unfreeze"),
+      operation: "youtube:package",
+    });
+  } catch (e) {
+    console.error(e instanceof Error ? e.message : String(e));
+    process.exit(20);
+  }
+
   if (flag("replace") || flag("reupload") || flag("delete-and-reupload")) {
     console.error(
       "UPLOAD BLOCKED: Replacement / reupload flags are forbidden. ONE CONTENT PACKAGE = ONE YOUTUBE VIDEO ID.",
@@ -126,6 +139,33 @@ async function main() {
   if (!fs.existsSync(resolved.videoPath)) {
     console.error(`UPLOAD BLOCKED: video file missing: ${resolved.videoPath}`);
     process.exit(21);
+  }
+
+  // Reject fake 31 Dec holding dates as publishAt
+  if (resolved.scheduledAt) {
+    const { assertNotPlaceholderHoldPublishAt, assertScheduleCadence } = await import(
+      "../src/lib/publishing/youtube-schedule-guards"
+    );
+    try {
+      assertNotPlaceholderHoldPublishAt(resolved.scheduledAt.toISOString());
+      const cadence = assertScheduleCadence({
+        format: resolved.format,
+        publishAtIso: resolved.scheduledAt.toISOString(),
+        shortsOnSameDay: 0,
+        isHistoricalDuplicate: false,
+        isCanonical: true,
+        contentId: arg("content-id") || null,
+        sameMinuteCollision: false,
+      });
+      // Full cadence (shorts/day counts) enforced later via recovery gate; this catches placeholder + past dates early.
+      if (!cadence.ok && cadence.errors.some((e) => e.includes("placeholder") || e.includes("future") || e.includes("valid"))) {
+        console.error(cadence.errors.join("\n"));
+        process.exit(23);
+      }
+    } catch (e) {
+      console.error(e instanceof Error ? e.message : String(e));
+      process.exit(23);
+    }
   }
 
   const fingerprint = fingerprintSourceFile(resolved.videoPath);
