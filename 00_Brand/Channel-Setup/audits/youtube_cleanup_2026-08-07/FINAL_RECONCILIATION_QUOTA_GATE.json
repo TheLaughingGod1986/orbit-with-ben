@@ -1,12 +1,12 @@
 {
-  "probedAt": "2026-08-07T16:02:16Z",
+  "probedAt": "2026-08-07T19:23:18Z",
   "quotaAvailable": false,
+  "probeStatus": 403,
   "quotaError": {
     "code": 403,
-    "reason": "quotaExceeded",
-    "message": "The request cannot be completed because you have exceeded your quota."
+    "reason": "quotaExceeded"
   },
   "mutations": 0,
-  "verdict": "WAITING FOR YOUTUBE API QUOTA",
-  "note": "Phase 1 gate failed. Zero mutations performed. Live 16\u219213 reconciliation deferred until quota reset."
+  "note": "Retry: initial probe OK, then dry-run burned remaining quota via search.list forMine. Script fixed to known-ID videos.list only. Zero schedule mutations applied.",
+  "verdict": "WAITING FOR YOUTUBE API QUOTA"
 }

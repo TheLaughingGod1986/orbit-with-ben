@@ -339,19 +339,30 @@ async function main() {
     (reg.records || []).map((r: any) => [r.youtubeVideoId || r.canonicalYouTubeVideoId, r]),
   );
 
-  // ─── Phase 2: live scheduled inventory ───────────────────────────
-  // Prefer targeted list of known IDs (cheaper) + mine search for unexpected.
+  // ─── Phase 2: live scheduled inventory (quota-safe known IDs only) ─
+  // Do NOT use search.list forMine — it burns quota across the whole catalogue.
+  // Watchlist = approved 13 + excluded 9 + public 6 + known old-16 IDs from applied calendar.
+  const knownOldIds: string[] = [];
+  try {
+    const appliedPath = path.join(AUDIT, "APPLIED_CANONICAL_RELEASE_CALENDAR.json");
+    if (fs.existsSync(appliedPath)) {
+      const applied = JSON.parse(fs.readFileSync(appliedPath, "utf8"));
+      for (const it of applied.items || []) {
+        if (it.youtubeId) knownOldIds.push(it.youtubeId);
+      }
+    }
+  } catch {
+    /* ignore */
+  }
   const watchIds = Array.from(
     new Set([
       ...Object.keys(APPROVED_UTC),
       ...EXCLUDED,
       ...APPROVED_PUBLIC,
-      ...[...regById.keys()].filter(Boolean),
+      ...knownOldIds,
     ]),
   ) as string[];
   const beforeMap = await getVideos(accessToken, watchIds);
-  const mineScheduled = await listMineScheduled(accessToken);
-  for (const [id, it] of mineScheduled) beforeMap.set(id, it);
 
   const liveScheduled = [...beforeMap.values()].filter((it) => it.status?.publishAt);
   const beforeRows = liveScheduled.map((it) => {
