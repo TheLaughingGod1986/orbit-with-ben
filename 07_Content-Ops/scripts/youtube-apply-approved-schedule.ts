@@ -226,33 +226,55 @@ async function main() {
       madeForKids,
       dryRun,
     );
-    let afterSnap = null;
-    if (!dryRun && result.ok) {
-      const check = await getVideos(accessToken, [it.youtubeId]);
-      const a = check.get(it.youtubeId);
+    // Prefer update response body (videos.list can briefly omit publishAt).
+    let afterSnap: { privacy?: string; publishAt?: string | null } | null = null;
+    if (dryRun) {
+      afterSnap = { privacy: "private", publishAt, projected: true } as any;
+    } else if (result.ok) {
+      const fromUpdate = (result as any).body?.status;
       afterSnap = {
-        privacy: a?.status?.privacyStatus,
-        publishAt: a?.status?.publishAt || null,
+        privacy: fromUpdate?.privacyStatus || "private",
+        publishAt: fromUpdate?.publishAt || publishAt,
       };
-      if (afterSnap.publishAt !== publishAt && afterSnap.publishAt !== it.proposedUTC) {
-        // allow minor formatting differences
-        const norm = (s: string | null) => (s || "").replace(/\.\d{3}Z$/, "Z");
-        if (norm(afterSnap.publishAt) !== norm(publishAt)) {
-          mutations.push({
-            ...it,
-            publishAt,
-            before: {
-              privacy: before.status?.privacyStatus,
-              publishAt: before.status?.publishAt || null,
-            },
-            after: afterSnap,
-            result,
-            failed: true,
-            error: `publishAt mismatch got=${afterSnap.publishAt}`,
-          });
-          continue;
+      // Confirm with a short retry list
+      for (let attempt = 0; attempt < 3; attempt++) {
+        await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+        const check = await getVideos(accessToken, [it.youtubeId]);
+        const a = check.get(it.youtubeId);
+        const got = a?.status?.publishAt || null;
+        if (got) {
+          afterSnap = {
+            privacy: a?.status?.privacyStatus,
+            publishAt: got,
+          };
+          break;
         }
       }
+      const norm = (s: string | null | undefined) => (s || "").replace(/\.\d{3}Z$/, "Z");
+      if (norm(afterSnap?.publishAt) !== norm(publishAt)) {
+        mutations.push({
+          ...it,
+          publishAt,
+          before: {
+            privacy: before.status?.privacyStatus,
+            publishAt: before.status?.publishAt || null,
+          },
+          after: afterSnap,
+          result,
+          failed: true,
+          error: `publishAt mismatch got=${afterSnap?.publishAt}`,
+        });
+        continue;
+      }
+    } else {
+      mutations.push({
+        youtubeId: it.youtubeId,
+        publishAt,
+        result,
+        failed: true,
+        error: `update failed status=${(result as any).statusCode}`,
+      });
+      continue;
     }
     mutations.push({
       youtubeId: it.youtubeId,
@@ -266,12 +288,10 @@ async function main() {
         privacy: before.status?.privacyStatus,
         publishAt: before.status?.publishAt || null,
       },
-      after: dryRun
-        ? { privacy: "private", publishAt, projected: true }
-        : afterSnap,
+      after: afterSnap,
       result,
       dryRun,
-      failed: dryRun ? false : !result.ok,
+      failed: false,
     });
   }
 

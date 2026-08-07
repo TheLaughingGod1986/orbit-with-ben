@@ -387,7 +387,7 @@ describe("ambiguous upload retry protection", () => {
 });
 
 describe("held-video and recovery config persistence", () => {
-  it("keeps recovery mode with empty Dec31 holds after schedule repair", () => {
+  it("keeps recovery mode with approved schedule and no Dec31 holds", () => {
     const cfg = JSON.parse(
       fs.readFileSync(
         path.resolve(process.cwd(), "../00_Brand/Channel-Setup/YOUTUBE_RECOVERY_MODE.json"),
@@ -399,12 +399,14 @@ describe("held-video and recovery config persistence", () => {
       heldVideoIds: string[];
       replacementUploadsAllowed: boolean;
       notes?: string;
+      approvedScheduledIds?: string[];
     };
     expect(cfg.recoveryMode).toBe(true);
     expect(cfg.maxShortsPerDay).toBe(1);
     expect(cfg.replacementUploadsAllowed).toBe(false);
     expect(cfg.heldVideoIds).toEqual([]);
-    expect(String(cfg.notes || "")).toMatch(/placeholder holds cleared/i);
+    expect(String(cfg.notes || "")).toMatch(/approved calendar applied/i);
+    expect(cfg.approvedScheduledIds?.length || 0).toBeGreaterThanOrEqual(16);
   });
 });
 
@@ -507,13 +509,14 @@ describe("placeholder hold date ban", () => {
     expect(src).not.toMatch(/action:\s*"hold_schedule_dec31"/);
   });
 
-  it("shelf-verify expects former holds to be private without publishAt", () => {
+  it("shelf-verify expects NF01 scheduled and historical dupes unscheduled", () => {
     const src = fs.readFileSync(
       path.resolve(process.cwd(), "scripts/youtube-shelf-verify.ts"),
       "utf8",
     );
-    expect(src).toContain('role: "canonical_future_unscheduled"');
+    expect(src).toContain('role: "canonical_nf01_scheduled"');
     expect(src).toContain('role: "historical_dupe_unscheduled"');
+    expect(src).toContain('publishAt: "2026-08-08T10:30:00Z"');
     expect(src).not.toMatch(/publishAt:\s*"2026-12-31T11:30:00Z"/);
   });
 });
