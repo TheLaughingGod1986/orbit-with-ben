@@ -1,15 +1,38 @@
 {
-  "generatedAt": "2026-08-07T21:09:45Z",
-  "pass": false,
-  "status": "INCOMPLETE_QUOTA",
-  "initialFromBatchCapture": {
+  "startedAt": "2026-08-07T21:27:01.465Z",
+  "reads": [
+    {
+      "role": "initial",
+      "at": "2026-08-07T21:27:01.514Z",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "role": "confirm1",
+      "at": "2026-08-07T21:27:02.368Z",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "role": "confirm2",
+      "at": "2026-08-07T21:27:03.222Z",
+      "privacy": "private",
+      "publishAt": null
+    }
+  ],
+  "writePerformed": false,
+  "initial": {
+    "at": "2026-08-07T21:27:01.514Z",
     "privacy": "private",
     "publishAt": null
   },
   "write": {
-    "skipped": true,
-    "reason": "already private+null on capture"
+    "skipped": true
   },
-  "threeConsecutiveConfirm": "blocked by quotaExceeded",
-  "mutations": 0
+  "pass": false,
+  "status": "WAITING FOR YOUTUBE API QUOTA \u2014 HV CONFIRM INCOMPLETE",
+  "completedConfirms": 2,
+  "requiredConfirms": 3,
+  "note": "initial + confirm1 + confirm2 all private+null; confirm3 videos.list returned quotaExceeded",
+  "updatedAt": "2026-08-07T21:27:26Z"
 }
