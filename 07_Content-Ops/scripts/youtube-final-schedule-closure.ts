@@ -329,7 +329,13 @@ async function main() {
   const hvBefore = beforeMap.get("HvAKGjx4lv0");
   if (!hvBefore) throw new Error("HvAKGjx4lv0 not found");
   const hvKids = hvBefore.status?.madeForKids === true;
-  const hvRepair = await setPrivateUnscheduled(accessToken, "HvAKGjx4lv0", hvKids, dryRun);
+  const hvRepair = await setPrivateUnscheduled(
+    accessToken,
+    "HvAKGjx4lv0",
+    hvKids,
+    dryRun,
+    hvBefore.status,
+  );
   mutationLog.push({
     phase: "repair_HvAKGjx4lv0",
     videoId: "HvAKGjx4lv0",
@@ -462,7 +468,7 @@ async function main() {
       continue;
     }
     const kids = before.status?.madeForKids === true;
-    const cleared = await setPrivateUnscheduled(accessToken, id, kids, dryRun);
+    const cleared = await setPrivateUnscheduled(accessToken, id, kids, dryRun, before.status);
     mutationLog.push({
       phase: "clear_held",
       videoId: id,
