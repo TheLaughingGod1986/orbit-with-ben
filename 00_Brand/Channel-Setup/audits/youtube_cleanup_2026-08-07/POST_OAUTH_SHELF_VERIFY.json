@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "verifiedAt": "2026-08-06T23:51:57.105Z",
+  "verifiedAt": "2026-08-07T13:51:33.046Z",
   "publicCount": 6,
   "expectedPublic": 6,
   "recoveryMode": true,
@@ -91,7 +91,7 @@
       "actual": {
         "privacy": "public",
         "publishAt": null,
-        "views": "0",
+        "views": "4",
         "title": "Why This Line Is a Point of No Return #Space #Shorts"
       },
       "detail": ""
@@ -109,7 +109,7 @@
       "actual": {
         "privacy": "public",
         "publishAt": null,
-        "views": "1",
+        "views": "6",
         "title": "Falling In Wouldn't Feel Like Falling"
       },
       "detail": ""
@@ -242,22 +242,23 @@
     },
     {
       "id": "tUAdhOnMW2g",
-      "role": "canonical_nf01",
+      "role": "canonical_nf01_held",
       "status": "PASS",
       "expected": {
         "id": "tUAdhOnMW2g",
         "privacy": "private",
-        "publishAt": "2026-08-07T10:30:00Z",
-        "role": "canonical_nf01"
+        "publishAt": "2026-12-31T11:30:00Z",
+        "role": "canonical_nf01_held"
       },
       "actual": {
         "privacy": "private",
-        "publishAt": "2026-08-07T10:30:00Z",
-        "views": "0",
+        "publishAt": "2026-12-31T11:30:00Z",
+        "views": "8",
         "title": "Time Appears to Stop at a Black Hole"
       },
       "detail": ""
     }
   ],
-  "unexpectedPublic": []
+  "unexpectedPublic": [],
+  "extraPublicFromWatchlist": []
 }
