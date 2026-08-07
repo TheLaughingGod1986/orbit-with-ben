@@ -1,16 +1,25 @@
 {
-  "ok": false,
+  "ok": true,
+  "videoId": "3xrxdmaOwJI",
   "scopesBefore": [
-    "https://www.googleapis.com/auth/youtube.upload",
-    "https://www.googleapis.com/auth/youtube.readonly"
+    "https://www.googleapis.com/auth/youtube.force-ssl",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtube.upload"
   ],
-  "forceSslGranted": false,
-  "missingScopes": [
-    "https://www.googleapis.com/auth/youtube.force-ssl"
+  "scopesAfter": [
+    "https://www.googleapis.com/auth/youtube.force-ssl",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtube.upload"
   ],
-  "reconnectRequired": true,
-  "authorizationUrl": "[redacted-from-disk-optional]",
-  "remediation": "Open authorizationUrl while Content Ops is running, complete consent, then re-run npm run youtube:verify-oauth",
-  "note": "Tokens are never printed. State must go through /api/oauth/google/start for CSRF — prefer that UI path.",
-  "preferredReconnect": "https://will-mapping-science-drops.trycloudflare.com/settings/connections"
+  "forceSslGranted": true,
+  "videosUpdatePermitted": true,
+  "videoStateUnchanged": true,
+  "reconnectRequired": false,
+  "checks": [
+    "PASS: youtube.force-ssl granted",
+    "PASS: videos.update permitted",
+    "PASS: video state unchanged"
+  ],
+  "accountNote": "benoats86@gmail.com → Orbit with Ben (UC_esArsDKd3GJvOkeO0DUog)",
+  "verifiedAt": "2026-08-07T00:43:00Z"
 }

@@ -1,64 +1,36 @@
-# Studio manual finish — Black Hole Shorts
+# Studio finish — BH Shorts (2026-08-07)
 
-**Do not automate these steps.** YouTube Related / pin are Studio-only.
+## Related video
 
-Canonical long-form: `3xrxdmaOwJI`  
+| Short ID | Related Video ID | Status |
+|---|---|---|
+| `JRfhE6yWom4` | `3xrxdmaOwJI` | **DONE** (Studio picker verified) |
+| `L2OFjL4neOo` | `3xrxdmaOwJI` | **DONE** (Studio picker verified) |
+
+Evidence: `BH_RELATED_JRfh_RETRY.json`, `BH_SHORTS_STUDIO_FINISH_V02.json`, screenshots in `bh_studio_finish_shots/`.
+
+## Pinned comment (both Shorts)
+
+```
+Full film here → What Happens If You Fall Into a Black Hole?
 https://youtu.be/3xrxdmaOwJI
 
-Suggested pinned comment (same for both Shorts):
+Orbit's Cosmic Journey
+```
 
-> Want to see the full journey into a black hole? Watch the complete episode here 👇
+| Video ID | Comment posted | Pinned | Status |
+|---|---|---|---|
+| `JRfhE6yWom4` | yes | yes | **DONE** |
+| `L2OFjL4neOo` | yes | yes | **DONE** |
 
-(The Related video feature should surface the long-form link. Do not paste duplicate tracking URLs unless needed.)
+## OAuth / en-GB metadata
 
----
+**DONE** (2026-08-07T00:43Z)
 
-## Short 1 — `JRfhE6yWom4`
+- Reconnected as `benoats86@gmail.com` → brand **Orbit with Ben** (channel `UC_esArsDKd3GJvOkeO0DUog`)
+- Scopes: `youtube.force-ssl` + `youtube.upload` + `youtube.readonly`
+- `npm run youtube:verify-oauth` → PASS (`videos.update` permitted)
+- Applied `defaultLanguage` / `defaultAudioLanguage` → `en-GB` on canonical IDs
+- Evidence: `OAUTH_VERIFY_LAST.json`, `EN_GB_METADATA_APPLY.json`, `OAUTH_RECONNECT_86.json`
 
-Title: Why This Line Is a Point of No Return #Space #Shorts  
-Studio: https://studio.youtube.com/video/JRfhE6yWom4/edit  
-Public: https://youtube.com/shorts/JRfhE6yWom4
-
-1. Open the Short in YouTube Studio.
-2. Confirm **Visibility = Public**.
-3. Confirm there are **no restrictions** (not age-restricted / limited).
-4. Set **Related video** → `3xrxdmaOwJI` (What Happens If You Fall Into a Black Hole?).
-5. **Save**.
-6. Open the public Shorts watch page.
-7. Add the pinned comment text above (or equivalent natural wording).
-8. **Pin** the comment.
-9. Verify Related points at the canonical long.
-10. Tick the completion table below.
-
----
-
-## Short 2 — `L2OFjL4neOo`
-
-Title: Falling In Wouldn't Feel Like Falling  
-Studio: https://studio.youtube.com/video/L2OFjL4neOo/edit  
-Public: https://youtube.com/shorts/L2OFjL4neOo
-
-1. Open the Short in YouTube Studio.
-2. Confirm **Visibility = Public**.
-3. Confirm there are **no restrictions**.
-4. Set **Related video** → `3xrxdmaOwJI`.
-5. **Save**.
-6. Open the public Shorts watch page.
-7. Add and **pin** the same style of full-film comment.
-8. Verify Related.
-9. Tick the completion table below.
-
----
-
-## Completion table
-
-| Video ID | Related video set | Comment added | Comment pinned | Verified |
-|---------|-------------------|---------------|----------------|----------|
-| `JRfhE6yWom4` | ☐ | ☐ | ☐ | ☐ |
-| `L2OFjL4neOo` | ☐ | ☐ | ☐ | ☐ |
-
----
-
-## After NF01 goes live (`tUAdhOnMW2g`)
-
-Repeat Related + pin → `3xrxdmaOwJI`. Do **not** publish a second “Time Appears…” Short.
+Note: OAuth must use **benoats86@gmail.com** (Orbit owner), not `benoats@googlemail.com` / iwillstream brand.
