@@ -1,326 +1,794 @@
 {
-  "generatedAt": "2026-08-07T14:12:36.746Z",
+  "generatedAt": "2026-08-07T15:04:28Z",
+  "proposalOnly": true,
+  "applied": false,
+  "mutation": "none",
+  "timezone": "Europe/Paris",
+  "weekdayCorrection": {
+    "previousError": "14 Aug 2026 was incorrectly labeled Thursday",
+    "corrected": {
+      "2026-08-13": "Thursday",
+      "2026-08-14": "Friday",
+      "2026-08-20": "Thursday",
+      "2026-08-21": "Friday"
+    },
+    "method": "datetime + zoneinfo Europe/Paris (programmatic)"
+  },
+  "observation": {
+    "window": "2026-08-07 to 2026-08-09",
+    "timezone": "Europe/Paris",
+    "newPublishing": false,
+    "note": "No new scheduled publishing in observation window. Preferred recovery observation 7\u20139 Aug. Live YouTube currently still has OLD applied calendar (includes Aug 8\u20139 BH Shorts) \u2014 this REVISED proposal supersedes it but is NOT applied."
+  },
   "items": [
     {
-      "date": "2026-08-08",
+      "date": "2026-08-10",
+      "weekday": "Monday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-08T12:30:00+02:00",
-      "proposedUTC": "2026-08-08T10:30:00.000Z",
+      "proposedLocal": "2026-08-10T12:30:00+02:00",
+      "proposedUTC": "2026-08-10T10:30:00Z",
       "family": "BLACK_HOLE",
       "type": "shorts",
       "title": "Time Appears to Stop at a Black Hole",
       "youtubeId": "tUAdhOnMW2g",
       "contentId": "v002-bh-nf01",
-      "status": "APPLIED",
-      "reason": "BH NF01 canonical short \u2014 was quarantine-held",
-      "livePublishAt": "2026-08-08T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": "3xrxdmaOwJI",
+      "familyCoherence": "PASS",
+      "familyNotes": [],
+      "currentState": "private+publishAt=2026-08-08T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-08T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "Strongest remaining BH Short by views (8); recovery Mon slot",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Monday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-10T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-10"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 8
     },
     {
-      "date": "2026-08-09",
+      "date": "2026-08-11",
+      "weekday": "Tuesday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-09T12:30:00+02:00",
-      "proposedUTC": "2026-08-09T10:30:00.000Z",
+      "proposedLocal": "2026-08-11T12:30:00+02:00",
+      "proposedUTC": "2026-08-11T10:30:00Z",
       "family": "BLACK_HOLE",
       "type": "shorts",
       "title": "Would You Look Back?",
       "youtubeId": "svYOx07OrIM",
       "contentId": "v002-bh-nf-look-back",
-      "status": "APPLIED",
-      "reason": "BH recovery short \u2014 was quarantine-held",
-      "livePublishAt": "2026-08-09T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": "3xrxdmaOwJI",
+      "familyCoherence": "PASS",
+      "familyNotes": [],
+      "currentState": "private+publishAt=2026-08-09T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-09T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "BH recovery Short (views 2); Tue slot",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Tuesday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-11T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-11"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 2
     },
     {
-      "date": "2026-08-10",
+      "date": "2026-08-12",
+      "weekday": "Wednesday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-10T12:30:00+02:00",
-      "proposedUTC": "2026-08-10T10:30:00.000Z",
+      "proposedLocal": "2026-08-12T12:30:00+02:00",
+      "proposedUTC": "2026-08-12T10:30:00Z",
       "family": "BLACK_HOLE",
       "type": "shorts",
       "title": "What You Would See Falling Into a Black Hole",
       "youtubeId": "B2STcIAF1lY",
       "contentId": "v002-bh-nf02",
-      "status": "APPLIED",
-      "reason": "BH NF02 canonical short \u2014 was quarantine-held",
-      "livePublishAt": "2026-08-10T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": "3xrxdmaOwJI",
+      "familyCoherence": "PASS",
+      "familyNotes": [],
+      "currentState": "private+publishAt=2026-08-10T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-10T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "BH NF02 canonical Short (views 2); Wed slot",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Wednesday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-12T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-12"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 2
     },
     {
-      "date": "2026-08-11",
-      "timeLocal": "12:30",
-      "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-11T12:30:00+02:00",
-      "proposedUTC": "2026-08-11T10:30:00.000Z",
-      "family": "BLACK_HOLE",
-      "type": "shorts",
-      "title": "The Point of No Return Explained",
-      "youtubeId": "w1ej9u0rPTA",
-      "contentId": "v002-bh-nf-point",
-      "status": "APPLIED",
-      "reason": "BH point-of-no-return short \u2014 was quarantine-held",
-      "livePublishAt": "2026-08-11T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
-    },
-    {
-      "date": "2026-08-14",
+      "date": "2026-08-13",
+      "weekday": "Thursday",
       "timeLocal": "19:00",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-14T19:00:00+02:00",
-      "proposedUTC": "2026-08-14T17:00:00.000Z",
+      "proposedLocal": "2026-08-13T19:00:00+02:00",
+      "proposedUTC": "2026-08-13T17:00:00Z",
       "family": "EXOPLANETS",
       "type": "longform",
       "title": "Alien Worlds: The Strangest Planets We've Ever Found | Orbit's Cosmic Journey",
       "youtubeId": "b8-X_FyJnHM",
       "contentId": "v003-exo-long",
-      "status": "APPLIED",
-      "reason": "Alien Worlds long \u2014 was quarantine-held during recovery",
-      "livePublishAt": "2026-08-14T17:00:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [],
+      "currentState": "private+publishAt=2026-08-14T17:00:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-14T17:00:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "Exoplanets canonical long \u2014 Thu family open",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Thursday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-13T17:00:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-13"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-14",
+      "date": "2026-08-13",
+      "weekday": "Thursday",
       "timeLocal": "21:00",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-14T21:00:00+02:00",
-      "proposedUTC": "2026-08-14T19:00:00.000Z",
+      "proposedLocal": "2026-08-13T21:00:00+02:00",
+      "proposedUTC": "2026-08-13T19:00:00Z",
       "family": "EXOPLANETS",
       "type": "shorts",
       "title": "It Rains Glass Sideways on This Alien World",
       "youtubeId": "ho9VJxp7f3A",
       "contentId": "v003-exo-short-01",
-      "status": "APPLIED",
-      "reason": "Alien Worlds Short #1",
-      "livePublishAt": "2026-08-14T19:00:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-14T19:00:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-14T19:00:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "Exo Short #1 same evening as long",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Thursday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-13T19:00:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-13"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-15",
+      "date": "2026-08-14",
+      "weekday": "Friday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-15T12:30:00+02:00",
-      "proposedUTC": "2026-08-15T10:30:00.000Z",
+      "proposedLocal": "2026-08-14T12:30:00+02:00",
+      "proposedUTC": "2026-08-14T10:30:00Z",
       "family": "EXOPLANETS",
       "type": "shorts",
       "title": "We Found Planets Made of Diamond",
       "youtubeId": "aoR-dA_g7eI",
       "contentId": "v003-exo-short-02",
-      "status": "APPLIED",
-      "reason": "Alien Worlds Short #2",
-      "livePublishAt": "2026-08-15T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-15T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-15T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "Exo Short Fri midday",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Friday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-14T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-14"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-16",
+      "date": "2026-08-15",
+      "weekday": "Saturday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-16T12:30:00+02:00",
-      "proposedUTC": "2026-08-16T10:30:00.000Z",
+      "proposedLocal": "2026-08-15T12:30:00+02:00",
+      "proposedUTC": "2026-08-15T10:30:00Z",
       "family": "EXOPLANETS",
       "type": "shorts",
       "title": "Three Suns in the Sky \u2014 Real Alien Worlds",
       "youtubeId": "6QFGAFZk264",
       "contentId": "v003-exo-short-03",
-      "status": "APPLIED",
-      "reason": "Alien Worlds Short #3",
-      "livePublishAt": "2026-08-16T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-16T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-16T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "Exo Short Sat midday",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Saturday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-15T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-15"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-17",
+      "date": "2026-08-16",
+      "weekday": "Sunday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-17T12:30:00+02:00",
-      "proposedUTC": "2026-08-17T10:30:00.000Z",
+      "proposedLocal": "2026-08-16T12:30:00+02:00",
+      "proposedUTC": "2026-08-16T10:30:00Z",
       "family": "EXOPLANETS",
       "type": "shorts",
       "title": "The Hottest Nights in the Universe",
       "youtubeId": "eOOFVrJ2Ojc",
       "contentId": "v003-exo-short-04",
-      "status": "APPLIED",
-      "reason": "Alien Worlds Short #4",
-      "livePublishAt": "2026-08-17T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-17T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-17T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "Exo Short Sun midday",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Sunday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-16T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-16"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-21",
+      "date": "2026-08-20",
+      "weekday": "Thursday",
       "timeLocal": "19:00",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-21T19:00:00+02:00",
-      "proposedUTC": "2026-08-21T17:00:00.000Z",
+      "proposedLocal": "2026-08-20T19:00:00+02:00",
+      "proposedUTC": "2026-08-20T17:00:00Z",
       "family": "JWST",
       "type": "longform",
       "title": "What the James Webb Telescope Discovered That Changes Everything | Orbit's Cosmic Journey",
       "youtubeId": "tfTkMdE7qqw",
       "contentId": "v004-jwst-long",
-      "status": "APPLIED",
-      "reason": "JWST long canonical candidate \u2014 was quarantine-held",
-      "livePublishAt": "2026-08-21T17:00:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [],
+      "currentState": "private+publishAt=2026-08-21T17:00:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-21T17:00:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "JWST canonical long \u2014 Thu family open",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Thursday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-20T17:00:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-20"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-21",
+      "date": "2026-08-20",
+      "weekday": "Thursday",
       "timeLocal": "21:00",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-21T21:00:00+02:00",
-      "proposedUTC": "2026-08-21T19:00:00.000Z",
+      "proposedLocal": "2026-08-20T21:00:00+02:00",
+      "proposedUTC": "2026-08-20T19:00:00Z",
       "family": "JWST",
       "type": "shorts",
       "title": "These Galaxies Appeared Too Early",
       "youtubeId": "bLv0RfidjSg",
       "contentId": "v004-jwst-short-01",
-      "status": "APPLIED",
-      "reason": "JWST Short #1",
-      "livePublishAt": "2026-08-21T19:00:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-21T19:00:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-21T19:00:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "JWST Short #1 same evening as long",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Thursday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-20T19:00:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-20"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-22",
+      "date": "2026-08-21",
+      "weekday": "Friday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-22T12:30:00+02:00",
-      "proposedUTC": "2026-08-22T10:30:00.000Z",
+      "proposedLocal": "2026-08-21T12:30:00+02:00",
+      "proposedUTC": "2026-08-21T10:30:00Z",
       "family": "JWST",
       "type": "shorts",
       "title": "How Did Black Holes Get So Big So Fast?",
       "youtubeId": "PcP64way3xA",
       "contentId": "v004-jwst-short-02",
-      "status": "APPLIED",
-      "reason": "JWST Short #2",
-      "livePublishAt": "2026-08-22T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-22T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-22T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "JWST Short Fri midday (topic: early supermassive BH via JWST; family=JWST via contentId)",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Friday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-21T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-21"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-23",
+      "date": "2026-08-22",
+      "weekday": "Saturday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-23T12:30:00+02:00",
-      "proposedUTC": "2026-08-23T10:30:00.000Z",
+      "proposedLocal": "2026-08-22T12:30:00+02:00",
+      "proposedUTC": "2026-08-22T10:30:00Z",
       "family": "JWST",
       "type": "shorts",
       "title": "Why JWST Pictures Don't Match the Textbook",
       "youtubeId": "pjIevt27Svo",
       "contentId": "v004-jwst-short-03",
-      "status": "APPLIED",
-      "reason": "JWST Short #3",
-      "livePublishAt": "2026-08-23T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-23T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-23T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "JWST Short Sat midday",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Saturday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-22T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-22"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     },
     {
-      "date": "2026-08-24",
+      "date": "2026-08-23",
+      "weekday": "Sunday",
       "timeLocal": "12:30",
       "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-24T12:30:00+02:00",
-      "proposedUTC": "2026-08-24T10:30:00.000Z",
+      "proposedLocal": "2026-08-23T12:30:00+02:00",
+      "proposedUTC": "2026-08-23T10:30:00Z",
       "family": "JWST",
       "type": "shorts",
       "title": "What JWST's Infrared Eyes Can See",
       "youtubeId": "AeFm7gWyWik",
       "contentId": "v004-jwst-short-04",
-      "status": "APPLIED",
-      "reason": "JWST Short #4",
-      "livePublishAt": "2026-08-24T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
-    },
-    {
-      "date": "2026-08-25",
-      "timeLocal": "12:30",
-      "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-25T12:30:00+02:00",
-      "proposedUTC": "2026-08-25T10:30:00.000Z",
-      "family": "JWST",
-      "type": "shorts",
-      "title": "Is the Universe Older Than We Thought?",
-      "youtubeId": "gPCpMsB0w2E",
-      "contentId": "v004-jwst-short-05",
-      "status": "APPLIED",
-      "reason": "JWST Short #5",
-      "livePublishAt": "2026-08-25T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
-    },
-    {
-      "date": "2026-08-26",
-      "timeLocal": "12:30",
-      "timezone": "Europe/Paris",
-      "proposedLocal": "2026-08-26T12:30:00+02:00",
-      "proposedUTC": "2026-08-26T10:30:00.000Z",
-      "family": "JWST",
-      "type": "shorts",
-      "title": "The Discovery That Doesn't Add Up",
-      "youtubeId": "YsyPMhNmHMk",
-      "contentId": "v004-jwst-short-06",
-      "status": "APPLIED",
-      "reason": "JWST Short #6",
-      "livePublishAt": "2026-08-26T10:30:00Z",
-      "livePrivacy": "private",
-      "ok": true
+      "relatedLongId": null,
+      "familyCoherence": "PASS",
+      "familyNotes": [
+        "relatedLongFormVideoId missing in registry (family inferred from contentId)"
+      ],
+      "currentState": "private+publishAt=2026-08-24T10:30:00Z",
+      "currentPrivacy": "private",
+      "currentPublishAt": "2026-08-24T10:30:00Z",
+      "proposedState": "private+scheduled",
+      "reason": "JWST Short Sun midday",
+      "validation": "PASS",
+      "validationChecks": [
+        {
+          "name": "weekday",
+          "ok": true,
+          "detail": "Sunday"
+        },
+        {
+          "name": "tz_offset_CEST",
+          "ok": true,
+          "detail": "2:00:00"
+        },
+        {
+          "name": "not_past",
+          "ok": true,
+          "detail": "2026-08-23T10:30:00+00:00"
+        },
+        {
+          "name": "no_placeholder",
+          "ok": true,
+          "detail": "2026-08-23"
+        }
+      ],
+      "status": "PROPOSED_NOT_APPLIED",
+      "views": 0
     }
   ],
-  "conflicts": [],
-  "omitted": [
+  "optionalRecommendation": {
+    "classification": "OPTIONAL_RECOMMENDATION_NOT_AUTO",
+    "date": "2026-08-09",
+    "weekday": "Sunday",
+    "timeLocal": "12:30",
+    "timezone": "Europe/Paris",
+    "proposedLocal": "2026-08-09T12:30:00+02:00",
+    "proposedUTC": "2026-08-09T10:30:00Z",
+    "youtubeId": "w1ej9u0rPTA",
+    "title": "The Point of No Return Explained",
+    "note": "Do NOT apply automatically. Prefer BH_SHORT_HELD_FOR_LATER unless explicitly approved for Sun 9 Aug observation-edge slot."
+  },
+  "heldForLater": [
+    {
+      "youtubeId": "w1ej9u0rPTA",
+      "contentId": "v002-bh-nf-point",
+      "family": "BLACK_HOLE",
+      "classification": "BH_SHORT_HELD_FOR_LATER",
+      "title": "The Point of No Return Explained",
+      "currentState": "private+publishAt=2026-08-11T10:30:00Z",
+      "proposedState": "private+unscheduled (clear prior applied Aug 11 slot on apply)",
+      "reason": "Fourth approved BH Short \u2014 cadence holds to max 3 in Phase 2; optional Sun 9 Aug only with explicit approval",
+      "recommendedFutureSlot": "After JWST window or when BH recovery needs a refill \u2014 TBD"
+    }
+  ],
+  "notReady": [
     {
       "youtubeId": "HvAKGjx4lv0",
-      "contentId": "v002-bh-reserve-time-stops",
-      "family": "BLACK_HOLE",
-      "status": "PRIVATE_NOT_READY",
-      "reason": "Legacy reserve \u2014 PRIVATE_NOT_READY until recovery cadence reopens"
+      "title": "Time Stops at the Edge \u2014 For Them",
+      "livePrivacy": "unlisted",
+      "livePublishAt": null,
+      "confirmPrivate": false,
+      "confirmUnscheduled": true,
+      "reasonCode": "historical replacement / manual review",
+      "evidence": "Legacy BH reserve (time-stops variant). Live unlisted + publishAt null. Not in canonical registry. Overlaps topic with scheduled tUAdhOnMW2g. Do not schedule/delete/replace."
     },
     {
       "youtubeId": "icedH_gK8JE",
-      "contentId": "v002-bh-reserve-eyes",
-      "family": "BLACK_HOLE",
-      "status": "PRIVATE_NOT_READY",
-      "reason": "Legacy reserve \u2014 PRIVATE_NOT_READY"
+      "title": "What Your Eyes Would See",
+      "livePrivacy": "private",
+      "livePublishAt": null,
+      "confirmPrivate": true,
+      "confirmUnscheduled": true,
+      "reasonCode": "edit not approved",
+      "evidence": "BH reserve Short (eyes). Cleared from Dec-31 hold; kept private unscheduled. Not production-approved for recovery cadence."
     },
     {
       "youtubeId": "Web2otrTcT0",
-      "contentId": "v003-exo-reserve-eyeball",
-      "family": "EXOPLANETS",
-      "status": "PRIVATE_NOT_READY",
-      "reason": "Reserve Short \u2014 PRIVATE_NOT_READY"
+      "title": "Eyeball Planets Explained",
+      "livePrivacy": "private",
+      "livePublishAt": null,
+      "confirmPrivate": true,
+      "confirmUnscheduled": true,
+      "reasonCode": "metadata incomplete",
+      "evidence": "Exoplanets reserve Short (eyeball). Cleared Dec-31 hold; private unscheduled. Not in approved exo Short sequence."
     },
     {
       "youtubeId": "1qts3tIsg9c",
-      "contentId": "v003-exo-reserve-habitability",
-      "family": "EXOPLANETS",
-      "status": "PRIVATE_NOT_READY",
-      "reason": "Reserve Short \u2014 PRIVATE_NOT_READY"
+      "title": "Could Any of These Alien Worlds Host Life?",
+      "livePrivacy": "private",
+      "livePublishAt": null,
+      "confirmPrivate": true,
+      "confirmUnscheduled": true,
+      "reasonCode": "edit not approved",
+      "evidence": "Exoplanets reserve Short (habitability). Cleared Dec-31 hold; private unscheduled."
     },
     {
       "youtubeId": "dPMJQp2gMNc",
-      "contentId": "v001-fermi-short-rude",
-      "family": "FERMI",
-      "status": "PRIVATE_NOT_READY",
-      "reason": "Accidental early publication \u2014 keep private unscheduled"
+      "title": "Space Is Rude About Distance",
+      "livePrivacy": "private",
+      "livePublishAt": null,
+      "confirmPrivate": true,
+      "confirmUnscheduled": true,
+      "reasonCode": "duplicate / accidental early publication",
+      "evidence": "Fermi Short accidental early public; privatized 2026-08-07. Registry notes ACCIDENTAL_EARLY_PUBLICATION. Keep private unscheduled."
     },
     {
       "youtubeId": "rFJoOdQAc9c",
-      "contentId": "v001-fermi-short-zoo",
-      "family": "FERMI",
-      "status": "PRIVATE_NOT_READY",
-      "reason": "Accidental early publication \u2014 keep private unscheduled"
+      "title": "Don't Look Up: The Zoo Hypothesis #Shorts #Aliens #Science",
+      "livePrivacy": "private",
+      "livePublishAt": null,
+      "confirmPrivate": true,
+      "confirmUnscheduled": true,
+      "reasonCode": "duplicate / accidental early publication",
+      "evidence": "Fermi Zoo Short accidental early public; privatized 2026-08-07. Keep private unscheduled."
     }
   ],
-  "applied": true,
-  "appliedAt": "2026-08-07T14:45:16Z",
-  "approvedBy": "user",
-  "dryRun": false
+  "omitted": [
+    {
+      "youtubeId": "w1ej9u0rPTA",
+      "contentId": "v002-bh-nf-point",
+      "family": "BLACK_HOLE",
+      "classification": "BH_SHORT_HELD_FOR_LATER",
+      "title": "The Point of No Return Explained",
+      "currentState": "private+publishAt=2026-08-11T10:30:00Z",
+      "proposedState": "private+unscheduled (clear prior applied Aug 11 slot on apply)",
+      "reason": "Fourth approved BH Short \u2014 cadence holds to max 3 in Phase 2; optional Sun 9 Aug only with explicit approval",
+      "recommendedFutureSlot": "After JWST window or when BH recovery needs a refill \u2014 TBD"
+    },
+    {
+      "youtubeId": "gPCpMsB0w2E",
+      "contentId": "v004-jwst-short-05",
+      "family": "JWST",
+      "title": "Is the Universe Older Than We Thought?",
+      "whyOmitted": "Beyond Thu\u2013Sun JWST recovery window (max 1 long + 4 Shorts). Do not extend schedule to fit all.",
+      "safe": true,
+      "remainPrivate": true,
+      "proposedState": "private+unscheduled (clear prior applied Aug 25 on apply)",
+      "recommendedFutureSlot": "Mon\u2013Wed after 23 Aug or next JWST refill week",
+      "currentPublishAt": "2026-08-25T10:30:00Z"
+    },
+    {
+      "youtubeId": "YsyPMhNmHMk",
+      "contentId": "v004-jwst-short-06",
+      "family": "JWST",
+      "title": "The Discovery That Doesn't Add Up",
+      "whyOmitted": "Additional approved JWST Short beyond Phase 4 window.",
+      "safe": true,
+      "remainPrivate": true,
+      "proposedState": "private+unscheduled (clear prior applied Aug 26 on apply)",
+      "recommendedFutureSlot": "After gPCpMsB0w2E or paired with later long",
+      "currentPublishAt": "2026-08-26T10:30:00Z"
+    }
+  ],
+  "collisions": {
+    "sameDayShortCollisions": [],
+    "duplicateIds": [],
+    "duplicateMinutes": [],
+    "sameDayUnrelatedFamilyCollisions": [],
+    "familyMismatches": []
+  },
+  "shelfHealth": {
+    "ok": true,
+    "verifiedAt": "2026-08-07T15:03:05.726Z",
+    "publicCount": 6,
+    "expectedPublic": 6,
+    "unexpectedPublic": [],
+    "recoveryEscalateNow": false,
+    "canonicalPublicIds": [
+      "Mo93x0fxB1Q",
+      "1HuV8o3gOss",
+      "KcKBixwmcV4",
+      "3xrxdmaOwJI",
+      "JRfhE6yWom4",
+      "L2OFjL4neOo"
+    ]
+  },
+  "liveDriftNote": "Live API still has previous APPLIED calendar on 16 IDs. Revised proposal requires future apply to move/clear those publishAt values. No mutation in this phase.",
+  "verdict": "CALENDAR NEEDS REVIEW",
+  "verdictReasons": [
+    "HvAKGjx4lv0 is unlisted (expected private) with publishAt null \u2014 not-ready private confirm fails for 1/6",
+    "Live YouTube still carries superseded applied schedule (expected until approval)",
+    "Exo/JWST registry rows lack relatedLongFormVideoId (family still PASS via contentId/family fields)"
+  ],
+  "nextAction": "AWAITING APPROVAL \u2014 NO SCHEDULE APPLIED"
 }
