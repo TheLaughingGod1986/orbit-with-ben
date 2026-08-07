@@ -387,7 +387,7 @@ describe("ambiguous upload retry protection", () => {
 });
 
 describe("held-video and recovery config persistence", () => {
-  it("keeps recovery mode + Dec 31 holds in config", () => {
+  it("keeps recovery mode with empty Dec31 holds after schedule repair", () => {
     const cfg = JSON.parse(
       fs.readFileSync(
         path.resolve(process.cwd(), "../00_Brand/Channel-Setup/YOUTUBE_RECOVERY_MODE.json"),
@@ -398,19 +398,13 @@ describe("held-video and recovery config persistence", () => {
       maxShortsPerDay: number;
       heldVideoIds: string[];
       replacementUploadsAllowed: boolean;
+      notes?: string;
     };
     expect(cfg.recoveryMode).toBe(true);
     expect(cfg.maxShortsPerDay).toBe(1);
     expect(cfg.replacementUploadsAllowed).toBe(false);
-    expect(cfg.heldVideoIds).toEqual(
-      expect.arrayContaining([
-        "2C-eiSMsBLc",
-        "IqII5mVGdrs",
-        "lIHb_tyxQSM",
-        "wOlnj7nZWJM",
-        "2uT3wXJLybw",
-      ]),
-    );
+    expect(cfg.heldVideoIds).toEqual([]);
+    expect(String(cfg.notes || "")).toMatch(/placeholder holds cleared/i);
   });
 });
 

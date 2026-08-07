@@ -1,6 +1,6 @@
 # Post-OAuth shelf verification
 
-Verified: 2026-08-07T13:51:33.046Z
+Verified: 2026-08-07T14:12:44.885Z
 
 Overall: **PASS**
 
@@ -14,12 +14,12 @@ Overall: **PASS**
 | L2OFjL4neOo | bh_short_canonical | PASS | public | — | 6 |
 | IwpO33AJaPQ | privatized_dupe | PASS | private | — | 0 |
 | RCs6MMxF3ko | privatized_dupe_long | PASS | private | — | 0 |
-| 2C-eiSMsBLc | held | PASS | private | 2026-12-31T11:30:00Z | 0 |
-| IqII5mVGdrs | held | PASS | private | 2026-12-31T11:30:00Z | 3 |
-| lIHb_tyxQSM | held | PASS | private | 2026-12-31T11:30:00Z | 0 |
-| wOlnj7nZWJM | held | PASS | private | 2026-12-31T11:30:00Z | 0 |
-| 2uT3wXJLybw | held | PASS | private | 2026-12-31T11:30:00Z | 0 |
-| tUAdhOnMW2g | canonical_nf01_held | PASS | private | 2026-12-31T11:30:00Z | 8 |
+| 2C-eiSMsBLc | historical_dupe_unscheduled | PASS | private | — | 0 |
+| IqII5mVGdrs | historical_dupe_unscheduled | PASS | private | — | 3 |
+| lIHb_tyxQSM | historical_dupe_unscheduled | PASS | private | — | 0 |
+| wOlnj7nZWJM | historical_dupe_unscheduled | PASS | private | — | 0 |
+| 2uT3wXJLybw | historical_dupe_unscheduled | PASS | private | — | 0 |
+| tUAdhOnMW2g | canonical_future_unscheduled | PASS | private | — | 8 |
 
 Public count: 6 (expected 6 canonical, NF01 may add +1 after go-live)
 No unexpected public duplicates in the watched set.

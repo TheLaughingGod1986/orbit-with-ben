@@ -160,7 +160,7 @@ const CANONICAL_FUTURE: Record<
     ready: false,
     reason: "Legacy reserve — PRIVATE_NOT_READY",
   },
-  b8-X_FyJnHM: {
+  "b8-X_FyJnHM": {
     family: "EXOPLANETS",
     type: "longform",
     contentId: "v003-exo-long",
@@ -174,7 +174,7 @@ const CANONICAL_FUTURE: Record<
     ready: true,
     reason: "Alien Worlds Short #1",
   },
-  aoR-dA_g7eI: {
+  "aoR-dA_g7eI": {
     family: "EXOPLANETS",
     type: "shorts",
     contentId: "v003-exo-short-02",
