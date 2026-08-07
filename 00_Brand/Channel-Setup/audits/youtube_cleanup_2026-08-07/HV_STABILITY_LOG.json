@@ -1,8 +1,15 @@
 {
-  "generatedAt": "2026-08-07T16:02:16Z",
-  "pass": null,
-  "status": "NOT_RUN_QUOTA_GATE",
-  "reason": "Phase 1 quotaExceeded — Hv stability deferred",
-  "mutations": 0,
-  "reads": []
+  "generatedAt": "2026-08-07T21:09:45Z",
+  "pass": false,
+  "status": "INCOMPLETE_QUOTA",
+  "initialFromBatchCapture": {
+    "privacy": "private",
+    "publishAt": null
+  },
+  "write": {
+    "skipped": true,
+    "reason": "already private+null on capture"
+  },
+  "threeConsecutiveConfirm": "blocked by quotaExceeded",
+  "mutations": 0
 }

@@ -1,12 +1,8 @@
 {
-  "probedAt": "2026-08-07T19:23:18Z",
-  "quotaAvailable": false,
-  "probeStatus": 403,
-  "quotaError": {
-    "code": 403,
-    "reason": "quotaExceeded"
-  },
+  "probedAt": "2026-08-07T21:08:27.677Z",
+  "quotaAvailableAtStart": true,
+  "quotaExhaustedMidRun": true,
+  "probeStatusAtStart": 200,
   "mutations": 0,
-  "note": "Retry: initial probe OK, then dry-run burned remaining quota via search.list forMine. Script fixed to known-ID videos.list only. Zero schedule mutations applied.",
   "verdict": "WAITING FOR YOUTUBE API QUOTA"
 }

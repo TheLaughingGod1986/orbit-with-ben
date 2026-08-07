@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-08-07T21:09:45Z",
+  "source": "POST_QUOTA_LIVE_STATE_BEFORE.json",
+  "formula": "OBSOLETE_IDS = LIVE_SCHEDULED_IDS - APPROVED_TARGET_IDS",
+  "liveScheduledCount": 16,
+  "approvedCount": 13,
+  "obsoleteIds": [
+    "YsyPMhNmHMk",
+    "gPCpMsB0w2E",
+    "w1ej9u0rPTA"
+  ],
+  "obsoleteCount": 3,
+  "missingTargetIds": [],
+  "alreadyCorrectIds": [],
+  "needsTimeUpdateIds": [
+    "6QFGAFZk264",
+    "AeFm7gWyWik",
+    "B2STcIAF1lY",
+    "PcP64way3xA",
+    "aoR-dA_g7eI",
+    "b8-X_FyJnHM",
+    "bLv0RfidjSg",
+    "eOOFVrJ2Ojc",
+    "ho9VJxp7f3A",
+    "pjIevt27Svo",
+    "svYOx07OrIM",
+    "tUAdhOnMW2g",
+    "tfTkMdE7qqw"
+  ],
+  "rows": [
+    {
+      "youtubeId": "YsyPMhNmHMk",
+      "title": "The Discovery That Doesn't Add Up",
+      "livePrivacy": "private",
+      "livePublishAt": "2026-08-26T10:30:00Z",
+      "contentId": "v004-jwst-short-06",
+      "contentFamily": "JWST",
+      "classification": "REMOVED_FROM_APPROVED_SCHEDULE",
+      "safeTarget": "private + publishAt=null",
+      "ok": true,
+      "blockReasons": []
+    },
+    {
+      "youtubeId": "gPCpMsB0w2E",
+      "title": "Is the Universe Older Than We Thought?",
+      "livePrivacy": "private",
+      "livePublishAt": "2026-08-25T10:30:00Z",
+      "contentId": "v004-jwst-short-05",
+      "contentFamily": "JWST",
+      "classification": "REMOVED_FROM_APPROVED_SCHEDULE",
+      "safeTarget": "private + publishAt=null",
+      "ok": true,
+      "blockReasons": []
+    },
+    {
+      "youtubeId": "w1ej9u0rPTA",
+      "title": "The Point of No Return Explained",
+      "livePrivacy": "private",
+      "livePublishAt": "2026-08-11T10:30:00Z",
+      "contentId": "v002-bh-nf-point",
+      "contentFamily": "BLACK_HOLE",
+      "classification": "REMOVED_FROM_APPROVED_SCHEDULE",
+      "safeTarget": "private + publishAt=null",
+      "ok": true,
+      "blockReasons": []
+    }
+  ],
+  "ambiguous": [],
+  "staleHardcodedListNotUsed": true
+}

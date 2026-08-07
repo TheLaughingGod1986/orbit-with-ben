@@ -122,36 +122,7 @@ async function getVideos(accessToken: string, ids: string[]) {
   return map;
 }
 
-async function listMineScheduled(accessToken: string) {
-  const out = new Map<string, any>();
-  let pageToken = "";
-  do {
-    const url = new URL("https://www.googleapis.com/youtube/v3/search");
-    url.searchParams.set("part", "id");
-    url.searchParams.set("forMine", "true");
-    url.searchParams.set("type", "video");
-    url.searchParams.set("maxResults", "50");
-    // scheduled videos appear in my uploads; we filter by status.publishAt after videos.list
-    if (pageToken) url.searchParams.set("pageToken", pageToken);
-    const res = await fetch(url.toString(), {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
-    const body = await res.json();
-    if (isQuota(body)) throw Object.assign(new Error("quotaExceeded"), { quota: true, body });
-    if (!res.ok) throw new Error(JSON.stringify(body));
-    const ids = (body.items || [])
-      .map((it: any) => it.id?.videoId)
-      .filter(Boolean) as string[];
-    if (ids.length) {
-      const vids = await getVideos(accessToken, ids);
-      for (const [id, it] of vids) {
-        if (it.status?.publishAt) out.set(id, it);
-      }
-    }
-    pageToken = body.nextPageToken || "";
-  } while (pageToken);
-  return out;
-}
+// NOTE: intentionally no search.list forMine — burns daily quota across the full catalogue.
 
 async function updateStatus(
   accessToken: string,
@@ -419,20 +390,25 @@ async function main() {
     if (APPROVED_PUBLIC.has(id)) throw new Error(`obsolete id is public canonical: ${id}`);
     if (approvedSet.has(id)) throw new Error(`obsolete id in approved 13: ${id}`);
   }
-  if (obsolete.length !== 3) {
-    const payload = {
-      ok: false,
-      reason: "Obsolete slot count != 3 — STOP",
-      obsolete,
-      liveScheduledCount: liveSet.size,
-      reconItems,
-    };
-    fs.writeFileSync(
-      path.join(AUDIT, "FINAL_16_TO_13_RECONCILIATION.json"),
-      JSON.stringify(payload, null, 2) + "\n",
-    );
-    console.error(JSON.stringify(payload));
-    process.exit(1);
+  // Obsolete count is dynamic (LIVE - APPROVED). Do not hard-require 3.
+  if (obsolete.length === 0) {
+    console.log(JSON.stringify({ note: "No obsolete scheduled IDs — live already subset of approved" }));
+  }
+  for (const id of obsolete) {
+    if (!id || APPROVED_PUBLIC.has(id) || approvedSet.has(id)) {
+      const payload = {
+        ok: false,
+        reason: "OBSOLETE_ID_REVIEW_REQUIRED",
+        obsolete,
+        badId: id,
+      };
+      fs.writeFileSync(
+        path.join(AUDIT, "FINAL_16_TO_13_RECONCILIATION.json"),
+        JSON.stringify(payload, null, 2) + "\n",
+      );
+      console.error(JSON.stringify(payload));
+      process.exit(1);
+    }
   }
 
   const recon = {

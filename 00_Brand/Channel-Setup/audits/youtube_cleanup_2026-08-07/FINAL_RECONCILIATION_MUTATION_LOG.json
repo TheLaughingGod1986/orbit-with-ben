@@ -1,8 +1,13 @@
 {
   "ok": false,
   "verdict": "WAITING FOR YOUTUBE API QUOTA",
-  "mutations": 0,
-  "probedAt": "2026-08-07T19:23:18Z",
-  "stoppedAtPhase": 1,
-  "detail": "Probe passed once; catalogue search in dry-run exhausted quota before reconcile. search.list removed for next run."
+  "scheduleMutations": 0,
+  "hvMutations": 0,
+  "liveCaptureOk": true,
+  "plannedWritesIfApproved": {
+    "obsoleteUnschedules": 3,
+    "targetScheduleUpdates": 13,
+    "alreadyCorrect": 0,
+    "totalWrites": 16
+  }
 }

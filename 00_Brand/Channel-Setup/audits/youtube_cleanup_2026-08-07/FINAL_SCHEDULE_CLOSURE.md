@@ -1,24 +1,23 @@
 # Final Schedule Closure
 
-Generated: `2026-08-07T19:23:18Z`
+Generated: `2026-08-07T21:09:45Z`
 
 ## Verdict
 
 **WAITING FOR YOUTUBE API QUOTA**
 
-## Quota
+## Progress this run
 
-- First probe this retry: **available** (200)
-- Dry-run then hit `403 quotaExceeded` while paging `search.list forMine`
-- Zero schedule mutations applied
-- Reconcile script updated: known-ID `videos.list` only (no catalogue search)
+1. Quota probe: PASS (200)
+2. Fresh live capture: PASS — **16** scheduled IDs
+3. Dynamic obsolete calc: **3** IDs → `YsyPMhNmHMk`, `gPCpMsB0w2E`, `w1ej9u0rPTA`
+4. Hv: capture showed private+null; 3-read confirm blocked by quota
+5. Shelf verify: not run (quota)
+6. Schedule apply: **not started** (approval gate + incomplete gates)
 
-## Next run
+## Planned writes (not applied)
 
-```bash
-cd 07_Content-Ops
-npm run youtube:reconcile-16-to-13 -- --dry-run
-npm run youtube:reconcile-16-to-13 -- --allow-emergency-unfreeze --execute
-```
-
-Do not layer 13 on top of 16. Unschedule obsolete first.
+- obsolete unschedules: 3
+- target updates: 13
+- already correct: 0
+- total writes: 16
