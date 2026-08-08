@@ -1,20 +1,20 @@
 # Technical Content Ops Audit
 
-Generated: `2026-08-08T17:45:33.536392+00:00` · Mode: **READ-ONLY**
+Generated: `2026-08-08T17:48:14.512859+00:00` · Mode: **READ-ONLY**
 
 ## Strengths
 
-- Locked API package upload path (`youtube:package`) as primary — CDP demoted.
-- Recovery + shelf verify tooling; 16→13 reconcile applied and verified.
-- en-GB metadata apply path exists; British VO lock documented.
-- Cutscene / Orbit character / retention gates encoded as Cursor rules.
+- Locked API package upload path as primary.
+- Recovery + shelf verify; 16→13 reconcile applied.
+- Fresh audit snapshot script: `youtube-full-health-snapshot.ts` (known-ID only).
+- en-GB / British VO / character / cutscene locks encoded.
 
 ## Gaps
 
-- Studio finish (ABC, end screen, Related, pin) still manual — not API-complete.
+- Studio finish still manual.
 - Playlist automation missing.
-- Analytics (impressions/CTR/AVD) not wired — growth claims must stay **INSUFFICIENT DATA**.
-- Large private inventory (43 held) from historical CDP — hygienic but noisy in Studio UI.
-- Quota discipline required (avoid `search.list forMine`; known-ID reads only).
+- Analytics not wired — growth claims **INSUFFICIENT DATA**.
+- Private inventory large (72 held) — hygienic, Studio-noisy.
+- Quota discipline: no `search.list forMine`.
 
-**Score: 88/100**
+**Score: 90/100**

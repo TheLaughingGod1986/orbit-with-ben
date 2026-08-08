@@ -1,6 +1,6 @@
 # Thumbnail Audit
 
-Generated: `2026-08-08T17:45:33.536392+00:00` · Mode: **READ-ONLY**
+Generated: `2026-08-08T17:48:14.512859+00:00` · Mode: **READ-ONLY**
 
 API cannot visual-QA composition. Assessment = presence/resolution + packaging rules.
 
@@ -28,9 +28,8 @@ API cannot visual-QA composition. Assessment = presence/resolution + packaging r
 
 ## Recommendations (NOT APPLIED)
 
-1. Run Studio **Test & Compare (ABC)** on each long at/after go-live — Fermi + BH longs first.
-2. Thumb formula: one paradox image + Orbit reaction inset; ≤6 words text; high contrast; no fear faces.
-3. Do not rethumb weekly; wait for impression samples (channel still cold-start).
-4. Shorts: native frame usually wins early; only override if CTR collapses vs siblings.
+1. Studio **Test & Compare (ABC)** on each long at/after go-live.
+2. Formula: one paradox image + Orbit inset; ≤6 words; no fear faces.
+3. Do not rethumb weekly on a cold-start channel.
 
-**Score: 58/100** (capped by visual-QA blindness)
+**Score: 58/100**

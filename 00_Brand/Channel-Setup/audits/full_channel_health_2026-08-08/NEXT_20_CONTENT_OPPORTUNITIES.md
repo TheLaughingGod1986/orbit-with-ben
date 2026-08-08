@@ -1,6 +1,6 @@
 # Next 20 Content Opportunities
 
-Generated: `2026-08-08T17:45:33.536392+00:00` · Mode: **READ-ONLY** · Ranked by Orbit fit × cluster adjacency × discovery
+Generated: `2026-08-08T17:48:14.512859+00:00` · Ranked Orbit fit × adjacency × discovery
 
 | # | Score | Idea | Cluster | Discovery |
 |---|---:|---|---|---|

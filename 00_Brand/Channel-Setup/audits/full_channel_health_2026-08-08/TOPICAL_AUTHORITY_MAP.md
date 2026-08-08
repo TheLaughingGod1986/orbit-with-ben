@@ -1,6 +1,6 @@
 # Topical Authority Map
 
-Generated: `2026-08-08T17:45:33.536392+00:00` · Mode: **READ-ONLY**
+Generated: `2026-08-08T17:48:14.512859+00:00` · Mode: **READ-ONLY**
 
 ```
 Orbit with Ben
@@ -20,8 +20,8 @@ Orbit with Ben
 
 ## Authority strategy
 
-1. Finish BH Shorts wave → Exo → JWST without niche pivots.
-2. After 4 families public, create playlists named by family + “Orbit’s Cosmic Journey” master.
-3. Next long should deepen an existing pillar (Fermi sequel / dark matter / neutron stars) — not a new niche.
+1. Finish BH Shorts → Exo → JWST without niche pivots.
+2. After 4 families public, create family playlists + master journey playlist.
+3. Next long deepens an existing pillar — not a new niche.
 
 **Topic strategy score: 74/100**

@@ -1,6 +1,6 @@
 # Title Audit
 
-Generated: `2026-08-08T17:45:33.536392+00:00` · Mode: **READ-ONLY** · Fearbait rejected even if CTR-tempting
+Generated: `2026-08-08T17:48:14.512859+00:00` · Mode: **READ-ONLY** · Fearbait rejected
 
 | ID | State | Grade | Score | Chars | Title | Problems |
 |---|---|---|---:|---:|---|---|
@@ -34,11 +34,25 @@ PROBLEM: may truncate on mobile
 
 RECOMMENDED: Why Haven't We Found Aliens Yet? The Fermi Paradox Explained | Orbit
 
-WHY: Clearer curiosity/specificity without fearbait; preserve Orbit voice.
+WHY: Clearer curiosity without fearbait.
 
 EXPECTED BENEFIT: Better mobile scan / CTR once impressions exist.
 
-WHEN: Only after ≥3 public releases with real CTR samples — or at go-live polish for scheduled.
+WHEN: After real CTR samples, or at go-live polish for scheduled.
+
+### `L2OFjL4neOo`
+
+CURRENT: Falling In Wouldn't Feel Like Falling
+
+PROBLEM: sharpen
+
+RECOMMENDED: Falling In Wouldn't Feel Like Falling #BlackHole #Shorts
+
+WHY: Clearer curiosity without fearbait.
+
+EXPECTED BENEFIT: Better mobile scan / CTR once impressions exist.
+
+WHEN: After real CTR samples, or at go-live polish for scheduled.
 
 ### `svYOx07OrIM`
 
@@ -48,11 +62,11 @@ PROBLEM: short/vague
 
 RECOMMENDED: Would You Look Back From a Black Hole? #Shorts
 
-WHY: Clearer curiosity/specificity without fearbait; preserve Orbit voice.
+WHY: Clearer curiosity without fearbait.
 
 EXPECTED BENEFIT: Better mobile scan / CTR once impressions exist.
 
-WHEN: Only after ≥3 public releases with real CTR samples — or at go-live polish for scheduled.
+WHEN: After real CTR samples, or at go-live polish for scheduled.
 
 ### `b8-X_FyJnHM`
 
@@ -62,11 +76,11 @@ PROBLEM: may truncate on mobile
 
 RECOMMENDED: Alien Worlds: The Strangest Planets We've Ever Found | Orbit
 
-WHY: Clearer curiosity/specificity without fearbait; preserve Orbit voice.
+WHY: Clearer curiosity without fearbait.
 
 EXPECTED BENEFIT: Better mobile scan / CTR once impressions exist.
 
-WHEN: Only after ≥3 public releases with real CTR samples — or at go-live polish for scheduled.
+WHEN: After real CTR samples, or at go-live polish for scheduled.
 
 ### `tfTkMdE7qqw`
 
@@ -76,16 +90,16 @@ PROBLEM: may truncate on mobile
 
 RECOMMENDED: What the James Webb Telescope Discovered That Changes Everything | Orbit
 
-WHY: Clearer curiosity/specificity without fearbait; preserve Orbit voice.
+WHY: Clearer curiosity without fearbait.
 
 EXPECTED BENEFIT: Better mobile scan / CTR once impressions exist.
 
-WHEN: Only after ≥3 public releases with real CTR samples — or at go-live polish for scheduled.
+WHEN: After real CTR samples, or at go-live polish for scheduled.
 
 
 ## Do not change
 
-- Strong public titles already working (`KcKBixwmcV4`, `3xrxdmaOwJI`, `1HuV8o3gOss`).
-- Do not add fearbait (“terrifying”, “they’re hiding”) even if private catalogue has examples.
+- Strong public titles (`KcKBixwmcV4`, `3xrxdmaOwJI`, `1HuV8o3gOss`).
+- Never promote fearbait private-held titles to public.
 
 **Score: 75/100**

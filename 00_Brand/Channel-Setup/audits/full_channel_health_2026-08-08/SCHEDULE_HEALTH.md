@@ -1,6 +1,6 @@
 # Schedule Health
 
-Generated: `2026-08-08T17:45:33.536392+00:00` · Mode: **READ-ONLY**
+Generated: `2026-08-08T17:48:14.512859+00:00` · Fresh live · Mode: **READ-ONLY**
 
 ## Verdict: **KEEP** current 13-slot calendar
 
@@ -22,7 +22,7 @@ No fake 31 Dec holds. No same-slot collisions. Weekdays validated Europe/Paris.
 | `2026-08-22T10:30:00Z` | Sat 22 Aug 12:30 Paris | `pjIevt27Svo` | JWST Short | Why JWST Pictures Don't Match the Textbook |
 | `2026-08-23T10:30:00Z` | Sun 23 Aug 12:30 Paris | `AeFm7gWyWik` | JWST Short | What JWST's Infrared Eyes Can See |
 
-Cadence pattern: observation complete → BH Shorts Mon–Wed midday → Exo Thu long 19:00 + Short 21:00 → weekend Shorts → JWST same shape next Thu.
+Cadence: BH Shorts Mon–Wed midday → Exo Thu long 19:00 + Short 21:00 → weekend Shorts → JWST same shape.
 
 **Score: 97/100**
 

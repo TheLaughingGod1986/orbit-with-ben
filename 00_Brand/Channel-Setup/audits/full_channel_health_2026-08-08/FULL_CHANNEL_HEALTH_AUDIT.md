@@ -1,14 +1,14 @@
 # Orbit With Ben — Full Channel Health Audit
 
-Generated: `2026-08-08T17:45:33.536392+00:00`
+Generated: `2026-08-08T17:48:14.512859+00:00`
 Mode: **READ-ONLY** (no live mutations)
-Snapshot: `LIVE_YOUTUBE_SNAPSHOT.json` (fetched `2026-08-08T17:41:55.655Z`)
+Snapshot: `LIVE_YOUTUBE_SNAPSHOT.json` (fresh fetched `2026-08-08T17:47:05.120Z`)
 
 ## Executive summary
 
-Live integrity re-verified from snapshot: **6/6 public**, **13/13 scheduled exact**, excluded private+null, shelf PASS. 
-Channel is early (167 views · 1 sub · 6 public). 
-Growth systems (playlists, keywords, Studio finish, description depth) are the opportunity — not catalogue chaos.
+Fresh live re-verify: **6/6 public**, **13/13 scheduled exact**, excluded private+null, shelf PASS, playlists **0**. 
+Channel early (167 views · 1 sub · 6 public). 
+Growth systems are the opportunity — not catalogue chaos.
 
 **OVERALL CHANNEL HEALTH: 63/100**  
 **GROWTH READINESS: 51/100**
@@ -40,15 +40,15 @@ Growth systems (playlists, keywords, Studio finish, description depth) are the o
 | Retention engineering | 58 |
 | Subscriber conversion | 42 |
 | Brand consistency | 78 |
-| Technical Content Ops | 88 |
+| Technical Content Ops | 90 |
 | Analytics maturity | 35 |
 | Studio finish readiness | 50 |
-| Safety / inventory hygiene | 70 |
+| Safety / inventory hygiene | 72 |
 
 ## Live integrity
 
-- Public: `1HuV8o3gOss`, `3xrxdmaOwJI`, `JRfhE6yWom4`, `KcKBixwmcV4`, `L2OFjL4neOo`, `Mo93x0fxB1Q`
-- Scheduled count: 13
+- Public: `Mo93x0fxB1Q`, `1HuV8o3gOss`, `KcKBixwmcV4`, `3xrxdmaOwJI`, `JRfhE6yWom4`, `L2OFjL4neOo`
+- Scheduled count: 13/13
 - Unexpected public: []
 - Wrong-time: []
 - Placeholders: 0 · Collisions: 0
@@ -56,16 +56,16 @@ Growth systems (playlists, keywords, Studio finish, description depth) are the o
 
 ## Analytics maturity
 
-Impression/CTR/AVD require Studio — treat growth claims as **INSUFFICIENT DATA**. Do not churn metadata weekly.
+Impression/CTR/AVD require Studio — **INSUFFICIENT DATA**. Do not churn metadata weekly.
 
 ## Cadence
 
-**KEEP** Thu long 19:00 Paris + Short 21:00; follow-up Shorts ~12:30. Consistency > micro-timing.
+**KEEP** Thu long 19:00 Paris + Short 21:00; follow-up Shorts ~12:30.
 
 ## Top 3 growth opportunities
 
 1. Playlist + homepage architecture
-2. Studio finish funnel (Related/end screen/ABC) each go-live
+2. Studio finish funnel each go-live
 3. Channel keywords + BH Short description depth
 
 ## Top 3 things NOT to change

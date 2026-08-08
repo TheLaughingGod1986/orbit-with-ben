@@ -1,36 +1,35 @@
 # Recommended Action Plan
 
-Generated: `2026-08-08T17:45:33.536392+00:00` · **Recommendations only — nothing applied to live YouTube**
+Generated: `2026-08-08T17:48:14.512859+00:00` · **Recommendations only — nothing applied**
 
 ## DO NOW (approval required before any write)
 
 ### P0
-- None. Integrity/schedule are clean; publishing may continue.
+- None. Integrity/schedule clean; publishing may continue.
 
 ### P1
-1. **Create playlists** after Exo long public: Fermi · Black Holes · Exoplanets · JWST · Orbit’s Cosmic Journey (all longs).
-2. **Studio finish checklist** each go-live: end screen · cards · ABC thumbs · Shorts Related→parent · pin.
-3. **Channel keywords** (5–8 phrases) + keep description.
-4. **Expand BH Short descriptions** to Fermi depth (topic hashtags + fuller promise).
+1. **Create playlists** after Exo long public.
+2. **Studio finish checklist** each go-live.
+3. **Channel keywords** (5–8 phrases).
+4. **Expand BH Short descriptions** to Fermi depth.
 5. **Long desc cross-links** once playlists exist.
 
 ## DO AFTER NEXT 3 RELEASES
-- Review CTR/AVD with real samples before retitle/rethumb.
-- Decide held Shorts (`w1ej9u0rPTA`, JWST extras) by capacity — keep private until then.
-- Consider channel trailer = best long once one clearly leads.
+- CTR/AVD review before retitle/rethumb.
+- Held Shorts stay private until capacity decision.
 
 ## TEST OVER NEXT 30 DAYS
-- Cadence **KEEP**: Thu long 19:00 + Short 21:00 Paris; midday follow-up Shorts.
-- ABC thumb tests only via YouTube Studio.
+- Cadence **KEEP**.
+- ABC thumbs via Studio only.
 
 ## DO NOT TOUCH
-- Live 13-slot schedule until Mon 10 Aug Short publishes
+- 13-slot schedule until Mon 10 Aug Short publishes
 - Six public canonicals
-- Private+unscheduled excluded set
-- No-delete / no-reupload policy
-- Orbit brand / British VO / cutscene locks
+- Excluded private set
+- No-delete / no-reupload
+- Brand/VO/Orbit locks
 
 ## FUTURE
-- Playlist automation in Content Ops
-- Analytics API for impressions/CTR
-- en-GB default language on all package uploads
+- Playlist automation
+- Analytics API
+- en-GB defaults

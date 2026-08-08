@@ -1,6 +1,6 @@
 # Channel Growth Scorecard
 
-Generated: `2026-08-08T17:45:33.536392+00:00`
+Generated: `2026-08-08T17:48:14.512859+00:00` · Fresh live re-verify
 
 | Area | Score |
 |---|---:|
@@ -19,10 +19,10 @@ Generated: `2026-08-08T17:45:33.536392+00:00`
 | Retention engineering | 58 |
 | Subscriber conversion | 42 |
 | Brand consistency | 78 |
-| Technical Content Ops | 88 |
+| Technical Content Ops | 90 |
 | Analytics maturity | 35 |
 | Studio finish readiness | 50 |
-| Safety / inventory hygiene | 70 |
+| Safety / inventory hygiene | 72 |
 
 # OVERALL CHANNEL HEALTH: **63/100**
 
