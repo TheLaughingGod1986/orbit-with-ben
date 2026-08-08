@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-08-07T15:04:28Z",
-  "proposalOnly": true,
-  "applied": false,
+  "proposalOnly": false,
+  "applied": true,
   "mutation": "none",
   "timezone": "Europe/Paris",
   "weekdayCorrection": {
@@ -18,7 +18,7 @@
     "window": "2026-08-07 to 2026-08-09",
     "timezone": "Europe/Paris",
     "newPublishing": false,
-    "note": "No new scheduled publishing in observation window. Preferred recovery observation 7\u20139 Aug. Live YouTube currently still has OLD applied calendar (includes Aug 8\u20139 BH Shorts) \u2014 this REVISED proposal supersedes it but is NOT applied."
+    "note": "No new scheduled publishing in observation window. Preferred recovery observation 7–9 Aug. Live YouTube currently still has OLD applied calendar (includes Aug 8–9 BH Shorts) — this REVISED proposal supersedes it but is NOT applied."
   },
   "items": [
     {
@@ -178,7 +178,7 @@
       "currentPrivacy": "private",
       "currentPublishAt": "2026-08-14T17:00:00Z",
       "proposedState": "private+scheduled",
-      "reason": "Exoplanets canonical long \u2014 Thu family open",
+      "reason": "Exoplanets canonical long — Thu family open",
       "validation": "PASS",
       "validationChecks": [
         {
@@ -310,7 +310,7 @@
       "proposedUTC": "2026-08-15T10:30:00Z",
       "family": "EXOPLANETS",
       "type": "shorts",
-      "title": "Three Suns in the Sky \u2014 Real Alien Worlds",
+      "title": "Three Suns in the Sky — Real Alien Worlds",
       "youtubeId": "6QFGAFZk264",
       "contentId": "v003-exo-short-03",
       "relatedLongId": null,
@@ -416,7 +416,7 @@
       "currentPrivacy": "private",
       "currentPublishAt": "2026-08-21T17:00:00Z",
       "proposedState": "private+scheduled",
-      "reason": "JWST canonical long \u2014 Thu family open",
+      "reason": "JWST canonical long — Thu family open",
       "validation": "PASS",
       "validationChecks": [
         {
@@ -657,14 +657,14 @@
       "title": "The Point of No Return Explained",
       "currentState": "private+publishAt=2026-08-11T10:30:00Z",
       "proposedState": "private+unscheduled (clear prior applied Aug 11 slot on apply)",
-      "reason": "Fourth approved BH Short \u2014 cadence holds to max 3 in Phase 2; optional Sun 9 Aug only with explicit approval",
-      "recommendedFutureSlot": "After JWST window or when BH recovery needs a refill \u2014 TBD"
+      "reason": "Fourth approved BH Short — cadence holds to max 3 in Phase 2; optional Sun 9 Aug only with explicit approval",
+      "recommendedFutureSlot": "After JWST window or when BH recovery needs a refill — TBD"
     }
   ],
   "notReady": [
     {
       "youtubeId": "HvAKGjx4lv0",
-      "title": "Time Stops at the Edge \u2014 For Them",
+      "title": "Time Stops at the Edge — For Them",
       "livePrivacy": "unlisted",
       "livePublishAt": null,
       "confirmPrivate": false,
@@ -732,19 +732,19 @@
       "title": "The Point of No Return Explained",
       "currentState": "private+publishAt=2026-08-11T10:30:00Z",
       "proposedState": "private+unscheduled (clear prior applied Aug 11 slot on apply)",
-      "reason": "Fourth approved BH Short \u2014 cadence holds to max 3 in Phase 2; optional Sun 9 Aug only with explicit approval",
-      "recommendedFutureSlot": "After JWST window or when BH recovery needs a refill \u2014 TBD"
+      "reason": "Fourth approved BH Short — cadence holds to max 3 in Phase 2; optional Sun 9 Aug only with explicit approval",
+      "recommendedFutureSlot": "After JWST window or when BH recovery needs a refill — TBD"
     },
     {
       "youtubeId": "gPCpMsB0w2E",
       "contentId": "v004-jwst-short-05",
       "family": "JWST",
       "title": "Is the Universe Older Than We Thought?",
-      "whyOmitted": "Beyond Thu\u2013Sun JWST recovery window (max 1 long + 4 Shorts). Do not extend schedule to fit all.",
+      "whyOmitted": "Beyond Thu–Sun JWST recovery window (max 1 long + 4 Shorts). Do not extend schedule to fit all.",
       "safe": true,
       "remainPrivate": true,
       "proposedState": "private+unscheduled (clear prior applied Aug 25 on apply)",
-      "recommendedFutureSlot": "Mon\u2013Wed after 23 Aug or next JWST refill week",
+      "recommendedFutureSlot": "Mon–Wed after 23 Aug or next JWST refill week",
       "currentPublishAt": "2026-08-25T10:30:00Z"
     },
     {
@@ -786,9 +786,12 @@
   "liveDriftNote": "Live API still has previous APPLIED calendar on 16 IDs. Revised proposal requires future apply to move/clear those publishAt values. No mutation in this phase.",
   "verdict": "CALENDAR NEEDS REVIEW",
   "verdictReasons": [
-    "HvAKGjx4lv0 is unlisted (expected private) with publishAt null \u2014 not-ready private confirm fails for 1/6",
+    "HvAKGjx4lv0 is unlisted (expected private) with publishAt null — not-ready private confirm fails for 1/6",
     "Live YouTube still carries superseded applied schedule (expected until approval)",
     "Exo/JWST registry rows lack relatedLongFormVideoId (family still PASS via contentId/family fields)"
   ],
-  "nextAction": "AWAITING APPROVAL \u2014 NO SCHEDULE APPLIED"
+  "nextAction": "AWAITING APPROVAL — NO SCHEDULE APPLIED",
+  "appliedAt": "2026-08-08T08:01:46.735Z",
+  "reconciledFrom": "16-to-13-approved-execute",
+  "approvedBy": "user"
 }

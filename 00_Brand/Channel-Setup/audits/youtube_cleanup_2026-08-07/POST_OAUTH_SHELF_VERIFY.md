@@ -1,6 +1,6 @@
 # Post-OAuth shelf verification
 
-Verified: 2026-08-08T07:35:41.940Z
+Verified: 2026-08-08T08:01:47.190Z
 
 Overall: **PASS**
 
@@ -19,7 +19,7 @@ Overall: **PASS**
 | lIHb_tyxQSM | historical_dupe_unscheduled | PASS | private | — | 0 |
 | wOlnj7nZWJM | historical_dupe_unscheduled | PASS | private | — | 0 |
 | 2uT3wXJLybw | historical_dupe_unscheduled | PASS | private | — | 0 |
-| tUAdhOnMW2g | canonical_nf01_scheduled | PASS | private | 2026-08-08T10:30:00Z | 8 |
+| tUAdhOnMW2g | canonical_nf01_scheduled | PASS | private | 2026-08-10T10:30:00Z | 8 |
 
 Public count: 6 (expected 6 canonical, NF01 may add +1 after go-live)
 No unexpected public duplicates in the watched set.

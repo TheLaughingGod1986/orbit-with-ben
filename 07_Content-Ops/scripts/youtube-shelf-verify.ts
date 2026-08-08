@@ -40,7 +40,7 @@ const EXPECTED: Expected[] = [
   { id: "lIHb_tyxQSM", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
   { id: "wOlnj7nZWJM", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
   { id: "2uT3wXJLybw", privacy: "private", publishAt: null, role: "historical_dupe_unscheduled" },
-  { id: "tUAdhOnMW2g", privacy: "private", publishAt: "2026-08-08T10:30:00Z", role: "canonical_nf01_scheduled" },
+  { id: "tUAdhOnMW2g", privacy: "private", publishAt: "2026-08-10T10:30:00Z", role: "canonical_nf01_scheduled" },
 ];
 
 /** Must remain non-public during approved six-shelf recovery (unless separately registered). */

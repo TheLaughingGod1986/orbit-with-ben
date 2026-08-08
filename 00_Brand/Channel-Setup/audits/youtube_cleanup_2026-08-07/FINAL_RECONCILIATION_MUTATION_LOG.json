@@ -1,13 +1,373 @@
 {
-  "ok": false,
-  "verdict": "WAITING FOR YOUTUBE API QUOTA",
-  "scheduleMutations": 0,
-  "hvMutations": 0,
-  "liveCaptureOk": true,
-  "plannedWritesIfApproved": {
-    "obsoleteUnschedules": 3,
-    "targetScheduleUpdates": 13,
-    "alreadyCorrect": 0,
-    "totalWrites": 16
+  "ok": true,
+  "dryRun": false,
+  "verdict": "SCHEDULE RECONCILED, CLEAN AND CANONICAL",
+  "obsolete": [
+    "w1ej9u0rPTA",
+    "gPCpMsB0w2E",
+    "YsyPMhNmHMk"
+  ],
+  "mutationLog": [
+    {
+      "phase": "unschedule_obsolete",
+      "videoId": "w1ej9u0rPTA",
+      "ok": true,
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "result": {
+        "ok": true,
+        "statusCode": 200,
+        "id": "w1ej9u0rPTA",
+        "body": {
+          "kind": "youtube#video",
+          "etag": "Ex6XfrFODLRoSxdxp6xcZxWP7gA",
+          "id": "w1ej9u0rPTA",
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "private",
+            "publishAt": "2026-08-11T10:30:00Z",
+            "license": "youtube",
+            "embeddable": false,
+            "publicStatsViewable": false,
+            "madeForKids": false,
+            "selfDeclaredMadeForKids": false
+          }
+        },
+        "status": {
+          "privacyStatus": "private",
+          "license": "youtube",
+          "embeddable": false,
+          "publicStatsViewable": false,
+          "selfDeclaredMadeForKids": false,
+          "madeForKids": false
+        }
+      },
+      "dryRun": false
+    },
+    {
+      "phase": "unschedule_obsolete",
+      "videoId": "gPCpMsB0w2E",
+      "ok": true,
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "result": {
+        "ok": true,
+        "statusCode": 200,
+        "id": "gPCpMsB0w2E",
+        "body": {
+          "kind": "youtube#video",
+          "etag": "PKJKqWoQ9cCIDZKzCrha8boWMkU",
+          "id": "gPCpMsB0w2E",
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "private",
+            "publishAt": "2026-08-25T10:30:00Z",
+            "license": "youtube",
+            "embeddable": false,
+            "publicStatsViewable": false,
+            "madeForKids": false,
+            "selfDeclaredMadeForKids": false
+          }
+        },
+        "status": {
+          "privacyStatus": "private",
+          "license": "youtube",
+          "embeddable": false,
+          "publicStatsViewable": false,
+          "selfDeclaredMadeForKids": false,
+          "madeForKids": false
+        }
+      },
+      "dryRun": false
+    },
+    {
+      "phase": "unschedule_obsolete",
+      "videoId": "YsyPMhNmHMk",
+      "ok": true,
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "result": {
+        "ok": true,
+        "statusCode": 200,
+        "id": "YsyPMhNmHMk",
+        "body": {
+          "kind": "youtube#video",
+          "etag": "_YZI2N2_u4QrY_j6sE3SWd0UAR4",
+          "id": "YsyPMhNmHMk",
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "private",
+            "publishAt": "2026-08-26T10:30:00Z",
+            "license": "youtube",
+            "embeddable": false,
+            "publicStatsViewable": false,
+            "madeForKids": false,
+            "selfDeclaredMadeForKids": false
+          }
+        },
+        "status": {
+          "privacyStatus": "private",
+          "license": "youtube",
+          "embeddable": false,
+          "publicStatsViewable": false,
+          "selfDeclaredMadeForKids": false,
+          "madeForKids": false
+        }
+      },
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "tUAdhOnMW2g",
+      "publishAt": "2026-08-10T10:30:00Z",
+      "got": "2026-08-10T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "svYOx07OrIM",
+      "publishAt": "2026-08-11T10:30:00Z",
+      "got": "2026-08-11T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "B2STcIAF1lY",
+      "publishAt": "2026-08-12T10:30:00Z",
+      "got": "2026-08-12T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "b8-X_FyJnHM",
+      "publishAt": "2026-08-13T17:00:00Z",
+      "got": "2026-08-13T17:00:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "ho9VJxp7f3A",
+      "publishAt": "2026-08-13T19:00:00Z",
+      "got": "2026-08-13T19:00:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "aoR-dA_g7eI",
+      "publishAt": "2026-08-14T10:30:00Z",
+      "got": "2026-08-14T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "6QFGAFZk264",
+      "publishAt": "2026-08-15T10:30:00Z",
+      "got": "2026-08-15T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "eOOFVrJ2Ojc",
+      "publishAt": "2026-08-16T10:30:00Z",
+      "got": "2026-08-16T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "tfTkMdE7qqw",
+      "publishAt": "2026-08-20T17:00:00Z",
+      "got": "2026-08-20T17:00:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "bLv0RfidjSg",
+      "publishAt": "2026-08-20T19:00:00Z",
+      "got": "2026-08-20T19:00:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "PcP64way3xA",
+      "publishAt": "2026-08-21T10:30:00Z",
+      "got": "2026-08-21T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "pjIevt27Svo",
+      "publishAt": "2026-08-22T10:30:00Z",
+      "got": "2026-08-22T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    },
+    {
+      "phase": "schedule",
+      "videoId": "AeFm7gWyWik",
+      "publishAt": "2026-08-23T10:30:00Z",
+      "got": "2026-08-23T10:30:00Z",
+      "failed": false,
+      "dryRun": false
+    }
+  ],
+  "verify13": [
+    {
+      "youtubeId": "tUAdhOnMW2g",
+      "want": "2026-08-10T10:30:00Z",
+      "got": "2026-08-10T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "svYOx07OrIM",
+      "want": "2026-08-11T10:30:00Z",
+      "got": "2026-08-11T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "B2STcIAF1lY",
+      "want": "2026-08-12T10:30:00Z",
+      "got": "2026-08-12T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "b8-X_FyJnHM",
+      "want": "2026-08-13T17:00:00Z",
+      "got": "2026-08-13T17:00:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "ho9VJxp7f3A",
+      "want": "2026-08-13T19:00:00Z",
+      "got": "2026-08-13T19:00:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "aoR-dA_g7eI",
+      "want": "2026-08-14T10:30:00Z",
+      "got": "2026-08-14T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "6QFGAFZk264",
+      "want": "2026-08-15T10:30:00Z",
+      "got": "2026-08-15T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "eOOFVrJ2Ojc",
+      "want": "2026-08-16T10:30:00Z",
+      "got": "2026-08-16T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "tfTkMdE7qqw",
+      "want": "2026-08-20T17:00:00Z",
+      "got": "2026-08-20T17:00:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "bLv0RfidjSg",
+      "want": "2026-08-20T19:00:00Z",
+      "got": "2026-08-20T19:00:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "PcP64way3xA",
+      "want": "2026-08-21T10:30:00Z",
+      "got": "2026-08-21T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "pjIevt27Svo",
+      "want": "2026-08-22T10:30:00Z",
+      "got": "2026-08-22T10:30:00Z",
+      "ok": true
+    },
+    {
+      "youtubeId": "AeFm7gWyWik",
+      "want": "2026-08-23T10:30:00Z",
+      "got": "2026-08-23T10:30:00Z",
+      "ok": true
+    }
+  ],
+  "excludedOk": [
+    {
+      "youtubeId": "HvAKGjx4lv0",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "icedH_gK8JE",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "Web2otrTcT0",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "1qts3tIsg9c",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "dPMJQp2gMNc",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "rFJoOdQAc9c",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "w1ej9u0rPTA",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "gPCpMsB0w2E",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    },
+    {
+      "youtubeId": "YsyPMhNmHMk",
+      "privacy": "private",
+      "publishAt": null,
+      "ok": true
+    }
+  ],
+  "health": {
+    "scheduled": 13,
+    "missing": 0,
+    "unexpected": 0,
+    "collisions": 0,
+    "placeholderDates": 0
   }
 }
