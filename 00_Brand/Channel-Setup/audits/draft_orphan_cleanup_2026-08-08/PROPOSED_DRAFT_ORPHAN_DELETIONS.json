@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-08-08T20:43:22.656Z",
+  "stage": "A_AUDIT_ONLY",
+  "policy": "DELETE ONLY PROVEN JUNK — KEEP EVERYTHING ELSE",
+  "proposedDeletes": [],
+  "counts": {
+    "safeDraftDeletes": 0,
+    "safeOrphanDeletes": 0,
+    "safeConfirmedDuplicateDeletes": 0,
+    "protected": 91,
+    "possibleDuplicatesKept": 0,
+    "unknownKept": 0,
+    "historicalDuplicatesProtected": 63
+  },
+  "rationale": [
+    "Prior Studio duplicate classification already marked EXACT/HIGH duplicates as KEEP_PRIVATE.",
+    "Default for historical duplicates is HISTORICAL_DUPLICATE_PROTECTED (forensic + anti re-upload).",
+    "Title+duration similarity alone is insufficient for SAFE_TO_DELETE_CONFIRMED_DUPLICATE.",
+    "Explicit excluded/private assets (HvAKGjx4lv0, icedH_gK8JE, Web2otrTcT0, 1qts3tIsg9c, etc.) remain protected.",
+    "Dead JWST parent 1wxUhF3XnwI retained as HISTORICAL_DUPLICATE_PROTECTED.",
+    "No genuine unreferenced Studio Draft without a video ID was proven via API; Playwright discovery follows separately.",
+    "Zero HIGH-confidence SAFE_TO_DELETE candidates under conservative rules."
+  ],
+  "note": "Stage B must not run until explicit approval. Empty proposal means no deletes authorised."
+}
