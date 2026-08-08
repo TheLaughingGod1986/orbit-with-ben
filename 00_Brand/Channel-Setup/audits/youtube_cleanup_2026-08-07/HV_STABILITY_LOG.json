@@ -1,38 +1,41 @@
 {
-  "startedAt": "2026-08-07T21:27:01.465Z",
+  "startedAt": "2026-08-08T07:36:14.514Z",
   "reads": [
     {
-      "role": "initial",
-      "at": "2026-08-07T21:27:01.514Z",
+      "at": "2026-08-08T07:36:14.556Z",
       "privacy": "private",
       "publishAt": null
     },
     {
-      "role": "confirm1",
-      "at": "2026-08-07T21:27:02.368Z",
+      "at": "2026-08-08T07:36:15.498Z",
       "privacy": "private",
       "publishAt": null
     },
     {
-      "role": "confirm2",
-      "at": "2026-08-07T21:27:03.222Z",
+      "at": "2026-08-08T07:36:16.434Z",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "at": "2026-08-08T07:36:17.429Z",
       "privacy": "private",
       "publishAt": null
     }
   ],
-  "writePerformed": false,
+  "dryRun": true,
   "initial": {
-    "at": "2026-08-07T21:27:01.514Z",
+    "at": "2026-08-08T07:36:14.556Z",
     "privacy": "private",
     "publishAt": null
   },
   "write": {
-    "skipped": true
+    "skipped": true,
+    "reason": "already private+null on first read"
   },
-  "pass": false,
-  "status": "WAITING FOR YOUTUBE API QUOTA \u2014 HV CONFIRM INCOMPLETE",
-  "completedConfirms": 2,
-  "requiredConfirms": 3,
-  "note": "initial + confirm1 + confirm2 all private+null; confirm3 videos.list returned quotaExceeded",
-  "updatedAt": "2026-08-07T21:27:26Z"
+  "pass": true,
+  "final": {
+    "at": "2026-08-08T07:36:17.429Z",
+    "privacy": "private",
+    "publishAt": null
+  }
 }

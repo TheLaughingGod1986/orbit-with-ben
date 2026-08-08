@@ -1,18 +1,47 @@
 # HvAKGjx4lv0 Stability Log
 
-Generated: `2026-08-07T21:27:26Z`
+pass: **true**
 
-## Result: INCOMPLETE (quota)
-
-| Step | Privacy | publishAt |
-|------|---------|-----------|
-| initial | private | null |
-| confirm1 | private | null |
-| confirm2 | private | null |
-| confirm3 | **quotaExceeded** | — |
-
-Write performed: **no** (already private+null)
-
-Verdict: **WAITING FOR YOUTUBE API QUOTA — HV CONFIRM INCOMPLETE**
-
-Do not continue to shelf/schedule dry-run until three consecutive confirms succeed.
+```json
+{
+  "startedAt": "2026-08-08T07:36:14.514Z",
+  "reads": [
+    {
+      "at": "2026-08-08T07:36:14.556Z",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "at": "2026-08-08T07:36:15.498Z",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "at": "2026-08-08T07:36:16.434Z",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "at": "2026-08-08T07:36:17.429Z",
+      "privacy": "private",
+      "publishAt": null
+    }
+  ],
+  "dryRun": true,
+  "initial": {
+    "at": "2026-08-08T07:36:14.556Z",
+    "privacy": "private",
+    "publishAt": null
+  },
+  "write": {
+    "skipped": true,
+    "reason": "already private+null on first read"
+  },
+  "pass": true,
+  "final": {
+    "at": "2026-08-08T07:36:17.429Z",
+    "privacy": "private",
+    "publishAt": null
+  }
+}
+```

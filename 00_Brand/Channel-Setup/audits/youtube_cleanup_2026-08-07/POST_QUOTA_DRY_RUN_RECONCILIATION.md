@@ -1,13 +1,16 @@
 # Post-Quota Dry-Run Reconciliation
 
-Generated: `2026-08-07T21:27:26Z`
+Generated: `2026-08-08T07:35:42.588Z`
 
 ## Verdict
 
-**WAITING FOR YOUTUBE API QUOTA — HV CONFIRM INCOMPLETE**
+**DRY-RUN CLEAN — AWAITING APPLY APPROVAL**
 
-Quota probe passed. Hv initial + confirm1 + confirm2 all `private`/`null`. Confirm3 hit `403 quotaExceeded`.
+Live scheduled: **16** · Approved: **13** · Obsolete: **3**
 
-Shelf verify, live schedule fetch, and dry-run plan **not run** this attempt (stopped at Hv gate).
+- obsolete unschedules: 3
+- target updates: 13
+- already correct: 0
+- total planned writes: 16
 
-Schedule mutations: **0**
+Schedule mutations this run: **0**

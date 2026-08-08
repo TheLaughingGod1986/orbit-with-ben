@@ -575,7 +575,7 @@ async function main() {
     new Set([...Object.keys(APPROVED_UTC), ...EXCLUDED, ...obsolete, ...APPROVED_PUBLIC]),
   );
   const afterMap = dryRun ? beforeMap : await getVideos(accessToken, afterWatch);
-  const afterScheduled = [...afterMap.values()]
+  let afterScheduled = [...afterMap.values()]
     .filter((it) => it.status?.publishAt)
     .map((it) => ({
       videoId: it.id,
@@ -583,6 +583,18 @@ async function main() {
       privacy: it.status.privacyStatus,
       title: it.snippet?.title,
     }));
+  // Dry-run: project obsolete clears + approved publishAts (zero live mutations).
+  if (dryRun) {
+    const obsoleteSet = new Set(obsolete);
+    afterScheduled = Object.entries(APPROVED_UTC).map(([id, publishAt]) => ({
+      videoId: id,
+      publishAt,
+      privacy: "private",
+      title: beforeMap.get(id)?.snippet?.title,
+      projected: true,
+    }));
+    void obsoleteSet;
+  }
 
   fs.writeFileSync(
     path.join(AUDIT, "FINAL_RECONCILIATION_LIVE_AFTER.json"),

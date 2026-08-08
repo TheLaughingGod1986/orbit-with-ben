@@ -1,14 +1,14 @@
 # Post-OAuth shelf verification
 
-Verified: 2026-08-07T15:50:04.824Z
+Verified: 2026-08-08T07:35:41.940Z
 
 Overall: **PASS**
 
 | ID | Role | Status | Privacy | publishAt | Views |
 |----|------|--------|---------|-----------|------:|
 | Mo93x0fxB1Q | fermi_long | PASS | public | — | 6 |
-| 1HuV8o3gOss | fermi_short | PASS | public | — | 38 |
-| KcKBixwmcV4 | fermi_short | PASS | public | — | 97 |
+| 1HuV8o3gOss | fermi_short | PASS | public | — | 42 |
+| KcKBixwmcV4 | fermi_short | PASS | public | — | 109 |
 | 3xrxdmaOwJI | bh_long_canonical | PASS | public | — | 0 |
 | JRfhE6yWom4 | bh_short_canonical | PASS | public | — | 4 |
 | L2OFjL4neOo | bh_short_canonical | PASS | public | — | 6 |
