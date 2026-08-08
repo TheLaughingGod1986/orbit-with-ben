@@ -340,20 +340,19 @@ async function main() {
   // Content Ops DB references
   const contentOpsIds = new Set<string>();
   try {
-    const pubs = await prisma.publishJob.findMany({
-      where: { platform: { in: ["youtube", "youtube_shorts", "youtube_long"] as any } },
-      select: { externalId: true, payload: true },
+    const pubs = await prisma.publishingJob.findMany({
+      select: { externalId: true, payloadJson: true },
       take: 5000,
     });
     for (const p of pubs) {
       if (p.externalId) contentOpsIds.add(p.externalId);
-      const raw = JSON.stringify(p.payload || {});
+      const raw = JSON.stringify((p as { payloadJson?: unknown }).payloadJson || {});
       for (const m of raw.matchAll(/[A-Za-z0-9_-]{11}/g)) {
         if (uploadIds.includes(m[0])) contentOpsIds.add(m[0]);
       }
     }
   } catch {
-    /* optional */
+    /* optional — schema fields vary; never block Stage A */
   }
 
   // Union of known IDs
