@@ -142,23 +142,42 @@ async function listPlaylists(token: string) {
   return out;
 }
 
+async function sleep(ms: number) {
+  await new Promise((r) => setTimeout(r, ms));
+}
+
 async function listPlaylistItemIds(token: string, playlistId: string): Promise<string[]> {
   const ids: string[] = [];
   let pageToken: string | undefined;
-  do {
-    const u = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
-    u.searchParams.set("part", "snippet,contentDetails");
-    u.searchParams.set("playlistId", playlistId);
-    u.searchParams.set("maxResults", "50");
-    if (pageToken) u.searchParams.set("pageToken", pageToken);
-    const body = await yt(token, u.toString());
-    for (const it of body.items || []) {
-      const vid = it.contentDetails?.videoId || it.snippet?.resourceId?.videoId;
-      if (vid) ids.push(vid);
+  let attempt = 0;
+  while (true) {
+    try {
+      do {
+        const u = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+        u.searchParams.set("part", "snippet,contentDetails");
+        u.searchParams.set("playlistId", playlistId);
+        u.searchParams.set("maxResults", "50");
+        if (pageToken) u.searchParams.set("pageToken", pageToken);
+        const body = await yt(token, u.toString());
+        for (const it of body.items || []) {
+          const vid = it.contentDetails?.videoId || it.snippet?.resourceId?.videoId;
+          if (vid) ids.push(vid);
+        }
+        pageToken = body.nextPageToken;
+      } while (pageToken);
+      return ids;
+    } catch (err: any) {
+      attempt += 1;
+      const msg = String(err?.message || err);
+      if (attempt <= 5 && (err?.status === 404 || /playlistNotFound/i.test(msg))) {
+        await sleep(1500 * attempt);
+        pageToken = undefined;
+        ids.length = 0;
+        continue;
+      }
+      throw err;
     }
-    pageToken = body.nextPageToken;
-  } while (pageToken);
-  return ids;
+  }
 }
 
 type Integrity = {
@@ -433,40 +452,59 @@ async function main() {
     return;
   }
 
-  // ── Batch 1: channel metadata ────────────────────────────────────
-  if (plan.channel.keywordsChange || plan.channel.descriptionChange) {
-    // Preserve full brandingSettings to avoid wiping banner/image fields.
+  // ── Batch 1: channel keywords (brandingSettings only — snippet not updatable) ──
+  if (plan.channel.keywordsChange) {
     const brandingSettings = JSON.parse(JSON.stringify(ch.brandingSettings || {}));
     brandingSettings.channel = brandingSettings.channel || {};
     brandingSettings.channel.keywords = formatChannelKeywordsForApi(CHANNEL_KEYWORDS);
-    await yt(
-      token,
-      "https://www.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings",
-      {
-        method: "PUT",
-        body: JSON.stringify({
-          id: channelId,
-          snippet: {
-            title: ch.snippet.title,
-            description: CHANNEL_DESCRIPTION_AFTER,
-            defaultLanguage: ch.snippet.defaultLanguage || "en-GB",
-            country: ch.snippet.country,
-          },
-          brandingSettings,
-        }),
-      },
+    await yt(token, "https://www.googleapis.com/youtube/v3/channels?part=brandingSettings", {
+      method: "PUT",
+      body: JSON.stringify({
+        id: channelId,
+        brandingSettings,
+      }),
+    });
+    appendChangelog({
+      resource: "channel",
+      youtubeId: channelId,
+      field: "brandingSettings.channel.keywords",
+      before: { keywords: beforeKeywords },
+      after: { keywords: formatChannelKeywordsForApi(CHANNEL_KEYWORDS) },
+      reason: "P1 channel keywords semantic cluster",
+      verification: "pending_readback",
+    });
+  }
+  if (plan.channel.descriptionChange) {
+    fs.writeFileSync(
+      path.join(AUDIT, "MANUAL_CHANNEL_DESCRIPTION.md"),
+      [
+        "# Manual Channel Description (Studio)",
+        "",
+        "YouTube Data API `channels.update` does **not** accept `snippet` for this channel — description must be pasted in Studio.",
+        "",
+        "## Path",
+        "YouTube Studio → Customisation → Basic info → Description → Save",
+        "",
+        "## BEFORE",
+        "```",
+        beforeDesc,
+        "```",
+        "",
+        "## AFTER (copy/paste)",
+        "```",
+        CHANNEL_DESCRIPTION_AFTER,
+        "```",
+        "",
+      ].join("\n"),
     );
     appendChangelog({
       resource: "channel",
       youtubeId: channelId,
-      field: "description+keywords",
-      before: { description: beforeDesc, keywords: beforeKeywords },
-      after: {
-        description: CHANNEL_DESCRIPTION_AFTER,
-        keywords: formatChannelKeywordsForApi(CHANNEL_KEYWORDS),
-      },
-      reason: "P1 channel SEO + subscriber CTA + JWST topical coverage",
-      verification: "pending_readback",
+      field: "snippet.description",
+      before: { description: beforeDesc },
+      after: { description: CHANNEL_DESCRIPTION_AFTER },
+      reason: "prepared — MANUAL Studio apply required (API part unsupported)",
+      verification: "manual_required",
     });
   }
 
@@ -499,6 +537,8 @@ async function main() {
         reason: `playlist architecture: ${spec.key}`,
         verification: "created",
       });
+      // Propagation: playlistItems can 404 briefly after create.
+      await sleep(2000);
     } else {
       // Ensure description is up to date (idempotent update)
       await yt(token, "https://www.googleapis.com/youtube/v3/playlists?part=snippet", {
