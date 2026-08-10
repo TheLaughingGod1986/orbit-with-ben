@@ -8,6 +8,11 @@ import {
   resolveStudioCatalogueId,
   studioPrivateFilterIncludesScheduled,
   defaultProtectWhenUnknown,
+  expectedStateFromIntent,
+  isOverdueCanonicalPublishCandidate,
+  defaultMutationMode,
+  isNaturalSchedulePublication,
+  schedulePublishAtProtected,
 } from "../src/lib/publishing/youtube-studio-visibility";
 
 describe("youtube-studio-visibility", () => {
@@ -153,5 +158,66 @@ describe("youtube-studio-visibility", () => {
         rawText: "Failed",
       }),
     ).toBe("FAILED_UPLOAD");
+  });
+
+  it("computes expected PUBLIC vs SCHEDULED from intendedPublishAt", () => {
+    const now = new Date("2026-08-10T12:00:00Z");
+    expect(expectedStateFromIntent("2026-08-10T10:30:00Z", now)).toBe("PUBLIC");
+    expect(expectedStateFromIntent("2026-08-11T10:30:00Z", now)).toBe("SCHEDULED");
+    expect(expectedStateFromIntent("2026-08-01T00:00:00Z", now, true)).toBe("PRIVATE_INTENTIONAL");
+  });
+
+  it("flags overdue canonical private and blocks duplicates / future", () => {
+    const now = new Date("2026-08-10T12:00:00Z");
+    const slot = { canonicalShortId: "tUAdhOnMW2g", intendedPublishAt: "2026-08-10T10:30:00Z" };
+    expect(
+      isOverdueCanonicalPublishCandidate(slot, {
+        videoId: "tUAdhOnMW2g",
+        privacyStatus: "private",
+        publishAt: null,
+      }, now),
+    ).toBe(true);
+    expect(
+      isOverdueCanonicalPublishCandidate(slot, {
+        videoId: "tUAdhOnMW2g",
+        privacyStatus: "public",
+        publishAt: null,
+      }, now),
+    ).toBe(false);
+    expect(
+      isOverdueCanonicalPublishCandidate(
+        { canonicalShortId: "svYOx07OrIM", intendedPublishAt: "2026-08-11T10:30:00Z" },
+        { videoId: "svYOx07OrIM", privacyStatus: "private", publishAt: "2026-08-11T10:30:00Z" },
+        now,
+      ),
+    ).toBe(false);
+    expect(
+      isOverdueCanonicalPublishCandidate(slot, {
+        videoId: "tUAdhOnMW2g",
+        privacyStatus: "private",
+        publishAt: null,
+        isHistoricalDuplicate: true,
+      }, now),
+    ).toBe(false);
+  });
+
+  it("defaults cleanup to NO_MUTATION and protects future publishAt", () => {
+    expect(defaultMutationMode()).toBe("NO_MUTATION");
+    expect(
+      schedulePublishAtProtected("2026-08-11T10:30:00Z", "2026-08-11T10:30:00Z", true),
+    ).toBe(true);
+    expect(schedulePublishAtProtected("2026-08-11T10:30:00Z", null, true)).toBe(false);
+  });
+
+  it("treats natural schedule fire as healthy, not schedule damage", () => {
+    expect(
+      isNaturalSchedulePublication({
+        videoId: "tUAdhOnMW2g",
+        expectedPublishAt: "2026-08-10T10:30:00Z",
+        nowPrivacy: "public",
+        nowPublishAt: null,
+        now: new Date("2026-08-10T12:00:00Z"),
+      }),
+    ).toBe(true);
   });
 });

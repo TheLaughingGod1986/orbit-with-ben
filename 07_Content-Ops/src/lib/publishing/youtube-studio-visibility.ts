@@ -183,3 +183,80 @@ export function mayProposeHighConfidenceDelete(input: CleanupGateInput): boolean
 export function defaultProtectWhenUnknown(classification: string): boolean {
   return classification === "UNKNOWN" || classification === "ORPHAN";
 }
+
+export type IntendedShortSlot = {
+  canonicalShortId: string;
+  intendedPublishAt: string; // ISO UTC
+  intentionallyCancelled?: boolean;
+};
+
+export type LiveShortState = {
+  videoId: string;
+  privacyStatus: string | null;
+  publishAt: string | null;
+  isHistoricalDuplicate?: boolean;
+  isSuperseded?: boolean;
+  hasPublicCanonicalEquivalent?: boolean;
+};
+
+/**
+ * Expected state from intended publish time vs now.
+ * Cancelled slots stay private intentionally.
+ */
+export function expectedStateFromIntent(
+  intendedPublishAt: string,
+  now: Date = new Date(),
+  intentionallyCancelled = false,
+): "PUBLIC" | "SCHEDULED" | "PRIVATE_INTENTIONAL" {
+  if (intentionallyCancelled) return "PRIVATE_INTENTIONAL";
+  return new Date(intendedPublishAt) <= now ? "PUBLIC" : "SCHEDULED";
+}
+
+/**
+ * HIGH-confidence overdue canonical publish candidate.
+ * All gates must pass — title similarity is not an input here.
+ */
+export function isOverdueCanonicalPublishCandidate(
+  slot: IntendedShortSlot,
+  live: LiveShortState,
+  now: Date = new Date(),
+): boolean {
+  if (slot.intentionallyCancelled) return false;
+  if (slot.canonicalShortId !== live.videoId) return false;
+  if (live.isHistoricalDuplicate || live.isSuperseded) return false;
+  if (live.hasPublicCanonicalEquivalent) return false;
+  if (new Date(slot.intendedPublishAt) > now) return false;
+  if (live.privacyStatus === "public" && !live.publishAt) return false;
+  // Stuck private with no future hold, or past-due publishAt still attached
+  if (live.privacyStatus === "private" && !live.publishAt) return true;
+  if (live.publishAt && new Date(live.publishAt) <= now) return true;
+  return false;
+}
+
+/** Cleanup / repair scripts must default to no live mutation. */
+export function defaultMutationMode(): "NO_MUTATION" {
+  return "NO_MUTATION";
+}
+
+/** Natural publication of a scheduled ID must not be treated as schedule damage. */
+export function isNaturalSchedulePublication(args: {
+  videoId: string;
+  expectedPublishAt: string;
+  nowPrivacy: string | null;
+  nowPublishAt: string | null;
+  now: Date;
+}): boolean {
+  if (args.nowPrivacy !== "public") return false;
+  if (args.nowPublishAt) return false;
+  return new Date(args.expectedPublishAt) <= args.now;
+}
+
+/** Future scheduled rows must keep exact publishAt — cleanup must not clear it. */
+export function schedulePublishAtProtected(
+  beforePublishAt: string | null,
+  afterPublishAt: string | null,
+  intendedFuture: boolean,
+): boolean {
+  if (!intendedFuture) return true;
+  return beforePublishAt === afterPublishAt && beforePublishAt != null;
+}
