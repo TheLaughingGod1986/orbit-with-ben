@@ -1,3 +1,12 @@
+# UPDATE — Batch 2 complete
+
+Total Draft-linked duplicates deleted: **22** (15 + 7).
+Studio Draft filter re-checked after reload.
+
+Public: OK · Scheduled remaining: 12/12 · Private→Public flips: **0**
+
+---
+
 # Draft Delete + Private “Should Be Live” Decision
 
 Generated: `2026-08-10T12:14:23.985477+00:00`
