@@ -13,6 +13,12 @@ import {
   defaultMutationMode,
   isNaturalSchedulePublication,
   schedulePublishAtProtected,
+  reconstructPublicationIntent,
+  classifyContentIdentity,
+  resolveAuthoritativeVisibility,
+  mayDemotePublicShort,
+  proposedVisibilityMutationAllowed,
+  studioShortsPaginationComplete,
 } from "../src/lib/publishing/youtube-studio-visibility";
 
 describe("youtube-studio-visibility", () => {
@@ -219,5 +225,167 @@ describe("youtube-studio-visibility", () => {
         now: new Date("2026-08-10T12:00:00Z"),
       }),
     ).toBe(true);
+  });
+
+  it("private does not mean intentional private", () => {
+    const result = reconstructPublicationIntent(
+      "dPMJQp2gMNc",
+      [{ source: "CURRENT_AUDIT", videoId: "dPMJQp2gMNc", intentionalPrivate: true }],
+      new Date("2026-08-10T12:00:00Z"),
+    );
+    expect(result.state).toBe("UNKNOWN");
+    expect(result.confidence).toBe("LOW");
+  });
+
+  it("similar title does not prove duplicate", () => {
+    expect(
+      classifyContentIdentity({
+        leftVideoId: "w1ej9u0rPTA",
+        rightVideoId: "JRfhE6yWom4",
+        similarTitle: true,
+      }),
+    ).toBe("UNPROVEN");
+  });
+
+  it("same parent does not prove duplicate", () => {
+    expect(
+      classifyContentIdentity({
+        leftVideoId: "w1ej9u0rPTA",
+        rightVideoId: "JRfhE6yWom4",
+        sameParentLong: true,
+      }),
+    ).toBe("UNPROVEN");
+  });
+
+  it("current registry cannot override stronger independent publication evidence", () => {
+    const result = reconstructPublicationIntent(
+      "dPMJQp2gMNc",
+      [
+        {
+          source: "ORIGINAL_PUBLISHING_PLAN",
+          videoId: "dPMJQp2gMNc",
+          intendedPublishAt: "2026-08-01T11:30:00Z",
+        },
+        { source: "UPLOAD_LOG", videoId: "dPMJQp2gMNc", observedPublic: true },
+        { source: "CURRENT_REGISTRY", videoId: "dPMJQp2gMNc", intentionalPrivate: true },
+      ],
+      new Date("2026-08-10T12:00:00Z"),
+    );
+    expect(result.state).toBe("PUBLIC_BY_NOW");
+    expect(result.confidence).toBe("HIGH");
+    expect(result.decisiveSources).toEqual(["ORIGINAL_PUBLISHING_PLAN"]);
+  });
+
+  it("accepts only fingerprint identity or explicit replacement evidence", () => {
+    expect(
+      classifyContentIdentity({
+        leftVideoId: "old",
+        rightVideoId: "new",
+        exactSourceAssetFingerprintMatch: true,
+      }),
+    ).toBe("EXACT_DUPLICATE");
+    expect(
+      classifyContentIdentity({
+        leftVideoId: "old",
+        rightVideoId: "new",
+        explicitReplacementMapping: true,
+      }),
+    ).toBe("SUPERSEDED_RENDER");
+  });
+
+  it("prefers API over conflicting Studio list Private label", () => {
+    expect(
+      resolveAuthoritativeVisibility({
+        studioListLabel: "Private",
+        apiPrivacyStatus: "public",
+        apiPublishAt: null,
+      }),
+    ).toBe("PUBLIC");
+    expect(
+      resolveAuthoritativeVisibility({
+        studioListLabel: "Private",
+        apiPrivacyStatus: "private",
+        apiPublishAt: "2026-08-11T10:30:00Z",
+      }),
+    ).toBe("SCHEDULED");
+  });
+
+  it("never demotes public Shorts and only allows overdue Private→Public", () => {
+    expect(mayDemotePublicShort()).toBe(false);
+    expect(
+      proposedVisibilityMutationAllowed({
+        from: "PUBLIC",
+        to: "PRIVATE",
+        overdueCanonicalHighConfidence: true,
+      }),
+    ).toBe(false);
+    expect(
+      proposedVisibilityMutationAllowed({
+        from: "SCHEDULED",
+        to: "PUBLIC",
+        overdueCanonicalHighConfidence: true,
+      }),
+    ).toBe(false);
+    expect(
+      proposedVisibilityMutationAllowed({
+        from: "PRIVATE",
+        to: "PUBLIC",
+        overdueCanonicalHighConfidence: false,
+      }),
+    ).toBe(false);
+    expect(
+      proposedVisibilityMutationAllowed({
+        from: "PRIVATE",
+        to: "PUBLIC",
+        overdueCanonicalHighConfidence: true,
+      }),
+    ).toBe(true);
+  });
+
+  it("requires full Shorts pagination without hardcoding 62", () => {
+    expect(
+      studioShortsPaginationComplete({
+        enumeratedRowCount: 62,
+        studioReportedTotal: 62,
+        pagesVisited: 3,
+      }),
+    ).toBe(true);
+    expect(
+      studioShortsPaginationComplete({
+        enumeratedRowCount: 30,
+        studioReportedTotal: 62,
+        pagesVisited: 1,
+      }),
+    ).toBe(false);
+    expect(
+      studioShortsPaginationComplete({
+        enumeratedRowCount: 70,
+        studioReportedTotal: 70,
+        pagesVisited: 3,
+      }),
+    ).toBe(true);
+  });
+
+  it("leaves ambiguous private untouched (no overdue gate)", () => {
+    const now = new Date("2026-08-10T12:00:00Z");
+    // Private with no independent intended publish → reconstruct UNKNOWN → not overdue
+    const intent = reconstructPublicationIntent(
+      "IsPLdq0oSe8",
+      [{ source: "CURRENT_REGISTRY", videoId: "IsPLdq0oSe8", intentionalPrivate: true }],
+      now,
+    );
+    expect(intent.state).toBe("UNKNOWN");
+    expect(
+      isOverdueCanonicalPublishCandidate(
+        { canonicalShortId: "IsPLdq0oSe8", intendedPublishAt: "2026-08-01T00:00:00Z" },
+        {
+          videoId: "IsPLdq0oSe8",
+          privacyStatus: "private",
+          publishAt: null,
+          isSuperseded: true,
+        },
+        now,
+      ),
+    ).toBe(false);
   });
 });

@@ -1,0 +1,11 @@
+# Screenshot evidence
+
+- `screenshots/filter_private.png`
+- `screenshots/filter_public.png`
+- `screenshots/filter_scheduled.png`
+- `screenshots/final_shorts_all.png`
+- `screenshots/shorts_page_01.png`
+- `screenshots/shorts_page_02.png`
+- `screenshots/shorts_page_03.png`
+- `screenshots/unexpected_public_UWwNKYf_aU8.png`
+- `screenshots/unexpected_public_z-DLqoSoEBo.png`

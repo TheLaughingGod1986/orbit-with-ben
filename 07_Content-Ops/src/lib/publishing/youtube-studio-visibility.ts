@@ -199,6 +199,121 @@ export type LiveShortState = {
   hasPublicCanonicalEquivalent?: boolean;
 };
 
+export type IndependentEvidenceSource =
+  | "ORIGINAL_PUBLISHING_PLAN"
+  | "STUDIO_SCHEDULE_CAPTURE"
+  | "UPLOAD_LOG"
+  | "SOURCE_ASSET_MANIFEST"
+  | "MUTATION_JOURNAL"
+  | "GIT_HISTORY"
+  | "CURRENT_REGISTRY"
+  | "CURRENT_AUDIT";
+
+export type PublicationIntentEvidence = {
+  source: IndependentEvidenceSource;
+  /** The video id directly supported by this evidence item. */
+  videoId: string;
+  intendedPublishAt?: string | null;
+  observedPublic?: boolean;
+  intentionalPrivate?: boolean;
+  explicitReplacementVideoId?: string | null;
+  sourceAssetFingerprint?: string | null;
+};
+
+const EVIDENCE_STRENGTH: Record<IndependentEvidenceSource, number> = {
+  ORIGINAL_PUBLISHING_PLAN: 100,
+  STUDIO_SCHEDULE_CAPTURE: 95,
+  UPLOAD_LOG: 90,
+  SOURCE_ASSET_MANIFEST: 85,
+  MUTATION_JOURNAL: 80,
+  GIT_HISTORY: 75,
+  CURRENT_REGISTRY: 20,
+  CURRENT_AUDIT: 10,
+};
+
+export type ReconstructedPublicationIntent = {
+  state: "PUBLIC_BY_NOW" | "SCHEDULED_FUTURE" | "INTENTIONAL_PRIVATE" | "UNKNOWN";
+  intendedPublishAt: string | null;
+  confidence: "HIGH" | "MEDIUM" | "LOW";
+  decisiveSources: IndependentEvidenceSource[];
+};
+
+/**
+ * Reconstruct intent without allowing a current registry/audit to validate itself.
+ * Private is only intentional when independent, explicit evidence says so. A bare
+ * private observation or KEEP_PRIVATE registry label is not publication intent.
+ */
+export function reconstructPublicationIntent(
+  videoId: string,
+  evidence: PublicationIntentEvidence[],
+  now: Date = new Date(),
+): ReconstructedPublicationIntent {
+  const direct = evidence
+    .filter((item) => item.videoId === videoId)
+    .sort((a, b) => EVIDENCE_STRENGTH[b.source] - EVIDENCE_STRENGTH[a.source]);
+  const independent = direct.filter(
+    (item) => item.source !== "CURRENT_REGISTRY" && item.source !== "CURRENT_AUDIT",
+  );
+
+  const explicitPrivate = independent.find((item) => item.intentionalPrivate === true);
+  const scheduled = independent.find((item) => Boolean(item.intendedPublishAt));
+  const previouslyPublic = independent.find((item) => item.observedPublic === true);
+
+  if (explicitPrivate && (!scheduled || EVIDENCE_STRENGTH[explicitPrivate.source] >= EVIDENCE_STRENGTH[scheduled.source])) {
+    return {
+      state: "INTENTIONAL_PRIVATE",
+      intendedPublishAt: null,
+      confidence: EVIDENCE_STRENGTH[explicitPrivate.source] >= 80 ? "HIGH" : "MEDIUM",
+      decisiveSources: [explicitPrivate.source],
+    };
+  }
+
+  if (scheduled?.intendedPublishAt) {
+    const intended = scheduled.intendedPublishAt;
+    return {
+      state: new Date(intended) <= now ? "PUBLIC_BY_NOW" : "SCHEDULED_FUTURE",
+      intendedPublishAt: intended,
+      confidence: EVIDENCE_STRENGTH[scheduled.source] >= 85 ? "HIGH" : "MEDIUM",
+      decisiveSources: [scheduled.source],
+    };
+  }
+
+  if (previouslyPublic) {
+    return {
+      state: "PUBLIC_BY_NOW",
+      intendedPublishAt: null,
+      confidence: EVIDENCE_STRENGTH[previouslyPublic.source] >= 85 ? "HIGH" : "MEDIUM",
+      decisiveSources: [previouslyPublic.source],
+    };
+  }
+
+  return {
+    state: "UNKNOWN",
+    intendedPublishAt: null,
+    confidence: "LOW",
+    decisiveSources: direct.slice(0, 1).map((item) => item.source),
+  };
+}
+
+export type ContentIdentityEvidence = {
+  leftVideoId: string;
+  rightVideoId: string;
+  exactSourceAssetFingerprintMatch?: boolean;
+  explicitReplacementMapping?: boolean;
+  sameTitle?: boolean;
+  similarTitle?: boolean;
+  sameParentLong?: boolean;
+};
+
+/** Similar titles and a shared parent describe a topic, not an upload identity. */
+export function classifyContentIdentity(
+  evidence: ContentIdentityEvidence,
+): "EXACT_DUPLICATE" | "SUPERSEDED_RENDER" | "UNPROVEN" {
+  if (evidence.exactSourceAssetFingerprintMatch) return "EXACT_DUPLICATE";
+  if (evidence.explicitReplacementMapping) return "SUPERSEDED_RENDER";
+  return "UNPROVEN";
+}
+
 /**
  * Expected state from intended publish time vs now.
  * Cancelled slots stay private intentionally.
@@ -259,4 +374,62 @@ export function schedulePublishAtProtected(
 ): boolean {
   if (!intendedFuture) return true;
   return beforePublishAt === afterPublishAt && beforePublishAt != null;
+}
+
+/**
+ * Studio Shorts list chips can disagree with the video edit page / Data API.
+ * When API privacy is present, it wins over a conflicting list label.
+ */
+export function resolveAuthoritativeVisibility(input: {
+  studioListLabel?: string | null;
+  apiPrivacyStatus?: string | null;
+  apiPublishAt?: string | null;
+}): StudioVisibilityClass {
+  const api = (input.apiPrivacyStatus || "").toLowerCase();
+  if (api === "public") return "PUBLIC";
+  if (api === "private" && input.apiPublishAt) return "SCHEDULED";
+  if (api === "private") return "PRIVATE";
+  if (api === "unlisted") return "PRIVATE";
+  return classifyStudioVisibility({
+    visibilityText: input.studioListLabel,
+    privacyStatus: input.apiPrivacyStatus,
+    publishAt: input.apiPublishAt,
+  });
+}
+
+/** This forensic repair must never demote a live public Short. */
+export function mayDemotePublicShort(): boolean {
+  return false;
+}
+
+/**
+ * Only HIGH-confidence overdue canonical PRIVATE→PUBLIC is auto-allowed.
+ * Everything else (including unexpected public superseded) stays NO_MUTATION.
+ */
+export function proposedVisibilityMutationAllowed(input: {
+  from: StudioVisibilityClass;
+  to: StudioVisibilityClass;
+  overdueCanonicalHighConfidence: boolean;
+}): boolean {
+  if (input.from === "PUBLIC") return false;
+  if (input.from === "SCHEDULED") return false;
+  if (input.from === "PRIVATE" && input.to === "PUBLIC") {
+    return input.overdueCanonicalHighConfidence === true;
+  }
+  return false;
+}
+
+/**
+ * Pagination completeness: discovered row count must equal reported total when known.
+ * Do not hardcode 62 — Studio can grow/shrink.
+ */
+export function studioShortsPaginationComplete(input: {
+  enumeratedRowCount: number;
+  studioReportedTotal?: number | null;
+  pagesVisited: number;
+}): boolean {
+  if (input.enumeratedRowCount <= 0) return false;
+  if (input.pagesVisited < 1) return false;
+  if (input.studioReportedTotal == null) return input.enumeratedRowCount > 0;
+  return input.enumeratedRowCount === input.studioReportedTotal;
 }
