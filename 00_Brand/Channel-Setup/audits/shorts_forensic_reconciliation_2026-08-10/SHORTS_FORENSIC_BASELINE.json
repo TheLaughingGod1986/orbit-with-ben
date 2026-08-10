@@ -1,0 +1,696 @@
+{
+  "generatedAt": "2026-08-10T11:43:52.425Z",
+  "timezone": "Europe/Paris",
+  "utcNow": "2026-08-10T11:43:52.425Z",
+  "mutation": "NONE",
+  "stage": "PHASE1_FREEZE",
+  "lastVerifiedBaselineExpectation": {
+    "public": "6/6",
+    "scheduled": "13/13",
+    "note": "As of 2026-08-08 audit before Mon 10 Aug publish slot"
+  },
+  "approvedSchedule": {
+    "tUAdhOnMW2g": "2026-08-10T10:30:00Z",
+    "svYOx07OrIM": "2026-08-11T10:30:00Z",
+    "B2STcIAF1lY": "2026-08-12T10:30:00Z",
+    "b8-X_FyJnHM": "2026-08-13T17:00:00Z",
+    "ho9VJxp7f3A": "2026-08-13T19:00:00Z",
+    "aoR-dA_g7eI": "2026-08-14T10:30:00Z",
+    "6QFGAFZk264": "2026-08-15T10:30:00Z",
+    "eOOFVrJ2Ojc": "2026-08-16T10:30:00Z",
+    "tfTkMdE7qqw": "2026-08-20T17:00:00Z",
+    "bLv0RfidjSg": "2026-08-20T19:00:00Z",
+    "PcP64way3xA": "2026-08-21T10:30:00Z",
+    "pjIevt27Svo": "2026-08-22T10:30:00Z",
+    "AeFm7gWyWik": "2026-08-23T10:30:00Z"
+  },
+  "expectedPublicBaseline": [
+    "Mo93x0fxB1Q",
+    "1HuV8o3gOss",
+    "KcKBixwmcV4",
+    "3xrxdmaOwJI",
+    "JRfhE6yWom4",
+    "L2OFjL4neOo"
+  ],
+  "protectedPrivateRegistry": [
+    "dPMJQp2gMNc",
+    "rFJoOdQAc9c",
+    "w1ej9u0rPTA",
+    "gPCpMsB0w2E",
+    "YsyPMhNmHMk"
+  ],
+  "historicalDuplicateIds": [
+    "--CxhjNqtSY",
+    "2777WlMGM8M",
+    "2C-eiSMsBLc",
+    "2uT3wXJLybw",
+    "5jjJ5CHrbCs",
+    "5nMieBeymKU",
+    "6dSntxIQgXI",
+    "80S5E-AWFhA",
+    "8DxCTXUlw74",
+    "B95wuAH68QY",
+    "C4GuFEFGySI",
+    "EO-44QH4glI",
+    "IqII5mVGdrs",
+    "IvSMHnngXdE",
+    "IwpO33AJaPQ",
+    "MO19iXYCu0c",
+    "P95alanW8GU",
+    "RCs6MMxF3ko",
+    "RF6wivuPYqI",
+    "UWwNKYf_aU8",
+    "dFO50RT5s14",
+    "eZGAhF8dN7w",
+    "jyzrl9ueKq4",
+    "kv1Yz74_S10",
+    "lIHb_tyxQSM",
+    "n7CbJrOCnU0",
+    "nX84ileqPKw",
+    "t1hTGIH8O44",
+    "wOlnj7nZWJM",
+    "xhBR-ixXi8s",
+    "z-DLqoSoEBo",
+    "z-kgwJaz5pY",
+    "z8-haBeF6mI",
+    "zc79sRBCDnU"
+  ],
+  "live": {
+    "publicIds": [
+      "1HuV8o3gOss",
+      "3xrxdmaOwJI",
+      "JRfhE6yWom4",
+      "KcKBixwmcV4",
+      "L2OFjL4neOo",
+      "Mo93x0fxB1Q",
+      "tUAdhOnMW2g"
+    ],
+    "publicCount": 7,
+    "scheduledLive": [
+      {
+        "id": "svYOx07OrIM",
+        "publishAt": "2026-08-11T10:30:00Z",
+        "privacy": "private",
+        "title": "Would You Look Back?"
+      },
+      {
+        "id": "B2STcIAF1lY",
+        "publishAt": "2026-08-12T10:30:00Z",
+        "privacy": "private",
+        "title": "What You Would See Falling Into a Black Hole"
+      },
+      {
+        "id": "b8-X_FyJnHM",
+        "publishAt": "2026-08-13T17:00:00Z",
+        "privacy": "private",
+        "title": "Alien Worlds: The Strangest Planets We've Ever Found | Orbit's Cosmic Journey"
+      },
+      {
+        "id": "ho9VJxp7f3A",
+        "publishAt": "2026-08-13T19:00:00Z",
+        "privacy": "private",
+        "title": "It Rains Glass Sideways on This Alien World"
+      },
+      {
+        "id": "aoR-dA_g7eI",
+        "publishAt": "2026-08-14T10:30:00Z",
+        "privacy": "private",
+        "title": "We Found Planets Made of Diamond"
+      },
+      {
+        "id": "6QFGAFZk264",
+        "publishAt": "2026-08-15T10:30:00Z",
+        "privacy": "private",
+        "title": "Three Suns in the Sky — Real Alien Worlds"
+      },
+      {
+        "id": "eOOFVrJ2Ojc",
+        "publishAt": "2026-08-16T10:30:00Z",
+        "privacy": "private",
+        "title": "The Hottest Nights in the Universe"
+      },
+      {
+        "id": "tfTkMdE7qqw",
+        "publishAt": "2026-08-20T17:00:00Z",
+        "privacy": "private",
+        "title": "What the James Webb Telescope Discovered That Changes Everything | Orbit's Cosmic Journey"
+      },
+      {
+        "id": "bLv0RfidjSg",
+        "publishAt": "2026-08-20T19:00:00Z",
+        "privacy": "private",
+        "title": "These Galaxies Appeared Too Early"
+      },
+      {
+        "id": "PcP64way3xA",
+        "publishAt": "2026-08-21T10:30:00Z",
+        "privacy": "private",
+        "title": "How Did Black Holes Get So Big So Fast?"
+      },
+      {
+        "id": "pjIevt27Svo",
+        "publishAt": "2026-08-22T10:30:00Z",
+        "privacy": "private",
+        "title": "Why JWST Pictures Don't Match the Textbook"
+      },
+      {
+        "id": "AeFm7gWyWik",
+        "publishAt": "2026-08-23T10:30:00Z",
+        "privacy": "private",
+        "title": "What JWST's Infrared Eyes Can See"
+      }
+    ],
+    "scheduledCount": 12,
+    "unexpectedPublic": [],
+    "missingScheduledRemaining": [],
+    "pastDueStatus": [
+      {
+        "id": "tUAdhOnMW2g",
+        "expectedPublishAt": "2026-08-10T10:30:00Z",
+        "privacy": "public",
+        "publishAt": null,
+        "title": "Time Appears to Stop at a Black Hole",
+        "naturalPublishOk": true
+      }
+    ],
+    "collisions": 0,
+    "placeholders": 0
+  },
+  "integrity": {
+    "baselinePublicStillPublic": true,
+    "unexpectedPublicOutsideSchedule": [],
+    "remainingScheduledExact": 12,
+    "remainingScheduledExpected": 12,
+    "collisions": 0,
+    "placeholders": 0,
+    "pastDueAllOk": true,
+    "protectedStateOk": true,
+    "stopReason": null
+  },
+  "videosSample": [
+    {
+      "id": "Mo93x0fxB1Q",
+      "title": "Why Haven't We Found Aliens Yet? The Fermi Paradox Explained | Orbit's Cosmic Journey",
+      "privacy": "public",
+      "publishAt": null,
+      "duration": "PT18M32S",
+      "publishedAt": "2026-07-30T17:00:09Z",
+      "views": 6
+    },
+    {
+      "id": "1HuV8o3gOss",
+      "title": "Why Haven't We Found Aliens Yet? #FermiParadox #Space #Shorts",
+      "privacy": "public",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-08-02T23:17:18Z",
+      "views": 38
+    },
+    {
+      "id": "KcKBixwmcV4",
+      "title": "What If the First Alien Clue Is Already Here?",
+      "privacy": "public",
+      "publishAt": null,
+      "duration": "PT49S",
+      "publishedAt": "2026-08-03T11:30:08Z",
+      "views": 97
+    },
+    {
+      "id": "3xrxdmaOwJI",
+      "title": "What Happens If You Fall Into a Black Hole? Orbit's Cosmic Journey",
+      "privacy": "public",
+      "publishAt": null,
+      "duration": "PT21M13S",
+      "publishedAt": "2026-08-05T17:00:09Z",
+      "views": 1
+    },
+    {
+      "id": "JRfhE6yWom4",
+      "title": "Why This Line Is a Point of No Return #Space #Shorts",
+      "privacy": "public",
+      "publishAt": null,
+      "duration": "PT45S",
+      "publishedAt": "2026-08-05T20:00:05Z",
+      "views": 5
+    },
+    {
+      "id": "L2OFjL4neOo",
+      "title": "Falling In Wouldn't Feel Like Falling",
+      "privacy": "public",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-08-06T11:30:09Z",
+      "views": 14
+    },
+    {
+      "id": "tUAdhOnMW2g",
+      "title": "Time Appears to Stop at a Black Hole",
+      "privacy": "public",
+      "publishAt": null,
+      "duration": "PT28S",
+      "publishedAt": "2026-08-10T10:30:33Z",
+      "views": 8
+    },
+    {
+      "id": "svYOx07OrIM",
+      "title": "Would You Look Back?",
+      "privacy": "private",
+      "publishAt": "2026-08-11T10:30:00Z",
+      "duration": "PT43S",
+      "publishedAt": "2026-08-04T23:19:14Z",
+      "views": 2
+    },
+    {
+      "id": "B2STcIAF1lY",
+      "title": "What You Would See Falling Into a Black Hole",
+      "privacy": "private",
+      "publishAt": "2026-08-12T10:30:00Z",
+      "duration": "PT28S",
+      "publishedAt": "2026-08-04T23:28:52Z",
+      "views": 2
+    },
+    {
+      "id": "b8-X_FyJnHM",
+      "title": "Alien Worlds: The Strangest Planets We've Ever Found | Orbit's Cosmic Journey",
+      "privacy": "private",
+      "publishAt": "2026-08-13T17:00:00Z",
+      "duration": "PT21M29S",
+      "publishedAt": "2026-07-31T18:45:30Z",
+      "views": 0
+    },
+    {
+      "id": "ho9VJxp7f3A",
+      "title": "It Rains Glass Sideways on This Alien World",
+      "privacy": "private",
+      "publishAt": "2026-08-13T19:00:00Z",
+      "duration": "PT45S",
+      "publishedAt": "2026-08-02T21:39:58Z",
+      "views": 0
+    },
+    {
+      "id": "aoR-dA_g7eI",
+      "title": "We Found Planets Made of Diamond",
+      "privacy": "private",
+      "publishAt": "2026-08-14T10:30:00Z",
+      "duration": "PT43S",
+      "publishedAt": "2026-08-02T21:52:07Z",
+      "views": 0
+    },
+    {
+      "id": "6QFGAFZk264",
+      "title": "Three Suns in the Sky — Real Alien Worlds",
+      "privacy": "private",
+      "publishAt": "2026-08-15T10:30:00Z",
+      "duration": "PT43S",
+      "publishedAt": "2026-08-02T21:53:56Z",
+      "views": 0
+    },
+    {
+      "id": "eOOFVrJ2Ojc",
+      "title": "The Hottest Nights in the Universe",
+      "privacy": "private",
+      "publishAt": "2026-08-16T10:30:00Z",
+      "duration": "PT43S",
+      "publishedAt": "2026-08-02T22:10:05Z",
+      "views": 0
+    },
+    {
+      "id": "tfTkMdE7qqw",
+      "title": "What the James Webb Telescope Discovered That Changes Everything | Orbit's Cosmic Journey",
+      "privacy": "private",
+      "publishAt": "2026-08-20T17:00:00Z",
+      "duration": "PT16M33S",
+      "publishedAt": "2026-08-04T21:48:54Z",
+      "views": 0
+    },
+    {
+      "id": "bLv0RfidjSg",
+      "title": "These Galaxies Appeared Too Early",
+      "privacy": "private",
+      "publishAt": "2026-08-20T19:00:00Z",
+      "duration": "PT27S",
+      "publishedAt": "2026-08-04T22:13:04Z",
+      "views": 0
+    },
+    {
+      "id": "PcP64way3xA",
+      "title": "How Did Black Holes Get So Big So Fast?",
+      "privacy": "private",
+      "publishAt": "2026-08-21T10:30:00Z",
+      "duration": "PT27S",
+      "publishedAt": "2026-08-04T22:15:37Z",
+      "views": 0
+    },
+    {
+      "id": "pjIevt27Svo",
+      "title": "Why JWST Pictures Don't Match the Textbook",
+      "privacy": "private",
+      "publishAt": "2026-08-22T10:30:00Z",
+      "duration": "PT25S",
+      "publishedAt": "2026-08-04T22:18:10Z",
+      "views": 0
+    },
+    {
+      "id": "AeFm7gWyWik",
+      "title": "What JWST's Infrared Eyes Can See",
+      "privacy": "private",
+      "publishAt": "2026-08-23T10:30:00Z",
+      "duration": "PT27S",
+      "publishedAt": "2026-08-04T22:20:43Z",
+      "views": 0
+    },
+    {
+      "id": "dPMJQp2gMNc",
+      "title": "Space Is Rude About Distance",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-08-02T23:18:23Z",
+      "views": 17
+    },
+    {
+      "id": "rFJoOdQAc9c",
+      "title": "Don't Look Up: The Zoo Hypothesis #Shorts #Aliens #Science",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-08-02T23:22:51Z",
+      "views": 46
+    },
+    {
+      "id": "w1ej9u0rPTA",
+      "title": "The Point of No Return Explained",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT47S",
+      "publishedAt": "2026-08-04T23:22:27Z",
+      "views": 1
+    },
+    {
+      "id": "gPCpMsB0w2E",
+      "title": "Is the Universe Older Than We Thought?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT29S",
+      "publishedAt": "2026-08-04T22:23:16Z",
+      "views": 0
+    },
+    {
+      "id": "YsyPMhNmHMk",
+      "title": "The Discovery That Doesn't Add Up",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT27S",
+      "publishedAt": "2026-08-04T22:25:49Z",
+      "views": 0
+    },
+    {
+      "id": "8DxCTXUlw74",
+      "title": "Where Is Everybody?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT21S",
+      "publishedAt": "2026-08-04T23:32:05Z",
+      "views": 0
+    },
+    {
+      "id": "dFO50RT5s14",
+      "title": "Where Is Everybody? The Fermi Paradox #Space #Shorts",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-08-02T22:13:18Z",
+      "views": 0
+    },
+    {
+      "id": "z-DLqoSoEBo",
+      "title": "Why haven't we found aliens yet? The answer is terrifying #FermiParadox #Space #Shorts",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-07-31T00:09:58Z",
+      "views": 99
+    },
+    {
+      "id": "--CxhjNqtSY",
+      "title": "What If the First Alien Clue Is Already Here?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT49S",
+      "publishedAt": "2026-07-31T00:11:36Z",
+      "views": 4
+    },
+    {
+      "id": "zc79sRBCDnU",
+      "title": "What If the First Alien Clue Is Already Here?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT49S",
+      "publishedAt": "2026-07-30T22:52:30Z",
+      "views": 0
+    },
+    {
+      "id": "6dSntxIQgXI",
+      "title": "Space Is Rude About Distance",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-08-02T22:15:01Z",
+      "views": 0
+    },
+    {
+      "id": "UWwNKYf_aU8",
+      "title": "This Is Why We Haven't Met Aliens Yet #space #aliens #fermiparadox",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-07-30T20:00:05Z",
+      "views": 18
+    },
+    {
+      "id": "z8-haBeF6mI",
+      "title": "You'll Never Have a Real-Time Chat with Aliens #Space #Aliens #FermiParadox",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-07-30T22:51:16Z",
+      "views": 0
+    },
+    {
+      "id": "IvSMHnngXdE",
+      "title": "What If Aliens Are Watching Us?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-08-02T22:16:45Z",
+      "views": 0
+    },
+    {
+      "id": "MO19iXYCu0c",
+      "title": "What If Aliens Are Watching Us?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-07-31T00:11:16Z",
+      "views": 5
+    },
+    {
+      "id": "2777WlMGM8M",
+      "title": "Cross This Line and You Never Come Back",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-08-02T21:42:18Z",
+      "views": 2
+    },
+    {
+      "id": "IwpO33AJaPQ",
+      "title": "Cross This Line and You Never Come Back",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT45S",
+      "publishedAt": "2026-08-06T22:14:17Z",
+      "views": 0
+    },
+    {
+      "id": "P95alanW8GU",
+      "title": "Cross This Line and You Never Come Back",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-07-30T19:02:43Z",
+      "views": 0
+    },
+    {
+      "id": "RF6wivuPYqI",
+      "title": "Cross This Line and You Never Come Back",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-07-30T19:13:19Z",
+      "views": 0
+    },
+    {
+      "id": "eZGAhF8dN7w",
+      "title": "Cross This Line and You Never Come Back",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-07-30T19:16:31Z",
+      "views": 0
+    },
+    {
+      "id": "kv1Yz74_S10",
+      "title": "Cross This Line and You Never Come Back",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT45S",
+      "publishedAt": "2026-08-04T23:03:59Z",
+      "views": 0
+    },
+    {
+      "id": "C4GuFEFGySI",
+      "title": "Falling In Wouldn't Feel Like Falling",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-07-30T19:17:25Z",
+      "views": 0
+    },
+    {
+      "id": "IqII5mVGdrs",
+      "title": "Falling In Wouldn't Feel Like Falling",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-08-06T23:11:56Z",
+      "views": 3
+    },
+    {
+      "id": "jyzrl9ueKq4",
+      "title": "Falling In Wouldn't Feel Like Falling",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-08-02T21:43:50Z",
+      "views": 2
+    },
+    {
+      "id": "xhBR-ixXi8s",
+      "title": "Falling In Wouldn't Feel Like Falling",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-07-30T19:14:03Z",
+      "views": 0
+    },
+    {
+      "id": "z-kgwJaz5pY",
+      "title": "Falling In Wouldn't Feel Like Falling",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-08-04T23:07:08Z",
+      "views": 0
+    },
+    {
+      "id": "2C-eiSMsBLc",
+      "title": "Time Appears to Stop at a Black Hole",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT28S",
+      "publishedAt": "2026-08-06T22:17:25Z",
+      "views": 0
+    },
+    {
+      "id": "B95wuAH68QY",
+      "title": "blackhole nf01 time appears to stop v01",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT27S",
+      "publishedAt": "2026-08-04T00:40:58Z",
+      "views": 0
+    },
+    {
+      "id": "EO-44QH4glI",
+      "title": "Time Appears to Stop at a Black Hole",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT27S",
+      "publishedAt": "2026-08-04T00:45:06Z",
+      "views": 0
+    },
+    {
+      "id": "80S5E-AWFhA",
+      "title": "Would You Look Back?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-07-30T19:19:13Z",
+      "views": 0
+    },
+    {
+      "id": "lIHb_tyxQSM",
+      "title": "Would You Look Back?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT43S",
+      "publishedAt": "2026-08-06T22:20:18Z",
+      "views": 0
+    },
+    {
+      "id": "t1hTGIH8O44",
+      "title": "Would You Look Back?",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT41S",
+      "publishedAt": "2026-08-02T21:59:30Z",
+      "views": 0
+    },
+    {
+      "id": "nX84ileqPKw",
+      "title": "What You Would See Falling Into a Black Hole",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT27S",
+      "publishedAt": "2026-08-04T00:45:50Z",
+      "views": 0
+    },
+    {
+      "id": "wOlnj7nZWJM",
+      "title": "What You Would See Falling Into a Black Hole",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT28S",
+      "publishedAt": "2026-08-06T22:23:12Z",
+      "views": 0
+    },
+    {
+      "id": "2uT3wXJLybw",
+      "title": "The Point of No Return Explained",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT47S",
+      "publishedAt": "2026-08-06T22:26:04Z",
+      "views": 0
+    },
+    {
+      "id": "5jjJ5CHrbCs",
+      "title": "The Point of No Return Explained",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-08-02T22:03:08Z",
+      "views": 0
+    },
+    {
+      "id": "5nMieBeymKU",
+      "title": "The Point of No Return Explained",
+      "privacy": "private",
+      "publishAt": null,
+      "duration": "PT44S",
+      "publishedAt": "2026-07-30T19:21:01Z",
+      "views": 0
+    }
+  ]
+}

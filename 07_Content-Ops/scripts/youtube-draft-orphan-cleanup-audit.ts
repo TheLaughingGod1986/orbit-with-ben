@@ -3,6 +3,11 @@
  * Zero YouTube mutations. Writes audit artifacts then stops for delete approval.
  *
  *   npx tsx scripts/youtube-draft-orphan-cleanup-audit.ts
+ *
+ * IMPORTANT (2026-08-10 forensic): Studio Draft Shorts live under
+ * Content → Shorts (`/videos/short?filter=Draft`), NOT Content → Videos
+ * (`/videos/upload`). Filtering only `/videos/upload` falsely reports
+ * Drafts=0. See `youtube-studio-visibility.ts` + shorts_forensic_reconciliation_2026-08-10.
  */
 import fs from "fs";
 import path from "path";
