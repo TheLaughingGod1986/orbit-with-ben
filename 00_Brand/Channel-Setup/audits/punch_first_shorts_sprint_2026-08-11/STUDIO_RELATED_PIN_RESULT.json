@@ -1,26 +1,30 @@
 {
-  "related": [
-    {
-      "id": "JRfhE6yWom4",
-      "step": "related",
-      "before": "",
-      "error": "open:Locator.click: Timeout 4000ms exceeded.\nCall log:\n  - waiting for get_by_text(re.compile(r\"Related video\", re.IGNORECASE)).first\n"
-    },
-    {
-      "id": "L2OFjL4neOo",
-      "step": "related",
-      "before": "",
-      "error": "open:Locator.click: Timeout 4000ms exceeded.\nCall log:\n  - waiting for get_by_text(re.compile(r\"Related video\", re.IGNORECASE)).first\n"
-    },
-    {
-      "id": "tUAdhOnMW2g",
-      "step": "related",
-      "before": "",
-      "error": "open:Locator.click: Timeout 4000ms exceeded.\nCall log:\n  - waiting for get_by_text(re.compile(r\"Related video\", re.IGNORECASE)).first\n"
-    }
-  ],
-  "pins": [],
-  "skipped": [],
-  "executedAt": "2026-08-11T08:02:44Z",
-  "parentLongId": "3xrxdmaOwJI"
+  "ok": false,
+  "blockedOn": "wrong_google_account",
+  "executedAt": "2026-08-11T08:10:00Z",
+  "recheckedAt": "2026-08-11T08:10:00Z",
+  "cdpPort": 9222,
+  "cdpStatus": "up",
+  "studioProbe": {
+    "url": "https://studio.youtube.com/channel/UC_esArsDKd3GJvOkeO0DUog",
+    "title": "Oops",
+    "noPermission": true,
+    "body": "Oops, you don't have permission to view this page"
+  },
+  "signedInChannel": {
+    "name": "Benjamin Oats (or other non-Orbit account)",
+    "id": "UCGGBHuqKAL6WzGLXnxm98eg",
+    "note": "Previous session confirmed Benjamin Oats; recheck still no Orbit Studio access"
+  },
+  "requiredChannel": {
+    "name": "Orbit With Ben",
+    "id": "UC_esArsDKd3GJvOkeO0DUog"
+  },
+  "note": "CDP Chrome is authenticated, but not as Orbit With Ben. Related+pin cannot proceed until Ben switches/signs into the Orbit owner account in the 9222 Chrome window.",
+  "targets": ["JRfhE6yWom4", "L2OFjL4neOo", "tUAdhOnMW2g"],
+  "deferredUntilPublic": ["svYOx07OrIM", "B2STcIAF1lY"],
+  "parentLongId": "3xrxdmaOwJI",
+  "actionPlan": "00_Brand/Channel-Setup/audits/underperformance_2026-08-10/WHY_VIEWS_STILL_LOW_ACTION_PLAN_2026-08-11.md",
+  "executionStatus": "00_Brand/Channel-Setup/audits/underperformance_2026-08-10/GROWTH_PLAN_EXECUTION_STATUS_2026-08-11.md",
+  "publishingFreeze": true
 }

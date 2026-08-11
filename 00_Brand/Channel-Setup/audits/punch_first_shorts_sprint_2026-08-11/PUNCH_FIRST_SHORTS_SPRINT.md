@@ -53,10 +53,14 @@ Index: `PUNCH_FIRST_BATCH_INDEX.json`
 
 ## Studio CDP (this session)
 
-Chrome debugging port `:9222` was **down** when Related verify ran — Ben must reopen Studio Chrome with remote debugging, then finish Related/pin on live BH Shorts (especially `JRfhE6yWom4`).
+Chrome `:9222` is up, but signed into the **wrong Google account** (Orbit Studio returns “no permission”). Related+pin stays blocked until Ben switches to **Orbit With Ben** (`UC_esArsDKd3GJvOkeO0DUog`) in that Chrome window, then says “Orbit Studio ready.”
+
+Growth diagnosis lock: `../underperformance_2026-08-10/WHY_VIEWS_STILL_LOW_ACTION_PLAN_2026-08-11.md`  
+Execution tracker: `../underperformance_2026-08-10/GROWTH_PLAN_EXECUTION_STATUS_2026-08-11.md`
 
 ## Explicitly not this sprint
 
 - Next long-form (V005) as primary effort — background prep only
 - Replacing 40–45s scheduled Exo/JWST Shorts already on YouTube
 - Mass-public of private cleanup inventory
+- Mass retitling / rescheduling before the next 5–10 Short sample
