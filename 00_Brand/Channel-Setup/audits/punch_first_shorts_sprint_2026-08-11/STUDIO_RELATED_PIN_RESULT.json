@@ -1,30 +1,86 @@
 {
-  "ok": false,
-  "blockedOn": "wrong_google_account",
-  "executedAt": "2026-08-11T08:10:00Z",
-  "recheckedAt": "2026-08-11T08:10:00Z",
-  "cdpPort": 9222,
-  "cdpStatus": "up",
-  "studioProbe": {
-    "url": "https://studio.youtube.com/channel/UC_esArsDKd3GJvOkeO0DUog",
-    "title": "Oops",
-    "noPermission": true,
-    "body": "Oops, you don't have permission to view this page"
-  },
-  "signedInChannel": {
-    "name": "Benjamin Oats (or other non-Orbit account)",
-    "id": "UCGGBHuqKAL6WzGLXnxm98eg",
-    "note": "Previous session confirmed Benjamin Oats; recheck still no Orbit Studio access"
-  },
-  "requiredChannel": {
-    "name": "Orbit With Ben",
-    "id": "UC_esArsDKd3GJvOkeO0DUog"
-  },
-  "note": "CDP Chrome is authenticated, but not as Orbit With Ben. Related+pin cannot proceed until Ben switches/signs into the Orbit owner account in the 9222 Chrome window.",
-  "targets": ["JRfhE6yWom4", "L2OFjL4neOo", "tUAdhOnMW2g"],
-  "deferredUntilPublic": ["svYOx07OrIM", "B2STcIAF1lY"],
+  "ok": true,
+  "executedAt": "2026-08-11T10:43:53Z",
   "parentLongId": "3xrxdmaOwJI",
-  "actionPlan": "00_Brand/Channel-Setup/audits/underperformance_2026-08-10/WHY_VIEWS_STILL_LOW_ACTION_PLAN_2026-08-11.md",
-  "executionStatus": "00_Brand/Channel-Setup/audits/underperformance_2026-08-10/GROWTH_PLAN_EXECUTION_STATUS_2026-08-11.md",
-  "publishingFreeze": true
+  "parentLongCurrentTitle": "Time Dilation Near Black Holes: Observer vs. Reality",
+  "parentLongNote": "Canonical BH long 3xrxdmaOwJI was retitled from 'What Happens If You Fall Into a Black Hole…' to 'Time Dilation Near Black Holes: Observer vs. Reality' (still ~21:13 long-form). Related chips showing that title ARE the correct parent.",
+  "signedInChannel": {
+    "name": "Orbit with Ben",
+    "id": "UC_esArsDKd3GJvOkeO0DUog",
+    "studioUrl": "https://studio.youtube.com/channel/UC_esArsDKd3GJvOkeO0DUog"
+  },
+  "related": [
+    {
+      "id": "JRfhE6yWom4",
+      "step": "related_verify",
+      "related_title": "Time Dilation Near Black Holes: Observer vs. Reality",
+      "mapsToParentLongId": "3xrxdmaOwJI",
+      "ok": true
+    },
+    {
+      "id": "L2OFjL4neOo",
+      "step": "related_verify",
+      "related_title": "Time Dilation Near Black Holes: Observer vs. Reality",
+      "mapsToParentLongId": "3xrxdmaOwJI",
+      "ok": true
+    },
+    {
+      "id": "tUAdhOnMW2g",
+      "step": "related_verify",
+      "related_title": "Time Dilation Near Black Holes: Observer vs. Reality",
+      "mapsToParentLongId": "3xrxdmaOwJI",
+      "ok": true
+    },
+    {
+      "id": "svYOx07OrIM",
+      "step": "related_verify",
+      "related_title": "Time Dilation Near Black Holes: Observer vs. Reality",
+      "mapsToParentLongId": "3xrxdmaOwJI",
+      "ok": true
+    }
+  ],
+  "pins": [
+    {
+      "id": "JRfhE6yWom4",
+      "ok": true,
+      "step": "pin_verify",
+      "note": "Pinned earlier: Full film here → https://youtu.be/3xrxdmaOwJI"
+    },
+    {
+      "id": "L2OFjL4neOo",
+      "ok": true,
+      "step": "pin_verify",
+      "note": "Pinned earlier: Full film here → https://youtu.be/3xrxdmaOwJI"
+    },
+    {
+      "id": "tUAdhOnMW2g",
+      "ok": true,
+      "step": "pin_watch",
+      "has": true,
+      "menu": "menu",
+      "pin_clicked": true,
+      "chunk": "Pinned by @OrbitWithBen — Want to see the full journey into a black hole? … https://youtu.be/3xrxdmaOwJI",
+      "note": "API comment posted then pinned on watch page; setModerationStatus=published"
+    },
+    {
+      "id": "svYOx07OrIM",
+      "ok": true,
+      "step": "pin_watch",
+      "has": true,
+      "menu": "menu",
+      "pin_clicked": true,
+      "chunk": "Pinned by @OrbitWithBen — Want to see the full journey into a black hole? … https://youtu.be/3xrxdmaOwJI",
+      "note": "API comment posted after public go-live; pinned on watch page; setModerationStatus=published"
+    }
+  ],
+  "summary": {
+    "related_ok": 4,
+    "related_total": 4,
+    "pin_ok": 4,
+    "pin_total": 4
+  },
+  "deferred": {
+    "B2STcIAF1lY": "Still not public (oEmbed 403) as of 2026-08-11T10:43Z — Related+pin at go-live 12 Aug"
+  },
+  "pinnedCommentWording": "Want to see the full journey into a black hole? Watch the complete episode using the related video link 👇"
 }

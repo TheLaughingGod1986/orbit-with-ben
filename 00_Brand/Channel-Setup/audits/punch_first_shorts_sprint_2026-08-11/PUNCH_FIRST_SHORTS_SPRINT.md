@@ -14,15 +14,19 @@
 
 ## This week — Studio finish (no new upload)
 
-| When | Asset | Parent | Action |
-|------|-------|--------|--------|
-| Live now | `JRfhE6yWom4` | `3xrxdmaOwJI` | Confirm Related (was missing) + pin |
-| Live now | `L2OFjL4neOo` | `3xrxdmaOwJI` | Confirm Related + pin |
-| Live now | `tUAdhOnMW2g` | `3xrxdmaOwJI` | Confirm Related + pin |
-| 11 Aug ~11:30 UK | `svYOx07OrIM` | `3xrxdmaOwJI` | Related + pin at go-live |
-| 12 Aug | `B2STcIAF1lY` | `3xrxdmaOwJI` | Related + pin at go-live |
-| From 13 Aug 18:00 UK | Exo Shorts | `b8-X_FyJnHM` | Related after parent is Public |
-| From 20 Aug 18:00 UK | JWST Shorts | `tfTkMdE7qqw` | Related after parent is Public |
+| When | Asset | Parent | Action | Status |
+|------|-------|--------|--------|--------|
+| Live | `JRfhE6yWom4` | `3xrxdmaOwJI` | Related + pin | **DONE** 2026-08-11 |
+| Live | `L2OFjL4neOo` | `3xrxdmaOwJI` | Related + pin | **DONE** 2026-08-11 |
+| Live | `tUAdhOnMW2g` | `3xrxdmaOwJI` | Related + pin | **DONE** 2026-08-11 |
+| Live | `svYOx07OrIM` | `3xrxdmaOwJI` | Related + pin | **DONE** 2026-08-11 |
+| 12 Aug | `B2STcIAF1lY` | `3xrxdmaOwJI` | Related + pin at go-live | pending |
+| From 13 Aug 18:00 UK | Exo Shorts | `b8-X_FyJnHM` | Related after parent is Public | pending |
+| From 20 Aug 18:00 UK | JWST Shorts | `tfTkMdE7qqw` | Related after parent is Public | pending |
+
+Evidence: `STUDIO_RELATED_PIN_RESULT.json` · `API_COMMENT_POST_RESULT.json`
+
+**Note:** BH long `3xrxdmaOwJI` current title is *Time Dilation Near Black Holes: Observer vs. Reality* (~21:13). Related chips showing that title map to the correct parent.
 
 Gates: `RELATED_VIDEO_RELEASE_GATES.md`
 
@@ -53,7 +57,7 @@ Index: `PUNCH_FIRST_BATCH_INDEX.json`
 
 ## Studio CDP (this session)
 
-Chrome `:9222` is up, but signed into the **wrong Google account** (Orbit Studio returns “no permission”). Related+pin stays blocked until Ben switches to **Orbit With Ben** (`UC_esArsDKd3GJvOkeO0DUog`) in that Chrome window, then says “Orbit Studio ready.”
+Orbit Studio on `:9222` confirmed. Related+pin completed for four live BH Shorts → parent `3xrxdmaOwJI`.
 
 Growth diagnosis lock: `../underperformance_2026-08-10/WHY_VIEWS_STILL_LOW_ACTION_PLAN_2026-08-11.md`  
 Execution tracker: `../underperformance_2026-08-10/GROWTH_PLAN_EXECUTION_STATUS_2026-08-11.md`
