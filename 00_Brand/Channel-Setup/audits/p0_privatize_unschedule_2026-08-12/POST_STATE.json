@@ -1,0 +1,156 @@
+{
+  "at": "2026-08-12T11:09:43.520Z",
+  "targets": [
+    {
+      "id": "dPMJQp2gMNc",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "id": "rFJoOdQAc9c",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "id": "icedH_gK8JE",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "id": "gPCpMsB0w2E",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "id": "YsyPMhNmHMk",
+      "privacy": "private",
+      "publishAt": null
+    },
+    {
+      "id": "8DxCTXUlw74",
+      "privacy": "private",
+      "publishAt": null
+    }
+  ],
+  "protected": {
+    "scheduled": {
+      "SC2WGTl_V5Q": "2026-08-13T19:00:00Z",
+      "M-VN84HCNls": "2026-08-14T10:30:00Z",
+      "nAZRIBm5wJw": "2026-08-15T10:30:00Z",
+      "tEOHYQbcgOw": "2026-08-16T10:30:00Z",
+      "OlwENQcY-jg": "2026-08-17T10:30:00Z",
+      "QRi6Dxq0hz0": "2026-08-18T10:30:00Z",
+      "b8-X_FyJnHM": "2026-08-13T17:00:00Z",
+      "tfTkMdE7qqw": "2026-08-20T17:00:00Z",
+      "bLv0RfidjSg": "2026-08-20T19:00:00Z",
+      "PcP64way3xA": "2026-08-21T10:30:00Z",
+      "pjIevt27Svo": "2026-08-22T10:30:00Z",
+      "AeFm7gWyWik": "2026-08-23T10:30:00Z"
+    },
+    "publicState": {
+      "1HuV8o3gOss": "public",
+      "KcKBixwmcV4": "public",
+      "JRfhE6yWom4": "public",
+      "L2OFjL4neOo": "public",
+      "tUAdhOnMW2g": "public",
+      "svYOx07OrIM": "public",
+      "B2STcIAF1lY": "public"
+    }
+  },
+  "journal": [
+    {
+      "action": "privatize",
+      "id": "dPMJQp2gMNc",
+      "reason": "ACCIDENTAL_EARLY_KEEP_PRIVATE — Space Is Rude About Distance",
+      "before": {
+        "privacy": "public",
+        "publishAt": null
+      },
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "ok": true,
+      "at": "2026-08-12T11:09:22.465Z"
+    },
+    {
+      "action": "privatize",
+      "id": "rFJoOdQAc9c",
+      "reason": "ACCIDENTAL_EARLY_KEEP_PRIVATE — Zoo Hypothesis",
+      "before": {
+        "privacy": "public",
+        "publishAt": null
+      },
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "ok": true,
+      "at": "2026-08-12T11:09:26.220Z"
+    },
+    {
+      "action": "unschedule",
+      "id": "icedH_gK8JE",
+      "reason": "BH reserve / legacy hold — must not air 19 Aug",
+      "before": {
+        "privacy": "private",
+        "publishAt": "2026-08-19T10:30:00Z"
+      },
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "hopped": false,
+      "ok": true,
+      "at": "2026-08-12T11:09:30.477Z"
+    },
+    {
+      "action": "unschedule",
+      "id": "gPCpMsB0w2E",
+      "reason": "16→13 obsolete — must not air 28 Aug",
+      "before": {
+        "privacy": "private",
+        "publishAt": "2026-08-28T11:30:00Z"
+      },
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "hopped": false,
+      "ok": true,
+      "at": "2026-08-12T11:09:34.715Z"
+    },
+    {
+      "action": "unschedule",
+      "id": "YsyPMhNmHMk",
+      "reason": "16→13 obsolete — must not air 1 Sep",
+      "before": {
+        "privacy": "private",
+        "publishAt": "2026-09-01T11:30:00Z"
+      },
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "hopped": false,
+      "ok": true,
+      "at": "2026-08-12T11:09:39.194Z"
+    },
+    {
+      "action": "unschedule",
+      "id": "8DxCTXUlw74",
+      "reason": "20s Fermi historical duplicate — must not air 3 Sep",
+      "before": {
+        "privacy": "private",
+        "publishAt": "2026-09-03T10:30:00Z"
+      },
+      "after": {
+        "privacy": "private",
+        "publishAt": null
+      },
+      "hopped": false,
+      "ok": true,
+      "at": "2026-08-12T11:09:43.519Z"
+    }
+  ]
+}
