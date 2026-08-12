@@ -230,46 +230,19 @@ async function main() {
       ...PROTECTED_PUBLIC_IDS,
     ];
     let map = await getVideos(access, watchIds);
-    const pre = [...UNSCHEDULE, ...PROTECTED_SCHEDULE_IDS, ...PROTECTED_PUBLIC_IDS].map((id) => {
-      const it = map.get(typeof id === "string" ? id : id);
-      const vid = typeof id === "string" ? id : (id as { id: string }).id;
-      const row = map.get(vid);
+    const snapRow = (id: string) => {
+      const it = map.get(id);
       return {
-        id: vid,
-        title: row?.snippet?.title?.slice(0, 60) || null,
-        privacy: row?.status?.privacyStatus || null,
-        publishAt: row?.status?.publishAt || null,
+        id,
+        title: it?.snippet?.title?.slice(0, 60) || null,
+        privacy: it?.status?.privacyStatus || null,
+        publishAt: it?.status?.publishAt || null,
       };
-    });
-    // Fix pre map - UNSCHEDULE items are objects
+    };
     const preRows = [
-      ...UNSCHEDULE.map((t) => {
-        const it = map.get(t.id);
-        return {
-          id: t.id,
-          title: it?.snippet?.title?.slice(0, 60) || null,
-          privacy: it?.status?.privacyStatus || null,
-          publishAt: it?.status?.publishAt || null,
-        };
-      }),
-      ...PROTECTED_SCHEDULE_IDS.map((id) => {
-        const it = map.get(id);
-        return {
-          id,
-          title: it?.snippet?.title?.slice(0, 60) || null,
-          privacy: it?.status?.privacyStatus || null,
-          publishAt: it?.status?.publishAt || null,
-        };
-      }),
-      ...PROTECTED_PUBLIC_IDS.map((id) => {
-        const it = map.get(id);
-        return {
-          id,
-          title: it?.snippet?.title?.slice(0, 60) || null,
-          privacy: it?.status?.privacyStatus || null,
-          publishAt: it?.status?.publishAt || null,
-        };
-      }),
+      ...UNSCHEDULE.map((t) => snapRow(t.id)),
+      ...PROTECTED_SCHEDULE_IDS.map(snapRow),
+      ...PROTECTED_PUBLIC_IDS.map(snapRow),
     ];
     writeFileSync(
       resolve(AUD, "PRE_STATE.json"),
