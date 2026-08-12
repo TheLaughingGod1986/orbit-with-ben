@@ -4,12 +4,14 @@
  */
 import { PrismaClient } from "@prisma/client";
 import { decryptSecret } from "../src/lib/security/token-crypto";
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { resolve } from "path";
 
 const ROOT = resolve(__dirname, "../..");
 const ENV = resolve(__dirname, "../.env");
-const AUD = resolve(ROOT, "00_Brand/Channel-Setup/audits/shorts_blank_thumbs_fix_2026-08-12");
+const AUD =
+  process.argv.find((a) => a.startsWith("--aud="))?.slice("--aud=".length) ||
+  resolve(ROOT, "00_Brand/Channel-Setup/audits/shorts_blank_thumbs_reapply_2026-08-12");
 
 for (const line of readFileSync(ENV, "utf8").split("\n")) {
   const m = line.match(/^([^#=]+)=(.*)$/);
@@ -24,7 +26,7 @@ const TARGETS = [
     title: "Three Suns in the Sky — Real Alien Worlds",
     thumb: resolve(
       ROOT,
-      "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/10_Shorts/08_Covers/exoplanets_short-03_three-suns_cover_v01.jpg",
+      "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/10_Shorts/08_Covers/exoplanets_short-03_three-suns_cover_v02.jpg",
     ),
   },
   {
@@ -32,7 +34,7 @@ const TARGETS = [
     title: "Why the First Alien Clue Might Be a Pattern, Not a Signal",
     thumb: resolve(
       ROOT,
-      "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/10_Shorts/08_Covers/aliens_short-04_hidden-clues_cover_v01.jpg",
+      "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/10_Shorts/08_Covers/aliens_short-04_hidden-clues_cover_v02.jpg",
     ),
   },
 ];
@@ -96,6 +98,7 @@ async function setThumbnail(access: string, videoId: string, filePath: string) {
 }
 
 async function main() {
+  mkdirSync(AUD, { recursive: true });
   const access = await getAccess();
   const results: unknown[] = [];
   for (const t of TARGETS) {
@@ -105,7 +108,10 @@ async function main() {
     results.push({ id: t.id, title: t.title, thumbPath: t.thumb, response: body });
     console.log(`OK ${t.id}`);
   }
-  writeFileSync(resolve(AUD, "THUMB_SET_RESULT.json"), JSON.stringify({ at: new Date().toISOString(), results }, null, 2) + "\n");
+  writeFileSync(
+    resolve(AUD, "THUMB_SET_RESULT.json"),
+    JSON.stringify({ at: new Date().toISOString(), results }, null, 2) + "\n",
+  );
   console.log(JSON.stringify(results, null, 2));
 }
 
