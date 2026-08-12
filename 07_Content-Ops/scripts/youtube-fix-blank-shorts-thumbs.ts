@@ -5,7 +5,7 @@
 import { PrismaClient } from "@prisma/client";
 import { decryptSecret } from "../src/lib/security/token-crypto";
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { resolve } from "path";
+import { resolve, basename } from "path";
 
 const ROOT = resolve(__dirname, "../..");
 const ENV = resolve(__dirname, "../.env");
@@ -78,23 +78,54 @@ async function getAccess(): Promise<string> {
   }
 }
 
+/** Multipart resumable-style media upload (more reliable than bare body for some videos). */
 async function setThumbnail(access: string, videoId: string, filePath: string) {
   const buf = readFileSync(filePath);
+  const boundary = `orbit_thumb_${Date.now()}`;
+  const name = basename(filePath);
+  const preamble =
+    `--${boundary}\r\n` +
+    `Content-Disposition: form-data; name="media"; filename="${name}"\r\n` +
+    `Content-Type: image/jpeg\r\n\r\n`;
+  const epilogue = `\r\n--${boundary}--\r\n`;
+  const body = Buffer.concat([Buffer.from(preamble, "utf8"), buf, Buffer.from(epilogue, "utf8")]);
+
   const res = await fetch(
-    `https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${encodeURIComponent(videoId)}`,
+    `https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${encodeURIComponent(videoId)}&uploadType=multipart`,
     {
       method: "POST",
       headers: {
         Authorization: `Bearer ${access}`,
-        "Content-Type": "image/jpeg",
-        "Content-Length": String(buf.length),
+        "Content-Type": `multipart/form-data; boundary=${boundary}`,
+        "Content-Length": String(body.length),
       },
-      body: buf,
+      body,
     },
   );
-  const body = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(`thumbnails.set ${res.status}: ${JSON.stringify(body)}`);
-  return body;
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    // Fallback: simple media upload
+    const res2 = await fetch(
+      `https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${encodeURIComponent(videoId)}`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${access}`,
+          "Content-Type": "image/jpeg",
+          "Content-Length": String(buf.length),
+        },
+        body: buf,
+      },
+    );
+    const json2 = await res2.json().catch(() => ({}));
+    if (!res2.ok) {
+      throw new Error(
+        `thumbnails.set ${res.status}/${res2.status}: ${JSON.stringify(json)} / ${JSON.stringify(json2)}`,
+      );
+    }
+    return { via: "simple", body: json2, bytes: buf.length };
+  }
+  return { via: "multipart", body: json, bytes: buf.length };
 }
 
 async function main() {
@@ -104,9 +135,9 @@ async function main() {
   for (const t of TARGETS) {
     if (!existsSync(t.thumb)) throw new Error(`missing thumb ${t.thumb}`);
     console.log(`Setting thumb for ${t.id} …`);
-    const body = await setThumbnail(access, t.id, t.thumb);
-    results.push({ id: t.id, title: t.title, thumbPath: t.thumb, response: body });
-    console.log(`OK ${t.id}`);
+    const out = await setThumbnail(access, t.id, t.thumb);
+    results.push({ id: t.id, title: t.title, thumbPath: t.thumb, ...out });
+    console.log(`OK ${t.id} via=${out.via} bytes=${out.bytes} etag=${(out.body as any)?.etag || "?"}`);
   }
   writeFileSync(
     resolve(AUD, "THUMB_SET_RESULT.json"),
