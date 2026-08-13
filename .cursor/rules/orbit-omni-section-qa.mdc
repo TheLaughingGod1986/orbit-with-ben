@@ -1,0 +1,52 @@
+---
+description: Europa/Omni long-form — section QA, motion coverage, SFX joins, single Orbit
+alwaysApply: true
+---
+
+# Orbit Omni section QA (Europa lessons → forward)
+
+Learned and locked on `006_Could-Life-Exist-Under-The-Ice-Of-Europa` Part 01 (approved rough `europa_part-01_rough_v03`). Apply to later Europa minutes and Omni-forward longs.
+
+## Process
+
+1. **~1 minute parts.** Write → script QA → VO + Omni for that part only → picture QA → approve → next part.
+2. **Do not** generate the full episode in one pass. Regen only the failed minute / failed plates.
+3. Prefer **Omni Flash** continuous journey takes + **native SFX** under Ben Orbit Narrator VO (this episode). Keep VO-literal picture.
+
+## Motion coverage (no “broken video” freezes)
+
+1. **Never freeze-pad** (`tpad` / last-frame clone) to stretch short Omni clips to VO length — it looks broken.
+2. **Never loop / slow-mo** scenery (see `orbit-cutscene-no-reuse`).
+3. Size inventory so **1× motion covers VO**: plan ~**8 unique ~8s Omni plates per ~60s** (or more). If short, **generate more unique plates** — do not pad.
+4. Assembler must **fail** (or trim ≤~1s of VO) rather than freeze-extend picture.
+
+## Picture quality bar (Part 01 lock)
+
+1. **VO-literal journey** — Orbit doing the line (skim cracks while VO says scars; dive when VO goes under the ice).
+2. **Gold beat to keep:** Orbit low over Europa linea + native Omni SFX while VO names cracks/scars.
+3. **Europa surface:** pale cream-white ice + fine dark linea. Avoid large brown/red circular “pools” unless the beat is intentionally melt/chaos.
+4. When VO enters the ocean / under the lid: **lean into the dive** (crack → plunge → subsurface ocean) — intentional water OK; muddy surface pools not.
+
+## Single Orbit (hard)
+
+1. **Exactly one Orbit** in frame at all times. Twin / clone / reflection duplicate = reject and regen.
+2. Spot-check frames across each new plate (start / mid / end) before locking the rough.
+3. Still attach canonical Orbit ref + identity lock on every Flow generate.
+
+## Omni SFX joins
+
+1. Hard concat of Omni beds makes the soundtrack **stop/jump** at every cut — feels like a break.
+2. Assemble with **paired `xfade` + `acrossfade`** (~0.35–0.45s) so picture and Omni SFX blend across plate joins while staying A/V locked.
+3. Keep Omni SFX under VO (typical ~0.2 volume); do not strip native beds unless QA asks.
+
+## Prompt / gen hygiene
+
+1. Prompts: continuous motion the whole clip; target ~8–10s; no freeze; single Orbit; VO-literal verb.
+2. Run Flow Omni gens in a **durable foreground** session when background nohup dies mid-batch; skip-existing + per-plate retry.
+3. Archive rejected plates (`_rejected_*`); bump asset version (`v02`/`v03`) rather than overwriting without a trail.
+
+## Episode builders (Europa 006)
+
+- Plates: `07_Edit-Project/parts/part-01_omni_plates_v03.json` (pattern for later parts)
+- Gen: `_gen_part01_omni_v03.py` / assemble: `_assemble_part01_v03.py`
+- Lessons log: `07_Edit-Project/PART01_LESSONS.md`

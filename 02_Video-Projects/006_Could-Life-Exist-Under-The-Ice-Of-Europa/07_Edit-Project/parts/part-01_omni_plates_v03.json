@@ -1,0 +1,64 @@
+{
+  "part": "01",
+  "vo": "02_Voiceover/parts/europa_part-01_vo_v01.mp3",
+  "vo_duration_s": 64.48,
+  "engine": "flow-omni-flash",
+  "asset_version": "03",
+  "note": "Plates 01–06 locked from v02. Regen 07–08: single Orbit ocean dive + SFX crossfades in assemble.",
+  "europa_surface_lock": "Pale cream-white icy crust with fine dark linea only on surface shots. Intentional subsurface ocean OK on dive plates. Forbidden: second Orbit / twin / clone / reflection duplicate.",
+  "locked_from_v02": ["01", "02", "03", "04", "05", "06"],
+  "plates": [
+    {
+      "id": "01",
+      "slug": "jupiter-fills-sky",
+      "file": "omni_p01_01_jupiter-fills-sky_v02.mp4",
+      "regen": false
+    },
+    {
+      "id": "02",
+      "slug": "storm-bands-flyby",
+      "file": "omni_p01_02_storm-bands-flyby_v02.mp4",
+      "regen": false
+    },
+    {
+      "id": "03",
+      "slug": "europa-appears",
+      "file": "omni_p01_03_europa-appears_v02.mp4",
+      "regen": false
+    },
+    {
+      "id": "04",
+      "slug": "europa-globe-cinematic",
+      "file": "omni_p01_04_europa-globe-cinematic_v02.mp4",
+      "regen": false
+    },
+    {
+      "id": "05",
+      "slug": "drift-closer-ice",
+      "file": "omni_p01_05_drift-closer-ice_v02.mp4",
+      "regen": false
+    },
+    {
+      "id": "06",
+      "slug": "read-the-scars",
+      "file": "omni_p01_06_read-the-scars_v02.mp4",
+      "regen": false
+    },
+    {
+      "id": "07",
+      "slug": "tips-toward-ocean",
+      "file": "omni_p01_07_tips-toward-ocean_v03.mp4",
+      "regen": true,
+      "need_s": 8.0,
+      "prompt": "Exactly ONE Orbit — the orange sphere robot (ONE continuous matte orange body, cream oval eyes with pupils, tiny antenna with glowing tip, soft underside glow, NO legs, NO white chest disc). NEVER two Orbits, NEVER a duplicate twin, NEVER a reflection clone. Orbit tips into a deep Europa ice fracture — camera pushes with him toward dark pressurized liquid ocean visible through translucent blue-white ice below. Continuous dive approach the whole clip. Soft deep whoosh SFX — no speech."
+    },
+    {
+      "id": "08",
+      "slug": "dive-into-ocean",
+      "file": "omni_p01_08_dive-into-ocean_v03.mp4",
+      "regen": true,
+      "need_s": 8.0,
+      "prompt": "Exactly ONE Orbit — the orange sphere robot (ONE continuous matte orange body, cream oval eyes with pupils, tiny antenna with glowing tip, soft underside glow). CRITICAL: only one robot in the entire shot — no second Orbit, no twin, no clone, no mirror duplicate anywhere. Orbit plunges through Europa's cracked ice lid and dives into the dark subsurface ocean — cinematic descent from ice crack into deep blue liquid ocean under the frozen shell. Continuous diving motion the whole clip. Soft underwater whoosh / pressure SFX — no speech."
+    }
+  ]
+}
