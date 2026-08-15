@@ -63,7 +63,7 @@ export const CREATOR_TOPIC_SLOT_PLANS: TopicSlotPlan[] = [
     evergreen: "brilliant",
     leaveEmpty: ["telescope", "lego"],
     leaveEmptyIf:
-      "Pictures-from-space / early-galaxies films: soft mention is the explainer book only (Turn Left at Orion or cosmic-dawn book via /go/{book-slug}). Never attach a backyard telescope. LEGO stays out.",
+      "Pictures-from-space / early-galaxies films: soft mention is a JWST / cosmic-dawn explainer book via /go/jwst-book (once seeded). Never Turn Left at Orion (observing guidebook) or a backyard telescope. LEGO stays out.",
   },
   {
     topicKey: "relativity",
