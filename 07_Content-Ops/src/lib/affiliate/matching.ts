@@ -400,10 +400,9 @@ function assignSlotsFromTopicPlan(
 
   let primary =
     pickByFamily(scored, used, primaryFamily, "primary") ||
-    // JWST: primary may be LEGO or book — try the other secondary if primary empty
+    // JWST: explainer book only (never telescope / LEGO on pictures-from-space films)
     (plan.topicKey === "jwst"
-      ? pickByFamily(scored, used, "books", "primary") ||
-        pickByFamily(scored, used, "lego", "primary")
+      ? pickByFamily(scored, used, "books", "primary")
       : null);
 
   // Kids: never allow Brilliant as primary even via fallback

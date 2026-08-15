@@ -58,12 +58,12 @@ export const CREATOR_TOPIC_SLOT_PLANS: TopicSlotPlan[] = [
   {
     topicKey: "jwst",
     label: "JWST",
-    primary: "lego",
-    secondary: ["books", "telescope"],
+    primary: "books",
+    secondary: ["brilliant"],
     evergreen: "brilliant",
-    leaveEmpty: [],
+    leaveEmpty: ["telescope", "lego"],
     leaveEmptyIf:
-      "Drop the backyard scope if the film never comes back to what you can see from Earth. Primary may be LEGO Webb or the cosmic-dawn book.",
+      "Pictures-from-space / early-galaxies films: soft mention is the explainer book only (Turn Left at Orion or cosmic-dawn book via /go/{book-slug}). Never attach a backyard telescope. LEGO stays out.",
   },
   {
     topicKey: "relativity",
@@ -242,9 +242,11 @@ export function familyForbiddenForPlan(
   if (plan.topicKey === "mars" && family === "telescope" && opts?.filmLooksAtNightSky === false) {
     return true;
   }
-  if (plan.topicKey === "jwst" && family === "telescope" && opts?.filmLooksAtNightSky === false) {
+  if (plan.topicKey === "jwst" && family === "telescope") {
+    // Pictures-from-space JWST films never get a backyard scope soft mention
     return true;
   }
+  if (plan.topicKey === "jwst" && family === "lego") return true;
   if (plan.topicKey === "kids" && family === "brilliant" && opts?.kidsUnder10) return true;
   if (plan.topicKey === "exoplanets" && family === "telescope") return true;
   if (plan.topicKey === "starship" && family === "telescope" && opts?.filmLooksAtNightSky !== true) {

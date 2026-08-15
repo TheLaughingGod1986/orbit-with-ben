@@ -142,9 +142,29 @@ Tracked URLs on social may **only** be the YouTube film URL or an Orbit `/go/{sl
 
 #### Social Media Manager templates
 
-**Facebook Page feed (not Reels)** — 3–5 short lines. First line = wonder. Soft mention never in line 1. Last line = one door (YouTube or `/go/`) so the preview card is us, not a merchant.
+**First live pack — JWST Thursday film** (`FIXTURE_JWST_LIVE`). Soft mention = explainer book (`beginner-astronomy-book` / Turn Left at Orion) under the film via YouTube description or `/go/beginner-astronomy-book`. **Never** attach a telescope product. LEGO stays out. Never raw Amazon URLs. Snippets ship with `approvedForPublish: false` — **do not auto-post**.
 
-Thursday film fixture (JWST):
+Threads (only after **Thu 20 Aug 2026 18:00 Europe/London**):
+
+```
+JWST keeps finding galaxies that should not be there yet.
+
+Orbit walks through what the pictures actually show.
+
+Film is up. I left the one explainer I used under it.
+[JWST YouTube URL]
+```
+
+Instagram (same night):
+
+```
+JWST keeps finding galaxies that should not be there yet. Orbit walks through what the pictures actually show, and what they do not.
+
+Full film on YouTube. I left the one explainer I used under it.
+[JWST URL or sticker to that URL]
+```
+
+Facebook Page (Thursday night):
 
 ```
 JWST keeps finding galaxies that should not be there yet.
@@ -152,10 +172,10 @@ JWST keeps finding galaxies that should not be there yet.
 Orbit walks through what the pictures actually show, and what they do not.
 
 Film is up. If you want the one explainer I used, it is under the film.
-[YouTube film URL]
+[JWST URL]
 ```
 
-How-to / telescope fixture:
+**Telescope / observing caption — HELD** (`FIXTURE_TELESCOPE_OBSERVING_HELD`) until a real observing post (not Thursday JWST):
 
 ```
 I spent a night on this patch of sky. This is what it looked like.
@@ -163,18 +183,14 @@ I spent a night on this patch of sky. This is what it looked like.
 If you want that kind of view, I left the one I use under the film. I get a small cut if you grab it.
 
 Watch the film first.
-[YouTube film URL]
+[film URL] or /go/beginner-telescope
 ```
 
-If there is no film that week, the door is `https://orbitwithben.com/go/{slug}` instead (no “Watch the film first”).
+**Never on these posts:** Amazon URL, Shop now, product preview cards, LEGO, more than one brand.
 
-**Instagram feed** — same caption pattern as Facebook Page; one `/go/` or YouTube link.
+**Instagram Reels** — mention stays in the caption (or one reply). Link sticker / bio = `/go/{slug}` or YouTube. Never a merchant sticker.
 
-**Instagram Reels** — mention stays in the caption (or one reply). Link sticker / bio = `/go/{slug}` or YouTube. Never a merchant sticker. Soft line: “I left the one thing under the film.”
-
-**Threads** — thought first, one extra line, one link (YouTube or `/go/{slug}`). No product thread.
-
-**Comment reply** (“what telescope?”) — one honest reply, point to the film description or `/go/telescope`, disclose once, stop. Fixture: `FIXTURE_COMMENT_REPLY_TELESCOPE` / `renderTelescopeCommentReply()`.
+**Comment reply** (“what telescope?”) — one honest reply, point to the film description or `/go/beginner-telescope`, disclose once, stop. Fixture: `FIXTURE_COMMENT_REPLY_TELESCOPE` / `renderTelescopeCommentReply()`.
 
 #### Never on the Facebook Page (generator + tests reject)
 
@@ -194,8 +210,10 @@ Code: `facebookPageCaptionViolations` / `assertFacebookPageCaptionSafe` in `face
 ```ts
 import { generateAffiliateSocialSnippets } from "@/lib/affiliate/social-snippets";
 import {
-  FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM,
-  renderFacebookPageTemplate,
+  FIXTURE_JWST_LIVE,
+  FIXTURE_TELESCOPE_OBSERVING_HELD,
+  renderJwstLiveCaption,
+  isJwstThreadsPublishAllowed,
 } from "@/lib/affiliate/social-snippet-templates";
 import { buildSocialGoUrl, buildSocialYouTubeUrl } from "@/lib/affiliate/urls";
 import { socialPlatformToClickSource } from "@/lib/affiliate/social-channels";
@@ -319,7 +337,7 @@ Encoded in `topic-product-map.ts` and applied by `recommendProductsForVideo`. Ca
 | black holes | Book | Brilliant | Brilliant (if book primary) | Telescope, LEGO |
 | Mars | Telescope | Book, LEGO | Brilliant | (contextual) |
 | telescopes | Telescope | Book, LEGO | Brilliant | (contextual) |
-| JWST | LEGO Webb or cosmic-dawn book | The other + telescope | Brilliant | Backyard scope if film never returns to Earth sky |
+| JWST | Explainer book | Brilliant | Brilliant | Telescope, LEGO |
 | relativity | Brilliant | Book | Book | Telescope, LEGO |
 | kids astronomy | LEGO | Kids book, telescope | Brilliant (not if under ~10) | **Never Brilliant as primary** |
 | Starship | Book | LEGO, Brilliant | Brilliant | Telescope (unless launch/sky) |

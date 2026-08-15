@@ -4,6 +4,7 @@
  *
  * House rules still apply: max one soft mention, never open on a product,
  * tracked URLs = youtube.com / youtu.be / Orbit /go/ only.
+ * Never auto-post — fixtures ship with approvedForPublish: false.
  */
 
 export type SocialSnippetPostStyle = "thursday_film" | "how_to";
@@ -19,14 +20,65 @@ export type SocialSnippetTemplateVars = {
   productLabel?: string | null;
 };
 
-/** Exact Thursday-film Facebook Page example (JWST) from Social Media Manager. */
-export const FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM = {
+/** Door placeholder used in fixture captions before a real YouTube URL is known. */
+export const FIXTURE_DOOR_PLACEHOLDER_JWST = "[JWST YouTube URL]" as const;
+export const FIXTURE_DOOR_PLACEHOLDER_FILM = "[YouTube film URL]" as const;
+export const FIXTURE_DOOR_PLACEHOLDER_TELESCOPE_GO =
+  "https://orbitwithben.com/go/beginner-telescope" as const;
+
+/**
+ * First live captions — JWST Thursday film (pictures from space).
+ * Soft mention = explainer book under the film (Turn Left at Orion /
+ * beginner-astronomy-book via description or /go/{book-slug}).
+ * Do NOT attach a telescope product. LEGO stays out. Never raw Amazon URLs.
+ * Never auto-post — editor copies or enqueues drafts only.
+ *
+ * Threads: hold until Thu 20 Aug 2026 18:00 Europe/London.
+ */
+export const FIXTURE_JWST_LIVE = {
+  filmTopic: "JWST",
+  filmLabel: "JWST Thursday film (pictures from space)",
+  /** Maps soft mention to Amazon UK book — never beginner-telescope. */
+  softMentionProductSlug: "beginner-astronomy-book",
+  softMentionProductLabel: "Turn Left at Orion",
+  /** Explicit bans for this film’s social pack. */
+  forbidProductSlugs: ["beginner-telescope", "space-lego"] as const,
+  forbidFamilies: ["telescope", "lego"] as const,
+  autoPost: false as const,
+  approvedForPublish: false as const,
+  /**
+   * Earliest Threads publish (Europe/London). 18:00 BST = 17:00 UTC.
+   * Instagram / Facebook Page: same Thursday night after the film is up.
+   */
+  threadsEarliestPublishAtIso: "2026-08-20T17:00:00.000Z",
+  threadsEarliestPublishLabel: "Thu 20 Aug 2026 18:00 Europe/London",
+
   wonder: "JWST keeps finding galaxies that should not be there yet.",
-  body: "Orbit walks through what the pictures actually show, and what they do not.",
-  softLine:
+  bodyFacebook:
+    "Orbit walks through what the pictures actually show, and what they do not.",
+  bodyThreads: "Orbit walks through what the pictures actually show.",
+
+  softLineThreads: "Film is up. I left the one explainer I used under it.",
+  softLineInstagram:
+    "Full film on YouTube. I left the one explainer I used under it.",
+  softLineFacebook:
     "Film is up. If you want the one explainer I used, it is under the film.",
-  doorPlaceholder: "[YouTube film URL]",
-  captionWithoutUrl: [
+
+  threadsCaptionWithoutUrl: [
+    "JWST keeps finding galaxies that should not be there yet.",
+    "",
+    "Orbit walks through what the pictures actually show.",
+    "",
+    "Film is up. I left the one explainer I used under it.",
+  ].join("\n"),
+
+  instagramCaptionWithoutUrl: [
+    "JWST keeps finding galaxies that should not be there yet. Orbit walks through what the pictures actually show, and what they do not.",
+    "",
+    "Full film on YouTube. I left the one explainer I used under it.",
+  ].join("\n"),
+
+  facebookCaptionWithoutUrl: [
     "JWST keeps finding galaxies that should not be there yet.",
     "",
     "Orbit walks through what the pictures actually show, and what they do not.",
@@ -35,16 +87,26 @@ export const FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM = {
   ].join("\n"),
 } as const;
 
-/** Exact how-to / telescope Facebook Page example from Social Media Manager. */
-export const FIXTURE_FACEBOOK_PAGE_HOWTO = {
+/**
+ * Telescope / observing how-to caption — HELD until a real observing post.
+ * Not for Thursday JWST. Soft door = film URL or /go/beginner-telescope.
+ * Never raw Amazon. Never LEGO. Never more than one brand.
+ */
+export const FIXTURE_TELESCOPE_OBSERVING_HELD = {
+  status: "held" as const,
+  holdReason:
+    "Hold until a real observing / how-to post — not the Thursday JWST pictures-from-space film.",
+  postStyle: "how_to" as const,
+  productSlug: "beginner-telescope",
+  productLabel: "Celestron FirstScope",
+  autoPost: false as const,
+  approvedForPublish: false as const,
   wonder: "I spent a night on this patch of sky. This is what it looked like.",
   softLineWithFilm:
     "If you want that kind of view, I left the one I use under the film. I get a small cut if you grab it.",
   softLineWithoutFilm:
     "If you want that kind of view, I left the one I use here. I get a small cut if you grab it.",
   ctaWithFilm: "Watch the film first.",
-  doorPlaceholderFilm: "[YouTube film URL]",
-  doorPlaceholderGo: "[https://orbit…/go/telescope]",
   captionWithFilmWithoutUrl: [
     "I spent a night on this patch of sky. This is what it looked like.",
     "",
@@ -52,6 +114,27 @@ export const FIXTURE_FACEBOOK_PAGE_HOWTO = {
     "",
     "Watch the film first.",
   ].join("\n"),
+} as const;
+
+/** Facebook Page Thursday-film alias (JWST live). */
+export const FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM = {
+  wonder: FIXTURE_JWST_LIVE.wonder,
+  body: FIXTURE_JWST_LIVE.bodyFacebook,
+  softLine: FIXTURE_JWST_LIVE.softLineFacebook,
+  doorPlaceholder: FIXTURE_DOOR_PLACEHOLDER_FILM,
+  captionWithoutUrl: FIXTURE_JWST_LIVE.facebookCaptionWithoutUrl,
+} as const;
+
+/** How-to Facebook Page alias — telescope observing (held). */
+export const FIXTURE_FACEBOOK_PAGE_HOWTO = {
+  wonder: FIXTURE_TELESCOPE_OBSERVING_HELD.wonder,
+  softLineWithFilm: FIXTURE_TELESCOPE_OBSERVING_HELD.softLineWithFilm,
+  softLineWithoutFilm: FIXTURE_TELESCOPE_OBSERVING_HELD.softLineWithoutFilm,
+  ctaWithFilm: FIXTURE_TELESCOPE_OBSERVING_HELD.ctaWithFilm,
+  doorPlaceholderFilm: FIXTURE_DOOR_PLACEHOLDER_FILM,
+  doorPlaceholderGo: "[https://orbit…/go/telescope]",
+  captionWithFilmWithoutUrl:
+    FIXTURE_TELESCOPE_OBSERVING_HELD.captionWithFilmWithoutUrl,
 } as const;
 
 /**
@@ -67,18 +150,15 @@ export const FIXTURE_COMMENT_REPLY_TELESCOPE = {
 
 /** Soft lines used by generators (never line 1). */
 export const SOCIAL_SOFT_LINES = {
-  thursdayFilmUnderFilm:
-    "Film is up. If you want the one explainer I used, it is under the film.",
+  thursdayFilmUnderFilm: FIXTURE_JWST_LIVE.softLineFacebook,
   thursdayFilmGoOnly:
     "Film context above. If you want the one explainer I used:",
-  howtoUnderFilm:
-    "If you want that kind of view, I left the one I use under the film. I get a small cut if you grab it.",
-  howtoGoOnly:
-    "If you want that kind of view, I left the one I use here. I get a small cut if you grab it.",
-  howtoWatchFirst: "Watch the film first.",
-  threadsExtraUnderFilm: "I left the one thing under the film.",
+  howtoUnderFilm: FIXTURE_TELESCOPE_OBSERVING_HELD.softLineWithFilm,
+  howtoGoOnly: FIXTURE_TELESCOPE_OBSERVING_HELD.softLineWithoutFilm,
+  howtoWatchFirst: FIXTURE_TELESCOPE_OBSERVING_HELD.ctaWithFilm,
+  threadsExtraUnderFilm: FIXTURE_JWST_LIVE.softLineThreads,
   threadsExtraGo: "If you want to look at this yourself:",
-  reelsCaptionUnderFilm: "I left the one thing under the film.",
+  reelsCaptionUnderFilm: FIXTURE_JWST_LIVE.softLineInstagram,
   reelsCaptionGo: "If you want to look at this yourself:",
   bodyFallback: (topic: string, title: string) =>
     `Orbit walks through what the pictures actually show for ${topic} — and what they do not. (“${title}”)`,
@@ -114,6 +194,63 @@ export const FACEBOOK_PAGE_NEVER_PHRASES = [
   "swipe up to buy",
   "tiktok shop",
 ] as const;
+
+export type JwstLivePlatform = "threads" | "instagram" | "facebook_page";
+
+/**
+ * Render the locked Social Media Manager JWST live caption for a platform.
+ * Door must be YouTube or /go/{book-slug} — never a merchant URL.
+ * Always draft-only (caller must keep approvedForPublish false).
+ */
+export function renderJwstLiveCaption(args: {
+  platform: JwstLivePlatform;
+  doorUrl: string;
+}): string {
+  const door = args.doorUrl.trim() || FIXTURE_DOOR_PLACEHOLDER_JWST;
+  switch (args.platform) {
+    case "threads":
+      return `${FIXTURE_JWST_LIVE.threadsCaptionWithoutUrl}\n${door}`;
+    case "instagram":
+      return `${FIXTURE_JWST_LIVE.instagramCaptionWithoutUrl}\n${door}`;
+    case "facebook_page":
+      return `${FIXTURE_JWST_LIVE.facebookCaptionWithoutUrl}\n${door}`;
+    default:
+      return `${FIXTURE_JWST_LIVE.facebookCaptionWithoutUrl}\n${door}`;
+  }
+}
+
+/** True when Threads may publish the JWST live pack (after scheduled London time). */
+export function isJwstThreadsPublishAllowed(now: Date = new Date()): boolean {
+  return now.getTime() >= Date.parse(FIXTURE_JWST_LIVE.threadsEarliestPublishAtIso);
+}
+
+/**
+ * Render held telescope observing caption (draft only — do not auto-post).
+ * Prefer film URL; /go/beginner-telescope when no film that week.
+ */
+export function renderTelescopeObservingHeldCaption(args: {
+  doorUrl: string;
+  hasFilm: boolean;
+}): { caption: string; status: "held"; approvedForPublish: false } {
+  const door = args.doorUrl.trim();
+  if (args.hasFilm) {
+    return {
+      caption: `${FIXTURE_TELESCOPE_OBSERVING_HELD.captionWithFilmWithoutUrl}\n${door}`,
+      status: "held",
+      approvedForPublish: false,
+    };
+  }
+  return {
+    caption: [
+      FIXTURE_TELESCOPE_OBSERVING_HELD.wonder,
+      "",
+      FIXTURE_TELESCOPE_OBSERVING_HELD.softLineWithoutFilm,
+      door,
+    ].join("\n"),
+    status: "held",
+    approvedForPublish: false,
+  };
+}
 
 /**
  * Render Facebook Page feed caption (3–5 short lines).
@@ -170,7 +307,8 @@ export function renderFacebookPageTemplate(args: {
 }
 
 /**
- * Instagram feed uses the same documentary caption shape as Facebook Page.
+ * Instagram feed — JWST live shape differs from Facebook (wonder+body one para).
+ * Generic thursday_film still uses Facebook shape unless `jwstLive` is true.
  */
 export function renderInstagramFeedTemplate(args: {
   style: SocialSnippetPostStyle;
@@ -179,12 +317,20 @@ export function renderInstagramFeedTemplate(args: {
   doorUrl: string;
   hasFilmThisWeek: boolean;
   includeSoftMention: boolean;
+  /** Use Social Media Manager JWST Instagram live fixture shape. */
+  jwstLive?: boolean;
 }): string {
+  if (args.jwstLive && args.style === "thursday_film") {
+    return renderJwstLiveCaption({
+      platform: "instagram",
+      doorUrl: args.doorUrl,
+    });
+  }
   return renderFacebookPageTemplate(args);
 }
 
 /**
- * Threads: thought first, one extra line, one link (YouTube or /go/).
+ * Threads: thought first, optional body, soft line, one link (YouTube or /go/).
  * Never a product thread. Soft mention never line 1. /go/ never line 1.
  */
 export function renderThreadsTemplate(args: {
@@ -192,16 +338,31 @@ export function renderThreadsTemplate(args: {
   doorUrl: string;
   includeSoftMention: boolean;
   doorIsGo: boolean;
+  /** Optional middle line (JWST live uses body). */
+  body?: string | null;
+  /** Use Social Media Manager JWST Threads live fixture shape. */
+  jwstLive?: boolean;
 }): string {
+  if (args.jwstLive) {
+    return renderJwstLiveCaption({
+      platform: "threads",
+      doorUrl: args.doorUrl,
+    });
+  }
   const wonder = args.wonder.trim();
   const door = args.doorUrl.trim();
+  const body = args.body?.trim() || null;
   if (!args.includeSoftMention) {
-    return `${wonder}\n\n${door}`;
+    return body ? `${wonder}\n\n${body}\n\n${door}` : `${wonder}\n\n${door}`;
   }
   if (args.doorIsGo) {
-    return `${wonder}\n\n${SOCIAL_SOFT_LINES.threadsExtraGo}\n${door}`;
+    return body
+      ? `${wonder}\n\n${body}\n\n${SOCIAL_SOFT_LINES.threadsExtraGo}\n${door}`
+      : `${wonder}\n\n${SOCIAL_SOFT_LINES.threadsExtraGo}\n${door}`;
   }
-  return `${wonder}\n\n${SOCIAL_SOFT_LINES.threadsExtraUnderFilm}\n${door}`;
+  return body
+    ? `${wonder}\n\n${body}\n\n${SOCIAL_SOFT_LINES.threadsExtraUnderFilm}\n${door}`
+    : `${wonder}\n\n${SOCIAL_SOFT_LINES.threadsExtraUnderFilm}\n${door}`;
 }
 
 /**
@@ -231,7 +392,8 @@ export function renderTelescopeCommentReply(args: {
   hasFilm: boolean;
 }): string {
   if (args.hasFilm) return FIXTURE_COMMENT_REPLY_TELESCOPE.withFilm;
-  const url = args.doorUrl?.trim() || "https://orbitwithben.com/go/telescope";
+  const url =
+    args.doorUrl?.trim() || FIXTURE_DOOR_PLACEHOLDER_TELESCOPE_GO;
   return FIXTURE_COMMENT_REPLY_TELESCOPE.withoutFilm.replace("{{doorUrl}}", url);
 }
 

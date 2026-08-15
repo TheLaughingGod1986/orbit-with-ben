@@ -32,6 +32,7 @@ import {
   renderThreadsTemplate,
   SOCIAL_SOFT_LINES,
   type SocialSnippetPostStyle,
+  FIXTURE_JWST_LIVE,
 } from "./social-snippet-templates";
 import {
   facebookPageCaptionViolations,
@@ -85,6 +86,16 @@ export type AffiliateSocialSnippet = {
   /** Template style used (Facebook / IG feed). */
   postStyle?: SocialSnippetPostStyle;
 };
+
+function isJwstLivePack(input: AffiliateSocialSnippetInput): boolean {
+  return (
+    input.postStyle !== "how_to" &&
+    (/jwst|james webb|cosmic dawn|jades/i.test(
+      `${input.topic} ${input.videoTitle} ${input.hook || ""}`,
+    ) ||
+      input.productSlug === FIXTURE_JWST_LIVE.softMentionProductSlug)
+  );
+}
 
 function truncate(s: string, max: number): string {
   if (s.length <= max) return s;
@@ -159,6 +170,7 @@ function buildSnippetForPlatform(
   input: AffiliateSocialSnippetInput,
 ): AffiliateSocialSnippet {
   const postStyle: SocialSnippetPostStyle = input.postStyle || "thursday_film";
+  const jwstLive = isJwstLivePack(input);
   const gate = shouldIncludeAffiliateSoftMention({
     platform,
     hasNaturalObject: input.hasNaturalObject,
@@ -195,8 +207,28 @@ function buildSnippetForPlatform(
     notes.push(`Affiliate soft mention skipped (${gate.reason}).`);
   }
 
+  // JWST pictures-from-space: remapped soft mention to explainer book only
+  const effectiveInput = jwstLive
+    ? {
+        ...input,
+        productSlug: FIXTURE_JWST_LIVE.softMentionProductSlug,
+        productLabel: FIXTURE_JWST_LIVE.softMentionProductLabel,
+      }
+    : input;
+
+  if (
+    jwstLive &&
+    (FIXTURE_JWST_LIVE.forbidProductSlugs as readonly string[]).includes(
+      input.productSlug,
+    )
+  ) {
+    notes.push(
+      `JWST live pack remapped ${input.productSlug} → ${FIXTURE_JWST_LIVE.softMentionProductSlug} (explainer book; never telescope / LEGO).`,
+    );
+  }
+
   const door = resolveDoor({
-    input,
+    input: effectiveInput,
     platform,
     includeAffiliateMention,
   });
@@ -204,12 +236,29 @@ function buildSnippetForPlatform(
   const wonder = wonderLine(input);
   let caption = "";
 
+  if (jwstLive) {
+    notes.push(
+      "JWST live pack: soft mention = explainer book only (never telescope / LEGO).",
+      `Book slug: ${FIXTURE_JWST_LIVE.softMentionProductSlug}.`,
+      "Never auto-post — approvedForPublish stays false until editor approves.",
+    );
+    if (platform === "threads") {
+      notes.push(
+        `Threads: hold until ${FIXTURE_JWST_LIVE.threadsEarliestPublishLabel}.`,
+      );
+    }
+  }
+
   switch (platform) {
     case "facebook_page":
       caption = renderFacebookPageTemplate({
         style: postStyle,
-        wonder,
-        body: postStyle === "thursday_film" ? bodyLine(input) : null,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
+        body: jwstLive
+          ? FIXTURE_JWST_LIVE.bodyFacebook
+          : postStyle === "thursday_film"
+            ? bodyLine(input)
+            : null,
         doorUrl: door.url,
         hasFilmThisWeek: door.hasFilm,
         includeSoftMention: includeAffiliateMention,
@@ -219,17 +268,22 @@ function buildSnippetForPlatform(
     case "instagram_feed":
       caption = renderInstagramFeedTemplate({
         style: postStyle,
-        wonder,
-        body: postStyle === "thursday_film" ? bodyLine(input) : null,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
+        body: jwstLive
+          ? FIXTURE_JWST_LIVE.bodyFacebook
+          : postStyle === "thursday_film"
+            ? bodyLine(input)
+            : null,
         doorUrl: door.url,
         hasFilmThisWeek: door.hasFilm,
         includeSoftMention: includeAffiliateMention,
+        jwstLive: jwstLive && includeAffiliateMention,
       });
       notes.push(platformNotes(platform));
       break;
     case "instagram_reels":
       caption = renderInstagramReelsTemplate({
-        wonder,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
         doorUrl: door.url,
         includeSoftMention: includeAffiliateMention,
         doorIsGo: door.doorIsGo,
@@ -238,10 +292,12 @@ function buildSnippetForPlatform(
       break;
     case "threads":
       caption = renderThreadsTemplate({
-        wonder,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
+        body: jwstLive ? FIXTURE_JWST_LIVE.bodyThreads : null,
         doorUrl: door.url,
         includeSoftMention: includeAffiliateMention,
         doorIsGo: door.doorIsGo,
+        jwstLive: jwstLive && includeAffiliateMention,
       });
       notes.push(platformNotes(platform));
       break;
@@ -352,9 +408,14 @@ export {
   countCaptionLines,
   firstNonEmptyLine,
   lastNonEmptyLine,
+  FIXTURE_JWST_LIVE,
+  FIXTURE_TELESCOPE_OBSERVING_HELD,
   FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM,
   FIXTURE_FACEBOOK_PAGE_HOWTO,
   FIXTURE_COMMENT_REPLY_TELESCOPE,
+  renderJwstLiveCaption,
+  renderTelescopeObservingHeldCaption,
+  isJwstThreadsPublishAllowed,
   renderFacebookPageTemplate,
   renderThreadsTemplate,
   renderInstagramReelsTemplate,

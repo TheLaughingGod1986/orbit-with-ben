@@ -58,6 +58,8 @@ import { generateAffiliateSocialSnippets } from "../src/lib/affiliate/social-sni
 import {
   FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM,
   FIXTURE_FACEBOOK_PAGE_HOWTO,
+  FIXTURE_JWST_LIVE,
+  FIXTURE_TELESCOPE_OBSERVING_HELD,
   countCaptionLines,
   firstNonEmptyLine,
   lastNonEmptyLine,
@@ -65,7 +67,11 @@ import {
   renderTelescopeCommentReply,
   renderThreadsTemplate,
   renderInstagramReelsTemplate,
+  renderJwstLiveCaption,
+  renderTelescopeObservingHeldCaption,
+  isJwstThreadsPublishAllowed,
 } from "../src/lib/affiliate/social-snippet-templates";
+import { CREATOR_TOPIC_SLOT_PLANS, familyForbiddenForPlan } from "../src/lib/affiliate/topic-product-map";
 import {
   facebookPageCaptionViolations,
   assertFacebookPageCaptionSafe,
@@ -1030,8 +1036,8 @@ describe("live social channel affiliate snippets", () => {
       hook: FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM.wonder,
       body: FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM.body,
       youtubeUrl: "https://youtu.be/jwst-film",
-      productLabel: "JWST explainer book",
-      productSlug: "jwst-explainer",
+      productLabel: FIXTURE_JWST_LIVE.softMentionProductLabel,
+      productSlug: FIXTURE_JWST_LIVE.softMentionProductSlug,
       hasNaturalObject: true,
       productRelevantToVideo: true,
       hasApprovedPlacement: true,
@@ -1041,8 +1047,9 @@ describe("live social channel affiliate snippets", () => {
     const ig = snippets.find((s) => s.platform === "instagram_feed")!;
     expect(fb.caption).toContain(FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM.softLine);
     expect(firstNonEmptyLine(fb.caption)).toBe(FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM.wonder);
-    expect(ig.caption).toContain(FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM.softLine);
+    expect(ig.caption).toContain(FIXTURE_JWST_LIVE.softLineInstagram);
     expect(containsRawMerchantUrl(fb.caption)).toBe(false);
+    expect(fb.approvedForPublish).toBe(false);
   });
 
   it("rejects Facebook Page never-list (merchant, shop now, haul, multi-brand, …)", () => {
@@ -1253,5 +1260,106 @@ describe("Amazon Associates UK live destinations", () => {
         expect(s.trackedUrl).toMatch(/youtu\.?be|\/go\//i);
       }
     }
+  });
+});
+
+describe("Social Media Manager JWST live captions", () => {
+  const door = "https://youtu.be/jwst-live-film";
+
+  it("encodes exact Threads / Instagram / Facebook fixtures (no auto-post)", () => {
+    expect(FIXTURE_JWST_LIVE.autoPost).toBe(false);
+    expect(FIXTURE_JWST_LIVE.approvedForPublish).toBe(false);
+    expect(FIXTURE_JWST_LIVE.softMentionProductSlug).toBe(
+      "beginner-astronomy-book",
+    );
+    expect(FIXTURE_JWST_LIVE.forbidProductSlugs).toContain("beginner-telescope");
+    expect(FIXTURE_JWST_LIVE.forbidProductSlugs).toContain("space-lego");
+
+    expect(renderJwstLiveCaption({ platform: "threads", doorUrl: door })).toBe(
+      `${FIXTURE_JWST_LIVE.threadsCaptionWithoutUrl}\n${door}`,
+    );
+    expect(
+      renderJwstLiveCaption({ platform: "instagram", doorUrl: door }),
+    ).toBe(`${FIXTURE_JWST_LIVE.instagramCaptionWithoutUrl}\n${door}`);
+    expect(
+      renderJwstLiveCaption({ platform: "facebook_page", doorUrl: door }),
+    ).toBe(`${FIXTURE_JWST_LIVE.facebookCaptionWithoutUrl}\n${door}`);
+  });
+
+  it("JWST soft mention is the book — never telescope, Amazon, LEGO, or Shop now", () => {
+    const snippets = generateAffiliateSocialSnippets({
+      videoSlug: "jwst-early-galaxies",
+      videoTitle: "JWST and the Galaxies That Should Not Be There",
+      topic: "JWST",
+      youtubeUrl: door,
+      productLabel: "Celestron FirstScope",
+      productSlug: "beginner-telescope",
+      hasNaturalObject: true,
+      productRelevantToVideo: true,
+      hasApprovedPlacement: true,
+      postStyle: "thursday_film",
+    });
+
+    for (const s of snippets) {
+      expect(s.approvedForPublish).toBe(false);
+      expect(containsRawMerchantUrl(s.caption)).toBe(false);
+      expect(s.caption.toLowerCase()).not.toContain("amazon.");
+      expect(s.caption.toLowerCase()).not.toContain("shop now");
+      expect(s.caption.toLowerCase()).not.toContain("lego");
+      expect(s.caption.toLowerCase()).not.toMatch(/\btelescope\b/);
+      if (s.trackedUrl) {
+        expect(isAllowedSocialTrackedUrl(s.trackedUrl)).toBe(true);
+        expect(s.trackedUrl).not.toMatch(/amazon\.co\.uk/i);
+        // Door remaps to book /go or YouTube — never telescope slug on JWST
+        expect(s.trackedUrl).not.toContain("/go/beginner-telescope");
+      }
+    }
+
+    const threads = snippets.find((s) => s.platform === "threads")!;
+    expect(threads.caption).toContain(FIXTURE_JWST_LIVE.softLineThreads);
+    expect(threads.caption).toContain(FIXTURE_JWST_LIVE.bodyThreads);
+
+    const ig = snippets.find((s) => s.platform === "instagram_feed")!;
+    expect(ig.caption).toContain(FIXTURE_JWST_LIVE.softLineInstagram);
+
+    const fb = snippets.find((s) => s.platform === "facebook_page")!;
+    expect(fb.caption).toContain(FIXTURE_JWST_LIVE.softLineFacebook);
+  });
+
+  it("holds Threads until Thu 20 Aug 2026 18:00 Europe/London", () => {
+    expect(
+      isJwstThreadsPublishAllowed(new Date("2026-08-20T16:59:00.000Z")),
+    ).toBe(false);
+    expect(
+      isJwstThreadsPublishAllowed(new Date("2026-08-20T17:00:00.000Z")),
+    ).toBe(true);
+  });
+
+  it("holds telescope observing caption until a real observing post", () => {
+    expect(FIXTURE_TELESCOPE_OBSERVING_HELD.status).toBe("held");
+    expect(FIXTURE_TELESCOPE_OBSERVING_HELD.autoPost).toBe(false);
+    expect(FIXTURE_TELESCOPE_OBSERVING_HELD.approvedForPublish).toBe(false);
+
+    const held = renderTelescopeObservingHeldCaption({
+      doorUrl: door,
+      hasFilm: true,
+    });
+    expect(held.status).toBe("held");
+    expect(held.approvedForPublish).toBe(false);
+    expect(held.caption).toContain(FIXTURE_TELESCOPE_OBSERVING_HELD.wonder);
+    expect(containsRawMerchantUrl(held.caption)).toBe(false);
+    expect(held.caption.toLowerCase()).not.toContain("lego");
+    expect(held.caption.toLowerCase()).not.toContain("shop now");
+  });
+
+  it("JWST topic map leaves telescope and LEGO empty", () => {
+    const plan = CREATOR_TOPIC_SLOT_PLANS.find((p) => p.topicKey === "jwst")!;
+    expect(plan.primary).toBe("books");
+    expect(plan.leaveEmpty).toEqual(
+      expect.arrayContaining(["telescope", "lego"]),
+    );
+    expect(familyForbiddenForPlan("telescope", plan)).toBe(true);
+    expect(familyForbiddenForPlan("lego", plan)).toBe(true);
+    expect(familyForbiddenForPlan("books", plan)).toBe(false);
   });
 });
