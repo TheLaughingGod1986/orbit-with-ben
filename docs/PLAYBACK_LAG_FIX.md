@@ -22,6 +22,27 @@ the glitch follows the master — it is not a YouTube-only CDN bug.
 Re-uploading as a **new** YouTube video would fix the file but reset views,
 watch time and make the item look brand-new. Do not do that.
 
+## Reality check (Aug 2026 Studio)
+
+YouTube Studio on this channel **does not expose a Replace / Replace video
+file control** (Details ⋮ menu is Download / Delete / Promote only). Official
+Help says you can’t replace a video file while keeping the URL:
+
+https://support.google.com/youtube/answer/55770
+
+So `_replace_media_in_place.py` / `_replace_file_on_yt.py` will correctly
+**abort** rather than upload a new id.
+
+What still works:
+
+1. **Remaster locals** (`fix_published_playback_lag.py --apply`) — done on Mac.
+2. **Future exports** use CFR libx264 so new uploads won’t lag.
+3. **Still-scheduled / private** items can be deleted + re-uploaded with the
+   remastered file at the **same `publishAt`** (new id, but no public views to
+   lose). Do this only with an explicit go-ahead.
+4. **Already-public** videos keep their VFR masters on YouTube unless you
+   accept a new upload (resets views). Prefer leaving them and fixing forward.
+
 ## Fix existing published videos (keep views)
 
 On the machine that has the masters (mp4s are gitignored):
