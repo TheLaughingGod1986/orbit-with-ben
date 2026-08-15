@@ -93,8 +93,51 @@ function isJwstLivePack(input: AffiliateSocialSnippetInput): boolean {
     (/jwst|james webb|cosmic dawn|jades/i.test(
       `${input.topic} ${input.videoTitle} ${input.hook || ""}`,
     ) ||
+      input.productSlug === FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady ||
       input.productSlug === FIXTURE_JWST_LIVE.softMentionProductSlug)
   );
+}
+
+/** Resolve JWST soft-mention product for /go + UTMs — never observing guidebook or telescope. */
+function jwstEffectiveProduct(input: AffiliateSocialSnippetInput): {
+  productSlug: string;
+  productLabel: string;
+  preferYouTubePointer: boolean;
+  notes: string[];
+} {
+  const forbidden = (
+    FIXTURE_JWST_LIVE.forbidProductSlugs as readonly string[]
+  ).includes(input.productSlug);
+  const readySlug = FIXTURE_JWST_LIVE.softMentionProductSlug;
+  const notes: string[] = [];
+
+  if (forbidden) {
+    notes.push(
+      `JWST live pack rejects ${input.productSlug} (never telescope / Turn Left at Orion / LEGO).`,
+    );
+  }
+
+  if (readySlug) {
+    return {
+      productSlug: readySlug,
+      productLabel:
+        FIXTURE_JWST_LIVE.softMentionProductLabel ||
+        FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady,
+      preferYouTubePointer: input.preferYouTubePointer !== false,
+      notes,
+    };
+  }
+
+  // TODO: jwst-book product not seeded yet — soft mention stays in copy; door is YouTube only
+  notes.push(
+    `TODO: JWST soft-mention /go/ slug is ${FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady} — product unset until seeded; door is YouTube under the film.`,
+  );
+  return {
+    productSlug: FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady,
+    productLabel: FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady,
+    preferYouTubePointer: true,
+    notes,
+  };
 }
 
 function truncate(s: string, max: number): string {
@@ -207,24 +250,17 @@ function buildSnippetForPlatform(
     notes.push(`Affiliate soft mention skipped (${gate.reason}).`);
   }
 
-  // JWST pictures-from-space: remapped soft mention to explainer book only
-  const effectiveInput = jwstLive
-    ? {
-        ...input,
-        productSlug: FIXTURE_JWST_LIVE.softMentionProductSlug,
-        productLabel: FIXTURE_JWST_LIVE.softMentionProductLabel,
-      }
-    : input;
-
-  if (
-    jwstLive &&
-    (FIXTURE_JWST_LIVE.forbidProductSlugs as readonly string[]).includes(
-      input.productSlug,
-    )
-  ) {
-    notes.push(
-      `JWST live pack remapped ${input.productSlug} → ${FIXTURE_JWST_LIVE.softMentionProductSlug} (explainer book; never telescope / LEGO).`,
-    );
+  // JWST pictures-from-space: explainer soft mention — never observing guidebook / telescope
+  let effectiveInput = input;
+  if (jwstLive) {
+    const jwstProduct = jwstEffectiveProduct(input);
+    notes.push(...jwstProduct.notes);
+    effectiveInput = {
+      ...input,
+      productSlug: jwstProduct.productSlug,
+      productLabel: jwstProduct.productLabel,
+      preferYouTubePointer: jwstProduct.preferYouTubePointer,
+    };
   }
 
   const door = resolveDoor({
@@ -233,13 +269,28 @@ function buildSnippetForPlatform(
     includeAffiliateMention,
   });
 
+  // Never emit forbidden /go/ slugs on JWST captions
+  if (
+    jwstLive &&
+    door.doorIsGo &&
+    (FIXTURE_JWST_LIVE.forbidProductSlugs as readonly string[]).some((s) =>
+      door.url.includes(`/go/${s}`),
+    )
+  ) {
+    includeAffiliateMention = false;
+    skipReason = "video_not_about_product";
+    notes.push("Blocked forbidden JWST /go/ slug — fell back without merchant door.");
+  }
+
   const wonder = wonderLine(input);
   let caption = "";
 
   if (jwstLive) {
     notes.push(
-      "JWST live pack: soft mention = explainer book only (never telescope / LEGO).",
-      `Book slug: ${FIXTURE_JWST_LIVE.softMentionProductSlug}.`,
+      "JWST live pack: soft mention = “the one explainer I used under the film” (never telescope / Turn Left at Orion / LEGO).",
+      FIXTURE_JWST_LIVE.softMentionProductSlug
+        ? `Book slug: ${FIXTURE_JWST_LIVE.softMentionProductSlug}.`
+        : `Book slug TODO: ${FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady} (unset until product exists).`,
       "Never auto-post — approvedForPublish stays false until editor approves.",
     );
     if (platform === "threads") {

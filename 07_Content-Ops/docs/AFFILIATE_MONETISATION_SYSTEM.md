@@ -142,7 +142,7 @@ Tracked URLs on social may **only** be the YouTube film URL or an Orbit `/go/{sl
 
 #### Social Media Manager templates
 
-**First live pack — JWST Thursday film** (`FIXTURE_JWST_LIVE`). Soft mention = explainer book (`beginner-astronomy-book` / Turn Left at Orion) under the film via YouTube description or `/go/beginner-astronomy-book`. **Never** attach a telescope product. LEGO stays out. Never raw Amazon URLs. Snippets ship with `approvedForPublish: false` — **do not auto-post**.
+**First live pack — JWST Thursday film** (`FIXTURE_JWST_LIVE`). Soft mention copy: “the one explainer I used under the film.” Door = YouTube until `jwst-book` exists; intended `/go/jwst-book` once that product is seeded. **Never** `beginner-astronomy-book` / Turn Left at Orion (observing guidebook — fails trust gate on JWST wonder films) or a telescope. LEGO stays out. Never raw Amazon URLs. Snippets ship with `approvedForPublish: false` — **do not auto-post**.
 
 Threads (only after **Thu 20 Aug 2026 18:00 Europe/London**):
 

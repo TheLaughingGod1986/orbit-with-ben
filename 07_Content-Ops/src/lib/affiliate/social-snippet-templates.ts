@@ -28,21 +28,35 @@ export const FIXTURE_DOOR_PLACEHOLDER_TELESCOPE_GO =
 
 /**
  * First live captions — JWST Thursday film (pictures from space).
- * Soft mention = explainer book under the film (Turn Left at Orion /
- * beginner-astronomy-book via description or /go/{book-slug}).
- * Do NOT attach a telescope product. LEGO stays out. Never raw Amazon URLs.
- * Never auto-post — editor copies or enqueues drafts only.
+ * Soft mention copy: “the one explainer I used under the film.”
  *
+ * /go/ slug for that mention MUST be `jwst-book` once that product exists
+ * (verified Amazon UK JWST / cosmic-dawn books — other agent). Until then
+ * `softMentionProductSlug` stays unset — do NOT use beginner-astronomy-book
+ * (Turn Left at Orion is an observing guidebook; fails trust gate on JWST wonder films)
+ * or beginner-telescope.
+ *
+ * LEGO stays out. Never raw Amazon URLs. Never auto-post.
  * Threads: hold until Thu 20 Aug 2026 18:00 Europe/London.
  */
 export const FIXTURE_JWST_LIVE = {
   filmTopic: "JWST",
   filmLabel: "JWST Thursday film (pictures from space)",
-  /** Maps soft mention to Amazon UK book — never beginner-telescope. */
-  softMentionProductSlug: "beginner-astronomy-book",
-  softMentionProductLabel: "Turn Left at Orion",
-  /** Explicit bans for this film’s social pack. */
-  forbidProductSlugs: ["beginner-telescope", "space-lego"] as const,
+  /**
+   * Unset until `jwst-book` product exists. Soft mention stays in caption copy;
+   * door is YouTube (“under the film”) until this is set.
+   */
+  softMentionProductSlug: null as string | null,
+  softMentionProductLabel: null as string | null,
+  /** Intended /go/{slug} once the JWST explainer book product is seeded. */
+  softMentionGoSlugWhenReady: "jwst-book" as const,
+  /** Explicit bans for this film’s social pack (trust gate + wrong product). */
+  forbidProductSlugs: [
+    "beginner-telescope",
+    "beginner-astronomy-book",
+    "space-lego",
+  ] as const,
+  forbidProductLabels: ["Turn Left at Orion"] as const,
   forbidFamilies: ["telescope", "lego"] as const,
   autoPost: false as const,
   approvedForPublish: false as const,

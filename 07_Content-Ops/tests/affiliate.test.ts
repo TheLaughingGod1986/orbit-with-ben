@@ -1036,8 +1036,8 @@ describe("live social channel affiliate snippets", () => {
       hook: FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM.wonder,
       body: FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM.body,
       youtubeUrl: "https://youtu.be/jwst-film",
-      productLabel: FIXTURE_JWST_LIVE.softMentionProductLabel,
-      productSlug: FIXTURE_JWST_LIVE.softMentionProductSlug,
+      productLabel: "JWST explainer",
+      productSlug: FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady,
       hasNaturalObject: true,
       productRelevantToVideo: true,
       hasApprovedPlacement: true,
@@ -1050,6 +1050,8 @@ describe("live social channel affiliate snippets", () => {
     expect(ig.caption).toContain(FIXTURE_JWST_LIVE.softLineInstagram);
     expect(containsRawMerchantUrl(fb.caption)).toBe(false);
     expect(fb.approvedForPublish).toBe(false);
+    expect(fb.caption).not.toMatch(/Turn Left at Orion/i);
+    expect(fb.caption.toLowerCase()).not.toMatch(/\btelescope\b/);
   });
 
   it("rejects Facebook Page never-list (merchant, shop now, haul, multi-brand, …)", () => {
@@ -1266,14 +1268,40 @@ describe("Amazon Associates UK live destinations", () => {
 describe("Social Media Manager JWST live captions", () => {
   const door = "https://youtu.be/jwst-live-film";
 
+  function assertJwstCaptionSafe(caption: string, trackedUrl?: string | null) {
+    expect(containsRawMerchantUrl(caption)).toBe(false);
+    expect(caption.toLowerCase()).not.toContain("amazon.");
+    expect(caption.toLowerCase()).not.toContain("shop now");
+    expect(caption.toLowerCase()).not.toContain("lego");
+    expect(caption.toLowerCase()).not.toMatch(/\btelescope\b/);
+    expect(caption).not.toMatch(/Turn Left at Orion/i);
+    expect(caption).not.toContain("beginner-astronomy-book");
+    expect(caption).not.toContain("beginner-telescope");
+    if (trackedUrl) {
+      expect(isAllowedSocialTrackedUrl(trackedUrl)).toBe(true);
+      expect(trackedUrl).not.toMatch(/amazon\.co\.uk/i);
+      expect(trackedUrl).not.toContain("/go/beginner-telescope");
+      expect(trackedUrl).not.toContain("/go/beginner-astronomy-book");
+    }
+  }
+
   it("encodes exact Threads / Instagram / Facebook fixtures (no auto-post)", () => {
     expect(FIXTURE_JWST_LIVE.autoPost).toBe(false);
     expect(FIXTURE_JWST_LIVE.approvedForPublish).toBe(false);
-    expect(FIXTURE_JWST_LIVE.softMentionProductSlug).toBe(
+    expect(FIXTURE_JWST_LIVE.softMentionProductSlug).toBeNull();
+    expect(FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady).toBe("jwst-book");
+    expect(FIXTURE_JWST_LIVE.forbidProductSlugs).toContain("beginner-telescope");
+    expect(FIXTURE_JWST_LIVE.forbidProductSlugs).toContain(
       "beginner-astronomy-book",
     );
-    expect(FIXTURE_JWST_LIVE.forbidProductSlugs).toContain("beginner-telescope");
     expect(FIXTURE_JWST_LIVE.forbidProductSlugs).toContain("space-lego");
+    expect(FIXTURE_JWST_LIVE.forbidProductLabels).toContain("Turn Left at Orion");
+
+    // Soft-mention product fields must not point at observing guidebook / telescope
+    expect(FIXTURE_JWST_LIVE.softMentionProductLabel).toBeNull();
+    expect(
+      `${FIXTURE_JWST_LIVE.softMentionProductSlug || ""} ${FIXTURE_JWST_LIVE.softMentionProductLabel || ""}`,
+    ).not.toMatch(/Turn Left at Orion|beginner-astronomy-book|beginner-telescope/i);
 
     expect(renderJwstLiveCaption({ platform: "threads", doorUrl: door })).toBe(
       `${FIXTURE_JWST_LIVE.threadsCaptionWithoutUrl}\n${door}`,
@@ -1284,10 +1312,14 @@ describe("Social Media Manager JWST live captions", () => {
     expect(
       renderJwstLiveCaption({ platform: "facebook_page", doorUrl: door }),
     ).toBe(`${FIXTURE_JWST_LIVE.facebookCaptionWithoutUrl}\n${door}`);
+
+    for (const platform of ["threads", "instagram", "facebook_page"] as const) {
+      assertJwstCaptionSafe(renderJwstLiveCaption({ platform, doorUrl: door }));
+    }
   });
 
-  it("JWST soft mention is the book — never telescope, Amazon, LEGO, or Shop now", () => {
-    const snippets = generateAffiliateSocialSnippets({
+  it("JWST soft mention stays under-the-film copy — never telescope or Turn Left at Orion", () => {
+    const fromTelescope = generateAffiliateSocialSnippets({
       videoSlug: "jwst-early-galaxies",
       videoTitle: "JWST and the Galaxies That Should Not Be There",
       topic: "JWST",
@@ -1300,29 +1332,35 @@ describe("Social Media Manager JWST live captions", () => {
       postStyle: "thursday_film",
     });
 
-    for (const s of snippets) {
+    const fromObservingBook = generateAffiliateSocialSnippets({
+      videoSlug: "jwst-early-galaxies",
+      videoTitle: "JWST and the Galaxies That Should Not Be There",
+      topic: "JWST",
+      youtubeUrl: door,
+      productLabel: "Turn Left at Orion",
+      productSlug: "beginner-astronomy-book",
+      hasNaturalObject: true,
+      productRelevantToVideo: true,
+      hasApprovedPlacement: true,
+      postStyle: "thursday_film",
+      preferYouTubePointer: false,
+    });
+
+    for (const s of [...fromTelescope, ...fromObservingBook]) {
       expect(s.approvedForPublish).toBe(false);
-      expect(containsRawMerchantUrl(s.caption)).toBe(false);
-      expect(s.caption.toLowerCase()).not.toContain("amazon.");
-      expect(s.caption.toLowerCase()).not.toContain("shop now");
-      expect(s.caption.toLowerCase()).not.toContain("lego");
-      expect(s.caption.toLowerCase()).not.toMatch(/\btelescope\b/);
-      if (s.trackedUrl) {
-        expect(isAllowedSocialTrackedUrl(s.trackedUrl)).toBe(true);
-        expect(s.trackedUrl).not.toMatch(/amazon\.co\.uk/i);
-        // Door remaps to book /go or YouTube — never telescope slug on JWST
-        expect(s.trackedUrl).not.toContain("/go/beginner-telescope");
-      }
+      assertJwstCaptionSafe(s.caption, s.trackedUrl);
+      // Until jwst-book exists, door is YouTube (under the film), not a wrong /go/
+      expect(s.trackedUrl).toMatch(/youtu\.?be/i);
     }
 
-    const threads = snippets.find((s) => s.platform === "threads")!;
+    const threads = fromTelescope.find((s) => s.platform === "threads")!;
     expect(threads.caption).toContain(FIXTURE_JWST_LIVE.softLineThreads);
     expect(threads.caption).toContain(FIXTURE_JWST_LIVE.bodyThreads);
 
-    const ig = snippets.find((s) => s.platform === "instagram_feed")!;
+    const ig = fromTelescope.find((s) => s.platform === "instagram_feed")!;
     expect(ig.caption).toContain(FIXTURE_JWST_LIVE.softLineInstagram);
 
-    const fb = snippets.find((s) => s.platform === "facebook_page")!;
+    const fb = fromTelescope.find((s) => s.platform === "facebook_page")!;
     expect(fb.caption).toContain(FIXTURE_JWST_LIVE.softLineFacebook);
   });
 
