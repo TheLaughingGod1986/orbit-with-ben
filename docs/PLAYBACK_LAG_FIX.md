@@ -122,3 +122,17 @@ and will not create new video ids.
 
 Scheduled publish times (including Exoplanets Shorts and the 21–26 Aug
 cadence) stay on the original ids — Replace does not touch schedule.
+
+## Scheduled / private re-upload (Aug 2026)
+
+Because Studio cannot Replace files, still-scheduled private items were
+re-uploaded via API with the remastered CFR master at the same `publishAt`:
+
+```bash
+cd 07_Content-Ops
+npx tsx scripts/youtube-reupload-scheduled-cfr.ts --dry-run
+npx tsx scripts/youtube-reupload-scheduled-cfr.ts --execute --approved-by-user
+```
+
+Journal: `00_Brand/Channel-Setup/audits/playback_lag_scheduled_reupload/`.
+Already-public videos were left alone.
