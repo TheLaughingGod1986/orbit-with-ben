@@ -82,6 +82,10 @@ import {
   computeMonthTargetGbp,
   resolveGoalsClockStart,
 } from "../src/lib/affiliate/goals";
+import {
+  evaluateAffiliateGoLive,
+  isPlaceholderAffiliateUrl,
+} from "../src/lib/affiliate/go-live";
 
 function product(partial: Partial<ProductMatchInput> & Pick<ProductMatchInput, "id" | "name" | "slug" | "category" | "tagSlugs">): ProductMatchInput {
   return {
@@ -1180,5 +1184,58 @@ describe("affiliate goals ladder (reporting only)", () => {
     });
     expect(snap.status).toBe("not_started");
     expect(snap.monthNumber).toBeNull();
+  });
+});
+
+describe("affiliate go-live readiness", () => {
+  it("passes tracked redirects when catalogue is live but flags missing programme IDs", () => {
+    const report = evaluateAffiliateGoLive({
+      amazonTag: null,
+      brilliantId: null,
+      appBaseUrl: "https://ops.example.com",
+      affiliateRedirectBaseUrl: "https://orbitwithben.com/go",
+      activeProductCount: 8,
+      placeholderUrlCount: 0,
+      brokenUrlCount: 0,
+      activeProgramCount: 3,
+      approvedPlacementCount: 0,
+      clickCount: 0,
+    });
+    expect(report.readyForTrackedRedirects).toBe(true);
+    expect(report.readyForPaidTraffic).toBe(false);
+    expect(report.checks.find((c) => c.id === "amazon_tag")?.status).toBe("fail");
+  });
+
+  it("is ready for paid traffic when a programme ID is set", () => {
+    const report = evaluateAffiliateGoLive({
+      amazonTag: "orbit-21",
+      brilliantId: null,
+      appBaseUrl: "https://ops.example.com",
+      affiliateRedirectBaseUrl: "https://orbitwithben.com/go",
+      activeProductCount: 8,
+      placeholderUrlCount: 0,
+      brokenUrlCount: 0,
+      activeProgramCount: 3,
+      approvedPlacementCount: 1,
+      clickCount: 1,
+    });
+    expect(report.readyForPaidTraffic).toBe(true);
+  });
+
+  it("blocks when placeholder merchant URLs remain", () => {
+    const report = evaluateAffiliateGoLive({
+      amazonTag: "orbit-21",
+      brilliantId: "brill-1",
+      appBaseUrl: "https://ops.example.com",
+      affiliateRedirectBaseUrl: "https://orbitwithben.com/go",
+      activeProductCount: 8,
+      placeholderUrlCount: 3,
+      brokenUrlCount: 0,
+      activeProgramCount: 3,
+      approvedPlacementCount: 0,
+      clickCount: 0,
+    });
+    expect(report.readyForTrackedRedirects).toBe(false);
+    expect(isPlaceholderAffiliateUrl("https://example.invalid/aff/x")).toBe(true);
   });
 });

@@ -62,10 +62,11 @@ New episodes: copy `02_Video-Projects/_template_NNN_Episode-Slug/`.
 
 Integrated affiliate programmes, products, video matching, `/go/{slug}` click tracking, description blocks, CSV conversion import, and opportunity scoring.
 
-- Docs: `docs/AFFILIATE_MONETISATION_SYSTEM.md`
+- Docs: `docs/AFFILIATE_MONETISATION_SYSTEM.md` · go-live: `docs/AFFILIATE_GO_LIVE.md`
 - UI: `/affiliate` · `/affiliate/products` · `/affiliate/programs` · `/affiliate/opportunities`
 - Env: `AMAZON_ASSOCIATE_TAG`, `BRILLIANT_AFFILIATE_ID`, `AFFILIATE_REDIRECT_BASE_URL`
-- Philosophy: relevance before revenue — max 4 links per video
+- CLI: `npm run affiliate:apply-urls` · `npm run affiliate:verify`
+- Philosophy: relevance before revenue — card ≤4 candidates; description Auditor-capped
 
 ## Scope
 

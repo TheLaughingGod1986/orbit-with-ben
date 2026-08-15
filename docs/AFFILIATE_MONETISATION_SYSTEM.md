@@ -382,5 +382,11 @@ Open http://localhost:3000/affiliate
 - Brilliant affiliate approval + `BRILLIANT_AFFILIATE_ID`
 - Specialist retailer programme contracts / tracking links
 - LEGO Affiliate access (programme seeded inactive)
-- Replace all `example.invalid` product URLs
 - Production `AFFILIATE_REDIRECT_BASE_URL=https://orbitwithben.com/go` + DNS/hosting for redirects (or proxy to Content Ops)
+
+**Go-live helpers (in-repo):** see `docs/AFFILIATE_GO_LIVE.md`
+
+```bash
+npm run affiliate:apply-urls   # public destination URLs (no affiliate IDs)
+npm run affiliate:verify       # readiness checklist on /affiliate + CLI
+```

@@ -2,7 +2,9 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { getAffiliateDashboardSummary } from "@/lib/affiliate/analytics";
 import { getAffiliateGoalsPanel } from "@/lib/affiliate/goals-service";
+import { getAffiliateGoLiveReport } from "@/lib/affiliate/go-live-service";
 import type { GoalsPaceStatus } from "@/lib/affiliate/goals";
+import { AffiliateApplyUrlsButton } from "@/components/affiliate/AffiliateApplyUrlsButton";
 
 export const dynamic = "force-dynamic";
 
@@ -65,9 +67,10 @@ function formatRange(startIso: string, endIso: string): string {
 }
 
 export default async function AffiliateDashboardPage() {
-  const [data, goals] = await Promise.all([
+  const [data, goals, goLive] = await Promise.all([
     getAffiliateDashboardSummary(),
     getAffiliateGoalsPanel(),
+    getAffiliateGoLiveReport(),
   ]);
   const warnings: string[] = [];
   if (data.warnings.videosMissingLinks > 0) {
@@ -141,6 +144,49 @@ export default async function AffiliateDashboardPage() {
           </Link>
         </div>
       </div>
+
+      <section className="card-panel space-y-4 p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="font-[family-name:var(--font-orbit-display)] text-xl text-[#F5E8D2]">
+              Go-live readiness
+            </h2>
+            <p className="mt-1 text-sm text-[#F5E8D2]/55">{goLive.summary}</p>
+            <p className="mt-2 text-xs text-[#F5E8D2]/45">
+              Tracked redirects:{" "}
+              {goLive.readyForTrackedRedirects ? "ready" : "not ready"} · Paid traffic:{" "}
+              {goLive.readyForPaidTraffic ? "ready" : "waiting on programme IDs"}
+            </p>
+          </div>
+          <AffiliateApplyUrlsButton />
+        </div>
+        <ul className="space-y-2">
+          {goLive.checks.map((c) => (
+            <li
+              key={c.id}
+              className="flex flex-wrap items-start justify-between gap-2 rounded-xl border border-white/5 bg-white/3 px-4 py-3 text-sm"
+            >
+              <div>
+                <div className="text-[#F5E8D2]">{c.label}</div>
+                <div className="mt-1 text-xs text-[#F5E8D2]/55">{c.detail}</div>
+              </div>
+              <span
+                className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] uppercase tracking-[0.14em] ${
+                  c.status === "pass"
+                    ? "border-[#5AEE8A]/30 text-[#5AEE8A]"
+                    : c.status === "warn"
+                      ? "border-[#FFC85A]/30 text-[#FFC85A]"
+                      : c.status === "manual"
+                        ? "border-white/20 text-[#F5E8D2]/60"
+                        : "border-[#FF7A24]/35 text-[#FF7A24]"
+                }`}
+              >
+                {c.status}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="card-panel space-y-5 p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">

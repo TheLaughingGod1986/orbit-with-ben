@@ -27,6 +27,8 @@
     "diagnose:youtube": "tsx scripts/diagnose-youtube-growth.ts",
     "gate:episode": "tsx scripts/gate-episode.ts",
     "brief:next": "tsx scripts/next-episode-brief.ts",
+    "affiliate:verify": "tsx scripts/affiliate-go-live.ts",
+    "affiliate:apply-urls": "tsx scripts/affiliate-go-live.ts --apply-urls",
     "verify:growth-v2": "vitest run tests/growth-system-v2.test.ts tests/episode-ops-v2.test.ts && tsx scripts/diagnose-youtube-growth.ts --file content/samples/json/youtube_growth_metrics_sample.json && tsx scripts/next-episode-brief.ts --file content/samples/json/youtube_growth_metrics_sample.json --out ../docs/NEXT_EPISODE_BRIEF.md"
   },
   "prisma": {

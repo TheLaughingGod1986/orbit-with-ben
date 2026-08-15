@@ -6,6 +6,7 @@ import { CONTENT_RULES } from "../src/config/content-rules";
 import { scoreClipQuality } from "../src/lib/content/quality-score";
 import { generatePlatformCopy } from "../src/lib/platforms/generate-platform-copy";
 import { scheduleClipAcrossPlatforms, londonDateTime } from "../src/lib/publishing/schedule";
+import { liveUrlForSlug } from "../src/lib/affiliate/live-product-urls";
 
 const prisma = new PrismaClient();
 
@@ -494,15 +495,22 @@ async function seedAffiliateCatalog() {
     priority?: number;
     active?: boolean;
   }) {
+    const live = liveUrlForSlug(args.slug);
+    const destinationUrl =
+      live?.destinationUrl || `https://example.invalid/dest/${args.slug}`;
+    const affiliateUrl =
+      live?.affiliateUrl ||
+      live?.destinationUrl ||
+      `https://example.invalid/aff/${args.slug}?ref=PLACEHOLDER`;
     const product = await prisma.affiliateProduct.create({
       data: {
         affiliateProgramId: args.programId,
         name: args.name,
         slug: args.slug,
         description: args.description,
-        // Placeholder development URLs only — never invent real affiliate IDs
-        destinationUrl: `https://example.invalid/dest/${args.slug}`,
-        affiliateUrl: `https://example.invalid/aff/${args.slug}?ref=PLACEHOLDER`,
+        // Public destination URLs from live-product-urls.ts — programme tags from env at /go
+        destinationUrl,
+        affiliateUrl,
         category: args.category,
         price: args.price,
         currency: "GBP",
@@ -512,7 +520,9 @@ async function seedAffiliateCatalog() {
         featured: args.featured ?? false,
         evergreen: args.evergreen ?? false,
         priority: args.priority ?? 0,
-        notes: "Seed placeholder — replace with real programme URLs after account approval.",
+        notes:
+          live?.notes ||
+          "Seed placeholder — replace with real programme URLs after account approval.",
       },
     });
     for (const t of args.tags) {
