@@ -1,5 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 
+/**
+ * Prisma client singleton — safe for Vercel serverless.
+ * Cache on globalThis so warm lambdas reuse one client (avoids connection storms).
+ */
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
 export const prisma =
@@ -8,6 +12,4 @@ export const prisma =
     log: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
   });
 
-if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prisma = prisma;
-}
+globalForPrisma.prisma = prisma;

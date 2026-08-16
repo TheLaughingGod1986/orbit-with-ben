@@ -2,10 +2,9 @@ import { prisma } from "@/lib/storage/prisma";
 import { getEnv } from "@/lib/env";
 import {
   evaluateAffiliateGoLive,
-  isPlaceholderAffiliateUrl,
   type GoLiveReport,
 } from "./go-live";
-import { LIVE_PRODUCT_URLS } from "./live-product-urls";
+import { isPlaceholderAffiliateUrl } from "./live-product-urls";
 import { getAmazonAssociateTag, getBrilliantAffiliateId, getAffiliateRedirectBaseUrl } from "./urls";
 
 export async function getAffiliateGoLiveReport(opts?: {
@@ -34,11 +33,12 @@ export async function getAffiliateGoLiveReport(opts?: {
       }),
     ]);
 
-  const placeholderUrlCount = activeProducts.filter(
-    (p) =>
-      isPlaceholderAffiliateUrl(p.destinationUrl) ||
-      isPlaceholderAffiliateUrl(p.affiliateUrl),
-  ).length;
+  // Empty affiliateUrl is intentional (tag stamped at /go). Only flag real placeholders.
+  const placeholderUrlCount = activeProducts.filter((p) => {
+    if (isPlaceholderAffiliateUrl(p.destinationUrl)) return true;
+    const aff = p.affiliateUrl?.trim() || "";
+    return aff.length > 0 && isPlaceholderAffiliateUrl(aff);
+  }).length;
 
   let goRouteReachable: boolean | null = null;
   if (opts?.probeGoRoute) {
@@ -63,7 +63,6 @@ export async function getAffiliateGoLiveReport(opts?: {
 async function probeGoRedirectBase(): Promise<boolean> {
   try {
     const base = getAffiliateRedirectBaseUrl().replace(/\/$/, "");
-    // Probe without a product slug — expect 404 JSON from app, or any HTTP response from host
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 6_000);
     try {
@@ -72,7 +71,6 @@ async function probeGoRedirectBase(): Promise<boolean> {
         redirect: "manual",
         signal: controller.signal,
       });
-      // Any response from our host counts (404 is fine — means /go is mounted)
       return res.status > 0;
     } finally {
       clearTimeout(timer);
@@ -80,49 +78,4 @@ async function probeGoRedirectBase(): Promise<boolean> {
   } catch {
     return false;
   }
-}
-
-/**
- * Apply LIVE_PRODUCT_URLS onto matching AffiliateProduct rows.
- * Does not invent affiliate IDs — Amazon/Brilliant tags stay in env.
- */
-export async function applyLiveProductUrls(opts?: {
-  dryRun?: boolean;
-}): Promise<{ updated: string[]; skipped: string[]; missing: string[] }> {
-  const updated: string[] = [];
-  const skipped: string[] = [];
-  const missing: string[] = [];
-
-  for (const spec of LIVE_PRODUCT_URLS) {
-    const product = await prisma.affiliateProduct.findUnique({
-      where: { slug: spec.slug },
-    });
-    if (!product) {
-      missing.push(spec.slug);
-      continue;
-    }
-    const affiliateUrl = spec.affiliateUrl || spec.destinationUrl;
-    const already =
-      product.destinationUrl === spec.destinationUrl &&
-      product.affiliateUrl === affiliateUrl &&
-      !isPlaceholderAffiliateUrl(product.destinationUrl);
-    if (already) {
-      skipped.push(spec.slug);
-      continue;
-    }
-    if (!opts?.dryRun) {
-      await prisma.affiliateProduct.update({
-        where: { id: product.id },
-        data: {
-          destinationUrl: spec.destinationUrl,
-          affiliateUrl,
-          notes: spec.notes,
-          urlHealthStatus: "UNKNOWN",
-        },
-      });
-    }
-    updated.push(spec.slug);
-  }
-
-  return { updated, skipped, missing };
 }

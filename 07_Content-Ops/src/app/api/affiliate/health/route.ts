@@ -5,6 +5,7 @@ import {
   shouldCheckUrl,
   stubUrlHealthChecker,
 } from "@/lib/affiliate/health";
+import { resolveAffiliateRedirectBase } from "@/lib/affiliate/urls";
 
 export const dynamic = "force-dynamic";
 
@@ -37,7 +38,11 @@ export async function POST(request: NextRequest) {
 
   const results = [];
   for (const product of toCheck) {
-    const result = await checker.check(product.affiliateUrl);
+    const checkUrl = resolveAffiliateRedirectBase({
+      destinationUrl: product.destinationUrl,
+      affiliateUrl: product.affiliateUrl,
+    });
+    const result = await checker.check(checkUrl);
     await prisma.affiliateUrlHealthCheck.create({
       data: {
         affiliateProductId: product.id,

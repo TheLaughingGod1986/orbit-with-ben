@@ -4,6 +4,7 @@ import {
   normalizeAffiliateClickSource,
   type AffiliateClickSource,
 } from "./social-channels";
+import { isPlaceholderAffiliateUrl } from "./live-product-urls";
 
 /**
  * Resolve affiliate IDs from env / admin config.
@@ -11,6 +12,19 @@ import {
  */
 export function getAmazonAssociateTag(): string | null {
   return process.env.AMAZON_ASSOCIATE_TAG?.trim() || null;
+}
+
+/**
+ * Merchant URL used for /go 302. Prefer stored affiliateUrl when it is a real URL;
+ * otherwise build from destinationUrl (tag stamped by applyProgrammeAffiliateId).
+ */
+export function resolveAffiliateRedirectBase(args: {
+  destinationUrl: string;
+  affiliateUrl?: string | null;
+}): string {
+  const aff = args.affiliateUrl?.trim() || "";
+  if (aff && !isPlaceholderAffiliateUrl(aff)) return aff;
+  return args.destinationUrl;
 }
 
 export function getBrilliantAffiliateId(): string | null {
@@ -28,7 +42,7 @@ export function getAffiliateRedirectBaseUrl(): string {
   }
 }
 
-/** Production gear redirect: https://orbitwithben.com/go/{slug} */
+/** Public tracked redirect: `${APP_BASE_URL}/go/{slug}` (or AFFILIATE_REDIRECT_BASE_URL). */
 export function buildOrbitRedirectUrl(productSlug: string): string {
   return `${getAffiliateRedirectBaseUrl()}/${encodeURIComponent(productSlug)}`;
 }

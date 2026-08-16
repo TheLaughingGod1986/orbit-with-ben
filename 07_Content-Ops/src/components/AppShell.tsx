@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { MobileNav, type NavItem } from "@/components/MobileNav";
 
-const NAV = [
+const NAV: NavItem[] = [
   { href: "/", label: "Overview" },
   { href: "/pipeline", label: "Pipeline" },
-  { href: "/videos", label: "Long-form" },
+  { href: "/videos", label: "Films" },
   { href: "/calendar", label: "Calendar" },
   { href: "/analytics", label: "Analytics" },
   { href: "/affiliate", label: "Affiliate" },
@@ -15,16 +16,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-white/5 bg-[#0a0c12]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
-          <Link href="/" className="group flex items-baseline gap-3">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
+          <Link href="/" className="group flex min-w-0 items-baseline gap-2 sm:gap-3">
             <span className="font-[family-name:var(--font-orbit-display)] text-2xl tracking-tight text-[#F5E8D2]">
               ORBIT
             </span>
-            <span className="text-xs uppercase tracking-[0.22em] text-[#FF7A24]">
+            <span className="truncate text-[0.65rem] uppercase tracking-[0.22em] text-[#FF7A24] sm:text-xs">
               Content Ops
             </span>
           </Link>
-          <nav className="flex flex-wrap items-center gap-1 text-sm text-[#F5E8D2]/75">
+          <nav className="hidden flex-wrap items-center gap-1 text-sm text-[#F5E8D2]/75 md:flex">
             {NAV.map((item) => (
               <Link
                 key={item.href}
@@ -35,9 +36,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
           </nav>
+          <MobileNav items={NAV} />
         </div>
       </header>
-      <main className="mx-auto max-w-7xl px-6 py-8">{children}</main>
+      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">{children}</main>
     </div>
   );
 }

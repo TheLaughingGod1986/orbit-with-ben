@@ -28,7 +28,8 @@ export const affiliateProductInputSchema = z.object({
   slug: z.string().min(1).regex(/^[a-z0-9-]+$/),
   description: z.string().optional().nullable(),
   destinationUrl: z.string().url(),
-  affiliateUrl: z.string().url(),
+  /** Empty allowed — /go builds from destinationUrl + AMAZON_ASSOCIATE_TAG. */
+  affiliateUrl: z.union([z.string().url(), z.literal("")]).default(""),
   imageUrl: z.string().url().optional().nullable().or(z.literal("")),
   category: z.string().min(1),
   subcategory: z.string().optional().nullable(),

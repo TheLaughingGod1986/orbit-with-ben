@@ -2,6 +2,7 @@ import { prisma } from "@/lib/storage/prisma";
 import {
   applyProgrammeAffiliateId,
   buildTrackedAffiliateUrl,
+  resolveAffiliateRedirectBase,
 } from "./urls";
 import {
   normalizeAffiliateClickSource,
@@ -63,8 +64,13 @@ export async function recordAffiliateClickAndResolve(input: RecordClickInput): P
     campaign = video?.slug ?? null;
   }
 
+  // Prefer destination when affiliateUrl is empty/placeholder — tag from env at redirect.
+  const baseMerchantUrl = resolveAffiliateRedirectBase({
+    destinationUrl: product.destinationUrl,
+    affiliateUrl: product.affiliateUrl,
+  });
   const withProgrammeId = applyProgrammeAffiliateId(
-    product.affiliateUrl,
+    baseMerchantUrl,
     product.affiliateProgram.slug,
   );
   const destinationUrl = buildTrackedAffiliateUrl({

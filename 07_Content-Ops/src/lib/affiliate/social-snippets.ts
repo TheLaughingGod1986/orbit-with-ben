@@ -23,15 +23,14 @@ import {
 } from "./social-copy-rules";
 import { assertAffiliateSafeSocialCopy } from "./social-copy";
 import {
-  countCaptionLines,
   firstNonEmptyLine,
-  lastNonEmptyLine,
   renderFacebookPageTemplate,
   renderInstagramFeedTemplate,
   renderInstagramReelsTemplate,
   renderThreadsTemplate,
   SOCIAL_SOFT_LINES,
   type SocialSnippetPostStyle,
+  FIXTURE_JWST_LIVE,
 } from "./social-snippet-templates";
 import {
   facebookPageCaptionViolations,
@@ -85,6 +84,71 @@ export type AffiliateSocialSnippet = {
   /** Template style used (Facebook / IG feed). */
   postStyle?: SocialSnippetPostStyle;
 };
+
+function isJwstLivePack(input: AffiliateSocialSnippetInput): boolean {
+  return (
+    input.postStyle !== "how_to" &&
+    (/jwst|james webb|cosmic dawn|jades/i.test(
+      `${input.topic} ${input.videoTitle} ${input.hook || ""}`,
+    ) ||
+      input.productSlug === FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady ||
+      input.productSlug === FIXTURE_JWST_LIVE.softMentionProductSlug)
+  );
+}
+
+/** Resolve JWST soft-mention product for /go + UTMs — never observing guidebook or telescope. */
+function jwstEffectiveProduct(input: AffiliateSocialSnippetInput): {
+  productSlug: string;
+  productLabel: string;
+  preferYouTubePointer: boolean;
+  notes: string[];
+} {
+  const forbidden = (
+    FIXTURE_JWST_LIVE.forbidProductSlugs as readonly string[]
+  ).includes(input.productSlug);
+  const readySlug = FIXTURE_JWST_LIVE.softMentionProductSlug;
+  const intendedSlug = FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady;
+  const notes: string[] = [];
+
+  if (forbidden) {
+    notes.push(
+      `JWST live pack rejects ${input.productSlug} (never telescope / Turn Left at Orion / LEGO).`,
+    );
+  }
+
+  if (readySlug) {
+    return {
+      productSlug: readySlug,
+      productLabel:
+        FIXTURE_JWST_LIVE.softMentionProductLabel || intendedSlug,
+      preferYouTubePointer: input.preferYouTubePointer !== false,
+      notes,
+    };
+  }
+
+  // jwst-book is the only allowed /go door for JWST (seeded topic book).
+  // Soft-mention copy stays under-the-film; default door is still YouTube unless
+  // the caller passes productSlug=jwst-book with preferYouTubePointer=false.
+  if (!forbidden && input.productSlug === intendedSlug) {
+    notes.push(`JWST desk book door: /go/${intendedSlug}`);
+    return {
+      productSlug: intendedSlug,
+      productLabel: input.productLabel || intendedSlug,
+      preferYouTubePointer: input.preferYouTubePointer !== false,
+      notes,
+    };
+  }
+
+  notes.push(
+    `JWST soft-mention /go/ slug is ${intendedSlug} — wrong/forbidden slug remapped; door is YouTube under the film.`,
+  );
+  return {
+    productSlug: intendedSlug,
+    productLabel: intendedSlug,
+    preferYouTubePointer: true,
+    notes,
+  };
+}
 
 function truncate(s: string, max: number): string {
   if (s.length <= max) return s;
@@ -159,6 +223,7 @@ function buildSnippetForPlatform(
   input: AffiliateSocialSnippetInput,
 ): AffiliateSocialSnippet {
   const postStyle: SocialSnippetPostStyle = input.postStyle || "thursday_film";
+  const jwstLive = isJwstLivePack(input);
   const gate = shouldIncludeAffiliateSoftMention({
     platform,
     hasNaturalObject: input.hasNaturalObject,
@@ -195,21 +260,64 @@ function buildSnippetForPlatform(
     notes.push(`Affiliate soft mention skipped (${gate.reason}).`);
   }
 
+  // JWST pictures-from-space: explainer soft mention — never observing guidebook / telescope
+  let effectiveInput = input;
+  if (jwstLive) {
+    const jwstProduct = jwstEffectiveProduct(input);
+    notes.push(...jwstProduct.notes);
+    effectiveInput = {
+      ...input,
+      productSlug: jwstProduct.productSlug,
+      productLabel: jwstProduct.productLabel,
+      preferYouTubePointer: jwstProduct.preferYouTubePointer,
+    };
+  }
+
   const door = resolveDoor({
-    input,
+    input: effectiveInput,
     platform,
     includeAffiliateMention,
   });
 
+  // Never emit forbidden /go/ slugs on JWST captions
+  if (
+    jwstLive &&
+    door.doorIsGo &&
+    (FIXTURE_JWST_LIVE.forbidProductSlugs as readonly string[]).some((s) =>
+      door.url.includes(`/go/${s}`),
+    )
+  ) {
+    includeAffiliateMention = false;
+    skipReason = "video_not_about_product";
+    notes.push("Blocked forbidden JWST /go/ slug — fell back without merchant door.");
+  }
+
   const wonder = wonderLine(input);
   let caption = "";
+
+  if (jwstLive) {
+    notes.push(
+      "JWST live pack: soft mention = “the one explainer I used under the film” (never telescope / Turn Left at Orion / LEGO).",
+      `Book /go/ slug: ${FIXTURE_JWST_LIVE.softMentionGoSlugWhenReady} only — default door YouTube under the film.`,
+      "Never auto-post — approvedForPublish stays false until editor approves.",
+    );
+    if (platform === "threads") {
+      notes.push(
+        `Threads: hold until ${FIXTURE_JWST_LIVE.threadsEarliestPublishLabel}.`,
+      );
+    }
+  }
 
   switch (platform) {
     case "facebook_page":
       caption = renderFacebookPageTemplate({
         style: postStyle,
-        wonder,
-        body: postStyle === "thursday_film" ? bodyLine(input) : null,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
+        body: jwstLive
+          ? FIXTURE_JWST_LIVE.bodyFacebook
+          : postStyle === "thursday_film"
+            ? bodyLine(input)
+            : null,
         doorUrl: door.url,
         hasFilmThisWeek: door.hasFilm,
         includeSoftMention: includeAffiliateMention,
@@ -219,17 +327,22 @@ function buildSnippetForPlatform(
     case "instagram_feed":
       caption = renderInstagramFeedTemplate({
         style: postStyle,
-        wonder,
-        body: postStyle === "thursday_film" ? bodyLine(input) : null,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
+        body: jwstLive
+          ? FIXTURE_JWST_LIVE.bodyFacebook
+          : postStyle === "thursday_film"
+            ? bodyLine(input)
+            : null,
         doorUrl: door.url,
         hasFilmThisWeek: door.hasFilm,
         includeSoftMention: includeAffiliateMention,
+        jwstLive: jwstLive && includeAffiliateMention,
       });
       notes.push(platformNotes(platform));
       break;
     case "instagram_reels":
       caption = renderInstagramReelsTemplate({
-        wonder,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
         doorUrl: door.url,
         includeSoftMention: includeAffiliateMention,
         doorIsGo: door.doorIsGo,
@@ -238,10 +351,12 @@ function buildSnippetForPlatform(
       break;
     case "threads":
       caption = renderThreadsTemplate({
-        wonder,
+        wonder: jwstLive ? FIXTURE_JWST_LIVE.wonder : wonder,
+        body: jwstLive ? FIXTURE_JWST_LIVE.bodyThreads : null,
         doorUrl: door.url,
         includeSoftMention: includeAffiliateMention,
         doorIsGo: door.doorIsGo,
+        jwstLive: jwstLive && includeAffiliateMention,
       });
       notes.push(platformNotes(platform));
       break;
@@ -352,9 +467,14 @@ export {
   countCaptionLines,
   firstNonEmptyLine,
   lastNonEmptyLine,
+  FIXTURE_JWST_LIVE,
+  FIXTURE_TELESCOPE_OBSERVING_HELD,
   FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM,
   FIXTURE_FACEBOOK_PAGE_HOWTO,
   FIXTURE_COMMENT_REPLY_TELESCOPE,
+  renderJwstLiveCaption,
+  renderTelescopeObservingHeldCaption,
+  isJwstThreadsPublishAllowed,
   renderFacebookPageTemplate,
   renderThreadsTemplate,
   renderInstagramReelsTemplate,

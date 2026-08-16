@@ -9,10 +9,8 @@
  */
 
 import { prisma } from "../src/lib/storage/prisma";
-import {
-  applyLiveProductUrls,
-  getAffiliateGoLiveReport,
-} from "../src/lib/affiliate/go-live-service";
+import { getAffiliateGoLiveReport } from "../src/lib/affiliate/go-live-service";
+import { applyLiveProductUrls } from "../src/lib/affiliate/apply-live-urls";
 
 async function main() {
   const args = process.argv.slice(2);

@@ -7,6 +7,7 @@ import { scoreClipQuality } from "../src/lib/content/quality-score";
 import { generatePlatformCopy } from "../src/lib/platforms/generate-platform-copy";
 import { scheduleClipAcrossPlatforms, londonDateTime } from "../src/lib/publishing/schedule";
 import { liveUrlForSlug } from "../src/lib/affiliate/live-product-urls";
+import { wireTopicBookPlacements } from "../src/lib/affiliate/wire-topic-book-placements";
 
 const prisma = new PrismaClient();
 
@@ -335,8 +336,12 @@ async function main() {
   });
 
   await seedAffiliateCatalog();
-
-  console.log("Seeded Orbit content ops with Will We Ever Meet Aliens? + 4 clips + affiliate catalogue");
+  // One APPROVED DESCRIPTION_PRIMARY topic book per long film (Social Media Manager).
+  // Additive — does not reset. Telescope / Brilliant / LEGO stay unplaced on these films.
+  const wired = await wireTopicBookPlacements({ skipApplyLiveUrls: true });
+  console.log(
+    `Seeded Orbit content ops with Will We Ever Meet Aliens? + 4 clips + affiliate catalogue + ${wired.wired.length} topic-book placements`,
+  );
 }
 
 async function seedAffiliateCatalog() {
@@ -458,7 +463,10 @@ async function seedAffiliateCatalog() {
     "cosmology",
     "aliens",
     "seti",
+    "fermi",
     "exoplanets",
+    "jwst",
+    "europa",
     "kids",
     "beginner",
     "books",
@@ -498,17 +506,19 @@ async function seedAffiliateCatalog() {
     const live = liveUrlForSlug(args.slug);
     const destinationUrl =
       live?.destinationUrl || `https://example.invalid/dest/${args.slug}`;
+    // Prefer empty affiliateUrl — /go stamps AMAZON_ASSOCIATE_TAG onto destination.
+    // Fall back to destination when live; placeholders only when no live spec.
     const affiliateUrl =
-      live?.affiliateUrl ||
-      live?.destinationUrl ||
-      `https://example.invalid/aff/${args.slug}?ref=PLACEHOLDER`;
+      live?.affiliateUrl ??
+      (live?.destinationUrl && !/example\.invalid/i.test(live.destinationUrl)
+        ? ""
+        : `https://example.invalid/aff/${args.slug}?ref=PLACEHOLDER`);
     const product = await prisma.affiliateProduct.create({
       data: {
         affiliateProgramId: args.programId,
-        name: args.name,
+        name: live?.name || args.name,
         slug: args.slug,
-        description: args.description,
-        // Public destination URLs from live-product-urls.ts — programme tags from env at /go
+        description: live?.description || args.description,
         destinationUrl,
         affiliateUrl,
         category: args.category,
@@ -516,16 +526,17 @@ async function seedAffiliateCatalog() {
         currency: "GBP",
         estimatedCommission: args.estimatedCommission,
         commissionType: "PERCENTAGE",
-        active: args.active ?? true,
+        active: live?.active ?? args.active ?? true,
         featured: args.featured ?? false,
         evergreen: args.evergreen ?? false,
         priority: args.priority ?? 0,
         notes:
           live?.notes ||
-          "Seed placeholder — replace with real programme URLs after account approval.",
+          "TODO: confirm a live amazon.co.uk ASIN before go-live. Do not invent an ASIN. Tag from AMAZON_ASSOCIATE_TAG at /go.",
       },
     });
-    for (const t of args.tags) {
+    const tags = live?.tags || args.tags;
+    for (const t of tags) {
       if (!tagIds[t]) continue;
       await prisma.affiliateProductTag.create({
         data: { productId: product.id, tagId: tagIds[t] },
@@ -535,10 +546,11 @@ async function seedAffiliateCatalog() {
   }
 
   await addProduct({
-    programId: retailer.id,
-    name: "Beginner telescope",
+    programId: amazon.id,
+    name: "Celestron FirstScope (Cometron 76)",
     slug: "beginner-telescope",
-    description: "A practical first telescope for clear nights — Orbit evergreen recommendation.",
+    description:
+      "Celestron FirstScope tabletop Dobsonian — a practical first telescope for clear nights.",
     category: "Beginner telescopes",
     tags: ["telescope", "beginner", "astronomy"],
     price: 179,
@@ -561,11 +573,12 @@ async function seedAffiliateCatalog() {
   });
   await addProduct({
     programId: amazon.id,
-    name: "Beginner astronomy book",
+    name: "Turn Left at Orion",
     slug: "beginner-astronomy-book",
-    description: "Calm introductory astronomy reading for curious adults.",
+    description:
+      "Consolmagno & Davis — hundreds of night-sky objects for a home telescope. Orbit’s beginner desk book.",
     category: "Astronomy books",
-    tags: ["books", "beginner", "astronomy"],
+    tags: ["books", "astronomy", "beginner", "telescope"],
     price: 14.99,
     estimatedCommission: 0.6,
     evergreen: true,
@@ -607,6 +620,84 @@ async function seedAffiliateCatalog() {
   });
   await addProduct({
     programId: amazon.id,
+    name: "Where Is Everybody? — Fermi Paradox (Stephen Webb)",
+    slug: "fermi-paradox-book",
+    description:
+      "Stephen Webb — seventy-five solutions to the Fermi Paradox. The desk book for the silence.",
+    category: "Space books",
+    tags: ["books", "fermi", "aliens", "seti", "astronomy"],
+    price: 29.99,
+    estimatedCommission: 0.9,
+    featured: false,
+    priority: 6,
+  });
+  await addProduct({
+    programId: amazon.id,
+    name: "Webb’s Universe (Maggie Aderin-Pocock)",
+    slug: "jwst-book",
+    description:
+      "Maggie Aderin-Pocock — Webb’s images and what they reveal about cosmic history. A book, not a backyard telescope.",
+    category: "Space books",
+    tags: ["books", "jwst", "nasa", "astronomy"],
+    price: 25,
+    estimatedCommission: 0.8,
+    featured: false,
+    priority: 6,
+  });
+  await addProduct({
+    programId: amazon.id,
+    name: "A Brief History of Black Holes (Becky Smethurst)",
+    slug: "black-hole-book",
+    description:
+      "Dr Becky Smethurst — how we know black holes are real, without the horror-story fog.",
+    category: "Space books",
+    tags: ["books", "black-hole", "physics", "cosmology"],
+    price: 10.99,
+    estimatedCommission: 0.4,
+    featured: false,
+    priority: 7,
+  });
+  await addProduct({
+    programId: amazon.id,
+    name: "The End of Everything (Katie Mack)",
+    slug: "cosmology-end-book",
+    description:
+      "Katie Mack — five astrophysical endings for the universe, written with wit and clear physics.",
+    category: "Space books",
+    tags: ["books", "cosmology", "physics"],
+    price: 10.89,
+    estimatedCommission: 0.4,
+    featured: false,
+    priority: 6,
+  });
+  await addProduct({
+    programId: amazon.id,
+    name: "The Planet Factory (Elizabeth Tasker)",
+    slug: "exoplanet-book",
+    description:
+      "Elizabeth Tasker — exoplanets and the search for a second Earth, from formation to alien landscapes.",
+    category: "Space books",
+    tags: ["books", "exoplanets", "astronomy"],
+    price: 12.99,
+    estimatedCommission: 0.5,
+    featured: false,
+    priority: 6,
+  });
+  await addProduct({
+    programId: amazon.id,
+    name: "Alien Oceans (Kevin Hand)",
+    slug: "europa-icy-moons-book",
+    description:
+      "Kevin Hand — the search for life in the ocean worlds of Europa and the outer solar system.",
+    category: "Space books",
+    tags: ["books", "europa", "astronomy", "nasa"],
+    price: 17.99,
+    estimatedCommission: 0.6,
+    featured: false,
+    priority: 5,
+  });
+  await addProduct({
+    programId: amazon.id,
     name: "Space LEGO",
     slug: "space-lego",
     description: "Buildable spacecraft sets for kids and nostalgia adults.",
@@ -615,6 +706,7 @@ async function seedAffiliateCatalog() {
     price: 49.99,
     estimatedCommission: 1.5,
     priority: 1,
+    active: false,
   });
   await addProduct({
     programId: retailer.id,

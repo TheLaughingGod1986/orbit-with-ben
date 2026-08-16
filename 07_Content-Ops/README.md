@@ -4,16 +4,21 @@ Local multi-platform distribution + autopublish dashboard for **Orbit with Ben**
 
 ## Quick start
 
+Requires **Postgres** (local or hosted). SQLite is no longer supported.
+
 ```bash
 cp .env.example .env
+# set DATABASE_URL + DIRECT_URL (DIRECT_URL may equal DATABASE_URL for non-pooled local Postgres)
 # set ORBIT_TOKEN_ENCRYPTION_KEY=$(openssl rand -base64 32)
 npm install
-npx prisma migrate dev
+npx prisma migrate deploy   # or: npm run db:migrate
 npm run db:seed
 npm run dev:all
 ```
 
 Open http://localhost:3000 — connect accounts at `/settings/connections`.
+
+Production on Vercel: see `docs/VERCEL_DEPLOY.md` (Root Directory = `07_Content-Ops`).
 
 ## Scripts
 
@@ -64,9 +69,11 @@ Integrated affiliate programmes, products, video matching, `/go/{slug}` click tr
 
 - Docs: `docs/AFFILIATE_MONETISATION_SYSTEM.md` · go-live: `docs/AFFILIATE_GO_LIVE.md`
 - UI: `/affiliate` · `/affiliate/products` · `/affiliate/programs` · `/affiliate/opportunities`
-- Env: `AMAZON_ASSOCIATE_TAG`, `BRILLIANT_AFFILIATE_ID`, `AFFILIATE_REDIRECT_BASE_URL`
-- CLI: `npm run affiliate:apply-urls` · `npm run affiliate:verify`
+- Env: `AMAZON_ASSOCIATE_TAG` (set in operator env only — see affiliate docs; never commit), `BRILLIANT_AFFILIATE_ID`, `AFFILIATE_REDIRECT_BASE_URL`
+- CLI: `npm run affiliate:verify` · `npm run affiliate:apply-urls` · `npm run affiliate:wire-topic-books`
 - Philosophy: relevance before revenue — card ≤4 candidates; description Auditor-capped
+- Social (Threads / Instagram / Facebook Page): YouTube or `/go/` URLs only — never raw amazon.co.uk
+- LEGO programme + `space-lego` product stay inactive
 
 ## Scope
 

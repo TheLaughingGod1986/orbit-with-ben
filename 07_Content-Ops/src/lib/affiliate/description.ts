@@ -298,7 +298,7 @@ export function appendAffiliateSectionToDescription(
     }
   }
 
-  let body = stripLeadingDisclosure(args.description.trimEnd());
+  const body = stripLeadingDisclosure(args.description.trimEnd());
 
   for (const link of uniqueLinks) {
     const go = buildOrbitRedirectUrl(link.productSlug);

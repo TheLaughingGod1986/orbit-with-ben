@@ -70,7 +70,10 @@ export const CANONICAL_AFFILIATE_TAGS = [
   "cosmology",
   "aliens",
   "seti",
+  "fermi",
   "exoplanets",
+  "jwst",
+  "europa",
   "kids",
   "beginner",
   "books",
@@ -99,6 +102,8 @@ export type VideoMatchInput = {
   chapterTitles?: string[];
   tags?: string[];
   episodeType?: string | null;
+  /** Used to resolve film → topic-book wiring for Social Media Manager. */
+  youtubeVideoId?: string | null;
 };
 
 export type ProductMatchInput = {

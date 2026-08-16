@@ -34,7 +34,7 @@ yarn-error.log*
 .env*
 !.env.example
 
-# local sqlite
+# local sqlite leftovers (legacy — production uses Postgres)
 /prisma/*.db
 /prisma/*.db-journal
 /content/exports/

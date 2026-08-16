@@ -9,6 +9,7 @@
  */
 
 import type { ProductMatchInput, VideoMatchInput } from "./types";
+import { isWiredTopicBookForVideo } from "./film-topic-book-map";
 
 /** Candidates visible on the video Affiliate Monetisation card (editor options). */
 export const MAX_AFFILIATE_CARD_CANDIDATES = 4;
@@ -115,7 +116,7 @@ const HOW_TO_TITLE_RE =
   /\b(how\s+to|tonight|telescope|find\s+jupiter|look\s+through|stargazing\s+guide|beginner.?s?\s+guide\s+to\s+the\s+sky)\b/i;
 
 const BOOK_OR_PAPER_RE =
-  /\b(book|paper|journal|atlas|sky\s*atlas|jades|arxiv|study|essay)\b/i;
+  /\b(books?|paper|journal|atlas|sky\s*atlas|jades|arxiv|study|essay)\b/i;
 
 const SKY_APP_RE = /\b(app|planetarium|stellarium|sky\s*guide|star\s*walk)\b/i;
 
@@ -186,6 +187,9 @@ export function inferNamedInVideo(
   product: EditorialTrustProductInput,
 ): boolean {
   if (typeof product.namedInVideo === "boolean") return product.namedInVideo;
+
+  // Editorial programme: one desk book wired per long-form film (Social Media Manager).
+  if (isWiredTopicBookForVideo(video, product.slug)) return true;
 
   const corpus = normalize(videoCorpus(video));
   if (!corpus) return false;

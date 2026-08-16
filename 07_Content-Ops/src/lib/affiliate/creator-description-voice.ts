@@ -61,6 +61,10 @@ export const CREATOR_BOOK_TOPIC_FIRST_LINES: Record<string, string> = {
   starship: "How a rocket actually leaves Earth, without the press-conference fog.",
   cosmology:
     "The universe at the largest scale, including the parts we still cannot close.",
+  fermi:
+    "Seventy-five ways to read the silence — the desk book for the Fermi Paradox.",
+  europa:
+    "Oceans under the ice of Europa and the outer moons — habitability without a backyard scope.",
   exoplanets:
     "A film can open a question. A good book sits with the uncertainty longer. This is the one I’d keep on the desk after this episode.",
 };
@@ -104,6 +108,9 @@ export function buildCreatorDescriptionTemplateMap(
     books_kids: CREATOR_BOOK_TOPIC_FIRST_LINES.kids,
     books_starship: CREATOR_BOOK_TOPIC_FIRST_LINES.starship,
     books_cosmology: CREATOR_BOOK_TOPIC_FIRST_LINES.cosmology,
+    books_exoplanets: CREATOR_BOOK_TOPIC_FIRST_LINES.exoplanets,
+    books_fermi: CREATOR_BOOK_TOPIC_FIRST_LINES.fermi,
+    books_europa: CREATOR_BOOK_TOPIC_FIRST_LINES.europa,
     // Topic-tuned LEGO
     lego_jwst: CREATOR_LEGO_TOPIC_FIRST_LINES.jwst,
     lego_mars: CREATOR_LEGO_TOPIC_FIRST_LINES.mars,

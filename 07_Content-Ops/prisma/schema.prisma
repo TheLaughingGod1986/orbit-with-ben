@@ -3,8 +3,10 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  /// Direct (non-pooled) URL for migrations. If unset locally, set DIRECT_URL to the same value as DATABASE_URL.
+  directUrl = env("DIRECT_URL")
 }
 
 model LongFormVideo {

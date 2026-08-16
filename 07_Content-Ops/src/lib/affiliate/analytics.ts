@@ -99,10 +99,7 @@ export async function getAffiliateDashboardSummary() {
 
   const highClickZeroConv = await findHighClickZeroConversionProducts();
   const videosMissingLinks = await countHighViewVideosMissingLinks();
-  const bySource = await buildClicksAndRevenueBySource(
-    clicksGroupedBySource,
-    revenueTotal,
-  );
+  const bySource = await buildClicksAndRevenueBySource(clicksGroupedBySource);
 
   return {
     activePrograms,
@@ -132,7 +129,6 @@ export async function getAffiliateDashboardSummary() {
  */
 async function buildClicksAndRevenueBySource(
   clicksGroupedBySource: { source: string | null; _count: number }[],
-  _revenueTotal: number,
 ): Promise<
   { source: string; clicks: number; revenue: number }[]
 > {

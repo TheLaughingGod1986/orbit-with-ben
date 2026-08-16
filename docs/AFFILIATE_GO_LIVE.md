@@ -16,7 +16,7 @@ Or in the dashboard: **Affiliate → Go-live readiness → Apply live destinatio
 
 API: `GET /api/affiliate/go-live` · `POST /api/affiliate/go-live` `{ "action": "apply-urls" }`
 
-Destination URLs come from `src/lib/affiliate/live-product-urls.ts` (Amazon UK / Brilliant / FLO / LEGO **public** pages). **Affiliate tags are never committed** — they are applied at `/go` redirect from env.
+Destination URLs come from `src/lib/affiliate/live-product-urls.ts` (confirmed Amazon UK ASINs + Brilliant / FLO public pages; LEGO stays inactive until programme access). **Affiliate tags are never committed** — they are applied at `/go` redirect from env.
 
 ## What only you can do
 
@@ -43,7 +43,7 @@ Never commit real IDs. Prefer host secrets / Cursor environment secrets.
 ## After first film
 
 - Goals clock starts on first approved placement (or first click if earlier)  
-- Swap Amazon **search** URLs for exact ASINs once editorial locks the product  
+- Keep Amazon destinations on confirmed `amazon.co.uk` ASINs only (no search/category placeholders)  
 - Keep LEGO programme inactive until Affiliate access exists  
 - Shorts stay zero affiliate description links  
 

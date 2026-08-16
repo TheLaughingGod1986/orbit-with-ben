@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import {
-  applyLiveProductUrls,
-  getAffiliateGoLiveReport,
-} from "@/lib/affiliate/go-live-service";
+import { getAffiliateGoLiveReport } from "@/lib/affiliate/go-live-service";
+import { applyLiveProductUrls } from "@/lib/affiliate/apply-live-urls";
 
 export const dynamic = "force-dynamic";
 

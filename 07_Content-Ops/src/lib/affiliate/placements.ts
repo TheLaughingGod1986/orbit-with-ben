@@ -24,6 +24,7 @@ function videoToMatchInput(video: {
   script: string | null;
   primaryKeyword: string | null;
   secondaryKeywords: string | null;
+  youtubeVideoId?: string | null;
 }): VideoMatchInput {
   return {
     id: video.id,
@@ -36,6 +37,7 @@ function videoToMatchInput(video: {
     script: video.script,
     primaryKeyword: video.primaryKeyword,
     secondaryKeywords: video.secondaryKeywords,
+    youtubeVideoId: video.youtubeVideoId,
   };
 }
 

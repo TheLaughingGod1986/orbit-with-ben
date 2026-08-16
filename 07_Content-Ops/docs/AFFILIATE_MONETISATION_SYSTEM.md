@@ -2,6 +2,8 @@
 
 Long-term monetisation platform for **Orbit With Ben**, integrated into Content Ops (`07_Content-Ops/`). Relevance before revenue — never recommend a product solely because it pays commission.
 
+Cursor agents: always-apply named-in-film gate — `.cursor/rules/orbit-affiliate-named-in-film.mdc`.
+
 ## Philosophy
 
 Every recommendation must pass: *Would we still recommend this if there were no commission?*  
@@ -142,9 +144,29 @@ Tracked URLs on social may **only** be the YouTube film URL or an Orbit `/go/{sl
 
 #### Social Media Manager templates
 
-**Facebook Page feed (not Reels)** — 3–5 short lines. First line = wonder. Soft mention never in line 1. Last line = one door (YouTube or `/go/`) so the preview card is us, not a merchant.
+**First live pack — JWST Thursday film** (`FIXTURE_JWST_LIVE`). Soft mention copy: “the one explainer I used under the film.” Default door = YouTube (under the film); approved placement door = `/go/jwst-book` only. **Never** `beginner-astronomy-book` / Turn Left at Orion (observing guidebook) or a telescope. LEGO stays out. Never raw Amazon URLs. Snippets ship with `approvedForPublish: false` — **do not auto-post**.
 
-Thursday film fixture (JWST):
+Threads (only after **Thu 20 Aug 2026 18:00 Europe/London**):
+
+```
+JWST keeps finding galaxies that should not be there yet.
+
+Orbit walks through what the pictures actually show.
+
+Film is up. I left the one explainer I used under it.
+[JWST YouTube URL]
+```
+
+Instagram (same night):
+
+```
+JWST keeps finding galaxies that should not be there yet. Orbit walks through what the pictures actually show, and what they do not.
+
+Full film on YouTube. I left the one explainer I used under it.
+[JWST URL or sticker to that URL]
+```
+
+Facebook Page (Thursday night):
 
 ```
 JWST keeps finding galaxies that should not be there yet.
@@ -152,10 +174,10 @@ JWST keeps finding galaxies that should not be there yet.
 Orbit walks through what the pictures actually show, and what they do not.
 
 Film is up. If you want the one explainer I used, it is under the film.
-[YouTube film URL]
+[JWST URL]
 ```
 
-How-to / telescope fixture:
+**Telescope / observing caption — HELD** (`FIXTURE_TELESCOPE_OBSERVING_HELD`) until a real observing post (not Thursday JWST):
 
 ```
 I spent a night on this patch of sky. This is what it looked like.
@@ -163,18 +185,14 @@ I spent a night on this patch of sky. This is what it looked like.
 If you want that kind of view, I left the one I use under the film. I get a small cut if you grab it.
 
 Watch the film first.
-[YouTube film URL]
+[film URL] or /go/beginner-telescope
 ```
 
-If there is no film that week, the door is `https://orbitwithben.com/go/{slug}` instead (no “Watch the film first”).
+**Never on these posts:** Amazon URL, Shop now, product preview cards, LEGO, more than one brand.
 
-**Instagram feed** — same caption pattern as Facebook Page; one `/go/` or YouTube link.
+**Instagram Reels** — mention stays in the caption (or one reply). Link sticker / bio = `/go/{slug}` or YouTube. Never a merchant sticker.
 
-**Instagram Reels** — mention stays in the caption (or one reply). Link sticker / bio = `/go/{slug}` or YouTube. Never a merchant sticker. Soft line: “I left the one thing under the film.”
-
-**Threads** — thought first, one extra line, one link (YouTube or `/go/{slug}`). No product thread.
-
-**Comment reply** (“what telescope?”) — one honest reply, point to the film description or `/go/telescope`, disclose once, stop. Fixture: `FIXTURE_COMMENT_REPLY_TELESCOPE` / `renderTelescopeCommentReply()`.
+**Comment reply** (“what telescope?”) — one honest reply, point to the film description or `/go/beginner-telescope`, disclose once, stop. Fixture: `FIXTURE_COMMENT_REPLY_TELESCOPE` / `renderTelescopeCommentReply()`.
 
 #### Never on the Facebook Page (generator + tests reject)
 
@@ -194,8 +212,10 @@ Code: `facebookPageCaptionViolations` / `assertFacebookPageCaptionSafe` in `face
 ```ts
 import { generateAffiliateSocialSnippets } from "@/lib/affiliate/social-snippets";
 import {
-  FIXTURE_FACEBOOK_PAGE_THURSDAY_FILM,
-  renderFacebookPageTemplate,
+  FIXTURE_JWST_LIVE,
+  FIXTURE_TELESCOPE_OBSERVING_HELD,
+  renderJwstLiveCaption,
+  isJwstThreadsPublishAllowed,
 } from "@/lib/affiliate/social-snippet-templates";
 import { buildSocialGoUrl, buildSocialYouTubeUrl } from "@/lib/affiliate/urls";
 import { socialPlatformToClickSource } from "@/lib/affiliate/social-channels";
@@ -245,19 +265,69 @@ Migration: `20260815140000_affiliate_monetisation`
 3. Set env IDs (never commit real values):
 
 ```bash
-AMAZON_ASSOCIATE_TAG=your-uk-tag
+AMAZON_ASSOCIATE_TAG=orbitgo-21
 BRILLIANT_AFFILIATE_ID=your-brilliant-id
 AFFILIATE_REDIRECT_BASE_URL=https://orbitwithben.com/go   # optional; defaults to ${APP_BASE_URL}/go
 ```
 
-Seed URLs are `example.invalid` placeholders. Replace product destination/affiliate URLs in `/affiliate/products` after accounts are approved.
+**Never commit** `AMAZON_ASSOCIATE_TAG` (Ben’s live tag is `orbitgo-21` — set it only in the operator’s env / host secrets). `/go/{slug}` stamps `tag=` at redirect time from that env var.
+
+Weekday / daily routines read clicks and conversions from this system (`AffiliateClick` / `AffiliateConversion` / `/affiliate` goals panel).
+
+### Live Amazon UK destinations (additive)
+
+Confirmed product pages live in `src/lib/affiliate/live-product-urls.ts`. Apply without resetting the DB:
+
+```bash
+npm run affiliate:apply-urls
+# or: npm run affiliate:apply-urls -- --dry-run
+```
+
+| Slug | Destination |
+|------|-------------|
+| `beginner-astronomy-book` | Turn Left at Orion (ASIN `1108457568`) |
+| `beginner-telescope` | Celestron Cometron FirstScope 76 (ASIN `B00DV6SBRO`) |
+| `fermi-paradox-book` | Stephen Webb — Where Is Everybody? (ASIN `3319132350`) — Fermi Paradox film |
+| `jwst-book` | Maggie Aderin-Pocock — Webb’s Universe (ASIN `1789295726`) — JWST film (book, not a telescope) |
+| `black-hole-book` | Becky Smethurst — A Brief History of Black Holes (ASIN `1529086744`) |
+| `cosmology-end-book` | Katie Mack — The End of Everything (ASIN `0141989580`) — End of the Universe film |
+| `exoplanet-book` | Elizabeth Tasker — The Planet Factory (ASIN `147291774X`) — Alien Worlds |
+| `europa-icy-moons-book` | Kevin Hand — Alien Oceans (ASIN `0691227284`) — Europa / icy moons |
+| `space-lego` | Inactive stub — LEGO programme stays **INACTIVE**; not for social/descriptions |
+
+Unconfirmed Amazon products (`astronomy-binoculars`, `mars-book`) keep `example.invalid` TODOs until an ASIN is verified — do not invent ASINs. Affiliate URL may be empty; redirect builds from destination + env tag.
+
+Topic books are **Active**, Amazon Associates UK, **not** featured on every video. Do not use `beginner-astronomy-book` / `beginner-telescope` on Fermi / JWST / black-hole / cosmology / exoplanet / Europa films.
+
+Seed URLs for confirmed Amazon products are the live amazon.co.uk pages above. For an existing DB, run `affiliate:apply-urls` (do **not** `db:reset`) — it updates existing rows and **creates** missing verified slugs.
+
+### Film → book DESCRIPTION_PRIMARY (Social Media Manager)
+
+One approved desk book per long-form film. Shorts get **zero** affiliate links. Does **not** publish to YouTube.com — Content Ops description generation + placements only.
+
+```bash
+npm run affiliate:apply-urls
+npm run affiliate:wire-topic-books
+# or: npm run affiliate:wire-topic-books -- --dry-run
+```
+
+| Film | YouTube id | Product slug | /go path |
+|------|------------|--------------|----------|
+| Alien Worlds | `b8-X_FyJnHM` | `exoplanet-book` | `/go/exoplanet-book` |
+| What Happens If You Fall Into a Black Hole? | `3xrxdmaOwJI` | `black-hole-book` | `/go/black-hole-book` |
+| Fermi Paradox | `Mo93x0fxB1Q` | `fermi-paradox-book` | `/go/fermi-paradox-book` |
+| JWST (Thu 20 Aug) | scheduled | `jwst-book` | `/go/jwst-book` |
+| End of the Universe (Thu 27 Aug) | scheduled | `cosmology-end-book` | `/go/cosmology-end-book` |
+| Europa (Thu 3 Sept) | scheduled | `europa-icy-moons-book` | `/go/europa-icy-moons-book` |
+
+Description block: Creator voice · one `/go/{slug}` · disclosure last line · after chapters + subscribe. Never stack Brilliant (not live on these films), telescope, or LEGO.
 
 | Programme | Slug | Notes |
 |-----------|------|-------|
 | Amazon Associates UK | `amazon-associates-uk` | Tag from `AMAZON_ASSOCIATE_TAG` at redirect time |
 | Brilliant | `brilliant` | `BRILLIANT_AFFILIATE_ID` |
 | Astronomy Retailer | `astronomy-retailer` | Generic specialist slot (FLO / HPS later) |
-| LEGO | `lego` | Seeded **INACTIVE** until access is ready |
+| LEGO | `lego` | Seeded **INACTIVE** until access is ready — never on social/descriptions |
 
 ## Adding products
 
@@ -298,7 +368,7 @@ Encoded in `topic-product-map.ts` and applied by `recommendProductsForVideo`. Ca
 | black holes | Book | Brilliant | Brilliant (if book primary) | Telescope, LEGO |
 | Mars | Telescope | Book, LEGO | Brilliant | (contextual) |
 | telescopes | Telescope | Book, LEGO | Brilliant | (contextual) |
-| JWST | LEGO Webb or cosmic-dawn book | The other + telescope | Brilliant | Backyard scope if film never returns to Earth sky |
+| JWST | Explainer book | Brilliant | Brilliant | Telescope, LEGO |
 | relativity | Brilliant | Book | Book | Telescope, LEGO |
 | kids astronomy | LEGO | Kids book, telescope | Brilliant (not if under ~10) | **Never Brilliant as primary** |
 | Starship | Book | LEGO, Brilliant | Brilliant | Telescope (unless launch/sky) |
@@ -369,7 +439,7 @@ Sample: `content/samples/csv/affiliate_amazon_sample.csv`
 cd 07_Content-Ops
 npx prisma migrate deploy
 npx prisma generate
-npm run db:seed          # optional full reseed including affiliate catalogue
+npm run affiliate:apply-urls   # additive live amazon.co.uk destinations (no DB reset)
 npm test                 # includes tests/affiliate.test.ts
 npm run dev
 ```
@@ -378,10 +448,11 @@ Open http://localhost:3000/affiliate
 
 ## Manual account setup still required
 
-- Amazon Associates UK approval + real tag in `AMAZON_ASSOCIATE_TAG`
+- Amazon Associates UK approval + `AMAZON_ASSOCIATE_TAG=orbitgo-21` in operator env (never commit)
 - Brilliant affiliate approval + `BRILLIANT_AFFILIATE_ID`
 - Specialist retailer programme contracts / tracking links
-- LEGO Affiliate access (programme seeded inactive)
+- LEGO Affiliate access (programme seeded inactive; `space-lego` product inactive)
+- Confirm remaining Amazon ASINs (`astronomy-binoculars`, `mars-book`) then `npm run affiliate:apply-urls`
 - Production `AFFILIATE_REDIRECT_BASE_URL=https://orbitwithben.com/go` + DNS/hosting for redirects (or proxy to Content Ops)
 
 **Go-live helpers (in-repo):** see `docs/AFFILIATE_GO_LIVE.md`
