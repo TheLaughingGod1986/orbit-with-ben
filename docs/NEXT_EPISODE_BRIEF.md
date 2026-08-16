@@ -1,8 +1,10 @@
 # Next episode brief — Growth System v2
 
-Generated: 2026-08-06T14:05:59.670Z
+**Locked next (16 Aug 2026): 007 Neutron Star.** Script passed. Omni 1-min path (PR 18). Do not start 013 Moon. Simulation is 015.
 
-**Candidate next topic:** _(fill from TOPIC_OPPORTUNITY_SCORE / ideas backlog)_
+Generated: 2026-08-06T14:05:59.670Z (snapshot below is historical; queue lock above is current)
+
+**Candidate next topic:** 007 Neutron Star
 
 ## Channel snapshot (imported metrics)
 

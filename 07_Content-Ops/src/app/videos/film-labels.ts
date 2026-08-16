@@ -7,7 +7,7 @@
  * - Shorts never get a book line.
  * - Private cuts must not win next/this Thursday:
  *   last-star v09 (`dbBojuwg4r8`), v10 (`z-fUtdjWn5o`); Europa private (`3_W_jl2GR8w`).
- * - Live named cuts: last-star v11 (`REXYxuLOBoI`), Europa v02 (`NbW5G1BpPY0`).
+ * - Live named cuts: last-star v11 (`REXYxuLOBoI` — letter O, not zero), Europa v02 (`NbW5G1BpPY0`).
  */
 
 /** Auditor-confirmed named-in-film longs. Book title text only — no /go/. */

@@ -139,7 +139,7 @@ Exact rows: `OPTIMAL_PUBLISH_SCHEDULE.json`.
 | 3 | Thu 21 Aug | 19:00 | Alien Worlds / Strangest Planets | Orbit travelogue (vidIQ 97) |
 | 4 | Thu 28 Aug | 19:00 | JWST Discoveries | Curious-learner heat |
 | 5 | Thu 4 Sep | 19:00 | Life Under Europa’s Ice | News adjacency |
-| 6 | Thu 11 Sep | 19:00 | Are We In A Simulation? | Broad curiosity |
+| 6 | Thu 11 Sep | 19:00 | **Neutron Star (007)** | Next to make after Europa |
 | 7 | Thu 18 Sep | 19:00 | Humans In 1,000 Years | Future Humanity |
 | 8 | Thu 25 Sep | 19:00 | The Day The Sun Dies | High emotion |
 | 9 | Thu 2 Oct | 19:00 | AI Help Reach The Stars | AI + space |

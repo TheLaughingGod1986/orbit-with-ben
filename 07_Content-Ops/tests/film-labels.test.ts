@@ -11,6 +11,7 @@ describe("film-labels (Auditor)", () => {
     expect(
       namedInFilmBookLine({ youtubeVideoId: "REXYxuLOBoI", youtubeUrl: null }),
     ).toBe("Named: The End of Everything");
+    expect("REXYxuLOBoI".includes("0")).toBe(false);
     expect(
       namedInFilmBookLine({ youtubeVideoId: "NbW5G1BpPY0", youtubeUrl: null }),
     ).toBe("Named: Alien Oceans");

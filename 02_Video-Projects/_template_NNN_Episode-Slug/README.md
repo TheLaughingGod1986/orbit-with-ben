@@ -4,8 +4,8 @@ Copy this folder to start a new long:
 
 ```bash
 cp -R 02_Video-Projects/_template_NNN_Episode-Slug \
-  02_Video-Projects/013_Moon-Leaving-Us
-# then rename NNN + slug to match
+  02_Video-Projects/007_Neutron-Star
+# Locked next long is 007 Neutron Star. Do not start 013 Moon.
 ```
 
 ## Order (blocking)

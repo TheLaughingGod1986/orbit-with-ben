@@ -141,19 +141,29 @@
       "id": "005",
       "working_title": "The Last Star In The Universe",
       "pillar": "Space Stories",
-      "status": "backlog"
+      "status": "scheduled",
+      "youtube_id": "REXYxuLOBoI",
+      "note": "Thu 27 Aug 2026. YouTube id is letter O, not zero."
     },
     {
       "id": "006",
       "working_title": "Could Life Exist Under The Ice Of Europa?",
       "pillar": "Cosmic Mysteries",
-      "status": "backlog"
+      "status": "scheduled",
+      "youtube_id": "NbW5G1BpPY0",
+      "note": "Thu 3 Sept 2026."
     },
     {
       "id": "007",
-      "working_title": "Are We Living Inside A Simulation?",
+      "working_title": "Neutron Star",
       "pillar": "Cosmic Mysteries",
-      "status": "backlog"
+      "status": "in_production",
+      "next_production": true,
+      "folder": "02_Video-Projects/007_Neutron-Star",
+      "format": "omni_longform_1min_parts",
+      "note": "LOCKED NEXT (16 Aug 2026). Script already passed. Build Omni 1-min path (PR 18). Do not start 013 Moon. 007 is not Simulation.",
+      "quality_bar": "OMNI_LONGFORM_PLAYBOOK + orbit-omni-section-qa + Europa PART01–08 lessons",
+      "target_minutes": "18-25"
     },
     {
       "id": "008",
@@ -197,8 +207,9 @@
       ],
       "pillar": "Cosmic Mysteries",
       "status": "backlog",
-      "priority": "next_after_004",
-      "next_production": true,
+      "priority": "after_007_neutron_star",
+      "next_production": false,
+      "note": "Do not produce before 007 Neutron Star master lands.",
       "quality_bar": "PRE_BUILD_VIDIQ_AUDIT + LONGFORM_STORY_AND_VO_PICTURE_GATE — first episode under hard pre-build data + 10-12 VO-picture chapter gate",
       "source": "vidiq_outlier_pattern_analysis_2026-08-02",
       "ideas_doc": "00_Brand/Channel-Setup/ideas/013_Moon-Leaving-Us/",
@@ -317,6 +328,14 @@
     },
     {
       "id": "015",
+      "working_title": "Are We Living Inside A Simulation?",
+      "pillar": "Cosmic Mysteries",
+      "status": "backlog",
+      "priority": "after_007_and_013",
+      "note": "Moved from 007. Do not produce as the next long. Next to make is 007 Neutron Star."
+    },
+    {
+      "id": "019",
       "working_title": "The 7 Strangest Things We've Accidentally Left in Space",
       "brand_suffix": "Orbit's Cosmic Journey",
       "title_score": 96,
@@ -327,6 +346,7 @@
       "pillar": "Space Stories",
       "status": "backlog",
       "priority": "after_014",
+      "note": "Was backlog 015. Ideas folder still `015_Left-In-Space/`. Simulation is now 015.",
       "source": "vidiq_outlier_pattern_analysis_2026-08-02",
       "ideas_doc": "00_Brand/Channel-Setup/ideas/015_Left-In-Space/",
       "format": "full_cg_orbit_object_tour",

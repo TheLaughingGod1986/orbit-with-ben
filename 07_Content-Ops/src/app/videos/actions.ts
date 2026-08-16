@@ -105,7 +105,7 @@ const KNOWN_THURSDAY_FILMS: KnownThursdayFilm[] = [
     slug: "last-star-dies",
     topic: "last-star",
     status: "scheduled",
-    youtubeVideoId: "REXYxuLOBoI",
+    youtubeVideoId: "REXYxuLOBoI", // letter O, not zero
     youtubeUrl: "https://www.youtube.com/watch?v=REXYxuLOBoI",
     publicationDateLondon: { date: "2026-08-27", time: "18:00" },
   },
