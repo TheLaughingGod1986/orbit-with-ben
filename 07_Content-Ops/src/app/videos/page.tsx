@@ -2,6 +2,7 @@ import Link from "next/link";
 import { formatInTimeZone } from "date-fns-tz";
 import { prisma } from "@/lib/storage/prisma";
 import { PUBLISHING_SCHEDULE } from "@/config/publishing-schedule";
+import { AddKnownThursdayFilmsButton } from "@/components/AddKnownThursdayFilmsButton";
 import { AddThursdayFilmButton } from "@/components/AddThursdayFilmButton";
 import { CopyFilmCaptionButton } from "@/components/CopyFilmCaptionButton";
 import { CopyYoutubeIdButton } from "@/components/CopyYoutubeIdButton";
@@ -93,7 +94,12 @@ export default async function VideosPage() {
             scheduled.
           </p>
         </div>
-        {videos.length > 0 ? <AddThursdayFilmButton primary={false} /> : null}
+        {videos.length > 0 ? (
+          <div className="flex flex-col items-stretch gap-2 sm:items-end">
+            <AddKnownThursdayFilmsButton primary={false} />
+            <AddThursdayFilmButton primary={false} />
+          </div>
+        ) : null}
       </div>
 
       {videos.length === 0 ? (
@@ -103,11 +109,14 @@ export default async function VideosPage() {
               No Thursday film here yet.
             </h2>
             <p className="mt-3 max-w-xl text-[#F5E8D2]/65">
-              When the cut is ready to list, add it here. Then we make the Short and the YouTube
-              listing.
+              Load the six known Thursday films (three published, three scheduled), or add the next
+              one by title and date.
             </p>
           </div>
-          <AddThursdayFilmButton />
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start">
+            <AddKnownThursdayFilmsButton />
+            <AddThursdayFilmButton primary={false} />
+          </div>
         </div>
       ) : (
         <>
