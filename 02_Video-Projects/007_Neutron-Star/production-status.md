@@ -20,7 +20,7 @@
 
 ## Build
 
-Omni 1-minute path (PR 18). Copy passed script into `01_Script/` if this GitHub snapshot is missing it. Then:
+Omni **one minute at a time** (PR 18). QA that minute, then **check with Ben** before Part N+1. Copy passed script into `01_Script/` if this GitHub snapshot is missing it. Then:
 
 ```bash
 cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/007_Neutron-Star

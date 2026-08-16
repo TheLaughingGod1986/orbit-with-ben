@@ -34,7 +34,7 @@ Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 �
 3. Plate plan JSON: ~8–10 unique ~8s Omni takes; tag `env: underwater|surface|space`.
 4. Generate Omni Flash (Flow) with Orbit identity lock; archive rejects; bump `v0N`.
 5. Assemble: paired `xfade` + `acrossfade`; Omni SFX under VO (~0.18–0.2); water bed only underwater.
-6. Picture QA (start/mid/end twin + face spot-check). Approve → `PART0N_LESSONS.md` → next part.
+6. Picture QA (start/mid/end twin + face spot-check). **Stop and check with Ben.** Do not start the next minute until he UAT-passes this one. Then `PART0N_LESSONS.md` → next part.
 
 ### C. Broadcast polish (locked later standard)
 
