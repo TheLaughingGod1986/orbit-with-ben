@@ -16,23 +16,15 @@ if str(AUTO) not in sys.path:
 from _sib import load
 
 config = load("config")
+suite_ids = load("suite_ids")
 
 PROFILE = Path.home() / ".orbit-chrome-meta-dev"
 CHROME = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
-COMPOSER = "https://business.facebook.com/latest/reels_composer"
+COMPOSER = suite_ids.COMPOSER_PATH
 
 
 def composer_url(creds: dict) -> str:
-    asset = str(creds.get("business_suite_asset_id") or "").strip()
-    biz = str(creds.get("business_id") or "").strip()
-    params = []
-    if asset and not asset.startswith("REPLACE_"):
-        params.append(f"asset_id={asset}")
-    if biz and not biz.startswith("REPLACE_"):
-        params.append(f"business_id={biz}")
-    if not params:
-        return COMPOSER
-    return COMPOSER + "?" + "&".join(params)
+    return suite_ids.composer_url(creds)
 
 
 def cdp_up(port: int) -> bool:

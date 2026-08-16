@@ -82,7 +82,8 @@ bash 00_Brand/Channel-Setup/Meta/auto/start_meta_chrome.sh
 
 Log into Meta Business Suite under the **Orbit with Ben** portfolio as a Page
 admin with Instagram linked. Cross-post both destinations in the Suite session
-when possible.
+when possible. If Share spins with greyed audience radios, you are not on the
+Orbit Page composer — see `PORTFOLIO.md` / `AUTO_POST.md`.
 
 ## Identity checklist
 

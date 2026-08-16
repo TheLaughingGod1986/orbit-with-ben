@@ -4,12 +4,21 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from pathlib import Path
 
 SETUP = Path(__file__).resolve().parents[1]
+AUTO = Path(__file__).resolve().parent
 CREDS = SETUP / "META_CREDENTIALS.json"
 EXAMPLE = SETUP / "META_CREDENTIALS.example.json"
 ACCOUNTS = SETUP / "META_ACCOUNTS.json"
+
+if str(AUTO) not in sys.path:
+    sys.path.insert(0, str(AUTO))
+
+from _sib import load  # noqa: E402
+
+suite_ids = load("suite_ids")
 
 
 def load_accounts() -> dict:
@@ -19,7 +28,7 @@ def load_accounts() -> dict:
 
 
 def load_credentials() -> dict:
-    """Merge file credentials with env overrides."""
+    """Merge file credentials with env overrides and lock Orbit Suite IDs."""
     data: dict = {}
     if CREDS.exists():
         data = json.loads(CREDS.read_text())
@@ -54,7 +63,7 @@ def load_credentials() -> dict:
     data.setdefault("publish_facebook", True)
     data.setdefault("preferred_method", "graph")
     data.setdefault("cdp_port", 9223)
-    return data
+    return suite_ids.pin_suite_creds(data, load_accounts())
 
 
 def credentials_ready(creds: dict | None = None) -> tuple[bool, list[str]]:

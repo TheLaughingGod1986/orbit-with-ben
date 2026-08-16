@@ -24,24 +24,15 @@ from playwright.sync_api import Page, sync_playwright
 from _sib import load
 
 config = load("config")
+suite_ids = load("suite_ids")
 
-COMPOSER = "https://business.facebook.com/latest/reels_composer"
-CONTENT = "https://business.facebook.com/latest/content_calendar"
+COMPOSER = suite_ids.COMPOSER_PATH
+CONTENT = suite_ids.CONTENT_PATH
 
 
 def suite_url(base: str, creds: dict) -> str:
-    """Pin CDP navigation to the Orbit portfolio + Page asset when known."""
-    asset = str(creds.get("business_suite_asset_id") or "").strip()
-    biz = str(creds.get("business_id") or "").strip()
-    params = []
-    if asset and not asset.startswith("REPLACE_"):
-        params.append(f"asset_id={asset}")
-    if biz and not biz.startswith("REPLACE_"):
-        params.append(f"business_id={biz}")
-    if not params:
-        return base
-    sep = "&" if "?" in base else "?"
-    return base + sep + "&".join(params)
+    """Pin CDP navigation to the Orbit portfolio + Page asset."""
+    return suite_ids.suite_url(base, creds)
 
 
 def body(page: Page) -> str:
@@ -210,13 +201,149 @@ def wait_upload_ready(page: Page, timeout_s: float = 180) -> bool:
     return False
 
 
+def click_share_cta(page: Page) -> bool:
+    """Click the bottom Share / Publish button — never the step-indicator spinner."""
+    try:
+        hit = page.evaluate(
+            """() => {
+              const labels = new Set(['Share', 'Share reel', 'Publish', 'Post']);
+              const viewportH = window.innerHeight || 800;
+              const hits = [];
+              for (const el of document.querySelectorAll('button,div[role=button],[role=button]')) {
+                const t = (el.innerText || '').trim();
+                if (!labels.has(t)) continue;
+                const r = el.getBoundingClientRect();
+                if (r.width < 40 || r.height < 24 || r.width > 280) continue;
+                if (r.y < viewportH * 0.55) continue;
+                const s = getComputedStyle(el);
+                if (s.visibility === 'hidden' || s.display === 'none') continue;
+                const disabled =
+                  el.getAttribute('aria-disabled') === 'true' ||
+                  el.hasAttribute('disabled') ||
+                  Number(s.opacity || 1) < 0.5;
+                if (disabled) continue;
+                hits.push({
+                  x: r.x + r.width / 2,
+                  y: r.y + r.height / 2,
+                  y0: Math.round(r.y),
+                  x0: Math.round(r.x),
+                  bg: s.backgroundColor || '',
+                });
+              }
+              if (!hits.length) return null;
+              hits.sort((a, b) => (a.y0 - b.y0) || (a.x0 - b.x0));
+              return hits[hits.length - 1];
+            }"""
+        )
+        if hit:
+            page.mouse.move(hit["x"], hit["y"])
+            page.wait_for_timeout(120)
+            page.mouse.down()
+            page.wait_for_timeout(50)
+            page.mouse.up()
+            page.wait_for_timeout(800)
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def share_controls_state(page: Page) -> dict:
+    try:
+        return page.evaluate(
+            """() => {
+              const text = (document.body && document.body.innerText) || '';
+              const radios = [...document.querySelectorAll('input[type=radio]')];
+              const disabledRadios = radios.filter(r =>
+                r.disabled || r.getAttribute('aria-disabled') === 'true'
+              );
+              const spinner = !!document.querySelector(
+                '[role=progressbar], [aria-busy=true]'
+              );
+              return {
+                radioCount: radios.length,
+                disabledRadioCount: disabledRadios.length,
+                spinner,
+                pageOnly: /only available for posts to a Facebook Page/i.test(text),
+                whoCanSee: /Who can see this/i.test(text),
+              };
+            }"""
+        )
+    except Exception:
+        return {}
+
+
+def try_select_facebook_page_destination(page: Page) -> bool:
+    """If Suite is on Instagram-only, switch Post-to to the Orbit Facebook Page."""
+    try:
+        return bool(
+            page.evaluate(
+                """() => {
+                  const labels = [
+                    'Facebook Page',
+                    'Post to Facebook',
+                  ];
+                  for (const lab of labels) {
+                    const el = [...document.querySelectorAll(
+                      'input[type=checkbox],input[type=radio],[role=checkbox],[role=switch]'
+                    )].find(e => {
+                      const t = ((e.innerText || '') + ' ' + (e.getAttribute('aria-label') || '')).trim();
+                      return t.includes(lab);
+                    });
+                    if (!el) continue;
+                    const checked =
+                      el.checked === true ||
+                      el.getAttribute('aria-checked') === 'true';
+                    if (checked) return true;
+                    el.click();
+                    return true;
+                  }
+                  return false;
+                }"""
+            )
+        )
+    except Exception:
+        return False
+
+
+def wait_share_ready(page: Page, timeout_s: float = 45) -> dict:
+    """Wait until Share is interactive, or diagnose a wrong-asset hang."""
+    end = time.time() + timeout_s
+    last: dict = {"state": "unknown", "needs_page_asset": False, "reasons": [], "hint": ""}
+    hung_since: float | None = None
+    while time.time() < end:
+        dismiss_modals(page)
+        text = body(page)
+        last = suite_ids.diagnose_share_step(text, page.url)
+        controls = share_controls_state(page)
+        last["controls"] = controls
+        if last.get("state") == "ready":
+            if controls.get("disabledRadioCount") and controls.get("pageOnly"):
+                last["state"] = "hung_wrong_asset"
+                last["needs_page_asset"] = True
+            else:
+                return last
+        if last.get("state") == "hung_wrong_asset":
+            if hung_since is None:
+                hung_since = time.time()
+            elif time.time() - hung_since >= 8:
+                return last
+        page.wait_for_timeout(1000)
+    if last.get("state") == "unknown":
+        last["state"] = "hung_loading"
+        last["hint"] = (
+            "Reels Share step never became ready. Close extra Meta Suite tabs "
+            f"and open {suite_ids.composer_url()}."
+        )
+    return last
+
+
 def click_publish(page: Page) -> bool:
-    for label in ("Share", "Publish", "Post", "Next"):
+    if click_share_cta(page):
+        return True
+    for label in ("Publish", "Post"):
         if click_button(page, label):
             page.wait_for_timeout(800)
-            # Sometimes Next then Share
-            if label == "Next":
-                continue
             return True
     return False
 
@@ -241,7 +368,11 @@ def confirm_posted(page: Page, needle: str, timeout_s: float = 90) -> bool:
             return True
         page.wait_for_timeout(1500)
     try:
-        page.goto(CONTENT, wait_until="domcontentloaded", timeout=90000)
+        page.goto(
+            suite_ids.suite_url(CONTENT),
+            wait_until="domcontentloaded",
+            timeout=90000,
+        )
         page.wait_for_timeout(4000)
         return needle_l in body(page).lower()
     except Exception:
@@ -310,6 +441,7 @@ def post_short(
             page.on("dialog", _dialog2)
         except Exception:
             pass
+        creds = suite_ids.pin_suite_creds(creds, config.load_accounts())
         page.goto(
             suite_url(COMPOSER, creds),
             wait_until="domcontentloaded",
@@ -317,6 +449,15 @@ def post_short(
         )
         page.wait_for_timeout(2500)
         dismiss_modals(page)
+
+        if suite_ids.url_has_stale_suite_ids(page.url):
+            page.goto(
+                suite_url(COMPOSER, creds),
+                wait_until="domcontentloaded",
+                timeout=120000,
+            )
+            page.wait_for_timeout(2000)
+            dismiss_modals(page)
 
         uploaded = False
         # Preferred: click Add video and intercept file chooser
@@ -367,10 +508,34 @@ def post_short(
             page.screenshot(path=str(audit_dir / f"before_{video_path.stem}.png"))
 
         ok = False
-        for attempt in range(5):
-            # Next then Share
+        click_button(page, "Next")
+        page.wait_for_timeout(800)
+        share = wait_share_ready(page)
+        out["share_diagnosis"] = {
+            k: share.get(k)
+            for k in ("state", "needs_page_asset", "reasons", "hint")
+        }
+        if share.get("state") == "hung_wrong_asset":
+            if try_select_facebook_page_destination(page):
+                page.wait_for_timeout(1500)
+                click_button(page, "Next")
+                share = wait_share_ready(page)
+                out["share_diagnosis"]["retried_page_destination"] = True
+                out["share_diagnosis"]["state"] = share.get("state")
+        if share.get("state") in {"hung_wrong_asset", "hung_loading"}:
+            out["status"] = "share_step_hung"
+            out["url"] = page.url
+            out["hint"] = share.get("hint") or suite_ids.diagnose_share_step(
+                body(page), page.url
+            ).get("hint")
+            if audit_dir:
+                audit_dir.mkdir(parents=True, exist_ok=True)
+                page.screenshot(path=str(audit_dir / f"share_hung_{video_path.stem}.png"))
+            return out
+
+        for attempt in range(3):
             click_button(page, "Next")
-            page.wait_for_timeout(800)
+            page.wait_for_timeout(400)
             click_publish(page)
             page.wait_for_timeout(1200)
             dismiss_modals(page)

@@ -38,3 +38,9 @@ Details / automation notes:
 CDP / composer URLs should include
 `business_id=1352434763139246&asset_id=1285932871266399` (see
 `META_CREDENTIALS.example.json`, `auto/start_meta_chrome.sh`).
+
+If **Create reel → Share** hangs on a spinner with greyed **Who can see this?**
+and “only available for posts to a Facebook Page”, the tab is not the Orbit
+Page composer (often leftover Benkay `business_id=1203116147241086` /
+`asset_id=1251385088056874`). Close extra Suite tabs and reopen the Page URL
+above. CDP refuses those stale IDs (`auto/suite_ids.py`).

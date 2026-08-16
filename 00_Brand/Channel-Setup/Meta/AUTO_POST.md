@@ -74,3 +74,20 @@ python3 live_shorts_to_meta.py --check-creds
 - Instagram must be a **professional** account linked to the Facebook Page.
 - Future `schedule_iso` wins over stale `published_now` / `visibility: public` in the index (`discover.is_live`) — same rule as TikTok. Do not mirror until YouTube actually goes live.
 - Unload: `launchctl unload ~/Library/LaunchAgents/dev.orbit.meta-live-shorts.plist`
+
+## Share step spinner (not a broken computer)
+
+If Meta Business Suite **Create reel → Share** spins forever, audience radios stay
+grey, and the page says options are **only available for posts to a Facebook
+Page**, the composer is on the wrong asset (Instagram-only or the old Benkay
+Creative portfolio). Extra Suite tabs make it worse. Close them.
+
+Open the Orbit **Page** composer, then retry:
+
+```
+https://business.facebook.com/latest/reels_composer?asset_id=1285932871266399&business_id=1352434763139246
+```
+
+CDP now pins that URL, refuses Benkay IDs in `META_CREDENTIALS.json`, and aborts
+with `share_step_hung` instead of clicking the spinning **Share** step. Graph
+API remains the preferred publish path.
