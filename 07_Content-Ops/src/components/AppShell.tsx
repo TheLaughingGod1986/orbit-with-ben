@@ -16,7 +16,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-white/5 bg-[#0a0c12]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
           <Link href="/" className="group flex min-w-0 items-baseline gap-2 sm:gap-3">
             <span className="font-[family-name:var(--font-orbit-display)] text-2xl tracking-tight text-[#F5E8D2]">
               ORBIT
