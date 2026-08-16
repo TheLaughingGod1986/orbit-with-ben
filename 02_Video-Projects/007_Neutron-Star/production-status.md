@@ -2,7 +2,10 @@
 
 | Field | Value |
 |-------|-------|
-| Slug | `007_Neutron-Star` |
+| Slug | `007_What-Happens-To-Your-Body-Near-A-Neutron-Star` (Mac — **not** empty `007_Neutron-Star`) |
+| Script | `01_Script/neutron_star_script_master_v01.md` · **91.1 PASS** |
+| VO | none yet (Part 01 not started) |
+| CG | none yet (no plates) |
 | Queue | **LOCKED NEXT** — not Moon, not Simulation |
 | Script review | passed (do not rewrite if master script is present) |
 | VO | pending (ElevenLabs Ben Orbit Narrator) |
@@ -23,7 +26,7 @@
 Omni **one minute at a time** (PR 18). QA that minute, then **check with Ben** before Part N+1. Copy passed script into `01_Script/` if this GitHub snapshot is missing it. Then:
 
 ```bash
-cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/007_Neutron-Star
+cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star
 ```
 
 Stop when `09_Final-Export/` has the open-end broadcast master.

@@ -1,5 +1,7 @@
-# 01_Script — 007 Neutron Star
+# Wrong folder
 
-The master script **already passed** review. It lives on disk with this episode folder.
+Do not put a script here.
 
-If this GitHub clone only has the scaffold, copy the passed `*_script_master_*.md` here **before** VO or Omni. Do not write a second Neutron Star script. Do not start 013 Moon.
+Real file (Mac, passed 91.1):
+
+`02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/01_Script/neutron_star_script_master_v01.md`
