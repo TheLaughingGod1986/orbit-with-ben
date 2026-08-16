@@ -7,6 +7,12 @@ alwaysApply: true
 
 **Next to make is 007 Neutron Star.** Do not start 013 Moon. Do not treat 007 as Simulation.
 
+**Real folder (Mac, script already passed 91.1):**  
+`02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/`  
+Script: `01_Script/neutron_star_script_master_v01.md`
+
+**Wrong folder:** `02_Video-Projects/007_Neutron-Star/` is an empty GitHub scaffold (README only). Do **not** build there. Do **not** copy or rewrite the script into it.
+
 ## Queue (source of truth)
 
 | Slot | Film | Status |
@@ -21,7 +27,7 @@ alwaysApply: true
 
 ## Build 007 — one minute at a time (hard)
 
-1. Use folder `02_Video-Projects/007_Neutron-Star` (passed script on disk / `01_Script/`).
+1. Use **`02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/`** (Mac). Script: `01_Script/neutron_star_script_master_v01.md` (passed **91.1**). Not the empty `007_Neutron-Star` scaffold.
 2. Omni later standard (PR 18): `orbit-omni-section-qa.mdc` · `OMNI_LONGFORM_PLAYBOOK.md` · Europa Part 01–08 lessons.
 3. **One minute only:** write that part → Ben Orbit Narrator VO → Omni Flash plates for that minute → assemble → picture QA.
 4. **Stop.** Show Ben the rough. Wait for his UAT (pass / regen / notes). Do **not** start Part N+1 until he says go.
@@ -34,4 +40,5 @@ alwaysApply: true
 - Do **not** batch two minutes, then ask.
 - Do **not** scaffold or produce 013 Moon until 007 Neutron Star has a locked master.
 - Do **not** start 015 Simulation as the next long.
-- Do **not** invent a second Neutron Star script if the passed master script is present — build that cut.
+- Do **not** invent a second Neutron Star script. The master is already on the Mac folder above.
+- Do **not** use `007_Neutron-Star/` (empty GitHub scaffold).

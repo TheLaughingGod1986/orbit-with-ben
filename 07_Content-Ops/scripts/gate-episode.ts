@@ -3,7 +3,7 @@
  * Growth System v2 episode gate — block VO/Veo until checks pass.
  *
  * Usage:
- *   npm run gate:episode -- --project ../02_Video-Projects/007_Neutron-Star
+ *   npm run gate:episode -- --project ../02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star
  *   npm run gate:episode -- --project /abs/path --script /abs/script.md --json
  */
 import fs from "fs";
