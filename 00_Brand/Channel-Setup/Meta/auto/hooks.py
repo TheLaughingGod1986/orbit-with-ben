@@ -18,14 +18,15 @@ ensure_chrome = load("ensure_chrome")
 graph_publish = load("graph_publish")
 ledger = load("ledger")
 studio_upload = load("studio_upload")
+suite_ids = load("suite_ids")
 
 
 def notify_short_live(project_root: str | Path, short: dict) -> dict:
     """
     Call after a short is set Public on YouTube.
 
-    Tries Graph API first (when META_CREDENTIALS.json is ready),
-    otherwise falls back to Meta Business Suite CDP.
+    Tries Graph API first (when META_CREDENTIALS.json is ready).
+    Does not open Meta Create reel unless preferred_method is cdp.
     """
     project_root = Path(project_root)
     item = dict(short)
@@ -49,7 +50,7 @@ def notify_short_live(project_root: str | Path, short: dict) -> dict:
         result = graph_publish.publish_both(
             video_path=path, caption=text, creds=creds
         )
-    elif preferred == "cdp" or not ready:
+    elif suite_ids.should_open_suite_composer(creds):
         chrome = ensure_chrome.ensure_chrome()
         if not chrome.get("ok"):
             return {
@@ -70,10 +71,16 @@ def notify_short_live(project_root: str | Path, short: dict) -> dict:
             )
             if graph.get("status") in {"ok", "partial"}:
                 result = graph
-    else:
+    elif ready:
         result = graph_publish.publish_both(
             video_path=path, caption=text, creds=creds
         )
+    else:
+        return {
+            "status": "graph_credentials_missing",
+            "graph_missing": missing,
+            "hint": "Not opening Meta Create reel. Set Graph tokens or preferred_method=cdp.",
+        }
 
     if result.get("status") in {"ok", "partial"}:
         ledger.mark_posted(item, result)

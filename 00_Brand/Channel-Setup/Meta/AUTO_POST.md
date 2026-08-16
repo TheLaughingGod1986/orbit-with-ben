@@ -31,9 +31,12 @@ python3 00_Brand/Channel-Setup/Meta/auto/live_shorts_to_meta.py --check-creds
 
 Graph uses **resumable upload** so local short files work without a public CDN URL.
 
-## Fallback: Meta Business Suite CDP
+## Fallback: Meta Business Suite CDP (opt-in)
 
-If Graph credentials are missing (or `preferred_method` is `cdp`):
+The 5-minute LaunchAgent must **not** open Create reel. Missing Graph tokens
+used to fall back to Chrome, which reopened the hung Share tab.
+
+CDP is opt-in only (`preferred_method: cdp` or `python3 live_shorts_to_meta.py --cdp`).
 
 ```bash
 bash 00_Brand/Channel-Setup/Meta/auto/start_meta_chrome.sh
@@ -41,6 +44,14 @@ bash 00_Brand/Channel-Setup/Meta/auto/start_meta_chrome.sh
 ```
 
 Chrome profile: `~/.orbit-chrome-meta-dev` on port **9223** (TikTok stays on 9222).
+That profile starts on Suite **Home**, not Create reel.
+
+If Create reel keeps coming back, stop the watcher and quit the Meta Chrome profile:
+
+```bash
+launchctl unload ~/Library/LaunchAgents/dev.orbit.meta-live-shorts.plist
+# Then quit the extra Google Chrome window (Orbit Meta profile), not only the tab.
+```
 
 ## One-time setup
 
@@ -64,6 +75,7 @@ cd 00_Brand/Channel-Setup/Meta/auto
 python3 live_shorts_to_meta.py --list
 python3 live_shorts_to_meta.py --dry-run
 python3 live_shorts_to_meta.py --once
+python3 live_shorts_to_meta.py --once --cdp
 python3 live_shorts_to_meta.py --watch
 python3 live_shorts_to_meta.py --check-creds
 ```
@@ -89,5 +101,5 @@ https://business.facebook.com/latest/reels_composer?asset_id=1285932871266399&bu
 ```
 
 CDP now pins that URL, refuses Benkay IDs in `META_CREDENTIALS.json`, and aborts
-with `share_step_hung` instead of clicking the spinning **Share** step. Graph
-API remains the preferred publish path.
+with `share_step_hung` instead of clicking the spinning **Share** step. The
+LaunchAgent no longer opens Create reel when Graph tokens are missing.

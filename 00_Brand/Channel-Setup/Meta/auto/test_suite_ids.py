@@ -137,5 +137,31 @@ class ConfigPinTests(unittest.TestCase):
         )
 
 
+class ComposerOpenPolicyTests(unittest.TestCase):
+    def test_launchagent_does_not_open_composer_when_graph_missing(self):
+        self.assertFalse(
+            suite_ids.should_open_suite_composer({"preferred_method": "graph"})
+        )
+        self.assertFalse(suite_ids.should_open_suite_composer({}))
+
+    def test_cdp_flag_or_preferred_method_opts_in(self):
+        self.assertTrue(
+            suite_ids.should_open_suite_composer(
+                {"preferred_method": "graph"}, cdp_flag=True
+            )
+        )
+        self.assertTrue(
+            suite_ids.should_open_suite_composer({"preferred_method": "cdp"})
+        )
+
+    def test_composer_tab_url(self):
+        self.assertTrue(suite_ids.is_composer_url(STALE_COMPOSER))
+        self.assertFalse(
+            suite_ids.is_composer_url(
+                "https://business.facebook.com/latest/home?business_id=1"
+            )
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

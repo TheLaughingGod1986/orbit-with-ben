@@ -27,6 +27,11 @@ def composer_url(creds: dict) -> str:
     return suite_ids.composer_url(creds)
 
 
+def startup_url(creds: dict) -> str:
+    """Open Suite Home, not Create reel — composer tabs were auto-reopening."""
+    return suite_ids.suite_home_url(creds)
+
+
 def cdp_up(port: int) -> bool:
     try:
         with urllib.request.urlopen(f"http://127.0.0.1:{port}/json/version", timeout=2) as r:
@@ -50,7 +55,7 @@ def ensure_chrome(*, port: int | None = None) -> dict:
         f"--user-data-dir={PROFILE}",
         "--no-first-run",
         "--no-default-browser-check",
-        composer_url(creds),
+        startup_url(creds),
     ]
     subprocess.Popen(
         args,

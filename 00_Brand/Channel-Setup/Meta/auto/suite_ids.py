@@ -22,6 +22,7 @@ STALE_SUITE_IDS = frozenset({BENKAY_BUSINESS_ID, BENKAY_SUITE_ASSET_ID})
 
 COMPOSER_PATH = "https://business.facebook.com/latest/reels_composer"
 CONTENT_PATH = "https://business.facebook.com/latest/content_calendar"
+HOME_PATH = "https://business.facebook.com/latest/home"
 
 PAGE_ONLY_OPTION_MARKERS = (
     "only available for posts to a facebook page",
@@ -110,6 +111,29 @@ def suite_url(base: str, creds: dict | None = None) -> str:
 
 def composer_url(creds: dict | None = None) -> str:
     return suite_url(COMPOSER_PATH, creds)
+
+
+def suite_home_url(creds: dict | None = None) -> str:
+    return suite_url(HOME_PATH, creds)
+
+
+def is_composer_url(url: str) -> bool:
+    return "reels_composer" in (url or "").lower()
+
+
+def should_open_suite_composer(
+    creds: dict | None = None, *, cdp_flag: bool = False
+) -> bool:
+    """True only when CDP is explicit.
+
+    The 5-minute LaunchAgent used to fall back to Create reel whenever Graph
+    tokens were missing, which reopened the hung Share tab after it was closed.
+    Graph remains the default; pass --cdp or set preferred_method=cdp to opt in.
+    """
+    if cdp_flag:
+        return True
+    preferred = str((creds or {}).get("preferred_method") or "graph").lower()
+    return preferred == "cdp"
 
 
 def diagnose_share_step(page_text: str, url: str = "") -> dict:

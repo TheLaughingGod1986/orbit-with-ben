@@ -35,6 +35,30 @@ def suite_url(base: str, creds: dict) -> str:
     return suite_ids.suite_url(base, creds)
 
 
+def close_composer_pages(ctx, keep: Page | None = None) -> int:
+    """Close leftover Create reel tabs so the hung Share page cannot stack."""
+    closed = 0
+    try:
+        pages = list(ctx.pages)
+    except Exception:
+        return 0
+    for pg in pages:
+        if keep is not None and pg is keep:
+            continue
+        try:
+            url = pg.url or ""
+        except Exception:
+            url = ""
+        if not suite_ids.is_composer_url(url):
+            continue
+        try:
+            pg.close()
+            closed += 1
+        except Exception:
+            pass
+    return closed
+
+
 def body(page: Page) -> str:
     try:
         return page.inner_text("body")
@@ -421,7 +445,8 @@ def post_short(
                     pass
 
         ctx.on("dialog", _dialog)
-        page = ctx.new_page()
+        close_composer_pages(ctx)
+        page = ctx.pages[0] if ctx.pages else ctx.new_page()
         page.on("dialog", _dialog)
         page.bring_to_front()
 
