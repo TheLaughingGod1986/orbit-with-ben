@@ -1792,7 +1792,8 @@ describe("film → topic-book wiring (Social Media Manager)", () => {
     expect(rows.length).toBe(6);
     for (const row of rows) {
       expect(row.amazonUrl).toMatch(/amazon\.co\.uk\/.*\/dp\//i);
-      expect(row.goPath).toBe(`/go/${row.productSlug}`);
+      expect(row.goPath).toContain(`/go/${row.productSlug}`);
+      expect(row.goPath).toContain("utm_source=youtube");
       expect(JSON.stringify(row)).not.toContain("orbitgo-21");
     }
 
@@ -1881,6 +1882,153 @@ describe("film → topic-book wiring (Social Media Manager)", () => {
     expect(bySlug["fermi-paradox-book"].youtubeId).toBe("Mo93x0fxB1Q");
     expect(bySlug["jwst-book"].youtubeId).toContain("scheduled");
     expect(bySlug["cosmology-end-book"].amazonUrl).toContain("0141989580");
-    expect(bySlug["europa-icy-moons-book"].goPath).toBe("/go/europa-icy-moons-book");
+    expect(bySlug["europa-icy-moons-book"].goPath).toContain(
+      "/go/europa-icy-moons-book",
+    );
+    expect(bySlug["europa-icy-moons-book"].goPath).toContain(
+      "utm_source=youtube",
+    );
+  });
+
+  it("upgrades bare existing /go/{slug} to utm_source=youtube on re-append without duplicating", () => {
+    process.env.AFFILIATE_REDIRECT_BASE_URL =
+      "https://orbit-content-ops.vercel.app/go";
+    const bookLink = {
+      productName: "A Brief History of Black Holes",
+      productSlug: "black-hole-book",
+      category: "Space books",
+      programSlug: "amazon-associates-uk",
+      url: "https://orbit-content-ops.vercel.app/go/black-hole-book",
+      role: "primary" as const,
+      trustProduct: product({
+        id: "bh-book-upgrade",
+        name: "A Brief History of Black Holes",
+        slug: "black-hole-book",
+        category: "Space books",
+        tagSlugs: ["books", "black-hole"],
+      }),
+    };
+    const bareGo = "https://orbit-content-ops.vercel.app/go/black-hole-book";
+    const base = [
+      "What Happens If You Fall Into a Black Hole?",
+      "",
+      "Chapters",
+      "0:00 Cold open",
+      "",
+      "Subscribe for the next film.",
+      "",
+      "If you want to go further.",
+      "",
+      "A calm book on black holes.",
+      bareGo,
+      "",
+      CREATOR_AFFILIATE_DISCLOSURE,
+      "",
+      "Playlist",
+      "More Orbit",
+    ].join("\n");
+
+    const desc = appendAffiliateSectionToDescription({
+      description: base,
+      links: [bookLink],
+      trustVideo: {
+        title: "What Happens If You Fall Into a Black Hole?",
+        topic: "Black Holes",
+        primaryKeyword: "black hole",
+        youtubeVideoId: "3xrxdmaOwJI",
+        slug: "what-happens-if-you-fall-into-a-black-hole",
+      },
+    });
+
+    expect(desc).toContain("utm_source=youtube");
+    expect(desc).toContain("utm_campaign=what-happens-if-you-fall-into-a-black-hole");
+    expect(desc).not.toContain(`${bareGo}\n`);
+    expect(desc.match(/\/go\/black-hole-book/g)?.length).toBe(1);
+    expect(desc.split("If you want to go further").length - 1).toBe(1);
+    expect(
+      desc.toLowerCase().split("some of these links are affiliate").length - 1,
+    ).toBe(1);
+
+    // Path-only bare door (old placement-table paste) also upgrades in place.
+    const pathOnlyBase = [
+      "Film title",
+      "",
+      "Subscribe for the next film.",
+      "",
+      "If you want to go further.",
+      "",
+      "/go/black-hole-book",
+      "",
+      CREATOR_AFFILIATE_DISCLOSURE,
+      "",
+      "Playlist",
+    ].join("\n");
+    const pathOnlyDesc = appendAffiliateSectionToDescription({
+      description: pathOnlyBase,
+      links: [bookLink],
+      trustVideo: {
+        title: "What Happens If You Fall Into a Black Hole?",
+        topic: "Black Holes",
+        slug: "what-happens-if-you-fall-into-a-black-hole",
+      },
+    });
+    expect(pathOnlyDesc).toContain("utm_source=youtube");
+    expect(pathOnlyDesc).not.toMatch(/(?:^|\n)\/go\/black-hole-book(?:\n|$)/);
+    expect(pathOnlyDesc.match(/\/go\/black-hole-book/g)?.length).toBe(1);
+
+    delete process.env.AFFILIATE_REDIRECT_BASE_URL;
+  });
+
+  it("leaves already-stamped youtube /go/ URLs alone on re-append", () => {
+    process.env.AFFILIATE_REDIRECT_BASE_URL =
+      "https://orbit-content-ops.vercel.app/go";
+    const stamped = buildYouTubeDescriptionGoUrl({
+      productSlug: "black-hole-book",
+      videoSlug: "what-happens-if-you-fall-into-a-black-hole",
+    });
+    const bookLink = {
+      productName: "A Brief History of Black Holes",
+      productSlug: "black-hole-book",
+      category: "Space books",
+      programSlug: "amazon-associates-uk",
+      url: stamped,
+      role: "primary" as const,
+      trustProduct: product({
+        id: "bh-book-stamped",
+        name: "A Brief History of Black Holes",
+        slug: "black-hole-book",
+        category: "Space books",
+        tagSlugs: ["books", "black-hole"],
+      }),
+    };
+    const base = [
+      "What Happens If You Fall Into a Black Hole?",
+      "",
+      "Subscribe for the next film.",
+      "",
+      "If you want to go further.",
+      "",
+      "A calm book on black holes.",
+      stamped,
+      "",
+      CREATOR_AFFILIATE_DISCLOSURE,
+      "",
+      "Playlist",
+    ].join("\n");
+
+    const desc = appendAffiliateSectionToDescription({
+      description: base,
+      links: [bookLink],
+      trustVideo: {
+        title: "What Happens If You Fall Into a Black Hole?",
+        topic: "Black Holes",
+        slug: "what-happens-if-you-fall-into-a-black-hole",
+      },
+    });
+
+    expect(desc).toContain(stamped);
+    expect(desc.match(/\/go\/black-hole-book/g)?.length).toBe(1);
+    expect(desc.split("If you want to go further").length - 1).toBe(1);
+    delete process.env.AFFILIATE_REDIRECT_BASE_URL;
   });
 });

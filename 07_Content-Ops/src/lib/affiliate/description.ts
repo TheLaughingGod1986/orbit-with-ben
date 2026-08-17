@@ -81,6 +81,87 @@ function needsAmazonDisclosure(links: AffiliateDescriptionLink[]): boolean {
   );
 }
 
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/** Absolute or path-only `/go/{slug}` with optional query (YouTube description paste). */
+export function orbitGoUrlPatternForSlug(productSlug: string): RegExp {
+  const escaped = escapeRegExp(productSlug);
+  return new RegExp(
+    `(?:https?:\\/\\/[^\\s<>"']+)?\\/go\\/${escaped}(?:\\?[^\\s<>"']*)?`,
+    "gi",
+  );
+}
+
+export function goUrlHasYoutubeUtmSource(urlText: string): boolean {
+  try {
+    const u = /^https?:\/\//i.test(urlText)
+      ? new URL(urlText)
+      : new URL(urlText, "https://example.invalid");
+    return (
+      (u.searchParams.get("utm_source") || "").trim().toLowerCase() === "youtube"
+    );
+  } catch {
+    return /(?:^|[?&])utm_source=youtube(?:&|$)/i.test(urlText);
+  }
+}
+
+/**
+ * Upgrade a matched `/go/{slug}` to a stamped YouTube description URL.
+ * Keeps existing medium/campaign/content; always sets utm_source=youtube.
+ * Already-stamped youtube matches are returned unchanged.
+ */
+export function stampMatchAsYouTubeDescriptionGoUrl(
+  rawMatch: string,
+  args: { productSlug: string; videoSlug?: string | null },
+): string {
+  if (goUrlHasYoutubeUtmSource(rawMatch)) return rawMatch;
+  const stamped = buildYouTubeDescriptionGoUrl(args);
+  try {
+    const isAbsolute = /^https?:\/\//i.test(rawMatch);
+    const existing = isAbsolute
+      ? new URL(rawMatch)
+      : new URL(rawMatch, "https://example.invalid");
+    const target = new URL(stamped);
+    for (const key of ["utm_medium", "utm_campaign", "utm_content"] as const) {
+      const v = existing.searchParams.get(key);
+      if (v) target.searchParams.set(key, v);
+    }
+    target.searchParams.set("utm_source", "youtube");
+    return target.toString();
+  } catch {
+    return stamped;
+  }
+}
+
+/**
+ * In-place upgrade of bare/unstamped `/go/{slug}` doors in a YouTube description.
+ * Does not insert a new affiliate block. Leaves utm_source=youtube URLs alone.
+ */
+export function upgradeYouTubeDescriptionGoUrls(args: {
+  description: string;
+  productSlugs: string[];
+  videoSlug?: string | null;
+}): { description: string; foundAnyGo: boolean; upgradedAny: boolean } {
+  let text = args.description;
+  let foundAnyGo = false;
+  let upgradedAny = false;
+  for (const productSlug of args.productSlugs) {
+    const pattern = orbitGoUrlPatternForSlug(productSlug);
+    text = text.replace(pattern, (match) => {
+      foundAnyGo = true;
+      if (goUrlHasYoutubeUtmSource(match)) return match;
+      upgradedAny = true;
+      return stampMatchAsYouTubeDescriptionGoUrl(match, {
+        productSlug,
+        videoSlug: args.videoSlug,
+      });
+    });
+  }
+  return { description: text, foundAnyGo, upgradedAny };
+}
+
 /** Strip a leading disclosure line if an older generator put it first. */
 function stripLeadingDisclosure(description: string): string {
   const lines = description.split("\n");
@@ -308,24 +389,24 @@ export function appendAffiliateSectionToDescription(
   }
 
   const body = stripLeadingDisclosure(args.description.trimEnd());
+  const { description: withGo, foundAnyGo } = upgradeYouTubeDescriptionGoUrls({
+    description: body,
+    productSlugs: uniqueLinks.map((l) => l.productSlug),
+    videoSlug,
+  });
 
-  for (const link of uniqueLinks) {
-    const go = buildYouTubeDescriptionGoUrl({
-      productSlug: link.productSlug,
-      videoSlug,
-    });
-    if (body.includes(link.productSlug) || body.includes(go)) {
-      if (!descriptionAlreadyHasDisclosure(body)) {
-        return insertAffiliateBlockAfterPrimaryCta(
-          body,
-          templates.disclosure || CREATOR_AFFILIATE_DISCLOSURE,
-        );
-      }
-      return body.trimEnd();
+  // Existing /go/{slug} door: upgrade bare → stamped in place; never duplicate the block.
+  if (foundAnyGo) {
+    if (!descriptionAlreadyHasDisclosure(withGo)) {
+      return insertAffiliateBlockAfterPrimaryCta(
+        withGo,
+        templates.disclosure || CREATOR_AFFILIATE_DISCLOSURE,
+      );
     }
+    return withGo.trimEnd();
   }
 
-  return insertAffiliateBlockAfterPrimaryCta(body, section);
+  return insertAffiliateBlockAfterPrimaryCta(withGo, section);
 }
 
 export function recommendationsToDescriptionLinks(

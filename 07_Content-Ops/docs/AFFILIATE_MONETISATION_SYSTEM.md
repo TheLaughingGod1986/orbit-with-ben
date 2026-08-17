@@ -386,7 +386,7 @@ Encoded in `topic-product-map.ts` and applied by `recommendProductsForVideo`. Ca
 
 Recommended UTM (YouTube description): `utm_source=youtube` · `utm_medium=affiliate` · `utm_campaign={video-slug}` · `utm_content={product-slug}`
 
-`buildYouTubeDescriptionGoUrl` stamps these on description `/go/` links. Social doors use `buildSocialGoUrl` / platform UTMs — never force `youtube` onto threads/instagram/facebook.
+`buildYouTubeDescriptionGoUrl` stamps these on description `/go/` links (including placement-table `goPath` paste). Re-append upgrades bare/unstamped `/go/{slug}` in an existing description in place — no duplicate block; already-`utm_source=youtube` URLs are left alone. Social doors use `buildSocialGoUrl` / platform UTMs — never force `youtube` onto threads/instagram/facebook.
 
 ## Reporting
 

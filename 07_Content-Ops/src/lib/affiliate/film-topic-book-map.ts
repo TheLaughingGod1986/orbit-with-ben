@@ -7,6 +7,7 @@
  */
 
 import { liveUrlForSlug, isAmazonUkDestinationUrl } from "./live-product-urls";
+import { buildYouTubeDescriptionGoUrl } from "./urls";
 
 export type FilmTopicBookWire = {
   /** Stable key for logging / tests */
@@ -228,7 +229,11 @@ export function filmTopicBookPlacementTableRows(): Array<{
       youtubeId: w.youtubeVideoId || "(scheduled — id pending)",
       productSlug: w.productSlug,
       amazonUrl: live.destinationUrl,
-      goPath: `/go/${w.productSlug}`,
+      // YouTube description paste field — must include utm_source=youtube
+      goPath: buildYouTubeDescriptionGoUrl({
+        productSlug: w.productSlug,
+        videoSlug: w.slug,
+      }),
     };
   });
 }

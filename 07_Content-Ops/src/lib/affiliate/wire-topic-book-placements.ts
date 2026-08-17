@@ -303,7 +303,10 @@ export async function wireTopicBookPlacements(opts?: {
         title: wire.title,
         productSlug: wire.productSlug,
         placementId: "(dry-run)",
-        goPath: `/go/${wire.productSlug}`,
+        goPath: buildYouTubeDescriptionGoUrl({
+          productSlug: wire.productSlug,
+          videoSlug: wire.slug,
+        }),
         amazonUrl: live.destinationUrl,
         descriptionPreview: "",
         createdVideo: false,
@@ -410,7 +413,10 @@ export async function wireTopicBookPlacements(opts?: {
       title: video.title,
       productSlug: product.slug,
       placementId: placement.id,
-      goPath: `/go/${product.slug}`,
+      goPath: buildYouTubeDescriptionGoUrl({
+        productSlug: product.slug,
+        videoSlug: video.slug,
+      }),
       amazonUrl: live.destinationUrl,
       descriptionPreview,
       createdVideo,
