@@ -24,7 +24,8 @@ export type RecordClickInput = {
 
 /**
  * Resolve product, record click, return tracked destination URL.
- * `source` is normalised to youtube | threads | instagram | facebook | …
+ * `source` is normalised to youtube | threads | instagram | facebook | other | …
+ * Missing/empty source → `other` (never silently youtube).
  */
 export async function recordAffiliateClickAndResolve(input: RecordClickInput): Promise<{
   destinationUrl: string;

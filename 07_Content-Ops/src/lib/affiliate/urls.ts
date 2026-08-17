@@ -93,7 +93,7 @@ export function buildTrackedAffiliateUrl(args: {
     return args.affiliateUrl;
   }
 
-  const source = normalizeAffiliateClickSource(args.utmSource ?? "youtube");
+  const source = normalizeAffiliateClickSource(args.utmSource);
   const medium = args.utmMedium ?? "affiliate";
   const campaign = args.utmCampaign ?? args.videoSlug ?? "orbit";
   const content = args.utmContent ?? args.productSlug;

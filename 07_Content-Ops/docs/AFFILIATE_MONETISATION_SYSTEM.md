@@ -129,13 +129,13 @@ Affiliate-aware captions for the live channels Ben runs are generated inside Con
 | `instagram_feed` | `instagram` | Same caption pattern as Facebook Page |
 | `facebook_page` | `facebook` | Distinct from `facebook_reels` — feed/page only |
 | `facebook_reels` | `facebook` | Reels path; same click source bucket |
-| YouTube description `/go/` | `youtube` | Default when utm_source omitted |
+| YouTube description `/go/` | `youtube` | Stamp `utm_source=youtube` on description links; omitted/empty → `other` (not youtube) |
 
 **UTM on social → `/go/` or YouTube links**
 
 | Param | Value |
 |-------|--------|
-| `utm_source` | `threads` \| `instagram` \| `facebook` (or `youtube` from description) |
+| `utm_source` | `threads` \| `instagram` \| `facebook` \| `youtube` (explicit) \| … ; missing/empty → `other` |
 | `utm_medium` | `affiliate` when a product is soft-mentioned; `social` when the post only points at the film |
 | `utm_campaign` | `{video-slug}` |
 | `utm_content` | `{affiliate-product-slug}` when a product is mentioned |

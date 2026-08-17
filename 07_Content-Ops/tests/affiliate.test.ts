@@ -411,17 +411,27 @@ describe("affiliate description generation", () => {
 });
 
 describe("redirect URL generation", () => {
-  it("builds tracked affiliate URLs with utm params", () => {
+  it("builds tracked affiliate URLs with utm params (missing source → other)", () => {
     const url = buildTrackedAffiliateUrl({
       affiliateUrl: "https://example.invalid/aff/item?existing=1",
       videoSlug: "black-hole-fall",
       productSlug: "brilliant-physics",
     });
-    expect(url).toContain("utm_source=youtube");
+    expect(url).toContain("utm_source=other");
     expect(url).toContain("utm_medium=affiliate");
     expect(url).toContain("utm_campaign=black-hole-fall");
     expect(url).toContain("utm_content=brilliant-physics");
     expect(url).toContain("existing=1");
+  });
+
+  it("preserves explicit utm_source=youtube on tracked destination URLs", () => {
+    const url = buildTrackedAffiliateUrl({
+      affiliateUrl: "https://example.invalid/aff/item",
+      videoSlug: "black-hole-fall",
+      productSlug: "brilliant-physics",
+      utmSource: "youtube",
+    });
+    expect(url).toContain("utm_source=youtube");
   });
 
   it("builds orbit redirect paths", () => {
@@ -953,6 +963,19 @@ describe("live social channel affiliate snippets", () => {
     expect(normalizeAffiliateClickSource("instagram_reels")).toBe("instagram");
     expect(normalizeAffiliateClickSource("facebook_page")).toBe("facebook");
     expect(normalizeAffiliateClickSource("threads")).toBe("threads");
+  });
+
+  it("defaults missing/empty utm_source to other, not youtube", () => {
+    expect(normalizeAffiliateClickSource(undefined)).toBe("other");
+    expect(normalizeAffiliateClickSource(null)).toBe("other");
+    expect(normalizeAffiliateClickSource("")).toBe("other");
+    expect(normalizeAffiliateClickSource("   ")).toBe("other");
+    expect(normalizeAffiliateClickSource("youtube")).toBe("youtube");
+    expect(normalizeAffiliateClickSource("YouTube")).toBe("youtube");
+    expect(normalizeAffiliateClickSource("instagram")).toBe("instagram");
+    expect(normalizeAffiliateClickSource("threads")).toBe("threads");
+    expect(normalizeAffiliateClickSource("facebook")).toBe("facebook");
+    expect(normalizeAffiliateClickSource("mystery-channel")).toBe("other");
   });
 
   it("Facebook Page caption stays documentary — link at end, no shop energy", () => {
