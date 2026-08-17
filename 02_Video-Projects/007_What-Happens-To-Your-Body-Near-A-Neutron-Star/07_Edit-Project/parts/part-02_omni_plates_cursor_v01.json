@@ -1,0 +1,107 @@
+{
+  "part": "02",
+  "episode": "007_What-Happens-To-Your-Body-Near-A-Neutron-Star",
+  "engine": "gemini-omni",
+  "model": "Omni Flash",
+  "vo": "02_Voiceover/parts/neutron_star_part-02_vo_v01.wav",
+  "vo_reused": false,
+  "source_script": "01_Script/neutron_star_script_master_v01.md",
+  "carry_from_part01": [
+    "VO-literal: one idea, one image. Remnant stays compact \u2014 never grow-to-fill.",
+    "One face; orange back on turns. Two stubby arms only.",
+    "Orbit interacts: bank, drift, brace, bank away from the beam. Not a static hover looking around.",
+    "Clean vacuum. Soft underside glow, no flame jet. Do not I2V from the full-frame identity still.",
+    "I2V grows Orbit \u2014 start frames already small/medium. Do not park him as a left-third hero."
+  ],
+  "plates": [
+    {
+      "id": "01",
+      "slug": "drifts-closer",
+      "file": "omni_p02_01_drifts-closer_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/01_drifts_closer.png",
+      "vo_idea": "Orbit drifts closer and the star refuses to get bigger the way a planet would",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit BANKS and DRIFTS forward through CLEAN near-black vacuum \u2014 a small on-model orange figure, not a hero CU. The compact leftover remnant stays SMALL on the right and does NOT grow. Keep this scale. MATCH identity: matte orange, black visor FACEPLATE, cream eyes with pupils, TWO stubby arms, antenna, one small underside glow. Exactly one face; if he turns, solid orange back. HARD FORBIDDEN: remnant zooming to fill the frame, corner-approach formula, two faces, four arms, flame jet, dense star-noise, knockoff. Premium cinematic 3D CGI, continuous motion ~8s."
+    },
+    {
+      "id": "02",
+      "slug": "stays-compact",
+      "file": "omni_p02_02_stays-compact_cursor_v01.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/02_stays_compact.png",
+      "vo_idea": "It stays compact. Fierce. Wrong.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. THE REMNANT is the subject \u2014 a compact city-scale sphere on CLEAN near-black vacuum. It STAYS small. Slow rotation, hot patches, fierce and wrong. NO Orbit. NO planet. NO atmosphere. Do NOT zoom until it fills the frame. HARD FORBIDDEN: Orbit, Earth, cities, dense star-noise. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "04",
+      "slug": "why-so-small",
+      "file": "omni_p02_04_why-so-small_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/04_why_so_small.png",
+      "vo_idea": "Why does something so small refuse to behave like anything you have ever stood on?",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit TIPS and REACTS \u2014 antenna flares, visor FACEPLATE toward the tiny remnant far away. He is medium in frame, not a CU filling the shot. Remnant stays a tiny compact point. Exactly ONE face, TWO arms, cream eyes with pupils, small underside glow. HARD FORBIDDEN: two faces, four arms, flame jet, remnant growing huge, corner-approach, knockoff. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "05",
+      "slug": "not-a-world",
+      "file": "omni_p02_05_not-a-world_cursor_v01.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/05_not_a_world.png",
+      "vo_idea": "Because this is not a world with polite gravity and thick air",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. Compact remnant in HARD VACUUM \u2014 no atmosphere, no blue limb, no clouds, no planet. CLEAN near-black. NO Orbit. The picture is: this is not a world you could stand on. HARD FORBIDDEN: Earth, airglow, Orbit, dense star-noise. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "07",
+      "slug": "teaspoon-mountains",
+      "file": "omni_p02_07_teaspoon-mountains_cursor_v01.mp4",
+      "orbit": false,
+      "env": "earth",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/07_teaspoon_mountains.png",
+      "vo_idea": "A teaspoon of this stuff would outweigh mountains. Not metaphorically. Literally.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. A recognisable METAL KITCHEN TEASPOON (oval bowl + long handle) sits on cracked Earth rock in front of a real mountain range. The spoon is impossibly heavy \u2014 the ground splinters under the bowl. Keep it a SPOON. Slow, serious, cinematic 3D CGI ~8s. HARD FORBIDDEN: antenna, glowing orb on a stem, mushroom, beacon, Orbit, robot, HUD text, low-poly game-piece, labels."
+    },
+    {
+      "id": "08",
+      "slug": "not-holding-yet",
+      "file": "omni_p02_08_not-holding-yet_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/08_not_holding_yet.png",
+      "vo_idea": "But Orbit is not holding a teaspoon yet. Still far enough out that the danger looks like beauty",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit is FAR OUT, small in frame, EMPTY HANDS \u2014 not holding a spoon. He DRIFTS, banks slightly. Compact remnant stays small and beautiful, spinning. CLEAN vacuum. MATCH identity: visor FACEPLATE, cream eyes, TWO arms, underside glow not flame. HARD FORBIDDEN: teaspoon in his hand, two faces, four arms, hero CU, remnant filling the frame. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "09",
+      "slug": "lighthouse-beam",
+      "file": "omni_p02_09_lighthouse-beam_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/09_lighthouse_beam.png",
+      "vo_idea": "spinning, maybe flashing like a lighthouse if radiation beams sweep the sky",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. A RADIATION BEAM sweeps across CLEAN vacuum like a lighthouse. Orbit BANKS AWAY from the beam \u2014 interaction, not a static watch. Compact spinning remnant. Exactly ONE Orbit, ONE visor FACEPLATE, TWO arms, orange back if he turns. HARD FORBIDDEN: two faces, four arms, flame jet, corner-approach, knockoff, dense star-noise. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "10",
+      "slug": "mercy-runs-out",
+      "file": "omni_p02_10_mercy-runs-out_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part02_v01/10_mercy_runs_out.png",
+      "vo_idea": "Distance is mercy. The question is what happens when mercy runs out.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit BRACES and fights to HOLD DISTANCE as the pull steepens \u2014 underside glow as a hover pad, not a flame jet. Remnant stays a tiny fierce point. He does not fly into it. Exactly ONE face, TWO arms. HARD FORBIDDEN: two faces, landing, remnant grow-to-fill, four arms, knockoff, dense star-noise. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    }
+  ],
+  "assemble_note": "8 plates so lighthouse + mercy land inside 58.5s VO (dropped 03 duplicate remnant + 06 crushed as coverage-overlap)."
+}

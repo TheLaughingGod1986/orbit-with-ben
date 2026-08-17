@@ -1,0 +1,126 @@
+{
+  "part": "03",
+  "episode": "007_What-Happens-To-Your-Body-Near-A-Neutron-Star",
+  "engine": "gemini-omni",
+  "model": "Omni Flash",
+  "vo": "02_Voiceover/parts/neutron_star_part-03_vo_v01.wav",
+  "source_script": "01_Script/neutron_star_script_master_v01.md",
+  "carry": [
+    "VO-literal mute test: picture tells the story. At most one Orbit+distant-remnant hang per minute.",
+    "One face, two arms, orange back on turns.",
+    "Orbit interacts — lift, yank, fall-as-the-object — not a tourist looking at a dot.",
+    "Soft underside glow, no flame jet. Clean vacuum on space plates."
+  ],
+  "plates": [
+    {
+      "id": "01",
+      "slug": "kitchen-lead",
+      "file": "omni_p03_01_kitchen-lead_cursor_v01.mp4",
+      "orbit": true,
+      "env": "earth",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/01_kitchen_lead.png",
+      "vo_idea": "On Earth, density is a kitchen word. Lead feels heavy.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. On-model Orbit INTERACTS: he LIFTS a dull grey lead lump on a simple dark table. The weight is ordinary-heavy. MATCH identity: matte orange, black visor FACEPLATE, cream eyes with pupils, TWO stubby arms, antenna, small underside glow. Exactly one face. HARD FORBIDDEN: two faces, four arms, flame jet, knockoff, HUD text, neutron star. Premium cinematic 3D CGI, continuous motion ~8s."
+    },
+    {
+      "id": "02",
+      "slug": "osmium-wrong",
+      "file": "omni_p03_02_osmium-wrong_cursor_v01.mp4",
+      "orbit": true,
+      "env": "earth",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/02_osmium_wrong.png",
+      "vo_idea": "Osmium feels wrong in the hand — too much mass for its size, like a prank.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit tries to lift a SMALLER darker metal lump and is YANKED downward — too much mass for its size. One visor FACEPLATE, TWO arms, cream eyes. HARD FORBIDDEN: two faces, four arms, flame jet, knockoff, teaspoon yet, neutron star. Premium cinematic 3D CGI, continuous motion ~8s."
+    },
+    {
+      "id": "03",
+      "slug": "sun-core",
+      "file": "omni_p03_03_sun-core_cursor_v01.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/03_sun_core.png",
+      "vo_idea": "The Sun's core is denser still, but atoms still exist there as raging plasma.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. THE SUN'S CORE — raging plasma, atoms still exist as fire. NO Orbit. NO kitchen. HARD FORBIDDEN: Orbit, Earth, neutron-star leftover. Premium cinematic 3D CGI, continuous motion ~8s."
+    },
+    {
+      "id": "04",
+      "slug": "white-dwarf",
+      "file": "omni_p03_04_white-dwarf_cursor_v01.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/04_white_dwarf.png",
+      "vo_idea": "A white dwarf goes further. Electrons jammed into a quantum pressure cushion. Already alien.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. A WHITE DWARF on CLEAN near-black vacuum — compact, pale, electron-degeneracy sphere. NO Orbit. HARD FORBIDDEN: Orbit, dense star-noise, living yellow giant. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "05",
+      "slug": "past-that-line",
+      "file": "omni_p03_05_past-that-line_cursor_v01.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/05_past_the_line.png",
+      "vo_idea": "A neutron star goes past that line.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. Compact neutron-star leftover — past the white-dwarf line. Stays compact, fierce. NO Orbit. CLEAN vacuum. HARD FORBIDDEN: grow-to-fill, Orbit, Earth. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "06",
+      "slug": "squeezed-neutrons",
+      "file": "omni_p03_06_squeezed-neutrons_cursor_v01.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/06_squeezed_neutrons.png",
+      "vo_idea": "Electrons and protons squeezed into neutrons. Nuclear physics doing architectural work.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. INTERIOR of ultra-dense matter — nuclei crushed, neutrons packed, architectural nuclear physics. NO Orbit. NO kitchen. HARD FORBIDDEN: Orbit, HUD labels, Earth. Premium cinematic 3D CGI, continuous motion ~8s."
+    },
+    {
+      "id": "07",
+      "slug": "stares-teaspoon",
+      "file": "omni_p03_07_stares-teaspoon_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/07_stares_teaspoon.png",
+      "vo_idea": "Orbit stares at the teaspoon. Tries to lift it and is yanked downward.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit STARES at a recognisable METAL KITCHEN TEASPOON (oval bowl + long handle), then TRIES TO LIFT it and is YANKED down as if glued to an anvil. Keep the object a SPOON. One visor FACEPLATE, TWO arms, cream eyes, small underside glow. HARD FORBIDDEN: antenna, glowing orb on a stem, mushroom, beacon, two faces, four arms, flame jet, knockoff, hero CU filling the frame. Premium cinematic 3D CGI, continuous motion ~8s."
+    },
+    {
+      "id": "08",
+      "slug": "punch-through-earth",
+      "file": "omni_p03_08_punch-through-earth_cursor_v01.mp4",
+      "orbit": false,
+      "env": "earth",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/08_punch_through_earth.png",
+      "vo_idea": "It would punch through crust and mantle like a bullet through tissue, seeking the planet's centre.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. A tiny glowing teaspoon PUNCHES through Earth's crust and mantle toward the centre, like a bullet through tissue. NO Orbit. Physics-led, not gore. HARD FORBIDDEN: Orbit, HUD text, cartoon labels. Premium cinematic 3D CGI, continuous motion ~8s."
+    },
+    {
+      "id": "09",
+      "slug": "you-approaching",
+      "file": "omni_p03_09_you-approaching_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/09_you_approaching.png",
+      "vo_idea": "What happens when you are the object approaching the whole star?",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. YOU ARE THE INCOMING MASS. A huge neutron-star LIMB fills the left of frame. Tiny on-model Orbit DRIFTS IN from the right toward that limb — he is the object approaching the whole star, not a tourist watching a distant dot. Keep this scale: remnant stays HUGE (limb), Orbit stays small. Continuous drift closer. One face, TWO arms. CLEAN vacuum. HARD FORBIDDEN: remnant shrinking to a distant point, Orbit-plus-tiny-star wallpaper, two faces, four arms, corner-approach formula, flame jet. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "10",
+      "slug": "without-narrator",
+      "file": "omni_p03_10_without-narrator_cursor_v01.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_part03_v01/10_without_narrator.png",
+      "vo_idea": "How close before exploration becomes physics without a narrator?",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. VISOR CLOSE-UP: Orbit fills the lower frame. Behind him the sky SMEARS into arcs \u2014 exploration dying into raw physics, not a pretty hang. He BRACES. One visor FACEPLATE, cream eyes with pupils, TWO arms. HARD FORBIDDEN: another Orbit-plus-distant-dot establishing shot, two faces, four arms, landing, knockoff. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    }
+  ]
+}

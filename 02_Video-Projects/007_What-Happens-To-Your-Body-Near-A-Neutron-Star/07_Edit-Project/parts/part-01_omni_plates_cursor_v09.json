@@ -1,0 +1,131 @@
+{
+  "part": "01",
+  "episode": "007_What-Happens-To-Your-Body-Near-A-Neutron-Star",
+  "engine": "flow-omni",
+  "model": "Omni Flash",
+  "vo": "02_Voiceover/parts/neutron_star_part-01_vo_v01.mp3",
+  "vo_reused": true,
+  "source_script": "01_Script/neutron_star_script_master_v01.md",
+  "ben_uat_v08": [
+    "VO and continuous score stay. Do not regen voice or music.",
+    "Clean vacuum: near-black, almost no star-noise, one distant star when the line needs it.",
+    "Canonical Orbit only \u2014 black visor IS the face, cream eyes with pupils, stubby arms, antenna, small underside glow. Knockoff (glowing belly, missing visor/arms) = regen.",
+    "Keep v06 shot grammar: one VO idea, one image. No formula corner-approach. One face; back is orange."
+  ],
+  "ben_uat_v09": [
+    "First ~5s of v08 hang is the keeper look. After 5s the hang turned into an amateur spin/orbit with a flame jet.",
+    "Regen plate 01 only as HOLD STATION. Reuse plates 02\u201310 from v08. Do not regen VO or music."
+  ],
+  "plates": [
+    {
+      "id": "01",
+      "slug": "orbit-already-hanging",
+      "file": "omni_p01_01_orbit-already-hanging_cursor_v09.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_v08/01_hang_hold.png",
+      "vo_idea": "Orbit hangs in the dark \u2014 a tiny orange figure against a star that looks almost ordinary",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. LOCK THIS POSE for the whole 8 seconds. Orbit HOLDS STATION in the dark \u2014 a tiny finished-film CGI character already in frame. Motion is a 1cm hover only, like a gyroscope holding still. Do NOT rotate. Do NOT turn away. Do NOT spin. Do NOT orbit the star. Do NOT fly. Do NOT approach. Visor FACEPLATE stays facing camera the entire clip \u2014 cream eyes with pupils. Soft underside glow only \u2014 NO flame jet, NO rocket exhaust, NO thruster fire. Premium cinematic 3D, not a toy preview loop. CLEAN near-black vacuum, one distant white-blue star. HARD FORBIDDEN: amateur orbit-around-star path, knockoff, missing visor, dense star-noise, camera whip. Continuous ~8s."
+    },
+    {
+      "id": "02",
+      "slug": "ordinary-dies-the-star",
+      "file": "omni_p01_02_ordinary-dies-the-star_cursor_v08.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/02_ordinary_star.png",
+      "vo_idea": "Then the numbers arrive. And ordinary dies.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. THE STAR is the subject on a CLEAN near-black vacuum \u2014 almost no other stars. NO robot. The star's light sickens: colour shifts from clean white-blue toward a sick violet-yellow, photosphere texture curdles, spacetime wrinkles. Slow push. HARD FORBIDDEN: dense star-noise, any robot, planets, cities. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "03",
+      "slug": "not-falling-tumble",
+      "file": "omni_p01_03_not-falling-tumble_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/03_tumble.png",
+      "vo_idea": "If you drifted toward a neutron star, the last thing your body would feel is not falling",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit already mid-frame, tumbling weightless in CLEAN near-black vacuum \u2014 NO destination star. MATCH identity still: matte orange, black visor FACEPLATE, cream eyes with pupils, stubby arms, antenna, small underside glow only. When he turns, solid orange BACK \u2014 never a second visor. HARD FORBIDDEN: knockoff glowing-belly Orbit, missing visor, dense white specks, two faces, two Orbits, corner-approach. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "04",
+      "slug": "tide-tears-a-line",
+      "file": "omni_p01_04_tide-tears-a-line_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/04_tidal.png",
+      "vo_idea": "Space itself would try to tear you into a line of atoms",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. The picture IS tidal stretch: canonical Orbit elongated into a thin line, visor FACEPLATE only on the front of the remaining blob. CLEAN vacuum. MATCH identity still materials. HARD FORBIDDEN: knockoff, two faces, two Orbits, dense star-noise, corner-approach. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "05",
+      "slug": "light-bends-into-a-ring",
+      "file": "omni_p01_05_light-bends-into-a-ring_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/05_photon_ring.png",
+      "vo_idea": "your eyes would see light bend into a ring before you could blink",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. A RING OF LIGHT fills the frame on CLEAN near-black vacuum. Tiny canonical Orbit in the centre \u2014 visor faceplate, cream eyes, stubby arms, not a knockoff speck. HARD FORBIDDEN: dense star-noise, Orbit CU, two faces, corner-approach. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "06",
+      "slug": "second-by-second-hold",
+      "file": "omni_p01_06_second-by-second-hold_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/06_hold.png",
+      "vo_idea": "what actually happens to you \u2014 second by second \u2014 as the distance closes",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. Orbit HOLDS STATION in CLEAN vacuum. Remnant is a tiny point ABOVE him that never grows. He does not fly toward it. MATCH identity still: visor faceplate, cream eyes, stubby arms, small underside glow. If he turns, orange back only. HARD FORBIDDEN: knockoff, dense star-noise, left-to-right approach, two faces. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "07",
+      "slug": "see-feel-you-ends",
+      "file": "omni_p01_07_see-feel-you-ends_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/07_visor_cu.png",
+      "vo_idea": "What would you see? What would you feel? And at what point does you stop being a useful word?",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. CLOSE-UP of the canonical black visor FACEPLATE \u2014 that visor is the whole face \u2014 two cream eyes with dark pupils. Expression only through the eyes. MATCH the identity still. CLEAN near-black around him, almost no stars. HARD FORBIDDEN: HUD, UI, lettering, knockoff, slit LEDs, missing visor, two faces, dense star-noise, pulling out to a corner-approach. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "08",
+      "slug": "it-began-as-a-giant",
+      "file": "omni_p01_08_it-began-as-a-giant_cursor_v08.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/08_living_giant.png",
+      "vo_idea": "This began as a giant.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. A LIVING yellow-orange giant star filling the frame on CLEAN near-black vacuum. NO Orbit. Surface churns. HARD FORBIDDEN: dense star-noise, Orbit, neutron-star leftover, black hole. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "09",
+      "slug": "supernova-goodbye",
+      "file": "omni_p01_09_supernova-goodbye_cursor_v08.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/09_supernova.png",
+      "vo_idea": "The outer layers blasted away in a supernova \u2014 a brief, furious goodbye.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. The picture IS the supernova wall of ejecta. NO Orbit. CLEAN dark around the blast, not a field of white specks. HARD FORBIDDEN: Orbit, dense star-noise, corner-approach. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "10",
+      "slug": "argument-gravity-almost-won",
+      "file": "omni_p01_10_argument-gravity-almost-won_cursor_v08.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/10_remnant.png",
+      "vo_idea": "What remained was not ash. What remained was an argument gravity almost won.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. MACRO leftover remnant on CLEAN near-black vacuum. NO Orbit. Intensity rises. HARD FORBIDDEN: Orbit, dense star-noise, cities, Earth. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    }
+  ]
+}

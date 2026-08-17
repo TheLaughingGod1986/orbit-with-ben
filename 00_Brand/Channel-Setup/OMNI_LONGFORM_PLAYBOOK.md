@@ -57,7 +57,7 @@ Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 �
 
 | Lock | Rule |
 |------|------|
-| Picture flatten | One VO idea → one literal image. When VO and picture disagree, picture is wrong. Orbit *in* the scene, not a sticker. |
+| Picture flatten | One VO idea → one literal image. When VO and picture disagree, picture is wrong. Orbit *in* the scene, not a sticker. Mute the VO: the beat should still read. At most **one** Orbit + distant-remnant hang per minute (Neutron Star Part 02, 17 Aug 2026). |
 | oneVideoOneUpload | Recut = new id. Leave old live until new is public, then unpublish. Do not reuse ids. |
 | Length | Aug 13 lock: **~18–25 min** documentary. Do not silently revert to 8–12. Older `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` and `templates/PRODUCTION_CHECKLIST_V2.md` still say 8–12 — ignore that line. |
 
@@ -69,6 +69,8 @@ Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 �
 | Baked like/subscribe VO or graphic | Studio end screens own the last 10s |
 | Freeze-pad / scenery loop | Broken / against cutscene rules |
 | Twin Orbit / second face / blank white eyes | Character break |
+| Formula corner-approach plate (Orbit in a corner, destination opposite, fly toward it — repeated) | Not VO-literal; feels like a template, not a film |
+| Orbit + distant remnant as the default plate | Pretty wallpaper under clever VO — not an episode |
 | Bubbles in vacuum/surface | Env lie |
 | Clipper underwater | Identity/env break |
 | Zoompan on title/chapter text | Glyph vibration |
