@@ -75,7 +75,7 @@ export default async function AffiliateDashboardPage() {
   const warnings: string[] = [];
   if (data.warnings.videosMissingLinks > 0) {
     warnings.push(
-      `${data.warnings.videosMissingLinks} published/high-view video(s) still missing affiliate links.`,
+      `${data.warnings.videosMissingLinks} published/high-view video(s) with no affiliate placement.`,
     );
   }
   if (data.warnings.inactiveProductInDescriptions > 0) {

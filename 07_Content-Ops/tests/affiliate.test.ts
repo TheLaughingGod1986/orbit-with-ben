@@ -1835,7 +1835,7 @@ describe("film → topic-book wiring (Social Media Manager)", () => {
 });
 
 describe("home monetisation card top affiliate video", () => {
-  it("does not surface an opportunity title when placements are empty", () => {
+  it("does not surface an opportunity title when highestPerformingVideo is null", () => {
     const card = buildHomeMonetisationCard(
       {
         revenueMonth: 0,
@@ -1862,7 +1862,7 @@ describe("home monetisation card top affiliate video", () => {
     expect(card.videosMissingLinks).toBe(3);
   });
 
-  it("uses highestPerformingVideo from APPROVED/ACTIVE placements only", () => {
+  it("prefers highestPerformingVideo over an opportunity title", () => {
     const card = buildHomeMonetisationCard(
       {
         revenueMonth: 12.5,
@@ -1881,5 +1881,20 @@ describe("home monetisation card top affiliate video", () => {
 
     expect(card.topAffiliateVideo).toBe("Europa Under the Ice");
     expect(card.topOpportunitySlug).toBe("fermi-paradox");
+  });
+
+  it("returns null top video and null opportunity slug when both inputs are empty", () => {
+    const card = buildHomeMonetisationCard(
+      {
+        revenueMonth: 0,
+        clicksMonth: 0,
+        highestPerformingVideo: null,
+        warnings: { videosMissingLinks: 0 },
+      },
+      [],
+    );
+
+    expect(card.topAffiliateVideo).toBeNull();
+    expect(card.topOpportunitySlug).toBeNull();
   });
 });
