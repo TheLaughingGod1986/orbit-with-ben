@@ -47,6 +47,36 @@ export function buildOrbitRedirectUrl(productSlug: string): string {
   return `${getAffiliateRedirectBaseUrl()}/${encodeURIComponent(productSlug)}`;
 }
 
+/**
+ * YouTube description `/go/` door — always stamps `utm_source=youtube` so live
+ * description clicks are not recorded as `other` after the missing-source default.
+ * Fills medium/campaign/content only when absent (does not overwrite existing).
+ * Do not use for social doors (threads / instagram / facebook use buildSocialGoUrl).
+ */
+export function buildYouTubeDescriptionGoUrl(args: {
+  productSlug: string;
+  videoSlug?: string | null;
+}): string {
+  const base = buildOrbitRedirectUrl(args.productSlug);
+  let url: URL;
+  try {
+    url = new URL(base);
+  } catch {
+    return base;
+  }
+  url.searchParams.set("utm_source", "youtube");
+  if (!url.searchParams.has("utm_medium")) {
+    url.searchParams.set("utm_medium", "affiliate");
+  }
+  if (!url.searchParams.has("utm_campaign") && args.videoSlug?.trim()) {
+    url.searchParams.set("utm_campaign", args.videoSlug.trim());
+  }
+  if (!url.searchParams.has("utm_content")) {
+    url.searchParams.set("utm_content", args.productSlug);
+  }
+  return url.toString();
+}
+
 function applyUtmToUrl(
   rawUrl: string,
   utm: {

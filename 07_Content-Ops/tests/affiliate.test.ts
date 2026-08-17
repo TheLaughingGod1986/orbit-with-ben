@@ -24,6 +24,7 @@ import {
 import { scoreAffiliateOpportunity } from "../src/lib/affiliate/opportunity";
 import {
   buildOrbitRedirectUrl,
+  buildYouTubeDescriptionGoUrl,
   buildTrackedAffiliateUrl,
   applyProgrammeAffiliateId,
   resolveAffiliateRedirectBase,
@@ -316,7 +317,8 @@ describe("affiliate description generation", () => {
       desc.indexOf("Playlist"),
     );
     expect(affiliateBlockAppearsInFirstScreen(desc)).toBe(false);
-    expect(desc.match(/beginner-telescope/g)?.length).toBe(1);
+    expect(desc.match(/\/go\/beginner-telescope/g)?.length).toBe(1);
+    expect(desc).toContain("utm_source=youtube");
 
     const again = appendAffiliateSectionToDescription({
       description: desc,
@@ -439,6 +441,24 @@ describe("redirect URL generation", () => {
     expect(buildOrbitRedirectUrl("beginner-telescope")).toBe(
       "https://orbitwithben.com/go/beginner-telescope",
     );
+    delete process.env.AFFILIATE_REDIRECT_BASE_URL;
+  });
+
+  it("stamps utm_source=youtube on YouTube description /go/ URLs", () => {
+    process.env.AFFILIATE_REDIRECT_BASE_URL = "https://orbit-content-ops.vercel.app/go";
+    const url = buildYouTubeDescriptionGoUrl({
+      productSlug: "black-hole-book",
+      videoSlug: "what-happens-if-you-fall-into-a-black-hole",
+    });
+    expect(url).toContain("/go/black-hole-book");
+    expect(url).toContain("utm_source=youtube");
+    expect(url).toContain("utm_medium=affiliate");
+    expect(url).toContain(
+      "utm_campaign=what-happens-if-you-fall-into-a-black-hole",
+    );
+    expect(url).toContain("utm_content=black-hole-book");
+    // Bare redirect helper stays unstamped (social/gear may use it).
+    expect(buildOrbitRedirectUrl("black-hole-book")).not.toContain("utm_source=");
     delete process.env.AFFILIATE_REDIRECT_BASE_URL;
   });
 
@@ -1794,8 +1814,15 @@ describe("film → topic-book wiring (Social Media Manager)", () => {
     const section = buildAffiliateDescriptionSection({
       links: [bookLink],
       topicKey: "black-holes",
+      videoSlug: "what-happens-if-you-fall-into-a-black-hole",
     });
     expect(section).toContain("/go/black-hole-book");
+    expect(section).toContain("utm_source=youtube");
+    expect(section).toContain("utm_medium=affiliate");
+    expect(section).toContain(
+      "utm_campaign=what-happens-if-you-fall-into-a-black-hole",
+    );
+    expect(section).toContain("utm_content=black-hole-book");
     expect(section).not.toContain("beginner-telescope");
     expect(section.toLowerCase()).not.toContain("brilliant");
     expect(section.toLowerCase()).not.toContain("lego");
@@ -1822,11 +1849,13 @@ describe("film → topic-book wiring (Social Media Manager)", () => {
         topic: "Black Holes",
         primaryKeyword: "black hole",
         youtubeVideoId: "3xrxdmaOwJI",
+        slug: "what-happens-if-you-fall-into-a-black-hole",
       },
     });
     expect(desc.indexOf("Subscribe for the next film")).toBeLessThan(
       desc.indexOf("/go/"),
     );
+    expect(desc).toContain("utm_source=youtube");
     expect(desc.indexOf("/go/")).toBeLessThan(desc.indexOf("Playlist"));
     expect(desc.match(/\/go\/[a-z0-9-]+/g)?.length).toBe(1);
 

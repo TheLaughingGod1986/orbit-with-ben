@@ -2,7 +2,7 @@ import {
   DEFAULT_AMAZON_DISCLOSURE,
   type ScoredRecommendation,
 } from "./types";
-import { buildOrbitRedirectUrl } from "./urls";
+import { buildYouTubeDescriptionGoUrl } from "./urls";
 import {
   descriptionViolatesEditorialTone,
   filterDescriptionLinksThroughTrustGate,
@@ -144,6 +144,7 @@ export function buildAffiliateDescriptionSection(args: {
   topicKey?: string | null;
   videoTopic?: string | null;
   videoTitle?: string | null;
+  videoSlug?: string | null;
   headerVariant?: "primary" | "alternate";
 }): string {
   if (!args.links.length) return "";
@@ -196,7 +197,12 @@ export function buildAffiliateDescriptionSection(args: {
     ) {
       continue;
     }
-    const url = useRedirect ? buildOrbitRedirectUrl(link.productSlug) : link.url;
+    const url = useRedirect
+      ? buildYouTubeDescriptionGoUrl({
+          productSlug: link.productSlug,
+          videoSlug: args.videoSlug,
+        })
+      : link.url;
     lines.push(intro);
     lines.push(url);
     lines.push("");
@@ -273,6 +279,8 @@ export function appendAffiliateSectionToDescription(
     ? inferCreatorTopicKey(args.trustVideo)
     : null;
 
+  const videoSlug = args.trustVideo?.slug ?? null;
+
   let section = buildAffiliateDescriptionSection({
     links: uniqueLinks,
     templates: args.templates,
@@ -280,6 +288,7 @@ export function appendAffiliateSectionToDescription(
     topicKey,
     videoTopic: args.trustVideo?.topic,
     videoTitle: args.trustVideo?.title,
+    videoSlug,
     headerVariant: args.headerVariant,
   });
   if (!section || descriptionViolatesEditorialTone(section).length) {
@@ -301,7 +310,10 @@ export function appendAffiliateSectionToDescription(
   const body = stripLeadingDisclosure(args.description.trimEnd());
 
   for (const link of uniqueLinks) {
-    const go = buildOrbitRedirectUrl(link.productSlug);
+    const go = buildYouTubeDescriptionGoUrl({
+      productSlug: link.productSlug,
+      videoSlug,
+    });
     if (body.includes(link.productSlug) || body.includes(go)) {
       if (!descriptionAlreadyHasDisclosure(body)) {
         return insertAffiliateBlockAfterPrimaryCta(

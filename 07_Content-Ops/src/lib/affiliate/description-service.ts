@@ -11,7 +11,7 @@ import {
   toProductMatchInput,
   videoToMatchInput,
 } from "./placements";
-import { buildOrbitRedirectUrl } from "./urls";
+import { buildYouTubeDescriptionGoUrl } from "./urls";
 import { filterDescriptionLinksThroughTrustGate } from "./editorial-trust-gate";
 
 export async function loadDescriptionTemplates(): Promise<DescriptionTemplateMap> {
@@ -36,7 +36,10 @@ export async function buildDescriptionLinksFromVideo(
     productSlug: p.affiliateProduct.slug,
     category: p.affiliateProduct.category,
     programSlug: p.affiliateProduct.affiliateProgram.slug,
-    url: buildOrbitRedirectUrl(p.affiliateProduct.slug),
+    url: buildYouTubeDescriptionGoUrl({
+      productSlug: p.affiliateProduct.slug,
+      videoSlug: video?.slug,
+    }),
     role:
       p.placementType === "DESCRIPTION_PRIMARY"
         ? ("primary" as const)
@@ -80,11 +83,21 @@ export async function generateYouTubeDescriptionWithAffiliates(args: {
 }
 
 export async function previewAffiliateDescriptionBlock(videoId: string): Promise<string> {
+  const video = await prisma.longFormVideo.findUnique({
+    where: { id: videoId },
+    select: { slug: true, topic: true, title: true },
+  });
   const [links, templates] = await Promise.all([
     buildDescriptionLinksFromVideo(videoId),
     loadDescriptionTemplates(),
   ]);
-  return buildAffiliateDescriptionSection({ links, templates });
+  return buildAffiliateDescriptionSection({
+    links,
+    templates,
+    videoSlug: video?.slug,
+    videoTopic: video?.topic,
+    videoTitle: video?.title,
+  });
 }
 
 export { appendAffiliateSectionToDescription, buildAffiliateDescriptionSection };

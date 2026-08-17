@@ -129,7 +129,7 @@ Affiliate-aware captions for the live channels Ben runs are generated inside Con
 | `instagram_feed` | `instagram` | Same caption pattern as Facebook Page |
 | `facebook_page` | `facebook` | Distinct from `facebook_reels` — feed/page only |
 | `facebook_reels` | `facebook` | Reels path; same click source bucket |
-| YouTube description `/go/` | `youtube` | Stamp `utm_source=youtube` on description links; omitted/empty → `other` (not youtube) |
+| YouTube description `/go/` | `youtube` | Description builders stamp `utm_source=youtube` (plus medium/campaign/content when known). Bare `/go/` without UTM → `other` |
 
 **UTM on social → `/go/` or YouTube links**
 
@@ -386,7 +386,7 @@ Encoded in `topic-product-map.ts` and applied by `recommendProductsForVideo`. Ca
 
 Recommended UTM (YouTube description): `utm_source=youtube` · `utm_medium=affiliate` · `utm_campaign={video-slug}` · `utm_content={product-slug}`
 
-Social UTM map: see **Live Orbit social channels** above (`threads` / `instagram` / `facebook`).
+`buildYouTubeDescriptionGoUrl` stamps these on description `/go/` links. Social doors use `buildSocialGoUrl` / platform UTMs — never force `youtube` onto threads/instagram/facebook.
 
 ## Reporting
 
