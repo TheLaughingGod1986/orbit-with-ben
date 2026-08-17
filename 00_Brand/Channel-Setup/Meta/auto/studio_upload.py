@@ -97,8 +97,13 @@ def click_button(page: Page, *labels: str) -> bool:
 
 
 def dismiss_modals(page: Page) -> None:
+    # Leave Page? must Discard — Continue editing is what stacked composer
+    # tabs and froze the Mac when the watcher retried every 5 minutes.
     for label in (
-        "Continue editing",
+        "Discard Changes",
+        "Discard changes",
+        "Leave Page",
+        "Leave",
         "Not now",
         "Close",
         "Got it",
@@ -107,12 +112,11 @@ def dismiss_modals(page: Page) -> None:
         "Cancel",
     ):
         click_button(page, label)
-    # Discard leave-page only if we intentionally navigate away later
     page.evaluate(
         """() => {
-          for (const b of document.querySelectorAll('button,[role=button],div')) {
+          for (const b of document.querySelectorAll('button,[role=button],div,a,span')) {
             const t=(b.innerText||'').trim();
-            if (t === 'Continue editing') { b.click(); return true; }
+            if (t === 'Discard Changes' || t === 'Discard changes') { b.click(); return true; }
           }
         }"""
     )
@@ -413,7 +417,10 @@ def post_short(
 
         def _dialog(d):
             try:
-                d.dismiss()
+                if getattr(d, "type", "") == "beforeunload":
+                    d.accept()
+                else:
+                    d.dismiss()
             except Exception:
                 try:
                     d.accept()
@@ -430,7 +437,10 @@ def post_short(
         # Ensure dialog handler even when page is reused
         def _dialog2(d):
             try:
-                d.dismiss()
+                if getattr(d, "type", "") == "beforeunload":
+                    d.accept()
+                else:
+                    d.dismiss()
             except Exception:
                 try:
                     d.accept()

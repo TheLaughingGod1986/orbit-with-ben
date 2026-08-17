@@ -27,6 +27,30 @@ def composer_url(creds: dict) -> str:
     return suite_ids.composer_url(creds)
 
 
+def mark_exited_cleanly() -> None:
+    """Stop Chrome restoring crashed Reels composer tabs on the next launch."""
+    prefs_path = PROFILE / "Default" / "Preferences"
+    if not prefs_path.exists():
+        return
+    try:
+        data = json.loads(prefs_path.read_text())
+        profile = data.setdefault("profile", {})
+        profile["exit_type"] = "Normal"
+        profile["exited_cleanly"] = True
+        data.setdefault("session", {})["restore_on_startup"] = 5
+        prefs_path.write_text(json.dumps(data))
+    except Exception:
+        pass
+    sessions = PROFILE / "Default" / "Sessions"
+    if sessions.is_dir():
+        import shutil
+
+        try:
+            shutil.rmtree(sessions)
+        except Exception:
+            pass
+
+
 def cdp_up(port: int) -> bool:
     try:
         with urllib.request.urlopen(f"http://127.0.0.1:{port}/json/version", timeout=2) as r:
@@ -44,13 +68,18 @@ def ensure_chrome(*, port: int | None = None) -> dict:
     if not CHROME.exists():
         return {"ok": False, "started": False, "error": "Chrome not found", "port": port}
     PROFILE.mkdir(parents=True, exist_ok=True)
+    mark_exited_cleanly()
+    # about:blank — never launch straight into reels_composer. That URL
+    # plus Chrome's crash-restore bubble is what stacked tabs and froze the Mac.
     args = [
         str(CHROME),
         f"--remote-debugging-port={port}",
         f"--user-data-dir={PROFILE}",
         "--no-first-run",
         "--no-default-browser-check",
-        composer_url(creds),
+        "--hide-crash-restore-bubble",
+        "--disable-session-crashed-bubble",
+        "about:blank",
     ]
     subprocess.Popen(
         args,

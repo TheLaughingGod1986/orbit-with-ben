@@ -73,7 +73,12 @@ python3 live_shorts_to_meta.py --check-creds
 - Soft CTA only: “Full film on YouTube.”
 - Instagram must be a **professional** account linked to the Facebook Page.
 - Future `schedule_iso` wins over stale `published_now` / `visibility: public` in the index (`discover.is_live`) — same rule as TikTok. Do not mirror until YouTube actually goes live.
-- Unload: `launchctl unload ~/Library/LaunchAgents/dev.orbit.meta-live-shorts.plist`
+- The 5-minute LaunchAgent is **disabled** (`Disabled=true`). A CDP retry loop
+  was re-opening Reels composer for shorts already marked `posted` in
+  `META_POSTED.json`, stacking **Leave Page?** + **Restore pages?** until the
+  Mac froze. Re-enable only after `--dry-run` shows no already-posted shorts
+  pending, and prefer Graph over CDP.
+- Unload: `launchctl bootout gui/$(id -u)/dev.orbit.meta-live-shorts`
 
 ## Share step spinner (not a broken computer)
 

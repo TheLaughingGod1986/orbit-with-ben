@@ -1,0 +1,23 @@
+# Stop Cursor indexing ~107GB of plates/exports. Agents can still open explicit paths.
+**/*.mp4
+**/*.mov
+**/*.mkv
+**/*.webm
+**/*.wav
+**/*.aif
+**/*.aiff
+**/*.m4a
+**/*.flac
+**/*.mp3
+.venv-stt/
+.venv-flow/
+**/.venv*/
+**/node_modules/
+02_Video-Projects/**/04_Generated-Clips/
+02_Video-Projects/**/07_Edit-Project/01_Masters/
+02_Video-Projects/**/07_Edit-Project/parts/
+02_Video-Projects/**/10_Shorts/**/06_Final-Exports/
+00_Brand/**/*.png
+00_Brand/**/*.jpg
+01_Orbit-Character/**/*.png
+01_Orbit-Character/**/*.jpg

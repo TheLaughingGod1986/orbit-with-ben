@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Orbit: claim Google Developer Program monthly Cloud credits onto
+  Main bill acc (01CE64-7A6ACD-232329) so Gemini Omni API can spend them.
+
+  Install:
+    cp this file ~/Library/LaunchAgents/dev.orbit.gdp-cloud-credits.plist
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/dev.orbit.gdp-cloud-credits.plist
+
+  Unload:
+    launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/dev.orbit.gdp-cloud-credits.plist
+
+  Runs 12–14 of each month at 10:00 local (Ultra credits issued around the
+  12 Aug subscription anniversary).
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>dev.orbit.gdp-cloud-credits</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/Gemini/claim_gdp_cloud_credits.py</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Day</key>
+      <integer>12</integer>
+      <key>Hour</key>
+      <integer>10</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Day</key>
+      <integer>13</integer>
+      <key>Hour</key>
+      <integer>10</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Day</key>
+      <integer>14</integer>
+      <key>Hour</key>
+      <integer>10</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+  </array>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>WorkingDirectory</key>
+  <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/Gemini</string>
+  <key>StandardOutPath</key>
+  <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/Gemini/gdp_credits_launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/Gemini/gdp_credits_launchd.err.log</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+  </dict>
+</dict>
+</plist>

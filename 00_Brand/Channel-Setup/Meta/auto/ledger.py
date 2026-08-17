@@ -39,7 +39,10 @@ def is_posted(short: dict, *, platform: str | None = None) -> bool:
     entry = data.get("posted", {}).get(key_for(short))
     if not entry:
         return False
-    done = {"ok", "skipped", "seeded", "disabled", "scheduled"}
+    # "posted" is the status written by the Aug 2026 socials sync and by
+    # successful CDP confirms. Omitting it made the 5-minute watcher keep
+    # re-opening Meta Reels composer for shorts that were already live.
+    done = {"ok", "skipped", "seeded", "disabled", "scheduled", "posted"}
     if platform:
         if entry.get("status") == "seeded":
             return True

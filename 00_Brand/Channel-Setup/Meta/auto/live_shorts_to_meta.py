@@ -141,7 +141,31 @@ def run_once(*, dry_run: bool = False) -> dict:
             browser = p.chromium.connect_over_cdp(
                 f"http://127.0.0.1:{chrome.get('port')}"
             )
-            page = browser.contexts[0].new_page()
+            ctx = browser.contexts[0]
+
+            def _leave(d):
+                try:
+                    if getattr(d, "type", "") == "beforeunload":
+                        d.accept()
+                    else:
+                        d.dismiss()
+                except Exception:
+                    try:
+                        d.accept()
+                    except Exception:
+                        pass
+
+            ctx.on("dialog", _leave)
+            # Close leftover Reels composer tabs from crashed/retried runs.
+            for extra in list(ctx.pages):
+                try:
+                    extra.on("dialog", _leave)
+                    if "reels_composer" in (extra.url or ""):
+                        extra.close()
+                except Exception:
+                    pass
+            page = ctx.new_page()
+            page.on("dialog", _leave)
             page.bring_to_front()
             for s in pending:
                 log(f"posting {s['_ledger_key']} · {s.get('title')}")

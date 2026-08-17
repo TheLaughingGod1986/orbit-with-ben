@@ -12,9 +12,19 @@
     launchctl unload ~/Library/LaunchAgents/dev.orbit.meta-live-shorts.plist
 
   Runs every 5 minutes.
+
+  Disabled after 2026-08-17: CDP retry loop stacked Meta Reels composer
+  tabs (Leave Page? + Chrome Restore pages?) and froze the Mac. Re-enable
+  only after Graph credentials work, or after confirming the ledger treats
+  status "posted" as done:
+
+    /usr/libexec/PlistBuddy -c 'Set :Disabled false' ~/Library/LaunchAgents/dev.orbit.meta-live-shorts.plist
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/dev.orbit.meta-live-shorts.plist
 -->
 <plist version="1.0">
 <dict>
+  <key>Disabled</key>
+  <true/>
   <key>Label</key>
   <string>dev.orbit.meta-live-shorts</string>
   <key>ProgramArguments</key>
