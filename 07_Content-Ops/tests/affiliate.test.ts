@@ -98,6 +98,7 @@ import {
   liveUrlForSlug,
   isAmazonUkDestinationUrl,
 } from "../src/lib/affiliate/live-product-urls";
+import { buildHomeMonetisationCard } from "../src/lib/affiliate/analytics";
 import {
   resolveTopicBookWireForVideo,
   filmTopicBookPlacementTableRows,
@@ -1830,5 +1831,55 @@ describe("film → topic-book wiring (Social Media Manager)", () => {
     expect(bySlug["jwst-book"].youtubeId).toContain("scheduled");
     expect(bySlug["cosmology-end-book"].amazonUrl).toContain("0141989580");
     expect(bySlug["europa-icy-moons-book"].goPath).toBe("/go/europa-icy-moons-book");
+  });
+});
+
+describe("home monetisation card top affiliate video", () => {
+  it("does not surface an opportunity title when placements are empty", () => {
+    const card = buildHomeMonetisationCard(
+      {
+        revenueMonth: 0,
+        clicksMonth: 0,
+        highestPerformingVideo: null,
+        warnings: { videosMissingLinks: 3 },
+      },
+      [
+        {
+          title: "The Fermi Paradox Explained",
+          slug: "fermi-paradox",
+          views: 12_000,
+        },
+        {
+          title: "Alien Worlds",
+          slug: "alien-worlds",
+          views: 8_000,
+        },
+      ],
+    );
+
+    expect(card.topAffiliateVideo).toBeNull();
+    expect(card.topOpportunitySlug).toBe("fermi-paradox");
+    expect(card.videosMissingLinks).toBe(3);
+  });
+
+  it("uses highestPerformingVideo from APPROVED/ACTIVE placements only", () => {
+    const card = buildHomeMonetisationCard(
+      {
+        revenueMonth: 12.5,
+        clicksMonth: 40,
+        highestPerformingVideo: "Europa Under the Ice",
+        warnings: { videosMissingLinks: 1 },
+      },
+      [
+        {
+          title: "The Fermi Paradox Explained",
+          slug: "fermi-paradox",
+          views: 12_000,
+        },
+      ],
+    );
+
+    expect(card.topAffiliateVideo).toBe("Europa Under the Ice");
+    expect(card.topOpportunitySlug).toBe("fermi-paradox");
   });
 });

@@ -324,20 +324,38 @@ export async function listVideoOpportunities() {
   });
 }
 
-export async function getHomeMonetisationCard() {
-  const summary = await getAffiliateDashboardSummary();
-  const opportunities = await listVideoOpportunities();
-  const top = opportunities[0];
+/**
+ * Pure home-card shape from summary + opportunities.
+ * Top affiliate video must come from an APPROVED/ACTIVE placement only —
+ * never fall back to a monetisation opportunity title (unlinked video).
+ */
+export function buildHomeMonetisationCard(
+  summary: {
+    revenueMonth: number;
+    clicksMonth: number;
+    highestPerformingVideo: string | null;
+    warnings: { videosMissingLinks: number };
+  },
+  opportunities: Array<{ title: string; slug: string; views: number }>,
+) {
+  const topOpportunity = opportunities[0];
   const monthViews = opportunities.reduce((s, o) => s + o.views, 0);
 
   return {
     revenueMonth: summary.revenueMonth,
     clicksMonth: summary.clicksMonth,
     affiliateRpm: affiliateRpm(summary.revenueMonth, monthViews),
+    /** Published/high-view videos with no APPROVED/ACTIVE/PENDING placement (not broken URLs). */
     videosMissingLinks: summary.warnings.videosMissingLinks,
-    topAffiliateVideo: summary.highestPerformingVideo || top?.title || null,
-    topOpportunitySlug: top?.slug ?? null,
+    topAffiliateVideo: summary.highestPerformingVideo ?? null,
+    topOpportunitySlug: topOpportunity?.slug ?? null,
   };
+}
+
+export async function getHomeMonetisationCard() {
+  const summary = await getAffiliateDashboardSummary();
+  const opportunities = await listVideoOpportunities();
+  return buildHomeMonetisationCard(summary, opportunities);
 }
 
 export async function getVideoAffiliatePanel(videoId: string) {

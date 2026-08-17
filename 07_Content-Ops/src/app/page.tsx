@@ -89,7 +89,7 @@ async function getOverview() {
   }
   if (monetisation.videosMissingLinks > 0) {
     nextActions.push(
-      `Review ${monetisation.videosMissingLinks} video(s) missing affiliate links.`,
+      `Review ${monetisation.videosMissingLinks} published/high-view video(s) with no affiliate placement.`,
     );
   }
   if (!heartbeat || Date.now() - heartbeat.lastHeartbeatAt.getTime() > 30_000) {
@@ -249,7 +249,7 @@ export default async function HomePage() {
             }
           />
           <StatCard
-            label="Videos missing links"
+            label="Videos without placements"
             value={data.monetisation.videosMissingLinks}
           />
           <StatCard
