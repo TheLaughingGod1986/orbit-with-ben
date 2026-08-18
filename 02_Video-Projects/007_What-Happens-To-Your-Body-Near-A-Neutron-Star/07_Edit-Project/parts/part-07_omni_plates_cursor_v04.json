@@ -11,7 +11,8 @@
     "Mute test. Physics-led, not gore. At most ONE Orbit+distant-remnant hang \u2014 magnetar plate only.",
     "Neutron star = compact GLOWING remnant (locked Parts 01/04/05 look). Never a grey moon, never Death Star greebles, never clay.",
     "No stacked ellipses, oval billboards, halo discs, or vertical clip walls.",
-    "No cartoon mouths. One face, two arms, one centered underside glow. Exactly one Orbit."
+    "No cartoon mouths. One face, two arms, one centered underside glow. Exactly one Orbit.",
+    "SPIN LOCK: at most one gentle bank in the minute. No corkscrew / orbit-around-the-remnant on every plate."
   ],
   "plates": [
     {
@@ -28,13 +29,13 @@
     {
       "id": "02",
       "slug": "near-surface",
-      "file": "omni_p07_02_near-surface_natural_v01.mp4",
+      "file": "omni_p07_02_near-surface_hold_v02.mp4",
       "orbit": true,
       "env": "space",
       "keep": true,
       "start_frame": "parts/starts_part07_v02/02_near_surface.png",
       "vo_idea": "A second near the surface? You are not a person anymore. You are a brief geometry problem.",
-      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit BANKS INTO FRAME and APPROACHES the compact glowing remnant \u2014 one action, continuous inbound, not idle hover. One visor FACEPLATE, TWO arms, cream eyes with pupils, soft underside glow. HARD FORBIDDEN: grey moon, lunar craters, Death Star greebles, honeycomb panels, circuit-board crust, clay grey wall, unfinished placeholder, two Orbits, two faces, cartoon mouth, flame jet. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit is ALREADY in frame on the left, HOLDING STATION beside the compact glowing remnant on the right \u2014 gyroscope hover, 1cm drift only. Face the remnant the whole clip. Nose toward the star. Camera HOLDS; slow push-in only. HARD MOTION LOCK: do NOT bank into frame, do NOT fly around the remnant, do NOT corkscrew, do NOT tumble, do NOT spin, do NOT orbit the star, do NOT circle the pair. One visor FACEPLATE, TWO arms, cream eyes with pupils, ONE centered underside glow. HARD FORBIDDEN: spin around the star, corkscrew, amateur orbit-around-star, grey moon, lunar craters, Death Star greebles, honeycomb panels, circuit-board crust, clay grey wall, unfinished placeholder, two Orbits, two faces, cartoon mouth, flame jet. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
     },
     {
       "id": "03",
@@ -99,6 +100,7 @@
       "orbit": false,
       "env": "space",
       "keep": true,
+      "xfade_in": 1.20,
       "start_frame": "parts/starts_last10s_v01/p07_08_star_intensifies.png",
       "vo_idea": "and finally a surface that refuses to be a floor.",
       "prompt": "IMAGE-TO-VIDEO of the attached start frame. A compact GLOWING STAR / neutron-star remnant FILLS the frame and INTENSIFIES \u2014 boiling photosphere, corona, fierce light. LOOKS LIKE A STAR, not a planet you can stand on. ZERO Orbit. HARD FORBIDDEN: cracked-city crust, glowing yellow street-grid cracks, honeycomb plates, city lights on a sphere, dark rocky ball, grey moon, lunar terrain, Death Star greebles, portal, wormhole, white wireframe, load-screen tunnel, Orbit, any robot. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
@@ -110,6 +112,7 @@
       "orbit": true,
       "env": "space",
       "keep": true,
+      "xfade_in": 1.20,
       "start_frame": "parts/starts_last10s_v01/p07_09_abort_thrust.png",
       "vo_idea": "What happens next if you keep closing anyway?",
       "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit ABORT-THRUSTS AWAY from a compact GLOWING STAR remnant \u2014 one centered BOTTOM underside glow flares as he pulls up and leaves. Nose along the escape. He flies AWAY, never into a hole. Documentary, not a load screen. Exactly ONE Orbit. One visor FACEPLATE, TWO arms. HARD FORBIDDEN: portal, wormhole, white wireframe, geometric tunnel, flying INTO a hole, two Orbits, cracked-city crust, yellow street-grid cracks, honeycomb plates, dark rocky planet, grey moon, landing legs, cartoon mouth, twin thrusters. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
@@ -121,6 +124,7 @@
       "orbit": true,
       "env": "space",
       "keep": true,
+      "xfade_in": 1.00,
       "start_frame": "parts/starts_last10s_v01/p07_10_abort_away.png",
       "vo_idea": "The story escalates from uncomfortable to impossible without asking permission.",
       "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. The compact GLOWING STAR remnant is MORE DANGEROUS and INTENSIFIES; Orbit continues the abort, banking AWAY, one centered BOTTOM underside glow flaring. Physics-led documentary. Exactly ONE Orbit. One visor FACEPLATE, TWO arms. HARD FORBIDDEN: portal, wormhole, white wireframe tunnel, two Orbits, cracked-city crust, yellow street-grid cracks, honeycomb plates, dark rocky planet, grey moon, cartoon mouth, flying into a hole. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."

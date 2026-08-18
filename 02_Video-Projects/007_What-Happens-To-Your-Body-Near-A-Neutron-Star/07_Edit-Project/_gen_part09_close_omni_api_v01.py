@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Neutron Star Part 07 v01 — Omni Flash via Gemini API first, Flow Playwright backup."""
+"""Neutron Star Part 09 close — Omni Flash via Gemini API. Payoff / turn-away / jewel."""
 from __future__ import annotations
 
 import json
@@ -20,10 +20,10 @@ EP = REPO / "02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star
 IDENTITY = (
     REPO / "01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png"
 )
-PLATES_JSON = HERE / "parts/part-07_omni_plates_cursor_v04.json"
+PLATES_JSON = HERE / "parts/part-09_close_omni_plates_v01.json"
 PLATES = json.loads(PLATES_JSON.read_text())
-OUT = EP / "04_Generated-Clips/01_Raw/part-07"
-REPORT = HERE / "parts/part-07_omni_gen_report_cursor_v01.json"
+OUT = EP / "04_Generated-Clips/01_Raw/part-09-close"
+REPORT = HERE / "parts/part-09_close_omni_gen_report_v01.json"
 PLAYWRIGHT_PY = Path("/usr/bin/python3")
 PLAYWRIGHT_GEN = HERE / "_gen_part01_omni_cursor_v01.py"
 ENV_CANDIDATES = [
@@ -90,10 +90,11 @@ def main() -> None:
             if orbit_ref is not None and not orbit_ref.exists():
                 orbit_ref = EP / start
             ident = IDENTITY if plate.get("orbit") else None
-            prompt = (
-                plate["prompt"]
-                + " EMPTY BLACK VACUUM: zero pinprick stars, zero grain, zero starfield, zero white specks. Only the named subjects."
-            )
+            prompt = plate["prompt"]
+            if plate["id"] not in {"06", "07"}:
+                prompt += (
+                    " EMPTY BLACK VACUUM: zero pinprick stars, zero grain, zero starfield, zero white specks. Only the named subjects."
+                )
             if plate.get("orbit"):
                 prompt += (
                     " IDENTITY LOCK: same Orbit as the start frame — matte orange sphere, glossy black visor FACEPLATE"

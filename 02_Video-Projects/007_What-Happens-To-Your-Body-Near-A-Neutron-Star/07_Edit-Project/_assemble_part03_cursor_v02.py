@@ -17,8 +17,10 @@ MUSIC = EP / "05_Music/neutron_star_part03_score_bed_v01.mp3"
 OUT_DIR = HERE / "parts"
 WORK = HERE / "parts/_work_part03_cursor_v02"
 QC = EP / "_qc_p03_cursor_v02"
-# 10×8s − 9×0.40s = 76.4s, short of 77.04s VO. Keep 0.32 so picture covers.
-XFADE = 0.32
+# Leftover unique picture after VO so the last line can finish before the
+# chapter join. Internal 0.32 left ~0.08s and chopped "without a narrator".
+# 0.18 keeps plate blends while freeing ~1.3s of leftover.
+XFADE = 0.18
 FADE_IN = 0.18
 FADE_OUT = 0.40
 
@@ -75,16 +77,19 @@ def main() -> None:
     beds = []
     for i, src in enumerate(clips, 1):
         bed = WORK / f"bed_{i:02d}.mp4"
-        vf = letterbox_vf(src)
-        print(f"bed {i:02d} {src.name} vf={vf}", flush=True)
-        run([
-            "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
-            "-i", str(src),
-            "-vf", vf,
-            "-c:v", "libx264", "-preset", "medium", "-crf", "16",
-            "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "192k",
-            str(bed),
-        ])
+        if bed.exists() and bed.stat().st_size > 200_000:
+            print(f"reuse bed {i:02d} {src.name}", flush=True)
+        else:
+            vf = letterbox_vf(src)
+            print(f"bed {i:02d} {src.name} vf={vf}", flush=True)
+            run([
+                "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+                "-i", str(src),
+                "-vf", vf,
+                "-c:v", "libx264", "-preset", "medium", "-crf", "16",
+                "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "192k",
+                str(bed),
+            ])
         beds.append(bed)
 
     n = len(beds)
@@ -126,28 +131,33 @@ def main() -> None:
         )
     if not MUSIC.exists():
         raise SystemExit(f"missing music {MUSIC}")
-    master_dur = vo_dur
-    fade_out_at = max(0.0, master_dur - FADE_OUT)
+    music_dur = probe(MUSIC)
+    # Stitch owns chapter joins. Never bake a fade-out on VO — it chops the
+    # last line, then the next part slams in (Ben UAT 03:27 / join 203–213).
+    post_vo_tail = min(2.40, max(0.0, pic_dur - vo_dur), max(0.0, music_dur - vo_dur))
+    if post_vo_tail < 0.80:
+        raise SystemExit(
+            f"Need leftover unique picture after VO for the P03→P04 join "
+            f"(pic {pic_dur:.2f}s vo {vo_dur:.2f}s music {music_dur:.2f}s)"
+        )
+    master_dur = vo_dur + post_vo_tail
     rough = OUT_DIR / "neutron_star_part-03_cursor_rough_v02.mp4"
     graph = (
         f"[0:v]trim=0:{master_dur:.3f},setpts=PTS-STARTPTS,"
-        f"unsharp=5:5:0.45:3:3:0.0,"
-        f"fade=t=in:st=0:d={FADE_IN:.3f},"
-        f"fade=t=out:st={fade_out_at:.3f}:d={FADE_OUT:.3f}[v];"
-        f"[1:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
-        "loudnorm=I=-18:LRA=7:TP=-1.5,"
+        f"unsharp=5:5:0.45:3:3:0.0[v];"
+        f"[1:a]apad=whole_dur={master_dur:.3f},atrim=0:{master_dur:.3f},"
+        "asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo,asplit=2[vo][vo_sc];"
         f"[2:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "loudnorm=I=-28:LRA=9:TP=-3,"
         "aformat=sample_rates=48000:channel_layouts=stereo[music];"
-        f"[0:a]volume=0.06,atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
+        f"[0:a]volume=0.08,apad=whole_dur={master_dur:.3f},"
+        f"atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo[omni];"
         "[music][vo_sc]sidechaincompress="
-        "threshold=0.016:ratio=8:attack=18:release=450[ducked];"
-        "[vo][ducked][omni]amix=inputs=3:weights='1 0.52 0.20':normalize=0,"
-        "alimiter=limit=0.89:level=false,"
-        f"afade=t=in:st=0:d={FADE_IN:.3f},"
-        f"afade=t=out:st={fade_out_at:.3f}:d={FADE_OUT:.3f}[a]"
+        "threshold=0.018:ratio=8:attack=20:release=500[ducked];"
+        "[vo][ducked][omni]amix=inputs=3:weights='1 0.55 0.28':normalize=0,"
+        "alimiter=limit=0.90:level=false[a]"
     )
     run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
@@ -185,9 +195,20 @@ def main() -> None:
             "-ss", f"{t:.3f}", "-i", str(rough), "-frames:v", "1", "-q:v", "2", str(dest),
         ])
 
+    meta = {
+        "vo_dur": vo_dur,
+        "vo_delay": 0.0,
+        "post_vo_tail": post_vo_tail,
+        "master_dur": master_dur,
+        "music": str(MUSIC),
+    }
+    (OUT_DIR / "neutron_star_part-03_mix_meta_v02.json").write_text(
+        json.dumps(meta, indent=2) + "\n"
+    )
+
     print(f"rough {rough} {probe(rough):.3f}s")
     print(f"open15 {open15} {probe(open15):.3f}s")
-    print(f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s")
+    print(f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s  post_vo_tail={post_vo_tail:.2f}s")
     print(f"plates used {len(clips)} xfade={XFADE}")
     print(f"offsets {[round(o, 2) for o in offsets]}")
 

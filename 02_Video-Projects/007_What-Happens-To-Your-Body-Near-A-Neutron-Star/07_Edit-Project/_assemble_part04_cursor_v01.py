@@ -18,6 +18,10 @@ OUT_DIR = HERE / "parts"
 WORK = HERE / "parts/_work_part04_cursor_v01"
 QC = EP / "_qc_p04_cursor_v01"
 XFADE = 0.40
+# Do not delay this part's VO. A 1.5s pre-roll after a silent chapter card
+# made the join feel like two films. The card now carries score; VO starts
+# with the picture so the narrator keeps flowing.
+VO_DELAY = 0.0
 
 
 def probe(path: Path) -> float:
@@ -123,22 +127,33 @@ def main() -> None:
 
     vo_dur = probe(VO)
     pic_dur = probe(picture)
-    if pic_dur + 0.05 < vo_dur:
+    if pic_dur + 0.05 < vo_dur + VO_DELAY:
         raise SystemExit(
-            f"Picture {pic_dur:.2f}s shorter than VO {vo_dur:.2f}s — generate more plates, do not freeze-pad"
+            f"Picture {pic_dur:.2f}s shorter than VO {vo_dur:.2f}s + delay {VO_DELAY:.2f}s — generate more plates, do not freeze-pad"
         )
     if not MUSIC.exists():
         raise SystemExit(f"missing music {MUSIC}")
-    master_dur = vo_dur
+    music_dur = probe(MUSIC)
+    vo_delay = float(VO_DELAY)
+    post_vo_tail = min(
+        2.40,
+        max(0.0, pic_dur - vo_dur - vo_delay),
+        max(0.0, music_dur - vo_dur - vo_delay),
+    )
+    master_dur = vo_dur + vo_delay + post_vo_tail
+    delay_ms = int(round(vo_delay * 1000))
     rough = OUT_DIR / "neutron_star_part-04_cursor_rough_v01.mp4"
     graph = (
         f"[0:v]trim=0:{master_dur:.3f},setpts=PTS-STARTPTS[v];"
-        f"[1:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
+        f"[1:a]adelay={delay_ms}|{delay_ms},apad=whole_dur={master_dur:.3f},"
+        f"atrim=0:{master_dur:.3f},"
+        "asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo,asplit=2[vo][vo_sc];"
         f"[2:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "loudnorm=I=-28:LRA=9:TP=-3,"
         "aformat=sample_rates=48000:channel_layouts=stereo[music];"
-        f"[0:a]volume=0.08,atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
+        f"[0:a]volume=0.08,apad=whole_dur={master_dur:.3f},"
+        f"atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo[omni];"
         "[music][vo_sc]sidechaincompress="
         "threshold=0.018:ratio=8:attack=20:release=500[ducked];"
@@ -183,7 +198,7 @@ def main() -> None:
 
     print(f"rough {rough} {probe(rough):.3f}s")
     print(f"open15 {open15} {probe(open15):.3f}s")
-    print(f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s")
+    print(f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s  vo_delay={vo_delay:.2f}s  post_vo_tail={post_vo_tail:.2f}s")
     print(f"plates used {len(clips)} xfade={XFADE}")
     print(f"offsets {[round(o, 2) for o in offsets]}")
 

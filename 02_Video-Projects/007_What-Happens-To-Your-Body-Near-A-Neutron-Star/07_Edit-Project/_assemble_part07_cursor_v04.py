@@ -17,9 +17,11 @@ MUSIC = EP / "05_Music/neutron_star_part07_score_bed_v01.mp3"
 OUT_DIR = HERE / "parts"
 WORK = HERE / "parts/_work_part07_cursor_v04"
 QC = EP / "_qc_p07_cursor_v04"
-XFADE = 0.40
+XFADE = 0.50
 FADE_IN = 0.18
 FADE_OUT = 0.40
+# Picture-first remnant before VO so the P06→P07 join is not a VO punch-in.
+VO_DELAY = 2.00
 
 
 def probe(path: Path) -> float:
@@ -70,32 +72,44 @@ def main() -> None:
         if not src.exists() or src.stat().st_size < 200_000:
             raise SystemExit(f"missing plate {src}")
         bed = WORK / f"bed_{i:02d}.mp4"
-        vf = letterbox_vf(src)
-        cmd = [
-            "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
-        ]
-        ss = plate.get("ss")
-        if ss:
-            cmd += ["-ss", f"{float(ss):.2f}"]
-        cmd += ["-i", str(src)]
-        tlim = plate.get("t")
-        if tlim:
-            cmd += ["-t", f"{float(tlim):.2f}"]
-        cmd += [
-            "-vf", vf,
-            "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-pix_fmt", "yuv420p",
-            "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "192k",
-            str(bed),
-        ]
-        print(f"bed {i:02d} {src.name} vf={vf} ss={ss} t={tlim}", flush=True)
-        run(cmd)
+        reuse = (
+            bed.exists()
+            and bed.stat().st_size > 200_000
+            and bed.stat().st_mtime >= src.stat().st_mtime
+        )
+        if reuse:
+            print(f"reuse bed {i:02d} {src.name}", flush=True)
+        else:
+            vf = letterbox_vf(src)
+            cmd = [
+                "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+            ]
+            ss = plate.get("ss")
+            if ss:
+                cmd += ["-ss", f"{float(ss):.2f}"]
+            cmd += ["-i", str(src)]
+            tlim = plate.get("t")
+            if tlim:
+                cmd += ["-t", f"{float(tlim):.2f}"]
+            cmd += [
+                "-vf", vf,
+                "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-pix_fmt", "yuv420p",
+                "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "192k",
+                str(bed),
+            ]
+            print(f"bed {i:02d} {src.name} vf={vf} ss={ss} t={tlim}", flush=True)
+            run(cmd)
         beds.append(bed)
 
     n = len(beds)
     durs = [probe(b) for b in beds]
+    xfades = [
+        float(PLATES["plates"][i].get("xfade_in", XFADE))
+        for i in range(1, n)
+    ]
     offsets = [0.0]
     for i in range(1, n):
-        offsets.append(offsets[-1] + durs[i - 1] - XFADE)
+        offsets.append(offsets[-1] + durs[i - 1] - xfades[i - 1])
     out_dur = offsets[-1] + durs[-1]
 
     ins: list[str] = []
@@ -105,10 +119,11 @@ def main() -> None:
     vprev, aprev = "0:v", "0:a"
     for i in range(1, n):
         vout, aout = f"v{i}", f"a{i}"
+        xd = xfades[i - 1]
         filters.append(
-            f"[{vprev}][{i}:v]xfade=transition=fade:duration={XFADE}:offset={offsets[i]:.3f}[{vout}]"
+            f"[{vprev}][{i}:v]xfade=transition=fade:duration={xd:.3f}:offset={offsets[i]:.3f}[{vout}]"
         )
-        filters.append(f"[{aprev}][{i}:a]acrossfade=d={XFADE}[{aout}]")
+        filters.append(f"[{aprev}][{i}:a]acrossfade=d={xd:.3f}[{aout}]")
         vprev, aprev = vout, aout
     picture = WORK / "picture.mp4"
     run([
@@ -124,34 +139,39 @@ def main() -> None:
 
     vo_dur = probe(VO)
     pic_dur = probe(picture)
-    if pic_dur + 0.05 < vo_dur:
+    if pic_dur + 0.05 < vo_dur + VO_DELAY:
         raise SystemExit(
-            f"Picture {pic_dur:.2f}s shorter than VO {vo_dur:.2f}s — generate more plates, do not freeze-pad"
+            f"Picture {pic_dur:.2f}s shorter than VO {vo_dur:.2f}s + delay {VO_DELAY:.2f}s — generate more plates, do not freeze-pad"
         )
     if not MUSIC.exists():
         raise SystemExit(f"missing music {MUSIC}")
-    master_dur = vo_dur
-    fade_out_at = max(0.0, master_dur - FADE_OUT)
+    music_dur = probe(MUSIC)
+    vo_delay = float(VO_DELAY)
+    post_vo_tail = min(
+        2.40,
+        max(0.0, pic_dur - vo_dur - vo_delay),
+        max(0.0, music_dur - vo_dur - vo_delay),
+    )
+    master_dur = vo_dur + vo_delay + post_vo_tail
+    delay_ms = int(round(vo_delay * 1000))
     rough = OUT_DIR / "neutron_star_part-07_cursor_rough_v04.mp4"
     graph = (
         f"[0:v]trim=0:{master_dur:.3f},setpts=PTS-STARTPTS,"
-        f"unsharp=5:5:0.45:3:3:0.0,"
-        f"fade=t=in:st=0:d={FADE_IN:.3f},"
-        f"fade=t=out:st={fade_out_at:.3f}:d={FADE_OUT:.3f},format=yuv420p[v];"
-        f"[1:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
-        "loudnorm=I=-18:LRA=7:TP=-1.5,"
+        f"unsharp=5:5:0.45:3:3:0.0,format=yuv420p[v];"
+        f"[1:a]adelay={delay_ms}|{delay_ms},apad=whole_dur={master_dur:.3f},"
+        f"atrim=0:{master_dur:.3f},"
+        "asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo,asplit=2[vo][vo_sc];"
         f"[2:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "loudnorm=I=-28:LRA=9:TP=-3,"
         "aformat=sample_rates=48000:channel_layouts=stereo[music];"
-        f"[0:a]volume=0.06,atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
+        f"[0:a]volume=0.08,apad=whole_dur={master_dur:.3f},"
+        f"atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo[omni];"
         "[music][vo_sc]sidechaincompress="
-        "threshold=0.016:ratio=8:attack=18:release=450[ducked];"
-        "[vo][ducked][omni]amix=inputs=3:weights='1 0.52 0.20':normalize=0,"
-        "alimiter=limit=0.89:level=false,"
-        f"afade=t=in:st=0:d={FADE_IN:.3f},"
-        f"afade=t=out:st={fade_out_at:.3f}:d={FADE_OUT:.3f}[a]"
+        "threshold=0.018:ratio=8:attack=20:release=500[ducked];"
+        "[vo][ducked][omni]amix=inputs=3:weights='1 0.55 0.28':normalize=0,"
+        "alimiter=limit=0.90:level=false[a]"
     )
     run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
@@ -198,8 +218,11 @@ def main() -> None:
 
     print(f"rough {rough} {probe(rough):.3f}s")
     print(f"open15 {open15} {probe(open15):.3f}s")
-    print(f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s")
-    print(f"plates used {len(beds)} xfade={XFADE}")
+    print(
+        f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s  "
+        f"vo_delay={vo_delay:.2f}s  post_vo_tail={post_vo_tail:.2f}s"
+    )
+    print(f"plates used {len(beds)} xfades={[round(x, 2) for x in xfades]}")
     print(f"offsets {[round(o, 2) for o in offsets]}")
 
 

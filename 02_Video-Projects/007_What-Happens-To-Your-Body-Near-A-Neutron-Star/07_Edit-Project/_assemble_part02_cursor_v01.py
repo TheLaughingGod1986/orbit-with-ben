@@ -123,16 +123,27 @@ def main() -> None:
         )
     if not MUSIC.exists():
         raise SystemExit(f"missing music {MUSIC}")
-    master_dur = vo_dur
+    music_dur = probe(MUSIC)
+    # Last VO line has no tail, then P03 jumps space→kitchen. Keep leftover
+    # unique mercy-runs-out motion so the join can breathe. Never freeze-pad.
+    post_vo_tail = min(2.40, pic_dur - vo_dur, music_dur - vo_dur)
+    if post_vo_tail < 0.80:
+        raise SystemExit(
+            f"Need leftover unique picture after VO for the P02→P03 join "
+            f"(pic {pic_dur:.2f}s vo {vo_dur:.2f}s music {music_dur:.2f}s)"
+        )
+    master_dur = vo_dur + post_vo_tail
     rough = OUT_DIR / "neutron_star_part-02_cursor_rough_v01.mp4"
     graph = (
         f"[0:v]trim=0:{master_dur:.3f},setpts=PTS-STARTPTS[v];"
-        f"[1:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
+        f"[1:a]apad=whole_dur={master_dur:.3f},atrim=0:{master_dur:.3f},"
+        "asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo,asplit=2[vo][vo_sc];"
         f"[2:a]atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "loudnorm=I=-28:LRA=9:TP=-3,"
         "aformat=sample_rates=48000:channel_layouts=stereo[music];"
-        f"[0:a]volume=0.08,atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
+        f"[0:a]volume=0.08,apad=whole_dur={master_dur:.3f},"
+        f"atrim=0:{master_dur:.3f},asetpts=PTS-STARTPTS,"
         "aformat=sample_rates=48000:channel_layouts=stereo[omni];"
         "[music][vo_sc]sidechaincompress="
         "threshold=0.018:ratio=8:attack=20:release=500[ducked];"
@@ -177,7 +188,7 @@ def main() -> None:
 
     print(f"rough {rough} {probe(rough):.3f}s")
     print(f"open15 {open15} {probe(open15):.3f}s")
-    print(f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s")
+    print(f"vo {VO} {vo_dur:.2f}s  picture {pic_dur:.2f}s  post_vo_tail={post_vo_tail:.2f}s")
     print(f"plates used {len(clips)} xfade={XFADE}")
     print(f"offsets {[round(o, 2) for o in offsets]}")
 
