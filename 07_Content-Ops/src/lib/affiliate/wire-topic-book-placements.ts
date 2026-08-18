@@ -17,7 +17,7 @@ import {
 } from "./film-topic-book-map";
 import { liveUrlForSlug } from "./live-product-urls";
 import { applyLiveProductUrls } from "./apply-live-urls";
-import { buildYouTubeDescriptionGoUrl } from "./urls";
+import { buildYouTubeDescriptionGoUrl } from "./go-redirect-urls";
 import {
   appendAffiliateSectionToDescription,
   buildAffiliateDescriptionSection,

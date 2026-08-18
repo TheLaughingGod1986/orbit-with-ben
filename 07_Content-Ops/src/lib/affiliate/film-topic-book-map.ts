@@ -7,7 +7,7 @@
  */
 
 import { liveUrlForSlug, isAmazonUkDestinationUrl } from "./live-product-urls";
-import { buildYouTubeDescriptionGoUrl } from "./urls";
+import { buildYouTubeDescriptionGoUrl } from "./go-redirect-urls";
 
 export type FilmTopicBookWire = {
   /** Stable key for logging / tests */

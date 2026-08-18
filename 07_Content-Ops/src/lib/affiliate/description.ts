@@ -2,7 +2,7 @@ import {
   DEFAULT_AMAZON_DISCLOSURE,
   type ScoredRecommendation,
 } from "./types";
-import { buildYouTubeDescriptionGoUrl } from "./urls";
+import { buildYouTubeDescriptionGoUrl } from "./go-redirect-urls";
 import {
   descriptionViolatesEditorialTone,
   filterDescriptionLinksThroughTrustGate,

@@ -11,7 +11,7 @@ import {
   toProductMatchInput,
   videoToMatchInput,
 } from "./placements";
-import { buildYouTubeDescriptionGoUrl } from "./urls";
+import { buildYouTubeDescriptionGoUrl } from "./go-redirect-urls";
 import { filterDescriptionLinksThroughTrustGate } from "./editorial-trust-gate";
 
 export async function loadDescriptionTemplates(): Promise<DescriptionTemplateMap> {
