@@ -4,6 +4,7 @@ import {
   getAffiliateSocialSnippetsForVideo,
 } from "@/lib/affiliate/social-snippet-service";
 import { assertAffiliateSafeSocialCopy } from "@/lib/affiliate/social-copy";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export const dynamic = "force-dynamic";
 
@@ -43,6 +44,9 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const body = await request.json().catch(() => null);
   if (!body || body.action !== "enqueue-drafts") {
     return NextResponse.json(

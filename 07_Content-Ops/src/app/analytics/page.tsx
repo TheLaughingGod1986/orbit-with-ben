@@ -8,10 +8,13 @@ import {
 } from "@/lib/analytics/youtube-growth";
 import { AnalyticsImportForm } from "@/components/AnalyticsImportForm";
 import { PLATFORMS } from "@/config/platforms";
+import { isOperatorAuthenticated } from "@/lib/security/operator-auth";
+import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
 export default async function AnalyticsPage() {
+  const canWrite = await isOperatorAuthenticated();
   const posts = await prisma.platformPost.findMany({
     include: {
       metrics: { orderBy: { recordedAt: "desc" }, take: 1 },
@@ -103,7 +106,21 @@ export default async function AnalyticsPage() {
         </p>
       </div>
 
-      <AnalyticsImportForm />
+      {canWrite ? (
+        <AnalyticsImportForm />
+      ) : (
+        <div className="card-panel space-y-3 p-5">
+          <p className="text-sm text-[#F5E8D2]/65">
+            Metrics import is operator-only. Sign in to upload CSV performance data.
+          </p>
+          <Link
+            href="/login?next=/analytics"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/10 px-5 py-2.5 text-sm text-[#FF7A24]"
+          >
+            Operator sign-in
+          </Link>
+        </div>
+      )}
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className="card-panel p-4">

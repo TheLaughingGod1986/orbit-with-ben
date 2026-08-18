@@ -7,8 +7,12 @@ import {
   withEngagement,
 } from "@/lib/analytics/csv-import";
 import { generateInsights } from "@/lib/analytics/insights";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export async function POST(req: Request) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const body = await req.json();
   const platformKey = String(body.platform || "youtube") as keyof typeof DEFAULT_MAPPINGS;
   const mapping = {

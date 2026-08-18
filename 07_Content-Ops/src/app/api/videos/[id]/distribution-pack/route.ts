@@ -5,11 +5,15 @@ import { generatePlatformCopy } from "@/lib/platforms/generate-platform-copy";
 import { scheduleClipAcrossPlatforms, suggestShortSlot } from "@/lib/publishing/schedule";
 import { resolveAffiliateSocialContextForVideo } from "@/lib/affiliate/social-context";
 import { assertAffiliateSafeSocialCopy } from "@/lib/affiliate/social-copy";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export async function POST(
   _req: Request,
   ctx: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const { id } = await ctx.params;
   const video = await prisma.longFormVideo.findUnique({ where: { id } });
   if (!video) return NextResponse.json({ error: "Video not found" }, { status: 404 });

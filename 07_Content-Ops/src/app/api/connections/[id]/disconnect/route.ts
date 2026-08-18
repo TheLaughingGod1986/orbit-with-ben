@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/storage/prisma";
 import { getPublishingAdapter } from "@/lib/publishing/adapters";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export async function POST(
   _req: Request,
   ctx: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const { id } = await ctx.params;
   const connection = await prisma.platformConnection.findUnique({ where: { id } });
   if (!connection) return NextResponse.json({ error: "Not found" }, { status: 404 });
