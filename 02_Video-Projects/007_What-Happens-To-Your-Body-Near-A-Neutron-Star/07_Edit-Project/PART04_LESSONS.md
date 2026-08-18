@@ -1,6 +1,6 @@
 # Neutron Star Part 04 — lessons
 
-**In progress — v01 assembled 17 Aug 2026. Waiting for Ben UAT.** Do not start Part 05 plate gen until he passes this minute (or asks for a regen).
+**PASSED (Ben 17 Aug 2026).** Rough `parts/neutron_star_part-04_cursor_rough_v01.mp4` (~63.17s). Music + VO stay. Do not regen this minute. Do not start Part 05 plates until Ben says go.
 
 Chapter: **What You Would See** (first minute only). Full chapter VO was ~126s — split at the paragraph break after “storm of X-rays and charged particles” (~63.15s). Second half is queued as Part 05 VO only (fold / last image / horror and wonder). Do not gen Part 05 plates yet.
 
@@ -40,6 +40,10 @@ Old takes: `_rejected_primitive_sprites_v01/`. Lesson: do not draw stacked ellip
 - Offsets: 0.0 · 5.4 · 13.0 · **20.6** · **28.2** · 35.8 · **43.4** · 51.0 · 58.6
 - Mix: continuous score ducked under VO; Omni SFX as quiet texture.
 
+## Carry into Part 05 (What You Would See — fold / last image)
+
+Mute test. Named thing = the picture (folded sky, last photons, visor still working, body failing). At most one Orbit+distant-remnant hang. No PIL discs / oval billboards / halo bulges / vertical clip walls in start frames. Music lock: continuous underscore.
+
 ## UAT gate
 
-Ben watches `neutron_star_part-04_cursor_rough_v01.mp4`. Pass / regen notes / mix notes. **Stop here.** Do not start Part 05 gens.
+**Passed.** Stop here. Ask before Part 05 plate gen.

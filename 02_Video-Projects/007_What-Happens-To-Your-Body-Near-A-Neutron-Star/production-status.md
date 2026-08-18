@@ -1,31 +1,34 @@
 # Video 007 — What Happens to Your Body Near a Neutron Star?
 
-**Status:** Part 01 **LOCKED** (v11) · Part 02 in production (one minute at a time)  
+**Status:** **8-minute film assembled.** Parts 01–08 + 10s remnant hold. Do not start Part 09. Do not start Shorts until Ben watches. Do not mint. Do not upload.
+
 **Cluster:** `cluster_neutron_star_001`  
-**Topic family:** extreme_space  
-**Runtime target:** ~18–25 min documentary depth  
+**Runtime:** **8.43 min** (505.6s) — inside 7–9 ship target.
 
-## Queue position
+## Canonical files
 
-1. **Part 01** — Ben passed v11 (17 Aug 2026). Do not regen VO/music.
-2. **Now:** Part 02 only — write → VO → Omni → assemble → Ben UAT. Stop. No Part 03 until he passes.
+| Item | Path | Duration |
+|------|------|----------|
+| Broadcast | `09_Final-Export/neutron_star_broadcast_v01.mp4` | **505.59s** |
+| Part 01 recut | `07_Edit-Project/parts/neutron_star_part-01_cursor_rough_v12.mp4` | 70.83s |
+| Part 02 | `07_Edit-Project/parts/neutron_star_part-02_cursor_rough_v01.mp4` | 58.50s |
+| Part 03 | `07_Edit-Project/parts/neutron_star_part-03_cursor_rough_v02.mp4` | 77.05s |
+| Part 04 | `07_Edit-Project/parts/neutron_star_part-04_cursor_rough_v01.mp4` | 63.17s |
+| Part 05 | `07_Edit-Project/parts/neutron_star_part-05_cursor_rough_v02.mp4` | 62.79s |
+| Part 06 | `07_Edit-Project/parts/neutron_star_part-06_cursor_rough_v02.mp4` | 44.75s |
+| Part 07 recut | `07_Edit-Project/parts/neutron_star_part-07_cursor_rough_v04.mp4` | 63.00s |
+| Part 08 | `07_Edit-Project/parts/neutron_star_part-08_cursor_rough_v01.mp4` | **58.25s** |
 
-## Done
+Part 08 open is **remnant-first** (0–3s compact glowing remnant, no Orbit). Orbit land-abort at **7.6s**.
 
-| Item | Path |
-|------|------|
-| Master script | `01_Script/neutron_star_script_master_v01.md` · **91.1 PASS** |
-| Script review | `01_Script/SCRIPT_REVIEW_v01.md` |
-| Cluster / vidIQ / titles / Shorts seeds | `11_Upload-Package/` · `10_Shorts/` |
-| Part 01 rough | `07_Edit-Project/parts/neutron_star_part-01_cursor_rough_v11.mp4` (~70.83s) |
-| Part 01 VO | `02_Voiceover/parts/neutron_star_part-01_vo_v01.wav` |
-| Part 01 score | `05_Music/neutron_star_part01_score_bed_v01.mp3` |
-| Part 02 VO | `02_Voiceover/parts/neutron_star_part-02_vo_v01.wav` (~58.48s) |
+## Affiliate
+
+No `/go/`. This cut does not name a product. Shorts: not started.
 
 ## Engines
 
 | Job | Tool |
 |-----|------|
-| VO | ElevenLabs · Ben Orbit Narrator `kDch6ACCIpqgQ0NsU9kk` |
-| CG | Gemini Omni Flash API first (`orbit_gemini_omni.py`) · Flow Playwright backup |
-| Music | ElevenLabs `music_v2` continuous underscore per minute |
+| VO | ElevenLabs · Ben Orbit Narrator `kDch6ACCIpqgQ0NsU9kk` (not regenerated) |
+| CG | Flow Omni Flash (API 429 today) |
+| Music | existing per-minute beds (not regenerated) |
