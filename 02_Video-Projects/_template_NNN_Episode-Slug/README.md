@@ -5,7 +5,7 @@ Copy this folder to start a new long:
 ```bash
 cp -R 02_Video-Projects/_template_NNN_Episode-Slug \
   02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star
-# Locked next long. Do not use empty 007_Neutron-Star scaffold. Do not start 013 Moon.
+# Locked next long (7–9 min). Do not use empty 007_Neutron-Star scaffold. Do not start 013 Moon.
 ```
 
 ## Order (blocking)

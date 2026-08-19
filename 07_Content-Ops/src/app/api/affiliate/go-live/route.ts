@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAffiliateGoLiveReport } from "@/lib/affiliate/go-live-service";
 import { applyLiveProductUrls } from "@/lib/affiliate/apply-live-urls";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +14,9 @@ export async function GET(request: NextRequest) {
 
 /** POST { action: "apply-urls", dryRun?: boolean } — write live destination URLs. */
 export async function POST(request: NextRequest) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const body = await request.json().catch(() => null);
   if (!body || body.action !== "apply-urls") {
     return NextResponse.json({ error: "action must be apply-urls" }, { status: 400 });

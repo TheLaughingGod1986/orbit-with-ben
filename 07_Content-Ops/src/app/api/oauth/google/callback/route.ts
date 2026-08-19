@@ -1,17 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getEnv } from "@/lib/env";
+import { getPublicBaseUrl, oauthCallbackUrl } from "@/lib/public-base-url";
 import { consumeOAuthState } from "@/lib/oauth/state";
 import { encryptSecret } from "@/lib/security/token-crypto";
 import { prisma } from "@/lib/storage/prisma";
 import { YOUTUBE_SCOPES } from "@/lib/publishing/adapters/youtube";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export async function GET(req: NextRequest) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const url = new URL(req.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
   const oauthError = url.searchParams.get("error");
   const env = getEnv();
-  const base = env.APP_BASE_URL;
+  const base = getPublicBaseUrl(req);
 
   if (oauthError) {
     return NextResponse.redirect(
@@ -35,8 +40,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const redirectUri =
-    env.GOOGLE_REDIRECT_URI || `${env.APP_BASE_URL}/api/oauth/google/callback`;
+  const redirectUri = oauthCallbackUrl("google", req);
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },

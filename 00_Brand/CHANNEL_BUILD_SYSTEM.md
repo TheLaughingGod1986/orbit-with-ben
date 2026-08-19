@@ -173,7 +173,7 @@ Publishing system: `00_Brand/Channel-Setup/PUBLISHING_AND_SHORTS_STRATEGY.md`
 | 004 | What the James Webb Telescope Discovered That Changes Everything |
 | 005 | The Last Star In The Universe |
 | 006 | Could Life Exist Under The Ice Of Europa? |
-| 007 | **What Happens To Your Body Near A Neutron Star** *(next · script 91.1 · Mac folder, not empty `007_Neutron-Star`)* |
+| 007 | **What Happens To Your Body Near A Neutron Star** *(next · 7–9 min · script 91.1 · Mac folder, not empty `007_Neutron-Star`)* |
 | 008 | What Will Humans Become In 1,000 Years? |
 | 009 | The Day The Sun Dies |
 | 010 | Could AI Help Humanity Reach The Stars? |

@@ -2,11 +2,15 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/storage/prisma";
 import { enqueuePublishingJob } from "@/lib/publishing/jobs";
 import { isDryRun } from "@/lib/env";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export async function POST(
   req: Request,
   ctx: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const { id } = await ctx.params;
   const body = await req.json().catch(() => ({}));
   const post = await prisma.platformPost.findUnique({

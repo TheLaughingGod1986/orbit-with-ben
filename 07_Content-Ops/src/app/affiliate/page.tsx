@@ -5,6 +5,7 @@ import { getAffiliateGoalsPanel } from "@/lib/affiliate/goals-service";
 import { getAffiliateGoLiveReport } from "@/lib/affiliate/go-live-service";
 import type { GoalsPaceStatus } from "@/lib/affiliate/goals";
 import { AffiliateApplyUrlsButton } from "@/components/affiliate/AffiliateApplyUrlsButton";
+import { isOperatorAuthenticated } from "@/lib/security/operator-auth";
 
 export const dynamic = "force-dynamic";
 
@@ -67,15 +68,16 @@ function formatRange(startIso: string, endIso: string): string {
 }
 
 export default async function AffiliateDashboardPage() {
-  const [data, goals, goLive] = await Promise.all([
+  const [data, goals, goLive, canWrite] = await Promise.all([
     getAffiliateDashboardSummary(),
     getAffiliateGoalsPanel(),
     getAffiliateGoLiveReport(),
+    isOperatorAuthenticated(),
   ]);
   const warnings: string[] = [];
   if (data.warnings.videosMissingLinks > 0) {
     warnings.push(
-      `${data.warnings.videosMissingLinks} published/high-view video(s) still missing affiliate links.`,
+      `${data.warnings.videosMissingLinks} published/high-view video(s) with no affiliate placement.`,
     );
   }
   if (data.warnings.inactiveProductInDescriptions > 0) {
@@ -136,12 +138,21 @@ export default async function AffiliateDashboardPage() {
           >
             Opportunities
           </Link>
-          <Link
-            href="/affiliate/import"
-            className="rounded-full border border-white/15 px-4 py-2 text-sm"
-          >
-            CSV import
-          </Link>
+          {canWrite ? (
+            <Link
+              href="/affiliate/import"
+              className="rounded-full border border-white/15 px-4 py-2 text-sm"
+            >
+              CSV import
+            </Link>
+          ) : (
+            <Link
+              href="/login?next=/affiliate/import"
+              className="rounded-full border border-white/15 px-4 py-2 text-sm text-[#F5E8D2]/55"
+            >
+              Sign in to import CSV
+            </Link>
+          )}
         </div>
       </div>
 
@@ -158,7 +169,16 @@ export default async function AffiliateDashboardPage() {
               {goLive.readyForPaidTraffic ? "ready" : "waiting on programme IDs"}
             </p>
           </div>
-          <AffiliateApplyUrlsButton />
+          {canWrite ? (
+            <AffiliateApplyUrlsButton />
+          ) : (
+            <Link
+              href="/login?next=/affiliate"
+              className="rounded-full border border-white/15 px-4 py-2 text-sm text-[#FF7A24]"
+            >
+              Sign in to apply URLs
+            </Link>
+          )}
         </div>
         <ul className="space-y-2">
           {goLive.checks.map((c) => (

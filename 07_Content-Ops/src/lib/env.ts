@@ -37,6 +37,11 @@ export const envSchema = z.object({
   BRILLIANT_AFFILIATE_ID: optionalString,
   /** Base for /go/{slug} redirects; defaults to ${APP_BASE_URL}/go when unset */
   AFFILIATE_REDIRECT_BASE_URL: optionalString,
+  /**
+   * Operator password for mutating Content Ops actions (films, imports, OAuth, settings).
+   * Reads stay public. Set on Vercel Production + Preview — never commit the value.
+   */
+  CONTENT_OPS_OPERATOR_PASSWORD: optionalString,
 });
 
 export type OrbitEnv = z.infer<typeof envSchema>;

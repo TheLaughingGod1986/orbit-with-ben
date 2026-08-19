@@ -14,8 +14,12 @@ async function getOverview() {
   const monthEnd = endOfMonth(now);
 
   const [
+    filmCount,
     longInProduction,
-    longPublishedMonth,
+    longScheduled,
+    longPublished,
+    clipCount,
+    postCount,
     shortsPlanned,
     shortsAwaitingEdit,
     shortsReady,
@@ -30,15 +34,20 @@ async function getOverview() {
     recentJobs,
     monetisation,
   ] = await Promise.all([
+    prisma.longFormVideo.count(),
     prisma.longFormVideo.count({
       where: { status: { in: ["idea", "scripting", "production", "editing", "ready"] } },
     }),
     prisma.longFormVideo.count({
       where: {
-        status: "published",
-        publicationDate: { gte: monthStart, lte: monthEnd },
+        OR: [{ status: "scheduled" }, { publicationDate: { gt: now } }],
       },
     }),
+    prisma.longFormVideo.count({
+      where: { status: "published" },
+    }),
+    prisma.shortClip.count(),
+    prisma.platformPost.count(),
     prisma.shortClip.count({ where: { status: { in: ["proposed", "approved"] } } }),
     prisma.shortClip.count({ where: { status: { in: ["approved", "editing"] } } }),
     prisma.shortClip.count({ where: { status: { in: ["exported", "scheduled"] } } }),
@@ -76,30 +85,72 @@ async function getOverview() {
     getHomeMonetisationCard(),
   ]);
 
-  const nextActions: string[] = [];
-  if (pendingApprovals > 0) {
-    nextActions.push(`Approve ${pendingApprovals} proposed clip${pendingApprovals === 1 ? "" : "s"}.`);
+  type NextAction = { label: string; href?: string };
+  const nextActions: NextAction[] = [];
+
+  if (filmCount === 0) {
+    nextActions.push({
+      label: "Add the known Thursday films",
+      href: "/videos",
+    });
+  } else if (clipCount === 0 && postCount === 0) {
+    // Films exist; Shorts/posts not built yet — do not nag schedule/worker.
+    nextActions.push({
+      label:
+        longScheduled > 0
+          ? "Open Thursday films — next scheduled long is on the list."
+          : "Open Thursday films — review the catalogue.",
+      href: "/videos",
+    });
+  } else {
+    if (pendingApprovals > 0) {
+      nextActions.push({
+        label: `Approve ${pendingApprovals} proposed clip${pendingApprovals === 1 ? "" : "s"}.`,
+        href: "/pipeline",
+      });
+    }
+    if (shortsAwaitingEdit > 0) {
+      nextActions.push({
+        label: `Move ${shortsAwaitingEdit} clip(s) through editing / export.`,
+        href: "/pipeline",
+      });
+    }
+    if (postsScheduled === 0) {
+      nextActions.push({
+        label: "Schedule this week’s cross-platform posts.",
+        href: "/calendar",
+      });
+    }
+    if (missingAnalytics > 0) {
+      nextActions.push({
+        label: `Import analytics for ${missingAnalytics} published post(s).`,
+        href: "/analytics",
+      });
+    }
+    if (monetisation.videosMissingLinks > 0) {
+      nextActions.push({
+        label: `Review ${monetisation.videosMissingLinks} published/high-view video(s) with no affiliate placement.`,
+        href: "/affiliate",
+      });
+    }
+    if (!heartbeat || Date.now() - heartbeat.lastHeartbeatAt.getTime() > 30_000) {
+      nextActions.push({
+        label: "Start the publishing worker (`npm run worker`) for scheduled API posts.",
+      });
+    }
+    if (!nextActions.length) {
+      nextActions.push({
+        label: "Pipeline looks clear — register the next long-form video.",
+        href: "/videos",
+      });
+    }
   }
-  if (shortsAwaitingEdit > 0) {
-    nextActions.push(`Move ${shortsAwaitingEdit} clip(s) through editing / export.`);
-  }
-  if (postsScheduled === 0) nextActions.push("Schedule this week’s cross-platform posts.");
-  if (missingAnalytics > 0) {
-    nextActions.push(`Import analytics for ${missingAnalytics} published post(s).`);
-  }
-  if (monetisation.videosMissingLinks > 0) {
-    nextActions.push(
-      `Review ${monetisation.videosMissingLinks} video(s) missing affiliate links.`,
-    );
-  }
-  if (!heartbeat || Date.now() - heartbeat.lastHeartbeatAt.getTime() > 30_000) {
-    nextActions.push("Start the publishing worker (`npm run worker`) for scheduled API posts.");
-  }
-  if (!nextActions.length) nextActions.push("Pipeline looks clear — register the next long-form video.");
 
   return {
+    filmCount,
     longInProduction,
-    longPublishedMonth,
+    longScheduled,
+    longPublished,
     shortsPlanned,
     shortsAwaitingEdit,
     shortsReady,
@@ -200,11 +251,20 @@ export default async function HomePage() {
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        <StatCard label="Long in production" value={data.longInProduction} />
         <StatCard
-          label="Long published (month)"
-          value={data.longPublishedMonth}
-          hint={`Target ${data.cadence.longForm}/mo`}
+          label="Films in catalogue"
+          value={data.filmCount}
+          hint={`${data.longInProduction} still in production stages`}
+        />
+        <StatCard
+          label="Films scheduled"
+          value={data.longScheduled}
+          hint="status scheduled or air date ahead"
+        />
+        <StatCard
+          label="Films published"
+          value={data.longPublished}
+          hint={`Catalogue · target ${data.cadence.longForm}/mo`}
         />
         <StatCard label="Shorts planned" value={data.shortsPlanned} />
         <StatCard label="Awaiting editing" value={data.shortsAwaitingEdit} />
@@ -249,7 +309,7 @@ export default async function HomePage() {
             }
           />
           <StatCard
-            label="Videos missing links"
+            label="Videos without placements"
             value={data.monetisation.videosMissingLinks}
           />
           <StatCard
@@ -289,10 +349,16 @@ export default async function HomePage() {
           <ul className="mt-4 space-y-3">
             {data.nextActions.map((action) => (
               <li
-                key={action}
+                key={action.label}
                 className="rounded-xl border border-[#FF7A24]/25 bg-[#FF7A24]/10 px-4 py-3 text-sm text-[#F5E8D2]"
               >
-                {action}
+                {action.href ? (
+                  <Link href={action.href} className="font-medium text-[#FFC85A] hover:underline">
+                    {action.label}
+                  </Link>
+                ) : (
+                  action.label
+                )}
               </li>
             ))}
           </ul>

@@ -55,12 +55,17 @@ export function socialPlatformToClickSource(
   }
 }
 
-/** Normalise inbound utm_source / click source to a reporting bucket. */
+/**
+ * Normalise inbound utm_source / click source to a reporting bucket.
+ * Missing / empty / whitespace → `other` (not youtube). Probe and health
+ * checks must not inflate YouTube. Explicit `utm_source=youtube` still maps
+ * to youtube; unknown values also fall through to `other`.
+ */
 export function normalizeAffiliateClickSource(
   raw: string | null | undefined,
 ): AffiliateClickSource {
   const s = (raw || "").trim().toLowerCase();
-  if (!s) return "youtube";
+  if (!s) return "other";
   if (s === "instagram_reels" || s === "instagram_feed" || s === "ig") return "instagram";
   if (s === "facebook_page" || s === "facebook_reels" || s === "fb") return "facebook";
   if ((AFFILIATE_CLICK_SOURCES as readonly string[]).includes(s)) {

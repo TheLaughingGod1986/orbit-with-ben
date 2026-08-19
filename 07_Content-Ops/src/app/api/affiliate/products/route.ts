@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { listProducts, createProduct, updateProduct } from "@/lib/affiliate/products";
 import { affiliateProductInputSchema } from "@/lib/affiliate/schemas";
 import { prisma } from "@/lib/storage/prisma";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,9 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const body = await request.json();
   const parsed = affiliateProductInputSchema.safeParse(body);
   if (!parsed.success) {
@@ -30,6 +34,9 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const body = await request.json();
   if (!body.id || typeof body.id !== "string") {
     return NextResponse.json({ error: "id required" }, { status: 400 });

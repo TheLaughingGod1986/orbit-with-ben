@@ -1,12 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getEnv } from "@/lib/env";
+import { getPublicBaseUrl, oauthCallbackUrl } from "@/lib/public-base-url";
 import { consumeOAuthState } from "@/lib/oauth/state";
 import { encryptSecret } from "@/lib/security/token-crypto";
 import { prisma } from "@/lib/storage/prisma";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export async function GET(req: NextRequest) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const env = getEnv();
-  const base = env.APP_BASE_URL;
+  const base = getPublicBaseUrl(req);
   const url = new URL(req.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
@@ -19,7 +24,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.redirect(`${base}/settings/connections?error=encryption_key_required`);
   }
 
-  const redirectUri = env.TIKTOK_REDIRECT_URI || `${env.APP_BASE_URL}/api/oauth/tiktok/callback`;
+  const redirectUri = oauthCallbackUrl("tiktok", req);
   const tokenRes = await fetch("https://open.tiktokapis.com/v2/oauth/token/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },

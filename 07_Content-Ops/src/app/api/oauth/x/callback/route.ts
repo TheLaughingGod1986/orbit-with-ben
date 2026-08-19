@@ -1,12 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getEnv } from "@/lib/env";
+import { getPublicBaseUrl, oauthCallbackUrl } from "@/lib/public-base-url";
 import { consumeOAuthState } from "@/lib/oauth/state";
 import { encryptSecret } from "@/lib/security/token-crypto";
 import { prisma } from "@/lib/storage/prisma";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 export async function GET(req: NextRequest) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const env = getEnv();
-  const base = env.APP_BASE_URL;
+  const base = getPublicBaseUrl(req);
   const url = new URL(req.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
@@ -19,7 +24,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.redirect(`${base}/settings/connections?error=encryption_key_required`);
   }
 
-  const redirectUri = env.X_REDIRECT_URI || `${env.APP_BASE_URL}/api/oauth/x/callback`;
+  const redirectUri = oauthCallbackUrl("x", req);
   const basic = Buffer.from(`${env.X_CLIENT_ID}:${env.X_CLIENT_SECRET}`).toString("base64");
   const tokenRes = await fetch("https://api.twitter.com/2/oauth2/token", {
     method: "POST",
