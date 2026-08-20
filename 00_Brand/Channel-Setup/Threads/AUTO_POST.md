@@ -88,3 +88,9 @@ python3 live_shorts_to_threads.py --check-creds
 | Avatar | Same Orbit mascot as YouTube / TikTok / IG |
 
 Unload: `launchctl unload ~/Library/LaunchAgents/dev.orbit.threads-live-shorts.plist`
+
+## 2026-08-20 catch-up
+
+Ledger last wrote 3 Aug. Mac runbook for BH catch-up + exo 21–26 arming:
+
+`audits/social_catchup_2026-08-20/CATCHUP_PLAN.md`

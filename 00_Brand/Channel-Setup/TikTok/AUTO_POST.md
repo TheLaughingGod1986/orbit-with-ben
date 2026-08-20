@@ -61,3 +61,9 @@ python3 live_shorts_to_tiktok.py --seed-scheduled   # cover pre-scheduled batch
 - Pre-schedule batch uploads must use `_tt_upload_one_safe.py` → `_upload_missing_v02_cdp.py` (verifies schedule values + Studio needle). Do **not** trust CTA-click-only success.
 - If Studio shows `Something went wrong. You can try again or replace it with a different video.`, stop and retry later — that is a platform-side publish failure, not a missing file.
 
+## 2026-08-20 catch-up
+
+Socials went quiet after the 3 Aug ban + Meta batch ending 17 Aug. Mac runbook (unban → watchers → BH catch-up → exo 21–26 arm):
+
+`audits/social_catchup_2026-08-20/CATCHUP_PLAN.md`
+
