@@ -3,7 +3,7 @@
 **Locked:** 2026-08-16 after Europa v02 · Last Star v11 · BH v09 · AW v05 · Fermi v20.
 **Intent:** Build every future Orbit long in this format. Reiterate when QA teaches a better rule. Do not silently revert to Europa v01 broadcast polish.
 
-Cursor rules: `orbit-omni-longform-playbook.mdc` · `orbit-longform-open-end-affiliate.mdc` · `orbit-omni-section-qa.mdc` · `orbit-cutscene-no-reuse.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-character-consistency.mdc` · `orbit-affiliate-named-in-film.mdc`
+Cursor rules: `orbit-omni-longform-playbook.mdc` · `orbit-longform-open-end-affiliate.mdc` · `orbit-omni-section-qa.mdc` · `orbit-cutscene-no-reuse.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-character-consistency.mdc` · `orbit-affiliate-named-in-film.mdc` · `orbit-long-views-inspiration-parasocial.mdc`
 
 ## Why this format
 
