@@ -97,6 +97,6 @@ Artifacts: `studio_finish/STUDIO_FINISH_RESULT.json` + screenshots.
 
 ## Open items for Ben
 
-1. **"Verify that it's you"** — Studio blocked the thumbnail A/B test start with a Google verification wall (screenshot `studio_finish/v2_ab_list.png`). A Studio tab is open in your Chrome: complete the Verify prompt, then say "verified" and the A/B/C test on the Last Star premiere gets re-run (B+C are staged and ready).
+1. ~~"Verify that it's you"~~ — verified by Ben 25 Aug 00:24. Root cause of the A/B test not sticking turned out to be different: **vidIQ cannot hold a rotation test on a non-public video** (flow completes with zero errors but no test row is created while Last Star is a scheduled premiere — same signature as the Europa attempt on 14 Aug). **Automated:** launchd job `dev.orbit.laststar-ab-test` fires Thu 27 Aug 18:20 UK (backup pass 21:00), right after the premiere airs, and sets the A/B/C test unattended. Result lands in `005_…/11_Upload-Package/Schedule/AB_TEST_RESULT.json`; nothing for you to do unless that file says `"ok": false`.
 2. `SdNXS1PD_Yk` — leaving public as you decided; it funnels premiere-day traffic.
 3. vidIQ A/B history note: Fermi + Black Hole thumbnail tests finished "no clear winner" (too few impressions); Alien Worlds test in progress ends ~27 Aug. Don't read anything into those results yet — the channel needs more impressions for tests to resolve.

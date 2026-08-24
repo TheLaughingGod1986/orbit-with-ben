@@ -29,11 +29,12 @@
       "C": "last-star_thumb_C_what-comes-after_1280x720.png (new — question: red dwarf hero + Orbit badge)"
     },
     "path": "vidIQ A/B Testing (no native Test & compare on this channel)",
-    "status": "BLOCKED_VERIFY — B+C uploaded into modal, Set test clicked, but Studio raised 'Verify that it's you'; test NOT in vidIQ A/B list after reload. Tab left open in Chrome for Ben to verify, then re-run.",
+    "status": "SCHEDULED_POST_PREMIERE — root cause found 25 Aug 00:52: vidIQ cannot hold a rotation test on a non-public video. Ben verified (wall cleared), flow runs end-to-end with zero errors, but no test row is created while the video is a scheduled premiere (same signature as europa_abc_v03.log). launchd job dev.orbit.laststar-ab-test runs Thu 27 Aug 18:20 + 21:00 UK (after premiere airs) via 11_Upload-Package/Schedule/_run_ab_test.sh → _set_ab_test_post_premiere.py; writes AB_TEST_RESULT.json + AB_TEST_DONE.marker on success.",
     "abTestsListObserved": {
       "alienWorlds": "In progress, started 13 Aug, ~3 days left",
       "blackHole": "Done (6 Aug), no clear winner",
       "fermi": "Done (30 Jul–13 Aug), no clear winner"
-    }
+    },
+    "note": "Studio Chrome must be launched detached (open -na) — nohup'd instances die with the launching shell. Wrapper handles Chrome startup itself."
   }
 }
