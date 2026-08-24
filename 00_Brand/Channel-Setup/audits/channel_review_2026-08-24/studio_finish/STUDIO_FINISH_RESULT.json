@@ -1,0 +1,39 @@
+{
+  "ranAt": "2026-08-24T23:20:00+01:00",
+  "method": "Playwright CDP :9222 on Ben's Chrome (@OrbitWithBen Studio)",
+  "endScreens": {
+    "note": "1 video (Best for viewer) + Subscribe template, last ~20s. Verified per-video with fresh page + identity check.",
+    "Mo93x0fxB1Q": { "slug": "fermi", "state": "present (added this session)" },
+    "3xrxdmaOwJI": { "slug": "blackhole", "state": "present (pre-existing)" },
+    "b8-X_FyJnHM": { "slug": "alienworlds", "state": "present (added this session)" },
+    "ziKBPJ6FY0U": { "slug": "jwst", "state": "present (pre-existing)" },
+    "REXYxuLOBoI": { "slug": "laststar premiere", "state": "present (pre-existing, subscribe+video on last 10s hold)" },
+    "NbW5G1BpPY0": { "slug": "europa scheduled", "state": "present (added this session)" },
+    "Yk1tLh23rko": { "slug": "neutron scheduled", "state": "present (pre-existing)" }
+  },
+  "infoCards": {
+    "note": "One video card per long, mid-film. Times verified by reload.",
+    "Mo93x0fxB1Q": { "target": "Alien Worlds", "time": "07:30" },
+    "3xrxdmaOwJI": { "target": "JWST", "time": "08:30" },
+    "b8-X_FyJnHM": { "target": "Fermi", "time": "08:30" },
+    "ziKBPJ6FY0U": { "target": "Last Star premiere", "time": "06:30" },
+    "REXYxuLOBoI": { "target": "JWST", "time": "03:30" },
+    "NbW5G1BpPY0": { "target": "Alien Worlds", "time": "03:45" },
+    "Yk1tLh23rko": { "target": "Black Hole", "time": "04:00" }
+  },
+  "thumbnailABC": {
+    "video": "REXYxuLOBoI (Last Star premiere)",
+    "variants": {
+      "A": "last-star_thumb_PRIMARY_A_fading-star_1280x720.png (live)",
+      "B": "last-star_thumb_B_final-sunset_1280x720.png (new — emotion: Orbit watching white dwarf)",
+      "C": "last-star_thumb_C_what-comes-after_1280x720.png (new — question: red dwarf hero + Orbit badge)"
+    },
+    "path": "vidIQ A/B Testing (no native Test & compare on this channel)",
+    "status": "BLOCKED_VERIFY — B+C uploaded into modal, Set test clicked, but Studio raised 'Verify that it's you'; test NOT in vidIQ A/B list after reload. Tab left open in Chrome for Ben to verify, then re-run.",
+    "abTestsListObserved": {
+      "alienWorlds": "In progress, started 13 Aug, ~3 days left",
+      "blackHole": "Done (6 Aug), no clear winner",
+      "fermi": "Done (30 Jul–13 Aug), no clear winner"
+    }
+  }
+}

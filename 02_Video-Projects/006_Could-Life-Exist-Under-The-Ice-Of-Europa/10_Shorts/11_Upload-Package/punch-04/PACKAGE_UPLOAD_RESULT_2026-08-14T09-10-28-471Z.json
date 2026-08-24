@@ -1,0 +1,115 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "recovery": {
+    "active": false,
+    "blocked": false,
+    "endsAt": null
+  },
+  "registry": {
+    "internalContentId": "11_Upload-Package:shorts:59bb6bc8e8",
+    "sourceFileFingerprint": "5468e9197f86b2f34352b17e83d65bf28a8be4aea523715a6f812d89d55914e1",
+    "youtubeVideoId": "tvyQ_bzmA7M"
+  },
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-09-06T10:30:00.000Z",
+    "platformPostId": "tvyQ_bzmA7M",
+    "platformUrl": "https://youtu.be/tvyQ_bzmA7M",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-09-06T10:30:00.000Z; assert WARN: publishAt=2026-09-06T10:30:00Z expected 2026-09-06T10:30:00.000Z",
+    "responseSummary": "{\"id\":\"tvyQ_bzmA7M\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-09-06T10:30:00.000Z\",\"notifySubscribers\":false,\"categoryId\":\"27\",\"assert\":{\"id\":\"tvyQ_bzmA7M\",\"privacy\":\"private\",\"publishAt\":\"2026-09-06T10:30:00Z\",\"uploadStatus\":\"uploaded\",\"processing\":\"processing\",\"tagsN\":0,\"descLen\":164,\"categoryId\":\"27\",\"madeForKids\":false},\"assertErrors\":[\"publishAt=2026-09-06T10:30:00Z expected 2026-09-06T10:30:00.000Z\"]}"
+  },
+  "package": {
+    "title": "Life With No Sunlight?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 10,
+    "hasPinnedComment": false,
+    "thumbnailPath": null,
+    "scheduledAt": "2026-09-06T10:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/ben/code/Orbit-YouTube/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/11_Upload-Package/punch-04/PACKAGE_MANIFEST.json",
+      "titleFile": "/Users/ben/code/Orbit-YouTube/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/11_Upload-Package/punch-04/Titles/shorts_title_v01.txt",
+      "descriptionFile": "/Users/ben/code/Orbit-YouTube/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/11_Upload-Package/punch-04/Descriptions/shorts_description_v01.txt",
+      "tagsFile": "/Users/ben/code/Orbit-YouTube/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/11_Upload-Package/punch-04/Tags/shorts_tags_v01.txt",
+      "video": "/Users/ben/code/Orbit-YouTube/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/06_Final-Exports/europa_punch-04_no-daylight-kitchen_v01.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "studioFinish": {
+    "videoId": "tvyQ_bzmA7M",
+    "studioEditUrl": "https://studio.youtube.com/video/tvyQ_bzmA7M/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Primary thumbnail",
+        "detail": "Upload primary thumb in Studio or re-run with --thumbnail",
+        "studioUrlHint": "https://studio.youtube.com/video/tvyQ_bzmA7M/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/tvyQ_bzmA7M/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/tvyQ_bzmA7M/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/tvyQ_bzmA7M/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related / watch next (full film)",
+        "detail": "Set Related video to 3_W_jl2GR8w in Studio (Shorts)",
+        "studioUrlHint": "https://studio.youtube.com/video/tvyQ_bzmA7M/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/tvyQ_bzmA7M/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (tvyQ_bzmA7M). 2 required Studio finish step(s) remain."
+  }
+}

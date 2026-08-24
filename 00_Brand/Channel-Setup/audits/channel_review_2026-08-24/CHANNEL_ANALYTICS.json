@@ -1,0 +1,736 @@
+{
+  "ranAt": "2026-08-24T22:15:24.564Z",
+  "start": "2026-07-25",
+  "end": "2026-08-24",
+  "results": {
+    "channel_totals": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "engagedViews",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "estimatedMinutesWatched",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "averageViewDuration",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "averageViewPercentage",
+          "columnType": "METRIC",
+          "dataType": "FLOAT"
+        },
+        {
+          "name": "subscribersGained",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "subscribersLost",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "likes",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "comments",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "shares",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          1270,
+          521,
+          392,
+          43,
+          43.38,
+          4,
+          0,
+          21,
+          19,
+          0
+        ]
+      ]
+    },
+    "daily": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "day",
+          "columnType": "DIMENSION",
+          "dataType": "STRING"
+        },
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "engagedViews",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "estimatedMinutesWatched",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "subscribersGained",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "2026-07-25",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-07-26",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-07-27",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-07-28",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-07-29",
+          8,
+          5,
+          2,
+          0
+        ],
+        [
+          "2026-07-30",
+          23,
+          14,
+          3,
+          0
+        ],
+        [
+          "2026-07-31",
+          98,
+          22,
+          8,
+          0
+        ],
+        [
+          "2026-08-01",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-08-02",
+          57,
+          57,
+          9,
+          0
+        ],
+        [
+          "2026-08-03",
+          143,
+          33,
+          14,
+          0
+        ],
+        [
+          "2026-08-04",
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          "2026-08-05",
+          4,
+          1,
+          1,
+          0
+        ],
+        [
+          "2026-08-06",
+          26,
+          15,
+          9,
+          1
+        ],
+        [
+          "2026-08-07",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-08-08",
+          8,
+          2,
+          0,
+          0
+        ],
+        [
+          "2026-08-09",
+          2,
+          2,
+          43,
+          0
+        ],
+        [
+          "2026-08-10",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-08-11",
+          36,
+          12,
+          2,
+          0
+        ],
+        [
+          "2026-08-12",
+          69,
+          18,
+          4,
+          1
+        ],
+        [
+          "2026-08-13",
+          33,
+          16,
+          4,
+          0
+        ],
+        [
+          "2026-08-14",
+          70,
+          30,
+          13,
+          1
+        ],
+        [
+          "2026-08-15",
+          143,
+          52,
+          173,
+          0
+        ],
+        [
+          "2026-08-16",
+          38,
+          19,
+          29,
+          0
+        ],
+        [
+          "2026-08-17",
+          64,
+          15,
+          3,
+          0
+        ],
+        [
+          "2026-08-18",
+          26,
+          17,
+          2,
+          0
+        ],
+        [
+          "2026-08-19",
+          39,
+          17,
+          4,
+          0
+        ],
+        [
+          "2026-08-20",
+          201,
+          54,
+          19,
+          1
+        ],
+        [
+          "2026-08-21",
+          48,
+          30,
+          7,
+          0
+        ],
+        [
+          "2026-08-22",
+          139,
+          87,
+          31,
+          0
+        ]
+      ]
+    },
+    "traffic_sources": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "insightTrafficSourceType",
+          "columnType": "DIMENSION",
+          "dataType": "STRING"
+        },
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "estimatedMinutesWatched",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "SHORTS",
+          834,
+          243
+        ],
+        [
+          "YT_SEARCH",
+          242,
+          38
+        ],
+        [
+          "NO_LINK_OTHER",
+          121,
+          32
+        ],
+        [
+          "YT_OTHER_PAGE",
+          25,
+          1
+        ],
+        [
+          "EXT_URL",
+          18,
+          9
+        ],
+        [
+          "SUBSCRIBER",
+          15,
+          2
+        ],
+        [
+          "YT_CHANNEL",
+          7,
+          0
+        ],
+        [
+          "NOTIFICATION",
+          6,
+          2
+        ],
+        [
+          "RELATED_VIDEO",
+          1,
+          18
+        ],
+        [
+          "SOUND_PAGE",
+          1,
+          0
+        ],
+        [
+          "SHORTS_CONTENT_LINKS",
+          1,
+          42
+        ]
+      ]
+    },
+    "top_videos": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "video",
+          "columnType": "DIMENSION",
+          "dataType": "STRING"
+        },
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "engagedViews",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "estimatedMinutesWatched",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "averageViewDuration",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        },
+        {
+          "name": "averageViewPercentage",
+          "columnType": "METRIC",
+          "dataType": "FLOAT"
+        },
+        {
+          "name": "subscribersGained",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "MDvAKtmKauw",
+          140,
+          55,
+          172,
+          186,
+          716.82,
+          0
+        ],
+        [
+          "PV50PX-bE4g",
+          121,
+          40,
+          12,
+          15,
+          57.63,
+          1
+        ],
+        [
+          "l1d1ypHxLk0",
+          89,
+          30,
+          6,
+          11,
+          45.56,
+          0
+        ],
+        [
+          "P-li_ZWk4lg",
+          80,
+          37,
+          19,
+          30,
+          123.35000000000001,
+          0
+        ],
+        [
+          "OlwENQcY-jg",
+          68,
+          19,
+          4,
+          8,
+          38.52,
+          0
+        ],
+        [
+          "M-VN84HCNls",
+          63,
+          19,
+          11,
+          32,
+          142.04,
+          1
+        ],
+        [
+          "B2STcIAF1lY",
+          56,
+          13,
+          3,
+          11,
+          41.57,
+          1
+        ],
+        [
+          "03v4f1hlvtQ",
+          52,
+          22,
+          8,
+          22,
+          90.88,
+          0
+        ],
+        [
+          "QRi6Dxq0hz0",
+          26,
+          12,
+          2,
+          8,
+          36.93,
+          0
+        ],
+        [
+          "SC2WGTl_V5Q",
+          22,
+          12,
+          2,
+          10,
+          47.55,
+          0
+        ],
+        [
+          "ZnsJTCcrTlA",
+          17,
+          9,
+          2,
+          14,
+          52.43,
+          0
+        ],
+        [
+          "iQUbmlaj4vk",
+          17,
+          7,
+          1,
+          10,
+          40.24,
+          0
+        ],
+        [
+          "tEOHYQbcgOw",
+          16,
+          11,
+          1,
+          9,
+          39.45,
+          0
+        ],
+        [
+          "f8V6wCjWwHA",
+          13,
+          6,
+          1,
+          10,
+          40.62,
+          0
+        ],
+        [
+          "DN4L1DkerMM",
+          11,
+          9,
+          2,
+          18,
+          67.6,
+          0
+        ],
+        [
+          "Mo93x0fxB1Q",
+          10,
+          10,
+          23,
+          142,
+          12.78,
+          0
+        ]
+      ]
+    },
+    "impressions_by_video": {
+      "error": "Unknown identifier (videoThumbnailImpressionsCtr) given in field parameters.metrics."
+    },
+    "device": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "deviceType",
+          "columnType": "DIMENSION",
+          "dataType": "STRING"
+        },
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "MOBILE",
+          797
+        ],
+        [
+          "DESKTOP",
+          261
+        ],
+        [
+          "TABLET",
+          170
+        ],
+        [
+          "TV",
+          42
+        ]
+      ]
+    },
+    "geography": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "country",
+          "columnType": "DIMENSION",
+          "dataType": "STRING"
+        },
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "GB",
+          498
+        ],
+        [
+          "FR",
+          17
+        ]
+      ]
+    },
+    "subscribed_status": {
+      "error": "An internal error has occurred."
+    },
+    "search_terms": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "insightTrafficSourceDetail",
+          "columnType": "DIMENSION",
+          "dataType": "STRING"
+        },
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "are they engineering the apocalypse",
+          5
+        ],
+        [
+          "alien worlds",
+          4
+        ],
+        [
+          "exoplanets",
+          3
+        ],
+        [
+          "jwst",
+          3
+        ],
+        [
+          "alien planets",
+          2
+        ],
+        [
+          "alien real",
+          2
+        ],
+        [
+          "baby memes",
+          2
+        ],
+        [
+          "extraterrestrial life",
+          2
+        ],
+        [
+          "james webb space telescope live",
+          2
+        ],
+        [
+          "jwst latest update",
+          2
+        ],
+        [
+          "william orbit",
+          2
+        ],
+        [
+          "zoo hypothesis",
+          2
+        ],
+        [
+          "2 big lugs",
+          1
+        ],
+        [
+          "3 suns",
+          1
+        ],
+        [
+          "ai villager minecraft",
+          1
+        ]
+      ]
+    },
+    "suggested_sources": {
+      "kind": "youtubeAnalytics#resultTable",
+      "columnHeaders": [
+        {
+          "name": "insightTrafficSourceDetail",
+          "columnType": "DIMENSION",
+          "dataType": "STRING"
+        },
+        {
+          "name": "views",
+          "columnType": "METRIC",
+          "dataType": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "tEOHYQbcgOw",
+          1
+        ]
+      ]
+    }
+  }
+}
