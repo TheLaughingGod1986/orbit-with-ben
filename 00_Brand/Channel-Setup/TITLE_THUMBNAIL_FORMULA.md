@@ -88,8 +88,36 @@ Scan the whole clip and score every candidate frame instead:
    "NIGHTS HOTTER"; step the size down until the longest line clears both margins.
 
 Builder: `00_Brand/Channel-Setup/tools/build_scene_first_short_covers.py`.
-Some clips are Orbit-heavy end to end, so the best available frame still shows him — that is a
-source-material limit, not a cover bug. Fix it upstream by shooting more non-Orbit scenery.
+
+**When the Short is Orbit-dominated, take the cover from the parent episode.** The cover does not
+have to come from the Short. The parent film is the same topic and full of Orbit-free scenery, so
+crop the centre 9:16 of a clean parent frame instead — no re-render, no new generation. Builder:
+`build_covers_from_parent_episode.py`. Rules that matter there: pick distinct beats so two Shorts
+never share a frame, avoid a beat already used by another Short or by the long's own thumbnail,
+keep a brightness floor (dark frames score well on contrast but read as an empty tile), and
+curate the timestamp when the literal beat is known — detail ranking is not topic-aware.
+
+Leave a Short's own cover alone when it already reads scene-first (wide shot, small in-scene
+Orbit). Only a 1-minute experiment with Orbit on screen throughout has no usable option at all.
+
+### Orbit in the *video* is not a problem — measured 25 Aug 2026
+
+Do not confuse the thumbnail signal with the content. Measuring Orbit-orange coverage across all
+20 public Shorts and comparing with views:
+
+| Clip type | n | median views |
+|---|---|---|
+| Scenery-led (<40% Orbit-dominated frames) | 12 | 20.5 |
+| Orbit-led (≥40%) | 8 | 47.0 |
+
+Pearson r = **+0.09** — no real relationship, and if anything it leans the *opposite* way to the
+assumption. The #2 Short of all time (`Most of the Universe Gives Off No Light`, 122 views) is 85%
+Orbit-dominated. The bottom of the table contains both kinds, and its common factor is the failed
+title patterns (subjectless cleverness), not Orbit.
+
+So: **do not re-render Shorts to remove Orbit.** He is the brand
+(`orbit-character-consistency.mdc`), the evidence does not support it, and the spend belongs in
+the next episode. The lever is titles and covers, which cost nothing.
 
 ### Shorts covers cannot be set by the Data API (verified 25 Aug 2026)
 

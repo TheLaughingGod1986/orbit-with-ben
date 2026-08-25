@@ -54,6 +54,18 @@ near-black frames; reward detail. **Auto-fit** the punch text — 118 px Arial B
 
 Builder: `00_Brand/Channel-Setup/tools/build_scene_first_short_covers.py`.
 
+If the Short is Orbit-dominated end to end, take the cover from the **parent episode** (centre
+9:16 crop of a clean frame) — `build_covers_from_parent_episode.py`. Distinct beat per Short, keep
+a brightness floor, curate the timestamp when the literal beat is known.
+
+## Orbit in the video is fine — do not re-render to remove him
+
+Measured across 20 public Shorts (25 Aug 2026): Orbit-led clips (≥40% Orbit-dominated frames)
+median **47** views vs scenery-led **20.5**, Pearson **r = +0.09**. No relationship, and the #2
+Short ever is 85% Orbit-dominated. The scene-first signal is about **thumbnails only** — it does
+**not** extend to content. Orbit is the brand (`orbit-character-consistency.mdc`). Fix titles and
+covers (free); spend generation budget on the next episode, not on recutting shipped Shorts.
+
 ## Shorts covers: Studio desktop only — NOT the Data API (verified 25 Aug 2026)
 
 `thumbnails.set` returns `ok` on a Short but letterboxes the image into 16:9 and never fills the
