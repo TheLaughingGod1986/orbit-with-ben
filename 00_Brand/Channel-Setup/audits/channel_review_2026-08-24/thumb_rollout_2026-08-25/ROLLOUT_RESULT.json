@@ -1,0 +1,31 @@
+{
+  "ranAt": "2026-08-25T12:30:00+01:00",
+  "strategy": "TITLE_THUMBNAIL_FORMULA.md — scene-first thumbs (no Orbit default on longs), S1–S6 titles",
+  "todayShort": {
+    "id": "68uTDP2esso",
+    "airedAt": "2026-08-25T11:30 UK",
+    "title": "JWST Keeps Finding Galaxies Too Big, Too Soon (set 10:15)",
+    "cover": "bubble-cosmos frame + TOO BIG, TOO SOON (set 10:45 — before air)"
+  },
+  "longThumbnails": {
+    "Mo93x0fxB1Q": "fermi — planet parade + WHERE IS EVERYBODY? (scene, no Orbit)",
+    "3xrxdmaOwJI": "black hole — dark void crop + FALLING IN? (scene, no Orbit)",
+    "b8-X_FyJnHM": "alien worlds — giant eye planet + A GIANT EYE? (scene, no Orbit)",
+    "ziKBPJ6FY0U": "jwst — telescope+spectrum + TOO EARLY? (scene, no Orbit)",
+    "NbW5G1BpPY0": "europa — existing scene-first C variant promoted to primary",
+    "Yk1tLh23rko": "neutron — density jewel + ONE TEASPOON = A MOUNTAIN (scene, no Orbit)",
+    "REXYxuLOBoI": "UNCHANGED — control variant A in Thursday's no-Orbit A/B test"
+  },
+  "blocker_found": "thumbnails.set API returns 403 'forbidden' while a vidIQ A/B test record exists on the video (even finished tests). Fix: Studio thumbnail Options → Upload file → Continue deletes the test ('A/B test deleted' toast), then the API works. Applied to fermi/bh/aw/neutron; AW's running test on obsolete Orbit thumbs was deleted in the process.",
+  "shortCovers": {
+    "scheduled": 24,
+    "public": 20,
+    "recipe": "own frame @42% (1080x1920) + ≤4-word Arial Black punch text top-left; text derived from formula titles",
+    "note": "Shorts covers surface in search/browse/channel grid, not the Shorts feed. QptlHs1HuYI cover frame came from the 26s p01 cut (live is the 21s trim) — same scene family, acceptable."
+  },
+  "titleFixes": {
+    "scheduledRetitles": 8,
+    "publicRetitles": 10,
+    "hashtagStrip": "OlwENQcY-jg (Giant Eye winner — hashtags removed, phrase kept)"
+  }
+}
