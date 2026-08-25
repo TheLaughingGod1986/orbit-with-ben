@@ -42,4 +42,16 @@ One promise, search-phrase-first, no series suffix. vidIQ `type=long` ≥90, pre
 5. Wonder brand: no fearbait comps. Re-evaluate the Orbit-on-thumb call once an A/B test
    resolves with a clear winner.
 
+## Shorts covers — never grab a fixed-percentage frame
+
+A blind frame at N% of duration is **not** scene-first. It lands on Orbit close-ups and on the
+clip's own burned-in captions (25 Aug: ~half of 44 covers had to be rebuilt for exactly this).
+
+Score every frame in the clip and pick the best: penalise Orbit-orange pixels (harder in the
+centre), near-white pixels in the caption band, a busy top band under the punch text, and
+near-black frames; reward detail. **Auto-fit** the punch text — 118 px Arial Black overflows
+1080 px on strings like "NIGHTS HOTTER".
+
+Builder: `00_Brand/Channel-Setup/tools/build_scene_first_short_covers.py`.
+
 This supersedes older "3 Orbit-on-brand variants" thumb guidance in kickoff docs.

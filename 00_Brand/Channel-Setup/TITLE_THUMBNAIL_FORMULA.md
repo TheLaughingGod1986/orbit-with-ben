@@ -71,6 +71,26 @@ treat as directional, keep A/B testing — but default flips to scene-first now:
 6. Re-evaluate after the first A/B test resolves with a clear winner (Fermi + Black Hole tests
    ended "no clear winner" — too few impressions; Alien Worlds ends ~27 Aug).
 
+### Picking the frame (Shorts covers) — 25 Aug 2026 lesson
+
+Grabbing a frame at a fixed percentage of the clip does **not** produce a scene-first cover.
+The first pass grabbed 42% of duration for all 44 Shorts and roughly half landed on an Orbit
+face close-up (the exact thing scene-first exists to avoid), several on top of the clip's own
+burned-in caption, giving doubled text.
+
+Scan the whole clip and score every candidate frame instead:
+
+1. Penalise **Orbit-orange pixel fraction**, weighted harder in the centre of frame.
+2. Penalise **near-white pixels in the lower two-thirds** — that is the clip's own caption band.
+3. Penalise a **busy top band** where the punch text goes, and near-black frames.
+4. Reward overall detail, so the cover is not an empty starfield.
+5. **Auto-fit the punch text** — 118 px Arial Black overflows 1080 px on strings like
+   "NIGHTS HOTTER"; step the size down until the longest line clears both margins.
+
+Builder: `00_Brand/Channel-Setup/tools/build_scene_first_short_covers.py`.
+Some clips are Orbit-heavy end to end, so the best available frame still shows him — that is a
+source-material limit, not a cover bug. Fix it upstream by shooting more non-Orbit scenery.
+
 ## Where this plugs in
 
 - **Pre-build:** generate 5–10 title candidates *from the structures above* → score in vidIQ →
