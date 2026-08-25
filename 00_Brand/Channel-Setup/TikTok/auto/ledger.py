@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -10,6 +11,10 @@ from zoneinfo import ZoneInfo
 SETUP = Path(__file__).resolve().parents[1]
 LEDGER = SETUP / "TIKTOK_POSTED.json"
 LONDON = ZoneInfo("Europe/London")
+_SOCIAL = SETUP.parent / "social"
+if str(_SOCIAL) not in sys.path:
+    sys.path.insert(0, str(_SOCIAL))
+import uniqueness  # noqa: E402
 
 # YouTube video_id → TikTok schedule slot (pre-scheduled / already on Studio).
 # Auto-poster must NOT Post-now these — Studio already has them queued.
@@ -60,9 +65,14 @@ def _entry_covers(short: dict, entry: dict) -> bool:
 
 
 def is_posted(short: dict) -> bool:
-    """True when TikTok already has this short (live OR pre-scheduled)."""
+    """True when TikTok already has this short (live OR pre-scheduled).
+
+    Also treats remakes / same file / same title as already mirrored.
+    """
     data = load()
     posted = data.get("posted", {})
+    if uniqueness.already_mirrored(short, posted):
+        return True
     key = key_for(short)
     if key in posted and _entry_covers(short, posted[key]):
         return True

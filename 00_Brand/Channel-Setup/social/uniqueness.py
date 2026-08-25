@@ -21,6 +21,7 @@ DONE_STATUSES = {
     "seeded",
     "disabled",
     "scheduled",
+    "scheduled_covered",
     "unconfirmed",
 }
 

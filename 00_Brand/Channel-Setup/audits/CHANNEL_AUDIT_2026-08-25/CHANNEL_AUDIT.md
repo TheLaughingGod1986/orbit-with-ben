@@ -4,6 +4,8 @@
 **Channel:** Orbit with Ben (`@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`)  
 **Age:** 29 days (created 27 Jul 2026)
 
+**Night addendum (~23:00 UK):** RSS views refreshed; social ops + queue folded into **`FULL_AUDIT.md`** (same folder). Key deltas: today’s JWST Short `68uTDP2esso` **17 → 30** views; TikTok hard-paused; indexes 001–003 still stale; JWST has no Shorts index in-repo.
+
 **Data this run**
 
 | Source | What we got | Confidence |
@@ -16,7 +18,7 @@
 
 vidIQ leftover: **4** add-on credits. Renewable bucket empty until **30 Aug 22:23 UTC**. Do not spend on generate/score until then.
 
-Raw: `vidiq_raw.json` · `public_views.json`
+Raw: `vidiq_raw.json` · `public_views.json` · full pack: `FULL_AUDIT.md`
 
 ---
 
