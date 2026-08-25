@@ -22,14 +22,14 @@ alwaysApply: true
 2. `vidiq_keyword_research` — primary + secondary (country `GB` unless strategy says otherwise)
 3. `vidiq_score_title` / `vidiq_generate_titles` — long: `type=long`; Shorts: `type=short`
 4. `vidiq_score_thumbnail` — current thumb; score ABC candidates when URLs/assets available
-5. Optional: `vidiq_outliers`, `vidiq_generate_thumbnail` (22 credits) when house thumbs are weak or missing — keep Orbit character / wonder brand; do not ship fearbait comps
+5. Optional: `vidiq_outliers`, `vidiq_generate_thumbnail` (22 credits) when house thumbs are weak or missing — **scene-first, no Orbit character by default** (`orbit-title-thumb-formula.mdc`); keep wonder brand; do not ship fearbait comps
 6. Optional refine: `vidiq_refine_thumbnail` after a first VidIQ or house generate
 
 ### B. Decide (maximize score + brand)
 
 | Surface | Target | Rules |
 |---------|--------|-------|
-| Title | ≥ **90**, prefer **95–98+** | Keep Orbit voice / `Orbit's Cosmic Journey` on longs. **Reject** fearbait/conspiracy even if score is higher |
+| Title | ≥ **90**, prefer **95–98+** | Candidates come from the locked structures in `orbit-title-thumb-formula.mdc` (concrete strange image · named subject · no hashtags/series suffix). **Reject** fearbait/conspiracy even if score is higher |
 | Description | Primary keyword in **first ~100 chars** | Chapters on longs; Shorts: punch + soft funnel to long URL |
 | Tags | Fill toward **500** | VidIQ-backed terms only; drop weak generics (`fun facts`, `fall asleep fast`, etc.) |
 | Thumbnails | Score ≥ house baseline | Longs: Studio **Thumbnail only** or **Title and thumbnail** A/B/C (3 distinct variants). Shorts: no Studio ABC — optimize cover/title/tags via VidIQ scores |

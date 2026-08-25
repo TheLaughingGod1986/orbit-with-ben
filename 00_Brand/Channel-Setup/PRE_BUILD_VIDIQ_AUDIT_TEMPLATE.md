@@ -55,6 +55,8 @@ Pull GB (or primary market) research for 5–8 terms.
 
 **Growth System v2:** one promise · prefer ≤ ~60 characters · **do not** append `| Orbit's Cosmic Journey` (or similar series suffix). Brand lives in the content.
 
+**Formula (locked 25 Aug 2026):** draft every candidate from the structures in `TITLE_THUMBNAIL_FORMULA.md` (S1–S6: concrete strange image · named subject · wrongness stated or inside the question). Kill test before scoring: can you draw it · subject named · no hashtags · no suffix.
+
 | | Title | Score | Keep? |
 |---|-------|------:|-------|
 | A | | | |
@@ -154,7 +156,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 - [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
 - [ ] Script reviewer ≥ 90  
 - [ ] Outlier patterns mapped into chapter arc  
-- [ ] Thumb concepts match title promise (one object · one emotion)  
+- [ ] Thumb concepts match title promise — **scene-first, no Orbit by default** (A object · B emotion/scale · C question; `TITLE_THUMBNAIL_FORMULA.md`)  
 - [ ] Chapter teach-points listed (4–6 acts)  
 - [ ] Cold-open clock (5 / 15 / 30s) written  
 - [ ] Retention plan filled  

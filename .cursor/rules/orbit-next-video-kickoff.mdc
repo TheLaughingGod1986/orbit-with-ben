@@ -54,7 +54,7 @@ cd 07_Content-Ops && npm run brief:next -- --file metrics.json --topic "Next ide
 
 Once the **YouTube** long (and Shorts cluster) schedule is locked:
 
-1. **Thumbnails:** produce **3** Orbit-on-brand variants (one object · one emotion · one question). Score in VidIQ; use `vidiq_generate_thumbnail` only if house/Gemini thumbs are weak. Longs: start Studio **Thumbnail ABC** (or title+thumb ABC) after upload.
+1. **Thumbnails:** produce **3 scene-first** variants (object hero · emotion/scale · question text ≤4 words) — **no Orbit character by default**; Orbit only as small corner accent on max one variant (`orbit-title-thumb-formula.mdc`). Score in VidIQ; use `vidiq_generate_thumbnail` only if house/Gemini thumbs are weak. Longs: start Studio **Thumbnail ABC** (or title+thumb ABC) after upload.
 2. **Social mirror:** schedule TikTok / Meta / Threads / other platforms from the **same YouTube air times** (TikTok Shorts ≈ YouTube T0 **+ 1 hour**). Never post social Shorts before the YouTube long is public. Source: `OPTIMAL_PUBLISH_SCHEDULE.json` · `PUBLISHING_AND_SHORTS_STRATEGY.md` · `SHORTS_FUNNEL_AND_CROSSPOST.md` · `RELEASE_WEEK_CHECKLIST.md`.
 
 ## Defaults (documentary + cluster window)

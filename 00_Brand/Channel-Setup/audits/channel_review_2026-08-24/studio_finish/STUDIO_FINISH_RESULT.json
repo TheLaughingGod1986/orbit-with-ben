@@ -24,9 +24,10 @@
   "thumbnailABC": {
     "video": "REXYxuLOBoI (Last Star premiere)",
     "variants": {
-      "A": "last-star_thumb_PRIMARY_A_fading-star_1280x720.png (live)",
-      "B": "last-star_thumb_B_final-sunset_1280x720.png (new — emotion: Orbit watching white dwarf)",
-      "C": "last-star_thumb_C_what-comes-after_1280x720.png (new — question: red dwarf hero + Orbit badge)"
+      "A": "last-star_thumb_PRIMARY_A_fading-star_1280x720.png (live — Orbit badge = control)",
+      "B": "last-star_thumb_B_final-sunset_scene_v02_1280x720.png (scene-first, no Orbit — erupting dying star)",
+      "C": "last-star_thumb_C_what-comes-after_scene_v02_1280x720.png (scene-first, no Orbit — crimson red dwarf)",
+      "note": "v02 swap 25 Aug: test now measures Ben's no-Orbit hypothesis (TITLE_THUMBNAIL_FORMULA.md). v01 Orbit-on-thumb B/C moved to Selected/_superseded/"
     },
     "path": "vidIQ A/B Testing (no native Test & compare on this channel)",
     "status": "SCHEDULED_POST_PREMIERE — root cause found 25 Aug 00:52: vidIQ cannot hold a rotation test on a non-public video. Ben verified (wall cleared), flow runs end-to-end with zero errors, but no test row is created while the video is a scheduled premiere (same signature as europa_abc_v03.log). launchd job dev.orbit.laststar-ab-test runs Thu 27 Aug 18:20 + 21:00 UK (after premiere airs) via 11_Upload-Package/Schedule/_run_ab_test.sh → _set_ab_test_post_premiere.py; writes AB_TEST_RESULT.json + AB_TEST_DONE.marker on success.",

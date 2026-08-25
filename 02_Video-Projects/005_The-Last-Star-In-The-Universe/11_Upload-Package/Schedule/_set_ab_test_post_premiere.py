@@ -23,8 +23,10 @@ VIDEO = "REXYxuLOBoI"
 SEL = Path(
     "/Users/ben/code/Orbit-YouTube/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnail/Selected"
 )
-THUMB_B = SEL / "last-star_thumb_B_final-sunset_1280x720.png"
-THUMB_C = SEL / "last-star_thumb_C_what-comes-after_1280x720.png"
+# Scene-first v02 (no Orbit) — tests Ben's 25 Aug observation that thumbs
+# without the Orbit character outperform. A (live thumb, Orbit badge) = control.
+THUMB_B = SEL / "last-star_thumb_B_final-sunset_scene_v02_1280x720.png"
+THUMB_C = SEL / "last-star_thumb_C_what-comes-after_scene_v02_1280x720.png"
 OUT = Path(__file__).parent / "AB_TEST_RESULT.json"
 SHOTS = Path(__file__).parent / "ab_test_shots"
 SHOTS.mkdir(exist_ok=True)
