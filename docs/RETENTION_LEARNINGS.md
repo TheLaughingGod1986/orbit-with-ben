@@ -64,10 +64,38 @@ Conclusion: topic viable? / open rewrite? / kill?
 
 ---
 
+## Snapshot — 2026-08-25 (public catalogue · ~1 month)
+
+**Data:** public uploads playlist + RSS (no Studio AVD/CTR this pull). Full write-up: `00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-08-25.md`.
+
+**Traffic:** Shorts still dominate — **~939** Short views vs **~31** long views (~**30×**). Public catalogue **27** items (22 Shorts · 4 longs · Last Star premiere).
+
+### Shorts
+
+| Pattern | Evidence | Learning |
+|---------|----------|----------|
+| Punch length shipped | **19/22** Shorts are **22–27s**; **0** public ≥40s | Keep diamond bar; trim the 3× 28–29s edges next time |
+| Wonder picture wins | Three Suns `MDvAKtmKauw` **141** · Last Star “no light” `PV50PX-bE4g` **122** · JWST early galaxies **89** | Concrete strange picture + concrete title > abstract physics |
+| BH cluster weak | 5 BH Shorts · median **5** views (top 56) | Neutron Star Shorts = literal objects (teaspoon / stretch / ring), not remnant wallpaper |
+| Cluster rank | Alien Worlds **337** · JWST **313** · Last Star 1-Short **122** · BH **77** · Fermi **73** | Double down on visual worlds; don’t overfit one Short |
+
+### Long-form
+
+| Pattern | Evidence | Learning |
+|---------|----------|----------|
+| Still cold | Fermi 10 · AW 10 · JWST 7 · BH recut `3xrxdmaOwJI` 4 | Shorts buy clicks; return/parasocial grows longs |
+| Runtime drift | Live longs **16–21 min** | Next lot **7–9 min** — do not copy live runtimes |
+| Recut hygiene | Old BH `n7CbJrOCnU0` gone → new id | Correct; views don’t transfer |
+
+**Forward:** 007 Neutron Star · picture-first + “you” stakes · save-the-cat minute 1 · Studio next-film end screen · 4–8 punch Shorts with on-screen live film title/id.
+
+---
+
 ## Changelog
 
 | Date | Source | Note |
 |------|--------|------|
+| 2026-08-25 | Public YT playlist + RSS | Full channel audit · punch compliance · cluster ranks · 7–9m forward lock reinforced |
 | 2026-08-04 | Studio + vidIQ early | Seeded opening-cliff + **22–30s** package rule |
 | 2026-08-04 | diagnose helper | Sample: “First Alien Clue” 44s / stayed 20.4% → WEAK OPEN + length pad |
 | 2026-08-04 | schedule rebuild | 1 long/week · launch 21:00 · 3–5 Shorts · BH/Alien legacy 41–45s vs JWST EXP-S01 22–30s · JWST gated (prefer 20 Aug / Studio hold 28 Aug) |
