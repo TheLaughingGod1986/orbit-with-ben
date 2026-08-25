@@ -54,4 +54,20 @@ near-black frames; reward detail. **Auto-fit** the punch text — 118 px Arial B
 
 Builder: `00_Brand/Channel-Setup/tools/build_scene_first_short_covers.py`.
 
+## Shorts covers: Studio desktop only — NOT the Data API (verified 25 Aug 2026)
+
+`thumbnails.set` returns `ok` on a Short but letterboxes the image into 16:9 and never fills the
+**vertical cover slot**, so the Shorts shelf / channel Shorts tab / Studio keep showing a raw
+video frame. Google: *"Custom thumbnails for Shorts are currently only available to add in
+YouTube Studio on a computer."*
+
+1. Build 1080x1920 · 9:16 · <2 MB (keep 9:16 — do **not** switch Shorts to 16:9).
+2. Upload via Studio → Thumbnail → Options → Change:
+   `00_Brand/Channel-Setup/tools/upload_shorts_covers_studio.py`
+   (scheduled wrapper: `run_shorts_covers_studio.sh` + `dev.orbit.shorts-covers`).
+3. Studio enforces a **daily custom-thumbnail cap** (~24h lockout). API writes burn the same
+   quota — never bulk-`thumbnails.set` Shorts "just in case"; it does nothing useful and blocks
+   the path that works.
+4. Longs are fine on the API (true 16:9).
+
 This supersedes older "3 Orbit-on-brand variants" thumb guidance in kickoff docs.

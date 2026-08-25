@@ -18,7 +18,15 @@ alwaysApply: true
 6. Require explicit `privacyStatus` + `madeForKids`. Dry-run first when testing.
 7. After API success, complete **Studio finish** from the CLI checklist / `PACKAGE_UPLOAD_RESULT_*.json`:
    - long-form: title+thumb **ABC** Test & Compare · **pin** comment · end screen/cards
-   - Shorts: **Related / watch next** → parent long · pin if used
+   - Shorts: **Related / watch next** → parent long · post + **pin** full-film comment (`orbit-shorts-related-pin.mdc`)
+
+## Shorts thumbnails are the one exception (verified 25 Aug 2026)
+
+`thumbnails.set` **cannot** set a Short's vertical cover — it returns `ok`, letterboxes the image
+into 16:9, and the Shorts shelf keeps showing a raw video frame. Shorts covers must go through
+**Studio desktop** (`00_Brand/Channel-Setup/tools/upload_shorts_covers_studio.py`), and Studio
+enforces a ~24h daily custom-thumbnail cap that API writes also consume. Longs stay on the API.
+Detail: `00_Brand/Channel-Setup/TITLE_THUMBNAIL_FORMULA.md`.
 
 ## Do not
 

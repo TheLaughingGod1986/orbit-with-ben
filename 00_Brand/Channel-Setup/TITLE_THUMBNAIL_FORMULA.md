@@ -91,6 +91,30 @@ Builder: `00_Brand/Channel-Setup/tools/build_scene_first_short_covers.py`.
 Some clips are Orbit-heavy end to end, so the best available frame still shows him — that is a
 source-material limit, not a cover bug. Fix it upstream by shooting more non-Orbit scenery.
 
+### Shorts covers cannot be set by the Data API (verified 25 Aug 2026)
+
+`thumbnails.set` returns `ok` for a Short and genuinely writes a thumbnail — but it treats every
+image as a **16:9 video thumbnail** and letterboxes a 1080x1920 file into 1280x720. It never
+populates the **vertical cover slot** that the Shorts shelf, the channel Shorts tab and Studio
+read, so a Short keeps showing a raw video frame no matter how many times the API says `ok`.
+
+Verified by inspecting what the public shelf actually loads: every tile came from `oar2.jpg` or
+`hq720_2.jpg`, all plain video frames, none of the uploaded covers. Studio's own widget requested
+`sd2.jpg` / `mq2.jpg` and got 404, which is the grey placeholder seen in the Studio mobile app.
+
+Google's own doc: *"Custom thumbnails for Shorts are currently only available to add in YouTube
+Studio on a computer."*
+
+So for Shorts:
+
+1. Build the cover at **1080x1920, 9:16, under 2 MB** (correct spec — do not switch to 16:9).
+2. Upload it through **Studio desktop** → video → Thumbnail → Options → Change.
+   Driver: `00_Brand/Channel-Setup/tools/upload_shorts_covers_studio.py`.
+3. **Studio enforces a daily custom-thumbnail cap** ("Daily customised thumbnail limit reached…
+   up to 24 hours"). Bulk API writes burn the same quota, so do not spray `thumbnails.set` across
+   the catalogue first — it both fails to take effect and locks out the path that works.
+4. Long-form 16:9 thumbnails are unaffected; the API is still correct for those.
+
 ## Where this plugs in
 
 - **Pre-build:** generate 5–10 title candidates *from the structures above* → score in vidIQ →
