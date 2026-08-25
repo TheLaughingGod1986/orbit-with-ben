@@ -77,6 +77,8 @@ JOBS = [
     ("ykmoxRJ6BOI", f"{AL}/*clue-already-here*.mp4", ["ALREADY", "RECORDED?"]),
     ("f8V6wCjWwHA", f"{AL}/aliens_punch-p01_where-is-everybody_v03_cfr_fixed.mp4", ["ZERO", "SIGNALS"]),
     ("B2STcIAF1lY", f"{BH}/*what-you-would-see*.mp4", ["WHAT YOU'D", "SEE"]),
+    # found 25 Aug: public Short absent from the uploads playlist, missed by every audit
+    ("tUAdhOnMW2g", f"{BH}/blackhole_nf01_time-appears-to-stop_v03_smooth_normal.mp4", ["TIME", "STOPS"]),
 ]
 
 TEXT_BOX = (0.05, 0.06, 0.95, 0.26)   # where our punch text lands
