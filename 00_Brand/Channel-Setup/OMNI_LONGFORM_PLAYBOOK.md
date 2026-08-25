@@ -32,6 +32,9 @@ Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 �
 1. Write part script (VO-literal journey beats table).
 2. TTS → `02_Voiceover/parts/` (Ben Orbit Narrator lock).
 3. Plate plan JSON: ~8–10 unique ~8s Omni takes; tag `env: underwater|surface|space`.
+   **≥2 of them pure scenery — no Orbit** (the object VO names). They cut fine in the film and
+   they are the only native source of scene-first Shorts covers; all-Orbit minutes forced
+   parent-film cover rescues on 25 Aug 2026 (`TITLE_THUMBNAIL_FORMULA.md`).
 4. Generate Omni Flash (Flow) with Orbit identity lock; archive rejects; bump `v0N`.
 5. Assemble: paired `xfade` + `acrossfade`; Omni SFX under VO (~0.18–0.2); water bed only underwater.
 6. Picture QA (start/mid/end twin + face spot-check). **Stop and check with Ben.** Do not start the next minute until he UAT-passes this one. Then `PART0N_LESSONS.md` → next part.
@@ -52,6 +55,11 @@ Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 �
 3. Strongest fact/question in 0–1.5s; curiosity-gap end; full-film CTA only. **Zero** `/go/` or shop URLs on Shorts.
 4. Abort if any Short ≥40s.
 5. Package `10_Shorts/` + `SHORTS_UPLOAD_INDEX.json` when scheduling.
+6. **Covers:** scene-first 9:16 per `TITLE_THUMBNAIL_FORMULA.md` — scored frame pick
+   (`tools/build_scene_first_short_covers.py`), parent-film frame when the Short is
+   Orbit-dominated (`tools/build_covers_from_parent_episode.py`), uploaded via **Studio
+   desktop only** (`tools/upload_shorts_covers_studio.py`; the Data API cannot set Shorts
+   covers, and Studio caps custom-thumbnail changes per ~24h).
 
 ## Hard locks
 

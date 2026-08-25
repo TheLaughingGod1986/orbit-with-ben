@@ -12,10 +12,10 @@ Europa v01 brand-intro + baked like/subscribe outro is **retired**. Build every 
 
 1. **~1-minute parts** — write → script QA → Ben Orbit Narrator VO → Omni Flash plates for that part only → picture QA → **stop and check with Ben** → only then next part.
 2. Never gen the full episode in one pass. Regen only failed minutes/plates.
-3. **~8–10 unique ~8s Omni plates per VO minute** — no freeze-pad, no scenery loop (`orbit-cutscene-no-reuse` + `orbit-omni-section-qa`).
+3. **~8–10 unique ~8s Omni plates per VO minute**, of which **≥2 pure-scenery (no Orbit)** — they are the native source of Shorts covers. No freeze-pad, no scenery loop (`orbit-cutscene-no-reuse` + `orbit-omni-section-qa`).
 4. Assemble with paired **xfade + acrossfade**; env-gate water SFX; single Orbit / single face / travel-facing / one bottom glow.
 5. After all parts lock: **picture-first open** (strange picture 3s · Orbit ~8s) · mid-film chapter cards · soft-join parts · **10s last-picture hold** for Studio end screens → `09_Final-Export/*_broadcast_v0N.mp4`. No brand sting first. No baked like/subscribe VO/graphic.
-6. Then **4–8 punch Shorts** (~22–28s) from locked part roughs (`orbit-shorts-punch-first`). Zero `/go/` on Shorts.
+6. Then **4–8 punch Shorts** (~22–28s) from locked part roughs (`orbit-shorts-punch-first`). Zero `/go/` on Shorts. Covers: scene-first per `orbit-title-thumb-formula.mdc` — scored frame pick (never a fixed % grab), parent-film frame if the Short is Orbit-dominated, uploaded via **Studio desktop** (API cannot set Shorts covers).
 
 ## Picture / character / affiliate bar
 

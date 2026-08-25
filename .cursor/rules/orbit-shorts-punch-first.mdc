@@ -28,8 +28,16 @@ Winner pattern: *We Found Planets Made of Diamond* / live Three Suns remake (`MD
 
 1. **Punch-first open** — strongest fact / question in 0–1.5s (captions reinforce the punch).
 2. **One idea** — curiosity-gap end; soft CTA last ~3s only.
-3. **Exact parent long** — description link + Studio Related + pin when parent is public.
+3. **Exact parent long** — description link + Studio Related + **pinned** `Full film — {title}: https://www.youtube.com/watch?v={ID}` (zero `/go/`). Watcher: `npm run youtube:shorts-fullfilm`.
 4. Prefer builders named `*_punch_*_v03.py` / `*_punch_*_v01.py` over legacy 40–45s launch cuts.
+
+## Covers (locked 25 Aug 2026 — detail in `orbit-title-thumb-formula.mdc`)
+
+1. **Scene-first 1080x1920** (9:16, <2 MB): one focal object + punch text ≤4 words, auto-fit to width.
+2. **Never grab a fixed-% frame.** Score every frame (Orbit-orange, caption band, top-band busyness, brightness, detail): `tools/build_scene_first_short_covers.py`.
+3. Short Orbit-dominated end to end → cover from the **parent film**, centre 9:16 crop, distinct beat per Short: `tools/build_covers_from_parent_episode.py`.
+4. Upload covers via **Studio desktop only** (`tools/upload_shorts_covers_studio.py`) — the Data API letterboxes to 16:9 and never fills the vertical cover slot. Studio caps custom-thumbnail changes per ~24h; don't burn the quota with bulk API writes.
+5. **Do not recut a Short to remove Orbit** — measured 25 Aug: Orbit-led median 47 views vs scenery-led 20.5 (r=+0.09). Scene-first is a cover rule, not a content rule.
 
 ## Replace rule (YouTube cannot swap files on an ID)
 
