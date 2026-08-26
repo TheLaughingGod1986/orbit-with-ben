@@ -6,15 +6,20 @@
 
   Runs 2 Aug 2026 07:15 Europe/London (local Mac time). Self-unloads after run
   via the wrapper script.
+
+  PAUSED 25 Aug 2026 — TikTok posting ban. Disabled=true. Do not load until
+  Ben lifts TIKTOK_UPLOAD_BLOCK.json.
 -->
 <plist version="1.0">
 <dict>
+  <key>Disabled</key>
+  <true/>
   <key>Label</key>
   <string>dev.orbit.tiktok-reupload-missing</string>
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok/auto/run_reupload_missing_once.sh</string>
+    <string>/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/TikTok/auto/run_reupload_missing_once.sh</string>
   </array>
   <key>StartCalendarInterval</key>
   <dict>
@@ -28,15 +33,17 @@
     <integer>15</integer>
   </dict>
   <key>WorkingDirectory</key>
-  <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok</string>
+  <string>/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/TikTok</string>
   <key>StandardOutPath</key>
-  <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok/audit/tt_reschedule/reupload_missing_launchd.out.log</string>
+  <string>/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/TikTok/audit/tt_reschedule/reupload_missing_launchd.out.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok/audit/tt_reschedule/reupload_missing_launchd.err.log</string>
+  <string>/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/TikTok/audit/tt_reschedule/reupload_missing_launchd.err.log</string>
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
     <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+    <key>TIKTOK_UPLOADS_PAUSED</key>
+    <string>1</string>
   </dict>
 </dict>
 </plist>

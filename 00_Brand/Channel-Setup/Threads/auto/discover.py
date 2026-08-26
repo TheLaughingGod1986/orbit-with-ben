@@ -30,12 +30,13 @@ load = _threads_load
 
 ledger = load("ledger")
 caption = load("caption")
-_SOCIAL = Path("/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/social")
+_SETUP = AUTO.parent
+_SOCIAL = _SETUP.parent / "social"
 if str(_SOCIAL) not in sys.path:
     sys.path.insert(0, str(_SOCIAL))
 import uniqueness  # noqa: E402
 
-REPO = Path("/Users/ben/code/Orbit-YouTube")
+REPO = AUTO.parents[3]
 PROJECTS = REPO / "02_Video-Projects"
 LONDON = ZoneInfo("Europe/London")
 SCHEDULE_GRACE_MIN = 2
