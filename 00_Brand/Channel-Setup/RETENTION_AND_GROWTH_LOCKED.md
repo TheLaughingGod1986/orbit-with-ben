@@ -28,7 +28,7 @@ Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
 ## P0 — Growth
 
 11. **Shorts = discovery engine** — **4–8** per long; **22–27s**; picture in 1s · picture thumb no Orbit · exact listing title on screen · CTA that week’s Thursday id · curiosity-gap end.  
-12. **Related + pinned full-film** on every Short once the long is public.  
+12. **Related video** on every Short (desktop Studio → that Short’s Thursday long only). Pin is **not** required if Related is set. See `orbit-shorts-related-video.mdc`.  
 13. **Pre-build vidIQ audit (blocking)** — keywords · title ≥90 · outliers → then script.  
 14. **Script reviewer ≥ 90 / 100** before VO / picture gen.  
 15. **Title = one promise** · prefer ≤~60 chars · **no series suffix** on every upload.  
@@ -70,7 +70,7 @@ Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
 
 - [ ] 22–30s standalone micro-story  
 - [ ] Strongest-fact open · curiosity-gap end  
-- [ ] Related + pin when long is public  
+- [ ] Related video → that Thursday long (desktop Studio; required). Pin optional if Related is set.  
 
 **Before publish**
 

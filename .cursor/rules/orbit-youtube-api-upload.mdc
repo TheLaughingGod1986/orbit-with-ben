@@ -18,14 +18,14 @@ alwaysApply: true
 6. Require explicit `privacyStatus` + `madeForKids`. Dry-run first when testing.
 7. After API success, complete **Studio finish** from the CLI checklist / `PACKAGE_UPLOAD_RESULT_*.json`:
    - long-form: title+thumb **ABC** Test & Compare · **pin** comment · end screen/cards
-   - Shorts: **Related / watch next** → parent long · pin if used
+   - Shorts: **Related video** → that Short’s Thursday long only (desktop Studio; required). Pin is **not** required if Related is set. See `orbit-shorts-related-video.mdc`.
 
 ## Do not
 
 - Build new Studio CDP upload scripts as the primary path for title/desc/tags/schedule/video.
 - Use CDP except for Studio-only gaps above (or when OAuth/API is broken).
 - Mark a post fully shipped until API video id exists **and** required Studio finish items are done.
-- Skip Related+pin on Shorts once the long is public.
+- Skip Related video on Shorts once the long is public (or leave Related pointing at another Short / a dead id).
 
 ## Other platforms
 

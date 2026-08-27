@@ -33,8 +33,10 @@ Timezone: **Europe/London**
 - [ ] Strongest-fact open + curiosity-gap end
 - [ ] VO + captions + end cards done
 - [ ] All Shorts uploaded private / scheduled
-- [ ] Short #1 Related → this long (once long public)
-- [ ] Remaining Shorts Related → this long
+- [ ] Short #1 **Related video** (desktop Studio) → this Thursday long (once long public)
+- [ ] Remaining Shorts **Related video** → this Thursday long only (never another Short / dead id)
+- [ ] Zero `/go/` on Shorts
+- [ ] Pin optional if Related is set (existing pins may stay)
 
 ### Distribution
 
@@ -55,7 +57,7 @@ Timezone: **Europe/London**
 ### ~21:00 — Short #1 (1–3h after long)
 
 - [ ] Publish strongest-hook Short
-- [ ] Related → long confirmed
+- [ ] Related video → long confirmed (desktop Studio)
 - [ ] Soft funnel line present
 - [ ] X post #1 + Facebook #1 *(after long is public)*
 
@@ -64,7 +66,7 @@ Timezone: **Europe/London**
 ## Day 2 — Friday · 12:30
 
 - [ ] Short #2 live
-- [ ] Related → long
+- [ ] Related video → long (desktop Studio)
 - [ ] Reddit discussion posted *(if planned today)*
 - [ ] Community poll *(if planned today)*
 

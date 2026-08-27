@@ -5,7 +5,7 @@
 
 **Intent:** Every future Orbit long and Short follows this split. Iterate when QA teaches a better rule. Do not invent a second stack or silently revert.
 
-Cursor rules: `orbit-omni-longform-playbook.mdc` · `orbit-gemini-veo-cg.mdc` · `orbit-omni-section-qa.mdc` · `orbit-longform-open-end-affiliate.mdc` · `orbit-cutscene-no-reuse.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-character-consistency.mdc` · `orbit-affiliate-named-in-film.mdc` · `orbit-long-views-inspiration-parasocial.mdc` · `orbit-auditor-ship-gate.mdc`
+Cursor rules: `orbit-omni-longform-playbook.mdc` · `orbit-gemini-veo-cg.mdc` · `orbit-omni-section-qa.mdc` · `orbit-longform-open-end-affiliate.mdc` · `orbit-cutscene-no-reuse.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-shorts-related-video.mdc` · `orbit-character-consistency.mdc` · `orbit-affiliate-named-in-film.mdc` · `orbit-long-views-inspiration-parasocial.mdc` · `orbit-auditor-ship-gate.mdc`
 
 Existing locks that stay: picture-first open · Mac/Premiere assemble · Video Auditor · remint = new id · affiliate named in film. Do not weaken them.
 
@@ -64,7 +64,8 @@ Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 �
 1. Punch-first cuts **22–27s** from the locked film / open-world plate (first-and-last-frame loop).
 2. Picture in **1s**; captions the whole way; **exact listing title** on screen; CTA that week’s **Thursday film id**.
 3. Custom picture thumb — **no Orbit**. Description = film title + parent long URL only. **Zero** `/go/`.
-4. Abort if any Short ≥40s.
+4. Desktop Studio **Related video** → that Short’s Thursday long only (required; pin optional). See `orbit-shorts-related-video.mdc`.
+5. Abort if any Short ≥40s.
 
 ### E. Long thumbs
 

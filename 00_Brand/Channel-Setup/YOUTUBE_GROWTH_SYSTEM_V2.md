@@ -121,7 +121,7 @@ Every Short:
 
 1. Opens with the **strongest fact**  
 2. Ends with an **unanswered question** / curiosity gap  
-3. Links via YouTube **Related** → parent long  
+3. Links via YouTube **Related video** (desktop Studio) → that Short’s Thursday long only — pin optional if Related is set (`orbit-shorts-related-video.mdc`)  
 
 Never only “Watch the full video.”  
 Prefer: *“There is one reason scientists fear the Great Filter. Orbit discovers it in the full documentary.”*

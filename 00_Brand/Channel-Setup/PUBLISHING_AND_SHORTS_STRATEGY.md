@@ -75,7 +75,7 @@ Suggested for next Wednesday pillar
 |------|--------|
 | 4 | Publish Short #1 from the **strongest hook** or most intriguing moment |
 | 5 | Ops lock: **21:00 UK** (≈ 2 hours after the long) |
-| 6 | Related video / pinned comment → this week’s long-form |
+| 6 | Related video → this week’s long-form (desktop Studio; primary Short → long CTA). Pin optional if Related is set.
 
 ### Weekly rhythm — Wednesday long, then related Shorts
 
@@ -113,13 +113,13 @@ Each Short must work as a **complete standalone mini-documentary**.
 2. Focus on **one** fascinating fact, mystery, or question
 3. Deliver value **independently** of the long
 4. End with an **unanswered question / curiosity gap**
-5. Link via YouTube **Related** → parent long — never only “Watch the full video.”
+5. Link via YouTube **Related video** (desktop Studio) → that Short’s Thursday long — never only “Watch the full video.” Never another Short. Never a dead id. Pin not required if Related is set. See `.cursor/rules/orbit-shorts-related-video.mdc`.
 
 ### On-screen text (TikTok / Shorts lock)
 
 Mirror the space-doc kinetic style that retains (yellow/white bold lowercase, 1–3 words/beat). Spec: `TikTok/SHORTS_ONSCREEN_TEXT_STYLE.md`. Builders: `*_shorts_v02.py`.
 
-Funnel + cross-post lock: `SHORTS_FUNNEL_AND_CROSSPOST.md` — pin full-film CTA, monster-hook first in the cluster, YouTube at T0 then TikTok at **T0 + 1 hour**.
+Funnel + cross-post lock: `SHORTS_FUNNEL_AND_CROSSPOST.md` — Related video required (desktop Studio), pin optional, monster-hook first in the cluster, YouTube at T0 then TikTok at **T0 + 1 hour** (TikTok uploads paused until ban lift).
 
 ### Arc (canonical: **22–30s** micro-stories)
 
