@@ -20,6 +20,8 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path("/Users/ben/code/Orbit-YouTube")
 SETUP = ROOT / "00_Brand/Channel-Setup/TikTok"
+sys.path.insert(0, str(SETUP / "auto"))
+from upload_block import MESSAGE, uploads_paused  # noqa: E402
 LEDGER = SETUP / "TIKTOK_POSTED.json"
 AUDIT = SETUP / "audit" / "tt_v02_replace"
 RESULT = SETUP / "TIKTOK_MISSING_UPLOAD_RESULT.json"
@@ -597,6 +599,9 @@ def upload_one(page, item: dict) -> dict:
 
 
 def main() -> int:
+    if uploads_paused():
+        print(MESSAGE, flush=True)
+        return 2
     AUDIT.mkdir(parents=True, exist_ok=True)
     UNDER50.mkdir(parents=True, exist_ok=True)
     results = []

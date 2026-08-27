@@ -10,7 +10,7 @@ Yes. Both analyses extract **reusable structures** (journey layers, assumption-f
 
 ## Production lock (16 Aug 2026)
 
-**Next to make is 007 Neutron Star** — Mac folder `007_What-Happens-To-Your-Body-Near-A-Neutron-Star`, script `neutron_star_script_master_v01.md` (91.1). **Do not use empty `007_Neutron-Star`.** **Do not start 013 Moon.** Simulation moved to **015**.
+**Next to make is 007 Neutron Star** (7–9 min) — Mac folder `007_What-Happens-To-Your-Body-Near-A-Neutron-Star`, script `neutron_star_script_master_v01.md` (91.1). **Do not use empty `007_Neutron-Star`.** **Do not start 013 Moon.** Moon is backlog after Neutron Star. Simulation moved to **015**.
 
 ## Priority after V004 (JWST) — outlier ideas (not the next build)
 

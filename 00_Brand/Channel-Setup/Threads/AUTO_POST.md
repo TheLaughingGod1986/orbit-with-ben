@@ -3,6 +3,8 @@
 When a short goes **live on YouTube**, Orbit mirrors it to Threads — same pattern
 as TikTok (`TikTok/AUTO_POST.md`) and Meta (`Meta/AUTO_POST.md`).
 
+**One unique post (25 Aug 2026):** each Short is **one** Threads post. Remakes, new YouTube IDs, or the same file/title do not get a second post. A watcher pass posts **at most one** new unique Short. TikTok is paused separately.
+
 Brand: **Orbit with Ben** · handle **@orbitwithben** · soft CTA *Full film on YouTube.*
 
 ## How it fires
@@ -88,3 +90,9 @@ python3 live_shorts_to_threads.py --check-creds
 | Avatar | Same Orbit mascot as YouTube / TikTok / IG |
 
 Unload: `launchctl unload ~/Library/LaunchAgents/dev.orbit.threads-live-shorts.plist`
+
+## 2026-08-20 catch-up
+
+Ledger last wrote 3 Aug. Mac runbook for BH catch-up + exo 21–26 arming:
+
+`audits/social_catchup_2026-08-20/CATCHUP_PLAN.md`

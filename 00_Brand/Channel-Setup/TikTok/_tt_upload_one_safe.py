@@ -29,6 +29,7 @@ LEDGER = SETUP / "TIKTOK_POSTED.json"
 
 sys.path.insert(0, str(SETUP / "auto"))
 from caption import tiktok_caption  # noqa: E402
+from upload_block import MESSAGE, uploads_paused  # noqa: E402
 
 # Use the verified uploader (schedule value checks + Studio needle confirm).
 # The older _replace_scheduled_v02_cdp.upload_one falsely marked ok on CTA click.
@@ -204,6 +205,8 @@ def upload_id(item_id: str) -> bool:
 
 
 def main() -> None:
+    if uploads_paused():
+        raise SystemExit(MESSAGE)
     args = sys.argv[1:]
     if not args:
         raise SystemExit("pass an id or --all-remaining")

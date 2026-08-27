@@ -3,6 +3,8 @@
 When a short goes **live on YouTube**, Orbit mirrors it to Instagram and the
 Facebook Page — same pattern as TikTok (`TikTok/AUTO_POST.md`).
 
+**One unique post (25 Aug 2026):** each Short is **one** Instagram Reel and **one** Facebook Reel. Remakes, new YouTube IDs, or the same file/title do not get a second post. A watcher pass posts **at most one** new unique Short. TikTok is paused separately.
+
 ## How it fires
 
 1. **Watcher (every 5 min)** — reads each `10_Shorts/SHORTS_UPLOAD_INDEX.json`
@@ -91,3 +93,10 @@ https://business.facebook.com/latest/reels_composer?asset_id=1285932871266399&bu
 CDP now pins that URL, refuses Benkay IDs in `META_CREDENTIALS.json`, and aborts
 with `share_step_hung` instead of clicking the spinning **Share** step. Graph
 API remains the preferred publish path.
+
+## 2026-08-20 catch-up
+
+If IG/FB went quiet after the 17 Aug Suite batch, follow the Mac runbook (YT-first,
+delete premature exo 12–17 schedules, reload watchers, BH catch-up, arm exo 21–26):
+
+`audits/social_catchup_2026-08-20/CATCHUP_PLAN.md`

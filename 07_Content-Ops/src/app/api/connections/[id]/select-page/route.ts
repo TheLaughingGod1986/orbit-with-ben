@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/storage/prisma";
 import { encryptSecret } from "@/lib/security/token-crypto";
 import { z } from "zod";
+import { requireOperatorApi } from "@/lib/security/operator-auth";
 
 const bodySchema = z.object({
   pageId: z.string().min(1),
@@ -12,6 +13,9 @@ export async function POST(
   req: NextRequest,
   ctx: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireOperatorApi();
+  if (denied) return denied;
+
   const { id } = await ctx.params;
   const json = await req.json();
   const parsed = bodySchema.safeParse(json);

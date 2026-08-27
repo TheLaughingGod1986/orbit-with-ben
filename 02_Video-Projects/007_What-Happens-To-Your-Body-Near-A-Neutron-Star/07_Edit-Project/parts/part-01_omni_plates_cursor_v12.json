@@ -1,0 +1,176 @@
+{
+  "part": "01",
+  "episode": "007_What-Happens-To-Your-Body-Near-A-Neutron-Star",
+  "engine": "flow-omni",
+  "model": "Omni Flash",
+  "vo": "02_Voiceover/parts/neutron_star_part-01_vo_v01.mp3",
+  "vo_reused": true,
+  "source_script": "01_Script/neutron_star_script_master_v01.md",
+  "ben_uat_v11": [
+    "Hang scale: VO says tiny orange figure. Keep v10 on-model identity; reframe to EWS with a slow push-in. Do not I2V-grow him into a hero CU.",
+    "Going forward (Part 02+): less static hover-looking-around; Orbit interacts with the scene (bank, skim, tumble, stretch).",
+    "Music and VO stay. Do not regen."
+  ],
+  "ben_uat_v10": [
+    "VO and continuous score stay. Do not regen voice or music.",
+    "0:07 hang scale: Orbit is a TINY orange figure in the dark, not a left-third hero CU. Identity stays (visor/eyes/arms). Station hold \u2014 no amateur spin/orbit. Soft underside glow, no flame jet. Optional slow push from tiny-dot toward small-figure; never fill the left third.",
+    "0:25 two-face on turn: exactly ONE black visor FACEPLATE. When Orbit turns, solid matte orange back only. Never a second visor, never mirrored eyes on the back.",
+    "0:54 four orange appendages: exactly TWO stubby arms. Plate 08 is a living giant star with ZERO Orbit.",
+    "1:01 supernova line: picture IS the supernova wall of ejecta. ZERO Orbit. Not a remnant portrait, not a hang in front of a star.",
+    "Do not I2V acting plates from the full-frame identity still. Attach a composition start frame. For a turn, the start frame already shows the orange back. For the hang, attach the tiny composition \u2014 not 01_hang_hold.png."
+  ],
+  "plates": [
+    {
+      "id": "01",
+      "slug": "star-only-open",
+      "file": "omni_p01_01_star-only-open_cursor_v12.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "t": 6.5,
+      "start_frame": "parts/starts_open7_v01/01_star_only.png",
+      "vo_idea": "Orbit hangs in the dark \u2014 STAR ONLY for first 3s",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. A living ALMOST-ORDINARY STAR FILLS the frame \u2014 boiling photosphere, corona, prominences. Slow continuous motion the whole clip. This looks like a real sun, not a graphic. ZERO Orbit. ZERO robot. HARD FORBIDDEN: three concentric rings, light-blue bauble, sonar target, graphic icon, Orbit, any robot, cracked-city crust, portal, wormhole, letterbox bars, title. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "02",
+      "slug": "tiny-orange-banks-in",
+      "file": "omni_p01_02_tiny-orange-banks-in_cursor_v12.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "skip": true,
+      "skip_reason": "Ben 2026-08-18: Omni take has TWO Orbits flying toward camera (twin on the left limb ~4.4s). Hard reject. Do not xfade. Cover hang on star-only plate 01.",
+      "t": 3.4,
+      "start_frame": "parts/starts_open7_v01/02_tiny_banks_in.png",
+      "vo_idea": "tiny orange figure \u2014 ONE bank-in, then hang on this same clip. Do not xfade a second Orbit plate.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. HARD SCALE LOCK: Orbit is a TINY orange figure \u2014 under one-tenth of frame height \u2014 banking INTO FRAME from the left against a HUGE photosphere star that still fills most of the shot. He stays tiny the whole clip. Do NOT grow. Do NOT become a left-third hero CU. Exactly ONE Orbit. One visor FACEPLATE, TWO arms, cream eyes with pupils, one centered BOTTOM underside glow. Nose along travel. HARD FORBIDDEN: hero CU, filling the left third, three rings, bauble, two Orbits, cartoon mouth, flame jet, portal. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "03",
+      "slug": "tiny-orange-figure-hold",
+      "file": "omni_p01_03_tiny-orange-hang_cursor_v12.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": false,
+      "skip": true,
+      "skip_reason": "Ben 2026-08-18: xfade of plate 02+03 put TWO Orbits on screen (~4.4s) \u2014 reads as coming out from behind the star twice. Hold on plate 02 instead.",
+      "t": 2.0,
+      "start_frame": "parts/starts_open7_v01/03_tiny_hang.png",
+      "vo_idea": "tiny orange figure against a star that looks almost ordinary",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. EXTREME WIDE: a TINY orange probe hangs in the dark against a huge almost-ordinary photosphere star. HARD SCALE LOCK for all 8 seconds \u2014 Orbit stays the same tiny size, under one-tenth of frame height. HOLDS STATION like a gyroscope, 1cm hover only. Do NOT zoom in. Do NOT push onto Orbit. Do NOT fill the left third. Exactly ONE Orbit. One visor FACEPLATE, TWO arms. Soft underside glow only. HARD FORBIDDEN: hero CU, left-third portrait, three concentric rings, bauble, grow, spin around the star, two faces, portal. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "04",
+      "slug": "ordinary-dies-the-star",
+      "file": "omni_p01_04_ordinary-dies-star_cursor_v12.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": false,
+      "start_frame": "parts/starts_open7_v01/04_ordinary_dies.png",
+      "vo_idea": "Then the numbers arrive. And ordinary dies.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. THE STAR is the subject and FILLS the frame. ZERO Orbit. Its light sickens: photosphere curdles, colour shifts from clean gold toward a sick violet-yellow, spacetime wrinkles. Slow push on the living star. HARD FORBIDDEN: three concentric rings, light-blue bauble, graphic icon, Orbit, any robot, city crust, portal, letterbox. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "05",
+      "slug": "not-falling-tumble",
+      "file": "omni_p01_03_not-falling-tumble_cursor_v10.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v10/03_tumble_orange_back.png",
+      "vo_idea": "If you drifted toward a neutron star, the last thing your body would feel is not falling",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. Orbit is already mid-frame, a small finished-film CGI character tumbling weightless in CLEAN near-black vacuum. NO destination star. NO remnant. NO accretion disk. The start frame already shows his SOLID MATTE ORANGE BACK \u2014 keep that: antenna stem and a small hatch OK, NEVER grow a second black visor, NEVER paint eyes on the rear. Exactly ONE Orbit. Exactly ONE face for the whole clip \u2014 if the visor is hidden, the back stays orange. Exactly TWO stubby orange arms with dark three-finger hands \u2014 never four limbs, never a duplicated arm pair. MATCH identity: matte orange sphere, black visor FACEPLATE is the only face, cream eyes with pupils when the face is toward camera, single antenna, one small underside glow (not a flame jet, not a glowing yellow belly). HARD FORBIDDEN: two faces, two visors, mirrored rear eyes, four hands, twin/clone, knockoff, dense white specks, corner-approach toward a star. Premium cinematic 3D CGI, vacuum, continuous tumble ~8s."
+    },
+    {
+      "id": "06",
+      "slug": "tide-tears-a-line",
+      "file": "omni_p01_04_tide-tears-a-line_cursor_v10.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v10/04_tidal_line.png",
+      "vo_idea": "Space itself would try to tear you into a line of atoms",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. The picture IS tidal stretch: canonical Orbit already elongated into a thin vertical line of orange, and the stretch continues. ONE black visor FACEPLATE only \u2014 on the front of the remaining blob \u2014 cream eyes with pupils. The far end of the line is SOLID MATTE ORANGE with no visor and no eyes. Exactly ONE Orbit. Exactly TWO stubby arms (they may stretch with the body) \u2014 never four hands, never a second body. CLEAN near-black vacuum. NO destination star. NO accretion disk. NO hang-and-look-toward-a-star. MATCH identity materials. HARD FORBIDDEN: two faces, two visors, mirrored rear eyes, four limbs, twin/clone, knockoff, dense star-noise, corner-approach. Premium cinematic 3D CGI, vacuum, continuous stretch ~8s."
+    },
+    {
+      "id": "07",
+      "slug": "light-bends-into-a-ring",
+      "file": "omni_p01_05_light-bends-into-a-ring_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/05_photon_ring.png",
+      "vo_idea": "your eyes would see light bend into a ring before you could blink",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame COMPOSITION. A RING OF LIGHT fills the frame on CLEAN near-black vacuum. Tiny canonical Orbit in the centre \u2014 visor faceplate, cream eyes, stubby arms, not a knockoff speck. HARD FORBIDDEN: dense star-noise, Orbit CU, two faces, corner-approach. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "08",
+      "slug": "second-by-second-hold",
+      "file": "omni_p01_06_second-by-second-hold_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/06_hold.png",
+      "vo_idea": "what actually happens to you \u2014 second by second \u2014 as the distance closes",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. Orbit HOLDS STATION in CLEAN vacuum. Remnant is a tiny point ABOVE him that never grows. He does not fly toward it. MATCH identity still: visor faceplate, cream eyes, stubby arms, small underside glow. If he turns, orange back only. HARD FORBIDDEN: knockoff, dense star-noise, left-to-right approach, two faces. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "09",
+      "slug": "see-feel-you-ends",
+      "file": "omni_p01_07_see-feel-you-ends_cursor_v08.mp4",
+      "orbit": true,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v08/07_visor_cu.png",
+      "vo_idea": "What would you see? What would you feel? And at what point does you stop being a useful word?",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. CLOSE-UP of the canonical black visor FACEPLATE \u2014 that visor is the whole face \u2014 two cream eyes with dark pupils. Expression only through the eyes. MATCH the identity still. CLEAN near-black around him, almost no stars. HARD FORBIDDEN: HUD, UI, lettering, knockoff, slit LEDs, missing visor, two faces, dense star-noise, pulling out to a corner-approach. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "10",
+      "slug": "it-began-as-a-giant",
+      "file": "omni_p01_08_it-began-as-a-giant_cursor_v10.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v10/08_living_giant.png",
+      "vo_idea": "This began as a giant.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. A LIVING yellow-orange GIANT STAR fills the frame on CLEAN near-black vacuum. Photosphere churns. Prominences lift. This is a living sun, not a leftover remnant, not a neutron star, not a black hole. HARD: ZERO Orbit. ZERO robot. ZERO orange sphere. ZERO visor. ZERO arms. ZERO antenna. ZERO hands. ZERO character hanging in front of the star. Strange picture only \u2014 the star is the entire subject. HARD FORBIDDEN: any robot, four orange appendages, dense star-noise, neutron-star leftover. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "11",
+      "slug": "supernova-goodbye",
+      "file": "omni_p01_09_supernova-goodbye_cursor_v10.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_v10/09_supernova_wall.png",
+      "vo_idea": "The outer layers blasted away in a supernova \u2014 a brief, furious goodbye.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. The picture IS the SUPERNOVA: a furious WALL OF EJECTA filling the frame \u2014 blast, shock, shredded outer layers, a brief goodbye. CLEAN dark at the edges, not a field of white specks. HARD: ZERO Orbit. ZERO robot. ZERO orange sphere. ZERO visor. ZERO hang in front of a star. This is NOT a leftover neutron-star portrait. This is NOT a stable star with a character beside it. The blast is the subject. HARD FORBIDDEN: Orbit, any robot, remnant-as-subject, corner-approach, dense star-noise. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    },
+    {
+      "id": "12",
+      "slug": "remnant-keeps-rising",
+      "file": "omni_p01_12_remnant-keeps-rising_cursor_v12.mp4",
+      "orbit": false,
+      "env": "space",
+      "keep": true,
+      "start_frame": "parts/starts_last10s_v01/p01_12_rising_from_spiral.png",
+      "vo_idea": "What remained was not ash. What remained was an argument. Gravity almost won.",
+      "prompt": "IMAGE-TO-VIDEO of the attached start frame. KEEP RISING: the fiery leftover of a supernova CONCENTRATES and BRIGHTENS into a compact fierce GLOWING STAR / remnant. Photosphere churns hotter, corona flares, intensity climbs the whole clip, never settles into a still. This is a STAR, not a graphic. HARD FORBIDDEN: flat light-blue disc, three concentric rings, bauble, sonar target, graphic icon, Orbit, any robot, cracked-city crust, yellow street cracks, dark rocky planet, grey moon, portal, wormhole, white wireframe tunnel, load-screen geometry. Premium cinematic 3D CGI, vacuum, continuous motion ~8s."
+    }
+  ],
+  "ben_uat_v12": [
+    "Keep v11 VO. Do not rewrite VO to chase picture.",
+    "0-3s: star only. No Orbit, no sting.",
+    "Orbit banks in on 'tiny orange figure' (~3.2s SRT), not before, not at 7.6s.",
+    "v11 star-zoom at ~7s stays the first real intensity (ordinary-dies plate).",
+    "Last 10s: after the fiery spiral, remnant/star keeps rising \u2014 never a still light-blue 3-ring bauble.",
+    "First 7s redo: living photosphere star fills frame, not a bauble. Orbit is a TINY figure, not a left-third hero CU."
+  ],
+  "ben_uat_v12_double_emerge": [
+    "VO 'tiny orange figure': Orbit must come out from behind the star ONCE.",
+    "Do not xfade two Orbit plates (banks-in + hang) \u2014 that doubles him and repeats the emerge.",
+    "Skip plate 03. Cover hang on plate 02 after the one bank-in. Then ordinary-dies (zero Orbit)."
+  ]
+}

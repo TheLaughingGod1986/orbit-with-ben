@@ -30,8 +30,13 @@ load = _threads_load
 
 ledger = load("ledger")
 caption = load("caption")
+_SETUP = AUTO.parent
+_SOCIAL = _SETUP.parent / "social"
+if str(_SOCIAL) not in sys.path:
+    sys.path.insert(0, str(_SOCIAL))
+import uniqueness  # noqa: E402
 
-REPO = Path("/Users/ben/code/Orbit-YouTube")
+REPO = AUTO.parents[3]
 PROJECTS = REPO / "02_Video-Projects"
 LONDON = ZoneInfo("Europe/London")
 SCHEDULE_GRACE_MIN = 2
@@ -59,11 +64,14 @@ def is_live(short: dict, *, now: datetime | None = None) -> bool:
     sched = _parse_iso(short.get("schedule_iso"))
     if sched and now < sched + timedelta(minutes=SCHEDULE_GRACE_MIN):
         return False
+    vis = str(short.get("visibility", "")).lower()
+    if vis == "scheduled" and short.get("published_now") is not True:
+        return False
     if short.get("published_now") is True and not sched:
         return True
-    if str(short.get("visibility", "")).lower() == "public":
+    if vis == "public":
         return True
-    if sched and now >= sched + timedelta(minutes=SCHEDULE_GRACE_MIN):
+    if vis in {"public", ""} and sched and now >= sched + timedelta(minutes=SCHEDULE_GRACE_MIN):
         if short.get("video_id") or short.get("url"):
             return True
     return False
@@ -129,4 +137,6 @@ def pending_live_shorts() -> list[dict]:
         if not s.get("_abs_file") or not Path(s["_abs_file"]).exists():
             continue
         pending.append(s)
-    return pending
+    posted = ledger.load().get("posted") or {}
+    unique = uniqueness.first_unique(pending, posted, platform="threads")
+    return unique[:1]

@@ -17,7 +17,7 @@ import {
 } from "./film-topic-book-map";
 import { liveUrlForSlug } from "./live-product-urls";
 import { applyLiveProductUrls } from "./apply-live-urls";
-import { buildOrbitRedirectUrl } from "./urls";
+import { buildYouTubeDescriptionGoUrl } from "./go-redirect-urls";
 import {
   appendAffiliateSectionToDescription,
   buildAffiliateDescriptionSection,
@@ -303,7 +303,10 @@ export async function wireTopicBookPlacements(opts?: {
         title: wire.title,
         productSlug: wire.productSlug,
         placementId: "(dry-run)",
-        goPath: `/go/${wire.productSlug}`,
+        goPath: buildYouTubeDescriptionGoUrl({
+          productSlug: wire.productSlug,
+          videoSlug: wire.slug,
+        }),
         amazonUrl: live.destinationUrl,
         descriptionPreview: "",
         createdVideo: false,
@@ -353,7 +356,10 @@ export async function wireTopicBookPlacements(opts?: {
         productSlug: product.slug,
         category: product.category,
         programSlug: product.affiliateProgram.slug,
-        url: buildOrbitRedirectUrl(product.slug),
+        url: buildYouTubeDescriptionGoUrl({
+          productSlug: product.slug,
+          videoSlug: video.slug,
+        }),
         role: "primary" as const,
         trustProduct: {
           id: product.id,
@@ -375,6 +381,7 @@ export async function wireTopicBookPlacements(opts?: {
       links,
       templates: templates || undefined,
       topicKey,
+      videoSlug: video.slug,
     });
     const descriptionPreview = appendAffiliateSectionToDescription({
       description: sampleBaseDescription(wire.title),
@@ -386,6 +393,7 @@ export async function wireTopicBookPlacements(opts?: {
         primaryKeyword: wire.primaryKeyword,
         summary: wire.summary,
         youtubeVideoId: wire.youtubeVideoId,
+        slug: video.slug,
       },
     });
 
@@ -405,7 +413,10 @@ export async function wireTopicBookPlacements(opts?: {
       title: video.title,
       productSlug: product.slug,
       placementId: placement.id,
-      goPath: `/go/${product.slug}`,
+      goPath: buildYouTubeDescriptionGoUrl({
+        productSlug: product.slug,
+        videoSlug: video.slug,
+      }),
       amazonUrl: live.destinationUrl,
       descriptionPreview,
       createdVideo,

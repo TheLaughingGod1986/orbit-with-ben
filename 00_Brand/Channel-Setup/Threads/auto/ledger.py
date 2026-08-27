@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -10,6 +11,10 @@ from zoneinfo import ZoneInfo
 SETUP = Path(__file__).resolve().parents[1]
 LEDGER = SETUP / "THREADS_POSTED.json"
 LONDON = ZoneInfo("Europe/London")
+_SOCIAL = SETUP.parent / "social"
+if str(_SOCIAL) not in sys.path:
+    sys.path.insert(0, str(_SOCIAL))
+import uniqueness  # noqa: E402
 
 
 def load() -> dict:
@@ -23,29 +28,19 @@ def save(data: dict) -> None:
 
 
 def key_for(short: dict) -> str:
-    vid = (short.get("video_id") or "").strip()
+    vid = uniqueness.youtube_id(short)
     if vid:
         return f"yt:{vid}"
-    file = short.get("file") or short.get("path") or ""
-    return f"file:{Path(file).name}"
+    slug = uniqueness.file_slug(short.get("file") or short.get("path") or "")
+    if slug:
+        return f"file:{slug}"
+    title = uniqueness.normalize_title(short.get("title") or "")
+    return f"title:{title}" if title else "file:unknown"
 
 
 def is_posted(short: dict) -> bool:
     data = load()
-    entry = data.get("posted", {}).get(key_for(short))
-    if not entry:
-        return False
-    if entry.get("status") == "seeded":
-        return True
-    threads = entry.get("threads")
-    if isinstance(threads, dict) and threads.get("status") in {
-        "ok",
-        "skipped",
-        "seeded",
-        "unconfirmed",
-    }:
-        return True
-    return entry.get("result_status") in {"ok", "seeded", "unconfirmed"}
+    return uniqueness.already_mirrored(short, data.get("posted") or {}, platform="threads")
 
 
 def mark_posted(short: dict, result: dict | None = None) -> None:

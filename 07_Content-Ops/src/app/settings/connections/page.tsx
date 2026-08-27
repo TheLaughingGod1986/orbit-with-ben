@@ -2,9 +2,11 @@ import { prisma } from "@/lib/storage/prisma";
 import { PLATFORMS } from "@/config/platforms";
 import { getPublishingAdapter } from "@/lib/publishing/adapters";
 import { isDryRun, hasGoogleOAuth, hasMetaOAuth, hasTikTokOAuth, hasXOAuth, hasThreadsOAuth } from "@/lib/env";
+import { getPublicBaseUrl } from "@/lib/public-base-url";
 import { ConnectionActions } from "@/components/ConnectionActions";
 import { MetaPageSelector } from "@/components/MetaPageSelector";
 import Link from "next/link";
+import { headers } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
@@ -28,6 +30,8 @@ export default async function ConnectionsPage({
   searchParams: Promise<{ connected?: string; error?: string }>;
 }) {
   const sp = await searchParams;
+  const headerList = await headers();
+  const publicBase = getPublicBaseUrl({ headers: headerList });
   const connections = await prisma.platformConnection.findMany({
     where: { disconnectedAt: null },
     orderBy: { updatedAt: "desc" },
@@ -161,11 +165,16 @@ export default async function ConnectionsPage({
         <h2 className="font-[family-name:var(--font-orbit-display)] text-xl text-[#F5E8D2]">
           Callback URLs
         </h2>
-        <ul className="mt-3 space-y-1 font-mono text-xs">
-          <li>http://localhost:3000/api/oauth/google/callback</li>
-          <li>http://localhost:3000/api/oauth/meta/callback</li>
-          <li>http://localhost:3000/api/oauth/tiktok/callback</li>
-          <li>http://localhost:3000/api/oauth/x/callback</li>
+        <p className="mt-2 text-xs text-[#5A6E82]">
+          Register these exact URIs with each provider. Derived from{" "}
+          <code className="text-[#F5E8D2]/70">APP_BASE_URL</code> / this deploy’s public host (
+          {publicBase}).
+        </p>
+        <ul className="mt-3 space-y-1 font-mono text-xs break-all">
+          <li>{publicBase}/api/oauth/google/callback</li>
+          <li>{publicBase}/api/oauth/meta/callback</li>
+          <li>{publicBase}/api/oauth/tiktok/callback</li>
+          <li>{publicBase}/api/oauth/x/callback</li>
         </ul>
       </div>
     </div>

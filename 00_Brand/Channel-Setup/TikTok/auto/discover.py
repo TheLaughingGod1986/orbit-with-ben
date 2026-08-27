@@ -3,14 +3,21 @@
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from ledger import is_posted, key_for
+from ledger import is_posted, key_for, load as load_ledger
 from caption import tiktok_caption, confirm_needle
 
-REPO = Path("/Users/ben/code/Orbit-YouTube")
+_SETUP = Path(__file__).resolve().parents[1]
+_SOCIAL = _SETUP.parent / "social"
+if str(_SOCIAL) not in sys.path:
+    sys.path.insert(0, str(_SOCIAL))
+import uniqueness  # noqa: E402
+
+REPO = Path(__file__).resolve().parents[4]
 PROJECTS = REPO / "02_Video-Projects"
 LONDON = ZoneInfo("Europe/London")
 
@@ -40,12 +47,16 @@ def is_live(short: dict, *, now: datetime | None = None) -> bool:
     sched = _parse_iso(short.get("schedule_iso"))
     if sched and now < sched + timedelta(minutes=SCHEDULE_GRACE_MIN):
         return False
+    vis = str(short.get("visibility", "")).lower()
+    # Past schedule_iso on a still-"scheduled" row is not a licence to upload
+    # (deleted IDs / stale indexes). Wait until the index says public.
+    if vis == "scheduled" and short.get("published_now") is not True:
+        return False
     if short.get("published_now") is True and not sched:
         return True
-    if str(short.get("visibility", "")).lower() == "public":
-        # Only if no future schedule (handled above)
+    if vis == "public":
         return True
-    if sched and now >= sched + timedelta(minutes=SCHEDULE_GRACE_MIN):
+    if vis in {"public", ""} and sched and now >= sched + timedelta(minutes=SCHEDULE_GRACE_MIN):
         if short.get("video_id") or short.get("url"):
             return True
     return False
@@ -93,7 +104,10 @@ def iter_index_shorts() -> list[dict]:
 
 
 def pending_live_shorts() -> list[dict]:
-    """Live on YT (or due) and not yet in TikTok ledger, with file on disk."""
+    """Live on YT (or due) and not yet in TikTok ledger, with file on disk.
+
+    One unique Short per pass — remakes / same file / same title are skipped.
+    """
     pending = []
     for s in iter_index_shorts():
         if not s["_live"]:
@@ -103,4 +117,6 @@ def pending_live_shorts() -> list[dict]:
         if not s.get("_abs_file") or not Path(s["_abs_file"]).exists():
             continue
         pending.append(s)
-    return pending
+    posted = load_ledger().get("posted") or {}
+    unique = uniqueness.first_unique(pending, posted)
+    return unique[:1]

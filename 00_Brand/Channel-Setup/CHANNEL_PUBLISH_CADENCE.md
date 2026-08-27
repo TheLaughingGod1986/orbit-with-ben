@@ -3,8 +3,8 @@
 Timezone: **Europe/London**  
 Canonical strategy: `PUBLISHING_AND_SHORTS_STRATEGY.md`  
 Source of truth: `OPTIMAL_PUBLISH_SCHEDULE.json`  
-Latest audit: `audits/CHANNEL_AUDIT_2026-08-01_PM.md`  
-Updated: **2026-08-01 PM**
+Latest audit: `audits/CHANNEL_AUDIT_2026-08-25.md`  
+Updated: **2026-08-25**
 
 ## Cadence rule
 
@@ -23,12 +23,12 @@ Never use fearbait titles (even if vidIQ scores them higher).
 
 ## Cold-start override (until ≥500 views or ≥20 subs)
 
-From audit **2026-08-01 PM**: Shorts **~100 views / peak VPH ~53** vs long **5 views**.  
-→ **Zero Short gaps.** Judge topics by Short velocity. Next pillar = **black hole** (kw ~574K · title score 98) — already Scheduled **Thu 6 Aug 19:00** (`n7CbJrOCnU0`).
+From audit **2026-08-25**: public Shorts still ~**30×** longs (~939 vs ~31 lifetime views). Punch length is fixed; wonder Shorts win; live longs stay cold.  
+→ Keep daily Short support. Judge topics by Short velocity + stayed% (Studio refresh needed). Next to **make:** **007 Neutron Star at 7–9 min** (not Moon / Simulation). Next to **air:** Last Star `REXYxuLOBoI` (Thu 27 Aug) · Europa `NbW5G1BpPY0` after.
 
-**P0:** Studio has **no Shorts on 4–5 Aug** between Fermi #4 (3 Aug) and V002 cluster (6 Aug). Fill before the hole hits.
+Historical note (2026-08-01 PM): Shorts ~100 / peak VPH ~53 vs long 5; BH then scheduled as `n7CbJrOCnU0` — live recut id is now `3xrxdmaOwJI`.
 
-Re-run `vidiq_subscriber_insights` before moving clocks.
+Re-run Studio / `vidiq_subscriber_insights` before moving clocks.
 
 ---
 

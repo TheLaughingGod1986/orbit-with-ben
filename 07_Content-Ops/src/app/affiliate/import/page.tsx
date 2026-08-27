@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { AffiliateImportForm } from "@/components/affiliate/AffiliateImportForm";
+import { isOperatorAuthenticated } from "@/lib/security/operator-auth";
 
 export const dynamic = "force-dynamic";
 
-export default function AffiliateImportPage() {
+export default async function AffiliateImportPage() {
+  const canWrite = await isOperatorAuthenticated();
+
   return (
     <div className="space-y-8">
       <div>
@@ -17,7 +20,21 @@ export default function AffiliateImportPage() {
           Import Amazon / Brilliant / generic affiliate reports. Preview before commit.
         </p>
       </div>
-      <AffiliateImportForm />
+      {canWrite ? (
+        <AffiliateImportForm />
+      ) : (
+        <div className="card-panel space-y-3 p-5">
+          <p className="text-sm text-[#F5E8D2]/65">
+            CSV import writes conversion rows. Sign in as operator to continue.
+          </p>
+          <Link
+            href="/login?next=/affiliate/import"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#FF7A24] px-5 py-2.5 text-sm font-medium text-[#0A0C12]"
+          >
+            Operator sign-in
+          </Link>
+        </div>
+      )}
       <div className="card-panel p-5 text-sm text-[#F5E8D2]/55">
         Sample CSV: <code>content/samples/csv/affiliate_amazon_sample.csv</code>
       </div>

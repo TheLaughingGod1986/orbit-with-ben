@@ -38,6 +38,7 @@ from ledger import (  # noqa: E402
     clear_failure,
 )
 from studio_upload import post_short  # noqa: E402
+from upload_block import blocked_result, uploads_paused  # noqa: E402
 from playwright.sync_api import sync_playwright  # noqa: E402
 
 SETUP = AUTO.parent
@@ -78,6 +79,10 @@ def seed_posted(*, all_indexed: bool = False, projects: set[str] | None = None) 
 
 
 def run_once(*, dry_run: bool = False) -> dict:
+    if uploads_paused() and not dry_run:
+        log("paused: TikTok uploads blocked (account ban) — no post")
+        return {"pending": [], "results": [], "skipped": [], **blocked_result()}
+
     # Keep pre-scheduled batch covered so we never Post-now duplicates.
     seeded = seed_scheduled_covers()
     if seeded:
@@ -207,6 +212,10 @@ def main() -> None:
                 f"{flag:6} {s['_project']}/{s.get('id')} {s.get('title', '')[:50]}",
                 flush=True,
             )
+        return
+
+    if uploads_paused() and not args.dry_run:
+        log("paused: TikTok uploads blocked (account ban) — no post")
         return
 
     if args.watch:

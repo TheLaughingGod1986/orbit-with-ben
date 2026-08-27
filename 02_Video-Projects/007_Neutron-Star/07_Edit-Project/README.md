@@ -1,9 +1,11 @@
-# 007 Neutron Star — edit
+# 007 Neutron Star — edit (scaffold only)
 
-Use the **Omni 1-minute path** (PR 18), not the template Veo helper.
+Build in the Mac folder `007_What-Happens-To-Your-Body-Near-A-Neutron-Star/`, not here.
 
-- `orbit-omni-section-qa.mdc`
+**Picture path (27 Aug 2026):** Google AI Studio — **Veo** for world plates, **Omni only** when Orbit must move. Stills first · 2–3 Veo Fast money shots. Do **not** Omni the whole film / do not copy Europa’s Omni-per-minute builders as the default.
+
+- `orbit-omni-longform-playbook.mdc`
 - `00_Brand/Channel-Setup/OMNI_LONGFORM_PLAYBOOK.md`
-- Europa lessons: `02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/07_Edit-Project/PART01_LESSONS.md` … `PART08_LESSONS.md`
+- Character QA when Omni is used: `orbit-omni-section-qa.mdc`
 
-Copy `_gen_part0N_omni_*.py` / `_assemble_part0N_*.py` patterns from Europa when building parts. Do not freeze-pad. One Orbit, one face, one bottom glow.
+Mute Veo baked audio. Assemble on the Mac as now.

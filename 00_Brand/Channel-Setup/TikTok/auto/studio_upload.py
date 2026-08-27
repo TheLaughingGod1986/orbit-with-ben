@@ -8,6 +8,8 @@ from pathlib import Path
 
 from playwright.sync_api import Page, sync_playwright
 
+from upload_block import blocked_result, uploads_paused
+
 UPLOAD = "https://www.tiktok.com/tiktokstudio/upload?from=upload"
 CONTENT = "https://www.tiktok.com/tiktokstudio/content"
 CDP = "http://127.0.0.1:9222"
@@ -188,6 +190,8 @@ def post_short(
     page: Page | None = None,
 ) -> dict:
     """Upload + Post now. Returns {status, ...}. Reuses page if provided."""
+    if uploads_paused():
+        return blocked_result()
     video_path = Path(video_path)
     needle = confirm_needle or caption[:48]
     out: dict = {
