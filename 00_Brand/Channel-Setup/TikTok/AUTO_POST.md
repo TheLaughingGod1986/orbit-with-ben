@@ -1,5 +1,7 @@
 # Auto-post YouTube Shorts → TikTok
 
+**PAUSED (25 Aug 2026):** TikTok account is banned from posting. **No uploads** until Ben lifts `TIKTOK_UPLOAD_BLOCK.json` and says so. Do not reload LaunchAgents. YouTube / Meta / Threads are unaffected.
+
 When a short goes **live on YouTube**, Orbit mirrors it to **[@orbitwithben](https://www.tiktok.com/@orbitwithben)** via TikTok Studio (Chrome CDP).
 
 ## How it fires

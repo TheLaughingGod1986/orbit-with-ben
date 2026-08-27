@@ -110,6 +110,35 @@ export class TikTokPublishingAdapter implements PublishingAdapter {
         retryable: false,
       };
     }
+    if (process.env.TIKTOK_UPLOADS_PAUSED === "1" || process.env.TIKTOK_UPLOADS_PAUSED === "true") {
+      return {
+        success: false,
+        published: false,
+        message: "TikTok uploads paused (account ban). Ben must lift before any post.",
+        method: "api",
+        errorCategory: "validation",
+        retryable: false,
+      };
+    }
+    try {
+      const blockPath = "/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok/TIKTOK_UPLOAD_BLOCK.json";
+      if (fs.existsSync(blockPath)) {
+        const block = JSON.parse(fs.readFileSync(blockPath, "utf8")) as { paused?: boolean };
+        if (block.paused) {
+          return {
+            success: false,
+            published: false,
+            message: "TikTok uploads paused (account ban). Ben must lift TIKTOK_UPLOAD_BLOCK.json.",
+            method: "api",
+            errorCategory: "validation",
+            retryable: false,
+          };
+        }
+      }
+    } catch {
+      /* ignore unreadable lock — env flag still applies */
+    }
+
     if (context.dryRun) {
       return {
         success: true,

@@ -3,6 +3,8 @@
 When a short goes **live on YouTube**, Orbit mirrors it to Instagram and the
 Facebook Page — same pattern as TikTok (`TikTok/AUTO_POST.md`).
 
+**One unique post (25 Aug 2026):** each Short is **one** Instagram Reel and **one** Facebook Reel. Remakes, new YouTube IDs, or the same file/title do not get a second post. A watcher pass posts **at most one** new unique Short. TikTok is paused separately.
+
 ## How it fires
 
 1. **Watcher (every 5 min)** — reads each `10_Shorts/SHORTS_UPLOAD_INDEX.json`

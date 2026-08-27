@@ -163,7 +163,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 **Signed off by:**  
 **Date:**  
 
-**Only then:** full script → ElevenLabs VO → Gemini Veo picture → edit.
+**Only then:** full script → ElevenLabs VO → AI Studio picture (stills first · Veo world · Omni Orbit-only) → edit.
 
 ---
 

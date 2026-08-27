@@ -14,6 +14,7 @@ from discover import resolve_file  # noqa: E402
 from ensure_chrome import ensure_chrome  # noqa: E402
 from ledger import is_posted, mark_posted  # noqa: E402
 from studio_upload import post_short  # noqa: E402
+from upload_block import blocked_result, uploads_paused  # noqa: E402
 
 
 def notify_short_live(project_root: str | Path, short: dict) -> dict:
@@ -23,6 +24,9 @@ def notify_short_live(project_root: str | Path, short: dict) -> dict:
     project_root: video project folder (contains 10_Shorts/)
     short: entry from SHORTS_UPLOAD_INDEX.json
     """
+    if uploads_paused():
+        return blocked_result()
+
     project_root = Path(project_root)
     item = dict(short)
     item["_project"] = project_root.name

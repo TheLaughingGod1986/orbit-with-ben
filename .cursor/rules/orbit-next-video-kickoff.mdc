@@ -5,9 +5,11 @@ alwaysApply: true
 
 # Orbit — next video kickoff (Growth System v2)
 
-**Locked next long (16 Aug 2026): 007 Neutron Star at 7–9 min** in `007_What-Happens-To-Your-Body-Near-A-Neutron-Star` (script `neutron_star_script_master_v01.md`, score 91.1). Do **not** use empty `007_Neutron-Star`. Do not start 013 Moon. Simulation is 015. See `orbit-next-production.mdc`. **Build 1 minute at a time (~7–9 parts, not ~20), QA, then check with Ben before the next minute.**
+**Locked next long (16 Aug 2026): 007 Neutron Star at 7–9 min** in `007_What-Happens-To-Your-Body-Near-A-Neutron-Star` (script `neutron_star_script_master_v01.md`, score 91.1). Do **not** use empty `007_Neutron-Star`. Do not start 013 Moon. Simulation is 015. See `orbit-next-production.mdc`.
 
-When the user asks to **build / start / plan the next video**, **new episode**, **next long**, or similar — **do this first**. Do not jump to VO, Flow Veo, Seedance, or picture gen.
+**Picture path (27 Aug 2026):** Google AI Studio — **Veo** for world plates, **Omni only** when Orbit must move. Stills first · 2–3 Veo Fast money shots. Do **not** Omni the whole film.
+
+When the user asks to **build / start / plan the next video**, **new episode**, **next long**, or similar — **do this first**. Do not jump to VO, Veo, Omni, Seedance, or picture gen.
 
 ## Step 0 — gate (blocking)
 
@@ -16,14 +18,14 @@ When the user asks to **build / start / plan the next video**, **new episode**, 
 2b. Fill `templates/EPISODE_CLUSTER_PLAN_TEMPLATE.md` (experiential angle · 4–8 Shorts · cluster ID)
 3. Pre-build vidIQ audit → project `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md` from `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`
 4. Cold-open outline: curiosity **5s** · stakes **15s** · journey **30s**
-5. Chapter outline: **4–6** acts · Orbit **experiences** science · Hook→Question→Escalation→Discovery→Payoff→Bigger question
-6. Write/refine script with `[VISUAL MUST]` · `[ORBIT ACTS]` · `[TEACH]`
+5. Chapter outline: **4–6** acts · **world does the science** · Orbit in **1–2** inquisitive / story-narrative beats only · Hook→Question→Escalation→Discovery→Payoff→Bigger question
+6. Write/refine script with `[VISUAL MUST]` · `[ORBIT ACTS]` (only on those 1–2 Orbit beats) · `[TEACH]`
 7. **Script reviewer ≥ 90** before any VO or picture:
    ```bash
    cd 07_Content-Ops && npm run review:script -- --file <script.md>
    ```
    Below 90 = **REJECT** — rewrite. Do not generate audio/video.
-8. **Episode gate (blocking CLI)** before VO / Flow Veo:
+8. **Episode gate (blocking CLI)** before VO / picture gen:
    ```bash
    cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/<NNN_Slug>
    ```
@@ -33,15 +35,15 @@ When the user asks to **build / start / plan the next video**, **new episode**, 
 
 Copy `02_Video-Projects/_template_NNN_Episode-Slug/` → `02_Video-Projects/NNN_Your-Slug/`, then run the gate.
 
-## Then produce (Omni long-form — locked)
+## Then produce (AI Studio picture economy — locked)
 
-Prefer the **Europa Omni later standard** (`OMNI_LONGFORM_PLAYBOOK.md`):
+Follow `OMNI_LONGFORM_PLAYBOOK.md` / `orbit-omni-longform-playbook.mdc`:
 
-1. ~1-min parts → Ben Orbit Narrator VO → **Omni Flash** plates (Flow) → assemble (xfade/acrossfade) → part QA → next part  
-2. Picture-first open · mid-film chapter cards · soft-join parts · 10s last-picture hold for Studio end screens → broadcast master. No brand intro. No baked like/subscribe outro.  
-3. **4–8** punch Shorts (~22–28s) → checklist → YouTube package. Zero `/go/` on Shorts.  
+1. Ben Orbit Narrator VO → AI Studio **stills first** (open world · two science · Orbit ref) → **2–3 Veo Fast** money shots (optional one Veo Quality hero) → **Omni only** for Orbit motion in 1–2 scenes → Mac assemble (mute Veo audio) → picture QA  
+2. Picture-first open (3s world only) · mid-film chapter cards · soft-join · 10s last-picture hold for Studio end screens → broadcast master. No brand intro. No baked like/subscribe outro.  
+3. **4–8** punch Shorts (**22–27s**) → checklist → YouTube package. Picture thumb no Orbit · exact listing title on screen · CTA that week’s Thursday id · zero `/go/`.  
 
-Do **not** use ElevenLabs Image & Video for CG. Do **not** default to `GEMINI_API_KEY` (Flow first; AI Studio / API are fallbacks only). Legacy full-pass Veo beat gen only if explicitly requested.
+Do **not** use ElevenLabs Image & Video, Seedance, or Kling for new CG. Do **not** Omni the whole Thursday film.
 
 After shipping, refresh the next brief from Studio metrics:
 
@@ -54,12 +56,13 @@ cd 07_Content-Ops && npm run brief:next -- --file metrics.json --topic "Next ide
 
 Once the **YouTube** long (and Shorts cluster) schedule is locked:
 
-1. **Thumbnails:** produce **3** Orbit-on-brand variants (one object · one emotion · one question). Score in VidIQ; use `vidiq_generate_thumbnail` only if house/Gemini thumbs are weak. Longs: start Studio **Thumbnail ABC** (or title+thumb ABC) after upload.
-2. **Social mirror:** schedule TikTok / Meta / Threads / other platforms from the **same YouTube air times** (TikTok Shorts ≈ YouTube T0 **+ 1 hour**). Never post social Shorts before the YouTube long is public. Source: `OPTIMAL_PUBLISH_SCHEDULE.json` · `PUBLISHING_AND_SHORTS_STRATEGY.md` · `SHORTS_FUNNEL_AND_CROSSPOST.md` · `RELEASE_WEEK_CHECKLIST.md`.
+1. **Long thumbnails:** picture + a short **SEA-style hook**. **No Orbit. No generic CTA.** Produce **3** variants; score in VidIQ. Longs: start Studio **Thumbnail ABC** (or title+thumb ABC) after upload.
+2. **Short thumbs:** custom picture — **no Orbit**.
+3. **Social mirror:** Meta / Threads from the **same YouTube air times**. **One unique post per Short** on Instagram, Facebook, and Threads — no remake/file/title duplicates (`orbit-social-no-duplicates.mdc`). **TikTok is paused** (account ban) until Ben lifts `TIKTOK_UPLOAD_BLOCK.json`. Never post social Shorts before the YouTube long is public.
 
 ## Defaults (documentary + cluster window)
 
-- Runtime **7–9 min NOW** (007 Neutron Star and new longs; ~7–9 one-minute parts, not ~20). Expand to 15–20–30 only later with impressions + hold past ~5 min. Title one promise (no series suffix) · thumb = one question · experiential framing preferred
+- Runtime **7–9 min NOW** (007 Neutron Star and new longs). Expand to 15–20–30 only later with impressions + hold past ~5 min. Title one promise (no series suffix) · thumb = picture + SEA hook · experiential framing preferred
 - **4–8** Shorts: open inside the question · curiosity-gap end · Related→long · same content cluster
 - Evidence labels honest (LOW_DATA / EARLY_POSITIVE_SIGNAL) — never overfit one Short
 - No dead ends: end screen · cards · pin → another Orbit documentary
@@ -69,4 +72,4 @@ Once the **YouTube** long (and Shorts cluster) schedule is locked:
 
 “Build next video” · “Next episode” · “Start V0xx” · “New long-form” · “Growth System v2 first”
 
-Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md` · `CONTENT_INTELLIGENCE_STRATEGY.md` · `RETENTION_AND_GROWTH_LOCKED.md` · `LONGFORM_STORY_AND_VO_PICTURE_GATE.md` · `docs/GEMINI_VEO_CG.md` (Ultra UI default)
+Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md` · `CONTENT_INTELLIGENCE_STRATEGY.md` · `RETENTION_AND_GROWTH_LOCKED.md` · `LONGFORM_STORY_AND_VO_PICTURE_GATE.md` · `OMNI_LONGFORM_PLAYBOOK.md` · `docs/GEMINI_VEO_CG.md`

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -10,6 +11,10 @@ from zoneinfo import ZoneInfo
 SETUP = Path(__file__).resolve().parents[1]
 LEDGER = SETUP / "META_POSTED.json"
 LONDON = ZoneInfo("Europe/London")
+_SOCIAL = SETUP.parent / "social"
+if str(_SOCIAL) not in sys.path:
+    sys.path.insert(0, str(_SOCIAL))
+import uniqueness  # noqa: E402
 
 
 def load() -> dict:
@@ -23,38 +28,20 @@ def save(data: dict) -> None:
 
 
 def key_for(short: dict) -> str:
-    vid = (short.get("video_id") or "").strip()
+    vid = uniqueness.youtube_id(short)
     if vid:
         return f"yt:{vid}"
-    file = short.get("file") or short.get("path") or ""
-    return f"file:{Path(file).name}"
+    slug = uniqueness.file_slug(short.get("file") or short.get("path") or "")
+    if slug:
+        return f"file:{slug}"
+    title = uniqueness.normalize_title(short.get("title") or "")
+    return f"title:{title}" if title else "file:unknown"
 
 
 def is_posted(short: dict, *, platform: str | None = None) -> bool:
-    """
-    platform=None → True only when both enabled targets are done
-    (or a single 'meta' umbrella mark exists from seeding).
-    """
+    """True if this Short — or a remake / same file / same title — is already mirrored."""
     data = load()
-    entry = data.get("posted", {}).get(key_for(short))
-    if not entry:
-        return False
-    done = {"ok", "skipped", "seeded", "disabled", "scheduled"}
-    if platform:
-        if entry.get("status") == "seeded":
-            return True
-        plat = entry.get(platform)
-        return bool(plat) and plat.get("status") in done
-    # Umbrella seed
-    if entry.get("status") == "seeded":
-        return True
-    ig = entry.get("instagram")
-    fb = entry.get("facebook")
-    # If either platform recorded ok/skipped intentionally, treat as done for that side
-    ig_done = bool(ig) and ig.get("status") in done
-    fb_done = bool(fb) and fb.get("status") in done
-    # Complete when both sides have a terminal status
-    return ig_done and fb_done
+    return uniqueness.already_mirrored(short, data.get("posted") or {}, platform=platform)
 
 
 def mark_posted(short: dict, result: dict | None = None) -> None:

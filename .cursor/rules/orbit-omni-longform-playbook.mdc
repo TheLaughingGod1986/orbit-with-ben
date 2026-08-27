@@ -1,35 +1,63 @@
 ---
-description: Locked Omni long-form build format (Europa v02 later standard → every future long)
+description: Thursday film picture economy — AI Studio Veo world / Omni Orbit-only (locked 27 Aug 2026)
 alwaysApply: true
 ---
 
-# Omni long-form playbook (locked 2026-08-16)
+# Thursday film picture economy (locked 2026-08-27)
 
-**Reference:** Europa v02 · Last Star v11 · BH v09 · AW v05 · Fermi v20 (`*_OPEN_END_UPLOAD.mp4`).
-Europa v01 brand-intro + baked like/subscribe outro is **retired**. Build every future long in this format. Iterate when QA teaches something new — do not silently regress.
+**Source:** Ben via Video Creator · supersedes the expensive “Omni the whole film” habit (Europa / Neutron minute path).
+**Do not invent a second stack.** This file + `00_Brand/Channel-Setup/OMNI_LONGFORM_PLAYBOOK.md` are the canonical pipeline. Older Europa Omni-per-minute lessons remain historical reference only.
 
-## Pipeline (after Growth System gate)
+Picture-first open · Premiere/Mac assemble · Auditor · remint · affiliate-named-in-film locks stay. Do not weaken them.
 
-1. **~1-minute parts** — write → script QA → Ben Orbit Narrator VO → Omni Flash plates for that part only → picture QA → **stop and check with Ben** → only then next part.
-2. Never gen the full episode in one pass. Regen only failed minutes/plates.
-3. **~8–10 unique ~8s Omni plates per VO minute** — no freeze-pad, no scenery loop (`orbit-cutscene-no-reuse` + `orbit-omni-section-qa`).
-4. Assemble with paired **xfade + acrossfade**; env-gate water SFX; single Orbit / single face / travel-facing / one bottom glow.
-5. After all parts lock: **picture-first open** (strange picture 3s · Orbit ~8s) · mid-film chapter cards · soft-join parts · **10s last-picture hold** for Studio end screens → `09_Final-Export/*_broadcast_v0N.mp4`. No brand sting first. No baked like/subscribe VO/graphic.
-6. Then **4–8 punch Shorts** (~22–28s) from locked part roughs (`orbit-shorts-punch-first`). Zero `/go/` on Shorts.
+## Engine split (hard)
 
-## Picture / character / affiliate bar
+| Job | Tool | Where |
+|-----|------|--------|
+| Cinematic **WORLD** plates | **Veo** (Fast default; Quality only for one earned hero) | **Google AI Studio** |
+| Animate **Orbit** the orange robot | **Omni** — and **only** then | Google AI Studio |
+| Stills / composition boards | AI Studio image gen | Google AI Studio |
+| Narration | ElevenLabs Ben Orbit Narrator only | Mac |
+| Assemble | VO · captions · last card · picture-first open | Mac (as now) |
+| Thumbs / pins / Premiere finish | YouTube Studio | Studio |
 
-- VO-literal journey; one VO idea → one literal image; when VO and picture disagree, picture is wrong. Orbit *in* the scene, not a sticker. **Mute test:** picture tells the story; not pretty Orbit + distant-star wallpaper under clever VO (Neutron Star Part 02, 17 Aug 2026). At most one Orbit+distant-remnant hang per minute.
-- Premium CGI 3D polish; cream eyes + pupils; env honesty (no bubbles in vacuum).
-- One face only — if Orbit turns, the back is solid orange. No formula corner-approach plates.
-- Clipper / craft: vacuum/orbital only unless the beat is explicitly under-ice without craft.
-- One named product late (after the wonder line) only if it belongs in *this* cut. `/go/{slug}` in the long description only.
-- Length **NOW 7–9 min** (Last Star / Europa). Expand to 15–20–30 only later with impressions + hold past ~5 min. Recut = new YouTube id; leave old live until new is public, then unpublish.
+- **Stay in Google AI Studio.** Do not run the whole Thursday film through Omni.
+- **No Kling** unless volume later outgrows Google (Ben lifts this explicitly).
+- Mute / strip **Veo baked audio** so it does not fight the VO (`generate_audio=False` + strip on download).
 
-## Canonical builders (copy forward)
+## Film shape
 
-- Plates JSON · `_gen_part0N_omni_*.py` · `_assemble_part0N_*.py` · `PART0N_LESSONS.md`
-- Broadcast: `_build_*_open_end.py` / later `*_broadcast_v0N.py` — **not** v01 brand-intro/outro
-- Shorts: `10_Shorts/_build_*_punch_shorts_v01.py`
+- Runtime **7–9 min** (Last Star / Europa pattern). Expand later only with impressions + hold past ~5 min.
+- **Picture-first:** first **3s** = world only. No Orbit, no logo, no title.
+- **World does the science.** Orbit appears in **only 1–2 scenes**, and only when the beat is inquisitive or story-narrative (“you're probably wondering…”). Not a tourist sticker on every plate.
+- After parts lock: mid-film chapter cards · soft-join · **10s last-picture hold** for Studio end screens → broadcast master. No brand sting. No baked like/subscribe.
 
-Full steps: `00_Brand/Channel-Setup/OMNI_LONGFORM_PLAYBOOK.md` · `orbit-longform-open-end-affiliate.mdc`
+## Economy (stills first)
+
+1. In AI Studio, lock stills **before** motion:
+   - **One open still** — strange world, **no Orbit**
+   - **Two science plates** — planets, ice volcanoes, real detail (aliens only if *this* film is about them)
+   - **One Orbit reference still** — canonical identity; use only for the 1–2 Orbit beats
+2. Animate only **2–3 money shots** on **Veo Fast** (~8s).
+3. Upgrade **one** hero to **Veo Quality** only if it earns the thumb.
+4. Use **first-and-last-frame** on the open still so that week’s Shorts loop off the same world.
+5. Omni **only** for the Orbit money shots that need the orange robot moving — never for world B-roll.
+
+## Assemble + Shorts
+
+1. Mac assemble as now: Ben Orbit Narrator VO · captions · last card · picture-first open. Mute Veo beds under VO.
+2. **4–8** punch Shorts **22–27s** (`orbit-shorts-punch-first`): picture in **1s**, custom picture thumb **no Orbit**, exact listing title on screen, CTA that week’s Thursday film id, **zero `/go/`**.
+3. **Long thumbs:** picture + a short SEA-style hook. **No Orbit. No generic CTA.**
+
+## Do not
+
+- Omni the whole Thursday film / ~8–10 Omni plates per VO minute (retired expensive habit)
+- Default Kling, ElevenLabs Image & Video, or Seedance for new CG
+- Park Orbit in every scene or restore “Orbit after ~8s on every film”
+- Weaken picture-first / Auditor / remint / affiliate-named-in-film locks
+
+## When Omni *is* used
+
+Character QA still applies (`orbit-omni-section-qa.mdc` · `orbit-character-consistency.mdc`): single Orbit · single face · cream eyes + pupils · one bottom glow · VO-literal act. Archive rejects; bump `v0N`.
+
+Full steps: `00_Brand/Channel-Setup/OMNI_LONGFORM_PLAYBOOK.md` · `orbit-longform-open-end-affiliate.mdc` · `orbit-gemini-veo-cg.mdc`
