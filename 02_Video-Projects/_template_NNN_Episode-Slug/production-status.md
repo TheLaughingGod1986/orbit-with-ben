@@ -6,12 +6,12 @@
 | Gate | not run |
 | Script review | — |
 | VO | pending (ElevenLabs) |
-| CG | pending (Gemini Veo) |
-| Runtime target | 8–12 min |
-| Shorts | 3–5 planned |
+| CG | pending (AI Studio: Veo world / Omni Orbit-only) |
+| Runtime target | 7–9 min |
+| Shorts | 4–8 planned |
 
 ## Blockers
 
 - [ ] Pre-build vidIQ signed  
 - [ ] Script ≥ 90  
-- [ ] GEMINI_API_KEY set  
+- [ ] AI Studio stills locked (open · two science · Orbit ref) before Veo/Omni spend  

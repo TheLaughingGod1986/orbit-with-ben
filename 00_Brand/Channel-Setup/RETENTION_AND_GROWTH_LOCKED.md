@@ -17,21 +17,22 @@ Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
 2. **Long open ≤15–20s to first paradox** — story tension before explanation.  
 3. **Structure** — Question → Danger → Story begins → Explain while story continues → Escalation → Ending.  
 4. **Framework** — Hook → Question → Escalation → Discovery → Payoff → Bigger question.  
-5. **Orbit experiences the science** — active participant, not passive wallpaper.  
+5. **World does the science** — Orbit appears in **1–2** inquisitive / story-narrative beats only (not wallpaper on every plate).  
 6. **Curiosity reset every 30–60s** — chapter card / new Q / number / turn.  
 7. **VO–picture lock** — show or act the narration; no generic filler under specific VO.  
 8. **One teach-point per chapter** — 4–6 film-act chapters.  
-9. **Runtime (next 6–10 videos)** — **8–12 min** VO; lengthen only after trust.  
-10. **Payoff before outro** — answer the open loop; soft CTA only at the end.
+9. **Runtime** — **7–9 min NOW**; expand to 15–20–30 only after an 8-min film gets real impressions and hold past ~5 min.  
+10. **Payoff before outro** — answer the open loop; soft CTA only at the end.  
+10b. **Picture path (27 Aug 2026)** — Google AI Studio: **Veo** for world · **Omni only** when Orbit must move · stills first · 2–3 Veo Fast money shots · mute Veo audio · **never Omni the whole film** · no Kling.
 
 ## P0 — Growth
 
-11. **Shorts = discovery engine** — **3–5** per long; **22–30s**; strongest-fact open + curiosity-gap end.  
-12. **Related + pinned full-film** on every Short once the long is public — never “watch the full video” alone.  
+11. **Shorts = discovery engine** — **4–8** per long; **22–27s**; picture in 1s · picture thumb no Orbit · exact listing title on screen · CTA that week’s Thursday id · curiosity-gap end.  
+12. **Related + pinned full-film** on every Short once the long is public.  
 13. **Pre-build vidIQ audit (blocking)** — keywords · title ≥90 · outliers → then script.  
 14. **Script reviewer ≥ 90 / 100** before VO / picture gen.  
 15. **Title = one promise** · prefer ≤~60 chars · **no series suffix** on every upload.  
-16. **Thumb = one question** — one object · one emotion · minimal text.  
+16. **Long thumb = picture + SEA-style hook** — **no Orbit**, no generic CTA. Short thumb = custom picture, **no Orbit**.  
 17. **No dead ends** — end screen · cards · pin · description → another Orbit documentary.  
 18. **Soft “follow for the next mystery”** at end only — never interrupt the hook.
 

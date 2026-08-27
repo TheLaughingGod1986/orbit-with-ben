@@ -46,5 +46,5 @@ No `/go/`. This cut does not name a product. Shorts: not started.
 | Job | Tool |
 |-----|------|
 | VO | ElevenLabs · Ben Orbit Narrator `kDch6ACCIpqgQ0NsU9kk` (not regenerated) |
-| CG | Flow Omni Flash (existing plates) |
+| CG | AI Studio Veo world / Omni Orbit-only (legacy Omni plates = inventory only) |
 | Music | existing per-minute beds (not regenerated) |
