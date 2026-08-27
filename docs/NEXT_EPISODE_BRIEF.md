@@ -1,6 +1,6 @@
 # Next episode brief — Growth System v2
 
-**Locked next (16 Aug 2026): 007 Neutron Star.** Script passed. Omni 1-min path (PR 18). Do not start 013 Moon. Simulation is 015.
+**Locked next (16 Aug 2026): 007 Neutron Star.** Script passed. Picture path (27 Aug): AI Studio Veo world / Omni Orbit-only — do **not** Omni the whole film. Do not start 013 Moon. Simulation is 015.
 
 Generated: 2026-08-06T14:05:59.670Z (snapshot below is historical; queue lock above is current)
 
@@ -49,13 +49,13 @@ Apply these before writing the next cold open / packaging:
 
 ## Next episode locked defaults
 
-- Runtime **8–12 min** · cold open 5s / 15s / 30s
-- Orbit **experiences** the science · 4–6 acts
-- CG: **Gemini Veo** · VO: **ElevenLabs** Ben Orbit Narrator
-- 3–5 Shorts · curiosity-gap ends · Related → long
-- Thumbs ABC + social mirror schedule after YouTube lock
+- Runtime **7–9 min** · cold open 5s / 15s / 30s
+- **World does the science** · Orbit in **1–2** inquisitive beats · 4–6 acts
+- CG: **Google AI Studio** — Veo world / Omni Orbit-only · VO: **ElevenLabs** Ben Orbit Narrator
+- 4–8 Shorts · curiosity-gap ends · Related → long · picture thumb no Orbit
+- Long thumbs: picture + SEA-style hook (no Orbit) + social mirror after YouTube lock
 
-## Gate before VO / Veo
+## Gate before VO / picture
 
 ```bash
 cd 07_Content-Ops

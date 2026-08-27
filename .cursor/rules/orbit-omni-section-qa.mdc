@@ -1,94 +1,80 @@
 ---
-description: Omni long-form section QA — motion, SFX joins, single Orbit (locked forward)
+description: Omni QA only when Orbit is animated — single Orbit, env honesty, mute-test picture
 alwaysApply: true
 ---
 
-# Orbit Omni section QA (locked forward)
+# Orbit Omni section QA (locked forward · scoped 2026-08-27)
 
-**Locked** on `006_Could-Life-Exist-Under-The-Ice-Of-Europa` Parts **01–08** (broadcast `europa_broadcast_v01.mp4`, 2026-08-14). Apply to **every** Omni-forward long. Pipeline overview: `orbit-omni-longform-playbook.mdc` · `00_Brand/Channel-Setup/OMNI_LONGFORM_PLAYBOOK.md`.
+**Omni is not the default film engine.** As of 27 Aug 2026: **Veo** does cinematic **world** plates in Google AI Studio; **Omni only** when Orbit the orange robot must move. Do **not** plan ~8–10 Omni plates per VO minute or Omni the whole Thursday film.
+
+When Omni *is* used (the 1–2 Orbit beats), apply this QA. Pipeline overview: `orbit-omni-longform-playbook.mdc` · `00_Brand/Channel-Setup/OMNI_LONGFORM_PLAYBOOK.md`.
+
+Historical Europa Parts **01–08** / Neutron minute builds taught these character and picture rules — keep the QA bar, drop the gen budget.
 
 ## Process
 
-1. **~1 minute parts.** Write → script QA → VO + Omni for that part only → picture QA.
-2. **Ben UAT (blocking):** stop and check with Ben after each minute. Do not start the next part until he passes it (or asks for a regen).
-3. **Do not** generate the full episode in one pass. Regen only the failed minute / failed plates.
-4. Prefer **Omni Flash** continuous journey takes + **native SFX** under Ben Orbit Narrator VO (this episode). Keep VO-literal picture.
-5. After Ben passes a part: update lessons log; stitch cumulative master when useful.
+1. **World first:** AI Studio stills → Veo Fast money shots for science/world. Mute Veo audio.
+2. **Omni only** for Orbit motion in inquisitive / story-narrative beats. Script QA → VO → Omni take(s) for those beats only → character picture QA.
+3. **Ben UAT** on Orbit takes before locking. Regen only failed Orbit plates — do not re-Omni the world.
+4. Keep VO-literal picture. World plates carry the science; Orbit is not wallpaper on every cut.
 
 ## Motion coverage (no “broken video” freezes)
 
-1. **Never freeze-pad** (`tpad` / last-frame clone) to stretch short Omni clips to VO length — it looks broken.
+1. **Never freeze-pad** (`tpad` / last-frame clone) to stretch short clips to VO length — it looks broken.
 2. **Never loop / slow-mo** scenery (see `orbit-cutscene-no-reuse`).
-3. Size inventory so **1× motion covers VO**: plan ~**8–10 unique ~8s Omni plates per ~60–80s** (or more). If short, **generate more unique plates** — do not pad.
+3. **Stills-first economy:** stills + **2–3** Veo Fast (~8s) money shots carry the film. Do **not** “fix coverage” with Omni world plates.
 4. Assembler must **fail** (or trim ≤~1s of VO) rather than freeze-extend picture.
 
-## Character in the scene (user lock — Flow share QA)
+## Character in the scene (when Orbit is on screen)
 
-Reference feel: Orbit flying the solar system — he **turns**, you see **exhaust / propulsion**, he **flies off**, with **native SFX**. Reads as a character *in* the world, not a sticker on wallpaper.
+Reference feel: Orbit **turns**, you see **exhaust / propulsion**, he **flies off**. Reads as a character *in* the world, not a sticker.
 
-1. **Orbit interacts with the scene** — bank/turn, push off, skim, tip, dive, react to ice/pull/heat. Body language + motion sell presence.
-2. **Readable agency:** soft underside glow as he moves; tiny bubble wake underwater OK. **Propulsion lock:** exactly **ONE** centered **bottom** underside glow — gyroscope / hover-pad style (same as space). Forbidden: twin thrusters, left+right jets, rear+bottom dual exhaust, side engines, mid-part switch to underwater **flames / fire plumes**.
-3. **Camera treats him as subject in space** — parallax past ice/planets, approaching or leaving frame with intent — not locked dead-center hover for the whole take.
-4. Prompts should include a concrete verb of interaction (turns toward, skims along, plunges through, banks past) + continuous motion + native whoosh/rumble SFX.
-5. Reject plates where Orbit is a static ornament floating in pretty scenery while the world does all the work.
-6. Travel beats: prefer gaze / nose along **direction of travel** (not always staring at camera).
-7. **Neutron Star Part 01 UAT (locked forward):** do not park Orbit static in one place looking around for the whole take. Prefer bank / skim / tumble / stretch / push-off. A hang beat may hold station only when the VO is “hangs in the dark,” and then he is a **tiny figure in the void**, not a foreground hero.
+1. **Orbit interacts with the scene** — bank/turn, push off, skim, tip, dive, react. Body language + motion sell presence.
+2. **Readable agency:** soft underside glow as he moves; tiny bubble wake underwater OK. **Propulsion lock:** exactly **ONE** centered **bottom** underside glow. Forbidden: twin thrusters, left+right jets, rear+bottom dual exhaust, side engines, underwater **flames / fire plumes**.
+3. **Camera treats him as subject** — parallax, enter/leave with intent — not locked dead-center hover for the whole take.
+4. Prompts: concrete verb of interaction + continuous motion.
+5. Reject plates where Orbit is a static ornament while the world does all the work — if he is not acting the line, cut him and use the world plate.
+6. Travel beats: gaze / nose along **direction of travel** when moving.
+7. Hang beat only when VO says he hangs — then a **tiny figure in the void**, not a foreground hero.
 
-## Picture quality bar (Parts 01–02 lock)
+## Picture quality bar
 
-1. **VO-literal journey** — Orbit doing the line (skim cracks while VO says scars; dive when VO goes under the ice). When VO names an object, **cut to that object** (Neutron Star Part 02 teaspoon vs mountains — gold beat to copy).
-2. **Gold beat to keep:** Orbit low over Europa linea + native Omni SFX while VO names cracks/scars. **Neutron Star:** metal teaspoon vs mountains while VO says a teaspoon outweighs mountains.
-3. **Europa surface:** pale cream-white ice + fine dark linea. Avoid large brown/red circular “pools” unless the beat is intentionally melt/chaos.
-4. When VO enters the ocean / under the lid: **lean into the dive** (crack → plunge → subsurface ocean) — intentional water OK; muddy surface pools not.
-5. **Style:** premium **CGI 3D polish** (realistic materials/lighting). Reject 2D cartoon outlines / flat cel-shade when it breaks continuity with approved plates.
-6. **Env honesty:** underwater plates stay submerged under ice; vacuum/space/above-ice plates stay dry. Never ship space/surface with underwater bubble trails.
-7. Tag plates `env: underwater | surface | space` and **gate water SFX** to underwater windows only.
+1. **VO-literal** — when VO names an object, **cut to that object** (Neutron Star teaspoon vs mountains — gold beat). World does the science.
+2. **Style:** premium **CGI 3D polish**. Reject 2D cartoon outlines / flat cel-shade when it breaks continuity.
+3. **Env honesty:** underwater stays submerged; vacuum/space stays dry. Never ship space/surface with underwater bubble trails.
+4. Tag plates `env: underwater | surface | space` and **gate water SFX** to underwater windows only.
 
-## Single Orbit / single face (hard)
+## Single Orbit / single face (hard — Omni takes)
 
-1. **Exactly one Orbit** in frame at all times. Twin / clone / reflection duplicate / ghost double-exposure = reject and regen.
-2. **Exactly one face** — one front black visor with cream eyes + pupils. Reject clear second rear/side faceplate or mirrored eyes on the back (Europa Part 02 · Neutron Star Part 01).
-3. **Turns:** if Orbit rotates away from camera, we see the **solid matte orange back** (antenna stem + a small hatch OK). A second visor or pair of eyes appearing mid-turn is the same reject as twins.
-4. Spot-check frames across each new plate (start / mid / end) before locking the rough.
-5. Do **not** I2V wide/acting plates from the full-frame identity still — it parks Orbit as a foreground hero and often stamps a visor on every side. Attach a start frame that already has the correct scale, camera, and (for back shots) no visor.
+1. **Exactly one Orbit** in frame. Twin / clone / reflection / ghost = reject and regen.
+2. **Exactly one face** — one front black visor with cream eyes + pupils. Reject second rear/side faceplate.
+3. **Turns:** solid matte orange back (antenna stem + small hatch OK). No second visor mid-turn.
+4. Spot-check start / mid / end before locking.
+5. Do **not** I2V wide/acting plates from the full-frame identity still alone — attach a composition start frame at the correct scale (and no visor for back shots).
 6. Eyes: cream/white **with dark pupils** — never blank solid white ovals.
-7. **On-model or regen.** Knockoff (no visor, no arms, glowing belly, slit LEDs) is a different character. Attach the canonical identity still plus a composition start frame — do not I2V a muddy tiny crop and hope.
+7. **On-model or regen.** Knockoff (no visor, no arms, glowing belly, slit LEDs) is a different character.
 
-## Clean vacuum (Neutron Star Part 01 UAT)
+## Clean vacuum
 
 1. Space plates: **near-black**, a handful of faint pinpricks at most, **one** main distant star when the line needs it.
-2. Reject dense star-noise / tiled white specks covering the black. The void should feel clear, not grainy.
+2. Reject dense star-noise / tiled white specks.
 
-## Shot grammar (no formula approach — Neutron Star Part 01–02 UAT, locked forward)
+## Shot grammar (no formula approach)
 
-The default Omni template is **Orbit in a corner + destination opposite + look/fly toward it**. That is not a film. Reject it when it repeats.
+1. **One VO idea → one literal image.** If VO and picture disagree, picture is wrong.
+2. **Forbidden formula:** Orbit parked in a corner, destination opposite, fly toward it — as the default plate.
+3. **Cap:** Orbit in **1–2** scenes per film only (inquisitive / story-narrative). At most one Orbit + distant-object establishing plate among those. The rest are world science plates.
+4. **Subject follows the line.** Scenery-only plates are the default when Orbit is not who the line is about.
+5. **Mute test before gen.** If the plate is pretty Orbit wallpaper under clever VO, rewrite it to the named object.
 
-**Neutron Star Part 02 PASS (Ben 17 Aug 2026):** too many plates were Orbit + a distant remnant — pretty pictures under clever VO. Sound and character stay. Picture must **tell the story**. Mute the VO: you should still follow the beat. Each ~1-min part, when stitched, has to play as one episode of a series (character living the universe’s story), not B-roll with a podcast on top. **Gold beat:** teaspoon vs mountains — when VO names an object, cut to that object in the same clear format.
+## Audio joins (Veo + rare Omni)
 
-1. **One VO idea → one literal image.** If VO and picture disagree, picture is wrong. Stretch when VO says tear into a line; a ring of *light* when VO says light bends into a ring; a living giant star when VO says it began as a giant; a **metal teaspoon vs mountains** when VO says teaspoon; kitchen lead/osmium when VO is on Earth density — not another remnant portrait.
-2. **Forbidden formula:** Orbit parked in any corner, destination on the other side, then travel toward it. Do not use this as the default plate.
-3. **Cap:** at most **one** Orbit + distant-remnant establishing plate per minute. The rest must be the thing the line names (object, body, interior, cutaway, visor, act).
-4. **Subject follows the line.** If the line is about the star dying, the star is the subject. If it is about seeing/feeling, a visor CU is allowed. Scenery-only plates are allowed when Orbit is not who the line is about. If the line is “you are the object approaching,” the camera treats Orbit as the incoming mass — not a tourist looking at a dot.
-5. Vary camera per plate: EWS hang · subject-is-the-star · weightless tumble with no destination · tidal stretch · ring-fills-frame · visor CU · living-star · supernova wall · remnant macro · Earth cutaway · interior physics. Do not rhyme two plates in a row.
-6. **Mute test before gen.** If the plate would still make sense swapped with the previous Orbit+star hang, rewrite it.
-
-## Omni SFX joins
-
-1. Hard concat of Omni beds makes the soundtrack **stop/jump** at every cut — feels like a break.
-2. Assemble with **paired `xfade` + `acrossfade`** (~0.35–0.45s) so picture and Omni SFX blend across plate joins while staying A/V locked.
-3. Keep Omni SFX under VO (typical ~0.18–0.2 volume); do not strip native beds unless QA asks.
-4. **Score vs Omni beds:** each Omni plate brings its own ~8s native bed. Hard concat (and even a short acrossfade) reads as music restarting at every cut. Mix a **single continuous underscore** under VO for the minute; duck it under narration; keep Omni SFX as quiet texture only. Do not treat plate beds as the score.
-5. Under-ice minutes: light continuous water-movement / bubble bed under Omni SFX — **only while picture is underwater**.
+1. Mute/strip Veo baked audio under VO.
+2. If Omni beds are present: assemble with paired **`xfade` + `acrossfade`** (~0.35–0.45s) or keep Omni SFX as quiet texture only under a **single continuous underscore**.
+3. Do not treat plate native beds as the score.
 
 ## Prompt / gen hygiene
 
-1. Prompts: continuous motion the whole clip; target ~8–10s; no freeze; single Orbit; single face; VO-literal verb; **character-in-scene interaction**; **premium CGI**; env lock (underwater vs vacuum) + bubble rules matching env.
-2. Run Flow Omni gens in a **durable foreground** session; skip-existing + per-plate retry; reject ultra-fast suspect downloads when possible.
-3. Archive rejected plates (`_rejected_*`); bump asset version (`v02`/`v03`) rather than overwriting without a trail.
-
-## Episode builders (Europa 006)
-
-- Plates: `07_Edit-Project/parts/part-0N_omni_plates_*.json`
-- Gen / assemble: `_gen_part0N_omni_*.py` / `_assemble_part0N_*.py`
-- Lessons: `PART01_LESSONS.md` · `PART02_LESSONS.md` · `PART03_LESSONS.md`
-- Stitch: `_stitch_parts_01_03_v01.py` → `europa_parts-01-03_stitched_v01.mp4`
+1. World: AI Studio Veo Fast, continuous motion, ~8s, silent. Orbit: Omni only when needed; single Orbit; single face; VO-literal verb; premium CGI; env lock.
+2. Archive rejected plates (`_rejected_*`); bump asset version (`v02`/`v03`).
+3. Historical Europa builders (`_gen_part0N_omni_*.py`) are **not** the default for new films.

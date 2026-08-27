@@ -1,25 +1,35 @@
-# Omni long-form playbook
+# Thursday film picture economy
 
-**Locked:** 2026-08-16 after Europa v02 · Last Star v11 · BH v09 · AW v05 · Fermi v20.
-**Intent:** Build every future Orbit long in this format. Reiterate when QA teaches a better rule. Do not silently revert to Europa v01 broadcast polish.
+**Locked:** 2026-08-27 (Ben via Video Creator).  
+**Supersedes:** the Europa / Neutron “Omni Flash every minute / ~8–10 plates per VO minute” habit — that was the expensive old path. Do **not** run the whole Thursday film through Omni.
 
-Cursor rules: `orbit-omni-longform-playbook.mdc` · `orbit-longform-open-end-affiliate.mdc` · `orbit-omni-section-qa.mdc` · `orbit-cutscene-no-reuse.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-character-consistency.mdc` · `orbit-affiliate-named-in-film.mdc` · `orbit-long-views-inspiration-parasocial.mdc`
+**Intent:** Every future Orbit long and Short follows this split. Iterate when QA teaches a better rule. Do not invent a second stack or silently revert.
+
+Cursor rules: `orbit-omni-longform-playbook.mdc` · `orbit-gemini-veo-cg.mdc` · `orbit-omni-section-qa.mdc` · `orbit-longform-open-end-affiliate.mdc` · `orbit-cutscene-no-reuse.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-character-consistency.mdc` · `orbit-affiliate-named-in-film.mdc` · `orbit-long-views-inspiration-parasocial.mdc` · `orbit-auditor-ship-gate.mdc`
+
+Existing locks that stay: picture-first open · Mac/Premiere assemble · Video Auditor · remint = new id · affiliate named in film. Do not weaken them.
+
+## Engine split
+
+| Job | Tool | Where |
+|-----|------|--------|
+| Cinematic **WORLD** plates | **Veo** (Fast default; one Quality hero if it earns the thumb) | **Google AI Studio** |
+| Animate **Orbit** (orange robot) | **Omni only** when he must move | Google AI Studio |
+| Stills / boards | AI Studio image gen | Google AI Studio |
+| VO | ElevenLabs Ben Orbit Narrator | Mac |
+| Assemble | VO · captions · last card · picture-first open | Mac (as now) |
+| Finish | Premiere · thumbs · pins · end screens | YouTube Studio |
+
+- Stay in **Google AI Studio**.
+- **No Kling** unless Ben later says volume outgrew Google.
+- Mute / strip **Veo baked audio** so it does not fight the VO.
 
 ## Why this format
 
-- Minute-by-minute QA catches twins, env lies, and floaty Orbit before they compound.
-- Omni Flash + native SFX under Ben Orbit Narrator reads as a character *in* the world.
-- Soft A/V joins keep the soundtrack continuous; freeze-pad looks broken.
-- Picture-first open + Studio end screens + one named-book `/go/` is the locked later standard. Brand sting first and baked like/subscribe outro are retired.
-
-## Why (16 Aug 2026 Studio)
-
-Live channel, last 28 days — do not invent AVD / CTR / long-form retention on top of this:
-
-- Shorts: **759 views** · **28.8% stayed / 71.2% swiped**. Three Suns loop is the rewatch outlier.
-- Longs: **21 views / 28d**. YouTube: not enough data for audience-retention curves.
-- Do **not** claim a measured long-form first-30s drop.
-- Titles are not the bottleneck (already 86–98).
+- World plates carry the science; Orbit is the friend who shows up for inquisitive / story-narrative beats — not a sticker on every cut.
+- Stills-first + 2–3 Veo Fast money shots is the cost lock. Omni-the-whole-film was the expensive habit.
+- First-and-last-frame on the open still gives that week’s Shorts a clean loop off the same world.
+- Picture-first open + Studio end screens + named-in-film `/go/` (long only) stay locked.
 
 ## End-to-end steps
 
@@ -27,63 +37,72 @@ Live channel, last 28 days — do not invent AVD / CTR / long-form retention on 
 
 Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 · `gate:episode` PASS.
 
-### B. Part loop (~1 min each)
+### B. Picture economy (AI Studio)
 
-1. Write part script (VO-literal journey beats table).
-2. TTS → `02_Voiceover/parts/` (Ben Orbit Narrator lock).
-3. Plate plan JSON: ~8–10 unique ~8s Omni takes; tag `env: underwater|surface|space`.
-4. Generate Omni Flash (Flow) with Orbit identity lock; archive rejects; bump `v0N`.
-5. Assemble: paired `xfade` + `acrossfade`; Omni SFX under VO (~0.18–0.2); water bed only underwater.
-6. Picture QA (start/mid/end twin + face spot-check). **Stop and check with Ben.** Do not start the next minute until he UAT-passes this one. Then `PART0N_LESSONS.md` → next part.
+1. Write the **7–9 min** script (curiosity 5s · stakes 15s · journey 30s). World does the science; mark **at most 1–2** Orbit beats where the line is inquisitive or story-narrative (“you're probably wondering…”).
+2. TTS → Ben Orbit Narrator (Mac).
+3. **Stills first** in AI Studio:
+   - One **open still** — strange world, **no Orbit**
+   - Two **science plates** — planets, ice volcanoes, real detail (aliens only if *this* film is about them)
+   - One **Orbit reference still** — canonical identity for the Orbit beats only
+4. Animate only **2–3 money shots** on **Veo Fast** (~8s). Use **first-and-last-frame** on the open still for Shorts loop continuity.
+5. Upgrade **one** hero to **Veo Quality** only if it earns the thumb.
+6. **Omni only** for Orbit motion in those 1–2 scenes. Never Omni world B-roll. Character QA on every Omni take.
+7. Mute/strip Veo (and Omni) baked audio. Assemble on the Mac: VO · captions · last card · picture-first open. Soft joins as needed; continuous underscore under VO.
 
-### C. Broadcast polish (locked later standard)
+### C. Broadcast polish (locked)
 
-1. **Open:** first 3 seconds = strange picture only. No Orbit, no logo, no title, no “ORBIT / Stories from the sky”. Orbit after ~8s. Curiosity by 5s, stakes by 15s, journey by 30s — in the **script**, not a title card. Do not hard-cut A/V through a leftover sting (chops mid-word).
+1. **Open:** first 3 seconds = strange picture only. No Orbit, no logo, no title, no “ORBIT / Stories from the sky”. Curiosity / stakes / journey live in the **script**, not a title card.
 2. Chapter cards for mid-film acts only (locked stills — **never** Ken Burns on text). No chapter card on the open.
-3. Soft-join approved part roughs in story order.
-4. **Outro:** strip baked like/subscribe VO and graphics. Hold last real picture **10s** for official YouTube Studio end screens (Subscribe + next film when an id exists). Soft spoken CTA only if it is not a shop read.
-5. **Affiliate (long only):** one named product late, after the wonder line — VO + on-screen 4–6s (not a shop card). URL only in the description: `https://orbit-content-ops.vercel.app/go/{slug}`. Do not bolt a book on to unlock a link. Do not name telescope / LEGO / Brilliant unless the film is about them and the door is live.
-6. Export → `09_Final-Export/<slug>_broadcast_v0N.mp4`. Verify picture-first open, 10s end hold, A/V locked. Recut = new filename + new YouTube id.
+3. Soft-join approved picture + VO in story order.
+4. **Outro:** strip baked like/subscribe VO and graphics. Hold last real picture **10s** for official YouTube Studio end screens.
+5. **Affiliate (long only):** one named product late, after the wonder line — VO + on-screen 4–6s. URL only in the description: `https://orbit-content-ops.vercel.app/go/{slug}`. Do not bolt a book on.
+6. Export → `09_Final-Export/<slug>_broadcast_v0N.mp4`. Recut = new filename + new YouTube id.
 
 ### D. Shorts cluster (4–8)
 
-1. Punch-first cuts **~22–28s** from locked **part roughs** (not chapter silence).
-2. Open on the picture; keep the loop; captions the whole way; Thursday film title on screen.
-3. Strongest fact/question in 0–1.5s; curiosity-gap end; full-film CTA only. **Zero** `/go/` or shop URLs on Shorts.
+1. Punch-first cuts **22–27s** from the locked film / open-world plate (first-and-last-frame loop).
+2. Picture in **1s**; captions the whole way; **exact listing title** on screen; CTA that week’s **Thursday film id**.
+3. Custom picture thumb — **no Orbit**. Description = film title + parent long URL only. **Zero** `/go/`.
 4. Abort if any Short ≥40s.
-5. Package `10_Shorts/` + `SHORTS_UPLOAD_INDEX.json` when scheduling.
+
+### E. Long thumbs
+
+Picture + a short **SEA-style hook**. **No Orbit. No generic CTA.** Studio Thumbnail ABC after upload when scoring.
 
 ## Hard locks
 
 | Lock | Rule |
 |------|------|
-| Picture flatten | One VO idea → one literal image. When VO and picture disagree, picture is wrong. Orbit *in* the scene, not a sticker. Mute the VO: the beat should still read. At most **one** Orbit + distant-remnant hang per minute (Neutron Star Part 02, 17 Aug 2026). |
-| oneVideoOneUpload | Recut = new id. Leave old live until new is public, then unpublish. Do not reuse ids. |
-| Length | Aug 13 lock: **~18–25 min** documentary. Do not silently revert to 8–12. Older `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` and `templates/PRODUCTION_CHECKLIST_V2.md` still say 8–12 — ignore that line. |
+| Engine home | Google AI Studio — Veo for world, Omni only for Orbit |
+| Economy | Stills first → 2–3 Veo Fast money shots → optional one Veo Quality hero |
+| Orbit dosage | 1–2 inquisitive / story-narrative scenes only; world does the science |
+| Picture flatten | One VO idea → one literal image. When VO and picture disagree, picture is wrong. Mute the VO: the beat should still read. |
+| Picture-first | First 3s world only |
+| oneVideoOneUpload | Recut = new id. Leave old live until new is public, then unpublish. |
+| Length | **7–9 min NOW**. Expand to 15–20–30 only after an 8-min film gets real impressions and hold stays past ~5 min. Do not copy live 21-min Alien Worlds / Black Hole / Fermi runtimes. |
+| Audio | Mute/strip Veo baked audio; Ben Orbit Narrator owns the VO |
+| No Kling | Until Ben says volume outgrew Google |
 
 ## Hard rejects
 
 | Reject | Why |
 |--------|-----|
+| Omni the whole Thursday film / Omni world B-roll | Expensive retired habit |
 | Brand intro / logo / title card in first 3s | Kills the strange-picture open |
 | Baked like/subscribe VO or graphic | Studio end screens own the last 10s |
-| Freeze-pad / scenery loop | Broken / against cutscene rules |
-| Twin Orbit / second face / blank white eyes | Character break |
-| Formula corner-approach plate (Orbit in a corner, destination opposite, fly toward it — repeated) | Not VO-literal; feels like a template, not a film |
-| Orbit + distant remnant as the default plate | Pretty wallpaper under clever VO — not an episode |
-| Bubbles in vacuum/surface | Env lie |
-| Clipper underwater | Identity/env break |
-| Zoompan on title/chapter text | Glyph vibration |
+| Freeze-pad / scenery loop / slow-mo pad | Broken / against cutscene rules |
+| Twin Orbit / second face / blank white eyes | Character break (when Omni is used) |
+| Orbit on every plate / formula corner-approach tourist | World should do the science |
+| Orbit on long or Short thumbs | Long = picture + SEA hook; Short = custom picture, no Orbit |
 | ≥40s Shorts | Retention evidence |
 | `/go/` or shop URL on a Short | Full-film CTA only |
+| Kling / ElevenLabs Image & Video / Seedance for new CG | Stay in AI Studio Google stack |
 | Shop-read CTA / bolted-on book | Affiliate only if named in *this* cut |
 
-## Reference assets (later standard)
+## Historical reference (do not copy forward as the default)
 
-- Europa v02: `…/006_…/09_Final-Export/europa_v02_HAND_OPEN_END_UPLOAD.mp4`
-- Last Star v11 · BH v09 · AW v05 · Fermi v20: `*_OPEN_END_UPLOAD.mp4` in each `07_Edit-Project/01_Masters/`
-- Lessons: `…/006_…/07_Edit-Project/PART01_LESSONS.md` … `PART08_LESSONS.md`
-- v01 (`europa_broadcast_v01.mp4` + brand intro/outro) is the **retired** polish — do not copy forward.
+Europa Parts 01–08 and Neutron Star minute builds used Omni Flash ~8–10 plates per VO minute. Those lessons (`PART0N_LESSONS.md`) still teach character QA, env honesty, and mute-test picture — but **not** the gen budget. Broadcast polish refs: Europa v02 · Last Star v11 · BH v09 · AW v05 · Fermi v20 (`*_OPEN_END_UPLOAD.mp4`).
 
 ## Change control
 
