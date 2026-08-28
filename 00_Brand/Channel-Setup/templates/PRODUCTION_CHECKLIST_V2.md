@@ -40,6 +40,7 @@ Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md`
 - [ ] Pre-build vidIQ audit signed off
 - [ ] Script reviewer ≥ 90
 - [ ] VO–picture gate QA passed
-- [ ] Studio finish items done after API upload (ABC if long · Related video on Shorts — pin optional)
+- [ ] Studio finish items done after API upload (ABC if long · Related pill on Shorts — no new Short pins)
+
 
 **Ship only when every box is checked.**

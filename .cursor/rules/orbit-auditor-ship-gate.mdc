@@ -38,8 +38,16 @@ Winner to beat: *We Found Planets Made of Diamond* (`M-VN84HCNls`, 223% viewed).
 6. **End CTA on screen** points at **that week’s Thursday film id** (exact listing title on screen earlier). Description: film title + parent long URL only. Zero `/go/`.
 7. **Custom picture thumb — no Orbit.**
 8. **Concrete title.** Soft/abstract titles lose.
-9. **Studio Related video** (desktop Studio) → that Short’s Thursday long only — primary Short → long CTA. Never another Short / dead id. Pin not required if Related is set. Map: `orbit-shorts-related-video.mdc`.
-10. **Recut = new YouTube id.** Leave old live until remake is public, then unpublish. Do not delete.
+9. **Studio Related video pill** → **that week’s Thursday long only** (desktop Studio Related field). That is the only Short → long CTA. Never another Short. Never `/go/`. Pin not required when Related is set. See `orbit-shorts-related-video.mdc`.
+10. **No new pinned comments on Shorts.** Pin is not a substitute for Related. Long-form pins stay. Existing live Short pins may stay (do not mass-unpin / remint).
+11. **Recut = new YouTube id.** Leave old live until remake is public, then unpublish. Do not delete.
+
+### Shorts auditor FAIL (Related / pin — locked 28 Aug 2026)
+
+- **FAIL** if Related is missing, wrong week’s long, or points at another Short.
+- **FAIL** if a **new** pin is added on a new Short.
+- Do **not** FAIL grandfathered existing live Short pins.
+- Long-form pins (detail / `/go/` / book) are required as before — this FAIL block is Shorts-only.
 
 ## Longs
 
@@ -62,3 +70,4 @@ Reference length: Europa v02 · Last Star v11 (**~7–9 min**). Open/end craft: 
 - Batch-dump Shorts.
 - Stretch Shorts to ~60s to fit Street Dog’s six phases — Orbit Shorts stay 22–27s (DECLARE → ASSESS → REVEAL only).
 - Restore the old brand sting or baked subscribe outro. Older playbook lines that say “reuse brand sting + like/subscribe outro” are wrong.
+- Add new Short pins, or ship a Short without Related → that week’s Thursday long.

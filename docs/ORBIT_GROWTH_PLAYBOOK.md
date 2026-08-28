@@ -12,7 +12,7 @@
 Full checklist: `00_Brand/Channel-Setup/RETENTION_AND_GROWTH_LOCKED.md`
 
 **Retention P0:** cold open 5/15/30s · story-before-explain · Orbit experiences science · 8–12 min trust window · 4–6 acts · VO–picture lock · payoff + bigger question.  
-**Growth P0:** Shorts 3–5 discovery · curiosity-gap ends · Related+pin · pre-build vidIQ · script ≥90 · one-promise titles · no dead ends.  
+**Growth P0:** Shorts 3–5 discovery · curiosity-gap ends · Related pill only (no new Short pins) · pre-build vidIQ · script ≥90 · one-promise titles · no dead ends.  
 **Success:** impressions · CTR · AVD · APV · session time · returning viewers · Browse / Suggested / Search.
 
 ---

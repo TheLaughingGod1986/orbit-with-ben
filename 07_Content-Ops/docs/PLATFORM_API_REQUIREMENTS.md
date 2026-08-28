@@ -22,7 +22,7 @@
 | Package CLI | `npm run youtube:package` — see [YOUTUBE_PACKAGE_UPLOAD.md](./YOUTUBE_PACKAGE_UPLOAD.md) |
 | Test default privacy | `private` |
 | Orbit default path | **Data API package** (`youtube:package` / `youtube:upload` / publishing worker) |
-| Studio finish only | Title/thumb ABC · pin comment · Shorts Related · end screens/cards |
+| Studio finish only | Title/thumb ABC · pin comment (**long-form**) · Shorts Related pill (**no new Short pins**) · end screens/cards |
 | Fallback | Studio CDP only for those gaps or if OAuth/API unavailable |
 | Notes | Do not use a service account for a normal channel. Require explicit `privacyStatus` and `madeForKids`. Upload scheduled videos immediately with `publishAt` — do not wait until air time on the local worker. Reconnect OAuth after adding `force-ssl`. |
 

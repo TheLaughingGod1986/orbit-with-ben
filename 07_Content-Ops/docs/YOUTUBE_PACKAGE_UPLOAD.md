@@ -49,8 +49,9 @@ Printed in the CLI result as `studioFinish` and saved to
 | Step | Why Studio |
 |------|------------|
 | Title + thumbnail **ABC** Test & Compare | No Data API |
-| **Pin** the first comment | No official pin endpoint — **optional on Shorts** if Related is set |
-| Shorts **Related video** (SEA play-pill) | Studio only · **desktop** · required on every Short → that Short’s Thursday long |
+| **Pin** the first comment (**long-form only** going forward) | No official pin endpoint |
+| Shorts **Related video pill** → that week’s Thursday long | Studio only · **desktop** · required; **no new Short pins** (see `orbit-shorts-related-video.mdc`) |
+
 | End screen + cards (long-form) | Studio only |
 
 Use existing CDP helpers only as fallback for those Studio steps — do **not** reintroduce Studio as the primary uploader.
@@ -80,4 +81,5 @@ npm run youtube:package -- \
   --related-video-id <LONG_FORM_ID>
 ```
 
-`--related-video-id` must be **that Short’s Thursday long** (never another Short / dead id). Related still must be set in **desktop** Studio after the long is public: Content → Short → Related video → pick the long → Save. Pin is not required when Related is set. Zero `/go/` on Shorts. Longs do not get this field.
+`--related-video-id` must be **that Short’s / that week’s Thursday long** (never another Short / dead id). Related still must be set in **desktop** Studio after the long is public: Content → Short → Related video → pick the long → Save. Related pill = only Short → long CTA. Do **not** add new Short pins. Pin is not required when Related is set. Zero `/go/` on Shorts. Longs do not get this field.
+

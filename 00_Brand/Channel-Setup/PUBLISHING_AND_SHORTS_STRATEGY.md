@@ -75,7 +75,8 @@ Suggested for next Wednesday pillar
 |------|--------|
 | 4 | Publish Short #1 from the **strongest hook** or most intriguing moment |
 | 5 | Ops lock: **21:00 UK** (≈ 2 hours after the long) |
-| 6 | Related video → this week’s long-form (desktop Studio; primary Short → long CTA). Pin optional if Related is set.
+| 6 | Related video pill → this week’s long-form (**no new Short pin**; pin not required when Related is set) |
+
 
 ### Weekly rhythm — Wednesday long, then related Shorts
 

@@ -1,43 +1,54 @@
 ---
-description: Shorts Related video lock — Studio Related → that Short’s Thursday long (pinned 27 Aug 2026)
+description: Shorts → long CTA is Studio Related pill only — no new Short pins (locked 28 Aug 2026)
 alwaysApply: true
 ---
 
-# Orbit Shorts — Related video (locked 2026-08-27)
+# Orbit Shorts — Related video pill only (locked 28 Aug 2026)
 
-**Every Orbit Short** (live, scheduled, and past public) must have a YouTube Studio **Related video** set in **desktop Studio** (not mobile). That is the SEA-style play-pill under the handle. It is the **primary Short → long CTA**.
+**Every Orbit Short** (live, scheduled, and past public) must have a YouTube Studio **Related video** set in **desktop Studio** (not mobile). That SEA-style play-pill under the handle is the **primary / only Short → long CTA**.
 
-## Target
+## Do this
 
-Related video = **that Short’s Thursday long only** (the film the Short already sells).
+1. In **desktop** YouTube Studio: Content → Short → **Related video** → that Short’s / that week’s Thursday long → **Save**.
+2. Related target is **that week’s Thursday long only** — never another Short, never a different week’s film, never a dead id, never dump every Short onto one film, never `/go/`.
+3. On-screen CTA + description still name the film / parent long URL (**zero `/go/`** on Shorts). Related is the Studio funnel control; a pin is **not** a substitute and is **not required** when Related is set.
+4. Requires **Advanced features** (the card exists on this channel). Data API cannot set Related — Studio finish only. Longs do **not** get this field.
 
-- Never another Short
-- Never a dead id
-- Never dump every Short onto one film
+## Do not (new Shorts)
 
-## Week map (locked)
+- Do **not** add pinned comments on new Shorts.
+- Do **not** use a pin instead of Related.
+- Do **not** point Related at another Short.
+- Do **not** put `/go/` on Shorts.
 
-| Window | Related long id |
-|--------|-----------------|
-| Last Star week + leftovers through **2 Sep** | `REXYxuLOBoI` (**letter O**, not zero) |
-| Europa week **3–9 Sep** | `NbW5G1BpPY0` |
-| Neutron week from **10 Sep** | `Yk1tLh23rko` |
-| JWST leftovers **Sat 22–Tue 25** | `ziKBPJ6FY0U` |
-| Live leftovers (Fermi · Black Hole · Alien Worlds, etc.) | the long that Short already names |
+## Long-form pins (unchanged)
 
-## Also locked
+Long-form videos still get pins (detail, `/go/`, book). Do **not** remove those.  
+Long thumbs stay **picture + short SEA-style hook** (no Orbit · no generic CTA).
 
-- **Zero `/go/`** on Shorts
-- A **pin is NOT required** if Related video is set. Pins already live may stay
-- Longs do **not** get this field
-- Long thumbs stay **picture + short SEA-style hook** (no Orbit · no generic CTA)
+## Existing Short pins (grandfather)
 
-## How (desktop Studio only)
+Existing Short pins already live may stay. Do **not** mass-unpin. Do **not** remint to “fix” pins. Pin is **not required** when Related is set.
 
-Content → Short → **Related video** → pick the Thursday long → **Save**.
+## Related targets (week map — locked)
 
-Requires **Advanced features** (the card exists on this channel). Not available (or not reliable) on mobile Studio. Data API cannot set Related — Studio finish only.
+| Window | Thursday long | YouTube id |
+|--------|---------------|------------|
+| Last Star week + leftovers through **2 Sep** | Last Star | `REXYxuLOBoI` (letter **O**, not zero) |
+| Europa week **3–9 Sep** | Europa | `NbW5G1BpPY0` |
+| Neutron week from **10 Sep** | Neutron Star | `Yk1tLh23rko` |
+| JWST leftovers **Sat 22–Tue 25** | JWST | `ziKBPJ6FY0U` |
+| Live leftovers (Fermi · Black Hole · Alien Worlds, etc.) | the long that Short already names | — |
 
-## Ship gate
+Update this table when the next Thursday long locks; always use **that week’s** long only.
 
-Do **not** mark a Short funnel-complete, auditor-shipped, or Studio-finished until Related → that Short’s Thursday long is confirmed. See `orbit-shorts-punch-first.mdc` · `orbit-auditor-ship-gate.mdc` · `00_Brand/Channel-Setup/SHORTS_FUNNEL_AND_CROSSPOST.md`.
+## Auditor (ship gate)
+
+- Shorts **FAIL** if Related is missing, wrong target, or points at another Short.
+- New Shorts **FAIL** if a **new** pin is added.
+- Do **not** FAIL existing live Short pins (grandfather).
+- Pin is not a substitute for Related — missing Related still FAILs even if a pin exists.
+
+Do **not** mark a Short funnel-complete, auditor-shipped, or Studio-finished until Related → that Short’s Thursday long is confirmed.
+
+Canonical companions: `orbit-auditor-ship-gate.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-youtube-api-upload.mdc` · `00_Brand/Channel-Setup/SHORTS_FUNNEL_AND_CROSSPOST.md`

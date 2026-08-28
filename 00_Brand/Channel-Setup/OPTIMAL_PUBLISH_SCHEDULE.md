@@ -119,7 +119,7 @@ See `CONTENT_FLYWHEEL_TEMPLATE.md` + `RELEASE_WEEK_CHECKLIST.md`.
 - One fascinating fact / mystery / question
 - Standalone value
 - End with curiosity (soft funnel — never an ad)
-- Related video → **this** Thursday long once public (desktop Studio; required). Pin optional if Related is set.
+- Related video pill → **this** Thursday long once public (desktop Studio; required). **No new Short pins.**
 
 ---
 

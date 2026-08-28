@@ -64,7 +64,7 @@ Growth System v2 · topic score · cluster plan · vidIQ audit · script ≥90 �
 1. Punch-first cuts **22–27s** from the locked film / open-world plate (first-and-last-frame loop).
 2. Picture in **1s**; captions the whole way; **exact listing title** on screen; CTA that week’s **Thursday film id**.
 3. Custom picture thumb — **no Orbit**. Description = film title + parent long URL only. **Zero** `/go/`.
-4. Desktop Studio **Related video** → that Short’s Thursday long only (required; pin optional). See `orbit-shorts-related-video.mdc`.
+4. Desktop Studio **Related video pill** → that week’s Thursday long only (required; **no new Short pins**). See `orbit-shorts-related-video.mdc`.
 5. Abort if any Short ≥40s.
 
 ### E. Long thumbs

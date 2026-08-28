@@ -6,7 +6,7 @@
 
 **YouTube Data API v3 is the default** for Orbit uploads and native schedules (`privacyStatus=private` + `publishAt`).
 
-YouTube Studio CDP / Playwright is **fallback only** for API gaps (title/thumb ABC, pin comment, Shorts Related, end screens).
+YouTube Studio CDP / Playwright is **fallback only** for API gaps (title/thumb ABC, long-form pin comment, Shorts Related pill, end screens). **No new Short pins** (28 Aug 2026).
 
 ### Package upload (preferred for episodes)
 
