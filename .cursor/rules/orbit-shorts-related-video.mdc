@@ -1,0 +1,48 @@
+---
+description: Shorts → long CTA is Studio Related pill only — no new Short pins (locked 28 Aug 2026)
+alwaysApply: true
+---
+
+# Orbit Shorts — Related video pill only (locked 28 Aug 2026)
+
+**Going forward:** every **new** Short’s Short → long CTA is the **Studio Related video pill** pointing at **that week’s Thursday long**. That is the only Short → long CTA.
+
+## Do this (new Shorts)
+
+1. In **desktop** YouTube Studio, set **Related video** → that week’s Thursday long.
+2. Related target is **that week’s Thursday long only** — never another Short, never a different week’s film, never `/go/`.
+3. On-screen CTA + description still name the film / parent long URL (zero `/go/` on Shorts). Related is the Studio funnel control; a pin is **not** a substitute.
+
+## Do not (new Shorts)
+
+- Do **not** add pinned comments on new Shorts.
+- Do **not** use a pin instead of Related.
+- Do **not** point Related at another Short.
+- Do **not** put `/go/` on Shorts.
+
+## Long-form pins (unchanged)
+
+Long-form videos still get pins (detail, `/go/`, book). Do **not** remove those.
+
+## Existing Short pins (grandfather)
+
+Existing Short pins already live may stay. Do **not** mass-unpin. Do **not** remint to “fix” pins.
+
+## Related targets (current window)
+
+| Week | Thursday long | YouTube id |
+|------|---------------|------------|
+| Through 2 Sep | Last Star | `REXYxuLOBoI` (letter **O**, not zero) |
+| From 3 Sep | Europa | `NbW5G1BpPY0` |
+| Neutron week | Neutron Star | `Yk1tLh23rko` |
+
+Update this table when the next Thursday long locks; always use **that week’s** long only.
+
+## Auditor (ship gate)
+
+- New Shorts **FAIL** if Related is missing, wrong target, or points at another Short.
+- New Shorts **FAIL** if a **new** pin is added.
+- Do **not** FAIL existing live Short pins (grandfather).
+- Pin is not a substitute for Related — missing Related still FAILs even if a pin exists.
+
+Canonical companions: `orbit-auditor-ship-gate.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-youtube-api-upload.mdc`

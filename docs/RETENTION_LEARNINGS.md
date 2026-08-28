@@ -27,7 +27,7 @@ Institutional memory for Orbit With Ben. Update when analytics are imported or S
 
 ### Do / Don’t (locked)
 
-**Do:** punch-first VO · first-frame drama · visual change ≤3s · Orbit in-story · soft CTA · VO–picture lock · pre-build vidIQ · 10–12 min longs (V013+) · chapter teach-points · Related+pin Shorts funnel  
+**Do:** punch-first VO · first-frame drama · visual change ≤3s · Orbit in-story · soft CTA · VO–picture lock · pre-build vidIQ · 10–12 min longs (V013+) · chapter teach-points · Related pill Shorts funnel (no new Short pins)  
 **Don’t:** welcome intros · fearbait titles · 45–60s stretched Shorts · schedule thrash · niche pivot on &lt;1k views · generic B-roll under specific VO  
 
 **Going forward (full list):** `00_Brand/Channel-Setup/RETENTION_AND_GROWTH_LOCKED.md`
@@ -41,7 +41,7 @@ Institutional note: Ben confirmed these as standing practice.
 | Priority | Practice |
 |----------|----------|
 | P0 retention | First 1.5s Shorts / ≤20s long paradox · 30–60s curiosity resets · VO–picture · teach per chapter · payoff before outro |
-| P0 growth | Shorts discovery 22–30s · pre-build vidIQ · thumb=title · Related+pin · soft follow CTA |
+| P0 growth | Shorts discovery 22–30s · pre-build vidIQ · thumb=title · Related pill only · soft follow CTA |
 | P1 | Weekly scorecard · series rhythm · brand/Orbit reuse only · no early niche pivot |
 
 ## Diagnosis template (paste after each Short review)
@@ -77,7 +77,7 @@ Conclusion: topic viable? / open rewrite? / kill?
 | BH cluster weak | 5 BH Shorts · median **5** views (top 56) | Neutron Star Shorts = literal objects (teaspoon / stretch / ring), not remnant wallpaper |
 | Cluster rank | Alien Worlds **337** · JWST **313** · Last Star 1-Short **122** · BH **77** · Fermi **73** | Double down on visual worlds; don’t overfit one Short |
 | Orbit-in-video is fine | 20 Shorts, Orbit-led median 47 vs scenery 20.5, r=+0.09 | Scene-first = **covers/thumbs**, not content |
-| Funnel not converting yet | JWST Shorts 17–89, long 7 | Related+pin stay mandatory; first 15s of the long is the real gap |
+| Funnel not converting yet | JWST Shorts 17–89, long 7 | Related pill stays mandatory (no new Short pins); first 15s of the long is the real gap |
 
 ### Long-form
 

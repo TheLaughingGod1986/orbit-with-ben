@@ -1,8 +1,8 @@
 # Orbit Shorts — funnel metrics, monster hooks & cross-post timing
 
 **Status:** Ops lock for kinetic-caption v02 Shorts  
-**Updated:** 2026-08-02  
-**Related:** `PUBLISHING_AND_SHORTS_STRATEGY.md` · `TikTok/SHORTS_ONSCREEN_TEXT_STYLE.md`
+**Updated:** 2026-08-28 — Related pill only / no new Short pins  
+**Related:** `PUBLISHING_AND_SHORTS_STRATEGY.md` · `TikTok/SHORTS_ONSCREEN_TEXT_STYLE.md` · `.cursor/rules/orbit-shorts-related-video.mdc`
 
 ---
 
@@ -13,11 +13,11 @@
 | 1 | Kinetic burn-in (yellow/white lowercase) | First ~8s of picture |
 | 2 | Soft end CTA `watch the full film →` | Last ~4s burn-in |
 | 3 | Description “Watch the full film: youtu.be/…” | YT description |
-| 4 | Related video → pillar long | Studio related |
-| 5 | Pinned comment “Full film here → …” | YT comments |
-| 6 | TikTok caption “Full film on YouTube.” | TT description (no raw URL spam) |
+| 4 | **Related video pill** → that week’s Thursday long | Desktop Studio Related (only Short → long CTA) |
 
-If any layer is missing, treat the Short as **not funnel-complete**.
+**Locked 28 Aug 2026:** no new pinned comments on Shorts. Related pill only. Long-form pins stay. Existing live Short pins may stay (do not mass-unpin / remint). See `.cursor/rules/orbit-shorts-related-video.mdc`.
+
+If Related is missing, treat the Short as **not funnel-complete** (auditor FAIL).
 
 ---
 
@@ -30,8 +30,8 @@ Track in YouTube Analytics (Shorts) + TikTok Studio:
 | **3s / hooked views** | Strong relative to impressions | Rewrite punch-first beat; stronger cold open |
 | **Avg view duration %** | ≥ 70% on ≤45s cuts | Trim mid; cut explanation before CTA |
 | **Swipe / skip early** | Spike before beat 2 | Monster hook must land by 1.5s |
-| **CTR to related / long** | Any measurable related views | Confirm related + pin + CTA text |
-| **Long-form from Shorts** | Traffic source “Shorts” on pillar | Pin + description link required |
+| **CTR to related / long** | Any measurable related views | Confirm Related pill + on-screen CTA + description URL |
+| **Long-form from Shorts** | Traffic source “Shorts” on pillar | Related + description link required |
 | **Subs from Shorts** | Non-zero on hero hooks | Lead cluster with monster hook Short |
 
 Log weekly in `00_Brand/Channel-Setup/audits/` as `SHORTS_FUNNEL_CHECK_YYYY-MM-DD.md`.
@@ -73,18 +73,20 @@ Automation notes:
 - YT replace: `audits/_replace_shorts_v02_youtube.py`
 - TT replace: `TikTok/_replace_scheduled_v02_cdp.py`
 - TT dupe cleanup: `TikTok/_delete_v01_dupes_cdp.py`
-- Pin CTAs: `audits/_pin_all_shorts_fullfilm_cta.py`
+- Pin CTAs (long-form only going forward): `audits/_pin_all_shorts_fullfilm_cta.py` — **do not** use to add new Short pins after 28 Aug 2026 lock
 
 ---
 
-## Pin / comment blocker
+## Pin / comment blocker (legacy Short pins)
 
 YouTube **rejects comments on Private videos** (“Comments are not supported on private videos”).
 
-Before batch-pinning:
+**Going forward (28 Aug 2026):** do **not** add new Short pins. Related pill only. Existing live Short pins may stay.
+
+Before any legacy pin maintenance (grandfathered only):
 
 1. Studio → each Short → set **Public** (live cluster) or **Schedule** (future) — never leave replace uploads as Private drafts  
-2. Then run `audits/_visibility_and_pin_shorts.py` or `_pin_all_shorts_fullfilm_cta.py`
+2. Then run helpers only if Ben explicitly asks to touch an existing pin — default is leave them alone
 
 ---
 
@@ -92,4 +94,4 @@ Before batch-pinning:
 
 1. `TikTok/auto/_sync_shorts_caption_beats.py` — Scribe word timestamps for each Short hook  
 2. Rebuild `*_shorts_v02.py` — loads `10_Shorts/07_Caption-Sync/*_beats.json` when present  
-3. Re-replace scheduled assets only (public already-live cuts: pin + related first; replace if burn-in materially changes)
+3. Re-replace scheduled assets only (public already-live cuts: Related pill first; replace if burn-in materially changes)

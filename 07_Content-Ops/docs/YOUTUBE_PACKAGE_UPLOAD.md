@@ -49,8 +49,8 @@ Printed in the CLI result as `studioFinish` and saved to
 | Step | Why Studio |
 |------|------------|
 | Title + thumbnail **ABC** Test & Compare | No Data API |
-| **Pin** the first comment | No official pin endpoint |
-| Shorts **Related / watch next** | Studio only |
+| **Pin** the first comment (**long-form only** going forward) | No official pin endpoint |
+| Shorts **Related video pill** → that week’s Thursday long | Studio only; **no new Short pins** (see `orbit-shorts-related-video.mdc`) |
 | End screen + cards (long-form) | Studio only |
 
 Use existing CDP helpers only as fallback for those Studio steps — do **not** reintroduce Studio as the primary uploader.
@@ -78,4 +78,4 @@ npm run youtube:package -- \
   --related-video-id <LONG_FORM_ID>
 ```
 
-Related still must be confirmed in Studio after the long is public.
+Related still must be confirmed in **desktop** Studio after the long is public. Related pill = only Short → long CTA. Do **not** add new Short pins.

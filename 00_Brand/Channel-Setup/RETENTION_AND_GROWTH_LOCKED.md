@@ -28,12 +28,12 @@ Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
 ## P0 — Growth
 
 11. **Shorts = discovery engine** — **4–8** per long; **22–27s**; picture in 1s · picture thumb no Orbit · exact listing title on screen · CTA that week’s Thursday id · curiosity-gap end.  
-12. **Related + pinned full-film** on every Short once the long is public.  
+12. **Related video pill only** on every new Short → that week’s Thursday long (desktop Studio Related). **No new Short pins.** Long-form pins stay. Existing live Short pins may stay (do not mass-unpin / remint). See `.cursor/rules/orbit-shorts-related-video.mdc`.  
 13. **Pre-build vidIQ audit (blocking)** — keywords · title ≥90 · outliers → then script.  
 14. **Script reviewer ≥ 90 / 100** before VO / picture gen.  
 15. **Title = one promise** · prefer ≤~60 chars · **no series suffix** on every upload.  
 16. **Long thumb = picture + SEA-style hook** — **no Orbit**, no generic CTA. Short thumb = custom picture, **no Orbit**.  
-17. **No dead ends** — end screen · cards · pin · description → another Orbit documentary.  
+17. **No dead ends** — end screen · cards · long pin · description → another Orbit documentary; Shorts use Related pill only.  
 18. **Soft “follow for the next mystery”** at end only — never interrupt the hook.
 
 ## P1 — Habits
@@ -70,12 +70,12 @@ Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
 
 - [ ] 22–30s standalone micro-story  
 - [ ] Strongest-fact open · curiosity-gap end  
-- [ ] Related + pin when long is public  
+- [ ] Related video pill → that week’s Thursday long (no new Short pin)  
 
 **Before publish**
 
 - [ ] `templates/PRODUCTION_CHECKLIST_V2.md` complete  
-- [ ] End screen · cards · pin · description links  
+- [ ] End screen · cards · long pin · description links · Shorts Related pill
 
 **After publish**
 
