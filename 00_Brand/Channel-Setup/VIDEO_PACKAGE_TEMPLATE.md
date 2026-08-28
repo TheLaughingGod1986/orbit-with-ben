@@ -147,8 +147,8 @@ Copy `CONTENT_FLYWHEEL_TEMPLATE.md` → `11_Distribution/CONTENT_FLYWHEEL.md` an
 - [ ] Thumb readable at mobile size  
 - [ ] Long scheduled Thu **19:00** UK before any Short goes public  
 - [ ] Uploaded via **Data API package** (`07_Content-Ops` → `npm run youtube:package`) — not Studio as primary  
-- [ ] Studio finish done: ABC Test & Compare · pin comment · end screen/cards  
-- [ ] Short #1 Related → this long · pin when long is public  
+- [ ] Studio finish done: ABC Test & Compare · pin comment (long) · end screen/cards  
+- [ ] Short #1 Related video pill → this week’s Thursday long (no new Short pin) 
 - [ ] Soft CTAs only (no ad voice)  
 - [ ] Uploaded to `@OrbitWithBen` only  
 - [ ] `RELEASE_WEEK_CHECKLIST.md` ready for ship week  
