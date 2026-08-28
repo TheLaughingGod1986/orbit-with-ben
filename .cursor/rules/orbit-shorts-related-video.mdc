@@ -5,13 +5,14 @@ alwaysApply: true
 
 # Orbit Shorts — Related video pill only (locked 28 Aug 2026)
 
-**Going forward:** every **new** Short’s Short → long CTA is the **Studio Related video pill** pointing at **that week’s Thursday long**. That is the only Short → long CTA.
+**Every Orbit Short** (live, scheduled, and past public) must have a YouTube Studio **Related video** set in **desktop Studio** (not mobile). That SEA-style play-pill under the handle is the **primary / only Short → long CTA**.
 
-## Do this (new Shorts)
+## Do this
 
-1. In **desktop** YouTube Studio, set **Related video** → that week’s Thursday long.
-2. Related target is **that week’s Thursday long only** — never another Short, never a different week’s film, never `/go/`.
-3. On-screen CTA + description still name the film / parent long URL (zero `/go/` on Shorts). Related is the Studio funnel control; a pin is **not** a substitute.
+1. In **desktop** YouTube Studio: Content → Short → **Related video** → that Short’s / that week’s Thursday long → **Save**.
+2. Related target is **that week’s Thursday long only** — never another Short, never a different week’s film, never a dead id, never dump every Short onto one film, never `/go/`.
+3. On-screen CTA + description still name the film / parent long URL (**zero `/go/`** on Shorts). Related is the Studio funnel control; a pin is **not** a substitute and is **not required** when Related is set.
+4. Requires **Advanced features** (the card exists on this channel). Data API cannot set Related — Studio finish only. Longs do **not** get this field.
 
 ## Do not (new Shorts)
 
@@ -22,27 +23,32 @@ alwaysApply: true
 
 ## Long-form pins (unchanged)
 
-Long-form videos still get pins (detail, `/go/`, book). Do **not** remove those.
+Long-form videos still get pins (detail, `/go/`, book). Do **not** remove those.  
+Long thumbs stay **picture + short SEA-style hook** (no Orbit · no generic CTA).
 
 ## Existing Short pins (grandfather)
 
-Existing Short pins already live may stay. Do **not** mass-unpin. Do **not** remint to “fix” pins.
+Existing Short pins already live may stay. Do **not** mass-unpin. Do **not** remint to “fix” pins. Pin is **not required** when Related is set.
 
-## Related targets (current window)
+## Related targets (week map — locked)
 
-| Week | Thursday long | YouTube id |
-|------|---------------|------------|
-| Through 2 Sep | Last Star | `REXYxuLOBoI` (letter **O**, not zero) |
-| From 3 Sep | Europa | `NbW5G1BpPY0` |
-| Neutron week | Neutron Star | `Yk1tLh23rko` |
+| Window | Thursday long | YouTube id |
+|--------|---------------|------------|
+| Last Star week + leftovers through **2 Sep** | Last Star | `REXYxuLOBoI` (letter **O**, not zero) |
+| Europa week **3–9 Sep** | Europa | `NbW5G1BpPY0` |
+| Neutron week from **10 Sep** | Neutron Star | `Yk1tLh23rko` |
+| JWST leftovers **Sat 22–Tue 25** | JWST | `ziKBPJ6FY0U` |
+| Live leftovers (Fermi · Black Hole · Alien Worlds, etc.) | the long that Short already names | — |
 
 Update this table when the next Thursday long locks; always use **that week’s** long only.
 
 ## Auditor (ship gate)
 
-- New Shorts **FAIL** if Related is missing, wrong target, or points at another Short.
+- Shorts **FAIL** if Related is missing, wrong target, or points at another Short.
 - New Shorts **FAIL** if a **new** pin is added.
 - Do **not** FAIL existing live Short pins (grandfather).
 - Pin is not a substitute for Related — missing Related still FAILs even if a pin exists.
 
-Canonical companions: `orbit-auditor-ship-gate.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-youtube-api-upload.mdc`
+Do **not** mark a Short funnel-complete, auditor-shipped, or Studio-finished until Related → that Short’s Thursday long is confirmed.
+
+Canonical companions: `orbit-auditor-ship-gate.mdc` · `orbit-shorts-punch-first.mdc` · `orbit-youtube-api-upload.mdc` · `00_Brand/Channel-Setup/SHORTS_FUNNEL_AND_CROSSPOST.md`

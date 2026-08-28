@@ -25,7 +25,7 @@ Fill **after** the long-form script is locked. Publish social only once the long
 | 6 | Tue | 12:30 | | | | |
 | 7 | Wed *(opt)* | 12:30 | | | | |
 
-Rules: standalone mini-doc · hook ≤2s · Related → this long · no hard sell.
+Rules: standalone mini-doc · hook ≤2s · Related video pill → this Thursday long (desktop Studio) · no new Short pins · no hard sell.
 
 ---
 

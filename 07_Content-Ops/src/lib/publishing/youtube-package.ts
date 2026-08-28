@@ -251,10 +251,10 @@ export function buildStudioFinishChecklist(input: {
         : input.relatedVideoId
           ? "pending_studio"
           : "pending_studio",
-    title: "Related / watch next (full film)",
+    title: "Related video pill (full film)",
     detail: input.relatedVideoId
-      ? `Set Related video to ${input.relatedVideoId} in Studio (Shorts)`
-      : "Set Related → parent long-form in Studio after long is public",
+      ? `Desktop Studio: set Related video to ${input.relatedVideoId} (that week’s Thursday long only). No new Short pins.`
+      : "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
     studioUrlHint: studioEditUrl || undefined,
   });
 

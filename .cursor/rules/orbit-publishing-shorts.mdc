@@ -10,7 +10,8 @@ alwaysApply: false
 # Publishing rules (Orbit with Ben)
 
 Canonical cadence: `00_Brand/Channel-Setup/CHANNEL_PUBLISH_CADENCE.md`  
-Shorts duration lock: `.cursor/rules/orbit-shorts-punch-first.mdc` (always on)
+Shorts duration lock: `.cursor/rules/orbit-shorts-punch-first.mdc` (always on)  
+Related video lock: `.cursor/rules/orbit-shorts-related-video.mdc` (always on)
 
 | Slot | Time UK |
 |------|--------:|
@@ -23,5 +24,5 @@ Shorts duration lock: `.cursor/rules/orbit-shorts-punch-first.mdc` (always on)
 3. Cluster: **3–5** strong Shorts per long; weaker/overlapping stays private reserve.
 4. Every Short: punch-first **~20–28s**, one idea, curiosity ending, soft CTA only.
 5. **Never ship or schedule a Short ≥40s** — rebuild via new upload + supersede (see punch-first rule).
-6. Every new Short: Studio **Related video pill** → that week’s Thursday long only. **No new Short pins** (`orbit-shorts-related-video.mdc`).
+6. Every Short (live / scheduled / past public): Studio **Related video pill** → that week’s Thursday long only. **No new Short pins**; pin not required when Related is set. Zero `/go/` (`orbit-shorts-related-video.mdc`).
 7. Schedule SoT: `YOUTUBE_CANONICAL_LIVE_SCHEDULE.json`. Ops card: `CHANNEL_PUBLISH_CADENCE.md`.

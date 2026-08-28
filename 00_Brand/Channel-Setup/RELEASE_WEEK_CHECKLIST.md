@@ -33,8 +33,10 @@ Timezone: **Europe/London**
 - [ ] Strongest-fact open + curiosity-gap end
 - [ ] VO + captions + end cards done
 - [ ] All Shorts uploaded private / scheduled
-- [ ] Short #1 Related video pill → this long (once long public; **no new Short pin**)
-- [ ] Remaining Shorts Related video pill → this long (**no new Short pins**)
+- [ ] Short #1 Related video pill → this Thursday long (once long public; **no new Short pin**)
+- [ ] Remaining Shorts Related video pill → this Thursday long only (**no new Short pins**; never another Short / dead id)
+- [ ] Zero `/go/` on Shorts
+
 
 ### Distribution
 
@@ -56,6 +58,7 @@ Timezone: **Europe/London**
 
 - [ ] Publish strongest-hook Short
 - [ ] Related video pill → long confirmed (**no new Short pin**)
+
 - [ ] Soft funnel line present
 - [ ] X post #1 + Facebook #1 *(after long is public)*
 
@@ -65,6 +68,7 @@ Timezone: **Europe/London**
 
 - [ ] Short #2 live
 - [ ] Related video pill → long (**no new Short pin**)
+
 - [ ] Reddit discussion posted *(if planned today)*
 - [ ] Community poll *(if planned today)*
 

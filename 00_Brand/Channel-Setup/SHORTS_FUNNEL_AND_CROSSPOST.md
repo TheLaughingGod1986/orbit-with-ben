@@ -2,6 +2,7 @@
 
 **Status:** Ops lock for kinetic-caption v02 Shorts  
 **Updated:** 2026-08-28 — Related pill only / no new Short pins  
+
 **Related:** `PUBLISHING_AND_SHORTS_STRATEGY.md` · `TikTok/SHORTS_ONSCREEN_TEXT_STYLE.md` · `.cursor/rules/orbit-shorts-related-video.mdc`
 
 ---
@@ -15,9 +16,12 @@
 | 3 | Description “Watch the full film: youtu.be/…” | YT description |
 | 4 | **Related video pill** → that week’s Thursday long | Desktop Studio Related (only Short → long CTA) |
 
-**Locked 28 Aug 2026:** no new pinned comments on Shorts. Related pill only. Long-form pins stay. Existing live Short pins may stay (do not mass-unpin / remint). See `.cursor/rules/orbit-shorts-related-video.mdc`.
+**Locked 28 Aug 2026:** no new pinned comments on Shorts. Related pill only. Pin not required when Related is set. Long-form pins stay. Existing live Short pins may stay (do not mass-unpin / remint). See `.cursor/rules/orbit-shorts-related-video.mdc`.
 
-If Related is missing, treat the Short as **not funnel-complete** (auditor FAIL).
+Week map: Last Star leftovers through 2 Sep → `REXYxuLOBoI` · Europa 3–9 Sep → `NbW5G1BpPY0` · Neutron from 10 Sep → `Yk1tLh23rko` · JWST leftovers Sat 22–Tue 25 → `ziKBPJ6FY0U` · live leftovers → the long they already name. Zero `/go/` on Shorts. Desktop Studio only (Advanced features). Longs do not get this field.
+
+If Related is missing, treat the Short as **not funnel-complete** (auditor FAIL). A pin alone does **not** substitute.
+
 
 ---
 
@@ -31,7 +35,8 @@ Track in YouTube Analytics (Shorts) + TikTok Studio:
 | **Avg view duration %** | ≥ 70% on ≤45s cuts | Trim mid; cut explanation before CTA |
 | **Swipe / skip early** | Spike before beat 2 | Monster hook must land by 1.5s |
 | **CTR to related / long** | Any measurable related views | Confirm Related pill + on-screen CTA + description URL |
-| **Long-form from Shorts** | Traffic source “Shorts” on pillar | Related + description link required |
+| **Long-form from Shorts** | Traffic source “Shorts” on pillar | Related + description link required (no new Short pins) |
+
 | **Subs from Shorts** | Non-zero on hero hooks | Lead cluster with monster hook Short |
 
 Log weekly in `00_Brand/Channel-Setup/audits/` as `SHORTS_FUNNEL_CHECK_YYYY-MM-DD.md`.

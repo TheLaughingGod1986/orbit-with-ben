@@ -64,7 +64,7 @@ Default ops volume: **6 Shorts / long** (acceptable range **5–7**).
 | **Thu 21 Aug · 19:00** | **V003 — Alien Worlds long** | Scheduled · `b8-X_FyJnHM` |
 | **21–26 Aug · 12:30** | V003 Shorts ×6 | Scheduled (`aX_7Qg_qzyo` … `i18OD5Ab748`) |
 
-Confirm every schedule on Studio `/video/{id}/edit`. Every Short: Related → public long + pin full-film comment before public.
+Confirm every schedule on Studio `/video/{id}/edit`. Every Short: desktop Studio **Related video pill** → that week’s Thursday long (required). **No new Short pins**; pin not required when Related is set. Zero `/go/`. Map: `.cursor/rules/orbit-shorts-related-video.mdc`.
 
 ---
 

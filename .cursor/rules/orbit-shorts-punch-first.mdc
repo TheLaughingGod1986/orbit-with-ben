@@ -24,12 +24,13 @@ Winner pattern: *We Found Planets Made of Diamond* / live Three Suns remake (`MD
 5. Length **22–27s** (never ≥40s).
 6. End CTA on screen points at **that week’s Thursday film id**; description = film title + parent long URL only; **zero `/go/`**.
 7. **Custom picture thumb — no Orbit.**
+8. **Studio Related video** → that Short’s Thursday long only (desktop Studio; SEA play-pill). See `orbit-shorts-related-video.mdc`. Pin is **not** required when Related is set.
 
 ## Build rules
 
 1. **Punch-first open** — strongest fact / question in 0–1.5s (captions reinforce the punch).
 2. **One idea** — curiosity-gap end; soft CTA last ~3s only.
-3. **Exact parent long** — description link + Studio **Related video pill** → that week’s Thursday long only. **No new Short pins** (longs still get pins; existing Short pins may stay). See `orbit-shorts-related-video.mdc`.
+3. **Exact parent long** — description link + Studio **Related video pill** → that week’s Thursday long only. **No new Short pins** (longs still get pins; existing Short pins may stay). Pin not required when Related is set. See `orbit-shorts-related-video.mdc`.
 4. Prefer builders named `*_punch_*_v03.py` / `*_punch_*_v01.py` over legacy 40–45s launch cuts.
 
 ## Replace rule (YouTube cannot swap files on an ID)

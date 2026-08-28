@@ -50,10 +50,13 @@ Printed in the CLI result as `studioFinish` and saved to
 |------|------------|
 | Title + thumbnail **ABC** Test & Compare | No Data API |
 | **Pin** the first comment (**long-form only** going forward) | No official pin endpoint |
-| Shorts **Related video pill** → that week’s Thursday long | Studio only; **no new Short pins** (see `orbit-shorts-related-video.mdc`) |
+| Shorts **Related video pill** → that week’s Thursday long | Studio only · **desktop** · required; **no new Short pins** (see `orbit-shorts-related-video.mdc`) |
+
 | End screen + cards (long-form) | Studio only |
 
 Use existing CDP helpers only as fallback for those Studio steps — do **not** reintroduce Studio as the primary uploader.
+
+Canonical Related lock: `.cursor/rules/orbit-shorts-related-video.mdc` · `00_Brand/Channel-Setup/SHORTS_FUNNEL_AND_CROSSPOST.md`.
 
 ## Package layout
 
@@ -78,4 +81,5 @@ npm run youtube:package -- \
   --related-video-id <LONG_FORM_ID>
 ```
 
-Related still must be confirmed in **desktop** Studio after the long is public. Related pill = only Short → long CTA. Do **not** add new Short pins.
+`--related-video-id` must be **that Short’s / that week’s Thursday long** (never another Short / dead id). Related still must be set in **desktop** Studio after the long is public: Content → Short → Related video → pick the long → Save. Related pill = only Short → long CTA. Do **not** add new Short pins. Pin is not required when Related is set. Zero `/go/` on Shorts. Longs do not get this field.
+

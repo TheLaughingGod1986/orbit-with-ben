@@ -42,4 +42,5 @@ Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md`
 - [ ] VO–picture gate QA passed
 - [ ] Studio finish items done after API upload (ABC if long · Related pill on Shorts — no new Short pins)
 
+
 **Ship only when every box is checked.**
