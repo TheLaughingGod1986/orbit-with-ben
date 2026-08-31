@@ -3,17 +3,19 @@
 Timezone: **Europe/London**  
 Canonical strategy: `PUBLISHING_AND_SHORTS_STRATEGY.md`  
 Source of truth: `OPTIMAL_PUBLISH_SCHEDULE.json`  
+House + UAT/QA scoring bible: `ORBIT_HOUSE_AND_UAT_BIBLE.md` (locked 31 Aug 2026)  
 Latest audit: `audits/CHANNEL_AUDIT_2026-08-25.md`  
-Updated: **2026-08-25**
+Updated: **2026-08-31**
 
 ## Cadence rule
 
 | Cadence | Slot | Time UK | Why |
 |---------|------|---------|-----|
-| **1 long-form / week** | **Thursday** | **19:00** | Pillar first · UK evening · US afternoon |
-| **5–7 Shorts / week** | **Thu evening → Wed** | **21:00** (Day 1) · **12:30** (Days 2–7) | Support the pillar · midday discovery |
+| **1 long-form / week** | **Thursday** | **18:00** Premiere | Pillar first · UK evening (locked house bible 31 Aug) |
+| **5–7 Shorts / week** | **Thu evening → Wed** | **20:00** launch Short · **11:30** supporting | Support the pillar · midday discovery |
 
-**Cluster:** Long first → Short #1 after 1–3h → one Short per day for Days 2–7.
+**Cluster:** Long first → Short #1 after 1–3h → one Short per day for Days 2–7.  
+That week’s Shorts are punches from **that Thursday film only**. Studio Related → that long only. Zero `/go/` on Shorts. No new Short pins.
 
 Never publish a teaser Short before the long is public.  
 Never dump the full Shorts cluster on Day 1.  
@@ -24,7 +26,7 @@ Never use fearbait titles (even if vidIQ scores them higher).
 ## Cold-start override (until ≥500 views or ≥20 subs)
 
 From audit **2026-08-25**: public Shorts still ~**30×** longs (~939 vs ~31 lifetime views). Punch length is fixed; wonder Shorts win; live longs stay cold.  
-→ Keep daily Short support. Judge topics by Short velocity + stayed% (Studio refresh needed). Next to **make:** **007 Neutron Star at 7–9 min** (not Moon / Simulation). Next to **air:** Last Star `REXYxuLOBoI` (Thu 27 Aug) · Europa `NbW5G1BpPY0` after.
+→ Keep daily Short support. Judge topics by Short velocity + stayed% (Studio refresh needed). Keepers target **+2 net/week**; review Europa week **10 Sep**. Do not remint Last Star leftovers. **Air window:** Last Star `REXYxuLOBoI` through Wed 2 Sep · Europa `NbW5G1BpPY0` Premiere Thu 3 Sep 18:00 · Neutron `Yk1tLh23rko` Premiere Thu 10 Sep 18:00. Next to **make:** **007 Neutron Star at 7–9 min** (not Moon / Simulation).
 
 Historical note (2026-08-01 PM): Shorts ~100 / peak VPH ~53 vs long 5; BH then scheduled as `n7CbJrOCnU0` — live recut id is now `3xrxdmaOwJI`.
 
@@ -35,17 +37,17 @@ Re-run Studio / `vidiq_subscriber_insights` before moving clocks.
 ## Weekly pattern
 
 ```
-Thu 19:00  →  Long-form (pillar)
-Thu 21:00  →  Short #1 (strongest hook)
-Fri 12:30  →  Short #2
-Sat 12:30  →  Short #3
-Sun 12:30  →  Short #4
-Mon 12:30  →  Short #5
-Tue 12:30  →  Short #6
-Wed 12:30  →  Short #7 (optional) + schedule next pillar
+Thu 18:00  →  Long-form Premiere (pillar · 7–9 min)
+Thu 20:00  →  Short #1 (strongest hook)
+Fri 11:30  →  Short #2
+Sat 11:30  →  Short #3
+Sun 11:30  →  Short #4
+Mon 11:30  →  Short #5
+Tue 11:30  →  Short #6
+Wed 11:30  →  Short #7 (optional) + schedule next pillar
 ```
 
-Default ops volume: **6 Shorts / long** (acceptable range **5–7**).
+Default ops volume: **6 Shorts / long** (acceptable range **5–7**). Slot times match `.cursor/rules/orbit-publishing-shorts.mdc`.
 
 ---
 
