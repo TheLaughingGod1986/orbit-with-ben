@@ -34,7 +34,7 @@ Gates: script reviewer (≥90) · Orbit Auditor · `templates/PRODUCTION_CHECKLI
 13. **Pre-build vidIQ audit (blocking)** — keywords · title ≥90 · outliers → then script.  
 14. **Script reviewer ≥ 90 / 100** before VO / picture gen.  
 15. **Title = one promise** · prefer ≤~60 chars · **no series suffix** on every upload.  
-16. **Long thumb = picture + SEA/HOTU-style hook** (white on black dead space) — **no Orbit**, no generic CTA. Short thumb = custom picture, **no Orbit**; contrast + centre-safe crop; FAIL cyan-on-blue / grey-ice outline (`ORBIT_HOUSE_AND_UAT_BIBLE.md`).  
+16. **Long thumb = picture + SEA/HOTU-style hook** (white on black dead space) — **no Orbit**, no generic CTA. Short thumb = custom picture, **no Orbit**; contrast + vertical-centre clip gate (both hook lines survive Studio preview + Shorts-list 16:9 crop); FAIL cyan-on-blue / grey-ice outline / clipped lines (`ORBIT_HOUSE_AND_UAT_BIBLE.md`).  
 17. **No dead ends** — end screen · cards · long pin · description → another Orbit documentary; Shorts use Related pill only.  
 18. **Soft “follow for the next mystery”** at end only — never interrupt the hook.
 

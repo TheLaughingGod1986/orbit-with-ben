@@ -67,23 +67,34 @@ Steal from MelodySheep, History of the Universe, SEA, Kurzgesagt — **not a cop
 
 ## Thumbs (UAT gate)
 
-PASS thumbs **only** on: contrast + crop + no Orbit + distinct plate.
+PASS thumbs **only** on: contrast + crop + no Orbit + distinct plate + **no clipped hook lines**.
 
 | Check | PASS | FAIL |
 |-------|------|------|
 | Contrast | White (optional **one** yellow word) on dark/black dead space or a black plate | White/cyan on ice · matching-blue water · grey-ice outline type · cyan-on-blue |
-| Hook | **3–6 words**, heavy sans, **centre-safe** so Studio’s 16:9 Shorts-list crop still reads (~**30% centre band**) | Hook lost to edge crop |
+| Hook | **3–6 words**, heavy sans | Soft/abstract or overlong |
+| Clip / placement | Hook stack in the **vertical centre** of the 9:16, with inset from top and bottom. **Both** hook lines survive (a) Studio details preview and (b) Shorts-list **16:9 centre-crop** | Lower-third / edge-hugging stack · any hook line clipped |
 | Orbit | **No Orbit** on the thumb | Orbit / mascot on thumb |
 | Plate | Distinct picture per listing | Cloned plates across listings |
 
 Listing titles on the listing stay; thumb hook can be shorter than the listing title.
 
+### Thumb clip gate (Ben 31 Aug 2026 — all new Short thumbs)
+
+Going forward on **every new or replaced** Short thumb:
+
+1. Hook stack sits in the **vertical centre** of the 9:16 frame, with inset from top and bottom — **not** the lower third, **not** edge-hugging.
+2. **Both** hook lines must survive (a) Studio details preview of the Short and (b) the Shorts-list 16:9 centre-crop.
+3. **FAIL** if any hook line is clipped. Lesson: `FbRFvSApfOQ` first pop pass clipped **THAN EARTH** at the bottom; rebuild with centred stack is the proof.
+4. Contrast lock unchanged: white/yellow on black, never on ice/matching-blue water. 3–6 words. No Orbit.
+5. Applies from this date forward. **Do not** mass-recut older thumbs unless Ben asks.
+
 ### Proof SAVED 31 Aug 2026 (bar to copy)
 
-| Short id | Hook |
-|----------|------|
-| `FbRFvSApfOQ` | **MORE WATER / THAN EARTH** |
-| `8Bym-yrYhGc` | **THIS OCEAN / SHOULDN'T EXIST** |
+| Short id | Hook | Note |
+|----------|------|------|
+| `FbRFvSApfOQ` | **MORE WATER / THAN EARTH** | Contrast bar · clip-gate proof after centred-stack rebuild |
+| `8Bym-yrYhGc` | **THIS OCEAN / SHOULDN'T EXIST** | Contrast bar |
 
 Copy that bar for remaining Europa Shorts thumbs when Cursor next touches them.
 
@@ -141,7 +152,7 @@ Score **two surfaces separately**:
 ## UAT / QA for Cursor
 
 1. **Orbit Auditor** is the ship gate for Shorts and longs.
-2. **PASS thumbs** only on contrast + crop + no Orbit + distinct plate (this bible).
+2. **PASS thumbs** only on contrast + crop + no Orbit + distinct plate + **no clipped hook lines** (vertical-centre stack; both lines survive Studio preview and Shorts-list 16:9 crop).
 3. **PASS Related** on Studio field matching that week’s Thursday id. Public overlay FAIL ≠ remint.
 4. **Do not merge video-cut PRs** until UAT PASS. **Docs PRs may merge.**
 5. Follow this bible; do not ping Chief of Staff unless Ben asks or a lock must be broken.
