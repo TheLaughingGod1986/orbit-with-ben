@@ -7,6 +7,8 @@ alwaysApply: true
 
 Apply on **every** Orbit Short or long question before upload. Do not score or ship from stills alone. Video Auditor must watch the open VO.
 
+**UAT/QA scoring bible (listings · thumbs · Related · week):** `00_Brand/Channel-Setup/ORBIT_HOUSE_AND_UAT_BIBLE.md` (locked 31 Aug 2026). Cursor follows that bible; do not ping Chief of Staff unless Ben asks or a lock must be broken. Do **not** send Orbit thumbs to Oppti QA.
+
 ## Intensity curve (Street Dog Salon → Orbit)
 
 Source pattern: Street Dog Salon Video #1 — DECLARE → ASSESS → ISOLATE → PROCESS (valley) → BUILD → REVEAL (highest peak). Script energy like “Today we [verb] [number] [subject]”. **Orbit adapts the shape; do not copy their 60s / 6-phase clock onto Shorts.** Intensity must **finish higher than it started**.
@@ -36,32 +38,42 @@ Winner to beat: *We Found Planets Made of Diamond* (`M-VN84HCNls`, 223% viewed).
 4. **Thursday film title** on screen (~9–14s).
 5. **Length 22–27s.** Never ship or schedule ≥40s.
 6. **End CTA on screen** points at **that week’s Thursday film id** (exact listing title on screen earlier). Description: film title + parent long URL only. Zero `/go/`.
-7. **Custom picture thumb — no Orbit.**
+7. **Custom picture thumb — no Orbit.** Thumb UAT: white (optional one yellow word) on dark/black dead space; centre-safe ~30% band; distinct plate. **FAIL** grey-ice outline type and cyan-on-blue. Proof bar: `FbRFvSApfOQ` MORE WATER / THAN EARTH · `8Bym-yrYhGc` THIS OCEAN / SHOULDN'T EXIST. See `ORBIT_HOUSE_AND_UAT_BIBLE.md`.
 8. **Concrete title.** Soft/abstract titles lose.
 9. **Studio Related video pill** → **that week’s Thursday long only** (desktop Studio Related field). That is the only Short → long CTA. Never another Short. Never `/go/`. Pin not required when Related is set. See `orbit-shorts-related-video.mdc`.
 10. **No new pinned comments on Shorts.** Pin is not a substitute for Related. Long-form pins stay. Existing live Short pins may stay (do not mass-unpin / remint).
 11. **Recut = new YouTube id.** Leave old live until remake is public, then unpublish. Do not delete.
 
-### Shorts auditor FAIL (Related / pin — locked 28 Aug 2026)
+### Shorts auditor FAIL (Related / pin — locked 28 Aug 2026 · overlay 31 Aug)
 
-- **FAIL** if Related is missing, wrong week’s long, or points at another Short.
+- **FAIL** if Studio Related is missing, wrong week’s long, or points at another Short.
 - **FAIL** if a **new** pin is added on a new Short.
 - Do **not** FAIL grandfathered existing live Short pins.
+- Score Studio Related **and** (for public Shorts) the Shorts-player overlay pill **separately**. Studio Related can PASS while the public overlay is algorithmic junk — **do not remint to chase overlay** (`ORBIT_HOUSE_AND_UAT_BIBLE.md`).
 - Long-form pins (detail / `/go/` / book) are required as before — this FAIL block is Shorts-only.
+
+### Thumb UAT PASS (locked 31 Aug 2026)
+
+PASS thumbs only on **contrast + crop + no Orbit + distinct plate**. Full gate: `ORBIT_HOUSE_AND_UAT_BIBLE.md`.
 
 ## Longs
 
 Reference length: Europa v02 · Last Star v11 (**~7–9 min**). Open/end craft: BH v09 · AW v05 · Fermi v20 (do **not** copy their ~21-min runtimes). Next to make: **007 Neutron Star at 7–9 min**, not 18–25. Picture path: AI Studio **Veo world / Omni Orbit-only** (`OMNI_LONGFORM_PLAYBOOK.md`).
 
 1. **First 3s = strange picture only.** No Orbit, no logo, no title, no “ORBIT / Stories from the sky”.
-2. **World does the science.** Orbit in **1–2** inquisitive / story-narrative scenes only — in the scene, not a sticker. Do not force Orbit by ~8s.
+2. **World does the science.** Orbit in **1–2** inquisitive / story-narrative scenes only — in the scene, not a sticker. Do not force Orbit by ~8s. House: Orbit is garnish / rides along — never thumb, never first 3s, never the hero (`ORBIT_HOUSE_AND_UAT_BIBLE.md`). Europa week is first that must play this; do not recut Last Star.
 3. **Leftover brand sting:** cover picture only (hold last clean frame over the sting). Audio stays uncut so the sentence finishes. Hard-cutting the sting failed BH v08 (VO chopped “Today, Or…”).
 4. **After the cover,** the original next shot (chapter card, camera turn) is fine.
 5. **End:** 10s last real picture. Official YouTube Studio end screens (Subscribe + next film when an id exists). No baked like/subscribe graphic or VO.
-6. **Long thumb:** picture + short SEA-style hook. **No Orbit. No generic CTA.**
+6. **Long thumb:** picture + short SEA-style / HOTU-style hook (huge white type on black dead space). **No Orbit. No generic CTA.** No fake CNN banners; no celebrity faces we don’t have.
 7. **Recut = new id.** Do not mint until Video Auditor passes after watching the open VO, not stills. Leave old live until new is public, then unpublish. Shortening a live film = new id (never swap files).
 8. **No `/go/`** unless this cut names the product in VO and on screen. Shorts stay zero affiliate. JWST v04 stays film-only (no `/go/jwst-book`).
 9. **Length NOW:** **7–9 min**. Later expand to 15–20–30 only with impressions + hold past ~5 min. Never chop a 21-min lecture to fake 7–9.
+
+## Merge / remint
+
+- **Do not merge video-cut PRs** until UAT PASS. Docs-only PRs may merge.
+- Do not remint Last Star leftovers. `FbRFvSApfOQ` cut is Orbit-first — no remint; thumb-only OK.
 
 ## Do not
 
@@ -71,3 +83,4 @@ Reference length: Europa v02 · Last Star v11 (**~7–9 min**). Open/end craft: 
 - Stretch Shorts to ~60s to fit Street Dog’s six phases — Orbit Shorts stay 22–27s (DECLARE → ASSESS → REVEAL only).
 - Restore the old brand sting or baked subscribe outro. Older playbook lines that say “reuse brand sting + like/subscribe outro” are wrong.
 - Add new Short pins, or ship a Short without Related → that week’s Thursday long.
+- Remint to chase a public Shorts overlay FAIL when Studio Related is already correct.

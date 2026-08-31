@@ -1,9 +1,9 @@
 # Orbit Shorts — funnel metrics, monster hooks & cross-post timing
 
 **Status:** Ops lock for kinetic-caption v02 Shorts  
-**Updated:** 2026-08-28 — Related pill only / no new Short pins  
+**Updated:** 2026-08-31 — Related pill only / no new Short pins · house+UAT bible  
 
-**Related:** `PUBLISHING_AND_SHORTS_STRATEGY.md` · `TikTok/SHORTS_ONSCREEN_TEXT_STYLE.md` · `.cursor/rules/orbit-shorts-related-video.mdc`
+**Related:** `ORBIT_HOUSE_AND_UAT_BIBLE.md` · `PUBLISHING_AND_SHORTS_STRATEGY.md` · `TikTok/SHORTS_ONSCREEN_TEXT_STYLE.md` · `.cursor/rules/orbit-shorts-related-video.mdc`
 
 ---
 
@@ -21,6 +21,8 @@
 Week map: Last Star leftovers through 2 Sep → `REXYxuLOBoI` · Europa 3–9 Sep → `NbW5G1BpPY0` · Neutron from 10 Sep → `Yk1tLh23rko` · JWST leftovers Sat 22–Tue 25 → `ziKBPJ6FY0U` · live leftovers → the long they already name. Zero `/go/` on Shorts. Desktop Studio only (Advanced features). Longs do not get this field.
 
 If Related is missing, treat the Short as **not funnel-complete** (auditor FAIL). A pin alone does **not** substitute.
+
+UAT (31 Aug): score Studio Related and the public Shorts-player overlay **separately**. Overlay FAIL is not an automatic remint. Thumb PASS only on contrast + crop + no Orbit + distinct plate — see `ORBIT_HOUSE_AND_UAT_BIBLE.md`.
 
 
 ---

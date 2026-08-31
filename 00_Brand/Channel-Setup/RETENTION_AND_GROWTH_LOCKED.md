@@ -5,9 +5,10 @@
 **Success:** Impressions · CTR · AVD · APV · session time · returning viewers · Browse / Suggested / Search  
 
 Canonical system: `YOUTUBE_GROWTH_SYSTEM_V2.md`  
+House + UAT/QA scoring (listings · thumbs · Related · week): `ORBIT_HOUSE_AND_UAT_BIBLE.md` (locked 31 Aug 2026)  
 Detail: `docs/ORBIT_GROWTH_PLAYBOOK.md` · memory: `docs/RETENTION_LEARNINGS.md`  
 Pre-build: `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` · story/VO: `LONGFORM_STORY_AND_VO_PICTURE_GATE.md`  
-Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
+Gates: script reviewer (≥90) · Orbit Auditor · `templates/PRODUCTION_CHECKLIST_V2.md`
 
 ---
 
@@ -33,7 +34,7 @@ Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
 13. **Pre-build vidIQ audit (blocking)** — keywords · title ≥90 · outliers → then script.  
 14. **Script reviewer ≥ 90 / 100** before VO / picture gen.  
 15. **Title = one promise** · prefer ≤~60 chars · **no series suffix** on every upload.  
-16. **Long thumb = picture + SEA-style hook** — **no Orbit**, no generic CTA. Short thumb = custom picture, **no Orbit**.  
+16. **Long thumb = picture + SEA/HOTU-style hook** (white on black dead space) — **no Orbit**, no generic CTA. Short thumb = custom picture, **no Orbit**; contrast + centre-safe crop; FAIL cyan-on-blue / grey-ice outline (`ORBIT_HOUSE_AND_UAT_BIBLE.md`).  
 17. **No dead ends** — end screen · cards · long pin · description → another Orbit documentary; Shorts use Related pill only.  
 18. **Soft “follow for the next mystery”** at end only — never interrupt the hook.
 
@@ -88,7 +89,7 @@ Gates: script reviewer (≥90) · `templates/PRODUCTION_CHECKLIST_V2.md`
 
 ## Agent reminder
 
-Follow `YOUTUBE_GROWTH_SYSTEM_V2.md` + this file + longform VO–picture gate + pre-build vidIQ audit. Prefer these over ad-hoc process changes.
+Follow `YOUTUBE_GROWTH_SYSTEM_V2.md` + this file + `ORBIT_HOUSE_AND_UAT_BIBLE.md` + longform VO–picture gate + pre-build vidIQ audit. Prefer these over ad-hoc process changes. Do not ping Chief of Staff unless Ben asks or a lock must be broken.
 
 **Cursor hooks (project):**
 
