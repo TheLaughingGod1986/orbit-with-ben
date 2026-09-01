@@ -67,17 +67,27 @@ Steal from MelodySheep, History of the Universe, SEA, Kurzgesagt — **not a cop
 
 ## Thumbs (UAT gate)
 
-PASS thumbs **only** on: contrast + crop + no Orbit + distinct plate + **no clipped hook lines**.
+PASS thumbs **only** on: yellow+white type + contrast + crop + no Orbit + distinct plate + **no clipped hook lines**.
 
 | Check | PASS | FAIL |
 |-------|------|------|
-| Contrast | White (optional **one** yellow word) on dark/black dead space or a black plate | White/cyan on ice · matching-blue water · grey-ice outline type · cyan-on-blue |
+| Type colour | **Yellow highlight** on the hook word(s); **white** on the rest; centre-safe stack on dark/black | **All-white** title thumbs · white/cyan on ice · matching-blue water · grey-ice outline type · cyan-on-blue |
 | Hook | **3–6 words**, heavy sans | Soft/abstract or overlong |
 | Clip / placement | Hook stack in the **vertical centre** of the 9:16, with inset from top and bottom. **Both** hook lines survive (a) Studio details preview and (b) Shorts-list **16:9 centre-crop** | Lower-third / edge-hugging stack · any hook line clipped |
 | Orbit | **No Orbit** on the thumb | Orbit / mascot on thumb |
 | Plate | Distinct picture per listing | Cloned plates across listings |
 
-Listing titles on the listing stay; thumb hook can be shorter than the listing title.
+Listing titles on the listing stay; thumb hook can be shorter than the listing title. Related pill stays that week’s Thursday long.
+
+### Yellow highlight lock (Ben 1 Sep 2026 — all new Short thumbs)
+
+Going forward on **every new or replaced** Short thumb:
+
+1. **Yellow** on the hook word(s); **white** on the rest. Centre-safe stack on dark/black. **3–6 words. No Orbit.**
+2. **All-white title thumbs FAIL.** Do not ship a new Short thumb that is white-only type.
+3. Clip gate still applies (vertical-centre stack; both lines survive Studio preview + Shorts-list 16:9 crop).
+4. **Do not remint** live Last Star overlays / leftovers from this lock. Thumb replacements on new work only unless Ben asks.
+5. Studio note (1 Sep 2026, context only — do not change Studio from docs agents): channel was **not** strike-penalised. Three public Shorts died from ~zero impressions (`KX-XU_AODoI` 0 · `CkSECfUfH2Y` 1–2 already yellow+white · `Q16DKNvq2OY` 5 all-white). Cause = stacked leftovers + off-film leftover nights, not a strike. This lock is packaging/UAT, not a remint order.
 
 ### Thumb clip gate (Ben 31 Aug 2026 — all new Short thumbs)
 
@@ -86,15 +96,15 @@ Going forward on **every new or replaced** Short thumb:
 1. Hook stack sits in the **vertical centre** of the 9:16 frame, with inset from top and bottom — **not** the lower third, **not** edge-hugging.
 2. **Both** hook lines must survive (a) Studio details preview of the Short and (b) the Shorts-list 16:9 centre-crop.
 3. **FAIL** if any hook line is clipped. Lesson: `FbRFvSApfOQ` first pop pass clipped **THAN EARTH** at the bottom; rebuild with centred stack is the proof.
-4. Contrast lock unchanged: white/yellow on black, never on ice/matching-blue water. 3–6 words. No Orbit.
-5. Applies from this date forward. **Do not** mass-recut older thumbs unless Ben asks.
+4. Type: yellow highlight + white on dark (see yellow lock above). Never on ice/matching-blue water. 3–6 words. No Orbit.
+5. Applies from 31 Aug forward for clip; yellow+white required from **1 Sep 2026**. **Do not** mass-recut older thumbs unless Ben asks.
 
 ### Proof SAVED 31 Aug 2026 (bar to copy)
 
 | Short id | Hook | Note |
 |----------|------|------|
-| `FbRFvSApfOQ` | **MORE WATER / THAN EARTH** | Contrast bar · clip-gate proof after centred-stack rebuild |
-| `8Bym-yrYhGc` | **THIS OCEAN / SHOULDN'T EXIST** | Contrast bar |
+| `FbRFvSApfOQ` | **MORE WATER / THAN EARTH** | Contrast / clip-gate proof after centred-stack rebuild — when rebuilding, use **yellow on hook word(s) + white on the rest** |
+| `8Bym-yrYhGc` | **THIS OCEAN / SHOULDN'T EXIST** | Contrast bar — same yellow+white rule on any rebuild |
 
 Copy that bar for remaining Europa Shorts thumbs when Cursor next touches them.
 
@@ -152,7 +162,7 @@ Score **two surfaces separately**:
 ## UAT / QA for Cursor
 
 1. **Orbit Auditor** is the ship gate for Shorts and longs.
-2. **PASS thumbs** only on contrast + crop + no Orbit + distinct plate + **no clipped hook lines** (vertical-centre stack; both lines survive Studio preview and Shorts-list 16:9 crop).
+2. **PASS thumbs** only on **yellow highlight + white** type + contrast + crop + no Orbit + distinct plate + **no clipped hook lines** (vertical-centre stack; both lines survive Studio preview and Shorts-list 16:9 crop). **All-white title thumbs FAIL.** Do not remint live Last Star overlays from the thumb lock.
 3. **PASS Related** on Studio field matching that week’s Thursday id. Public overlay FAIL ≠ remint.
 4. **Do not merge video-cut PRs** until UAT PASS. **Docs PRs may merge.**
 5. Follow this bible; do not ping Chief of Staff unless Ben asks or a lock must be broken.

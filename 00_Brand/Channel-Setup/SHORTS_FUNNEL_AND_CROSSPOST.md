@@ -22,7 +22,7 @@ Week map: Last Star leftovers through 2 Sep → `REXYxuLOBoI` · Europa 3–9 Se
 
 If Related is missing, treat the Short as **not funnel-complete** (auditor FAIL). A pin alone does **not** substitute.
 
-UAT (31 Aug): score Studio Related and the public Shorts-player overlay **separately**. Overlay FAIL is not an automatic remint. Thumb PASS only on contrast + crop + no Orbit + distinct plate + **no clipped hook lines** (vertical-centre stack) — see `ORBIT_HOUSE_AND_UAT_BIBLE.md`.
+UAT (31 Aug · yellow lock 1 Sep): score Studio Related and the public Shorts-player overlay **separately**. Overlay FAIL is not an automatic remint. Thumb PASS only on **yellow+white** type + contrast + crop + no Orbit + distinct plate + **no clipped hook lines** (vertical-centre stack). **All-white title thumbs FAIL.** Do not remint live Last Star overlays — see `ORBIT_HOUSE_AND_UAT_BIBLE.md`.
 
 
 ---
