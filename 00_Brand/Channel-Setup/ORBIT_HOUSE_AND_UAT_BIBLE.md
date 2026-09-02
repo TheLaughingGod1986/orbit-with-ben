@@ -144,7 +144,7 @@ Score **two surfaces separately**:
 | Thursday target | Window | Short ids (Studio Related already PASS) |
 |-----------------|--------|-----------------------------------------|
 | `REXYxuLOBoI` | through 2 Sep (+ `0j_pgYbCe5E` 18 Sep) | `QptlHs1HuYI` · `Q16DKNvq2OY` · `oN_jm9PTDOQ` · `0j_pgYbCe5E` (18 Sep) |
-| `NbW5G1BpPY0` | 3–9 Sep (+ `TE_HDKAnqms` 19 Sep) | `FbRFvSApfOQ` · `8Bym-yrYhGc` · `1glQ` · `Xza_` · `VE0f` · `D3KS` · `eVp9` · `TE_HDKAnqms` (19 Sep) |
+| `NbW5G1BpPY0` | 3–9 Sep (+ `TE_HDKAnqms` 10 Sep cluster / bible also noted 19 Sep) | `FbRFvSApfOQ` · `EcsunqhN0jQ` (or `8Bym-yrYhGc` if Studio replaced punch-02) · `k0PjH2I0OxY` · `0eqTVgrlU-s` · `Fv-lSwB_Z-o` · `KPO68c-U42E` · `gN2qAv8m9Wc` · `TE_HDKAnqms` |
 | `Yk1tLh23rko` | 10–15 Sep | `fhJP` · `vCxX` · `va5AT` · `o7yky` · `Rp_8J6` · `92vmMx` |
 
 **Empty:** 16–17 Sep. Prefixes above match Studio verification notes where full 11-char ids were not restated — resolve against live Studio before editing those listings.
