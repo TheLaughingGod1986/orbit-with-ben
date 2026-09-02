@@ -1,0 +1,32 @@
+{
+  "audit": "social_yt_parity_2026-09-01",
+  "generated_at": "2026-09-01T16:20:00+01:00",
+  "verdict": "NOT_IN_PARITY",
+  "youtube_live_shorts": 30,
+  "youtube_live_longs_public": 6,
+  "ledger_hits_on_live_short_ids": {
+    "meta": 0,
+    "threads": 0,
+    "tiktok": 0
+  },
+  "shorts_index_overlap_with_live": 9,
+  "shorts_index_missing_live_ids": 21,
+  "shorts_index_stale_ids": 19,
+  "tiktok_paused": true,
+  "longs_posted_ledger_missing": true,
+  "instagram_verified": false,
+  "threads_live_has_posts_beyond_ledger": true,
+  "facebook_live_has_recent_post": true,
+  "mac_actions": {
+    "resync_shorts_indexes": false,
+    "meta_catchup_started": false,
+    "threads_ledger_reconciled": false,
+    "longs_ledger_seeded": false,
+    "instagram_suite_eyeball": false
+  },
+  "notes": [
+    "Repo ledgers last useful Meta/Threads write: 2026-08-03",
+    "Live Threads/FB show some post-Aug-3 activity; ledgers do not key live YT remake IDs",
+    "Watchers cannot catch up until SHORTS_UPLOAD_INDEX matches Studio public IDs"
+  ]
+}
