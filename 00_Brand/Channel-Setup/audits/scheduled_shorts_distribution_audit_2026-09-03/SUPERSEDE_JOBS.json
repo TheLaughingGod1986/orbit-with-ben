@@ -118,7 +118,8 @@
       "title": "The Weight of a Mountain in Your Hand",
       "schedule_uk": "2026-09-11T11:30:00+01:00",
       "related": "Yk1tLh23rko",
-      "action": "verify_upload_date; fresh_id_supersede if uploaded before 2026-09-01"
+      "action": "MOVED off Thu 10 20:00 double-book → Fri 11 11:30. Still may need fresh-id supersede if upload pre-2026-09-01.",
+      "status": "SCHEDULE_MOVED_FRI_11_30"
     },
     {
       "priority": "P2",
@@ -126,7 +127,8 @@
       "title": "The Sky Would Lean Near a Neutron Star",
       "schedule_uk": "2026-09-12T11:30:00+01:00",
       "related": "Yk1tLh23rko",
-      "action": "verify_upload_date; fresh_id_supersede if uploaded before 2026-09-01"
+      "action": "Cascaded to Sat 12 11:30 after Weight took Fri. Fresh-id supersede if stale Aug.",
+      "status": "SCHEDULE_MOVED_SAT_11_30"
     },
     {
       "priority": "P2",
@@ -134,7 +136,26 @@
       "title": "Your Last Clear Image Near a Neutron Star",
       "schedule_uk": "2026-09-13T11:30:00+01:00",
       "related": "Yk1tLh23rko",
-      "action": "verify_upload_date; fresh_id_supersede if uploaded before 2026-09-01"
+      "action": "Cascaded to Sun 13 11:30. Fresh-id supersede if stale Aug.",
+      "status": "SCHEDULE_MOVED_SUN_11_30"
+    },
+    {
+      "priority": "P2",
+      "old_id": "fhJP6eMoU0Q",
+      "title": "A Neutron Star Would Tear You Into Atoms",
+      "schedule_uk": "2026-09-14T11:30:00+01:00",
+      "related": "Yk1tLh23rko",
+      "action": "Pulled from Private → Scheduled Mon 14 11:30 to start filling post-premiere gap. Confirm Related chip. Fresh-id optional.",
+      "status": "SCHEDULED_FROM_PRIVATE_MON_11_30"
+    },
+    {
+      "priority": "P2",
+      "old_id": null,
+      "title": "NEED 3 NEW Neutron Shorts",
+      "schedule_uk": "2026-09-15T11:30:00+01:00",
+      "related": "Yk1tLh23rko",
+      "action": "Mint/upload 3 more Neutron punches for Tue 15 / Wed 16 / Thu 17 11:30 (cluster seeds unused). Do not touch 0j_pgYbCe5E on Fri 18.",
+      "status": "BLOCKED_NEED_ASSETS"
     }
   ]
 }
