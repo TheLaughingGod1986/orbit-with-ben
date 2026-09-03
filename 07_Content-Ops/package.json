@@ -21,6 +21,7 @@
     "publishing:cleanup": "tsx scripts/cleanup-staged-media.ts",
     "youtube:upload": "tsx scripts/youtube-api-upload.ts",
     "youtube:package": "tsx scripts/youtube-package-upload.ts",
+    "youtube:supersede-stale-shorts": "tsx scripts/supersede-stale-scheduled-shorts.ts",
     "generate:short-plan": "tsx scripts/generate-short-plan.ts",
     "generate:platform-copy": "tsx scripts/generate-platform-copy.ts",
     "create:export-package": "tsx scripts/create-export-package.ts",
