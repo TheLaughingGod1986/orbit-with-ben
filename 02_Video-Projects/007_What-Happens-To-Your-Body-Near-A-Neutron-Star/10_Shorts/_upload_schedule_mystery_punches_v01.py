@@ -74,6 +74,26 @@ def extract_vid(page) -> str:
     return m.group(1) if m else ""
 
 
+def ensure_orbit_channel(page) -> None:
+    page.goto(
+        "https://www.youtube.com/channel_switcher",
+        wait_until="domcontentloaded",
+        timeout=120000,
+    )
+    page.wait_for_timeout(2500)
+    try:
+        page.locator("text=Orbit with Ben").first.click(force=True, timeout=5000)
+        page.wait_for_timeout(2500)
+    except Exception:
+        pass
+    page.goto(
+        f"https://studio.youtube.com/channel/{CHANNEL}/videos/upload",
+        wait_until="domcontentloaded",
+        timeout=120000,
+    )
+    page.wait_for_timeout(2500)
+
+
 def upload_one(page, item: dict) -> dict:
     path = Path(item["file"])
     r: dict = {"id": item["id"], "title": item["title"], "ok": False}
@@ -85,15 +105,35 @@ def upload_one(page, item: dict) -> dict:
         wait_until="domcontentloaded",
         timeout=120000,
     )
-    page.wait_for_timeout(2500)
+    page.wait_for_timeout(3500)
     dismiss(page)
+    # Prefer hidden file input; fall back to Create → Upload videos.
     inputs = page.locator('input[type="file"]')
     if inputs.count():
         inputs.first.set_input_files(str(path))
     else:
-        with page.expect_file_chooser(timeout=20000) as fc:
-            page.get_by_role("button", name="Select files").click(force=True)
-        fc.value.set_files(str(path))
+        try:
+            page.get_by_role("button", name=re.compile(r"^Create$", re.I)).first.click(
+                force=True, timeout=4000
+            )
+            page.wait_for_timeout(800)
+            page.get_by_text("Upload videos", exact=False).first.click(force=True)
+            page.wait_for_timeout(1500)
+        except Exception:
+            pass
+        inputs = page.locator('input[type="file"]')
+        if inputs.count():
+            inputs.first.set_input_files(str(path))
+        else:
+            with page.expect_file_chooser(timeout=25000) as fc:
+                for name in ("Select files", "SELECT FILES", "Upload"):
+                    btn = page.get_by_role("button", name=re.compile(name, re.I))
+                    if btn.count() and btn.first.is_visible():
+                        btn.first.click(force=True)
+                        break
+                else:
+                    page.get_by_text("Select files", exact=False).first.click(force=True)
+            fc.value.set_files(str(path))
 
     title_box = page.get_by_role(
         "textbox", name=re.compile(r"title that describes", re.I)
@@ -460,19 +500,7 @@ def main() -> int:
         browser = p.chromium.connect_over_cdp(CDP)
         ctx = browser.contexts[0]
         page = ctx.new_page()
-        # Ensure Orbit channel
-        page.goto(
-            f"https://studio.youtube.com/channel/{CHANNEL}/videos/upload",
-            wait_until="domcontentloaded",
-            timeout=120000,
-        )
-        page.wait_for_timeout(3000)
-        try:
-            if page.locator("text=Orbit with Ben").count():
-                page.locator("text=Orbit with Ben").first.click(timeout=2000)
-                page.wait_for_timeout(1500)
-        except Exception:
-            pass
+        ensure_orbit_channel(page)
 
         for item in manifest["shorts"]:
             print(f"Upload {item['id']} {item['title']}…", flush=True)
