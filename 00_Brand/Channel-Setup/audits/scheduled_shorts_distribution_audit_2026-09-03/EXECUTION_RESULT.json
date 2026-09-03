@@ -1,0 +1,67 @@
+{
+  "created_at": "2026-09-03T20:18:09.721725+01:00",
+  "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+  "method_default": "studio_ui",
+  "note": "API path unavailable (no Content Ops OAuth/.env). Studio UI upload + CDP for thumb/Related/visibility. Chrome CDP must be launched via open -na to survive agent shells.",
+  "rows": [
+    {
+      "old_id": "eVp9a7f4rWg",
+      "new_id": "MXrq1-ggtXo",
+      "title": "We Could Kill the Life We're Looking For",
+      "schedule_uk": "2026-09-03T20:00:00+01:00",
+      "related_ok": true,
+      "related": "NbW5G1BpPY0",
+      "thumb_ok": true,
+      "duration_s": 26.006349,
+      "method": "studio_ui",
+      "old_private_ok": true,
+      "new_visibility_after_air": "Public",
+      "errors": [],
+      "status": "DONE"
+    }
+  ],
+  "p1": {
+    "status": "NOT_DONE",
+    "ids": [
+      "8Bym-yrYhGc",
+      "1glQuYFSaYQ",
+      "Xza_jSHD4qw",
+      "VE0f186WQZo",
+      "D3KSYrqip5A",
+      "TE_HDKAnqms"
+    ],
+    "note": "Sources downloaded via Studio player stream (22\u201326s). First upload attempt for 8Bym mis-extracted ID DN4L1DkerMM (existing Last Star Short) and privatized 8Bym without a real new id. 8Bym schedule RESTORED to Fri 4 Sep 11:30. DN4 Related restored to Last Star (REXYxuLOBoI). P1 supersedes still needed with fixed ID extraction.",
+    "mp4s_ready": true,
+    "mp4_dir": "/tmp/orbit_supersede_mp4"
+  },
+  "p2": {
+    "status": "NOT_STARTED"
+  },
+  "incidents": [
+    {
+      "severity": "DN4L1DkerMM",
+      "issue": "Wrong ID extracted after upload; Related temporarily set to Europa",
+      "resolution": "Related restored to What Happens When the Last Star Dies? (REXYxuLOBoI). Confirmed in Studio UI.",
+      "status": "FIXED"
+    },
+    {
+      "severity": "8Bym-yrYhGc",
+      "issue": "Privatized during failed supersede with no replacement id",
+      "resolution": "Rescheduled Private\u2192Scheduled 4 Sept 2026 11:30 UK",
+      "status": "RESTORED_SCHEDULE_PENDING_SUPERSEDE"
+    }
+  ],
+  "blocked": [
+    "P1\u2013P2 supersedes remaining",
+    "Content Ops YouTube OAuth missing (no 07_Content-Ops/.env) \u2014 Studio UI only",
+    "Diamond mp4s not on disk; using Studio stream downloads in /tmp/orbit_supersede_mp4",
+    "extract_vid() must be fixed before next upload (do not scrape unrelated public Short ids from page)"
+  ],
+  "recovery_verify": {
+    "dn4_related": "What Happens When the Last Star Dies? | Orbit's Cosmic Journey",
+    "8Bym_visibility": "Scheduled",
+    "MXrq_visibility": "Public",
+    "MXrq_related": "Could Life Exist Under The Ice Of Europa?",
+    "eVp9_visibility": "Private"
+  }
+}
