@@ -1,8 +1,13 @@
 {
   "created_at": "2026-09-03T20:18:09.721725+01:00",
+  "updated_at": "2026-09-03T20:42:00+01:00",
   "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
   "method_default": "studio_ui",
   "note": "API path unavailable (no Content Ops OAuth/.env). Studio UI upload + CDP for thumb/Related/visibility. Chrome CDP must be launched via open -na to survive agent shells.",
+  "cadence_lock": {
+    "source": "Ben 2026-09-03 screenshots + instruction",
+    "rule": "Mon–Wed: 1 Short at 11:30 UK. Thu: morning Short 11:30 + afternoon long Premiere 18:00 + late Short 20:00."
+  },
   "rows": [
     {
       "old_id": "eVp9a7f4rWg",
@@ -20,6 +25,107 @@
       "status": "DONE"
     }
   ],
+  "dedupe_same_slot": {
+    "status": "DONE",
+    "problem": "Studio Scheduled showed two Shorts at the same 11:30 UK slot on Fri–Tue (leftover remake titles alongside VidIQ keep set).",
+    "privatized_do_not_delete": [
+      {
+        "id": "g0ZqPP3nR5U",
+        "title": "Europa's Hidden Ocean Is Bigger Than Earth's",
+        "was": "Scheduled (collided Fri 4)",
+        "now": "Private",
+        "ok": true
+      },
+      {
+        "id": "uYL9DMGoDjk",
+        "title": "The Dive Under Europa's Ice",
+        "was": "Scheduled (collided Sat 5)",
+        "now": "Private",
+        "ok": true
+      },
+      {
+        "id": "38acs_fCCvc",
+        "title": "How We'd Know Europa Is Alive",
+        "was": "Scheduled (collided Sun 6)",
+        "now": "Private",
+        "ok": true
+      },
+      {
+        "id": "34v3leUHzi0",
+        "title": "Salt and Plumes Are Fingerprints",
+        "was": "Scheduled (collided Mon 7)",
+        "now": "Private",
+        "ok": true
+      },
+      {
+        "id": "L_nUSC5ObNk",
+        "title": "Clipper Goes to Look",
+        "was": "Scheduled (collided Tue 8)",
+        "now": "Private",
+        "ok": true
+      }
+    ],
+    "keep_calendar_verified": [
+      {
+        "id": "8Bym-yrYhGc",
+        "title": "Why Europa's Ocean Shouldn't Exist",
+        "schedule": "4 Sept 2026 11:30",
+        "visibility": "Scheduled"
+      },
+      {
+        "id": "1glQuYFSaYQ",
+        "title": "What Would Life Eat Under Europa?",
+        "schedule": "5 Sept 2026 11:30",
+        "visibility": "Scheduled"
+      },
+      {
+        "id": "Xza_jSHD4qw",
+        "title": "Deep-Sea Vents Feed Life With No Sunlight",
+        "schedule": "6 Sept 2026 11:30",
+        "visibility": "Scheduled"
+      },
+      {
+        "id": "VE0f186WQZo",
+        "title": "Europa Sprays Its Ocean Into Space",
+        "schedule": "7 Sept 2026 11:30",
+        "visibility": "Scheduled"
+      },
+      {
+        "id": "D3KSYrqip5A",
+        "title": "Why We Are Heading to Europa Right Now",
+        "schedule": "8 Sept 2026 11:30",
+        "visibility": "Scheduled"
+      },
+      {
+        "id": "TE_HDKAnqms",
+        "title": "If Life Starts Under Ice, It's Everywhere",
+        "schedule": "9 Sept 2026 11:30",
+        "visibility": "Scheduled"
+      },
+      {
+        "id": "92vmMxSNmlk",
+        "title": "Why You Can't Stand on a Neutron Star",
+        "schedule": "10 Sept 2026 11:30",
+        "visibility": "Scheduled",
+        "role": "Thu morning Short (kept per Ben cadence)"
+      },
+      {
+        "id": "Yk1tLh23rko",
+        "title": "What Happens to Your Body Near a Neutron Star?",
+        "schedule": "10 Sept 2026 18:00",
+        "visibility": "Premiere",
+        "role": "Thu afternoon long"
+      },
+      {
+        "id": "Rp_8J6_6IIk",
+        "title": "What Happens If You Touch a Neutron Star?",
+        "schedule": "10 Sept 2026 20:00",
+        "visibility": "Scheduled",
+        "role": "Thu late Short (moved from 13 Sept; title restored after accidental Premiere bleed)",
+        "related": "Yk1tLh23rko"
+      }
+    ]
+  },
   "p1": {
     "status": "NOT_DONE",
     "ids": [
@@ -30,30 +136,44 @@
       "D3KSYrqip5A",
       "TE_HDKAnqms"
     ],
-    "note": "Sources downloaded via Studio player stream (22\u201326s). First upload attempt for 8Bym mis-extracted ID DN4L1DkerMM (existing Last Star Short) and privatized 8Bym without a real new id. 8Bym schedule RESTORED to Fri 4 Sep 11:30. DN4 Related restored to Last Star (REXYxuLOBoI). P1 supersedes still needed with fixed ID extraction.",
+    "note": "Sources downloaded via Studio player stream (22–26s). First upload attempt for 8Bym mis-extracted ID DN4L1DkerMM (existing Last Star Short) and privatized 8Bym without a real new id. 8Bym schedule RESTORED to Fri 4 Sep 11:30. DN4 Related restored to Last Star (REXYxuLOBoI). P1 supersedes still needed with fixed ID extraction. Calendar dedupe is done so slots are clean for supersede.",
     "mp4s_ready": true,
     "mp4_dir": "/tmp/orbit_supersede_mp4"
   },
   "p2": {
-    "status": "NOT_STARTED"
+    "status": "PARTIAL",
+    "done": [
+      "Kept 92vmMxSNmlk Thu 10 11:30 (Ben cadence overrides prior unschedule-pre-premiere note)",
+      "Moved Rp_8J6_6IIk to Thu 10 20:00 Scheduled (not Premiere); title What Happens If You Touch a Neutron Star?",
+      "Confirmed Yk1tLh23rko Premiere 10 Sept 18:00 intact"
+    ],
+    "remaining": [
+      "Fresh-id supersede for Neutron Shorts if upload dates are pre-2026-09-01 (vCxXTYXSSqY, va5ATScn3rs, o7ykyTDZKiE, and optionally 92vm/Rp)"
+    ]
   },
   "incidents": [
     {
-      "severity": "DN4L1DkerMM",
+      "vid": "DN4L1DkerMM",
       "issue": "Wrong ID extracted after upload; Related temporarily set to Europa",
       "resolution": "Related restored to What Happens When the Last Star Dies? (REXYxuLOBoI). Confirmed in Studio UI.",
       "status": "FIXED"
     },
     {
-      "severity": "8Bym-yrYhGc",
+      "vid": "8Bym-yrYhGc",
       "issue": "Privatized during failed supersede with no replacement id",
-      "resolution": "Rescheduled Private\u2192Scheduled 4 Sept 2026 11:30 UK",
+      "resolution": "Rescheduled Private→Scheduled 4 Sept 2026 11:30 UK",
       "status": "RESTORED_SCHEDULE_PENDING_SUPERSEDE"
+    },
+    {
+      "vid": "Rp_8J6_6IIk",
+      "issue": "While moving to Thu 20:00, visibility briefly flipped to Premiere and title polluted from long",
+      "resolution": "Restored title + description; Scheduled 10 Sept 2026 20:00; Premiere long Yk1t verified still 18:00 Premiere",
+      "status": "FIXED"
     }
   ],
   "blocked": [
-    "P1\u2013P2 supersedes remaining",
-    "Content Ops YouTube OAuth missing (no 07_Content-Ops/.env) \u2014 Studio UI only",
+    "P1 fresh-id supersedes remaining (stale Aug ids still on clean calendar slots)",
+    "Content Ops YouTube OAuth missing (no 07_Content-Ops/.env) — Studio UI only",
     "Diamond mp4s not on disk; using Studio stream downloads in /tmp/orbit_supersede_mp4",
     "extract_vid() must be fixed before next upload (do not scrape unrelated public Short ids from page)"
   ],
@@ -62,6 +182,10 @@
     "8Bym_visibility": "Scheduled",
     "MXrq_visibility": "Public",
     "MXrq_related": "Could Life Exist Under The Ice Of Europa?",
-    "eVp9_visibility": "Private"
+    "eVp9_visibility": "Private",
+    "dedupe_dupes_private": true,
+    "thu_morning": "92vmMxSNmlk Scheduled 10 Sept 11:30",
+    "thu_premiere": "Yk1tLh23rko Premiere 10 Sept 18:00",
+    "thu_late": "Rp_8J6_6IIk Scheduled 10 Sept 20:00"
   }
 }
