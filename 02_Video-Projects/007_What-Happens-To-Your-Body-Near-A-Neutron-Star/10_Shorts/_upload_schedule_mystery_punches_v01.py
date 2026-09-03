@@ -41,37 +41,62 @@ def dismiss(page) -> None:
 
 
 def next_vis(page) -> None:
-    for _ in range(14):
+    """Advance upload wizard until Visibility (Save button appears)."""
+    for _ in range(16):
         dismiss(page)
         text = (
             page.locator("ytcp-uploads-dialog").inner_text()
             if page.locator("ytcp-uploads-dialog").count()
             else ""
         )
-        if "Save or publish" in text or (
-            page.get_by_text("Private", exact=False).count() and "Public" in text
-        ):
+        save = page.get_by_role("button", name="Save", exact=True)
+        if save.count() and "Visibility" in text:
+            return
+        if "Save or publish" in text:
             return
         nxt = page.get_by_role("button", name="Next", exact=True)
         if nxt.count() and nxt.first.is_enabled():
             nxt.first.click(force=True)
+            page.wait_for_timeout(1400)
+            continue
+        try:
+            page.get_by_role("button", name="Visibility", exact=True).click(
+                force=True, timeout=1500
+            )
             page.wait_for_timeout(1200)
-        else:
+            return
+        except Exception:
             break
 
 
 def extract_vid(page) -> str:
+    ban = {LONG_ID, "upload", "shorts"}
+    m = re.search(r"/video/([A-Za-z0-9_-]{11})/", page.url)
+    if m and m.group(1) not in ban:
+        return m.group(1)
+    try:
+        html = page.content()
+    except Exception:
+        html = ""
+    for pat in (
+        r'"videoId":"([A-Za-z0-9_-]{11})"',
+        r"video_id=([A-Za-z0-9_-]{11})",
+        r"/video/([A-Za-z0-9_-]{11})/edit",
+        r"https://youtu\.be/([A-Za-z0-9_-]{11})",
+    ):
+        for hit in re.finditer(pat, html):
+            vid = hit.group(1)
+            if vid not in ban:
+                return vid
     body = page.locator("body").inner_text()
     for pat in (
-        r"https://youtu\.be/([A-Za-z0-9_-]{11})",
         r"/video/([A-Za-z0-9_-]{11})/",
-        r"watch\?v=([A-Za-z0-9_-]{11})",
+        r"https://youtu\.be/([A-Za-z0-9_-]{11})",
     ):
         m = re.search(pat, body)
-        if m and m.group(1) not in ("upload", "shorts"):
+        if m and m.group(1) not in ban:
             return m.group(1)
-    m = re.search(r"/video/([A-Za-z0-9_-]{11})/", page.url)
-    return m.group(1) if m else ""
+    return ""
 
 
 def ensure_orbit_channel(page) -> None:
@@ -145,10 +170,16 @@ def upload_one(page, item: dict) -> dict:
     )
     desc_box.click(force=True)
     desc_box.fill(item["description"])
-    try:
-        page.get_by_text("No, it's not 'Made for Kids'", exact=False).click(force=True)
-    except Exception:
-        pass
+    for kids in (
+        "No, it's not made for kids",
+        "No, it's not 'Made for Kids'",
+        "No, it's not Made for Kids",
+    ):
+        try:
+            page.get_by_text(kids, exact=False).first.click(force=True, timeout=1500)
+            break
+        except Exception:
+            pass
     try:
         page.get_by_role("radio", name=re.compile(r"Yes, AI was used", re.I)).click(
             force=True, timeout=2000
@@ -157,6 +188,18 @@ def upload_one(page, item: dict) -> dict:
         pass
 
     next_vis(page)
+    # Visibility step only — wait for Save before clicking Private/Save.
+    for _ in range(20):
+        text = (
+            page.locator("ytcp-uploads-dialog").inner_text()
+            if page.locator("ytcp-uploads-dialog").count()
+            else ""
+        )
+        if page.get_by_role("button", name="Save", exact=True).count() and (
+            "Visibility" in text or "Save or publish" in text or "Private" in text
+        ):
+            break
+        page.wait_for_timeout(500)
     page.evaluate(
         """() => {
           const walk=(r)=>{
@@ -173,11 +216,20 @@ def upload_one(page, item: dict) -> dict:
           return walk(document.querySelector('ytcp-uploads-dialog')||document);
         }"""
     )
-    page.wait_for_timeout(500)
-    page.get_by_role("button", name="Save", exact=True).last.click(force=True)
+    page.wait_for_timeout(600)
+    save = page.get_by_role("button", name="Save", exact=True)
+    if save.count():
+        save.last.click(force=True, timeout=15000)
+    else:
+        page.get_by_role("button", name="Publish", exact=True).last.click(
+            force=True, timeout=15000
+        )
     page.wait_for_timeout(9000)
     dismiss(page)
     vid = extract_vid(page)
+    if not vid:
+        page.wait_for_timeout(2500)
+        vid = extract_vid(page)
     r["video_id"] = vid
     r["url"] = f"https://youtu.be/{vid}" if vid else ""
     r["ok"] = bool(vid)
