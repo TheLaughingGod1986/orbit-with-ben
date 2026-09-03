@@ -165,11 +165,27 @@ def diagnose_share_step(page_text: str, url: str = "") -> dict:
             "hint": "",
         }
 
-    if "add video" in text or "select video" in text:
+    video_attached = any(
+        m in text
+        for m in (
+            "safe to publish",
+            "replace video",
+            "remove video",
+            "replace media",
+        )
+    )
+    if ("add video" in text or "select video" in text) and not video_attached:
         return {
             "state": "create",
             "needs_page_asset": stale_url,
             "reasons": reasons + ["create_step"],
+            "hint": "",
+        }
+    if video_attached and not ready_ui and not who_can_see:
+        return {
+            "state": "details_ready",
+            "needs_page_asset": stale_url,
+            "reasons": reasons + ["video_attached"],
             "hint": "",
         }
 

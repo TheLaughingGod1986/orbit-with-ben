@@ -219,6 +219,9 @@ export class YouTubePublishingAdapter implements PublishingAdapter {
     const statusPayload: Record<string, unknown> = {
       privacyStatus,
       selfDeclaredMadeForKids: madeForKids,
+      // Orbit CG is Gemini Veo — always disclose altered/synthetic (Made with AI).
+      containsSyntheticMedia:
+        post.containsSyntheticMedia == null ? true : Boolean(post.containsSyntheticMedia),
     };
     if (schedule.usePublishAt && schedule.publishAtIso) {
       statusPayload.publishAt = schedule.publishAtIso;

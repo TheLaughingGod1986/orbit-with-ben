@@ -38,7 +38,9 @@ def file_slug(path: str) -> str:
     name = Path(path or "").stem.lower()
     if not name:
         return ""
-    name = re.sub(r"_(v\d+|diamond|cdp|punch|captions|titlecta|smooth|normal).*$", "", name)
+    # Strip trailing export suffixes only. Do NOT treat `_punch` as a suffix —
+    # Last Star files are `last-star_punch-01_…` / `punch-02_…` and must stay unique.
+    name = re.sub(r"_(v\d+|diamond|cdp|captions|titlecta|smooth|normal).*$", "", name)
     return name
 
 

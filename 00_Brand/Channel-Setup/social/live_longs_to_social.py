@@ -128,7 +128,164 @@ end tell
     }
 
 
+def _cdp_ports() -> list[int]:
+    # Prefer takeover Chrome (9333), then Meta profile (9223), then Threads (9222).
+    return [9333, 9223, 9222]
+
+
+def post_facebook_link_cdp(film: dict) -> dict:
+    """Post Orbit Page link card via Playwright CDP (mouse clicks; Create → Next → Post)."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception as e:
+        return {"status": "error", "method": "cdp", "detail": f"no playwright: {e}"}
+
+    page_url = "https://www.facebook.com/profile.php?id=61592833318203"
+    caption = film["_caption"]
+    last_err = ""
+
+    for port in _cdp_ports():
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.connect_over_cdp(f"http://127.0.0.1:{port}")
+                if not browser.contexts:
+                    last_err = f"port {port}: no context"
+                    continue
+                ctx = browser.contexts[0]
+                page = ctx.new_page()
+                page.set_viewport_size({"width": 1400, "height": 900})
+                page.goto(page_url, wait_until="domcontentloaded", timeout=90000)
+                time.sleep(3)
+                for _ in range(3):
+                    page.keyboard.press("Escape")
+                    time.sleep(0.15)
+
+                # Switch into Orbit Page if prompted
+                body = page.inner_text("body")
+                if "Switch into Orbit" in body:
+                    page.evaluate(
+                        """() => {
+                      for (const n of document.querySelectorAll('div[role=button], button')) {
+                        if ((n.innerText||'').trim()==='Switch') { n.click(); break; }
+                      }
+                    }"""
+                    )
+                    time.sleep(2)
+                    dlg = page.locator("[role=dialog]").filter(has_text="Switch profiles")
+                    if dlg.count():
+                        btn = dlg.locator(
+                            'div[role=button]:has-text("Switch"), button:has-text("Switch")'
+                        )
+                        if btn.count():
+                            box = btn.last.bounding_box()
+                            if box:
+                                page.mouse.click(
+                                    box["x"] + box["width"] / 2,
+                                    box["y"] + box["height"] / 2,
+                                )
+                            time.sleep(5)
+
+                mind = page.get_by_text("What's on your mind?", exact=True)
+                if not mind.count():
+                    page.close()
+                    last_err = f"port {port}: no composer"
+                    continue
+                box = mind.first.bounding_box()
+                if not box:
+                    page.close()
+                    last_err = f"port {port}: no mind box"
+                    continue
+                page.mouse.click(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+                time.sleep(2)
+
+                create = page.locator("[role=dialog]").filter(has_text="Create post")
+                if not create.count():
+                    page.close()
+                    last_err = f"port {port}: create dialog missing"
+                    continue
+                ed = create.locator("[contenteditable=true]").first
+                ebox = ed.bounding_box()
+                if not ebox:
+                    page.close()
+                    last_err = f"port {port}: no editor"
+                    continue
+                page.mouse.click(ebox["x"] + 20, ebox["y"] + 20)
+                page.keyboard.insert_text(caption)
+                time.sleep(2)
+
+                next_coords = page.evaluate(
+                    """() => {
+                  const d=[...document.querySelectorAll('[role=dialog]')]
+                    .find(x=>/Create post/i.test(x.innerText||''));
+                  if(!d) return null;
+                  for (const el of d.querySelectorAll('[role=button],button')) {
+                    if ((el.innerText||'').trim()==='Next') {
+                      const r=el.getBoundingClientRect();
+                      return {x:r.x+r.width/2,y:r.y+r.height/2};
+                    }
+                  }
+                  return null;
+                }"""
+                )
+                if not next_coords:
+                    page.close()
+                    last_err = f"port {port}: no Next"
+                    continue
+                page.mouse.click(next_coords["x"], next_coords["y"])
+                time.sleep(2)
+
+                post_coords = page.evaluate(
+                    """() => {
+                  const d=[...document.querySelectorAll('[role=dialog]')]
+                    .find(x=>/Post settings/i.test(x.innerText||''));
+                  if(!d) return null;
+                  const posts=[...d.querySelectorAll('[role=button],button')]
+                    .filter(el => (el.innerText||'').trim()==='Post');
+                  if(!posts.length) return null;
+                  const r=posts.at(-1).getBoundingClientRect();
+                  return {x:r.x+r.width/2,y:r.y+r.height/2};
+                }"""
+                )
+                if not post_coords:
+                    page.close()
+                    last_err = f"port {port}: no Post on settings"
+                    continue
+                page.mouse.click(post_coords["x"], post_coords["y"])
+
+                ok = False
+                for _ in range(45):
+                    body = page.inner_text("body")
+                    settings = page.locator("[role=dialog]").filter(
+                        has_text="Post settings"
+                    ).count()
+                    create_n = page.locator("[role=dialog]").filter(
+                        has_text="Create post"
+                    ).count()
+                    if settings == 0 and create_n == 0 and "Posting" not in body:
+                        ok = True
+                        break
+                    time.sleep(1)
+                page.close()
+                if ok:
+                    return {
+                        "status": "posted_link_card",
+                        "method": "cdp_mouse",
+                        "port": port,
+                    }
+                last_err = f"port {port}: posting timeout"
+        except Exception as e:
+            last_err = f"port {port}: {e}"[:240]
+            continue
+
+    return {"status": "error", "method": "cdp_mouse", "detail": last_err[:300]}
+
+
 def post_facebook_link(film: dict) -> dict:
+    """Prefer CDP mouse flow; fall back to AppleScript clipboard paste."""
+    cdp = post_facebook_link_cdp(film)
+    if cdp.get("status") in {"posted_link_card", "posted", "ok"}:
+        return cdp
+
     set_clipboard(film["_caption"])
     time.sleep(0.2)
     page_url = "https://www.facebook.com/profile.php?id=61592833318203"
@@ -173,13 +330,22 @@ tell application "Google Chrome"
   return opened & " | " & posted
 end tell
 '''
-    out = run_osascript(script)
-    ok = out.strip().endswith("posted") or "| posted" in out
-    return {
-        "status": "posted_link_card" if ok else "error",
-        "method": "chrome_clipboard",
-        "detail": out[:300],
-    }
+    try:
+        out = run_osascript(script)
+        ok = out.strip().endswith("posted") or "| posted" in out
+        return {
+            "status": "posted_link_card" if ok else "error",
+            "method": "chrome_clipboard_fallback",
+            "detail": out[:300],
+            "cdp_error": cdp.get("detail"),
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "method": "cdp_then_applescript",
+            "detail": (cdp.get("detail") or "")[:200],
+            "applescript_error": str(e)[:200],
+        }
 
 
 def seed_all() -> int:

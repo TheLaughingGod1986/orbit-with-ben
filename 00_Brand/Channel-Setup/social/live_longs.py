@@ -50,7 +50,7 @@ KNOWN_LONGS = [
         "video_id": "REXYxuLOBoI",
         "title": "What Happens When the Last Star Dies?",
         "url": "https://youtu.be/REXYxuLOBoI",
-        "status": "premiere",  # Thu 27 Aug 18:00 London
+        "status": "public",  # went live Thu 27 Aug 18:00 London
     },
     {
         "video_id": "NbW5G1BpPY0",

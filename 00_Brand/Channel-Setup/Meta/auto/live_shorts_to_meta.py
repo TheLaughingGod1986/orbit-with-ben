@@ -156,9 +156,10 @@ def run_once(*, dry_run: bool = False) -> dict:
                     log(f"FAIL {s['_ledger_key']} status={result.get('status')}")
                 page.wait_for_timeout(2000)
             try:
-                page.close()
+                studio_upload.stay_on_composer(page)
             except Exception:
                 pass
+            # Keep the Suite tab. Closing it pops "Leave Page?" and discards drafts.
     else:
         for s in pending:
             log(f"posting {s['_ledger_key']} · {s.get('title')} via graph")
