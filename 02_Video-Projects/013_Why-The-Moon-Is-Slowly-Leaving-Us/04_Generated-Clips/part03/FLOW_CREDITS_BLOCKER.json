@@ -1,11 +1,12 @@
 {
-  "status": "BLOCKED_MID_BATCH",
-  "checked_at": "2026-09-04T18:50:00+01:00",
-  "flow": "Out of Google Flow credits after partial gens (Start disabled)",
-  "gemini_api_veo": "429 prepaid depleted",
-  "have_unique_plates": 10,
-  "unique_plate_seconds": 80,
+  "status": "BLOCKED",
+  "engines": {
+    "google_flow": "Insufficient credits \u2014 Start disabled",
+    "gemini_api_veo": "429 RESOURCE_EXHAUSTED \u2014 prepaid credits depleted"
+  },
+  "have_plates": 3,
   "need_plates_approx": 18,
   "vo_seconds": 136.7,
-  "next": "Top up Flow Add AI credits again, then resume _gen_part03_flow_world_v01.py and assemble rough into OWB UAT"
+  "uat_note": "OWB UAT/moon_leaving_part-03_STATUS.txt",
+  "next": "Ben tops up Flow AI credits or Gemini API prepaid, then regenerate ~18 world plates and assemble moon_leaving_part-03_rough_v01.mp4 into OWB UAT"
 }

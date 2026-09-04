@@ -10,10 +10,10 @@
 | Part 01 UAT | `OWB UAT/moon_leaving_part-01_LOCKED_v04.mp4` |
 | Part 02 | **LOCKED v01** (Ben 2026-09-04 — “looks good / already tried”) |
 | Part 02 UAT | `OWB UAT/moon_leaving_part-02_LOCKED_v01.mp4` |
-| Part 03 | **BLOCKED mid-batch** — VO + music ready · **no rough in iCloud yet** |
+| Part 03 | **BLOCKED** — VO + music ready · **no rough in iCloud yet** |
 | Part 03 VO | `02_Voiceover/parts/moon_leaving_part-03_vo_v01` (~136.7s) |
 | Part 03 music | `05_Music/moon-leaving-part03_score_bed_v01.mp3` |
-| Part 03 plates | `04_Generated-Clips/part03/flow_world_v01/` — **10 unique / ~18** (~80s) |
+| Part 03 plates | `04_Generated-Clips/part03/flow_world_v01/` — **3 / ~18** |
 | Part 03 UAT | `OWB UAT/moon_leaving_part-03_STATUS.txt` (explains missing mp4) |
 
 ## Why Part 03 is not in iCloud

@@ -21,7 +21,6 @@ WORLD_PREFIX = (
     "Silent cinematic CGI only. No people. No readable text. No logos. "
     "No mascot. No cartoon. Premium documentary look. "
 )
-TARGET_PLATES = 18
 
 
 def thumb_uids(page) -> dict[str, dict]:
@@ -39,10 +38,6 @@ def thumb_uids(page) -> dict[str, dict]:
     return {r["uid"]: r for r in rows}
 
 
-def plate_count() -> int:
-    return len([f for f in OUT.glob("*.mp4") if f.stat().st_size > 200_000])
-
-
 def set_prompt(page, text: str) -> None:
     box = page.locator('[contenteditable="true"]').first
     box.click()
@@ -53,27 +48,8 @@ def set_prompt(page, text: str) -> None:
     page.wait_for_timeout(250)
 
 
-def ensure_x1(page) -> None:
-    try:
-        page.locator('button[aria-label="Settings trigger"]').first.click(timeout=2500)
-        page.wait_for_timeout(600)
-        page.get_by_text("x1", exact=True).first.click(timeout=800)
-        page.wait_for_timeout(300)
-        page.keyboard.press("Escape")
-        page.wait_for_timeout(300)
-    except Exception as e:
-        print(f"  warn settings: {e}", flush=True)
-        try:
-            page.keyboard.press("Escape")
-        except Exception:
-            pass
-
-
 def start_generation(page) -> None:
-    loc = page.locator('button[aria-label="Start generation"]')
-    if not loc.count():
-        raise RuntimeError("Start generation button not found")
-    loc.first.click()
+    page.locator('button[aria-label="Start generation"]').first.click()
 
 
 def scroll_thumb_into_view(page, uid: str) -> dict | None:
@@ -140,12 +116,6 @@ def capture_uid(page, uid: str, dest: Path, timeout_s: float = 50) -> bool:
             pass
 
 
-def credits_blocked(page) -> bool:
-    return bool(
-        page.locator('button[aria-label="Insufficient credits warning"]').count()
-    )
-
-
 def main() -> None:
     rows = json.loads(PROMPTS.read_text())
     with sync_playwright() as p:
@@ -160,7 +130,6 @@ def main() -> None:
         page.on("dialog", lambda d: d.dismiss())
         page.keyboard.press("Escape")
         page.wait_for_timeout(400)
-        ensure_x1(page)
 
         report = []
         for i, row in enumerate(rows):
@@ -170,32 +139,21 @@ def main() -> None:
                 report.append({"id": stem, "status": "skip"})
                 continue
 
-            if plate_count() >= TARGET_PLATES:
-                print(f"enough plates ({plate_count()}) — stop", flush=True)
-                break
-
-            if credits_blocked(page):
-                print("BLOCKED insufficient credits", flush=True)
-                report.append({"id": stem, "status": "blocked_credits"})
+            useful = [
+                f
+                for f in OUT.glob("*.mp4")
+                if not f.name.startswith(('gallery_','p02_','p01_')) is False
+            ]
+            if len(useful) >= 18:
+                print("enough plates — stop", flush=True)
                 break
 
             prompt = WORLD_PREFIX + row["prompt"]
-            print(
-                f"\n=== [{i+1}/{len(rows)}] {stem} plates={plate_count()} ===",
-                flush=True,
-            )
+            print(f"\n=== [{i+1}/{len(rows)}] {stem} ===", flush=True)
             before = set(thumb_uids(page))
             set_prompt(page, prompt)
             page.screenshot(path=str(SHOT / f"prompt_{stem}.png"))
-            try:
-                start_generation(page)
-            except Exception as e:
-                print(f"  FAIL start: {e}", flush=True)
-                page.screenshot(path=str(SHOT / f"fail_start_{stem}.png"))
-                report.append({"id": stem, "status": "fail", "error": f"start:{e}"})
-                if credits_blocked(page):
-                    break
-                continue
+            start_generation(page)
             print("  submitted", flush=True)
 
             new_uids: list[str] = []
@@ -208,9 +166,6 @@ def main() -> None:
                     now = thumb_uids(page)
                     new_uids = [u for u in now if u not in before]
                     break
-                if credits_blocked(page):
-                    print("  credits died while waiting", flush=True)
-                    break
                 page.wait_for_timeout(4000)
                 print(f"  waiting thumbs… {int(time.time()-t0)}s", flush=True)
 
@@ -220,7 +175,7 @@ def main() -> None:
                 continue
 
             files = []
-            for uid in new_uids[:1]:  # x1
+            for uid in new_uids[:2]:
                 dest = OUT / f"{stem}_{uid[:8]}.mp4"
                 ok = capture_uid(page, uid, dest)
                 print(f"  capture {uid[:8]} -> {ok}", flush=True)
@@ -237,8 +192,7 @@ def main() -> None:
             page.wait_for_timeout(1200)
 
         (OUT / "_gen_report_v02.json").write_text(json.dumps(report, indent=2) + "\n")
-        print("DONE plates=", plate_count(), flush=True)
-        print(json.dumps(report, indent=2), flush=True)
+        print("DONE", json.dumps(report, indent=2), flush=True)
 
 
 if __name__ == "__main__":
