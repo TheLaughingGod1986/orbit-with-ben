@@ -1,11 +1,21 @@
 {
-  "status": "BLOCKED_MID_BATCH",
-  "checked_at": "2026-09-04T18:50:00+01:00",
-  "flow": "Out of Google Flow credits after partial gens (Start disabled)",
-  "gemini_api_veo": "429 prepaid depleted",
-  "have_unique_plates": 10,
-  "unique_plate_seconds": 80,
+  "status": "PARKED_AWAITING_CREDITS",
+  "checked_at": "2026-09-04T20:40:00+01:00",
+  "part": "03_Why_It_Drifts",
+  "flow": "Out of Google Flow credits mid-batch (Start / Insufficient credits)",
+  "gemini_api_veo": "429 RESOURCE_EXHAUSTED \u2014 prepaid depleted",
+  "have_unique_plates": "7-10",
+  "have_unique_plates_documented_peak": 10,
+  "unique_plate_seconds_if_10": 80,
   "need_plates_approx": 18,
   "vo_seconds": 136.7,
-  "next": "Top up Flow Add AI credits again, then resume _gen_part03_flow_world_v01.py and assemble rough into OWB UAT"
+  "freeze_pad": "forbidden",
+  "do_not_remint": [
+    "part01_LOCKED_v04",
+    "part02_LOCKED_v01"
+  ],
+  "ping_ben": false,
+  "resume_script": "07_Edit-Project/_gen_part03_flow_world_v01.py",
+  "resume_out": "04_Generated-Clips/part03/flow_world_v01/",
+  "next": "Park until Flow or Gemini Veo credits exist; then mint remaining plates, assemble Part 03 picture-first Orbit house into OWB UAT"
 }
