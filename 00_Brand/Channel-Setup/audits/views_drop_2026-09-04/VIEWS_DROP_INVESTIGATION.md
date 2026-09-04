@@ -66,11 +66,23 @@ Studio check (CDP, logged in): recent Europa + Last Star Shorts are **Public**, 
 | Confirm Neutron 10–14 Sep | one each @ 11:30 | No collisions |
 | Leftover | `0j_pgYbCe5E` | 18 Sep 11:30 only |
 
-Verify artifact: `europa_week_fixed_verify.json`. Checklist updated.
+### Hygiene pass 2 (same day — schedule re-audit)
+
+Live list showed **two** Scheduled Shorts on **14 Sep** (`fhJP6eMoU0Q` Tear Atoms + `Rp_8J6_6IIk` Touch). Tear is the sixth Neutron punch → moved to the empty Thu launch slot.
+
+| Action | ID | Result |
+|--------|-----|--------|
+| Move Tear Atoms off 14 Sep collision | `fhJP6eMoU0Q` | **14 Sep 11:30 → 10 Sep 20:00** (Neutron launch) |
+| Touch stays alone | `Rp_8J6_6IIk` | **14 Sep 11:30** |
+| Mystery punches | `3QrICn9Kp00` · `mAAMsbhm88w` · `BX-z1EkgANg` | **15–17 Sep 11:30** (already set) |
+
+Verify artifacts: `europa_week_fixed_verify.json` · `europa_week_reverify_after_tear.json` · `neutron_tear_to_thu_launch.json`. Checklist updated.
 
 ## Artifacts
 
 - `recent_shorts_public.json`
 - `studio_recent_visibility.json`
 - `europa_week_fixed_verify.json`
+- `europa_week_reverify_after_tear.json`
+- `neutron_tear_to_thu_launch.json`
 - This file

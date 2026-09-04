@@ -23,19 +23,23 @@ Related on all eight: `NbW5G1BpPY0`.
 
 ## Neutron week (`Yk1tLh23rko` · Premiere Thu **10 Sep 18:00**)
 
-Bible prefix `fhJP` is **not** in live Studio (only five Neutron punches exist). **Can't Stand** was moved from 15 Sep → **10 Sep 11:30** so Thursday morning promotes the upcoming Neutron long.
+**Can't Stand** sits at **10 Sep 11:30** (upcoming promo). Sixth punch **Tear Atoms** (`fhJP6eMoU0Q`) is the Thu **20:00** launch — moved off a **14 Sep** collision with Touch on 4 Sep 2026 (hygiene pass 2).
 
 | Slot | Live id | Title | Time UK | Overlay |
 |------|---------|-------|---------|---------|
 | Thu upcoming | `92vmMxSNmlk` | Why You Can't Stand on a Neutron Star | **10 Sep 11:30** · Scheduled | **CAN'T STAND** / ON IT |
+| Thu launch | `fhJP6eMoU0Q` | A Neutron Star Would Tear You Into Atoms | **10 Sep 20:00** · Scheduled | **TEARS YOU** / INTO ATOMS |
 | Fri | `vCxXTYXSSqY` | The Weight of a Mountain in Your Hand | 11 Sep 11:30 · Scheduled | A TEASPOON / **OF MOUNTAINS** |
 | Sat | `va5ATScn3rs` | The Sky Would Lean Near a Neutron Star | 12 Sep 11:30 · Scheduled | THE SKY / **WOULD LEAN** |
 | Sun | `o7ykyTDZKiE` | Your Last Clear Image Near a Neutron Star | 13 Sep 11:30 · Scheduled | LAST CLEAR / **IMAGE** |
-| Mon | `Rp_8J6_6IIk` | What Happens If You Touch a Neutron Star? | **14 Sep 11:30** · Scheduled (moved off mistaken **10 Sep 20:00** double-book 4 Sep 2026) | **CRUSHES YOU** / TOO FAST |
+| Mon | `Rp_8J6_6IIk` | What Happens If You Touch a Neutron Star? | **14 Sep 11:30** · Scheduled | **CRUSHES YOU** / TOO FAST |
+| Tue | `3QrICn9Kp00` | Why Does Light Leave Exhausted? | 15 Sep 11:30 · Scheduled | LIGHT LEAVES / **EXHAUSTED** |
+| Wed | `mAAMsbhm88w` | Could a Probe Get Closer Than You? | 16 Sep 11:30 · Scheduled | COULD A PROBE / **GET CLOSER?** |
+| Thu | `BX-z1EkgANg` | What Happens One Second After Contact? | 17 Sep 11:30 · Scheduled | ONE SECOND / **AFTER CONTACT** |
 
-Related on these five: `Yk1tLh23rko`. Covers in `007_.../10_Shorts/08_Thumbs/yellow_white_v04/`.
+Related on these: `Yk1tLh23rko`. Covers in `007_.../10_Shorts/08_Thumbs/yellow_white_v04/`.
 
-**Empty (need more Neutron punches — do not remint, do not park Europa leftovers here):** **15–17 Sep**. No Thu **10 Sep 20:00** launch Short unless a sixth Neutron punch appears.
+**Hygiene:** one Public/Scheduled Short per UK calendar day, except Thu may also have a **20:00** launch when a punch exists. Never two at the same minute.
 
 ## Locked leftover (date + Related unchanged)
 
