@@ -38,6 +38,10 @@ SHORTS = [
     {"id": "va5ATScn3rs", "cover": NS / "cover_va5ATScn3rs.jpg", "related": "Yk1tLh23rko"},
     {"id": "o7ykyTDZKiE", "cover": NS / "cover_o7ykyTDZKiE.jpg", "related": "Yk1tLh23rko"},
     {"id": "Rp_8J6_6IIk", "cover": NS / "cover_Rp_8J6_6IIk.jpg", "related": "Yk1tLh23rko"},
+    {"id": "fhJP6eMoU0Q", "cover": NS / "cover_fhJP6eMoU0Q.jpg", "related": "Yk1tLh23rko"},
+    {"id": "3QrICn9Kp00", "cover": NS / "cover_3QrICn9Kp00.jpg", "related": "Yk1tLh23rko"},
+    {"id": "mAAMsbhm88w", "cover": NS / "cover_mAAMsbhm88w.jpg", "related": "Yk1tLh23rko"},
+    {"id": "BX-z1EkgANg", "cover": NS / "cover_BX-z1EkgANg.jpg", "related": "Yk1tLh23rko"},
     {"id": "0j_pgYbCe5E", "cover": LS / "cover_0j_pgYbCe5E.jpg", "related": "REXYxuLOBoI"},
 ]
 
@@ -177,10 +181,17 @@ def apply_one(ctx, s: dict, i: int) -> dict:
 
 
 def main() -> int:
+    import os
+
     SHOTS.mkdir(parents=True, exist_ok=True)
+    only = {x.strip() for x in os.environ.get("ONLY_IDS", "").split(",") if x.strip()}
+    jobs = [s for s in SHORTS if not only or s["id"] in only]
+    if not jobs:
+        raise SystemExit(f"No SHORTS matched ONLY_IDS={sorted(only)}")
     report = {
         "task": "yellow_white_v04_thumbs",
         "started_at": datetime.now(timezone.utc).isoformat(),
+        "only_ids": sorted(only) if only else None,
         "cdp_tabs": [t.get("url", "")[:180] for t in cdp_list() if t.get("type") == "page"],
         "studio_results": [],
     }
@@ -189,7 +200,7 @@ def main() -> int:
     with sync_playwright() as p:
         browser = p.chromium.connect_over_cdp(CDP)
         ctx = browser.contexts[0]
-        for i, s in enumerate(SHORTS, start=1):
+        for i, s in enumerate(jobs, start=1):
             print(f"{i:02d} {s['id']}", flush=True)
             row = apply_one(ctx, s, i)
             report["studio_results"].append(row)
