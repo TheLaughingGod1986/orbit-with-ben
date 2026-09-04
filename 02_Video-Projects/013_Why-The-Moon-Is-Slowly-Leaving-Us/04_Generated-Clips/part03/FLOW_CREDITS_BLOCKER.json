@@ -1,11 +1,12 @@
 {
   "status": "BLOCKED",
-  "engine": "google-flow",
-  "project_url": "https://flow.google.com/project/fc539939-d81d-4a90-9cf1-c369704b34c9",
-  "blocked_at": "2026-09-04",
-  "reason": "Insufficient Flow credits — Start replaced by Insufficient credits warning",
+  "engines": {
+    "google_flow": "Insufficient credits \u2014 Start disabled",
+    "gemini_api_veo": "429 RESOURCE_EXHAUSTED \u2014 prepaid credits depleted"
+  },
   "have_plates": 3,
   "need_plates_approx": 18,
   "vo_seconds": 136.7,
-  "next": "Ben tops up Flow credits or waits for monthly reset, then re-run 07_Edit-Project/_gen_part03_flow_world_v01.py"
+  "uat_note": "OWB UAT/moon_leaving_part-03_STATUS.txt",
+  "next": "Ben tops up Flow AI credits or Gemini API prepaid, then regenerate ~18 world plates and assemble moon_leaving_part-03_rough_v01.mp4 into OWB UAT"
 }
