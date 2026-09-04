@@ -213,8 +213,17 @@ def looks_logged_in(page) -> bool:
     low = body.lower()
     if "sign in" in low and "google flow" in low and "ultra" not in low:
         return False
-    return "labs.google" in url and (
-        "ultra" in low or "new project" in low or "/project/" in url
+    on_flow = (
+        "labs.google" in url
+        or "flow.google.com" in url
+        or "labs.google/fx" in url
+    )
+    return on_flow and (
+        "ultra" in low
+        or "new project" in low
+        or "start creating" in low
+        or "/project/" in url
+        or "/project/" in (page.url or "")
     )
 
 

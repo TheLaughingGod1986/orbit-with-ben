@@ -12,7 +12,7 @@
     "long_window_uk": "18:00-20:00",
     "short_day1_time_uk": "21:00",
     "shorts_days_2_to_7_time_uk": "12:30",
-    "pattern": "long first → Short#1 after 1-3h → one Short/day Days 2-7",
+    "pattern": "long first \u2192 Short#1 after 1-3h \u2192 one Short/day Days 2-7",
     "long_form_minutes_now": "10-12",
     "long_form_minutes_later": "15-20 if retention earns it",
     "story_gate": "LONGFORM_STORY_AND_VO_PICTURE_GATE.md",
@@ -56,7 +56,7 @@
         "fermi paradox",
         "space documentary"
       ],
-      "shorts_cluster": "10_Shorts (S01–S05 scripted — pillar-first publish order)"
+      "shorts_cluster": "10_Shorts (S01\u2013S05 scripted \u2014 pillar-first publish order)"
     },
     {
       "id": "002",
@@ -70,7 +70,7 @@
       "status": "scripting",
       "folder": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole",
       "format": "full_cg_orbit_in_peril",
-      "angle": "Put Orbit in peril — horizon, time dilation, spaghettification through his fall",
+      "angle": "Put Orbit in peril \u2014 horizon, time dilation, spaghettification through his fall",
       "target_minutes": "18-20",
       "primary_keywords": [
         "what happens if you fall into a black hole",
@@ -95,13 +95,13 @@
       "status": "in_production",
       "folder": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds",
       "format": "full_cg_orbit_travelogue",
-      "angle": "Orbit visits strange exoplanets — travelogue; one wonder per beat",
+      "angle": "Orbit visits strange exoplanets \u2014 travelogue; one wonder per beat",
       "target_minutes": "18-20",
       "script": "01_Script/exoplanets_script_master_v01.md",
       "vo_master": "02_Voiceover/05_Master/exoplanets_voiceover_v01_ivc_kDch_master.wav",
       "vo_duration_min": 21.35,
       "prompts": "03_Animation-Prompts/02_Individual-Prompts/",
-      "next_step": "CG gen hero worlds → VO-locked edit",
+      "next_step": "CG gen hero worlds \u2192 VO-locked edit",
       "primary_keywords": [
         "alien worlds",
         "strangest planets in the universe",
@@ -120,12 +120,12 @@
       "brand_suffix": "Orbit's Cosmic Journey",
       "pillar": "Cosmic Mysteries",
       "status": "in_production",
-      "angle": "Orbit as curious learner — galaxies too old, black holes too big; wonder not clickbait",
+      "angle": "Orbit as curious learner \u2014 galaxies too old, black holes too big; wonder not clickbait",
       "folder": "02_Video-Projects/004_JWST-Discoveries-That-Change-Everything",
       "scheduled": "2026-08-28T19:00:00+01:00",
       "format": "full_cg_orbit_in_scene + chapter_cards",
       "v003_feedback": "keep Orbit-in-scene + VO + intro/outro; restore chapter cards begin/middle/end",
-      "next_step": "CG gen hero-first via Omni (queue jwst_generation_queue_v01.md) → VO-locked edit with chapter cards",
+      "next_step": "CG gen hero-first via Omni (queue jwst_generation_queue_v01.md) \u2192 VO-locked edit with chapter cards",
       "vo_duration_min": 16.4,
       "vo_master": "02_Voiceover/05_Master/jwst_voiceover_v01_ivc_kDch_master.wav",
       "title_lock": "What the James Webb Telescope Discovered That Changes Everything | Orbit's Cosmic Journey",
@@ -157,15 +157,16 @@
       "id": "007",
       "working_title": "What Happens To Your Body Near A Neutron Star",
       "pillar": "Cosmic Mysteries",
-      "status": "in_production",
-      "next_production": true,
+      "status": "scheduled",
+      "next_production": false,
       "folder": "02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star",
       "script": "01_Script/neutron_star_script_master_v01.md",
       "script_review_score": 91.1,
       "format": "aistudio_veo_world_omni_orbit_only",
-      "note": "LOCKED NEXT (16 Aug 2026). Script passed 91.1 on the Mac folder. Do not use empty GitHub scaffold 007_Neutron-Star. Picture path (27 Aug): AI Studio Veo world / Omni Orbit-only — stills first, 2–3 Veo Fast money shots; do NOT Omni the whole film. Ship 7–9 min, not 18–25. Do not start 013 Moon. 007 is not Simulation.",
+      "note": "Premiere scheduled Thu 10 Sep 2026 18:00 UK (Yk1tLh23rko). Broadcast assembled. Not next to make \u2014 next is 013 Moon.",
       "quality_bar": "OMNI_LONGFORM_PLAYBOOK (AI Studio economy) + orbit-gemini-veo-cg + orbit-omni-section-qa when Orbit moves",
-      "target_minutes": "7-9"
+      "target_minutes": "7-9",
+      "youtube_id": "Yk1tLh23rko"
     },
     {
       "id": "008",
@@ -196,28 +197,28 @@
       "working_title": "The Great Filter: Why Haven't We Found Aliens?",
       "pillar": "Alien Civilisations",
       "status": "backlog",
-      "note": "Deferred — V001 already covered filter; do not lead soon after aliens film"
+      "note": "Deferred \u2014 V001 already covered filter; do not lead soon after aliens film"
     },
     {
       "id": "013",
-      "working_title": "Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone",
+      "working_title": "Why the Moon Is Slowly Leaving Us \u2014 and What Happens When It's Gone",
       "brand_suffix": "Orbit's Cosmic Journey",
       "title_score": 99,
       "alt_titles": [
-        "The Moon Is Leaving Earth — Here's What Happens Next | Orbit's Cosmic Journey",
+        "The Moon Is Leaving Earth \u2014 Here's What Happens Next | Orbit's Cosmic Journey",
         "We Live in the Last Perfect Eclipse Window | Orbit's Cosmic Journey"
       ],
       "pillar": "Cosmic Mysteries",
-      "status": "backlog",
-      "priority": "after_007_neutron_star",
-      "next_production": false,
-      "note": "Do not produce before 007 Neutron Star master lands.",
-      "quality_bar": "PRE_BUILD_VIDIQ_AUDIT + LONGFORM_STORY_AND_VO_PICTURE_GATE — first episode under hard pre-build data + 10-12 VO-picture chapter gate",
+      "status": "in_production",
+      "priority": "next_to_make",
+      "next_production": true,
+      "note": "LOCKED NEXT TO MAKE (3 Sep 2026). Script PASS 90.4. Episode gate PASS. Ben vidIQ title reconfirm before VO. Do not start 008\u2013012 or 015 Simulation.",
+      "quality_bar": "PRE_BUILD_VIDIQ_AUDIT + LONGFORM_STORY_AND_VO_PICTURE_GATE \u2014 first episode under hard pre-build data + 10-12 VO-picture chapter gate",
       "source": "vidiq_outlier_pattern_analysis_2026-08-02",
       "ideas_doc": "00_Brand/Channel-Setup/ideas/013_Moon-Leaving-Us/",
       "format": "full_cg_orbit_guide + chapter_cards",
-      "target_minutes": "10-12",
-      "angle": "Layered reveal of lunar recession — early Earth when Moon was closer, what's happening now, distant future without perfect eclipses; end in wonder at the coincidence window. Every chapter teaches one concrete fact; picture must match VO.",
+      "target_minutes": "7-9",
+      "angle": "Layered reveal of lunar recession \u2014 early Earth when Moon was closer, what's happening now, distant future without perfect eclipses; end in wonder at the coincidence window. Every chapter teaches one concrete fact; picture must match VO.",
       "patterns": [
         "assumption_flip",
         "layered_structure",
@@ -228,11 +229,11 @@
         "orbit_as_guide"
       ],
       "structure_beats": [
-        "Hook: the Moon is leaving at 3.8 cm/year — promise the full answer at the end",
-        "Layer 1: early Earth when the Moon was ~10× closer (huge tides, short day)",
+        "Hook: the Moon is leaving at 3.8 cm/year \u2014 promise the full answer at the end",
+        "Layer 1: early Earth when the Moon was ~10\u00d7 closer (huge tides, short day)",
         "Layer 2: why it's receding now (tidal friction)",
-        "Layer 3: future — no total solar eclipses, axial tilt risk, eventual drift",
-        "Closer: we live in the narrow perfect-eclipse window — Orbit wonder CTA"
+        "Layer 3: future \u2014 no total solar eclipses, axial tilt risk, eventual drift",
+        "Closer: we live in the narrow perfect-eclipse window \u2014 Orbit wonder CTA"
       ],
       "primary_keywords": [
         "moon leaving earth",
@@ -246,8 +247,16 @@
         "astronomy"
       ],
       "keyword_notes": {
-        "moon leaving earth": {"overall": 59.7, "est_monthly": 5041, "competition": 33.6},
-        "moon drifting away": {"overall": 58.2, "est_monthly": 4360, "competition": 36.1},
+        "moon leaving earth": {
+          "overall": 59.7,
+          "est_monthly": 5041,
+          "competition": 33.6
+        },
+        "moon drifting away": {
+          "overall": 58.2,
+          "est_monthly": 4360,
+          "competition": 36.1
+        },
         "umbrella": "space documentary ~428K / mo"
       },
       "thumb_hooks": [
@@ -257,20 +266,23 @@
       ],
       "shorts_cluster_seeds": [
         "The Moon leaves Earth by 3.8 cm every year",
-        "When the Moon was 10× closer",
+        "When the Moon was 10\u00d7 closer",
         "Why total solar eclipses won't last forever",
         "What Earth's day was like before the Moon drifted",
         "The cosmic coincidence of perfect eclipses"
       ],
-      "tone_guardrail": "Wonder over dread — no 'disturbing' / end-of-world fearbait"
+      "tone_guardrail": "Wonder over dread \u2014 no 'disturbing' / end-of-world fearbait",
+      "folder": "02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us",
+      "script": "01_Script/moon_leaving_script_master_v01.md",
+      "script_review_score": 90.4
     },
     {
       "id": "014",
-      "working_title": "Every Planet Has a Sound — and What They Recorded Is Stranger Than Anyone Expected",
+      "working_title": "Every Planet Has a Sound \u2014 and What They Recorded Is Stranger Than Anyone Expected",
       "brand_suffix": "Orbit's Cosmic Journey",
       "title_score": 98,
       "alt_titles": [
-        "Orbit Tunes Into the Planets — What They Sound Like Will Surprise You | Orbit's Cosmic Journey",
+        "Orbit Tunes Into the Planets \u2014 What They Sound Like Will Surprise You | Orbit's Cosmic Journey",
         "What Do the Planets Sound Like? NASA Recorded Their Voices | Orbit's Cosmic Journey"
       ],
       "pillar": "Space Stories",
@@ -280,7 +292,7 @@
       "ideas_doc": "00_Brand/Channel-Setup/ideas/014_Planet-Sounds/",
       "format": "full_cg_orbit_radio_tour + chapter_cards",
       "target_minutes": "10-12",
-      "angle": "Orbit tunes a cosmic radio — planet-by-planet walk through NASA/ESA converted radio emissions; end on Earth's unique electromagnetic song",
+      "angle": "Orbit tunes a cosmic radio \u2014 planet-by-planet walk through NASA/ESA converted radio emissions; end on Earth's unique electromagnetic song",
       "patterns": [
         "assumption_flip",
         "journey_structure",
@@ -291,11 +303,11 @@
         "orbit_as_guide"
       ],
       "structure_beats": [
-        "Hook: space isn't silent the way you think — Orbit opens a radio dial",
-        "Tour: Jupiter whistlers → Saturn auroral chorus → barren Mars → others",
+        "Hook: space isn't silent the way you think \u2014 Orbit opens a radio dial",
+        "Tour: Jupiter whistlers \u2192 Saturn auroral chorus \u2192 barren Mars \u2192 others",
         "Science beat: radio emissions converted to audio (honest about translation)",
         "Reveal: Earth's own electromagnetic voice and what makes it rare",
-        "Closer: Orbit listening outward — wonder CTA"
+        "Closer: Orbit listening outward \u2014 wonder CTA"
       ],
       "primary_keywords": [
         "sounds of the planets",
@@ -309,9 +321,21 @@
         "solar system"
       ],
       "keyword_notes": {
-        "sounds of the planets": {"overall": 54.8, "est_monthly": 3507, "competition": 42.5},
-        "what do planets sound like": {"overall": 56.9, "est_monthly": 4201, "competition": 39},
-        "nasa planet sounds": {"overall": 61.6, "est_monthly": 3891, "competition": 26.3}
+        "sounds of the planets": {
+          "overall": 54.8,
+          "est_monthly": 3507,
+          "competition": 42.5
+        },
+        "what do planets sound like": {
+          "overall": 56.9,
+          "est_monthly": 4201,
+          "competition": 39
+        },
+        "nasa planet sounds": {
+          "overall": 61.6,
+          "est_monthly": 3891,
+          "competition": 26.3
+        }
       },
       "thumb_hooks": [
         "Orbit with oversized headphones / radio dial in front of Jupiter",
@@ -322,7 +346,7 @@
         "Jupiter's real radio chorus",
         "Saturn's eerie auroral song",
         "Does Mars have a voice?",
-        "Space isn't silent — here's the catch",
+        "Space isn't silent \u2014 here's the catch",
         "Earth's electromagnetic song"
       ],
       "tone_guardrail": "Wonder + curiosity; avoid 'scary space sounds' clickbait framing",
@@ -342,7 +366,7 @@
       "brand_suffix": "Orbit's Cosmic Journey",
       "title_score": 96,
       "alt_titles": [
-        "A Spatula, a Roadster, and a Golden Record — What We Left in Space | Orbit's Cosmic Journey",
+        "A Spatula, a Roadster, and a Golden Record \u2014 What We Left in Space | Orbit's Cosmic Journey",
         "Things Humans Accidentally Left in Space | Orbit's Cosmic Journey"
       ],
       "pillar": "Space Stories",
@@ -353,7 +377,7 @@
       "ideas_doc": "00_Brand/Channel-Setup/ideas/015_Left-In-Space/",
       "format": "full_cg_orbit_object_tour",
       "target_minutes": "12-18",
-      "angle": "Object-by-object journey (spatula → Roadster → …) each revealing something about exploration; end on Voyager Golden Record — the one thing left on purpose",
+      "angle": "Object-by-object journey (spatula \u2192 Roadster \u2192 \u2026) each revealing something about exploration; end on Voyager Golden Record \u2014 the one thing left on purpose",
       "patterns": [
         "journey_structure",
         "emotional_anchoring",
@@ -363,8 +387,8 @@
       ],
       "structure_beats": [
         "Hook: humans leave strange breadcrumbs in the void",
-        "Objects 1–6: accident stories (tool drops, Roadster, debris lore) — each with a human beat",
-        "Object 7 / closer: Voyager Golden Record — intentional voice into the dark",
+        "Objects 1\u20136: accident stories (tool drops, Roadster, debris lore) \u2014 each with a human beat",
+        "Object 7 / closer: Voyager Golden Record \u2014 intentional voice into the dark",
         "Orbit reflection: what we leave behind says who we are"
       ],
       "primary_keywords": [
@@ -378,9 +402,21 @@
         "space documentary"
       ],
       "keyword_notes": {
-        "voyager golden record": {"overall": 62.9, "est_monthly": 12592, "competition": 34.5},
-        "tesla roadster space": {"overall": 59.6, "est_monthly": 3306, "competition": 29.7},
-        "things left in space": {"overall": 21.6, "est_monthly": 0, "note": "title phrase — lean on Voyager/Roadster search terms"}
+        "voyager golden record": {
+          "overall": 62.9,
+          "est_monthly": 12592,
+          "competition": 34.5
+        },
+        "tesla roadster space": {
+          "overall": 59.6,
+          "est_monthly": 3306,
+          "competition": 29.7
+        },
+        "things left in space": {
+          "overall": 21.6,
+          "est_monthly": 0,
+          "note": "title phrase \u2014 lean on Voyager/Roadster search terms"
+        }
       },
       "thumb_hooks": [
         "Orbit holding a floating spatula beside Earth",
@@ -394,7 +430,7 @@
         "Accidental space junk with a story",
         "The one thing we left in space on purpose"
       ],
-      "tone_guardrail": "Light wonder / human curiosity — palate cleanser after heavy cosmic-mystery weeks; keep science honest on debris vs myth"
+      "tone_guardrail": "Light wonder / human curiosity \u2014 palate cleanser after heavy cosmic-mystery weeks; keep science honest on debris vs myth"
     },
     {
       "id": "016",
@@ -402,7 +438,7 @@
       "brand_suffix": "Orbit's Cosmic Journey",
       "title_score": 94,
       "alt_titles": [
-        "Orbit Walks to the Nearest Star — Here's How Long It Takes | Orbit's Cosmic Journey",
+        "Orbit Walks to the Nearest Star \u2014 Here's How Long It Takes | Orbit's Cosmic Journey",
         "What's Between Us and the Nearest Star? Orbit Walks There | Orbit's Cosmic Journey"
       ],
       "pillar": "Cosmic Mysteries",
@@ -412,7 +448,7 @@
       "ideas_doc": "00_Brand/Channel-Setup/ideas/016_Nearest-Star-Walk/",
       "format": "full_cg_orbit_walk_journey + chapter_cards",
       "target_minutes": "10-14",
-      "angle": "Orbit walks layer by layer (ISS → Moon → Sun → Proxima) using one-step-one-metre body scale — proven journey structure made uniquely Orbit",
+      "angle": "Orbit walks layer by layer (ISS \u2192 Moon \u2192 Sun \u2192 Proxima) using one-step-one-metre body scale \u2014 proven journey structure made uniquely Orbit",
       "patterns": [
         "narrative_journey",
         "layered_structure",
@@ -422,12 +458,12 @@
         "honest_not_hyped"
       ],
       "structure_beats": [
-        "Hook: Orbit leaves charging station — one step = one metre",
-        "Layer 1: walk to ISS (~400 km) — days of walking",
-        "Layer 2: Moon — a year+; new batteries joke",
-        "Layer 3: Sun — scrap metal before arrival",
-        "Layer 4: Proxima — longer than civilisation",
-        "Close: Orbit looks up — 'Good thing I brought snacks.'"
+        "Hook: Orbit leaves charging station \u2014 one step = one metre",
+        "Layer 1: walk to ISS (~400 km) \u2014 days of walking",
+        "Layer 2: Moon \u2014 a year+; new batteries joke",
+        "Layer 3: Sun \u2014 scrap metal before arrival",
+        "Layer 4: Proxima \u2014 longer than civilisation",
+        "Close: Orbit looks up \u2014 'Good thing I brought snacks.'"
       ],
       "primary_keywords": [
         "how far is the nearest star",
@@ -440,24 +476,40 @@
         "space facts"
       ],
       "keyword_notes": {
-        "how far is the nearest star": {"overall": 61.4, "est_monthly": 3369, "competition": 25.5},
-        "nearest star": {"overall": 59.1, "est_monthly": 3828, "competition": 32.4},
-        "proxima centauri": {"overall": 61.4, "est_monthly": 53133, "competition": 52.2},
-        "scale of the universe": {"overall": 55.6, "est_monthly": 13615, "competition": 53.5}
+        "how far is the nearest star": {
+          "overall": 61.4,
+          "est_monthly": 3369,
+          "competition": 25.5
+        },
+        "nearest star": {
+          "overall": 59.1,
+          "est_monthly": 3828,
+          "competition": 32.4
+        },
+        "proxima centauri": {
+          "overall": 61.4,
+          "est_monthly": 53133,
+          "competition": 52.2
+        },
+        "scale of the universe": {
+          "overall": 55.6,
+          "est_monthly": 13615,
+          "competition": 53.5
+        }
       },
       "thumb_hooks": [
         "Tiny Orbit on a glowing path from Earth toward a distant star",
         "Orbit with a pedometer / step counter overlay",
-        "Split scale: ISS → Moon → Sun → star dots"
+        "Split scale: ISS \u2192 Moon \u2192 Sun \u2192 star dots"
       ],
       "shorts_cluster_seeds": [
-        "Orbit walks to the ISS — how long?",
+        "Orbit walks to the ISS \u2014 how long?",
         "Walking to the Moon at 1 metre per step",
         "How far is Proxima Centauri really?",
         "The Sun is farther than you feel",
         "Scale of the universe in Orbit steps"
       ],
-      "tone_guardrail": "Cosy wonder + humour — not sleep-doc length; keep 10–14 min"
+      "tone_guardrail": "Cosy wonder + humour \u2014 not sleep-doc length; keep 10\u201314 min"
     },
     {
       "id": "017",
@@ -475,7 +527,7 @@
       "ideas_doc": "00_Brand/Channel-Setup/ideas/017_Mars-Habitable-Roadmap/",
       "format": "full_cg_orbit_investigate + roadmap_chapters",
       "target_minutes": "10-14",
-      "angle": "Engineering roadmap (warm → atmosphere → oxygen → magnetic shield) with Orbit honesty — even a robot needs serious help; race stakes optional, wonder over hype",
+      "angle": "Engineering roadmap (warm \u2192 atmosphere \u2192 oxygen \u2192 magnetic shield) with Orbit honesty \u2014 even a robot needs serious help; race stakes optional, wonder over hype",
       "patterns": [
         "engineering_roadmap",
         "assumption_flip",
@@ -487,11 +539,11 @@
       "structure_beats": [
         "Hook: even Orbit couldn't survive Mars without help",
         "Problem 1: almost no air",
-        "Problem 2: cold (−60°C typical)",
+        "Problem 2: cold (\u221260\u00b0C typical)",
         "Problem 3: radiation",
-        "Roadmap: warm → thicken atmosphere → oxygen → magnetic shield",
+        "Roadmap: warm \u2192 thicken atmosphere \u2192 oxygen \u2192 magnetic shield",
         "Timeline honesty: centuries, not next Tuesday",
-        "Close: Orbit with tiny Mars model — 'One day. But not this Tuesday.'"
+        "Close: Orbit with tiny Mars model \u2014 'One day. But not this Tuesday.'"
       ],
       "primary_keywords": [
         "mars colonization",
@@ -504,10 +556,26 @@
         "mars"
       ],
       "keyword_notes": {
-        "mars colonization": {"overall": 66.3, "est_monthly": 29570, "competition": 34.3},
-        "can we live on mars": {"overall": 58.0, "est_monthly": 4376, "competition": 36.5},
-        "terraform mars": {"overall": 56.6, "est_monthly": 4135, "competition": 39.6},
-        "mars habitable": {"overall": 56.1, "est_monthly": 4661, "competition": 42}
+        "mars colonization": {
+          "overall": 66.3,
+          "est_monthly": 29570,
+          "competition": 34.3
+        },
+        "can we live on mars": {
+          "overall": 58.0,
+          "est_monthly": 4376,
+          "competition": 36.5
+        },
+        "terraform mars": {
+          "overall": 56.6,
+          "est_monthly": 4135,
+          "competition": 39.6
+        },
+        "mars habitable": {
+          "overall": 56.1,
+          "est_monthly": 4661,
+          "competition": 42
+        }
       },
       "thumb_hooks": [
         "Orbit in a cracked Mars suit / shield UI failing",
@@ -539,7 +607,7 @@
       "ideas_doc": "00_Brand/Channel-Setup/ideas/018_Wrong-Kind-Of-Aliens/",
       "format": "full_cg_orbit_investigate",
       "target_minutes": "8-12",
-      "angle": "Assumption-flip: movies vs biology/chemistry; microbial or machine intelligence more likely; Orbit almost walks past alien life — expand Fermi short seed without rehashing V001 filter",
+      "angle": "Assumption-flip: movies vs biology/chemistry; microbial or machine intelligence more likely; Orbit almost walks past alien life \u2014 expand Fermi short seed without rehashing V001 filter",
       "patterns": [
         "assumption_flip",
         "open_loop_title",
@@ -550,10 +618,10 @@
       "structure_beats": [
         "Hook: if Orbit met an alien, he might walk right past it",
         "Beat 1: movies vs atmospheres/gravity/chemistry",
-        "Beat 2: carbon assumption — silicon / other chemistries",
+        "Beat 2: carbon assumption \u2014 silicon / other chemistries",
         "Beat 3: most likely = microbial or machine intelligence",
-        "Beat 4: light Orbit joke about machine aliens watching YouTube — keep soft",
-        "Close: Orbit at a pond — maybe we haven't looked closely enough"
+        "Beat 4: light Orbit joke about machine aliens watching YouTube \u2014 keep soft",
+        "Close: Orbit at a pond \u2014 maybe we haven't looked closely enough"
       ],
       "primary_keywords": [
         "alien life",
@@ -566,9 +634,21 @@
         "fermi paradox"
       ],
       "keyword_notes": {
-        "alien life": {"overall": 55.1, "est_monthly": 18944, "competition": 58},
-        "are we alone": {"overall": 57.0, "est_monthly": 10790, "competition": 47.8},
-        "silicon based life": {"overall": 54.0, "est_monthly": 3809, "competition": 45.2}
+        "alien life": {
+          "overall": 55.1,
+          "est_monthly": 18944,
+          "competition": 58
+        },
+        "are we alone": {
+          "overall": 57.0,
+          "est_monthly": 10790,
+          "competition": 47.8
+        },
+        "silicon based life": {
+          "overall": 54.0,
+          "est_monthly": 3809,
+          "competition": 45.2
+        }
       },
       "thumb_hooks": [
         "Orbit walking past glowing microbes in a pond",
@@ -577,13 +657,13 @@
       ],
       "shorts_cluster_seeds": [
         "Aliens probably aren't little green humanoids",
-        "Silicon-based life — possible?",
+        "Silicon-based life \u2014 possible?",
         "The most likely alien is a microbe",
         "Why we'd walk past alien life",
         "Machine intelligence as alien life"
       ],
-      "note": "Defer until clear air after V001 Fermi + V003 exoplanets. Distinct from V012 Great Filter — this is morphology/chemistry assumption-flip, not filter.",
-      "tone_guardrail": "Intelligent counterintuitive — no 'aliens are already here' clickbait"
+      "note": "Defer until clear air after V001 Fermi + V003 exoplanets. Distinct from V012 Great Filter \u2014 this is morphology/chemistry assumption-flip, not filter.",
+      "tone_guardrail": "Intelligent counterintuitive \u2014 no 'aliens are already here' clickbait"
     }
   ]
 }
