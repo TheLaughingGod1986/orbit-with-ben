@@ -173,6 +173,28 @@ JOBS = [
         "hero": 0,
     },
     {
+        "id": "3QrICn9Kp00",
+        "related": "Yk1tLh23rko",
+        "uk": "2026-09-15T11:30:00+01:00",
+        "role": "neutron_mystery",
+        "plate": NS / "plates_v02/3QrICn9Kp00.png",
+        "out_dir": NS / "yellow_white_v04",
+        "lines": ["LIGHT LEAVES", "EXHAUSTED"],
+        "yellow": {"EXHAUSTED"},
+        "hero": 1,
+    },
+    {
+        "id": "mAAMsbhm88w",
+        "related": "Yk1tLh23rko",
+        "uk": "2026-09-16T11:30:00+01:00",
+        "role": "neutron_mystery",
+        "plate": NS / "plates_v02/mAAMsbhm88w.png",
+        "out_dir": NS / "yellow_white_v04",
+        "lines": ["COULD A PROBE", "GET CLOSER?"],
+        "yellow": {"GET", "CLOSER?"},
+        "hero": 1,
+    },
+    {
         "id": "0j_pgYbCe5E",
         "related": "REXYxuLOBoI",
         "uk": "2026-09-18T11:30:00+01:00",
@@ -293,12 +315,18 @@ def compose(job: dict) -> dict:
 
 
 def main() -> None:
+    import os
+
     if not Path(FONT_PATH).exists():
         raise SystemExit(f"Missing font: {FONT_PATH}")
-    missing = [j["id"] for j in JOBS if not j["plate"].exists()]
+    only = {x.strip() for x in os.environ.get("ONLY_IDS", "").split(",") if x.strip()}
+    jobs = [j for j in JOBS if not only or j["id"] in only]
+    if not jobs:
+        raise SystemExit("No jobs matched ONLY_IDS")
+    missing = [j["id"] for j in jobs if not j["plate"].exists()]
     if missing:
         raise SystemExit(f"Missing plates: {missing}")
-    manifest = [compose(j) for j in JOBS]
+    manifest = [compose(j) for j in jobs]
     by_dir: dict[str, list] = {}
     for row in manifest:
         d = str(Path(row["file"]).parent)

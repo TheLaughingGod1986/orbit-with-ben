@@ -39,6 +39,8 @@ Related on all eight: `NbW5G1BpPY0`.
 
 Related on these: `Yk1tLh23rko`. Covers in `007_.../10_Shorts/08_Thumbs/yellow_white_v04/`.
 
+**Mystery thumbs (4 Sep 2026):** `3QrICn9Kp00` + `mAAMsbhm88w` rebuilt yellow/white centre-stack (**no Orbit**) from science plates and applied in Studio.
+
 **Hygiene:** one Public/Scheduled Short per UK calendar day, except Thu may also have a **20:00** launch when a punch exists. Never two at the same minute.
 
 ## Locked leftover (date + Related unchanged)
