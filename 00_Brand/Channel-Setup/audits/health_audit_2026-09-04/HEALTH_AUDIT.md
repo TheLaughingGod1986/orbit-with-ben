@@ -31,28 +31,25 @@ Registry: `02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/1
 
 ## Last Star keepers (PASS)
 
-Public in Studio:
-
-- `xRxhb3vSru4` — What Remains After the Last Star Dies? (Public)
-- `CkSECfUfH2Y` — The Sky Is Already Running Out of Light (Public keeper, ~288 views)
-- `SdNXS1PD_Yk` — Sky duplicate → **Private** (lower views)
-- `IVbO9XkkDps` — The Day the Last Star Goes Out (Public keeper, ~90 views)
-- `KX-XU_AODoI` — Day duplicate → **Private** (lower views)
+- `xRxhb3vSru4` — What Remains After the Last Star Dies? (**Public**)
+- `CkSECfUfH2Y` — The Sky Is Already Running Out of Light (**Public** keeper ~288 views)
+- `SdNXS1PD_Yk` — Sky duplicate → **Private**
+- `IVbO9XkkDps` — The Day the Last Star Goes Out (**Public** keeper ~90 views)
+- `KX-XU_AODoI` — Day duplicate → **Private**
 
 ## Bug fixed earlier this audit: 13 Sep double-book
 
-- `o7ykyTDZKiE` (*Your Last Clear Image Near a Neutron Star*) → **13 Sept 11:30**
-- `0j_pgYbCe5E` (*Why the Solar System Is Bigger Than You Were Taught*) was also on 13 Sept → moved to **18 Sept 2026 11:30**. Related still Last Star film.
+Leftover `0j_pgYbCe5E` (*Why the Solar System Is Bigger Than You Were Taught*) was on 13 Sept 11:30 with a Neutron Short. **Moved to 18 Sept 2026 11:30** (verified live). Related still Last Star film.
 
 ## Follow-ups completed 2026-09-04 (afternoon)
 
 1. **Related on mystery punches** — set and verified sticky after reload for all three.
-2. **Debug draft** `GMoB0CPfdZQ` — deleted forever (edit URL now gone / error).
+2. **Debug draft** `GMoB0CPfdZQ` — deleted forever.
 3. **Sky/Day dedupe** — lower-view copies Private; high-view keepers + Remains stay Public.
 
 ## Not bugs
 
 - Scheduled mystery Shorts appearing Private anonymously before air time.
-- Neutron long `LIVE_STREAM_OFFLINE` / “Premieres in N days”.
+- Neutron long offline / “Premieres in N days”.
 - Europa Private staging Shorts with 0 views.
 - Studio “Scheduled” filter quirks while edit pages show Scheduled.
