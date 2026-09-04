@@ -4,23 +4,24 @@
 |-------|-------|
 | Slug | `013_Why-The-Moon-Is-Slowly-Leaving-Us` |
 | Channel | Orbit with Ben |
-| Gate | **PASS** (`npm run gate:episode` 2026-09-03) |
-| Script review | **90.4 PASS** · `01_Script/SCRIPT_REVIEW_v01.md` |
-| VO | pending (ElevenLabs Ben Orbit Narrator) — **do not start until Ben confirms title ≥90 in vidIQ** |
-| CG | pending (AI Studio: stills first · 2–3 Veo Fast · Omni Orbit-only 1–2 beats) |
-| Runtime target | **7–9 min** ship (script draft ~11 min VO estimate — trim in edit / VO pace) |
-| Shorts | 6–8 planned · cluster `cluster_moon_leaving_013` |
-| Queue note | Neutron Star long Premiere Thu 10 Sep (`Yk1tLh23rko`) — 013 is next **to make** |
+| Gate | **PASS** (`npm run gate:episode`) |
+| Script review | **90.4 PASS** |
+| Part 01 VO | **DONE** Ben Orbit Narrator · `02_Voiceover/parts/moon_leaving_part-01_vo_v01.wav` (~89.4s; rough uses 88.0s trim) |
+| Part 01 picture | **ROUGH v01** · 11 unique Flow Veo plates · hard-concat · no freeze-pad |
+| Part 01 rough | `07_Edit-Project/parts/moon_leaving_part-01_rough_v01.mp4` (88.0s) |
+| OWB UAT | **`OWB UAT/moon_leaving_part-01_rough_v01.mp4`** (2026-09-04) — watch this |
+| Runtime target | 7–9 min ship |
 
-## Blockers
+## Part 01 UAT notes (for Ben)
 
-- [x] Pre-build vidIQ signed (agent) — Ben title reconfirm before VO  
-- [x] Script ≥ 90  
-- [x] Episode gate CLI PASS  
-- [ ] AI Studio stills locked before Veo/Omni spend  
+- British VO locked (Ben Orbit Narrator).
+- Picture is VO-adjacent Moon / laser-ranging / Orbit journey — not final locked grade.
+- **Regen candidates:** any Orbit plate with twin/triple thrusters (propulsion lock = one bottom glow only). Spot-check ~0:30.
+- Need ~1–2 more unique plates before xfade assemble (VO was ~1.4s longer than 11×8s hard-concat).
+- No music bed yet (VO-led UAT).
+- Do **not** look in HOS UAT for this file.
 
 ## Do not
 
-- Start 008–012 stubs ahead of this without a new Ben lock  
-- Omni the whole film  
-- Spend VO/picture before Ben title confirm
+- Start 008–012 stubs ahead of this without a new Ben lock
+- Put OWB files in HOS UAT
