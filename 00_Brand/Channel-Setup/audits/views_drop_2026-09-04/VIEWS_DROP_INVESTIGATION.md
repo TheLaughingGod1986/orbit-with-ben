@@ -54,8 +54,23 @@ Studio check (CDP, logged in): recent Europa + Last Star Shorts are **Public**, 
 - Changing niche off one cold cluster
 - Blaming 11:30 UK — Sep 2 11:30 did 205
 
+## Fix applied 2026-09-04 (Studio live)
+
+| Action | ID | Result |
+|--------|-----|--------|
+| Private Sep 3 duplicate | `keXe1GNxWSU` | **Private** |
+| Private Sep 3 extra | `QNTeou-w-gY` | **Private** |
+| Move Neutron Touch off double-book | `Rp_8J6_6IIk` | **10 Sep 20:00 → 14 Sep 11:30** |
+| Leave launch keeper Public | `MXrq1-ggtXo` | Public (twin `eVp9a7f4rWg` Private) |
+| Confirm Europa 5–9 Sep | one each @ 11:30 | No collisions |
+| Confirm Neutron 10–14 Sep | one each @ 11:30 | No collisions |
+| Leftover | `0j_pgYbCe5E` | 18 Sep 11:30 only |
+
+Verify artifact: `europa_week_fixed_verify.json`. Checklist updated.
+
 ## Artifacts
 
 - `recent_shorts_public.json`
 - `studio_recent_visibility.json`
+- `europa_week_fixed_verify.json`
 - This file
