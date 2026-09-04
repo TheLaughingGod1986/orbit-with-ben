@@ -70,7 +70,19 @@ def next_vis(page) -> None:
 
 
 def extract_vid(page) -> str:
-    ban = {LONG_ID, "upload", "shorts"}
+    # Never accept pillar longs embedded in descriptions / Related UI.
+    ban = {
+        LONG_ID,
+        "NbW5G1BpPY0",  # Europa long — was poisoning scrapes
+        "REXYxuLOBoI",  # Last Star
+        "Mo93x0fxB1Q",
+        "n7CbJrOCnU0",
+        "b8-X_FyJnHM",
+        "ziKBPJ6FY0U",
+        "3xrxdmaOwJI",
+        "upload",
+        "shorts",
+    }
     m = re.search(r"/video/([A-Za-z0-9_-]{11})/", page.url)
     if m and m.group(1) not in ban:
         return m.group(1)
@@ -449,9 +461,23 @@ def schedule_one(page, item: dict, video_id: str) -> dict:
     try:
         open_visibility(page)
     except Exception:
-        page.get_by_text(re.compile(r"Private|Visibility|Scheduled", re.I)).first.click(
-            force=True
+        opened = page.evaluate(
+            """() => {
+              const walk=(root)=>{
+                for (const el of root.querySelectorAll('ytcp-video-metadata-visibility')) {
+                  const r=el.getBoundingClientRect();
+                  if (r.width>40 && r.height>10) { el.click(); return true; }
+                }
+                for (const el of root.querySelectorAll('*')) {
+                  if (el.shadowRoot && walk(el.shadowRoot)) return true;
+                }
+                return false;
+              };
+              return walk(document);
+            }"""
         )
+        if not opened:
+            raise
         page.wait_for_timeout(1200)
     result["expand"] = expand_schedule(page)
     set_date_time(page, day, "11:30", result)
@@ -524,9 +550,17 @@ def set_related(page, sid: str, num: str) -> dict:
             page.wait_for_timeout(800)
             break
     r["saved"] = save_edit(page)
-    page.goto(
-        f"https://studio.youtube.com/video/{sid}/edit", wait_until="domcontentloaded"
-    )
+    for attempt in range(3):
+        try:
+            page.goto(
+                f"https://studio.youtube.com/video/{sid}/edit",
+                wait_until="domcontentloaded",
+                timeout=120000,
+            )
+            break
+        except Exception as e:
+            r["goto_retry"] = str(e)[:160]
+            page.wait_for_timeout(2000)
     page.wait_for_timeout(3000)
     body = page.locator("body").inner_text()
     chunk = body.split("Related video", 1)[-1][:280] if "Related video" in body else ""
