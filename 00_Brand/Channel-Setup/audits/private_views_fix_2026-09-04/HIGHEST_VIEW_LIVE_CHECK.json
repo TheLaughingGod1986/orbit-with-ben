@@ -1,0 +1,74 @@
+{
+  "rows": [
+    {
+      "group": "sky",
+      "id": "CkSECfUfH2Y",
+      "role": "was_public_keeper",
+      "title": "The Sky Is Already Running Out of Light",
+      "visibility": "Public",
+      "views": null,
+      "analytics_snip": "Video analytics\nSkip navigation\nAsk Studio\nCreate\nChannel content\n0:27\nYour video\nThe Sky Is Already Running Out of Light\nDetails\nAnalytics\nEditor\nComments\nSubtitles\nClaims\nClips\nSettings\nSend feedback\nVideo analytics\nAdvanced mode\nOverview"
+    },
+    {
+      "group": "sky",
+      "id": "SdNXS1PD_Yk",
+      "role": "was_private_remint",
+      "title": "The Sky Is Already Running Out of Light",
+      "visibility": "Private",
+      "views": null,
+      "analytics_snip": "Video analytics\nSkip navigation\nAsk Studio\nCreate\nChannel content\n0:27\nYour video\nThe Sky Is Already Running Out of Light\nDetails\nAnalytics\nEditor\nComments\nSubtitles\nClaims\nClips\nSettings\nSend feedback\nVideo analytics\nAdvanced mode\nOverview"
+    },
+    {
+      "group": "day",
+      "id": "IVbO9XkkDps",
+      "role": "was_public_keeper",
+      "title": "The Day the Last Star Goes Out",
+      "visibility": "Public",
+      "views": null,
+      "analytics_snip": "Video analytics\nSkip navigation\nAsk Studio\nCreate\nChannel content\n0:25\nYour video\nThe Day the Last Star Goes Out\nDetails\nAnalytics\nEditor\nComments\nSubtitles\nClaims\nClips\nSettings\nSend feedback\nVideo analytics\nAdvanced mode\nOverview\nReach\nEn"
+    },
+    {
+      "group": "day",
+      "id": "KX-XU_AODoI",
+      "role": "was_private_remint",
+      "title": "The Day the Last Star Goes Out",
+      "visibility": "Private",
+      "views": null,
+      "analytics_snip": "Video analytics\nSkip navigation\nAsk Studio\nCreate\nChannel content\n0:27\nYour video\nThe Day the Last Star Goes Out\nDetails\nAnalytics\nEditor\nComments\nSubtitles\nClaims\nClips\nSettings\nSend feedback\nVideo analytics\nAdvanced mode\nOverview\nReach\nEn"
+    }
+  ],
+  "decisions": [
+    {
+      "group": "sky",
+      "winner": {
+        "id": "CkSECfUfH2Y",
+        "views": null,
+        "visibility": "Public",
+        "title": "The Sky Is Already Running Out of Light"
+      },
+      "loser": {
+        "id": "SdNXS1PD_Yk",
+        "views": null,
+        "visibility": "Private",
+        "title": "The Sky Is Already Running Out of Light"
+      },
+      "action": "ensure_winner_public_loser_private"
+    },
+    {
+      "group": "day",
+      "winner": {
+        "id": "IVbO9XkkDps",
+        "views": null,
+        "visibility": "Public",
+        "title": "The Day the Last Star Goes Out"
+      },
+      "loser": {
+        "id": "KX-XU_AODoI",
+        "views": null,
+        "visibility": "Private",
+        "title": "The Day the Last Star Goes Out"
+      },
+      "action": "ensure_winner_public_loser_private"
+    }
+  ]
+}\n
