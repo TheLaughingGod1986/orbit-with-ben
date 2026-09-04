@@ -1,10 +1,13 @@
 {
-  "updated_at": "2026-09-04T09:15:00+01:00",
+  "updated_at": "2026-09-04T11:20:00+01:00",
   "related_long": "Yk1tLh23rko",
+  "related_long_title": "What Happens to Your Body Near a Neutron Star?",
   "status": {
     "uploads": "done",
     "schedules": "done — 15/16/17 Sep 2026 11:30 Europe/London (verified live)",
-    "related": "still_failing — Select+Save picks Neutron long then reverts to None on reload. Existing Neutron Shorts keep Related to same Premiere. Retry manually after Checks settle.",
+    "related": "done — Related → Yk1tLh23rko on all three; verified after fresh navigation 2026-09-04",
+    "debug_draft": "deleted — GMoB0CPfdZQ removed forever",
+    "sky_day_dedupe": "done — lower-view Sky/Day copies Private; keepers stay Public",
     "health_audit": "00_Brand/Channel-Setup/audits/health_audit_2026-09-04/HEALTH_AUDIT.md"
   },
   "slots": [
@@ -13,7 +16,7 @@
       "video_id": "3QrICn9Kp00",
       "title": "Why Does Light Leave Exhausted?",
       "schedule_uk": "2026-09-15T11:30:00+01:00",
-      "related": null,
+      "related": "Yk1tLh23rko",
       "url": "https://studio.youtube.com/video/3QrICn9Kp00/edit"
     },
     {
@@ -21,7 +24,7 @@
       "video_id": "mAAMsbhm88w",
       "title": "Could a Probe Get Closer Than You?",
       "schedule_uk": "2026-09-16T11:30:00+01:00",
-      "related": null,
+      "related": "Yk1tLh23rko",
       "url": "https://studio.youtube.com/video/mAAMsbhm88w/edit"
     },
     {
@@ -29,41 +32,44 @@
       "video_id": "BX-z1EkgANg",
       "title": "What Happens One Second After Contact?",
       "schedule_uk": "2026-09-17T11:30:00+01:00",
-      "related": null,
+      "related": "Yk1tLh23rko",
       "url": "https://studio.youtube.com/video/BX-z1EkgANg/edit"
     }
   ],
   "private_shorts_incident": {
-    "restored_to_public": [
+    "keepers_public": [
       {
         "id": "xRxhb3vSru4",
         "title": "What Remains After the Last Star Dies?",
-        "views_at_restore": 406,
-        "verified_public_at": "2026-09-04T09:00:00+01:00"
+        "note": "highest Remains copy — leave Public"
       },
       {
         "id": "CkSECfUfH2Y",
         "title": "The Sky Is Already Running Out of Light",
         "views_at_restore": 288,
-        "verified_public_at": "2026-09-04T09:00:00+01:00"
-      },
-      {
-        "id": "SdNXS1PD_Yk",
-        "title": "The Sky Is Already Running Out of Light",
-        "views_at_restore": 243,
-        "verified_public_at": "2026-09-04T09:00:00+01:00"
+        "note": "Sky keeper — Public"
       },
       {
         "id": "IVbO9XkkDps",
         "title": "The Day the Last Star Goes Out",
         "views_at_restore": 90,
-        "verified_public_at": "2026-09-04T09:00:00+01:00"
+        "note": "Day keeper — Public"
+      }
+    ],
+    "deduped_to_private": [
+      {
+        "id": "SdNXS1PD_Yk",
+        "title": "The Sky Is Already Running Out of Light",
+        "views_at_restore": 243,
+        "privatized_at": "2026-09-04T11:15:00+01:00",
+        "reason": "lower-view Sky duplicate"
       },
       {
         "id": "KX-XU_AODoI",
         "title": "The Day the Last Star Goes Out",
         "views_at_restore": 72,
-        "verified_public_at": "2026-09-04T09:00:00+01:00"
+        "privatized_at": "2026-09-04T11:15:00+01:00",
+        "reason": "lower-view Day duplicate"
       }
     ],
     "audit": "00_Brand/Channel-Setup/audits/private_restore_2026-09-04/RESTORE_TOP_SHORTS.json"
@@ -75,10 +81,11 @@
     "related": "What Happens When the Last Star Dies? | Orbit's Cosmic Journey",
     "note": "Health audit found it still on 13 Sep 11:30 colliding with Neutron Short o7ykyTDZKiE. Moved to 18 Sep 11:30 and verified."
   },
-  "debug_private_draft_left": {
+  "debug_private_draft": {
     "id": "GMoB0CPfdZQ",
     "title": "neutron mystery 06 light climbs out exhausted v01",
-    "note": "0-view failed debug upload — still Private; delete manually in Studio"
+    "status": "deleted_forever",
+    "deleted_at": "2026-09-04T11:10:00+01:00"
   },
   "schedule_collision_fixed": {
     "was": "0j_pgYbCe5E and o7ykyTDZKiE both on 2026-09-13 11:30",
