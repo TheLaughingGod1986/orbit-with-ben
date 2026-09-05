@@ -1,0 +1,38 @@
+{
+  "audit": "scheduled_shorts_distribution_audit_2026-09-03",
+  "created_at": "2026-09-03T17:10:00+01:00",
+  "trigger_id": "FbRFvSApfOQ",
+  "trigger_views_5h": 2,
+  "scope_scheduled_count": 14,
+  "verdicts": {
+    "fail_spent": ["FbRFvSApfOQ"],
+    "fail_fix_before_air": [
+      "eVp9a7f4rWg",
+      "8Bym-yrYhGc",
+      "1glQuYFSaYQ",
+      "Xza_jSHD4qw",
+      "VE0f186WQZo",
+      "D3KSYrqip5A",
+      "TE_HDKAnqms"
+    ],
+    "warn_fix_before_air": [
+      "92vmMxSNmlk",
+      "vCxXTYXSSqY",
+      "va5ATScn3rs",
+      "o7ykyTDZKiE",
+      "Rp_8J6_6IIk"
+    ],
+    "warn_leave_locked": ["0j_pgYbCe5E"]
+  },
+  "p0_deadline_uk": "2026-09-03T20:00:00+01:00",
+  "p0_id": "eVp9a7f4rWg",
+  "root_causes": [
+    "stale_2026-08-15_reupload_ids",
+    "pre_premiere_thu_1130_slot",
+    "orbit_first_open_FbRF_only",
+    "wrong_punch_first_slot"
+  ],
+  "packaging_pass": true,
+  "studio_execution_required": true,
+  "doc": "SCHEDULED_SHORTS_DISTRIBUTION_AUDIT.md"
+}
