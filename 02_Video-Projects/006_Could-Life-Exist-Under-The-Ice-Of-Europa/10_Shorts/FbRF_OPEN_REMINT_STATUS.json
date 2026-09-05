@@ -10,19 +10,43 @@
   "canonical_src_mac": "/Users/ben/YouTube/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/06_Final-Exports/europa_punch-01_ocean-we-cannot-see_v03_diamond.mp4",
   "builder": "02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/_remint_fbrf_picture_first_open_v04.py",
   "expected_out_mac": "/Users/ben/YouTube/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/06_Final-Exports/europa_punch-01_ocean-we-cannot-see_v04_picture-first-open.mp4",
-  "status": "BLOCKED_NO_MEDIA_ON_CLOUD_VM",
+  "status": "BLOCKED_CLOUD_CANNOT_ATTACH_PRIVATE_WORKER",
+  "out": null,
   "sha256": null,
   "duration_s": null,
+  "thumbs": "unchanged (Creator owns Studio listing)",
+  "other_shorts": "untouched",
   "blocker": {
-    "this_run_bcId": "bc-ad7a28f3-3ceb-402a-93f7-e0f20b9dbf39",
+    "this_run_bcId": "bc-0edeb966-4479-504c-9791-dfa62496fdb8",
+    "this_run_name": "Remint on mac-mini worker",
+    "hostname": "cursor",
+    "os": "linux",
     "privateWorkerId": null,
     "usePrivateWorker": false,
-    "idle_mac_mini_workerId": "b4eccfb5-11d8-487d-bd40-cad8dce9efa6",
-    "idle_mac_mini_displayName": "mac-mini",
-    "eligibleForSubagent": true,
-    "yt_dlp": "bot wall (LOGIN_REQUIRED)",
-    "action_for_CoS": "Redispatch this remint on worker mac-mini (b4eccfb5-11d8-487d-bd40-cad8dce9efa6), then run: python3 02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/_remint_fbrf_picture_first_open_v04.py"
-  },
-  "thumbs": "unchanged (Creator owns Studio listing)",
-  "other_shorts": "untouched"
+    "prompt_said": "You are on Ben's Mac mini",
+    "actual": "Linux cloud VM /workspace — no ~/YouTube/orbit-with-ben, no /Users/ben, no source mp4",
+    "yt_dlp": "bot wall (LOGIN_REQUIRED) on https://www.youtube.com/shorts/FbRFvSApfOQ",
+    "cloud_redispatch_loop": [
+      "bc-ad7a28f3-3ceb-402a-93f7-e0f20b9dbf39",
+      "bc-c9ebbd37-8337-52c6-8507-728c34ef32a7",
+      "bc-7d13ef1b-0934-59cc-ab54-12cf2f69d695",
+      "bc-9583daff-39ff-5c9e-90d6-77c28694f81f",
+      "bc-2f9b66c6-dbac-50e1-a93b-50ffb0f5c920",
+      "bc-0edeb966-4479-504c-9791-dfa62496fdb8"
+    ],
+    "note": "Sand/internal Task launches always land with privateWorkerId=null. Do not spawn another cloud remint agent.",
+    "idle_orbit_mac_workers": [
+      {
+        "workerId": "b4eccfb5-11d8-487d-bd40-cad8dce9efa6",
+        "displayName": "mac-mini",
+        "eligibleForSubagent": true
+      },
+      {
+        "workerId": "0db3ab41-e9a9-5ec5-ac19-c203de6b9eaa",
+        "displayName": "~/YouTube/orbit-with-ben @ Benjamin's Mac mini",
+        "eligibleForSubagent": true
+      }
+    ],
+    "action": "Start a Cursor Desktop / local worker session that is actually on Benjamin's Mac mini (privateWorkerId must be set). Then: cd ~/YouTube/orbit-with-ben && git fetch origin cursor/fbrf-picture-first-open-bf39 && git checkout cursor/fbrf-picture-first-open-bf39 && git pull && python3 02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/_remint_fbrf_picture_first_open_v04.py"
+  }
 }

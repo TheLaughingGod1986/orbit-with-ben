@@ -34,4 +34,11 @@ Replace file on **existing** id `FbRFvSApfOQ` (do not mint a new id). Leave thum
 
 ## Cloud note (5 Sep)
 
-This cloud VM has no disk mp4s (`disk_only: true`). Self-hosted **mac-mini** worker `b4eccfb5-11d8-487d-bd40-cad8dce9efa6` was online/idle but this run could not target it (`privateWorkerId: null`). Redispatch on **mac-mini** to finish sha256 delivery.
+Cloud sand/internal agents **cannot** attach to the Mac (`privateWorkerId` stays `null`). Several “remint on mac-mini” launches (including `bc-0edeb966-4479-504c-9791-dfa62496fdb8`) still booted a Linux VM with no disk mp4s. yt-dlp hits YouTube `LOGIN_REQUIRED`.
+
+**Do not spawn another cloud remint agent.** Finish on a session that is actually on the Mac:
+
+- worker `mac-mini` `b4eccfb5-11d8-487d-bd40-cad8dce9efa6`
+- or `~/YouTube/orbit-with-ben @ Benjamin's Mac mini` `0db3ab41-e9a9-5ec5-ac19-c203de6b9eaa`
+
+Then run the remint command above and write path + sha256 + duration into `FbRF_OPEN_REMINT_STATUS.json`.
