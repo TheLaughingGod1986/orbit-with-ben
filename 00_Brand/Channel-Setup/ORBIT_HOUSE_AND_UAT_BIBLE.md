@@ -155,7 +155,7 @@ Score **two surfaces separately**:
 
 | Id | Lock |
 |----|------|
-| `FbRFvSApfOQ` | Cut is **Orbit-first** — **no remint**. Thumb-only updates allowed |
+| `FbRFvSApfOQ` | **Opening remint unlocked 5 Sep 2026 (Ben)** — remint **0–3s only** to picture-first (no Orbit). Thumbs stay Creator/Studio-owned (do not change). Other Shorts stay locked. |
 
 ---
 
