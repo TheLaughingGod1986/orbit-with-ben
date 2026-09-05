@@ -32,13 +32,18 @@ Writes:
 
 Replace file on **existing** id `FbRFvSApfOQ` (do not mint a new id). Leave thumb listing alone.
 
+## Mac remint result (5 Sep — Benjamins-Mac-mini)
+
+Status: **READY_FOR_CREATOR_REPLACE** (see `FbRF_OPEN_REMINT_STATUS.json`).
+
+```
+out: …/06_Final-Exports/europa_punch-01_ocean-we-cannot-see_v04_picture-first-open.mp4
+sha256: 8c2e2aa650f1625e5c46c69233e79e449ded13502e00354407ea63b77aa85956
+duration_s: 26.0
+```
+
+Gate: 0–3s picture-only (orange proof 0.0); Orbit returns after 3s; audio/captions/title burn kept. No Studio upload from this agent.
+
 ## Cloud note (5 Sep)
 
-Cloud sand/internal agents **cannot** attach to the Mac (`privateWorkerId` stays `null`). Several “remint on mac-mini” launches (including `bc-0edeb966-4479-504c-9791-dfa62496fdb8`) still booted a Linux VM with no disk mp4s. yt-dlp hits YouTube `LOGIN_REQUIRED`.
-
-**Do not spawn another cloud remint agent.** Finish on a session that is actually on the Mac:
-
-- worker `mac-mini` `b4eccfb5-11d8-487d-bd40-cad8dce9efa6`
-- or `~/YouTube/orbit-with-ben @ Benjamin's Mac mini` `0db3ab41-e9a9-5ec5-ac19-c203de6b9eaa`
-
-Then run the remint command above and write path + sha256 + duration into `FbRF_OPEN_REMINT_STATUS.json`.
+Earlier cloud sand/internal agents could not attach to the Mac. Remint finished on Mac mini disk; Creator replaces `FbRFvSApfOQ`.
