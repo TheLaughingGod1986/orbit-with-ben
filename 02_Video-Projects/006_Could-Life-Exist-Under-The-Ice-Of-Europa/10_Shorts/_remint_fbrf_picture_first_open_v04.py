@@ -118,6 +118,8 @@ def extract_frame(src: Path, t: float, dest: Path) -> None:
             str(src),
             "-frames:v",
             "1",
+            "-update",
+            "1",
             "-q:v",
             "2",
             str(dest),
@@ -125,13 +127,29 @@ def extract_frame(src: Path, t: float, dest: Path) -> None:
     )
 
 
+def crop_right_orbit(plate: Path, keep_frac: float = 0.70) -> float:
+    """Crop right edge (Orbit often peeks there on Europa ice) and rescale to 1080x1920."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return orange_score(plate)
+    im = Image.open(plate).convert("RGB")
+    w, h = im.size
+    cw = max(1, int(w * keep_frac))
+    cropped = im.crop((0, 0, cw, h)).resize((1080, 1920), Image.Resampling.LANCZOS)
+    cropped.save(plate)
+    return orange_score(plate)
+
+
 def pick_plate_time(src: Path, temp: Path, preferred: float) -> float:
-    candidates = [preferred] + [x * 0.5 for x in range(7, 25)]  # 3.5..12.0
+    # Prefer ice-fissure window; include mid-cut where Orbit exits frame.
+    candidates = [preferred] + [x * 0.5 for x in range(7, 41)]  # 3.5..20.0
     best_t, best_score = preferred, 999.0
     for t in candidates:
         frame = temp / f"score_{t:.1f}.png"
         extract_frame(src, t, frame)
-        score = orange_score(frame)
+        # Score after right-crop — raw frames often keep Orbit on the right edge.
+        score = crop_right_orbit(frame, keep_frac=0.70)
         if score < 0:
             return preferred
         if score < best_score:
@@ -141,7 +159,12 @@ def pick_plate_time(src: Path, temp: Path, preferred: float) -> float:
     return best_t
 
 
-def remint(src: Path, plate_at: float | None, open_s: float) -> dict:
+def remint(
+    src: Path,
+    plate_at: float | None,
+    open_s: float,
+    plate_image: Path | None = None,
+) -> dict:
     EXPORTS.mkdir(parents=True, exist_ok=True)
     PROOF.mkdir(parents=True, exist_ok=True)
     out = EXPORTS / OUT_NAME
@@ -162,17 +185,28 @@ def remint(src: Path, plate_at: float | None, open_s: float) -> dict:
 
     with tempfile.TemporaryDirectory(prefix="fbrf_open_v04_") as td:
         temp = Path(td)
-        chosen = (
-            plate_at if plate_at is not None else pick_plate_time(src, temp, DEFAULT_PLATE_AT)
-        )
-
         plate = temp / "plate.png"
-        extract_frame(src, chosen, plate)
-        plate_orange = orange_score(plate)
-        if plate_orange >= 0.01:
-            chosen = pick_plate_time(src, temp, max(chosen, 6.0))
-            extract_frame(src, chosen, plate)
+        if plate_image is not None:
+            p = plate_image.expanduser().resolve()
+            if not p.is_file():
+                raise SystemExit(f"Missing --plate-image {p}")
+            run(["ffmpeg", "-y", "-i", str(p), "-frames:v", "1", "-update", "1", "-q:v", "2", str(plate)])
+            chosen = -1.0
             plate_orange = orange_score(plate)
+            if plate_orange >= 0.01:
+                plate_orange = crop_right_orbit(plate, keep_frac=0.70)
+        else:
+            chosen = (
+                plate_at
+                if plate_at is not None
+                else pick_plate_time(src, temp, DEFAULT_PLATE_AT)
+            )
+            extract_frame(src, chosen, plate)
+            plate_orange = crop_right_orbit(plate, keep_frac=0.70)
+            if plate_orange >= 0.01:
+                chosen = pick_plate_time(src, temp, max(chosen, 6.0))
+                extract_frame(src, chosen, plate)
+                plate_orange = crop_right_orbit(plate, keep_frac=0.70)
 
         open_vid = temp / "open_picture.mp4"
         # Hold Orbit-free plate (subtle zoom). Audio comes from source later.
@@ -320,9 +354,15 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--src", type=Path, default=None)
     ap.add_argument("--plate-at", type=float, default=None, help="Seconds into src for clean plate")
+    ap.add_argument(
+        "--plate-image",
+        type=Path,
+        default=None,
+        help="Optional Orbit-free still (skips plate-at pick). Prefer Europa ice with title burn.",
+    )
     ap.add_argument("--open-s", type=float, default=OPEN_S)
     args = ap.parse_args()
-    remint(resolve_src(args.src), args.plate_at, args.open_s)
+    remint(resolve_src(args.src), args.plate_at, args.open_s, args.plate_image)
 
 
 if __name__ == "__main__":
