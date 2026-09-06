@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-09-04T01:30:00+01:00",
+  "channel": "UC_esArsDKd3GJvOkeO0DUog",
+  "question": "Why were best-performing Shorts showing Private on mobile Studio?",
+  "answer": "Not intentional. Desktop Studio + anonymous playabilityStatus=OK show the view-bearing Last Star keepers as Public. Mobile padlocks were stale or mid-edit. Mystery punch work left only a 0-view filename draft private — it did not keep these performers private.",
+  "verification_method": "Studio visibility widget + anonymous ytInitialPlayerResponse.playabilityStatus (oembed 401 alone is NOT proof of private — embedding can fail while watch works)",
+  "keepers_public_now": [
+    {
+      "id": "xRxhb3vSru4",
+      "title": "What Remains After the Last Star Dies?",
+      "views_at_restore": 406,
+      "studio_visibility": "Public",
+      "anon_playability": "OK",
+      "oembed": "FAIL (embedding; not privacy)"
+    },
+    {
+      "id": "SdNXS1PD_Yk",
+      "title": "The Sky Is Already Running Out of Light",
+      "views_at_restore": 243,
+      "studio_visibility": "Public",
+      "anon_playability": "OK",
+      "oembed": "FAIL (embedding; not privacy)"
+    },
+    {
+      "id": "IVbO9XkkDps",
+      "title": "The Day the Last Star Goes Out",
+      "views_at_restore": 90,
+      "studio_visibility": "Public",
+      "anon_playability": "OK",
+      "oembed": "FAIL (embedding; not privacy)"
+    },
+    {
+      "id": "CkSECfUfH2Y",
+      "title": "The Sky Is Already Running Out of Light",
+      "note": "duplicate public copy",
+      "views_at_restore": 288,
+      "studio_visibility": "Public",
+      "anon_playability": "OK",
+      "oembed": "OK"
+    },
+    {
+      "id": "KX-XU_AODoI",
+      "title": "The Day the Last Star Goes Out",
+      "note": "duplicate public copy",
+      "views_at_restore": 72,
+      "studio_visibility": "Public",
+      "anon_playability": "OK",
+      "oembed": "OK"
+    }
+  ],
+  "left_private_on_purpose": [
+    {
+      "id": "GMoB0CPfdZQ",
+      "why": "0-view neutron mystery filename draft from debug upload — safe to delete"
+    },
+    {
+      "why": "Europa staging / zero-view Private duplicates"
+    },
+    {
+      "ids": ["3QrICn9Kp00", "mAAMsbhm88w", "BX-z1EkgANg"],
+      "why": "Neutron mystery punches scheduled 15–17 Sep 11:30 UK — correctly Private until publishAt"
+    }
+  ],
+  "likely_cause_of_earlier_private_state": [
+    "Studio CDP visibility/Related edits during mystery-punch upload can leave a dirty Private radio if Save does not stick",
+    "Duplicate remints of the same title (Sky/Day have two public IDs) — mobile list can show an older Private sibling while a Public copy is live",
+    "Not a deliberate 'hide winners' action"
+  ]
+}
