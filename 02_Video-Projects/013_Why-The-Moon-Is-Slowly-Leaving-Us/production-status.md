@@ -10,12 +10,13 @@
 | Part 01 UAT | `OWB UAT/moon_leaving_part-01_LOCKED_v04.mp4` |
 | Part 02 | **LOCKED v01** (Ben 2026-09-04) — **do not remint** |
 | Part 02 UAT | `OWB UAT/moon_leaving_part-02_LOCKED_v01.mp4` |
-| Part 03 | **PARKED** — VO + music ready · waiting on Flow / Veo credits |
+| Part 03 | **PARKED** — VO ready · needs Mac mini + Flow/Veo credits |
 | Part 03 VO | `02_Voiceover/parts/moon_leaving_part-03_vo_v01.txt` (~136.7s) |
 | Part 03 music | `05_Music/moon-leaving-part03_score_bed_v01_plan.json` (+ mp3 on Mac) |
-| Part 03 plates | `04_Generated-Clips/part03/flow_world_v01/` — **~7–10 unique / ~18** (~80s at 10) |
+| Part 03 plates | Mac last known **~7–10 / 18**; cloud workspace **0** (binaries not in git) |
 | Part 03 UAT | `07_Edit-Project/parts/moon_leaving_part-03_STATUS.txt` (no mp4 yet) |
 | Part 03 park note | `07_Edit-Project/parts/PART03_PARK_STATUS.md` |
+| Part 03 tooling | `_inventory_part03_plates_v01.py` · `_assemble_part03_rough_v01.py` ready |
 
 ## Why Part 03 is parked
 
@@ -26,7 +27,7 @@ Picture gen blocked mid-batch on **both** paths:
 
 Cannot assemble a shippable Part 03 rough without ~18 unique world plates (**no freeze-pad**, **no Part 01/02 reuse**).
 
-**Park:** leave Part 03 until Flow AI credits or Gemini Veo prepaid exist. Do **not** ping Ben. When credits are live, resume `07_Edit-Project/_gen_part03_flow_world_v01.py`, mint the remaining plates, assemble picture-first Orbit house, drop rough into OWB UAT.
+**Park:** leave Part 03 until Flow AI credits or Gemini Veo prepaid exist **and** a Mac mini run can drive Flow CDP. Do **not** ping Ben. Cloud agents cannot mint (no Flow session / no plate binaries in git). On Mac: inventory → `_gen_part03_flow_world_v01.py` → `_assemble_part03_rough_v01.py` → OWB UAT.
 
 ## Locks
 

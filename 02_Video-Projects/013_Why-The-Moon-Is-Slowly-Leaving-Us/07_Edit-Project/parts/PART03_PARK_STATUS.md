@@ -1,56 +1,62 @@
-# Part 03 — Why It Drifts — PARKED (feedback only)
+# Part 03 — Why It Drifts — PARKED (awaiting Mac mini + credits)
 
-**Date:** 2026-09-09 22:21 UTC  
+**Updated:** 2026-09-09 22:25 UTC  
 **Scope:** Part 03 only. Do **not** remint Part 01 LOCKED v04 or Part 02 LOCKED v01.  
-**Ben ping:** none (park silently until credits exist).
+**Ben ping:** none.
 
 ## Verdict
 
-Part 03 cannot assemble. World-plate gen died mid-batch on **Flow credits empty** and **Gemini Veo 429**. Freeze-pad is forbidden. Picture-first Orbit house needs the remaining plates first.
+Still blocked for mint/assemble from the **cloud** agent:
 
-## Inventory (repo + prior batch notes)
+- No Flow Google session on this VM  
+- No `GEMINI_API_KEY` in cloud env  
+- Plate MP4s are on Mac mini (not in git) — workspace has **0** plates  
+- Freeze-pad forbidden  
+
+Mac mini self-hosted worker is **online**, but this run cannot attach subagents to it (computer-use stays on the cloud box).
+
+## Inventory
 
 | Item | State |
 |------|--------|
-| VO | Ready — `02_Voiceover/parts/moon_leaving_part-03_vo_v01.txt` (~**136.7s**) |
-| Score bed | Plan ready — `05_Music/moon-leaving-part03_score_bed_v01_plan.json` (+ mp3 on Mac) |
-| Prompt list | **18** world prompts — `07_Edit-Project/parts/part-03_flow_prompts_v01.json` |
-| Captured plates | **0 in workspace** (~7–10 documented on Mac under `04_Generated-Clips/part03/flow_world_v01/` ~**80s** if 10×8s) |
-| Still needed | **~8–11** more unique world plates → **~18** total for VO coverage |
-| Rough / UAT mp4 | **Missing** — see `07_Edit-Project/parts/moon_leaving_part-03_STATUS.txt` |
-| Part 01 | **LOCKED v04** — leave alone (`07_Edit-Project/parts/_locked_p01_v04/`) |
-| Part 02 | **LOCKED v01** — leave alone (`07_Edit-Project/parts/_locked_p02_v01/`) |
+| VO text | Ready — `02_Voiceover/parts/moon_leaving_part-03_vo_v01.txt` (~136.7s) |
+| VO audio | On Mac (wav/mp3 not in git) |
+| Score plan | `05_Music/moon-leaving-part03_score_bed_v01_plan.json` |
+| Prompts | **18** — `07_Edit-Project/parts/part-03_flow_prompts_v01.json` |
+| Plates (cloud) | **0** |
+| Plates (Mac, last known) | **~7–10 / 18** (~80s if 10×8s) |
+| Rough | Missing |
+| Part 01 / 02 | LOCKED — leave alone |
 
-**Note:** Exact on-disk MP4s live on the Mac mini / iCloud checkout; this cloud workspace only has prompts + status (no plate binaries in git).
+## Resume on Mac mini (when Flow or Veo credits exist)
 
-## Blockers
+```bash
+cd ~/YouTube/orbit-with-ben   # or live checkout
+git fetch origin && git checkout cursor/moon-leaving-p03-park-6513 && git pull
 
-1. **Google Flow** — Start disabled / "Insufficient credits" after partial gens. Gallery already harvested.
-2. **Gemini API Veo** — `429 RESOURCE_EXHAUSTED` (prepaid depleted).
-3. **House rules** — no freeze-pad; no Part 01/02 plate reuse inside Part 03; no knockoff Orbit.
+# 1) Inventory existing plates
+python3 02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/07_Edit-Project/_inventory_part03_plates_v01.py
 
-## Credit Check Attempt (2026-09-09 22:21 UTC)
+# 2) Mint remaining (Chrome CDP :9222 on Flow, signed-in)
+python3 02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/07_Edit-Project/_gen_part03_flow_world_v01.py
 
-- **Flow**: Cannot verify — no signed-in session at flow.google (requires Ben's Google account)
-- **Gemini API**: No `GEMINI_API_KEY` in environment
-- **Workspace plates**: 0 MP4s in `04_Generated-Clips/part03/flow_world_v01/`
-- **Status**: STILL BLOCKED — no change from Sept 4 park
+# 3) Re-inventory — need ~18 unique / ≥~135s, no freeze-pad
+python3 02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/07_Edit-Project/_inventory_part03_plates_v01.py
 
-## Resume when credits exist (Mac mini)
+# 4) Assemble picture-first rough
+python3 02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/07_Edit-Project/_assemble_part03_rough_v01.py
+# → 07_Edit-Project/parts/moon_leaving_part-03_rough_v01.mp4
+# copy into OWB UAT when happy
+```
 
-1. Confirm Flow AI credits **or** Gemini Veo prepaid are live (no Ben ping from agents).
-2. Resume only:  
-   `07_Edit-Project/_gen_part03_flow_world_v01.py`  
-   (skips stems that already have `p03_XX_*.mp4`; targets 18).
-3. Capture remaining unique world plates into  
-   `04_Generated-Clips/part03/flow_world_v01/`.
-4. Assemble Part 03 rough — picture-first Orbit house (Orbit only on house beats; world carries science).
-5. Drop rough into `OWB UAT/` and clear this park flag.
+## Tooling added this turn
+
+- `_inventory_part03_plates_v01.py` — disk inventory + coverage gate  
+- `_assemble_part03_rough_v01.py` — picture-first rough (aborts if short; no freeze-pad)
 
 ## Explicit non-actions
 
-- Do not remint / rebuild Part 01 LOCKED v04  
-- Do not remint / rebuild Part 02 LOCKED v01  
-- Do not freeze-pad to fake ~137s coverage  
-- Do not ping Ben about top-up  
-- Do not ship a Part 03 rough with <~18 unique world plates
+- Do not remint Part 01 LOCKED v04 / Part 02 LOCKED v01  
+- Do not freeze-pad  
+- Do not ping Ben  
+- Do not ship Part 03 with <~18 unique world plates  
