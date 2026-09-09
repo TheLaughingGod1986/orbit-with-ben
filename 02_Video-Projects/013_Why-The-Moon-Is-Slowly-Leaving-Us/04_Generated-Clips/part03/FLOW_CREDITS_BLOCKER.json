@@ -1,10 +1,12 @@
 {
   "status": "PARKED_AWAITING_CREDITS",
-  "checked_at": "2026-09-04T20:40:00+01:00",
+  "checked_at": "2026-09-09T22:21:00Z",
+  "previous_check": "2026-09-04T20:40:00+01:00",
   "part": "03_Why_It_Drifts",
-  "flow": "Out of Google Flow credits mid-batch (Start / Insufficient credits)",
-  "gemini_api_veo": "429 RESOURCE_EXHAUSTED \u2014 prepaid depleted",
-  "have_unique_plates": "7-10",
+  "flow": "Cannot verify — no signed-in session (requires Ben's account)",
+  "gemini_api_veo": "No GEMINI_API_KEY in environment",
+  "have_unique_plates_workspace": 0,
+  "have_unique_plates_documented_mac": "7-10",
   "have_unique_plates_documented_peak": 10,
   "unique_plate_seconds_if_10": 80,
   "need_plates_approx": 18,
@@ -17,5 +19,6 @@
   "ping_ben": false,
   "resume_script": "07_Edit-Project/_gen_part03_flow_world_v01.py",
   "resume_out": "04_Generated-Clips/part03/flow_world_v01/",
-  "next": "Park until Flow or Gemini Veo credits exist; then mint remaining plates, assemble Part 03 picture-first Orbit house into OWB UAT"
+  "next": "Park until Flow or Gemini Veo credits exist; then mint remaining plates, assemble Part 03 picture-first Orbit house into OWB UAT",
+  "blocker": "STILL BLOCKED — no access to Flow session or Gemini API key to verify credits"
 }

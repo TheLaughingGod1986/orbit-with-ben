@@ -1,6 +1,6 @@
 # Part 03 — Why It Drifts — PARKED (feedback only)
 
-**Date:** 2026-09-04  
+**Date:** 2026-09-09 22:21 UTC  
 **Scope:** Part 03 only. Do **not** remint Part 01 LOCKED v04 or Part 02 LOCKED v01.  
 **Ben ping:** none (park silently until credits exist).
 
@@ -15,19 +15,26 @@ Part 03 cannot assemble. World-plate gen died mid-batch on **Flow credits empty*
 | VO | Ready — `02_Voiceover/parts/moon_leaving_part-03_vo_v01.txt` (~**136.7s**) |
 | Score bed | Plan ready — `05_Music/moon-leaving-part03_score_bed_v01_plan.json` (+ mp3 on Mac) |
 | Prompt list | **18** world prompts — `07_Edit-Project/parts/part-03_flow_prompts_v01.json` |
-| Captured plates | **~7–10 unique** on Mac under `04_Generated-Clips/part03/flow_world_v01/` (~**80s** if 10×8s) |
+| Captured plates | **0 in workspace** (~7–10 documented on Mac under `04_Generated-Clips/part03/flow_world_v01/` ~**80s** if 10×8s) |
 | Still needed | **~8–11** more unique world plates → **~18** total for VO coverage |
 | Rough / UAT mp4 | **Missing** — see `07_Edit-Project/parts/moon_leaving_part-03_STATUS.txt` |
 | Part 01 | **LOCKED v04** — leave alone (`07_Edit-Project/parts/_locked_p01_v04/`) |
 | Part 02 | **LOCKED v01** — leave alone (`07_Edit-Project/parts/_locked_p02_v01/`) |
 
-Exact on-disk MP4s live on the Mac mini / iCloud checkout; this cloud workspace only has prompts + status (no plate binaries in git).
+**Note:** Exact on-disk MP4s live on the Mac mini / iCloud checkout; this cloud workspace only has prompts + status (no plate binaries in git).
 
 ## Blockers
 
-1. **Google Flow** — Start disabled / “Insufficient credits” after partial gens. Gallery already harvested.
+1. **Google Flow** — Start disabled / "Insufficient credits" after partial gens. Gallery already harvested.
 2. **Gemini API Veo** — `429 RESOURCE_EXHAUSTED` (prepaid depleted).
 3. **House rules** — no freeze-pad; no Part 01/02 plate reuse inside Part 03; no knockoff Orbit.
+
+## Credit Check Attempt (2026-09-09 22:21 UTC)
+
+- **Flow**: Cannot verify — no signed-in session at flow.google (requires Ben's Google account)
+- **Gemini API**: No `GEMINI_API_KEY` in environment
+- **Workspace plates**: 0 MP4s in `04_Generated-Clips/part03/flow_world_v01/`
+- **Status**: STILL BLOCKED — no change from Sept 4 park
 
 ## Resume when credits exist (Mac mini)
 
