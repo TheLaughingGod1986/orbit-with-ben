@@ -61,3 +61,19 @@ Example replacement prompt:
 ## Status
 
 Part 03 rough **v01 is not UAT-pass**. Picture bug only — VO/music can stay.
+
+## Result — rough v02 built 10 Sep 2026 (Mac mini)
+
+Delivered: `OWB UAT/moon_leaving_part-03_rough_v02.mp4` (136.7 s, MD5 `0dd711c5e70511c52fbbe03ab0c5031a`). v01 left alongside. Parts 01/02 LOCKED untouched.
+
+**Quarantined** (`04_Generated-Clips/part03/_rejected_tidal_plane_2026-09-10/`): the four named culprits `p03_00 / p03_01 / p03_02 / p03_06`, plus `p03_04` (Earth above a flat water horizon at frame 0) and `p03_gallery_07` (Moon sitting on a water plane mid-clip) found on the spot-check, plus `p03_00` take 1 of the regen (second Earth curve under the globe for ~3 s — twin Earth reject).
+`_rejected_v02_sliced_planet_2026-09-10/`: `p03_05` (Saturn rings on the Moon), `p03_07` (Earth sliced by a lava seam), regen `p03_06` (lava cutaway table — the prompt's own forbidden look).
+
+**Minted x1 in Google Flow** (new project `59f2b559-4391-48da-a01b-f75a2fd2ec95`, 720p/8 s), each QC'd first / mid / last frame: `p03_01` (bulge heaped on the sphere), `p03_02` (moonlit oceans, Moon beyond), `p03_04` (Moon with widening orbit rings), `p03_08` coral rings, `p03_09` shell cross-section, `p03_10` beach at dusk, `p03_11` translucent gears, `p03_12` orbital diagram, `p03_14` ocean → pull up to Moon. Contact sheets: `_uat_rejects/part03_v02_new_plates_sheet_{a,b}.jpg`; full v02 review: `_uat_rejects/part03_v02_review_sheet_2026-09-10.jpg`.
+
+**Assembly change** (`_assemble_part03_rough_v02.py`): explicit cut list on VO paragraph gaps (silencedetect −35 dB) instead of blind 8 s beds; every bed is one unique plate at native speed (≤ 8 s in-point trim only — no freeze-pad, no loop, no slow-mo). Open = `p03_10` beach with the tide running under "the engine is still running under your feet". Map: `part-03_plates_v02.json`.
+
+**Gen-tool notes.** The batch script's fresh-thumb capture races after a successful click (the next stem instantly "matches" the previous thumb → six renders left uncaptured and three saved under the wrong stem). `_harvest_part03_flow_project_v02.py` pulls every gallery render by thumb key so they can be identified by content. Also: `dev.orbit.live-longs-social` (every 5 min) sets the URL of Chrome's *active front tab* to Facebook via AppleScript and is failing every run ("Executing JavaScript through AppleScript is turned off") — it hijacked the Flow tab twice mid-batch; it was unloaded for the regen and reloaded after. Needs a fix or a pause before the next Flow session.
+
+**Soft notes for Ben's watch** (not water-plane): beds 12–15 (79–109 s) are four consecutive Moon-over-stormy-sea plates (distinct files, similar look); `p03_14` opens on an odd splash object before it pulls up to the Moon. Swap if they bother you.
+
