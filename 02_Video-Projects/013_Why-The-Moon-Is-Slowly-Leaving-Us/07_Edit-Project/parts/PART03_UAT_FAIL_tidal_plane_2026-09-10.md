@@ -77,3 +77,13 @@ Delivered: `OWB UAT/moon_leaving_part-03_rough_v02.mp4` (136.7 s, MD5 `0dd711c5e
 
 **Soft notes for Ben's watch** (not water-plane): beds 12–15 (79–109 s) are four consecutive Moon-over-stormy-sea plates (distinct files, similar look); `p03_14` opens on an odd splash object before it pulls up to the Moon. Swap if they bother you.
 
+## v02 notes → v03 (11 Sep 2026, 00:15)
+
+Ben on v02: **"few parts repeated too much and no music"**.
+
+**Music.** v01/v02 mixed the bed at −28 LUFS, 8:1 duck, weight 0.55 — the ducked stem measured **−42 dB** under speech (VO ≈ −20 dB), i.e. inaudible. v03: bed −22 LUFS, 3.5:1 duck (threshold 0.03, attack 30 / release 600), weight 0.85 → ducked stem **−30.5 dB** under speech, −26 dB in gaps. Programme still −16.9 LUFS integrated, TP −1.4. Same settings should be applied when Parts 01/02 are next touched (they share the inaudible mix) — **not** retro-applied to the LOCKED files without Ben.
+
+**Repetition.** v02 had eight Earth+Moon plates in the first 63 s and four Moon-over-stormy-sea plates back-to-back (79–109 s). v03 re-sequences the 19 beds so look families alternate (surface → Earth → Earth → sea → Earth → rings → terminator → sea → Moon/Earth → Earth → diagram → Earth → sea → Earth → gears → coral → shell → Earth → Earth), adds the new day-night terminator plate `p03_05` under "Earth loses a little spin", moves the gears under "as long as that gear turns", and drops `p03_14` (splash artefact). Map: `part-03_plates_v03.json`; sheet: `_uat_rejects/part03_v03_review_sheet_2026-09-11.jpg`.
+
+**Blocked.** Seven more VO-literal variety plates were prompted (`part-03_flow_prompts_v03_variety.json`: sundial shadow · swell on basalt cliffs · estuary tidal flats from orbit · basin currents · spinning Earth + Moon arc · night ocean from orbit · terminator). Only `p03_05` rendered before Google Flow hit "Not enough credits" (monthly reset / top-up), and the Gemini API fallback (`_gen_part03_veo_world_v03.py`, Veo 3.1 Fast, ~$1.20 per 8 s clip) returned `429 RESOURCE_EXHAUSTED — prepayment credits are depleted`. When either is topped up: run the gen script (it mints only missing ids), QC first/mid/last, then slot into the v03 cut list at the `bed` numbers given in the prompts file.
+
