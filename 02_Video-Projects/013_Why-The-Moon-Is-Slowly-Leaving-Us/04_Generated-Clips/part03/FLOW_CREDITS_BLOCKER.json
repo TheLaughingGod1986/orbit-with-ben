@@ -1,28 +1,7 @@
 {
-  "status": "PARKED_AWAITING_MAC_MINI_AND_CREDITS",
-  "checked_at": "2026-09-09T22:25:00Z",
-  "part": "03_Why_It_Drifts",
-  "cloud_agent": {
-    "flow_session": false,
-    "gemini_api_key": false,
-    "plates_in_workspace": 0,
-    "mac_mini_worker_visible": true,
-    "mac_mini_attachable_from_this_run": false
-  },
-  "flow": "Last known: insufficient credits mid-batch (Start disabled)",
-  "gemini_api_veo": "Last known: 429 RESOURCE_EXHAUSTED",
-  "have_unique_plates_mac_last_known": "7-10",
-  "need_plates_approx": 18,
-  "vo_seconds": 136.7,
-  "freeze_pad": "forbidden",
-  "do_not_remint": ["part01_LOCKED_v04", "part02_LOCKED_v01"],
-  "ping_ben": false,
-  "resume_on_mac_mini": [
-    "python3 07_Edit-Project/_inventory_part03_plates_v01.py",
-    "python3 07_Edit-Project/_gen_part03_flow_world_v01.py",
-    "python3 07_Edit-Project/_inventory_part03_plates_v01.py",
-    "python3 07_Edit-Project/_assemble_part03_rough_v01.py"
-  ],
-  "resume_out": "04_Generated-Clips/part03/flow_world_v01/",
-  "assemble_out": "07_Edit-Project/parts/moon_leaving_part-03_rough_v01.mp4"
+  "status": "CLEARED",
+  "checked_at": "2026-09-09",
+  "unique_plates": 18,
+  "rough": "07_Edit-Project/parts/moon_leaving_part-03_rough_v01.mp4",
+  "uat": "OWB UAT/moon_leaving_part-03_rough_v01.mp4"
 }

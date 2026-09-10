@@ -4,41 +4,25 @@
 |-------|-------|
 | Slug | `013_Why-The-Moon-Is-Slowly-Leaving-Us` |
 | Channel | Orbit with Ben |
-| Gate | **PASS** |
-| Script review | **90.4 PASS** |
-| Part 01 | **LOCKED v04** (Ben 2026-09-04) — **do not remint** |
+| Part 01 | **LOCKED v04** — do not remint |
 | Part 01 UAT | `OWB UAT/moon_leaving_part-01_LOCKED_v04.mp4` |
-| Part 02 | **LOCKED v01** (Ben 2026-09-04) — **do not remint** |
+| Part 02 | **LOCKED v01** — do not remint |
 | Part 02 UAT | `OWB UAT/moon_leaving_part-02_LOCKED_v01.mp4` |
-| Part 03 | **PARKED** — VO ready · needs Mac mini + Flow/Veo credits |
-| Part 03 VO | `02_Voiceover/parts/moon_leaving_part-03_vo_v01.txt` (~136.7s) |
-| Part 03 music | `05_Music/moon-leaving-part03_score_bed_v01_plan.json` (+ mp3 on Mac) |
-| Part 03 plates | Mac last known **~7–10 / 18**; cloud workspace **0** (binaries not in git) |
-| Part 03 UAT | `07_Edit-Project/parts/moon_leaving_part-03_STATUS.txt` (no mp4 yet) |
-| Part 03 park note | `07_Edit-Project/parts/PART03_PARK_STATUS.md` |
-| Part 03 tooling | `_inventory_part03_plates_v01.py` · `_assemble_part03_rough_v01.py` ready |
+| Part 03 | **ROUGH v01 ready for UAT** |
+| Part 03 rough | `07_Edit-Project/parts/moon_leaving_part-03_rough_v01.mp4` (~136.7s) |
+| Part 03 UAT | **`OWB UAT/moon_leaving_part-03_rough_v01.mp4`** — watch this |
+| Part 03 audio | VO + ducked underscore (`05_Music/moon-leaving-part03_score_bed_v01.mp3`) |
+| Part 03 plates | 18 unique world plates · picture-first · no Orbit in open |
 
-## Why Part 03 is parked
+## Part 03 notes
 
-Picture gen blocked mid-batch on **both** paths:
-
-1. **Google Flow** — Start replaced by insufficient-credits warning after partial gens. Gallery harvested; still short of ~18 unique world plates.
-2. **Gemini API Veo** — `429 RESOURCE_EXHAUSTED` — prepaid depleted (Orbitwithben + History of Science keys).
-
-Cannot assemble a shippable Part 03 rough without ~18 unique world plates (**no freeze-pad**, **no Part 01/02 reuse**).
-
-**Park:** leave Part 03 until Flow AI credits or Gemini Veo prepaid exist **and** a Mac mini run can drive Flow CDP. Do **not** ping Ben. Cloud agents cannot mint (no Flow session / no plate binaries in git). On Mac: inventory → `_gen_part03_flow_world_v01.py` → `_assemble_part03_rough_v01.py` → OWB UAT.
-
-## Locks
-
-- Part 01 bundle: `07_Edit-Project/parts/_locked_p01_v04/` — leave alone  
-- Part 02 bundle: `07_Edit-Project/parts/_locked_p02_v01/` — leave alone  
+- Chapter: **Why It Drifts**
+- World-only (Orbit dosage already used in Part 01)
+- Soft lunar underscore, sidechain-ducked under VO
+- No freeze-pad / still-push / Ken Burns
 
 ## Do not
 
-- Remint Part 01 LOCKED v04 or Part 02 LOCKED v01  
-- Ship knockoff Orbit  
-- Put OWB files in HOS UAT  
-- Reuse Part 01/02 plates inside Part 03  
-- Freeze-pad scenery to fake coverage  
-- Ping Ben about the credit top-up  
+- Remint Part 01 or Part 02 LOCKED
+- Ship knockoff Orbit
+- Put OWB files in HOS UAT

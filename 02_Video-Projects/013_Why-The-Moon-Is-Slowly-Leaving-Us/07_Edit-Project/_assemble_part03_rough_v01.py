@@ -1,35 +1,22 @@
 #!/usr/bin/env python3
-"""Assemble Moon Leaving Part 03 rough v01 — picture-first, no freeze-pad.
-
-Requires ~18 unique world plates covering VO (~136.7s).
-Does not remint Part 01/02. Does not reuse Part 01/02 plates.
-"""
+"""Assemble Moon Leaving Part 03 rough: world plates + VO + ducked score bed."""
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
-import sys
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-PROJ = HERE.parent
-OUT_DIR = HERE / "parts"
-WORK = OUT_DIR / "_work_p03_v01"
-OUT = OUT_DIR / "moon_leaving_part-03_rough_v01.mp4"
-META = OUT_DIR / "moon_leaving_part-03_rough_v01_mix_meta.json"
-PLATES_DIR = PROJ / "04_Generated-Clips/part03/flow_world_v01"
-INVENTORY = PLATES_DIR / "_inventory_v01.json"
-VO_CANDIDATES = [
-    PROJ / "02_Voiceover/parts/moon_leaving_part-03_vo_v01.wav",
-    PROJ / "02_Voiceover/parts/moon_leaving_part-03_vo_v01.mp3",
-    PROJ / "02_Voiceover/parts/moon_leaving_part-03_vo_v01.m4a",
-]
-MUSIC_CANDIDATES = [
-    PROJ / "05_Music/moon-leaving-part03_score_bed_v01.mp3",
-    PROJ / "05_Music/moon-leaving-part03_score_bed_v01.wav",
-]
-NEED_PLATES = 18
-VO_TARGET_S = 136.7
+PROJ = Path(__file__).resolve().parents[1]
+PLATES = PROJ / "04_Generated-Clips/part03/flow_world_v01"
+VO = PROJ / "02_Voiceover/parts/moon_leaving_part-03_vo_v01.wav"
+MUSIC = PROJ / "05_Music/moon-leaving-part03_score_bed_v01.mp3"
+WORK = PROJ / "07_Edit-Project/parts/_work_p03_v01"
+OUT = PROJ / "07_Edit-Project/parts/moon_leaving_part-03_rough_v01.mp4"
+META = PROJ / "07_Edit-Project/parts/moon_leaving_part-03_rough_v01_meta.json"
+PLATE_MAP = PROJ / "07_Edit-Project/parts/part-03_plates_v01.json"
+UAT = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT"
+TARGET_PLATES = 18
 
 
 def run(cmd: list[str]) -> None:
@@ -54,56 +41,49 @@ def probe(path: Path) -> float:
     )
 
 
-def first_existing(paths: list[Path]) -> Path | None:
-    for p in paths:
-        if p.exists() and p.stat().st_size > 1000:
-            return p
-    return None
-
-
-def load_plates() -> list[Path]:
-    if INVENTORY.exists():
-        data = json.loads(INVENTORY.read_text())
-        files = [PLATES_DIR / row["file"] for row in data.get("plates", [])]
-        files = [p for p in files if p.exists()]
-        if files:
-            return files
-    return sorted(
-        [p for p in PLATES_DIR.glob("*.mp4") if p.stat().st_size > 200_000],
-        key=lambda p: p.name,
+def pick_plates(need: int) -> list[Path]:
+    files = sorted(
+        [f for f in PLATES.glob("*.mp4") if f.stat().st_size > 200_000],
+        key=lambda p: p.stat().st_mtime,
     )
+    # Prefer newly minted p03_XX_*, then harvest/gallery/click — all unique files.
+    minted = sorted([f for f in files if f.name.startswith("p03_0")], key=lambda p: p.name)
+    other_p03 = [f for f in files if f.name.startswith("p03_") and f not in minted]
+    rest = [f for f in files if f not in minted and f not in other_p03]
+    ordered = minted + other_p03 + rest
+    # de-dupe by md5
+    import hashlib
 
-
-def main() -> int:
-    plates = load_plates()
-    total = sum(probe(p) for p in plates)
-    if len(plates) < NEED_PLATES or total < VO_TARGET_S - 2.0:
-        print(
-            f"ABORT need ~{NEED_PLATES} unique plates covering ~{VO_TARGET_S}s; "
-            f"have {len(plates)} plates / {total:.1f}s. Freeze-pad forbidden.",
-            flush=True,
+    seen: set[str] = set()
+    unique: list[Path] = []
+    for f in ordered:
+        h = hashlib.md5(f.read_bytes()).hexdigest()
+        if h in seen:
+            continue
+        seen.add(h)
+        unique.append(f)
+    if len(unique) < need:
+        raise SystemExit(
+            f"need {need} unique plates, have {len(unique)} in {PLATES}"
         )
-        return 2
+    return unique[:need]
 
-    vo = first_existing(VO_CANDIDATES)
-    if not vo:
-        print("ABORT missing Part 03 VO wav/mp3 under 02_Voiceover/parts/", flush=True)
-        return 2
 
+def main() -> None:
+    for p in (VO, MUSIC):
+        if not p.exists():
+            raise SystemExit(f"missing {p}")
+
+    vo_dur = probe(VO)
+    need = max(TARGET_PLATES, int(vo_dur // 8) + (1 if vo_dur % 8 > 0.5 else 0))
+    # VO ~136.7s → 18 * 8 = 144; we'll trim picture to VO length.
+    need = max(18, need)
+    plates = pick_plates(need)
     WORK.mkdir(parents=True, exist_ok=True)
+
     beds: list[Path] = []
-    # Spend VO length across plates in order (trim last plate; never freeze-extend).
-    remaining = probe(vo)
     for i, src in enumerate(plates, 1):
-        if remaining <= 0.05:
-            break
-        src_dur = probe(src)
-        use = min(src_dur, remaining)
         bed = WORK / f"bed_{i:02d}.mp4"
-        vf = (
-            "scale=1920:1080:force_original_aspect_ratio=increase,"
-            "crop=1920:1080,fps=24,format=yuv420p"
-        )
         run(
             [
                 "ffmpeg",
@@ -113,33 +93,25 @@ def main() -> int:
                 "error",
                 "-i",
                 str(src),
-                "-vf",
-                vf,
                 "-an",
-                "-t",
-                f"{use:.3f}",
+                "-vf",
+                "scale=1920:1080:force_original_aspect_ratio=decrease,"
+                "pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=24,format=yuv420p",
                 "-c:v",
                 "libx264",
                 "-preset",
                 "veryfast",
                 "-crf",
                 "18",
+                "-t",
+                "8",
                 str(bed),
             ]
         )
         beds.append(bed)
-        remaining -= use
 
-    if remaining > 1.0:
-        print(
-            f"ABORT picture short by {remaining:.1f}s after spending plates; "
-            "mint more unique world plates (no freeze-pad).",
-            flush=True,
-        )
-        return 2
-
-    lst = WORK / "concat.txt"
-    lst.write_text("".join(f"file '{b}'\n" for b in beds))
+    concat = WORK / "concat.txt"
+    concat.write_text("".join(f"file '{b}'\n" for b in beds))
     picture = WORK / "picture.mp4"
     run(
         [
@@ -153,71 +125,36 @@ def main() -> int:
             "-safe",
             "0",
             "-i",
-            str(lst),
-            "-c:v",
-            "libx264",
-            "-preset",
-            "veryfast",
-            "-crf",
-            "18",
-            "-an",
+            str(concat),
+            "-c",
+            "copy",
             str(picture),
         ]
     )
 
     pic_dur = probe(picture)
-    use_vo = WORK / "vo_trim.wav"
-    vo_dur = probe(vo)
-    if vo_dur > pic_dur + 0.05:
-        fade_at = max(0.0, pic_dur - 0.8)
-        run(
-            [
-                "ffmpeg",
-                "-y",
-                "-hide_banner",
-                "-loglevel",
-                "error",
-                "-i",
-                str(vo),
-                "-t",
-                f"{pic_dur:.3f}",
-                "-af",
-                f"afade=t=out:st={fade_at:.3f}:d=0.8",
-                "-c:a",
-                "pcm_s16le",
-                str(use_vo),
-            ]
-        )
-    else:
-        run(
-            [
-                "ffmpeg",
-                "-y",
-                "-hide_banner",
-                "-loglevel",
-                "error",
-                "-i",
-                str(vo),
-                "-c:a",
-                "pcm_s16le",
-                str(use_vo),
-            ]
+    master = min(pic_dur, vo_dur)
+    if pic_dur + 0.05 < vo_dur - 1.0:
+        raise SystemExit(
+            f"picture too short: pic={pic_dur:.2f}s vo={vo_dur:.2f}s "
+            "(freeze-pad forbidden; mint more plates)"
         )
 
-    music = first_existing(MUSIC_CANDIDATES)
-    fc = "[1:a]loudnorm=I=-16:TP=-1.5:LRA=11[vo]"
-    inputs = ["-i", str(picture), "-i", str(use_vo)]
-    maps = ["-map", "0:v", "-map", "[a]"]
-    if music:
-        inputs += ["-i", str(music)]
-        fc += (
-            ";[2:a]volume=0.12,afade=t=in:st=0:d=1,"
-            f"afade=t=out:st={max(0.0, pic_dur - 1.5):.3f}:d=1.5[m];"
-            "[vo][m]amix=inputs=2:duration=first:dropout_transition=0[a]"
-        )
-    else:
-        fc += ";[vo]anull[a]"
-
+    fade_st = max(0.0, master - 2.5)
+    graph = (
+        f"[0:v]trim=0:{master:.3f},setpts=PTS-STARTPTS[v];"
+        f"[1:a]atrim=0:{master:.3f},asetpts=PTS-STARTPTS,"
+        "aformat=sample_rates=48000:channel_layouts=stereo,"
+        "loudnorm=I=-16:TP=-1.5:LRA=11,asplit=2[vo][vo_sc];"
+        f"[2:a]aloop=loop=-1:size=2e+09,atrim=0:{master:.3f},asetpts=PTS-STARTPTS,"
+        "aformat=sample_rates=48000:channel_layouts=stereo,"
+        "loudnorm=I=-28:LRA=9:TP=-3,"
+        f"afade=t=in:st=0:d=1.2,afade=t=out:st={fade_st:.3f}:d=2.5[music];"
+        "[music][vo_sc]sidechaincompress="
+        "threshold=0.018:ratio=8:attack=20:release=500[ducked];"
+        "[vo][ducked]amix=inputs=2:weights='1 0.55':normalize=0,"
+        "alimiter=limit=0.90:level=false[a]"
+    )
     run(
         [
             "ffmpeg",
@@ -225,36 +162,77 @@ def main() -> int:
             "-hide_banner",
             "-loglevel",
             "error",
-            *inputs,
+            "-i",
+            str(picture),
+            "-i",
+            str(VO),
+            "-i",
+            str(MUSIC),
             "-filter_complex",
-            fc,
-            *maps,
+            graph,
+            "-map",
+            "[v]",
+            "-map",
+            "[a]",
             "-c:v",
-            "copy",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "18",
             "-c:a",
             "aac",
+            "-ar",
+            "48000",
+            "-ac",
+            "2",
             "-b:a",
             "192k",
-            "-shortest",
+            "-t",
+            f"{master:.3f}",
             str(OUT),
         ]
     )
 
-    meta = {
-        "out": str(OUT),
-        "duration_s": probe(OUT),
-        "plates_used": [p.name for p in plates[: len(beds)]],
-        "vo": str(vo),
-        "music": str(music) if music else None,
-        "picture_first": True,
-        "freeze_pad": False,
-        "do_not_remint": ["part01_LOCKED_v04", "part02_LOCKED_v01"],
-    }
-    META.write_text(json.dumps(meta, indent=2) + "\n")
-    print(f"OUT {OUT} ({meta['duration_s']:.3f}s)", flush=True)
-    print(json.dumps(meta, indent=2), flush=True)
-    return 0
+    plate_rows = [
+        {"i": i, "name": p.name, "path": str(p), "dur": probe(WORK / f"bed_{i:02d}.mp4")}
+        for i, p in enumerate(plates, 1)
+    ]
+    PLATE_MAP.write_text(json.dumps(plate_rows, indent=2) + "\n")
+    META.write_text(
+        json.dumps(
+            {
+                "out": str(OUT),
+                "duration_s": probe(OUT),
+                "vo": str(VO),
+                "music": str(MUSIC),
+                "plates": [p.name for p in plates],
+                "picture_first": True,
+                "orbit_in_open": False,
+                "amix_weights": "1 0.55",
+                "sidechain": "threshold=0.018:ratio=8:attack=20:release=500",
+            },
+            indent=2,
+        )
+        + "\n"
+    )
+    print(f"OUT {OUT} ({probe(OUT):.3f}s)")
+
+    if UAT.exists():
+        dest = UAT / "moon_leaving_part-03_rough_v01.mp4"
+        shutil.copy2(OUT, dest)
+        status = UAT / "moon_leaving_part-03_STATUS.txt"
+        status.write_text(
+            "Part 03 (Why It Drifts) — ROUGH v01 ready for watch\n"
+            f"File: {dest.name}\n"
+            f"Duration: {probe(OUT):.1f}s\n"
+            "World-only plates + VO + ducked score. No Orbit in open.\n"
+            "Parts 01/02 LOCKED files remain unchanged.\n"
+        )
+        print(f"UAT {dest}")
+    else:
+        print("UAT folder missing — rough left in Edit-Project/parts/")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
