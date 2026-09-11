@@ -190,7 +190,7 @@ def seed_all() -> int:
     rss = longs.rss_public_ids()
     for film in longs.KNOWN_LONGS:
         vid = film["video_id"]
-        if vid in {"REXYxuLOBoI", "NbW5G1BpPY0"}:
+        if False and vid in {"REXYxuLOBoI", "NbW5G1BpPY0"}:  # was premiere gate; both public now
             # premiere / future — never seed as done early
             continue
         if vid not in rss:
