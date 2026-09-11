@@ -76,7 +76,7 @@ Aliens punch set + JWST Shorts + `PV50PX-bE4g` (“Most of the Universe Gives Of
 
 ### Scheduled ahead (YouTube only for now)
 
-Neutron mystery slots 11–17 Sep (`vCxXTYXSSqY` … `BX-z1EkgANg` / mystery punches 15–17 Sep) — YouTube scheduled; social will stay empty until indexes + autos are fixed (TikTok still paused).
+Neutron mystery slots 11–17 Sep (RSS already shows `vCxXTYXSSqY` live today) — social will stay empty until indexes + autos are fixed (TikTok still paused).
 
 ## Root cause (why autos say “nothing pending”)
 
@@ -95,7 +95,7 @@ Neutron mystery slots 11–17 Sep (`vCxXTYXSSqY` … `BX-z1EkgANg` / mystery pun
 
 **P0 — longs soft-links (Threads + FB):** Europa `NbW5G1BpPY0`, Neutron `Yk1tLh23rko` (and reconcile Last Star into `LONGS_POSTED`).
 
-**P0 — Shorts IG + FB + Threads:** all 17 live library IDs above, starting with Europa week then Neutron `fhJP6eMoU0Q` / today’s teaspoon.
+**P0 — Shorts IG + FB + Threads:** all 17 live library IDs above, starting with Europa week then Neutron `fhJP6eMoU0Q` / today’s teaspoon `vCxXTYXSSqY`.
 
 **P1 — unblock autos (ops, not posting):** flip Europa/Last Star index rows to `public`; add Neutron Shorts index; update `KNOWN_LONGS`; then let watchers catch up (still skip TikTok).
 
