@@ -1,11 +1,11 @@
 {
   "status": "SPENT",
   "checked_at": "2026-09-11",
-  "flow_credits_before": 70,
-  "flow_credits_after": 0,
-  "model": "Veo 3.1 Fast",
-  "cost_per_gen": 10,
-  "minted": ["p03_18", "p03_19", "p03_20", "p03_21", "p03_22", "p03_17"],
-  "note": "Quality model costs 100/gen (blocked). Fast costs 10/gen. All 70 credits used on Part 03 variety plates. Rough v04 delivered to OWB UAT.",
-  "watch": "OWB UAT/moon_leaving_part-03_rough_v04.mp4"
+  "flow_credits": 0,
+  "part03": "LOCKED_v04",
+  "part04": {
+    "vo": "ready (~116.2s)",
+    "prompts": 12,
+    "blocked_on": "Flow credits = 0 — wait for monthly reset or top-up; use Veo 3.1 Fast @ 10/gen"
+  }
 }
