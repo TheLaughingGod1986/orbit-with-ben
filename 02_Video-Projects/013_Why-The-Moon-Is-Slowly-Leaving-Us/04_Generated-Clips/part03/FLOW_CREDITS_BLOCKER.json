@@ -1,50 +1,11 @@
 {
-  "status": "BLOCKED",
+  "status": "SPENT",
   "checked_at": "2026-09-11",
-  "billing_account": {
-    "name": "Orbit API",
-    "id": "0124D1-E6EFD6-40F6DA"
-  },
-  "google_one_plan": "Google AI Ultra (20 TB)",
-  "monthly_entitlement": {
-    "official": "$40/mo GenAI+Cloud for Ultra 20TB (Ultra 30TB is $100/mo)",
-    "received": "£30.09 (~$40) CREDIT_TYPE_MONTHLY — matches Ultra 20TB, not under-delivery"
-  },
-  "credits": [
-    {
-      "name": "Free Trial",
-      "status": "Available",
-      "remaining_gbp": 225.63,
-      "gemini_api_eligible": false,
-      "note": "Welcome/Free Trial credits cannot pay AI Studio Gemini/Veo"
-    },
-    {
-      "name": "GDP premium CREDIT_TYPE_MONTHLY",
-      "status": "Used",
-      "remaining_gbp": 0.0,
-      "original_gbp": 30.09,
-      "gemini_api_eligible": true,
-      "note": "Fully spent this monthly window"
-    },
-    {
-      "name": "GDP premium CREDIT_TYPE_MONTHLY (prior)",
-      "status": "Expired",
-      "remaining_gbp": 9.62,
-      "original_gbp": 30.09,
-      "note": "£9.62 left unused when period expired"
-    }
-  ],
-  "aistudio_prepay": {
-    "balance_gbp": -2.21,
-    "auto_reload": false,
-    "service": "suspended until balance > £0",
-    "blocker": "Prepay must be > £0 before eligible GCP credits apply to Gemini API"
-  },
-  "unlock_paths": [
-    "Wait for next monthly £30.09 GDP credit issuance",
-    "Buy minimum Prepay (~$5) so eligible credits can apply (does not restore spent monthly)",
-    "Wait for Flow Ultra monthly allotment reset (separate pool)",
-    "Do NOT expect Free Trial £225 to unlock Veo/Gemini API"
-  ],
-  "part03_watch": "OWB UAT/moon_leaving_part-03_rough_v03.mp4"
+  "flow_credits_before": 70,
+  "flow_credits_after": 0,
+  "model": "Veo 3.1 Fast",
+  "cost_per_gen": 10,
+  "minted": ["p03_18", "p03_19", "p03_20", "p03_21", "p03_22", "p03_17"],
+  "note": "Quality model costs 100/gen (blocked). Fast costs 10/gen. All 70 credits used on Part 03 variety plates. Rough v04 delivered to OWB UAT.",
+  "watch": "OWB UAT/moon_leaving_part-03_rough_v04.mp4"
 }
