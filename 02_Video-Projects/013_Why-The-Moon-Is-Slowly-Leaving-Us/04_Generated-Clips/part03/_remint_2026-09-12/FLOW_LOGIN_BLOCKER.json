@@ -1,9 +1,10 @@
 {
   "status": "BLOCKED",
-  "checked_at_utc": "2026-09-12T21:35:56.232715+00:00",
+  "checked_at_utc": "2026-09-13T16:45:00+00:00",
   "host": "Benjamins-Mac-mini.local",
   "task": "OWB Moon 013 Part 03 overnight remint A/B/C",
   "required_account": "benoats@googlemail.com",
+  "forbidden_account": "benoats86@gmail.com",
   "required_credits": 25050,
   "engine": "Veo 3.1 Fast",
   "plates_requested": [
@@ -12,44 +13,35 @@
     "p03C_fossil_rock.mp4"
   ],
   "plates_landed": [],
-  "blocker": "FLOW_LOGIN_REAUTH_REQUIRED",
-  "detail": "Cannot mint on benoats@googlemail.com. Flow session for that account hits Google 'Verify that it's you' / re-sign-in (passkey/password). No automated path without Ben completing interactive auth.",
-  "sessions_probed": [
-    {
-      "profile": "~/.playwright-hos-flow-profile",
-      "logged_into_flow": true,
-      "email": "benoats86@gmail.com",
-      "credits": 50,
-      "usable": false,
-      "reason": "wrong_account_and_insufficient_credits"
-    },
-    {
-      "profile": "~/.playwright-orbit-flow-from-chrome",
-      "logged_into_flow": false,
-      "url": "https://flow.google.com/about"
-    },
-    {
-      "profile": "~/.playwright-hos-flow-from-chrome-default",
-      "logged_into_flow": false,
-      "url": "https://flow.google.com/about"
-    },
-    {
-      "profile": "system Chrome Default (benoats@googlemail.com cookies present)",
-      "logged_into_flow": false,
-      "on_create_with_flow": "accounts.google.com confirmidentifier \u2014 Verify that it's you \u2014 benoats@googlemail.com"
-    }
-  ],
+  "blocker": "GOOGLE_SMS_RATE_LIMITED",
+  "detail": "Tried fresh Verify-it's-you for benoats@googlemail.com on 2026-09-13. Google returned 'Too many failed attempts. Try again later.' SMS OTP unavailable for a few hours. Authenticator/passkey alternatives insufficient without SMS or trusted device. Flow homepage still shows Sign in.",
   "actions_taken": [
-    "Opened Flow on Mac Mini",
-    "Probed HOS/Orbit Playwright Flow profiles",
-    "Switched account chooser to benoats@googlemail.com",
-    "Tried live system Chrome Create with Flow",
-    "Stopped without minting (no wrong-account mint, no invented path)"
+    "Killed hung Meta live_shorts process earlier in session (unrelated)",
+    "Opened Flow/Google via CDP :9222",
+    "Selected benoats@googlemail.com (not benoats86)",
+    "Reached phone verification ending …69",
+    "Hit SMS rate limit — stopped without inventing codes",
+    "Assembled provisional Part 03 rough v05 FAIL→KEEP swap for watch while waiting"
   ],
-  "not_started": [
-    "P02 wave-morph",
-    "P04"
-  ],
-  "ben_action_needed": "On Mac Mini, open Flow as benoats@googlemail.com, complete the Verify-it's-you / passkey challenge once, leave the session warm, then re-run this remint. Confirm Ultra credits show ~25050 before mint.",
-  "dest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/04_Generated-Clips/part03/_remint_2026-09-12"
+  "parallel_progress": {
+    "part03_rough_v05": "07_Edit-Project/parts/moon_leaving_part-03_rough_v05.mp4",
+    "uat_copy": "OWB UAT/moon_leaving_part-03_rough_v05.mp4",
+    "provisional_swaps": [
+      "p03_03 → p03_01",
+      "gallery_03 → p03_14",
+      "harvest_00 → click_07"
+    ],
+    "tidal_cleared": false,
+    "do_not_lock": true
+  },
+  "ben_action_needed": "Wait for Google SMS rate limit to clear (a few hours), then on Mac Mini: open Flow as benoats@googlemail.com, complete SMS promptly, leave session warm. Then run _run_remint_abc_when_ready.py --mint.",
+  "dest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/04_Generated-Clips/part03/_remint_2026-09-12",
+  "verified": false,
+  "code_sent_previously": true,
+  "otp_entered": false,
+  "updated_at_utc": "2026-09-13T16:45:00+00:00",
+  "screenshot_paths": [
+    "/Users/benjaminoats/.local/share/cursor-mac-mini-worker/artifacts/rate_limit_error.png",
+    "/Users/benjaminoats/.local/share/cursor-mac-mini-worker/artifacts/flow_not_signed_in.png"
+  ]
 }
