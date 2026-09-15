@@ -20,6 +20,17 @@ Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md`
 - [ ] **4–6** film-act chapters (not 12–18 micro-chapters)
 - [ ] Runtime target **8–12 min** (trust-building window)
 
+## Assembly / remint (Moon Leaving lock — `MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`)
+
+- [ ] Remint plates carry **original part audio** (video from remint, audio from original — never `-c copy` remint audio)
+- [ ] Every input normalized to **1920×1080 stereo** before concat
+- [ ] A/V durations match after concat (probe both streams — no video past audio)
+- [ ] Chapter cards: ~1.5s breath lead-in · soft starfield/gradient card (no flat black box) · quiet music under the card
+- [ ] End hold: ≥15–20s slow picture · music fades over ~10s · picture fade to black last ~2s · **no silent hold**
+- [ ] Bed parity across parts (~−20 dB mean under VO)
+- [ ] Ocean/shore POV plates: **no Earth globe in the sky**; dual-body gate (one Earth + one Moon, or one Moon) checked on a **mid-plate** frame
+- [ ] Files moved via CopyFromBox chunked ≤500KB and **sha256 verified**
+
 ## Packaging
 
 - [ ] Title: one promise · preferably ≤ ~60 chars · **no series suffix**
