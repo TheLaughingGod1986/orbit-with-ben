@@ -32,10 +32,10 @@ export async function consumeOAuthState(input: {
 }): Promise<{ ok: true; codeVerifier?: string; redirectPath?: string } | { ok: false; error: string }> {
   const stateHash = hashState(input.state);
   const row = await prisma.oAuthState.findUnique({ where: { stateHash } });
-  if (!row) return { ok: false, error: "Invalid OAuth state" };
-  if (row.platform !== input.platform) return { ok: false, error: "OAuth state platform mismatch" };
-  if (row.usedAt) return { ok: false, error: "OAuth state already used" };
-  if (row.expiresAt.getTime() < Date.now()) return { ok: false, error: "OAuth state expired" };
+  if (!row) return { ok: false, error: "invalid_state" };
+  if (row.platform !== input.platform) return { ok: false, error: "state_platform_mismatch" };
+  if (row.usedAt) return { ok: false, error: "state_already_used" };
+  if (row.expiresAt.getTime() < Date.now()) return { ok: false, error: "state_expired" };
 
   await prisma.oAuthState.update({
     where: { id: row.id },

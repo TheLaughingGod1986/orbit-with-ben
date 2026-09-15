@@ -3,6 +3,7 @@ import { PLATFORMS } from "@/config/platforms";
 import { getPublishingAdapter } from "@/lib/publishing/adapters";
 import { isDryRun, hasGoogleOAuth, hasMetaOAuth, hasTikTokOAuth, hasXOAuth, hasThreadsOAuth } from "@/lib/env";
 import { getPublicBaseUrl } from "@/lib/public-base-url";
+import { describeOAuthError } from "@/lib/oauth/callback-errors";
 import { ConnectionActions } from "@/components/ConnectionActions";
 import { MetaPageSelector } from "@/components/MetaPageSelector";
 import Link from "next/link";
@@ -51,7 +52,8 @@ export default async function ConnectionsPage({
       ) : null}
       {sp.error ? (
         <div className="rounded-xl border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm text-red-200">
-          Connection error: {sp.error}
+          <div>Connect failed: {describeOAuthError(sp.error)}</div>
+          <div className="mt-1 font-mono text-xs text-red-200/70">{sp.error}</div>
         </div>
       ) : null}
       {sp.connected ? (

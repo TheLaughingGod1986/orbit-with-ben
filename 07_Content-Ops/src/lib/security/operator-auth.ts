@@ -164,14 +164,23 @@ export function isPublicPath(pathname: string): boolean {
   return false;
 }
 
-/** Mutating API / OAuth token flows that require an operator session. */
+/**
+ * Provider redirect back into the app. These arrive as a cross-site navigation,
+ * so the operator cookie may not be sent; authenticity comes from the one-shot
+ * OAuth `state` token instead (see `consumeOAuthState`).
+ */
+export function isOAuthCallbackPath(pathname: string): boolean {
+  return /^\/api\/oauth\/[^/]+\/callback$/.test(pathname);
+}
+
+/** Mutating API / OAuth start flows that require an operator session. */
 export function isMutatingApiPath(method: string, pathname: string): boolean {
   if (pathname.startsWith("/go/")) return false;
   if (!pathname.startsWith("/api/")) return false;
+  if (isOAuthCallbackPath(pathname)) return false;
 
   const upper = method.toUpperCase();
   if (pathname.match(/^\/api\/oauth\/[^/]+\/start$/)) return true;
-  if (pathname.match(/^\/api\/oauth\/[^/]+\/callback$/)) return true;
   if (["POST", "PUT", "PATCH", "DELETE"].includes(upper)) return true;
   return false;
 }
