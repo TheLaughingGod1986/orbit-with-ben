@@ -51,6 +51,7 @@ Winner to beat: *We Found Planets Made of Diamond* (`M-VN84HCNls`, 223% viewed).
 - Do **not** FAIL grandfathered existing live Short pins.
 - Score Studio Related **and** (for public Shorts) the Shorts-player overlay pill **separately**. Studio Related can PASS while the public overlay is algorithmic junk — **do not remint to chase overlay** (`ORBIT_HOUSE_AND_UAT_BIBLE.md`).
 - Long-form pins (detail / `/go/` / book) are required as before — this FAIL block is Shorts-only.
+- **Moon Leaving week only (Ben override 15 Sep 2026):** that film's seven-pack carries Related **and** a pinned comment to the Premiere. Do **not** FAIL those Shorts for the pin, and do **not** generalise the override — Related-only stays the default everywhere else (`MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`).
 
 ### Thumb UAT PASS (locked 31 Aug 2026 · yellow highlight 1 Sep 2026)
 
@@ -78,6 +79,18 @@ Reference length: Europa v02 · Last Star v11 (**~7–9 min**). Open/end craft: 
 8. **No `/go/`** unless this cut names the product in VO and on screen. Shorts stay zero affiliate. JWST v04 stays film-only (no `/go/jwst-book`).
 9. **Length NOW:** **7–9 min**. Later expand to 15–20–30 only with impressions + hold past ~5 min. Never chop a 21-min lecture to fake 7–9.
 
+### Long assembly / remint FAIL (locked 15 Sep 2026 — Moon Leaving full v04)
+
+Lessons doc: `00_Brand/Channel-Setup/MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`. Score these on the assembled cut, not on stills.
+
+- **Ocean / shore POV — hard FAIL.** Camera standing on Earth's ocean or shore must have **no Earth globe in the sky**. The water → Earth → Moon stack (rocks/water foreground, Earth globe above the mist, Moon behind) is a **FAIL on every future build and remint**. Prompt: “shore under ONE Moon, starry sky, NO Earth globe, NO planet Earth in background.” Gate a **mid-plate** frame, not only first/last. Moon Leaving v04 shipped this as a Ben-accepted soft — that acceptance is cut-specific and is **not** precedent.
+- **Silent end hold — FAIL.** The end hold must carry **music that fades** (~10s fade, picture fade to black over the last ~2s, ≥15–20s of slow picture after the last VO). A silent picture hold reads as a hard cut / broken file.
+- **Remint audio — FAIL.** A remint replaces **picture only**. Map video from the remint and **audio from the original part** (`-map 0:v:0 -map 1:a:0`). Never `-c copy` the remint's own audio in — Flow/Veo ambient wipes the VO.
+- **Chapter cards — FAIL** on a flat black hard text box, on VO chopped into the card (needs ~1.5s breath lead-in), or on the bed going dead-silent under the card. Cards are soft starfield / space gradient with quiet music continuing.
+- **Dual-body — FAIL** on extra moons or extra Earths. One Earth + one Moon, or one Moon only.
+- **Join tech — FAIL** if inputs were not normalized to **1920×1080 stereo** before concat, or if A/V durations do not match after concat (video past audio on the tail = silent-ending fail). Probe both streams.
+- **Transfer integrity:** CopyFromBox truncates large MP4s — chunk ≤500KB, reassemble, **sha256 verify** before scoring. A truncated MP4 still plays.
+
 ## Merge / remint
 
 - **Do not merge video-cut PRs** until UAT PASS. Docs-only PRs may merge.
@@ -92,3 +105,5 @@ Reference length: Europa v02 · Last Star v11 (**~7–9 min**). Open/end craft: 
 - Restore the old brand sting or baked subscribe outro. Older playbook lines that say “reuse brand sting + like/subscribe outro” are wrong.
 - Add new Short pins, or ship a Short without Related → that week’s Thursday long.
 - Remint to chase a public Shorts overlay FAIL when Studio Related is already correct.
+- Ship a silent end hold, or carry a remint's own audio into the film (picture only — keep the original part audio).
+- Put an Earth globe in the sky on an ocean/shore POV plate.

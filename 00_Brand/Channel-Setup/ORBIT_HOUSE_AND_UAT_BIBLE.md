@@ -17,6 +17,7 @@ Companions (do not invent a parallel conflicting spec):
 - `.cursor/rules/orbit-shorts-punch-first.mdc`
 - `SHORTS_FUNNEL_AND_CROSSPOST.md`
 - `CHANNEL_PUBLISH_CADENCE.md`
+- `MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md` (long assembly · remint · end hold · chapter cards · ocean POV · join tech)
 
 ---
 
@@ -159,11 +160,33 @@ Score **two surfaces separately**:
 
 ---
 
+## Long assembly · remint · end hold (Ben 15 Sep 2026 — Moon Leaving full v04)
+
+Full lessons: `MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md` (locked after Auditor HARD PASS on `moon_leaving_full_rough_v04.mp4`, ~518.81s, 1920×1080 stereo).
+
+| Area | Lock |
+|------|------|
+| Remint | **Video only.** Map picture from the remint, **audio from the original part** (`-map 0:v:0 -map 1:a:0`). Never `-c copy` remint audio — Flow/Veo ambient wipes the VO |
+| End hold | **Music that fades** (~10s fade · picture fade to black last ~2s · ≥15–20s slow picture after last VO). **Silent hold = FAIL** |
+| Bed parity | P02/P04 beds mixed to the same ballpark as P01/P03 (~−20 dB mean under VO) |
+| Chapter cards | ~**1.5s breath lead-in** so VO is never chopped · **soft starfield / space-gradient** card, not a flat black text box · quiet music continues under the card |
+| Dual-body gate | One Earth + one Moon, or one Moon only. Extra moons / Earths **FAIL** |
+| Ocean / shore POV | Standing on Earth's ocean or shore = **no Earth globe in the sky**. Prompt “shore under ONE Moon, starry sky, NO Earth globe, NO planet Earth in background.” Gate a **mid-plate** frame. **Hard FAIL on future builds and remints** |
+| Joins | Normalize every input to **1920×1080 stereo** before concat (720p mono ↔ 1080p stereo causes the seam hitch) · **verify A/V durations match** after concat |
+| Transfers | CopyFromBox truncates large MP4s — chunk **≤500KB**, reassemble, **sha256 verify**. A truncated MP4 still plays |
+
+**Softs accepted on the Moon Leaving lock (cut-specific, not precedent):** Orbit CU ~32s · ruler numerals · music under cards/outro · the shore Earth+Moon stack Ben shipped. The shore stack is a **hard FAIL** on anything built after this lock.
+
+**Moon Leaving week Shorts (film-specific, not a rule change):** seven-pack — 3.8 CM A YEAR · LEAVING US? · DAY WAS HOURS · THE BULGE PULLS · FOSSIL CLOCK · RINGS OF FIRE · PERFECT COVER ENDS. Ben override for that week only: Related pill **and** a pinned comment to the Premiere. Schedule Fri–Tue (or Fri–Thu) **11:30 Europe/London** with `publishAt`; Related = that Thursday Premiere. Everywhere else the default stays **Related-only, no new Short pins**.
+
+---
+
 ## UAT / QA for Cursor
 
 1. **Orbit Auditor** is the ship gate for Shorts and longs.
 2. **PASS thumbs** only on **yellow highlight + white** type + contrast + crop + no Orbit + distinct plate + **no clipped hook lines** (vertical-centre stack; both lines survive Studio preview and Shorts-list 16:9 crop). **All-white title thumbs FAIL.** Do not remint live Last Star overlays from the thumb lock.
 3. **PASS Related** on Studio field matching that week’s Thursday id. Public overlay FAIL ≠ remint.
 4. **Do not merge video-cut PRs** until UAT PASS. **Docs PRs may merge.**
+4b. **Long assembly FAILs:** ocean/shore POV with an Earth globe in the sky · silent end hold · remint audio carried over the original part audio · flat black chapter cards or VO chopped into a card · unnormalized joins / mismatched A/V durations (see the Moon Leaving lock above).
 5. Follow this bible; do not ping Chief of Staff unless Ben asks or a lock must be broken.
 6. Do not remint Last Star leftovers. Do not change dates while saving thumbs. Do not fake Related pills across weeks.
