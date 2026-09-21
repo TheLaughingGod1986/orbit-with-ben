@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
- * prisma migrate deploy with Neon-friendly unpooled DIRECT_URL + P1002 retry.
+ * prisma migrate deploy with Neon-friendly unpooled DIRECT_URL + P1002 handling.
  *
  * Vercel Neon integration exposes DATABASE_URL_UNPOOLED / POSTGRES_URL_NON_POOLING.
- * Advisory locks via a pooled URL often flake as Prisma P1002 during Vercel builds.
+ * Neon is serverless: advisory locks often flake as Prisma P1002 (even on unpooled).
+ * Prisma documents disabling the advisory lock for serverless providers.
  *
  * Preference (first non-empty wins):
  *   DATABASE_URL_UNPOOLED → POSTGRES_URL_NON_POOLING → DIRECT_URL → DATABASE_URL
@@ -12,8 +13,8 @@
  */
 import { spawn } from "node:child_process";
 
-const MAX_ATTEMPTS = 5;
-const BASE_DELAY_MS = 2500;
+const MAX_ATTEMPTS = 4;
+const BASE_DELAY_MS = 3000;
 
 function pickDirectUrl() {
   const candidates = [
@@ -33,10 +34,18 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function runMigrate(directUrl) {
+function runMigrate(directUrl, { disableAdvisoryLock }) {
   return new Promise((resolve) => {
+    const env = {
+      ...process.env,
+      DIRECT_URL: directUrl,
+    };
+    if (disableAdvisoryLock) {
+      // Neon / serverless: https://www.prisma.io/docs/orm/reference/environment-variables-reference
+      env.PRISMA_SCHEMA_DISABLE_ADVISORY_LOCK = "1";
+    }
     const child = spawn("npx", ["prisma", "migrate", "deploy"], {
-      env: { ...process.env, DIRECT_URL: directUrl },
+      env,
       stdio: "inherit",
       shell: process.platform === "win32",
     });
@@ -61,9 +70,16 @@ async function main() {
     `prisma-migrate-deploy: DIRECT_URL resolved from ${picked.name} (value not printed)`,
   );
 
+  // Attempt 1–2: normal migrate (lock on). Remaining: Neon serverless path without advisory lock.
   let delay = BASE_DELAY_MS;
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
-    const code = await runMigrate(picked.value);
+    const disableAdvisoryLock = attempt >= 3;
+    if (disableAdvisoryLock) {
+      console.warn(
+        "prisma-migrate-deploy: retrying with PRISMA_SCHEMA_DISABLE_ADVISORY_LOCK=1 (Neon serverless)",
+      );
+    }
+    const code = await runMigrate(picked.value, { disableAdvisoryLock });
     if (code === 0) {
       process.exit(0);
     }
@@ -74,10 +90,10 @@ async function main() {
       process.exit(code);
     }
     console.warn(
-      `prisma-migrate-deploy: attempt ${attempt}/${MAX_ATTEMPTS} failed (often Prisma P1002 advisory lock). Retrying in ${delay}ms…`,
+      `prisma-migrate-deploy: attempt ${attempt}/${MAX_ATTEMPTS} failed (often Prisma P1002). Retrying in ${delay}ms…`,
     );
     await sleep(delay);
-    delay = Math.min(delay * 2, 20_000);
+    delay = Math.min(delay * 2, 15_000);
   }
 }
 

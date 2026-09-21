@@ -9,7 +9,7 @@ Public host for the affiliate landing **`/go`** (Amazon Associates website URL),
 3. Framework Preset: Next.js (auto-detected).
 4. Build Command (default from `package.json`):  
    `prisma generate && node scripts/prisma-migrate-deploy.mjs && next build`  
-   Migrate resolves `DIRECT_URL` from Neon `DATABASE_URL_UNPOOLED` / `POSTGRES_URL_NON_POOLING` first (avoids P1002 advisory-lock flake on the pooler), with short retries.  
+   Migrate resolves `DIRECT_URL` from Neon `DATABASE_URL_UNPOOLED` / `POSTGRES_URL_NON_POOLING` first, retries P1002, then retries with `PRISMA_SCHEMA_DISABLE_ADVISORY_LOCK=1` (Neon serverless).  
    Do **not** use `prisma migrate dev` in CI/build — it hangs waiting for input.
 5. Install Command: `npm install` (runs `postinstall` → `prisma generate`).
 
