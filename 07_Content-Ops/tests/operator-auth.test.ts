@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   isMutatingApiPath,
   isOAuthCallbackPath,
+  isPublicPath,
   requireOperator,
   safeOperatorNextPath,
 } from "../src/lib/security/operator-auth";
@@ -28,6 +29,16 @@ describe("safeOperatorNextPath", () => {
     expect(safeOperatorNextPath("//evil.com")).toBe("/");
     expect(safeOperatorNextPath("https://evil.com")).toBe("/");
     expect(safeOperatorNextPath("evil.com")).toBe("/");
+  });
+});
+
+describe("isPublicPath", () => {
+  it("treats bare /go and /go/{slug} as public (Amazon Associates + redirects)", () => {
+    expect(isPublicPath("/go")).toBe(true);
+    expect(isPublicPath("/go/")).toBe(true);
+    expect(isPublicPath("/go/jwst-book")).toBe(true);
+    expect(isPublicPath("/legal/privacy")).toBe(true);
+    expect(isPublicPath("/affiliate")).toBe(false);
   });
 });
 

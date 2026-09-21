@@ -20,21 +20,21 @@ Destination URLs come from `src/lib/affiliate/live-product-urls.ts` (confirmed A
 
 ## What only you can do
 
-1. **Amazon Associates UK** — approve account → set `AMAZON_ASSOCIATE_TAG` in production env  
+1. **Amazon Associates UK** — approve account → set `AMAZON_ASSOCIATE_TAG` in production env (Vercel; never commit). Website URL for Associates: **`https://orbit-content-ops.vercel.app/go`** (public HTML landing — not a blank redirect). Do **not** use `orbitwithben.com`.
 2. **Brilliant** — approve affiliate → set `BRILLIANT_AFFILIATE_ID`  
-3. **Deploy Content Ops** with migrate + those env vars  
-4. **Point** `https://orbitwithben.com/go` at Content Ops (DNS / reverse proxy), or set  
-   `AFFILIATE_REDIRECT_BASE_URL=https://orbitwithben.com/go` if the app already owns that host  
-5. **Smoke-test** `https://orbitwithben.com/go/brilliant-physics` → 302 → Brilliant with `ref=` · click row appears  
+3. **Deploy Content Ops** with migrate + those env vars (Vercel project `orbit-content-ops`, root `07_Content-Ops`)  
+4. Confirm **`https://orbit-content-ops.vercel.app/go` returns HTTP 200** with real HTML, and `/go/{slug}` still 302s  
+5. **Smoke-test** `https://orbit-content-ops.vercel.app/go/jwst-book` → 302 → Amazon.co.uk with `tag=` from env · click row appears  
 6. On a long-form video: regenerate → approve trust-gated placement → publish description with `/go/` links  
 7. When reports exist: CSV import on `/affiliate/import`
 
 ## Env (production)
 
 ```bash
-APP_BASE_URL=https://<your-content-ops-host>
-AFFILIATE_REDIRECT_BASE_URL=https://orbitwithben.com/go
-AMAZON_ASSOCIATE_TAG=<uk-tag>
+APP_BASE_URL=https://orbit-content-ops.vercel.app
+# Optional; defaults to ${APP_BASE_URL}/go
+AFFILIATE_REDIRECT_BASE_URL=https://orbit-content-ops.vercel.app/go
+AMAZON_ASSOCIATE_TAG=<uk-tag>   # e.g. orbitgo-21 — set in Vercel only
 BRILLIANT_AFFILIATE_ID=<brilliant-id>
 ```
 
