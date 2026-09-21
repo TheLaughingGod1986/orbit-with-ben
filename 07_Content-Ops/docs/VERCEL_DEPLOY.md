@@ -1,6 +1,6 @@
 # Deploy Content Ops on Vercel (Postgres)
 
-Public host for `/go/{slug}` and click persistence. Use the Vercel `*.vercel.app` URL (or a custom domain you control later). SQLite file DB is **not** the production path.
+Public host for the affiliate landing **`/go`** (Amazon Associates website URL), `/go/{slug}` redirects, and click persistence. Production: `https://orbit-content-ops.vercel.app` (Vercel project `orbit-content-ops`, root directory `07_Content-Ops`). Do **not** use `orbitwithben.com` for Associates. SQLite file DB is **not** the production path.
 
 ## Vercel project setup
 
@@ -42,7 +42,7 @@ npm run db:seed
 npm run affiliate:apply-urls
 ```
 
-Confirm `/go/{product-slug}` on `APP_BASE_URL` redirects and that `AffiliateClick` rows appear in Postgres.
+Confirm `APP_BASE_URL/go` returns **HTTP 200** HTML (Associates crawl), `/go/{product-slug}` redirects with `tag=` from env, and `AffiliateClick` rows appear in Postgres.
 
 ## Local development
 
