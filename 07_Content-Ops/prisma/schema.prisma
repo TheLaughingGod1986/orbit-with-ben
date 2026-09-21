@@ -5,7 +5,9 @@ generator client {
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
-  /// Direct (non-pooled) URL for migrations. If unset locally, set DIRECT_URL to the same value as DATABASE_URL.
+  /// Direct (non-pooled) URL for migrations. Build sets DIRECT_URL from Neon
+  /// DATABASE_URL_UNPOOLED / POSTGRES_URL_NON_POOLING when present (see scripts/prisma-migrate-deploy.mjs).
+  /// Locally: set DIRECT_URL (or DATABASE_URL_UNPOOLED) to the non-pooled connection string.
   directUrl = env("DIRECT_URL")
 }
 
