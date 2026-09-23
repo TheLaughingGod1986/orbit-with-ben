@@ -1,12 +1,13 @@
 {
-  "status": "BLOCKED",
-  "engines": {
-    "google_flow": "Insufficient credits \u2014 Start disabled",
-    "gemini_api_veo": "429 RESOURCE_EXHAUSTED \u2014 prepaid credits depleted"
-  },
-  "have_plates": 3,
-  "need_plates_approx": 18,
-  "vo_seconds": 136.7,
-  "uat_note": "OWB UAT/moon_leaving_part-03_STATUS.txt",
-  "next": "Ben tops up Flow AI credits or Gemini API prepaid, then regenerate ~18 world plates and assemble moon_leaving_part-03_rough_v01.mp4 into OWB UAT"
+  "status": "CLEARED",
+  "checked_at": "2026-09-12",
+  "flow_credits": 25050,
+  "account": "benoats@googlemail.com",
+  "note": "Ben confirmed credits green 12 Sep; overnight remint unlocked. Prefer Veo 3.1 Fast @ 10/gen.",
+  "part03_remint": "IN_FLIGHT_p03ABC",
+  "part04": {
+    "vo": "ready (~116.2s)",
+    "prompts": 12,
+    "blocked_on": "wait for P03 remint plates then P02 fixes"
+  }
 }

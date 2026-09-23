@@ -149,7 +149,15 @@ def run_once(*, dry_run: bool = False) -> dict:
                 summary["results"].append(
                     {"key": s["_ledger_key"], "title": s.get("title"), **result}
                 )
-                if result.get("status") in {"ok", "partial"}:
+                if result.get("status") in {"ok", "partial", "unconfirmed"} and any(
+                    result.get(k) for k in ("share_clicked_1", "share_clicked_2", "share_clicked_3")
+                ):
+                    # Suite often never shows a durable confirmation toast; if Share
+                    # was clicked and flow advanced, ledger it so catch-up can proceed.
+                    if result.get("status") == "unconfirmed":
+                        result = {**result, "status": "partial", "note": "share_clicked_unconfirmed"}
+                    ledger.mark_posted(s, result)
+                elif result.get("status") in {"ok", "partial"}:
                     ledger.mark_posted(s, result)
                     log(f"ok {s['_ledger_key']} status={result.get('status')}")
                 else:
