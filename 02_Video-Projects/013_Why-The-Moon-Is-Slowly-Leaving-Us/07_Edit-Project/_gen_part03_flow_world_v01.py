@@ -55,13 +55,25 @@ def thumb_keys(page) -> set[str]:
 
 
 def set_prompt(page, text: str) -> None:
+    # Dismiss overlays that intercept prompt clicks (credit banners, account panes).
+    page.evaluate(
+        """() => {
+          document.querySelectorAll('.cdk-overlay-backdrop').forEach(e => {
+            try { e.click(); } catch (err) {}
+          });
+        }"""
+    )
+    page.wait_for_timeout(150)
+    for _ in range(2):
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(80)
     box = page.locator('[contenteditable="true"]').first
-    box.click()
+    box.click(force=True, timeout=5000)
     page.keyboard.press("Meta+A")
     page.keyboard.press("Backspace")
     page.wait_for_timeout(100)
     page.keyboard.insert_text(text)
-    page.wait_for_timeout(200)
+    page.wait_for_timeout(250)
 
 
 def ensure_x1(page) -> None:
@@ -79,19 +91,45 @@ def ensure_x1(page) -> None:
 
 
 def credits_blocked(page) -> bool:
-    if page.locator('button[aria-label="Insufficient credits warning"]').count():
+    """True only when Flow will not mint — 'running low' / soft banners are NOT a hard block."""
+    txt = page.evaluate("() => document.body.innerText.slice(0, 4000)") or ""
+    if re.search(
+        r"out of Google Flow credits|You've used all (?:your )?credits|insufficient credits to (?:start|generate)",
+        txt,
+        re.I,
+    ):
         return True
-    txt = page.evaluate("() => document.body.innerText.slice(0,2000)") or ""
-    return bool(re.search(r"out of Google Flow credits|Not enough credits", txt, re.I))
+    start = page.locator('button[aria-label="Start generation"]')
+    if start.count() and start.first.is_disabled():
+        if re.search(r"\b0\b.*credit|credit.*\b0\b", txt, re.I):
+            return True
+    return False
 
 
 def start_generation(page) -> None:
     if credits_blocked(page):
         raise RuntimeError("insufficient_credits")
+    # Dismiss soft low-credit banners so they don't intercept clicks.
+    for sel in (
+        'button[aria-label="Dismiss credit banner"]',
+        'button[aria-label="Dismiss"]',
+        'button[aria-label="Close"]',
+    ):
+        loc = page.locator(sel)
+        if loc.count():
+            try:
+                loc.first.click(timeout=800)
+                page.wait_for_timeout(200)
+            except Exception:
+                pass
+    # IMPORTANT: do NOT click the Frames "Start" chip — that is first-frame, not generate.
     loc = page.locator('button[aria-label="Start generation"]')
-    if not loc.count() or loc.first.is_disabled():
+    if not loc.count():
         raise RuntimeError("start_unavailable")
-    loc.first.click()
+    btn = loc.first
+    if btn.is_disabled():
+        raise RuntimeError("start_disabled")
+    btn.click(force=True, timeout=3000)
 
 
 def scroll_to(page, t: dict) -> dict | None:
