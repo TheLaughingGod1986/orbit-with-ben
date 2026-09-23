@@ -42,11 +42,19 @@ function redirectBaseLooksProduction(url: string | null): boolean {
   if (!url) return false;
   try {
     const u = new URL(url);
+    if (u.protocol !== "https:") return false;
+    // Canonical Associates website / tracked door host (do not require orbitwithben.com).
+    if (
+      u.hostname === "orbit-content-ops.vercel.app" ||
+      u.hostname.endsWith(".orbit-content-ops.vercel.app")
+    ) {
+      return true;
+    }
+    // Legacy custom host still accepted if pointed at Content Ops.
     return (
-      u.protocol === "https:" &&
-      (u.hostname === "orbitwithben.com" ||
-        u.hostname === "www.orbitwithben.com" ||
-        u.hostname.endsWith(".orbitwithben.com"))
+      u.hostname === "orbitwithben.com" ||
+      u.hostname === "www.orbitwithben.com" ||
+      u.hostname.endsWith(".orbitwithben.com")
     );
   } catch {
     return false;
@@ -94,7 +102,7 @@ export function evaluateAffiliateGoLive(input: GoLiveInput): GoLiveReport {
     detail: redirect
       ? redirectBaseLooksProduction(redirect)
         ? `Using ${redirect}`
-        : `Using ${redirect} — for public YouTube links prefer https://orbitwithben.com/go`
+        : `Using ${redirect} — for public YouTube / Associates prefer https://orbit-content-ops.vercel.app/go`
       : "Set APP_BASE_URL or AFFILIATE_REDIRECT_BASE_URL.",
     blocking: !redirect,
   });
@@ -192,10 +200,10 @@ export function evaluateAffiliateGoLive(input: GoLiveInput): GoLiveReport {
 
   checks.push({
     id: "dns_go",
-    label: "orbitwithben.com/go DNS or proxy",
+    label: "Public /go Associates website URL",
     status: redirectBaseLooksProduction(redirect) ? "pass" : "manual",
     detail:
-      "Manual: point https://orbitwithben.com/go to Content Ops (or set AFFILIATE_REDIRECT_BASE_URL to the live app /go).",
+      "Manual: Amazon Associates website URL must be https://orbit-content-ops.vercel.app/go (200 HTML landing). Do not use orbitwithben.com.",
     blocking: false,
   });
 

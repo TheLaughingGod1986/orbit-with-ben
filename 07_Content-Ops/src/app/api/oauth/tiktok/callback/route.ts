@@ -4,12 +4,25 @@ import { getPublicBaseUrl, oauthCallbackUrl } from "@/lib/public-base-url";
 import { consumeOAuthState } from "@/lib/oauth/state";
 import { encryptSecret } from "@/lib/security/token-crypto";
 import { prisma } from "@/lib/storage/prisma";
-import { requireOperatorApi } from "@/lib/security/operator-auth";
+import { encryptionKeyErrorCode } from "@/lib/oauth/callback-errors";
 
+/**
+ * Provider redirect. Authenticity is the one-shot OAuth `state` token below —
+ * not the operator cookie, which this cross-site navigation may not carry.
+ * Starting a Connect still requires an operator session (`../start/route.ts`).
+ */
 export async function GET(req: NextRequest) {
-  const denied = await requireOperatorApi();
-  if (denied) return denied;
+  try {
+    return await handleTikTokCallback(req);
+  } catch (err) {
+    console.error("[oauth/tiktok] callback failed", err);
+    return NextResponse.redirect(
+      `${getPublicBaseUrl(req)}/settings/connections?error=connection_save_failed`,
+    );
+  }
+}
 
+async function handleTikTokCallback(req: NextRequest) {
   const env = getEnv();
   const base = getPublicBaseUrl(req);
   const url = new URL(req.url);
@@ -20,8 +33,9 @@ export async function GET(req: NextRequest) {
   if (!consumed.ok) {
     return NextResponse.redirect(`${base}/settings/connections?error=${encodeURIComponent(consumed.error)}`);
   }
-  if (!env.ORBIT_TOKEN_ENCRYPTION_KEY) {
-    return NextResponse.redirect(`${base}/settings/connections?error=encryption_key_required`);
+  const keyError = encryptionKeyErrorCode();
+  if (keyError) {
+    return NextResponse.redirect(`${base}/settings/connections?error=${keyError}`);
   }
 
   const redirectUri = oauthCallbackUrl("tiktok", req);
@@ -43,6 +57,12 @@ export async function GET(req: NextRequest) {
   const refresh = tokenBody.refresh_token || tokenBody?.data?.refresh_token;
   const scope = tokenBody.scope || tokenBody?.data?.scope || "";
   if (!tokenRes.ok || !access) {
+    console.error("[oauth/tiktok] token exchange failed", {
+      status: tokenRes.status,
+      error: tokenBody?.error,
+      description: tokenBody?.error_description,
+      redirectUri,
+    });
     return NextResponse.redirect(`${base}/settings/connections?error=token_exchange_failed`);
   }
 

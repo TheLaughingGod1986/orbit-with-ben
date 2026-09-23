@@ -5,12 +5,25 @@ import { consumeOAuthState } from "@/lib/oauth/state";
 import { encryptSecret } from "@/lib/security/token-crypto";
 import { prisma } from "@/lib/storage/prisma";
 import { YOUTUBE_SCOPES } from "@/lib/publishing/adapters/youtube";
-import { requireOperatorApi } from "@/lib/security/operator-auth";
+import { encryptionKeyErrorCode } from "@/lib/oauth/callback-errors";
 
+/**
+ * Provider redirect. Authenticity is the one-shot OAuth `state` token below —
+ * not the operator cookie, which this cross-site navigation may not carry.
+ * Starting a Connect still requires an operator session (`../start/route.ts`).
+ */
 export async function GET(req: NextRequest) {
-  const denied = await requireOperatorApi();
-  if (denied) return denied;
+  try {
+    return await handleGoogleCallback(req);
+  } catch (err) {
+    console.error("[oauth/google] callback failed", err);
+    return NextResponse.redirect(
+      `${getPublicBaseUrl(req)}/settings/connections?error=connection_save_failed`,
+    );
+  }
+}
 
+async function handleGoogleCallback(req: NextRequest) {
   const url = new URL(req.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
@@ -34,10 +47,9 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  if (!env.ORBIT_TOKEN_ENCRYPTION_KEY) {
-    return NextResponse.redirect(
-      `${base}/settings/connections?error=${encodeURIComponent("ORBIT_TOKEN_ENCRYPTION_KEY required before connecting")}`,
-    );
+  const keyError = encryptionKeyErrorCode();
+  if (keyError) {
+    return NextResponse.redirect(`${base}/settings/connections?error=${keyError}`);
   }
 
   const redirectUri = oauthCallbackUrl("google", req);
@@ -54,9 +66,13 @@ export async function GET(req: NextRequest) {
   });
   const tokenBody = await tokenRes.json();
   if (!tokenRes.ok || !tokenBody.access_token) {
-    return NextResponse.redirect(
-      `${base}/settings/connections?error=${encodeURIComponent("token_exchange_failed")}`,
-    );
+    console.error("[oauth/google] token exchange failed", {
+      status: tokenRes.status,
+      error: tokenBody?.error,
+      description: tokenBody?.error_description,
+      redirectUri,
+    });
+    return NextResponse.redirect(`${base}/settings/connections?error=token_exchange_failed`);
   }
 
   const channelRes = await fetch(
