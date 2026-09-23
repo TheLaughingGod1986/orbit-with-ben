@@ -1,0 +1,72 @@
+{
+  "task": "private_shorts_with_views_fix",
+  "finished_at": "2026-09-04T16:48:02.101971+00:00",
+  "from_user_screenshots": [
+    {
+      "title": "There's an Ocean Under That Ice",
+      "views": 62,
+      "was": "Private"
+    },
+    {
+      "title": "The Day the Last Star Goes Out",
+      "views": 74,
+      "was": "Private"
+    },
+    {
+      "title": "The Sky Is Already Running Out of Light",
+      "views": 243,
+      "was": "Private"
+    }
+  ],
+  "actions": [
+    {
+      "id": "QNTeou-w-gY",
+      "title": "There's an Ocean Under That Ice",
+      "action": "set_public",
+      "result": "Public (Studio reload confirmed)",
+      "why": "Unique Europa Short; privatized in Sep 3 hygiene despite accrued views",
+      "evidence": {
+        "id": "QNTeou-w-gY",
+        "steps": [
+          "opened visibility dialog"
+        ],
+        "before": "Private",
+        "public_click": "Public PUBLIC",
+        "dialog_done": "Done",
+        "saved": true,
+        "after_save": "Public",
+        "after_reload": "Public",
+        "anon": {
+          "raw": "no player response",
+          "private_word": false
+        },
+        "ok": true
+      }
+    },
+    {
+      "id": "SdNXS1PD_Yk",
+      "title": "The Sky Is Already Running Out of Light",
+      "action": "left_private",
+      "views_on_private_copy": 243,
+      "public_keeper": {
+        "id": "CkSECfUfH2Y",
+        "views": 288,
+        "visibility": "Public"
+      },
+      "why": "Same title already Public with more views \u2014 publishing both creates a duplicate Short"
+    },
+    {
+      "id": "KX-XU_AODoI",
+      "title": "The Day the Last Star Goes Out",
+      "action": "left_private",
+      "views_on_private_copy": 74,
+      "public_keeper": {
+        "id": "IVbO9XkkDps",
+        "views_approx": 90,
+        "visibility": "Public"
+      },
+      "why": "Same title already Public with more views \u2014 publishing both creates a duplicate Short"
+    }
+  ],
+  "note": "Mobile Studio lists private duplicates next to public keepers; padlock rows with views are usually the lower remint, not the live winner."
+}
