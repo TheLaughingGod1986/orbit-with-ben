@@ -64,6 +64,12 @@ KNOWN_LONGS = [
         "url": "https://youtu.be/Yk1tLh23rko",
         "status": "public",
     },
+    {
+        "video_id": "2fsQcea-voM",
+        "title": "Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone",
+        "url": "https://youtu.be/2fsQcea-voM",
+        "status": "public",
+    },
 ]
 
 DONE = {
