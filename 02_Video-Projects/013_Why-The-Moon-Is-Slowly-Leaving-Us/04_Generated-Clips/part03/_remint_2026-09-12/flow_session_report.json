@@ -1,0 +1,34 @@
+{
+  "status": "BLOCKED",
+  "blocker": "PASSKEY_VERIFICATION",
+  "cleared": false,
+  "verified": false,
+  "checked_at_utc": "2026-09-14T11:40:23.237282+00:00",
+  "host": "Benjamins-Mac-mini.local",
+  "required_account": "benoats@gmail.com",
+  "account_aliases_ok": [
+    "benoats@gmail.com",
+    "benoats@googlemail.com"
+  ],
+  "forbidden_account": "benoats86@gmail.com",
+  "forbidden_avoided": true,
+  "account_attempted": "benoats@gmail.com",
+  "password_accepted": null,
+  "credits": null,
+  "credits_expected": 25050,
+  "session_warm": false,
+  "flow_create_open": false,
+  "url": "https://accounts.google.com/v3/signin/challenge/pk",
+  "page_text": "Hi Benjamin / Verifying it's you... / Complete sign-in using your passkey / Try another way",
+  "detail": "Ben believed Flow login on Mini was FIXED. Live verify 2026-09-14: account chooser still present for Flow; selecting benoats@gmail.com (avoided forbidden benoats86) immediately hits Google passkey challenge. Credits for Ultra (~25000+) NOT visible. STOPPED \u2014 no mint.",
+  "ben_action_needed": "On Mini Chrome: complete passkey for benoats@gmail.com / googlemail (or Try another way \u2192 SMS/Tap Yes), leave Flow Create warm with ~25k credits visible. Do not use benoats86.",
+  "mint": false,
+  "plates_written": [],
+  "screenshots": [
+    "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/04_Generated-Clips/part03/_remint_2026-09-12/verify_passkey_blocker_live.png",
+    "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/04_Generated-Clips/part03/_remint_2026-09-12/verify_desktop_20260914T114022Z.png",
+    "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/04_Generated-Clips/part03/_remint_2026-09-12/verify_passkey_blocker_live.png"
+  ],
+  "updated_at_utc": "2026-09-14T11:40:23.237282+00:00",
+  "task": "Verify Flow login FIXED then remint P03 A/B/C"
+}

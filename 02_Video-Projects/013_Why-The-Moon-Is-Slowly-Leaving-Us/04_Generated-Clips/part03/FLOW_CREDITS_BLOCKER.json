@@ -1,11 +1,13 @@
 {
-  "status": "BLOCKED_MID_BATCH",
-  "checked_at": "2026-09-04T18:50:00+01:00",
-  "flow": "Out of Google Flow credits after partial gens (Start disabled)",
-  "gemini_api_veo": "429 prepaid depleted",
-  "have_unique_plates": 10,
-  "unique_plate_seconds": 80,
-  "need_plates_approx": 18,
-  "vo_seconds": 136.7,
-  "next": "Top up Flow Add AI credits again, then resume _gen_part03_flow_world_v01.py and assemble rough into OWB UAT"
+  "status": "CLEARED",
+  "checked_at": "2026-09-12",
+  "flow_credits": 25050,
+  "account": "benoats@googlemail.com",
+  "note": "Ben confirmed credits green 12 Sep; overnight remint unlocked. Prefer Veo 3.1 Fast @ 10/gen.",
+  "part03_remint": "IN_FLIGHT_p03ABC",
+  "part04": {
+    "vo": "ready (~116.2s)",
+    "prompts": 12,
+    "blocked_on": "wait for P03 remint plates then P02 fixes"
+  }
 }
