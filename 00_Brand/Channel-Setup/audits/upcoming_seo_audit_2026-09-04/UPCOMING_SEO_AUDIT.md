@@ -51,6 +51,6 @@ Keep **one Short per UK day** (Thu may also have 20:00 launch). Do not dump extr
 - Screenshots under this folder
 - Pack refreshed: `vidiq_optimize_2026-09-03/SHORTS_LISTING_UPDATES.json`
 
-## Follow-up (Ben / when VidIQ credits available)
+## Follow-up — VidIQ rescore (done 2026-09-04)
 
-Re-score the six changed titles in app.vidiq.com (`type=short`) and lock any ≥95 winners. Neutron long thumb ABC already house-gated separately.
+Credits live again. See `VIDIQ_TITLE_RESCORE.md` — six mystery/keyword Shorts re-scored and Studio-applied (probe kept at 93). MCP URL added to `~/.cursor/mcp.json`; paste API key or Authorize in Cursor for native `vidiq_score_title` next time.
