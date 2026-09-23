@@ -169,3 +169,19 @@ Europa’s 14 views came 43 % direct, 29 % search, 14 % Browse, **14 % Related S
 - `data/shorts_open_probe.json` — local export probe: duration, VO onset, first-frame luma, black-frame detect
 
 Screenshots (Studio overview, content, audience, reach, advanced table, first-frame contact sheets) are in the agent artifacts for this run; PNGs are gitignored in this repo.
+
+---
+
+## Fix log (Thu 10 Sep 2026, 20:10–21:00 BST)
+
+| # | Plan item | Done | Evidence |
+|---|---|---|---|
+| 2 | Replace `mAAMsbhm88w` (Orbit-first, Tue 16 Sep 11:30) | **Yes** | New cut `neutron_mystery-07_probe-closer-than-you_v02_world-open.mp4` (25.0 s, opens on the neutron-star world plate 0–7 s, Orbit only later) uploaded as **`to-b2baeoWQ`**: same title/description, yellow/white world thumb `cover_probe_v02_world.jpg`, **Scheduled 16 Sept 2026 11:30** London, Related → `Yk1tLh23rko`. Old `mAAMsbhm88w` set **Private** (no publishAt, not deleted). Builder `_build_neutron_mystery_07_v02_world_open.py`, state `MYSTERY_07_V02_REPLACE_LIVE.json`. |
+| 3 | Dedupe Sky | **Yes** | `jB8OAZKXdEw` → Private (oembed 403). `CkSECfUfH2Y` stays Public (200). `SdNXS1PD_Yk` untouched — Ben’s call. |
+| 1 | Auditor gate | **Yes** | `00_Brand/Channel-Setup/tools/gate_shorts_open.py` — FAIL on ≥40 s, first-frame dHash ≤10 bits vs any Short ±14 days, Orbit at 0 s (visor heuristic + contact sheet). Library `audits/shorts_open_library/library.json` seeded with 26 Shorts (17 live via yt-dlp, 7 scheduled, 2 retired). `compare` reproduces §4a: Europa opens 0–3 bits; Sky copies 3 bits; `TE_HDKAnqms` visor 0.0082. Wired into `orbit-auditor-ship-gate.mdc` + `orbit-shorts-punch-first.mdc`. |
+| 5 | One Short per day | **Rule** | `orbit-auditor-ship-gate.mdc` / `orbit-shorts-punch-first.mdc`. |
+| 6 | No Premieres for longs | **Rule** | `orbit-auditor-ship-gate.mdc` Longs §10. |
+| 4 | `TE_HDKAnqms` | Left public | Logged as the Orbit-first FAIL example in the ship gate. |
+| 2b | `BX-z1EkgANg` open swap | **Not needed** | On equal footing (both Studio captures) `92vmMxSNmlk` ↔ `BX-z1EkgANg` are **34 dHash bits** apart — different composition despite the shared “glowing crust” look. Left as-is. |
+
+Notes: the Studio Related picker lists the Neutron long under its current Studio title *What Happens If You Get Near a Neutron Star* (title A/B in flight) — still `Yk1tLh23rko`. Studio-player frame captures hash ~16 bits away from the same file’s real first frame, so `studio_player_capture` library entries are approximate; register real export files whenever they exist.
