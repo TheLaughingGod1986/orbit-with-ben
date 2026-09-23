@@ -97,48 +97,128 @@ def click_button(page: Page, *labels: str) -> bool:
 
 
 def dismiss_modals(page: Page) -> None:
+    """Stay in the reel composer — never click Discard draft / Leave."""
+    page.evaluate(
+        """() => {
+          const keep = /continue editing|keep editing|stay|not now|got it|dismiss|skip|close/i;
+          const leave = /discard|leave page|leave without/i;
+          const nodes = [...document.querySelectorAll('button,[role=button],a,div[role=button]')];
+          for (const b of nodes) {
+            const t = (b.innerText || b.getAttribute('aria-label') || '').trim();
+            if (!t || t.length > 40) continue;
+            if (leave.test(t)) continue;
+            if (keep.test(t)) { b.click(); return true; }
+          }
+          return false;
+        }"""
+    )
     for label in (
         "Continue editing",
+        "Keep editing",
         "Not now",
-        "Close",
         "Got it",
         "Dismiss",
         "Skip",
-        "Cancel",
+        "Close",
     ):
         click_button(page, label)
-    # Discard leave-page only if we intentionally navigate away later
-    page.evaluate(
-        """() => {
-          for (const b of document.querySelectorAll('button,[role=button],div')) {
-            const t=(b.innerText||'').trim();
-            if (t === 'Continue editing') { b.click(); return true; }
-          }
-        }"""
+
+
+def _fill_labeled_field(page: Page, labels: tuple[str, ...], value: str) -> bool:
+    """Fill Meta Suite Title / Text boxes by nearby label text."""
+    try:
+        ok = page.evaluate(
+            """({labels, value}) => {
+              const norm = (s) => (s || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+              const want = labels.map(norm);
+              const candidates = [...document.querySelectorAll(
+                'input, textarea, div[contenteditable="true"], div[role=textbox]'
+              )];
+              for (const el of candidates) {
+                const r = el.getBoundingClientRect();
+                if (r.width < 60 || r.height < 18) continue;
+                let labelText = '';
+                const aria = el.getAttribute('aria-label') || '';
+                const ph = el.getAttribute('placeholder') || '';
+                labelText = aria + ' ' + ph;
+                // Walk up for a Title / Text label
+                let p = el.parentElement;
+                for (let i = 0; i < 5 && p; i++, p = p.parentElement) {
+                  labelText += ' ' + (p.innerText || '').split('\\n').slice(0, 4).join(' ');
+                }
+                const n = norm(labelText);
+                if (!want.some((w) => n.includes(w))) continue;
+                el.focus();
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                  el.value = value;
+                } else {
+                  el.textContent = value;
+                }
+                el.dispatchEvent(new InputEvent('input', {bubbles: true, data: value, inputType: 'insertText'}));
+                el.dispatchEvent(new Event('change', {bubbles: true}));
+                return true;
+              }
+              return false;
+            }""",
+            {"labels": list(labels), "value": value},
+        )
+        return bool(ok)
+    except Exception:
+        return False
+
+
+def fill_caption(page: Page, caption: str, *, title: str | None = None) -> bool:
+    dismiss_modals(page)
+    title_text = (title or caption).split("\n")[0][:80]
+    title_ok = _fill_labeled_field(
+        page,
+        ("title", "reel title", "add a title"),
+        title_text,
     )
-
-
-def fill_caption(page: Page, caption: str) -> bool:
+    # Suite Create reel: Title label + empty input (placeholder often blank)
+    if not title_ok:
+        try:
+            page.get_by_text("Title", exact=True).first.click(force=True, timeout=2500)
+            page.wait_for_timeout(150)
+            page.keyboard.press("Meta+a")
+            page.keyboard.type(title_text, delay=4)
+            title_ok = True
+        except Exception:
+            pass
+    if not title_ok:
+        try:
+            box = page.locator('input[placeholder*="title" i], textarea[placeholder*="title" i], input[aria-label*="title" i]').first
+            if box.count():
+                box.fill(title_text)
+                title_ok = True
+        except Exception:
+            pass
+    # Prefer the Text field in reels composer (not title)
+    try:
+        text_label = page.get_by_text(re.compile(r"Text(\s*\(optional\))?", re.I))
+        if text_label.count():
+            text_label.first.click(force=True, timeout=2000)
+            page.wait_for_timeout(200)
+    except Exception:
+        pass
+    text_ok = _fill_labeled_field(
+        page,
+        ("text (optional)", "text", "caption", "tell viewers", "write a caption"),
+        caption[:2100],
+    )
+    if text_ok:
+        return True
     selectors = [
         'div[aria-label*="Tell viewers" i][contenteditable="true"]',
         'div[aria-label*="what your reel" i][contenteditable="true"]',
         'div[aria-label*="caption" i][contenteditable="true"]',
         'div[aria-label*="Write" i][contenteditable="true"]',
         'div[contenteditable="true"][role="textbox"]',
-        'div[contenteditable="true"]',
         'textarea[placeholder*="caption" i]',
         'textarea[aria-label*="caption" i]',
         'textarea[placeholder*="reel" i]',
         'textarea',
     ]
-    # Prefer the Text field in reels composer (not title)
-    try:
-        text_label = page.get_by_text("Text (optional)", exact=False)
-        if text_label.count():
-            text_label.first.click(force=True, timeout=2000)
-            page.wait_for_timeout(200)
-    except Exception:
-        pass
     for sel in selectors:
         try:
             el = page.locator(sel).first
@@ -149,7 +229,7 @@ def fill_caption(page: Page, caption: str) -> bool:
             page.keyboard.press("Meta+a")
             page.keyboard.press("Backspace")
             page.keyboard.type(caption[:2100], delay=2)
-            return True
+            return True or title_ok
         except Exception:
             continue
     # JS fallback
@@ -173,7 +253,7 @@ def fill_caption(page: Page, caption: str) -> bool:
         }""",
         caption[:2100],
     )
-    return bool(ok)
+    return bool(ok) or title_ok
 
 
 def wait_upload_ready(page: Page, timeout_s: float = 180) -> bool:
@@ -203,18 +283,33 @@ def wait_upload_ready(page: Page, timeout_s: float = 180) -> bool:
 
 def click_share_cta(page: Page) -> bool:
     """Click the bottom Share / Publish button — never the step-indicator spinner."""
+    # Role-based click first (Suite often exposes an enabled Share button)
+    try:
+        share = page.get_by_role("button", name=re.compile(r"^(Share|Share now|Share reel|Publish)$", re.I))
+        if share.count():
+            btn = share.last
+            try:
+                if not btn.is_disabled():
+                    btn.click(force=True, timeout=4000)
+                    page.wait_for_timeout(800)
+                    return True
+            except Exception:
+                pass
+    except Exception:
+        pass
     try:
         hit = page.evaluate(
             """() => {
-              const labels = new Set(['Share', 'Share reel', 'Publish', 'Post']);
+              const labels = new Set(['Share', 'Share now', 'Share reel', 'Publish', 'Post']);
               const viewportH = window.innerHeight || 800;
               const hits = [];
               for (const el of document.querySelectorAll('button,div[role=button],[role=button]')) {
                 const t = (el.innerText || '').trim();
                 if (!labels.has(t)) continue;
                 const r = el.getBoundingClientRect();
-                if (r.width < 40 || r.height < 24 || r.width > 280) continue;
-                if (r.y < viewportH * 0.55) continue;
+                if (r.width < 36 || r.height < 20 || r.width > 320) continue;
+                // Footer CTAs live in the lower half; allow a bit higher for short windows.
+                if (r.y < viewportH * 0.40) continue;
                 const s = getComputedStyle(el);
                 if (s.visibility === 'hidden' || s.display === 'none') continue;
                 const disabled =
@@ -359,6 +454,8 @@ def confirm_posted(page: Page, needle: str, timeout_s: float = 90) -> bool:
                 "reel shared",
                 "reel published",
                 "your reel is shared",
+                "publishing your post",
+                "your reel is being",
                 "posted",
                 "is live",
             )
@@ -495,19 +592,38 @@ def post_short(
             out["url"] = page.url
             return out
 
-        out["caption_ok"] = fill_caption(page, caption)
-        # Also fill Title if present
+        out["caption_ok"] = fill_caption(
+            page, caption, title=(confirm_needle or caption.split("\n")[0])[:80]
+        )
+        # Also fill Title if present (Suite sometimes uses plain inputs)
         try:
-            title_box = page.locator('input[placeholder*="title" i], textarea[placeholder*="title" i]').first
+            title_box = page.locator(
+                'input[placeholder*="title" i], textarea[placeholder*="title" i]'
+            ).first
             if title_box.count():
                 title_box.fill((confirm_needle or caption)[:80])
         except Exception:
             pass
+        dismiss_modals(page)
         if audit_dir:
             audit_dir.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(audit_dir / f"before_{video_path.stem}.png"))
 
         ok = False
+        # Next stays disabled until Title/Text accept input — retry fill once
+        next_btn = page.get_by_role("button", name=re.compile(r"^Next$", re.I))
+        if next_btn.count():
+            try:
+                disabled = next_btn.first.is_disabled()
+            except Exception:
+                disabled = False
+            if disabled:
+                fill_caption(
+                    page,
+                    caption,
+                    title=(confirm_needle or caption.split("\n")[0])[:80],
+                )
+                page.wait_for_timeout(500)
         click_button(page, "Next")
         page.wait_for_timeout(800)
         share = wait_share_ready(page)
@@ -533,16 +649,40 @@ def post_short(
                 page.screenshot(path=str(audit_dir / f"share_hung_{video_path.stem}.png"))
             return out
 
-        for attempt in range(3):
-            click_button(page, "Next")
-            page.wait_for_timeout(400)
-            click_publish(page)
-            page.wait_for_timeout(1200)
+        # Advance Create → Edit → Share until Share CTA is enabled, then publish.
+        for _ in range(6):
             dismiss_modals(page)
-            if confirm_posted(page, needle, timeout_s=40):
+            share_btn = page.get_by_role(
+                "button", name=re.compile(r"^(Share|Share now|Share reel|Publish)$", re.I)
+            )
+            ready = False
+            try:
+                ready = bool(share_btn.count()) and (not share_btn.last.is_disabled())
+            except Exception:
+                ready = False
+            if ready:
+                break
+            click_button(page, "Next")
+            page.wait_for_timeout(900)
+
+        for attempt in range(3):
+            dismiss_modals(page)
+            clicked = click_publish(page)
+            out[f"share_clicked_{attempt + 1}"] = bool(clicked)
+            page.wait_for_timeout(1500)
+            dismiss_modals(page)
+            if confirm_posted(page, needle, timeout_s=55):
                 ok = True
                 break
+            # If Share was clicked and composer reset to Add video, treat as published.
+            txt = body(page).lower()
+            if clicked and ("add video" in txt or "upload video" in txt) and "reel details" not in txt:
+                ok = True
+                out[f"attempt_{attempt + 1}"] = "composer_reset"
+                break
             out[f"attempt_{attempt + 1}"] = "not_confirmed"
+            click_button(page, "Next")
+            page.wait_for_timeout(500)
 
         if audit_dir:
             page.screenshot(path=str(audit_dir / f"after_{video_path.stem}.png"))

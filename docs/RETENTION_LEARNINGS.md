@@ -92,10 +92,29 @@ Conclusion: topic viable? / open rewrite? / kill?
 
 ---
 
+## Snapshot — 2026-09-21 (public catalogue)
+
+**7 subs** (flat since the 10 Sep Studio audit). **46 public Shorts = 4,704 views. 8 public longs = 125 views.** No fresh Studio CTR / stayed-to-watch this pass. Full write-up: `00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-21/AUDIT.md`.
+
+| Pattern | Evidence | Learning |
+|---------|----------|----------|
+| Shorts are the channel | 4,704 vs 125 | Do not spend the week trying to “fix” a long’s views. Fix the next Short title. |
+| Body / countdown / one number | Can't Stand **419** · Remains **622** · Sky running out **292** · Europa hiding **291** · 3.8 cm **173** (same day) · Is the Moon Leaving **228** (same day) | Copy that grammar. Andromeda titles in the audit. |
+| Literal object lost | Teaspoon **30** vs Can't Stand **419** | Retire the 25 Aug “teaspoon / ring” bet. |
+| Vague loses the same-day test | What's Dragging the Moon **21** next to 228 and 173 | If the title could be a caption, rewrite it. |
+| Orbit-first still dead | Under Ice **2** | Frame 0 stays a world plate. |
+| Longs | Last Star **41** at 8:37 is the only one · Moon **3** at 8:39 · BH **4** at 21:13 | Keep 8–9 min and the “What Happens When…” title. Premiere + 7 subs does not distribute. |
+| Funnel | Moon Shorts ~500 today, Moon long 3 | Related pills are not the gap. Subs are. |
+
+**Forward:** Andromeda premieres Thu 24 Sep. Keep its title. Normal publish, not a premiere, if Studio still allows the switch. Cut picture toward 8:30–9:00. Ship Shorts one a day under the rewritten titles in the 21 Sep audit.
+
+---
+
 ## Changelog
 
 | Date | Source | Note |
 |------|--------|------|
+| 2026-09-21 | yt-dlp public videos + shorts tabs | Full audit · 7 subs · Shorts 4,704 / longs 125 · body-countdown-number titles · teaspoon bet retired · Andromeda title rewrites |
 | 2026-08-25 | vidIQ + public YT playlist + RSS | Full channel audit · 4 subs / 949 views · punch compliance · cluster ranks · 7–9m forward lock · indexes stale |
 | 2026-08-04 | Studio + vidIQ early | Seeded opening-cliff + **22–30s** package rule |
 | 2026-08-04 | diagnose helper | Sample: “First Alien Clue” 44s / stayed 20.4% → WEAK OPEN + length pad |

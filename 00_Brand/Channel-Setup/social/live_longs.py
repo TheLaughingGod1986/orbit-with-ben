@@ -50,13 +50,25 @@ KNOWN_LONGS = [
         "video_id": "REXYxuLOBoI",
         "title": "What Happens When the Last Star Dies?",
         "url": "https://youtu.be/REXYxuLOBoI",
-        "status": "premiere",  # Thu 27 Aug 18:00 London
+        "status": "public",
     },
     {
         "video_id": "NbW5G1BpPY0",
         "title": "Could Life Exist Under The Ice Of Europa?",
         "url": "https://youtu.be/NbW5G1BpPY0",
-        "status": "scheduled",  # Thu 3 Sept
+        "status": "public",
+    },
+    {
+        "video_id": "Yk1tLh23rko",
+        "title": "What Happens If You Get Near a Neutron Star",
+        "url": "https://youtu.be/Yk1tLh23rko",
+        "status": "public",
+    },
+    {
+        "video_id": "2fsQcea-voM",
+        "title": "Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone",
+        "url": "https://youtu.be/2fsQcea-voM",
+        "status": "public",
     },
 ]
 

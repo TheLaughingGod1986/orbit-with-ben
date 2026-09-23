@@ -1300,6 +1300,24 @@ describe("affiliate go-live readiness", () => {
     expect(report.readyForPaidTraffic).toBe(true);
   });
 
+  it("treats orbit-content-ops.vercel.app/go as a production Associates door", () => {
+    const report = evaluateAffiliateGoLive({
+      amazonTag: "orbitgo-21",
+      brilliantId: "brill-1",
+      appBaseUrl: "https://orbit-content-ops.vercel.app",
+      affiliateRedirectBaseUrl: "https://orbit-content-ops.vercel.app/go",
+      activeProductCount: 8,
+      placeholderUrlCount: 0,
+      brokenUrlCount: 0,
+      activeProgramCount: 3,
+      approvedPlacementCount: 1,
+      clickCount: 1,
+    });
+    expect(report.readyForPaidTraffic).toBe(true);
+    expect(report.checks.find((c) => c.id === "redirect_base")?.status).toBe("pass");
+    expect(report.checks.find((c) => c.id === "dns_go")?.status).toBe("pass");
+  });
+
   it("blocks when placeholder merchant URLs remain", () => {
     const report = evaluateAffiliateGoLive({
       amazonTag: "orbit-21",
