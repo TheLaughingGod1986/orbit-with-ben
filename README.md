@@ -21,6 +21,7 @@ asking the biggest questions in the universe.*
 **Pre-build vidIQ audit (blocking before gen):** `00_Brand/Channel-Setup/PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`
 **Retention & growth (locked going forward):** `00_Brand/Channel-Setup/RETENTION_AND_GROWTH_LOCKED.md`  
 **House + UAT/QA scoring bible (listings · thumbs · Related · week):** `00_Brand/Channel-Setup/ORBIT_HOUSE_AND_UAT_BIBLE.md`  
+**Long assembly · remint · end hold · ocean POV (15 Sep 2026 lock):** `00_Brand/Channel-Setup/MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`  
 **Script reviewer (≥90):** `cd 07_Content-Ops && npm run review:script -- --file <script.md>`  
 **Episode gate:** `cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/<slug>`  
 **Next brief:** `cd 07_Content-Ops && npm run brief:next -- --file metrics.json`  

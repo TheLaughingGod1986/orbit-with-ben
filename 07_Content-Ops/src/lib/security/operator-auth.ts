@@ -154,24 +154,34 @@ export function safeOperatorNextPath(raw: string | null | undefined): string {
   return "/";
 }
 
-/** Paths that must stay public (affiliate clicks, legal). */
+/** Paths that must stay public (affiliate landing + clicks, legal). */
 export function isPublicPath(pathname: string): boolean {
   if (pathname === "/login") return true;
   if (pathname.startsWith("/legal")) return true;
-  if (pathname.startsWith("/go/")) return true;
+  // Bare /go is the Amazon Associates website URL; /go/{slug} is the redirect door.
+  if (pathname === "/go" || pathname.startsWith("/go/")) return true;
   if (pathname.startsWith("/_next")) return true;
   if (pathname === "/favicon.ico") return true;
   return false;
 }
 
-/** Mutating API / OAuth token flows that require an operator session. */
+/**
+ * Provider redirect back into the app. These arrive as a cross-site navigation,
+ * so the operator cookie may not be sent; authenticity comes from the one-shot
+ * OAuth `state` token instead (see `consumeOAuthState`).
+ */
+export function isOAuthCallbackPath(pathname: string): boolean {
+  return /^\/api\/oauth\/[^/]+\/callback$/.test(pathname);
+}
+
+/** Mutating API / OAuth start flows that require an operator session. */
 export function isMutatingApiPath(method: string, pathname: string): boolean {
   if (pathname.startsWith("/go/")) return false;
   if (!pathname.startsWith("/api/")) return false;
+  if (isOAuthCallbackPath(pathname)) return false;
 
   const upper = method.toUpperCase();
   if (pathname.match(/^\/api\/oauth\/[^/]+\/start$/)) return true;
-  if (pathname.match(/^\/api\/oauth\/[^/]+\/callback$/)) return true;
   if (["POST", "PUT", "PATCH", "DELETE"].includes(upper)) return true;
   return false;
 }

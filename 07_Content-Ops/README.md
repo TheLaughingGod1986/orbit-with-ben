@@ -62,6 +62,7 @@ New episodes: copy `02_Video-Projects/_template_NNN_Episode-Slug/`.
 - Local scheduling requires the worker process — not cloud-reliable
 - Default `PUBLISHING_DRY_RUN=true` in `.env.example`
 - Setup: `docs/ACCOUNT_CONNECTION_SETUP.md` and platform guides under `docs/`
+- Thursday Premiere + Shorts week ops (locked playbook): `docs/ORBIT_THURSDAY_WEEK_SHIP.md`
 
 ## Affiliate monetisation
 

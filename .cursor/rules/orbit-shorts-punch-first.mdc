@@ -18,7 +18,7 @@ Winner pattern: *We Found Planets Made of Diamond* / live Three Suns remake (`MD
 **Intensity (Orbit-adapted):** DECLARE 0–1s → ASSESS (one hard fact) → REVEAL last 4s + loop (highest peak). Never stretch to 60s / 6 Street Dog phases; no long PROCESS valley. Details in `orbit-auditor-ship-gate.mdc`.
 
 1. Strange picture in **1s** — not Orbit, not a title card.
-2. **Loop:** first ~3s and last ~4s are the same window (no mid-word seam). Prefer **first-and-last-frame** off that week’s open world still.
+2. **Loop:** first ~3s and last ~4s are the same window (no mid-word seam). Prefer **first-and-last-frame** off that week’s open world still — the loop is **per Short**; each Short in the week still opens on a **different plate** (Europa week put six Shorts on one globe still and the feed treated them as one video).
 3. **Captions** the whole Short — no holes.
 4. **Exact listing title** for that week’s Thursday film on screen (~9–14s).
 5. Length **22–27s** (never ≥40s).
@@ -42,6 +42,7 @@ Winner pattern: *We Found Planets Made of Diamond* / live Three Suns remake (`MD
 
 ## Before any Shorts upload
 
-- Probe duration; **abort if ≥40s**.
+- Run the open gate on the export: `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` — **abort on FAIL** (duration ≥40s · 0 s frame within 10 dHash bits of any Short ±14 days · Orbit at 0 s). Eyeball the contact sheet it writes. Register the upload afterwards with `gate_shorts_open.py add …` (`orbit-auditor-ship-gate.mdc`).
+- **One Short per day.** Never schedule two Orbit Shorts on the same date.
 - Do not re-introduce superseded ≥40s IDs as canonical.
 - Audit artifact for the 2026-08-12 rebuild: `00_Brand/Channel-Setup/audits/shorts_40s_rebuild_2026-08-12/FINAL_40S_REBUILD_REPORT.md`.
