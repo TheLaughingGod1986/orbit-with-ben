@@ -68,6 +68,29 @@ APP_BASE_URL=http://localhost:3000
 3. Sign in with the Google account that owns the Orbit channel
 4. Confirm the channel title, ID, and thumbnail appear
 
+## Auth on the Connect flow
+
+| Route | Gate |
+|---|---|
+| `/api/oauth/google/start` | **Operator session required.** Only an operator may start Connect; unauthenticated GETs redirect to `/login?next=/settings/connections`. |
+| `/api/oauth/google/callback` | **OAuth `state` only.** Google's redirect is a cross-site navigation, so the operator cookie may not be sent. Authenticity is the one-shot `state` token (`consumeOAuthState`) issued by `start`. |
+
+Requiring an operator session on the **callback** silently breaks Connect: the code is never exchanged, no `platformConnection` row is written, and the card stays "not connected". Same rule for the Meta / TikTok / X callbacks.
+
+## Connect troubleshooting
+
+Every failure redirects to `/settings/connections?error=<code>` and the banner spells out the code. Provider responses are logged server-side (`[oauth/google] token exchange failed`).
+
+| Code | Meaning |
+|---|---|
+| `missing_code` | Provider returned no `code`. Start Connect again from the card. |
+| `invalid_state` · `state_expired` · `state_already_used` | Stale or reused callback URL (state lives 10 minutes, single use). Click Connect again. |
+| `encryption_key_required` | `ORBIT_TOKEN_ENCRYPTION_KEY` unset on this deploy — tokens cannot be stored. |
+| `encryption_key_invalid` | Key set but not 32 bytes base64 (`openssl rand -base64 32`). |
+| `token_exchange_failed` | Google rejected the code. Check `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` and that the registered redirect URI matches this deploy exactly. |
+| `connection_save_failed` | Tokens arrived but the write failed (database or encryption). Check server logs, then reconnect. |
+| `access_denied` | Scopes declined at the consent screen. |
+
 ## Validate
 
 Use **Validate** on the connection card. Expired tokens refresh via stored refresh token when available.

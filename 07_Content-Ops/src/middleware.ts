@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   isMutatingApiPath,
+  isOAuthCallbackPath,
   isOperatorRequestAuthenticated,
   isPublicPath,
 } from "@/lib/security/operator-auth";
@@ -13,14 +14,19 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Provider redirects are authenticated by the one-shot OAuth state token, not
+  // the operator cookie, which a cross-site navigation may not send.
+  if (isOAuthCallbackPath(pathname)) {
+    return NextResponse.next();
+  }
+
   const authed = await isOperatorRequestAuthenticated(request);
 
-  // Gate mutating APIs + OAuth start/callback (token minting).
+  // Gate mutating APIs + OAuth start (operator must initiate token minting).
   if (isMutatingApiPath(method, pathname)) {
     if (!authed) {
       const isOAuthBrowser =
-        method === "GET" &&
-        /^\/api\/oauth\/[^/]+\/(start|callback)$/.test(pathname);
+        method === "GET" && /^\/api\/oauth\/[^/]+\/start$/.test(pathname);
       if (isOAuthBrowser) {
         const login = new URL("/login", request.url);
         login.searchParams.set("next", "/settings/connections");

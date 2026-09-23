@@ -1,5 +1,10 @@
 # 013 — Script outline v01 (Moon leaving us)
 
+> **Superseded by the shipped film (15 Sep 2026).** Moon Leaving full v04 is locked — see
+> `00_Brand/Channel-Setup/MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`. The runtime,
+> brand-intro and subscribe-outro lines below are stale against current house
+> (7–9 min · picture-first open · Studio end screens, no baked subscribe). Kept for beat history only.
+
 **Title (99):** Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone | Orbit's Cosmic Journey  
 **Runtime lock:** **10–12 min** (post-V004 gate)  
 **Quality bar:** `LONGFORM_STORY_AND_VO_PICTURE_GATE.md`  

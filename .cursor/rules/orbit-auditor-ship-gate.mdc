@@ -51,6 +51,21 @@ Winner to beat: *We Found Planets Made of Diamond* (`M-VN84HCNls`, 223% viewed).
 - Do **not** FAIL grandfathered existing live Short pins.
 - Score Studio Related **and** (for public Shorts) the Shorts-player overlay pill **separately**. Studio Related can PASS while the public overlay is algorithmic junk — **do not remint to chase overlay** (`ORBIT_HOUSE_AND_UAT_BIBLE.md`).
 - Long-form pins (detail / `/go/` / book) are required as before — this FAIL block is Shorts-only.
+- **Moon Leaving week only (Ben override 15 Sep 2026):** that film's seven-pack carries Related **and** a pinned comment to the Premiere. Do **not** FAIL those Shorts for the pin, and do **not** generalise the override — Related-only stays the default everywhere else (`MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`).
+
+### Shorts open gate (locked 10 Sep 2026 · from `audits/channel_technical_audit_2026-09-10`)
+
+Run on the **export file** before every Shorts upload and paste the verdict into the upload record:
+
+```bash
+python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <short.mp4> --air-date YYYY-MM-DD
+```
+
+- **FAIL** duration ≥ 40 s (existing lock, now enforced by the script).
+- **FAIL** first frame (0.3 s) within **10 dHash bits** of any Short published or scheduled **±14 days** of the air date. Europa week shipped `8Bym-yrYhGc` · `1glQuYFSaYQ` · `Xza_jSHD4qw` · `VE0f186WQZo` · `eVp9a7f4rWg` on one globe plate (0–3 bits apart) and the feed saw one video six days running. “First-and-last-frame off the week’s open still” means the **loop is per Short** — the **plate must differ** from the other Shorts in the window.
+- **FAIL** Orbit in frame at 0 s (visor heuristic ≥ 0.003 — always eyeball the contact sheet the script writes). Proof: `TE_HDKAnqms` (9 Sep, Orbit-first, **0 % Shorts-feed traffic**, 2 views) and `mAAMsbhm88w` (Orbit full-frame; replaced by `to-b2baeoWQ` before air). `FbRFvSApfOQ` is the grandfathered Orbit-first cut — no remint.
+- After upload/schedule: `gate_shorts_open.py add --id <yt id> --date … --title … --file <mp4> --status scheduled` so the next Short is compared against it. When an id goes Private: `gate_shorts_open.py status --id <id> --status retired`.
+- **One Short per day, maximum.** 1 Sep and 5 Sep looked big (891 / 548 views) because three Shorts aired the same day — three separate feed tests, not one good Short. Never stack.
 
 ### Thumb UAT PASS (locked 31 Aug 2026 · yellow highlight 1 Sep 2026)
 
@@ -77,6 +92,19 @@ Reference length: Europa v02 · Last Star v11 (**~7–9 min**). Open/end craft: 
 7. **Recut = new id.** Do not mint until Video Auditor passes after watching the open VO, not stills. Leave old live until new is public, then unpublish. Shortening a live film = new id (never swap files).
 8. **No `/go/`** unless this cut names the product in VO and on screen. Shorts stay zero affiliate. JWST v04 stays film-only (no `/go/jwst-book`).
 9. **Length NOW:** **7–9 min**. Later expand to 15–20–30 only with impressions + hold past ~5 min. Never chop a 21-min lecture to fake 7–9.
+10. **No Premieres** until subscribers are in the hundreds (10 Sep 2026 audit: Neutron Premiere had 13 impressions and zero attendees — a wasted first hour). Schedule longs as a **normal publish** Thu 18:00 London with Studio end screens. Same-week Shorts stay one per day.
+
+### Long assembly / remint FAIL (locked 15 Sep 2026 — Moon Leaving full v04)
+
+Lessons doc: `00_Brand/Channel-Setup/MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`. Score these on the assembled cut, not on stills.
+
+- **Ocean / shore POV — hard FAIL.** Camera standing on Earth's ocean or shore must have **no Earth globe in the sky**. The water → Earth → Moon stack (rocks/water foreground, Earth globe above the mist, Moon behind) is a **FAIL on every future build and remint**. Prompt: “shore under ONE Moon, starry sky, NO Earth globe, NO planet Earth in background.” Gate a **mid-plate** frame, not only first/last. Moon Leaving v04 shipped this as a Ben-accepted soft — that acceptance is cut-specific and is **not** precedent.
+- **Silent end hold — FAIL.** The end hold must carry **music that fades** (~10s fade, picture fade to black over the last ~2s, ≥15–20s of slow picture after the last VO). A silent picture hold reads as a hard cut / broken file.
+- **Remint audio — FAIL.** A remint replaces **picture only**. Map video from the remint and **audio from the original part** (`-map 0:v:0 -map 1:a:0`). Never `-c copy` the remint's own audio in — Flow/Veo ambient wipes the VO.
+- **Chapter cards — FAIL** on a flat black hard text box, on VO chopped into the card (needs ~1.5s breath lead-in), or on the bed going dead-silent under the card. Cards are soft starfield / space gradient with quiet music continuing.
+- **Dual-body — FAIL** on extra moons or extra Earths. One Earth + one Moon, or one Moon only.
+- **Join tech — FAIL** if inputs were not normalized to **1920×1080 stereo** before concat, or if A/V durations do not match after concat (video past audio on the tail = silent-ending fail). Probe both streams.
+- **Transfer integrity:** CopyFromBox truncates large MP4s — chunk ≤500KB, reassemble, **sha256 verify** before scoring. A truncated MP4 still plays.
 
 ## Merge / remint
 
@@ -87,8 +115,12 @@ Reference length: Europa v02 · Last Star v11 (**~7–9 min**). Open/end craft: 
 
 - Reuse a YouTube id to swap a file.
 - Score or ship from stills alone.
-- Batch-dump Shorts.
+- Batch-dump Shorts, or air more than **one Short per day**.
+- Ship a Short whose 0 s frame is Orbit or is within 10 dHash bits of another Short in the ±14-day window (`gate_shorts_open.py`).
+- Premiere a long while subscribers are below the hundreds.
 - Stretch Shorts to ~60s to fit Street Dog’s six phases — Orbit Shorts stay 22–27s (DECLARE → ASSESS → REVEAL only).
 - Restore the old brand sting or baked subscribe outro. Older playbook lines that say “reuse brand sting + like/subscribe outro” are wrong.
 - Add new Short pins, or ship a Short without Related → that week’s Thursday long.
 - Remint to chase a public Shorts overlay FAIL when Studio Related is already correct.
+- Ship a silent end hold, or carry a remint's own audio into the film (picture only — keep the original part audio).
+- Put an Earth globe in the sky on an ocean/shore POV plate.
