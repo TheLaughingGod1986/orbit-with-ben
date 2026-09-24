@@ -9,6 +9,8 @@ Hard FAILs (mirror `orbit-auditor-ship-gate.mdc` · `orbit-shorts-punch-first.md
                                                         the same video six days running)
   3. Orbit in frame at 0 s                             (new — `TE_HDKAnqms` / `mAAMsbhm88w`
                                                         Orbit-first opens got 0 % feed traffic)
+  4. no audio stream, or mean volume below −40 dB      (24 Sep 2026 — four Moon Shorts aired
+                                                        with the whole file at about −90 dB)
 
 Orbit detection is a colour/shape heuristic (matte-orange body + black visor holding
 cream eyes). It is calibrated on the 10 Sep frames (Orbit ≥ 0.004 · world ≤ 0.0003) and
@@ -51,6 +53,10 @@ DUR_BAND = (22.0, 27.0)
 VISOR_FAIL = 0.003
 VISOR_WARN = 0.001
 SHEET_TIMES = (0.0, 0.3, 1.0, 2.0, 3.0, 4.0)
+# Voiced Orbit Shorts measure about −19 to −28 dB mean; the silent Moon uploads were about −90.
+AUDIO_FAIL_DB = -40.0
+OPEN_AUDIO_S = 1.5  # the hook line must be audible inside this window
+OPEN_AUDIO_WARN_DB = -45.0
 
 
 # ----------------------------------------------------------------------------- ffmpeg
@@ -200,6 +206,26 @@ def add_entry(lib: dict, vid: str, d: str, title: str, src: Path, source: str, t
     return entry
 
 
+# ----------------------------------------------------------------------------- audio
+def has_audio(path: Path) -> bool:
+    out = run(
+        ["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", str(path)]
+    ).stdout.decode().strip()
+    return bool(out)
+
+
+def mean_volume_db(path: Path, start: float = 0.0, length: float | None = None) -> float:
+    cmd = ["ffmpeg", "-v", "info", "-nostats", "-ss", f"{start:.3f}"]
+    if length is not None:
+        cmd += ["-t", f"{length:.3f}"]
+    cmd += ["-i", str(path), "-vn", "-af", "volumedetect", "-f", "null", "-"]
+    err = run(cmd).stderr.decode(errors="replace")
+    for line in err.splitlines():
+        if "mean_volume:" in line:
+            return float(line.split("mean_volume:")[1].split("dB")[0])
+    return -91.0  # volumedetect prints nothing for pure digital silence on some builds
+
+
 # ----------------------------------------------------------------------------- check
 def contact_sheet(path: Path, out: Path) -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -229,6 +255,18 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
         res["fails"].append(f"duration {dur:.1f}s ≥ {DUR_FAIL:.0f}s")
     elif not (DUR_BAND[0] <= dur <= DUR_BAND[1] + 0.5):
         res["warns"].append(f"duration {dur:.1f}s outside {DUR_BAND[0]:.0f}–{DUR_BAND[1]:.0f}s band")
+
+    if not has_audio(path):
+        res["audio"] = {"stream": False}
+        res["fails"].append("no audio stream — the narrator is missing")
+    else:
+        whole = mean_volume_db(path)
+        opening = mean_volume_db(path, 0.0, OPEN_AUDIO_S)
+        res["audio"] = {"stream": True, "mean_db": whole, "open_mean_db": opening}
+        if whole < AUDIO_FAIL_DB:
+            res["fails"].append(f"soundtrack mean {whole:.1f} dB < {AUDIO_FAIL_DB:.0f} dB — silent or near-silent file")
+        elif opening < OPEN_AUDIO_WARN_DB:
+            res["warns"].append(f"first {OPEN_AUDIO_S:.1f}s mean {opening:.1f} dB — hook line may start late")
 
     h = dhash(path)
     res["dhash"] = f"{h:016x}"
@@ -312,7 +350,9 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(results, indent=2, ensure_ascii=False))
         else:
             for r in results:
-                print(f"{r['verdict']}  {Path(r['file']).name}  dur={r['duration_s']}s  dhash={r['dhash']}  visor={r['orbit']['visor_frac']}")
+                db = r["audio"].get("mean_db")
+                audio = f"{db:.1f}dB" if db is not None else "none"
+                print(f"{r['verdict']}  {Path(r['file']).name}  dur={r['duration_s']}s  audio={audio}  dhash={r['dhash']}  visor={r['orbit']['visor_frac']}")
                 for x in r["fails"]:
                     print(f"   FAIL  {x}")
                 for x in r["warns"]:

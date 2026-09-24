@@ -19,19 +19,25 @@ Three Shorts and one long, about 8–9 minutes. Not eight or nine uploads. The S
 
 Two lines, then one hard fact. No greeting.
 
-- Line 1 is 5 to 7 words, the familiar thing in danger, spoken in the first second. Orbit is on screen looking at the camera, and the danger is in the frame. This overrides the older “no Orbit in the first second” line for Shorts made under this strategy.
-- Line 2 is the stay line, while Orbit reacts.
+- Line 1 is 5 to 7 words, the familiar thing in danger, spoken in the first second. The danger fills the frame and is already moving at 0 s. **No Orbit in the 0 s frame** (changed 24 Sep 2026; Orbit-first opens got 0% Shorts-feed traffic; `gate_shorts_open.py` fails it).
+- Line 2 is the stay line. Orbit arrives from about 1.5 s, caught up in the danger, and reacts.
+- The three Orbit-first Shorts already scheduled (2, 5, 7 Oct) air unchanged as a labelled test against the world-first Andromeda Shorts. Judge on stayed-to-watch at 48 h. Do not re-edit them.
 - Spoken length stays **22–27 seconds**. Do not stretch a Short to 120–150 words or past 40 seconds.
 - Captions the whole way. Last 4 seconds loop the opening picture. The film that Short promotes is named on screen around 9–14 seconds. The end card points at that film.
 - Related points at the long that Short is promoting. Do not send every Short that week to one film. No new Short pin. No `/go/`.
 - Thumb: picture, yellow hook words, white rest, no Orbit.
-- Voice is Ben Orbit Narrator. The video model does not speak.
+- Voice is Ben Orbit Narrator. The video model does not speak. Run `gate_shorts_open.py check` on every export: a silent or near-silent soundtrack fails.
+- Titles: no hashtags, and never the title of an existing public video.
 
 ## Longs
 
 The first 30 seconds say the same first sentence, then name the payoff: why, what it was like, what happens next.
 
 The first 3 seconds of picture are the danger itself. No title card. Orbit is on the reaction beats only, not in that opening and not on every shot. Chapter cards use the script’s act titles. One readable name per beat. Soft starfield, music continues, about 1.5 seconds of breath. Moving end. No baked subscribe.
+
+## Measure (to 22 Oct 2026)
+
+Do not change this strategy before 22 Oct. The KPI is Studio stayed-to-watch at 48 h per Short: aim for more than 45%, then 60%. Log a Short under 35%; do not remake or re-upload it. Only make a new long on a topic whose Short cleared 200 views and 40% stayed. Longs go out as a normal publish, not a Premiere. Full list: `00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md`.
 
 ## Gate
 

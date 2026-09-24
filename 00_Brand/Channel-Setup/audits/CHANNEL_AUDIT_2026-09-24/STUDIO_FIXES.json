@@ -1,0 +1,25 @@
+{
+  "task": "studio_fixes_2026-09-24",
+  "note": "Title-only fixes from CHANNEL_AUDIT_2026-09-24/AUDIT.md §3. Run with 07_Content-Ops/scripts/retitle-videos.ts. Description, tags, privacy and publishAt are not touched. A row is skipped if its live title no longer matches expectCurrentTitle.",
+  "channelId": "UC_esArsDKd3GJvOkeO0DUog",
+  "retitle": [
+    {
+      "id": "ojk-dfOpAmw",
+      "expectCurrentTitle": "Everything you need to know about the Andromeda crash #space #astronomy #science",
+      "title": "What Happens When Andromeda Hits the Milky Way?",
+      "why": "The search phrase, and the shape of the only long that worked (Last Star, 41). Hashtags already sit in the description."
+    },
+    {
+      "id": "Ih2zhZTbIR0",
+      "expectCurrentTitle": "What Remains After the Last Star Dies",
+      "title": "The Last Stars Will Shine for 10 Trillion Years",
+      "why": "Fri 2 Oct. The live title copies the 622-view Short 9lLZMy8rBJo. The script (FRIDAY_LAST_STAR_SHORT.md) is about red dwarfs lasting ten trillion years: one number, countdown grammar."
+    },
+    {
+      "id": "pL339HhjDwo",
+      "expectCurrentTitle": "What happens if you touch a neutron star? #space #science #neutronstar",
+      "title": "This Star Is 20 km Wide and Heavier Than the Sun",
+      "why": "Wed 7 Oct. The live title copies Rp_8J6_6IIk (62 views) and does not match the film, which is about mass and gravity (WEDNESDAY_NEUTRON_SHORT.md). One number, no hashtags."
+    }
+  ]
+}
