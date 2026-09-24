@@ -109,7 +109,7 @@ When the plan changes every 2–3 days, no single idea gets a clean test. Most o
    Any Short that fails goes private until it is fixed. Do not re-upload after it airs.
 3. **Add a hard audio check to `tools/gate_shorts_open.py`.** Fail any file with no audio stream, or whose narration window reads below about −40 dB mean (ffmpeg `volumedetect`). The 10 Sep gate checked only the picture, and the silent Moon week got through it.
 4. **Retitle the two duplicate-title Shorts** (2 Oct *What Remains After the Last Star Dies*, 7 Oct *What happens if you touch a neutron star?*) so each is a new promise, and remove the hashtags from the 7 Oct title.
-5. **Decide the Orbit-first question before 5 Oct.** The evidence says world first. The 23 Sep strategy says Orbit first. Either change the Monday Moon Short's open to the Moon drifting (Orbit can react from about 1.5 seconds), or ship it as a deliberate, labelled test and compare its stayed-to-watch at 48 hours against *Is the Moon Leaving Us?* Do not let it air by default.
+5. **Settle the Orbit-first question with a test, not another rule change.** Decided 24 Sep, and written into `FAMILIAR_DANGER_STRATEGY.md`: new Shorts open on the moving world, and Orbit arrives from about 1.5 seconds. The three Orbit-first Shorts already scheduled (2, 5 and 7 Oct) air unchanged as a labelled test against the world-first Andromeda Shorts, judged on stayed-to-watch at 48 hours.
 
 ### The next four weeks: one goal, one number
 
@@ -135,3 +135,30 @@ Until then, expect a long to get about 10–40 views. That is normal for a chann
 ## Re-measure
 
 Wed 30 Sep, after five Andromeda Shorts: public views, Studio stayed-to-watch at 48 hours for each, and Andromeda long impressions and CTR. Record them next to the 10 Sep table so the trend is visible.
+
+## 4. Studio fix list (24 Sep)
+
+Applied in the repo this pass: the sound check in `tools/gate_shorts_open.py`, and items 5–11 in `FAMILIAR_DANGER_STRATEGY.md`, the week plan and the matching Cursor rules.
+
+The Studio changes need the YouTube connection, which lives in the Content Ops database. They could not be run from the audit session. Run them from a machine with `07_Content-Ops/.env`:
+
+```bash
+cd 07_Content-Ops
+npx tsx scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/STUDIO_FIXES.json --dry-run
+npx tsx scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/STUDIO_FIXES.json
+```
+
+The script changes titles only, and skips any video whose title has changed since this audit. The result is written to `STUDIO_FIXES_RESULT.json`.
+
+| # | Video | Change | How |
+|---|-------|--------|-----|
+| 1 | `ojk-dfOpAmw` Andromeda long | Title → *What Happens When Andromeda Hits the Milky Way?* | `STUDIO_FIXES.json` |
+| 2 | `Ih2zhZTbIR0` Fri 2 Oct Short | Title → *The Last Stars Will Shine for 10 Trillion Years* (was a copy of the 622-view Short) | `STUDIO_FIXES.json` |
+| 3 | `pL339HhjDwo` Wed 7 Oct Short | Title → *This Star Is 20 km Wide and Heavier Than the Sun* (was a copy of `Rp_8J6_6IIk`, with hashtags, and did not match the film) | `STUDIO_FIXES.json` |
+| 4 | `ojk-dfOpAmw` thumbnail | Replace *COMING FOR US?* with wording that matches the new title, for example *WHEN THEY MEET* | Studio, by hand |
+| 5 | `xQlV9G9lqLI` Mon 28 Sep Short | Its title *What Happens When Andromeda Hits The Milky Way?* will duplicate the long after fix 1. Retitle it for what the Short actually shows. | Studio, by hand after watching it |
+| 6 | `P9Jiw-MwUEU` Fri 25 Sep Short | *Is Andromeda Coming to Destroy Us?* is a fear title, against the lane rule. Retitle for what it shows, for example *Is Andromeda Already in Our Sky?* | Studio, by hand after watching it, before 11:30 on 25 Sep |
+| 7 | All seven Andromeda Shorts (25 Sep–1 Oct) | Watch each on a phone with the sound on: voice from the first second, a moving world at 0 s, a different opening from the previous day | Studio preview |
+
+**Also noted (no change needed now).** The Fri 2 Oct and Wed 7 Oct Shorts name their long on screen and in the voiceover by the wrong title. Fri says *What Remains After the Last Star Dies?*, but the long is *What Happens When the Last Star Dies?* Wed says *Why You Can't Stand on a Neutron Star*, which is a Short; the long is *What Happens If You Get Near a Neutron Star*. The Related link still points at the right long, so leave them. Future scripts should copy the long's live title exactly.
+

@@ -23,9 +23,11 @@ Week one is in [the week plan](WEEK_PLAN_3_SHORTS_1_LONG_2026-09-23.md). Monday 
 
 Same two-line shape every time. New words for each film. No greeting. No buildup.
 
-Line 1 is 5 to 7 words. The familiar thing in danger. Spoken in the first second. Orbit is on screen, looking at the camera, and the danger is in the frame.
+Line 1 is 5 to 7 words. The familiar thing in danger. Spoken in the first second. **The danger fills the frame and is already moving at 0 seconds. Orbit is not in the 0-second frame.** (Changed 24 Sep 2026, per `audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md`. The two Orbit-first opens measured so far got 0% Shorts-feed traffic. `gate_shorts_open.py` fails Orbit at 0 s.)
 
-Line 2 is the stay line. What they get if they stay. Orbit reacts while it is said.
+Line 2 is the stay line. What they get if they stay. Orbit arrives from about 1.5 seconds, caught up in the danger (pulled, tipping, freezing), and reacts while it is said. Orbit caught in the danger is the reason to stay. Orbit looking at the camera over a still frame reads as a channel ident.
+
+**The Orbit-first test.** Three Shorts built to the 23 Sep version (Orbit looking at the camera at 0 s) are already scheduled: Fri 2 Oct (`Ih2zhZTbIR0`), Mon 5 Oct (the Moon cover Short) and Wed 7 Oct (`pL339HhjDwo`). Let them air as a labelled test. Do not re-edit them. Compare their stayed-to-watch at 48 hours with the world-first Andromeda Shorts (25 Sep–1 Oct). If the Orbit-first Shorts hold more, bring the open back. If not, it stays retired.
 
 The Moon week lines, not to be rewritten:
 
@@ -58,7 +60,26 @@ The end is a moving picture. Music fades. No baked subscribe.
 
 The title is one concrete promise. A higher score does not win if the title is fear or a conspiracy. The description opens on the real subject. Tags are search terms for this film.
 
+- No hashtags in titles. They go in the description.
+- Never give a new upload the title of an existing public video, even for a "part 2". Two identical titles compete for the same search and look like a re-upload.
+- The long title is the phrase people search, in the question shape that worked (*What Happens When the Last Star Dies?*). Not *Everything you need to know about…*.
+- The long thumbnail makes the same promise as its title, in the channel's own lane: wonder, not a threat.
+- Longs go out as a normal publish, not a Premiere, until subscribers are in the hundreds.
+
+## Measure (set 24 Sep 2026, runs to 22 Oct)
+
+This strategy holds unchanged for four weeks. No new "locked" strategy doc before 22 Oct. The weekly review asks one question: did stayed-to-watch go up?
+
+- Record stayed-to-watch for every Short in Studio at 48 hours, next to its first frame.
+- Aim for more than 45% by mid-October and 60% after that. The 10 Sep channel figure was 31.7%.
+- A Short under 35% goes in the log as a note on its first two seconds. It is not re-uploaded or remade.
+- Views are the result, not the target. A good week has one Short still getting views on day three.
+- A new long is only made on a topic whose Short already cleared 200 views and 40% stayed.
+- Nothing already public is re-uploaded, remade or replaced. Fix it before it goes out. The four silent Moon Shorts re-uploaded on 24 Sep got 2–6 views, against 100–290 for the Moon Shorts that went out with a voice.
+
 ## Before anything is filmed
+
+Every Short export passes `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` before upload: narrator audible (a silent file fails), no Orbit at 0 s, a different opening frame from the last 14 days, under 40 s. Then watch it once on a phone with the sound on.
 
 A long script scores at least 90. A 22–27 second Short is not padded to chase that long-film score. The reviewer caps a Short this size below 90. QA watches the moving picture. UAT watches the open voiceover. Then it can be uploaded. A live film is not remade by swapping the file.
 

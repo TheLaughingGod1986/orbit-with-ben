@@ -42,7 +42,7 @@ Winner pattern: *We Found Planets Made of Diamond* / live Three Suns remake (`MD
 
 ## Before any Shorts upload
 
-- Run the open gate on the export: `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` — **abort on FAIL** (duration ≥40s · 0 s frame within 10 dHash bits of any Short ±14 days · Orbit at 0 s). Eyeball the contact sheet it writes. Register the upload afterwards with `gate_shorts_open.py add …` (`orbit-auditor-ship-gate.mdc`).
+- Run the open gate on the export: `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` — **abort on FAIL** (duration ≥40s · 0 s frame within 10 dHash bits of any Short ±14 days · Orbit at 0 s · no audio stream or soundtrack mean below −40 dB, which is how four silent Moon Shorts aired on 21–24 Sep). Eyeball the contact sheet it writes. Register the upload afterwards with `gate_shorts_open.py add …` (`orbit-auditor-ship-gate.mdc`).
 - **One Short per day.** Never schedule two Orbit Shorts on the same date.
 - Do not re-introduce superseded ≥40s IDs as canonical.
 - Audit artifact for the 2026-08-12 rebuild: `00_Brand/Channel-Setup/audits/shorts_40s_rebuild_2026-08-12/FINAL_40S_REBUILD_REPORT.md`.

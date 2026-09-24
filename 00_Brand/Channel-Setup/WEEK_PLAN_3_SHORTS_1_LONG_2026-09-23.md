@@ -44,7 +44,7 @@ The spoken Short stays 22–27 seconds. The two lines are the opening. They are 
 ## How a Short is built
 
 - 22–27 seconds. Captions the whole way. One idea.
-- First second: Orbit and the danger are both on screen. No slow build.
+- First second: the danger fills the frame and is already moving. Orbit arrives from about 1.5 seconds, caught up in it. No slow build. (Changed 24 Sep. The Mon, Wed and Fri Shorts below were built Orbit-first before this change. They air unchanged as the labelled test in [the strategy](FAMILIAR_DANGER_STRATEGY.md#short-hook).)
 - One hard fact next. Last 4 seconds return to the opening picture so the Short loops.
 - The film that Short promotes is on screen around 9–14 seconds. The end card names that film.
 - Studio Related points at that film once it has an id. Monday points at the Moon film. Wednesday points at Neutron Star. Friday points at Last Star. No new Short pin. No `/go/`.
