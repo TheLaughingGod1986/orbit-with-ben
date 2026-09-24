@@ -95,11 +95,11 @@ A giant, banded and bright, ordinary once you stop using the rings as the defini
 
 So the whole story fits in one breath.
 
-You would see a thin sheet of water ice, vast and bright, already raining into Saturn along a magnetic path that Cassini flew through and measured. You would see that the mass is too small for a forever-disc, so the clock is about a hundred million years, not this century. You would see a younger, whiter sheet if you looked backward, and a bare pale planet if you looked forward. The rings are a phase. Saturn is the thing that remains.
+You would see a thin sheet of water ice, vast and bright, already raining into Saturn along a magnetic path that Cassini flew through and measured. The mass is too small for a forever-disc, so the clock is about a hundred million years, not this century. The rings are a phase. Saturn is the thing that remains.
 
 Until a bigger question tags along.
 
-What else in the sky are you treating as permanent because it is bright? The rings are the clearest case: long enough that nobody watching now will see the end, short enough that the end is real. The mystery is how much of that bright sky is temporary.
+What else in the sky are you treating as permanent only because it is bright? The rings are the clearest case. The mystery is how much of that sky is temporary.
 
 ```
 Framework: HOOK → QUESTION → ESCALATION → DISCOVERY → PAYOFF → BIGGER QUESTION
