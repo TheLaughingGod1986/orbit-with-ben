@@ -12,6 +12,12 @@ Hard FAILs (mirror `orbit-auditor-ship-gate.mdc` · `orbit-shorts-punch-first.md
   4. no audio stream, or mean volume below −40 dB      (24 Sep 2026 — four Moon Shorts aired
                                                         with the whole file at about −90 dB)
 
+Warning (not a FAIL until calibrated on real exports):
+
+  5. picture barely changes in the first second        (24 Sep 2026 — still globe + caption
+                                                        opens held 15–17 % stayed; the moving
+                                                        plume open held 46 %)
+
 Orbit detection is a colour/shape heuristic (matte-orange body + black visor holding
 cream eyes). It is calibrated on the 10 Sep frames (Orbit ≥ 0.004 · world ≤ 0.0003) and
 it always writes a contact sheet; a human still eyeballs the 0 s frame before upload.
@@ -57,6 +63,13 @@ SHEET_TIMES = (0.0, 0.3, 1.0, 2.0, 3.0, 4.0)
 AUDIO_FAIL_DB = -40.0
 OPEN_AUDIO_S = 1.5  # the hook line must be audible inside this window
 OPEN_AUDIO_WARN_DB = -45.0
+# Motion in the first second: mean absolute grey-level change (0–100 scale) summed over
+# 0.25 s steps from 0.0 to 1.0 s. Set 24 Sep 2026 on synthetic 9:16 clips cut from the
+# Europa long thumbnail: still 0.0 · still + changing caption 0.3 · Ken Burns 1.5 %/s 3.2 ·
+# Ken Burns 4.5 %/s 8.3 · fast push-in 44 · handheld shake 39. A zoom on a still image
+# warns; a real move clears it easily. Warn only until real exports are measured.
+MOTION_TIMES = (0.0, 0.25, 0.5, 0.75, 1.0)
+MOTION_WARN = 10.0
 
 
 # ----------------------------------------------------------------------------- ffmpeg
@@ -155,6 +168,16 @@ def orbit_score(path: Path, t: float | None = OPEN_T) -> dict:
                 vis += 1
     n = W * H
     return {"orange_frac": round(o / n, 4), "dark_frac": round(k / n, 4), "visor_frac": round(vis / n, 4)}
+
+
+def motion_first_second(path: Path) -> float:
+    """How much the picture changes between 0 and 1 s (a still or slow drift reads near 0)."""
+    W, H = 72, 128
+    frames = [raw_frame(path, W, H, t, "gray") for t in MOTION_TIMES]
+    total = 0.0
+    for a, b in zip(frames, frames[1:]):
+        total += sum(abs(x - y) for x, y in zip(a, b)) / (W * H) / 255 * 100
+    return round(total, 2)
 
 
 # ----------------------------------------------------------------------------- library
@@ -268,6 +291,14 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
         elif opening < OPEN_AUDIO_WARN_DB:
             res["warns"].append(f"first {OPEN_AUDIO_S:.1f}s mean {opening:.1f} dB — hook line may start late")
 
+    motion = motion_first_second(path)
+    res["motion_0_1s"] = motion
+    if motion < MOTION_WARN:
+        res["warns"].append(
+            f"picture barely changes in the first second (motion {motion:.1f} < {MOTION_WARN:.0f}) — "
+            "trim the clip's ease-in so frame 0 is already mid-action"
+        )
+
     h = dhash(path)
     res["dhash"] = f"{h:016x}"
     near = []
@@ -352,7 +383,7 @@ def main(argv: list[str] | None = None) -> int:
             for r in results:
                 db = r["audio"].get("mean_db")
                 audio = f"{db:.1f}dB" if db is not None else "none"
-                print(f"{r['verdict']}  {Path(r['file']).name}  dur={r['duration_s']}s  audio={audio}  dhash={r['dhash']}  visor={r['orbit']['visor_frac']}")
+                print(f"{r['verdict']}  {Path(r['file']).name}  dur={r['duration_s']}s  audio={audio}  motion={r['motion_0_1s']}  dhash={r['dhash']}  visor={r['orbit']['visor_frac']}")
                 for x in r["fails"]:
                     print(f"   FAIL  {x}")
                 for x in r["warns"]:
