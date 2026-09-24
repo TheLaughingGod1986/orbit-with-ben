@@ -193,6 +193,7 @@ export class YouTubePublishingAdapter implements PublishingAdapter {
           privacyStatus,
           publishAt: schedule.publishAtIso || null,
           madeForKids: post.madeForKids,
+          containsSyntheticMedia: true,
           contentFormat: post.contentFormat || "shorts",
           connectionId: connection.id,
         }),
@@ -219,6 +220,8 @@ export class YouTubePublishingAdapter implements PublishingAdapter {
     const statusPayload: Record<string, unknown> = {
       privacyStatus,
       selfDeclaredMadeForKids: madeForKids,
+      // YouTube “altered or synthetic” disclosure. On for every new upload.
+      containsSyntheticMedia: true,
     };
     if (schedule.usePublishAt && schedule.publishAtIso) {
       statusPayload.publishAt = schedule.publishAtIso;
