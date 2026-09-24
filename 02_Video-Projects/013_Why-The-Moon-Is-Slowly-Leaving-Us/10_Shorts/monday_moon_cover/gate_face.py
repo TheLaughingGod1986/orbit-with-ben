@@ -47,7 +47,9 @@ def frame_report(path: str) -> dict:
     if share < 0.55:
         out["reason"] = f"orange split {share:.2f}"
         return out
-    if hw > 1.55 or hw < 0.62:
+    # Antenna makes a real floater taller than the sphere. A melted body still
+    # fails the visor test. The rejected 3s frame is wide, not this tall.
+    if hw > 1.85 or hw < 0.62:
         out["reason"] = f"blob body h/w {hw:.2f}"
         return out
     if bh < fh * 0.12 or bw < fw * 0.08:
