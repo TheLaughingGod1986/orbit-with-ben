@@ -80,7 +80,7 @@ def panel_open(page) -> bool:
         """() => [...document.querySelectorAll('button')].some(b => {
           const t=b.innerText||'';
           const r=b.getBoundingClientRect();
-          return r.width>4 && (t.includes('9:16') || t.includes('16:9') || t.includes('crop_9_16') || t.includes('crop_16_9'));
+          return r.width>4 && (t.includes('9:16') || t.includes('16:9'));
         })"""
     ))
 
@@ -101,6 +101,27 @@ def summary_text(page) -> str:
     )
 
 
+def click_visible(page, needle: str) -> bool:
+    hit = page.evaluate(
+        """(needle) => {
+          const el=[...document.querySelectorAll('button')].find(b => {
+            if (!(b.innerText||'').includes(needle)) return false;
+            const r=b.getBoundingClientRect();
+            return r.width>4 && r.height>4;
+          });
+          if (!el) return null;
+          const r=el.getBoundingClientRect();
+          return {x:r.x+r.width/2, y:r.y+r.height/2};
+        }""",
+        needle,
+    )
+    if not hit:
+        return False
+    page.mouse.click(hit["x"], hit["y"])
+    page.wait_for_timeout(350)
+    return True
+
+
 def configure_vertical(page) -> None:
     g.ensure_project(page)
     page.bring_to_front()
@@ -113,54 +134,90 @@ def configure_vertical(page) -> None:
     if not opened:
         page.screenshot(path=str(OUT / "settings_closed.png"))
         raise RuntimeError("settings closed")
-    page.evaluate(
-        """() => {
-          const b=[...document.querySelectorAll('button')].find(el =>
-            (el.innerText||'').trim()==='videocam\\nVideo' || (el.innerText||'').trim()==='Video');
-          if (b) b.click();
-        }"""
-    )
-    page.wait_for_timeout(250)
     summary = summary_text(page)
+    if not summary.startswith("Video"):
+        page.evaluate(
+            """() => {
+              const b=[...document.querySelectorAll('button')].find(el => {
+                const t=(el.innerText||'').trim();
+                return t==='videocam\\nVideo' || t==='Video';
+              });
+              if (b) b.click();
+            }"""
+        )
+        page.wait_for_timeout(250)
+        summary = summary_text(page)
     print(" summary before aspect", summary, flush=True)
-    if "crop_9_16" not in summary and "9:16" not in summary:
-        if not g.click_button_including(page, "9:16") and not g.click_button_including(page, "crop_9_16"):
+    if "crop_9_16" not in summary:
+        clicked = False
+        for _ in range(4):
+            clicked = page.evaluate(
+                """() => {
+                  const el=[...document.querySelectorAll('button')].find(b => {
+                    const t=b.innerText||'';
+                    if (!t.includes('9:16')) return false;
+                    const r=b.getBoundingClientRect();
+                    return r.width>4 && r.height>4;
+                  });
+                  if (!el) return false;
+                  el.click();
+                  return true;
+                }"""
+            )
+            if clicked:
+                break
+            page.wait_for_timeout(400)
+        print(" aspect click", clicked, flush=True)
+        if not clicked:
             page.screenshot(path=str(OUT / "aspect_miss.png"))
             raise RuntimeError("9:16 missing")
         page.wait_for_timeout(400)
-    if not panel_open(page):
-        g.open_settings(page)
-    now = model_text(page)
+    now = ""
+    for _ in range(3):
+        if not panel_open(page):
+            g.open_settings(page)
+            page.wait_for_timeout(400)
+        now = model_text(page)
+        if now:
+            break
     print(" model", now, flush=True)
     if MODEL not in now:
-        box = page.evaluate(
+        opened_model = page.evaluate(
             """() => {
-              const el=[...document.querySelectorAll('button')].find(b =>
-                (b.innerText||'').includes('arrow_drop_down') && /Omni|Veo/.test(b.innerText||''));
-              if (!el) return null;
-              const r=el.getBoundingClientRect();
-              return {x:r.x+r.width/2, y:r.y+r.height/2};
+              const el=[...document.querySelectorAll('button')].find(b => {
+                const t=b.innerText||'';
+                if (!t.includes('arrow_drop_down') || !/Omni|Veo/.test(t)) return false;
+                const r=b.getBoundingClientRect();
+                return r.width>4 && r.height>4;
+              });
+              if (!el) return false;
+              el.click();
+              return true;
             }"""
         )
-        if not box:
+        if not opened_model:
             raise RuntimeError("model button hidden")
-        page.mouse.click(box["x"], box["y"])
         page.wait_for_timeout(500)
-        hit = page.evaluate(
+        picked = page.evaluate(
             """(model) => {
-              const el=[...document.querySelectorAll('button')].find(b =>
-                (b.innerText||'').replace(/\\s+/g,' ').trim().endsWith(model));
-              if (!el) return null;
-              const r=el.getBoundingClientRect();
-              if (r.width<4) return null;
-              return {x:r.x+r.width/2, y:r.y+r.height/2};
+              const el=[...document.querySelectorAll('button')].find(b => {
+                const t=(b.innerText||'').replace(/\\s+/g,' ').trim();
+                if (!t.endsWith(model)) return false;
+                const r=b.getBoundingClientRect();
+                return r.width>4 && r.height>4;
+              });
+              if (!el) return false;
+              el.click();
+              return true;
             }""",
             MODEL,
         )
-        if not hit:
+        if not picked:
+            options = page.evaluate(
+                """() => [...document.querySelectorAll('button')].map(b => (b.innerText||'').replace(/\\s+/g,' ').trim()).filter(t => /Omni|Veo/.test(t)).slice(0,12)"""
+            )
             page.screenshot(path=str(OUT / "model_miss.png"))
-            raise RuntimeError(f"missing {MODEL}")
-        page.mouse.click(hit["x"], hit["y"])
+            raise RuntimeError(f"missing {MODEL} options={options}")
         page.wait_for_timeout(400)
         if not panel_open(page):
             g.open_settings(page)
@@ -177,10 +234,14 @@ def configure_vertical(page) -> None:
         }"""
     )
     page.wait_for_timeout(300)
+    now = model_text(page)
+    if MODEL not in now:
+        if not panel_open(page):
+            g.open_settings(page)
+        now = model_text(page)
     page.keyboard.press("Escape")
     page.wait_for_timeout(200)
     final = summary_text(page)
-    now = model_text(page)
     print(" settings", final, "model", now, flush=True)
     if "crop_9_16" not in final and "9:16" not in final:
         raise RuntimeError(f"not vertical: {final}")
@@ -193,7 +254,7 @@ def real_chips(page) -> list[dict]:
         """() => [...document.querySelectorAll('flow-video-ingredient-chip')].map(el => {
           const r=el.getBoundingClientRect();
           return {w:Math.round(r.width), h:Math.round(r.height), t:(el.innerText||'').replace(/\\s+/g,' ').trim().slice(0,120)};
-        }).filter(c => c.w>80)"""
+        }).filter(c => c.w>=48 && c.h>=48 && !c.t.startsWith('add'))"""
     )
 
 
@@ -207,8 +268,8 @@ def attach_ref(page) -> None:
     bad = [c for c in chips if "reject" in c["t"].lower() or "melted" in c["t"].lower() or "sprite" in c["t"].lower()]
     if bad:
         raise RuntimeError(f"rejected frame is attached: {bad}")
-    if any("orbit-seedance-reference" in c["t"] for c in chips):
-        print(" canonical still already attached", flush=True)
+    if chips:
+        print(" ingredient already on the prompt", flush=True)
         return
     page.locator('button[aria-label="Add ingredients to the prompt box"]').click()
     page.wait_for_timeout(800)
