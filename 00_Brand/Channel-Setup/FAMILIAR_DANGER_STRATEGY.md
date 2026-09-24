@@ -87,9 +87,9 @@ The title is one concrete promise. A higher score does not win if the title is f
 - The long thumbnail makes the same promise as its title, in the channel's own lane: wonder, not a threat.
 - Longs go out as a normal publish, not a Premiere, until subscribers are in the hundreds.
 
-## Measure (set 24 Sep 2026, runs to 22 Oct)
+## Measure (set 24 Sep 2026, runs to 6 Nov)
 
-This strategy holds unchanged for four weeks. No new "locked" strategy doc before 22 Oct. The weekly review asks one question: did stayed-to-watch go up?
+This strategy holds unchanged until the four-week test below ends on 6 Nov. No new "locked" strategy doc before then. The weekly review asks one question: did stayed-to-watch go up?
 
 - Record stayed-to-watch for every Short in Studio at 48 hours, next to its first frame.
 - Aim for more than 45% by mid-October and 60% after that. The 10 Sep channel figure was 31.7%.
@@ -97,6 +97,25 @@ This strategy holds unchanged for four weeks. No new "locked" strategy doc befor
 - Views are the result, not the target. A good week has one Short still getting views on day three.
 - A new long is only made on a topic whose Short already cleared 200 views and 40% stayed.
 - Nothing already public is re-uploaded, remade or replaced. Fix it before it goes out. The four silent Moon Shorts re-uploaded on 24 Sep got 2–6 views, against 100–290 for the Moon Shorts that went out with a voice.
+
+## Four-week test plan (12 Oct – 6 Nov)
+
+The Shorts already scheduled up to 7 Oct were made before the opening rules. The test starts with the first week built under them. Each week changes **one thing** for all three Shorts, and keeps the earlier changes that won. Every Wednesday is a [*Could Orbit Survive…?*](could-orbit-survive/README.md) Short. It is compared against that week's Monday and Friday Shorts.
+
+| Week | Shorts (Mon / Wed / Fri, 11:30 UK) | The one change this week | What decides it |
+|---|---|---|---|
+| 1 | 12 / 14 / 16 Oct | Baseline: the six opening rules. The end card is spoken as today. Wed: [Jupiter](could-orbit-survive/01_JUPITER.md). | Stayed-to-watch at 48 h, against the 31.7% of 10 Sep |
+| 2 | 19 / 21 / 23 Oct | **End on the payoff.** No spoken "Watch the full film". The film is named on screen and through Related. The last line runs into line 1. Wed: [Europa](could-orbit-survive/02_EUROPA.md). | Whether the retention graph ends above 100%, and stayed-to-watch against week 1 |
+| 3 | 26 / 28 / 30 Oct | **Narrator delivery** about 10% faster, with weight on the key word of each line. Wed: [Neutron Star](could-orbit-survive/03_NEUTRON_STAR.md). | Stayed-to-watch and average view duration against week 2 |
+| 4 | 2 / 4 / 6 Nov | **Ben's own voice** on the Friday Short. Mon and Wed keep the narrator. | Stayed-to-watch and comments, Friday against Mon/Wed |
+
+Rules for the test:
+
+- Log every Short in the week's row: 0 s frame, stayed-to-watch at 48 h, average view duration, whether the graph ends above 100%, subscribers gained, comments.
+- A change "won" if the week's median stayed-to-watch beats the previous week's by 3 points or more. Keep a change that won. Drop one that didn't.
+- The *Could Orbit Survive…?* format becomes a standing Wednesday series if it beats both same-week Shorts in two of its three weeks. If it loses all three, stop it.
+- Reply to every comment during the test (as Ben or in character as Orbit), and log how many there were.
+- Nothing is re-uploaded to rescue a test Short. A weak Short is a result.
 
 ## Before anything is filmed
 
