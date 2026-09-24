@@ -29,6 +29,27 @@ Line 2 is the stay line. What they get if they stay. Orbit arrives from about 1.
 
 **The Orbit-first test.** Three Shorts built to the 23 Sep version (Orbit looking at the camera at 0 s) are already scheduled: Fri 2 Oct (`Ih2zhZTbIR0`), Mon 5 Oct (the Moon cover Short) and Wed 7 Oct (`pL339HhjDwo`). Let them air as a labelled test. Do not re-edit them. Compare their stayed-to-watch at 48 hours with the world-first Andromeda Shorts (25 Sep–1 Oct). If the Orbit-first Shorts hold more, bring the open back. If not, it stays retired.
 
+### The first two seconds (added 24 Sep 2026)
+
+Stayed-to-watch is decided in the first second of the feed, not at the end. On 10 Sep the moving plume open (*Europa Sprays Its Ocean*) held **46%**. Still globe or ice plates with a caption (*Hiding*, *Ice Scars*, *Recycling*) held **15–17%**. The channel was at **31.7%**. Aim for more than 45% in four weeks, then 60%.
+
+1. **Start mid-action.** Veo and other generated clips ease in: the camera starts slow and the event builds. Trim the first 0.5–1 s of every generated clip so frame 0 is already at the peak. The gate warns when the picture barely changes in the first second.
+2. **The thing the title names is on screen at frame 0, moving.** "Can't stand on a neutron star" opens on the star with something being crushed or pulled, not a slow drift over a planet.
+3. **The first words are the claim, not a setup.** "You could never stand on this star." Never "Imagine a place…".
+4. **Something visibly changes by about 1 s:** a hit, a crack, a zoom, a flash. Put a short sound effect (whoosh or impact) on frame 0. A quiet start reads as a slow video.
+5. **The text on frame 0 is the hook, big and centred, 3–5 words** ("IT'S LEAVING US"). Never a caption that describes the picture ("Europa's icy surface").
+6. **Orbit comes in about a second later, caught up in the danger** (pulled, tipping, freezing). Never Orbit looking at the camera over a still frame.
+
+Before upload, look at the 0 s and 1 s frames on the contact sheet `gate_shorts_open.py` writes, with the sound off. Would a stranger stop scrolling for them? If not, re-cut the opening, not the whole Short.
+
+Two days after posting, read the Short's retention graph in Studio:
+
+- a cliff in the first 1–2 s means the opening failed;
+- a steady slope means the middle is slow, so cut words;
+- an end above 100% means the loop works.
+
+Change one thing a week across all three Shorts, and log the stayed-to-watch number next to the 0 s frame.
+
 The Moon week lines, not to be rewritten:
 
 > The Moon is leaving us.

@@ -33,6 +33,17 @@ Winner pattern: *We Found Planets Made of Diamond* / live Three Suns remake (`MD
 3. **Exact parent long** — description link + Studio **Related video pill** → that week’s Thursday long only. **No new Short pins** (longs still get pins; existing Short pins may stay). Pin not required when Related is set. See `orbit-shorts-related-video.mdc`.
 4. Prefer builders named `*_punch_*_v03.py` / `*_punch_*_v01.py` over legacy 40–45s launch cuts.
 
+## The first two seconds (24 Sep 2026)
+
+Stayed-to-watch is decided here. On 10 Sep a moving plume open held 46%; still plates with a caption held 15–17%; the channel was at 31.7%. Readable copy with the measuring loop: `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md` → *The first two seconds*.
+
+1. **Start mid-action.** Veo and other generated clips ease in: the camera starts slow and the event builds. Trim the first 0.5–1 s of every generated clip so frame 0 is already at the peak. The gate warns when the picture barely changes in the first second.
+2. **The thing the title names is on screen at frame 0, moving.** "Can't stand on a neutron star" opens on the star with something being crushed or pulled, not a slow drift over a planet.
+3. **The first words are the claim, not a setup.** "You could never stand on this star." Never "Imagine a place…".
+4. **Something visibly changes by about 1 s:** a hit, a crack, a zoom, a flash. Put a short sound effect (whoosh or impact) on frame 0. A quiet start reads as a slow video.
+5. **The text on frame 0 is the hook, big and centred, 3–5 words** ("IT'S LEAVING US"). Never a caption that describes the picture ("Europa's icy surface").
+6. **Orbit comes in about a second later, caught up in the danger** (pulled, tipping, freezing). Never Orbit looking at the camera over a still frame.
+
 ## Replace rule (YouTube cannot swap files on an ID)
 
 1. Upload new private punch cut → metadata/thumb parity.
@@ -42,7 +53,7 @@ Winner pattern: *We Found Planets Made of Diamond* / live Three Suns remake (`MD
 
 ## Before any Shorts upload
 
-- Run the open gate on the export: `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` — **abort on FAIL** (duration ≥40s · 0 s frame within 10 dHash bits of any Short ±14 days · Orbit at 0 s · no audio stream or soundtrack mean below −40 dB, which is how four silent Moon Shorts aired on 21–24 Sep). Eyeball the contact sheet it writes. Register the upload afterwards with `gate_shorts_open.py add …` (`orbit-auditor-ship-gate.mdc`).
+- Run the open gate on the export: `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` — **abort on FAIL** (duration ≥40s · 0 s frame within 10 dHash bits of any Short ±14 days · Orbit at 0 s · no audio stream or soundtrack mean below −40 dB, which is how four silent Moon Shorts aired on 21–24 Sep). It also **warns** when the picture barely changes between 0 and 1 s (motion score under 10: a still or a slow zoom on a still). Treat that warning as a re-cut of the opening. Eyeball the contact sheet it writes. Register the upload afterwards with `gate_shorts_open.py add …` (`orbit-auditor-ship-gate.mdc`).
 - **One Short per day.** Never schedule two Orbit Shorts on the same date.
 - Do not re-introduce superseded ≥40s IDs as canonical.
 - Audit artifact for the 2026-08-12 rebuild: `00_Brand/Channel-Setup/audits/shorts_40s_rebuild_2026-08-12/FINAL_40S_REBUILD_REPORT.md`.

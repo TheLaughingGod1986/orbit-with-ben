@@ -110,10 +110,21 @@ Conclusion: topic viable? / open rewrite? / kill?
 
 ---
 
+## Snapshot — 2026-09-24 (full audit)
+
+**8 subs.** Stayed-to-watch is the lever: 31.7% on 10 Sep, best 46%. Full write-up: `00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md`.
+
+| Pattern | Evidence | Learning |
+|---------|----------|----------|
+| Motion wins the first second | Sprays (plume erupting) **46.2%** · Hiding / Ice Scars / Recycling (still plate + caption) **15–17%** | Frame 0 is mid-action. Trim the ease-in of every generated clip. Six rules: `FAMILIAR_DANGER_STRATEGY.md` → *The first two seconds*. |
+| Silent uploads burn the test | Four silent Moon Shorts re-uploaded with voice: **2–6 views**. Voiced Moon Shorts: **100–290** | `gate_shorts_open.py` now fails a silent or near-silent file. Re-uploads do not get a second feed test. |
+| 21 Sep "vague title" row was wrong | *What's Dragging the Moon* (21 views) was one of the silent uploads | Do not use it as title evidence. |
+
 ## Changelog
 
 | Date | Source | Note |
 |------|--------|------|
+| 2026-09-24 | public pages + 10 Sep Studio data | Full audit · 8 subs · first-two-seconds rules · gate: audio FAIL, first-second motion warning |
 | 2026-09-21 | yt-dlp public videos + shorts tabs | Full audit · 7 subs · Shorts 4,704 / longs 125 · body-countdown-number titles · teaspoon bet retired · Andromeda title rewrites |
 | 2026-08-25 | vidIQ + public YT playlist + RSS | Full channel audit · 4 subs / 949 views · punch compliance · cluster ranks · 7–9m forward lock · indexes stale |
 | 2026-08-04 | Studio + vidIQ early | Seeded opening-cliff + **22–30s** package rule |
