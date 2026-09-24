@@ -145,7 +145,31 @@ def download_portrait(page, uid: str, dest: Path) -> None:
     dest.write_bytes(box["b"])
 
 
+def start_frame_ready(page) -> bool:
+    return bool(
+        page.evaluate(
+            """() => {
+              const chip=[...document.querySelectorAll('button.chip-container')].find(b => {
+                const r=b.getBoundingClientRect();
+                return r.width>40 && r.y>700 && b.querySelector('img');
+              });
+              return !!chip;
+            }"""
+        )
+    )
+
+
 def upload_start(page) -> None:
+    """Attach the 9:16 still board as the Frames start image.
+
+    The Start chip opens a library. Its file input is removed before a
+    normal file chooser can deliver the file, so the click is swallowed
+    and the file is set while that input is still in the page.
+    """
+    if start_frame_ready(page):
+        print(" start frame already attached", flush=True)
+        page.screenshot(path=str(OUT / "start_attached.png"))
+        return
     page.keyboard.press("Escape")
     page.wait_for_timeout(300)
     page.evaluate(
@@ -157,28 +181,41 @@ def upload_start(page) -> None:
           if (el) el.click();
         }"""
     )
-    page.wait_for_timeout(500)
-    clicked = False
-    try:
-        with page.expect_file_chooser(timeout=8000) as fc:
-            page.evaluate(
-                """() => {
-                  const el=[...document.querySelectorAll('button')].find(b => {
-                    const r=b.getBoundingClientRect();
-                    return (b.innerText||'').trim()==='Start' && r.width>4 && r.y>700;
-                  });
-                  if (!el) throw new Error('no Start');
-                  el.click();
-                }"""
-            )
-        fc.value.set_files(str(START))
-        clicked = True
-        print(" start frame uploaded", flush=True)
-    except Exception as exc:
-        print(" start chooser", type(exc).__name__, flush=True)
-    if not clicked:
+    page.wait_for_timeout(400)
+    page.locator("button.empty-chip", has_text="Start").first.click(force=True)
+    page.wait_for_timeout(400)
+    page.evaluate(
+        """() => {
+          window.__fileInput = null;
+          const proto = HTMLInputElement.prototype;
+          if (proto.__orbitPatched) return;
+          const orig = proto.click;
+          proto.click = function() {
+            if (this.type === 'file') {
+              window.__fileInput = this;
+              return;
+            }
+            return orig.apply(this, arguments);
+          };
+          proto.__orbitPatched = true;
+        }"""
+    )
+    page.locator('button:has-text("Upload media")').locator("visible=true").last.click()
+    page.wait_for_timeout(400)
+    el = page.evaluate_handle("() => window.__fileInput || null").as_element()
+    if el is None:
+        page.screenshot(path=str(OUT / "start_miss.png"))
         raise RuntimeError("could not attach the still as the start frame")
+    el.set_input_files(str(START))
+    asset = page.locator('button.asset-item', has_text="start_from_still.png").locator("visible=true").first
+    asset.wait_for(timeout=30000)
+    asset.click()
+    page.locator("button.detail-add-to-prompt-btn").locator("visible=true").click()
     page.wait_for_timeout(1500)
+    if not start_frame_ready(page):
+        page.screenshot(path=str(OUT / "start_miss.png"))
+        raise RuntimeError("could not attach the still as the start frame")
+    print(" start frame uploaded", flush=True)
     page.screenshot(path=str(OUT / "start_attached.png"))
 
 
