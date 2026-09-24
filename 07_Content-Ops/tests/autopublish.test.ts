@@ -213,6 +213,7 @@ describe("youtube dry-run publish", () => {
     expect(result.scheduledOnPlatform).toBe(true);
     expect(result.scheduledFor).toBe(publishAt.toISOString());
     expect(result.responseSummary).toContain("publishAt");
+    expect(result.responseSummary).toContain("containsSyntheticMedia");
   });
 });
 
