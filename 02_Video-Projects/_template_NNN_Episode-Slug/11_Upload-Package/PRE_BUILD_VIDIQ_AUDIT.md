@@ -2,8 +2,8 @@
 
 **Hard gate:** Run **before** locking script, VO, prompts, or picture gen for any new long.  
 **Goal:** Every episode is aimed at **views + full-video watch** using live data — not gut feel alone.  
-**Also follow:** `RETENTION_AND_GROWTH_LOCKED.md` (punch-first opens, Shorts funnel, teach-per-chapter).  
-**Listing path (mandatory):** `.cursor/rules/orbit-vidiq-source-of-truth.mdc` + `VIDIQ_LISTING_OPTIMIZATION_PLAYBOOK.md` — apply the same VidIQ optimize path to **longs and Shorts** (title, description, tags, thumbs/ABC; VidIQ generate thumbs if needed).
+**Also follow:** `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` and `FAMILIAR_DANGER_STRATEGY.md`.  
+**Listing path:** vidIQ keyword + title scoring, then `THUMBNAIL_AND_TITLE_RULES.md` — apply the same VidIQ optimize path to **longs and Shorts** (title, description, tags, thumbs/ABC; VidIQ generate thumbs if needed).
 
 Copy into each project as:
 
@@ -171,7 +171,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - Title Analyzer / Keyword: https://app.vidiq.com  
 - Script reviewer: `cd 07_Content-Ops && npm run review:script -- --file <script.md>`  
-- Channel audit puller (optional refresh): `00_Brand/Channel-Setup/audits/_pull_vidiq_full_audit.py`  
-- Story / VO–picture gate: `LONGFORM_STORY_AND_VO_PICTURE_GATE.md`  
-- Growth system: `YOUTUBE_GROWTH_SYSTEM_V2.md`  
+- Latest channel numbers: `00_Brand/Channel-Setup/audits/weekly/<date>/REPORT.md`  
+- How to build: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`  
+- Strategy: `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md`  
 - Brand: wonder over clickbait — data informs structure, never overrides Orbit DNA

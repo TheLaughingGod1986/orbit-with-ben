@@ -1,0 +1,25 @@
+---
+description: Building an Orbit Short — the first two seconds, 22–27 s, the ship gate, Related link
+globs:
+  - 02_Video-Projects/**/10_Shorts/**
+  - 00_Brand/Channel-Setup/could-orbit-survive/**
+alwaysApply: false
+---
+
+# Orbit Short (22–27 s)
+
+Full rules: `FAMILIAR_DANGER_STRATEGY.md` → *Short hook* and *The first two seconds*. `STUDIO_PLAYBOOK.md` §3 and §7.
+
+- **Two lines, then one hard fact.** Line 1 (5–7 words) is the danger, said in the first second. Line 2 is the stay line. About 55–65 words.
+- **The first two seconds:**
+  1. start mid-action (trim the clip's ease-in);
+  2. the named thing is at frame 0, moving;
+  3. the claim is the first words;
+  4. a visible change by about 1 s, with a sound effect on frame 0;
+  5. a hook caption on frame 0 (2–4 words, cap height about 8–10%);
+  6. Orbit only from about 1 s, caught in the danger. **Never Orbit at frame 0.**
+- **On screen:** the promoted film's exact live title at 9–14 s. The last 4 s loop to the opening picture. Captions throughout. The spoken end line follows that week's test.
+- **Opening plate:** different from every Short within 14 days. One Short a day at most.
+- **Ship gate:** `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` must PASS. A motion warning means re-cut the opening. After upload, run `gate_shorts_open.py add …`.
+- **Studio:** desktop Related video → the long this Short promotes. No new pin, zero `/go/`, a custom cover (THUMBNAIL_AND_TITLE_RULES §4), altered content: yes.
+- **Measure:** stayed-to-watch at 48 h goes into `could-orbit-survive/TEST_LOG.md`. A weak Short is a result, never a re-upload.

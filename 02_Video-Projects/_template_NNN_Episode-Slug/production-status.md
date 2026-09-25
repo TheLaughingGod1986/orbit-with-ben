@@ -8,7 +8,7 @@
 | VO | pending (ElevenLabs) |
 | CG | pending (AI Studio: Veo world / Omni Orbit-only) |
 | Runtime target | 7–9 min |
-| Shorts | 4–8 planned |
+| Shorts | 3 a week (Mon · Wed · Fri) |
 
 ## Blockers
 

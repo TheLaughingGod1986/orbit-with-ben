@@ -14,7 +14,7 @@ Before a video is “completed” for distribution, use shared CLIs in `04_Audio
 
 Laggy/glitchy picture with smooth audio is VFR + VideoToolbox. Remaster, then **Studio Replace** the original video id — never a new upload. Details: `docs/PLAYBACK_LAG_FIX.md`.
 
-Package checklist: `00_Brand/Channel-Setup/VIDEO_PACKAGE_TEMPLATE.md`. Other CLIs: `04_Audio/tools/README.md`.
+Package checklist: `00_Brand/Channel-Setup/templates/PRODUCTION_CHECKLIST_V2.md`. Other CLIs: `04_Audio/tools/README.md`.
 
 ## 1. Register a completed long-form video
 

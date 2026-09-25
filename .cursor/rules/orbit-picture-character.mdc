@@ -1,0 +1,25 @@
+---
+description: Orbit picture generation and character lock — AI Studio Veo world / Omni Orbit-only, character QA
+globs:
+  - 02_Video-Projects/**/04_Generated-Clips/**
+  - 02_Video-Projects/**/07_Edit-Project/**
+  - 01_Orbit-Character/**
+  - 04_Audio/tools/orbit_gemini_veo.py
+alwaysApply: false
+---
+
+# Picture and Orbit
+
+Full rules: `STUDIO_PLAYBOOK.md` §5–§6.
+
+- **Tools:** Google AI Studio. **Veo** for world plates (Fast; one Quality hero only if it earns the thumbnail). **Omni only when Orbit moves.** Stills first, then 2–3 Veo Fast money shots. No Kling, Seedance or ElevenLabs Image & Video.
+- **Picture matches the sentence,** one world per film. Mute test: the beat still reads with the VO off.
+- **Silent picture:** strip Veo/Omni audio. No text or logos in generated plates.
+- **Never:** reuse a cutscene, loop scenery to pad, slow-mo, freeze-pad, or Ken-Burns text cards.
+- **Space and water:** near-black space; honest environments; no Earth globe over an ocean/shore POV; one Earth + one Moon at most.
+- **Orbit:**
+  - canonical still `01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png`, never `_Rejected/`;
+  - matte orange, no legs, one black visor face with two cream eyes with pupils, three-finger hands, one antenna, exactly one underside glow.
+  - **Reject:** twins, a second face, blank eyes, legs, belly glow, text on the body, side thrusters, a melted or void face.
+  - Spot-check the start, middle and end of every Omni take.
+- **Dosage:** longs 1–2 acting beats; Shorts from about 1 s, never frame 0; thumbnails never.

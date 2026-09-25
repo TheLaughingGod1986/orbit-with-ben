@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Shorts open gate — run on every Short export BEFORE upload (10 Sep 2026 audit fix).
 
-Hard FAILs (mirror `orbit-auditor-ship-gate.mdc` · `orbit-shorts-punch-first.mdc`):
+Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
 
   1. duration ≥ 40 s                                  (existing lock)
   2. first frame (0.3 s) within 10 dHash bits of any   (new — Europa week shipped six

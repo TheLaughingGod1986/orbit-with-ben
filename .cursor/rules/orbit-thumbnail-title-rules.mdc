@@ -1,11 +1,18 @@
 ---
 description: Titles and thumbnails — the shapes that win, 2–4 word thumbs readable at phone size, frame 0 is the Shorts thumbnail
-alwaysApply: true
+globs:
+  - 02_Video-Projects/**/08_Thumbnail/**
+  - 02_Video-Projects/**/10_Shorts/**
+  - 02_Video-Projects/**/11_Upload-Package/**
+  - 00_Brand/Channel-Setup/tools/build_*thumbs*.py
+  - 00_Brand/Channel-Setup/tools/thumb_preview.py
+  - scripts/apply_*thumbs*.py
+alwaysApply: false
 ---
 
 # Thumbnail and title rules (25 Sep 2026)
 
-Readable copy with the evidence: `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md`. Audit: `00_Brand/Channel-Setup/audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/AUDIT.md`. The house thumb gate in `ORBIT_HOUSE_AND_UAT_BIBLE.md` still applies (yellow hook word + white, centre-safe, no clipped lines, distinct plate, no Orbit).
+Readable copy with the evidence: `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md`. Audit: `00_Brand/Channel-Setup/audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/AUDIT.md`. House thumb gate (from the retired UAT bible, now in `STUDIO_PLAYBOOK.md` §8): yellow hook word + white, centre-safe, no clipped lines, distinct plate, no Orbit.
 
 ## Titles
 

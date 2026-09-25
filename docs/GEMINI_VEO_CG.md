@@ -44,10 +44,8 @@ Always strip audio (helper does this). Mix British VO from ElevenLabs in the edi
 
 ## Rules
 
-- `.cursor/rules/orbit-gemini-veo-cg.mdc`
-- `.cursor/rules/orbit-omni-longform-playbook.mdc`
-- `.cursor/rules/orbit-british-vo-lock.mdc`
-- `00_Brand/Channel-Setup/OMNI_LONGFORM_PLAYBOOK.md`
+- `.cursor/rules/orbit-picture-character.mdc`
+- `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`
 - Growth gate before spend: script ≥90 + pre-build vidIQ
 
 ## Legacy

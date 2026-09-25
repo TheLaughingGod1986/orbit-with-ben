@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import fs from "fs";
 import os from "os";
 import path from "path";
-import { gateEpisode } from "../src/lib/analytics/episode-gate";
+import { checkSubscribeBeat, gateEpisode } from "../src/lib/analytics/episode-gate";
 import { buildNextEpisodeBrief } from "../src/lib/analytics/next-episode-brief";
 import type { YouTubeGrowthMetrics } from "../src/lib/analytics/youtube-growth";
 
@@ -94,6 +94,38 @@ describe("episode gate", () => {
     expect(result.checks.find((c) => c.id === "orbit_acts")?.ok).toBe(true);
     expect(result.checks.find((c) => c.id === "visual_must")?.ok).toBe(true);
     expect(result.scriptReview).toBeTruthy();
+  });
+});
+
+describe("subscribe beat", () => {
+  const words = (n: number) => Array.from({ length: n }, (_, i) => `word${i}`).join(" ");
+  const script = (beforeWords: number, afterWords: number, line: string) =>
+    `# Title\n\n${words(beforeWords)}\n\n[SUBSCRIBE BEAT]\n${line}\n\n[VISUAL MUST: x]\n${words(afterWords)}\n`;
+  const GOOD = "If you want the next one, what happens when the Sun dies, subscribing is how you'll see it.";
+
+  it("passes one short line a third of the way in", () => {
+    const check = checkSubscribeBeat(script(400, 800, GOOD));
+    expect(check.ok).toBe(true);
+    expect(check.message).toContain("Subscribe beat at");
+  });
+
+  it("fails when the beat is missing", () => {
+    expect(checkSubscribeBeat(`# T\n${words(100)}`).ok).toBe(false);
+  });
+
+  it("fails when there are two beats", () => {
+    const s = script(400, 800, GOOD) + `\n[SUBSCRIBE BEAT]\n${GOOD}\n`;
+    expect(checkSubscribeBeat(s).ok).toBe(false);
+  });
+
+  it("fails when the beat sits at the end", () => {
+    expect(checkSubscribeBeat(script(1100, 50, GOOD)).message).toMatch(/move it to 25–50%/);
+  });
+
+  it("fails on numbers, stock phrases and long lines", () => {
+    expect(checkSubscribeBeat(script(400, 800, "We just hit 10 subscribers, thank you so much.")).ok).toBe(false);
+    expect(checkSubscribeBeat(script(400, 800, "Don't forget to like and subscribe.")).ok).toBe(false);
+    expect(checkSubscribeBeat(script(400, 800, words(25))).ok).toBe(false);
   });
 });
 

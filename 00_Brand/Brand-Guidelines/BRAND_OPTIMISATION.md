@@ -433,6 +433,6 @@ Treat **ORBIT** as the property; YouTube is the flagship feed.
 ## Related files
 
 - Descriptions: `Channel-Setup/channel_description.txt` · `channel_description_short.txt`  
-- Build system: `CHANNEL_BUILD_SYSTEM.md`  
+- Build system: `AGENTS.md`  
 - Character bible: `../01_Orbit-Character/`  
-- Live channel: `Channel-Setup/CHANNEL_READY.md`
+- Live channel: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`

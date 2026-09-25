@@ -89,7 +89,7 @@ See `docs/PLAYBACK_LAG_FIX.md`.
 | SFX | During / before edit | `generate_sfx_from_script.py --generate` |
 | Music bed | During / before edit | `generate_music_bed.py --generate` |
 
-Package checklist: `00_Brand/Channel-Setup/VIDEO_PACKAGE_TEMPLATE.md`
+Package checklist: `00_Brand/Channel-Setup/templates/PRODUCTION_CHECKLIST_V2.md`
 
 ## Voice lock (British)
 

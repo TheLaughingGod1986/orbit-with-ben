@@ -50,13 +50,13 @@ Printed in the CLI result as `studioFinish` and saved to
 |------|------------|
 | Title + thumbnail **ABC** Test & Compare | No Data API |
 | **Pin** the first comment (**long-form only** going forward) | No official pin endpoint |
-| Shorts **Related video pill** → that week’s Thursday long | Studio only · **desktop** · required; **no new Short pins** (see `orbit-shorts-related-video.mdc`) |
+| Shorts **Related video pill** → the long that Short promotes | Studio only · **desktop** · required; **no new Short pins** (see `.cursor/rules/orbit-build-shorts.mdc`) |
 
 | End screen + cards (long-form) | Studio only |
 
 Use existing CDP helpers only as fallback for those Studio steps — do **not** reintroduce Studio as the primary uploader.
 
-Canonical Related lock: `.cursor/rules/orbit-shorts-related-video.mdc` · `00_Brand/Channel-Setup/SHORTS_FUNNEL_AND_CROSSPOST.md`.
+Canonical Related lock: `.cursor/rules/orbit-build-shorts.mdc` · `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §9.
 
 ## Package layout
 

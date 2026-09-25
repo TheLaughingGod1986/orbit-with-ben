@@ -1,6 +1,6 @@
 # Orbit — Brand snapshot (YouTube)
 
-Full system: `../CHANNEL_BUILD_SYSTEM.md`  
+Full system: `AGENTS.md` (repo root)  
 Brand optimisation: `BRAND_OPTIMISATION.md`
 
 ## Feel
@@ -27,7 +27,7 @@ Orbit appears as guide (intro / react / explain / humour) — not every frame.
 - Name: Orbit with Ben · Handle: @OrbitWithBen
 - Description: `Channel-Setup/channel_description.txt`
 - Cadence (ops): 1 long / week (Thu 19:00 UK) · 5–7 Shorts / week (Day1 21:00 + Days2–7 12:30) · pillar first
-- Strategy: `00_Brand/Channel-Setup/PUBLISHING_AND_SHORTS_STRATEGY.md`
+- Strategy: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`
 - Scale-up target: 2 long / week once library + retention proven
-- Schedule: `Channel-Setup/OPTIMAL_PUBLISH_SCHEDULE.md` + `.json`
-- Package every video with: `Channel-Setup/VIDEO_PACKAGE_TEMPLATE.md`
+- Schedule: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` + `.json`
+- Package every video with: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`
