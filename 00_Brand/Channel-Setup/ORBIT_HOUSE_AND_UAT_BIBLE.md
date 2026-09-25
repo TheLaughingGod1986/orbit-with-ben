@@ -73,7 +73,7 @@ PASS thumbs **only** on: yellow+white type + contrast + crop + no Orbit + distin
 | Check | PASS | FAIL |
 |-------|------|------|
 | Type colour | **Yellow highlight** on the hook word(s); **white** on the rest; centre-safe stack on dark/black | **All-white** title thumbs · white/cyan on ice · matching-blue water · grey-ice outline type · cyan-on-blue |
-| Hook | **3–6 words**, heavy sans | Soft/abstract or overlong |
+| Hook | **2–4 words**, heavy sans, readable at 168×94 (`tools/thumb_preview.py`). Adds to the title, never repeats it. Full rules: `THUMBNAIL_AND_TITLE_RULES.md` (25 Sep 2026) | Soft/abstract, poetic, overlong, or a copy of the title |
 | Clip / placement | Hook stack in the **vertical centre** of the 9:16, with inset from top and bottom. **Both** hook lines survive (a) Studio details preview and (b) Shorts-list **16:9 centre-crop** | Lower-third / edge-hugging stack · any hook line clipped |
 | Orbit | **No Orbit** on the thumb | Orbit / mascot on thumb |
 | Plate | Distinct picture per listing | Cloned plates across listings |

@@ -1,0 +1,36 @@
+---
+description: Titles and thumbnails — the shapes that win, 2–4 word thumbs readable at phone size, frame 0 is the Shorts thumbnail
+alwaysApply: true
+---
+
+# Thumbnail and title rules (25 Sep 2026)
+
+Readable copy with the evidence: `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md`. Audit: `00_Brand/Channel-Setup/audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/AUDIT.md`. The house thumb gate in `ORBIT_HOUSE_AND_UAT_BIBLE.md` still applies (yellow hook word + white, centre-safe, no clipped lines, distinct plate, no Orbit).
+
+## Titles
+
+- Use one of six shapes:
+  - an ending / countdown (*What Remains After the Last Star Dies?* 622)
+  - a body impossibility (*Why You Can't Stand on a Neutron Star* 419)
+  - a yes/no about a familiar thing (*Is the Moon Leaving Us?* 290)
+  - something hidden (*Why Europa Is Hiding a Massive Ocean* 291)
+  - one real number (*Why Does the Moon Drift 3.8 cm a Year?* 253)
+  - a specific contradiction (*Why JWST Pictures Don't Match the Textbook*)
+- A familiar noun (Moon, Sun, star, sky, Earth, you) in the first four words.
+- **FAIL:** hedges (may / might / could / what if), descriptions of what something can do, poetic images, hashtags, series suffixes, a copy of an existing public title, threat framing.
+- Longs: the searched phrase as a question ("What Happens When…", "What Would You See If…"), keyword in the first five words.
+
+## Long thumbs
+
+- One subject filling at least a third of the frame, on a dark, simple background.
+- **2–4 words**, readable at 168×94. Run `python3 00_Brand/Channel-Setup/tools/thumb_preview.py long <thumb> --out <sheet>` and look at the small tile.
+- The thumb adds to the title. It never repeats it.
+- One heavy capitals font on every thumb. Keep text off the subject and out of the bottom-right corner (duration badge).
+- Same promise as the title. No Orbit (until a Test & Compare on a long with more than 1,000 impressions says otherwise).
+- Set up Test & Compare with 3 variants. Judge CTR only past about 500 impressions.
+
+## Shorts
+
+- **Frame 0 is the thumbnail in the feed** (78% of Shorts views). Median views: world or object at frame 0 86.5, Orbit at frame 0 23.5, dark or text card 16.5.
+- Frame-0 caption: the promise in 2–4 words, cap height about 8–10% of frame height (twice today's), yellow hook word.
+- Custom Short thumb (search and channel pages): the title's hook words, not a new poetic line. 2–4 words, the stack at least 60% of frame width, vertically centred. Check with `thumb_preview.py short`.
