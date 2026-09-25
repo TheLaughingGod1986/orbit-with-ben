@@ -17,7 +17,7 @@ The Shorts in a week promote more than one film. Past videos that already won st
 | Fri | Short | Promotes a third film |
 | Sun | Long, about 8–9 min | The new full film. One of the week’s Shorts teases this one. |
 
-Week one is in [the week plan](WEEK_PLAN_3_SHORTS_1_LONG_2026-09-23.md). Monday promotes the new Moon film. Wednesday promotes the Last Star long. Friday promotes the Neutron Star long.
+Week one (23 Sep) is archived at `_archive/00_Brand/Channel-Setup/WEEK_PLAN_3_SHORTS_1_LONG_2026-09-23.md`. Monday promotes the new Moon film. Wednesday promotes the Last Star long. Friday promotes the Neutron Star long.
 
 ## Short hook
 
@@ -123,7 +123,7 @@ Every Short export passes `python3 00_Brand/Channel-Setup/tools/gate_shorts_open
 
 A long script scores at least 90. A 22–27 second Short is not padded to chase that long-film score. The reviewer caps a Short this size below 90. QA watches the moving picture. UAT watches the open voiceover. Then it can be uploaded. A live film is not remade by swapping the file.
 
-The locked Monday script is [Only the Moon Can Cover the Sun](MONDAY_MOON_SHORT_ONLY_THE_MOON_CAN_COVER_THE_SUN.md).
+The Monday Moon script now lives with its film: `02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/10_Shorts/monday_moon_cover/MONDAY_MOON_SHORT_ONLY_THE_MOON_CAN_COVER_THE_SUN.md`. How to build and ship any film: `STUDIO_PLAYBOOK.md`.
 
 ## Fill-in for the next film
 

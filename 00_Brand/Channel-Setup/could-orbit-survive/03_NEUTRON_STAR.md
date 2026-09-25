@@ -5,7 +5,7 @@
 - **Promotes:** *What Happens If You Get Near a Neutron Star* (`Yk1tLh23rko`). Studio Related → `Yk1tLh23rko`.
 - **Test week 3 change: narrator delivery.** About 10% faster than the week 1–2 reads, with more weight on the key word of each line (**crushes**, **billion**, **millimetre**, **flatter**).
 - **Keep whichever ending won week 2.** If ending on the payoff beat week 1, there is no spoken film line. If it didn't, add "Watch the full film, What Happens If You Get Near a Neutron Star" as the last line.
-- **Facts:** surface gravity is about 200 billion times Earth's (the same figure as `WEDNESDAY_NEUTRON_SHORT.md`). Models put the tallest neutron-star "mountains" at under a millimetre.
+- **Facts:** surface gravity is about 200 billion times Earth's (the same figure as `02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/10_Shorts/WEDNESDAY_NEUTRON_SHORT.md`). Models put the tallest neutron-star "mountains" at under a millimetre.
 - **Different from the live Neutron Shorts.** Not "stand on" (*Why You Can't Stand on a Neutron Star*, and the 7 Oct Short's line 1) and not "get closer" (*Could a Probe Get Closer…*). This one is about landing, and what landing does.
 - **Hook caption on frame 0:** EVERYTHING GOES **FLAT** (yellow on FLAT).
 - **Thumb:** the glowing star with bent light at its edge, yellow **FLAT**, white "IN A SECOND". No Orbit.

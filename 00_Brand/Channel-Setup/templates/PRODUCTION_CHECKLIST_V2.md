@@ -1,57 +1,52 @@
-# Production checklist v2 — Orbit with Ben
+# Production checklist — Orbit With Ben
 
 **Episode:**  
 **Date:**  
-**Script review score:** ____ / 100 (must be ≥ 90)
+**Script review score:** ____ / 100 (must be 90 or more)
 
-Canonical: `YOUTUBE_GROWTH_SYSTEM_V2.md`
+Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.md` · `THUMBNAIL_AND_TITLE_RULES.md`
 
 ---
 
-## Story & open
+## Topic and script
 
-- [ ] Cold open: curiosity by **5s**, stakes by **15s**, journey clear by **30s**
-- [ ] No channel intro / history / textbook definition open
-- [ ] Immediate mystery — audience needs the answer
-- [ ] Structure: Question → Danger → Story → Explain-in-story → Escalation → Ending
-- [ ] Framework beats present: Hook → Question → Escalation → Discovery → Payoff → Bigger question
-- [ ] Orbit **experiences** the science early (not wallpaper)
-- [ ] Emotional “you” stakes present without fearbait
-- [ ] **4–6** film-act chapters (not 12–18 micro-chapters)
-- [ ] Runtime target **8–12 min** (trust-building window)
-
-## Assembly / remint (Moon Leaving lock — `MOON_LEAVING_FULL_v04_HOUSE_LOCK_2026-09-15.md`)
-
-- [ ] Remint plates carry **original part audio** (video from remint, audio from original — never `-c copy` remint audio)
-- [ ] Every input normalized to **1920×1080 stereo** before concat
-- [ ] A/V durations match after concat (probe both streams — no video past audio)
-- [ ] Chapter cards: ~1.5s breath lead-in · soft starfield/gradient card (no flat black box) · quiet music under the card
-- [ ] End hold: ≥15–20s slow picture · music fades over ~10s · picture fade to black last ~2s · **no silent hold**
-- [ ] Bed parity across parts (~−20 dB mean under VO)
-- [ ] Ocean/shore POV plates: **no Earth globe in the sky**; dual-body gate (one Earth + one Moon, or one Moon) checked on a **mid-plate** frame
-- [ ] Files moved via CopyFromBox chunked ≤500KB and **sha256 verified**
-
-## Packaging
-
-- [ ] Title: one promise · preferably ≤ ~60 chars · **no series suffix**
-- [ ] Thumbnail: one object · one emotion · minimal text · matches title promise
-- [ ] Description complete (hook · chapters · soft CTA · sources · next-watch links)
-- [ ] SEO / tags / playlist checked (vidIQ path)
-
-## Funnel (no dead ends)
-
-- [ ] End screen → another Orbit documentary
-- [ ] Cards configured
-- [ ] Pinned comment (question + next / companion link)
-- [ ] Related Shorts linked to this long (once public)
-- [ ] Shorts cluster: **3–5** with strongest-fact open + curiosity-gap end
-
-## Gates signed
-
+- [ ] Familiar thing in danger. No existing public long on this subject. Competition check done. Ben picked it.
 - [ ] Pre-build vidIQ audit signed off
-- [ ] Script reviewer ≥ 90
-- [ ] VO–picture gate QA passed
-- [ ] Studio finish items done after API upload (ABC if long · Related pill on Shorts — no new Short pins)
+- [ ] First 3 s of picture = the danger. Sentence one = the promise. Payoff named by 30 s.
+- [ ] 4–6 acts told as cause and effect. The world does the science. Orbit in 1–2 beats only.
+- [ ] Picture change about every 4–6 s. Every number sourced. No goodbye line.
+- [ ] Runtime 8–9 min (about 1,200–1,300 words)
+- [ ] `npm run review:script` 90 or more · `npm run gate:episode` PASS
 
+## Voice and picture
 
-**Ship only when every box is checked.**
+- [ ] Ben Orbit Narrator only. Speech around −19 to −28 dB mean. No silent stretches.
+- [ ] AI Studio: Veo world, Omni only for Orbit. Veo/Omni audio stripped.
+- [ ] Picture matches every sentence (mute test). Orbit on-model (one face, cream eyes with pupils, one underside glow).
+- [ ] No reused cutscenes, scenery loops, slow-mo, freeze-pads or Ken-Burns text
+
+## Assembly
+
+- [ ] Inputs normalised to 1920×1080 stereo. A/V durations match after concat.
+- [ ] Remint = picture only (original part audio kept)
+- [ ] Chapter cards: soft starfield, about 1.5 s breath lead-in, music continues under the card
+- [ ] End hold 15–20 s, music fades over about 10 s, picture fades to black over the last 2 s. No silent hold.
+- [ ] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most (mid-plate frame checked).
+- [ ] Watched once on a phone with the sound on
+
+## Shorts (3 a week)
+
+- [ ] 22–27 s. First-two-seconds rules. Orbit not at frame 0.
+- [ ] `gate_shorts_open.py check` PASS for each export
+- [ ] Exact live film title on screen at 9–14 s. Last 4 s loop to the opening.
+
+## Packaging and Studio
+
+- [ ] Title: one of the six shapes. No hashtags, suffix, hedged claim or repeat title.
+- [ ] Thumbs: 2–4 words, readable at 168×94 (`thumb_preview.py`), add to the title, no Orbit. 3 variants for the long.
+- [ ] Description: real subject first · chapters · sources · affiliate only if named in the film
+- [ ] Upload private with `publishAt`. Long = normal publish, Sunday 18:00 UK (no Premiere). Altered content: yes.
+- [ ] Long: Test & Compare · end screen (best related long + Subscribe) · captions auto-synced · one pinned open question
+- [ ] Shorts: Related → the long each promotes · no new pin · zero `/go/`
+
+**Ship only when every box is ticked and Ben has signed off.**

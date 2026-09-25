@@ -24,13 +24,10 @@ def main() -> None:
 
     if GEN_RE.search(command):
         msg = (
-            "Orbit Growth System v2 gate: before ElevenLabs VO or AI Studio Veo/Omni spend, "
-            "confirm (1) pre-build vidIQ audit signed off, (2) script reviewer ≥90, "
-            "(3) cold open 5/15/30s. "
-            "CG = Google AI Studio — Veo for world, Omni ONLY when Orbit must move "
-            "(stills first · 2–3 Veo Fast money shots · never Omni the whole film · no Kling). "
-            "Mute Veo baked audio. VO = ElevenLabs Ben Orbit Narrator. "
-            "See OMNI_LONGFORM_PLAYBOOK.md · orbit-omni-longform-playbook.mdc · orbit-gemini-veo-cg.mdc."
+            "Orbit spend gate: before ElevenLabs VO or AI Studio Veo/Omni spend, confirm "
+            "(1) Ben picked the topic, (2) pre-build vidIQ audit signed, (3) script reviewer ≥90 and "
+            "gate:episode PASS. Veo for the world, Omni ONLY when Orbit moves; stills first, 2–3 Veo Fast "
+            "money shots; strip Veo audio; VO = Ben Orbit Narrator only. See STUDIO_PLAYBOOK.md §3–§6."
         )
         sys.stdout.write(
             json.dumps(

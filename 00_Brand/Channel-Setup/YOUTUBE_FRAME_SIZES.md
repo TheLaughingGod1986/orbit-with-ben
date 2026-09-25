@@ -1,6 +1,6 @@
 # YouTube frame sizes
 
-Locked 25 Sep 2026. Cursor rule: `.cursor/rules/orbit-youtube-frame-sizes.mdc`.
+Locked 25 Sep 2026. Cursor rule: `.cursor/rules/orbit-studio.mdc`.
 
 ## Standard long-form
 
@@ -19,4 +19,4 @@ Locked 25 Sep 2026. Cursor rule: `.cursor/rules/orbit-youtube-frame-sizes.mdc`.
 - Channel banner: 2560 × 1440, safe text in the centre
 - Profile picture: 800 × 800
 
-The Short video is 1080 × 1920. The thumbnail uploaded to YouTube is 1280 × 720.
+The Short video is 1080 × 1920. The long-form thumbnail uploaded to YouTube is 1280 × 720. Short covers are built at 1080 × 1920 by `tools/build_yellow_white_short_thumbs_v04.py`, with the hook centre-safe for the 16:9 crop (`THUMBNAIL_AND_TITLE_RULES.md` §4).

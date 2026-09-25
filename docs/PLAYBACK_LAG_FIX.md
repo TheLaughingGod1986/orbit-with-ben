@@ -1,5 +1,7 @@
 # Playback lag on YouTube / Shorts / social
 
+> **25 Sep 2026:** the channel rule is now one video = one upload (`00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §9). Fix the encode (CFR, `fps=` filter) **before** upload. The Studio Replace steps below are kept for reference only. On 24 Sep YouTube could not swap the file on an existing id (`docs/sound-check.md`), and the replace scripts are in `_archive/`.
+
 ## What viewers are seeing
 
 Audio is smooth. Picture stutters, hitching, or “lags.” Comments landed on

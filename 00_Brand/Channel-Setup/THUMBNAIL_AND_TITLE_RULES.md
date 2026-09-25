@@ -1,6 +1,6 @@
 # Thumbnail and title rules
 
-Set 25 Sep 2026 from [the thumbnail and title audit](audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/AUDIT.md). These rules sit on top of the house thumb gate in `ORBIT_HOUSE_AND_UAT_BIBLE.md`: yellow on the hook word, white on the rest, centre-safe, no clipped lines, distinct plate, no Orbit. Where the two differ, this file is newer.
+Set 25 Sep 2026 from [the thumbnail and title audit](audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/AUDIT.md). These rules sit on top of the house thumb gate (now in `STUDIO_PLAYBOOK.md` §8): yellow on the hook word, white on the rest, centre-safe, no clipped lines, distinct plate, no Orbit. Where the two differ, this file is newer.
 
 Evidence strength: **[views]** means a pattern across 48 Shorts. **[CTR]** means thumbnail click-through on 80–480 impressions, which points the same way but is noisy.
 

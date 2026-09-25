@@ -2,7 +2,7 @@
 
 ## Growth System v2
 
-Canonical: `00_Brand/Channel-Setup/YOUTUBE_GROWTH_SYSTEM_V2.md`
+Canonical: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`
 
 Content Ops **Analytics** dashboard surfaces:
 

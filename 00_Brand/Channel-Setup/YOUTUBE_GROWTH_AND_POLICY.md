@@ -1,6 +1,6 @@
 # YouTube growth and policy
 
-Locked 25 Sep 2026. Cursor rule: `.cursor/rules/orbit-youtube-growth-policy.mdc`.
+Locked 25 Sep 2026. Cursor rule: `.cursor/rules/orbit-studio.mdc`.
 
 The algorithm follows the audience.
 

@@ -1,6 +1,6 @@
 # Channel authority
 
-Locked 24 Sep 2026. Cursor rule: `.cursor/rules/orbit-channel-authority.mdc`.
+Locked 24 Sep 2026. Cursor rule: `.cursor/rules/orbit-studio.mdc`.
 
 Authority is trust that the film is about the thing it says, from the same person, every week.
 

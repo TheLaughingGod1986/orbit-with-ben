@@ -30,7 +30,7 @@ Institutional memory for Orbit With Ben. Update when analytics are imported or S
 **Do:** punch-first VO · first-frame drama · visual change ≤3s · Orbit in-story · soft CTA · VO–picture lock · pre-build vidIQ · 10–12 min longs (V013+) · chapter teach-points · Related pill Shorts funnel (no new Short pins)  
 **Don’t:** welcome intros · fearbait titles · 45–60s stretched Shorts · schedule thrash · niche pivot on &lt;1k views · generic B-roll under specific VO  
 
-**Going forward (full list):** `00_Brand/Channel-Setup/RETENTION_AND_GROWTH_LOCKED.md`
+**Going forward (full list):** `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md`
 
 ---
 
@@ -132,7 +132,7 @@ Conclusion: topic viable? / open rewrite? / kill?
 | 2026-08-04 | schedule rebuild | 1 long/week · launch 21:00 · 3–5 Shorts · BH/Alien legacy 41–45s vs JWST EXP-S01 22–30s · JWST gated (prefer 20 Aug / Studio hold 28 Aug) |
 | 2026-08-04 | live Studio + NF build | Alien → 13 Aug 19:00/21:00 live · reserves held to 31 Dec · **EXP-BH-NF01/02 built 26.0s PASS** · awaiting upload for 7/9 Aug |
 | 2026-08-04 | NF upload+schedule | **EXP-BH-NF01** `EO-44QH4glI` → 7 Aug 12:30 BST · **EXP-BH-NF02** `nX84ileqPKw` → 9 Aug 12:30 BST · related `n7CbJrOCnU0` · legacy holds intact · Alien/JWST unchanged · status: awaiting performance data |
-| 2026-08-05 | Ben + agent | Locked standing retention/growth priorities → `RETENTION_AND_GROWTH_LOCKED.md` |
+| 2026-08-05 | Ben + agent | Locked standing retention/growth priorities → `RETENTION_AND_GROWTH_LOCKED.md` (archived 25 Sep 2026) |
 
 ### Sample diagnosis — What If the First Alien Clue Is Already Here?
 

@@ -42,7 +42,7 @@ last 4s    soft CTA (white, smaller): watch the full film →
 Punch-first + VO sync: `onscreen_captions.punch_first` / `align_phrases_to_words`.  
 Generate maps: `TikTok/auto/_sync_shorts_caption_beats.py` → `10_Shorts/07_Caption-Sync/`.
 
-Funnel ops: `SHORTS_FUNNEL_AND_CROSSPOST.md` (metrics · monster-hook order · YT then TikTok +1h).
+Funnel ops: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §9 (metrics · monster-hook order · YT then TikTok +1h).
 
 ### Copy rules
 

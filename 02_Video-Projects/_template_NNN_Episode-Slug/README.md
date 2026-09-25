@@ -1,38 +1,22 @@
-# Episode template — Growth System v2 + AI Studio picture economy
+# Episode template
 
-Copy this folder to start a new long:
+Copy this folder to start a new film:
 
 ```bash
-cp -R 02_Video-Projects/_template_NNN_Episode-Slug \
-  02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star
-# Locked next long (7–9 min). Do not use empty 007_Neutron-Star scaffold. Do not start 013 Moon.
+cp -R 02_Video-Projects/_template_NNN_Episode-Slug 02_Video-Projects/<NNN_Slug>
 ```
 
-## Order (blocking)
+Then follow `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` in order. It stops for Ben's OK at each step.
 
-1. Fill `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md` and sign off  
-2. Write `01_Script/*_script_master_v01.md` with cold open + markers (Orbit in 1–2 inquisitive beats only)  
-3. Gate:
+1. **Topic:** data pick + competition check. Fill `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Ben picks.
+2. **Script:** `01_Script/<slug>_script_master_v01.md`, 8–9 min, with `[VISUAL MUST]` / `[TEACH]` on every scene and `[ORBIT ACTS]` on 1–2 beats. Run:
    ```bash
    cd 07_Content-Ops
-   npm run gate:episode -- --project ../02_Video-Projects/<NNN_Slug>
+   npm run review:script -- --file ../02_Video-Projects/<NNN_Slug>/01_Script/<script>.md   # ≥90
+   npm run gate:episode -- --project ../02_Video-Projects/<NNN_Slug>                     # PASS
    ```
-4. **PASS only then:**
-   - VO → ElevenLabs Ben Orbit Narrator → `02_Voiceover/`
-   - CG → **Google AI Studio**: stills first (open world · two science · Orbit ref) → **2–3 Veo Fast** money shots → **Omni only** if Orbit must move. Mute Veo audio. See `OMNI_LONGFORM_PLAYBOOK.md`.
-5. Edit on Mac → Shorts (4–8, 22–27s, picture thumb no Orbit) → checklist → YouTube package  
-6. After YouTube lock: long thumbs = picture + SEA hook (no Orbit) · Short thumbs = picture no Orbit · social mirror  
-
-## Engines
-
-| Job | Tool |
-|-----|------|
-| WORLD CG | AI Studio **Veo** (Fast; one Quality hero if it earns the thumb) |
-| Orbit motion | AI Studio **Omni only** (1–2 scenes) |
-| VO | ElevenLabs TTS only |
-| Gate | `npm run gate:episode` |
-| Brief | `npm run brief:next -- --file metrics.json` |
-
-Do **not** Omni the whole film. No Kling / ElevenLabs Image & Video / Seedance for new CG.
-
-Docs: `YOUTUBE_GROWTH_SYSTEM_V2.md` · `OMNI_LONGFORM_PLAYBOOK.md` · `docs/GEMINI_VEO_CG.md`
+3. **Voice:** ElevenLabs Ben Orbit Narrator (`04_Audio/tools/orbit_voice.py`) → `02_Voiceover/`.
+4. **Picture:** Google AI Studio. Veo for the world, Omni only when Orbit moves. Stills first, then 2–3 Veo Fast money shots, muted → `04_Generated-Clips/` → edit in `07_Edit-Project/` → export `09_Final-Export/`.
+5. **Shorts:** three a week, 22–27 s, following the first-two-seconds rules → `10_Shorts/`. Every export must pass `gate_shorts_open.py`.
+6. **Thumbnails:** `08_Thumbnail/`, per `THUMBNAIL_AND_TITLE_RULES.md`, checked with `thumb_preview.py`.
+7. **Upload:** `11_Upload-Package/` → `npm run youtube:package`, then Studio finish. Tick `11_Upload-Package/PRODUCTION_CHECKLIST_V2.md`.

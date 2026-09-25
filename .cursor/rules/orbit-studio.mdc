@@ -1,0 +1,47 @@
+---
+description: Orbit With Ben studio — read AGENTS.md first; docs in force, sign-off points and the never-list
+alwaysApply: true
+---
+
+# Orbit With Ben — studio core (25 Sep 2026)
+
+Read `AGENTS.md` at the repo root before any channel work. Everything in `_archive/` (including the old `cursor-rules/`) is superseded history. Never follow it unless Ben asks.
+
+## Docs in force (higher wins)
+
+1. `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md`: what to make, the week, hooks, the first two seconds, the test plan (12 Oct – 6 Nov).
+2. `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md`
+3. `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`: how to build and ship.
+4. `YOUTUBE_GROWTH_AND_POLICY.md` · 5. `CHANNEL_AUTHORITY.md` · 6. `YOUTUBE_FRAME_SIZES.md` · 7. `IMPROVEMENTS_BACKLOG.md`
+
+## The week
+
+One long (8–9 min) on Sunday at 18:00 UK as a **normal publish**. Three Shorts (22–27 s) on Mon, Wed and Fri at 11:30 UK. Wednesday during the test is *Could Orbit Survive…?*. Never a second long on a subject that already has one.
+
+## Stop for Ben's OK
+
+1. topic
+2. long script (≥90)
+3. Short scripts
+4. voice
+5. moving picture
+6. thumbnails
+7. anything going public, renamed or deleted
+
+## Never
+
+- **Uploads:** swap a file on a live id; re-upload a public idea; delete a video (make it private instead).
+- **Publishing:** Premiere; more than one Short a day; a Short of 40 s or more; a silent or near-silent file; Orbit at frame 0 of a Short or on any thumbnail.
+- **Titles:** hashtags, suffixes, hedged claims, fear framing, or a copy of an existing title.
+- **Links:** `/go/` or a new pin on a Short; `/go/` on a long that doesn't name the product in the film.
+- **Generation:** Kling, Seedance or ElevenLabs Image & Video; Omni for world plates or the whole film; any voice other than Ben Orbit Narrator.
+- **TikTok:** any upload while `TikTok/TIKTOK_UPLOAD_BLOCK.json` is paused.
+- **Secrets:** printing or committing them.
+
+## Every Short export
+
+`python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` must PASS. Then watch it once on a phone with the sound on.
+
+## Changing a rule
+
+Edit the doc in force and its rule in the same commit, with the date and the evidence. Don't add a new "locked" doc. Move anything it supersedes to `_archive/`.

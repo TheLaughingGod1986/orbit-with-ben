@@ -1,0 +1,30 @@
+---
+description: Building an Orbit long — topic pick, script gates, voice and assembly checks
+globs:
+  - 02_Video-Projects/**/01_Script/**
+  - 02_Video-Projects/**/02_Voiceover/**
+  - 02_Video-Projects/**/07_Edit-Project/**
+  - 02_Video-Projects/**/09_Final-Export/**
+  - 02_Video-Projects/_template_NNN_Episode-Slug/**
+alwaysApply: false
+---
+
+# Orbit long (8–9 min)
+
+Full steps: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2–§4 and §7. Hooks: `FAMILIAR_DANGER_STRATEGY.md` → *Long hook*.
+
+- **Topic:** a familiar thing in danger, with no existing public long on that subject. Run a competition check on the exact title (signed out, top five results). Fill `PRE_BUILD_VIDIQ_AUDIT.md`. **Ben picks.**
+- **Script** (about 1,200–1,300 spoken words):
+  - The first 3 s of picture are the danger. Sentence one is the promise, with the payoff named by 30 s.
+  - 4–6 acts told as cause and effect. The world does the science; Orbit is in 1–2 beats only.
+  - Picture changes every 4–6 s. Every number sourced. No goodbye.
+  - `[VISUAL MUST]` + `[TEACH]` on every scene; `[ORBIT ACTS]` on Orbit beats only.
+- **Gates:** `npm run review:script` scores 90 or more, then `npm run gate:episode` PASSes. No VO or picture spend before both.
+- **Voice:** Ben Orbit Narrator (`04_Audio/tools/orbit_voice.py`). VO comes before picture. Speech around −19 to −28 dB mean; never silent.
+- **Assembly:**
+  - normalise inputs to 1920×1080 stereo and check A/V lengths match;
+  - a remint is picture only (keep the original audio);
+  - soft chapter cards with 1.5 s breath and music under;
+  - an end hold of 15–20 s with a music fade (a silent hold fails);
+  - export `09_Final-Export/<slug>_broadcast_v0N.mp4`.
+- **Publish:** normal publish, Sunday 18:00 UK. Test & Compare with 3 thumbs; end screen = best related long + Subscribe; captions via auto-sync; one pinned open question.

@@ -5,7 +5,7 @@ Steal from Astrum: caps punch, one highlight colour, kicker line bigger, picture
 Keep Orbit house: yellow (not cyan) + white, vertical-centre stack, both lines survive
 Studio preview + Shorts-list 16:9 crop, no Orbit, 3–6 words.
 
-UAT: ORBIT_HOUSE_AND_UAT_BIBLE.md. Does not upload. Does not change dates.
+Rules: THUMBNAIL_AND_TITLE_RULES.md · STUDIO_PLAYBOOK.md §8. Does not upload. Does not change dates.
 """
 from __future__ import annotations
 

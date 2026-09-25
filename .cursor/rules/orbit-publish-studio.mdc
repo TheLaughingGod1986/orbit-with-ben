@@ -1,0 +1,37 @@
+---
+description: Uploading and finishing in YouTube Studio, affiliate links and social mirrors
+globs:
+  - 02_Video-Projects/**/11_Upload-Package/**
+  - 02_Video-Projects/**/08_Thumbnail/**
+  - scripts/**
+  - 07_Content-Ops/scripts/**
+  - 07_Content-Ops/src/lib/publishing/**
+  - 07_Content-Ops/src/lib/affiliate/**
+  - 07_Content-Ops/src/app/go/**
+  - 07_Content-Ops/docs/AFFILIATE*
+  - 00_Brand/Channel-Setup/Meta/**
+  - 00_Brand/Channel-Setup/Threads/**
+  - 00_Brand/Channel-Setup/TikTok/**
+  - 00_Brand/Channel-Setup/social/**
+alwaysApply: false
+---
+
+# Publish, Studio finish, affiliate, social
+
+Full rules: `STUDIO_PLAYBOOK.md` §9–§12.
+
+- **Upload:** Data API package: `npm run youtube:package -- --package <…> --video <mp4> --dry-run` first. Private + `publishAt`, explicit `privacyStatus`/`madeForKids`, altered content: yes.
+- **One video = one upload:**
+  - never swap a file on a live id; never re-upload a public idea;
+  - a recut gets a new id, and the old one goes private (not deleted).
+- **Long:** normal publish, Sunday 18:00 UK, never a Premiere. Test & Compare with 3 thumbs, end screen, auto-synced captions, one pinned open question.
+- **Short:** desktop Studio Related → the long it promotes. No new pin, zero `/go/`.
+- **Title-only fixes:** `07_Content-Ops/scripts/retitle-videos.ts` (dry run first).
+- **Studio-only jobs** go through desktop Studio CDP (`scripts/apply_yellow_white_v04_thumbs.py` pattern; launcher `audits/start_studio_chrome_cdp.sh`). Image-only inputs; never Replace, never `thumbnails.set`.
+- **Affiliate:**
+  - only on a long that names the product in VO or on screen; one product per film;
+  - link `https://orbit-content-ops.vercel.app/go/{slug}` under "If you want to go further.", with the disclosure line last;
+  - never invent ASINs; never commit the Amazon tag.
+- **Social:**
+  - **TikTok paused** (`TikTok/TIKTOK_UPLOAD_BLOCK.json`): no uploads, retries or "test one".
+  - Instagram, Facebook and Threads: each Short at most once per platform, never before its YouTube long is public (`social/uniqueness.py`).
