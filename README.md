@@ -13,6 +13,8 @@ asking the biggest questions in the universe.*
 **Publishing & Shorts strategy:** `00_Brand/Channel-Setup/PUBLISHING_AND_SHORTS_STRATEGY.md`  
 **Publish schedule:** `00_Brand/Channel-Setup/OPTIMAL_PUBLISH_SCHEDULE.md` · `CHANNEL_PUBLISH_CADENCE.md`  
 **Latest audit:** `00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md`  
+**Thumbnail + title rules:** `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md` · preview `tools/thumb_preview.py`  
+**Improvements backlog + weekly public audit:** `00_Brand/Channel-Setup/IMPROVEMENTS_BACKLOG.md` · `tools/weekly_public_audit.py` → `audits/weekly/<date>/`  
 **Flywheel / release:** `CONTENT_FLYWHEEL_TEMPLATE.md` · `RELEASE_WEEK_CHECKLIST.md`  
 **Video backlog:** `00_Brand/Channel-Setup/VIDEO_BACKLOG.json`  
 **Long-form quality gate (8–12 min · cold open · VO–picture):** `00_Brand/Channel-Setup/LONGFORM_STORY_AND_VO_PICTURE_GATE.md`  

@@ -19,7 +19,7 @@ Evidence strength: **[views]** means a pattern across 48 Shorts. **[CTR]** means
 
    [views]
 2. **Put a familiar noun in the first four words:** the Moon, the Sun, a star, the sky, Earth, you, your body. [views]
-3. **No hedges.** No "may", "might", "could", "what if". *We May Have Already Recorded Alien Life* got 10 views. *We Could Smell Alien Life in a Spectrum* got 32 views and 1.1% CTR. [views, CTR]
+3. **No hedged claims.** "We may have…", "We could…", "It might…", "What if…". *We May Have Already Recorded Alien Life* got 10 views. *We Could Smell Alien Life in a Spectrum* got 32 views and 1.1% CTR. A yes/no question that starts with "Could" (*Could a Robot Survive…?*, *Could Life Exist Under the Ice of Europa?*) is the yes/no shape, not a hedge. [views, CTR]
 4. **No description of what an instrument or place can do.** *What JWST's Infrared Eyes Can See* got 39 views and 1.0% CTR. Say what it found instead. [views, CTR]
 5. **No poetic images or vague stakes.** *The Sky Would Lean…* (19). *A Reply From the Stars Takes Generations* (17). *One Second… Is Enough* (20). If the title could be a caption under a still, rewrite it. [views]
 6. **No hashtags, no series suffix, and never the title of an existing public video.** [views]
