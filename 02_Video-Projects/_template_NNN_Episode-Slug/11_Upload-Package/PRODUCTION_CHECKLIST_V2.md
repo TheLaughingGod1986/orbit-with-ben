@@ -14,7 +14,8 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 - [ ] Pre-build vidIQ audit signed off
 - [ ] First 3 s of picture = the danger. Sentence one = the promise. Payoff named by 30 s.
 - [ ] 4–6 acts told as cause and effect. The world does the science. Orbit in 1–2 beats only.
-- [ ] Picture change about every 4–6 s. Every number sourced. No goodbye line.
+- [ ] Picture change about every 4–6 s. Every number sourced. No goodbye line. The last line hands off to the next film.
+- [ ] One `[SUBSCRIBE BEAT]` after the first payoff (25–50%), a line from `templates/SUBSCRIBE_BEAT_LINES.md` not used in the last four longs
 - [ ] Runtime 8–9 min (about 1,200–1,300 words)
 - [ ] `npm run review:script` 90 or more · `npm run gate:episode` PASS
 
@@ -32,6 +33,7 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 - [ ] Chapter cards: soft starfield, about 1.5 s breath lead-in, music continues under the card
 - [ ] End hold 15–20 s, music fades over about 10 s, picture fades to black over the last 2 s. No silent hold.
 - [ ] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most (mid-plate frame checked).
+- [ ] 4-second lower-right subscribe cue under the beat, with the picture still moving
 - [ ] Watched once on a phone with the sound on
 
 ## Shorts (3 a week)
@@ -46,7 +48,7 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 - [ ] Thumbs: 2–4 words, readable at 168×94 (`thumb_preview.py`), add to the title, no Orbit. 3 variants for the long.
 - [ ] Description: real subject first · chapters · sources · affiliate only if named in the film
 - [ ] Upload private with `publishAt`. Long = normal publish, Sunday 18:00 UK (no Premiere). Altered content: yes.
-- [ ] Long: Test & Compare · end screen (best related long + Subscribe) · captions auto-synced · one pinned open question
+- [ ] Long: Test & Compare · end screen (best related long + Subscribe) · captions auto-synced · pinned comment posted with `update-pinned-comment.ts --create` and pinned in Studio
 - [ ] Shorts: Related → the long each promotes · no new pin · zero `/go/`
 
 **Ship only when every box is ticked and Ben has signed off.**

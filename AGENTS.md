@@ -22,7 +22,7 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 
 | Path | What |
 |---|---|
-| `00_Brand/Channel-Setup/` | The docs above, `VIDEO_BACKLOG.json`, `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`, `templates/`, `ideas/`, channel description and keywords |
+| `00_Brand/Channel-Setup/` | The docs above, `VIDEO_BACKLOG.json`, `PINNED_COMMENTS.json`, `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`, `templates/` (incl. `SUBSCRIBE_BEAT_LINES.md`), `ideas/`, channel description and keywords |
 | `00_Brand/Channel-Setup/tools/` | `gate_shorts_open.py` (Shorts ship gate), `thumb_preview.py`, `weekly_public_audit.py`, thumbnail builders |
 | `00_Brand/Channel-Setup/could-orbit-survive/` | The Wednesday test format, three scripts, `TEST_LOG.md` |
 | `00_Brand/Channel-Setup/audits/` | Current audits, `weekly/` reports, `shorts_open_library/` (gate data) |
@@ -43,6 +43,7 @@ python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <short.mp4> --air
 python3 00_Brand/Channel-Setup/tools/thumb_preview.py long|short <thumb.jpg> --out <sheet.jpg>
 cd 07_Content-Ops && npm run youtube:package -- --package <…/11_Upload-Package> --video <mp4> --dry-run
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/update-pinned-comment.ts --dry-run    # weekly: subscriber thank-you in pinned comments
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 ```
 
@@ -70,6 +71,7 @@ The YouTube scripts need `07_Content-Ops/.env`: `DATABASE_URL`, `ORBIT_TOKEN_ENC
   - Ship a Short of 40 s or more.
   - Ship a silent or near-silent file.
   - Put Orbit at frame 0 of a Short or on any thumbnail.
+- **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only, and the count goes in the pinned comment.
 - **Titles:** hashtags, series suffixes, hedged claims ("We may have…"), fear framing, or a title that copies an existing public video.
 - **Studio:** add a pinned comment to a Short, or a `/go/` link on a Short; use `/go/` on a long that doesn't name the product in the film.
 - **Generation:**

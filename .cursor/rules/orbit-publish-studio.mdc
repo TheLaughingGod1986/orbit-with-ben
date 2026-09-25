@@ -24,7 +24,8 @@ Full rules: `STUDIO_PLAYBOOK.md` §9–§12.
 - **One video = one upload:**
   - never swap a file on a live id; never re-upload a public idea;
   - a recut gets a new id, and the old one goes private (not deleted).
-- **Long:** normal publish, Sunday 18:00 UK, never a Premiere. Test & Compare with 3 thumbs, end screen, auto-synced captions, one pinned open question.
+- **Long:** normal publish, Sunday 18:00 UK, never a Premiere. Test & Compare with 3 thumbs, end screen, auto-synced captions.
+- **Pinned comment:** `07_Content-Ops/scripts/update-pinned-comment.ts --create --video <id> --question "…?"`, then pin it in Studio. Refresh it every Monday with the same script (no `--create`); it only edits the text. `PINNED_COMMENTS.json` holds the ids.
 - **Short:** desktop Studio Related → the long it promotes. No new pin, zero `/go/`.
 - **Title-only fixes:** `07_Content-Ops/scripts/retitle-videos.ts` (dry run first).
 - **Studio-only jobs** go through desktop Studio CDP (`scripts/apply_yellow_white_v04_thumbs.py` pattern; launcher `audits/start_studio_chrome_cdp.sh`). Image-only inputs; never Replace, never `thumbnails.set`.

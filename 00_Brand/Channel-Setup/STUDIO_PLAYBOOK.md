@@ -45,8 +45,14 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 - **The world does the science.** Orbit appears in 1–2 inquisitive or story beats only.
 - **Picture changes about every 4–6 s:** a new view, the named thing on screen, or a sound cue with a graphic.
 - **Every number is sourced.** Sources go in the description.
-- **No goodbye** ("in conclusion", "thanks for watching"). Finish the last point and let the end screen hand them on.
-- **Layout:** every scene carries `[VISUAL MUST: …]` and `[TEACH: …]`. Only the Orbit beats carry `[ORBIT ACTS: …]`.
+- **One subscribe beat, mid-film** (added 25 Sep 2026). Put a `[SUBSCRIBE BEAT]` marker right after the first payoff, 25–50% of the way through the spoken words, followed by one line of 20 words or fewer from `templates/SUBSCRIBE_BEAT_LINES.md`:
+  - no numbers, no stock phrases ("like and subscribe", "hit the bell");
+  - rotate the lines;
+  - the picture keeps moving under it.
+
+  `gate:episode` fails a script without exactly one valid beat.
+- **No goodbye and no second ask** ("in conclusion", "thanks for watching", "like and subscribe"). The last spoken line hands off to the next film ("Next, Orbit falls into Jupiter.") and the end screen shows it.
+- **Layout:** every scene carries `[VISUAL MUST: …]` and `[TEACH: …]`. Only the Orbit beats carry `[ORBIT ACTS: …]`. The gate flags more than 2 Orbit beats.
 - **Gates (both must pass before any voice or picture spend):**
   ```bash
   cd 07_Content-Ops && npm run review:script -- --file <script.md>        # 90 or more
@@ -128,6 +134,7 @@ No Kling, Seedance or ElevenLabs Image & Video.
 - **End hold:** at least 15–20 s of slow picture after the last line. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.**
 - **Bed parity** across parts: about −20 dB mean under VO.
 - **Large file transfers:** chunk ≤500 KB and verify the sha256.
+- **Subscribe cue:** under the `[SUBSCRIBE BEAT]` line, a 4-second subscribe cue in the lower-right corner (small button, no sound louder than the VO) over the moving picture. Orbit may nod or point toward it in-scene. Never a full-screen card.
 - **Export** to `09_Final-Export/<slug>_broadcast_v0N.mp4`.
 - **Shorts gate on every export:**
   ```bash
@@ -166,7 +173,7 @@ Tools:
    - Test & Compare with 3 thumbs;
    - end screen: the best related long + Subscribe;
    - captions: Studio auto-sync from the VO script;
-   - one pinned comment asking an open question.
+   - one pinned comment: the film's open question plus a thank-you with the subscriber milestone (no number under 10). Post it with `npx tsx --env-file=.env scripts/update-pinned-comment.ts --create --video <id> --question "…?"` (records it in `PINNED_COMMENTS.json`), then pin it in Studio. The API can't pin.
 3. **Short:**
    - desktop Studio **Related video** → the long that Short promotes. This is the only Short → long link. Set it once the long has an id.
    - no new pinned comments;
@@ -190,6 +197,9 @@ Tools:
 - **KPI:** Shorts stayed-to-watch at 48 h. The 10 Sep baseline is 31.7%; aim for more than 45%, then 60%.
 - **Longs:** impressions, CTR (4–7% band once past about 500 impressions), average % viewed (about 50%).
 - **A weak Short is a result, not a re-upload.**
+- **Every Monday, after the report:**
+  - refresh the pinned comments with `cd 07_Content-Ops && npx tsx --env-file=.env scripts/update-pinned-comment.ts` (dry run first). It only edits text, and only when the milestone changed;
+  - in Studio, check each new long's retention graph at the subscribe beat. If more than about 2–3 points drop away there compared with the surrounding slope, shorten or move the beat in the next film's script.
 
 ## 11. Affiliate (longs only)
 

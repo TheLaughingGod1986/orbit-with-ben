@@ -75,7 +75,7 @@ The Moon week line:
 
 The first 3 seconds of picture are the danger itself. No title card. Orbit enters on the reaction beats, not in that opening, and not on every shot. Chapter cards use the script’s own act titles. One phone-readable name per beat, so the story still reads with the sound off. Cards are a soft starfield, with about 1.5 seconds of breath and the music still playing.
 
-The end is a moving picture. Music fades. No baked subscribe.
+The end is a moving picture. Music fades. No baked subscribe at the end. The last line hands off to the next film. The one subscribe ask sits mid-film, right after the first payoff (`STUDIO_PLAYBOOK.md` §3, `templates/SUBSCRIBE_BEAT_LINES.md`, added 25 Sep 2026).
 
 ## Packaging
 

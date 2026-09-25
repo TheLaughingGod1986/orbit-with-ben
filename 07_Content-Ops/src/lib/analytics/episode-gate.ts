@@ -1,6 +1,6 @@
 /**
- * Episode production gate — Growth System v2.
- * Blocks VO / Gemini Veo until audit + script ≥90 + markers are present.
+ * Episode production gate (STUDIO_PLAYBOOK.md §3).
+ * Blocks VO / Gemini Veo until audit + script ≥90 + markers + one subscribe beat are present.
  */
 
 import fs from "fs";
@@ -80,6 +80,58 @@ function auditLooksSigned(text: string): boolean {
   return false;
 }
 
+const SUBSCRIBE_MARKER = /^\s*\[SUBSCRIBE BEAT\]\s*$/im;
+const SUBSCRIBE_BANNED =
+  /like and subscribe|smash|before we (?:begin|start)|don'?t forget|hit (?:the|that) bell|notification bell/i;
+
+/** Spoken words only: drop [directions], HTML comments and markdown headings. */
+function spokenWords(text: string): string[] {
+  return text
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .split("\n")
+    .filter((line) => !/^\s*(#|\[)/.test(line))
+    .join(" ")
+    .replace(/\[[^\]]*\]/g, " ")
+    .split(/\s+/)
+    .filter((w) => /[A-Za-z0-9]/.test(w));
+}
+
+/**
+ * The mid-film subscribe ask (STUDIO_PLAYBOOK.md §3, added 25 Sep 2026): exactly one
+ * `[SUBSCRIBE BEAT]` marker, followed by one spoken line of ≤20 words, no numbers, no
+ * stock YouTube phrases, placed 25–50% of the way through the spoken script.
+ */
+export function checkSubscribeBeat(script: string): GateCheck {
+  const markers = script.match(new RegExp(SUBSCRIBE_MARKER.source, "gim")) || [];
+  const fail = (message: string): GateCheck => ({ id: "subscribe_beat", ok: false, severity: "fail", message });
+  if (markers.length === 0) {
+    return fail("No [SUBSCRIBE BEAT] — add one line after the first payoff, 25–50% through (templates/SUBSCRIBE_BEAT_LINES.md).");
+  }
+  if (markers.length > 1) return fail(`${markers.length} [SUBSCRIBE BEAT] markers — use exactly one.`);
+
+  const idx = script.search(SUBSCRIBE_MARKER);
+  const before = spokenWords(script.slice(0, idx)).length;
+  const total = spokenWords(script).length || 1;
+  const after = script.slice(idx).split("\n").slice(1);
+  const line = (after.find((l) => l.trim() && !/^\s*(#|\[|<!--)/.test(l)) || "").trim();
+  const words = line.split(/\s+/).filter(Boolean).length;
+  const at = before / total;
+
+  if (!line) return fail("[SUBSCRIBE BEAT] has no spoken line under it.");
+  if (words > 20) return fail(`Subscribe line is ${words} words — keep it to 20 or fewer (about 5 seconds).`);
+  if (/\d/.test(line)) return fail("Subscribe line quotes a number — keep counts out of the film (pinned comment only).");
+  if (SUBSCRIBE_BANNED.test(line)) return fail("Subscribe line uses a stock YouTube phrase — say what they get instead.");
+  if (at < 0.25 || at > 0.5) {
+    return fail(`[SUBSCRIBE BEAT] sits ${Math.round(at * 100)}% through — move it to 25–50%, right after the first payoff.`);
+  }
+  return {
+    id: "subscribe_beat",
+    ok: true,
+    severity: "info",
+    message: `Subscribe beat at ${Math.round(at * 100)}% (${words} words): "${line}"`,
+  };
+}
+
 /**
  * Run Growth System v2 gate against a video project directory.
  */
@@ -93,7 +145,7 @@ export function gateEpisode(opts: {
 }): EpisodeGateResult {
   const projectDir = path.resolve(opts.projectDir);
   const checks: GateCheck[] = [];
-  const minOrbit = opts.minOrbitActs ?? 4;
+  const minOrbit = opts.minOrbitActs ?? 1;
   const minVisual = opts.minVisualMust ?? 4;
   const minTeach = opts.minTeach ?? 4;
 
@@ -175,12 +227,17 @@ export function gateEpisode(opts: {
     const teach = countMatches(script, /\[TEACH:/gi);
     const chapters = countMatches(script, /\[CHAPTER CARD:/gi);
 
+    // STUDIO_PLAYBOOK.md §3: Orbit acts in 1–2 beats of a long; more is allowed but flagged.
     checks.push({
       id: "orbit_acts",
       ok: orbitActs >= minOrbit,
-      severity: orbitActs >= minOrbit ? "info" : "fail",
-      message: `[ORBIT ACTS] count ${orbitActs} (need ≥${minOrbit}).`,
+      severity: orbitActs < minOrbit ? "fail" : orbitActs > 2 ? "warn" : "info",
+      message:
+        orbitActs > 2
+          ? `[ORBIT ACTS] count ${orbitActs} — the playbook keeps Orbit to 1–2 beats in a long.`
+          : `[ORBIT ACTS] count ${orbitActs} (need ≥${minOrbit}).`,
     });
+    checks.push(checkSubscribeBeat(script));
     checks.push({
       id: "visual_must",
       ok: visualMust >= minVisual,
