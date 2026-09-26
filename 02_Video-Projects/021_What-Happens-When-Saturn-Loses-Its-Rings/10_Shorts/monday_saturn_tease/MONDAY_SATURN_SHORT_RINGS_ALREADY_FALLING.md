@@ -1,6 +1,6 @@
 # Saturn's Rings Are Already Falling
 
-**LOCKED draft for Ben OK — 2026-09-26.** Step 3 Short script only. No VO / picture / upload until Ben signs off.
+**Draft for Ben OK — 2026-09-26 (rev 2).** Step 3 Short script only. No VO / picture / upload until Ben signs off.
 
 | | |
 |---|---|
@@ -9,9 +9,9 @@
 | Studio Related | **TODO Step 7:** set Related → the Saturn long's YouTube id **after** that long is uploaded. Id does not exist yet — **do not guess / do not point at another film.** |
 | Frame 0 | **World plate only** — ring sheet raining inward. Orbit arrives ~1.5 s. `gate_shorts_open.py` must PASS (fails Orbit at 0 s). |
 | Test week | Week 1 baseline — six opening rules; spoken end line as today |
-| Spoken words | 51 · about 22 s voice · about 26 s with loop hold |
+| Spoken words | 54 · about 23 s voice · about 27 s with loop hold |
 | Hook caption (frame 0) | IT'S **FALLING** (yellow on FALLING) |
-| Thumb (custom) | Pale ring blade, ice streaming in · yellow **FALLING** · white "INTO SATURN" · no Orbit |
+| Thumb (custom) | Pale ring blade, ice streaming in · yellow **FALLING** · white "HOW LONG?" · no Orbit |
 | Opening plate | **New** — edge-on Saturn ring sheet with ice grains already streaming planetward. Not Europa ice, not Moon drift, **not Orbit at 0 s**. |
 
 ## Timings
@@ -19,8 +19,8 @@
 | t | Picture | Voice |
 |--:|---|---|
 | 0:00 | Ring plane mid-action: pale ice blade, grains already raining inward toward Saturn. Whoosh on frame 0. Caption: IT'S FALLING. **No Orbit.** | Saturn's rings are already falling. |
-| ~0:01.5 | Orbit tumbles into the grain stream, pulled toward the planet, eyes wide. | Stay, and I'll show you where the ice goes. |
-| ~0:09–0:14 | Close on ice grains leaving the plane; on-screen title exactly **What Happens When Saturn Loses Its Rings?** | Hard fact beats below. |
+| ~0:01.5 | Orbit tumbles into the grain stream, pulled toward the planet, eyes wide. | Stay, and I'll show you how long they have left. |
+| ~0:09–0:14 | Close on ice flowing off the innermost ring into Saturn's equator; on-screen title exactly **What Happens When Saturn Loses Its Rings?** | Hard fact beats below. |
 | last 4 s | Return to opening ring-plane rain so the Short loops. | Watch the full film, What Happens When Saturn Loses Its Rings? |
 
 ---
@@ -32,15 +32,14 @@ Saturn's rings are already falling.
 [VISUAL MUST: About 1.5 s. Orbit drops into the grain stream, pulled toward Saturn, antenna whipping, cream eyes wide. One Orbit, one face, cream eyes with pupils, no legs, one bottom glow.]
 [ORBIT ACTS: Orbit is caught in the rain — tipping, pulled inward, reacting.]
 
-Stay, and I'll show you where the ice goes.
+Stay, and I'll show you how long they have left.
 
-[VISUAL MUST: Close on ice grains leaving the ring plane toward Saturn. From 9 to 14 seconds the on-screen title is exactly What Happens When Saturn Loses Its Rings? Orbit is not in this beat.]
-[TEACH: Ice from the rings rains into Saturn; the sheet is already losing mass.]
+[VISUAL MUST: Close on material pouring from the innermost ring into Saturn's equator. From 9 to 14 seconds the on-screen title is exactly What Happens When Saturn Loses Its Rings? Orbit is not in this beat.]
+[TEACH: Cassini’s last dives sampled the equatorial inflow from the innermost ring (not the magnetic ring rain, which Keck detected); remaining life is about 100–300 million years.]
 
 Ice from that sheet rains into Saturn.
-The leak is already under way.
-Cassini flew through the innermost fall.
-The bright blade will not last forever.
+Cassini's last dives flew straight through that flow.
+Somewhere between about a hundred and three hundred million years.
 
 [VISUAL MUST: The last 4 seconds return to the opening picture — edge-on ring sheet with grains streaming in — so the Short loops. No Orbit required on the loop hold.]
 
