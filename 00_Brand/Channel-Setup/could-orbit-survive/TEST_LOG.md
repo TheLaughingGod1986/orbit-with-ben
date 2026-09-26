@@ -1,13 +1,13 @@
 # Could Orbit Survive…? — test log
 
-Weeks and dates are the four-week plan in `FAMILIAR_DANGER_STRATEGY.md` (12 Oct – 6 Nov 2026). Wednesday rows for weeks 1–3 use the three scripts. Ids stay blank until a video exists. Metric cells stay empty until Studio is read at 48 hours. Nothing in this file is scheduled.
+Weeks and dates are the four-week plan in `FAMILIAR_DANGER_STRATEGY.md` (12 Oct – 6 Nov 2026). Wednesday rows for weeks 1–3 use the three scripts. Ids stay blank until a video exists. Metric cells stay empty until Studio is read at 48 hours. Wed 14 Oct is scheduled.
 
 ## Week 1 — 12 / 14 / 16 Oct — baseline openings, spoken end card
 
 | Day | Id | Title | 0 s frame | Stayed-to-watch at 48 h | AVD | Graph ends >100% (y/n) | Subs gained | Comments |
 |---|---|---|---|---|---|---|---|---|
 | Mon 12 Oct |  |  |  |  |  |  |  |  |
-| Wed 14 Oct |  | Could a Robot Survive Falling Into Jupiter? | Cloud bands rushing, no Orbit |  |  |  |  |  |
+| Wed 14 Oct | buaOI3QGm7U | Could a Robot Survive Falling Into Jupiter? | Cloud bands rushing, no Orbit |  |  |  |  |  |
 | Fri 16 Oct |  |  |  |  |  |  |  |  |
 
 ## Week 2 — 19 / 21 / 23 Oct — end on the payoff, no spoken “watch the full film”
