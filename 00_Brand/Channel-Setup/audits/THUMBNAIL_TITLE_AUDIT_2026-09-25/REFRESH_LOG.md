@@ -1,12 +1,16 @@
-# Thumbnail refresh log — 25 Sep 2026
+# Thumbnail refresh log — 25 Sep 2026 (v02 plates 26 Sep)
 
 **Status: prepared, not applied.** No Studio uploads. No live thumb swaps.
 
-Override note: Ben overrode the archived UAT bible "do not mass-recut older thumbs" line **only** for the Batch A/B ids in this job. House gate still applies (yellow hook, white rest, no Orbit, centre-safe). `ORBIT_HOUSE_AND_UAT_BIBLE.md` lives under `_archive/`; live rules are `THUMBNAIL_AND_TITLE_RULES.md` + `STUDIO_PLAYBOOK.md` §8.
+Override note: Ben overrode the archived UAT bible "do not mass-recut older thumbs" line **only** for the Batch A/B ids in this job. House gate still applies (yellow hook, white rest, no Orbit on long thumbs, centre-safe). `ORBIT_HOUSE_AND_UAT_BIBLE.md` lives under `_archive/`; live rules are `THUMBNAIL_AND_TITLE_RULES.md` + `STUDIO_PLAYBOOK.md` §8.
 
-Plate reality this run: no masters on disk (gitignored / sparse). yt-dlp blocked (bot wall). Plates from scrubbed current public thumbs when subject fits and Orbit is absent; else **NEEDS PLATE** (Ben AI Studio still, no AI text).
+## v02 rebuild (26 Sep) — Studio plate picks
 
-Builder: `tools/build_thumb_refresh_2026_09_25.py`. Spec: `refresh/JOBS.json` · apply plan: `refresh/APPLY_PLAN.json`. Contact sheets: `refresh/contact/contact_sheet_page{1,2}.jpg` (yellow border = swap pick).
+v01 “current bg scrubbed” produced flat black rectangles with ghost text (e.g. EVERYBODY? under SILENCE). **Rejected — not shown to Ben.**
+
+**v02:** house builders on real Studio download frames (`orbit-thumb-plates/picks/<id>_1/2/3.jpg`, rank 1 = best). Full-bleed picture, soft centre vignette only, no solid black scrub, no old text. Builder: `tools/build_thumb_refresh_v02_plates.py`. Spec: `refresh/JOBS.json` · apply plan: `refresh/APPLY_PLAN.json` · manifest: `refresh/MANIFEST.json`. Contact sheets: `refresh/contact/contact_sheet_page{1,2}.jpg` (and `/opt/cursor/artifacts/thumb-refresh-2026-09-25/`). Yellow border = swap pick. `old_<id>.jpg` kept.
+
+Jupiter `-jmMROGoZCM` pick `_1` held for later check only — **not applied**.
 
 ## Baseline CTR (Studio, last 28 days, 28 Aug–24 Sep 2026)
 
@@ -39,10 +43,10 @@ Recorded before any swap (Studio last 28 days, 28 Aug–24 Sep 2026). On the day
 | `Yk1tLh23rko` | **swap** (T&C absent) | **B CRUSHED FLAT** | 2 words, body impossibility; clearer than YOU'D BE FLAT |
 | `REXYxuLOBoI` | **swap** | **B LAST LIGHT** | adds to the title; wonder, not dread |
 | `NbW5G1BpPY0` | **swap** | **B A HIDDEN OCEAN** | “hidden” shape matches the film |
-| `3xrxdmaOwJI` | **swap** (after plate) | **B NO WAY OUT** | stronger than repeating FALLING IN? |
+| `3xrxdmaOwJI` | **swap** | **B NO WAY OUT** | stronger than repeating FALLING IN?; plate ready (no Orbit) |
 | `Mo93x0fxB1Q` | **swap** | **C SILENCE** | one word, phone-readable; biggest break from EVERYBODY? |
 | `ojk-dfOpAmw` | **swap** | **REP WHEN THEY MEET** | current COMING FOR US? confirmed; straight replacement |
-| `-jmMROGoZCM` | **swap** when public | (pick after thumb preview) | T&C Ineligible until public |
+| `-jmMROGoZCM` | **swap** when public | (pick after thumb preview) | T&C Ineligible until public; `_1` pick not applied |
 
 ## Batch A — Shorts
 
@@ -50,43 +54,38 @@ Before each swap: fill **swap date**, keep the Studio baseline (28 Aug–24 Sep 
 
 | id | old text | new text | plate / preview | apply | swap date | baseline impressions | baseline CTR | day-14 CTR |
 |---|---|---|---|---|---|---:|---:|---|
-| `DN4L1DkerMM` | THIS OCEAN / SHOULDN'T EXIST (wrong Europa) | RUNNING OUT OF / STARS | NEEDS PLATE | swap |  | 95 | 1.1% |  |
-| `PV50PX-bE4g` | (Orbit grid / no hook) | NO / LIGHT | NEEDS PLATE | swap |  | 7 | 0% |  |
-| `l1d1ypHxLk0` | next to / 13.8 billion | TOO / EARLY | NEEDS PLATE | swap |  | 7 | 14.3% |  |
-| `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | NEEDS PLATE | swap |  | 17 | 0% |  |
-| `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | NEEDS PLATE | swap |  | 46 | 0% |  |
-| `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | NEEDS PLATE | swap |  | 13 | 0% |  |
-| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | current bg scrubbed · preview PASS | swap |  | 90 | 4.4% |  |
-| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | current bg scrubbed · preview PASS | swap |  | 28 | 7.1% |  |
+| `DN4L1DkerMM` | THIS OCEAN / SHOULDN'T EXIST (wrong Europa) | RUNNING OUT OF / STARS | **NEEDS PLATE** (burned-in captions every pick) | swap |  | 95 | 1.1% |  |
+| `PV50PX-bE4g` | (Orbit grid / no hook) | NO / LIGHT | picks `_1` clean red star · preview PASS | swap |  | 7 | 0% |  |
+| `l1d1ypHxLk0` | next to / 13.8 billion | TOO / EARLY | **NEEDS PLATE** (burned-in “cosmically young”) | swap |  | 7 | 14.3% |  |
+| `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | picks `_1` Orbit OK for Short · preview PASS | swap |  | 17 | 0% |  |
+| `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | picks `_1` Orbit OK for Short · preview PASS | swap |  | 46 | 0% |  |
+| `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | picks `_1` Orbit OK for Short · preview PASS | swap |  | 13 | 0% |  |
+| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | prior plate (no new pick) · preview PASS | swap |  | 90 | 4.4% |  |
+| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | prior plate (no new pick) · preview PASS | swap |  | 28 | 7.1% |  |
 
 ## Batch B — longs (variants built; apply = swap until T&C confirmed)
 
-★ = swap pick. Before each swap: fill **swap date**; baselines are Studio last-28-days (28 Aug–24 Sep 2026). Leave **day-14 CTR** blank until +14 days after that swap date. One long at a time.
+★ = swap pick. Before each swap: fill **swap date**; baselines are Studio last-28-days (28 Aug–24 Sep 2026). Leave **day-14 CTR** blank until +14 days after that swap date. One long at a time. All B/C (and REP) on Studio pick plates; full-bleed; thumb_preview PASS.
 
 | id | variant | new text | plate / preview | apply | swap date | baseline impressions | baseline CTR | day-14 CTR |
 |---|---|---|---|---|---|---:|---:|---|
-| `Yk1tLh23rko` | B ★ | CRUSHED / FLAT | scrubbed current · PASS | **swap → B** |  | 202 | 2.5% |  |
-| `Yk1tLh23rko` | C | YOU'D BE / FLAT | scrubbed current · PASS | (alt) | — | 202 | 2.5% | — |
-| `REXYxuLOBoI` | B ★ | LAST / LIGHT | scrubbed current (asteroid interim) · PASS | **swap → B** |  | 142 | 2.8% |  |
-| `REXYxuLOBoI` | C | THEN / DARK | scrubbed current · PASS | (alt) | — | 142 | 2.8% | — |
-| `NbW5G1BpPY0` | B ★ | A HIDDEN / OCEAN | scrubbed current · PASS | **swap → B** |  | 68 | 1.5% |  |
-| `NbW5G1BpPY0` | C | OCEAN / BELOW | scrubbed current · PASS | (alt) | — | 68 | 1.5% | — |
-| `3xrxdmaOwJI` | B ★ | NO WAY / OUT | NEEDS PLATE | **swap → B** (after plate) |  | 6 | 0% |  |
-| `3xrxdmaOwJI` | C | FALLING / IN? | NEEDS PLATE | (alt) | — | 6 | 0% | — |
-| `Mo93x0fxB1Q` | B | WHERE IS / EVERYONE? | crop_left scrub · PASS | (alt) | — | 13 | 0% | — |
-| `Mo93x0fxB1Q` | C ★ | SILENCE | crop_left scrub · PASS | **swap → C** |  | 13 | 0% |  |
-| `ojk-dfOpAmw` | REP ★ | WHEN THEY / MEET | scrubbed current · PASS | **swap → REP** |  | 16 | 0% |  |
-| `-jmMROGoZCM` | — | (pick after thumb preview) | private / thumbs missing | **swap** when public |  | — | — |  |
+| `Yk1tLh23rko` | B ★ | CRUSHED / FLAT | picks `_1` 465 s cracked crust · PASS | **swap → B** |  | 202 | 2.5% |  |
+| `Yk1tLh23rko` | C | YOU'D BE / FLAT | same `_1` · PASS | (alt) | — | 202 | 2.5% | — |
+| `REXYxuLOBoI` | B ★ | LAST / LIGHT | picks `_1` 243 s red dying star · PASS | **swap → B** |  | 142 | 2.8% |  |
+| `REXYxuLOBoI` | C | THEN / DARK | same `_1` · PASS | (alt) | — | 142 | 2.8% | — |
+| `NbW5G1BpPY0` | B ★ | A HIDDEN / OCEAN | picks `_1` 27 s Europa+Jupiter, no Orbit · PASS | **swap → B** |  | 68 | 1.5% |  |
+| `NbW5G1BpPY0` | C | OCEAN / BELOW | same `_1` · PASS | (alt) | — | 68 | 1.5% | — |
+| `3xrxdmaOwJI` | B ★ | NO WAY / OUT | picks `_1` 588 s event horizon, no Orbit · PASS | **swap → B** |  | 6 | 0% |  |
+| `3xrxdmaOwJI` | C | FALLING / IN? | same `_1` · PASS | (alt) | — | 6 | 0% | — |
+| `Mo93x0fxB1Q` | B | WHERE IS / EVERYONE? | picks `_2` 749 s radio dish · PASS | (alt) | — | 13 | 0% | — |
+| `Mo93x0fxB1Q` | C ★ | SILENCE | picks `_1` 2.7 s figure under Milky Way · PASS | **swap → C** |  | 13 | 0% |  |
+| `ojk-dfOpAmw` | REP ★ | WHEN THEY / MEET | picks `_1` 184.1 s Andromeda+MW · PASS | **swap → REP** |  | 16 | 0% |  |
+| `-jmMROGoZCM` | — | (pick after thumb preview) | picks `_1` held — **not applied** | **swap** when public |  | — | — |  |
 
 ## NEEDS PLATE
 
-- `DN4L1DkerMM`
-- `PV50PX-bE4g`
-- `l1d1ypHxLk0`
-- `M-VN84HCNls`
-- `68uTDP2esso`
-- `SC2WGTl_V5Q`
-- `3xrxdmaOwJI`
+- `DN4L1DkerMM` — burned-in captions on every Studio pick (`_1`–`_3`); crop/paint not clean
+- `l1d1ypHxLk0` — burned-in “cosmically young” / related captions over galaxy core; cannot crop/paint cleanly
 
 ## Jupiter `-jmMROGoZCM` (scheduled/private)
 

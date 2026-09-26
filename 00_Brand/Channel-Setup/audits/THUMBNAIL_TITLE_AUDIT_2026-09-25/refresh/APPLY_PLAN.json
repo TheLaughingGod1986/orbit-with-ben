@@ -1,71 +1,31 @@
 {
-  "note": "Default swap \u2014 T&C not confirmed on any long. One long at a time. Compare 14-day CTR after swap.",
-  "baseline_window": "Studio last 28 days 28 Aug\u201324 Sep 2026",
+  "note": "Default swap — T&C not confirmed on any long. One long at a time. Compare 14-day CTR after swap. v02 (26 Sep): Studio plate picks, full-bleed, no black box.",
+  "version": "thumb_refresh_v02_studio_plates_2026-09-26",
+  "baseline_window": "Studio last 28 days 28 Aug–24 Sep 2026",
   "baseline": {
-    "DN4L1DkerMM": {
-      "impressions": 95,
-      "ctr": "1.1%"
-    },
-    "PV50PX-bE4g": {
-      "impressions": 7,
-      "ctr": "0%"
-    },
-    "l1d1ypHxLk0": {
-      "impressions": 7,
-      "ctr": "14.3%"
-    },
-    "M-VN84HCNls": {
-      "impressions": 17,
-      "ctr": "0%"
-    },
-    "68uTDP2esso": {
-      "impressions": 46,
-      "ctr": "0%"
-    },
-    "SC2WGTl_V5Q": {
-      "impressions": 13,
-      "ctr": "0%"
-    },
-    "9lLZMy8rBJo": {
-      "impressions": 90,
-      "ctr": "4.4%"
-    },
-    "CkSECfUfH2Y": {
-      "impressions": 28,
-      "ctr": "7.1%"
-    },
-    "Yk1tLh23rko": {
-      "impressions": 202,
-      "ctr": "2.5%"
-    },
-    "REXYxuLOBoI": {
-      "impressions": 142,
-      "ctr": "2.8%"
-    },
-    "NbW5G1BpPY0": {
-      "impressions": 68,
-      "ctr": "1.5%"
-    },
-    "3xrxdmaOwJI": {
-      "impressions": 6,
-      "ctr": "0%"
-    },
-    "Mo93x0fxB1Q": {
-      "impressions": 13,
-      "ctr": "0%"
-    },
-    "ojk-dfOpAmw": {
-      "impressions": 16,
-      "ctr": "0%"
-    }
+    "DN4L1DkerMM": {"impressions": 95, "ctr": "1.1%"},
+    "PV50PX-bE4g": {"impressions": 7, "ctr": "0%"},
+    "l1d1ypHxLk0": {"impressions": 7, "ctr": "14.3%"},
+    "M-VN84HCNls": {"impressions": 17, "ctr": "0%"},
+    "68uTDP2esso": {"impressions": 46, "ctr": "0%"},
+    "SC2WGTl_V5Q": {"impressions": 13, "ctr": "0%"},
+    "9lLZMy8rBJo": {"impressions": 90, "ctr": "4.4%"},
+    "CkSECfUfH2Y": {"impressions": 28, "ctr": "7.1%"},
+    "Yk1tLh23rko": {"impressions": 202, "ctr": "2.5%"},
+    "REXYxuLOBoI": {"impressions": 142, "ctr": "2.8%"},
+    "NbW5G1BpPY0": {"impressions": 68, "ctr": "1.5%"},
+    "3xrxdmaOwJI": {"impressions": 6, "ctr": "0%"},
+    "Mo93x0fxB1Q": {"impressions": 13, "ctr": "0%"},
+    "ojk-dfOpAmw": {"impressions": 16, "ctr": "0%"}
   },
   "rows": [
     {
       "id": "DN4L1DkerMM",
       "kind": "short A",
       "mode": "swap",
-      "pick": "\u2014",
+      "pick": "RUNNING OUT OF STARS",
       "status": "NEEDS PLATE",
+      "why": "burned-in captions mid-frame on every Studio pick; bottom crop insufficient",
       "old": "old/old_DN4L1DkerMM.jpg",
       "news": []
     },
@@ -73,17 +33,20 @@
       "id": "PV50PX-bE4g",
       "kind": "short A",
       "mode": "swap",
-      "pick": "\u2014",
-      "status": "NEEDS PLATE",
+      "pick": "NO LIGHT",
+      "status": "READY",
+      "plate": "picks/PV50PX-bE4g_1.jpg",
       "old": "old/old_PV50PX-bE4g.jpg",
-      "news": []
+      "news": ["shorts/cover_PV50PX-bE4g.jpg"],
+      "preview": "previews/short_PV50PX-bE4g.jpg"
     },
     {
       "id": "l1d1ypHxLk0",
       "kind": "short A",
       "mode": "swap",
-      "pick": "\u2014",
+      "pick": "TOO EARLY",
       "status": "NEEDS PLATE",
+      "why": "burned-in 'cosmically young' over galaxy core — cannot crop/paint cleanly",
       "old": "old/old_l1d1ypHxLk0.jpg",
       "news": []
     },
@@ -91,28 +54,34 @@
       "id": "M-VN84HCNls",
       "kind": "short A",
       "mode": "swap",
-      "pick": "\u2014",
-      "status": "NEEDS PLATE",
+      "pick": "DIAMOND PLANETS",
+      "status": "READY",
+      "plate": "picks/M-VN84HCNls_1.jpg (Orbit in frame OK for Shorts)",
       "old": "old/old_M-VN84HCNls.jpg",
-      "news": []
+      "news": ["shorts/cover_M-VN84HCNls.jpg"],
+      "preview": "previews/short_M-VN84HCNls.jpg"
     },
     {
       "id": "68uTDP2esso",
       "kind": "short A",
       "mode": "swap",
-      "pick": "\u2014",
-      "status": "NEEDS PLATE",
+      "pick": "A HIDDEN SECRET",
+      "status": "READY",
+      "plate": "picks/68uTDP2esso_1.jpg (Orbit in frame OK for Shorts)",
       "old": "old/old_68uTDP2esso.jpg",
-      "news": []
+      "news": ["shorts/cover_68uTDP2esso.jpg"],
+      "preview": "previews/short_68uTDP2esso.jpg"
     },
     {
       "id": "SC2WGTl_V5Q",
       "kind": "short A",
       "mode": "swap",
-      "pick": "\u2014",
-      "status": "NEEDS PLATE",
+      "pick": "GLASS RAIN",
+      "status": "READY",
+      "plate": "picks/SC2WGTl_V5Q_1.jpg (Orbit in frame OK for Shorts)",
       "old": "old/old_SC2WGTl_V5Q.jpg",
-      "news": []
+      "news": ["shorts/cover_SC2WGTl_V5Q.jpg"],
+      "preview": "previews/short_SC2WGTl_V5Q.jpg"
     },
     {
       "id": "9lLZMy8rBJo",
@@ -120,10 +89,9 @@
       "mode": "swap",
       "pick": "WHAT REMAINS?",
       "status": "READY",
+      "plate": "prior plate_9lLZMy8rBJo.jpg (no new pick)",
       "old": "old/old_9lLZMy8rBJo.jpg",
-      "news": [
-        "shorts/cover_9lLZMy8rBJo.jpg"
-      ],
+      "news": ["shorts/cover_9lLZMy8rBJo.jpg"],
       "preview": "previews/short_9lLZMy8rBJo.jpg"
     },
     {
@@ -132,10 +100,9 @@
       "mode": "swap",
       "pick": "SKY GOING DARK",
       "status": "READY",
+      "plate": "prior plate_CkSECfUfH2Y.jpg (no new pick)",
       "old": "old/old_CkSECfUfH2Y.jpg",
-      "news": [
-        "shorts/cover_CkSECfUfH2Y.jpg"
-      ],
+      "news": ["shorts/cover_CkSECfUfH2Y.jpg"],
       "preview": "previews/short_CkSECfUfH2Y.jpg"
     },
     {
@@ -143,8 +110,9 @@
       "kind": "long Neutron",
       "mode": "swap",
       "pick": "B CRUSHED FLAT",
-      "why": "2 words, body impossibility; Studio has no T&C",
+      "why": "2 words, body impossibility; Studio has no T&C; plate Yk1t_1 cracked crust",
       "status": "READY",
+      "plate": "picks/Yk1tLh23rko_1.jpg",
       "old": "old/old_Yk1tLh23rko.jpg",
       "news": [
         "longs/cover_B_Yk1tLh23rko.jpg",
@@ -158,8 +126,9 @@
       "kind": "long Last Star",
       "mode": "swap",
       "pick": "B LAST LIGHT",
-      "why": "adds to title; wonder not dread",
+      "why": "adds to title; wonder not dread; plate REXY_1 glowing red dying star",
       "status": "READY",
+      "plate": "picks/REXYxuLOBoI_1.jpg",
       "old": "old/old_REXYxuLOBoI.jpg",
       "news": [
         "longs/cover_B_REXYxuLOBoI.jpg",
@@ -173,8 +142,9 @@
       "kind": "long Europa",
       "mode": "swap",
       "pick": "B A HIDDEN OCEAN",
-      "why": "hidden shape matches film",
+      "why": "hidden shape matches film; plate NbW5_1 Europa + Jupiter, no Orbit",
       "status": "READY",
+      "plate": "picks/NbW5G1BpPY0_1.jpg",
       "old": "old/old_NbW5G1BpPY0.jpg",
       "news": [
         "longs/cover_B_NbW5G1BpPY0.jpg",
@@ -187,11 +157,16 @@
       "id": "3xrxdmaOwJI",
       "kind": "long Black Hole",
       "mode": "swap",
-      "pick": "B NO WAY OUT (when plate ready)",
-      "why": "stronger than repeating FALLING IN?",
-      "status": "NEEDS PLATE",
+      "pick": "B NO WAY OUT",
+      "why": "stronger than repeating FALLING IN?; plate 3xrx_1 event horizon, no Orbit",
+      "status": "READY",
+      "plate": "picks/3xrxdmaOwJI_1.jpg",
       "old": "old/old_3xrxdmaOwJI.jpg",
-      "news": [],
+      "news": [
+        "longs/cover_B_3xrxdmaOwJI.jpg",
+        "longs/cover_C_3xrxdmaOwJI.jpg"
+      ],
+      "preview": "previews/long_B_3xrxdmaOwJI.jpg",
       "star": "B"
     },
     {
@@ -199,8 +174,9 @@
       "kind": "long Fermi",
       "mode": "swap",
       "pick": "C SILENCE",
-      "why": "one word, phone-readable; biggest break from EVERYBODY?",
+      "why": "one word, phone-readable; biggest break from EVERYBODY?; plate Mo93_1 lone figure under Milky Way",
       "status": "READY",
+      "plate": "picks/Mo93x0fxB1Q_1.jpg (C); picks/Mo93x0fxB1Q_2.jpg (B radio dish)",
       "old": "old/old_Mo93x0fxB1Q.jpg",
       "news": [
         "longs/cover_B_Mo93x0fxB1Q.jpg",
@@ -214,12 +190,11 @@
       "kind": "long Andromeda",
       "mode": "swap",
       "pick": "REP WHEN THEY MEET",
-      "why": "COMING FOR US? confirmed; straight replacement",
+      "why": "COMING FOR US? confirmed; straight replacement; plate ojk_1 Andromeda + Milky Way side by side",
       "status": "READY",
+      "plate": "picks/ojk-dfOpAmw_1.jpg",
       "old": "old/old_ojk-dfOpAmw.jpg",
-      "news": [
-        "longs/cover_REP_ojk-dfOpAmw.jpg"
-      ],
+      "news": ["longs/cover_REP_ojk-dfOpAmw.jpg"],
       "preview": "previews/long_REP_ojk-dfOpAmw.jpg",
       "star": "REP"
     },
@@ -228,8 +203,9 @@
       "kind": "long Jupiter",
       "mode": "swap",
       "pick": "(after public / plate check)",
-      "why": "Studio Ineligible for T&C until public",
+      "why": "Studio Ineligible for T&C until public; pick -jmMROGoZCM_1 held for later Jupiter check only — not applied",
       "status": "DEFERRED",
+      "plate": "picks/-jmMROGoZCM_1.jpg (not applied)",
       "old": null,
       "news": []
     }

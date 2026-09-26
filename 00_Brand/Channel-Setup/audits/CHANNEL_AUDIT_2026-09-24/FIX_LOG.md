@@ -24,10 +24,11 @@ Studio / live YouTube were **not** touched for thumbs or titles. No deletes.
 
 ### Thumbnail refresh (see `../THUMBNAIL_TITLE_AUDIT_2026-09-25/REFRESH_LOG.md`)
 
-- Batch A Shorts: 2 built (`9lLZMy8rBJo`, `CkSECfUfH2Y`); 6 **NEEDS PLATE**.
-- Batch B longs: variants built; **apply mode = swap** for every long (T&C not available on `Yk1tLh23rko`; Jupiter Ineligible until public). Swap picks: Neutron **B**, Last Star **B**, Europa **B**, Black Hole **B** (after plate), Fermi **C**, Andromeda **REP WHEN THEY MEET**.
+- **v02 (26 Sep):** rebuilt on Studio plate picks (`orbit-thumb-plates/picks/`). Full-bleed; no black scrub box; no ghost text. Builder `build_thumb_refresh_v02_plates.py`. v01 scrubbed builds discarded.
+- Batch A Shorts: 6 built (`PV50PX-bE4g`, `M-VN84HCNls`, `68uTDP2esso`, `SC2WGTl_V5Q`, `9lLZMy8rBJo`, `CkSECfUfH2Y`); **NEEDS PLATE** only `DN4L1DkerMM` + `l1d1ypHxLk0` (burned-in captions).
+- Batch B longs: all B/C (and Andromeda REP) built on pick plates including Black Hole (no longer NEEDS PLATE). **apply mode = swap**. Swap picks: Neutron **B**, Last Star **B**, Europa **B**, Black Hole **B**, Fermi **C**, Andromeda **REP**. Jupiter pick held, not applied.
 - Baselines (28 Aug–24 Sep Studio) in REFRESH_LOG with **swap date** / **day-14 CTR** columns (blank until Ben applies).
-- Contact sheets page 1–2 mark each row `APPLY: SWAP` and yellow-border the pick.
+- Contact sheets page 1–2 mark each row `APPLY: SWAP` and yellow-border the pick. Artifacts: `/opt/cursor/artifacts/thumb-refresh-2026-09-25/`.
 - Left alone: `2fsQcea-voM`, `ziKBPJ6FY0U`, `b8-X_FyJnHM`.
 
 ### Titles (propose only — Ben approves before save)
