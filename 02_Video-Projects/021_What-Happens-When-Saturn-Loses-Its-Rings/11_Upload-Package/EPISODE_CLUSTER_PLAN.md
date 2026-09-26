@@ -77,7 +77,7 @@ Not overlapping Jupiter fall long, Europa ice ocean, or Moon recession. One Satu
 |--------|------:|
 | Topic opportunity | 8.8 / 10 hand (`NEXT_LONG_TOPIC_2026-10-11.md`) |
 | Experiential framing | high |
-| Script reviewer | **90.4 / 100 PASS** |
+| Script reviewer | **90 / 100 PASS** |
 | Episode gate | **PASS** |
 | Title (vidIQ) | vidIQ not available - to fill in Studio |
 

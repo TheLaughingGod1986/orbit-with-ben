@@ -7,7 +7,7 @@
 | project_dir | OK | Project: /workspace/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings |
 | prebuild_vidiq | OK | Pre-build vidIQ audit present and looks signed off. |
 | script_file | OK | Script: 01_Script/saturn_rings_script_master_v01.md |
-| script_review | OK | Script reviewer PASS 90.4/90 (need ≥90). |
+| script_review | OK | Script reviewer PASS 90/90 (need ≥90). |
 | orbit_acts | OK | [ORBIT ACTS] count 2 (need ≥1). |
 | subscribe_beat | OK | Subscribe beat at 44% (15 words): "We make one of these every week. Subscribing is how the next one finds you." |
 | visual_must | OK | [VISUAL MUST] count 12 (need ≥4). |
@@ -15,7 +15,7 @@
 | chapters | OK | [CHAPTER CARD] count 5 (aim 4–6 film acts). |
 | production_checklist | OK | Checklist present: 11_Upload-Package/PRODUCTION_CHECKLIST_V2.md |
 
-Script score: **90.4/100** · PASS
+Script score: **90/100** · PASS
 
-Cold open: Saturn is losing its rings. Why are they falling? In this film I will show you why the fall has already started, what the rings looked like when they were new, and what Saturn looks like when they are…
+Cold open: Saturn is losing its rings. Right now the fall has started: ice from that bright sheet is raining into the planet. How long does it have? Stay with me and you'll see where it goes, what the rings look…
 

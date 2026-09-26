@@ -84,7 +84,7 @@ cd 07_Content-Ops && npm run review:script -- --file \
   ../02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/01_Script/saturn_rings_script_master_v01.md
 ```
 
-**Result:** **PASS 90.4 / 100** (2026-09-26) · artifact `01_Script/SCRIPT_REVIEW_v01.md` · gate `11_Upload-Package/EPISODE_GATE_v01.md` **PASS**
+**Result:** **PASS 90 / 100** (2026-09-26) · artifact `01_Script/SCRIPT_REVIEW_v01.md` · gate `11_Upload-Package/EPISODE_GATE_v01.md` **PASS**
 
 ---
 

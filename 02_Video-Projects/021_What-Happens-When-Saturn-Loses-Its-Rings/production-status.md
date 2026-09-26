@@ -7,7 +7,7 @@
 | Air target | Sun 11 Oct 2026, 18:00 UK (normal publish) |
 | Upload history | **Clean** — never uploaded or scheduled |
 | Gate | **PASS** (`11_Upload-Package/EPISODE_GATE_v01.md`) |
-| Script review | **90.4 / 100 PASS** (`01_Script/SCRIPT_REVIEW_v01.md`) |
+| Script review | **90 / 100 PASS** (`01_Script/SCRIPT_REVIEW_v01.md`) |
 | VO | **stale / do not ship** — prior `02_Voiceover` was for pre-rewrite script; await Ben OK then regenerate |
 | CG | pending (AI Studio: Veo world / Omni Orbit-only) — await Ben OK |
 | Runtime target | 8–9 min |

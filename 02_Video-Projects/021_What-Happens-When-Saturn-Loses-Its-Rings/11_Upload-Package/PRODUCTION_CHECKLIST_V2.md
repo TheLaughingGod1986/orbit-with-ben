@@ -2,7 +2,7 @@
 
 **Episode:** 021 — What Happens When Saturn Loses Its Rings?  
 **Date:** 2026-09-26 (step 2 package)  
-**Script review score:** **90.4** / 100 (must be 90 or more)
+**Script review score:** **90** / 100 (must be 90 or more)
 
 Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.md` · `THUMBNAIL_AND_TITLE_RULES.md`
 
