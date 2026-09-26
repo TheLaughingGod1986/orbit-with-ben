@@ -9,7 +9,7 @@
 | Studio Related | **TODO Step 7:** set Related → the Saturn long's YouTube id **after** that long is uploaded. Id does not exist yet — **do not guess / do not point at another film.** |
 | Frame 0 | **World plate only** — ring sheet raining inward. Orbit arrives ~1.5 s. `gate_shorts_open.py` must PASS (fails Orbit at 0 s). |
 | Test week | Week 1 baseline — six opening rules; spoken end line as today |
-| Spoken words | 54 · about 23 s voice · about 27 s with loop hold |
+| Spoken words | 53 · about 23 s voice · about 27 s with loop hold |
 | Hook caption (frame 0) | IT'S **FALLING** (yellow on FALLING) |
 | Thumb (custom) | Pale ring blade, ice streaming in · yellow **FALLING** · white "HOW LONG?" · no Orbit |
 | Opening plate | **New** — edge-on Saturn ring sheet with ice grains already streaming planetward. Not Europa ice, not Moon drift, **not Orbit at 0 s**. |
