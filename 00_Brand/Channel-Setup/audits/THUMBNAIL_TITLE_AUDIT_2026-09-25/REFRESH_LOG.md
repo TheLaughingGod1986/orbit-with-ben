@@ -26,8 +26,8 @@ v01 “current bg scrubbed” produced flat black rectangles with ghost text (e.
 | `M-VN84HCNls` | DIAMOND PLANETS | 26 Sep 09:12 | 17 / 0% | v02 |
 | `68uTDP2esso` | A HIDDEN SECRET | 26 Sep 09:13 | 46 / 0% | v02 |
 | `SC2WGTl_V5Q` | GLASS RAIN | 26 Sep 09:14 | 13 / 0% | v02 |
-| `9lLZMy8rBJo` | WHAT REMAINS? | 26 Sep 2026 BST (live; minute not in Ben paste) | 90 / 4.4% | **rebuild_v2** |
-| `CkSECfUfH2Y` | SKY GOING DARK | 26 Sep 2026 BST (live; minute not in Ben paste) | 28 / 7.1% | **rebuild_v2** |
+| `9lLZMy8rBJo` | WHAT REMAINS? | 26 Sep 09:18 BST | 90 / 4.4% | **rebuild_v2** |
+| `CkSECfUfH2Y` | SKY GOING DARK | 26 Sep 09:18 BST | 28 / 7.1% | **rebuild_v2** |
 
 Jupiter `-jmMROGoZCM` pick `_1` held for later check only — **not applied**.
 
@@ -79,8 +79,8 @@ Recorded before any swap. Swap times (BST) in `SWAP_LOG.md`. Fill **day-14 CTR**
 | `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | **SWAPPED** · v02 | swapped | 26 Sep 09:12 BST | 17 | 0% |  |
 | `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | **SWAPPED** · v02 | swapped | 26 Sep 09:13 BST | 46 | 0% |  |
 | `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | **SWAPPED** · v02 | swapped | 26 Sep 09:14 BST | 13 | 0% |  |
-| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | **SWAPPED** · **rebuild_v2** (crop below caption; no inpaint) | swapped | 26 Sep 2026 BST | 90 | 4.4% |  |
-| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | **SWAPPED** · **rebuild_v2** (crop above CTA; no inpaint) | swapped | 26 Sep 2026 BST | 28 | 7.1% |  |
+| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | **SWAPPED** · **rebuild_v2** (crop below caption; no inpaint) | swapped | 26 Sep 09:18 BST | 90 | 4.4% |  |
+| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | **SWAPPED** · **rebuild_v2** (crop above CTA; no inpaint) | swapped | 26 Sep 09:18 BST | 28 | 7.1% |  |
 
 ## Batch B — longs
 

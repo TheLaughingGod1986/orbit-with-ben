@@ -2,7 +2,7 @@
 
 Baseline window 28 Aug–24 Sep (impressions / CTR). **14-day CTR compare date: 10 Oct 2026.**
 
-Source: Ben’s Studio desktop upload log. `9lLZMy8rBJo` and `CkSECfUfH2Y` use **rebuild_v2** plates (crop-scale, no inpaint); exact BST minutes were not in Ben’s paste — date confirmed live 26 Sep.
+Source: Ben’s Studio desktop upload log. `9lLZMy8rBJo` and `CkSECfUfH2Y` use **rebuild_v2** plates (crop-scale, no inpaint); both swapped 26 Sep 09:18 BST.
 
 | id | new | swapped (BST) | baseline | plate |
 |---|---|---|---|---|
@@ -16,5 +16,5 @@ Source: Ben’s Studio desktop upload log. `9lLZMy8rBJo` and `CkSECfUfH2Y` use *
 | M-VN84HCNls | DIAMOND PLANETS | 26 Sep 09:12 | 17 / 0% | v02 |
 | 68uTDP2esso | A HIDDEN SECRET | 26 Sep 09:13 | 46 / 0% | v02 |
 | SC2WGTl_V5Q | GLASS RAIN | 26 Sep 09:14 | 13 / 0% | v02 |
-| 9lLZMy8rBJo | WHAT REMAINS? | 26 Sep 2026 BST (live; minute not in paste) | 90 / 4.4% | **rebuild_v2** |
-| CkSECfUfH2Y | SKY GOING DARK | 26 Sep 2026 BST (live; minute not in paste) | 28 / 7.1% | **rebuild_v2** |
+| 9lLZMy8rBJo | WHAT REMAINS? | 26 Sep 09:18 | 90 / 4.4% | **rebuild_v2** |
+| CkSECfUfH2Y | SKY GOING DARK | 26 Sep 09:18 | 28 / 7.1% | **rebuild_v2** |
