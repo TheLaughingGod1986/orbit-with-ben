@@ -62,3 +62,4 @@ Proposed final in `REFRESH_LOG.md` / `PINNED_COMMENTS.json`. `commentId` empty u
 ### Shorts sweep
 
 Graded other public Shorts; failures in `REFRESH_LOG.md` / `refresh/sweep/SWEEP_GRADE.json`. **Not built.**
+- **SWAPPED live 26 Sep 2026** (Studio desktop, outright replace): all 12 approved thumbs. Times/baselines in `../THUMBNAIL_TITLE_AUDIT_2026-09-25/SWAP_LOG.md`. Day-14 CTR compare **10 Oct 2026**. `9lLZ`/`CkSE` = rebuild_v2.
