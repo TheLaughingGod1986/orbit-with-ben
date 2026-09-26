@@ -15,7 +15,21 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[3]
-FONT_PATH = "/System/Library/Fonts/Supplemental/Arial Black.ttf"
+
+
+def _resolve_font() -> str:
+    for p in (
+        "/System/Library/Fonts/Supplemental/Arial Black.ttf",
+        "/Library/Fonts/Arial Black.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    ):
+        if Path(p).exists():
+            return p
+    raise SystemExit("Missing heavy sans font (Arial Black / Liberation / DejaVu Bold)")
+
+
+FONT_PATH = _resolve_font()
 W, H = 1080, 1920
 YELLOW = (255, 230, 0)  # house yellow — Astrum uses cyan; we do not
 WHITE = (255, 255, 255)
