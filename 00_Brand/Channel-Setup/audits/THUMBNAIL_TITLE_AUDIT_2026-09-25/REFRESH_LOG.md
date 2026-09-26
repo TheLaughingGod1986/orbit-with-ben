@@ -10,7 +10,7 @@ Builder: `tools/build_thumb_refresh_2026_09_25.py`. Spec: `refresh/JOBS.json` ·
 
 ## Baseline CTR (Studio, last 28 days, 28 Aug–24 Sep 2026)
 
-Record before any swap. Re-check the same window shape **14 days after** each swap.
+Recorded before any swap (Studio last 28 days, 28 Aug–24 Sep 2026). On the day you swap, write that date in the Batch A/B **swap date** column (baseline columns stay as below). Fill **day-14 CTR** from Studio fourteen days later for a fair comparison.
 
 | id | impressions | CTR |
 |---|---:|---:|
@@ -46,32 +46,37 @@ Record before any swap. Re-check the same window shape **14 days after** each sw
 
 ## Batch A — Shorts
 
-| id | old text | new text | plate source | preview | apply | baseline impr/CTR | date applied | 14d CTR |
-|---|---|---|---|---|---|---|---|---|
-| `DN4L1DkerMM` | THIS OCEAN / SHOULDN'T EXIST (wrong Europa plate) | RUNNING OUT OF / STARS | AI Studio needed | NEEDS PLATE | swap | 95 / 1.1% |  |  |
-| `PV50PX-bE4g` | (Orbit reference grid / no hook) | NO / LIGHT | AI Studio needed | NEEDS PLATE | swap | 7 / 0% |  |  |
-| `l1d1ypHxLk0` | next to / 13.8 billion | TOO / EARLY | AI Studio needed | NEEDS PLATE | swap | 7 / 14.3% |  |  |
-| `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | AI Studio needed | NEEDS PLATE | swap | 17 / 0% |  |  |
-| `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | AI Studio needed | NEEDS PLATE | swap | 46 / 0% |  |  |
-| `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | AI Studio needed | NEEDS PLATE | swap | 13 / 0% |  |  |
-| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | current bg scrubbed from oar2_9lLZMy8rBJo.jpg | BUILT preview PASS | swap | 90 / 4.4% |  |  |
-| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | current bg scrubbed from oar2_CkSECfUfH2Y.jpg | BUILT preview PASS | swap | 28 / 7.1% |  |  |
+Before each swap: fill **swap date**, keep the Studio baseline (28 Aug–24 Sep 2026), leave **day-14 CTR** blank until +14 days.
+
+| id | old text | new text | plate / preview | apply | swap date | baseline impressions | baseline CTR | day-14 CTR |
+|---|---|---|---|---|---|---:|---:|---|
+| `DN4L1DkerMM` | THIS OCEAN / SHOULDN'T EXIST (wrong Europa) | RUNNING OUT OF / STARS | NEEDS PLATE | swap |  | 95 | 1.1% |  |
+| `PV50PX-bE4g` | (Orbit grid / no hook) | NO / LIGHT | NEEDS PLATE | swap |  | 7 | 0% |  |
+| `l1d1ypHxLk0` | next to / 13.8 billion | TOO / EARLY | NEEDS PLATE | swap |  | 7 | 14.3% |  |
+| `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | NEEDS PLATE | swap |  | 17 | 0% |  |
+| `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | NEEDS PLATE | swap |  | 46 | 0% |  |
+| `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | NEEDS PLATE | swap |  | 13 | 0% |  |
+| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | current bg scrubbed · preview PASS | swap |  | 90 | 4.4% |  |
+| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | current bg scrubbed · preview PASS | swap |  | 28 | 7.1% |  |
 
 ## Batch B — longs (variants built; apply = swap until T&C confirmed)
 
-| id | variant | old text | new text | plate source | preview | apply / pick | baseline impr/CTR | date applied | 14d CTR |
-|---|---|---|---|---|---|---|---|---|---|
-| `Yk1tLh23rko` | B ★ | YOUR BODY / NEAR A NEUTRON STAR | CRUSHED / FLAT | current bg (scrub) from old_Yk1tLh23rko.jpg | BUILT preview PASS | **swap → B** | 202 / 2.5% |  |  |
-| `Yk1tLh23rko` | C | YOUR BODY / NEAR A NEUTRON STAR | YOU'D BE / FLAT | current bg (scrub) from old_Yk1tLh23rko.jpg | BUILT preview PASS | (alt) | 202 / 2.5% |  |  |
-| `REXYxuLOBoI` | B ★ | WHEN THE LAST STAR DIES | LAST / LIGHT | current bg (scrub) from old_REXYxuLOBoI.jpg — asteroid field interim | BUILT preview PASS | **swap → B** | 142 / 2.8% |  |  |
-| `REXYxuLOBoI` | C | WHEN THE LAST STAR DIES | THEN / DARK | current bg (scrub) from old_REXYxuLOBoI.jpg | BUILT preview PASS | (alt) | 142 / 2.8% |  |  |
-| `NbW5G1BpPY0` | B ★ | LIFE UNDER THE ICE / MORE WATER THAN EARTH | A HIDDEN / OCEAN | current bg (scrub) from old_NbW5G1BpPY0.jpg | BUILT preview PASS | **swap → B** | 68 / 1.5% |  |  |
-| `NbW5G1BpPY0` | C | LIFE UNDER THE ICE / MORE WATER THAN EARTH | OCEAN / BELOW | current bg (scrub) from old_NbW5G1BpPY0.jpg | BUILT preview PASS | (alt) | 68 / 1.5% |  |  |
-| `3xrxdmaOwJI` | B ★ | FALLING IN? (with Orbit) | NO WAY / OUT | AI Studio needed | NEEDS PLATE | **swap → B** (after plate) | 6 / 0% |  |  |
-| `3xrxdmaOwJI` | C | FALLING IN? (with Orbit) | FALLING / IN? | AI Studio needed | NEEDS PLATE | (alt) | 6 / 0% |  |  |
-| `Mo93x0fxB1Q` | B | WHERE IS EVERYBODY? (with Orbit) | WHERE IS / EVERYONE? | current bg (crop_left_hard) from old_Mo93x0fxB1Q.jpg | BUILT preview PASS | (alt) | 13 / 0% |  |  |
-| `Mo93x0fxB1Q` | C ★ | WHERE IS EVERYBODY? (with Orbit) | SILENCE | current bg (crop_left_hard) from old_Mo93x0fxB1Q.jpg | BUILT preview PASS | **swap → C** | 13 / 0% |  |  |
-| `ojk-dfOpAmw` | REP ★ | COMING FOR US? | WHEN THEY / MEET | current bg (scrub) from old_ojk-dfOpAmw.jpg | BUILT preview PASS | **swap → REP** | 16 / 0% |  |  |
+★ = swap pick. Before each swap: fill **swap date**; baselines are Studio last-28-days (28 Aug–24 Sep 2026). Leave **day-14 CTR** blank until +14 days after that swap date. One long at a time.
+
+| id | variant | new text | plate / preview | apply | swap date | baseline impressions | baseline CTR | day-14 CTR |
+|---|---|---|---|---|---|---:|---:|---|
+| `Yk1tLh23rko` | B ★ | CRUSHED / FLAT | scrubbed current · PASS | **swap → B** |  | 202 | 2.5% |  |
+| `Yk1tLh23rko` | C | YOU'D BE / FLAT | scrubbed current · PASS | (alt) | — | 202 | 2.5% | — |
+| `REXYxuLOBoI` | B ★ | LAST / LIGHT | scrubbed current (asteroid interim) · PASS | **swap → B** |  | 142 | 2.8% |  |
+| `REXYxuLOBoI` | C | THEN / DARK | scrubbed current · PASS | (alt) | — | 142 | 2.8% | — |
+| `NbW5G1BpPY0` | B ★ | A HIDDEN / OCEAN | scrubbed current · PASS | **swap → B** |  | 68 | 1.5% |  |
+| `NbW5G1BpPY0` | C | OCEAN / BELOW | scrubbed current · PASS | (alt) | — | 68 | 1.5% | — |
+| `3xrxdmaOwJI` | B ★ | NO WAY / OUT | NEEDS PLATE | **swap → B** (after plate) |  | 6 | 0% |  |
+| `3xrxdmaOwJI` | C | FALLING / IN? | NEEDS PLATE | (alt) | — | 6 | 0% | — |
+| `Mo93x0fxB1Q` | B | WHERE IS / EVERYONE? | crop_left scrub · PASS | (alt) | — | 13 | 0% | — |
+| `Mo93x0fxB1Q` | C ★ | SILENCE | crop_left scrub · PASS | **swap → C** |  | 13 | 0% |  |
+| `ojk-dfOpAmw` | REP ★ | WHEN THEY / MEET | scrubbed current · PASS | **swap → REP** |  | 16 | 0% |  |
+| `-jmMROGoZCM` | — | (pick after thumb preview) | private / thumbs missing | **swap** when public |  | — | — |  |
 
 ## NEEDS PLATE
 
