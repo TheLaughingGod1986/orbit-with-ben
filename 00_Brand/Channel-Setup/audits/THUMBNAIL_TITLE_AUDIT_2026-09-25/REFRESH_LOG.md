@@ -26,8 +26,8 @@ v01 “current bg scrubbed” produced flat black rectangles with ghost text (e.
 | `M-VN84HCNls` | DIAMOND PLANETS | `swap_M-VN84HCNls.jpg` |
 | `68uTDP2esso` | A HIDDEN SECRET | `swap_68uTDP2esso.jpg` |
 | `SC2WGTl_V5Q` | GLASS RAIN | `swap_SC2WGTl_V5Q.jpg` |
-| `9lLZMy8rBJo` | WHAT REMAINS? | `swap_9lLZMy8rBJo.jpg` (rebuild: owner mp4 rings plate; burned-in captions inpainted) |
-| `CkSECfUfH2Y` | SKY GOING DARK | `swap_CkSECfUfH2Y.jpg` (rebuild: owner mp4 eye ~1 s; burned-in captions inpainted) |
+| `9lLZMy8rBJo` | WHAT REMAINS? | `swap_9lLZMy8rBJo.jpg` (rebuild_v2: crop below caption; no inpaint) |
+| `CkSECfUfH2Y` | SKY GOING DARK | `swap_CkSECfUfH2Y.jpg` (rebuild_v2: crop above CTA; no inpaint) |
 
 Jupiter `-jmMROGoZCM` pick `_1` held for later check only — **not applied**.
 
@@ -79,8 +79,8 @@ Before each swap: fill **swap date**, keep the Studio baseline (28 Aug–24 Sep 
 | `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | **APPROVED** Ben 26 Sep · **swap pending** · `swap_M-VN84HCNls.jpg` | swap |  | 17 | 0% |  |
 | `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | **APPROVED** Ben 26 Sep · **swap pending** · `swap_68uTDP2esso.jpg` | swap |  | 46 | 0% |  |
 | `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | **APPROVED** Ben 26 Sep · **swap pending** · `swap_SC2WGTl_V5Q.jpg` | swap |  | 13 | 0% |  |
-| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | **APPROVED** Ben 26 Sep (rebuild on real frames) · **swap pending** · rings plate from owner mp4 · preview PASS · `swap_9lLZMy8rBJo.jpg` | swap |  | 90 | 4.4% |  |
-| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | **APPROVED** Ben 26 Sep (rebuild on real frames) · **swap pending** · eye plate ~1 s from owner mp4 · preview PASS · `swap_CkSECfUfH2Y.jpg` | swap |  | 28 | 7.1% |  |
+| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | **APPROVED** Ben 26 Sep · **swap pending** · rebuild_v2 crop below burned caption (no inpaint) · preview PASS · `swap_9lLZMy8rBJo.jpg` | swap |  | 90 | 4.4% |  |
+| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | **APPROVED** Ben 26 Sep · **swap pending** · rebuild_v2 crop above bottom CTA (no inpaint) · preview PASS · `swap_CkSECfUfH2Y.jpg` | swap |  | 28 | 7.1% |  |
 
 ## Batch B — longs (variants built; apply = swap until T&C confirmed)
 

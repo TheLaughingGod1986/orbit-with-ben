@@ -31,7 +31,7 @@ Studio / live YouTube were **not** touched for thumbs or titles. No deletes.
 - Contact sheets page 1–2 mark each row `APPLY: SWAP` and yellow-border the pick. Artifacts: `/opt/cursor/artifacts/thumb-refresh-2026-09-25/`.
 - Left alone: `2fsQcea-voM`, `ziKBPJ6FY0U`, `b8-X_FyJnHM`.
 - **Ben APPROVED 10 v02 picks (26 Sep)** — status **swap pending**. Finals in `/opt/cursor/artifacts/thumb-final-2026-09-26/`.
-- **Rebuild follow-up (26 Sep):** `9lLZMy8rBJo` + `CkSECfUfH2Y` rebuilt on owner mp4 frames (burned-in captions inpainted; no Orbit; full-bleed v02 house). Both APPROVED · swap pending · exported to same finals folder.
+- **Rebuild follow-up (26 Sep):** `9lLZMy8rBJo` + `CkSECfUfH2Y` rebuild_v2 — crop-scale caption-free regions (no inpaint). Full-bleed v02 house. APPROVED · swap pending. Bundle: `/opt/cursor/artifacts/rebuild_v2_2026-09-26.zip`.
 
 ### Titles (propose only — Ben approves before save)
 
