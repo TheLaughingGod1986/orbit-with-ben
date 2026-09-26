@@ -1,14 +1,32 @@
 # Channel audit fix log — 24 Sep 2026
 
-## Prepared, not applied (25–26 Sep 2026 cloud agent)
+## Retire Andromeda leftovers (26 Sep 2026) — **merged to main**
 
-Studio / live YouTube were **not** touched (except reading public pages). Branch work only. No deletes.
+Eleven private, unscheduled, 0-view Andromeda Shorts (uploaded 19 Sep) marked **`retired`** in `audits/shorts_open_library/library.json`. **Nothing deleted. No Studio changes.** Landed on main as squash commit `346d3938ee2b3c80e60cb608ffa99a19fa5384e9` ([PR #85](https://github.com/TheLaughingGod1986/orbit-with-ben/pull/85)) so the Mac mini and every cloud agent share the same gate list.
+
+| id | result |
+|---|---|
+| `H5_NNc4NerQ` | added as retired |
+| `E9xOElWqdrw` | added as retired |
+| `_UF-SIUTWhY` | added as retired |
+| `7YFfY4MdB6c` | added as retired |
+| `NQM6gmGl6T4` | added as retired |
+| `k7s_ZAx51xA` | added as retired |
+| `_ggpawFj1ms` | added as retired |
+| `Mub_GCIVmjY` | added as retired |
+| `K63TbhGNnOY` | added as retired |
+| `Dg9BWDmLSYo` | added as retired |
+| `GrT3wO_bdEU` | added as retired |
+
+## Prepared, not applied (25–26 Sep 2026) — thumbnail branch
+
+Studio / live YouTube were **not** touched for thumbs or titles. No deletes.
 
 ### Thumbnail refresh (see `../THUMBNAIL_TITLE_AUDIT_2026-09-25/REFRESH_LOG.md`)
 
 - Batch A Shorts: 2 built (`9lLZMy8rBJo`, `CkSECfUfH2Y`); 6 **NEEDS PLATE**.
 - Batch B longs: variants built; **apply mode = swap** for every long (T&C not available on `Yk1tLh23rko`; Jupiter Ineligible until public). Swap picks: Neutron **B**, Last Star **B**, Europa **B**, Black Hole **B** (after plate), Fermi **C**, Andromeda **REP WHEN THEY MEET**.
-- Baselines (28 Aug–24 Sep Studio) logged in REFRESH_LOG. Compare 14-day CTR after each swap.
+- Baselines (28 Aug–24 Sep Studio) in REFRESH_LOG with **swap date** / **day-14 CTR** columns (blank until Ben applies).
 - Contact sheets page 1–2 mark each row `APPLY: SWAP` and yellow-border the pick.
 - Left alone: `2fsQcea-voM`, `ziKBPJ6FY0U`, `b8-X_FyJnHM`.
 
@@ -41,27 +59,3 @@ Proposed final in `REFRESH_LOG.md` / `PINNED_COMMENTS.json`. `commentId` empty u
 ### Shorts sweep
 
 Graded other public Shorts; failures in `REFRESH_LOG.md` / `refresh/sweep/SWEEP_GRADE.json`. **Not built.**
-
-### Retire Andromeda leftovers (26 Sep 2026) — gate library only
-
-Eleven private, unscheduled, 0-view Andromeda Shorts (uploaded 19 Sep) marked **`retired`** in `audits/shorts_open_library/library.json` so the open gate stops comparing them. **Nothing deleted. No Studio / privacy / schedule changes.**
-
-They were **not** already in the library, so each was added via:
-
-`gate_shorts_open.py add --id <id> --date 2026-09-19 --title "Andromeda leftover (private, unscheduled, 0 views)" --frame <black placeholder> --source retired_leftover_19sep_placeholder --status retired`
-
-| id | result |
-|---|---|
-| `H5_NNc4NerQ` | added as retired |
-| `E9xOElWqdrw` | added as retired |
-| `_UF-SIUTWhY` | added as retired |
-| `7YFfY4MdB6c` | added as retired |
-| `NQM6gmGl6T4` | added as retired |
-| `k7s_ZAx51xA` | added as retired |
-| `_ggpawFj1ms` | added as retired |
-| `Mub_GCIVmjY` | added as retired |
-| `K63TbhGNnOY` | added as retired |
-| `Dg9BWDmLSYo` | added as retired |
-| `GrT3wO_bdEU` | added as retired |
-
-Placeholder frames are black 9:16 stubs (gitignored jpgs). Retired entries are excluded from `gate_shorts_open.py` window/compare.
