@@ -1,4 +1,5 @@
 ```
+STATUS: LOCKED 2026-09-26 — Ben final notes applied. review:script 90 · gate:episode PASS. Do not rewrite without Ben OK.
 TITLE: What Happens When Saturn Loses Its Rings?
 VOICE: Ben Orbit Narrator — British spelling, calm, to one viewer
 LENGTH: about 8–9 minutes · ~1,200–1,300 spoken words
@@ -13,9 +14,9 @@ SUBSCRIBE LINE USED: #4 — We make one of these every week. Subscribing is how 
 [VISUAL MUST: ON SCREEN: The rings are falling. First 3 seconds: pale ice in a thin sheet, particles already drifting inward toward Saturn’s curve, one planet, no title card, no logo, no Orbit.]
 [TEACH: Saturn’s rings are already losing mass into the planet; this film shows where the ice goes, what the rings looked like when new, and Saturn with nothing around it.]
 
-Saturn is losing its rings. Right now the fall has started: ice from that bright sheet is raining into the planet. How long does it have? Stay with me and you'll see where it goes, what the rings looked like when new, and Saturn with nothing around it at all.
+Saturn is losing its rings. The fall has already started: ice from that bright sheet is raining into the planet right now. How long does it have? Stay with me and you'll see where it goes, what the rings looked like when they were new, and Saturn with nothing around it at all.
 
-The ice in front of you is already on its way in. This bright sheet will not last. That answer is stranger than you'd think.
+The ice in front of you is already on its way in. This bright sheet will not last, and how long it has left is stranger than you'd think.
 
 [CHAPTER CARD: The Rings Are Falling]
 <!-- HOOK -->
@@ -89,7 +90,7 @@ Cassini went closer. In 2017 the orbiter flew twenty-two times through the gap b
 
 So how long does the bright sheet have?
 
-Put both measurements together and the honest answer is a range. Somewhere between about a hundred and three hundred million years. Not this century. Not your lifetime. Still a blink next to Saturn itself — and stranger than a single round number on a thumbnail.
+Put both measurements together and the honest answer is a range. Somewhere between about a hundred and three hundred million years. A blink next to Saturn's four and a half billion years.
 
 [VISUAL MUST: ON SCREEN: Slow thinning. The sheet grows thinner over deep time while Saturn’s bands stay put. No Orbit. No countdown clock.]
 [TEACH: Neither leak is visible as weather; the visible change is a long thinning of the sheet.]

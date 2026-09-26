@@ -65,10 +65,10 @@ Not overlapping Jupiter fall long, Europa ice ocean, or Moon recession. One Satu
 
 `cluster_saturn_rings_021`
 
-- [x] LONG script master v01 (rewrite for Familiar Danger + subscribe beat)  
-- [ ] Mon Saturn Short (after Ben OK)  
+- [x] LONG script master v01 — **LOCKED 2026-09-26** (review 90 · gate PASS)  
+- [x] Mon Saturn Short script drafted (await Ben OK)  
 - [ ] Wed Jupiter Survive — owned elsewhere; do not edit here  
-- [ ] Fri Last Star Short (after Ben OK)  
+- [x] Fri Last Star Short script drafted (await Ben OK)  
 - [ ] Snapshot plan: 24h / 72h / 7d / 28d after publish  
 
 ## SCORES
@@ -77,7 +77,7 @@ Not overlapping Jupiter fall long, Europa ice ocean, or Moon recession. One Satu
 |--------|------:|
 | Topic opportunity | 8.8 / 10 hand (`NEXT_LONG_TOPIC_2026-10-11.md`) |
 | Experiential framing | high |
-| Script reviewer | **90 / 100 PASS** |
+| Script reviewer | **90 / 100 PASS — LOCKED** |
 | Episode gate | **PASS** |
 | Title (vidIQ) | vidIQ not available - to fill in Studio |
 

@@ -15,11 +15,11 @@
 | visualOpportunities | 9.5 |
 | narrationFlow | 9.6 |
 
-Words: 1317 · Est. min: 8.8 · Chapters: 5
+Words: 1312 · Est. min: 8.7 · Chapters: 5
 
 ## Cold open excerpt
 
-> Saturn is losing its rings. Right now the fall has started: ice from that bright sheet is raining into the planet. How long does it have? Stay with me and you'll see where it goes, what the rings looked like when new, and Saturn with nothing around it at all. The ice in front of 
+> Saturn is losing its rings. The fall has already started: ice from that bright sheet is raining into the planet right now. How long does it have? Stay with me and you'll see where it goes, what the rings looked like when they were new, and Saturn with nothing around it at all. Th
 
 ## Findings
 

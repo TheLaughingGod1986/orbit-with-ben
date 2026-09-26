@@ -9,7 +9,7 @@
 | script_file | OK | Script: 01_Script/saturn_rings_script_master_v01.md |
 | script_review | OK | Script reviewer PASS 90/90 (need ≥90). |
 | orbit_acts | OK | [ORBIT ACTS] count 2 (need ≥1). |
-| subscribe_beat | OK | Subscribe beat at 44% (15 words): "We make one of these every week. Subscribing is how the next one finds you." |
+| subscribe_beat | OK | Subscribe beat at 45% (15 words): "We make one of these every week. Subscribing is how the next one finds you." |
 | visual_must | OK | [VISUAL MUST] count 12 (need ≥4). |
 | teach | OK | [TEACH] count 12 (need ≥4). |
 | chapters | OK | [CHAPTER CARD] count 5 (aim 4–6 film acts). |
@@ -17,5 +17,5 @@
 
 Script score: **90/100** · PASS
 
-Cold open: Saturn is losing its rings. Right now the fall has started: ice from that bright sheet is raining into the planet. How long does it have? Stay with me and you'll see where it goes, what the rings look…
+Cold open: Saturn is losing its rings. The fall has already started: ice from that bright sheet is raining into the planet right now. How long does it have? Stay with me and you'll see where it goes, what the ri…
 
