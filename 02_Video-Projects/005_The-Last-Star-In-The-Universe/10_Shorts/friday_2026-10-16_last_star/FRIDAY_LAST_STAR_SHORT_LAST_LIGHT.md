@@ -10,7 +10,7 @@
 | Live title (spoken end + on-screen 9–14 s) | `What Happens When the Last Star Dies?` for now — live listing currently has ` \| Orbit's Cosmic Journey`; Ben deciding whether to strip. Confirm before VO. |
 | Frame 0 | **World plate only** — night sky with stars going out. Orbit arrives ~1.5 s. |
 | Test week | Week 1 baseline — six opening rules; spoken end line as today |
-| Spoken words | 55 · about 23 s voice · about 27 s with loop hold |
+| Spoken words | 57 · about 24 s voice · about 27 s with loop hold |
 | Hook caption (frame 0) | GOING **DARK** (yellow on DARK) |
 | Thumb (custom) | Night sky with stars wink out · yellow **GOING DARK** · white "THE LAST LIGHT" · no Orbit |
 | Opening plate | **New** — ordinary night sky, stars already blinking out one by one (not a lone red-dwarf close-up, not Orbit-first, not the 2 Oct / 622-view "what remains" plates). |
