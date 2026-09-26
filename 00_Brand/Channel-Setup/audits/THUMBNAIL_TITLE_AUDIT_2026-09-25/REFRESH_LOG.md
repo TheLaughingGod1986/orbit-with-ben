@@ -6,35 +6,72 @@ Override note: Ben overrode the archived UAT bible "do not mass-recut older thum
 
 Plate reality this run: no masters on disk (gitignored / sparse). yt-dlp blocked (bot wall). Plates from scrubbed current public thumbs when subject fits and Orbit is absent; else **NEEDS PLATE** (Ben AI Studio still, no AI text).
 
-Builder: `tools/build_thumb_refresh_2026_09_25.py`. Spec: `refresh/JOBS.json`. Contact sheet: `refresh/contact/contact_sheet_page1.jpg`.
+Builder: `tools/build_thumb_refresh_2026_09_25.py`. Spec: `refresh/JOBS.json` · apply plan: `refresh/APPLY_PLAN.json`. Contact sheets: `refresh/contact/contact_sheet_page{1,2}.jpg` (yellow border = swap pick).
+
+## Baseline CTR (Studio, last 28 days, 28 Aug–24 Sep 2026)
+
+Record before any swap. Re-check the same window shape **14 days after** each swap.
+
+| id | impressions | CTR |
+|---|---:|---:|
+| `DN4L1DkerMM` | 95 | 1.1% |
+| `PV50PX-bE4g` | 7 | 0% |
+| `l1d1ypHxLk0` | 7 | 14.3% |
+| `M-VN84HCNls` | 17 | 0% |
+| `68uTDP2esso` | 46 | 0% |
+| `SC2WGTl_V5Q` | 13 | 0% |
+| `9lLZMy8rBJo` | 90 | 4.4% |
+| `CkSECfUfH2Y` | 28 | 7.1% |
+| `Yk1tLh23rko` | 202 | 2.5% |
+| `REXYxuLOBoI` | 142 | 2.8% |
+| `NbW5G1BpPY0` | 68 | 1.5% |
+| `3xrxdmaOwJI` | 6 | 0% |
+| `Mo93x0fxB1Q` | 13 | 0% |
+| `ojk-dfOpAmw` | 16 | 0% |
+
+## Apply mode (T&C vs swap)
+
+**Default: `swap`.** Studio showed **no** Test & Compare on public long `Yk1tLh23rko`. Jupiter `-jmMROGoZCM` is **Ineligible** until public. No long has a confirmed T&C option in this pass — mark every long `swap`. Shorts are always outright replace (`swap`). One long at a time; keep A (current) as the baseline above; compare 14-day CTR after the swap.
+
+| id | apply | swap pick (strongest of B/C) | why that pick |
+|---|---|---|---|
+| Batch A Shorts (all 8) | **swap** | the one new hook when plate ready | Shorts have no T&C |
+| `Yk1tLh23rko` | **swap** (T&C absent) | **B CRUSHED FLAT** | 2 words, body impossibility; clearer than YOU'D BE FLAT |
+| `REXYxuLOBoI` | **swap** | **B LAST LIGHT** | adds to the title; wonder, not dread |
+| `NbW5G1BpPY0` | **swap** | **B A HIDDEN OCEAN** | “hidden” shape matches the film |
+| `3xrxdmaOwJI` | **swap** (after plate) | **B NO WAY OUT** | stronger than repeating FALLING IN? |
+| `Mo93x0fxB1Q` | **swap** | **C SILENCE** | one word, phone-readable; biggest break from EVERYBODY? |
+| `ojk-dfOpAmw` | **swap** | **REP WHEN THEY MEET** | current COMING FOR US? confirmed; straight replacement |
+| `-jmMROGoZCM` | **swap** when public | (pick after thumb preview) | T&C Ineligible until public |
 
 ## Batch A — Shorts
 
-| id | old text | new text | plate source | preview | date applied | impressions | CTR |
-|---|---|---|---|---|---|---|---|
-| `DN4L1DkerMM` | THIS OCEAN / SHOULDN'T EXIST (wrong Europa plate) | RUNNING OUT OF / STARS | AI Studio needed | NEEDS PLATE |  |  |  |
-| `PV50PX-bE4g` | (Orbit reference grid / no hook) | NO / LIGHT | AI Studio needed | NEEDS PLATE |  |  |  |
-| `l1d1ypHxLk0` | next to / 13.8 billion | TOO / EARLY | AI Studio needed | NEEDS PLATE |  |  |  |
-| `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | AI Studio needed | NEEDS PLATE |  |  |  |
-| `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | AI Studio needed | NEEDS PLATE |  |  |  |
-| `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | AI Studio needed | NEEDS PLATE |  |  |  |
-| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | current bg scrubbed from oar2_9lLZMy8rBJo.jpg | BUILT preview PASS |  |  |  |
-| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | current bg scrubbed from oar2_CkSECfUfH2Y.jpg | BUILT preview PASS |  |  |  |
-
-## Batch B — longs (Test & Compare B/C; A = current live)
-
-| id | variant | old text | new text | plate source | preview | date applied | impressions | CTR |
+| id | old text | new text | plate source | preview | apply | baseline impr/CTR | date applied | 14d CTR |
 |---|---|---|---|---|---|---|---|---|
-| `Yk1tLh23rko` | B | YOUR BODY / NEAR A NEUTRON STAR | CRUSHED / FLAT | current bg (scrub) from old_Yk1tLh23rko.jpg | BUILT preview PASS |  |  |  |
-| `Yk1tLh23rko` | C | YOUR BODY / NEAR A NEUTRON STAR | YOU'D BE / FLAT | current bg (scrub) from old_Yk1tLh23rko.jpg | BUILT preview PASS |  |  |  |
-| `REXYxuLOBoI` | B | WHEN THE LAST STAR DIES | LAST / LIGHT | current bg (scrub) from old_REXYxuLOBoI.jpg — B wants one fading red dwarf on black — current is asteroid field; scrubbed as interim | BUILT preview PASS |  |  |  |
-| `REXYxuLOBoI` | C | WHEN THE LAST STAR DIES | THEN / DARK | current bg (scrub) from old_REXYxuLOBoI.jpg — B wants one fading red dwarf on black — current is asteroid field; scrubbed as interim | BUILT preview PASS |  |  |  |
-| `NbW5G1BpPY0` | B | LIFE UNDER THE ICE / MORE WATER THAN EARTH | A HIDDEN / OCEAN | current bg (scrub) from old_NbW5G1BpPY0.jpg | BUILT preview PASS |  |  |  |
-| `NbW5G1BpPY0` | C | LIFE UNDER THE ICE / MORE WATER THAN EARTH | OCEAN / BELOW | current bg (scrub) from old_NbW5G1BpPY0.jpg | BUILT preview PASS |  |  |  |
-| `3xrxdmaOwJI` | — | FALLING IN? (with Orbit) | NO WAY / OUT; FALLING / IN? | AI Studio needed | NEEDS PLATE |  |  |  |
-| `Mo93x0fxB1Q` | B | WHERE IS EVERYBODY? (with Orbit) | WHERE IS / EVERYONE? | current bg (crop_left_hard) from old_Mo93x0fxB1Q.jpg | BUILT preview PASS |  |  |  |
-| `Mo93x0fxB1Q` | C | WHERE IS EVERYBODY? (with Orbit) | SILENCE | current bg (crop_left_hard) from old_Mo93x0fxB1Q.jpg | BUILT preview PASS |  |  |  |
-| `ojk-dfOpAmw` | REP | COMING FOR US? | WHEN THEY / MEET | current bg (scrub) from old_ojk-dfOpAmw.jpg | BUILT preview PASS |  |  |  |
+| `DN4L1DkerMM` | THIS OCEAN / SHOULDN'T EXIST (wrong Europa plate) | RUNNING OUT OF / STARS | AI Studio needed | NEEDS PLATE | swap | 95 / 1.1% |  |  |
+| `PV50PX-bE4g` | (Orbit reference grid / no hook) | NO / LIGHT | AI Studio needed | NEEDS PLATE | swap | 7 / 0% |  |  |
+| `l1d1ypHxLk0` | next to / 13.8 billion | TOO / EARLY | AI Studio needed | NEEDS PLATE | swap | 7 / 14.3% |  |  |
+| `M-VN84HCNls` | carbon under pressure | DIAMOND / PLANETS | AI Studio needed | NEEDS PLATE | swap | 17 / 0% |  |  |
+| `68uTDP2esso` | 300 million years / after big bang | A HIDDEN / SECRET | AI Studio needed | NEEDS PLATE | swap | 46 / 0% |  |  |
+| `SC2WGTl_V5Q` | watch the full film (Orbit) | GLASS / RAIN | AI Studio needed | NEEDS PLATE | swap | 13 / 0% |  |  |
+| `9lLZMy8rBJo` | stage is empty | WHAT / REMAINS? | current bg scrubbed from oar2_9lLZMy8rBJo.jpg | BUILT preview PASS | swap | 90 / 4.4% |  |  |
+| `CkSECfUfH2Y` | what if you / were here? | SKY GOING / DARK | current bg scrubbed from oar2_CkSECfUfH2Y.jpg | BUILT preview PASS | swap | 28 / 7.1% |  |  |
+
+## Batch B — longs (variants built; apply = swap until T&C confirmed)
+
+| id | variant | old text | new text | plate source | preview | apply / pick | baseline impr/CTR | date applied | 14d CTR |
+|---|---|---|---|---|---|---|---|---|---|
+| `Yk1tLh23rko` | B ★ | YOUR BODY / NEAR A NEUTRON STAR | CRUSHED / FLAT | current bg (scrub) from old_Yk1tLh23rko.jpg | BUILT preview PASS | **swap → B** | 202 / 2.5% |  |  |
+| `Yk1tLh23rko` | C | YOUR BODY / NEAR A NEUTRON STAR | YOU'D BE / FLAT | current bg (scrub) from old_Yk1tLh23rko.jpg | BUILT preview PASS | (alt) | 202 / 2.5% |  |  |
+| `REXYxuLOBoI` | B ★ | WHEN THE LAST STAR DIES | LAST / LIGHT | current bg (scrub) from old_REXYxuLOBoI.jpg — asteroid field interim | BUILT preview PASS | **swap → B** | 142 / 2.8% |  |  |
+| `REXYxuLOBoI` | C | WHEN THE LAST STAR DIES | THEN / DARK | current bg (scrub) from old_REXYxuLOBoI.jpg | BUILT preview PASS | (alt) | 142 / 2.8% |  |  |
+| `NbW5G1BpPY0` | B ★ | LIFE UNDER THE ICE / MORE WATER THAN EARTH | A HIDDEN / OCEAN | current bg (scrub) from old_NbW5G1BpPY0.jpg | BUILT preview PASS | **swap → B** | 68 / 1.5% |  |  |
+| `NbW5G1BpPY0` | C | LIFE UNDER THE ICE / MORE WATER THAN EARTH | OCEAN / BELOW | current bg (scrub) from old_NbW5G1BpPY0.jpg | BUILT preview PASS | (alt) | 68 / 1.5% |  |  |
+| `3xrxdmaOwJI` | B ★ | FALLING IN? (with Orbit) | NO WAY / OUT | AI Studio needed | NEEDS PLATE | **swap → B** (after plate) | 6 / 0% |  |  |
+| `3xrxdmaOwJI` | C | FALLING IN? (with Orbit) | FALLING / IN? | AI Studio needed | NEEDS PLATE | (alt) | 6 / 0% |  |  |
+| `Mo93x0fxB1Q` | B | WHERE IS EVERYBODY? (with Orbit) | WHERE IS / EVERYONE? | current bg (crop_left_hard) from old_Mo93x0fxB1Q.jpg | BUILT preview PASS | (alt) | 13 / 0% |  |  |
+| `Mo93x0fxB1Q` | C ★ | WHERE IS EVERYBODY? (with Orbit) | SILENCE | current bg (crop_left_hard) from old_Mo93x0fxB1Q.jpg | BUILT preview PASS | **swap → C** | 13 / 0% |  |  |
+| `ojk-dfOpAmw` | REP ★ | COMING FOR US? | WHEN THEY / MEET | current bg (scrub) from old_ojk-dfOpAmw.jpg | BUILT preview PASS | **swap → REP** | 16 / 0% |  |  |
 
 ## NEEDS PLATE
 
@@ -57,12 +94,27 @@ Primary / ABC paths from `020_…/11_Upload-Package/PACKAGE_MANIFEST.json`:
 
 **None of these files are in this sparse checkout.** Public i.ytimg returns 404 (private). Could not run `thumb_preview.py` on them. Ben: pull the four JPGs from the mini checkout and run previews locally.
 
-## Andromeda Short title proposals (not applied)
+## Andromeda Short title proposals (PROPOSE ONLY — Ben approves before anything is saved)
 
-| id | current title | proposed | why |
-|---|---|---|---|
-| `P9Jiw-MwUEU` | Is Andromeda Coming to Destroy Us? | **Is Andromeda Already in Our Sky?** | Fear word "Destroy"; description says Andromeda is already inbound. Yes/no + familiar noun. Not a live duplicate. Script folder `019_…` absent — proposal from live description + 21 Sep cluster plan. |
-| `xQlV9G9lqLI` | What Happens When Andromeda Hits The Milky Way? (scheduled / not public yet — thumb 404) | **Stars Almost Never Hit When Galaxies Collide** | Would duplicate the long after Studio fix #1. Mon cluster line in 21 Sep audit. Not a live duplicate today. No script in repo. |
+`019_Andromeda-Milky-Way-Collision` is absent from this checkout. Evidence used: live Short description for `P9Jiw-MwUEU` (*Andromeda is already coming for the Milky Way* / full film link), sound-check schedule titles, and the 21 Sep cluster plan (Fri = already getting bigger; Mon = stars almost never hit). Style matched to the fixed titles (*What Happens When Andromeda Hits the Milky Way?*, *The Last Stars Will Shine for 10 Trillion Years*, *This Star Is 20 km Wide and Heavier Than the Sun*): familiar noun early, no fear words, no hashtags, not a live duplicate.
+
+### `P9Jiw-MwUEU` — live, *Is Andromeda Coming to Destroy Us?* (64 views)
+
+Fails lane rule (“Destroy”). Film beat: Andromeda is already inbound / already in our sky.
+
+| # | proposed | reason |
+|---|---|---|
+| 1 | **Is Andromeda Already in Our Sky?** | Yes/no about a familiar thing (Moon-winner shape); drops fear; matches the Short’s “already coming” promise. |
+| 2 | **Andromeda Is Already Getting Bigger** | Statement shape like *The Last Stars Will Shine…*; names the visual beat (Andromeda growing in the sky) without threat. |
+
+### `xQlV9G9lqLI` — scheduled 28 Sep, *What Happens When Andromeda Hits The Milky Way? #space…*
+
+Will collide with the long’s retitle. Cluster beat: stars almost never hit in a galaxy merger.
+
+| # | proposed | reason |
+|---|---|---|
+| 1 | **Stars Almost Never Hit When Galaxies Collide** | Body/impossibility shape (*Why You Can't Stand…*); says what the Short teaches; no hashtags; not a live duplicate. |
+| 2 | **Why Stars Don't Crash When Galaxies Meet** | *Why…* search shape like the fixed Neutron/JWST lines; familiar “stars” in the first four words; softens “collide” without hedging. |
 
 ## Jupiter pinned comment (prepared)
 

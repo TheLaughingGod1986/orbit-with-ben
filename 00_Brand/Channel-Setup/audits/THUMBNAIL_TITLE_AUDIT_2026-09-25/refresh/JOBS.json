@@ -1,29 +1,210 @@
 {
   "version": "thumb_refresh_2026-09-25",
-  "note": "PREPARE ONLY — do not upload or touch Studio. Ben applies after plate OK. Builder: tools/build_thumb_refresh_2026_09_25.py (wraps house short/long compose). Masters and yt-dlp unavailable in this cloud agent (bot wall); plates from scrubbed current thumbs when no Orbit / subject fits, else NEEDS PLATE for AI Studio.",
+  "note": "PREPARE ONLY \u2014 do not upload or touch Studio. Ben applies after plate OK. Builder: tools/build_thumb_refresh_2026_09_25.py (wraps house short/long compose). Masters and yt-dlp unavailable in this cloud agent (bot wall); plates from scrubbed current thumbs when no Orbit / subject fits, else NEEDS PLATE for AI Studio.",
   "batch_a_shorts": [
-    {"id": "DN4L1DkerMM", "new_text": ["RUNNING OUT OF", "STARS"], "yellow": ["STARS"], "status": "NEEDS PLATE"},
-    {"id": "PV50PX-bE4g", "new_text": ["NO", "LIGHT"], "yellow": ["NO"], "status": "NEEDS PLATE"},
-    {"id": "l1d1ypHxLk0", "new_text": ["TOO", "EARLY"], "yellow": ["EARLY"], "status": "NEEDS PLATE"},
-    {"id": "M-VN84HCNls", "new_text": ["DIAMOND", "PLANETS"], "yellow": ["DIAMOND"], "status": "NEEDS PLATE"},
-    {"id": "68uTDP2esso", "new_text": ["A HIDDEN", "SECRET"], "yellow": ["SECRET"], "status": "NEEDS PLATE", "proposed_title_note": "The Early Universe Is Hiding a Massive Secret (do not apply here)"},
-    {"id": "SC2WGTl_V5Q", "new_text": ["GLASS", "RAIN"], "yellow": ["GLASS"], "status": "NEEDS PLATE"},
-    {"id": "9lLZMy8rBJo", "new_text": ["WHAT", "REMAINS?"], "yellow": ["REMAINS?"], "status": "BUILT", "plate": "current bg scrubbed"},
-    {"id": "CkSECfUfH2Y", "new_text": ["SKY GOING", "DARK"], "yellow": ["DARK"], "status": "BUILT", "plate": "current bg scrubbed"}
+    {
+      "id": "DN4L1DkerMM",
+      "new_text": [
+        "RUNNING OUT OF",
+        "STARS"
+      ],
+      "yellow": [
+        "STARS"
+      ],
+      "status": "NEEDS PLATE"
+    },
+    {
+      "id": "PV50PX-bE4g",
+      "new_text": [
+        "NO",
+        "LIGHT"
+      ],
+      "yellow": [
+        "NO"
+      ],
+      "status": "NEEDS PLATE"
+    },
+    {
+      "id": "l1d1ypHxLk0",
+      "new_text": [
+        "TOO",
+        "EARLY"
+      ],
+      "yellow": [
+        "EARLY"
+      ],
+      "status": "NEEDS PLATE"
+    },
+    {
+      "id": "M-VN84HCNls",
+      "new_text": [
+        "DIAMOND",
+        "PLANETS"
+      ],
+      "yellow": [
+        "DIAMOND"
+      ],
+      "status": "NEEDS PLATE"
+    },
+    {
+      "id": "68uTDP2esso",
+      "new_text": [
+        "A HIDDEN",
+        "SECRET"
+      ],
+      "yellow": [
+        "SECRET"
+      ],
+      "status": "NEEDS PLATE",
+      "proposed_title_note": "The Early Universe Is Hiding a Massive Secret (do not apply here)"
+    },
+    {
+      "id": "SC2WGTl_V5Q",
+      "new_text": [
+        "GLASS",
+        "RAIN"
+      ],
+      "yellow": [
+        "GLASS"
+      ],
+      "status": "NEEDS PLATE"
+    },
+    {
+      "id": "9lLZMy8rBJo",
+      "new_text": [
+        "WHAT",
+        "REMAINS?"
+      ],
+      "yellow": [
+        "REMAINS?"
+      ],
+      "status": "BUILT",
+      "plate": "current bg scrubbed"
+    },
+    {
+      "id": "CkSECfUfH2Y",
+      "new_text": [
+        "SKY GOING",
+        "DARK"
+      ],
+      "yellow": [
+        "DARK"
+      ],
+      "status": "BUILT",
+      "plate": "current bg scrubbed"
+    }
   ],
   "batch_b_longs": [
-    {"id": "Yk1tLh23rko", "variants": {"B": ["CRUSHED", "FLAT"], "C": ["YOU'D BE", "FLAT"]}, "yellow_hook": "FLAT", "status": "BUILT", "plate": "current bg scrubbed"},
-    {"id": "REXYxuLOBoI", "variants": {"B": ["LAST", "LIGHT"], "C": ["THEN", "DARK"]}, "status": "BUILT", "plate": "current bg scrubbed (asteroid field interim; ideal is one fading red dwarf on black)"},
-    {"id": "NbW5G1BpPY0", "variants": {"B": ["A HIDDEN", "OCEAN"], "C": ["OCEAN", "BELOW"]}, "status": "BUILT", "plate": "current bg scrubbed"},
-    {"id": "3xrxdmaOwJI", "variants": {"B": ["NO WAY", "OUT"], "C": ["FALLING", "IN?"]}, "status": "NEEDS PLATE", "reason": "Orbit remains on current thumb"},
-    {"id": "Mo93x0fxB1Q", "variants": {"B": ["WHERE IS", "EVERYONE?"], "C": ["SILENCE"]}, "status": "BUILT", "plate": "current bg crop_left_hard + scrub (dish+galaxy)"},
-    {"id": "ojk-dfOpAmw", "variants": {"REP": ["WHEN THEY", "MEET"]}, "status": "BUILT", "plate": "current bg scrubbed (straight replacement)"},
-    {"id": "-jmMROGoZCM", "status": "CHECK ONLY", "note": "Scheduled/private; thumb files missing from sparse checkout; paths in PACKAGE_MANIFEST.json"}
+    {
+      "id": "Yk1tLh23rko",
+      "variants": {
+        "B": [
+          "CRUSHED",
+          "FLAT"
+        ],
+        "C": [
+          "YOU'D BE",
+          "FLAT"
+        ]
+      },
+      "yellow_hook": "FLAT",
+      "status": "BUILT",
+      "plate": "current bg scrubbed"
+    },
+    {
+      "id": "REXYxuLOBoI",
+      "variants": {
+        "B": [
+          "LAST",
+          "LIGHT"
+        ],
+        "C": [
+          "THEN",
+          "DARK"
+        ]
+      },
+      "status": "BUILT",
+      "plate": "current bg scrubbed (asteroid field interim; ideal is one fading red dwarf on black)"
+    },
+    {
+      "id": "NbW5G1BpPY0",
+      "variants": {
+        "B": [
+          "A HIDDEN",
+          "OCEAN"
+        ],
+        "C": [
+          "OCEAN",
+          "BELOW"
+        ]
+      },
+      "status": "BUILT",
+      "plate": "current bg scrubbed"
+    },
+    {
+      "id": "3xrxdmaOwJI",
+      "variants": {
+        "B": [
+          "NO WAY",
+          "OUT"
+        ],
+        "C": [
+          "FALLING",
+          "IN?"
+        ]
+      },
+      "status": "NEEDS PLATE",
+      "reason": "Orbit remains on current thumb"
+    },
+    {
+      "id": "Mo93x0fxB1Q",
+      "variants": {
+        "B": [
+          "WHERE IS",
+          "EVERYONE?"
+        ],
+        "C": [
+          "SILENCE"
+        ]
+      },
+      "status": "BUILT",
+      "plate": "current bg crop_left_hard + scrub (dish+galaxy)"
+    },
+    {
+      "id": "ojk-dfOpAmw",
+      "variants": {
+        "REP": [
+          "WHEN THEY",
+          "MEET"
+        ]
+      },
+      "status": "BUILT",
+      "plate": "current bg scrubbed (straight replacement)"
+    },
+    {
+      "id": "-jmMROGoZCM",
+      "status": "CHECK ONLY",
+      "note": "Scheduled/private; thumb files missing from sparse checkout; paths in PACKAGE_MANIFEST.json"
+    }
   ],
-  "leave_alone": ["2fsQcea-voM", "ziKBPJ6FY0U", "b8-X_FyJnHM"],
+  "leave_alone": [
+    "2fsQcea-voM",
+    "ziKBPJ6FY0U",
+    "b8-X_FyJnHM"
+  ],
   "builder": "00_Brand/Channel-Setup/tools/build_thumb_refresh_2026_09_25.py",
   "house_builders": [
     "00_Brand/Channel-Setup/tools/build_yellow_white_short_thumbs_v04.py",
     "00_Brand/Channel-Setup/tools/build_melodysheep_long_thumbs_v01.py"
-  ]
+  ],
+  "apply_default": "swap",
+  "apply_note": "T&C not confirmed on any long (Yk1tLh23rko no test option; Jupiter Ineligible until public). One long at a time; 14-day CTR after swap.",
+  "swap_picks": {
+    "Yk1tLh23rko": "B",
+    "REXYxuLOBoI": "B",
+    "NbW5G1BpPY0": "B",
+    "3xrxdmaOwJI": "B",
+    "Mo93x0fxB1Q": "C",
+    "ojk-dfOpAmw": "REP"
+  }
 }

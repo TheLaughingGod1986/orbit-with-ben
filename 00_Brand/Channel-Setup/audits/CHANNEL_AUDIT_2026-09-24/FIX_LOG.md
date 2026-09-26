@@ -1,32 +1,33 @@
 # Channel audit fix log — 24 Sep 2026
 
-## Prepared, not applied (25 Sep 2026 cloud agent)
+## Prepared, not applied (25–26 Sep 2026 cloud agent)
 
-Studio / live YouTube were **not** touched. Branch work only.
+Studio / live YouTube were **not** touched (except reading public pages). Branch work only. No deletes.
 
 ### Thumbnail refresh (see `../THUMBNAIL_TITLE_AUDIT_2026-09-25/REFRESH_LOG.md`)
 
-- Batch A Shorts: 2 built (`9lLZMy8rBJo`, `CkSECfUfH2Y`); 6 **NEEDS PLATE** (Orbit or wrong subject; masters/yt-dlp unavailable).
-- Batch B longs: Test & Compare variants built for Neutron, Last Star, Europa, Fermi; Andromeda straight replacement `WHEN THEY MEET`. Black Hole **NEEDS PLATE** (Orbit on current). Jupiter thumbs missing from sparse checkout — preview deferred.
+- Batch A Shorts: 2 built (`9lLZMy8rBJo`, `CkSECfUfH2Y`); 6 **NEEDS PLATE**.
+- Batch B longs: variants built; **apply mode = swap** for every long (T&C not available on `Yk1tLh23rko`; Jupiter Ineligible until public). Swap picks: Neutron **B**, Last Star **B**, Europa **B**, Black Hole **B** (after plate), Fermi **C**, Andromeda **REP WHEN THEY MEET**.
+- Baselines (28 Aug–24 Sep Studio) logged in REFRESH_LOG. Compare 14-day CTR after each swap.
+- Contact sheets page 1–2 mark each row `APPLY: SWAP` and yellow-border the pick.
 - Left alone: `2fsQcea-voM`, `ziKBPJ6FY0U`, `b8-X_FyJnHM`.
-- Contact sheet + artifacts under audit `refresh/` and `/opt/cursor/artifacts/thumb-refresh-2026-09-25/`.
 
-### Titles (propose only)
+### Titles (propose only — Ben approves before save)
 
-| id | proposed | applied? |
+| id | options | applied? |
 |---|---|---|
-| `P9Jiw-MwUEU` | Is Andromeda Already in Our Sky? | no |
-| `xQlV9G9lqLI` | Stars Almost Never Hit When Galaxies Collide | no |
+| `P9Jiw-MwUEU` | (1) Is Andromeda Already in Our Sky? · (2) Andromeda Is Already Getting Bigger | no |
+| `xQlV9G9lqLI` | (1) Stars Almost Never Hit When Galaxies Collide · (2) Why Stars Don't Crash When Galaxies Meet | no |
 | `68uTDP2esso` | note only: The Early Universe Is Hiding a Massive Secret | no |
 
 ### Studio fix list from AUDIT.md §4
 
 | # | item | status |
 |---|---|---|
-| 1 | Andromeda long retitle | not applied (needs Content Ops `.env` / Studio) |
+| 1 | Andromeda long retitle | not applied |
 | 2–3 | scheduled Short retitles in `STUDIO_FIXES.json` | not applied |
 | 4 | Andromeda thumb → WHEN THEY MEET | **file prepared**, not uploaded |
-| 5–6 | Andromeda Short retitles | proposals only |
+| 5–6 | Andromeda Short retitles | **2 options each**, propose only |
 | 7 | phone sound check of Andromeda Shorts | not done here |
 
 ### Captions (backlog #4)
@@ -35,8 +36,32 @@ Jupiter and Andromeda locked VO scripts **not in this checkout** — caption txt
 
 ### Jupiter pinned comment (backlog #1)
 
-Proposed final ready in `REFRESH_LOG.md`. `PINNED_COMMENTS.json` still has Ben’s draft question; `commentId` empty until `--create` after public.
+Proposed final in `REFRESH_LOG.md` / `PINNED_COMMENTS.json`. `commentId` empty until `--create` after public.
 
 ### Shorts sweep
 
-Graded other public Shorts; failures listed in `REFRESH_LOG.md` / `refresh/sweep/SWEEP_GRADE.json`. **Not built.**
+Graded other public Shorts; failures in `REFRESH_LOG.md` / `refresh/sweep/SWEEP_GRADE.json`. **Not built.**
+
+### Retire Andromeda leftovers (26 Sep 2026) — gate library only
+
+Eleven private, unscheduled, 0-view Andromeda Shorts (uploaded 19 Sep) marked **`retired`** in `audits/shorts_open_library/library.json` so the open gate stops comparing them. **Nothing deleted. No Studio / privacy / schedule changes.**
+
+They were **not** already in the library, so each was added via:
+
+`gate_shorts_open.py add --id <id> --date 2026-09-19 --title "Andromeda leftover (private, unscheduled, 0 views)" --frame <black placeholder> --source retired_leftover_19sep_placeholder --status retired`
+
+| id | result |
+|---|---|
+| `H5_NNc4NerQ` | added as retired |
+| `E9xOElWqdrw` | added as retired |
+| `_UF-SIUTWhY` | added as retired |
+| `7YFfY4MdB6c` | added as retired |
+| `NQM6gmGl6T4` | added as retired |
+| `k7s_ZAx51xA` | added as retired |
+| `_ggpawFj1ms` | added as retired |
+| `Mub_GCIVmjY` | added as retired |
+| `K63TbhGNnOY` | added as retired |
+| `Dg9BWDmLSYo` | added as retired |
+| `GrT3wO_bdEU` | added as retired |
+
+Placeholder frames are black 9:16 stubs (gitignored jpgs). Retired entries are excluded from `gate_shorts_open.py` window/compare.
