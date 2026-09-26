@@ -5,12 +5,27 @@
 | | |
 |---|---|
 | Air | Fri 16 Oct 2026, 11:30 UK |
-| Promotes | *What Happens When the Last Star Dies?* (`REXYxuLOBoI`) — Studio Related → that id |
+| Promotes | Last Star long `REXYxuLOBoI` |
+| Studio Related | **`REXYxuLOBoI`** (set in Studio at upload — id already public) |
+| Live title (spoken end + on-screen 9–14 s) | **Working from repo:** `What Happens When the Last Star Dies?` — **Ben: confirm exact live title in Studio before VO** (see Title check below) |
+| Frame 0 | **World plate only** — red dwarf mid-fade. Orbit arrives ~1.5 s. |
 | Test week | Week 1 baseline — six opening rules; spoken end line as today |
 | Spoken words | 56 · about 23–25 s voice · about 27 s with loop hold |
 | Hook caption (frame 0) | LAST **LIGHT** (yellow on LIGHT) |
 | Thumb (custom) | Lone red dwarf mid-fade · yellow **LAST LIGHT** · white "THEN DARK" · no Orbit |
 | Opening plate | **New** — a lone red dwarf already dimming mid-fade against a darkening starfield. Not Orbit-first, not the old "Orbit + one tiny light" plate, not Last Star asteroid mush. |
+
+## Title check for `REXYxuLOBoI` (flag for Ben)
+
+| Source | Title recorded |
+|---|---|
+| `social/LONGS_POSTED.json` | `What Happens When the Last Star Dies?` |
+| `docs/sound-check.md` (live longs list) | `What Happens When the Last Star Dies?` |
+| `audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/DATA.json` | `What Happens When the Last Star Dies? \| Orbit's Cosmic Journey` |
+| `audits/weekly/2026-09-25/PUBLIC_SNAPSHOT.json` | `What Happens When the Last Star Dies? \| Orbit's Cosmic Journey` |
+| Older Short (do **not** use) | `What Remains After the Last Star Dies?` — that is a **Short** title, not the long |
+
+**Mismatch:** some snapshots still include the series suffix `\| Orbit's Cosmic Journey`. This script's spoken end line and on-screen title use the **no-suffix** form to match `LONGS_POSTED.json` and Ben's belief. **Confirm the live Studio title before VO**; if Studio still shows the suffix, either strip it in Studio or change this script's end line / 9–14 s card to match exactly.
 
 ## Timings
 

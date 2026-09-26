@@ -43,9 +43,9 @@ Pale ice sheet · thin blade · magnetic rain into gold bands · brighter young 
 
 | Day | Air (UK) | Job | Film promoted | Notes |
 |---|---|---|---|---|
-| **Mon 12 Oct** | 11:30 | Saturn tease | *What Happens When Saturn Loses Its Rings?* (this long, once it has an id) | World-first open; Orbit from ~1.5 s; **scripts not written in this step** — Ben OK first |
+| **Mon 12 Oct** | 11:30 | Saturn tease | *What Happens When Saturn Loses Its Rings?* | World-first open. **TODO Step 7:** Related → Saturn long id after upload (do not guess). |
 | **Wed 14 Oct** | 11:30 | *Could Orbit Survive…?* Jupiter | *What Would You See If You Fell Into Jupiter?* (`-jmMROGoZCM`) | **Already in progress** — `could-orbit-survive/01_JUPITER.md`. **Do not touch.** |
-| **Fri 16 Oct** | 11:30 | Promote past winner | *What Happens When the Last Star Dies?* (`REXYxuLOBoI`) | Alt if needed: Moon long `2fsQcea-voM`. Prefer Last Star (best long + 622-view Short cluster). |
+| **Fri 16 Oct** | 11:30 | Promote past winner | *What Happens When the Last Star Dies?* (`REXYxuLOBoI`) | Related = `REXYxuLOBoI`. End line uses no-suffix title; **Ben confirm live Studio title** (some audits still show `\| Orbit's Cosmic Journey`). |
 
 Short seeds for Mon (for the later Shorts step — not scripts yet):
 
