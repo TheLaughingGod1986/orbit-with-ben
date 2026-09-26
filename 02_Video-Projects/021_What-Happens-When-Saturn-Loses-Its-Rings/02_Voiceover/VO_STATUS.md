@@ -2,13 +2,9 @@
 
 | Field | Value |
 |---|---|
-| Status | DONE |
-| Voice | Ben Orbit Narrator (`kDch6ACCIpqgQ0NsU9kk`) |
-| Model | `eleven_v3` |
-| Duration | 533.92s (8.90 min) |
-| Words | 1310 spoken |
-| Reviewer | PASS 90.4 on the shortened script (1321 words, 8.8 min estimate) |
-| Chunks | c1 reused (4492 chars, 345.84s); c2 regenerated (2497 chars, 188.08s) |
-| Updated | 2026-09-24 |
+| Status | **STALE — do not ship** |
+| Reason | Long script rewritten 2026-09-26 for Familiar Danger hook + mid-film subscribe beat. Prior VO matched the pre-rewrite master. |
+| Voice | Ben Orbit Narrator (`kDch6ACCIpqgQ0NsU9kk`) — regenerate only after Ben OK on script |
+| Prior note | 2026-09-24: DONE on old script (533.92s / 1310 words / reviewer 90.4) — superseded |
 
-Spoken length is inside 7–9 minutes. Picture assembly adds the 10s end hold.
+Await Ben OK on step 2, then regenerate with `04_Audio/tools/orbit_voice.py`.
