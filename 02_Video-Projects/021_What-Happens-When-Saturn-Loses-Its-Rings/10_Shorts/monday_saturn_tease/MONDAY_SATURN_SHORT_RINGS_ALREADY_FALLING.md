@@ -1,6 +1,6 @@
 # Saturn's Rings Are Already Falling
 
-**Draft for Ben OK — 2026-09-26 (rev 2).** Step 3 Short script only. No VO / picture / upload until Ben signs off.
+**Draft for Ben OK — 2026-09-26 (rev 3).** Step 3 Short script only. No VO / picture / upload until Ben signs off.
 
 | | |
 |---|---|
@@ -9,10 +9,17 @@
 | Studio Related | **TODO Step 7:** set Related → the Saturn long's YouTube id **after** that long is uploaded. Id does not exist yet — **do not guess / do not point at another film.** |
 | Frame 0 | **World plate only** — ring sheet raining inward. Orbit arrives ~1.5 s. `gate_shorts_open.py` must PASS (fails Orbit at 0 s). |
 | Test week | Week 1 baseline — six opening rules; spoken end line as today |
-| Spoken words | 51 · about 22 s voice · about 26 s with loop hold |
+| Spoken words | 54 · about 23 s voice · about 27 s with loop hold |
 | Hook caption (frame 0) | IT'S **FALLING** (yellow on FALLING) |
 | Thumb (custom) | Pale ring blade, ice streaming in · yellow **FALLING** · white "HOW LONG?" · no Orbit |
 | Opening plate | **New** — edge-on Saturn ring sheet with ice grains already streaming planetward. Not Europa ice, not Moon drift, **not Orbit at 0 s**. |
+
+## Changelog
+
+| Rev | Date | Change |
+|---:|---|---|
+| 2 | 2026-09-26 | Promise → how long left; Cassini equatorial flow line; body ends on 100–300 Myr range |
+| **3** | **2026-09-26** | Replaced fragment timescale line with exact: *That leaves them somewhere between a hundred and three hundred million years.* |
 
 ## Timings
 
@@ -39,7 +46,7 @@ Stay, and I'll show you how long they have left.
 
 Ice from that sheet rains into Saturn.
 Cassini's last dives flew straight through that flow.
-Somewhere between about a hundred and three hundred million years.
+That leaves them somewhere between a hundred and three hundred million years.
 
 [VISUAL MUST: The last 4 seconds return to the opening picture — edge-on ring sheet with grains streaming in — so the Short loops. No Orbit required on the loop hold.]
 
