@@ -189,7 +189,7 @@ Tools:
    - pattern: `scripts/apply_yellow_white_v04_thumbs.py`;
    - Chrome launcher: `audits/start_studio_chrome_cdp.sh`;
    - image-only inputs; never Replace, never `thumbnails.set`.
-7. **Straight after every upload, mirror it to Buffer** (§12). Same step, same sign-off: Ben's OK to upload covers the Buffer posts.
+7. **Buffer mirror** (§12): `youtube:package` schedules the Instagram, Facebook and Threads posts itself. Check the `buffer` block in the result. Same step, same sign-off: Ben's OK to upload covers the Buffer posts.
 
 ## 10. Measure
 
@@ -216,7 +216,7 @@ Tools:
 
 Set 27 Sep 2026. **Buffer is the only way anything reaches social.** The old Mac LaunchAgents and Chrome posting scripts are in `_archive/00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/`, and the ops app's worker refuses social jobs.
 
-**The rule:** as soon as a video is uploaded and scheduled in YouTube Studio, schedule the same post in Buffer on Instagram, Facebook and Threads, **for exactly the time it goes public on YouTube.** It uses the same title, the description's opening paragraph and the tags as hashtags, all read from the live YouTube record by `scripts/buffer-mirror.ts`, never retyped.
+**The rule:** every video uploaded and scheduled on YouTube gets the same post in Buffer on Instagram, Facebook and Threads, **for exactly the time it goes public on YouTube.** It uses the same title, the description's opening paragraph and the tags as hashtags, all read from the live YouTube record, never retyped.
 
 | YouTube | Instagram | Facebook Page | Threads |
 |---|---|---|---|
@@ -225,20 +225,22 @@ Set 27 Sep 2026. **Buffer is the only way anything reaches social.** The old Mac
 
 Hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, taken in order from the YouTube tags. Links are stripped from the caption; a long's link rides on the card.
 
-**Each upload:**
-1. Host the file at a permanent public URL. Buffer fetches media when the post goes out and takes no uploads, so no Drive/Dropbox share links and no signed URLs. From `07_Content-Ops` (linked to the Vercel project), for a Short: `vercel blob put <short.mp4> --pathname social/<id>.mp4 --access public`. Long: the same for the selected thumbnail `.jpg`. The command prints the URL.
-2. Plan: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts plan --video <id> --long <longId> --media-url <url>` for a Short (`--standalone` only for a Short with no long), or `plan --video <longId> --thumb-url <url>` for a long. It writes `social/buffer-plans/<id>.json` and stops with an error, and no actions, if anything is wrong.
-3. Send each action in the plan through the **Buffer MCP** exactly as written (`create_post`, `edit_post` or `delete_post`), then record each returned post id: `buffer-mirror.ts record --video <id> --channel <instagram|facebook|threads> --post-id <bufferId>` (or `--deleted`).
-4. Check in Buffer that the three posts show the same time as Studio.
+**Automatic (from 27 Sep 2026): uploading is the whole job.**
+- **At upload.** `npm run youtube:package` finishes a live upload, then puts the Short's mp4 (or the long's thumbnail) on the public Vercel Blob store. It reads the video back from YouTube and schedules the three Buffer posts through the Buffer API. For a Short, the long is the package's `relatedVideoId`; pass `--standalone` for a Short with no long. The upload result JSON has a `buffer` block. A Buffer problem never fails the upload: it prints "Buffer mirror incomplete" with the reason.
+- **Every day at 07:00 UK** (06:00 UTC), the ops app's `/api/cron/buffer-check` compares Buffer with YouTube. A moved time moves the Buffer posts, and a video that's no longer going public has its posts deleted. Its log also lists scheduled uploads that were never mirrored (for example, ones uploaded by hand in Studio).
+- **Anything uploaded another way**, or a re-run: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <short.mp4>` (Short), or `mirror --video <longId> --thumb <thumb.jpg>` (long). `plan` instead of `mirror` shows what it would do and changes nothing.
+- **Straight after a Studio change**, don't wait for 07:00: `buffer-mirror.ts check`.
+- What was posted is kept in the ops database (table `BufferMirrorPost`). The Mac and Vercel share it, so each video goes out once per channel.
+- **Fallback without the API key:** `plan` saves `social/buffer-plans/<id>.json`. Send each action through the Buffer MCP exactly as written, then run `buffer-mirror.ts record --video <id> --channel <c> --post-id <bufferId>` (or `--deleted`).
 
-**Keep it in step.** Any change in Studio (new time, back to private, retired id) → run `buffer-mirror.ts check` and send what it lists. Run it every Monday too.
-
-**The plan refuses:**
+**It refuses:**
 - a Short that goes public before its long;
 - a video public for more than a day (back catalogue needs Ben's OK, then `--allow-late`);
-- a time less than 10 minutes away (wait until it's public, then plan: it shares now);
+- a time less than 10 minutes away (wait until it's public, then `mirror`: it shares now);
 - a video with no go-public time;
-- a second post of the same video: anything already in `social/BUFFER_POSTS.json` is skipped (each video once per channel).
+- a file it can't host at a direct public URL (Buffer fetches media when the post goes out; no share links, no signed URLs).
+
+It never uploads the file for a video it refuses. If one channel fails, the others still go out, and the failure is reported.
 
 **Never:**
 - TikTok. It stays paused (account ban) and isn't connected in Buffer. Don't connect it until Ben lifts the pause.
@@ -248,13 +250,13 @@ Hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, taken in order from the Y
 **One-time setup:**
 1. On the posting Mac, stop the old jobs:
    `for a in dev.orbit.meta-live-shorts dev.orbit.threads-live-shorts dev.orbit.live-longs-social dev.orbit.tiktok-live-shorts dev.orbit.tiktok-reupload-missing; do launchctl bootout gui/$(id -u)/$a 2>/dev/null; rm -f ~/Library/LaunchAgents/$a.plist; done`
-2. In Buffer, connect the Instagram (business), Facebook Page and Threads accounts. No TikTok.
-3. Connect the Buffer MCP (`https://mcp.buffer.com/mcp`, OAuth, no key):
-   - Cursor reads `.cursor/mcp.json` → Settings → Tools & MCPs → buffer → Connect.
-   - Claude on the web: Customize → Connectors → Buffer.
-   - Claude Code: `claude mcp add --transport http buffer https://mcp.buffer.com/mcp`, then `/mcp`.
-4. Run `get_account` and `list_channels` through the MCP, and put the organization id and the three channel ids in `social/BUFFER_CHANNELS.json`. Ids aren't secret.
-5. Create a Vercel Blob store (public) on the Content Ops project, so `vercel blob put` works from the repo.
+2. In Buffer, connect the Instagram (business, linked to the Page), Facebook Page and Threads accounts. No TikTok. Put the organization id and the three channel ids in `social/BUFFER_CHANNELS.json` (from `get_account` and `list_channels` in the Buffer MCP). Ids aren't secret.
+3. `07_Content-Ops/.env` on the upload Mac must hold the real values: `DATABASE_URL` (Neon, `postgresql://…`), `ORBIT_TOKEN_ENCRYPTION_KEY`, `GOOGLE_CLIENT_ID`/`SECRET`, `BUFFER_API_KEY` (Buffer → Settings → API) and `BLOB_READ_WRITE_TOKEN`. Ben types these in himself. Never paste them into chat, print them, or commit them.
+4. Vercel, project orbit-content-ops:
+   - connect a **public** Blob store (this adds `BLOB_READ_WRITE_TOKEN`);
+   - add `BUFFER_API_KEY` and `CRON_SECRET` (any long random string) to Production;
+   - redeploy. The deploy creates the `BufferMirrorPost` table and turns on the daily job.
+5. Optional: the Buffer MCP (`.cursor/mcp.json`, OAuth) for looking at the queue from Cursor, and for the fallback.
 
 ## 13. Ben signs off
 

@@ -25,6 +25,10 @@ import {
   loadYouTubePackage,
   postYouTubeTopLevelComment,
 } from "../src/lib/publishing/youtube-package";
+import { createMirrorDeps, loadChannelIds } from "../src/lib/publishing/buffer-deps";
+import { mirrorVideo } from "../src/lib/publishing/buffer-runner";
+
+const BUFFER_CHANNELS_FILE = path.resolve(__dirname, "../../00_Brand/Channel-Setup/social/BUFFER_CHANNELS.json");
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -49,7 +53,7 @@ async function main() {
   const packageDir = arg("package");
   if (!packageDir) {
     console.error(
-      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--dry-run]",
+      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--no-buffer] [--standalone] [--dry-run]",
     );
     process.exit(1);
   }
@@ -172,6 +176,44 @@ async function main() {
     }
   }
 
+  // Mirror to Instagram, Facebook and Threads through Buffer, for the YouTube go-public
+  // time (STUDIO_PLAYBOOK.md §12). A Buffer problem never fails the upload; it's reported.
+  let buffer: Record<string, unknown> | null = null;
+  if (!dryRun && upload.success && upload.platformPostId && !flag("no-buffer")) {
+    const isShortUpload = resolved.format === "shorts";
+    try {
+      const deps = createMirrorDeps({ channelIds: loadChannelIds(BUFFER_CHANNELS_FILE) });
+      const outcome = await mirrorVideo(
+        {
+          videoId: upload.platformPostId,
+          kind: isShortUpload ? "short" : "long",
+          longId: isShortUpload ? resolved.relatedVideoId : null,
+          standalone: isShortUpload && flag("standalone"),
+          mediaPath: isShortUpload ? resolved.videoPath : null,
+          thumbPath: isShortUpload ? null : resolved.thumbnailPath,
+        },
+        deps,
+      );
+      buffer = {
+        sent: outcome.sent,
+        planOnly: !deps.client,
+        errors: outcome.plan.errors,
+        warnings: outcome.plan.warnings,
+        results: outcome.results,
+      };
+    } catch (e) {
+      buffer = { sent: false, errors: [(e as Error).message] };
+    }
+    const errs = (buffer.errors as string[]) ?? [];
+    const failed = ((buffer.results as { ok: boolean }[]) ?? []).filter((r) => !r.ok);
+    if (!buffer.sent || errs.length || failed.length) {
+      console.error(
+        `Buffer mirror incomplete for ${upload.platformPostId}: ${[...errs, ...failed.map((f) => JSON.stringify(f))].join("; ") || "planning only (no BUFFER_API_KEY)"}. ` +
+          "Fix it, then run scripts/buffer-mirror.ts mirror (STUDIO_PLAYBOOK.md §12).",
+      );
+    }
+  }
+
   const checklist = buildStudioFinishChecklist({
     videoId: upload.platformPostId || null,
     format: resolved.format,
@@ -214,6 +256,7 @@ async function main() {
       playlistAdded,
       playlistMessage,
     },
+    buffer,
     studioFinish: checklist,
   };
 

@@ -42,6 +42,14 @@ export const envSchema = z.object({
    * Reads stay public. Set on Vercel Production + Preview — never commit the value.
    */
   CONTENT_OPS_OPERATOR_PASSWORD: optionalString,
+  /** Buffer API key (Buffer → Settings → API) for the social mirror. Never commit or log it. */
+  BUFFER_API_KEY: optionalString,
+  /** "true" makes the daily Buffer check report only. */
+  BUFFER_DRY_RUN: optionalString,
+  /** Public Vercel Blob store token, for the mirror's media URLs. */
+  BLOB_READ_WRITE_TOKEN: optionalString,
+  /** Vercel sends it as a Bearer token on cron calls; /api/cron/* refuse without it. */
+  CRON_SECRET: optionalString,
 });
 
 export type OrbitEnv = z.infer<typeof envSchema>;

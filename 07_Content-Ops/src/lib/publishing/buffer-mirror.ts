@@ -278,7 +278,9 @@ export function planBufferMirror(opts: PlanOptions): Plan {
     return { videoId: video.id, kind, title: video.title, youtubeUrl, timing, actions, errors, warnings };
   }
 
-  if (kind === "short") {
+  // Media and the long-first rule only matter when something new is being posted.
+  const needsCreate = BUFFER_CHANNELS.some((c) => !entry?.channels[c]);
+  if (kind === "short" && needsCreate) {
     const mediaErr = checkPublicUrl(opts.mediaUrl, "--media-url");
     if (mediaErr) errors.push(mediaErr);
     if (!opts.standalone) {
