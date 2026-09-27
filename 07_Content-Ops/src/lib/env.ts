@@ -2,54 +2,29 @@ import { z } from "zod";
 
 const optionalString = z.string().optional();
 
+/**
+ * 07_Content-Ops/.env for the local scripts. The hosted ops app and its database were
+ * retired on 27 Sep 2026, so nothing here needs a database. Never print or commit values.
+ */
 export const envSchema = z.object({
-  /** Postgres connection URL (pooled on Vercel/Neon). Required for runtime DB access. */
-  DATABASE_URL: z.string().min(1),
-  /** Direct (non-pooled) URL for migrations; optional at runtime. */
-  DIRECT_URL: optionalString,
-  APP_BASE_URL: z.string().url().default("http://localhost:3000"),
-  ORBIT_TOKEN_ENCRYPTION_KEY: optionalString,
-  NODE_ENV: z.string().optional(),
-  PUBLISHING_DRY_RUN: z.string().optional(),
-  PUBLISHING_WORKER_ID: z.string().optional(),
+  /** Google Cloud OAuth client used by the YouTube scripts. */
   GOOGLE_CLIENT_ID: optionalString,
   GOOGLE_CLIENT_SECRET: optionalString,
+  /** Localhost redirect registered on that client, for scripts/youtube-auth.ts. */
   GOOGLE_REDIRECT_URI: optionalString,
-  META_APP_ID: optionalString,
-  META_APP_SECRET: optionalString,
-  META_REDIRECT_URI: optionalString,
-  TIKTOK_CLIENT_KEY: optionalString,
-  TIKTOK_CLIENT_SECRET: optionalString,
-  TIKTOK_REDIRECT_URI: optionalString,
-  X_CLIENT_ID: optionalString,
-  X_CLIENT_SECRET: optionalString,
-  X_REDIRECT_URI: optionalString,
-  THREADS_APP_ID: optionalString,
-  THREADS_APP_SECRET: optionalString,
-  THREADS_REDIRECT_URI: optionalString,
-  MEDIA_STAGING_MODE: z
-    .enum(["local_direct_upload", "temporary_object_storage", "existing_public_url"])
-    .optional(),
-  MEDIA_PUBLIC_BASE_URL: optionalString,
-  /** Amazon Associates UK tag — never hard-code in seed/source; set in operator env only */
-  AMAZON_ASSOCIATE_TAG: optionalString,
-  /** Brilliant affiliate / referral ID */
-  BRILLIANT_AFFILIATE_ID: optionalString,
-  /** Base for /go/{slug} redirects; defaults to ${APP_BASE_URL}/go when unset */
-  AFFILIATE_REDIRECT_BASE_URL: optionalString,
-  /**
-   * Operator password for mutating Content Ops actions (films, imports, OAuth, settings).
-   * Reads stay public. Set on Vercel Production + Preview — never commit the value.
-   */
-  CONTENT_OPS_OPERATOR_PASSWORD: optionalString,
-  /** Buffer API key (Buffer → Settings → API) for the social mirror. Never commit or log it. */
+  /** The channel login, written by scripts/youtube-auth.ts. */
+  YOUTUBE_REFRESH_TOKEN: optionalString,
+  /** Buffer API key (Buffer → Settings → API) for the social mirror. */
   BUFFER_API_KEY: optionalString,
-  /** "true" makes the daily Buffer check report only. */
-  BUFFER_DRY_RUN: optionalString,
   /** Public Vercel Blob store token, for the mirror's media URLs. */
   BLOB_READ_WRITE_TOKEN: optionalString,
-  /** Vercel sends it as a Bearer token on cron calls; /api/cron/* refuse without it. */
-  CRON_SECRET: optionalString,
+  /** "true" makes youtube:package a dry run. */
+  PUBLISHING_DRY_RUN: optionalString,
+  /** Base for affiliate /go/ links in generated descriptions (the app that served /go is retired). */
+  APP_BASE_URL: z.string().url().default("http://localhost:3000"),
+  AFFILIATE_REDIRECT_BASE_URL: optionalString,
+  /** Amazon Associates UK tag — never hard-code or commit it. */
+  AMAZON_ASSOCIATE_TAG: optionalString,
 });
 
 export type OrbitEnv = z.infer<typeof envSchema>;
@@ -70,36 +45,4 @@ export function getEnv(): OrbitEnv {
 export function isDryRun(): boolean {
   const v = (process.env.PUBLISHING_DRY_RUN || "").toLowerCase();
   return v === "1" || v === "true" || v === "yes";
-}
-
-export function requireEncryptionKeyInProduction(): void {
-  const env = getEnv();
-  if (env.NODE_ENV === "production" && !env.ORBIT_TOKEN_ENCRYPTION_KEY) {
-    throw new Error("ORBIT_TOKEN_ENCRYPTION_KEY is required in production");
-  }
-}
-
-export function hasGoogleOAuth(): boolean {
-  const e = getEnv();
-  return Boolean(e.GOOGLE_CLIENT_ID && e.GOOGLE_CLIENT_SECRET);
-}
-
-export function hasMetaOAuth(): boolean {
-  const e = getEnv();
-  return Boolean(e.META_APP_ID && e.META_APP_SECRET);
-}
-
-export function hasTikTokOAuth(): boolean {
-  const e = getEnv();
-  return Boolean(e.TIKTOK_CLIENT_KEY && e.TIKTOK_CLIENT_SECRET);
-}
-
-export function hasXOAuth(): boolean {
-  const e = getEnv();
-  return Boolean(e.X_CLIENT_ID && e.X_CLIENT_SECRET);
-}
-
-export function hasThreadsOAuth(): boolean {
-  const e = getEnv();
-  return Boolean(e.THREADS_APP_ID && e.THREADS_APP_SECRET);
 }

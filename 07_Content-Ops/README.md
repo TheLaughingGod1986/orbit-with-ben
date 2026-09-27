@@ -1,82 +1,28 @@
-# Orbit Content Ops
+# Orbit Content Ops (local CLIs)
 
-Local multi-platform distribution + autopublish dashboard for **Orbit with Ben**.
+Command-line tools for **Orbit With Ben**. There is no web app and no database: the hosted ops app (Vercel project `orbit-content-ops`, Neon Postgres) was retired on 27 Sep 2026 and lives in `_archive/07_Content-Ops/`.
 
-## Quick start
-
-Requires **Postgres** (local or hosted). SQLite is no longer supported.
-
-```bash
-cp .env.example .env
-# set DATABASE_URL + DIRECT_URL (DIRECT_URL may equal DATABASE_URL for non-pooled local Postgres)
-# set ORBIT_TOKEN_ENCRYPTION_KEY=$(openssl rand -base64 32)
-npm install
-npx prisma migrate deploy   # or: npm run db:migrate
-npm run db:seed
-npm run dev:all
-```
-
-Open http://localhost:3000 — connect accounts at `/settings/connections`.
-
-Production on Vercel: see `docs/VERCEL_DEPLOY.md` (Root Directory = `07_Content-Ops`).
-
-## Scripts
-
-| Command | Purpose |
-|---------|---------|
-| `npm run dev` | Dashboard only |
-| `npm run worker` | Publishing worker |
-| `npm run dev:all` | Dashboard + worker |
-| `npm test` | Vitest suite |
-| `npm run typecheck` | TypeScript |
-| `npm run connections:validate` | Re-validate OAuth connections |
-| `npm run publishing:reconcile` | Reconcile ambiguous jobs |
-| `npm run db:seed` | Seed aliens episode + 4 clips |
-| `npm run youtube:package` | YouTube Data API package upload |
-| `npm run review:script -- --file <script.md>` | Growth System v2 script reviewer (≥90 to pass) |
-| `npm run diagnose:youtube -- --file <metrics.json>` | Post-upload YouTube growth recommendations |
-| `npm run gate:episode -- --project <…>` | Growth System v2 episode gate (blocks VO/Veo until PASS) |
-| `npm run brief:next -- --file metrics.json` | Write `docs/NEXT_EPISODE_BRIEF.md` from diagnostics |
-| `npm run verify:growth-v2` | Growth + episode-ops tests + sample diagnose + brief |
-
-### Growth System v2 — first-time setup
+## Setup (once)
 
 ```bash
 cd 07_Content-Ops
-cp -n .env.example .env   # set ORBIT_TOKEN_ENCRYPTION_KEY if empty
-npx prisma migrate deploy
-npx prisma generate
-npm run verify:growth-v2
-npm run gate:episode -- --project ../02_Video-Projects/_template_NNN_Episode-Slug
-# (template draft should BLOCK until audit signed + strong script)
-npm run brief:next -- --file content/samples/json/youtube_growth_metrics_sample.json
-npm run dev               # open /analytics to import Studio CSV
+cp .env.example .env      # fill in locally; never commit or print values
+npm install
+npm run youtube:auth      # sign in as Orbit With Ben; saves YOUTUBE_REFRESH_TOKEN into .env
 ```
 
-New episodes: copy `02_Video-Projects/_template_NNN_Episode-Slug/`.
+## Commands
 
-## Autopublish notes
+| Command | Purpose |
+|---------|---------|
+| `npm run review:script -- --file <script.md>` | Script reviewer (long scripts need 90+) |
+| `npm run gate:episode -- --project <…>` | Episode gate (blocks VO/picture until PASS) |
+| `npm run youtube:package -- --package <…/11_Upload-Package> --video <mp4> [--dry-run]` | Upload to YouTube, then mirror to Buffer (`--no-buffer` to skip) |
+| `npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run` | Title-only changes |
+| `npx tsx --env-file=.env scripts/update-pinned-comment.ts --dry-run` | Weekly pinned-comment refresh |
+| `npm run buffer:mirror -- --video <id> --long <longId> --media <mp4>` | Mirror an upload made another way to Buffer |
+| `npm run buffer:check` | Keep Buffer in step with Studio (the Mac also runs it daily: `launchd/dev.orbit.buffer-check.plist`) |
+| `npm run diagnose:youtube -- --file <metrics.json>` / `npm run brief:next` | Growth diagnostics and next-episode brief |
+| `npm test` / `npm run typecheck` / `npm run lint` | Checks |
 
-- Official OAuth/APIs only; tokens encrypted at rest (AES-256-GCM)
-- Posts are marked `published` only after a genuine platform ID/URL
-- Local scheduling requires the worker process — not cloud-reliable
-- Default `PUBLISHING_DRY_RUN=true` in `.env.example`
-- Setup: `docs/ACCOUNT_CONNECTION_SETUP.md` and platform guides under `docs/`
-- Thursday Premiere + Shorts week ops (locked playbook): `docs/ORBIT_THURSDAY_WEEK_SHIP.md`
-
-## Affiliate monetisation
-
-Integrated affiliate programmes, products, video matching, `/go/{slug}` click tracking, description blocks, CSV conversion import, and opportunity scoring.
-
-- Docs: `docs/AFFILIATE_MONETISATION_SYSTEM.md` · go-live: `docs/AFFILIATE_GO_LIVE.md`
-- UI: `/affiliate` · `/affiliate/products` · `/affiliate/programs` · `/affiliate/opportunities`
-- Env: `AMAZON_ASSOCIATE_TAG` (set in operator env only — see affiliate docs; never commit), `BRILLIANT_AFFILIATE_ID`, `AFFILIATE_REDIRECT_BASE_URL`
-- CLI: `npm run affiliate:verify` · `npm run affiliate:apply-urls` · `npm run affiliate:wire-topic-books`
-- Philosophy: relevance before revenue — card ≤4 candidates; description Auditor-capped
-- Social (Threads / Instagram / Facebook Page): YouTube or `/go/` URLs only — never raw amazon.co.uk
-- LEGO programme + `space-lego` product stay inactive
-
-## Scope
-
-- Does not replace video production under `02_Video-Projects/`
-- Never commit secrets; use `.env`
+Rules for all of it: `AGENTS.md` and `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` (§9 upload, §12 Buffer).

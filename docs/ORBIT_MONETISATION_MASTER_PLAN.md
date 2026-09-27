@@ -38,7 +38,7 @@ Before implementing anything, inspect the repository and reuse existing systems.
 
 In particular, review:
 
-- `docs/AFFILIATE_MONETISATION_SYSTEM.md`
+- `_archive/docs/AFFILIATE_MONETISATION_SYSTEM.md` (the affiliate app is retired; links paused)
 - existing Content Ops app
 - video registry and metadata
 - publishing adapters
@@ -131,7 +131,7 @@ Do not over-engineer provider-specific schemas where a clean common revenue laye
 
 # 5. Revenue pillar B: affiliate commerce
 
-Use `docs/AFFILIATE_MONETISATION_SYSTEM.md` as the detailed implementation spec.
+Use `_archive/docs/AFFILIATE_MONETISATION_SYSTEM.md` (the affiliate app is retired; links paused) as the detailed implementation spec.
 
 Priority affiliate categories:
 
@@ -900,7 +900,7 @@ Explore:
 When an agent starts work from this document:
 
 1. Read this entire plan.
-2. Read `docs/AFFILIATE_MONETISATION_SYSTEM.md`.
+2. Read `_archive/docs/AFFILIATE_MONETISATION_SYSTEM.md` (the affiliate app is retired; links paused).
 3. Audit the current repository before editing code.
 4. Write a short implementation status note stating what already exists.
 5. Select the earliest incomplete phase.

@@ -7,8 +7,7 @@ globs:
   - 07_Content-Ops/scripts/**
   - 07_Content-Ops/src/lib/publishing/**
   - 07_Content-Ops/src/lib/affiliate/**
-  - 07_Content-Ops/src/app/go/**
-  - 07_Content-Ops/docs/AFFILIATE*
+  - 07_Content-Ops/src/lib/youtube/**
   - 00_Brand/Channel-Setup/social/**
 alwaysApply: false
 ---
@@ -17,7 +16,7 @@ alwaysApply: false
 
 Full rules: `STUDIO_PLAYBOOK.md` §9–§12.
 
-- **Upload:** Data API package: `npm run youtube:package -- --package <…> --video <mp4> --dry-run` first. Private + `publishAt`, explicit `privacyStatus`/`madeForKids`, altered content: yes.
+- **Upload:** Data API package (login: `YOUTUBE_REFRESH_TOKEN` in `.env` from `npm run youtube:auth`; no database, the ops app is retired): `npm run youtube:package -- --package <…> --video <mp4> --dry-run` first. Private + `publishAt`, explicit `privacyStatus`/`madeForKids`, altered content: yes.
 - **One video = one upload:**
   - never swap a file on a live id; never re-upload a public idea;
   - a recut gets a new id, and the old one goes private (not deleted).
@@ -28,10 +27,10 @@ Full rules: `STUDIO_PLAYBOOK.md` §9–§12.
 - **Studio-only jobs** go through desktop Studio CDP (`scripts/apply_yellow_white_v04_thumbs.py` pattern; launcher `audits/start_studio_chrome_cdp.sh`). Image-only inputs; never Replace, never `thumbnails.set`.
 - **Affiliate:**
   - only on a long that names the product in VO or on screen; one product per film;
-  - link `https://orbit-content-ops.vercel.app/go/{slug}` under "If you want to go further.", with the disclosure line last;
+  - **paused:** the `/go/` redirect ran on the retired ops app, so no affiliate links until Ben picks a replacement;
   - never invent ASINs; never commit the Amazon tag.
 - **Social = Buffer only, automatic** (§12). `youtube:package` schedules the Instagram, Facebook and Threads posts for **exactly** the YouTube go-public time after every live upload; read the `buffer` block in its result. For a Short, the long comes from the package's `relatedVideoId` (`--standalone` if none).
   - Uploaded any other way: `07_Content-Ops/scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <mp4>` (Short) or `mirror --video <longId> --thumb <jpg>` (long). `plan` = dry run.
-  - After a Studio schedule change: `buffer-mirror.ts check` (Vercel also runs it daily at 07:00 UK).
+  - After a Studio schedule change: `buffer-mirror.ts check` (the Mac also runs it daily at 07:05, LaunchAgent `dev.orbit.buffer-check`).
   - Never retype the caption, never use Buffer queue slots, and never set a Buffer time by hand.
   - **TikTok stays paused:** not connected in Buffer, no uploads, retries or "test one".

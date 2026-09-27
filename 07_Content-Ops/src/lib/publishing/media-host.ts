@@ -19,7 +19,7 @@ export type HostFile = (localPath: string, pathname: string) => Promise<string>;
 
 export const hostOnVercelBlob: HostFile = async (localPath, pathname) => {
   const token = process.env.BLOB_READ_WRITE_TOKEN;
-  if (!token) throw new Error("BLOB_READ_WRITE_TOKEN is not set (connect a public Blob store to orbit-content-ops)");
+  if (!token) throw new Error("BLOB_READ_WRITE_TOKEN is not set (create a public Vercel Blob store and put its token in .env)");
   const ext = path.extname(localPath).toLowerCase();
   const contentType = TYPES[ext];
   if (!contentType) throw new Error(`Unsupported media type ${ext}`);

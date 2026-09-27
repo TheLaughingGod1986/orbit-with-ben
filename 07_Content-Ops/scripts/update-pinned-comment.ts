@@ -15,9 +15,7 @@
  */
 import fs from "fs";
 import path from "path";
-import { prisma } from "../src/lib/storage/prisma";
-import { getEnv } from "../src/lib/env";
-import { decryptSecret, encryptSecret } from "../src/lib/security/token-crypto";
+import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
 import { buildPinnedCommentText, DEFAULT_MILESTONES } from "../src/lib/publishing/pinned-comment";
 
 const CONFIG = path.resolve(__dirname, "../../00_Brand/Channel-Setup/PINNED_COMMENTS.json");
@@ -29,43 +27,6 @@ function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
   if (idx === -1) return undefined;
   return process.argv[idx + 1];
-}
-
-async function accessToken(): Promise<string> {
-  const env = getEnv();
-  const conn = await prisma.platformConnection.findFirst({
-    where: { platform: "youtube_shorts", connectionStatus: "connected", disconnectedAt: null },
-    orderBy: { updatedAt: "desc" },
-  });
-  if (!conn) throw new Error("No connected YouTube account");
-  if (!conn.refreshTokenEncrypted || !env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
-    if (!conn.accessTokenEncrypted) throw new Error("No YouTube token");
-    return decryptSecret(conn.accessTokenEncrypted);
-  }
-  const refreshToken = decryptSecret(conn.refreshTokenEncrypted);
-  const res = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      client_id: env.GOOGLE_CLIENT_ID,
-      client_secret: env.GOOGLE_CLIENT_SECRET,
-      refresh_token: refreshToken,
-      grant_type: "refresh_token",
-    }),
-  });
-  const body = await res.json();
-  if (!res.ok || !body.access_token) {
-    throw new Error(`refresh failed: ${JSON.stringify(body).slice(0, 240)}`);
-  }
-  await prisma.platformConnection.update({
-    where: { id: conn.id },
-    data: {
-      accessTokenEncrypted: encryptSecret(body.access_token),
-      accessTokenExpiresAt: new Date(Date.now() + Number(body.expires_in || 3600) * 1000),
-      lastRefreshAt: new Date(),
-    },
-  });
-  return body.access_token as string;
 }
 
 async function yt(token: string, url: string, init?: RequestInit) {
@@ -81,7 +42,7 @@ async function yt(token: string, url: string, init?: RequestInit) {
 async function main() {
   const dry = process.argv.includes("--dry-run");
   const config: Config = JSON.parse(fs.readFileSync(CONFIG, "utf8"));
-  const token = await accessToken();
+  const token = await getYouTubeAccessToken();
   const channel = await yt(token, "https://www.googleapis.com/youtube/v3/channels?part=statistics&mine=true");
   const subscribers = Number(channel.items?.[0]?.statistics?.subscriberCount ?? 0);
   const textFor = (question: string) =>
@@ -150,5 +111,4 @@ main()
   .catch((e) => {
     console.error(e);
     process.exit(1);
-  })
-  .finally(() => prisma.$disconnect());
+  });

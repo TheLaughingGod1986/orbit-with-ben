@@ -30,7 +30,7 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 | `01_Orbit-Character/` | Canonical Orbit stills (`05_Seedance-References/orbit-seedance-reference-16x9-v01.png`) |
 | `02_Video-Projects/NNN_Slug/` | One folder per film. Start from `_template_NNN_Episode-Slug/`. |
 | `04_Audio/tools/` | `orbit_voice.py` (VO settings), `orbit_gemini_veo.py` |
-| `07_Content-Ops/` | Next.js ops app and CLIs: script review, episode gate, YouTube package upload, retitle, Buffer mirror, analytics |
+| `07_Content-Ops/` | Local CLIs (no web app, no database): script review, episode gate, YouTube package upload, retitle, pinned comment, Buffer mirror, analytics. The hosted ops app was retired on 27 Sep 2026 (`_archive/07_Content-Ops/`). |
 | `scripts/` | Desktop Studio CDP helpers for Studio-only jobs (thumbnail covers) |
 | `_archive/` | Superseded docs, rules, one-off scripts and old audits. **Ignore unless asked.** |
 
@@ -45,11 +45,12 @@ cd 07_Content-Ops && npm run youtube:package -- --package <…/11_Upload-Package
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/update-pinned-comment.ts --dry-run    # weekly: subscriber thank-you in pinned comments
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> [--long <longId> --media <mp4> | --thumb <jpg>]   # only for uploads not made with youtube:package (it mirrors itself)
-cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    # after any Studio change (Vercel also runs it daily)
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    # after any Studio change (the Mac also runs it daily at 07:05)
+cd 07_Content-Ops && npm run youtube:auth    # once, or when a script says the YouTube login expired
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 ```
 
-The YouTube scripts need `07_Content-Ops/.env`: `DATABASE_URL`, `ORBIT_TOKEN_ENCRYPTION_KEY`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. Never print or commit their values.
+The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. No database. Never print or commit their values.
 
 ## Stop and ask Ben at each of these points
 
@@ -75,7 +76,7 @@ The YouTube scripts need `07_Content-Ops/.env`: `DATABASE_URL`, `ORBIT_TOKEN_ENC
   - Put Orbit at frame 0 of a Short or on any thumbnail.
 - **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only, and the count goes in the pinned comment.
 - **Titles:** hashtags, series suffixes, hedged claims ("We may have…"), fear framing, or a title that copies an existing public video.
-- **Studio:** add a pinned comment to a Short, or a `/go/` link on a Short; use `/go/` on a long that doesn't name the product in the film.
+- **Studio:** add a pinned comment to a Short. Add a `/go/` link anywhere: its redirect app is retired, and affiliate links are paused (`STUDIO_PLAYBOOK.md` §11).
 - **Generation:**
   - Use Kling, Seedance or ElevenLabs Image & Video.
   - Omni the whole film or world B-roll.

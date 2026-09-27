@@ -30,7 +30,7 @@ type Fetch = typeof fetch;
 
 /** MCP-shaped create_post input → GraphQL CreatePostInput. */
 export function toCreatePostInput(input: Record<string, unknown>): Record<string, unknown> {
-  return { needsApproval: false, source: "orbit-content-ops", ...input, assets: input.assets ?? [] };
+  return { needsApproval: false, source: "orbit-with-ben", ...input, assets: input.assets ?? [] };
 }
 
 export function createBufferApiClient(apiKey: string, fetchImpl: Fetch = fetch): BufferClient {

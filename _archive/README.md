@@ -14,6 +14,7 @@ Files keep their original paths under `_archive/` (for example `_archive/00_Bran
 | `02_Video-Projects/007_Neutron-Star/` (empty scaffold) | `02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/` |
 | Old `README.md` | `README.md` + `AGENTS.md` |
 | `00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/` (Mac LaunchAgents, Chrome/CDP posting scripts, posted ledgers, TikTok pause file), archived 27 Sep 2026 | The Buffer mirror: `STUDIO_PLAYBOOK.md` §12, `07_Content-Ops/scripts/buffer-mirror.ts`, `00_Brand/Channel-Setup/social/BUFFER_*.json`. The Shorts caption library moved to `00_Brand/Channel-Setup/tools/onscreen_captions.py`. |
-| `07_Content-Ops/docs/{META,TIKTOK,X}_CONNECTION_SETUP.md`, `THREADS_PUBLISHING_ASSESSMENT.md` | Buffer (the app's worker now refuses social jobs) |
+| `07_Content-Ops/docs/{META,TIKTOK,X}_CONNECTION_SETUP.md`, `THREADS_PUBLISHING_ASSESSMENT.md` | Buffer |
+| `07_Content-Ops/` web app, retired 27 Sep 2026 (Vercel project orbit-content-ops): `src/app`, middleware, publishing worker, Prisma schema and migrations (Neon database), platform adapters, OAuth, affiliate `/go/` redirect and tracking, the daily Vercel Buffer cron, their tests, docs and DB scripts | The local CLIs in `07_Content-Ops/` (no database). YouTube login in `.env` via `npm run youtube:auth`. Buffer record in `social/BUFFER_POSTS.json`. Daily Buffer check via LaunchAgent `dev.orbit.buffer-check`. Affiliate links paused (`STUDIO_PLAYBOOK.md` §11). |
 
 To bring something back, `git mv` it out of `_archive/` and add it to the docs in force in `AGENTS.md`.

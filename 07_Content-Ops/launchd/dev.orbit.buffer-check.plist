@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Daily Buffer check on the posting Mac (STUDIO_PLAYBOOK.md §12): at 07:05 local time,
+  moves or deletes Buffer posts when a YouTube time changed or a video no longer goes
+  public, and logs scheduled uploads that were never mirrored.
+  Log: ~/Library/Logs/orbit-buffer-check.log
+  Install:
+    cp 07_Content-Ops/launchd/dev.orbit.buffer-check.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/dev.orbit.buffer-check.plist
+  The repo path below assumes /Users/benjaminoats/YouTube/orbit-with-ben. Edit it if the repo lives elsewhere.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>dev.orbit.buffer-check</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>cd /Users/benjaminoats/YouTube/orbit-with-ben/07_Content-Ops &amp;&amp; unset DATABASE_URL GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN BUFFER_API_KEY BLOB_READ_WRITE_TOKEN &amp;&amp; echo "--- $(date)" &amp;&amp; npx tsx --env-file=.env scripts/buffer-mirror.ts check</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>7</integer>
+    <key>Minute</key>
+    <integer>5</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/benjaminoats/Library/Logs/orbit-buffer-check.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/benjaminoats/Library/Logs/orbit-buffer-check.log</string>
+</dict>
+</plist>

@@ -1,6 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { createBufferApiClient, type BufferClient } from "../src/lib/publishing/buffer-api";
-import { rowsToLedger, type BufferStore } from "../src/lib/publishing/buffer-store";
+import fs from "fs";
+import os from "os";
+import path from "path";
+import { createFileBufferStore, type BufferStore } from "../src/lib/publishing/buffer-store";
 import { mirrorVideo, runBufferCheck, type MirrorDeps } from "../src/lib/publishing/buffer-runner";
 import type { Ledger, Plan, YouTubeVideo, BufferChannel } from "../src/lib/publishing/buffer-mirror";
 
@@ -106,16 +109,22 @@ describe("Buffer API client", () => {
   });
 });
 
-describe("Buffer store", () => {
-  it("groups rows into one ledger entry per video", () => {
-    const d = new Date("2026-10-05T10:30:00Z");
-    const ledger = rowsToLedger([
-      { youtubeVideoId: "v1", channel: "instagram", bufferPostId: "a", kind: "short", title: "T", dueAt: d, mode: "customScheduled" },
-      { youtubeVideoId: "v1", channel: "threads", bufferPostId: "b", kind: "short", title: "T", dueAt: d, mode: "customScheduled" },
-    ]);
-    expect(Object.keys(ledger.videos)).toEqual(["v1"]);
-    expect(ledger.videos.v1.dueAt).toBe("2026-10-05T10:30:00.000Z");
-    expect(ledger.videos.v1.channels.threads?.postId).toBe("b");
+describe("Buffer store (BUFFER_POSTS.json)", () => {
+  it("records, updates and removes posts in the file", async () => {
+    const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "orbit-buffer-")), "BUFFER_POSTS.json");
+    const store = createFileBufferStore(file, () => NOW);
+    expect(await store.load()).toEqual({ version: 1, videos: {} });
+    const plan = { videoId: "v1", kind: "short" as const, title: "T", timing: { mode: "customScheduled" as const, dueAt: "2026-10-05T10:30:00.000Z" } };
+    await store.record(plan, "instagram", "a");
+    await store.record(plan, "threads", "b");
+    const saved = JSON.parse(fs.readFileSync(file, "utf8"));
+    expect(Object.keys(saved.videos.v1.channels)).toEqual(["instagram", "threads"]);
+    expect(saved.videos.v1.dueAt).toBe("2026-10-05T10:30:00.000Z");
+    await store.record({ ...plan, timing: { mode: "customScheduled", dueAt: "2026-10-07T10:30:00.000Z" } }, "instagram", "a");
+    expect((await store.load()).videos.v1.dueAt).toBe("2026-10-07T10:30:00.000Z");
+    await store.record(plan, "instagram", null);
+    await store.record(plan, "threads", null);
+    expect((await store.load()).videos).toEqual({});
   });
 });
 
@@ -223,20 +232,5 @@ describe("runBufferCheck (daily)", () => {
     expect(client.deletePost).not.toHaveBeenCalled();
     expect(out.changes[0].actions).toHaveLength(3);
     expect(out.unmirrored).toEqual([{ videoId: "new00000001", title: "New Short", publishAt: "2026-10-05T10:30:00Z" }]);
-  });
-});
-
-describe("cron route", () => {
-  it("refuses without the cron secret", async () => {
-    const { GET } = await import("../src/app/api/cron/buffer-check/route");
-    const prev = process.env.CRON_SECRET;
-    delete process.env.CRON_SECRET;
-    const res = await GET(new Request("https://x/api/cron/buffer-check", { headers: { authorization: "Bearer " } }) as never);
-    expect(res.status).toBe(401);
-    process.env.CRON_SECRET = "s3cret";
-    const wrong = await GET(new Request("https://x/api/cron/buffer-check", { headers: { authorization: "Bearer nope" } }) as never);
-    expect(wrong.status).toBe(401);
-    if (prev === undefined) delete process.env.CRON_SECRET;
-    else process.env.CRON_SECRET = prev;
   });
 });

@@ -39,7 +39,7 @@ Single-file uploads without a package: `npm run youtube:upload`.
 | First comment text | yes (`commentThreads.insert`) |
 | Playlist add | yes (`playlistItems.insert`) |
 
-Requires Google reconnect after scope update so `youtube.force-ssl` is granted (comments + playlists).
+The login is `YOUTUBE_REFRESH_TOKEN` in `.env` from `npm run youtube:auth` (asks for upload, read and `youtube.force-ssl` for comments and playlists). No database.
 
 ## Studio finish (required gaps)
 
