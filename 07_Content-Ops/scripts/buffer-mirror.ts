@@ -10,26 +10,24 @@
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <longId> --thumb <thumb.jpg>
  *   # See what it would do, without hosting or posting (also saves the plan for the MCP route)
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts plan --video <id> …
- *   # Keep Buffer in step with Studio (runs daily on Vercel; run it after any Studio change)
+ *   # Keep Buffer in step with Studio (daily on the Mac via launchd; run it after any Studio change)
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts check [--dry-run]
  *   # Only when a plan was sent by hand through the Buffer MCP
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts record --video <id> --channel instagram --post-id <bufferPostId>
  *
- * Needs .env: DATABASE_URL, ORBIT_TOKEN_ENCRYPTION_KEY, GOOGLE_CLIENT_ID/SECRET,
+ * Needs .env: GOOGLE_CLIENT_ID/SECRET, YOUTUBE_REFRESH_TOKEN (scripts/youtube-auth.ts),
  * BUFFER_API_KEY, BLOB_READ_WRITE_TOKEN. Without the Buffer key it plans only.
+ * What was posted is kept in 00_Brand/Channel-Setup/social/BUFFER_POSTS.json: commit it.
  * Flags: --standalone (a Short with no long), --allow-late (back catalogue, Ben's OK),
  * --media-url / --thumb-url (already public files), --kind short|long.
  */
 import fs from "fs";
 import path from "path";
-import { prisma } from "../src/lib/storage/prisma";
 import { BUFFER_CHANNELS, type BufferChannel, type Plan } from "../src/lib/publishing/buffer-mirror";
-import { createMirrorDeps, loadChannelIds } from "../src/lib/publishing/buffer-deps";
+import { SOCIAL_DIR, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
 import { mirrorVideo, runBufferCheck } from "../src/lib/publishing/buffer-runner";
 
-const SOCIAL = path.resolve(__dirname, "../../00_Brand/Channel-Setup/social");
-const CHANNELS_FILE = path.join(SOCIAL, "BUFFER_CHANNELS.json");
-const PLANS_DIR = path.join(SOCIAL, "buffer-plans");
+const PLANS_DIR = path.join(SOCIAL_DIR, "buffer-plans");
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -55,7 +53,7 @@ function savePlan(plan: Plan) {
 async function mirror(dryRun: boolean) {
   const videoId = arg("video");
   if (!videoId) throw new Error("needs --video <youtube id>");
-  const deps = createMirrorDeps({ channelIds: loadChannelIds(CHANNELS_FILE) });
+  const deps = createMirrorDeps();
   if (!dryRun && !deps.client) console.error("BUFFER_API_KEY not set: planning only.");
   const outcome = await mirrorVideo(
     {
@@ -124,9 +122,7 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e instanceof Error ? e.message : e);
-    process.exitCode = 1;
-  })
-  .finally(() => prisma.$disconnect().catch(() => undefined));
+main().catch((e) => {
+  console.error(e instanceof Error ? e.message : e);
+  process.exitCode = 1;
+});

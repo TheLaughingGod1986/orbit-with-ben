@@ -3,7 +3,7 @@
  * - mirrorVideo: after an upload, host the media, plan from the live YouTube record,
  *   create the Buffer posts and record them. Called by the package upload and the CLI.
  * - runBufferCheck: keep Buffer in step with YouTube (moved times, pulled videos) and
- *   list scheduled uploads that were never mirrored. Called daily by /api/cron/buffer-check.
+ *   list scheduled uploads that were never mirrored. Called daily by the Mac LaunchAgent dev.orbit.buffer-check.
  * Everything external is injected, so the flow is testable without YouTube or Buffer.
  */
 import path from "path";

@@ -28,8 +28,8 @@ AGENTS.md                     Start here (any agent)
 01_Orbit-Character/           Canonical Orbit stills and animation masters
 02_Video-Projects/NNN_Slug/   One folder per film (start from _template_NNN_Episode-Slug)
 04_Audio/tools/               VO settings (orbit_voice.py), Veo helper
-07_Content-Ops/               Ops app + CLIs: script review, episode gate, YouTube upload, retitle
-docs/                         Tech notes (Veo CG, affiliate, analytics, playback fixes)
+07_Content-Ops/               Local CLIs: script review, episode gate, YouTube upload, retitle, Buffer mirror
+docs/                         Tech notes (Veo CG, analytics, playback fixes)
 scripts/                      Desktop Studio helpers for Studio-only jobs
 _archive/                     Superseded material, kept for history
 ```
@@ -40,7 +40,8 @@ _archive/                     Superseded material, kept for history
 cd 07_Content-Ops
 cp .env.example .env      # fill in locally; never commit secrets
 npm install
-npm run dev
+npm run youtube:auth      # once: saves the YouTube login into .env
+npm test
 ```
 
 ---

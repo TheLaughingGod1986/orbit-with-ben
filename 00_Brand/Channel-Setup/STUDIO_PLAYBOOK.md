@@ -164,6 +164,7 @@ Tools:
 1. **Upload through the Data API package:**
    `cd 07_Content-Ops && npm run youtube:package -- --package <…/11_Upload-Package> --video <mp4> [--dry-run]`
    (manifest: `templates/YOUTUBE_PACKAGE_MANIFEST.json`).
+   - The YouTube login is `YOUTUBE_REFRESH_TOKEN` in `07_Content-Ops/.env`: run `npm run youtube:auth` once to create it, and again if a script says it expired. No database. The hosted ops app was retired on 27 Sep 2026.
    - Upload private, with `publishAt`.
    - Set `privacyStatus` and `madeForKids` explicitly.
    - Altered/synthetic content: **yes**.
@@ -206,15 +207,15 @@ Tools:
 
 - A `/go/` link only when **that film names the product** in VO or on screen. Topic fit isn't enough.
 - **Limits:** one product per film, placed late, after the wonder line, not a shop read.
-- **Link:** `https://orbit-content-ops.vercel.app/go/{slug}` only, in the long's description, under `If you want to go further.`
+- **Link: paused (27 Sep 2026).** The `/go/{slug}` redirect ran on the retired ops app, so don't add `/go/` links. No affiliate links until Ben picks a replacement (for example a direct Amazon Associates link). When one exists it goes in the long's description, under `If you want to go further.`
 - **Last line of the affiliate block:** `Some of these links are affiliate links. We only share things we'd still point you to with no commission.`
 - **Shorts:** zero links.
 - Never invent ASINs. Never commit the Amazon tag.
-- Details: `docs/AFFILIATE_MONETISATION_SYSTEM.md`.
+- History: `_archive/07_Content-Ops/docs/AFFILIATE_MONETISATION_SYSTEM.md`.
 
 ## 12. Social: Buffer mirrors YouTube
 
-Set 27 Sep 2026. **Buffer is the only way anything reaches social.** The old Mac LaunchAgents and Chrome posting scripts are in `_archive/00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/`, and the ops app's worker refuses social jobs.
+Set 27 Sep 2026. **Buffer is the only way anything reaches social.** The old Mac LaunchAgents and Chrome posting scripts are in `_archive/00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/`, and the hosted ops app, whose worker once posted to social, was retired the same day.
 
 **The rule:** every video uploaded and scheduled on YouTube gets the same post in Buffer on Instagram, Facebook and Threads, **for exactly the time it goes public on YouTube.** It uses the same title, the description's opening paragraph and the tags as hashtags, all read from the live YouTube record, never retyped.
 
@@ -227,10 +228,10 @@ Hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, taken in order from the Y
 
 **Automatic (from 27 Sep 2026): uploading is the whole job.**
 - **At upload.** `npm run youtube:package` finishes a live upload, then puts the Short's mp4 (or the long's thumbnail) on the public Vercel Blob store. It reads the video back from YouTube and schedules the three Buffer posts through the Buffer API. For a Short, the long is the package's `relatedVideoId`; pass `--standalone` for a Short with no long. The upload result JSON has a `buffer` block. A Buffer problem never fails the upload: it prints "Buffer mirror incomplete" with the reason.
-- **Every day at 07:00 UK** (06:00 UTC), the ops app's `/api/cron/buffer-check` compares Buffer with YouTube. A moved time moves the Buffer posts, and a video that's no longer going public has its posts deleted. Its log also lists scheduled uploads that were never mirrored (for example, ones uploaded by hand in Studio).
+- **Every day at 07:05 UK**, the posting Mac runs `buffer-mirror.ts check` (LaunchAgent `dev.orbit.buffer-check`, log `~/Library/Logs/orbit-buffer-check.log`) and compares Buffer with YouTube. A moved time moves the Buffer posts, and a video that's no longer going public has its posts deleted. Its log also lists scheduled uploads that were never mirrored (for example, ones uploaded by hand in Studio).
 - **Anything uploaded another way**, or a re-run: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <short.mp4>` (Short), or `mirror --video <longId> --thumb <thumb.jpg>` (long). `plan` instead of `mirror` shows what it would do and changes nothing.
 - **Straight after a Studio change**, don't wait for 07:00: `buffer-mirror.ts check`.
-- What was posted is kept in the ops database (table `BufferMirrorPost`). The Mac and Vercel share it, so each video goes out once per channel.
+- What was posted is kept in `social/BUFFER_POSTS.json`, so each video goes out once per channel. Commit it with the week's work.
 - **Fallback without the API key:** `plan` saves `social/buffer-plans/<id>.json`. Send each action through the Buffer MCP exactly as written, then run `buffer-mirror.ts record --video <id> --channel <c> --post-id <bufferId>` (or `--deleted`).
 
 **It refuses:**
@@ -251,11 +252,12 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
 1. On the posting Mac, stop the old jobs:
    `for a in dev.orbit.meta-live-shorts dev.orbit.threads-live-shorts dev.orbit.live-longs-social dev.orbit.tiktok-live-shorts dev.orbit.tiktok-reupload-missing; do launchctl bootout gui/$(id -u)/$a 2>/dev/null; rm -f ~/Library/LaunchAgents/$a.plist; done`
 2. In Buffer, connect the Instagram (business, linked to the Page), Facebook Page and Threads accounts. No TikTok. Put the organization id and the three channel ids in `social/BUFFER_CHANNELS.json` (from `get_account` and `list_channels` in the Buffer MCP). Ids aren't secret.
-3. `07_Content-Ops/.env` on the upload Mac must hold the real values: `DATABASE_URL` (Neon, `postgresql://…`), `ORBIT_TOKEN_ENCRYPTION_KEY`, `GOOGLE_CLIENT_ID`/`SECRET`, `BUFFER_API_KEY` (Buffer → Settings → API) and `BLOB_READ_WRITE_TOKEN`. Ben types these in himself. Never paste them into chat, print them, or commit them.
-4. Vercel, project orbit-content-ops:
-   - connect a **public** Blob store (this adds `BLOB_READ_WRITE_TOKEN`);
-   - add `BUFFER_API_KEY` and `CRON_SECRET` (any long random string) to Production;
-   - redeploy. The deploy creates the `BufferMirrorPost` table and turns on the daily job.
+3. `07_Content-Ops/.env` on the posting Mac, typed in by Ben (never pasted into chat, printed or committed):
+   - `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` (the Google Cloud OAuth client; add `http://localhost:3000/api/oauth/google/callback` as an authorised redirect URI);
+   - `YOUTUBE_REFRESH_TOKEN`: run `cd 07_Content-Ops && npm run youtube:auth` and sign in as Orbit With Ben. If the Google consent screen is still in *Testing*, the login expires after 7 days, so publish the consent screen to *In production*.
+   - `BUFFER_API_KEY` (Buffer → Settings → API);
+   - `BLOB_READ_WRITE_TOKEN`: a **public** Vercel Blob store. It's storage only and needs no Vercel project (Vercel → Storage → Create → Blob → Public → `.env.local` tab).
+4. The daily check: `cp 07_Content-Ops/launchd/dev.orbit.buffer-check.plist ~/Library/LaunchAgents/ && launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/dev.orbit.buffer-check.plist`.
 5. Optional: the Buffer MCP (`.cursor/mcp.json`, OAuth) for looking at the queue from Cursor, and for the fallback.
 
 ## 13. Ben signs off

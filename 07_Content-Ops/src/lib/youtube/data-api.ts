@@ -1,48 +1,38 @@
 /**
- * YouTube Data API reads for the Buffer mirror: the saved channel token, video
- * records, and the channel's scheduled uploads. Used by scripts/buffer-mirror.ts,
- * the package upload and the daily /api/cron/buffer-check job.
+ * YouTube Data API for the local scripts: the channel token, video records and the
+ * channel's scheduled uploads. The login is YOUTUBE_REFRESH_TOKEN in 07_Content-Ops/.env
+ * (made once by scripts/youtube-auth.ts) with GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET.
+ * No database: the hosted ops app was retired on 27 Sep 2026.
  */
-import { prisma } from "@/lib/storage/prisma";
-import { getEnv } from "@/lib/env";
-import { decryptSecret, encryptSecret } from "@/lib/security/token-crypto";
 import { parseIsoDuration, type YouTubeVideo } from "@/lib/publishing/buffer-mirror";
 
 const API = "https://www.googleapis.com/youtube/v3";
 
-/** Access token for the connected channel, refreshed (and saved) when a refresh token exists. */
+let cached: { token: string; expiresAt: number } | null = null;
+
+/** A fresh access token from the stored refresh token. Never logs either. */
 export async function getYouTubeAccessToken(): Promise<string> {
-  const env = getEnv();
-  const conn = await prisma.platformConnection.findFirst({
-    where: { platform: "youtube_shorts", connectionStatus: "connected", disconnectedAt: null },
-    orderBy: { updatedAt: "desc" },
-  });
-  if (!conn) throw new Error("No connected YouTube account");
-  if (!conn.refreshTokenEncrypted || !env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
-    if (!conn.accessTokenEncrypted) throw new Error("No YouTube token");
-    return decryptSecret(conn.accessTokenEncrypted);
-  }
+  if (cached && cached.expiresAt > Date.now() + 60_000) return cached.token;
+  const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN } = process.env;
+  if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) throw new Error("GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET missing from .env");
+  if (!YOUTUBE_REFRESH_TOKEN) throw new Error("YOUTUBE_REFRESH_TOKEN missing from .env: run `npx tsx --env-file=.env scripts/youtube-auth.ts` once");
   const res = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
-      client_id: env.GOOGLE_CLIENT_ID,
-      client_secret: env.GOOGLE_CLIENT_SECRET,
-      refresh_token: decryptSecret(conn.refreshTokenEncrypted),
+      client_id: GOOGLE_CLIENT_ID,
+      client_secret: GOOGLE_CLIENT_SECRET,
+      refresh_token: YOUTUBE_REFRESH_TOKEN,
       grant_type: "refresh_token",
     }),
   });
-  const body = await res.json();
-  if (!res.ok || !body.access_token) throw new Error(`YouTube token refresh failed (${res.status})`);
-  await prisma.platformConnection.update({
-    where: { id: conn.id },
-    data: {
-      accessTokenEncrypted: encryptSecret(body.access_token),
-      accessTokenExpiresAt: new Date(Date.now() + Number(body.expires_in || 3600) * 1000),
-      lastRefreshAt: new Date(),
-    },
-  });
-  return body.access_token as string;
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok || !body.access_token) {
+    const reason = body.error === "invalid_grant" ? "the YouTube login expired or was revoked; run scripts/youtube-auth.ts again" : body.error || res.status;
+    throw new Error(`YouTube token refresh failed: ${reason}`);
+  }
+  cached = { token: body.access_token as string, expiresAt: Date.now() + Number(body.expires_in || 3600) * 1000 };
+  return cached.token;
 }
 
 async function get(token: string, url: string) {

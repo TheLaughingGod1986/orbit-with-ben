@@ -14,10 +14,9 @@
  */
 import fs from "fs";
 import path from "path";
-import { prisma } from "../src/lib/storage/prisma";
-import { getEnv, isDryRun } from "../src/lib/env";
-import { decryptSecret } from "../src/lib/security/token-crypto";
-import { YouTubePublishingAdapter } from "../src/lib/publishing/adapters/youtube";
+import { isDryRun } from "../src/lib/env";
+import { uploadToYouTube } from "../src/lib/youtube/upload";
+import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
 import {
   addVideoToYouTubePlaylist,
   buildStudioFinishChecklist,
@@ -25,10 +24,8 @@ import {
   loadYouTubePackage,
   postYouTubeTopLevelComment,
 } from "../src/lib/publishing/youtube-package";
-import { createMirrorDeps, loadChannelIds } from "../src/lib/publishing/buffer-deps";
+import { createMirrorDeps } from "../src/lib/publishing/buffer-deps";
 import { mirrorVideo } from "../src/lib/publishing/buffer-runner";
-
-const BUFFER_CHANNELS_FILE = path.resolve(__dirname, "../../00_Brand/Channel-Setup/social/BUFFER_CHANNELS.json");
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -49,7 +46,6 @@ function parseBool(v: string | undefined, fallback: boolean): boolean {
 }
 
 async function main() {
-  getEnv();
   const packageDir = arg("package");
   if (!packageDir) {
     console.error(
@@ -78,44 +74,12 @@ async function main() {
     },
   });
 
-  const connection = await prisma.platformConnection.findFirst({
-    where: {
-      platform: "youtube_shorts",
-      connectionStatus: "connected",
-      disconnectedAt: null,
-    },
-    orderBy: { updatedAt: "desc" },
-  });
-  if (!connection?.accessTokenEncrypted) {
-    console.error(
-      "No connected YouTube account. Connect Google OAuth on /settings/connections (reconnect after scope updates).",
-    );
-    process.exit(1);
-  }
-
-  const adapter = new YouTubePublishingAdapter();
-  if (
-    connection.accessTokenExpiresAt &&
-    connection.accessTokenExpiresAt.getTime() < Date.now() + 60_000 &&
-    adapter.refreshConnection
-  ) {
-    const refreshed = await adapter.refreshConnection(connection);
-    if (!refreshed.ok) {
-      console.error(`Token refresh failed: ${refreshed.message}`);
-      process.exit(1);
-    }
-  }
-
-  const fresh = await prisma.platformConnection.findUnique({ where: { id: connection.id } });
-  if (!fresh?.accessTokenEncrypted) {
-    console.error("Missing access token");
-    process.exit(1);
-  }
-  const accessToken = decryptSecret(fresh.accessTokenEncrypted);
+  // Dry runs never need the YouTube login.
+  const accessToken = dryRun ? "" : await getYouTubeAccessToken();
 
   const hashtagsJson = JSON.stringify(resolved.tags);
 
-  const upload = await adapter.publish(
+  const upload = await uploadToYouTube(
     {
       id: `pkg-${Date.now()}`,
       platform: "youtube_shorts",
@@ -130,15 +94,9 @@ async function main() {
       thumbnailPath: resolved.thumbnailPath,
       contentFormat: resolved.format,
     },
-    fresh,
-    {
-      dryRun,
-      workerId: "youtube-package-upload-cli",
-      jobId: `pkg-${Date.now()}`,
-      attemptNumber: 1,
-      accessToken,
-    },
+    { dryRun, accessToken },
   );
+
 
   let firstCommentPosted = false;
   let commentMessage: string | null = null;
@@ -147,10 +105,7 @@ async function main() {
 
   if (!dryRun && upload.success && upload.platformPostId) {
     if (resolved.pinnedComment && !skipComment) {
-      const channelId =
-        fresh.channelId ||
-        fresh.accountUsername ||
-        (await fetchMineYouTubeChannelId(accessToken));
+      const channelId = await fetchMineYouTubeChannelId(accessToken);
       if (channelId) {
         const comment = await postYouTubeTopLevelComment({
           accessToken,
@@ -182,7 +137,7 @@ async function main() {
   if (!dryRun && upload.success && upload.platformPostId && !flag("no-buffer")) {
     const isShortUpload = resolved.format === "shorts";
     try {
-      const deps = createMirrorDeps({ channelIds: loadChannelIds(BUFFER_CHANNELS_FILE) });
+      const deps = createMirrorDeps();
       const outcome = await mirrorVideo(
         {
           videoId: upload.platformPostId,
@@ -273,9 +228,7 @@ async function main() {
   if (!upload.success) process.exit(1);
 }
 
-main()
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => prisma.$disconnect());
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
