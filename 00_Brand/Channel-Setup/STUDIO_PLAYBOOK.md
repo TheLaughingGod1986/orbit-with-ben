@@ -228,10 +228,13 @@ Hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, taken in order from the Y
 
 **Automatic (from 27 Sep 2026): uploading is the whole job.**
 - **At upload.** `npm run youtube:package` finishes a live upload, then puts the Short's mp4 (or the long's thumbnail) on the public Vercel Blob store. It reads the video back from YouTube and schedules the three Buffer posts through the Buffer API. For a Short, the long is the package's `relatedVideoId`; pass `--standalone` for a Short with no long. The upload result JSON has a `buffer` block. A Buffer problem never fails the upload: it prints "Buffer mirror incomplete" with the reason.
-- **Every day at 07:05 UK**, the posting Mac runs `buffer-mirror.ts check` (LaunchAgent `dev.orbit.buffer-check`, log `~/Library/Logs/orbit-buffer-check.log`) and compares Buffer with YouTube. A moved time moves the Buffer posts, and a video that's no longer going public has its posts deleted. Its log also lists scheduled uploads that were never mirrored (for example, ones uploaded by hand in Studio).
-- **Anything uploaded another way**, or a re-run: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <short.mp4>` (Short), or `mirror --video <longId> --thumb <thumb.jpg>` (long). `plan` instead of `mirror` shows what it would do and changes nothing.
+- **Every day at 07:05 UK**, the posting Mac runs `buffer-mirror.ts check` (LaunchAgent `dev.orbit.buffer-check`, log `~/Library/Logs/orbit-buffer-check.log`). It:
+  - moves the Buffer posts when a YouTube time moved, and deletes them when a video no longer goes public;
+  - **mirrors any scheduled upload that isn't in Buffer yet**, however it was uploaded (by hand in Studio, by Cursor, or by a script). It finds the local file in `social/UPLOADS.json`, which `youtube:package` fills on every upload, or in the older project records (`SHORTS_UPLOAD_INDEX.json`, `*upload_result*.json`). It never guesses from titles. If it can't find a file, or a Short has no long, the log says so and the run fails until someone registers the file:
+    `npx tsx scripts/buffer-mirror.ts register --video <shortId> --media <mp4> --long <longId>` (or `--video <longId> --thumb <jpg>` for a long).
+- **To mirror one straight away**, without waiting for 07:05: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <short.mp4>` (Short), or `mirror --video <longId> --thumb <thumb.jpg>` (long). `plan` instead of `mirror` shows what it would do and changes nothing.
 - **Straight after a Studio change**, don't wait for 07:00: `buffer-mirror.ts check`.
-- What was posted is kept in `social/BUFFER_POSTS.json`, so each video goes out once per channel. Commit it with the week's work.
+- What was posted is kept in `social/BUFFER_POSTS.json`, so each video goes out once per channel. Commit it and `social/UPLOADS.json` with the week's work.
 - **Fallback without the API key:** `plan` saves `social/buffer-plans/<id>.json`. Send each action through the Buffer MCP exactly as written, then run `buffer-mirror.ts record --video <id> --channel <c> --post-id <bufferId>` (or `--deleted`).
 
 **It refuses:**

@@ -231,6 +231,52 @@ describe("runBufferCheck (daily)", () => {
     expect(out.sent).toBe(false);
     expect(client.deletePost).not.toHaveBeenCalled();
     expect(out.changes[0].actions).toHaveLength(3);
-    expect(out.unmirrored).toEqual([{ videoId: "new00000001", title: "New Short", publishAt: "2026-10-05T10:30:00Z" }]);
+    expect(out.unmirrored).toEqual([
+      { videoId: "new00000001", title: "New Short", publishAt: "2026-10-05T10:30:00Z", reason: expect.stringMatching(/register --video new00000001/) },
+    ]);
+  });
+});
+
+describe("runBufferCheck auto-mirrors uploads made outside youtube:package", () => {
+  const handShort = video({ id: "hand0000001", title: "Hand-uploaded Short" });
+  const hint = { videoId: "hand0000001", mediaPath: "/tmp/hand.mp4", thumbPath: null, longId: "long0000001", standalone: false, source: "social/UPLOADS.json" };
+
+  it("finds the file, hosts it and schedules all three posts", async () => {
+    const mem = memoryStore();
+    const client = fakeClient();
+    const d = deps({ store: mem.store, client, videos: [handShort, LONG], scheduled: [handShort], findMedia: () => hint });
+    const out = await runBufferCheck(d);
+    expect(out.unmirrored).toEqual([]);
+    expect(out.autoMirrored).toEqual([expect.objectContaining({ videoId: "hand0000001", sent: true, source: "social/UPLOADS.json" })]);
+    expect(d.host).toHaveBeenCalledWith("/tmp/hand.mp4", "social/hand0000001.mp4");
+    expect(client.createPost).toHaveBeenCalledTimes(3);
+    expect(Object.keys(mem.get().videos.hand0000001.channels)).toEqual(["instagram", "facebook", "threads"]);
+  });
+
+  it("dry run plans it but hosts and posts nothing", async () => {
+    const client = fakeClient();
+    const d = deps({ client, videos: [handShort, LONG], scheduled: [handShort], findMedia: () => hint });
+    const out = await runBufferCheck(d, { dryRun: true });
+    expect(out.autoMirrored).toEqual([expect.objectContaining({ videoId: "hand0000001", sent: false })]);
+    expect(d.host).not.toHaveBeenCalled();
+    expect(client.createPost).not.toHaveBeenCalled();
+  });
+
+  it("reports, and never guesses, when the Short has no long or no file", async () => {
+    const noLong = await runBufferCheck(deps({ videos: [handShort], scheduled: [handShort], findMedia: () => ({ ...hint, longId: null }) }));
+    expect(noLong.unmirrored[0].reason).toMatch(/needs --long/);
+    const noFile = await runBufferCheck(deps({ videos: [handShort], scheduled: [handShort], findMedia: () => null }));
+    expect(noFile.unmirrored[0].reason).toMatch(/no local file recorded/);
+    expect(noFile.autoMirrored).toEqual([]);
+  });
+
+  it("leaves videos already in Buffer alone", async () => {
+    const mem = memoryStore();
+    await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, deps({ store: mem.store }));
+    const findMedia = vi.fn(() => hint);
+    const out = await runBufferCheck(deps({ store: mem.store, scheduled: [video()], findMedia }));
+    expect(findMedia).not.toHaveBeenCalled();
+    expect(out.autoMirrored).toEqual([]);
+    expect(out.unmirrored).toEqual([]);
   });
 });

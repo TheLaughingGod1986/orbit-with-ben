@@ -2,7 +2,8 @@
 <!--
   Daily Buffer check on the posting Mac (STUDIO_PLAYBOOK.md §12): at 07:05 local time,
   moves or deletes Buffer posts when a YouTube time changed or a video no longer goes
-  public, and logs scheduled uploads that were never mirrored.
+  public, and mirrors any scheduled upload not in Buffer yet (finding its file in
+  social/UPLOADS.json or the older project records).
   Log: ~/Library/Logs/orbit-buffer-check.log
   Install:
     cp 07_Content-Ops/launchd/dev.orbit.buffer-check.plist ~/Library/LaunchAgents/

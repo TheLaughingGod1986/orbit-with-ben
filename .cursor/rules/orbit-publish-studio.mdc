@@ -31,6 +31,7 @@ Full rules: `STUDIO_PLAYBOOK.md` §9–§12.
   - never invent ASINs; never commit the Amazon tag.
 - **Social = Buffer only, automatic** (§12). `youtube:package` schedules the Instagram, Facebook and Threads posts for **exactly** the YouTube go-public time after every live upload; read the `buffer` block in its result. For a Short, the long comes from the package's `relatedVideoId` (`--standalone` if none).
   - Uploaded any other way: `07_Content-Ops/scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <mp4>` (Short) or `mirror --video <longId> --thumb <jpg>` (long). `plan` = dry run.
-  - After a Studio schedule change: `buffer-mirror.ts check` (the Mac also runs it daily at 07:05, LaunchAgent `dev.orbit.buffer-check`).
+  - The Mac runs `buffer-mirror.ts check` daily at 07:05 (LaunchAgent `dev.orbit.buffer-check`). It keeps Buffer in step with Studio and mirrors any scheduled upload not in Buffer yet. Run it yourself straight after a Studio change.
+  - **Uploaded by hand (Studio or CDP)?** Run `buffer-mirror.ts register --video <id> --media <mp4> --long <longId>` (or `--thumb <jpg>` for a long) so the check can find the file.
   - Never retype the caption, never use Buffer queue slots, and never set a Buffer time by hand.
   - **TikTok stays paused:** not connected in Buffer, no uploads, retries or "test one".

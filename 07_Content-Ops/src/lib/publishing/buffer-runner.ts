@@ -2,14 +2,16 @@
  * Runs the Buffer mirror end to end (STUDIO_PLAYBOOK.md §12):
  * - mirrorVideo: after an upload, host the media, plan from the live YouTube record,
  *   create the Buffer posts and record them. Called by the package upload and the CLI.
- * - runBufferCheck: keep Buffer in step with YouTube (moved times, pulled videos) and
- *   list scheduled uploads that were never mirrored. Called daily by the Mac LaunchAgent dev.orbit.buffer-check.
+ * - runBufferCheck: keep Buffer in step with YouTube (moved times, pulled videos), and mirror
+ *   scheduled uploads that never went through youtube:package, using media-finder to find their
+ *   local file. Called daily by the Mac LaunchAgent dev.orbit.buffer-check.
  * Everything external is injected, so the flow is testable without YouTube or Buffer.
  */
 import path from "path";
 import type { BufferClient } from "@/lib/publishing/buffer-api";
 import type { BufferStore } from "@/lib/publishing/buffer-store";
 import type { HostFile } from "@/lib/publishing/media-host";
+import type { MediaHint } from "@/lib/publishing/media-finder";
 import {
   BUFFER_CHANNELS,
   type BufferChannel,
@@ -34,6 +36,8 @@ export type MirrorDeps = {
   checkUrl: (url: string, want: "video" | "image") => Promise<string | null>;
   channelIds: ChannelIds;
   now: () => Date;
+  /** Local file for an upload made outside youtube:package (media-finder). Absent: report only. */
+  findMedia?: (videoId: string) => MediaHint | null;
 };
 
 export type MirrorRequest = {
@@ -162,7 +166,10 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
 export type CheckOutcome = {
   checked: number;
   changes: { videoId: string; kind: "short" | "long"; title: string; timing: Plan["timing"]; actions: PlanAction[]; results: ActionResult[] }[];
-  unmirrored: { videoId: string; title: string; publishAt: string | null }[];
+  /** Scheduled uploads that weren't in Buffer and were mirrored (or, dry, would be) by this run. */
+  autoMirrored: { videoId: string; title: string; source: string; sent: boolean; results: ActionResult[]; warnings: string[] }[];
+  /** Scheduled uploads still not in Buffer, and why. */
+  unmirrored: { videoId: string; title: string; publishAt: string | null; reason: string }[];
   sent: boolean;
 };
 
@@ -189,10 +196,38 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
     changes.push({ videoId: id, kind: entry.kind, title: entry.title, timing, actions, results });
   }
 
+  // Uploads made outside youtube:package: find the local file and mirror them too.
   const scheduled = await deps.listScheduled(token, now);
-  const unmirrored = scheduled
-    .filter((v) => !ledger.videos[v.id])
-    .map((v) => ({ videoId: v.id, title: v.title, publishAt: v.publishAt }));
+  const autoMirrored: CheckOutcome["autoMirrored"] = [];
+  const unmirrored: CheckOutcome["unmirrored"] = [];
+  for (const v of scheduled.filter((x) => !ledger.videos[x.id])) {
+    const miss = (reason: string) => unmirrored.push({ videoId: v.id, title: v.title, publishAt: v.publishAt, reason });
+    const hint = deps.findMedia?.(v.id) ?? null;
+    if (!hint) {
+      miss(`no local file recorded: run buffer-mirror.ts register --video ${v.id} --media <mp4> --long <longId> (or --thumb <jpg> for a long)`);
+      continue;
+    }
+    try {
+      const outcome = await mirrorVideo(
+        {
+          videoId: v.id,
+          longId: hint.longId,
+          standalone: hint.standalone,
+          mediaPath: hint.mediaPath,
+          thumbPath: hint.thumbPath,
+          dryRun: !send,
+        },
+        deps,
+      );
+      if (outcome.plan.errors.length) {
+        miss(`${outcome.plan.errors.join("; ")} (from ${hint.source})`);
+        continue;
+      }
+      autoMirrored.push({ videoId: v.id, title: v.title, source: hint.source, sent: outcome.sent, results: outcome.results, warnings: outcome.plan.warnings });
+    } catch (e) {
+      miss((e as Error).message);
+    }
+  }
 
-  return { checked: ids.length, changes, unmirrored, sent: send };
+  return { checked: ids.length, changes, autoMirrored, unmirrored, sent: send };
 }
