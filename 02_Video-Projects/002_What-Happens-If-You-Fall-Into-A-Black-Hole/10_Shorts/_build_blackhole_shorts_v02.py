@@ -18,7 +18,7 @@ OUT = ROOT / "10_Shorts/06_Final-Exports"
 LONG_URL = "https://youtu.be/n7CbJrOCnU0"
 
 CAPTION_LIB = Path(
-    "/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok/auto"
+    "/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/tools"
 )
 sys.path.insert(0, str(CAPTION_LIB))
 from onscreen_captions import (  # noqa: E402

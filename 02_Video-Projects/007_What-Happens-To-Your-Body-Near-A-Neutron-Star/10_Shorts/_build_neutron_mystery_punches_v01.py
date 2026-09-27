@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(REPO / "00_Brand/Channel-Setup/TikTok/auto"))
+sys.path.insert(0, str(REPO / "00_Brand/Channel-Setup/tools"))
 sys.path.insert(0, str(REPO / "04_Audio/tools"))
 
 from onscreen_captions import (  # noqa: E402

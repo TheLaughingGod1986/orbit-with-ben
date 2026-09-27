@@ -24,7 +24,7 @@ AGENTS.md                     Start here (any agent)
     tools/                    Shorts ship gate, thumbnail builders + preview, weekly audit
     could-orbit-survive/      Wednesday test format + test log
     audits/                   Current audits, weekly reports, gate data
-    Meta/ Threads/ TikTok/ social/   Social mirror ops (TikTok paused)
+    social/                   Buffer mirror: channel ids, posts ledger, plans (TikTok paused)
 01_Orbit-Character/           Canonical Orbit stills and animation masters
 02_Video-Projects/NNN_Slug/   One folder per film (start from _template_NNN_Episode-Slug)
 04_Audio/tools/               VO settings (orbit_voice.py), Veo helper

@@ -26,11 +26,11 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 | `00_Brand/Channel-Setup/tools/` | `gate_shorts_open.py` (Shorts ship gate), `thumb_preview.py`, `weekly_public_audit.py`, thumbnail builders |
 | `00_Brand/Channel-Setup/could-orbit-survive/` | The Wednesday test format, three scripts, `TEST_LOG.md` |
 | `00_Brand/Channel-Setup/audits/` | Current audits, `weekly/` reports, `shorts_open_library/` (gate data) |
-| `00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/` | Social mirror ops. TikTok is paused (`TikTok/TIKTOK_UPLOAD_BLOCK.json`). |
+| `00_Brand/Channel-Setup/social/` | Buffer mirror: `BUFFER_CHANNELS.json` (channel ids), `BUFFER_POSTS.json` (ledger), `buffer-plans/`. Buffer is the only route to social. TikTok is paused. |
 | `01_Orbit-Character/` | Canonical Orbit stills (`05_Seedance-References/orbit-seedance-reference-16x9-v01.png`) |
 | `02_Video-Projects/NNN_Slug/` | One folder per film. Start from `_template_NNN_Episode-Slug/`. |
 | `04_Audio/tools/` | `orbit_voice.py` (VO settings), `orbit_gemini_veo.py` |
-| `07_Content-Ops/` | Next.js ops app and CLIs: script review, episode gate, YouTube package upload, retitle, analytics |
+| `07_Content-Ops/` | Next.js ops app and CLIs: script review, episode gate, YouTube package upload, retitle, Buffer mirror, analytics |
 | `scripts/` | Desktop Studio CDP helpers for Studio-only jobs (thumbnail covers) |
 | `_archive/` | Superseded docs, rules, one-off scripts and old audits. **Ignore unless asked.** |
 
@@ -44,6 +44,8 @@ python3 00_Brand/Channel-Setup/tools/thumb_preview.py long|short <thumb.jpg> --o
 cd 07_Content-Ops && npm run youtube:package -- --package <…/11_Upload-Package> --video <mp4> --dry-run
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/update-pinned-comment.ts --dry-run    # weekly: subscriber thank-you in pinned comments
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts plan --video <id> [--long <longId> --media-url <url> | --thumb-url <url>]   # after every upload, then send the plan via the Buffer MCP
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    # after any Studio change, and weekly
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 ```
 
@@ -79,7 +81,10 @@ The YouTube scripts need `07_Content-Ops/.env`: `DATABASE_URL`, `ORBIT_TOKEN_ENC
   - Omni the whole film or world B-roll.
   - Use a video model's speech as VO.
   - Use any voice other than Ben Orbit Narrator.
-- **TikTok:** upload or retry while it's paused.
+- **Social:**
+  - Post any way other than the Buffer mirror (`STUDIO_PLAYBOOK.md` §12).
+  - Schedule a Buffer post for any time other than the YouTube go-public time.
+  - TikTok: connect, upload or retry while it's paused.
 - **Secrets:** commit or print them.
 
 ## Changing the rules
