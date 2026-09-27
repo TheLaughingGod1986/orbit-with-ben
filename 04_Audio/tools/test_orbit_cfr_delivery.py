@@ -182,7 +182,7 @@ class RemasterRoundtripTests(unittest.TestCase):
 
 class OverlayFilterTests(unittest.TestCase):
     def test_final_overlay_forces_cfr_30(self) -> None:
-        auto = TOOLS.parents[1] / "00_Brand" / "Channel-Setup" / "TikTok" / "auto"
+        auto = TOOLS.parents[1] / "00_Brand" / "Channel-Setup" / "tools"
         sys.path.insert(0, str(auto))
         try:
             from onscreen_captions import ffmpeg_overlay_filter, vertical_base_filter

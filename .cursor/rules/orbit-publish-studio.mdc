@@ -1,5 +1,5 @@
 ---
-description: Uploading and finishing in YouTube Studio, affiliate links and social mirrors
+description: Uploading and finishing in YouTube Studio, affiliate links and the Buffer social mirror
 globs:
   - 02_Video-Projects/**/11_Upload-Package/**
   - 02_Video-Projects/**/08_Thumbnail/**
@@ -9,9 +9,6 @@ globs:
   - 07_Content-Ops/src/lib/affiliate/**
   - 07_Content-Ops/src/app/go/**
   - 07_Content-Ops/docs/AFFILIATE*
-  - 00_Brand/Channel-Setup/Meta/**
-  - 00_Brand/Channel-Setup/Threads/**
-  - 00_Brand/Channel-Setup/TikTok/**
   - 00_Brand/Channel-Setup/social/**
 alwaysApply: false
 ---
@@ -33,6 +30,8 @@ Full rules: `STUDIO_PLAYBOOK.md` §9–§12.
   - only on a long that names the product in VO or on screen; one product per film;
   - link `https://orbit-content-ops.vercel.app/go/{slug}` under "If you want to go further.", with the disclosure line last;
   - never invent ASINs; never commit the Amazon tag.
-- **Social:**
-  - **TikTok paused** (`TikTok/TIKTOK_UPLOAD_BLOCK.json`): no uploads, retries or "test one".
-  - Instagram, Facebook and Threads: each Short at most once per platform, never before its YouTube long is public (`social/uniqueness.py`).
+- **Social = Buffer only, automatic** (§12). `youtube:package` schedules the Instagram, Facebook and Threads posts for **exactly** the YouTube go-public time after every live upload; read the `buffer` block in its result. For a Short, the long comes from the package's `relatedVideoId` (`--standalone` if none).
+  - Uploaded any other way: `07_Content-Ops/scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <mp4>` (Short) or `mirror --video <longId> --thumb <jpg>` (long). `plan` = dry run.
+  - After a Studio schedule change: `buffer-mirror.ts check` (Vercel also runs it daily at 07:00 UK).
+  - Never retype the caption, never use Buffer queue slots, and never set a Buffer time by hand.
+  - **TikTok stays paused:** not connected in Buffer, no uploads, retries or "test one".
