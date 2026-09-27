@@ -13,5 +13,7 @@ Files keep their original paths under `_archive/` (for example `_archive/00_Bran
 | One-off Studio/CDP scripts (`scripts/`, `Channel-Setup/_*.py`), result JSONs, old audits and their fix scripts | Nothing. They were single-use. Current audits stay in `Channel-Setup/audits/`. |
 | `02_Video-Projects/007_Neutron-Star/` (empty scaffold) | `02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/` |
 | Old `README.md` | `README.md` + `AGENTS.md` |
+| `00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/` (Mac LaunchAgents, Chrome/CDP posting scripts, posted ledgers, TikTok pause file), archived 27 Sep 2026 | The Buffer mirror: `STUDIO_PLAYBOOK.md` §12, `07_Content-Ops/scripts/buffer-mirror.ts`, `00_Brand/Channel-Setup/social/BUFFER_*.json`. The Shorts caption library moved to `00_Brand/Channel-Setup/tools/onscreen_captions.py`. |
+| `07_Content-Ops/docs/{META,TIKTOK,X}_CONNECTION_SETUP.md`, `THREADS_PUBLISHING_ASSESSMENT.md` | Buffer (the app's worker now refuses social jobs) |
 
 To bring something back, `git mv` it out of `_archive/` and add it to the docs in force in `AGENTS.md`.

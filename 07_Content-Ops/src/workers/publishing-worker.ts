@@ -10,6 +10,7 @@ import {
 import { decryptSecret } from "@/lib/security/token-crypto";
 import { redactSummary } from "@/lib/publishing/errors";
 import { detectDuplicates, canForceRepost } from "@/lib/publishing/duplicates";
+import { isBufferOnlyPlatform } from "@/lib/publishing/buffer-mirror";
 
 const workerId = process.env.PUBLISHING_WORKER_ID || "orbit-local-worker";
 const POLL_MS = 5_000;
@@ -42,6 +43,32 @@ async function processJob(
 
   const post = job.platformPost;
   const connection = job.platformConnection;
+
+  // Social posts go through Buffer (STUDIO_PLAYBOOK.md §12), never from this worker.
+  if (isBufferOnlyPlatform(post.platform)) {
+    const message = `${post.platform} posts go through Buffer (scripts/buffer-mirror.ts), not the worker`;
+    await recordAttempt({
+      jobId: job.id,
+      attemptNumber,
+      status: "failed",
+      errorCategory: "configuration",
+      errorMessage: message,
+      retryable: false,
+    });
+    await failJob({
+      jobId: job.id,
+      attemptCount: attemptNumber,
+      maxAttempts: job.maxAttempts,
+      errorMessage: message,
+      retryable: false,
+    });
+    await prisma.publishingJob.update({
+      where: { id: job.id },
+      data: { status: "manual_action_required" },
+    });
+    return;
+  }
+
   const adapter = getPublishingAdapter(post.platform);
   const dryRun = isDryRun() || job.dryRun;
 
