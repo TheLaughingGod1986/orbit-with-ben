@@ -15,7 +15,21 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[3]
 ASSETS = Path("/Users/ben/.cursor/projects/Users-ben-YouTube-orbit-with-ben/assets")
-FONT_PATH = "/System/Library/Fonts/Supplemental/Arial Black.ttf"
+
+
+def _resolve_font() -> str:
+    for p in (
+        "/System/Library/Fonts/Supplemental/Arial Black.ttf",
+        "/Library/Fonts/Arial Black.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    ):
+        if Path(p).exists():
+            return p
+    raise SystemExit("Missing heavy sans font (Arial Black / Liberation / DejaVu Bold)")
+
+
+FONT_PATH = _resolve_font()
 W, H = 1280, 720
 YELLOW = (255, 230, 0)
 WHITE = (255, 255, 255)
