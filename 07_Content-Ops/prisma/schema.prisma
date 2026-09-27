@@ -319,6 +319,24 @@ model WorkerHeartbeat {
   updatedAt        DateTime @updatedAt
 }
 
+/// Buffer social mirror (STUDIO_PLAYBOOK.md §12): one row per YouTube video per Buffer channel.
+/// channel: instagram | facebook | threads · kind: short | long · mode: customScheduled | shareNow
+model BufferMirrorPost {
+  id             String    @id @default(cuid())
+  youtubeVideoId String
+  channel        String
+  bufferPostId   String
+  kind           String
+  title          String
+  dueAt          DateTime?
+  mode           String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([youtubeVideoId, channel])
+  @@index([dueAt])
+}
+
 /// Affiliate Monetisation — programmes, products, placements, tracking, revenue
 /// Status values: ACTIVE | INACTIVE | PENDING
 model AffiliateProgram {

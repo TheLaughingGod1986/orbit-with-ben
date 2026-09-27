@@ -18,20 +18,14 @@ Eleven private, unscheduled, 0-view Andromeda Shorts (uploaded 19 Sep) marked **
 | `Dg9BWDmLSYo` | added as retired |
 | `GrT3wO_bdEU` | added as retired |
 
-## Prepared, not applied (25–26 Sep 2026) — thumbnail branch
-
-Studio / live YouTube were **not** touched for thumbs or titles. No deletes.
-
-### Thumbnail refresh (see `../THUMBNAIL_TITLE_AUDIT_2026-09-25/REFRESH_LOG.md`)
+## Thumbnail refresh (25–26 Sep 2026) — see `../THUMBNAIL_TITLE_AUDIT_2026-09-25/REFRESH_LOG.md`
 
 - **v02 (26 Sep):** rebuilt on Studio plate picks (`orbit-thumb-plates/picks/`). Full-bleed; no black scrub box; no ghost text. Builder `build_thumb_refresh_v02_plates.py`. v01 scrubbed builds discarded.
 - Batch A Shorts: 6 built (`PV50PX-bE4g`, `M-VN84HCNls`, `68uTDP2esso`, `SC2WGTl_V5Q`, `9lLZMy8rBJo`, `CkSECfUfH2Y`); **NEEDS PLATE** only `DN4L1DkerMM` + `l1d1ypHxLk0` (burned-in captions).
-- Batch B longs: all B/C (and Andromeda REP) built on pick plates including Black Hole (no longer NEEDS PLATE). **apply mode = swap**. Swap picks: Neutron **B**, Last Star **B**, Europa **B**, Black Hole **B**, Fermi **C**, Andromeda **REP**. Jupiter pick held, not applied.
-- Baselines (28 Aug–24 Sep Studio) in REFRESH_LOG with **swap date** / **day-14 CTR** columns (blank until Ben applies).
-- Contact sheets page 1–2 mark each row `APPLY: SWAP` and yellow-border the pick. Artifacts: `/opt/cursor/artifacts/thumb-refresh-2026-09-25/`.
+- Batch B longs: all B/C (and Andromeda REP) built on pick plates including Black Hole. Swap picks: Neutron **B**, Last Star **B**, Europa **B**, Black Hole **B**, Fermi **C**, Andromeda **REP**. Jupiter pick held, not applied.
+- **Rebuild follow-up:** `9lLZMy8rBJo` + `CkSECfUfH2Y` rebuild_v2 — crop-scale caption-free regions (no inpaint).
+- **SWAPPED live 26 Sep 2026** (Studio desktop, outright replace): all 12 approved thumbs. Times/baselines in `../THUMBNAIL_TITLE_AUDIT_2026-09-25/SWAP_LOG.md`. Day-14 CTR compare **10 Oct 2026**. `9lLZ`/`CkSE` = rebuild_v2.
 - Left alone: `2fsQcea-voM`, `ziKBPJ6FY0U`, `b8-X_FyJnHM`.
-- **Ben APPROVED 10 v02 picks (26 Sep)** — status **swap pending**. Finals in `/opt/cursor/artifacts/thumb-final-2026-09-26/`.
-- **Rebuild follow-up (26 Sep):** `9lLZMy8rBJo` + `CkSECfUfH2Y` rebuild_v2 — crop-scale caption-free regions (no inpaint). Full-bleed v02 house. APPROVED · swap pending. Bundle: `/opt/cursor/artifacts/rebuild_v2_2026-09-26.zip`.
 
 ### Titles (propose only — Ben approves before save)
 
@@ -47,7 +41,7 @@ Studio / live YouTube were **not** touched for thumbs or titles. No deletes.
 |---|---|---|
 | 1 | Andromeda long retitle | not applied |
 | 2–3 | scheduled Short retitles in `STUDIO_FIXES.json` | not applied |
-| 4 | Andromeda thumb → WHEN THEY MEET | **file prepared**, not uploaded |
+| 4 | Andromeda thumb → WHEN THEY MEET | **file prepared**, then **SWAPPED live 26 Sep** |
 | 5–6 | Andromeda Short retitles | **2 options each**, propose only |
 | 7 | phone sound check of Andromeda Shorts | not done here |
 
@@ -62,4 +56,26 @@ Proposed final in `REFRESH_LOG.md` / `PINNED_COMMENTS.json`. `commentId` empty u
 ### Shorts sweep
 
 Graded other public Shorts; failures in `REFRESH_LOG.md` / `refresh/sweep/SWEEP_GRADE.json`. **Not built.**
-- **SWAPPED live 26 Sep 2026** (Studio desktop, outright replace): all 12 approved thumbs. Times/baselines in `../THUMBNAIL_TITLE_AUDIT_2026-09-25/SWAP_LOG.md`. Day-14 CTR compare **10 Oct 2026**. `9lLZ`/`CkSE` = rebuild_v2.
+
+## Schedule fix (27 Sep 2026, in Studio)
+
+Three schedule changes were saved in YouTube Studio on 27 Sep 2026. They were not applied by the YouTube API. Titles were left as they were. Nothing was deleted.
+
+| id | change |
+|---|---|
+| `k9pXeeJvLpc` | Set Private. Schedule date removed. Title unchanged: Our Galaxy's Final Destination #cosmos #astronomy #space |
+| `e-7hzJv4c80` | Moved to Wednesday 30 Sep 2026, 11:30, GMT+0100. Title unchanged: How Long Until Andromeda Hits Us? |
+| `CtllH6VOhEI` | Set Private. Schedule date removed. Title unchanged: What Happens When Galaxies Actually Collide? |
+
+`k9pXeeJvLpc` and `CtllH6VOhEI` were not already in the open-gate library, so each was added via `gate_shorts_open.py add … --status retired` (black placeholder frame; source `retired_unscheduled_27sep_placeholder`). The library `date` is the air date from the 24 Sep sound check, before the schedule was removed (`k9pXeeJvLpc` 30 Sep, `CtllH6VOhEI` 1 Oct). `e-7hzJv4c80` was not retired and was not added.
+
+| id | result |
+|---|---|
+| `k9pXeeJvLpc` | added as retired |
+| `CtllH6VOhEI` | added as retired |
+
+Known empty slots are not errors:
+
+- Fri 9 Oct has no Short.
+- The Saturn long is not scheduled for Sun 11 Oct 18:00.
+- The week of 12/14/16 Oct only has Wednesday `buaOI3QGm7U`. Mon 12 Saturn tease and Fri 16 Last Star are not built.

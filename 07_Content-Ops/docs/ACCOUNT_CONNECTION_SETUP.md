@@ -1,6 +1,6 @@
 # Account Connection Setup
 
-Shared steps for all Orbit Content Ops platforms.
+Shared steps for Orbit Content Ops. **Since 27 Sep 2026 the app connects YouTube only.** Instagram, Facebook and Threads go through Buffer (`00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §12, `scripts/buffer-mirror.ts`), and the publishing worker refuses social jobs. The old Meta, TikTok, X and Threads guides are in `_archive/07_Content-Ops/docs/`.
 
 ## Prerequisites
 
@@ -64,7 +64,4 @@ Every platform retains export packages + checklist. API unavailability never pre
 ## Per-platform guides
 
 - [YOUTUBE_CONNECTION_SETUP.md](./YOUTUBE_CONNECTION_SETUP.md)
-- [META_CONNECTION_SETUP.md](./META_CONNECTION_SETUP.md)
-- [TIKTOK_CONNECTION_SETUP.md](./TIKTOK_CONNECTION_SETUP.md)
-- [X_CONNECTION_SETUP.md](./X_CONNECTION_SETUP.md)
-- [THREADS_PUBLISHING_ASSESSMENT.md](./THREADS_PUBLISHING_ASSESSMENT.md)
+- Social: Buffer, see `STUDIO_PLAYBOOK.md` §12.
