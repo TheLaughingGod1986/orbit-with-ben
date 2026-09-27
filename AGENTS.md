@@ -26,7 +26,7 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 | `00_Brand/Channel-Setup/tools/` | `gate_shorts_open.py` (Shorts ship gate), `thumb_preview.py`, `weekly_public_audit.py`, thumbnail builders |
 | `00_Brand/Channel-Setup/could-orbit-survive/` | The Wednesday test format, three scripts, `TEST_LOG.md` |
 | `00_Brand/Channel-Setup/audits/` | Current audits, `weekly/` reports, `shorts_open_library/` (gate data) |
-| `00_Brand/Channel-Setup/social/` | Buffer mirror: `BUFFER_CHANNELS.json` (channel ids), `BUFFER_POSTS.json` (ledger), `buffer-plans/`. Buffer is the only route to social. TikTok is paused. |
+| `00_Brand/Channel-Setup/social/` | Buffer mirror: `BUFFER_CHANNELS.json` (channel ids) and `buffer-plans/`. What was posted lives in the ops database. Buffer is the only route to social. TikTok is paused. |
 | `01_Orbit-Character/` | Canonical Orbit stills (`05_Seedance-References/orbit-seedance-reference-16x9-v01.png`) |
 | `02_Video-Projects/NNN_Slug/` | One folder per film. Start from `_template_NNN_Episode-Slug/`. |
 | `04_Audio/tools/` | `orbit_voice.py` (VO settings), `orbit_gemini_veo.py` |
@@ -44,12 +44,12 @@ python3 00_Brand/Channel-Setup/tools/thumb_preview.py long|short <thumb.jpg> --o
 cd 07_Content-Ops && npm run youtube:package -- --package <…/11_Upload-Package> --video <mp4> --dry-run
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/update-pinned-comment.ts --dry-run    # weekly: subscriber thank-you in pinned comments
-cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts plan --video <id> [--long <longId> --media-url <url> | --thumb-url <url>]   # after every upload, then send the plan via the Buffer MCP
-cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    # after any Studio change, and weekly
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> [--long <longId> --media <mp4> | --thumb <jpg>]   # only for uploads not made with youtube:package (it mirrors itself)
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    # after any Studio change (Vercel also runs it daily)
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 ```
 
-The YouTube scripts need `07_Content-Ops/.env`: `DATABASE_URL`, `ORBIT_TOKEN_ENCRYPTION_KEY`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`. Never print or commit their values.
+The YouTube scripts need `07_Content-Ops/.env`: `DATABASE_URL`, `ORBIT_TOKEN_ENCRYPTION_KEY`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. Never print or commit their values.
 
 ## Stop and ask Ben at each of these points
 
