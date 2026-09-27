@@ -19,3 +19,26 @@ They were not already in the library, so each was added via `gate_shorts_open.py
 | `K63TbhGNnOY` | added as retired |
 | `Dg9BWDmLSYo` | added as retired |
 | `GrT3wO_bdEU` | added as retired |
+
+## Schedule fix (27 Sep 2026, in Studio)
+
+Three schedule changes were saved in YouTube Studio on 27 Sep 2026. They were not applied by the YouTube API. Titles were left as they were. Nothing was deleted.
+
+| id | change |
+|---|---|
+| `k9pXeeJvLpc` | Set Private. Schedule date removed. Title unchanged: Our Galaxy's Final Destination #cosmos #astronomy #space |
+| `e-7hzJv4c80` | Moved to Wednesday 30 Sep 2026, 11:30, GMT+0100. Title unchanged: How Long Until Andromeda Hits Us? |
+| `CtllH6VOhEI` | Set Private. Schedule date removed. Title unchanged: What Happens When Galaxies Actually Collide? |
+
+`k9pXeeJvLpc` and `CtllH6VOhEI` were not already in the open-gate library, so each was added via `gate_shorts_open.py add … --status retired` (black placeholder frame; source `retired_unscheduled_27sep_placeholder`). The library `date` is the air date from the 24 Sep sound check, before the schedule was removed (`k9pXeeJvLpc` 30 Sep, `CtllH6VOhEI` 1 Oct). `e-7hzJv4c80` was not retired and was not added.
+
+| id | result |
+|---|---|
+| `k9pXeeJvLpc` | added as retired |
+| `CtllH6VOhEI` | added as retired |
+
+Known empty slots are not errors:
+
+- Fri 9 Oct has no Short.
+- The Saturn long is not scheduled for Sun 11 Oct 18:00.
+- The week of 12/14/16 Oct only has Wednesday `buaOI3QGm7U`. Mon 12 Saturn tease and Fri 16 Last Star are not built.
