@@ -10,8 +10,12 @@
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <longId> --thumb <thumb.jpg>
  *   # See what it would do, without hosting or posting (also saves the plan for the MCP route)
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts plan --video <id> …
- *   # Keep Buffer in step with Studio (daily on the Mac via launchd; run it after any Studio change)
+ *   # Keep Buffer in step with Studio, and mirror scheduled uploads made outside youtube:package
+ *   # (daily on the Mac via launchd; run it after any Studio change)
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts check [--dry-run]
+ *   # Tell the daily check which file an upload came from, when it was uploaded by hand
+ *   npx tsx scripts/buffer-mirror.ts register --video <shortId> --media <short.mp4> --long <longId>
+ *   npx tsx scripts/buffer-mirror.ts register --video <longId> --thumb <thumb.jpg>
  *   # Only when a plan was sent by hand through the Buffer MCP
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts record --video <id> --channel instagram --post-id <bufferPostId>
  *
@@ -24,7 +28,8 @@
 import fs from "fs";
 import path from "path";
 import { BUFFER_CHANNELS, type BufferChannel, type Plan } from "../src/lib/publishing/buffer-mirror";
-import { SOCIAL_DIR, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
+import { REPO_ROOT, SOCIAL_DIR, UPLOADS_FILE, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
+import { registerUpload } from "../src/lib/publishing/media-finder";
 import { mirrorVideo, runBufferCheck } from "../src/lib/publishing/buffer-runner";
 
 const PLANS_DIR = path.join(SOCIAL_DIR, "buffer-plans");
@@ -92,7 +97,28 @@ async function check() {
     });
   }
   console.log(JSON.stringify(outcome, null, 2));
-  if (outcome.changes.some((c) => c.results.some((r) => !r.ok))) process.exit(1);
+  const failed =
+    outcome.changes.some((c) => c.results.some((r) => !r.ok)) || outcome.autoMirrored.some((m) => m.results.some((r) => !r.ok));
+  // Unmirrored uploads need a person (register the file), so they fail the run too: the log shows why.
+  if (failed || outcome.unmirrored.length) process.exit(1);
+}
+
+function register() {
+  const videoId = arg("video");
+  const media = localFile(arg("media"));
+  const thumb = localFile(arg("thumb"));
+  const long = arg("long");
+  const standalone = flag("standalone");
+  if (!videoId || (!media && !thumb)) throw new Error("register needs --video <id> and --media <mp4> (Short) or --thumb <jpg> (long)");
+  if (media && !long && !standalone) throw new Error("a Short needs --long <longId> (or --standalone)");
+  const reg = registerUpload(UPLOADS_FILE, REPO_ROOT, videoId, {
+    kind: media ? "short" : "long",
+    file: media ?? undefined,
+    thumb: thumb ?? undefined,
+    long: long ?? undefined,
+    standalone: standalone || undefined,
+  });
+  console.log(JSON.stringify({ registered: videoId, entry: reg.videos[videoId] }, null, 2));
 }
 
 async function record() {
@@ -116,8 +142,9 @@ async function main() {
   else if (cmd === "plan") await mirror(true);
   else if (cmd === "check") await check();
   else if (cmd === "record") await record();
+  else if (cmd === "register") register();
   else {
-    console.error("Usage: buffer-mirror.ts mirror|plan|check|record  (see the header of this file)");
+    console.error("Usage: buffer-mirror.ts mirror|plan|check|register|record  (see the header of this file)");
     process.exit(1);
   }
 }

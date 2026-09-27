@@ -26,7 +26,7 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 | `00_Brand/Channel-Setup/tools/` | `gate_shorts_open.py` (Shorts ship gate), `thumb_preview.py`, `weekly_public_audit.py`, thumbnail builders |
 | `00_Brand/Channel-Setup/could-orbit-survive/` | The Wednesday test format, three scripts, `TEST_LOG.md` |
 | `00_Brand/Channel-Setup/audits/` | Current audits, `weekly/` reports, `shorts_open_library/` (gate data) |
-| `00_Brand/Channel-Setup/social/` | Buffer mirror: `BUFFER_CHANNELS.json` (channel ids) and `buffer-plans/`. What was posted lives in the ops database. Buffer is the only route to social. TikTok is paused. |
+| `00_Brand/Channel-Setup/social/` | Buffer mirror: `BUFFER_CHANNELS.json` (channel ids), `UPLOADS.json` (YouTube id → local file and long), `BUFFER_POSTS.json` (what was posted), `buffer-plans/`. Buffer is the only route to social. TikTok is paused. |
 | `01_Orbit-Character/` | Canonical Orbit stills (`05_Seedance-References/orbit-seedance-reference-16x9-v01.png`) |
 | `02_Video-Projects/NNN_Slug/` | One folder per film. Start from `_template_NNN_Episode-Slug/`. |
 | `04_Audio/tools/` | `orbit_voice.py` (VO settings), `orbit_gemini_veo.py` |
@@ -45,7 +45,8 @@ cd 07_Content-Ops && npm run youtube:package -- --package <…/11_Upload-Package
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/update-pinned-comment.ts --dry-run    # weekly: subscriber thank-you in pinned comments
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> [--long <longId> --media <mp4> | --thumb <jpg>]   # only for uploads not made with youtube:package (it mirrors itself)
-cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    # after any Studio change (the Mac also runs it daily at 07:05)
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    # daily at 07:05 on the Mac: keeps Buffer in step and mirrors any scheduled upload not in Buffer yet
+cd 07_Content-Ops && npx tsx scripts/buffer-mirror.ts register --video <id> --media <mp4> --long <longId>    # after uploading by hand, so the daily check can find the file
 cd 07_Content-Ops && npm run youtube:auth    # once, or when a script says the YouTube login expired
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 ```

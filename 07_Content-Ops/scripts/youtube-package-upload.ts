@@ -24,7 +24,8 @@ import {
   loadYouTubePackage,
   postYouTubeTopLevelComment,
 } from "../src/lib/publishing/youtube-package";
-import { createMirrorDeps } from "../src/lib/publishing/buffer-deps";
+import { REPO_ROOT, UPLOADS_FILE, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
+import { registerUpload } from "../src/lib/publishing/media-finder";
 import { mirrorVideo } from "../src/lib/publishing/buffer-runner";
 
 function arg(name: string): string | undefined {
@@ -134,6 +135,16 @@ async function main() {
   // Mirror to Instagram, Facebook and Threads through Buffer, for the YouTube go-public
   // time (STUDIO_PLAYBOOK.md §12). A Buffer problem never fails the upload; it's reported.
   let buffer: Record<string, unknown> | null = null;
+  if (!dryRun && upload.success && upload.platformPostId) {
+    // Record which files this upload came from, so the daily check can always find them.
+    registerUpload(UPLOADS_FILE, REPO_ROOT, upload.platformPostId, {
+      kind: resolved.format === "shorts" ? "short" : "long",
+      file: resolved.videoPath,
+      thumb: resolved.thumbnailPath ?? undefined,
+      long: resolved.format === "shorts" ? resolved.relatedVideoId ?? undefined : undefined,
+      standalone: (resolved.format === "shorts" && flag("standalone")) || undefined,
+    });
+  }
   if (!dryRun && upload.success && upload.platformPostId && !flag("no-buffer")) {
     const isShortUpload = resolved.format === "shorts";
     try {

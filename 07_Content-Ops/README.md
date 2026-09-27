@@ -21,7 +21,8 @@ npm run youtube:auth      # sign in as Orbit With Ben; saves YOUTUBE_REFRESH_TOK
 | `npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run` | Title-only changes |
 | `npx tsx --env-file=.env scripts/update-pinned-comment.ts --dry-run` | Weekly pinned-comment refresh |
 | `npm run buffer:mirror -- --video <id> --long <longId> --media <mp4>` | Mirror an upload made another way to Buffer |
-| `npm run buffer:check` | Keep Buffer in step with Studio (the Mac also runs it daily: `launchd/dev.orbit.buffer-check.plist`) |
+| `npm run buffer:check` | Keep Buffer in step with Studio, and mirror scheduled uploads not in Buffer yet (the Mac runs it daily: `launchd/dev.orbit.buffer-check.plist`) |
+| `npx tsx scripts/buffer-mirror.ts register --video <id> --media <mp4> --long <longId>` | Tell the daily check which file a hand-made upload came from |
 | `npm run diagnose:youtube -- --file <metrics.json>` / `npm run brief:next` | Growth diagnostics and next-episode brief |
 | `npm test` / `npm run typecheck` / `npm run lint` | Checks |
 
