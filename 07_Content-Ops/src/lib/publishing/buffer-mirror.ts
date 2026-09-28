@@ -227,6 +227,8 @@ export type TextOptions = {
   trailer?: boolean;
   /** Threads posts a long as its thumbnail, with the link written into the text. */
   youtubeUrl?: string;
+  /** A Short's full film on YouTube: every Short post points to it. */
+  filmUrl?: string;
 };
 
 /** Where a long's post sends people: Instagram has no links, Facebook's is the first comment. */
@@ -247,7 +249,8 @@ export function buildText(video: YouTubeVideo, channel: BufferChannel, kind: "sh
   // A Short's description often opens with its title: never print the same line twice.
   if (same(body, first) || same(body, question) || (!hook && same(body, video.title))) body = "";
   const tags = hashtags(video.tags, HASHTAG_LIMIT[channel], [video.title, hook, openingParagraph(video.description)].join(" ")).join(" ");
-  const lead = kind === "long" ? longLead(channel, opts) : "";
+  const lead =
+    kind === "long" ? longLead(channel, opts) : opts.filmUrl ? longLead(channel, { trailer: true, youtubeUrl: opts.filmUrl }) : "";
   return fit({ title: first, body, tail: [question, lead, tags] }, TEXT_LIMIT[channel]);
 }
 
@@ -314,6 +317,8 @@ function createInput(opts: {
   trailerUrl?: string;
   social?: SocialCopy;
   youtubeUrl: string;
+  /** The long a Short promotes. */
+  filmUrl?: string;
 }): Record<string, unknown> {
   const { video, channel, kind, social } = opts;
   // A long's trailer goes out as a Reel on Instagram and Facebook; Threads gets the thumbnail.
@@ -327,6 +332,7 @@ function createInput(opts: {
       social,
       trailer: Boolean(reel) && kind === "long",
       youtubeUrl: threadsImage ? opts.youtubeUrl : undefined,
+      filmUrl: kind === "short" ? opts.filmUrl : undefined,
     }),
   };
   if (opts.timing.mode === "customScheduled") input.dueAt = opts.timing.dueAt;
@@ -337,9 +343,9 @@ function createInput(opts: {
     if (channel === "instagram") {
       input.metadata = { instagram: { type: "reel", shouldShareToFeed: true, isAiGenerated: video.containsSyntheticMedia } };
     } else if (channel === "facebook") {
-      input.metadata = {
-        facebook: { type: "reel", ...(kind === "long" ? { firstComment: `Watch the full film: ${opts.youtubeUrl}` } : {}) },
-      };
+      // The full film goes in the first comment: a Reel keeps its reach, and the link still works.
+      const film = kind === "long" ? opts.youtubeUrl : opts.filmUrl;
+      input.metadata = { facebook: { type: "reel", ...(film ? { firstComment: `Watch the full film: ${film}` } : {}) } };
     }
     return input;
   }
@@ -455,6 +461,7 @@ export function planBufferMirror(opts: PlanOptions): Plan {
         trailerUrl: kind === "long" ? opts.trailerUrl : undefined,
         social: opts.social,
         youtubeUrl,
+        filmUrl: kind === "short" && opts.parentLong && !opts.standalone ? `https://youtu.be/${opts.parentLong.id}` : undefined,
       }),
     });
   }

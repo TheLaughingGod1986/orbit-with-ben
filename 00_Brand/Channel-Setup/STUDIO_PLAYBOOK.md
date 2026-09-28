@@ -224,14 +224,14 @@ Set 27 Sep 2026. **Buffer is the only way anything reaches social.** The old Mac
 1. the video's **hook** (a line written for the feed), or its YouTube title when it has none;
 2. the description's opening paragraph (links stripped; the only part shortened to fit);
 3. a **question** to start the comments (default: "What would you want to know next? Tell me below.");
-4. for a long, where the full film is (see the table);
+4. where the full film is (see the table): a long links to itself, a Short to its long. Instagram has no caption links, so it says "Link in bio": keep the YouTube channel link in the Instagram bio;
 5. the tags as hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads. Tags that name the subject (their words appear in the title, hook or description) go first, then the rest in YouTube order.
 
 A line is never printed twice: when a Short's description just repeats its title (or the question), it's left out.
 
 | YouTube | Instagram | Facebook Page | Threads |
 |---|---|---|---|
-| Short | Reel (the mp4), AI label on | Reel (the mp4) | Video (the mp4) |
+| Short | Reel (the mp4), AI label on, "Full film on YouTube. Link in bio." | Reel (the mp4); its long's link is the first comment | Video (the mp4), with "Full film: <long's link>" |
 | Long with a trailer | Reel (the trailer), "Full film on YouTube. Link in bio." | Reel (the trailer); the film link is the first comment | The thumbnail, with "Full film: <link>" |
 | Long, no trailer | The thumbnail as an image post, "New film on YouTube. Link in bio." | YouTube link card | The thumbnail, with "Watch the film: <link>" |
 

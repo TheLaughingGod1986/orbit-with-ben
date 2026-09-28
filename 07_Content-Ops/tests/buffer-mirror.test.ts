@@ -223,6 +223,18 @@ describe("buffer mirror: plan", () => {
     expect(plan.errors).toEqual([]);
   });
 
+  it("points every Short post to its full film on YouTube", () => {
+    const plan = planBufferMirror({ video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, parentLong: LONG_PUBLIC });
+    const by = Object.fromEntries(plan.actions.map((a) => [a.channel, a as unknown as { input: { text: string; metadata?: Record<string, Record<string, unknown>> } }]));
+    expect(by.instagram.input.text).toContain("Full film on YouTube. Link in bio.");
+    expect(by.facebook.input.text).toContain("Full film on YouTube. Link in the first comment.");
+    expect(by.facebook.input.metadata?.facebook.firstComment).toBe("Watch the full film: https://youtu.be/long0000001");
+    expect(by.threads.input.text).toContain("Full film: https://youtu.be/long0000001");
+    // A standalone Short has no film to point to.
+    const alone = planBufferMirror({ video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, standalone: true });
+    expect(JSON.stringify(alone.actions)).not.toContain("youtu.be");
+  });
+
   it("refuses the manifest template's placeholder copy", () => {
     const base = { video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, parentLong: LONG_PUBLIC };
     const plan = planBufferMirror({ ...base, social: { hook: "REPLACE: one short line that stops the scroll" } });
