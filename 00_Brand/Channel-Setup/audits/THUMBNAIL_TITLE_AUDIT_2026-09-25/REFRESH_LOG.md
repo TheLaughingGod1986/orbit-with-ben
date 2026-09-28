@@ -205,3 +205,4 @@ Full rows: `refresh/sweep/SWEEP_GRADE.json`.
 
 `-jmMROGoZCM`: Cloud Deck → NO FLOOR on the Cloud Deck picture. Set in Studio because `thumbnails.set` returned forbidden. Adds the no-surface hook instead of repeating the title, set before release.
 
+`-jmMROGoZCM`: title → Why You Can't Stand On Jupiter. Reason: vidIQ. Set before release.
