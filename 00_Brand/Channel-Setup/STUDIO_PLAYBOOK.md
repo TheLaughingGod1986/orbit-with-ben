@@ -168,6 +168,7 @@ Tools:
    - Upload private, with `publishAt`.
    - Set `privacyStatus` and `madeForKids` explicitly.
    - Altered/synthetic content: **yes**.
+   - Until the Data API thumbnail refusal on the new Cloud project is sorted, after each `youtube:package` upload, check for "thumbnail skipped" and set the thumbnail in Studio.
 2. **Long:**
    - normal publish, Sunday 18:00, **no Premiere** until subscribers are in the hundreds;
    - description: opens on the real subject, then chapters, then sources;
