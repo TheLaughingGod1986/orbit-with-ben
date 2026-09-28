@@ -258,10 +258,11 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
 2. In Buffer, connect the Instagram (business, linked to the Page), Facebook Page and Threads accounts. No TikTok. Put the organization id and the three channel ids in `social/BUFFER_CHANNELS.json` (from `get_account` and `list_channels` in the Buffer MCP). Ids aren't secret.
 3. `07_Content-Ops/.env` on the posting Mac, typed in by Ben (never pasted into chat, printed or committed):
    - `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` (the Google Cloud OAuth client; add `http://localhost:3000/api/oauth/google/callback` as an authorised redirect URI);
-   - `YOUTUBE_REFRESH_TOKEN`: run `cd 07_Content-Ops && npm run youtube:auth` and sign in as Orbit With Ben. If the Google consent screen is still in *Testing*, the login expires after 7 days, so publish the consent screen to *In production*.
+   - `YOUTUBE_REFRESH_TOKEN`: run `cd 07_Content-Ops && npm run youtube:auth` and sign in as Orbit With Ben. The OAuth client lives in the Cloud project *Youtube Orbit with Ben*, whose consent screen is *In production* (in *Testing* the login expires after 7 days). Sign in with the Google login that owns the Orbit channel, not Ben's personal one: that one connects the personal *Benjamin Oats* channel. It must print `Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog)`; anything else, run it again.
    - `BUFFER_API_KEY` (Buffer → Settings → API);
    - `BLOB_READ_WRITE_TOKEN`: a **public** Vercel Blob store. It's storage only and needs no Vercel project (Vercel → Storage → Create → Blob → Public → `.env.local` tab).
 4. The daily check: `cp 07_Content-Ops/launchd/dev.orbit.buffer-check.plist ~/Library/LaunchAgents/ && launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/dev.orbit.buffer-check.plist`.
+   Wake the Mac for it: `sudo pmset repeat wakeorpoweron MTWRFSU 07:00:00` (check with `pmset -g sched`). The Mac must stay logged in to Ben's account; asleep is fine. Log: `tail -n 20 ~/Library/Logs/orbit-buffer-check.log`.
 5. Optional: the Buffer MCP (`.cursor/mcp.json`, OAuth) for looking at the queue from Cursor, and for the fallback.
 
 ## 13. Ben signs off
