@@ -6,8 +6,9 @@
  *
  *   # Short: hosts the mp4 on the public Blob store, then schedules all three posts
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <shortId> --long <longId> --media <short.mp4>
- *   # Long: Instagram gets the thumbnail; Facebook and Threads get the YouTube link card
- *   npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <longId> --thumb <thumb.jpg>
+ *   # Long: the thumbnail on Instagram and Threads, the YouTube link card on Facebook.
+ *   # With --trailer (vertical, 30–60 s), Instagram and Facebook get it as a Reel instead.
+ *   npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <longId> --thumb <thumb.jpg> [--trailer <trailer.mp4>]
  *   # See what it would do, without hosting or posting (also saves the plan for the MCP route)
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts plan --video <id> …
  *   # Keep Buffer in step with Studio, and mirror scheduled uploads made outside youtube:package
@@ -15,7 +16,9 @@
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts check [--dry-run]
  *   # Tell the daily check which file an upload came from, when it was uploaded by hand
  *   npx tsx scripts/buffer-mirror.ts register --video <shortId> --media <short.mp4> --long <longId>
- *   npx tsx scripts/buffer-mirror.ts register --video <longId> --thumb <thumb.jpg>
+ *   npx tsx scripts/buffer-mirror.ts register --video <longId> --thumb <thumb.jpg> [--trailer <trailer.mp4>]
+ *   # Social copy for a video (before it goes out; posts already in Buffer keep their text)
+ *   npx tsx scripts/buffer-mirror.ts register --video <id> --hook "…" --question "…" [--alt "…"] [--cover-ms 1500]
  *   # Only when a plan was sent by hand through the Buffer MCP
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts record --video <id> --channel instagram --post-id <bufferPostId>
  *
@@ -23,13 +26,15 @@
  * BUFFER_API_KEY, BLOB_READ_WRITE_TOKEN. Without the Buffer key it plans only.
  * What was posted is kept in 00_Brand/Channel-Setup/social/BUFFER_POSTS.json: commit it.
  * Flags: --standalone (a Short with no long), --allow-late (back catalogue, Ben's OK),
- * --media-url / --thumb-url (already public files), --kind short|long.
+ * --media-url / --thumb-url / --trailer-url (already public files), --kind short|long,
+ * --hook / --question / --alt / --cover-ms (social copy; mirror uses UPLOADS.json's when not given).
  */
 import fs from "fs";
 import path from "path";
 import { BUFFER_CHANNELS, type BufferChannel, type Plan } from "../src/lib/publishing/buffer-mirror";
 import { REPO_ROOT, SOCIAL_DIR, UPLOADS_FILE, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
-import { registerUpload } from "../src/lib/publishing/media-finder";
+import { loadRegistry, registerUpload } from "../src/lib/publishing/media-finder";
+import type { SocialCopy } from "../src/lib/publishing/buffer-mirror";
 import { mirrorVideo, runBufferCheck } from "../src/lib/publishing/buffer-runner";
 
 const PLANS_DIR = path.join(SOCIAL_DIR, "buffer-plans");
@@ -48,6 +53,19 @@ function localFile(p: string | undefined): string | null {
   return abs;
 }
 
+/** --hook, --question, --alt, --cover-ms, or undefined when none is given. */
+function socialArgs(): SocialCopy | undefined {
+  const cover = arg("cover-ms");
+  if (cover !== undefined && !/^\d+$/.test(cover)) throw new Error("--cover-ms takes whole milliseconds, e.g. 1500");
+  const social: SocialCopy = {
+    ...(arg("hook") ? { hook: arg("hook") } : {}),
+    ...(arg("question") ? { question: arg("question") } : {}),
+    ...(arg("alt") ? { alt: arg("alt") } : {}),
+    ...(cover !== undefined ? { coverMs: Number(cover) } : {}),
+  };
+  return Object.keys(social).length ? social : undefined;
+}
+
 function savePlan(plan: Plan) {
   fs.mkdirSync(PLANS_DIR, { recursive: true });
   const out = path.join(PLANS_DIR, `${plan.videoId}.json`);
@@ -60,6 +78,9 @@ async function mirror(dryRun: boolean) {
   if (!videoId) throw new Error("needs --video <youtube id>");
   const deps = createMirrorDeps();
   if (!dryRun && !deps.client) console.error("BUFFER_API_KEY not set: planning only.");
+  const registered = loadRegistry(UPLOADS_FILE).videos[videoId];
+  const given = socialArgs();
+  const social = given || registered?.social ? { ...registered?.social, ...given } : undefined;
   const outcome = await mirrorVideo(
     {
       videoId,
@@ -70,6 +91,9 @@ async function mirror(dryRun: boolean) {
       mediaUrl: arg("media-url"),
       thumbPath: localFile(arg("thumb")),
       thumbUrl: arg("thumb-url"),
+      trailerPath: localFile(arg("trailer")),
+      trailerUrl: arg("trailer-url"),
+      social,
       allowLate: flag("allow-late"),
       dryRun,
     },
@@ -109,16 +133,26 @@ function register() {
   const videoId = arg("video");
   const media = localFile(arg("media"));
   const thumb = localFile(arg("thumb"));
+  const trailer = localFile(arg("trailer"));
   const long = arg("long");
   const standalone = flag("standalone");
-  if (!videoId || (!media && !thumb)) throw new Error("register needs --video <id> and --media <mp4> (Short) or --thumb <jpg> (long)");
+  const social = socialArgs();
+  const known = videoId ? loadRegistry(UPLOADS_FILE).videos[videoId] : undefined;
+  if (!videoId || (!media && !thumb && !trailer && !(known && social))) {
+    throw new Error(
+      "register needs --video <id> and --media <mp4> (Short) or --thumb <jpg> / --trailer <mp4> (long); social copy alone only for a registered video",
+    );
+  }
   if (media && !long && !standalone) throw new Error("a Short needs --long <longId> (or --standalone)");
+  if (media && trailer) throw new Error("--trailer is for a long; a Short's --media is already the Reel");
   const reg = registerUpload(UPLOADS_FILE, REPO_ROOT, videoId, {
-    kind: media ? "short" : "long",
+    ...(media ? { kind: "short" as const } : thumb || trailer ? { kind: "long" as const } : {}),
     file: media ?? undefined,
     thumb: thumb ?? undefined,
+    trailer: trailer ?? undefined,
     long: long ?? undefined,
     standalone: standalone || undefined,
+    social,
   });
   console.log(JSON.stringify({ registered: videoId, entry: reg.videos[videoId] }, null, 2));
 }

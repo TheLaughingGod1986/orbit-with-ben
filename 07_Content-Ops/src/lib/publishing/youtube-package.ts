@@ -5,6 +5,7 @@ import {
   appendAffiliateSectionToDescription,
   type AffiliateDescriptionLink,
 } from "@/lib/affiliate/description";
+import type { SocialCopy } from "@/lib/publishing/buffer-mirror";
 
 export type YouTubePackageManifest = {
   format?: "longform" | "shorts";
@@ -31,6 +32,10 @@ export type YouTubePackageManifest = {
   privacy?: "private" | "public" | "unlisted";
   madeForKids?: boolean;
   categoryId?: string;
+  /** Buffer mirror copy: hook, question, thumbnail alt text, Reel cover (ms). */
+  social?: SocialCopy;
+  /** Long: vertical trailer (30–60 s) posted as the Instagram and Facebook Reel. Default: Trailer/*.mp4. */
+  trailer?: string;
 };
 
 export type ResolvedYouTubePackage = {
@@ -49,6 +54,8 @@ export type ResolvedYouTubePackage = {
   relatedVideoId: string | null;
   privacy: "private" | "public" | "unlisted";
   madeForKids: boolean;
+  social: SocialCopy | null;
+  trailerPath: string | null;
   sources: Record<string, string>;
 };
 
@@ -436,6 +443,17 @@ export function loadYouTubePackage(input: {
     .map((p) => (path.isAbsolute(p) ? p : path.resolve(packageDir, p)))
     .filter((p) => fs.existsSync(p));
 
+  let trailerPath: string | null = null;
+  if (format === "longform") {
+    trailerPath = merged.trailer
+      ? path.isAbsolute(merged.trailer)
+        ? merged.trailer
+        : path.resolve(packageDir, merged.trailer)
+      : findInSubdir(packageDir, "Trailer", [(n) => /\.(mp4|mov)$/i.test(n)]);
+    if (trailerPath && !fs.existsSync(trailerPath)) throw new Error(`Trailer not found: ${trailerPath}`);
+    if (trailerPath) sources.trailer = trailerPath;
+  }
+
   let scheduledAt: Date | null = null;
   if (merged.schedule) {
     scheduledAt = new Date(merged.schedule);
@@ -460,6 +478,8 @@ export function loadYouTubePackage(input: {
     relatedVideoId: merged.relatedVideoId || null,
     privacy: merged.privacy || "private",
     madeForKids: merged.madeForKids ?? false,
+    social: merged.social ?? null,
+    trailerPath,
     sources,
   };
 }

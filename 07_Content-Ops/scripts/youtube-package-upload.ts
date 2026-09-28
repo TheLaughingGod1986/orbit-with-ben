@@ -141,8 +141,10 @@ async function main() {
       kind: resolved.format === "shorts" ? "short" : "long",
       file: resolved.videoPath,
       thumb: resolved.thumbnailPath ?? undefined,
+      trailer: resolved.trailerPath ?? undefined,
       long: resolved.format === "shorts" ? resolved.relatedVideoId ?? undefined : undefined,
       standalone: (resolved.format === "shorts" && flag("standalone")) || undefined,
+      social: resolved.social ?? undefined,
     });
   }
   if (!dryRun && upload.success && upload.platformPostId && !flag("no-buffer")) {
@@ -157,6 +159,8 @@ async function main() {
           standalone: isShortUpload && flag("standalone"),
           mediaPath: isShortUpload ? resolved.videoPath : null,
           thumbPath: isShortUpload ? null : resolved.thumbnailPath,
+          trailerPath: isShortUpload ? null : resolved.trailerPath,
+          social: resolved.social ?? undefined,
         },
         deps,
       );

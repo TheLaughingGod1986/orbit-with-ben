@@ -218,24 +218,43 @@ Tools:
 
 Set 27 Sep 2026. **Buffer is the only way anything reaches social.** The old Mac LaunchAgents and Chrome posting scripts are in `_archive/00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/`, and the hosted ops app, whose worker once posted to social, was retired the same day.
 
-**The rule:** every video uploaded and scheduled on YouTube gets the same post in Buffer on Instagram, Facebook and Threads, **for exactly the time it goes public on YouTube.** It uses the same title, the description's opening paragraph and the tags as hashtags, all read from the live YouTube record, never retyped.
+**The rule:** every video uploaded and scheduled on YouTube gets a post in Buffer on Instagram, Facebook and Threads, **for exactly the time it goes public on YouTube.** The text is built from the live YouTube record, never retyped:
+
+1. the video's **hook** (a line written for the feed), or its YouTube title when it has none;
+2. the description's opening paragraph (links stripped; the only part shortened to fit);
+3. a **question** to start the comments (default: "What would you want to know next? Tell me below.");
+4. for a long, where the full film is (see the table);
+5. the tags as hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, in order.
 
 | YouTube | Instagram | Facebook Page | Threads |
 |---|---|---|---|
-| Short | Reel (the mp4), frame 0 as cover, AI label on | Reel (the mp4) | Video (the mp4) |
-| Long | The thumbnail as an image post, "New film on YouTube. Link in bio." | YouTube link card | YouTube link card |
+| Short | Reel (the mp4), AI label on | Reel (the mp4) | Video (the mp4) |
+| Long with a trailer | Reel (the trailer), "Full film on YouTube. Link in bio." | Reel (the trailer); the film link is the first comment | The thumbnail, with "Full film: <link>" |
+| Long, no trailer | The thumbnail as an image post, "New film on YouTube. Link in bio." | YouTube link card | The thumbnail, with "Watch the film: <link>" |
 
-Hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, taken in order from the YouTube tags. Links are stripped from the caption; a long's link rides on the card.
+Why (Buffer stats, 2 Aug–28 Sep 2026, 151 posts): Facebook Reels averaged 72 impressions against 9–10 for images and link cards; Instagram Reels 12.5 reach against 5.7 for images; Threads images 14.8 views against 4.8 for link cards. Not one post got a comment.
+
+**Social copy, per video** (all optional; set it before the video goes out, because posts already in Buffer keep their text):
+- `hook`: one short line that stops the scroll. It replaces the title as the first line. Instagram shows about 125 characters before "more".
+- `question`: something people can answer in a word or two ("Would you go in?").
+- `alt`: what the long's thumbnail shows, for screen readers. Default: "Thumbnail for the Orbit With Ben film "<title>"".
+- `coverMs`: where the Instagram Reel cover comes from, in ms. Default 1000 (frame 0 is often a fade).
+
+Put them in the package manifest's `social` block (`templates/YOUTUBE_PACKAGE_MANIFEST.json`), or for any upload: `npx tsx scripts/buffer-mirror.ts register --video <id> --hook "…" --question "…" [--alt "…"] [--cover-ms 1500]`. They're kept in `social/UPLOADS.json`.
+
+**Trailer for a long:** a vertical 30–60 s cut that ends on "Full film on YouTube". Put it in the package's `Trailer/` folder (or the manifest's `trailer`), or register it: `register --video <longId> --trailer <mp4>`. With one, Instagram and Facebook post it as a Reel; without one, they fall back to the thumbnail and the link card.
+
+Facebook Reels show as "Untitled Video" in Meta Business Suite: Buffer's API has no Reel title field. The caption is unaffected.
 
 **Automatic (from 27 Sep 2026): uploading is the whole job.**
-- **At upload.** `npm run youtube:package` finishes a live upload, then puts the Short's mp4 (or the long's thumbnail) on the public Vercel Blob store. It reads the video back from YouTube and schedules the three Buffer posts through the Buffer API. For a Short, the long is the package's `relatedVideoId`; pass `--standalone` for a Short with no long. The upload result JSON has a `buffer` block. A Buffer problem never fails the upload: it prints "Buffer mirror incomplete" with the reason.
+- **At upload.** `npm run youtube:package` finishes a live upload, then puts the Short's mp4 (or the long's thumbnail and trailer) on the public Vercel Blob store. It reads the video back from YouTube and schedules the three Buffer posts through the Buffer API. For a Short, the long is the package's `relatedVideoId`; pass `--standalone` for a Short with no long. The upload result JSON has a `buffer` block. A Buffer problem never fails the upload: it prints "Buffer mirror incomplete" with the reason.
 - **Every day at 07:05 UK**, the posting Mac runs `buffer-mirror.ts check` (LaunchAgent `dev.orbit.buffer-check`, log `~/Library/Logs/orbit-buffer-check.log`). It:
   - moves the Buffer posts when a YouTube time moved, and deletes them when a video no longer goes public;
   - **mirrors any scheduled upload that isn't in Buffer yet**, however it was uploaded (by hand in Studio, by Cursor, or by a script). It finds the local file in `social/UPLOADS.json`, which `youtube:package` fills on every upload, or in the older project records (`SHORTS_UPLOAD_INDEX.json`, `*upload_result*.json`). It never guesses from titles. If it can't find a file, or a Short has no long, the log says so and the run fails until someone registers the file:
-    `npx tsx scripts/buffer-mirror.ts register --video <shortId> --media <mp4> --long <longId>` (or `--video <longId> --thumb <jpg>` for a long).
-- **To mirror one straight away**, without waiting for 07:05: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <short.mp4>` (Short), or `mirror --video <longId> --thumb <thumb.jpg>` (long). `plan` instead of `mirror` shows what it would do and changes nothing.
+    `npx tsx scripts/buffer-mirror.ts register --video <shortId> --media <mp4> --long <longId>` (or `--video <longId> --thumb <jpg> [--trailer <mp4>]` for a long).
+- **To mirror one straight away**, without waiting for 07:05: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <short.mp4>` (Short), or `mirror --video <longId> --thumb <thumb.jpg> [--trailer <trailer.mp4>]` (long). Social copy comes from `UPLOADS.json`, or `--hook`/`--question`/`--alt`/`--cover-ms`. `plan` instead of `mirror` shows what it would do and changes nothing.
 - **Straight after a Studio change**, don't wait for 07:00: `buffer-mirror.ts check`.
-- **Blob storage cleans itself.** The same 07:05 run deletes a video's Blob copy once Buffer reports every post for it as sent, or 14 days after it went public, even if a post errored. It also deletes it straight away if the video's posts were removed, or if no post was ever created. It links files posted before this existed back to their video by the YouTube ID in the filename, and deletes true orphans after 2 days. It only ever touches files under `social/` on the Blob store. The 1 GB free tier stays nearly empty.
+- **Blob storage cleans itself.** The same 07:05 run deletes a video's Blob copies once Buffer reports every post for it as sent, or 14 days after it went public, even if a post errored. It also deletes it straight away if the video's posts were removed, or if no post was ever created. It links files posted before this existed back to their video by the YouTube ID in the filename, and deletes true orphans after 2 days. It only ever touches files under `social/` on the Blob store. The 1 GB free tier stays nearly empty.
 - What was posted is kept in `social/BUFFER_POSTS.json`, so each video goes out once per channel. Commit it and `social/UPLOADS.json` with the week's work.
 - **Fallback without the API key:** `plan` saves `social/buffer-plans/<id>.json`. Send each action through the Buffer MCP exactly as written, then run `buffer-mirror.ts record --video <id> --channel <c> --post-id <bufferId>` (or `--deleted`).
 

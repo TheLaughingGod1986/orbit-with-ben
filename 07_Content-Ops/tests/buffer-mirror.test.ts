@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import {
   Ledger,
   YouTubeVideo,
+  DEFAULT_COVER_MS,
+  DEFAULT_QUESTION,
   buildText,
   hashtags,
   isBufferOnlyPlatform,
@@ -17,6 +19,7 @@ const CHANNELS = { instagram: "ig000000000000000000000a", facebook: "fb000000000
 const EMPTY: Ledger = { version: 1, videos: {} };
 const MEDIA = "https://abc.public.blob.vercel-storage.com/social/short.mp4";
 const THUMB = "https://abc.public.blob.vercel-storage.com/social/long.jpg";
+const TRAILER = "https://abc.public.blob.vercel-storage.com/social/long-trailer.mp4";
 
 function video(over: Partial<YouTubeVideo> = {}): YouTubeVideo {
   return {
@@ -48,10 +51,36 @@ describe("buffer mirror: text", () => {
     expect(buildText(video(), "threads", "short").match(/#/g)).toHaveLength(1);
   });
 
-  it("keeps Threads under 500 characters", () => {
+  it("keeps Threads under 500 characters, shortening only the body", () => {
     const long = video({ description: "word ".repeat(300) });
-    expect(buildText(long, "threads", "short").length).toBeLessThanOrEqual(500);
-    expect(buildText(long, "threads", "short").startsWith("Why You Can't Stand")).toBe(true);
+    const text = buildText(long, "threads", "long", { youtubeUrl: "https://youtu.be/long0000001" });
+    expect(text.length).toBeLessThanOrEqual(500);
+    expect(text.startsWith("Why You Can't Stand")).toBe(true);
+    expect(text).toContain(DEFAULT_QUESTION);
+    expect(text).toContain("Watch the film: https://youtu.be/long0000001");
+    expect(text).toMatch(/#NeutronStar$/);
+  });
+
+  it("opens with the social hook and ends the body with a question", () => {
+    const plain = buildText(video(), "instagram", "short");
+    expect(plain.split("\n\n")).toEqual([
+      "Why You Can't Stand on a Neutron Star",
+      "One teaspoon of it weighs as much as a mountain.",
+      DEFAULT_QUESTION,
+      "#NeutronStar #Space #Astronomy #OrbitWithBen #Physics",
+    ]);
+    const own = buildText(video(), "facebook", "short", { social: { hook: "A teaspoon of this star outweighs Everest.", question: "Would you pick it up?" } });
+    expect(own.split("\n\n")[0]).toBe("A teaspoon of this star outweighs Everest.");
+    expect(own).toContain("Would you pick it up?");
+    expect(own).not.toContain(DEFAULT_QUESTION);
+  });
+
+  it("points each platform to the full film its own way", () => {
+    const long = video({ id: "long0000001", durationSeconds: 724 });
+    expect(buildText(long, "instagram", "long")).toContain("New film on YouTube. Link in bio.");
+    expect(buildText(long, "instagram", "long", { trailer: true })).toContain("Full film on YouTube. Link in bio.");
+    expect(buildText(long, "facebook", "long", { trailer: true })).toContain("Link in the first comment.");
+    expect(buildText(long, "facebook", "long")).not.toContain("YouTube");
   });
 
   it("parses YouTube durations", () => {
@@ -109,25 +138,80 @@ describe("buffer mirror: plan", () => {
     expect(drive.actions).toEqual([]);
   });
 
-  it("mirrors a long as link cards and an Instagram thumbnail post", () => {
+  it("mirrors a long with no trailer: thumbnail on Instagram and Threads, link card on Facebook", () => {
     const long = video({ id: "long0000001", durationSeconds: 724, publishAt: "2026-10-04T17:00:00Z" });
     const plan = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, thumbUrl: THUMB });
     expect(plan.errors).toEqual([]);
     const byChannel = Object.fromEntries(plan.actions.map((a) => [a.channel, a]));
+    const alt = `Thumbnail for the Orbit With Ben film "${long.title}"`;
     expect(byChannel.facebook).toMatchObject({
       input: { assets: [], metadata: { facebook: { type: "post", linkAttachment: { url: "https://youtu.be/long0000001" } } } },
     });
-    expect(byChannel.threads).toMatchObject({ input: { metadata: { threads: { linkAttachment: { url: "https://youtu.be/long0000001" } } } } });
+    expect(byChannel.threads).toMatchObject({ input: { assets: [{ image: { url: THUMB, metadata: { altText: alt } } }] } });
+    expect((byChannel.threads as unknown as { input: Record<string, unknown> }).input.metadata).toBeUndefined();
+    expect((byChannel.threads as unknown as { input: { text: string } }).input.text).toContain("https://youtu.be/long0000001");
     expect(byChannel.instagram).toMatchObject({
-      input: { assets: [{ image: { url: THUMB, metadata: { altText: long.title } } }], metadata: { instagram: { type: "post" } } },
+      input: { assets: [{ image: { url: THUMB, metadata: { altText: alt } } }], metadata: { instagram: { type: "post" } } },
     });
   });
 
-  it("skips Instagram on a long without a thumbnail URL, but still posts the link cards", () => {
+  it("uses the alt text given for the thumbnail", () => {
+    const long = video({ id: "long0000001", durationSeconds: 724, publishAt: "2026-10-04T17:00:00Z" });
+    const alt = "Jupiter's orange cloud bands, with the words NO FLOOR.";
+    const plan = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, thumbUrl: THUMB, social: { alt } });
+    expect(plan.actions[0]).toMatchObject({ channel: "instagram", input: { assets: [{ image: { metadata: { altText: alt } } }] } });
+  });
+
+  it("posts a long's trailer as a Reel on Instagram and Facebook, with the film link in Facebook's first comment", () => {
+    const long = video({ id: "long0000001", durationSeconds: 724, publishAt: "2026-10-04T17:00:00Z" });
+    const plan = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, thumbUrl: THUMB, trailerUrl: TRAILER });
+    expect(plan.errors).toEqual([]);
+    const byChannel = Object.fromEntries(plan.actions.map((a) => [a.channel, a]));
+    expect(byChannel.instagram).toMatchObject({
+      input: {
+        assets: [{ video: { url: TRAILER, metadata: { thumbnailOffset: DEFAULT_COVER_MS } } }],
+        metadata: { instagram: { type: "reel", shouldShareToFeed: true } },
+      },
+    });
+    expect(byChannel.facebook).toMatchObject({
+      input: {
+        assets: [{ video: { url: TRAILER } }],
+        metadata: { facebook: { type: "reel", firstComment: "Watch the full film: https://youtu.be/long0000001" } },
+      },
+    });
+    expect(byChannel.threads).toMatchObject({ input: { assets: [{ image: { url: THUMB } }] } });
+  });
+
+  it("posts a long's trailer on Instagram even with no thumbnail", () => {
+    const long = video({ id: "long0000001", durationSeconds: 724, publishAt: "2026-10-04T17:00:00Z" });
+    const plan = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, trailerUrl: TRAILER });
+    expect(plan.actions.map((a) => `${a.channel}:${a.action}`)).toEqual(["instagram:create_post", "facebook:create_post", "threads:create_post"]);
+    expect(plan.actions[2]).toMatchObject({ input: { metadata: { threads: { linkAttachment: { url: "https://youtu.be/long0000001" } } } } });
+    const bad = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, trailerUrl: "https://drive.google.com/file/x" });
+    expect(bad.errors.join()).toMatch(/--trailer-url/);
+  });
+
+  it("refuses the manifest template's placeholder copy", () => {
+    const base = { video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, parentLong: LONG_PUBLIC };
+    const plan = planBufferMirror({ ...base, social: { hook: "REPLACE: one short line that stops the scroll" } });
+    expect(plan.errors.join()).toMatch(/social.hook is still the template placeholder/);
+    expect(plan.actions).toEqual([]);
+  });
+
+  it("sets the Reel cover a second in, or where the video says", () => {
+    const base = { video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, parentLong: LONG_PUBLIC };
+    expect(planBufferMirror(base).actions[0]).toMatchObject({ input: { assets: [{ video: { metadata: { thumbnailOffset: 1000 } } }] } });
+    expect(planBufferMirror({ ...base, social: { coverMs: 2500 } }).actions[0]).toMatchObject({
+      input: { assets: [{ video: { metadata: { thumbnailOffset: 2500 } } }] },
+    });
+  });
+
+  it("skips Instagram on a long without a thumbnail or trailer, but still posts the link cards", () => {
     const long = video({ id: "long0000001", durationSeconds: 724, publishAt: "2026-10-04T17:00:00Z" });
     const plan = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW });
     expect(plan.errors).toEqual([]);
     expect(plan.actions.map((a) => `${a.channel}:${a.action}`)).toEqual(["instagram:skip", "facebook:create_post", "threads:create_post"]);
+    expect(plan.actions[2]).toMatchObject({ input: { metadata: { threads: { linkAttachment: { url: "https://youtu.be/long0000001" } } } } });
   });
 
   it("refuses back catalogue, too-close times and videos not going public", () => {

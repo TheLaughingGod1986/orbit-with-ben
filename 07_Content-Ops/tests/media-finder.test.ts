@@ -26,6 +26,20 @@ describe("media finder", () => {
     expect(hint).toMatchObject({ mediaPath: mp4, longId: "-jmMROGoZCM", standalone: false });
   });
 
+  it("keeps a long's trailer and social copy, and merges later copy into it", () => {
+    const { root, put } = repo();
+    const thumb = put("02_Video-Projects/020_Jupiter/08_Thumbnail/no-floor.jpg");
+    const trailer = put("02_Video-Projects/020_Jupiter/11_Upload-Package/Trailer/trailer.mp4");
+    const regFile = path.join(root, "00_Brand/Channel-Setup/social/UPLOADS.json");
+    registerUpload(regFile, root, "-jmMROGoZCM", { kind: "long", thumb, trailer, social: { hook: "There's no ground on Jupiter." } });
+    registerUpload(regFile, root, "-jmMROGoZCM", { social: { question: "Would you go in?" } });
+    const rec = loadRegistry(regFile).videos["-jmMROGoZCM"];
+    expect(rec).toMatchObject({ kind: "long", trailer: "02_Video-Projects/020_Jupiter/11_Upload-Package/Trailer/trailer.mp4" });
+    expect(rec.social).toEqual({ hook: "There's no ground on Jupiter.", question: "Would you go in?" });
+    const hint = findMedia("-jmMROGoZCM", { registry: loadRegistry(regFile), scanned: new Map(), repoRoot: root, registryFile: regFile });
+    expect(hint).toMatchObject({ thumbPath: thumb, trailerPath: trailer, social: rec.social });
+  });
+
   it("reads SHORTS_UPLOAD_INDEX, old upload results and package results", () => {
     const { root, put } = repo();
     put(

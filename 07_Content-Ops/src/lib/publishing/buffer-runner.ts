@@ -13,14 +13,15 @@ import type { BufferStore } from "@/lib/publishing/buffer-store";
 import { isOwnBlobUrl, type HostFile, type StoredMedia } from "@/lib/publishing/media-host";
 import type { MediaHint } from "@/lib/publishing/media-finder";
 import {
-  BUFFER_CHANNELS,
   type Ledger,
   type BufferChannel,
   type ChannelIds,
   type Plan,
   type PlanAction,
+  type SocialCopy,
   type YouTubeVideo,
   MEDIA_MAX_AGE_MS,
+  entryMedia,
   isShort,
   planBufferMirror,
   reconcileEntry,
@@ -64,6 +65,11 @@ export type MirrorRequest = {
   mediaUrl?: string;
   thumbPath?: string | null;
   thumbUrl?: string;
+  /** A long's vertical trailer: a Reel on Instagram and Facebook. */
+  trailerPath?: string | null;
+  trailerUrl?: string;
+  /** Hook, question, alt text and cover frame (UPLOADS.json `social`). */
+  social?: SocialCopy;
   allowLate?: boolean;
   dryRun?: boolean;
 };
@@ -77,7 +83,8 @@ export type ActionResult = {
   reason?: string;
 };
 
-export type MirrorOutcome = { plan: Plan; results: ActionResult[]; sent: boolean; hostedUrl: string | null };
+/** Blob copies this run uploaded. */
+export type MirrorOutcome = { plan: Plan; results: ActionResult[]; sent: boolean; hosted: string[] };
 
 const DRY_HOST = "https://dry-run.invalid/social";
 
@@ -116,6 +123,8 @@ export async function executeActions(
   return results;
 }
 
+type MediaRole = "media" | "thumb" | "trailer";
+
 export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise<MirrorOutcome> {
   const token = await deps.youtubeToken();
   const ids = req.longId ? [req.videoId, req.longId] : [req.videoId];
@@ -129,66 +138,83 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
   const now = deps.now();
   const short = isShort(video, req.kind);
   const kind = short ? "short" : "long";
-  const localPath = short ? req.mediaPath : req.thumbPath;
-  const givenUrl = short ? req.mediaUrl : req.thumbUrl;
-  const entry = ledger.videos[video.id];
-  const needsMedia = BUFFER_CHANNELS.some((c) => !entry?.channels[c]) && (short || !entry?.channels.instagram);
 
-  const planWith = (url: string | undefined) =>
+  // The files this video can use: a Short's mp4, or a long's thumbnail and trailer.
+  const files: { role: MediaRole; localPath: string | null; url: string | undefined; want: "video" | "image" }[] = short
+    ? [{ role: "media", localPath: req.mediaPath ?? null, url: req.mediaUrl, want: "video" }]
+    : [
+        { role: "thumb", localPath: req.thumbPath ?? null, url: req.thumbUrl, want: "image" },
+        { role: "trailer", localPath: req.trailerPath ?? null, url: req.trailerUrl, want: "video" },
+      ];
+  const urls = new Map<MediaRole, string | undefined>();
+  const planWith = () =>
     planBufferMirror({
       video,
       channelIds: deps.channelIds,
       ledger,
       now,
       kind,
-      mediaUrl: short ? url : undefined,
-      thumbUrl: short ? undefined : url,
+      mediaUrl: urls.get("media"),
+      thumbUrl: urls.get("thumb"),
+      trailerUrl: urls.get("trailer"),
+      social: req.social,
       parentLong: long ? { id: long.id, goesPublicAt: long.privacyStatus === "public" ? long.publishedAt : long.publishAt } : null,
       standalone: req.standalone,
       allowLate: req.allowLate,
     });
 
-  // Plan once with a stand-in URL, so a refused video never gets its file uploaded.
-  let url = givenUrl;
-  if (!url && localPath) url = `${DRY_HOST}/${video.id}${path.extname(localPath).toLowerCase()}`;
-  let plan = planWith(url);
-  let hostedUrl: string | null = null;
+  // Plan once with stand-in URLs, so a refused video never gets its files uploaded.
+  const standIn = (f: (typeof files)[number]) => `${DRY_HOST}/${video.id}-${f.role}${path.extname(f.localPath ?? "").toLowerCase()}`;
+  for (const f of files) urls.set(f.role, f.url ?? (f.localPath ? standIn(f) : undefined));
+  let plan = planWith();
+  const hosted: string[] = [];
   // Dry, or no Buffer key: plan only, and upload nothing.
   if (plan.errors.length || req.dryRun || !deps.client) {
-    return { plan, results: [], sent: false, hostedUrl };
+    return { plan, results: [], sent: false, hosted };
   }
 
-  if (needsMedia && !givenUrl && localPath) {
-    if (!deps.host) {
-      plan.errors.push("No Blob store token (BLOB_READ_WRITE_TOKEN), so the media can't be hosted");
-      plan.actions = [];
-      return { plan, results: [], sent: false, hostedUrl };
-    }
-    hostedUrl = await deps.host(localPath, `social/${video.id}${path.extname(localPath).toLowerCase()}`);
-    url = hostedUrl;
-    plan = planWith(url);
-  }
-  if (needsMedia && url && plan.actions.some((a) => a.action === "create_post")) {
-    const problem = await deps.checkUrl(url, short ? "video" : "image");
-    if (problem) {
-      plan.errors.push(problem);
-      plan.actions = [];
-    }
+  // Upload only the files a new post will actually use.
+  const creates = JSON.stringify(plan.actions.filter((a) => a.action === "create_post"));
+  const used = files.filter((f) => urls.get(f.role) && creates.includes(urls.get(f.role)!));
+  const toHost = used.filter((f) => !f.url && f.localPath);
+  if (toHost.length && !deps.host) {
+    plan.errors.push("No Blob store token (BLOB_READ_WRITE_TOKEN), so the media can't be hosted");
+    plan.actions = [];
+    return { plan, results: [], sent: false, hosted };
   }
   // A file we uploaded but no post will use is deleted again straight away.
   const dropHosted = async () => {
-    if (hostedUrl && deps.deleteMedia) await deps.deleteMedia(hostedUrl).catch(() => undefined);
+    if (deps.deleteMedia) for (const u of hosted) await deps.deleteMedia(u).catch(() => undefined);
   };
-  if (plan.errors.length || !deps.client) {
+  try {
+    for (const f of toHost) {
+      const suffix = f.role === "media" ? "" : `-${f.role}`;
+      const url = await deps.host!(f.localPath!, `social/${video.id}${suffix}${path.extname(f.localPath!).toLowerCase()}`);
+      hosted.push(url);
+      urls.set(f.role, url);
+    }
+  } catch (e) {
     await dropHosted();
-    return { plan, results: [], sent: false, hostedUrl };
+    throw e;
+  }
+  if (toHost.length) plan = planWith();
+  for (const f of used) {
+    const problem = await deps.checkUrl(urls.get(f.role)!, f.want);
+    if (problem) plan.errors.push(problem);
+  }
+  if (plan.errors.length) {
+    plan.actions = [];
+    await dropHosted();
+    return { plan, results: [], sent: false, hosted };
   }
   const results = await executeActions(plan, deps.client, deps.store);
-  if (hostedUrl) {
-    if (results.some((r) => r.ok && r.action === "create_post")) await deps.store.setMedia(video.id, hostedUrl);
-    else await dropHosted();
+  if (hosted.length) {
+    if (results.some((r) => r.ok && r.action === "create_post")) {
+      const current = await deps.store.load();
+      await deps.store.setMedia(video.id, [...entryMedia(current.videos[video.id]), ...hosted]);
+    } else await dropHosted();
   }
-  return { plan, results, sent: true, hostedUrl };
+  return { plan, results, sent: true, hosted };
 }
 
 export type CheckOutcome = {
@@ -217,31 +243,35 @@ async function cleanMedia(
   const out: CheckOutcome["mediaCleaned"] = [];
   const after = await deps.store.load();
   const candidates: { videoId: string; url: string; reason: string }[] = [];
+  const media = (id: string) => entryMedia(after.videos[id]);
   // Files the record doesn't know about: link them to their video, or sweep them once old.
   if (deps.listMedia) {
-    const known = new Set(Object.values(after.videos).map((e) => e.media).filter(Boolean));
+    const known = new Set(Object.keys(after.videos).flatMap(media));
     for (const blob of await deps.listMedia()) {
       if (known.has(blob.url)) continue;
       const id = videoIdFromBlobPath(blob.pathname);
       const entry = id ? after.videos[id] : undefined;
-      if (id && entry && !entry.media) {
-        entry.media = blob.url;
+      if (id && entry) {
+        // A copy uploaded for a video that is in Buffer: keep it with that video's posts.
+        const next = [...media(id), blob.url];
+        entry.media = next.length === 1 ? next[0] : next;
         known.add(blob.url);
-        if (send) await deps.store.setMedia(id, blob.url);
+        if (send) await deps.store.setMedia(id, next);
       } else if (now.getTime() - blob.uploadedAt.getTime() > ORPHAN_AGE_MS) {
         candidates.push({ videoId: id ?? "?", url: blob.url, reason: "orphaned: no Buffer post uses it" });
       }
     }
   }
   for (const [id, entry] of Object.entries(before.videos)) {
-    if (entry.media && !after.videos[id]) candidates.push({ videoId: id, url: entry.media, reason: "its Buffer posts were removed" });
+    if (!after.videos[id]) for (const url of entryMedia(entry)) candidates.push({ videoId: id, url, reason: "its Buffer posts were removed" });
   }
   for (const [id, entry] of Object.entries(after.videos)) {
-    if (!entry.media) continue;
+    const urls = media(id);
+    if (!urls.length) continue;
     const recorded = Object.values(entry.channels).map((c) => c!.recordedAt);
     const since = entry.dueAt ?? recorded.sort().at(-1) ?? null;
     if (since && now.getTime() - Date.parse(since) > MEDIA_MAX_AGE_MS) {
-      candidates.push({ videoId: id, url: entry.media, reason: "went public more than 14 days ago" });
+      for (const url of urls) candidates.push({ videoId: id, url, reason: "went public more than 14 days ago" });
       continue;
     }
     if (!deps.client) continue;
@@ -249,7 +279,7 @@ async function cleanMedia(
       Object.values(entry.channels).map((c) => deps.client!.getPostStatus(c!.postId).catch(() => "unknown")),
     );
     if (statuses.length && statuses.every((st) => st === "sent" || st === null)) {
-      candidates.push({ videoId: id, url: entry.media, reason: "every Buffer post has been sent" });
+      for (const url of urls) candidates.push({ videoId: id, url, reason: "every Buffer post has been sent" });
     }
   }
   for (const c of candidates) {
@@ -260,7 +290,13 @@ async function cleanMedia(
     }
     try {
       await deps.deleteMedia(c.url);
-      if (after.videos[c.videoId]) await deps.store.setMedia(c.videoId, null);
+      if (after.videos[c.videoId]) {
+        const rest = media(c.videoId).filter((u) => u !== c.url);
+        const e = after.videos[c.videoId];
+        if (rest.length) e.media = rest.length === 1 ? rest[0] : rest;
+        else delete e.media;
+        await deps.store.setMedia(c.videoId, rest);
+      }
       out.push({ ...c, deleted: true });
     } catch (e) {
       out.push({ ...c, deleted: false, error: (e as Error).message });
@@ -311,6 +347,8 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
           standalone: hint.standalone,
           mediaPath: hint.mediaPath,
           thumbPath: hint.thumbPath,
+          trailerPath: hint.trailerPath,
+          social: hint.social,
           dryRun: !send,
         },
         deps,

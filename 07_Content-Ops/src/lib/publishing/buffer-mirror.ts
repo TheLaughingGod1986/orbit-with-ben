@@ -2,9 +2,11 @@
  * Buffer mirror (STUDIO_PLAYBOOK.md §12, added 27 Sep 2026).
  *
  * Every YouTube upload is mirrored to Instagram, Facebook and Threads through Buffer,
- * at exactly the time the video goes public on YouTube, with the same title, the
- * description's opening paragraph and the tags as hashtags. This module turns the live
- * YouTube record into Buffer `create_post` inputs. It makes no network calls: the CLI
+ * at exactly the time the video goes public on YouTube. Each post opens with the video's
+ * social hook (or its title), then the description's opening paragraph, a question to
+ * start the comments, and the tags as hashtags. Shorts and long trailers go out as Reels;
+ * a long with no trailer is its thumbnail on Instagram and Threads and a link card on
+ * Facebook. This module turns the live YouTube record into Buffer `create_post` inputs. It makes no network calls: the CLI
  * (`scripts/buffer-mirror.ts`) fetches YouTube and an agent sends the plan through the
  * Buffer MCP (`https://mcp.buffer.com/mcp`).
  *
@@ -56,14 +58,37 @@ export type YouTubeVideo = {
   containsSyntheticMedia: boolean;
 };
 
+/**
+ * Per-video copy for social, set in the package manifest (`social`) or with
+ * `buffer-mirror.ts register`. Every field is optional.
+ */
+export type SocialCopy = {
+  /** First line of every post, written for the feed. Default: the YouTube title. */
+  hook?: string;
+  /** Closing question, to start the comments. Default: DEFAULT_QUESTION. */
+  question?: string;
+  /** What the thumbnail shows, for screen readers. Default: names the film. */
+  alt?: string;
+  /** Instagram Reel cover: this many ms into the video. Default: DEFAULT_COVER_MS. */
+  coverMs?: number;
+};
+
+/** Asked at the end of every post that has no question of its own. */
+export const DEFAULT_QUESTION = "What would you want to know next? Tell me below.";
+/** Frame 0 is often a fade from black, so the Reel cover comes from a moment in. */
+export const DEFAULT_COVER_MS = 1000;
+
 export type LedgerEntry = {
   kind: "short" | "long";
   title: string;
   dueAt: string | null;
   mode: "customScheduled" | "shareNow";
   channels: Partial<Record<BufferChannel, { postId: string; recordedAt: string }>>;
-  /** Public Blob copy of the video or thumbnail. Deleted once Buffer has sent every post. */
-  media?: string;
+  /**
+   * Public Blob copies the posts use (the Short, or a long's thumbnail and trailer). Older
+   * entries hold one URL as a string. Deleted once Buffer has sent every post.
+   */
+  media?: string | string[];
 };
 
 export type Ledger = { version: 1; videos: Record<string, LedgerEntry> };
@@ -95,8 +120,12 @@ export type PlanOptions = {
   kind?: "short" | "long";
   /** Public URL of the Short's mp4 (required for Shorts). */
   mediaUrl?: string;
-  /** Public URL of the long's thumbnail (Instagram image post for longs). */
+  /** Public URL of the long's thumbnail (the image post on Instagram and Threads). */
   thumbUrl?: string;
+  /** Public URL of a long's vertical trailer: posted as a Reel on Instagram and Facebook. */
+  trailerUrl?: string;
+  /** The video's social hook, question, alt text and cover frame. */
+  social?: SocialCopy;
   /** The long this Short belongs to. A Short never goes out before its long is public. */
   parentLong?: { id: string; goesPublicAt: string | null } | null;
   /** The Short has no long (e.g. a Wednesday test Short). */
@@ -158,6 +187,7 @@ export function hashtags(tags: string[], limit: number): string[] {
 }
 
 function fit(parts: { title: string; body: string; tail: string[] }, limit: number): string {
+  // Only the body is shortened: the hook, the question, the link and the hashtags always fit.
   const tail = parts.tail.filter(Boolean);
   const join = (body: string) => [parts.title, body, ...tail].filter(Boolean).join("\n\n");
   let text = join(parts.body);
@@ -168,10 +198,39 @@ function fit(parts: { title: string; body: string; tail: string[] }, limit: numb
   return text.length <= limit ? text : text.slice(0, limit);
 }
 
-export function buildText(video: YouTubeVideo, channel: BufferChannel, kind: "short" | "long"): string {
+export type TextOptions = {
+  social?: SocialCopy;
+  /** A long's post that carries its trailer (Instagram and Facebook Reels). */
+  trailer?: boolean;
+  /** Threads posts a long as its thumbnail, with the link written into the text. */
+  youtubeUrl?: string;
+};
+
+/** Where a long's post sends people: Instagram has no links, Facebook's is the first comment. */
+function longLead(channel: BufferChannel, opts: TextOptions): string {
+  const film = opts.trailer ? "Full film on YouTube." : "New film on YouTube.";
+  if (channel === "instagram") return `${film} Link in bio.`;
+  if (channel === "facebook") return opts.trailer ? `${film} Link in the first comment.` : "";
+  return opts.youtubeUrl ? `${opts.trailer ? "Full film" : "Watch the film"}: ${opts.youtubeUrl}` : "";
+}
+
+export function buildText(video: YouTubeVideo, channel: BufferChannel, kind: "short" | "long", opts: TextOptions = {}): string {
   const tags = hashtags(video.tags, HASHTAG_LIMIT[channel]).join(" ");
-  const lead = kind === "long" && channel === "instagram" ? "New film on YouTube. Link in bio." : "";
-  return fit({ title: video.title.trim(), body: openingParagraph(video.description), tail: [lead, tags] }, TEXT_LIMIT[channel]);
+  const lead = kind === "long" ? longLead(channel, opts) : "";
+  const first = opts.social?.hook?.trim() || video.title.trim();
+  const question = opts.social?.question?.trim() || DEFAULT_QUESTION;
+  return fit({ title: first, body: openingParagraph(video.description), tail: [question, lead, tags] }, TEXT_LIMIT[channel]);
+}
+
+/** Alt text for a long's thumbnail. */
+export function thumbAlt(video: YouTubeVideo, social?: SocialCopy): string {
+  return social?.alt?.trim() || `Thumbnail for the Orbit With Ben film "${video.title.trim()}"`;
+}
+
+/** Every Blob copy an entry holds (older entries hold one URL as a string). */
+export function entryMedia(entry: Pick<LedgerEntry, "media"> | undefined): string[] {
+  if (!entry?.media) return [];
+  return Array.isArray(entry.media) ? entry.media : [entry.media];
 }
 
 export function checkPublicUrl(url: string | undefined, what: string): string | null {
@@ -223,35 +282,49 @@ function createInput(opts: {
   timing: Extract<Plan["timing"], { mode: "customScheduled" | "shareNow" }>;
   mediaUrl?: string;
   thumbUrl?: string;
+  trailerUrl?: string;
+  social?: SocialCopy;
   youtubeUrl: string;
 }): Record<string, unknown> {
-  const { video, channel, kind } = opts;
+  const { video, channel, kind, social } = opts;
+  // A long's trailer goes out as a Reel on Instagram and Facebook; Threads gets the thumbnail.
+  const reel = kind === "short" ? opts.mediaUrl : channel !== "threads" ? opts.trailerUrl : undefined;
+  const threadsImage = kind === "long" && channel === "threads" && Boolean(opts.thumbUrl);
   const input: Record<string, unknown> = {
     channelId: opts.channelId,
     schedulingType: "automatic",
     mode: opts.timing.mode,
-    text: buildText(video, channel, kind),
+    text: buildText(video, channel, kind, {
+      social,
+      trailer: Boolean(reel) && kind === "long",
+      youtubeUrl: threadsImage ? opts.youtubeUrl : undefined,
+    }),
   };
   if (opts.timing.mode === "customScheduled") input.dueAt = opts.timing.dueAt;
 
-  if (kind === "short") {
-    const video0 = { video: { url: opts.mediaUrl, ...(channel === "instagram" ? { metadata: { thumbnailOffset: 0 } } : {}) } };
-    input.assets = [video0];
+  if (reel) {
+    const coverMs = social?.coverMs ?? DEFAULT_COVER_MS;
+    input.assets = [{ video: { url: reel, ...(channel === "instagram" ? { metadata: { thumbnailOffset: coverMs } } : {}) } }];
     if (channel === "instagram") {
       input.metadata = { instagram: { type: "reel", shouldShareToFeed: true, isAiGenerated: video.containsSyntheticMedia } };
     } else if (channel === "facebook") {
-      input.metadata = { facebook: { type: "reel" } };
+      input.metadata = {
+        facebook: { type: "reel", ...(kind === "long" ? { firstComment: `Watch the full film: ${opts.youtubeUrl}` } : {}) },
+      };
     }
     return input;
   }
 
-  // Longs: a YouTube link card on Facebook and Threads; the thumbnail as an image on Instagram.
+  // A long with no trailer: the thumbnail on Instagram and Threads, a link card on Facebook.
+  const image = () => [{ image: { url: opts.thumbUrl, metadata: { altText: thumbAlt(video, social) } } }];
   if (channel === "instagram") {
-    input.assets = [{ image: { url: opts.thumbUrl, metadata: { altText: video.title } } }];
+    input.assets = image();
     input.metadata = { instagram: { type: "post", shouldShareToFeed: true, isAiGenerated: video.containsSyntheticMedia } };
   } else if (channel === "facebook") {
     input.assets = [];
     input.metadata = { facebook: { type: "post", linkAttachment: { url: opts.youtubeUrl } } };
+  } else if (threadsImage) {
+    input.assets = image();
   } else {
     input.assets = [];
     input.metadata = { threads: { linkAttachment: { url: opts.youtubeUrl } } };
@@ -282,6 +355,10 @@ export function planBufferMirror(opts: PlanOptions): Plan {
 
   // Media and the long-first rule only matter when something new is being posted.
   const needsCreate = BUFFER_CHANNELS.some((c) => !entry?.channels[c]);
+  // The manifest template's placeholders must never reach a post.
+  for (const [field, value] of Object.entries(opts.social ?? {})) {
+    if (needsCreate && typeof value === "string" && /\bREPLACE\b/.test(value)) errors.push(`social.${field} is still the template placeholder`);
+  }
   if (kind === "short" && needsCreate) {
     const mediaErr = checkPublicUrl(opts.mediaUrl, "--media-url");
     if (mediaErr) errors.push(mediaErr);
@@ -298,9 +375,16 @@ export function planBufferMirror(opts: PlanOptions): Plan {
         }
       }
     }
-  } else if (!entry?.channels.instagram) {
+  } else if (kind === "long" && needsCreate) {
+    if (opts.trailerUrl) {
+      const trailerErr = checkPublicUrl(opts.trailerUrl, "--trailer-url");
+      if (trailerErr) errors.push(trailerErr);
+    }
     const thumbErr = checkPublicUrl(opts.thumbUrl, "--thumb-url");
-    if (thumbErr) warnings.push(`${thumbErr}; Instagram is skipped for this long`);
+    if (thumbErr) {
+      if (!opts.trailerUrl && !entry?.channels.instagram) warnings.push(`${thumbErr}; Instagram is skipped for this long`);
+      if (!entry?.channels.threads) warnings.push(`${thumbErr}; Threads gets a link card instead of the thumbnail`);
+    }
   }
 
   for (const channel of BUFFER_CHANNELS) {
@@ -318,14 +402,26 @@ export function planBufferMirror(opts: PlanOptions): Plan {
       errors.push(`No Buffer channel id for ${channel} in social/BUFFER_CHANNELS.json`);
       continue;
     }
-    if (kind === "long" && channel === "instagram" && checkPublicUrl(opts.thumbUrl, "--thumb-url")) {
-      actions.push({ action: "skip", channel, reason: "no public thumbnail URL" });
+    const thumbUrl = checkPublicUrl(opts.thumbUrl, "--thumb-url") ? undefined : opts.thumbUrl;
+    if (kind === "long" && channel === "instagram" && !opts.trailerUrl && !thumbUrl) {
+      actions.push({ action: "skip", channel, reason: "no public thumbnail or trailer URL" });
       continue;
     }
     actions.push({
       action: "create_post",
       channel,
-      input: createInput({ video, channel, channelId, kind, timing, mediaUrl: opts.mediaUrl, thumbUrl: opts.thumbUrl, youtubeUrl }),
+      input: createInput({
+        video,
+        channel,
+        channelId,
+        kind,
+        timing,
+        mediaUrl: opts.mediaUrl,
+        thumbUrl,
+        trailerUrl: kind === "long" ? opts.trailerUrl : undefined,
+        social: opts.social,
+        youtubeUrl,
+      }),
     });
   }
 
@@ -365,12 +461,14 @@ export function recordPost(
   return { ...ledger, videos };
 }
 
-/** Remember (or forget, with null) the Blob copy behind a mirrored video. */
-export function setEntryMedia(ledger: Ledger, videoId: string, url: string | null): Ledger {
+/** Remember the Blob copies behind a mirrored video (an empty list forgets them). One stays a string. */
+export function setEntryMedia(ledger: Ledger, videoId: string, urls: string[]): Ledger {
   const prev = ledger.videos[videoId];
   if (!prev) return ledger;
   const next: LedgerEntry = { ...prev };
-  if (url) next.media = url;
+  const unique = [...new Set(urls)];
+  if (unique.length === 1) next.media = unique[0];
+  else if (unique.length) next.media = unique;
   else delete next.media;
   return { ...ledger, videos: { ...ledger.videos, [videoId]: next } };
 }

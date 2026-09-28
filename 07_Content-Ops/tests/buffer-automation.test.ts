@@ -50,10 +50,11 @@ function memoryStore(initial: Ledger = { version: 1, videos: {} }) {
         ...(prev?.media ? { media: prev.media } : {}),
       };
     },
-    async setMedia(videoId: string, url: string | null) {
+    async setMedia(videoId: string, urls: string[]) {
       const e = ledger.videos[videoId];
       if (!e) return;
-      if (url) e.media = url;
+      if (urls.length === 1) e.media = urls[0];
+      else if (urls.length) e.media = urls;
       else delete e.media;
     },
   };
@@ -188,9 +189,41 @@ describe("mirrorVideo (after an upload)", () => {
     const long = video({ id: "long0000002", durationSeconds: 594, publishAt: "2026-10-04T17:00:00Z" });
     const d = deps({ videos: [long] });
     const out = await mirrorVideo({ videoId: "long0000002", thumbPath: "/tmp/thumb.jpg" }, d);
-    expect(d.host).toHaveBeenCalledWith("/tmp/thumb.jpg", "social/long0000002.jpg");
+    expect(d.host).toHaveBeenCalledWith("/tmp/thumb.jpg", "social/long0000002-thumb.jpg");
+    expect(d.host).toHaveBeenCalledTimes(1);
     expect(d.checkUrl).toHaveBeenCalledWith(expect.any(String), "image");
     expect(out.results.every((r) => r.ok && r.action === "create_post")).toBe(true);
+  });
+
+  it("mirrors a long with a trailer: hosts both files, Reels on Instagram and Facebook, and remembers both", async () => {
+    const long = video({ id: "long0000002", durationSeconds: 594, publishAt: "2026-10-04T17:00:00Z" });
+    const mem = memoryStore();
+    const client = fakeClient();
+    const d = deps({ videos: [long], store: mem.store, client });
+    const social = { hook: "There's no ground on Jupiter.", question: "Would you go in?" };
+    const out = await mirrorVideo({ videoId: "long0000002", thumbPath: "/tmp/thumb.jpg", trailerPath: "/tmp/trailer.mp4", social }, d);
+    expect(out.plan.errors).toEqual([]);
+    const thumb = "https://abc.public.blob.vercel-storage.com/social/long0000002-thumb.jpg";
+    const trailer = "https://abc.public.blob.vercel-storage.com/social/long0000002-trailer.mp4";
+    expect(out.hosted).toEqual([thumb, trailer]);
+    expect(d.checkUrl).toHaveBeenCalledWith(trailer, "video");
+    expect(d.checkUrl).toHaveBeenCalledWith(thumb, "image");
+    const inputs = client.createPost.mock.calls.map((c) => c[0] as { channelId: string; text: string; assets: unknown[] });
+    expect(inputs.map((i) => JSON.stringify(i.assets).includes("trailer"))).toEqual([true, true, false]);
+    expect(inputs.every((i) => i.text.startsWith("There's no ground on Jupiter.") && i.text.includes("Would you go in?"))).toBe(true);
+    expect(mem.get().videos.long0000002.media).toEqual([thumb, trailer]);
+  });
+
+  it("hosts only the files a new post will use", async () => {
+    const long = video({ id: "long0000002", durationSeconds: 594, publishAt: "2026-10-04T17:00:00Z" });
+    const plan = { videoId: "long0000002", kind: "long" as const, title: long.title, timing: { mode: "customScheduled" as const, dueAt: "2026-10-04T17:00:00.000Z" } };
+    const mem = memoryStore();
+    for (const [c, id] of [["instagram", "p1"], ["threads", "p3"]] as const) await mem.store.record(plan, c, id);
+    const d = deps({ videos: [long], store: mem.store });
+    // Only Facebook is missing: the trailer is needed, the thumbnail isn't.
+    await mirrorVideo({ videoId: "long0000002", thumbPath: "/tmp/thumb.jpg", trailerPath: "/tmp/trailer.mp4" }, d);
+    expect(d.host).toHaveBeenCalledTimes(1);
+    expect(d.host).toHaveBeenCalledWith("/tmp/trailer.mp4", "social/long0000002-trailer.mp4");
   });
 
   it("re-running a mirrored video posts nothing new and needs no file", async () => {
@@ -333,6 +366,39 @@ describe("Blob clean-up", () => {
     const out = await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post2: "error" }), deleteMedia, now: () => later }));
     expect(out.mediaCleaned[0].reason).toMatch(/14 days/);
     expect(deleteMedia).toHaveBeenCalledWith(BLOB);
+  });
+
+  it("deletes every copy of a long with a trailer once its posts have been sent", async () => {
+    const long = video({ id: "long0000002", durationSeconds: 594, publishAt: "2026-10-04T17:00:00Z" });
+    const mem = memoryStore();
+    await mirrorVideo({ videoId: "long0000002", thumbPath: "/tmp/thumb.jpg", trailerPath: "/tmp/trailer.mp4" }, deps({ videos: [long], store: mem.store }));
+    const deleteMedia = vi.fn(async () => undefined);
+    const sent = fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" });
+    const out = await runBufferCheck(deps({ videos: [long], store: mem.store, client: sent, deleteMedia }));
+    expect(deleteMedia).toHaveBeenCalledTimes(2);
+    expect(out.mediaCleaned.map((m) => m.deleted)).toEqual([true, true]);
+    expect(mem.get().videos.long0000002.media).toBeUndefined();
+  });
+
+  it("keeps a second copy uploaded for a video in Buffer with that video", async () => {
+    // Real 11-character id: Blob paths are matched to videos by it.
+    const mem = memoryStore();
+    const plan = { videoId: "xQlV9G9lqLI", kind: "long" as const, title: "T", timing: { mode: "customScheduled" as const, dueAt: "2026-10-05T10:30:00.000Z" } };
+    for (const [c, id] of [["instagram", "p1"], ["facebook", "p2"], ["threads", "p3"]] as const) await mem.store.record(plan, c, id);
+    const thumb = "https://abc.public.blob.vercel-storage.com/social/xQlV9G9lqLI-thumb-a1.jpg";
+    const trailer = "https://abc.public.blob.vercel-storage.com/social/xQlV9G9lqLI-trailer-b2.mp4";
+    await mem.store.setMedia("xQlV9G9lqLI", [thumb]);
+    const listMedia = vi.fn(async () => [
+      { url: thumb, pathname: "social/xQlV9G9lqLI-thumb-a1.jpg", uploadedAt: new Date("2026-09-20T09:00:00Z") },
+      { url: trailer, pathname: "social/xQlV9G9lqLI-trailer-b2.mp4", uploadedAt: new Date("2026-09-20T09:00:00Z") },
+    ]);
+    const deleteMedia = vi.fn(async () => undefined);
+    const out = await runBufferCheck(
+      deps({ store: mem.store, client: fakeClient(), deleteMedia, listMedia, videos: [video({ id: "xQlV9G9lqLI", durationSeconds: 600 })] }),
+    );
+    expect(out.mediaCleaned).toEqual([]);
+    expect(deleteMedia).not.toHaveBeenCalled();
+    expect(mem.get().videos.xQlV9G9lqLI.media).toEqual([thumb, trailer]);
   });
 
   it("deletes it when the video is pulled and its posts removed", async () => {

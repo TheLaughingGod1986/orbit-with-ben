@@ -10,8 +10,8 @@ export interface BufferStore {
   load(): Promise<Ledger>;
   /** postId null removes the channel's entry. */
   record(plan: Pick<Plan, "videoId" | "kind" | "title" | "timing">, channel: BufferChannel, postId: string | null): Promise<void>;
-  /** Remember (or forget) the Blob copy behind a video. */
-  setMedia(videoId: string, url: string | null): Promise<void>;
+  /** Remember the Blob copies behind a video; an empty list forgets them. */
+  setMedia(videoId: string, urls: string[]): Promise<void>;
 }
 
 export function createFileBufferStore(file: string, now: () => Date = () => new Date()): BufferStore {
@@ -27,8 +27,8 @@ export function createFileBufferStore(file: string, now: () => Date = () => new 
     async record(plan, channel, postId) {
       write(recordPost(read(), plan, channel, postId, now()));
     },
-    async setMedia(videoId, url) {
-      write(setEntryMedia(read(), videoId, url));
+    async setMedia(videoId, urls) {
+      write(setEntryMedia(read(), videoId, urls));
     },
   };
 }

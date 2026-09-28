@@ -11,13 +11,18 @@
  */
 import fs from "fs";
 import path from "path";
+import type { SocialCopy } from "@/lib/publishing/buffer-mirror";
 
 export type UploadRecord = {
   kind?: "short" | "long";
   /** Short: the mp4 that went to YouTube. Repo-relative in the registry. */
   file?: string;
-  /** Long: the selected thumbnail (Instagram posts it). */
+  /** Long: the selected thumbnail (Instagram and Threads post it when there is no trailer). */
   thumb?: string;
+  /** Long: a vertical trailer (30–60 s) with the full film on YouTube. Posted as a Reel. */
+  trailer?: string;
+  /** Hook, question, alt text and Reel cover for the social posts. */
+  social?: SocialCopy;
   /** Short: the long it promotes. */
   long?: string;
   /** Short with no long. */
@@ -31,6 +36,8 @@ export type MediaHint = {
   videoId: string;
   mediaPath: string | null;
   thumbPath: string | null;
+  trailerPath?: string | null;
+  social?: SocialCopy;
   longId: string | null;
   standalone: boolean;
   source: string;
@@ -46,7 +53,15 @@ export function registerUpload(file: string, repoRoot: string, videoId: string, 
   const reg = loadRegistry(file);
   const rel = (p?: string) => (p ? path.relative(repoRoot, path.resolve(p)) : undefined);
   const prev = reg.videos[videoId] ?? {};
-  const next: UploadRecord = { ...prev, ...rec, file: rel(rec.file) ?? prev.file, thumb: rel(rec.thumb) ?? prev.thumb, registeredAt: now.toISOString() };
+  const next: UploadRecord = {
+    ...prev,
+    ...rec,
+    file: rel(rec.file) ?? prev.file,
+    thumb: rel(rec.thumb) ?? prev.thumb,
+    trailer: rel(rec.trailer) ?? prev.trailer,
+    social: rec.social ? { ...prev.social, ...rec.social } : prev.social,
+    registeredAt: now.toISOString(),
+  };
   for (const k of Object.keys(next) as (keyof UploadRecord)[]) if (next[k] === undefined) delete next[k];
   reg.videos[videoId] = next;
   fs.mkdirSync(path.dirname(file), { recursive: true });
@@ -158,6 +173,8 @@ export function findMedia(videoId: string, opts: { registry: Registry; scanned: 
       videoId,
       mediaPath: abs(reg.file),
       thumbPath: abs(reg.thumb),
+      trailerPath: abs(reg.trailer),
+      ...(reg.social ? { social: reg.social } : {}),
       longId: reg.long ?? null,
       standalone: Boolean(reg.standalone),
       source: path.relative(opts.repoRoot, opts.registryFile),
@@ -165,5 +182,5 @@ export function findMedia(videoId: string, opts: { registry: Registry; scanned: 
   }
   const f = opts.scanned.get(videoId);
   if (!f || (!f.file && !f.thumb)) return null;
-  return { videoId, mediaPath: f.file, thumbPath: f.thumb, longId: f.long, standalone: false, source: f.source };
+  return { videoId, mediaPath: f.file, thumbPath: f.thumb, trailerPath: null, longId: f.long, standalone: false, source: f.source };
 }
