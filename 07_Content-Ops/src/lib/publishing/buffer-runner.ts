@@ -10,15 +10,17 @@
 import path from "path";
 import type { BufferClient } from "@/lib/publishing/buffer-api";
 import type { BufferStore } from "@/lib/publishing/buffer-store";
-import type { HostFile } from "@/lib/publishing/media-host";
+import { isOwnBlobUrl, type HostFile, type StoredMedia } from "@/lib/publishing/media-host";
 import type { MediaHint } from "@/lib/publishing/media-finder";
 import {
   BUFFER_CHANNELS,
+  type Ledger,
   type BufferChannel,
   type ChannelIds,
   type Plan,
   type PlanAction,
   type YouTubeVideo,
+  MEDIA_MAX_AGE_MS,
   isShort,
   planBufferMirror,
   reconcileEntry,
@@ -38,7 +40,20 @@ export type MirrorDeps = {
   now: () => Date;
   /** Local file for an upload made outside youtube:package (media-finder). Absent: report only. */
   findMedia?: (videoId: string) => MediaHint | null;
+  /** Deletes a Blob copy. Absent: Blob copies are kept. */
+  deleteMedia?: (url: string) => Promise<void>;
+  /** Lists the mirror's Blob files, to adopt untracked ones and sweep orphans. */
+  listMedia?: () => Promise<StoredMedia[]>;
 };
+
+/** A file older than this that no Buffer post links to is an orphan. */
+const ORPHAN_AGE_MS = 2 * 24 * 60 * 60 * 1000;
+
+/** social/<11-character YouTube id><random suffix>.<ext> → the YouTube id. */
+export function videoIdFromBlobPath(pathname: string): string | null {
+  const m = /^social\/([\w-]{11})/.exec(pathname);
+  return m ? m[1] : null;
+}
 
 export type MirrorRequest = {
   videoId: string;
@@ -138,7 +153,8 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
   if (!url && localPath) url = `${DRY_HOST}/${video.id}${path.extname(localPath).toLowerCase()}`;
   let plan = planWith(url);
   let hostedUrl: string | null = null;
-  if (plan.errors.length || req.dryRun) {
+  // Dry, or no Buffer key: plan only, and upload nothing.
+  if (plan.errors.length || req.dryRun || !deps.client) {
     return { plan, results: [], sent: false, hostedUrl };
   }
 
@@ -159,8 +175,20 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
       plan.actions = [];
     }
   }
-  if (plan.errors.length || !deps.client) return { plan, results: [], sent: false, hostedUrl };
-  return { plan, results: await executeActions(plan, deps.client, deps.store), sent: true, hostedUrl };
+  // A file we uploaded but no post will use is deleted again straight away.
+  const dropHosted = async () => {
+    if (hostedUrl && deps.deleteMedia) await deps.deleteMedia(hostedUrl).catch(() => undefined);
+  };
+  if (plan.errors.length || !deps.client) {
+    await dropHosted();
+    return { plan, results: [], sent: false, hostedUrl };
+  }
+  const results = await executeActions(plan, deps.client, deps.store);
+  if (hostedUrl) {
+    if (results.some((r) => r.ok && r.action === "create_post")) await deps.store.setMedia(video.id, hostedUrl);
+    else await dropHosted();
+  }
+  return { plan, results, sent: true, hostedUrl };
 }
 
 export type CheckOutcome = {
@@ -170,8 +198,76 @@ export type CheckOutcome = {
   autoMirrored: { videoId: string; title: string; source: string; sent: boolean; results: ActionResult[]; warnings: string[] }[];
   /** Scheduled uploads still not in Buffer, and why. */
   unmirrored: { videoId: string; title: string; publishAt: string | null; reason: string }[];
+  /** Blob copies removed (or, dry, that would be) because Buffer no longer needs them. */
+  mediaCleaned: { videoId: string; url: string; reason: string; deleted: boolean; error?: string }[];
   sent: boolean;
 };
+
+/**
+ * Delete the Blob copies Buffer no longer needs: every post for the video has been sent
+ * (or is gone), the video's posts were all removed, or it went public more than 14 days ago.
+ * A post that errored keeps its copy (so it can be retried) until the 14 days are up.
+ */
+async function cleanMedia(
+  before: Ledger,
+  deps: MirrorDeps,
+  now: Date,
+  send: boolean,
+): Promise<CheckOutcome["mediaCleaned"]> {
+  const out: CheckOutcome["mediaCleaned"] = [];
+  const after = await deps.store.load();
+  const candidates: { videoId: string; url: string; reason: string }[] = [];
+  // Files the record doesn't know about: link them to their video, or sweep them once old.
+  if (deps.listMedia) {
+    const known = new Set(Object.values(after.videos).map((e) => e.media).filter(Boolean));
+    for (const blob of await deps.listMedia()) {
+      if (known.has(blob.url)) continue;
+      const id = videoIdFromBlobPath(blob.pathname);
+      const entry = id ? after.videos[id] : undefined;
+      if (id && entry && !entry.media) {
+        entry.media = blob.url;
+        known.add(blob.url);
+        if (send) await deps.store.setMedia(id, blob.url);
+      } else if (now.getTime() - blob.uploadedAt.getTime() > ORPHAN_AGE_MS) {
+        candidates.push({ videoId: id ?? "?", url: blob.url, reason: "orphaned: no Buffer post uses it" });
+      }
+    }
+  }
+  for (const [id, entry] of Object.entries(before.videos)) {
+    if (entry.media && !after.videos[id]) candidates.push({ videoId: id, url: entry.media, reason: "its Buffer posts were removed" });
+  }
+  for (const [id, entry] of Object.entries(after.videos)) {
+    if (!entry.media) continue;
+    const recorded = Object.values(entry.channels).map((c) => c!.recordedAt);
+    const since = entry.dueAt ?? recorded.sort().at(-1) ?? null;
+    if (since && now.getTime() - Date.parse(since) > MEDIA_MAX_AGE_MS) {
+      candidates.push({ videoId: id, url: entry.media, reason: "went public more than 14 days ago" });
+      continue;
+    }
+    if (!deps.client) continue;
+    const statuses = await Promise.all(
+      Object.values(entry.channels).map((c) => deps.client!.getPostStatus(c!.postId).catch(() => "unknown")),
+    );
+    if (statuses.length && statuses.every((st) => st === "sent" || st === null)) {
+      candidates.push({ videoId: id, url: entry.media, reason: "every Buffer post has been sent" });
+    }
+  }
+  for (const c of candidates) {
+    if (!isOwnBlobUrl(c.url)) continue;
+    if (!send || !deps.deleteMedia) {
+      out.push({ ...c, deleted: false });
+      continue;
+    }
+    try {
+      await deps.deleteMedia(c.url);
+      if (after.videos[c.videoId]) await deps.store.setMedia(c.videoId, null);
+      out.push({ ...c, deleted: true });
+    } catch (e) {
+      out.push({ ...c, deleted: false, error: (e as Error).message });
+    }
+  }
+  return out;
+}
 
 export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean } = {}): Promise<CheckOutcome> {
   const token = await deps.youtubeToken();
@@ -229,5 +325,7 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
     }
   }
 
-  return { checked: ids.length, changes, autoMirrored, unmirrored, sent: send };
+  const mediaCleaned = await cleanMedia(ledger, deps, now, send);
+
+  return { checked: ids.length, changes, autoMirrored, unmirrored, mediaCleaned, sent: send };
 }

@@ -234,6 +234,7 @@ Hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, taken in order from the Y
     `npx tsx scripts/buffer-mirror.ts register --video <shortId> --media <mp4> --long <longId>` (or `--video <longId> --thumb <jpg>` for a long).
 - **To mirror one straight away**, without waiting for 07:05: `cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <id> --long <longId> --media <short.mp4>` (Short), or `mirror --video <longId> --thumb <thumb.jpg>` (long). `plan` instead of `mirror` shows what it would do and changes nothing.
 - **Straight after a Studio change**, don't wait for 07:00: `buffer-mirror.ts check`.
+- **Blob storage cleans itself.** The same 07:05 run deletes a video's Blob copy once Buffer reports every post for it as sent, or 14 days after it went public, even if a post errored. It also deletes it straight away if the video's posts were removed, or if no post was ever created. It links files posted before this existed back to their video by the YouTube ID in the filename, and deletes true orphans after 2 days. It only ever touches files under `social/` on the Blob store. The 1 GB free tier stays nearly empty.
 - What was posted is kept in `social/BUFFER_POSTS.json`, so each video goes out once per channel. Commit it and `social/UPLOADS.json` with the week's work.
 - **Fallback without the API key:** `plan` saves `social/buffer-plans/<id>.json`. Send each action through the Buffer MCP exactly as written, then run `buffer-mirror.ts record --video <id> --channel <c> --post-id <bufferId>` (or `--deleted`).
 

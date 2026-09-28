@@ -8,7 +8,7 @@ import path from "path";
 import { BUFFER_CHANNELS, type ChannelIds } from "@/lib/publishing/buffer-mirror";
 import { createBufferApiClient } from "@/lib/publishing/buffer-api";
 import { createFileBufferStore } from "@/lib/publishing/buffer-store";
-import { checkMediaUrl, hostOnVercelBlob } from "@/lib/publishing/media-host";
+import { checkMediaUrl, deleteFromVercelBlob, hostOnVercelBlob, listVercelBlobMedia } from "@/lib/publishing/media-host";
 import { findMedia, loadRegistry, scanProjectRecords } from "@/lib/publishing/media-finder";
 import type { MirrorDeps } from "@/lib/publishing/buffer-runner";
 import { fetchYouTubeVideos, getYouTubeAccessToken, listScheduledUploads } from "@/lib/youtube/data-api";
@@ -42,6 +42,8 @@ export function createMirrorDeps(opts: { channelIds?: ChannelIds; ledgerFile?: s
     client: key ? createBufferApiClient(key) : null,
     store: createFileBufferStore(opts.ledgerFile ?? LEDGER_FILE),
     host: process.env.BLOB_READ_WRITE_TOKEN ? hostOnVercelBlob : null,
+    deleteMedia: process.env.BLOB_READ_WRITE_TOKEN ? deleteFromVercelBlob : undefined,
+    listMedia: process.env.BLOB_READ_WRITE_TOKEN ? listVercelBlobMedia : undefined,
     checkUrl: (url, want) => checkMediaUrl(url, want),
     channelIds: opts.channelIds ?? loadChannelIds(),
     now: () => new Date(),
