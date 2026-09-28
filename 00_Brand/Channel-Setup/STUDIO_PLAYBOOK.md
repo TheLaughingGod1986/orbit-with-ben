@@ -192,7 +192,7 @@ Tools:
    - pattern: `scripts/apply_yellow_white_v04_thumbs.py`;
    - Chrome launcher: `audits/start_studio_chrome_cdp.sh`;
    - image-only inputs; never Replace, never `thumbnails.set`.
-7. **Buffer mirror** (§12): `youtube:package` schedules the Instagram, Facebook and Threads posts itself. Check the `buffer` block in the result. Same step, same sign-off: Ben's OK to upload covers the Buffer posts.
+7. **Buffer mirror** (§12): `youtube:package` schedules the Instagram, Facebook and Threads posts itself. Check the `buffer` block in the result. Same step, same sign-off: the upload OK (standing, §13) covers the Buffer posts.
 
 ## 10. Measure
 
@@ -297,6 +297,6 @@ Stop and wait for Ben's OK at each of these points:
 4. voice (listen);
 5. picture (QA/UAT on the moving cut, never stills);
 6. thumbnails;
-7. anything that goes public.
+7. anything that goes public, is renamed or deleted. **Standing OK for uploads (Ben, 28 Sep 2026):** once 1–6 are OK'd and every gate passes (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run), the upload goes ahead without asking, with its Buffer posts, hook, question and trailer. Report the result straight after. Renames, deletes, back catalogue and edits to posts already in Buffer still wait for Ben.
 
 Docs-only PRs may merge. Video-cut PRs wait for Ben's UAT.

@@ -38,7 +38,7 @@ Full rules: `STUDIO_PLAYBOOK.md` §9–§12.
     - `question`: answerable in a word or two, a guess or a choice ("Would you go in?", "Guess how long it lasted?"). Never "What do you think?", and never the title's own question again.
     - `alt` (long): what the thumbnail shows, words on it included.
     - Tags: the video's own topic tag first (for example `neutron star` before `astronomy`); the hashtags lead with it.
-  - **Every long carries a trailer:** vertical 1080×1920, 30–60 s, cut from the master. The first 2 s must hook on their own, burned-in captions, and it ends on "Full film on YouTube". Save it as `11_Upload-Package/Trailer/<slug>_trailer.mp4`; `youtube:package` picks it up, and Instagram and Facebook post it as a Reel. Ben sees it with the long, and his OK to upload covers it.
+  - **Every long carries a trailer:** vertical 1080×1920, 30–60 s, cut from the master. The first 2 s must hook on their own, burned-in captions, and it ends on "Full film on YouTube". Save it as `11_Upload-Package/Trailer/<slug>_trailer.mp4`; `youtube:package` picks it up, and Instagram and Facebook post it as a Reel. Ben's standing upload OK covers it (AGENTS.md sign-off 7).
   - `buffer.warnings` saying "no social hook", "no social question" or "no trailer" means the package missed one. Posts not yet created pick up `register --video <id> --hook "…" --question "…"` or `--trailer <mp4>`; posts already in Buffer need a text-only `edit_post` with Ben's OK.
   - Never retype the caption, never use Buffer queue slots, and never set a Buffer time by hand.
   - **TikTok stays paused:** not connected in Buffer, no uploads, retries or "test one".

@@ -62,7 +62,7 @@ The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIE
 4. Voice
 5. Moving picture (never judge from stills)
 6. Thumbnails
-7. Anything that goes public, is renamed, or is deleted
+7. Anything that goes public, is renamed, or is deleted. **Standing exception (Ben, 28 Sep 2026): uploads.** A scheduled upload whose topic, scripts, voice, moving picture and thumbnails Ben has already OK'd, and whose package passes every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run), goes up without asking, with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after. Renames, deletes, back catalogue (`--allow-late`) and edits to posts already in Buffer still need his OK.
 
 ## Never
 
