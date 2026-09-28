@@ -6,10 +6,14 @@
 
 export type BufferPostResult = { id: string; dueAt: string | null; status: string | null };
 
+export type BufferPostStatus = "draft" | "error" | "needs_approval" | "scheduled" | "sending" | "sent" | string;
+
 export interface BufferClient {
   createPost(input: Record<string, unknown>): Promise<BufferPostResult>;
   editPost(input: { postId: string; mode: string; dueAt: string }): Promise<BufferPostResult>;
   deletePost(postId: string): Promise<void>;
+  /** A post's status, or null when Buffer no longer has it. */
+  getPostStatus(postId: string): Promise<BufferPostStatus | null>;
 }
 
 const ENDPOINT = "https://api.buffer.com";
@@ -25,6 +29,8 @@ const EDIT = `mutation OrbitEditPost($input: EditPostInput!) { editPost(input: $
 const DELETE = `mutation OrbitDeletePost($input: DeletePostInput!) {
   deletePost(input: $input) { __typename ... on DeletePostSuccess { id } ... on MutationError { message } }
 }`;
+
+const GET_POST = `query OrbitGetPost($input: PostInput!) { post(input: $input) { id status } }`;
 
 type Fetch = typeof fetch;
 
@@ -74,6 +80,15 @@ export function createBufferApiClient(apiKey: string, fetchImpl: Fetch = fetch):
     },
     async deletePost(postId) {
       await call(DELETE, { id: postId });
+    },
+    async getPostStatus(postId) {
+      try {
+        const p = await call(GET_POST, { id: postId });
+        return typeof p.status === "string" ? p.status : null;
+      } catch (e) {
+        if (/not ?found/i.test((e as Error).message)) return null;
+        throw e;
+      }
     },
   };
 }

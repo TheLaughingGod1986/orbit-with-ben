@@ -5,7 +5,7 @@
  */
 import fs from "fs";
 import path from "path";
-import { put } from "@vercel/blob";
+import { del, list, put } from "@vercel/blob";
 
 const TYPES: Record<string, string> = {
   ".mp4": "video/mp4",
@@ -34,6 +34,39 @@ export const hostOnVercelBlob: HostFile = async (localPath, pathname) => {
   });
   return blob.url;
 };
+
+/** Only files this mirror put on a Vercel Blob store are ever deleted by it. */
+export function isOwnBlobUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return u.protocol === "https:" && /\.public\.blob\.vercel-storage\.com$/i.test(u.hostname) && u.pathname.startsWith("/social/");
+  } catch {
+    return false;
+  }
+}
+
+export async function deleteFromVercelBlob(url: string): Promise<void> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  if (!token) throw new Error("BLOB_READ_WRITE_TOKEN is not set");
+  if (!isOwnBlobUrl(url)) throw new Error(`refusing to delete ${url}: not a mirror file on the Blob store`);
+  await del(url, { token });
+}
+
+export type StoredMedia = { url: string; pathname: string; uploadedAt: Date };
+
+/** Every mirror file on the Blob store (pathnames under social/). */
+export async function listVercelBlobMedia(): Promise<StoredMedia[]> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  if (!token) throw new Error("BLOB_READ_WRITE_TOKEN is not set");
+  const out: StoredMedia[] = [];
+  let cursor: string | undefined;
+  do {
+    const page = await list({ prefix: "social/", token, cursor, limit: 1000 });
+    out.push(...page.blobs.map((b) => ({ url: b.url, pathname: b.pathname, uploadedAt: new Date(b.uploadedAt) })));
+    cursor = page.hasMore ? page.cursor : undefined;
+  } while (cursor);
+  return out;
+}
 
 /** Buffer needs a direct 200 with the right type, now and when the post goes out. */
 export async function checkMediaUrl(url: string, want: "video" | "image", fetchImpl: typeof fetch = fetch): Promise<string | null> {

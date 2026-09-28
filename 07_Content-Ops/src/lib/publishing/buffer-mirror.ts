@@ -62,6 +62,8 @@ export type LedgerEntry = {
   dueAt: string | null;
   mode: "customScheduled" | "shareNow";
   channels: Partial<Record<BufferChannel, { postId: string; recordedAt: string }>>;
+  /** Public Blob copy of the video or thumbnail. Deleted once Buffer has sent every post. */
+  media?: string;
 };
 
 export type Ledger = { version: 1; videos: Record<string, LedgerEntry> };
@@ -357,10 +359,24 @@ export function recordPost(
       dueAt,
       mode: plan.timing.mode === "shareNow" ? "shareNow" : prev?.mode ?? "customScheduled",
       channels,
+      ...(prev?.media ? { media: prev.media } : {}),
     };
   }
   return { ...ledger, videos };
 }
+
+/** Remember (or forget, with null) the Blob copy behind a mirrored video. */
+export function setEntryMedia(ledger: Ledger, videoId: string, url: string | null): Ledger {
+  const prev = ledger.videos[videoId];
+  if (!prev) return ledger;
+  const next: LedgerEntry = { ...prev };
+  if (url) next.media = url;
+  else delete next.media;
+  return { ...ledger, videos: { ...ledger.videos, [videoId]: next } };
+}
+
+/** Keep a Blob copy while any post may still need it; 14 days after go-public it goes regardless. */
+export const MEDIA_MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000;
 
 /**
  * Keep Buffer in step with YouTube after the fact: a moved publish time moves the

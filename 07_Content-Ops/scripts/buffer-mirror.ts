@@ -98,7 +98,9 @@ async function check() {
   }
   console.log(JSON.stringify(outcome, null, 2));
   const failed =
-    outcome.changes.some((c) => c.results.some((r) => !r.ok)) || outcome.autoMirrored.some((m) => m.results.some((r) => !r.ok));
+    outcome.changes.some((c) => c.results.some((r) => !r.ok)) ||
+    outcome.autoMirrored.some((m) => m.results.some((r) => !r.ok)) ||
+    outcome.mediaCleaned.some((m) => m.error);
   // Unmirrored uploads need a person (register the file), so they fail the run too: the log shows why.
   if (failed || outcome.unmirrored.length) process.exit(1);
 }

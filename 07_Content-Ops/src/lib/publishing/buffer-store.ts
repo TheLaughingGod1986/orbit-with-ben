@@ -4,24 +4,31 @@
  */
 import fs from "fs";
 import path from "path";
-import { recordPost, type BufferChannel, type Ledger, type Plan } from "@/lib/publishing/buffer-mirror";
+import { recordPost, setEntryMedia, type BufferChannel, type Ledger, type Plan } from "@/lib/publishing/buffer-mirror";
 
 export interface BufferStore {
   load(): Promise<Ledger>;
   /** postId null removes the channel's entry. */
   record(plan: Pick<Plan, "videoId" | "kind" | "title" | "timing">, channel: BufferChannel, postId: string | null): Promise<void>;
+  /** Remember (or forget) the Blob copy behind a video. */
+  setMedia(videoId: string, url: string | null): Promise<void>;
 }
 
 export function createFileBufferStore(file: string, now: () => Date = () => new Date()): BufferStore {
   const read = (): Ledger => (fs.existsSync(file) ? (JSON.parse(fs.readFileSync(file, "utf8")) as Ledger) : { version: 1, videos: {} });
+  const write = (ledger: Ledger) => {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, JSON.stringify(ledger, null, 2) + "\n");
+  };
   return {
     async load() {
       return read();
     },
     async record(plan, channel, postId) {
-      const next = recordPost(read(), plan, channel, postId, now());
-      fs.mkdirSync(path.dirname(file), { recursive: true });
-      fs.writeFileSync(file, JSON.stringify(next, null, 2) + "\n");
+      write(recordPost(read(), plan, channel, postId, now()));
+    },
+    async setMedia(videoId, url) {
+      write(setEntryMedia(read(), videoId, url));
     },
   };
 }

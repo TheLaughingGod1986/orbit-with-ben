@@ -4,7 +4,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { createFileBufferStore, type BufferStore } from "../src/lib/publishing/buffer-store";
-import { mirrorVideo, runBufferCheck, type MirrorDeps } from "../src/lib/publishing/buffer-runner";
+import { mirrorVideo, runBufferCheck, videoIdFromBlobPath, type MirrorDeps } from "../src/lib/publishing/buffer-runner";
 import type { Ledger, Plan, YouTubeVideo, BufferChannel } from "../src/lib/publishing/buffer-mirror";
 
 const NOW = new Date("2026-10-01T09:00:00Z");
@@ -47,13 +47,20 @@ function memoryStore(initial: Ledger = { version: 1, videos: {} }) {
         dueAt: plan.timing.mode === "customScheduled" ? plan.timing.dueAt : prev?.dueAt ?? null,
         mode: plan.timing.mode === "shareNow" ? "shareNow" : "customScheduled",
         channels,
+        ...(prev?.media ? { media: prev.media } : {}),
       };
+    },
+    async setMedia(videoId: string, url: string | null) {
+      const e = ledger.videos[videoId];
+      if (!e) return;
+      if (url) e.media = url;
+      else delete e.media;
     },
   };
   return { store, get: () => ledger };
 }
 
-function fakeClient(failOn?: string) {
+function fakeClient(failOn?: string, statuses: Record<string, string | null> = {}) {
   let n = 0;
   const client = {
     createPost: vi.fn(async (input: Record<string, unknown>) => {
@@ -63,6 +70,7 @@ function fakeClient(failOn?: string) {
     }),
     editPost: vi.fn(async ({ postId, dueAt }: { postId: string; mode: string; dueAt: string }) => ({ id: postId, dueAt, status: "scheduled" })),
     deletePost: vi.fn(async () => undefined),
+    getPostStatus: vi.fn(async (postId: string) => (postId in statuses ? statuses[postId] : "scheduled")),
   };
   return client satisfies BufferClient;
 }
@@ -155,7 +163,7 @@ describe("mirrorVideo (after an upload)", () => {
     const out = await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4", dryRun: true }, d);
     expect(out.plan.actions.filter((a) => a.action === "create_post")).toHaveLength(3);
     expect(d.host).not.toHaveBeenCalled();
-    expect((d.client as ReturnType<typeof fakeClient>).createPost).not.toHaveBeenCalled();
+    expect((d.client as unknown as ReturnType<typeof fakeClient>).createPost).not.toHaveBeenCalled();
   });
 
   it("plans only without a Buffer key, and stops without a Blob token", async () => {
@@ -278,5 +286,106 @@ describe("runBufferCheck auto-mirrors uploads made outside youtube:package", () 
     expect(findMedia).not.toHaveBeenCalled();
     expect(out.autoMirrored).toEqual([]);
     expect(out.unmirrored).toEqual([]);
+  });
+});
+
+describe("Blob clean-up", () => {
+  const BLOB = "https://abc.public.blob.vercel-storage.com/social/short0000001.mp4";
+
+  async function mirroredWith(client: ReturnType<typeof fakeClient>, deleteMedia = vi.fn(async () => undefined)) {
+    const mem = memoryStore();
+    await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, deps({ store: mem.store, client, deleteMedia }));
+    return { mem, deleteMedia };
+  }
+
+  it("remembers the Blob copy after posting", async () => {
+    const { mem, deleteMedia } = await mirroredWith(fakeClient());
+    expect(mem.get().videos.short0000001.media).toBe(BLOB);
+    expect(deleteMedia).not.toHaveBeenCalled();
+  });
+
+  it("deletes it once every Buffer post has been sent", async () => {
+    const { mem } = await mirroredWith(fakeClient());
+    const deleteMedia = vi.fn(async () => undefined);
+    const sent = fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" });
+    const out = await runBufferCheck(deps({ store: mem.store, client: sent, deleteMedia }));
+    expect(deleteMedia).toHaveBeenCalledWith(BLOB);
+    expect(out.mediaCleaned).toEqual([{ videoId: "short0000001", url: BLOB, reason: "every Buffer post has been sent", deleted: true }]);
+    expect(mem.get().videos.short0000001.media).toBeUndefined();
+    expect(Object.keys(mem.get().videos.short0000001.channels)).toHaveLength(3);
+  });
+
+  it("keeps it while a post is still scheduled or errored, and when dry", async () => {
+    const { mem } = await mirroredWith(fakeClient());
+    const deleteMedia = vi.fn(async () => undefined);
+    await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "error", post3: "sent" }), deleteMedia }));
+    await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "scheduled", post3: "sent" }), deleteMedia }));
+    const dry = await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" }), deleteMedia }), { dryRun: true });
+    expect(deleteMedia).not.toHaveBeenCalled();
+    expect(dry.mediaCleaned).toEqual([expect.objectContaining({ deleted: false })]);
+    expect(mem.get().videos.short0000001.media).toBe(BLOB);
+  });
+
+  it("deletes it 14 days after go-public, even if a post errored", async () => {
+    const { mem } = await mirroredWith(fakeClient());
+    const deleteMedia = vi.fn(async () => undefined);
+    const later = new Date(Date.parse("2026-10-05T10:30:00Z") + 15 * 24 * 3600 * 1000);
+    const out = await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post2: "error" }), deleteMedia, now: () => later }));
+    expect(out.mediaCleaned[0].reason).toMatch(/14 days/);
+    expect(deleteMedia).toHaveBeenCalledWith(BLOB);
+  });
+
+  it("deletes it when the video is pulled and its posts removed", async () => {
+    const { mem } = await mirroredWith(fakeClient());
+    const deleteMedia = vi.fn(async () => undefined);
+    const out = await runBufferCheck(deps({ store: mem.store, client: fakeClient(), deleteMedia, videos: [video({ publishAt: null })] }));
+    expect(out.mediaCleaned).toEqual([expect.objectContaining({ reason: "its Buffer posts were removed", deleted: true })]);
+    expect(mem.get().videos.short0000001).toBeUndefined();
+  });
+
+  it("deletes an uploaded file straight away when no post was created", async () => {
+    const deleteMedia = vi.fn(async () => undefined);
+    const failAll = {
+      ...fakeClient(),
+      createPost: vi.fn(async () => {
+        throw new Error("Buffer InvalidInputError: bad video");
+      }),
+    };
+    const mem = memoryStore();
+    await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, deps({ store: mem.store, client: failAll, deleteMedia }));
+    expect(deleteMedia).toHaveBeenCalledWith(BLOB);
+    // Without a Buffer key it only plans, so nothing is uploaded (or deleted).
+    const noKey = deps({ client: null, deleteMedia: vi.fn(async () => undefined) });
+    await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, noKey);
+    expect(noKey.host).not.toHaveBeenCalled();
+    expect(noKey.deleteMedia).not.toHaveBeenCalled();
+  });
+
+  it("never touches files that aren't the mirror's own Blob copies", async () => {
+    const mem = memoryStore();
+    await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaUrl: "https://cdn.example.com/social/short.mp4" }, deps({ store: mem.store }));
+    expect(mem.get().videos.short0000001.media).toBeUndefined();
+  });
+
+  it("adopts an untracked copy by its YouTube id, and sweeps old orphans", async () => {
+    expect(videoIdFromBlobPath("social/xQlV9G9lqLI-a1B2c3.mp4")).toBe("xQlV9G9lqLI");
+    expect(videoIdFromBlobPath("other/file.mp4")).toBeNull();
+    // A video posted before clean-up existed (real 11-character id): its record has no media yet.
+    const mem = memoryStore();
+    const plan = { videoId: "xQlV9G9lqLI", kind: "short" as const, title: "T", timing: { mode: "customScheduled" as const, dueAt: "2026-10-05T10:30:00.000Z" } };
+    for (const [c, id] of [["instagram", "p1"], ["facebook", "p2"], ["threads", "p3"]] as const) await mem.store.record(plan, c, id);
+    const adopted = "https://abc.public.blob.vercel-storage.com/social/xQlV9G9lqLI-a1B2c3.mp4";
+    const deleteMedia = vi.fn(async () => undefined);
+    const listMedia = vi.fn(async () => [
+      { url: adopted, pathname: "social/xQlV9G9lqLI-a1B2c3.mp4", uploadedAt: new Date("2026-09-28T09:00:00Z") },
+      { url: "https://abc.public.blob.vercel-storage.com/social/gone0000001-x.mp4", pathname: "social/gone0000001-x.mp4", uploadedAt: new Date("2026-09-20T09:00:00Z") },
+      { url: "https://abc.public.blob.vercel-storage.com/social/newx0000001-y.mp4", pathname: "social/newx0000001-y.mp4", uploadedAt: new Date("2026-10-01T08:30:00Z") },
+    ]);
+    const out = await runBufferCheck(
+      deps({ store: mem.store, client: fakeClient(), deleteMedia, listMedia, videos: [video({ id: "xQlV9G9lqLI" })] }),
+    );
+    expect(mem.get().videos.xQlV9G9lqLI.media).toBe(adopted);
+    expect(out.mediaCleaned).toEqual([expect.objectContaining({ videoId: "gone0000001", reason: expect.stringMatching(/orphaned/), deleted: true })]);
+    expect(deleteMedia).toHaveBeenCalledTimes(1);
   });
 });
