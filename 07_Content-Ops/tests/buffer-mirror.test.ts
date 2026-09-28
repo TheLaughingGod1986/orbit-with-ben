@@ -101,7 +101,7 @@ describe("buffer mirror: text", () => {
     const long = video({ id: "long0000001", durationSeconds: 724 });
     expect(buildText(long, "instagram", "long")).toContain("New film on YouTube. Link in bio.");
     expect(buildText(long, "instagram", "long", { trailer: true })).toContain("Full film on YouTube. Link in bio.");
-    expect(buildText(long, "facebook", "long", { trailer: true })).toContain("Link in the first comment.");
+    expect(buildText(long, "facebook", "long", { trailer: true, youtubeUrl: "https://youtu.be/long0000001" })).toContain("Full film: https://youtu.be/long0000001");
     expect(buildText(long, "facebook", "long")).not.toContain("YouTube");
   });
 
@@ -184,7 +184,7 @@ describe("buffer mirror: plan", () => {
     expect(plan.actions[0]).toMatchObject({ channel: "instagram", input: { assets: [{ image: { metadata: { altText: alt } } }] } });
   });
 
-  it("posts a long's trailer as a Reel on Instagram and Facebook, with the film link in Facebook's first comment", () => {
+  it("posts a long's trailer as a Reel on Instagram and Facebook, with the film link in Facebook's text", () => {
     const long = video({ id: "long0000001", durationSeconds: 724, publishAt: "2026-10-04T17:00:00Z" });
     const plan = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, thumbUrl: THUMB, trailerUrl: TRAILER });
     expect(plan.errors).toEqual([]);
@@ -198,9 +198,12 @@ describe("buffer mirror: plan", () => {
     expect(byChannel.facebook).toMatchObject({
       input: {
         assets: [{ video: { url: TRAILER } }],
-        metadata: { facebook: { type: "reel", firstComment: "Watch the full film: https://youtu.be/long0000001" } },
+        metadata: { facebook: { type: "reel" } },
       },
     });
+    expect((byChannel.facebook as unknown as { input: { text: string } }).input.text).toContain("Full film: https://youtu.be/long0000001");
+    // Buffer's free plan rejects first comments.
+    expect(JSON.stringify(plan.actions)).not.toContain("firstComment");
     expect(byChannel.threads).toMatchObject({ input: { assets: [{ image: { url: THUMB } }] } });
   });
 
@@ -227,8 +230,8 @@ describe("buffer mirror: plan", () => {
     const plan = planBufferMirror({ video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, parentLong: LONG_PUBLIC });
     const by = Object.fromEntries(plan.actions.map((a) => [a.channel, a as unknown as { input: { text: string; metadata?: Record<string, Record<string, unknown>> } }]));
     expect(by.instagram.input.text).toContain("Full film on YouTube. Link in bio.");
-    expect(by.facebook.input.text).toContain("Full film on YouTube. Link in the first comment.");
-    expect(by.facebook.input.metadata?.facebook.firstComment).toBe("Watch the full film: https://youtu.be/long0000001");
+    expect(by.facebook.input.text).toContain("Full film: https://youtu.be/long0000001");
+    expect(by.facebook.input.metadata?.facebook.firstComment).toBeUndefined();
     expect(by.threads.input.text).toContain("Full film: https://youtu.be/long0000001");
     // A standalone Short has no film to point to.
     const alone = planBufferMirror({ video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, standalone: true });

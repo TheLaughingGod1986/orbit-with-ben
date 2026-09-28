@@ -275,6 +275,9 @@ async function cleanMedia(
       continue;
     }
     if (!deps.client) continue;
+    // Nothing can have been sent before it's due: don't spend Buffer's request limit asking.
+    const due = entry.mode === "shareNow" || (entry.dueAt !== null && Date.parse(entry.dueAt) <= now.getTime());
+    if (!due) continue;
     const statuses = await Promise.all(
       Object.values(entry.channels).map((c) => deps.client!.getPostStatus(c!.postId).catch(() => "unknown")),
     );

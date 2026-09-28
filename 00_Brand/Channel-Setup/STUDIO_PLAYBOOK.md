@@ -231,8 +231,8 @@ A line is never printed twice: when a Short's description just repeats its title
 
 | YouTube | Instagram | Facebook Page | Threads |
 |---|---|---|---|
-| Short | Reel (the mp4), AI label on, "Full film on YouTube. Link in bio." | Reel (the mp4); its long's link is the first comment | Video (the mp4), with "Full film: <long's link>" |
-| Long with a trailer | Reel (the trailer), "Full film on YouTube. Link in bio." | Reel (the trailer); the film link is the first comment | The thumbnail, with "Full film: <link>" |
+| Short | Reel (the mp4), AI label on, "Full film on YouTube. Link in bio." | Reel (the mp4), with "Full film: <long's link>" | Video (the mp4), with "Full film: <long's link>" |
+| Long with a trailer | Reel (the trailer), "Full film on YouTube. Link in bio." | Reel (the trailer), with "Full film: <link>" | The thumbnail, with "Full film: <link>" |
 | Long, no trailer | The thumbnail as an image post, "New film on YouTube. Link in bio." | YouTube link card | The thumbnail, with "Watch the film: <link>" |
 
 Why (Buffer stats, 2 Aug–28 Sep 2026, 151 posts): Facebook Reels averaged 72 impressions against 9–10 for images and link cards; Instagram Reels 12.5 reach against 5.7 for images; Threads images 14.8 views against 4.8 for link cards. Not one post got a comment.
@@ -247,7 +247,9 @@ Cursor writes them into the package manifest's `social` block (`templates/YOUTUB
 
 **Trailer for a long:** a vertical 30–60 s cut that ends on "Full film on YouTube". Put it in the package's `Trailer/` folder (or the manifest's `trailer`), or register it: `register --video <longId> --trailer <mp4>`. With one, Instagram and Facebook post it as a Reel; without one, they fall back to the thumbnail and the link card.
 
-Facebook Reels show as "Untitled Video" in Meta Business Suite: Buffer's API has no Reel title field. The caption is unaffected.
+Facebook Reels show as "Untitled Video" in Meta Business Suite: Buffer's API has no Reel title field. The caption is unaffected. No first comments either: Buffer's free plan rejects them ("First comment requires a paid plan"), so links go in the text.
+
+Buffer's API has a request limit (a 429 on 28 Sep 2026 held edits for about 17 hours). The daily check only asks Buffer about posts that are already due, and edits to queued posts should be few and spaced out.
 
 **Automatic (from 27 Sep 2026): uploading is the whole job.**
 - **At upload.** `npm run youtube:package` finishes a live upload, then puts the Short's mp4 (or the long's thumbnail and trailer) on the public Vercel Blob store. It reads the video back from YouTube and schedules the three Buffer posts through the Buffer API. For a Short, the long is the package's `relatedVideoId`; pass `--standalone` for a Short with no long. The upload result JSON has a `buffer` block. A Buffer problem never fails the upload: it prints "Buffer mirror incomplete" with the reason.

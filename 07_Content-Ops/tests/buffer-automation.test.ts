@@ -324,6 +324,8 @@ describe("runBufferCheck auto-mirrors uploads made outside youtube:package", () 
 
 describe("Blob clean-up", () => {
   const BLOB = "https://abc.public.blob.vercel-storage.com/social/short0000001.mp4";
+  // After the Short (5 Oct 10:30) and the long (4 Oct 17:00) are due; within the 14 days.
+  const AFTER = new Date("2026-10-06T09:00:00Z");
 
   async function mirroredWith(client: ReturnType<typeof fakeClient>, deleteMedia = vi.fn(async () => undefined)) {
     const mem = memoryStore();
@@ -341,7 +343,7 @@ describe("Blob clean-up", () => {
     const { mem } = await mirroredWith(fakeClient());
     const deleteMedia = vi.fn(async () => undefined);
     const sent = fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" });
-    const out = await runBufferCheck(deps({ store: mem.store, client: sent, deleteMedia }));
+    const out = await runBufferCheck(deps({ store: mem.store, client: sent, deleteMedia, now: () => AFTER }));
     expect(deleteMedia).toHaveBeenCalledWith(BLOB);
     expect(out.mediaCleaned).toEqual([{ videoId: "short0000001", url: BLOB, reason: "every Buffer post has been sent", deleted: true }]);
     expect(mem.get().videos.short0000001.media).toBeUndefined();
@@ -351,12 +353,22 @@ describe("Blob clean-up", () => {
   it("keeps it while a post is still scheduled or errored, and when dry", async () => {
     const { mem } = await mirroredWith(fakeClient());
     const deleteMedia = vi.fn(async () => undefined);
-    await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "error", post3: "sent" }), deleteMedia }));
-    await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "scheduled", post3: "sent" }), deleteMedia }));
-    const dry = await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" }), deleteMedia }), { dryRun: true });
+    const at = { now: () => AFTER };
+    await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "error", post3: "sent" }), deleteMedia, ...at }));
+    await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "scheduled", post3: "sent" }), deleteMedia, ...at }));
+    const dry = await runBufferCheck(deps({ store: mem.store, client: fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" }), deleteMedia, ...at }), { dryRun: true });
     expect(deleteMedia).not.toHaveBeenCalled();
     expect(dry.mediaCleaned).toEqual([expect.objectContaining({ deleted: false })]);
     expect(mem.get().videos.short0000001.media).toBe(BLOB);
+  });
+
+  it("doesn't ask Buffer about posts that aren't due yet", async () => {
+    const { mem } = await mirroredWith(fakeClient());
+    const client = fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" });
+    const deleteMedia = vi.fn(async () => undefined);
+    const out = await runBufferCheck(deps({ store: mem.store, client, deleteMedia }));
+    expect(client.getPostStatus).not.toHaveBeenCalled();
+    expect(out.mediaCleaned).toEqual([]);
   });
 
   it("deletes it 14 days after go-public, even if a post errored", async () => {
@@ -374,7 +386,7 @@ describe("Blob clean-up", () => {
     await mirrorVideo({ videoId: "long0000002", thumbPath: "/tmp/thumb.jpg", trailerPath: "/tmp/trailer.mp4" }, deps({ videos: [long], store: mem.store }));
     const deleteMedia = vi.fn(async () => undefined);
     const sent = fakeClient(undefined, { post1: "sent", post2: "sent", post3: "sent" });
-    const out = await runBufferCheck(deps({ videos: [long], store: mem.store, client: sent, deleteMedia }));
+    const out = await runBufferCheck(deps({ videos: [long], store: mem.store, client: sent, deleteMedia, now: () => AFTER }));
     expect(deleteMedia).toHaveBeenCalledTimes(2);
     expect(out.mediaCleaned.map((m) => m.deleted)).toEqual([true, true]);
     expect(mem.get().videos.long0000002.media).toBeUndefined();

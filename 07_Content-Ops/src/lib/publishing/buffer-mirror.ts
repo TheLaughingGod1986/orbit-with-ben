@@ -231,11 +231,13 @@ export type TextOptions = {
   filmUrl?: string;
 };
 
-/** Where a long's post sends people: Instagram has no links, Facebook's is the first comment. */
+/**
+ * Where a post sends people. Instagram has no caption links, so it says "Link in bio".
+ * Facebook and Threads get the link in the text (Buffer's free plan has no first comments);
+ * a Facebook link card needs none.
+ */
 function longLead(channel: BufferChannel, opts: TextOptions): string {
-  const film = opts.trailer ? "Full film on YouTube." : "New film on YouTube.";
-  if (channel === "instagram") return `${film} Link in bio.`;
-  if (channel === "facebook") return opts.trailer ? `${film} Link in the first comment.` : "";
+  if (channel === "instagram") return `${opts.trailer ? "Full film on YouTube." : "New film on YouTube."} Link in bio.`;
   return opts.youtubeUrl ? `${opts.trailer ? "Full film" : "Watch the film"}: ${opts.youtubeUrl}` : "";
 }
 
@@ -331,7 +333,7 @@ function createInput(opts: {
     text: buildText(video, channel, kind, {
       social,
       trailer: Boolean(reel) && kind === "long",
-      youtubeUrl: threadsImage ? opts.youtubeUrl : undefined,
+      youtubeUrl: threadsImage || (kind === "long" && channel === "facebook" && reel) ? opts.youtubeUrl : undefined,
       filmUrl: kind === "short" ? opts.filmUrl : undefined,
     }),
   };
@@ -343,9 +345,8 @@ function createInput(opts: {
     if (channel === "instagram") {
       input.metadata = { instagram: { type: "reel", shouldShareToFeed: true, isAiGenerated: video.containsSyntheticMedia } };
     } else if (channel === "facebook") {
-      // The full film goes in the first comment: a Reel keeps its reach, and the link still works.
-      const film = kind === "long" ? opts.youtubeUrl : opts.filmUrl;
-      input.metadata = { facebook: { type: "reel", ...(film ? { firstComment: `Watch the full film: ${film}` } : {}) } };
+      // No first comment: Buffer's free plan rejects it. The film link is in the text.
+      input.metadata = { facebook: { type: "reel" } };
     }
     return input;
   }
