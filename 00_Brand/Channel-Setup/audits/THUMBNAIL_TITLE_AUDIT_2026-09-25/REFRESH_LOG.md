@@ -201,3 +201,7 @@ Full rows: `refresh/sweep/SWEEP_GRADE.json`.
 | `f8V6wCjWwHA` | Billions of Planets, Zero Signals | little/no readable hook type at centre | Custom thumb: 2–4 word house hook from title promise (yellow on one word). Plate: strongest frame from that Short's master, no Orbit. |
 | `ykmoxRJ6BOI` | We May Have Already Recorded Alien Life | little/no readable hook type at centre | Custom thumb: 2–4 word house hook from title promise (yellow on one word). Plate: strongest frame from that Short's master, no Orbit. |
 
+## 2026-09-28
+
+`-jmMROGoZCM`: Cloud Deck → NO FLOOR on the Cloud Deck picture. Set in Studio because `thumbnails.set` returned forbidden. Adds the no-surface hook instead of repeating the title, set before release.
+
