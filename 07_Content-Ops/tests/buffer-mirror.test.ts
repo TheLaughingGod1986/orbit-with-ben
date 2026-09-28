@@ -67,12 +67,34 @@ describe("buffer mirror: text", () => {
       "Why You Can't Stand on a Neutron Star",
       "One teaspoon of it weighs as much as a mountain.",
       DEFAULT_QUESTION,
-      "#NeutronStar #Space #Astronomy #OrbitWithBen #Physics",
+      "#NeutronStar #Stars #Space #Astronomy #OrbitWithBen",
     ]);
     const own = buildText(video(), "facebook", "short", { social: { hook: "A teaspoon of this star outweighs Everest.", question: "Would you pick it up?" } });
     expect(own.split("\n\n")[0]).toBe("A teaspoon of this star outweighs Everest.");
     expect(own).toContain("Would you pick it up?");
     expect(own).not.toContain(DEFAULT_QUESTION);
+  });
+
+  it("leads with the tag that names the subject, wherever it sits in the YouTube tags", () => {
+    const v = video({
+      title: "This Star Is 20 km Wide and Heavier Than the Sun",
+      description: "Why You Can't Stand on a Neutron Star",
+      tags: ["Orbit With Ben", "animated science", "astronomy", "astrophysics", "black holes", "neutron star", "pulsar"],
+    });
+    expect(buildText(v, "instagram", "short").split("\n\n").at(-1)).toBe("#NeutronStar #OrbitWithBen #AnimatedScience #Astronomy #Astrophysics");
+    expect(buildText(v, "threads", "short").split("\n\n").at(-1)).toBe("#NeutronStar");
+  });
+
+  it("never prints the same line twice", () => {
+    const v = video({ title: "How Long Until Andromeda Hits Us?", description: "How long until Andromeda hits us?\n\nFull film: https://youtu.be/x" });
+    // No hook: the title would be printed twice, so the description line goes.
+    expect(buildText(v, "instagram", "short").split("\n\n")[1]).toBe(DEFAULT_QUESTION);
+    // With a hook, the title line gives it context, so it stays.
+    const hooked = buildText(v, "instagram", "short", { social: { hook: "Andromeda is coming toward us at 110 km every second." } });
+    expect(hooked.split("\n\n").slice(0, 2)).toEqual(["Andromeda is coming toward us at 110 km every second.", "How long until Andromeda hits us?"]);
+    // Nor when the description line is the question itself.
+    const asked = buildText(v, "instagram", "short", { social: { hook: "Andromeda is coming.", question: "How long until Andromeda hits us?" } });
+    expect(asked.match(/How long until Andromeda hits us\?/gi)).toHaveLength(1);
   });
 
   it("points each platform to the full film its own way", () => {
@@ -189,6 +211,16 @@ describe("buffer mirror: plan", () => {
     expect(plan.actions[2]).toMatchObject({ input: { metadata: { threads: { linkAttachment: { url: "https://youtu.be/long0000001" } } } } });
     const bad = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, trailerUrl: "https://drive.google.com/file/x" });
     expect(bad.errors.join()).toMatch(/--trailer-url/);
+  });
+
+  it("warns when a new post has no hook, no question, or (for a long) no trailer", () => {
+    const base = { video: video(), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, parentLong: LONG_PUBLIC };
+    expect(planBufferMirror(base).warnings.join()).toMatch(/no social hook.*no social question/);
+    expect(planBufferMirror({ ...base, social: { hook: "h", question: "q?" } }).warnings).toEqual([]);
+    const long = video({ id: "long0000001", durationSeconds: 724, publishAt: "2026-10-04T17:00:00Z" });
+    const plan = planBufferMirror({ video: long, channelIds: CHANNELS, ledger: EMPTY, now: NOW, thumbUrl: THUMB, social: { hook: "h", question: "q?" } });
+    expect(plan.warnings.join()).toMatch(/no trailer/);
+    expect(plan.errors).toEqual([]);
   });
 
   it("refuses the manifest template's placeholder copy", () => {

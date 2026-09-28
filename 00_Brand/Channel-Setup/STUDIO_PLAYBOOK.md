@@ -168,6 +168,7 @@ Tools:
    - Upload private, with `publishAt`.
    - Set `privacyStatus` and `madeForKids` explicitly.
    - Altered/synthetic content: **yes**.
+   - The package carries its social copy (`social`: hook, question, alt) and, for a long, `Trailer/<slug>_trailer.mp4`. The Buffer posts are created at upload, so they have to be there first (§12).
    - Until the Data API thumbnail refusal on the new Cloud project is sorted, after each `youtube:package` upload, check for "thumbnail skipped" and set the thumbnail in Studio.
 2. **Long:**
    - normal publish, Sunday 18:00, **no Premiere** until subscribers are in the hundreds;
@@ -224,7 +225,9 @@ Set 27 Sep 2026. **Buffer is the only way anything reaches social.** The old Mac
 2. the description's opening paragraph (links stripped; the only part shortened to fit);
 3. a **question** to start the comments (default: "What would you want to know next? Tell me below.");
 4. for a long, where the full film is (see the table);
-5. the tags as hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads, in order.
+5. the tags as hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads. Tags that name the subject (their words appear in the title, hook or description) go first, then the rest in YouTube order.
+
+A line is never printed twice: when a Short's description just repeats its title (or the question), it's left out.
 
 | YouTube | Instagram | Facebook Page | Threads |
 |---|---|---|---|
@@ -240,7 +243,7 @@ Why (Buffer stats, 2 Aug–28 Sep 2026, 151 posts): Facebook Reels averaged 72 i
 - `alt`: what the long's thumbnail shows, for screen readers. Default: "Thumbnail for the Orbit With Ben film "<title>"".
 - `coverMs`: where the Instagram Reel cover comes from, in ms. Default 1000 (frame 0 is often a fade).
 
-Put them in the package manifest's `social` block (`templates/YOUTUBE_PACKAGE_MANIFEST.json`), or for any upload: `npx tsx scripts/buffer-mirror.ts register --video <id> --hook "…" --question "…" [--alt "…"] [--cover-ms 1500]`. They're kept in `social/UPLOADS.json`.
+Cursor writes them into the package manifest's `social` block (`templates/YOUTUBE_PACKAGE_MANIFEST.json`) when it builds the package; the rules for a good hook and question are in `.cursor/rules/orbit-publish-studio.mdc`. Missing copy doesn't block anything: the upload result's `buffer.warnings` says so, and the post falls back to the title and the default question. For any upload: `npx tsx scripts/buffer-mirror.ts register --video <id> --hook "…" --question "…" [--alt "…"] [--cover-ms 1500]`. They're kept in `social/UPLOADS.json`.
 
 **Trailer for a long:** a vertical 30–60 s cut that ends on "Full film on YouTube". Put it in the package's `Trailer/` folder (or the manifest's `trailer`), or register it: `register --video <longId> --trailer <mp4>`. With one, Instagram and Facebook post it as a Reel; without one, they fall back to the thumbnail and the link card.
 

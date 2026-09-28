@@ -173,10 +173,33 @@ export function toHashtag(tag: string): string | null {
   return `#${body}`;
 }
 
-export function hashtags(tags: string[], limit: number): string[] {
+const STOP = new Set(["the", "and", "with", "into", "from", "that", "this", "what", "when", "why", "how", "you", "your", "for", "our"]);
+const words = (text: string) =>
+  text
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 2 && !STOP.has(w))
+    .map((w) => w.replace(/s$/, ""));
+
+/** How closely a tag names what the post is about: 2 = every word in it, 1 = some, 0 = none. */
+function relevance(tag: string, context: Set<string>): number {
+  const ws = words(tag);
+  const hits = ws.filter((w) => context.has(w)).length;
+  return ws.length && hits === ws.length ? 2 : hits ? 1 : 0;
+}
+
+/**
+ * Tags as hashtags, up to the limit. With `context` (the post's own words), tags that name
+ * the subject go first, so a neutron-star post leads with #NeutronStar, not a general tag.
+ */
+export function hashtags(tags: string[], limit: number, context = ""): string[] {
   const out: string[] = [];
   const seen = new Set<string>();
-  for (const tag of tags) {
+  const ctx = new Set(words(context));
+  const ordered = context ? tags.map((t, i) => ({ t, i, r: relevance(t, ctx) })).sort((a, b) => b.r - a.r || a.i - b.i).map((x) => x.t) : tags;
+  for (const tag of ordered) {
     const h = toHashtag(tag);
     if (!h || seen.has(h.toLowerCase())) continue;
     seen.add(h.toLowerCase());
@@ -214,12 +237,18 @@ function longLead(channel: BufferChannel, opts: TextOptions): string {
   return opts.youtubeUrl ? `${opts.trailer ? "Full film" : "Watch the film"}: ${opts.youtubeUrl}` : "";
 }
 
+const same = (a: string, b: string) => words(a).join(" ") === words(b).join(" ");
+
 export function buildText(video: YouTubeVideo, channel: BufferChannel, kind: "short" | "long", opts: TextOptions = {}): string {
-  const tags = hashtags(video.tags, HASHTAG_LIMIT[channel]).join(" ");
-  const lead = kind === "long" ? longLead(channel, opts) : "";
-  const first = opts.social?.hook?.trim() || video.title.trim();
+  const hook = opts.social?.hook?.trim();
+  const first = hook || video.title.trim();
   const question = opts.social?.question?.trim() || DEFAULT_QUESTION;
-  return fit({ title: first, body: openingParagraph(video.description), tail: [question, lead, tags] }, TEXT_LIMIT[channel]);
+  let body = openingParagraph(video.description);
+  // A Short's description often opens with its title: never print the same line twice.
+  if (same(body, first) || same(body, question) || (!hook && same(body, video.title))) body = "";
+  const tags = hashtags(video.tags, HASHTAG_LIMIT[channel], [video.title, hook, openingParagraph(video.description)].join(" ")).join(" ");
+  const lead = kind === "long" ? longLead(channel, opts) : "";
+  return fit({ title: first, body, tail: [question, lead, tags] }, TEXT_LIMIT[channel]);
 }
 
 /** Alt text for a long's thumbnail. */
@@ -358,6 +387,11 @@ export function planBufferMirror(opts: PlanOptions): Plan {
   // The manifest template's placeholders must never reach a post.
   for (const [field, value] of Object.entries(opts.social ?? {})) {
     if (needsCreate && typeof value === "string" && /\bREPLACE\b/.test(value)) errors.push(`social.${field} is still the template placeholder`);
+  }
+  if (needsCreate) {
+    if (!opts.social?.hook?.trim()) warnings.push("no social hook: the posts open with the YouTube title (set social.hook)");
+    if (!opts.social?.question?.trim()) warnings.push("no social question: the posts use the default question (set social.question)");
+    if (kind === "long" && !opts.trailerUrl) warnings.push("no trailer: Instagram and Facebook get the thumbnail and link card, not a Reel (add Trailer/*.mp4)");
   }
   if (kind === "short" && needsCreate) {
     const mediaErr = checkPublicUrl(opts.mediaUrl, "--media-url");
