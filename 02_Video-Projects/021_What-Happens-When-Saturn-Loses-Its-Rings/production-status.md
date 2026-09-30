@@ -7,12 +7,12 @@
 | Mon Short listing title | **Saturn's Rings Are Already Falling** (9–14 s card + end line = long title exactly) |
 | Air target | Sun 11 Oct 2026, 18:00 UK (normal publish) |
 | Upload history | **Clean** — never uploaded or scheduled |
-| Gate | **PASS** (`11_Upload-Package/EPISODE_GATE_v01.md`) — re-run 30 Sep Mini |
-| Script review | **90 / 100 PASS** — re-run 30 Sep Mini |
-| Script | **LOCKED** — Ben line fixes 30 Sep 20:55 (*Does the fall ever stop?*; deleted bigger-question line) |
-| VO | **DONE** — long + Mon + Fri Shorts on Mini; listen files in OWB UAT (see `02_Voiceover/VO_STATUS.md`) |
-| CG | **STOP at Orbit stills v02** — Ben rejected v01 Orbit (round faceplate). Reminted character plates only via **Vertex** → `stills_v02/` + UAT `saturn_stills_v02_for_ben_ok/`. World plates stay v01. No Veo/moving cut until Ben OKs v02. |
-| Runtime target | ~9.75 min spoken this take (1,292 words) |
+| Gate | **PASS** — re-run 30 Sep 21:46 after Olympic-pool hook |
+| Script review | **90 / 100 PASS** — same re-run |
+| Script | **LOCKED** — Ben 21:39–21:40 (Olympic-pool hook · Cassini “around a hundred” · Orbit tumble first beat · NASA Goddard source) |
+| VO | **DONE v02** — one spliced master (new open + Cassini line into v01 body). Listen: `OWB UAT/saturn_long_vo_v02_LISTEN.m4a` · 563.42 s. See `02_Voiceover/VO_STATUS.md` + `11_Upload-Package/V02_PASS_2026-09-30.md` |
+| CG | **STOP at stills v03 Round 2** — pack in `OWB UAT/saturn_stills_v03_for_ben_ok/` (open inner-rain · Orbit tumble · ice crowd · Cassini · bare · young keep). Vertex only · no Veo until Ben OK |
+| Runtime target | ~9.39 min spoken this v02 take |
 | Shorts | Mon 12 Saturn tease · Wed 14 Jupiter Survive (do not touch) · Fri 16 Black Dwarf |
 | Subscribe line used | #4 — We make one of these every week. Subscribing is how the next one finds you. |
 
@@ -22,5 +22,7 @@
 - [x] Pre-build audit filled (vidIQ fields pending Studio)  
 - [x] Script ≥ 90 + gate PASS — **LOCKED**  
 - [x] Ben OK on Short scripts (step 3) — 30 Sep 20:50 London  
-- [x] VO recorded on mac-mini → OWB UAT listen paths filled (Ben listen = sign-off 4)  
-- [ ] Ben OK on stills before any Veo/Omni / moving cut  
+- [x] VO v02 recorded + spliced → OWB UAT listen paths (Ben listen = sign-off)  
+- [x] Readable scripts v02 in OWB UAT `saturn_scripts_v02/`  
+- [ ] Ben OK on stills **v03 Round 2** before any Veo / moving cut  
+

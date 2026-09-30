@@ -12,16 +12,9 @@ SCIENCE LOCK: water ice + dust; main rings ~10 m thick in places; ring mass ~0.4
 SUBSCRIBE LINE USED: #4 — We make one of these every week. Subscribing is how the next one finds you.
 ```
 
-[VISUAL MUST: ON SCREEN: The rings are falling. First 3 seconds: pale ice in a thin sheet, particles already drifting inward toward Saturn’s curve, one planet, no title card, no logo, no Orbit.]
-[TEACH: Saturn’s rings are already losing mass into the planet at a ring-rain rate that can fill an Olympic pool in half an hour; this film shows where the ice goes, what the rings looked like when new, and Saturn with nothing around it.]
-
 Every half hour, Saturn's rings lose enough ice to fill an Olympic swimming pool. It's raining into the planet right now. So how long do the rings have left? Stay with me, and you'll see where the ice goes, what the rings looked like when they were new, and Saturn with nothing around it at all.
 
-[CHAPTER CARD: The Rings Are Falling]
-<!-- HOOK -->
-
-[VISUAL MUST: ON SCREEN: A thin bright blade. The ring plane edge-on, packed ice reading as one sheet, tens of thousands of kilometres wide, absurdly thin the other way. No Orbit.]
-[TEACH: The rings are a crowd of ice chunks on separate paths, not a solid disc; in places the main rings are only about ten metres thick.]
+##  The Rings Are Falling
 
 Look along the sheet.
 
@@ -31,14 +24,9 @@ It is not a solid disc. It is a crowd. Chunks of ice, from grains to boulders, e
 
 Why does something that wide look so finished, and so fragile?
 
-[VISUAL MUST: ON SCREEN: Sunlight on ice. Photons bounce off pale water ice; a little dust warms some lanes cream to tan. No Orbit. No text.]
-[TEACH: Ring colour is sunlight on water ice with a trace of rocky dust; Cassini weighed the rings at roughly two fifths the mass of Mimas (Iess et al. 2019).]
-
 Because you are seeing sunlight on ice, not a wall. Photons bounce off clean water ice and come back almost white. A little dust stains the older lanes a warmer colour. The mass under that shine is small for the area it covers. Cassini weighed the rings on its last orbits and found less than many maps had assumed — on the order of two fifths of the little moon Mimas. A lot of scenery. Not a lot of stuff.
 
 But the picture that brought you here is already the danger.
-
-[VISUAL MUST: ON SCREEN: Does the fall ever stop — the ring plane keeps leaking inward; world plate only, no Orbit.]
 
 Does the fall ever stop?
 
@@ -46,11 +34,7 @@ It does not stop while you are watching. Gravity keeps every chunk moving. The s
 
 Now the question changes. What is that jewellery made of?
 
-[CHAPTER CARD: Ice, Not Rock]
-<!-- ESCALATION -->
-
-[VISUAL MUST: ON SCREEN: Close through the crowd. Water-ice chunks centimetres to metres across, sunlit and pale, a few dust-darkened grains. No rock crust. No Orbit.]
-[TEACH: The rings are overwhelmingly water ice with a trace of rocky dust; Saturn’s gravity and shepherd moons keep the crowd flat.]
+##  Ice, Not Rock
 
 Come in close enough that the blade breaks into pieces.
 
@@ -60,22 +44,15 @@ Why call it a ring if it is only a crowd of snowballs?
 
 Because the crowd is flat. Saturn’s gravity, and the moons that shepherd the edges, pack the paths into a plane. The gaps are emptier roads. The ice that remains still circles. It does not sit.
 
-[VISUAL MUST: ON SCREEN: Drop through ten metres. Orbit tumbles through the thin sheet with the camera, grabbing at passing ice, then drifts out into open space; Saturn's banded atmosphere far below the inner edge.]
-[ORBIT ACTS: First Orbit beat — Orbit tumbles through the thin sheet with the camera, grabbing at passing ice, then drifts into open space. One Orbit, one face, cream eyes with pupils, one underside glow. Not a sticker.]
-[TEACH: The sheet is thin enough to drop through; the unknown is the leak into Saturn, not the recipe.]
+*[ORBIT ACTS: First Orbit beat — Orbit tumbles through the thin sheet with the camera, grabbing at passing ice, then drifts into open space. One Orbit, one face, cream eyes with pupils, one underside glow. Not a sticker.]*
 
 There is no roof. Drop through those ten metres and you are in open space again. The atmosphere sits far below the inner edge, banded and pale. The unknown is not the recipe. The unknown is the leak. However bright the ice looks, brightness is not a promise that it stays.
 
 That is the first answer: the famous sheet is only ice, and it is already slipping away.
 
-[SUBSCRIBE BEAT]
 We make one of these every week. Subscribing is how the next one finds you.
 
-[CHAPTER CARD: The Rain Into Saturn]
-<!-- DISCOVERY -->
-
-[VISUAL MUST: ON SCREEN: Magnetic ring rain. Fine ice grains leave the plane and stream down magnetic paths into Saturn’s upper atmosphere as a pale rain over the mid-latitudes. No spacecraft in frame yet. No Orbit.]
-[TEACH: Charged ice grains follow Saturn’s magnetic field into the upper atmosphere as ring rain; O’Donoghue et al. 2019 detected that rain from Earth with the Keck telescope — at that rate alone, roughly 300 million years.]
+##  The Rain Into Saturn
 
 Here is one way they go.
 
@@ -85,25 +62,15 @@ We did not need a spacecraft inside that rain to know it was there. Astronomers 
 
 But that is only one path down.
 
-[VISUAL MUST: ON SCREEN: Cassini’s Grand Finale. One orbiter threading the gap between the innermost ring and the cloud tops; material pouring from the D ring into Saturn’s equator. No Orbit.]
-[TEACH: Cassini’s twenty-two Grand Finale dives (2017) measured a larger equatorial inflow from the innermost ring — the D ring — into Saturn (Waite et al. 2018); adding that shortens the lifetime to around 100 million years.]
-
 Cassini went closer. In 2017 the orbiter flew twenty-two times through the gap between the innermost ring and the cloud tops. It was not sampling the magnetic rain from mid-latitudes. It was flying through something bigger: material pouring off the innermost ring — the D ring — straight into Saturn’s equator. That equatorial inflow is a heavier leak than the magnetic rain alone. Add it to the books, and the sheet's remaining life drops to around a hundred million years.
 
 So how long does the bright sheet have?
 
 Put both measurements together and the honest answer is a range. Somewhere between about a hundred and three hundred million years. A blink next to Saturn's four and a half billion years.
 
-[VISUAL MUST: ON SCREEN: Slow thinning. The sheet grows thinner over deep time while Saturn’s bands stay put. No Orbit. No countdown clock.]
-[TEACH: Neither leak is visible as weather; the visible change is a long thinning of the sheet.]
-
 You would not see either leak as weather from a window. The grains are too fine, and the fall is too spread out. What you would see, if you could watch for an age, is the sheet growing thinner, while Saturn’s bands stay put. Now look backward. The rain implies a beginning.
 
-[CHAPTER CARD: When the Rings Were New]
-<!-- ESCALATION -->
-
-[VISUAL MUST: ON SCREEN: A younger sheet. Whiter, wider, fiercely sunlit ice around the same Saturn. No Orbit. No second planet. No probe.]
-[TEACH: Most researchers read Cassini’s low ring mass as a young system, a few hundred million years at most; the age is still debated — Hyodo et al. 2024 argues the rings could be old.]
+##  When the Rings Were New
 
 Wind the clock back along that same scale, and the sheet changes.
 
@@ -115,17 +82,11 @@ Because a heavy, ancient ring would still be heavy, unless most of its mass has 
 
 What if a moon came too close, and came apart?
 
-[VISUAL MUST: ON SCREEN: Roche rubble idea. A small icy moon stretched and torn inside the Roche limit, debris settling into a bright plane. Labelled as an idea. No Orbit.]
-[TEACH: A moon torn apart inside the Roche limit is one idea that fits a young mass; it is not a settled fact.]
-
 That idea fits a young mass, and it is still an idea. Inside the Roche limit, Saturn’s gravity can pull a moon into rubble, and rubble in a plane becomes a ring. Whatever their birthday, the rings you know are ice, and they are already leaving. Then the sheet you call famous is a phase, not a permanent face.
 
-[CHAPTER CARD: Saturn Without Them]
-<!-- PAYOFF -->
+##  Saturn Without Them
 
-[VISUAL MUST: ON SCREEN: Bare Saturn. Pale gold bands, empty space where the sheet was. Orbit tiny at the edge, one face turned back toward the bare equator. Not the hero.]
-[ORBIT ACTS: Near the end, Orbit is a tiny figure against bare Saturn, cream eyes with pupils looking back at the empty equator where the rings were, one underside glow, one inquisitive look, not a sticker]
-[TEACH: When the rings are gone Saturn remains a banded gas giant; the loss is the sheet, not the planet.]
+*[ORBIT ACTS: Near the end, Orbit is a tiny figure against bare Saturn, cream eyes with pupils looking back at the empty equator where the rings were, one underside glow, one inquisitive look, not a sticker]*
 
 Take the ice away, and stay with the planet.
 
@@ -136,9 +97,6 @@ What would you see, standing in that later sky?
 A giant, banded and bright, ordinary once you stop using the rings as the definition. You would feel the oddness in the absence. The planet does not notice. The rain simply finishes, and the paths that carried it have nothing left to carry.
 
 So the whole story fits in one breath.
-
-[VISUAL MUST: ON SCREEN: Return to the falling sheet. The opening ring plane again, particles still drifting in, then hold at least 15–20 seconds after the last spoken line. Music fades over about 10 seconds. Picture fades to black over the last 2 seconds. No subscribe card. No Orbit.]
-[TEACH: Recap — water-ice sheet; Keck magnetic ring rain; Cassini equatorial D-ring inflow; lifetime ~100–300 Myr; rings as a phase; hand off to Last Star.]
 
 You would see a thin sheet of water ice, vast and bright, already raining into Saturn — magnetic rain measured from Earth, and a heavier equatorial leak Cassini flew through on its last dives. The mass is too small for a forever-disc, so the clock sits somewhere between about a hundred and three hundred million years. The rings are a phase. Saturn is the thing that remains.
 
