@@ -11,7 +11,7 @@
 | Script review | **90 / 100 PASS** — re-run 30 Sep Mini |
 | Script | **LOCKED** — Ben line fixes 30 Sep 20:55 (*Does the fall ever stop?*; deleted bigger-question line) |
 | VO | **DONE** — long + Mon + Fri Shorts on Mini; listen files in OWB UAT (see `02_Voiceover/VO_STATUS.md`) |
-| CG | **STOP at stills** — `04_Generated-Clips/stills_v01/` + UAT copy `saturn_stills_v01_for_ben_ok`. No Veo/moving cut until Ben OKs stills. |
+| CG | **STOP at Orbit stills v02** — Ben rejected v01 Orbit (round faceplate). Reminted character plates only via **Vertex** → `stills_v02/` + UAT `saturn_stills_v02_for_ben_ok/`. World plates stay v01. No Veo/moving cut until Ben OKs v02. |
 | Runtime target | ~9.75 min spoken this take (1,292 words) |
 | Shorts | Mon 12 Saturn tease · Wed 14 Jupiter Survive (do not touch) · Fri 16 Black Dwarf |
 | Subscribe line used | #4 — We make one of these every week. Subscribing is how the next one finds you. |
