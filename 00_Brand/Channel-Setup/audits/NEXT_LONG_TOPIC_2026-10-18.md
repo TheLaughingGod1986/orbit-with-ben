@@ -1,8 +1,10 @@
-# Next long topic proposal — Sun 18 Oct 2026 (18:00 UK)
+# Next long topic proposal — PARKED (was Sun 18 Oct shortlist)
 
-**Step 1 only.** Topic pick for Ben. No scripting, VO, picture generation or uploads in this run.
+**Parked 30 Sep 20:50 London.** Ben assigned **022 Sun** (*Is the Sun Getting Brighter?*) to Sun **18 Oct** 18:00 UK. Keep this shortlist for a **later** week — do not delete. Do not script from it until Ben picks a free Sunday.
 
-Saturn (`021`, *How Long Do Saturn's Rings Have Left?*) stays Sun **11 Oct** 18:00 UK. Its VO is waiting on Ben's listen — **do not change it.**
+Original Step 1 note below (superseded for the 18 Oct slot only).
+
+Saturn (`021`, *What Happens When Saturn Loses Its Rings?*) stays Sun **11 Oct** 18:00 UK. Its VO is waiting on Ben's listen — **do not change it.**
 
 | | |
 |---|---|
