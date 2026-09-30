@@ -1,6 +1,6 @@
 # Production checklist — Orbit With Ben
 
-**Episode:** 021 — What Happens When Saturn Loses Its Rings?  
+**Episode:** 021 — How Long Do Saturn's Rings Have Left?  
 **Date:** 2026-09-26 (step 2 package)  
 **Script review score:** **90** / 100 (must be 90 or more)
 

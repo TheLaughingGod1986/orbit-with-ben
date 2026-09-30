@@ -12,7 +12,7 @@
 | Field | Value |
 |-------|-------|
 | ID / slug | 021 / What-Happens-When-Saturn-Loses-Its-Rings |
-| Working title | What Happens When Saturn Loses Its Rings? |
+| Working / locked title | How Long Do Saturn's Rings Have Left? (Ben confirmed 30 Sep 20:57) |
 | Date pulled | 2026-09-26 |
 | Credits used (approx) | 0 (no vidIQ) |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA · Familiar Danger |
@@ -45,7 +45,7 @@
 | cassini grand finale | vidIQ not available - to fill in Studio | — | — | desc / teach | yes |
 | space documentary | vidIQ not available - to fill in Studio | — | — | umbrella | yes |
 
-**Signed-out YouTube competition (exact title *What Happens When Saturn Loses Its Rings?*):**
+**Signed-out YouTube competition (HISTORY — pulled 26 Sep against former working title; locked title is now *How Long Do Saturn's Rings Have Left?*):**
 
 | # | Views | Subscribers | Channel | Result title |
 |--:|------:|---|---|---|
@@ -67,13 +67,13 @@
 
 | | Title | Score | Keep? |
 |---|-------|------:|-------|
-| A | What Happens When Saturn Loses Its Rings? | vidIQ not available - to fill in Studio (shape: ending; keyword in first five words) | **Locked** |
+| A | How Long Do Saturn's Rings Have Left? | vidIQ not available - to fill in Studio (shape: ending / countdown) | **Locked 30 Sep 20:57** |
 | B | What Would You See If Saturn Had No Rings? | vidIQ not available - to fill in Studio | alt if CTR weak |
-| C | Why Saturn's Rings Are Already Falling | vidIQ not available - to fill in Studio | Shorts fuel |
+| C | Saturn's Rings Are Already Falling | vidIQ not available - to fill in Studio | **Mon Short listing title** (not the long) |
 | Reject | Saturn's Rings Will Destroy the Planet (fearbait) | — | **Reject** |
 
-**Locked title:** What Happens When Saturn Loses Its Rings?  
-**Why it wins:** Familiar Danger ending shape; searchable question; matches Moon/Last Star packaging; Ben picked Candidate A (26 Sep topic pass).
+**Locked title:** How Long Do Saturn's Rings Have Left?  
+**Why it wins:** Search-led lifetime question; Act 3 payoff; Ben confirmed 30 Sep 20:57. Mon Short listing stays *Saturn's Rings Are Already Falling*; card + end line use the long title.
 
 ---
 

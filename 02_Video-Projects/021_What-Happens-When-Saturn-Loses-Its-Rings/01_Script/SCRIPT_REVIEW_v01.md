@@ -15,7 +15,7 @@
 | visualOpportunities | 9.5 |
 | narrationFlow | 9.6 |
 
-Words: 1312 · Est. min: 8.7 · Chapters: 5
+Words: 1302 · Est. min: 8.7 · Chapters: 5
 
 ## Cold open excerpt
 

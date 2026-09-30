@@ -1,15 +1,15 @@
-# Episode cluster plan — V021 Saturn Loses Its Rings
+# Episode cluster plan — V021 How Long Do Saturn's Rings Have Left?
 
-**Working title:** What Happens When Saturn Loses Its Rings?  
-**Date:** 2026-09-26  
+**Working title:** How Long Do Saturn's Rings Have Left?  
+**Date:** 2026-09-26 (titles confirmed Ben 30 Sep 20:57)  
 **Cluster ID:** `cluster_saturn_rings_021`  
 **Topic family:** familiar_danger / saturn_rings  
 **Format:** Long (Sun 11 Oct) + 3 Shorts that week (Mon · Wed · Fri)  
-**Queue:** Next long after Ben topic pick Candidate A. Project never uploaded.
+**Queue:** Next long. Project never uploaded.
 
 ## TITLE
 
-What Happens When Saturn Loses Its Rings?
+How Long Do Saturn's Rings Have Left?
 
 ## CORE QUESTION
 
@@ -43,7 +43,7 @@ Pale ice sheet · thin blade · magnetic rain into gold bands · brighter young 
 
 | Day | Air (UK) | Job | Film promoted | Notes |
 |---|---|---|---|---|
-| **Mon 12 Oct** | 11:30 | Saturn tease | *What Happens When Saturn Loses Its Rings?* | World-first open. **TODO Step 7:** Related → Saturn long id after upload (do not guess). |
+| **Mon 12 Oct** | 11:30 | Saturn tease (*Saturn's Rings Are Already Falling*) | *How Long Do Saturn's Rings Have Left?* | World-first open. Card + end line = long title. **TODO Step 7:** Related → Saturn long id after upload (do not guess). |
 | **Wed 14 Oct** | 11:30 | *Could Orbit Survive…?* Jupiter | *What Would You See If You Fell Into Jupiter?* (`-jmMROGoZCM`) | **Already in progress** — `could-orbit-survive/01_JUPITER.md`. **Do not touch.** |
 | **Fri 16 Oct** | 11:30 | Promote past winner | *What Happens When the Last Star Dies?* (`REXYxuLOBoI`) | Related = `REXYxuLOBoI`. End line uses no-suffix title; **Ben confirm live Studio title** (some audits still show `\| Orbit's Cosmic Journey`). |
 

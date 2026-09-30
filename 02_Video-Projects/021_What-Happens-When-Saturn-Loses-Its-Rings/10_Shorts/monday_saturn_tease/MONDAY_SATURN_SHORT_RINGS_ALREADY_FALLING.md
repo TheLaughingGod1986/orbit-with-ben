@@ -1,12 +1,12 @@
 # Saturn's Rings Are Already Falling
 
-**Ben OK — 30 Sep 20:50 London (rev 3 as written).** Listing title: **How Long Do Saturn's Rings Have Left?** Next: VO on mac-mini (`MINI_HANDOFF_VO_AND_STUDIO.md`). No picture / upload until VO listen + later gates.
+**Ben OK — 30 Sep 20:55 London (rev 3 spoken lines; listing title updated).** Listing title: **Saturn's Rings Are Already Falling**. Long publishes as **How Long Do Saturn's Rings Have Left?** — the 9–14 s card and spoken end line use that long title exactly. Next: VO on mac-mini. No picture / upload until VO listen + stills OK.
 
 | | |
 |---|---|
 | Air | Mon 12 Oct 2026, 11:30 UK |
-| Listing title | How Long Do Saturn's Rings Have Left? |
-| Promotes | *What Happens When Saturn Loses Its Rings?* (021 long) |
+| Listing title | Saturn's Rings Are Already Falling |
+| Promotes | *How Long Do Saturn's Rings Have Left?* (021 long) |
 | Studio Related | **TODO Step 7:** set Related → the Saturn long's YouTube id **after** that long is uploaded. Id does not exist yet — **do not guess / do not point at another film.** |
 | Frame 0 | **World plate only** — ring sheet raining inward. Orbit arrives ~1.5 s. `gate_shorts_open.py` must PASS (fails Orbit at 0 s). |
 | Test week | Week 1 baseline — six opening rules; spoken end line as today |
@@ -21,6 +21,7 @@
 |---:|---|---|
 | 2 | 2026-09-26 | Promise → how long left; Cassini equatorial flow line; body ends on 100–300 Myr range |
 | **3** | **2026-09-26** | Replaced fragment timescale line with exact: *That leaves them somewhere between a hundred and three hundred million years.* |
+| **4** | **2026-09-30** | Ben: listing title *Saturn's Rings Are Already Falling*; card + end line = long title *How Long Do Saturn's Rings Have Left?* |
 
 ## Timings
 
@@ -28,8 +29,8 @@
 |--:|---|---|
 | 0:00 | Ring plane mid-action: pale ice blade, grains already raining inward toward Saturn. Whoosh on frame 0. Caption: IT'S FALLING. **No Orbit.** | Saturn's rings are already falling. |
 | ~0:01.5 | Orbit tumbles into the grain stream, pulled toward the planet, eyes wide. | Stay, and I'll show you how long they have left. |
-| ~0:09–0:14 | Close on ice flowing off the innermost ring into Saturn's equator; on-screen title exactly **What Happens When Saturn Loses Its Rings?** | Hard fact beats below. |
-| last 4 s | Return to opening ring-plane rain so the Short loops. | Watch the full film, What Happens When Saturn Loses Its Rings? |
+| ~0:09–0:14 | Close on ice flowing off the innermost ring into Saturn's equator; on-screen title exactly **How Long Do Saturn's Rings Have Left?** | Hard fact beats below. |
+| last 4 s | Return to opening ring-plane rain so the Short loops. | Watch the full film, How Long Do Saturn's Rings Have Left? |
 
 ---
 
@@ -42,7 +43,7 @@ Saturn's rings are already falling.
 
 Stay, and I'll show you how long they have left.
 
-[VISUAL MUST: Close on material pouring from the innermost ring into Saturn's equator. From 9 to 14 seconds the on-screen title is exactly What Happens When Saturn Loses Its Rings? Orbit is not in this beat.]
+[VISUAL MUST: Close on material pouring from the innermost ring into Saturn's equator. From 9 to 14 seconds the on-screen title is exactly How Long Do Saturn's Rings Have Left? Orbit is not in this beat.]
 [TEACH: Cassini’s last dives sampled the equatorial inflow from the innermost ring (not the magnetic ring rain, which Keck detected); remaining life is about 100–300 million years.]
 
 Ice from that sheet rains into Saturn.
@@ -51,4 +52,4 @@ That leaves them somewhere between a hundred and three hundred million years.
 
 [VISUAL MUST: The last 4 seconds return to the opening picture — edge-on ring sheet with grains streaming in — so the Short loops. No Orbit required on the loop hold.]
 
-Watch the full film, What Happens When Saturn Loses Its Rings?
+Watch the full film, How Long Do Saturn's Rings Have Left?

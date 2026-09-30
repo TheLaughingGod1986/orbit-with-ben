@@ -1,6 +1,7 @@
 ```
 STATUS: LOCKED 2026-09-26 — Ben final notes applied. review:script 90 · gate:episode PASS. Do not rewrite without Ben OK.
-TITLE: What Happens When Saturn Loses Its Rings?
+TITLE: How Long Do Saturn's Rings Have Left?
+NOTE: Ben line fixes 30 Sep 20:55 London — title header; "Does the fall ever stop?"; deleted "Until a bigger question tags along." Re-run review + gate after.
 VOICE: Ben Orbit Narrator — British spelling, calm, to one viewer
 LENGTH: about 8–9 minutes · ~1,200–1,300 spoken words
 OPEN PICTURE: first 3 seconds are the ring plane already falling inward. No title card. No logo. No Orbit.
@@ -37,9 +38,9 @@ Because you are seeing sunlight on ice, not a wall. Photons bounce off clean wat
 
 But the picture that brought you here is already the danger.
 
-[ORBIT ACTS: After the open, Orbit is small beside the ring plane, one face, cream eyes with pupils looking along the ice — you’re probably wondering if the fall ever stops — he does not fill the frame, one underside glow, world still carries the science]
+[ORBIT ACTS: After the open, Orbit is small beside the ring plane, one face, cream eyes with pupils looking along the ice — does the fall ever stop — he does not fill the frame, one underside glow, world still carries the science]
 
-You’re probably wondering if the fall ever stops.
+Does the fall ever stop?
 
 It does not stop while you are watching. Gravity keeps every chunk moving. The smallest grains are already leaking inward. What would you see if you waited? Not a collapse in the news. A slow thinning. Then a planet that has spent the jewellery. How long that takes is the question we are saving for the rain.
 
@@ -139,8 +140,6 @@ So the whole story fits in one breath.
 [TEACH: Recap — water-ice sheet; Keck magnetic ring rain; Cassini equatorial D-ring inflow; lifetime ~100–300 Myr; rings as a phase; hand off to Last Star.]
 
 You would see a thin sheet of water ice, vast and bright, already raining into Saturn — magnetic rain measured from Earth, and a heavier equatorial leak Cassini flew through on its last dives. The mass is too small for a forever-disc, so the clock sits somewhere between about a hundred and three hundred million years. The rings are a phase. Saturn is the thing that remains.
-
-Until a bigger question tags along.
 
 What else in the sky are you treating as permanent only because it is bright? The rings are the clearest case. The mystery is how much of that sky is temporary. Next: What Happens When the Last Star Dies?
 

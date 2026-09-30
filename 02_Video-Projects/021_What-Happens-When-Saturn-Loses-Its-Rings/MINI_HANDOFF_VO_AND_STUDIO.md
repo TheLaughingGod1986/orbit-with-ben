@@ -1,54 +1,68 @@
-# Mini handoff — Saturn week (Ben orders 30 Sep 20:50 London)
+# Mini handoff — Saturn week (Ben 30 Sep 20:55 London)
 
-Cloud agent on managed Linux cannot reach Mac mini (no SSH, no `07_Content-Ops/.env`, no ElevenLabs session, no Studio CDP, no iCloud). **Re-run this file on environment `mac-mini`.**
+Cloud Linux cannot reach Mac mini. **Re-run on environment `mac-mini`.**
 
 Repo: `/Users/benjaminoats/YouTube/orbit-with-ben`  
+Branch: `cursor/saturn-week-ben-orders-da79` (or `main` after PR #97 merges)  
 UAT: `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT`
 
-## Done in repo (merge Ben's docs PR first, or pull this branch)
+## Titles (Ben confirmed 30 Sep 20:57 — do not re-ask)
 
-- Mon Short rev 3 OK; listing title **How Long Do Saturn's Rings Have Left?**
-- Long title stays **What Happens When Saturn Loses Its Rings?**
-- Fri 16 Oct = `FRIDAY_LAST_STAR_SHORT_BLACK_DWARF.md` (not LAST_LIGHT)
-- 022 Sun air → Sun **18 Oct** 18:00 UK
-- Retitle pack: `00_Brand/Channel-Setup/audits/RETITLE_LAST_STAR_2026-09-30.json`
-- PR #96 (18 Oct new-stars shortlist) **parked** for a later week
+| Surface | Exact title |
+|---|---|
+| **LONG everywhere** | How Long Do Saturn's Rings Have Left? |
+| **Mon Short listing title** | Saturn's Rings Are Already Falling |
+| **Mon Short 9–14 s card + spoken end line** | How Long Do Saturn's Rings Have Left? |
+| Fri Short listing | Why No Black Dwarf Exists Yet |
+| Last Star live (after retitle) | What Happens When the Last Star Dies? |
 
-## 1) Retitle Last Star `REXYxuLOBoI`
+## 1) Pull branch
 
 ```bash
-cd /Users/benjaminoats/YouTube/orbit-with-ben/07_Content-Ops
-# If live title differs from expectCurrentTitle, fix the JSON to the actual live title first (only strip " | Orbit's Cosmic Journey").
-npx tsx --env-file=.env scripts/retitle-videos.ts \
-  --file ../00_Brand/Channel-Setup/audits/RETITLE_LAST_STAR_2026-09-30.json --dry-run
-# Paste dry-run stdout, then:
-npx tsx --env-file=.env scripts/retitle-videos.ts \
-  --file ../00_Brand/Channel-Setup/audits/RETITLE_LAST_STAR_2026-09-30.json
-# Paste live stdout.
+cd /Users/benjaminoats/YouTube/orbit-with-ben
+git fetch origin cursor/saturn-week-ben-orders-da79
+git checkout cursor/saturn-week-ben-orders-da79
+git pull origin cursor/saturn-week-ben-orders-da79
 ```
 
-Target title: **What Happens When the Last Star Dies?**
+## 2) Retitle Last Star `REXYxuLOBoI`
 
-## 2) Jupiter end screen (before Sun 4 Oct 18:00)
+```bash
+cd 07_Content-Ops
+# If live title ≠ expectCurrentTitle, edit the JSON to the actual live title first (only strip " | Orbit's Cosmic Journey").
+npx tsx --env-file=.env scripts/retitle-videos.ts \
+  --file ../00_Brand/Channel-Setup/audits/RETITLE_LAST_STAR_2026-09-30.json --dry-run
+# Paste full dry-run stdout, then live:
+npx tsx --env-file=.env scripts/retitle-videos.ts \
+  --file ../00_Brand/Channel-Setup/audits/RETITLE_LAST_STAR_2026-09-30.json
+```
 
-- Video: **What Would You See If You Fell Into Jupiter?** id `-jmMROGoZCM`
-- End screen: **Last Star** `REXYxuLOBoI` + **Subscribe**
-- Use Desktop Studio CDP helpers under `scripts/` if available
-- If Studio needs sign-in: stop and report exact blocker (do not fake success)
-- Upload result currently has `"end_screen": false`
+## 3) Jupiter end screen (before Sun 4 Oct 18:00)
 
-## 3) VO — Ben Orbit Narrator only (`kDch6ACCIpqgQ0NsU9kk`)
+- Id `-jmMROGoZCM` — *What Would You See If You Fell Into Jupiter?*
+- End screen: Last Star `REXYxuLOBoI` + Subscribe
+- If Studio needs sign-in / CDP down: stop and report exact blocker
 
-Stop after listen files. No picture / Veo / Omni.
+## 4) VO — Ben Orbit Narrator (`kDch6ACCIpqgQ0NsU9kk`)
 
-1. Long: `02_Voiceover/_generate_vo_v01.py` (text in `parts/saturn_rings_vo_v01.txt`)
-2. Mon Short: spoken lines only from `10_Shorts/monday_saturn_tease/MONDAY_SATURN_SHORT_RINGS_ALREADY_FALLING.md`
-3. Fri Short: spoken lines only from `005_…/friday_2026-10-16_last_star/FRIDAY_LAST_STAR_SHORT_BLACK_DWARF.md`
+Spoken text for the long is already regenerated in:
+`02_Voiceover/parts/saturn_rings_vo_v01.txt` (locked script + Ben's two line fixes).
 
-Copy listen files to OWB UAT, e.g.:
+Prior repo VO was **STALE** (pre-rewrite). **Full regenerate** the long (not a two-line splice of the old take). Then Mon + Fri Shorts.
 
-- `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_long_vo_v01_LISTEN.wav`
-- `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/monday_saturn_short_vo_v01_LISTEN.wav`
-- `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/friday_black_dwarf_short_vo_v01_LISTEN.wav`
+1. Long: `python3 02_Voiceover/_generate_vo_v01.py` (fix `TOOLS` path if needed to local `04_Audio/tools`)
+2. Mon Short spoken lines from `10_Shorts/monday_saturn_tease/MONDAY_SATURN_SHORT_RINGS_ALREADY_FALLING.md` — end line must say **How Long Do Saturn's Rings Have Left?**
+3. Fri Short from `005_…/FRIDAY_LAST_STAR_SHORT_BLACK_DWARF.md`
 
-Report those exact paths + durations. Then STOP for Ben's listen (sign-off 4).
+Copy to OWB UAT listen names:
+
+- `…/OWB UAT/saturn_long_vo_v01_LISTEN.wav`
+- `…/OWB UAT/monday_saturn_short_vo_v01_LISTEN.wav`
+- `…/OWB UAT/friday_black_dwarf_short_vo_v01_LISTEN.wav`
+
+Update `02_Voiceover/VO_STATUS.md` from STALE → DONE with duration + sha256 of the listen/master file.  
+**Do not force-commit `.wav`/`.mp3`** (gitignored). Commit `VO_STATUS.md` + txt only. Report Mac paths.
+
+## 5) Stills for Ben OK — then STOP
+
+Per PLAN + CoS: after VO is ready for listen, make AI Studio stills (open plate, two science plates, Orbit ref) for Ben's OK. **Stop. No Veo/moving cut until he OKs the stills.**

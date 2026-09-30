@@ -1,10 +1,10 @@
-# Production status — 021 Saturn Loses Its Rings
+# Production status — 021 How Long Do Saturn's Rings Have Left?
 
 | Field | Value |
 |-------|-------|
-| Slug | What-Happens-When-Saturn-Loses-Its-Rings |
-| Locked title | What Happens When Saturn Loses Its Rings? |
-| Mon Short title | How Long Do Saturn's Rings Have Left? (rev 3 OK 30 Sep) |
+| Folder slug | `021_What-Happens-When-Saturn-Loses-Its-Rings` (path only — not the publish title) |
+| Locked title | **How Long Do Saturn's Rings Have Left?** (Ben confirmed 30 Sep 20:57) |
+| Mon Short listing title | **Saturn's Rings Are Already Falling** (9–14 s card + end line = long title exactly) |
 | Air target | Sun 11 Oct 2026, 18:00 UK (normal publish) |
 | Upload history | **Clean** — never uploaded or scheduled |
 | Gate | **PASS** (`11_Upload-Package/EPISODE_GATE_v01.md`) |
