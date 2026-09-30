@@ -1,0 +1,49 @@
+{
+  "engine": "vertex+pil",
+  "project": "gen-lang-client-0538779324",
+  "location": "us-central1",
+  "model": "gemini-2.5-flash-image",
+  "ai_studio_prepay": false,
+  "veo": false,
+  "ben_round": "3b",
+  "ben_notes_at": "2026-09-30T22:46+01:00",
+  "stills": [
+    {
+      "file": "saturn_open_rings_v05.png",
+      "bytes": 770822,
+      "sha256": "21733074c505347fe96f6a3ea43ac98a6c17ecd152e06ebc755e381e02b11b84",
+      "uat_path": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_stills_v05_for_ben_ok/saturn_open_rings_v05.png"
+    },
+    {
+      "file": "saturn_ice_chunks_v05.png",
+      "bytes": 981138,
+      "sha256": "9e8a8113f36ee64767127515413828110d88703b57a6f849f1ecf8d449c510fd",
+      "uat_path": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_stills_v05_for_ben_ok/saturn_ice_chunks_v05.png"
+    },
+    {
+      "file": "saturn_bare_orbit_v05.png",
+      "bytes": 662324,
+      "sha256": "e0532603ffde56ade9a65d6cfdb0989e3b5e9bb587b69c30b114fff0c18f0985",
+      "uat_path": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_stills_v05_for_ben_ok/saturn_bare_orbit_v05.png"
+    }
+  ],
+  "pack_order": [
+    "saturn_open_rings_v05.png",
+    "saturn_ice_chunks_v05.png",
+    "saturn_bare_orbit_v05.png"
+  ],
+  "images_generated_this_pass": 15,
+  "estimated_usd_list_price": 0.585,
+  "billing_note": "Vertex Free Trial; list ~$0.039/image \u00d7 15 (incl remints). Open/bare final are PIL edits of Vertex stills.",
+  "source_notes": {
+    "open": "PIL edit of saturn_open_rings_v03.png \u2014 mirror + hard destreak under blade; Saturn RIGHT; blade kept",
+    "ice": "Reference-guided from APPROVED saturn_orbit_tumble_v04.png; Orbit removed; closer chunks",
+    "bare": "PIL soft right terminator on saturn_bare_v03.png; tiny Orbit cutout from approved tumble (visor painted for back-read) on left toward equator"
+  },
+  "self_check": {
+    "open": "PASS \u2014 under-ring black mean 0; Saturn right; fine blade; no Orbit",
+    "ice": "PASS \u2014 no Orbit; sparse floating ice; no mirrored planet under ice",
+    "bare": "PASS \u2014 left bright / right shaded terminator; Orbit tiny left; back-read; toward planet"
+  },
+  "finishedAt": "2026-09-30T22:21:18Z"
+}
