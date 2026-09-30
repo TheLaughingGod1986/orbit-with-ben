@@ -1,0 +1,28 @@
+name: Content Ops checks
+
+# Every push or PR that touches the local CLIs (Buffer mirror, YouTube upload, gates) runs the
+# same checks a contributor runs locally, so a broken merge is caught before the Mac's 07:05 run.
+on:
+  push:
+    branches: [main]
+    paths: ["07_Content-Ops/**", ".github/workflows/content-ops.yml"]
+  pull_request:
+    paths: ["07_Content-Ops/**", ".github/workflows/content-ops.yml"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 07_Content-Ops
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: 07_Content-Ops/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test

@@ -311,6 +311,27 @@ describe("runBufferCheck auto-mirrors uploads made outside youtube:package", () 
     expect(noFile.autoMirrored).toEqual([]);
   });
 
+  it("shares an upload that went public without a schedule, only if UPLOADS.json knows it", async () => {
+    const justPublic = video({ id: "shortPub001", privacyStatus: "public", publishAt: null, publishedAt: "2026-10-01T08:00:00Z" });
+    const oldAgain = video({ id: "shortOld001", privacyStatus: "public", publishAt: null, publishedAt: "2026-10-01T07:00:00Z" });
+    const mem = memoryStore();
+    const client = fakeClient();
+    const hint = (id: string) =>
+      id === "shortPub001"
+        ? { videoId: id, mediaPath: "/tmp/pub.mp4", thumbPath: null, longId: "long0000001", standalone: false, source: "social/UPLOADS.json", registered: true }
+        : { videoId: id, mediaPath: "/tmp/old.mp4", thumbPath: null, longId: "long0000001", standalone: false, source: "02_Video-Projects/x/SHORTS_UPLOAD_INDEX.json" };
+    const out = await runBufferCheck(
+      deps({ store: mem.store, client, videos: [justPublic, oldAgain, LONG], findMedia: hint, listRecentlyPublic: async () => [justPublic, oldAgain] }),
+    );
+    expect(out.autoMirrored.map((m) => m.videoId)).toEqual(["shortPub001"]);
+    expect(client.createPost.mock.calls.every((c) => (c[0] as { mode: string }).mode === "shareNow")).toBe(true);
+    expect(mem.get().videos.shortPub001.mode).toBe("shareNow");
+    expect(out.unmirrored).toEqual([expect.objectContaining({ videoId: "shortOld001", reason: expect.stringMatching(/without a schedule/) })]);
+    // The next day it's in Buffer and isn't posted again.
+    const again = await runBufferCheck(deps({ store: mem.store, client, videos: [justPublic, LONG], findMedia: hint, listRecentlyPublic: async () => [justPublic] }));
+    expect(again.autoMirrored).toEqual([]);
+  });
+
   it("leaves videos already in Buffer alone", async () => {
     const mem = memoryStore();
     await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, deps({ store: mem.store }));

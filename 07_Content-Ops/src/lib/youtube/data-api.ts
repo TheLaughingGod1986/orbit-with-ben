@@ -75,15 +75,26 @@ export async function fetchYouTubeVideos(token: string, ids: string[]): Promise<
   return out;
 }
 
-/** The channel's most recent uploads that are private with a future go-public time. */
-export async function listScheduledUploads(token: string, now = new Date(), recent = 50): Promise<YouTubeVideo[]> {
+/** The channel's most recent uploads (newest first in the uploads playlist). */
+async function listRecentUploads(token: string, recent = 50): Promise<YouTubeVideo[]> {
   const ch = await get(token, `${API}/channels?part=contentDetails&mine=true`);
   const uploads: string | undefined = ch.items?.[0]?.contentDetails?.relatedPlaylists?.uploads;
   if (!uploads) return [];
   const pl = await get(token, `${API}/playlistItems?part=contentDetails&maxResults=${recent}&playlistId=${encodeURIComponent(uploads)}`);
   const ids: string[] = (pl.items ?? []).map((i: { contentDetails?: { videoId?: string } }) => i.contentDetails?.videoId).filter(Boolean);
-  const videos = await fetchYouTubeVideos(token, ids);
-  return [...videos.values()]
+  return [...(await fetchYouTubeVideos(token, ids)).values()];
+}
+
+/** The channel's most recent uploads that are private with a future go-public time. */
+export async function listScheduledUploads(token: string, now = new Date(), recent = 50): Promise<YouTubeVideo[]> {
+  return (await listRecentUploads(token, recent))
     .filter((v) => v.privacyStatus === "private" && v.publishAt && Date.parse(v.publishAt) > now.getTime())
     .sort((a, b) => Date.parse(a.publishAt!) - Date.parse(b.publishAt!));
+}
+
+/** Uploads that went public within `withinMs` (default 24 h): published straight away, or after the last check. */
+export async function listRecentlyPublic(token: string, now = new Date(), withinMs = 24 * 60 * 60 * 1000, recent = 50): Promise<YouTubeVideo[]> {
+  return (await listRecentUploads(token, recent)).filter(
+    (v) => v.privacyStatus === "public" && v.publishedAt && now.getTime() - Date.parse(v.publishedAt) <= withinMs,
+  );
 }

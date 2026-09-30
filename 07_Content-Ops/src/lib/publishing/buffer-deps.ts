@@ -11,7 +11,7 @@ import { createFileBufferStore } from "@/lib/publishing/buffer-store";
 import { checkMediaUrl, deleteFromVercelBlob, hostOnVercelBlob, listVercelBlobMedia } from "@/lib/publishing/media-host";
 import { findMedia, loadRegistry, scanProjectRecords } from "@/lib/publishing/media-finder";
 import type { MirrorDeps } from "@/lib/publishing/buffer-runner";
-import { fetchYouTubeVideos, getYouTubeAccessToken, listScheduledUploads } from "@/lib/youtube/data-api";
+import { fetchYouTubeVideos, getYouTubeAccessToken, listRecentlyPublic, listScheduledUploads } from "@/lib/youtube/data-api";
 
 export const REPO_ROOT = path.resolve(__dirname, "../../../..");
 export const SOCIAL_DIR = path.join(REPO_ROOT, "00_Brand/Channel-Setup/social");
@@ -39,6 +39,7 @@ export function createMirrorDeps(opts: { channelIds?: ChannelIds; ledgerFile?: s
     youtubeToken: getYouTubeAccessToken,
     fetchVideos: fetchYouTubeVideos,
     listScheduled: listScheduledUploads,
+    listRecentlyPublic: (token, now) => listRecentlyPublic(token, now),
     client: key ? createBufferApiClient(key) : null,
     store: createFileBufferStore(opts.ledgerFile ?? LEDGER_FILE),
     host: process.env.BLOB_READ_WRITE_TOKEN ? hostOnVercelBlob : null,

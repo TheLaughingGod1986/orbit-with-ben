@@ -31,6 +31,8 @@ export type MirrorDeps = {
   youtubeToken: () => Promise<string>;
   fetchVideos: (token: string, ids: string[]) => Promise<Map<string, YouTubeVideo>>;
   listScheduled: (token: string, now: Date) => Promise<YouTubeVideo[]>;
+  /** Uploads that went public in the last 24 h (published straight away, or after the last check). */
+  listRecentlyPublic?: (token: string, now: Date) => Promise<YouTubeVideo[]>;
   /** null plans only (no API key). */
   client: BufferClient | null;
   store: BufferStore;
@@ -332,15 +334,18 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
   }
 
   // Uploads made outside youtube:package: find the local file and mirror them too.
-  const scheduled = await deps.listScheduled(token, now);
   const autoMirrored: CheckOutcome["autoMirrored"] = [];
   const unmirrored: CheckOutcome["unmirrored"] = [];
-  for (const v of scheduled.filter((x) => !ledger.videos[x.id])) {
+  const mirrorFound = async (v: YouTubeVideo, needsRegistry: boolean) => {
     const miss = (reason: string) => unmirrored.push({ videoId: v.id, title: v.title, publishAt: v.publishAt, reason });
     const hint = deps.findMedia?.(v.id) ?? null;
-    if (!hint) {
-      miss(`no local file recorded: run buffer-mirror.ts register --video ${v.id} --media <mp4> --long <longId> (or --thumb <jpg> for a long)`);
-      continue;
+    if (!hint || (needsRegistry && !hint.registered)) {
+      miss(
+        needsRegistry
+          ? `went public without a schedule and isn't in social/UPLOADS.json: if it should go to social, run buffer-mirror.ts mirror --video ${v.id} … within 24 h of going public`
+          : `no local file recorded: run buffer-mirror.ts register --video ${v.id} --media <mp4> --long <longId> (or --thumb <jpg> for a long)`,
+      );
+      return;
     }
     try {
       const outcome = await mirrorVideo(
@@ -358,11 +363,21 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
       );
       if (outcome.plan.errors.length) {
         miss(`${outcome.plan.errors.join("; ")} (from ${hint.source})`);
-        continue;
+        return;
       }
       autoMirrored.push({ videoId: v.id, title: v.title, source: hint.source, sent: outcome.sent, results: outcome.results, warnings: outcome.plan.warnings });
     } catch (e) {
       miss((e as Error).message);
+    }
+  };
+  const scheduled = await deps.listScheduled(token, now);
+  for (const v of scheduled.filter((x) => !ledger.videos[x.id])) await mirrorFound(v, false);
+  // Went public without a schedule, or after yesterday's check: shared now, but only for an
+  // upload this pipeline knows (UPLOADS.json), so an old video made public again never reaches social.
+  if (deps.listRecentlyPublic) {
+    const seen = new Set(scheduled.map((v) => v.id));
+    for (const v of await deps.listRecentlyPublic(token, now)) {
+      if (!ledger.videos[v.id] && !seen.has(v.id)) await mirrorFound(v, true);
     }
   }
 

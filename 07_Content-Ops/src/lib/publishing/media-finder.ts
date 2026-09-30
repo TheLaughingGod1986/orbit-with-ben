@@ -41,6 +41,8 @@ export type MediaHint = {
   longId: string | null;
   standalone: boolean;
   source: string;
+  /** Found in UPLOADS.json: it came through this pipeline (youtube:package or register). */
+  registered?: boolean;
 };
 
 const PROJECTS = "02_Video-Projects";
@@ -178,6 +180,7 @@ export function findMedia(videoId: string, opts: { registry: Registry; scanned: 
       longId: reg.long ?? null,
       standalone: Boolean(reg.standalone),
       source: path.relative(opts.repoRoot, opts.registryFile),
+      registered: true,
     };
   }
   const f = opts.scanned.get(videoId);

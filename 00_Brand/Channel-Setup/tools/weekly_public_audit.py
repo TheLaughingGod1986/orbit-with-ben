@@ -171,7 +171,18 @@ def main() -> int:
     prev_views = {v["id"]: v["views"] for v in (prev["longs"] + prev["shorts"])} if prev else {}
 
     can_frames = bool(shutil.which("ffmpeg"))
-    new_shorts = [s for s in snap["shorts"] if s["id"] not in prev_views] if prev else snap["shorts"][:7]
+    # The Shorts tab is newest first, and only the newest 48 are listed. So a Short is new only
+    # if it sits above the newest one last week's list had; an unseen one further down fell
+    # outside last week's 48 and has only come back into view (it isn't new).
+    new_shorts, returning = [], []
+    if prev:
+        for i, s in enumerate(snap["shorts"]):
+            if s["id"] in prev_views:
+                returning = [x for x in snap["shorts"][i:] if x["id"] not in prev_views]
+                break
+            new_shorts.append(s)
+    else:
+        new_shorts = snap["shorts"][:7]
     for s in new_shorts:
         s["frame0_flags"] = frame0_flags(s["id"]) if can_frames else None
 
@@ -191,13 +202,16 @@ def main() -> int:
     l_views = sum(v["views"] for v in snap["longs"])
     lines = [f"# Weekly public audit — {ns.date}", ""]
     if prev:
-        p_s = sum(s["views"] for s in prev["shorts"])
-        p_l = sum(v["views"] for v in prev["longs"])
+        # Like for like: Shorts in both lists, plus the new ones. Shorts that only came back
+        # into the 48-item window would otherwise count as growth.
+        s_gain = sum(s["views"] - prev_views[s["id"]] for s in snap["shorts"] if s["id"] in prev_views)
+        s_gain += sum(s["views"] for s in new_shorts)
+        l_gain = sum(v["views"] - prev_views.get(v["id"], 0) for v in snap["longs"])
         lines += [f"Compared with {prev['captured']}.", "",
                   "| | Now | Change |", "|---|---:|---:|",
                   f"| Subscribers | {snap['subs']} | {(snap['subs'] or 0) - (prev.get('subs') or 0):+d} |",
-                  f"| Views, newest 48 Shorts | {s_views:,} | {s_views - p_s:+,} |",
-                  f"| Views, longs | {l_views:,} | {l_views - p_l:+,} |", ""]
+                  f"| Views, newest 48 Shorts | {s_views:,} | {s_gain:+,} (like for like) |",
+                  f"| Views, longs | {l_views:,} | {l_gain:+,} |", ""]
     else:
         lines += ["First snapshot — no comparison yet.", "",
                   f"Subscribers {snap['subs']} · newest 48 Shorts {s_views:,} views · longs {l_views:,} views.", ""]
@@ -213,6 +227,8 @@ def main() -> int:
         for s in new_shorts:
             f0 = "not checked (no ffmpeg)" if s.get("frame0_flags") is None else (", ".join(s["frame0_flags"]) or "ok")
             lines.append(f"| short | `{s['id']}` | {cell(s['title'])} | {s['views']} | {f0} |")
+    if returning:
+        lines += ["", f"Back in the newest-48 list (older, not new): {', '.join('`' + x['id'] + '`' for x in returning)}."]
         lines.append("")
 
     if prev:
