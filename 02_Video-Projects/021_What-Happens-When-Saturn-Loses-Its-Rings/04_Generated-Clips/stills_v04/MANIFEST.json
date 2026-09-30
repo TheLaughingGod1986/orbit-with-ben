@@ -1,0 +1,42 @@
+{
+  "engine": "vertex",
+  "model": "gemini-2.5-flash-image",
+  "ben_round": "3",
+  "images_generated_this_pass": 9,
+  "estimated_usd_list_price": 0.351,
+  "stills": [
+    {
+      "file": "saturn_open_rings_v04.png",
+      "sha256": "e2f86be118220264474a96a1c5cd7da901569b46830d644c6debb6d6ee621a98",
+      "bytes": 702342
+    },
+    {
+      "file": "saturn_bare_orbit_v04.png",
+      "sha256": "a32ec8a9637981ed9b92fddff83c577aae7816ce2e4e2d896f8dcdaceac4ed18",
+      "bytes": 674271
+    },
+    {
+      "file": "saturn_ice_chunks_v04.png",
+      "sha256": "1b331c4746bef1df37e8e85b7e261a519a630dcc3aca55bdc760d87c7d83f84c",
+      "bytes": 906407
+    },
+    {
+      "file": "saturn_orbit_tumble_v04.png",
+      "sha256": "3c104d0adcf5a0706587909059e3d2fed14b7093c0c1efabec3031b5475847c3",
+      "bytes": 1059044
+    }
+  ],
+  "pack_order": [
+    "saturn_open_rings_v04.png",
+    "saturn_bare_orbit_v04.png",
+    "saturn_ice_chunks_v04.png",
+    "saturn_orbit_tumble_v04.png"
+  ],
+  "self_check": {
+    "open": "PASS \u2014 Saturn right, rings from left meet equator, no streaks, no Orbit",
+    "bare": "CHECK \u2014 reminted for side-lit crescent + tiny Orbit; verify visually",
+    "ice": "PASS \u2014 floating layer, black space beneath, Saturn large, not a floor",
+    "orbit": "PASS \u2014 mid-air tilt, reaching (not waving), sparse ice, Saturn+rings"
+  },
+  "finishedAt": "2026-09-30T21:32:15Z"
+}

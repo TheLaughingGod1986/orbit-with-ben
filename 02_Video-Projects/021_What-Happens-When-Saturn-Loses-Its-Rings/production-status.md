@@ -11,7 +11,7 @@
 | Script review | **90 / 100 PASS** — same re-run |
 | Script | **LOCKED** — Ben 21:39–21:40 (Olympic-pool hook · Cassini “around a hundred” · Orbit tumble first beat · NASA Goddard source) |
 | VO | **DONE v02** — one spliced master (new open + Cassini line into v01 body). Listen: `OWB UAT/saturn_long_vo_v02_LISTEN.m4a` · 563.42 s. See `02_Voiceover/VO_STATUS.md` + `11_Upload-Package/V02_PASS_2026-09-30.md` |
-| CG | **STOP at stills v03 Round 2** — pack in `OWB UAT/saturn_stills_v03_for_ben_ok/` (open inner-rain · Orbit tumble · ice crowd · Cassini · bare · young keep). Vertex only · no Veo until Ben OK |
+| CG | **STOP at stills v04 Round 3** — pack `OWB UAT/saturn_stills_v04_for_ben_ok/`. Veo ONLY on approved young rings + Cassini → `OWB UAT/saturn_veo_approved_v03/`. No Veo on v04 until Ben OK |
 | Runtime target | ~9.39 min spoken this v02 take |
 | Shorts | Mon 12 Saturn tease · Wed 14 Jupiter Survive (do not touch) · Fri 16 Black Dwarf |
 | Subscribe line used | #4 — We make one of these every week. Subscribing is how the next one finds you. |
@@ -24,5 +24,6 @@
 - [x] Ben OK on Short scripts (step 3) — 30 Sep 20:50 London  
 - [x] VO v02 recorded + spliced → OWB UAT listen paths (Ben listen = sign-off)  
 - [x] Readable scripts v02 in OWB UAT `saturn_scripts_v02/`  
-- [ ] Ben OK on stills **v03 Round 2** before any Veo / moving cut  
+- [x] Veo on young rings + Cassini (Ben approved) → `saturn_veo_approved_v03/`  
+- [ ] Ben OK on stills **v04 Round 3** before Veo on those plates / full moving cut  
 
