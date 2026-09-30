@@ -7,13 +7,13 @@
 | Mon Short listing title | **Saturn's Rings Are Already Falling** (9–14 s card + end line = long title exactly) |
 | Air target | Sun 11 Oct 2026, 18:00 UK (normal publish) |
 | Upload history | **Clean** — never uploaded or scheduled |
-| Gate | **PASS** (`11_Upload-Package/EPISODE_GATE_v01.md`) |
-| Script review | **90 / 100 PASS** (`01_Script/SCRIPT_REVIEW_v01.md`) |
-| Script | **LOCKED 2026-09-26** — Ben final notes; do not rewrite without Ben OK |
-| VO | **next** — Ben Orbit Narrator for long + Mon + Fri Shorts; Mini handoff `MINI_HANDOFF_VO_AND_STUDIO.md` |
-| CG | pending — await Ben OK on VO (sign-off 4), then stills |
-| Runtime target | 8–9 min (1,312 spoken · ~8.7 min) |
-| Shorts | Mon 12 Saturn tease (rev 3 OK) · Wed 14 Jupiter Survive (do not touch) · Fri 16 Black Dwarf (OK; not going-dark) |
+| Gate | **PASS** (`11_Upload-Package/EPISODE_GATE_v01.md`) — re-run 30 Sep Mini |
+| Script review | **90 / 100 PASS** — re-run 30 Sep Mini |
+| Script | **LOCKED** — Ben line fixes 30 Sep 20:55 (*Does the fall ever stop?*; deleted bigger-question line) |
+| VO | **DONE** — long + Mon + Fri Shorts on Mini; listen files in OWB UAT (see `02_Voiceover/VO_STATUS.md`) |
+| CG | **STOP at stills** — `04_Generated-Clips/stills_v01/` + UAT copy `saturn_stills_v01_for_ben_ok`. No Veo/moving cut until Ben OKs stills. |
+| Runtime target | ~9.75 min spoken this take (1,292 words) |
+| Shorts | Mon 12 Saturn tease · Wed 14 Jupiter Survive (do not touch) · Fri 16 Black Dwarf |
 | Subscribe line used | #4 — We make one of these every week. Subscribing is how the next one finds you. |
 
 ## Blockers
@@ -22,5 +22,5 @@
 - [x] Pre-build audit filled (vidIQ fields pending Studio)  
 - [x] Script ≥ 90 + gate PASS — **LOCKED**  
 - [x] Ben OK on Short scripts (step 3) — 30 Sep 20:50 London  
-- [ ] VO listen (sign-off 4) — run on **mac-mini**, copy to OWB UAT  
-- [ ] AI Studio stills locked (open · two science · Orbit ref) before Veo/Omni spend  
+- [x] VO recorded on mac-mini → OWB UAT listen paths filled (Ben listen = sign-off 4)  
+- [ ] Ben OK on stills before any Veo/Omni / moving cut  
