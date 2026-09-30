@@ -4,8 +4,8 @@
 |-------|-------|
 | Slug | 022_Is-the-Sun-Getting-Brighter |
 | Title | Is the Sun Getting Brighter? |
-| Intended air | Sunday 11 October 2026, 18:00 UK |
-| Schedule | not set. Do not upload or schedule. |
+| Intended air | Sunday **18** October 2026, 18:00 UK |
+| Schedule | not set. Do not upload or schedule. Moved off Sun 11 Oct (Ben, 30 Sep) so Saturn `021` keeps that slot. |
 | Gate | BLOCK on pre-build vidIQ sign-off. Script itself is a pass. |
 | Script | `01_Script/sun_brighter_script_master_v01.md` |
 | Script review | **90.4 / 100 PASS** (25 Sep 2026). About 1,295 words, 8.6 min at the reviewer’s 150 words a minute. |

@@ -19,17 +19,15 @@ If a candidate below is locked, update the long header, Mon Short end line / 9�
 | D | Are Saturn's Rings Disappearing? | 32 | are saturn's rings disappearing / saturn's rings disappearing | Yes/no familiar thing — NASA Goddard *Saturn's Rings Are Disappearing* (~724K) owns the phrase. High demand; head-on with NASA. |
 | E | How Long Will Saturn Keep Its Rings? | 36 | how long will saturn keep its rings | Autocomplete-adjacent to A; search results skew to "why does Saturn have rings" / origin docs (SolarBalls, HISTORY) more than lifetime — slightly fuzzier intent than A. |
 
-### Recommended long title
+### Locked long title (Ben, 30 Sep)
 
-**How Long Do Saturn's Rings Have Left?**
+**What Happens When Saturn Loses Its Rings?**
 
-- Search-led (lifetime / countdown), under 60 chars, no suffix.  
-- Same Familiar Danger promise as the film; the open can stay; the title matches the Act 3 range.  
-- Less exact-title collision than *Why Is Saturn Losing Its Rings?* / *What Happens When…*.
+Candidate A (*How Long…*) stays on the **Monday Short** only, so the Short and the long do not share one title (weekly audit / 24 Sep retitle lesson). The long keeps the next question the Short leaves open.
 
 ### Matching first description line
 
-> How long do Saturn's rings have left? Ice is already raining into the planet — Cassini flew through that flow, and the honest answer is somewhere between about a hundred and three hundred million years.
+> What happens when Saturn loses its rings? Ice is already raining into the planet — Cassini flew through that flow, and the rings have somewhere between about a hundred and three hundred million years left.
 
 ---
 
@@ -37,8 +35,8 @@ If a candidate below is locked, update the long header, Mon Short end line / 9�
 
 | Air | Promotes | Recommended Short title | Search phrase | Notes |
 |---|---|---|---|---|
-| **Mon 12 Oct** | Saturn long (Related TODO Step 7) | How Long Do Saturn's Rings Have Left? | how long do saturn's rings have left | Same question as the long — Short promises the number; long delivers the full why. Frame-0 caption stays IT'S FALLING (not the title). |
-| **Fri 16 Oct** | Last Star `REXYxuLOBoI` | Is the Night Sky Going Dark? | is the night sky going dark / night sky going dark | Matches rev-2 Short angle (stars winking out). Avoids "what remains" / "10 trillion" duplicates. Related stays `REXYxuLOBoI`. End line still *What Happens When the Last Star Dies?* until Ben locks the live long title (suffix decision). |
+| **Mon 12 Oct** | Saturn long (Related TODO Step 7) | How Long Do Saturn's Rings Have Left? | how long do saturn's rings have left | Short answers the number; long asks what happens. Frame-0 caption stays IT'S FALLING (not the title). **Ben OK 30 Sep.** |
+| **Fri 16 Oct** | Last Star `REXYxuLOBoI` | Why No Black Dwarf Exists Yet | why no black dwarf / black dwarf exists | `FRIDAY_LAST_STAR_SHORT_BLACK_DWARF.md`. Going-dark draft parked. Related → `REXYxuLOBoI`. End line = live Last Star title after suffix strip. **Ben OK 30 Sep.** |
 
 ---
 
@@ -46,7 +44,7 @@ If a candidate below is locked, update the long header, Mon Short end line / 9�
 
 | Item | Status |
 |---|---|
-| Long title pick | **A — How Long Do Saturn's Rings Have Left?** (await Ben lock) |
-| Mon Short title | How Long Do Saturn's Rings Have Left? |
-| Fri Short title | Is the Night Sky Going Dark? |
-| Live Last Star end-line suffix | Pending Ben (`\| Orbit's Cosmic Journey` still on some public snapshots) |
+| Long title pick | **What Happens When Saturn Loses Its Rings?** — Ben lock 30 Sep |
+| Mon Short title | How Long Do Saturn's Rings Have Left? — Ben lock 30 Sep |
+| Fri Short title | Why No Black Dwarf Exists Yet — Ben lock 30 Sep |
+| Live Last Star end-line suffix | Ben OK strip → *What Happens When the Last Star Dies?* (`RETITLE_LAST_STAR_2026-09-30.json`) |

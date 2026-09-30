@@ -1,10 +1,11 @@
 # Saturn's Rings Are Already Falling
 
-**Draft for Ben OK — 2026-09-26 (rev 3).** Step 3 Short script only. No VO / picture / upload until Ben signs off.
+**Ben OK — 30 Sep 20:50 London (rev 3 as written).** Listing title: **How Long Do Saturn's Rings Have Left?** Next: VO on mac-mini (`MINI_HANDOFF_VO_AND_STUDIO.md`). No picture / upload until VO listen + later gates.
 
 | | |
 |---|---|
 | Air | Mon 12 Oct 2026, 11:30 UK |
+| Listing title | How Long Do Saturn's Rings Have Left? |
 | Promotes | *What Happens When Saturn Loses Its Rings?* (021 long) |
 | Studio Related | **TODO Step 7:** set Related → the Saturn long's YouTube id **after** that long is uploaded. Id does not exist yet — **do not guess / do not point at another film.** |
 | Frame 0 | **World plate only** — ring sheet raining inward. Orbit arrives ~1.5 s. `gate_shorts_open.py` must PASS (fails Orbit at 0 s). |

@@ -1,6 +1,6 @@
 # Why No Black Dwarf Exists Yet
 
-**Alternative draft for Ben OK — 2026-09-30.** Replaces `FRIDAY_LAST_STAR_SHORT_LAST_LIGHT.md` if Ben agrees. Step 3 Short script only. No VO, picture or upload until Ben signs off.
+**Ben OK — 30 Sep 20:50 London.** Chosen Friday Short (replaces `FRIDAY_LAST_STAR_SHORT_LAST_LIGHT.md`). Next: VO on mac-mini. No picture or upload until VO listen + later gates.
 
 **Why a new draft:** the rev 2 angle ("The night sky is going dark") is already public as *Why the Night Sky Is Getting Darker* (`SdNXS1PD_Yk`, 254 views) and *The Sky Is Already Running Out of Light* (`CkSECfUfH2Y`, 292). A third copy of one idea gets no fresh test (24 Sep audit, §2b). This angle isn't on the channel yet: the last thing a dead star becomes, and why the universe is too young for even one of them.
 

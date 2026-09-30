@@ -1,6 +1,6 @@
 # The Night Sky Is Going Dark
 
-**Draft for Ben OK — 2026-09-26 (rev 2).** Step 3 Short script only. No VO / picture / upload until Ben signs off.
+**PARKED 30 Sep — Ben chose Black Dwarf instead** (`FRIDAY_LAST_STAR_SHORT_BLACK_DWARF.md`). Do not VO or upload this draft. Kept for history only.
 
 | | |
 |---|---|
