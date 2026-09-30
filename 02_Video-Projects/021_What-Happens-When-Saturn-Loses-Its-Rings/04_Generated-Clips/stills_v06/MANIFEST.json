@@ -1,0 +1,52 @@
+{
+  "engine": "vertex",
+  "project": "gen-lang-client-0538779324",
+  "location": "us-central1",
+  "model": "gemini-2.5-flash-image",
+  "ai_studio_prepay": false,
+  "veo": false,
+  "ben_round": "3b-fix-v06",
+  "images_generated_v06_vertex": 14,
+  "estimated_usd_list_price_v06_vertex": 0.546,
+  "billing_note": "Vertex Free Trial gen-lang-client-0538779324; $0.039/image \u00d7 14. No Veo.",
+  "open_method": "PIL mirror v03 \u2192 Vertex edit open_try_0 \u2192 Vertex open_try_0 (cleanup not better)",
+  "bare_method": "Vertex edit from bare_orbit_v04; bare_try_1",
+  "stills": [
+    {
+      "file": "saturn_open_rings_v06.png",
+      "sha256": "ac085c9447377eb5910cb4b6a609df92cfc4ad8f8c81b6f2a0011506b1080a85",
+      "bytes": 816276,
+      "space_metrics": {
+        "mean": 2.23964072649164,
+        "p995": 20.0,
+        "frac12": 0.016816118757402108,
+        "hard_rect": false,
+        "max_col_edge": 4.246575355529785
+      }
+    },
+    {
+      "file": "saturn_bare_orbit_v06.png",
+      "sha256": "2fe7676a699b08118228f7fbb1ce51de8cb886a463c5a5c2ab80ca8ac9ce1fb4",
+      "bytes": 632442,
+      "planet_height_frac": 0.6731770833333334,
+      "orbit_height_frac": 0.15885416666666666
+    }
+  ],
+  "pack_order": [
+    "saturn_open_rings_v06.png",
+    "saturn_bare_orbit_v06.png"
+  ],
+  "self_check_pixels": {
+    "open": {
+      "mean": 2.23964072649164,
+      "p995": 20.0,
+      "frac12": 0.016816118757402108,
+      "hard_rect": false,
+      "max_col_edge": 4.246575355529785
+    },
+    "bare_planet_h": 0.6731770833333334,
+    "bare_orbit_h": 0.15885416666666666
+  },
+  "uat_path": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_stills_v06_for_ben_ok",
+  "finishedAt": "2026-09-30T23:00:44Z"
+}
