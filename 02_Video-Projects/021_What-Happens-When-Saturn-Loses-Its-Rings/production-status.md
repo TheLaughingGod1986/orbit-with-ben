@@ -16,7 +16,7 @@ Updated **1 Oct 2026 evening** (Ben decisions 1–4; v03g assemble in progress).
 | VO | **LOCKED** `02_Voiceover/parts/saturn_rings_vo_v03b_tightened_LOCK.wav` — **523.62 s (8:43.6)** |
 | Shot list | **`shot_list_v03g.csv`** — Ben OK 1 Oct evening; from v03f with row 93 temp NASA PIA12633 until Omni. Checker PASS. Assemble first cut v02 from this list. |
 | NASA pool | **Fetched yes** — `nasa_pool_v01.json` (153 entries) + local stills under `07_Edit-Project/nasa_pool_v01/`. Re-run `fetch_nasa_pool.py` only after Ben OKs v03e if any IDs still missing on disk for assemble. |
-| First cut | **Assembling v02** from `shot_list_v03g.csv` + locked VO — deliver cut + 12-frame contact by Tue 6 Oct evening. Row 93 = temp PIA12633. |
+| First cut | **v02 delivered** — iCloud `OWB UAT/saturn_first_cut_v02/` (548.12 s · sha256 `90d18ded…` · contact12 + per-row). Row 93 temp PIA12633. |
 | Thumbnails (long) | **ABC v02 ready for Ben pick** (no Orbit) — iCloud `OWB UAT/saturn_thumbs_v02/` (A ALREADY FALLING · B NOTHING LEFT sharper · C RAINING IN). Phone board = 16:9 row only. Not in git. |
 | Runtime target | 8–9 min (locked VO 8:43.6 + end hold) |
 | Subscribe line used | #4 — We make one of these every week. Subscribing is how the next one finds you. |
@@ -50,4 +50,4 @@ Updated **1 Oct 2026 evening** (Ben decisions 1–4; v03g assemble in progress).
 - [ ] Row 93 bare Orbit Omni (daily Vertex retry) **or** Ben Tue decision (18 Oct / PIA12633 once)
 - [x] Ben OK on Fri Black Dwarf script; Mon last line re-recorded to How Long…
 - [ ] Long thumb ABC Ben OK → Studio Test & Compare after upload
-- [ ] First-cut assemble v02 — **in progress** (Ben OK'd; deliver by Tue 6 Oct evening)
+- [x] First-cut assemble v02 delivered to iCloud (Ben OK'd; contact12 + per-row)

@@ -365,17 +365,17 @@ def build_audio(rows: list[dict], total: float) -> Path:
         "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(vo_concat),
     ])
 
-    # Music bed looped to total, quiet under VO, fade last 10s of end hold
+    # Music bed looped to total, quiet under VO, fade last 10s of end hold.
+    # Beds are mp3 — re-encode on join (cannot -c copy into m4a).
     music_raw = WORK / "music_raw.m4a"
-    # concat three beds then loop
     mlist = WORK / "music_concat.txt"
     mlist.write_text("".join(f"file '{m.resolve()}'\n" for m in MUSIC if m.exists()))
-    music_joined = WORK / "music_joined.m4a"
+    music_joined = WORK / "music_joined.mp3"
     run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
-        "-f", "concat", "-safe", "0", "-i", str(mlist), "-c", "copy", str(music_joined),
+        "-f", "concat", "-safe", "0", "-i", str(mlist),
+        "-c:a", "libmp3lame", "-q:a", "2", str(music_joined),
     ])
-    # loop to cover total
     run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
         "-stream_loop", "-1", "-i", str(music_joined),
@@ -486,7 +486,10 @@ def main() -> None:
         row_mp4s.append((r, dest))
 
     picture = WORK / "picture_all.mp4"
-    concat_videos([p for _, p in row_mp4s], picture)
+    if picture.exists() and picture.stat().st_size > 1_000_000:
+        print(f"reuse picture_all ({picture.stat().st_size} bytes)", flush=True)
+    else:
+        concat_videos([p for _, p in row_mp4s], picture)
 
     audio = build_audio(rows, total)
 
