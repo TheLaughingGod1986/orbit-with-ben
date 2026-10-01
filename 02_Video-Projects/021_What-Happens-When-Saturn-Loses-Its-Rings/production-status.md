@@ -14,7 +14,7 @@ Updated **1 Oct 2026 16:54 London** (matches disk after `shot_list_v03e` @ `056f
 | Script review | **90 / 100 PASS** (`01_Script/SCRIPT_REVIEW_v01.md`) |
 | Script | **LOCKED 2026-09-26** — Ben final notes; do not rewrite without Ben OK |
 | VO | **LOCKED** `02_Voiceover/parts/saturn_rings_vo_v03b_tightened_LOCK.wav` — **523.62 s (8:43.6)** |
-| Shot list | **`shot_list_v03e.csv`** — checker **PASS** @ commit `056f847` (110 rows · 105 pictures · 96 NASA IDs · ends 548.12 s). Row 93 `orbit_bare_omni.mp4` still **PENDING**. |
+| Shot list | **`shot_list_v03g.csv`** — Ben OK 1 Oct evening; from v03f with row 93 temp NASA PIA12633 until Omni. Checker PASS. Assemble first cut v02 from this list. |
 | NASA pool | **Fetched yes** — `nasa_pool_v01.json` (153 entries) + local stills under `07_Edit-Project/nasa_pool_v01/`. Re-run `fetch_nasa_pool.py` only after Ben OKs v03e if any IDs still missing on disk for assemble. |
 | First cut | **Not started** — wait for Ben OK on v03e before assemble v02 |
 | Thumbnails (long) | **ABC v01 started** (no Orbit) — `08_Thumbnail/abc_v01_no_orbit/` + iCloud `OWB UAT/saturn_thumbs_v01/`. Not yet Ben-OK / not in Studio. |
