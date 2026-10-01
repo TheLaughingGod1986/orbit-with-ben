@@ -1,19 +1,15 @@
-# Shot list — WAIT on VO v03 sign-off
+# Shot list v02 — STOP for Ben OK
 
-**Ben order 1 Oct 13:39 London supersedes shot-list-first.**
+Built on **VO v03b LOCK** (Ben signed off 1 Oct 13:54 London).
 
-| Step | Status |
+| Deliverable | Path |
 |---|---|
-| 1. Tightened VO v03 | **DONE — STOP for Ben voice sign-off** |
-| 2. Shot list v02 on v03 timings | **BLOCKED** until Ben signs off VO |
+| Shot list | `SHOT_LIST.md` / `SHOT_LIST.csv` / `saturn_shot_list_v02/` |
+| Unique / reuse | **93 unique** · **3 reuse** (flagged second framings) (flagged second framings) |
+| VO LOCK | `OWB UAT/saturn_long_vo_v03b_tightened_LOCK` · **523.62s** |
+| sha256 wav | `a0498dbdbba264655973dd9d88c4a04717500f239ba68dabbe233e76618a2c5f` |
+| Boundary audit | **84/84 OK** |
+| Monday crop | `shorts_stills_v01/monday_saturn_rings_streaming_v01_crop_limb_v02.png` (1080×1920) |
+| iCloud UAT | `OWB UAT/saturn_shot_list_v02/` |
 
-## VO v03 listen
-
-| File | Path |
-|---|---|
-| wav | `OWB UAT/saturn_long_vo_v03_tightened.wav` |
-| m4a | `OWB UAT/saturn_long_vo_v03_tightened.m4a` |
-| Report | `02_Voiceover/parts/VO_V03_TIGHTEN_REPORT.md` |
-| Duration | **8:43.27** · tempo **1.000** (pause trim alone) |
-
-Shot list v01 rejected by CoS (reuse). Do **not** build v02 until Ben OKs this VO.
+**No downloads / generation until Ben OK.**

@@ -2,22 +2,17 @@
 
 | Field | Value |
 |---|---|
-| Status | **v03 tightened — STOP for Ben voice sign-off** (1 Oct 13:39 London) |
+| Status | **v03b LOCK — Ben signed off 1 Oct 13:54 London** |
 | Spoken text | `parts/saturn_rings_vo_v02.txt` (words unchanged) |
-| Voice | Ben Orbit Narrator (`kDch6ACCIpqgQ0NsU9kk`) |
-| Model | `eleven_v3` via `orbit_voice.py` (source v02) |
-| Source duration (v02) | 563.42s (9:23) |
-| **Tightened duration (v03)** | **523.27s (8:43)** |
-| Tempo factor | **1.000** (pause trim alone landed in 8:30–8:50) |
-| Pitch method | n/a this pass — would use `ffmpeg atempo` (pitch-preserving) if needed, max 1.05 |
-| Master wav | `parts/saturn_rings_vo_v03_tightened.wav` |
-| Master m4a | `parts/saturn_rings_vo_v03_tightened.m4a` |
-| Listen wav | `OWB UAT/saturn_long_vo_v03_tightened.wav` |
-| Listen m4a | `OWB UAT/saturn_long_vo_v03_tightened.m4a` |
-| Report | `parts/VO_V03_TIGHTEN_REPORT.md` |
-| Meta | `parts/_tighten_v03/TIGHTEN_META.json` |
-| Updated | 2026-10-01 13:44 BST |
+| Tightened | v03 pause-trim → v03b So-how-long pause ~0.60s |
+| Duration | **523.62s (8:43.62)** |
+| Master wav | `parts/saturn_rings_vo_v03b_tightened_LOCK.wav` |
+| Master m4a | `parts/saturn_rings_vo_v03b_tightened_LOCK.m4a` |
+| Listen | `OWB UAT/saturn_long_vo_v03b_tightened_LOCK.wav` + `.m4a` |
+| sha256 wav | `a0498dbdbba264655973dd9d88c4a04717500f239ba68dabbe233e76618a2c5f` |
+| sha256 m4a | `f2e57b8f60619d751ed819dbaf038697c0e6e7977be62336a42b6f5569dd60cb` |
+| Boundary audit | 84/84 trimmed onsets OK |
+| Report | `parts/VO_V03B_LOCK_REPORT.md` |
+| Updated | 2026-10-01 13:55 BST |
 
-v02 masters kept on disk for rollback. Do not force-commit audio (gitignored).
-
-**Next:** Ben voice sign-off → then shot list v02 on v03 timings. No downloads / generation until then.
+Shot list v02 built on these timings — STOP for Ben OK before downloads/generation.
