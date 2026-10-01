@@ -4,7 +4,7 @@ Built 1 Oct 2026 from images.nasa.gov for shot list v03. There are 154 pictures,
 
 ## How the pool was checked
 
-**Search.** About 90 Saturn searches returned 1,552 results.
+**Search.** 80 Saturn searches returned 1,552 unique results.
 
 **What was dropped:**
 - anything whose title or opening description names a moon, Earth, Mars, a Saturn V rocket or another target;
