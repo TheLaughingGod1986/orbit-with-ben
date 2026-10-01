@@ -129,6 +129,10 @@ def main():
         seen.add(i)
         e = POOL[i]
         lines.append(f"{e['title']} ({i}): {e['credit']}")
+    if any((r.get("source") or "").upper() == "GODDARD" for r in rows):
+        # svs.gsfc.nasa.gov/12672 "Saturn's Rings Are Disappearing": credit as the page asks.
+        # Its soundtrack is licensed music and narration: use the picture only, muted.
+        lines.append("Ring rain animation (SVS 12672, Saturn's Rings Are Disappearing): NASA's Goddard Space Flight Center")
     out = os.path.splitext(path)[0] + "_credits.txt"
     open(out, "w", encoding="utf-8").write("Images courtesy of NASA. Use does not imply endorsement.\n" + "\n".join(lines) + "\n")
     print(f"PASS. Credit block written to {out}")
