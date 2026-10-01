@@ -85,19 +85,21 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 
 ## 5. Picture
 
-**Home: Google AI Studio.**
+**Home: Google AI Studio** (Vertex Free Trial may run the same models for automation).
 
 | Job | Tool |
 |---|---|
-| World plates | **Veo** (Fast by default; one Quality hero if it earns the thumbnail) |
-| Orbit moving | **Omni, only for Orbit** |
-| Stills / boards | AI Studio image |
+| World plates (no Orbit) | **Veo** (Fast by default; one Quality hero if it earns the thumbnail) |
+| Orbit moving | **Omni only** — never Veo |
+| Stills / boards | AI Studio / Vertex image |
 
 No Kling, Seedance or ElevenLabs Image & Video.
 
-- **Stills first:** one open still, two science plates, one Orbit reference. Then 2–3 Veo Fast money shots (about 8 s). Never Omni the whole film. Never Omni world B-roll.
+- **Orbit NEVER goes through Veo** (locked 1 Oct 2026). Every Orbit motion shot is **Omni** with the canonical identity still attached (`01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png`) plus a composition start frame at the right scale. That covers tumbling through rings, facing a planet, reacting — any beat where the orange robot moves. If a Veo take invents or morphs Orbit, reject it and remake in Omni.
+- **Stills first:** one open still, two science plates, one Orbit reference. Then 2–3 Veo Fast **world** money shots (about 8 s). Never Omni the whole film. Never Omni world B-roll. Never put Orbit on a Veo start still.
 - **Picture matches the sentence.** If the line names Jupiter, the shot is Jupiter; one craft if the line says one craft. Mute the VO and the beat should still read. When picture and VO disagree, the picture is wrong.
 - **Silent picture.** Mute or strip Veo/Omni baked audio (`generate_audio=False`, and strip on download). No readable text or logos in generated plates. Text is added in the edit.
+- **Contact sheet before Ben:** every clip to Ben includes a 4-frame sheet (start · ~1/3 · ~2/3 · end) already checked against §6.
 - **Never** reuse a cutscene inside one film, loop scenery to pad, slow-mo stretch (`setpts` > 1×), freeze-pad, or Ken-Burns a text card. A Short's first/last-frame loop is intended, not padding.
 - **Clean vacuum:** near-black space, few pinpricks.
 - **Environment honesty:** no bubbles in vacuum; water SFX only underwater.
@@ -106,11 +108,12 @@ No Kling, Seedance or ElevenLabs Image & Video.
 
 ## 6. Orbit (character lock)
 
-- **Canonical still:** `01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png` (plus `…-v01.png`). Never use anything under `_Rejected/`.
+- **Canonical still:** `01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png` (plus `…-v01.png`). Never use anything under `_Rejected/`. **Always attach this still for Omni.**
+- **Engine lock:** Omni for Orbit motion. **Veo must not animate Orbit** (§5). World plates stay Orbit-free.
 - **Model:**
   - matte orange floater, no legs;
   - one large black curved visor that is the face, with two cream eyes with dark pupils;
-  - stubby arms with dark three-finger hands;
+  - **exactly two** stubby side arm pods with dark **three-finger** hands — no extra forearms, no multi-finger growth, no legs;
   - one antenna with a glowing tip;
   - exactly one soft underside glow.
 - **Hard rejects, regenerate:**
@@ -118,9 +121,10 @@ No Kling, Seedance or ElevenLabs Image & Video.
   - blank white eyes, no visor, slit LEDs;
   - legs, white belly, glowing yellow belly;
   - text on the body;
-  - twin or side thrusters;
-  - a melted or void face, a generic toy robot.
-- **When Omni is used:** attach the identity still and a composition start frame at the right scale. Spot-check the start, middle and end of each take. Archive rejects as `_rejected_*` and bump `v0N`.
+  - twin or side thrusters; extra limbs / big humanoid forearms / morph into a different robot;
+  - a melted or void face, a generic toy robot;
+  - any Veo clip where Orbit changes shape mid-take.
+- **When Omni is used:** attach the identity still and a composition start frame at the right scale. Spot-check the start, middle and end of each take (4-frame contact sheet). Archive rejects as `_rejected_*` and bump `v0N`. After two §6 fails on the same beat, stop and ask Ben — do not burn a third run.
 - **Dosage:**
   - Longs: 1–2 beats, and Orbit acts in the scene (turns, tips, dives), never parked as wallpaper.
   - Shorts: never at frame 0; arrives at about 1 s, caught in the danger.
