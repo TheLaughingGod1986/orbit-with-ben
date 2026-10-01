@@ -1,0 +1,101 @@
+{
+  "engine": "vertex_free_trial_only",
+  "project": "gen-lang-client-0538779324",
+  "location": "us-central1",
+  "models_tried": [
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash-preview"
+  ],
+  "ai_studio_prepay": false,
+  "identity": "/Users/benjaminoats/YouTube/orbit-with-ben/01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png",
+  "identity_sha256": "922298a14991f128482122ffd91ff48775f96d81ed838d69dc3009b3914f9472",
+  "clips": [
+    {
+      "file": "omni_orbit_tumble_v05.mp4",
+      "status": "FAILED_AFTER_3",
+      "errors": [
+        {
+          "attempt": 1,
+          "model": "gemini-omni-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 1,
+          "model": "gemini-omni-1.1-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 2,
+          "model": "gemini-omni-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 2,
+          "model": "gemini-omni-1.1-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 3,
+          "model": "gemini-omni-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 3,
+          "model": "gemini-omni-1.1-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        }
+      ],
+      "fallback": "veo_orbit_tumble_v03_fallback_0-3s.mp4"
+    },
+    {
+      "file": "omni_bare_orbit_v05.mp4",
+      "status": "FAILED_AFTER_3",
+      "errors": [
+        {
+          "attempt": 1,
+          "model": "gemini-omni-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 1,
+          "model": "gemini-omni-1.1-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 2,
+          "model": "gemini-omni-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 2,
+          "model": "gemini-omni-1.1-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 3,
+          "model": "gemini-omni-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        },
+        {
+          "attempt": 3,
+          "model": "gemini-omni-1.1-flash-preview",
+          "error_type": "InternalServerError",
+          "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+        }
+      ]
+    }
+  ],
+  "startedAt": "2026-10-01T10:46:02Z",
+  "finishedAt": "2026-10-01T10:53:31Z"
+}
