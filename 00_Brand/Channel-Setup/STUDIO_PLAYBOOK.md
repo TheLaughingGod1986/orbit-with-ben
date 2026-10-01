@@ -30,10 +30,11 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 ## 2. Pick the topic (before any script)
 
 1. **Use the channel's own data.** Read the latest `audits/weekly/<date>/REPORT.md`, `audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md` and `audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/`. What wins is a familiar thing in danger (the Moon, the Sun, a star, your body) told as an ending, a body impossibility, a yes/no question, something hidden, or one real number.
-2. **Competition check.** Search the exact title on YouTube, signed out. If all top five results are channels with millions of subscribers, narrow the angle.
-3. **Score it:** `templates/TOPIC_OPPORTUNITY_SCORE.md`.
-4. **Pre-build vidIQ audit:** copy `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` into the project's `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Wonder beats a higher vidIQ score for fear or conspiracy.
-5. **Scaffold:** copy `02_Video-Projects/_template_NNN_Episode-Slug/` to `02_Video-Projects/NNN_Slug/`.
+2. **Neighbour pass (blocking · Ben standing order 1 Oct 2026).** Before topic lock, find **at least three** big education or space videos (about **1M+** views) on the same subject — the kind of films YouTube already suggests next to each other (Kurzgesagt, TED-Ed, Veritasium, SciShow Space, PBS Space Time, NASA, Crash Course, BBC Earth Science, and peers). Write them into the topic score and the pre-build audit: title, channel, id, views, and the **subject words** they use in title / description / tags. Goal: package so Orbit can sit in their Suggested / related neighbourhood (the HOS 002 ↔ TED-Ed pattern), without naming those channels in our listing. **Ben picks the topic** — a strong neighbour pool is evidence, not an auto-lock.
+3. **Competition check.** Search the exact title on YouTube, signed out. If all top five results are channels with millions of subscribers, narrow the angle.
+4. **Score it:** `templates/TOPIC_OPPORTUNITY_SCORE.md` (include the neighbour table).
+5. **Pre-build vidIQ audit:** copy `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` into the project's `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Fill the neighbour-pass section. Draft description first line(s) and **5–8 subject-only tags** from the neighbours' words — never channel names. Wonder beats a higher vidIQ score for fear or conspiracy.
+6. **Scaffold:** copy `02_Video-Projects/_template_NNN_Episode-Slug/` to `02_Video-Projects/NNN_Slug/`.
 
 ## 3. Script
 

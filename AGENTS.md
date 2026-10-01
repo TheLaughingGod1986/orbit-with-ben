@@ -55,9 +55,13 @@ python3 scripts/owb_thread.py post -f report.md    # Chief of Staff -> Claude (d
 
 The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. No database. Never print or commit their values.
 
+## Topic pick — neighbour pass (blocking · 1 Oct 2026)
+
+Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOOK.md` §2: at least **three** big education/space videos (≈1M+ views) on the same subject, logged in `templates/TOPIC_OPPORTUNITY_SCORE.md` and `PRE_BUILD_VIDIQ_AUDIT.md`. Use their subject words for description first lines and tags — **never** put channel names in the listing. A strong neighbour pool is evidence for Ben; it does not pick the topic for him. Orbit only — do not apply HOS packaging habits here.
+
 ## Stop and ask Ben at each of these points
 
-1. Topic
+1. Topic (after the neighbour pass is filled)
 2. Long script (after it reaches 90)
 3. Short scripts
 4. Voice
