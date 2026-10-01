@@ -44,10 +44,9 @@ ART = Path(
     "cursor_agent_stores/bc-bb6a84a0-ea11-5101-b43f-34c5b13867e0/files/assets"
 )
 
+# Ben 1 Oct 2026: NEW Saturn bed (not Moon Leaving). Temp Moon beds retired after swap.
 MUSIC = [
-    Path("/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part01_score_bed_v01.mp3"),
-    Path("/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part02_score_bed_v01.mp3"),
-    Path("/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3"),
+    Path(__file__).resolve().parent.parent / "05_Music" / "saturn-rings_score_bed_v01.mp3",
 ]
 
 W, H, FPS = 1920, 1080, 24
@@ -656,7 +655,7 @@ def main() -> None:
         },
         "cant_fill_rows": cant_sorted,
         "cant_fill_count": len(cant_sorted),
-        "music": "temp Moon Leaving score beds (await Ben)",
+        "music": "saturn-rings_score_bed_v01.mp3 (Ben: new Saturn bed, not Moon Leaving)",
         "icloud": str(UAT_DIR),
         "note": "media iCloud only; no force-add to git",
     }
