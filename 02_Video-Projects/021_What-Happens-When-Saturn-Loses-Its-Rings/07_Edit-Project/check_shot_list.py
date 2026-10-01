@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Check a Saturn shot list CSV against NASA_POOL_v01 and the cut rules, then write its credit block.
 
-Usage: python3 check_shot_list.py shot_list_v03b.csv [--vo-end 523.6]
+Usage: python3 check_shot_list.py shot_list_v03b.csv [--vo-end 523.6] [--words vo_words.json]
+
+Also runs the shared pre-delivery clip check (VO sentence ends vs card/row cuts):
+  00_Brand/Channel-Setup/tools/clip_check.py
+See docs/ORBIT_PLAYBOOK_LESSONS.md §2.
 
 CSV columns (header row required):
   row       running number
@@ -28,7 +32,7 @@ HOOK_END, HOOK_MIN = 20.0, 1.5     # quick preview cuts are allowed inside the f
 OMNI_MIN = 3.0                   # Orbit reaction beats may be shorter (Ben, 1 Oct: the approved tumble is 3.0 s)
 GODDARD_MAX_SHOTS = 2            # SVS 12672: up to two separate stretches, never sliced further
 END_HOLD_MAX = 22.0              # last row only: the scripted 15–20 s end hold
-CARD_MAX = 2.5                   # chapter cards ~1.5 s
+CARD_MAX = 2.5                   # chapter cards ~1.5 s (+ ~0.4 s xfade; breath 0.5–0.8 s is before the card)
 
 AURORA = {"PIA13402", "PIA13404", "PIA11396", "PIA09185", "PIA17900", "PIA17668", "PIA01269", "PIA21899"}
 HUBBLE_SEASONS = {"PIA03156", "PIA03158", "PIA03159", "PIA03160", "PIA03161", "PIA03162"}
@@ -51,12 +55,27 @@ def approved_window(rid):
     return (float(m.group(1)), float(m.group(2))) if m else None
 
 
+def run_clip_check(path, vo_end, words_path):
+    """Shared gate: VO word ends vs cut points (docs/ORBIT_PLAYBOOK_LESSONS.md)."""
+    import subprocess
+    tool = os.path.abspath(os.path.join(
+        HERE, "..", "..", "..", "00_Brand", "Channel-Setup", "tools", "clip_check.py"))
+    cmd = [sys.executable, tool, path, "--vo-end", str(vo_end)]
+    if words_path:
+        cmd += ["--words", words_path]
+    print("--- clip_check ---")
+    r = subprocess.run(cmd)
+    print("--- end clip_check ---")
+    return r.returncode == 0
+
+
 def main():
     args = sys.argv[1:]
     if not args:
         sys.exit(__doc__)
     path = args[0]
     vo_end = float(args[args.index("--vo-end") + 1]) if "--vo-end" in args else 523.6
+    words_path = args[args.index("--words") + 1] if "--words" in args else None
     rows = list(csv.DictReader(open(path, newline="", encoding="utf-8")))
     errs, nasa_used, clip_ranges = [], [], {}
 
@@ -133,10 +152,14 @@ def main():
 
     picture_rows = [r for r in rows if (r.get("source") or "").upper() != "CARD"]
     print(f"{len(rows)} rows, {len(picture_rows)} pictures, {len(set(nasa_used))} NASA IDs, ends {prev_out:.2f}s")
-    if errs:
-        print(f"FAIL: {len(errs)} problem(s)")
-        for e in errs:
-            print(" -", e)
+    clip_ok = run_clip_check(path, vo_end, words_path)
+    if errs or not clip_ok:
+        if errs:
+            print(f"FAIL: {len(errs)} problem(s)")
+            for e in errs:
+                print(" -", e)
+        if not clip_ok:
+            print("FAIL: clip_check did not pass")
         sys.exit(1)
 
     seen, lines = set(), []

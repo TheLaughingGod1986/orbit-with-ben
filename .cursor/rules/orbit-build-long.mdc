@@ -22,10 +22,11 @@ Full steps: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2–§4 and §7. Hooks
   - `[VISUAL MUST]` + `[TEACH]` on every scene; `[ORBIT ACTS]` on Orbit beats only.
 - **Gates:** `npm run review:script` scores 90 or more, then `npm run gate:episode` PASSes. No VO or picture spend before both.
 - **Voice:** Ben Orbit Narrator (`04_Audio/tools/orbit_voice.py`). VO comes before picture. Speech around −19 to −28 dB mean; never silent.
-- **Assembly:**
-  - normalise inputs to 1920×1080 stereo and check A/V lengths match;
+- **Assembly** (`docs/ORBIT_PLAYBOOK_LESSONS.md` §2 + `STUDIO_PLAYBOOK.md` §7):
+  - normalise inputs to 1920×1080 stereo and check A/V lengths match; fill 16:9 (no flat bars; feathered blur OK; upscale ≤~2.35×);
   - a remint is picture only (keep the original audio);
-  - soft chapter cards with 1.5 s breath and music under;
-  - an end hold of 15–20 s with a music fade (a silent hold fails);
+  - chapter cards: VO sentence finishes → 0.5–0.8 s breath → ~0.4 s xfade; never clip a line;
+  - end: picture+music past last VO word, hold 2–3 s, then fade; music full runtime; mix ~−14 LUFS;
+  - pre-delivery: `python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> [--words vo_words.json]`;
   - export `09_Final-Export/<slug>_broadcast_v0N.mp4`.
 - **Publish:** normal publish, Sunday 18:00 UK. Test & Compare with 3 thumbs; end screen = best related long + Subscribe; captions via auto-sync; a pinned comment (question + subscriber thank-you) via `scripts/update-pinned-comment.ts --create`, then pinned in Studio.

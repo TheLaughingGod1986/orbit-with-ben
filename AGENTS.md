@@ -13,10 +13,11 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 1. `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md`: what to make, the week, Short and long hooks, the first two seconds, the four-week test (12 Oct – 6 Nov 2026).
 2. `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md`: title shapes, thumbnail rules, frame 0 as the Shorts thumbnail.
 3. `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`: how to build and ship: topic, script, voice, picture, Orbit, assembly, upload, measure, affiliate, social, sign-offs.
-4. `00_Brand/Channel-Setup/YOUTUBE_GROWTH_AND_POLICY.md`: retention, CTR and policy basics.
-5. `00_Brand/Channel-Setup/CHANNEL_AUTHORITY.md`: picture matches the words, same Orbit, voice present, weekly promise.
-6. `00_Brand/Channel-Setup/YOUTUBE_FRAME_SIZES.md`: sizes.
-7. `00_Brand/Channel-Setup/IMPROVEMENTS_BACKLOG.md`: housekeeping to do now, and what waits until after the test.
+4. `docs/ORBIT_PLAYBOOK_LESSONS.md`: **standing lessons for Cursor + Claude** (neighbour rule, v03b edit locks, Omni/Vertex/KEEP locks, PR #99 thread protocol). Read with the playbook when building or answering on the thread.
+5. `00_Brand/Channel-Setup/YOUTUBE_GROWTH_AND_POLICY.md`: retention, CTR and policy basics.
+6. `00_Brand/Channel-Setup/CHANNEL_AUTHORITY.md`: picture matches the words, same Orbit, voice present, weekly promise.
+7. `00_Brand/Channel-Setup/YOUTUBE_FRAME_SIZES.md`: sizes.
+8. `00_Brand/Channel-Setup/IMPROVEMENTS_BACKLOG.md`: housekeeping to do now, and what waits until after the test.
 
 ## Where things live
 
@@ -31,7 +32,8 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 | `02_Video-Projects/NNN_Slug/` | One folder per film. Start from `_template_NNN_Episode-Slug/`. |
 | `04_Audio/tools/` | `orbit_voice.py` (VO settings), `orbit_gemini_veo.py` |
 | `07_Content-Ops/` | Local CLIs (no web app, no database): script review, episode gate, YouTube package upload, retitle, pinned comment, Buffer mirror, analytics. The hosted ops app was retired on 27 Sep 2026 (`_archive/07_Content-Ops/`). |
-| `scripts/` | Desktop Studio CDP helpers for Studio-only jobs (thumbnail covers) |
+| `scripts/` | Desktop Studio CDP helpers for Studio-only jobs (thumbnail covers); `owb_thread.py` (Chief ↔ Claude on PR #99) |
+| `docs/ORBIT_PLAYBOOK_LESSONS.md` | Tonight's standing rules (neighbour, edit, production locks, thread protocol) |
 | `_archive/` | Superseded docs, rules, one-off scripts and old audits. **Ignore unless asked.** |
 
 ## Commands
@@ -51,9 +53,19 @@ cd 07_Content-Ops && npx tsx scripts/buffer-mirror.ts register --video <id> --me
 cd 07_Content-Ops && npm run youtube:auth    # once, or when a script says the YouTube login expired
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 python3 scripts/owb_thread.py post -f report.md    # Chief of Staff -> Claude (draft PR #99); `read` / `wait` for the reply
+python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> [--words vo_words.json]   # assembler pre-delivery: VO ends vs cuts
 ```
 
 The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. No database. Never print or commit their values.
+
+## Standing lessons (Cursor + Claude)
+
+Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, or acting on the PR #99 thread. Short form:
+
+1. **Neighbour:** ≥3 education/space videos ≈1M+ views before topic lock; subject words in title/desc/tags; never channel names. Evidence: HOS 002 gets 55.6% of views Suggested from TED-Ed's Mendeleev film.
+2. **Edit (v03b):** cards wait for the VO sentence, 0.5–0.8 s breath, ~0.4 s xfade; never clip a line; picture+music past last word, hold 2–3 s, then fade; music full runtime; fill 16:9 (feathered blur OK); upscale ≤~2.35×; mix ~−14 LUFS; check repeated/stumbled VO before delivery.
+3. **Production:** Orbit = Omni only (+ approved 0–3 s tumble fallback); no Orbit on long thumbs; verify NASA IDs; no media in git; Ben OKs anything public; nothing is KEEP until Ben reviews; shot list to Ben before generation; Vertex only.
+4. **Thread (PR #99):** act on Claude's replies like Ben's relays, except **NEEDS BEN** → Chief of Staff for Ben. Claude's reply is never Ben's OK. Never merge, close or push #99.
 
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)
 
@@ -98,4 +110,4 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 
 ## Changing the rules
 
-Change the doc in force (1–7 above) and its Cursor rule in the same commit, with the date and the evidence. Don't add a new "locked" doc that restates or contradicts one of them. Move anything it supersedes to `_archive/`.
+Change the doc in force (1–8 above) and its Cursor rule in the same commit, with the date and the evidence. Don't add a new "locked" doc that restates or contradicts one of them. Move anything it supersedes to `_archive/`. Updates to standing lessons go in `docs/ORBIT_PLAYBOOK_LESSONS.md` and a pointer here.
