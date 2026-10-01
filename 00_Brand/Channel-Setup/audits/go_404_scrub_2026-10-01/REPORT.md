@@ -15,14 +15,21 @@ Proof: `CTLL_PUBLISHAT.json`.
 
 ## 2. After 11:30 — public + register
 
-Pending until air time. Will download mp4 (no local file on disk) then:
+**DONE** at 2026-10-01T10:31:06Z.
 
-```bash
-npx tsx --env-file=.env scripts/buffer-mirror.ts register \
-  --video CtllH6VOhEI \
-  --media <mp4> \
-  --long ojk-dfOpAmw
+```json
+{
+  "registered": "CtllH6VOhEI",
+  "long": "ojk-dfOpAmw",
+  "registeredAt": "2026-10-01T10:31:06.142Z",
+  "media": "02_Video-Projects/019_Andromeda-Milky-Way-Collision/10_Shorts/from_studio/CtllH6VOhEI.mp4",
+  "mediaBytes": 6083060,
+  "status": "REGISTER_DONE"
+}
 ```
+
+`k9pXeeJvLpc` left private / untouched.
+
 
 ## 3. /go/ links on live descriptions
 
