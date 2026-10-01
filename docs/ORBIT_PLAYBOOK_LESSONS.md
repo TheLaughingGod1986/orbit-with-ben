@@ -35,14 +35,21 @@ These are assembly locks for every long from Saturn v03c onward.
 ### End of film
 
 - Picture and music run **past the last VO word**.
-- Hold **2–3 s**, then fade.
+- Picture holds **15–20 s** after the last VO word (end-screen space).
+- Music carries **2–3 s** past the last word, then fades over ~10 s.
+- Picture fades over the last **2 s**.
 - Music covers the **full runtime** (a silent end hold fails).
+
+### Timing source (root cause)
+
+- Row times come from the **locked VO's word timestamps** (`align_shot_list.py`), never from planned times.
+- `clip_check --words` catches clipped lines; aligning from the LOCK VO first prevents them.
 
 ### Picture
 
 - Fill **16:9** with no flat bars.
 - Use a feathered blurred background if the plate is not natively 16:9.
-- Upscale no more than about **2.35×**.
+- Upscale no more than about **2.35×** (see also `NASA_POOL_v01.md` rule 4 — defers to this §2).
 
 ### Audio
 
@@ -66,7 +73,7 @@ Also see `STUDIO_PLAYBOOK.md` §7.
 | Rule | Detail |
 |---|---|
 | Orbit generation | Orbit is always **Omni**. One approved tumble fallback only: the **0–3 s** window on the named tumble file (e.g. `veo_orbit_tumble_v03_fallback_0-3s.mp4`). No other Orbit fallback without Ben. |
-| Long thumbnails | **Never** include Orbit. |
+| Thumbnails | **Never** include Orbit on **any** thumbnail (longs and Shorts covers). |
 | NASA stills | Verify every NASA ID against the images / Photojournal API (or the project's verified pool JSON) before the shot list goes to Ben. |
 | Media in git | **No media in git.** Stills, VO, Veo/Omni clips and broadcast masters live in iCloud / local UAT paths only. |
 | Public / KEEP | Ben OKs anything public. **Nothing is KEEP until Ben reviews it.** |

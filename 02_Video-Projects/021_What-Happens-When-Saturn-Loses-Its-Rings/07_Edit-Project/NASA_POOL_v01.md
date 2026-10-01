@@ -20,9 +20,9 @@ Built 1 Oct 2026 from images.nasa.gov for shot list v03. There are 153 pictures,
 1. **Use only IDs from this file** for NASA pictures. If a line needs something that isn't here, flag it rather than picking one by hand.
 2. **Each ID is used once in the whole film**, with no repeats. The Goddard ring-rain video is used once, as one continuous shot.
 3. **A section can borrow** a spare picture from a neighbouring section, but that picture is then gone for good.
-4. **Most pictures are about 1020 px square.** On a 16:9 timeline:
-   - frame them on black with a slow push of 5–8 %, or crop gently;
-   - never upscale past about 1.5x;
+4. **Most pictures are about 1020 px square.** On a 16:9 timeline (framing lock in `docs/ORBIT_PLAYBOOK_LESSONS.md` §2 Picture — that file wins if this conflicts):
+   - fill 16:9 (feathered blur background OK); slow push of 5–8 %, or crop gently;
+   - upscale no more than about **2.35×**;
    - never stretch, and never slow-mo or freeze-pad to cover length.
 5. **Captions must match the picture.** Aurora is not ring rain. The Hubble 1996–2000 sequence shows the rings tilting with the seasons, not thinning. The Grand Finale illustrations are labelled as illustrations.
 6. **AI shots are allowed only where already approved:**
