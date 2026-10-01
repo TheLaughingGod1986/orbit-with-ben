@@ -30,10 +30,11 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 ## 2. Pick the topic (before any script)
 
 1. **Use the channel's own data.** Read the latest `audits/weekly/<date>/REPORT.md`, `audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md` and `audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/`. What wins is a familiar thing in danger (the Moon, the Sun, a star, your body) told as an ending, a body impossibility, a yes/no question, something hidden, or one real number.
-2. **Competition check.** Search the exact title on YouTube, signed out. If all top five results are channels with millions of subscribers, narrow the angle.
-3. **Score it:** `templates/TOPIC_OPPORTUNITY_SCORE.md`.
-4. **Pre-build vidIQ audit:** copy `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` into the project's `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Wonder beats a higher vidIQ score for fear or conspiracy.
-5. **Scaffold:** copy `02_Video-Projects/_template_NNN_Episode-Slug/` to `02_Video-Projects/NNN_Slug/`.
+2. **Neighbour pass (blocking · Ben standing order 1 Oct 2026).** Before topic lock, find **at least three** big education or space videos (about **1M+** views) on the same subject — the kind of films YouTube already suggests next to each other (Kurzgesagt, TED-Ed, Veritasium, SciShow Space, PBS Space Time, NASA, Crash Course, BBC Earth Science, and peers). Write them into the topic score and the pre-build audit: title, channel, id, views, and the **subject words** they use in title / description / tags. Goal: package so Orbit can sit in their Suggested / related neighbourhood (the HOS 002 ↔ TED-Ed pattern), without naming those channels in our listing. **Ben picks the topic** — a strong neighbour pool is evidence, not an auto-lock.
+3. **Competition check.** Search the exact title on YouTube, signed out. If all top five results are channels with millions of subscribers, narrow the angle.
+4. **Score it:** `templates/TOPIC_OPPORTUNITY_SCORE.md` (include the neighbour table).
+5. **Pre-build vidIQ audit:** copy `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` into the project's `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Fill the neighbour-pass section. Draft description first line(s) and **5–8 subject-only tags** from the neighbours' words — never channel names. Wonder beats a higher vidIQ score for fear or conspiracy.
+6. **Scaffold:** copy `02_Video-Projects/_template_NNN_Episode-Slug/` to `02_Video-Projects/NNN_Slug/`.
 
 ## 3. Script
 
@@ -128,11 +129,19 @@ No Kling, Seedance or ElevenLabs Image & Video.
 
 ## 7. Assembly and technical checks
 
-- **Normalise every input to 1920×1080 stereo before concat.** Probe after: audio and video durations must match.
+Standing edit locks (Ben v03b / 1 Oct 2026) are also in `docs/ORBIT_PLAYBOOK_LESSONS.md` §2.
+
+- **Normalise every input to 1920×1080 stereo before concat.** Probe after: audio and video durations must match. Fill 16:9 with no flat bars; feathered blurred background if needed; upscale no more than about **2.35×**.
 - **Remint = picture only.** Take video from the remint and audio from the original part (`-map 0:v:0 -map 1:a:0`). Never `-c copy` a remint's own audio.
-- **Chapter cards:** a soft starfield/gradient card (never a flat black box), about 1.5 s breath lead-in, music continuing underneath.
-- **End hold:** at least 15–20 s of slow picture after the last line. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.**
+- **Chapter cards:** wait for the VO sentence to finish → **0.5–0.8 s** breathing room → cross-fade the card in about **0.4 s**. Soft starfield/gradient (never a flat black box); music continuing underneath. **No line is ever clipped** by a row or card boundary.
+- **End hold:** picture and music run past the last VO word, hold **2–3 s**, then fade. Keep a longer slow end plate (about 15–20 s total after the last line) with music over the full runtime. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.**
+- **Mix:** about **−14 LUFS** integrated with clear VO. Check for repeated or stumbled VO phrases before delivery.
 - **Bed parity** across parts: about −20 dB mean under VO.
+- **Pre-delivery clip check** (blocking before Ben review):
+  ```bash
+  python3 00_Brand/Channel-Setup/tools/clip_check.py <07_Edit-Project/shot_list.csv> [--words vo_words.json] [--vo-end SEC]
+  ```
+  Project assemblers may wrap this (e.g. Saturn `check_shot_list.py --words …`). Exit 0 only on pass.
 - **Large file transfers:** chunk ≤500 KB and verify the sha256.
 - **Subscribe cue:** under the `[SUBSCRIBE BEAT]` line, a 4-second subscribe cue in the lower-right corner (small button, no sound louder than the VO) over the moving picture. Orbit may nod or point toward it in-scene. Never a full-screen card.
 - **Export** to `09_Final-Export/<slug>_broadcast_v0N.mp4`.
