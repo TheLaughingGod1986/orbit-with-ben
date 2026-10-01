@@ -166,25 +166,38 @@ def caption_png(text: str, path: Path) -> None:
 
 
 def still_to_mp4(still: Path, dest: Path, dur: float, zoom_end: float, fill: bool) -> None:
-    """Ken-Burns still. fit-to-height on black unless fill=True (large original)."""
+    """Ken-Burns still. Contain on black unless fill=True (large original / illustration).
+
+    Square ~1020 pool stills → fit-to-height (~1.06x) via contain. Wider-than-16:9
+    stills fit-to-width instead (pad cannot shrink). Never crop-upscale a small pool
+    still to fill 16:9 (~1.9x).
+    """
     if dur < 0.25:
         dur = 0.25
     n = max(1, int(round(dur * FPS)))
-    z0, z1 = 1.0, zoom_end
+    z0, z1 = 1.0, min(zoom_end, 1.12)  # keep push gentle on letterboxed stills
     zf = f"{z0:.4f}+({z1 - z0:.4f})*on/{max(n - 1, 1)}"
     xf = "(iw-ow/zoom)/2"
     yf = "(ih-oh/zoom)/2"
     if fill:
-        pre = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+        pre = (
+            f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+            f"crop={W}:{H},"
+        )
     else:
-        # Fit to height on black (square ~1020 → ~1.06x), never crop-upscale to fill.
-        pre = f"scale=-2:{H},pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:black,"
+        # contain inside 1920x1080 on black (even dims)
+        pre = (
+            f"scale={W}:{H}:force_original_aspect_ratio=decrease,"
+            f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:black,"
+            f"scale=trunc(iw/2)*2:trunc(ih/2)*2,"
+        )
     run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
         "-loop", "1", "-i", str(still),
         "-vf",
         f"{pre}zoompan=z='{zf}':x='{xf}':y='{yf}':d={n}:s={W}x{H}:fps={FPS},format=yuv420p",
-        "-t", f"{dur:.3f}", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "16", "-an",
+        "-frames:v", str(n),
+        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "16", "-an",
         str(dest),
     ])
 
