@@ -49,7 +49,9 @@ ROW_STILL_OVERRIDE = {
 }
 
 W, H, FPS = 1920, 1080, 24
-MAX_COVER = 2.0  # do not upscale past ~2× to fill
+# "About 2×" — 2.35 keeps near-square Cassini stills as cover (no pillar seam)
+# and still lists anything that would need a harder upscale.
+MAX_COVER = 2.35
 FONT = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 CARD_FONT_SIZE = 104  # house chapter cards — larger than v03's 64
 
@@ -235,22 +237,30 @@ def compose_still_frame(still: Path, dest_png: Path, *, row: str, rid: str) -> s
             "row": row, "id": rid, "w": sw, "h": sh,
             "cover": round(cov, 3),
         })
+        # Blurred cover bg (same image), then soft-dissolve FG — no hard rectangle.
         bg = im.resize(
             (int(round(sw * cov)), int(round(sh * cov))),
             Image.Resampling.LANCZOS,
         )
         bx0 = max(0, (bg.width - W) // 2)
         by0 = max(0, (bg.height - H) // 2)
-        bg = bg.crop((bx0, by0, bx0 + W, by0 + H)).filter(ImageFilter.GaussianBlur(40))
-        bg = Image.blend(bg, Image.new("RGB", (W, H), (0, 0, 0)), 0.22)
-        contain = min(W / sw, H / sh)
-        fw, fh = int(round(sw * contain)), int(round(sh * contain))
+        bg = bg.crop((bx0, by0, bx0 + W, by0 + H)).filter(ImageFilter.GaussianBlur(52))
+        bg = Image.blend(bg, Image.new("RGB", (W, H), (0, 0, 0)), 0.28)
+        # Prefer height-fill when square/portrait so the subject is larger.
+        scale = min(H / sh, MAX_COVER)
+        fw, fh = int(round(sw * scale)), int(round(sh * scale))
+        if fw > W:
+            scale = W / sw
+            fw, fh = int(round(sw * scale)), int(round(sh * scale))
         fg = im.resize((fw, fh), Image.Resampling.LANCZOS).convert("RGBA")
-        # Soft edge — kills the hard-edged rectangle at the FG/BG join.
-        feather = max(36, int(min(fw, fh) * 0.045))
+        # Wide feather so dark space edges dissolve into the blur (not a hard box).
+        feather = max(90, int(min(fw, fh) * 0.10))
         mask = Image.new("L", (fw, fh), 0)
+        inset = feather // 2
         ImageDraw.Draw(mask).rounded_rectangle(
-            (0, 0, fw - 1, fh - 1), radius=feather, fill=255,
+            (inset, inset, fw - 1 - inset, fh - 1 - inset),
+            radius=feather,
+            fill=255,
         )
         mask = mask.filter(ImageFilter.GaussianBlur(feather))
         fg.putalpha(mask)
