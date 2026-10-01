@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Air | Mon 12 Oct 2026, 11:30 UK |
-| Promotes | *What Happens When Saturn Loses Its Rings?* (021 long) |
+| Promotes | *How Long Do Saturn's Rings Have Left?* (021 long) |
 | Studio Related | **TODO Step 7:** set Related → the Saturn long's YouTube id **after** that long is uploaded. Id does not exist yet — **do not guess / do not point at another film.** |
 | Frame 0 | **World plate only** — ring sheet raining inward. Orbit arrives ~1.5 s. `gate_shorts_open.py` must PASS (fails Orbit at 0 s). |
 | Test week | Week 1 baseline — six opening rules; spoken end line as today |
@@ -27,8 +27,8 @@
 |--:|---|---|
 | 0:00 | Ring plane mid-action: pale ice blade, grains already raining inward toward Saturn. Whoosh on frame 0. Caption: IT'S FALLING. **No Orbit.** | Saturn's rings are already falling. |
 | ~0:01.5 | Orbit tumbles into the grain stream, pulled toward the planet, eyes wide. | Stay, and I'll show you how long they have left. |
-| ~0:09–0:14 | Close on ice flowing off the innermost ring into Saturn's equator; on-screen title exactly **What Happens When Saturn Loses Its Rings?** | Hard fact beats below. |
-| last 4 s | Return to opening ring-plane rain so the Short loops. | Watch the full film, What Happens When Saturn Loses Its Rings? |
+| ~0:09–0:14 | Close on ice flowing off the innermost ring into Saturn's equator; on-screen title exactly **How Long Do Saturn's Rings Have Left?** | Hard fact beats below. |
+| last 4 s | Return to opening ring-plane rain so the Short loops. | Watch the full film, How Long Do Saturn's Rings Have Left? |
 
 ---
 
@@ -41,7 +41,7 @@ Saturn's rings are already falling.
 
 Stay, and I'll show you how long they have left.
 
-[VISUAL MUST: Close on material pouring from the innermost ring into Saturn's equator. From 9 to 14 seconds the on-screen title is exactly What Happens When Saturn Loses Its Rings? Orbit is not in this beat.]
+[VISUAL MUST: Close on material pouring from the innermost ring into Saturn's equator. From 9 to 14 seconds the on-screen title is exactly How Long Do Saturn's Rings Have Left? Orbit is not in this beat.]
 [TEACH: Cassini’s last dives sampled the equatorial inflow from the innermost ring (not the magnetic ring rain, which Keck detected); remaining life is about 100–300 million years.]
 
 Ice from that sheet rains into Saturn.
@@ -50,4 +50,6 @@ That leaves them somewhere between a hundred and three hundred million years.
 
 [VISUAL MUST: The last 4 seconds return to the opening picture — edge-on ring sheet with grains streaming in — so the Short loops. No Orbit required on the loop hold.]
 
-Watch the full film, What Happens When Saturn Loses Its Rings?
+Watch the full film, How Long Do Saturn's Rings Have Left?
+
+VO path (last line re-record, Ben 1 Oct evening): `monday_saturn_short_vo_v02_how_long.wav` (keeps v01 body; splices new last line only).

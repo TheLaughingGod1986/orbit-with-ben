@@ -1,13 +1,13 @@
 # Production status — 021 Saturn Loses Its Rings
 
-Updated **1 Oct 2026 16:54 London** (matches disk after `shot_list_v03e` @ `056f847`).
+Updated **1 Oct 2026 evening** (Ben decisions 1–4; v03g assemble in progress).
 
 > **Title note (Claude review):** `PLAN_2026-09-30.md` / VO may use **How Long Do Saturn's Rings Have Left?** while this file still listed *What Happens When Saturn Loses Its Rings?*. **NEEDS BEN** to lock which listing title ships — not changed here.
 
 | Field | Value |
 |-------|-------|
 | Slug | What-Happens-When-Saturn-Loses-Its-Rings |
-| Locked title | What Happens When Saturn Loses Its Rings? |
+| Locked title | **How Long Do Saturn's Rings Have Left?** (Ben: Monday Short last line + card name this; long listing follows PLAN) |
 | Air target | Sun 11 Oct 2026, 18:00 UK (normal publish) |
 | Upload history | **Clean** — never uploaded or scheduled |
 | Gate | **PASS** (`11_Upload-Package/EPISODE_GATE_v01.md`) |
@@ -16,8 +16,8 @@ Updated **1 Oct 2026 16:54 London** (matches disk after `shot_list_v03e` @ `056f
 | VO | **LOCKED** `02_Voiceover/parts/saturn_rings_vo_v03b_tightened_LOCK.wav` — **523.62 s (8:43.6)** |
 | Shot list | **`shot_list_v03g.csv`** — Ben OK 1 Oct evening; from v03f with row 93 temp NASA PIA12633 until Omni. Checker PASS. Assemble first cut v02 from this list. |
 | NASA pool | **Fetched yes** — `nasa_pool_v01.json` (153 entries) + local stills under `07_Edit-Project/nasa_pool_v01/`. Re-run `fetch_nasa_pool.py` only after Ben OKs v03e if any IDs still missing on disk for assemble. |
-| First cut | **Not started** — wait for Ben OK on v03e before assemble v02 |
-| Thumbnails (long) | **ABC v01 started** (no Orbit) — `08_Thumbnail/abc_v01_no_orbit/` + iCloud `OWB UAT/saturn_thumbs_v01/`. Not yet Ben-OK / not in Studio. |
+| First cut | **Assembling v02** from `shot_list_v03g.csv` + locked VO — deliver cut + 12-frame contact by Tue 6 Oct evening. Row 93 = temp PIA12633. |
+| Thumbnails (long) | **ABC v02 ready for Ben pick** (no Orbit) — iCloud `OWB UAT/saturn_thumbs_v02/` (A ALREADY FALLING · B NOTHING LEFT sharper · C RAINING IN). Phone board = 16:9 row only. Not in git. |
 | Runtime target | 8–9 min (locked VO 8:43.6 + end hold) |
 | Subscribe line used | #4 — We make one of these every week. Subscribing is how the next one finds you. |
 
@@ -36,9 +36,9 @@ Updated **1 Oct 2026 16:54 London** (matches disk after `shot_list_v03e` @ `056f
 
 | Day | Piece | Exists | Approved | Missing |
 |-----|-------|--------|----------|---------|
-| **Mon 12 Oct 11:30 UK** | Saturn tease — *Saturn's Rings Are Already Falling* | Script `10_Shorts/monday_saturn_tease/MONDAY_SATURN_SHORT_RINGS_ALREADY_FALLING.md` · VO wav/mp3 (~23.4 s) · plate render `monday_ring_rain_ITS_FALLING_v03e.mp4` + contact in iCloud | Script still marked draft for Ben OK; plate OK'd for render 1 Oct | Assemble not started. Orbit @~1.5 s (propose tumble 0–3 s). 9–14 s ice→equator + title card (propose PIA17150 / PIA08990). Loop ending + Short cover not locked. Related → Saturn long id after long uploads. |
+| **Mon 12 Oct 11:30 UK** | Saturn tease — *Saturn's Rings Are Already Falling* | Script `10_Shorts/monday_saturn_tease/MONDAY_SATURN_SHORT_RINGS_ALREADY_FALLING.md` · VO wav/mp3 (~23.4 s) · plate render `monday_ring_rain_ITS_FALLING_v03e.mp4` + contact in iCloud | Last line re-recorded to name How Long… (`monday_saturn_short_vo_v02_how_long.wav`); plate OK'd | Full Short assemble still open (Orbit @1.5 s, 9–14 s card, loop). Orbit @~1.5 s (propose tumble 0–3 s). 9–14 s ice→equator + title card (propose PIA17150 / PIA08990). Loop ending + Short cover not locked. Related → Saturn long id after long uploads. |
 | **Wed 14 Oct 11:30 UK** | *Could Orbit Survive…?* Jupiter | Uploaded **`buaOI3QGm7U`** · private · `publishAt` **2026-10-14T10:30:00Z** = **Wed 14 Oct 2026 11:30 BST** | Scheduled (do not touch) | — |
-| **Fri 16 Oct 11:30 UK** | Black Dwarf / Last Star | Script `005_…/friday_2026-10-16_last_star/FRIDAY_LAST_STAR_SHORT_BLACK_DWARF.md` (62 words) · still `021_…/shorts_stills_v02/friday_black_dwarf_cooling_v02.png` | **Needs Ben OK** on script (alt draft 30 Sep) | VO / assemble / upload after Ben OK |
+| **Fri 16 Oct 11:30 UK** | Black Dwarf / Last Star | Script `005_…/friday_2026-10-16_last_star/FRIDAY_LAST_STAR_SHORT_BLACK_DWARF.md` (62 words) · still `021_…/shorts_stills_v02/friday_black_dwarf_cooling_v02.png` | **Ben OK** on 62-word script (1 Oct evening) | VO / picture next; moving picture needs Ben OK before upload |
 
 ## Blockers
 
@@ -48,6 +48,6 @@ Updated **1 Oct 2026 16:54 London** (matches disk after `shot_list_v03e` @ `056f
 - [x] VO locked 8:43.6
 - [x] Shot list v03e checker PASS (committed `056f847`) — **await Ben OK before assemble**
 - [ ] Row 93 bare Orbit Omni (daily Vertex retry) **or** Ben Tue decision (18 Oct / PIA12633 once)
-- [ ] Ben OK on Mon/Fri Short scripts where still draft
+- [x] Ben OK on Fri Black Dwarf script; Mon last line re-recorded to How Long…
 - [ ] Long thumb ABC Ben OK → Studio Test & Compare after upload
-- [ ] First-cut assemble v02 — **only after Ben OKs v03e**
+- [ ] First-cut assemble v02 — **in progress** (Ben OK'd; deliver by Tue 6 Oct evening)

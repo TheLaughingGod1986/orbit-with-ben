@@ -13,3 +13,8 @@ Do not append series suffix to titles.
 ## Current pack
 
 `abc_v01_no_orbit/` — A THEY'RE ICE (PIA06193) · B NOTHING LEFT (bare v05) · C HOW LONG? (ice crowd v07). Phone comparison board in the same folder and iCloud `OWB UAT/saturn_thumbs_v01/`.
+
+## v02 (Ben pick next)
+
+`abc_v02_no_orbit/` README only in git — images in iCloud `OWB UAT/saturn_thumbs_v02/`.
+A ALREADY FALLING · B NOTHING LEFT (sharper) · C RAINING IN. Phone board = one 16:9 row.
