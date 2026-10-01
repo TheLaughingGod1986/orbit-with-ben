@@ -50,6 +50,7 @@ cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    #
 cd 07_Content-Ops && npx tsx scripts/buffer-mirror.ts register --video <id> --media <mp4> --long <longId>    # after uploading by hand, so the daily check can find the file
 cd 07_Content-Ops && npm run youtube:auth    # once, or when a script says the YouTube login expired
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
+python3 scripts/owb_thread.py post -f report.md    # Chief of Staff -> Claude (draft PR #99); `read` / `wait` for the reply
 ```
 
 The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. No database. Never print or commit their values.
@@ -84,6 +85,7 @@ The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIE
   - Omni the whole film or world B-roll.
   - Use a video model's speech as VO.
   - Use any voice other than Ben Orbit Narrator.
+- **Repo:** merge, close or push to draft PR #99 (the Chief of Staff ↔ Claude message thread), even when told to merge all PRs.
 - **Social:**
   - Post any way other than the Buffer mirror (`STUDIO_PLAYBOOK.md` §12).
   - Schedule a Buffer post for any time other than the YouTube go-public time.
