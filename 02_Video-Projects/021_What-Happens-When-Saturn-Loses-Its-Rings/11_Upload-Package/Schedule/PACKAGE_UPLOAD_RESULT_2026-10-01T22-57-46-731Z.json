@@ -1,0 +1,106 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-11T17:00:00.000Z",
+    "platformPostId": "55AEQwvs36g",
+    "platformUrl": "https://youtu.be/55AEQwvs36g",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-11T17:00:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"55AEQwvs36g\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-11T17:00:00.000Z\"}"
+  },
+  "package": {
+    "title": "How Long Do Saturn's Rings Have Left?",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 10,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/tmp/saturn_upload_pack/saturn_thumb_A_already-falling.jpg",
+    "scheduledAt": "2026-10-11T17:00:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "descriptionFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/11_Upload-Package/Descriptions/saturn_long_description_v02.txt",
+      "tagsFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/11_Upload-Package/Tags/saturn_long_tags_v02.txt",
+      "video": "/tmp/saturn_upload_pack/saturn_first_cut_v03f.mp4",
+      "thumbnail": "/tmp/saturn_upload_pack/saturn_thumb_A_already-falling.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": null,
+  "studioFinish": {
+    "videoId": "55AEQwvs36g",
+    "studioEditUrl": "https://studio.youtube.com/video/55AEQwvs36g/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/55AEQwvs36g/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (3) · thumbs (3). Not available via Data API.",
+        "studioUrlHint": "https://studio.youtube.com/video/55AEQwvs36g/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/55AEQwvs36g/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/55AEQwvs36g/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/55AEQwvs36g/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/55AEQwvs36g/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (55AEQwvs36g). 2 required Studio finish step(s) remain."
+  }
+}
