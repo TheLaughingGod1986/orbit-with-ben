@@ -39,6 +39,17 @@ PROMISES = [(re.compile(r"when they were new", re.I), "young"),
             (re.compile(r"nothing around it", re.I), "bare")]
 
 
+def is_orbit(src, rid):
+    """Orbit reaction beats: Omni clips, or an approved Orbit fallback such as veo_orbit_tumble_v03_fallback_0-3s.mp4."""
+    return src == "OMNI" or "orbit" in rid.lower()
+
+
+def approved_window(rid):
+    """A clip named ..._A-Bs.mp4 is approved only between A and B seconds."""
+    m = re.search(r"_(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)s\.\w+$", rid)
+    return (float(m.group(1)), float(m.group(2))) if m else None
+
+
 def main():
     args = sys.argv[1:]
     if not args:
@@ -75,7 +86,7 @@ def main():
                 err(r, f"end hold {d:.1f}s > {END_HOLD_MAX}s")
             if src == "NASA" and not (r.get("move") or "").strip():
                 err(r, "end hold on a still needs a move (slow push), not a freeze")
-        elif not ((OMNI_MIN if src == "OMNI" else MIN_S) <= d <= MAX_S):
+        elif not ((OMNI_MIN if is_orbit(src, rid) else MIN_S) <= d <= MAX_S):
             err(r, f"duration {d:.1f}s outside {MIN_S}–{MAX_S}s")
 
         if src == "NASA":
@@ -94,6 +105,9 @@ def main():
             except (KeyError, ValueError):
                 err(r, f"{src} row needs src_in/src_out")
                 continue
+            win = approved_window(rid)
+            if win and (si < win[0] - 0.01 or so > win[1] + 0.01):
+                err(r, f"{rid} is approved only for {win[0]:g}-{win[1]:g}s, row uses {si:g}-{so:g}s")
             if abs((so - si) - d) > 0.1:
                 err(r, f"clip span {so - si:.2f}s != row length {d:.2f}s (no slow-mo or stretch)")
             for (pi, po, prow) in clip_ranges.get(rid, []):
