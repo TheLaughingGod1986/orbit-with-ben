@@ -2,6 +2,8 @@
 
 Updated **1 Oct 2026 16:54 London** (matches disk after `shot_list_v03e` @ `056f847`).
 
+> **Title note (Claude review):** `PLAN_2026-09-30.md` / VO may use **How Long Do Saturn's Rings Have Left?** while this file still listed *What Happens When Saturn Loses Its Rings?*. **NEEDS BEN** to lock which listing title ships — not changed here.
+
 | Field | Value |
 |-------|-------|
 | Slug | What-Happens-When-Saturn-Loses-Its-Rings |
