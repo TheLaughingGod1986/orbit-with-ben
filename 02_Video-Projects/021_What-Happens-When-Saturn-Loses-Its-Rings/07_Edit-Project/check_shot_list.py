@@ -24,6 +24,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 POOL = {e["nasa_id"]: e for e in json.load(open(os.path.join(HERE, "nasa_pool_v01.json")))}
 
 MIN_S, MAX_S = 3.5, 6.5          # picture change every 4–6 s, small tolerance
+HOOK_END, HOOK_MIN = 20.0, 1.5     # quick preview cuts are allowed inside the first 20 s
 OMNI_MIN = 3.0                   # Orbit reaction beats may be shorter (Ben, 1 Oct: the approved tumble is 3.0 s)
 GODDARD_MAX_SHOTS = 2            # SVS 12672: up to two separate stretches, never sliced further
 END_HOLD_MAX = 22.0              # last row only: the scripted 15–20 s end hold
@@ -86,7 +87,7 @@ def main():
                 err(r, f"end hold {d:.1f}s > {END_HOLD_MAX}s")
             if src == "NASA" and not (r.get("move") or "").strip():
                 err(r, "end hold on a still needs a move (slow push), not a freeze")
-        elif not ((OMNI_MIN if is_orbit(src, rid) else MIN_S) <= d <= MAX_S):
+        elif not ((HOOK_MIN if a < HOOK_END else OMNI_MIN if is_orbit(src, rid) else MIN_S) <= d <= MAX_S):
             err(r, f"duration {d:.1f}s outside {MIN_S}–{MAX_S}s")
 
         if src == "NASA":
