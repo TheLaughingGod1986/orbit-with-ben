@@ -1,0 +1,56 @@
+{
+  "engine": "vertex",
+  "project": "gen-lang-client-0538779324",
+  "model": "gemini-2.5-flash-image",
+  "winner": "vertex_try_0",
+  "ben_order": "CoS run#7 \u2014 Monday v03: curtains end at southern cloud tops (edit v01)",
+  "base": "monday_saturn_rings_streaming_v01.png",
+  "base_sha256": "97c925ee8056fa58a31c81bcacd62153f00f983efcd1cfc7e820711154ed3084",
+  "file": "monday_saturn_rings_streaming_v03.png",
+  "sha256": "20fa6cd66de50d5cfcb69f1734b7655523606bc35544f9d55faad201b51ce281",
+  "bytes": 1022465,
+  "self_check": {
+    "pass": true,
+    "south_y": 856,
+    "south_frac": 0.637,
+    "void_ice": 473,
+    "void_ratio": 0.00167,
+    "face_ice": 103238,
+    "active_cols": 569,
+    "col_corr_v01": 0.925,
+    "void_ok": true,
+    "curtain_keep": true
+  },
+  "candidates": [
+    {
+      "tag": "vertex_try_0",
+      "sha256": "20fa6cd66de50d5cfcb69f1734b7655523606bc35544f9d55faad201b51ce281",
+      "pass": true,
+      "south_y": 856,
+      "south_frac": 0.637,
+      "void_ice": 473,
+      "void_ratio": 0.00167,
+      "face_ice": 103238,
+      "active_cols": 569,
+      "col_corr_v01": 0.925,
+      "void_ok": true,
+      "curtain_keep": true
+    },
+    {
+      "tag": "surgical_void_erase",
+      "sha256": "5c6714fad4419ffda6bb624e8b2e5b76545844d92d7ee3e871d00a905439ed83",
+      "pass": false,
+      "south_y": 846,
+      "south_frac": 0.629,
+      "void_ice": 1689,
+      "void_ratio": 0.00584,
+      "face_ice": 114619,
+      "active_cols": 572,
+      "col_corr_v01": 0.999,
+      "void_ok": false,
+      "curtain_keep": true
+    }
+  ],
+  "stop": "WAIT Ben OK \u2014 no Shorts Veo",
+  "finishedAt": "2026-10-01T10:55:47Z"
+}

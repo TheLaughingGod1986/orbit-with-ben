@@ -1,0 +1,69 @@
+{
+  "engine": "edit_built",
+  "ben_order": "2026-10-01T12:00 London \u2014 B edit-built open+ice; approve bare v05 + Friday BD v02",
+  "duration_seconds": 8.0,
+  "fps": 24,
+  "size": "1920x1080",
+  "approvals": {
+    "ben_order": "2026-10-01T12:00 London \u2014 B edit-built open+ice; approve bare v05 + Friday BD v02",
+    "approved_no_touch": [
+      {
+        "file": "veo_bare_saturn_v05.mp4",
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/04_Generated-Clips/veo_v05/veo_bare_saturn_v05.mp4",
+        "sha256": "f81552194f3d2c3c60c31e8bc95f48938058d9b6eb10155f61a0c11ce845363d",
+        "bytes": 1050812,
+        "status": "APPROVED \u2014 do not remint"
+      },
+      {
+        "file": "friday_black_dwarf_cooling_v02.png",
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/04_Generated-Clips/shorts_stills_v02/friday_black_dwarf_cooling_v02.png",
+        "sha256": "f0e5e8471df07f10184fc4221607ad08212d6e14c4672e99378980e235f89854",
+        "bytes": 1045965,
+        "status": "APPROVED \u2014 do not remint"
+      }
+    ],
+    "omni": "Vertex Free Trial only \u2014 no AI Studio prepay; prior 500s recorded in MANIFEST_OMNI_VERTEX.json",
+    "stop": "WAIT Ben OK on edit-built contacts before cut"
+  },
+  "clips": [
+    {
+      "file": "edit_open_rings_v06.mp4",
+      "sha256": "c6bf29c83c13da7fafff3552b9928d118f5cf53f4a8e0d789455d409d592151f",
+      "bytes": 3601594,
+      "contact": "edit_open_rings_v06_contact.png",
+      "contact_times": [
+        0.05,
+        2.6666666666666665,
+        5.333333333333333,
+        7.92
+      ],
+      "sources": {
+        "v04_open_trim_s": 2.5,
+        "v04_sha256": "192844ece3bfcc1b89071c64f17854dec440f390116fbca6bbb1de8fc2139e1d",
+        "open_still": "saturn_open_rings_v06.png",
+        "open_still_sha256": "ac085c9447377eb5910cb4b6a609df92cfc4ad8f8c81b6f2a0011506b1080a85"
+      },
+      "notes": "2.5s v04 open + still push + inner-ring ice grains to equator; void below clean"
+    },
+    {
+      "file": "edit_ice_chunks_v06.mp4",
+      "sha256": "2fdb2d37658a9d359c8ca0f4c026d8cc32e4946751622849fca676ffbe0e4613",
+      "bytes": 2532924,
+      "contact": "edit_ice_chunks_v06_contact.png",
+      "contact_times": [
+        0.05,
+        2.6666666666666665,
+        5.333333333333333,
+        7.92
+      ],
+      "sources": {
+        "ice_still": "saturn_ice_chunks_v05.png",
+        "ice_still_sha256": "9e8a8113f36ee64767127515413828110d88703b57a6f849f1ecf8d449c510fd",
+        "parallax_layers": 4
+      },
+      "notes": "ice still slow push + 4 parallax chunk layers; black between; no floor"
+    }
+  ],
+  "stop": "WAIT Ben OK \u2014 contacts only; not in cut yet",
+  "finishedAt": "2026-10-01T11:12:08Z"
+}
