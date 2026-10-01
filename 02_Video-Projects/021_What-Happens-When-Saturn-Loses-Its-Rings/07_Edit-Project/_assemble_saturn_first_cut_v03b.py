@@ -22,7 +22,7 @@ import sys
 import time
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 EP = Path(__file__).resolve().parents[1]
 HERE = Path(__file__).resolve().parent
