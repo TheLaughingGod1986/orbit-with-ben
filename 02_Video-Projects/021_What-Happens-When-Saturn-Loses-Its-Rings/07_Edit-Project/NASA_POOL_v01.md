@@ -1,6 +1,6 @@
 # Saturn (021): verified NASA picture pool v01
 
-Built 1 Oct 2026 from images.nasa.gov for shot list v03. There are 154 pictures, each assigned to one script section. **Every ID resolves** on images-api.nasa.gov, and the titles, dates and sizes come from NASA's own metadata.
+Built 1 Oct 2026 from images.nasa.gov for shot list v03. There are 153 pictures, each assigned to one script section. **Every ID resolves** on images-api.nasa.gov, and the titles, dates and sizes come from NASA's own metadata.
 
 ## How the pool was checked
 
@@ -32,12 +32,18 @@ Built 1 Oct 2026 from images.nasa.gov for shot list v03. There are 154 pictures,
    - Orbit through Omni only, using the canonical still.
 
    Any new AI shot needs Ben's OK first.
-7. **Credits:** copy each used picture's credit line from its photojournal page into the description:
-   - Cassini cameras: NASA/JPL-Caltech/Space Science Institute;
-   - Voyager: NASA/JPL;
-   - Hubble: as given on its page.
+7. **Credits are already in `nasa_pool_v01.json`** (the `credit` field). Each one was copied from that picture's photojournal page on 1 Oct, and `credit_source` links the page. Don't type credits by hand. `check_shot_list.py` writes the credit block for the IDs actually used. PIA05389 was removed because its page gives no credit.
+8. **Length.** The VO runs 523.6 s. At 4–6 s per picture, that needs about 95–110 picture rows plus five chapter cards, so 80 rows is too few. Only the last row may run long (the scripted 15–20 s end hold), and it needs a slow push rather than a freeze.
+9. **The hook's promises.** "When they were new" sits over the young-rings clip, and "nothing around it at all" sits over bare Saturn v05. Those are planned previews: the hook uses one stretch of each clip, and the later section uses a different stretch. No overlap.
+10. **Run `python3 check_shot_list.py shot_list_v03b.csv` before anything goes for review.** It checks:
+    - the pool and no repeats;
+    - 3.5–6.5 s rows;
+    - no gaps;
+    - no clip reuse or stretching;
+    - aurora and seasons captions;
+    - the hook's promises.
 
-   Never imply NASA endorses the film.
+    The column layout is at the top of the script. Paste its output with the shot list.
 
 Links:
 - Detail page: `https://images.nasa.gov/details/<ID>`
@@ -103,7 +109,6 @@ Ring colour and composition. PIA05075 and PIA05076 are Cassini UVIS maps (turquo
 | [PIA02241](https://images.nasa.gov/details/PIA02241) | Saturn Rings | 2000-02-07 | 1760x800 | Voyager: the rings in grey on black. |
 | [PIA01969](https://images.nasa.gov/details/PIA01969) | Saturn and its Rings | 1999-05-21 | 894x569 | Voyager, gold Saturn behind the rings. |
 | [PIA01966](https://images.nasa.gov/details/PIA01966) | Saturn and its Ring System | 1999-05-06 | 850x820 | Voyager, pink-toned close crop of the rings over the planet. |
-| [PIA05389](https://images.nasa.gov/details/PIA05389) | Saturn in Color | 2004-04-29 | 1024x1024 | Cassini on approach, 2004: small full Saturn in colour. |
 
 ## S4: Orbit beat and 'the fall does not stop' (~30 s)
 
