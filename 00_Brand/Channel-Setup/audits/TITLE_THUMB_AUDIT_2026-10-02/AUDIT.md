@@ -23,7 +23,7 @@ Ben's order (2 Oct, 14:27): *"do a full audit of titles, and thumbnails to check
 
 ## Applied (3 Oct 00:07 London)
 
-10 titles are live (5 clean-ups on 2 Oct, then 3 duplicate retitles, the Alien Life rename and the Monday Moon Short on 3 Oct). Ben OK'd the two NEEDS PLATE covers on 2 Oct; the Mini rebuilds them in Arial Black and swaps them. `rFzqmi8RWCY` still shows Orbit on its cover: try a clean Studio frame first, else the NASA plate job in `tools/build_nasa_plate_short_covers.py` (needs Ben's OK).
+10 titles are live (5 clean-ups on 2 Oct, then 3 duplicate retitles, the Alien Life rename and the Monday Moon Short on 3 Oct). Ben OK'd the two NEEDS PLATE covers; they were built in Arial Black and swapped on 3 Oct 00:11 London. `rFzqmi8RWCY` still shows Orbit on its cover: try a clean Studio frame first, else the NASA plate job in `tools/build_nasa_plate_short_covers.py` (needs Ben's OK).
 
 ## Every video
 
@@ -67,9 +67,9 @@ Ben's order (2 Oct, 14:27): *"do a full audit of titles, and thumbnails to check
 | short | public 2 Oct | `Ih2zhZTbIR0` | The Last Stars Will Shine for 10 Trillion Years | — | **read from Studio** |  | ✅ thumbnail matches topic (Chief, 2 Oct 15:50) |
 | short | public | `CkSECfUfH2Y` | The Sky Is Already Running Out of Light | 292 | SKY GOING DARK (swapped 26 Sep) |  | |
 | short | public | `va5ATScn3rs` | The Sky Would Lean Near a Neutron Star | 19 | THE SKY / WOULD LEAN |  | |
-| short | public | `DN4L1DkerMM` | The Universe Is Running Out of New Stars | 229 | RUNNING OUT OF / STARS | thumbnail NEEDS PLATE | |
+| short | public | `DN4L1DkerMM` | The Universe Is Running Out of New Stars | 229 | RUNNING OUT OF / STARS | thumbnail NEEDS PLATE | ✅ cover swapped 3 Oct 00:11 London: RUNNING OUT / OF STARS on Webb Cosmic Cliffs (was the wrong Europa THIS OCEAN / SHOULDN'T EXIST) |
 | short | public | `QNTeou-w-gY` | There's an Ocean Under That Ice | 65 | **read from Studio** |  | ✅ thumbnail matches topic (Chief, 2 Oct 15:50) |
-| short | public | `l1d1ypHxLk0` | These Galaxies Appeared Too Early | 95 | TOO / EARLY | thumbnail NEEDS PLATE | |
+| short | public | `l1d1ypHxLk0` | These Galaxies Appeared Too Early | 95 | TOO / EARLY | thumbnail NEEDS PLATE | ✅ cover swapped 3 Oct 00:11 London: TOO / EARLY? on Hubble XDF (was burned-in "next to / 13.8 billion") |
 | short | public (older) | `tEOHYQbcgOw` | This Planet's Night Never Cools Down | 16 | **read from Studio** |  | ✅ thumbnail matches topic (Chief, 2 Oct 15:50) |
 | short | public (older) | `SC2WGTl_V5Q` | This Planet's Rain Is Molten Glass | 25 | GLASS RAIN (swapped 26 Sep) |  | |
 | short | public | `keXe1GNxWSU` | Those Ice Scars Are How You Find It | 206 | **read from Studio** |  | ✅ thumbnail matches topic (Chief, 2 Oct 15:50) |
