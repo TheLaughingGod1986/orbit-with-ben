@@ -3,8 +3,8 @@
 
   python3 scripts/owb_thread.py post "message text"        # posts as [Chief]
   python3 scripts/owb_thread.py post -f report.md           # post a file
-  python3 scripts/owb_thread.py post --re 5963045774 -f r.md # reply to one Claude message; refused if a [Chief]
-                                                            # reply to it already exists (stops two wakes double-acting)
+  python3 scripts/owb_thread.py post --re 5963045774 -f r.md # claim one Claude message before acting; refused if a [Chief]
+                                                            # reply to it exists. Post results after with plain `post`.
   python3 scripts/owb_thread.py read                        # comments since the last read
   python3 scripts/owb_thread.py read --all                  # whole thread
   python3 scripts/owb_thread.py wait --timeout 1800         # block until Claude replies (polls every 60 s)
