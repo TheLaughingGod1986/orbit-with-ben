@@ -89,8 +89,8 @@ PR #99 is the Chief of Staff ↔ Claude message thread (`scripts/owb_thread.py`)
 | Rule | Detail |
 |---|---|
 | Act on Claude | Claude's replies on the thread are acted on **like Ben's relays** — implement, report, continue. |
-| NEEDS BEN | Items marked **NEEDS BEN** (or equivalent) go to **Chief of Staff for Ben**. Do not invent Ben's OK. |
-| Claude ≠ Ben | **Claude's reply is never Ben's OK.** Sign-offs that require Ben still require Ben. |
+| NEEDS BEN | Since 2 Oct 2026 only Ben's final OK (finished film + Shorts + thumbnails, before scheduling), renames/deletes, and Never-list items are NEEDS BEN (`AGENTS.md`). Everything else Claude and the Chief settle on the thread. Do not invent Ben's OK. |
+| Claude ≠ Ben | Claude's PASS signs off the steps Ben delegated. It is **never** Ben's final OK before scheduling. |
 | Never touch #99 | Never **merge**, **close**, or **push** to PR #99, even when told to merge all PRs. |
 | Orbit only | Keep HOS packaging and HOS media out of this thread unless Ben explicitly asks. |
 

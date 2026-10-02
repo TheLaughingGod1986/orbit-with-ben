@@ -71,15 +71,17 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
 
 Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOOK.md` §2: at least **three** big education/space videos (≈1M+ views) on the same subject, logged in `templates/TOPIC_OPPORTUNITY_SCORE.md` and `PRE_BUILD_VIDIQ_AUDIT.md`. Use their subject words for description first lines and tags — **never** put channel names in the listing. A strong neighbour pool is evidence for Ben; it does not pick the topic for him. Orbit only — do not apply HOS packaging habits here.
 
-## Stop and ask Ben at each of these points
+## Stop and ask Ben
 
-1. Topic (after the neighbour pass is filled)
-2. Long script (after it reaches 90)
-3. Short scripts
-4. Voice
-5. Moving picture (never judge from stills)
-6. Thumbnails
-7. Anything that goes public, is renamed, or is deleted. **Standing exception (Ben, 28 Sep 2026): uploads.** A scheduled upload whose topic, scripts, voice, moving picture and thumbnails Ben has already OK'd, and whose package passes every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run), goes up without asking, with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after. Renames, deletes, back catalogue (`--allow-late`) and edits to posts already in Buffer still need his OK.
+**Standing order (Ben, 2 Oct 2026): Claude and the Chief of Staff decide the steps; Ben approves the finished work.** Claude and the Chief agree, on the PR #99 thread, the topic (after the neighbour pass), scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails and Shorts. Claude's review on the thread is the sign-off for each of those steps. Ben is asked only at these points:
+
+1. **Final OK before scheduling:** the finished long (moving picture with its VO), its Shorts and the thumbnails, sent together when they are all ready. Nothing is scheduled or uploaded without this OK.
+2. **Renames, deletes and back catalogue** (`--allow-late`), edits to posts already in Buffer, and anything that goes public outside a scheduled upload.
+3. **Anything on the Never list below**, and anything that would change the channel's direction (a new series, a new format, a change of voice).
+
+**Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
+
+Once Ben has given the final OK, the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after.
 
 ## Never
 
