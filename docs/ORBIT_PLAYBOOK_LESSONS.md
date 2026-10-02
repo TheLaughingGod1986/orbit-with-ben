@@ -88,6 +88,7 @@ PR #99 is the Chief of Staff ↔ Claude message thread (`scripts/owb_thread.py`)
 
 | Rule | Detail |
 |---|---|
+| Read first | Run `python3 scripts/owb_thread.py status` (or `read`) at the start of every session and **before telling Ben anything is waiting on Claude**. Exit 10 means unread Claude messages: read and act on them first. End every report to Ben with "Thread read to #<id>". (2 Oct: Ben was told "waiting on Claude's titles" while the titles had been on the thread for hours.) |
 | Act on Claude | Claude's replies on the thread are acted on **like Ben's relays** — implement, report, continue. |
 | NEEDS BEN | Since 2 Oct 2026 only Ben's final OK (finished film + Shorts + thumbnails, before scheduling), renames/deletes, and Never-list items are NEEDS BEN (`AGENTS.md`). Everything else Claude and the Chief settle on the thread. Do not invent Ben's OK. |
 | Claude ≠ Ben | Claude's PASS signs off the steps Ben delegated. It is **never** Ben's final OK before scheduling. |

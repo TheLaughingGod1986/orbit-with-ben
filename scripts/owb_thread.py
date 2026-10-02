@@ -6,6 +6,10 @@
   python3 scripts/owb_thread.py read                        # comments since the last read
   python3 scripts/owb_thread.py read --all                  # whole thread
   python3 scripts/owb_thread.py wait --timeout 1800         # block until Claude replies (polls every 60 s)
+  python3 scripts/owb_thread.py status                      # one line: unread Claude messages? (exit 10 if any)
+
+Run `status` (or `read`) at the start of every session and before telling Ben anything is "waiting on Claude".
+Every report to Ben ends with "Thread read to #<id>" so a stale read is visible.
 
 Auth: GH_TOKEN or GITHUB_TOKEN from the environment, else `gh auth token`. Never print or commit the token.
 The last-read comment id is kept in ~/.owb_thread_state (outside the repo).
@@ -73,6 +77,7 @@ def main():
     p = sub.add_parser("post"); p.add_argument("text", nargs="?"); p.add_argument("-f", "--file")
     r = sub.add_parser("read"); r.add_argument("--all", action="store_true")
     w = sub.add_parser("wait"); w.add_argument("--timeout", type=int, default=1800)
+    sub.add_parser("status")
     a = ap.parse_args()
 
     if a.cmd == "post":
@@ -93,6 +98,16 @@ def main():
             mark(new[-1]["id"])
         else:
             print("No new messages.")
+    elif a.cmd == "status":
+        seen = last_seen()
+        allc = comments()
+        unread = [c for c in allc if c["id"] > seen and CLAUDE_MARK in c["body"]]
+        last = allc[-1]["id"] if allc else 0
+        if unread:
+            print(f"UNREAD: {len(unread)} Claude message(s) since #{seen}, newest #{unread[-1]['id']} "
+                  f"at {unread[-1]['created_at']}. Run `read` and act before reporting to Ben.")
+            sys.exit(10)
+        print(f"Up to date. Thread read to #{seen} (latest #{last}).")
     elif a.cmd == "wait":
         seen, end = last_seen(), time.time() + a.timeout
         while time.time() < end:
