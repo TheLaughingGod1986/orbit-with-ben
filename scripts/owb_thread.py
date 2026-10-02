@@ -3,6 +3,8 @@
 
   python3 scripts/owb_thread.py post "message text"        # posts as [Chief]
   python3 scripts/owb_thread.py post -f report.md           # post a file
+  python3 scripts/owb_thread.py post --re 5963045774 -f r.md # reply to one Claude message; refused if a [Chief]
+                                                            # reply to it already exists (stops two wakes double-acting)
   python3 scripts/owb_thread.py read                        # comments since the last read
   python3 scripts/owb_thread.py read --all                  # whole thread
   python3 scripts/owb_thread.py wait --timeout 1800         # block until Claude replies (polls every 60 s)
@@ -75,6 +77,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("post"); p.add_argument("text", nargs="?"); p.add_argument("-f", "--file")
+    p.add_argument("--re", type=int, help="id of the Claude comment this answers; refuse if already answered")
     r = sub.add_parser("read"); r.add_argument("--all", action="store_true")
     w = sub.add_parser("wait"); w.add_argument("--timeout", type=int, default=1800)
     sub.add_parser("status")
@@ -84,6 +87,18 @@ def main():
         text = open(a.file, encoding="utf-8").read() if a.file else a.text
         if not text or not text.strip():
             sys.exit("Nothing to post.")
+        if a.re:
+            done = [c for c in comments() if c["id"] > a.re and c["body"].lstrip().startswith(CHIEF_TAG)
+                    and f"Re {a.re}" in c["body"]]
+            if done:
+                sys.exit(f"Already answered in #{done[0]['id']}: another Chief session acted on {a.re}. "
+                         "Do not act or post again; run `read`.")
+            body = text.lstrip()
+            if body.startswith(CHIEF_TAG):
+                body = body[len(CHIEF_TAG):].lstrip()
+            if f"Re {a.re}" not in body:
+                body = f"Re {a.re}: {body}"
+            text = body
         if not text.lstrip().startswith(CHIEF_TAG):
             text = f"{CHIEF_TAG} {text}"
         c = api("POST", f"/issues/{PR}/comments", {"body": text})
