@@ -18,3 +18,13 @@ Source: Ben’s Studio desktop upload log. `9lLZMy8rBJo` and `CkSECfUfH2Y` use *
 | SC2WGTl_V5Q | GLASS RAIN | 26 Sep 09:14 | 13 / 0% | v02 |
 | 9lLZMy8rBJo | WHAT REMAINS? | 26 Sep 09:18 | 90 / 4.4% | **rebuild_v2** |
 | CkSECfUfH2Y | SKY GOING DARK | 26 Sep 09:18 | 28 / 7.1% | **rebuild_v2** |
+
+# NASA-plate Short covers (3 Oct 2026, Ben OK 2 Oct)
+Built with `build_nasa_plate_short_covers.py` · font `/usr/share/fonts/truetype/msttcorefonts/ariblk.ttf` (Arial Black). Mini offline; built on Grok Bot box. Studio swap verified 3 Oct 00:24 London (true Studio time; earlier 00:11 report was a racing duplicate session).
+
+| id | old | new | swapped (London) | plate | font |
+|---|---|---|---|---|---|
+| DN4L1DkerMM | THIS OCEAN / SHOULDN'T EXIST (wrong Europa) | RUNNING OUT / OF STARS (STARS yellow) | 3 Oct 00:24 | nasa_plate_v01 · carina_nebula / Webb Cosmic Cliffs | Arial Black |
+| l1d1ypHxLk0 | next to / 13.8 billion (burned-in) | TOO / EARLY? (TOO yellow) | 3 Oct 00:24 | nasa_plate_v01 · Hubble XDF | Arial Black |
+
+Cover sha256: `DN4L1DkerMM` `cf46964d3a60486a55c139b1d0074376226dfb418cc64694ec5339a11a6b7434` · `l1d1ypHxLk0` `9d543b1e036bbb9ff25165ce76ea8436f6d80dd421eb30be291e4257a7d94643`
