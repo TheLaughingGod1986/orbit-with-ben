@@ -27,6 +27,7 @@ import build_yellow_white_short_thumbs_v04 as v04  # noqa: E402
 ROOT = v04.ROOT
 LS = ROOT / "02_Video-Projects/005_The-Last-Star-In-The-Universe/10_Shorts/08_Thumbs"
 JW = ROOT / "02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/10_Shorts/08_Thumbs"
+MO = ROOT / "02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/10_Shorts/08_Thumbs"
 
 JOBS = [
     {
@@ -60,6 +61,23 @@ JOBS = [
         "yellow": {"TOO"},
         "hero": 0,
     },
+    {
+        # Orbit still on the Studio cover (Chief, 3 Oct). Fallback if no clean Studio frame exists.
+        "id": "rFzqmi8RWCY",
+        "title": "The Moon Gets 3.8 cm Farther Away Every Year",
+        "related": "2fsQcea-voM",
+        "uk": "",
+        "role": "orbit_on_cover_refresh",
+        "nasa_id": "GSFC_20171208_Archive_e001861",
+        "nasa_file": "GSFC_20171208_Archive_e001861~orig.jpg",
+        "credit": "NASA's Goddard Space Flight Center (LRO/LOLA full Moon)",
+        "fit": "pad",  # square Moon on black: shrink onto a 9:16 black canvas instead of cropping the disc
+        "crop_cx": 0.50,
+        "out_dir": MO / "nasa_plate_v01",
+        "lines": ["IT'S", "LEAVING"],  # the title already says 3.8 cm a year; the cover adds, never repeats
+        "yellow": {"LEAVING"},
+        "hero": 1,
+    },
 ]
 
 
@@ -73,6 +91,12 @@ def fetch_plate(job: dict) -> Path:
         urllib.request.urlretrieve(url, src)
     im = Image.open(src).convert("RGB")
     sw, sh = im.size
+    if job.get("fit") == "pad":
+        canvas = Image.new("RGB", (sw, round(sw * v04.H / v04.W)), (0, 0, 0))
+        canvas.paste(im, (0, (canvas.height - sh) // 2))
+        plate = out_dir / f"plate_{job['id']}.png"
+        canvas.save(plate)
+        return plate
     cw = min(sw, round(sh * v04.W / v04.H))
     x0 = min(max(0, round(job["crop_cx"] * sw - cw / 2)), sw - cw)
     plate = out_dir / f"plate_{job['id']}.png"
