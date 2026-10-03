@@ -4,7 +4,7 @@
   python3 scripts/owb_thread.py post "message text"        # posts as [Chief]
   python3 scripts/owb_thread.py post -f report.md           # post a file
   python3 scripts/owb_thread.py post --re 5963045774 -f r.md # claim one Claude message before acting; refused if a [Chief]
-                                                            # reply to it exists. Post results after with plain `post`.
+                                                            # reply to it exists. Act ONLY if it exits 0. Post results after with plain `post`.
   python3 scripts/owb_thread.py read                        # comments since the last read
   python3 scripts/owb_thread.py read --all                  # whole thread
   python3 scripts/owb_thread.py wait --timeout 1800         # block until Claude replies (polls every 60 s)
@@ -103,6 +103,17 @@ def main():
             text = f"{CHIEF_TAG} {text}"
         c = api("POST", f"/issues/{PR}/comments", {"body": text})
         mark(c["id"])
+        if a.re:
+            # Two wakes can both pass the check above within the same second. Settle it: the lowest claim id wins.
+            time.sleep(3)
+            rivals = [x for x in comments() if a.re < x["id"] < c["id"] and x["body"].lstrip().startswith(CHIEF_TAG)
+                      and f"Re {a.re}" in x["body"]]
+            if rivals:
+                try:
+                    api("DELETE", f"/issues/comments/{c['id']}")
+                except Exception:
+                    pass
+                sys.exit(f"LOST: #{rivals[0]['id']} claimed {a.re} first; my claim was withdrawn. Do not act; run `read`.")
         print("posted", c["html_url"])
     elif a.cmd == "read":
         seen = 0 if a.all else last_seen()
