@@ -65,7 +65,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
 1. **Neighbour:** ≥3 education/space videos ≈1M+ views before topic lock; subject words in title/desc/tags; never channel names. Evidence: HOS 002 gets 55.6% of views Suggested from TED-Ed's Mendeleev film.
 2. **Edit (v03b):** cards wait for the VO sentence, 0.5–0.8 s breath, ~0.4 s xfade; never clip a line; picture+music past last word, hold 2–3 s, then fade; music full runtime; fill 16:9 (feathered blur OK); upscale ≤~2.35×; mix ~−14 LUFS; check repeated/stumbled VO before delivery.
 3. **Production:** Orbit = Omni only (+ approved 0–3 s tumble fallback); no Orbit on long thumbs; verify NASA IDs; no media in git; Ben OKs anything public; nothing is KEEP until Ben reviews; shot list to Ben before generation; Vertex only.
-4. **Thread (PR #99):** run `owb_thread.py status` at the start of every session and before saying anything is waiting on Claude; end reports to Ben with "Thread read to #<id>". Act on Claude's replies like Ben's relays, except **NEEDS BEN** → Chief of Staff for Ben. Claude's reply is never Ben's OK. Never merge, close or push #99.
+4. **Thread (PR #99):** run `owb_thread.py status` at the start of every session and before saying anything is waiting on Claude; end reports to Ben with "Thread read to #<id>". Act on Claude's replies like Ben's relays. NEEDS BEN items go to Claude first (3 Oct order); only what Claude marks NEEDS BEN goes to Ben. Never invent Ben's own words. Never merge, close or push #99.
 
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)
 
@@ -73,15 +73,16 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 
 ## Stop and ask Ben
 
-**Standing order (Ben, 2 Oct 2026): Claude and the Chief of Staff decide the steps; Ben approves the finished work.** Claude and the Chief agree, on the PR #99 thread, the topic (after the neighbour pass), scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails and Shorts. Claude's review on the thread is the sign-off for each of those steps. Ben is asked only at these points:
+**Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
-1. **Final OK before scheduling:** the finished long (moving picture with its VO), its Shorts and the thumbnails, sent together when they are all ready. Nothing is scheduled or uploaded without this OK.
-2. **Renames, deletes and back catalogue** (`--allow-late`), edits to posts already in Buffer, and anything that goes public outside a scheduled upload.
-3. **Anything on the Never list below**, and anything that would change the channel's direction (a new series, a new format, a change of voice).
+1. **Spending money:** any top-up, new paid service or plan (see Budget).
+2. **Anything irreversible:** a public video going private or being removed, anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Claude can OK it.
+3. **What only Ben can do:** his voice, his logins and accounts, and his devices (waking the Mac mini).
+4. **The Never list below**, and any change to the channel's direction (a new series, a new format, a change of voice). The Never list does not relax under this order.
 
 **Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
 
-Once Ben has given the final OK, the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after.
+Once the final OK is given (Claude's, under the 3 Oct order), the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after.
 
 ## Never
 
