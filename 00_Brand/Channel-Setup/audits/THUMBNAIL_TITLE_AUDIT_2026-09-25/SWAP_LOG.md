@@ -26,5 +26,8 @@ Built with `build_nasa_plate_short_covers.py` · font `/usr/share/fonts/truetype
 |---|---|---|---|---|---|
 | DN4L1DkerMM | THIS OCEAN / SHOULDN'T EXIST (wrong Europa) | RUNNING OUT / OF STARS (STARS yellow) | 3 Oct 00:24 | nasa_plate_v01 · carina_nebula / Webb Cosmic Cliffs | Arial Black |
 | l1d1ypHxLk0 | next to / 13.8 billion (burned-in) | TOO / EARLY? (TOO yellow) | 3 Oct 00:24 | nasa_plate_v01 · Hubble XDF | Arial Black |
+| rFzqmi8RWCY | Orbit on cover (house FAIL) | IT'S / LEAVING (LEAVING yellow) | 3 Oct 09:56 | nasa_plate_v01 · GSFC_20171208_Archive_e001861 LRO/LOLA full Moon (NASA's Goddard Space Flight Center) | Arial Black |
 
-Cover sha256: `DN4L1DkerMM` `cf46964d3a60486a55c139b1d0074376226dfb418cc64694ec5339a11a6b7434` · `l1d1ypHxLk0` `9d543b1e036bbb9ff25165ce76ea8436f6d80dd421eb30be291e4257a7d94643`
+Cover sha256: `DN4L1DkerMM` `cf46964d3a60486a55c139b1d0074376226dfb418cc64694ec5339a11a6b7434` · `l1d1ypHxLk0` `9d543b1e036bbb9ff25165ce76ea8436f6d80dd421eb30be291e4257a7d94643` · `rFzqmi8RWCY` `b71c21d7dd82c99188e9cf725be388ff2ddc5720b4870e54b2b7b5a6662cbd12`
+
+`rFzqmi8RWCY`: Ben passed the call to the agents on 3 Oct ("Please ask cursor"); Claude said go (PR #99 comment 5967369361); built with `/Library/Fonts/Arial Black.ttf`.

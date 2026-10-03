@@ -23,7 +23,7 @@ Ben's order (2 Oct, 14:27): *"do a full audit of titles, and thumbnails to check
 
 ## Applied (3 Oct 00:07 London)
 
-10 titles are live (5 clean-ups on 2 Oct, then 3 duplicate retitles, the Alien Life rename and the Monday Moon Short on 3 Oct). Ben OK'd the two NEEDS PLATE covers; they were built in Arial Black and swapped on 3 Oct 00:24 London. `rFzqmi8RWCY` still shows Orbit on its cover: try a clean Studio frame first, else the NASA plate job in `tools/build_nasa_plate_short_covers.py` (needs Ben's OK).
+10 titles are live (5 clean-ups on 2 Oct, then 3 duplicate retitles, the Alien Life rename and the Monday Moon Short on 3 Oct). Ben OK'd the two NEEDS PLATE covers; they were built in Arial Black and swapped on 3 Oct 00:24 London. `rFzqmi8RWCY` had Orbit on its cover and no clean Studio frame; it got the NASA plate IT'S / LEAVING on 3 Oct 09:56 London. **Audit complete:** every title and cover in this file is now correct.
 
 ## Every video
 
@@ -87,7 +87,7 @@ Ben's order (2 Oct, 14:27): *"do a full audit of titles, and thumbnails to check
 | short | public | `xRxhb3vSru4` | What's Left When the Last Star Goes Out? | 412 | **read from Studio** | DUPLICATE TITLE | ✅ retitled 3 Oct 00:07 London (was *What Remains After the Last Star Dies?*); cover clean (no Orbit) |
 | short | public | `1glQuYFSaYQ` | What Would Life Eat Under Europa? | 127 | WHAT WOULD / LIFE EAT? |  | |
 | short | public | `i6KGk9Z3pIE` | What's Dragging the Moon Away From Earth? | 15 | **read from Studio** |  | ✅ thumbnail matches topic (Chief, 2 Oct 15:50) |
-| short | public | `rFzqmi8RWCY` | The Moon Gets 3.8 cm Farther Away Every Year | 253 | **read from Studio** | DUPLICATE TITLE | ✅ retitled 3 Oct 00:07 London (was *Why Does the Moon Drift 3.8 cm a Year?*); cover **still shows Orbit**: new cover pending |
+| short | public | `rFzqmi8RWCY` | The Moon Gets 3.8 cm Farther Away Every Year | 253 | **read from Studio** | DUPLICATE TITLE | ✅ retitled 3 Oct 00:07 London (was *Why Does the Moon Drift 3.8 cm a Year?*); Orbit cover replaced 3 Oct 09:56 London: IT'S / LEAVING on LRO full Moon |
 | short | public | `osRFF1cBCEw` | Why Does the Moon Drift 3.8 cm a Year? | 347 | **read from Studio** | DUPLICATE TITLE | ✅ title unchanged (higher-view copy kept); cover clean (no Orbit) |
 | short | public | `pII09FbRYGc` | Why Europa Is Hiding a Massive Ocean | 291 | **read from Studio** | trailing full stop | ✅ retitled 2 Oct 16:57 London (was *Why Europa Is Hiding a Massive Ocean.*) |
 | short | public | `8Bym-yrYhGc` | Why Europa's Ocean Shouldn't Exist | 26 | THIS OCEAN / SHOULDN'T EXIST |  | |
