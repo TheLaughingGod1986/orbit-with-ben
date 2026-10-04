@@ -9,6 +9,7 @@ Keeps native Omni SFX unless the caller strips audio.
 from __future__ import annotations
 
 import base64
+import json
 import time
 from pathlib import Path
 
@@ -84,6 +85,51 @@ def _ensure_global_vertex(client):
     )
 
 
+def _orbit_sidecar(start: Path) -> Path:
+    return start.with_suffix(".json")
+
+
+def write_orbit_source_sidecar(start: Path, source: Path = ORBIT_REF, **extra) -> Path:
+    """Record that `start` was composited from the canonical Orbit still.
+
+    Call this from whatever script composites an Orbit start frame.
+    """
+    side = _orbit_sidecar(start)
+    try:
+        rel = str(source.resolve().relative_to(REPO.resolve()))
+    except ValueError:
+        rel = str(source)
+    side.write_text(json.dumps({"orbit_source": rel, **extra}, indent=2) + "\n")
+    return side
+
+
+def assert_orbit_start_frame(start: Path) -> str:
+    """Raise unless an Orbit-shot start frame derives from the canonical still."""
+    canon = ORBIT_REF.resolve()
+    if start.resolve() == canon:
+        return "canonical (start frame is ORBIT_REF)"
+    side = _orbit_sidecar(start)
+    if not side.exists():
+        raise SystemExit(
+            f"Orbit shot blocked: {start.name} has no sidecar {side.name} with orbit_source. "
+            f"Composite the start frame from {ORBIT_REF.name} and call write_orbit_source_sidecar()."
+        )
+    try:
+        src = json.loads(side.read_text()).get("orbit_source")
+    except Exception as e:  # noqa: BLE001
+        raise SystemExit(f"Orbit shot blocked: unreadable sidecar {side}: {e}")
+    if not src:
+        raise SystemExit(f"Orbit shot blocked: {side.name} has no orbit_source")
+    sp = Path(src)
+    sp = sp if sp.is_absolute() else REPO / sp
+    if sp.resolve() != canon:
+        raise SystemExit(
+            f"Orbit shot blocked: {side.name} orbit_source={src} is not the canonical "
+            f"{ORBIT_REF.relative_to(REPO)}"
+        )
+    return src
+
+
 def generate_omni_clip(
     client,
     prompt: str,
@@ -91,25 +137,29 @@ def generate_omni_clip(
     *,
     orbit_ref: Path | None = None,
     identity_ref: Path | None = None,
+    orbit_shot: bool = False,
     model: str = DEFAULT_MODEL,
     aspect_ratio: str = "16:9",
 ) -> dict:
     """One ~8s Omni Flash clip.
 
-    orbit_ref is the I2V start frame (composition). identity_ref is the
-    canonical Orbit still, attached as a second image when the start frame
-    is not already that still — so scale/camera stay locked without turning
-    Orbit into a knockoff.
+    orbit_ref is the I2V start frame (composition). Omni I2V takes exactly ONE
+    image, so identity_ref is never sent: it only marks the shot as an Orbit
+    shot. For an Orbit shot the start frame must already contain the canonical
+    Orbit — either it IS ORBIT_REF, or it has a sidecar `<start>.json` whose
+    `orbit_source` points at ORBIT_REF (see write_orbit_source_sidecar).
+    Otherwise this raises, so Orbit can't drift off-model between shots.
     """
     ref = orbit_ref or ORBIT_REF
     if not ref.exists():
         raise SystemExit(f"Orbit ref missing: {ref}")
     dest.parent.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
-    ident = identity_ref if identity_ref and identity_ref.resolve() != ref.resolve() else None
-    if ident is not None:
+    if orbit_shot or identity_ref is not None:
+        src = assert_orbit_start_frame(ref)
         print(
-            f"  identity baked into start frame ({ref.name}); Omni I2V allows one image only",
+            "  identity_ref NOT sent (I2V = one image); start frame must already contain "
+            f"canonical Orbit — {ref.name} orbit_source={src}",
             flush=True,
         )
     client = _ensure_global_vertex(client)
