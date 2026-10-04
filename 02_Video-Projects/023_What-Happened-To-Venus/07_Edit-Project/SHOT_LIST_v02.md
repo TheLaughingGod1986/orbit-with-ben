@@ -135,11 +135,12 @@ Columns: **#** · **vo_in–out** · **source** · **id / asset** · **move** ·
 | 33 | 268.82 | 275.70 | NASA | Magellan global | push 5% | ever an ocean? | |
 | 34a | 275.70 | 283.70 | NASA | Magellan slow push | push 4% | spin 243 d retrograde | Split former #34. |
 | 34b | 283.70 | 291.78 | NASA | Magellan / Express | push 4% | day longer than year | |
-| 35 | 291.78 | 305.00 | **GENERATE** | Omni **`venus_early_ocean_cloud_omni_v01`** | — | Way et al. 2016 | Soft light, shallow sea, shining cloud; no cities/life/text. Frame sheet → Claude PASS. |
-| 36 | 305.00 | 312.96 | **GENERATE** | same Omni (continue / gently push in edit) | — | shallow oceans for billions of years | Reuse clip; no second mint. |
-| 37 | 312.96 | 325.00 | **GENERATE** | Omni **`venus_early_steam_lid_omni_v01`** | — | Turbet et al. 2021 | Hot dim sky, steam lid, bare rock, **no shoreline**. |
-| 38 | 325.00 | 331.34 | **GENERATE** | same Omni continue | — | oceans may never have formed | Reuse. |
-| 39 | 331.34 | 338.98 | ~~GENERATE~~ **DROPPED** | ~~Omni `orbit_between_two_venus_omni_v01`~~ | — | models disagree | **Dropped per Claude 5984886311:** v01 right world turned to Jupiter; the one approved remint (v02) drifted to a Mars-like world from ~2 s. Slot runs the two-Venus beats (#35–#38) as plates without Orbit; ORBIT ACTS line goes unseen (VO unchanged). |
+| 35 | 291.78 | 305.00 | **NASA ILLUS.** ~~GENERATE~~ | **`plates_v01/venus_ch3_plateA_ocean_nasa_v01.mp4` 0–13.22 s** (NASA GISS ancient-Venus ocean illustration, Way et al. 2016 release) | slow push, 3 cuts (4.6 / 4.3 / 4.32 s) | Way et al. 2016 | **Plan change per Claude 5984968873:** no Omni (planet starts drift to Jupiter/Mars). Credit **NASA**. £0. |
+| 36 | 305.00 | 312.96 | **NASA ILLUS.** | same plate A **13.22–21.18 s** | slow push, 2 cuts (3.96 / 4.0 s) | shallow oceans for billions of years | Same NASA illustration, new framings. £0. |
+| 37 | 312.96 | 320.54 | **STILL + HAZE** | **`plates_v02/venus_ch3_row37_plateB_steam_lid_sharp_v02.mp4`** (7.567 s; v02 steam-lid globe, **crisp limb**: texture blurred inside the disc only, haze masked to the disc) | slow push, **2 cuts** (3.80 / 3.77 s) + light drifting haze | Another model / Turbet 2021 | **Per Claude 5985076831:** plate B is a short beat only; sharp edge reads as a planet, not missed focus. Row ends on “found that clouds gathered…” (320.54). Haze in plate is a preview; final haze = Remotion noise. £0. |
+| 38 | 320.54 | 331.34 | **CODE** | **`code_graphics.py nightlid`** (main `33a51f3`) → `graphics_v01/nightlid.mp4` **0–10.80 s** of 12 s | — (graphic animates) | clouds gather on the night side, trap heat like a lid; oceans may never have formed | **Per Claude 5985076831:** Turbet beat as code graphic: day side lit, steam rising, cloud building over the night side, heat arrows escape then turn back. Text-free. £0. |
+| 39a | 331.34 | 335.06 | **SPLIT** | plate A globe left \| plate B globe right → **`plates_v02/venus_ch3_row39a_split_ocean_vs_steamlid_v02.mp4`** (3.733 s, preview; final split can be a Remotion composite) | slow 4% push both halves, no text | Both are careful models, and they disagree | **Per Claude 5985076831.** Was #39 Omni `orbit_between_two_venus` (dropped 5984886311, both takes drifted). £0. |
+| 39b | 335.06 | 338.98 | NASA | Magellan **Alpha Regio tessera PIA00215** → **`plates_v02/venus_ch3_row39b_magellan_alpha_regio_tessera_PIA00215_v02.mp4`** (3.933 s) | push 5% | Nobody has yet read the rocks that could settle it | **Per Claude 5985076831.** Credit NASA/JPL. Row 15b should take **PIA00246** (Alpha Regio east edge) so PIA00215 isn't shown twice. |
 | 40 | 338.98 | 347.54 | NASA | Magellan Maat / plains | push 5% | water gone / carbon in sky | Real Venus return. |
 | 41 | 347.54 | 348.24 | BREATH | — | — | (gap) | |
 
@@ -195,9 +196,10 @@ Paths: `04_Generated-Clips/01_Raw/omni_v01/`. Frame sheets: `…/sheets/*_6frame
 
 | Slot | Function | Rows | Status |
 |---|---|---|---|
-| `albedo` | sunlight in / reflected / absorbed; Earth beside Venus; text-free | #13–#14 | **READY** `code_graphics.py` (`f32afd4`) — render pending |
-| `deuterium` | water split; light H escapes; heavy share rises | #31–#32 | **READY** `code_graphics.py` (`f32afd4`) — render pending |
-| `line` | inner limit moves out as Sun brightens; Venus+Earth dots | #43–#44 | **READY** `code_graphics.py` (`f32afd4`) — render pending |
+| `albedo` | sunlight in / reflected / absorbed; Earth beside Venus; text-free | #13–#14 | **RENDERED** `graphics_v01/albedo.mp4` (12 s, 1920x1080, 4 Oct) |
+| `deuterium` | water split; light H escapes; heavy share rises | #31–#32 | **RENDERED** `graphics_v01/deuterium.mp4` (12 s, 1920x1080, 4 Oct) |
+| `line` | inner limit moves out as Sun brightens; Venus+Earth dots | #43–#44 | **RENDERED** `graphics_v01/line.mp4` (12 s, 1920x1080, 4 Oct) |
+| `nightlid` | Turbet 2021: day side lit, steam rising, cloud lid over the night side, heat arrows escape then turn back; text-free | #38 | **RENDERED** `graphics_v01/nightlid.mp4` (12 s; row 38 uses 0–10.80 s) |
 
 Render on Mini when Claude’s file lands; do **not** invent the Python here.
 
@@ -218,6 +220,7 @@ Render on Mini when Claude’s file lands; do **not** invent the Python here.
 | NASA EO/ISS White Cliffs or coral reef | EO / ISS gallery | clears chalk HOLD |
 | Venus twilight sky photo | NASA HQ | row 56 |
 | Parker WISPR, Pioneer, DAVINCI/VERITAS/EnVision | press / SVS | as v01 |
+| NASA GISS ancient-Venus ocean illustration (Way et al. 2016 release, 11 Aug 2016) | `nasa.gov/wp-content/uploads/2016/08/ancient-venus-new.jpg` (4096², sha1 696b521b) | rows 35–36; credit **NASA** |
 
 Pool dir: `07_Edit-Project/nasa_pool_v01/` (+ `nasa_pool_v01.json` / `fetch_nasa_pool.py`).
 
@@ -232,7 +235,7 @@ Pool dir: `07_Edit-Project/nasa_pool_v01/` (+ `nasa_pool_v01.json` / `fetch_nasa
 - [x] Chalk HOLD → NASA EO/ISS
 - [ ] Omni frame sheets PASS before edit insert
 - [x] `code_graphics.py` landed (`f32afd4`)
-- [ ] Render albedo/deuterium/line on Mini + slot
+- [x] Render albedo/deuterium/line/nightlid on Mini (`04_Generated-Clips/01_Raw/graphics_v01/`, 4 Oct) — slot in assemble
 - [ ] Edit assemble after Omni + graphics
 
 ---
