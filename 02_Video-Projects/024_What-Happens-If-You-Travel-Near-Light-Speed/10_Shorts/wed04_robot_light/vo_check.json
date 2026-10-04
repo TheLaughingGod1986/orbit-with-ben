@@ -1,0 +1,58 @@
+{
+  "tool": "owb_short_vo_check_v01 (HOS vo_check gates; Scribe word check \u2014 faster-whisper broken on py3.14/av)",
+  "status": "PASS",
+  "fails": [],
+  "warns": [
+    "Scribe 89.47% \u2014 mismatches are ASR number/spelling only (tonne\u2194ton, ninety percent\u219490, ninety-nine percent\u219499); not TTS errors; no re-roll"
+  ],
+  "duration_s": 21.99,
+  "lufs_integrated": -19.5,
+  "mean_volume_db": -22.5,
+  "max_volume_db": -4.5,
+  "wpm": 152.8,
+  "words": 56,
+  "silence_gt_1s": [],
+  "script_whisper_match_rate_pct": 89.47,
+  "script_whisper_mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "tonne"
+      ],
+      "whisper": [
+        "ton"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "ninety",
+        "percent"
+      ],
+      "whisper": [
+        "90"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "ninety",
+        "nine",
+        "percent"
+      ],
+      "whisper": [
+        "99"
+      ]
+    }
+  ],
+  "mismatches_are_number_spelling_only": true,
+  "raw_duration_s": 25.28,
+  "pause_trim_max_gap_s": 0.4,
+  "sha256_mp3": "4fde6f9deecee0d87cb5fc490f45088471e9d23cf8cad588a5d3673ffbd9c34a",
+  "updated": "2026-10-04 18:16 ",
+  "reclassified": {
+    "reason": "number-spelling mismatches OK; tonne/ton is STT locale spelling not a content error; no retake (words not clipped)",
+    "at": "2026-10-04 18:15 BST"
+  },
+  "asr_fp_note": "tonne/ton + digit collapse of spelled percents"
+}

@@ -1,0 +1,10 @@
+VO CHECK — Light-speed 024 Short Fri 6 (muons / ground)
+Status: PASS
+Duration: 20.880s (raw 20.88s)
+LUFS integrated: -19.3
+mean_volume: -19.5 dB | max_volume: -1.0 dB
+Pace: 158.0 wpm (55 words)
+Script vs Scribe: 98.18% match; see script_whisper_diff.json
+Fails: none
+Warns: none
+Notes: HOS vo_check.py crashed (faster-whisper/av metadata_errors on Py3.14). Used same loudness/silence gates + ElevenLabs Scribe word diff.
