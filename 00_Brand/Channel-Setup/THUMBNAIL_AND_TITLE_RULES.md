@@ -39,6 +39,17 @@ Evidence strength: **[views]** means a pattern across 48 Shorts. **[CTR]** means
 8. **No Orbit on thumbs, for now** (house rule). The two Orbit thumbs are the two weakest longs, but they are also the two longest films, so this is not proven either way. Test it with Studio *Test & Compare* once a long passes about 1,000 impressions.
 9. **Judge CTR only after about 500 impressions.** Below that, one click changes the rate by several points. Use Test & Compare with 3 variants on every long, and leave it running until YouTube picks a winner.
 
+### 2.A Cover art rules from the 4 Oct 2026 audit
+
+Added 4 Oct 2026 from [THUMB_AUDIT_2026-10-04](audits/THUMB_AUDIT_2026-10-04/AUDIT.md) (Claude-approved). These sharpen §2; they do not replace it.
+
+1. **Near-black ≤30% of pixels.** Winners ran 3–27% near-black. No flat #000 text slabs or empty black panels. Prefer a graded starfield or nebula behind the subject.
+2. **Colour-grade every NASA plate** before it goes on a thumb: saturation, contrast, rim glow. "Approved material only" still needs finishing — raw plates read flat at phone size.
+3. **Text line height about 11–12% of frame height per line** (longs ~82 px on 720). Keep text **off the subject**. One yellow hook word; white on the rest. Oversized 15–20% lines crowd out the planet and break the subject-first read.
+4. **Whole subject large:** visible and at least **⅓ of the frame** (same intent as §2.1). Do not crop the hero to a strip.
+5. **One scale reference** when you can (probe, person, Earth, Sun). Gives story and size.
+6. **Short cover text must fit inside the 16:9 centre band** of the 9:16 cover (the crop YouTube uses on TV / Related). Check with `thumb_preview.py short`. Set Short covers in Studio UI when the API returns blank tiles.
+
 ## 3. Shorts: the first frame is the thumbnail
 
 In the Shorts feed (78% of Shorts views) nobody sees your custom thumbnail. They see frame 0.
