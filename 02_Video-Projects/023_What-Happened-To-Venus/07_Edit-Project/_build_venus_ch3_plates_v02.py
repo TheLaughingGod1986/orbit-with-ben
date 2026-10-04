@@ -223,9 +223,10 @@ rep["row39a_split_AB"] = render_frames("venus_ch3_row39a_split_ocean_vs_steamlid
 # ----- Row 39b: Magellan Alpha Regio tessera PIA00215, 335.06-338.98 = 3.92 s (118 frames), 5% push -----
 mg = Image.open(PIA00215).convert("RGB")
 mw, mh = mg.size
-cw = mw; ch = cw * OH / OW
-if ch > mh: ch = mh; cw = ch * OW / OH
-mcx, mcy = mw / 2, mh / 2
+# Crop clear of the black no-data wedge (left edge, x up to ~430 px at the bottom) and the top-right notch, and below
+# the pancake domes so the frame is led by the tessera: 1200 px wide 16:9 window, x 430-1630, y ~1290-1965.
+cw = 1200.0; ch = cw * OH / OW
+mcx, mcy = 430 + cw / 2, 1290 + ch / 2
 mga = np.array(mg).astype(np.float32)
 lo, hi = np.percentile(mga, 1), np.percentile(mga, 99.5)
 mg = Image.fromarray(((mga - lo) / (hi - lo) * 255).clip(0, 255).astype(np.uint8))
