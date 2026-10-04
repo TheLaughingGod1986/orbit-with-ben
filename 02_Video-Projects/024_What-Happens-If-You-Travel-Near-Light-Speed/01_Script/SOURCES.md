@@ -18,3 +18,14 @@ Spoken claims for the description and script draft. Not narration.
 No product is named. No `/go/` link.
 
 **Science lock reminder:** Time dilation and GPS relativistic offsets are locked empirical reality; the twin paradox asymmetry is resolved by frame transitions; propulsion energy requirements are exact physics, while crewed relativistic flight remains an open engineering frontier. Keep the framing anchored in cosmic wonder rather than existential dread.
+
+## Added by Claude for script v01 (4 Oct). Gemini: verify each row and add the exact quote
+
+| Claim in the film | Source to check |
+|---|---|
+| **Correction to the Hafele–Keating row above:** the eastward *predicted* value was −40 ± 23 ns (observed −59 ± 10). The film says only "off by billionths of a second, by the amounts the theory predicted" | Hafele & Keating (1972), *Science* 177, 168–170, results table |
+| Several muons pass through your body every second (sea-level flux about 1 per cm² per minute) | Particle Data Group, *Review of Particle Physics*, "Cosmic rays" chapter (§30.3, muons at sea level: ≈1 cm⁻² min⁻¹ for a horizontal detector) |
+| At 0.99c, a microgram of dust carries about 5 × 10⁸ J (about 130 kg of TNT), "the energy of a bomb" | (γ−1)mc² with γ = 7.09 and m = 10⁻⁹ kg. Hoang, T. et al. (2017), "The Interaction of Relativistic Spacecraft with the Interstellar Medium", *ApJ* 837, 5 |
+| The fastest thing we have built (Parker Solar Probe) peaks near 192 km/s, about 0.064% of c | NASA Parker Solar Probe mission pages (perihelion 24 Dec 2024) |
+| The stars ahead crowd together and shift blue; the stars behind thin and redden | Relativistic aberration and Doppler shift. Taylor & Wheeler, *Spacetime Physics*; McKinley & Doherty (1979), *Am. J. Phys.* 47, 309 |
+| 1 g with a midpoint flip crosses the Milky Way in "a little over twenty years" of crew time (computed 22.4 yr for 100,000 ly) | Relativistic rocket: τ = 2(c/g) arcosh(1 + gd/2c²). The 24 yr in the row above is replaced by this |
