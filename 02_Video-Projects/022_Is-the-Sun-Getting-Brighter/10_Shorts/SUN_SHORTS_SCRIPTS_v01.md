@@ -69,15 +69,14 @@ The full film: Is the Sun Getting Brighter?
 |---|---|
 | Promotes | Sun long 022 |
 | Frame 0 | NASA's Parker Solar Probe artwork (or the WISPR corona pass) already moving against the corona. Caption TOO CLOSE (yellow CLOSE). No Orbit. |
-| Orbit | **Needs Omni** for the robot beat. If Omni is still failing when the picture is made, this Short swaps with a Venus-safe backup and this VO is kept for later. |
+| Orbit | **None (Claude, 4 Oct, PR #99 5982450383).** Omni was unavailable, and the probe is the robot in the title. VO passed and is kept. |
 | Cover | The Parker Solar Probe shield against the glare. Yellow **1,400°C**, white **SHIELD**. No Orbit. |
 
 [VISUAL MUST: 0:00. The probe is already in motion, the corona streaming past. Whoosh. Caption: TOO CLOSE. No Orbit.]
 
 Nothing we've built has flown this close to the Sun.
 
-[VISUAL MUST: About 1.5 s. Orbit (Omni) floats small beside the glare, one hand lifted against the light.]
-[ORBIT ACTS: Orbit leans towards the Sun, curious, then shields its visor.]
+[VISUAL MUST: About 1.5 s. NASA Parker Solar Probe art: the probe turning its heat shield to the Sun. No Orbit.]
 
 Could a robot survive touching it?
 
