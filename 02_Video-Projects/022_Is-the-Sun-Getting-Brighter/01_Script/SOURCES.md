@@ -14,4 +14,18 @@ Spoken claims in `sun_brighter_script_master_v01.md`, for the description. Not n
 | Sunlight travel time of eight minutes | Light-travel time from the Sun to Earth at 1 astronomical unit. |
 | A prominence is magnetic weather, not the brightening | Prominences are plasma suspended in magnetic field above the limb, on timescales of hours to days. |
 
+
+## Added for Sun Shorts (Gemini fact-check, 4 Oct 2026)
+
+Spoken / cover facts from `10_Shorts/SUN_SHORTS_SCRIPTS_v01.md` (Wed 21 Parker; Fri 23 Isua). Exact quotes below.
+
+| Claim in the film | Source |
+|---|---|
+| Parker Solar Probe closest pass 24 Dec 2024 ≈ 6.1 million km (3.8 million miles) from the solar surface | JHU APL / NASA (27 Dec 2024): “Breaking its previous record by flying just 3.8 million miles (around 6.1 million kilometers) above the surface of the Sun…” https://www.jhuapl.edu/news/news-releases/241227-parker-closest-approach · https://science.nasa.gov/science-research/heliophysics/nasas-parker-solar-probe-makes-history-with-closest-pass-to-sun/ |
+| Heat shield Sun-facing side designed for ≈1,377 °C (2,500 °F) | NASA “Traveling to the Sun: Why Won’t Parker Solar Probe Melt?”: “the surface of the heat shield that faces the Sun will only get heated to about 2,500 degrees Fahrenheit (about 1,400 degrees Celsius).” (2,500 °F = 1,377 °C exactly; NASA rounds °C.) Spoken Short line “nearly fourteen hundred degrees” is fine. https://www.nasa.gov/solar-system/traveling-to-the-sun-why-wont-parker-solar-probe-melt/ |
+| Instruments / spacecraft body behind the shield near room temperature ≈29 °C (85 °F) | Same NASA page: “just on the other side of the shield, the spacecraft body will sit at a comfortable 85 F (30 C).” 85 °F = 29.4 °C; script ≈29 °C matches. Spoken “room temperature” PASS. |
+| Visible solar surface (photosphere) ≈5,500 °C | NASA NSSDCA Sun Fact Sheet: Effective temperature 5772 K (≈5,499 °C). Photosphere bottom ~6600 K, top ~4400 K. “About 5,500 °C” for the visible surface is the standard effective-temperature rounding. https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html |
+| Isua greenstone belt ~3.8 Gyr water-laid rocks (sediments / pillow lavas) — Fri Short “Rocks nearly that old formed under water” | Furnes et al. (2007), *Science* 315, 1704–1707: “The ~3.8-billion-year-old (Ga) Isua supracrustal belt (ISB) in southwest Greenland… associated pillow lavas… overlain by chert and banded iron formation.” DOI [10.1126/science.1139170](https://doi.org/10.1126/science.1139170). Pillow lavas require eruption under water. Spoken “nearly that old” vs “four billion years ago” PASS. |
+| Jack Hills zircons ~4.4 Gyr hint at liquid water earlier (not spoken; source only) | Wilde et al. (2001), *Nature* 409, 175–178: “These results imply that liquid water was present on the surface of the Earth, and that continental-type crust was forming, by 4.4 Gyr ago.” DOI [10.1038/35051550](https://doi.org/10.1038/35051550). Keep off VO unless needed. |
+
 No product is named. No `/go/` link.
