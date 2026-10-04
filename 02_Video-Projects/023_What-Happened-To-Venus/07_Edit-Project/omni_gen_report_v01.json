@@ -1,68 +1,33 @@
 {
-  "startedAt": "2026-10-04T17:14:58+00:00",
+  "startedAt": "2026-10-04T21:57:38+00:00",
   "engine": "vertex_omni",
   "project": "gen-lang-client-0538779324",
-  "location": "us-central1",
+  "location": "global",
   "model": "gemini-omni-flash-preview",
   "floor_gbp": 5.0,
   "credit_pre_gbp": 28.89,
   "plates": [
-    {
-      "id": "venus_early_ocean_cloud_omni_v01",
-      "file": "venus_early_ocean_cloud_omni_v01.mp4",
-      "attempts": [
-        {
-          "n": 1,
-          "status": "fail",
-          "seconds": 12.5,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
-        },
-        {
-          "n": 2,
-          "status": "fail",
-          "seconds": 10.3,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
-        }
-      ],
-      "status": "fail"
-    },
-    {
-      "id": "venus_early_steam_lid_omni_v01",
-      "file": "venus_early_steam_lid_omni_v01.mp4",
-      "attempts": [
-        {
-          "n": 1,
-          "status": "fail",
-          "seconds": 9.2,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
-        },
-        {
-          "n": 2,
-          "status": "fail",
-          "seconds": 9.6,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
-        }
-      ],
-      "status": "fail"
-    },
     {
       "id": "orbit_between_two_venus_omni_v01",
       "file": "orbit_between_two_venus_omni_v01.mp4",
       "attempts": [
         {
           "n": 1,
-          "status": "fail",
-          "seconds": 10.3,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
-        },
-        {
-          "n": 2,
-          "status": "fail",
-          "seconds": 9.7,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+          "status": "ok",
+          "seconds": 48.3,
+          "bytes": 2576070,
+          "model": "gemini-omni-flash-preview",
+          "engine": "gemini-api-omni",
+          "orbit_ref": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/04_Generated-Clips/01_Raw/omni_v01/starts/orbit_between_two_venus_start.png",
+          "interaction_id": "ChBmYmFlZTY3M2NhNzI0YzA0EAgaATAqBG1haW4",
+          "sheet": "orbit_between_two_venus_omni_v01_6frame.jpg",
+          "sheet_ok": true
         }
       ],
-      "status": "fail"
+      "status": "ok",
+      "bytes": 2576070,
+      "sheet": "orbit_between_two_venus_omni_v01_6frame.jpg",
+      "sha256": "11f41c1241a7982321da5259b83e5fc1371b7bb51b25c8f4cb113449e58709fc"
     },
     {
       "id": "orbit_looks_back_earth_omni_v01",
@@ -70,19 +35,27 @@
       "attempts": [
         {
           "n": 1,
-          "status": "fail",
-          "seconds": 11.5,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
-        },
-        {
-          "n": 2,
-          "status": "fail",
-          "seconds": 11.7,
-          "error": "InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}"
+          "status": "ok",
+          "seconds": 35.2,
+          "bytes": 2658469,
+          "model": "gemini-omni-flash-preview",
+          "engine": "gemini-api-omni",
+          "orbit_ref": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/04_Generated-Clips/01_Raw/omni_v01/starts/orbit_looks_back_earth_start.png",
+          "interaction_id": "ChBiYzVlMDA2MDAxZGUwNDEwEAgaATAqBG1haW4",
+          "sheet": "orbit_looks_back_earth_omni_v01_6frame.jpg",
+          "sheet_ok": true
         }
       ],
-      "status": "fail"
+      "status": "ok",
+      "bytes": 2658469,
+      "sheet": "orbit_looks_back_earth_omni_v01_6frame.jpg",
+      "sha256": "1ebeb29912f857b93119f50b7ad838efc58ea6d658d4fa63a21fcafc782e05db"
     }
   ],
-  "finishedAt": "2026-10-04T17:16:35+00:00"
+  "finishedAt": "2026-10-04T21:59:02+00:00",
+  "notes": [
+    "Remint of Orbit shots #39/#46 only (Claude PR #99 5984734583) on Vertex global, orbit_shot=True; non-Orbit early-Venus plates not run in this job (their 17:14 UTC us-central1 500s are in git history of this file on main 803ebb8).",
+    "A first submission of #39 at 22:55:13 BST was killed client-side by the agent's shell session after ~25s, before any response (no interaction id, no file). It may or may not have been processed/billed server-side. Clean re-run started 22:57:37 BST; both plates attempt 1.",
+    "Chief visual review: #39 right world morphs from amber Venus into Jupiter (bands + red spot) from ~2s; Orbit eyes blink off ~0.5s. #46 holds Orbit locks; Earth stays a blue point (with horizontal flare streak). Awaiting Claude frame-sheet verdict; remint budget (1 per shot) unused."
+  ]
 }

@@ -205,7 +205,9 @@ def main() -> None:
                     plate["prompt"],
                     dest,
                     orbit_ref=start,
-                    identity_ref=IDENTITY if plate["orbit"] else None,
+                    # Orbit shots: start frame must derive from ORBIT_REF (sidecar guard);
+                    # identity_ref is never sent (Omni I2V takes one image). Claude 5984734583.
+                    orbit_shot=plate["orbit"],
                     model=MODEL,
                     aspect_ratio="16:9",
                 )
