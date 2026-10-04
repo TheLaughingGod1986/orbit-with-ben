@@ -28,3 +28,25 @@ No product is named. No `/go/` link.
 - **Proxima b radius & mass:** UNVERIFIED / OPEN. Because Proxima b was detected via radial velocity and does not transit its host star from Earth's line of sight, its true radius is unknown and its mass is constrained only as a minimum mass ($m \sin i \approx 1.17\,M_\oplus$). It must NOT be described as an "Earth twin" or "Earth-like planet" in the VO—only as an "Earth-mass planet in the temperate zone."
 - **Breakthrough Starshot framing:** Must remain explicitly tagged as an *unbuilt proposed design study* / *concept plan*. No hardware is currently built or funded for launch.
 - **Scale model consistency:** Grapefruit (14 cm) to pinhead (1.3 mm) at 15 m, with Proxima at 4,000 km, is exact $1 : 10^{10}$ geometry. If using fruit analogies, keep the scale factor explicit ($1\text{ cm} = 100{,}000\text{ km}$).
+
+## Added by Claude for script v01 (4 Oct). Gemini: verify each row and add the exact quote
+
+| Claim in the film | Source to check |
+|---|---|
+| **Correction to the Notes above:** Proxima is a red dwarf about 0.154 solar radii, so at the grapefruit scale it is a **cherry** (about 2.1 cm), not "another grapefruit". Alpha Centauri A (about 1.22 R☉) would be the grapefruit-sized one, at about 4,130 km | Kervella et al. (2017) radius 0.1542 R☉; Alpha Cen A radius from Kervella et al. (2017) A&A 597, A137 |
+| Proxima's apparent magnitude is about 11, too faint for the naked eye | ESO / SIMBAD (V ≈ 11.13) |
+| Alpha Centauri never rises from the UK (dec about −61°) | Simple geometry: it is below the horizon at latitudes north of about 29° N |
+| Gaia measured parallaxes for more than a billion stars (DR3: 1.46 billion with parallax) | Gaia DR3 summary (Gaia Collaboration, Vallenari et al. 2023, A&A 674, A1) |
+| Proxima has the largest parallax of any star | Follows from it being the nearest; Gaia DR3 |
+| A 2 cm coin subtends about 0.31″ at about 13 km, and about 0.77″ at about 5 km | Geometry: θ = 0.02 m / d × 206,265 |
+| Voyager 1 launched 5 Sep 1977; about 171 AU now, so about 2.6 km at the 1 : 10¹⁰ scale | NASA Voyager mission pages (above) |
+| London–Cairo is about 3,500 km (shorter than the cherry's 4,018 km) | Great-circle distance |
+| Walking 5 km/h: about 0.92 billion years; car 100 km/h: about 46 million years; airliner 900 km/h: about 5.1 million years | Arithmetic on 4.018 × 10¹³ km |
+| Proxima's flares are far more violent than the Sun's for its size (2019 flare about 100× brighter in UV than comparable solar flares) | MacGregor et al. (2021), ApJL 911, L25 |
+| The Starshot probes weigh about a gram ("about as much as a paperclip") | Breakthrough Starshot announcement (gram-scale StarChip) |
+| Proxima gives out less than 1% of the Sun's light (L ≈ 0.0017 L☉) and will shine for trillions of years | Ribas et al. (2017) / Kervella et al. (2017) luminosity; Laughlin, Bodenheimer & Adams (1997), ApJ 482, 420 (red dwarf lifetimes) |
+| Moonlight takes about 1.3 s and sunlight about 8 min 20 s | Distance / c |
+| A message sent Oct 2026 arrives about Jan 2031; the earliest reply arrives about Apr 2035 | 4.25 yr each way |
+| The missing stellar parallax was long used as an argument against a moving Earth (e.g. Tycho Brahe) | Standard history of astronomy; e.g. Hirshfeld, *Parallax: The Race to Measure the Cosmos* (2001) |
+| At the 1 : 10¹⁰ scale, Alpha Cen A (1.22 R☉) is about 17 cm and B (0.86 R☉) about 12 cm, at about 4,130 km | Kervella et al. (2017) A&A 597, A137 |
+| At the 1 : 10¹⁰ scale the Moon's orbit (384,400 km, the farthest humans have gone, Apollo 13 about 400,000 km) is about 3.8–4.0 cm from the pin | NASA Moon fact sheet; Apollo 13 distance record (Guinness / NASA) |
