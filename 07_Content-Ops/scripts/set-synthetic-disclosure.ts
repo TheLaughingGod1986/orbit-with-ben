@@ -7,6 +7,7 @@
  *
  *   npx tsx scripts/set-synthetic-disclosure.ts --ids id1,id2
  */
+import { ensureDeskLock } from "./with-desk-lock";
 import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
 
 const IDS = [
@@ -133,6 +134,8 @@ async function main() {
 
   console.log(JSON.stringify(results, null, 2));
 }
+
+ensureDeskLock();
 
 main().catch(async (err) => {
   console.error(err instanceof Error ? err.message : String(err));

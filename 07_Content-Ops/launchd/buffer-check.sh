@@ -23,9 +23,11 @@ main() {
   (
     cd 07_Content-Ops || exit 1
     unset DATABASE_URL GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN BUFFER_API_KEY BLOB_READ_WRITE_TOKEN
-    npx tsx --env-file=.env scripts/buffer-mirror.ts check
+    bash scripts/desk-lock.sh youtube-buffer -- npx tsx --env-file=.env scripts/buffer-mirror.ts check
   )
   local code=$?
+  # Contention stops before committing records or notifying.
+  (( code == 75 )) && return 75
 
   if [[ $branch == main ]] && [[ -n $(git status --porcelain -- "$social") ]]; then
     git add -- "$social"

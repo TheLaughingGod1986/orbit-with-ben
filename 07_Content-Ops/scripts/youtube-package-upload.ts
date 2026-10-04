@@ -12,6 +12,7 @@
  * Optional: PACKAGE_MANIFEST.json inside the package dir, or --manifest path.
  * After a live upload, writes *_PACKAGE_UPLOAD_RESULT.json into Schedule/ (or package root).
  */
+import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
 import path from "path";
 import { isDryRun } from "../src/lib/env";
@@ -242,6 +243,8 @@ async function main() {
 
   if (!upload.success) process.exit(1);
 }
+
+ensureDeskLock();
 
 main().catch((e) => {
   console.error(e);
