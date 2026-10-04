@@ -83,7 +83,7 @@ This is not a warning about next century. The warming measured on Earth today is
 What it shows is how thin the difference is. Same rock, same start, and one turn with the water.
 
 [VISUAL MUST: Today's Earth from orbit, ocean and cloud, then the Sun disc from last week's film, then Venus. Slow, wondering cuts. No disaster imagery. No red skies over cities.]
-[ORBIT ACTS: Orbit looks back at Earth's blue edge from near Venus, small in frame, quiet, the brighter planet behind him. He is not afraid. He is noticing.]
+[ORBIT ACTS: Orbit, small in frame near Venus, looks back across the dark at Earth, which from there is only a bright blue point of light, the bright cloud-wrapped planet behind him. He is not afraid. He is noticing.]
 [TEACH: Water vapour feedback and hydrogen escape mark the moist and runaway greenhouse limits. The Sun's brightening moves them outward (Schröder & Connon Smith 2008: Earth near a billion years). Goldblatt et al. 2013 find a fossil-fuel runaway on Earth very unlikely.]
 
 [CHAPTER CARD: Going Back]
