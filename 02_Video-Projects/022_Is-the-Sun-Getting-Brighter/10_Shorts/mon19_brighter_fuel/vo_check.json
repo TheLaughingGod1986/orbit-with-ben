@@ -1,0 +1,44 @@
+{
+  "tool": "owb_short_vo_check_v01 (HOS vo_check gates; Scribe word check \u2014 faster-whisper broken on py3.14/av)",
+  "status": "PASS",
+  "fails": [],
+  "warns": [
+    "pace 130.2 wpm under 145 (Short house target ~23-25s / ~132-143 wpm)"
+  ],
+  "duration_s": 25.337,
+  "lufs_integrated": -20.2,
+  "mean_volume_db": -23.2,
+  "max_volume_db": -4.0,
+  "wpm": 130.2,
+  "words": 55,
+  "silence_gt_1s": [],
+  "script_whisper_match_rate_pct": 93.46,
+  "script_whisper_mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "one",
+        "percent"
+      ],
+      "whisper": [
+        "1"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "hundred",
+        "and",
+        "ten"
+      ],
+      "whisper": [
+        "110"
+      ]
+    }
+  ],
+  "mismatches_are_number_spelling_only": true,
+  "raw_duration_s": 29.84,
+  "pause_trim_max_gap_s": 0.4,
+  "sha256_mp3": "aca9314e0296f2a57f34f6a77f6651c13fc8ba21a33d9655ce58ccbd00136044",
+  "updated": "2026-10-04 17:39 BST"
+}

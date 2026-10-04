@@ -1,0 +1,30 @@
+{
+  "script_words": 55,
+  "whisper_words": 52,
+  "match_rate_pct": 93.46,
+  "mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "one",
+        "percent"
+      ],
+      "whisper": [
+        "1"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "hundred",
+        "and",
+        "ten"
+      ],
+      "whisper": [
+        "110"
+      ]
+    }
+  ],
+  "script_norm": "the sun is getting brighter and its running out of fuel deep in the core hydrogen fuses into helium the helium ash leaves fewer particles holding the core up so the core squeezes heats and burns faster about one percent brighter every hundred and ten million years the full film is the sun getting brighter",
+  "whisper_norm": "the sun is getting brighter and its running out of fuel deep in the core hydrogen fuses into helium the helium ash leaves fewer particles holding the core up so the core squeezes heats and burns faster about 1 brighter every 110 million years the full film is the sun getting brighter"
+}
