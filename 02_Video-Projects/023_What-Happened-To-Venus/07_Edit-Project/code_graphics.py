@@ -4,6 +4,7 @@
   python3 code_graphics.py albedo    out/   # ch.1 "The Twin Next Door": sunlight in, reflected, absorbed (Venus above, Earth below)
   python3 code_graphics.py deuterium out/   # ch.3 "Where Did the Water Go?": water split high up, light H escapes, heavy D stays
   python3 code_graphics.py line      out/   # ch.4 "The Line Earth Hasn't Crossed": the inner limit moves out as the Sun brightens
+  python3 code_graphics.py nightlid  out/   # ch.3 Turbet 2021 beat: clouds gather on the night side and hold the heat in
   python3 code_graphics.py all       out/
   add --still to write one frame only (review); --seconds N to change length
 
@@ -18,6 +19,9 @@ Numbers (01_Script/SOURCES.md, NASA NSSDCA fact sheets):
   line       Inner (moist-greenhouse) limit ~0.95 AU for today's Sun, scaling as sqrt(L) (Kopparapu et al. 2013).
              The Sun climbs from L=1.0 to L=1.1 (~1 billion years, Schroeder & Connon Smith 2008), which moves the
              limit to ~1.0 AU, Earth's orbit. Venus (0.72 AU) is already inside.
+  nightlid   Turbet et al. 2021: on a slowly rotating young Venus, water clouds gather on the night side, where
+             they warm the planet (they block outgoing heat) instead of shading the day side. Drawn as a lit day half,
+             steam rising, cloud building over the night half, and heat arrows from the night side turned back down.
 """
 import argparse, math, os, subprocess, sys
 
@@ -217,6 +221,60 @@ def render_line(out, seconds, still):
     finish(out, still)
 
 
+def render_nightlid(out, seconds, still):
+    """A planet seen side-on, Sun off frame left. Steam rises everywhere; over the clip cloud builds over the night
+    (right) half only. Heat arrows leave the night side: early on they escape to space, later they hit the cloud and
+    turn back down, and the surface glow warms. Text-free."""
+    rng = np.random.default_rng(2021)
+    n = int(seconds * FPS)
+    R = 2.6
+    frames = [int(n * 0.8)] if still else range(n)
+    steam = [[rng.uniform(-R, R), rng.uniform(-R, R), rng.uniform(0, 1)] for _ in range(70)]
+    for i in frames:
+        s = ease(i / max(1, n - 1))
+        fig, ax = canvas()
+        # planet: day half lit, night half dark, surface glow warms with s
+        ax.add_patch(Circle((0, 0), R, color="#241a14", lw=0))
+        ax.add_patch(Wedge((0, 0), R, 90, 270, color="#c9a46a", lw=0, alpha=0.95))
+        ax.add_patch(Circle((0, 0), R * 0.98, color=HEAT, alpha=0.05 + 0.25 * s, lw=0))
+        # steam: small pale dots drifting outwards from the surface
+        t = i / FPS
+        for sx, sy, ph in steam:
+            a = math.atan2(sy, sx)
+            r = R * 0.6 + ((t * 0.25 + ph) % 1.0) * R * 0.7
+            ax.add_patch(Circle((r * math.cos(a), r * math.sin(a)), 0.05, color=WHITE, alpha=0.35, lw=0))
+        # cloud deck building over the night side only
+        for k in range(18):
+            a = math.radians(-80 + k * 160 / 17)
+            rr = R + 0.35 + 0.15 * math.sin(k * 1.7)
+            ax.add_patch(Circle((rr * math.cos(a), rr * math.sin(a)), 0.32 + 0.12 * ((k * 5) % 3) / 2,
+                                color=WHITE, alpha=0.72 * ease((s - 0.1 - k * 0.01) / 0.5), lw=0, zorder=3))
+        # heat arrows from the night side: escape early, bounce back later
+        for k in range(6):
+            a = math.radians(-50 + k * 20)
+            x0, y0 = R * math.cos(a), R * math.sin(a)
+            blocked = s > 0.45 + 0.03 * k
+            ph = ((t * 0.9 + k * 0.17) % 1.0)
+            if not blocked:
+                L = 0.4 + ph * 2.2
+                ax.plot([x0, (R + L) * math.cos(a)], [y0, (R + L) * math.sin(a)], color=HEAT, lw=4.5, alpha=0.95, zorder=6)
+            else:
+                up = min(ph * 2, 1.0) * 0.45
+                down = max(0.0, ph * 2 - 1.0) * 0.45
+                ax.plot([x0, (R + up) * math.cos(a)], [y0, (R + up) * math.sin(a)], color=HEAT, lw=4.5, alpha=0.95, zorder=6)
+                if down > 0:
+                    b = a + 0.12
+                    ax.plot([(R + 0.45) * math.cos(a), (R + 0.45 - down) * math.cos(b)],
+                            [(R + 0.45) * math.sin(a), (R + 0.45 - down) * math.sin(b)], color=HEAT, lw=4.5, alpha=0.95, zorder=6)
+        # the Sun's light arriving on the day side
+        for k in range(7):
+            y = -2.2 + k * 0.73
+            x_edge = -math.sqrt(max(0.0, R * R - y * y))
+            ax.plot([-8, x_edge - 0.1], [y, y], color=GOLD, lw=2, alpha=0.35)
+        save(fig, out, i, still)
+    finish(out, still)
+
+
 def save(fig, out, i, still):
     os.makedirs(out, exist_ok=True)
     fig.savefig(os.path.join(out, "still.png" if still else f"{i:04d}.png"), facecolor=BG)
@@ -235,12 +293,13 @@ def finish(out, still):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["albedo", "deuterium", "line", "all"])
+    ap.add_argument("which", choices=["albedo", "deuterium", "line", "nightlid", "all"])
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
     a = ap.parse_args()
-    jobs = {"albedo": (render_albedo, 12), "deuterium": (render_deuterium, 12), "line": (render_line, 12)}
+    jobs = {"albedo": (render_albedo, 12), "deuterium": (render_deuterium, 12), "line": (render_line, 12),
+            "nightlid": (render_nightlid, 12)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
         fn(os.path.join(a.out, name), a.seconds or secs, a.still)
