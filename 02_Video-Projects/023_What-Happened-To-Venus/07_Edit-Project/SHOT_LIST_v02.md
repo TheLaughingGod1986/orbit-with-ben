@@ -135,11 +135,11 @@ Columns: **#** · **vo_in–out** · **source** · **id / asset** · **move** ·
 | 33 | 268.82 | 275.70 | NASA | Magellan global | push 5% | ever an ocean? | |
 | 34a | 275.70 | 283.70 | NASA | Magellan slow push | push 4% | spin 243 d retrograde | Split former #34. |
 | 34b | 283.70 | 291.78 | NASA | Magellan / Express | push 4% | day longer than year | |
-| 35 | 291.78 | 305.00 | **GENERATE** | Omni **`venus_early_ocean_cloud_omni_v01`** | — | Way et al. 2016 | Soft light, shallow sea, shining cloud; no cities/life/text. Frame sheet → Claude PASS. |
-| 36 | 305.00 | 312.96 | **GENERATE** | same Omni (continue / gently push in edit) | — | shallow oceans for billions of years | Reuse clip; no second mint. |
-| 37 | 312.96 | 325.00 | **GENERATE** | Omni **`venus_early_steam_lid_omni_v01`** | — | Turbet et al. 2021 | Hot dim sky, steam lid, bare rock, **no shoreline**. |
-| 38 | 325.00 | 331.34 | **GENERATE** | same Omni continue | — | oceans may never have formed | Reuse. |
-| 39 | 331.34 | 338.98 | ~~GENERATE~~ **DROPPED** | ~~Omni `orbit_between_two_venus_omni_v01`~~ | — | models disagree | **Dropped per Claude 5984886311:** v01 right world turned to Jupiter; the one approved remint (v02) drifted to a Mars-like world from ~2 s. Slot runs the two-Venus beats (#35–#38) as plates without Orbit; ORBIT ACTS line goes unseen (VO unchanged). |
+| 35 | 291.78 | 305.00 | **NASA ILLUS.** ~~GENERATE~~ | **`plates_v01/venus_ch3_plateA_ocean_nasa_v01.mp4` 0–13.22 s** (NASA GISS ancient-Venus ocean illustration, Way et al. 2016 release) | slow push, 3 cuts (4.6 / 4.3 / 4.32 s) | Way et al. 2016 | **Plan change per Claude 5984968873:** no Omni (planet starts drift to Jupiter/Mars). Credit **NASA**. £0. |
+| 36 | 305.00 | 312.96 | **NASA ILLUS.** | same plate A **13.22–21.18 s** | slow push, 2 cuts (3.96 / 4.0 s) | shallow oceans for billions of years | Same NASA illustration, new framings. £0. |
+| 37 | 312.96 | 325.00 | **STILL + HAZE** ~~GENERATE~~ | **`plates_v01/venus_ch3_plateB_steam_lid_v01.mp4` 0–12.04 s** (v02 sulphur-grey steam-lid globe still) | slow push, 3 cuts (4.2 / 3.92 / 3.92 s) + light drifting haze | Turbet et al. 2021 | **Plan change per Claude 5984968873:** no generation. Haze in plate is a preview; final haze = Remotion noise in the edit. £0. |
+| 38 | 325.00 | 331.34 | **STILL + HAZE** | same plate B **12.04–18.38 s** | 2 cuts (3.17 / 3.17 s) + haze | oceans may never have formed | £0. |
+| 39 | 331.34 | 338.98 | ~~GENERATE~~ **DROPPED** | ~~Omni `orbit_between_two_venus_omni_v01`~~ | — | models disagree | **Dropped per Claude 5984886311:** v01 right world turned to Jupiter; the one approved remint (v02) drifted to a Mars-like world from ~2 s. Slot runs the two-Venus beats (#35–#38) as plates without Orbit; ORBIT ACTS line goes unseen (VO unchanged). Fill = plate B **18.38–26.02 s** (2 cuts, 3.82 s each, ends on a slow pull-back). |
 | 40 | 338.98 | 347.54 | NASA | Magellan Maat / plains | push 5% | water gone / carbon in sky | Real Venus return. |
 | 41 | 347.54 | 348.24 | BREATH | — | — | (gap) | |
 
@@ -218,6 +218,7 @@ Render on Mini when Claude’s file lands; do **not** invent the Python here.
 | NASA EO/ISS White Cliffs or coral reef | EO / ISS gallery | clears chalk HOLD |
 | Venus twilight sky photo | NASA HQ | row 56 |
 | Parker WISPR, Pioneer, DAVINCI/VERITAS/EnVision | press / SVS | as v01 |
+| NASA GISS ancient-Venus ocean illustration (Way et al. 2016 release, 11 Aug 2016) | `nasa.gov/wp-content/uploads/2016/08/ancient-venus-new.jpg` (4096², sha1 696b521b) | rows 35–36; credit **NASA** |
 
 Pool dir: `07_Edit-Project/nasa_pool_v01/` (+ `nasa_pool_v01.json` / `fetch_nasa_pool.py`).
 
