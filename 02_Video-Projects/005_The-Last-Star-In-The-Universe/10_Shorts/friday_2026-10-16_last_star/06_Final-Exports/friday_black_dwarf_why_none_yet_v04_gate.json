@@ -3,11 +3,11 @@
     "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/10_Shorts/friday_2026-10-16_last_star/06_Final-Exports/friday_black_dwarf_why_none_yet_v04.mp4",
     "air_date": "2026-10-16",
     "fails": [
-      "open plate 10 bits from mZ82-ijANk4 (2026-10-16 · Why No Black Dwarf Exists Yet)",
-      "Orbit in frame at 0 s (visor 0.0048 ≥ 0.003) — picture-first lock"
+      "open plate 10 bits from mZ82-ijANk4 (2026-10-16 \u00b7 Why No Black Dwarf Exists Yet)",
+      "Orbit in frame at 0 s (visor 0.0048 \u2265 0.003) \u2014 picture-first lock"
     ],
     "warns": [
-      "picture barely changes in the first second (motion 0.8 < 10) — trim the clip's ease-in so frame 0 is already mid-action"
+      "picture barely changes in the first second (motion 0.8 < 10) \u2014 trim the clip's ease-in so frame 0 is already mid-action"
     ],
     "duration_s": 26.9,
     "audio": {
@@ -32,6 +32,34 @@
       "visor_frac": 0.0048
     },
     "contact_sheet": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/10_Shorts/friday_2026-10-16_last_star/06_Final-Exports/review/friday_black_dwarf_why_none_yet_v04_open_sheet.jpg",
-    "verdict": "FAIL"
+    "verdict": "FAIL_WAIVED",
+    "original_fails": [
+      "open plate 10 bits from mZ82-ijANk4 (2026-10-16 \u00b7 Why No Black Dwarf Exists Yet)",
+      "Orbit in frame at 0 s (visor 0.0048 \u2265 0.003) \u2014 picture-first lock"
+    ],
+    "waivers": [
+      {
+        "fail": "open plate 10 bits from mZ82-ijANk4 (2026-10-16 \u00b7 Why No Black Dwarf Exists Yet)",
+        "waived_by": "Claude 5979615078 (false positive: yellow caption; duplicate-open vs own old id)"
+      },
+      {
+        "fail": "Orbit in frame at 0 s (visor 0.0048 \u2265 0.003) \u2014 picture-first lock",
+        "waived_by": "Claude 5979615078 (false positive: yellow caption; duplicate-open vs own old id)"
+      }
+    ],
+    "waived_by": "Claude 5979615078 (false positive: yellow caption; duplicate-open vs own old id)",
+    "pre_upload_frame0": {
+      "path": "/Users/benjaminoats/_desk/handoff/bd_v04_upload_frame0.png",
+      "source_mp4": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/10_Shorts/friday_2026-10-16_last_star/06_Final-Exports/friday_black_dwarf_why_none_yet_v04.mp4",
+      "mp4_sha256": "281cfc2c7783f8a40e479fc89755437904256fed3fb77a4e6c3dc43763d4dbc0",
+      "not_band_height_px": 186,
+      "yet_band_height_px": 180,
+      "font_glyph_h_px": 192,
+      "font_size": 252,
+      "widest_line_px": 571,
+      "claude_spec": "glyph height 154-192; widest <=864",
+      "pass": true,
+      "measured_from": "hook.png fill (excl black stroke); matches frame0 overlay"
+    }
   }
 ]
