@@ -1301,7 +1301,7 @@ def dump_probe(page, out_dir: Path) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--login", action="store_true", help="Headed Google Ultra login")
-    ap.add_argument("--probe", action="store_true", help="One short Orbit test clip")
+    ap.add_argument("--probe", action="store_true", help="One short world-only test clip (no Orbit)")
     ap.add_argument("--prompt", default="", help="Scene action (Orbit-in-scene)")
     ap.add_argument("--out", type=Path, default=Path("/tmp/orbit_flow_veo_probe.mp4"))
     ap.add_argument("--pass-id", default="p0")
@@ -1320,9 +1320,10 @@ def main() -> None:
         return
 
     if args.probe and not args.prompt:
+        # World-only probe: never mint Orbit here (Omni-only for Orbit beats).
         args.prompt = (
-            "Orbit the orange robot floats beside the James Webb Space Telescope, "
-            "cream eyes curious, soft underside glow, deep space stars behind."
+            "Slow cinematic push through a deep-space star field, faint distant "
+            "nebula dust, no planets, no characters, no robots, silent picture only."
         )
 
     prompt = ""
