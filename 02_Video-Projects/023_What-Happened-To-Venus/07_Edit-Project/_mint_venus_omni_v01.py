@@ -26,7 +26,7 @@ IDENTITY = REPO / "01_Orbit-Character/05_Seedance-References/orbit-seedance-refe
 TOOLS = REPO / "04_Audio/tools"
 FLOOR_GBP = 5.0
 PROJECT = "gen-lang-client-0538779324"
-LOCATION = "us-central1"
+LOCATION = "global"  # Omni on Vertex is global-only (us-central1 -> 500)
 MODEL = "gemini-omni-flash-preview"
 
 sys.path.insert(0, str(TOOLS))
