@@ -139,7 +139,7 @@ Columns: **#** · **vo_in–out** · **source** · **id / asset** · **move** ·
 | 36 | 305.00 | 312.96 | **GENERATE** | same Omni (continue / gently push in edit) | — | shallow oceans for billions of years | Reuse clip; no second mint. |
 | 37 | 312.96 | 325.00 | **GENERATE** | Omni **`venus_early_steam_lid_omni_v01`** | — | Turbet et al. 2021 | Hot dim sky, steam lid, bare rock, **no shoreline**. |
 | 38 | 325.00 | 331.34 | **GENERATE** | same Omni continue | — | oceans may never have formed | Reuse. |
-| 39 | 331.34 | 338.98 | **GENERATE** | Omni **`orbit_between_two_venus_omni_v01`** | — | models disagree | Orbit locks: one Orbit, one face, cream eyes+pupils, no legs, one bottom glow. |
+| 39 | 331.34 | 338.98 | ~~GENERATE~~ **DROPPED** | ~~Omni `orbit_between_two_venus_omni_v01`~~ | — | models disagree | **Dropped per Claude 5984886311:** v01 right world turned to Jupiter; the one approved remint (v02) drifted to a Mars-like world from ~2 s. Slot runs the two-Venus beats (#35–#38) as plates without Orbit; ORBIT ACTS line goes unseen (VO unchanged). |
 | 40 | 338.98 | 347.54 | NASA | Magellan Maat / plains | push 5% | water gone / carbon in sky | Real Venus return. |
 | 41 | 347.54 | 348.24 | BREATH | — | — | (gap) | |
 
@@ -157,7 +157,7 @@ Columns: **#** · **vo_in–out** · **source** · **id / asset** · **move** ·
 | 45a | 389.88 | 396.50 | NASA | Blue Marble calm | push 5% | not next-century warning | Split former #45 (~20 s). |
 | 45b | 396.50 | 403.00 | NASA | Blue Marble / ocean | push 5% | fossil-fuel runaway unlikely | |
 | 45c | 403.00 | 409.60 | NASA | Magellan calm global | push 5% | Venus is deep time | |
-| 46 | 409.60 | 416.88 | **GENERATE** | Omni **`orbit_looks_back_earth_omni_v01`** | — | thin difference | **FIXED PROMPT:** Orbit small in dark looking at a **bright blue point of light** (Earth); cloud-white Venus behind — **NOT** a blue edge. |
+| 46 | 409.60 | 416.88 | **GENERATE — PASS** | Omni **`orbit_looks_back_earth_omni_v01`**, **use 0–5 s only** (`…_t0-5s.mp4`) | — | thin difference | Claude PASS 5984886311: on-model, Earth a blue point, hand-raise at ~frame 4. After ~5 s the push-in fills the frame, so cut out on the wave. |
 | 47 | 416.88 | 417.58 | BREATH | — | — | (gap) | |
 
 ### Ch 5 — Going Back (417.58–509.58) · no Venera; Magellan plains under lander VO; twilight Venus
@@ -184,7 +184,7 @@ Columns: **#** · **vo_in–out** · **source** · **id / asset** · **move** ·
 |---:|---|---|---|
 | 1 | `venus_early_ocean_cloud_omni_v01` | Vertex Omni | soft light, shallow sea, shining cloud; no cities/life/text |
 | 2 | `venus_early_steam_lid_omni_v01` | Vertex Omni | hot dim sky, steam lid, bare rock, no shoreline, no text |
-| 3 | `orbit_between_two_venus_omni_v01` | Vertex Omni | one Orbit, one face, cream eyes+pupils, no legs, one bottom glow |
+| 3 | ~~`orbit_between_two_venus_omni_v01`~~ **DROPPED** (v01 Jupiter, v02 Mars drift; Claude 5984886311) | Vertex Omni | one Orbit, one face, cream eyes+pupils, no legs, one bottom glow |
 | 4 | `orbit_looks_back_earth_omni_v01` | Vertex Omni | **bright blue point of light** (Earth); Venus behind; **not** blue edge |
 
 Paths: `04_Generated-Clips/01_Raw/omni_v01/`. Frame sheets: `…/sheets/*_6frame.jpg`. Report: `07_Edit-Project/omni_gen_report_v01.json`.
