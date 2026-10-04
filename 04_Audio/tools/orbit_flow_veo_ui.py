@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """World B-roll via Google Flow Veo UI (Ultra plan). Orbit beats are Omni-only.
 
-Uses Playwright against labs.google/fx/tools/flow so Google One → AI Ultra
+Uses Playwright against flow.google.com so Google One → AI Ultra
 Flow credits apply (**Veo 3.1** only — never Omni Flash / Nano Banana for Orbit CG).
 Prefer this over AI Studio (needs billed API key) and over GEMINI_API_KEY (separate billing).
 
@@ -39,7 +39,7 @@ sys.path.insert(0, str(TOOLS))
 
 import orbit_gemini_veo as veo  # noqa: E402 — shared prompt lock / strip_audio
 
-FLOW_HOME = "https://labs.google/fx/tools/flow"
+FLOW_HOME = "https://flow.google.com"
 DEFAULT_PROFILE = Path(
     os.environ.get(
         "ORBIT_FLOW_PROFILE",
@@ -258,7 +258,14 @@ def click_visible(page, *needles: str, timeout: int = 8000) -> bool:
     return True
 
 
-EDITOR_SELECTOR = 'flow-rich-text-editor .ProseMirror[contenteditable="true"], .ProseMirror[contenteditable="true"], [data-slate-editor="true"], textarea[placeholder*="create" i]'
+EDITOR_SELECTOR = (
+    'div.ProseMirror[contenteditable=true], '
+    'div.ProseMirror[contenteditable="true"], '
+    'flow-rich-text-editor .ProseMirror[contenteditable="true"], '
+    '.ProseMirror[contenteditable="true"], '
+    '[data-slate-editor="true"], '
+    'textarea[placeholder*="create" i]'
+)
 
 
 def prompt_editor(page):
@@ -921,9 +928,9 @@ def absolute_media_url(name_or_url: str) -> str:
     if name_or_url.startswith("http"):
         return name_or_url
     if name_or_url.startswith("/"):
-        return urljoin("https://labs.google", name_or_url)
+        return urljoin("https://flow.google.com", name_or_url)
     return (
-        "https://labs.google/fx/api/trpc/media.getMediaUrlRedirect?name="
+        "https://flow.google.com/fx/api/trpc/media.getMediaUrlRedirect?name="
         + name_or_url
     )
 
@@ -1352,11 +1359,30 @@ def main() -> None:
         return
 
     if args.probe:
-        # World-only probe: never mint Orbit here (Omni-only for Orbit beats).
+        # World-only probe: NEVER Orbit (Claude OWB #99 5980068954).
+        # Plain star-field only; delete/ignore any Orbit-like smoke clip.
         args.prompt = (
             "Slow cinematic push through a deep-space star field, faint distant "
             "nebula dust, no planets, no characters, no robots, silent picture only."
         )
+        args.scenery_only = True
+        for stale in (
+            Path("/tmp/orbit_flow_veo_probe.mp4"),
+            Path.home() / "_desk/handoff/flow_probe",
+        ):
+            if stale.is_file() and stale.stat().st_size > 0:
+                try:
+                    stale.unlink()
+                    print(f"  deleted stale probe clip: {stale}", flush=True)
+                except OSError:
+                    pass
+            elif stale.is_dir():
+                for p in stale.glob("*probe*.mp4"):
+                    try:
+                        p.unlink()
+                        print(f"  deleted Orbit-like/stale smoke clip: {p}", flush=True)
+                    except OSError:
+                        pass
 
     prompt = ""
     if args.prompt:
