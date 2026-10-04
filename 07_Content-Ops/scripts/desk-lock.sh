@@ -104,11 +104,24 @@ do_acquire() {
   local name="$1"
   local dir
   dir="$(lock_dir_for "$name")"
-  # Never reclaim during acquisition: metadata may still be being written.
-  # Explicit release is required for a dead holder.
+  # Serialize reclaimers; missing/fresh metadata always fails closed.
   if ! mkdir "$dir" 2>/dev/null; then
-    show_held "$dir"
-    exit 75
+    if mkdir "$dir.reclaim" 2>/dev/null; then
+      local pid modified now
+      pid="$(read_owner_pid "$dir" || true)"
+      modified="$(stat -f %m "$dir/owner.txt" 2>/dev/null || stat -c %Y "$dir/owner.txt" 2>/dev/null || echo 0)"
+      now="$(date +%s)"
+      if [[ "$pid" =~ ^[1-9][0-9]*$ ]] && ! pid_alive "$pid" &&
+          [[ "$modified" =~ ^[0-9]+$ ]] && (( modified > 0 && now - modified > 300 )); then
+        echo "desk-lock: reclaiming stale lock (pid=$pid dead, owner.txt >5m)" >&2
+        rm -rf "$dir"
+      fi
+      rmdir "$dir.reclaim"
+    fi
+    if ! mkdir "$dir" 2>/dev/null; then
+      show_held "$dir"
+      exit 75
+    fi
   fi
   DESK_LOCK_CMD="${DESK_LOCK_CMD:-acquire $name}" write_owner "$dir"
   echo "$dir"

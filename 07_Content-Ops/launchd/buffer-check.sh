@@ -26,8 +26,19 @@ main() {
     bash scripts/desk-lock.sh youtube-buffer -- npx tsx --env-file=.env scripts/buffer-mirror.ts check
   )
   local code=$?
-  # Contention stops before committing records or notifying.
-  (( code == 75 )) && return 75
+  # Persist contention across LaunchAgent runs; never commit on a collision.
+  local state_root="${DESK_LOCK_ROOT:-$HOME/_desk/locks}"
+  local state="$state_root/buffer-check.last-exit"
+  mkdir -p "$state_root"
+  local previous=""
+  [[ -f "$state" ]] && previous=$(cat "$state")
+  printf '%s\n' "$code" > "$state"
+  if (( code == 75 )); then
+    if [[ "$previous" == 75 ]]; then
+      osascript -e 'display notification "The Buffer check hit the desk lock twice in a row. See ~/Library/Logs/orbit-buffer-check.log" with title "Orbit With Ben"' 2>/dev/null
+    fi
+    return 75
+  fi
 
   if [[ $branch == main ]] && [[ -n $(git status --porcelain -- "$social") ]]; then
     git add -- "$social"

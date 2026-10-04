@@ -38,7 +38,18 @@ It covers the entire command, including an upload's Buffer mirror and local
 records. Dry runs also take the lock.
 
 A held lock stops with exit **75**. Wait for the owner to finish; inspect with
-`bash scripts/desk-lock.sh held-by youtube-buffer`. Acquisition never reclaims
-locks automatically. After verifying the holder is dead, use
-`bash scripts/desk-lock.sh release youtube-buffer`. Missing owner metadata is
-held too, since another process may still be writing it.
+`bash scripts/desk-lock.sh held-by youtube-buffer`. Acquisition reclaims a lock
+only when the owner pid is dead **and** `owner.txt` is older than 5 minutes
+(SIGKILL leftovers). Missing or fresh owner metadata stays held, since another
+process may still be writing it. Force-clear with
+`DESK_LOCK_FORCE=1 bash scripts/desk-lock.sh release youtube-buffer` only when
+ops has verified it is safe.
+
+`launchd/buffer-check.sh` stays quiet on a single exit 75 (temporary contention).
+A second consecutive 75 posts a macOS notification so a stuck lock cannot stall
+the daily mirror silently.
+
+`youtube-package-upload.ts` refuses a second live upload of the same package +
+file sha256 unless `--force-new`. Buffer mirror already skips channels that have
+a post id, and `executeActions` re-checks the ledger under the lock before each
+create.
