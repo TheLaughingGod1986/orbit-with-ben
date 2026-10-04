@@ -4,7 +4,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { createFileBufferStore, type BufferStore } from "../src/lib/publishing/buffer-store";
-import { mirrorVideo, runBufferCheck, videoIdFromBlobPath, type MirrorDeps } from "../src/lib/publishing/buffer-runner";
+import { executeActions, mirrorVideo, runBufferCheck, videoIdFromBlobPath, type MirrorDeps } from "../src/lib/publishing/buffer-runner";
 import type { Ledger, Plan, YouTubeVideo, BufferChannel } from "../src/lib/publishing/buffer-mirror";
 
 const NOW = new Date("2026-10-01T09:00:00Z");
@@ -487,4 +487,15 @@ describe("Blob clean-up", () => {
     expect(out.mediaCleaned).toEqual([expect.objectContaining({ videoId: "gone0000001", reason: expect.stringMatching(/orphaned/), deleted: true })]);
     expect(deleteMedia).toHaveBeenCalledTimes(1);
   });
+});
+
+
+it("refuses create actions when the channel acquired a post ID after planning", async () => {
+  const d = deps();
+  const outcome = await mirrorVideo({ videoId: video().id, longId: LONG.id, mediaUrl: "https://example.com/clip.mp4", dryRun: true }, d);
+  await d.store.record(outcome.plan, "instagram", "existing");
+  const results = await executeActions(outcome.plan, d.client!, d.store);
+  expect(results.find(r => r.channel === "instagram")).toMatchObject({ ok: false, error: expect.stringContaining("Refusing duplicate") });
+  expect(d.client!.createPost).toHaveBeenCalledTimes(2);
+  expect((await d.store.load()).videos[video().id].channels.instagram?.postId).toBe("existing");
 });

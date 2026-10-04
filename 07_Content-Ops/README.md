@@ -27,3 +27,29 @@ npm run youtube:auth      # sign in as Orbit With Ben; saves YOUTUBE_REFRESH_TOK
 | `npm test` / `npm run typecheck` / `npm run lint` | Checks |
 
 Rules for all of it: `AGENTS.md` and `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` (§9 upload, §12 Buffer).
+
+### Mini writer lock
+
+YouTube uploads, listing/comment/disclosure writers and every Buffer CLI command
+acquire the shared `youtube-buffer` lock, including direct `npx tsx` calls and the
+daily shell wrapper. The atomic mkdir lock lives at
+`~/_desk/locks/youtube-buffer.lock/`; `DESK_LOCK_ROOT` overrides the root for tests.
+It covers the entire command, including an upload's Buffer mirror and local
+records. Dry runs also take the lock.
+
+A held lock stops with exit **75**. Wait for the owner to finish; inspect with
+`bash scripts/desk-lock.sh held-by youtube-buffer`. Acquisition reclaims a lock
+only when the owner pid is dead **and** `owner.txt` is older than 5 minutes
+(SIGKILL leftovers). Missing or fresh owner metadata stays held, since another
+process may still be writing it. Force-clear with
+`DESK_LOCK_FORCE=1 bash scripts/desk-lock.sh release youtube-buffer` only when
+ops has verified it is safe.
+
+`launchd/buffer-check.sh` stays quiet on a single exit 75 (temporary contention).
+A second consecutive 75 posts a macOS notification so a stuck lock cannot stall
+the daily mirror silently.
+
+`youtube-package-upload.ts` refuses a second live upload of the same package +
+file sha256 unless `--force-new`. Buffer mirror already skips channels that have
+a post id, and `executeActions` re-checks the ledger under the lock before each
+create.

@@ -14,6 +14,8 @@ import path from "path";
 import type { SocialCopy } from "@/lib/publishing/buffer-mirror";
 
 export type UploadRecord = {
+  packageDir?: string;
+  sha256?: string;
   kind?: "short" | "long";
   /** Short: the mp4 that went to YouTube. Repo-relative in the registry. */
   file?: string;

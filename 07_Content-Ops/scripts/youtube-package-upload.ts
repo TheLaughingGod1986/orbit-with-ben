@@ -12,6 +12,8 @@
  * Optional: PACKAGE_MANIFEST.json inside the package dir, or --manifest path.
  * After a live upload, writes *_PACKAGE_UPLOAD_RESULT.json into Schedule/ (or package root).
  */
+import { ensureDeskLock } from "./with-desk-lock";
+import { checkPackageDuplicate } from "../src/lib/publishing/package-duplicate";
 import fs from "fs";
 import path from "path";
 import { isDryRun } from "../src/lib/env";
@@ -50,7 +52,7 @@ async function main() {
   const packageDir = arg("package");
   if (!packageDir) {
     console.error(
-      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--no-buffer] [--standalone] [--dry-run]",
+      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--no-buffer] [--standalone] [--force-new] [--dry-run]",
     );
     process.exit(1);
   }
@@ -73,6 +75,11 @@ async function main() {
       madeForKids:
         arg("made-for-kids") != null ? parseBool(arg("made-for-kids"), false) : undefined,
     },
+  });
+
+  const identity = await checkPackageDuplicate({
+    packageDir: resolved.packageDir, videoPath: resolved.videoPath,
+    uploadsFile: UPLOADS_FILE, repoRoot: REPO_ROOT, forceNew: flag("force-new"),
   });
 
   // Dry runs never need the YouTube login.
@@ -138,6 +145,7 @@ async function main() {
   if (!dryRun && upload.success && upload.platformPostId) {
     // Record which files this upload came from, so the daily check can always find them.
     registerUpload(UPLOADS_FILE, REPO_ROOT, upload.platformPostId, {
+      ...identity,
       kind: resolved.format === "shorts" ? "short" : "long",
       file: resolved.videoPath,
       thumb: resolved.thumbnailPath ?? undefined,
@@ -211,6 +219,7 @@ async function main() {
       responseSummary: upload.responseSummary || null,
     },
     package: {
+      ...identity,
       title: resolved.title,
       format: resolved.format,
       privacy: resolved.privacy,
@@ -242,6 +251,8 @@ async function main() {
 
   if (!upload.success) process.exit(1);
 }
+
+ensureDeskLock();
 
 main().catch((e) => {
   console.error(e);
