@@ -27,6 +27,7 @@ from contextlib import contextmanager
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -927,23 +928,76 @@ def absolute_media_url(name_or_url: str) -> str:
     )
 
 
+def probe_duration_s(path: Path) -> float | None:
+    """Return media duration in seconds via ffprobe, or None if unavailable."""
+    try:
+        out = subprocess.check_output(
+            [
+                "ffprobe",
+                "-v",
+                "error",
+                "-show_entries",
+                "format=duration",
+                "-of",
+                "default=noprint_wrappers=1:nokey=1",
+                str(path),
+            ],
+            text=True,
+            timeout=30,
+        ).strip()
+        return float(out) if out else None
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError, subprocess.TimeoutExpired):
+        return None
+
+
+def is_googlevideo_url(url: str) -> bool:
+    return "googlevideo.com" in (url or "").lower()
+
+
+def save_mp4_bytes(body: bytes, dest: Path, *, min_bytes: int = 150_000, min_duration_s: float = 1.0) -> bool:
+    """Write body only if it looks like a real mp4 of sane size/duration."""
+    if b"ftyp" not in body[:32] or len(body) < min_bytes:
+        return False
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(body)
+    dur = probe_duration_s(dest)
+    if dur is not None and dur < min_duration_s:
+        try:
+            dest.unlink()
+        except OSError:
+            pass
+        return False
+    if dur is not None:
+        print(f"  saved mp4 size={len(body)} duration={dur:.2f}s", flush=True)
+    else:
+        print(f"  saved mp4 size={len(body)} (ffprobe unavailable)", flush=True)
+    return True
+
+
+def fetch_url_to_mp4(page, url: str, dest: Path) -> bool:
+    """Direct GET of a media URL (prefer googlevideo); no Playwright download event."""
+    try:
+        resp = page.request.get(url, timeout=180_000)
+    except Exception as e:
+        print(f"  direct fetch failed: {e}", flush=True)
+        return False
+    if resp.status not in (200, 206):
+        return False
+    return save_mp4_bytes(resp.body(), dest)
+
+
 def download_media(page, name_or_url: str, dest: Path) -> int:
     url = absolute_media_url(name_or_url)
     resp = page.request.get(url, timeout=180_000)
-    if resp.status != 200:
+    if resp.status not in (200, 206):
         raise RuntimeError(f"media download HTTP {resp.status}: {url[:120]}")
     data = resp.body()
-    ct = (resp.headers.get("content-type") or "").lower()
-    if "video" not in ct and not data[:12].startswith(b"\x00\x00\x00"):
-        # Still allow if large enough binary
-        if len(data) < 200_000:
-            raise RuntimeError(
-                f"Unexpected media type {ct!r} size={len(data)} for {url[:120]}"
-            )
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_bytes(data)
+    if not save_mp4_bytes(data, dest, min_bytes=200_000):
+        ct = (resp.headers.get("content-type") or "").lower()
+        raise RuntimeError(
+            f"Unexpected media type {ct!r} size={len(data)} for {url[:120]}"
+        )
     return len(data)
-
 
 def wait_and_download(
     page,
@@ -956,8 +1010,14 @@ def wait_and_download(
     """Wait for a new Flow media video and download it. Returns media id/url."""
     video_urls: set[str] = set()
     def remember_video(response):
-        if response.status in (200, 206) and "video/" in response.headers.get("content-type", ""):
-            video_urls.add(response.url)
+        # Claude 5980068954 / 5980079637: prefer googlevideo mp4 response URLs
+        # and fetch them directly (do not rely on Playwright download events).
+        if response.status not in (200, 206):
+            return
+        url = response.url or ""
+        ct = (response.headers.get("content-type") or "").lower()
+        if is_googlevideo_url(url) or "video/" in ct or "mp4" in ct:
+            video_urls.add(url)
     page.on("response", remember_video)
     try:
         return _poll_and_download(page, dest, before_ids=before_ids,
@@ -993,27 +1053,23 @@ def _poll_and_download(page, dest, *, before_ids, timeout_s, min_elapsed_s, vide
                         break
         elapsed = time.time() - t0
         skip_download = elapsed < min_elapsed_s
+        # Prefer googlevideo mp4 response URLs: direct fetch + size/duration check.
+        if not skip_download:
+            gv = [u for u in new_ids if is_googlevideo_url(u)]
+            for url in reversed(gv):
+                if fetch_url_to_mp4(page, url, dest):
+                    return url
         # Prefer ids that resolve as video/mp4 (Flow sometimes returns octet-stream)
         for mid in reversed(new_ids):
             if skip_download:
                 continue
             if "/asb/" in mid:
                 continue
+            if is_googlevideo_url(mid):
+                continue  # already tried above
             url = absolute_media_url(mid)
             try:
-                head = page.request.get(url, timeout=60_000)
-                ct = (head.headers.get("content-type") or "").lower()
-                body = head.body()
-                looks_video = (
-                    "video" in ct
-                    or "mp4" in ct
-                    or "octet-stream" in ct
-                    or ct == ""
-                    or body[:12].find(b"ftyp") >= 0
-                )
-                if head.status in (200, 206) and b"ftyp" in body[:32] and len(body) > 150_000:
-                    dest.parent.mkdir(parents=True, exist_ok=True)
-                    dest.write_bytes(body)
+                if fetch_url_to_mp4(page, url, dest):
                     return mid
             except Exception:
                 continue
