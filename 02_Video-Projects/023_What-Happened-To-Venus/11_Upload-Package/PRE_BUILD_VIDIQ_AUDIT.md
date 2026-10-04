@@ -52,5 +52,6 @@ Treat “terrifying” / “hell” neighbour titles as **neighbours only** — 
 - [x] Neighbour pass (≥3 at 1M+)  
 - [ ] vidIQ keyword scores  
 - [ ] Title score ≥90  
-- [ ] Script reviewer ≥90  
+- [x] Script reviewer ≥90: PASS 90.4 on `01_Script/venus_script_master_v01.md` (4 Oct). This is the reviewer only, not a vidIQ sign-off.  
+- vidIQ sign-off **waived by Claude, 4 Oct**, as for 022: vidIQ is unavailable and the neighbour pass was refreshed 4 Oct. The vidIQ and title-score boxes stay unticked. `gate:episode` shows BLOCK on this row by design.  
 - [ ] Nothing public yet  
