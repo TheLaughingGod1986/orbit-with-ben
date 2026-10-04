@@ -1,0 +1,44 @@
+{
+  "tool": "owb_short_vo_check_v01",
+  "status": "PASS",
+  "fails": [],
+  "warns": [
+    "pace 137.8 wpm under 145"
+  ],
+  "duration_s": 22.208,
+  "lufs_integrated": -21.0,
+  "mean_volume_db": -23.9,
+  "max_volume_db": -5.1,
+  "wpm": 137.8,
+  "words": 51,
+  "silence_gt_1s": [],
+  "script_whisper_match_rate_pct": 92.16,
+  "script_whisper_mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "thirty",
+        "percent"
+      ],
+      "whisper": [
+        "30"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "under",
+        "water"
+      ],
+      "whisper": [
+        "underwater"
+      ]
+    }
+  ],
+  "mismatches_are_number_spelling_only": false,
+  "raw_duration_s": 25.52,
+  "pause_trim_max_gap_s": 0.4,
+  "sha256_mp3": "a010520c96355708784b72454f0340fa2d9ec92e86e1f35e9fc0bd7296a6f4d4",
+  "updated": "2026-10-04 17:55 BST",
+  "note": "pause-trim applied to clear silence>1s; same TTS take"
+}

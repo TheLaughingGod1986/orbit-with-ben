@@ -1,0 +1,10 @@
+VO CHECK — Sun 022 Short Wed 21 (robot / sun)
+Status: PASS
+Duration: 23.189s (raw 26.00s → pause-trim max_gap=0.4s)
+LUFS integrated: -21.3
+mean_volume: -24.1 dB | max_volume: -5.5 dB
+Pace: 150.1 wpm (58 words)
+Script vs Scribe: 94.83% match; see script_whisper_diff.json
+Fails: none
+Warns: none
+Notes: HOS vo_check.py crashed (faster-whisper/av metadata_errors on Py3.14). Used same loudness/silence gates + ElevenLabs Scribe word diff.
