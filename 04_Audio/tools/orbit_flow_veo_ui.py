@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Orbit CG via Google Flow Veo UI (Ultra plan — default picture path).
+"""World B-roll via Google Flow Veo UI (Ultra plan). Orbit beats are Omni-only.
 
 Uses Playwright against labs.google/fx/tools/flow so Google One → AI Ultra
 Flow credits apply (**Veo 3.1** only — never Omni Flash / Nano Banana for Orbit CG).
@@ -13,7 +13,7 @@ One-time auth (headed) — same Google profile as AI Studio works:
 Generate:
   python3 04_Audio/tools/orbit_flow_veo_ui.py --probe
   python3 04_Audio/tools/orbit_flow_veo_ui.py \\
-    --prompt "Orbit floats beside JWST…" --out /tmp/orbit_test.mp4
+    --scenery-only --prompt "Distant stars and nebula dust…" --out /tmp/orbit_test.mp4
 
 Fallbacks (only if Flow UI is broken):
   python3 04_Audio/tools/orbit_aistudio_veo_ui.py --probe
@@ -22,6 +22,8 @@ Fallbacks (only if Flow UI is broken):
 from __future__ import annotations
 
 import argparse
+import fcntl
+from contextlib import contextmanager
 import json
 import os
 import re
@@ -102,7 +104,9 @@ def launch_context(playwright, *, headed: bool, profile: Path, slow_mo: int = 0)
     # Prefer installed Chrome (matches Ultra Google session better)
     try:
         ctx = playwright.chromium.launch_persistent_context(channel="chrome", **kwargs)
-    except Exception:
+    except Exception as exc:
+        if any(marker in str(exc).lower() for marker in ("singleton", "processsingleton", "profile is in use")):
+            raise RuntimeError(f"Flow Chrome profile already in use: {profile}") from exc
         ctx = playwright.chromium.launch_persistent_context(**kwargs)
     page = ctx.pages[0] if ctx.pages else ctx.new_page()
     try:
@@ -128,11 +132,11 @@ _TRANSIENT_UI_MARKERS = (
     "timeout",
     "could not find new project",
     "agent prompt editor not visible",
+    "flow prompt editor not visible",
     "not in flow project",
     "settings save/back not found",
     "orbit prompt chip missing",
     "flow video not ready",
-    "flow generation failed",
     "download too small",
 )
 
@@ -253,19 +257,26 @@ def click_visible(page, *needles: str, timeout: int = 8000) -> bool:
     return True
 
 
+EDITOR_SELECTOR = 'flow-rich-text-editor .ProseMirror[contenteditable="true"], .ProseMirror[contenteditable="true"], [data-slate-editor="true"], textarea[placeholder*="create" i]'
+
+
+def prompt_editor(page):
+    """Use the visible composer, never a hidden or asset-editing editor."""
+    editors = page.locator(EDITOR_SELECTOR)
+    for i in range(editors.count()):
+        ed = editors.nth(i)
+        if ed.is_visible():
+            box = ed.bounding_box()
+            if box and box["width"] >= 50 and box["height"] > 0:
+                return ed
+    return None
+
+
 def editor_box(page) -> dict | None:
     try:
-        return safe_evaluate(
-            page,
-            """() => {
-              const el = document.querySelector('[data-slate-editor="true"]');
-              if (!el) return null;
-              const r = el.getBoundingClientRect();
-              return {w: r.width, h: r.height, x: r.x, y: r.y};
-            }""",
-            retries=3,
-            pause_ms=500,
-        )
+        ed = prompt_editor(page)
+        r = ed.bounding_box() if ed is not None else None
+        return {"w": r["width"], "h": r["height"], "x": r["x"], "y": r["y"]} if r else None
     except Exception:
         return None
 
@@ -285,52 +296,25 @@ def editor_usable(page) -> bool:
 
 def ensure_agent_session(page) -> None:
     """Make sure the right-hand agent session + prompt bar are open."""
-    if editor_usable(page):
+    if editor_usable(page) and "/edit/" not in page.url:
         return
-    # Prefer JS clicks — Playwright locator clicks often hang on Flow overlays.
-    try:
-        safe_evaluate(
-            page,
-            """() => {
-              const clickMatch = (re) => {
-                for (const el of document.querySelectorAll('button,div,[role="button"]')) {
-                  const t = (el.innerText || '').trim().replace(/\\n/g, ' ');
-                  if (re.test(t)) { el.click(); return t.slice(0, 60); }
-                }
-                return null;
-              };
-              clickMatch(/history/i);
-              // session row
-              for (const el of document.querySelectorAll('button,div,[role="button"]')) {
-                const t = (el.innerText || '').trim();
-                const r = el.getBoundingClientRect();
-                if (r.width > 120 && r.height > 24 && r.x > 900 &&
-                    /untitled|session|orbit|video|cinematic/i.test(t) && t.length < 80) {
-                  el.click(); return;
-                }
-              }
-              clickMatch(/new session|edit_square/i);
-            }""",
-        )
-    except Exception as e:
-        print(f"  ensure_agent_session race: {e}", flush=True)
-        settle_after_nav(page, wait_ms=800)
-    page.wait_for_timeout(1200)
-    if editor_usable(page):
-        return
-    try:
-        safe_evaluate(
-            page,
-            """() => {
-              for (const b of document.querySelectorAll('button')) {
-                const t = (b.innerText || '').trim().replace(/\\n/g, ' ');
-                if (/new session|untitled session/i.test(t)) { b.click(); return; }
-              }
-            }""",
-        )
-    except Exception:
-        pass
-    page.wait_for_timeout(1200)
+    # A clip detail page has an edit composer, not the generation composer.
+    if "/edit/" in page.url:
+        page.goto(page.url.split("/edit/")[0], wait_until="domcontentloaded")
+        settle_after_nav(page)
+    for _ in range(3):
+        if editor_usable(page):
+            return
+        for label in ("New session", "Start creating", "Untitled session"):
+            control = page.get_by_role("button", name=re.compile(label, re.I))
+            for i in range(control.count()):
+                if control.nth(i).is_visible():
+                    control.nth(i).click(timeout=5000)
+                    break
+            if editor_usable(page):
+                return
+        click_visible(page, "edit_square")
+        page.wait_for_timeout(1200)
 
 
 def _ensure_project_once(page) -> str:
@@ -379,7 +363,7 @@ def _ensure_project_once(page) -> str:
         raise RuntimeError(f"Not in Flow project: {page.url}")
     if not editor_usable(page):
         raise RuntimeError(
-            "Flow agent prompt editor not visible — open a session in the UI"
+            "Flow prompt editor not visible — open a session in the UI"
         )
     return page.url
 
@@ -438,6 +422,19 @@ def read_selected_video_model(page) -> str | None:
 def configure_veo_settings(page, *, model: str = DEFAULT_MODEL) -> None:
     """Open agent Settings → Never confirm → Veo 3 model → 16:9 x1 → Save."""
     model = assert_veo3_model(model)
+    trigger = page.get_by_role("button", name="Settings trigger", exact=True)
+    if trigger.count() and trigger.first.is_visible():
+        trigger.first.click()
+        page.get_by_role("button", name=re.compile(r"^videocam Video$|^Video$")).click()
+        page.get_by_role("button", name=re.compile(r"^crop_16_9 16:9$|^16:9$")).click()
+        page.get_by_role("button", name="x1", exact=True).click()
+        dropdown = page.locator('button').filter(has_text=re.compile(r"(Omni|Veo).*arrow_drop_down"))
+        dropdown.last.click()
+        page.get_by_role("menuitem", name=re.compile(r"^(volume_up )?" + re.escape(model) + r"$")).click()
+        page.keyboard.press("Escape")
+        if model not in trigger.inner_text():
+            raise RuntimeError("Flow selected model verification failed")
+        return
     if not click_visible(page, "tune"):
         # Fallback: Settings near prompt
         if not click_visible(page, "settings"):
@@ -872,36 +869,14 @@ def set_prompt(page, prompt: str) -> None:
     box = editor_box(page)
     if not box or not editor_usable(page):
         raise RuntimeError("Flow prompt editor not visible (open agent session)")
-    # Click toward the right of the editor so we don't focus/remove the chip
-    page.mouse.click(box["x"] + min(box["w"] - 40, 180), box["y"] + max(6, box["h"] / 2))
-    page.wait_for_timeout(120)
-    page.evaluate(
-        """() => {
-          const ed = document.querySelector('[data-slate-editor="true"]');
-          if (!ed) return;
-          ed.focus();
-          const sel = window.getSelection();
-          if (!sel) return;
-          const range = document.createRange();
-          range.selectNodeContents(ed);
-          sel.removeAllRanges();
-          sel.addRange(range);
-        }"""
-    )
-    page.keyboard.press("Backspace")
-    page.wait_for_timeout(80)
-    # Clipboard paste is much faster than per-char type for long locks
-    try:
-        page.evaluate(
-            """async (text) => {
-              await navigator.clipboard.writeText(text);
-            }""",
-            prompt,
-        )
-        page.keyboard.press("Meta+V")
-    except Exception:
-        page.keyboard.type(prompt, delay=0)
-    page.wait_for_timeout(250)
+    ed = prompt_editor(page)
+    ed.click(timeout=5000)
+    # Playwright fill dispatches input for ProseMirror/Slate and avoids stale
+    # clipboard contents or platform-specific Meta+V behavior.
+    ed.fill(prompt, timeout=10_000)
+    actual = ed.input_value() if ed.evaluate("e => e.tagName === 'TEXTAREA'") else ed.inner_text()
+    if actual.strip() != prompt.strip():
+        raise RuntimeError("Flow prompt text verification failed — not submitting")
 
 
 def submit_create(page) -> None:
@@ -935,7 +910,10 @@ def dismiss_soft_prompts(page) -> None:
 
 def collect_media_ids(page) -> set[str]:
     html = page.content()
-    return set(MEDIA_REDIRECT_RE.findall(html))
+    ids = set(MEDIA_REDIRECT_RE.findall(html))
+    urls = safe_evaluate(page, """() => [...document.querySelectorAll('video, video source, a[download], img[src*='/asb/']')]
+        .map(e => e.currentSrc || e.src || e.href).filter(u => u && /^https?:/.test(u))""")
+    return ids | set(urls)
 
 
 def absolute_media_url(name_or_url: str) -> str:
@@ -976,15 +954,25 @@ def wait_and_download(
     min_elapsed_s: float = 0,
 ) -> str:
     """Wait for a new Flow media video and download it. Returns media id/url."""
+    video_urls: set[str] = set()
+    def remember_video(response):
+        if response.status in (200, 206) and "video/" in response.headers.get("content-type", ""):
+            video_urls.add(response.url)
+    page.on("response", remember_video)
+    try:
+        return _poll_and_download(page, dest, before_ids=before_ids,
+                                  timeout_s=timeout_s, min_elapsed_s=min_elapsed_s,
+                                  video_urls=video_urls)
+    finally:
+        page.remove_listener("response", remember_video)
+
+
+def _poll_and_download(page, dest, *, before_ids, timeout_s, min_elapsed_s, video_urls):
     t0 = time.time()
+    opened_tiles: set[str] = set()
     last_status = ""
-    asked_status = False
     failed_since: float | None = None
-    retry_clicks = 0
-    seen_generating = False
-    stale_ids: set[str] = set()
     while time.time() - t0 < timeout_s:
-        dismiss_soft_prompts(page)
         try:
             ids = collect_media_ids(page)
         except Exception as e:
@@ -992,14 +980,24 @@ def wait_and_download(
                 settle_after_nav(page, wait_ms=800)
                 continue
             raise
-        new_ids = [i for i in ids if i not in before_ids]
+        new_ids = sorted((ids | video_urls) - before_ids)
+        for tile_url in new_ids:
+            if "/asb/" in tile_url and tile_url not in opened_tiles:
+                tiles = page.locator("img")
+                for i in range(tiles.count()):
+                    tile = tiles.nth(i)
+                    if tile.get_attribute("src") == tile_url and tile.is_visible():
+                        tile.click(timeout=5000)
+                        opened_tiles.add(tile_url)
+                        page.wait_for_timeout(1200)
+                        break
         elapsed = time.time() - t0
-        if elapsed < max(8.0, min_elapsed_s * 0.35):
-            stale_ids.update(new_ids)
         skip_download = elapsed < min_elapsed_s
         # Prefer ids that resolve as video/mp4 (Flow sometimes returns octet-stream)
         for mid in reversed(new_ids):
-            if skip_download or mid in stale_ids:
+            if skip_download:
+                continue
+            if "/asb/" in mid:
                 continue
             url = absolute_media_url(mid)
             try:
@@ -1013,7 +1011,7 @@ def wait_and_download(
                     or ct == ""
                     or body[:12].find(b"ftyp") >= 0
                 )
-                if looks_video and len(body) > 150_000:
+                if head.status in (200, 206) and b"ftyp" in body[:32] and len(body) > 150_000:
                     dest.parent.mkdir(parents=True, exist_ok=True)
                     dest.write_bytes(body)
                     return mid
@@ -1040,65 +1038,18 @@ def wait_and_download(
             if k in low:
                 status = k
                 break
-        if status in ("generating", "thinking", "creating", "working", "queue", "scheduled"):
-            seen_generating = True
         line = f"  wait {int(time.time() - t0)}s status={status or '…'} new_media={len(new_ids)}"
         if line != last_status:
             print(line, flush=True)
             last_status = line
 
-        # Flow often flashes "failed" while a usable mp4 is still arriving.
-        # Soft-retry the UI; do not abort the whole wait on that banner alone.
-        # But do not burn the full timeout once retries are exhausted.
-        if status == "failed":
+        if status == "failed" and not new_ids:
             if failed_since is None:
                 failed_since = time.time()
-            elif retry_clicks < 2 and time.time() - failed_since > 45:
-                clicked = (
-                    click_visible(page, "try again")
-                    or click_visible(page, "retry")
-                    or click_visible(page, "regenerate")
-                )
-                retry_clicks += 1
-                failed_since = time.time()
-                print(
-                    f"  Flow failed banner — soft retry click "
-                    f"({'hit' if clicked else 'miss'}) #{retry_clicks}",
-                    flush=True,
-                )
-            elif (
-                retry_clicks >= 2
-                and time.time() - failed_since > 90
-                and not new_ids
-            ):
-                # Only abort if nothing new appeared — new_media often still downloads
-                # even while the banner flashes "failed".
-                raise RuntimeError(
-                    "Flow stuck in failed state after soft retries"
-                )
-            elif new_ids:
-                # Media present — keep polling download; reset stuck timer
-                failed_since = time.time()
+            elif time.time() - failed_since > 90:
+                raise RuntimeError("Flow generation failed; no automatic paid retry")
         else:
             failed_since = None
-
-        # Agent queued due to demand — ask for status once after ~90s
-        if (
-            not asked_status
-            and time.time() - t0 > 90
-            and ("queue" in low or "high demand" in low or "scheduled" in low)
-        ):
-            try:
-                set_prompt(
-                    page,
-                    "Please check the status of the Orbit video you scheduled and "
-                    "share it when ready.",
-                )
-                submit_create(page)
-                asked_status = True
-                print("  asked agent for video status", flush=True)
-            except Exception as e:
-                print(f"  status ask skipped: {e}", flush=True)
 
         # Click into All Media / videos if present to surface completed clips
         if time.time() - t0 > 60 and int(time.time() - t0) % 45 < 4:
@@ -1121,6 +1072,8 @@ def _generate_clip_once(
     scenery_only: bool = False,
 ) -> dict:
     """One attempt: generate a silent Veo clip via Google Flow Ultra UI."""
+    if not scenery_only:
+        raise RuntimeError("Orbit beats are Omni-only; Flow Veo accepts scenery_only=True only")
     t0 = time.time()
     ref = None
     if not scenery_only:
@@ -1130,7 +1083,7 @@ def _generate_clip_once(
         print("  scenery-only (no Orbit identity ref)", flush=True)
 
     if reuse_project and "/project/" in (page.url or ""):
-        url = page.url
+        url = ensure_project(page)
     else:
         page.goto(FLOW_HOME, wait_until="domcontentloaded", timeout=120_000)
         settle_after_nav(page, wait_ms=1500)
@@ -1216,7 +1169,7 @@ def generate_clip(
     timeout_s: int = 900,
     reuse_project: bool = False,
     scenery_only: bool = False,
-    attempts: int = 3,
+    attempts: int = 1,
 ) -> dict:
     """Generate one silent Veo clip via Google Flow Ultra UI (with soft retries)."""
     last: BaseException | None = None
@@ -1237,7 +1190,10 @@ def generate_clip(
             last = e
             if "not logged into google flow" in str(e).lower():
                 raise
-            if attempt >= attempts or not is_transient_ui_error(e):
+            # Never resubmit a generation after a wait/download failure.
+            if (attempt >= attempts or not is_transient_ui_error(e)
+                    or any(marker in str(e).lower() for marker in
+                           ("video not ready", "download", "failed state"))):
                 raise
             print(
                 f"  generate_clip soft-retry {attempt}/{attempts}: {e}",
@@ -1249,12 +1205,31 @@ def generate_clip(
     raise last
 
 
+@contextmanager
+def profile_lock(profile: Path):
+    """Serialize launch, generation, polling and download for this profile.
+
+    Keep the lock file: unlinking it would allow waiters to lock different inodes.
+    Chrome's own SingletonLock additionally excludes unmanaged Chrome sessions.
+    """
+    lock_path = profile.parent / (profile.name + ".flow.lock")
+    with lock_path.open("a") as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise RuntimeError(f"Flow profile busy: {profile}") from None
+        try:
+            yield
+        finally:
+            fcntl.flock(lock, fcntl.LOCK_UN)
+
+
 def login_flow(profile: Path) -> None:
     from playwright.sync_api import sync_playwright
 
     print(f"Profile: {profile}", flush=True)
     print("Opening Google Flow — sign in with the Google One Ultra account…", flush=True)
-    with sync_playwright() as p:
+    with profile_lock(profile), sync_playwright() as p:
         ctx, page = launch_context(p, headed=True, profile=profile, slow_mo=50)
         try:
             page.goto(FLOW_HOME, wait_until="domcontentloaded", timeout=120_000)
@@ -1304,6 +1279,7 @@ def main() -> None:
     ap.add_argument("--probe", action="store_true", help="One short world-only test clip (no Orbit)")
     ap.add_argument("--prompt", default="", help="Scene action (Orbit-in-scene)")
     ap.add_argument("--out", type=Path, default=Path("/tmp/orbit_flow_veo_probe.mp4"))
+    ap.add_argument("--scenery-only", action="store_true", help="World B-roll only; Orbit must use Omni")
     ap.add_argument("--pass-id", default="p0")
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--profile", type=Path, default=None)
@@ -1319,7 +1295,7 @@ def main() -> None:
         login_flow(profile)
         return
 
-    if args.probe and not args.prompt:
+    if args.probe:
         # World-only probe: never mint Orbit here (Omni-only for Orbit beats).
         args.prompt = (
             "Slow cinematic push through a deep-space star field, faint distant "
@@ -1328,7 +1304,7 @@ def main() -> None:
 
     prompt = ""
     if args.prompt:
-        prompt = veo.build_prompt(args.prompt, pass_id=args.pass_id)
+        prompt = args.prompt
 
     print(f"Orbit ref: {veo.ORBIT_REF}", flush=True)
     print(f"profile={profile}", flush=True)
@@ -1343,7 +1319,7 @@ def main() -> None:
 
     from playwright.sync_api import sync_playwright
 
-    with sync_playwright() as p:
+    with profile_lock(profile), sync_playwright() as p:
         ctx, page = launch_context(
             p, headed=args.headed or bool(args.dump_ui), profile=profile
         )
@@ -1362,6 +1338,8 @@ def main() -> None:
                 args.out,
                 model=args.model,
                 timeout_s=args.timeout,
+                scenery_only=args.probe or args.scenery_only,
+                attempts=1,
             )
             print(json.dumps(meta, indent=2))
             print(f"SAVED {args.out}", flush=True)
