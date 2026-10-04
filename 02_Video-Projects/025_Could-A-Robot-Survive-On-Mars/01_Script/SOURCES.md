@@ -27,3 +27,17 @@ No product is named. No `/go/` link.
 - Ingenuity: NASA wording is "one or more" blades; later investigation covers tip damage — safe spoken forms: "blade damage" / "damaged rotor blades."
 - PARKED FOR CLAUDE: script/VO lock for 025; any spoken Wh/tau figures.
 
+
+## Added by Claude for script v01 (4 Oct). Gemini: verify each row and add the exact quote
+
+| Claim in the film | Source to check |
+|---|---|
+| Spirit and Opportunity were each designed for a 90-sol mission; Opportunity operated from January 2004 to June 2018 ("more than fourteen years") | NASA Opportunity end-of-mission release (above); NASA MER mission pages |
+| Wind and dust devils repeatedly cleaned the rovers' solar panels ("cleaning events") | NASA/JPL MER news releases on cleaning events (e.g. Spirit 2005, Opportunity 2014) |
+| One-way radio time between Earth and Mars is about 3 to 22 minutes | NASA Mars mission pages ("communications delay"); compute from 0.37–2.67 AU |
+| Phoenix landed May 2008, went silent Nov 2008; MRO HiRISE imaging in 2010 showed solar-panel damage, likely from CO₂ ice | NASA/JPL release, 24 May 2010 ("Phoenix Mars Lander Is Silent, New Image Shows Damage") |
+| InSight detected more than 1,300 marsquakes; dust on its panels ended the mission in December 2022 | NASA release, 21 Dec 2022 (InSight mission ends) |
+| Earth natural background dose about 2.4 mSv/year, so 0.64 mSv/day on Mars ≈ three months on Earth | UNSCEAR 2008 report (worldwide average natural exposure 2.4 mSv/yr) |
+| Ingenuity flew in air about 1% as dense as Earth's at sea level; its rotors spun at about 2,400–2,700 rpm | NASA Ingenuity fact sheet / JPL Ingenuity pages |
+| Curiosity (landed August 2012) is still operating in Oct 2026 | NASA Curiosity mission status page. **Check before VO.** The film only says it kept working through 2018 |
+| Landers are slowed from thousands of km/h before touchdown | NASA Mars 2020 EDL facts (entry at about 20,000 km/h) |
