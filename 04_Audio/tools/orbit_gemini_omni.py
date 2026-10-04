@@ -17,6 +17,10 @@ ORBIT_REF = (
     REPO / "01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png"
 )
 DEFAULT_MODEL = "gemini-omni-flash-preview"
+# Vertex serves Omni (Interactions API) from the `global` location only.
+# Regional endpoints (e.g. us-central1) answer every Omni call with
+# 500 "Internal error encountered" (seen 1-4 Oct 2026), even an empty request.
+OMNI_VERTEX_LOCATION = "global"
 
 SFX_LOCK = (
     " Native space rumble and whoosh SFX only. No speech, no narration, no lyrics, "
@@ -55,6 +59,31 @@ def _video_bytes(interaction) -> bytes:
     raise RuntimeError("Omni API returned no video bytes")
 
 
+def _ensure_global_vertex(client):
+    """Return a client that targets Vertex `global` when `client` is a regional Vertex client.
+
+    Gemini API (api-key) clients are returned unchanged.
+    """
+    api = getattr(client, "_api_client", None)
+    if not getattr(api, "vertexai", False):
+        return client
+    loc = getattr(api, "location", None)
+    if loc == OMNI_VERTEX_LOCATION:
+        return client
+    from google import genai
+
+    print(
+        f"  Omni on Vertex is global-only; switching location {loc!r} -> {OMNI_VERTEX_LOCATION!r}",
+        flush=True,
+    )
+    return genai.Client(
+        vertexai=True,
+        project=getattr(api, "project", None),
+        location=OMNI_VERTEX_LOCATION,
+        credentials=getattr(api, "_credentials", None),
+    )
+
+
 def generate_omni_clip(
     client,
     prompt: str,
@@ -83,6 +112,7 @@ def generate_omni_clip(
             f"  identity baked into start frame ({ref.name}); Omni I2V allows one image only",
             flush=True,
         )
+    client = _ensure_global_vertex(client)
     print(f"  submit model={model} → {dest.name}", flush=True)
     interaction = client.interactions.create(
         model=model,
