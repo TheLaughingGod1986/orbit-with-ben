@@ -105,7 +105,7 @@ What if Venus was never the monster, but a twin that simply ran the experiment f
 
 The bigger question hangs in your own sky, the brightest thing at dawn or dusk after the Moon. How close did Earth come to the same turn?
 
-Next week: why the universe is making fewer new stars.
+Next week: what happens to your clock near the speed of light.
 
 [VISUAL MUST: Return to the opening: Magellan's Maat Mons, still moving. Hold that picture for the end. Music may fade under the last line. No goodbye card, no subscribe graphic, no Orbit in the last shot. The end screen is added later in Studio.]
 [TEACH: Venus lost its water and kept its carbon dioxide in the air. Whether it ever held oceans is still open.]
