@@ -261,6 +261,29 @@ describe("runBufferCheck (daily)", () => {
     expect(mem.get().videos.short0000001).toBeUndefined();
   });
 
+  it("treats Buffer's \"Document not found\" on delete as already gone, and forgets the posts", async () => {
+    const mem = await mirrored();
+    const client = fakeClient();
+    client.deletePost.mockImplementation(async () => {
+      throw new Error("Buffer VoidMutationError: Document not found");
+    });
+    const out = await runBufferCheck(deps({ store: mem.store, client, videos: [video({ publishAt: null })] }));
+    expect(client.deletePost).toHaveBeenCalledTimes(3);
+    expect(out.changes[0].results.every((r) => r.ok)).toBe(true);
+    expect(mem.get().videos.short0000001).toBeUndefined();
+  });
+
+  it("still fails a delete for any other Buffer error", async () => {
+    const mem = await mirrored();
+    const client = fakeClient();
+    client.deletePost.mockImplementation(async () => {
+      throw new Error("Buffer API 401: Unauthorized");
+    });
+    const out = await runBufferCheck(deps({ store: mem.store, client, videos: [video({ publishAt: null })] }));
+    expect(out.changes[0].results.some((r) => !r.ok)).toBe(true);
+    expect(mem.get().videos.short0000001).toBeDefined();
+  });
+
   it("reports only, when dry, and lists scheduled uploads never mirrored", async () => {
     const mem = await mirrored();
     const client = fakeClient();
