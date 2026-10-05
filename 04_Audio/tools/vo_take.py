@@ -10,6 +10,7 @@
       --out 02_Video-Projects/026_…/02_Voiceover --stem 026_pickup_nextweek_v01 --order 5996295788
 
   add --dry-run to print the plan and character count and spend nothing.
+  --rescore --out <dir> --stem <stem> re-measures an existing take's loudness and verdict (no API call).
 
 It always:
 - uses the locked voice from `orbit_voice.py` (Ben Orbit Narrator, eleven_v3, speed 1.04). There is no voice option.
@@ -108,14 +109,37 @@ def duration(path: Path) -> float:
                                           "-of", "default=noprint_wrappers=1:nokey=1", str(path)], text=True))
 
 
+def parse_loudness(stderr: str) -> dict:
+    """ebur128 prints a running "I: … LUFS" on every frame line (the first reads -70.0 at t=0.1 s); the integrated
+    value is the LAST match, in the Summary block (bug fixed 5 Oct 2026, #106)."""
+    def num(rx):
+        m = re.findall(rx, stderr)
+        return float(m[-1]) if m else None
+    return {"lufs_integrated": num(r"I:\s+(-?[\d.]+)\s+LUFS"), "mean_volume_db": num(r"mean_volume: (-?[\d.]+)"),
+            "max_volume_db": num(r"max_volume: (-?[\d.]+)")}
+
+
 def loudness(path: Path) -> dict:
     err = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", "volumedetect,ebur128",
                           "-f", "null", "-"], capture_output=True, text=True, errors="replace").stderr
-    # ebur128 prints a running "I: … LUFS" on every frame line (the first is -70.0 at t=0.1 s);
-    # the integrated value is the LAST match, in the Summary block.
-    num = lambda rx: (lambda m: float(m[-1]) if m else None)(re.findall(rx, err))
-    return {"lufs_integrated": num(r"I:\s+(-?[\d.]+)\s+LUFS"), "mean_volume_db": num(r"mean_volume: (-?[\d.]+)"),
-            "max_volume_db": num(r"max_volume: (-?[\d.]+)")}
+    return parse_loudness(err)
+
+
+def rescore(out: Path, stem: str) -> int:
+    """Re-measure loudness and re-run the verdict on an existing take. No API call, no spend."""
+    take_path, wav = out / f"{stem}_TAKE.json", out / f"{stem}.wav"
+    if not take_path.exists() or not wav.exists():
+        print(f"vo_take: need {take_path.name} and {wav.name} in {out}", file=sys.stderr)
+        return 2
+    take = json.loads(take_path.read_text())
+    loud = loudness(wav)
+    before = take.get("vo_check")
+    take["loudness"] = loud
+    take["vo_check"] = verdict(take["scribe"], loud["lufs_integrated"])
+    take["rescored_at"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
+    take_path.write_text(json.dumps(take, indent=2, ensure_ascii=False) + "\n")
+    print(f"rescored {stem}: {before} -> {take['vo_check']} (LUFS {loud['lufs_integrated']})")
+    return 0
 
 
 def credits(token, mode):
@@ -156,7 +180,7 @@ def scribe(token, mode, audio: Path, stt_dir: Path) -> str:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    src = ap.add_mutually_exclusive_group(required=True)
+    src = ap.add_mutually_exclusive_group()
     src.add_argument("--script", type=Path, help="script master .md (prose only, chapters at CHAPTER CARD)")
     src.add_argument("--text")
     src.add_argument("--text-file", type=Path)
@@ -167,8 +191,13 @@ def main(argv=None) -> int:
     ap.add_argument("--floor", type=int, default=50_000)
     ap.add_argument("--retake", metavar="CLAUDE_COMMENT_ID", help="allow replacing an existing stem")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--rescore", action="store_true", help="re-measure loudness + verdict of an existing --stem; no spend")
     a = ap.parse_args(argv)
 
+    if a.rescore:
+        return rescore(a.out, a.stem)
+    if not (a.script or a.text is not None or a.text_file):
+        ap.error("one of --script, --text or --text-file is required")
     if a.script:
         chapters = spoken_chapters(a.script.read_text())
     else:

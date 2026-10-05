@@ -80,5 +80,43 @@ class Checks(unittest.TestCase):
             self.assertEqual(vo_take.main(["--text", "hi", "--out", d, "--stem", "x", "--order", "1", "--dry-run"]), 2)
 
 
+class Loudness(unittest.TestCase):
+    STDERR = ("[Parsed_ebur128_1] t: 0.1  TARGET:-23 LUFS  M: -70.0 S:-120.7  I: -70.0 LUFS  LRA:   0.0 LU\n"
+              "[Parsed_ebur128_1] t: 5.9  TARGET:-23 LUFS  M: -19.9 S: -19.8  I: -19.8 LUFS  LRA:   1.2 LU\n"
+              "[Parsed_volumedetect_0] mean_volume: -22.9 dB\n[Parsed_volumedetect_0] max_volume: -3.7 dB\n"
+              "[Parsed_ebur128_1] Summary:\n  Integrated loudness:\n    I:         -19.7 LUFS\n    Threshold: -29.9 LUFS\n")
+
+    def test_integrated_is_the_summary_not_the_first_frame(self):
+        loud = vo_take.parse_loudness(self.STDERR)
+        self.assertEqual(loud, {"lufs_integrated": -19.7, "mean_volume_db": -22.9, "max_volume_db": -3.7})
+
+    def test_real_ffmpeg_tone(self):
+        import shutil, tempfile
+        if not shutil.which("ffmpeg"):
+            self.skipTest("no ffmpeg")
+        with tempfile.TemporaryDirectory() as d:
+            wav = pathlib.Path(d) / "tone.wav"
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=frequency=440:duration=4",
+                            "-ac", "2", "-ar", "48000", str(wav)], check=True)
+            lufs = vo_take.loudness(wav)["lufs_integrated"]
+            self.assertGreater(lufs, -35)     # a full-scale/8 sine is about -21 LUFS, never the -70 frame value
+            self.assertTrue(vo_take.verdict({"exact_match": True, "match_rate_pct": 100.0}, lufs) == "PASS")
+
+    def test_rescore_rewrites_verdict_without_spend(self):
+        import json, shutil, tempfile
+        if not shutil.which("ffmpeg"):
+            self.skipTest("no ffmpeg")
+        with tempfile.TemporaryDirectory() as d:
+            d = pathlib.Path(d)
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=frequency=440:duration=4",
+                            "-ac", "2", "-ar", "48000", str(d / "x.wav")], check=True)
+            (d / "x_TAKE.json").write_text(json.dumps({"vo_check": "FAIL (silent or near-silent)",
+                                                       "scribe": {"exact_match": False, "match_rate_pct": 98.9}}))
+            self.assertEqual(vo_take.main(["--rescore", "--out", str(d), "--stem", "x"]), 0)
+            take = json.loads((d / "x_TAKE.json").read_text())
+            self.assertEqual(take["vo_check"], "PASS")
+            self.assertIn("rescored_at", take)
+
+
 if __name__ == "__main__":
     unittest.main()
