@@ -1,0 +1,27 @@
+{
+  "script_words": 55,
+  "whisper_words": 55,
+  "match_rate_pct": 96.36,
+  "mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "ninety"
+      ],
+      "whisper": [
+        "90"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "fourteen"
+      ],
+      "whisper": [
+        "14"
+      ]
+    }
+  ],
+  "script_norm": "this rover was built to last ninety days on mars it lasted more than fourteen years dust should have choked its solar panels within months instead martian wind kept sweeping them clean then in 2018 a storm wrapped the whole planet and the sky went dark the full film could a robot survive on mars",
+  "whisper_norm": "this rover was built to last 90 days on mars it lasted more than 14 years dust should have choked its solar panels within months instead martian wind kept sweeping them clean then in 2018 a storm wrapped the whole planet and the sky went dark the full film could a robot survive on mars"
+}

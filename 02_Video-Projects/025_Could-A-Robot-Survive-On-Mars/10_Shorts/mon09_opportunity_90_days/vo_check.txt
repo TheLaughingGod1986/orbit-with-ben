@@ -1,0 +1,10 @@
+VO CHECK — Light-speed 024 Short Mon 9 (Opportunity 90 days / 14 years)
+Status: PASS
+Duration: 24.923s (raw 27.44s → pause-trim max_gap=0.4s)
+LUFS integrated: -20.2
+mean_volume: -23.1 dB | max_volume: -4.5 dB
+Pace: 132.4 wpm (55 words)
+Script vs Scribe: 96.36% match; mismatches = number spelling only
+Fails: none
+Warns: ['pace 132.4 wpm under 145 (Short house target ~23-25s / ~132-143 wpm)']
+Notes: HOS vo_check.py crashed (faster-whisper/av metadata_errors on Py3.14). Used same loudness/silence gates + ElevenLabs Scribe word diff.
