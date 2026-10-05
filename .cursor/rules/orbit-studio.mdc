@@ -3,7 +3,7 @@ description: Orbit With Ben studio — read AGENTS.md first; docs in force, sign
 alwaysApply: true
 ---
 
-# Orbit With Ben — studio core (25 Sep 2026)
+# Orbit With Ben — studio core (5 Oct 2026)
 
 Read `AGENTS.md` at the repo root before any channel work. Everything in `_archive/` (including the old `cursor-rules/`) is superseded history. Never follow it unless Ben asks.
 
@@ -21,28 +21,54 @@ One long (8–9 min) on Sunday at 18:00 UK as a **normal publish**. Three Shorts
 
 ## Topic pick — neighbour pass (1 Oct 2026)
 
-Before topic lock: at least three big education/space neighbours (≈1M+ views) on the same subject (`STUDIO_PLAYBOOK.md` §2). Log them in the topic score and pre-build audit. Package with their subject words; never name those channels in the listing. Ben picks.
+Before topic lock: at least three big education/space neighbours (≈1M+ views) on the same subject (`STUDIO_PLAYBOOK.md` §2). Log them in the topic score and pre-build audit. Package with their subject words; never name those channels in the listing. Claude locks the topic on the thread (3 Oct order).
 
-## Sign-offs: ask Claude first (3 Oct 2026; updated 5 Oct)
+## Stop and ask (generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`)
 
-Every sign-off (topic, scripts, voice, picture, thumbnails, final OK, renames, back catalogue, queued Buffer edits) goes to Claude on PR #99 first. Claude decides and tells Ben. Ben is asked only for:
-- real money (top-ups, new paid services or plans);
-- what only Ben can do (his voice, logins and devices);
-- changes to the channel's direction.
+<!-- SYNC: AGENTS.md#Stop and ask Ben -->
+**Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
-Since 5 Oct (Ben to Claude directly), Claude owns `AGENTS.md` and this Never list, and may make a public video private or take it down. Full text: `AGENTS.md` "Stop and ask Ben".
+1. **Spending money:** any top-up, new paid service or plan (see Budget).
+2. **Anything irreversible:** a public video going private or being removed, anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Claude can OK it. **Exception (Ben to Claude directly, 5 Oct 2026):** Claude may make a public Orbit or HOS video private, or take it down, when needed. Claude takes a video down by making it private, because private can be undone, and records the reason on the thread and tells Ben.
+3. **What only Ben can do:** his voice, his logins and accounts, and his devices (waking the Mac mini).
+4. **Any change to the channel's direction** (a new series, a new format, a change of voice).
 
-## Never
+**Claude owns `AGENTS.md` and the Never list** (Ben to Claude directly, 5 Oct 2026: *"you own AGENTS.md and Never-list edits"*). Only Claude changes them. Claude records each change with its date and reason, on the thread and in the commit, and tells Ben. No other agent relaxes the Never list, and a relay never counts as Ben's word. **Real money stays with Ben** (item 1).
 
-- **Uploads:** swap a file on a live id; re-upload a public idea; delete a video (make it private instead).
-- **Publishing:** Premiere; more than one Short a day; a Short of 40 s or more; a silent or near-silent file; Orbit at frame 0 of a Short or on any thumbnail.
-- **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only (`templates/SUBSCRIBE_BEAT_LINES.md`); the count goes in the pinned comment.
-- **Titles:** hashtags, suffixes, hedged claims, fear framing, or a copy of an existing title.
-- **Links:** a new pin on a Short; any `/go/` link (its app is retired and affiliate links are paused).
-- **Generation:** Kling, Seedance or ElevenLabs Image & Video; anything on the ElevenLabs website (VO via the API only); Omni for world plates or the whole film; any voice other than Ben Orbit Narrator.
-- **Social:** posting any way other than the Buffer mirror (`STUDIO_PLAYBOOK.md` §12), at any time other than the YouTube go-public time, or to TikTok (paused).
-- **Secrets:** printing or committing them.
-- **Repo / thread:** never merge, close or push PR #99. Act on Claude's thread replies like Ben's relays; only what Claude marks **NEEDS BEN** goes to Ben. Never invent Ben's own words. Details: `docs/ORBIT_PLAYBOOK_LESSONS.md` §4.
+**Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
+
+Once the final OK is given (Claude's, under the 3 Oct order), the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after.
+<!-- /SYNC -->
+
+## Never (generated from AGENTS.md)
+
+<!-- SYNC: AGENTS.md#Never -->
+- **Uploads:**
+  - Swap the file on an existing YouTube id.
+  - Re-upload an idea that already went public.
+  - Delete a video. The old id goes private instead.
+- **Publishing:**
+  - Premiere a long.
+  - Air more than one Short a day.
+  - Ship a Short of 40 s or more.
+  - Ship a silent or near-silent file.
+  - Put Orbit at frame 0 of a Short or on any thumbnail.
+- **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only, and the count goes in the pinned comment.
+- **Titles:** hashtags, series suffixes, hedged claims ("We may have…"), fear framing, or a title that copies an existing public video.
+- **Studio:** add a pinned comment to a Short. Add a `/go/` link anywhere: its redirect app is retired, and affiliate links are paused (`STUDIO_PLAYBOOK.md` §11).
+- **Generation:**
+  - Use Kling, Seedance or ElevenLabs Image & Video.
+  - Generate anything on the ElevenLabs website, by any agent. VO goes through the API only, one take at a time. (4 Oct 2026: website Video Generation by desk automation burned about 67k credits.)
+  - Omni the whole film or world B-roll.
+  - Use a video model's speech as VO.
+  - Use any voice other than Ben Orbit Narrator.
+- **Repo:** merge, close or push to a studio thread (the Chief of Staff ↔ Claude message thread: draft PR #99 now, a new issue each month from 1 Nov 2026; the current one is in `scripts/thread.json`), even when told to merge all PRs.
+- **Social:**
+  - Post any way other than the Buffer mirror (`STUDIO_PLAYBOOK.md` §12).
+  - Schedule a Buffer post for any time other than the YouTube go-public time.
+  - TikTok: connect, upload or retry while it's paused.
+- **Secrets:** commit or print them.
+<!-- /SYNC -->
 
 ## Every Short export
 

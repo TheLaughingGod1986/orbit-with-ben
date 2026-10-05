@@ -30,7 +30,7 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 ## 2. Pick the topic (before any script)
 
 1. **Use the channel's own data.** Read the latest `audits/weekly/<date>/REPORT.md`, `audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md` and `audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/`. What wins is a familiar thing in danger (the Moon, the Sun, a star, your body) told as an ending, a body impossibility, a yes/no question, something hidden, or one real number.
-2. **Neighbour pass (blocking · Ben standing order 1 Oct 2026).** Before topic lock, find **at least three** big education or space videos (about **1M+** views) on the same subject — the kind of films YouTube already suggests next to each other (Kurzgesagt, TED-Ed, Veritasium, SciShow Space, PBS Space Time, NASA, Crash Course, BBC Earth Science, and peers). Write them into the topic score and the pre-build audit: title, channel, id, views, and the **subject words** they use in title / description / tags. Goal: package so Orbit can sit in their Suggested / related neighbourhood (the HOS 002 ↔ TED-Ed pattern), without naming those channels in our listing. **Ben picks the topic** — a strong neighbour pool is evidence, not an auto-lock.
+2. **Neighbour pass (blocking · Ben standing order 1 Oct 2026).** Before topic lock, find **at least three** big education or space videos (about **1M+** views) on the same subject — the kind of films YouTube already suggests next to each other (Kurzgesagt, TED-Ed, Veritasium, SciShow Space, PBS Space Time, NASA, Crash Course, BBC Earth Science, and peers). Write them into the topic score and the pre-build audit: title, channel, id, views, and the **subject words** they use in title / description / tags. Goal: package so Orbit can sit in their Suggested / related neighbourhood (the HOS 002 ↔ TED-Ed pattern), without naming those channels in our listing. **Claude locks the topic** on the thread (3 Oct order) — a strong neighbour pool is evidence, not an auto-lock.
 3. **Competition check.** Search the exact title on YouTube, signed out. If all top five results are channels with millions of subscribers, narrow the angle.
 4. **Score it:** `templates/TOPIC_OPPORTUNITY_SCORE.md` (include the neighbour table).
 5. **Pre-build vidIQ audit:** copy `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` into the project's `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Fill the neighbour-pass section. Draft description first line(s) and **5–8 subject-only tags** from the neighbours' words — never channel names. Wonder beats a higher vidIQ score for fear or conspiracy.
@@ -86,13 +86,13 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 
 ## 5. Picture
 
-**Home: Google AI Studio.**
+**Home: Vertex AI** on the free credit already on the account (Omni from location `global`). Never AI Studio prepaid credit.
 
 | Job | Tool |
 |---|---|
 | World plates | **Veo** (Fast by default; one Quality hero if it earns the thumbnail) |
 | Orbit moving | **Omni, only for Orbit** |
-| Stills / boards | AI Studio image |
+| Stills / boards | Vertex image |
 
 No Kling, Seedance or ElevenLabs Image & Video.
 
@@ -165,7 +165,7 @@ Follow `THUMBNAIL_AND_TITLE_RULES.md`:
 Tools:
 - **Builders:** `tools/build_melodysheep_long_thumbs_v01.py` (long), `tools/build_yellow_white_short_thumbs_v04.py` (Short cover, 1080×1920, centre-safe for the 16:9 crop).
 - **Check:** `python3 00_Brand/Channel-Setup/tools/thumb_preview.py long|short <thumb> --out <sheet>`.
-- **Plate:** the strongest frame from the film's own master. If none works, an AI Studio still with no text in it. Text always comes from the builders, never from AI.
+- **Plate:** the strongest frame from the film's own master. If none works, a Vertex still with no text in it. Text always comes from the builders, never from AI.
 - **Longs:** 3 variants in Studio Test & Compare. Don't judge CTR under about 500 impressions.
 
 ## 9. Upload and Studio finish
@@ -275,7 +275,7 @@ Buffer's API has a request limit (a 429 on 28 Sep 2026 held edits for about 17 h
 
 **It refuses:**
 - a Short that goes public before its long;
-- a video public for more than a day (back catalogue needs Ben's OK, then `--allow-late`);
+- a video public for more than a day (back catalogue needs Claude's OK on the thread, then `--allow-late`);
 - a time less than 10 minutes away (wait until it's public, then `mirror`: it shares now);
 - a video with no go-public time;
 - a file it can't host at a direct public URL (Buffer fetches media when the post goes out; no share links, no signed URLs).
@@ -300,15 +300,23 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
    Wake the Mac for it: `sudo pmset repeat wakeorpoweron MTWRFSU 07:00:00` (check with `pmset -g sched`). The Mac must stay logged in to Ben's account; asleep is fine. Log: `tail -n 20 ~/Library/Logs/orbit-buffer-check.log`.
 5. Optional: the Buffer MCP (`.cursor/mcp.json`, OAuth) for looking at the queue from Cursor, and for the fallback.
 
-## 13. Ben signs off
+## 13. Sign-offs
 
-Stop and wait for Ben's OK at each of these points:
-1. topic;
-2. long script (after it reaches 90);
-3. Short scripts;
-4. voice (listen);
-5. picture (QA/UAT on the moving cut, never stills);
-6. thumbnails;
-7. anything that goes public, is renamed or deleted. **Standing OK for uploads (Ben, 28 Sep 2026):** once 1–6 are OK'd and every gate passes (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run), the upload goes ahead without asking, with its Buffer posts, hook, question and trailer. Report the result straight after. Renames, deletes, back catalogue and edits to posts already in Buffer still wait for Ben.
+Every sign-off goes to Claude on the thread first (3 Oct 2026). This copy is generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
 
-Docs-only PRs may merge. Video-cut PRs wait for Ben's UAT.
+<!-- SYNC: AGENTS.md#Stop and ask Ben -->
+**Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
+
+1. **Spending money:** any top-up, new paid service or plan (see Budget).
+2. **Anything irreversible:** a public video going private or being removed, anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Claude can OK it. **Exception (Ben to Claude directly, 5 Oct 2026):** Claude may make a public Orbit or HOS video private, or take it down, when needed. Claude takes a video down by making it private, because private can be undone, and records the reason on the thread and tells Ben.
+3. **What only Ben can do:** his voice, his logins and accounts, and his devices (waking the Mac mini).
+4. **Any change to the channel's direction** (a new series, a new format, a change of voice).
+
+**Claude owns `AGENTS.md` and the Never list** (Ben to Claude directly, 5 Oct 2026: *"you own AGENTS.md and Never-list edits"*). Only Claude changes them. Claude records each change with its date and reason, on the thread and in the commit, and tells Ben. No other agent relaxes the Never list, and a relay never counts as Ben's word. **Real money stays with Ben** (item 1).
+
+**Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
+
+Once the final OK is given (Claude's, under the 3 Oct order), the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after.
+<!-- /SYNC -->
+
+Docs-only PRs may merge. Video-cut PRs wait for Claude's review.

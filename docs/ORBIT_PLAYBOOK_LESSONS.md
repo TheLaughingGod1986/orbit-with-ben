@@ -76,9 +76,9 @@ Also see `STUDIO_PLAYBOOK.md` §7.
 | Thumbnails | **Never** include Orbit on **any** thumbnail (longs and Shorts covers). |
 | NASA stills | Verify every NASA ID against the images / Photojournal API (or the project's verified pool JSON) before the shot list goes to Ben. |
 | Media in git | **No media in git.** Stills, VO, Veo/Omni clips and broadcast masters live in iCloud / local UAT paths only. |
-| Public / KEEP | Ben OKs anything public. **Nothing is KEEP until Ben reviews it.** |
-| Shot list | The shot list goes to **Ben before generation**. |
-| Compute | **Vertex only** for film generation (no Kling, Seedance, or ElevenLabs Image & Video for picture). |
+| Public / KEEP | Claude gives the final OK before anything is scheduled (3 Oct order). **Nothing is KEEP until Claude reviews it.** |
+| Shot list | The shot list goes to **Claude on the thread before generation**. Never a whole planet as an Omni/Veo start frame: it drifts to the wrong planet. |
+| Compute | **Vertex only** for film generation, on the free credit already on the account; Omni (`gemini-omni-flash-preview`) is served from location `global` only. Never AI Studio prepaid. No Kling, Seedance, or ElevenLabs Image & Video. |
 
 ---
 

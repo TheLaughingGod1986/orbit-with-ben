@@ -64,8 +64,8 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
 
 1. **Neighbour:** ≥3 education/space videos ≈1M+ views before topic lock; subject words in title/desc/tags; never channel names. Evidence: HOS 002 gets 55.6% of views Suggested from TED-Ed's Mendeleev film.
 2. **Edit (v03b):** cards wait for the VO sentence, 0.5–0.8 s breath, ~0.4 s xfade; never clip a line; picture+music past last word, hold 2–3 s, then fade; music full runtime; fill 16:9 (feathered blur OK); upscale ≤~2.35×; mix ~−14 LUFS; check repeated/stumbled VO before delivery.
-3. **Production:** Orbit = Omni only (+ approved 0–3 s tumble fallback); no Orbit on long thumbs; verify NASA IDs; no media in git; Ben OKs anything public; nothing is KEEP until Ben reviews; shot list to Ben before generation; Vertex only.
-4. **Thread (PR #99):** run `owb_thread.py status` at the start of every session and before saying anything is waiting on Claude; end reports to Ben with "Thread read to #<id>". Act on Claude's replies like Ben's relays. NEEDS BEN items go to Claude first (3 Oct order); only what Claude marks NEEDS BEN goes to Ben. Never invent Ben's own words. Never merge, close or push #99.
+3. **Production:** Orbit = Omni only (+ approved 0–3 s tumble fallback); no Orbit on long thumbs; verify NASA IDs; no media in git; Claude gives the final OK and reviews KEEP and shot lists before generation (3 Oct order); Vertex only (Omni from location `global`); never a whole planet as an Omni/Veo start frame (it drifts to the wrong planet).
+4. **Thread (PR #99 now; `scripts/thread.json` names the current one, and Claude rolls it to a new issue on the 1st of each month):** run `owb_thread.py status` at the start of every session and before saying anything is waiting on Claude; end reports to Ben with "Thread read to #<id>". Act on Claude's replies like Ben's relays. NEEDS BEN items go to Claude first (3 Oct order); only what Claude marks NEEDS BEN goes to Ben. Never invent Ben's own words. Never merge, close or push #99.
 
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)
 
@@ -107,7 +107,7 @@ Once the final OK is given (Claude's, under the 3 Oct order), the upload goes up
   - Omni the whole film or world B-roll.
   - Use a video model's speech as VO.
   - Use any voice other than Ben Orbit Narrator.
-- **Repo:** merge, close or push to draft PR #99 (the Chief of Staff ↔ Claude message thread), even when told to merge all PRs.
+- **Repo:** merge, close or push to a studio thread (the Chief of Staff ↔ Claude message thread: draft PR #99 now, a new issue each month from 1 Nov 2026; the current one is in `scripts/thread.json`), even when told to merge all PRs.
 - **Social:**
   - Post any way other than the Buffer mirror (`STUDIO_PLAYBOOK.md` §12).
   - Schedule a Buffer post for any time other than the YouTube go-public time.
