@@ -39,8 +39,8 @@ CH06 = REPO / (
 VO_START = 1.55
 VO_END = 25.15  # pad past "others?"
 LONG_TITLE = "What Happens When Andromeda Hits the Milky Way?"
-# v01d: no raw video id on the end card (Claude 5991609023); title only
-PILL_CY = 1250  # v01d: pill centre under the caption block
+# v01d: no raw video id on the end card (Claude 5991649783 / 5991609023); title only
+PILL_CY = 1320  # v01d: below last caption (~800), above CTA y=1500 (Claude asked ~1250; nudged for clearance)
 
 # Caption beats relative to trimmed VO (t=0 at VO_START)
 # yellow = hook word line
@@ -48,7 +48,7 @@ BEATS = [
     # v01c: re-timed to Scribe word times on the trimmed VO (ch06 minus 1.55 s)
     (0.00, 2.55, [("local group", "yellow"), ("isn't a quiet suburb", "white")]),
     (2.95, 6.10, [("small family", "white"), ("two big spirals", "yellow")]),
-    (6.40, 9.10, [("triangulum", "yellow"), ("third major player", "white")], 430),  # v01d: up, clear of visor
+    (6.40, 9.10, [("triangulum", "yellow"), ("third major player", "white")], 300),  # v01d: high, clear of visor
     (9.30, 13.25, [("smaller satellites", "white"), ("shaping the path", "yellow")]),
     (13.40, 15.60, [("gravity", "yellow"), ("and mass", "white")]),
     (16.95, 20.45, [("milky way + andromeda", "white"), ("destiny", "yellow")]),
@@ -202,7 +202,7 @@ def main() -> None:
     plan = [
         ("p0", "still", PLATES / "OPEN_01_local_group.png", 3.8),
         ("p1", "still", PLATES / "omni_still.png", 4.0),
-        ("p2", "motion", PLATES / "omni_02_night_sky_rewrites.mp4", 3.5),  # v01d: shorter, on-model window
+        ("p2", "motion", PLATES / "omni_02_night_sky_rewrites.mp4", 3.5),  # v01d: wide on-model (pupils) window
         ("p3", "still", PLATES / "SCIENCE_A_andromeda_smudge_spiral.png", 3.8),
         ("p4", "still", PLATES / "veo_still.png", 3.8),
         ("p5", "still", PLATES / "SCIENCE_C_disks_stars_miss.png", 3.6),
@@ -218,7 +218,7 @@ def main() -> None:
         if kind == "still":
             still_push(src, dest, length, zoom_end=1.07)
         else:
-            motion_clip(src, dest, length, start=2.60)  # v01d: skip 2.35-2.5 s eye-slit frames
+            motion_clip(src, dest, length, start=5.00)  # v01d: 5 s wide shot — pupils on, caption-safe
         segs.append(dest)
         print(f"  {name} {kind} {length:.2f}s @ {t_cursor:.2f}", flush=True)
         t_cursor += length
@@ -362,14 +362,14 @@ def main() -> None:
             "clean VO tail ending on others?",
             "shorter holds + gentle push",
             "£0 no upload",
-            "v01d: end card title only, pill y=1250",
+            "v01d: end card title only, pill y=1320",
             "v01d: omni close-up on-model frames only",
-            "v01d: beat 3 caption up off visor",
+            "v01d: beat 3 caption y=300 off visor; wide omni from 5.0s",
         ],
     }
     (HERE / "RECUT_v01d_REPORT.json").write_text(json.dumps(meta, indent=2) + "\n")
     (HERE / "RECUT_v01d_REPORT.md").write_text(
-        f"""# k9pXeeJvLpc Local Group recut v01d\n\nv01d = v01c (same VO, captions, plates) with Claude 5991609023 fixes: raw id removed from end card (title only); end-card pill centred at y={PILL_CY}, under the caption block; omni close-up trimmed to on-model frames (clip 2.60 s on, pupils showing, eye-slit frames at 2.35–2.5 s skipped); beat 3 caption moved up to y=430, clear of the visor; open-motion warn accepted.
+        f"""# k9pXeeJvLpc Local Group recut v01d\n\nv01d = v01c (same VO, captions, plates) with Claude 5991649783 fixes: raw id removed from end card (title only); end-card pill centred at y={PILL_CY}, clear below last caption; omni plate uses the 5 s wide on-model window (start=5.0 s, pupils showing — not the slit-eye close-up); beat 3 caption at y=300, clear of the visor; open-motion warn accepted.
 
 - **Final:** `{final}`
 - **Duration:** {dur(final):.2f}s
