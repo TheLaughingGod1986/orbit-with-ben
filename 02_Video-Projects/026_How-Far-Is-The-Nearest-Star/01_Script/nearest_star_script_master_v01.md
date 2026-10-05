@@ -38,7 +38,7 @@ Today a European spacecraft called Gaia has measured these shifts for more than 
 
 [VISUAL MUST: A clean code-rendered parallax diagram: Earth on its orbit around the Sun, a near star shifting against fixed background stars as Earth moves from one side to the other. No numbers on the plate. Then ESA imagery of the Gaia spacecraft.]
 [ORBIT ACTS: Orbit holds up one small hand against the stars, closes one eye and then the other, and watches a nearby star jump, delighted at the trick.]
-[TEACH: Parallax: d (pc) = 1/p (arcsec). Bessel (1838) measured about 0.314″ for 61 Cygni. A 2 cm coin subtends about 0.31″ at about 13 km. Proxima's Gaia parallax is about 0.768″ (about a coin at 5 km).]
+[TEACH: Parallax: d (pc) = 1/p (arcsec). Bessel (1838) measured about 0.314″ for 61 Cygni. A 2 cm coin subtends about 0.31″ at about 13.2 km. Proxima's Gaia parallax is about 0.768″ (a coin at about 5.4 km).]
 
 [SUBSCRIBE BEAT]
 We make one of these every week. Subscribing is how the next one finds you.

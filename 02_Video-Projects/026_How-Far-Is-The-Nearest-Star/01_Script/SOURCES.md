@@ -38,15 +38,15 @@ No product is named. No `/go/` link.
 | Alpha Centauri never rises from the UK (dec about −61°) | Simple geometry: it is below the horizon at latitudes north of about 29° N |
 | Gaia measured parallaxes for more than a billion stars (DR3: 1.46 billion with parallax) | Gaia DR3 summary (Gaia Collaboration, Vallenari et al. 2023, A&A 674, A1) |
 | Proxima has the largest parallax of any star | Follows from it being the nearest; Gaia DR3 |
-| A 2 cm coin subtends about 0.31″ at about 13 km, and about 0.77″ at about 5 km | Geometry: θ = 0.02 m / d × 206,265 |
+| A 2 cm coin subtends about 0.31″ at about 13.2 km, and about 0.77″ at about 5.4 km (Gemini 5 Oct correction; the film says "about thirteen" and "about five" kilometres) | Geometry: θ = 0.02 m / d × 206,265 |
 | Voyager 1 launched 5 Sep 1977; about 171 AU now, so about 2.6 km at the 1 : 10¹⁰ scale | NASA Voyager mission pages (above) |
 | London–Cairo is about 3,500 km (shorter than the cherry's 4,018 km) | Great-circle distance |
 | Walking 5 km/h: about 0.92 billion years; car 100 km/h: about 46 million years; airliner 900 km/h: about 5.1 million years | Arithmetic on 4.018 × 10¹³ km |
-| Proxima's flares are far more violent than the Sun's for its size (2019 flare about 100× brighter in UV than comparable solar flares) | MacGregor et al. (2021), ApJL 911, L25 |
+| Proxima's flares are far more violent than the Sun's (MacGregor et al. 2021: the 2019 flare was about 100× more powerful than a similar solar flare, and Proxima brightened by more than 14,000× in the far UV against its own quiet state; Gemini 5 Oct correction) | MacGregor et al. (2021), ApJL 911, L25 |
 | The Starshot probes weigh about a gram ("about as much as a paperclip") | Breakthrough Starshot announcement (gram-scale StarChip) |
 | Proxima gives out less than 1% of the Sun's light (L ≈ 0.0017 L☉) and will shine for trillions of years | Ribas et al. (2017) / Kervella et al. (2017) luminosity; Laughlin, Bodenheimer & Adams (1997), ApJ 482, 420 (red dwarf lifetimes) |
 | Moonlight takes about 1.3 s and sunlight about 8 min 20 s | Distance / c |
 | A message sent Oct 2026 arrives about Jan 2031; the earliest reply arrives about Apr 2035 | 4.25 yr each way |
 | The missing stellar parallax was long used as an argument against a moving Earth (e.g. Tycho Brahe) | Standard history of astronomy; e.g. Hirshfeld, *Parallax: The Race to Measure the Cosmos* (2001) |
 | At the 1 : 10¹⁰ scale, Alpha Cen A (1.22 R☉) is about 17 cm and B (0.86 R☉) about 12 cm, at about 4,130 km | Kervella et al. (2017) A&A 597, A137 |
-| At the 1 : 10¹⁰ scale the Moon's orbit (384,400 km, the farthest humans have gone, Apollo 13 about 400,000 km) is about 3.8–4.0 cm from the pin | NASA Moon fact sheet; Apollo 13 distance record (Guinness / NASA) |
+| At the 1 : 10¹⁰ scale the Moon's orbit (384,400 km; the human distance record, Apollo 13 at about 400,000 km and Artemis II in Apr 2026 at about 406,800 km, is still about 4 cm) is about 3.8–4.0 cm from the pin | NASA Moon fact sheet; Apollo 13 distance record (Guinness / NASA) |
