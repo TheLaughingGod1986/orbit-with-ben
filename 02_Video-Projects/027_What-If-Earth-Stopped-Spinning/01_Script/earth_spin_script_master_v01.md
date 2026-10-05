@@ -55,7 +55,7 @@ We have a neighbour that comes close. Venus turns once every two hundred and for
 
 [VISUAL MUST: A text-free code graphic of the slow-stop Earth: oceans flowing to the poles, one band of land around the equator, sea in blue and land in sand colour. Then real NASA imagery of Venus. No Orbit on the Venus plate.]
 [ORBIT ACTS: Orbit sits on a hilltop watching a sunset that never quite ends, then checks a tiny pocket watch, puzzled, and settles in to wait.]
-[TEACH: Model of a non-rotating Earth with oceans redistributed to the poles (Witold Fraczek, Esri, 2014), based on the 21 km difference between equatorial and polar radius. With zero rotation relative to the stars, one solar day equals one year. Venus: sidereal rotation 243 Earth days, retrograde; year 225 days; solar day about 117 Earth days (NASA NSSDCA).]
+[TEACH: Model of a non-rotating Earth with oceans redistributed to the poles (Witold Frączek, Esri ArcUser, Summer 2010), based on the 21 km difference between equatorial and polar radius. With zero rotation relative to the stars, one solar day equals one year. Venus: sidereal rotation 243 Earth days, retrograde; year 225 days; solar day about 117 Earth days (NASA NSSDCA).]
 
 [CHAPTER CARD: Earth Is Already Slowing]
 
