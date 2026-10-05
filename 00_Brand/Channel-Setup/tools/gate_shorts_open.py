@@ -30,6 +30,10 @@ Usage
   python3 gate_shorts_open.py compare                                     # pairwise table of library
 
 Library: 00_Brand/Channel-Setup/audits/shorts_open_library/library.json (+ frames/<id>.jpg)
+Frame-0 lookback (Shorts feed rule R3, Claude ruling 5 Oct 2026): check 2 compares against every
+Short within ±14 days of the air date AND the last 10 Shorts aired before it, whichever reaches
+further back (`--days`, `--last`).
+
 Exit code 0 = PASS, 1 = FAIL, 2 = tool error.
 """
 from __future__ import annotations
@@ -52,6 +56,7 @@ FRAMES = LIB_DIR / "frames"
 
 OPEN_T = 0.3  # seconds — first real frame after any fade-in
 LOOKBACK_DAYS = 14
+LOOKBACK_LAST = 10  # R3 (5 Oct 2026): never reuse an opening background from the last 10 Shorts
 DHASH_FAIL_BITS = 10
 DHASH_WARN_BITS = 16
 DUR_FAIL = 40.0
@@ -199,13 +204,15 @@ def upsert(lib: dict, entry: dict) -> None:
     lib["entries"].append(entry)
 
 
-def window(lib: dict, air: date, days: int) -> list[dict]:
+def window(lib: dict, air: date, days: int, last: int = 0, exclude: str | None = None) -> list[dict]:
+    """Entries within ±days of air, plus the `last` most recent entries aired before it (R3)."""
     lo, hi = air - timedelta(days=days), air + timedelta(days=days)
-    out = []
-    for e in lib["entries"]:
-        d = date.fromisoformat(e["date"])
-        if lo <= d <= hi and e.get("status", "live") != "retired":
-            out.append(e)
+    live = [e for e in lib["entries"] if e.get("status", "live") != "retired" and e["id"] != exclude]
+    out = [e for e in live if lo <= date.fromisoformat(e["date"]) <= hi]
+    if last > 0:
+        before = sorted((e for e in live if date.fromisoformat(e["date"]) < air), key=lambda e: (e["date"], e["id"]))
+        seen = {e["id"] for e in out}
+        out += [e for e in before[-last:] if e["id"] not in seen]
     return out
 
 
@@ -270,7 +277,8 @@ def contact_sheet(path: Path, out: Path) -> None:
         run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"hstack=inputs={len(tiles)}", str(out)])
 
 
-def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, self_id: str | None = None) -> dict:
+def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, self_id: str | None = None,
+          last: int = LOOKBACK_LAST) -> dict:
     res: dict = {"file": str(path), "air_date": air.isoformat(), "fails": [], "warns": []}
     dur = duration_s(path)
     res["duration_s"] = round(dur, 2)
@@ -302,7 +310,7 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
     h = dhash(path)
     res["dhash"] = f"{h:016x}"
     near = []
-    for e in window(lib, air, days):
+    for e in window(lib, air, days, last, exclude=self_id):
         if self_id and e["id"] == self_id:
             continue
         dist = hamming(h, int(e["dhash"], 16))
@@ -341,6 +349,7 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("files", nargs="+", type=Path)
     c.add_argument("--air-date", default=date.today().isoformat())
     c.add_argument("--days", type=int, default=LOOKBACK_DAYS)
+    c.add_argument("--last", type=int, default=LOOKBACK_LAST, help="also compare the last N Shorts aired before --air-date (R3)")
     c.add_argument("--sheet-dir", type=Path, default=Path(tempfile.gettempdir()) / "orbit_shorts_gate")
     c.add_argument("--id", default=None, help="candidate's own YouTube id (skips its library entry on re-check)")
     c.add_argument("--json", action="store_true")
@@ -367,6 +376,7 @@ def main(argv: list[str] | None = None) -> int:
     l = sub.add_parser("list")
     l.add_argument("--air-date", default=date.today().isoformat())
     l.add_argument("--days", type=int, default=LOOKBACK_DAYS)
+    l.add_argument("--last", type=int, default=LOOKBACK_LAST)
     l.add_argument("--all", action="store_true")
 
     sub.add_parser("compare", help="pairwise dHash distances inside the library")
@@ -376,7 +386,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if ns.cmd == "check":
         air = date.fromisoformat(ns.air_date)
-        results = [check(p.resolve(), air, ns.days, lib, ns.sheet_dir, ns.id) for p in ns.files]
+        results = [check(p.resolve(), air, ns.days, lib, ns.sheet_dir, ns.id, ns.last) for p in ns.files]
         if ns.json:
             print(json.dumps(results, indent=2, ensure_ascii=False))
         else:
@@ -427,7 +437,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if ns.cmd == "list":
         air = date.fromisoformat(ns.air_date)
-        rows = lib["entries"] if ns.all else window(lib, air, ns.days)
+        rows = lib["entries"] if ns.all else window(lib, air, ns.days, ns.last)
         for e in rows:
             print(f"{e['date']}  {e['id']}  {e['dhash']}  visor={e['orbit']['visor_frac']:.4f}  {e.get('status','live'):9s} {e['title']}")
         return 0
