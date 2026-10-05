@@ -87,6 +87,17 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 - **Mini-only resources:** the ElevenLabs pool, Vertex and Studio writers also keep their `desk-lock` (`07_Content-Ops/scripts/desk-lock.sh`).
 - **VO takes:** use `04_Audio/tools/vo_take.py` (`--script` for a long, `--text` for a Short or pickup; `--dry-run` first). It locks the voice, makes one take, keeps the 50k floor, runs Scribe, and writes one `<stem>_TAKE.json` plus a line in `04_Audio/elevenlabs_ledger.jsonl`. Don't copy a new `_generate_*.py` for a take.
 
+## NAS archive (5 Oct 2026)
+
+The Synology share (`/Volumes/data/mac-mini-archive/`) is the archive, and often holds the **only** copy: the 3 Oct and 5 Oct moves deleted the Mini copies after checking them.
+- **Never delete anything on the NAS.** "Looks like a partial duplicate" is not proof. On 5 Oct the HOS 003 folder held 1,090 files that existed nowhere else.
+- **Moving files to the NAS:**
+  1. rsync, then SHA-256 manifests on both sides;
+  2. delete the Mini copy only on a full match;
+  3. leave a `MOVED_TO_NAS.txt` in the Mini folder.
+- **Restoring:** git-tracked files are never overwritten from the NAS; the git copy wins.
+- Any job that moves files claims first (`studio.py claim … --git`) and runs in detached tmux. On STOP, its last act is to post the STOP line or set its stage to `blocked`.
+
 ## Stop and ask Ben
 
 **Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
