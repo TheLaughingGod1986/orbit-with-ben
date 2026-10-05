@@ -84,6 +84,7 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
   - If the claim exits 75, someone else holds that stage. Stop.
   - When you finish, run `release … --state review|done --ref <sha> --git`.
 - **Stalled jobs:** a claim past its ETA counts as stalled. `studio.py stale` lists stalled claims; the Mini runs it every 15 minutes and posts any hit to the thread.
+- **Background jobs commit from their own clean worktree** (`git worktree add /tmp/<job>-wt origin/main`), never from the shared Mini checkout. On 5 Oct, uncommitted Buffer JSON in that checkout blocked the 027 SOURCES commit for 6 hours.
 - **Mini-only resources:** the ElevenLabs pool, Vertex and Studio writers also keep their `desk-lock` (`07_Content-Ops/scripts/desk-lock.sh`).
 - **VO takes:** use `04_Audio/tools/vo_take.py` (`--script` for a long, `--text` for a Short or pickup; `--dry-run` first). It locks the voice, makes one take, keeps the 50k floor, runs Scribe, and writes one `<stem>_TAKE.json` plus a line in `04_Audio/elevenlabs_ledger.jsonl`. Don't copy a new `_generate_*.py` for a take.
 
