@@ -19,6 +19,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 013 | edit | chief/nas | 2026-10-05T15:39Z | 2026-10-05T17:39Z | NAS integrity check + restore keep-set per #99 5997248821 (also covers HOS 001/002) |
+| 013 | edit | chief/nas | 2026-10-05T20:02Z | 2026-10-05T21:02Z | Resume NAS restore from step 3 per #99 6001953954 (keep-set rsync + SHA-256 check, MOVED_TO_NAS.txt; also covers HOS 001/002) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
