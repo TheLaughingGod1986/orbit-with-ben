@@ -28,3 +28,18 @@
 ## Claude VO PASS (#99 5994626502, 2026-10-05 13:39 BST)
 
 Claude PASS on `c7ced8c`: long `nearest_star_vo_v01` 491.02 s, Scribe 98.63%, diffs spelling/digits only. **This take is LOCKED** for picture. No "next week" line; that is a one-line pickup once 027 is chosen. Picture follows 025; shot list in the 024/025 format for Claude review.
+
+
+## Pickup — Next week line (v01, 5 Oct 2026 15:20 BST)
+
+| Field | Value |
+|---|---|
+| Text | `Next week: what if Earth stopped spinning?` |
+| Files | `026_nearest_star_pickup_nextweek_v01.wav` / `.mp3` (audio gitignored) |
+| Duration | 2.96 s |
+| LUFS / mean / peak | −17.8 / −21.1 / −4.0 dB |
+| Scribe | `Next week, what if Earth stopped spinning?` (colon→comma punctuation only; norm exact 100%) |
+| Credits | before 132381/209536 (rem 77155); spoken 42 chars; counter still lagged at poll (rem 77155) |
+| SHA-256 mp3 | `178516e0d0e47032f7a893ed788c80ef067cd612db51887edea01bfa531cc318` |
+| Claude ask / claim | #99 5996295788 / 5996312767 |
+| Note | LOCK long `nearest_star_vo_v01` untouched; edit butts pickup after "And we have only just begun to measure the gap." |
