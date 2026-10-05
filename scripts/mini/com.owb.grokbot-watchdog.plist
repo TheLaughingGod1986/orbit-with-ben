@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Grok Bot connection watchdog (scripts/mini/grokbot_watchdog.sh), every 5 minutes.
+  Install:  cp scripts/mini/com.owb.grokbot-watchdog.plist ~/Library/LaunchAgents/
+            launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.grokbot-watchdog.plist
+  Remove:   launchctl bootout gui/$(id -u)/com.owb.grokbot-watchdog
+  Starts in GROKBOT_MODE=observe (log only). Switch to enforce only after the log shows the chosen signal flipping
+  during a real drop (see the script header).
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.owb.grokbot-watchdog</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/benjaminoats/YouTube/orbit-with-ben/scripts/mini/grokbot_watchdog.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>GROKBOT_MODE</key><string>observe</string>
+    <key>GROKBOT_SIGNAL</key><string>tcp</string>
+  </dict>
+  <key>StartInterval</key><integer>300</integer>
+  <key>RunAtLoad</key><true/>
+  <key>StandardOutPath</key><string>/Users/benjaminoats/_desk/logs/grokbot_watchdog.launchd.log</string>
+  <key>StandardErrorPath</key><string>/Users/benjaminoats/_desk/logs/grokbot_watchdog.launchd.log</string>
+</dict>
+</plist>
