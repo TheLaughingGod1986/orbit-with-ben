@@ -5,6 +5,11 @@
   python3 code_graphics.py lightclock out/  # ch.2: a light clock at rest beside the same clock moving (zigzag, slower ticks)
   python3 code_graphics.py energy    out/   # ch.4: kinetic energy against speed, flat then nearly vertical near c
   python3 code_graphics.py muons     out/   # ch.2 + Fri 6 Short: a shower falls past the no-relativity decay line to the ground
+  python3 code_graphics.py gpsclocks out/   # ch.1: speed slows GPS clocks, gravity speeds them, net +38 us/day (bars to scale)
+  python3 code_graphics.py mapdrift  out/   # ch.1: the map dot drifting off the road without corrections
+  python3 code_graphics.py gammaclocks out/ # ch.2: five clocks at 0, 0.1c, 0.9c, 0.99c, 0.9999c
+  python3 code_graphics.py twinclocks out/  # ch.3/5: home clock vs ship clock at 0.99c
+  python3 code_graphics.py contraction out/ # ch.3: 10 ly shrinking to ~1.41 ly in the ship's frame
   python3 code_graphics.py all       out/
   add --still to write one frame only (review); --seconds N to change length
 
@@ -185,6 +190,122 @@ def render_muons(out, seconds, still):
     finish(out, still)
 
 
+def dial(ax, cx, cy, r, angle, col, alpha=1.0):
+    """A plain clock face: ring, 12 ticks, one hand at `angle` (radians, 0 = 12 o'clock, clockwise)."""
+    ax.add_patch(Circle((cx, cy), r, fill=False, ec=col, lw=4, alpha=alpha))
+    for k in range(12):
+        a = 2 * math.pi * k / 12
+        ax.plot([cx + 0.82 * r * math.sin(a), cx + 0.95 * r * math.sin(a)],
+                [cy + 0.82 * r * math.cos(a), cy + 0.95 * r * math.cos(a)], color=col, lw=2, alpha=alpha)
+    ax.plot([cx, cx + 0.78 * r * math.sin(angle)], [cy, cy + 0.78 * r * math.cos(angle)], color=col, lw=5,
+            alpha=alpha, solid_capstyle="round")
+    ax.add_patch(Circle((cx, cy), 0.08 * r, color=col, alpha=alpha))
+
+
+def render_gpsclocks(out, seconds, still):
+    """GPS: a satellite circles Earth's limb; bars show the speed effect (-7.2 us/day, down, blue), the gravity
+    effect (+45.9, up, gold) and the net (+38.7, white). Bars drawn to scale, one after another. Text-free."""
+    n = int(seconds * FPS)
+    frames = [int(n * 0.9)] if still else range(n)
+    scale = 3.2 / 45.9
+    for i in frames:
+        s = i / max(1, n - 1)
+        fig, ax = canvas()
+        ax.add_patch(Circle((-4.5, -9.0), 7.2, color="#1d4f8f", lw=0))
+        a = math.radians(100 - 40 * s)
+        R = 8.6
+        sx, sy = -4.5 + R * math.cos(a), -9.0 + R * math.sin(a)
+        ax.add_patch(Rectangle((sx - 0.25, sy - 0.15), 0.5, 0.3, color=WHITE, lw=0))
+        ax.plot([sx - 0.9, sx + 0.9], [sy, sy], color=GOLD, lw=6)
+        base = 0.0
+        for k, (val, col, x) in enumerate(((-7.2, CYAN, 3.0), (45.9, GOLD, 4.6), (38.7, WHITE, 6.2))):
+            g = ease((s - 0.15 - 0.22 * k) / 0.2)
+            h = val * scale * g
+            ax.add_patch(Rectangle((x - 0.45, base if h >= 0 else base + h), 0.9, abs(h), color=col, lw=0))
+        ax.plot([2.2, 7.0], [base, base], color=DIM, lw=2)
+        save(fig, out, i, still)
+    finish(out, still)
+
+
+def render_mapdrift(out, seconds, still):
+    """A text-free street grid. A ring marks where you really are; the position dot drifts away about 10 km a day
+    (sped up), leaving a trail. Shows what uncorrected GPS clocks would do."""
+    n = int(seconds * FPS)
+    frames = [int(n * 0.8)] if still else range(n)
+    for i in frames:
+        s = ease(i / max(1, n - 1))
+        fig, ax = canvas()
+        for x in np.arange(-8, 8.1, 1.6):
+            ax.plot([x, x], [-4.5, 4.5], color="#2a3140", lw=6)
+        for y in np.arange(-4.5, 4.6, 1.5):
+            ax.plot([-8, 8], [y, y], color="#2a3140", lw=6)
+        ax.add_patch(Circle((-3.2, -1.5), 0.45, fill=False, ec=WHITE, lw=3))
+        ts = np.linspace(0, s, 60)
+        px, py = -3.2 + 8.5 * ts, -1.5 + 4.2 * ts ** 1.2
+        ax.plot(px, py, color=CYAN, lw=3, alpha=0.5)
+        ax.add_patch(Circle((px[-1], py[-1]), 0.22, color=CYAN, zorder=5))
+        ax.add_patch(Circle((px[-1], py[-1]), 0.5, color=CYAN, alpha=0.2, lw=0, zorder=4))
+        save(fig, out, i, still)
+    finish(out, still)
+
+
+def render_gammaclocks(out, seconds, still):
+    """Five identical clocks for 0, 0.1c, 0.9c, 0.99c and 0.9999c: hands turn at 1/gamma of the first. Each clock
+    lights in turn (one per VO line). Text-free."""
+    n = int(seconds * FPS)
+    vs = [0.0, 0.1, 0.9, 0.99, 0.9999]
+    rates = [math.sqrt(1 - v * v) for v in vs]
+    frames = [int(n * 0.95)] if still else range(n)
+    for i in frames:
+        t = i / FPS
+        s = i / max(1, n - 1)
+        fig, ax = canvas()
+        for k, rate in enumerate(rates):
+            lit = ease((s - k * 0.17) / 0.1) if k else 1.0
+            cx = -6.0 + k * 3.0
+            col = WHITE if k == 0 else GOLD
+            dial(ax, cx, 0, 1.15, 2 * math.pi * 0.5 * t * rate, col, alpha=0.25 + 0.75 * lit)
+        save(fig, out, i, still)
+    finish(out, still)
+
+
+def render_twinclocks(out, seconds, still):
+    """Home (blue, left) and ship (gold, right) clocks start together; at 0.99c the home hand runs 7.09x faster.
+    Text-free."""
+    n = int(seconds * FPS)
+    g = 7.0888
+    frames = [int(n * 0.7)] if still else range(n)
+    for i in frames:
+        t = i / FPS
+        fig, ax = canvas()
+        dial(ax, -3.5, 0, 2.3, 2 * math.pi * 0.35 * t, CYAN)
+        dial(ax, 3.5, 0, 2.3, 2 * math.pi * 0.35 * t / g, GOLD)
+        save(fig, out, i, still)
+    finish(out, still)
+
+
+def render_contraction(out, seconds, still):
+    """Ship (left dot) to star (right): the gap is 10 ly at rest and shrinks to 1/7.09 of that in the ship's frame
+    at 0.99c (to ~1.41 ly). The star slides in; no numbers. A faint ghost marks the rest-frame distance."""
+    rng = np.random.default_rng(10)
+    n = int(seconds * FPS)
+    bg = rng.uniform([-8, -4.5], [8, 4.5], (400, 2))
+    frames = [int(n * 0.85)] if still else range(n)
+    x0, L0 = -6.5, 13.0
+    for i in frames:
+        s = ease((i / max(1, n - 1) - 0.15) / 0.7)
+        L = L0 * (1 - s * (1 - 1 / 7.0888))
+        fig, ax = canvas()
+        ax.scatter(bg[:, 0], bg[:, 1], s=4, color=WHITE, alpha=0.5, lw=0)
+        ax.add_patch(Circle((x0 + L0, 0), 0.35, fill=False, ec=DIM, lw=2, ls=(0, (3, 4))))
+        ax.plot([x0, x0 + L], [0, 0], color=GOLD, lw=4)
+        ax.add_patch(Circle((x0, 0), 0.22, color=CYAN, zorder=5))
+        ax.add_patch(Circle((x0 + L, 0), 0.35, color=GOLD, zorder=5))
+        ax.add_patch(Circle((x0 + L, 0), 0.8, color=GOLD, alpha=0.2, lw=0, zorder=4))
+        save(fig, out, i, still)
+    finish(out, still)
+
+
 def save(fig, out, i, still):
     os.makedirs(out, exist_ok=True)
     fig.savefig(os.path.join(out, "still.png" if still else f"{i:04d}.png"), facecolor=BG)
@@ -203,13 +324,15 @@ def finish(out, still):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["starfield", "lightclock", "energy", "muons", "all"])
+    ap.add_argument("which", choices=["starfield", "lightclock", "energy", "muons", "gpsclocks", "mapdrift", "gammaclocks", "twinclocks", "contraction", "all"])
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
     a = ap.parse_args()
     jobs = {"starfield": (render_starfield, 14), "lightclock": (render_lightclock, 12),
-            "energy": (render_energy, 10), "muons": (render_muons, 12)}
+            "energy": (render_energy, 10), "muons": (render_muons, 12),
+            "gpsclocks": (render_gpsclocks, 12), "mapdrift": (render_mapdrift, 8), "gammaclocks": (render_gammaclocks, 18),
+            "twinclocks": (render_twinclocks, 16), "contraction": (render_contraction, 10)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
         fn(os.path.join(a.out, name), a.seconds or secs, a.still)
