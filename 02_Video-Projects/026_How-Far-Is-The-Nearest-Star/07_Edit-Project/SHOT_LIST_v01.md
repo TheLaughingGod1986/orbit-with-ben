@@ -57,5 +57,38 @@ Timed to `02_Voiceover/words.json` (VO `nearest_star_vo_v01`, 491.02 s, Claude V
 
 Orbit locks as always: `orbit_shot=True`, a sidecar from `ORBIT_REF`, `global`.
 
-## Shorts
-The Shorts (Mon 16, Wed 18, Fri 20 Nov) reuse these plates. Their rows follow the 024/025 format and the Chief drafts them for my review.
+## Shorts (VO PASS+LOCK `5994626502`; LOCK = untrimmed `_raw`) — Chief draft for Claude review, 5 Oct 2026
+
+House: no Orbit at frame 0; `gate_shorts_open.py` must pass; 22–27 s total with ~2 s loop hold; exact title on screen 9–14 s; last ~3 s loop to open. Timings below are **scaled to LOCK duration** from the trimmed `words.json` on main (Mon/Fri pause-trim was later turned OFF). Re-run Scribe on each `*_vo_v01_LOCK.wav` and `align_shot_list.py` before picture. Shorts reuse long plates; Veo props shared with the long.
+
+### Mon 16 Nov — You Can't See the Nearest Star (LOCK 24.48 s)
+
+| # | VO in–out (s) | Dur | Source | Asset | Notes |
+|---:|---|---:|---|---|---|
+| S1 | 0.12–5.60 | 5.5 | ESO | ESO night-sky time-lapse already turning (same as long row 1). Caption: **TOO FAINT**. | **Frame 0.** No Orbit. Whoosh. |
+| S2 | 6.12–11.04 | 4.9 | ESA/Hubble / OMNI | Hubble Proxima (long row 3/5) slow push; optional Orbit peek (`orbit_thumb_omni_v01` reuse or stay on sky). | Omni only if already minted for the long; else sky. |
+| S3 | 11.50–20.14 | 8.6 | ESA/Hubble / CODE | Hubble Proxima tighter + `triple` or `journey` light streak. Exact title on screen 9–14 s. | Reuse long rows 5–9 plates. |
+| S4 | 20.64–24.44 | 3.8 | ESO | Return to opening night-sky time-lapse. | Loop. Spoken end names the long. |
+
+### Wed 18 Nov — Could a Robot Reach the Nearest Star? (LOCK 21.60 s)
+
+| # | VO in–out (s) | Dur | Source | Asset | Notes |
+|---:|---|---:|---|---|---|
+| S1 | 0.14–3.62 | 3.5 | NASA | Voyager 1 art already moving against stars (long row 22/25). Caption: **75,000 YEARS**. | **Frame 0.** No Orbit. Whoosh. |
+| S2 | 4.42–6.96 | 2.5 | NASA | 1977 Voyager launch archive (muted), long row 22. | |
+| S3 | 8.02–18.26 | 10.2 | NASA / CODE | Voyager against deep starfield + `journey` Voyager marker. Exact title 9–14 s. | No Orbit needed (script). |
+| S4 | 18.86–21.52 | 2.7 | NASA | Return to opening Voyager pass. | Loop. |
+
+### Fri 20 Nov — If the Sun Were a Grapefruit, Where's the Nearest Star? (LOCK 20.64 s)
+
+| # | VO in–out (s) | Dur | Source | Asset | Notes |
+|---:|---|---:|---|---|---|
+| S1 | 0.11–2.75 | 2.6 | VEO | `grapefruit_table_veo_v01` (long row 18), camera already sliding. Caption: **A CHERRY**. | **Frame 0.** No Orbit. Whoosh. |
+| S2 | 3.30–8.39 | 5.1 | VEO | `pin_room_veo_v01` then `cherry_table_veo_v01` (long rows 18/20). | One take each, free Vertex. |
+| S3 | 8.87–16.67 | 7.8 | NASA / Remotion | Blue Marble → London–Cairo glow-dot pull-back (long row 20). Exact title 9–14 s. | Dots only, no labels. |
+| S4 | 17.17–20.54 | 3.4 | VEO | Return to opening grapefruit slide. | Loop. |
+
+## Shorts generation notes
+- Mon may reuse `orbit_thumb_omni_v01` only after the long's Omni queue; otherwise stay on ESO/Hubble.
+- Fri Veo props are the same three as the long (no remint).
+- Wed is NASA-only.
