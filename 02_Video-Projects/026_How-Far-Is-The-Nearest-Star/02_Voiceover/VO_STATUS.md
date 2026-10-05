@@ -1,0 +1,26 @@
+# VO status — Nearest star 026 long (How Far Is the Nearest Star?)
+
+| Field | Value |
+|---|---|
+| Status | PASS |
+| Script | nearest_star_script_master_v01.md (prose only; chapter cards skipped; pauses between chapters) |
+| Claude lock | comment 5994436068 — Locked VO for 026 |
+| Voice | Ben Orbit Narrator (`kDch6ACCIpqgQ0NsU9kk`) |
+| Model | `eleven_v3` |
+| Settings | {'stability': 0.34, 'similarity_boost': 0.78, 'style': 0.42, 'speed': 1.04, 'use_speaker_boost': True} |
+| Chapters | 6 (gap 0.7s between cards) |
+| Words | 1165 |
+| Spoken chars | 6311 |
+| Duration | 491.02s (8.18 min) |
+| LUFS integrated | -20.6 |
+| mean / peak | -23.9 / -3.9 dB |
+| Credits before | 129023 / 209536 |
+| Credits after | 131576 / 209536 |
+| Credits delta | 2553 (spoken_chars=6311; counter may lag) |
+| Scribe match | 98.63% |
+| SHA-256 mp3 | `386d17bf70e0d3be87fc39f3d1df38968c93221b2db67239e9213302a97bb9b6` |
+| MP3 | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/02_Voiceover/nearest_star_vo_v01.mp3` |
+| WAV | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/02_Voiceover/nearest_star_vo_v01.wav` |
+| Master | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/02_Voiceover/05_Master/nearest_star_vo_v01_master.mp3` |
+| iCloud UAT | `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/026_NearestStar_Long_VO` |
+| Updated | 2026-10-05 13:37 BST |

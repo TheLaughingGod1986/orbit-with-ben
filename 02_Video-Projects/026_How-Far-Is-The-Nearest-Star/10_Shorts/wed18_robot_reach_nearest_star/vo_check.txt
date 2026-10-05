@@ -1,0 +1,10 @@
+VO CHECK — Nearest star 026 Short Wed 18 Nov (Could a Robot Reach the Nearest Star?)
+Status: PASS
+Duration: 21.600s (raw 21.60s)
+LUFS integrated: -20.6
+mean_volume: -23.7 dB | max_volume: -4.9 dB
+Pace: 144.4 wpm (52 words)
+Script vs Scribe: 90.57% match; mismatches = number spelling only
+Fails: none
+Warns: ['pace 144.4 wpm under 145 (Short house target ~23-25s / ~132-143 wpm)']
+Notes: HOS vo_check.py crashed (faster-whisper/av metadata_errors on Py3.14). Used same loudness/silence gates + ElevenLabs Scribe word diff.

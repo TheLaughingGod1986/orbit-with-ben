@@ -1,0 +1,33 @@
+{
+  "script_words": 50,
+  "whisper_words": 50,
+  "match_rate_pct": 90.0,
+  "mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "fifteen",
+        "metres"
+      ],
+      "whisper": [
+        "15",
+        "meters"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "four",
+        "thousand",
+        "kilometres"
+      ],
+      "whisper": [
+        "4",
+        "000",
+        "kilometers"
+      ]
+    }
+  ],
+  "script_norm": "shrink the sun to the size of a grapefruit earth is a pinhead fifteen metres away the nearest star becomes a cherry where is it about four thousand kilometres away put the grapefruit in london and the cherry is past cairo the full film how far is the nearest star",
+  "whisper_norm": "shrink the sun to the size of a grapefruit earth is a pinhead 15 meters away the nearest star becomes a cherry where is it about 4 000 kilometers away put the grapefruit in london and the cherry is past cairo the full film how far is the nearest star"
+}

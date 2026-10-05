@@ -1,0 +1,26 @@
+# VO status — Nearest star 026 Short Wed 18 Nov (Could a Robot Reach the Nearest Star?)
+
+| Field | Value |
+|---|---|
+| Status | PASS |
+| Script | NEAREST_STAR_SHORTS_SCRIPTS_v01.md §2 Wed 18 Nov (prose only; brackets skipped) |
+| Claude lock | comment 5994436068 — Locked VO for 026 |
+| Voice | Ben Orbit Narrator (`kDch6ACCIpqgQ0NsU9kk`) |
+| Model | `eleven_v3` |
+| Settings | {stability:0.34, similarity_boost:0.78, style:0.42, speed:1.04, use_speaker_boost:true} |
+| Words | 52 |
+| Spoken chars | 309 |
+| Raw duration | 21.60s |
+| Final duration | 21.600s (no pause trim; under 25s; speed 1.04) |
+| LUFS integrated | -20.6 |
+| mean / peak | -23.7 / -4.9 dB |
+| Credits before | 131576 / 209536 |
+| Credits after | 131576 / 209536 |
+| Credits delta | 0 (spoken_chars=309; subscription counter may lag/partial) |
+| Scribe match | 90.57% (number-spelling mismatches only) |
+| SHA-256 mp3 | `f07f75e7e37fbde8f2f44627f173d94769746845fbad9e8f460674091743b19e` |
+| TXT | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/wed18_robot_reach_nearest_star_vo_v01.txt` |
+| MP3 (repo, gitignored) | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/wed18_robot_reach_nearest_star_vo_v01.mp3` |
+| WAV (repo, gitignored) | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/wed18_robot_reach_nearest_star_vo_v01.wav` |
+| iCloud UAT copies | `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/026_NearestStar_Wed18_VO` |
+| Updated | 2026-10-05 13:38 BST |
