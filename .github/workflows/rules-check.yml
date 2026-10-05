@@ -5,9 +5,9 @@ name: Rules check
 on:
   push:
     branches: [main]
-    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", ".github/workflows/rules-check.yml"]
+    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", ".github/workflows/rules-check.yml"]
   pull_request:
-    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", ".github/workflows/rules-check.yml"]
+    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", ".github/workflows/rules-check.yml"]
 
 jobs:
   check:
@@ -19,3 +19,4 @@ jobs:
           python-version: "3.12"
       - run: python3 scripts/sync_rules.py --check
       - run: python3 -m unittest discover -s scripts -p "test_*.py" -v
+      - run: python3 -m unittest discover -s 04_Audio/tools -p "test_vo_take.py" -v
