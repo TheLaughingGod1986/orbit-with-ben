@@ -98,8 +98,10 @@ What if the most important thing about the nearest star is not how close it is, 
 
 The bigger question sits above you every clear night. Each of those points of light is at least that far away, most of them far, far further. And we have only just begun to measure the gap.
 
+Next week: what if Earth stopped spinning?
+
 [VISUAL MUST: ESO artist's impression of Proxima b, clearly an impression, then a real ALMA or NASA image of a stellar flare, then return to the opening: the real night sky still turning. Hold that moving picture for the end. Music may fade under the last line. No goodbye card, no subscribe graphic, no Orbit in the last shot. The end screen is added later in Studio.]
 [TEACH: Proxima b: minimum mass about 1.17 Earth masses, period about 11.2 days, temperate orbit (Anglada-Escudé et al. 2016; Suárez Mascareño et al. 2020). Habitability is open (flares, X-ray/EUV, possible atmospheric loss). Breakthrough Starshot is an unbuilt concept: gram-scale sails at about 0.2c, about 20 years. A radio signal sent in Oct 2026 arrives about Jan 2031; the earliest reply returns about Apr 2035.]
 
 <!-- HOOK ESCALATION DISCOVERY PAYOFF BIGGER QUESTION -->
-<!-- Handoff line for the next film is recorded as a separate one-line pickup once 027 is locked. -->
+<!-- Handoff line added 5 Oct after the 027 topic lock. It is recorded as a separate one-line pickup wav; the LOCK VO is unchanged. -->
