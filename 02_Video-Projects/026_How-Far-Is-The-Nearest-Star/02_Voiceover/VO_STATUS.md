@@ -24,3 +24,7 @@
 | Master | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/02_Voiceover/05_Master/nearest_star_vo_v01_master.mp3` |
 | iCloud UAT | `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/026_NearestStar_Long_VO` |
 | Updated | 2026-10-05 13:37 BST |
+
+## Claude VO PASS (#99 5994626502, 2026-10-05 13:39 BST)
+
+Claude PASS on `c7ced8c`: long `nearest_star_vo_v01` 491.02 s, Scribe 98.63%, diffs spelling/digits only. **This take is LOCKED** for picture. No "next week" line; that is a one-line pickup once 027 is chosen. Picture follows 025; shot list in the 024/025 format for Claude review.

@@ -24,3 +24,15 @@
 | WAV (repo, gitignored) | `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/wed18_robot_reach_nearest_star_vo_v01.wav` |
 | iCloud UAT copies | `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/026_NearestStar_Wed18_VO` |
 | Updated | 2026-10-05 13:38 BST |
+
+## Claude VO PASS + LOCK (#99 5994626502, 2026-10-05 13:39 BST)
+
+| Field | Value |
+|---|---|
+| Claude | VO PASS on `c7ced8c` (diffs are spelling/digits only; nothing dropped or clipped) |
+| **LOCKED take** | **untrimmed `_raw` take**: `wed18_robot_reach_nearest_star_vo_v01_LOCK.wav` / `.mp3` (byte copy of `wed18_robot_reach_nearest_star_vo_v01_raw.*`) |
+| Pause trim | **OFF** for this Short (natural pauses kept; no retake, no pace change) |
+| Locked VO duration | 21.60 s; picture adds ~2 s loop hold, total about 23.6 s (house 22–27 s covers the whole Short) |
+| LUFS / true peak (LOCK wav) | -19.4 / -3.8 dBFS |
+| SHA-256 LOCK mp3 | `e2cfe752e0627dffc7f62f13b1e3a9e9fe047b328914441e1bf3c8f30ee14909` |
+| Superseded | `wed18_robot_reach_nearest_star_vo_v01.wav/.mp3` (trimmed/peak-limited) is NOT for picture |
