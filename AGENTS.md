@@ -76,9 +76,11 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 **Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
 1. **Spending money:** any top-up, new paid service or plan (see Budget).
-2. **Anything irreversible:** a public video going private or being removed, anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Claude can OK it.
+2. **Anything irreversible:** a public video going private or being removed, anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Claude can OK it. **Exception (Ben to Claude directly, 5 Oct 2026):** Claude may make a public Orbit or HOS video private, or take it down, when needed. Claude takes a video down by making it private, because private can be undone, and records the reason on the thread and tells Ben.
 3. **What only Ben can do:** his voice, his logins and accounts, and his devices (waking the Mac mini).
-4. **The Never list below**, and any change to the channel's direction (a new series, a new format, a change of voice). The Never list does not relax under this order.
+4. **Any change to the channel's direction** (a new series, a new format, a change of voice).
+
+**Claude owns `AGENTS.md` and the Never list** (Ben to Claude directly, 5 Oct 2026: *"you own AGENTS.md and Never-list edits"*). Only Claude changes them. Claude records each change with its date and reason, on the thread and in the commit, and tells Ben. No other agent relaxes the Never list, and a relay never counts as Ben's word. **Real money stays with Ben** (item 1).
 
 **Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
 
@@ -101,6 +103,7 @@ Once the final OK is given (Claude's, under the 3 Oct order), the upload goes up
 - **Studio:** add a pinned comment to a Short. Add a `/go/` link anywhere: its redirect app is retired, and affiliate links are paused (`STUDIO_PLAYBOOK.md` §11).
 - **Generation:**
   - Use Kling, Seedance or ElevenLabs Image & Video.
+  - Generate anything on the ElevenLabs website, by any agent. VO goes through the API only, one take at a time. (4 Oct 2026: website Video Generation by desk automation burned about 67k credits.)
   - Omni the whole film or world B-roll.
   - Use a video model's speech as VO.
   - Use any voice other than Ben Orbit Narrator.
