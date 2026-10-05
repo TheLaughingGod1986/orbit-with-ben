@@ -83,6 +83,13 @@ class BoardAndStale(unittest.TestCase):
         self.assertEqual(len(hits), 1)
         self.assertIn("027 sources by chief/gemini", hits[0])
 
+    def test_stale_seen_reports_each_stall_once(self):
+        seen = self.films / "seen.txt"
+        late = T0 + dt.timedelta(minutes=31)
+        self.assertEqual(len(studio.stale_list(self.films, late, seen)), 1)
+        self.assertEqual(studio.stale_list(self.films, late + dt.timedelta(minutes=15), seen), [])
+        self.assertEqual(len(studio.stale_list(self.films, late)), 1)  # without --seen it always lists
+
     def test_cli_claim_exit_code_when_held(self):
         path = self.films / "027_What-If" / "status.json"
         d = json.loads(path.read_text())

@@ -31,6 +31,7 @@ SCAN = [
 # (pattern, why it is stale)
 STALE = [
     (r"Stop (and wait )?for Ben's OK", "sign-offs go to Claude first (3 Oct 2026)"),
+    (r"Stop for Ben at the sign-off points", "sign-offs go to Claude first (3 Oct 2026)"),
     (r"NEEDS BEN\*\* → Chief of Staff", "NEEDS BEN goes to Claude first (3 Oct 2026)"),
     (r"Home: Google AI Studio", "picture runs on Vertex (free credit), never AI Studio prepaid"),
     (r"\*\*Tools:\*\* Google AI Studio", "picture runs on Vertex (free credit), never AI Studio prepaid"),

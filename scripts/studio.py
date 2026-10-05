@@ -8,7 +8,8 @@ read the whole thread to learn the state of the work. The thread is for decision
   python3 scripts/studio.py claim 027 sources --by chief/gemini --eta 60 --note "SOURCES draft"
   python3 scripts/studio.py release 027 sources --by chief/gemini --state review --ref 1a2b3c4
   python3 scripts/studio.py set 027 vo todo --next "Claude Locked: VO after Gemini check"
-  python3 scripts/studio.py stale                                   # exit 1 and list claims past their ETA
+  python3 scripts/studio.py stale [--seen ~/_desk/state/stale_seen.txt]  # exit 1 and list claims past their ETA
+                                                                    # (--seen: each stall reported once)
   python3 scripts/studio.py status                                  # rewrite STATUS.md (claim/release/set do it too)
   add --git to claim/release/set: pull, write, commit and push to main in one go (retries if the push races)
 
@@ -153,13 +154,24 @@ def write_status(films):
     status_path(films).write_text(render_md(films))
 
 
-def stale_list(films, at):
+def stale_list(films, at, seen=None):
+    """Stalled claims as lines. With `seen` (a local file), report each stall once: lines already in the file are
+    skipped and new ones are appended, so the 15-minute watchdog doesn't repeat itself."""
     out = []
     for p in sorted(films.glob("*/status.json")):
         data = load(p)
         out += [f"{data['film']} {c['stage']} by {c['by']}: ETA {c['eta']} passed ({c['note']})"
                 for c in data["claims"] if stalled(c, at)]
-    return out
+    if seen is None:
+        return out
+    seen = pathlib.Path(seen)
+    old = set(seen.read_text().splitlines()) if seen.exists() else set()
+    new = [line for line in out if line not in old]
+    if new:
+        seen.parent.mkdir(parents=True, exist_ok=True)
+        with seen.open("a") as f:
+            f.write("".join(line + "\n" for line in new))
+    return new
 
 
 def git(*args):
@@ -194,7 +206,7 @@ def main(argv=None):
     ap.add_argument("--films", default=str(FILMS), help=argparse.SUPPRESS)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("board")
-    sub.add_parser("stale")
+    sub.add_parser("stale").add_argument("--seen", help="local file of stalls already reported; report each once")
     sub.add_parser("status").add_argument("--check", action="store_true", help="CI: exit 1 if STATUS.md is out of date")
     for name in ("claim", "release", "set"):
         p = sub.add_parser(name)
@@ -231,7 +243,7 @@ def main(argv=None):
         print(f"wrote {status_path(films)}")
         return 0
     if a.cmd == "stale":
-        hits = stale_list(films, at)
+        hits = stale_list(films, at, a.seen)
         print("\n".join(hits) if hits else "no stalled claims")
         return 1 if hits else 0
     path = film_dir(films, a.film) / "status.json"
