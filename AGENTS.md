@@ -71,6 +71,15 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
 
 Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOOK.md` §2: at least **three** big education/space videos (≈1M+ views) on the same subject, logged in `templates/TOPIC_OPPORTUNITY_SCORE.md` and `PRE_BUILD_VIDIQ_AUDIT.md`. Use their subject words for description first lines and tags — **never** put channel names in the listing. A strong neighbour pool is evidence for Ben; it does not pick the topic for him. Orbit only — do not apply HOS packaging habits here.
 
+## Studio board and claims (5 Oct 2026)
+
+- **State lives in `02_Video-Projects/<film>/status.json`, not in the thread.** Start every session with `python3 scripts/studio.py board`. Read the thread only for decisions.
+- **Claim before you work or spend:** `python3 scripts/studio.py claim <film> <stage> --by <agent> --eta <min> --git`. This works the same for Mini jobs, Cursor, Codex and cloud Claude sessions, so a stage can't be done twice.
+  - If the claim exits 75, someone else holds that stage. Stop.
+  - When you finish, run `release … --state review|done --ref <sha> --git`.
+- **Stalled jobs:** a claim past its ETA counts as stalled. `studio.py stale` lists stalled claims; the Mini runs it every 15 minutes and posts any hit to the thread.
+- **Mini-only resources:** the ElevenLabs pool, Vertex and Studio writers also keep their `desk-lock` (`07_Content-Ops/scripts/desk-lock.sh`).
+
 ## Stop and ask Ben
 
 **Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:

@@ -1,0 +1,209 @@
+#!/usr/bin/env python3
+"""Studio board: where every film is, who is working on what, and which jobs have stalled.
+
+Each film keeps one 02_Video-Projects/<film>/status.json. The board is read from those files, so no agent needs to
+read the whole thread to learn the state of the work. The thread is for decisions; status.json is for state.
+
+  python3 scripts/studio.py board                                   # one line per film, plus open claims
+  python3 scripts/studio.py claim 027 sources --by chief/gemini --eta 60 --note "SOURCES draft"
+  python3 scripts/studio.py release 027 sources --by chief/gemini --state review --ref 1a2b3c4
+  python3 scripts/studio.py set 027 vo todo --next "Claude Locked: VO after Gemini check"
+  python3 scripts/studio.py stale                                   # exit 1 and list claims past their ETA
+  add --git to claim/release/set: pull, write, commit and push to main in one go (retries if the push races)
+
+Claims are the one way to say "I'm on this", for Mini jobs and cloud sessions alike. A claim fails (exit 75) while
+another live claim holds the same film and stage. A claim past its ETA counts as stalled: `stale` reports it, and a
+new claim may take it over (the takeover is noted). Run `claim --git` before any spend; the push is the lock, so two
+agents racing for the same stage can't both win.
+
+Stages, in order: topic script sources vo shots picture edit thumbs upload.
+States: todo, doing, review, done, skip, blocked.
+"""
+import argparse, datetime as dt, json, pathlib, subprocess, sys
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+FILMS = ROOT / "02_Video-Projects"
+STAGES = ["topic", "script", "sources", "vo", "shots", "picture", "edit", "thumbs", "upload"]
+STATES = ["todo", "doing", "review", "done", "skip", "blocked"]
+MARK = {"todo": ".", "doing": ">", "review": "?", "done": "+", "skip": "-", "blocked": "!"}
+EX_HELD = 75
+
+
+def now():
+    return dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
+
+
+def iso(t):
+    return t.strftime("%Y-%m-%dT%H:%MZ")
+
+
+def parse(s):
+    return dt.datetime.strptime(s, "%Y-%m-%dT%H:%MZ").replace(tzinfo=dt.timezone.utc)
+
+
+def film_dir(films, key):
+    hits = [d for d in sorted(films.iterdir()) if d.is_dir() and d.name.split("_")[0] == key]
+    if len(hits) != 1:
+        sys.exit(f"studio: no single film folder for '{key}' under {films}")
+    return hits[0]
+
+
+def load(path):
+    if path.exists():
+        return json.loads(path.read_text())
+    return {"film": path.parent.name.split("_")[0], "title": "", "air": "", "stages": {}, "claims": [], "next": ""}
+
+
+def save(path, data):
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+
+
+def stalled(claim, at):
+    return parse(claim["eta"]) < at
+
+
+def do_claim(data, stage, by, eta_min, note, at):
+    for c in data["claims"]:
+        if c["stage"] == stage and c["by"] != by:
+            if not stalled(c, at):
+                return f"held by {c['by']} since {c['at']} (ETA {c['eta']})"
+            note = f"{note} (took over stalled claim by {c['by']}, ETA {c['eta']})".strip()
+    data["claims"] = [c for c in data["claims"] if c["stage"] != stage]
+    data["claims"].append({"stage": stage, "by": by, "at": iso(at), "eta": iso(at + dt.timedelta(minutes=eta_min)),
+                           "note": note})
+    data["stages"].setdefault(stage, {})["state"] = "doing"
+    return None
+
+
+def do_release(data, stage, by, state, ref):
+    mine = [c for c in data["claims"] if c["stage"] == stage and c["by"] == by]
+    if not mine:
+        return f"no claim on {stage} by {by}"
+    data["claims"] = [c for c in data["claims"] if c not in mine]
+    do_set(data, stage, state, ref, None)
+    return None
+
+
+def do_set(data, stage, state, ref, nxt):
+    s = data["stages"].setdefault(stage, {})
+    s["state"] = state
+    if ref:
+        s["ref"] = ref
+    if nxt is not None:
+        data["next"] = nxt
+
+
+def board(films, at):
+    rows = []
+    head = f"{'film':<5} {'air':<10} " + " ".join(f"{s[:4]:<4}" for s in STAGES) + "  next"
+    rows.append(head)
+    claims = []
+    for d in sorted(films.iterdir()):
+        p = d / "status.json"
+        if not p.exists():
+            continue
+        data = load(p)
+        cells = " ".join(f"{MARK.get(data['stages'].get(s, {}).get('state', 'todo'), '.'):<4}" for s in STAGES)
+        rows.append(f"{data['film']:<5} {data.get('air', ''):<10} {cells}  {data.get('next', '')}")
+        for c in data["claims"]:
+            flag = "STALLED" if stalled(c, at) else "live"
+            claims.append(f"  {data['film']} {c['stage']:<8} {c['by']:<16} since {c['at']}  ETA {c['eta']}  {flag}  {c['note']}")
+    rows.append("")
+    rows.append("key: + done  ? review  > doing  . todo  - skip  ! blocked")
+    rows.append("claims:" if claims else "claims: none")
+    return "\n".join(rows + claims)
+
+
+def stale_list(films, at):
+    out = []
+    for p in sorted(films.glob("*/status.json")):
+        data = load(p)
+        out += [f"{data['film']} {c['stage']} by {c['by']}: ETA {c['eta']} passed ({c['note']})"
+                for c in data["claims"] if stalled(c, at)]
+    return out
+
+
+def git(*args):
+    return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
+
+
+def with_git(path, change, message, tries=3):
+    """Pull, apply the change, commit only status.json, and push. If the push races another agent, start again
+    from the new main. Other uncommitted work in the tree is autostashed by the pull and never committed."""
+    for _ in range(tries):
+        if git("pull", "-q", "--rebase", "--autostash", "origin", "main").returncode != 0:
+            return "git pull failed; resolve the working tree first"
+        data = load(path)
+        err = change(data)
+        if err:
+            return err
+        save(path, data)
+        git("add", str(path))
+        if git("commit", "-q", "-m", message, "--", str(path)).returncode != 0:
+            return "git commit failed"
+        if git("push", "-q", "origin", "HEAD:main").returncode == 0:
+            return None
+        git("reset", "-q", "HEAD~1")  # drop only our status commit; other work in the tree is untouched
+        git("checkout", "-q", "--", str(path))
+    return "push kept racing; try again"
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--films", default=str(FILMS), help=argparse.SUPPRESS)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    sub.add_parser("board")
+    sub.add_parser("stale")
+    for name in ("claim", "release", "set"):
+        p = sub.add_parser(name)
+        p.add_argument("film")
+        p.add_argument("stage", choices=STAGES)
+        p.add_argument("--git", action="store_true")
+        if name == "claim":
+            p.add_argument("--by", required=True)
+            p.add_argument("--eta", type=int, default=60, help="minutes until the claim counts as stalled")
+            p.add_argument("--note", default="")
+        if name == "release":
+            p.add_argument("--by", required=True)
+            p.add_argument("--state", choices=STATES, default="review")
+            p.add_argument("--ref")
+        if name == "set":
+            p.add_argument("state", choices=STATES)
+            p.add_argument("--ref")
+            p.add_argument("--next")
+    a = ap.parse_args(argv)
+    films = pathlib.Path(a.films)
+    at = now()
+    if a.cmd == "board":
+        print(board(films, at))
+        return 0
+    if a.cmd == "stale":
+        hits = stale_list(films, at)
+        print("\n".join(hits) if hits else "no stalled claims")
+        return 1 if hits else 0
+    path = film_dir(films, a.film) / "status.json"
+    if a.cmd == "claim":
+        change = lambda d: do_claim(d, a.stage, a.by, a.eta, a.note, at)
+        msg = f"studio: {a.film} {a.stage} claimed by {a.by}"
+    elif a.cmd == "release":
+        change = lambda d: do_release(d, a.stage, a.by, a.state, a.ref)
+        msg = f"studio: {a.film} {a.stage} {a.state} by {a.by}"
+    else:
+        change = lambda d: do_set(d, a.stage, a.state, a.ref, a.next)
+        msg = f"studio: {a.film} {a.stage} {a.state}"
+    if a.git:
+        err = with_git(path, change, msg)
+    else:
+        data = load(path)
+        err = change(data)
+        if not err:
+            save(path, data)
+    if err:
+        print(f"studio: {err}", file=sys.stderr)
+        return EX_HELD if a.cmd == "claim" and err.startswith("held") else 1
+    print(msg)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
