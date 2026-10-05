@@ -111,7 +111,9 @@ def duration(path: Path) -> float:
 def loudness(path: Path) -> dict:
     err = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", "volumedetect,ebur128",
                           "-f", "null", "-"], capture_output=True, text=True, errors="replace").stderr
-    num = lambda rx: (lambda m: float(m.group(1)) if m else None)(re.search(rx, err))
+    # ebur128 prints a running "I: … LUFS" on every frame line (the first is -70.0 at t=0.1 s);
+    # the integrated value is the LAST match, in the Summary block.
+    num = lambda rx: (lambda m: float(m[-1]) if m else None)(re.findall(rx, err))
     return {"lufs_integrated": num(r"I:\s+(-?[\d.]+)\s+LUFS"), "mean_volume_db": num(r"mean_volume: (-?[\d.]+)"),
             "max_volume_db": num(r"max_volume: (-?[\d.]+)")}
 
