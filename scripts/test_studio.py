@@ -84,7 +84,11 @@ class BoardAndStale(unittest.TestCase):
         self.assertIn("027 sources by chief/gemini", hits[0])
 
     def test_cli_claim_exit_code_when_held(self):
-        argv = ["--films", str(self.films), "claim", "027", "sources", "--by", "other"]
+        path = self.films / "027_What-If" / "status.json"
+        d = json.loads(path.read_text())
+        studio.do_claim(d, "vo", "chief", 60, "", studio.now())  # live against the real clock the CLI uses
+        path.write_text(json.dumps(d))
+        argv = ["--films", str(self.films), "claim", "027", "vo", "--by", "other"]
         self.assertEqual(studio.main(argv), studio.EX_HELD)
 
     def test_cli_set_writes_file(self):
@@ -92,6 +96,30 @@ class BoardAndStale(unittest.TestCase):
         d = json.loads((self.films / "027_What-If" / "status.json").read_text())
         self.assertEqual(d["stages"]["vo"]["state"], "todo")
         self.assertEqual(d["next"], "x")
+
+
+class StatusPage(unittest.TestCase):
+    def test_render_and_check(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            films = pathlib.Path(tmp) / "02_Video-Projects"
+            (films / "027_X").mkdir(parents=True)
+            d = blank()
+            d.update(title="What If Earth Stopped Spinning?", air="2026-11-22", next="Locked VO")
+            studio.do_set(d, "topic", "done", None, None)
+            studio.do_set(d, "script", "review", None, None)
+            studio.do_claim(d, "sources", "chief/gemini", 30, "", T0)
+            (films / "027_X" / "status.json").write_text(json.dumps(d))
+            md = studio.render_md(films)
+            self.assertIn("| 027 What If Earth Stopped Spinning? | 2026-11-22 | 1/9 | script (review), sources (doing) | Locked VO |", md)
+            self.assertIn("| 027 | sources | chief/gemini | 2026-10-05T15:00Z | 2026-10-05T15:30Z | - |", md)
+            self.assertEqual(studio.main(["--films", str(films), "status", "--check"]), 1)
+            self.assertEqual(studio.main(["--films", str(films), "status"]), 0)
+            self.assertEqual(studio.main(["--films", str(films), "status", "--check"]), 0)
+            studio.main(["--films", str(films), "set", "027", "vo", "todo"])  # writes keep STATUS.md current
+            self.assertEqual(studio.main(["--films", str(films), "status", "--check"]), 0)
+
+    def test_repo_status_page_is_current(self):
+        self.assertEqual(studio.main(["status", "--check"]), 0)
 
 
 class SyncRules(unittest.TestCase):

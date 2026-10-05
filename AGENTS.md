@@ -73,7 +73,7 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 
 ## Studio board and claims (5 Oct 2026)
 
-- **State lives in `02_Video-Projects/<film>/status.json`, not in the thread.** Start every session with `python3 scripts/studio.py board`. Read the thread only for decisions.
+- **State lives in `02_Video-Projects/<film>/status.json`, not in the thread.** Start every session with `python3 scripts/studio.py board`. Read the thread only for decisions. `STATUS.md` at the repo root is the same board as a page for Ben (what's being worked on, how far through, next step, ETA). `claim`/`release`/`set` regenerate it, and CI fails if it's stale.
 - **Claim before you work or spend:** `python3 scripts/studio.py claim <film> <stage> --by <agent> --eta <min> --git`. This works the same for Mini jobs, Cursor, Codex and cloud Claude sessions, so a stage can't be done twice.
   - If the claim exits 75, someone else holds that stage. Stop.
   - When you finish, run `release … --state review|done --ref <sha> --git`.
