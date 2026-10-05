@@ -60,3 +60,12 @@ node_modules/
 
 # NASA plate harvests (binaries stay local; metadata json/md/py tracked)
 **/nasa_pool_v01/
+
+# Pre-Buffer social posting (retired 27 Sep 2026; Buffer mirror is the only route). Any leftovers on a machine are
+# debris: never commit them. The real history is in _archive/00_Brand/Channel-Setup/{Meta,Threads,TikTok,social}/.
+00_Brand/Channel-Setup/Meta/
+00_Brand/Channel-Setup/Threads/
+00_Brand/Channel-Setup/TikTok/
+/_post_*.py
+/_post_*.sh
+/chrome_click*.js
