@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
   Grok Bot connection watchdog (scripts/mini/grokbot_watchdog.sh), every 5 minutes.
-  Install:  cp scripts/mini/com.owb.grokbot-watchdog.plist ~/Library/LaunchAgents/
+  Install (copy the script out of the repo, so it keeps running whatever branch the checkout is on):
+            mkdir -p ~/_desk/bin && git -C ~/YouTube/orbit-with-ben show origin/main:scripts/mini/grokbot_watchdog.sh > ~/_desk/bin/grokbot_watchdog.sh
+            cp scripts/mini/com.owb.grokbot-watchdog.plist ~/Library/LaunchAgents/
             launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.grokbot-watchdog.plist
   Remove:   launchctl bootout gui/$(id -u)/com.owb.grokbot-watchdog
   Starts in GROKBOT_MODE=observe (log only). Switch to enforce only after the log shows the chosen signal flipping
@@ -14,7 +16,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/benjaminoats/YouTube/orbit-with-ben/scripts/mini/grokbot_watchdog.sh</string>
+    <string>/Users/benjaminoats/_desk/bin/grokbot_watchdog.sh</string>
   </array>
   <key>EnvironmentVariables</key>
   <dict>

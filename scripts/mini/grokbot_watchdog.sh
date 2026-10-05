@@ -7,6 +7,7 @@
 #   tcp=N       ESTABLISHED TCP connections to non-loopback hosts from any Grok Bot process (Electron apps do their
 #               networking in a helper process, so the whole app's process tree counts, not just the main PID)
 #   status=...  scalar fields of ~/Library/Application Support/Grok Bot/desktop-status.json, plus its age in seconds
+#               (5 Oct: v0.66.0 writes it once at app start and it has no connection field, so it can't detect a drop)
 #   hb=S        age in seconds of the newest dune-reliability/sessions/*.running.json heartbeat
 #
 # GROKBOT_SIGNAL picks the signal that decides "disconnected":
