@@ -101,6 +101,11 @@ describe("buildReport from snapshots only", () => {
     const r2 = buildReport("owb", withPrivate, null);
     expect(r2.videos.map((v) => v.id)).toEqual(["c", "a", "b"]);
   });
+  it("lists a video once even if the snapshot holds it twice", () => {
+    const dup = [...snaps];
+    dup[1] = { ...snaps[1], videos: [...snaps[1].videos, video("a", 650)] };
+    expect(buildReport("owb", dup, null).videos.filter((v) => v.id === "a")).toHaveLength(1);
+  });
   it("finds the snapshot on or before a day", () => {
     expect(snapshotAtOrBefore(snaps, "2026-10-04")!.date).toBe("2026-10-04");
     expect(snapshotAtOrBefore(snaps, "2026-10-03")).toBeNull();

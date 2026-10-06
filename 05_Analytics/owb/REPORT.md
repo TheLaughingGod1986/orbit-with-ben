@@ -49,10 +49,7 @@ Generated from the 2026-10-06 snapshot by `npm run analytics:report`. Don't edit
 | 2026-09-16 | [Why You Can't Stand on a Neutron Star](https://youtu.be/_8L9jYbDVmQ) | short | 419 | – | – | – | 21 | – |
 | 2026-09-16 | [Could a Probe Get Closer to a Neutron Star?](https://youtu.be/to-b2baeoWQ) | short | 67 | – | – | – | 3.4 | – |
 | 2026-09-14 | [What Happens If You Touch a Neutron Star?](https://youtu.be/Rp_8J6_6IIk) | short | 62 | – | – | – | 2.8 | – |
-| 2026-09-14 | [What Happens If You Touch a Neutron Star?](https://youtu.be/Rp_8J6_6IIk) | short | 62 | – | – | – | 2.8 | – |
 | 2026-09-13 | [Your Last Clear Image Near a Neutron Star](https://youtu.be/o7ykyTDZKiE) | short | 50 | – | – | – | 2.2 | – |
-| 2026-09-13 | [Your Last Clear Image Near a Neutron Star](https://youtu.be/o7ykyTDZKiE) | short | 50 | – | – | – | 2.2 | – |
-| 2026-09-12 | [The Sky Would Lean Near a Neutron Star](https://youtu.be/va5ATScn3rs) | short | 19 | – | – | – | 0.8 | – |
 | 2026-09-12 | [The Sky Would Lean Near a Neutron Star](https://youtu.be/va5ATScn3rs) | short | 19 | – | – | – | 0.8 | – |
 | 2026-09-11 | [How Heavy Is a Teaspoon of Neutron Star?](https://youtu.be/vCxXTYXSSqY) | short | 30 | – | – | – | 1.2 | – |
 | 2026-09-10 | [What Happens If You Get Near a Neutron Star](https://youtu.be/Yk1tLh23rko) | long | 15 | – | – | – | 0.6 | – |
@@ -71,7 +68,6 @@ Generated from the 2026-10-06 snapshot by `npm run analytics:report`. Don't edit
 | 2026-09-01 | [What Happens When the Last Star Furnace Goes Cold](https://youtu.be/KX-XU_AODoI) | short | 75 | – | – | – | 2.1 | – |
 | 2026-09-01 | [The Sky Is Already Running Out of Light](https://youtu.be/CkSECfUfH2Y) | short | 292 | – | – | – | 8.3 | – |
 | 2026-08-30 | [It Rains Glass Sideways on This Alien World](https://youtu.be/GjcZB8826J8) | short | 9 | – | – | – | 0.2 | – |
-| 2026-08-30 | [It Rains Glass Sideways on This Alien World](https://youtu.be/GjcZB8826J8) | short | 9 | – | – | – | 0.2 | – |
 | 2026-08-29 | [What's Left When the Last Star Goes Out?](https://youtu.be/xRxhb3vSru4) | short | 412 | – | – | – | 10.8 | – |
 | 2026-08-28 | [The Day the Last Star Goes Out](https://youtu.be/IVbO9XkkDps) | short | 94 | – | – | – | 2.4 | – |
 | 2026-08-27 | [Why the Night Sky Is Getting Darker](https://youtu.be/SdNXS1PD_Yk) | short | 256 | – | – | – | 6.4 | – |
@@ -81,13 +77,9 @@ Generated from the 2026-10-06 snapshot by `npm run analytics:report`. Don't edit
 | 2026-08-25 | [The Early Universe Is Hiding a Massive Secret](https://youtu.be/68uTDP2esso) | short | 53 | – | – | – | 1.3 | – |
 | 2026-08-24 | [Is the Universe Older Than We Thought?](https://youtu.be/4-ZEpKD1yak) | short | 75 | – | – | – | 1.7 | – |
 | 2026-08-23 | [What JWST's Infrared Eyes Can See](https://youtu.be/P32uaiserG0) | short | 39 | – | – | – | 0.9 | – |
-| 2026-08-23 | [What JWST's Infrared Eyes Can See](https://youtu.be/P32uaiserG0) | short | 39 | – | – | – | 0.9 | – |
 | 2026-08-22 | [Why JWST Pictures Don't Match the Textbook](https://youtu.be/P-li_ZWk4lg) | short | 82 | – | – | – | 1.8 | – |
-| 2026-08-22 | [Why JWST Pictures Don't Match the Textbook](https://youtu.be/P-li_ZWk4lg) | short | 82 | – | – | – | 1.8 | – |
-| 2026-08-21 | [Black Holes Grew Too Big, Too Fast](https://youtu.be/ZnsJTCcrTlA) | short | 22 | – | – | – | 0.5 | – |
 | 2026-08-21 | [Black Holes Grew Too Big, Too Fast](https://youtu.be/ZnsJTCcrTlA) | short | 22 | – | – | – | 0.5 | – |
 | 2026-08-20 | [These Galaxies Appeared Too Early](https://youtu.be/l1d1ypHxLk0) | short | 95 | – | – | – | 2 | – |
-| 2026-08-20 | [JWST Found Galaxies That Shouldn't Exist Yet](https://youtu.be/ziKBPJ6FY0U) | long | 29 | – | – | – | 0.6 | – |
 | 2026-08-20 | [JWST Found Galaxies That Shouldn't Exist Yet](https://youtu.be/ziKBPJ6FY0U) | long | 29 | – | – | – | 0.6 | – |
 | 2026-08-20 | [Most of the Universe Gives Off No Light](https://youtu.be/PV50PX-bE4g) | short | 129 | – | – | – | 2.7 | – |
 | 2026-08-19 | [What If They're Leaving Us Alone On Purpose](https://youtu.be/03v4f1hlvtQ) | short | 55 | – | – | – | 1.1 | – |

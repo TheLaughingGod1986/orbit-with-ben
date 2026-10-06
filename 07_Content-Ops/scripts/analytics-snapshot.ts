@@ -73,9 +73,11 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
     for (const i of pl.items ?? []) if (i.contentDetails?.videoId) ids.push(i.contentDetails.videoId);
     page = pl.nextPageToken ?? "";
   } while (page);
+  // The uploads playlist can list a video twice; each video is fetched and stored once.
+  const unique = [...new Set(ids)];
   const videos = [];
-  for (let i = 0; i < ids.length; i += 50) {
-    const body = await get(token, `${API}/videos?part=snippet,statistics,contentDetails,status&id=${ids.slice(i, i + 50).join(",")}`);
+  for (let i = 0; i < unique.length; i += 50) {
+    const body = await get(token, `${API}/videos?part=snippet,statistics,contentDetails,status&id=${unique.slice(i, i + 50).join(",")}`);
     videos.push(...(body.items ?? []).map(toVideoStat));
   }
   const s = item.statistics ?? {};

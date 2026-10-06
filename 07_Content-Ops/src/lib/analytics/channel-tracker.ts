@@ -260,7 +260,8 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     derived.push({ day: b.date, views: b.totals.views - a.totals.views, subsNet: subs });
   }
 
-  const publicVideos = now.videos.filter((v) => v.privacy === "public");
+  // Once per id: snapshots from before 7 Oct can hold a video twice (the uploads playlist repeats some).
+  const publicVideos = [...new Map(now.videos.filter((v) => v.privacy === "public").map((v) => [v.id, v])).values()];
   const uploadsBy = (key: (d: string) => string) => {
     const m = new Map<string, number>();
     for (const v of publicVideos) if (v.publishedAt) m.set(key(v.publishedAt.slice(0, 10)), (m.get(key(v.publishedAt.slice(0, 10))) ?? 0) + 1);
