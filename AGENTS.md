@@ -71,6 +71,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
    - Stop a topic after 2 not-fed Shorts in a row, and run at most 6 in a row on one topic; then give it a 2-week break.
    - Every Short gets its own open, with frame 0 showing the titled subject and no opening background reused from the last 10 Shorts.
    - Aim for 60% or more average viewed on day 1.
+   - End on the long's exact listing title and its video id, with a music bed for the full length.
    - Details: lessons doc §6.
 
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)

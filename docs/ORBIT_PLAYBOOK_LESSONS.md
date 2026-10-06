@@ -119,5 +119,7 @@ Source: Chief's read of YouTube Analytics for 60 public Orbit Shorts after Moon 
 | **R4 · Orbit early, never at frame 0** | Orbit may arrive from about 1 s (`Ih2zhZTbIR0` was fed with an Orbit slide-in). The Never list still bans Orbit at frame 0. |
 | **R5 · Retention target** | Aim for a day-1 average viewed of 60% or more. Fed Shorts above it had a median of 142 day-1 views; fed Shorts below it, 61. This is a target, not a gate. |
 | **R6 · One at a time** | Already covered by the Never list: one Short a day, and never re-upload an idea that already went public. The 24 Sep Moon batch broke both, so treat it as a warning, not a method. |
+| **R7 · Ending** | The last card shows the **exact listing title** of that week's long, and the end screen links **that long's id**. Never a generic "watch the full film". (`dQlOgsDGmtA`, Auditor 6 Oct: generic title, no `2fsQcea-voM` id.) |
+| **R8 · Music bed** | Every Short carries a music bed for its full length, under the VO and through the loop hold. A VO-only Short fails the Auditor gate. |
 
 `dQlOgsDGmtA`: leave it alone (no delete, re-upload or retitle). Read its Analytics on Wed 7 or Thu 8 Oct. Moon Shorts are paused for at least 2 weeks; the next Short is Jupiter `buaOI3QGm7U` on 14 Oct.
