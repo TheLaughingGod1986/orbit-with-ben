@@ -31,6 +31,7 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 | `01_Orbit-Character/` | Canonical Orbit stills (`05_Seedance-References/orbit-seedance-reference-16x9-v01.png`) |
 | `02_Video-Projects/NNN_Slug/` | One folder per film. Start from `_template_NNN_Episode-Slug/`. |
 | `04_Audio/tools/` | `orbit_voice.py` (VO settings), `orbit_gemini_veo.py` |
+| `05_Analytics/` | Channel tracker (6 Oct 2026), OWB + HOS: `<channel>/snapshots/<date>.json` (every video, daily), `channel_daily.json` (YouTube Analytics), `<channel>/REPORT.md` (daily/weekly/monthly growth and every video), `dashboard/` (template + built page). Written by the Mac's 06:40 job; never edit by hand. |
 | `07_Content-Ops/` | Local CLIs (no web app, no database): script review, episode gate, YouTube package upload, retitle, pinned comment, Buffer mirror, analytics. The hosted ops app was retired on 27 Sep 2026 (`_archive/07_Content-Ops/`). |
 | `scripts/` | Desktop Studio CDP helpers for Studio-only jobs (thumbnail covers); `owb_thread.py` (Chief ↔ Claude on PR #99) |
 | `docs/ORBIT_PLAYBOOK_LESSONS.md` | Tonight's standing rules (neighbour, edit, production locks, thread protocol) |
@@ -52,11 +53,14 @@ cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    #
 cd 07_Content-Ops && npx tsx scripts/buffer-mirror.ts register --video <id> --media <mp4> --long <longId>    # after uploading by hand, so the daily check can find the file
 cd 07_Content-Ops && npm run youtube:auth    # once, or when a script says the YouTube login expired
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
+cd 07_Content-Ops && npm run analytics:snapshot [-- --channel owb|hos]   # daily at 06:40 on the Mac (launchd/analytics-snapshot.sh, own worktree): read-only stats for every video
+cd 07_Content-Ops && npm run analytics:report    # rebuilds 05_Analytics REPORT.md + dashboard from the snapshots (no network)
+cd 07_Content-Ops && npx tsx --env-file=.env scripts/youtube-auth.ts --analytics owb|hos    # Ben, once per channel: read-only YouTube Analytics sign-in
 python3 scripts/owb_thread.py post -f report.md    # Chief of Staff -> Claude (draft PR #99); `read` / `wait` for the reply; `status` = unread check (exit 10)
 python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> [--words vo_words.json]   # assembler pre-delivery: VO ends vs cuts
 ```
 
-The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. No database. Never print or commit their values.
+The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), `YT_ANALYTICS_REFRESH_TOKEN_OWB` / `_HOS` (read-only tracker sign-ins), and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. No database. Never print or commit their values.
 
 ## Standing lessons (Cursor + Claude)
 

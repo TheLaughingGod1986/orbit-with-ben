@@ -10,6 +10,8 @@
     "youtube:package": "tsx --env-file=.env scripts/youtube-package-upload.ts",
     "buffer:mirror": "tsx --env-file=.env scripts/buffer-mirror.ts mirror",
     "buffer:check": "tsx --env-file=.env scripts/buffer-mirror.ts check",
+    "analytics:snapshot": "tsx --env-file=.env scripts/analytics-snapshot.ts",
+    "analytics:report": "tsx scripts/analytics-report.ts",
     "review:script": "tsx scripts/review-script.ts",
     "gate:episode": "tsx scripts/gate-episode.ts",
     "diagnose:youtube": "tsx scripts/diagnose-youtube-growth.ts",
