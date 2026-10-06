@@ -2,7 +2,7 @@
 
 Generated from the 2026-10-06 snapshot by `npm run analytics:report`. Don't edit by hand.
 
-**1 subscribers · 558 views · 16 videos**
+**1 subscriber · 558 views · 16 videos**
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
@@ -43,6 +43,6 @@ Generated from the 2026-10-06 snapshot by `npm run analytics:report`. Don't edit
 
 ## Notes
 
-- YouTube Analytics isn't connected for History of Science yet (run scripts/analytics-auth.ts --channel hos once).
+- YouTube Analytics isn't connected for History of Science yet (run "npx tsx --env-file=.env scripts/youtube-auth.ts --analytics hos" once).
 - Day-on-day growth starts with the second daily snapshot.
 - YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact.

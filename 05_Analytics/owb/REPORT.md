@@ -106,6 +106,6 @@ Generated from the 2026-10-06 snapshot by `npm run analytics:report`. Don't edit
 
 ## Notes
 
-- YouTube Analytics isn't connected for Orbit With Ben yet (run scripts/analytics-auth.ts --channel owb once).
+- YouTube Analytics isn't connected for Orbit With Ben yet (run "npx tsx --env-file=.env scripts/youtube-auth.ts --analytics owb" once).
 - Day-on-day growth starts with the second daily snapshot.
 - YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact.

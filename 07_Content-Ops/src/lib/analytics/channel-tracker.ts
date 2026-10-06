@@ -337,7 +337,7 @@ export function renderMarkdown(r: ChannelReport): string {
   const L: string[] = [];
   L.push(`# ${r.name}: channel tracker`, "");
   L.push(`Generated from the ${r.date} snapshot by \`npm run analytics:report\`. Don't edit by hand.`, "");
-  L.push(`**${n0(r.totals.subscribers)} subscribers · ${n0(r.totals.views)} views · ${r.totals.videos} videos**`, "");
+  L.push(`**${n0(r.totals.subscribers)} ${r.totals.subscribers === 1 ? "subscriber" : "subscribers"} · ${n0(r.totals.views)} views · ${r.totals.videos} videos**`, "");
   L.push("| Growth | Views | Subscribers |", "|---|---:|---:|");
   for (const [label, c] of [["Last day", r.change.d1], ["Last 7 days", r.change.d7], ["Last 30 days", r.change.d30]] as const) {
     L.push(`| ${label}${c?.source === "analytics" ? " (YouTube Analytics)" : ""} | ${signed(c?.views)} | ${signed(c?.subscribers)} |`);

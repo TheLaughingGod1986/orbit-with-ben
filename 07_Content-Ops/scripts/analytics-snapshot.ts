@@ -11,7 +11,7 @@
  * since launch) plus each video's last 7 / 28 days. Then run `npm run analytics:report`.
  *
  * Tokens (07_Content-Ops/.env, never printed):
- *   YT_ANALYTICS_REFRESH_TOKEN_OWB / _HOS  read-only sign-in per channel (scripts/analytics-auth.ts)
+ *   YT_ANALYTICS_REFRESH_TOKEN_OWB / _HOS  read-only sign-in per channel (scripts/youtube-auth.ts --analytics owb|hos)
  *   YOUTUBE_REFRESH_TOKEN                  fallback for the public numbers only
  */
 import fs from "fs";
@@ -97,7 +97,7 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
   const dir = path.join(ANALYTICS_ROOT, key);
   let analyticsLine = "YouTube Analytics: not connected";
   if (!own) {
-    snap.note = `YouTube Analytics isn't connected for ${meta.name} yet (run scripts/analytics-auth.ts --channel ${key} once).`;
+    snap.note = `YouTube Analytics isn't connected for ${meta.name} yet (run "npx tsx --env-file=.env scripts/youtube-auth.ts --analytics ${key}" once).`;
   } else {
     try {
       const mine = await get(token, `${API}/channels?part=id&mine=true`);
