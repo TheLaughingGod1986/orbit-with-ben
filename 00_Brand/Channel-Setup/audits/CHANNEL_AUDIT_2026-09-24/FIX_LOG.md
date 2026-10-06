@@ -74,6 +74,8 @@ Three schedule changes were saved in YouTube Studio on 27 Sep 2026. They were no
 | `k9pXeeJvLpc` | added as retired |
 | `CtllH6VOhEI` | added as retired |
 
+**Correction, 6 Oct 2026 (Claude, from the Chief's Data API read):** `CtllH6VOhEI` didn't stay private. On 1 Oct at 08:32 London it was set back to `private` with `publishAt 2026-10-01T10:30:00Z`, and it went public on that schedule at 11:30 London, the only Short that day. It stays public. In the open-gate library its placeholder was replaced with a real live entry (`2840c77`).
+
 Known empty slots are not errors:
 
 - Fri 9 Oct has no Short.
