@@ -73,6 +73,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
    - Aim for 60% or more average viewed on day 1.
    - End on the long's exact listing title and its video id, with a music bed for the full length.
    - Details: lessons doc §6.
+6. **YouTube state changes leave a record (6 Oct).** Any change to a video's privacy or `publishAt`, by any agent, script or Studio click, gets a line on the thread in the same session, with the id, the old and new state, and who OK'd it. If it's a Short, update its open-gate library status in the same commit (`gate_shorts_open.py status`, or `fetch` once it's public). Lesson: `CtllH6VOhEI` was rescheduled on 1 Oct by an untracked one-off script. FIX_LOG said private for 5 days while it was live, and the Shorts gate didn't compare against it.
 
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)
 
