@@ -1,5 +1,5 @@
 """Background-match check in gate_shorts_open.py (6 Oct 2026, dQlOgsDGmtA vs Ih2zhZTbIR0 on one Jupiter plate)."""
-import random, sys, unittest
+import itertools, json, random, sys, unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -51,6 +51,32 @@ class BackgroundMatch(unittest.TestCase):
         bg = plate(5)
         self.assertEqual(g.background_match(bytes(bg).hex(), bytes(bg).hex()), 1.0)
         self.assertEqual(g.background_match(b"\x00" * 10, bytes(bg)), 0.0)
+
+
+class RealLibrary(unittest.TestCase):
+    """Frozen thumbnails from the real library: the Jupiter pair must FAIL, honest pairs must not warn."""
+    data = json.loads((Path(__file__).resolve().parent / "testdata" / "gate_bg_library.json").read_text())
+
+    def test_same_plate_pairs_fail(self):
+        th = self.data["thumbs"]
+        for a, b in self.data["same"]:
+            with self.subTest(pair=(a, b)):
+                self.assertGreaterEqual(g.background_match(th[a]["thumb"], th[b]["thumb"]), g.BG_FAIL)
+
+    def test_different_plates_stay_under_warn(self):
+        th = self.data["thumbs"]
+        same = {frozenset(p) for p in self.data["same"]} | {frozenset({"QNTeou-w-gY", "Xza_jSHD4qw"}),
+                                                            frozenset({"8Bym-yrYhGc", "Xza_jSHD4qw"})}  # Europa plate
+        for a, b in itertools.combinations(th, 2):
+            if frozenset({a, b}) in same:
+                continue
+            with self.subTest(pair=(a, b)):
+                self.assertLess(g.background_match(th[a]["thumb"], th[b]["thumb"]), g.BG_WARN)
+
+    def test_symmetric(self):
+        th = self.data["thumbs"]
+        a, b = th["Ih2zhZTbIR0"]["thumb"], th["dQlOgsDGmtA"]["thumb"]
+        self.assertEqual(g.background_match(a, b), g.background_match(b, a))
 
 
 if __name__ == "__main__":

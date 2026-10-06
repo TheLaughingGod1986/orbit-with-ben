@@ -60,14 +60,17 @@ LOOKBACK_LAST = 10  # R3 (5 Oct 2026): never reuse an opening background from th
 DHASH_FAIL_BITS = 10
 DHASH_WARN_BITS = 16
 # Background match on a 27x48 grey thumbnail (6 Oct 2026). dHash alone missed dQlOgsDGmtA vs Ih2zhZTbIR0: same Jupiter
-# plate, 17 bits apart, full-res SSIM 0.93. Orbit or a caption over the same plate wrecks a global score, so this counts
-# the share of 3x3 blocks that still match (block SSIM >= BLOCK_SSIM): overlays only knock out the blocks they cover.
-# Thresholds are provisional until `compare --ssim` is run on the library.
+# plate, 17 bits apart. Orbit or a caption over the same plate wrecks a global score, so this counts the share of 4x4
+# blocks that still match (block SSIM >= BLOCK_SSIM, best of a ±BLOCK_SHIFT px nudge for a slow push-in): overlays only
+# knock out the blocks they cover. Scored both ways and averaged. Calibrated 6 Oct on the library (`compare --ssim`,
+# 29 thumbs, 351 pairs, Chief b62a3b4): same plate 0.56-1.00 (Jupiter pair 0.56, Europa crops 0.57+), different
+# plates 0.18 or less. The first cut (3x3, SSIM >= 0.90, no nudge) scored the Jupiter pair 0.19, below an honest pair.
 THUMB_W, THUMB_H = 27, 48
-BLOCK = 3
-BLOCK_SSIM = 0.90
-BG_FAIL = 0.50
-BG_WARN = 0.35
+BLOCK = 4
+BLOCK_SHIFT = 1
+BLOCK_SSIM = 0.70
+BG_FAIL = 0.40
+BG_WARN = 0.30
 FLAT_VAR = 25.0      # a block this flat in both frames (black space, sky) proves nothing, so it isn't counted
 MIN_TEXTURED = 12    # fewer textured blocks than this: no verdict (dHash still applies)
 DUR_FAIL = 40.0
@@ -136,7 +139,7 @@ def dhash(path: Path, t: float | None = OPEN_T) -> int:
 
 
 def thumb(path: Path, t: float | None = OPEN_T) -> str:
-    """Frame 0 as an 18x32 grey thumbnail, hex-encoded, for the background SSIM check."""
+    """Frame 0 as an 27x48 grey thumbnail, hex-encoded, for the background SSIM check."""
     return raw_frame(path, THUMB_W, THUMB_H, t, "gray").hex()
 
 
@@ -154,25 +157,38 @@ def ssim(x: list[int] | bytes, y: list[int] | bytes) -> float:
 
 
 def background_match(a: str | bytes, b: str | bytes) -> float:
-    """Share of BLOCKxBLOCK blocks whose SSIM >= BLOCK_SSIM between two thumbnails (hex or bytes). An overlay (Orbit,
-    a caption) only removes the blocks it covers, so the same plate under different overlays still scores high."""
+    """Share of BLOCKxBLOCK blocks that match between two thumbnails (hex or bytes), averaged over both directions.
+    An overlay (Orbit, a caption) only removes the blocks it covers, so the same plate under different overlays
+    still scores high."""
     x = bytes.fromhex(a) if isinstance(a, str) else a
     y = bytes.fromhex(b) if isinstance(b, str) else b
     if len(x) != THUMB_W * THUMB_H or len(y) != THUMB_W * THUMB_H:
         return 0.0
+    return (_block_share(x, y) + _block_share(y, x)) / 2
+
+
+def _block_share(x: bytes, y: bytes) -> float:
     def var(v):
         m = sum(v) / len(v)
         return sum((p - m) ** 2 for p in v) / len(v)
 
+    def block(img, by, bx):
+        return [img[(by + j) * THUMB_W + bx + i] for j in range(BLOCK) for i in range(BLOCK)]
+
     hits = total = 0
-    for by in range(0, THUMB_H, BLOCK):
-        for bx in range(0, THUMB_W, BLOCK):
-            idx = [(by + j) * THUMB_W + bx + i for j in range(BLOCK) for i in range(BLOCK)]
-            bx_, by_ = [x[k] for k in idx], [y[k] for k in idx]
-            if var(bx_) < FLAT_VAR and var(by_) < FLAT_VAR:
+    for by in range(0, THUMB_H - BLOCK + 1, BLOCK):
+        for bx in range(0, THUMB_W - BLOCK + 1, BLOCK):
+            bx_ = block(x, by, bx)
+            if var(bx_) < FLAT_VAR and var(block(y, by, bx)) < FLAT_VAR:
                 continue
             total += 1
-            hits += ssim(bx_, by_) >= BLOCK_SSIM
+            best = max(
+                ssim(bx_, block(y, by + dy, bx + dx))
+                for dy in range(-BLOCK_SHIFT, BLOCK_SHIFT + 1)
+                for dx in range(-BLOCK_SHIFT, BLOCK_SHIFT + 1)
+                if 0 <= by + dy <= THUMB_H - BLOCK and 0 <= bx + dx <= THUMB_W - BLOCK
+            )
+            hits += best >= BLOCK_SSIM
     return hits / total if total >= MIN_TEXTURED else 0.0
 
 

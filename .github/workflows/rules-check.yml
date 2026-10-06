@@ -5,9 +5,9 @@ name: Rules check
 on:
   push:
     branches: [main]
-    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "02_Video-Projects/*/status.json", "STATUS.md", ".github/workflows/rules-check.yml"]
+    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "00_Brand/Channel-Setup/tools/testdata/**", "02_Video-Projects/*/status.json", "STATUS.md", ".github/workflows/rules-check.yml"]
   pull_request:
-    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "02_Video-Projects/*/status.json", "STATUS.md", ".github/workflows/rules-check.yml"]
+    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "00_Brand/Channel-Setup/tools/testdata/**", "02_Video-Projects/*/status.json", "STATUS.md", ".github/workflows/rules-check.yml"]
 
 jobs:
   check:
