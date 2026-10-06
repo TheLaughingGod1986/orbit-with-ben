@@ -1,4 +1,4 @@
-# VO status — Nearest star 026 Short Mon 16 Nov (You Can't See the Nearest Star)
+# VO status — Nearest star 026 Short Mon 16 Nov (Why Can't You See the Nearest Star?)
 
 | Field | Value |
 |---|---|

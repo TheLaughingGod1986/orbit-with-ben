@@ -1,5 +1,7 @@
 # Sun 022 Shorts: scripts v01 (Claude, 4 Oct 2026)
 
+**Retitled 6 Oct 2026 (Claude):** the statement titles below became "specific contradiction" questions (THUMBNAIL_AND_TITLE_RULES.md §1 shape 6, rule 9). Andromeda week tested it: *Why Stars Don't Crash When Galaxies Meet* got 249 views and a 3.6% like rate, the channel's best, while *Is Andromeda Coming to Destroy Us?* got 89. The VO is unchanged; it already opens on the contradiction. The on-screen title at 9–14 s and the listing use the new title.
+
 Three Shorts for the week of the Sun long (*Is the Sun Getting Brighter?*, Sun 18 Oct 18:00 London). Written under Ben's 4 Oct "VO first" order: these are for **VO now, picture later**. Decisions are Claude's under Ben's 3 Oct order; Ben can overrule.
 
 House rules for all three:
@@ -21,15 +23,15 @@ The numbers are locked to `../01_Script/SOURCES.md` and the long's script v02. N
 
 | Day (11:30 London) | Title (on screen at 9–14 s) | Hook caption, frame 0 | Spoken words |
 |---|---|---|---:|
-| Mon 19 Oct | The Sun Gets Brighter as It Runs Out of Fuel | IT'S **BRIGHTER** | 55 |
+| Mon 19 Oct | Why Is the Sun Getting Brighter as It Runs Out of Fuel? | IT'S **BRIGHTER** | 55 |
 | Wed 21 Oct | Could a Robot Survive Touching the Sun? | TOO **CLOSE** | 58 |
-| Fri 23 Oct | Earth Had Oceans Under a 30% Dimmer Sun | **30%** DIMMER | 51 |
+| Fri 23 Oct | Why Didn't Earth Freeze Under a Dimmer Young Sun? | **30%** DIMMER | 51 |
 
 At the house pace (Saturn Short: 53 words in about 23 s), each voice runs about 23–25 s. If a take runs past 25 s, Ben's speed stays at 1.04; the Chief trims pauses to about 0.4 s instead.
 
 ---
 
-## 1. Mon 19 Oct: The Sun Gets Brighter as It Runs Out of Fuel
+## 1. Mon 19 Oct: Why Is the Sun Getting Brighter as It Runs Out of Fuel?
 
 | | |
 |---|---|
@@ -104,7 +106,7 @@ Source: NASA's Parker Solar Probe pages. Gemini adds the rows to `../01_Script/S
 
 ---
 
-## 3. Fri 23 Oct: Earth Had Oceans Under a 30% Dimmer Sun
+## 3. Fri 23 Oct: Why Didn't Earth Freeze Under a Dimmer Young Sun?
 
 | | |
 |---|---|

@@ -1,5 +1,7 @@
 # Light-speed 024 Shorts: scripts v01 (Claude, 4 Oct 2026)
 
+**Retitled 6 Oct 2026 (Claude):** the statement titles below became "specific contradiction" questions (THUMBNAIL_AND_TITLE_RULES.md §1 shape 6, rule 9). Andromeda week tested it: *Why Stars Don't Crash When Galaxies Meet* got 249 views and a 3.6% like rate, the channel's best, while *Is Andromeda Coming to Destroy Us?* got 89. The VO is unchanged; it already opens on the contradiction. The on-screen title at 9–14 s and the listing use the new title.
+
 Three Shorts for the week of the 024 long (*What Happens If You Travel Near the Speed of Light?*, Sun 1 Nov 18:00 London). Written for **VO now, picture later**, under Ben's 4 Oct order. These are Claude's decisions under the 3 Oct order, and Ben can overrule.
 
 House rules, the same as `022/10_Shorts/SUN_SHORTS_SCRIPTS_v01.md`:
@@ -15,13 +17,13 @@ The facts come from `../01_Script/SOURCES.md`. VO waits for Gemini's check and C
 
 | Day (11:30 London) | Title (on screen at 9–14 s) | Hook caption, frame 0 | Cover (adds to the title, no Orbit) | Spoken words |
 |---|---|---|---|---:|
-| Mon 2 Nov | GPS Only Works Because of Relativity | TIME **SLIPS** | Yellow **10 KM**, white **A DAY** | 56 |
+| Mon 2 Nov | Why Are the Clocks Above Your Head Running Fast? | TIME **SLIPS** | Yellow **10 KM**, white **A DAY** | 56 |
 | Wed 4 Nov | Could a Robot Reach the Speed of Light? | THE **LIMIT** | Yellow **NEVER**, white **ENOUGH** | 56 |
 | Fri 6 Nov | Muons Shouldn't Reach the Ground. They Do. | THEY **LIVE** | Yellow **SLOW**, white **CLOCKS** | 55 |
 
 ---
 
-## 1. Mon 2 Nov: GPS Only Works Because of Relativity
+## 1. Mon 2 Nov: Why Are the Clocks Above Your Head Running Fast?
 
 [VISUAL MUST: 0:00. A GPS satellite already crossing the frame over Earth's limb. Whoosh. Caption: TIME SLIPS. No Orbit.]
 

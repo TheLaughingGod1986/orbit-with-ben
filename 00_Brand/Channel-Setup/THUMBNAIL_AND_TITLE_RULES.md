@@ -15,7 +15,7 @@ Evidence strength: **[views]** means a pattern across 48 Shorts. **[CTR]** means
    | A yes/no about a familiar thing | *Is the Moon Leaving Us?* (290) |
    | Something hidden | *Why Europa Is Hiding a Massive Ocean* (291) |
    | One real number | *Why Does the Moon Drift 3.8 cm a Year?* (253) |
-   | A specific contradiction | *Why JWST Pictures Don't Match the Textbook* (3.6% CTR) |
+   | A specific contradiction | *Why Stars Don't Crash When Galaxies Meet* (249 in 8 days, 3.6% likes, the channel's best like rate); *Why JWST Pictures Don't Match the Textbook* (3.6% CTR) |
 
    [views]
 2. **Put a familiar noun in the first four words:** the Moon, the Sun, a star, the sky, Earth, you, your body. [views]
@@ -25,7 +25,7 @@ Evidence strength: **[views]** means a pattern across 48 Shorts. **[CTR]** means
 6. **No hashtags, no series suffix, and never the title of an existing public video.** [views]
 7. **Length is not the lever.** Top-10 median is 37.5 characters, bottom half 39.5. Keep it under about 60 characters so it isn't cut off on a phone, and spend the effort on the shape. [views]
 8. **Longs use the phrase people search, as a question.** Start with "What Happens When…", "What Would You See If…" or "Why…". The topic keyword goes in the first five words. *Everything you need to know about…* is out. [views]
-9. **Wonder, not threat.** No "destroy", "coming for us" or "we're doomed". This is the channel's lane rule.
+9. **Wonder, not threat.** No "destroy", "coming for us" or "we're doomed". This is the channel's lane rule Andromeda week, 6 Oct read: *Is Andromeda Coming to Destroy Us?* got 89 views; *Why Stars Don't Crash When Galaxies Meet*, the same topic answered with a surprising "no", got 249. [views, likes]
 
 ## 2. Long thumbnails (16:9)
 

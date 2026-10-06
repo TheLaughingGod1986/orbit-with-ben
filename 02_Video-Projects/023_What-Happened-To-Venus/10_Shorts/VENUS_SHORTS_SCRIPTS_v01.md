@@ -1,5 +1,7 @@
 # Venus 023 Shorts: scripts v01 (Claude, 4 Oct 2026)
 
+**Retitled 6 Oct 2026 (Claude):** the statement titles below became "specific contradiction" questions (THUMBNAIL_AND_TITLE_RULES.md §1 shape 6, rule 9). Andromeda week tested it: *Why Stars Don't Crash When Galaxies Meet* got 249 views and a 3.6% like rate, the channel's best, while *Is Andromeda Coming to Destroy Us?* got 89. The VO is unchanged; it already opens on the contradiction. The on-screen title at 9–14 s and the listing use the new title.
+
 Three Shorts for the week of the Venus long (*What Happened to Venus?*, Sun 25 Oct 18:00 London). Written under Ben's 4 Oct "VO first" order: **VO now, picture later**. These are Claude's decisions under Ben's 3 Oct order, and Ben can overrule.
 
 House rules, the same as the Sun Shorts (`022/10_Shorts/SUN_SHORTS_SCRIPTS_v01.md`):
@@ -15,13 +17,13 @@ Every fact is in `../01_Script/SOURCES.md`, including the rows Claude added on 4
 
 | Day (11:30 London) | Title (on screen at 9–14 s) | Hook caption, frame 0 | Cover (adds to the title, no Orbit) | Spoken words |
 |---|---|---|---|---:|
-| Mon 26 Oct | Venus Absorbs Less Sunlight Than Earth | LESS **LIGHT** | Yellow **465°C**, white **ANYWAY** | 55 |
+| Mon 26 Oct | Why Is Venus So Hot If It Absorbs Less Sunlight? | LESS **LIGHT** | Yellow **465°C**, white **ANYWAY** | 55 |
 | Wed 28 Oct | Could a Robot Survive on Venus? | TWO **HOURS** | Yellow **127 MIN**, white **THE RECORD** | 56 |
-| Fri 30 Oct | Venus Lost Its Water and Left a Clue | THE **CLUE** | Yellow **100×**, white **HEAVY WATER** | 53 |
+| Fri 30 Oct | Where Did Venus's Water Go? | THE **CLUE** | Yellow **100×**, white **HEAVY WATER** | 53 |
 
 ---
 
-## 1. Mon 26 Oct: Venus Absorbs Less Sunlight Than Earth
+## 1. Mon 26 Oct: Why Is Venus So Hot If It Absorbs Less Sunlight?
 
 [VISUAL MUST: 0:00. NASA Mariner 10 Venus globe already turning, the bright cloud deck catching the light. Whoosh. Caption: LESS LIGHT. No Orbit.]
 
@@ -72,7 +74,7 @@ The full film: What Happened to Venus?
 
 ---
 
-## 3. Fri 30 Oct: Venus Lost Its Water and Left a Clue
+## 3. Fri 30 Oct: Where Did Venus's Water Go?
 
 [VISUAL MUST: 0:00. The Venus cloud tops in motion (NASA). Whoosh. Caption: THE CLUE. No Orbit.]
 

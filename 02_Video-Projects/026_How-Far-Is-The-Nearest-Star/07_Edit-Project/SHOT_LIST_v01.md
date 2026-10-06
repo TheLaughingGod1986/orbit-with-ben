@@ -61,7 +61,7 @@ Orbit locks as always: `orbit_shot=True`, a sidecar from `ORBIT_REF`, `global`.
 
 House: no Orbit at frame 0; `gate_shorts_open.py` must pass; 22–27 s total with ~2 s loop hold; exact title on screen 9–14 s; last ~3 s loop to open. Timings below are **scaled to LOCK duration** from the trimmed `words.json` on main (Mon/Fri pause-trim was later turned OFF). Re-run Scribe on each `*_vo_v01_LOCK.wav` and `align_shot_list.py` before picture. Shorts reuse long plates; Veo props shared with the long.
 
-### Mon 16 Nov — You Can't See the Nearest Star (LOCK 24.48 s)
+### Mon 16 Nov — Why Can't You See the Nearest Star? (LOCK 24.48 s)
 
 | # | VO in–out (s) | Dur | Source | Asset | Notes |
 |---:|---|---:|---|---|---|
