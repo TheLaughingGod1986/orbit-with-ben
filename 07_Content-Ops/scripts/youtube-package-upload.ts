@@ -29,6 +29,7 @@ import {
 import { REPO_ROOT, UPLOADS_FILE, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
 import { registerUpload } from "../src/lib/publishing/media-finder";
 import { mirrorVideo } from "../src/lib/publishing/buffer-runner";
+import { runShortsGate } from "../src/lib/publishing/shorts-gate";
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -81,6 +82,16 @@ async function main() {
     packageDir: resolved.packageDir, videoPath: resolved.videoPath,
     uploadsFile: UPLOADS_FILE, repoRoot: REPO_ROOT, forceNew: flag("force-new"),
   });
+
+  // Shorts ship gate: a hard stop, dry run included, so the dry run shows the verdict. No override (Never list).
+  if (resolved.format === "shorts") {
+    const gate = runShortsGate({ videoPath: resolved.videoPath, repoRoot: REPO_ROOT, scheduledAt: resolved.scheduledAt });
+    console.log(gate.output);
+    if (!gate.ok) {
+      console.error(`gate_shorts_open FAILED (exit ${gate.exitCode}, air date ${gate.airDate}): not uploading. Fix the cut.`);
+      process.exit(1);
+    }
+  }
 
   // Dry runs never need the YouTube login.
   const accessToken = dryRun ? "" : await getYouTubeAccessToken();

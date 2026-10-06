@@ -59,6 +59,17 @@ LOOKBACK_DAYS = 14
 LOOKBACK_LAST = 10  # R3 (5 Oct 2026): never reuse an opening background from the last 10 Shorts
 DHASH_FAIL_BITS = 10
 DHASH_WARN_BITS = 16
+# Background match on a 27x48 grey thumbnail (6 Oct 2026). dHash alone missed dQlOgsDGmtA vs Ih2zhZTbIR0: same Jupiter
+# plate, 17 bits apart, full-res SSIM 0.93. Orbit or a caption over the same plate wrecks a global score, so this counts
+# the share of 3x3 blocks that still match (block SSIM >= BLOCK_SSIM): overlays only knock out the blocks they cover.
+# Thresholds are provisional until `compare --ssim` is run on the library.
+THUMB_W, THUMB_H = 27, 48
+BLOCK = 3
+BLOCK_SSIM = 0.90
+BG_FAIL = 0.50
+BG_WARN = 0.35
+FLAT_VAR = 25.0      # a block this flat in both frames (black space, sky) proves nothing, so it isn't counted
+MIN_TEXTURED = 12    # fewer textured blocks than this: no verdict (dHash still applies)
 DUR_FAIL = 40.0
 DUR_BAND = (22.0, 27.0)
 VISOR_FAIL = 0.003
@@ -122,6 +133,47 @@ def dhash(path: Path, t: float | None = OPEN_T) -> int:
         for x in range(8):
             bits = (bits << 1) | (1 if g[y * 9 + x] > g[y * 9 + x + 1] else 0)
     return bits
+
+
+def thumb(path: Path, t: float | None = OPEN_T) -> str:
+    """Frame 0 as an 18x32 grey thumbnail, hex-encoded, for the background SSIM check."""
+    return raw_frame(path, THUMB_W, THUMB_H, t, "gray").hex()
+
+
+def ssim(x: list[int] | bytes, y: list[int] | bytes) -> float:
+    """SSIM of two equal-length grey pixel runs. 1.0 = identical."""
+    n = min(len(x), len(y))
+    if n == 0:
+        return 0.0
+    mx, my = sum(x[:n]) / n, sum(y[:n]) / n
+    vx = sum((v - mx) ** 2 for v in x[:n]) / n
+    vy = sum((v - my) ** 2 for v in y[:n]) / n
+    cov = sum((x[i] - mx) * (y[i] - my) for i in range(n)) / n
+    c1, c2 = (0.01 * 255) ** 2, (0.03 * 255) ** 2
+    return ((2 * mx * my + c1) * (2 * cov + c2)) / ((mx * mx + my * my + c1) * (vx + vy + c2))
+
+
+def background_match(a: str | bytes, b: str | bytes) -> float:
+    """Share of BLOCKxBLOCK blocks whose SSIM >= BLOCK_SSIM between two thumbnails (hex or bytes). An overlay (Orbit,
+    a caption) only removes the blocks it covers, so the same plate under different overlays still scores high."""
+    x = bytes.fromhex(a) if isinstance(a, str) else a
+    y = bytes.fromhex(b) if isinstance(b, str) else b
+    if len(x) != THUMB_W * THUMB_H or len(y) != THUMB_W * THUMB_H:
+        return 0.0
+    def var(v):
+        m = sum(v) / len(v)
+        return sum((p - m) ** 2 for p in v) / len(v)
+
+    hits = total = 0
+    for by in range(0, THUMB_H, BLOCK):
+        for bx in range(0, THUMB_W, BLOCK):
+            idx = [(by + j) * THUMB_W + bx + i for j in range(BLOCK) for i in range(BLOCK)]
+            bx_, by_ = [x[k] for k in idx], [y[k] for k in idx]
+            if var(bx_) < FLAT_VAR and var(by_) < FLAT_VAR:
+                continue
+            total += 1
+            hits += ssim(bx_, by_) >= BLOCK_SSIM
+    return hits / total if total >= MIN_TEXTURED else 0.0
 
 
 def hamming(a: int, b: int) -> int:
@@ -226,6 +278,7 @@ def add_entry(lib: dict, vid: str, d: str, title: str, src: Path, source: str, t
         "date": d,
         "title": title,
         "dhash": f"{h:016x}",
+        "thumb": thumb(src, t),
         "orbit": sc,
         "source": source,
         "frame": str(frame.relative_to(ROOT)),
@@ -308,14 +361,19 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
         )
 
     h = dhash(path)
+    th = thumb(path)
     res["dhash"] = f"{h:016x}"
     near = []
     for e in window(lib, air, days, last, exclude=self_id):
-        if self_id and e["id"] == self_id:
-            continue
         dist = hamming(h, int(e["dhash"], 16))
+        sim = round(background_match(th, e["thumb"]), 3) if e.get("thumb") else None
+        if sim is not None and sim >= BG_WARN and dist > DHASH_WARN_BITS:
+            tag = "FAIL" if sim >= BG_FAIL else "warn"
+            msg = f"same opening background as {e['id']} ({e['date']} · {e['title']}): {sim:.0%} of blocks match, dHash {dist} bits"
+            (res["fails"] if tag == "FAIL" else res["warns"]).append(msg)
         if dist <= DHASH_WARN_BITS:
-            near.append({"id": e["id"], "date": e["date"], "title": e["title"], "bits": dist, "source": e.get("source", "")})
+            near.append({"id": e["id"], "date": e["date"], "title": e["title"], "bits": dist, "ssim": sim,
+                         "source": e.get("source", "")})
     near.sort(key=lambda x: x["bits"])
     res["near_opens"] = near
     for n in near:
@@ -379,7 +437,9 @@ def main(argv: list[str] | None = None) -> int:
     l.add_argument("--last", type=int, default=LOOKBACK_LAST)
     l.add_argument("--all", action="store_true")
 
-    sub.add_parser("compare", help="pairwise dHash distances inside the library")
+    cmp_ = sub.add_parser("compare", help="pairwise dHash distances inside the library")
+    cmp_.add_argument("--ssim", action="store_true", help="print the 30 closest background matches (calibration)")
+    sub.add_parser("thumbs", help="backfill the SSIM thumbnail of every entry from its saved frame")
 
     ns = ap.parse_args(argv)
     lib = load_lib()
@@ -442,8 +502,27 @@ def main(argv: list[str] | None = None) -> int:
             print(f"{e['date']}  {e['id']}  {e['dhash']}  visor={e['orbit']['visor_frac']:.4f}  {e.get('status','live'):9s} {e['title']}")
         return 0
 
+    if ns.cmd == "thumbs":
+        done = 0
+        for e in lib["entries"]:
+            frame = ROOT / e.get("frame", "")
+            if e.get("frame") and frame.exists():
+                e["thumb"] = thumb(frame, None)
+                done += 1
+            else:
+                print(f"no frame for {e['id']} ({e.get('frame')}); re-add it from its file")
+        save_lib(lib)
+        print(f"thumbnails: {done}/{len(lib['entries'])}")
+        return 0
     if ns.cmd == "compare":
         es = [e for e in lib["entries"] if e.get("status") != "retired"]
+        if ns.ssim:
+            pairs = sorted(((background_match(a_["thumb"], b_["thumb"]), a_, b_) for i, a_ in enumerate(es) for b_ in es[i + 1:]
+                            if a_.get("thumb") and b_.get("thumb")), key=lambda p: -p[0])
+            for s, a_, b_ in pairs[:30]:
+                print(f"bg match {s:.0%}  {a_['id']} ({a_['date']})  ↔  {b_['id']} ({b_['date']})")
+            print(f"{len(pairs)} pairs; FAIL ≥ {BG_FAIL:.0%}, warn ≥ {BG_WARN:.0%}")
+            return 0
         for i, a_ in enumerate(es):
             for b_ in es[i + 1:]:
                 bits = hamming(int(a_["dhash"], 16), int(b_["dhash"], 16))
