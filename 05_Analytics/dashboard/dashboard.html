@@ -1,0 +1,326 @@
+<title>Channel Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a mission-log panel. Channel tabs, then the readout (totals and growth), the daily trace, period totals, and every video in a sortable log. */
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --line: #e2e5ea; --grid: #eceef2;
+  --ink: #12151b; --ink-2: #4b5260; --ink-3: #7a8190;
+  --owb: #2a78d6; --hos: #eb6834; --accent: var(--owb);
+  --up: #0f7a2e; --down: #c23434; --chip: #eef1f5;
+  --f-display: "Archivo Narrow", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111318; --panel: #181b21; --line: #2a2f38; --grid: #23272f;
+  --ink: #f2f4f7; --ink-2: #b5bcc8; --ink-3: #868e9c;
+  --owb: #3987e5; --hos: #d95926; --up: #4cc26e; --down: #ff7a7a; --chip: #232832; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #111318; --panel: #181b21; --line: #2a2f38; --grid: #23272f;
+  --ink: #f2f4f7; --ink-2: #b5bcc8; --ink-3: #868e9c;
+  --owb: #3987e5; --hos: #d95926; --up: #4cc26e; --down: #ff7a7a; --chip: #232832; color-scheme: dark; }
+body { background: var(--bg); color: var(--ink); font: 400 14px/1.5 var(--f-body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 48px; display: grid; gap: 20px; }
+h1, h2 { font-family: var(--f-display); font-weight: 600; letter-spacing: .01em; text-wrap: balance; margin: 0; }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.1rem; }
+.eyebrow { font: 500 .72rem/1 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
+.stamp { color: var(--ink-3); font-size: .82rem; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tab { font: 600 .95rem var(--f-display); letter-spacing: .02em; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); padding: 7px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.tab[aria-selected="true"] { color: var(--ink); border-color: var(--ink-3); }
+.tab .dot { width: 9px; height: 9px; border-radius: 50%; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.readout { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.cell { background: var(--panel); padding: 14px 16px; display: grid; gap: 4px; min-width: 0; }
+@media (max-width: 720px) { .readout { grid-template-columns: 1fr 1fr; } .readout .cell:last-child { grid-column: 1 / -1; } }
+.cell .big { font: 500 1.55rem/1.1 var(--f-mono); font-variant-numeric: tabular-nums; }
+.cell .sub { font-size: .8rem; color: var(--ink-3); }
+.delta { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.delta.up { color: var(--up); } .delta.down { color: var(--down); } .delta.flat { color: var(--ink-3); }
+.row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { font: 500 .82rem var(--f-body); background: transparent; color: var(--ink-2); border: 0; padding: 5px 11px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--chip); color: var(--ink); }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { fill: var(--ink-3); font: 400 11px var(--f-mono); }
+.tip { position: absolute; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font-size: .8rem; box-shadow: 0 4px 14px rgb(0 0 0 / .12); white-space: nowrap; z-index: 2; }
+.tip b { font-family: var(--f-mono); font-weight: 500; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+th, td { padding: 7px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { font: 500 .7rem var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); position: sticky; top: 0; background: var(--panel); }
+th button { all: unset; cursor: pointer; }
+th button:focus-visible { outline: 2px solid var(--accent); }
+td { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+td.l, th.l { text-align: left; }
+td.title { font-family: var(--f-body); white-space: normal; min-width: 220px; max-width: 420px; }
+td.title a { color: var(--ink); text-decoration: none; }
+td.title a:hover { text-decoration: underline; }
+.pill { font: 500 .7rem var(--f-mono); text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 99px; background: var(--chip); color: var(--ink-2); }
+.pill.long { color: var(--accent); }
+input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; min-width: 0; width: 220px; max-width: 100%; }
+.notes { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: .82rem; display: grid; gap: 4px; max-width: 75ch; }
+.empty { color: var(--ink-3); padding: 20px 0; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .8rem; color: var(--ink-2); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+@media (prefers-reduced-motion: no-preference) { .tab, .seg button { transition: background .15s, color .15s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div style="display:grid;gap:4px">
+      <span class="eyebrow">YouTube · daily snapshot</span>
+      <h1>Channel Tracker</h1>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+  </header>
+  <div class="stamp" id="stamp"></div>
+  <section class="readout" id="readout" aria-label="Totals and growth"></section>
+
+  <section class="panel" aria-labelledby="daily-h">
+    <div class="row">
+      <h2 id="daily-h">Views per day</h2>
+      <div class="seg" id="range">
+        <button type="button" data-days="30">30 days</button>
+        <button type="button" data-days="90" aria-pressed="true">90 days</button>
+        <button type="button" data-days="0">All</button>
+      </div>
+    </div>
+    <div class="chart" id="daily"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="period-h">
+    <div class="row">
+      <h2 id="period-h">Growth by period</h2>
+      <div class="seg" id="period">
+        <button type="button" data-p="weekly" aria-pressed="true">Weekly</button>
+        <button type="button" data-p="monthly">Monthly</button>
+      </div>
+    </div>
+    <div class="chart" id="periodChart"></div>
+    <div class="scroll"><table id="periodTable"></table></div>
+  </section>
+
+  <section class="panel" aria-labelledby="videos-h">
+    <div class="row">
+      <h2 id="videos-h">Every video</h2>
+      <div class="row" style="justify-content:flex-end">
+        <div class="seg" id="fmt">
+          <button type="button" data-f="all" aria-pressed="true">All</button>
+          <button type="button" data-f="short">Shorts</button>
+          <button type="button" data-f="long">Longs</button>
+        </div>
+        <input type="search" id="q" placeholder="Search titles" aria-label="Search titles">
+      </div>
+    </div>
+    <div class="scroll" style="max-height:640px"><table id="videos"></table></div>
+  </section>
+
+  <section class="panel" aria-labelledby="notes-h">
+    <h2 id="notes-h">About these numbers</h2>
+    <ul class="notes" id="notes"></ul>
+  </section>
+</div>
+
+<script id="tracker-data" type="application/json">{"generatedAt":"2026-10-06T20:55:34.006Z","channels":[{"channel":"owb","name":"Orbit With Ben","handle":"@OrbitWithBen","date":"2026-10-06","firstSnapshot":"2026-10-06","analyticsThrough":null,"totals":{"subscribers":12,"views":7394,"videos":73},"change":{"d1":null,"d7":null,"d30":null},"windowSource":{"d7":null,"d30":null},"daily":[],"weekly":[],"monthly":[],"videos":[{"id":"dQlOgsDGmtA","title":"Did You Know the Moon Is Leaving?","format":"short","publishedAt":"2026-10-05T10:30:32Z","ageDays":1,"views":1,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1,"last28":null,"lifetime":null},{"id":"-jmMROGoZCM","title":"Why You Can't Stand On Jupiter","format":"long","publishedAt":"2026-10-04T17:00:21Z","ageDays":2,"views":1,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.5,"last28":null,"lifetime":null},{"id":"Ih2zhZTbIR0","title":"The Last Stars Will Shine for 10 Trillion Years","format":"short","publishedAt":"2026-10-02T10:30:34Z","ageDays":4,"views":134,"likes":2,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":33.5,"last28":null,"lifetime":null},{"id":"CtllH6VOhEI","title":"What Happens When Galaxies Actually Collide?","format":"short","publishedAt":"2026-10-01T10:30:40Z","ageDays":5,"views":88,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":17.6,"last28":null,"lifetime":null},{"id":"e-7hzJv4c80","title":"How Long Until Andromeda Hits Us?","format":"short","publishedAt":"2026-09-30T10:30:31Z","ageDays":6,"views":145,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":24.2,"last28":null,"lifetime":null},{"id":"xQlV9G9lqLI","title":"Why Stars Don't Crash When Galaxies Meet","format":"short","publishedAt":"2026-09-28T10:30:29Z","ageDays":8,"views":249,"likes":9,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":31.1,"last28":null,"lifetime":null},{"id":"17zpT_u7XsY","title":"Will Earth Survive the Galaxy Crash?","format":"short","publishedAt":"2026-09-27T10:30:00Z","ageDays":9,"views":33,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":3.7,"last28":null,"lifetime":null},{"id":"U5Baf_CjhKc","title":"Will Andromeda Fill the Entire Sky?","format":"short","publishedAt":"2026-09-26T10:30:30Z","ageDays":10,"views":58,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":5.8,"last28":null,"lifetime":null},{"id":"P9Jiw-MwUEU","title":"Is Andromeda Coming to Destroy Us?","format":"short","publishedAt":"2026-09-25T10:30:35Z","ageDays":11,"views":89,"likes":3,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":8.1,"last28":null,"lifetime":null},{"id":"ojk-dfOpAmw","title":"What Happens When Andromeda Hits the Milky Way?","format":"long","publishedAt":"2026-09-24T17:00:07Z","ageDays":12,"views":4,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.3,"last28":null,"lifetime":null},{"id":"G8DiaNjD2WE","title":"Why the Moon Is Slowly Leaving Us","format":"short","publishedAt":"2026-09-24T11:34:46Z","ageDays":12,"views":10,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.8,"last28":null,"lifetime":null},{"id":"i6KGk9Z3pIE","title":"What's Dragging the Moon Away From Earth?","format":"short","publishedAt":"2026-09-24T11:31:55Z","ageDays":12,"views":15,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.3,"last28":null,"lifetime":null},{"id":"4P9v_2jx7Yo","title":"How Do Fossils Prove Earth Spun Faster?","format":"short","publishedAt":"2026-09-24T11:31:01Z","ageDays":12,"views":5,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.4,"last28":null,"lifetime":null},{"id":"_WQLVnLETYA","title":"Why Won't Perfect Total Eclipses Last Forever?","format":"short","publishedAt":"2026-09-24T11:30:06Z","ageDays":12,"views":23,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.9,"last28":null,"lifetime":null},{"id":"eSFhBf2rcZk","title":"Is the Moon Leaving Us?","format":"short","publishedAt":"2026-09-21T12:52:14Z","ageDays":15,"views":291,"likes":5,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":19.4,"last28":null,"lifetime":null},{"id":"cmeBDZLzPHs","title":"A Day on Young Earth Lasted Just a Few Hours","format":"short","publishedAt":"2026-09-21T12:49:58Z","ageDays":15,"views":103,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":6.9,"last28":null,"lifetime":null},{"id":"rFzqmi8RWCY","title":"The Moon Gets 3.8 cm Farther Away Every Year","format":"short","publishedAt":"2026-09-21T12:49:17Z","ageDays":15,"views":253,"likes":7,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":16.9,"last28":null,"lifetime":null},{"id":"2qTvliJQuqI","title":"Why Were Earth's Days Only Hours Long?","format":"short","publishedAt":"2026-09-20T10:30:13Z","ageDays":16,"views":173,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":10.8,"last28":null,"lifetime":null},{"id":"MYPIEBBs7B8","title":"What If the Moon Just Left?","format":"short","publishedAt":"2026-09-19T10:30:16Z","ageDays":17,"views":262,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":15.4,"last28":null,"lifetime":null},{"id":"osRFF1cBCEw","title":"Why Does the Moon Drift 3.8 cm a Year?","format":"short","publishedAt":"2026-09-18T10:30:28Z","ageDays":18,"views":347,"likes":2,"comments":3,"d1":null,"d7":null,"d30":null,"perDay":19.3,"last28":null,"lifetime":null},{"id":"2fsQcea-voM","title":"Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone","format":"long","publishedAt":"2026-09-17T17:00:07Z","ageDays":19,"views":5,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.3,"last28":null,"lifetime":null},{"id":"BX-z1EkgANg","title":"One Second Near a Neutron Star Is Enough","format":"short","publishedAt":"2026-09-17T10:30:01Z","ageDays":19,"views":20,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.1,"last28":null,"lifetime":null},{"id":"_8L9jYbDVmQ","title":"Why You Can't Stand on a Neutron Star","format":"short","publishedAt":"2026-09-16T11:31:00Z","ageDays":20,"views":419,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":21,"last28":null,"lifetime":null},{"id":"to-b2baeoWQ","title":"Could a Probe Get Closer to a Neutron Star?","format":"short","publishedAt":"2026-09-16T10:30:07Z","ageDays":20,"views":67,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":3.4,"last28":null,"lifetime":null},{"id":"Rp_8J6_6IIk","title":"What Happens If You Touch a Neutron Star?","format":"short","publishedAt":"2026-09-14T10:30:23Z","ageDays":22,"views":62,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2.8,"last28":null,"lifetime":null},{"id":"Rp_8J6_6IIk","title":"What Happens If You Touch a Neutron Star?","format":"short","publishedAt":"2026-09-14T10:30:23Z","ageDays":22,"views":62,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2.8,"last28":null,"lifetime":null},{"id":"o7ykyTDZKiE","title":"Your Last Clear Image Near a Neutron Star","format":"short","publishedAt":"2026-09-13T10:30:29Z","ageDays":23,"views":50,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2.2,"last28":null,"lifetime":null},{"id":"o7ykyTDZKiE","title":"Your Last Clear Image Near a Neutron Star","format":"short","publishedAt":"2026-09-13T10:30:29Z","ageDays":23,"views":50,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2.2,"last28":null,"lifetime":null},{"id":"va5ATScn3rs","title":"The Sky Would Lean Near a Neutron Star","format":"short","publishedAt":"2026-09-12T10:30:45Z","ageDays":24,"views":19,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.8,"last28":null,"lifetime":null},{"id":"va5ATScn3rs","title":"The Sky Would Lean Near a Neutron Star","format":"short","publishedAt":"2026-09-12T10:30:45Z","ageDays":24,"views":19,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.8,"last28":null,"lifetime":null},{"id":"vCxXTYXSSqY","title":"How Heavy Is a Teaspoon of Neutron Star?","format":"short","publishedAt":"2026-09-11T10:30:21Z","ageDays":25,"views":30,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.2,"last28":null,"lifetime":null},{"id":"Yk1tLh23rko","title":"What Happens If You Get Near a Neutron Star","format":"long","publishedAt":"2026-09-10T17:00:06Z","ageDays":26,"views":15,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.6,"last28":null,"lifetime":null},{"id":"fhJP6eMoU0Q","title":"Your Atoms Near a Neutron Star Do Not Survive","format":"short","publishedAt":"2026-09-10T10:30:24Z","ageDays":26,"views":51,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2,"last28":null,"lifetime":null},{"id":"TE_HDKAnqms","title":"If Life Starts Under Ice, It's Everywhere","format":"short","publishedAt":"2026-09-09T11:09:07Z","ageDays":27,"views":2,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.1,"last28":null,"lifetime":null},{"id":"eVp9a7f4rWg","title":"We Could Kill the Life We're Looking For","format":"short","publishedAt":"2026-09-08T10:30:38Z","ageDays":28,"views":93,"likes":3,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":3.3,"last28":null,"lifetime":null},{"id":"VE0f186WQZo","title":"Europa Sprays Its Ocean Into Space","format":"short","publishedAt":"2026-09-07T10:30:28Z","ageDays":29,"views":91,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":3.1,"last28":null,"lifetime":null},{"id":"Xza_jSHD4qw","title":"How Life Could Feed Under Europa With No Sun","format":"short","publishedAt":"2026-09-06T10:30:03Z","ageDays":30,"views":96,"likes":2,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":3.2,"last28":null,"lifetime":null},{"id":"1glQuYFSaYQ","title":"What Would Life Eat Under Europa?","format":"short","publishedAt":"2026-09-05T10:30:07Z","ageDays":31,"views":127,"likes":2,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":4.1,"last28":null,"lifetime":null},{"id":"8Bym-yrYhGc","title":"Why Europa's Ocean Shouldn't Exist","format":"short","publishedAt":"2026-09-04T10:30:26Z","ageDays":32,"views":26,"likes":2,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.8,"last28":null,"lifetime":null},{"id":"keXe1GNxWSU","title":"Those Ice Scars Are How You Find It","format":"short","publishedAt":"2026-09-03T19:00:20Z","ageDays":33,"views":206,"likes":2,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":6.2,"last28":null,"lifetime":null},{"id":"QNTeou-w-gY","title":"There's an Ocean Under That Ice","format":"short","publishedAt":"2026-09-03T17:04:17Z","ageDays":33,"views":65,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2,"last28":null,"lifetime":null},{"id":"NbW5G1BpPY0","title":"Could Life Exist Under The Ice Of Europa?","format":"long","publishedAt":"2026-09-03T17:00:06Z","ageDays":33,"views":15,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.5,"last28":null,"lifetime":null},{"id":"n2WbOfJhOwc","title":"Star Recycling Isn't Perfect","format":"short","publishedAt":"2026-09-02T10:30:17Z","ageDays":34,"views":213,"likes":5,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":6.3,"last28":null,"lifetime":null},{"id":"9lLZMy8rBJo","title":"What Remains After the Last Star Dies?","format":"short","publishedAt":"2026-09-01T13:40:14Z","ageDays":35,"views":622,"likes":19,"comments":3,"d1":null,"d7":null,"d30":null,"perDay":17.8,"last28":null,"lifetime":null},{"id":"KX-XU_AODoI","title":"What Happens When the Last Star Furnace Goes Cold","format":"short","publishedAt":"2026-09-01T13:40:03Z","ageDays":35,"views":75,"likes":2,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":2.1,"last28":null,"lifetime":null},{"id":"CkSECfUfH2Y","title":"The Sky Is Already Running Out of Light","format":"short","publishedAt":"2026-09-01T13:39:57Z","ageDays":35,"views":292,"likes":8,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":8.3,"last28":null,"lifetime":null},{"id":"GjcZB8826J8","title":"It Rains Glass Sideways on This Alien World","format":"short","publishedAt":"2026-08-30T10:30:38Z","ageDays":37,"views":9,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null},{"id":"GjcZB8826J8","title":"It Rains Glass Sideways on This Alien World","format":"short","publishedAt":"2026-08-30T10:30:38Z","ageDays":37,"views":9,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null},{"id":"xRxhb3vSru4","title":"What's Left When the Last Star Goes Out?","format":"short","publishedAt":"2026-08-29T10:30:11Z","ageDays":38,"views":412,"likes":7,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":10.8,"last28":null,"lifetime":null},{"id":"IVbO9XkkDps","title":"The Day the Last Star Goes Out","format":"short","publishedAt":"2026-08-28T10:30:27Z","ageDays":39,"views":94,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":2.4,"last28":null,"lifetime":null},{"id":"SdNXS1PD_Yk","title":"Why the Night Sky Is Getting Darker","format":"short","publishedAt":"2026-08-27T19:00:17Z","ageDays":40,"views":256,"likes":6,"comments":2,"d1":null,"d7":null,"d30":null,"perDay":6.4,"last28":null,"lifetime":null},{"id":"REXYxuLOBoI","title":"What Happens When the Last Star Dies?","format":"long","publishedAt":"2026-08-27T17:00:06Z","ageDays":40,"views":42,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.1,"last28":null,"lifetime":null},{"id":"wIh3armF7_k","title":"The Last Star Will Be a Red Dwarf","format":"short","publishedAt":"2026-08-27T10:30:36Z","ageDays":40,"views":56,"likes":2,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":1.4,"last28":null,"lifetime":null},{"id":"DN4L1DkerMM","title":"The Universe Is Running Out of New Stars","format":"short","publishedAt":"2026-08-26T10:30:37Z","ageDays":41,"views":229,"likes":2,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":5.6,"last28":null,"lifetime":null},{"id":"68uTDP2esso","title":"The Early Universe Is Hiding a Massive Secret","format":"short","publishedAt":"2026-08-25T10:30:29Z","ageDays":42,"views":53,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":1.3,"last28":null,"lifetime":null},{"id":"4-ZEpKD1yak","title":"Is the Universe Older Than We Thought?","format":"short","publishedAt":"2026-08-24T10:30:33Z","ageDays":43,"views":75,"likes":2,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":1.7,"last28":null,"lifetime":null},{"id":"P32uaiserG0","title":"What JWST's Infrared Eyes Can See","format":"short","publishedAt":"2026-08-23T10:30:33Z","ageDays":44,"views":39,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.9,"last28":null,"lifetime":null},{"id":"P32uaiserG0","title":"What JWST's Infrared Eyes Can See","format":"short","publishedAt":"2026-08-23T10:30:33Z","ageDays":44,"views":39,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.9,"last28":null,"lifetime":null},{"id":"P-li_ZWk4lg","title":"Why JWST Pictures Don't Match the Textbook","format":"short","publishedAt":"2026-08-22T10:30:39Z","ageDays":45,"views":82,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":1.8,"last28":null,"lifetime":null},{"id":"P-li_ZWk4lg","title":"Why JWST Pictures Don't Match the Textbook","format":"short","publishedAt":"2026-08-22T10:30:39Z","ageDays":45,"views":82,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":1.8,"last28":null,"lifetime":null},{"id":"ZnsJTCcrTlA","title":"Black Holes Grew Too Big, Too Fast","format":"short","publishedAt":"2026-08-21T10:30:25Z","ageDays":46,"views":22,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.5,"last28":null,"lifetime":null},{"id":"ZnsJTCcrTlA","title":"Black Holes Grew Too Big, Too Fast","format":"short","publishedAt":"2026-08-21T10:30:25Z","ageDays":46,"views":22,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.5,"last28":null,"lifetime":null},{"id":"l1d1ypHxLk0","title":"These Galaxies Appeared Too Early","format":"short","publishedAt":"2026-08-20T19:00:01Z","ageDays":47,"views":95,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":2,"last28":null,"lifetime":null},{"id":"ziKBPJ6FY0U","title":"JWST Found Galaxies That Shouldn't Exist Yet","format":"long","publishedAt":"2026-08-20T17:00:24Z","ageDays":47,"views":29,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.6,"last28":null,"lifetime":null},{"id":"ziKBPJ6FY0U","title":"JWST Found Galaxies That Shouldn't Exist Yet","format":"long","publishedAt":"2026-08-20T17:00:24Z","ageDays":47,"views":29,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.6,"last28":null,"lifetime":null},{"id":"PV50PX-bE4g","title":"Most of the Universe Gives Off No Light","format":"short","publishedAt":"2026-08-20T10:30:04Z","ageDays":47,"views":129,"likes":4,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":2.7,"last28":null,"lifetime":null},{"id":"03v4f1hlvtQ","title":"What If They're Leaving Us Alone On Purpose","format":"short","publishedAt":"2026-08-19T10:30:03Z","ageDays":48,"views":55,"likes":1,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":1.1,"last28":null,"lifetime":null},{"id":"QRi6Dxq0hz0","title":"We Could Smell Alien Life in a Spectrum","format":"short","publishedAt":"2026-08-18T10:30:35Z","ageDays":49,"views":32,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.7,"last28":null,"lifetime":null},{"id":"OlwENQcY-jg","title":"Why This Alien World Looks Like a Giant Eye","format":"short","publishedAt":"2026-08-17T10:30:23Z","ageDays":50,"views":69,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":1.4,"last28":null,"lifetime":null},{"id":"tEOHYQbcgOw","title":"This Planet's Night Never Cools Down","format":"short","publishedAt":"2026-08-16T10:30:04Z","ageDays":51,"views":16,"likes":0,"comments":2,"d1":null,"d7":null,"d30":null,"perDay":0.3,"last28":null,"lifetime":null},{"id":"M-VN84HCNls","title":"We Found Planets Made of Diamond","format":"short","publishedAt":"2026-08-14T10:30:37Z","ageDays":53,"views":64,"likes":1,"comments":4,"d1":null,"d7":null,"d30":null,"perDay":1.2,"last28":null,"lifetime":null},{"id":"SC2WGTl_V5Q","title":"This Planet's Rain Is Molten Glass","format":"short","publishedAt":"2026-08-13T19:00:17Z","ageDays":54,"views":25,"likes":0,"comments":2,"d1":null,"d7":null,"d30":null,"perDay":0.5,"last28":null,"lifetime":null},{"id":"b8-X_FyJnHM","title":"Alien Worlds: The Strangest Planets We've Ever Found","format":"long","publishedAt":"2026-08-13T17:00:01Z","ageDays":54,"views":13,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null},{"id":"iQUbmlaj4vk","title":"A Reply From the Stars Takes Generations","format":"short","publishedAt":"2026-08-13T10:30:05Z","ageDays":54,"views":17,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.3,"last28":null,"lifetime":null},{"id":"ykmoxRJ6BOI","title":"Is Alien Life Already Hiding in Our Data?","format":"short","publishedAt":"2026-08-12T14:46:11Z","ageDays":55,"views":10,"likes":0,"comments":3,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null},{"id":"f8V6wCjWwHA","title":"Billions of Planets, Zero Signals","format":"short","publishedAt":"2026-08-12T14:45:37Z","ageDays":55,"views":16,"likes":1,"comments":3,"d1":null,"d7":null,"d30":null,"perDay":0.3,"last28":null,"lifetime":null},{"id":"B2STcIAF1lY","title":"What You Would See Falling Into a Black Hole","format":"short","publishedAt":"2026-08-12T10:30:04Z","ageDays":55,"views":56,"likes":4,"comments":3,"d1":null,"d7":null,"d30":null,"perDay":1,"last28":null,"lifetime":null},{"id":"3xrxdmaOwJI","title":"What Happens If You Fall Into a Black Hole?","format":"long","publishedAt":"2026-08-05T17:00:09Z","ageDays":62,"views":4,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.1,"last28":null,"lifetime":null},{"id":"Mo93x0fxB1Q","title":"Why Haven't We Found Aliens Yet? The Fermi Paradox Explained","format":"long","publishedAt":"2026-07-30T17:00:09Z","ageDays":68,"views":12,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null}],"notes":["YouTube Analytics isn't connected for Orbit With Ben yet (run scripts/analytics-auth.ts --channel owb once).","Day-on-day growth starts with the second daily snapshot.","YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact."]},{"channel":"hos","name":"History of Science","handle":"@HistoryOfScienceYT","date":"2026-10-06","firstSnapshot":"2026-10-06","analyticsThrough":null,"totals":{"subscribers":1,"views":558,"videos":16},"change":{"d1":null,"d7":null,"d30":null},"windowSource":{"d7":null,"d30":null},"daily":[],"weekly":[],"monthly":[],"videos":[{"id":"zI_eD3vFWmE","title":"The first X-ray showed a wedding ring","format":"short","publishedAt":"2026-09-27T10:30:25Z","ageDays":9,"views":8,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.9,"last28":null,"lifetime":null},{"id":"xvanpsLeADE","title":"How did Röntgen see bones without cutting","format":"short","publishedAt":"2026-09-26T10:30:07Z","ageDays":10,"views":38,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":3.8,"last28":null,"lifetime":null},{"id":"oowAOWTBoq0","title":"How X-rays Were Discovered by Accident","format":"short","publishedAt":"2026-09-25T10:30:17Z","ageDays":11,"views":27,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2.5,"last28":null,"lifetime":null},{"id":"frP_YrNShsU","title":"How Did We Discover X-rays?","format":"long","publishedAt":"2026-09-24T17:00:06Z","ageDays":12,"views":2,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null},{"id":"LanTHJckYx8","title":"What other table has empty chairs?","format":"short","publishedAt":"2026-09-22T10:30:31Z","ageDays":14,"views":4,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.3,"last28":null,"lifetime":null},{"id":"nba0-f7PPeU","title":"Why tellurium sat before iodine","format":"short","publishedAt":"2026-09-21T10:30:10Z","ageDays":15,"views":26,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.7,"last28":null,"lifetime":null},{"id":"CnHwX1L9XHg","title":"Gallium sat where the table said","format":"short","publishedAt":"2026-09-20T10:30:32Z","ageDays":16,"views":16,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1,"last28":null,"lifetime":null},{"id":"nFQRWmpulTQ","title":"He predicted a metal before it was found","format":"short","publishedAt":"2026-09-19T10:30:36Z","ageDays":17,"views":33,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.9,"last28":null,"lifetime":null},{"id":"uU12JA5rMWg","title":"The periodic table's empty chairs","format":"short","publishedAt":"2026-09-18T10:30:38Z","ageDays":18,"views":28,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":1.6,"last28":null,"lifetime":null},{"id":"AL_-qlWko_g","title":"How Did We Discover the Periodic Table?","format":"long","publishedAt":"2026-09-17T18:00:06Z","ageDays":19,"views":127,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":6.7,"last28":null,"lifetime":null},{"id":"sILtQxgYQk8","title":"A flask that proved germs come from outside","format":"short","publishedAt":"2026-09-06T03:48:23Z","ageDays":30,"views":24,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.8,"last28":null,"lifetime":null},{"id":"93fPUG-hW0A","title":"Invisible life is still everywhere","format":"short","publishedAt":"2026-09-06T00:27:30Z","ageDays":30,"views":6,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null},{"id":"8_Edn_HCi1s","title":"Germs hitch a ride on you","format":"short","publishedAt":"2026-09-06T00:15:21Z","ageDays":30,"views":26,"likes":0,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":0.9,"last28":null,"lifetime":null},{"id":"iqToagXnjX0","title":"Microbes in a drop of pond water","format":"short","publishedAt":"2026-09-06T00:14:42Z","ageDays":30,"views":110,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":3.7,"last28":null,"lifetime":null},{"id":"H1y0DXFVmw8","title":"Germs don't cast a shadow","format":"short","publishedAt":"2026-09-06T00:14:03Z","ageDays":30,"views":78,"likes":1,"comments":0,"d1":null,"d7":null,"d30":null,"perDay":2.6,"last28":null,"lifetime":null},{"id":"_C92tIJCk8A","title":"How Did We Discover Germs?","format":"long","publishedAt":"2026-09-03T17:00:06Z","ageDays":33,"views":6,"likes":0,"comments":1,"d1":null,"d7":null,"d30":null,"perDay":0.2,"last28":null,"lifetime":null}],"notes":["YouTube Analytics isn't connected for History of Science yet (run scripts/analytics-auth.ts --channel hos once).","Day-on-day growth starts with the second daily snapshot.","YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact."]}]}</script>
+<script>
+(() => {
+  let DATA = { channels: [] };
+  try { DATA = JSON.parse(document.getElementById("tracker-data").textContent); } catch (e) { /* template without data */ }
+  const $ = (id) => document.getElementById(id);
+  const fmt = (x) => (x == null ? "–" : Math.round(x).toLocaleString("en-GB"));
+  const signed = (x) => (x == null ? "–" : (x > 0 ? "+" : "") + Math.round(x).toLocaleString("en-GB"));
+  const cls = (x) => (x == null || x === 0 ? "flat" : x > 0 ? "up" : "down");
+  const hrs = (m) => (m == null ? "–" : (m / 60).toLocaleString("en-GB", { maximumFractionDigits: 1 }));
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const dayLabel = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  const monthLabel = (m) => new Date(m + "-15T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "2-digit" });
+  const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+
+  const state = { ch: store.get("tracker.ch") || (DATA.channels[0] && DATA.channels[0].channel), days: 90, period: "weekly", f: "all", q: "", sort: "publishedAt", dir: -1 };
+  if (!DATA.channels.some((c) => c.channel === state.ch) && DATA.channels[0]) state.ch = DATA.channels[0].channel;
+  const cur = () => DATA.channels.find((c) => c.channel === state.ch);
+  const colorVar = (key) => (key === "hos" ? "var(--hos)" : "var(--owb)");
+
+  if (!DATA.channels.length) {
+    $("readout").innerHTML = '<div class="cell"><div class="empty">No snapshots yet. The first one lands after the Mac mini runs <span class="num">npm run analytics:snapshot</span>.</div></div>';
+    return;
+  }
+
+  // ---------------------------------------------------------------- tabs
+  function drawTabs() {
+    $("tabs").innerHTML = DATA.channels.map((c) =>
+      `<button class="tab" role="tab" aria-selected="${c.channel === state.ch}" data-ch="${c.channel}"><span class="dot" style="background:${colorVar(c.channel)}"></span>${esc(c.name)}</button>`).join("");
+  }
+  $("tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-ch]"); if (!b) return; state.ch = b.dataset.ch; store.set("tracker.ch", state.ch); render(); });
+
+  // ---------------------------------------------------------------- readout
+  function drawReadout(c) {
+    document.documentElement.style.setProperty("--accent", colorVar(c.channel));
+    const ch = c.change;
+    const growth = (label, x) => `<div class="cell"><span class="eyebrow">${label}</span><span class="big delta ${cls(x && x.views)}">${signed(x && x.views)}</span><span class="sub">views · <span class="delta ${cls(x && x.subscribers)}">${signed(x && x.subscribers)}</span> subs${x && x.source === "analytics" ? " · YT Analytics" : ""}</span></div>`;
+    $("readout").innerHTML =
+      `<div class="cell"><span class="eyebrow">Subscribers</span><span class="big">${fmt(c.totals.subscribers)}</span><span class="sub">${esc(c.handle)}</span></div>` +
+      `<div class="cell"><span class="eyebrow">Total views</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} videos</span></div>` +
+      growth("Last day", ch.d1) + growth("Last 7 days", ch.d7) + growth("Last 30 days", ch.d30);
+    $("stamp").textContent = `Snapshot ${c.date}` + (c.analyticsThrough ? ` · YouTube Analytics through ${c.analyticsThrough}` : "") + ` · tracking since ${c.firstSnapshot}`;
+  }
+
+  // ---------------------------------------------------------------- charts
+  let W = 1000, H = 260;
+  const PAD = { l: 52, r: 14, t: 12, b: 26 };
+  // Draw at the container's real width, so axis text stays 11px on a phone.
+  function size(box) { W = Math.max(box.clientWidth || 1000, 300); H = W < 600 ? 200 : 260; }
+  function niceMax(v) { if (v <= 0) return 10; const p = Math.pow(10, Math.floor(Math.log10(v))); for (const m of [1, 2, 2.5, 5, 10]) if (m * p >= v) return m * p; return 10 * p; }
+  function axis(max) {
+    let g = "";
+    for (let i = 0; i <= 4; i++) {
+      const v = (max / 4) * i, y = PAD.t + (H - PAD.t - PAD.b) * (1 - i / 4);
+      g += `<line x1="${PAD.l}" x2="${W - PAD.r}" y1="${y}" y2="${y}" stroke="var(--grid)" stroke-width="1"/>`;
+      g += `<text x="${PAD.l - 8}" y="${y + 4}" text-anchor="end">${fmt(v)}</text>`;
+    }
+    return g;
+  }
+  function tipAt(box, html, x, y) {
+    let t = box.querySelector(".tip");
+    if (!t) { t = document.createElement("div"); t.className = "tip"; box.appendChild(t); }
+    t.innerHTML = html; t.hidden = false;
+    const bw = box.clientWidth, tw = t.offsetWidth;
+    t.style.left = Math.min(Math.max(x - tw / 2, 0), bw - tw) + "px";
+    t.style.top = Math.max(y - t.offsetHeight - 12, 0) + "px";
+  }
+  function hideTip(box) { const t = box.querySelector(".tip"); if (t) t.hidden = true; }
+
+  function drawDaily(c) {
+    const box = $("daily");
+    size(box);
+    let rows = c.daily;
+    if (state.days) rows = rows.slice(-state.days);
+    if (rows.length < 2) { box.innerHTML = '<div class="empty">The daily trace starts once there are two days of data.</div>'; return; }
+    const max = niceMax(Math.max(...rows.map((r) => r.views)));
+    const iw = W - PAD.l - PAD.r, ih = H - PAD.t - PAD.b;
+    const x = (i) => PAD.l + (iw * i) / (rows.length - 1), y = (v) => PAD.t + ih * (1 - v / max);
+    const pts = rows.map((r, i) => `${x(i).toFixed(1)},${y(Math.max(r.views, 0)).toFixed(1)}`);
+    const step = Math.ceil(rows.length / (W < 600 ? 3 : 6));
+    let labels = "";
+    rows.forEach((r, i) => { if (i % step === 0 || i === rows.length - 1) labels += `<text x="${x(i)}" y="${H - 6}" text-anchor="${i === rows.length - 1 ? "end" : i === 0 ? "start" : "middle"}">${dayLabel(r.day)}</text>`; });
+    const last = rows[rows.length - 1];
+    box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Views per day, ${rows.length} days">
+      ${axis(max)}
+      <path d="M${PAD.l},${PAD.t + ih} L${pts.join(" L")} L${x(rows.length - 1)},${PAD.t + ih} Z" fill="${colorVar(c.channel)}" fill-opacity=".12"/>
+      <polyline points="${pts.join(" ")}" fill="none" stroke="${colorVar(c.channel)}" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="${x(rows.length - 1)}" cy="${y(last.views)}" r="4" fill="${colorVar(c.channel)}" stroke="var(--panel)" stroke-width="2"/>
+      <line id="xh" x1="0" x2="0" y1="${PAD.t}" y2="${PAD.t + ih}" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>
+      <circle id="xd" r="4" fill="${colorVar(c.channel)}" stroke="var(--panel)" stroke-width="2" visibility="hidden"/>
+      ${labels}
+      <rect x="${PAD.l}" y="${PAD.t}" width="${iw}" height="${ih}" fill="transparent" id="hit"/>
+    </svg>`;
+    const svg = box.querySelector("svg"), xh = svg.querySelector("#xh"), xd = svg.querySelector("#xd");
+    const move = (ev) => {
+      const r = svg.getBoundingClientRect(), sx = ((ev.clientX - r.left) / r.width) * W;
+      const i = Math.min(Math.max(Math.round(((sx - PAD.l) / iw) * (rows.length - 1)), 0), rows.length - 1);
+      const d = rows[i];
+      xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible");
+      xd.setAttribute("cx", x(i)); xd.setAttribute("cy", y(Math.max(d.views, 0))); xd.setAttribute("visibility", "visible");
+      const px = (x(i) / W) * r.width, py = (y(Math.max(d.views, 0)) / H) * r.height;
+      tipAt(box, `${new Date(d.day + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}<br><b>${fmt(d.views)}</b> views` +
+        (d.minutes != null ? ` · <b>${hrs(d.minutes)}</b> h watched` : "") + (d.subsNet != null ? ` · <b>${signed(d.subsNet)}</b> subs` : ""), px, py);
+    };
+    const hit = svg.querySelector("#hit");
+    hit.addEventListener("pointermove", move);
+    hit.addEventListener("pointerleave", () => { xh.setAttribute("visibility", "hidden"); xd.setAttribute("visibility", "hidden"); hideTip(box); });
+  }
+
+  function drawPeriod(c) {
+    const rows = state.period === "weekly" ? c.weekly.slice(-16) : c.monthly;
+    const box = $("periodChart");
+    size(box);
+    const label = (p) => (state.period === "weekly" ? dayLabel(p) : monthLabel(p));
+    if (!rows.length) { box.innerHTML = '<div class="empty">No completed periods yet.</div>'; $("periodTable").innerHTML = ""; return; }
+    const max = niceMax(Math.max(...rows.map((r) => r.views)));
+    const iw = W - PAD.l - PAD.r, ih = H - PAD.t - PAD.b, n = rows.length;
+    const slot = iw / n, bw = Math.max(Math.min(slot - 2, 46), 3);
+    const step = Math.ceil(n / (W < 600 ? 4 : 8));
+    let bars = "", labels = "";
+    rows.forEach((r, i) => {
+      const h = (ih * Math.max(r.views, 0)) / max, bx = PAD.l + slot * i + (slot - bw) / 2, by = PAD.t + ih - h;
+      const rad = Math.min(4, bw / 2, h);
+      bars += `<path data-i="${i}" d="M${bx},${PAD.t + ih} V${by + rad} Q${bx},${by} ${bx + rad},${by} H${bx + bw - rad} Q${bx + bw},${by} ${bx + bw},${by + rad} V${PAD.t + ih} Z" fill="${colorVar(c.channel)}"/>`;
+      bars += `<rect data-i="${i}" x="${PAD.l + slot * i}" y="${PAD.t}" width="${slot}" height="${ih}" fill="transparent"/>`;
+      if (i % step === 0 || i === n - 1) labels += `<text x="${bx + bw / 2}" y="${H - 6}" text-anchor="middle">${label(r.period)}</text>`;
+    });
+    box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Views by ${state.period === "weekly" ? "week" : "month"}">${axis(max)}${bars}${labels}</svg>`;
+    const svg = box.querySelector("svg");
+    svg.addEventListener("pointermove", (ev) => {
+      const el = ev.target.closest("[data-i]"); if (!el) return hideTip(box);
+      const r = rows[+el.dataset.i], s = svg.getBoundingClientRect();
+      const px = ((PAD.l + slot * (+el.dataset.i + 0.5)) / W) * s.width, py = ((PAD.t + ih * (1 - r.views / max)) / H) * s.height;
+      tipAt(box, `${state.period === "weekly" ? "Week of " + dayLabel(r.period) : monthLabel(r.period)}<br><b>${fmt(r.views)}</b> views · <b>${hrs(r.minutes)}</b> h · <b>${signed(r.subsNet)}</b> subs · ${r.uploads} uploads`, px, py);
+    });
+    svg.addEventListener("pointerleave", () => hideTip(box));
+    $("periodTable").innerHTML = `<thead><tr><th class="l">${state.period === "weekly" ? "Week of" : "Month"}</th><th>Views</th><th>Watch hours</th><th>Subscribers</th><th>Uploads</th></tr></thead><tbody>` +
+      [...rows].reverse().map((r) => `<tr><td class="l">${state.period === "weekly" ? r.period : r.period}</td><td>${fmt(r.views)}</td><td>${hrs(r.minutes)}</td><td class="delta ${cls(r.subsNet)}">${signed(r.subsNet)}</td><td>${r.uploads}</td></tr>`).join("") + "</tbody>";
+  }
+
+  // ---------------------------------------------------------------- videos
+  const COLS = [
+    ["publishedAt", "Published", "l"], ["title", "Title", "l"], ["format", "Format", "l"], ["views", "Views"], ["d1", "+1 day"], ["d7", "+7 days"], ["d30", "+30 days"], ["perDay", "Views/day"], ["apv", "Avg % viewed"], ["likes", "Likes"],
+  ];
+  function drawVideos(c) {
+    const q = state.q.trim().toLowerCase();
+    const val = (v, k) => (k === "apv" ? (v.last28 ? v.last28.avgViewPct : null) : v[k]);
+    let vs = c.videos.filter((v) => (state.f === "all" || v.format === state.f) && (!q || v.title.toLowerCase().includes(q)));
+    vs = vs.slice().sort((a, b) => {
+      const x = val(a, state.sort), y = val(b, state.sort);
+      if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
+      return (typeof x === "string" ? x.localeCompare(y) : x - y) * state.dir;
+    });
+    const head = COLS.map(([k, label, a]) => `<th class="${a || ""}" aria-sort="${state.sort === k ? (state.dir > 0 ? "ascending" : "descending") : "none"}"><button type="button" data-sort="${k}">${label}${state.sort === k ? (state.dir > 0 ? " ↑" : " ↓") : ""}</button></th>`).join("");
+    const body = vs.map((v) => `<tr>
+      <td class="l">${v.publishedAt ? v.publishedAt.slice(0, 10) : "–"}</td>
+      <td class="l title"><a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a></td>
+      <td class="l"><span class="pill ${v.format}">${v.format === "short" ? "Short" : "Long"}</span></td>
+      <td>${fmt(v.views)}</td>
+      <td class="delta ${cls(v.d1)}">${signed(v.d1)}</td><td class="delta ${cls(v.d7)}">${signed(v.d7)}</td><td class="delta ${cls(v.d30)}">${signed(v.d30)}</td>
+      <td>${v.perDay == null ? "–" : v.perDay.toLocaleString("en-GB")}</td>
+      <td>${v.last28 && v.last28.avgViewPct != null ? v.last28.avgViewPct.toFixed(0) + "%" : "–"}</td>
+      <td>${fmt(v.likes)}</td></tr>`).join("");
+    $("videos").innerHTML = `<thead><tr>${head}</tr></thead><tbody>${body || `<tr><td class="l" colspan="${COLS.length}">No videos match.</td></tr>`}</tbody>`;
+  }
+  $("videos").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-sort]"); if (!b) return;
+    const k = b.dataset.sort;
+    if (state.sort === k) state.dir *= -1; else { state.sort = k; state.dir = ["title", "format"].includes(k) ? 1 : -1; }
+    drawVideos(cur());
+  });
+  $("q").addEventListener("input", (e) => { state.q = e.target.value; drawVideos(cur()); });
+
+  function seg(id, key, attr, cast) {
+    $(id).addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      state[key] = cast ? cast(b.dataset[attr]) : b.dataset[attr];
+      $(id).querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      render();
+    });
+  }
+  seg("range", "days", "days", Number);
+  seg("period", "period", "p");
+  seg("fmt", "f", "f");
+
+  function render() {
+    const c = cur();
+    drawTabs(); drawReadout(c); drawDaily(c); drawPeriod(c); drawVideos(c);
+    $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weekly totals run Monday to Sunday.</li>`;
+  }
+  render();
+  let rt;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { const c = cur(); drawDaily(c); drawPeriod(c); }, 150); });
+})();
+</script>
