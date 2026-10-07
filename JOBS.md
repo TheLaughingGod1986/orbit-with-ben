@@ -8,11 +8,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0001 | mini | open | – | – | 022 edit · Sun 022 first cut v01 | 6036709461 |
 | J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0007 | mini | claimed | cursor | 2026-10-07T13:42Z | Sun 022: VO pickup 'Three clocks' at 457 s | 6037545918 |
 | J0008 | gemini | open | – | – | Gemini: Sun 022 pictures vs words, and the clock numbers |  |
 
 Recently finished:
 
+- J0007 done: Sun 022: VO pickup 'Three clocks' at 457 s (Take sun_pickup_three_clocks_v01 PASS: Scribe 'Three clocks. Only one of them answers the title' 100%, 3.12 s, LUFS -19.9, 49 chars (pool 70,193). Audio on the Mini at 022/02_Voiceover/sun_pickup_three_clocks_v01.wav (+ .mp3).)
 - J0006 done: Install the Chief relay on the Mini (Relay installed and running (launchd com.owb.chief-relay, pid 59393, first run 13:08 woke Cursor); ~/_desk/bin script and LaunchAgents plist match the repo. status: Grok down (no heartbeat), Cursor UP, Codex UP. Codex 0.160.0 has no --full-auto: installed plist now sets CODEX_FLAGS='exec -s workspace-write --approve-for-me -c sandbox_workspace_write.network_access=true --add-dir "<HOS>" --add-dir ~/_desk'. Also set CODEX_BIN=~/.npm-global/bin/codex (launchd's zsh -lc PATH missed it: log said codex 'CLI not installed') and HOS_REPO='~/YouTube/History Of Science' (default history-of-science doesn't exist). Same three via launchctl setenv so they apply without a reload. Old cursor-covers-chief deleted. Log tail: chain chief=down | cursor=UP | codex=down (CLI not installed) [pre-fix]; run: cursor (cap 1500s).)
 - J0005 cancelled: Decide: install the Cursor worker ()
 - J0004 done: Read the monthly Google credit (read only) (Monthly credit £73.59 (23 Sep grant, used); no Oct grant yet; covers all 5 projects on billing acct 0124D1-E6EFD6-40F6DA; Free Trial £25.59 left to 11 Nov)

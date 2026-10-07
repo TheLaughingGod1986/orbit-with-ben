@@ -204,13 +204,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-07T13:12Z",
-      "eta": "2026-10-07T13:42Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T12:06Z",
-      "result": "",
+      "result": "Take sun_pickup_three_clocks_v01 PASS: Scribe 'Three clocks. Only one of them answers the title' 100%, 3.12 s, LUFS -19.9, 49 chars (pool 70,193). Audio on the Mini at 022/02_Voiceover/sun_pickup_three_clocks_v01.wav (+ .mp3).",
       "history": [
         {
           "at": "2026-10-07T12:06Z",
@@ -221,8 +221,14 @@
           "at": "2026-10-07T13:12Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T13:13Z",
+          "by": "cursor",
+          "what": "done: Take sun_pickup_three_clocks_v01 PASS: Scribe 'Three clocks. Only one of them answers the title' 100%, 3.12 s, LUFS -19.9, 49 chars (pool 70,193). Audio on the Mini at 022/02_Voiceover/sun_pickup_three_clocks_v01.wav (+ .mp3)."
         }
-      ]
+      ],
+      "done_ref": "c6ba945"
     },
     {
       "id": "J0008",
