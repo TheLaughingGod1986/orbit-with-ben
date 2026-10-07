@@ -47,9 +47,62 @@ export type Snapshot = {
   takenAt: string;
   totals: { subscribers: number | null; views: number; videos: number };
   videos: VideoStat[];
-  analytics: null | { through: string; last7: Record<string, VideoWindow>; last28: Record<string, VideoWindow>; lifetime: Record<string, VideoWindow> };
+  analytics: null | {
+    through: string;
+    last7: Record<string, VideoWindow>;
+    last28: Record<string, VideoWindow>;
+    lifetime: Record<string, VideoWindow>;
+    /** Views by traffic source, per video: the last 28 days, and a Short's first two days (lesson R1). */
+    sources?: Record<string, VideoSources>;
+  };
   note?: string;
 };
+
+export type VideoSources = { last28: Record<string, number>; day1: Record<string, number> | null };
+
+/** YouTube's traffic source codes in plain words. */
+export const SOURCE_NAMES: Record<string, string> = {
+  SHORTS: "Shorts feed",
+  YT_SEARCH: "YouTube search",
+  RELATED_VIDEO: "Suggested",
+  BROWSE: "Browse / home",
+  SUBSCRIBER: "Subscriptions",
+  YT_CHANNEL: "Channel page",
+  PLAYLIST: "Playlists",
+  NOTIFICATION: "Notifications",
+  END_SCREEN: "End screens",
+  EXT_URL: "Other sites",
+  NO_LINK_OTHER: "Direct / unknown",
+  YT_OTHER_PAGE: "Other YouTube pages",
+  HASHTAGS: "Hashtags",
+  SOUND_PAGE: "Sound page",
+  ANNOTATION: "Cards",
+  CAMPAIGN_CARD: "Campaign cards",
+  SHORTS_CONTENT_LINKS: "Related video link (Shorts)",
+  VIDEO_REMIXES: "Remixes",
+  LIVE_REDIRECT: "Live redirect",
+  ADVERTISING: "Ads",
+};
+
+export function toSourceViews(t: AnalyticsTable): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const r of tableRows(t)) out[String(r.insightTrafficSourceType)] = Number(r.views ?? 0);
+  return out;
+}
+
+/** Share of views (0-100) from one source, or null when there are no views to share out. */
+export function sourceShare(views: Record<string, number> | null | undefined, source: string): number | null {
+  if (!views) return null;
+  const total = Object.values(views).reduce((a, b) => a + b, 0);
+  return total > 0 ? Math.round(((views[source] ?? 0) / total) * 1000) / 10 : null;
+}
+
+/** The biggest source by views, in plain words. */
+export function topSource(views: Record<string, number> | null | undefined): string | null {
+  if (!views) return null;
+  const best = Object.entries(views).sort((a, b) => b[1] - a[1])[0];
+  return best && best[1] > 0 ? (SOURCE_NAMES[best[0]] ?? best[0]) : null;
+}
 
 export type DailyRow = { day: string; views: number; minutes: number; subsGained: number; subsLost: number; likes: number; comments: number; shares: number };
 
@@ -172,6 +225,11 @@ export type VideoRow = {
   perDay: number | null;
   last28: VideoWindow | null;
   lifetime: VideoWindow | null;
+  /** A Short's Shorts-feed share of views over its first two days (R1: 50% or more means it was fed). */
+  feedShareDay1: number | null;
+  /** Where the last 28 days of views came from (source code to views), and the biggest one in words. */
+  sources28: Record<string, number> | null;
+  topSource28: string | null;
 };
 
 export type ChannelReport = {
@@ -188,6 +246,8 @@ export type ChannelReport = {
   weekly: PeriodRow[];
   monthly: PeriodRow[];
   videos: VideoRow[];
+  /** Last 28 days of views by source, summed over Shorts and over longs (null until traffic sources are collected). */
+  sourceMix: { short: Record<string, number>; long: Record<string, number> } | null;
   notes: string[];
 };
 
@@ -357,6 +417,9 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
         perDay: ageDays != null ? Math.round((v.views / Math.max(ageDays, 1)) * 10) / 10 : null,
         last28: a?.last28[v.id] ?? (a ? { views: 0, minutes: 0, subs: 0, avgViewSeconds: null, avgViewPct: null } : null),
         lifetime: a?.lifetime[v.id] ?? null,
+        feedShareDay1: v.format === "short" ? sourceShare(a?.sources?.[v.id]?.day1, "SHORTS") : null,
+        sources28: a?.sources?.[v.id]?.last28 ?? null,
+        topSource28: topSource(a?.sources?.[v.id]?.last28),
       };
     })
     .sort((x, y) => (y.publishedAt ?? "").localeCompare(x.publishedAt ?? ""));
@@ -377,6 +440,17 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     ? daily.slice(-120).map((r) => ({ day: r.day, views: r.views, minutes: r.minutes, subsNet: r.subsGained - r.subsLost }))
     : derived.slice(-120).map((r) => ({ day: r.day, views: r.views, minutes: null, subsNet: r.subsNet }));
 
+  let sourceMix: ChannelReport["sourceMix"] = null;
+  if (a?.sources) {
+    sourceMix = { short: {}, long: {} };
+    for (const v of videos) {
+      for (const [k, n] of Object.entries(v.sources28 ?? {})) {
+        const name = SOURCE_NAMES[k] ?? k;
+        sourceMix[v.format][name] = (sourceMix[v.format][name] ?? 0) + n;
+      }
+    }
+  }
+
   return {
     channel,
     name: meta.name,
@@ -395,6 +469,7 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     weekly: periods("week", series, uploadsBy(weekStart), source).slice(-26),
     monthly: periods("month", series, uploadsBy((d) => d.slice(0, 7)), source),
     videos,
+    sourceMix,
     notes,
   };
 }
@@ -431,13 +506,20 @@ export function renderMarkdown(r: ChannelReport): string {
   table("Week on week (weeks start Monday)", r.weekly.slice(-12), "Week of");
   table("Month on month", r.monthly, "Month");
   L.push(`A period still running is compared with the same number of days at the start of the one before. A part period at launch isn't compared, and no change is shown on a base under ${MIN_BASE_VIEWS} views or ${MIN_BASE_MINUTES} minutes.`, "");
+  if (r.sourceMix) {
+    const fmtMix = (m: Record<string, number>) => {
+      const total = Object.values(m).reduce((x, y) => x + y, 0);
+      return total ? Object.entries(m).sort((x, y) => y[1] - x[1]).slice(0, 4).map(([k, n]) => `${k} ${Math.round((n / total) * 100)}%`).join(" · ") + ` (${n0(total)} views)` : "no views";
+    };
+    L.push("## Where views come from (last 28 days)", "", `- **Shorts:** ${fmtMix(r.sourceMix.short)}`, `- **Longs:** ${fmtMix(r.sourceMix.long)}`, "");
+  }
   L.push("## Every video (newest first)", "");
-  L.push(`| Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) |`);
-  L.push("|---|---|---|---:|---:|---:|---:|---:|---:|");
+  L.push(`| Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) | Feed share, day 1 | Top source (28 d) |`);
+  L.push("|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|");
   for (const v of r.videos) {
     const pct = v.last28?.avgViewPct == null ? "–" : `${v.last28.avgViewPct.toFixed(0)}%`;
     L.push(
-      `| ${v.publishedAt?.slice(0, 10) ?? "–"} | [${cell(v.title)}](https://youtu.be/${v.id}) | ${v.format} | ${n0(v.views)} | ${signed(v.d1)} | ${signed(v.d7)} | ${signed(v.d30)} | ${v.perDay ?? "–"} | ${pct} |`,
+      `| ${v.publishedAt?.slice(0, 10) ?? "–"} | [${cell(v.title)}](https://youtu.be/${v.id}) | ${v.format} | ${n0(v.views)} | ${signed(v.d1)} | ${signed(v.d7)} | ${signed(v.d30)} | ${v.perDay ?? "–"} | ${pct} | ${v.feedShareDay1 == null ? "–" : `${v.feedShareDay1.toFixed(0)}%`} | ${v.topSource28 ?? "–"} |`,
     );
   }
   L.push("");

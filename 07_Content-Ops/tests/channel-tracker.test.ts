@@ -6,6 +6,9 @@ import {
   addDays,
   buildReport,
   periods,
+  sourceShare,
+  toSourceViews,
+  topSource,
   londonDate,
   renderMarkdown,
   snapshotAtOrBefore,
@@ -169,6 +172,31 @@ describe("week on week and month on month", () => {
     expect(m[1]).toMatchObject({ period: "2026-08", prev: null, viewsPct: null });
     const tiny = periods("week", [...run("2026-09-21", 7, () => 2), ...run("2026-09-28", 7, () => 20)], new Map(), "analytics");
     expect(tiny[1].viewsPct).toBeNull(); // 14 views before: under the 20-view floor
+  });
+});
+
+describe("traffic sources", () => {
+  it("reads a source table, its feed share and its top source", () => {
+    const v = toSourceViews({ columnHeaders: [{ name: "insightTrafficSourceType" }, { name: "views" }], rows: [["SHORTS", 30], ["YT_SEARCH", 10]] });
+    expect(v).toEqual({ SHORTS: 30, YT_SEARCH: 10 });
+    expect(sourceShare(v, "SHORTS")).toBe(75);
+    expect(sourceShare({}, "SHORTS")).toBeNull();
+    expect(topSource(v)).toBe("Shorts feed");
+  });
+  it("puts each Short's day-1 feed share and the 28-day source mix in the report", () => {
+    const w = { views: 40, minutes: 5, subs: 0, avgViewSeconds: 15, avgViewPct: 60 };
+    const analytics = {
+      through: "2026-10-05",
+      last7: { s: w, l: w },
+      last28: { s: w, l: w },
+      lifetime: { s: w, l: w },
+      sources: { s: { last28: { SHORTS: 30, YT_SEARCH: 10 }, day1: { SHORTS: 9, SUBSCRIBER: 1 } }, l: { last28: { RELATED_VIDEO: 3, YT_SEARCH: 1 }, day1: null } },
+    };
+    const r = buildReport("owb", [snap("2026-10-07", 50, 1, [video("s", 40), video("l", 4, "2026-09-01T17:00:00Z", "long")], analytics)], null);
+    expect(r.videos.find((v) => v.id === "s")).toMatchObject({ feedShareDay1: 90, topSource28: "Shorts feed" });
+    expect(r.videos.find((v) => v.id === "l")).toMatchObject({ feedShareDay1: null, topSource28: "Suggested" });
+    expect(r.sourceMix).toEqual({ short: { "Shorts feed": 30, "YouTube search": 10 }, long: { Suggested: 3, "YouTube search": 1 } });
+    expect(renderMarkdown(r)).toContain("**Longs:** Suggested 75% · YouTube search 25% (4 views)");
   });
 });
 

@@ -24,6 +24,8 @@ import {
   toDailyRows,
   toVideoStat,
   toVideoWindows,
+  toSourceViews,
+  type VideoSources,
   type ChannelDaily,
   type ChannelKey,
   type Snapshot,
@@ -115,10 +117,29 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
         get(token, q({ startDate: from, dimensions: "video", sort: "-views", maxResults: "200", metrics: "views,estimatedMinutesWatched,subscribersGained,averageViewDuration,averageViewPercentage" }));
       const [last7, last28, lifetime] = await Promise.all([top(addDays(through, -6)), top(addDays(through, -27)), top(start)]);
       snap.analytics = { through, last7: toVideoWindows(last7), last28: toVideoWindows(last28), lifetime: toVideoWindows(lifetime) };
+      // Traffic sources per video. One video failing never costs the rest, or the snapshot.
+      const sources: Record<string, VideoSources> = {};
+      let sourceFails = 0;
+      for (const v of videos.filter((x) => x.privacy === "public" && x.publishedAt)) {
+        const published = v.publishedAt!.slice(0, 10);
+        const bySource = (from: string, to: string) =>
+          get(token, q({ startDate: from, endDate: to, dimensions: "insightTrafficSourceType", filters: `video==${v.id}`, metrics: "views" })).then(toSourceViews);
+        try {
+          const last28 = published <= through ? await bySource(addDays(through, -27) > published ? addDays(through, -27) : published, through) : {};
+          // Day 1 = publish day and the day after, for Shorts aired in the last 60 days whose two days are in.
+          const day2 = addDays(published, 1);
+          const day1 = v.format === "short" && day2 <= through && published >= addDays(through, -60) ? await bySource(published, day2) : null;
+          sources[v.id] = { last28, day1 };
+        } catch {
+          sourceFails++;
+        }
+      }
+      snap.analytics.sources = sources;
+      const sourceNote = sourceFails ? ` (traffic sources missing for ${sourceFails} video(s))` : "";
       const file: ChannelDaily = { channel: key, through, rows: toDailyRows(daily) };
       fs.mkdirSync(dir, { recursive: true });
       fs.writeFileSync(path.join(dir, "channel_daily.json"), JSON.stringify(file, null, 0).replace(/},{/g, "},\n{") + "\n");
-      analyticsLine = `YouTube Analytics through ${through}: ${file.rows.length} days`;
+      analyticsLine = `YouTube Analytics through ${through}: ${file.rows.length} days, traffic sources for ${Object.keys(sources).length} videos${sourceNote}`;
     } catch (e) {
       const status = (e as Error & { status?: number }).status;
       const why = status === 403 ? "the sign-in lacks yt-analytics.readonly, or the YouTube Analytics API isn't enabled on the Google Cloud project" : (e as Error).message;

@@ -114,6 +114,11 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     <div class="scroll"><table id="periodTable"></table></div>
   </section>
 
+  <section class="panel" aria-labelledby="sources-h" id="sourcesPanel" hidden>
+    <h2 id="sources-h">Where views come from <span class="stamp">last 28 days</span></h2>
+    <div class="scroll"><table id="sourcesTable"></table></div>
+  </section>
+
   <section class="panel" aria-labelledby="videos-h">
     <div class="row">
       <h2 id="videos-h">Every video</h2>
@@ -301,9 +306,24 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
   }
 
 
+  // ---------------------------------------------------------------- sources
+  function drawSources(c) {
+    const panel = $("sourcesPanel"), mix = c.sourceMix;
+    panel.hidden = !mix;
+    if (!mix) return;
+    const tot = (m) => Object.values(m).reduce((a, b) => a + b, 0);
+    const ts = tot(mix.short), tl = tot(mix.long);
+    const names = [...new Set([...Object.keys(mix.short), ...Object.keys(mix.long)])]
+      .sort((a, b) => ((mix.short[b] || 0) + (mix.long[b] || 0)) - ((mix.short[a] || 0) + (mix.long[a] || 0)));
+    const share = (m, t, k) => (t ? Math.round(((m[k] || 0) / t) * 100) + "%" : "–");
+    $("sourcesTable").innerHTML = `<thead><tr><th class="l">Source</th><th>Shorts</th><th>Longs</th></tr></thead><tbody>` +
+      names.map((k) => `<tr><td class="l">${esc(k)}</td><td>${share(mix.short, ts, k)}</td><td>${share(mix.long, tl, k)}</td></tr>`).join("") +
+      `<tr><td class="l"><b>All views</b></td><td>${fmt(ts)}</td><td>${fmt(tl)}</td></tr></tbody>`;
+  }
+
   // ---------------------------------------------------------------- videos
   const COLS = [
-    ["publishedAt", "Published", "l"], ["title", "Title", "l"], ["format", "Format", "l"], ["views", "Views"], ["d1", "+1 day"], ["d7", "+7 days"], ["d30", "+30 days"], ["perDay", "Views/day"], ["apv", "Avg % viewed"], ["likes", "Likes"],
+    ["publishedAt", "Published", "l"], ["title", "Title", "l"], ["format", "Format", "l"], ["views", "Views"], ["d1", "+1 day"], ["d7", "+7 days"], ["d30", "+30 days"], ["perDay", "Views/day"], ["apv", "Avg % viewed"], ["feedShareDay1", "Feed, day 1"], ["topSource28", "Top source", "l"], ["likes", "Likes"],
   ];
   function drawVideos(c) {
     const q = state.q.trim().toLowerCase();
@@ -323,13 +343,15 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
       <td class="delta ${cls(v.d1)}">${signed(v.d1)}</td><td class="delta ${cls(v.d7)}">${signed(v.d7)}</td><td class="delta ${cls(v.d30)}">${signed(v.d30)}</td>
       <td>${v.perDay == null ? "–" : v.perDay.toLocaleString("en-GB")}</td>
       <td>${v.last28 && v.last28.avgViewPct != null ? v.last28.avgViewPct.toFixed(0) + "%" : "–"}</td>
+      <td title="Share of the first two days' views that came from the Shorts feed (50% or more means it was fed)">${v.feedShareDay1 == null ? "–" : `<span class="delta ${v.feedShareDay1 >= 50 ? "up" : "down"}">${v.feedShareDay1.toFixed(0)}%</span>`}</td>
+      <td class="l">${v.topSource28 ? esc(v.topSource28) : "–"}</td>
       <td>${fmt(v.likes)}</td></tr>`).join("");
     $("videos").innerHTML = `<thead><tr>${head}</tr></thead><tbody>${body || `<tr><td class="l" colspan="${COLS.length}">No videos match.</td></tr>`}</tbody>`;
   }
   $("videos").addEventListener("click", (e) => {
     const b = e.target.closest("[data-sort]"); if (!b) return;
     const k = b.dataset.sort;
-    if (state.sort === k) state.dir *= -1; else { state.sort = k; state.dir = ["title", "format"].includes(k) ? 1 : -1; }
+    if (state.sort === k) state.dir *= -1; else { state.sort = k; state.dir = ["title", "format", "topSource28"].includes(k) ? 1 : -1; }
     drawVideos(cur());
   });
   $("q").addEventListener("input", (e) => { state.q = e.target.value; drawVideos(cur()); });
@@ -348,7 +370,7 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
 
   function render() {
     const c = cur();
-    drawTabs(); drawReadout(c); drawDaily(c); drawPeriod(c); drawVideos(c);
+    drawTabs(); drawReadout(c); drawDaily(c); drawPeriod(c); drawSources(c); drawVideos(c);
     $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li>`;
   }
   render();
