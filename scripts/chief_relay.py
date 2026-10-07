@@ -11,10 +11,11 @@ when it is active again, and a CLI that runs out of credit is skipped until its 
 takes the run.
 
 How "up" is decided:
-  chief   Grok Bot is a desktop app; the relay can't start it or see its credit. It counts as up while its heartbeat
-          is fresh (default 180 min). The heartbeat is touched every time Grok runs `jobs.py ... --agent chief`
-          (every session and loop starts with `jobs.py next`), or `chief_relay.py seen chief`. A `down` mark on Grok
-          is cleared by any later heartbeat: Grok working again is proof it is back.
+  chief   Grok Bot is a desktop app with no CLI; the relay can't start it, prompt it or see its credit. It counts as
+          up when the app has been working at two relay runs in a row (it writes session files under
+          ~/Library/Application Support/Grok Bot/dune-reliability/sessions while it works; one blip, like a failed
+          out-of-credit attempt, isn't enough), or when it has run `jobs.py ... --agent chief` in the last 180 min.
+          A `down` mark on Grok is cleared by either signal seen after the mark: Grok working again is proof it is back.
   cursor, codex
           up unless their CLI is missing or they are marked down. A run whose output says out of credit, over the
           usage limit, or signed out marks that agent down for --retry hours (default 3), and the same run falls
@@ -161,25 +162,67 @@ def cli_spec(agent: str):
     return (b, shlex.split(flags)) if b else None
 
 
+GROK_SESSIONS = pathlib.Path(os.environ.get("GROK_SESSIONS_DIR",
+                                            HOME / "Library" / "Application Support" / "Grok Bot" / "dune-reliability" / "sessions"))
+APP_FRESH_MIN = 45  # a little over the relay's 30-min interval
+
+
+def grok_app_newest():
+    """Epoch seconds of the newest file the Grok Bot app wrote under its sessions folder, or None."""
+    try:
+        return max((f.stat().st_mtime for f in GROK_SESSIONS.rglob("*") if f.is_file()), default=None)
+    except OSError:
+        return None
+
+
+def note_grok_app(at: dt.datetime) -> None:
+    """Once per relay run: did the Grok Bot app write something new since the last run, and did it at the run before
+    too? Grok is an app with no CLI, so this is how the relay sees it come back. It takes new writes at two runs in a
+    row (30 min apart), so one failed out-of-credit attempt doesn't count as Grok being back."""
+    newest = grok_app_newest()
+    prev = read_json(d("grok_app.json")) or {}
+    recent = prev.get("checked") and (at - parse(prev["checked"])) <= dt.timedelta(minutes=90)
+    age = None if newest is None else int((at.timestamp() - newest) // 60)
+    new_write = newest is not None and (not recent or newest > (prev.get("newest") or 0))
+    active = new_write and age <= APP_FRESH_MIN
+    write_json(d("grok_app.json"), {"checked": iso(at), "newest": newest, "age_min": age, "active": active,
+                                    "prev_active": bool(recent and prev.get("active"))})
+
+
+def grok_app_up(after=None) -> tuple:
+    """(up, why) from the app's session files, as of the last relay run (and only if seen after `after`)."""
+    rec = read_json(d("grok_app.json")) or {}
+    if not rec.get("active"):
+        return False, ""
+    if after and parse(rec["checked"]) <= after:
+        return False, ""
+    if not rec.get("prev_active"):
+        return False, f"app worked {rec.get('age_min')} min ago, once (needs two relay checks in a row)"
+    return True, f"app working (last session file {rec.get('age_min')} min ago, two checks in a row)"
+
+
 def state_of(agent: str, at: dt.datetime) -> tuple:
     """(up, why) for one agent in the chain."""
     mark = read_json(d("down", agent + ".json"))
     if mark:
         until = parse(mark["until"]) if mark.get("until") else None
+        since = parse(mark["since"])
         beat = last_seen(agent)
         if until and at >= until:
             mark_up(agent)
-        elif agent == "chief" and beat and beat > parse(mark["since"]):
-            mark_up(agent)  # Grok has run jobs.py since it was marked down: it's back
+        elif agent == "chief" and ((beat and beat > since) or grok_app_up(after=since)[0]):
+            mark_up(agent)  # Grok has worked since it was marked down: it's back
         else:
             return False, f"marked down: {mark.get('reason') or 'no reason given'}" + (f" (retry after {mark['until']})" if until else "")
     if agent == "chief":
         fresh = int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))
         beat = last_seen(agent)
-        if not beat:
-            return False, "no heartbeat yet (it hasn't run jobs.py on this Mini)"
-        age = int((at - beat).total_seconds() // 60)
-        return (True, f"active {age} min ago") if age <= fresh else (False, f"quiet for {age // 60} h {age % 60} min")
+        if beat and int((at - beat).total_seconds() // 60) <= fresh:
+            return True, f"ran jobs.py {int((at - beat).total_seconds() // 60)} min ago"
+        up, why = grok_app_up()
+        if up:
+            return True, why
+        return False, why or ("app quiet" + (f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else ""))
     if agent in ("cursor", "codex"):
         return (True, "ready") if cli_spec(agent) else (False, "CLI not installed")
     return False, "unknown agent"
@@ -214,7 +257,14 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    you don't rewrite its findings or any spoken line.
 5. Report: OWB with  python3 scripts/owb_thread.py post "..."  (start with "{name} covering"); HOS with
    hos_desk.py post --from {agent} --to claude ...  Say what you did, what's next, and what blocks you.
-If a job will take longer than about 20 minutes, do a clean stopping point, release or renew your claim, report, and stop.
+Your run is killed at 25 minutes. Anything that takes longer (a full render, a big download, a batch of picture jobs):
+start it detached so it outlives you, e.g.
+   tmux new -d -s <job>-render "cd <dir> && <command> > ~/_desk/logs/<job>-render.log 2>&1; echo $? > ~/_desk/logs/<job>-render.done"
+then release the job with a note naming the tmux session, the log and the .done file. The next run checks that file:
+missing means still running (leave it, take a quick job meanwhile); present means read the exit code and the log, and
+carry on. Never start a second copy of a render that is still running.
+Otherwise, if a job will take longer than about 20 minutes, stop at a clean point, release your claim with a note,
+report, and stop.
 """
 
 
@@ -235,8 +285,9 @@ def run_cli(agent: str, prompt: str, cap_s: int) -> tuple:
     """(exit code, tail of output). Exit 124 = killed at the cap. The whole process group is killed, so a CLI's
     child processes don't outlive the cap."""
     b, args = cli_spec(agent)
+    env = dict(os.environ, OWB_AGENT=agent)  # owb_thread.py tags its posts "[Chief] [Cursor]"
     p = subprocess.Popen([b] + args + [prompt], cwd=str(OWB) if OWB.is_dir() else None, stdout=subprocess.PIPE,
-                         stderr=subprocess.STDOUT, text=True, start_new_session=True)
+                         stderr=subprocess.STDOUT, text=True, start_new_session=True, env=env)
     try:
         out, _ = p.communicate(timeout=cap_s)
         code = p.returncode
@@ -288,12 +339,17 @@ def cmd_run(at: dt.datetime) -> int:
         log(f"skip: outside {lo}-{hi}")
         return 0
     d().mkdir(parents=True, exist_ok=True)
-    lock = open(d("run.lock"), "w")
-    try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except OSError:
-        log("skip: previous run still working")
-        return 0
+    with open(d("run.lock"), "w") as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            log("skip: previous run still working")
+            return 0
+        return run_locked(at)
+
+
+def run_locked(at: dt.datetime) -> int:
+    note_grok_app(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
     retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
     while True:

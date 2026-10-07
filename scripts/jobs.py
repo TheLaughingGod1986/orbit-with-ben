@@ -107,6 +107,31 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime) -> bool:
     return False
 
 
+MINI_NEEDS = {"mini", "gemini", "any"}
+
+
+def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
+    """What Claude's 2-hourly check alerts Ben about (read only):
+    quiet  Mini work is waiting or stalled, nothing holds a live Mini claim, and no agent but Claude has touched the
+           queue for quiet_h hours: the Mini, the relay or every Chief in the chain is down.
+    ben    jobs only Ben can do (needs ben, open) and jobs blocked on him, with when each started waiting."""
+    def mini_able(j):
+        return claimable(data, j, MINI_NEEDS, at)
+    waiting = [j["id"] for j in data["jobs"] if j["needs"] in MINI_NEEDS and mini_able(j)]
+    live = [j["id"] for j in data["jobs"] if j["status"] == "claimed" and not stalled(j, at) and j["needs"] in MINI_NEEDS]
+    stamps = [studio.parse(h["at"]) for j in data["jobs"] for h in j.get("history", []) if h.get("by") not in ("claude", "")]
+    last = max(stamps) if stamps else None
+    quiet = bool(waiting) and not live and (last is None or at - last > dt.timedelta(hours=quiet_h))
+    ben = []
+    for j in data["jobs"]:
+        if (j["needs"] == "ben" and j["status"] in ("open", "claimed")) or j["status"] == "blocked":
+            since = j["history"][-1]["at"] if j.get("history") else ""
+            ben.append({"id": j["id"], "title": j["title"], "status": j["status"], "since": since,
+                        "why": (j.get("result") if j["status"] == "blocked" else "") or j.get("body", "")[:200]})
+    return {"quiet": quiet, "last_mini_activity": studio.iso(last) if last else None, "waiting_mini": waiting,
+            "live_claims": live, "ben": ben}
+
+
 def order(job: dict) -> tuple:
     """Quick jobs (ETA an hour or less) first, then the rest, oldest first within each. Otherwise one multi-day job that
     is released at every stopping point (a first cut) would come back first every time and starve the quick ones."""
@@ -302,6 +327,8 @@ def main(argv=None) -> int:
         p.add_argument("--note", default="")
         p.add_argument("--ref", default="")
         p.add_argument("--eta", type=int, default=DEFAULT_ETA)
+    w = sub.add_parser("watch", help="JSON for Claude's 2-hourly check: is the Mini quiet, what waits on Ben")
+    w.add_argument("--quiet-hours", type=float, default=3)
     lst = sub.add_parser("list")
     lst.add_argument("--all", action="store_true")
     for p in sub.choices.values():
@@ -316,6 +343,9 @@ def main(argv=None) -> int:
             if args.all or j["status"] in ("open", "claimed", "blocked"):
                 print(f"{j['id']} [{j['needs']}] {'stalled' if stalled(j, at) else j['status']}"
                       f"{' by ' + j['by'] if j.get('by') else ''}  {j['title']}")
+        return 0
+    if args.cmd == "watch":
+        print(json.dumps(do_watch(load(), at, args.quiet_hours), indent=2))
         return 0
     if args.cmd == "show":
         job = find(load(), args.id)

@@ -11,8 +11,10 @@ MIN = dt.timedelta(minutes=1)
 class Relay(unittest.TestCase):
     def setUp(self):
         self.tmp = pathlib.Path(tempfile.mkdtemp())
-        self.old_state, self.old_home = cr.STATE, cr.HOME
+        self.old_state, self.old_home, self.old_sessions = cr.STATE, cr.HOME, cr.GROK_SESSIONS
         cr.STATE, cr.HOME = self.tmp / "state", self.tmp  # so a real CLI on this machine can't stand in for a fake
+        cr.GROK_SESSIONS = self.tmp / "grok" / "sessions"
+        cr.GROK_SESSIONS.mkdir(parents=True)
         cr.STATE.mkdir()
         self.posts = self.tmp / "posts.txt"
         notify = self.tmp / "notify.sh"
@@ -25,7 +27,7 @@ class Relay(unittest.TestCase):
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
 
     def tearDown(self):
-        cr.STATE, cr.HOME = self.old_state, self.old_home
+        cr.STATE, cr.HOME, cr.GROK_SESSIONS = self.old_state, self.old_home, self.old_sessions
         os.environ.clear()
         os.environ.update(self.env)
 
@@ -46,6 +48,40 @@ class Relay(unittest.TestCase):
         self.assertEqual(self.chief(), "chief")
         cr.cmd_run(T0)
         self.assertFalse(self.ran("cursor"))  # Grok drives itself; nobody else runs
+
+    def grok_works(self, at, name="s1.running.json"):
+        f = cr.GROK_SESSIONS / name
+        f.write_text("{}")
+        os.utime(f, (at.timestamp(), at.timestamp()))
+
+    def test_grok_app_working_two_runs_in_a_row_makes_it_chief(self):
+        self.grok_works(T0 - 5 * MIN)
+        cr.cmd_run(T0)
+        self.assertTrue(self.ran("cursor"))  # once isn't enough: Cursor still runs
+        self.assertIn("once", cr.state_of("chief", T0)[1])
+        (self.tmp / "cursor.ran").unlink()
+        self.grok_works(T0 + 25 * MIN, "s2.running.json")
+        cr.cmd_run(T0 + 30 * MIN)
+        self.assertFalse(self.ran("cursor"))
+        self.assertEqual(self.chief(T0 + 30 * MIN), "chief")
+        self.assertIn("Grok Bot is Chief again", self.posts.read_text())
+
+    def test_one_out_of_credit_blip_does_not_bring_grok_back(self):
+        self.grok_works(T0 - 5 * MIN)
+        cr.cmd_run(T0)
+        cr.cmd_run(T0 + 30 * MIN)  # nothing new from the app since the blip (35 min old, still "fresh")
+        self.assertEqual(self.chief(T0 + 30 * MIN), "cursor")
+        cr.cmd_run(T0 + 60 * MIN)
+        self.assertEqual(self.chief(T0 + 60 * MIN), "cursor")
+
+    def test_a_down_mark_on_grok_clears_when_the_app_works_again(self):
+        cr.mark_down("chief", "out of credit", None, T0)
+        self.grok_works(T0 + 20 * MIN)
+        cr.cmd_run(T0 + 25 * MIN)
+        self.grok_works(T0 + 50 * MIN, "s2.json")
+        cr.cmd_run(T0 + 55 * MIN)
+        self.assertEqual(self.chief(T0 + 55 * MIN), "chief")
+        self.assertFalse((cr.STATE / "chief" / "down" / "chief.json").exists())
 
     def test_cursor_takes_over_when_grok_goes_quiet(self):
         cr.seen("chief", T0 - 200 * MIN)

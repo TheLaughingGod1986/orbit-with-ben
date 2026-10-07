@@ -117,12 +117,15 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 
 Ben: the Chief of Staff is in charge, and when it's down or out of credit the next one in line takes over. **Chain: Grok Bot (`chief`) → Cursor (`cursor`) → Codex (`codex`).** The first one that is up is the acting Chief. `scripts/chief_relay.py` runs it on the Mini (launchd `com.owb.chief-relay`, every 30 min, 08:00–22:00):
 
-- **Grok Bot** counts as up while it has run `jobs.py` in the last 3 hours (every `jobs.py … --agent chief` call on the Mini is its heartbeat). While Grok is up the relay does nothing.
+- **Grok Bot** is an app with no CLI, so nobody can prompt it to report in. It counts as up when the app has written new session files at two relay runs in a row (30 min apart), so a single failed out-of-credit attempt doesn't count, or when it has run `jobs.py … --agent chief` in the last 3 hours. While Grok is up the relay does nothing.
 - **Cursor or Codex:** otherwise the relay wakes the first one that's up for **one** job (25-minute cap). A run that ends with out of credit, usage limit or signed out marks that agent down for 3 hours, and the same run passes the job to the next in line.
-- **Grok takes back over by itself:** its next `jobs.py` run makes it Chief again, and the others stand down. Nobody flips anything by hand.
+- **Grok takes back over by itself:** once the app is working again it's Chief again, and the others stand down. Nobody flips anything by hand.
 - Each change of Chief is posted once on the thread ("Chief relay: … is acting Chief"). If all three are down it says so once; top-ups stay Ben's call.
 - Commands: `chief_relay.py status` (who's Chief and why), `down <agent> --reason … [--until …]`, `up <agent>`, `seen chief`. Pause: `touch ~/_desk/state/chief-relay.pause`.
 - **Gemini isn't in the chain.** It's the checker and can't run the Mini, so whoever is acting Chief runs it (`agy`) for every job that `--needs gemini`. `status` shows it on its own line.
+- **Thread posts name the writer:** the relay sets `OWB_AGENT` for the CLI it wakes, so `owb_thread.py post` writes "[Chief] [Cursor] …" or "[Chief] [Codex] …". Grok's posts stay "[Chief]".
+- **Long work outlives the 25-minute run:** renders, big downloads and batches start detached in `tmux` with a log and a `.done` file. The run releases the job with a note naming them, and the next run checks the `.done` file. Never start a second copy of a render that's still running.
+- **If the Mini goes quiet:** Claude's 2-hourly check runs `jobs.py watch`. If Mini work is waiting and nothing has touched the queue for 3 hours, it posts here and pushes Ben's phone once. It also pushes Ben when a job needs him or is blocked on him.
 - **Acting Chief** uses its own agent id everywhere (`--agent cursor`, `--by codex`), never `chief`. Only Grok Bot is `chief`, because that id is Grok's heartbeat. Its reports start "<Name> covering".
 
 ## Studio board and claims (5 Oct 2026)

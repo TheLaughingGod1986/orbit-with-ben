@@ -46,6 +46,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--hos", type=Path, required=True, help="history-of-science checkout on main")
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--db-out", type=Path, default=None, help="write hos.json and owb.json store documents here")
+    ap.add_argument("--chief", default="", help="acting Chief from the relay's last thread line, e.g. Cursor (into owb.json)")
+    ap.add_argument("--chief-since", default="", help="ISO time that agent became Chief")
+    ap.add_argument("--chief-next", default="", help="comma list: next in line")
+    ap.add_argument("--chief-note", default="", help="one short line, e.g. Grok Bot out of credit")
     a = ap.parse_args(argv)
     hos = json.loads((a.hos / "00_Brand/Channel-Setup/PIPELINE.json").read_text())
     if not isinstance(hos.get("films"), list):
@@ -59,7 +63,11 @@ def main(argv: list[str] | None = None) -> int:
         q = ROOT / "jobs" / "queue.json"
         live = [{k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "film", "stage", "after", "ref", "result")}
                 for j in (json.loads(q.read_text())["jobs"] if q.exists() else []) if j["status"] in ("open", "claimed", "blocked")]
-        (a.db_out / "owb.json").write_text(json.dumps({"updatedAt": now, "films": owb, "jobs": live}, ensure_ascii=False))
+        doc = {"updatedAt": now, "films": owb, "jobs": live}
+        if a.chief:
+            doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
+                            "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}
+        (a.db_out / "owb.json").write_text(json.dumps(doc, ensure_ascii=False))
         print(f"store documents: {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films)")
         if not a.page:
             return 0

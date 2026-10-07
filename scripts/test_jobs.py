@@ -43,6 +43,16 @@ class Next(unittest.TestCase):
         jobs.do_done(j, "cursor", "ok", T0)
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "first cut")
 
+    def test_watch_flags_a_quiet_mini_and_what_waits_on_ben(self):
+        d = queue(("mini", "cut", {}), ("ben", "sign in", {}))
+        self.assertTrue(jobs.do_watch(d, T0 + 4 * 60 * MIN)["quiet"])  # Mini work waiting, nobody touched it for 4 h
+        self.assertEqual([b["id"] for b in jobs.do_watch(d, T0)["ben"]], ["J0002"])
+        j = jobs.do_next(d, "cursor", {"mini"}, T0 + 4 * 60 * MIN)
+        self.assertFalse(jobs.do_watch(d, T0 + 5 * 60 * MIN)["quiet"])  # a live claim: someone is on it
+        jobs.do_release(j, "cursor", "stopping point", T0 + 5 * 60 * MIN)
+        self.assertFalse(jobs.do_watch(d, T0 + 6 * 60 * MIN)["quiet"])  # touched an hour ago
+        self.assertTrue(jobs.do_watch(d, T0 + 9 * 60 * MIN)["quiet"])
+
     def test_finish_what_you_hold_first(self):
         d = queue(("mini", "a", {}), ("mini", "b", {}))
         jobs.do_next(d, "cursor", {"mini"}, T0)
