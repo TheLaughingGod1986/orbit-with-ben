@@ -6,7 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0026 | mini | open | – | – | Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line |  |
+| J0026 | mini | claimed | cursor | 2026-10-07T22:22Z | Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line |  |
 | J0027 | mini | open | – | – | 028 topic · 028 topic: neighbour pass for Gliese 710 (+2 backups) |  |
 | J0028 | gemini | open | – | – | 028 SOURCES: Gliese 710 flyby (Gemini) |  |
 | J0029 | cloud | open (after J0028) | – | – | 028: lock topic, write script v01 (Claude) |  |
