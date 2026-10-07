@@ -56,7 +56,10 @@ def main(argv: list[str] | None = None) -> int:
         now = datetime.now(timezone.utc).isoformat(timespec="seconds")
         a.db_out.mkdir(parents=True, exist_ok=True)
         (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
-        (a.db_out / "owb.json").write_text(json.dumps({"updatedAt": now, "films": owb}, ensure_ascii=False))
+        q = ROOT / "jobs" / "queue.json"
+        live = [{k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "film", "stage", "after", "ref", "result")}
+                for j in (json.loads(q.read_text())["jobs"] if q.exists() else []) if j["status"] in ("open", "claimed", "blocked")]
+        (a.db_out / "owb.json").write_text(json.dumps({"updatedAt": now, "films": owb, "jobs": live}, ensure_ascii=False))
         print(f"store documents: {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films)")
         if not a.page:
             return 0
