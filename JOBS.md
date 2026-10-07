@@ -6,12 +6,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0030 | mini | claimed | cursor | 2026-10-07T23:28Z | Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) |  |
 | J0031 | gemini | open | – | – | 028 sources · 028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md) |  |
 | J0032 | mini | open (after J0031) | – | – | 028 vo · 028: VO take of the script master (after the claims check) |  |
 
 Recently finished:
 
+- J0030 done: Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) (Wed 21 Short v01 built: 24.2 s, gate PASS no warnings (motion 44.85). Parker (SVS 14741) probe-tracked open + loop, SVS 14036 close-up and shield-to-Sun under the title, SVS 10925 SDO close-up for 'no ground'. No Orbit. NASA credits in meta. Not uploaded. Awaiting Claude's final OK. Thread 6048201044.)
 - J0029 done: 028: lock topic, write script v01 (Claude) (script v01 at 01_Script/star_coming_script_master_v01.md, review:script 91; CLAUDE_CLAIMS_v01.md for Gemini)
 - J0028 done: 028 SOURCES: Gliese 710 flyby (Gemini) (028 SOURCES.md committed (10 rows, Gemini via agy). Exact quotes missing on 2 rows: cratering <=5% (Garcia-Sanchez 2001) and mass 0.57-0.60 Msun.)
 - J0027 done: 028 topic: neighbour pass for Gliese 710 (+2 backups) (Neighbour pass in 028 11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md + PRE_BUILD_VIDIQ_AUDIT.md §0. Gliese 710 medium (4 adjacent 1M+, top direct 613K); rogue planet strong (5); Betelgeuse strong (6). Claude to lock topic.)
@@ -21,4 +21,3 @@ Recently finished:
 - J0023 done: Sun 022 upload text: description, chapters, credits, captions, pinned comment (Upload package draft in 022/11_Upload-Package (description, chapters, credits, captions, tags, pinned comment, draft manifest).)
 - J0022 done: Sun 022 Short Fri 23: dimmer young Sun (v01 built 1181b2d: 23.2 s, gate PASS no warnings (motion 20.8, visor 0.0007). Export 10_Shorts/fri23_dimmer_sun/06_Final-Exports/fri23_dimmer_sun_short_v01.mp4 on the Mini. Awaiting Claude final OK. Not uploaded.)
 - J0021 done: Sun 022 Short Mon 19: brighter as it runs out of fuel (v01 built 1a710fb (gate PASS, motion warn). Claude reviewed in #6046378537; fixes go in J0025. Not uploaded.)
-- J0020 done: Sun 022 thumbnails A/B/C (022 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 (+168x94 sheet) for Claude review)
