@@ -1,5 +1,5 @@
 {
-  "next_id": 3,
+  "next_id": 4,
   "jobs": [
     {
       "id": "J0001",
@@ -38,6 +38,32 @@
       "stage": "",
       "after": "J0001",
       "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T11:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T11:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0003",
+      "title": "Venus 023: Part 01 v03, then the full first cut (Sat 17)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Venus 023: (1) v03 of Part 01: rows 2->3 and 13c->14a cut in the pause before the sentence (10.70 s, 83.84 s); crop the dark edges on PIA00215 (15b) and PIA00240 (16a); audio untouched (#99 6025765289). (2) Then the full first cut from SHOT_LIST_v02.md, due Sat 17 Oct: frame sheets, clip_check, align, thumbs A/B/C. Venus airs Sun 25 Oct.\n",
+      "ref": "6025765289",
+      "film": "023",
+      "stage": "edit",
+      "after": "J0001",
+      "eta_min": 720,
       "status": "open",
       "by": "",
       "since": "",
