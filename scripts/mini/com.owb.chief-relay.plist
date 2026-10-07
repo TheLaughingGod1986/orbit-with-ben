@@ -23,6 +23,12 @@
     <string>-lc</string>
     <string>python3 $HOME/_desk/bin/chief_relay.py run</string>
   </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <!-- launchd's zsh -lc has no Homebrew on PATH: gh (thread posts and the Grok check), codex and agy live there -->
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
   <key>StartInterval</key>
   <integer>1800</integer>
   <key>RunAtLoad</key>

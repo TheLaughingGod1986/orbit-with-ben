@@ -36,10 +36,15 @@ def token():
     t = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if t:
         return t
-    try:
-        return subprocess.run(["gh", "auth", "token"], capture_output=True, text=True, check=True).stdout.strip()
-    except Exception:
-        sys.exit("No GitHub token: set GH_TOKEN, or run `gh auth login` once.")
+    # launchd's login shell has no Homebrew on PATH (Chief relay, 7 Oct), so look for gh where Homebrew puts it too
+    for gh in ("gh", "/opt/homebrew/bin/gh", "/usr/local/bin/gh"):
+        try:
+            t = subprocess.run([gh, "auth", "token"], capture_output=True, text=True, check=True).stdout.strip()
+        except Exception:
+            continue
+        if t:
+            return t
+    sys.exit("No GitHub token: set GH_TOKEN, or run `gh auth login` once.")
 
 
 def api(method, path, body=None):
