@@ -821,13 +821,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-07T20:46Z",
-      "eta": "2026-10-07T21:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T19:50Z",
-      "result": "",
+      "result": "v01 built 1181b2d: 23.2 s, gate PASS no warnings (motion 20.8, visor 0.0007). Export 10_Shorts/fri23_dimmer_sun/06_Final-Exports/fri23_dimmer_sun_short_v01.mp4 on the Mini. Awaiting Claude final OK. Not uploaded.",
       "history": [
         {
           "at": "2026-10-07T19:50Z",
@@ -838,8 +838,14 @@
           "at": "2026-10-07T20:46Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T20:50Z",
+          "by": "cursor",
+          "what": "done: v01 built 1181b2d: 23.2 s, gate PASS no warnings (motion 20.8, visor 0.0007). Export 10_Shorts/fri23_dimmer_sun/06_Final-Exports/fri23_dimmer_sun_short_v01.mp4 on the Mini. Awaiting Claude final OK. Not uploaded."
         }
-      ]
+      ],
+      "done_ref": "1181b2d"
     },
     {
       "id": "J0023",
