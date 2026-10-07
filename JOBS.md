@@ -8,7 +8,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0001 | mini | open | – | – | 022 edit · Sun 022 first cut v01 | 6036709461 |
 | J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0009 | mini | open | – | – | Chief relay checks on the Mini |  |
+| J0009 | mini | claimed | cursor | 2026-10-07T14:39Z | Chief relay checks on the Mini |  |
 | J0010 | mini | open | – | – | Sun 022: VO pickup 'This one was over in a day' | 6039537604 |
 
 Recently finished:
