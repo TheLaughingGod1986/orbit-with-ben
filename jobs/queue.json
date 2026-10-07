@@ -1,5 +1,5 @@
 {
-  "next_id": 26,
+  "next_id": 27,
   "jobs": [
     {
       "id": "J0001",
@@ -920,6 +920,32 @@
       "history": [
         {
           "at": "2026-10-07T20:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0026",
+      "title": "Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 Fri 23 Short v02 (Claude's review of v01, 1181b2d). Keep VO, captions, hook, title window, structure, loop.\n1. The Sun pictures: v01 uses the SDO AIA 304 disc (orange, extreme-UV) as \"the young Sun\" and \"today's disc\". The long\n   uses the visible-light disc for what an eye would see (PIA21218, young grade x0.70 warm-neutral), and we rejected an\n   orange planet-Sun there for teaching the wrong picture. Use PIA21218 here too: young grade for the open and the\n   loop, ungraded at the \"brightening\" cut, so the dim -> bright change reads as light, not colour. Keep the first-second\n   motion >= 10 with a stronger push-in plus the moving sea.\n2. The sea plate (iss017e011603): the green/yellow city-light blobs along the bottom show in every open frame. Crop or\n   reframe them out.\n3. Last frame (23.1 s): a thin red vertical line runs from the top edge to the disc. Find it and remove it.\nThe GSFC early-Earth shore with impactor streaks is fine (same artist's concept the long uses). Gate PASS, no warnings.\nCommit frames + gate output; no upload.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T20:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T20:51Z",
           "by": "claude",
           "what": "added"
         }
