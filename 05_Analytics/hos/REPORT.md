@@ -31,26 +31,31 @@ Generated from the 2026-10-07 snapshot by `npm run analytics:report`. Don't edit
 
 A period still running is compared with the same number of days at the start of the one before. A part period at launch isn't compared, and no change is shown on a base under 20 views or 30 minutes.
 
+## Where views come from (last 28 days)
+
+- **Shorts:** YouTube search 77% · Shorts feed 20% · Direct / unknown 2% · Other YouTube pages 1% (196 views)
+- **Longs:** Subscriptions 73% · YouTube search 11% · Suggested 8% · Direct / unknown 5% (132 views)
+
 ## Every video (newest first)
 
 | Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) | Feed share, day 1 | Top source (28 d) |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-09-27 | [The first X-ray showed a wedding ring](https://youtu.be/zI_eD3vFWmE) | short | 8 | 0 | +5 | +8 | 0.8 | 32% | – | – |
-| 2026-09-26 | [How did Röntgen see bones without cutting](https://youtu.be/xvanpsLeADE) | short | 38 | 0 | +4 | +38 | 3.5 | 52% | – | – |
-| 2026-09-25 | [How X-rays Were Discovered by Accident](https://youtu.be/oowAOWTBoq0) | short | 27 | 0 | +1 | +27 | 2.3 | 67% | – | – |
-| 2026-09-24 | [How Did We Discover X-rays?](https://youtu.be/frP_YrNShsU) | long | 2 | 0 | +2 | +2 | 0.2 | 45% | – | – |
-| 2026-09-22 | [What other table has empty chairs?](https://youtu.be/LanTHJckYx8) | short | 4 | 0 | 0 | +4 | 0.3 | 23% | – | – |
-| 2026-09-21 | [Why tellurium sat before iodine](https://youtu.be/nba0-f7PPeU) | short | 26 | 0 | +3 | +26 | 1.6 | 46% | – | – |
-| 2026-09-20 | [Gallium sat where the table said](https://youtu.be/CnHwX1L9XHg) | short | 16 | 0 | +1 | +16 | 0.9 | 33% | – | – |
-| 2026-09-19 | [He predicted a metal before it was found](https://youtu.be/nFQRWmpulTQ) | short | 33 | 0 | +1 | +33 | 1.8 | 53% | – | – |
-| 2026-09-18 | [The periodic table's empty chairs](https://youtu.be/uU12JA5rMWg) | short | 28 | 0 | +2 | +28 | 1.5 | 59% | – | – |
-| 2026-09-17 | [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | long | 128 | +1 | +21 | +126 | 6.4 | 24% | – | – |
-| 2026-09-06 | [A flask that proved germs come from outside](https://youtu.be/sILtQxgYQk8) | short | 24 | 0 | 0 | +9 | 0.8 | 54% | – | – |
-| 2026-09-06 | [Invisible life is still everywhere](https://youtu.be/93fPUG-hW0A) | short | 6 | 0 | 0 | 0 | 0.2 | – | – | – |
-| 2026-09-06 | [Germs hitch a ride on you](https://youtu.be/8_Edn_HCi1s) | short | 26 | 0 | 0 | 0 | 0.8 | – | – | – |
-| 2026-09-06 | [Microbes in a drop of pond water](https://youtu.be/iqToagXnjX0) | short | 110 | 0 | 0 | +6 | 3.5 | 89% | – | – |
-| 2026-09-06 | [Germs don't cast a shadow](https://youtu.be/H1y0DXFVmw8) | short | 78 | 0 | 0 | +1 | 2.5 | 29% | – | – |
-| 2026-09-03 | [How Did We Discover Germs?](https://youtu.be/_C92tIJCk8A) | long | 6 | 0 | +2 | +4 | 0.2 | 11% | – | – |
+| 2026-09-27 | [The first X-ray showed a wedding ring](https://youtu.be/zI_eD3vFWmE) | short | 8 | 0 | +5 | +8 | 0.8 | 32% | 0% | YouTube search |
+| 2026-09-26 | [How did Röntgen see bones without cutting](https://youtu.be/xvanpsLeADE) | short | 38 | 0 | +4 | +38 | 3.5 | 52% | 23% | YouTube search |
+| 2026-09-25 | [How X-rays Were Discovered by Accident](https://youtu.be/oowAOWTBoq0) | short | 27 | 0 | +1 | +27 | 2.3 | 67% | 50% | YouTube search |
+| 2026-09-24 | [How Did We Discover X-rays?](https://youtu.be/frP_YrNShsU) | long | 2 | 0 | +2 | +2 | 0.2 | 45% | – | Direct / unknown |
+| 2026-09-22 | [What other table has empty chairs?](https://youtu.be/LanTHJckYx8) | short | 4 | 0 | 0 | +4 | 0.3 | 23% | 33% | YouTube search |
+| 2026-09-21 | [Why tellurium sat before iodine](https://youtu.be/nba0-f7PPeU) | short | 26 | 0 | +3 | +26 | 1.6 | 46% | 38% | YouTube search |
+| 2026-09-20 | [Gallium sat where the table said](https://youtu.be/CnHwX1L9XHg) | short | 16 | 0 | +1 | +16 | 0.9 | 33% | 53% | Shorts feed |
+| 2026-09-19 | [He predicted a metal before it was found](https://youtu.be/nFQRWmpulTQ) | short | 33 | 0 | +1 | +33 | 1.8 | 53% | 10% | YouTube search |
+| 2026-09-18 | [The periodic table's empty chairs](https://youtu.be/uU12JA5rMWg) | short | 28 | 0 | +2 | +28 | 1.5 | 59% | 8% | YouTube search |
+| 2026-09-17 | [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | long | 130 | +3 | +21 | +126 | 6.5 | 24% | – | Subscriptions |
+| 2026-09-06 | [A flask that proved germs come from outside](https://youtu.be/sILtQxgYQk8) | short | 24 | 0 | 0 | +9 | 0.8 | 54% | 11% | YouTube search |
+| 2026-09-06 | [Invisible life is still everywhere](https://youtu.be/93fPUG-hW0A) | short | 6 | 0 | 0 | 0 | 0.2 | – | 0% | – |
+| 2026-09-06 | [Germs hitch a ride on you](https://youtu.be/8_Edn_HCi1s) | short | 26 | 0 | 0 | 0 | 0.8 | – | 77% | – |
+| 2026-09-06 | [Microbes in a drop of pond water](https://youtu.be/iqToagXnjX0) | short | 110 | 0 | 0 | +6 | 3.5 | 89% | 16% | YouTube search |
+| 2026-09-06 | [Germs don't cast a shadow](https://youtu.be/H1y0DXFVmw8) | short | 78 | 0 | 0 | +1 | 2.5 | 29% | 76% | YouTube search |
+| 2026-09-03 | [How Did We Discover Germs?](https://youtu.be/_C92tIJCk8A) | long | 6 | 0 | +2 | +4 | 0.2 | 11% | – | Direct / unknown |
 
 ## Notes
 
