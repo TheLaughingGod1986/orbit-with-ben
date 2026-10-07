@@ -8,10 +8,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0001 | mini | open | – | – | 022 edit · Sun 022 first cut v01 | 6036709461 |
 | J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0010 | mini | claimed | cursor | 2026-10-07T15:56Z | Sun 022: VO pickup 'This one was over in a day' | 6039537604 |
 
 Recently finished:
 
+- J0010 done: Sun 022: VO pickup 'This one was over in a day' (PASS: sun_pickup_over_in_a_day_v01.wav, 1.68 s, -16.8 LUFS, Scribe 100% exact ('This one was over in a day'), 27 chars (70170 before). Record e2e810c. WAV/MP3 on the Mini in 022/02_Voiceover; ready for J0001 to lay over row 11.)
 - J0009 done: Chief relay checks on the Mini (done)
 - J0008 done: Gemini: Sun 022 pictures vs words, and the clock numbers (GEMINI_PICTURE_CHECK_v01.md: 11 of 97 GODDARD/NASA rows flagged; clocks 1-2 confirmed, clock 3 (prominence 'days') needs wording)
 - J0007 done: Sun 022: VO pickup 'Three clocks' at 457 s (Take sun_pickup_three_clocks_v01 PASS: Scribe 'Three clocks. Only one of them answers the title' 100%, 3.12 s, LUFS -19.9, 49 chars (pool 70,193). Audio on the Mini at 022/02_Voiceover/sun_pickup_three_clocks_v01.wav (+ .mp3).)
