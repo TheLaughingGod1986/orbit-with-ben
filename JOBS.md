@@ -9,6 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0019 | mini | open | – | – | 022 edit · Sun 022 v04 polish: three repeat swaps, row 14 check |  |
 | J0020 | mini | open | – | – | 022 thumbs · Sun 022 thumbnails A/B/C |  |
 | J0021 | mini | open | – | – | Sun 022 Short Mon 19: brighter as it runs out of fuel |  |
+| J0022 | mini | open | – | – | Sun 022 Short Fri 23: dimmer young Sun |  |
 
 Recently finished:
 
