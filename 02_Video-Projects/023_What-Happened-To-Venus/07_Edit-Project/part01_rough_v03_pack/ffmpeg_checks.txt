@@ -1,0 +1,40 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/023_Venus_Part01_rough_v03.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf63.1.101
+  Duration: 00:02:22.23, start: 0.000000, bitrate: 6765 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 6561 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc63.1.101 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 195 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf63.1.101
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      encoder         : Lavc63.1.101 wrapped_avframe
+      handler_name    : VideoHandler
+frame=  459 fps=0.0 q=-0.0 size=N/A time=00:00:15.30 bitrate=N/A speed=23.5x elapsed=0:00:00.65    
+frame=  921 fps=731 q=-0.0 size=N/A time=00:00:30.70 bitrate=N/A speed=24.4x elapsed=0:00:01.25    
+frame= 1450 fps=759 q=-0.0 size=N/A time=00:00:48.33 bitrate=N/A speed=25.3x elapsed=0:00:01.90    
+frame= 1927 fps=753 q=-0.0 size=N/A time=00:01:04.23 bitrate=N/A speed=25.1x elapsed=0:00:02.55    
+[vf#0:0 @ 0x7e6d68000] Reconfiguring filter graph because video parameters changed to yuv420p(tv, bt709), 1920x1080, unspecified alpha
+[vf#0:0 @ 0x7e6d68000] Reconfiguring filter graph because video parameters changed to yuv420p(tv, unknown), 1920x1080, unspecified alpha
+frame= 2474 fps=771 q=-0.0 size=N/A time=00:01:22.46 bitrate=N/A speed=25.7x elapsed=0:00:03.20    
+frame= 2936 fps=761 q=-0.0 size=N/A time=00:01:37.86 bitrate=N/A speed=25.4x elapsed=0:00:03.85    
+frame= 3329 fps=738 q=-0.0 size=N/A time=00:01:50.96 bitrate=N/A speed=24.6x elapsed=0:00:04.50    
+frame= 3628 fps=723 q=-0.0 size=N/A time=00:02:00.93 bitrate=N/A speed=24.1x elapsed=0:00:05.01    
+frame= 4058 fps=716 q=-0.0 size=N/A time=00:02:15.26 bitrate=N/A speed=23.9x elapsed=0:00:05.66    
+[out#0/null @ 0x7e6c30300] video:1767KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 4267 fps=712 q=-0.0 Lsize=N/A time=00:02:22.23 bitrate=N/A speed=23.7x elapsed=0:00:05.99    
