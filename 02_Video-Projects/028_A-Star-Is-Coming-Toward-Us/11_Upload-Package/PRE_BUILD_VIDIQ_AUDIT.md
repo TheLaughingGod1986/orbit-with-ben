@@ -15,11 +15,35 @@ Copy into each project as:
 
 | Field | Value |
 |-------|-------|
-| ID / slug | |
-| Working title | |
-| Date pulled | |
-| Credits used (approx) | |
+| ID / slug | 028_A-Star-Is-Coming-Toward-Us |
+| Working title | A star is coming toward us (Gliese 710); backups: rogue planet passing the Solar System, what if Betelgeuse explodes |
+| Date pulled | 7 Oct 2026, 21:55–22:10 UTC (`yt-dlp` public search, Mini) |
+| Credits used (approx) | 0 (no vidIQ; waived since 022) |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA |
+| Neighbour pass | Gliese 710 **medium** (4 adjacent at 1M+, none direct; top direct 613K) · rogue planet **strong** (5 at 1M+) · Betelgeuse **strong** (6 at 1M+). Full tables: `TOPIC_OPPORTUNITY_SCORE.md` (job J0027) |
+
+---
+
+## 0. Neighbour pass (J0027, 7 Oct 2026)
+
+Channel names are internal notes; they never go in our title, description or tags.
+
+**Gliese 710 (lead).** No video on the named star reaches 1M (Anton Petrov `Q2i4kcOjavM` 613K). Adjacent 1M+ neighbours:
+
+| Views | Id | Title (channel) |
+|------:|----|-----------------|
+| 20.76M | `gLZJlf5rHVs` | What If Earth got Kicked Out of the Solar System? Rogue Earth (Kurzgesagt) |
+| 2.91M | `q4mc-alL92U` | The Oort Cloud: The Solar System's Shell (SEA) |
+| 2.73M | `K8Slss_lhAw` | The Invisible 1.5 Light-Year Wall Around Our Solar System (Astrum) |
+| 1.97M | `bJXGt26f8ZI` | What If Another Sun Entered Our Solar System? (What If) |
+
+Subject words: star entering the solar system, passing star, oort cloud, comets, kuiper belt, rogue star, gliese 710.
+
+**Rogue planet (backup 1).** 1M+: `gLZJlf5rHVs` 20.76M, `M7CkdB5z9PY` 14.44M, `lV5XYfhLeaU` 1.99M, `VwcfkzxNre4` 1.95M, `IWL3VlwiTxU` 1.60M. Subject words: rogue planet, free floating planet, rogue planet entered our solar system, interstellar space, microlensing.
+
+**Betelgeuse (backup 2).** 1M+: `evUfG3lrk5U` 14.58M, `5bvuwTuGnkc` 2.77M, `SbCHSYJfLu8` 2.46M, `RHKtnBeBHcU` 2.17M, `qkBoH5l-6EY` 1.69M, `k6uODhvkRh8` 1.11M. Subject words: betelgeuse, betelgeuse supernova, star explodes near earth, red supergiant, betelgeuse dimming.
+
+Claude locks the topic from this. Description first lines and 5–8 tags get drafted from the locked topic's subject words.
 
 ---
 
