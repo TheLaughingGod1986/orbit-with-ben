@@ -495,13 +495,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-07T18:31Z",
-      "eta": "2026-10-07T19:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T17:04Z",
-      "result": "",
+      "result": "Sun 022 score bed generated: 05_Music/sun-brighter_score_bed_v01.mp3 on the Mini (not in git), 525.0 s, -13.8 LUFS, no silent gaps. Cost ~7,219 ElevenLabs credits (70,157 -> 62,938, above the 20k floor). Next credit reset: 30 Oct 2026 10:50 UTC (Creator plan). Plan JSON committed 48c93e7.",
       "history": [
         {
           "at": "2026-10-07T17:04Z",
@@ -512,8 +512,14 @@
           "at": "2026-10-07T18:31Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T18:32Z",
+          "by": "cursor",
+          "what": "done: Sun 022 score bed generated: 05_Music/sun-brighter_score_bed_v01.mp3 on the Mini (not in git), 525.0 s, -13.8 LUFS, no silent gaps. Cost ~7,219 ElevenLabs credits (70,157 -> 62,938, above the 20k floor). Next credit reset: 30 Oct 2026 10:50 UTC (Creator plan). Plan JSON committed 48c93e7."
         }
-      ]
+      ],
+      "done_ref": "48c93e7"
     }
   ]
 }
