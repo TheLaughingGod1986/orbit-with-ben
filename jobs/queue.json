@@ -1,4 +1,31 @@
 {
-  "next_id": 1,
-  "jobs": []
+  "next_id": 2,
+  "jobs": [
+    {
+      "id": "J0001",
+      "title": "Sun 022 first cut v01",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 first cut v01, up by Fri 9 Oct 18:00 London (review Sat 10, final OK Tue 13).\nSpec: 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/07_Edit-Project/shot_list_v01.csv (104 shots on the locked VO, 502.64 s) and SHOT_LIST_v01.md (rules). Full brief: #99 6036709461.\n- NASA stills from nasa_pool_v01.json `orig` URLs: 16:9 fill + feathered blur, upscale <= ~2.35x, Ken Burns as listed, crop SDO corner timestamps.\n- SVS motion muted, clean stretches, max 2 per clip. Code graphics: code_graphics.py zoom_nolabels / core_nolabels / clocks.\n- `grade` column: young Sun -30% and cooler, future Sun +10% and scale 1.04. No red giant.\n- OMNI rows: Vertex free credit only, one take each; if Omni fails use the row's `fallback`. Never let Omni hold up the cut.\n- Lower-third chapter cards ~2.5 s; -14 LUFS; music full runtime; end on SVS 10925 held 16 s.\n- Listen at 457.04 s: words.json hears \"Free clocks\" (script: \"Three clocks\"). Say what you hear.\nDone = mp4 path, frame sheets, clip_check output, which OMNI rows used fallback, posted on #99.\n",
+      "ref": "6036709461",
+      "film": "022",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 720,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T11:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T11:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    }
+  ]
 }

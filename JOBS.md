@@ -5,4 +5,4 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| – | | nothing waiting | | | | |
+| J0001 | mini | open | – | – | 022 edit · Sun 022 first cut v01 | 6036709461 |
