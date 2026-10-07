@@ -1,5 +1,5 @@
 {
-  "next_id": 4,
+  "next_id": 5,
   "jobs": [
     {
       "id": "J0001",
@@ -64,6 +64,32 @@
       "stage": "edit",
       "after": "J0001",
       "eta_min": 720,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T11:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T11:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0004",
+      "title": "Read the monthly Google credit (read only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read only, from Google Cloud Billing -> Credits (no setting changes): the monthly Google credit Ben's plan gives (~GBP 79): exact amount, refresh date, which billing account/projects it covers (youtube-orbit-with-ben 1053796460911? the HOS project?), and whether unused credit carries over. Post on #99 (6036747147).\n",
+      "ref": "6036747147",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
       "status": "open",
       "by": "",
       "since": "",
