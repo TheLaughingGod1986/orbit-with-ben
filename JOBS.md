@@ -8,6 +8,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
 | J0031 | gemini | open | – | – | 028 sources · 028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md) |  |
 | J0032 | mini | open (after J0031) | – | – | 028 vo · 028: VO take of the script master (after the claims check) |  |
+| J0033 | mini | open | – | – | 022 thumbs · Sun 022 Shorts: covers + upload packages for Mon 19 / Wed 21 / Fri 23 (dry-run only) |  |
 
 Recently finished:
 

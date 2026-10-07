@@ -1,5 +1,5 @@
 {
-  "next_id": 33,
+  "next_id": 34,
   "jobs": [
     {
       "id": "J0001",
@@ -1194,6 +1194,32 @@
       "history": [
         {
           "at": "2026-10-07T22:17Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0033",
+      "title": "Sun 022 Shorts: covers + upload packages for Mon 19 / Wed 21 / Fri 23 (dry-run only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022: covers and Short upload packages for all three Shorts (Mon 19 v02, Wed 21 v01, Fri 23 v02). All three files passed Claude's review. **Don't upload or schedule.** That waits for the Tue 13 final OK naming files and slots.\n\n- **Covers:** use the brief in each Short's script. Wed 21 is Parker's shield, yellow 1,400°C and white SHIELD. Check each with `thumb_preview.py short <jpg>`. No Orbit.\n- **Packages:** one per Short, in the same layout as the Saturn 021 Shorts:\n  - title, description with the SVS credits from each meta JSON, tags, and social copy;\n  - slots 11:30 London on Mon 19, Wed 21 and Fri 23 Oct;\n  - Related video = the Sun long (its id once it's uploaded).\n- **Checks:** `youtube:package --dry-run` on each. Post the dry-run output and the cover previews on #99.\n",
+      "ref": "",
+      "film": "022",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T22:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T22:31Z",
           "by": "claude",
           "what": "added"
         }
