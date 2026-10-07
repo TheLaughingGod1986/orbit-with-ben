@@ -32,6 +32,21 @@ CHIEF_TAG = "[Chief]"
 AGENT_NAMES = {"cursor": "Cursor", "codex": "Codex"}
 
 
+def _ssl_context():
+    """python.org's macOS Python ships without CA certificates until 'Install Certificates' runs, and the Chief relay
+    under launchd uses that Python (Cursor, 7 Oct: CERTIFICATE_VERIFY_FAILED on every GitHub call). Use certifi's
+    bundle when it's installed, else the system default."""
+    import ssl
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except Exception:
+        return ssl.create_default_context()
+
+
+SSL_CONTEXT = _ssl_context()
+
+
 def token():
     t = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if t:
@@ -53,7 +68,7 @@ def api(method, path, body=None):
         data=json.dumps(body).encode() if body is not None else None,
         headers={"Authorization": f"Bearer {token()}", "Accept": "application/vnd.github+json",
                  "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "owb-thread"})
-    with urllib.request.urlopen(req, timeout=60) as r:
+    with urllib.request.urlopen(req, timeout=60, context=SSL_CONTEXT) as r:
         return json.load(r)
 
 
