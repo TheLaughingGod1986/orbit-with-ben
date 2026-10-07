@@ -9,4 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
 | J0004 | mini | open | – | – | Read the monthly Google credit (read only) | 6036747147 |
-| J0005 | ben | open | – | – | Decide: install the Cursor worker |  |
+
+Recently finished:
+
+- J0005 cancelled: Decide: install the Cursor worker ()
