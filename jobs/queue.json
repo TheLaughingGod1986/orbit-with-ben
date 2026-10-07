@@ -673,13 +673,13 @@
       "stage": "",
       "after": "J0017",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-10-07T19:49Z",
-      "eta": "2026-10-07T20:49Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T19:16Z",
-      "result": "",
+      "result": "v03 PASS: frame 0/end prominence off the limb, clocks right, masks and crops clean, young-Sun grade warm, -14.2 LUFS / -1.7 dBTP, clip_check PASS. Polish (rows 8/49/50 repeats, row 14 check) in J0019.",
       "history": [
         {
           "at": "2026-10-07T19:16Z",
@@ -690,8 +690,14 @@
           "at": "2026-10-07T19:49Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T19:50Z",
+          "by": "claude",
+          "what": "done: v03 PASS: frame 0/end prominence off the limb, clocks right, masks and crops clean, young-Sun grade warm, -14.2 LUFS / -1.7 dBTP, clip_check PASS. Polish (rows 8/49/50 repeats, row 14 check) in J0019."
         }
-      ]
+      ],
+      "done_ref": "9a7367d"
     }
   ]
 }
