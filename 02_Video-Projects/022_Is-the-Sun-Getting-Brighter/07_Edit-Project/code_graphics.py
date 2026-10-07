@@ -4,6 +4,7 @@
   python3 code_graphics.py zoom      out/   # ch.1 "The Climb You Cannot See": the 11-year wobble, then zoom out to the climb
   python3 code_graphics.py clocks    out/   # ch.5 recap: three clocks on one log time axis, lit in turn
   python3 code_graphics.py core      out/   # ch.2 "Brighter While It Runs Down": H -> He, core tightens, more light out
+  python3 code_graphics.py climb_v   out/   # Mon 19 Short: vertical 1080x1920 climb, today -> 1.1 billion years (+10%)
   python3 code_graphics.py all       out/
   add --still to write one middle frame only (review); --seconds N to change length; --nolabels for zoom/clocks with no text (core is text-free unless --labels)
 
@@ -137,6 +138,39 @@ def render_clocks(out, seconds, still, labels):
     finish(out, still)
 
 
+def render_climb_v(out, seconds, still, labels):
+    """Vertical (1080x1920) climb for the Mon 19 Short: the line draws from today to 1.1 billion years (+10%), then holds."""
+    n = int(seconds * FPS)
+    frames = [n - 1] if still else range(n)
+    span = 1.1e9
+    t_all = np.linspace(0, span, 600)
+    for i in frames:
+        p = ease(i / max(1, int(n * 0.55)))
+        fig = plt.figure(figsize=(1080 / DPI, 1920 / DPI), dpi=DPI, facecolor=BG)
+        ax = fig.add_axes([0.22, 0.34, 0.66, 0.30], facecolor=BG)
+        for s in ax.spines.values():
+            s.set_visible(False)
+        ax.tick_params(colors=DIM, labelsize=26, length=0, pad=14)
+        ax.set_xlim(0, span * 1.04)
+        ax.set_ylim(-0.6, 11)
+        ax.axhline(0, color=DIM, lw=2, alpha=0.6)
+        k = max(2, int(len(t_all) * p))
+        t = t_all[:k]
+        ax.plot(t, CLIMB_PER_YEAR * t, color=GOLD, lw=6, solid_capstyle="round")
+        ax.scatter([t[-1]], [CLIMB_PER_YEAR * t[-1]], s=500, color=GOLD, zorder=3, edgecolors="none")
+        ax.set_yticks([0, 10])
+        ax.set_yticklabels(["0%", "+10%"] if labels else ["", ""])
+        ax.set_xticks([0, span])
+        ax.set_xticklabels(["today", "1.1 billion yr"] if labels else ["", ""])
+        ax.get_xticklabels()[0].set_ha("left")
+        ax.get_xticklabels()[-1].set_ha("right")
+        if labels:
+            fig.text(0.5, 0.74, "the climb", color=GOLD, ha="center", fontsize=40)
+            fig.text(0.5, 0.70, "+1% every 110 million years", color=WHITE, ha="center", fontsize=28)
+        save(fig, out, i, still)
+    finish(out, still)
+
+
 def render_core(out, seconds, still, labels):
     """A cut-away Sun: core particles, hydrogen (small, many) fusing four-to-one into helium (larger, fewer).
     As helium builds up, the core radius eases down ~12%, its glow warms, and the light rays leaving the
@@ -216,14 +250,15 @@ def finish(out, still):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["zoom", "clocks", "core", "all"])
+    ap.add_argument("which", choices=["zoom", "clocks", "core", "climb_v", "all"])
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
     ap.add_argument("--nolabels", action="store_true")
     ap.add_argument("--labels", action="store_true", help="core only: add the one-line caption")
     a = ap.parse_args()
-    jobs = {"zoom": (render_zoom, 12), "clocks": (render_clocks, 10), "core": (render_core, 12)}
+    jobs = {"zoom": (render_zoom, 12), "clocks": (render_clocks, 10), "core": (render_core, 12),
+            "climb_v": (render_climb_v, 4.4)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
         # the core plate defaults to no text (script: "No text on the plate"); --labels adds its caption line
