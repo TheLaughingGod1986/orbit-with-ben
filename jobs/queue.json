@@ -1,5 +1,5 @@
 {
-  "next_id": 32,
+  "next_id": 33,
   "jobs": [
     {
       "id": "J0001",
@@ -1142,6 +1142,32 @@
       "stage": "sources",
       "after": "",
       "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T22:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T22:17Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0032",
+      "title": "028: VO take of the script master (after the claims check)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Film 028 VO from the script master (v01, or v02 if the claims check makes me change lines; use the latest `star_coming_script_master_v*.md`).\n- `python3 04_Audio/tools/vo_take.py --script <master> --dry-run` first, then one take.\n- Use the month's credits; never overage.\n- Scribe runs inside vo_take; post the TAKE.json path and any stumbles on #99.\n",
+      "ref": "",
+      "film": "028",
+      "stage": "vo",
+      "after": "J0031",
+      "eta_min": 90,
       "status": "open",
       "by": "",
       "since": "",
