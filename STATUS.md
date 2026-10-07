@@ -20,5 +20,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
+| 022 | shots | claude | 2026-10-07T11:08Z | 2026-10-07T16:08Z | Shot list v01 from words.json + NASA pool + 2 code graphics |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
