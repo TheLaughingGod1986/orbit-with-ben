@@ -4,6 +4,7 @@
 Usage:
   python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> [--words vo_words.json] [--vo-end SEC]
   python3 …/clip_check.py <shot_list.csv> --words vo_words.json --json
+  add --repeat-ok 6 for a repeat the script makes on purpose (it must be in the script, not a stumble)
 
 Checks (docs/ORBIT_PLAYBOOK_LESSONS.md §2):
   - No vo_text ends mid-sentence at a picture→CARD or picture→picture boundary (unless next row continues).
@@ -46,6 +47,8 @@ def load_words(path: str) -> list[tuple[str, float, float]]:
     if isinstance(d, dict):
         for seg in d.get("segments", []):
             raw += seg.get("words", [])
+        if not raw:  # flat files, e.g. 022's words.json: {"file", "text", "words": [{word, start, end}, ...]}
+            raw = d.get("words", [])
     else:
         raw = d
     out = []
@@ -98,7 +101,10 @@ def main() -> None:
     ap.add_argument("--words", help="Whisper / word-timestamp JSON for the locked VO")
     ap.add_argument("--vo-end", type=float, default=None, help="Locked VO duration (s); warn if list ends early")
     ap.add_argument("--json", action="store_true", help="Print machine-readable result")
+    ap.add_argument("--repeat-ok", default="", help="comma list of rows whose repeat of the previous row is written "
+                    "in the script on purpose (e.g. 022 row 6: 'It is not the spots. It is not the warming.')")
     a = ap.parse_args()
+    repeat_ok = {x.strip() for x in a.repeat_ok.split(",") if x.strip()}
 
     rows = list(csv.DictReader(open(a.shot_list, newline="", encoding="utf-8")))
     if not rows:
@@ -122,7 +128,7 @@ def main() -> None:
 
         # repeated / stumbled phrase vs previous spoken row
         toks = norm_tokens(text)
-        if toks and prev_tokens:
+        if toks and prev_tokens and str(r.get("row", k)) not in repeat_ok:
             overlap = phrase_ngrams(toks) & phrase_ngrams(prev_tokens)
             if overlap:
                 sample = " ".join(next(iter(overlap)))
