@@ -6,12 +6,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0024 | mini | claimed | cursor | 2026-10-07T21:31Z | 022 edit · Sun 022 v05: row 49 off the sunspot picture |  |
 | J0025 | mini | open | – | – | Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb |  |
 | J0026 | mini | open | – | – | Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line |  |
 
 Recently finished:
 
+- J0024 done: Sun 022 v05: row 49 off the sunspot picture (done)
 - J0023 done: Sun 022 upload text: description, chapters, credits, captions, pinned comment (Upload package draft in 022/11_Upload-Package (description, chapters, credits, captions, tags, pinned comment, draft manifest).)
 - J0022 done: Sun 022 Short Fri 23: dimmer young Sun (v01 built 1181b2d: 23.2 s, gate PASS no warnings (motion 20.8, visor 0.0007). Export 10_Shorts/fri23_dimmer_sun/06_Final-Exports/fri23_dimmer_sun_short_v01.mp4 on the Mini. Awaiting Claude final OK. Not uploaded.)
 - J0021 done: Sun 022 Short Mon 19: brighter as it runs out of fuel (v01 built 1a710fb (gate PASS, motion warn). Claude reviewed in #6046378537; fixes go in J0025. Not uploaded.)
@@ -21,4 +21,3 @@ Recently finished:
 - J0017 done: Sun 022 cut v03: fixes from the v02 review (Cut v03 delivered: iCloud OWB UAT/sun_first_cut_v03/ (518.7 s), review_v03/ in git (9a7367d, dfc52eb). Blocking fixes 1-7 in; row 90 mask now sky-coloured. clip_check --repeat-ok 6 PASS; -14.2 LUFS, -1.7 dBTP on the final mp4. Not done: non-blocking fixes 8 (repeats rows 8/49/50) and 9 (row 14 check).)
 - J0016 cancelled: Review the Sun 022 cut v03 ()
 - J0015 cancelled: Sun 022 cut v03: fixes from the v02 review ()
-- J0014 done: Sun 022 score bed, full length (525 s) (Sun 022 score bed generated: 05_Music/sun-brighter_score_bed_v01.mp3 on the Mini (not in git), 525.0 s, -13.8 LUFS, no silent gaps. Cost ~7,219 ElevenLabs credits (70,157 -> 62,938, above the 20k floor). Next credit reset: 30 Oct 2026 10:50 UTC (Creator plan). Plan JSON committed 48c93e7.)
