@@ -6,13 +6,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0026 | mini | claimed | cursor | 2026-10-07T22:22Z | Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line |  |
 | J0027 | mini | open | – | – | 028 topic · 028 topic: neighbour pass for Gliese 710 (+2 backups) |  |
 | J0028 | gemini | open | – | – | 028 SOURCES: Gliese 710 flyby (Gemini) |  |
 | J0029 | cloud | open (after J0028) | – | – | 028: lock topic, write script v01 (Claude) |  |
 
 Recently finished:
 
+- J0026 done: Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line (Fri 23 Short v02: PIA21218 disc (young grade -> as shot at 'brightening'), sea band cropped, red line gone; gate PASS no warnings (motion 14.58). Frames 1b6096f. Not uploaded.)
 - J0025 done: Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb (Mon 19 Short v02: 13778 moving open+loop, 9:16 fill, clean vertical climb; gate PASS no warnings (motion 10.65); not uploaded)
 - J0024 done: Sun 022 v05: row 49 off the sunspot picture (done)
 - J0023 done: Sun 022 upload text: description, chapters, credits, captions, pinned comment (Upload package draft in 022/11_Upload-Package (description, chapters, credits, captions, tags, pinned comment, draft manifest).)
@@ -22,4 +22,3 @@ Recently finished:
 - J0019 done: Sun 022 v04 polish: three repeat swaps, row 14 check (v04 rendered: iCloud OWB UAT/sun_first_cut_v04/; rows 8/49/50 swapped (e001936, e000923, e000790); row 14 in at 8.0 s; -14.2 LUFS / -1.7 dBTP; clip_check PASS; review_v04 in git)
 - J0018 done: Review the Sun 022 cut v03 (v03 PASS: frame 0/end prominence off the limb, clocks right, masks and crops clean, young-Sun grade warm, -14.2 LUFS / -1.7 dBTP, clip_check PASS. Polish (rows 8/49/50 repeats, row 14 check) in J0019.)
 - J0017 done: Sun 022 cut v03: fixes from the v02 review (Cut v03 delivered: iCloud OWB UAT/sun_first_cut_v03/ (518.7 s), review_v03/ in git (9a7367d, dfc52eb). Blocking fixes 1-7 in; row 90 mask now sky-coloured. clip_check --repeat-ok 6 PASS; -14.2 LUFS, -1.7 dBTP on the final mp4. Not done: non-blocking fixes 8 (repeats rows 8/49/50) and 9 (row 14 check).)
-- J0016 cancelled: Review the Sun 022 cut v03 ()
