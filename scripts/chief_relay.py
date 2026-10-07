@@ -272,13 +272,21 @@ def log(msg: str) -> None:
     print(f"{dt.datetime.now():%Y-%m-%d %H:%M:%S} {msg}", flush=True)
 
 
-def notify(text: str) -> None:
+def notify(text: str) -> bool:
+    """Post one line on the studio thread. False (and the reason in the log) if it didn't go out, e.g. no GitHub token
+    in launchd's environment."""
     cmd = os.environ.get("CHIEF_NOTIFY")
     argv = shlex.split(cmd) if cmd else [sys.executable, str(OWB / "scripts" / "owb_thread.py"), "post"]
     try:
-        subprocess.run(argv + [text], cwd=str(OWB) if OWB.is_dir() else None, capture_output=True, timeout=120)
+        r = subprocess.run(argv + [text], cwd=str(OWB) if OWB.is_dir() else None, capture_output=True, text=True,
+                           timeout=120)
     except (OSError, subprocess.SubprocessError) as e:
         log(f"notify failed: {e}")
+        return False
+    if r.returncode != 0:
+        log(f"notify failed (exit {r.returncode}): {(r.stdout + r.stderr).strip()[-300:]}")
+        return False
+    return True
 
 
 def run_cli(agent: str, prompt: str, cap_s: int) -> tuple:
@@ -311,22 +319,24 @@ def out_of_credit(code: int, tail: str) -> bool:
 
 
 def handover(new, rows, at: dt.datetime) -> None:
-    """Record who is Chief; post one line on the thread when it changes."""
+    """Post one line on the thread when the Chief changes, then record it. If the post fails, nothing is recorded, so
+    the next run tries again (the 7 Oct first run made Cursor Chief but its post never reached the thread)."""
     cur = read_json(d("current.json")) or {}
     if "agent" in cur and cur["agent"] == new:
         return
-    write_json(d("current.json"), {"agent": new, "since": iso(at)})
     states = "; ".join(f"{NAMES.get(a, a)}: {why}" for a, up, why in rows)
     if new is None:
-        notify(f"Chief relay: **nobody can act as Chief** ({states}). Mini jobs wait until one is back. "
-               f"Ben: top-ups stay your call.")
+        ok = notify(f"Chief relay: **nobody can act as Chief** ({states}). Mini jobs wait until one is back. "
+                    f"Ben: top-ups stay your call.")
     elif new == "chief":
-        notify(f"Chief relay: **Grok Bot is Chief again** ({states}). Cursor and Codex stand down.")
+        ok = notify(f"Chief relay: **Grok Bot is Chief again** ({states}). Cursor and Codex stand down.")
     else:
         later = [NAMES.get(a, a) for a in chain()[chain().index(new) + 1:]]
-        notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** ({states}). "
-               f"{'Next in line: ' + ', '.join(later) + '. ' if later else ''}"
-               f"Grok Bot takes back over by itself once it runs jobs.py again.")
+        ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** ({states}). "
+                    f"{'Next in line: ' + ', '.join(later) + '. ' if later else ''}"
+                    f"Grok Bot takes back over by itself once the app is working again.")
+    if ok:
+        write_json(d("current.json"), {"agent": new, "since": iso(at)})
 
 
 def cmd_run(at: dt.datetime) -> int:

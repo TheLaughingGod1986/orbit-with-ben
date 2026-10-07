@@ -120,6 +120,15 @@ class Relay(unittest.TestCase):
         self.assertFalse(self.ran("cursor") or self.ran("codex"))
         self.assertEqual(self.posts.read_text().count("nobody can act as Chief"), 1)
 
+    def test_a_failed_thread_post_is_retried_next_run(self):
+        cr.seen("chief", T0 - 200 * MIN)
+        os.environ["CHIEF_NOTIFY"] = "false"  # e.g. no GitHub token under launchd
+        cr.cmd_run(T0)
+        self.assertFalse((cr.STATE / "chief" / "current.json").exists())
+        os.environ["CHIEF_NOTIFY"] = str(self.tmp / "notify.sh")
+        cr.cmd_run(T0 + 30 * MIN)
+        self.assertIn("Cursor is acting Chief", self.posts.read_text())
+
     def test_a_missing_cli_is_skipped(self):
         os.environ["CURSOR_AGENT_BIN"] = str(self.tmp / "nope")
         os.environ["PATH"] = str(self.tmp / "empty")
