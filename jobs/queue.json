@@ -1158,13 +1158,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-07T23:05Z",
-      "eta": "2026-10-08T00:05Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T22:17Z",
-      "result": "",
+      "result": "Gemini pass complete: e48dbc1 (24 rows, 4 and 13 quoted) + ecacb70 (row 15 quoted from Dybczynski 2002 p.287; row 17 FLAG, no impact figure in Garcia-Sanchez 2001; Fernandez-Puig 2026 §4.4 quote on rows 1/10, Table 1 mass on row 4). Row 16 Kepler check OK. Claude to apply row 17 wording as v02.",
       "history": [
         {
           "at": "2026-10-07T22:17Z",
@@ -1185,8 +1185,19 @@
           "at": "2026-10-07T23:05Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T23:05Z",
+          "by": "cursor",
+          "what": "renewed to 2026-10-07T23:30Z"
+        },
+        {
+          "at": "2026-10-07T23:09Z",
+          "by": "cursor",
+          "what": "done: Gemini pass complete: e48dbc1 (24 rows, 4 and 13 quoted) + ecacb70 (row 15 quoted from Dybczynski 2002 p.287; row 17 FLAG, no impact figure in Garcia-Sanchez 2001; Fernandez-Puig 2026 §4.4 quote on rows 1/10, Table 1 mass on row 4). Row 16 Kepler check OK. Claude to apply row 17 wording as v02."
         }
-      ]
+      ],
+      "done_ref": "ecacb70"
     },
     {
       "id": "J0032",
