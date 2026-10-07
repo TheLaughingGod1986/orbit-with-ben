@@ -1,5 +1,5 @@
 {
-  "next_id": 8,
+  "next_id": 9,
   "jobs": [
     {
       "id": "J0001",
@@ -203,6 +203,32 @@
       "history": [
         {
           "at": "2026-10-07T12:06Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0008",
+      "title": "Gemini: Sun 022 pictures vs words, and the clock numbers",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Gemini (agy) check of the Sun 022 pictures and graphic numbers, before the first cut's review pack (Fri 9 Oct).\nNo spend. Don't edit the shot list or the script; report only.\n\n1. Picture vs words. For every GODDARD and NASA row in 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/07_Edit-Project/shot_list_v01.csv:\n   open the source page (svs.gsfc.nasa.gov/<id> for SVS ids; images.nasa.gov or the NASA page for the rest) and record\n   what it really shows: instrument, wavelength, date, and whether it is a real observation or a visualisation.\n   Flag any row where the VO line at that moment says something the picture isn't, for example \"flare\" over a\n   prominence, today's Sun under a line about the young Sun, or a simulation shown as if it were film.\n2. Numbers in the code graphics. clocks.mp4 (row 96) draws three clocks: about 1% per 110 million years; about 0.1% up\n   and down over the 11-year cycle; a prominence lasting about a day. Check each one against 01_Script/SOURCES.md and\n   the primary source, with the exact quote.\n3. Write 07_Edit-Project/GEMINI_PICTURE_CHECK_v01.md: one table row per flagged shot (row, id, what it shows, the VO\n   line, why it's wrong, a suggested swap from the row's fallback or NASA_POOL_v01.md), then the clock numbers, then\n   \"all other rows OK\" with the count. Commit it and mark the job done with the commit.\nClaude decides every swap.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T12:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T12:10Z",
           "by": "claude",
           "what": "added"
         }

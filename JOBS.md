@@ -10,6 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
 | J0004 | mini | open | – | – | Read the monthly Google credit (read only) | 6036747147 |
 | J0007 | mini | open | – | – | Sun 022: VO pickup 'Three clocks' at 457 s | 6037545918 |
+| J0008 | gemini | open | – | – | Gemini: Sun 022 pictures vs words, and the clock numbers |  |
 
 Recently finished:
 
