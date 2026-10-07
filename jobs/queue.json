@@ -1,5 +1,5 @@
 {
-  "next_id": 9,
+  "next_id": 10,
   "jobs": [
     {
       "id": "J0001",
@@ -271,6 +271,32 @@
         }
       ],
       "done_ref": "e23673a"
+    },
+    {
+      "id": "J0009",
+      "title": "Chief relay checks on the Mini",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief relay checks on the Mini (Claude, #99 6037855513 and 6038325583). Quick, free, read-only apart from step 2.\n1. cp scripts/chief_relay.py ~/_desk/bin/  then  python3 ~/_desk/bin/chief_relay.py status  (paste the output)\n2. rm ~/_desk/state/chief/current.json   (so the next relay run posts its handover line again)\n3. ls -lt \"$HOME/Library/Application Support/Grok Bot/dune-reliability/sessions\" | head\n   Does it exist, and when was the newest file written? If this Grok Bot version keeps sessions elsewhere, find the\n   folder it writes to while it works and give the path (it goes in GROK_SESSIONS_DIR).\n4. After the next relay run: grep \"notify failed\" ~/Library/Logs/chief-relay.log  and report the line, if any.\n   Never put a token in the plist; say what you find.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T13:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T13:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ]
 }
