@@ -84,6 +84,18 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
 
 Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOOK.md` §2: at least **three** big education/space videos (≈1M+ views) on the same subject, logged in `templates/TOPIC_OPPORTUNITY_SCORE.md` and `PRE_BUILD_VIDIQ_AUDIT.md`. Use their subject words for description first lines and tags — **never** put channel names in the listing. A strong neighbour pool is evidence for Ben; it does not pick the topic for him. Orbit only — do not apply HOS packaging habits here.
 
+## Who does what (7 Oct 2026)
+
+| Agent | Where | Does |
+|---|---|---|
+| **Claude** | Cloud sessions | Scripts, reviews and final OKs (3 Oct order), shot lists, code and tools, the channel tracker. Can't reach the Mini. |
+| **Chief (Grok Bot)** | Mac mini | Runs the Mini: picture, edit, uploads, Studio jobs. Drives Gemini and the assembler. Posts on the studio thread. |
+| **Cursor** | Mac mini (`agent` CLI) | Code on the Mini; **covers as Chief while Grok is out of credit** and hands back when it returns. |
+| **Gemini** | Mac mini (Antigravity `agy` CLI) | **The second check on facts and numbers.** Drafts `01_Script/SOURCES.md` with exact quotes and links, verifies every row of Claude's `CLAUDE_CLAIMS` file, and flags errors. It never rewrites spoken lines (Claude's call). Run by whoever is Chief; claims as `<driver>/gemini` (e.g. `chief/gemini`, `cursor/gemini`). No spend. |
+| **Ben** | | Real money, things only he can do, and changes of direction. |
+
+Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Chief (or Cursor covering) starts it, so a script waiting on sources is the Chief's job to kick off.
+
 ## Studio board and claims (5 Oct 2026)
 
 - **State lives in `02_Video-Projects/<film>/status.json`, not in the thread.** Start every session with `python3 scripts/studio.py board`. Read the thread only for decisions. `STATUS.md` at the repo root is the same board as a page for Ben (what's being worked on, how far through, next step, ETA). `claim`/`release`/`set` regenerate it, and CI fails if it's stale.
