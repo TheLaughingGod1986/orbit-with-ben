@@ -1158,10 +1158,10 @@
       "stage": "sources",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-07T22:41Z",
-      "eta": "2026-10-07T23:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T22:17Z",
       "result": "",
@@ -1175,6 +1175,11 @@
           "at": "2026-10-07T22:41Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T22:54Z",
+          "by": "cursor",
+          "what": "released: Gemini pass committed e48dbc1 (all 24 rows OK; rows 4 and 13 quoted). Rows 15 and 17 still paraphrased. Follow-up running detached: tmux j0031b-gemini in worktree /tmp/j0031-wt, log ~/_desk/logs/j0031b-gemini.log, done file ~/_desk/logs/j0031b-gemini.done. Next run: if .done exists, check rows 15/17 in /tmp/j0031-wt SOURCES.md, commit from that worktree, push, then jobs.py done. Don't start a second copy."
         }
       ]
     },
