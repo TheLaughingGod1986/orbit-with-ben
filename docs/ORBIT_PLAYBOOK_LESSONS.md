@@ -78,7 +78,7 @@ Also see `STUDIO_PLAYBOOK.md` §7.
 | Media in git | **No media in git.** Stills, VO, Veo/Omni clips and broadcast masters live in iCloud / local UAT paths only. |
 | Public / KEEP | Claude gives the final OK before anything is scheduled (3 Oct order). **Nothing is KEEP until Claude reviews it.** |
 | Shot list | The shot list goes to **Claude on the thread before generation**. Never a whole planet as an Omni/Veo start frame: it drifts to the wrong planet. |
-| Compute | **Vertex only** for film generation, on the free credit already on the account; Omni (`gemini-omni-flash-preview`) is served from location `global` only. Never AI Studio prepaid. No Kling, Seedance, or ElevenLabs Image & Video. |
+| Compute | **Vertex only** for film generation, on the free credit already on the account: the free trial (ends **10 Nov 2026**) and the **monthly Google credit that comes with Ben's plan, about £79 a month** (Ben, 7 Oct). After 10 Nov the monthly credit is the picture budget; the same rule applies, never past £0; Omni (`gemini-omni-flash-preview`) is served from location `global` only. Never AI Studio prepaid. No Kling, Seedance, or ElevenLabs Image & Video. |
 
 ---
 
