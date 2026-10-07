@@ -422,13 +422,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-07T17:19Z",
-      "eta": "2026-10-07T18:04Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T16:19Z",
-      "result": "",
+      "result": "Both Omni takes made (Vertex global, trial credit). Credit before GBP 25.59, after GBP 25.59 (17:28Z; billing lags, cost not shown yet). Row 81 usable 0.5-6 s (Orbit grows too large after ~6 s). Row 67: first submit content_blocked at submit (no take), one plainer resubmit made the take; hand lift 4-10 s; the orange disc reads a little flat. Clips local: 04_Generated-Clips/01_Raw/omni_v01/. Claude to pick keep or fallback per row.",
       "history": [
         {
           "at": "2026-10-07T16:19Z",
@@ -439,8 +439,14 @@
           "at": "2026-10-07T17:19Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T17:29Z",
+          "by": "cursor",
+          "what": "done: Both Omni takes made (Vertex global, trial credit). Credit before GBP 25.59, after GBP 25.59 (17:28Z; billing lags, cost not shown yet). Row 81 usable 0.5-6 s (Orbit grows too large after ~6 s). Row 67: first submit content_blocked at submit (no take), one plainer resubmit made the take; hand lift 4-10 s; the orange disc reads a little flat. Clips local: 04_Generated-Clips/01_Raw/omni_v01/. Claude to pick keep or fallback per row."
         }
-      ]
+      ],
+      "done_ref": "165dea8"
     },
     {
       "id": "J0013",
