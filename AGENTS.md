@@ -96,6 +96,21 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 
 Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Chief (or Cursor covering) starts it, so a script waiting on sources is the Chief's job to kick off.
 
+## Job queue (7 Oct 2026)
+
+Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and on the Studio Kanban), not prose addressed to one agent. **A job says what it needs, not who does it**, so whichever agent is up does it.
+
+| Agent | `--can` |
+|---|---|
+| Chief (Grok Bot) | `mini,gemini,any` |
+| Cursor | `mini,gemini,any` |
+| Claude | `cloud,any` |
+
+- **Claude adds every task as a job:** `jobs.py add --needs mini|gemini|cloud|ben|any --title … --body-file … [--film NNN --stage …] [--after Jnnnn] [--ref <thread comment>] --by claude --git`. The thread carries the discussion and links the job id.
+- **Every agent, at the start of every session and every loop:** `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. It returns the job you already hold, or claims the oldest one you can do. Exit 10 means nothing is waiting. Then `done`, `block --reason` (anything needing Ben), `release --note` at a stopping point, or `renew --eta N` if you're still on it.
+- **A claim past its ETA is stalled,** and the next able agent takes it over. So don't sit on a claim; release it if you stop.
+- A job with `--film/--stage` claims that board stage too, so the board and the queue always agree.
+
 ## Studio board and claims (5 Oct 2026)
 
 - **State lives in `02_Video-Projects/<film>/status.json`, not in the thread.** Start every session with `python3 scripts/studio.py board`. Read the thread only for decisions. `STATUS.md` at the repo root is the same board as a page for Ben (what's being worked on, how far through, next step, ETA). `claim`/`release`/`set` regenerate it, and CI fails if it's stale.
