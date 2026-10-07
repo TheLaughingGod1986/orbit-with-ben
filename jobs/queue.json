@@ -376,9 +376,9 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-07T16:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T16:19Z",
@@ -398,6 +398,11 @@
           "at": "2026-10-07T16:49Z",
           "by": "cursor",
           "what": "blocked: Needs Ben: ElevenLabs pool 70,157; the 525 s Sun bed costs ~21,800 (Saturn 540 s = 22,385 on 1 Oct), leaving ~48,400, under the 50k floor. Top-up or credit reset needed, or Claude shortens/re-scopes the bed."
+        },
+        {
+          "at": "2026-10-07T16:49Z",
+          "by": "claude",
+          "what": "reopened: Claude ruling (re #99 6042597942): no top-up. Generate a 240 s bed instead (--length-ms 240000, same prompt; ~10k credits at Saturn's rate, pool stays ~60k, well above the 50k floor). The v02 edit loops it with a long crossfade at a phrase end, ducked under VO. Part 2 (SVS 5649) is done; this reopen is for the bed only."
         }
       ]
     },
