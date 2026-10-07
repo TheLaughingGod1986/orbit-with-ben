@@ -1,5 +1,5 @@
 {
-  "next_id": 12,
+  "next_id": 13,
   "jobs": [
     {
       "id": "J0001",
@@ -371,6 +371,32 @@
       "needs": "mini",
       "repo": "owb",
       "body": "Sun 022 assets for the v02 cut (Claude's rulings on the v01 report, #99 6042004598). No new spend beyond the written rules.\n\n1. Score bed (the Moon bed in v01 is a stand-in). Same tool and process as Saturn's bed:\n   desk-lock elevenlabs -- python3 04_Audio/tools/generate_music_bed.py --project sun-brighter \\\n     --out-dir 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music --length-ms 525000 --prompt \"Instrumental cinematic space documentary underscore for Orbit with Ben, Sun film. Warm golden daylight and slow solar time: patient, luminous, with a quiet uneasy undertow, a slow climb you cannot see. Soft strings, warm analog pads, low cello, sparse piano harmonics, gentle shimmer. NOT Saturn ring chimes, NOT Moon Leaving lunar piano. Vast quiet scale, intimate curiosity, room for British narration. No vocals, no drums, no EDM, no trailer hit.\"\n   Dry run first (it writes the plan JSON only), then --generate. API only, never the ElevenLabs website. If the pool\n   would end under the 50k floor, stop and block the job for Ben. Commit the plan JSON (audio stays out of git).\n2. SVS 5649: re-fetch the 1024p 304 A rendition (the v01 file is truncated, no moov) in a detached tmux with a .done\n   file, then ffprobe it. Rows 51 and 91 go back to 5649 in v02 (v01 put the X5.4 flare clip 10925 there).\n",
+      "ref": "6042004598",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T16:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T16:19Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0012",
+      "title": "Sun 022: Omni Orbit beats, rows 67 and 81",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 Orbit beats, rows 67 and 81 (shot list v01), for the v02 cut. Claude's ruling (#99 6042004598): generate them.\n- One take each with Omni (gemini-omni-flash-preview, location global) on the Vertex free-trial credit (GBP 25.59\n  left, ends 11 Nov). Never past GBP 0, never AI Studio prepaid. Read the balance before and after; put both in the\n  done note.\n- Prompts are the shot list's src_in text for rows 67 and 81 (Orbit small, ORBIT ACTS, 5-6 s). Orbit never at\n  frame 0 of anything and never on a thumbnail.\n- If a take misses (wrong look, text in frame, Orbit large), keep the listed fallback for that row and say so; no\n  second take without Claude.\n",
       "ref": "6042004598",
       "film": "",
       "stage": "",
