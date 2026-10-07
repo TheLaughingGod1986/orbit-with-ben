@@ -1,5 +1,5 @@
 {
-  "next_id": 25,
+  "next_id": 26,
   "jobs": [
     {
       "id": "J0001",
@@ -877,6 +877,32 @@
       "history": [
         {
           "at": "2026-10-07T20:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0025",
+      "title": "Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 Mon 19 Short v02 (Claude's review of v01, 1a710fb). Keep the VO, captions, hook and title window; change:\n1. Open (0 to ~4 s) and the loop-back end: SVS 13778 prominence eruption (the long's v03 frame-0 stretch), already in\n   motion at frame 0, so the gate's first-second motion is >= 10. Hook IT'S / BRIGHTER stays on top. No Orbit.\n2. Fill the 9:16 frame: crop in so the Sun/limb fills it (no small centred disc between blurred bands).\n3. The climb section (~17.6-21.9 s): v01's crop shows cut-off text (\"le\" at the left, \"00 yr\" on the axis). Render a clean\n   vertical climb from code_graphics.py (only \"the climb / +1% every 110 million years\", full axis labels that fit), or\n   crop so no partial text is in frame.\nGate must PASS with no motion warning. Commit frames + gate output; no upload.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T20:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T20:36Z",
           "by": "claude",
           "what": "added"
         }
