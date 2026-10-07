@@ -17,7 +17,7 @@ Full rules: `FAMILIAR_DANGER_STRATEGY.md` → *Short hook* and *The first two se
   3. the claim is the first words;
   4. a visible change by about 1 s, with a sound effect on frame 0;
   5. a hook caption on frame 0 (2–4 words, cap height about 8–10%);
-  6. Orbit only from about 1 s, caught in the danger. **Never Orbit at frame 0.**
+  6. Orbit only from about 1 s, caught in the danger. **Never Orbit at frame 0** on any new Short (`youtube:package` / `gate_upcoming.py` hard-stop). The three already-aired Orbit-first labelled tests (`Ih2zhZTbIR0`, `dQlOgsDGmtA`, `pL339HhjDwo`) stay public/unchanged and are not report breaches — see `FAMILIAR_DANGER_STRATEGY.md`.
 - **On screen:** the promoted film's exact live title at 9–14 s. The last 4 s loop to the opening picture. Captions throughout. The spoken end line follows that week's test.
 - **Opening plate:** different from every Short within 14 days. One Short a day at most.
 - **Ship gate:** `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` must PASS. A motion warning means re-cut the opening. After upload, run `gate_shorts_open.py add …`.
