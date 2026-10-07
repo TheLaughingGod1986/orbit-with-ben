@@ -1,5 +1,5 @@
 {
-  "next_id": 28,
+  "next_id": 29,
   "jobs": [
     {
       "id": "J0001",
@@ -981,6 +981,32 @@
       "ref": "",
       "film": "028",
       "stage": "topic",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T21:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T21:13Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0028",
+      "title": "028 SOURCES: Gliese 710 flyby (Gemini)",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Film 028 (Gliese 710 lead topic): Gemini (agy) drafts 01_Script/SOURCES.md, links and exact quotes, as for 027:\n- Gliese 710's closest approach: distance (pc / AU / light-years) and time (Myr), with uncertainties, from Gaia DR2/DR3\n  papers (e.g. Bailer-Jones et al. 2018; Bailer-Jones 2022; de la Fuente Marcos & de la Fuente Marcos 2018/2020).\n- Its mass, type (K7 dwarf), current distance, apparent brightness at closest approach.\n- The Oort Cloud's extent; whether the flyby can send comets inward, how many, over what delay (Berski & Dybczynski\n  2016 and later), and the impact risk it implies (state it carefully: probability, not prediction).\n- Other close stellar encounters in the past (Scholz's star ~70,000 years ago) for context.\nClaim as <you>/gemini. No spend. Commit for Claude's script.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
       "after": "",
       "eta_min": 60,
       "status": "open",

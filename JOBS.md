@@ -9,6 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0025 | mini | open | – | – | Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb |  |
 | J0026 | mini | open | – | – | Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line |  |
 | J0027 | mini | open | – | – | 028 topic · 028 topic: neighbour pass for Gliese 710 (+2 backups) |  |
+| J0028 | gemini | open | – | – | 028 SOURCES: Gliese 710 flyby (Gemini) |  |
 
 Recently finished:
 
