@@ -293,7 +293,10 @@ def run_cli(agent: str, prompt: str, cap_s: int) -> tuple:
     """(exit code, tail of output). Exit 124 = killed at the cap. The whole process group is killed, so a CLI's
     child processes don't outlive the cap."""
     b, args = cli_spec(agent)
-    env = dict(os.environ, OWB_AGENT=agent)  # owb_thread.py tags its posts "[Chief] [Cursor]"
+    # owb_thread.py tags its posts "[Chief] [Cursor]". PATH: launchd's shell has no Homebrew or user bins, and doesn't
+    # expand "~", so put the real dirs first; the woken agent then finds gh, agy, agent and codex itself.
+    extra = [str(HOME / ".local" / "bin"), str(HOME / ".npm-global" / "bin"), "/opt/homebrew/bin", "/usr/local/bin"]
+    env = dict(os.environ, OWB_AGENT=agent, PATH=os.pathsep.join(extra + [os.environ.get("PATH", "/usr/bin:/bin")]))
     p = subprocess.Popen([b] + args + [prompt], cwd=str(OWB) if OWB.is_dir() else None, stdout=subprocess.PIPE,
                          stderr=subprocess.STDOUT, text=True, start_new_session=True, env=env)
     try:

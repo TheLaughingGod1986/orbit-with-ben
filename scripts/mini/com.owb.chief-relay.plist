@@ -25,9 +25,9 @@
   </array>
   <key>EnvironmentVariables</key>
   <dict>
-    <!-- launchd's zsh -lc has no Homebrew on PATH: gh (thread posts and the Grok check), codex and agy live there -->
+    <!-- launchd's zsh -lc has no Homebrew or user bins on PATH, and "~" isn't expanded here: full paths only (gh, agy, agent, codex) -->
     <key>PATH</key>
-    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <string>/Users/benjaminoats/.local/bin:/Users/benjaminoats/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
   </dict>
   <key>StartInterval</key>
   <integer>1800</integer>
