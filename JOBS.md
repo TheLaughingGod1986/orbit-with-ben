@@ -7,6 +7,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
 | J0030 | mini | open | – | – | Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) |  |
+| J0031 | gemini | open | – | – | 028 sources · 028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md) |  |
 
 Recently finished:
 

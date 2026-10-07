@@ -1,5 +1,5 @@
 {
-  "next_id": 31,
+  "next_id": 32,
   "jobs": [
     {
       "id": "J0001",
@@ -1126,6 +1126,32 @@
       "history": [
         {
           "at": "2026-10-07T21:41Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0031",
+      "title": "028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md)",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Film 028 (Gliese 710). Script: `02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/01_Script/star_coming_script_master_v01.md` (e601803).\n\nRun Gemini (agy) on `01_Script/CLAUDE_CLAIMS_v01.md`, the same way as 027:\n- Merge any rows SOURCES.md doesn't already cover into it, under the heading given in the file.\n- Add an exact quote for each row, and flag anything that's wrong.\n- **Rows 4, 13, 15 and 17 need an exact quote before VO.** Row 4 is the mass, row 13 is the Oort Cloud edges, row 15 is \"observable\" in Berski & Dybczyński, row 17 is the García-Sánchez impact figure.\n- Row 16 is my own Kepler check of the infall delay. Confirm it or correct it.\n- Gemini doesn't rewrite spoken lines. Post the flags on #99 and I'll make any wording changes as v02.\n",
+      "ref": "",
+      "film": "028",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T22:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T22:17Z",
           "by": "claude",
           "what": "added"
         }
