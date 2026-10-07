@@ -1,5 +1,5 @@
 {
-  "next_id": 19,
+  "next_id": 20,
   "jobs": [
     {
       "id": "J0001",
@@ -698,6 +698,32 @@
         }
       ],
       "done_ref": "9a7367d"
+    },
+    {
+      "id": "J0019",
+      "title": "Sun 022 v04 polish: three repeat swaps, row 14 check",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 v04 polish (v03 PASSED, #99 review). Only these, then render v04 the same way as v03 (iCloud + review_v04/ in git):\n1. Rows 49 and 50 repeat rows 37/38 (PIA22360 / PIA15377) within a minute; row 8 repeats rows 10/11 (PIA22123).\n   Swap 49, 50 and 8 for unused pool stills that fit their lines (prominence/limb for row 8; disc/cycle for 49-50).\n2. Row 14 (zoom graphic): make sure the slow rising line is on screen during \"by a slow rise in the light of the whole\n   star\" (v03's mid-row frame shows only the wobble); move the in-point if needed. Commit row 14 frames.\nKeep loudness at -14 LUFS / <= -1.5 dBTP on the final mp4.\n",
+      "ref": "",
+      "film": "022",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T19:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T19:50Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ]
 }

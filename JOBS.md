@@ -6,6 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
+| J0019 | mini | open | – | – | 022 edit · Sun 022 v04 polish: three repeat swaps, row 14 check |  |
 
 Recently finished:
 
