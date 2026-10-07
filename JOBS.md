@@ -6,7 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0029 | cloud | open (after J0028) | – | – | 028: lock topic, write script v01 (Claude) |  |
+| J0029 | cloud | claimed | claude | 2026-10-08T00:12Z | 028: lock topic, write script v01 (Claude) |  |
 | J0030 | mini | open | – | – | Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) |  |
 
 Recently finished:
