@@ -1,5 +1,5 @@
 {
-  "next_id": 6,
+  "next_id": 7,
   "jobs": [
     {
       "id": "J0001",
@@ -143,6 +143,32 @@
           "at": "2026-10-07T12:05Z",
           "by": "claude",
           "what": "cancelled: Ben decided 7 Oct: yes, and wider. Replaced by the Chief relay (5b60eff): Grok, then Cursor, then Codex act as Chief, whoever is up. Install is J0006."
+        }
+      ]
+    },
+    {
+      "id": "J0006",
+      "title": "Install the Chief relay on the Mini",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Install the Chief relay on the Mini (Ben asked for it, 7 Oct; AGENTS.md \"Chief relay\"). Free; nothing on YouTube.\n\n    cd ~/YouTube/orbit-with-ben && git pull\n    mkdir -p ~/_desk/bin ~/_desk/state && cp scripts/chief_relay.py ~/_desk/bin/\n    cp scripts/mini/com.owb.chief-relay.plist ~/Library/LaunchAgents/\n    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.chief-relay.plist\n    python3 ~/_desk/bin/chief_relay.py status\n\nThen check, and put each result in the done note:\n- `status` shows Cursor UP and, if Codex is installed, Codex UP. Grok shows down until it runs jobs.py.\n- `codex exec --help` lists `--full-auto`, `--add-dir` and `-c`. If a flag is missing, set CODEX_FLAGS in the plist\n  (an EnvironmentVariables dict) to what this version accepts, and say what you set.\n- If a ~/_desk/state/cursor-covers-chief file exists from the old worker, delete it. It does nothing now.\n- After the first run, the end of ~/Library/Logs/chief-relay.log.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T12:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T12:05Z",
+          "by": "claude",
+          "what": "added"
         }
       ]
     }
