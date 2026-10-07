@@ -6,7 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0022 | mini | open | – | – | Sun 022 Short Fri 23: dimmer young Sun |  |
+| J0022 | mini | claimed | cursor | 2026-10-07T21:46Z | Sun 022 Short Fri 23: dimmer young Sun |  |
 | J0023 | cloud | open | – | – | Sun 022 upload text: description, chapters, credits, captions, pinned comment |  |
 | J0024 | mini | open | – | – | 022 edit · Sun 022 v05: row 49 off the sunspot picture |  |
 | J0025 | mini | open | – | – | Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb |  |
