@@ -10,24 +10,26 @@ Generated from the 2026-10-07 snapshot by `npm run analytics:report`. Don't edit
 | Last 7 days (YouTube Analytics) | +65 | 0 |
 | Last 30 days (YouTube Analytics) | +580 | +1 |
 
-## Weekly (week starting Monday)
+## Week on week (weeks start Monday)
 
-| Period | Views | Watch hours | Subscribers | Uploads |
-|---|---:|---:|---:|---:|
-| 2026-09-28 | 65 | 0.8 | 0 | 0 |
-| 2026-09-21 | 147 | 0.6 | +1 | 6 |
-| 2026-09-14 | 109 | 0.4 | 0 | 4 |
-| 2026-09-07 | 48 | 0.1 | 0 | 0 |
-| 2026-08-31 | 227 | 0.3 | 0 | 6 |
-| 2026-08-24 | 0 | 0 | 0 | 0 |
+| Week of | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
+|---|---:|---:|---:|---:|---:|---:|
+| 2026-09-28 | 65 | -56% | 0.8 | +39% | 0 | 0 |
+| 2026-09-21 | 147 | +35% | 0.6 | – | +1 | 6 |
+| 2026-09-14 | 109 | +127% | 0.4 | – | 0 | 4 |
+| 2026-09-07 | 48 | -79% | 0.1 | – | 0 | 0 |
+| 2026-08-31 | 227 | – | 0.3 | – | 0 | 6 |
+| 2026-08-24 (part) | 0 | – | 0 | – | 0 | 0 |
 
-## Monthly
+## Month on month
 
-| Period | Views | Watch hours | Subscribers | Uploads |
-|---|---:|---:|---:|---:|
-| 2026-10 | 8 | 0.6 | 0 | 0 |
-| 2026-09 | 588 | 1.5 | +1 | 16 |
-| 2026-08 | 0 | 0 | 0 | 0 |
+| Month | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
+|---|---:|---:|---:|---:|---:|---:|
+| 2026-10 (so far, to 10-04) | 8 | – | 0.6 | – | 0 | 0 |
+| 2026-09 | 588 | – | 1.5 | – | +1 | 16 |
+| 2026-08 (part) | 0 | – | 0 | – | 0 | 0 |
+
+A period still running is compared with the same number of days at the start of the one before. A part period at launch isn't compared, and no change is shown on a base under 20 views or 30 minutes.
 
 ## Every video (newest first)
 

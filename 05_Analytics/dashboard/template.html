@@ -68,6 +68,11 @@ td.title a:hover { text-decoration: underline; }
 input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; min-width: 0; width: 220px; max-width: 100%; }
 .notes { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: .82rem; display: grid; gap: 4px; max-width: 75ch; }
 .empty { color: var(--ink-3); padding: 20px 0; }
+.compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.compare .cmp { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; display: grid; gap: 2px; min-width: 0; }
+.compare .cmp .big { font: 500 1.25rem/1.2 var(--f-mono); font-variant-numeric: tabular-nums; }
+.compare .cmp .sub { font-size: .8rem; color: var(--ink-3); }
+.pctcell { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
 .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .8rem; color: var(--ink-2); }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
 @media (prefers-reduced-motion: no-preference) { .tab, .seg button { transition: background .15s, color .15s; } }
@@ -100,10 +105,11 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     <div class="row">
       <h2 id="period-h">Growth by period</h2>
       <div class="seg" id="period">
-        <button type="button" data-p="weekly" aria-pressed="true">Weekly</button>
-        <button type="button" data-p="monthly">Monthly</button>
+        <button type="button" data-p="weekly" aria-pressed="true">Week on week</button>
+        <button type="button" data-p="monthly">Month on month</button>
       </div>
     </div>
+    <div class="compare" id="periodCompare"></div>
     <div class="chart" id="periodChart"></div>
     <div class="scroll"><table id="periodTable"></table></div>
   </section>
@@ -238,11 +244,34 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     hit.addEventListener("pointerleave", () => { xh.setAttribute("visibility", "hidden"); xd.setAttribute("visibility", "hidden"); hideTip(box); });
   }
 
+  // Percentages round to whole numbers; anything that rounds to 0 reads as a flat "0%", never "-0%".
+  const pctTxt = (x) => { if (x == null) return "–"; const v = Math.round(x); return (v > 0 ? "+" : "") + (v === 0 ? 0 : v).toLocaleString("en-GB") + "%"; };
+  const pcls = (x) => cls(x == null ? null : Math.round(x));
+  const periodName = (r, weekly) => (weekly ? "Week of " + dayLabel(r.period) : monthLabel(r.period));
+  function drawCompare(c) {
+    const weekly = state.period === "weekly";
+    const rows = weekly ? c.weekly : c.monthly;
+    const full = rows.filter((r) => !r.partial);
+    const last = full[full.length - 1], running = rows[rows.length - 1];
+    const unit = weekly ? "week" : "month";
+    const card = (title, r, vs) => r ? `<div class="cmp"><span class="eyebrow">${title}</span>
+      <span class="big"><span class="delta ${pcls(r.viewsPct)}">${pctTxt(r.viewsPct)}</span> views</span>
+      <span class="sub">${fmt(r.views)} views${r.prev ? " vs " + fmt(r.prev.views) : ""} ${vs} · watch time <span class="delta ${pcls(r.hoursPct)}">${pctTxt(r.hoursPct)}</span> · ${signed(r.subsNet)} subs</span></div>` : "";
+    let html = card(`Last full ${unit}: ${periodName(last || {}, weekly)}`, last, `the ${unit} before`);
+    if (running && running.partial && running.likeForLike) {
+      const n = Math.round((Date.parse(running.to) - Date.parse(running.from)) / 864e5) + 1;
+      html += card(`This ${unit} so far (${n} day${n === 1 ? "" : "s"})`, running, `the same ${n} day${n === 1 ? "" : "s"} last ${unit}`);
+    }
+    $("periodCompare").innerHTML = html || '<div class="empty">Week-on-week and month-on-month change start once there are two full periods.</div>';
+  }
+
   function drawPeriod(c) {
-    const rows = state.period === "weekly" ? c.weekly.slice(-16) : c.monthly;
+    drawCompare(c);
+    const weekly = state.period === "weekly";
+    const rows = weekly ? c.weekly.slice(-16) : c.monthly;
     const box = $("periodChart");
     size(box);
-    const label = (p) => (state.period === "weekly" ? dayLabel(p) : monthLabel(p));
+    const label = (p) => (weekly ? dayLabel(p) : monthLabel(p));
     if (!rows.length) { box.innerHTML = '<div class="empty">No completed periods yet.</div>'; $("periodTable").innerHTML = ""; return; }
     const max = niceMax(Math.max(...rows.map((r) => r.views)));
     const iw = W - PAD.l - PAD.r, ih = H - PAD.t - PAD.b, n = rows.length;
@@ -252,22 +281,25 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     rows.forEach((r, i) => {
       const h = (ih * Math.max(r.views, 0)) / max, bx = PAD.l + slot * i + (slot - bw) / 2, by = PAD.t + ih - h;
       const rad = Math.min(4, bw / 2, h);
-      bars += `<path data-i="${i}" d="M${bx},${PAD.t + ih} V${by + rad} Q${bx},${by} ${bx + rad},${by} H${bx + bw - rad} Q${bx + bw},${by} ${bx + bw},${by + rad} V${PAD.t + ih} Z" fill="${colorVar(c.channel)}"/>`;
+      // A period still running (or the launch part-period) is drawn lighter so it isn't read as a drop.
+      bars += `<path data-i="${i}" d="M${bx},${PAD.t + ih} V${by + rad} Q${bx},${by} ${bx + rad},${by} H${bx + bw - rad} Q${bx + bw},${by} ${bx + bw},${by + rad} V${PAD.t + ih} Z" fill="${colorVar(c.channel)}" fill-opacity="${r.partial ? 0.35 : 1}"/>`;
       bars += `<rect data-i="${i}" x="${PAD.l + slot * i}" y="${PAD.t}" width="${slot}" height="${ih}" fill="transparent"/>`;
       if (i % step === 0 || i === n - 1) labels += `<text x="${bx + bw / 2}" y="${H - 6}" text-anchor="middle">${label(r.period)}</text>`;
     });
-    box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Views by ${state.period === "weekly" ? "week" : "month"}">${axis(max)}${bars}${labels}</svg>`;
+    box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Views by ${weekly ? "week" : "month"}">${axis(max)}${bars}${labels}</svg>`;
     const svg = box.querySelector("svg");
     svg.addEventListener("pointermove", (ev) => {
       const el = ev.target.closest("[data-i]"); if (!el) return hideTip(box);
       const r = rows[+el.dataset.i], s = svg.getBoundingClientRect();
       const px = ((PAD.l + slot * (+el.dataset.i + 0.5)) / W) * s.width, py = ((PAD.t + ih * (1 - r.views / max)) / H) * s.height;
-      tipAt(box, `${state.period === "weekly" ? "Week of " + dayLabel(r.period) : monthLabel(r.period)}<br><b>${fmt(r.views)}</b> views · <b>${hrs(r.minutes)}</b> h · <b>${signed(r.subsNet)}</b> subs · ${r.uploads} uploads`, px, py);
+      tipAt(box, `${periodName(r, weekly)}${r.partial ? (r.likeForLike ? " (so far)" : " (part)") : ""}<br><b>${fmt(r.views)}</b> views (<b>${pctTxt(r.viewsPct)}</b>) · <b>${hrs(r.minutes)}</b> h (<b>${pctTxt(r.hoursPct)}</b>) · <b>${signed(r.subsNet)}</b> subs · ${r.uploads} uploads`, px, py);
     });
     svg.addEventListener("pointerleave", () => hideTip(box));
-    $("periodTable").innerHTML = `<thead><tr><th class="l">${state.period === "weekly" ? "Week of" : "Month"}</th><th>Views</th><th>Watch hours</th><th>Subscribers</th><th>Uploads</th></tr></thead><tbody>` +
-      [...rows].reverse().map((r) => `<tr><td class="l">${state.period === "weekly" ? r.period : r.period}</td><td>${fmt(r.views)}</td><td>${hrs(r.minutes)}</td><td class="delta ${cls(r.subsNet)}">${signed(r.subsNet)}</td><td>${r.uploads}</td></tr>`).join("") + "</tbody>";
+    const head = weekly ? "Week of" : "Month";
+    $("periodTable").innerHTML = `<thead><tr><th class="l">${head}</th><th>Views</th><th>vs previous</th><th>Watch hours</th><th>vs previous</th><th>Subscribers</th><th>Uploads</th></tr></thead><tbody>` +
+      [...rows].reverse().map((r) => `<tr><td class="l">${r.period}${r.partial ? (r.likeForLike ? " · so far" : " · part") : ""}</td><td>${fmt(r.views)}</td><td class="pctcell delta ${pcls(r.viewsPct)}">${pctTxt(r.viewsPct)}</td><td>${hrs(r.minutes)}</td><td class="pctcell delta ${pcls(r.hoursPct)}">${pctTxt(r.hoursPct)}</td><td class="delta ${cls(r.subsNet)}">${signed(r.subsNet)}</td><td>${r.uploads}</td></tr>`).join("") + "</tbody>";
   }
+
 
   // ---------------------------------------------------------------- videos
   const COLS = [
@@ -317,7 +349,7 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
   function render() {
     const c = cur();
     drawTabs(); drawReadout(c); drawDaily(c); drawPeriod(c); drawVideos(c);
-    $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weekly totals run Monday to Sunday.</li>`;
+    $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li>`;
   }
   render();
   let rt;

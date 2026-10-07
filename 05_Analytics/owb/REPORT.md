@@ -10,29 +10,31 @@ Generated from the 2026-10-07 snapshot by `npm run analytics:report`. Don't edit
 | Last 7 days (YouTube Analytics) | +798 | +3 |
 | Last 30 days (YouTube Analytics) | +4,488 | +7 |
 
-## Weekly (week starting Monday)
+## Week on week (weeks start Monday)
 
-| Period | Views | Watch hours | Subscribers | Uploads |
-|---|---:|---:|---:|---:|
-| 2026-09-28 | 798 | 2.7 | +3 | 5 |
-| 2026-09-21 | 1,047 | 2.4 | +2 | 11 |
-| 2026-09-14 | 1,591 | 3.7 | 0 | 8 |
-| 2026-09-07 | 365 | 1.2 | 0 | 8 |
-| 2026-08-31 | 2,238 | 3.6 | +3 | 10 |
-| 2026-08-24 | 1,184 | 2.8 | 0 | 9 |
-| 2026-08-17 | 540 | 1.4 | +1 | 9 |
-| 2026-08-10 | 389 | 3.8 | +2 | 8 |
-| 2026-08-03 | 185 | 1.1 | +1 | 1 |
-| 2026-07-27 | 186 | 0.4 | 0 | 1 |
+| Week of | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
+|---|---:|---:|---:|---:|---:|---:|
+| 2026-09-28 | 798 | -24% | 2.7 | +12% | +3 | 5 |
+| 2026-09-21 | 1,047 | -34% | 2.4 | -35% | +2 | 11 |
+| 2026-09-14 | 1,591 | +336% | 3.7 | +211% | 0 | 8 |
+| 2026-09-07 | 365 | -84% | 1.2 | -67% | 0 | 8 |
+| 2026-08-31 | 2,238 | +89% | 3.6 | +30% | +3 | 10 |
+| 2026-08-24 | 1,184 | +119% | 2.8 | +101% | 0 | 9 |
+| 2026-08-17 | 540 | +39% | 1.4 | -63% | +1 | 9 |
+| 2026-08-10 | 389 | +110% | 3.8 | +236% | +2 | 8 |
+| 2026-08-03 | 185 | 0% | 1.1 | – | +1 | 1 |
+| 2026-07-27 | 186 | – | 0.4 | – | 0 | 1 |
 
-## Monthly
+## Month on month
 
-| Period | Views | Watch hours | Subscribers | Uploads |
-|---|---:|---:|---:|---:|
-| 2026-10 | 419 | 2.1 | +1 | 4 |
-| 2026-09 | 5,589 | 11.4 | +7 | 39 |
-| 2026-08 | 2,386 | 9.3 | +4 | 27 |
-| 2026-07 | 129 | 0.2 | 0 | 1 |
+| Month | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
+|---|---:|---:|---:|---:|---:|---:|
+| 2026-10 (so far, to 10-04) | 419 | -72% | 2.1 | -18% | +1 | 4 |
+| 2026-09 | 5,589 | +134% | 11.4 | +22% | +7 | 39 |
+| 2026-08 | 2,386 | – | 9.3 | – | +4 | 27 |
+| 2026-07 (part) | 129 | – | 0.2 | – | 0 | 1 |
+
+A period still running is compared with the same number of days at the start of the one before. A part period at launch isn't compared, and no change is shown on a base under 20 views or 30 minutes.
 
 ## Every video (newest first)
 

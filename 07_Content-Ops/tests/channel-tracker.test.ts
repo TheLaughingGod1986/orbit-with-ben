@@ -5,6 +5,7 @@ import path from "path";
 import {
   addDays,
   buildReport,
+  periods,
   londonDate,
   renderMarkdown,
   snapshotAtOrBefore,
@@ -139,6 +140,35 @@ describe("buildReport with YouTube Analytics", () => {
     expect(md).toContain("[Video a](https://youtu.be/a)");
     expect(md).toContain("| Last 7 days (YouTube Analytics) | +70 | +7 |");
     expect(md).toContain("60%");
+  });
+});
+
+describe("week on week and month on month", () => {
+  const day = (d: string, views: number, minutes = 60) => ({ day: d, views, minutes, subsNet: 1 });
+  const run = (from: string, n: number, views: (i: number) => number) => Array.from({ length: n }, (_, i) => day(addDays(from, i), views(i)));
+
+  it("compares each full week with the week before", () => {
+    const series = [...run("2026-09-21", 7, () => 10), ...run("2026-09-28", 7, () => 15)];
+    const w = periods("week", series, new Map(), "analytics");
+    expect(w.map((r) => [r.period, r.views, r.viewsPct, r.partial])).toEqual([
+      ["2026-09-21", 70, null, false],
+      ["2026-09-28", 105, 50, false],
+    ]);
+  });
+  it("compares a month still running with the same days of the month before", () => {
+    const series = [...run("2026-09-01", 30, (i) => (i < 4 ? 50 : 1)), ...run("2026-10-01", 4, () => 25)];
+    const m = periods("month", series, new Map(), "analytics");
+    const oct = m.find((r) => r.period === "2026-10")!;
+    expect(oct).toMatchObject({ partial: true, likeForLike: true, views: 100, viewsPct: -50 });
+    expect(oct.prev!.views).toBe(200);
+  });
+  it("doesn't compare with a launch part-period, or on a tiny base", () => {
+    const series = [...run("2026-07-27", 5, () => 1), ...run("2026-08-01", 31, () => 3)];
+    const m = periods("month", series, new Map(), "analytics");
+    expect(m[0]).toMatchObject({ period: "2026-07", partial: true, prev: null });
+    expect(m[1]).toMatchObject({ period: "2026-08", prev: null, viewsPct: null });
+    const tiny = periods("week", [...run("2026-09-21", 7, () => 2), ...run("2026-09-28", 7, () => 20)], new Map(), "analytics");
+    expect(tiny[1].viewsPct).toBeNull(); // 14 views before: under the 20-view floor
   });
 });
 

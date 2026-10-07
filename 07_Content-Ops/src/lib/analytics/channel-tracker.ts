@@ -139,7 +139,23 @@ export function toVideoWindows(t: AnalyticsTable): Record<string, VideoWindow> {
 // ----------------------------------------------------------------------------- report
 export type Change = { views: number; subscribers: number | null; source: "snapshots" | "analytics" } | null;
 
-export type PeriodRow = { period: string; views: number; minutes: number | null; subsNet: number | null; uploads: number; source: "analytics" | "snapshots" };
+export type PeriodTotals = { views: number; minutes: number | null; subsNet: number | null };
+
+/** One week (Monday start) or calendar month. `from`/`to` are the days that have data. A period still running, or
+ * the launch period, is `partial`; a running period is compared like for like with the same number of days at the
+ * start of the previous one (`likeForLike`). `prev` is null when there is no fair comparison. */
+export type PeriodRow = PeriodTotals & {
+  period: string;
+  from: string;
+  to: string;
+  partial: boolean;
+  uploads: number;
+  source: "analytics" | "snapshots";
+  prev: PeriodTotals | null;
+  likeForLike: boolean;
+  viewsPct: number | null;
+  hoursPct: number | null;
+};
 
 export type VideoRow = {
   id: string;
@@ -207,33 +223,82 @@ function sum(xs: number[]): number {
   return xs.reduce((a, b) => a + b, 0);
 }
 
-function periods(
-  key: (day: string) => string,
-  daily: DailyRow[],
-  derived: { day: string; views: number; subsNet: number | null }[],
-  uploads: Map<string, number>,
-): PeriodRow[] {
-  const out = new Map<string, PeriodRow>();
-  const row = (p: string, source: PeriodRow["source"]) => {
-    if (!out.has(p)) out.set(p, { period: p, views: 0, minutes: source === "analytics" ? 0 : null, subsNet: 0, uploads: uploads.get(p) ?? 0, source });
-    return out.get(p)!;
+/** Below these, a percentage change is noise (0.06 h to 0.6 h reads as +900%), so none is shown. */
+export const MIN_BASE_VIEWS = 20;
+export const MIN_BASE_MINUTES = 30;
+
+type DayPoint = { day: string; views: number; minutes: number | null; subsNet: number | null };
+
+export function pct(now: number | null, before: number | null): number | null {
+  if (now == null || before == null || before <= 0) return null;
+  return Math.round(((now - before) / before) * 1000) / 10;
+}
+
+function addTotals(a: PeriodTotals, d: DayPoint): void {
+  a.views += d.views;
+  a.minutes = a.minutes == null || d.minutes == null ? null : a.minutes + d.minutes;
+  a.subsNet = a.subsNet == null || d.subsNet == null ? null : a.subsNet + d.subsNet;
+}
+
+/** Weeks or months from a per-day series, each with its change against the period before. */
+export function periods(unit: "week" | "month", series: DayPoint[], uploads: Map<string, number>, source: PeriodRow["source"]): PeriodRow[] {
+  const startOf = (day: string) => (unit === "week" ? weekStart(day) : `${day.slice(0, 7)}-01`);
+  const endOf = (start: string) => {
+    if (unit === "week") return addDays(start, 6);
+    const [y, m] = start.split("-").map(Number);
+    return new Date(Date.UTC(y, m, 0)).toISOString().slice(0, 10);
   };
-  if (daily.length) {
-    for (const d of daily) {
-      const r = row(key(d.day), "analytics");
-      r.views += d.views;
-      r.minutes = (r.minutes ?? 0) + d.minutes;
-      r.subsNet = (r.subsNet ?? 0) + d.subsGained - d.subsLost;
-    }
-  } else {
-    for (const d of derived) {
-      const r = row(key(d.day), "snapshots");
-      r.views += d.views;
-      r.subsNet = d.subsNet == null || r.subsNet == null ? null : r.subsNet + d.subsNet;
-    }
+  const label = (start: string) => (unit === "week" ? start : start.slice(0, 7));
+  const days = [...series].sort((a, b) => a.day.localeCompare(b.day));
+  const byStart = new Map<string, DayPoint[]>();
+  for (const d of days) {
+    const k = startOf(d.day);
+    if (!byStart.has(k)) byStart.set(k, []);
+    byStart.get(k)!.push(d);
   }
-  for (const [p, n] of uploads) if (out.has(p)) out.get(p)!.uploads = n;
-  return [...out.values()].sort((a, b) => a.period.localeCompare(b.period));
+  const blank = (): PeriodTotals => ({ views: 0, minutes: source === "analytics" ? 0 : null, subsNet: 0 });
+  const rows: PeriodRow[] = [];
+  let before: { start: string; total: PeriodTotals; full: boolean; points: DayPoint[] } | null = null;
+  for (const [start, points] of [...byStart.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
+    const total = blank();
+    for (const d of points) addTotals(total, d);
+    const from = points[0].day;
+    const to = points[points.length - 1].day;
+    const end = endOf(start);
+    const startsOnTime = from === start;
+    const full = startsOnTime && to === end;
+    let prev: PeriodTotals | null = null;
+    let likeForLike = false;
+    // Only compare with the period directly before, and only when that one has data from its first day.
+    if (before && addDays(endOf(before.start), 1) === start && before.points[0].day === before.start && startsOnTime) {
+      if (full && before.full) prev = before.total;
+      else if (!full) {
+        const n = daysBetween(start, to);
+        const cut = addDays(before.start, n);
+        const same = before.points.filter((d) => d.day <= cut);
+        if (same.length === n + 1) {
+          prev = blank();
+          for (const d of same) addTotals(prev, d);
+          likeForLike = true;
+        }
+      }
+    }
+    rows.push({
+      period: label(start),
+      from,
+      to,
+      partial: !full,
+      uploads: uploads.get(label(start)) ?? 0,
+      source,
+      ...total,
+      prev,
+      likeForLike,
+      viewsPct: prev && prev.views >= MIN_BASE_VIEWS ? pct(total.views, prev.views) : null,
+      hoursPct: prev && (prev.minutes ?? 0) >= MIN_BASE_MINUTES ? pct(total.minutes, prev.minutes) : null,
+    });
+    before = { start, total, full, points };
+  }
+  return rows;
 }
 
 /** Everything the dashboard and REPORT.md show for one channel. `snaps` in any order. */
@@ -302,6 +367,12 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
   if (!d30Snap && a) notes.push("30-day video growth is YouTube Analytics' last 28 days until there are 30 days of snapshots.");
   if (now.totals.subscribers != null) notes.push("YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact.");
 
+  // One per-day series for the period tables: YouTube Analytics when connected, else snapshot differences.
+  const source: PeriodRow["source"] = daily.length ? "analytics" : "snapshots";
+  const series: DayPoint[] = daily.length
+    ? daily.map((r) => ({ day: r.day, views: r.views, minutes: r.minutes, subsNet: r.subsGained - r.subsLost }))
+    : derived.map((r) => ({ day: r.day, views: r.views, minutes: null, subsNet: r.subsNet }));
+
   const dailyOut = daily.length
     ? daily.slice(-120).map((r) => ({ day: r.day, views: r.views, minutes: r.minutes, subsNet: r.subsGained - r.subsLost }))
     : derived.slice(-120).map((r) => ({ day: r.day, views: r.views, minutes: null, subsNet: r.subsNet }));
@@ -321,8 +392,8 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     },
     windowSource: { d7: d7Snap ? "snapshots" : a ? "analytics" : null, d30: d30Snap ? "snapshots" : a ? "analytics" : null },
     daily: dailyOut,
-    weekly: periods(weekStart, daily, derived, uploadsBy(weekStart)).slice(-26),
-    monthly: periods((d) => d.slice(0, 7), daily, derived, uploadsBy((d) => d.slice(0, 7))),
+    weekly: periods("week", series, uploadsBy(weekStart), source).slice(-26),
+    monthly: periods("month", series, uploadsBy((d) => d.slice(0, 7)), source),
     videos,
     notes,
   };
@@ -344,13 +415,22 @@ export function renderMarkdown(r: ChannelReport): string {
     L.push(`| ${label}${c?.source === "analytics" ? " (YouTube Analytics)" : ""} | ${signed(c?.views)} | ${signed(c?.subscribers)} |`);
   }
   L.push("");
-  const table = (title: string, rows: PeriodRow[]) => {
-    L.push(`## ${title}`, "", "| Period | Views | Watch hours | Subscribers | Uploads |", "|---|---:|---:|---:|---:|");
-    for (const p of [...rows].reverse()) L.push(`| ${p.period} | ${n0(p.views)} | ${hours(p.minutes)} | ${signed(p.subsNet)} | ${p.uploads} |`);
+  const change = (x: number | null) => {
+    if (x == null) return "–";
+    const v = Math.round(x) || 0; // never "-0%"
+    return `${v > 0 ? "+" : ""}${v.toLocaleString("en-GB")}%`;
+  };
+  const table = (title: string, rows: PeriodRow[], unit: string) => {
+    L.push(`## ${title}`, "", `| ${unit} | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |`, "|---|---:|---:|---:|---:|---:|---:|");
+    for (const p of [...rows].reverse()) {
+      const name = `${p.period}${p.partial ? (p.likeForLike ? ` (so far, to ${p.to.slice(5)})` : " (part)") : ""}`;
+      L.push(`| ${name} | ${n0(p.views)} | ${change(p.viewsPct)} | ${hours(p.minutes)} | ${change(p.hoursPct)} | ${signed(p.subsNet)} | ${p.uploads} |`);
+    }
     L.push("");
   };
-  table("Weekly (week starting Monday)", r.weekly.slice(-12));
-  table("Monthly", r.monthly);
+  table("Week on week (weeks start Monday)", r.weekly.slice(-12), "Week of");
+  table("Month on month", r.monthly, "Month");
+  L.push(`A period still running is compared with the same number of days at the start of the one before. A part period at launch isn't compared, and no change is shown on a base under ${MIN_BASE_VIEWS} views or ${MIN_BASE_MINUTES} minutes.`, "");
   L.push("## Every video (newest first)", "");
   L.push(`| Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) |`);
   L.push("|---|---|---|---:|---:|---:|---:|---:|---:|");
