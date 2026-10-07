@@ -9,6 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0027 | mini | open | – | – | 028 topic · 028 topic: neighbour pass for Gliese 710 (+2 backups) |  |
 | J0028 | gemini | open | – | – | 028 SOURCES: Gliese 710 flyby (Gemini) |  |
 | J0029 | cloud | open (after J0028) | – | – | 028: lock topic, write script v01 (Claude) |  |
+| J0030 | mini | open | – | – | Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) |  |
 
 Recently finished:
 
