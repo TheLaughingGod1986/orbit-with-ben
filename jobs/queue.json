@@ -626,10 +626,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-07T19:25Z",
-      "eta": "2026-10-07T20:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T19:16Z",
       "result": "",
@@ -643,6 +643,11 @@
           "at": "2026-10-07T19:25Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T19:28Z",
+          "by": "cursor",
+          "what": "released: Assembler v03 committed 28cd0d0. Render running detached: tmux sun022-v03, log ~/_desk/logs/sun022-v03-render.log, done-file ~/_desk/logs/sun022-v03-render.done (script ~/_desk/logs/sun022-v03-run.sh). Fixes 1-7 are in. Rows 1, 3, 18, 20, 44, 53, 55, 71, 96 and 104 checked by eye. The running render's row 90 has a plain black mask box that shows against the blue-black sky. 28cd0d0 fills the mask with the sampled sky colour instead. NEXT RUN: once .done says 0, delete sun_film/work_first_cut_v03/clean_s39-610-037.jpg and re-run `python3 _assemble_sun_first_cut_v03.py` from 07_Edit-Project (no clocks re-render, about 5 min). Then the review_v03 pack: copy _review_pack_v02.py to v03, run clip_check --repeat-ok 6, write loudness.json, commit frames at 0.0/0.5/1.0 s plus three from row 104, and the row 96 frames. Not done: fix 8 (repeats 8/49/50) and fix 9 (row 14 check). The clocks venv is ~/_desk/venv-graphics/bin/python3."
         }
       ]
     },
