@@ -53,6 +53,9 @@ W, H, FPS = sat.W, sat.H, sat.FPS
 FONT = sat.FONT
 sat.WORK = WORK
 NOTES: list[str] = []
+# SVS rows whose clean stretch was picked by eye: these clips open on an eclipse
+# intro / date stamp and close on a Goddard logo card.
+SVS_IN = {1: 15.0, 54: 36.5, 104: 38.0}
 
 
 def run(cmd):
@@ -251,6 +254,7 @@ def build_row(r: dict, pool: dict, dest: Path, uses: dict) -> None:
             NOTES.append(f"row {row}: {path.name} only {L:.2f}s, tail on PIA19876 (no slow-mo/loop)")
             return
         start = stretch_window(path, r["src_in"], dur, uses)
+        start = SVS_IN.get(row, start)
         motion_mp4(path, dest, start, dur)
         return
     raise ValueError(f"row {row}: unknown source {src}")
