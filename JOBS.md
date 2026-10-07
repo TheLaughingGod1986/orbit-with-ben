@@ -9,6 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0021 | mini | open | – | – | Sun 022 Short Mon 19: brighter as it runs out of fuel |  |
 | J0022 | mini | open | – | – | Sun 022 Short Fri 23: dimmer young Sun |  |
 | J0023 | cloud | open | – | – | Sun 022 upload text: description, chapters, credits, captions, pinned comment |  |
+| J0024 | mini | open | – | – | 022 edit · Sun 022 v05: row 49 off the sunspot picture |  |
 
 Recently finished:
 
