@@ -1,5 +1,5 @@
 {
-  "next_id": 21,
+  "next_id": 22,
   "jobs": [
     {
       "id": "J0001",
@@ -734,6 +734,32 @@
       "ref": "",
       "film": "022",
       "stage": "thumbs",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T19:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T19:50Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0021",
+      "title": "Sun 022 Short Mon 19: brighter as it runs out of fuel",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 Short, Mon 19 Oct 11:30 London: \"Why Is the Sun Getting Brighter as It Runs Out of Fuel?\" (PLAN Shorts table).\nVO is done and PASS (10_Shorts/mon19_brighter_fuel/). Build the picture: SDO disc with a prominence (real motion, NOT\nOrbit at frame 0), then the core graphic, then the three-clocks climb (re-rendered \"hours to days\" version).\nRules: 22-27 s; hook caption at frame 0 \"IT'S BRIGHTER\" (yellow BRIGHTER); title window 9-14 s; spoken end line names\nthe long; loop back to the open; youtube:package gate (gate_shorts_open.py) must PASS. Don't upload or schedule:\ncommit the export path + a frame sheet + the gate output for Claude's final OK.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
       "after": "",
       "eta_min": 60,
       "status": "open",
