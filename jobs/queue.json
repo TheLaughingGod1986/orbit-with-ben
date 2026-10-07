@@ -1,5 +1,5 @@
 {
-  "next_id": 7,
+  "next_id": 8,
   "jobs": [
     {
       "id": "J0001",
@@ -167,6 +167,32 @@
       "history": [
         {
           "at": "2026-10-07T12:05Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0007",
+      "title": "Sun 022: VO pickup 'Three clocks' at 457 s",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "One VO pickup for Sun 022 at 457.04 s (\"Three\" heard as \"Free\"). Claude's order: #99 6037545918.\n\n    desk-lock elevenlabs -- python3 04_Audio/tools/vo_take.py --text \"Three clocks. Only one of them answers the title.\" \\\n        --out 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/02_Voiceover --stem sun_pickup_three_clocks_v01 \\\n        --order 6037545918 --dry-run      # then again without --dry-run\n\n- Passes only if Scribe reads \"Three\". If it still hears \"Free\", report it and stop. No retake without Claude.\n- Splice over 456.80-461.30 in the first cut, matching loudness and room tone at both joins. Row 96 VO text -> \"Three clocks.\"\n- J0001 doesn't wait for this. Splice before the review pack.\n",
+      "ref": "6037545918",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T12:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T12:06Z",
           "by": "claude",
           "what": "added"
         }
