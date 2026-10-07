@@ -1,0 +1,47 @@
+{
+  "cut": "sun_first_cut_v04",
+  "shot_list": "shot_list_v01.csv",
+  "vo": "sun_brighter_vo_v01.wav",
+  "duration": 518.666667,
+  "sha256": "96eba084fc501a5b80f1ce0142ac33f7aac5417af6f74c3349115d62829ff434",
+  "mix_lufs": -14.2,
+  "true_peak": null,
+  "cant_fill_rows": [],
+  "notes": [
+    "row 8: PIA22123 repeated an earlier row, swapped to GSFC_20171208_Archive_e001936",
+    "row 14: zoom_nolabels.mp4 8.0-11.70 s",
+    "row 49: PIA22360 repeated an earlier row, swapped to GSFC_20171208_Archive_e000923",
+    "row 50: PIA15377 repeated an earlier row, swapped to GSFC_20171208_Archive_e000790",
+    "pickup sun_pickup_over_in_a_day_v01: lock -21.3 LUFS at splice, pickup -16.8, gain -4.5 dB",
+    "pickup sun_pickup_three_clocks_v01: lock -21.2 LUFS at splice, pickup -19.9, gain -1.4 dB"
+  ],
+  "music": "sun-brighter_score_bed_v01.mp3",
+  "rebuilt_rows": [
+    8,
+    14,
+    49,
+    50
+  ],
+  "subscribe_cue": [
+    237.2,
+    241.2
+  ],
+  "loudnorm_two_pass": {
+    "pass1": {
+      "input_i": "-14.98",
+      "input_tp": "-0.72",
+      "input_lra": "3.60",
+      "target_offset": "0.56"
+    },
+    "target": {
+      "I": -14.0,
+      "TP": -2.0
+    }
+  },
+  "swaps": {
+    "8": "GSFC_20171208_Archive_e001936",
+    "49": "GSFC_20171208_Archive_e000923",
+    "50": "GSFC_20171208_Archive_e000790"
+  },
+  "row14_in_s": 8.0
+}
