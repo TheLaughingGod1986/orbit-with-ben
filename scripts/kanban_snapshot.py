@@ -7,6 +7,11 @@ snapshot built into the page, so Claude rebuilds that snapshot a few times a day
   - OWB: every 02_Video-Projects/*/status.json in this repo (main)
 
   python3 scripts/kanban_snapshot.py <page.html> --hos <history-of-science checkout> [--out <page.html>]
+  python3 scripts/kanban_snapshot.py --hos <checkout> --db-out <dir>    # board/hos + board/owb documents for ArtifactData
+
+Since 7 Oct the page also reads `board/hos` ({updatedAt, pipeline}) and `board/owb` ({updatedAt, films}) from its own
+store, which Claude writes on a schedule with ArtifactData (file_path = the JSON files --db-out writes). That keeps
+the board current without the viewer's GitHub connector.
 
 It replaces only the two `const SNAPSHOT = …;` / `const OWB_SNAPSHOT = …;` lines, fails if either is missing, and
 prints "unchanged" when the data is the same (so nothing needs republishing).
@@ -37,14 +42,26 @@ def rebuild(html: str, hos: dict, owb: list[dict]) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("page", type=Path)
+    ap.add_argument("page", type=Path, nargs="?")
     ap.add_argument("--hos", type=Path, required=True, help="history-of-science checkout on main")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--db-out", type=Path, default=None, help="write hos.json and owb.json store documents here")
     a = ap.parse_args(argv)
     hos = json.loads((a.hos / "00_Brand/Channel-Setup/PIPELINE.json").read_text())
     if not isinstance(hos.get("films"), list):
         raise SystemExit("PIPELINE.json has no films list; not touching the page")
     owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
+    if a.db_out:
+        from datetime import datetime, timezone
+        now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        a.db_out.mkdir(parents=True, exist_ok=True)
+        (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
+        (a.db_out / "owb.json").write_text(json.dumps({"updatedAt": now, "films": owb}, ensure_ascii=False))
+        print(f"store documents: {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films)")
+        if not a.page:
+            return 0
+    if not a.page:
+        raise SystemExit("give a page file, --db-out, or both")
     old = a.page.read_text()
     new = rebuild(old, hos, owb)
     (a.out or a.page).write_text(new)
