@@ -55,6 +55,7 @@ cd 07_Content-Ops && npm run youtube:auth    # once, or when a script says the Y
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 cd 07_Content-Ops && npm run analytics:snapshot [-- --channel owb|hos]   # daily at 06:40 on the Mac (launchd/analytics-snapshot.sh, own worktree): read-only stats for every video
 cd 07_Content-Ops && npm run analytics:report    # rebuilds 05_Analytics REPORT.md + dashboard from the snapshots (no network)
+python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot <owb snapshot> --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root <checkout> --out 05_Analytics/owb/UPCOMING_SHORTS_GATE.md --add   # runs in the 06:40 job: gates every Short scheduled in the next 14 days, report only
 cd 07_Content-Ops && npx tsx --env-file=.env scripts/youtube-auth.ts --analytics owb|hos    # Ben, once per channel: read-only YouTube Analytics sign-in
 python3 scripts/owb_thread.py post -f report.md    # Chief of Staff -> Claude (draft PR #99); `read` / `wait` for the reply; `status` = unread check (exit 10)
 python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> [--words vo_words.json]   # assembler pre-delivery: VO ends vs cuts

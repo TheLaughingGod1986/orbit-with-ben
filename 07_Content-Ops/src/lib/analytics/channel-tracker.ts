@@ -33,6 +33,8 @@ export type VideoStat = {
   seconds: number;
   format: "short" | "long";
   privacy: string;
+  /** When a private video is scheduled to go public (the gate checks every Short scheduled in the next 14 days). */
+  publishAt?: string | null;
   views: number;
   likes: number;
   comments: number;
@@ -134,7 +136,7 @@ export function weekStart(day: string): string {
 type ApiVideo = {
   id: string;
   snippet?: { title?: string; publishedAt?: string };
-  status?: { privacyStatus?: string };
+  status?: { privacyStatus?: string; publishAt?: string };
   contentDetails?: { duration?: string };
   statistics?: { viewCount?: string; likeCount?: string; commentCount?: string };
 };
@@ -148,6 +150,7 @@ export function toVideoStat(item: ApiVideo): VideoStat {
     seconds,
     format: seconds > 0 && seconds <= SHORT_MAX_SECONDS ? "short" : "long",
     privacy: item.status?.privacyStatus ?? "unknown",
+    publishAt: item.status?.publishAt ?? null,
     views: Number(item.statistics?.viewCount ?? 0),
     likes: Number(item.statistics?.likeCount ?? 0),
     comments: Number(item.statistics?.commentCount ?? 0),

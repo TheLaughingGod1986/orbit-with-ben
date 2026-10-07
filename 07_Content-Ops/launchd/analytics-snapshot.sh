@@ -3,8 +3,9 @@
 #   1. Works in its own worktree (~/_desk/worktrees/analytics, detached at origin/main), never in
 #      the shared checkout, so nobody's work in progress gets swept into its commit.
 #   2. Snapshots both channels (read only) with the shared checkout's .env and node_modules.
-#   3. Rebuilds 05_Analytics/<channel>/REPORT.md and the dashboard, commits only 05_Analytics/,
-#      and pushes to main. A failed channel still lets the other one through, then notifies.
+#   3. Gates every Short scheduled in the next 14 days (gate_upcoming.py: report only, and adds any
+#      missing one to the open-gate library), rebuilds 05_Analytics/<channel>/REPORT.md and the
+#      dashboard, commits only 05_Analytics/ and library.json, and pushes to main. A failed channel still lets the other one through, then notifies.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
 main() {
   local repo="${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}"
@@ -19,8 +20,9 @@ main() {
   ln -sfn "$repo/07_Content-Ops/node_modules" 07_Content-Ops/node_modules
 
   # Anything a failed run left behind is tracker data: keep it, then catch up with main.
-  git add -A -- "$data"
-  git diff --cached --quiet || git commit -q -m "Channel tracker: data from an earlier run" -- "$data"
+  local lib=00_Brand/Channel-Setup/audits/shorts_open_library/library.json
+  git add -A -- "$data" "$lib"
+  git diff --cached --quiet || git commit -q -m "Channel tracker: data from an earlier run" -- "$data" "$lib"
   git fetch -q origin main
   if ! git rebase -q origin/main; then
     git rebase --abort
@@ -36,11 +38,17 @@ main() {
     npx tsx --env-file="$repo/07_Content-Ops/.env" scripts/analytics-snapshot.ts
   )
   local code=$?
+  # Gate every Short scheduled in the next 14 days and add any missing one to the open-gate library.
+  # Report only: a FAIL is for Claude to act on at 07:10; nothing here touches YouTube.
+  local snap="$data/owb/snapshots/$(TZ=Europe/London date +%F).json"
+  [[ -f $snap ]] && python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot "$snap" \
+    --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root "$repo" \
+    --out "$data/owb/UPCOMING_SHORTS_GATE.md" --add
   (cd 07_Content-Ops && npx tsx scripts/analytics-report.ts) || code=1
 
-  if [[ -n $(git status --porcelain -- "$data") ]]; then
-    git add -A -- "$data"
-    git commit -q -m "Channel tracker $(date +%F): daily snapshot, reports and dashboard" -- "$data"
+  if [[ -n $(git status --porcelain -- "$data" "$lib") ]]; then
+    git add -A -- "$data" "$lib"
+    git commit -q -m "Channel tracker $(date +%F): daily snapshot, reports, dashboard, upcoming Shorts gate" -- "$data" "$lib"
     local i
     for i in 1 2 3; do
       git push -q origin HEAD:main && break
