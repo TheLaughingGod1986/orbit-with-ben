@@ -337,7 +337,7 @@ def handover(new, rows, at: dt.datetime) -> None:
         later = [NAMES.get(a, a) for a in chain()[chain().index(new) + 1:]]
         ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** ({states}). "
                     f"{'Next in line: ' + ', '.join(later) + '. ' if later else ''}"
-                    f"Grok Bot takes back over by itself once the app is working again.")
+                    f"Grok Bot takes back over by itself once it posts on the thread again.")
     if ok:
         write_json(d("current.json"), {"agent": new, "since": iso(at)})
 
