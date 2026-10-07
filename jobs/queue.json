@@ -1,5 +1,5 @@
 {
-  "next_id": 13,
+  "next_id": 14,
   "jobs": [
     {
       "id": "J0001",
@@ -427,6 +427,32 @@
       "history": [
         {
           "at": "2026-10-07T16:19Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0013",
+      "title": "Why the relay's handover line isn't posting",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "The relay's handover line (\"Chief relay: **Cursor is acting Chief** ...\") still hasn't reached #99 as of 16:51Z, after\n600b0b4 (gh fallback) and the PATH reload. Find out why and fix it if it's on the Mini side. Read-only apart from the fix.\n1. tail -60 ~/Library/Logs/chief-relay.log   (paste the lines from the last two runs: \"chain:\", \"notify failed\", \"grok check\")\n2. ls -l ~/_desk/state/chief/ ; cat ~/_desk/state/chief/current.json  (if current.json exists, a post was recorded)\n3. cd ~/YouTube/orbit-with-ben && git log -1 --oneline   (the repo copy notify uses; needs 600b0b4 or later)\n4. env -i HOME=$HOME PATH=/opt/homebrew/bin:/usr/bin:/bin /usr/bin/python3 scripts/owb_thread.py status\n   (does the thread script authenticate in a launchd-like env? don't print the token)\n5. If it's a Mini-side cause (stale copy, missing current.json removal, PATH), fix it and say what; if it's a code bug,\n   report the exact error line and leave the code to Claude.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T16:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T16:51Z",
           "by": "claude",
           "what": "added"
         }
