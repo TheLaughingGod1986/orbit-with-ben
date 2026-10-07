@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
+| J0002 | cloud | claimed | claude | 2026-10-07T21:14Z | Review the Sun 022 first cut | 6036709461 |
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
 
 Recently finished:
