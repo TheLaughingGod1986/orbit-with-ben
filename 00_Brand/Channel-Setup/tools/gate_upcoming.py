@@ -9,6 +9,7 @@ weren't compared against them. The Mini's 06:40 tracker job runs this after its 
   - its export file from social/UPLOADS.json (repo-relative, resolved under --media-root)
   - `gate_shorts_open.py check <file> --air-date <London date> --id <id>`
   - with --add, a Short missing from the library is registered as `scheduled` (so later Shorts are compared to it)
+  - a FAIL that a recorded waiver covers exactly (<export stem>_gate.json beside the file) reads "PASS (waived)"
 
 It writes a Markdown report (--out) and always exits 0: it reports, it never blocks the tracker. Claude reads the
 report at 07:10 and decides on any FAIL (reschedule or replace a scheduled Short; nothing here touches YouTube).
@@ -62,6 +63,28 @@ def in_library(vid: str) -> bool:
     return any(e["id"] == vid for e in json.loads(LIB_JSON.read_text()).get("entries", []))
 
 
+def fail_lines(output: str) -> list[str]:
+    """The FAIL reasons in a `gate_shorts_open.py check` printout (indented lines, not the file's summary line)."""
+    return [ln.strip()[len("FAIL"):].strip() for ln in output.splitlines() if ln.startswith(" ") and ln.strip().startswith("FAIL ")]
+
+
+def waived(export: Path, fails: list[str]) -> list[dict] | None:
+    """Waivers recorded beside the export (<stem>_gate.json, `waivers: [{fail, waived_by}]`) that cover every current
+    FAIL exactly. A waiver is for one exact finding on one exact file: a changed number means a changed cut, so it
+    no longer counts. Returns the waivers used, or None if any FAIL is not covered."""
+    side = export.with_name(export.stem + "_gate.json")
+    if not fails or not side.exists():
+        return None
+    try:
+        data = json.loads(side.read_text())
+    except ValueError:
+        return None
+    records = data if isinstance(data, list) else [data]
+    book = {w.get("fail", "").strip(): w for r in records for w in r.get("waivers", []) or []}
+    used = [book.get(f) for f in fails]
+    return used if all(used) else None
+
+
 def run(cmd: list[str]) -> tuple[int, str]:
     p = subprocess.run(cmd, capture_output=True, text=True)
     return p.returncode, (p.stdout + p.stderr).strip()
@@ -104,13 +127,16 @@ def main(argv: list[str] | None = None) -> int:
                     if code:
                         details.append(f"### {r['id']}: library add failed\n\n```\n{out[-1500:]}\n```\n")
                 code, out = run([sys.executable, str(GATE), "check", str(f), "--air-date", r["air"], "--id", r["id"]])
-                verdict = "PASS" if code == 0 else "**FAIL**"
-                if code:
+                used = waived(f, fail_lines(out)) if code else None
+                verdict = "PASS" if code == 0 else ("PASS (waived)" if used else "**FAIL**")
+                if used:
+                    details.append(f"### {r['id']}: FAIL waived\n\n" + "\n".join(f"- {w['fail']}: waived by {w.get('waived_by', '?')}" for w in used) + "\n")
+                elif code:
                     details.append(f"### {r['id']}: FAIL\n\n```\n{out[-3000:]}\n```\n")
             lines.append(f"| {r['air']} {london_time(r['publishAt'])} | [{r['title']}](https://youtu.be/{r['id']}) `{r['id']}` | {'yes' if lib else '**no**'} | {verdict} |")
         lines.append("")
         if details:
-            lines += ["## Needs a look", ""] + details
+            lines += ["## Details", ""] + details
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text("\n".join(lines) + "\n")
     print(f"gate_upcoming: {len(rows)} scheduled Short(s) checked -> {a.out}")

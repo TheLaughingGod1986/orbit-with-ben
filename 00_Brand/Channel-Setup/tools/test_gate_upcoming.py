@@ -54,5 +54,25 @@ class Upcoming(unittest.TestCase):
             self.assertIn("missing.mp4", text)
 
 
+class Waivers(unittest.TestCase):
+    OUT = ("FAIL  bd_v04.mp4  dur=26.9s  visor=0.0048\n"
+           "   FAIL  Orbit in frame at 0 s (visor 0.0048 \u2265 0.003) \u2014 picture-first lock\n"
+           "   warn  picture barely changes in the first second (motion 0.8 < 10)\n")
+
+    def test_reads_only_the_indented_fail_reasons(self):
+        self.assertEqual(g.fail_lines(self.OUT), ["Orbit in frame at 0 s (visor 0.0048 \u2265 0.003) \u2014 picture-first lock"])
+
+    def test_a_recorded_waiver_covers_the_exact_fail_only(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "bd_v04.mp4"
+            f.write_bytes(b"")
+            fail = g.fail_lines(self.OUT)[0]
+            (Path(d) / "bd_v04_gate.json").write_text(json.dumps([{"waivers": [{"fail": fail, "waived_by": "Claude 5979615078"}]}]))
+            self.assertEqual(g.waived(f, [fail])[0]["waived_by"], "Claude 5979615078")
+            self.assertIsNone(g.waived(f, [fail.replace("0.0048", "0.0061")]))  # a new cut: the old waiver no longer counts
+            self.assertIsNone(g.waived(f, [fail, "Short runs 41 s"]))           # every FAIL must be covered
+            self.assertIsNone(g.waived(Path(d) / "other.mp4", [fail]))            # no sidecar, no waiver
+
+
 if __name__ == "__main__":
     unittest.main()
