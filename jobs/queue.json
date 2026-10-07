@@ -1,5 +1,5 @@
 {
-  "next_id": 10,
+  "next_id": 11,
   "jobs": [
     {
       "id": "J0001",
@@ -283,6 +283,32 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T13:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T13:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0010",
+      "title": "Sun 022: VO pickup 'This one was over in a day'",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "One VO pickup for Sun 022 at \"In a day, it is over.\" (row 11). Claude's ruling after Gemini J0008 (795bb09): quiet\nprominences last weeks, so the line now says \"this one\", the prominence on screen (PIA22123, one day per NASA).\n\n    desk-lock elevenlabs -- python3 04_Audio/tools/vo_take.py --text \"This one was over in a day.\" \\\n        --out 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/02_Voiceover --stem sun_pickup_over_in_a_day_v01 \\\n        --order 6039537604 --dry-run      # then again without --dry-run\n\n- PASS only if Scribe reads the line exactly. If not, report and stop; no retake without Claude.\n- J0001 lays it over \"In a day, it is over.\" in row 11 (match loudness and room tone at both joins), as for J0007.\n",
+      "ref": "6039537604",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
       "status": "open",
       "by": "",
       "since": "",
