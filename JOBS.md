@@ -6,7 +6,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0021 | mini | claimed | cursor | 2026-10-07T21:32Z | Sun 022 Short Mon 19: brighter as it runs out of fuel |  |
 | J0022 | mini | open | – | – | Sun 022 Short Fri 23: dimmer young Sun |  |
 | J0023 | cloud | open | – | – | Sun 022 upload text: description, chapters, credits, captions, pinned comment |  |
 | J0024 | mini | open | – | – | 022 edit · Sun 022 v05: row 49 off the sunspot picture |  |
@@ -14,6 +13,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0021 done: Sun 022 Short Mon 19: brighter as it runs out of fuel (v01 built 1a710fb (gate PASS, motion warn). Claude reviewed in #6046378537; fixes go in J0025. Not uploaded.)
 - J0020 done: Sun 022 thumbnails A/B/C (022 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 (+168x94 sheet) for Claude review)
 - J0019 done: Sun 022 v04 polish: three repeat swaps, row 14 check (v04 rendered: iCloud OWB UAT/sun_first_cut_v04/; rows 8/49/50 swapped (e001936, e000923, e000790); row 14 in at 8.0 s; -14.2 LUFS / -1.7 dBTP; clip_check PASS; review_v04 in git)
 - J0018 done: Review the Sun 022 cut v03 (v03 PASS: frame 0/end prominence off the limb, clocks right, masks and crops clean, young-Sun grade warm, -14.2 LUFS / -1.7 dBTP, clip_check PASS. Polish (rows 8/49/50 repeats, row 14 check) in J0019.)
@@ -23,4 +23,3 @@ Recently finished:
 - J0014 done: Sun 022 score bed, full length (525 s) (Sun 022 score bed generated: 05_Music/sun-brighter_score_bed_v01.mp3 on the Mini (not in git), 525.0 s, -13.8 LUFS, no silent gaps. Cost ~7,219 ElevenLabs credits (70,157 -> 62,938, above the 20k floor). Next credit reset: 30 Oct 2026 10:50 UTC (Creator plan). Plan JSON committed 48c93e7.)
 - J0013 done: Why the relay's handover line isn't posting (Mini-side: launchd's zsh -lc python3 resolves to python.org 3.13, which had no etc/openssl/cert.pem, so every GitHub call failed CERTIFICATE_VERIFY_FAILED (grok check + notify). Linked cert.pem -> certifi cacert.pem (the Install Certificates step). Verified 3.13 reads the thread; handover should post on the 19:30 run.)
 - J0012 done: Sun 022: Omni Orbit beats, rows 67 and 81 (Both Omni takes made (Vertex global, trial credit). Credit before GBP 25.59, after GBP 25.59 (17:28Z; billing lags, cost not shown yet). Row 81 usable 0.5-6 s (Orbit grows too large after ~6 s). Row 67: first submit content_blocked at submit (no take), one plainer resubmit made the take; hand lift 4-10 s; the orange disc reads a little flat. Clips local: 04_Generated-Clips/01_Raw/omni_v01/. Claude to pick keep or fallback per row.)
-- J0011 cancelled: Sun 022 v02 assets: score bed + SVS 5649 re-fetch (Needs Ben: ElevenLabs pool 70,157; the 525 s Sun bed costs ~21,800 (Saturn 540 s = 22,385 on 1 Oct), leaving ~48,400, under the 50k floor. Top-up or credit reset needed, or Claude shortens/re-scopes the bed.)
