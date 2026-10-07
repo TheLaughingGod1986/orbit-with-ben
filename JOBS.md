@@ -8,11 +8,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0001 | mini | open | – | – | 022 edit · Sun 022 first cut v01 | 6036709461 |
 | J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0009 | mini | claimed | cursor | 2026-10-07T15:10Z | Chief relay checks on the Mini |  |
 | J0010 | mini | open | – | – | Sun 022: VO pickup 'This one was over in a day' | 6039537604 |
 
 Recently finished:
 
+- J0009 done: Chief relay checks on the Mini (done)
 - J0008 done: Gemini: Sun 022 pictures vs words, and the clock numbers (GEMINI_PICTURE_CHECK_v01.md: 11 of 97 GODDARD/NASA rows flagged; clocks 1-2 confirmed, clock 3 (prominence 'days') needs wording)
 - J0007 done: Sun 022: VO pickup 'Three clocks' at 457 s (Take sun_pickup_three_clocks_v01 PASS: Scribe 'Three clocks. Only one of them answers the title' 100%, 3.12 s, LUFS -19.9, 49 chars (pool 70,193). Audio on the Mini at 022/02_Voiceover/sun_pickup_three_clocks_v01.wav (+ .mp3).)
 - J0006 done: Install the Chief relay on the Mini (Relay installed and running (launchd com.owb.chief-relay, pid 59393, first run 13:08 woke Cursor); ~/_desk/bin script and LaunchAgents plist match the repo. status: Grok down (no heartbeat), Cursor UP, Codex UP. Codex 0.160.0 has no --full-auto: installed plist now sets CODEX_FLAGS='exec -s workspace-write --approve-for-me -c sandbox_workspace_write.network_access=true --add-dir "<HOS>" --add-dir ~/_desk'. Also set CODEX_BIN=~/.npm-global/bin/codex (launchd's zsh -lc PATH missed it: log said codex 'CLI not installed') and HOS_REPO='~/YouTube/History Of Science' (default history-of-science doesn't exist). Same three via launchctl setenv so they apply without a reload. Old cursor-covers-chief deleted. Log tail: chain chief=down | cursor=UP | codex=down (CLI not installed) [pre-fix]; run: cursor (cap 1500s).)
