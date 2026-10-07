@@ -6,7 +6,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0025 | mini | claimed | cursor | 2026-10-07T22:07Z | Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb |  |
 | J0026 | mini | open | – | – | Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line |  |
 | J0027 | mini | open | – | – | 028 topic · 028 topic: neighbour pass for Gliese 710 (+2 backups) |  |
 | J0028 | gemini | open | – | – | 028 SOURCES: Gliese 710 flyby (Gemini) |  |
@@ -14,6 +13,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0025 done: Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb (Mon 19 Short v02: 13778 moving open+loop, 9:16 fill, clean vertical climb; gate PASS no warnings (motion 10.65); not uploaded)
 - J0024 done: Sun 022 v05: row 49 off the sunspot picture (done)
 - J0023 done: Sun 022 upload text: description, chapters, credits, captions, pinned comment (Upload package draft in 022/11_Upload-Package (description, chapters, credits, captions, tags, pinned comment, draft manifest).)
 - J0022 done: Sun 022 Short Fri 23: dimmer young Sun (v01 built 1181b2d: 23.2 s, gate PASS no warnings (motion 20.8, visor 0.0007). Export 10_Shorts/fri23_dimmer_sun/06_Final-Exports/fri23_dimmer_sun_short_v01.mp4 on the Mini. Awaiting Claude final OK. Not uploaded.)
@@ -23,4 +23,3 @@ Recently finished:
 - J0018 done: Review the Sun 022 cut v03 (v03 PASS: frame 0/end prominence off the limb, clocks right, masks and crops clean, young-Sun grade warm, -14.2 LUFS / -1.7 dBTP, clip_check PASS. Polish (rows 8/49/50 repeats, row 14 check) in J0019.)
 - J0017 done: Sun 022 cut v03: fixes from the v02 review (Cut v03 delivered: iCloud OWB UAT/sun_first_cut_v03/ (518.7 s), review_v03/ in git (9a7367d, dfc52eb). Blocking fixes 1-7 in; row 90 mask now sky-coloured. clip_check --repeat-ok 6 PASS; -14.2 LUFS, -1.7 dBTP on the final mp4. Not done: non-blocking fixes 8 (repeats rows 8/49/50) and 9 (row 14 check).)
 - J0016 cancelled: Review the Sun 022 cut v03 ()
-- J0015 cancelled: Sun 022 cut v03: fixes from the v02 review ()
