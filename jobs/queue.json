@@ -1,5 +1,5 @@
 {
-  "next_id": 5,
+  "next_id": 6,
   "jobs": [
     {
       "id": "J0001",
@@ -90,6 +90,32 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T11:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T11:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0005",
+      "title": "Decide: install the Cursor worker",
+      "needs": "ben",
+      "repo": "owb",
+      "body": "Decide whether to install the Cursor worker (scripts/mini/com.owb.cursor-worker.plist): it lets Cursor run commands on the Mini unattended every 30 min, under the written rules, so jobs move while Grok Bot is out. Install commands are in the plist header.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
       "status": "open",
       "by": "",
       "since": "",
