@@ -6,11 +6,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0015 | mini | open | – | – | 022 edit · Sun 022 cut v03: fixes from the v02 review | 6045051575 |
 
 Recently finished:
 
 - J0016 cancelled: Review the Sun 022 cut v03 ()
+- J0015 cancelled: Sun 022 cut v03: fixes from the v02 review ()
 - J0014 done: Sun 022 score bed, full length (525 s) (Sun 022 score bed generated: 05_Music/sun-brighter_score_bed_v01.mp3 on the Mini (not in git), 525.0 s, -13.8 LUFS, no silent gaps. Cost ~7,219 ElevenLabs credits (70,157 -> 62,938, above the 20k floor). Next credit reset: 30 Oct 2026 10:50 UTC (Creator plan). Plan JSON committed 48c93e7.)
 - J0013 done: Why the relay's handover line isn't posting (Mini-side: launchd's zsh -lc python3 resolves to python.org 3.13, which had no etc/openssl/cert.pem, so every GitHub call failed CERTIFICATE_VERIFY_FAILED (grok check + notify). Linked cert.pem -> certifi cacert.pem (the Install Certificates step). Verified 3.13 reads the thread; handover should post on the 19:30 run.)
 - J0012 done: Sun 022: Omni Orbit beats, rows 67 and 81 (Both Omni takes made (Vertex global, trial credit). Credit before GBP 25.59, after GBP 25.59 (17:28Z; billing lags, cost not shown yet). Row 81 usable 0.5-6 s (Orbit grows too large after ~6 s). Row 67: first submit content_blocked at submit (no take), one plainer resubmit made the take; hand lift 4-10 s; the orange disc reads a little flat. Clips local: 04_Generated-Clips/01_Raw/omni_v01/. Claude to pick keep or fallback per row.)
@@ -19,4 +19,3 @@ Recently finished:
 - J0009 done: Chief relay checks on the Mini (done)
 - J0008 done: Gemini: Sun 022 pictures vs words, and the clock numbers (GEMINI_PICTURE_CHECK_v01.md: 11 of 97 GODDARD/NASA rows flagged; clocks 1-2 confirmed, clock 3 (prominence 'days') needs wording)
 - J0007 done: Sun 022: VO pickup 'Three clocks' at 457 s (Take sun_pickup_three_clocks_v01 PASS: Scribe 'Three clocks. Only one of them answers the title' 100%, 3.12 s, LUFS -19.9, 49 chars (pool 70,193). Audio on the Mini at 022/02_Voiceover/sun_pickup_three_clocks_v01.wav (+ .mp3).)
-- J0006 done: Install the Chief relay on the Mini (Relay installed and running (launchd com.owb.chief-relay, pid 59393, first run 13:08 woke Cursor); ~/_desk/bin script and LaunchAgents plist match the repo. status: Grok down (no heartbeat), Cursor UP, Codex UP. Codex 0.160.0 has no --full-auto: installed plist now sets CODEX_FLAGS='exec -s workspace-write --approve-for-me -c sandbox_workspace_write.network_access=true --add-dir "<HOS>" --add-dir ~/_desk'. Also set CODEX_BIN=~/.npm-global/bin/codex (launchd's zsh -lc PATH missed it: log said codex 'CLI not installed') and HOS_REPO='~/YouTube/History Of Science' (default history-of-science doesn't exist). Same three via launchctl setenv so they apply without a reload. Old cursor-covers-chief deleted. Log tail: chain chief=down | cursor=UP | codex=down (CLI not installed) [pre-fix]; run: cursor (cap 1500s).)
