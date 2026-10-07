@@ -117,9 +117,9 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 
 Ben: the Chief of Staff is in charge, and when it's down or out of credit the next one in line takes over. **Chain: Grok Bot (`chief`) → Cursor (`cursor`) → Codex (`codex`).** The first one that is up is the acting Chief. `scripts/chief_relay.py` runs it on the Mini (launchd `com.owb.chief-relay`, every 30 min, 08:00–22:00):
 
-- **Grok Bot** is an app with no CLI, so nobody can prompt it to report in. It counts as up when the app has written new session files at two relay runs in a row (30 min apart), so a single failed out-of-credit attempt doesn't count, or when it has run `jobs.py … --agent chief` in the last 3 hours. While Grok is up the relay does nothing.
+- **Grok Bot** is an app with no CLI, so nobody can prompt it to report in, and its app files only show the app is open, not that it has credit. It counts as up when it has posted on the studio thread as plain "[Chief]" in the last 3 hours, or run `jobs.py … --agent chief`. Cursor and Codex posts are tagged "[Cursor]"/"[Codex]" or say "covering", so they don't count. While Grok is up the relay does nothing.
 - **Cursor or Codex:** otherwise the relay wakes the first one that's up for **one** job (25-minute cap). A run that ends with out of credit, usage limit or signed out marks that agent down for 3 hours, and the same run passes the job to the next in line.
-- **Grok takes back over by itself:** once the app is working again it's Chief again, and the others stand down. Nobody flips anything by hand.
+- **Grok takes back over by itself:** its first post on the thread after its credit returns makes it Chief again, and the others stand down. Nobody flips anything by hand.
 - Each change of Chief is posted once on the thread ("Chief relay: … is acting Chief"). If all three are down it says so once; top-ups stay Ben's call.
 - Commands: `chief_relay.py status` (who's Chief and why), `down <agent> --reason … [--until …]`, `up <agent>`, `seen chief`. Pause: `touch ~/_desk/state/chief-relay.pause`.
 - **Gemini isn't in the chain.** It's the checker and can't run the Mini, so whoever is acting Chief runs it (`agy`) for every job that `--needs gemini`. `status` shows it on its own line.

@@ -12,9 +12,9 @@ takes the run.
 
 How "up" is decided:
   chief   Grok Bot is a desktop app with no CLI; the relay can't start it, prompt it or see its credit. It counts as
-          up when the app has been working at two relay runs in a row (it writes session files under
-          ~/Library/Application Support/Grok Bot/dune-reliability/sessions while it works; one blip, like a failed
-          out-of-credit attempt, isn't enough), or when it has run `jobs.py ... --agent chief` in the last 180 min.
+          up when it has posted on the studio thread as plain "[Chief]" in the last 180 min (Cursor and Codex posts
+          are tagged, and the relay's own lines are skipped), or has run `jobs.py ... --agent chief` in that time.
+          Its app files are no use: they are a heartbeat written every minute while the app is open, credit or not.
           A `down` mark on Grok is cleared by either signal seen after the mark: Grok working again is proof it is back.
   cursor, codex
           up unless their CLI is missing or they are marked down. A run whose output says out of credit, over the
@@ -162,43 +162,42 @@ def cli_spec(agent: str):
     return (b, shlex.split(flags)) if b else None
 
 
-GROK_SESSIONS = pathlib.Path(os.environ.get("GROK_SESSIONS_DIR",
-                                            HOME / "Library" / "Application Support" / "Grok Bot" / "dune-reliability" / "sessions"))
-APP_FRESH_MIN = 45  # a little over the relay's 30-min interval
+# Grok Bot is an app with no CLI, and its own files can't tell working from idle: dune-reliability/sessions holds a
+# process heartbeat the app rewrites every minute while it's open, credit or not (Cursor, #99 6040044537). What Grok
+# does when it works is post on the studio thread as plain "[Chief]". Cursor and Codex posts carry "[Cursor]" /
+# "[Codex]" or "... covering", and the relay's own lines say "Chief relay:", so those don't count.
+NOT_GROK = re.compile(r"\[(?:Cursor|Codex)\]|\b(?:Cursor|Codex) covering|Chief relay:|watchdog|studio\.py stale", re.I)
 
 
-def grok_app_newest():
-    """Epoch seconds of the newest file the Grok Bot app wrote under its sessions folder, or None."""
+def fetch_comments(since: dt.datetime) -> list:
+    """Studio-thread comments updated since `since`, via owb_thread.py's own auth (GH_TOKEN or `gh auth token`)."""
+    sys.path.insert(0, str(OWB / "scripts"))
+    import owb_thread  # noqa: E402
+    return owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
+
+
+def note_grok_posts(at: dt.datetime) -> None:
+    """Once per relay run: the time of Grok's newest own post on the thread. If the thread can't be read, the last
+    known time stays."""
+    fresh = int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))
+    prev = read_json(d("grok_thread.json")) or {}
     try:
-        return max((f.stat().st_mtime for f in GROK_SESSIONS.rglob("*") if f.is_file()), default=None)
-    except OSError:
+        posts = fetch_comments(at - dt.timedelta(minutes=fresh))
+    except Exception as e:  # network, auth: keep what we knew
+        log(f"grok check: thread not readable ({e.__class__.__name__}); keeping the last known post time")
+        return
+    times = [c["created_at"] for c in posts
+             if c.get("body", "").lstrip().startswith("[Chief]") and not NOT_GROK.search(c["body"][:400])]
+    last = max(times + ([prev["last_post"]] if prev.get("last_post") else []), default=None)
+    write_json(d("grok_thread.json"), {"checked": iso(at), "last_post": last})
+
+
+def grok_post_age(at: dt.datetime, after=None):
+    """Minutes since Grok's newest own thread post (as of the last relay run), or None; only posts after `after`."""
+    last = (read_json(d("grok_thread.json")) or {}).get("last_post")
+    if not last or (after and parse(last) <= after):
         return None
-
-
-def note_grok_app(at: dt.datetime) -> None:
-    """Once per relay run: did the Grok Bot app write something new since the last run, and did it at the run before
-    too? Grok is an app with no CLI, so this is how the relay sees it come back. It takes new writes at two runs in a
-    row (30 min apart), so one failed out-of-credit attempt doesn't count as Grok being back."""
-    newest = grok_app_newest()
-    prev = read_json(d("grok_app.json")) or {}
-    recent = prev.get("checked") and (at - parse(prev["checked"])) <= dt.timedelta(minutes=90)
-    age = None if newest is None else int((at.timestamp() - newest) // 60)
-    new_write = newest is not None and (not recent or newest > (prev.get("newest") or 0))
-    active = new_write and age <= APP_FRESH_MIN
-    write_json(d("grok_app.json"), {"checked": iso(at), "newest": newest, "age_min": age, "active": active,
-                                    "prev_active": bool(recent and prev.get("active"))})
-
-
-def grok_app_up(after=None) -> tuple:
-    """(up, why) from the app's session files, as of the last relay run (and only if seen after `after`)."""
-    rec = read_json(d("grok_app.json")) or {}
-    if not rec.get("active"):
-        return False, ""
-    if after and parse(rec["checked"]) <= after:
-        return False, ""
-    if not rec.get("prev_active"):
-        return False, f"app worked {rec.get('age_min')} min ago, once (needs two relay checks in a row)"
-    return True, f"app working (last session file {rec.get('age_min')} min ago, two checks in a row)"
+    return int((at - parse(last)).total_seconds() // 60)
 
 
 def state_of(agent: str, at: dt.datetime) -> tuple:
@@ -210,7 +209,7 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
         beat = last_seen(agent)
         if until and at >= until:
             mark_up(agent)
-        elif agent == "chief" and ((beat and beat > since) or grok_app_up(after=since)[0]):
+        elif agent == "chief" and ((beat and beat > since) or grok_post_age(at, after=since) is not None):
             mark_up(agent)  # Grok has worked since it was marked down: it's back
         else:
             return False, f"marked down: {mark.get('reason') or 'no reason given'}" + (f" (retry after {mark['until']})" if until else "")
@@ -219,10 +218,11 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
         beat = last_seen(agent)
         if beat and int((at - beat).total_seconds() // 60) <= fresh:
             return True, f"ran jobs.py {int((at - beat).total_seconds() // 60)} min ago"
-        up, why = grok_app_up()
-        if up:
-            return True, why
-        return False, why or ("app quiet" + (f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else ""))
+        age = grok_post_age(at)
+        if age is not None and age <= fresh:
+            return True, f"posted on the thread {age} min ago"
+        return False, "no Grok post on the thread in the last {} h".format(fresh // 60) + (
+            f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else "")
     if agent in ("cursor", "codex"):
         return (True, "ready") if cli_spec(agent) else (False, "CLI not installed")
     return False, "unknown agent"
@@ -359,7 +359,7 @@ def cmd_run(at: dt.datetime) -> int:
 
 
 def run_locked(at: dt.datetime) -> int:
-    note_grok_app(at)
+    note_grok_posts(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
     retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
     while True:
