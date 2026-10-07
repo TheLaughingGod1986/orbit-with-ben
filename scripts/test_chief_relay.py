@@ -21,7 +21,7 @@ class Relay(unittest.TestCase):
         notify.write_text(f'#!/bin/sh\necho "$1" >> "{self.posts}"\n')
         notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
         self.env = dict(os.environ)
-        os.environ.update({"CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex"})
+        os.environ.update({"CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex"})
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)

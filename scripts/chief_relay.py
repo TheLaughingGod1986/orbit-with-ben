@@ -27,13 +27,13 @@ How "up" is decided:
   python3 scripts/chief_relay.py down chief --reason "out of credit" [--until 2026-10-12T09:00]
   python3 scripts/chief_relay.py up cursor                      # clear a down mark
 
-`run` does nothing while Grok is Chief (Grok drives itself), outside 08:00-22:00 local, while
+`run` does nothing while Grok is Chief (Grok drives itself), outside CHIEF_HOURS (default: never), while
 ~/_desk/state/chief-relay.pause exists, or while a previous run holds the lock. Otherwise it wakes the acting
 CLI Chief for ONE job (25-minute cap), then exits. Every change of Chief is posted to the studio thread once.
 
 State (on the Mini, never in git): ~/_desk/state/chief/  (heartbeat/<agent>, down/<agent>.json, current.json).
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
-Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (8-22), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
+Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
 CHIEF_RETRY_H (3), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN / CODEX_FLAGS (see cli_spec), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
@@ -346,7 +346,7 @@ def cmd_run(at: dt.datetime) -> int:
     if (STATE / "chief-relay.pause").exists():
         log("skip: paused")
         return 0
-    lo, hi = (int(x) for x in os.environ.get("CHIEF_HOURS", "8-22").split("-"))
+    lo, hi = (int(x) for x in os.environ.get("CHIEF_HOURS", "0-24").split("-"))
     h = dt.datetime.now().hour
     if not lo <= h < hi:
         log(f"skip: outside {lo}-{hi}")
@@ -392,7 +392,11 @@ def run_locked(at: dt.datetime) -> int:
             log("Grok Bot is Chief: nothing to do")
             return 0
         last_wake = last_seen(who)
-        sweep = not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120")))
+        # Overnight (Ben, 7 Oct: carry on overnight) agents are woken for queued jobs only; the 2-hourly sweep for
+        # thread/desk tasks runs in the day, so an empty night costs no credit.
+        slo, shi = (int(x) for x in os.environ.get("CHIEF_SWEEP_HOURS", "8-22").split("-"))
+        sweep = slo <= dt.datetime.now().hour < shi and (
+            not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
         if not queue_has_work(who) and not sweep:
             log(f"nothing queued for {who}; last woken {int((at - last_wake).total_seconds() // 60)} min ago: not waking it")
             return 0

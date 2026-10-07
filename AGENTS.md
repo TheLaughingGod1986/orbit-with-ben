@@ -115,7 +115,7 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 
 ## Chief relay (7 Oct 2026)
 
-Ben: the Chief of Staff is in charge, and when it's down or out of credit the next one in line takes over. **Chain: Grok Bot (`chief`) → Cursor (`cursor`) → Codex (`codex`).** The first one that is up is the acting Chief. `scripts/chief_relay.py` runs it on the Mini (launchd `com.owb.chief-relay`, every 10 min, 08:00–22:00; an agent is woken only when a job is queued, plus a sweep every 2 h for thread or desk tasks):
+Ben: the Chief of Staff is in charge, and when it's down or out of credit the next one in line takes over. **Chain: Grok Bot (`chief`) → Cursor (`cursor`) → Codex (`codex`).** The first one that is up is the acting Chief. `scripts/chief_relay.py` runs it on the Mini (launchd `com.owb.chief-relay`, every 10 min, round the clock (Ben, 7 Oct); an agent is woken only when a job is queued, plus a daytime sweep every 2 h for thread or desk tasks):
 
 - **Grok Bot** is an app with no CLI, so nobody can prompt it to report in, and its app files only show the app is open, not that it has credit. It counts as up when it has posted on the studio thread as plain "[Chief]" in the last 3 hours, or run `jobs.py … --agent chief`. Cursor and Codex posts are tagged "[Cursor]"/"[Codex]" or say "covering", so they don't count. While Grok is up the relay does nothing.
 - **Cursor or Codex:** otherwise the relay wakes the first one that's up for **one** job (25-minute cap). A run that ends with out of credit, usage limit or signed out marks that agent down for 3 hours, and the same run passes the job to the next in line.
