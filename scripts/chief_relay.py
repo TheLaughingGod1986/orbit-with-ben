@@ -191,8 +191,11 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
 4. Do that one task, following that repo's AGENTS.md exactly: claim before work (studio.py claim --git, or the HOS
    desk's own rule), commit only from a clean worktree, never spend money or credit beyond the written rules, never
    upload, schedule, retitle or change privacy on YouTube unless Claude's message for that task says to, never delete
-   anything on the NAS, and never print secrets. You drive Gemini (`agy`) for fact checks, as the Chief does. If a step
-   needs Ben (money, a sign-in, a decision), say so in your report and stop.
+   anything on the NAS, and never print secrets. If a step needs Ben (money, a sign-in, a decision), say so in your
+   report and stop.
+   A job that needs `gemini` is a facts-and-numbers check: run it through Gemini with the `agy` CLI (AGENTS.md "Who does
+   what"), claim it as {agent}/gemini, and commit Gemini's findings as the job says. You check Gemini's output is complete;
+   you don't rewrite its findings or any spoken line.
 5. Report: OWB with  python3 scripts/owb_thread.py post "..."  (start with "{name} covering"); HOS with
    hos_desk.py post --from {agent} --to claude ...  Say what you did, what's next, and what blocks you.
 If a job will take longer than about 20 minutes, do a clean stopping point, release or renew your claim, report, and stop.
@@ -310,7 +313,21 @@ def cmd_status(at: dt.datetime) -> int:
     for a, up, why in rows:
         print(f"{'>' if a == who else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
     print(f"Chief: {NAMES.get(who, who) if who else 'nobody'}")
+    print(gemini_line())
     return 0
+
+
+def gemini_line() -> str:
+    """Gemini is the facts-and-numbers checker, not in the Chief chain: it can't run the Mini, so the acting Chief runs
+    it (`agy`) for every job that needs gemini. Show whether it's installed and how much is waiting for it."""
+    b = os.environ.get("AGY_BIN") or shutil.which("agy")
+    try:
+        q = json.loads((OWB / "jobs" / "queue.json").read_text())["jobs"]
+        waiting = sum(1 for j in q if j.get("needs") == "gemini" and j.get("status") in ("open", "claimed"))
+        jobs = f"{waiting} gemini job{'s' if waiting != 1 else ''} waiting"
+    except (OSError, ValueError, KeyError):
+        jobs = "queue not found"
+    return (f"Checker: Gemini ({'agy found' if b else 'agy NOT found on PATH'}); run by the acting Chief; {jobs}")
 
 
 def main(argv=None) -> int:

@@ -36,6 +36,13 @@ class Next(unittest.TestCase):
         self.assertEqual(j["by"], "cursor")
         self.assertIn("took over a stalled claim by chief", j["history"][-1]["what"])
 
+    def test_quick_jobs_go_before_a_long_released_one(self):
+        d = queue(("mini", "first cut", {"eta_min": 720}), ("mini", "pickup", {"eta_min": 30}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        self.assertEqual(j["title"], "pickup")
+        jobs.do_done(j, "cursor", "ok", T0)
+        self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "first cut")
+
     def test_finish_what_you_hold_first(self):
         d = queue(("mini", "a", {}), ("mini", "b", {}))
         jobs.do_next(d, "cursor", {"mini"}, T0)

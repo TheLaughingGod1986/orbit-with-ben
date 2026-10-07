@@ -109,7 +109,7 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 | Claude | `cloud,any` |
 
 - **Claude adds every task as a job:** `jobs.py add --needs mini|gemini|cloud|ben|any --title … --body-file … [--film NNN --stage …] [--after Jnnnn] [--ref <thread comment>] --by claude --git`. The thread carries the discussion and links the job id.
-- **Every agent, at the start of every session and every loop:** `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. It returns the job you already hold, or claims the oldest one you can do. Exit 10 means nothing is waiting. Then `done`, `block --reason` (anything needing Ben), `release --note` at a stopping point, or `renew --eta N` if you're still on it.
+- **Every agent, at the start of every session and every loop:** `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. It returns the job you already hold, or claims the next one you can do: quick jobs (`--eta` 60 or less) first, then oldest first. Exit 10 means nothing is waiting. Then `done`, `block --reason` (anything needing Ben), `release --note` at a stopping point, or `renew --eta N` if you're still on it.
 - **A claim past its ETA is stalled,** and the next able agent takes it over. So don't sit on a claim; release it if you stop.
 - A job with `--film/--stage` claims that board stage too, so the board and the queue always agree.
 
@@ -122,6 +122,7 @@ Ben: the Chief of Staff is in charge, and when it's down or out of credit the ne
 - **Grok takes back over by itself:** its next `jobs.py` run makes it Chief again, and the others stand down. Nobody flips anything by hand.
 - Each change of Chief is posted once on the thread ("Chief relay: … is acting Chief"). If all three are down it says so once; top-ups stay Ben's call.
 - Commands: `chief_relay.py status` (who's Chief and why), `down <agent> --reason … [--until …]`, `up <agent>`, `seen chief`. Pause: `touch ~/_desk/state/chief-relay.pause`.
+- **Gemini isn't in the chain.** It's the checker and can't run the Mini, so whoever is acting Chief runs it (`agy`) for every job that `--needs gemini`. `status` shows it on its own line.
 - **Acting Chief** uses its own agent id everywhere (`--agent cursor`, `--by codex`), never `chief`. Only Grok Bot is `chief`, because that id is Grok's heartbeat. Its reports start "<Name> covering".
 
 ## Studio board and claims (5 Oct 2026)

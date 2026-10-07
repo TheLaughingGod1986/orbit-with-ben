@@ -104,6 +104,10 @@ class Relay(unittest.TestCase):
         cr.cmd_run(T0)
         self.assertFalse(self.ran("cursor"))
 
+    def test_status_shows_gemini_as_the_checker(self):
+        os.environ["AGY_BIN"] = str(self.cursor)
+        self.assertIn("Checker: Gemini (agy found)", cr.gemini_line())
+
     def test_chain_order_comes_from_the_env(self):
         os.environ["CHIEF_CHAIN"] = "chief,codex,cursor"
         self.assertEqual(self.chief(), "codex")

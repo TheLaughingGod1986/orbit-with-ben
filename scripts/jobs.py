@@ -20,7 +20,8 @@ is alive and able claims it. The thread stays for discussion and reports; this q
   python3 scripts/jobs.py renew J0003 --agent cursor --eta 120 --git           # still working: push the ETA out
   python3 scripts/jobs.py list [--all]                                          # open and claimed jobs (JOBS.md too)
 
-`next` exits 10 when nothing is waiting for that agent, so a loop can stop quietly.
+`next` exits 10 when nothing is waiting for that agent, so a loop can stop quietly. It hands out quick jobs (--eta 60
+or less) before long ones, oldest first within each, so a multi-day job can't hold up a 30-minute one.
 Rules: a claim lasts until its ETA. A claim past its ETA counts as stalled, and the next able agent may take it over
 (the takeover is noted). A job with --after waits until that job is done. A job with --film/--stage also claims that
 stage on the studio board in the same commit (and releases it on done/release/block), so the board and the queue
@@ -46,6 +47,7 @@ JOBS_MD = ROOT / "JOBS.md"
 NEEDS = ["mini", "gemini", "cloud", "ben", "any"]
 EX_NONE = 10
 DEFAULT_ETA = 120
+QUICK_MIN = 60
 
 
 def now():
@@ -105,12 +107,19 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime) -> bool:
     return False
 
 
+def order(job: dict) -> tuple:
+    """Quick jobs (ETA an hour or less) first, then the rest, oldest first within each. Otherwise one multi-day job that
+    is released at every stopping point (a first cut) would come back first every time and starve the quick ones."""
+    return (0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
+
+
 def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None) -> dict | None:
-    """Claim the oldest job this agent can do (open, or stalled past its ETA). None when nothing is waiting."""
+    """Claim the next job this agent can do (open, or stalled past its ETA): quick jobs first, then oldest first.
+    None when nothing is waiting."""
     for job in sorted(data["jobs"], key=lambda j: j["id"]):
         if job.get("by") == agent and job["status"] == "claimed":
             return job  # finish what you hold before taking more
-    for job in sorted(data["jobs"], key=lambda j: j["id"]):
+    for job in sorted(data["jobs"], key=order):
         if claimable(data, job, can, at):
             took = stalled(job, at)
             prev = job.get("by", "")
@@ -326,7 +335,7 @@ def main(argv=None) -> int:
             if args.cmd == "next":
                 can = {c.strip() for c in args.can.split(",") if c.strip()}
                 if args.peek:
-                    job = next((j for j in sorted(data["jobs"], key=lambda j: j["id"]) if claimable(data, j, can, at)), None)
+                    job = next((j for j in sorted(data["jobs"], key=order) if claimable(data, j, can, at)), None)
                     return job, None, touched
                 job = do_next(data, args.agent, can, at, args.eta)
                 if job and job.get("film") and job["history"][-1]["what"].startswith("claimed"):
