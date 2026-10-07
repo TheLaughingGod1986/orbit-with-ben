@@ -1,5 +1,5 @@
 {
-  "next_id": 17,
+  "next_id": 18,
   "jobs": [
     {
       "id": "J0001",
@@ -612,6 +612,32 @@
           "at": "2026-10-07T19:16Z",
           "by": "claude",
           "what": "cancelled: re-added after the new v03 job id"
+        }
+      ]
+    },
+    {
+      "id": "J0017",
+      "title": "Sun 022 cut v03: fixes from the v02 review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 cut v03: Claude's fix list from the v02 review (J0002, #99 comment linked in ref). Same assembler, these changes only.\n\nBLOCKING\n1. Frame 0 (row 1) and the end (row 104): the 11517 windows show bright loops on the disc, not a prominence lifting off\n   the limb (script VISUAL MUST). Pick the stretch where plasma is already above the limb and moving at 0.0 s. Check\n   SVS 11517 and SVS 13778 (the anemone prominence eruption is the strongest candidate). If 13778 takes frame 0, row 3\n   moves to 11517 (or another clean limb stretch) so no clip is used for more than 2 stretches. End: a different stretch\n   of the same opening clip, prominence in motion. Commit frames at 0.0/0.5/1.0 s and three from row 104.\n2. Row 44 (SVS 11112): the frame shows the \"NASA HELIOPHYSICS\" title card. Use a clean window (no titles, no logos).\n3. Row 96 clocks: re-render clocks.mp4 from code_graphics.py (the label is now \"hours to days\"; v02 still says \"days\"),\n   and set the in-point so the first clock is already lit at 456.80 s and all three are lit before \"answers the title\"\n   ends; the climb lights last. Commit the row 96 frames again.\n4. Row 90 (s39-610-037): red film edge-print digits on the left. Crop or mask them.\n5. Rows 18 and 20 (SVS 3548 / 3549): burned-in date text at the bottom. Crop it off.\n6. Young-Sun grade (rows 53, 55, and the left disc in row 71): it reads olive/green-grey. Keep -30% brightness but make\n   it warm-neutral to faintly gold (no green). The future grade (rows 72, 85) is fine.\n7. Loudness: two-pass to -14 LUFS integrated, true peak <= -1.5 dBTP, measured on the final encoded mp4.\n\nNOT BLOCKING (do if quick)\n8. Repeats: rows 49/50 repeat rows 37/38 (PIA22360 / PIA15377) within a minute; row 8 repeats rows 10/11 (PIA22123).\n   Swap 49, 50 and 8 for unused pool stills that fit their lines.\n9. Row 14 (zoom graphic): confirm the rising line is visible during \"by a slow rise in the light of the whole star\".\n\nDeliver as v02: iCloud OWB UAT/sun_first_cut_v03/, and review_v03/ in git (per-row sheet, row_###.jpg, the frames\nabove, clip_check --repeat-ok 6, loudness.json).\n",
+      "ref": "6045051575",
+      "film": "022",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T19:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T19:16Z",
+          "by": "claude",
+          "what": "added"
         }
       ]
     }
