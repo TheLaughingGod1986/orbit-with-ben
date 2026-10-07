@@ -29,3 +29,11 @@ Spoken / cover facts from `10_Shorts/SUN_SHORTS_SCRIPTS_v01.md` (Wed 21 Parker; 
 | Jack Hills zircons ~4.4 Gyr hint at liquid water earlier (not spoken; source only) | Wilde et al. (2001), *Nature* 409, 175–178: “These results imply that liquid water was present on the surface of the Earth, and that continental-type crust was forming, by 4.4 Gyr ago.” DOI [10.1038/35051550](https://doi.org/10.1038/35051550). Keep off VO unless needed. |
 
 No product is named. No `/go/` link.
+
+## Added by Claude, 7 Oct 2026 (after Gemini picture check J0008)
+
+| Claim | Source |
+|---|---|
+| The prominence on screen at "This one was over in a day" moved over one day | NASA PIA22123: "A prominence at the sun's edge shifted and slithered back and forth over a one-day period (Nov. 29-30, 2017)." https://images.nasa.gov/details/PIA22123 |
+| Eruptive prominences last hours to days; quiet ones can last weeks to months (why the line says "this one", and the clock label says "hours to days") | NASA MSFC Solar Physics, Prominences: https://solarscience.msfc.nasa.gov/prominences.shtml (Gemini J0008 quote: "Prominences can persist for days, weeks, or even months.") |
+| The "today" disc is SDO HMI visible light (continuum), not an EUV false-colour image | NASA PIA21218 "Spotless February" (Feb. 2019, SDO). https://images.nasa.gov/details/PIA21218 |

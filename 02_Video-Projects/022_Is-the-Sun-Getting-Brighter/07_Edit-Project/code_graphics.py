@@ -104,7 +104,7 @@ def render_zoom(out, seconds, still, labels):
 def render_clocks(out, seconds, still, labels):
     """Log time axis from an hour to 2 billion years; three markers light up in turn, the third stays."""
     n = int(seconds * FPS)
-    marks = [(3 / 365.25, "a prominence", "days", WHITE),
+    marks = [(3 / 365.25, "a prominence", "hours to days", WHITE),
              (11.0, "the sunspot wobble", "11 years, up and down", WHITE),
              (110e6, "the climb", "+1% every 110 million years", GOLD)]
     frames = [int(n * 0.8)] if still else range(n)

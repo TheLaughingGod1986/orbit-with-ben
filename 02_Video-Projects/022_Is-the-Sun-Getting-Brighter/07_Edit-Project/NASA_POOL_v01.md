@@ -116,7 +116,7 @@ Credit line for all: **NASA's Goddard Space Flight Center**, plus the instrument
 
 | SVS | Title | Use | Audio note |
 |---|---|---|---|
-| [10925](https://svs.gsfc.nasa.gov/10925/) | HD Close up of March 6th X5.4 Flare | Frame 0 candidate: eruption off the limb, real motion | mute |
+| [10925](https://svs.gsfc.nasa.gov/10925/) | HD Close up of March 6th X5.4 Flare | Not frame 0: an X5.4 flare close-up, not a prominence (Gemini J0008, 7 Oct) | mute |
 | [11517](https://svs.gsfc.nasa.gov/11517/) | Graceful Eruption | Frame 0 / open alternative | mute |
 | [5649](https://svs.gsfc.nasa.gov/5649/) | Four Days of Solar Dynamics in 16 Minutes | Restless disc; end return | check for text |
 | [11112](https://svs.gsfc.nasa.gov/11112/) | Gradient Sun | 'The Sun you already have' | mute |

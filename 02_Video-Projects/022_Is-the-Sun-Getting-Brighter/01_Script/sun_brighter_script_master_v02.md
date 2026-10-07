@@ -8,12 +8,13 @@ It is not the spots. It is not the warming of a human century. In this film I wi
 
 [VISUAL MUST: Frame 0 is the Sun filling the 16:9 frame, a prominence already mid-rise off the limb and breaking away. No fade up, no title, no Orbit, no second body. By one second the ribbon has visibly moved. Cut every four to six seconds: limb, ribbon tearing free, then the disc still in motion.]
 [TEACH: A prominence is magnetic weather, cooler plasma lifted off the limb for hours or days. It is not the slow brightening.]
+[PICKUPS (7 Oct, after Gemini J0008): "Three clocks" (was heard as "Free"); "This one was over in a day" replaces "In a day it is over", because quiet prominences can hang for weeks; "this one" is the prominence on screen, PIA22123, which NASA dates to one day (Nov. 29-30, 2017).]
 
 [CHAPTER CARD: The Climb You Cannot See]
 
 The motion is real, and it is the wrong clock.
 
-A prominence is plasma held in the Sun's magnetic field. It can hang, fall back, or break away. In a day it is over. Your eyes are built for that. They are not built for the change in the title.
+A prominence is plasma held in the Sun's magnetic field. It can hang, fall back, or break away. This one was over in a day. Your eyes are built for that. They are not built for the change in the title.
 
 So is the Sun getting brighter? Yes. Not by a ribbon you could watch from the garden. By a slow rise in the light of the whole star. About one percent brighter in every hundred and ten million years, as it uses its hydrogen. Schröder and Connon Smith published that pace in 2008, in a model of the Sun's long life.
 

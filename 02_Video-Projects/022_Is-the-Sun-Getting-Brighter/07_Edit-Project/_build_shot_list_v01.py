@@ -68,18 +68,20 @@ CARDS = {"ch1": at("The motion is real"), "ch2": at("The fuel is hydrogen"), "ch
          "ch4": at("Now run today's pace"), "ch5": at("You are standing in the middle")}
 
 # ----------------------------------------------------------------------------- anchors: (phrase, source, id, move/src, grade, fallback)
-WHITE = "GSFC_20171208_Archive_e002035"   # full white-light-ish disc, 21 Jun 2010 (the 'today' Sun)
+# The 'today' Sun in visible light: SDO HMI continuum full disc, 6 Feb 2019 (PIA21218, "Spotless February"); crop the
+# timestamp. Was GSFC e002035, which is an AIA 335 A extreme-UV disc in false cyan, not white light (Gemini J0008).
+WHITE = "PIA21218"
 ANCHORS = [
     # Open: frame 0 is real SDO motion, prominence mid-rise (VISUAL MUST). Quick preview cuts allowed to 20 s.
-    ("The sun is getting brighter why does", "GODDARD", "SVS 10925", "stretch 1: eruption already rising off the limb at frame 0", "", "SVS 11517"),
+    ("The sun is getting brighter why does", "GODDARD", "SVS 11517", "stretch 1: prominence material already rising off the limb at frame 0", "", "SVS 13778 (mute)"),
     ("You are looking at the light", "NASA", "iss074e0494675", "push 4%", "", ""),
-    ("and a prominence is already lifting", "GODDARD", "SVS 11517", "stretch 1: graceful eruption mid-rise", "", ""),
+    ("and a prominence is already lifting", "GODDARD", "SVS 13778", "stretch 2: prominence lifting off the limb (mute: licensed music)", "", "GSFC_20171208_Archive_e002168"),
     ("The danger is not that ribbon", "NASA", "GSFC_20171208_Archive_e002168", "push 5%", "", ""),
-    ("It is not the spots", "NASA", "PIA21783", "pull 4%", "", ""),
+    ("It is not the spots", "NASA", "PIA19876", "push 4% towards the spot group (crop the caption line)", "", ""),
     ("It is not the warming", "NASA", "s85e5052", "pan L-R 4%", "", ""),
     ("In this film I will show you", "NASA", WHITE, "push 4%", "", ""),
     # Ch1: the wrong clock; the zoom graphic carries 'a slow upward line beside an eleven-year wobble'
-    ("The motion is real", "GODDARD", "SVS 13778", "stretch 1: prominence eruption (mute: licensed music)", "", "SVS 11517 stretch 2"),
+    ("The motion is real", "GODDARD", "SVS 13778", "stretch 1: prominence eruption (mute: licensed music)", "", "GSFC_20171208_Archive_e002168"),
     ("So is the sun getting brighter", "NASA", WHITE, "push 5%", "", ""),
     ("By a slow rise in the light", "CODE", "zoom_nolabels.mp4", "0-12 s (no baked captions: VISUAL MUST)", "", ""),
     ("What if the spots were", "GODDARD", "SVS 3548", "solar minimum, then cut to SVS 3549 maximum", "", ""),
@@ -118,13 +120,25 @@ ANCHORS = [
     ("However bright that future", "NASA", "s39-610-037", "push 4%", "", ""),
     # Ch5: recap of three clocks; end returns to the opening Sun in motion, held for the end screen
     ("You are standing in the middle", "GODDARD", "SVS 5649", "stretch 2", "", ""),
-    # words.json hears "Free clocks" at 457.04 s where the script says "Three clocks": listen at the Sat 10 review.
+    # words.json hears "Free clocks" at 457.04 s where the script says "Three clocks": the anchor stays as heard; the
+    # row's text is corrected below, and the pickup take replaces the audio (J0007).
     ("Free clocks", "CODE", "clocks.mp4", "0-10 s: three clocks lit in turn", "", ""),
     ("The sun is getting brighter because", "NASA", WHITE, "push 5%", "", ""),
     ("What if the real question", "NASA", "iss071e439624", "pull 4%", "", ""),
     ("The bigger question", "NASA", "as08-16-2588", "push 4%", "", ""),
-    ("Next door", "GODDARD", "SVS 10925", "stretch 2: a different stretch from the open, prominence in motion; hold to the end", "", ""),
+    ("Next door", "GODDARD", "SVS 11517", "stretch 3: back to the opening eruption, a later stretch, in motion; hold to the end", "", ""),
 ]
+
+PICTURE_SWAPS = {
+    # "This one was over in a day" (pickup, J0010) needs the one-day prominence (PIA22123: Nov. 29-30, 2017) on screen
+    "It can hang, fall back": {"source": "NASA", "id": "PIA22123", "move": "drift up 4% (continues row 10)", "grade": "",
+                               "caption": "PICKUP: lay sun_pickup_over_in_a_day_v01 over \"In a day, it is over.\""},
+    "Roughly 30 % dimmer": {"source": "NASA", "id": WHITE, "move": "pull 4%", "grade": "young Sun: -30% brightness, slightly cooler (orange-ward)"},
+    "The 10 % sun is further off": {"source": "NASA", "id": "GSFC_20171208_Archive_e002131", "move": "push 4% (city lights)", "grade": ""},
+    "A 10th of 1 % up and down": {"source": "NASA", "id": "PIA19876", "move": "pull 4% from the spot group", "grade": ""},
+    "Earth has lived the dimmer half": {"source": "NASA", "id": "s04-41-1206", "move": "pan L-R 4%", "grade": ""},
+    "star that brightens while it burns": {"source": "NASA", "id": WHITE, "move": "push 5%", "grade": ""},
+}
 
 # Pool lists per chapter for the shots between anchors (order = preference). White-light lines prefer the white disc.
 PLAYLIST = {
@@ -143,7 +157,8 @@ PLAYLIST = {
 }
 MOVES = ["push 5%", "pan L-R 4%", "pull 5%", "pan R-L 4%", "drift up 4%"]
 SUNSPOT = {"PIA21783", "GSFC_20171208_Archive_e000923", "PIA19876", "GSFC_20171208_Archive_e000922", "GSFC_20171208_Archive_e000920"}
-WOBBLE_OK = [(at("It is not the spots"), at("It is not the warming")), (at("The motion is real"), at("Now the strange question"))]
+WOBBLE_OK = [(at("It is not the spots"), at("It is not the warming")), (at("The motion is real"), at("Now the strange question")),
+             (at("Overhead is the star"), at("Free clocks"))]  # the recap: row 95 names the 0.1% wobble "with the spots"
 
 
 def chapter_of(t: float) -> str:
@@ -218,6 +233,19 @@ def build() -> list[dict]:
         r = next(r for r in rows if r["vo_in"] >= t - 0.01)
         title = dict((n, c) for n, c, _ in CHAPTERS)[ch]
         r["caption"] = f"CHAPTER CARD (lower third, {CARD_S} s): {title}"
+    # Picture swaps after Gemini's picture-vs-words check (J0008, GEMINI_PICTURE_CHECK_v01.md; Claude's rulings, 7 Oct).
+    # Applied after the cut so the timing stays on the lock; each prefix must match exactly one row.
+    for prefix, swap in PICTURE_SWAPS.items():
+        hits = [r for r in rows if r["vo_text"].startswith(prefix)]
+        if len(hits) != 1:
+            raise SystemExit(f"picture swap {prefix!r} matched {len(hits)} rows")
+        hits[0].update(swap)
+    # VO pickups laid over the lock (Claude order #99 6037545918; take sun_pickup_three_clocks_v01, J0007 PASS c6ba945)
+    for r in rows:
+        if r["vo_text"].startswith("Free clocks."):
+            r["vo_text"] = "Three clocks." + r["vo_text"][len("Free clocks."):]
+            r["caption"] = (r["caption"] + "; " if r["caption"] else "") + \
+                "PICKUP: lay sun_pickup_three_clocks_v01 over this row (match loudness and room tone at both joins)"
     for i, r in enumerate(rows, 1):
         r["row"] = i
     return rows, uses, stretches
@@ -300,7 +328,7 @@ def write_md(rows, uses):
         "",
         "| Rule | How |",
         "|---|---|",
-        "| Frame 0 | Real SDO motion, **SVS 10925**, eruption already rising. No fade, no title, no Orbit. |",
+        "| Frame 0 | Real SDO motion, **SVS 11517** (304+171 A), prominence material already rising. No fade, no title, no Orbit. (Was SVS 10925, an X5.4 flare close-up, not a prominence: Gemini J0008.) |",
         "| Pace | A new picture every 4-6 s, cut on the gap before a word (never mid-word). Preview cuts from 1.5 s inside the first 20 s. |",
         "| Chapter cards | Lower third, ~2.5 s, over the chapter's first shot, with the 0.7 s breath before it. No full-screen card. |",
         "| Stills | 16:9 fill with feathered blur, upscale at most about 2.35x, Ken Burns move as listed. Crop the SDO corner timestamp with the push. |",
@@ -309,7 +337,7 @@ def write_md(rows, uses):
         "| Young / future Sun | One SDO disc **graded** (young -30% and cooler; future +10%, scale 1.04). **No red giant.** |",
         "| Orbit | Two Omni beats only (ch.3 and ch.4), small in frame, Vertex free credit only. **If Omni is down, use each row's fallback** and stay on the world pictures (plan, 3 Oct). |",
         "| Code graphics | `code_graphics.py` outputs: `zoom_nolabels.mp4` (ch.1), `core_nolabels.mp4` (ch.2, two passes), `clocks.mp4` (ch.5). |",
-        f"| End | Back to the opening Sun in motion (SVS 10925, a different stretch), held {END_HOLD:.0f} s past the last word; end screen added in Studio. |",
+        f"| End | Back to the opening Sun in motion (SVS 11517, a later stretch), held {END_HOLD:.0f} s past the last word; end screen added in Studio. |",
         "| Mix | -14 LUFS, music the full runtime, fade under the last line. |",
         "",
         "## Shots",

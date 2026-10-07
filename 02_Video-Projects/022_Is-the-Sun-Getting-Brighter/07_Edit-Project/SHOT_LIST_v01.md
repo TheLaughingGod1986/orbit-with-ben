@@ -10,7 +10,7 @@ Written by Claude because no shot list existed and Grok is out of credit. **Clau
 
 | Rule | How |
 |---|---|
-| Frame 0 | Real SDO motion, **SVS 10925**, eruption already rising. No fade, no title, no Orbit. |
+| Frame 0 | Real SDO motion, **SVS 11517** (304+171 A), prominence material already rising. No fade, no title, no Orbit. (Was SVS 10925, an X5.4 flare close-up, not a prominence: Gemini J0008.) |
 | Pace | A new picture every 4-6 s, cut on the gap before a word (never mid-word). Preview cuts from 1.5 s inside the first 20 s. |
 | Chapter cards | Lower third, ~2.5 s, over the chapter's first shot, with the 0.7 s breath before it. No full-screen card. |
 | Stills | 16:9 fill with feathered blur, upscale at most about 2.35x, Ken Burns move as listed. Crop the SDO corner timestamp with the push. |
@@ -19,26 +19,26 @@ Written by Claude because no shot list existed and Grok is out of credit. **Clau
 | Young / future Sun | One SDO disc **graded** (young -30% and cooler; future +10%, scale 1.04). **No red giant.** |
 | Orbit | Two Omni beats only (ch.3 and ch.4), small in frame, Vertex free credit only. **If Omni is down, use each row's fallback** and stay on the world pictures (plan, 3 Oct). |
 | Code graphics | `code_graphics.py` outputs: `zoom_nolabels.mp4` (ch.1), `core_nolabels.mp4` (ch.2, two passes), `clocks.mp4` (ch.5). |
-| End | Back to the opening Sun in motion (SVS 10925, a different stretch), held 16 s past the last word; end screen added in Studio. |
+| End | Back to the opening Sun in motion (SVS 11517, a later stretch), held 16 s past the last word; end screen added in Studio. |
 | Mix | -14 LUFS, music the full runtime, fade under the last line. |
 
 ## Shots
 
 | # | VO in-out (s) | Source | Picture | Move / stretch | Over the words | Card | Grade / fallback |
 |---:|---|---|---|---|---|---|---|
-| 1 | 0.00-5.46 | GODDARD | SVS 10925 | stretch 1: eruption already rising off the limb at frame 0 | The sun is getting brighter. Why does it brighten while it runs down? |  | fallback: SVS 11517 |
+| 1 | 0.00-5.46 | GODDARD | SVS 11517 | stretch 1: prominence material already rising off the limb at frame 0 | The sun is getting brighter. Why does it brighten while it runs down? |  | fallback: SVS 13778 (mute) |
 | 2 | 5.46-7.56 | NASA | iss074e0494675 | push 4% | You are looking at the light on your face |  |  |
-| 3 | 7.56-11.12 | GODDARD | SVS 11517 | stretch 1: graceful eruption mid-rise | and a prominence is already lifting off the limb. |  |  |
+| 3 | 7.56-11.12 | GODDARD | SVS 13778 | stretch 2: prominence lifting off the limb (mute: licensed music) | and a prominence is already lifting off the limb. |  | fallback: GSFC_20171208_Archive_e002168 |
 | 4 | 11.12-16.56 | NASA | GSFC_20171208_Archive_e002168 | push 5% | The danger is not that ribbon. The danger is a slow climb that is already true. |  |  |
-| 5 | 16.56-18.20 | NASA | PIA21783 | pull 4% | It is not the spots. |  |  |
+| 5 | 16.56-18.20 | NASA | PIA19876 | push 4% towards the spot group (crop the caption line) | It is not the spots. |  |  |
 | 6 | 18.20-21.50 | NASA | s85e5052 | pan L-R 4% | It is not the warming of a human century. |  |  |
-| 7 | 21.50-25.18 | NASA | GSFC_20171208_Archive_e002035 | push 4% | In this film, I will show you why the light rises, |  |  |
+| 7 | 21.50-25.18 | NASA | PIA21218 | push 4% | In this film, I will show you why the light rises, |  |  |
 | 8 | 25.18-30.82 | NASA | PIA22123 | pull 5% | what the sky was like under a fainter sun and what happens as it keeps climbing. |  |  |
-| 9 | 30.82-34.74 | GODDARD | SVS 13778 | stretch 1: prominence eruption (mute: licensed music) | The motion is real and it is the wrong clock. | The Climb You Cannot See | fallback: SVS 11517 stretch 2 |
+| 9 | 30.82-34.74 | GODDARD | SVS 13778 | stretch 1: prominence eruption (mute: licensed music) | The motion is real and it is the wrong clock. | The Climb You Cannot See | fallback: GSFC_20171208_Archive_e002168 |
 | 10 | 34.74-38.56 | NASA | PIA22123 | drift up 4% | A prominence is plasma held in the sun's magnetic field. |  |  |
-| 11 | 38.56-43.88 | NASA | GSFC_20171208_Archive_e001052 | push 5% | It can hang, fall back or break away. In a day, it is over. |  |  |
+| 11 | 38.56-43.88 | NASA | PIA22123 | drift up 4% (continues row 10) | It can hang, fall back or break away. In a day, it is over. | lay sun_pickup_over_in_a_day_v01 over "In a day, it is over." |  |
 | 12 | 43.88-49.28 | NASA | GSFC_20171208_Archive_e000970 | pan L-R 4% | Your eyes are built for that. They are not built for the change in the title. |  |  |
-| 13 | 49.28-55.42 | NASA | GSFC_20171208_Archive_e002035 | push 5% | So is the sun getting brighter? Yes. Not by a ribbon you could watch from the garden, |  |  |
+| 13 | 49.28-55.42 | NASA | PIA21218 | push 5% | So is the sun getting brighter? Yes. Not by a ribbon you could watch from the garden, |  |  |
 | 14 | 55.42-59.12 | CODE | zoom_nolabels.mp4 | 0-12 s (no baked captions: VISUAL MUST) | by a slow rise in the light of the whole star, |  |  |
 | 15 | 59.12-63.36 | NASA | PIA20881 | drift up 4% | about 1 % brighter in every 110 million years, |  |  |
 | 16 | 63.36-68.44 | NASA | s85e5052 | push 5% | as it uses its hydrogen. Schroeder and Conn and Smith published that |  |  |
@@ -52,7 +52,7 @@ Written by Claude because no shot list existed and Grok is out of credit. **Clau
 | 24 | 106.96-111.04 | NASA | GSFC_20171208_Archive_e000970 | pan R-L 4% | to be that warming. Across a human life, |  |  |
 | 25 | 111.04-115.06 | NASA | PIA20881 | drift up 4% | the 1 % climb is far smaller than the sunspot wobble. |  |  |
 | 26 | 115.06-118.68 | NASA | s85e5052 | push 5% | You will not see it and you will not feel it. |  |  |
-| 27 | 118.68-124.92 | NASA | GSFC_20171208_Archive_e002035 | pull 5% | Now the strange question. Why would a star brighten while its fuel is running down? |  |  |
+| 27 | 118.68-124.92 | NASA | PIA21218 | pull 5% | Now the strange question. Why would a star brighten while its fuel is running down? |  |  |
 | 28 | 124.92-128.58 | GODDARD | SVS 31400 | stretch 1: churning interior flows | The fuel is hydrogen. The ash is helium. | Brighter While It Runs Down |  |
 | 29 | 128.58-133.84 | NASA | PIA20881 | pan R-L 4% | The change sits in the core where the disc you see cannot show it. |  |  |
 | 30 | 133.84-138.56 | CODE | core_nolabels.mp4 | 0-12 s: H to He, core tightening (no text) | Deep inside, the sun is fusing hydrogen into helium. |  |  |
@@ -73,14 +73,14 @@ Written by Claude because no shot list existed and Grok is out of credit. **Clau
 | 45 | 207.12-211.76 | NASA | PIA22645 | drift up 4% | About 1 % more light in every 110 million years. |  |  |
 | 46 | 211.76-218.14 | NASA | PIA21764 | push 5% | For as long as this remains the star you know. The spectrum drifts only a little hotter. |  |  |
 | 47 | 218.14-223.30 | NASA | GSFC_20171208_Archive_e001978 | pan L-R 4% | What changes is the amount of light, not a new color on a walk. |  |  |
-| 48 | 223.30-226.82 | NASA | GSFC_20171208_Archive_e002035 | push 6% | What would you see across a hundred million years? |  |  |
+| 48 | 223.30-226.82 | NASA | PIA21218 | push 6% | What would you see across a hundred million years? |  |  |
 | 49 | 226.82-232.12 | NASA | PIA22360 | pan R-L 4% | Almost nothing at first, then a sun about 1 % more severe. |  |  |
 | 50 | 232.12-236.90 | NASA | PIA15377 | drift up 4% | No mystery in it, just mass, gravity and ash. |  |  |
 | 51 | 236.90-242.38 | GODDARD | SVS 5649 | stretch 1: restless disc (no on-screen text) | We make one of these every week. Subscribing is how the next one finds you. |  |  |
 | 52 | 242.38-248.44 | NASA | s09-11-675 | push 4% | But the sun over your street is not the sun that a young earth knew. |  |  |
-| 53 | 248.44-254.44 | NASA | GSFC_20171208_Archive_e002035 | pull 5% | Wind the clock back. When earth was young, this same star was fainter. | When the Light Was Less | young Sun: -30% brightness, slightly cooler (orange-ward) |
+| 53 | 248.44-254.44 | NASA | PIA21218 | pull 5% | Wind the clock back. When earth was young, this same star was fainter. | When the Light Was Less | young Sun: -30% brightness, slightly cooler (orange-ward) |
 | 54 | 254.44-259.32 | GODDARD | SVS 11853 | faint young Sun stretch, picture only (mute, no text frames) | Solar models put the early sun near 70 % of today's light. |  | fallback: NASA GSFC_20171208_Archive_e000888 |
-| 55 | 259.32-264.02 | NASA | as4-01-750 | drift up 4% | Roughly 30 % dimmer than the disk in your sky. |  |  |
+| 55 | 259.32-264.02 | NASA | PIA21218 | pull 4% | Roughly 30 % dimmer than the disk in your sky. |  | young Sun: -30% brightness, slightly cooler (orange-ward) |
 | 56 | 264.02-267.98 | NASA | s04-41-1206 | push 5% | The 1 % rule is today's pace. It is not a flat rate. |  |  |
 | 57 | 267.98-274.48 | NASA | sl4-142-4577 | pan L-R 4% | You can run backwards across the whole life of the star. The young sun was the dimmer one. |  |  |
 | 58 | 274.48-279.36 | NASA | GSFC_20171208_Archive_e000888 | push 5% | Then the paradox arrives. A star that faint should have left the |  |  |
@@ -96,8 +96,8 @@ Written by Claude because no shot list existed and Grok is out of credit. **Clau
 | 68 | 320.64-326.32 | NASA | GSFC_20171208_Archive_e000888 | pull 5% | a sky that may not have been this blue and a day that was not yet yours. |  |  |
 | 69 | 326.32-329.92 | NASA | ast-27-2339 | pan R-L 4% | The light was enough for water once the air had taken its share. |  |  |
 | 70 | 329.92-334.00 | NASA | as4-01-750 | drift up 4% | It was not the daylight you were standing in. |  |  |
-| 71 | 334.00-342.58 | EDIT | two-disc compare | GSFC_20171208_Archive_e002035 twice, same framing: left graded young, right today | Until the two suns sit side by side, the daylight you trust feels finished. It is the m… |  | left -30% and cooler; right as shot |
-| 72 | 342.58-347.70 | NASA | GSFC_20171208_Archive_e002035 | push 5% | Now run today's pace forward. 1 % in 110 million years. | Ten Percent More |  |
+| 71 | 334.00-342.58 | EDIT | two-disc compare | PIA21218 twice, same framing: left graded young, right today | Until the two suns sit side by side, the daylight you trust feels finished. It is the m… |  | left -30% and cooler; right as shot |
+| 72 | 342.58-347.70 | NASA | PIA21218 | push 5% | Now run today's pace forward. 1 % in 110 million years. | Ten Percent More |  |
 | 73 | 347.70-352.76 | NASA | S06-46-617 | pull 5% | 10 % takes about 10 of those steps, a bit over a billion years. |  |  |
 | 74 | 352.76-358.58 | NASA | iss071e364425 | pan R-L 4% | Schroeder and Collins -Smith follow the rise and place a harder limit for earth near a … |  |  |
 | 75 | 358.58-362.08 | NASA | iss072e617674 | drift up 4% | when the sun is on the order of 10 % brighter. |  |  |
@@ -110,26 +110,26 @@ Written by Claude because no shot list existed and Grok is out of credit. **Clau
 | 82 | 390.72-395.10 | NASA | as08-16-2588 | pan L-R 4% | but life under this star has a very long while yet. |  |  |
 | 83 | 395.10-399.84 | NASA | sts065-86-095 | pull 5% | The number matters because of its direction. The sun does not sit still and then fail all |  |  |
 | 84 | 399.84-403.50 | NASA | GSFC_20171208_Archive_e002130 | pan R-L 4% | at once. It leans brighter the whole way. |  |  |
-| 85 | 403.50-408.68 | NASA | GSFC_20171208_Archive_e002035 | push 4% | The disk swells only slowly through this stretch, a little larger. |  | future Sun: +10% brightness, scale 1.04 (no red giant) |
+| 85 | 403.50-408.68 | NASA | PIA21218 | push 4% | The disk swells only slowly through this stretch, a little larger. |  | future Sun: +10% brightness, scale 1.04 (no red giant) |
 | 86 | 408.68-413.84 | NASA | S06-46-617 | push 5% | The thing that changes the shore is the light. The great red swelling comes later |  |  |
 | 87 | 413.84-418.82 | NASA | iss071e364425 | pan L-R 4% | and it belongs to another film. This one stops at the brightening. |  |  |
 | 88 | 418.82-423.82 | NASA | iss071e439624 | pan L-R 4% | The blue can last a very long time. It cannot last forever under a star that |  |  |
 | 89 | 423.82-427.58 | NASA | iss072e617674 | pan R-L 4% | only turns one way. |  |  |
 | 90 | 427.58-431.84 | NASA | s39-610-037 | push 4% | However bright that future disk is, you are not standing under it. |  |  |
 | 91 | 431.84-436.54 | GODDARD | SVS 5649 | stretch 2 | You are standing in the middle of the climb. The fainter sun is behind you. | The Sun You Already Have |  |
-| 92 | 436.54-442.08 | NASA | GSFC_20171208_Archive_e000414 | pan L-R 4% | The 10 % sun is further off than any civilization you can picture. |  |  |
+| 92 | 436.54-442.08 | NASA | GSFC_20171208_Archive_e002131 | push 4% (city lights) | The 10 % sun is further off than any civilization you can picture. |  |  |
 | 93 | 442.08-446.80 | NASA | GSFC_20171208_Archive_e001517 | pull 5% | Overhead is the star that learned to be this bright and it is still learning. |  |  |
 | 94 | 446.80-450.44 | NASA | PIA17669 | pan R-L 4% | About 1 % every 110 million years. |  |  |
-| 95 | 450.44-456.80 | NASA | GSFC_20171208_Archive_e000759 | drift up 4% | A 10th of 1 % up and down with the spots. A prominence when the cameras want motion. |  |  |
-| 96 | 456.80-461.30 | CODE | clocks.mp4 | 0-10 s: three clocks lit in turn | Free clocks. Only one of them answers the title. |  |  |
-| 97 | 461.30-466.22 | NASA | GSFC_20171208_Archive_e002035 | push 5% | The sun is getting brighter because the helium in its core leaves the fire no choice. |  |  |
-| 98 | 466.22-472.50 | NASA | GSFC_20171208_Archive_e000991 | pull 5% | Earth has lived the dimmer half. The oceans are still here because the climb has not go… |  |  |
+| 95 | 450.44-456.80 | NASA | PIA19876 | pull 4% from the spot group | A 10th of 1 % up and down with the spots. A prominence when the cameras want motion. |  |  |
+| 96 | 456.80-461.30 | CODE | clocks.mp4 | 0-10 s: three clocks lit in turn | Three clocks. Only one of them answers the title. | lay sun_pickup_three_clocks_v01 over this row (match loudness and room tone at both joins) |  |
+| 97 | 461.30-466.22 | NASA | PIA21218 | push 5% | The sun is getting brighter because the helium in its core leaves the fire no choice. |  |  |
+| 98 | 466.22-472.50 | NASA | s04-41-1206 | pan L-R 4% | Earth has lived the dimmer half. The oceans are still here because the climb has not go… |  |  |
 | 99 | 472.50-478.70 | NASA | s09-11-675 | pan R-L 4% | That is timing and it is also just the physics running in ordinary daylight. |  |  |
 | 100 | 478.70-482.40 | NASA | iss071e439624 | pull 4% | What if the real question was never whether the sun is changing, |  |  |
 | 101 | 482.40-487.34 | NASA | GSFC_20171208_Archive_e000414 | push 5% | but whether you arrived while the light is still gentle enough for a blue sky. |  |  |
 | 102 | 487.34-492.44 | NASA | as08-16-2588 | push 4% | The bigger question sits in that blue. How long can it last under a |  |  |
-| 103 | 492.44-496.14 | NASA | GSFC_20171208_Archive_e002131 | pull 5% | star that brightens while it burns? |  |  |
-| 104 | 496.14-518.64 | GODDARD | SVS 10925 | stretch 2: a different stretch from the open, prominence in motion; hold to the end | Next door, there is a planet that may already have taken that path. Next week, what hap… |  |  |
+| 103 | 492.44-496.14 | NASA | PIA21218 | push 5% | star that brightens while it burns? |  |  |
+| 104 | 496.14-518.64 | GODDARD | SVS 11517 | stretch 3: back to the opening eruption, a later stretch, in motion; hold to the end | Next door, there is a planet that may already have taken that path. Next week, what hap… |  |  |
 
 ## Credits
 
@@ -146,15 +146,15 @@ Stills: from `nasa_pool_v01.json` (one line per picture used). SVS: NASA's Godda
 - GSFC_20171208_Archive_e001363: Filament Eruption Creates 'Canyon of Fire' on the Sun · NASA/SDO
 - GSFC_20171208_Archive_e001517: The Sun: One Year in One Image · NASA/GSFC/SDO
 - GSFC_20171208_Archive_e001978: C3-class Solar Flare Erupts on Sept. 8, 2010 [Full Disk] · NASA/SDO
-- GSFC_20171208_Archive_e002035: Full disk view of the sun June 21, 2010 · NASA/SDO
 - GSFC_20171208_Archive_e002130: NASA Blue Marble 2007 East · NASA/Goddard Space Flight Center/Reto Stöckli
 - GSFC_20171208_Archive_e002131: NASA Blue Marble 2007 West · NASA/Goddard Space Flight Center/Reto Stöckli
 - GSFC_20171208_Archive_e002168: Erupting Prominence Observed by SDO on March 30, 2010 · NASA/GSFC/SDO
 - PIA15377: Wavelength Comparison · NASA/GSFC/Solar Dynamics Observatory
 - PIA17669: Pulses from the Sun · NASA/SDO/AIA
+- PIA19876: Big Sunspot Group · NASA/GSFC/Solar Dynamics Observatory
 - PIA20881: Magnetic Field Illuminated · NASA/GSFC/Solar Dynamics Observatory
+- PIA21218: Spotless February · NASA/GSFC/Solar Dynamics Observatory
 - PIA21764: Coils of Magnetic Field Lines · NASA/GSFC/Solar Dynamics Observatory
-- PIA21783: New Lone Sunspot Group · NASA/GSFC/Solar Dynamics Observatory
 - PIA22123: Slithering Prominence · NASA/GSFC/Solar Dynamics Observatory
 - PIA22360: Wavelength Comparisons · NASA/GSFC/Solar Dynamics Observatory
 - PIA22645: Detailed Loops Above an Active Region · NASA/GSFC/Solar Dynamics Observatory
