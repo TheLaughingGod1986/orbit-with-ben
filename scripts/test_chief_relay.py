@@ -11,8 +11,8 @@ MIN = dt.timedelta(minutes=1)
 class Relay(unittest.TestCase):
     def setUp(self):
         self.tmp = pathlib.Path(tempfile.mkdtemp())
-        self.old_state = cr.STATE
-        cr.STATE = self.tmp / "state"
+        self.old_state, self.old_home = cr.STATE, cr.HOME
+        cr.STATE, cr.HOME = self.tmp / "state", self.tmp  # so a real CLI on this machine can't stand in for a fake
         cr.STATE.mkdir()
         self.posts = self.tmp / "posts.txt"
         notify = self.tmp / "notify.sh"
@@ -25,7 +25,7 @@ class Relay(unittest.TestCase):
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
 
     def tearDown(self):
-        cr.STATE = self.old_state
+        cr.STATE, cr.HOME = self.old_state, self.old_home
         os.environ.clear()
         os.environ.update(self.env)
 
@@ -86,6 +86,7 @@ class Relay(unittest.TestCase):
 
     def test_a_missing_cli_is_skipped(self):
         os.environ["CURSOR_AGENT_BIN"] = str(self.tmp / "nope")
+        os.environ["PATH"] = str(self.tmp / "empty")
         self.assertEqual(self.chief(), "codex")
 
     def test_an_ordinary_failure_does_not_wake_the_next_agent(self):

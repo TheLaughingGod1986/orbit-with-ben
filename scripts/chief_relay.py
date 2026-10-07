@@ -32,8 +32,8 @@ CLI Chief for ONE job (25-minute cap), then exits. Every change of Chief is post
 
 State (on the Mini, never in git): ~/_desk/state/chief/  (heartbeat/<agent>, down/<agent>.json, current.json).
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
-Env: CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (8-22), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
-CHIEF_RETRY_H (3), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN / CODEX_FLAGS (see CLI below),
+Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (8-22), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
+CHIEF_RETRY_H (3), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN / CODEX_FLAGS (see cli_spec), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
 from __future__ import annotations
@@ -54,7 +54,13 @@ import sys
 HOME = pathlib.Path.home()
 STATE = pathlib.Path(os.environ.get("DESK_STATE", HOME / "_desk" / "state"))
 OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
-HOS = pathlib.Path(os.environ.get("HOS_REPO", HOME / "YouTube" / "history-of-science"))
+def first_dir(*cands) -> pathlib.Path:
+    return next((c for c in cands if c.is_dir()), cands[0])
+
+
+# On Ben's Mini the HOS checkout is "History Of Science" (Cursor, 7 Oct); keep the git-style name as a fallback.
+HOS = pathlib.Path(os.environ.get("HOS_REPO") or first_dir(HOME / "YouTube" / "History Of Science",
+                                                            HOME / "YouTube" / "history-of-science"))
 DEFAULT_CHAIN = "chief,cursor,codex"
 NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex"}
 
@@ -129,20 +135,30 @@ def mark_up(agent: str) -> None:
         pass
 
 
+def find_bin(env: str, name: str):
+    """launchd's `zsh -lc` doesn't read .zshrc, so npm-global and ~/.local CLIs aren't on PATH there: look in the
+    usual install places too."""
+    cands = [os.environ.get(env), shutil.which(name)] + [str(HOME / d / name) for d in (".npm-global/bin", ".local/bin")] \
+        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
+    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+
+
 def cli_spec(agent: str):
     """(binary, args) for a CLI agent, or None if it isn't installed."""
     if agent == "cursor":
-        b = os.environ.get("CURSOR_AGENT_BIN") or shutil.which("agent") or str(HOME / ".local" / "bin" / "agent")
+        b = find_bin("CURSOR_AGENT_BIN", "agent")
         flags = os.environ.get("CURSOR_AGENT_FLAGS", "-p --force")
     elif agent == "codex":
-        b = os.environ.get("CODEX_BIN") or shutil.which("codex") or "/opt/homebrew/bin/codex"
-        # exec = one prompt, no chat window. --full-auto = run commands without asking, inside a sandbox that may
-        # write to the OWB checkout; the extra dirs and network let it pull/push and use the HOS desk, like Cursor.
-        flags = os.environ.get("CODEX_FLAGS", f"exec --full-auto -c sandbox_workspace_write.network_access=true "
+        b = find_bin("CODEX_BIN", "codex")
+        # exec = one prompt, no chat window; a workspace-write sandbox on the OWB checkout, commands approved without
+        # asking; network and the extra dirs let it pull/push and use the HOS desk, like Cursor. Codex 0.160 has no
+        # --full-auto (Cursor checked on the Mini, 7 Oct). Check `codex exec --help` after a Codex update.
+        flags = os.environ.get("CODEX_FLAGS", f"exec -s workspace-write --approve-for-me "
+                                              f"-c sandbox_workspace_write.network_access=true "
                                               f"--add-dir {shlex.quote(str(HOS))} --add-dir {shlex.quote(str(STATE.parent))}")
     else:
         return None
-    return (b, shlex.split(flags)) if os.access(b, os.X_OK) else None
+    return (b, shlex.split(flags)) if b else None
 
 
 def state_of(agent: str, at: dt.datetime) -> tuple:
@@ -320,7 +336,7 @@ def cmd_status(at: dt.datetime) -> int:
 def gemini_line() -> str:
     """Gemini is the facts-and-numbers checker, not in the Chief chain: it can't run the Mini, so the acting Chief runs
     it (`agy`) for every job that needs gemini. Show whether it's installed and how much is waiting for it."""
-    b = os.environ.get("AGY_BIN") or shutil.which("agy")
+    b = find_bin("AGY_BIN", "agy")
     try:
         q = json.loads((OWB / "jobs" / "queue.json").read_text())["jobs"]
         waiting = sum(1 for j in q if j.get("needs") == "gemini" and j.get("status") in ("open", "claimed"))
