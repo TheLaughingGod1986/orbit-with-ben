@@ -37,6 +37,7 @@ import subprocess
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import chief_relay  # noqa: E402
 import studio  # noqa: E402
 
 ROOT = studio.ROOT
@@ -253,6 +254,16 @@ def show(job: dict) -> str:
     return "\n".join(lines)
 
 
+def heartbeat(agent: str) -> None:
+    """On the Mini, tell the Chief relay this agent is alive (chief_relay.py: Grok Bot counts as up while it runs jobs.py).
+    A no-op anywhere without ~/_desk/state, e.g. cloud sessions."""
+    if agent and chief_relay.STATE.is_dir():
+        try:
+            chief_relay.seen(agent)
+        except OSError:
+            pass
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -288,6 +299,7 @@ def main(argv=None) -> int:
         p.add_argument("--git", action="store_true")
     args = ap.parse_args(argv)
     at = now()
+    heartbeat(getattr(args, "agent", ""))
 
     if args.cmd == "list":
         data = load()

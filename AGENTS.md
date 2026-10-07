@@ -89,12 +89,13 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 | Agent | Where | Does |
 |---|---|---|
 | **Claude** | Cloud sessions | Scripts, reviews and final OKs (3 Oct order), shot lists, code and tools, the channel tracker. Can't reach the Mini. |
-| **Chief (Grok Bot)** | Mac mini | Runs the Mini: picture, edit, uploads, Studio jobs. Drives Gemini and the assembler. Posts on the studio thread. |
-| **Cursor** | Mac mini (`agent` CLI) | Code on the Mini; **covers as Chief while Grok is out of credit** and hands back when it returns. While covering, `scripts/mini/cursor_worker.sh` (launchd, every 30 min, 08:00-22:00) wakes it to do the oldest task addressed to it on #99 or the HOS desk, one per run; it runs only while `~/_desk/state/cursor-covers-chief` exists. |
+| **Chief (Grok Bot)** | Mac mini | **First in line for Chief.** Runs the Mini: picture, edit, uploads, Studio jobs. Drives Gemini and the assembler. Posts on the studio thread. |
+| **Cursor** | Mac mini (`agent` CLI) | Code on the Mini. **Next in line for Chief** (see "Chief relay"): while Grok is out, the relay wakes it every 30 min to do one job as acting Chief. |
+| **Codex** | Mac mini (`codex` CLI) | **Third in line for Chief:** acts as Chief when Grok and Cursor are both down. Otherwise code jobs when Ben starts it. |
 | **Gemini** | Mac mini (Antigravity `agy` CLI) | **The second check on facts and numbers.** Drafts `01_Script/SOURCES.md` with exact quotes and links, verifies every row of Claude's `CLAUDE_CLAIMS` file, and flags errors. It never rewrites spoken lines (Claude's call). Run by whoever is Chief; claims as `<driver>/gemini` (e.g. `chief/gemini`, `cursor/gemini`). No spend. |
 | **Ben** | | Real money, things only he can do, and changes of direction. |
 
-Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Chief (or Cursor covering) starts it, so a script waiting on sources is the Chief's job to kick off.
+Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Chief (or whoever is acting Chief) starts it, so a script waiting on sources is the Chief's job to kick off.
 
 ## Job queue (7 Oct 2026)
 
@@ -104,12 +105,24 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 |---|---|
 | Chief (Grok Bot) | `mini,gemini,any` |
 | Cursor | `mini,gemini,any` |
+| Codex | `mini,gemini,any` |
 | Claude | `cloud,any` |
 
 - **Claude adds every task as a job:** `jobs.py add --needs mini|gemini|cloud|ben|any --title … --body-file … [--film NNN --stage …] [--after Jnnnn] [--ref <thread comment>] --by claude --git`. The thread carries the discussion and links the job id.
 - **Every agent, at the start of every session and every loop:** `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. It returns the job you already hold, or claims the oldest one you can do. Exit 10 means nothing is waiting. Then `done`, `block --reason` (anything needing Ben), `release --note` at a stopping point, or `renew --eta N` if you're still on it.
 - **A claim past its ETA is stalled,** and the next able agent takes it over. So don't sit on a claim; release it if you stop.
 - A job with `--film/--stage` claims that board stage too, so the board and the queue always agree.
+
+## Chief relay (7 Oct 2026)
+
+Ben: the Chief of Staff is in charge, and when it's down or out of credit the next one in line takes over. **Chain: Grok Bot (`chief`) → Cursor (`cursor`) → Codex (`codex`).** The first one that is up is the acting Chief. `scripts/chief_relay.py` runs it on the Mini (launchd `com.owb.chief-relay`, every 30 min, 08:00–22:00):
+
+- **Grok Bot** counts as up while it has run `jobs.py` in the last 3 hours (every `jobs.py … --agent chief` call on the Mini is its heartbeat). While Grok is up the relay does nothing.
+- **Cursor or Codex:** otherwise the relay wakes the first one that's up for **one** job (25-minute cap). A run that ends with out of credit, usage limit or signed out marks that agent down for 3 hours, and the same run passes the job to the next in line.
+- **Grok takes back over by itself:** its next `jobs.py` run makes it Chief again, and the others stand down. Nobody flips anything by hand.
+- Each change of Chief is posted once on the thread ("Chief relay: … is acting Chief"). If all three are down it says so once; top-ups stay Ben's call.
+- Commands: `chief_relay.py status` (who's Chief and why), `down <agent> --reason … [--until …]`, `up <agent>`, `seen chief`. Pause: `touch ~/_desk/state/chief-relay.pause`.
+- **Acting Chief** uses its own agent id everywhere (`--agent cursor`, `--by codex`), never `chief`. Only Grok Bot is `chief`, because that id is Grok's heartbeat. Its reports start "<Name> covering".
 
 ## Studio board and claims (5 Oct 2026)
 

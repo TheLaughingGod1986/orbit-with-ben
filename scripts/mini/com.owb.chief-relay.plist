@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Chief relay (scripts/chief_relay.py), every 30 minutes, 08:00-22:00. Whoever is first in line and up acts as
+  Chief: Grok Bot, then Cursor, then Codex (Ben, 7 Oct 2026). While Grok is Chief it does nothing. Replaces the
+  Cursor-only worker (cursor_worker.sh), which never got installed.
+  Install once (copies the script to ~/_desk/bin so a git pull can't change it mid-run):
+    mkdir -p ~/_desk/bin ~/_desk/state && cp scripts/chief_relay.py ~/_desk/bin/
+    cp scripts/mini/com.owb.chief-relay.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.chief-relay.plist
+  Who's Chief now:   python3 ~/_desk/bin/chief_relay.py status
+  Pause for a while: touch ~/_desk/state/chief-relay.pause   (rm it to resume)
+  Remove:            launchctl bootout gui/$(id -u)/com.owb.chief-relay
+  Log: ~/Library/Logs/chief-relay.log
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.owb.chief-relay</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>python3 $HOME/_desk/bin/chief_relay.py run</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>1800</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/benjaminoats/Library/Logs/chief-relay.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/benjaminoats/Library/Logs/chief-relay.log</string>
+</dict>
+</plist>
