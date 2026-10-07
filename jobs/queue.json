@@ -1,5 +1,5 @@
 {
-  "next_id": 20,
+  "next_id": 21,
   "jobs": [
     {
       "id": "J0001",
@@ -710,6 +710,32 @@
       "stage": "edit",
       "after": "",
       "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T19:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T19:50Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0020",
+      "title": "Sun 022 thumbnails A/B/C",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 long: thumbnails A/B/C (PLAN_2026-10-03.md \"Thumbnails\"; THUMBNAIL_AND_TITLE_RULES.md).\nThe Sun large with a prominence off the limb, a real NASA SDO frame (e.g. SVS 13778 or 11517 at the opening stretch),\nno Orbit, no channel name. Text adds to the title, yellow on the hook word:\n  A: BURNING HARDER (yellow BURNING)   B: IT'S CLIMBING (yellow CLIMBING)   C: RUNNING DOWN? (yellow DOWN)\n1280x720, readable at 168x94 (commit a small-size check sheet). Commit to 08_Thumbnail/ (A/B/C PNG + sheet) for Claude.\n",
+      "ref": "",
+      "film": "022",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 60,
       "status": "open",
       "by": "",
       "since": "",
