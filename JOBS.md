@@ -10,6 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
 | J0012 | mini | open | – | – | Sun 022: Omni Orbit beats, rows 67 and 81 | 6042004598 |
 | J0013 | mini | open | – | – | Why the relay's handover line isn't posting |  |
+| J0014 | mini | open | – | – | Sun 022 score bed, full length (525 s) | 6042004598 |
 
 Recently finished:
 

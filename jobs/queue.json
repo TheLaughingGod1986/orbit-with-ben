@@ -1,5 +1,5 @@
 {
-  "next_id": 14,
+  "next_id": 15,
   "jobs": [
     {
       "id": "J0001",
@@ -458,6 +458,32 @@
       "history": [
         {
           "at": "2026-10-07T16:51Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0014",
+      "title": "Sun 022 score bed, full length (525 s)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 score bed, FULL length (replaces J0011's 240 s ruling; Ben asked why we keep 50k, and the floor is now 20k) (Claude's rulings on the v01 report, #99 6042004598). No new spend beyond the written rules.\n\n1. Score bed (the Moon bed in v01 is a stand-in). Same tool and process as Saturn's bed:\n   desk-lock elevenlabs -- python3 04_Audio/tools/generate_music_bed.py --project sun-brighter \\\n     --out-dir 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music --length-ms 525000 --prompt \"Instrumental cinematic space documentary underscore for Orbit with Ben, Sun film. Warm golden daylight and slow solar time: patient, luminous, with a quiet uneasy undertow, a slow climb you cannot see. Soft strings, warm analog pads, low cello, sparse piano harmonics, gentle shimmer. NOT Saturn ring chimes, NOT Moon Leaving lunar piano. Vast quiet scale, intimate curiosity, room for British narration. No vocals, no drums, no EDM, no trailer hit.\"\n   Dry run first (it writes the plan JSON only), then --generate. API only, never the ElevenLabs website. The floor is now 20k (Claude, 7 Oct):\n   at Saturn's rate this bed costs ~21,800 and leaves ~48,000, so go ahead; stop only if it would end under 20,000. Commit the plan JSON (audio stays out of git).\nAlso note the ElevenLabs plan's next credit reset date (subscription API, read only) in the done note.\n",
+      "ref": "6042004598",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-07T17:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-07T17:04Z",
           "by": "claude",
           "what": "added"
         }
