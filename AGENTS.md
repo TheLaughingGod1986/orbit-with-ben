@@ -90,7 +90,7 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 |---|---|---|
 | **Claude** | Cloud sessions | Scripts, reviews and final OKs (3 Oct order), shot lists, code and tools, the channel tracker. Can't reach the Mini. |
 | **Chief (Grok Bot)** | Mac mini | Runs the Mini: picture, edit, uploads, Studio jobs. Drives Gemini and the assembler. Posts on the studio thread. |
-| **Cursor** | Mac mini (`agent` CLI) | Code on the Mini; **covers as Chief while Grok is out of credit** and hands back when it returns. |
+| **Cursor** | Mac mini (`agent` CLI) | Code on the Mini; **covers as Chief while Grok is out of credit** and hands back when it returns. While covering, `scripts/mini/cursor_worker.sh` (launchd, every 30 min, 08:00-22:00) wakes it to do the oldest task addressed to it on #99 or the HOS desk, one per run; it runs only while `~/_desk/state/cursor-covers-chief` exists. |
 | **Gemini** | Mac mini (Antigravity `agy` CLI) | **The second check on facts and numbers.** Drafts `01_Script/SOURCES.md` with exact quotes and links, verifies every row of Claude's `CLAUDE_CLAIMS` file, and flags errors. It never rewrites spoken lines (Claude's call). Run by whoever is Chief; claims as `<driver>/gemini` (e.g. `chief/gemini`, `cursor/gemini`). No spend. |
 | **Ben** | | Real money, things only he can do, and changes of direction. |
 
