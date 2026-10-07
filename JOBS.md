@@ -6,3 +6,4 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0001 | mini | open | – | – | 022 edit · Sun 022 first cut v01 | 6036709461 |
+| J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
