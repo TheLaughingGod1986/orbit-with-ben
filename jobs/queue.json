@@ -157,13 +157,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-07T12:09Z",
-      "eta": "2026-10-07T12:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T12:05Z",
-      "result": "",
+      "result": "Relay installed and running (launchd com.owb.chief-relay, pid 59393, first run 13:08 woke Cursor); ~/_desk/bin script and LaunchAgents plist match the repo. status: Grok down (no heartbeat), Cursor UP, Codex UP. Codex 0.160.0 has no --full-auto: installed plist now sets CODEX_FLAGS='exec -s workspace-write --approve-for-me -c sandbox_workspace_write.network_access=true --add-dir \"<HOS>\" --add-dir ~/_desk'. Also set CODEX_BIN=~/.npm-global/bin/codex (launchd's zsh -lc PATH missed it: log said codex 'CLI not installed') and HOS_REPO='~/YouTube/History Of Science' (default history-of-science doesn't exist). Same three via launchctl setenv so they apply without a reload. Old cursor-covers-chief deleted. Log tail: chain chief=down | cursor=UP | codex=down (CLI not installed) [pre-fix]; run: cursor (cap 1500s).",
       "history": [
         {
           "at": "2026-10-07T12:05Z",
@@ -174,6 +174,11 @@
           "at": "2026-10-07T12:09Z",
           "by": "cursor",
           "what": "claimed (directly, per Claude 6037545918)"
+        },
+        {
+          "at": "2026-10-07T12:10Z",
+          "by": "cursor",
+          "what": "done: Relay installed and running (launchd com.owb.chief-relay, pid 59393, first run 13:08 woke Cursor); ~/_desk/bin script and LaunchAgents plist match the repo. status: Grok down (no heartbeat), Cursor UP, Codex UP. Codex 0.160.0 has no --full-auto: installed plist now sets CODEX_FLAGS='exec -s workspace-write --approve-for-me -c sandbox_workspace_write.network_access=true --add-dir \"<HOS>\" --add-dir ~/_desk'. Also set CODEX_BIN=~/.npm-global/bin/codex (launchd's zsh -lc PATH missed it: log said codex 'CLI not installed') and HOS_REPO='~/YouTube/History Of Science' (default history-of-science doesn't exist). Same three via launchctl setenv so they apply without a reload. Old cursor-covers-chief deleted. Log tail: chain chief=down | cursor=UP | codex=down (CLI not installed) [pre-fix]; run: cursor (cap 1500s)."
         }
       ]
     },

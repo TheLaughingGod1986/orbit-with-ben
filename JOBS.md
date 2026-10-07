@@ -9,9 +9,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0002 | cloud | open (after J0001) | – | – | Review the Sun 022 first cut | 6036709461 |
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
 | J0004 | mini | open | – | – | Read the monthly Google credit (read only) | 6036747147 |
-| J0006 | mini | claimed | cursor | 2026-10-07T12:39Z | Install the Chief relay on the Mini |  |
 | J0007 | mini | open | – | – | Sun 022: VO pickup 'Three clocks' at 457 s | 6037545918 |
 
 Recently finished:
 
+- J0006 done: Install the Chief relay on the Mini (Relay installed and running (launchd com.owb.chief-relay, pid 59393, first run 13:08 woke Cursor); ~/_desk/bin script and LaunchAgents plist match the repo. status: Grok down (no heartbeat), Cursor UP, Codex UP. Codex 0.160.0 has no --full-auto: installed plist now sets CODEX_FLAGS='exec -s workspace-write --approve-for-me -c sandbox_workspace_write.network_access=true --add-dir "<HOS>" --add-dir ~/_desk'. Also set CODEX_BIN=~/.npm-global/bin/codex (launchd's zsh -lc PATH missed it: log said codex 'CLI not installed') and HOS_REPO='~/YouTube/History Of Science' (default history-of-science doesn't exist). Same three via launchctl setenv so they apply without a reload. Old cursor-covers-chief deleted. Log tail: chain chief=down | cursor=UP | codex=down (CLI not installed) [pre-fix]; run: cursor (cap 1500s).)
 - J0005 cancelled: Decide: install the Cursor worker ()
