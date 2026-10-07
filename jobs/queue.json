@@ -626,13 +626,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-07T19:39Z",
-      "eta": "2026-10-07T20:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T19:16Z",
-      "result": "",
+      "result": "Cut v03 delivered: iCloud OWB UAT/sun_first_cut_v03/ (518.7 s), review_v03/ in git (9a7367d, dfc52eb). Blocking fixes 1-7 in; row 90 mask now sky-coloured. clip_check --repeat-ok 6 PASS; -14.2 LUFS, -1.7 dBTP on the final mp4. Not done: non-blocking fixes 8 (repeats rows 8/49/50) and 9 (row 14 check).",
       "history": [
         {
           "at": "2026-10-07T19:16Z",
@@ -653,8 +653,14 @@
           "at": "2026-10-07T19:39Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-07T19:48Z",
+          "by": "cursor",
+          "what": "done: Cut v03 delivered: iCloud OWB UAT/sun_first_cut_v03/ (518.7 s), review_v03/ in git (9a7367d, dfc52eb). Blocking fixes 1-7 in; row 90 mask now sky-coloured. clip_check --repeat-ok 6 PASS; -14.2 LUFS, -1.7 dBTP on the final mp4. Not done: non-blocking fixes 8 (repeats rows 8/49/50) and 9 (row 14 check)."
         }
-      ]
+      ],
+      "done_ref": "dfc52eb"
     },
     {
       "id": "J0018",

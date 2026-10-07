@@ -6,11 +6,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0017 | mini | claimed | cursor | 2026-10-07T20:39Z | 022 edit · Sun 022 cut v03: fixes from the v02 review | 6045051575 |
 | J0018 | cloud | open (after J0017) | – | – | Review the Sun 022 cut v03 | 6045051575 |
 
 Recently finished:
 
+- J0017 done: Sun 022 cut v03: fixes from the v02 review (Cut v03 delivered: iCloud OWB UAT/sun_first_cut_v03/ (518.7 s), review_v03/ in git (9a7367d, dfc52eb). Blocking fixes 1-7 in; row 90 mask now sky-coloured. clip_check --repeat-ok 6 PASS; -14.2 LUFS, -1.7 dBTP on the final mp4. Not done: non-blocking fixes 8 (repeats rows 8/49/50) and 9 (row 14 check).)
 - J0016 cancelled: Review the Sun 022 cut v03 ()
 - J0015 cancelled: Sun 022 cut v03: fixes from the v02 review ()
 - J0014 done: Sun 022 score bed, full length (525 s) (Sun 022 score bed generated: 05_Music/sun-brighter_score_bed_v01.mp3 on the Mini (not in git), 525.0 s, -13.8 LUFS, no silent gaps. Cost ~7,219 ElevenLabs credits (70,157 -> 62,938, above the 20k floor). Next credit reset: 30 Oct 2026 10:50 UTC (Creator plan). Plan JSON committed 48c93e7.)
@@ -20,4 +20,3 @@ Recently finished:
 - J0010 done: Sun 022: VO pickup 'This one was over in a day' (PASS: sun_pickup_over_in_a_day_v01.wav, 1.68 s, -16.8 LUFS, Scribe 100% exact ('This one was over in a day'), 27 chars (70170 before). Record e2e810c. WAV/MP3 on the Mini in 022/02_Voiceover; ready for J0001 to lay over row 11.)
 - J0009 done: Chief relay checks on the Mini (done)
 - J0008 done: Gemini: Sun 022 pictures vs words, and the clock numbers (GEMINI_PICTURE_CHECK_v01.md: 11 of 97 GODDARD/NASA rows flagged; clocks 1-2 confirmed, clock 3 (prominence 'days') needs wording)
-- J0007 done: Sun 022: VO pickup 'Three clocks' at 457 s (Take sun_pickup_three_clocks_v01 PASS: Scribe 'Three clocks. Only one of them answers the title' 100%, 3.12 s, LUFS -19.9, 49 chars (pool 70,193). Audio on the Mini at 022/02_Voiceover/sun_pickup_three_clocks_v01.wav (+ .mp3).)
