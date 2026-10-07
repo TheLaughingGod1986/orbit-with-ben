@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-  Chief relay (scripts/chief_relay.py), every 30 minutes, 08:00-22:00. Whoever is first in line and up acts as
+  Chief relay (scripts/chief_relay.py), every 10 minutes, 08:00-22:00 (wakes an agent only when a job is queued, plus a 2-hourly sweep). Whoever is first in line and up acts as
   Chief: Grok Bot, then Cursor, then Codex (Ben, 7 Oct 2026). While Grok is Chief it does nothing. Replaces the
   Cursor-only worker (cursor_worker.sh), which never got installed.
   Install once (copies the script to ~/_desk/bin so a git pull can't change it mid-run):
@@ -30,7 +30,7 @@
     <string>/Users/benjaminoats/.local/bin:/Users/benjaminoats/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
   </dict>
   <key>StartInterval</key>
-  <integer>1800</integer>
+  <integer>600</integer>
   <key>RunAtLoad</key>
   <true/>
   <key>StandardOutPath</key>

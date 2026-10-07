@@ -22,7 +22,7 @@ How "up" is decided:
           through to the next agent in line.
 
   python3 scripts/chief_relay.py status                         # the chain, who is Chief, and why
-  python3 scripts/chief_relay.py run                            # launchd, every 30 min: one job by the acting Chief
+  python3 scripts/chief_relay.py run                            # launchd, every 10 min: one job by the acting Chief, when one is queued
   python3 scripts/chief_relay.py seen chief                     # heartbeat (jobs.py does this for you)
   python3 scripts/chief_relay.py down chief --reason "out of credit" [--until 2026-10-12T09:00]
   python3 scripts/chief_relay.py up cursor                      # clear a down mark
@@ -361,6 +361,22 @@ def cmd_run(at: dt.datetime) -> int:
         return run_locked(at)
 
 
+def queue_has_work(agent: str) -> bool:
+    """Is a Mini job waiting for this agent (jobs.py next --peek)? The relay runs every 10 min (Ben, 7 Oct: one job per
+    30 min left the Mini idle most of the time), but only wakes a CLI when there's work, plus a sweep every 2 h for
+    thread/desk tasks outside the queue. If the queue can't be read, it wakes the agent anyway."""
+    jobs = OWB / "scripts" / "jobs.py"
+    if not jobs.exists():
+        return True
+    subprocess.run(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], capture_output=True, timeout=120)
+    try:
+        r = subprocess.run([sys.executable, str(jobs), "next", "--agent", agent, "--can", "mini,gemini,any", "--peek"],
+                           cwd=str(OWB), capture_output=True, text=True, timeout=120)
+    except (OSError, subprocess.SubprocessError):
+        return True
+    return r.returncode != 10
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
@@ -374,6 +390,11 @@ def run_locked(at: dt.datetime) -> int:
             return 0
         if who == "chief":
             log("Grok Bot is Chief: nothing to do")
+            return 0
+        last_wake = last_seen(who)
+        sweep = not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120")))
+        if not queue_has_work(who) and not sweep:
+            log(f"nothing queued for {who}; last woken {int((at - last_wake).total_seconds() // 60)} min ago: not waking it")
             return 0
         above = [f"{NAMES.get(a, a)} is {why}" for a, up, why in rows[:[r[0] for r in rows].index(who)]]
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why="; ".join(above) or "it is first in line",

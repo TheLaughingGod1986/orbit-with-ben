@@ -157,6 +157,19 @@ class Relay(unittest.TestCase):
         self.assertTrue(cr.out_of_credit(1, "usage limit reached, try again at 5pm"))
         self.assertFalse(cr.out_of_credit(124, "rate limit"))
 
+    def test_no_wake_when_nothing_is_queued_but_a_sweep_every_two_hours(self):
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False
+        try:
+            cr.seen("cursor", T0 - 30 * MIN)  # woken half an hour ago, queue empty: stay asleep
+            cr.cmd_run(T0)
+            self.assertFalse(self.ran("cursor"))
+            cr.seen("cursor", T0 - 130 * MIN)  # two hours on: one sweep for thread/desk tasks
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))
+        finally:
+            cr.queue_has_work = old
+
     def test_pause_file_stops_runs(self):
         (cr.STATE / "chief-relay.pause").write_text("")
         cr.cmd_run(T0)
