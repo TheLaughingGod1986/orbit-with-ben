@@ -61,7 +61,8 @@ def main(argv: list[str] | None = None) -> int:
         a.db_out.mkdir(parents=True, exist_ok=True)
         (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
         q = ROOT / "jobs" / "queue.json"
-        live = [{k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "film", "stage", "after", "ref", "result")}
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "film", "stage", "after", "ref", "result")},
+                     last=(j.get("history") or [{}])[-1])  # who touched it last, when, and their note (the board shows it)
                 for j in (json.loads(q.read_text())["jobs"] if q.exists() else []) if j["status"] in ("open", "claimed", "blocked")]
         doc = {"updatedAt": now, "films": owb, "jobs": live}
         if a.chief:
