@@ -6,7 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0020 | mini | open | – | – | 022 thumbs · Sun 022 thumbnails A/B/C |  |
+| J0020 | mini | claimed | cursor | 2026-10-07T21:18Z | 022 thumbs · Sun 022 thumbnails A/B/C |  |
 | J0021 | mini | open | – | – | Sun 022 Short Mon 19: brighter as it runs out of fuel |  |
 | J0022 | mini | open | – | – | Sun 022 Short Fri 23: dimmer young Sun |  |
 | J0023 | cloud | open | – | – | Sun 022 upload text: description, chapters, credits, captions, pinned comment |  |
