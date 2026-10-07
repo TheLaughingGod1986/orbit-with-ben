@@ -6,11 +6,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0003 | mini | open (after J0001) | – | – | 023 edit · Venus 023: Part 01 v03, then the full first cut (Sat 17) | 6025765289 |
-| J0029 | cloud | claimed | claude | 2026-10-08T00:12Z | 028: lock topic, write script v01 (Claude) |  |
 | J0030 | mini | open | – | – | Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) |  |
 
 Recently finished:
 
+- J0029 done: 028: lock topic, write script v01 (Claude) (script v01 at 01_Script/star_coming_script_master_v01.md, review:script 91; CLAUDE_CLAIMS_v01.md for Gemini)
 - J0028 done: 028 SOURCES: Gliese 710 flyby (Gemini) (028 SOURCES.md committed (10 rows, Gemini via agy). Exact quotes missing on 2 rows: cratering <=5% (Garcia-Sanchez 2001) and mass 0.57-0.60 Msun.)
 - J0027 done: 028 topic: neighbour pass for Gliese 710 (+2 backups) (Neighbour pass in 028 11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md + PRE_BUILD_VIDIQ_AUDIT.md §0. Gliese 710 medium (4 adjacent 1M+, top direct 613K); rogue planet strong (5); Betelgeuse strong (6). Claude to lock topic.)
 - J0026 done: Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line (Fri 23 Short v02: PIA21218 disc (young grade -> as shot at 'brightening'), sea band cropped, red line gone; gate PASS no warnings (motion 14.58). Frames 1b6096f. Not uploaded.)
@@ -20,4 +20,3 @@ Recently finished:
 - J0022 done: Sun 022 Short Fri 23: dimmer young Sun (v01 built 1181b2d: 23.2 s, gate PASS no warnings (motion 20.8, visor 0.0007). Export 10_Shorts/fri23_dimmer_sun/06_Final-Exports/fri23_dimmer_sun_short_v01.mp4 on the Mini. Awaiting Claude final OK. Not uploaded.)
 - J0021 done: Sun 022 Short Mon 19: brighter as it runs out of fuel (v01 built 1a710fb (gate PASS, motion warn). Claude reviewed in #6046378537; fixes go in J0025. Not uploaded.)
 - J0020 done: Sun 022 thumbnails A/B/C (022 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 (+168x94 sheet) for Claude review)
-- J0019 done: Sun 022 v04 polish: three repeat swaps, row 14 check (v04 rendered: iCloud OWB UAT/sun_first_cut_v04/; rows 8/49/50 swapped (e001936, e000923, e000790); row 14 in at 8.0 s; -14.2 LUFS / -1.7 dBTP; clip_check PASS; review_v04 in git)
