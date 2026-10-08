@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0038 | mini | claimed | cursor | 2026-10-08T09:29Z | 029 vo · 029: VO take of the locked script master (after the claims check) |  |
+| J0038 | mini | open (after J0037) | – | – | 029 vo · 029: VO take of the locked script master (after the claims check) |  |
 
 Recently finished:
 
