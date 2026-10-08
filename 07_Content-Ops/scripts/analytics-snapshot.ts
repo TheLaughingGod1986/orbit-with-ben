@@ -37,9 +37,18 @@ export const ANALYTICS_ROOT = path.resolve(__dirname, "../../05_Analytics");
 /** YouTube Analytics is about two days behind; asking for later days returns nothing for them. */
 const ANALYTICS_LAG_DAYS = 2;
 
+/** Google sometimes answers a valid token with 401 or 5xx for a second or two (HOS, 8 Oct 2026). */
+const RETRY_STATUSES = new Set([401, 429, 500, 502, 503, 504]);
+
 async function get(token: string, url: string) {
-  const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
-  const body = await res.json().catch(() => ({}));
+  let res: Response;
+  let body: any;
+  for (let attempt = 1; ; attempt++) {
+    res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+    body = await res.json().catch(() => ({}));
+    if (res.ok || !RETRY_STATUSES.has(res.status) || attempt >= 4) break;
+    await new Promise((r) => setTimeout(r, 1000 * attempt));
+  }
   if (!res.ok) {
     const err = new Error(`${url.split("?")[0]} ${res.status} ${JSON.stringify(body?.error?.message ?? body).slice(0, 200)}`);
     (err as Error & { status?: number }).status = res.status;
