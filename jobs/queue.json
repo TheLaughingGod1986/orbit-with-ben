@@ -1,5 +1,5 @@
 {
-  "next_id": 72,
+  "next_id": 73,
   "jobs": [
     {
       "id": "J0001",
@@ -2970,6 +2970,32 @@
         }
       ],
       "for": "codex"
+    },
+    {
+      "id": "J0072",
+      "title": "Relay: copy the new chief_relay.py to ~/_desk/bin and check Codex is signed in (for J0071)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Quick (5 min): let the relay wake Codex for J0071 (Claude, #6070320668).**\n1. `git pull`, then copy `scripts/chief_relay.py` to `~/_desk/bin/chief_relay.py`. Or point launchd at the repo file, which closes J0053; if you do, say so and mark J0053 done.\n2. Run `python3 ~/_desk/bin/chief_relay.py status` and post the chain lines.\n3. Run `codex login status` and post only whether it's signed in. Then `codex --version`.\n4. If Codex is signed out or out of credit, block J0071 with \"needs Ben: sign Codex in on the Mini\" and say so. Otherwise the relay's next tick wakes Codex for J0071 by itself.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T22:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T22:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
