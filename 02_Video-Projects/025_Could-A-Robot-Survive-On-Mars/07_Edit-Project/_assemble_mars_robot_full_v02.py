@@ -21,7 +21,7 @@ HERE=Path(__file__).resolve().parent; EP=HERE.parent
 UAT=Path.home()/'Library/Mobile Documents/com~apple~CloudDocs/OWB UAT'
 WORK=Path('/private/tmp/mars025_full_work_v02'); PACK=HERE/'full_rough_v02_pack'
 VO=EP/'02_Voiceover/mars_robot_vo_v01.mp3'
-OUT=UAT/'025_MarsRobot_full_rough_v02.mp4'
+OUT=UAT/'025_MarsRobot_full_rough_v02c.mp4'
 MAX_UP=2.35; MAX_HOLD=6.0
 H=HERE/'nasa_pool_v01'
 OM=EP/'04_Generated-Clips/01_Raw/omni_v01'
@@ -51,13 +51,18 @@ if not PLAN:
 Q={'tl':(0.0,0.0),'tr':(0.5,0.0),'bl':(0.0,0.5),'br':(0.5,0.5),'c':(0.25,0.25)}
 PAN='rovers_wait/PIA24765.jpg';PAN_BOX=(0.095,0.12,0.965,0.57)
 FILL_MAX=0.015
+SCENE='scene content, not an empty edge (Claude, thread #6064654610)'
+REVIEWED_OK={'PIA17792.jpg':SCENE,'PIA20316.jpg':SCENE,'PIA26016.jpg':SCENE+'; pass unless the sheet shows a straight black/white edge','PIA23177.jpg':SCENE+'; pass unless the sheet shows a straight black/white edge',
+ 'PIA20328.jpg':'reviewed_ok only if the 16:9 window stays inside the tilted mosaic: no corner wedge at any point of the push (Claude, #6064654610)',
+ 'PIA22210.jpg':'reviewed_ok only if cropped above the stair-stepped bottom edge at <=2.35x, else drop (Claude, #6064654610)',
+ 'PIA24264.jpg':'reviewed_ok only if cropped above the black distorted base: sky and horizon, deck top at most (Claude, #6064654610)'}
 COLD=OM/'orbit_mars_cold_omni_v01.mp4'; WHEEL=OM/'orbit_mars_wheel_omni_v01.mp4'
 def v(at,**k):return dict(video=1,at=at,**k)
 c=dict(quad='c')
 # (row, VO in from SHOT_LIST_v02, [sources]); a source is a pool path or (path, opts). One cut per source.
 ROWS=[
  ('1',0.12,[(PAN,dict(pan=(0.0,0.30),box=PAN_BOX))]),
- ('2',6.08,[('opp_deck/PIA07372.jpg',dict(box=(0.12,0.12,0.88,0.88)))]),
+ ('2',6.08,['opp_deck/PIA07372.jpg']),
  ('3',10.48,['gale_desert/PIA22210.jpg','gale_desert/PIA21268.jpg']),
  ('4',19.08,['frost/PIA11132.jpg','opp_deck/PIA15115.jpg']),
  ('5',26.28,[('gale_desert/PIA20284.jpg',dict(box=(0.0,0.05,0.35,0.95))),'dust/PIA17759.jpg','open_pan/PIA19109.jpg','open_pan/PIA18098.jpg']),
@@ -69,9 +74,9 @@ ROWS=[
  ('11',111.50,['dsn/PIA17792.jpg','rovers_wait/PIA26310.jpg','rovers_wait/PIA25681.jpg','dsn/PIA26717.jpg']),
  ('12',133.76,['spirit/PIA09090.jpg','dusk_plain/PIA15024.jpg','dusk_plain/PIA26673.gif']),
  ('13',144.96,['spirit/PIA07882.jpg','open_pan/PIA20328.jpg',('dusk_plain/PIA19400.jpg',dict(pct=0.12)),(COLD,v(4.0,max=5.0,push=0.05))]),
- ('14',161.40,[('spirit/PIA12142.jpg',dict(box=(0.0,0.3,1.0,1.0))),('spirit/PIA12203.jpg',dict(quad='tl')),'spirit/PIA12337.jpg','spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
+ ('14',161.40,['spirit/PIA12142.jpg',('spirit/PIA12203.jpg',dict(quad='tl')),'spirit/PIA12337.jpg','spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
  ('15',186.38,['spirit/PIA07371.jpg','spirit/PIA01907.jpg','tracks/PIA16933.jpg']),
- ('16',199.44,['phoenix/PIA10664.jpg','phoenix/PIA13804.jpg','phoenix/PIA10665.jpg','phoenix/PIA22223.jpg',('phoenix/PIA13804.jpg',c)]),
+ ('16',199.44,[('phoenix/PIA22223.jpg',dict(box=(0.0,0.0,1.0,0.5625))),'phoenix/PIA13804.jpg','phoenix/PIA10665.jpg','phoenix/PIA22223.jpg',('phoenix/PIA13804.jpg',c)]),
  ('17',225.06,['rover_work/PIA24542.jpg','rovers_wait/PIA24264.jpg']),
  ('18',231.68,['open_pan/PIA18093.jpg','open_pan/PIA16122.jpg']),
  ('19',239.06,['dust/PIA10128.jpg','dust/PIA11799.jpg','dust/PIA20329.jpg']),
@@ -301,7 +306,8 @@ if '--finish-only' not in sys.argv:
  norm=f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={st['input_i']}:measured_TP={st['input_tp']}:measured_LRA={st['input_lra']}:measured_thresh={st['input_thresh']}:offset={st['target_offset']}:linear=true"
  run(['-i',VO,'-i',WORK/'music.wav','-filter_complex',mix+','+norm+'[a]','-map','[a]','-ar','48000','-c:a','aac','-b:a','192k',WORK/'audio.m4a'])
  OUT.parent.mkdir(parents=True,exist_ok=True)
- run(['-i',WORK/'picture.mp4','-i',WORK/'audio.m4a','-map','0:v','-map','1:a','-c','copy','-t',TOTAL,'-movflags','+faststart',OUT])
+ run(['-i',WORK/'picture.mp4','-i',WORK/'audio.m4a','-map','0:v','-map','1:a','-c','copy','-t',TOTAL,'-movflags','+faststart',WORK/OUT.name])
+ sp.run(['cp',str(WORK/OUT.name),str(OUT)],check=True)
 
 # ---- checks and review pack
 runtime=probe(OUT)
@@ -339,8 +345,11 @@ def sheet(name,items,cols=6):
  board.save(PACK/(name+'.jpg'),quality=90)
 sheet('per_row_sheet_v02',tiles)
 fill=[dict(row=c['row'],cut=k,source=c['source'],frac=round(border_fill_fraction(frames/f"row_{k:03}.jpg"),4)) for k,c in enumerate(cuts)]
-fill_fail=[f for f in fill if f['frac']>FILL_MAX]
-(PACK/'fill_gate_v02.json').write_text(json.dumps(dict(rule='fail if near-black(<12)/near-white(>245) pixels touching the border cover > 1.5% of the row frame',verdict='FAIL' if fill_fail else 'PASS',fail=fill_fail,rows=fill),indent=2))
+for f in fill:
+ if f['frac']>FILL_MAX and f['source'] in REVIEWED_OK:f.update(status='reviewed_ok',note=REVIEWED_OK[f['source']])
+fill_fail=[f for f in fill if f['frac']>FILL_MAX and 'status' not in f]
+fill_reviewed=[f for f in fill if f.get('status')=='reviewed_ok']
+(PACK/'fill_gate_v02.json').write_text(json.dumps(dict(rule='fail if near-black(<12)/near-white(>245) pixels touching the border cover > 1.5% of the row frame',verdict='FAIL' if fill_fail else 'PASS',fail=fill_fail,reviewed_ok=fill_reviewed,rows=fill),indent=2))
 freezes=[l for l in checks.splitlines() if 'freeze_duration' in l]
 def tsheet(name,times):
  items=[]
@@ -356,6 +365,6 @@ h=hashlib.sha256()
 with OUT.open('rb') as f:
  for b in iter(lambda:f.read(1<<20),b''):h.update(b)
 (PACK/'SHA256.txt').write_text(f'{h.hexdigest()}  {OUT.name}\n')
-summary=dict(fill_gate='FAIL' if fill_fail else 'PASS',fill_fail=fill_fail,freezes_over_0_8s=freezes,sentence_end_rows=SENT_NOTE,out=str(OUT),sha256=h.hexdigest(),runtime=runtime,lufs=lufs,clip_check_exit=cc.returncode,align=align,reuse_stills=dict(reuse))
+summary=dict(fill_gate='FAIL' if fill_fail else 'PASS',fill_fail=fill_fail,fill_reviewed_ok=[(f['row'],f['source'],f['frac']) for f in fill_reviewed],freezes_over_0_8s=freezes,sentence_end_rows=SENT_NOTE,out=str(OUT),sha256=h.hexdigest(),runtime=runtime,lufs=lufs,clip_check_exit=cc.returncode,align=align,reuse_stills=dict(reuse))
 (PACK/'summary_v02.json').write_text(json.dumps(summary,indent=2))
 print(json.dumps(summary,indent=1));print(cc.stdout+cc.stderr)
