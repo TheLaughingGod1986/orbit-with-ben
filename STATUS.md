@@ -22,6 +22,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
-| 025 | edit | cursor | 2026-10-08T18:45Z | 2026-10-08T19:44Z | J0062 025: rough v03b (201 s swap to PIA19400, 393 s crop, two polish-gate tweaks), then to Ben |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
