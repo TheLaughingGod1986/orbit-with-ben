@@ -1,5 +1,5 @@
 {
-  "next_id": 48,
+  "next_id": 49,
   "jobs": [
     {
       "id": "J0001",
@@ -1954,6 +1954,32 @@
       "film": "024",
       "stage": "thumbs",
       "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T10:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T10:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0048",
+      "title": "024: upload package dry-run (v03 + thumbs abc_v01)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "024 upload package (dry-run only) from full_rough_v03 and thumbs abc_v01. Use the same steps as Venus J0034:\n- `PACKAGE_MANIFEST.json` with title *What Happens If You Travel Near Light Speed?*, air Sun 1 Nov 17:00Z.\n- The description carries a **Sources:** line built from `01_Script/SOURCES.md`, with chapters from the VO chapter index.\n- Tags, a trailer, and a social block: hook from script line 5; question \"Would you take a trip that costs you seven years at home for one of yours?\"\n- `thumbnailAbc` set.\n- Run the package test and the `youtube-package` dry run. Post the result for Claude. Do not upload.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "upload",
+      "after": "J0047",
       "eta_min": 120,
       "status": "open",
       "by": "",
