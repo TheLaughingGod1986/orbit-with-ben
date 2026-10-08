@@ -5,13 +5,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0051 | mini | claimed | cursor | 2026-10-08T17:26Z | 025 edit · 025: pool licence check + full rough v01 (024 v03 rules) for Claude review |  |
 | J0052 | mini | open | – | – | AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) |  |
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0054 | mini | open | – | – | Mini disk: move aired films' working media + superseded cuts to the NAS (checksummed), target 40 GB free |  |
 
 Recently finished:
 
+- J0051 done: 025: pool licence check + full rough v01 (024 v03 rules) for Claude review (done)
 - J0050 done: 025: Omni Orbit beats (cold, wheel, Wed Short night) for Claude PASS (done)
 - J0049 done: 024: thumb B v02 (grade, flares, crop); A and C passed (abc_v02: B regraded in float, flares out, tighter limb crop; A and C copied from abc_v01; sheet abc_v02/light_speed_thumbs_v02_small_size_check.jpg)
 - J0048 done: 024: upload package dry-run (v03 + thumbs abc_v01) (024 package built, vitest youtube-package 6/6, youtube:package dry run ok (publishAt 2026-11-01T18:00Z, sha e0f2ba6d, 19 tags, pinned, trailer 41.6 s). No upload.)
@@ -21,4 +21,3 @@ Recently finished:
 - J0044 done: 024: assemble full rough v01 (Venus v04 rules) for Claude review (024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words.)
 - J0043 done: 024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS) (c1e5ff2: both takes ok (10 s, Vertex global, free credit). Sheets in 04_Generated-Clips/01_Raw/omni_v01/sheets/ for Claude PASS. Media on the Mini only.)
 - J0042 done: 024: harvest v01 + render code graphics (licence-checked pool) (Pool nasa_pool_v01/024_harvest_v01 (22 items, all PD or CC BY-SA 3.0 IGO, titles checked). Manifest _evidence/light_speed_harvest_v01.json; gaps _evidence/light_speed_harvest_v01_gaps.md. Code graphics v02 at row length (mapdrift 13, contraction 17, energy 17, gammaclocks 19, lightclock 22, starfield 23 s) in graphics_v02/; the rest in graphics_v01. Row 11: DC-8 only (Hafele-Keating PD not confirmed).)
-- J0041 done: 028: verify Berski & Dybczynski comet-shower quote from the full paper (or FLAG for a pickup) (OK: all three quotes found verbatim in A&A full text (§3.3, §4) with URL in SOURCES row 7; no pickup needed)
