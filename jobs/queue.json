@@ -1845,13 +1845,13 @@
       "stage": "edit",
       "after": "J0042",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T10:34Z",
-      "eta": "2026-10-08T12:34Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T09:48Z",
-      "result": "",
+      "result": "024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words.",
       "history": [
         {
           "at": "2026-10-08T09:48Z",
@@ -1872,8 +1872,14 @@
           "at": "2026-10-08T10:34Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T10:35Z",
+          "by": "cursor",
+          "what": "done: 024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words."
         }
-      ]
+      ],
+      "done_ref": "b758d7e"
     }
   ]
 }
