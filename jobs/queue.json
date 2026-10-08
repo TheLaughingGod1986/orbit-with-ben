@@ -2955,7 +2955,7 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "cancelled",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
@@ -2972,6 +2972,11 @@
           "at": "2026-10-08T22:58Z",
           "by": "claude",
           "what": "cancelled: paused: Codex's CLI flags fail (exit 2); J0073 fixes them and reopens this"
+        },
+        {
+          "at": "2026-10-08T23:08Z",
+          "by": "cursor",
+          "what": "reopened: Codex flags fixed (ff40b2b)"
         }
       ],
       "for": "codex"
