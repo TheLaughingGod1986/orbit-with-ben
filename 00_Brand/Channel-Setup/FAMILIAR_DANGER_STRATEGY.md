@@ -27,7 +27,7 @@ Line 1 is 5 to 7 words. The familiar thing in danger. Spoken in the first second
 
 Line 2 is the stay line. What they get if they stay. Orbit arrives from about 1.5 seconds, caught up in the danger (pulled, tipping, freezing), and reacts while it is said. Orbit caught in the danger is the reason to stay. Orbit looking at the camera over a still frame reads as a channel ident.
 
-**The Orbit-first test.** Three Shorts built to the 23 Sep version (Orbit looking at the camera at 0 s) are already scheduled: Fri 2 Oct (`Ih2zhZTbIR0`), Mon 5 Oct (the Moon cover Short) and Wed 7 Oct (`pL339HhjDwo`). Let them air as a labelled test. Do not re-edit them. Compare their stayed-to-watch at 48 hours with the world-first Andromeda Shorts (25 Sep–1 Oct). If the Orbit-first Shorts hold more, bring the open back. If not, it stays retired.
+**The Orbit-first test.** Three Shorts built to the 23 Sep version (Orbit looking at the camera at 0 s) air as a labelled test: Fri 2 Oct (`Ih2zhZTbIR0`), Mon 5 Oct (`dQlOgsDGmtA`, Moon cover) and Wed 7 Oct (`pL339HhjDwo`). Do not re-edit them. Do not count them as Orbit-at-frame-0 breaches in gate or weekly reports (Claude #99 6036942792). The frame-0 rule still blocks every new Short via `youtube:package` and `gate_upcoming.py`. Around Fri 9 Oct, compare their 48-hour stayed-to-watch and day-1 Shorts-feed share with the world-first Andromeda Shorts (25 Sep–1 Oct). If the Orbit-first Shorts hold more, bring the open back. If not, it stays retired.
 
 ### The first two seconds (added 24 Sep 2026)
 
