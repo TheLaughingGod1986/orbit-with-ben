@@ -44,6 +44,8 @@ Before topic lock: at least three big education/space neighbours (≈1M+ views) 
 
 This is measurement only. It changes no spend rule.
 
+**Studio Kanban (Ben, 8 Oct 2026).** Claude owns the page (`05_Analytics/kanban/studio_kanban.html`, published at the board's one URL) and republishes it. Other chats and agents change what it reads (`PIPELINE.json`, `status.json`, the job queue), not the page, so a republish doesn't undo their work. Its "Film by film" section answers Ben's question for every film: *what's the holdup, what is it waiting for, and when does that happen?* Claude writes those notes in `05_Analytics/kanban/film_briefs.json` and refreshes them on every hourly studio run. Each note has what's done, the holdup, any second limit, who does the next step and when (tied to the job where one exists), and what's on Ben ("nothing" when nothing is).
+
 Once the final OK is given (Claude's, under the 3 Oct order), the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after.
 <!-- /SYNC -->
 

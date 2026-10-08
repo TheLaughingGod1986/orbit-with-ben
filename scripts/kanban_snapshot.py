@@ -7,11 +7,15 @@ snapshot built into the page, so Claude rebuilds that snapshot a few times a day
   - OWB: every 02_Video-Projects/*/status.json in this repo (main)
 
   python3 scripts/kanban_snapshot.py <page.html> --hos <history-of-science checkout> [--out <page.html>]
-  python3 scripts/kanban_snapshot.py --hos <checkout> --db-out <dir>    # board/hos, board/owb, board/credits for ArtifactData
+  python3 scripts/kanban_snapshot.py --hos <checkout> --db-out <dir>    # board/hos, board/owb, board/credits, board/briefs
 
 Since 7 Oct the page also reads `board/hos` ({updatedAt, pipeline}) and `board/owb` ({updatedAt, films}) from its own
 store, which Claude writes on a schedule with ArtifactData (file_path = the JSON files --db-out writes). That keeps
 the board current without the viewer's GitHub connector.
+
+Since 8 Oct (Ben: "what's the holdup, what is it waiting for, and when does that happen?") it also writes `board/briefs`:
+Claude's plain note per film from 05_Analytics/kanban/film_briefs.json, and every stage in hand gets a `since` (when it
+took its current state, from the file's git history) so the page can say "in this stage 2 days".
 
 It replaces only the two `const SNAPSHOT = …;` / `const OWB_SNAPSHOT = …;` lines, fails if either is missing, and
 prints "unchanged" when the data is the same (so nothing needs republishing).
@@ -124,6 +128,84 @@ def lanes_info(alljobs: list[dict]) -> dict:
     return out
 
 
+# ---- Film by film (Ben, 8 Oct): how long each stage has been where it is, and Claude's plain note per film ----
+BRIEFS = ROOT / "05_Analytics" / "kanban" / "film_briefs.json"
+
+
+def since_from_history(snaps: list[tuple[str, dict]], truncated: bool) -> dict:
+    """snaps: [(iso time, {key: state})], oldest first. When each key took the state it has now. A key that already
+    had that state in the oldest snapshot of a cut-short history gets no time (we can't see when it started)."""
+    if not snaps:
+        return {}
+    cur = snaps[-1][1]
+    out = {}
+    for key, state in cur.items():
+        at = None
+        for when, states in reversed(snaps):
+            if states.get(key) != state:
+                break
+            at = when
+        if at and not (truncated and at == snaps[0][0]):
+            out[key] = at
+    return out
+
+
+def file_history(repo: Path, rel: str, states, limit: int = 80) -> dict:
+    """since_from_history over the git history of one JSON file. states(doc) -> {key: state}."""
+    import subprocess
+    try:
+        log = subprocess.run(["git", "-C", str(repo), "log", f"-n{limit}", "--format=%H %cI", "--", rel],
+                             capture_output=True, text=True, timeout=60, check=True).stdout.split("\n")
+        shallow = subprocess.run(["git", "-C", str(repo), "rev-parse", "--is-shallow-repository"],
+                                 capture_output=True, text=True, timeout=30).stdout.strip() == "true"
+    except (OSError, subprocess.SubprocessError):
+        return {}
+    commits = [line.split(" ", 1) for line in log if " " in line][::-1]
+    snaps = []
+    for h, at in commits:
+        try:
+            doc = json.loads(subprocess.run(["git", "-C", str(repo), "show", f"{h}:{rel}"], capture_output=True,
+                                            text=True, timeout=30, check=True).stdout)
+            snaps.append((at, states(doc)))
+        except (OSError, subprocess.SubprocessError, ValueError, AttributeError, TypeError, KeyError):
+            continue
+    return since_from_history(snaps, truncated=shallow or len(commits) >= limit)
+
+
+LIVE = ("doing", "review", "blocked")  # only stages in hand get a "since"; done and to-do stages don't need one
+
+
+def add_since_owb(films: list[dict]) -> None:
+    for f in films:
+        d = next(iter(sorted((ROOT / "02_Video-Projects").glob(f"{f.get('film')}_*/status.json"))), None)
+        if not d:
+            continue
+        since = file_history(ROOT, str(d.relative_to(ROOT)),
+                             lambda doc: {k: v.get("state") for k, v in (doc.get("stages") or {}).items()})
+        for k, st in (f.get("stages") or {}).items():
+            if st.get("state") in LIVE and since.get(k) and not st.get("since"):
+                st["since"] = since[k]
+
+
+def add_since_hos(repo: Path, hos: dict) -> None:
+    since = file_history(repo, "00_Brand/Channel-Setup/PIPELINE.json",
+                         lambda doc: {f"{f['id']}/{k}": v.get("status") for f in doc["films"] for k, v in f["stages"].items()})
+    for f in hos.get("films", []):
+        for k, st in (f.get("stages") or {}).items():
+            if st.get("status") in LIVE and since.get(f"{f['id']}/{k}") and not st.get("since"):
+                st["since"] = since[f"{f['id']}/{k}"]
+
+
+def load_briefs() -> dict:
+    if not BRIEFS.exists():
+        return {}
+    films = json.loads(BRIEFS.read_text()).get("films", {})
+    bad = [k for k in films if not re.fullmatch(r"(HOS|OWB):\d{3}", k)]
+    if bad:
+        raise SystemExit(f"film_briefs.json: keys must be HOS:NNN or OWB:NNN, not {bad}")
+    return films
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("page", type=Path, nargs="?")
@@ -143,6 +225,8 @@ def main(argv: list[str] | None = None) -> int:
         from datetime import datetime, timezone
         now = datetime.now(timezone.utc).isoformat(timespec="seconds")
         a.db_out.mkdir(parents=True, exist_ok=True)
+        add_since_hos(a.hos, hos)
+        add_since_owb(owb)
         (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
         q = ROOT / "jobs" / "queue.json"
         alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
@@ -169,7 +253,9 @@ def main(argv: list[str] | None = None) -> int:
         credits = ai_spend.build_doc(ai_spend.load())
         credits["hosChecks"] = hos.get("credits", [])
         (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
-        print(f"store documents: {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
+        briefs = load_briefs()
+        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs}, ensure_ascii=False))
+        print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
               f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')})")
         if not a.page:
             return 0
