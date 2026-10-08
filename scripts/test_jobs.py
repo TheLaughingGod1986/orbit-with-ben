@@ -43,6 +43,13 @@ class Next(unittest.TestCase):
         jobs.do_done(j, "cursor", "ok", T0)
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "first cut")
 
+    def test_the_focus_films_jobs_go_first(self):
+        d = queue(("mini", "disk move", {"eta_min": 30}), ("mini", "025 rough v02", {"film": "025", "stage": "edit", "eta_min": 240}),
+                  ("mini", "022 covers", {"film": "022", "stage": "thumbs", "eta_min": 30}))
+        d["focus"] = ["025"]
+        self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "025 rough v02")  # long, but the focus film
+        self.assertEqual(jobs.order({"id": "J9", "film": "022", "eta_min": 30}, ["025"])[0], 1)
+
     def test_watch_flags_a_quiet_mini_and_what_waits_on_ben(self):
         d = queue(("mini", "cut", {}), ("ben", "sign in", {}))
         self.assertTrue(jobs.do_watch(d, T0 + 4 * 60 * MIN)["quiet"])  # Mini work waiting, nobody touched it for 4 h

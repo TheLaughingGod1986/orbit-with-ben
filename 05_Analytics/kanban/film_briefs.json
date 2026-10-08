@@ -23,44 +23,63 @@
       "line": "Uploaded and scheduled. Goes public on its own on Sunday."
     },
     "OWB:022": {
-      "updated": "2026-10-08T16:05Z",
-      "mood": "good",
+      "updated": "2026-10-08T16:40Z",
+      "mood": "finished",
       "done": "Script, voice, picture, edit, thumbnails and the upload package. The film itself is finished.",
-      "holdup": "Nothing is wrong. Two quick checks before upload: the three Short covers have to be committed so Claude can see them, and the episode gate has to be run. That's job J0056, which is in the Mac mini's line now.",
-      "limit": "The Mac mini does one job at a time, and J0056 is behind four other jobs (spend readings, heartbeat, disk space, 025's new cut).",
+      "holdup": "Nothing is broken. Two things are left. One is a quick job on the Mac mini (J0056: commit the three Short covers and run the upload checks); it's in the queue behind 025, the focus film. The other is your own watch of cut v05, which you asked for so you see every film before it goes up.",
+      "limit": "It's kept off YouTube until then, because once a video is uploaded a fix means a fresh upload (we never swap the file or delete a video). If you haven't flagged anything by Mon 12 Oct, Claude's final OK goes ahead so the upload isn't held up.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "commit the Short cover previews and run the episode and Shorts gates",
+          "what": "commit the Short covers and run the upload checks",
           "job": "J0056"
         },
         {
-          "who": "Claude",
-          "what": "final OK (covers, gates, package)",
-          "afterJob": "J0056",
-          "lag": 60
+          "who": "Ben",
+          "what": "watch cut v05 in OWB UAT (sun_first_cut_v05)",
+          "when": "2026-10-12",
+          "whenText": "any time before Mon 12 Oct"
         },
-        {
-          "who": "Cursor",
-          "what": "upload privately, scheduled: long Sun 18 Oct 18:00 London, Shorts Mon 19, Wed 21, Fri 23 Oct",
-          "whenText": "the next Mac mini job after Claude's OK"
-        }
-      ],
-      "you": "",
-      "timing": "The final OK was booked for Tue 13 Oct; it comes earlier, as soon as J0056 is done. Airs Sun 18 Oct 18:00 London.",
-      "line": "Finished. Two quick checks tonight, then Claude's final OK and the upload."
-    },
-    "OWB:023": {
-      "updated": "2026-10-08T16:05Z",
-      "mood": "finished",
-      "done": "Script, voice, picture, edit, thumbnails and the upload package (passed ac6b9d5). The film is finished.",
-      "holdup": "Nothing is wrong. It is kept off YouTube until Claude's final OK, so any late fix stays cheap (we never swap the file on an uploaded video).",
-      "steps": [
         {
           "who": "Claude",
           "what": "final OK",
-          "when": "2026-10-20",
-          "whenText": "by Tue 20 Oct, probably sooner once 022 is up"
+          "when": "2026-10-12",
+          "whenText": "Mon 12 Oct, or as soon as you've watched it"
+        },
+        {
+          "who": "Cursor",
+          "what": "upload privately, scheduled: long Sun 18 Oct 18:00, Shorts Mon 19, Wed 21, Fri 23 Oct",
+          "whenText": "the same day as the OK"
+        }
+      ],
+      "you": "Watch cut v05 in OWB UAT (sun_first_cut_v05) any time before Mon 12 Oct. If you're happy, say nothing.",
+      "timing": "Upload Mon 12 Oct at the latest. Airs Sun 18 Oct 18:00 London.",
+      "line": "Made. Waiting for one quick check on the Mac mini and for your watch, then Claude's final OK and the upload.",
+      "youWhen": "2026-10-08",
+      "youShort": "watch cut v05 in OWB UAT, by Mon 12 Oct"
+    },
+    "OWB:023": {
+      "updated": "2026-10-08T16:40Z",
+      "mood": "finished",
+      "done": "Script, voice, picture, edit, thumbnails and the upload package (passed ac6b9d5). The film is finished.",
+      "holdup": "Nothing is broken. The film is finished and passed every check. It's waiting for your own watch of v04, which you asked for so you see every film before it goes up.",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch v04 in OWB UAT (023_Venus_full_rough_v04.mp4)",
+          "when": "2026-10-14",
+          "whenText": "any time before Wed 14 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "run the upload checks",
+          "when": "2026-10-14"
+        },
+        {
+          "who": "Claude",
+          "what": "final OK",
+          "when": "2026-10-14",
+          "whenText": "Wed 14 Oct, or as soon as you've watched it"
         },
         {
           "who": "Cursor",
@@ -68,26 +87,35 @@
           "whenText": "the same day as the OK"
         }
       ],
-      "you": "",
-      "timing": "Airs Sun 25 Oct 18:00 London.",
-      "line": "Finished and passed. Claude's final OK by Tue 20 Oct, then upload."
+      "you": "Watch v04 in OWB UAT (023_Venus_full_rough_v04.mp4) any time before Wed 14 Oct. If you're happy, say nothing.",
+      "timing": "Upload Wed 14 Oct at the latest. Airs Sun 25 Oct 18:00 London.",
+      "line": "Made and checked. Waiting for your watch, then Claude's final OK and the upload.",
+      "youWhen": "2026-10-08",
+      "youShort": "watch v04 in OWB UAT, by Wed 14 Oct",
+      "limit": "It's kept off YouTube until then, because once a video is uploaded a fix means a fresh upload (we never swap the file or delete a video). If you haven't flagged anything by Wed 14 Oct, Claude's final OK goes ahead."
     },
     "OWB:024": {
-      "updated": "2026-10-08T16:05Z",
+      "updated": "2026-10-08T16:40Z",
       "mood": "finished",
       "done": "Script, voice, picture, edit (cut v03), thumbnails and the upload package. The film is finished.",
-      "holdup": "Nothing is wrong. It is kept off YouTube until Claude's final OK, for the same reason as 023.",
+      "holdup": "Nothing is broken. The film is finished and passed every check. It's waiting for your own watch of v03, which you asked for so you see every film before it goes up.",
       "steps": [
         {
+          "who": "Ben",
+          "what": "watch v03 in OWB UAT (024_LightSpeed_full_rough_v03.mp4)",
+          "when": "2026-10-16",
+          "whenText": "any time before Fri 16 Oct"
+        },
+        {
           "who": "Cursor",
-          "what": "run the episode gate",
-          "when": "2026-10-26",
-          "whenText": "Mon 26 Oct"
+          "what": "run the upload checks",
+          "when": "2026-10-16"
         },
         {
           "who": "Claude",
           "what": "final OK",
-          "when": "2026-10-26"
+          "when": "2026-10-16",
+          "whenText": "Fri 16 Oct, or as soon as you've watched it"
         },
         {
           "who": "Cursor",
@@ -95,16 +123,19 @@
           "whenText": "the same day as the OK"
         }
       ],
-      "you": "",
-      "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "Finished and passed. Claude's final OK on Mon 26 Oct, then upload."
+      "you": "Watch v03 in OWB UAT (024_LightSpeed_full_rough_v03.mp4) any time before Fri 16 Oct. If you're happy, say nothing.",
+      "timing": "Upload Fri 16 Oct at the latest. Airs Sun 1 Nov 18:00 London.",
+      "line": "Made and checked. Waiting for your watch, then Claude's final OK and the upload.",
+      "youWhen": "2026-10-08",
+      "youShort": "watch v03 in OWB UAT, by Fri 16 Oct",
+      "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-08T16:05Z",
+      "updated": "2026-10-08T16:40Z",
       "mood": "good",
       "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "The first rough cut failed Claude's review: some frames don't fill the 16:9 screen, a few pictures carry text or labels, and two shots hold still too long. Cursor is rebuilding it as v02 with an automatic check for each of those (J0055).",
-      "limit": "One job at a time on the Mac mini; J0055 is about an hour of work once it starts.",
+      "holdup": "Not finished because the first rough cut (made today) failed Claude's check: some frames don't fill the screen, a few pictures carry text or labels, and two shots hold still too long. Cursor is rebuilding it as v02 with automatic checks for each. It's the focus film, so it's first in the Mac mini's queue.",
+      "limit": "After v02: Claude's check, any fixes, then thumbnails and the upload package. Each is a separate Mac mini job, and the Mac mini does one at a time.",
       "steps": [
         {
           "who": "Cursor",
@@ -123,15 +154,17 @@
           "whenText": "over the next few days"
         }
       ],
-      "you": "",
-      "timing": "Picture should pass by about Sat 10 Oct. Airs Sun 8 Nov, so there's a month in hand.",
-      "line": "Picture in progress. The first rough cut needed fixes; Cursor is rebuilding it now."
+      "you": "Watch it in OWB UAT once it's ready, about Sat 10 Oct. Nothing before then.",
+      "timing": "Focus film since 8 Oct (your call: one film at a time). Ready for you about Sat 10 Oct; Claude confirms the date after tonight's cut review. Airs Sun 8 Nov.",
+      "line": "The focus film: every agent works on 025 first until it's ready for you to watch, aiming for Sat 10 Oct.",
+      "youWhen": "2026-10-10",
+      "youShort": "watch it about Sat 10 Oct"
     },
     "OWB:026": {
-      "updated": "2026-10-08T16:05Z",
+      "updated": "2026-10-08T16:25Z",
       "mood": "waiting",
       "done": "Script, voice and shot list.",
-      "holdup": "Waiting its turn, by design. The Mac mini makes one film's picture at a time, and 025 is on it now.",
+      "holdup": "Waiting its turn, by design: one film at a time (your call, 8 Oct). 025 is the focus film; 026 becomes the focus once 025 is ready for you.",
       "limit": "Before picture starts, the Shorts' voice files need a fresh transcript and timing pass (a short job).",
       "steps": [
         {
@@ -257,7 +290,8 @@
       "you": "Your final OK on Sun 1 Nov. Nothing before then.",
       "youWhen": "2026-11-01",
       "timing": "Airs Thu 5 Nov. On time if the Flow refill lands on Monday as expected.",
-      "line": "Picture about a third done. Part 03 is being made now; Parts 04 and 05 wait for Monday's Flow refill."
+      "line": "Picture about a third done. Part 03 is being made now; Parts 04 and 05 wait for Monday's Flow refill.",
+      "youShort": "your final OK Sun 1 Nov"
     },
     "HOS:007": {
       "updated": "2026-10-08T16:05Z",
@@ -291,7 +325,8 @@
       "you": "Your final OK on Sun 8 Nov. Nothing before then.",
       "youWhen": "2026-11-08",
       "timing": "Airs Thu 12 Nov.",
-      "line": "Script and voice done. Shorts voice next, then picture after 006's."
+      "line": "Script and voice done. Shorts voice next, then picture after 006's.",
+      "youShort": "your final OK Sun 8 Nov"
     },
     "HOS:008": {
       "updated": "2026-10-08T16:05Z",
@@ -320,7 +355,8 @@
       "you": "Your final OK on Sun 15 Nov.",
       "youWhen": "2026-11-15",
       "timing": "Airs Thu 19 Nov.",
-      "line": "Script and voice done. Shorts voice and picture are queued behind 007, 009 and 010."
+      "line": "Script and voice done. Shorts voice and picture are queued behind 007, 009 and 010.",
+      "youShort": "your final OK Sun 15 Nov"
     },
     "HOS:009": {
       "updated": "2026-10-08T16:05Z",
@@ -348,7 +384,8 @@
       "you": "Your final OK on Sun 22 Nov.",
       "youWhen": "2026-11-22",
       "timing": "Airs Thu 26 Nov.",
-      "line": "Script done. Its voiceover is next, about Fri 9 Oct (a day late; air date unaffected)."
+      "line": "Script done. Its voiceover is next, about Fri 9 Oct (a day late; air date unaffected).",
+      "youShort": "your final OK Sun 22 Nov"
     },
     "HOS:010": {
       "updated": "2026-10-08T16:05Z",
@@ -376,7 +413,8 @@
       "you": "Your final OK on Sun 29 Nov.",
       "youWhen": "2026-11-29",
       "timing": "Airs Thu 3 Dec.",
-      "line": "Script done. Voiceover after 009's, about Sat 10 Oct."
+      "line": "Script done. Voiceover after 009's, about Sat 10 Oct.",
+      "youShort": "your final OK Sun 29 Nov"
     }
   }
 }

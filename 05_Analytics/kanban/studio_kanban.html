@@ -301,7 +301,7 @@ footer a{color:var(--ink-2)}
     <div class="box"><div id="jobs"></div></div>
   </section>
   </details>
-  <details class="more fold"><summary>AI spend</summary>
+  <details class="more fold"><summary id="spendSum">AI spend</summary>
   <section class="spend" id="spendBox">
     <div class="head"><div class="why" id="spendWhen"></div></div>
     <div class="verdict" id="verdict"></div>
@@ -492,9 +492,10 @@ function renderFilms(films){
 // ---------- Film by film (Ben, 8 Oct): "what's the holdup, what is it waiting for, and when will that happen?" ----------
 // Claude's note per film (board/briefs, from film_briefs.json) gives the words; the job queue gives live times; the
 // stage files give progress and how long the film has sat in its current stage. With no note, it's built from the data.
-const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · upload next"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
+const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · waiting for your watch"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
 const OWB_OWNER = {topic:"Claude", script:"Claude", sources:"Gemini", vo:"Cursor", shots:"Claude", picture:"Cursor", edit:"Cursor", thumbs:"Cursor", upload:"Cursor"};
-const COLUMN = {good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"done", ready:"done"};
+// The column follows the film's state; "Needs you" only changes the label, so a finished film stays in Done.
+const COLUMN = {good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"doing", ready:"done"};
 const openState = {};   // only what the viewer chose; otherwise films in hand open and films waiting their turn closed
 function stageDays(since){ const t=ts(since); if(isNaN(t)) return ""; const h=(Date.now()-t)/3600000;
   return h<1?"under an hour":h<36?`${Math.round(h)} h`:`${Math.round(h/24)} days`; }
@@ -529,7 +530,12 @@ function stepWhen(stp, P){
       if(j.status==="blocked") return {text:`blocked: ${esc(String(j.result||"").slice(0,100))}`, late:true};
       if(p.state==="now") return {text:`underway now · done about ${clock(p.done)} (${rel(p.done)})`, at:p.done};
       if(j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude") return {text:`part done · carries on within 10 min · done about ${clock(p.done)}`, at:p.done};
-      if(p.start) return {text:`${p.pos?`number ${p.pos} in the Mac mini's line · `:""}starts about ${clock(p.start)} · done about ${clock(p.done)} (${rel(p.done)})`, at:p.done};
+      if(p.start){
+        const ahead = (jobs||[]).filter(x=>x.id!==j.id && x.needs===j.needs && P[x.id] && P[x.id].start!=null && P[x.id].start < p.start)
+          .sort((a,b)=>P[a.id].start-P[b.id].start).map(x=>(x.film?x.film+" ":"")+shortTitle(x.title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim());
+        const nth = ahead.length+1, ord = nth===1?"next":nth===2?"2nd":nth===3?"3rd":nth+"th";
+        return {text:`${ord} in the Mac mini's queue${ahead.length?` (first: ${esc(ahead.join("; "))})`:""} · starts about ${clock(p.start)} · done about ${clock(p.done)} (${rel(p.done)})`, at:p.done};
+      }
     }
   }
   if(stp.afterJob){
@@ -544,11 +550,11 @@ function stepWhen(stp, P){
 }
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
 function whoOf(f, s){ const st=stOf(f,s); return st.owner || (f._ch==="OWB" ? OWB_OWNER[s.key] : s.owner) || "Team"; }
-function checklist(f, rows){
+function checklist(f, rows, ready){
   const done = new Map(), now = [];
   for(const s of f._stages){ const st=stOf(f,s), w=whoOf(f,s);
-    if(st.status==="done"){ if(!done.has(w)) done.set(w,[]); done.get(w).push(s.label); }
-    else if(st.status==="doing"||st.status==="blocked") now.push({who: st.review?"Claude":w, what: s.label + (st.review?" (checking)":""), since: st.since}); }
+    if(st.status==="done" || ready){ if(!done.has(w)) done.set(w,[]); done.get(w).push(s.label); }
+    else if((st.status==="doing"||st.status==="blocked") && !st.review) now.push({who: st.review?"Claude":w, what: s.label + (st.review?" (checking)":""), since: st.since}); }
   const grp = (who, sub, items) => `<div class="g"><div class="nm">${av(who)}${esc(who)} <small>${sub}</small></div><ul>${items.join("")}</ul></div>`;
   let html = "";
   for(const [who,items] of done) html += grp(who, "did", items.map(x=>`<li class="ok"><span>${esc(x)}</span></li>`));
@@ -573,7 +579,7 @@ function renderTracker(films){
     for(const j of (fromDb.jobs||[])) if(f._ch==="OWB" && j.film===f.id && !named.has(j.id))
       steps.push({who: j.status==="claimed" ? AGENT(j.by) : laneWho[j.needs]||j.needs, what: shortTitle(j.title).replace(/^\d{3}\s*/,""), job:j.id});
     const rows = steps.map(x=>({x, w:stepWhen(x,P)}));
-    const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=2) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
+    const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=1) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
     const moodKey = youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
     const [cls, word] = MOOD[moodKey];
     if(b.you) forYou.push({f, b, soon: youSoon});
@@ -582,7 +588,7 @@ function renderTracker(films){
     const stale = !b.auto && (isNaN(age) || age > 30*3600000);
     const isOpen = f.key in openState ? openState[f.key] : false;
     const line = b.line || (b.auto ? b.done : "");
-    lanes[f._ch][COLUMN[moodKey]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
+    lanes[f._ch][COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
       <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span class="pill ${cls}">${word}</span></div>
       <div class="kt">${esc(f.title)}</div>
       <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
@@ -590,9 +596,9 @@ function renderTracker(films){
       ${youSoon?`<div class="ky yes">For you: ${esc(b.you)}</div>`:""}
     </summary><div class="body">
       ${line?`<div class="kl" style="margin:0 0 8px">${md(line)}</div>`:""}
-      <div class="hold"><b>${COLUMN[moodKey]==="todo"?"Why it hasn't started yet":"The holdup"}</b>${md(b.holdup||"None.")}${b.limit?`<br><br>${md(b.limit)}`:""}</div>
-      ${checklist(f, rows)}
-      <div class="ky ${b.you?"yes":""}">For you: ${b.you?esc(b.you):"nothing"}</div>
+      <div class="hold"><b>${b.mood==="waiting"?"Why it hasn't started yet":b.mood==="ready"?"Left to do":"Why it isn't finished yet"}</b>${md(b.holdup||"None.")}${b.limit?`<br><br>${md(b.limit)}`:""}</div>
+      ${checklist(f, rows, b.mood==="ready")}
+      ${youSoon?"":`<div class="ky ${b.you?"yes":""}">For you: ${b.you?esc(b.you):"nothing"}</div>`}
       ${b.timing?`<div class="why" style="margin-top:6px;font-size:13px">${md(b.timing)}</div>`:""}
       <div class="ft"><span>${b.auto?"From the stage data (no note from Claude yet)":`Updated ${esc(fw(b.updated))}`}${stale?` · <b class="soon">over a day old</b>`:""}</span>
       <button class="btn" data-show="${esc(f.key)}">Show its stages</button></div></div></details>`);
@@ -610,12 +616,10 @@ function renderTracker(films){
   });
   // One line at the top: is anything on Ben, and what airs next.
   const yb = $("youbar"); if(!yb) return;
-  const soon = forYou.filter(x=>x.soon), later = forYou.filter(x=>!x.soon).sort((a,b)=>String(a.b.youWhen).localeCompare(String(b.b.youWhen)));
-  const nextAir = all.find(f=>f.air && pd(f.air)>=today());
+  const soon = forYou.filter(x=>x.soon);
   yb.className = "youbar" + (soon.length ? " has" : "");
-  yb.innerHTML = (soon.length ? `<b>For you now:</b> ${soon.map(x=>`${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.b.you)}`).join(" · ")}`
-      : `<b>Nothing for you right now.</b>${later.length?` Next: ${chb(later[0].f)}<b>${esc(later[0].f.id)}</b> ${esc(later[0].b.you)}`:""}`)
-    + (nextAir ? `<div class="why">Next to air: ${chb(nextAir)}<b>${esc(nextAir.id)}</b> ${esc(nextAir.title)} · <b>${fd(pd(nextAir.air))}</b> (${cd(pd(nextAir.air))})</div>` : "");
+  yb.innerHTML = soon.length ? `<b>You need to check:</b> ${soon.map(x=>`${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.b.youShort||x.b.you)}`).join(" · ")}`
+    : `<b>Nothing for you to check right now.</b>`;
 }
 
 function cardHtml(f, s, st){
@@ -769,6 +773,8 @@ function renderSpend(){
       ${spark(p.series)}
       <div class="why">read ${esc(fw(L.at))}</div>${fitHtml(k,p,c)}</div>`;
   }).join("") : `<div class="box" style="grid-column:1/-1"><div class="empty" style="padding:2px 0">No readings yet. The Mac mini records Cursor, Flow, Google Cloud credit and ElevenLabs every day, and every take's cost as it is made. The figures appear here as they arrive.</div></div>`;
+  const sums = order.filter(k=>k!=="claude").map(k=>{ const u=poolUse(k,pools[k],c); return u && !u.future ? `${POOL_NAME[k]} ${u.usedPct}% used, ${u.monthPct}% of its month gone` : null; }).filter(Boolean);
+  $("spendSum").textContent = "AI spend" + (sums.length ? " · " + sums.join(" · ") : "");
   const bf = (c && c.byFilm) || {}, films = Object.keys(bf).filter(f=>f!=="(none)");
   $("byFilmBox").hidden = !films.length;
   if(films.length){
@@ -808,7 +814,8 @@ function plan(){
       const done = Math.max(st+est, now+5*MINUTE);
       out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
     }
-    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>String(a.addedAt).localeCompare(String(b.addedAt)));
+    const focus = fromDb.focus || [], rank = j => [focus.includes(j.film)?0:1, (j.eta_min||120)<=60?0:1, j.id];
+    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>{ const x=rank(a), y=rank(b); return x[0]-y[0] || x[1]-y[1] || x[2].localeCompare(y[2]); });
     const wake = lane==="mini" ? 5*MINUTE : lane==="cloud" ? 30*MINUTE : 15*MINUTE;
     for(const j of open){
       const dep = j.after && byId[j.after] ? out[j.after] : null;
@@ -899,34 +906,46 @@ function renderGlance(films){
   }
 }
 // Plan-fit bars for the spend cards: this cycle's use, projected to a full month, against each plan's allowance.
-// Use is measured only from our own readings: the drops between them (a refill is a rise, not use). A plan's "total"
-// is its whole monthly pool (ElevenLabs carries unused credit over), so total minus left is the plan month so far,
-// shown on its own line, never as one day's use (Ben, 8 Oct: the card said 152,693 "in 1 day").
+// Ben, 8 Oct: "this month so far: we're N days into the subscription, X% of the month gone, and we've used Y%". So each
+// card compares how much of the plan month has passed with how much of the plan's credit is used. A plan month starts at
+// the plan's own reset (plans.json cycleStart, or its renewal date less a month). Total = the pool's size this month as
+// read (ElevenLabs carries unused credit over), else the plan's allowance. Plans are flat fees: running out stops work,
+// it doesn't bill.
 const PLAN_OF = {elevenlabs:/ElevenLabs/i, flow:/Google/i, cursor:/Cursor/i};
-function poolUse(k, p, c){
-  const pts = (p.series||[]).filter(x=>x[1]!=null).map(x=>[ts(x[0]), Number(x[1])]).filter(x=>!isNaN(x[0]));
-  if(pts.length<2) return null;
-  let used = 0; for(let i=1;i<pts.length;i++) used += Math.max(0, pts[i-1][1]-pts[i][1]);
-  const days = (pts[pts.length-1][0]-pts[0][0])/(24*60*MINUTE);
-  const cyc = (c&&c.cycleDays)||30;
-  return {used, days, projected: days>=3 ? used/days*cyc : null};
-}
-function planMonth(k, p, c){
-  const L=p.latest||{}; if(L.total==null || L.left==null) return "";
+function planStart(k, c){
   const plan = ((c&&c.plans)||[]).find(x=>PLAN_OF[k] && PLAN_OF[k].test(x.name)) || {};
-  const ren = pd(plan.renews), unit = v=>Math.round(v).toLocaleString("en-GB");
-  return `<div class="why">This plan month: <b>${unit(Number(L.total)-Number(L.left))}</b> of ${unit(L.total)} used${ren?`, resets <b>${fd(ren)}</b>`:""}. It's in the monthly price: no bill, it just stops if it runs out.</div>`;
+  if(plan.cycleStart) return pd(plan.cycleStart);
+  if(plan.renews){ const r=pd(plan.renews); r.setMonth(r.getMonth()-1); return r; }
+  return null;
+}
+function poolUse(k, p, c){
+  const L=p.latest||{}; if(L.left==null) return null;
+  const cur = (((c&&c.tiers)||{})[k]||[]).find(t=>t.current);
+  const total = L.total!=null ? Number(L.total) : cur ? cur.allow : null;
+  const start = planStart(k, c), cyc = (c&&c.cycleDays)||30;
+  if(total==null || !start) return null;
+  const days = (Date.now()-start.getTime())/(24*60*MINUTE);
+  if(days<0) return {future:true, start};
+  const used = Math.max(0, total-Number(L.left));
+  return {used, total, days, start, cyc, monthPct: Math.min(100, Math.round(100*days/cyc)), usedPct: Math.round(100*used/total),
+    projected: days>=1 ? used/days*cyc : null};
 }
 function fitHtml(k, p, c){
-  const tiers = ((c&&c.tiers)||{})[k]; const pm = planMonth(k,p,c);
-  if(!tiers) return pm;
-  const u = poolUse(k,p,c);
-  const unit = k==="cursor" ? (v=>"$"+Math.round(v)) : (v=>Math.round(v).toLocaleString("en-GB"));
-  if(!u || u.projected==null) return `<div class="fit">${pm}<div class="why">${u?`Used <b>${unit(u.used)}</b> since our first reading. `:""}Whether a cheaper plan would fit shows after 3 days of readings.</div></div>`;
-  return `<div class="fit">${pm}<div class="why">Used <b>${unit(u.used)}</b> in ${Math.round(u.days)} days of readings · on pace for about <b>${unit(u.projected)}</b> a month</div>`
-    + tiers.map(t=>{ const pct = Math.round(100*u.projected/t.allow), cls = pct>100?"bad":pct>85?"risk":"";
+  const u = poolUse(k,p,c), unit = k==="cursor" ? (v=>"$"+Math.round(v)) : (v=>Math.round(v).toLocaleString("en-GB"));
+  if(!u) return "";
+  if(u.future) return `<div class="fit"><div class="why">The plan month starts <b>${fd(u.start)}</b>. Figures from then.</div></div>`;
+  const ahead = u.usedPct - u.monthPct, cls = ahead>15 ? "bad" : ahead>5 ? "risk" : "";
+  let html = `<div class="fit">
+    <div class="r"><span>Month: day <b>${Math.max(1,Math.ceil(u.days))}</b> of ${u.cyc} (since ${fd(u.start)})</span><span><b>${u.monthPct}%</b> gone</span><div class="bar"><i style="width:${u.monthPct}%;background:var(--ink-3)"></i></div></div>
+    <div class="r ${cls}"><span>Used <b>${unit(u.used)}</b> of ${unit(u.total)}</span><span><b>${u.usedPct}%</b> used</span><div class="bar"><i style="width:${Math.min(100,u.usedPct)}%"></i></div></div>
+    <div class="why">${ahead>5?"Using it faster than the month is passing.":ahead<-5?"Using it slower than the month is passing.":"About in step with the month."} Flat fee: if it runs out, work stops; there's no bill.</div>`;
+  const tiers = ((c&&c.tiers)||{})[k];
+  if(tiers && u.projected!=null && u.days>=3){
+    html += `<div class="why">At this rate a month needs about <b>${unit(u.projected)}</b>. Each plan:</div>` + tiers.map(t=>{ const pct = Math.round(100*u.projected/t.allow), cl = pct>100?"bad":pct>85?"risk":"";
       const tag = t.current&&t.target?"you have it; target":t.current?"you have it":t.target?"target":"";
-      return `<div class="r ${cls}"><span>${esc(t.name)} · £${t.gbp}${tag?` · <i>${tag}</i>`:""}</span><span><b>${pct}%</b> ${pct>100?"too small":pct>85?"tight":"fits"}</span><div class="bar"><i style="width:${Math.min(100,pct)}%"></i></div></div>`; }).join("") + `</div>`;
+      return `<div class="r ${cl}"><span>${esc(t.name)} · £${t.gbp}${tag?` · <i>${tag}</i>`:""}</span><span><b>${pct}%</b> ${pct>100?"too small":pct>85?"tight":"fits"}</span><div class="bar"><i style="width:${Math.min(100,pct)}%"></i></div></div>`; }).join("");
+  } else if(tiers) html += `<div class="why">Which plan would fit shows from day 3 of the month.</div>`;
+  return html + `</div>`;
 }
 function renderVerdict(c){
   const v=$("verdict"); if(!v) return;
@@ -934,9 +953,9 @@ function renderVerdict(c){
   for(const [k,name] of [["flow","Flow"],["elevenlabs","ElevenLabs"],["cursor","Cursor"]]){
     const p=pools[k]; const u=p&&poolUse(k,p,c); const tiers=((c&&c.tiers)||{})[k]||[];
     const tgt=tiers.find(t=>t.target) || tiers.find(t=>t.current);
-    if(u && u.projected!=null && tgt) bits.push(`${name} would use <b>${Math.round(100*u.projected/tgt.allow)}%</b> of ${esc(tgt.name)}`);
+    if(u && !u.future && u.projected!=null && u.days>=3 && tgt) bits.push(`${name} would use <b>${Math.round(100*u.projected/tgt.allow)}%</b> of ${esc(tgt.name)}`);
   }
-  v.innerHTML = bits.length ? `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}On this month's pace: ${bits.join(" · ")}.` : `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}Whether each plan fits shows after 3 days of readings.`;
+  v.innerHTML = bits.length ? `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}On this month's pace: ${bits.join(" · ")}.` : `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}Which plan would fit shows from day 3 of each plan's month.`;
 }
 
 function render(){
@@ -1036,7 +1055,7 @@ async function startDb(){
   db.doc("board/owb").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || !Array.isArray(d.films)) return;
-    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null;
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || [];
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
   }, ()=>{});
   db.doc("board/briefs").onSnapshot(snap=>{

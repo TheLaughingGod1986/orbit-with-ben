@@ -231,7 +231,7 @@ def main(argv: list[str] | None = None) -> int:
         q = ROOT / "jobs" / "queue.json"
         alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
         learn_estimates(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "film", "stage", "after", "ref", "result")},
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result")},
                      last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
@@ -241,7 +241,8 @@ def main(argv: list[str] | None = None) -> int:
         hb = mini_heartbeat()
         if hb:
             lanes.setdefault("mini", {})["heartbeat"] = hb
-        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes,
+        focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
+        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus,
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())}}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
