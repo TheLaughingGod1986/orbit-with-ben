@@ -1560,10 +1560,10 @@
       "stage": "vo",
       "after": "J0037",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T08:12Z",
+      "eta": "2026-10-08T09:42Z",
       "created_by": "claude",
       "created_at": "2026-10-08T07:33Z",
       "result": "",
@@ -1582,6 +1582,11 @@
           "at": "2026-10-08T07:59Z",
           "by": "cursor",
           "what": "released: Waiting on Claude's 029 script lock (v02 from the J0037 flags) on #99; only v01 exists. Nothing run, no credits spent."
+        },
+        {
+          "at": "2026-10-08T08:12Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     }
