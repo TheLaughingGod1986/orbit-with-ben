@@ -135,7 +135,7 @@ details.donegrp li span{color:var(--ink-3)}
 .credit .l{font:500 13px "IBM Plex Mono",monospace;text-align:right}
 .credit .r{grid-column:1/-1;font-size:12px;color:var(--ink-3)}
 /* AI spend month (Ben, 8 Oct): board/credits from scripts/ai_spend.py */
-.spend{margin:22px 0 4px}
+.spend{margin:0 0 18px}
 .spend .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 14px;margin-bottom:10px}
 .spend .head .why{margin:0}
 .subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:10px}
@@ -158,6 +158,28 @@ details.donegrp li span{color:var(--ink-3)}
 .byfilm th,.byfilm td{padding:5px 8px;border-top:1px solid var(--line);text-align:right;white-space:nowrap}
 .byfilm th:first-child,.byfilm td:first-child{text-align:left}
 .byfilm th{font-weight:500;color:var(--ink-3);font-size:12px;border-top:0}
+/* At a glance (Ben, 8 Oct): what's happening now, what's next, when the next video lands */
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-bottom:18px}
+.gl{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.gl h3{font:600 12px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:0 0 8px}
+.gl .big{font:700 17px/1.3 "Bricolage Grotesque",sans-serif;overflow-wrap:anywhere}
+.gl .when{font:600 15px/1.3 "IBM Plex Mono",monospace;margin-top:4px;font-variant-numeric:tabular-nums}
+.gl .why{margin-top:6px}
+.gl.watch{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.lineup{list-style:none;margin:0;padding:0;font-size:13px}
+.lineup li{display:grid;grid-template-columns:auto 1fr auto;gap:2px 8px;padding:5px 0;border-top:1px solid var(--line);align-items:baseline}
+.lineup li:first-child{border-top:0}
+.lineup .t{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.lineup .w{grid-column:2/-1;font-size:12px;color:var(--ink-3)}
+.fit{margin-top:8px;display:grid;gap:5px}
+.fit .r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;font-size:12px;color:var(--ink-2)}
+.fit .r .bar{grid-column:1/-1;height:6px}
+.fit .r .bar i{background:var(--done)}
+.fit .r.risk .bar i{background:var(--soon)}
+.fit .r.bad .bar i{background:var(--blocked)}
+.fit .r b{font-weight:600;color:var(--ink)}
+.verdict{font-size:14px;margin:0 0 10px;color:var(--ink-2)}
+.verdict b{color:var(--ink)}
 footer{margin-top:22px;font-size:12px;color:var(--ink-3)}
 footer a{color:var(--ink-2)}
 </style>
@@ -177,6 +199,16 @@ footer a{color:var(--ink-2)}
   </header>
   <div class="banner" id="banner"></div>
   <div class="chnote" id="owbnote"></div>
+  <h2 class="sec">At a glance</h2>
+  <div class="glance" id="glance"><div class="gl"><h3>Right now</h3><div class="why">Loading the studio's latest update…</div></div></div>
+  <section class="spend" id="spendBox">
+    <div class="head"><h2 class="sec" style="margin:0">AI spend this month</h2><div class="why" id="spendWhen"></div></div>
+    <div class="verdict" id="verdict"></div>
+    <div class="subs" id="subs"></div>
+    <div class="why" id="subsNote" style="margin:-4px 0 10px"></div>
+    <div class="pools" id="pools"></div>
+    <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
+  </section>
   <section id="jobsBox" hidden>
     <h2 class="sec">Job queue <span class="mono" style="font-weight:400;font-size:12px">any agent able to do a job takes it</span></h2>
     <div class="why" id="chief" style="margin:0 0 8px"></div>
@@ -192,13 +224,6 @@ footer a{color:var(--ink-2)}
     <div class="box"><h3>Next steps</h3><ol id="next"></ol></div>
     <div class="box" id="creditbox"><h3>HOS credit checks</h3><div id="credits"></div></div>
   </div>
-  <section class="spend" id="spendBox">
-    <div class="head"><h2 class="sec" style="margin:0">AI spend this month</h2><div class="why" id="spendWhen"></div></div>
-    <div class="subs" id="subs"></div>
-    <div class="why" id="subsNote" style="margin:-4px 0 10px"></div>
-    <div class="pools" id="pools"></div>
-    <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
-  </section>
   <footer>The studio agent writes both boards into this page every two hours, 07:50 to 21:50 London, from the files below. <b>HOS</b> comes from <span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science (the file behind <a href="https://github.com/TheLaughingGod1986/history-of-science/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>). <b>OWB</b> from each film's <span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span> in orbit-with-ben (the files behind its <a href="https://github.com/TheLaughingGod1986/orbit-with-ben/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>; "chief" is shown as Grok). Both from <span class="mono">main</span>.</footer>
 </div>
 
@@ -445,20 +470,10 @@ function renderJobs(){
   $("chief").innerHTML = c && c.name ? `Acting Chief: ${av(c.name)}<b>${esc(c.name)}</b>${c.since?` since ${fw(c.since)}`:""}`
     + (c.next && c.next.length ? ` · next in line: ${c.next.map(esc).join(", ")}` : "") + (c.note ? ` · ${esc(c.note)}` : "") : "";
   const order = {claimed:0, blocked:1, open:2};
-  const rows = jobs.slice().sort((a,b)=>(order[a.status]-order[b.status]) || a.id.localeCompare(b.id));
+  const P = plan();
+  const rows = jobs.slice().sort((a,b)=>(order[a.status]-order[b.status]) || ((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15) || a.id.localeCompare(b.id));
   $("jobs").innerHTML = rows.length ? `<ul style="list-style:none;margin:0;padding:0">` + rows.map(j=>{
-    const late = j.status==="claimed" && j.eta && new Date(j.eta.replace("Z",":00Z")) < new Date();
-    // Released at a stopping point by a Mini agent: it carries on at the next relay run (every 30 min, 08:00-22:00)
-    const L = j.last || {}, lastBy = AGENT(L.by), lastAt = L.at ? fw(String(L.at).replace(/Z$/, ":00Z")) : "";
-    const between = j.status==="open" && !j.after && String(L.what||"").startsWith("released") && L.by && L.by!=="claude";
-    const st = late ? '<span class="state block">Stalled</span>' : j.status==="claimed" ? '<span class="state on">Underway</span>'
-      : j.status==="blocked" ? '<span class="state block">Blocked</span>' : j.after ? '<span class="state q">Queued</span>'
-      : between ? '<span class="state q">Between runs</span>' : '<span class="state wait">Waiting for an agent</span>';
-    const who = j.status==="claimed" ? ` · ${av(AGENT(j.by))}<b>${esc(AGENT(j.by))}</b>${j.eta?` until ${fw(j.eta.replace("Z",":00Z"))}`:""}` : "";
-    const note = String(L.what||"").replace(/^released:\s*/, "");
-    const why = j.status==="blocked" && j.result ? `<div class="why">Blocked by: ${md(j.result)}</div>` : j.status==="open" && j.after ? `<div class="why">Starts after ${esc(j.after)}</div>`
-      : between ? `<div class="why">${av(lastBy)}<b>${esc(lastBy)}</b> stopped at ${esc(lastAt)}; carries on at the next run. <span class="mono">${esc(note.length>220 ? note.slice(0,217)+"…" : note)}</span></div>`
-      : j.status==="open" && L.at ? `<div class="why">Not started yet; added ${esc(lastAt)}. The next agent run takes it.</div>` : "";
+    const W = jobWhy(j, P), st = W.chip, who = "", why = `<div class="why">${W.why}</div>`;
     const film = j.film ? `<span class="ch OWB">OWB</span><b>${esc(j.film)}</b> ${esc(j.stage)} · ` : "";
     return `<li style="padding:8px 0;border-top:1px solid var(--line)"><div class="row" style="margin:0;justify-content:space-between;display:flex;gap:8px;flex-wrap:wrap">
       <span><span class="mono">${esc(j.id)}</span> · ${film}${esc(j.title)}</span>${st}</div>
@@ -514,6 +529,7 @@ function renderSpend(){
     + (tgt && tgt.gbp ? sub("tgt", "Target", `£${Math.round(tgt.gbp)}`, esc(tgt.label||"")) : "")
     : `<div class="empty">Subscriptions load from the studio agent's next update.</div>`;
   $("subsNote").textContent = plans.length ? `Pounds including ${Math.round((fx.vat||0.2)*100)}% VAT, converted from each plan's published dollar price (checked ${fx.checked?fd(pd(fx.checked)):"8 Oct"}) at about £${fx.gbpPerUsd||0.75} to the dollar. Your bank statement is the real figure. The check-in is the day before Cursor renews, so it can be cancelled in time.` : "";
+  renderVerdict(c);
   const pools = (c && c.pools) || {};
   const order = ["cursor","flow","vertex","elevenlabs","claude"].filter(k=>pools[k]);
   $("pools").innerHTML = order.length ? order.map(k=>{
@@ -528,7 +544,7 @@ function renderSpend(){
     return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]||esc(k)}</span><span class="chip">${esc(p.unit)}</span></div>
       <div class="big">${num(L.left,p.unit)} <small>left${total!=null?" of "+num(total,p.unit):""}</small></div>
       ${spark(p.series)}
-      <div class="why">${used!=null&&used>=0?`Used <b>${num(used,p.unit)}</b> since ${esc(fd(pd(F.at)))} · `:""}${p.spent_logged?`logged spends ${num(p.spent_logged,p.unit)} · `:""}read ${esc(fw(L.at))}${L.by?` by ${esc(AGENT(L.by))}`:""}${L.note?` · ${esc(L.note)}`:""}</div></div>`;
+      <div class="why">${p.spent_logged?`logged spends ${num(p.spent_logged,p.unit)} · `:""}read ${esc(fw(L.at))}${L.by?` by ${esc(AGENT(L.by))}`:""}${L.note?` · ${esc(L.note)}`:""}</div>${fitHtml(k,p,c)}</div>`;
   }).join("") : `<div class="box" style="grid-column:1/-1"><div class="empty" style="padding:2px 0">No readings yet. The Mac mini records Cursor, Flow, Google Cloud credit and ElevenLabs every day, and every take's cost as it is made. The figures appear here as they arrive.</div></div>`;
   const bf = (c && c.byFilm) || {}, films = Object.keys(bf).filter(f=>f!=="(none)");
   $("byFilmBox").hidden = !films.length;
@@ -540,10 +556,144 @@ function renderSpend(){
   }
 }
 
+// ---------- At a glance (Ben, 8 Oct): where each job sits in its lane, when it should start and finish ----------
+// One worker per lane. The Mac mini (Cursor) takes Mini jobs one at a time; the Chief relay wakes it every 10 minutes
+// when work is queued, and a run lasts about 25 minutes. Times are estimates from each job's usual length.
+const MINUTE = 60000;
+function ts(s){ if(!s) return NaN; let x=String(s); if(/T\d\d:\d\dZ$/.test(x)) x=x.replace(/Z$/,":00Z"); return Date.parse(x); }
+function clock(ms){
+  const d=new Date(ms), same=d.toDateString()===new Date().toDateString();
+  const hm=d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+  return same ? hm : d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})+" "+hm;
+}
+function rel(ms){ const m=Math.round((ms-Date.now())/MINUTE); if(m<=2) return "any minute"; if(m<60) return `in ${m} min`; const h=m/60; return h<24?`in about ${h<1.5?1:Math.round(h)} h`:`in ${Math.round(h/24)} d`; }
+function ago(ms){ const m=Math.round((Date.now()-ms)/MINUTE); return m<1?"just now":m<60?`${m} min ago`:m<1440?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} d ago`; }
+const LANE = {mini:"Mac mini · Cursor", gemini:"Gemini check", cloud:"Claude", ben:"You"};
+function plan(){
+  const jobs = fromDb.jobs || [], now = Date.now(), out = {};
+  const byId = Object.fromEntries(jobs.map(j=>[j.id,j]));
+  for(const lane of ["mini","gemini","cloud"]){
+    let t = now, pos = 0;
+    for(const j of jobs.filter(j=>j.needs===lane && j.status==="claimed")){
+      const st = ts(j.claimedAt) || now, est=(j.estMin||25)*MINUTE;
+      const done = Math.max(st+est, now+5*MINUTE);
+      out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
+    }
+    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>String(a.addedAt).localeCompare(String(b.addedAt)));
+    const wake = lane==="mini" ? 5*MINUTE : lane==="cloud" ? 30*MINUTE : 15*MINUTE;
+    for(const j of open){
+      const dep = j.after && byId[j.after] ? out[j.after] : null;
+      if(j.after && byId[j.after] && !dep){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
+      const start = Math.max(t, now + wake, dep ? dep.done + wake : 0);
+      const done = start + (j.estMin||25)*MINUTE;
+      out[j.id] = {state: dep ? "after" : "line", start, done, pos: ++pos}; t = done;
+    }
+  }
+  return out;
+}
+function laneQuiet(){
+  const L = (fromDb.lanes||{}).mini; if(!L) return null;
+  const waiting = (fromDb.jobs||[]).some(j=>j.needs==="mini" && j.status!=="blocked");
+  const age = Date.now() - ts(L.lastAt);
+  return {at: ts(L.lastAt), by: L.lastBy, quiet: waiting && age > 3*60*MINUTE};
+}
+function jobWhy(j, P){
+  const p = P[j.id] || {};
+  if(j.status==="blocked") return {chip:'<span class="state block">Blocked</span>', why: j.result ? `Blocked by: ${md(j.result)}` : "Blocked."};
+  if(j.needs==="ben") return {chip:'<span class="state wait">Needs you</span>', why:"Only you can do this one."};
+  if(p.state==="now") return {chip:'<span class="state on">Underway</span>',
+    why:`${av(AGENT(j.by))}<b>${esc(AGENT(j.by))}</b> on it since ${clock(p.start)} · usually about ${j.estMin} min · done about <b>${clock(p.done)}</b> (${rel(p.done)})`};
+  if(p.state==="blocked-dep") return {chip:'<span class="state q">Queued</span>', why:`Starts when ${esc(j.after)} is done.`};
+  const L = j.last || {};
+  if(j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude")
+    return {chip:'<span class="state on">Part done</span>', why:`${av(AGENT(L.by))}<b>${esc(AGENT(L.by))}</b> stopped at a safe point at ${clock(ts(L.at))} and carries on at the next wake-up (within 10 min) · <span class="mono">${esc(String(L.what).replace(/^released:\s*/,"").slice(0,160))}</span>`};
+  const ahead = (fromDb.jobs||[]).filter(x=>x.needs===j.needs && (P[x.id]||{}).state==="now").map(x=>x.id);
+  const lead = p.state==="after" ? `Starts after ${esc(j.after)} is done` :
+    p.pos===1 && ahead.length ? `Next on the ${LANE[j.needs]||j.needs} after ${ahead.map(esc).join(", ")}` :
+    p.pos===1 ? `Next on the ${LANE[j.needs]||j.needs}; it starts at the next wake-up (the relay checks every 10 min)` :
+    `Number ${p.pos} in line on the ${LANE[j.needs]||j.needs}`;
+  const label = p.pos===1 && !ahead.length && p.state!=="after" ? "Next" : "In line";
+  return {chip:`<span class="state q">${label}</span>`,
+    why:`${lead} · starts about <b>${clock(p.start)}</b> (${rel(p.start)}), about ${j.estMin} min of work, done about ${clock(p.done)}`};
+}
+function renderGlance(films){
+  const box=$("glance"), jobs=fromDb.jobs; if(!box) return;
+  if(!jobs){ box.innerHTML = `<div class="gl"><h3>Right now</h3><div class="why">Waiting for the studio's next update.</div></div>`; return; }
+  const P = plan(), cards = [];
+  // 1. Right now, per lane
+  const now = jobs.filter(j=>j.status==="claimed");
+  const q = laneQuiet();
+  const miniLine = q ? `Mac mini last active ${ago(q.at)}${q.quiet?" · <b class=\"late\">quiet for over 3 h with work waiting</b>":""}` : "";
+  cards.push(`<div class="gl"><h3>Right now</h3>${now.length ? now.map(j=>{ const p=P[j.id]||{};
+      return `<div class="big">${j.film?`<span class="ch OWB">OWB</span>${esc(j.film)} · `:""}${esc(j.title.replace(/^\d{3}:\s*/,""))}</div>
+        <div class="when">done about ${p.done?clock(p.done):"—"} <span class="${p.done&&p.done<Date.now()?"late":""}">${p.done?"("+rel(p.done)+")":""}</span></div>
+        <div class="why">${av(AGENT(j.by))}<b>${esc(AGENT(j.by))}</b> since ${p.start?clock(p.start):"—"} · ${esc(LANE[j.needs]||j.needs)}</div>`; }).join("")
+    : `<div class="big">Nothing being worked on</div><div class="why">${jobs.some(j=>j.status==="open")?"Work is queued; the next wake-up (every 10 min) starts it.":"The queue is empty."}</div>`}
+    ${miniLine?`<div class="why">${miniLine}</div>`:""}</div>`);
+  // 2. Next video for Ben to watch
+  const watch = jobs.filter(j=>j.watch && P[j.id] && P[j.id].done).sort((a,b)=>P[a.id].done-P[b.id].done)[0];
+  const upcoming = films.filter(f=>f.air && pd(f.air)>=today()).sort((a,b)=>String(a.air).localeCompare(String(b.air)))[0];
+  const hosNext = (data&&data.films||[]).filter(f=>f.stages&&f.stages.ben_ok&&f.stages.ben_ok.status!=="done").sort((a,b)=>String(a.ready_by).localeCompare(String(b.ready_by)))[0];
+  cards.push(`<div class="gl watch"><h3>Next video for you</h3>${watch ? `<div class="big"><span class="ch OWB">OWB</span>${esc(watch.film)} · ${esc(watch.title.replace(/^\d{3}:\s*/,""))}</div>
+      <div class="when">about ${clock(P[watch.id].done)} (${rel(P[watch.id].done)})</div>
+      <div class="why">Lands in <b>OWB UAT</b> on iCloud. Claude reviews it first and posts what passes or needs fixing.</div>`
+    : `<div class="big">No cut is being made right now</div><div class="why">The next one appears here as soon as a cut job is queued.</div>`}
+    ${upcoming?`<div class="why">Next to air: ${chb(upcoming)}<b>${esc(upcoming.id)}</b> ${esc(upcoming.title)} · ${fd(pd(upcoming.air))}</div>`:""}
+    ${hosNext?`<div class="why">HOS for your OK: <b>${esc(hosNext.id)}</b> ${esc(hosNext.title)} · by ${fd(pd(hosNext.ready_by))}</div>`:""}</div>`);
+  // 3. The Mac mini's line-up
+  const line = jobs.filter(j=>j.needs==="mini" && j.status!=="blocked").sort((a,b)=>((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15));
+  cards.push(`<div class="gl"><h3>Mac mini line-up</h3>${line.length?`<ol class="lineup">${line.map(j=>{ const p=P[j.id]||{};
+      const t = p.state==="now" ? "now" : p.start ? clock(p.start) : "after "+esc(j.after);
+      return `<li><span class="mono">${esc(j.id)}</span><span>${j.film?`<b>${esc(j.film)}</b> `:""}${esc(j.title.replace(/^\d{3}:\s*/,""))}</span><span class="t">${t}</span><span class="w">${p.state==="now"?"underway":"about "+j.estMin+" min"}</span></li>`; }).join("")}</ol>`
+    : `<div class="why">Nothing queued for the Mac mini.</div>`}
+    <div class="why">One job at a time. The relay wakes Cursor every 10 min when work is waiting; a run lasts about 25 min, and a long job carries on over several runs.</div></div>`);
+  // 4. Waiting on Claude or Ben
+  const reviews = films.filter(f=>f._ch==="OWB").map(f=>({f, st:f._stages.filter(s=>stOf(f,s).review).map(s=>s.label)})).filter(x=>x.st.length)
+    .map(({f,st})=>`${chb(f)}<b>${esc(f.id)}</b> ${esc(st.join(", "))}${f.next?` <span style="color:var(--ink-3)">· ${md(f.next.length>90?f.next.slice(0,88)+"…":f.next)}</span>`:""}`);
+  const cloud = jobs.filter(j=>j.needs==="cloud"&&j.status!=="blocked").map(j=>`<span class="mono">${esc(j.id)}</span> ${esc(j.title)}`);
+  const ben = jobs.filter(j=>j.needs==="ben"&&j.status!=="blocked").map(j=>`<span class="mono">${esc(j.id)}</span> ${esc(j.title)}`);
+  const blocked = jobs.filter(j=>j.status==="blocked").map(j=>`<span class="mono">${esc(j.id)}</span> ${esc(j.title)}`);
+  cards.push(`<div class="gl"><h3>Waiting on people</h3>
+    <div class="why"><b>You:</b> ${ben.length?ben.join("<br>"):"nothing"}</div>
+    <div class="why"><b>Claude:</b> ${cloud.length||reviews.length?[...cloud,...reviews].join("<br>"):"nothing"}</div>
+    ${blocked.length?`<div class="why"><b class="late">Blocked:</b> ${blocked.join("<br>")}</div>`:""}</div>`);
+  box.innerHTML = cards.join("");
+}
+// Plan-fit bars for the spend cards: this cycle's use, projected to a full month, against each plan's allowance.
+function poolUse(k, p, c){
+  const L=p.latest||{}, F=p.first||{}; if(L.left==null || !L.at) return null;
+  const total = L.total ?? F.total;
+  const used = total!=null ? Number(total)-Number(L.left) : (F.left!=null && F.at!==L.at ? Number(F.left)-Number(L.left) : null);
+  if(used==null || used<0) return null;
+  const since = ts(p.since ? p.since+"T00:00:00Z" : F.at), days = Math.max(1, (ts(L.at)-since)/(24*60*MINUTE));
+  const cyc = (c&&c.cycleDays)||30;
+  return {used, days, projected: used/days*cyc};
+}
+function fitHtml(k, p, c){
+  const tiers = ((c&&c.tiers)||{})[k]; if(!tiers) return "";
+  const u = poolUse(k,p,c);
+  if(!u) return `<div class="fit"><div class="why">The plan-fit bars appear after two readings.</div></div>`;
+  const unit = k==="cursor" ? (v=>"$"+Math.round(v)) : (v=>Math.round(v).toLocaleString("en-GB"));
+  return `<div class="fit"><div class="why">Used <b>${unit(u.used)}</b> in ${u.days<1.5?"1 day":Math.round(u.days)+" days"} · on pace for about <b>${unit(u.projected)}</b> a month</div>`
+    + tiers.map(t=>{ const pct = Math.round(100*u.projected/t.allow), cls = pct>100?"bad":pct>85?"risk":"";
+      const tag = t.current&&t.target?"you have it; target":t.current?"you have it":t.target?"target":"";
+      return `<div class="r ${cls}"><span>${esc(t.name)} · £${t.gbp}${tag?` · <i>${tag}</i>`:""}</span><span><b>${pct}%</b> ${pct>100?"over":pct>85?"tight":"fits"}</span><div class="bar"><i style="width:${Math.min(100,pct)}%"></i></div></div>`; }).join("") + `</div>`;
+}
+function renderVerdict(c){
+  const v=$("verdict"); if(!v) return;
+  const pools=(c&&c.pools)||{}, bits=[];
+  for(const [k,name] of [["flow","Flow"],["elevenlabs","ElevenLabs"],["cursor","Cursor"]]){
+    const p=pools[k]; const u=p&&poolUse(k,p,c); const tiers=((c&&c.tiers)||{})[k]||[];
+    const tgt=tiers.find(t=>t.target) || tiers.find(t=>t.current);
+    if(u && tgt) bits.push(`${name} would use <b>${Math.round(100*u.projected/tgt.allow)}%</b> of ${esc(tgt.name)}`);
+  }
+  v.innerHTML = bits.length ? `On this month's pace: ${bits.join(" · ")}.` : `Each card below shows how much of the month's allowance we're using and whether it would fit the cheaper plan. The bars fill in once two readings are in (Flow from Mon 12 Oct).`;
+}
+
 function render(){
   const films = view();
   if(filter && !films.some(f=>f.key===filter)) filter = null;
-  renderSource(); renderJobs(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  renderSource(); renderGlance(films); renderJobs(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
 
@@ -637,7 +787,7 @@ async function startDb(){
   db.doc("board/owb").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || !Array.isArray(d.films)) return;
-    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null;
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null;
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
   }, ()=>{});
   db.doc("board/credits").onSnapshot(snap=>{
@@ -682,5 +832,5 @@ async function startLive(){
 render();
 startDb();
 startLive();
-setInterval(()=>render(), 60*60*1000);
+setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" current
 </script>

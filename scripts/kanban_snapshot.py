@@ -40,6 +40,39 @@ def rebuild(html: str, hos: dict, owb: list[dict]) -> str:
     return re.sub(r"^const OWB_SNAPSHOT = .*;$", lambda m: "const OWB_SNAPSHOT = " + js(owb) + ";", html, flags=re.M)
 
 
+# ---- "At a glance" (Ben, 8 Oct): how long each queued job takes, and when the Mini last did anything ----
+# Minutes from "ready" to "done", from the queue's own history (8 Oct: median 49, recent 024 jobs 14-41). Keyword
+# estimates keep it simple; the page turns them into start/finish times from the job's place in its lane.
+EST = [(("reading", "readings"), 15), (("assemble", "rough", "full rough", "final picture", "render"), 45),
+       (("omni", "veo", "flow", "mint"), 60), (("vo take", "voiceover", "vo "), 25), (("thumb", "cover"), 30),
+       (("package", "upload", "trailer"), 20), (("harvest", "pool", "licence", "commit "), 15)]
+
+
+def est_minutes(j: dict) -> int:
+    t = (j.get("title") or "").lower()
+    for words, mins in EST:
+        if any(w in t for w in words):
+            return mins
+    return 25
+
+
+def makes_video(j: dict) -> bool:
+    """A job whose result Ben can watch in OWB UAT (a cut), as opposed to sheets, packages or text."""
+    t = (j.get("title") or "").lower()
+    return j.get("stage") == "edit" and any(w in t for w in ("rough", "cut", "picture", "assemble"))
+
+
+def lanes_info(alljobs: list[dict]) -> dict:
+    out = {}
+    for lane in ("mini", "gemini", "cloud", "ben"):
+        acts = [(h["at"], h.get("by", ""), h["what"]) for j in alljobs if j.get("needs") == lane
+                for h in j.get("history") or [] if h.get("by") and h.get("by") != "claude" or lane == "cloud"]
+        if acts:
+            at, by, what = max(acts)
+            out[lane] = {"lastAt": at, "lastBy": by, "lastWhat": what[:160]}
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("page", type=Path, nargs="?")
@@ -61,10 +94,14 @@ def main(argv: list[str] | None = None) -> int:
         a.db_out.mkdir(parents=True, exist_ok=True)
         (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
         q = ROOT / "jobs" / "queue.json"
+        alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
         live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "film", "stage", "after", "ref", "result")},
-                     last=(j.get("history") or [{}])[-1])  # who touched it last, when, and their note (the board shows it)
-                for j in (json.loads(q.read_text())["jobs"] if q.exists() else []) if j["status"] in ("open", "claimed", "blocked")]
-        doc = {"updatedAt": now, "films": owb, "jobs": live}
+                     last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
+                     claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
+                     addedAt=(j.get("history") or [{}])[0].get("at", ""),
+                     estMin=est_minutes(j), watch=makes_video(j))
+                for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
+        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes_info(alljobs)}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
                             "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}

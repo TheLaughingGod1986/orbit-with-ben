@@ -42,9 +42,10 @@
       "name": "ElevenLabs Creator",
       "usd": 22,
       "gbp": 20,
-      "tier": "121,000 credits",
+      "tier": "121,000 credits a month (unused credits roll over; the pool showed 209,536 on 7 Oct)",
       "cycleStart": "",
-      "covers": "Ben's narrator voice, both channels"
+      "covers": "Ben's narrator voice, both channels",
+      "renews": "2026-10-30"
     }
   ],
   "target": {
@@ -72,5 +73,65 @@
     "vertex": "2026-10-08",
     "elevenlabs": "2026-10-08",
     "claude": "2026-10-08"
-  }
+  },
+  "tiers": {
+    "_note": "What each plan gives a month, for the 'would it fit' bars. gbp includes VAT. Cursor's included usage is approximate (third-party figures, 8 Oct).",
+    "flow": [
+      {
+        "name": "Google AI Ultra $200 tier",
+        "gbp": 180,
+        "allow": 25000,
+        "current": true
+      },
+      {
+        "name": "Google AI Ultra $100 tier",
+        "gbp": 90,
+        "allow": 10000,
+        "target": true
+      },
+      {
+        "name": "Google AI Pro",
+        "gbp": 18,
+        "allow": 1000
+      }
+    ],
+    "cursor": [
+      {
+        "name": "Cursor Ultra",
+        "gbp": 180,
+        "allow": 400,
+        "current": true
+      },
+      {
+        "name": "Cursor Pro+",
+        "gbp": 54,
+        "allow": 70
+      },
+      {
+        "name": "Cursor Pro",
+        "gbp": 18,
+        "allow": 20
+      }
+    ],
+    "elevenlabs": [
+      {
+        "name": "ElevenLabs Pro",
+        "gbp": 89,
+        "allow": 600000
+      },
+      {
+        "name": "ElevenLabs Creator",
+        "gbp": 20,
+        "allow": 121000,
+        "current": true,
+        "target": true
+      },
+      {
+        "name": "ElevenLabs Starter",
+        "gbp": 5,
+        "allow": 30000
+      }
+    ]
+  },
+  "cycleDays": 30
 }

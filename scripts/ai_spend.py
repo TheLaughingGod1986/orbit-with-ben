@@ -93,6 +93,8 @@ def build_doc(rows: list[dict]) -> dict:
         "plans": plans.get("subscriptions", []),
         "target": plans.get("target", {}),
         "fx": plans.get("fx", {}),
+        "tiers": {k: v for k, v in plans.get("tiers", {}).items() if not k.startswith("_")},
+        "cycleDays": plans.get("cycleDays", 30),
         "pricesNote": plans.get("note", ""),
         "pools": pools,
         "byFilm": {f: {p: round(v, 2) for p, v in d.items()} for f, d in sorted(by_film.items())},
