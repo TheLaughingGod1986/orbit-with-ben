@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0049 | mini | open | – | – | 024 thumbs · 024: thumb B v02 (grade, flares, crop); A and C passed |  |
+| J0049 | mini | claimed | cursor | 2026-10-08T13:54Z | 024 thumbs · 024: thumb B v02 (grade, flares, crop); A and C passed |  |
 
 Recently finished:
 
