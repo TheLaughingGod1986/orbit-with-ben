@@ -12,7 +12,16 @@ Image.MAX_IMAGE_PIXELS = None
 HERE=Path(__file__).resolve().parent; EP=HERE.parent
 UAT=Path.home()/'Library/Mobile Documents/com~apple~CloudDocs/OWB UAT'
 WORK=Path('/private/tmp/venus023_full_work_v01'); PACK=HERE/'full_rough_v01_pack'
-PART01=UAT/'023_Venus_Part01_rough_v03.mp4'; VO=EP/'02_Voiceover/venus_vo_v01.mp3'; BED=UAT/'jupiter-music.mp3'
+PART01=UAT/'023_Venus_Part01_rough_v03.mp4'; VO=EP/'02_Voiceover/venus_vo_v01.mp3'
+# iCloud evicts/locks OWB UAT files mid-run ("Resource deadlock avoided"), so read the bed from a local copy.
+BED=WORK/'bed_jupiter-music.mp3'
+if not BED.exists():
+ import shutil, time
+ WORK.mkdir(parents=True,exist_ok=True)
+ for _ in range(10):
+  sp.run(['brctl','download',str(UAT/'jupiter-music.mp3')])
+  try: shutil.copyfile(UAT/'jupiter-music.mp3',BED); break
+  except OSError: time.sleep(6)
 OUT=UAT/'023_Venus_full_rough_v01.mp4'
 POOL=HERE/'nasa_pool_v01'; RAW=EP/'04_Generated-Clips/01_Raw'; G2=RAW/'graphics_v02'
 FPS=30; LAST_WORD=509.50; HOLD=2.5; FADE=1.0; TOTAL=round((LAST_WORD+HOLD+FADE)*FPS)/FPS
