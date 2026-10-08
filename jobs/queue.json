@@ -2271,10 +2271,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T22:22Z",
-      "eta": "2026-10-09T00:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T15:15Z",
       "result": "",
@@ -2318,6 +2318,11 @@
           "at": "2026-10-08T22:22Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T22:23Z",
+          "by": "cursor",
+          "what": "released: Claude's steps 1-4 done 8 Oct 23:30: /tmp mars025 v03b + venus023 part01 v03 removed; npm/pip/brew caches; ~/.cache uv/prisma/node/ccusage (kept huggingface, whisper); Cursor logs + 47 workspaceStorage dirs >14d (snapshots 3.1G untouched, not approved). Free 5.3 -> 8.5 GB. Pass 1 still running: tmux j0054-nas (pid 5420), log ~/_desk/logs/j0054-nas.log, done ~/_desk/logs/j0054-nas.done; 013 moved, now on 019 (copying 07_Edit-Project/.venv, many small files). Next: wait for .done, then pass 2 (superseded OWB UAT cuts), then step 5 hos-005-blood with its 3 checks."
         }
       ],
       "urgent": true
