@@ -198,45 +198,81 @@ details.more .subs{margin-top:8px}
 .gl .line{font-size:14px;margin-top:6px}
 .gl .line:first-of-type{margin-top:0}
 /* Film by film (Ben, 8 Oct): per film, what's done, the holdup, who acts next and when, and what's on Ben */
-.tracker{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,430px),1fr));gap:10px;margin-bottom:22px;align-items:start}
-.tf{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--todo);border-radius:12px;box-shadow:var(--shadow);min-width:0}
-.tf.good,.tf.ready{border-left-color:var(--done)}
+/* The board (Ben, 8 Oct: "a very simple Kanban: what's in progress, what's to do, what's done"): one card per film */
+.youbar{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:15px}
+.youbar.has{border-left-color:var(--doing)}
+.youbar b{font-weight:600}
+.youbar .why{margin-top:2px}
+.kb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
+@media (max-width:900px){.kb{grid-template-columns:1fr}}
+.kcol{background:var(--panel-2);border-radius:14px;padding:10px;min-width:0}
+.kcol h2{font:700 16px/1 "Bricolage Grotesque",sans-serif;margin:4px 4px 10px;display:flex;align-items:center;gap:8px}
+.kcol h2 .n{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-3)}
+.kcol h2 .sw{width:10px;height:10px;border-radius:3px}
+.kcol .cards{display:flex;flex-direction:column;gap:8px}
+.tf{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--todo);border-radius:10px;box-shadow:var(--shadow);min-width:0}
+.tf.good,.tf.ready,.tf.finished{border-left-color:var(--done)}
 .tf.you{border-left-color:var(--doing)}
 .tf.held{border-left-color:var(--blocked)}
 .tf.waiting{border-left-color:var(--ink-3)}
-.tf>summary{list-style:none;cursor:pointer;padding:12px 14px}
+.tf>summary{list-style:none;cursor:pointer;padding:10px 12px}
 .tf>summary::-webkit-details-marker{display:none}
-.tf .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.tf .id{font:800 17px/1.25 "Bricolage Grotesque",sans-serif;min-width:0;overflow-wrap:anywhere}
-.tf .id small{display:block;font:400 13px/1.35 "IBM Plex Sans",sans-serif;color:var(--ink-2);margin-top:2px}
-.pill{flex:none;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;white-space:nowrap;background:var(--todo-soft);color:var(--todo)}
-.pill.good,.pill.ready{background:var(--done-soft);color:var(--done)}
+.tf .kh{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tf .kh b{font:800 16px "Bricolage Grotesque",sans-serif}
+.tf .kt{font-size:13px;color:var(--ink-2);margin:2px 0 6px;line-height:1.3}
+.pill{flex:none;font-size:12px;font-weight:600;padding:1px 8px;border-radius:99px;white-space:nowrap;background:var(--todo-soft);color:var(--todo)}
+.pill.good,.pill.ready,.pill.finished{background:var(--done-soft);color:var(--done)}
 .pill.you{background:var(--doing-soft);color:var(--doing)}
 .pill.held{background:var(--blocked-soft);color:var(--blocked)}
-.tf .sub2{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--ink-2);margin:6px 0}
-.tf .sub2 b{color:var(--ink);font-weight:600}
+.tf .ka{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2);margin-bottom:4px}
+.tf .ka b{color:var(--ink);font-weight:600}
+.tf .bar{height:4px}
 .tf .bar i{background:var(--done)}
 .tf.waiting .bar i{background:var(--ink-3)}
 .tf.held .bar i{background:var(--blocked)}
-.tf .nx{font-size:13px;color:var(--ink-2);margin-top:8px;display:flex;gap:6px;align-items:baseline}
-.tf .nx::after{content:"▸";margin-left:auto;color:var(--ink-3);flex:none}
-.tf[open] .nx::after{content:"▾"}
-.tf .nx b{color:var(--ink);font-weight:600}
-.tf .body{padding:0 14px 12px}
-.tf dl{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px 12px;margin:0;font-size:14px;border-top:1px solid var(--line);padding-top:10px}
-.tf dt{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);padding-top:2px}
+.tf .kl{font-size:14px;margin-top:8px;line-height:1.4}
+.tf .kn{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+.tf .kn b{color:var(--ink);font-weight:600}
+.tf .ky{font-size:13px;margin-top:4px;font-weight:600;color:var(--done)}
+.tf .ky.yes{color:var(--doing)}
+.tf .more{font-size:12px;color:var(--ink-3);margin-top:6px}
+.tf[open] .more{display:none}
+.tf .body{padding:0 12px 10px}
+.tf dl{display:grid;grid-template-columns:1fr;gap:2px;margin:0;font-size:13px;line-height:1.4;border-top:1px solid var(--line);padding-top:8px}
+.tf dt{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);margin-top:6px}
+.tf dt:first-child{margin-top:0}
 .tf dd{margin:0;overflow-wrap:anywhere}
 .tf dd.none{color:var(--done);font-weight:600}
 .tf dd.yes{color:var(--doing);font-weight:600}
-@media (max-width:520px){.tf dl{grid-template-columns:1fr;gap:2px}.tf dd{margin-bottom:8px}}
 .steps{list-style:none;margin:0;padding:0}
-.steps li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:2px 8px;padding:5px 0;border-top:1px dashed var(--line)}
-.steps li:first-child{border-top:0;padding-top:0}
-.steps li .av{width:20px;height:20px;font-size:10px;margin-top:1px}
-.steps li .w{grid-column:2;font:500 12px/1.4 "IBM Plex Mono",monospace;color:var(--ink-2);font-variant-numeric:tabular-nums}
-.steps li.ok{opacity:.6}
+.steps li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:0 6px;padding:3px 0}
+.steps li .av{width:18px;height:18px;font-size:10px;margin-top:1px}
+.steps li .w{grid-column:2;font-size:12px;color:var(--ink-3)}
+.steps li.ok{opacity:.55}
 .steps li.ok .w{color:var(--done)}
-.tf .ft{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;margin-top:10px;font-size:12px;color:var(--ink-3)}
+.tf .ft{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:8px;margin-top:8px}
+.tf .ft .btn{padding:3px 9px;font-size:12px}
+.lane{margin-bottom:18px}
+.lane>h3{font:700 13px "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);margin:0 0 8px;display:flex;align-items:center;gap:6px}
+.lane .kb{margin-bottom:0}
+.tf .ky{margin-top:6px}
+.ck{margin:0;padding:0}
+.ck .g{margin:6px 0 2px}
+.ck .g .nm{display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px}
+.ck .g .nm .av{width:18px;height:18px;font-size:10px}
+.ck .g .nm small{font-weight:400;color:var(--ink-3)}
+.ck ul{list-style:none;margin:2px 0 0 24px;padding:0;font-size:13px}
+.ck li{padding:1px 0;display:grid;grid-template-columns:1.2em minmax(0,1fr);gap:0 4px}
+.ck li::before{content:"☐";color:var(--ink-3)}
+.ck li.ok::before{content:"✓";color:var(--done);font-weight:700}
+.ck li.ok{color:var(--ink-2)}
+.ck li.now::before{content:"◐";color:var(--doing)}
+.ck li .w{grid-column:2;font-size:12px;color:var(--ink-3)}
+.ck li .w.late{color:var(--late)}
+.tf .hold{background:var(--panel-2);border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.45;margin-top:2px}
+.tf .hold b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);margin-bottom:2px}
+details.fold{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 12px;margin:0 0 10px}
+details.fold>summary{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink)}
 .legend{font-size:13px;color:var(--ink-2);margin:-4px 0 10px}
 footer{margin-top:22px;font-size:12px;color:var(--ink-3)}
 footer a{color:var(--ink-2)}
@@ -257,17 +293,17 @@ footer a{color:var(--ink-2)}
   </header>
   <div class="banner" id="banner"></div>
   <div class="chnote" id="owbnote"></div>
-  <h2 class="sec">At a glance</h2>
-  <div class="glance" id="glance"><div class="gl"><h3>Right now</h3><div class="why">Loading the studio's latest update…</div></div></div>
-  <h2 class="sec">Film by film</h2>
-  <div class="legend">Each film: what's done, what's holding it up, who does the next step and when, and whether anything is on you. Tap a film to open or close it.</div>
-  <div class="tracker" id="tracker"><div class="empty">Loading…</div></div>
+  <div class="youbar" id="youbar">Loading…</div>
+  <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
+  <details class="more fold" id="foldJobs"><summary>Mac mini job line</summary>
   <section id="jobsBox" hidden>
-    <h2 class="sec">Job queue <span id="chief" class="qsub"></span></h2>
-    <div class="box" style="margin-bottom:18px"><div id="jobs"></div></div>
+    <div class="why" style="margin:6px 0"><span id="chief" class="qsub" style="margin:0"></span></div>
+    <div class="box"><div id="jobs"></div></div>
   </section>
+  </details>
+  <details class="more fold"><summary>AI spend</summary>
   <section class="spend" id="spendBox">
-    <div class="head"><h2 class="sec" style="margin:0">AI spend</h2><div class="why" id="spendWhen"></div></div>
+    <div class="head"><div class="why" id="spendWhen"></div></div>
     <div class="verdict" id="verdict"></div>
     <div class="pools" id="pools"></div>
     <details class="more"><summary>Plans and prices</summary>
@@ -276,16 +312,16 @@ footer a{color:var(--ink-2)}
       <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
     </details>
   </section>
-  <details class="more" style="margin-bottom:18px"><summary>Who's on what</summary>
-    <div class="agents" id="agents" style="margin-top:10px"></div>
   </details>
-  <h2 class="sec" id="stageboard">Stage board</h2>
+  <details class="more fold" id="foldStages"><summary id="stageboard">Every stage of every film (detail)</summary>
   <div class="filterline" id="filterline"></div>
   <div class="board" id="board"></div>
   <div class="lower">
     <div class="box"><h3>Next steps</h3><ol id="next"></ol></div>
     <div class="box" id="creditbox"><h3>HOS credit checks</h3><div id="credits"></div></div>
   </div>
+  <div class="agents" id="agents" style="margin-top:14px"></div>
+  </details>
   <footer>The studio agent writes both boards into this page every hour, 07:50 to 21:50 London, from the files below. The film-by-film notes are Claude's, from <span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben, refreshed on the same run; job times come live from the job queue. <b>HOS</b> comes from <span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science (the file behind <a href="https://github.com/TheLaughingGod1986/history-of-science/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>). <b>OWB</b> from each film's <span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span> in orbit-with-ben (the files behind its <a href="https://github.com/TheLaughingGod1986/orbit-with-ben/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>; "chief" is shown as Grok). Both from <span class="mono">main</span>.</footer>
 </div>
 
@@ -456,7 +492,9 @@ function renderFilms(films){
 // ---------- Film by film (Ben, 8 Oct): "what's the holdup, what is it waiting for, and when will that happen?" ----------
 // Claude's note per film (board/briefs, from film_briefs.json) gives the words; the job queue gives live times; the
 // stage files give progress and how long the film has sat in its current stage. With no note, it's built from the data.
-const MOOD = {good:["good","All good"], ready:["ready","Ready to air"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
+const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · upload next"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
+const OWB_OWNER = {topic:"Claude", script:"Claude", sources:"Gemini", vo:"Cursor", shots:"Claude", picture:"Cursor", edit:"Cursor", thumbs:"Cursor", upload:"Cursor"};
+const COLUMN = {good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"done", ready:"done"};
 const openState = {};   // only what the viewer chose; otherwise films in hand open and films waiting their turn closed
 function stageDays(since){ const t=ts(since); if(isNaN(t)) return ""; const h=(Date.now()-t)/3600000;
   return h<1?"under an hour":h<36?`${Math.round(h)} h`:`${Math.round(h/24)} days`; }
@@ -504,12 +542,30 @@ function stepWhen(stp, P){
   if(d) return d;
   return {text: stp.job ? `in the Mac mini's line (${esc(stp.job)})` : "no date yet"};
 }
+// Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
+function whoOf(f, s){ const st=stOf(f,s); return st.owner || (f._ch==="OWB" ? OWB_OWNER[s.key] : s.owner) || "Team"; }
+function checklist(f, rows){
+  const done = new Map(), now = [];
+  for(const s of f._stages){ const st=stOf(f,s), w=whoOf(f,s);
+    if(st.status==="done"){ if(!done.has(w)) done.set(w,[]); done.get(w).push(s.label); }
+    else if(st.status==="doing"||st.status==="blocked") now.push({who: st.review?"Claude":w, what: s.label + (st.review?" (checking)":""), since: st.since}); }
+  const grp = (who, sub, items) => `<div class="g"><div class="nm">${av(who)}${esc(who)} <small>${sub}</small></div><ul>${items.join("")}</ul></div>`;
+  let html = "";
+  for(const [who,items] of done) html += grp(who, "did", items.map(x=>`<li class="ok"><span>${esc(x)}</span></li>`));
+  for(const n of now) html += grp(n.who, "doing now", [`<li class="now"><span>${esc(n.what)}</span>${n.since?`<span class="w">since ${esc(fw(n.since))} (${stageDays(n.since)})</span>`:""}</li>`]);
+  // steps in order; a run of steps by the same person is one group
+  let run = null; const runs = [];
+  for(const r of rows){ if(!run || run.who!==r.x.who){ run={who:r.x.who, items:[]}; runs.push(run); } run.items.push(r); }
+  for(const r of runs) html += grp(r.who, r.items.every(x=>x.w.ok)?"did":"to do", r.items.map(({x,w})=>`<li class="${w.ok?"ok":""}"><span>${esc(x.what)}</span><span class="w ${w.late?"late":""}">${w.text}</span></li>`));
+  return `<div class="ck">${html||"Nothing listed."}</div>`;
+}
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
   const all = films.concat(readyFilms).filter(f=>f.air ? pd(f.air)>=today() : true).sort((a,b)=>String(a.air||"9999").localeCompare(String(b.air||"9999")) || a.key.localeCompare(b.key));
   const P = fromDb.jobs ? plan() : {}, briefs = fromDb.briefs || {};
   const laneWho = {mini:"Cursor", gemini:"Gemini", cloud:"Claude", ben:"Ben"};
-  box.innerHTML = all.map(f=>{
+  const lanes = {OWB:{doing:[], todo:[], done:[]}, HOS:{doing:[], todo:[], done:[]}}, forYou = [];
+  for(const f of all){
     const b = briefs[f.key] || autoBrief(f);
     const steps = (b.steps||[]).slice();
     // Any queued job for this film that the note doesn't mention yet still shows, with its live time.
@@ -517,36 +573,49 @@ function renderTracker(films){
     for(const j of (fromDb.jobs||[])) if(f._ch==="OWB" && j.film===f.id && !named.has(j.id))
       steps.push({who: j.status==="claimed" ? AGENT(j.by) : laneWho[j.needs]||j.needs, what: shortTitle(j.title).replace(/^\d{3}\s*/,""), job:j.id});
     const rows = steps.map(x=>({x, w:stepWhen(x,P)}));
-    const nextRow = rows.find(r=>!r.w.ok);
     const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=2) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
     const moodKey = youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
     const [cls, word] = MOOD[moodKey];
+    if(b.you) forYou.push({f, b, soon: youSoon});
     const pct = moodKey==="ready" ? 100 : filmPct(f), air = pd(f.air);
     const age = b.updated ? Date.now()-ts(b.updated) : NaN;
     const stale = !b.auto && (isNaN(age) || age > 30*3600000);
-    const isOpen = f.key in openState ? openState[f.key] : ["you","held","good"].includes(moodKey);
-    const stepHtml = rows.length ? `<ol class="steps">${rows.map(({x,w})=>`<li class="${w.ok?"ok":""}">${av(x.who)}<span><b>${esc(x.who)}</b> · ${esc(x.what)}</span><span class="w ${w.late?"late":""}">${w.ok?"✓ ":""}${w.text}</span></li>`).join("")}</ol>` : "No steps listed.";
-    return `<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
-      <div class="hd"><div class="id">${chb(f)}${esc(f.id)}<small>${esc(f.title)}</small></div><span class="pill ${cls}">${word}</span></div>
-      <div class="sub2"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span><b>${pct}%</b> made</span></div>
+    const isOpen = f.key in openState ? openState[f.key] : false;
+    const line = b.line || (b.auto ? b.done : "");
+    lanes[f._ch][COLUMN[moodKey]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
+      <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span class="pill ${cls}">${word}</span></div>
+      <div class="kt">${esc(f.title)}</div>
+      <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
-      <div class="nx">${nextRow?`<span>Next: <b>${esc(nextRow.x.who)}</b> · ${esc(nextRow.x.what)} · ${nextRow.w.text}</span>`:`<span>Nothing left to do.</span>`}</div>
-    </summary><div class="body"><dl>
-      <dt>Done so far</dt><dd>${md(b.done||"")}</dd>
-      <dt>Now</dt><dd>${nowLine(f)}</dd>
-      <dt>The holdup</dt><dd>${md(b.holdup||"None.")}</dd>
-      ${b.limit?`<dt>Second limit</dt><dd>${md(b.limit)}</dd>`:""}
-      <dt>Next</dt><dd>${stepHtml}</dd>
-      <dt>For you</dt>${b.you?`<dd class="yes">${md(b.you)}</dd>`:`<dd class="none">Nothing. It's in hand.</dd>`}
-      ${b.timing?`<dt>Timing</dt><dd>${md(b.timing)}</dd>`:""}
-    </dl><div class="ft"><span>${b.auto?"Built from the stage data (no note from Claude yet)":`Note by Claude, updated ${esc(fw(b.updated))}`}${stale?` · <b class="soon">over a day old</b>`:""}</span>
-      <button class="btn" data-show="${esc(f.key)}">Show its stages</button></div></div></details>`;
-  }).join("") || `<div class="empty">No films to show.</div>`;
+      ${youSoon?`<div class="ky yes">For you: ${esc(b.you)}</div>`:""}
+    </summary><div class="body">
+      ${line?`<div class="kl" style="margin:0 0 8px">${md(line)}</div>`:""}
+      <div class="hold"><b>${COLUMN[moodKey]==="todo"?"Why it hasn't started yet":"The holdup"}</b>${md(b.holdup||"None.")}${b.limit?`<br><br>${md(b.limit)}`:""}</div>
+      ${checklist(f, rows)}
+      <div class="ky ${b.you?"yes":""}">For you: ${b.you?esc(b.you):"nothing"}</div>
+      ${b.timing?`<div class="why" style="margin-top:6px;font-size:13px">${md(b.timing)}</div>`:""}
+      <div class="ft"><span>${b.auto?"From the stage data (no note from Claude yet)":`Updated ${esc(fw(b.updated))}`}${stale?` · <b class="soon">over a day old</b>`:""}</span>
+      <button class="btn" data-show="${esc(f.key)}">Show its stages</button></div></div></details>`);
+  }
+  const defs = [["doing","In progress","var(--doing)"],["todo","To do","var(--todo)"],["done","Done","var(--done)"]];
+  const laneName = {OWB:"Orbit With Ben", HOS:"History of Science"};
+  box.className = "";
+  box.innerHTML = ["OWB","HOS"].filter(ch=>chan==="all"||chan===ch).map(ch=>`<section class="lane"><h3><span class="ch ${ch}">${ch}</span>${laneName[ch]}</h3><div class="kb">`
+    + defs.map(([k,label,c])=>`<section class="kcol"><h2><span class="sw" style="background:${c}"></span>${label}<span class="n">${lanes[ch][k].length}</span></h2>
+      <div class="cards">${lanes[ch][k].join("") || `<div class="empty">Nothing here.</div>`}</div></section>`).join("") + `</div></section>`).join("");
   box.querySelectorAll("details.tf>summary").forEach(sm=>sm.addEventListener("click",()=>{ const d=sm.parentElement; openState[d.dataset.key]=!d.open; }));
   box.querySelectorAll("[data-show]").forEach(btn=>btn.onclick=()=>{
     filter = btn.dataset.show; try{ localStorage.setItem("studio-kanban-film",filter); }catch(e){}
-    render(); $("stageboard").scrollIntoView({behavior:"smooth"});
+    $("foldStages").open = true; render(); $("stageboard").scrollIntoView({behavior:"smooth"});
   });
+  // One line at the top: is anything on Ben, and what airs next.
+  const yb = $("youbar"); if(!yb) return;
+  const soon = forYou.filter(x=>x.soon), later = forYou.filter(x=>!x.soon).sort((a,b)=>String(a.b.youWhen).localeCompare(String(b.b.youWhen)));
+  const nextAir = all.find(f=>f.air && pd(f.air)>=today());
+  yb.className = "youbar" + (soon.length ? " has" : "");
+  yb.innerHTML = (soon.length ? `<b>For you now:</b> ${soon.map(x=>`${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.b.you)}`).join(" · ")}`
+      : `<b>Nothing for you right now.</b>${later.length?` Next: ${chb(later[0].f)}<b>${esc(later[0].f.id)}</b> ${esc(later[0].b.you)}`:""}`)
+    + (nextAir ? `<div class="why">Next to air: ${chb(nextAir)}<b>${esc(nextAir.id)}</b> ${esc(nextAir.title)} · <b>${fd(pd(nextAir.air))}</b> (${cd(pd(nextAir.air))})</div>` : "");
 }
 
 function cardHtml(f, s, st){
@@ -830,24 +899,34 @@ function renderGlance(films){
   }
 }
 // Plan-fit bars for the spend cards: this cycle's use, projected to a full month, against each plan's allowance.
+// Use is measured only from our own readings: the drops between them (a refill is a rise, not use). A plan's "total"
+// is its whole monthly pool (ElevenLabs carries unused credit over), so total minus left is the plan month so far,
+// shown on its own line, never as one day's use (Ben, 8 Oct: the card said 152,693 "in 1 day").
+const PLAN_OF = {elevenlabs:/ElevenLabs/i, flow:/Google/i, cursor:/Cursor/i};
 function poolUse(k, p, c){
-  const L=p.latest||{}, F=p.first||{}; if(L.left==null || !L.at) return null;
-  const total = L.total ?? F.total;
-  const used = total!=null ? Number(total)-Number(L.left) : (F.left!=null && F.at!==L.at ? Number(F.left)-Number(L.left) : null);
-  if(used==null || used<0) return null;
-  const since = ts(p.since ? p.since+"T00:00:00Z" : F.at), days = Math.max(1, (ts(L.at)-since)/(24*60*MINUTE));
+  const pts = (p.series||[]).filter(x=>x[1]!=null).map(x=>[ts(x[0]), Number(x[1])]).filter(x=>!isNaN(x[0]));
+  if(pts.length<2) return null;
+  let used = 0; for(let i=1;i<pts.length;i++) used += Math.max(0, pts[i-1][1]-pts[i][1]);
+  const days = (pts[pts.length-1][0]-pts[0][0])/(24*60*MINUTE);
   const cyc = (c&&c.cycleDays)||30;
-  return {used, days, projected: used/days*cyc};
+  return {used, days, projected: days>=3 ? used/days*cyc : null};
+}
+function planMonth(k, p, c){
+  const L=p.latest||{}; if(L.total==null || L.left==null) return "";
+  const plan = ((c&&c.plans)||[]).find(x=>PLAN_OF[k] && PLAN_OF[k].test(x.name)) || {};
+  const ren = pd(plan.renews), unit = v=>Math.round(v).toLocaleString("en-GB");
+  return `<div class="why">This plan month: <b>${unit(Number(L.total)-Number(L.left))}</b> of ${unit(L.total)} used${ren?`, resets <b>${fd(ren)}</b>`:""}. It's in the monthly price: no bill, it just stops if it runs out.</div>`;
 }
 function fitHtml(k, p, c){
-  const tiers = ((c&&c.tiers)||{})[k]; if(!tiers) return "";
+  const tiers = ((c&&c.tiers)||{})[k]; const pm = planMonth(k,p,c);
+  if(!tiers) return pm;
   const u = poolUse(k,p,c);
-  if(!u) return `<div class="fit"><div class="why">The plan-fit bars appear after two readings.</div></div>`;
   const unit = k==="cursor" ? (v=>"$"+Math.round(v)) : (v=>Math.round(v).toLocaleString("en-GB"));
-  return `<div class="fit"><div class="why">Used <b>${unit(u.used)}</b> in ${u.days<1.5?"1 day":Math.round(u.days)+" days"} · on pace for about <b>${unit(u.projected)}</b> a month</div>`
+  if(!u || u.projected==null) return `<div class="fit">${pm}<div class="why">${u?`Used <b>${unit(u.used)}</b> since our first reading. `:""}Whether a cheaper plan would fit shows after 3 days of readings.</div></div>`;
+  return `<div class="fit">${pm}<div class="why">Used <b>${unit(u.used)}</b> in ${Math.round(u.days)} days of readings · on pace for about <b>${unit(u.projected)}</b> a month</div>`
     + tiers.map(t=>{ const pct = Math.round(100*u.projected/t.allow), cls = pct>100?"bad":pct>85?"risk":"";
       const tag = t.current&&t.target?"you have it; target":t.current?"you have it":t.target?"target":"";
-      return `<div class="r ${cls}"><span>${esc(t.name)} · £${t.gbp}${tag?` · <i>${tag}</i>`:""}</span><span><b>${pct}%</b> ${pct>100?"over":pct>85?"tight":"fits"}</span><div class="bar"><i style="width:${Math.min(100,pct)}%"></i></div></div>`; }).join("") + `</div>`;
+      return `<div class="r ${cls}"><span>${esc(t.name)} · £${t.gbp}${tag?` · <i>${tag}</i>`:""}</span><span><b>${pct}%</b> ${pct>100?"too small":pct>85?"tight":"fits"}</span><div class="bar"><i style="width:${Math.min(100,pct)}%"></i></div></div>`; }).join("") + `</div>`;
 }
 function renderVerdict(c){
   const v=$("verdict"); if(!v) return;
@@ -855,15 +934,15 @@ function renderVerdict(c){
   for(const [k,name] of [["flow","Flow"],["elevenlabs","ElevenLabs"],["cursor","Cursor"]]){
     const p=pools[k]; const u=p&&poolUse(k,p,c); const tiers=((c&&c.tiers)||{})[k]||[];
     const tgt=tiers.find(t=>t.target) || tiers.find(t=>t.current);
-    if(u && tgt) bits.push(`${name} would use <b>${Math.round(100*u.projected/tgt.allow)}%</b> of ${esc(tgt.name)}`);
+    if(u && u.projected!=null && tgt) bits.push(`${name} would use <b>${Math.round(100*u.projected/tgt.allow)}%</b> of ${esc(tgt.name)}`);
   }
-  v.innerHTML = bits.length ? `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}On this month's pace: ${bits.join(" · ")}.` : `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}Whether each plan fits shows once two readings are in.`;
+  v.innerHTML = bits.length ? `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}On this month's pace: ${bits.join(" · ")}.` : `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}Whether each plan fits shows after 3 days of readings.`;
 }
 
 function render(){
   const films = view();
   if(filter && !films.some(f=>f.key===filter)) filter = null;
-  renderSource(); renderGlance(films); renderTracker(films); renderJobs(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  renderSource(); renderTracker(films); renderJobs(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
 
