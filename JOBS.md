@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 025, 026.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent: J0054, J0072.** Ahead of everything, the focus film included.
+**Urgent: J0054.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -19,10 +19,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0068 | mini | open | – | – | 025 edit · 025 Mars robot: Ben's notes, swap the 2:54 image + 025's own music bed (v03d + phone copy) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
 | J0071 | any | open | – | – | for codex · Codex: your own ideas for the videos and packaging (one post, max 5) |  |
-| J0072 | mini | claimed | cursor | 2026-10-08T23:01Z | Relay: copy the new chief_relay.py to ~/_desk/bin and check Codex is signed in (for J0071) |  |
 
 Recently finished:
 
+- J0072 done: Relay: copy the new chief_relay.py to ~/_desk/bin and check Codex is signed in (for J0071) (done)
 - J0070 done: Tracker: retention curve per long (where viewers leave) (retention curve per long in the tracker (14d42e0); fills on the Mini's next daily snapshot)
 - J0067 done: 025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy (done)
 - J0064 done: 026 Nearest Star: fresh transcript and timing on the Shorts' locked voice files (Scribe + align) before picture (Scribe v2 re-run on the 3 LOCK takes; words.json now times the locked untrimmed files (sha-checked). Mon16 24.48s, Wed18 21.60s, Fri20 20.64s; all 22-27s with 2s hold; mismatches number/spelling only. Summary: 10_Shorts/SCRIBE_LOCK_v02.json)
@@ -32,4 +32,3 @@ Recently finished:
 - J0057 done: 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) (Final OK given 8 Oct: covers PASS, Shorts gate PASS, vidIQ row waived by Claude; upload queued as its own Mini job)
 - J0056 done: 022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload) (Covers+previews+plates for mon19/wed21/fri23 committed; Shorts gate PASS x3; gate:episode FAIL only on prebuild_vidiq sign-off (Claude's call). Nothing uploaded.)
 - J0055 done: 025: full rough v02 (every frame fills 16:9, drop text/annotated plates, push on static holds, rows 28/30, sheets) (done)
-- J0052 done: AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) (Readings live (EL, Vertex, Flow 52 baseline); daily 08:30 launchd; Flow refill auto-recorded as --total (496c59e); spend lines in VO/Omni/Flow UI. Cursor read waits on Ben signing in to cursor.com in CDP Chrome :9222.)
