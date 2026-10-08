@@ -1845,10 +1845,10 @@
       "stage": "edit",
       "after": "J0042",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T10:20Z",
-      "eta": "2026-10-08T12:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T09:48Z",
       "result": "",
@@ -1862,6 +1862,11 @@
           "at": "2026-10-08T10:20Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T10:24Z",
+          "by": "cursor",
+          "what": "released: Assembler 1301836 (plan PASS: 115 cuts, holds <=6 s, stills <=2 uses at new framing, upscale <=2.35, every cut in a VO pause, Omni trimmed to Claude's spans). Render running: tmux j0044-render, log ~/_desk/logs/j0044-render.log, done file ~/_desk/logs/j0044-render.done. Next run: if .done is 0, check full_rough_v01_pack (cuts_v01.json, reuse_v01.json, clip_check_py.txt, align_vs_vo.json, frames/row_###.jpg, per_row_sheet_v01.jpg), run align_shot_list.py, force-add the pack, commit from a clean worktree, post for Claude review, mark done. Do not start a second render."
         }
       ]
     }
