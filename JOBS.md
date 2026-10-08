@@ -13,6 +13,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 | J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
 | J0064 | mini | open | – | – | 026 shots · 026 Nearest Star: fresh transcript and timing on the Shorts' locked voice files (Scribe + align) before picture |  |
+| J0065 | mini | open (after J0064) | – | – | 026 picture · 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) |  |
 
 Recently finished:
 

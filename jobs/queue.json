@@ -1,5 +1,5 @@
 {
-  "next_id": 65,
+  "next_id": 66,
   "jobs": [
     {
       "id": "J0001",
@@ -2655,6 +2655,32 @@
       "stage": "shots",
       "after": "",
       "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T19:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T19:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0065",
+      "title": "026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build 026's picture from its shot list using the 025 standards: scripts/still_motion.py for every push/pan (no zoompan), scripts/polish_gate.py + the fill gate on every row frame, frames fill 16:9, no text/annotations, reuse <=2, upscale <=2.35, cuts in VO pauses, holds <=6 s except bookends, frame 0 moving. Pack with sheets force-added for Claude.",
+      "ref": "",
+      "film": "026",
+      "stage": "picture",
+      "after": "J0064",
+      "eta_min": 240,
       "status": "open",
       "by": "",
       "since": "",
