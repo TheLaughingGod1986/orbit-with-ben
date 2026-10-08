@@ -1,5 +1,5 @@
 {
-  "next_id": 67,
+  "next_id": 68,
   "jobs": [
     {
       "id": "J0001",
@@ -2758,6 +2758,32 @@
       "history": [
         {
           "at": "2026-10-08T19:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0067",
+      "title": "025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben can't open 025 v03c on his iPhone. Files says \"The operation couldn't be completed (NSFileProviderErrorDomain error -5009)\" in iCloud Drive › OWB UAT. Every cut in that folder shows the cloud-download icon on the phone.\n\n1. Check, and report in one short post (no account names, emails or tokens):\n   - Free disk on the Mini (`df -h ~`).\n   - Is `OWB UAT/025_MarsRobot_full_rough_v03c.mp4` fully uploaded? Use NSURLUbiquitousItemIsUploadedKey, or the upload state from `brctl status` (trim it to that file).\n   - Is iCloud storage full? Read \"iCloud storage\" in System Settings › Apple Account and give used/total only.\n2. Make a phone copy that downloads fast. Encode the passed v03c (same picture and audio, nothing re-cut) to 1080p H.264 High, AAC 160k, CRF ~23, +faststart, target under 120 MB. Write it to `OWB UAT/025_MarsRobot_v03c_PHONE.mp4`. Don't touch the original.\n3. Wait until the phone copy shows as uploaded (same check as 1), then post. If it hasn't uploaded after 20 min, say so and give the state. Don't loop.\n4. Don't delete or move anything in OWB UAT. If iCloud is full, say so and stop: clearing space is J0054's job (NAS, checksummed), and I'll decide.\n",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T20:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T20:47Z",
           "by": "claude",
           "what": "added"
         }
