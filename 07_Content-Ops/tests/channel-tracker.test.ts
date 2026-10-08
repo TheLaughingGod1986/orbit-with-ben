@@ -5,7 +5,10 @@ import path from "path";
 import {
   addDays,
   buildReport,
+  curveAt,
+  longRetention,
   periods,
+  toRetention,
   sourceShare,
   toSourceViews,
   topSource,
@@ -197,6 +200,48 @@ describe("traffic sources", () => {
     expect(r.videos.find((v) => v.id === "l")).toMatchObject({ feedShareDay1: null, topSource28: "Suggested" });
     expect(r.sourceMix).toEqual({ short: { "Shorts feed": 30, "YouTube search": 10 }, long: { Suggested: 3, "YouTube search": 1 } });
     expect(renderMarkdown(r)).toContain("**Longs:** Suggested 75% · YouTube search 25% (4 views)");
+  });
+});
+
+describe("where viewers leave (longs)", () => {
+  const table = {
+    columnHeaders: [{ name: "elapsedVideoTimeRatio" }, { name: "audienceWatchRatio" }, { name: "relativeRetentionPerformance" }],
+    rows: [
+      [0.5, 0.2, 0.3],
+      [0.01, 1.1, 0.5],
+      [0.05, 0.5, 0.2],
+      [0.1, 0.4, 0.25],
+      [1.0, 0.1, 0.3],
+    ],
+  };
+  it("reads the curve in order and interpolates between points", () => {
+    const c = toRetention(table);
+    expect(c.map((p) => p.at)).toEqual([0.01, 0.05, 0.1, 0.5, 1.0]);
+    expect(curveAt(c, 0.075)).toBeCloseTo(0.45);
+    expect(curveAt(c, 0.0)).toBeNull(); // before the first bucket
+    expect(curveAt([], 0.5)).toBeNull();
+  });
+  it("gives % still watching at fixed moments of a 600 s long, and the first 30 s against similar videos", () => {
+    const r = longRetention(toRetention(table), 600)!;
+    const at = Object.fromEntries(r.points.map((p) => [p.label, p.pct]));
+    expect(at["0:30"]).toBe(50); // 30 s = 0.05
+    expect(at["1:00"]).toBe(40); // 60 s = 0.1
+    expect(at["Halfway"]).toBe(20);
+    expect(at["End"]).toBe(10);
+    expect(r.relative30s).toBe("lower");
+    expect(longRetention(toRetention(table), 90)!.points.find((p) => p.label === "2:00")!.pct).toBeNull(); // past the end
+    expect(longRetention(undefined, 600)).toBeNull();
+  });
+  it("puts a table in the report, saying when YouTube has too few views", () => {
+    const longA = { ...video("L1", 40, "2026-09-01T17:00:00Z", "long"), seconds: 600 };
+    const longB = { ...video("L2", 3, "2026-09-02T17:00:00Z", "long"), seconds: 600 };
+    const a = { through: "2026-10-06", last7: {}, last28: {}, lifetime: {}, retention: { L1: toRetention(table) } };
+    const r = buildReport("owb", [snap("2026-10-08", 43, 1, [longA, longB], a)], null);
+    expect(r.videos.find((v) => v.id === "L1")!.retention!.points[1].pct).toBe(50);
+    const md = renderMarkdown(r);
+    expect(md).toContain("## Where viewers leave (longs, lifetime)");
+    expect(md).toContain("| [Video L1](https://youtu.be/L1) | 40 | ");
+    expect(md).toMatch(/\| \[Video L2\]\(https:\/\/youtu\.be\/L2\) \| 3 \| – \| – \| – \| – \| – \| – \| too few views \|/);
   });
 });
 

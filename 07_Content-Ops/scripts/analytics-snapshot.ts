@@ -25,6 +25,8 @@ import {
   toVideoStat,
   toVideoWindows,
   toSourceViews,
+  toRetention,
+  type RetentionPoint,
   type VideoSources,
   type ChannelDaily,
   type ChannelKey,
@@ -144,11 +146,28 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
         }
       }
       snap.analytics.sources = sources;
-      const sourceNote = sourceFails ? ` (traffic sources missing for ${sourceFails} video(s))` : "";
+      // Retention curve per public long, lifetime: where viewers leave. YouTube returns no rows for a video with
+      // too few views; that video is simply missing.
+      const retention: Record<string, RetentionPoint[]> = {};
+      for (const v of videos.filter((x) => x.privacy === "public" && x.format === "long" && x.publishedAt && x.publishedAt.slice(0, 10) <= through)) {
+        try {
+          const curve = toRetention(
+            await get(
+              token,
+              q({ startDate: v.publishedAt!.slice(0, 10), dimensions: "elapsedVideoTimeRatio", filters: `video==${v.id}`, metrics: "audienceWatchRatio,relativeRetentionPerformance" }),
+            ),
+          );
+          if (curve.length) retention[v.id] = curve;
+        } catch {
+          sourceFails++;
+        }
+      }
+      snap.analytics.retention = retention;
+      const sourceNote = sourceFails ? ` (traffic sources or retention missing for ${sourceFails} video(s))` : "";
       const file: ChannelDaily = { channel: key, through, rows: toDailyRows(daily) };
       fs.mkdirSync(dir, { recursive: true });
       fs.writeFileSync(path.join(dir, "channel_daily.json"), JSON.stringify(file, null, 0).replace(/},{/g, "},\n{") + "\n");
-      analyticsLine = `YouTube Analytics through ${through}: ${file.rows.length} days, traffic sources for ${Object.keys(sources).length} videos${sourceNote}`;
+      analyticsLine = `YouTube Analytics through ${through}: ${file.rows.length} days, traffic sources for ${Object.keys(sources).length} videos, retention for ${Object.keys(retention).length} longs${sourceNote}`;
     } catch (e) {
       const status = (e as Error & { status?: number }).status;
       const why = status === 403 ? "the sign-in lacks yt-analytics.readonly, or the YouTube Analytics API isn't enabled on the Google Cloud project" : (e as Error).message;

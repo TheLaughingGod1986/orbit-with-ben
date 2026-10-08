@@ -56,11 +56,71 @@ export type Snapshot = {
     lifetime: Record<string, VideoWindow>;
     /** Views by traffic source, per video: the last 28 days, and a Short's first two days (lesson R1). */
     sources?: Record<string, VideoSources>;
+    /** Audience retention per public long over its lifetime (where viewers leave; Ben, 8 Oct 2026). */
+    retention?: Record<string, RetentionPoint[]>;
   };
   note?: string;
 };
 
 export type VideoSources = { last28: Record<string, number>; day1: Record<string, number> | null };
+
+/** One point of a retention curve: how far into the video (0-1), the share of viewers still watching (can start
+ * above 1 with rewatches), and how that compares with videos of similar length (0-1, 0.5 = typical). */
+export type RetentionPoint = { at: number; watching: number; relative: number | null };
+
+/** Where viewers are at fixed moments of a long, as % still watching, and the first 30 s against similar videos. */
+export type LongRetention = {
+  points: { label: string; seconds: number; pct: number | null }[];
+  relative30s: "lower" | "typical" | "higher" | null;
+};
+
+export function toRetention(t: AnalyticsTable): RetentionPoint[] {
+  return tableRows(t)
+    .map((r) => ({
+      at: Number(r.elapsedVideoTimeRatio),
+      watching: Number(r.audienceWatchRatio ?? 0),
+      relative: r.relativeRetentionPerformance == null ? null : Number(r.relativeRetentionPerformance),
+    }))
+    .sort((a, b) => a.at - b.at);
+}
+
+/** Linear interpolation of a curve at a ratio (0-1); null outside the curve or for an empty one. */
+export function curveAt(points: RetentionPoint[], at: number, key: "watching" | "relative" = "watching"): number | null {
+  const pts = points.filter((p) => p[key] != null);
+  if (!pts.length || at < pts[0].at - 1e-9 || at > pts[pts.length - 1].at + 1e-9) return null;
+  for (let i = 0; i < pts.length; i++) {
+    const b = pts[i];
+    if (b.at >= at - 1e-9) {
+      const a = pts[Math.max(i - 1, 0)];
+      if (b.at === a.at) return b[key] as number;
+      const f = (at - a.at) / (b.at - a.at);
+      return (a[key] as number) + f * ((b[key] as number) - (a[key] as number));
+    }
+  }
+  return null;
+}
+
+export const RETENTION_MARKS: { label: string; seconds: number | "half" | "end" }[] = [
+  { label: "0:15", seconds: 15 },
+  { label: "0:30", seconds: 30 },
+  { label: "1:00", seconds: 60 },
+  { label: "2:00", seconds: 120 },
+  { label: "Halfway", seconds: "half" },
+  { label: "End", seconds: "end" },
+];
+
+export function longRetention(points: RetentionPoint[] | undefined, seconds: number): LongRetention | null {
+  if (!points?.length || !seconds) return null;
+  const marks = RETENTION_MARKS.map((m) => {
+    const sec = m.seconds === "half" ? seconds / 2 : m.seconds === "end" ? seconds : m.seconds;
+    // The curve's last point is just short of the end (YouTube buckets 0.01-1.0), so "End" reads the last bucket.
+    const ratio = m.seconds === "end" ? points[points.length - 1].at : sec / seconds;
+    const w = sec > seconds ? null : curveAt(points, ratio);
+    return { label: m.label, seconds: Math.round(sec), pct: w == null ? null : Math.round(w * 100) };
+  });
+  const rel = curveAt(points, Math.min(30 / seconds, 1), "relative");
+  return { points: marks, relative30s: rel == null ? null : rel < 0.4 ? "lower" : rel > 0.6 ? "higher" : "typical" };
+}
 
 /** YouTube's traffic source codes in plain words. */
 export const SOURCE_NAMES: Record<string, string> = {
@@ -233,6 +293,8 @@ export type VideoRow = {
   /** Where the last 28 days of views came from (source code to views), and the biggest one in words. */
   sources28: Record<string, number> | null;
   topSource28: string | null;
+  /** Longs only: % still watching at fixed moments, lifetime (null until collected, or when YouTube has too few views). */
+  retention: LongRetention | null;
 };
 
 export type ChannelReport = {
@@ -423,6 +485,7 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
         feedShareDay1: v.format === "short" ? sourceShare(a?.sources?.[v.id]?.day1, "SHORTS") : null,
         sources28: a?.sources?.[v.id]?.last28 ?? null,
         topSource28: topSource(a?.sources?.[v.id]?.last28),
+        retention: v.format === "long" ? longRetention(a?.retention?.[v.id], v.seconds) : null,
       };
     })
     .sort((x, y) => (y.publishedAt ?? "").localeCompare(x.publishedAt ?? ""));
@@ -515,6 +578,19 @@ export function renderMarkdown(r: ChannelReport): string {
       return total ? Object.entries(m).sort((x, y) => y[1] - x[1]).slice(0, 4).map(([k, n]) => `${k} ${Math.round((n / total) * 100)}%`).join(" · ") + ` (${n0(total)} views)` : "no views";
     };
     L.push("## Where views come from (last 28 days)", "", `- **Shorts:** ${fmtMix(r.sourceMix.short)}`, `- **Longs:** ${fmtMix(r.sourceMix.long)}`, "");
+  }
+  if (r.videos.some((v) => v.format === "long") && r.videos.some((v) => v.retention)) {
+    L.push("## Where viewers leave (longs, lifetime)", "");
+    L.push("% of viewers still watching at each point (rewatches can push the start above 100%). The last column compares the first 30 s with videos of similar length on YouTube.", "");
+    L.push(`| Long | Views | ${RETENTION_MARKS.map((m) => m.label).join(" | ")} | First 30 s vs similar videos |`);
+    L.push(`|---|---:|${RETENTION_MARKS.map(() => "---:").join("|")}|---|`);
+    for (const v of r.videos.filter((x) => x.format === "long")) {
+      const ret = v.retention;
+      const cells = ret ? ret.points.map((p) => (p.pct == null ? "–" : `${p.pct}%`)) : RETENTION_MARKS.map(() => "–");
+      const rel = ret ? (ret.relative30s ?? "–") : "too few views";
+      L.push(`| [${cell(v.title)}](https://youtu.be/${v.id}) | ${n0(v.views)} | ${cells.join(" | ")} | ${rel} |`);
+    }
+    L.push("");
   }
   L.push("## Every video (newest first)", "");
   L.push(`| Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) | Feed share, day 1 | Top source (28 d) |`);
