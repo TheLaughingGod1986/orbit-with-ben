@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0051 | mini | claimed | cursor | 2026-10-08T16:28Z | 025 edit · 025: pool licence check + full rough v01 (024 v03 rules) for Claude review |  |
+| J0051 | mini | open (after J0050) | – | – | 025 edit · 025: pool licence check + full rough v01 (024 v03 rules) for Claude review |  |
 | J0052 | mini | open | – | – | AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) |  |
 
 Recently finished:

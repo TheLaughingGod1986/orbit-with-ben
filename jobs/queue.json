@@ -2113,10 +2113,10 @@
       "stage": "edit",
       "after": "J0050",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T14:28Z",
-      "eta": "2026-10-08T16:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T12:53Z",
       "result": "",
@@ -2130,6 +2130,11 @@
           "at": "2026-10-08T14:28Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T14:30Z",
+          "by": "cursor",
+          "what": "released: Step 1 done 9f7f820: _evidence/mars_robot_pool_check_v01.json (133 checked vs NASA images API; all local files match published px; dropped PIA26147 non-NASA photographer, PIA10664 artist concept mislabelled as HiRISE, PIA06263 geology not dust; PIA15689 false colour on hold). Next: build _assemble_mars_robot_full_v01.py on 024 v03 with Claude's J0050 spans (cold 4.0-9.0s, wheel 0.5-8.5s, night 0.3-1.7s; strip audio; upscale<=2.35x). Rough not started; no render running."
         }
       ]
     },
