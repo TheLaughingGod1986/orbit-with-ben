@@ -406,6 +406,12 @@ def queue_has_work(agent: str) -> bool:
     return r.returncode != 10
 
 
+def addressed_to(agent: str) -> list:
+    """Open jobs only this agent may claim (`jobs.py add --for <agent>`), e.g. Claude asking Codex for its own view."""
+    q = read_json(OWB / "jobs" / "queue.json") or {}
+    return [j["id"] for j in q.get("jobs", []) if j.get("for") == agent and j.get("status") == "open"]
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
@@ -418,6 +424,15 @@ def run_locked(at: dt.datetime) -> int:
             log("nobody up: nothing to run")
             push_heartbeat(at, "no-chief", note="nobody in the chain is up")
             return 0
+        # A job addressed to one agent wakes that agent if it's up, ahead of the acting Chief: otherwise only the first
+        # agent in the chain ever runs, and a second opinion from Codex would never happen.
+        addressed = False
+        for a, up, _ in rows:
+            if up and a in ("cursor", "codex") and a != who and addressed_to(a):
+                addressed = True
+                log(f"{a} has a job addressed to it ({', '.join(addressed_to(a))}): waking it first")
+                who = a
+                break
         if who == "chief":
             log("Grok Bot is Chief: nothing to do")
             return 0
@@ -432,7 +447,8 @@ def run_locked(at: dt.datetime) -> int:
             push_heartbeat(at, "idle", who, "nothing queued")
             return 0
         above = [f"{NAMES.get(a, a)} is {why}" for a, up, why in rows[:[r[0] for r in rows].index(who)]]
-        prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why="; ".join(above) or "it is first in line",
+        why = "Claude addressed a job to you by name" if addressed else ("; ".join(above) or "it is first in line")
+        prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS)
         log(f"run: {who} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for one job (cap {cap // 60} min)")

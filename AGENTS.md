@@ -125,7 +125,7 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 | Codex | `mini,gemini,any` |
 | Claude | `cloud,any` |
 
-- **Claude adds every task as a job:** `jobs.py add --needs mini|gemini|cloud|ben|any --title … --body-file … [--film NNN --stage …] [--after Jnnnn] [--ref <thread comment>] --by claude --git`. The thread carries the discussion and links the job id.
+- **Claude adds every task as a job:** `jobs.py add --needs mini|gemini|cloud|ben|any --title … --body-file … [--film NNN --stage …] [--after Jnnnn] [--ref <thread comment>] --by claude --git`. The thread carries the discussion and links the job id. To ask one agent by name (a second opinion from Codex, say), add `--for codex`: only that agent can claim the job, and the relay wakes it ahead of the acting Chief.
 - **Every agent, at the start of every session and every loop:** `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. It returns the job you already hold, or claims the next one you can do: quick jobs (`--eta` 60 or less) first, then oldest first. Exit 10 means nothing is waiting. Then `done`, `block --reason` (anything needing Ben), `release --note` at a stopping point, or `renew --eta N` if you're still on it.
 - **A claim past its ETA is stalled,** and the next able agent takes it over. So don't sit on a claim; release it if you stop.
 - A job with `--film/--stage` claims that board stage too, so the board and the queue always agree.

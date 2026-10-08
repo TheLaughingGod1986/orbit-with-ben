@@ -52,6 +52,12 @@ class Next(unittest.TestCase):
         jobs.do_done(d["jobs"][1], "cursor", "ok", T0)
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "022 covers")  # a film's job before admin
 
+    def test_a_job_for_one_agent_is_only_that_agents(self):
+        d = queue(("any", "ideas from Codex", {}), ("mini", "cut", {}))
+        jobs.find(d, "J0001")["for"] = "codex"
+        self.assertEqual(jobs.do_next(d, "cursor", {"mini", "any"}, T0)["id"], "J0002")
+        self.assertEqual(jobs.do_next(d, "codex", {"mini", "any"}, T0)["id"], "J0001")
+
     def test_an_urgent_job_goes_ahead_of_the_focus_film(self):
         d = queue(("mini", "025 rough v02", {"film": "025", "stage": "edit", "eta_min": 240}), ("mini", "disk move", {"eta_min": 240}))
         d["focus"] = ["025"]

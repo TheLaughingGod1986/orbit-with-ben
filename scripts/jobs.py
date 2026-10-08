@@ -79,7 +79,7 @@ def log(job: dict, at: dt.datetime, agent: str, what: str) -> None:
 
 # ----------------------------------------------------------------------------- pure operations
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
-           stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA) -> dict:
+           stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "") -> dict:
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if bool(film) != bool(stage):
@@ -92,15 +92,19 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
            "film": film, "stage": stage, "after": after.upper() if after else "", "eta_min": eta_min,
            "status": "open", "by": "", "since": "", "eta": "", "created_by": by, "created_at": studio.iso(at),
            "result": "", "history": []}
-    log(job, at, by, "added")
+    if for_agent:
+        job["for"] = for_agent
+    log(job, at, by, "added" + (f" for {for_agent}" if for_agent else ""))
     data["next_id"] += 1
     data["jobs"].append(job)
     return job
 
 
-def claimable(data: dict, job: dict, can: set[str], at: dt.datetime) -> bool:
+def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
     if job["needs"] not in can:
         return False
+    if job.get("for") and job["for"] != agent:
+        return False  # addressed to one agent (e.g. Claude asking Codex for its own view)
     if job["status"] == "open" or stalled(job, at):
         dep = find(data, job["after"]) if job.get("after") else None
         return dep is None or dep["status"] == "done"
@@ -116,7 +120,7 @@ def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
            queue for quiet_h hours: the Mini, the relay or every Chief in the chain is down.
     ben    jobs only Ben can do (needs ben, open) and jobs blocked on him, with when each started waiting."""
     def mini_able(j):
-        return claimable(data, j, MINI_NEEDS, at)
+        return claimable(data, j, MINI_NEEDS, at, j.get("for") or "")
     waiting = [j["id"] for j in data["jobs"] if j["needs"] in MINI_NEEDS and mini_able(j)]
     live = [j["id"] for j in data["jobs"] if j["status"] == "claimed" and not stalled(j, at) and j["needs"] in MINI_NEEDS]
     stamps = [studio.parse(h["at"]) for j in data["jobs"] for h in j.get("history", []) if h.get("by") not in ("claude", "")]
@@ -137,6 +141,7 @@ def order(job: dict, focus=()) -> tuple:
     films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
     every stopping point (a first cut) would come back first every time and starve the quick ones."""
     return (0 if job.get("urgent") else 1,
+            0 if job.get("for") else 1,  # a job addressed to this agent (only it can see it) before the general queue
             0 if job.get("film") and job["film"] in focus else 1,
             0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
             0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
@@ -149,7 +154,7 @@ def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int
         if job.get("by") == agent and job["status"] == "claimed":
             return job  # finish what you hold before taking more
     for job in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())):
-        if claimable(data, job, can, at):
+        if claimable(data, job, can, at, agent):
             took = stalled(job, at)
             prev = job.get("by", "")
             job.update(status="claimed", by=agent, since=studio.iso(at),
@@ -243,6 +248,7 @@ def render(data: dict, at: dt.datetime) -> str:
     for j in sorted(live, key=lambda j: j["id"]):
         st = "**stalled**" if stalled(j, at) else j["status"] + (f" (after {j['after']})" if j.get("after") and j["status"] == "open" else "")
         film = f"{j['film']} {j['stage']} · " if j.get("film") else ""
+        film += f"for {j['for']} · " if j.get("for") else ""
         L.append(f"| {j['id']} | {j['needs']} | {st} | {j.get('by') or '–'} | {j.get('eta') or '–'} | {film}{j['title']} | {j.get('ref') or ''} |")
     if not live:
         L.append("| – | | nothing waiting | | | | |")
@@ -323,6 +329,7 @@ def main(argv=None) -> int:
     a.add_argument("--repo", default="owb", choices=["owb", "hos"])
     a.add_argument("--eta", type=int, default=DEFAULT_ETA, help="minutes a claim lasts before it counts as stalled")
     a.add_argument("--by", required=True)
+    a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")
     n = sub.add_parser("next")
     n.add_argument("--agent", required=True)
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
@@ -377,7 +384,8 @@ def main(argv=None) -> int:
             if args.cmd == "add":
                 body = args.body_file.read_text() if args.body_file else args.body
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
-                             film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta)
+                             film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
+                             for_agent=args.for_agent)
                 return job, None, touched
             if args.cmd == "focus":
                 data["focus"] = [f.strip() for f in args.films if f.strip()]
@@ -395,7 +403,7 @@ def main(argv=None) -> int:
             if args.cmd == "next":
                 can = {c.strip() for c in args.can.split(",") if c.strip()}
                 if args.peek:
-                    job = next((j for j in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())) if claimable(data, j, can, at)), None)
+                    job = next((j for j in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())) if claimable(data, j, can, at, args.agent)), None)
                     return job, None, touched
                 job = do_next(data, args.agent, can, at, args.eta)
                 if job and job.get("film") and job["history"][-1]["what"].startswith("claimed"):

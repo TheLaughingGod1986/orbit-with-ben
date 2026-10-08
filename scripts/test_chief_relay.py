@@ -171,6 +171,26 @@ class Relay(unittest.TestCase):
         finally:
             cr.queue_has_work = old
 
+    def test_a_job_addressed_to_codex_wakes_codex_while_cursor_is_chief(self):
+        old_owb, old_q = cr.OWB, cr.queue_has_work
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True)
+        q = cr.OWB / "jobs" / "queue.json"
+        q.write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "open", "needs": "any"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertFalse(self.ran("cursor"))
+            self.assertEqual(self.chief(), "cursor")  # Cursor is still the acting Chief
+            (self.tmp / "codex.ran").unlink()
+            q.write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "done", "needs": "any"}]}')
+            cr.cmd_run(T0 + 11 * MIN)
+            self.assertTrue(self.ran("cursor"))
+            self.assertFalse(self.ran("codex"))
+        finally:
+            cr.OWB, cr.queue_has_work = old_owb, old_q
+
     def test_pause_file_stops_runs(self):
         (cr.STATE / "chief-relay.pause").write_text("")
         cr.cmd_run(T0)
