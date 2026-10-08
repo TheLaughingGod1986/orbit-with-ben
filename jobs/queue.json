@@ -2113,10 +2113,10 @@
       "stage": "edit",
       "after": "J0050",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T14:41Z",
-      "eta": "2026-10-08T16:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T12:53Z",
       "result": "",
@@ -2140,6 +2140,11 @@
           "at": "2026-10-08T14:41Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T14:43Z",
+          "by": "cursor",
+          "what": "released: Rough v01 render running detached: tmux j0051-render, log ~/_desk/logs/j0051-render.log, done-file ~/_desk/logs/j0051-render.done. Assembler 07bdb9a (_assemble_mars_robot_full_v01.py, 108 cuts, --plan clean). Out: OWB UAT/025_MarsRobot_full_rough_v01.mp4 + 07_Edit-Project/full_rough_v01_pack. Next run: if .done=0, check pack (frame0/end/omni sheets, clip_check), commit pack JSON/sheets from a clean worktree, post for Claude review (thread 6062389558). Do not start a second render."
         }
       ]
     },
