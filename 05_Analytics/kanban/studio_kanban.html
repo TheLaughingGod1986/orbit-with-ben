@@ -704,7 +704,7 @@ function renderTracker(films){
       if(ck.verdict==="ok") b = Object.assign({}, b, {mood:"watched", you:"", youShort:"", youWhen:"",
         steps:(b.steps||[]).map(x=>x.who==="Ben" ? Object.assign({}, x, {done:true, doneText:`you watched it · ${when}`}) : x)});
       else if(!ck.handled) b = Object.assign({}, b, {mood:"fixing", you:"", youShort:"", youWhen:"", _fixes:fx,
-        steps:[{who:"Claude", what:`queue your ${fx.length} fix${fx.length===1?"":"es"}`, whenText:"at the next hourly check (:50 past the hour)"}]
+        steps:[{who:"Claude", what:`queue your ${fx.length} fix${fx.length===1?"":"es"}`, whenText:`by ${nextRun()}`}]
           .concat((b.steps||[]).filter(x=>x.who!=="Ben")), line:`You asked for ${fx.length} fix${fx.length===1?"":"es"} (${when}). Claude queues them, then it comes back to you to watch again.`});
       if(ck.verdict==="ok") b.line = `You watched it (${when}) and said it looks good. Next: Claude's final OK once the upload checks pass, then the upload. Nothing more for you.`;
     }
@@ -773,8 +773,8 @@ function renderTracker(films){
     const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}${url?` <a class="open" href="${esc(url)}" target="_blank" rel="noopener">Open in iCloud ↗</a>`:""}</span>`;
     if(c && !c.handled){
       const fx = Array.isArray(c.fixes) ? c.fixes : (c.note ? [{t:"", text:c.note}] : []);
-      if(c.verdict==="ok") return `<li class="done"><span>✓</span><span>${head}<span class="said">You said it looks good (${esc(fw(c.at))}). Claude acts on it at the next hourly check. <button class="lnk" data-undo="${id}">Undo</button></span></span></li>`;
-      return `<li class="chg"><span>✎</span><span>${head}<span class="said">You asked for ${fx.length} fix${fx.length===1?"":"es"} (${esc(fw(c.at))}). Claude acts on them at the next hourly check. <button class="lnk" data-undo="${id}">Undo</button></span>
+      if(c.verdict==="ok") return `<li class="done"><span>✓</span><span>${head}<span class="said">You said it looks good (${esc(fw(c.at))}). Claude acts on it by ${nextRun()} (it checks the board at :50 past every hour). <button class="lnk" data-undo="${id}">Undo</button></span></span></li>`;
+      return `<li class="chg"><span>✎</span><span>${head}<span class="said">You asked for ${fx.length} fix${fx.length===1?"":"es"} (${esc(fw(c.at))}). Claude acts on them by ${nextRun()} (it checks the board at :50 past every hour). <button class="lnk" data-undo="${id}">Undo</button></span>
         ${fixList(fx, id, false)}${changeOpen===id ? editor(id, true) : `<span class="acts"><button class="btn" data-more="${id}">Add another fix</button></span>`}</span></li>`;
     }
     const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Looks good</button><button class="btn" data-chg="${id}">Needs a change</button></span>${changeOpen===id?editor(id, false):""}` : "";
@@ -1003,6 +1003,7 @@ function clock(ms){
 function rel(ms){ const m=Math.round((ms-Date.now())/MINUTE); if(m<=2) return "any minute"; if(m<60) return `in ${m} min`; const h=m/60; return h<24?`in about ${h<1.5?1:Math.round(h)} h`:`in ${Math.round(h/24)} d`; }
 function ago(ms){ const m=Math.round((Date.now()-ms)/MINUTE); return m<1?"just now":m<60?`${m} min ago`:m<1440?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} d ago`; }
 const LANE = {mini:"Mac mini · Cursor", gemini:"Gemini check", cloud:"Claude", ben:"You"};
+function nextRun(){ const d=new Date(); if(d.getMinutes()>=50) d.setHours(d.getHours()+1); d.setMinutes(50,0,0); return d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}); }
 function plan(){
   const jobs = fromDb.jobs || [], now = Date.now(), out = {};
   const byId = Object.fromEntries(jobs.map(j=>[j.id,j]));
