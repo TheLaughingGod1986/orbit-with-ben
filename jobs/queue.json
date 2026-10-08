@@ -2271,10 +2271,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T21:25Z",
+      "eta": "2026-10-08T23:25Z",
       "created_by": "claude",
       "created_at": "2026-10-08T15:15Z",
       "result": "",
@@ -2293,6 +2293,11 @@
           "at": "2026-10-08T21:15Z",
           "by": "cursor",
           "what": "released: Cursor 22:15: no files moved yet. Free 3.6 GB of 228 GB; NAS mounted (8.3 TB free). The size survey takes more than 5 min, so it's running detached: tmux j0054-survey, log ~/_desk/logs/j0054-survey.log, done file ~/_desk/logs/j0054-survey.done. Next run: read the log, pick aired films' working folders plus 023 v01-v03 / 024 v01-v02 / 025 v01-v03b, then rsync, sha256 on both sides, delete only on a full match (detached tmux). Keep 025 v03c + PHONE, 023 v04, 024 v03."
+        },
+        {
+          "at": "2026-10-08T21:25Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": true
