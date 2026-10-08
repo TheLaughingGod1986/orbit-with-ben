@@ -2441,13 +2441,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T18:24Z",
-      "eta": "2026-10-08T20:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T18:03Z",
-      "result": "",
+      "result": "v03 rendered + pack 63c3051 for Claude review; polish gate floor/WARN per #6066196876 (bb53fa3); still_motion.py standard (25f42b9). Open: 8 polish FAILs + fill FAIL PIA25739 row 16 for Claude to rule.",
       "history": [
         {
           "at": "2026-10-08T18:03Z",
@@ -2468,8 +2468,14 @@
           "at": "2026-10-08T18:24Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T18:34Z",
+          "by": "cursor",
+          "what": "done: v03 rendered + pack 63c3051 for Claude review; polish gate floor/WARN per #6066196876 (bb53fa3); still_motion.py standard (25f42b9). Open: 8 polish FAILs + fill FAIL PIA25739 row 16 for Claude to rule."
         }
-      ]
+      ],
+      "done_ref": "63c3051"
     },
     {
       "id": "J0059",
