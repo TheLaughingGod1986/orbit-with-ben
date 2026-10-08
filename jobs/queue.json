@@ -1,5 +1,5 @@
 {
-  "next_id": 39,
+  "next_id": 40,
   "jobs": [
     {
       "id": "J0001",
@@ -1642,6 +1642,32 @@
           "at": "2026-10-08T09:07Z",
           "by": "cursor",
           "what": "released: Untouched again: waits on Claude's 029 script lock (v02 from J0037 flags on rows 2, 18, 24); only v01 exists, thread read to #6056369854 with no lock. No credits spent."
+        }
+      ]
+    },
+    {
+      "id": "J0039",
+      "title": "029: lock script v02 (J0037 flags + quote check)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "029: Claude writes script v02 from the J0037 flags and Claude's own quote check, runs review:script, and posts the lock on #99. The VO job waits on this one.\n",
+      "ref": "",
+      "film": "029",
+      "stage": "script",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T09:12Z",
+          "by": "claude",
+          "what": "added"
         }
       ]
     }
