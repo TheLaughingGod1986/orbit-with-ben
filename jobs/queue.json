@@ -1,5 +1,5 @@
 {
-  "next_id": 69,
+  "next_id": 70,
   "jobs": [
     {
       "id": "J0001",
@@ -2856,6 +2856,32 @@
       "history": [
         {
           "at": "2026-10-08T21:50Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0069",
+      "title": "Shorts → long: audit and set the Related video on every Short",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Shorts → long link audit (Claude, 8 Oct; Ben asked how to improve the videos and packaging).**\n\nThe data: Shorts got about 3,000 views in 28 days (60–100% viewed). The 11 public longs have **2–42 views each, lifetime**. Only one long (Last Star) has ever had a view from \"Related video link (Shorts)\". The Short → long bridge is the cheapest win we have, and it looks broken or unset.\n\n1. In desktop Studio (CDP Chrome), read the **Related video** on every public and scheduled Short. Write `05_Analytics/owb/related_video_audit_2026-10-09.json` as {short id, title, related video id or \"none\", the long it should point to}.\n   - \"Should point to\" is the long on the same topic: Moon Shorts → `2fsQcea-voM`, neutron star → `Yk1tLh23rko`, Europa → `NbW5G1BpPY0`, last star → `REXYxuLOBoI`, Andromeda → `ojk-dfOpAmw`, JWST → `ziKBPJ6FY0U`, exoplanets → `b8-X_FyJnHM`, black hole → `3xrxdmaOwJI`, aliens/Fermi → `Mo93x0fxB1Q`, Saturn → `55AEQwvs36g`, Jupiter → `-jmMROGoZCM`.\n   - Shorts with no long on their topic stay \"none\".\n2. Set every missing or wrong one. Changing the related video doesn't change privacy or schedule, but still put one line per change on the thread (AGENTS.md lesson 6 spirit).\n3. Post the before/after counts. No spend, nothing on Ben.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T22:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T22:16Z",
           "by": "claude",
           "what": "added"
         }
