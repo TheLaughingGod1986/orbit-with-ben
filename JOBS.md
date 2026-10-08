@@ -10,11 +10,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0052 | mini | open | – | – | AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) |  |
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0054 | mini | open | – | – | Mini disk: move aired films' working media + superseded cuts to the NAS (checksummed), target 40 GB free |  |
-| J0056 | mini | claimed | cursor | 2026-10-08T19:31Z | 022 thumbs · 022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload) |  |
 | J0057 | cloud | open (after J0056) | – | – | 022 upload · 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) |  |
 
 Recently finished:
 
+- J0056 done: 022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload) (Covers+previews+plates for mon19/wed21/fri23 committed; Shorts gate PASS x3; gate:episode FAIL only on prebuild_vidiq sign-off (Claude's call). Nothing uploaded.)
 - J0055 done: 025: full rough v02 (every frame fills 16:9, drop text/annotated plates, push on static holds, rows 28/30, sheets) (done)
 - J0051 done: 025: pool licence check + full rough v01 (024 v03 rules) for Claude review (done)
 - J0050 done: 025: Omni Orbit beats (cold, wheel, Wed Short night) for Claude PASS (done)
@@ -24,4 +24,3 @@ Recently finished:
 - J0046 done: 024: final picture v03 (row 1 one continuous starfield span) (full_rough_v03: row 1 one continuous starfield span from 12 s (0-6.50 s); frame0_sheet + sheet_0_8s in full_rough_v03_pack (4f7de1e); 107 cuts, -14.3 LUFS, clip_check PASS)
 - J0045 done: 024: full rough v02 (Claude v01 review: 5 assembler fixes) (024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review)
 - J0044 done: 024: assemble full rough v01 (Venus v04 rules) for Claude review (024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words.)
-- J0043 done: 024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS) (c1e5ff2: both takes ok (10 s, Vertex global, free credit). Sheets in 04_Generated-Clips/01_Raw/omni_v01/sheets/ for Claude PASS. Media on the Mini only.)
