@@ -3066,13 +3066,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-08T23:52Z",
-      "eta": "2026-10-09T00:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T23:19Z",
-      "result": "",
+      "result": "Installed f165f55 relay; hashes match. Actual launchd wake at 00:51:56 has corrected cmd flags and started this session. Installed run_cli proving probe returned RELAY_PROBE_OK, exit 0. All 24 relay tests PASS with OWB_REPO isolated from live queue. Codex up; J0071 remains for next tick.",
       "history": [
         {
           "at": "2026-10-08T23:19Z",
@@ -3103,9 +3103,15 @@
           "at": "2026-10-08T23:52Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T23:53Z",
+          "by": "codex",
+          "what": "done: Installed f165f55 relay; hashes match. Actual launchd wake at 00:51:56 has corrected cmd flags and started this session. Installed run_cli proving probe returned RELAY_PROBE_OK, exit 0. All 24 relay tests PASS with OWB_REPO isolated from live queue. Codex up; J0071 remains for next tick."
         }
       ],
-      "urgent": true
+      "urgent": true,
+      "done_ref": "f165f55"
     }
   ],
   "focus": [
