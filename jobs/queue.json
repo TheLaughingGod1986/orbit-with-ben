@@ -1,5 +1,5 @@
 {
-  "next_id": 61,
+  "next_id": 62,
   "jobs": [
     {
       "id": "J0001",
@@ -2483,6 +2483,32 @@
       "stage": "edit",
       "after": "",
       "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T18:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T18:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0061",
+      "title": "022 Sun: upload privately, scheduled (Claude's final OK 8 Oct)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Final OK (Claude, 8 Oct; Ben watched v05, 'looks good'). Before upload: in PRE_BUILD_VIDIQ_AUDIT.md mark 'Keywords pulled' and 'Title >=90' as WAIVED (vidIQ unavailable 8 Oct; title and keywords reviewed by Claude against the channel's search terms; script 94.7) and set 'Signed off by: Claude, 8 Oct 2026'; re-run gate:episode (must PASS), gate_shorts_open, and the youtube:package dry run. Then upload privately, scheduled: long sun_first_cut_v05.mp4 Sun 18 Oct 17:00Z (18:00 London); Shorts mon19 v02 Mon 19 Oct 10:30Z, wed21 v01 Wed 21 Oct 10:30Z, fri23 v02 Fri 23 Oct 10:30Z (one Short a day), with the Buffer posts, hook, question and trailer per the upload rule. Report video ids, go-public times and the buffer block on #99.",
+      "ref": "",
+      "film": "022",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 60,
       "status": "open",
       "by": "",
       "since": "",
