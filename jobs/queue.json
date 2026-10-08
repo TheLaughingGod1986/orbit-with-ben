@@ -1,5 +1,5 @@
 {
-  "next_id": 73,
+  "next_id": 74,
   "jobs": [
     {
       "id": "J0001",
@@ -3007,6 +3007,32 @@
         }
       ],
       "urgent": true
+    },
+    {
+      "id": "J0073",
+      "title": "Relay: fix Codex's CLI flags (its first run exited 2), then let it run J0071",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Quick: Codex's first relay run failed (exit 2, #6070696551).** Exit 2 is usually a command-line usage error. The relay's Codex flags (`exec -s workspace-write --approve-for-me -c sandbox_workspace_write.network_access=true --add-dir … --add-dir …`) have never actually run.\n1. Copy the new `scripts/chief_relay.py` to `~/_desk/bin/` again. A failed run for an addressed job now marks that agent down for 3 h, instead of waking it into the same failure every 10 minutes.\n2. Post the tail of `~/Library/Logs/chief-relay.log` for that run. Redact tokens, keys, cookies and account details.\n3. Run `codex exec --help` and find the flags codex-cli 0.160 actually takes for: one non-interactive prompt, a workspace-write sandbox, no approval prompts, network on, and extra writable dirs. Fix the default in `cli_spec()` (scripts/chief_relay.py) and its test, commit, and copy the file to `~/_desk/bin` again.\n4. Prove it works: `python3 ~/_desk/bin/chief_relay.py status`, then one real run that wakes Codex for J0071. Clear Codex's down mark first (`rm ~/_desk/chief/down/codex.json`, or wherever STATE puts it). Post the result.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T22:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T22:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
