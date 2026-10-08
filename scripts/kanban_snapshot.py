@@ -7,7 +7,7 @@ snapshot built into the page, so Claude rebuilds that snapshot a few times a day
   - OWB: every 02_Video-Projects/*/status.json in this repo (main)
 
   python3 scripts/kanban_snapshot.py <page.html> --hos <history-of-science checkout> [--out <page.html>]
-  python3 scripts/kanban_snapshot.py --hos <checkout> --db-out <dir>    # board/hos + board/owb documents for ArtifactData
+  python3 scripts/kanban_snapshot.py --hos <checkout> --db-out <dir>    # board/hos, board/owb, board/credits for ArtifactData
 
 Since 7 Oct the page also reads `board/hos` ({updatedAt, pipeline}) and `board/owb` ({updatedAt, films}) from its own
 store, which Claude writes on a schedule with ArtifactData (file_path = the JSON files --db-out writes). That keeps
@@ -69,7 +69,14 @@ def main(argv: list[str] | None = None) -> int:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
                             "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}
         (a.db_out / "owb.json").write_text(json.dumps(doc, ensure_ascii=False))
-        print(f"store documents: {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films)")
+        # board/credits (Ben, 8 Oct): the AI spend month from scripts/ai_spend.py, plus HOS's own credit checks
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import ai_spend
+        credits = ai_spend.build_doc(ai_spend.load())
+        credits["hosChecks"] = hos.get("credits", [])
+        (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
+        print(f"store documents: {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
+              f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')})")
         if not a.page:
             return 0
     if not a.page:

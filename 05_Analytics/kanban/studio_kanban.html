@@ -1,0 +1,680 @@
+
+<title>Studio Kanban</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f2ee;--panel:#ffffff;--panel-2:#ebe8e2;--ink:#1d2126;--ink-2:#545b64;--ink-3:#868c94;
+  --line:#dcd8d0;--accent:#c47a0b;--accent-soft:#f6e7cc;
+  --doing:#2f6fb5;--doing-soft:#dce8f6;--blocked:#b8402f;--blocked-soft:#f6dcd7;
+  --done:#2e7d4f;--done-soft:#d9eee1;--todo:#6b7280;--todo-soft:#e7e7ea;
+  --late:#b8402f;--soon:#b06d00;
+  --shadow:0 1px 2px rgba(20,24,30,.06),0 2px 8px rgba(20,24,30,.05);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15181c;--panel:#1d2126;--panel-2:#252a30;--ink:#ece9e3;--ink-2:#aab0b8;--ink-3:#7c838c;
+  --line:#30363d;--accent:#f0a83a;--accent-soft:#3a2f1c;
+  --doing:#6aa5e8;--doing-soft:#1d2d40;--blocked:#ec7a68;--blocked-soft:#3e231f;
+  --done:#62c48a;--done-soft:#1b3326;--todo:#9aa1aa;--todo-soft:#2a2f35;
+  --late:#ec7a68;--soon:#f0a83a;--shadow:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#15181c;--panel:#1d2126;--panel-2:#252a30;--ink:#ece9e3;--ink-2:#aab0b8;--ink-3:#7c838c;
+  --line:#30363d;--accent:#f0a83a;--accent-soft:#3a2f1c;
+  --doing:#6aa5e8;--doing-soft:#1d2d40;--blocked:#ec7a68;--blocked-soft:#3e231f;
+  --done:#62c48a;--done-soft:#1b3326;--todo:#9aa1aa;--todo-soft:#2a2f35;
+  --late:#ec7a68;--soon:#f0a83a;--shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1360px;margin:0 auto;padding:20px 16px 48px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:18px}
+h1{font:800 clamp(26px,4vw,38px)/1 "Bricolage Grotesque",sans-serif;margin:0;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.sub{color:var(--ink-2);margin-top:6px;font-size:14px}
+.src{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);flex-wrap:wrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ink-3);flex:none}
+.dot.live{background:var(--done);box-shadow:0 0 0 3px var(--done-soft)}
+.dot.warn{background:var(--soon)}
+.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.btn:hover{border-color:var(--ink-3)}
+.banner{background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:14px;display:none}
+.banner.show{display:block}
+
+.films{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:18px}
+@media (max-width:520px){.films{grid-template-columns:1fr 1fr}.film .t{font-size:12px}.film .meta{flex-wrap:wrap}}
+.film{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;text-align:left;font:inherit;color:inherit;box-shadow:var(--shadow);transition:border-color .15s}
+.film:hover{border-color:var(--ink-3)}
+.film.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.film .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.film .id{font:800 20px/1 "Bricolage Grotesque",sans-serif}
+.film .pct{font:500 14px "IBM Plex Mono",monospace;color:var(--ink-2)}
+.film .t{font-size:13px;color:var(--ink-2);margin:4px 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}
+.bar{height:6px;background:var(--panel-2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.film .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);margin-top:8px;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--panel-2);color:var(--ink-2);white-space:nowrap}
+.chip.ok{background:var(--done-soft);color:var(--done)}
+.chip.risk{background:var(--accent-soft);color:var(--soon)}
+.chip.bad{background:var(--blocked-soft);color:var(--blocked)}
+.agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:18px}
+.agent{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.agent .nm{display:flex;align-items:center;gap:8px;font:700 16px/1 "Bricolage Grotesque",sans-serif;margin-bottom:8px}
+.av{width:24px;height:24px;border-radius:50%;display:inline-grid;place-items:center;font:600 12px "IBM Plex Sans",sans-serif;color:#fff;flex:none}
+.agent ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--ink-2)}
+.agent li{padding:3px 0;display:flex;gap:6px;align-items:baseline}
+.agent li .k{flex:none;width:68px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3)}
+.agent li .v{min-width:0;overflow-wrap:anywhere}
+.agent li .v b{color:var(--ink);font-weight:500}
+.who{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2)}
+.who .av{width:18px;height:18px;font-size:10px}
+.state{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;padding:1px 8px;border-radius:99px}
+.state.on{background:var(--done-soft);color:var(--done)}
+.state.on::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--done);animation:pulse 1.6s ease-in-out infinite}
+.state.wait{background:var(--accent-soft);color:var(--soon)}
+.state.block{background:var(--blocked-soft);color:var(--blocked)}
+.state.q{background:var(--todo-soft);color:var(--todo)}
+@keyframes pulse{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.state.on::before{animation:none}}
+.card .who-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:8px}
+.card .why{font-size:12px;color:var(--ink-2);margin-top:4px}
+h2.sec{font:600 15px/1 "Bricolage Grotesque",sans-serif;margin:0 0 10px;color:var(--ink-2)}
+.tabs{display:inline-flex;background:var(--panel-2);border-radius:10px;padding:3px;gap:2px}
+.tabs button{font:inherit;font-size:13px;border:0;background:transparent;color:var(--ink-2);padding:5px 12px;border-radius:8px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow);font-weight:600}
+.ch{display:inline-block;font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.05em;padding:3px 5px;border-radius:4px;vertical-align:2px;margin-right:4px}
+.ch.HOS{background:var(--accent-soft);color:var(--soon)}
+.ch.OWB{background:var(--doing-soft);color:var(--doing)}
+.chnote{font-size:13px;color:var(--ink-2);margin:-8px 0 12px;display:none}
+.chnote.show{display:block}
+.filterline{display:flex;align-items:center;gap:10px;margin:-6px 0 14px;font-size:13px;color:var(--ink-2);min-height:28px}
+
+.board{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:14px;align-items:start}
+@media (max-width:900px){.board{grid-template-columns:1fr}}
+.col{background:var(--panel-2);border-radius:14px;padding:10px;min-width:0}
+.col h2{font:600 15px/1 "Bricolage Grotesque",sans-serif;margin:4px 4px 10px;display:flex;align-items:center;gap:8px}
+.col h2 .n{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-3)}
+.col h2 .sw{width:10px;height:10px;border-radius:3px}
+.cards{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--todo);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow);min-width:0}
+.card.doing{border-left-color:var(--doing)}
+.card.blocked{border-left-color:var(--blocked)}
+.card.done{border-left-color:var(--done)}
+.card .hd{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.card .stage{font-weight:600}
+.card .fid{font:500 12px "IBM Plex Mono",monospace;color:var(--accent);white-space:nowrap}
+.card .note{font-size:13px;color:var(--ink-2);margin-top:4px;overflow-wrap:anywhere}
+.card .row{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--ink-2);margin-top:8px}
+.card .row b{font-weight:500;color:var(--ink)}
+.card .prog{display:flex;align-items:center;gap:8px;margin-top:8px}
+.card .prog .bar{flex:1}
+.card .prog .bar i{background:var(--doing)}
+.card.blocked .prog .bar i{background:var(--blocked)}
+.card .prog span{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-2);min-width:3.5em;text-align:right}
+.late{color:var(--late)!important;font-weight:600}
+.soon{color:var(--soon)!important;font-weight:600}
+.empty{font-size:13px;color:var(--ink-3);padding:10px 4px}
+details.donegrp{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;padding:8px 12px}
+details.donegrp summary{cursor:pointer;display:flex;justify-content:space-between;gap:8px;list-style:none;font-size:14px}
+details.donegrp summary::-webkit-details-marker{display:none}
+details.donegrp summary .fid{font:500 12px "IBM Plex Mono",monospace;color:var(--accent)}
+details.donegrp ul{margin:8px 0 2px;padding-left:18px;font-size:13px;color:var(--ink-2)}
+details.donegrp li span{color:var(--ink-3)}
+
+.lower{display:grid;grid-template-columns:3fr 2fr;gap:14px;margin-top:22px}
+@media (max-width:900px){.lower{grid-template-columns:1fr}}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);min-width:0}
+.box h3{font:600 16px/1 "Bricolage Grotesque",sans-serif;margin:2px 0 10px}
+.box ol{margin:0;padding-left:20px;font-size:14px}
+.box ol li{margin-bottom:6px}
+.credit{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.credit:first-of-type{border-top:0}
+.credit .l{font:500 13px "IBM Plex Mono",monospace;text-align:right}
+.credit .r{grid-column:1/-1;font-size:12px;color:var(--ink-3)}
+/* AI spend month (Ben, 8 Oct): board/credits from scripts/ai_spend.py */
+.spend{margin:22px 0 4px}
+.spend .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+.spend .head .why{margin:0}
+.subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:10px}
+.sub-i{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.sub-i .n{font-size:13px;color:var(--ink-2);overflow-wrap:anywhere}
+.sub-i .p{font:600 18px/1.2 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.sub-i.tot{background:var(--panel-2)}
+.sub-i.tgt{background:var(--done-soft);border-color:transparent}
+.sub-i.tgt .p{color:var(--done)}
+.pools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:10px}
+.pool{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.pool .nm{display:flex;justify-content:space-between;gap:8px;font:700 15px/1.2 "Bricolage Grotesque",sans-serif}
+.pool .big{font:600 22px/1.2 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;margin-top:6px}
+.pool .big small{font:400 13px "IBM Plex Sans",sans-serif;color:var(--ink-3)}
+.pool svg{display:block;width:100%;height:44px;margin-top:6px}
+.pool .why{margin-top:6px}
+.byfilm{overflow-x:auto}
+.byfilm table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+.byfilm th,.byfilm td{padding:5px 8px;border-top:1px solid var(--line);text-align:right;white-space:nowrap}
+.byfilm th:first-child,.byfilm td:first-child{text-align:left}
+.byfilm th{font-weight:500;color:var(--ink-3);font-size:12px;border-top:0}
+footer{margin-top:22px;font-size:12px;color:var(--ink-3)}
+footer a{color:var(--ink-2)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Studio <span>·</span> Kanban</h1>
+      <div class="sub" id="asof">Loading…</div>
+    </div>
+    <div class="src" style="flex-direction:column;align-items:flex-end">
+      <div class="tabs" role="group" aria-label="Channel" id="tabs">
+        <button data-ch="all">Both</button><button data-ch="HOS">History of Science</button><button data-ch="OWB">Orbit With Ben</button>
+      </div>
+      <div class="src"><span class="dot" id="dot"></span><span id="srctxt">Snapshot</span><button class="btn" id="refresh" hidden>Refresh</button></div>
+    </div>
+  </header>
+  <div class="banner" id="banner"></div>
+  <div class="chnote" id="owbnote"></div>
+  <section id="jobsBox" hidden>
+    <h2 class="sec">Job queue <span class="mono" style="font-weight:400;font-size:12px">any agent able to do a job takes it</span></h2>
+    <div class="why" id="chief" style="margin:0 0 8px"></div>
+    <div class="box" style="margin-bottom:18px"><div id="jobs"></div></div>
+  </section>
+  <h2 class="sec">Who's on what</h2>
+  <div class="agents" id="agents"></div>
+  <h2 class="sec">Films</h2>
+  <div class="films" id="films"></div>
+  <div class="filterline" id="filterline"></div>
+  <div class="board" id="board"></div>
+  <div class="lower">
+    <div class="box"><h3>Next steps</h3><ol id="next"></ol></div>
+    <div class="box" id="creditbox"><h3>HOS credit checks</h3><div id="credits"></div></div>
+  </div>
+  <section class="spend" id="spendBox">
+    <div class="head"><h2 class="sec" style="margin:0">AI spend this month</h2><div class="why" id="spendWhen"></div></div>
+    <div class="subs" id="subs"></div>
+    <div class="pools" id="pools"></div>
+    <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
+  </section>
+  <footer>The studio agent writes both boards into this page every two hours, 07:50 to 21:50 London, from the files below. <b>HOS</b> comes from <span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science (the file behind <a href="https://github.com/TheLaughingGod1986/history-of-science/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>). <b>OWB</b> from each film's <span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span> in orbit-with-ben (the files behind its <a href="https://github.com/TheLaughingGod1986/orbit-with-ben/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>; "chief" is shown as Grok). Both from <span class="mono">main</span>.</footer>
+</div>
+
+<script>
+const SNAPSHOT = {"updated":"2026-10-07","updated_by":"Claude (desk reviewer)","board_url":"https://claude.ai/artifact/Hhk519dkbHMzeaZfp3efhc","stages":[{"key":"topic","label":"Topic","weight":3,"owner":"Claude"},{"key":"script","label":"Script","weight":10,"owner":"Grok"},{"key":"facts","label":"Fact check","weight":5,"owner":"Grok"},{"key":"package","label":"Audit + upload package","weight":4,"owner":"Grok"},{"key":"vo","label":"Voiceover (long)","weight":10,"owner":"Grok"},{"key":"shorts_scripts","label":"Shorts scripts","weight":3,"owner":"Grok"},{"key":"shorts_vo","label":"Shorts voiceover","weight":5,"owner":"Grok"},{"key":"picture","label":"Picture","weight":35,"owner":"Grok"},{"key":"edit","label":"Edit + master","weight":10,"owner":"Grok"},{"key":"thumbnails","label":"Thumbnails","weight":5,"owner":"Grok"},{"key":"ben_ok","label":"Ben's final OK","weight":5,"owner":"Ben"},{"key":"scheduled","label":"Scheduled","weight":5,"owner":"Grok"}],"next_steps":["007 Shorts A–C voiceover (Cursor, now), then 009 and 010 long voiceover, then the 008–010 Shorts voiceover. At about 0.47 credits per char the whole queue needs about 12k of the 70k pool; floor 40k until the 30 Oct reset.","Mon 12 Oct: Flow credits refill (AI Ultra). Cursor posts the new balance and re-prices 006 Parts 03–05, then 007, on Flow rates; Claude passes before any mint.","006 picture: Parts 03–05 once priced (Flow first, then free Vertex, never past £0), then the 006 edit and thumbnails, ready for Ben by Sun 1 Nov.","007 picture: plate boards priced (96 rows, 80 mints); spend starts after 006 and once the whole voiceover batch has passed.","008 edit: narration runs 9:14.8, over the 7–9 min window; the §4 pause trim on the assembled film has to bring it in.","Thu 29 Oct 18:05: 005 post-air jobs (Related on its three Shorts, cards, end screen, pinned comment)."],"credits":[{"pool":"ElevenLabs (voice)","left":"70,237 of 209,536","rule":"voice only; floor 40k until the Fri 30 Oct reset (Ben, 7 Oct), then 50k; eleven_v3 bills about 0.47 credits per char (008: 7,497 chars cost 3,523)","checked":"7 Oct"},{"pool":"Vertex free trial (picture)","left":"£25.59 (11%)","rule":"never past £0, keep £5 buffer; trial ends 10 Nov","checked":"7 Oct"},{"pool":"Flow (picture)","left":"52 credits; refills 12 Oct","rule":"Flow first for picture; AI Ultra active (renews 12 Oct, Ben 7 Oct) — no picture spend before the refill","checked":"7 Oct"}],"films":[{"id":"005","title":"The Tied Arm That Proved Your Blood Circulates","air":"2026-10-29","ready_by":"2026-10-02","summary":"Finished and scheduled. Long `wwcjcFfC-5M` airs Thu 29 Oct 18:00; Shorts A (30 Oct), B `mTY67qet7cM` (8 Nov) and C `x_3L_IdYgEc` (15 Nov) are scheduled.","stages":{"topic":{"status":"done"},"script":{"status":"done"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"done"},"picture":{"status":"done"},"edit":{"status":"done","note":"master v02"},"thumbnails":{"status":"done","note":"A/B/C in Test & Compare"},"ben_ok":{"status":"done","note":"2 Oct"},"scheduled":{"status":"done","note":"Thu 29 Oct 18:00; post-air jobs at 18:05"}}},{"id":"006","title":"The Willow Tree That Was Made of Air","air":"2026-11-05","ready_by":"2026-11-01","summary":"Words and voice are finished. Picture is the long pole: Part 01 is all kept and Part 02's rough cut is held; Parts 03–05 wait for pricing after Tuesday's credit resets.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v02, 93.7"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done","note":"v02, all five parts PASS"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"done","note":"A v02 · B v03b · C v01 locked"},"picture":{"status":"doing","progress":0.36,"owner":"Cursor","due":"2026-10-25","note":"Part 01 12/12 kept; Part 02 rough v02 held (VO-first order); Parts 03–05 not started, re-priced after the Tue 6 Oct resets; pace set by Flow and Vertex credit","steps":[1,5],"steps_unit":"parts kept","left":"about 3 weeks","eta":"2026-10-25","underway":false,"waiting":"Cursor to post today's Flow and Vertex balances (Tue resets) from the Mini; then Claude prices Parts 03–05","since":"2026-10-06"},"edit":{"status":"todo","due":"2026-10-29"},"thumbnails":{"status":"todo","due":"2026-10-29"},"ben_ok":{"status":"todo","due":"2026-11-01"},"scheduled":{"status":"todo","due":"2026-11-02"}}},{"id":"007","title":"Why Vaccines Are Named After a Cow","air":"2026-11-12","ready_by":"2026-11-08","summary":"Script, facts and long voiceover are done. Shorts voiceover is queued; picture waits until the whole voiceover batch has passed.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 92.3"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done","note":"about 8.4 min; Part 01 v03 with the shut-up-house pickup"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","owner":"Cursor","due":"2026-10-07","left":"about 1 hour once started","waiting":"after 008 long VO"},"picture":{"status":"todo","due":"2026-11-01","note":"plate boards BOARD_V01: re-timed from the locked VO (8:32) and priced 7 Oct (96 rows: 80 mints = 25 Quality + 55 Fast, 2 of them on Flow, 16 reuses; 36 rows added because the VO runs longer than the script's estimate). First takes about £58, about £139 with usual retakes, against £20.59 usable Vertex. Waits for Claude's review, the voiceover batch and credit; nothing minted","steps_unit":"plates","owner":"Claude","since":"2026-10-07","waiting":"Claude's review of the boards; then the voiceover batch and picture credit"},"edit":{"status":"todo","due":"2026-11-05"},"thumbnails":{"status":"todo","due":"2026-11-05"},"ben_ok":{"status":"todo","due":"2026-11-08"},"scheduled":{"status":"todo","due":"2026-11-09"}}},{"id":"008","title":"Why Did Franklin Fly a Kite in a Storm?","air":"2026-11-19","ready_by":"2026-11-15","summary":"Script, facts, audit and package are done. The long voiceover starts as soon as the Mac mini is back online.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 92.1"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done","owner":"Cursor","due":"2026-10-07","note":"long VO locked 7 Oct: 5 parts, 555 s (9:14.8), 7,497 chars; Part 01 pause trimmed, Part 05 one sentence re-recorded; Claude PASS each part (VO_TAKES_KEEP.json)","steps":[5,5],"steps_unit":"parts passed","since":"2026-10-07","underway":false},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","due":"2026-10-08","owner":"Cursor"},"picture":{"status":"todo","due":"2026-11-08","owner":"Cursor","note":"shot list v01 ready (07_Edit-Project/SHOT_LIST_v01.md, about 58 plates; 8 period details P1–P8 to confirm first); plates start after the whole VO batch passes"},"edit":{"status":"todo","due":"2026-11-12"},"thumbnails":{"status":"todo","due":"2026-11-12"},"ben_ok":{"status":"todo","due":"2026-11-15"},"scheduled":{"status":"todo","due":"2026-11-16"}}},{"id":"009","title":"Why Doesn't the Moon Fall to Earth?","air":"2026-11-26","ready_by":"2026-11-22","summary":"Script, facts, audit and package are done. Voiceover is next in the queue after 008 and the 007 Shorts.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 91.3"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"todo","due":"2026-10-07","waiting":"after 007 Shorts VO","owner":"Cursor"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","due":"2026-10-08","owner":"Cursor"},"picture":{"status":"todo","due":"2026-11-15","owner":"Cursor","note":"shot list v01 ready (07_Edit-Project/SHOT_LIST_v01.md, about 58 plates; 8 period details P1–P8 to confirm first); plates start after the whole VO batch passes"},"edit":{"status":"todo","due":"2026-11-19"},"thumbnails":{"status":"todo","due":"2026-11-19"},"ben_ok":{"status":"todo","due":"2026-11-22"},"scheduled":{"status":"todo","due":"2026-11-23"}}},{"id":"010","title":"What Killed the Dinosaurs Was Hidden in a Line of Clay","air":"2026-12-03","ready_by":"2026-11-29","summary":"Script, facts, audit and package are done. Voiceover follows 009.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 92.1"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"todo","due":"2026-10-07","waiting":"after 009 VO","owner":"Cursor"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","due":"2026-10-08","owner":"Cursor"},"picture":{"status":"todo","due":"2026-11-22","owner":"Cursor","note":"shot list v01 ready (07_Edit-Project/SHOT_LIST_v01.md, about 55 plates; 8 period details P1–P8 to confirm first); plates start after the whole VO batch passes"},"edit":{"status":"todo","due":"2026-11-26"},"thumbnails":{"status":"todo","due":"2026-11-26"},"ben_ok":{"status":"todo","due":"2026-11-29"},"scheduled":{"status":"todo","due":"2026-11-30"}}}]};
+const OWB_SNAPSHOT = [{"film":"013","title":"","air":"","stages":{"edit":{"state":"done"}},"claims":[],"next":""},{"film":"021","title":"What Happens When Saturn Loses Its Rings?","air":"2026-10-11","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"},"picture":{"state":"done"},"edit":{"state":"done"},"thumbs":{"state":"done"},"upload":{"state":"doing"}},"claims":[],"next":"Claude launch check Sun 11 Oct 17:45Z"},{"film":"022","title":"Is the Sun Getting Brighter?","air":"2026-10-18","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"},"picture":{"state":"doing"},"edit":{"state":"doing"}},"claims":[],"next":"Cut review Sat 10 Oct; Claude final OK Tue 13 Oct"},{"film":"023","title":"What Happened to Venus?","air":"2026-10-25","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"},"picture":{"state":"doing"},"edit":{"state":"doing"}},"claims":[{"stage":"edit","by":"cursor","at":"2026-10-06T20:58Z","eta":"2026-10-07T01:58Z","note":"Part 01 rough"}],"next":"Part 01 rough (rows 1-18): Cursor covering for the Chief (Grok Bot out of credit). Ben by Wed 7 Oct 12:00 London; first cut Sat 17 Oct"},{"film":"024","title":"What Happens If You Travel Near Light Speed?","air":"2026-11-01","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"}},"claims":[],"next":"Picture after Venus; 9 code graphics rendered"},{"film":"025","title":"Could a Robot Survive on Mars?","air":"2026-11-08","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"}},"claims":[],"next":"Picture after 024; Omni queue: cold, wheel, night (Wed Short)"},{"film":"026","title":"How Far Is the Nearest Star?","air":"2026-11-15","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"}},"claims":[],"next":"Picture after 025; re-run Scribe on Shorts LOCK wavs + align before picture"},{"film":"027","title":"What If Earth Stopped Spinning?","air":"2026-11-22","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done","ref":"dd053ee"},"vo":{"state":"done","ref":"e340171a"}},"claims":[],"next":"VO complete (long + 3 Shorts PASS 6002694271); shot list after 026"}];
+const HOS_REPO = {owner:"TheLaughingGod1986", repo:"history-of-science", path:"00_Brand/Channel-Setup/PIPELINE.json"};
+const OWB = {owner:"TheLaughingGod1986", repo:"orbit-with-ben", dir:"02_Video-Projects"};
+const WORD = {done:"done", doing:"in progress", blocked:"blocked", todo:"to do", skip:"not needed"};
+const DAY = 86400000;
+let data = SNAPSHOT, source = "snapshot", fetchedAt = null, filter = null, chan = "all";
+// The studio agent writes the board into this page's own store (board/hos, board/owb) several times a day, so the
+// page stays current without the viewer's GitHub connector. GitHub live, when it works, still wins.
+const fromDb = {hos:null, owb:null, hosAt:null, owbAt:null, jobs:null, credits:null};
+try { filter = localStorage.getItem("studio-kanban-film") || null; chan = localStorage.getItem("studio-kanban-ch") || "all"; } catch (e) {}
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const md = s => esc(s).replace(/`([^`]+)`/g, '<span class="mono">$1</span>');
+function pd(s){ if(!s) return null; const [y,m,d]=String(s).slice(0,10).split("-").map(Number); return new Date(y,m-1,d); }
+function today(){ const n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); }
+function fd(d){ return d ? d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}) : "—"; }
+function days(d){ return Math.round((d - today())/DAY); }
+function cd(d){ if(!d) return ""; const n=days(d); return n<0?`${-n} d late`:n===0?"today":n===1?"tomorrow":`in ${n} d`; }
+function cdCls(d){ if(!d) return ""; const n=days(d); return n<0?"late":n<=1?"soon":""; }
+const tm = ms => new Date(ms).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+
+// ---------- OWB: one status.json per film (scripts/studio.py), normalised to the HOS card model ----------
+const OWB_STAGES = [["topic","Topic"],["script","Script"],["sources","Sources"],["vo","Voiceover"],["shots","Shot list"],
+  ["picture","Picture"],["edit","Edit"],["thumbs","Thumbnails"],["upload","Upload"]].map(([key,label])=>({key,label,weight:100/9}));
+// Claims name the agent doing the work last: "chief/gemini" is Gemini (run by the Chief), "chief" alone is Grok.
+const AGENT = by => {
+  const b = String(by||"").toLowerCase(), last = b.split("/").pop();
+  if(last==="gemini"||last==="agy") return "Gemini";
+  if(b==="chief"||b.startsWith("chief/")) return "Grok";
+  return last ? last[0].toUpperCase()+last.slice(1) : "";
+};
+function owbFilm(j){
+  const stages = {};
+  for(const s of OWB_STAGES){
+    const raw = (j.stages||{})[s.key] || {}; const state = raw.state || "todo";
+    const st = state==="review" ? {status:"doing", owner:"Claude", review:true} : {status: WORD[state]?state:"todo"};
+    if(raw.ref) st.note = "ref " + raw.ref;
+    stages[s.key] = st;
+  }
+  for(const c of (j.claims||[])){
+    const st = stages[c.stage]; if(!st) continue;
+    const live = new Date(c.eta) > new Date();
+    Object.assign(st, {status: st.status==="done"?st.status:"doing", owner: AGENT(c.by), since: c.at, eta: c.eta, note: c.note || st.note,
+      underway: live, waiting: live ? "" : "claim stalled: its ETA has passed"});
+  }
+  return {id: j.film, title: j.title || "(untitled)", air: j.air || "", summary: j.next ? "Next: " + j.next : "", next: j.next || "",
+    stages, _ch:"OWB", _stages: OWB_STAGES, key: "OWB:" + j.film};
+}
+const owb = {files:{}, missing:new Set(), state: OWB_SNAPSHOT ? "snapshot" : "loading", msg:"", at:null};
+if(OWB_SNAPSHOT) for(const j of OWB_SNAPSHOT) owb.files[j.film] = j;
+
+function view(){
+  const out = [];
+  if(chan!=="OWB" && data) for(const f of data.films) out.push(Object.assign({}, f, {_ch:"HOS", _stages:data.stages, key:"HOS:"+f.id}));
+  if(chan!=="HOS") for(const j of Object.values(owb.files).sort((a,b)=>String(a.film).localeCompare(String(b.film)))){
+    const f = owbFilm(j);
+    if(OWB_STAGES.every(s=>["done","skip"].includes(f.stages[s.key].status))) continue; // finished films stay off the board
+    if(!f.air && OWB_STAGES.filter(s=>f.stages[s.key].status!=="todo").length<=1) continue; // stub files (no air date, nothing started)
+    out.push(f);
+  }
+  return out;
+}
+const chb = f => `<span class="ch ${f._ch}">${f._ch}</span>`;
+
+function progress(st){
+  if(st.status==="done") return 1;
+  if(typeof st.progress==="number") return st.progress;
+  if(Array.isArray(st.steps)&&st.steps[1]) return st.steps[0]/st.steps[1];
+  return 0;
+}
+// Same rules as status_board.py: skipped stages don't count; "now" is the first stage not done or skipped.
+const stOf = (f,s) => f.stages[s.key] || {status:"todo"};
+function filmPct(f){
+  let tot=0, got=0;
+  for(const s of f._stages){ const st=stOf(f,s); if(st.status==="skip") continue; tot+=s.weight;
+    got+=s.weight*(st.status==="done"?1:(st.status==="doing"||st.status==="blocked")?progress(st):0); }
+  return tot ? Math.round(100*got/tot) : 100;
+}
+function current(f){
+  const live = f._stages.find(s=>{ const st=stOf(f,s); return st.status==="doing"||st.status==="blocked"; });
+  if(f._ch==="OWB" && live) return [live, stOf(f,live)];  // OWB runs stages in parallel; show the live one
+  for(const s of f._stages){ const st=stOf(f,s); if(st.status!=="done"&&st.status!=="skip") return [s,st]; }
+  return null;
+}
+function health(f){
+  if(f._stages.some(s=>stOf(f,s).status==="blocked")) return ["bad","blocked"];
+  const t=today();
+  if(f._stages.some(s=>{ const st=stOf(f,s); return st.status!=="done"&&st.status!=="skip"&&st.due&&pd(st.due)<t; })) return ["risk","behind"];
+  if(f._stages.some(s=>stOf(f,s).underway===false && /stalled/.test(stOf(f,s).waiting||""))) return ["risk","stalled"];
+  return ["ok","on track"];
+}
+
+const AV_COLORS = {Grok:"#2f6fb5", Claude:"#c47a0b", Ben:"#2e7d4f", Gemini:"#7b5cc4", Cursor:"#4b5563", Codex:"#0f766e"};
+const ownerOf = (s,st) => st.owner || s.owner || "—";
+const whoText = n => n==="—" ? "nobody yet" : n;
+function av(name){ const c = AV_COLORS[name] || "#6b7280"; return `<span class="av" style="background:${c}" aria-hidden="true">${esc((name||"?")[0])}</span>`; }
+function pw(s){ if(!s) return null; const d=new Date(String(s).length>10?s:s+"T00:00"); return isNaN(d)?null:d; }
+function fw(s){ const d=pw(s); if(!d) return ""; return fd(d)+(String(s).length>10?" "+d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):""); }
+// Same words as status_board.py activity()
+function stateOf(st){
+  if(st.status==="doing"){
+    if(st.review) return ["wait","In review",""];
+    if(st.underway===true) return ["on","Underway",""];
+    if(st.underway===false) return ["wait","Waiting",st.waiting||""];
+    return ["q","In progress",""];
+  }
+  if(st.status==="blocked") return ["block","Blocked",st.waiting||""];
+  if(st.status==="todo") return ["q","Queued",st.waiting||""];
+  return ["q",WORD[st.status]||st.status,""];
+}
+function stateChip(st){ const [c,t]=stateOf(st); return `<span class="state ${c}">${t}</span>`; }
+
+function renderAgents(films){
+  const names = ["Claude","Grok","Gemini","Cursor","Ben"];   // Gemini (Antigravity on the Mini): sources and fact-checks
+  for(const f of films) for(const s of f._stages){ const o=ownerOf(s,stOf(f,s)); if(o && o!=="—" && !names.includes(o)) names.push(o); }
+  $("agents").innerHTML = names.map(who=>{
+    const now=[], wait=[], next=[];
+    for(const f of films){
+      let queued=false;
+      for(const s of f._stages){
+        const st=stOf(f,s); if(ownerOf(s,st)!==who) continue;
+        const tag=`${chb(f)}<b>${esc(f.id)}</b> ${esc(s.label)}`;
+        if(st.status==="doing" && st.underway!==false && !st.review){
+          const bits=[]; if(st.since) bits.push("since "+fw(st.since));
+          if(Array.isArray(st.steps)) bits.push(`${st.steps[0]}/${st.steps[1]} ${esc(st.steps_unit||"steps")}`);
+          if(st.left) bits.push(esc(st.left)+" left");
+          if(st.eta && f._ch==="OWB") bits.push("ETA "+fw(st.eta));
+          now.push(tag+(bits.length?` · ${bits.join(" · ")}`:""));
+        } else if(st.status==="doing"||st.status==="blocked"){
+          wait.push(tag+(st.review?" · review":st.waiting?` · ${md(st.waiting)}`:""));
+        } else if(st.status==="todo" && !queued){
+          queued=true; next.push([st.due||"9999", tag+(st.due?` · due ${fd(pd(st.due))}`:"")]);
+        }
+      }
+    }
+    next.sort((a,b)=>a[0].localeCompare(b[0]));
+    const row=(k,v)=>`<li><span class="k">${k}</span><span class="v">${v}</span></li>`;
+    return `<div class="agent"><div class="nm">${av(who)}${esc(who)} ${now.length?'<span class="state on">Underway</span>':wait.length?'<span class="state wait">Waiting</span>':'<span class="state q">Free</span>'}</div><ul>
+      ${row("Underway", now.length?now.join("<br>"):"nothing right now")}
+      ${wait.length?row("Waiting", wait.join("<br>")):""}
+      ${next.length?row("Next up", next.slice(0,3).map(x=>x[1]).join("<br>")):""}
+    </ul></div>`;
+  }).join("");
+}
+
+function renderFilms(films){
+  $("films").innerHTML = films.map(f=>{
+    const pct=filmPct(f), [hc,ht]=health(f), air=pd(f.air), cur=current(f);
+    const now = cur ? `${esc(cur[0].label)} · ${esc(whoText(ownerOf(cur[0],cur[1])))} · ${stateOf(cur[1])[1].toLowerCase()}` : "all done";
+    return `<button class="film${filter===f.key?" sel":""}" data-film="${esc(f.key)}" aria-pressed="${filter===f.key}">
+      <div class="top"><span class="id">${chb(f)}${esc(f.id)}</span><span class="pct">${pct}%</span></div>
+      <div class="t">${esc(f.title)}</div>
+      <div class="bar"><i style="width:${pct}%"></i></div>
+      <div class="meta"><span>Airs ${fd(air)}${air&&days(air)>=0?` · ${days(air)} d`:""}</span><span class="chip ${hc}">${ht}</span></div>
+      <div class="meta"><span>Now: ${now}</span></div>
+    </button>`;
+  }).join("") || `<div class="empty">No films to show.</div>`;
+  $("films").querySelectorAll(".film").forEach(b=>b.onclick=()=>{
+    filter = filter===b.dataset.film ? null : b.dataset.film;
+    try { filter?localStorage.setItem("studio-kanban-film",filter):localStorage.removeItem("studio-kanban-film"); } catch(e){}
+    render();
+  });
+  const f = films.find(x=>x.key===filter);
+  $("filterline").innerHTML = f ? `Showing ${chb(f)}<b>${esc(f.id)}</b>&nbsp;only · ${md(f.summary||"")} <button class="btn" id="clear">Show all</button>` : "Tap a film to show only its cards.";
+  if(f) $("clear").onclick=()=>{ filter=null; try{localStorage.removeItem("studio-kanban-film");}catch(e){} render(); };
+}
+
+function cardHtml(f, s, st){
+  const p = progress(st), due=pd(st.due), eta=pd(st.eta);
+  const bits=[];
+  if(Array.isArray(st.steps)) bits.push(`<b>${st.steps[0]}/${st.steps[1]}</b> ${esc(st.steps_unit||"steps")}`);
+  if(st.left) bits.push(`<b>${esc(st.left)}</b> left`);
+  if(eta) bits.push(`ETA <b>${String(st.eta).length>10?fw(st.eta):fd(eta)}</b> <span class="${cdCls(eta)}">(${cd(eta)})</span>`);
+  if(due) bits.push(`Due <b>${fd(due)}</b> <span class="${cdCls(due)}">(${cd(due)})</span>`);
+  const showProg = (st.status==="doing"||st.status==="blocked") && (typeof st.progress==="number"||Array.isArray(st.steps));
+  const prog = showProg ? `<div class="prog"><div class="bar"><i style="width:${Math.round(p*100)}%"></i></div><span>${Math.round(p*100)}%</span></div>` : "";
+  const [, label, why] = stateOf(st);
+  return `<div class="card ${st.status}">
+    <div class="hd"><span class="stage">${esc(s.label)}</span><span class="fid">${chb(f)}${esc(f.id)}</span></div>
+    ${filter?"":`<div class="note" style="margin-top:2px">${esc(f.title)}</div>`}
+    <div class="who-row"><span class="who">${ownerOf(s,st)==="—"?"Not claimed yet":`${av(ownerOf(s,st))}With <b>${esc(ownerOf(s,st))}</b>`}${st.since?` since ${fw(st.since)}`:""}</span>${stateChip(st)}</div>
+    ${why?`<div class="why">${({Queued:"Starts ",Waiting:"Waiting for: ",Blocked:"Blocked by: "})[label]||""}${md(why)}</div>`:""}
+    ${prog}
+    ${st.note?`<div class="note">${md(st.note)}</div>`:""}
+    ${bits.length?`<div class="row">${bits.map(b=>`<span>${b}</span>`).join("")}</div>`:""}
+  </div>`;
+}
+
+function renderBoard(films){
+  const shown = filter ? films.filter(f=>f.key===filter) : films;
+  const cols = {blocked:[], doing:[], todo:[], done:[]};
+  for(const f of shown) for(const [i,s] of f._stages.entries()){
+    const st = stOf(f,s);
+    if(st.status==="skip") continue;
+    (cols[st.status]||cols.todo).push({f,s,st,i});
+  }
+  const air = x => x.f.air || "9999";
+  cols.todo.sort((a,b)=>(a.st.due||air(a)).localeCompare(b.st.due||air(b)) || a.f.key.localeCompare(b.f.key) || a.i-b.i);
+  cols.doing.sort((a,b)=>String(a.st.eta||a.st.due||"9999").localeCompare(String(b.st.eta||b.st.due||"9999")));
+  const defs = [
+    ...(cols.blocked.length?[["blocked","Blocked","var(--blocked)"]]:[]),
+    ["doing","In progress","var(--doing)"],["todo","To do","var(--todo)"],["done","Done","var(--done)"]
+  ];
+  $("board").style.setProperty("--cols", defs.length);
+  $("board").innerHTML = defs.map(([k,label,c])=>{
+    let body;
+    if(k==="done"){
+      const byFilm = new Map();
+      for(const x of cols.done){ if(!byFilm.has(x.f.key)) byFilm.set(x.f.key,{f:x.f,items:[]}); byFilm.get(x.f.key).items.push(x); }
+      body = [...byFilm.values()].map(({f,items})=>`<details class="donegrp"${filter?" open":""}>
+        <summary><span>${chb(f)}<span class="fid">${esc(f.id)}</span> ${items.length===f._stages.length?"every stage":items.length+" of "+f._stages.length+" stages"}</span><span>▾</span></summary>
+        <ul>${items.map(x=>`<li>${esc(x.s.label)}${x.st.note?` <span>· ${md(x.st.note)}</span>`:""}</li>`).join("")}</ul></details>`).join("");
+    } else {
+      const list = k==="todo" && !filter ? cols.todo.slice(0,14) : cols[k];
+      body = list.map(x=>cardHtml(x.f,x.s,x.st)).join("");
+      if(k==="todo" && !filter && cols.todo.length>14) body += `<div class="empty">+ ${cols.todo.length-14} more later stages. Tap a film above to see all of its cards.</div>`;
+    }
+    return `<section class="col"><h2><span class="sw" style="background:${c}"></span>${label}<span class="n">${cols[k].length}</span></h2>
+      <div class="cards">${body||`<div class="empty">Nothing here.</div>`}</div></section>`;
+  }).join("");
+}
+
+function renderLower(films){
+  const items = [];
+  if(chan!=="OWB" && data) for(const s of (data.next_steps||[])) items.push(`<span class="ch HOS">HOS</span>${md(s)}`);
+  if(chan!=="HOS") for(const f of films) if(f._ch==="OWB" && f.next) items.push(`${chb(f)}<b>${esc(f.id)}</b> ${md(f.next)}`);
+  $("next").innerHTML = items.map(x=>`<li>${x}</li>`).join("") || "<li>Nothing listed.</li>";
+  $("creditbox").style.display = chan==="OWB" ? "none" : "";
+  $("credits").innerHTML = ((data&&data.credits)||[]).map(c=>`<div class="credit"><span>${esc(c.pool)}</span><span class="l">${esc(c.left)}</span><span class="r">${esc(c.rule)} · checked ${esc(c.checked)}</span></div>`).join("");
+}
+
+const NEED_WORD = {mini:"Mac mini", gemini:"Gemini check", cloud:"Claude", ben:"Ben", any:"anyone"};
+function renderJobs(){
+  const box = $("jobsBox"), jobs = fromDb.jobs;
+  box.hidden = !jobs || chan==="HOS";
+  if(box.hidden) return;
+  const c = fromDb.chief;  // from the Chief relay's last handover line on the studio thread
+  $("chief").innerHTML = c && c.name ? `Acting Chief: ${av(c.name)}<b>${esc(c.name)}</b>${c.since?` since ${fw(c.since)}`:""}`
+    + (c.next && c.next.length ? ` · next in line: ${c.next.map(esc).join(", ")}` : "") + (c.note ? ` · ${esc(c.note)}` : "") : "";
+  const order = {claimed:0, blocked:1, open:2};
+  const rows = jobs.slice().sort((a,b)=>(order[a.status]-order[b.status]) || a.id.localeCompare(b.id));
+  $("jobs").innerHTML = rows.length ? `<ul style="list-style:none;margin:0;padding:0">` + rows.map(j=>{
+    const late = j.status==="claimed" && j.eta && new Date(j.eta.replace("Z",":00Z")) < new Date();
+    // Released at a stopping point by a Mini agent: it carries on at the next relay run (every 30 min, 08:00-22:00)
+    const L = j.last || {}, lastBy = AGENT(L.by), lastAt = L.at ? fw(String(L.at).replace(/Z$/, ":00Z")) : "";
+    const between = j.status==="open" && !j.after && String(L.what||"").startsWith("released") && L.by && L.by!=="claude";
+    const st = late ? '<span class="state block">Stalled</span>' : j.status==="claimed" ? '<span class="state on">Underway</span>'
+      : j.status==="blocked" ? '<span class="state block">Blocked</span>' : j.after ? '<span class="state q">Queued</span>'
+      : between ? '<span class="state q">Between runs</span>' : '<span class="state wait">Waiting for an agent</span>';
+    const who = j.status==="claimed" ? ` · ${av(AGENT(j.by))}<b>${esc(AGENT(j.by))}</b>${j.eta?` until ${fw(j.eta.replace("Z",":00Z"))}`:""}` : "";
+    const note = String(L.what||"").replace(/^released:\s*/, "");
+    const why = j.status==="blocked" && j.result ? `<div class="why">Blocked by: ${md(j.result)}</div>` : j.status==="open" && j.after ? `<div class="why">Starts after ${esc(j.after)}</div>`
+      : between ? `<div class="why">${av(lastBy)}<b>${esc(lastBy)}</b> stopped at ${esc(lastAt)}; carries on at the next run. <span class="mono">${esc(note.length>220 ? note.slice(0,217)+"…" : note)}</span></div>`
+      : j.status==="open" && L.at ? `<div class="why">Not started yet; added ${esc(lastAt)}. The next agent run takes it.</div>` : "";
+    const film = j.film ? `<span class="ch OWB">OWB</span><b>${esc(j.film)}</b> ${esc(j.stage)} · ` : "";
+    return `<li style="padding:8px 0;border-top:1px solid var(--line)"><div class="row" style="margin:0;justify-content:space-between;display:flex;gap:8px;flex-wrap:wrap">
+      <span><span class="mono">${esc(j.id)}</span> · ${film}${esc(j.title)}</span>${st}</div>
+      <div class="why">Needs <b>${esc(NEED_WORD[j.needs]||j.needs)}</b>${who}</div>${why}</li>`;
+  }).join("") + `</ul>` : '<div class="empty">Nothing waiting.</div>';
+}
+
+function renderSource(){
+  const bits = [];
+  if(chan!=="OWB" && data) bits.push(`HOS board updated ${fd(pd(data.updated))} by ${data.updated_by||"—"}`);
+  if(chan!=="HOS") bits.push(owb.state==="live" ? `OWB read ${tm(owb.at)}` : owb.state==="db" ? `OWB updated ${fw(fromDb.owbAt)}` : owb.state==="snapshot" ? "OWB from the built-in snapshot" : owb.state==="loading" ? "OWB loading…" : "OWB not available");
+  bits.push(`today is ${fd(today())}`);
+  $("asof").textContent = bits.join(" · ");
+  const dot=$("dot"), t=$("srctxt");
+  dot.className = "dot" + (source==="live"?" live":source==="stale"?" warn":"");
+  if(source==="live") t.textContent = `Live from GitHub · read ${tm(fetchedAt)}`;
+  else if(source==="stale") t.textContent = `Last good read ${tm(fetchedAt)} · retrying`;
+  else if(source==="db") { dot.className = "dot live"; t.textContent = `Updated by the studio agent · ${fw(fromDb.hosAt || fromDb.owbAt)}`; }
+  else t.textContent = "Snapshot built into this page";
+  const n=$("owbnote"); n.innerHTML = chan!=="HOS" && owb.msg ? owb.msg : ""; n.classList.toggle("show", !!(chan!=="HOS" && owb.msg));
+  document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.ch===chan)));
+}
+
+// ---------- AI spend month (board/credits, written by the studio agent from scripts/ai_spend.py) ----------
+const POOL_NAME = {flow:"Flow credits", vertex:"Google Cloud credit", elevenlabs:"ElevenLabs", claude:"Claude"};
+const num = (v, unit) => v==null||v==="" ? "—" : unit==="GBP" ? "£"+Number(v).toFixed(2) : Math.round(Number(v)).toLocaleString("en-GB");
+function spark(series){
+  const pts = (series||[]).filter(p=>p[1]!=null);
+  if(pts.length<2) return "";
+  const W=240,H=44,P=3, t=pts.map(p=>Date.parse(p[0])), v=pts.map(p=>Number(p[1]));
+  const t0=Math.min(...t), t1=Math.max(...t)||t0+1, hi=Math.max(...v), lo=Math.min(0,...v);
+  const x=i=>P+(W-2*P)*((t[i]-t0)/((t1-t0)||1)), y=i=>H-P-(H-2*P)*((v[i]-lo)/((hi-lo)||1));
+  const line=pts.map((_,i)=>`${i?"L":"M"}${x(i).toFixed(1)},${y(i).toFixed(1)}`).join("");
+  const n=pts.length-1;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+    <path d="${line}L${x(n).toFixed(1)},${H-P}L${x(0).toFixed(1)},${H-P}Z" fill="var(--accent-soft)" stroke="none"></path>
+    <path d="${line}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+    <circle cx="${x(n).toFixed(1)}" cy="${y(n).toFixed(1)}" r="3" fill="var(--accent)"></circle></svg>`;
+}
+function renderSpend(){
+  const c = fromDb.credits;
+  const per = (c && c.period) || {start:"2026-10-12", end:"2026-11-11", checkIn:"2026-11-08"};
+  const s0=pd(per.start), e0=pd(per.end), ci=pd(per.checkIn), t=today();
+  $("spendWhen").innerHTML = t < s0 ? `Measuring from <b>${fd(s0)}</b>, when the Google credits refill · check-in <b>${fd(ci)}</b>`
+    : `Day <b>${Math.min(days(t)-days(s0)+1, 31)}</b> of the month from ${fd(s0)} to ${fd(e0)} · check-in <b>${fd(ci)}</b> <span class="${cdCls(ci)}">(${cd(ci)})</span>`;
+  const plans = (c && c.plans) || [];
+  const tot = plans.reduce((a,p)=>a+Number(p.gbp||0),0), tgt = c && c.target;
+  $("subs").innerHTML = plans.length ? plans.map(p=>`<div class="sub-i"><div class="n">${esc(p.name)}</div><div class="p">£${esc(p.gbp)}</div></div>`).join("")
+    + `<div class="sub-i tot"><div class="n">Now, a month</div><div class="p">£${tot}</div></div>`
+    + (tgt && tgt.gbp ? `<div class="sub-i tgt"><div class="n">Target: ${esc(tgt.label||"")}</div><div class="p">£${esc(tgt.gbp)}</div></div>` : "")
+    : `<div class="empty">Subscriptions load from the studio agent's next update.</div>`;
+  const pools = (c && c.pools) || {};
+  const order = ["flow","vertex","elevenlabs","claude"].filter(k=>pools[k]);
+  $("pools").innerHTML = order.length ? order.map(k=>{
+    const p=pools[k], L=p.latest||{}, F=p.first||{};
+    if(k==="claude"){
+      const ns=(p.notes||[]).slice(-3).reverse();
+      return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]}</span></div>
+        <div class="why">${ns.length?ns.map(n=>`${esc(fw(n.at))}: ${esc(n.note)}`).join("<br>"):"No limit hits recorded."}</div></div>`;
+    }
+    const used = F.left!=null && L.left!=null && L.at!==F.at ? Number(F.left)-Number(L.left) : null;
+    const total = L.total ?? F.total;
+    return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]||esc(k)}</span><span class="chip">${esc(p.unit)}</span></div>
+      <div class="big">${num(L.left,p.unit)} <small>left${total!=null?" of "+num(total,p.unit):""}</small></div>
+      ${spark(p.series)}
+      <div class="why">${used!=null&&used>=0?`Used <b>${num(used,p.unit)}</b> since ${esc(fd(pd(F.at)))} · `:""}${p.spent_logged?`logged spends ${num(p.spent_logged,p.unit)} · `:""}read ${esc(fw(L.at))}${L.by?` by ${esc(AGENT(L.by))}`:""}${L.note?` · ${esc(L.note)}`:""}</div></div>`;
+  }).join("") : `<div class="box" style="grid-column:1/-1"><div class="empty" style="padding:2px 0">No readings yet. The Mac mini records Flow, Google Cloud credit and ElevenLabs every day from ${fd(s0)}, and every take's cost as it is made. The figures appear here as they arrive.</div></div>`;
+  const bf = (c && c.byFilm) || {}, films = Object.keys(bf).filter(f=>f!=="(none)");
+  $("byFilmBox").hidden = !films.length;
+  if(films.length){
+    const cols = ["flow","vertex","elevenlabs"].filter(k=>films.some(f=>bf[f][k]));
+    $("byFilm").innerHTML = `<table><thead><tr><th>Film</th>${cols.map(k=>`<th>${POOL_NAME[k]}</th>`).join("")}</tr></thead><tbody>`
+      + films.map(f=>{ const [ch,id]=f.split(":"); return `<tr><td><span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id||"")}</td>${cols.map(k=>`<td>${bf[f][k]?num(bf[f][k], pools[k]?pools[k].unit:"credits"):"—"}</td>`).join("")}</tr>`; }).join("")
+      + `</tbody></table>`;
+  }
+}
+
+function render(){
+  const films = view();
+  if(filter && !films.some(f=>f.key===filter)) filter = null;
+  renderSource(); renderJobs(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
+
+function banner(html){ const b=$("banner"); b.innerHTML=html||""; b.classList.toggle("show",!!html); }
+
+function jsonOf(result){
+  if(result.payload && typeof result.payload==="object") return result.payload;
+  for(const b of result.content||[]){
+    const txt = b.type==="text" ? b.text : (b.type==="resource" && b.resource) ? b.resource.text : null;
+    if(typeof txt!=="string") continue;
+    try { return JSON.parse(txt); } catch(e) {}
+  }
+  return null;
+}
+function parsePipeline(result){ const j=jsonOf(result); return j&&Array.isArray(j.films)?j:null; }
+
+function errorCopy(e, what){
+  switch(e.code){
+    case "server_not_connected": case "server_not_found":
+      return `To see ${what} live, connect the <b>GitHub</b> connector in claude.ai Settings → Connectors, then reopen this page.`;
+    case "needs_reauth":
+      return `GitHub needs you to sign in again (claude.ai Settings → Connectors → GitHub) to read ${what}.`;
+    case "not_granted": case "consent_required": case "approval_required":
+      return `This page reads ${what} from GitHub only if you allow it: use this page's <b>Permissions</b> menu.`;
+    case "selection_required":
+      return `You have more than one GitHub connector. Choose one when this page asks (or reopen the page), so it can read ${what}.`;
+    case "not_in_manifest": case "blocked_by_policy": case "capability_disabled": case "capability_removed":
+      return `Live reading of ${what} is turned off for this page.`;
+    case "upstream_error":
+      return `claude.ai hasn't confirmed this page's access to your <b>GitHub</b> connector, so it can't read ${what} live. Tap <b>GitHub permissions</b> and allow GitHub for this page. If it's already allowed, reconnect GitHub in claude.ai Settings → Connectors, then tap Refresh.`;
+    case "tool_error":
+      return `GitHub answered but refused to read ${what}${e.message?`: <span class="mono">${esc(e.message).slice(0,200)}</span>`:""}. Check that your GitHub connector can see the repository.`;
+    default: return null;
+  }
+}
+// The code behind every failure, so a screenshot says what went wrong.
+const errTag = e => ` <span class="mono" style="opacity:.7">(${esc(e.code||"error")}${e.message?": "+esc(String(e.message)).slice(0,140):""})</span>`;
+// One automatic retry per page load for retryable failures (e.g. the first call before consent settled).
+const retried = new Set();
+function retryOnce(mcp, key, e, input){
+  if(!e.retryable || retried.has(key)) return false;
+  retried.add(key);
+  setTimeout(()=>{ mcp.invalidate?.("github","get_file_contents",input).catch(()=>{}); }, (e.retryAfterMs||3000) + Math.random()*1500);
+  return true;
+}
+
+function watchOwb(mcp){
+  const subs = {};
+  const watchFile = (name, path) => {
+    if(subs[path] || owb.missing.has(path)) return;
+    subs[path] = mcp.watchTool("github","get_file_contents",{owner:OWB.owner, repo:OWB.repo, path},ev=>{
+      if(ev.type==="data"){
+        const j = jsonOf(ev.result);
+        if(j && j.stages && j.film){ owb.files[j.film]=j; owb.state="live"; owb.at=ev.result.cache?.storedAt||Date.now(); owb.msg=""; render(); }
+      } else if(ev.error?.code==="tool_error" || ev.error?.code==="bad_request"){
+        owb.missing.add(path); subs[path]&&subs[path](); delete subs[path];   // this film has no status.json
+      }
+    },{refetchInterval:600000});
+  };
+  mcp.watchTool("github","get_file_contents",{owner:OWB.owner, repo:OWB.repo, path:OWB.dir},ev=>{
+    if(ev.type==="data"){
+      const list = jsonOf(ev.result);
+      if(!Array.isArray(list)){ owb.msg="GitHub answered, but the OWB film list could not be read."; render(); return; }
+      for(const e of list) if(e.type==="dir" && /^\d{3}_/.test(e.name)) watchFile(e.name, `${e.path}/status.json`);
+    } else {
+      const e=ev.error||{}; if(e.code==="user_changed") return;
+      if(owb.state==="db"){ owb.msg=""; render(); return; }   // the agent's copy is current
+      const copy = errorCopy(e, "Orbit With Ben");
+      const again = retryOnce(mcp, "owb", e, {owner:OWB.owner, repo:OWB.repo, path:OWB.dir});
+      owb.msg = (copy ? copy + " Showing the OWB snapshot." : (again ? "Orbit With Ben: GitHub didn't answer; trying again in a few seconds." : "Couldn't read Orbit With Ben from GitHub; it tries again every 10 minutes, or tap Refresh.")) + errTag(e);
+      if(copy && owb.state==="live"){ owb.files={}; if(OWB_SNAPSHOT) for(const j of OWB_SNAPSHOT) owb.files[j.film]=j; owb.state=OWB_SNAPSHOT?"snapshot":"error"; }
+      else if(owb.state==="loading") owb.state = OWB_SNAPSHOT ? "snapshot" : "error";
+      render();
+    }
+  },{refetchInterval:600000});
+}
+
+const permBtn = ` <button class="btn" onclick="openPerms()">GitHub permissions</button>`;
+async function openPerms(){ try { const p = await window.claude?.use?.("permissions"); await p?.manage?.(); } catch(e) {} }
+
+async function startDb(){
+  let db = null;
+  try { db = await window.claude?.use?.("db"); } catch(e){ db = null; }
+  if(!db) return;
+  db.doc("board/hos").onSnapshot(snap=>{
+    const d = snap.exists ? snap.data() : null;
+    if(!d || !d.pipeline || !Array.isArray(d.pipeline.films)) return;
+    fromDb.hos = d.pipeline; fromDb.hosAt = d.updatedAt || null;
+    if(source!=="live"){ data = d.pipeline; source = "db"; banner(""); render(); }
+  }, ()=>{});
+  db.doc("board/owb").onSnapshot(snap=>{
+    const d = snap.exists ? snap.data() : null;
+    if(!d || !Array.isArray(d.films)) return;
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null;
+    if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
+  }, ()=>{});
+  db.doc("board/credits").onSnapshot(snap=>{
+    const d = snap.exists ? snap.data() : null;
+    if(!d || typeof d.pools!=="object") return;
+    fromDb.credits = d; render();
+  }, ()=>{});
+}
+
+let unsub = null;
+async function startLive(){
+  let mcp = null;
+  try { mcp = await window.claude?.use?.("mcp"); } catch(e){ mcp = null; }
+  // No connector declared or available: the studio agent's copy (startDb) is the live source, so stay quiet.
+  if(!mcp){ if(owb.state!=="db") owb.state = OWB_SNAPSHOT ? "snapshot" : "error"; render(); return; }
+  const btn=$("refresh"); btn.hidden=false;
+  btn.onclick = async()=>{ btn.disabled=true; retried.clear(); try{ await mcp.invalidate?.("github","get_file_contents"); }catch(e){} setTimeout(()=>btn.disabled=false,1500); };
+  unsub = mcp.watchTool("github","get_file_contents",HOS_REPO,ev=>{
+    if(ev.type==="data"){
+      const j = parsePipeline(ev.result);
+      if(!j){ banner("GitHub answered, but the HOS board file could not be read. Showing the last good data."); if(source==="live") source="stale"; render(); return; }
+      data=j; source="live"; fetchedAt = ev.result.cache?.storedAt || Date.now(); banner(""); render();
+    } else {
+      const e=ev.error||{}; if(e.code==="user_changed"){ unsub&&unsub(); return; }
+      const copy = errorCopy(e, "History of Science");
+      if(copy){ if(e.code==="upstream_error") retryOnce(mcp, "hos", e, HOS_REPO);
+        if(source==="live"){ if(fromDb.hos){ data=fromDb.hos; source="db"; } else { data=SNAPSHOT; source="snapshot"; } }
+        if(source==="db"){ banner(""); render(); return; }   // the agent's copy is current: nothing to fix here
+        banner(copy + " Showing the HOS snapshot." + errTag(e) + permBtn); render(); }
+      else {
+        if(source==="db"){ render(); return; }
+        if(source==="live") source="stale";
+        const again = retryOnce(mcp, "hos", e, HOS_REPO);
+        banner((again ? "GitHub didn't answer; trying again in a few seconds." : "Couldn't read the board from GitHub. Showing the last good data; tap Refresh to try again.") + errTag(e) + permBtn);
+        render();
+      }
+    }
+  },{refetchInterval:300000});
+  watchOwb(mcp);
+}
+
+render();
+startDb();
+startLive();
+setInterval(()=>render(), 60*60*1000);
+</script>
