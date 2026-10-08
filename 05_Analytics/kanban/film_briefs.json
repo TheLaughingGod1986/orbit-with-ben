@@ -132,10 +132,10 @@
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-08T20:00Z",
-      "mood": "finished",
+      "updated": "2026-10-08T20:50Z",
+      "mood": "good",
       "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "Nothing is broken. The picture passed Claude's check (v03c). It's waiting for your watch, and in parallel Cursor makes the thumbnails and upload package.",
+      "holdup": "Your phone couldn't download v03c from iCloud. It most likely never finished uploading from the Mini. J0067 is first in the Mini's queue: check the upload, then put a lighter copy (about 100 MB) in OWB UAT.",
       "steps": [
         {
           "who": "Cursor",
@@ -150,10 +150,15 @@
           "doneText": "passed · Thu 8 Oct 21:00"
         },
         {
+          "who": "Cursor",
+          "what": "fix the iCloud upload, then add a fast phone copy (025_MarsRobot_v03c_PHONE.mp4)",
+          "job": "J0067"
+        },
+        {
           "who": "Ben",
-          "what": "watch iCloud Drive › OWB UAT › 025_MarsRobot_full_rough_v03c.mp4",
-          "when": "2026-10-12",
-          "whenText": "any time before Mon 12 Oct"
+          "what": "watch iCloud Drive › OWB UAT › 025_MarsRobot_v03c_PHONE.mp4",
+          "afterJob": "J0067",
+          "lag": 10
         },
         {
           "who": "Cursor",
@@ -166,11 +171,8 @@
           "whenText": "after your watch and the package"
         }
       ],
-      "you": "Watch iCloud Drive › OWB UAT › 025_MarsRobot_full_rough_v03c.mp4 any time before Mon 12 Oct. Tap Looks good or Needs a change.",
       "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
-      "line": "Ready for you to watch. Every frame checked, the wobble fixed, and the unfinished-looking pictures swapped. While you watch, Cursor makes the thumbnails and upload package.",
-      "youWhen": "2026-10-08",
-      "youShort": "iCloud Drive › OWB UAT › 025_MarsRobot_full_rough_v03c.mp4 · by Mon 12 Oct"
+      "line": "Picture passed Claude's check (v03c), but your iPhone couldn't open it (iCloud error -5009). The Mini is checking the iCloud upload and making a smaller phone copy. Then it's back in your box."
     },
     "OWB:026": {
       "updated": "2026-10-08T20:00Z",
