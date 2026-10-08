@@ -263,6 +263,10 @@ def main(argv=None) -> int:
     with LEDGER.open("a") as f:
         f.write(json.dumps({"at": take["made_at"], "stem": a.stem, "chars": chars, "orders": a.order,
                             "remaining_before": before["remaining"]}) + "\n")
+    film = re.search(r"02_Video-Projects/(\d{3})_", str(a.out.resolve()))
+    subprocess.run([sys.executable, str(TOOLS.parents[1] / "scripts" / "ai_spend.py"), "spend", "--pool", "elevenlabs",
+                    "--amount", str(chars), "--film", f"OWB:{film.group(1)}" if film else "",
+                    "--what", f"VO take {a.stem}", "--by", "vo_take"])
     print(f"{take['vo_check']}: {a.stem} {take['duration_s']} s, LUFS {loud['lufs_integrated']}, "
           f"Scribe {diff['match_rate_pct']}% ({len(diff['mismatches'])} mismatch runs), {chars} chars spent")
     return 0 if take["vo_check"] != "FAIL (silent or near-silent)" else 1
