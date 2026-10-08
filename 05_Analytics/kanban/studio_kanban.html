@@ -666,7 +666,9 @@ function renderNow(){
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h"><span class="dot"></span>${head}</div>`
     + (next.length ? `<ol>${next.map(j=>`<li>${jobLabel(j)} · starts about ${clock(P[j.id].start)}</li>`).join("")}</ol>` : "")
-    + `<div class="why">One job at a time, film jobs first (focus film ahead of the rest)${lastAct}.</div>`;
+    + `<div class="why">One job at a time, film jobs first (focus film ahead of the rest)${lastAct}.</div>`
+    + (()=>{ const at = ts(fromDb.owbAt), age = Date.now()-at; if(isNaN(at)) return "";
+        return `<div class="why${age>40*MINUTE?" late":""}">As of ${clock(at)}${age>40*MINUTE?` (${ago(at)}, so the Mac mini may have moved on since)`:""}. The board refreshes every hour and whenever the Mac mini posts.</div>`; })();
 }
 
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
