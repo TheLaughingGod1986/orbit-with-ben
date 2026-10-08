@@ -12,6 +12,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0054 | mini | open | – | – | Mini disk: move aired films' working media + superseded cuts to the NAS (checksummed), target 40 GB free |  |
 | J0055 | mini | claimed | cursor | 2026-10-08T18:20Z | 025 edit · 025: full rough v02 (every frame fills 16:9, drop text/annotated plates, push on static holds, rows 28/30, sheets) |  |
 | J0056 | mini | open | – | – | 022 thumbs · 022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload) |  |
+| J0057 | cloud | open (after J0056) | – | – | 022 upload · 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) |  |
 
 Recently finished:
 
