@@ -1,5 +1,5 @@
 {
-  "next_id": 44,
+  "next_id": 45,
   "jobs": [
     {
       "id": "J0001",
@@ -1797,6 +1797,32 @@
       "film": "",
       "stage": "",
       "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T09:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T09:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0044",
+      "title": "024: assemble full rough v01 (Venus v04 rules) for Claude review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble 024 full rough v01 from the J0042 harvest pool and the code graphics. Base it on 023's _assemble_venus_full_v04.py.\n\nRules from the Venus review:\n- Still cap: two uses per still, the second at a new framing. Print a reuse count per source.\n- Upscale ≤2.35×, asserted in the assembler.\n- Snap every cut to a VO pause (words.json).\n- Hold no single shot for more than 6 s.\n- Frame 0 is already moving.\n\nThen:\n- Run clip_check.py and align_shot_list.py.\n- Force-add row_###.jpg frames and the per-row sheet to the pack.\n- Write cuts_v01.json.\n- Render detached in tmux.\n- If an Omni take hasn't passed yet, use the row's fallback.\n- Post the pack commit for Claude review. Mark done with the commit.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "J0042",
       "eta_min": 120,
       "status": "open",
       "by": "",

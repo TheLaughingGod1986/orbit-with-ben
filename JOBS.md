@@ -7,6 +7,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0042 | mini | open | – | – | 024 picture · 024: harvest v01 + render code graphics (licence-checked pool) |  |
 | J0043 | mini | open | – | – | 024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS) |  |
+| J0044 | mini | open (after J0042) | – | – | 024 edit · 024: assemble full rough v01 (Venus v04 rules) for Claude review |  |
 
 Recently finished:
 
