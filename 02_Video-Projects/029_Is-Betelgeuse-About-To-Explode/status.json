@@ -8,7 +8,7 @@
       "ref": "028 J0027 neighbour pass (Betelgeuse backup: 6 videos at 1M+, pool strong)"
     },
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "betelgeuse_script_master_v01.md (92.2)"
     },
     "sources": {
@@ -19,6 +19,14 @@
       "state": "doing"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "claude",
+      "at": "2026-10-08T09:12Z",
+      "eta": "2026-10-08T10:11Z",
+      "note": "J0039 029: lock script v02 (J0037 flags + quote check)"
+    }
+  ],
   "next": "Topic locked by Claude 8 Oct. Claude script v01 + CLAUDE_CLAIMS, then Gemini claims check, then VO."
 }
