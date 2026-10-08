@@ -5,10 +5,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0036 | mini | claimed | cursor | 2026-10-08T04:28Z | Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude) |  |
+| – | | nothing waiting | | | | |
 
 Recently finished:
 
+- J0036 done: Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude) (done)
 - J0035 done: 027: commit VO words.json + chapters_index (text only) for the shot list (done)
 - J0034 done: Venus 023: upload package from cut v04 (dry-run only) (done)
 - J0033 done: Sun 022 Shorts: covers + upload packages for Mon 19 / Wed 21 / Fri 23 (dry-run only) (3 covers + 3 Short packages; dry-runs PASS (Mon 19/Wed 21/Fri 23 10:30Z); relatedVideoId waits for Sun long id; youtube:package override fix)
@@ -18,4 +19,3 @@ Recently finished:
 - J0029 done: 028: lock topic, write script v01 (Claude) (script v01 at 01_Script/star_coming_script_master_v01.md, review:script 91; CLAUDE_CLAIMS_v01.md for Gemini)
 - J0028 done: 028 SOURCES: Gliese 710 flyby (Gemini) (028 SOURCES.md committed (10 rows, Gemini via agy). Exact quotes missing on 2 rows: cratering <=5% (Garcia-Sanchez 2001) and mass 0.57-0.60 Msun.)
 - J0027 done: 028 topic: neighbour pass for Gliese 710 (+2 backups) (Neighbour pass in 028 11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md + PRE_BUILD_VIDIQ_AUDIT.md §0. Gliese 710 medium (4 adjacent 1M+, top direct 613K); rogue planet strong (5); Betelgeuse strong (6). Claude to lock topic.)
-- J0026 done: Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line (Fri 23 Short v02: PIA21218 disc (young grade -> as shot at 'brightening'), sea band cropped, red line gone; gate PASS no warnings (motion 14.58). Frames 1b6096f. Not uploaded.)
