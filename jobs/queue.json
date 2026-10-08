@@ -1,5 +1,5 @@
 {
-  "next_id": 56,
+  "next_id": 57,
   "jobs": [
     {
       "id": "J0001",
@@ -2267,6 +2267,32 @@
       "history": [
         {
           "at": "2026-10-08T15:27Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0056",
+      "title": "022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "022 Sun: bring the final OK forward from Tue 13 Oct (Claude, 8 Oct). Nothing is left on 022 except Claude's look at the Short covers, and they aren't in git (J0033 kept the jpgs on the Mini).\n\n1. **Force-add the three Short cover previews** (`10_Shorts/*/08_Covers/preview_*.jpg`) and the covers themselves. Include the Wed 21 cover's alternative plate if it was made.\n2. **Run `gate:episode` on the long** and `gate_shorts_open.py` on the three Shorts. Commit the outputs next to the package.\n3. Post the commit for Claude. **Upload nothing:** Claude gives the final OK on the thread first, then a separate upload job follows.\n",
+      "ref": "",
+      "film": "022",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T15:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T15:31Z",
           "by": "claude",
           "what": "added"
         }
