@@ -1,5 +1,5 @@
 {
-  "next_id": 38,
+  "next_id": 39,
   "jobs": [
     {
       "id": "J0001",
@@ -1523,6 +1523,32 @@
       "stage": "sources",
       "after": "",
       "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T07:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T07:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0038",
+      "title": "029: VO take of the locked script master (after the claims check)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Film 029 VO from the latest `01_Script/betelgeuse_script_master_v*.md`. That's v02 if the claims check changes lines; Claude posts the lock on #99 first.\n- Run `python3 04_Audio/tools/vo_take.py --script <master> --dry-run`, then one take.\n- Use the month's credits; never overage.\n- Commit `words.json` / `chapters_index.json` / `stt/` (text only) this time, so the shot list doesn't wait like 027's did.\n",
+      "ref": "",
+      "film": "029",
+      "stage": "vo",
+      "after": "J0037",
+      "eta_min": 90,
       "status": "open",
       "by": "",
       "since": "",
