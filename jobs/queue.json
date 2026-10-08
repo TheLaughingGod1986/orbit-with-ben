@@ -2271,10 +2271,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T21:25Z",
-      "eta": "2026-10-08T23:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T15:15Z",
       "result": "",
@@ -2298,6 +2298,11 @@
           "at": "2026-10-08T21:25Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T21:33Z",
+          "by": "cursor",
+          "what": "released: Move running detached: tmux j0054-nas, script ~/_desk/jobs/J0054/nas_move.py, log ~/_desk/logs/j0054-nas.log, done-file ~/_desk/logs/j0054-nas.done, live result ~/_desk/jobs/J0054/result.json. Scope this pass: OWB 013/019/020 + HOS 001/002/003 untracked working media (finals, upload packages, tracked and <24h files kept). Copy -> sha256 manifest on NAS (MANIFEST_2026-10-08_J0054.sha256) -> verify -> local unlink only on full match; NAS never overwritten. Next run: when .done exists, read result.json, commit it as _evidence/nas_move_2026-10-08.json from a clean worktree, then pass 2: superseded 023 v01-v03 / 024 v01-v02 rough cuts. Free before: 3.7 GB. This pass ~10 GB at most, so 40 GB target needs more scope (HOS 004 air state unclear; rest of space is outside film folders)."
         }
       ],
       "urgent": true
