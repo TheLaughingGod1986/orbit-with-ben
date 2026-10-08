@@ -191,6 +191,25 @@ class Relay(unittest.TestCase):
         finally:
             cr.OWB, cr.queue_has_work = old_owb, old_q
 
+    def test_a_failed_addressed_run_is_not_retried_every_tick(self):
+        old_owb, old_q = cr.OWB, cr.queue_has_work
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True)
+        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "open", "needs": "any"}]}')
+        self.fake("codex", 'echo "error: unexpected argument"; exit 2')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertIn("run failed (exit 2)", self.posts.read_text())
+            self.assertFalse(cr.state_of("codex", cr.now())[0])  # marked down for the retry time
+            (self.tmp / "codex.ran").unlink()
+            cr.cmd_run(T0 + 11 * MIN)
+            self.assertFalse(self.ran("codex"))
+            self.assertTrue(self.ran("cursor"))  # the acting Chief carries on
+        finally:
+            cr.OWB, cr.queue_has_work = old_owb, old_q
+
     def test_pause_file_stops_runs(self):
         (cr.STATE / "chief-relay.pause").write_text("")
         cr.cmd_run(T0)

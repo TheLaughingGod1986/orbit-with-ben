@@ -463,6 +463,9 @@ def run_locked(at: dt.datetime) -> int:
             continue
         if code not in (0, 124):
             notify(f"Chief relay: {NAMES.get(who, who)}'s run failed (exit {code}). Log: ~/Library/Logs/chief-relay.log")
+            if addressed:
+                # Woken only for a job addressed to it: don't wake it again every 10 minutes into the same failure.
+                mark_down(who, f"its run for an addressed job failed (exit {code})", now() + dt.timedelta(hours=retry_h), now())
         return 0
 
 
