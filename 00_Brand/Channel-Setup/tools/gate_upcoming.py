@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -113,12 +114,17 @@ def main(argv: list[str] | None = None) -> int:
     else:
         lines += ["| Airs (London) | Short | In library | Gate |", "|---|---|---|---|"]
         details = []
+        missing = [t for t in ("ffprobe", "ffmpeg") if not shutil.which(t)]
+        if missing:   # a tool problem on this machine, not a fault in any Short: say so instead of FAIL (8 Oct 2026)
+            details.append(f"### Not checked: {', '.join(missing)} not on PATH\n\nFix the job's PATH and re-run; no Short was judged.\n")
         for r in rows:
             f = (a.media_root / r["file"]).expanduser() if r["file"] else None
             lib = in_library(r["id"])
             if not f or not f.exists():
                 verdict = "NO FILE" if r["file"] else "NOT REGISTERED"
                 details.append(f"### {r['id']}: {verdict}\n\n{'Export not found: `' + r['file'] + '`' if r['file'] else 'Not in social/UPLOADS.json, so its export file is unknown.'}\n")
+            elif missing:
+                verdict = "NOT CHECKED"
             else:
                 if a.add and not lib:
                     code, out = run([sys.executable, str(GATE), "add", "--id", r["id"], "--date", r["air"], "--title", r["title"],

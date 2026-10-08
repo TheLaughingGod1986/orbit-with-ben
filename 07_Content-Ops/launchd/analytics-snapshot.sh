@@ -8,6 +8,9 @@
 #      dashboard, commits only 05_Analytics/ and library.json, and pushes to main. A failed channel still lets the other one through, then notifies.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
 main() {
+  # launchd's login shell has no Homebrew on PATH: without it gate_upcoming.py can't find ffprobe/ffmpeg and every
+  # scheduled Short reads FAIL (8 Oct 2026).
+  export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
   local repo="${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}"
   local wt="${ANALYTICS_WORKTREE:-$HOME/_desk/worktrees/analytics}"
   local data=05_Analytics

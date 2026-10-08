@@ -53,6 +53,25 @@ class Upcoming(unittest.TestCase):
             self.assertIn("NO FILE", text)
             self.assertIn("missing.mp4", text)
 
+    def test_a_missing_ffprobe_reads_not_checked_not_fail(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "x.mp4").write_bytes(b"fake")
+            (d / "snap.json").write_text(json.dumps({"videos": [vid("x", at="2099-01-01T10:30:00Z")]}))
+            (d / "up.json").write_text(json.dumps({"videos": {"x": {"file": "x.mp4"}}}))
+            g.datetime = type("D", (datetime,), {"now": staticmethod(lambda tz=None: datetime(2098, 12, 25, tzinfo=timezone.utc))})
+            old_which = g.shutil.which
+            g.shutil.which = lambda name: None
+            try:
+                g.main(["--snapshot", str(d / "snap.json"), "--uploads", str(d / "up.json"), "--media-root", str(d), "--out", str(d / "out.md")])
+            finally:
+                g.datetime = datetime
+                g.shutil.which = old_which
+            text = (d / "out.md").read_text()
+            self.assertIn("NOT CHECKED", text)
+            self.assertIn("ffprobe, ffmpeg not on PATH", text)
+            self.assertNotIn("FAIL", text)
+
 
 class Waivers(unittest.TestCase):
     OUT = ("FAIL  bd_v04.mp4  dur=26.9s  visor=0.0048\n"
