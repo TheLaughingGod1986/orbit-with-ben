@@ -1698,13 +1698,13 @@
       "stage": "vo",
       "after": "J0039",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T09:34Z",
-      "eta": "2026-10-08T11:04Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T09:12Z",
-      "result": "",
+      "result": "029 VO betelgeuse_vo_v01: 515.2 s (8.6 min), LUFS -20.1 raw, Scribe 99.2% PASS; 6717 chars from the month's credits (57,018 left). words.json/chapters_index/stt committed. Dropped-word false alarm at 372.6 s checked and patched.",
       "history": [
         {
           "at": "2026-10-08T09:12Z",
@@ -1715,8 +1715,14 @@
           "at": "2026-10-08T09:34Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T09:40Z",
+          "by": "cursor",
+          "what": "done: 029 VO betelgeuse_vo_v01: 515.2 s (8.6 min), LUFS -20.1 raw, Scribe 99.2% PASS; 6717 chars from the month's credits (57,018 left). words.json/chapters_index/stt committed. Dropped-word false alarm at 372.6 s checked and patched."
         }
-      ]
+      ],
+      "done_ref": "9d64a3d"
     },
     {
       "id": "J0041",

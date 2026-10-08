@@ -5,11 +5,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0040 | mini | claimed | cursor | 2026-10-08T11:04Z | 029 vo · 029: VO take of the locked script master v02 |  |
+| – | | nothing waiting | | | | |
 
 Recently finished:
 
 - J0041 done: 028: verify Berski & Dybczynski comet-shower quote from the full paper (or FLAG for a pickup) (OK: all three quotes found verbatim in A&A full text (§3.3, §4) with URL in SOURCES row 7; no pickup needed)
+- J0040 done: 029: VO take of the locked script master v02 (029 VO betelgeuse_vo_v01: 515.2 s (8.6 min), LUFS -20.1 raw, Scribe 99.2% PASS; 6717 chars from the month's credits (57,018 left). words.json/chapters_index/stt committed. Dropped-word false alarm at 372.6 s checked and patched.)
 - J0039 done: 029: lock script v02 (J0037 flags + quote check) (029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md)
 - J0038 cancelled: 029: VO take of the locked script master (after the claims check) ()
 - J0037 done: 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) (SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed)
@@ -18,4 +19,3 @@ Recently finished:
 - J0034 done: Venus 023: upload package from cut v04 (dry-run only) (done)
 - J0033 done: Sun 022 Shorts: covers + upload packages for Mon 19 / Wed 21 / Fri 23 (dry-run only) (3 covers + 3 Short packages; dry-runs PASS (Mon 19/Wed 21/Fri 23 10:30Z); relatedVideoId waits for Sun long id; youtube:package override fix)
 - J0032 done: 028: VO take of the script master (after the claims check) (028 VO star_coming_vo_v01 PASS (469.4 s, Scribe 96.87%); listen at ~281.9 s 'calculations suggest')
-- J0031 done: 028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md) (Gemini pass complete: e48dbc1 (24 rows, 4 and 13 quoted) + ecacb70 (row 15 quoted from Dybczynski 2002 p.287; row 17 FLAG, no impact figure in Garcia-Sanchez 2001; Fernandez-Puig 2026 §4.4 quote on rows 1/10, Table 1 mass on row 4). Row 16 Kepler check OK. Claude to apply row 17 wording as v02.)
