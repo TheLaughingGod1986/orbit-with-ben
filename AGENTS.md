@@ -177,7 +177,7 @@ The Synology share (`/Volumes/data/mac-mini-archive/`) is the archive, and often
 This is measurement only. It changes no spend rule.
 
 **One film at a time, then Ben watches it (Ben, 8 Oct 2026).** *"If we're working on one video, that should be the main priority and done in a day, maybe two… then I can check the video out."*
-- **Focus film.** Each channel has one focus film. On OWB it's set with `python3 scripts/jobs.py focus NNN --git`, and its jobs go first in every lane. Other films' jobs and admin jobs (readings, installs, disk) wait behind it unless they block it.
+- **Focus film.** Each channel has one focus film. On OWB it's set with `python3 scripts/jobs.py focus NNN --git`, and its jobs go first in every lane. Other films' jobs come next, and admin jobs (readings, installs, disk) last, unless they block a film.
 - **Finish it end to end.** Every agent works the focus film from picture through edit, thumbnails, package and gates, aiming for a day or two. A credit limit (HOS Flow) can stretch that, and its film note says so.
 - **Ben's watch.** When the focus film is finished and has passed Claude's checks, it goes to OWB UAT. Ben is told with one push notification and the board's top line. Then the next film becomes the focus.
 - **Watch window.** Ben's watch happens before upload, because a fix after upload means a fresh upload (no file swaps, no deletes). Each finished film's note gives a watch-by date. If Ben hasn't flagged anything by then, Claude's final OK and the upload go ahead, so no film stalls waiting on him.

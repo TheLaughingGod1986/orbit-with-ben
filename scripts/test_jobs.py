@@ -49,6 +49,8 @@ class Next(unittest.TestCase):
         d["focus"] = ["025"]
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "025 rough v02")  # long, but the focus film
         self.assertEqual(jobs.order({"id": "J9", "film": "022", "eta_min": 30}, ["025"])[0], 1)
+        jobs.do_done(d["jobs"][1], "cursor", "ok", T0)
+        self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "022 covers")  # a film's job before admin
 
     def test_watch_flags_a_quiet_mini_and_what_waits_on_ben(self):
         d = queue(("mini", "cut", {}), ("ben", "sign in", {}))

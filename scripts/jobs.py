@@ -133,10 +133,11 @@ def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
 
 
 def order(job: dict, focus=()) -> tuple:
-    """The focus film's jobs first (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then quick
-    jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
+    """The focus film's jobs first (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
+    films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
     every stopping point (a first cut) would come back first every time and starve the quick ones."""
     return (0 if job.get("film") and job["film"] in focus else 1,
+            0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
             0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
 
 

@@ -273,6 +273,22 @@ details.more .subs{margin-top:8px}
 .ck li.now::before{content:"◐";color:var(--doing)}
 .ck li .w{grid-column:2;font-size:12px;color:var(--ink-3)}
 .ck li .w.late{color:var(--late)}
+.st1{font-size:12px;font-weight:600;margin-top:6px;color:var(--ink-2)}
+.st1::before{margin-right:4px}
+.st1.now{color:var(--doing)}.st1.now::before{content:"▶"}
+.st1.queue::before{content:"⏳"}
+.st1.bad{color:var(--blocked)}.st1.bad::before{content:"⛔"}
+.st1.you{color:var(--doing)}.st1.you::before{content:"●"}
+.st1.date::before{content:"◷"}
+.st1.ok{color:var(--done)}.st1.ok::before{content:"✓"}
+.stbox{border:1px solid var(--line);border-left:4px solid var(--ink-3);border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.45;margin-bottom:8px}
+.stbox .h{font-weight:700;font-size:14px;margin-bottom:2px}
+.stbox div+div{margin-top:3px}
+.stbox.now{border-left-color:var(--doing);background:var(--doing-soft)}
+.stbox.queue{border-left-color:var(--soon);background:var(--accent-soft)}
+.stbox.bad{border-left-color:var(--blocked);background:var(--blocked-soft)}
+.stbox.you{border-left-color:var(--doing);background:var(--doing-soft)}
+.stbox.ok{border-left-color:var(--done);background:var(--done-soft)}
 .tf .hold{background:var(--panel-2);border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.45;margin-top:2px}
 .tf .hold b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);margin-bottom:2px}
 details.fold{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 12px;margin:0 0 10px}
@@ -531,27 +547,50 @@ function stepWhen(stp, P){
     const j = byId[stp.job];
     if(jobs && !j) return {ok:true, text:`done (${esc(stp.job)})`};
     if(j){ const p=P[j.id]||{}, L=j.last||{};
-      if(j.status==="blocked") return {text:`blocked: ${esc(String(j.result||"").slice(0,100))}`, late:true};
-      if(p.state==="now") return {text:`underway now · done about ${clock(p.done)} (${rel(p.done)})`, at:p.done};
-      if(j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude") return {text:`part done · carries on within 10 min · done about ${clock(p.done)}`, at:p.done};
+      if(j.status==="blocked") return {kind:"blocked", reason:String(j.result||""), text:`blocked: ${esc(String(j.result||"").slice(0,100))}`, late:true};
+      if(p.state==="now") return {kind:"now", by:AGENT(j.by), start:p.start, done:p.done, text:`underway now · done about ${clock(p.done)} (${rel(p.done)})`, at:p.done};
+      if(j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude") return {kind:"part", by:AGENT(L.by), done:p.done, text:`part done · carries on within 10 min · done about ${clock(p.done)}`, at:p.done};
       if(p.start){
         const ahead = (jobs||[]).filter(x=>x.id!==j.id && x.needs===j.needs && P[x.id] && P[x.id].start!=null && P[x.id].start < p.start)
           .sort((a,b)=>P[a.id].start-P[b.id].start).map(x=>(x.film?x.film+" ":"")+shortTitle(x.title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim());
         const nth = ahead.length+1, ord = nth===1?"next":nth===2?"2nd":nth===3?"3rd":nth+"th";
-        return {text:`${ord} in the Mac mini's queue${ahead.length?` (first: ${esc(ahead.join("; "))})`:""} · starts about ${clock(p.start)} · done about ${clock(p.done)} (${rel(p.done)})`, at:p.done};
+        return {kind:"queue", nth, ord, ahead, start:p.start, done:p.done, est:j.estMin||25, text:`${ord} in the Mac mini's queue${ahead.length?` (first: ${esc(ahead.join("; "))})`:""} · starts about ${clock(p.start)} · done about ${clock(p.done)} (${rel(p.done)})`, at:p.done};
       }
     }
   }
   if(stp.afterJob){
     const j = byId[stp.afterJob], p = j && P[j.id];
     if(jobs && !j) return {text:`now (${esc(stp.afterJob)} is done)`, at:Date.now()};
-    if(p && p.done){ const t=p.done+(stp.lag||0)*MINUTE; return {text:`about ${clock(t)} (${rel(t)}), after ${esc(stp.afterJob)}`, at:t}; }
+    if(p && p.done){ const t=p.done+(stp.lag||0)*MINUTE; return {kind:"after", after:stp.afterJob, text:`about ${clock(t)} (${rel(t)}), after ${esc(stp.afterJob)}`, at:t}; }
   }
   const d = stp.when ? fromDate(stp.when) : null;
-  if(stp.whenText) return {text: esc(stp.whenText) + (d && d.at>Date.now() && String(stp.when).length<=10 ? ` · ${cd(pd(stp.when))}` : ""), at:d&&d.at};
-  if(d) return d;
+  if(stp.whenText) return {kind:"date", text: esc(stp.whenText) + (d && d.at>Date.now() && String(stp.when).length<=10 ? ` · ${cd(pd(stp.when))}` : ""), at:d&&d.at};
+  if(d) return Object.assign({kind:"date"}, d);
   return {text: stp.job ? `in the Mac mini's line (${esc(stp.job)})` : "no date yet"};
 }
+// Ben, 8 Oct: "is it being worked on right now, and how long is left? If not, why not: blocked, or just a queue (3rd,
+// done in about 2 h)?" One answer per film, from its first step not yet done.
+function minsLeft(t){ const m=Math.max(1,Math.round((t-Date.now())/MINUTE)); return m<60?`about ${m} min`:`about ${Math.round(m/60*2)/2} h`; }
+function statusOf(b, rows){
+  const r = rows.find(x=>!x.w.ok);
+  if(!r) return b.mood==="ready" ? {cls:"ok", short:"Scheduled", title:"Done: scheduled", lines:[]} : {cls:"ok", short:"Nothing left", title:"Nothing left to do", lines:[]};
+  const {x, w} = r, who = esc(x.who), what = esc(x.what);
+  const busy = (fromDb.jobs||[]).filter(j=>j.needs==="mini" && j.status==="claimed");
+  if(w.kind==="now") return {cls:"now", short:`Working on it · done about ${clock(w.done)}`, title:"Working on it now",
+    lines:[`<b>${esc(w.by||x.who)}</b> is doing: ${what}.`, `Started ${clock(w.start)}. ${minsLeft(w.done)} left, done about <b>${clock(w.done)}</b>.`]};
+  if(w.kind==="part") return {cls:"now", short:`Part done · done about ${clock(w.done)}`, title:"Part done, carrying on",
+    lines:[`<b>${esc(w.by||x.who)}</b> stopped at a safe point on: ${what}. It picks up again within 10 minutes.`, `Done about <b>${clock(w.done)}</b> (${rel(w.done)}).`]};
+  if(w.kind==="blocked") return {cls:"bad", short:"Blocked", title:"Blocked", lines:[`${who}: ${what}.`, `What's blocking it: ${esc(w.reason||"not given")}`]};
+  if(w.kind==="queue") return {cls:"queue", short:`${w.ord} in the queue · done about ${clock(w.done)}`, title:`Not started yet: ${w.ord} in the Mac mini's queue`,
+    lines:[`Next job: <b>${who}</b>, ${what}.`,
+      `Why not now: the Mac mini does one job at a time${w.ahead.length?`, and ${w.ahead.length===1?"this goes":"these go"} first: ${esc(w.ahead.join("; "))}`:""}.${busy.length?` It's working on ${esc((busy[0].film?busy[0].film+" ":"")+shortTitle(busy[0].title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim())} right now.`:""}`,
+      `Starts about <b>${clock(w.start)}</b>, takes about ${w.est} min, done about <b>${clock(w.done)}</b> (${rel(w.done)}).`]};
+  if(w.kind==="after") return {cls:"queue", short:`After ${esc(w.after)} · about ${clock(w.at)}`, title:`Waiting for ${esc(w.after)} to finish`,
+    lines:[`Next: <b>${who}</b>, ${what}.`, `It can't start until ${esc(w.after)} is done; then it happens about <b>${clock(w.at)}</b> (${rel(w.at)}).`]};
+  if(x.who==="Ben") return {cls:"you", short:`Waiting for you · ${w.text}`, title:"Waiting for you", lines:[`${what}.`, `When: ${w.text}.`]};
+  return {cls:"date", short:`${who}: ${what} · ${w.text}`, title:`Booked: ${who}, ${what}`, lines:[`When: <b>${w.text}</b>.`, ...(b.mood==="waiting"?["Nobody is working on it until then; the reason is below."]:[])]};
+}
+
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
 function whoOf(f, s){ const st=stOf(f,s); return st.owner || (f._ch==="OWB" ? OWB_OWNER[s.key] : s.owner) || "Team"; }
 function checklist(f, rows, ready){
@@ -592,15 +631,18 @@ function renderTracker(films){
     const stale = !b.auto && (isNaN(age) || age > 30*3600000);
     const isOpen = f.key in openState ? openState[f.key] : false;
     const line = b.line || (b.auto ? b.done : "");
+    const st = statusOf(b, rows);
     lanes[f._ch][COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
       <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span class="pill ${cls}">${word}</span></div>
       <div class="kt">${esc(f.title)}</div>
       <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
-      ${youSoon?`<div class="ky yes">For you: ${esc(b.you)}</div>`:""}
+      <div class="st1 ${st.cls}">${st.short}</div>
+      ${youSoon?`<div class="ky yes">For you: ${esc(b.youShort||b.you)}</div>`:""}
     </summary><div class="body">
       ${line?`<div class="kl" style="margin:0 0 8px">${md(line)}</div>`:""}
-      <div class="hold"><b>${b.mood==="waiting"?"Why it hasn't started yet":b.mood==="ready"?"Left to do":"Why it isn't finished yet"}</b>${md(b.holdup||"None.")}${b.limit?`<br><br>${md(b.limit)}`:""}</div>
+      <div class="stbox ${st.cls}"><div class="h">${st.title}</div>${st.lines.map(l=>`<div>${l}</div>`).join("")}</div>
+      <div class="hold"><b>${b.mood==="waiting"?"Why it hasn't started yet":b.mood==="ready"?"Left to do":"More detail"}</b>${md(b.holdup||"None.")}${b.limit?`<br><br>${md(b.limit)}`:""}</div>
       ${checklist(f, rows, b.mood==="ready")}
       ${youSoon?"":`<div class="ky ${b.you?"yes":""}">For you: ${b.you?esc(b.you):"nothing"}</div>`}
       ${b.timing?`<div class="why" style="margin-top:6px;font-size:13px">${md(b.timing)}</div>`:""}
@@ -819,8 +861,8 @@ function plan(){
       const done = Math.max(st+est, now+5*MINUTE);
       out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
     }
-    const focus = fromDb.focus || [], rank = j => [focus.includes(j.film)?0:1, (j.eta_min||120)<=60?0:1, j.id];
-    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>{ const x=rank(a), y=rank(b); return x[0]-y[0] || x[1]-y[1] || x[2].localeCompare(y[2]); });
+    const focus = fromDb.focus || [], rank = j => [focus.includes(j.film)?0:1, j.film?0:1, (j.eta_min||120)<=60?0:1, j.id];
+    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>{ const x=rank(a), y=rank(b); return x[0]-y[0] || x[1]-y[1] || x[2]-y[2] || x[3].localeCompare(y[3]); });
     const wake = lane==="mini" ? 5*MINUTE : lane==="cloud" ? 30*MINUTE : 15*MINUTE;
     for(const j of open){
       const dep = j.after && byId[j.after] ? out[j.after] : null;
