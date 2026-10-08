@@ -10,12 +10,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0052 | mini | open | – | – | AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) |  |
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0054 | mini | open | – | – | Mini disk: move aired films' working media + superseded cuts to the NAS (checksummed), target 40 GB free |  |
-| J0055 | mini | claimed | cursor | 2026-10-08T17:34Z | 025 edit · 025: full rough v02 (every frame fills 16:9, drop text/annotated plates, push on static holds, rows 28/30, sheets) |  |
 | J0056 | mini | open | – | – | 022 thumbs · 022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload) |  |
 | J0057 | cloud | open (after J0056) | – | – | 022 upload · 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) |  |
 
 Recently finished:
 
+- J0055 done: 025: full rough v02 (every frame fills 16:9, drop text/annotated plates, push on static holds, rows 28/30, sheets) (done)
 - J0051 done: 025: pool licence check + full rough v01 (024 v03 rules) for Claude review (done)
 - J0050 done: 025: Omni Orbit beats (cold, wheel, Wed Short night) for Claude PASS (done)
 - J0049 done: 024: thumb B v02 (grade, flares, crop); A and C passed (abc_v02: B regraded in float, flares out, tighter limb crop; A and C copied from abc_v01; sheet abc_v02/light_speed_thumbs_v02_small_size_check.jpg)
@@ -25,4 +25,3 @@ Recently finished:
 - J0045 done: 024: full rough v02 (Claude v01 review: 5 assembler fixes) (024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review)
 - J0044 done: 024: assemble full rough v01 (Venus v04 rules) for Claude review (024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words.)
 - J0043 done: 024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS) (c1e5ff2: both takes ok (10 s, Vertex global, free credit). Sheets in 04_Generated-Clips/01_Raw/omni_v01/sheets/ for Claude PASS. Media on the Mini only.)
-- J0042 done: 024: harvest v01 + render code graphics (licence-checked pool) (Pool nasa_pool_v01/024_harvest_v01 (22 items, all PD or CC BY-SA 3.0 IGO, titles checked). Manifest _evidence/light_speed_harvest_v01.json; gaps _evidence/light_speed_harvest_v01_gaps.md. Code graphics v02 at row length (mapdrift 13, contraction 17, energy 17, gammaclocks 19, lightclock 22, starfield 23 s) in graphics_v02/; the rest in graphics_v01. Row 11: DC-8 only (Hafele-Keating PD not confirmed).)
