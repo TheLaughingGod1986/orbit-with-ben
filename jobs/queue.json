@@ -1,5 +1,5 @@
 {
-  "next_id": 55,
+  "next_id": 56,
   "jobs": [
     {
       "id": "J0001",
@@ -2241,6 +2241,32 @@
       "history": [
         {
           "at": "2026-10-08T15:15Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0055",
+      "title": "025: full rough v02 (panorama fill, push on static holds, rows 28/30 cuts, sheets force-added)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Claude on 025 full rough v01 (58e441f). Build v02 with these fixes and post `full_rough_v02_pack`. **Force-add the sheets this time:** the v01 commit has no `frames/row_###.jpg`, `per_row_sheet`, frame0, 0–8 s, end or Omni sheets, so Claude can't review the picture.\n\n1. **Open and bookend panorama (PIA22909): take option (a).**\n   - Tighten the pan window to the filled band so no black mosaic gap or grey tile is ever in frame, at upscale ≤2.35× (asserted).\n   - Keep it panning from frame 0, and keep the row 32 bookend the same pan, further along.\n   - If the filled band can't give a clean 16:9 at ≤2.35×, use option (b): a fully filled ground-level Mars panorama from the pool for **both** the open and the bookend. Never a whole globe.\n2. **Static holds.** Give each a slow push or pan (3–6% over the shot): cut 64 (row 21, PIA22520), cut 96 (row 28, PIA25739) and the 1 s freeze at 26.9 s (row 5, PIA25739). Re-run freezedetect and get 0 freezes over 0.8 s.\n3. **Rows 28 and 30 WARN.** Move those cuts to the nearest sentence-end pause (≥0.25 s) within ±1.5 s. If there's none, keep them between words and list them in the pack.\n4. Everything else stays as v01: Omni spans, reuse ≤2, cuts in pauses, -14.3 LUFS, the hold and fade.\n\nRender detached and post the pack.\n",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T15:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T15:27Z",
           "by": "claude",
           "what": "added"
         }

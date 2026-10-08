@@ -8,6 +8,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0052 | mini | open | – | – | AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) |  |
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0054 | mini | open | – | – | Mini disk: move aired films' working media + superseded cuts to the NAS (checksummed), target 40 GB free |  |
+| J0055 | mini | open | – | – | 025 edit · 025: full rough v02 (panorama fill, push on static holds, rows 28/30 cuts, sheets force-added) |  |
 
 Recently finished:
 
