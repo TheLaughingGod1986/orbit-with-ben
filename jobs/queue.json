@@ -1,5 +1,5 @@
 {
-  "next_id": 43,
+  "next_id": 44,
   "jobs": [
     {
       "id": "J0001",
@@ -1770,6 +1770,32 @@
       "ref": "",
       "film": "024",
       "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T09:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T09:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0043",
+      "title": "024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Generate the two Orbit Omni beats for 024 (SHOT_LIST rows 15 and 27; the \"Omni queue\" section of 02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/07_Edit-Project/SHOT_LIST_v01.md).\n\n- Vertex `global`, `orbit_shot=True`, a sidecar from ORBIT_REF. Free Vertex only, £5 floor. One take each, 8 s.\n- Row 15 `orbit_lightclock_omni_v01`: starfield start frame.\n- Row 27 `orbit_returns_omni_v01`: ISS night-city start frame (part of Earth, never a whole globe).\n- No planet as a start frame.\n- Commit frame sheets (text only plus jpg sheets) for Claude PASS. If a take fails, note the fallback the row names. Do not regenerate past one retry without asking on #99.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
       "after": "",
       "eta_min": 120,
       "status": "open",
