@@ -1,5 +1,5 @@
 {
-  "next_id": 45,
+  "next_id": 46,
   "jobs": [
     {
       "id": "J0001",
@@ -1880,6 +1880,32 @@
         }
       ],
       "done_ref": "b758d7e"
+    },
+    {
+      "id": "J0045",
+      "title": "024: full rough v02 (Claude v01 review: 5 assembler fixes)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Claude review of 024 full_rough_v01 (pack b758d7e): FAIL, with 5 fixes, all assembler-only. Write `_assemble_light_speed_full_v02.py` from v01, re-render, and post `full_rough_v02_pack`.\n\n1. **Frame 0 is too dim and too still.** frame0_sheet shows sparse grey dots with no visible motion by 1 s. Start row 1 from the part of `starfield` where the field is crowding forward and blue (about 12 s or later in the render, like the 261 s and 294 s frames). The frame0 sheet must show the motion by 1 s.\n2. **Corner bug in frame.** The \"Earth from the Space Station\" logo is visible top-left in the NHQ_2019_0626 spans at 247.3, 422.9, 430.5 and 436.8 s. Crop past it (upscale ≤2.35×) or use a span or still without it. No text in frame.\n3. **Row 23: swap `sts33-17-005a`.** It's a close-up portrait of Manley \"Sonny\" Carter, who died in 1991. Don't use a named astronaut's face as generic B-roll. Use `iss019e018483` (Expedition 19, crew at work) or another NASA ISS interior where no single face is the subject.\n4. **Rows 27/28: the 1.82 s `iss035e017673` cut.** Drop it. Start the row 28 DC-8 shot at the 317.05 s pause, slightly ahead of its line.\n5. **Rows 38–39 end on 7 starfield jump cuts** (461–491 s). Different offsets of one render read as glitches, not cuts.\n   - Row 38: end on the ISS dawn limb, holding it to 464.98 s. Drop the starfield cut at 461.4.\n   - Row 39: render `starfield --seconds 27` and play it **continuously** from 464.98 s to the end (VO out at 487.54, then the 2.5 s hold and 1 s fade), with a slow push-in and **no cuts**. The 6 s cap is waived for this bookend return only, as with the Venus Maat Mons bookends.\n\nUnchanged and passing:\n- Omni trims.\n- The reuse cap.\n- Upscale (2.1× max).\n- Cuts in pauses.\n- -14.3 LUFS.\n- Chapter cards.\n- Black Marble used in edit only.\n\nRe-run clip_check and align, and include the frame0 and end sheets.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T10:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T10:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ]
 }
