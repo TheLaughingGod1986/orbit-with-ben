@@ -1,5 +1,5 @@
 {
-  "next_id": 35,
+  "next_id": 36,
   "jobs": [
     {
       "id": "J0001",
@@ -1414,6 +1414,32 @@
       "history": [
         {
           "at": "2026-10-08T02:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0035",
+      "title": "027: commit VO words.json + chapters_index (text only) for the shot list",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "027 (What If Earth Stopped Spinning?): the long VO passed on 6002694271, but none of its timing files are in git. There is no `027/02_Voiceover/` folder, so Claude can't time the shot list.\n\nCommit the VO's text files from the Mini into `02_Video-Projects/027_What-If-Earth-Stopped-Spinning/02_Voiceover/`, the same set that 026 has:\n- `words.json`\n- `chapters_index.json`\n- `vo_check.json` and `vo_check.txt`\n- `script_whisper_diff.json`\n- `stt/` (srt, transcript, meta)\n- the TAKE or credits json, if one exists\n- a `VO_STATUS.md` line\n\n**No audio** (wav/mp3 stay on the Mini). Post the commit on #99, and Claude writes the 027 SHOT_LIST v01.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T02:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T02:54Z",
           "by": "claude",
           "what": "added"
         }

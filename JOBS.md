@@ -7,6 +7,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0033 | mini | open | – | – | 022 thumbs · Sun 022 Shorts: covers + upload packages for Mon 19 / Wed 21 / Fri 23 (dry-run only) |  |
 | J0034 | mini | open | – | – | 023 upload · Venus 023: upload package from cut v04 (dry-run only) |  |
+| J0035 | mini | open | – | – | 027: commit VO words.json + chapters_index (text only) for the shot list |  |
 
 Recently finished:
 
