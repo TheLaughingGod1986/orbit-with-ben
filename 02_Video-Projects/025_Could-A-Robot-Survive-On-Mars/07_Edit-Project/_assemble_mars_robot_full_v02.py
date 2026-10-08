@@ -57,7 +57,7 @@ c=dict(quad='c')
 # (row, VO in from SHOT_LIST_v02, [sources]); a source is a pool path or (path, opts). One cut per source.
 ROWS=[
  ('1',0.12,[(PAN,dict(pan=(0.0,0.30),box=PAN_BOX))]),
- ('2',6.08,['opp_deck/PIA07372.jpg']),
+ ('2',6.08,[('opp_deck/PIA07372.jpg',dict(box=(0.12,0.12,0.88,0.88)))]),
  ('3',10.48,['gale_desert/PIA22210.jpg','gale_desert/PIA21268.jpg']),
  ('4',19.08,['frost/PIA11132.jpg','opp_deck/PIA15115.jpg']),
  ('5',26.28,[('gale_desert/PIA20284.jpg',dict(box=(0.0,0.05,0.35,0.95))),'dust/PIA17759.jpg','open_pan/PIA19109.jpg','open_pan/PIA18098.jpg']),
@@ -68,10 +68,10 @@ ROWS=[
  ('10',98.06,['dust/PIA11798.jpg','spirit/PIA12457.jpg','wheel/PIA21486.jpg']),
  ('11',111.50,['dsn/PIA17792.jpg','rovers_wait/PIA26310.jpg','rovers_wait/PIA25681.jpg','dsn/PIA26717.jpg']),
  ('12',133.76,['spirit/PIA09090.jpg','dusk_plain/PIA15024.jpg','dusk_plain/PIA26673.gif']),
- ('13',144.96,['spirit/PIA07882.jpg','open_pan/PIA20328.jpg','dusk_plain/PIA19400.jpg',(COLD,v(4.0,max=5.0))]),
- ('14',161.40,['spirit/PIA12142.jpg',('spirit/PIA12203.jpg',dict(quad='tl')),'spirit/PIA12337.jpg','spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
+ ('13',144.96,['spirit/PIA07882.jpg','open_pan/PIA20328.jpg',('dusk_plain/PIA19400.jpg',dict(pct=0.12)),(COLD,v(4.0,max=5.0,push=0.05))]),
+ ('14',161.40,[('spirit/PIA12142.jpg',dict(box=(0.0,0.3,1.0,1.0))),('spirit/PIA12203.jpg',dict(quad='tl')),'spirit/PIA12337.jpg','spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
  ('15',186.38,['spirit/PIA07371.jpg','spirit/PIA01907.jpg','tracks/PIA16933.jpg']),
- ('16',199.44,['phoenix/PIA13804.jpg','phoenix/PIA10665.jpg','phoenix/PIA22223.jpg',('phoenix/PIA13804.jpg',c),'dust/PIA12120.jpg']),
+ ('16',199.44,['phoenix/PIA10664.jpg','phoenix/PIA13804.jpg','phoenix/PIA10665.jpg','phoenix/PIA22223.jpg',('phoenix/PIA13804.jpg',c)]),
  ('17',225.06,['rover_work/PIA24542.jpg','rovers_wait/PIA24264.jpg']),
  ('18',231.68,['open_pan/PIA18093.jpg','open_pan/PIA16122.jpg']),
  ('19',239.06,['dust/PIA10128.jpg','dust/PIA11799.jpg','dust/PIA20329.jpg']),
