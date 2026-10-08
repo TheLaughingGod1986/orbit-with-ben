@@ -2405,13 +2405,13 @@
       "stage": "upload",
       "after": "J0056",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-10-08T18:03Z",
-      "eta": "2026-10-08T19:03Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T16:22Z",
-      "result": "",
+      "result": "Final OK given 8 Oct: covers PASS, Shorts gate PASS, vidIQ row waived by Claude; upload queued as its own Mini job",
       "history": [
         {
           "at": "2026-10-08T16:22Z",
@@ -2422,6 +2422,11 @@
           "at": "2026-10-08T18:03Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T18:03Z",
+          "by": "claude",
+          "what": "done: Final OK given 8 Oct: covers PASS, Shorts gate PASS, vidIQ row waived by Claude; upload queued as its own Mini job"
         }
       ]
     },

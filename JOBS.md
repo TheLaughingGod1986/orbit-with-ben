@@ -9,7 +9,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0054 | mini | open | – | – | Mini disk: move aired films' working media + superseded cuts to the NAS (checksummed), target 40 GB free |  |
-| J0057 | cloud | claimed | claude | 2026-10-08T19:03Z | 022 upload · 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) |  |
 | J0058 | mini | open | – | – | 025 edit · 025: rough v03, polish pass (Claude's sheet review of v02d) + new polish gate |  |
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
 | J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
@@ -17,6 +16,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0057 done: 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) (Final OK given 8 Oct: covers PASS, Shorts gate PASS, vidIQ row waived by Claude; upload queued as its own Mini job)
 - J0056 done: 022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload) (Covers+previews+plates for mon19/wed21/fri23 committed; Shorts gate PASS x3; gate:episode FAIL only on prebuild_vidiq sign-off (Claude's call). Nothing uploaded.)
 - J0055 done: 025: full rough v02 (every frame fills 16:9, drop text/annotated plates, push on static holds, rows 28/30, sheets) (done)
 - J0052 done: AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) (Readings live (EL, Vertex, Flow 52 baseline); daily 08:30 launchd; Flow refill auto-recorded as --total (496c59e); spend lines in VO/Omni/Flow UI. Cursor read waits on Ben signing in to cursor.com in CDP Chrome :9222.)
@@ -26,4 +26,3 @@ Recently finished:
 - J0048 done: 024: upload package dry-run (v03 + thumbs abc_v01) (024 package built, vitest youtube-package 6/6, youtube:package dry run ok (publishAt 2026-11-01T18:00Z, sha e0f2ba6d, 19 tags, pinned, trailer 41.6 s). No upload.)
 - J0047 done: 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 (024 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 + small-size sheet; awaiting Claude PASS)
 - J0046 done: 024: final picture v03 (row 1 one continuous starfield span) (full_rough_v03: row 1 one continuous starfield span from 12 s (0-6.50 s); frame0_sheet + sheet_0_8s in full_rough_v03_pack (4f7de1e); 107 cuts, -14.3 LUFS, clip_check PASS)
-- J0045 done: 024: full rough v02 (Claude v01 review: 5 assembler fixes) (024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review)
