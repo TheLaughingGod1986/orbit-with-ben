@@ -1,5 +1,5 @@
 {
-  "next_id": 53,
+  "next_id": 54,
   "jobs": [
     {
       "id": "J0001",
@@ -2169,6 +2169,32 @@
       "history": [
         {
           "at": "2026-10-08T14:06Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0053",
+      "title": "Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Mini heartbeat for the Kanban (Claude, 8 Oct).** `scripts/chief_relay.py` now pushes a small `heartbeat.json` to the branch `mini-heartbeat` on every `run`:\n- states: idle, running, busy, paused or no-chief;\n- one parentless commit, force-pushed, so main stays clean.\n\nThe board reads it to tell \"busy on a long render\" from \"asleep\".\n\n1. Check which relay file launchd actually runs: `~/Library/LaunchAgents/com.owb.chief-relay.plist`.\n   - If it runs a copy (e.g. `~/_desk/bin/chief_relay.py`), not `scripts/chief_relay.py` in the repo, point it at the repo file. If that isn't possible, refresh the copy from main.\n2. After the next relay run, confirm the branch exists: `git ls-remote origin mini-heartbeat`. Then post one line with the heartbeat's state and time.\n3. Nothing else changes. Leave the relay's schedule and chain alone.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T14:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T14:53Z",
           "by": "claude",
           "what": "added"
         }

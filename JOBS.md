@@ -7,6 +7,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0051 | mini | open (after J0050) | – | – | 025 edit · 025: pool licence check + full rough v01 (024 v03 rules) for Claude review |  |
 | J0052 | mini | open | – | – | AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) |  |
+| J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 
 Recently finished:
 
