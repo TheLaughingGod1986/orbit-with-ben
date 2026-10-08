@@ -1,5 +1,5 @@
 {
-  "next_id": 68,
+  "next_id": 69,
   "jobs": [
     {
       "id": "J0001",
@@ -2822,6 +2822,32 @@
           "at": "2026-10-08T20:58Z",
           "by": "cursor",
           "what": "done: done"
+        }
+      ]
+    },
+    {
+      "id": "J0068",
+      "title": "025 Mars robot: Ben's notes, swap the 2:54 image + 025's own music bed (v03d + phone copy)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's notes on 025 v03c (board tick, 8 Oct 22:39).** He wants two changes. Make **v03d** from the v03c build, and change nothing else.\n\n1. **2:54 \"This image looks bad.\"** That's cut 39, row 14, 170.73–175.97 s: PIA12337, the CAD \"Computer Reconstruction of Spirit Predicament\". It's a flat brown background, 1094 px wide and upscaled 1.84×.\n   - Replace it with **PIA12102**, \"Spirit Photographs Her Underbelly, Sol 1925\". It's a real photo of the stuck wheels and isn't used anywhere else in the cut.\n   - If PIA12102 can't fill 16:9 at an upscale of 2.35× or less, use **PIA12205** (HiRISE, \"Orbital View of Spirit at Troy\").\n   - Same timing; still_motion push; jitter ≤ 0.35 px; fill and polish gates PASS for the new cut. Drop PIA12337 from the long.\n2. **\"Are we sure we have not used this background music before?\"** Ben's right. v03c's bed is `OWB UAT/jupiter-music.mp3`, the same bed the 023 and 024 cuts use. Every earlier film (013, 021, 022) had its own `<film>_score_bed_v01`.\n   - Make 025's own bed with `04_Audio/tools/generate_music_bed.py` (ElevenLabs API; no website generation): `--project mars-robot --length-ms 500000 --out-dir 02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music`.\n   - Prompt (pass as `--prompt`): \"Instrumental cinematic space documentary underscore for Orbit with Ben, Mars robot film. Cold dusty red plains and a small machine that refuses to stop: lonely, patient, quietly brave, with a slow ache as the power fades. Soft low strings, muted felt piano, warm analog pads, sparse mechanical ticks kept very quiet, thin wind texture. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings. Vast quiet scale, room for British narration. No vocals, no drums, no EDM, no trailer hit.\"\n   - **Credit guard.** Read ElevenLabs credits left first. Don't generate if fewer than 30,000 would be left afterwards (voice work comes first). Instead, block this job with \"music bed: needs Claude's call on credits\".\n   - After generating, record credits before and after in `04_Audio/elevenlabs_ledger.jsonl` (stem `mars-robot_score_bed_v01`). One generation only. If it sounds wrong, post it; don't re-roll.\n   - Mix exactly as v03c (≈ −14 LUFS, bed under the VO, music for the full runtime, fade at the end).\n3. **Deliver:**\n   - `OWB UAT/025_MarsRobot_full_rough_v03d.mp4`;\n   - **`OWB UAT/025_MarsRobot_v03d_PHONE.mp4`**, the same phone encode as J0067 (it's the file Ben opens), and confirm it's uploaded;\n   - a pack with the new cut's frame and the gates.\n4. Post on #99 for Claude's check. Don't delete or move anything in OWB UAT.\n",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T21:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T21:50Z",
+          "by": "claude",
+          "what": "added"
         }
       ]
     }
