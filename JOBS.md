@@ -12,10 +12,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
 | J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 | J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
-| J0062 | mini | claimed | cursor | 2026-10-08T20:08Z | 025 edit · 025: rough v03b (201 s swap to PIA19400, 393 s crop, two polish-gate tweaks), then to Ben |  |
 
 Recently finished:
 
+- J0062 done: 025: rough v03b (201 s swap to PIA19400, 393 s crop, two polish-gate tweaks), then to Ben (v03b pack b80aeb8 (OWB UAT/025_MarsRobot_full_rough_v03b.mp4, sha e6a1312a, 490.2 s, -14.3 LUFS, polish PASS, clip_check 0). Fill gate flags row 16 PIA19400 5.3% = dark foreground ridge, not fill: Claude to rule in sheet pass. Dark-static noise trigger + regression test ride J0059 per #6066936759.)
 - J0058 done: 025: rough v03, polish pass (Claude's sheet review of v02d) + new polish gate (v03 rendered + pack 63c3051 for Claude review; polish gate floor/WARN per #6066196876 (bb53fa3); still_motion.py standard (25f42b9). Open: 8 polish FAILs + fill FAIL PIA25739 row 16 for Claude to rule.)
 - J0057 done: 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) (Final OK given 8 Oct: covers PASS, Shorts gate PASS, vidIQ row waived by Claude; upload queued as its own Mini job)
 - J0056 done: 022 Sun: commit Short cover previews + run gate:episode/Shorts gate for Claude's early final OK (no upload) (Covers+previews+plates for mon19/wed21/fri23 committed; Shorts gate PASS x3; gate:episode FAIL only on prebuild_vidiq sign-off (Claude's call). Nothing uploaded.)
@@ -25,4 +25,3 @@ Recently finished:
 - J0050 done: 025: Omni Orbit beats (cold, wheel, Wed Short night) for Claude PASS (done)
 - J0049 done: 024: thumb B v02 (grade, flares, crop); A and C passed (abc_v02: B regraded in float, flares out, tighter limb crop; A and C copied from abc_v01; sheet abc_v02/light_speed_thumbs_v02_small_size_check.jpg)
 - J0048 done: 024: upload package dry-run (v03 + thumbs abc_v01) (024 package built, vitest youtube-package 6/6, youtube:package dry run ok (publishAt 2026-11-01T18:00Z, sha e0f2ba6d, 19 tags, pinned, trailer 41.6 s). No upload.)
-- J0047 done: 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 (024 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 + small-size sheet; awaiting Claude PASS)

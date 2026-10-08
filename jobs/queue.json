@@ -2566,13 +2566,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T19:08Z",
-      "eta": "2026-10-08T20:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T18:35Z",
-      "result": "",
+      "result": "v03b pack b80aeb8 (OWB UAT/025_MarsRobot_full_rough_v03b.mp4, sha e6a1312a, 490.2 s, -14.3 LUFS, polish PASS, clip_check 0). Fill gate flags row 16 PIA19400 5.3% = dark foreground ridge, not fill: Claude to rule in sheet pass. Dark-static noise trigger + regression test ride J0059 per #6066936759.",
       "history": [
         {
           "at": "2026-10-08T18:35Z",
@@ -2593,8 +2593,14 @@
           "at": "2026-10-08T19:08Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T19:08Z",
+          "by": "cursor",
+          "what": "done: v03b pack b80aeb8 (OWB UAT/025_MarsRobot_full_rough_v03b.mp4, sha e6a1312a, 490.2 s, -14.3 LUFS, polish PASS, clip_check 0). Fill gate flags row 16 PIA19400 5.3% = dark foreground ridge, not fill: Claude to rule in sheet pass. Dark-static noise trigger + regression test ride J0059 per #6066936759."
         }
-      ]
+      ],
+      "done_ref": "b80aeb8"
     }
   ],
   "focus": [
