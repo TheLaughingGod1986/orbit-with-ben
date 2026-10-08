@@ -7,10 +7,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0033 | mini | open | – | – | 022 thumbs · Sun 022 Shorts: covers + upload packages for Mon 19 / Wed 21 / Fri 23 (dry-run only) |  |
 | J0034 | mini | open | – | – | 023 upload · Venus 023: upload package from cut v04 (dry-run only) |  |
-| J0035 | mini | claimed | cursor | 2026-10-08T03:24Z | 027: commit VO words.json + chapters_index (text only) for the shot list |  |
 
 Recently finished:
 
+- J0035 done: 027: commit VO words.json + chapters_index (text only) for the shot list (done)
 - J0032 done: 028: VO take of the script master (after the claims check) (028 VO star_coming_vo_v01 PASS (469.4 s, Scribe 96.87%); listen at ~281.9 s 'calculations suggest')
 - J0031 done: 028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md) (Gemini pass complete: e48dbc1 (24 rows, 4 and 13 quoted) + ecacb70 (row 15 quoted from Dybczynski 2002 p.287; row 17 FLAG, no impact figure in Garcia-Sanchez 2001; Fernandez-Puig 2026 §4.4 quote on rows 1/10, Table 1 mass on row 4). Row 16 Kepler check OK. Claude to apply row 17 wording as v02.)
 - J0030 done: Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) (Wed 21 Short v01 built: 24.2 s, gate PASS no warnings (motion 44.85). Parker (SVS 14741) probe-tracked open + loop, SVS 14036 close-up and shield-to-Sun under the title, SVS 10925 SDO close-up for 'no ground'. No Orbit. NASA credits in meta. Not uploaded. Awaiting Claude's final OK. Thread 6048201044.)
@@ -20,4 +20,3 @@ Recently finished:
 - J0026 done: Sun 022 Fri 23 Short v02: visible-light disc, sea crop, stray line (Fri 23 Short v02: PIA21218 disc (young grade -> as shot at 'brightening'), sea band cropped, red line gone; gate PASS no warnings (motion 14.58). Frames 1b6096f. Not uploaded.)
 - J0025 done: Sun 022 Mon 19 Short v02: moving open, fill frame, clean climb (Mon 19 Short v02: 13778 moving open+loop, 9:16 fill, clean vertical climb; gate PASS no warnings (motion 10.65); not uploaded)
 - J0024 done: Sun 022 v05: row 49 off the sunspot picture (done)
-- J0023 done: Sun 022 upload text: description, chapters, credits, captions, pinned comment (Upload package draft in 022/11_Upload-Package (description, chapters, credits, captions, tags, pinned comment, draft manifest).)

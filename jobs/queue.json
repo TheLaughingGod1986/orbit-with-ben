@@ -1430,13 +1430,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T03:04Z",
-      "eta": "2026-10-08T03:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T02:54Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-08T02:54Z",
@@ -1447,6 +1447,11 @@
           "at": "2026-10-08T03:04Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T03:05Z",
+          "by": "cursor",
+          "what": "done: done"
         }
       ]
     }
