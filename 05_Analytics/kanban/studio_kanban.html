@@ -483,8 +483,8 @@ function renderSource(){
 }
 
 // ---------- AI spend month (board/credits, written by the studio agent from scripts/ai_spend.py) ----------
-const POOL_NAME = {flow:"Flow credits", vertex:"Google Cloud credit", elevenlabs:"ElevenLabs", claude:"Claude"};
-const num = (v, unit) => v==null||v==="" ? "—" : unit==="GBP" ? "£"+Number(v).toFixed(2) : Math.round(Number(v)).toLocaleString("en-GB");
+const POOL_NAME = {cursor:"Cursor included usage", flow:"Flow credits", vertex:"Google Cloud credit", elevenlabs:"ElevenLabs", claude:"Claude"};
+const num = (v, unit) => v==null||v==="" ? "—" : unit==="GBP" ? "£"+Number(v).toFixed(2) : unit==="USD" ? "≈£"+Math.round(Number(v)*0.75)+" ($"+Number(v).toFixed(0)+")" : Math.round(Number(v)).toLocaleString("en-GB");
 function spark(series){
   const pts = (series||[]).filter(p=>p[1]!=null);
   if(pts.length<2) return "";
@@ -500,22 +500,22 @@ function spark(series){
 }
 function renderSpend(){
   const c = fromDb.credits;
-  const per = (c && c.period) || {start:"2026-10-12", end:"2026-11-11", checkIn:"2026-11-08"};
-  const s0=pd(per.start), e0=pd(per.end), ci=pd(per.checkIn), t=today();
-  $("spendWhen").innerHTML = t < s0 ? `Measuring from <b>${fd(s0)}</b>, when the Google credits refill · check-in <b>${fd(ci)}</b>`
-    : `Day <b>${Math.min(days(t)-days(s0)+1, 31)}</b> of the month from ${fd(s0)} to ${fd(e0)} · check-in <b>${fd(ci)}</b> <span class="${cdCls(ci)}">(${cd(ci)})</span>`;
-  const plans = (c && c.plans) || [], fx = (c && c.fx) || {};
+  const per = (c && c.period) || {start:"2026-10-08", end:"2026-11-12", checkIn:"2026-11-07"};
+  const plans = (c && c.plans) || [], fx = (c && c.fx) || {}, ci = pd(per.checkIn);
+  const cycles = plans.filter(p=>p.cycleStart).map(p=>`${esc(p.name.replace(/ \(.*\)$/,""))} from <b>${fd(pd(p.cycleStart))}</b>`);
+  $("spendWhen").innerHTML = (cycles.length ? `Each plan counted from its own reset: ${cycles.join(", ")}` : `Measuring from ${fd(pd(per.start))}`)
+    + ` · check-in <b>${fd(ci)}</b> <span class="${cdCls(ci)}">(${cd(ci)})</span>`;
   const usd = v => "$" + Number(v).toLocaleString("en-GB",{minimumFractionDigits:Number(v)%1?2:0, maximumFractionDigits:2});
-  const gbp = v => v==null ? "" : "≈£" + Math.round(Number(v));
-  const sub = (cls, name, u, g, extra) => `<div class="sub-i ${cls}"><div class="n">${name}</div><div class="p">${u}</div><div class="g">${g}${extra?` · ${extra}`:""}</div></div>`;
-  const totU = plans.reduce((a,p)=>a+Number(p.usd||0),0), totG = plans.reduce((a,p)=>a+Number(p.gbp||0),0), tgt = c && c.target;
-  $("subs").innerHTML = plans.length ? plans.map(p=>sub("", esc(p.name), p.usd!=null?usd(p.usd):"£"+esc(p.gbp), p.usd!=null?gbp(p.gbp)+" + VAT":"", esc(p.tier||""))).join("")
-    + sub("tot", "Now, a month", usd(totU), gbp(totG)+" + VAT", "")
-    + (tgt && (tgt.usd||tgt.gbp) ? sub("tgt", "Target: "+esc(tgt.label||""), tgt.usd!=null?usd(tgt.usd):"£"+esc(tgt.gbp), tgt.usd!=null?gbp(tgt.gbp)+" + VAT":"", "") : "")
+  const sub = (cls, name, main, small) => `<div class="sub-i ${cls}"><div class="n">${name}</div><div class="p">${main}</div><div class="g">${small}</div></div>`;
+  const totG = plans.reduce((a,p)=>a+Number(p.gbp||0),0), tgt = c && c.target;
+  $("subs").innerHTML = plans.length ? plans.map(p=>sub("", esc(p.name), `£${Math.round(p.gbp)}`,
+      [p.usd!=null?`list ${usd(p.usd)}`:"", esc(p.tier||""), p.cycleStart?`renews ${fd(pd(p.cycleStart))}`:""].filter(Boolean).join(" · "))).join("")
+    + sub("tot", "Now, a month", `£${totG}`, "including VAT")
+    + (tgt && tgt.gbp ? sub("tgt", "Target", `£${Math.round(tgt.gbp)}`, esc(tgt.label||"")) : "")
     : `<div class="empty">Subscriptions load from the studio agent's next update.</div>`;
-  $("subsNote").textContent = plans.length ? `Published list prices, checked ${fx.checked?fd(pd(fx.checked)):"8 Oct"}. These plans bill in dollars; the £ figures are rough conversions at about £${fx.gbpPerUsd||0.75} to the dollar, and UK checkout usually adds ${Math.round((fx.vat||0.2)*100)}% VAT. Your bank statement is the real figure.` : "";
+  $("subsNote").textContent = plans.length ? `Pounds including ${Math.round((fx.vat||0.2)*100)}% VAT, converted from each plan's published dollar price (checked ${fx.checked?fd(pd(fx.checked)):"8 Oct"}) at about £${fx.gbpPerUsd||0.75} to the dollar. Your bank statement is the real figure. The check-in is the day before Cursor renews, so it can be cancelled in time.` : "";
   const pools = (c && c.pools) || {};
-  const order = ["flow","vertex","elevenlabs","claude"].filter(k=>pools[k]);
+  const order = ["cursor","flow","vertex","elevenlabs","claude"].filter(k=>pools[k]);
   $("pools").innerHTML = order.length ? order.map(k=>{
     const p=pools[k], L=p.latest||{}, F=p.first||{};
     if(k==="claude"){
@@ -529,11 +529,11 @@ function renderSpend(){
       <div class="big">${num(L.left,p.unit)} <small>left${total!=null?" of "+num(total,p.unit):""}</small></div>
       ${spark(p.series)}
       <div class="why">${used!=null&&used>=0?`Used <b>${num(used,p.unit)}</b> since ${esc(fd(pd(F.at)))} · `:""}${p.spent_logged?`logged spends ${num(p.spent_logged,p.unit)} · `:""}read ${esc(fw(L.at))}${L.by?` by ${esc(AGENT(L.by))}`:""}${L.note?` · ${esc(L.note)}`:""}</div></div>`;
-  }).join("") : `<div class="box" style="grid-column:1/-1"><div class="empty" style="padding:2px 0">No readings yet. The Mac mini records Flow, Google Cloud credit and ElevenLabs every day from ${fd(s0)}, and every take's cost as it is made. The figures appear here as they arrive.</div></div>`;
+  }).join("") : `<div class="box" style="grid-column:1/-1"><div class="empty" style="padding:2px 0">No readings yet. The Mac mini records Cursor, Flow, Google Cloud credit and ElevenLabs every day, and every take's cost as it is made. The figures appear here as they arrive.</div></div>`;
   const bf = (c && c.byFilm) || {}, films = Object.keys(bf).filter(f=>f!=="(none)");
   $("byFilmBox").hidden = !films.length;
   if(films.length){
-    const cols = ["flow","vertex","elevenlabs"].filter(k=>films.some(f=>bf[f][k]));
+    const cols = ["flow","vertex","elevenlabs","cursor"].filter(k=>films.some(f=>bf[f][k]));
     $("byFilm").innerHTML = `<table><thead><tr><th>Film</th>${cols.map(k=>`<th>${POOL_NAME[k]}</th>`).join("")}</tr></thead><tbody>`
       + films.map(f=>{ const [ch,id]=f.split(":"); return `<tr><td><span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id||"")}</td>${cols.map(k=>`<td>${bf[f][k]?num(bf[f][k], pools[k]?pools[k].unit:"credits"):"—"}</td>`).join("")}</tr>`; }).join("")
       + `</tbody></table>`;

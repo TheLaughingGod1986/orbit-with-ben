@@ -37,8 +37,8 @@ Before topic lock: at least three big education/space neighbours (≈1M+ views) 
 
 **Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
 
-**AI spend month (Ben, 8 Oct 2026; 12 Oct to 11 Nov, check-in Sun 8 Nov).** Ben wants to know whether both channels can run on a ~£90 Claude plan, a ~£90 Google plan and ElevenLabs. So for both channels, every credit reading and every spend goes into `scripts/ai_spend.py` (ledger `05_Analytics/ai_spend/ledger.jsonl`), and the Kanban's AI spend panel shows it:
-- **Readings:** record a balance (`record --pool flow|vertex|elevenlabs --left N [--total N]`) at least once a day, and whenever you read one before or after a part.
+**AI spend month (Ben, 8 Oct 2026; each plan from its own reset: Cursor 8 Oct, Google 12 Oct; check-in Sat 7 Nov, before Cursor renews).** Ben wants to know whether both channels can run on a ~£90 Claude plan, a ~£90 Google plan and ElevenLabs. So for both channels, every credit reading and every spend goes into `scripts/ai_spend.py` (ledger `05_Analytics/ai_spend/ledger.jsonl`), and the Kanban's AI spend panel shows it:
+- **Readings:** record a balance (`record --pool cursor|flow|vertex|elevenlabs --left N [--total N]`) at least once a day, and whenever you read one before or after a part.
 - **Spends:** record each take or VO as you make it (`spend --pool … --amount … --film HOS:006|OWB:025 --what …`). Flow is credits, Vertex is GBP and ElevenLabs is credits.
 - **Claude:** note a usage-limit hit with `record --pool claude --note …`.
 

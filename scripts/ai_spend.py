@@ -12,8 +12,9 @@ AI Ultra credits refill on Mon 12 Oct. Every agent that reads a balance or spend
   python3 scripts/ai_spend.py report            # the month so far, per pool and per film
   python3 scripts/ai_spend.py doc               # the board/credits document (JSON) the Kanban page reads
 
-Pools and units: flow (Flow credits), vertex (GBP of Google Cloud credit), elevenlabs (characters/credits),
-claude (notes only, e.g. "hit the 5-hour limit"). `record` is a balance reading; `spend` is one use. Add --git to
+Pools and units: cursor (USD of Cursor's included usage left, from its dashboard), flow (Flow credits), vertex (GBP of
+Google Cloud credit), elevenlabs (credits), claude (notes only, e.g. "hit the 5-hour limit"). Each pool counts from its
+plan's reset date (plans.json poolStarts): Cursor from 8 Oct, Flow from 12 Oct. `record` is a balance reading; `spend` is one use. Add --git to
 commit the ledger line and push to main. Subscriptions and their prices live in 05_Analytics/ai_spend/plans.json.
 """
 from __future__ import annotations
@@ -30,7 +31,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / "05_Analytics" / "ai_spend"
 LEDGER = DIR / "ledger.jsonl"
 PLANS = DIR / "plans.json"
-POOLS = {"flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "note"}
+POOLS = {"cursor": "USD", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "note"}
 
 
 def now() -> str:
@@ -61,8 +62,9 @@ def append(row: dict, git: bool) -> None:
 
 def build_doc(rows: list[dict]) -> dict:
     plans = json.loads(PLANS.read_text()) if PLANS.exists() else {}
-    start = plans.get("period", {}).get("start", "2026-10-12")
-    rows = [r for r in rows if r.get("at", "") >= start]
+    start = plans.get("period", {}).get("start", "2026-10-08")
+    starts = plans.get("poolStarts", {})  # each plan is measured from its own reset (Ben, 8 Oct)
+    rows = [r for r in rows if r.get("at", "") >= starts.get(r.get("pool"), start)]
     pools = {}
     for pool, unit in POOLS.items():
         reads = [r for r in rows if r["pool"] == pool and r["kind"] == "record"]
@@ -79,6 +81,7 @@ def build_doc(rows: list[dict]) -> dict:
             "spent_logged": round(sum(float(r.get("amount") or 0) for r in spends), 2),
             "series": [[r["at"], r.get("left")] for r in reads if r.get("left") is not None][-120:],
             "notes": [{"at": r["at"], "note": r.get("note", ""), "by": r.get("by", "")} for r in reads if pool == "claude"][-20:],
+            "since": starts.get(pool, start),
         }
     by_film: dict = defaultdict(lambda: defaultdict(float))
     for r in rows:
