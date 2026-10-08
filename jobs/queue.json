@@ -2441,10 +2441,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T18:08Z",
-      "eta": "2026-10-08T20:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T18:03Z",
       "result": "",
@@ -2458,6 +2458,11 @@
           "at": "2026-10-08T18:08Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T18:14Z",
+          "by": "cursor",
+          "what": "released: v03 render detached: tmux j0058-render, log ~/_desk/logs/j0058-render.log, done-file ~/_desk/logs/j0058-render.done. Commit 0bea439 runs polish_gate at the end (full_rough_v03_pack/polish_gate_v03.json). Next: when .done=0, read summary_v03.json + polish gate, force-add sheets, commit pack, post to Claude. Never start a second render."
         }
       ]
     },
