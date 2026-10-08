@@ -5,12 +5,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0046 | mini | claimed | cursor | 2026-10-08T13:08Z | 024 edit · 024: final picture v03 (row 1 one continuous starfield span) |  |
 | J0047 | mini | open | – | – | 024 thumbs · 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 |  |
 | J0048 | mini | open (after J0047) | – | – | 024 upload · 024: upload package dry-run (v03 + thumbs abc_v01) |  |
 
 Recently finished:
 
+- J0046 done: 024: final picture v03 (row 1 one continuous starfield span) (full_rough_v03: row 1 one continuous starfield span from 12 s (0-6.50 s); frame0_sheet + sheet_0_8s in full_rough_v03_pack (4f7de1e); 107 cuts, -14.3 LUFS, clip_check PASS)
 - J0045 done: 024: full rough v02 (Claude v01 review: 5 assembler fixes) (024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review)
 - J0044 done: 024: assemble full rough v01 (Venus v04 rules) for Claude review (024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words.)
 - J0043 done: 024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS) (c1e5ff2: both takes ok (10 s, Vertex global, free credit). Sheets in 04_Generated-Clips/01_Raw/omni_v01/sheets/ for Claude PASS. Media on the Mini only.)
@@ -20,4 +20,3 @@ Recently finished:
 - J0039 done: 029: lock script v02 (J0037 flags + quote check) (029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md)
 - J0038 cancelled: 029: VO take of the locked script master (after the claims check) ()
 - J0037 done: 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) (SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed)
-- J0036 done: Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude) (done)
