@@ -1772,13 +1772,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T09:51Z",
-      "eta": "2026-10-08T11:51Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T09:48Z",
-      "result": "",
+      "result": "Pool nasa_pool_v01/024_harvest_v01 (22 items, all PD or CC BY-SA 3.0 IGO, titles checked). Manifest _evidence/light_speed_harvest_v01.json; gaps _evidence/light_speed_harvest_v01_gaps.md. Code graphics v02 at row length (mapdrift 13, contraction 17, energy 17, gammaclocks 19, lightclock 22, starfield 23 s) in graphics_v02/; the rest in graphics_v01. Row 11: DC-8 only (Hafele-Keating PD not confirmed).",
       "history": [
         {
           "at": "2026-10-08T09:48Z",
@@ -1789,8 +1789,14 @@
           "at": "2026-10-08T09:51Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T09:54Z",
+          "by": "cursor",
+          "what": "done: Pool nasa_pool_v01/024_harvest_v01 (22 items, all PD or CC BY-SA 3.0 IGO, titles checked). Manifest _evidence/light_speed_harvest_v01.json; gaps _evidence/light_speed_harvest_v01_gaps.md. Code graphics v02 at row length (mapdrift 13, contraction 17, energy 17, gammaclocks 19, lightclock 22, starfield 23 s) in graphics_v02/; the rest in graphics_v01. Row 11: DC-8 only (Hafele-Keating PD not confirmed)."
         }
-      ]
+      ],
+      "done_ref": "4ce996c"
     },
     {
       "id": "J0043",

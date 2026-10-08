@@ -5,12 +5,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0042 | mini | claimed | cursor | 2026-10-08T11:51Z | 024 picture · 024: harvest v01 + render code graphics (licence-checked pool) |  |
 | J0043 | mini | open | – | – | 024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS) |  |
 | J0044 | mini | open (after J0042) | – | – | 024 edit · 024: assemble full rough v01 (Venus v04 rules) for Claude review |  |
 
 Recently finished:
 
+- J0042 done: 024: harvest v01 + render code graphics (licence-checked pool) (Pool nasa_pool_v01/024_harvest_v01 (22 items, all PD or CC BY-SA 3.0 IGO, titles checked). Manifest _evidence/light_speed_harvest_v01.json; gaps _evidence/light_speed_harvest_v01_gaps.md. Code graphics v02 at row length (mapdrift 13, contraction 17, energy 17, gammaclocks 19, lightclock 22, starfield 23 s) in graphics_v02/; the rest in graphics_v01. Row 11: DC-8 only (Hafele-Keating PD not confirmed).)
 - J0041 done: 028: verify Berski & Dybczynski comet-shower quote from the full paper (or FLAG for a pickup) (OK: all three quotes found verbatim in A&A full text (§3.3, §4) with URL in SOURCES row 7; no pickup needed)
 - J0040 done: 029: VO take of the locked script master v02 (029 VO betelgeuse_vo_v01: 515.2 s (8.6 min), LUFS -20.1 raw, Scribe 99.2% PASS; 6717 chars from the month's credits (57,018 left). words.json/chapters_index/stt committed. Dropped-word false alarm at 372.6 s checked and patched.)
 - J0039 done: 029: lock script v02 (J0037 flags + quote check) (029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md)
@@ -20,4 +20,3 @@ Recently finished:
 - J0035 done: 027: commit VO words.json + chapters_index (text only) for the shot list (done)
 - J0034 done: Venus 023: upload package from cut v04 (dry-run only) (done)
 - J0033 done: Sun 022 Shorts: covers + upload packages for Mon 19 / Wed 21 / Fri 23 (dry-run only) (3 covers + 3 Short packages; dry-runs PASS (Mon 19/Wed 21/Fri 23 10:30Z); relatedVideoId waits for Sun long id; youtube:package override fix)
-- J0032 done: 028: VO take of the script master (after the claims check) (028 VO star_coming_vo_v01 PASS (469.4 s, Scribe 96.87%); listen at ~281.9 s 'calculations suggest')
