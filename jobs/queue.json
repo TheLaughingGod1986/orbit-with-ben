@@ -1,5 +1,5 @@
 {
-  "next_id": 63,
+  "next_id": 64,
   "jobs": [
     {
       "id": "J0001",
@@ -2601,6 +2601,32 @@
         }
       ],
       "done_ref": "b80aeb8"
+    },
+    {
+      "id": "J0063",
+      "title": "025: rough v03c (two frames: 216 s annotation box, 398.5 s blotchy sky), then to Ben",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Claude's v03b sheet pass: row 16 at 201 s PIA19400 PASS (mark reviewed_ok, the dark ridge is scene); 393 s PIA24593 PASS. Fix: 216.3 s PIA12490 has a green box annotation drawn on the HiRISE frame, so crop it out (box clear of the square, <=2.35x) or swap for another orbital Phoenix/lander view without marks; 398.5 s PIA25739 right half is blotchy blurred sky like the 201 s frame we dropped, so swap for a clear-sky horizon frame (reuse <=2, no haze blotches), still fitting 'the thin sky'. Render from cache, re-run fill/polish/jitter, post the pack.",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T19:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T19:10Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
