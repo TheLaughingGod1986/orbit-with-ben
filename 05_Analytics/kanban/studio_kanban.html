@@ -541,7 +541,7 @@ function renderFilms(films){
 // ---------- Film by film (Ben, 8 Oct): "what's the holdup, what is it waiting for, and when will that happen?" ----------
 // Claude's note per film (board/briefs, from film_briefs.json) gives the words; the job queue gives live times; the
 // stage files give progress and how long the film has sat in its current stage. With no note, it's built from the data.
-const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · waiting for your watch"], watched:["good","Watched by you · final OK next"], fixing:["held","Your fixes are queued"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
+const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · waiting for your watch"], watched:["good","Watched by you · final OK next"], fixing:["held","Fixing your notes"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
 const OWB_OWNER = {topic:"Claude", script:"Claude", sources:"Gemini", vo:"Cursor", shots:"Claude", picture:"Cursor", edit:"Cursor", thumbs:"Cursor", upload:"Cursor"};
 // The column follows the film's state; "Needs you" only changes the label, so a finished film stays in Done.
 const COLUMN = {watched:"doing", fixing:"doing", good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"doing", ready:"done"};

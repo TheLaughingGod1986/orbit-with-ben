@@ -55,7 +55,7 @@ class Briefs(unittest.TestCase):
         for key, b in films.items():
             for k in ("updated", "mood", "line", "done", "holdup", "steps"):
                 self.assertIn(k, b, key)
-            self.assertIn(b["mood"], ("good", "waiting", "held", "finished", "watched", "ready"), key)
+            self.assertIn(b["mood"], ("good", "waiting", "held", "finished", "watched", "fixing", "ready"), key)
             for st in b["steps"]:
                 self.assertTrue(st.get("who") and st.get("what"), key)
                 self.assertTrue(st.get("done") or st.get("job") or st.get("afterJob") or st.get("when") or st.get("whenText"), f"{key}: {st}")
