@@ -116,10 +116,10 @@
       "stage": "edit",
       "after": "J0001",
       "eta_min": 720,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T00:00Z",
-      "eta": "2026-10-08T12:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T11:24Z",
       "result": "",
@@ -163,6 +163,11 @@
           "at": "2026-10-08T00:00Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T00:04Z",
+          "by": "cursor",
+          "what": "released: Full first cut v01 RENDERING detached: tmux venus023-full-v01, log ~/_desk/logs/venus023-full-v01.log, done-file ~/_desk/logs/venus023-full-v01.done (exit code). Assembler b59e4db. Out: OWB UAT/023_Venus_full_rough_v01.mp4 + 07_Edit-Project/full_rough_v01_pack. Next run: when .done=0, check sheets + clip_check, commit pack (force-add frames/sheets), post to Claude; then thumbs A/B/C. If .done!=0 read the log; rerun resumes finished segs (seg_NN.ok). brctl download OWB UAT inputs first (iCloud eviction hit once). Never start a second copy while the tmux session lives."
         }
       ]
     },
