@@ -230,7 +230,8 @@ a.open:hover{border-color:var(--doing)}
 .yl textarea{flex:1 1 260px;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
 .yl .said{display:block;font-size:13px;margin-top:4px;color:var(--ink-2)}
 .lnk{font:inherit;font-size:12px;background:none;border:0;color:var(--ink-3);text-decoration:underline;cursor:pointer;padding:0 0 0 6px}
-.kb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
+.kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
+@media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.kb{grid-template-columns:1fr}}
 .kcol{background:var(--panel-2);border-radius:14px;padding:10px;min-width:0}
 .kcol h2{font:700 16px/1 "Bricolage Grotesque",sans-serif;margin:4px 4px 10px;display:flex;align-items:center;gap:8px}
@@ -244,7 +245,8 @@ a.open:hover{border-color:var(--doing)}
 .tf.waiting{border-left-color:var(--ink-3)}
 .tf>summary{list-style:none;cursor:pointer;padding:10px 12px}
 .tf>summary::-webkit-details-marker{display:none}
-.tf .kh{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tf .kh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 8px}
+.tf .kh>span:first-child{white-space:nowrap}
 .tf .kh b{font:800 16px "Bricolage Grotesque",sans-serif}
 .tf .kt{font-size:13px;color:var(--ink-2);margin:2px 0 6px;line-height:1.3}
 .pill{flex:none;font-size:12px;font-weight:600;padding:1px 8px;border-radius:99px;white-space:nowrap;background:var(--todo-soft);color:var(--todo)}
@@ -432,17 +434,21 @@ function owbFilm(j){
 const owb = {files:{}, missing:new Set(), state: OWB_SNAPSHOT ? "snapshot" : "loading", msg:"", at:null};
 if(OWB_SNAPSHOT) for(const j of OWB_SNAPSHOT) owb.files[j.film] = j;
 
-let readyFilms = [];   // made and passed, waiting only for upload or air day: shown in one slim row, off the board
+let readyFilms = [];
+// Ben, 8 Oct: Done splits into Scheduled (uploaded, waiting for its time) and Live (aired in the last two weeks).
+const LIVE_DAYS = 14, AIR_HOUR = 18;   // both channels go public at 18:00 London
+const recent = air => pd(air) >= new Date(today().getTime() - LIVE_DAYS*DAY);
+const isLive = f => !!f.air && Date.now() >= pd(f.air).getTime() + AIR_HOUR*3600000;   // made and passed, waiting only for upload or air day: shown in one slim row, off the board
 function view(){
   const out = []; readyFilms = [];
   if(chan!=="OWB" && data) for(const f of data.films){
     const x = Object.assign({}, f, {_ch:"HOS", _stages:data.stages, key:"HOS:"+f.id});
-    if(data.stages.every(s=>["done","skip"].includes((f.stages[s.key]||{}).status))){ if(!f.air || pd(f.air)>=today()) readyFilms.push(x); continue; }
+    if(data.stages.every(s=>["done","skip"].includes((f.stages[s.key]||{}).status))){ if(!f.air || recent(f.air)) readyFilms.push(x); continue; }
     out.push(x);
   }
   if(chan!=="HOS") for(const j of Object.values(owb.files).sort((a,b)=>String(a.film).localeCompare(String(b.film)))){
     const f = owbFilm(j);
-    if(OWB_STAGES.every(s=>["done","skip"].includes(f.stages[s.key].status))) continue; // finished films stay off the board
+    if(OWB_STAGES.every(s=>["done","skip"].includes(f.stages[s.key].status))){ if(f.air && recent(f.air)) readyFilms.push(f); continue; } // aired over two weeks ago: off the board
     if(f.air && OWB_STAGES.every(s=>s.key==="upload" || ["done","skip"].includes(f.stages[s.key].status))){ readyFilms.push(f); continue; }
     if(!f.air && OWB_STAGES.filter(s=>f.stages[s.key].status!=="todo").length<=1) continue; // stub files (no air date, nothing started)
     out.push(f);
@@ -541,10 +547,10 @@ function renderFilms(films){
 // ---------- Film by film (Ben, 8 Oct): "what's the holdup, what is it waiting for, and when will that happen?" ----------
 // Claude's note per film (board/briefs, from film_briefs.json) gives the words; the job queue gives live times; the
 // stage files give progress and how long the film has sat in its current stage. With no note, it's built from the data.
-const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · waiting for your watch"], watched:["good","Watched by you · final OK next"], fixing:["held","Fixing your notes"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
+const MOOD = {live:["ready","Live"], good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Ready for your watch"], watched:["good","You've OK'd it"], fixing:["held","Fixing your notes"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
 const OWB_OWNER = {topic:"Claude", script:"Claude", sources:"Gemini", vo:"Cursor", shots:"Claude", picture:"Cursor", edit:"Cursor", thumbs:"Cursor", upload:"Cursor"};
 // The column follows the film's state; "Needs you" only changes the label, so a finished film stays in Done.
-const COLUMN = {watched:"doing", fixing:"doing", good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"doing", ready:"done"};
+const COLUMN = {live:"live", watched:"doing", fixing:"doing", good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"doing", ready:"sched"};
 const openState = {};   // only what the viewer chose; otherwise films in hand open and films waiting their turn closed
 function stageDays(since){ const t=ts(since); if(isNaN(t)) return ""; const h=(Date.now()-t)/3600000;
   return h<1?"under an hour":h<36?`${Math.round(h)} h`:`${Math.round(h/24)} days`; }
@@ -640,10 +646,10 @@ function checklist(f, rows, ready){
 }
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
-  const all = films.concat(readyFilms).filter(f=>f.air ? pd(f.air)>=today() : true).sort((a,b)=>String(a.air||"9999").localeCompare(String(b.air||"9999")) || a.key.localeCompare(b.key));
+  const all = films.concat(readyFilms).filter(f=>f.air ? recent(f.air) : true).sort((a,b)=>String(a.air||"9999").localeCompare(String(b.air||"9999")) || a.key.localeCompare(b.key));
   const P = fromDb.jobs ? plan() : {}, briefs = fromDb.briefs || {};
   const laneWho = {mini:"Cursor", gemini:"Gemini", cloud:"Claude", ben:"Ben"};
-  const lanes = {OWB:{doing:[], todo:[], done:[]}, HOS:{doing:[], todo:[], done:[]}}, forYou = [];
+  const lanes = {OWB:{doing:[], todo:[], sched:[], live:[]}, HOS:{doing:[], todo:[], sched:[], live:[]}}, forYou = [];
   for(const f of all){
     let b = briefs[f.key] || autoBrief(f);
     // Ben's tick (checks/<OWB-022>) shows on the card straight away: his watch step ticked, nothing left for him, and
@@ -664,17 +670,19 @@ function renderTracker(films){
     for(const j of (fromDb.jobs||[])) if(f._ch==="OWB" && j.film===f.id && !named.has(j.id))
       steps.push({who: j.status==="claimed" ? AGENT(j.by) : laneWho[j.needs]||j.needs, what: shortTitle(j.title).replace(/^\d{3}\s*/,""), job:j.id});
     const rows = steps.map(x=>({x, w:stepWhen(x,P)}));
+    const live = isLive(f);
+    if(live) for(const r of rows) if(!r.w.ok && r.w.at && r.w.at <= Date.now()) r.w = {ok:true, text:"done"};   // aired: past steps are done
     const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=1) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
-    const moodKey = youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
+    const moodKey = live ? "live" : youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
     const [cls, word] = MOOD[moodKey];
     if(b.you || (ck && !ck.handled && (briefs[f.key]||{}).you)) forYou.push({f, b: Object.assign({}, briefs[f.key]||b), soon: ck ? true : youSoon, checked: !!ck});
-    const pct = moodKey==="ready" ? 100 : filmPct(f), air = pd(f.air);
+    const pct = moodKey==="ready" || moodKey==="live" ? 100 : filmPct(f), air = pd(f.air);
     const age = b.updated ? Date.now()-ts(b.updated) : NaN;
     const stale = !b.auto && (isNaN(age) || age > 30*3600000);
     const isOpen = f.key in openState ? openState[f.key] : false;
-    const line = b.line || (b.auto ? b.done : "");
+    const line = live ? `Live since ${fd(pd(f.air))} 18:00.` : b.line || (b.auto ? b.done : "");
     const st = statusOf(b, rows);
-    lanes[f._ch][COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
+    lanes[f._ch][live ? "live" : COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
       <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span class="pill ${cls}">${word}</span></div>
       <div class="kt">${esc(f.title)}</div>
       <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
@@ -691,7 +699,7 @@ function renderTracker(films){
       <div class="ft"><span>${b.auto?"From the stage data (no note from Claude yet)":`Updated ${esc(fw(b.updated))}`}${stale?` · <b class="soon">over a day old</b>`:""}</span>
       <button class="btn" data-show="${esc(f.key)}">Show its stages</button></div></div></details>`);
   }
-  const defs = [["doing","In progress","var(--doing)"],["todo","To do","var(--todo)"],["done","Done","var(--done)"]];
+  const defs = [["todo","To do","var(--todo)"],["doing","In progress","var(--doing)"],["sched","Scheduled","var(--accent)"],["live","Live","var(--done)"]];
   const laneName = {OWB:"Orbit With Ben", HOS:"History of Science"};
   box.className = "";
   box.innerHTML = ["OWB","HOS"].filter(ch=>chan==="all"||chan===ch).map(ch=>`<section class="lane"><h3><span class="ch ${ch}">${ch}</span>${laneName[ch]}</h3><div class="kb">`
