@@ -1560,10 +1560,10 @@
       "stage": "vo",
       "after": "J0037",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T08:55Z",
-      "eta": "2026-10-08T10:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T07:33Z",
       "result": "",
@@ -1627,6 +1627,11 @@
           "at": "2026-10-08T08:55Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T08:56Z",
+          "by": "cursor",
+          "what": "released: Untouched again (2nd run): waits on Claude's 029 script lock (v02 from J0037 flags); only v01 exists. No credits spent."
         }
       ]
     }
