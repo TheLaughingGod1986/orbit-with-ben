@@ -21,7 +21,7 @@ HERE=Path(__file__).resolve().parent; EP=HERE.parent
 UAT=Path.home()/'Library/Mobile Documents/com~apple~CloudDocs/OWB UAT'
 WORK=Path('/private/tmp/mars025_full_work_v02'); PACK=HERE/'full_rough_v02_pack'
 VO=EP/'02_Voiceover/mars_robot_vo_v01.mp3'
-OUT=UAT/'025_MarsRobot_full_rough_v02c.mp4'
+OUT=UAT/'025_MarsRobot_full_rough_v02d.mp4'
 MAX_UP=2.35; MAX_HOLD=6.0
 H=HERE/'nasa_pool_v01'
 OM=EP/'04_Generated-Clips/01_Raw/omni_v01'
@@ -74,7 +74,7 @@ ROWS=[
  ('11',111.50,['dsn/PIA17792.jpg','rovers_wait/PIA26310.jpg','rovers_wait/PIA25681.jpg','dsn/PIA26717.jpg']),
  ('12',133.76,['spirit/PIA09090.jpg','dusk_plain/PIA15024.jpg','dusk_plain/PIA26673.gif']),
  ('13',144.96,['spirit/PIA07882.jpg','open_pan/PIA20328.jpg',('dusk_plain/PIA19400.jpg',dict(pct=0.12)),(COLD,v(4.0,max=5.0,push=0.05))]),
- ('14',161.40,['spirit/PIA12142.jpg',('spirit/PIA12203.jpg',dict(quad='tl')),'spirit/PIA12337.jpg','spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
+ ('14',161.40,[('spirit/PIA12142.jpg',dict(box=(0.68,0.28,0.873,0.86))),('spirit/PIA12203.jpg',dict(quad='tl')),'spirit/PIA12337.jpg','spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
  ('15',186.38,['spirit/PIA07371.jpg','spirit/PIA01907.jpg','tracks/PIA16933.jpg']),
  ('16',199.44,[('phoenix/PIA22223.jpg',dict(box=(0.0,0.0,1.0,0.5625))),'phoenix/PIA13804.jpg','phoenix/PIA10665.jpg','phoenix/PIA22223.jpg',('phoenix/PIA13804.jpg',c)]),
  ('17',225.06,['rover_work/PIA24542.jpg','rovers_wait/PIA24264.jpg']),
