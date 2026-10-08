@@ -5,11 +5,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0048 | mini | claimed | cursor | 2026-10-08T13:40Z | 024 upload · 024: upload package dry-run (v03 + thumbs abc_v01) |  |
 | J0049 | mini | open | – | – | 024 thumbs · 024: thumb B v02 (grade, flares, crop); A and C passed |  |
 
 Recently finished:
 
+- J0048 done: 024: upload package dry-run (v03 + thumbs abc_v01) (024 package built, vitest youtube-package 6/6, youtube:package dry run ok (publishAt 2026-11-01T18:00Z, sha e0f2ba6d, 19 tags, pinned, trailer 41.6 s). No upload.)
 - J0047 done: 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 (024 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 + small-size sheet; awaiting Claude PASS)
 - J0046 done: 024: final picture v03 (row 1 one continuous starfield span) (full_rough_v03: row 1 one continuous starfield span from 12 s (0-6.50 s); frame0_sheet + sheet_0_8s in full_rough_v03_pack (4f7de1e); 107 cuts, -14.3 LUFS, clip_check PASS)
 - J0045 done: 024: full rough v02 (Claude v01 review: 5 assembler fixes) (024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review)
@@ -19,4 +19,3 @@ Recently finished:
 - J0041 done: 028: verify Berski & Dybczynski comet-shower quote from the full paper (or FLAG for a pickup) (OK: all three quotes found verbatim in A&A full text (§3.3, §4) with URL in SOURCES row 7; no pickup needed)
 - J0040 done: 029: VO take of the locked script master v02 (029 VO betelgeuse_vo_v01: 515.2 s (8.6 min), LUFS -20.1 raw, Scribe 99.2% PASS; 6717 chars from the month's credits (57,018 left). words.json/chapters_index/stt committed. Dropped-word false alarm at 372.6 s checked and patched.)
 - J0039 done: 029: lock script v02 (J0037 flags + quote check) (029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md)
-- J0038 cancelled: 029: VO take of the locked script master (after the claims check) ()
