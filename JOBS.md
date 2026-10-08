@@ -5,10 +5,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0045 | mini | claimed | cursor | 2026-10-08T12:46Z | 024 edit · 024: full rough v02 (Claude v01 review: 5 assembler fixes) |  |
+| – | | nothing waiting | | | | |
 
 Recently finished:
 
+- J0045 done: 024: full rough v02 (Claude v01 review: 5 assembler fixes) (024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review)
 - J0044 done: 024: assemble full rough v01 (Venus v04 rules) for Claude review (024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words.)
 - J0043 done: 024: Omni Orbit beats rows 15 + 27 (frame sheets for Claude PASS) (c1e5ff2: both takes ok (10 s, Vertex global, free credit). Sheets in 04_Generated-Clips/01_Raw/omni_v01/sheets/ for Claude PASS. Media on the Mini only.)
 - J0042 done: 024: harvest v01 + render code graphics (licence-checked pool) (Pool nasa_pool_v01/024_harvest_v01 (22 items, all PD or CC BY-SA 3.0 IGO, titles checked). Manifest _evidence/light_speed_harvest_v01.json; gaps _evidence/light_speed_harvest_v01_gaps.md. Code graphics v02 at row length (mapdrift 13, contraction 17, energy 17, gammaclocks 19, lightclock 22, starfield 23 s) in graphics_v02/; the rest in graphics_v01. Row 11: DC-8 only (Hafele-Keating PD not confirmed).)
@@ -18,4 +19,3 @@ Recently finished:
 - J0038 cancelled: 029: VO take of the locked script master (after the claims check) ()
 - J0037 done: 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) (SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed)
 - J0036 done: Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude) (done)
-- J0035 done: 027: commit VO words.json + chapters_index (text only) for the shot list (done)

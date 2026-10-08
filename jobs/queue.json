@@ -1892,13 +1892,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T10:46Z",
-      "eta": "2026-10-08T12:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T10:36Z",
-      "result": "",
+      "result": "024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review",
       "history": [
         {
           "at": "2026-10-08T10:36Z",
@@ -1909,8 +1909,14 @@
           "at": "2026-10-08T10:46Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T10:57Z",
+          "by": "cursor",
+          "what": "done: 024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review"
         }
-      ]
+      ],
+      "done_ref": "fd7ea38"
     }
   ]
 }
