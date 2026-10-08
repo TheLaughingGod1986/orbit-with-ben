@@ -132,33 +132,33 @@
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-08T18:40Z",
+      "updated": "2026-10-08T19:15Z",
       "mood": "good",
       "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "Very close. Cursor's v03 fixed the wobble (shake down from about 1 pixel to almost nothing) and the eight unfinished frames. Claude's check of v03 found one blurry sky frame to swap and one frame with a stray blue blob to crop. Cursor makes those as v03b (about an hour); if it's clean, it comes straight to you.",
+      "holdup": "Last two frames. One NASA photo has a green box drawn on it (we never show labelled or marked pictures), and one sky shot is blurry. Cursor fixes both as v03c from the already-built cut, about 15 minutes. Everything else passed.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "rough cut v03: swap 8 frames, new polish and wobble checks",
+          "what": "v03 and v03b: wobble gone, unfinished frames swapped",
           "done": true,
-          "doneText": "done · Thu 8 Oct 19:34"
-        },
-        {
-          "who": "Claude",
-          "what": "check v03",
-          "done": true,
-          "doneText": "done · 1 swap, 1 crop"
-        },
-        {
-          "who": "Cursor",
-          "what": "v03b: the swap and the crop",
-          "job": "J0062"
+          "doneText": "done · Thu 8 Oct 20:09"
         },
         {
           "who": "Claude",
           "what": "check v03b",
-          "afterJob": "J0062",
-          "lag": 30
+          "done": true,
+          "doneText": "done · 2 frames to fix"
+        },
+        {
+          "who": "Cursor",
+          "what": "v03c: the last 2 frames",
+          "job": "J0063"
+        },
+        {
+          "who": "Claude",
+          "what": "check v03c",
+          "afterJob": "J0063",
+          "lag": 20
         },
         {
           "who": "Ben",
@@ -167,8 +167,8 @@
         }
       ],
       "you": "Watch it in OWB UAT once it's ready, about Sat 10 Oct. Nothing before then.",
-      "timing": "Ready for you tonight or tomorrow morning, ahead of the Sat 10 Oct aim. Airs Sun 8 Nov.",
-      "line": "Focus film. v03 is smooth (no more wobble) and nearly clean: one frame to swap and one to crop. Then v03b comes to you to watch.",
+      "timing": "Ready for you tonight or tomorrow morning. Airs Sun 8 Nov.",
+      "line": "Focus film. v03b passed almost everything; two last frames to fix (a NASA picture with a drawn-on box, and one blurry sky). About 15 minutes of work, then Claude checks it and it comes to you.",
       "youWhen": "2026-10-10",
       "youShort": "watch it about Sat 10 Oct"
     },
