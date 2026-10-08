@@ -28,6 +28,26 @@ class Since(unittest.TestCase):
         self.assertEqual(ks.since_from_history([], truncated=True), {})
 
 
+class MiniWork(unittest.TestCase):
+    def test_claim_to_release_is_work_and_overnight_is_capped(self):
+        jobs = [{"id": "J1", "needs": "mini", "film": "025", "history": [
+                    {"at": "2026-10-08T10:00Z", "by": "claude", "what": "added"},
+                    {"at": "2026-10-08T10:10Z", "by": "cursor", "what": "claimed"},
+                    {"at": "2026-10-08T10:40Z", "by": "cursor", "what": "released: step 1"},
+                    {"at": "2026-10-08T11:00Z", "by": "cursor", "what": "claimed"},
+                    {"at": "2026-10-08T11:15Z", "by": "cursor", "what": "done: ok"}]},
+                {"id": "J2", "needs": "mini", "history": [
+                    {"at": "2026-10-07T20:00Z", "by": "cursor", "what": "claimed"},
+                    {"at": "2026-10-08T09:00Z", "by": "cursor", "what": "done: ok"}]},
+                {"id": "J3", "needs": "cloud", "history": [
+                    {"at": "2026-10-08T10:00Z", "by": "claude", "what": "claimed"},
+                    {"at": "2026-10-08T11:00Z", "by": "claude", "what": "done: ok"}]}]
+        w = ks.mini_work(jobs, "2026-10-08")
+        self.assertEqual(w["byFilm"], {"OWB:025": 45, "admin": 480})  # J2's 13 h claim counts as 8 h
+        self.assertEqual((w["jobs"], w["minutes"]), (2, 525))
+        self.assertNotIn("claude", w["byAgent"])
+
+
 class Briefs(unittest.TestCase):
     def test_real_file_loads_and_every_step_says_when(self):
         films = ks.load_briefs()

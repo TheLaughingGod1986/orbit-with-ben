@@ -117,6 +117,33 @@ def mini_heartbeat() -> dict | None:
         return None
 
 
+def mini_work(alljobs: list[dict], since: str) -> dict:
+    """What the Mac mini's agents (Cursor, Grok, Codex) actually did since a date, from the queue history: each claim
+    to its release/done/block is one stretch of work (capped at 8 h, so a claim left open overnight doesn't count as
+    work). Ben, 8 Oct: at the check-in, would Claude Max cover what Cursor does?"""
+    jobs, minutes, by_film, by_agent = set(), 0.0, {}, {}
+    for j in alljobs:
+        if j.get("needs") != "mini":
+            continue
+        start = None
+        for h in j.get("history") or []:
+            what, at = h.get("what", ""), _t(h.get("at", ""))
+            if what.startswith("claimed"):
+                start = (at, h.get("by", ""))
+            elif start and at and start[0] and what.split(":")[0] in ("released", "done", "blocked", "block"):
+                if h.get("at", "") >= since:
+                    m = min(8 * 60, max(0.0, (at - start[0]).total_seconds() / 60))
+                    jobs.add(j["id"])
+                    minutes += m
+                    key = f"OWB:{j['film']}" if j.get("film") else "admin"
+                    by_film[key] = by_film.get(key, 0) + m
+                    who = start[1] or "?"
+                    by_agent[who] = by_agent.get(who, 0) + m
+                start = None
+    return {"since": since, "jobs": len(jobs), "minutes": round(minutes),
+            "byFilm": {k: round(v) for k, v in sorted(by_film.items())}, "byAgent": {k: round(v) for k, v in by_agent.items()}}
+
+
 def lanes_info(alljobs: list[dict]) -> dict:
     out = {}
     for lane in ("mini", "gemini", "cloud", "ben"):
@@ -256,6 +283,8 @@ def main(argv: list[str] | None = None) -> int:
         import ai_spend
         credits = ai_spend.build_doc(ai_spend.load())
         credits["hosChecks"] = hos.get("credits", [])
+        credits["miniWork"] = mini_work(alljobs, (credits.get("pools", {}).get("cursor", {}) or {}).get("since")
+                                        or json.loads(ai_spend.PLANS.read_text()).get("poolStarts", {}).get("cursor", "2026-10-08"))
         (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
         briefs = load_briefs()
         links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k == "uatFolderUrl"} if BRIEFS.exists() else {}

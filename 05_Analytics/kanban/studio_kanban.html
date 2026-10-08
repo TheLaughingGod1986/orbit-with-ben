@@ -155,6 +155,11 @@ details.donegrp li span{color:var(--ink-3)}
 .pool svg{display:block;width:100%;height:44px;margin-top:6px}
 .pool .why{margin-top:6px}
 .byfilm{overflow-x:auto}
+.pv{margin-top:8px;border-top:1px solid var(--line);padding-top:6px}
+.pvr{display:flex;justify-content:space-between;gap:8px;font-size:13px;padding:2px 0;font-variant-numeric:tabular-nums}
+.pool .why,.pool .fit .why{font-size:13px;line-height:1.45}
+.pool .nm span:first-child{min-width:0}
+.maxq{margin-top:8px;font-size:13px;line-height:1.45;background:var(--panel-2);border-radius:8px;padding:8px 10px}
 .byfilm table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
 .byfilm th,.byfilm td{padding:5px 8px;border-top:1px solid var(--line);text-align:right;white-space:nowrap}
 .byfilm th:first-child,.byfilm td:first-child{text-align:left}
@@ -339,16 +344,6 @@ footer a{color:var(--ink-2)}
     <div class="box"><div id="jobs"></div></div>
   </section>
   </details>
-  <details class="more fold"><summary id="spendSum">AI spend</summary>
-  <section class="spend" id="spendBox">
-    <div class="head"><div class="why" id="spendWhen"></div></div>
-    <div class="verdict" id="verdict"></div>
-    <div class="pools" id="pools"></div>
-    <details class="more"><summary>Plans and prices</summary>
-      <div class="subs" id="subs"></div>
-      <div class="why" id="subsNote"></div>
-      <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
-    </details>
   </section>
   </details>
   <details class="more fold" id="foldStages"><summary id="stageboard">Every stage of every film (detail)</summary>
@@ -360,6 +355,19 @@ footer a{color:var(--ink-2)}
   </div>
   <div class="agents" id="agents" style="margin-top:14px"></div>
   </details>
+  <section class="plansec">
+  <h2 class="sec" style="margin-top:22px">AI plans this month <span class="qsub" id="spendSum"></span></h2>
+  <section class="spend" id="spendBox">
+    <div class="head"><div class="why" id="spendWhen"></div></div>
+    <div class="verdict" id="verdict"></div>
+    <div class="pools" id="pools"></div>
+    <details class="more"><summary>Plans and prices</summary>
+      <div class="subs" id="subs"></div>
+      <div class="why" id="subsNote"></div>
+      <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
+    </details>
+  </section>
+  </section>
   <footer>The studio agent writes both boards into this page every hour, 07:50 to 21:50 London, from the files below. The film-by-film notes are Claude's, from <span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben, refreshed on the same run; job times come live from the job queue. <b>HOS</b> comes from <span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science (the file behind <a href="https://github.com/TheLaughingGod1986/history-of-science/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>). <b>OWB</b> from each film's <span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span> in orbit-with-ben (the files behind its <a href="https://github.com/TheLaughingGod1986/orbit-with-ben/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>; "chief" is shown as Grok). Both from <span class="mono">main</span>.</footer>
 </div>
 
@@ -851,7 +859,11 @@ function renderSource(){
 }
 
 // ---------- AI spend month (board/credits, written by the studio agent from scripts/ai_spend.py) ----------
-const POOL_NAME = {cursor:"Cursor included usage", flow:"Flow credits", vertex:"Google Cloud credit", elevenlabs:"ElevenLabs", claude:"Claude"};
+const POOL_NAME = {cursor:"Cursor Ultra", flow:"Google AI Ultra · Flow (Gemini video)", vertex:"Google Cloud trial credit (Vertex)", elevenlabs:"ElevenLabs (voice)", claude:"Claude"};
+const NO_READING = {
+  flow: "Its month starts Mon 12 Oct, when the credits refill. The Mac mini reads the balance every morning at 08:30, and every picture take logs its cost against its film.",
+  cursor: "No reading yet: the Mac mini can't read cursor.com until you sign in there once, in the Mac mini's Chrome. What Cursor did is below either way.",
+  elevenlabs: "Read every morning at 08:30.", vertex: "Read every morning at 08:30.", claude: ""};
 const num = (v, unit) => v==null||v==="" ? "—" : unit==="GBP" ? "£"+Number(v).toFixed(2) : unit==="USD" ? "≈£"+Math.round(Number(v)*0.75)+" ($"+Number(v).toFixed(0)+")" : Math.round(Number(v)).toLocaleString("en-GB");
 function spark(series){
   const pts = (series||[]).filter(p=>p[1]!=null);
@@ -883,24 +895,34 @@ function renderSpend(){
   $("subsNote").textContent = plans.length ? `Including VAT, at about £${fx.gbpPerUsd||0.75} to the dollar. Your bank statement is the real figure.${cycles.length?" Each plan is counted from its own reset.":""}` : "";
   renderVerdict(c);
   const pools = (c && c.pools) || {};
-  const order = ["cursor","flow","vertex","elevenlabs","claude"].filter(k=>pools[k]);
-  $("pools").innerHTML = order.length ? order.map(k=>{
-    const p=pools[k], L=p.latest||{}, F=p.first||{};
+  const order = ["flow","cursor","elevenlabs","vertex","claude"].filter(k=>pools[k] || ["flow","cursor","claude"].includes(k));
+  const bf = (c && c.byFilm) || {}, W = (c && c.miniWork) || null;
+  const perVideo = (rows, fmt) => rows.length ? `<div class="pv"><div class="why"><b>Per video</b></div>${rows.map(([f,v])=>{ const [ch,id]=f.split(":"); return `<div class="pvr"><span>${id?`<span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id)}`:esc(f)}</span><span>${fmt(v)}</span></div>`; }).join("")}</div>` : "";
+  const hrs = m => m<60 ? `${Math.round(m)} min` : `${(m/60).toFixed(1)} h`;
+  $("pools").innerHTML = order.map(k=>{
+    const p=pools[k], L=(p&&p.latest)||{}, total = L.total ?? (p&&p.first||{}).total;
+    const filmRows = Object.entries(bf).filter(([f,d])=>f!=="(none)" && d[k]).map(([f,d])=>[f,d[k]]).sort((a,b)=>b[1]-a[1]);
     if(k==="claude"){
-      const ns=(p.notes||[]).slice(-3).reverse();
-      return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]}</span></div>
-        <div class="why">${ns.length?ns.map(n=>`${esc(fw(n.at))}: ${esc(n.note)}`).join("<br>"):"No limit hits recorded."}</div></div>`;
+      const ns=((p&&p.notes)||[]).slice(-3).reverse();
+      return `<div class="pool"><div class="nm"><span>Claude Pro</span><span class="chip">£18</span></div>
+        <div class="why">Usage-limit hits this month: <b>${((p&&p.notes)||[]).length}</b>${ns.length?"<br>"+ns.map(n=>`${esc(fw(n.at))}: ${esc(n.note)}`).join("<br>"):""}</div></div>`;
     }
-    const used = F.left!=null && L.left!=null && L.at!==F.at ? Number(F.left)-Number(L.left) : null;
-    const total = L.total ?? F.total;
-    return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]||esc(k)}</span><span class="chip">${esc(p.unit)}</span></div>
-      <div class="big">${num(L.left,p.unit)} <small>left${total!=null?" of "+num(total,p.unit):""}</small></div>
-      ${spark(p.series)}
-      <div class="why">read ${esc(fw(L.at))}</div>${fitHtml(k,p,c)}</div>`;
-  }).join("") : `<div class="box" style="grid-column:1/-1"><div class="empty" style="padding:2px 0">No readings yet. The Mac mini records Cursor, Flow, Google Cloud credit and ElevenLabs every day, and every take's cost as it is made. The figures appear here as they arrive.</div></div>`;
-  const sums = order.filter(k=>k!=="claude").map(k=>{ const u=poolUse(k,pools[k],c); return u && !u.future ? `${POOL_NAME[k]} ${u.usedPct}% used, ${u.monthPct}% of its month gone` : null; }).filter(Boolean);
-  $("spendSum").textContent = "AI spend" + (sums.length ? " · " + sums.join(" · ") : "");
-  const bf = (c && c.byFilm) || {}, films = Object.keys(bf).filter(f=>f!=="(none)");
+    let body = p && L.left!=null ? `<div class="big">${num(L.left,p.unit)} <small>left${total!=null?" of "+num(total,p.unit):""}</small></div>${spark(p.series)}<div class="why">read ${esc(fw(L.at))}</div>${fitHtml(k,p,c)}`
+      : `<div class="why" style="margin-top:6px">${NO_READING[k]||"No reading yet."}</div>`;
+    if(k==="flow") body += perVideo(filmRows, v=>Math.round(v).toLocaleString("en-GB")+" credits");
+    if(k==="vertex" || k==="elevenlabs") body += perVideo(filmRows, v=>k==="vertex"?"£"+Number(v).toFixed(2):Math.round(v).toLocaleString("en-GB"));
+    if(k==="cursor" && W){
+      const rows = Object.entries(W.byFilm||{}).filter(([f])=>f!=="admin").sort((a,b)=>b[1]-a[1]);
+      body += `<div class="pv"><div class="why"><b>What the Mac mini did</b> since ${fd(pd(W.since))}: ${W.jobs} jobs, ${hrs(W.minutes)} of agent time${(W.byFilm||{}).admin?` (${hrs(W.byFilm.admin)} of it admin)`:""}.</div>
+        ${rows.map(([f,m])=>{ const [ch,id]=f.split(":"); return `<div class="pvr"><span><span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id)}</span><span>${hrs(m)}</span></div>`; }).join("")}</div>
+        <div class="maxq"><b>Would Claude Max cover it?</b> Claude Max (£90) would have to take on these hours of Mac mini work on top of Claude's own. At the check-in we compare three things: Cursor's dollars used against its $400, these hours, and how often Claude hits its limit. Low on all three means downgrading is safe.</div>`;
+    }
+    const price = {flow:"£180", cursor:"£180", elevenlabs:"£20", vertex:"free trial"}[k] || "";
+    return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]||esc(k)}</span>${price?`<span class="chip">${price}</span>`:""}</div>${body}</div>`;
+  }).join("");
+  const sums = order.filter(k=>k!=="claude" && pools[k]).map(k=>{ const u=poolUse(k,pools[k],c); return u && !u.future ? `${POOL_NAME[k]} ${u.usedPct}% used, ${u.monthPct}% of its month gone` : null; }).filter(Boolean);
+  $("spendSum").textContent = sums.length ? sums.join(" · ") : "";
+  const films = Object.keys(bf).filter(f=>f!=="(none)");
   $("byFilmBox").hidden = !films.length;
   if(films.length){
     const cols = ["flow","vertex","elevenlabs","cursor"].filter(k=>films.some(f=>bf[f][k]));
