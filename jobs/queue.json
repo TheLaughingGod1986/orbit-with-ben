@@ -3066,10 +3066,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T23:40Z",
+      "eta": "2026-10-09T00:00Z",
       "created_by": "claude",
       "created_at": "2026-10-08T23:19Z",
       "result": "",
@@ -3088,6 +3088,11 @@
           "at": "2026-10-08T23:29Z",
           "by": "cursor",
           "what": "released: Plist CODEX_FLAGS removed (backup ~/_desk/state/com.owb.chief-relay.plist.bak-20261009); relay synced to 2bbb8b6; codex up. Deferred reload via launchd job com.owb.relay-reload: check ~/_desk/logs/relay-reload-20261009.done (bootstrap exit) + .log, then post the codex 'cmd:' line and result from ~/Library/Logs/chief-relay.log. Third failure: stop and post evidence."
+        },
+        {
+          "at": "2026-10-08T23:40Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": true
