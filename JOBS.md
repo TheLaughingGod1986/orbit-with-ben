@@ -5,11 +5,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0047 | mini | claimed | cursor | 2026-10-08T13:27Z | 024 thumbs · 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 |  |
 | J0048 | mini | open (after J0047) | – | – | 024 upload · 024: upload package dry-run (v03 + thumbs abc_v01) |  |
 
 Recently finished:
 
+- J0047 done: 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 (024 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 + small-size sheet; awaiting Claude PASS)
 - J0046 done: 024: final picture v03 (row 1 one continuous starfield span) (full_rough_v03: row 1 one continuous starfield span from 12 s (0-6.50 s); frame0_sheet + sheet_0_8s in full_rough_v03_pack (4f7de1e); 107 cuts, -14.3 LUFS, clip_check PASS)
 - J0045 done: 024: full rough v02 (Claude v01 review: 5 assembler fixes) (024 full rough v02 at OWB UAT/024_LightSpeed_full_rough_v02.mp4 (8:11, -14.3 LUFS, 108 cuts, clip_check PASS, align 1210/1210); pack 07_Edit-Project/full_rough_v02_pack; ready for Claude review)
 - J0044 done: 024: assemble full rough v01 (Venus v04 rules) for Claude review (024 full rough v01 pack b758d7e for Claude review. MP4 in iCloud OWB UAT/024_LightSpeed_full_rough_v01.mp4 (sha f1613812). 8:11, -14.3 LUFS, 115 cuts, longest 5.97 s, max upscale 2.1x, stills <=2 uses, clip_check PASS, align_shot_list 1210/1210 words.)
@@ -19,4 +19,3 @@ Recently finished:
 - J0040 done: 029: VO take of the locked script master v02 (029 VO betelgeuse_vo_v01: 515.2 s (8.6 min), LUFS -20.1 raw, Scribe 99.2% PASS; 6717 chars from the month's credits (57,018 left). words.json/chapters_index/stt committed. Dropped-word false alarm at 372.6 s checked and patched.)
 - J0039 done: 029: lock script v02 (J0037 flags + quote check) (029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md)
 - J0038 cancelled: 029: VO take of the locked script master (after the claims check) ()
-- J0037 done: 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) (SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed)
