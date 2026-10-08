@@ -22,6 +22,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
-| 025 | edit | cursor | 2026-10-08T20:55Z | 2026-10-08T21:39Z | J0067 025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy |
+| 025 | edit | cursor | 2026-10-08T20:56Z | 2026-10-08T21:25Z | J0067 025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
