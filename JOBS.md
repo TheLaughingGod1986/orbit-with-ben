@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| – | | nothing waiting | | | | |
+| J0050 | mini | open | – | – | 025: Omni Orbit beats (cold, wheel, Wed Short night) for Claude PASS |  |
 
 Recently finished:
 
