@@ -12,7 +12,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
 | J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 | J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
-| J0065 | mini | open (after J0064) | – | – | 026 picture · 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) |  |
+| J0065 | mini | claimed | cursor | 2026-10-09T00:30Z | 026 picture · 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) |  |
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 
 Recently finished:
