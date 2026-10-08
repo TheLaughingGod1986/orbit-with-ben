@@ -1,5 +1,5 @@
 {
-  "next_id": 59,
+  "next_id": 60,
   "jobs": [
     {
       "id": "J0001",
@@ -2430,6 +2430,32 @@
       "film": "025",
       "stage": "edit",
       "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T18:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T18:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0059",
+      "title": "023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben watched OWB UAT/023_Venus_full_rough_v04.mp4 (8 Oct 18:28) and asked for 2 fixes: 'some image wobbly and frames seem unfinished' and 'some frames seem not polished'. Run scripts/polish_gate.py (built in the 025 v03 job) and the fill gate on every v04 row frame, and the push-jitter check on every still push. Post the flagged rows (sheet + list) on #99 for Claude; then fix: jitter-free pushes (4x upscaled source or subpixel scale+crop), swap any flagged frame (no split panels, no empty/low-detail plates, every frame fills 16:9, no text/annotations), and render v05 to OWB UAT with the pack and sheets force-added. Claude reviews, then it goes back to Ben to re-watch.",
+      "ref": "",
+      "film": "023",
+      "stage": "edit",
+      "after": "J0058",
       "eta_min": 120,
       "status": "open",
       "by": "",
