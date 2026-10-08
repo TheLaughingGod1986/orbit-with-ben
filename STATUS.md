@@ -21,5 +21,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
+| 023 | edit | cursor | 2026-10-08T00:59Z | 2026-10-08T12:58Z | J0003 Venus 023: Part 01 v03, then the full first cut (Sat 17) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.

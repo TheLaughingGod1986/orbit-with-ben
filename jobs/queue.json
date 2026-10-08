@@ -116,10 +116,10 @@
       "stage": "edit",
       "after": "J0001",
       "eta_min": 720,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T00:59Z",
+      "eta": "2026-10-08T12:59Z",
       "created_by": "claude",
       "created_at": "2026-10-07T11:24Z",
       "result": "",
@@ -188,6 +188,11 @@
           "at": "2026-10-08T00:48Z",
           "by": "cursor",
           "what": "released: Harvest v04 done (ceb806f): SVS 14095 WISPR clips + text-free 1920x1080 204.9 s master (strip its audio) for row 51; 24 title-checked Magellan stills in nasa_pool_v01/harvest_v04 (manifest _evidence/venus_harvest_v04.json; PIA00149 avoid; hemisphere globes crop the colour scale). All 4 parker/ PIAs are Mars/M87/galaxies, so they're out. Next: write _assemble_venus_full_v02.py per Claude 6049690321: rebuild rows 1-18 from stills too (rows 7-8 and 18 are inside Part01), max 2 uses per still with the second at a different framing (Maat Mons bookends 1/57 excepted), crop PIA00087's line, split holds over 7 s (22,23,25,32c,34a,34b,45a), split 35/36 with PIA18033 + Magellan, push row 56 in further, snap the 7 cuts (124.97,138.13,165.00,230.57,414.60,440.23,465.00) to VO pauses, then cuts_v02.json + reuse count per source. Render detached in tmux."
+        },
+        {
+          "at": "2026-10-08T00:59Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
