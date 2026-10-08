@@ -60,7 +60,7 @@
       "youShort": ""
     },
     "OWB:023": {
-      "updated": "2026-10-08T18:10Z",
+      "updated": "2026-10-08T21:58Z",
       "mood": "fixing",
       "done": "Script, voice, picture, edit, thumbnails and the upload package (passed ac6b9d5). The film is finished.",
       "holdup": "Your notes: some pictures wobble, and some frames look unfinished or unpolished. The wobble is most likely the slow zoom on still photos shaking by a fraction of a pixel each frame. A new check measures that on every zoom, and a second new check catches empty, murky or split-panel frames. Cursor runs both on v04, fixes what they find, and renders v05.",
@@ -90,13 +90,13 @@
       ],
       "you": "",
       "timing": "Airs Sun 25 Oct 18:00 London. Plenty of time for v05 and your re-watch.",
-      "line": "You asked for 2 fixes (wobbly pictures, frames that look unfinished). Cursor is checking every frame and making v05; then Claude checks it and it comes back to you.",
+      "line": "You asked for 2 fixes (wobbly pictures, frames that look unfinished). Cursor is checking every frame and making v05, with 023's own music: it had been sharing a track with 024 and 025. Then Claude checks it and it comes back to you.",
       "youWhen": "",
       "youShort": "",
       "limit": "The new checks are being built on 025 first (the focus film), so 023's job follows straight after it."
     },
     "OWB:024": {
-      "updated": "2026-10-08T18:10Z",
+      "updated": "2026-10-08T21:58Z",
       "mood": "fixing",
       "done": "Script, voice, picture, edit (cut v03), thumbnails and the upload package. The film is finished.",
       "holdup": "Your note: the audio seems the same as another video. Cursor checks three things: the words against 024's own script, the narration file against 022's and 023's, and the background music against the other films. If the narration is wrong, v04 is rebuilt with 024's own; if it's the same music, Claude picks a different track.",
@@ -126,16 +126,16 @@
       ],
       "you": "",
       "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "You flagged the audio sounding the same as another video. Cursor is checking whose narration and music are in v03; if it's wrong, v04 gets rebuilt.",
+      "line": "Your audio note was right: 023, 024 and 025 were all using the same music track. 024 gets its own music in v04; then Claude checks it and it comes back to you.",
       "youWhen": "",
       "youShort": "",
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-08T21:05Z",
-      "mood": "finished",
+      "updated": "2026-10-08T21:58Z",
+      "mood": "fixing",
       "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "Nothing is broken. Your phone couldn't open the 308 MB file: the Mini's disk is 99% full, so macOS kept pushing files out. The phone copy is uploaded. Next, the Mini clears its disk (urgent), then makes the thumbnails.",
+      "holdup": "Queued behind the Mini's disk clean-up (urgent: 3.7 GB free would break the render). Then J0068 makes v03d and a phone copy, Claude checks it, and it comes back to you.",
       "steps": [
         {
           "who": "Cursor",
@@ -150,15 +150,27 @@
           "doneText": "passed · Thu 8 Oct 21:00"
         },
         {
+          "who": "Ben",
+          "what": "watched v03c, sent two notes",
+          "done": true,
+          "doneText": "done · Thu 8 Oct 22:39"
+        },
+        {
           "who": "Cursor",
-          "what": "fix the iCloud upload, then add a fast phone copy (025_MarsRobot_v03c_PHONE.mp4)",
-          "job": "J0067"
+          "what": "swap the 2:54 picture, make 025's own music, build v03d + phone copy",
+          "job": "J0068"
+        },
+        {
+          "who": "Claude",
+          "what": "check the new picture and the music",
+          "afterJob": "J0068",
+          "lag": 60
         },
         {
           "who": "Ben",
-          "what": "watch iCloud Drive › OWB UAT › 025_MarsRobot_v03c_PHONE.mp4",
-          "when": "2026-10-12",
-          "whenText": "any time before Mon 12 Oct"
+          "what": "re-watch iCloud Drive › OWB UAT › 025_MarsRobot_v03d_PHONE.mp4",
+          "afterJob": "J0068",
+          "lag": 120
         },
         {
           "who": "Cursor",
@@ -172,10 +184,7 @@
         }
       ],
       "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
-      "line": "Ready for you to watch, as a lighter phone copy (111 MB). Same film as v03c, which passed every check. While you watch, Cursor makes the thumbnails and upload package.",
-      "you": "Watch iCloud Drive › OWB UAT › 025_MarsRobot_v03c_PHONE.mp4 any time before Mon 12 Oct. Tap Looks good or Needs a change.",
-      "youShort": "iCloud Drive › OWB UAT › 025_MarsRobot_v03c_PHONE.mp4 · by Mon 12 Oct",
-      "youWhen": "2026-10-08"
+      "line": "Fixing your two notes: the 2:54 picture (an old computer model) becomes a real photo of Spirit stuck in the sand, and the film gets its own music. You were right, 023, 024 and 025 all had the same track."
     },
     "OWB:026": {
       "updated": "2026-10-08T20:00Z",
