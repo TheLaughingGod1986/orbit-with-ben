@@ -24,10 +24,10 @@
       "line": "Uploaded and scheduled. Goes public on its own on Sunday."
     },
     "OWB:022": {
-      "updated": "2026-10-08T16:25Z",
+      "updated": "2026-10-08T18:10Z",
       "mood": "watched",
       "done": "Script, voice, picture, edit, thumbnails and the upload package. The film itself is finished.",
-      "holdup": "Nothing is broken and nothing waits on you. One quick job is left on the Mac mini (J0056: commit the three Short covers and run the upload checks). It's 2nd in the queue, behind 025's new rough cut (the focus film). As soon as it passes, Claude gives the final OK and the upload is queued.",
+      "holdup": "Nothing is wrong. The quick checks passed and the final OK is given. One job is left: Cursor uploads it privately, scheduled for Sun 18 Oct (J0061). It waits behind 025, the focus film, in the Mac mini's queue.",
       "steps": [
         {
           "who": "Ben",
@@ -38,125 +38,125 @@
         {
           "who": "Cursor",
           "what": "commit the Short covers and run the upload checks",
-          "job": "J0056"
+          "done": true,
+          "doneText": "done · Thu 8 Oct 18:33"
         },
         {
           "who": "Claude",
           "what": "final OK",
-          "afterJob": "J0056",
-          "lag": 60
+          "done": true,
+          "doneText": "given · Thu 8 Oct 19:10"
         },
         {
           "who": "Cursor",
           "what": "upload privately, scheduled: long Sun 18 Oct 18:00, Shorts Mon 19, Wed 21, Fri 23 Oct",
-          "whenText": "the next Mac mini job after Claude's OK"
+          "job": "J0061"
         }
       ],
       "you": "",
-      "timing": "Up on YouTube (private, scheduled) tonight or tomorrow. Airs Sun 18 Oct 18:00 London.",
-      "line": "You watched it (Thu 8 Oct 17:19) and said it looks good. Next: the quick upload checks on the Mac mini, then Claude's final OK and the upload. Nothing more for you.",
+      "timing": "On YouTube (private, scheduled) tonight or tomorrow. Airs Sun 18 Oct 18:00 London.",
+      "line": "You watched it and said it looks good; Claude gave the final OK (8 Oct). Now: the upload to YouTube, private and scheduled. Nothing more for you.",
       "youWhen": "",
       "youShort": ""
     },
     "OWB:023": {
-      "updated": "2026-10-08T16:20Z",
-      "mood": "finished",
+      "updated": "2026-10-08T18:10Z",
+      "mood": "held",
       "done": "Script, voice, picture, edit, thumbnails and the upload package (passed ac6b9d5). The film is finished.",
-      "holdup": "Nothing is broken. The film is finished and passed every check. It's waiting for your own watch of v04, which you asked for so you see every film before it goes up.",
+      "holdup": "Your notes: some pictures wobble, and some frames look unfinished or unpolished. The wobble is most likely the slow zoom on still photos shaking by a fraction of a pixel each frame. A new check measures that on every zoom, and a second new check catches empty, murky or split-panel frames. Cursor runs both on v04, fixes what they find, and renders v05.",
       "steps": [
         {
           "who": "Ben",
-          "what": "watch iCloud Drive › OWB UAT › 023_Venus_full_rough_v04.mp4",
-          "when": "2026-10-14",
-          "whenText": "any time before Wed 14 Oct"
+          "what": "watch v04",
+          "done": true,
+          "doneText": "you watched it · Thu 8 Oct 18:28, 2 fixes"
         },
         {
           "who": "Cursor",
-          "what": "run the upload checks",
-          "when": "2026-10-14"
+          "what": "wobble and polish checks on every frame, fixes, then v05",
+          "job": "J0059"
         },
         {
           "who": "Claude",
-          "what": "final OK",
-          "when": "2026-10-14",
-          "whenText": "Wed 14 Oct, or as soon as you've watched it"
-        },
-        {
-          "who": "Cursor",
-          "what": "upload privately, scheduled for Sun 25 Oct 18:00 London",
-          "whenText": "the same day as the OK"
-        }
-      ],
-      "you": "Watch iCloud Drive › OWB UAT › 023_Venus_full_rough_v04.mp4 any time before Wed 14 Oct. If you're happy, say nothing.",
-      "timing": "Upload Wed 14 Oct at the latest. Airs Sun 25 Oct 18:00 London.",
-      "line": "Made and checked. Waiting for your watch, then Claude's final OK and the upload.",
-      "youWhen": "2026-10-08",
-      "youShort": "iCloud Drive › OWB UAT › 023_Venus_full_rough_v04.mp4 · by Wed 14 Oct",
-      "limit": "It's kept off YouTube until then, because once a video is uploaded a fix means a fresh upload (we never swap the file or delete a video). If you haven't flagged anything by Wed 14 Oct, Claude's final OK goes ahead."
-    },
-    "OWB:024": {
-      "updated": "2026-10-08T16:20Z",
-      "mood": "finished",
-      "done": "Script, voice, picture, edit (cut v03), thumbnails and the upload package. The film is finished.",
-      "holdup": "Nothing is broken. The film is finished and passed every check. It's waiting for your own watch of v03, which you asked for so you see every film before it goes up.",
-      "steps": [
-        {
-          "who": "Ben",
-          "what": "watch iCloud Drive › OWB UAT › 024_LightSpeed_full_rough_v03.mp4",
-          "when": "2026-10-16",
-          "whenText": "any time before Fri 16 Oct"
-        },
-        {
-          "who": "Cursor",
-          "what": "run the upload checks",
-          "when": "2026-10-16"
-        },
-        {
-          "who": "Claude",
-          "what": "final OK",
-          "when": "2026-10-16",
-          "whenText": "Fri 16 Oct, or as soon as you've watched it"
-        },
-        {
-          "who": "Cursor",
-          "what": "upload privately, scheduled for Sun 1 Nov 18:00 London",
-          "whenText": "the same day as the OK"
-        }
-      ],
-      "you": "Watch iCloud Drive › OWB UAT › 024_LightSpeed_full_rough_v03.mp4 any time before Fri 16 Oct. If you're happy, say nothing.",
-      "timing": "Upload Fri 16 Oct at the latest. Airs Sun 1 Nov 18:00 London.",
-      "line": "Made and checked. Waiting for your watch, then Claude's final OK and the upload.",
-      "youWhen": "2026-10-08",
-      "youShort": "iCloud Drive › OWB UAT › 024_LightSpeed_full_rough_v03.mp4 · by Fri 16 Oct",
-      "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
-    },
-    "OWB:025": {
-      "updated": "2026-10-08T16:50Z",
-      "mood": "good",
-      "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "Getting close. Cursor's second pass of the new rough cut (v02) fixed the frames that didn't fill the screen and the shots that held still too long. Claude has ruled on the last few flagged pictures. One snag: iCloud locked the old file, so the finished cut is being saved under a new name (v02b). Next, Cursor finishes the file, then Claude checks the frames, usually within the hour.",
-      "limit": "After v02: Claude's check, any fixes, then thumbnails and the upload package. Each is a separate Mac mini job, and the Mac mini does one at a time.",
-      "steps": [
-        {
-          "who": "Cursor",
-          "what": "rough cut v02 with the fill check, text plates dropped, movement on still shots",
-          "job": "J0055"
-        },
-        {
-          "who": "Claude",
-          "what": "review v02's contact sheets",
-          "afterJob": "J0055",
+          "what": "check v05",
+          "afterJob": "J0059",
           "lag": 60
         },
         {
+          "who": "Ben",
+          "what": "re-watch v05",
+          "whenText": "once Claude has passed it"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 25 Oct 18:00 London. Plenty of time for v05 and your re-watch.",
+      "line": "You asked for 2 fixes (wobbly pictures, frames that look unfinished). Cursor is checking every frame and making v05; then Claude checks it and it comes back to you.",
+      "youWhen": "",
+      "youShort": "",
+      "limit": "The new checks are being built on 025 first (the focus film), so 023's job follows straight after it."
+    },
+    "OWB:024": {
+      "updated": "2026-10-08T18:10Z",
+      "mood": "held",
+      "done": "Script, voice, picture, edit (cut v03), thumbnails and the upload package. The film is finished.",
+      "holdup": "Your note: the audio seems the same as another video. Cursor checks three things: the words against 024's own script, the narration file against 022's and 023's, and the background music against the other films. If the narration is wrong, v04 is rebuilt with 024's own; if it's the same music, Claude picks a different track.",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch v03",
+          "done": true,
+          "doneText": "you watched it · Thu 8 Oct 18:30, 1 fix"
+        },
+        {
           "who": "Cursor",
-          "what": "fixes from that review, then thumbnails and the upload package",
-          "whenText": "over the next few days"
+          "what": "check the narration and music in v03 (about 30 min)",
+          "job": "J0060"
+        },
+        {
+          "who": "Claude",
+          "what": "decide the fix",
+          "afterJob": "J0060",
+          "lag": 60
+        },
+        {
+          "who": "Ben",
+          "what": "re-watch",
+          "whenText": "once the fix is in"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 1 Nov 18:00 London.",
+      "line": "You flagged the audio sounding the same as another video. Cursor is checking whose narration and music are in v03; if it's wrong, v04 gets rebuilt.",
+      "youWhen": "",
+      "youShort": "",
+      "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
+    },
+    "OWB:025": {
+      "updated": "2026-10-08T18:10Z",
+      "mood": "good",
+      "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
+      "holdup": "v02d passed the fill check, but Claude's look at every frame found about 8 that look unfinished: a fisheye frame with a black disc, a flat green texture, a noise frame, a split two-panel picture, murky and washed-out frames, and a near-duplicate pair. Cursor swaps them in v03 and builds a new polish check, so this kind of frame gets caught automatically from now on (023 gets the same treatment next).",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "rough cut v03: swap 8 frames, new polish and wobble check",
+          "job": "J0058"
+        },
+        {
+          "who": "Claude",
+          "what": "check v03",
+          "afterJob": "J0058",
+          "lag": 60
+        },
+        {
+          "who": "Ben",
+          "what": "watch 025 in OWB UAT",
+          "whenText": "about Sat 10 Oct"
         }
       ],
       "you": "Watch it in OWB UAT once it's ready, about Sat 10 Oct. Nothing before then.",
-      "timing": "Focus film since 8 Oct (your call: one film at a time). Ready for you about Sat 10 Oct; Claude confirms the date after tonight's cut review. Airs Sun 8 Nov.",
-      "line": "The focus film: every agent works on 025 first until it's ready for you to watch, aiming for Sat 10 Oct.",
+      "timing": "Ready for you about Sat 10 Oct. Airs Sun 8 Nov.",
+      "line": "Focus film. The new rough cut fills the screen everywhere, but about 8 frames still look unfinished. Cursor is making v03 with those swapped and a new polish check; then Claude checks it and it comes to you.",
       "youWhen": "2026-10-10",
       "youShort": "watch it about Sat 10 Oct"
     },
