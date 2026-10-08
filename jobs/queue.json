@@ -1,5 +1,5 @@
 {
-  "next_id": 46,
+  "next_id": 47,
   "jobs": [
     {
       "id": "J0001",
@@ -1917,6 +1917,32 @@
         }
       ],
       "done_ref": "fd7ea38"
+    },
+    {
+      "id": "J0046",
+      "title": "024: final picture v03 (row 1 one continuous starfield span)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Claude passed 024 full rough v02 (fd7ea38) on condition of one fix, and v03 is the final picture.\n\n- **Row 1:** play one continuous `starfield` span from 12 s for the whole row (0.10–5.90 s, one shot, under the 6 s cap). Drop the second shot, the 14 s render from 0 s, which falls back to grey.\n- Re-render as `full_rough_v03` and post only the frame0 sheet plus a 0–8 s sheet. Claude checks those two; nothing else changes.\n- Accepted as they are: the 6.83 s DC-8 hold (row 28) and the 7.53 s ISS limb (row 38).\n",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T10:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T10:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ]
 }
