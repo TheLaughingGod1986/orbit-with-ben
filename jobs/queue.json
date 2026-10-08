@@ -2655,13 +2655,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T20:05Z",
-      "eta": "2026-10-08T20:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
-      "result": "",
+      "result": "Scribe v2 re-run on the 3 LOCK takes; words.json now times the locked untrimmed files (sha-checked). Mon16 24.48s, Wed18 21.60s, Fri20 20.64s; all 22-27s with 2s hold; mismatches number/spelling only. Summary: 10_Shorts/SCRIBE_LOCK_v02.json",
       "history": [
         {
           "at": "2026-10-08T19:55Z",
@@ -2672,8 +2672,14 @@
           "at": "2026-10-08T20:05Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T20:06Z",
+          "by": "cursor",
+          "what": "done: Scribe v2 re-run on the 3 LOCK takes; words.json now times the locked untrimmed files (sha-checked). Mon16 24.48s, Wed18 21.60s, Fri20 20.64s; all 22-27s with 2s hold; mismatches number/spelling only. Summary: 10_Shorts/SCRIBE_LOCK_v02.json"
         }
-      ]
+      ],
+      "done_ref": "8e6ff0f"
     },
     {
       "id": "J0065",

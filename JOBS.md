@@ -12,12 +12,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
 | J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 | J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
-| J0064 | mini | claimed | cursor | 2026-10-08T20:35Z | 026 shots · 026 Nearest Star: fresh transcript and timing on the Shorts' locked voice files (Scribe + align) before picture |  |
 | J0065 | mini | open (after J0064) | – | – | 026 picture · 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) |  |
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 
 Recently finished:
 
+- J0064 done: 026 Nearest Star: fresh transcript and timing on the Shorts' locked voice files (Scribe + align) before picture (Scribe v2 re-run on the 3 LOCK takes; words.json now times the locked untrimmed files (sha-checked). Mon16 24.48s, Wed18 21.60s, Fri20 20.64s; all 22-27s with 2s hold; mismatches number/spelling only. Summary: 10_Shorts/SCRIBE_LOCK_v02.json)
 - J0063 done: 025: rough v03c (two frames: 216 s annotation box, 398.5 s blotchy sky), then to Ben (v03c pack d102274: OWB UAT/025_MarsRobot_full_rough_v03c.mp4, 490.2 s, -14.3 LUFS, fill+polish PASS, clip_check 0 errors)
 - J0062 done: 025: rough v03b (201 s swap to PIA19400, 393 s crop, two polish-gate tweaks), then to Ben (v03b pack b80aeb8 (OWB UAT/025_MarsRobot_full_rough_v03b.mp4, sha e6a1312a, 490.2 s, -14.3 LUFS, polish PASS, clip_check 0). Fill gate flags row 16 PIA19400 5.3% = dark foreground ridge, not fill: Claude to rule in sheet pass. Dark-static noise trigger + regression test ride J0059 per #6066936759.)
 - J0058 done: 025: rough v03, polish pass (Claude's sheet review of v02d) + new polish gate (v03 rendered + pack 63c3051 for Claude review; polish gate floor/WARN per #6066196876 (bb53fa3); still_motion.py standard (25f42b9). Open: 8 polish FAILs + fill FAIL PIA25739 row 16 for Claude to rule.)
@@ -27,4 +27,3 @@ Recently finished:
 - J0052 done: AI spend month: daily Cursor/Flow/Vertex/ElevenLabs readings + per-take spend lines (from today) (Readings live (EL, Vertex, Flow 52 baseline); daily 08:30 launchd; Flow refill auto-recorded as --total (496c59e); spend lines in VO/Omni/Flow UI. Cursor read waits on Ben signing in to cursor.com in CDP Chrome :9222.)
 - J0051 done: 025: pool licence check + full rough v01 (024 v03 rules) for Claude review (done)
 - J0050 done: 025: Omni Orbit beats (cold, wheel, Wed Short night) for Claude PASS (done)
-- J0049 done: 024: thumb B v02 (grade, flares, crop); A and C passed (abc_v02: B regraded in float, flares out, tighter limb crop; A and C copied from abc_v01; sheet abc_v02/light_speed_thumbs_v02_small_size_check.jpg)
