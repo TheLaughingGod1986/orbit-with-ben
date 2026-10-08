@@ -2277,10 +2277,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T16:52Z",
+      "eta": "2026-10-08T18:52Z",
       "created_by": "claude",
       "created_at": "2026-10-08T15:27Z",
       "result": "",
@@ -2309,6 +2309,11 @@
           "at": "2026-10-08T16:41Z",
           "by": "cursor",
           "what": "released: Pass 2 (2b3924c) rendered: picture.mp4 + audio.m4a in /private/tmp/mars025_full_work_v02, but the final mux failed: iCloud locks the old OWB UAT/025_MarsRobot_full_rough_v02.mp4 ('Resource deadlock avoided' on write AND mv). Next run: brctl download/evict that file or wait for iCloud to free it, then run 'python3 _assemble_mars_robot_full_v02.py --finish-only' detached (tmux j0055-finish, log ~/_desk/logs/j0055-finish.log, .done file). Fallback: point OUT at a new name (e.g. _v02b.mp4). Then check fill_gate_v02.json + freezes, force-add pack frames/sheets, post full_rough_v02_pack. Expected gate residue: PIA22210 sky, PIA17792 dish/black sky, PIA20328/PIA24264/PIA26016/PIA20316 rover shadows, PIA23177 InSight dome = scene content, not mosaic edges; list for Claude."
+        },
+        {
+          "at": "2026-10-08T16:52Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
