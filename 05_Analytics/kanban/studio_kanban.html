@@ -211,7 +211,17 @@ details.more .subs{margin-top:8px}
 .yl li.chg>span:first-child{color:var(--doing)}
 .yl .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .yl .btn.ok{background:var(--done-soft);border-color:transparent;color:var(--done);font-weight:600}
-.yl .chgbox{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:flex-start}
+.yl .chgbox{display:flex;flex-direction:column;gap:6px;margin-top:8px;padding:8px 10px;border:1px dashed var(--line);border-radius:8px}
+.fx{margin:6px 0 2px;padding-left:22px;font-size:13px}
+.yl .fx li{display:list-item;padding:2px 0;border-top:0}
+.fx .ft2{font:500 12px "IBM Plex Mono",monospace;background:var(--panel-2);border-radius:4px;padding:0 5px;margin-right:6px}
+.fxrow{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+.fxrow input{font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
+.fxt{width:5.5em}
+.fxx{flex:1 1 220px;min-width:0}
+.btn[disabled]{opacity:.5;cursor:default}
+a.open{display:inline-block;margin-left:6px;font-weight:600;color:var(--doing);text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:0 7px;background:var(--panel)}
+a.open:hover{border-color:var(--doing)}
 .yl textarea{flex:1 1 260px;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
 .yl .said{display:block;font-size:13px;margin-top:4px;color:var(--ink-2)}
 .lnk{font:inherit;font-size:12px;background:none;border:0;color:var(--ink-3);text-decoration:underline;cursor:pointer;padding:0 0 0 6px}
@@ -369,7 +379,7 @@ let data = SNAPSHOT, source = "snapshot", fetchedAt = null, filter = null, chan 
 const fromDb = {hos:null, owb:null, hosAt:null, owbAt:null, jobs:null, credits:null, briefs:null, checks:{}};
 // Ben's ticks on "Ready for you to check" (8 Oct): checks/<OWB-022> = {film, verdict: ok|change, note, at}. Claude's
 // hourly run reads them, acts (final OK and upload, or the fix) and marks them handled.
-let dbApi = null, changeOpen = null;
+let dbApi = null, changeOpen = null; const drafts = {};   // fixes Ben has added but not sent yet
 try { filter = localStorage.getItem("studio-kanban-film") || null; chan = localStorage.getItem("studio-kanban-ch") || "all"; } catch (e) {}
 
 const $ = id => document.getElementById(id);
@@ -523,10 +533,10 @@ function renderFilms(films){
 // ---------- Film by film (Ben, 8 Oct): "what's the holdup, what is it waiting for, and when will that happen?" ----------
 // Claude's note per film (board/briefs, from film_briefs.json) gives the words; the job queue gives live times; the
 // stage files give progress and how long the film has sat in its current stage. With no note, it's built from the data.
-const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · waiting for your watch"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
+const MOOD = {good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Made · waiting for your watch"], watched:["good","Watched by you · final OK next"], fixing:["held","Your fixes are queued"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
 const OWB_OWNER = {topic:"Claude", script:"Claude", sources:"Gemini", vo:"Cursor", shots:"Claude", picture:"Cursor", edit:"Cursor", thumbs:"Cursor", upload:"Cursor"};
 // The column follows the film's state; "Needs you" only changes the label, so a finished film stays in Done.
-const COLUMN = {good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"doing", ready:"done"};
+const COLUMN = {watched:"doing", fixing:"doing", good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"doing", ready:"done"};
 const openState = {};   // only what the viewer chose; otherwise films in hand open and films waiting their turn closed
 function stageDays(since){ const t=ts(since); if(isNaN(t)) return ""; const h=(Date.now()-t)/3600000;
   return h<1?"under an hour":h<36?`${Math.round(h)} h`:`${Math.round(h/24)} days`; }
@@ -554,6 +564,7 @@ function stepWhen(stp, P){
   const jobs = fromDb.jobs, byId = Object.fromEntries((jobs||[]).map(j=>[j.id,j]));
   const fromDate = w => { const t = String(w).length>10 ? ts(w) : NaN, d = pd(w);
     return !isNaN(t) ? {text:`${clock(t)} (${t<Date.now()?"done or due":rel(t)})`, at:t} : d ? {text:`${fd(d)} (${cd(d)})`, at:d.getTime(), late: days(d)<0} : null; };
+  if(stp.done) return {ok:true, text: stp.doneText || "done"};
   if(stp.job){
     const j = byId[stp.job];
     if(jobs && !j) return {ok:true, text:`done (${esc(stp.job)})`};
@@ -626,7 +637,19 @@ function renderTracker(films){
   const laneWho = {mini:"Cursor", gemini:"Gemini", cloud:"Claude", ben:"Ben"};
   const lanes = {OWB:{doing:[], todo:[], done:[]}, HOS:{doing:[], todo:[], done:[]}}, forYou = [];
   for(const f of all){
-    const b = briefs[f.key] || autoBrief(f);
+    let b = briefs[f.key] || autoBrief(f);
+    // Ben's tick (checks/<OWB-022>) shows on the card straight away: his watch step ticked, nothing left for him, and
+    // what happens next. Claude's hourly run then does the next step and rewrites the note.
+    const ck = (fromDb.checks||{})[f.key.replace(":","-")];
+    if(ck && b.you){
+      const when = fw(ck.at), fx = Array.isArray(ck.fixes) ? ck.fixes : [];
+      if(ck.verdict==="ok") b = Object.assign({}, b, {mood:"watched", you:"", youShort:"", youWhen:"",
+        steps:(b.steps||[]).map(x=>x.who==="Ben" ? Object.assign({}, x, {done:true, doneText:`you watched it · ${when}`}) : x)});
+      else if(!ck.handled) b = Object.assign({}, b, {mood:"fixing", you:"", youShort:"", youWhen:"", _fixes:fx,
+        steps:[{who:"Claude", what:`queue your ${fx.length} fix${fx.length===1?"":"es"}`, whenText:"at the next hourly check (:50 past the hour)"}]
+          .concat((b.steps||[]).filter(x=>x.who!=="Ben")), line:`You asked for ${fx.length} fix${fx.length===1?"":"es"} (${when}). Claude queues them, then it comes back to you to watch again.`});
+      if(ck.verdict==="ok") b.line = `You watched it (${when}) and said it looks good. Next: Claude's final OK once the upload checks pass, then the upload. Nothing more for you.`;
+    }
     const steps = (b.steps||[]).slice();
     // Any queued job for this film that the note doesn't mention yet still shows, with its live time.
     const named = new Set(steps.flatMap(x=>[x.job,x.afterJob]).filter(Boolean));
@@ -636,7 +659,7 @@ function renderTracker(films){
     const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=1) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
     const moodKey = youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
     const [cls, word] = MOOD[moodKey];
-    if(b.you) forYou.push({f, b, soon: youSoon});
+    if(b.you || (ck && !ck.handled && (briefs[f.key]||{}).you)) forYou.push({f, b: Object.assign({}, briefs[f.key]||b), soon: ck ? true : youSoon, checked: !!ck});
     const pct = moodKey==="ready" ? 100 : filmPct(f), air = pd(f.air);
     const age = b.updated ? Date.now()-ts(b.updated) : NaN;
     const stale = !b.auto && (isNaN(age) || age > 30*3600000);
@@ -675,28 +698,52 @@ function renderTracker(films){
   const yb = $("youbar"); if(!yb) return;
   const soon = forYou.filter(x=>x.soon);
   yb.className = "youbar" + (soon.length ? " has" : "");
-  if(yb.contains(document.activeElement) && document.activeElement.tagName==="TEXTAREA") return;   // don't wipe a note being typed
+  if(yb.contains(document.activeElement) && ["TEXTAREA","INPUT"].includes(document.activeElement.tagName) && document.activeElement.value) return;   // don't wipe a fix being typed
+  const fixList = (fx, id, editable) => fx.length ? `<ol class="fx">${fx.map((f,k)=>`<li>${f.t?`<span class="ft2">${esc(f.t)}</span>`:""}<span>${esc(f.text)}</span>${editable?`<button class="lnk" data-rm="${id}:${k}" aria-label="Remove">remove</button>`:""}</li>`).join("")}</ol>` : "";
+  const editor = (id, sent) => { const fx = drafts[id] || [];
+    return `<span class="chgbox">
+      <span class="why">${sent?"Add more fixes:":"Add each thing you want fixed. The time in the video is optional."}</span>
+      ${fixList(fx, id, true)}
+      <span class="fxrow"><input id="t-${id}" class="fxt" placeholder="3:10" aria-label="Time in the video (optional)"><input id="x-${id}" class="fxx" placeholder="What should change? e.g. the music is too loud here" aria-label="What should change"><button class="btn" data-add="${id}">Add</button></span>
+      <span class="acts"><button class="btn ok" data-send="${id}">${fx.length?`Send ${fx.length} fix${fx.length===1?"":"es"} to Claude`:"Send to Claude"}</button><button class="lnk" data-cancel="${id}">Cancel</button></span>
+    </span>`; };
   const item = x => {
     const id = x.f.key.replace(":","-"), c = (fromDb.checks||{})[id];
-    const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}</span>`;
-    if(c && !c.handled) return `<li class="${c.verdict==="ok"?"done":"chg"}"><span>${c.verdict==="ok"?"✓":"✎"}</span><span>${head}
-      <span class="said">${c.verdict==="ok"?"You said it looks good":`You asked for a change: “${esc(c.note||"")}”`} (${esc(fw(c.at))}). Claude acts on it at the next hourly check.
-      <button class="lnk" data-undo="${id}">Undo</button></span></span></li>`;
-    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Looks good</button><button class="btn" data-chg="${id}">Needs a change</button></span>
-      ${changeOpen===id?`<span class="chgbox"><textarea id="note-${id}" rows="2" placeholder="What should change? e.g. the music is too loud at 3:10"></textarea><button class="btn ok" data-send="${id}">Send to Claude</button></span>`:""}` : "";
+    const url = [x.b.uatUrl, fromDb.uatUrl].find(u=>/^https:\/\/www\.icloud\.com\//.test(u||""));
+    const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}${url?` <a class="open" href="${esc(url)}" target="_blank" rel="noopener">Open in iCloud ↗</a>`:""}</span>`;
+    if(c && !c.handled){
+      const fx = Array.isArray(c.fixes) ? c.fixes : (c.note ? [{t:"", text:c.note}] : []);
+      if(c.verdict==="ok") return `<li class="done"><span>✓</span><span>${head}<span class="said">You said it looks good (${esc(fw(c.at))}). Claude acts on it at the next hourly check. <button class="lnk" data-undo="${id}">Undo</button></span></span></li>`;
+      return `<li class="chg"><span>✎</span><span>${head}<span class="said">You asked for ${fx.length} fix${fx.length===1?"":"es"} (${esc(fw(c.at))}). Claude acts on them at the next hourly check. <button class="lnk" data-undo="${id}">Undo</button></span>
+        ${fixList(fx, id, false)}${changeOpen===id ? editor(id, true) : `<span class="acts"><button class="btn" data-more="${id}">Add another fix</button></span>`}</span></li>`;
+    }
+    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Looks good</button><button class="btn" data-chg="${id}">Needs a change</button></span>${changeOpen===id?editor(id, false):""}` : "";
     return `<li><span>☐</span><span>${head}${btns}</span></li>`;
   };
-  yb.innerHTML = soon.length ? `<b>Ready for you to check (${soon.filter(x=>{ const c=(fromDb.checks||{})[x.f.key.replace(":","-")]; return !c||c.handled; }).length})</b><ul class="yl">${soon.map(item).join("")}</ul>
+  const left = soon.filter(x=>{ const c=(fromDb.checks||{})[x.f.key.replace(":","-")]; return !c||c.handled; }).length;
+  yb.innerHTML = soon.length ? `<b>${left?`Ready for you to check (${left})`:"All checked. Nothing else for you right now."}</b><ul class="yl">${soon.map(item).join("")}</ul>
       <div class="why">Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder. ${dbApi?"Watch it, then tap <b>Looks good</b> or <b>Needs a change</b>.":`When you've checked one, tell Claude "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
     : `<b>Nothing for you to check right now.</b>`;
-  const keyOf = id => id.replace("-",":"), saveCheck = async (id, verdict, note) => {
+  const keyOf = id => id.replace("-",":");
+  const saveCheck = async (id, verdict, fixes) => {
     if(!dbApi) return;
-    try { await dbApi.doc("checks/"+id).set({film:keyOf(id), verdict, note:note||"", at:new Date().toISOString(), handled:false}); changeOpen=null; }
-    catch(e){ alert("Couldn't save that (" + (e && e.code || "error") + "). Tell Claude in the chat instead."); }
+    try {
+      await dbApi.doc("checks/"+id).set({film:keyOf(id), verdict, fixes:fixes||[], note:(fixes||[]).map(f=>(f.t?f.t+" ":"")+f.text).join(" | ").slice(0,4000), at:new Date().toISOString(), handled:false});
+      changeOpen=null; delete drafts[id]; render();
+    } catch(e){ alert("Couldn't save that (" + (e && e.code || "error") + "). Tell Claude in the chat instead."); }
   };
+  const addDraft = id => { const t=$("t-"+id), x=$("x-"+id), text=(x&&x.value||"").trim(); if(!text){ x&&x.focus(); return; }
+    (drafts[id] = drafts[id] || []).push({t:(t&&t.value||"").trim().slice(0,12), text:text.slice(0,1000)}); render(); const nx=$("x-"+id); if(nx) nx.focus(); };
+  const sentFixes = id => { const c=(fromDb.checks||{})[id]; return c && c.verdict==="change" && !c.handled ? (Array.isArray(c.fixes)?c.fixes:(c.note?[{t:"",text:c.note}]:[])) : []; };
   yb.querySelectorAll("[data-ok]").forEach(b=>b.onclick=()=>saveCheck(b.dataset.ok,"ok"));
-  yb.querySelectorAll("[data-chg]").forEach(b=>b.onclick=()=>{ changeOpen = changeOpen===b.dataset.chg ? null : b.dataset.chg; render(); const t=$("note-"+b.dataset.chg); if(t) t.focus(); });
-  yb.querySelectorAll("[data-send]").forEach(b=>b.onclick=()=>{ const t=$("note-"+b.dataset.send), v=(t&&t.value||"").trim(); if(!v){ t&&t.focus(); return; } saveCheck(b.dataset.send,"change",v.slice(0,2000)); });
+  yb.querySelectorAll("[data-chg],[data-more]").forEach(b=>b.onclick=()=>{ const id=b.dataset.chg||b.dataset.more; changeOpen=id; render(); const x=$("x-"+id); if(x) x.focus(); });
+  yb.querySelectorAll("[data-cancel]").forEach(b=>b.onclick=()=>{ changeOpen=null; delete drafts[b.dataset.cancel]; render(); });
+  yb.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>addDraft(b.dataset.add));
+  yb.querySelectorAll(".fxx").forEach(inp=>inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); addDraft(inp.id.slice(2)); } });
+  yb.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>{ const [id,k]=b.dataset.rm.split(":"); (drafts[id]||[]).splice(Number(k),1); render(); });
+  yb.querySelectorAll("[data-send]").forEach(b=>b.onclick=()=>{ const id=b.dataset.send; const t=$("x-"+id);
+    if(t && t.value.trim()) addDraft(id);   // a typed fix not yet added still goes
+    const all = sentFixes(id).concat(drafts[id]||[]); if(!all.length) return; saveCheck(id,"change",all); });
   yb.querySelectorAll("[data-undo]").forEach(b=>b.onclick=async()=>{ try{ await dbApi.doc("checks/"+b.dataset.undo).delete(); }catch(e){} });
 }
 
@@ -1144,7 +1191,7 @@ async function startDb(){
   db.doc("board/briefs").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || typeof d.films!=="object") return;
-    fromDb.briefs = d.films; render();
+    fromDb.briefs = d.films; fromDb.uatUrl = d.uatFolderUrl || ""; render();
   }, ()=>{});
   db.doc("board/credits").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;

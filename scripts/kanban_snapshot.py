@@ -201,6 +201,9 @@ def load_briefs() -> dict:
         return {}
     films = json.loads(BRIEFS.read_text()).get("films", {})
     bad = [k for k in films if not re.fullmatch(r"(HOS|OWB):\d{3}", k)]
+    urls = [u for u in [json.loads(BRIEFS.read_text()).get("uatFolderUrl", "")] + [b.get("uatUrl", "") for b in films.values()] if u]
+    if any(not u.startswith("https://www.icloud.com/") for u in urls):
+        raise SystemExit("film_briefs.json: UAT links must be https://www.icloud.com/ share links")
     if bad:
         raise SystemExit(f"film_briefs.json: keys must be HOS:NNN or OWB:NNN, not {bad}")
     return films
@@ -255,7 +258,8 @@ def main(argv: list[str] | None = None) -> int:
         credits["hosChecks"] = hos.get("credits", [])
         (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
         briefs = load_briefs()
-        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs}, ensure_ascii=False))
+        links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k == "uatFolderUrl"} if BRIEFS.exists() else {}
+        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, **links}, ensure_ascii=False))
         print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
               f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')})")
         if not a.page:

@@ -1,5 +1,6 @@
 {
-  "_note": "Ben, 8 Oct: one plain note per film on the Studio Kanban. Done so far / The holdup / Second limit / Next (who, what, when) / For you. Claude keeps these current on every hourly studio run; the page shows each note's 'updated' time and flags it if it is over a day old. Steps with 'job' take their times live from the job queue; 'afterJob' + 'lag' (minutes) means 'that long after the job is done'. 'when' is an ISO date or time; 'whenText' says it in words when there is no fixed time. 'mood' picks the column: good or held = In progress, waiting = To do, finished or ready = Done. 'line' is the one plain sentence on the card. 'you' is empty when there is nothing for Ben.",
+  "_note": "Ben, 8 Oct: one plain note per film on the Studio Kanban. Done so far / The holdup / Second limit / Next (who, what, when) / For you. Claude keeps these current on every hourly studio run; the page shows each note's 'updated' time and flags it if it is over a day old. Steps with 'job' take their times live from the job queue; 'afterJob' + 'lag' (minutes) means 'that long after the job is done'. 'when' is an ISO date or time; 'whenText' says it in words when there is no fixed time. 'mood' picks the column: good or held = In progress, waiting = To do, finished or ready = Done. 'line' is the one plain sentence on the card. 'you' is empty when there is nothing for Ben. 'uatFolderUrl' (top level) is Ben's iCloud share link to the OWB UAT folder (icloud.com links only); a film's 'uatUrl' is a share link to its own file, if Ben ever makes one.",
+  "uatFolderUrl": "",
   "films": {
     "OWB:021": {
       "updated": "2026-10-08T16:05Z",
@@ -23,40 +24,39 @@
       "line": "Uploaded and scheduled. Goes public on its own on Sunday."
     },
     "OWB:022": {
-      "updated": "2026-10-08T16:20Z",
-      "mood": "finished",
+      "updated": "2026-10-08T16:25Z",
+      "mood": "watched",
       "done": "Script, voice, picture, edit, thumbnails and the upload package. The film itself is finished.",
-      "holdup": "Nothing is broken. Two things are left. One is a quick job on the Mac mini (J0056: commit the three Short covers and run the upload checks); it's in the queue behind 025, the focus film. The other is your own watch of cut v05, which you asked for so you see every film before it goes up.",
-      "limit": "It's kept off YouTube until then, because once a video is uploaded a fix means a fresh upload (we never swap the file or delete a video). If you haven't flagged anything by Mon 12 Oct, Claude's final OK goes ahead so the upload isn't held up.",
+      "holdup": "Nothing is broken and nothing waits on you. One quick job is left on the Mac mini (J0056: commit the three Short covers and run the upload checks). It's 2nd in the queue, behind 025's new rough cut (the focus film). As soon as it passes, Claude gives the final OK and the upload is queued.",
       "steps": [
+        {
+          "who": "Ben",
+          "what": "watch cut v05",
+          "done": true,
+          "doneText": "you watched it · Thu 8 Oct 17:19, looks good"
+        },
         {
           "who": "Cursor",
           "what": "commit the Short covers and run the upload checks",
           "job": "J0056"
         },
         {
-          "who": "Ben",
-          "what": "watch iCloud Drive › OWB UAT › sun_first_cut_v05 › sun_first_cut_v05.mp4",
-          "when": "2026-10-12",
-          "whenText": "any time before Mon 12 Oct"
-        },
-        {
           "who": "Claude",
           "what": "final OK",
-          "when": "2026-10-12",
-          "whenText": "Mon 12 Oct, or as soon as you've watched it"
+          "afterJob": "J0056",
+          "lag": 60
         },
         {
           "who": "Cursor",
           "what": "upload privately, scheduled: long Sun 18 Oct 18:00, Shorts Mon 19, Wed 21, Fri 23 Oct",
-          "whenText": "the same day as the OK"
+          "whenText": "the next Mac mini job after Claude's OK"
         }
       ],
-      "you": "Watch iCloud Drive › OWB UAT › sun_first_cut_v05 › sun_first_cut_v05.mp4 any time before Mon 12 Oct. If you're happy, say nothing.",
-      "timing": "Upload Mon 12 Oct at the latest. Airs Sun 18 Oct 18:00 London.",
-      "line": "Made. Waiting for one quick check on the Mac mini and for your watch, then Claude's final OK and the upload.",
-      "youWhen": "2026-10-08",
-      "youShort": "iCloud Drive › OWB UAT › sun_first_cut_v05 › sun_first_cut_v05.mp4 · by Mon 12 Oct"
+      "you": "",
+      "timing": "Up on YouTube (private, scheduled) tonight or tomorrow. Airs Sun 18 Oct 18:00 London.",
+      "line": "You watched it (Thu 8 Oct 17:19) and said it looks good. Next: the quick upload checks on the Mac mini, then Claude's final OK and the upload. Nothing more for you.",
+      "youWhen": "",
+      "youShort": ""
     },
     "OWB:023": {
       "updated": "2026-10-08T16:20Z",
