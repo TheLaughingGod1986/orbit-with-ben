@@ -52,6 +52,12 @@ class Next(unittest.TestCase):
         jobs.do_done(d["jobs"][1], "cursor", "ok", T0)
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "022 covers")  # a film's job before admin
 
+    def test_an_urgent_job_goes_ahead_of_the_focus_film(self):
+        d = queue(("mini", "025 rough v02", {"film": "025", "stage": "edit", "eta_min": 240}), ("mini", "disk move", {"eta_min": 240}))
+        d["focus"] = ["025"]
+        jobs.find(d, "J0002")["urgent"] = True
+        self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "disk move")
+
     def test_watch_flags_a_quiet_mini_and_what_waits_on_ben(self):
         d = queue(("mini", "cut", {}), ("ben", "sign in", {}))
         self.assertTrue(jobs.do_watch(d, T0 + 4 * 60 * MIN)["quiet"])  # Mini work waiting, nobody touched it for 4 h

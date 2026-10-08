@@ -261,7 +261,7 @@ def main(argv: list[str] | None = None) -> int:
         q = ROOT / "jobs" / "queue.json"
         alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
         learn_estimates(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result")},
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent")},
                      last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),

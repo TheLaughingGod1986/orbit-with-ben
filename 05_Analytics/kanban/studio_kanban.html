@@ -1013,8 +1013,8 @@ function plan(){
       const done = Math.max(st+est, now+5*MINUTE);
       out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
     }
-    const focus = fromDb.focus || [], rank = j => [focus.includes(j.film)?0:1, j.film?0:1, (j.eta_min||120)<=60?0:1, j.id];
-    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>{ const x=rank(a), y=rank(b); return x[0]-y[0] || x[1]-y[1] || x[2]-y[2] || x[3].localeCompare(y[3]); });
+    const focus = fromDb.focus || [], rank = j => [j.urgent?0:1, focus.includes(j.film)?0:1, j.film?0:1, (j.eta_min||120)<=60?0:1, j.id];
+    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>{ const x=rank(a), y=rank(b); return x[0]-y[0] || x[1]-y[1] || x[2]-y[2] || x[3]-y[3] || x[4].localeCompare(y[4]); });
     const wake = lane==="mini" ? 5*MINUTE : lane==="cloud" ? 30*MINUTE : 15*MINUTE;
     for(const j of open){
       const dep = j.after && byId[j.after] ? out[j.after] : null;

@@ -133,10 +133,11 @@ def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
 
 
 def order(job: dict, focus=()) -> tuple:
-    """The focus film's jobs first (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
+    """An urgent job first (Claude's call: e.g. the Mini's disk at 99% would break every render after it), then the focus film's jobs (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
     films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
     every stopping point (a first cut) would come back first every time and starve the quick ones."""
-    return (0 if job.get("film") and job["film"] in focus else 1,
+    return (0 if job.get("urgent") else 1,
+            0 if job.get("film") and job["film"] in focus else 1,
             0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
             0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
 
@@ -233,6 +234,9 @@ def render(data: dict, at: dt.datetime) -> str:
          "Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what you can do>`.", ""]
     if data.get("focus"):
         L += [f"**Focus film: {', '.join(data['focus'])}.** Its jobs go first (Ben, 8 Oct: one film at a time).", ""]
+    urgent = [j["id"] for j in data["jobs"] if j.get("urgent") and j["status"] in ("open", "claimed", "blocked")]
+    if urgent:
+        L += [f"**Urgent: {', '.join(urgent)}.** Ahead of everything, the focus film included.", ""]
     L += [
          "| Job | Needs | Status | Who | ETA (UTC) | Title | Ref |", "|---|---|---|---|---|---|---|"]
     live = [j for j in data["jobs"] if j["status"] in ("open", "claimed", "blocked")]
@@ -338,6 +342,10 @@ def main(argv=None) -> int:
     fo = sub.add_parser("focus", help="the film(s) every agent works on first, e.g. `focus 025`; no films clears it")
     fo.add_argument("films", nargs="*")
     fo.add_argument("--by", default="claude")
+    ur = sub.add_parser("urgent", help="put job(s) ahead of everything, even the focus film, e.g. `urgent J0054`; --off undoes it")
+    ur.add_argument("ids", nargs="+")
+    ur.add_argument("--off", action="store_true")
+    ur.add_argument("--by", default="claude")
     lst = sub.add_parser("list")
     lst.add_argument("--all", action="store_true")
     for p in sub.choices.values():
@@ -374,6 +382,16 @@ def main(argv=None) -> int:
             if args.cmd == "focus":
                 data["focus"] = [f.strip() for f in args.films if f.strip()]
                 return {"id": "focus", "focus": data["focus"]}, None, touched
+            if args.cmd == "urgent":
+                found = [find(data, i) for i in args.ids]
+                if not all(found):
+                    return None, "no " + ", ".join(i for i, j in zip(args.ids, found) if not j), touched
+                for j in found:
+                    if args.off:
+                        j.pop("urgent", None)
+                    else:
+                        j["urgent"] = True
+                return {"id": "urgent", "urgent": [j["id"] for j in data["jobs"] if j.get("urgent")]}, None, touched
             if args.cmd == "next":
                 can = {c.strip() for c in args.can.split(",") if c.strip()}
                 if args.peek:
@@ -415,7 +433,7 @@ def main(argv=None) -> int:
 
     if args.git and not (args.cmd == "next" and args.peek):
         who = getattr(args, "agent", "") or getattr(args, "by", "")
-        what = " ".join(x for x in ("jobs:", args.cmd, getattr(args, "id", "") or (args.title if args.cmd == "add" else ""), "by", who) if x)
+        what = " ".join(x for x in ("jobs:", args.cmd, " ".join(getattr(args, "ids", [])) or getattr(args, "id", "") or (args.title if args.cmd == "add" else ""), "by", who) if x)
         job, err = with_git(apply, what)
     else:
         data = load()
@@ -433,6 +451,9 @@ def main(argv=None) -> int:
         return EX_NONE
     if args.cmd == "focus":
         print("focus: " + (", ".join(job["focus"]) or "none"))
+        return 0
+    if args.cmd == "urgent":
+        print("urgent: " + (", ".join(job["urgent"]) or "none"))
         return 0
     print(show(job) if job else "ok")
     return 0
