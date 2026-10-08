@@ -151,6 +151,20 @@ def read_cursor() -> dict:
     return {"left": left, "total": total, "note": "Cursor dashboard included usage (CDP :9222)"}
 
 
+def flow_refill(r: dict, last_left: float | None) -> dict:
+    """A Flow balance above the last recorded one is the monthly refill: record it as --total (J0052 step 2)."""
+    if last_left is not None and r.get("total") is None and r["left"] > last_left:
+        return {**r, "total": r["left"], "note": f"{r['note']}; refill from {last_left:g} (monthly allotment)"}
+    return r
+
+
+def last_left(pool: str) -> float | None:
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from ai_spend import load  # noqa: E402
+    rows = [x for x in load() if x.get("kind") == "record" and x.get("pool") == pool and x.get("left") is not None]
+    return float(rows[-1]["left"]) if rows else None
+
+
 READERS = {"elevenlabs": read_elevenlabs, "flow": read_flow, "vertex": read_vertex, "cursor": read_cursor}
 
 
@@ -165,6 +179,8 @@ def main(argv: list[str] | None = None) -> int:
     for pool in [p.strip() for p in a.pools.split(",") if p.strip()]:
         try:
             r = READERS[pool]()
+            if pool == "flow":
+                r = flow_refill(r, last_left("flow"))
         except Exception as e:  # one pool failing never blocks the others
             failed += 1
             print(f"FAIL {pool}: {type(e).__name__}: {str(e)[:300]}", flush=True)

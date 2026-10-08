@@ -40,5 +40,14 @@ class BuildDoc(unittest.TestCase):
             ai_spend.main(["record", "--pool", "flow", "--by", "t"])
 
 
+class FlowRefill(unittest.TestCase):
+    def test_rise_is_refill_total(self):
+        import ai_spend_daily
+        r = {"left": 25000, "note": "n"}
+        self.assertEqual(ai_spend_daily.flow_refill(r, 52)["total"], 25000)
+        self.assertNotIn("total", ai_spend_daily.flow_refill(r, None))
+        self.assertNotIn("total", ai_spend_daily.flow_refill({"left": 40, "note": "n"}, 52))
+
+
 if __name__ == "__main__":
     unittest.main()
