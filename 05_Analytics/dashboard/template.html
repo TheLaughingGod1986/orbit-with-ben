@@ -75,6 +75,17 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
 .pctcell { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
 .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .8rem; color: var(--ink-2); }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.agebar { display: flex; height: 30px; border-radius: 6px; overflow: hidden; background: var(--chip); }
+.agebar span { display: block; height: 100%; min-width: 0; background: var(--accent); }
+.agebar span + span { box-shadow: inset 2px 0 0 var(--panel); }
+.ageband { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.ageband .cmp { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; display: grid; gap: 2px; min-width: 0; }
+.ageband .cmp .big { font: 500 1.15rem/1.2 var(--f-mono); font-variant-numeric: tabular-nums; }
+.ageband .cmp .sub { font-size: .8rem; color: var(--ink-3); }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: var(--accent); margin-right: 6px; vertical-align: -1px; }
+.lede { margin: 0; font-size: .95rem; color: var(--ink); max-width: 75ch; }
+.lede b { font-family: var(--f-mono); font-weight: 500; }
+.pill.on { color: var(--up); } .pill.low { color: var(--ink-2); } .pill.off { color: var(--down); }
 @media (prefers-reduced-motion: no-preference) { .tab, .seg button { transition: background .15s, color .15s; } }
 </style>
 
@@ -89,6 +100,41 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
   <div class="stamp" id="stamp"></div>
   <section class="readout" id="readout" aria-label="Totals and growth"></section>
 
+  <section class="panel" aria-labelledby="period-h">
+    <div class="row">
+      <h2 id="period-h">Growth or decline</h2>
+      <div class="seg" id="period">
+        <button type="button" data-p="weekly" aria-pressed="true">Week on week</button>
+        <button type="button" data-p="monthly">Month on month</button>
+      </div>
+    </div>
+    <div class="compare" id="periodCompare"></div>
+    <div class="chart" id="periodChart"></div>
+    <div class="scroll"><table id="periodTable"></table></div>
+  </section>
+
+  <section class="panel" aria-labelledby="age-h">
+    <div class="row">
+      <h2 id="age-h">New videos vs older videos</h2>
+      <div class="seg" id="ageWin">
+        <button type="button" data-w="7">Last 7 days</button>
+        <button type="button" data-w="30" aria-pressed="true">Last 30 days</button>
+      </div>
+    </div>
+    <p class="lede" id="ageLede"></p>
+    <div class="agebar" id="ageBar" role="img"></div>
+    <div class="ageband" id="ageBands"></div>
+    <div class="row">
+      <h2 id="old-h" style="font-size:1rem">Older videos still bringing in views</h2>
+      <div class="seg" id="ageMin">
+        <button type="button" data-a="30" aria-pressed="true">Over 1 month old</button>
+        <button type="button" data-a="90">Over 3 months old</button>
+      </div>
+    </div>
+    <p class="lede" id="oldLede"></p>
+    <div class="scroll" style="max-height:520px"><table id="oldTable"></table></div>
+  </section>
+
   <section class="panel" aria-labelledby="daily-h">
     <div class="row">
       <h2 id="daily-h">Views per day</h2>
@@ -101,18 +147,6 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     <div class="chart" id="daily"></div>
   </section>
 
-  <section class="panel" aria-labelledby="period-h">
-    <div class="row">
-      <h2 id="period-h">Growth by period</h2>
-      <div class="seg" id="period">
-        <button type="button" data-p="weekly" aria-pressed="true">Week on week</button>
-        <button type="button" data-p="monthly">Month on month</button>
-      </div>
-    </div>
-    <div class="compare" id="periodCompare"></div>
-    <div class="chart" id="periodChart"></div>
-    <div class="scroll"><table id="periodTable"></table></div>
-  </section>
 
   <section class="panel" aria-labelledby="sources-h" id="sourcesPanel" hidden>
     <h2 id="sources-h">Where views come from <span class="stamp">last 28 days</span></h2>
@@ -152,10 +186,12 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
   const hrs = (m) => (m == null ? "–" : (m / 60).toLocaleString("en-GB", { maximumFractionDigits: 1 }));
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const dayLabel = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-  const monthLabel = (m) => new Date(m + "-15T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "2-digit" });
+  const monthLabel = (m) => new Date(m + "-15T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+  // British dates everywhere: 7 Oct 2026.
+  const ukDate = (d) => (d ? new Date(String(d).slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "–");
   const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
 
-  const state = { ch: store.get("tracker.ch") || (DATA.channels[0] && DATA.channels[0].channel), days: 90, period: "weekly", f: "all", q: "", sort: "publishedAt", dir: -1 };
+  const state = { ch: store.get("tracker.ch") || (DATA.channels[0] && DATA.channels[0].channel), days: 90, period: "weekly", ageWin: 30, ageMin: 30, f: "all", q: "", sort: "publishedAt", dir: -1 };
   if (!DATA.channels.some((c) => c.channel === state.ch) && DATA.channels[0]) state.ch = DATA.channels[0].channel;
   const cur = () => DATA.channels.find((c) => c.channel === state.ch);
   const colorVar = (key) => (key === "hos" ? "var(--hos)" : "var(--owb)");
@@ -181,7 +217,7 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
       `<div class="cell"><span class="eyebrow">Subscribers</span><span class="big">${fmt(c.totals.subscribers)}</span><span class="sub">${esc(c.handle)}</span></div>` +
       `<div class="cell"><span class="eyebrow">Total views</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} videos</span></div>` +
       growth("Last day", ch.d1) + growth("Last 7 days", ch.d7) + growth("Last 30 days", ch.d30);
-    $("stamp").textContent = `Snapshot ${c.date}` + (c.analyticsThrough ? ` · YouTube Analytics through ${c.analyticsThrough}` : "") + ` · tracking since ${c.firstSnapshot}`;
+    $("stamp").textContent = `Snapshot ${ukDate(c.date)}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)}` : "") + ` · tracking since ${ukDate(c.firstSnapshot)}`;
   }
 
   // ---------------------------------------------------------------- charts
@@ -241,7 +277,7 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
       xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible");
       xd.setAttribute("cx", x(i)); xd.setAttribute("cy", y(Math.max(d.views, 0))); xd.setAttribute("visibility", "visible");
       const px = (x(i) / W) * r.width, py = (y(Math.max(d.views, 0)) / H) * r.height;
-      tipAt(box, `${new Date(d.day + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}<br><b>${fmt(d.views)}</b> views` +
+      tipAt(box, `${new Date(d.day + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" })}<br><b>${fmt(d.views)}</b> views` +
         (d.minutes != null ? ` · <b>${hrs(d.minutes)}</b> h watched` : "") + (d.subsNet != null ? ` · <b>${signed(d.subsNet)}</b> subs` : ""), px, py);
     };
     const hit = svg.querySelector("#hit");
@@ -302,9 +338,63 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     svg.addEventListener("pointerleave", () => hideTip(box));
     const head = weekly ? "Week of" : "Month";
     $("periodTable").innerHTML = `<thead><tr><th class="l">${head}</th><th>Views</th><th>vs previous</th><th>Watch hours</th><th>vs previous</th><th>Subscribers</th><th>Uploads</th></tr></thead><tbody>` +
-      [...rows].reverse().map((r) => `<tr><td class="l">${r.period}${r.partial ? (r.likeForLike ? " · so far" : " · part") : ""}</td><td>${fmt(r.views)}</td><td class="pctcell delta ${pcls(r.viewsPct)}">${pctTxt(r.viewsPct)}</td><td>${hrs(r.minutes)}</td><td class="pctcell delta ${pcls(r.hoursPct)}">${pctTxt(r.hoursPct)}</td><td class="delta ${cls(r.subsNet)}">${signed(r.subsNet)}</td><td>${r.uploads}</td></tr>`).join("") + "</tbody>";
+      [...rows].reverse().map((r) => `<tr><td class="l">${weekly ? ukDate(r.period) : monthLabel(r.period)}${r.partial ? (r.likeForLike ? " · so far" : " · part") : ""}</td><td>${fmt(r.views)}</td><td class="pctcell delta ${pcls(r.viewsPct)}">${pctTxt(r.viewsPct)}</td><td>${hrs(r.minutes)}</td><td class="pctcell delta ${pcls(r.hoursPct)}">${pctTxt(r.hoursPct)}</td><td class="delta ${cls(r.subsNet)}">${signed(r.subsNet)}</td><td>${r.uploads}</td></tr>`).join("") + "</tbody>";
   }
 
+
+  // ---------------------------------------------------------------- new vs older videos
+  // Splits the views each video earned in the window by how old the video is today.
+  const BANDS = [
+    { lo: 0, hi: 7, name: "This week's uploads", short: "0–7 days old", op: 1 },
+    { lo: 8, hi: 30, name: "1 week to 1 month old", short: "8–30 days old", op: 0.7 },
+    { lo: 31, hi: 90, name: "1 to 3 months old", short: "31–90 days old", op: 0.45 },
+    { lo: 91, hi: Infinity, name: "Over 3 months old", short: "91+ days old", op: 0.25 },
+  ];
+  const winViews = (v, w) => (w === 7 ? v.d7 : v.d30) || 0;
+  const pctOf = (a, b) => (b ? Math.round((a / b) * 100) : 0);
+  function drawAge(c) {
+    const w = state.ageWin, vids = c.videos;
+    const split = BANDS.map((b) => {
+      const vs = vids.filter((v) => v.ageDays >= b.lo && v.ageDays <= b.hi);
+      return { ...b, n: vs.length, views: vs.reduce((a, v) => a + winViews(v, w), 0) };
+    });
+    const total = split.reduce((a, b) => a + b.views, 0);
+    const legacy = vids.filter((v) => v.ageDays > w).reduce((a, v) => a + winViews(v, w), 0);
+    const chTotal = c.change && c.change["d" + w] ? c.change["d" + w].views : null;
+    $("ageLede").innerHTML = total
+      ? `In the last ${w} days, <b>${pctOf(legacy, total)}%</b> of views came from videos published before that window opened, and <b>${pctOf(total - legacy, total)}%</b> from videos uploaded during it.`
+      : `No per-video views in the last ${w} days yet.`;
+    $("ageBar").setAttribute("aria-label", split.map((b) => `${b.name}: ${pctOf(b.views, total)}%`).join(", "));
+    $("ageBar").innerHTML = total ? split.filter((b) => b.views > 0).map((b) => `<span style="flex:${b.views};opacity:${b.op}" title="${b.name}: ${fmt(b.views)} views (${pctOf(b.views, total)}%)"></span>`).join("") : "";
+    $("ageBands").innerHTML = split.map((b) => `<div class="cmp"><span class="eyebrow"><i class="sw" style="opacity:${b.op}"></i>${b.name}</span>
+      <span class="big">${b.n ? pctOf(b.views, total) + "%" : "–"}</span>
+      <span class="sub">${b.n ? `${fmt(b.views)} views · ${b.n} video${b.n === 1 ? "" : "s"}` : "no videos this old yet"}</span></div>`).join("") +
+      (chTotal != null && chTotal > total ? `<div class="cmp"><span class="eyebrow">Not split by video</span><span class="big">${fmt(chTotal - total)}</span><span class="sub">of the channel's ${fmt(chTotal)} views in YouTube Analytics aren't tied to a listed video yet (Analytics runs about 2 days behind per video)</span></div>` : "");
+    drawOld(c);
+  }
+  function drawOld(c) {
+    const min = state.ageMin;
+    const old = c.videos.filter((v) => v.ageDays > min).sort((a, b) => (b.d30 || 0) - (a.d30 || 0) || (b.d7 || 0) - (a.d7 || 0));
+    if (!old.length) {
+      const oldest = c.videos.reduce((a, v) => (!a || v.ageDays > a.ageDays ? v : a), null);
+      $("oldLede").innerHTML = oldest
+        ? `No video is over ${min === 90 ? "3 months" : "1 month"} old yet. The oldest is <b>${oldest.ageDays}</b> days (“${esc(oldest.title)}”, ${ukDate(oldest.publishedAt)}); it turns ${min === 90 ? "3 months" : "1 month"} on ${ukDate(new Date(Date.parse(oldest.publishedAt) + (min + 1) * 864e5).toISOString())}.`
+        : "No videos yet.";
+      $("oldTable").innerHTML = "";
+      return;
+    }
+    const earning = old.filter((v) => (v.d30 || 0) >= 30).length, any = old.filter((v) => (v.d30 || 0) > 0).length;
+    const v30 = old.reduce((a, v) => a + (v.d30 || 0), 0);
+    $("oldLede").innerHTML = `<b>${any}</b> of ${old.length} videos over ${min === 90 ? "3 months" : "1 month"} old got views in the last 30 days (<b>${fmt(v30)}</b> in all). <b>${earning}</b> still average a view a day or more.`;
+    const status = (v) => ((v.d30 || 0) >= 30 ? '<span class="pill on">Still earning</span>' : (v.d30 || 0) > 0 ? '<span class="pill low">Trickling</span>' : '<span class="pill off">Gone quiet</span>');
+    $("oldTable").innerHTML = `<thead><tr><th class="l">Published</th><th class="l">Title</th><th class="l">Format</th><th>Age</th><th>Last 7 days</th><th>Last 30 days</th><th>Per day, last 30</th><th>Lifetime</th><th>Lifetime from last 30 days</th><th class="l">Status</th></tr></thead><tbody>` +
+      old.map((v) => `<tr><td class="l">${ukDate(v.publishedAt)}</td>
+        <td class="l title"><a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a></td>
+        <td class="l"><span class="pill ${v.format}">${v.format === "short" ? "Short" : "Long"}</span></td>
+        <td>${v.ageDays} d</td><td>${fmt(v.d7 || 0)}</td><td>${fmt(v.d30 || 0)}</td>
+        <td>${((v.d30 || 0) / 30).toLocaleString("en-GB", { maximumFractionDigits: 1 })}</td>
+        <td>${fmt(v.views)}</td><td>${v.views ? pctOf(v.d30 || 0, v.views) + "%" : "–"}</td><td class="l">${status(v)}</td></tr>`).join("") + "</tbody>";
+  }
 
   // ---------------------------------------------------------------- sources
   function drawSources(c) {
@@ -336,7 +426,7 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     });
     const head = COLS.map(([k, label, a]) => `<th class="${a || ""}" aria-sort="${state.sort === k ? (state.dir > 0 ? "ascending" : "descending") : "none"}"><button type="button" data-sort="${k}">${label}${state.sort === k ? (state.dir > 0 ? " ↑" : " ↓") : ""}</button></th>`).join("");
     const body = vs.map((v) => `<tr>
-      <td class="l">${v.publishedAt ? v.publishedAt.slice(0, 10) : "–"}</td>
+      <td class="l">${ukDate(v.publishedAt)}</td>
       <td class="l title"><a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a></td>
       <td class="l"><span class="pill ${v.format}">${v.format === "short" ? "Short" : "Long"}</span></td>
       <td>${fmt(v.views)}</td>
@@ -367,11 +457,13 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
   seg("range", "days", "days", Number);
   seg("period", "period", "p");
   seg("fmt", "f", "f");
+  seg("ageWin", "ageWin", "w", Number);
+  seg("ageMin", "ageMin", "a", Number);
 
   function render() {
     const c = cur();
-    drawTabs(); drawReadout(c); drawDaily(c); drawPeriod(c); drawSources(c); drawVideos(c);
-    $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li>`;
+    drawTabs(); drawReadout(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
+    $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
   }
   render();
   let rt;
