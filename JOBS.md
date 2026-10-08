@@ -6,6 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0048 | mini | open (after J0047) | – | – | 024 upload · 024: upload package dry-run (v03 + thumbs abc_v01) |  |
+| J0049 | mini | open | – | – | 024 thumbs · 024: thumb B v02 (grade, flares, crop); A and C passed |  |
 
 Recently finished:
 
