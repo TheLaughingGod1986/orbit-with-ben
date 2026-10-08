@@ -2179,10 +2179,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-08T17:43Z",
-      "eta": "2026-10-08T19:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T14:06Z",
       "result": "",
@@ -2216,6 +2216,11 @@
           "at": "2026-10-08T17:43Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T17:45Z",
+          "by": "cursor",
+          "what": "released: Part 3 done: 59e7283 Flow takes write an ai_spend flow line at Create (Quality 100/Fast 10/Lite 5) in OWB orbit_flow_veo_ui.py; HOS copy is PR #257 awaiting Claude. Left: Mon 12 Oct record the Flow refill as --total (first read after the refill); Cursor dashboard read needs Ben to sign in to cursor.com in CDP Chrome :9222. Per-film one-off Flow minters that don't call orbit_flow_veo_ui.generate_clip still write no line."
         }
       ]
     },
