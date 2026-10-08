@@ -6,7 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0040 | mini | open (after J0039) | – | – | 029 vo · 029: VO take of the locked script master v02 |  |
-| J0041 | gemini | open | – | – | 028: verify Berski & Dybczynski comet-shower quote from the full paper (or FLAG for a pickup) |  |
+| J0041 | gemini | claimed | cursor | 2026-10-08T09:47Z | 028: verify Berski & Dybczynski comet-shower quote from the full paper (or FLAG for a pickup) |  |
 
 Recently finished:
 
