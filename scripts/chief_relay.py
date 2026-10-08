@@ -37,7 +37,7 @@ branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's h
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
 Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
-CHIEF_RETRY_H (3), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN / CODEX_FLAGS (see cli_spec), AGY_BIN,
+CHIEF_RETRY_H (3), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
 from __future__ import annotations
@@ -158,9 +158,12 @@ def cli_spec(agent: str):
         # network and the extra dirs let it pull/push and use the HOS desk, like Cursor. Codex 0.160 has no
         # --full-auto, and rejects -s together with --approve-for-me (exit 2, 8 Oct). Check `codex exec --help` after
         # a Codex update.
-        flags = os.environ.get("CODEX_FLAGS", f"exec --approve-for-me "
-                                              f"-c sandbox_workspace_write.network_access=true "
-                                              f"--add-dir {shlex.quote(str(HOS))} --add-dir {shlex.quote(str(STATE.parent))}")
+        # The flags live here only: a stale CODEX_FLAGS left by an old `launchctl setenv` overrode this default for
+        # three runs on 8 Oct (all exit 2), so the env is ignored and only noted in the log.
+        if os.environ.get("CODEX_FLAGS"):
+            log("CODEX_FLAGS is set in the environment and ignored; the flags come from cli_spec()")
+        flags = (f"exec --approve-for-me -c sandbox_workspace_write.network_access=true "
+                 f"--add-dir {shlex.quote(str(HOS))} --add-dir {shlex.quote(str(STATE.parent))}")
     else:
         return None
     return (b, shlex.split(flags)) if b else None
@@ -299,7 +302,7 @@ def run_cli(agent: str, prompt: str, cap_s: int) -> tuple:
     b, args = cli_spec(agent)
     # The exact command, minus the prompt, so a usage error (exit 2) can be matched to its flags. Flags hold no secrets.
     log(f"cmd: {b} {' '.join(shlex.quote(a) for a in args)} <prompt>" + (" (flags from the env)" if os.environ.get(
-        {"cursor": "CURSOR_AGENT_FLAGS", "codex": "CODEX_FLAGS"}.get(agent, "")) else ""))
+        {"cursor": "CURSOR_AGENT_FLAGS"}.get(agent, "")) else ""))
     # owb_thread.py tags its posts "[Chief] [Cursor]". PATH: launchd's shell has no Homebrew or user bins, and doesn't
     # expand "~", so put the real dirs first; the woken agent then finds gh, agy, agent and codex itself.
     extra = [str(HOME / ".local" / "bin"), str(HOME / ".npm-global" / "bin"), "/opt/homebrew/bin", "/usr/local/bin"]

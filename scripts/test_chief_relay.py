@@ -210,6 +210,12 @@ class Relay(unittest.TestCase):
         finally:
             cr.OWB, cr.queue_has_work = old_owb, old_q
 
+    def test_a_stale_codex_flags_env_is_ignored(self):
+        os.environ["CODEX_FLAGS"] = "exec -s workspace-write --approve-for-me"
+        b, args = cr.cli_spec("codex")
+        self.assertNotIn("-s", args)
+        self.assertEqual(args[:2], ["exec", "--approve-for-me"])
+
     def test_pause_file_stops_runs(self):
         (cr.STATE / "chief-relay.pause").write_text("")
         cr.cmd_run(T0)
