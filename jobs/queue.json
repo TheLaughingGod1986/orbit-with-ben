@@ -1,5 +1,5 @@
 {
-  "next_id": 36,
+  "next_id": 37,
   "jobs": [
     {
       "id": "J0001",
@@ -1473,6 +1473,32 @@
           "at": "2026-10-08T03:05Z",
           "by": "cursor",
           "what": "done: done"
+        }
+      ]
+    },
+    {
+      "id": "J0036",
+      "title": "Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Sun 022 long: the package has no trailer yet. STUDIO_PLAYBOOK §12 says every long package carries one.\n\n1. **Build the trailer.** Copy `023/11_Upload-Package/Trailer/make_trailer_v01.sh` into `022/11_Upload-Package/Trailer/`.\n   - Use the film's own cold open from `sun_first_cut_v05.mp4`, from 0:00 to the fade before the first chapter card.\n   - The 16:9 frame sits over a blurred 9:16 copy, and \"Full film on YouTube\" shows for the last ~3 s.\n   - The output is `sun_long_trailer_v01.mp4` (Mini only; commit the .sh and META).\n2. **Re-run** `youtube:package --dry-run` on the Sun long package. Claude fixed the manifest in this commit:\n   - thumbnail paths now start with `../08_Thumbnail/` and resolve;\n   - A is the main thumbnail;\n   - the `social` block is added.\n3. **Commit** `DRY_RUN_<date>.txt` and post the result on #99.\n\n**No upload and no schedule.** The Tue 13 final OK covers that.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T03:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T03:34Z",
+          "by": "claude",
+          "what": "added"
         }
       ]
     }

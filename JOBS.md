@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| – | | nothing waiting | | | | |
+| J0036 | mini | open | – | – | Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude) |  |
 
 Recently finished:
 
