@@ -11,8 +11,9 @@ MIN = dt.timedelta(minutes=1)
 class Relay(unittest.TestCase):
     def setUp(self):
         self.tmp = pathlib.Path(tempfile.mkdtemp())
-        self.old_state, self.old_home, self.old_fetch = cr.STATE, cr.HOME, cr.fetch_comments
+        self.old_state, self.old_home, self.old_fetch, self.old_owb = cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB
         cr.STATE, cr.HOME = self.tmp / "state", self.tmp  # so a real CLI on this machine can't stand in for a fake
+        cr.OWB = self.tmp / "no-owb"  # never the live queue: an addressed job there (J0071, 9 Oct) changed who ran
         self.thread = []  # fake studio thread: (created_at, body)
         cr.fetch_comments = lambda since: [{"created_at": t, "body": b} for t, b in self.thread if cr.parse(t) >= since]
         cr.STATE.mkdir()
@@ -28,7 +29,7 @@ class Relay(unittest.TestCase):
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
 
     def tearDown(self):
-        cr.STATE, cr.HOME, cr.fetch_comments = self.old_state, self.old_home, self.old_fetch
+        cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB = self.old_state, self.old_home, self.old_fetch, self.old_owb
         os.environ.clear()
         os.environ.update(self.env)
 
