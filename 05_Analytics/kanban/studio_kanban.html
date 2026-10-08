@@ -665,7 +665,7 @@ function renderTracker(films){
   const soon = forYou.filter(x=>x.soon);
   yb.className = "youbar" + (soon.length ? " has" : "");
   yb.innerHTML = soon.length ? `<b>Ready for you to check (${soon.length})</b><ul class="yl">${soon.map(x=>`<li><span>☐</span><span>${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}</span></span></li>`).join("")}</ul>
-      <div class="why">When you've checked one, tell Claude "${esc(soon[0].f.id)} is fine" (or what to change). It then drops off this list.</div>`
+      <div class="why">Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder. When you've checked one, tell Claude "${esc(soon[0].f.id)} is fine" (or what to change). It then drops off this list.</div>`
     : `<b>Nothing for you to check right now.</b>`;
 }
 
