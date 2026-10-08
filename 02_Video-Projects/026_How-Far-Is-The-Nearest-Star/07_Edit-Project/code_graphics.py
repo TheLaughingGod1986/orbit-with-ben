@@ -5,6 +5,7 @@
   python3 code_graphics.py triple     out/   # ch.1: Alpha Cen A and B orbit each other; Proxima loops round them, far out
   python3 code_graphics.py journey    out/   # ch.4: five lanes to Proxima at true relative speeds; only light moves visibly
   python3 code_graphics.py lighttimes out/   # ch.4: Moon, Sun, Proxima light-travel times as bars on a log scale
+  python3 code_graphics.py scale      out/   # ch.3 row 18: grapefruit-scale Sun left, pin-prick Earth far right, push across
   python3 code_graphics.py all        out/
   add --still to write one frame only (review); --seconds N to change length
 
@@ -18,6 +19,8 @@ Numbers (01_Script/SOURCES.md):
   journey    Lanes are walking 5 km/h, car 100 km/h, jet 900 km/h, Voyager 1 about 61,000 km/h, and light. Speeds are
              to scale, with light set to cross in 3 s. The other four markers never visibly move, and that is honest.
   lighttimes Moon 1.3 s, Sun 499 s, Proxima 4.25 yr (1.34e8 s), as bar lengths on log10(seconds) from 0.1 s to 1e9 s.
+  scale      Sizes, not distance: at grapefruit scale Earth is about 1/109 of the Sun's width, but sits about 15 m away,
+             so the gap is drawn short to fit one frame. The point is a big warm disc and a dot you can barely see.
 """
 import argparse, math, os, subprocess, sys
 
@@ -159,6 +162,33 @@ def render_lighttimes(out, seconds, still):
     finish(out, still)
 
 
+def render_scale(out, seconds, still):
+    """A warm glowing Sun disc at grapefruit scale sits left; Earth is a single pin-prick dot far right. The view
+    pushes slowly from the Sun across the empty gap towards the dot. Text-free."""
+    rng = np.random.default_rng(109)
+    n = int(seconds * FPS)
+    stars = rng.uniform([-12, -6], [16, 6], (260, 2))
+    SX, SR = -5.4, 0.9
+    EX, EY = 6.6, 0.15
+    frames = [int(n * 0.6)] if still else range(n)
+    for i in frames:
+        s = ease(i / max(1, n - 1))
+        fig, ax = canvas()
+        cx = 0.7 * s
+        half = 8.0 - 1.0 * s
+        ax.set_xlim(cx - half, cx + half)
+        ax.set_ylim(-half * 9 / 16, half * 9 / 16)
+        ax.scatter(stars[:, 0], stars[:, 1], s=3, color=WHITE, alpha=0.35, lw=0)
+        for k in np.linspace(3.0, 1.05, 24):
+            ax.add_patch(Circle((SX, 0), SR * k, color=GOLD, alpha=0.025, lw=0, zorder=3))
+        ax.add_patch(Circle((SX, 0), SR, color="#ffd77a", zorder=5))
+        ax.add_patch(Circle((SX, 0), SR * 0.8, color="#fff0c0", alpha=0.6, lw=0, zorder=6))
+        ax.add_patch(Circle((EX, EY), 0.09, color=EARTH, alpha=0.3, lw=0, zorder=5))
+        ax.add_patch(Circle((EX, EY), 0.035, color="#9cc8ff", zorder=6))
+        save(fig, out, i, still)
+    finish(out, still)
+
+
 def save(fig, out, i, still):
     os.makedirs(out, exist_ok=True)
     fig.savefig(os.path.join(out, "still.png" if still else f"{i:04d}.png"), facecolor=BG)
@@ -177,13 +207,13 @@ def finish(out, still):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["parallax", "triple", "journey", "lighttimes", "all"])
+    ap.add_argument("which", choices=["parallax", "triple", "journey", "lighttimes", "scale", "all"])
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
     a = ap.parse_args()
     jobs = {"parallax": (render_parallax, 12), "triple": (render_triple, 12), "journey": (render_journey, 14),
-            "lighttimes": (render_lighttimes, 10)}
+            "lighttimes": (render_lighttimes, 10), "scale": (render_scale, 10)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
         fn(os.path.join(a.out, name), a.seconds or secs, a.still)
