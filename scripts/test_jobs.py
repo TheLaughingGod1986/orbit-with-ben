@@ -56,7 +56,9 @@ class Next(unittest.TestCase):
         d = queue(("any", "ideas from Codex", {}), ("mini", "cut", {}))
         jobs.find(d, "J0001")["for"] = "codex"
         self.assertEqual(jobs.do_next(d, "cursor", {"mini", "any"}, T0)["id"], "J0002")
-        self.assertEqual(jobs.do_next(d, "codex", {"mini", "any"}, T0)["id"], "J0001")
+        jobs.find(d, "J0002")["status"] = "open"; jobs.find(d, "J0002")["by"] = ""
+        jobs.find(d, "J0002")["urgent"] = True
+        self.assertEqual(jobs.do_next(d, "codex", {"mini", "any"}, T0)["id"], "J0001")  # its own job before an urgent one
 
     def test_an_urgent_job_goes_ahead_of_the_focus_film(self):
         d = queue(("mini", "025 rough v02", {"film": "025", "stage": "edit", "eta_min": 240}), ("mini", "disk move", {"eta_min": 240}))

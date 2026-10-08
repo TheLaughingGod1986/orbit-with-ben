@@ -140,8 +140,8 @@ def order(job: dict, focus=()) -> tuple:
     """An urgent job first (Claude's call: e.g. the Mini's disk at 99% would break every render after it), then the focus film's jobs (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
     films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
     every stopping point (a first cut) would come back first every time and starve the quick ones."""
-    return (0 if job.get("urgent") else 1,
-            0 if job.get("for") else 1,  # a job addressed to this agent (only it can see it) before the general queue
+    return (0 if job.get("for") else 1,  # a job addressed to this agent (only it can see it) first: it was woken for it
+            0 if job.get("urgent") else 1,
             0 if job.get("film") and job["film"] in focus else 1,
             0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
             0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
