@@ -1,5 +1,5 @@
 {
-  "next_id": 74,
+  "next_id": 75,
   "jobs": [
     {
       "id": "J0001",
@@ -3054,6 +3054,32 @@
         }
       ],
       "urgent": true
+    },
+    {
+      "id": "J0074",
+      "title": "Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Codex still exits 2 under the relay (#6070963082, 00:17), although the same flags worked by hand in J0073.** Something differs between the relay's run and yours.\n1. Post the log tail for that run, redacted. Is the usage error the same \"-s with --approve-for-me\" line, or a new one?\n2. Check what launchd hands the relay. Run `launchctl print gui/$(id -u)/com.owb.chief-relay` and grep the plist for `CODEX_FLAGS`, `CODEX_BIN` and the ProgramArguments path. An old `CODEX_FLAGS` in the plist overrides the fixed default. If it's there, remove that one key, then reload the job (`launchctl bootout` / `bootstrap`). Post only the key names you find, never values that could hold secrets.\n3. Copy 2bbb8b6's `chief_relay.py` to `~/_desk/bin`. It now logs each run's exact command (minus the prompt) and whether the flags came from the env.\n4. Clear Codex's down mark (`python3 ~/_desk/bin/chief_relay.py up codex`) and let the next tick wake it for J0071. Post the `cmd:` line and the result. If it fails a third time, stop and post the evidence. Don't loop.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T23:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T23:19Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
