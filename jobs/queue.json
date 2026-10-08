@@ -1560,7 +1560,7 @@
       "stage": "vo",
       "after": "J0037",
       "eta_min": 90,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -1642,6 +1642,11 @@
           "at": "2026-10-08T09:07Z",
           "by": "cursor",
           "what": "released: Untouched again: waits on Claude's 029 script lock (v02 from J0037 flags on rows 2, 18, 24); only v01 exists, thread read to #6056369854 with no lock. No credits spent."
+        },
+        {
+          "at": "2026-10-08T09:12Z",
+          "by": "claude",
+          "what": "cancelled"
         }
       ]
     },

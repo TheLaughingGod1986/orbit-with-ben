@@ -5,11 +5,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0038 | mini | open (after J0037) | – | – | 029 vo · 029: VO take of the locked script master (after the claims check) |  |
 | J0039 | cloud | open | – | – | 029 script · 029: lock script v02 (J0037 flags + quote check) |  |
 
 Recently finished:
 
+- J0038 cancelled: 029: VO take of the locked script master (after the claims check) ()
 - J0037 done: 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) (SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed)
 - J0036 done: Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude) (done)
 - J0035 done: 027: commit VO words.json + chapters_index (text only) for the shot list (done)
@@ -19,4 +19,3 @@ Recently finished:
 - J0031 done: 028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md) (Gemini pass complete: e48dbc1 (24 rows, 4 and 13 quoted) + ecacb70 (row 15 quoted from Dybczynski 2002 p.287; row 17 FLAG, no impact figure in Garcia-Sanchez 2001; Fernandez-Puig 2026 §4.4 quote on rows 1/10, Table 1 mass on row 4). Row 16 Kepler check OK. Claude to apply row 17 wording as v02.)
 - J0030 done: Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) (Wed 21 Short v01 built: 24.2 s, gate PASS no warnings (motion 44.85). Parker (SVS 14741) probe-tracked open + loop, SVS 14036 close-up and shield-to-Sun under the title, SVS 10925 SDO close-up for 'no ground'. No Orbit. NASA credits in meta. Not uploaded. Awaiting Claude's final OK. Thread 6048201044.)
 - J0029 done: 028: lock topic, write script v01 (Claude) (script v01 at 01_Script/star_coming_script_master_v01.md, review:script 91; CLAUDE_CLAIMS_v01.md for Gemini)
-- J0028 done: 028 SOURCES: Gliese 710 flyby (Gemini) (028 SOURCES.md committed (10 rows, Gemini via agy). Exact quotes missing on 2 rows: cratering <=5% (Garcia-Sanchez 2001) and mass 0.57-0.60 Msun.)
