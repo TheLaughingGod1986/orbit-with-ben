@@ -21,7 +21,8 @@ class Relay(unittest.TestCase):
         notify.write_text(f'#!/bin/sh\necho "$1" >> "{self.posts}"\n')
         notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
         self.env = dict(os.environ)
-        os.environ.update({"CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex"})
+        os.environ.update({"CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
+                           "CHIEF_HEARTBEAT": "0"})  # never push a heartbeat from a test run on the Mini
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
@@ -182,6 +183,29 @@ class Relay(unittest.TestCase):
     def test_chain_order_comes_from_the_env(self):
         os.environ["CHIEF_CHAIN"] = "chief,codex,cursor"
         self.assertEqual(self.chief(), "codex")
+
+
+    def test_heartbeat_is_one_parentless_commit_on_its_own_branch(self):
+        import json, subprocess
+        remote, repo = self.tmp / "remote.git", self.tmp / "repo"
+        subprocess.run(["git", "init", "-q", "--bare", str(remote)], check=True)
+        subprocess.run(["git", "init", "-q", str(repo)], check=True)
+        for k, v in (("user.name", "t"), ("user.email", "t@t")):
+            subprocess.run(["git", "-C", str(repo), "config", k, v], check=True)
+        subprocess.run(["git", "-C", str(repo), "remote", "add", "origin", str(remote)], check=True)
+        old_owb = cr.OWB
+        try:
+            cr.OWB = repo
+            os.environ["CHIEF_HEARTBEAT"] = "1"
+            cr.push_heartbeat(T0, "idle", "cursor", "nothing queued")
+            cr.push_heartbeat(T0 + 10 * MIN, "running", "cursor", "woke Cursor")
+        finally:
+            cr.OWB = old_owb
+        log = subprocess.run(["git", "-C", str(remote), "log", "--format=%P|%s", "mini-heartbeat"], capture_output=True, text=True, check=True).stdout
+        self.assertEqual(len(log.strip().splitlines()), 1)  # replaced, not stacked
+        self.assertTrue(log.startswith("|"))  # no parent
+        doc = json.loads(subprocess.run(["git", "-C", str(remote), "show", "mini-heartbeat:heartbeat.json"], capture_output=True, text=True, check=True).stdout)
+        self.assertEqual((doc["state"], doc["agent"]), ("running", "cursor"))
 
 
 if __name__ == "__main__":

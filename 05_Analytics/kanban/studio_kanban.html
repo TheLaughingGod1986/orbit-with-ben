@@ -178,6 +178,8 @@ details.donegrp li span{color:var(--ink-3)}
 .fit .r.risk .bar i{background:var(--soon)}
 .fit .r.bad .bar i{background:var(--blocked)}
 .fit .r b{font-weight:600;color:var(--ink)}
+.readyrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;margin-bottom:18px}
+.rf{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;padding:8px 12px;font-size:14px;min-width:0}
 .verdict{font-size:14px;margin:0 0 10px;color:var(--ink-2)}
 .verdict b{color:var(--ink)}
 footer{margin-top:22px;font-size:12px;color:var(--ink-3)}
@@ -201,6 +203,7 @@ footer a{color:var(--ink-2)}
   <div class="chnote" id="owbnote"></div>
   <h2 class="sec">At a glance</h2>
   <div class="glance" id="glance"><div class="gl"><h3>Right now</h3><div class="why">Loading the studio's latest update…</div></div></div>
+  <section id="ready" hidden></section>
   <section class="spend" id="spendBox">
     <div class="head"><h2 class="sec" style="margin:0">AI spend this month</h2><div class="why" id="spendWhen"></div></div>
     <div class="verdict" id="verdict"></div>
@@ -281,12 +284,18 @@ function owbFilm(j){
 const owb = {files:{}, missing:new Set(), state: OWB_SNAPSHOT ? "snapshot" : "loading", msg:"", at:null};
 if(OWB_SNAPSHOT) for(const j of OWB_SNAPSHOT) owb.files[j.film] = j;
 
+let readyFilms = [];   // made and passed, waiting only for upload or air day: shown in one slim row, off the board
 function view(){
-  const out = [];
-  if(chan!=="OWB" && data) for(const f of data.films) out.push(Object.assign({}, f, {_ch:"HOS", _stages:data.stages, key:"HOS:"+f.id}));
+  const out = []; readyFilms = [];
+  if(chan!=="OWB" && data) for(const f of data.films){
+    const x = Object.assign({}, f, {_ch:"HOS", _stages:data.stages, key:"HOS:"+f.id});
+    if(data.stages.every(s=>["done","skip"].includes((f.stages[s.key]||{}).status))){ if(!f.air || pd(f.air)>=today()) readyFilms.push(x); continue; }
+    out.push(x);
+  }
   if(chan!=="HOS") for(const j of Object.values(owb.files).sort((a,b)=>String(a.film).localeCompare(String(b.film)))){
     const f = owbFilm(j);
     if(OWB_STAGES.every(s=>["done","skip"].includes(f.stages[s.key].status))) continue; // finished films stay off the board
+    if(f.air && OWB_STAGES.every(s=>s.key==="upload" || ["done","skip"].includes(f.stages[s.key].status))){ readyFilms.push(f); continue; }
     if(!f.air && OWB_STAGES.filter(s=>f.stages[s.key].status!=="todo").length<=1) continue; // stub files (no air date, nothing started)
     out.push(f);
   }
@@ -595,7 +604,19 @@ function laneQuiet(){
   const L = (fromDb.lanes||{}).mini; if(!L) return null;
   const waiting = (fromDb.jobs||[]).some(j=>j.needs==="mini" && j.status!=="blocked");
   const age = Date.now() - ts(L.lastAt);
-  return {at: ts(L.lastAt), by: L.lastBy, quiet: waiting && age > 3*60*MINUTE};
+  return {at: ts(L.lastAt), by: L.lastBy, quiet: waiting && age > 3*60*MINUTE, hb: L.heartbeat || null};
+}
+// The relay on the Mini checks in every 10 minutes (heartbeat on the mini-heartbeat branch). The board refreshes hourly,
+// so "checked 40 min ago" can still mean the Mini is fine; over 75 min it's worth a look.
+const HB_WORD = {idle:"awake, nothing queued", running:"awake, working", busy:"awake, still on a long job", paused:"paused", "no-chief":"awake, but no agent is up"};
+function miniLine(q){
+  if(!q) return "";
+  if(q.hb){
+    const age = Date.now()-ts(q.hb.at), cls = age>3*60*MINUTE?"late":age>75*MINUTE?"soon":"";
+    return `Mac mini ${cls?`<b class="${cls}">last checked in ${ago(ts(q.hb.at))}</b>${cls==="late"?" · it may be asleep":""}`:`<b>${esc(HB_WORD[q.hb.state]||q.hb.state)}</b> · checked in ${ago(ts(q.hb.at))}`}`
+      + ` · last job activity ${ago(q.at)}${q.quiet?" · <b class=\"late\">quiet for over 3 h with work waiting</b>":""}`;
+  }
+  return `Mac mini last active ${ago(q.at)}${q.quiet?" · <b class=\"late\">quiet for over 3 h with work waiting</b>":""}`;
 }
 function jobWhy(j, P){
   const p = P[j.id] || {};
@@ -620,16 +641,26 @@ function renderGlance(films){
   const box=$("glance"), jobs=fromDb.jobs; if(!box) return;
   if(!jobs){ box.innerHTML = `<div class="gl"><h3>Right now</h3><div class="why">Waiting for the studio's next update.</div></div>`; return; }
   const P = plan(), cards = [];
+  const hosNow = (data&&data.films||[]).flatMap(f=>(data.stages||[]).filter(s=>["doing","blocked"].includes((f.stages[s.key]||{}).status)).map(s=>{
+    const st=f.stages[s.key]; const step = Array.isArray(st.steps)?` · ${st.steps[0]}/${st.steps[1]} ${esc(st.steps_unit||"")}`:"";
+    return `<span class="ch HOS">HOS</span><b>${esc(f.id)}</b> ${esc(s.label)} · ${esc(st.owner||"—")}${step}${st.underway===false&&st.waiting?` · <span style="color:var(--ink-3)">waiting: ${md(st.waiting)}</span>`:st.eta?` · ETA ${fd(pd(st.eta))}`:""}`; }));
   // 1. Right now, per lane
   const now = jobs.filter(j=>j.status==="claimed");
+  // A job an agent paused at a safe point (released) is still in hand: often a render left running between runs.
+  const between = jobs.filter(j=>j.status==="open" && /^released/.test(String((j.last||{}).what||"")) && (j.last||{}).by && j.last.by!=="claude");
   const q = laneQuiet();
-  const miniLine = q ? `Mac mini last active ${ago(q.at)}${q.quiet?" · <b class=\"late\">quiet for over 3 h with work waiting</b>":""}` : "";
+  const mLine = miniLine(q);
   cards.push(`<div class="gl"><h3>Right now</h3>${now.length ? now.map(j=>{ const p=P[j.id]||{};
       return `<div class="big">${j.film?`<span class="ch OWB">OWB</span>${esc(j.film)} · `:""}${esc(j.title.replace(/^\d{3}:\s*/,""))}</div>
         <div class="when">done about ${p.done?clock(p.done):"—"} <span class="${p.done&&p.done<Date.now()?"late":""}">${p.done?"("+rel(p.done)+")":""}</span></div>
         <div class="why">${av(AGENT(j.by))}<b>${esc(AGENT(j.by))}</b> since ${p.start?clock(p.start):"—"} · ${esc(LANE[j.needs]||j.needs)}</div>`; }).join("")
+    : between.length ? between.map(j=>{ const L=j.last||{}, p=P[j.id]||{};
+      return `<div class="big">${j.film?`<span class="ch OWB">OWB</span>${esc(j.film)} · `:""}${esc(j.title.replace(/^\d{3}:\s*/,""))}</div>
+        <div class="when">part done${p.done?` · finishes about ${clock(p.done)}`:""}</div>
+        <div class="why">${av(AGENT(L.by))}<b>${esc(AGENT(L.by))}</b> paused it at ${clock(ts(L.at))} and picks it up at the next wake-up. <span class="mono">${esc(String(L.what).replace(/^released:\s*/,"").slice(0,140))}</span></div>`; }).join("")
     : `<div class="big">Nothing being worked on</div><div class="why">${jobs.some(j=>j.status==="open")?"Work is queued; the next wake-up (every 10 min) starts it.":"The queue is empty."}</div>`}
-    ${miniLine?`<div class="why">${miniLine}</div>`:""}</div>`);
+    ${mLine?`<div class="why">${mLine}</div>`:""}
+    ${hosNow.length?`<div class="why" style="margin-top:10px"><b>History of Science</b><br>${hosNow.join("<br>")}</div>`:""}</div>`);
   // 2. Next video for Ben to watch
   const watch = jobs.filter(j=>j.watch && P[j.id] && P[j.id].done).sort((a,b)=>P[a.id].done-P[b.id].done)[0];
   const upcoming = films.filter(f=>f.air && pd(f.air)>=today()).sort((a,b)=>String(a.air).localeCompare(String(b.air)))[0];
@@ -643,7 +674,8 @@ function renderGlance(films){
   // 3. The Mac mini's line-up
   const line = jobs.filter(j=>j.needs==="mini" && j.status!=="blocked").sort((a,b)=>((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15));
   cards.push(`<div class="gl"><h3>Mac mini line-up</h3>${line.length?`<ol class="lineup">${line.map(j=>{ const p=P[j.id]||{};
-      const t = p.state==="now" ? "now" : p.start ? clock(p.start) : "after "+esc(j.after);
+      const paused = j.status==="open" && /^released/.test(String((j.last||{}).what||"")) && (j.last||{}).by!=="claude";
+      const t = p.state==="now" ? "now" : paused ? "part done" : p.start ? clock(p.start) : "after "+esc(j.after);
       return `<li><span class="mono">${esc(j.id)}</span><span>${j.film?`<b>${esc(j.film)}</b> `:""}${esc(j.title.replace(/^\d{3}:\s*/,""))}</span><span class="t">${t}</span><span class="w">${p.state==="now"?"underway":"about "+j.estMin+" min"}</span></li>`; }).join("")}</ol>`
     : `<div class="why">Nothing queued for the Mac mini.</div>`}
     <div class="why">One job at a time. The relay wakes Cursor every 10 min when work is waiting; a run lasts about 25 min, and a long job carries on over several runs.</div></div>`);
@@ -658,6 +690,15 @@ function renderGlance(films){
     <div class="why"><b>Claude:</b> ${cloud.length||reviews.length?[...cloud,...reviews].join("<br>"):"nothing"}</div>
     ${blocked.length?`<div class="why"><b class="late">Blocked:</b> ${blocked.join("<br>")}</div>`:""}</div>`);
   box.innerHTML = cards.join("");
+  const ra = $("ready");
+  if(ra){
+    const rows = readyFilms.slice().sort((a,b)=>String(a.air).localeCompare(String(b.air)));
+    ra.hidden = !rows.length;
+    ra.innerHTML = rows.length ? `<h2 class="sec">Ready to air</h2><div class="readyrow">${rows.map(f=>{
+      const up = f._ch==="OWB" ? stOf(f,{key:"upload"}) : null;
+      const what = f._ch==="HOS" ? "scheduled" : up.status==="done" ? "scheduled" : up.review ? "final OK and upload next" : "upload next";
+      return `<div class="rf">${chb(f)}<b>${esc(f.id)}</b> ${esc(f.title)}<div class="why">Airs <b>${fd(pd(f.air))}</b> (${cd(pd(f.air))}) · ${what}${f._ch==="OWB"&&f.next?` · ${md(f.next.length>80?f.next.slice(0,78)+"…":f.next)}`:""}</div></div>`; }).join("")}</div>` : "";
+  }
 }
 // Plan-fit bars for the spend cards: this cycle's use, projected to a full month, against each plan's allowance.
 function poolUse(k, p, c){

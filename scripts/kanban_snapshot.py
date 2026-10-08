@@ -48,18 +48,69 @@ EST = [(("reading", "readings"), 15), (("assemble", "rough", "full rough", "fina
        (("package", "upload", "trailer"), 20), (("harvest", "pool", "licence", "commit "), 15)]
 
 
-def est_minutes(j: dict) -> int:
+LEARNED: dict = {}  # kind -> median minutes from history (set by learn_estimates)
+
+
+def kind_of(j: dict) -> int:
     t = (j.get("title") or "").lower()
-    for words, mins in EST:
-        if any(w in t for w in words):
-            return mins
-    return 25
+    return next((i for i, (words, _) in enumerate(EST) if any(w in t for w in words)), -1)
+
+
+def _t(s: str):
+    from datetime import datetime, timezone
+    s = (s or "").replace("Z", "")
+    for f in ("%Y-%m-%dT%H:%M:%S", "%Y-%m-%dT%H:%M"):
+        try:
+            return datetime.strptime(s[:19] if len(s) > 16 else s, f).replace(tzinfo=timezone.utc)
+        except ValueError:
+            pass
+    return None
+
+
+def learn_estimates(alljobs: list[dict]) -> None:
+    """Median minutes from 'ready' (added, or its --after job done) to done, per kind of job, once a kind has 3+ done
+    jobs. Mini jobs only, so a Gemini or Claude job doesn't skew the Mini's line-up."""
+    import statistics
+    done_at = {j["id"]: _t(next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("done")), ""))
+               for j in alljobs}
+    per: dict = {}
+    for j in alljobs:
+        h = j.get("history") or []
+        if j.get("needs") != "mini" or not h or not done_at.get(j["id"]):
+            continue
+        ready = _t(h[0]["at"])
+        if j.get("after") and done_at.get(j["after"]):
+            ready = max(ready, done_at[j["after"]])
+        mins = (done_at[j["id"]] - ready).total_seconds() / 60 if ready else None
+        if mins is not None and 0 < mins < 8 * 60:  # a job that sat overnight on a sleeping Mini says nothing about its length
+            per.setdefault(kind_of(j), []).append(mins)
+    LEARNED.clear()
+    LEARNED.update({k: round(statistics.median(v)) for k, v in per.items() if len(v) >= 3})
+
+
+def est_minutes(j: dict) -> int:
+    k = kind_of(j)
+    if k in LEARNED:
+        return max(5, LEARNED[k])
+    return EST[k][1] if k >= 0 else 25
 
 
 def makes_video(j: dict) -> bool:
     """A job whose result Ben can watch in OWB UAT (a cut), as opposed to sheets, packages or text."""
     t = (j.get("title") or "").lower()
     return j.get("stage") == "edit" and any(w in t for w in ("rough", "cut", "picture", "assemble"))
+
+
+def mini_heartbeat() -> dict | None:
+    """The Mini's relay heartbeat (scripts/chief_relay.py push_heartbeat) from the mini-heartbeat branch, if any."""
+    import subprocess
+    try:
+        subprocess.run(["git", "-C", str(ROOT), "fetch", "-q", "origin", "mini-heartbeat"], capture_output=True, timeout=60, check=True)
+        out = subprocess.run(["git", "-C", str(ROOT), "show", "FETCH_HEAD:heartbeat.json"], capture_output=True, text=True,
+                             timeout=30, check=True).stdout
+        return json.loads(out)
+    except (OSError, subprocess.SubprocessError, ValueError):
+        return None
 
 
 def lanes_info(alljobs: list[dict]) -> dict:
@@ -95,13 +146,19 @@ def main(argv: list[str] | None = None) -> int:
         (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
         q = ROOT / "jobs" / "queue.json"
         alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
+        learn_estimates(alljobs)
         live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "film", "stage", "after", "ref", "result")},
                      last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
                      estMin=est_minutes(j), watch=makes_video(j))
                 for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
-        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes_info(alljobs)}
+        lanes = lanes_info(alljobs)
+        hb = mini_heartbeat()
+        if hb:
+            lanes.setdefault("mini", {})["heartbeat"] = hb
+        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes,
+               "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())}}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
                             "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}

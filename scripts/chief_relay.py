@@ -32,6 +32,9 @@ How "up" is decided:
 CLI Chief for ONE job (25-minute cap), then exits. Every change of Chief is posted to the studio thread once.
 
 State (on the Mini, never in git): ~/_desk/state/chief/  (heartbeat/<agent>, down/<agent>.json, current.json).
+Mini heartbeat (Ben, 8 Oct): every `run` also pushes one small file, heartbeat.json {at, state, agent, note}, to the
+branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's history stays clean). The Kanban reads
+it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
 Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
 CHIEF_RETRY_H (3), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN / CODEX_FLAGS (see cli_spec), AGY_BIN,
@@ -342,9 +345,34 @@ def handover(new, rows, at: dt.datetime) -> None:
         write_json(d("current.json"), {"agent": new, "since": iso(at)})
 
 
+def heartbeat_doc(at: dt.datetime, state: str, agent: str = "", note: str = "") -> dict:
+    """What the Kanban shows about the Mini: when the relay last ran and what it found (idle, running, busy, paused)."""
+    return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini"}
+
+
+def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "") -> None:
+    """One parentless commit holding heartbeat.json, force-pushed to refs/heads/mini-heartbeat. Never raises."""
+    if os.environ.get("CHIEF_HEARTBEAT", "1") == "0" or not (OWB / ".git").exists():
+        return
+    body = json.dumps(heartbeat_doc(at, state, agent, note)) + "\n"
+    try:
+        git = ["git", "-C", str(OWB)]
+        blob = subprocess.run(git + ["hash-object", "-w", "--stdin"], input=body, capture_output=True, text=True,
+                              timeout=30, check=True).stdout.strip()
+        tree = subprocess.run(git + ["mktree"], input=f"100644 blob {blob}\theartbeat.json\n", capture_output=True,
+                              text=True, timeout=30, check=True).stdout.strip()
+        commit = subprocess.run(git + ["commit-tree", tree, "-m", f"mini heartbeat {iso(at)} {state}"],
+                                capture_output=True, text=True, timeout=30, check=True).stdout.strip()
+        subprocess.run(git + ["push", "-q", "-f", "origin", f"{commit}:refs/heads/mini-heartbeat"],
+                       capture_output=True, timeout=60)
+    except (OSError, subprocess.SubprocessError) as e:
+        log(f"heartbeat not pushed: {e}")
+
+
 def cmd_run(at: dt.datetime) -> int:
     if (STATE / "chief-relay.pause").exists():
         log("skip: paused")
+        push_heartbeat(at, "paused", note="chief-relay.pause is set")
         return 0
     lo, hi = (int(x) for x in os.environ.get("CHIEF_HOURS", "0-24").split("-"))
     h = dt.datetime.now().hour
@@ -357,6 +385,7 @@ def cmd_run(at: dt.datetime) -> int:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError:
             log("skip: previous run still working")
+            push_heartbeat(at, "busy", note="the previous run is still working")
             return 0
         return run_locked(at)
 
@@ -387,6 +416,7 @@ def run_locked(at: dt.datetime) -> int:
         log("chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in rows))
         if who is None:
             log("nobody up: nothing to run")
+            push_heartbeat(at, "no-chief", note="nobody in the chain is up")
             return 0
         if who == "chief":
             log("Grok Bot is Chief: nothing to do")
@@ -399,11 +429,13 @@ def run_locked(at: dt.datetime) -> int:
             not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
         if not queue_has_work(who) and not sweep:
             log(f"nothing queued for {who}; last woken {int((at - last_wake).total_seconds() // 60)} min ago: not waking it")
+            push_heartbeat(at, "idle", who, "nothing queued")
             return 0
         above = [f"{NAMES.get(a, a)} is {why}" for a, up, why in rows[:[r[0] for r in rows].index(who)]]
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why="; ".join(above) or "it is first in line",
                                owb=OWB, hos=HOS)
         log(f"run: {who} (cap {cap}s)")
+        push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for one job (cap {cap // 60} min)")
         seen(who, at)
         code, tail = run_cli(who, prompt, cap)
         log(f"done: {who} exit {code}")
