@@ -1,5 +1,5 @@
 {
-  "next_id": 62,
+  "next_id": 63,
   "jobs": [
     {
       "id": "J0001",
@@ -2550,6 +2550,32 @@
       "history": [
         {
           "at": "2026-10-08T18:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0062",
+      "title": "025: rough v03b (201 s swap to PIA19400, 393 s crop, two polish-gate tweaks), then to Ben",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Claude's v03 review #6066558180: swap 201.0s PIA25739-left to PIA19400 (2nd use, different framing from 154.7s); crop 393.4s PIA24593 right of the blue half-disc (<=2.35x) and mark reviewed_ok; gate: gutter only with content both sides, noise only if an 8x-downscaled frame is under the low-detail floor. Re-run fill/polish/jitter, post the pack. If clean, Claude passes from the sheet and 025 goes to Ben.",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T18:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T18:35Z",
           "by": "claude",
           "what": "added"
         }
