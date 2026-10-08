@@ -104,6 +104,7 @@ No Kling, Seedance or ElevenLabs Image & Video.
 - **Environment honesty:** no bubbles in vacuum; water SFX only underwater.
 - **Ocean or shore POV:** no Earth globe in the sky. One Earth and one Moon, or one Moon only. Check a mid-plate frame, not just the first and last.
 - **Frame sizes** (`YOUTUBE_FRAME_SIZES.md`): long 1920×1080 MP4; Short 1080×1920; long thumbnail file 1280×720.
+- **Picture QA (Ben, 8 Oct):** `scripts/picture_qa.py` must PASS before Claude's review. It catches computer models, diagrams and labelled images, soft upscales, reused pictures and polish_gate's checks, each at its film time (m:ss); Claude looks at every WARN full size. Rules: AGENTS.md lesson 7.
 
 ## 6. Orbit (character lock)
 
@@ -134,6 +135,7 @@ Standing edit locks (Ben v03b / 1 Oct 2026) are also in `docs/ORBIT_PLAYBOOK_LES
 - **Normalise every input to 1920×1080 stereo before concat.** Probe after: audio and video durations must match. Fill 16:9 with no flat bars; feathered blurred background if needed; upscale no more than about **2.35×**.
 - **Remint = picture only.** Take video from the remint and audio from the original part (`-map 0:v:0 -map 1:a:0`). Never `-c copy` a remint's own audio.
 - **Chapter cards:** wait for the VO sentence to finish → **0.5–0.8 s** breathing room → cross-fade the card in about **0.4 s**. Soft starfield/gradient (never a flat black box); music continuing underneath. **No line is ever clipped** by a row or card boundary.
+- **Music:** every film has its own score bed, written by Claude with the shot list (mood and arc from the script, `Pace: NN-NN BPM` matched to the narration, NOT every earlier bed), generated once, and `scripts/music_gate.py` must PASS (own, not a reused track, whole runtime). Never a shared file like `jupiter-music.mp3`. Rules: AGENTS.md lesson 7.
 - **End hold:** picture and music run past the last VO word, hold **2–3 s**, then fade. Keep a longer slow end plate (about 15–20 s total after the last line) with music over the full runtime. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.**
 - **Mix:** about **−14 LUFS** integrated with clear VO. Check for repeated or stumbled VO phrases before delivery.
 - **Bed parity** across parts: about −20 dB mean under VO.

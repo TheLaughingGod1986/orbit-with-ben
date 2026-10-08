@@ -69,7 +69,7 @@ The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIE
 Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, or acting on the PR #99 thread. Short form:
 
 1. **Neighbour:** ≥3 education/space videos ≈1M+ views before topic lock; subject words in title/desc/tags; never channel names. Evidence: HOS 002 gets 55.6% of views Suggested from TED-Ed's Mendeleev film.
-2. **Edit (v03b):** cards wait for the VO sentence, 0.5–0.8 s breath, ~0.4 s xfade; never clip a line; picture+music past last word, hold 2–3 s, then fade; music full runtime, and every film has its own score bed (`05_Music/<film>_score_bed_v01`), never another film's or a shared file like `jupiter-music.mp3` (Ben, 8 Oct); fill 16:9 (feathered blur OK); upscale ≤~2.35×; mix ~−14 LUFS; check repeated/stumbled VO before delivery.
+2. **Edit (v03b):** cards wait for the VO sentence, 0.5–0.8 s breath, ~0.4 s xfade; never clip a line; picture+music past last word, hold 2–3 s, then fade; music full runtime, and it's the film's own (lesson 7); fill 16:9 (feathered blur OK); upscale ≤~2.35×; mix ~−14 LUFS; check repeated/stumbled VO before delivery.
 3. **Production:** Orbit = Omni only (+ approved 0–3 s tumble fallback); no Orbit on long thumbs; verify NASA IDs; no media in git; Claude gives the final OK and reviews KEEP and shot lists before generation (3 Oct order); Vertex only (Omni from location `global`); never a whole planet as an Omni/Veo start frame (it drifts to the wrong planet).
 4. **Thread (PR #99 now; `scripts/thread.json` names the current one, and Claude rolls it to a new issue on the 1st of each month):** run `owb_thread.py status` at the start of every session and before saying anything is waiting on Claude; end reports to Ben with "Thread read to #<id>". Act on Claude's replies like Ben's relays. NEEDS BEN items go to Claude first (3 Oct order); only what Claude marks NEEDS BEN goes to Ben. Never invent Ben's own words. Never merge, close or push #99.
 5. **Shorts feed (5 Oct):**
@@ -80,6 +80,17 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
    - End on the long's exact listing title and its video id, with a music bed for the full length.
    - Details: lessons doc §6.
 6. **YouTube state changes leave a record (6 Oct).** Any change to a video's privacy or `publishAt`, by any agent, script or Studio click, gets a line on the thread in the same session, with the id, the old and new state, and who OK'd it. If it's a Short, update its open-gate library status in the same commit (`gate_shorts_open.py status`, or `fetch` once it's public). Lesson: `CtllH6VOhEI` was rescheduled on 1 Oct by an untracked one-off script. FIX_LOG said private for 5 days while it was live, and the Shorts gate didn't compare against it.
+7. **Picture and music QA (Ben, 8 Oct, after a dated computer model at 2:54 of 025 and one music track on 023, 024 and 025).** Run one check for each before Claude's review and before anything goes to OWB UAT. The pack carries both reports.
+   - **Picture:** `python3 scripts/picture_qa.py <cut.mp4> --cuts <cuts.json> --pool <pool.json> --out-dir <pack>` must PASS.
+     - It names every problem at its film time (m:ss), the way Ben reports one.
+     - FAIL: a computer model or reconstruction, simulation, diagram, chart, schematic or labelled image (they look dated or like a textbook); upscale over 2.35×; a picture used more than twice; and polish_gate's low detail, split panels, near-black, noise and wobbly pushes.
+     - WARN: an artist's concept, map, render, untitled source or upscale over 2×. These go on `picture_qa_review.jpg`, and Claude looks at each one full size.
+     - Claude also looks at every cut on the per-row sheet and asks: would a viewer trust this as a real, sharp, finished picture of what the sentence says?
+   - **Music:** every film has its own score bed, at a pace that fits it.
+     - Claude writes the music prompt with the shot list. It gives the film's mood and arc from the script, a `Pace: NN-NN BPM` line matched to the narration (calm explanation about 60-80, a lift only where the script builds), and what it must NOT sound like (every earlier bed).
+     - Generate it once with `04_Audio/tools/generate_music_bed.py` (the API, never the website). Keep 30,000 ElevenLabs credits for voice.
+     - `python3 scripts/music_gate.py <film dir> --bed <bed> --video <cut>` must PASS: the bed is in the film's own 05_Music with its plan; the brief has Pace and NOT; it doesn't sound like another film's bed, even trimmed or re-encoded; and it runs the whole cut.
+     - Fit is judged by ear: Claude's review, then Ben's watch.
 
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)
 

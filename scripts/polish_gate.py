@@ -137,14 +137,9 @@ def jitter(video, t0, t1, size):
     return out
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('video'); ap.add_argument('--cuts', required=True); ap.add_argument('--out', required=True)
-    ap.add_argument('--no-jitter', action='store_true')
-    ap.add_argument('--reviewed-ok', help='JSON {source: {"note": ..., "kinds": ["low detail", ...]}}: Claude-ruled passes')
-    a = ap.parse_args()
-    video = Path(a.video); cuts = json.loads(Path(a.cuts).read_text())
-    reviewed = json.loads(Path(a.reviewed_ok).read_text()) if a.reviewed_ok else {}
+def judge(video, cuts, reviewed=None, use_jitter=True, log=print):
+    """Every check above on every cut of the cut list; returns the gate result (also used by picture_qa.py)."""
+    video = Path(video); reviewed = reviewed or {}
     size = tuple(map(int, sp.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height',
                                            '-of', 'csv=p=0', str(video)], text=True).strip().split(',')[:2]))
     rows = []
@@ -168,7 +163,7 @@ def main():
         if r['hf'] > 6 and r['lf'] < 12 and r['std8'] < STD_FLOOR and r['edge8'] < EDGE_FLOOR:
             why.append(f"noise: grain {r['hf']} over structure {r['lf']}, 8x-downscaled std {r['std8']} < {STD_FLOOR} "
                        f"and edge {r['edge8']} < {EDGE_FLOOR}")
-        if not a.no_jitter and not r['video'] and c['timeline_out'] - c['timeline_in'] > 1.2:
+        if use_jitter and not r['video'] and c['timeline_out'] - c['timeline_in'] > 1.2:
             j = jitter(video, c['timeline_in'] + 0.45, c['timeline_out'] - 0.45, size)
             r['jitter'] = j
             if j and j['fail']:
@@ -182,7 +177,7 @@ def main():
         r['fail'] = why; r['warn'] = warn
         state = 'FAIL ' + '; '.join(why) if why else ('WARN ' + '; '.join(warn) if warn else 'ok')
         if r.get('reviewed_ok'): state += f" (reviewed_ok: {'; '.join(r['reviewed_ok']['why'])})"
-        print(f"{r['row']:>4} {r['t']:7.1f}s {r['source'][:28]:28} {state}", flush=True)
+        log(f"{r['row']:>4} {r['t']:7.1f}s {r['source'][:28]:28} {state}")
     failed = [r for r in rows if r['fail']]
     warned = [r for r in rows if r['warn'] and not r['fail']]
     res = dict(rule=dict(low_detail=f'FAIL: luma std < {STD_FLOOR} and edge density < {EDGE_FLOOR} (absolute floor); '
@@ -199,9 +194,20 @@ def main():
                warn=[dict(row=r['row'], cut=r['cut'], t=r['t'], source=r['source'], why=r['warn']) for r in warned],
                reviewed_ok=[dict(row=r['row'], cut=r['cut'], t=r['t'], source=r['source'], **r['reviewed_ok']) for r in rows if r.get('reviewed_ok')],
                rows=rows)
+    return res
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('video'); ap.add_argument('--cuts', required=True); ap.add_argument('--out', required=True)
+    ap.add_argument('--no-jitter', action='store_true')
+    ap.add_argument('--reviewed-ok', help='JSON {source: {"note": ..., "kinds": ["low detail", ...]}}: Claude-ruled passes')
+    a = ap.parse_args()
+    reviewed = json.loads(Path(a.reviewed_ok).read_text()) if a.reviewed_ok else {}
+    res = judge(a.video, json.loads(Path(a.cuts).read_text()), reviewed, not a.no_jitter, log=lambda m: print(m, flush=True))
     Path(a.out).write_text(json.dumps(res, indent=2))
-    print(f"polish gate {res['verdict']}: {len(failed)} of {len(rows)} rows failed, {len(warned)} to look at -> {a.out}")
-    sys.exit(1 if failed else 0)
+    print(f"polish gate {res['verdict']}: {len(res['failed'])} of {len(res['rows'])} rows failed, {len(res['warn'])} to look at -> {a.out}")
+    sys.exit(1 if res['failed'] else 0)
 
 
 if __name__ == '__main__':
