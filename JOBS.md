@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| – | | nothing waiting | | | | |
+| J0037 | gemini | open | – | – | 029 sources · 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) |  |
 
 Recently finished:
 

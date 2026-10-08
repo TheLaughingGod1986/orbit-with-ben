@@ -1,5 +1,5 @@
 {
-  "next_id": 37,
+  "next_id": 38,
   "jobs": [
     {
       "id": "J0001",
@@ -1509,6 +1509,32 @@
           "at": "2026-10-08T03:45Z",
           "by": "cursor",
           "what": "done: done"
+        }
+      ]
+    },
+    {
+      "id": "J0037",
+      "title": "029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md)",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Film 029, Is Betelgeuse About to Explode? Script: `02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/01_Script/betelgeuse_script_master_v01.md` (311cc49).\n\nRun Gemini (agy) on `01_Script/CLAUDE_CLAIMS_v01.md`:\n- **Create `SOURCES.md`** in the 028 layout (claim | source | exact quote), plus a \"Notes for Claude\" section.\n- **Every MUST QUOTE row needs a verbatim quote:** rows 2, 5, 8, 9, 15, 17, 19 and 21. If a row can't be quoted, mark it FLAG.\n- **Check that every paper and arXiv id exists and is the right one.** On 028, one arXiv id was a different paper.\n- **Answer the questions** in rows 2, 13, 18, 20 and 24.\n- Gemini doesn't rewrite spoken lines. Post the flags on #99 and Claude writes v02.\n",
+      "ref": "",
+      "film": "029",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T07:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T07:33Z",
+          "by": "claude",
+          "what": "added"
         }
       ]
     }
