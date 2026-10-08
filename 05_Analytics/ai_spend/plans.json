@@ -1,5 +1,5 @@
 {
-  "note": "Ben's AI subscriptions as he gave them on 8 Oct 2026 (monthly, GBP, approximate). Measurement month starts at the Google AI Ultra refill. Check-in Sun 8 Nov (Claude reminder trig_01PDFPW1C6Y7Njhjjnj6n6KF).",
+  "note": "Published list prices, checked 8 Oct 2026 (USD; plans bill in dollars, UK checkout usually adds 20% VAT). gbp is an approximate conversion at about £0.75 per $ before VAT. The tier is the one Ben's spend matches; his statements are the real figure. Measurement month starts at the Google AI Ultra refill. Check-in Sun 8 Nov.",
   "period": {
     "start": "2026-10-12",
     "end": "2026-11-11",
@@ -7,40 +7,51 @@
   },
   "subscriptions": [
     {
-      "name": "Google AI Ultra",
-      "gbp": 200,
+      "name": "Google AI Ultra (top tier)",
+      "tier": "$199.99 · 25,000 Flow credits",
+      "usd": 199.99,
+      "gbp": 150,
       "renews": "2026-10-12",
-      "covers": "Flow credits (HOS picture), Gemini checks; the Google Cloud monthly credit may come with it"
+      "covers": "Flow credits (HOS picture), Gemini checks"
     },
     {
-      "name": "Cursor (Grok Bot + Cursor agent)",
-      "gbp": 200,
+      "name": "Cursor Ultra",
+      "tier": "$200 (Pro is $20, Pro+ $60)",
+      "usd": 200,
+      "gbp": 150,
       "renews": "",
-      "covers": "Mini worker, Chief (Grok Bot out of credit since 6 Oct)"
+      "covers": "Mini worker and Chief (Grok Bot)"
     },
     {
-      "name": "Codex",
-      "gbp": 20,
+      "name": "ChatGPT Plus (Codex)",
+      "tier": "$20; Codex is included",
+      "usd": 20,
+      "gbp": 15,
       "renews": "",
       "covers": "third in line as Chief"
     },
     {
-      "name": "Claude",
-      "gbp": 20,
+      "name": "Claude Pro",
+      "tier": "$20 monthly ($17 a month paid yearly)",
+      "usd": 20,
+      "gbp": 15,
       "renews": "",
       "covers": "scripts, reviews, decisions, thread"
     },
     {
-      "name": "ElevenLabs",
-      "gbp": 20,
+      "name": "ElevenLabs Creator",
+      "tier": "$22 · 121,000 credits",
+      "usd": 22,
+      "gbp": 16.5,
       "renews": "",
       "covers": "Ben's narrator voice, both channels"
     }
   ],
   "target": {
-    "label": "Claude Max 5x + a Google tier around £90 + ElevenLabs",
-    "gbp": 200,
-    "needs": "Flow credits at least about 8,000-10,000 a month on the lean HOS picture mix (about 20,000 at today's mix for 4 HOS longs)"
+    "label": "Claude Max 5x ($100) + Google AI Ultra $99.99 (10,000 Flow credits) + ElevenLabs Creator ($22)",
+    "usd": 221.99,
+    "gbp": 167,
+    "needs": "Flow credits: about 10,000 a month covers 4 HOS longs only on the lean picture mix (about 20,000 at today's mix)"
   },
   "decisions": [
     {
@@ -48,5 +59,10 @@
       "by": "Ben",
       "decision": "Stay with Google for video (Flow/Veo, Vertex). Kling via Higgsfield looked at and not taken: dearer per second at our volume, and Kling stays on the HOS Never list."
     }
-  ]
+  ],
+  "fx": {
+    "gbpPerUsd": 0.75,
+    "vat": 0.2,
+    "checked": "2026-10-08"
+  }
 }

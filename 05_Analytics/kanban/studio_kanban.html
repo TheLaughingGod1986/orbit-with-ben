@@ -142,6 +142,7 @@ details.donegrp li span{color:var(--ink-3)}
 .sub-i{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
 .sub-i .n{font-size:13px;color:var(--ink-2);overflow-wrap:anywhere}
 .sub-i .p{font:600 18px/1.2 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.sub-i .g{font-size:12px;color:var(--ink-3);margin-top:2px;overflow-wrap:anywhere}
 .sub-i.tot{background:var(--panel-2)}
 .sub-i.tgt{background:var(--done-soft);border-color:transparent}
 .sub-i.tgt .p{color:var(--done)}
@@ -194,6 +195,7 @@ footer a{color:var(--ink-2)}
   <section class="spend" id="spendBox">
     <div class="head"><h2 class="sec" style="margin:0">AI spend this month</h2><div class="why" id="spendWhen"></div></div>
     <div class="subs" id="subs"></div>
+    <div class="why" id="subsNote" style="margin:-4px 0 10px"></div>
     <div class="pools" id="pools"></div>
     <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
   </section>
@@ -502,12 +504,16 @@ function renderSpend(){
   const s0=pd(per.start), e0=pd(per.end), ci=pd(per.checkIn), t=today();
   $("spendWhen").innerHTML = t < s0 ? `Measuring from <b>${fd(s0)}</b>, when the Google credits refill · check-in <b>${fd(ci)}</b>`
     : `Day <b>${Math.min(days(t)-days(s0)+1, 31)}</b> of the month from ${fd(s0)} to ${fd(e0)} · check-in <b>${fd(ci)}</b> <span class="${cdCls(ci)}">(${cd(ci)})</span>`;
-  const plans = (c && c.plans) || [];
-  const tot = plans.reduce((a,p)=>a+Number(p.gbp||0),0), tgt = c && c.target;
-  $("subs").innerHTML = plans.length ? plans.map(p=>`<div class="sub-i"><div class="n">${esc(p.name)}</div><div class="p">£${esc(p.gbp)}</div></div>`).join("")
-    + `<div class="sub-i tot"><div class="n">Now, a month</div><div class="p">£${tot}</div></div>`
-    + (tgt && tgt.gbp ? `<div class="sub-i tgt"><div class="n">Target: ${esc(tgt.label||"")}</div><div class="p">£${esc(tgt.gbp)}</div></div>` : "")
+  const plans = (c && c.plans) || [], fx = (c && c.fx) || {};
+  const usd = v => "$" + Number(v).toLocaleString("en-GB",{minimumFractionDigits:Number(v)%1?2:0, maximumFractionDigits:2});
+  const gbp = v => v==null ? "" : "≈£" + Math.round(Number(v));
+  const sub = (cls, name, u, g, extra) => `<div class="sub-i ${cls}"><div class="n">${name}</div><div class="p">${u}</div><div class="g">${g}${extra?` · ${extra}`:""}</div></div>`;
+  const totU = plans.reduce((a,p)=>a+Number(p.usd||0),0), totG = plans.reduce((a,p)=>a+Number(p.gbp||0),0), tgt = c && c.target;
+  $("subs").innerHTML = plans.length ? plans.map(p=>sub("", esc(p.name), p.usd!=null?usd(p.usd):"£"+esc(p.gbp), p.usd!=null?gbp(p.gbp)+" + VAT":"", esc(p.tier||""))).join("")
+    + sub("tot", "Now, a month", usd(totU), gbp(totG)+" + VAT", "")
+    + (tgt && (tgt.usd||tgt.gbp) ? sub("tgt", "Target: "+esc(tgt.label||""), tgt.usd!=null?usd(tgt.usd):"£"+esc(tgt.gbp), tgt.usd!=null?gbp(tgt.gbp)+" + VAT":"", "") : "")
     : `<div class="empty">Subscriptions load from the studio agent's next update.</div>`;
+  $("subsNote").textContent = plans.length ? `Published list prices, checked ${fx.checked?fd(pd(fx.checked)):"8 Oct"}. These plans bill in dollars; the £ figures are rough conversions at about £${fx.gbpPerUsd||0.75} to the dollar, and UK checkout usually adds ${Math.round((fx.vat||0.2)*100)}% VAT. Your bank statement is the real figure.` : "";
   const pools = (c && c.pools) || {};
   const order = ["flow","vertex","elevenlabs","claude"].filter(k=>pools[k]);
   $("pools").innerHTML = order.length ? order.map(k=>{
