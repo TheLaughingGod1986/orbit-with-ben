@@ -2040,13 +2040,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T11:54Z",
-      "eta": "2026-10-08T13:54Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T11:30Z",
-      "result": "",
+      "result": "abc_v02: B regraded in float, flares out, tighter limb crop; A and C copied from abc_v01; sheet abc_v02/light_speed_thumbs_v02_small_size_check.jpg",
       "history": [
         {
           "at": "2026-10-08T11:30Z",
@@ -2057,8 +2057,14 @@
           "at": "2026-10-08T11:54Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T11:58Z",
+          "by": "cursor",
+          "what": "done: abc_v02: B regraded in float, flares out, tighter limb crop; A and C copied from abc_v01; sheet abc_v02/light_speed_thumbs_v02_small_size_check.jpg"
         }
-      ]
+      ],
+      "done_ref": "cba3230"
     }
   ]
 }

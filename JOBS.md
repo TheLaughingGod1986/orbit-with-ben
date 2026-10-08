@@ -5,10 +5,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0049 | mini | claimed | cursor | 2026-10-08T13:54Z | 024 thumbs · 024: thumb B v02 (grade, flares, crop); A and C passed |  |
+| – | | nothing waiting | | | | |
 
 Recently finished:
 
+- J0049 done: 024: thumb B v02 (grade, flares, crop); A and C passed (abc_v02: B regraded in float, flares out, tighter limb crop; A and C copied from abc_v01; sheet abc_v02/light_speed_thumbs_v02_small_size_check.jpg)
 - J0048 done: 024: upload package dry-run (v03 + thumbs abc_v01) (024 package built, vitest youtube-package 6/6, youtube:package dry run ok (publishAt 2026-11-01T18:00Z, sha e0f2ba6d, 19 tags, pinned, trailer 41.6 s). No upload.)
 - J0047 done: 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 (024 thumbs A/B/C v01 in 08_Thumbnail/abc_v01 + small-size sheet; awaiting Claude PASS)
 - J0046 done: 024: final picture v03 (row 1 one continuous starfield span) (full_rough_v03: row 1 one continuous starfield span from 12 s (0-6.50 s); frame0_sheet + sheet_0_8s in full_rough_v03_pack (4f7de1e); 107 cuts, -14.3 LUFS, clip_check PASS)
@@ -18,4 +19,3 @@ Recently finished:
 - J0042 done: 024: harvest v01 + render code graphics (licence-checked pool) (Pool nasa_pool_v01/024_harvest_v01 (22 items, all PD or CC BY-SA 3.0 IGO, titles checked). Manifest _evidence/light_speed_harvest_v01.json; gaps _evidence/light_speed_harvest_v01_gaps.md. Code graphics v02 at row length (mapdrift 13, contraction 17, energy 17, gammaclocks 19, lightclock 22, starfield 23 s) in graphics_v02/; the rest in graphics_v01. Row 11: DC-8 only (Hafele-Keating PD not confirmed).)
 - J0041 done: 028: verify Berski & Dybczynski comet-shower quote from the full paper (or FLAG for a pickup) (OK: all three quotes found verbatim in A&A full text (§3.3, §4) with URL in SOURCES row 7; no pickup needed)
 - J0040 done: 029: VO take of the locked script master v02 (029 VO betelgeuse_vo_v01: 515.2 s (8.6 min), LUFS -20.1 raw, Scribe 99.2% PASS; 6717 chars from the month's credits (57,018 left). words.json/chapters_index/stt committed. Dropped-word false alarm at 372.6 s checked and patched.)
-- J0039 done: 029: lock script v02 (J0037 flags + quote check) (029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md)
