@@ -18,6 +18,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 | J0068 | mini | open | – | – | 025 edit · 025 Mars robot: Ben's notes, swap the 2:54 image + 025's own music bed (v03d + phone copy) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
+| J0070 | cloud | open | – | – | Tracker: retention curve per long (where viewers leave) |  |
 
 Recently finished:
 
