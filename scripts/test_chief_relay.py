@@ -219,6 +219,12 @@ class Relay(unittest.TestCase):
         os.environ["AGY_BIN"] = str(self.cursor)
         self.assertIn("Checker: Gemini (agy found)", cr.gemini_line())
 
+    def test_default_codex_flags_parse_on_codex_0_160(self):
+        os.environ.pop("CODEX_FLAGS", None)
+        _, args = cr.cli_spec("codex")
+        self.assertEqual(args[:2], ["exec", "--approve-for-me"])
+        self.assertFalse({"-s", "--sandbox"} & set(args))  # 0.160 refuses --sandbox with --approve-for-me
+
     def test_chain_order_comes_from_the_env(self):
         os.environ["CHIEF_CHAIN"] = "chief,codex,cursor"
         self.assertEqual(self.chief(), "codex")

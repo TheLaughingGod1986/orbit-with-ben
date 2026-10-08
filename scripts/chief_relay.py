@@ -154,10 +154,11 @@ def cli_spec(agent: str):
         flags = os.environ.get("CURSOR_AGENT_FLAGS", "-p --force")
     elif agent == "codex":
         b = find_bin("CODEX_BIN", "codex")
-        # exec = one prompt, no chat window; a workspace-write sandbox on the OWB checkout, commands approved without
-        # asking; network and the extra dirs let it pull/push and use the HOS desk, like Cursor. Codex 0.160 has no
-        # --full-auto (Cursor checked on the Mini, 7 Oct). Check `codex exec --help` after a Codex update.
-        flags = os.environ.get("CODEX_FLAGS", f"exec -s workspace-write --approve-for-me "
+        # exec = one prompt, no chat window; --approve-for-me = workspace-write sandbox with approvals auto-reviewed;
+        # network and the extra dirs let it pull/push and use the HOS desk, like Cursor. Codex 0.160 has no
+        # --full-auto, and rejects -s together with --approve-for-me (exit 2, 8 Oct). Check `codex exec --help` after
+        # a Codex update.
+        flags = os.environ.get("CODEX_FLAGS", f"exec --approve-for-me "
                                               f"-c sandbox_workspace_write.network_access=true "
                                               f"--add-dir {shlex.quote(str(HOS))} --add-dir {shlex.quote(str(STATE.parent))}")
     else:
