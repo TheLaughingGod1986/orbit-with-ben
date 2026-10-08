@@ -5,11 +5,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0039 | cloud | claimed | claude | 2026-10-08T10:12Z | 029 script · 029: lock script v02 (J0037 flags + quote check) |  |
 | J0040 | mini | open (after J0039) | – | – | 029 vo · 029: VO take of the locked script master v02 |  |
 
 Recently finished:
 
+- J0039 done: 029: lock script v02 (J0037 flags + quote check) (029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md)
 - J0038 cancelled: 029: VO take of the locked script master (after the claims check) ()
 - J0037 done: 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) (SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed)
 - J0036 done: Sun 022 long: trailer + re-run dry-run package (manifest fixed by Claude) (done)
@@ -19,4 +19,3 @@ Recently finished:
 - J0032 done: 028: VO take of the script master (after the claims check) (028 VO star_coming_vo_v01 PASS (469.4 s, Scribe 96.87%); listen at ~281.9 s 'calculations suggest')
 - J0031 done: 028: Gemini claims check on script v01 (CLAUDE_CLAIMS_v01.md) (Gemini pass complete: e48dbc1 (24 rows, 4 and 13 quoted) + ecacb70 (row 15 quoted from Dybczynski 2002 p.287; row 17 FLAG, no impact figure in Garcia-Sanchez 2001; Fernandez-Puig 2026 §4.4 quote on rows 1/10, Table 1 mass on row 4). Row 16 Kepler check OK. Claude to apply row 17 wording as v02.)
 - J0030 done: Sun 022 Short Wed 21: could a robot survive touching the Sun (Parker, no Omni) (Wed 21 Short v01 built: 24.2 s, gate PASS no warnings (motion 44.85). Parker (SVS 14741) probe-tracked open + loop, SVS 14036 close-up and shield-to-Sun under the title, SVS 10925 SDO close-up for 'no ground'. No Orbit. NASA credits in meta. Not uploaded. Awaiting Claude's final OK. Thread 6048201044.)
-- J0029 done: 028: lock topic, write script v01 (Claude) (script v01 at 01_Script/star_coming_script_master_v01.md, review:script 91; CLAUDE_CLAIMS_v01.md for Gemini)

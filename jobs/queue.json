@@ -1661,13 +1661,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-10-08T09:12Z",
-      "eta": "2026-10-08T10:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T09:12Z",
-      "result": "",
+      "result": "029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md",
       "history": [
         {
           "at": "2026-10-08T09:12Z",
@@ -1678,8 +1678,14 @@
           "at": "2026-10-08T09:12Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T09:14Z",
+          "by": "claude",
+          "what": "done: 029 script v02 locked (92.2); CLAUDE_QUOTE_CHECK_v02.md"
         }
-      ]
+      ],
+      "done_ref": "24b0c1e"
     },
     {
       "id": "J0040",
