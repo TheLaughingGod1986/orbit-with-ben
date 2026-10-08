@@ -1,5 +1,5 @@
 {
-  "next_id": 47,
+  "next_id": 48,
   "jobs": [
     {
       "id": "J0001",
@@ -1927,6 +1927,32 @@
       "ref": "",
       "film": "024",
       "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T10:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T10:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0047",
+      "title": "024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build 024 long thumbnails A/B/C to `02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/08_Thumbnail/THUMB_BRIEF_v01.md`. Follow 023's `_build_venus_thumbs_v02.py` pattern: a `_build_light_speed_thumbs_v01.py` writes `abc_v01/`. Run `thumb_preview.py long` on each and commit the jpgs plus the preview sheets for Claude PASS.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "thumbs",
       "after": "",
       "eta_min": 120,
       "status": "open",

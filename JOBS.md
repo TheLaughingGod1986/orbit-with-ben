@@ -6,6 +6,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0046 | mini | open | – | – | 024 edit · 024: final picture v03 (row 1 one continuous starfield span) |  |
+| J0047 | mini | open | – | – | 024 thumbs · 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 |  |
 
 Recently finished:
 
