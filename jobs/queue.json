@@ -1,5 +1,5 @@
 {
-  "next_id": 51,
+  "next_id": 52,
   "jobs": [
     {
       "id": "J0001",
@@ -2076,6 +2076,32 @@
       "film": "",
       "stage": "",
       "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T12:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T12:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0051",
+      "title": "025: pool licence check + full rough v01 (024 v03 rules) for Claude review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble 025 full rough v01 from 02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/07_Edit-Project/SHOT_LIST_v02.md (32 rows), the 5 Oct NASA pool (`nasa_pool_v01`) and the J0050 Omni takes. Use the spans Claude passes; until then, use each row's fallback (\"stay on the world\").\n\n**First, check the pool's titles and licences.** The pool was harvested before the Venus \"parker\" lesson. Write `_evidence/mars_robot_pool_check_v01.json` (row, source URL, published title, licence, credit) and drop anything that isn't what its row says.\n\nThen build it on 024's `_assemble_light_speed_full_v03.py`, with the same rules:\n- Still cap: two uses per still, the second at a new framing.\n- Upscale ≤2.35×, asserted.\n- Every cut sits in a VO pause.\n- Hold no shot longer than 6 s, except the row 32 bookend, which returns to the opening panorama, still panning, through the end.\n- Frame 0 is already moving.\n- No whole-globe Mars anywhere near the open.\n- No text or logo bugs in frame: crop past them, as the 024 v02 NHQ fix did.\n\nThe pack must include:\n- cuts.json and the reuse count;\n- clip_check and align;\n- row_###.jpg frames and the per-row sheet;\n- the frame0 and end sheets, plus a fixes sheet if needed.\n\nPost the pack for Claude's review.\n",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "J0050",
       "eta_min": 120,
       "status": "open",
       "by": "",
