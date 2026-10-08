@@ -130,6 +130,23 @@ def assert_orbit_start_frame(start: Path) -> str:
     return src
 
 
+def _record_spend(dest: Path, model: str) -> None:
+    """One ai_spend line per Omni clip (AI spend month, 8 Oct 2026). Vertex shows no per-clip Omni
+    price and bills it hours late, so the amount is 0 and the daily vertex reading carries the cost."""
+    import os
+    import re
+    import subprocess
+    import sys
+    m = re.search(r"02_Video-Projects/(\d{3})_", str(dest.resolve()))
+    r = subprocess.run([sys.executable, str(REPO / "scripts" / "ai_spend.py"), "spend", "--pool", "vertex",
+                        "--amount", "0", "--film", f"OWB:{m.group(1)}" if m else "",
+                        "--what", f"Omni clip {dest.stem} ({model}; unpriced, billed late)",
+                        "--by", (os.environ.get("OWB_AGENT") or "omni").lower()],
+                       cwd=REPO, capture_output=True, text=True)
+    if r.returncode != 0:
+        print(f"  ai_spend: not recorded ({(r.stderr or r.stdout).strip()[:200]})", flush=True)
+
+
 def generate_omni_clip(
     client,
     prompt: str,
@@ -177,6 +194,7 @@ def generate_omni_clip(
     size = dest.stat().st_size
     if size < 200_000:
         raise RuntimeError(f"download too small: {dest} ({size} bytes)")
+    _record_spend(dest, model)
     return {
         "seconds": round(time.time() - t0, 1),
         "bytes": size,

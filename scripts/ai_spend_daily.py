@@ -43,7 +43,8 @@ def read_elevenlabs() -> dict:
     return {"left": c["remaining"], "total": c["limit"], "note": f"API subscription: used {c['used']} of {c['limit']}"}
 
 
-def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000) -> str:
+def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000, then=None) -> str:
+    """Body text of `url` in the CDP Chrome. `then(page, text)` may click and return new text."""
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         br = p.chromium.connect_over_cdp(CDP)
@@ -53,23 +54,57 @@ def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000) -> str:
             if wait_text:
                 page.get_by_text(wait_text).first.wait_for(timeout=45000)
             page.wait_for_timeout(settle_ms)
-            return page.inner_text("body")
+            text = page.inner_text("body")
+            return then(page, text) if then else text
         finally:
             page.close()
 
 
+FLOW_ACCOUNT = "benoats@googlemail.com"
+# The account chip that opens the picker with the credit count, as the HOS Flow minters click it.
+FLOW_PICKER = ('[aria-label*="Account details" i]', '[aria-label*="Google Account" i]',
+               'button:has-text("ULTRA")', "text=ULTRA")
+CREDITS_RE = re.compile(r"([\d,]{1,7})\s*(?:Google\s+Flow\s+|AI\s+)?credits", re.I)
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@(?:gmail|googlemail)\.com", re.I)
+
+
 def parse_flow(text: str) -> int:
-    hits = [int(m.group(1).replace(",", "")) for m in re.finditer(r"([\d,]{1,7})\s*(?:Google\s+Flow\s+|AI\s+)?credits", text, re.I)]
+    hits = [int(m.group(1).replace(",", "")) for m in CREDITS_RE.finditer(text)]
     if not hits:
-        raise RuntimeError("no 'N credits' text on the Flow page (signed out, or the picker moved)")
+        raise RuntimeError("no 'N credits' text on the Flow page or its account picker (signed out, or the picker moved)")
     return hits[0]
 
 
+def _flow_picker(page, text: str) -> str:
+    """Open the account picker so the credit count and signed-in account are on the page."""
+    if CREDITS_RE.search(text) and FLOW_ACCOUNT in text.lower():
+        return text
+    for sel in FLOW_PICKER:
+        loc = page.locator(sel).first
+        try:
+            if loc.count() == 0:
+                continue
+            loc.click(timeout=2500)
+        except Exception:  # noqa: BLE001
+            continue
+        page.wait_for_timeout(1500)
+        aria = page.evaluate("() => [...document.querySelectorAll('[aria-label]')]"
+                             ".map(e => e.getAttribute('aria-label') || '').join('\\n')") or ""
+        text = page.inner_text("body") + "\n" + aria
+        page.keyboard.press("Escape")
+        break
+    return text
+
+
 def read_flow() -> dict:
-    text = _page_text(FLOW_URL, None, settle_ms=8000)
+    text = _page_text(FLOW_URL, None, settle_ms=8000, then=_flow_picker)
     if re.search(r"sign in to continue|you.?re not signed in", text, re.I):
         raise RuntimeError("Flow is signed out in the CDP Chrome")
-    return {"left": parse_flow(text), "note": "Flow page credits (CDP :9222)"}
+    emails = {e.lower() for e in EMAIL_RE.findall(text)}
+    if emails and FLOW_ACCOUNT not in emails:
+        raise RuntimeError(f"Flow is signed in as another account ({len(emails)} seen, not the Ultra one)")
+    who = FLOW_ACCOUNT if FLOW_ACCOUNT in emails else "account not shown"
+    return {"left": parse_flow(text), "note": f"Flow account picker credits ({who}, CDP :9222)"}
 
 
 def parse_billing(text: str) -> tuple[float, str]:
