@@ -1523,13 +1523,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T07:36Z",
-      "eta": "2026-10-08T08:36Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T07:33Z",
-      "result": "",
+      "result": "SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed",
       "history": [
         {
           "at": "2026-10-08T07:33Z",
@@ -1540,8 +1540,14 @@
           "at": "2026-10-08T07:36Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T07:49Z",
+          "by": "cursor",
+          "what": "done: SOURCES.md: 24/24 rows, 21 OK, 3 FLAG (2, 18, 24); 8/8 MUST QUOTE quoted; 26 refs confirmed"
         }
-      ]
+      ],
+      "done_ref": "cf6516c"
     },
     {
       "id": "J0038",
