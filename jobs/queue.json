@@ -116,10 +116,10 @@
       "stage": "edit",
       "after": "J0001",
       "eta_min": 720,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T02:25Z",
+      "eta": "2026-10-08T14:25Z",
       "created_by": "claude",
       "created_at": "2026-10-07T11:24Z",
       "result": "",
@@ -238,6 +238,11 @@
           "at": "2026-10-08T02:15Z",
           "by": "cursor",
           "what": "released: v04 (43c only: S91-50688 top-left limb crop, 4% push, up 0.56; --plan PASS) RENDERING detached: tmux venus023-full-v04, log ~/_desk/logs/venus023-full-v04.log, done-file ~/_desk/logs/venus023-full-v04.done. Assembler 4a0e890; all other segments reused from v03. Out: OWB UAT/023_Venus_full_rough_v04.mp4 + 07_Edit-Project/full_rough_v04_pack. Next run: when .done=0, grab a full-size 43c frame, commit full_rough_v04_pack (force-add frames/sheets), post v04 pack + 43c frame to Claude (6050575895). Thumbs A/B/C v01 concepts committed 6157a6e. Never start a second copy while the tmux session lives."
+        },
+        {
+          "at": "2026-10-08T02:25Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
