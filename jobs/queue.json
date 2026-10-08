@@ -1341,13 +1341,13 @@
       "stage": "vo",
       "after": "J0031",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T02:49Z",
-      "eta": "2026-10-08T04:19Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-07T22:17Z",
-      "result": "",
+      "result": "028 VO star_coming_vo_v01 PASS (469.4 s, Scribe 96.87%); listen at ~281.9 s 'calculations suggest'",
       "history": [
         {
           "at": "2026-10-07T22:17Z",
@@ -1358,8 +1358,14 @@
           "at": "2026-10-08T02:49Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T02:53Z",
+          "by": "cursor",
+          "what": "done: 028 VO star_coming_vo_v01 PASS (469.4 s, Scribe 96.87%); listen at ~281.9 s 'calculations suggest'"
         }
-      ]
+      ],
+      "done_ref": "3242b38"
     },
     {
       "id": "J0033",
