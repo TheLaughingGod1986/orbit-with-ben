@@ -297,6 +297,9 @@ def run_cli(agent: str, prompt: str, cap_s: int) -> tuple:
     """(exit code, tail of output). Exit 124 = killed at the cap. The whole process group is killed, so a CLI's
     child processes don't outlive the cap."""
     b, args = cli_spec(agent)
+    # The exact command, minus the prompt, so a usage error (exit 2) can be matched to its flags. Flags hold no secrets.
+    log(f"cmd: {b} {' '.join(shlex.quote(a) for a in args)} <prompt>" + (" (flags from the env)" if os.environ.get(
+        {"cursor": "CURSOR_AGENT_FLAGS", "codex": "CODEX_FLAGS"}.get(agent, "")) else ""))
     # owb_thread.py tags its posts "[Chief] [Cursor]". PATH: launchd's shell has no Homebrew or user bins, and doesn't
     # expand "~", so put the real dirs first; the woken agent then finds gh, agy, agent and codex itself.
     extra = [str(HOME / ".local" / "bin"), str(HOME / ".npm-global" / "bin"), "/opt/homebrew/bin", "/usr/local/bin"]
