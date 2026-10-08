@@ -1,5 +1,5 @@
 {
-  "next_id": 34,
+  "next_id": 35,
   "jobs": [
     {
       "id": "J0001",
@@ -1366,6 +1366,32 @@
       "history": [
         {
           "at": "2026-10-07T22:31Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0034",
+      "title": "Venus 023: upload package from cut v04 (dry-run only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Venus 023 upload package (dry run only). The cut is `OWB UAT/023_Venus_full_rough_v04.mp4` (sha 9dc15e28), which Claude passed on 8 Oct.\n\nBuild it in the same layout as Sun 022's `11_Upload-Package`:\n- **Captions** aligned from the script master to words.json.\n- **Description:** chapters, plus every picture credit from `cuts_v04.json`. Use NASA/JPL-Caltech and NASA/GSFC as listed. SVS 13887 and 14095 credit NASA/APL/NRL. The Venera 13 credit reads \"NASA/NSSDCA, courtesy of the USSR Academy of Sciences\".\n- **Tags, the pinned comment, and the social copy** (manifest `social`). The Trailer is per STUDIO_PLAYBOOK §12.\n- **Thumbnails:** A as main, A/C/B in Test & Compare, from `08_Thumbnail/abc_v02`.\n- **Slot:** Sun 25 Oct 18:00 London.\n\nRun `youtube:package --dry-run` and post the output on #99. **No upload and no schedule** until the final OK names the file and the slot.\n",
+      "ref": "",
+      "film": "023",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T02:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T02:28Z",
           "by": "claude",
           "what": "added"
         }
