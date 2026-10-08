@@ -207,6 +207,14 @@ details.more .subs{margin-top:8px}
 .yl li{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:0 4px;padding:5px 0;border-top:1px solid var(--line);font-size:14px}
 .yl li:first-child{border-top:0}
 .yl li .why{display:block;margin-top:1px}
+.yl li.done{color:var(--done)} .yl li.done>span:first-child{font-weight:700}
+.yl li.chg>span:first-child{color:var(--doing)}
+.yl .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.yl .btn.ok{background:var(--done-soft);border-color:transparent;color:var(--done);font-weight:600}
+.yl .chgbox{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:flex-start}
+.yl textarea{flex:1 1 260px;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
+.yl .said{display:block;font-size:13px;margin-top:4px;color:var(--ink-2)}
+.lnk{font:inherit;font-size:12px;background:none;border:0;color:var(--ink-3);text-decoration:underline;cursor:pointer;padding:0 0 0 6px}
 .kb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
 @media (max-width:900px){.kb{grid-template-columns:1fr}}
 .kcol{background:var(--panel-2);border-radius:14px;padding:10px;min-width:0}
@@ -358,7 +366,10 @@ const DAY = 86400000;
 let data = SNAPSHOT, source = "snapshot", fetchedAt = null, filter = null, chan = "all";
 // The studio agent writes the board into this page's own store (board/hos, board/owb) several times a day, so the
 // page stays current without the viewer's GitHub connector. GitHub live, when it works, still wins.
-const fromDb = {hos:null, owb:null, hosAt:null, owbAt:null, jobs:null, credits:null, briefs:null};
+const fromDb = {hos:null, owb:null, hosAt:null, owbAt:null, jobs:null, credits:null, briefs:null, checks:{}};
+// Ben's ticks on "Ready for you to check" (8 Oct): checks/<OWB-022> = {film, verdict: ok|change, note, at}. Claude's
+// hourly run reads them, acts (final OK and upload, or the fix) and marks them handled.
+let dbApi = null, changeOpen = null;
 try { filter = localStorage.getItem("studio-kanban-film") || null; chan = localStorage.getItem("studio-kanban-ch") || "all"; } catch (e) {}
 
 const $ = id => document.getElementById(id);
@@ -664,9 +675,29 @@ function renderTracker(films){
   const yb = $("youbar"); if(!yb) return;
   const soon = forYou.filter(x=>x.soon);
   yb.className = "youbar" + (soon.length ? " has" : "");
-  yb.innerHTML = soon.length ? `<b>Ready for you to check (${soon.length})</b><ul class="yl">${soon.map(x=>`<li><span>☐</span><span>${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}</span></span></li>`).join("")}</ul>
-      <div class="why">Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder. When you've checked one, tell Claude "${esc(soon[0].f.id)} is fine" (or what to change). It then drops off this list.</div>`
+  if(yb.contains(document.activeElement) && document.activeElement.tagName==="TEXTAREA") return;   // don't wipe a note being typed
+  const item = x => {
+    const id = x.f.key.replace(":","-"), c = (fromDb.checks||{})[id];
+    const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}</span>`;
+    if(c && !c.handled) return `<li class="${c.verdict==="ok"?"done":"chg"}"><span>${c.verdict==="ok"?"✓":"✎"}</span><span>${head}
+      <span class="said">${c.verdict==="ok"?"You said it looks good":`You asked for a change: “${esc(c.note||"")}”`} (${esc(fw(c.at))}). Claude acts on it at the next hourly check.
+      <button class="lnk" data-undo="${id}">Undo</button></span></span></li>`;
+    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Looks good</button><button class="btn" data-chg="${id}">Needs a change</button></span>
+      ${changeOpen===id?`<span class="chgbox"><textarea id="note-${id}" rows="2" placeholder="What should change? e.g. the music is too loud at 3:10"></textarea><button class="btn ok" data-send="${id}">Send to Claude</button></span>`:""}` : "";
+    return `<li><span>☐</span><span>${head}${btns}</span></li>`;
+  };
+  yb.innerHTML = soon.length ? `<b>Ready for you to check (${soon.filter(x=>{ const c=(fromDb.checks||{})[x.f.key.replace(":","-")]; return !c||c.handled; }).length})</b><ul class="yl">${soon.map(item).join("")}</ul>
+      <div class="why">Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder. ${dbApi?"Watch it, then tap <b>Looks good</b> or <b>Needs a change</b>.":`When you've checked one, tell Claude "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
     : `<b>Nothing for you to check right now.</b>`;
+  const keyOf = id => id.replace("-",":"), saveCheck = async (id, verdict, note) => {
+    if(!dbApi) return;
+    try { await dbApi.doc("checks/"+id).set({film:keyOf(id), verdict, note:note||"", at:new Date().toISOString(), handled:false}); changeOpen=null; }
+    catch(e){ alert("Couldn't save that (" + (e && e.code || "error") + "). Tell Claude in the chat instead."); }
+  };
+  yb.querySelectorAll("[data-ok]").forEach(b=>b.onclick=()=>saveCheck(b.dataset.ok,"ok"));
+  yb.querySelectorAll("[data-chg]").forEach(b=>b.onclick=()=>{ changeOpen = changeOpen===b.dataset.chg ? null : b.dataset.chg; render(); const t=$("note-"+b.dataset.chg); if(t) t.focus(); });
+  yb.querySelectorAll("[data-send]").forEach(b=>b.onclick=()=>{ const t=$("note-"+b.dataset.send), v=(t&&t.value||"").trim(); if(!v){ t&&t.focus(); return; } saveCheck(b.dataset.send,"change",v.slice(0,2000)); });
+  yb.querySelectorAll("[data-undo]").forEach(b=>b.onclick=async()=>{ try{ await dbApi.doc("checks/"+b.dataset.undo).delete(); }catch(e){} });
 }
 
 function cardHtml(f, s, st){
@@ -1104,6 +1135,11 @@ async function startDb(){
     if(!d || !Array.isArray(d.films)) return;
     fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || [];
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
+  }, ()=>{});
+  dbApi = db;
+  db.collection("checks").onSnapshot(snap=>{
+    const m = {}; for(const d of snap.docs) if(d.exists) m[d.id] = d.data();
+    fromDb.checks = m; render();
   }, ()=>{});
   db.doc("board/briefs").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
