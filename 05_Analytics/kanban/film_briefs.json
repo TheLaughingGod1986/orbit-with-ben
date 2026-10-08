@@ -132,31 +132,43 @@
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-08T18:10Z",
+      "updated": "2026-10-08T18:40Z",
       "mood": "good",
       "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "v02d passed the fill check, but Claude's look at every frame found about 8 that look unfinished: a fisheye frame with a black disc, a flat green texture, a noise frame, a split two-panel picture, murky and washed-out frames, and a near-duplicate pair. Cursor swaps them in v03 and builds a new polish check, so this kind of frame gets caught automatically from now on (023 gets the same treatment next).",
+      "holdup": "Very close. Cursor's v03 fixed the wobble (shake down from about 1 pixel to almost nothing) and the eight unfinished frames. Claude's check of v03 found one blurry sky frame to swap and one frame with a stray blue blob to crop. Cursor makes those as v03b (about an hour); if it's clean, it comes straight to you.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "rough cut v03: swap 8 frames, new polish and wobble check",
-          "job": "J0058"
+          "what": "rough cut v03: swap 8 frames, new polish and wobble checks",
+          "done": true,
+          "doneText": "done · Thu 8 Oct 19:34"
         },
         {
           "who": "Claude",
           "what": "check v03",
-          "afterJob": "J0058",
-          "lag": 60
+          "done": true,
+          "doneText": "done · 1 swap, 1 crop"
+        },
+        {
+          "who": "Cursor",
+          "what": "v03b: the swap and the crop",
+          "job": "J0062"
+        },
+        {
+          "who": "Claude",
+          "what": "check v03b",
+          "afterJob": "J0062",
+          "lag": 30
         },
         {
           "who": "Ben",
           "what": "watch 025 in OWB UAT",
-          "whenText": "about Sat 10 Oct"
+          "whenText": "tonight or tomorrow morning"
         }
       ],
       "you": "Watch it in OWB UAT once it's ready, about Sat 10 Oct. Nothing before then.",
-      "timing": "Ready for you about Sat 10 Oct. Airs Sun 8 Nov.",
-      "line": "Focus film. The new rough cut fills the screen everywhere, but about 8 frames still look unfinished. Cursor is making v03 with those swapped and a new polish check; then Claude checks it and it comes to you.",
+      "timing": "Ready for you tonight or tomorrow morning, ahead of the Sat 10 Oct aim. Airs Sun 8 Nov.",
+      "line": "Focus film. v03 is smooth (no more wobble) and nearly clean: one frame to swap and one to crop. Then v03b comes to you to watch.",
       "youWhen": "2026-10-10",
       "youShort": "watch it about Sat 10 Oct"
     },
