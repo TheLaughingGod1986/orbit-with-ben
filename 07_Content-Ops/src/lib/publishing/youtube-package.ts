@@ -334,7 +334,11 @@ export function loadYouTubePackage(input: {
     manifest = JSON.parse(readText(manifestPath)) as YouTubePackageManifest;
     sources.manifest = manifestPath;
   }
-  const merged: YouTubePackageManifest = { ...manifest, ...input.overrides };
+  // Unset CLI flags arrive as undefined and must not blank the manifest's values.
+  const overrides = Object.fromEntries(
+    Object.entries(input.overrides ?? {}).filter(([, v]) => v !== undefined),
+  );
+  const merged: YouTubePackageManifest = { ...manifest, ...overrides };
 
   const format = merged.format || "longform";
   const titleVariant = merged.titleVariant || "A";
