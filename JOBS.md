@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0037 | gemini | open | – | – | 029 sources · 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) |  |
+| J0037 | gemini | claimed | cursor | 2026-10-08T08:36Z | 029 sources · 029: Gemini SOURCES + claims check on script v01 (CLAUDE_CLAIMS_v01.md) |  |
 | J0038 | mini | open (after J0037) | – | – | 029 vo · 029: VO take of the locked script master (after the claims check) |  |
 
 Recently finished:
