@@ -1,5 +1,5 @@
 {
-  "next_id": 58,
+  "next_id": 59,
   "jobs": [
     {
       "id": "J0001",
@@ -2415,6 +2415,32 @@
       "history": [
         {
           "at": "2026-10-08T16:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0058",
+      "title": "025: rough v03, polish pass (Claude's sheet review of v02d) + new polish gate",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "v02d fill gate: PASS rows 2 (PIA07372 deck) and 16 (PIA13804 deck) as scene content; all eight earlier rulings hold on the frames. But v02d is not ready for Ben: frames that look unfinished. Swap or fix: 119.1s PIA26310 (fisheye, black centre disc + corners); 201.0s and 216.3s PIA22223 (flat green texture, nothing to see) -> a real lander frame; 297.4s PIA22929 (near-black noise) drop; 277.3s and 287.9s PIA22330 (split two-panel) -> one panel only or swap; 293.4s and 475.3s PIA22549 (murky dark) swap; 393.4s PIA24593 + 398.5s PIA25686 (washed out, flat) swap at least one; 53.8s/58.8s PIA00382/PIA00383 near-identical back to back -> swap the second; 266.9s PIA18078 check corners, crop inside. NEW shared scripts/polish_gate.py, run on every row frame, written to polish_gate_v03.json, FAIL on: (a) low detail (luma std < 18 or edge density below the film's 5th percentile), (b) split panels (a straight full-height or full-width seam), (c) noise/near-black frames, (d) push jitter: phase-correlate consecutive frames of every still push; FAIL if the shift reverses or jumps > 0.35 px against the trend (that is the 'wobbly' look Ben saw on 023). If jitter shows, render pushes from a 4x upscaled source (or a scale+crop with subpixel accuracy) instead of zoompan on the native frame. Then pack v03 with sheets force-added for Claude.",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T18:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T18:03Z",
           "by": "claude",
           "what": "added"
         }
