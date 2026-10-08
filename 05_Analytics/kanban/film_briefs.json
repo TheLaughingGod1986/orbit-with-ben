@@ -132,68 +132,77 @@
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-08T19:45Z",
-      "mood": "held",
+      "updated": "2026-10-08T20:00Z",
+      "mood": "finished",
       "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "Cursor's runs on the Mac mini are failing (twice in a row, 20:20 and 20:43) before any work is done, so the last two-frame fix hasn't started. Claude has asked for the Mac mini's error log on the studio thread. If Cursor itself is the problem (usage limit, sign-in), the next agent in line (Codex) takes over; if it's the job, it gets fixed and retried.",
+      "holdup": "Nothing is broken. The picture passed Claude's check (v03c). It's waiting for your watch, and in parallel Cursor makes the thumbnails and upload package.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "v03 and v03b: wobble gone, unfinished frames swapped",
+          "what": "picture: wobble fixed, unfinished frames swapped (v03 to v03c)",
           "done": true,
-          "doneText": "done · Thu 8 Oct 20:09"
+          "doneText": "done · Thu 8 Oct 20:53"
         },
         {
           "who": "Claude",
-          "what": "check v03b",
+          "what": "check every frame",
           "done": true,
-          "doneText": "done · 2 frames to fix"
-        },
-        {
-          "who": "Cursor",
-          "what": "v03c: the last 2 frames (retrying after 2 failed runs)",
-          "job": "J0063"
-        },
-        {
-          "who": "Claude",
-          "what": "check v03c",
-          "afterJob": "J0063",
-          "lag": 20
+          "doneText": "passed · Thu 8 Oct 21:00"
         },
         {
           "who": "Ben",
-          "what": "watch 025 in OWB UAT",
-          "whenText": "tonight or tomorrow morning"
+          "what": "watch iCloud Drive › OWB UAT › 025_MarsRobot_full_rough_v03c.mp4",
+          "when": "2026-10-12",
+          "whenText": "any time before Mon 12 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "thumbnails and upload package",
+          "job": "J0066"
+        },
+        {
+          "who": "Claude",
+          "what": "final OK, then upload privately, scheduled for Sun 8 Nov",
+          "whenText": "after your watch and the package"
         }
       ],
-      "you": "Watch it in OWB UAT once it's ready, about Sat 10 Oct. Nothing before then.",
-      "timing": "Ready for you tonight or tomorrow morning. Airs Sun 8 Nov.",
-      "line": "Held up: Cursor's last two runs on the Mac mini failed before doing the work (20:20 and 20:43). Claude has asked for the error log; the fix itself is only about 15 minutes once a run gets through.",
-      "youWhen": "2026-10-10",
-      "youShort": "watch it about Sat 10 Oct"
+      "you": "Watch iCloud Drive › OWB UAT › 025_MarsRobot_full_rough_v03c.mp4 any time before Mon 12 Oct. Tap Looks good or Needs a change.",
+      "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
+      "line": "Ready for you to watch. Every frame checked, the wobble fixed, and the unfinished-looking pictures swapped. While you watch, Cursor makes the thumbnails and upload package.",
+      "youWhen": "2026-10-08",
+      "youShort": "iCloud Drive › OWB UAT › 025_MarsRobot_full_rough_v03c.mp4 · by Mon 12 Oct"
     },
     "OWB:026": {
-      "updated": "2026-10-08T16:25Z",
-      "mood": "waiting",
+      "updated": "2026-10-08T20:00Z",
+      "mood": "good",
       "done": "Script, voice and shot list.",
-      "holdup": "Waiting its turn, by design: one film at a time (your call, 8 Oct). 025 is the focus film; 026 becomes the focus once 025 is ready for you.",
-      "limit": "Before picture starts, the Shorts' voice files need a fresh transcript and timing pass (a short job).",
+      "holdup": "Nothing is holding it. It became the focus film at 21:00 when 025 passed, so its jobs now go first on the Mac mini.",
       "steps": [
         {
           "who": "Cursor",
           "what": "fresh transcript and timing on the Shorts' voice files",
-          "whenText": "once 025's picture passes, about Sat 10 Oct"
+          "job": "J0064"
         },
         {
           "who": "Cursor",
-          "what": "picture",
-          "when": "2026-10-12",
-          "whenText": "from about Mon 12 Oct"
+          "what": "picture, rough v01 (smooth zooms, every frame checked)",
+          "job": "J0065"
+        },
+        {
+          "who": "Claude",
+          "what": "check the rough cut",
+          "afterJob": "J0065",
+          "lag": 60
+        },
+        {
+          "who": "Ben",
+          "what": "watch 026",
+          "whenText": "about Sun 11 Oct"
         }
       ],
       "you": "",
-      "timing": "Airs Sun 15 Nov. Five weeks in hand.",
-      "line": "Script and voice done. Picture starts when 025's is finished, about Mon 12 Oct."
+      "timing": "Ready for you about Sun 11 Oct. Airs Sun 15 Nov.",
+      "line": "The new focus film. Cursor starts now: a quick timing pass on the Shorts' voice files, then the picture, built to 025's new standard from the start."
     },
     "OWB:027": {
       "updated": "2026-10-08T16:05Z",
