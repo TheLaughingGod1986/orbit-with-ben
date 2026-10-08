@@ -1,5 +1,5 @@
 {
-  "next_id": 42,
+  "next_id": 43,
   "jobs": [
     {
       "id": "J0001",
@@ -1760,6 +1760,32 @@
         }
       ],
       "done_ref": "27aff30"
+    },
+    {
+      "id": "J0042",
+      "title": "024: harvest v01 + render code graphics (licence-checked pool)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "024 airs Sun 1 Nov 17:00Z. Venus 023 is done, so 024 picture starts now. Shot list: 02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/07_Edit-Project/SHOT_LIST_v01.md (39 rows, Claude 5 Oct).\n\n1. Render all code graphics from 02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/07_Edit-Project/code_graphics.py at the --seconds each row needs (no freeze-padding). Media stays out of git.\n2. Harvest every non-CODE row into nasa_pool_v01/024_harvest_v01, with a manifest at _evidence/light_speed_harvest_v01.json listing for each item: row, source URL, title as published, licence, credit line.\n3. Check each item's title and licence before it enters the pool (the Venus \"parker\" lesson). Public domain or CC BY / CC BY-SA only. No branded airliners, no Breakthrough artwork, no DSS cut-outs.\n4. Row 11: use the Hafele–Keating photo only if US Navy public domain is confirmed. Otherwise use the NASA DC-8 only.\n5. Commit the manifest plus a one-line gap list (row, what's missing, the fallback you picked). Mark this job done with the commit.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T09:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T09:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ]
 }

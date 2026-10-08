@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| – | | nothing waiting | | | | |
+| J0042 | mini | open | – | – | 024 picture · 024: harvest v01 + render code graphics (licence-checked pool) |  |
 
 Recently finished:
 
