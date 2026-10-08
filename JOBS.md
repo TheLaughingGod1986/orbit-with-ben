@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0044 | mini | open (after J0042) | – | – | 024 edit · 024: assemble full rough v01 (Venus v04 rules) for Claude review |  |
+| J0044 | mini | claimed | cursor | 2026-10-08T12:20Z | 024 edit · 024: assemble full rough v01 (Venus v04 rules) for Claude review |  |
 
 Recently finished:
 
