@@ -2277,10 +2277,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T17:07Z",
+      "eta": "2026-10-08T19:07Z",
       "created_by": "claude",
       "created_at": "2026-10-08T15:27Z",
       "result": "",
@@ -2319,6 +2319,11 @@
           "at": "2026-10-08T16:56Z",
           "by": "cursor",
           "what": "released: v02c full render running detached: tmux j0055-render3, log ~/_desk/logs/j0055-render3.log, done file ~/_desk/logs/j0055-render3.done (assembler edbb1b8). Next run: if .done=0, check summary_v02.json fill gate + freezes, eyeball rows 2/3/13/14/16/17/28 frames, force-add pack sheets+frames, post full_rough_v02_pack. v02b (finish-only on the pass-2 picture) failed the fill gate on PIA07372 row 2 (35%), so it is superseded; don't post it."
+        },
+        {
+          "at": "2026-10-08T17:07Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
