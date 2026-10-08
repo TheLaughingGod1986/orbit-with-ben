@@ -4,18 +4,26 @@
   python3 scripts/polish_gate.py <video.mp4> --cuts <cuts.json> --out <polish_gate.json> [--no-jitter]
 
 cuts.json is the assembler's list of {row, timeline_in, timeline_out, source, framing}. Each row is judged on its middle frame:
-  (a) low detail: luma std < 18, or edge density below the film's 5th percentile;
+  (a) low detail: FAIL below the absolute floor on both luma std and edge density (calibrated on the frames Claude rejected
+      as empty in 025 v02d, #6066196876); luma std < 18 or edge density below the film's 5th percentile is a WARN ("look at these");
   (b) split panel: a straight seam or gutter running the full height or width of the frame;
   (c) near-black or noise: mean luma < 28 (or 95th percentile < 50), or fine-grain noise with little structure under it;
   (d) push jitter (stills only): consecutive frames of the push are phase-correlated on a centre patch; FAIL if the shift
       reverses against the trend or jumps more than 0.35 px off it. That is the 'wobbly' look Ben saw on 023.
-Exit 1 if any row fails."""
+Exit 1 if any row fails; warnings never fail."""
 import argparse, json, subprocess as sp, sys
 from pathlib import Path
 import numpy as np
 
 STD_MIN = 18.0
 EDGE_PCT = 5
+# Floor = lower of 025 v02d's PIA22223 (flat green, 201.0 s / 216.3 s) and PIA22929 (noise, 297.4 s) on each measure, x 1.2.
+FLOOR_CAL = dict(video='025_MarsRobot_full_rough_v02d.mp4', factor=1.2,
+                 frames=[dict(source='PIA22223.jpg', t=201.0, std=12.1, edge=0.0223),
+                         dict(source='PIA22223.jpg', t=216.3, std=11.2, edge=0.0216),
+                         dict(source='PIA22929.jpg', t=297.4, std=26.54, edge=0.5735)])
+STD_FLOOR = round(min(f['std'] for f in FLOOR_CAL['frames']) * FLOOR_CAL['factor'], 2)    # 13.44
+EDGE_FLOOR = round(min(f['edge'] for f in FLOOR_CAL['frames']) * FLOOR_CAL['factor'], 4)  # 0.0259
 DARK_MEAN, DARK_P95 = 28.0, 50.0
 JIT_PX = 0.35
 W, H = 960, 540  # analysis size for still checks
@@ -135,9 +143,11 @@ def main():
                          hf=round(hf, 2), lf=round(lf, 2), seams=seams(g), video=bool(c.get('framing', {}).get('offset') is not None)))
     edge_floor = float(np.percentile([r['edge'] for r in rows], EDGE_PCT))
     for r, c in zip(rows, cuts):
-        why = []
-        if r['std'] < STD_MIN: why.append(f"low detail: luma std {r['std']} < {STD_MIN}")
-        if r['edge'] < edge_floor: why.append(f"low detail: edge density {r['edge']} < film p{EDGE_PCT} {edge_floor:.4f}")
+        why, warn = [], []
+        if r['std'] < STD_FLOOR and r['edge'] < EDGE_FLOOR:
+            why.append(f"low detail: luma std {r['std']} < {STD_FLOOR} and edge density {r['edge']} < {EDGE_FLOOR} (absolute floor)")
+        if r['std'] < STD_MIN: warn.append(f"low detail: luma std {r['std']} < {STD_MIN}")
+        if r['edge'] < edge_floor: warn.append(f"low detail: edge density {r['edge']} < film p{EDGE_PCT} {edge_floor:.4f}")
         if r['seams']: why.append('split panel: ' + ', '.join(f"{s['kind']} at {s['at']}" for s in r['seams']))
         if r['mean'] < DARK_MEAN or r['p95'] < DARK_P95: why.append(f"near-black: mean {r['mean']}, p95 {r['p95']}")
         if r['hf'] > 6 and r['lf'] < 12: why.append(f"noise: grain {r['hf']} over structure {r['lf']}")
@@ -146,16 +156,22 @@ def main():
             r['jitter'] = j
             if j and j['fail']:
                 why.append(f"push jitter: {j['max_off_trend_px']} px off trend, {j['reversals']} reversals")
-        r['fail'] = why
-        print(f"{r['row']:>4} {r['t']:7.1f}s {r['source'][:28]:28} {'FAIL ' + '; '.join(why) if why else 'ok'}", flush=True)
+        r['fail'] = why; r['warn'] = warn
+        state = 'FAIL ' + '; '.join(why) if why else ('WARN ' + '; '.join(warn) if warn else 'ok')
+        print(f"{r['row']:>4} {r['t']:7.1f}s {r['source'][:28]:28} {state}", flush=True)
     failed = [r for r in rows if r['fail']]
-    res = dict(rule=dict(low_detail=f'luma std < {STD_MIN} or edge density < film p{EDGE_PCT}', split_panel='full-height/width seam or gutter',
+    warned = [r for r in rows if r['warn'] and not r['fail']]
+    res = dict(rule=dict(low_detail=f'FAIL: luma std < {STD_FLOOR} and edge density < {EDGE_FLOOR} (absolute floor); '
+                                    f'WARN: luma std < {STD_MIN} or edge density < film p{EDGE_PCT}',
+                         split_panel='full-height/width seam or gutter',
                          near_black=f'mean < {DARK_MEAN} or p95 < {DARK_P95}', noise='grain std > 6 over structure std < 12',
                          jitter=f'centre-patch phase correlation: reversal against trend or > {JIT_PX} px off trend'),
+               low_detail_floor=dict(std=STD_FLOOR, edge=EDGE_FLOOR, calibration=FLOOR_CAL),
                video=str(video), edge_floor=round(edge_floor, 4), verdict='FAIL' if failed else 'PASS',
-               failed=[dict(row=r['row'], cut=r['cut'], t=r['t'], source=r['source'], why=r['fail']) for r in failed], rows=rows)
+               failed=[dict(row=r['row'], cut=r['cut'], t=r['t'], source=r['source'], why=r['fail']) for r in failed],
+               warn=[dict(row=r['row'], cut=r['cut'], t=r['t'], source=r['source'], why=r['warn']) for r in warned], rows=rows)
     Path(a.out).write_text(json.dumps(res, indent=2))
-    print(f"polish gate {res['verdict']}: {len(failed)} of {len(rows)} rows flagged -> {a.out}")
+    print(f"polish gate {res['verdict']}: {len(failed)} of {len(rows)} rows failed, {len(warned)} to look at -> {a.out}")
     sys.exit(1 if failed else 0)
 
 
