@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0045 | mini | open | – | – | 024 edit · 024: full rough v02 (Claude v01 review: 5 assembler fixes) |  |
+| J0045 | mini | claimed | cursor | 2026-10-08T12:46Z | 024 edit · 024: full rough v02 (Claude v01 review: 5 assembler fixes) |  |
 
 Recently finished:
 
