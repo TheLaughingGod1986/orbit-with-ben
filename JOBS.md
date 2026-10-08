@@ -12,6 +12,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0057 | cloud | open (after J0056) | – | – | 022 upload · 022 Sun: final OK + queue the upload (Ben watched v05 and said it looks good, 8 Oct 17:19) |  |
 | J0058 | mini | open | – | – | 025 edit · 025: rough v03, polish pass (Claude's sheet review of v02d) + new polish gate |  |
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
+| J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 
 Recently finished:
 

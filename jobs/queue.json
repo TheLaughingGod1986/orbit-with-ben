@@ -1,5 +1,5 @@
 {
-  "next_id": 60,
+  "next_id": 61,
   "jobs": [
     {
       "id": "J0001",
@@ -2457,6 +2457,32 @@
       "stage": "edit",
       "after": "J0058",
       "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T18:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T18:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0060",
+      "title": "024 Light speed: Ben's fix, check the audio is 024's own (v03)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben watched OWB UAT/024_LightSpeed_full_rough_v03.mp4 (8 Oct 18:30): 'the audio seems the same as video 024' (likely: same as another film). Check: (1) transcribe the first and last 60 s of v03 (Scribe) and match against 024's locked VO script; (2) compare the narration stem's sha/fingerprint with 024's VO_TAKES_KEEP and with 023 v04 and 022 v05; (3) compare the music bed file and its offsets with 022/023/025 (same track? same section?). Post what you find on #99. If the narration is wrong, rebuild v04 with 024's own VO. If it's the music bed, list the beds used per film so Claude can pick a different one.",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 30,
       "status": "open",
       "by": "",
       "since": "",
