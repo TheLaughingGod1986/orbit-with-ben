@@ -230,6 +230,15 @@ a.open:hover{border-color:var(--doing)}
 .yl textarea{flex:1 1 260px;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
 .yl .said{display:block;font-size:13px;margin-top:4px;color:var(--ink-2)}
 .lnk{font:inherit;font-size:12px;background:none;border:0;color:var(--ink-3);text-decoration:underline;cursor:pointer;padding:0 0 0 6px}
+.nowbar{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--doing);border-radius:10px;padding:9px 14px;margin:-4px 0 14px;font-size:14px;line-height:1.45}
+.nowbar.idle{border-left-color:var(--ink-3)}
+.nowbar.asleep{border-left-color:var(--soon)}
+.nowbar .h{font-weight:600}
+.nowbar .h .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--doing);margin-right:6px;vertical-align:1px;animation:pulse 1.6s ease-in-out infinite}
+.nowbar.idle .h .dot{background:var(--ink-3);animation:none}
+.nowbar.asleep .h .dot{background:var(--soon);animation:none}
+.nowbar ol{margin:4px 0 0;padding-left:20px;font-size:13px;color:var(--ink-2)}
+.nowbar .why{margin-top:3px}
 .kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
 @media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.kb{grid-template-columns:1fr}}
@@ -339,6 +348,7 @@ footer a{color:var(--ink-2)}
   <div class="banner" id="banner"></div>
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
+  <div class="nowbar" id="nowbar" hidden></div>
   <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
   <details class="more fold" id="foldJobs"><summary>Mac mini job line</summary>
   <section id="jobsBox" hidden>
@@ -625,6 +635,38 @@ function statusOf(b, rows){
     lines:[`Next: <b>${who}</b>, ${what}.`, `It can't start until ${esc(w.after)} is done; then it happens about <b>${clock(w.at)}</b> (${rel(w.at)}).`]};
   if(x.who==="Ben") return {cls:"you", short:`Waiting for you · ${w.text}`, title:"Waiting for you", lines:[`${what}.`, `When: ${w.text}.`]};
   return {cls:"date", short:`${who}: ${what} · ${w.text}`, title:`Booked: ${who}, ${what}`, lines:[`When: <b>${w.text}</b>.`, ...(b.mood==="waiting"?["Nobody is working on it until then; the reason is below."]:[])]};
+}
+
+// Ben, 8 Oct: "I can see 4th, 3rd, 2nd and next in the queue. I can't see what the queue is currently working on."
+function jobLabel(j){
+  let t = String(j.title||"").replace(/^\d{3}\s*/,"").replace(/\s*\([^)]*\)/g,"").trim();
+  if(j.film && t.includes(":")) t = t.slice(t.indexOf(":")+1).trim();   // "Light speed: Ben's fix, …" -> the job itself
+  if(t.length>70) t = t.slice(0,68)+"…";
+  return (j.film ? `<span class="ch OWB">OWB</span><b>${esc(j.film)}</b> ` : "") + esc(t);
+}
+function renderNow(){
+  const box = $("nowbar"); if(!box) return;
+  const jobs = (fromDb.jobs||[]).filter(j=>j.needs==="mini");
+  box.hidden = !fromDb.jobs || chan==="HOS";
+  if(box.hidden) return;
+  const P = plan(), q = laneQuiet();
+  const busy = jobs.filter(j=>j.status==="claimed");
+  const part = jobs.filter(j=>j.status==="open" && /^released/.test(String((j.last||{}).what||"")) && (j.last||{}).by && j.last.by!=="claude");
+  const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
+  const lastAct = q && !isNaN(q.at) ? ` · last activity ${ago(q.at)}` : "";
+  let cls = "", head;
+  if(busy.length){ const j = busy[0], p = P[j.id]||{};
+    head = `Mac mini is working on ${jobLabel(j)} · ${esc(AGENT(j.by))} since ${clock(ts(j.claimedAt))} · done about <b>${clock(p.done)}</b> (${rel(p.done)})`; }
+  else if(part.length){ const j = part[0], p = P[j.id]||{};
+    head = `Mac mini is between steps of ${jobLabel(j)} · carries on within 10 min${p.done?` · done about <b>${clock(p.done)}</b>`:""}`; }
+  else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
+    head = q && q.quiet ? `Mac mini has been quiet for over 3 hours with work waiting; it may be asleep` : `Mac mini is between jobs · the next one starts at its next wake-up (within 10 min)`; }
+  else { cls = "idle"; head = "Mac mini has nothing queued"; }
+  const next = line.filter(j=>!part.includes(j)).slice(0,3);
+  box.className = "nowbar" + (cls ? " "+cls : "");
+  box.innerHTML = `<div class="h"><span class="dot"></span>${head}</div>`
+    + (next.length ? `<ol>${next.map(j=>`<li>${jobLabel(j)} · starts about ${clock(P[j.id].start)}</li>`).join("")}</ol>` : "")
+    + `<div class="why">One job at a time, film jobs first (focus film ahead of the rest)${lastAct}.</div>`;
 }
 
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
@@ -1116,7 +1158,7 @@ function renderVerdict(c){
 function render(){
   const films = view();
   if(filter && !films.some(f=>f.key===filter)) filter = null;
-  renderSource(); renderTracker(films); renderJobs(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  renderSource(); renderNow(); renderTracker(films); renderJobs(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
 
