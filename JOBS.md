@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0047 | mini | open | – | – | 024 thumbs · 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 |  |
+| J0047 | mini | claimed | cursor | 2026-10-08T13:27Z | 024 thumbs · 024: long thumbnails A/B/C v01 to THUMB_BRIEF_v01 |  |
 | J0048 | mini | open (after J0047) | – | – | 024 upload · 024: upload package dry-run (v03 + thumbs abc_v01) |  |
 
 Recently finished:
