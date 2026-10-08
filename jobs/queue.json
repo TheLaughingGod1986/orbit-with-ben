@@ -2271,10 +2271,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-08T22:22Z",
+      "eta": "2026-10-09T00:22Z",
       "created_by": "claude",
       "created_at": "2026-10-08T15:15Z",
       "result": "",
@@ -2313,6 +2313,11 @@
           "at": "2026-10-08T22:11Z",
           "by": "cursor",
           "what": "released: Pass 1 move still running detached: tmux j0054-nas, log ~/_desk/logs/j0054-nas.log, done file ~/_desk/logs/j0054-nas.done, result ~/_desk/jobs/J0054/result.json. 013 moved+verified (752 files, 1.71 GB); 019 in progress (slow NFS hashing, not hung); 020 + HOS 001-003 queued. Free 5.2 GB at 23:20. Read-only survey posted on thread; full-home du blocks on macOS privacy prompts, so it skipped protected folders. Do not start a second nas_move.py while the session is alive."
+        },
+        {
+          "at": "2026-10-08T22:22Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": true
