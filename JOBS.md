@@ -19,7 +19,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0068 | mini | open | – | – | 025 edit · 025 Mars robot: Ben's notes, swap the 2:54 image + 025's own music bed (v03d + phone copy) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
 | J0071 | any | open | – | – | for codex · Codex: your own ideas for the videos and packaging (one post, max 5) |  |
-| J0074 | mini | open | – | – | Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command |  |
+| J0074 | mini | claimed | cursor | 2026-10-08T23:49Z | Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command |  |
 
 Recently finished:
 
