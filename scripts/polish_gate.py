@@ -106,6 +106,8 @@ def jitter(video, t0, t1, size):
     raw = sp.run(['ffmpeg', '-v', 'error', '-ss', f'{t0:.3f}', '-i', str(video), '-t', f'{t1 - t0:.3f}',
                   '-vf', f'crop={PATCH}:{PATCH}:{x0}:{y0},format=gray', '-f', 'rawvideo', '-'], capture_output=True, check=True).stdout
     fr = np.frombuffer(raw, np.uint8).reshape(-1, PATCH, PATCH).astype(np.float32)
+    if len(fr) > 1 and np.array_equal(fr[0], fr[1]):  # ffmpeg's input seek can repeat the first frame; not in the film
+        fr = fr[1:]
     if len(fr) < 6:
         return None
     win = np.outer(np.hanning(PATCH), np.hanning(PATCH)).astype(np.float32)
