@@ -7,6 +7,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0050 | mini | claimed | cursor | 2026-10-08T14:59Z | 025: Omni Orbit beats (cold, wheel, Wed Short night) for Claude PASS |  |
 | J0051 | mini | open (after J0050) | – | – | 025 edit · 025: pool licence check + full rough v01 (024 v03 rules) for Claude review |  |
+| J0052 | mini | open | – | – | AI spend month: daily Flow/Vertex/ElevenLabs readings + per-take spend lines (from 12 Oct) |  |
 
 Recently finished:
 
