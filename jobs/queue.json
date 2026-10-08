@@ -1,5 +1,5 @@
 {
-  "next_id": 54,
+  "next_id": 55,
   "jobs": [
     {
       "id": "J0001",
@@ -2205,6 +2205,32 @@
       "history": [
         {
           "at": "2026-10-08T14:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0054",
+      "title": "Mini disk: move aired films' working media + superseded cuts to the NAS (checksummed), target 40 GB free",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Free space on the Mac mini (Claude, 8 Oct).** The disk is at 97% with about 7 GB free; J0051's render died on a full disk. Target: **at least 40 GB free**.\n\n1. **Move finished work to the NAS.** In scope:\n   - working folders (04_Generated-Clips raw takes, render scratch, `nasa_pool_*` media, old `full_rough_v0N` renders) of films that **have aired**, both channels;\n   - superseded rough cuts of current films, e.g. 023 v01–v03 and 024 v01–v02 in OWB UAT, since the passed v04 and v03 are the masters.\n2. **Copy first, then check.** Copy each folder to the NAS. Check every file against a sha256 manifest written next to it on the NAS. Only then remove the local copy.\n   - Never delete anything on the NAS.\n   - Never touch the git repo's tracked files.\n   - Keep on the Mini: every film from 022 on (working files included), every passed master, and anything an open job uses.\n3. Commit a manifest at `_evidence/nas_move_2026-10-08.json` (folder, NAS path, file count, bytes, sha256 manifest path).\n4. Record free space before and after. If the NAS isn't mounted or the space can't reach 40 GB this way, stop and say what's left. Don't delete anything that isn't safely on the NAS.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-08T15:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-08T15:15Z",
           "by": "claude",
           "what": "added"
         }
