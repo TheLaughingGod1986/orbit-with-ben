@@ -1724,13 +1724,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-08T09:17Z",
-      "eta": "2026-10-08T09:47Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T09:15Z",
-      "result": "",
+      "result": "OK: all three quotes found verbatim in A&A full text (§3.3, §4) with URL in SOURCES row 7; no pickup needed",
       "history": [
         {
           "at": "2026-10-08T09:15Z",
@@ -1741,8 +1741,14 @@
           "at": "2026-10-08T09:17Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-08T09:24Z",
+          "by": "cursor",
+          "what": "done: OK: all three quotes found verbatim in A&A full text (§3.3, §4) with URL in SOURCES row 7; no pickup needed"
         }
-      ]
+      ],
+      "done_ref": "27aff30"
     }
   ]
 }
