@@ -98,6 +98,11 @@ Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOO
 
 Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Chief (or whoever is acting Chief) starts it, so a script waiting on sources is the Chief's job to kick off.
 
+**Quotes must be real (8 Oct 2026).** On 029, Gemini presented a sentence as an exact quote ("bright enough to cast crisp shadows") that is not in the paper it cited. So:
+- Every quote in `SOURCES.md` carries the URL of the page it was copied from (an abstract, a press release or a paper page). A quote that can't be found on that page is a **FLAG**, not OK.
+- Before any script is locked for VO, Claude checks the key spoken numbers (every MUST QUOTE row) against the sources directly and records it in `01_Script/CLAUDE_QUOTE_CHECK_vNN.md`. A spoken line whose quote doesn't hold up is cut or softened, never kept on trust.
+- The VO job waits (`--after`) on a cloud "lock script" job, not on the Gemini job, so the Mini never claims a take before the lock.
+
 ## Job queue (7 Oct 2026)
 
 Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and on the Studio Kanban), not prose addressed to one agent. **A job says what it needs, not who does it**, so whichever agent is up does it.
