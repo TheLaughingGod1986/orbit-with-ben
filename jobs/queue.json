@@ -2875,10 +2875,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T02:55Z",
-      "eta": "2026-10-09T04:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T21:50Z",
       "result": "",
@@ -2972,6 +2972,11 @@
           "at": "2026-10-09T02:55Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T03:06Z",
+          "by": "cursor",
+          "what": "released: v03f (Claude #6073193234) rendering: tmux j0068-v03f-render, log ~/_desk/logs/j0068-v03f-render.log, done ~/_desk/logs/j0068-v03f-render.done (0 all pass incl. phone copy; 3 render; 4 gate; 5 phone). Next: on 0 check summary_v03f.json fill PASS, phone copy in OWB UAT, commit pack, post #99. Scripts a5a4b4d."
         }
       ],
       "urgent": true
