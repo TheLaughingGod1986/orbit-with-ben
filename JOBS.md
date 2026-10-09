@@ -8,7 +8,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
-| J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
+| J0061 | mini | claimed | cursor | 2026-10-09T13:13Z | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
 | J0076 | mini | open | – | – | 026 thumbs · 026 Nearest Star: thumbnails + upload package (while Ben watches v04) | 6076805635 |
