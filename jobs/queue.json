@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T03:56Z",
-      "eta": "2026-10-09T07:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2809,6 +2809,11 @@
           "at": "2026-10-09T03:56Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T04:13Z",
+          "by": "cursor",
+          "what": "released: Step 6 done (8e441e1): rough v01 rendered to OWB UAT/026_NearestStar_rough_v01.mp4 (494.5 s, -14.2 LUFS, 103 cuts, clip_check PASS; plan clean: reuse<=2, holds<=6 s, upscale<=2.35, cuts in VO pauses). Pack: 07_Edit-Project/rough_v01_pack. Fill+polish FAIL: (a) code graphics + 024 starfield are near-black space by design - need Claude's reviewed_ok ruling or brighter renders; (b) plate problems: eso1629g + eso1629b split panels, eso0932a frame 0 near-black, PIA17049 fill 0.89, PIA04495 0.35. Left out (upscale>2.35, inset ruling needed): potw1343a, Bessel, e001586. picture_qa.py not run yet. Next: Claude rules on (a), swap (b), re-render (segments cached in /private/tmp/nearest026_rough_work_v01), picture_qa + music_gate."
         }
       ]
     },
