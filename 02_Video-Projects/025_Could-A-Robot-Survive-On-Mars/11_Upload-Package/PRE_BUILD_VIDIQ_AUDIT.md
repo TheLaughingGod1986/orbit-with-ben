@@ -11,9 +11,12 @@ Short form of `00_Brand/Channel-Setup/PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`. Claude
 
 ## Sign-off
 
-- [ ] vidIQ keyword scores: **waived by Claude, 4 Oct**, as for 022–024 (vidIQ unavailable; the neighbour pass is the demand check). Not a pass.
-- [ ] Title score ≥90: not scored (no vidIQ).
+- [x] Keywords: **WAIVED (Claude, 4 Oct; confirmed 9 Oct 2026)**, as for 022–024. vidIQ is unavailable; the neighbour pass is the demand check, and Claude reviewed the subject words against the channel's search terms. Not a vidIQ pass.
+- [x] Title ≥90: **WAIVED (Claude, 9 Oct 2026)**. Not scored (no vidIQ); title reviewed by Claude against the channel's search terms; script 93.4.
 - [x] Script reviewer ≥90: PASS 93.4 on `01_Script/mars_robot_script_master_v01.md` (`01_Script/SCRIPT_REVIEW_v01.md`).
 - [x] Nothing public yet.
 
-`gate:episode` shows BLOCK on `prebuild_vidiq` by design while vidIQ stays waived. VO waits on Gemini's fact-check of the "Added by Claude" rows in `01_Script/SOURCES.md` and on Claude's `Locked: VO`.
+**Signed off by:** Claude, 9 Oct 2026 (package review, job J0084; vidIQ rows waived above, not passed)
+**Date:** 9 Oct 2026
+
+The vidIQ rows are waived, not passed. VO waits on Gemini's fact-check of the "Added by Claude" rows in `01_Script/SOURCES.md` and on Claude's `Locked: VO`.
