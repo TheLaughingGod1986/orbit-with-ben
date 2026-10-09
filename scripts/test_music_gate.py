@@ -84,6 +84,11 @@ class MusicGate(unittest.TestCase):
         res = mg.judge(self.film, bed, others=[])
         self.assertTrue(any("Pace" in f for f in res["fail"]) and any("NOT" in f for f in res["fail"]))
 
+    def test_an_unreadable_other_track_is_a_warning_not_a_crash(self):
+        res = mg.judge(self.film, self.film / "05_Music/mars_score_bed_v01.mp3", others=[self.d / "other/missing.mp3"])
+        self.assertEqual(res["verdict"], "PASS")
+        self.assertTrue(any("couldn't read missing.mp3" in w for w in res["warn"]))
+
     def test_a_bed_shorter_than_the_cut_fails(self):
         cut = self.d / "cut.mp4"
         sp.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=black:s=64x36:d=100", str(cut)], check=True)

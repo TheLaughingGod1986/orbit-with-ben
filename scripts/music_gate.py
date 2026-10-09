@@ -117,8 +117,13 @@ def judge(film_dir: Path, bed: Path, video: Path | None = None, others: list[Pat
     for o in (others if others is not None else others_default(film_dir)):
         if o.resolve() == bed.resolve():
             continue
-        same = hashlib.sha256(o.read_bytes()).hexdigest() == digest
-        s = 1.0 if same else similarity(fa, frames(decode(o)))
+        try:
+            same = hashlib.sha256(o.read_bytes()).hexdigest() == digest
+            s = 1.0 if same else similarity(fa, frames(decode(o)))
+        except (OSError, sp.CalledProcessError) as e:
+            # An iCloud placeholder that isn't downloaded reads as "Resource deadlock avoided" (Errno 11) on the Mini.
+            warns.append(f"reused: couldn't read {o.name} to compare ({e.__class__.__name__}); download it or pass --others")
+            continue
         if s >= SIM_FAIL:
             matches.append(dict(file=str(o), similarity=round(s, 3)))
     if matches:
