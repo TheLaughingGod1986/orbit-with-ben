@@ -1,6 +1,13 @@
 {
+  "rewrites": [
+    { "source": "/tracker", "destination": "/tracker.html" },
+    { "source": "/tracker/", "destination": "/tracker.html" }
+  ],
   "headers": [
     { "source": "/", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
-    { "source": "/index.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+    { "source": "/index.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/tracker", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/tracker.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/tracker.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }, { "key": "Cache-Control", "value": "no-cache" }] }
   ]
 }

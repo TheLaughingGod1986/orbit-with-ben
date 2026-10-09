@@ -6,6 +6,7 @@
 #   3. Gates every Short scheduled in the next 14 days (gate_upcoming.py: report only, and adds any
 #      missing one to the open-gate library), rebuilds 05_Analytics/<channel>/REPORT.md and the
 #      dashboard, commits only 05_Analytics/ and library.json, and pushes to main. A failed channel still lets the other one through, then notifies.
+#   4. Runs scripts/board_publish.py once, so the tracker web app (studio-kanban.vercel.app/tracker) shows the new data.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
 main() {
   # launchd's login shell has no Homebrew on PATH: without it gate_upcoming.py can't find ffprobe/ffmpeg and every
@@ -58,6 +59,11 @@ main() {
       sleep $((i * 5))
       git pull -q --rebase origin main || { git rebase --abort 2>/dev/null; break; }
     done
+    # Put the new data on the board-data branch now: studio-kanban.vercel.app/tracker reads tracker.json from there.
+    # board_publish.py never fails and is a no-op when nothing changed; its 5-minute launchd run would catch it anyway.
+    if [[ ${BOARD_PUBLISH:-1} != 0 && -f $repo/scripts/board_publish.py ]]; then
+      HOS_REPO="${HOS_REPO:-$HOME/YouTube/History Of Science}" python3 "$repo/scripts/board_publish.py" --quiet
+    fi
   fi
 
   if (( code != 0 )); then

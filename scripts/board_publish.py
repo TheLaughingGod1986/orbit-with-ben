@@ -5,7 +5,12 @@ task is done or something progressed").
 The board page (05_Analytics/kanban/board_site, hosted on Vercel) reads one file at runtime and re-reads it every 60 s:
   board.json on the branch `board-data` of this repo (a single parentless commit, force-pushed, like mini-heartbeat).
 
-This script builds that file from main with scripts/kanban_snapshot.py (the same documents Claude used to write into the
+It also carries the Channel Tracker's data (Ben, 10 Oct: the tracker as a phone web app at /tracker on the same site):
+  tracker.json on the same branch is 05_Analytics/dashboard/data.json from main, byte for byte. The 06:40 snapshot job
+  (07_Content-Ops/launchd/analytics-snapshot.sh) pushes that file to main and then kicks this script, so the tracker page
+  has the new snapshot within a minute; the 5-minute run below would pick it up anyway.
+
+This script builds board.json from main with scripts/kanban_snapshot.py (the same documents Claude used to write into the
 claude.ai artifact store: board/hos, board/owb, board/briefs, board/credits) and pushes it only when something changed.
 
 Triggers (all on the Mini):
@@ -47,7 +52,8 @@ SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstr
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: re-read from the site at most hourly (Blob free-tier list calls)
 
 OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
-              "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # watch links: private YouTube uploads
+              "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
+              "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
 HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json"]
 SECTIONS = ("hos", "owb", "briefs", "credits")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude"}
@@ -117,6 +123,27 @@ def build(out: pathlib.Path) -> dict:
     return {s: json.loads((out / f"{s}.json").read_text()) for s in SECTIONS}
 
 
+TRACKER_SRC = "05_Analytics/dashboard/data.json"
+
+
+def tracker_text() -> str | None:
+    """The tracker's data.json from the origin/main worktree, unchanged, or the last good copy if main's is missing or
+    broken (so a bad commit never blanks the page). None only before the first good read."""
+    keep = STATE / "tracker.json"
+    try:
+        text = (WT / "owb" / TRACKER_SRC).read_text()
+        if isinstance(json.loads(text).get("channels"), list):
+            keep.write_text(text)
+            return text
+        log("tracker data.json has no channels list; kept the last good copy")
+    except (OSError, ValueError, AttributeError) as e:
+        log(f"tracker data.json not read ({e}); kept the last good copy")
+    try:
+        return keep.read_text()
+    except OSError:
+        return None
+
+
 def fetch_checks(prev: dict, at: dt.datetime, force: bool) -> tuple[dict, str]:
     last = prev.get("checksAt") or ""
     if not force and last and (at - dt.datetime.fromisoformat(last.replace("Z", "+00:00"))).total_seconds() < CHECKS_EVERY_S:
@@ -150,12 +177,22 @@ def assemble(docs: dict, prev: dict, checks: dict, at: dt.datetime) -> tuple[dic
 NO_DEPLOY = json.dumps({"git": {"deploymentEnabled": False}}) + "\n"
 
 
-def push(board: dict, at: dt.datetime) -> str:
+def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str | None) -> str:
+    """git mktree input for the board-data commit (entries sorted by name, as git wants)."""
+    rows = [f"040000 tree {sub_tree}\t07_Content-Ops", f"100644 blob {board_blob}\tboard.json"]
+    if tracker_blob:
+        rows.append(f"100644 blob {tracker_blob}\ttracker.json")
+    rows.append(f"100644 blob {nd_blob}\tvercel.json")
+    return "\n".join(rows) + "\n"
+
+
+def push(board: dict, at: dt.datetime, tracker: str | None = None) -> str:
     body = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
     blob = git(OWB, "hash-object", "-w", "--stdin", inp=body)
     nd = git(OWB, "hash-object", "-w", "--stdin", inp=NO_DEPLOY)
     sub = git(OWB, "mktree", inp=f"100644 blob {nd}\tvercel.json\n")
-    tree = git(OWB, "mktree", inp=f"040000 tree {sub}\t07_Content-Ops\n100644 blob {blob}\tboard.json\n100644 blob {nd}\tvercel.json\n")
+    tb = git(OWB, "hash-object", "-w", "--stdin", inp=tracker) if tracker else None
+    tree = git(OWB, "mktree", inp=tree_listing(blob, nd, sub, tb))
     commit = git(OWB, "commit-tree", tree, "-m", f"board data {iso(at)}")
     git(OWB, "push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
     return commit
@@ -171,10 +208,14 @@ def run_once(a) -> int:
     docs = build(STATE / "out")
     checks, checks_at = fetch_checks(prev, at, a.force)
     board, hashes = assemble(docs, prev, checks, at)
+    tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
+    if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
+        whole = digest([whole, hashlib.sha256(tracker.encode()).hexdigest()])
     (STATE / "board.json").write_text(json.dumps(board, ensure_ascii=False, indent=1))
     summary = (f"{len(docs['hos']['pipeline']['films'])} HOS films, {len(docs['owb']['films'])} OWB films, "
-               f"{len(docs['owb'].get('jobs') or [])} live jobs, {len(checks)} checks; last change {board['dataChangedAt']}")
+               f"{len(docs['owb'].get('jobs') or [])} live jobs, {len(checks)} checks; last change {board['dataChangedAt']}"
+               f"; tracker {'generated ' + str(json.loads(tracker).get('generatedAt')) if tracker else 'missing'}")
     if a.dry_run:
         print(f"dry run: {summary}; would {'push' if whole != prev.get('whole') or a.force else 'skip (unchanged)'}")
         return 0
@@ -182,7 +223,7 @@ def run_once(a) -> int:
         if not a.quiet:
             print("unchanged")
         return 0
-    commit = push(board, at)
+    commit = push(board, at, tracker)
     prev_path.write_text(json.dumps({"hashes": hashes, "changedAt": board["changedAt"], "whole": whole,
                                      "checks": checks, "checksAt": checks_at, "pushed": iso(at), "commit": commit}, indent=1))
     log(f"pushed {commit[:8]} to {BRANCH}: {summary}")
