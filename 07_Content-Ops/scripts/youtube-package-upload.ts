@@ -203,6 +203,14 @@ async function main() {
     }
   }
 
+  // The upload succeeds even when YouTube refuses the thumbnail (403 on 022, 9 Oct): the reason is only in the message.
+  const thumbnailSkipped = /thumbnail skipped/i.test(upload.message || "");
+  if (!dryRun && resolved.thumbnailPath && thumbnailSkipped) {
+    console.error(
+      `THUMBNAIL NOT SET on ${upload.platformPostId}: ${upload.message}. Set it in Studio (or re-run the thumbnail) before go-live; the video shows an auto frame until then.`,
+    );
+  }
+
   const checklist = buildStudioFinishChecklist({
     videoId: upload.platformPostId || null,
     format: resolved.format,
@@ -211,7 +219,7 @@ async function main() {
     pinnedComment: resolved.pinnedComment,
     relatedVideoId: resolved.relatedVideoId,
     firstCommentPosted,
-    thumbnailSet: Boolean(resolved.thumbnailPath) && (dryRun || upload.success),
+    thumbnailSet: Boolean(resolved.thumbnailPath) && (dryRun || (upload.success && !thumbnailSkipped)),
     playlistAdded,
     playlistId: resolved.playlistId,
   });
