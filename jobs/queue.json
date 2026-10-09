@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T04:24Z",
-      "eta": "2026-10-09T08:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2819,6 +2819,11 @@
           "at": "2026-10-09T04:24Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T04:26Z",
+          "by": "cursor",
+          "what": "released: Rough v02 prep done (25a30e5): 4 ESO time-lapses fetched to 026/07_Edit-Project/pool_v01/timelapse (crux needs vcrop (300,0,3240,1822); eso1241a clean only 4.5-10 s); eso1629g/eso1702a/eso1702b/eso1629b flagged labels:true (no unannotated variants); insets dropped. Next: copy the assembler to _assemble_nearest_star_rough_v02.py (pack rough_v02_pack, work dir v02, V01_CACHE pointed at /private/tmp/nearest026_rough_work_v01). Rewrite ROWS: frame 0 = uhd_yb_paranal_01, row 2 bt_paranal, row 7 crux, row 33 yb at a different segment. No labelled plates. SDO flare video at>=card end. Each code graphic max 2 (3 if state moves): parallax 4/11/14, triple 4/8, journey 4/9/15, starfield 3 across 16-18. Night-sky stills run out at 2 uses each, so fill with 16:9 vcrop variants of the 4K time-lapses. Then --plan clean, render detached in tmux, picture_qa + music_gate --video, post pack."
         }
       ]
     },
