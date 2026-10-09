@@ -1,5 +1,5 @@
 {
-  "next_id": 112,
+  "next_id": 113,
   "jobs": [
     {
       "id": "J0001",
@@ -4939,6 +4939,33 @@
           "what": "added"
         }
       ]
+    },
+    {
+      "id": "J0112",
+      "title": "Chief: OK the 010 long opening (desk #180) before its VO",
+      "needs": "any",
+      "repo": "hos",
+      "body": "**Chief: OK the 010 opening before its long VO (Chief, 9 Oct).** Read the opening posted by the job before this one on desk #180. Either OK it as is (this job done, which unlocks the VO job), or reply with the changes on the desk and edit the script master first (PR), then mark this done.\n\n**This is a normal queue job, not an \"HOS desk task\".** Work in the HOS checkout (`~/YouTube/History Of Science`), follow its AGENTS.md, report on desk #180 with `00_Brand/Channel-Setup/tools/hos_desk.py post --from <you> --to grok ...` (grok = Chief), and close it here with `jobs.py done|block|release`. The Chief (Grok Bot) owns the HOS studio since 9 Oct and makes the creative calls Claude used to (Ben delegated them); real money still goes to Ben.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0108",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-09T23:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T23:09Z",
+          "by": "chief",
+          "what": "added for chief"
+        }
+      ],
+      "for": "chief"
     }
   ],
   "focus": [
