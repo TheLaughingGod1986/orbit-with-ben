@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T05:02Z",
-      "eta": "2026-10-09T09:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2849,6 +2849,11 @@
           "at": "2026-10-09T05:02Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T05:09Z",
+          "by": "cursor",
+          "what": "released: Rough v02 rendered (3252f37): OWB UAT/026_NearestStar_rough_v02.mp4, 494.5 s; music_gate PASS (bed v01_full, ~67 BPM). picture_qa FAIL 30/107 (rough_v02_pack/PICTURE_QA.md): 21 are reuse 3x on time-lapses/code graphics (parallax, journey, starfield, crux, paranal_06, yb_paranal_02, vltfromvista), which clashes with Claude's '3 if state moves' ruling - needs Claude: allow via reviewed_ok or cut to 2. parallax.mp4 also flags a split-panel seam at y~0.45 + noise. Near-black/low detail: PIA17462 (rows 22/24), PIA21839 (26), eso1629d_video (28), SDO flare (30), KSC-20191031 _0003/_0005 (12/13). 22 WARNs on picture_qa_review.jpg for Claude. Next: Claude rules, then v03 assembler swaps + re-render (segments cached in /private/tmp/nearest026_rough_work_v02)."
         }
       ]
     },
