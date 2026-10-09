@@ -3598,10 +3598,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T13:12Z",
-      "eta": "2026-10-09T15:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T08:09Z",
       "result": "",
@@ -3615,6 +3615,11 @@
           "at": "2026-10-09T13:12Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T13:14Z",
+          "by": "cursor",
+          "what": "released: Code graphics rendered (all 7, 1920x1080 30fps, default lengths) to 027/07_Edit-Project/code_out_v01/ (gitignored, 227 MB) with contact sheet code_out_v01_sheet.jpg; tmux j0077-code, log ~/_desk/logs/j0077-code.log, .done=0. Use ~/.venvs/orbit-code-graphics/bin/python3 (system python3 has no matplotlib). Not started: pool_v01.json harvest (~35 real NASA/NOAA/ESO/Met/NIST/USGS items, titles+licences), 2 Omni + 2 Veo Fast, assembler on SHOT_LIST_v02 order, gates. Next run: build_pool_v01.py + fetch_pool (copy 026's fetch_pool_v01.py pattern). Disk 9.6 GB free."
         }
       ]
     },
