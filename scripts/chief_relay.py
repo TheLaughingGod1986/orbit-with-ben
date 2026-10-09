@@ -249,9 +249,13 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
 1. Orbit With Ben ({owb}): git pull. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben", "Who does what",
    "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
 2. History of Science ({hos}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox: hos_desk.py inbox --as {agent}
-3. First the job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
+3. Which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
+     python3 scripts/channel_balance.py --hos "{hos}"
+   If it says History of Science first: take the single oldest HOS desk task you can do now, and go to step 4. Only if
+   there is none, fall through to the OWB queue below.
+   The OWB job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
-   Only if it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
+   If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
    desk, or a Claude message on #99 asking the Chief for something with no Chief reply yet).
    If nothing is waiting anywhere, stop without posting.
 4. Do that one task, following that repo's AGENTS.md exactly: claim before work (studio.py claim --git, or the HOS

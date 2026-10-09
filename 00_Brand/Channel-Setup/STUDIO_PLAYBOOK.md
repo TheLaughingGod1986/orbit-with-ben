@@ -325,6 +325,12 @@ Every sign-off goes to Claude on the thread first (3 Oct 2026). This copy is gen
 
 This is measurement only. It changes no spend rule.
 
+**Four a month on each channel (Ben, 9 Oct 2026).** *"Each channel has 4 videos a month. If we have 4 videos already set up on Orbit and complete, then we need to work on History of Science. Allocate credits accordingly."*
+- `python3 scripts/channel_balance.py --hos <HOS checkout>` counts each channel's long videos per month: planned, and complete (edit passed). The channel whose earliest month is short of 4 complete goes first. If both are short in the same month, the one further from 4 goes first.
+- **Work:** the Chief relay checks it before every run. When History of Science is first, its oldest desk task goes ahead of the OWB queue. The other channel's work still runs when the first has nothing doable right now.
+- **Credits** (ElevenLabs, Vertex, Flow): the first channel's spends go first.
+- **Topics:** a month with fewer than 4 films planned is short too. Claude picks the topics for that channel's missing slots.
+
 **One film at a time, then Ben watches it (Ben, 8 Oct 2026).** *"If we're working on one video, that should be the main priority and done in a day, maybe two… then I can check the video out."*
 - **Focus film.** Each channel has one focus film. On OWB it's set with `python3 scripts/jobs.py focus NNN --git`, and its jobs go first in every lane. Other films' jobs come next, and admin jobs (readings, installs, disk) last. When an admin job blocks a film (a full disk), Claude marks it `python3 scripts/jobs.py urgent J00NN --git`, which puts it ahead of everything, the focus film included.
 - **Render scratch (Claude, 9 Oct).** Each film keeps its current and previous render scratch in /private/tmp only. When a new pack posts, the version before last moves to the NAS (`mac-mini-archive/mini-tmp-scratch/<date>/`): copy it, check it against a sha256 manifest, and only then remove the local copy. Each version adds about 2 GB, and that filled the Mini twice.

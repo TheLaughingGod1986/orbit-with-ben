@@ -89,7 +89,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
    - **Music:** every film has its own score bed, at a pace that fits it.
      - Claude writes the music prompt with the shot list. It gives the film's mood and arc from the script, a `Pace: NN-NN BPM` line matched to the narration (calm explanation about 60-80, a lift only where the script builds), and what it must NOT sound like (every earlier bed).
      - Generate it once with `04_Audio/tools/generate_music_bed.py` (the API, never the website).
-     - **ElevenLabs has no floor (Ben, 9 Oct: *"No floor on ElevenLabs. Keep going until the credit runs out."*).** One account pays for both channels' voice and music. It's a flat fee, so running out only stops work until the monthly reset; a top-up stays Ben's call. When credits are short, spend in air-date order across both channels (the film or voiceover that airs first goes first).
+     - **ElevenLabs has no floor (Ben, 9 Oct: *"No floor on ElevenLabs. Keep going until the credit runs out."*).** One account pays for both channels' voice and music. It's a flat fee, so running out only stops work until the monthly reset; a top-up stays Ben's call. When credits are short, the channel `channel_balance.py` puts first gets them first, then air date within it.
      - `python3 scripts/music_gate.py <film dir> --bed <bed> --video <cut>` must PASS: the bed is in the film's own 05_Music with its plan; the brief has Pace and NOT; it doesn't sound like another film's bed, even trimmed or re-encoded; and it runs the whole cut.
      - Fit is judged by ear: Claude's review, then Ben's watch.
 
@@ -187,6 +187,12 @@ The Synology share (`/Volumes/data/mac-mini-archive/`) is the archive, and often
 - **Claude:** note a usage-limit hit with `record --pool claude --note …`.
 
 This is measurement only. It changes no spend rule.
+
+**Four a month on each channel (Ben, 9 Oct 2026).** *"Each channel has 4 videos a month. If we have 4 videos already set up on Orbit and complete, then we need to work on History of Science. Allocate credits accordingly."*
+- `python3 scripts/channel_balance.py --hos <HOS checkout>` counts each channel's long videos per month: planned, and complete (edit passed). The channel whose earliest month is short of 4 complete goes first. If both are short in the same month, the one further from 4 goes first.
+- **Work:** the Chief relay checks it before every run. When History of Science is first, its oldest desk task goes ahead of the OWB queue. The other channel's work still runs when the first has nothing doable right now.
+- **Credits** (ElevenLabs, Vertex, Flow): the first channel's spends go first.
+- **Topics:** a month with fewer than 4 films planned is short too. Claude picks the topics for that channel's missing slots.
 
 **One film at a time, then Ben watches it (Ben, 8 Oct 2026).** *"If we're working on one video, that should be the main priority and done in a day, maybe two… then I can check the video out."*
 - **Focus film.** Each channel has one focus film. On OWB it's set with `python3 scripts/jobs.py focus NNN --git`, and its jobs go first in every lane. Other films' jobs come next, and admin jobs (readings, installs, disk) last. When an admin job blocks a film (a full disk), Claude marks it `python3 scripts/jobs.py urgent J00NN --git`, which puts it ahead of everything, the focus film included.
