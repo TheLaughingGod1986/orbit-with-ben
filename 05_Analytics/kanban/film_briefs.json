@@ -142,68 +142,68 @@
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-09T03:25Z",
-      "mood": "finished",
+      "updated": "2026-10-09T09:00Z",
+      "mood": "watched",
       "done": "Script, voice, picture and the film's own music. Your 8 Oct notes fixed (v03f), plus Codex's picture ideas.",
-      "holdup": "Nothing is broken. It's waiting for your watch. While you watch, Cursor makes the thumbnails and upload package.",
+      "holdup": "Nothing is holding it. You said it looks good, so it has the final OK. Cursor finishes the thumbnails and upload details, then uploads it privately, set to go public on Sun 8 Nov.",
       "steps": [
-        {
-          "who": "Cursor",
-          "what": "your notes, own music, rover names, right rover on each passage (v03f)",
-          "done": true,
-          "doneText": "done · Fri 9 Oct 04:14"
-        },
-        {
-          "who": "Claude",
-          "what": "check every frame and both new checks",
-          "done": true,
-          "doneText": "passed · Fri 9 Oct 04:25"
-        },
         {
           "who": "Ben",
-          "what": "watch iCloud Drive › OWB UAT › 025_MarsRobot_v03f_PHONE.mp4",
-          "when": "2026-10-12",
-          "whenText": "any time before Mon 12 Oct"
+          "what": "watch it",
+          "done": true,
+          "doneText": "you said looks good · Fri 9 Oct"
         },
-        {
-          "who": "Cursor",
-          "what": "thumbnails (one with a real rover up front) and upload package",
-          "job": "J0066"
-        },
-        {
-          "who": "Claude",
-          "what": "final OK, then upload privately, scheduled for Sun 8 Nov",
-          "whenText": "after your watch and the package"
-        }
-      ],
-      "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
-      "line": "Ready for you to watch: your two notes are fixed. The 2:54 picture is now a real photo of Spirit parked for winter, and the film has its own music. Every rover is named the first time it appears, and each passage shows the machine it's talking about. Both new checks passed and Claude looked at every frame.",
-      "you": "Watch iCloud Drive › OWB UAT › 025_MarsRobot_v03f_PHONE.mp4 any time before Mon 12 Oct. Tap Looks good or Needs a change.",
-      "youShort": "iCloud Drive › OWB UAT › 025_MarsRobot_v03f_PHONE.mp4 · by Mon 12 Oct",
-      "youWhen": "2026-10-09"
-    },
-    "OWB:026": {
-      "updated": "2026-10-09T08:15Z",
-      "mood": "finished",
-      "done": "Script, voice, its own music and the picture. Passed every check, and Claude went through it frame by frame.",
-      "holdup": "Nothing is holding it. It's ready for your watch. Meanwhile Cursor makes the thumbnails and the upload details.",
-      "steps": [
         {
           "who": "Cursor",
           "what": "thumbnails and upload details",
-          "job": "J0076"
+          "job": "J0066"
+        },
+        {
+          "who": "Cursor",
+          "what": "upload privately, set to go public Sun 8 Nov 18:00",
+          "job": "J0084"
+        }
+      ],
+      "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
+      "line": "You passed it. It gets uploaded privately and goes public on Sun 8 Nov.",
+      "you": "",
+      "youShort": "",
+      "youWhen": ""
+    },
+    "OWB:026": {
+      "updated": "2026-10-09T09:00Z",
+      "mood": "fixing",
+      "done": "Script, voice, its own music and the picture. Passed every check, and Claude went through it frame by frame.",
+      "holdup": "Your two notes: the graphs at 1:52 and 6:15 don't show what the narration says. Both get redrawn as clear examples instead of charts. Claude sees stills of them before the new version is made.",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch it",
+          "done": true,
+          "doneText": "you watched it · Fri 9 Oct, 2 fixes"
+        },
+        {
+          "who": "Cursor",
+          "what": "redraw the two graphics and make the new version",
+          "job": "J0085"
+        },
+        {
+          "who": "Claude",
+          "what": "check it",
+          "afterJob": "J0085",
+          "lag": 60
         },
         {
           "who": "Ben",
-          "what": "watch 026",
-          "whenText": "any time before Wed 14 Oct"
+          "what": "watch the new version",
+          "whenText": "about Sun 11 Oct"
         }
       ],
-      "you": "Watch iCloud Drive › OWB UAT › 026_NearestStar_v04_PHONE.mp4 any time before Wed 14 Oct. Tap Looks good or Needs a change.",
+      "you": "",
       "timing": "Ready for you about Sun 11 Oct. Airs Sun 15 Nov.",
-      "line": "Ready for you. Hubble's photo of the nearest star, Bessel's portrait, Voyager, and its own music.",
-      "youShort": "iCloud Drive › OWB UAT › 026_NearestStar_v04_PHONE.mp4 · by Wed 14 Oct",
-      "youWhen": "2026-10-09"
+      "line": "You flagged two graphs. 1:52 becomes light travelling from the star to Earth past four year-marks; 6:15 becomes the Moon, the Sun and the star each sending light to Earth, so you see how long each takes.",
+      "youShort": "",
+      "youWhen": ""
     },
     "OWB:027": {
       "updated": "2026-10-09T08:40Z",
