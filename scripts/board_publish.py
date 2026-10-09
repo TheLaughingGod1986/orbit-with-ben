@@ -46,7 +46,8 @@ BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
 SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: re-read from the site at most hourly (Blob free-tier list calls)
 
-OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json"]
+OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
+              "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # watch links: private YouTube uploads
 HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json"]
 SECTIONS = ("hos", "owb", "briefs", "credits")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude"}
@@ -94,7 +95,7 @@ def worktree(repo: pathlib.Path, path: pathlib.Path, sparse: list[str]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         git(repo, "worktree", "prune")
         git(repo, "worktree", "add", "-q", "--detach", "--no-checkout", str(path), "origin/main")
-        git(path, "sparse-checkout", "set", "--no-cone", *sparse)
+    git(path, "sparse-checkout", "set", "--no-cone", *sparse)  # every run, so a new pattern reaches old worktrees
     git(path, "checkout", "-q", "-f", "--detach", "origin/main")
 
 
