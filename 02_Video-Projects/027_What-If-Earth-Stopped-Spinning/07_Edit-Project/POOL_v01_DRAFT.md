@@ -79,3 +79,26 @@ Frame 0 (rows 1, 15, 37): `fetch_epic_v01.py` downloads one day of EPIC natural-
 | 32 | NIST-F2 caesium fountain atomic clock (NIST, Physics Lab) | 1200×857 | Public domain | Two physicists at the fountain. 1.26× at full height. Row 32's "NIST lab plate" second half still needs a pick. |
 
 Still not found: ISS cirrus / orbital sunrise / night Europe (rows 2, 4, 6, 11, 13, 33), ESO star trails (7, 36), NOAA spray and tide (12, 23), the 2024 eclipse path (28), the young-Earth art (37), and row 32's second plate.
+
+**Claude #6085507220 (row 9):** the pegs ring ("Foucault pendulum 1", Jud McCranie, CC BY-SA 4.0), cropped off the legs (≤1.25×), a peg falling on "The floor was." Griffith is the backup. Description credit: "Foucault pendulum 1" by Jud McCranie, CC BY-SA 4.0.
+
+## pool_v01c (Cursor covering, J0077, 9 Oct 2026): ISS, ESO, sea, tide rows, £0
+
+`search_pool_v01c.py` → `pool_candidates_v01c.json`. images-api.nasa.gov has almost no ISS time-lapses, so these come from Commons (NASA, ESA and ESO uploads, licence read from the file page). `build_pool_v01c.py` → `pool_v01c.json` → `fetch_pool_v01.py --pool pool_v01c.json --sheets` (now also takes `.ogv`).
+
+| Row(s) | Pick | Size | Licence / credit | Note |
+|---|---|---|---|---|
+| 4 (v02) cirrus, 6 + 33 sunrise, 2 + 13 night Europe | ESA "Alexander Gerst's Earth timelapses (2017 reissue)" (webm) | 3840×2160, 358 s | CC BY-SA 3.0 IGO, ESA | One 4K reel of ISS time-lapses: day passes over cloud, orbital sunrises, night cities. Spans still to pick by eye and check for burnt-in text (ESA reels often open and close on titles). |
+| 6, 33 (alt) | "Sunrise To Sunset Aboard The ISS" (ogv) | 1280×720, 76 s | Public domain, NASA (Robert Simmon) | 1.5× to 1080. |
+| 2, 11, 13 (alt) | "Five Minutes in Orbit" (webm) | 1920×1280, 31.5 s | Public domain, NASA (ISS073 crew photos) | Crop 16:9 from 3:2. |
+| 7, 36 | ESO "Time-lapse Over La Silla" (webm) | 1920×1090, 33.9 s | CC BY 4.0, R. Wesson/ESO | Real stars wheeling over the domes. Check every frame for the ESO logo/credit card. |
+| 7, 36 (alt still) | ESO "Star trails over the VLT in Paranal" | 6144×4096 | CC BY 4.0, ESO/B. Tafreshi | Still; use as the second star beat so the time-lapse isn't used three times. |
+| 12 | "Waves crashing on rocks off Beach 4, Kalaloch Beach, Washington 02" (webm) | 1920×1080, 19.2 s | CC BY-SA 4.0, Joe Mabel | Real spray on a rocky coast. Not NOAA, so it carries a credit. |
+| 23 | "Bay of Fundy – Tide In" + "Tide Out" | 2272×1704 each | CC BY 2.0, Dylan Kereluk | Same spot at high and low tide: cut in → out on the tide line. No NOAA harbour time-lapse found. |
+| 29 coral 2 | *Eridophyllum seriale*, Middle Devonian (retry) | 3438×2768 | CC BY 2.0, James St. John | Commons 429 retry from pool_v01b. |
+
+Fetch (tmux `j0077-poolc`): 7 of 9 in `pool_v01/`. Both Bay of Fundy stills hit Commons 429; retry next run.
+
+**Gerst reel (`gerst_strip_v01c.jpg`, one frame every 10 s):** a small **ESA logo sits in the top-left corner** of most frames, so it's burnt-in branding. A crop that loses it is about 1.1× on the 4K source, well under 2.35×; Claude to rule crop vs drop. Candidate spans: cloud day passes 40–50 s and 310 s (row 4 cirrus); night cities 120 s, 280 s, 320 s, 350 s (rows 2, 13: Europe still to confirm by eye); airglow limb 250–260 s (rows 6, 33 sunrise feel). ISS hardware fills 160–240 s and 270–300 s: not used. 0 s is a black open.
+
+Still open: the 2024 eclipse path (28), young-Earth art (37), row 32's second plate.

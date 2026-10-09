@@ -20,12 +20,12 @@ OUT = Path(args[0]) if args else HERE / "pool_v01"
 pool = json.loads((HERE / POOL).read_text())
 UA = {"User-Agent": "Mozilla/5.0 OrbitWithBenEarthSpin/1.0"}
 MAGIC = {".png": [b"\x89PNG"], ".jpg": [b"\xff\xd8"], ".gif": [b"GIF8"], ".tif": [b"II*\x00", b"MM\x00*"], ".mp4": [b"ftyp"],
-         ".webm": [b"\x1a\x45\xdf\xa3"]}
+         ".webm": [b"\x1a\x45\xdf\xa3"], ".ogv": [b"OggS"]}
 OUT.mkdir(parents=True, exist_ok=True)
 
 def ext_of(url: str) -> str:
     u = url.lower().split("?")[0]
-    for e in (".mp4", ".m4v", ".webm", ".gif", ".tif", ".png", ".jpg", ".jpeg"):
+    for e in (".mp4", ".m4v", ".webm", ".ogv", ".gif", ".tif", ".png", ".jpg", ".jpeg"):
         if u.endswith(e):
             return {".jpeg": ".jpg", ".m4v": ".mp4"}.get(e, e)
     return ".jpg"
