@@ -1,0 +1,183 @@
+{
+  "note": "Claude's rulings on 026 rough v02 (pack 3252f37) for the v03 assembler. 'No insets' meant no picture boxed over another picture; potw1343a and Bessel come back full frame. Time-lapses: at most 2 uses each. Code graphics: 3 uses only where the state moves (parallax, journey, starfield).",
+  "reviewed_ok": {
+    "parallax.mp4": {
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black",
+        "low detail",
+        "noise",
+        "reuse"
+      ]
+    },
+    "journey.mp4": {
+      "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black",
+        "low detail",
+        "reuse"
+      ]
+    },
+    "starfield.mp4": {
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black",
+        "low detail",
+        "reuse"
+      ]
+    },
+    "triple.mp4": {
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black",
+        "low detail"
+      ]
+    },
+    "scale.mp4": {
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black",
+        "low detail"
+      ]
+    },
+    "lighttimes.mp4": {
+      "note": "code graphic, black space by design, after the redraw (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black",
+        "low detail"
+      ]
+    },
+    "PIA21839.jpg": {
+      "note": "Voyager lit against deep space; the dark is the picture (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black"
+      ]
+    },
+    "GSFC_20160426_SDO_m12224_SolarFlare.mp4": {
+      "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black"
+      ]
+    },
+    "eso1629d_video.mp4": {
+      "note": "Earth limb on black, label-free part only (first ~8 s); the constellation-label part is out (Claude, 9 Oct, rough v02 review)",
+      "kinds": [
+        "near-black",
+        "low detail"
+      ]
+    }
+  },
+  "swaps": [
+    {
+      "at": "0:17",
+      "row": "3",
+      "out": "GSFC_20171208_Archive_e000214.jpg (Alpha Cen A and B, wrong star for 'small and red')",
+      "put": "potw1343a full frame (Hubble Proxima), slow push"
+    },
+    {
+      "at": "0:33",
+      "row": "5",
+      "out": "GSFC_20171208_Archive_e000214.jpg under the card",
+      "put": "potw1343a, tighter crop (its 2nd use)"
+    },
+    {
+      "at": "1:16",
+      "row": "7",
+      "out": "KSC-20191031-PH-GEB01_0003.jpg (murky, grass)",
+      "put": "GSFC_20171208_Archive_e000214.jpg (Alpha Cen A and B: this row is about Alpha Cen not rising from Britain)"
+    },
+    {
+      "at": "1:21",
+      "row": "7",
+      "out": "KSC-20191031-PH-GEB01_0005.jpg",
+      "put": "eso1241a, a part with no labels or text in any frame; else eso0932a"
+    },
+    {
+      "at": "2:40",
+      "row": "12",
+      "out": "KSC-20191031-PH-GEB01_0003.jpg",
+      "put": "GSFC_20171208_Archive_e000256.jpg (its 2nd use)"
+    },
+    {
+      "at": "2:44",
+      "row": "12",
+      "out": "uhd_bt_paranal_06.mp4 (3rd use)",
+      "put": "next best still from pool_v03 with under 2 uses, not a time-lapse"
+    },
+    {
+      "at": "2:54",
+      "row": "13",
+      "out": "KSC-20191031-PH-GEB01_0005.jpg",
+      "put": "eso0932a Milky Way panorama, slow pan"
+    },
+    {
+      "at": "3:11",
+      "row": "14",
+      "out": "eso1250a_8k.jpg",
+      "put": "Bessel portrait full frame, face crop like Tycho's (the shot list's row 14)"
+    },
+    {
+      "at": "3:42",
+      "row": "15",
+      "out": "vltfromvistatimelapse.mp4 (3rd use)",
+      "put": "next best still with under 2 uses"
+    },
+    {
+      "at": "4:58",
+      "row": "22",
+      "out": "PIA17462.jpg (brown murk)",
+      "put": "PIA17049 (Voyager in space)"
+    },
+    {
+      "at": "5:23",
+      "row": "24",
+      "out": "PIA17462.jpg",
+      "put": "PIA04495 (Voyager)"
+    },
+    {
+      "at": "6:00",
+      "row": "26",
+      "out": "uhd_yb_paranal_02.mp4 (3rd use)",
+      "put": "hold PIA21839 across the whole row, slow push"
+    },
+    {
+      "at": "6:16",
+      "row": "27",
+      "out": "PIA21747.jpg (smoke and film scratches)",
+      "put": "next best from pool_v03, not a launch frame"
+    },
+    {
+      "at": "6:34",
+      "row": "28",
+      "out": "eso1629d_video.mp4 offset 10 (labels: Centaurus, Crux, Alpha Centauri)",
+      "put": "eso1629e_video at a different offset, or a later label-free part of eso1629d"
+    },
+    {
+      "at": "7:51",
+      "row": "33",
+      "out": "bt_lasilla_crux.mp4 (3rd use, and the crop runs past the picture into the pillarbox: black strip on the right)",
+      "put": "eso0932a pan (its 2nd use)"
+    }
+  ],
+  "redraw": [
+    "parallax: one full-frame picture, no boxed panel and no border line. Background stars fill the frame; the near star shifts against them as Earth goes round.",
+    "lighttimes: the frame is mostly empty. Make the bars about 3x thicker, centred in the frame, the longest bar reaching about 80% of the width, the grid dimmer. Never hold a single small bar for more than 1 s."
+  ],
+  "pool_titles": {
+    "triple.mp4": "Code graphic: the three stars of Alpha Centauri",
+    "parallax.mp4": "Code graphic: parallax",
+    "journey.mp4": "Code graphic: journey times",
+    "starfield.mp4": "Code graphic: shrinking star field",
+    "scale.mp4": "Code graphic: Sun-to-Proxima scale",
+    "lighttimes.mp4": "Code graphic: light-travel times",
+    "eso1250a_8k.jpg": "The Carina Nebula imaged by the VLT Survey Telescope",
+    "Tycho_Brahe.jpg": "Portrait of Tycho Brahe"
+  },
+  "fill_gate": "The border-fill check fails on true dark night ground and on bright launch sky (frame 0, rows 5/6/8/10/11/12/20/22/24/25/26). Claude looked at those frames: they're real pictures, so pass them. The real pillarbox (7:51) was caught by polish_gate and is swapped. Row 28 eso1629d passes on the label-free part only.",
+  "keep": [
+    "frame 0 uhd_yb_paranal_01 time-lapse",
+    "the five chapter cards and the one subscribe beat",
+    "SDO flare disks",
+    "all upscale WARNs (2.2-2.33x) look fine full size"
+  ]
+}
