@@ -1,5 +1,5 @@
 {
-  "next_id": 102,
+  "next_id": 103,
   "jobs": [
     {
       "id": "J0001",
@@ -4493,6 +4493,32 @@
       "history": [
         {
           "at": "2026-10-09T16:16Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0102",
+      "title": "HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 004 `GHZDsiH7L7A` (airs Thu 15 Oct 17:00Z): arm Test & Compare A/B/C now.** Claude passed thumb C v07 (`hos_004_thumb_C_hidden_number_live_v07.jpg`) on 9 Oct.\n- Use the HOS Studio browser. Arm the three title + thumbnail pairs from `004…/11_Upload-Package/LAUNCH_PLAN.md`, with **C = v07**, not v06.\n- If Studio offers pairs only one-to-one, use exactly the LAUNCH_PLAN pairs.\n- No other changes (schedule, privacy, file).\n- Proof: a screenshot of the Test & Compare section only, with no account details. Commit a note in the HOS repo, then report on #99.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T16:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T16:29Z",
           "by": "claude",
           "what": "added"
         }
