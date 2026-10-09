@@ -74,3 +74,12 @@ Items 6b (name labels), 6c (one machine per passage), 6d (wheel-holes hold), the
   - **6c (one machine per passage) is not done.** It needs a row-by-row read of the per-row sheet against the narration. Next run, or Claude off the sheet.
 - **Render:** tmux `j0068-v03d-render`, log `~/_desk/logs/j0068-v03d-render.log`, `.done` file `~/_desk/logs/j0068-v03d-render.done` (exit 0 = render + picture_qa + music_gate all pass; 3 = render failed; 4 = a gate failed, see `full_rough_v03d_pack/gates_exit_v03d.txt`). Runner: `_run_v03d.sh`. Output: `OWB UAT/025_MarsRobot_full_rough_v03d.mp4`.
 - **Next run:** read the `.done` file; look over the pack (frame0_sheet, per_row_sheet_v03d, picture_qa_review.jpg); run the similarity matrix (025 bed vs 021, 022 and jupiter-music if iCloud gives it; 013 is on the NAS); make the phone copy the J0067 way; post on #99.
+
+## Run 6 (02:40 BST): Claude's calls #6072407565 applied
+
+- **2:54 (row 14, 170.73–175.97 s) is PIA12457**, "Spirit Rear View After Parking for Fourth Winter". Its second use (row 10 is the first) needed a different framing: the lower band, `box=(0.0, 0.40, 1.0, 0.965)`, showing both wheels and Spirit's own shadow, at 1.97×. A centre crop would have been 3.94×. `--plan`: no problems.
+- **PIA12102** has `"reject": "out-of-focus MI mosaic"` in `nasa_pool_v01.json`.
+- **Bed v02:** `05_Music/mars-robot_score_bed_v02_full.mp3` (v01 kept), made by `_ride_mars_bed_v02.py`. It lifts 0.5–25 s towards 10 dB under the bed's median (music_gate's 3 s level), capped at +12 dB, with 2 s ramps. The biggest lift used is +11.0 dB. The VO stays at least 19.1 dB over the bed (at the cut's 0.134 gain) for 0–25 s. Bed-only music_gate **PASS** (`music_gate_bed_v02.json`). No generation and no credits.
+- Assembler and `_run_v03d.sh` now use the v02 bed. Commit 9884d5f.
+- **Render 2:** tmux `j0068-v03d-render`, log `~/_desk/logs/j0068-v03d-render.log`, done file `~/_desk/logs/j0068-v03d-render.done` (0 = all pass, 3 = render failed, 4 = a gate failed). Run 5's files were renamed `*.run5.*`.
+- **Next:** read the `.done` file; 6c (one machine per passage) audit off `per_row_sheet_v03d.jpg`; the phone copy the J0067 way; post the pack on #99.
