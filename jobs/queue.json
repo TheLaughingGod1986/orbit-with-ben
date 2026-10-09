@@ -1,5 +1,5 @@
 {
-  "next_id": 87,
+  "next_id": 88,
   "jobs": [
     {
       "id": "J0001",
@@ -3780,6 +3780,32 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T09:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T09:35Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0087",
+      "title": "Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**HOS Shorts: why the feed doesn't pick them up (Cursor's idea 5 + Codex's HOS 2 + Gemini's idea 5, Claude 9 Oct).** This is read-only and spends nothing.\n1. Run `gate_shorts_open.py check` on the 13 aired HOS Short files, and log which rule each fails next to its day-1 feed share and lifetime views (05_Analytics/hos/REPORT.md).\n2. List each one's title against the subject it's about. Codex and Gemini both point to titles that hide the subject, e.g. \"What other table has empty chairs?\".\n3. Post the table on #99 and on the HOS desk. Claude then sets the HOS Shorts rule: gated open, and a title that names the subject and then the discovery.\n",
+      "ref": "6078293622",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
       "status": "open",
       "by": "",
       "since": "",
