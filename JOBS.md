@@ -19,10 +19,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
-| J0090 | mini | open | – | – | 027 edit · 027 bed take 2 for the re-ordered film (after the 30 Oct ElevenLabs reset; HOS voice first) | 6078779637 |
 
 Recently finished:
 
+- J0090 cancelled: 027 bed take 2 for the re-ordered film (after the 30 Oct ElevenLabs reset; HOS voice first) ()
 - J0088 done: 027 opening: first answer before 0:30, from existing VO (Codex idea 5) (027 SHOT_LIST_v02: VO re-ordered (agenda cut, sudden-stop chapter first); the first answer is at ~24 s, was 112 s; no new VO; J0077 builds from v02)
 - J0083 done: Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) (Posted fifth OWB retention idea and two HOS ideas with source evidence, minimal tests, costs and caveats; no implementation or spend.)
 - J0082 done: Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) (done)
@@ -32,4 +32,3 @@ Recently finished:
 - J0078 done: 023 Venus: its own score bed (Claude's brief; no ElevenLabs floor) (venus_score_bed_v01_full.mp3 (530 s, -14.4 LUFS, two takes joined at 3:44 chapter break); music_gate PASS; 8,250 ElevenLabs credits (34,093 left). Waits on Claude's listen before it's laid in.)
 - J0075 done: 026 Nearest Star: its own score bed (Claude's brief, credit guard) (026 bed nearest-star_score_bed_v01_full.mp3 (520 s, -16.6 LUFS): take 1 returned 170 s, one continuation take (380 s, +11 dB) joined with an 8 s equal-power crossfade at 111.8 s film (before chapter 2), slowed 0.93. music_gate PASS (66.7 BPM, brief 66-80). 7563 credits, 42343 left.)
 - J0074 done: Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command (Installed f165f55 relay; hashes match. Actual launchd wake at 00:51:56 has corrected cmd flags and started this session. Installed run_cli proving probe returned RELAY_PROBE_OK, exit 0. All 24 relay tests PASS with OWB_REPO isolated from live queue. Codex up; J0071 remains for next tick.)
-- J0073 done: Relay: fix Codex's CLI flags (its first run exited 2), then let it run J0071 (done)
