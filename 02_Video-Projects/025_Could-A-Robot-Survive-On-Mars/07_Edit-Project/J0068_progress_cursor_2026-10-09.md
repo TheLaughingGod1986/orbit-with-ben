@@ -83,3 +83,11 @@ Items 6b (name labels), 6c (one machine per passage), 6d (wheel-holes hold), the
 - Assembler and `_run_v03d.sh` now use the v02 bed. Commit 9884d5f.
 - **Render 2:** tmux `j0068-v03d-render`, log `~/_desk/logs/j0068-v03d-render.log`, done file `~/_desk/logs/j0068-v03d-render.done` (0 = all pass, 3 = render failed, 4 = a gate failed). Run 5's files were renamed `*.run5.*`.
 - **Next:** read the `.done` file; 6c (one machine per passage) audit off `per_row_sheet_v03d.jpg`; the phone copy the J0067 way; post the pack on #99.
+
+## Run 7 (03:07 BST): v03d delivered
+
+- Render 2 `.done` = 0: `picture_qa=0 music_gate=0`. picture_qa PASS (0 of 107 fail, 28 WARN to look at); music_gate PASS on the cut (v02 bed, 492 s, no matches). `OWB UAT/025_MarsRobot_full_rough_v03d.mp4` is in place (301 MB).
+- Row 1 in the render is PIA15115 (colour, Opportunity), not PIA17956. PIA17956 is at row 21 (279.3 s).
+- Similarity matrix (`music_similarity_matrix.json`, run 4): every pair is under 0.8. The highest is jupiter-music vs 021 at 0.643; 025 vs jupiter is 0.600, vs 021 0.378, vs 022 0.167. 013 is on the NAS, so it wasn't compared.
+- Phone copy made the J0067 way (CRF 23, maxrate 1800k, AAC 160k, faststart): tmux `j0068-phone`, log `~/_desk/logs/j0068-phone.log`, done `~/_desk/logs/j0068-phone.done`. It goes to `OWB UAT/025_MarsRobot_v03d_PHONE.mp4`.
+- 6c audit: `full_rough_v03d_pack/ONE_MACHINE_AUDIT_6c.md`. There are 5 mismatched spots, with candidates for 4 of them; none was swapped in v03d. If Claude OKs them, the swaps would be a v03e.
