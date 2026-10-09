@@ -18,7 +18,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0077 | mini | open | – | – | 027 picture · 027 Earth Stopped Spinning: picture, rough v01 (026's lessons from the start) | 6076805635 |
 | J0079 | mini | open | – | – | 024 edit · 024 Light speed: its own score bed now (no ElevenLabs floor; no wait for 30 Oct) | 6077058676 |
 | J0080 | mini | open | – | – | 027 edit · 027 Earth Stopped Spinning: its own score bed (Claude's brief) | 6077058676 |
-| J0081 | mini | open | – | – | for cursor · Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) | 6070129451 |
+| J0081 | mini | claimed | cursor | 2026-10-09T09:42Z | for cursor · Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) | 6070129451 |
 | J0082 | gemini | open | – | – | Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) | 6070129451 |
 | J0083 | mini | open | – | – | for codex · Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) | 6071491327 |
 | J0084 | mini | open (after J0066) | – | – | 025 upload · 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) | 6077231242 |
