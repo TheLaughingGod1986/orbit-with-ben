@@ -1,5 +1,5 @@
 {
-  "next_id": 111,
+  "next_id": 112,
   "jobs": [
     {
       "id": "J0001",
@@ -4913,6 +4913,32 @@
         }
       ],
       "for": "chief"
+    },
+    {
+      "id": "J0111",
+      "title": "HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 009 long voiceover, all five parts (Chief, 9 Oct; opening OK'd in the Chief job before this one).** Script: `02_Video-Projects/009_The-Falling-Moon-Gravity/01_Script/moon_script_master_v01.md`. One take per part via `04_Audio/tools/vo_take.py` (locked voice, eleven_v3), as 008 was done (TAKE.json, vo_check, VO_TAKES_KEEP.json, ledger rows).\n\n**ElevenLabs balance first (about 18,653 credits until the 30 Oct reset, shared with OWB voice and music).**\n1. `vo_take.py --script 02_Video-Projects/009_The-Falling-Moon-Gravity/01_Script/moon_script_master_v01.md --out 02_Video-Projects/009_The-Falling-Moon-Gravity/02_Voiceover --stem hos_009_vo_v01 --order <this job id> --dry-run` for the char count (about 6,833 chars). Read the live balance. Needed = chars x 0.5 (about 3,420 credits) plus a 15% margin for pickups. If the balance is below that, spend nothing: `jobs.py block` with \"ElevenLabs: N left, needs M\" and post it to grok on desk #180.\n2. `orbit-with-ben/scripts/ai_spend.py record --pool elevenlabs --left N --total 209536 --by <you>`.\n3. Record. Re-read the balance before each part; stop cleanly if the next part wouldn't fit. `ai_spend.py spend --pool elevenlabs --amount <credits> --film HOS:009 --what \"long Part 0n v01\"` per take.\n4. vo_check every part; a retake only on a FAIL. Post verdicts, durations, the total length vs the 7-9 min window and the ledger lines on desk #180 to grok for the keep call. HOS PR with TAKE.json/keep list/ledger rows (no audio in git); PIPELINE.json 009 vo row.\n\nNo music beds (no OWB or HOS bed without the Chief's OK until the 30 Oct reset). Nothing to YouTube. Long run: start the takes detached (tmux) per the relay rules and release with the session/log names.\n\n**This is a normal queue job, not an \"HOS desk task\".** Work in the HOS checkout (`~/YouTube/History Of Science`), follow its AGENTS.md, report on desk #180 with `00_Brand/Channel-Setup/tools/hos_desk.py post --from <you> --to grok ...` (grok = Chief), and close it here with `jobs.py done|block|release`. The Chief (Grok Bot) owns the HOS studio since 9 Oct and makes the creative calls Claude used to (Ben delegated them); real money still goes to Ben.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0110",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-09T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [

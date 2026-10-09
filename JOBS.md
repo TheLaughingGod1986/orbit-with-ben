@@ -29,6 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0108 | mini | open | – | – | HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) |  |
 | J0109 | mini | open | – | – | HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first | hos#261 |
 | J0110 | any | open (after J0108) | – | – | for chief · Chief: OK the 009 long opening (desk #180) before its VO |  |
+| J0111 | mini | open (after J0110) | – | – | HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first |  |
 
 Recently finished:
 
