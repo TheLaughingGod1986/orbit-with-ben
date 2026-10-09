@@ -60,6 +60,20 @@ class Next(unittest.TestCase):
         jobs.find(d, "J0002")["urgent"] = True
         self.assertEqual(jobs.do_next(d, "codex", {"mini", "any"}, T0)["id"], "J0001")  # its own job before an urgent one
 
+    def test_urgent_jobs_run_in_the_order_named(self):
+        d = queue(*[("mini", f"j{i}", {"film": "026", "stage": "edit"} if i == 2 else {}) for i in range(1, 6)])
+        d["focus"] = ["026"]
+        jobs.find(d, "J0004")["urgent"] = True  # an older plain true stays ahead of newly named ones
+        self.assertEqual(jobs.do_urgent(d, [jobs.find(d, "J0003"), jobs.find(d, "J0001")]), ["J0004", "J0003", "J0001"])
+        self.assertEqual(jobs.do_urgent(d, [jobs.find(d, "J0004")]), ["J0003", "J0001", "J0004"])  # re-named: moves back
+        got = []
+        for _ in range(5):
+            j = jobs.do_next(d, "cursor", {"mini"}, T0)
+            got.append(j["id"])
+            jobs.do_done(j, "cursor", "ok", T0)
+        self.assertEqual(got, ["J0003", "J0001", "J0004", "J0002", "J0005"])  # urgent by rank, then the focus film
+        self.assertEqual(jobs.do_urgent(d, [jobs.find(d, "J0001")], off=True), [])  # all done: none live
+
     def test_an_urgent_job_goes_ahead_of_the_focus_film(self):
         d = queue(("mini", "025 rough v02", {"film": "025", "stage": "edit", "eta_min": 240}), ("mini", "disk move", {"eta_min": 240}))
         d["focus"] = ["025"]

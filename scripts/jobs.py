@@ -137,12 +137,36 @@ def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
             "live_claims": live, "ben": ben}
 
 
+def urgent_rank(job: dict) -> int:
+    """Urgent jobs run in the order they were named (Grok Bot, 9 Oct: `urgent J0085 J0096 J0089` = that order). The
+    rank is stored in "urgent" (1 = first); an older plain `true` counts as rank 0, then id order."""
+    u = job.get("urgent")
+    return u if isinstance(u, int) and not isinstance(u, bool) else 0
+
+
+def do_urgent(data: dict, found: list[dict], off: bool = False) -> list[str]:
+    """Mark jobs urgent in the order named, after any other urgent jobs (a named one that was already urgent moves to
+    its named place); --off clears them. Returns the urgent ids in run order."""
+    for j in found:
+        if off:
+            j.pop("urgent", None)
+    if not off:
+        named = [j["id"] for j in found]
+        rest = [j for j in sorted(data["jobs"], key=lambda j: (urgent_rank(j), j["id"]))
+                if j.get("urgent") and j["id"] not in named and j["status"] in ("open", "claimed", "blocked")]
+        for k, j in enumerate(rest + found, 1):
+            j["urgent"] = k
+    live = (j for j in data["jobs"] if j.get("urgent") and j["status"] in ("open", "claimed", "blocked"))
+    return [j["id"] for j in sorted(live, key=lambda j: (urgent_rank(j), j["id"]))]
+
+
 def order(job: dict, focus=()) -> tuple:
     """An urgent job first (Claude's call: e.g. the Mini's disk at 99% would break every render after it), then the focus film's jobs (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
     films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
     every stopping point (a first cut) would come back first every time and starve the quick ones."""
     return (0 if job.get("for") else 1,  # a job addressed to this agent (only it can see it) first: it was woken for it
             0 if job.get("urgent") else 1,
+            urgent_rank(job) if job.get("urgent") else 0,
             0 if job.get("film") and job["film"] in focus else 1,
             0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
             0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
@@ -240,9 +264,10 @@ def render(data: dict, at: dt.datetime) -> str:
          "Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what you can do>`.", ""]
     if data.get("focus"):
         L += [f"**Focus film: {', '.join(data['focus'])}.** Its jobs go first (Ben, 8 Oct: one film at a time).", ""]
-    urgent = [j["id"] for j in data["jobs"] if j.get("urgent") and j["status"] in ("open", "claimed", "blocked")]
+    urgent = [j["id"] for j in sorted(data["jobs"], key=lambda j: (urgent_rank(j), j["id"]))
+              if j.get("urgent") and j["status"] in ("open", "claimed", "blocked")]
     if urgent:
-        L += [f"**Urgent: {', '.join(urgent)}.** Ahead of everything, the focus film included.", ""]
+        L += [f"**Urgent, in this order: {', '.join(urgent)}.** Ahead of everything, the focus film included.", ""]
     L += [
          "| Job | Needs | Status | Who | ETA (UTC) | Title | Ref |", "|---|---|---|---|---|---|---|"]
     live = [j for j in data["jobs"] if j["status"] in ("open", "claimed", "blocked")]
@@ -364,7 +389,8 @@ def main(argv=None) -> int:
     fo = sub.add_parser("focus", help="the film(s) every agent works on first, e.g. `focus 025`; no films clears it")
     fo.add_argument("films", nargs="*")
     fo.add_argument("--by", default="claude")
-    ur = sub.add_parser("urgent", help="put job(s) ahead of everything, even the focus film, e.g. `urgent J0054`; --off undoes it")
+    ur = sub.add_parser("urgent", help="put job(s) ahead of everything, even the focus film, in the order named, after any "
+                        "other urgent jobs, e.g. `urgent J0085 J0096`; --off undoes it")
     ur.add_argument("ids", nargs="+")
     ur.add_argument("--off", action="store_true")
     ur.add_argument("--by", default="claude")
@@ -409,12 +435,7 @@ def main(argv=None) -> int:
                 found = [find(data, i) for i in args.ids]
                 if not all(found):
                     return None, "no " + ", ".join(i for i, j in zip(args.ids, found) if not j), touched
-                for j in found:
-                    if args.off:
-                        j.pop("urgent", None)
-                    else:
-                        j["urgent"] = True
-                return {"id": "urgent", "urgent": [j["id"] for j in data["jobs"] if j.get("urgent")]}, None, touched
+                return {"id": "urgent", "urgent": do_urgent(data, found, args.off)}, None, touched
             if args.cmd == "next":
                 can = {c.strip() for c in args.can.split(",") if c.strip()}
                 if args.peek:

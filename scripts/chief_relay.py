@@ -346,7 +346,7 @@ def handover(new, rows, at: dt.datetime) -> None:
         ok = notify(f"Chief relay: **nobody can act as Chief** ({states}). Mini jobs wait until one is back. "
                     f"Ben: top-ups stay your call.")
     elif new == "chief":
-        ok = notify(f"Chief relay: **Grok Bot is Chief again** ({states}). Cursor and Codex stand down.")
+        ok = notify(f"Chief relay: **Grok Bot is Chief again** ({states}). Cursor and Codex keep running the job queue as workers; Chief owns reviews/decisions.")
     else:
         later = [NAMES.get(a, a) for a in chain()[chain().index(new) + 1:]]
         ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** ({states}). "
@@ -444,21 +444,35 @@ def run_locked(at: dt.datetime) -> int:
                 log(f"{a} has a job addressed to it ({', '.join(addressed_to(a))}): waking it first")
                 who = a
                 break
+        worker_only = False
         if who == "chief":
-            log("Grok Bot is Chief: nothing to do")
-            return 0
+            # Grok Bot (9 Oct 2026, studio owner): Grok is Chief for reviews, PASS, merges, decisions and the board;
+            # Cursor/Codex stay the WORKERS for queued Mini jobs. So while Grok is up, wake the first worker that's up
+            # (Cursor, then Codex) for one queued job (no thread/desk sweep), instead of idling the Mini.
+            who = next((a for a, up, _ in rows if up and a in ("cursor", "codex")), None)
+            if who is None:
+                log("Grok Bot is Chief and no worker is up: nothing to run")
+                return 0
+            worker_only = True
         last_wake = last_seen(who)
         # Overnight (Ben, 7 Oct: carry on overnight) agents are woken for queued jobs only; the 2-hourly sweep for
         # thread/desk tasks runs in the day, so an empty night costs no credit.
         slo, shi = (int(x) for x in os.environ.get("CHIEF_SWEEP_HOURS", "8-22").split("-"))
         sweep = slo <= dt.datetime.now().hour < shi and (
             not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
+        if worker_only:
+            sweep = False
         if not queue_has_work(who) and not sweep:
-            log(f"nothing queued for {who}; last woken {int((at - last_wake).total_seconds() // 60)} min ago: not waking it")
+            ago = f"{int((at - last_wake).total_seconds() // 60)} min ago" if last_wake else "never"
+            log(f"nothing queued for {who}; last woken {ago}: not waking it")
             push_heartbeat(at, "idle", who, "nothing queued")
             return 0
         above = [f"{NAMES.get(a, a)} is {why}" for a, up, why in rows[:[r[0] for r in rows].index(who)]]
         why = "Claude addressed a job to you by name" if addressed else ("; ".join(above) or "it is first in line")
+        if worker_only:
+            why = ("Grok Bot is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
+                   "job queue. In step 3 skip the channel check and HOS desk tasks: do only the job "
+                   "`jobs.py next` gives you; if it exits 10, stop without posting")
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS)
         log(f"run: {who} (cap {cap}s)")

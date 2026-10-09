@@ -48,8 +48,13 @@ class Relay(unittest.TestCase):
     def test_grok_is_chief_while_its_heartbeat_is_fresh(self):
         cr.seen("chief", T0 - 30 * MIN)
         self.assertEqual(self.chief(), "chief")
-        cr.cmd_run(T0)
-        self.assertFalse(self.ran("cursor"))  # Grok drives itself; nobody else runs
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False
+        try:
+            cr.cmd_run(T0)
+        finally:
+            cr.queue_has_work = old
+        self.assertFalse(self.ran("cursor"))  # Grok drives itself; with no queued job no worker runs
 
     def post(self, at, body):
         self.thread.append((cr.iso(at), body))
@@ -59,10 +64,17 @@ class Relay(unittest.TestCase):
         self.assertTrue(self.ran("cursor"))
         (self.tmp / "cursor.ran").unlink()
         self.post(T0 + 10 * MIN, "[Chief] Re 123: claimed, working")  # Grok, back with credit
-        cr.cmd_run(T0 + 30 * MIN)
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False  # nothing queued, so no worker wakes (and no sweep under Grok)
+        try:
+            cr.cmd_run(T0 + 30 * MIN)
+        finally:
+            cr.queue_has_work = old
         self.assertFalse(self.ran("cursor"))
         self.assertEqual(self.chief(T0 + 30 * MIN), "chief")
         self.assertIn("Grok Bot is Chief again", self.posts.read_text())
+        self.assertIn("keep running the job queue as workers", self.posts.read_text())
+        self.assertNotIn("stand down", self.posts.read_text())
 
     def test_cursor_codex_and_relay_posts_are_not_grok(self):
         for body in ("[Chief] [Cursor] Cursor covering. J0007 done", "[Chief] Cursor covering: J0001 started",
@@ -169,6 +181,30 @@ class Relay(unittest.TestCase):
             cr.seen("cursor", T0 - 130 * MIN)  # two hours on: one sweep for thread/desk tasks
             cr.cmd_run(T0)
             self.assertTrue(self.ran("cursor"))
+        finally:
+            cr.queue_has_work = old
+
+    def test_while_grok_is_chief_cursor_still_runs_one_queued_job_as_worker(self):
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)  # Grok is Chief
+            self.assertEqual(self.chief(), "chief")
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))  # the Mini doesn't idle (9 Oct stall)
+            self.assertFalse(self.ran("codex"))
+        finally:
+            cr.queue_has_work = old
+
+    def test_while_grok_is_chief_an_empty_queue_wakes_no_worker_and_no_sweep(self):
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.seen("cursor", T0 - 300 * MIN)  # a sweep would be due if Cursor were Chief
+            cr.cmd_run(T0)
+            self.assertFalse(self.ran("cursor"))
+            self.assertFalse(self.ran("codex"))
         finally:
             cr.queue_has_work = old
 
