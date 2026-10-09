@@ -14,12 +14,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
 | J0076 | mini | open | – | – | 026 thumbs · 026 Nearest Star: thumbnails + upload package (while Ben watches v04) | 6076805635 |
 | J0077 | mini | open | – | – | 027 picture · 027 Earth Stopped Spinning: picture, rough v01 (026's lessons from the start) | 6076805635 |
-| J0078 | mini | claimed | cursor | 2026-10-09T09:42Z | 023 edit · 023 Venus: its own score bed (Claude's brief; no ElevenLabs floor) | 6077058676 |
 | J0079 | mini | open | – | – | 024 edit · 024 Light speed: its own score bed now (no ElevenLabs floor; no wait for 30 Oct) | 6077058676 |
 | J0080 | mini | open | – | – | 027 edit · 027 Earth Stopped Spinning: its own score bed (Claude's brief) | 6077058676 |
 
 Recently finished:
 
+- J0078 done: 023 Venus: its own score bed (Claude's brief; no ElevenLabs floor) (venus_score_bed_v01_full.mp3 (530 s, -14.4 LUFS, two takes joined at 3:44 chapter break); music_gate PASS; 8,250 ElevenLabs credits (34,093 left). Waits on Claude's listen before it's laid in.)
 - J0075 done: 026 Nearest Star: its own score bed (Claude's brief, credit guard) (026 bed nearest-star_score_bed_v01_full.mp3 (520 s, -16.6 LUFS): take 1 returned 170 s, one continuation take (380 s, +11 dB) joined with an 8 s equal-power crossfade at 111.8 s film (before chapter 2), slowed 0.93. music_gate PASS (66.7 BPM, brief 66-80). 7563 credits, 42343 left.)
 - J0074 done: Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command (Installed f165f55 relay; hashes match. Actual launchd wake at 00:51:56 has corrected cmd flags and started this session. Installed run_cli proving probe returned RELAY_PROBE_OK, exit 0. All 24 relay tests PASS with OWB_REPO isolated from live queue. Codex up; J0071 remains for next tick.)
 - J0073 done: Relay: fix Codex's CLI flags (its first run exited 2), then let it run J0071 (done)
@@ -29,4 +29,3 @@ Recently finished:
 - J0068 done: 025 Mars robot: Ben's notes, swap the 2:54 image + 025's own music bed (v03d + phone copy) (v03f delivered: OWB UAT/025_MarsRobot_full_rough_v03f.mp4 + 025_MarsRobot_v03f_PHONE.mp4 (iCloud synced). picture_qa, music_gate, fill, polish PASS; 490.2 s, -14.3 LUFS. Pack ed06ca2. Per Claude #6073193234 straight to Ben's box.)
 - J0067 done: 025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy (done)
 - J0065 done: 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) (done)
-- J0064 done: 026 Nearest Star: fresh transcript and timing on the Shorts' locked voice files (Scribe + align) before picture (Scribe v2 re-run on the 3 LOCK takes; words.json now times the locked untrimmed files (sha-checked). Mon16 24.48s, Wed18 21.60s, Fri20 20.64s; all 22-27s with 2s hold; mismatches number/spelling only. Summary: 10_Shorts/SCRIBE_LOCK_v02.json)
