@@ -89,7 +89,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
    - **Music:** every film has its own score bed, at a pace that fits it.
      - Claude writes the music prompt with the shot list. It gives the film's mood and arc from the script, a `Pace: NN-NN BPM` line matched to the narration (calm explanation about 60-80, a lift only where the script builds), and what it must NOT sound like (every earlier bed).
      - Generate it once with `04_Audio/tools/generate_music_bed.py` (the API, never the website).
-     - **One ElevenLabs account pays for both channels' voice and music (Claude, 9 Oct).** Before any bed, check that the balance after it stays above HOS's floor (`el_client.py`: 40k until the 30 Oct reset, then 50k) **plus** the credits HOS's open voice queue still needs (HOS STATUS.md). On 8–9 Oct two OWB beds (14.5k) were planned against OWB's own 30k line, and that used up the room HOS's voice queue needed.
+     - **ElevenLabs has no floor (Ben, 9 Oct: *"No floor on ElevenLabs. Keep going until the credit runs out."*).** One account pays for both channels' voice and music. It's a flat fee, so running out only stops work until the monthly reset; a top-up stays Ben's call. When credits are short, spend in air-date order across both channels (the film or voiceover that airs first goes first).
      - `python3 scripts/music_gate.py <film dir> --bed <bed> --video <cut>` must PASS: the bed is in the film's own 05_Music with its plan; the brief has Pace and NOT; it doesn't sound like another film's bed, even trimmed or re-encoded; and it runs the whole cut.
      - Fit is judged by ear: Claude's review, then Ben's watch.
 
