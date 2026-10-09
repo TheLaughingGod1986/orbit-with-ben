@@ -227,6 +227,7 @@ details.more .subs{margin-top:8px}
 .btn[disabled]{opacity:.5;cursor:default}
 a.open{display:inline-block;margin-left:6px;font-weight:600;color:var(--doing);text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:0 7px;background:var(--panel)}
 a.open:hover{border-color:var(--doing)}
+a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);padding:2px 10px;margin:4px 6px 0 0}
 .yl textarea{flex:1 1 260px;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
 .yl .said{display:block;font-size:13px;margin-top:4px;color:var(--ink-2)}
 .lnk{font:inherit;font-size:12px;background:none;border:0;color:var(--ink-3);text-decoration:underline;cursor:pointer;padding:0 0 0 6px}
@@ -688,6 +689,14 @@ function checklist(f, rows, ready){
   for(const r of runs) html += grp(r.who, r.items.every(x=>x.w.ok)?"did":"to do", r.items.map(({x,w})=>`<li class="${w.ok?"ok":""}"><span>${esc(x.what)}</span><span class="w ${w.late?"late":""}">${w.text}</span></li>`));
   return `<div class="ck">${html||"Nothing listed."}</div>`;
 }
+// Watch links (Ben, 9 Oct): the cut waiting for Ben opens on his phone. board/briefs.watch["OWB:026"] = {url, label,
+// version, kind: youtube|files|icloud, alt}; kanban_snapshot.py picks the best link (explicit, YouTube upload, iCloud file).
+function watchLink(key){
+  const w = (fromDb.watch||{})[key]; if(!w || !/^(https:|shareddocuments:)/.test(w.url||"")) return "";
+  const tgt = w.kind==="files" ? "" : ` target="_blank" rel="noopener"`;
+  return `<a class="open watch" href="${esc(w.url)}"${tgt}>▶ ${esc(w.label||"Watch it")}${w.kind==="files"?" (Files)":w.kind==="youtube"?" (YouTube)":""}</a>`
+    + (w.alt ? `<a class="open" href="${esc(w.alt)}" target="_blank" rel="noopener">Studio ↗</a>` : "");
+}
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
   const all = films.concat(readyFilms).filter(f=>f.air ? recent(f.air) : true).sort((a,b)=>String(a.air||"9999").localeCompare(String(b.air||"9999")) || a.key.localeCompare(b.key));
@@ -732,7 +741,7 @@ function renderTracker(films){
       <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
       <div class="st1 ${st.cls}">${st.short}</div>
-      ${youSoon?`<div class="ky yes">For you: ${esc(b.youShort||b.you)}</div>`:""}
+      ${youSoon?`<div class="ky yes">For you: ${esc(b.youShort||b.you)}${watchLink(f.key)?`<br>${watchLink(f.key)}`:""}</div>`:""}
     </summary><div class="body">
       ${line?`<div class="kl" style="margin:0 0 8px">${md(line)}</div>`:""}
       <div class="stbox ${st.cls}"><div class="h">${st.title}</div>${st.lines.map(l=>`<div>${l}</div>`).join("")}</div>
@@ -770,7 +779,8 @@ function renderTracker(films){
   const item = x => {
     const id = x.f.key.replace(":","-"), c = (fromDb.checks||{})[id];
     const url = [x.b.uatUrl, fromDb.uatUrl].find(u=>/^https:\/\/www\.icloud\.com\//.test(u||""));
-    const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}${url?` <a class="open" href="${esc(url)}" target="_blank" rel="noopener">Open in iCloud ↗</a>`:""}</span>`;
+    const wl = watchLink(x.f.key);
+    const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}${url?` <a class="open" href="${esc(url)}" target="_blank" rel="noopener">Open in iCloud ↗</a>`:""}</span>${wl?`<span class="acts">${wl}</span>`:""}`;
     if(c && !c.handled){
       const fx = Array.isArray(c.fixes) ? c.fixes : (c.note ? [{t:"", text:c.note}] : []);
       if(c.verdict==="ok") return `<li class="done"><span>✓</span><span>${head}<span class="said">You said it looks good (${esc(fw(c.at))}). Claude acts on it by ${nextRun()} (it checks the board at :50 past every hour). <button class="lnk" data-undo="${id}">Undo</button></span></span></li>`;
@@ -782,7 +792,7 @@ function renderTracker(films){
   };
   const left = soon.filter(x=>{ const c=(fromDb.checks||{})[x.f.key.replace(":","-")]; return !c||c.handled; }).length;
   yb.innerHTML = soon.length ? `<b>${left?`Ready for you to check (${left})`:"All checked. Nothing else for you right now."}</b><ul class="yl">${soon.map(item).join("")}</ul>
-      <div class="why">Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder. ${dbApi?"Watch it, then tap <b>Looks good</b> or <b>Needs a change</b>.":`When you've checked one, tell Claude "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
+      <div class="why">${soon.every(x=>watchLink(x.f.key))?"Tap <b>▶ Watch</b> to open it on your phone (also in iCloud Drive › <b>OWB UAT</b> / <b>HOS UAT</b>).":"Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder."} ${dbApi?"Watch it, then tap <b>Looks good</b> or <b>Needs a change</b>.":`When you've checked one, tell Claude "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
     : `<b>Nothing for you to check right now.</b>`;
   const keyOf = id => id.replace("-",":");
   const saveCheck = async (id, verdict, fixes) => {
@@ -1266,7 +1276,7 @@ async function startDb(){
   db.doc("board/briefs").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || typeof d.films!=="object") return;
-    fromDb.briefs = d.films; fromDb.uatUrl = d.uatFolderUrl || ""; render();
+    fromDb.briefs = d.films; fromDb.uatUrl = d.uatFolderUrl || ""; fromDb.watch = d.watch || {}; render();
   }, ()=>{});
   db.doc("board/credits").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
