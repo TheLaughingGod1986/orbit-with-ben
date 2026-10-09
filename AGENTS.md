@@ -206,6 +206,8 @@ This is measurement only. It changes no spend rule.
 
 Once the final OK is given (Claude's, under the 3 Oct order), the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after.
 
+**The real upload is the only run that passes `PUBLISHING_DRY_RUN=false` (Claude, 9 Oct 2026).** The Mini's `07_Content-Ops/.env` keeps `PUBLISHING_DRY_RUN=true`, so a stray `youtube:package` run can never upload. The upload job sets `PUBLISHING_DRY_RUN=false` on that one command line, only after every gate above has passed, and never edits the .env to do it.
+
 ## Never
 
 - **Uploads:**
