@@ -14,6 +14,7 @@ What a cut is (from the cut list and the pool, before any pixel is looked at):
                      WARN an artist's concept, illustration, render, animation still, map or mosaic: often right, so Claude
                      looks at it full size.
                      WARN a source the pool has no title for: nobody can tell what it is.
+                     FAIL a source the pool marks `"labels": true` (label overlays, burnt-in text) or `"reject": "<why>"`.
   - sharpness        FAIL upscaled more than 2.35x. WARN more than 2x (may look soft; rover frames are often 1024 px, so up to
                      2x is normal).
   - reuse            FAIL one picture used more than twice in the long.
@@ -55,8 +56,10 @@ def stem(name: str) -> str:
 
 
 def load_pool(paths) -> dict:
-    """{source stem: title} from pool files (a list of entries, or {"items"/"entries": [...]}, or {id: entry})."""
+    """{source stem: title} from pool files (a list of entries, or {"items"/"entries": [...]}, or {id: entry}).
+    Also fills FLAGS from the entries' "labels" / "reject" marks."""
     out = {}
+    FLAGS.clear()
     for p in paths or []:
         d = json.loads(Path(p).read_text())
         items = d if isinstance(d, list) else d.get("items") or d.get("entries") or [dict(v, id=k) for k, v in d.items() if isinstance(v, dict)]
@@ -65,7 +68,14 @@ def load_pool(paths) -> dict:
             for k in ("file_id", "nasa_id", "id", "file", "source"):
                 if e.get(k):
                     out[stem(e[k])] = title
+                    if e.get("labels"):
+                        FLAGS[stem(e[k])] = "has labels or a text overlay on the picture"
+                    if e.get("reject"):
+                        FLAGS[stem(e[k])] = f"rejected in the pool: {e['reject']}"
     return out
+
+
+FLAGS: dict = {}  # source stem -> why the pool marks it unusable ("labels": true, or "reject": "<why>")
 
 
 def source_checks(cuts: list, pool: dict) -> list:
@@ -74,7 +84,10 @@ def source_checks(cuts: list, pool: dict) -> list:
     for k, c in enumerate(cuts):
         mid = (c["timeline_in"] + c["timeline_out"]) / 2
         title = pool.get(stem(c["source"]))
+        flag = FLAGS.get(stem(c["source"]))
         fail, warn = [], []
+        if flag:
+            fail.append(f"kind of picture: {flag}")
         if title is None and OWN.search(c["source"]):
             title = "our own clip or graphic"
         elif title is None:

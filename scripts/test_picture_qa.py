@@ -53,6 +53,16 @@ class SourceChecks(unittest.TestCase):
         self.assertTrue(rows[0]["fail"][0].startswith("sharpness"))
         self.assertEqual(rows[0]["reviewed_ok"]["note"], "story needs it")
 
+    def test_pool_flags_labels_and_rejects(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "pool.json"
+            f.write_text(json.dumps([{"id": "eso1702a", "title": "Alpha Centauri over the VLT", "labels": True},
+                                     {"file_id": "PIA12102", "title": "Spirit Photographs Her Underbelly", "reject": "out-of-focus MI mosaic"}]))
+            pool = qa.load_pool([f])
+            rows = qa.source_checks([cut("eso1702a.jpg", 0, 5), cut("PIA12102.jpg", 5, 10)], pool)
+            self.assertIn("labels", rows[0]["fail"][0])
+            self.assertIn("out-of-focus", rows[1]["fail"][0])
+
     def test_pool_formats_and_the_report(self):
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
