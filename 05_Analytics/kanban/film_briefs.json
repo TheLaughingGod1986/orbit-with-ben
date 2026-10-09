@@ -60,10 +60,10 @@
       "youShort": ""
     },
     "OWB:023": {
-      "updated": "2026-10-09T08:40Z",
-      "mood": "fixing",
-      "done": "Script, voice, picture, edit, thumbnails and the upload package (passed ac6b9d5). The film is finished.",
-      "holdup": "Your notes: some pictures wobble, and some frames look unfinished or unpolished. The wobble is most likely the slow zoom on still photos shaking by a fraction of a pixel each frame. A new check measures that on every zoom, and a second new check catches empty, murky or split-panel frames. Cursor runs both on v04, fixes what they find, and renders v05.",
+      "updated": "2026-10-09T12:10Z",
+      "mood": "your turn",
+      "done": "Script, voice, picture, edit, thumbnails and the upload package. v05c fixes your 2 notes: every slow zoom is checked for wobble, every frame for murky or unfinished pictures, and 023 now has its own music.",
+      "holdup": "",
       "steps": [
         {
           "who": "Ben",
@@ -74,31 +74,35 @@
         {
           "who": "Cursor",
           "what": "its own music",
-          "job": "J0078"
+          "job": "J0078",
+          "done": true,
+          "doneText": "done"
         },
         {
           "who": "Cursor",
-          "what": "fix the wobbly and unfinished frames, v05",
-          "job": "J0059"
+          "what": "fix the wobbly and unfinished frames, v05c",
+          "job": "J0059",
+          "done": true,
+          "doneText": "done · Fri 9 Oct"
         },
         {
           "who": "Claude",
-          "what": "check v05 frame by frame",
-          "afterJob": "J0059",
-          "lag": 60
+          "what": "check v05c frame by frame",
+          "done": true,
+          "doneText": "checked · Fri 9 Oct"
         },
         {
           "who": "Ben",
-          "what": "watch v05",
-          "whenText": "next week"
+          "what": "watch v05c",
+          "whenText": "now"
         }
       ],
-      "you": "",
-      "timing": "Airs Sun 25 Oct 18:00 London. Plenty of time for v05 and your re-watch.",
-      "line": "You asked for 2 fixes (wobbly pictures, frames that look unfinished). Cursor is checking every frame and making v05, with 023's own music: it had been sharing a track with 024 and 025. Then Claude checks it and it comes back to you.",
-      "youWhen": "",
-      "youShort": "",
-      "limit": "The new checks are being built on 025 first (the focus film), so 023's job follows straight after it."
+      "you": "Watch iCloud Drive › OWB UAT › 023_Venus_v05c_PHONE.mp4 (8 min 33 s). Tick it on the board, or note the times of anything you want changed.",
+      "timing": "Airs Sun 25 Oct 18:00 London. Your watch now leaves two weeks for any fixes.",
+      "line": "v05c is ready for you. The wobbly zooms and the unfinished-looking frames are fixed, the 2012 transit no longer shows its date stamp, and the 1978 painting is now the real Pioneer Venus photo of the clouds.",
+      "youWhen": "2026-10-09",
+      "youShort": "watch 023 v05c",
+      "limit": ""
     },
     "OWB:024": {
       "updated": "2026-10-09T08:40Z",
