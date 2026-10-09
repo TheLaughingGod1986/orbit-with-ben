@@ -1,0 +1,2131 @@
+{
+  "verdict": "FAIL",
+  "video": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/026_NearestStar_rough_v02.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "uhd_bt_paranal_06.mp4",
+      "title": "Yepun takes centre stage (time-lapse, UHD 13.4 s)",
+      "t": 15.4,
+      "at": "0:15",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "4",
+      "source": "parallax.mp4",
+      "title": null,
+      "t": 26.65,
+      "at": "0:27",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal seam at 0.452, horizontal seam at 0.456",
+        "noise: grain 6.42 over structure 9.85, 8x-downscaled std 10.74 < 13.44 and edge 0.0131 < 0.0259"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.63, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 7,
+      "row": "4",
+      "source": "journey.mp4",
+      "title": null,
+      "t": 30.93,
+      "at": "0:31",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 9.3 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "low detail: luma std 9.3 < 13.44 and edge density 0.0058 < 0.0259 (absolute floor)",
+          "near-black: mean 3.64, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 16,
+      "row": "7",
+      "source": "bt_lasilla_crux.mp4",
+      "title": "Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)",
+      "t": 71.05,
+      "at": "1:11",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "low detail: luma std 16.69 < 18.0"
+      ]
+    },
+    {
+      "cut": 24,
+      "row": "9",
+      "source": "journey.mp4",
+      "title": null,
+      "t": 110.27,
+      "at": "1:50",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 11.61 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "low detail: luma std 11.61 < 13.44 and edge density 0.0079 < 0.0259 (absolute floor)",
+          "near-black: mean 3.99, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 29,
+      "row": "11",
+      "source": "uhd_yb_paranal_02.mp4",
+      "title": "Auxiliary Telescope at work at Paranal (time-lapse, UHD 10.8 s)",
+      "t": 130.07,
+      "at": "2:10",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "12",
+      "source": "parallax.mp4",
+      "title": null,
+      "t": 146.27,
+      "at": "2:26",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal seam at 0.452, horizontal seam at 0.456",
+        "noise: grain 6.35 over structure 9.85, 8x-downscaled std 10.74 < 13.44 and edge 0.0125 < 0.0259"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.62, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 34,
+      "row": "12",
+      "source": "vltfromvistatimelapse.mp4",
+      "title": "A VISTA on the VLT (time-lapse, 720p 29.4 s)",
+      "t": 155.15,
+      "at": "2:35",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 35,
+      "row": "12",
+      "source": "KSC-20191031-PH-GEB01_0003.jpg",
+      "title": "Night sky over Kennedy Space Center (2)",
+      "t": 159.88,
+      "at": "2:40",
+      "fail": [
+        "noise: grain 7.29 over structure 3.93, 8x-downscaled std 4.54 < 13.44 and edge 0.0104 < 0.0259"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 36,
+      "row": "12",
+      "source": "uhd_bt_paranal_06.mp4",
+      "title": "Yepun takes centre stage (time-lapse, UHD 13.4 s)",
+      "t": 164.43,
+      "at": "2:44",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 38,
+      "row": "13",
+      "source": "KSC-20191031-PH-GEB01_0005.jpg",
+      "title": "Night sky over Kennedy Space Center",
+      "t": 173.8,
+      "at": "2:54",
+      "fail": [
+        "low detail: luma std 11.59 < 13.44 and edge density 0.0256 < 0.0259 (absolute floor)",
+        "noise: grain 7.11 over structure 6.67, 8x-downscaled std 7.25 < 13.44 and edge 0.0248 < 0.0259"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 40,
+      "row": "14",
+      "source": "parallax.mp4",
+      "title": null,
+      "t": 184.17,
+      "at": "3:04",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal seam at 0.452, horizontal seam at 0.456",
+        "noise: grain 6.38 over structure 9.85, 8x-downscaled std 10.75 < 13.44 and edge 0.0126 < 0.0259"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.63, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 48,
+      "row": "15",
+      "source": "vltfromvistatimelapse.mp4",
+      "title": "A VISTA on the VLT (time-lapse, 720p 29.4 s)",
+      "t": 221.92,
+      "at": "3:42",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 49,
+      "row": "16",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 225.93,
+      "at": "3:46",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 5.41, p95 4.0"
+        ]
+      }
+    },
+    {
+      "cut": 51,
+      "row": "17",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 233.73,
+      "at": "3:54",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 7.7, p95 27.0"
+        ]
+      }
+    },
+    {
+      "cut": 62,
+      "row": "21",
+      "source": "bt_lasilla_crux.mp4",
+      "title": "Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)",
+      "t": 279.72,
+      "at": "4:40",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "low detail: luma std 12.8 < 18.0"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "21",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 284.35,
+      "at": "4:44",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 8.67, p95 20.0"
+        ]
+      }
+    },
+    {
+      "cut": 66,
+      "row": "22",
+      "source": "PIA17462.jpg",
+      "title": "Voyager 1 entering interstellar space artist concept",
+      "t": 298.37,
+      "at": "4:58",
+      "fail": [
+        "low detail: luma std 9.92 < 13.44 and edge density 0.0068 < 0.0259 (absolute floor)",
+        "near-black: mean 38.4, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: 'Voyager 1 entering interstellar space artist concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 70,
+      "row": "24",
+      "source": "journey.mp4",
+      "title": null,
+      "t": 317.8,
+      "at": "5:18",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.95 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 5.06, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 71,
+      "row": "24",
+      "source": "PIA17462.jpg",
+      "title": "Voyager 1 entering interstellar space artist concept",
+      "t": 323.48,
+      "at": "5:23",
+      "fail": [
+        "low detail: luma std 7.08 < 13.44 and edge density 0.0027 < 0.0259 (absolute floor)"
+      ],
+      "warn": [
+        "kind of picture: 'Voyager 1 entering interstellar space artist concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 78,
+      "row": "26",
+      "source": "PIA21839.jpg",
+      "title": "Voyager in deep space artist concept",
+      "t": 356.77,
+      "at": "5:57",
+      "fail": [
+        "near-black: mean 22.97, p95 69.0"
+      ],
+      "warn": [
+        "kind of picture: 'Voyager in deep space artist concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "26",
+      "source": "uhd_yb_paranal_02.mp4",
+      "title": "Auxiliary Telescope at work at Paranal (time-lapse, UHD 10.8 s)",
+      "t": 360.3,
+      "at": "6:00",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 84,
+      "row": "28",
+      "source": "eso1629d_video.mp4",
+      "title": "A journey to Proxima Centauri and its planet (video, mute)",
+      "t": 385.2,
+      "at": "6:25",
+      "fail": [
+        "near-black: mean 8.58, p95 31.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 86,
+      "row": "28",
+      "source": "eso1629d_video.mp4",
+      "title": "A journey to Proxima Centauri and its planet (video, mute)",
+      "t": 394.15,
+      "at": "6:34",
+      "fail": [
+        "low detail: luma std 10.53 < 13.44 and edge density 0.0137 < 0.0259 (absolute floor)",
+        "near-black: mean 10.69, p95 31.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 90,
+      "row": "30",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "title": "SDO view of the 17 April 2016 solar flare (video)",
+      "t": 410.17,
+      "at": "6:50",
+      "fail": [
+        "near-black: mean 18.45, p95 78.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 91,
+      "row": "30",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "title": "SDO view of the 17 April 2016 solar flare (video)",
+      "t": 414.95,
+      "at": "6:55",
+      "fail": [
+        "near-black: mean 16.98, p95 77.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 102,
+      "row": "33",
+      "source": "bt_lasilla_crux.mp4",
+      "title": "Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)",
+      "t": 471.12,
+      "at": "7:51",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: vertical seam at 0.881"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 103,
+      "row": "33",
+      "source": "uhd_bt_paranal_06.mp4",
+      "title": "Yepun takes centre stage (time-lapse, UHD 13.4 s)",
+      "t": 476.3,
+      "at": "7:56",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 104,
+      "row": "33",
+      "source": "vltfromvistatimelapse.mp4",
+      "title": "A VISTA on the VLT (time-lapse, 720p 29.4 s)",
+      "t": 481.7,
+      "at": "8:02",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 105,
+      "row": "33",
+      "source": "uhd_yb_paranal_02.mp4",
+      "title": "Auxiliary Telescope at work at Paranal (time-lapse, UHD 10.8 s)",
+      "t": 487.05,
+      "at": "8:07",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    }
+  ],
+  "warn": [
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "title": "Hubble's best image of Alpha Centauri A and B",
+      "t": 18.68,
+      "at": "0:19",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "4",
+      "source": "triple.mp4",
+      "title": null,
+      "t": 22.33,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.61 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.07, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 12,
+      "row": "6",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "SDO full disk view of the Sun, 21 June 2010",
+      "t": 52.0,
+      "at": "0:52",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "7",
+      "source": "KSC-20191031-PH-GEB01_0003.jpg",
+      "title": "Night sky over Kennedy Space Center (2)",
+      "t": 76.45,
+      "at": "1:16",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.09 < 18.0"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "7",
+      "source": "KSC-20191031-PH-GEB01_0005.jpg",
+      "title": "Night sky over Kennedy Space Center",
+      "t": 81.05,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.46 < 18.0"
+      ]
+    },
+    {
+      "cut": 20,
+      "row": "8",
+      "source": "triple.mp4",
+      "title": null,
+      "t": 90.63,
+      "at": "1:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.61 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.07, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 23,
+      "row": "8",
+      "source": "eso1250a_8k.jpg",
+      "title": null,
+      "t": 106.1,
+      "at": "1:46",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 42,
+      "row": "14",
+      "source": "eso1250a_8k.jpg",
+      "title": null,
+      "t": 193.15,
+      "at": "3:13",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 53,
+      "row": "18",
+      "source": "scale.mp4",
+      "title": null,
+      "t": 241.5,
+      "at": "4:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.0028 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 12.41, p95 59.0"
+        ]
+      }
+    },
+    {
+      "cut": 54,
+      "row": "18",
+      "source": "scale.mp4",
+      "title": null,
+      "t": 245.0,
+      "at": "4:05",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.0027 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 13.02, p95 63.0"
+        ]
+      }
+    },
+    {
+      "cut": 73,
+      "row": "24",
+      "source": "PIA21739.jpg",
+      "title": "Voyager 1's launch vehicle",
+      "t": 334.33,
+      "at": "5:34",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 74,
+      "row": "25",
+      "source": "PIA14111.jpg",
+      "title": "Model of Voyager artist concept",
+      "t": 338.93,
+      "at": "5:39",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Model of Voyager artist concept' (artist), look at it full size",
+        "sharpness: upscaled 2.22x, may look soft"
+      ]
+    },
+    {
+      "cut": 75,
+      "row": "25",
+      "source": "PIA21746.jpg",
+      "title": "Voyager 1 launch (2)",
+      "t": 343.6,
+      "at": "5:44",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.30x, may look soft"
+      ]
+    },
+    {
+      "cut": 77,
+      "row": "25",
+      "source": "PIA17464.jpg",
+      "title": "Voyager 1 launch 1977",
+      "t": 352.23,
+      "at": "5:52",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 80,
+      "row": "27",
+      "source": "lighttimes.mp4",
+      "title": null,
+      "t": 364.43,
+      "at": "6:04",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.51 < 18.0",
+        "low detail: edge density 0.0006 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.62, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 81,
+      "row": "27",
+      "source": "lighttimes.mp4",
+      "title": null,
+      "t": 369.87,
+      "at": "6:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.0023 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 9.61, p95 12.0"
+        ]
+      }
+    },
+    {
+      "cut": 82,
+      "row": "27",
+      "source": "PIA21747.jpg",
+      "title": "Voyager 1 launch",
+      "t": 375.6,
+      "at": "6:16",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft",
+        "low detail: edge density 0.0014 < film p5 0.0032"
+      ]
+    },
+    {
+      "cut": 83,
+      "row": "28",
+      "source": "eso1629a.jpg",
+      "title": "Artist's impression of Proxima b (1)",
+      "t": 380.78,
+      "at": "6:21",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of Proxima b (1)' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 85,
+      "row": "28",
+      "source": "eso1629a.jpg",
+      "title": "Artist's impression of Proxima b (1)",
+      "t": 389.63,
+      "at": "6:30",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of Proxima b (1)' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 87,
+      "row": "29",
+      "source": "eso1629e.jpg",
+      "title": "A fly-through of the Proxima Centauri system (video, mute)",
+      "t": 398.1,
+      "at": "6:38",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 89,
+      "row": "30",
+      "source": "eso1629e.jpg",
+      "title": "A fly-through of the Proxima Centauri system (video, mute)",
+      "t": 405.82,
+      "at": "6:46",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 94,
+      "row": "31",
+      "source": "ACS3_SolarPanels_001.jpg",
+      "title": "ACS3 artist's concept",
+      "t": 429.52,
+      "at": "7:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'ACS3 artist's concept' (artist), look at it full size"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "uhd_yb_paranal_01.mp4",
+      "title": "Milky Way revealed (time-lapse, UHD 7.6 s)",
+      "t": 1.87,
+      "at": "0:02",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "1",
+      "source": "iss073e0982261.jpg",
+      "title": "The Milky Way spans the night sky above a yellow-green airglow (ISS)",
+      "t": 5.87,
+      "at": "0:06",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "uhd_bt_paranal_01.mp4",
+      "title": "Distant time-lapse of Paranal (UHD 8.1 s)",
+      "t": 10.77,
+      "at": "0:11",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "uhd_bt_paranal_06.mp4",
+      "title": "Yepun takes centre stage (time-lapse, UHD 13.4 s)",
+      "t": 15.4,
+      "at": "0:15",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "title": "Hubble's best image of Alpha Centauri A and B",
+      "t": 18.68,
+      "at": "0:19",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "4",
+      "source": "triple.mp4",
+      "title": null,
+      "t": 22.33,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.61 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.07, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 6,
+      "row": "4",
+      "source": "parallax.mp4",
+      "title": null,
+      "t": 26.65,
+      "at": "0:27",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal seam at 0.452, horizontal seam at 0.456",
+        "noise: grain 6.42 over structure 9.85, 8x-downscaled std 10.74 < 13.44 and edge 0.0131 < 0.0259"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.63, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 7,
+      "row": "4",
+      "source": "journey.mp4",
+      "title": null,
+      "t": 30.93,
+      "at": "0:31",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 9.3 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "low detail: luma std 9.3 < 13.44 and edge density 0.0058 < 0.0259 (absolute floor)",
+          "near-black: mean 3.64, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 8,
+      "row": "5",
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "title": "Hubble's best image of Alpha Centauri A and B",
+      "t": 35.45,
+      "at": "0:35",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "5",
+      "source": "eso1302a.jpg",
+      "title": "The globular star cluster 47 Tucanae",
+      "t": 39.55,
+      "at": "0:40",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "5",
+      "source": "eso1323a.jpg",
+      "title": "The globular star cluster NGC 6752",
+      "t": 43.52,
+      "at": "0:44",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "5",
+      "source": "heic0809a.jpg",
+      "title": "The majestic globular Omega Centauri",
+      "t": 47.7,
+      "at": "0:48",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "6",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "SDO full disk view of the Sun, 21 June 2010",
+      "t": 52.0,
+      "at": "0:52",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "6",
+      "source": "GSFC_20171208_Archive_e000790.jpg",
+      "title": "SDO sees giant filament on the Sun",
+      "t": 56.68,
+      "at": "0:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 14,
+      "row": "6",
+      "source": "eso1629i.jpg",
+      "title": "The sky around Alpha Centauri and Proxima Centauri",
+      "t": 61.4,
+      "at": "1:01",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "7",
+      "source": "eso1629i.jpg",
+      "title": "The sky around Alpha Centauri and Proxima Centauri",
+      "t": 66.03,
+      "at": "1:06",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 16,
+      "row": "7",
+      "source": "bt_lasilla_crux.mp4",
+      "title": "Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)",
+      "t": 71.05,
+      "at": "1:11",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "low detail: luma std 16.69 < 18.0"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "7",
+      "source": "KSC-20191031-PH-GEB01_0003.jpg",
+      "title": "Night sky over Kennedy Space Center (2)",
+      "t": 76.45,
+      "at": "1:16",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.09 < 18.0"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "7",
+      "source": "KSC-20191031-PH-GEB01_0005.jpg",
+      "title": "Night sky over Kennedy Space Center",
+      "t": 81.05,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.46 < 18.0"
+      ]
+    },
+    {
+      "cut": 19,
+      "row": "7",
+      "source": "eso0905a.jpg",
+      "title": "The Carina Nebula",
+      "t": 85.65,
+      "at": "1:26",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "8",
+      "source": "triple.mp4",
+      "title": null,
+      "t": 90.63,
+      "at": "1:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.61 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.07, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 21,
+      "row": "8",
+      "source": "eso0844a.jpg",
+      "title": "The globular cluster Omega Centauri",
+      "t": 95.55,
+      "at": "1:36",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "8",
+      "source": "uhd_bt_paranal_07.mp4",
+      "title": "Yepun in action (time-lapse, UHD 8.8 s)",
+      "t": 101.02,
+      "at": "1:41",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "8",
+      "source": "eso1250a_8k.jpg",
+      "title": null,
+      "t": 106.1,
+      "at": "1:46",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 24,
+      "row": "9",
+      "source": "journey.mp4",
+      "title": null,
+      "t": 110.27,
+      "at": "1:50",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 11.61 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "low detail: luma std 11.61 < 13.44 and edge density 0.0079 < 0.0259 (absolute floor)",
+          "near-black: mean 3.99, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 25,
+      "row": "9",
+      "source": "iss073e0982679.jpg",
+      "title": "The Milky Way spans the night sky above an orange-yellow airglow (ISS)",
+      "t": 114.98,
+      "at": "1:55",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "9",
+      "source": "eso1031a.jpg",
+      "title": "The Carina Nebula around the Wolf-Rayet star WR 22",
+      "t": 119.75,
+      "at": "2:00",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 27,
+      "row": "10",
+      "source": "GSFC_20171208_Archive_e000256.jpg",
+      "title": "A Hubble sky full of stars",
+      "t": 123.32,
+      "at": "2:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 28,
+      "row": "10",
+      "source": "iss073e0982261.jpg",
+      "title": "The Milky Way spans the night sky above a yellow-green airglow (ISS)",
+      "t": 126.28,
+      "at": "2:06",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 29,
+      "row": "11",
+      "source": "uhd_yb_paranal_02.mp4",
+      "title": "Auxiliary Telescope at work at Paranal (time-lapse, UHD 10.8 s)",
+      "t": 130.07,
+      "at": "2:10",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "11",
+      "source": "iss073e0982679.jpg",
+      "title": "The Milky Way spans the night sky above an orange-yellow airglow (ISS)",
+      "t": 135.38,
+      "at": "2:15",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 31,
+      "row": "11",
+      "source": "eso1323a.jpg",
+      "title": "The globular star cluster NGC 6752",
+      "t": 141.08,
+      "at": "2:21",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "12",
+      "source": "parallax.mp4",
+      "title": null,
+      "t": 146.27,
+      "at": "2:26",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal seam at 0.452, horizontal seam at 0.456",
+        "noise: grain 6.35 over structure 9.85, 8x-downscaled std 10.74 < 13.44 and edge 0.0125 < 0.0259"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.62, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 33,
+      "row": "12",
+      "source": "eso0934a.jpg",
+      "title": "A 340-million pixel starscape from Paranal",
+      "t": 150.7,
+      "at": "2:31",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "12",
+      "source": "vltfromvistatimelapse.mp4",
+      "title": "A VISTA on the VLT (time-lapse, 720p 29.4 s)",
+      "t": 155.15,
+      "at": "2:35",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 35,
+      "row": "12",
+      "source": "KSC-20191031-PH-GEB01_0003.jpg",
+      "title": "Night sky over Kennedy Space Center (2)",
+      "t": 159.88,
+      "at": "2:40",
+      "fail": [
+        "noise: grain 7.29 over structure 3.93, 8x-downscaled std 4.54 < 13.44 and edge 0.0104 < 0.0259"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 36,
+      "row": "12",
+      "source": "uhd_bt_paranal_06.mp4",
+      "title": "Yepun takes centre stage (time-lapse, UHD 13.4 s)",
+      "t": 164.43,
+      "at": "2:44",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 37,
+      "row": "13",
+      "source": "Tycho_Brahe.jpg",
+      "title": "Portrait of Tycho Brahe",
+      "t": 169.0,
+      "at": "2:49",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 38,
+      "row": "13",
+      "source": "KSC-20191031-PH-GEB01_0005.jpg",
+      "title": "Night sky over Kennedy Space Center",
+      "t": 173.8,
+      "at": "2:54",
+      "fail": [
+        "low detail: luma std 11.59 < 13.44 and edge density 0.0256 < 0.0259 (absolute floor)",
+        "noise: grain 7.11 over structure 6.67, 8x-downscaled std 7.25 < 13.44 and edge 0.0248 < 0.0259"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 39,
+      "row": "13",
+      "source": "eso1031a.jpg",
+      "title": "The Carina Nebula around the Wolf-Rayet star WR 22",
+      "t": 178.98,
+      "at": "2:59",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 40,
+      "row": "14",
+      "source": "parallax.mp4",
+      "title": null,
+      "t": 184.17,
+      "at": "3:04",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal seam at 0.452, horizontal seam at 0.456",
+        "noise: grain 6.38 over structure 9.85, 8x-downscaled std 10.75 < 13.44 and edge 0.0126 < 0.0259"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.63, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 41,
+      "row": "14",
+      "source": "eso0934a.jpg",
+      "title": "A 340-million pixel starscape from Paranal",
+      "t": 188.77,
+      "at": "3:09",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 42,
+      "row": "14",
+      "source": "eso1250a_8k.jpg",
+      "title": null,
+      "t": 193.15,
+      "at": "3:13",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 43,
+      "row": "14",
+      "source": "GSFC_20171208_Archive_e000256.jpg",
+      "title": "A Hubble sky full of stars",
+      "t": 197.95,
+      "at": "3:18",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 44,
+      "row": "14",
+      "source": "uhd_bt_paranal_01.mp4",
+      "title": "Distant time-lapse of Paranal (UHD 8.1 s)",
+      "t": 202.82,
+      "at": "3:23",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 45,
+      "row": "15",
+      "source": "gaia_sky_in_colour.jpg",
+      "title": "gaia sky in colour",
+      "t": 207.3,
+      "at": "3:27",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 46,
+      "row": "15",
+      "source": "eso0844a.jpg",
+      "title": "The globular cluster Omega Centauri",
+      "t": 212.17,
+      "at": "3:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 47,
+      "row": "15",
+      "source": "gaia_sky_in_colour.jpg",
+      "title": "gaia sky in colour",
+      "t": 217.15,
+      "at": "3:37",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 48,
+      "row": "15",
+      "source": "vltfromvistatimelapse.mp4",
+      "title": "A VISTA on the VLT (time-lapse, 720p 29.4 s)",
+      "t": 221.92,
+      "at": "3:42",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 49,
+      "row": "16",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 225.93,
+      "at": "3:46",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 5.41, p95 4.0"
+        ]
+      }
+    },
+    {
+      "cut": 50,
+      "row": "16",
+      "source": "heic1007a.jpg",
+      "title": "Hubble captures view of 'Mystic Mountain' (Carina)",
+      "t": 229.75,
+      "at": "3:50",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 51,
+      "row": "17",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 233.73,
+      "at": "3:54",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 7.7, p95 27.0"
+        ]
+      }
+    },
+    {
+      "cut": 52,
+      "row": "17",
+      "source": "eso1302a.jpg",
+      "title": "The globular star cluster 47 Tucanae",
+      "t": 237.45,
+      "at": "3:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 53,
+      "row": "18",
+      "source": "scale.mp4",
+      "title": null,
+      "t": 241.5,
+      "at": "4:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.0028 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 12.41, p95 59.0"
+        ]
+      }
+    },
+    {
+      "cut": 54,
+      "row": "18",
+      "source": "scale.mp4",
+      "title": null,
+      "t": 245.0,
+      "at": "4:05",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.0027 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 13.02, p95 63.0"
+        ]
+      }
+    },
+    {
+      "cut": 55,
+      "row": "18",
+      "source": "heic1007a.jpg",
+      "title": "Hubble captures view of 'Mystic Mountain' (Carina)",
+      "t": 248.25,
+      "at": "4:08",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 56,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "NASA Blue Marble 2007 East",
+      "t": 252.35,
+      "at": "4:12",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 57,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "title": "Full Moon (LRO)",
+      "t": 256.58,
+      "at": "4:17",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 58,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e001788.jpg",
+      "title": "Eastern Hemisphere - Blue Marble 2012",
+      "t": 260.92,
+      "at": "4:21",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 59,
+      "row": "20",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "NASA Blue Marble 2007 East",
+      "t": 265.8,
+      "at": "4:26",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 60,
+      "row": "20",
+      "source": "GSFC_20171208_Archive_e001788.jpg",
+      "title": "Eastern Hemisphere - Blue Marble 2012",
+      "t": 270.17,
+      "at": "4:30",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 61,
+      "row": "20",
+      "source": "iss025e015176.jpg",
+      "title": "Night view of Earth (Expedition 25)",
+      "t": 274.72,
+      "at": "4:35",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 62,
+      "row": "21",
+      "source": "bt_lasilla_crux.mp4",
+      "title": "Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)",
+      "t": 279.72,
+      "at": "4:40",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "low detail: luma std 12.8 < 18.0"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "21",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 284.35,
+      "at": "4:44",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 8.67, p95 20.0"
+        ]
+      }
+    },
+    {
+      "cut": 64,
+      "row": "21",
+      "source": "eso0905a.jpg",
+      "title": "The Carina Nebula",
+      "t": 289.2,
+      "at": "4:49",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 65,
+      "row": "21",
+      "source": "heic0809a.jpg",
+      "title": "The majestic globular Omega Centauri",
+      "t": 293.83,
+      "at": "4:54",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "22",
+      "source": "PIA17462.jpg",
+      "title": "Voyager 1 entering interstellar space artist concept",
+      "t": 298.37,
+      "at": "4:58",
+      "fail": [
+        "low detail: luma std 9.92 < 13.44 and edge density 0.0068 < 0.0259 (absolute floor)",
+        "near-black: mean 38.4, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: 'Voyager 1 entering interstellar space artist concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 67,
+      "row": "22",
+      "source": "PIA21739.jpg",
+      "title": "Voyager 1's launch vehicle",
+      "t": 303.67,
+      "at": "5:04",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "22",
+      "source": "PIA21746.jpg",
+      "title": "Voyager 1 launch (2)",
+      "t": 309.17,
+      "at": "5:09",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 69,
+      "row": "23",
+      "source": "PIA17464.jpg",
+      "title": "Voyager 1 launch 1977",
+      "t": 313.33,
+      "at": "5:13",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 70,
+      "row": "24",
+      "source": "journey.mp4",
+      "title": null,
+      "t": 317.8,
+      "at": "5:18",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.95 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 5.06, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 71,
+      "row": "24",
+      "source": "PIA17462.jpg",
+      "title": "Voyager 1 entering interstellar space artist concept",
+      "t": 323.48,
+      "at": "5:23",
+      "fail": [
+        "low detail: luma std 7.08 < 13.44 and edge density 0.0027 < 0.0259 (absolute floor)"
+      ],
+      "warn": [
+        "kind of picture: 'Voyager 1 entering interstellar space artist concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 72,
+      "row": "24",
+      "source": "PIA21747.jpg",
+      "title": "Voyager 1 launch",
+      "t": 329.15,
+      "at": "5:29",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "24",
+      "source": "PIA21739.jpg",
+      "title": "Voyager 1's launch vehicle",
+      "t": 334.33,
+      "at": "5:34",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 74,
+      "row": "25",
+      "source": "PIA14111.jpg",
+      "title": "Model of Voyager artist concept",
+      "t": 338.93,
+      "at": "5:39",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Model of Voyager artist concept' (artist), look at it full size",
+        "sharpness: upscaled 2.22x, may look soft"
+      ]
+    },
+    {
+      "cut": 75,
+      "row": "25",
+      "source": "PIA21746.jpg",
+      "title": "Voyager 1 launch (2)",
+      "t": 343.6,
+      "at": "5:44",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.30x, may look soft"
+      ]
+    },
+    {
+      "cut": 76,
+      "row": "25",
+      "source": "uhd_bt_paranal_07.mp4",
+      "title": "Yepun in action (time-lapse, UHD 8.8 s)",
+      "t": 347.82,
+      "at": "5:48",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 77,
+      "row": "25",
+      "source": "PIA17464.jpg",
+      "title": "Voyager 1 launch 1977",
+      "t": 352.23,
+      "at": "5:52",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 78,
+      "row": "26",
+      "source": "PIA21839.jpg",
+      "title": "Voyager in deep space artist concept",
+      "t": 356.77,
+      "at": "5:57",
+      "fail": [
+        "near-black: mean 22.97, p95 69.0"
+      ],
+      "warn": [
+        "kind of picture: 'Voyager in deep space artist concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "26",
+      "source": "uhd_yb_paranal_02.mp4",
+      "title": "Auxiliary Telescope at work at Paranal (time-lapse, UHD 10.8 s)",
+      "t": 360.3,
+      "at": "6:00",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 80,
+      "row": "27",
+      "source": "lighttimes.mp4",
+      "title": null,
+      "t": 364.43,
+      "at": "6:04",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.51 < 18.0",
+        "low detail: edge density 0.0006 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 4.62, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 81,
+      "row": "27",
+      "source": "lighttimes.mp4",
+      "title": null,
+      "t": 369.87,
+      "at": "6:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.0023 < film p5 0.0032"
+      ],
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "passed": [
+          "near-black: mean 9.61, p95 12.0"
+        ]
+      }
+    },
+    {
+      "cut": 82,
+      "row": "27",
+      "source": "PIA21747.jpg",
+      "title": "Voyager 1 launch",
+      "t": 375.6,
+      "at": "6:16",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft",
+        "low detail: edge density 0.0014 < film p5 0.0032"
+      ]
+    },
+    {
+      "cut": 83,
+      "row": "28",
+      "source": "eso1629a.jpg",
+      "title": "Artist's impression of Proxima b (1)",
+      "t": 380.78,
+      "at": "6:21",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of Proxima b (1)' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 84,
+      "row": "28",
+      "source": "eso1629d_video.mp4",
+      "title": "A journey to Proxima Centauri and its planet (video, mute)",
+      "t": 385.2,
+      "at": "6:25",
+      "fail": [
+        "near-black: mean 8.58, p95 31.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 85,
+      "row": "28",
+      "source": "eso1629a.jpg",
+      "title": "Artist's impression of Proxima b (1)",
+      "t": 389.63,
+      "at": "6:30",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of Proxima b (1)' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 86,
+      "row": "28",
+      "source": "eso1629d_video.mp4",
+      "title": "A journey to Proxima Centauri and its planet (video, mute)",
+      "t": 394.15,
+      "at": "6:34",
+      "fail": [
+        "low detail: luma std 10.53 < 13.44 and edge density 0.0137 < 0.0259 (absolute floor)",
+        "near-black: mean 10.69, p95 31.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 87,
+      "row": "29",
+      "source": "eso1629e.jpg",
+      "title": "A fly-through of the Proxima Centauri system (video, mute)",
+      "t": 398.1,
+      "at": "6:38",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 88,
+      "row": "29",
+      "source": "eso1629e_video.mp4",
+      "title": "A fly-through of the Proxima Centauri system (video, mute)",
+      "t": 401.7,
+      "at": "6:42",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 89,
+      "row": "30",
+      "source": "eso1629e.jpg",
+      "title": "A fly-through of the Proxima Centauri system (video, mute)",
+      "t": 405.82,
+      "at": "6:46",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 90,
+      "row": "30",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "title": "SDO view of the 17 April 2016 solar flare (video)",
+      "t": 410.17,
+      "at": "6:50",
+      "fail": [
+        "near-black: mean 18.45, p95 78.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 91,
+      "row": "30",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "title": "SDO view of the 17 April 2016 solar flare (video)",
+      "t": 414.95,
+      "at": "6:55",
+      "fail": [
+        "near-black: mean 16.98, p95 77.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 92,
+      "row": "30",
+      "source": "GSFC_20171208_Archive_e000759.jpg",
+      "title": "Two coronal holes on the Sun (SDO)",
+      "t": 419.58,
+      "at": "7:00",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 93,
+      "row": "31",
+      "source": "ACD24-0020-061.jpg",
+      "title": "ACS3 test and final preparation for launch",
+      "t": 424.2,
+      "at": "7:04",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 94,
+      "row": "31",
+      "source": "ACS3_SolarPanels_001.jpg",
+      "title": "ACS3 artist's concept",
+      "t": 429.52,
+      "at": "7:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'ACS3 artist's concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 95,
+      "row": "31",
+      "source": "CamA_Seq109_2024-08-28_17-17-11Z_V2_S560161.jpg",
+      "title": "ACS3 onboard view of sail and booms",
+      "t": 434.38,
+      "at": "7:14",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 96,
+      "row": "31",
+      "source": "CamC_Seq109_2024-08-28_17-17-13Z_V2_S595171.jpg",
+      "title": "ACS3 onboard view of sail and booms (camera C)",
+      "t": 439.35,
+      "at": "7:19",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 97,
+      "row": "32",
+      "source": "PIA23214.jpg",
+      "title": "Deep Space Network Goldstone complex",
+      "t": 444.68,
+      "at": "7:25",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 98,
+      "row": "32",
+      "source": "PIA24163.jpg",
+      "title": "New all-in-one antenna for the Deep Space Network",
+      "t": 449.83,
+      "at": "7:30",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 99,
+      "row": "32",
+      "source": "PIA25136.jpg",
+      "title": "A new antenna for NASA's Deep Space Network",
+      "t": 454.92,
+      "at": "7:35",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 100,
+      "row": "33",
+      "source": "PIA26147.jpg",
+      "title": "Six DSN antennas in Madrid arrayed",
+      "t": 460.33,
+      "at": "7:40",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 101,
+      "row": "33",
+      "source": "PIA25137.jpg",
+      "title": "The Deep Space Network's new DSS-53 at night",
+      "t": 465.97,
+      "at": "7:46",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 102,
+      "row": "33",
+      "source": "bt_lasilla_crux.mp4",
+      "title": "Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)",
+      "t": 471.12,
+      "at": "7:51",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: vertical seam at 0.881"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 103,
+      "row": "33",
+      "source": "uhd_bt_paranal_06.mp4",
+      "title": "Yepun takes centre stage (time-lapse, UHD 13.4 s)",
+      "t": 476.3,
+      "at": "7:56",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 104,
+      "row": "33",
+      "source": "vltfromvistatimelapse.mp4",
+      "title": "A VISTA on the VLT (time-lapse, 720p 29.4 s)",
+      "t": 481.7,
+      "at": "8:02",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 105,
+      "row": "33",
+      "source": "uhd_yb_paranal_02.mp4",
+      "title": "Auxiliary Telescope at work at Paranal (time-lapse, UHD 10.8 s)",
+      "t": 487.05,
+      "at": "8:07",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 106,
+      "row": "33",
+      "source": "uhd_yb_paranal_01.mp4",
+      "title": "Milky Way revealed (time-lapse, UHD 7.6 s)",
+      "t": 492.1,
+      "at": "8:12",
+      "fail": [],
+      "warn": []
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0032,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
