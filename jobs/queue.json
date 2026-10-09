@@ -3598,10 +3598,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T18:41Z",
+      "eta": "2026-10-09T20:41Z",
       "created_by": "claude",
       "created_at": "2026-10-09T08:09Z",
       "result": "",
@@ -3750,6 +3750,11 @@
           "at": "2026-10-09T18:30Z",
           "by": "cursor",
           "what": "released: v01b render running detached per Claude #6086704806: tmux j0077-rough-v01b, log ~/_desk/logs/j0077-rough-v01b.log, done file ~/_desk/logs/j0077-rough-v01b.done (assembler 84a0faa). Next run: if .done=0, run picture_qa on /private/tmp/earth027_rough_work_v01b/027_EarthSpin_rough_v01b.mp4 with --cuts rough_v01b_pack/cuts_v01b.json and every pool json incl. pool_v01e.json, --out-dir rough_v01b_pack; then post the pack for Claude. Expect picture_qa FAIL 'kind of picture' on PIA00271 (NASA title 'Computer Simulated Global View'; S91-50688 is the same kind) - Claude to rule reviewed-ok or swap. Don't start a second render."
+        },
+        {
+          "at": "2026-10-09T18:41Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
