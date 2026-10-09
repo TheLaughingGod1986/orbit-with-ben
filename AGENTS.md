@@ -76,6 +76,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
    - Judge a Short by its day-1 Shorts-feed share (50% or more means fed), not by % viewed under ~50 views.
    - Stop a topic after 2 not-fed Shorts in a row, and run at most 6 in a row on one topic; then give it a 2-week break.
    - Every Short gets its own open, with frame 0 showing the titled subject and no opening background reused from the last 10 Shorts.
+   - **Test A, the opening Short (Ben, 9 Oct: yes), from 025 on:** one of each long's three Shorts is the long's own opening (the first 30–38 s of the master, reframed to 9:16, cut on a sentence end, gates as usual, Related video = the long). The weekday rotates by film. Plan, measures and readout dates: `05_Analytics/tests/SHORTS_TESTS.md`.
    - Aim for 60% or more average viewed on day 1.
    - End on the long's exact listing title and its video id, with a music bed for the full length.
    - Details: lessons doc §6.
