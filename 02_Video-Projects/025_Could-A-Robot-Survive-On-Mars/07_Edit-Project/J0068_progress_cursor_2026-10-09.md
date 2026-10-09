@@ -110,3 +110,9 @@ Items 6b (name labels), 6c (one machine per passage), 6d (wheel-holes hold), the
   - Unchanged segments are copied from `/private/tmp/mars025_full_work_v03e`.
 - **Render:** tmux `j0068-v03f-render`, log `~/_desk/logs/j0068-v03f-render.log`, done file `~/_desk/logs/j0068-v03f-render.done` (0 = render, picture_qa, music_gate and phone copy all done; 3 = render failed; 4 = a gate failed, see `full_rough_v03f_pack/gates_exit_v03f.txt`; 5 = phone copy failed). Outputs: `OWB UAT/025_MarsRobot_full_rough_v03f.mp4` and `OWB UAT/025_MarsRobot_v03f_PHONE.mp4`.
 - **Next run:** read the `.done` file. On 0, confirm the fill gate PASS in `summary_v03f.json`, confirm the phone copy is in OWB UAT (iCloud upload), commit the pack, post on #99. Per Claude it then goes straight to Ben's box.
+
+## Run 10 (04:20 BST): v03f delivered
+
+- v03f render `.done` = 0: `picture_qa=0 music_gate=0`, phone copy made. picture_qa PASS (0 of 107 fail, 28 WARN); music_gate PASS on the cut (v02 bed, 492 s); fill gate PASS (2:54 sky reviewed_ok); polish gate PASS; clip_check 0; 490.2 s at −14.3 LUFS.
+- `OWB UAT/025_MarsRobot_full_rough_v03f.mp4` (310 MB, sha256 cce6268c…) and `OWB UAT/025_MarsRobot_v03f_PHONE.mp4` (111 MB). iCloud (`brctl status`) idle and caught up at 04:14, nothing pending, so the phone copy is uploaded.
+- Pack committed (`full_rough_v03f_pack`, sheets with `git add -f`). Per Claude #6073193234 it goes straight to Ben's box.
