@@ -1,5 +1,5 @@
 {
-  "next_id": 75,
+  "next_id": 76,
   "jobs": [
     {
       "id": "J0001",
@@ -3243,6 +3243,32 @@
       ],
       "urgent": true,
       "done_ref": "f165f55"
+    },
+    {
+      "id": "J0075",
+      "title": "026 Nearest Star: its own score bed (Claude's brief, credit guard)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**026's own score bed (AGENTS.md lesson 7). Claude wrote the brief from the script.** The VO runs about 494 s, so ask for the full runtime.\n\nRun `04_Audio/tools/generate_music_bed.py --project nearest-star --length-ms 520000 --out-dir 02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music --generate --prompt \"<below>\"`:\n\n\"Instrumental cinematic space documentary underscore for Orbit with Ben, Nearest Star film. Night-sky wonder and quiet curiosity: the hush of looking up on a clear night, then the dizzying scale of the gap between the stars, then a long patient journey outward. Glassy celesta and soft bell tones, airy synth pads, gentle pulsing low strings, a slow-building warm string swell for the scale reveal, a hopeful lift near the end, closing on a long held chord. Pace: 66-80 BPM, steady and unhurried under British narration. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings, NOT the Mars robot's lonely felt piano and low strings. No vocals, no choir words, no drums, no EDM, no trailer hit.\"\n\n**Rules:**\n- **Credit guard:** read ElevenLabs credits left first. Don't generate if fewer than 30,000 would be left afterwards. Expect about 7,000 credits for 520 s.\n- **If the API returns short:** follow 025's method. Make one continuation take with the same prompt plus \"Continuation of the same piece: same key, tempo and instrumentation\", and join the takes with an 8 s equal-power crossfade at a chapter break. Never more than two takes, and never loop.\n- **Check:** `music_gate.py` on the bed must PASS (own, brief, not reused, no gap).\n- **Log:** both takes go in the ledger.\n- **Post:** the bed, its gate result and the credits.\n",
+      "ref": "",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T03:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T03:34Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [

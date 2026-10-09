@@ -15,6 +15,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0065 | mini | open (after J0064) | – | – | 026 picture · 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) |  |
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
+| J0075 | mini | open | – | – | 026 edit · 026 Nearest Star: its own score bed (Claude's brief, credit guard) |  |
 
 Recently finished:
 
