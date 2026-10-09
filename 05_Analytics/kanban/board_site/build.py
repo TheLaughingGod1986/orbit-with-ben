@@ -29,7 +29,7 @@ FOOTER = ('<footer>This board updates itself. The Mac mini rebuilds its data fro
           '<span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science; <b>OWB</b> from each film\'s '
           '<span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span>, the job queue and '
           '<span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben ("chief" is shown as Grok). '
-          'Your ticks are saved with this link and reach the studio agent within 15 minutes.</footer>')
+          'Your ticks are saved straight away with your board link; the studio agent picks them up within the hour.</footer>')
 
 PATCHES = [
     ("dbApi = db;", "dbApi = db.canWrite===false ? null : db;"),

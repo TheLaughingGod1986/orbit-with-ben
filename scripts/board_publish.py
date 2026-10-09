@@ -44,7 +44,7 @@ STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" 
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
 SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
-CHECKS_EVERY_S = 15 * 60  # Ben's OK/change ticks: re-read from the site at most every 15 min (Blob free tier)
+CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: re-read from the site at most hourly (Blob free-tier list calls)
 
 OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json"]
 HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json"]

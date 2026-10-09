@@ -2,7 +2,8 @@
 // for: window.claude.use("db") serves board/hos, board/owb, board/briefs, board/credits and checks/* from
 //   - board.json on the orbit-with-ben `board-data` branch (pushed by the Mac mini's scripts/board_publish.py
 //     whenever a job moves or main changes), re-read every 60 s; and
-//   - /api/checks (Ben's OK / needs-a-change ticks), re-read on load, after a tick and every 5 min.
+//   - /api/checks (Ben's OK / needs-a-change ticks), re-read on load, after a tick and on return to the tab
+//     (board.json also carries them, from the Mini's hourly read).
 // use("mcp") returns null, so the page never asks for a GitHub connector.
 (function () {
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
@@ -103,6 +104,5 @@
   window.claude = { use: async what => (what === "db" ? db : null) };
   pollData(); pollChecks();
   setInterval(pollData, 60 * 1000);
-  setInterval(pollChecks, 5 * 60 * 1000);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { pollData(); pollChecks(); } });
 })();
