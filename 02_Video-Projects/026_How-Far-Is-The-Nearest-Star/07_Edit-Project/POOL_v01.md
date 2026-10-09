@@ -61,3 +61,24 @@ Fetched to `pool_v01/timelapse/` (largest MP4 offered, used muted). Credit line 
 | eso1241a | A journey to Alpha Centauri | optional, rows 5/7 | 1280×720, 70 s. Clean only ~4.5–10 s: ESO logo 0–4 s, constellation lines and "Alpha Centauri" labels from ~15 s. |
 
 Out (`"labels": true` in pool_v02.json): eso1629g (white constellation chart), eso1702a, eso1702b, eso1629b (label overlays). None has an unannotated variant on its ESO page. The SDO M6.7 flare video opens on a text card, so cut in after it. Dropped (no insets): potw1343a, the Bessel portrait, e001586.
+
+## v04 additions: more time-lapses + star-field plates (J0065, Cursor covering, 9 Oct 2026; Claude #6074250379)
+
+`build_pool_v03.py` → `pool_v03.json` (v02 + 12). Every ESO/ESA-Hubble page title checked live; every file and frame strip checked by eye for logos, text and labels (sheets in `rough_v01_pack/pool_v03_contact/`). £0. Rule from Claude: at most two extra segments per time-lapse; fill the rest from these.
+
+| id | title | clean range / note |
+|---|---|---|
+| uhd_bt_paranal_06 | Yepun takes centre stage | 3840×2160, 13.4 s, clean throughout (laser guide star from ~10.5 s) |
+| uhd_bt_paranal_07 | Yepun in action | 3840×2160, 8.8 s; dome moves/blurs ~0.5–2 s, use 2.0–8.8 s |
+| uhd_yb_paranal_02 | Auxiliary Telescope at work at Paranal | 3840×2160, 10.8 s, clean; sky lightens after ~6 s |
+| vltfromvistatimelapse | A VISTA on the VLT | 1280×720 (1.5×), 29.4 s; **clean only 3.5–14.0 s**. Logo cards 0–3 s and 26–29 s, near-black 15–24 s, daylight frame + white flash ~24–25 s |
+| eso0844a | Omega Centauri (ESO) | 8040×7560 |
+| heic0809a | Omega Centauri (Hubble) | 11936×10891 |
+| eso1302a | 47 Tucanae | 8246×8246 |
+| eso1323a | NGC 6752 | 8221×8023 |
+| eso1250a | Carina Nebula (VST) | 17383×18656: ffmpeg can't decode, pre-shrink with `sips -Z 8000` |
+| eso0905a | Carina Nebula | 8408×8337 |
+| eso1031a | Carina around WR 22 | 8395×8261 |
+| heic1007a | Mystic Mountain (Carina) | 2104×1937 (crop ≤ ~1.0× for 1920 wide) |
+
+None labelled. eso1242a (VISTA Milky Way centre) dropped: no "large" file on the CDN. The star clusters sit on dark sky, so push into the bright core to pass the near-black gate.
