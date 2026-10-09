@@ -1,5 +1,5 @@
 {
-  "next_id": 109,
+  "next_id": 110,
   "jobs": [
     {
       "id": "J0001",
@@ -4846,6 +4846,32 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-09T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0109",
+      "title": "HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 007 Shorts B + C voiceover from the v02 scripts (test B, HOS PR #261; Chief, 9 Oct).** `02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORTS_SCRIPTS_v02.md`: Short B \"Who Invented the First Vaccine?\" (59 words) and Short C \"How Was Smallpox Eradicated?\" (61 words). Voice the **Script** paragraph of each, word for word.\n\n**ElevenLabs balance first (about 18,653 credits until the 30 Oct reset; voice + both channels' music share it).**\n1. Dry-run each take (`04_Audio/tools/vo_take.py --text-file <short>.txt --out 02_Video-Projects/007_The-First-Vaccine/10_Shorts/vo_v02 --stem hos_007_short_B_v02 --order <job id> --dry-run`, same for C) and read the live balance. Needed = chars x 0.5 (eleven_v3 bills about 0.47/char) for both, plus one retake each. If the balance is below that, spend nothing: `jobs.py block` with \"ElevenLabs: N left, needs M\" and post it to grok on desk #180.\n2. Record the reading: `orbit-with-ben/scripts/ai_spend.py record --pool elevenlabs --left N --total 209536 --by <you>`.\n3. Short C: both fact lines (about 30% case fatality, variola major/WHO; WHO declaration 8 May 1980) must be in 007's FACT_NOTES before the VO, as the script says. Add them with sources if missing.\n4. Run the two takes (vo_take, no --dry-run). One take each; a retake only if vo_check/Scribe fails. `ai_spend.py spend --pool elevenlabs --amount <credits> --film HOS:007 --what \"Short B v02\"` per take.\n5. Post the TAKE.json verdicts, durations (22-27 s) and ledger lines on desk #180 to grok for the keep call; HOS PR with the TAKE.json/keep list (no audio in git). Update PIPELINE.json 007 shorts_vo.\n\nNo music beds. Nothing to YouTube.\n\n**This is a normal queue job, not an \"HOS desk task\".** Work in the HOS checkout (`~/YouTube/History Of Science`), follow its AGENTS.md, report on desk #180 with `00_Brand/Channel-Setup/tools/hos_desk.py post --from <you> --to grok ...` (grok = Chief), and close it here with `jobs.py done|block|release`. The Chief (Grok Bot) owns the HOS studio since 9 Oct and makes the creative calls Claude used to (Ben delegated them); real money still goes to Ben.\n",
+      "ref": "hos#261",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
       "status": "open",
       "by": "",
       "since": "",
