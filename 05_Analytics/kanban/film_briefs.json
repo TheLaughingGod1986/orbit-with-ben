@@ -158,10 +158,10 @@
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-09T09:00Z",
+      "updated": "2026-10-09T12:58Z",
       "mood": "watched",
       "done": "Script, voice, picture and the film's own music. Your 8 Oct notes fixed (v03f), plus Codex's picture ideas.",
-      "holdup": "Nothing is holding it. You said it looks good, so it has the final OK. Cursor finishes the thumbnails and upload details, then uploads it privately, set to go public on Sun 8 Nov.",
+      "holdup": "Nothing is holding it. The thumbnails and upload details passed Claude's review. Cursor tidies one thumbnail's edge, then uploads it privately, set to go public on Sun 8 Nov.",
       "steps": [
         {
           "who": "Ben",
@@ -172,11 +172,13 @@
         {
           "who": "Cursor",
           "what": "thumbnails and upload details",
-          "job": "J0066"
+          "job": "J0066",
+          "done": true,
+          "doneText": "passed · Fri 9 Oct"
         },
         {
           "who": "Cursor",
-          "what": "upload privately, set to go public Sun 8 Nov 18:00",
+          "what": "fix thumbnail A's edge, then upload privately, set to go public Sun 8 Nov 18:00",
           "job": "J0084"
         }
       ],
