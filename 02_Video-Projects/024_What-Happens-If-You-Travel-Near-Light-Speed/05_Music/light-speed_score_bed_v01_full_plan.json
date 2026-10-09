@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-10-09T09:55:00+00:00",
+  "project": "light-speed",
+  "audio_file": "light-speed_score_bed_v01_full.mp3",
+  "status": "joined",
+  "model_id": "music_v2",
+  "force_instrumental": true,
+  "prompt": "Instrumental cinematic space documentary underscore for Orbit with Ben, Light Speed film. A forward pull that builds slowly: the quiet strangeness that your clock is already slow, the clean logic of why light sets the limit, a long journey out and back, and a bittersweet one-way ticket to the future. Pulsing arpeggiated synths like a steady clock, clean high strings, soft piano motif, a gradual build, one clear lift only at the time-dilation reveal, then settling to a reflective close on a held chord. Pace: 72-88 BPM, steady and moving under British narration. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings, NOT the Mars robot's lonely felt piano and low strings, NOT the Nearest Star's glassy celesta and bells, NOT Venus slow heat drones. No vocals, no choir words, no drums, no EDM, no trailer hit.\n\nTake 2 (continuation, joined after take 1): the same prompt plus \"Continuation of the same piece: same key, tempo and instrumentation.\"",
+  "takes": [
+    {
+      "file": "light-speed_score_bed_v01.mp3",
+      "song_id": "rqRL4Mh8tLA2MuE3iafK",
+      "length_ms_asked": 520000,
+      "seconds_returned": 403.04,
+      "credits": 5541,
+      "note": "returned short; quieter section from ~318 s raw, fades out by ~395 s; hushed bridge 230-252 s raw"
+    },
+    {
+      "file": "light-speed_score_bed_v01b.mp3",
+      "song_id": "uPJjd0LY8ex27E7TDrNU",
+      "length_ms_asked": 230000,
+      "seconds_returned": 230.03,
+      "credits": 3162,
+      "note": "quiet 20 s intro (skipped); ends with a dip at 200-210 s and a final chord"
+    }
+  ],
+  "join": {
+    "at_s_raw": 316.0,
+    "at_s_film": 316.0,
+    "crossfade_s": 8,
+    "curve": "qsin (equal power)",
+    "chapter_break": "crossfade ends on chapter 'The Price of Every Nine' (5:24 = 324 s)",
+    "take2_from_s": 20.0,
+    "take2_gain_db": -2.0,
+    "take2_fade_up": "3 s from -6 dB",
+    "tempo": 1.0,
+    "bridge_lift": "take 1's hushed bridge 228-253 s lifted 5 dB with 3 s ramps so it reads as a hush, not a stop",
+    "limiter": 0.95,
+    "result_seconds": 526.03,
+    "result_lufs": -15.4,
+    "result_true_peak_dbfs": -1.0,
+    "script": "_join_light_speed_bed_v01.py",
+    "check": "light-speed_score_bed_v01_full_join_check.json"
+  },
+  "brief_by": "Claude, J0079",
+  "by": "cursor",
+  "job": "J0079"
+}
