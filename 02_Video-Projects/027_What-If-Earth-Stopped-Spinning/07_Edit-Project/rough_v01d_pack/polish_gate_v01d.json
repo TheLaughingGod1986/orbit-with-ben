@@ -1,0 +1,2419 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/earth027_rough_work_v01d/027_EarthSpin_rough_v01d.mp4",
+  "edge_floor": 0.0077,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "15",
+      "cut": 16,
+      "t": 80.65,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "why": [
+        "low detail: edge density 0.0067 < film p5 0.0077"
+      ]
+    },
+    {
+      "row": "22",
+      "cut": 46,
+      "t": 243.03,
+      "source": "PIA23791.jpg",
+      "why": [
+        "low detail: edge density 0.0028 < film p5 0.0077"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 50,
+      "t": 259.35,
+      "source": "row24-25_tides.mp4",
+      "why": [
+        "low detail: luma std 16.3 < 18.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 51,
+      "t": 263.77,
+      "source": "row24-25_tides.mp4",
+      "why": [
+        "low detail: luma std 17.05 < 18.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 52,
+      "t": 268.1,
+      "source": "row24-25_tides.mp4",
+      "why": [
+        "low detail: luma std 17.79 < 18.0"
+      ]
+    },
+    {
+      "row": "27",
+      "cut": 61,
+      "t": 313.97,
+      "source": "NHQ201708210100.jpg",
+      "why": [
+        "low detail: edge density 0.005 < film p5 0.0077"
+      ]
+    },
+    {
+      "row": "33",
+      "cut": 75,
+      "t": 378.68,
+      "source": "row33_clock.mp4",
+      "why": [
+        "low detail: luma std 16.13 < 18.0"
+      ]
+    },
+    {
+      "row": "35",
+      "cut": 80,
+      "t": 401.67,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "why": [
+        "low detail: edge density 0.0072 < film p5 0.0077"
+      ]
+    },
+    {
+      "row": "35",
+      "cut": 83,
+      "t": 418.02,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "why": [
+        "low detail: edge density 0.0008 < film p5 0.0077"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "3",
+      "cut": 4,
+      "t": 19.8,
+      "source": "row03_speed.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 13.74, p95 54.0"
+      ]
+    },
+    {
+      "row": "11",
+      "cut": 7,
+      "t": 35.68,
+      "source": "row10_air.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 14.05, p95 58.0"
+      ]
+    },
+    {
+      "row": "11",
+      "cut": 8,
+      "t": 41.98,
+      "source": "row11_air.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 15.85, p95 66.0"
+      ]
+    },
+    {
+      "row": "13",
+      "cut": 12,
+      "t": 60.12,
+      "source": "row13_speed.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 12.93, p95 48.0"
+      ]
+    },
+    {
+      "row": "13",
+      "cut": 13,
+      "t": 64.33,
+      "source": "row13_speed.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 13.3, p95 46.0"
+      ]
+    },
+    {
+      "row": "14",
+      "cut": 15,
+      "t": 76.18,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "note": "night pass, city lights fill (p95 58) (Claude #6087573310)",
+      "why": [
+        "near-black: mean 15.0, p95 58.0"
+      ]
+    },
+    {
+      "row": "6",
+      "cut": 22,
+      "t": 107.0,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "note": "aurora and city lights (p95 66) (Claude #6087573310)",
+      "why": [
+        "near-black: mean 11.7, p95 72.0"
+      ]
+    },
+    {
+      "row": "8",
+      "cut": 26,
+      "t": 128.77,
+      "source": "row08_bulge.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 13.26, p95 52.0"
+      ]
+    },
+    {
+      "row": "8",
+      "cut": 27,
+      "t": 134.77,
+      "source": "row08_bulge.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 12.09, p95 44.0"
+      ]
+    },
+    {
+      "row": "17",
+      "cut": 34,
+      "t": 172.38,
+      "source": "row17_oceans.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 24.32, p95 133.0"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 37,
+      "t": 190.17,
+      "source": "row18-19_oceans.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 18.66, p95 104.0"
+      ]
+    },
+    {
+      "row": "20",
+      "cut": 40,
+      "t": 206.6,
+      "source": "row20_dayyear.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 8.64, p95 8.0"
+      ]
+    },
+    {
+      "row": "20",
+      "cut": 41,
+      "t": 211.93,
+      "source": "row20_dayyear.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 8.95, p95 7.0"
+      ]
+    },
+    {
+      "row": "20",
+      "cut": 42,
+      "t": 216.88,
+      "source": "row20_dayyear.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 8.93, p95 7.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 50,
+      "t": 259.35,
+      "source": "row24-25_tides.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 9.55, p95 48.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 51,
+      "t": 263.77,
+      "source": "row24-25_tides.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 9.77, p95 49.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 52,
+      "t": 268.1,
+      "source": "row24-25_tides.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 9.96, p95 49.0"
+      ]
+    },
+    {
+      "row": "25",
+      "cut": 53,
+      "t": 272.62,
+      "source": "row24-25_tides.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 10.68, p95 49.0"
+      ]
+    },
+    {
+      "row": "25",
+      "cut": 54,
+      "t": 277.55,
+      "source": "row24-25_tides.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 10.75, p95 49.0"
+      ]
+    },
+    {
+      "row": "30",
+      "cut": 69,
+      "t": 354.03,
+      "source": "row30_clock.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 7.98, p95 6.0"
+      ]
+    },
+    {
+      "row": "33",
+      "cut": 74,
+      "t": 374.27,
+      "source": "row33_clock.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 8.64, p95 6.0"
+      ]
+    },
+    {
+      "row": "33",
+      "cut": 75,
+      "t": 378.68,
+      "source": "row33_clock.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 7.58, p95 6.0"
+      ]
+    },
+    {
+      "row": "35",
+      "cut": 81,
+      "t": 407.2,
+      "source": "row35_tides.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 13.43, p95 60.0"
+      ]
+    },
+    {
+      "row": "35",
+      "cut": 82,
+      "t": 412.55,
+      "source": "row35_speed.mp4",
+      "note": "our code graphic on the house background (Claude #6087174848)",
+      "why": [
+        "near-black: mean 11.68, p95 40.0"
+      ]
+    },
+    {
+      "row": "35",
+      "cut": 83,
+      "t": 418.02,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "note": "aurora limb (p95 61) (Claude #6087573310)",
+      "why": [
+        "near-black: mean 15.42, p95 61.0"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "epic_spin_v01.mp4",
+      "t": 2.4,
+      "std": 58.28,
+      "mean": 40.78,
+      "p95": 160.0,
+      "edge": 0.0605,
+      "hf": 5.84,
+      "lf": 56.07,
+      "std8": 57.17,
+      "edge8": 0.2339,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "1",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 7.05,
+      "std": 103.35,
+      "mean": 104.75,
+      "p95": 243.0,
+      "edge": 0.0364,
+      "hf": 4.95,
+      "lf": 102.54,
+      "std8": 103.0,
+      "edge8": 0.1216,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "ED07-0256-09.jpg",
+      "t": 11.32,
+      "std": 37.91,
+      "mean": 126.47,
+      "p95": 206.0,
+      "edge": 0.1891,
+      "hf": 11.35,
+      "lf": 30.71,
+      "std8": 33.37,
+      "edge8": 0.2988,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.004,
+        "trend_y": -0.005,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 93,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "2",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 15.02,
+      "std": 53.77,
+      "mean": 118.22,
+      "p95": 201.0,
+      "edge": 0.0304,
+      "hf": 5.15,
+      "lf": 51.34,
+      "std8": 52.69,
+      "edge8": 0.1602,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "row03_speed.mp4",
+      "t": 19.8,
+      "std": 25.58,
+      "mean": 13.74,
+      "p95": 54.0,
+      "edge": 0.032,
+      "hf": 8.94,
+      "lf": 19.63,
+      "std8": 21.35,
+      "edge8": 0.0949,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 13.74, p95 54.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "10",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 25.42,
+      "std": 62.33,
+      "mean": 121.88,
+      "p95": 204.0,
+      "edge": 0.1207,
+      "hf": 10.04,
+      "lf": 57.98,
+      "std8": 59.78,
+      "edge8": 0.3464,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "10",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 29.97,
+      "std": 61.76,
+      "mean": 117.15,
+      "p95": 206.0,
+      "edge": 0.076,
+      "hf": 6.57,
+      "lf": 59.81,
+      "std8": 60.77,
+      "edge8": 0.1863,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "11",
+      "source": "row10_air.mp4",
+      "t": 35.68,
+      "std": 23.81,
+      "mean": 14.05,
+      "p95": 58.0,
+      "edge": 0.0381,
+      "hf": 7.35,
+      "lf": 18.76,
+      "std8": 20.38,
+      "edge8": 0.1201,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 14.05, p95 58.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "11",
+      "source": "row11_air.mp4",
+      "t": 41.98,
+      "std": 30.49,
+      "mean": 15.85,
+      "p95": 66.0,
+      "edge": 0.0471,
+      "hf": 11.66,
+      "lf": 21.14,
+      "std8": 23.62,
+      "edge8": 0.156,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 15.85, p95 66.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "12",
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "t": 47.22,
+      "std": 30.27,
+      "mean": 76.24,
+      "p95": 124.0,
+      "edge": 0.0516,
+      "hf": 7.17,
+      "lf": 26.72,
+      "std8": 27.95,
+      "edge8": 0.2282,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "12",
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "t": 52.0,
+      "std": 30.13,
+      "mean": 71.21,
+      "p95": 122.0,
+      "edge": 0.0619,
+      "hf": 7.57,
+      "lf": 26.18,
+      "std8": 27.58,
+      "edge8": 0.2623,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "13",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 55.92,
+      "std": 67.87,
+      "mean": 110.13,
+      "p95": 213.0,
+      "edge": 0.0621,
+      "hf": 5.78,
+      "lf": 65.19,
+      "std8": 66.62,
+      "edge8": 0.361,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "13",
+      "source": "row13_speed.mp4",
+      "t": 60.12,
+      "std": 24.23,
+      "mean": 12.93,
+      "p95": 48.0,
+      "edge": 0.0301,
+      "hf": 8.3,
+      "lf": 19.1,
+      "std8": 20.61,
+      "edge8": 0.08,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 12.93, p95 48.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 13,
+      "row": "13",
+      "source": "row13_speed.mp4",
+      "t": 64.33,
+      "std": 28.48,
+      "mean": 13.3,
+      "p95": 46.0,
+      "edge": 0.0375,
+      "hf": 11.85,
+      "lf": 18.5,
+      "std8": 21.07,
+      "edge8": 0.1199,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 13.3, p95 46.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 14,
+      "row": "14",
+      "source": "orbit_northpole_omni_v01.mp4",
+      "t": 70.2,
+      "std": 23.69,
+      "mean": 172.33,
+      "p95": 200.0,
+      "edge": 0.018,
+      "hf": 4.14,
+      "lf": 20.3,
+      "std8": 21.94,
+      "edge8": 0.1173,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "14",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 76.18,
+      "std": 22.96,
+      "mean": 15.0,
+      "p95": 58.0,
+      "edge": 0.0775,
+      "hf": 8.5,
+      "lf": 17.34,
+      "std8": 19.07,
+      "edge8": 0.1593,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "night pass, city lights fill (p95 58) (Claude #6087573310)",
+        "why": [
+          "near-black: mean 15.0, p95 58.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 16,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "t": 80.65,
+      "std": 31.68,
+      "mean": 42.84,
+      "p95": 100.0,
+      "edge": 0.0067,
+      "hf": 3.97,
+      "lf": 30.2,
+      "std8": 30.91,
+      "edge8": 0.1252,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.008,
+        "reversals": 0,
+        "frames": 129,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0067 < film p5 0.0077"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "15",
+      "source": "epic_spin_v01.mp4",
+      "t": 85.47,
+      "std": 43.37,
+      "mean": 95.3,
+      "p95": 169.0,
+      "edge": 0.056,
+      "hf": 5.67,
+      "lf": 39.33,
+      "std8": 41.19,
+      "edge8": 0.3844,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 18,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "t": 90.42,
+      "std": 45.81,
+      "mean": 93.68,
+      "p95": 192.0,
+      "edge": 0.0931,
+      "hf": 6.92,
+      "lf": 40.31,
+      "std8": 42.79,
+      "edge8": 0.4338,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.025,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 19,
+      "row": "5",
+      "source": "cabin_pour_veo_v01.mp4",
+      "t": 94.85,
+      "std": 71.57,
+      "mean": 124.14,
+      "p95": 241.0,
+      "edge": 0.123,
+      "hf": 13.86,
+      "lf": 66.31,
+      "std8": 68.32,
+      "edge8": 0.3136,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "5",
+      "source": "AFRC2022-0059-49.jpg",
+      "t": 98.62,
+      "std": 24.3,
+      "mean": 126.28,
+      "p95": 142.0,
+      "edge": 0.0135,
+      "hf": 3.77,
+      "lf": 22.0,
+      "std8": 22.62,
+      "edge8": 0.0657,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 96,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 21,
+      "row": "5",
+      "source": "ED07-0256-09.jpg",
+      "t": 102.4,
+      "std": 43.88,
+      "mean": 127.8,
+      "p95": 220.0,
+      "edge": 0.1092,
+      "hf": 8.9,
+      "lf": 38.62,
+      "std8": 40.74,
+      "edge8": 0.2886,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.005,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 78,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "6",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 107.0,
+      "std": 23.62,
+      "mean": 11.7,
+      "p95": 72.0,
+      "edge": 0.0108,
+      "hf": 3.79,
+      "lf": 21.85,
+      "std8": 22.68,
+      "edge8": 0.0616,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "aurora and city lights (p95 66) (Claude #6087573310)",
+        "why": [
+          "near-black: mean 11.7, p95 72.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "6",
+      "source": "iss070e062746.jpg",
+      "t": 113.0,
+      "std": 50.24,
+      "mean": 60.96,
+      "p95": 177.1,
+      "edge": 0.4143,
+      "hf": 17.77,
+      "lf": 41.5,
+      "std8": 44.06,
+      "edge8": 0.377,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 162,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 118.23,
+      "std": 54.46,
+      "mean": 87.1,
+      "p95": 210.0,
+      "edge": 0.045,
+      "hf": 7.61,
+      "lf": 52.58,
+      "std8": 53.15,
+      "edge8": 0.114,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 123.02,
+      "std": 51.6,
+      "mean": 93.41,
+      "p95": 211.0,
+      "edge": 0.0772,
+      "hf": 9.67,
+      "lf": 48.98,
+      "std8": 49.72,
+      "edge8": 0.1397,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "8",
+      "source": "row08_bulge.mp4",
+      "t": 128.77,
+      "std": 20.87,
+      "mean": 13.26,
+      "p95": 52.0,
+      "edge": 0.0228,
+      "hf": 4.75,
+      "lf": 18.57,
+      "std8": 19.49,
+      "edge8": 0.0629,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 13.26, p95 52.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 27,
+      "row": "8",
+      "source": "row08_bulge.mp4",
+      "t": 134.77,
+      "std": 21.93,
+      "mean": 12.09,
+      "p95": 44.0,
+      "edge": 0.0249,
+      "hf": 7.79,
+      "lf": 17.13,
+      "std8": 18.4,
+      "edge8": 0.0713,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 12.09, p95 44.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 28,
+      "row": "8",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "t": 140.68,
+      "std": 50.56,
+      "mean": 93.81,
+      "p95": 189.0,
+      "edge": 0.3338,
+      "hf": 15.39,
+      "lf": 43.4,
+      "std8": 45.41,
+      "edge8": 0.5011,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 152,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 29,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "t": 146.5,
+      "std": 53.06,
+      "mean": 124.27,
+      "p95": 194.0,
+      "edge": 0.1264,
+      "hf": 11.11,
+      "lf": 46.15,
+      "std8": 48.67,
+      "edge8": 0.4701,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "t": 151.68,
+      "std": 52.15,
+      "mean": 117.31,
+      "p95": 188.0,
+      "edge": 0.1289,
+      "hf": 11.3,
+      "lf": 45.26,
+      "std8": 47.79,
+      "edge8": 0.4566,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 31,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "t": 156.67,
+      "std": 51.5,
+      "mean": 116.16,
+      "p95": 186.0,
+      "edge": 0.1202,
+      "hf": 10.76,
+      "lf": 44.72,
+      "std8": 47.27,
+      "edge8": 0.4599,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "9",
+      "source": "Portrait_Leon_Foucault_1860.jpg",
+      "t": 161.92,
+      "std": 63.09,
+      "mean": 181.64,
+      "p95": 227.0,
+      "edge": 0.3249,
+      "hf": 31.26,
+      "lf": 52.21,
+      "std8": 52.76,
+      "edge8": 0.213,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.003,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 129,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 33,
+      "row": "16",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 167.2,
+      "std": 63.43,
+      "mean": 122.51,
+      "p95": 221.0,
+      "edge": 0.0615,
+      "hf": 5.97,
+      "lf": 61.0,
+      "std8": 62.22,
+      "edge8": 0.1972,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "17",
+      "source": "row17_oceans.mp4",
+      "t": 172.38,
+      "std": 40.15,
+      "mean": 24.32,
+      "p95": 133.0,
+      "edge": 0.0189,
+      "hf": 3.74,
+      "lf": 39.09,
+      "std8": 39.68,
+      "edge8": 0.0898,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 24.32, p95 133.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 35,
+      "row": "18",
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "t": 177.42,
+      "std": 48.41,
+      "mean": 83.05,
+      "p95": 180.0,
+      "edge": 0.2296,
+      "hf": 13.48,
+      "lf": 41.13,
+      "std8": 43.59,
+      "edge8": 0.441,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.006,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 123,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 36,
+      "row": "18",
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "t": 182.82,
+      "std": 47.53,
+      "mean": 79.53,
+      "p95": 178.0,
+      "edge": 0.1614,
+      "hf": 10.29,
+      "lf": 42.15,
+      "std8": 44.14,
+      "edge8": 0.4065,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.011,
+        "reversals": 0,
+        "frames": 146,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 37,
+      "row": "18",
+      "source": "row18-19_oceans.mp4",
+      "t": 190.17,
+      "std": 31.28,
+      "mean": 18.66,
+      "p95": 104.0,
+      "edge": 0.0193,
+      "hf": 3.76,
+      "lf": 29.91,
+      "std8": 30.64,
+      "edge8": 0.0875,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 18.66, p95 104.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 38,
+      "row": "19",
+      "source": "row18-19_oceans.mp4",
+      "t": 196.98,
+      "std": 45.72,
+      "mean": 28.43,
+      "p95": 134.0,
+      "edge": 0.0329,
+      "hf": 8.69,
+      "lf": 42.52,
+      "std8": 43.54,
+      "edge8": 0.1238,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 39,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "t": 201.58,
+      "std": 45.89,
+      "mean": 93.54,
+      "p95": 192.0,
+      "edge": 0.0935,
+      "hf": 6.95,
+      "lf": 40.4,
+      "std8": 42.87,
+      "edge8": 0.4337,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.003,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 107,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 40,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "t": 206.6,
+      "std": 19.01,
+      "mean": 8.64,
+      "p95": 8.0,
+      "edge": 0.0115,
+      "hf": 5.37,
+      "lf": 15.95,
+      "std8": 16.98,
+      "edge8": 0.0265,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 8.64, p95 8.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 41,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "t": 211.93,
+      "std": 20.27,
+      "mean": 8.95,
+      "p95": 7.0,
+      "edge": 0.0132,
+      "hf": 5.6,
+      "lf": 17.03,
+      "std8": 18.15,
+      "edge8": 0.0307,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 8.95, p95 7.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 42,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "t": 216.88,
+      "std": 20.14,
+      "mean": 8.93,
+      "p95": 7.0,
+      "edge": 0.0131,
+      "hf": 5.52,
+      "lf": 17.0,
+      "std8": 18.1,
+      "edge8": 0.0302,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 8.93, p95 7.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 43,
+      "row": "21",
+      "source": "orbit_sunset_omni_v01.mp4",
+      "t": 222.6,
+      "std": 54.13,
+      "mean": 134.18,
+      "p95": 208.0,
+      "edge": 0.0397,
+      "hf": 5.86,
+      "lf": 52.26,
+      "std8": 53.0,
+      "edge8": 0.1915,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 44,
+      "row": "21",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 228.17,
+      "std": 27.84,
+      "mean": 43.29,
+      "p95": 93.0,
+      "edge": 0.0429,
+      "hf": 5.9,
+      "lf": 25.05,
+      "std8": 25.97,
+      "edge8": 0.1628,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 45,
+      "row": "22",
+      "source": "PIA00271.jpg",
+      "t": 234.27,
+      "std": 28.04,
+      "mean": 106.04,
+      "p95": 152.0,
+      "edge": 0.1607,
+      "hf": 10.57,
+      "lf": 22.19,
+      "std8": 23.68,
+      "edge8": 0.279,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 204,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 46,
+      "row": "22",
+      "source": "PIA23791.jpg",
+      "t": 243.03,
+      "std": 92.0,
+      "mean": 161.73,
+      "p95": 245.0,
+      "edge": 0.0028,
+      "hf": 2.45,
+      "lf": 91.49,
+      "std8": 91.71,
+      "edge8": 0.0274,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.006,
+        "reversals": 0,
+        "frames": 266,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0028 < film p5 0.0077"
+      ]
+    },
+    {
+      "cut": 47,
+      "row": "23",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "t": 249.6,
+      "std": 47.45,
+      "mean": 148.87,
+      "p95": 225.0,
+      "edge": 0.0677,
+      "hf": 9.14,
+      "lf": 43.8,
+      "std8": 45.02,
+      "edge8": 0.2426,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 72,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 48,
+      "row": "23",
+      "source": "Bay_of_Fundy_tide_in.jpg",
+      "t": 252.63,
+      "std": 72.45,
+      "mean": 183.44,
+      "p95": 245.0,
+      "edge": 0.1284,
+      "hf": 13.58,
+      "lf": 68.41,
+      "std8": 69.16,
+      "edge8": 0.2525,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.005,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 55,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 49,
+      "row": "23",
+      "source": "Bay_of_Fundy_tide_out.jpg",
+      "t": 255.65,
+      "std": 77.15,
+      "mean": 139.95,
+      "p95": 224.0,
+      "edge": 0.1514,
+      "hf": 14.29,
+      "lf": 73.54,
+      "std8": 74.49,
+      "edge8": 0.2886,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.018,
+        "max_off_trend_px": 0.025,
+        "reversals": 0,
+        "frames": 71,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 50,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "t": 259.35,
+      "std": 16.3,
+      "mean": 9.55,
+      "p95": 48.0,
+      "edge": 0.0085,
+      "hf": 2.54,
+      "lf": 15.05,
+      "std8": 15.71,
+      "edge8": 0.0223,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 9.55, p95 48.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.3 < 18.0"
+      ]
+    },
+    {
+      "cut": 51,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "t": 263.77,
+      "std": 17.05,
+      "mean": 9.77,
+      "p95": 49.0,
+      "edge": 0.009,
+      "hf": 2.57,
+      "lf": 15.82,
+      "std8": 16.44,
+      "edge8": 0.0229,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 9.77, p95 49.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.05 < 18.0"
+      ]
+    },
+    {
+      "cut": 52,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "t": 268.1,
+      "std": 17.79,
+      "mean": 9.96,
+      "p95": 49.0,
+      "edge": 0.0094,
+      "hf": 2.6,
+      "lf": 16.58,
+      "std8": 17.21,
+      "edge8": 0.027,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 9.96, p95 49.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.79 < 18.0"
+      ]
+    },
+    {
+      "cut": 53,
+      "row": "25",
+      "source": "row24-25_tides.mp4",
+      "t": 272.62,
+      "std": 21.27,
+      "mean": 10.68,
+      "p95": 49.0,
+      "edge": 0.0129,
+      "hf": 5.26,
+      "lf": 18.44,
+      "std8": 19.31,
+      "edge8": 0.0381,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 10.68, p95 49.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 54,
+      "row": "25",
+      "source": "row24-25_tides.mp4",
+      "t": 277.55,
+      "std": 21.49,
+      "mean": 10.75,
+      "p95": 49.0,
+      "edge": 0.0134,
+      "hf": 5.33,
+      "lf": 18.66,
+      "std8": 19.52,
+      "edge8": 0.0405,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 10.75, p95 49.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 55,
+      "row": "25",
+      "source": "as14-67-09386.jpg",
+      "t": 282.25,
+      "std": 41.7,
+      "mean": 114.96,
+      "p95": 159.0,
+      "edge": 0.2972,
+      "hf": 14.94,
+      "lf": 31.44,
+      "std8": 34.19,
+      "edge8": 0.4356,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 111,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 56,
+      "row": "25",
+      "source": "as14-67-09386.jpg",
+      "t": 287.02,
+      "std": 32.47,
+      "mean": 120.43,
+      "p95": 157.0,
+      "edge": 0.113,
+      "hf": 7.78,
+      "lf": 23.99,
+      "std8": 27.09,
+      "edge8": 0.4523,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 120,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 57,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "t": 292.15,
+      "std": 41.28,
+      "mean": 171.11,
+      "p95": 235.0,
+      "edge": 0.0108,
+      "hf": 4.03,
+      "lf": 40.02,
+      "std8": 40.54,
+      "edge8": 0.1566,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 58,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "t": 297.18,
+      "std": 34.34,
+      "mean": 131.51,
+      "p95": 188.0,
+      "edge": 0.6109,
+      "hf": 23.37,
+      "lf": 16.64,
+      "std8": 19.44,
+      "edge8": 0.429,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 113,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 59,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "t": 302.4,
+      "std": 34.37,
+      "mean": 132.64,
+      "p95": 189.0,
+      "edge": 0.6198,
+      "hf": 23.87,
+      "lf": 15.68,
+      "std8": 18.78,
+      "edge8": 0.439,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 144,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 60,
+      "row": "27",
+      "source": "Cuneiform_tablet-_commentary_on_Enuma_Anu_Enlil_tablet_5_MET.jpg",
+      "t": 308.2,
+      "std": 59.62,
+      "mean": 199.82,
+      "p95": 242.0,
+      "edge": 0.2037,
+      "hf": 16.42,
+      "lf": 51.62,
+      "std8": 53.76,
+      "edge8": 0.31,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 150,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 61,
+      "row": "27",
+      "source": "NHQ201708210100.jpg",
+      "t": 313.97,
+      "std": 69.63,
+      "mean": 57.89,
+      "p95": 232.0,
+      "edge": 0.005,
+      "hf": 3.95,
+      "lf": 67.71,
+      "std8": 68.98,
+      "edge8": 0.1192,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.008,
+        "reversals": 0,
+        "frames": 143,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.005 < film p5 0.0077"
+      ]
+    },
+    {
+      "cut": 62,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "t": 319.6,
+      "std": 72.67,
+      "mean": 59.41,
+      "p95": 201.0,
+      "edge": 0.2594,
+      "hf": 15.3,
+      "lf": 66.64,
+      "std8": 68.72,
+      "edge8": 0.4046,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 63,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "t": 325.1,
+      "std": 70.27,
+      "mean": 51.27,
+      "p95": 197.0,
+      "edge": 0.2347,
+      "hf": 15.47,
+      "lf": 64.18,
+      "std8": 66.33,
+      "edge8": 0.3636,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 64,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "t": 330.98,
+      "std": 50.94,
+      "mean": 30.91,
+      "p95": 141.0,
+      "edge": 0.0766,
+      "hf": 6.76,
+      "lf": 48.6,
+      "std8": 49.63,
+      "edge8": 0.2028,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 65,
+      "row": "29",
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "t": 336.37,
+      "std": 42.05,
+      "mean": 141.6,
+      "p95": 207.0,
+      "edge": 0.2902,
+      "hf": 12.8,
+      "lf": 33.77,
+      "std8": 36.16,
+      "edge8": 0.583,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 105,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "29",
+      "source": "Eridophyllum_seriale_2.jpg",
+      "t": 340.75,
+      "std": 38.55,
+      "mean": 140.05,
+      "p95": 203.0,
+      "edge": 0.2635,
+      "hf": 11.57,
+      "lf": 30.82,
+      "std8": 33.52,
+      "edge8": 0.5491,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 105,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 67,
+      "row": "29",
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "t": 345.07,
+      "std": 38.63,
+      "mean": 143.69,
+      "p95": 205.0,
+      "edge": 0.2192,
+      "hf": 10.84,
+      "lf": 29.98,
+      "std8": 33.33,
+      "edge8": 0.6547,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.006,
+        "reversals": 0,
+        "frames": 101,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "29",
+      "source": "Eridophyllum_seriale_2.jpg",
+      "t": 349.47,
+      "std": 38.21,
+      "mean": 155.87,
+      "p95": 216.0,
+      "edge": 0.2011,
+      "hf": 10.5,
+      "lf": 31.8,
+      "std8": 34.06,
+      "edge8": 0.5409,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 108,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 69,
+      "row": "30",
+      "source": "row30_clock.mp4",
+      "t": 354.03,
+      "std": 18.58,
+      "mean": 7.98,
+      "p95": 6.0,
+      "edge": 0.0174,
+      "hf": 10.46,
+      "lf": 8.67,
+      "std8": 10.86,
+      "edge8": 0.0702,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 7.98, p95 6.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 70,
+      "row": "31",
+      "source": "phone_midnight_veo_v01.mp4",
+      "t": 357.42,
+      "std": 32.63,
+      "mean": 36.32,
+      "p95": 93.0,
+      "edge": 0.0217,
+      "hf": 7.52,
+      "lf": 29.03,
+      "std8": 30.24,
+      "edge8": 0.1034,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 71,
+      "row": "31",
+      "source": "NIST_atomic_clock_006.jpg",
+      "t": 359.78,
+      "std": 77.84,
+      "mean": 119.71,
+      "p95": 255.0,
+      "edge": 0.2246,
+      "hf": 18.1,
+      "lf": 66.72,
+      "std8": 71.06,
+      "edge8": 0.6029,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.003,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 50,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 72,
+      "row": "32",
+      "source": "NIST-F2_cesium_fountain_atomic_clock.jpg",
+      "t": 363.95,
+      "std": 49.87,
+      "mean": 70.43,
+      "p95": 156.0,
+      "edge": 0.0931,
+      "hf": 10.77,
+      "lf": 43.99,
+      "std8": 46.21,
+      "edge8": 0.3669,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 147,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "32",
+      "source": "NIST_ytterbium_lattice_clock.jpg",
+      "t": 369.35,
+      "std": 72.24,
+      "mean": 107.59,
+      "p95": 237.0,
+      "edge": 0.2859,
+      "hf": 19.87,
+      "lf": 56.19,
+      "std8": 62.26,
+      "edge8": 0.7022,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.004,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 123,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 74,
+      "row": "33",
+      "source": "row33_clock.mp4",
+      "t": 374.27,
+      "std": 21.23,
+      "mean": 8.64,
+      "p95": 6.0,
+      "edge": 0.0212,
+      "hf": 10.39,
+      "lf": 10.02,
+      "std8": 13.07,
+      "edge8": 0.0805,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 8.64, p95 6.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 75,
+      "row": "33",
+      "source": "row33_clock.mp4",
+      "t": 378.68,
+      "std": 16.13,
+      "mean": 7.58,
+      "p95": 6.0,
+      "edge": 0.0151,
+      "hf": 9.6,
+      "lf": 6.77,
+      "std8": 9.03,
+      "edge8": 0.061,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 7.58, p95 6.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.13 < 18.0"
+      ]
+    },
+    {
+      "cut": 76,
+      "row": "33",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 383.13,
+      "std": 76.87,
+      "mean": 87.17,
+      "p95": 235.0,
+      "edge": 0.0261,
+      "hf": 4.43,
+      "lf": 75.23,
+      "std8": 76.2,
+      "edge8": 0.1735,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 77,
+      "row": "34",
+      "source": "commons_Pahoeoe_fountain_original.jpg",
+      "t": 387.63,
+      "std": 43.05,
+      "mean": 73.86,
+      "p95": 154.0,
+      "edge": 0.187,
+      "hf": 9.94,
+      "lf": 35.77,
+      "std8": 38.31,
+      "edge8": 0.5076,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.003,
+        "max_off_trend_px": 0.008,
+        "reversals": 0,
+        "frames": 97,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 78,
+      "row": "34",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "t": 392.22,
+      "std": 55.49,
+      "mean": 99.2,
+      "p95": 197.0,
+      "edge": 0.2835,
+      "hf": 15.12,
+      "lf": 48.54,
+      "std8": 50.62,
+      "edge8": 0.532,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 123,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 79,
+      "row": "34",
+      "source": "GSFC_20171208_Archive_e001753.jpg",
+      "t": 396.85,
+      "std": 63.26,
+      "mean": 145.78,
+      "p95": 225.0,
+      "edge": 0.3226,
+      "hf": 20.37,
+      "lf": 54.46,
+      "std8": 56.74,
+      "edge8": 0.5032,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.006,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 99,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 80,
+      "row": "35",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "t": 401.67,
+      "std": 31.4,
+      "mean": 42.32,
+      "p95": 97.0,
+      "edge": 0.0072,
+      "hf": 3.92,
+      "lf": 29.93,
+      "std8": 30.62,
+      "edge8": 0.1252,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0072 < film p5 0.0077"
+      ]
+    },
+    {
+      "cut": 81,
+      "row": "35",
+      "source": "row35_tides.mp4",
+      "t": 407.2,
+      "std": 24.63,
+      "mean": 13.43,
+      "p95": 60.0,
+      "edge": 0.014,
+      "hf": 3.18,
+      "lf": 23.36,
+      "std8": 24.01,
+      "edge8": 0.0388,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 13.43, p95 60.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 82,
+      "row": "35",
+      "source": "row35_speed.mp4",
+      "t": 412.55,
+      "std": 23.01,
+      "mean": 11.68,
+      "p95": 40.0,
+      "edge": 0.0286,
+      "hf": 8.93,
+      "lf": 15.88,
+      "std8": 18.04,
+      "edge8": 0.0891,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "why": [
+          "near-black: mean 11.68, p95 40.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 83,
+      "row": "35",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 418.02,
+      "std": 21.91,
+      "mean": 15.42,
+      "p95": 61.0,
+      "edge": 0.0008,
+      "hf": 0.95,
+      "lf": 21.53,
+      "std8": 21.79,
+      "edge8": 0.0247,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "aurora limb (p95 61) (Claude #6087573310)",
+        "why": [
+          "near-black: mean 15.42, p95 61.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0008 < film p5 0.0077"
+      ]
+    },
+    {
+      "cut": 84,
+      "row": "36",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 423.7,
+      "std": 51.96,
+      "mean": 99.83,
+      "p95": 216.0,
+      "edge": 0.1489,
+      "hf": 13.4,
+      "lf": 47.5,
+      "std8": 48.45,
+      "edge8": 0.205,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 85,
+      "row": "36",
+      "source": "ESO_star_trails_VLT_Paranal.jpg",
+      "t": 428.92,
+      "std": 32.16,
+      "mean": 73.81,
+      "p95": 136.0,
+      "edge": 0.3472,
+      "hf": 18.19,
+      "lf": 21.26,
+      "std8": 22.98,
+      "edge8": 0.2931,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 122,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 86,
+      "row": "37",
+      "source": "NASA_Bennu_journey_early_Earth.jpg",
+      "t": 434.33,
+      "std": 39.35,
+      "mean": 60.52,
+      "p95": 129.0,
+      "edge": 0.0574,
+      "hf": 7.44,
+      "lf": 35.77,
+      "std8": 37.19,
+      "edge8": 0.1988,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 149,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 87,
+      "row": "37",
+      "source": "epic_spin_v01.mp4",
+      "t": 441.8,
+      "std": 55.19,
+      "mean": 39.93,
+      "p95": 145.0,
+      "edge": 0.055,
+      "hf": 5.67,
+      "lf": 53.17,
+      "std8": 54.13,
+      "edge8": 0.2145,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
