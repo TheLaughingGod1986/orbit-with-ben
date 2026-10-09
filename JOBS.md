@@ -17,11 +17,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
 | J0091 | mini | open | – | – | 022 Sun: Studio finish before 18 Oct (end screen, cards, Test & Compare, Shorts related pill) | 6080962890 |
 | J0092 | any | open | – | – | for codex · Long-form view: Codex on one 45–60 min video a month (Ben asked) |  |
-| J0093 | mini | claimed | cursor | 2026-10-09T14:07Z | for cursor · Long-form view: Cursor on one 45–60 min video a month (Ben asked) |  |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
 
 Recently finished:
 
+- J0093 done: Long-form view: Cursor on one 45–60 min video a month (Ben asked) (done)
 - J0090 cancelled: 027 bed take 2 for the re-ordered film (after the 30 Oct ElevenLabs reset; HOS voice first) ()
 - J0088 done: 027 opening: first answer before 0:30, from existing VO (Codex idea 5) (027 SHOT_LIST_v02: VO re-ordered (agenda cut, sudden-stop chapter first); the first answer is at ~24 s, was 112 s; no new VO; J0077 builds from v02)
 - J0083 done: Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) (Posted fifth OWB retention idea and two HOS ideas with source evidence, minimal tests, costs and caveats; no implementation or spend.)
@@ -31,4 +31,3 @@ Recently finished:
 - J0079 done: 024 Light speed: its own score bed now (no ElevenLabs floor; no wait for 30 Oct) (024 own bed light-speed_score_bed_v01_full.mp3 (526 s; two takes joined at 5:16-5:24) on the Mini; music_gate PASS; EL 8,703 credits (34,093 -> 25,390). Waiting on Claude's listen before it's laid in.)
 - J0078 done: 023 Venus: its own score bed (Claude's brief; no ElevenLabs floor) (venus_score_bed_v01_full.mp3 (530 s, -14.4 LUFS, two takes joined at 3:44 chapter break); music_gate PASS; 8,250 ElevenLabs credits (34,093 left). Waits on Claude's listen before it's laid in.)
 - J0076 done: 026 Nearest Star: thumbnails + upload package (while Ben watches v04) (026 thumbs A/B/C v01 + upload package draft posted for Claude's review; dry run passes; gate:episode blocks only on Claude's vidIQ sign-off)
-- J0075 done: 026 Nearest Star: its own score bed (Claude's brief, credit guard) (026 bed nearest-star_score_bed_v01_full.mp3 (520 s, -16.6 LUFS): take 1 returned 170 s, one continuation take (380 s, +11 dB) joined with an 8 s equal-power crossfade at 111.8 s film (before chapter 2), slowed 0.93. music_gate PASS (66.7 BPM, brief 66-80). 7563 credits, 42343 left.)
