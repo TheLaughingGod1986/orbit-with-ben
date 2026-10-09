@@ -4096,10 +4096,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T23:09Z",
+      "eta": "2026-10-10T01:09Z",
       "created_by": "claude",
       "created_at": "2026-10-09T08:52Z",
       "result": "",
@@ -4128,6 +4128,11 @@
           "at": "2026-10-09T22:58Z",
           "by": "cursor",
           "what": "released: Row 11 Omni take done (orbit_thumb_omni_v01, 10.0 s, on model; 4537e72; sheets in 04_Generated-Clips/01_Raw/omni_v01/sheets). Vertex read £17.70 before it (floor+HOS reserve £16), so row 24 waits: next run re-reads the balance (ai_spend_daily.py --pools vertex --dry-run); if it shows row 11 billed and ≥ ~£16.8, run desk-lock vertex -- ~/.venvs/orbit-omni/bin/python _mint_nearest_star_omni_v01.py orbit_walk_omni_v01 (start frame ready). Graphics stills still await Claude (rough_v05_pack/GRAPHICS_V05_STILLS.md). Then v05 render."
+        },
+        {
+          "at": "2026-10-09T23:09Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": 1
