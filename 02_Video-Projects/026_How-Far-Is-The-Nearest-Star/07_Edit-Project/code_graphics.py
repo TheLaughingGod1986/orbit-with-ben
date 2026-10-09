@@ -6,6 +6,8 @@
   python3 code_graphics.py journey    out/   # ch.4: five lanes to Proxima at true relative speeds; only light moves visibly
   python3 code_graphics.py lighttimes out/   # ch.4: Moon, Sun, Proxima light-travel times as bars on a log scale
   python3 code_graphics.py scale      out/   # ch.3 row 18: grapefruit-scale Sun left, pin-prick Earth far right, push across
+  python3 code_graphics.py lightyear  out/   # row 9 (v05): one pulse Proxima -> real Earth, a tick lights per year (4.25 yr)
+  python3 code_graphics.py lightrace  out/   # row 27 (v05): real Moon, real Sun, then Proxima each send a pulse to Earth
   python3 code_graphics.py all        out/
   add --still to write one frame only (review); --seconds N to change length
 
@@ -188,6 +190,151 @@ def render_scale(out, seconds, still):
     finish(out, still)
 
 
+POOL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pool_v01")
+EARTH_IMG = "earth_moon/GSFC_20171208_Archive_e002130.jpg"
+MOON_IMG = "earth_moon/GSFC_20171208_Archive_e001982.jpg"
+SUN_IMG = "sun/GSFC_20171208_Archive_e002035.jpg"
+_DISCS = {}
+
+
+def disc(rel, px=600):
+    """A real photo cut out as an RGBA disc: the body's bounding box (rows/columns with a run of lit pixels, so captions
+    and single bright specks don't count), squared about its centre, with a feathered circular edge."""
+    if rel in _DISCS:
+        return _DISCS[rel]
+    from PIL import Image
+    Image.MAX_IMAGE_PIXELS = None
+    im = Image.open(os.path.join(POOL, rel)).convert("RGB")
+    im.thumbnail((2400, 2400))
+    a = np.asarray(im, dtype=np.float32) / 255.0
+    lit = a.max(axis=2) > 0.08
+    rows = np.where(lit.sum(axis=1) > 0.15 * lit.sum(axis=1).max())[0]
+    cols = np.where(lit.sum(axis=0) > 0.15 * lit.sum(axis=0).max())[0]
+    cy, cx = (rows[0] + rows[-1]) / 2, (cols[0] + cols[-1]) / 2
+    r = max(rows[-1] - rows[0], cols[-1] - cols[0]) / 2
+    sq = im.crop((round(cx - r), round(cy - r), round(cx + r), round(cy + r))).resize((px, px), Image.Resampling.LANCZOS)
+    rgb = np.asarray(sq, dtype=np.float32) / 255.0
+    yy, xx = np.mgrid[0:px, 0:px]
+    d = np.hypot(xx - (px - 1) / 2, yy - (px - 1) / 2) / (px / 2)
+    alpha = np.clip((1.0 - d) / 0.02, 0, 1)
+    _DISCS[rel] = np.dstack([rgb, alpha])
+    return _DISCS[rel]
+
+
+def put_disc(ax, rel, x, y, r, alpha=1.0, z=5):
+    img = disc(rel).copy()
+    img[..., 3] *= alpha
+    ax.imshow(img, extent=(x - r, x + r, y - r, y + r), zorder=z, interpolation="bilinear")
+
+
+def red_dwarf(ax, x, y, alpha=1.0, scale=1.0):
+    for r, a in ((0.9, 0.06), (0.55, 0.12), (0.3, 0.25)):
+        ax.add_patch(Circle((x, y), r * scale, color=RED, alpha=a * alpha, lw=0, zorder=4))
+    ax.add_patch(Circle((x, y), 0.14 * scale, color="#ffd0c0", alpha=alpha, zorder=5))
+
+
+def pulse(ax, x0, y, x, alpha=1.0, trail=1.6):
+    """A bright pulse of light at x travelling right from x0, with a fading trail."""
+    if alpha <= 0:
+        return
+    t0 = max(x0, x - trail)
+    xs = np.linspace(t0, x, 40)
+    for k in range(len(xs) - 1):
+        f = (k + 1) / len(xs)
+        ax.plot(xs[k:k + 2], [y, y], color=GOLD, lw=4, alpha=0.55 * f * f * alpha, solid_capstyle="butt", zorder=6)
+    for r, a in ((0.42, 0.10), (0.24, 0.25), (0.12, 0.6)):
+        ax.add_patch(Circle((x, y), r, color="#fff3c8", alpha=a * alpha, lw=0, zorder=7))
+    ax.add_patch(Circle((x, y), 0.06, color="white", alpha=alpha, zorder=8))
+
+
+def star_field(seed, n=900):
+    rng = np.random.default_rng(seed)
+    pts = rng.uniform([-8.2, -4.7], [8.2, 4.7], (n, 2))
+    size = rng.pareto(2.2, n) * 2.5 + 1.5
+    alpha = rng.uniform(0.25, 0.8, n)
+    tint = np.where(rng.random(n) < 0.15, "#ffd9a8", np.where(rng.random(n) < 0.15, "#bcd4ff", WHITE))
+    return pts, size, alpha, tint
+
+
+def render_lightyear(out, seconds, still, leave=0.6, arrive=8.3):
+    """Row 9: Proxima (red-dwarf glow, left) and a small real Earth (right) across a full-frame star field. One pulse
+    leaves Proxima at `leave` s and reaches Earth at `arrive` s at constant speed. Four ticks at 1/4.25 .. 4/4.25 of the
+    path (one per year of the 4.25-year trip) light up as the pulse passes; the last quarter year has no tick."""
+    pts, size, alpha, tint = star_field(4246)
+    n = int(seconds * FPS)
+    PX, EX, Y = -6.2, 6.2, 0.0
+    ticks = [PX + (EX - PX) * k / 4.25 for k in range(1, 5)]
+    frames = [int(n * 0.6)] if still else range(n)
+    for i in frames:
+        t = i / FPS
+        fig, ax = canvas()
+        ax.scatter(pts[:, 0], pts[:, 1], s=size, c=tint, alpha=alpha, lw=0)
+        ax.plot([PX, EX], [Y, Y], color=DIM, lw=1, alpha=0.18, zorder=2)
+        s = min(1.0, max(0.0, (t - leave) / (arrive - leave)))
+        x = PX + (EX - PX) * s
+        for tx in ticks:
+            lit = x >= tx
+            ax.plot([tx, tx], [Y - 0.22, Y + 0.22], color=GOLD if lit else DIM, lw=3 if lit else 2,
+                    alpha=0.95 if lit else 0.35, zorder=3)
+        red_dwarf(ax, PX, Y, scale=1.3)
+        put_disc(ax, EARTH_IMG, EX, Y, 0.42)
+        if t >= leave:
+            fade = 1.0 - ease((t - arrive) / 0.5) if t > arrive else 1.0
+            pulse(ax, PX, Y, min(x, EX - 0.3), alpha=fade)
+        if t > arrive:
+            g = 1.0 - ease((t - arrive) / 1.2)
+            ax.add_patch(Circle((EX, Y), 0.75, color="#fff3c8", alpha=0.25 * g, lw=0, zorder=9))
+        save(fig, out, i, still)
+    finish(out, still)
+
+
+def render_lightrace(out, seconds, still):
+    """Row 27, timed to the VO from the row's start (361.80 s): a small real Earth on the right throughout; on the left,
+    in turn, the real Moon (LRO e001982), the real Sun (SDO e002035) and Proxima (code red-dwarf glow), each a cut-out
+    disc on black space. Each sends a pulse to Earth: the Moon's lands in 1 s, the Sun's in 3 s, Proxima's sets out on
+    "Light from the nearest star" and is still only a sliver of the way across when the row ends. Text-free."""
+    pts, size, alpha, tint = star_field(1338, 500)
+    n = int(seconds * FPS)
+    SX, EX, Y = -5.4, 5.8, 0.0
+    # (source, fade in, pulse leaves, pulse arrives, fade out); local seconds from the row start
+    beats = [("moon", 1.9, 3.3, 4.3, 5.9), ("sun", 6.0, 6.5, 9.5, 9.6), ("proxima", 9.7, 10.2, None, None)]
+    crawl = 0.035 / max(0.1, seconds - 10.2)
+    frames = [int(n * 0.6)] if still else range(n)
+    for i in frames:
+        t = i / FPS
+        fig, ax = canvas()
+        ax.scatter(pts[:, 0], pts[:, 1], s=size, c=tint, alpha=alpha * 0.8, lw=0)
+        put_disc(ax, EARTH_IMG, EX, Y, 0.6)
+        for name, fin, leave, arrive, fout in beats:
+            a = ease((t - fin) / 0.5) * (1.0 - ease((t - fout) / 0.5) if fout else 1.0)
+            if a <= 0:
+                continue
+            if name == "moon":
+                put_disc(ax, MOON_IMG, SX, Y, 0.75, a)
+                x0 = SX + 0.75
+            elif name == "sun":
+                put_disc(ax, SUN_IMG, SX, Y, 1.2, a)
+                x0 = SX + 1.2
+            else:
+                red_dwarf(ax, SX, Y, a, scale=1.5)
+                x0 = SX + 0.3
+            if t < leave:
+                continue
+            x1 = EX - 0.6
+            if arrive:
+                s = min(1.0, (t - leave) / (arrive - leave))
+                fade = 1.0 - ease((t - arrive) / 0.4) if t > arrive else 1.0
+                pulse(ax, x0, Y, x0 + (x1 - x0) * s, alpha=a * fade)
+                if t > arrive:
+                    g = 1.0 - ease((t - arrive) / 1.0)
+                    ax.add_patch(Circle((EX, Y), 0.95, color="#fff3c8", alpha=0.25 * g * a, lw=0, zorder=9))
+            else:
+                s = crawl * (t - leave)
+                pulse(ax, x0, Y, x0 + (x1 - x0) * s, alpha=a, trail=0.35)
+        save(fig, out, i, still)
+    finish(out, still)
+
+
 def save(fig, out, i, still):
     os.makedirs(out, exist_ok=True)
     fig.savefig(os.path.join(out, "still.png" if still else f"{i:04d}.png"), facecolor=BG)
@@ -206,13 +353,14 @@ def finish(out, still):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["parallax", "triple", "journey", "lighttimes", "scale", "all"])
+    ap.add_argument("which", choices=["parallax", "triple", "journey", "lighttimes", "scale", "lightyear", "lightrace", "all"])
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
     a = ap.parse_args()
     jobs = {"parallax": (render_parallax, 12), "triple": (render_triple, 12), "journey": (render_journey, 14),
-            "lighttimes": (render_lighttimes, 18), "scale": (render_scale, 10)}
+            "lighttimes": (render_lighttimes, 18), "scale": (render_scale, 10),
+            "lightyear": (render_lightyear, 9.6), "lightrace": (render_lightrace, 16.8)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
         fn(os.path.join(a.out, name), a.seconds or secs, a.still)
