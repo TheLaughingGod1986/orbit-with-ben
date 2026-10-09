@@ -79,6 +79,12 @@
         "near-black",
         "low detail"
       ]
+    },
+    "PIA17049.jpg": {
+      "note": "Voyager sharp and lit against black space; the dark is space (Claude, 9 Oct, rough v03 review)",
+      "kinds": [
+        "near-black"
+      ]
     }
   },
   "swaps": [
@@ -207,5 +213,39 @@
     "changed": {
       "6:16": "Not PIA21839 again 11 s after its hold. Run lighttimes to the end of row 27 instead, with the Proxima bar still drawing slowly (that slow draw is the 4.2 years). It passes as one animated code graphic, so the 6 s hold rule doesn't apply."
     }
+  },
+  "v04": {
+    "note": "Claude, 9 Oct, rough v03 review (pack 853f5f6). Every other frame on the per-row sheet passes.",
+    "fix": [
+      {
+        "at": "2:54",
+        "row": "13",
+        "src": "eso0932a.jpg",
+        "why": "the all-sky panorama fitted to the width is a thin band across a mostly black frame",
+        "do": "crop 16:9 tight on the bright galactic centre (about a third of the panorama's width, upscale under 2x) and hold it, or use a very slow drift instead of a push (the push jitter fails). It then passes near-black on its own."
+      },
+      {
+        "at": "7:51",
+        "row": "33",
+        "src": "eso0932a.jpg",
+        "why": "same",
+        "do": "the same tight crop, a different part of the band (e.g. the Carina side)"
+      },
+      {
+        "at": "5:23",
+        "row": "24",
+        "src": "PIA04495.jpg",
+        "why": "the crop misses Voyager; only two boom lines on blue sky show",
+        "do": "recrop so the whole spacecraft is in frame"
+      },
+      {
+        "at": "3:42",
+        "row": "15",
+        "src": "eso1241a.mp4 0.5-5.5 s",
+        "why": "it's a black frame (the clip fades up from black)",
+        "do": "a part of eso1241a between 14 and 20 s that is neither black nor labelled (check every frame); otherwise the next best still from the pool with under 2 uses"
+      }
+    ],
+    "fill_gate": "For 026 the border-fill check is a WARN, not a FAIL: night-sky and space pictures touch the border with dark sky by nature. A real letterbox or pillarbox is caught by polish_gate's split-panel check, which is clean in v03."
   }
 }
