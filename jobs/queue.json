@@ -1,5 +1,5 @@
 {
-  "next_id": 114,
+  "next_id": 115,
   "jobs": [
     {
       "id": "J0001",
@@ -5031,6 +5031,32 @@
         }
       ],
       "urgent": 11
+    },
+    {
+      "id": "J0114",
+      "title": "026 v05b: fix 7 same-stretch reuses, then Watch link for Ben",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief's call on J0085's picture_qa FAIL (7 same-stretch reuses, rule c2b15c5): fix them before Ben watches. One watch for Ben, not two.\nRows: 1:31 triple (r8), 3:23 uhd_bt_paranal_01 (r14), 4:40 bt_lasilla_crux (r21), 5:48 uhd_bt_paranal_07 (r25), 7:56/8:02/8:12 paranal_06, vltfromvista, yb_paranal_01 (r33).\n- vltfromvista (29 s): shift to an unused stretch.\n- The others: replace the repeat (keep the first use) with a different clip from footage already on disk (ESO/NASA free library, same subject: observatory, telescopes, Milky Way sky). Colour-grade it like the rest. If nothing fitting is on disk, use a slow code-graphic star field or a graded still that isn't a still-push. No paid mints, no new spend.\n- Keep rows 9, 11, 24 and 27 (Ben's fixes) exactly as in v05. Same VO, music and length.\n- Rebuild v05b from cached segments. picture_qa, music_gate and clip_check must all PASS.\n- Output: OWB UAT/026_NearestStar_v05b_PHONE.mp4 (v05 PHONE file wasn't found in OWB UAT/ on 10 Oct 00:55; check where it went). Put the Watch link for v05b on the 026 card per 05_Analytics/kanban/README.md (status.json watch, or an iCloud share), post six stills of the changed rows plus the sha on #99 for Chief, and set the film to \"ready for Ben\".\n",
+      "ref": "",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-09T23:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T23:55Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
