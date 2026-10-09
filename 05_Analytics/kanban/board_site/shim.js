@@ -45,11 +45,23 @@
     }
   };
 
+  // raw.githubusercontent caches a branch URL for up to 5 min and ignores query strings, so ask the GitHub API which
+  // commit board-data is on (cached 60 s; the browser revalidates with ETag, and 304s don't use the hourly limit) and
+  // read that commit's file, which never goes stale. If the API says no (rate limit), fall back to the branch URL.
+  const REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
+  const AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
+  let lastSha = "";
   async function pollData() {
     try {
-      const r = await fetch(DATA + "?t=" + Date.now(), { cache: "no-store" });
+      let url = DATA + "?t=" + Date.now(), sha = "";
+      try {
+        const g = await fetch(REF, { cache: "no-cache" });
+        if (g.ok) { sha = ((await g.json()).object || {}).sha || ""; if (sha && sha === lastSha && board) return; if (sha) url = AT(sha); }
+      } catch (e) {}
+      const r = await fetch(url, { cache: sha ? "force-cache" : "no-store" });
       if (!r.ok) return;
       const text = await r.text();
+      if (sha) lastSha = sha;
       if (text === lastHash) return;
       const j = JSON.parse(text);
       lastHash = text;
