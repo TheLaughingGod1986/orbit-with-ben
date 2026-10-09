@@ -17,6 +17,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
+| J0091 | mini | open | – | – | 022 Sun: Studio finish before 18 Oct (end screen, cards, Test & Compare, Shorts related pill) | 6080962890 |
 
 Recently finished:
 
