@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""025 Could a Robot Survive on Mars? full rough v03d (J0068: Ben's notes on v03c: 2:54 PIA12337 -> PIA12102, 025's own score bed
+"""025 Could a Robot Survive on Mars? full rough v03d (J0068: Ben's notes on v03c: 2:54 PIA12337 -> PIA12457 (Claude #6072407565; PIA12102 rejected, out of focus), 025's own score bed
 (05_Music/mars-robot_score_bed_v01_full.mp3); Codex picture ideas accepted by Claude: opening PIA15115 (colour Opportunity self-portrait, Claude #6072284733; PIA17956 moves to row 21), machine
 name labels, cleaning shown dusty -> clean at "swept its panels clean", puncture photo held through the wheel-holes sentence, Orbit after it).
 v03c (J0063: Claude's v03b sheet pass: row 16 PIA12490 cropped between its green annotation
@@ -29,7 +29,7 @@ UAT=Path.home()/'Library/Mobile Documents/com~apple~CloudDocs/OWB UAT'
 WORK=Path('/private/tmp/mars025_full_work_v03d'); PACK=HERE/'full_rough_v03d_pack'
 VO=EP/'02_Voiceover/mars_robot_vo_v01.mp3'
 OUT=UAT/'025_MarsRobot_full_rough_v03d.mp4'
-BED=EP/'05_Music/mars-robot_score_bed_v01_full.mp3'
+BED=EP/'05_Music/mars-robot_score_bed_v02_full.mp3'
 MAX_UP=2.35; MAX_HOLD=6.0
 H=HERE/'nasa_pool_v01'
 OM=EP/'04_Generated-Clips/01_Raw/omni_v01'
@@ -76,7 +76,7 @@ ROWS=[
  ('11',111.50,['dsn/PIA17792.jpg','dsn/PIA23214.jpg','rovers_wait/PIA25681.jpg','dsn/PIA26717.jpg']),
  ('12',133.76,['spirit/PIA09090.jpg','dusk_plain/PIA15024.jpg','dusk_plain/PIA26673.gif']),
  ('13',144.96,['spirit/PIA07882.jpg','open_pan/PIA20328.jpg',('dusk_plain/PIA19400.jpg',dict(pct=0.12)),(COLD,v(4.0,max=5.0,push=0.05))]),
- ('14',161.40,[('spirit/PIA12142.jpg',dict(box=(0.68,0.28,0.873,0.86))),('spirit/PIA12203.jpg',dict(quad='tl')),'spirit/PIA12102.jpg','spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
+ ('14',161.40,[('spirit/PIA12142.jpg',dict(box=(0.68,0.28,0.873,0.86))),('spirit/PIA12203.jpg',dict(quad='tl')),('spirit/PIA12457.jpg',dict(box=(0.0,0.40,1.0,0.965))),'spirit/PIA12203.jpg',('spirit/PIA07882.jpg',c)]),
  ('15',186.38,['spirit/PIA07371.jpg','spirit/PIA01907.jpg','tracks/PIA16933.jpg']),
  ('16',199.44,[('dusk_plain/PIA19400.jpg',dict(box=(0.05,0.36,0.70,0.815))),'phoenix/PIA13804.jpg','phoenix/PIA10665.jpg',('phoenix/PIA12490.jpg',dict(box=(0.12,0.232,0.8645,0.5653))),('phoenix/PIA13804.jpg',c)]),
  ('17',225.06,['rover_work/PIA24542.jpg','rovers_wait/PIA24264.jpg']),

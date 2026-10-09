@@ -11,7 +11,7 @@ python3 _assemble_mars_robot_full_v03d.py || exit 3
 python3 "$ROOT/scripts/picture_qa.py" "$CUT" --cuts "$PACK/cuts_v03d.json" --pool "$ED/nasa_pool_v01.json" --out-dir "$PACK" --reviewed-ok "$PACK/polish_reviewed_ok_v03d.json" > "$PACK/picture_qa_v03d.txt" 2>&1
 PQ=$?
 cd "$ROOT" || exit 2
-python3 scripts/music_gate.py "$EP" --bed "$EP/05_Music/mars-robot_score_bed_v01_full.mp3" --video "$CUT" \
+python3 scripts/music_gate.py "$EP" --bed "$EP/05_Music/mars-robot_score_bed_v02_full.mp3" --video "$CUT" \
   --others 02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/05_Music/saturn-rings_score_bed_v01.mp3 \
            02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music/sun-brighter_score_bed_v01.mp3 \
   --out "$PACK/music_gate.json" > "$PACK/music_gate_v03d.txt" 2>&1
