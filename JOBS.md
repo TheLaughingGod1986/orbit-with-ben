@@ -9,7 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
-| J0084 | mini | claimed | cursor | 2026-10-09T22:27Z | 025 upload · 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) | 6077231242 |
+| J0084 | mini | open (after J0066) | – | – | 025 upload · 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) | 6077231242 |
 | J0085 | mini | open | – | – | 026 edit · 026 Nearest Star: Ben's fixes, two graphics + Orbit's two scenes back in (v05) | 6077058676 |
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
