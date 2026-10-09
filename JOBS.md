@@ -17,7 +17,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
-| J0091 | mini | claimed | cursor | 2026-10-09T16:05Z | 022 Sun: SET THUMBNAILS in Studio (API refused) + Studio finish before 18 Oct | 6080962890 |
+| J0091 | mini | open | – | – | 022 Sun: SET THUMBNAILS in Studio (API refused) + Studio finish before 18 Oct | 6080962890 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
 | J0096 | mini | open (after J0095) | – | – | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
 | J0097 | mini | open | – | – | HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) |  |
