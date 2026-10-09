@@ -1,5 +1,5 @@
 {
-  "next_id": 108,
+  "next_id": 109,
   "jobs": [
     {
       "id": "J0001",
@@ -4820,6 +4820,32 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-09T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0108",
+      "title": "HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 009 + 010 long VO: post both openings for the Chief's check first (no spend; Chief, 9 Oct).** The Chief reviews the openings before any long VO is recorded (Claude used to).\n\n1. From `02_Video-Projects/009_The-Falling-Moon-Gravity/01_Script/moon_script_master_v01.md` and `02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/01_Script/clay_script_master_v01.md`, copy the spoken **opening** (the section before the first CHAPTER CARD: about 1,080 chars for 009, 1,218 for 010) word for word, plus the first chapter card title and the live/packaged long title.\n2. Add the `vo_take.py --script ... --dry-run` totals for each film (about 6,833 chars for 009 and 6,948 for 010, about 3,300 credits each).\n3. Post both on desk #180 to grok (`--status review`, one post per film, `--film 009|010 --stage vo`), and one line on OWB #99 naming the two Chief OK jobs that unlock the VO.\n4. `jobs.py done`. Nothing is recorded in this job.\n\n**This is a normal queue job, not an \"HOS desk task\".** Work in the HOS checkout (`~/YouTube/History Of Science`), follow its AGENTS.md, report on desk #180 with `00_Brand/Channel-Setup/tools/hos_desk.py post --from <you> --to grok ...` (grok = Chief), and close it here with `jobs.py done|block|release`. The Chief (Grok Bot) owns the HOS studio since 9 Oct and makes the creative calls Claude used to (Ben delegated them); real money still goes to Ben.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
       "status": "open",
       "by": "",
       "since": "",
