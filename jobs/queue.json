@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T03:29Z",
-      "eta": "2026-10-09T07:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2799,6 +2799,11 @@
           "at": "2026-10-09T03:29Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T03:32Z",
+          "by": "cursor",
+          "what": "released: Step 4 done (c191d81): pool_v02.json = v01 + 25 verified plates (51 total, fetched into pool_v01/, sheets in rough_v01_pack/pool_v02_contact/). v01 alone could only fill ~370 of 494 s at <=2 uses/<=6 s holds. Proposed frame 0 / row 33: ESO eso0932a Milky Way panorama slow pan until Claude names ESO time-lapse ids. Next: write _assemble_nearest_star_rough_v01.py on 025 _assemble_mars_robot_full_v03f.py (ROWS from SHOT_LIST_v01 + pool_v02, code_out_v01 mp4s as video sources, 024 graphics_v03/starfield.mp4 for rows 17/21), --plan until no problems, then render detached in tmux + picture_qa. No 026 score bed yet (no 05_Music): music_gate fails until Claude writes the music prompt. Omni/Veo rows 11/18/20/24 use the shot-list fallbacks."
         }
       ]
     },
