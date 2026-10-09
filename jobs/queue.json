@@ -1,5 +1,5 @@
 {
-  "next_id": 97,
+  "next_id": 98,
   "jobs": [
     {
       "id": "J0001",
@@ -4295,6 +4295,32 @@
       "history": [
         {
           "at": "2026-10-09T13:41Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0097",
+      "title": "HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Thumbnail audit 9 Oct, item 1 (`00_Brand/Channel-Setup/audits/THUMB_AUDIT_2026-10-09/AUDIT.md`). Urgent: HOS 004 airs Thu 15 Oct 17:00Z.**\n- **The problem:** variant C v06, \"THE HIDDEN NUMBER\", is broken. The Te/I tiles are a pasted rectangle with hard edges, and the right third is smeared, edge-stretched pixels (`hos_004_C_v06_broken.jpg` in the audit folder). C is in 004's Test & Compare set (`LAUNCH_PLAN.md`).\n- **First:** in Studio, check which Test & Compare variants are set on `GHZDsiH7L7A`, and post a screenshot with no account details.\n- **Then either:** (a) repaint C with the tiles painted into the scene, under HOS rules 2.1–2.8 (Te 52 and I 53 added by hand in the house lettering, everything in frame), or (b) if that can't be done by Wed 14 Oct, take C out of Test & Compare and run A and B only.\n- **Also, item 13:** point 005's `PACKAGE_MANIFEST.json` `youtubeId` at the scheduled `wwcjcFfC-5M` rather than the stray private `0IfXGSX7Ypw`. Leave the stray private and never delete it.\n- HOS repo, through a PR as usual.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T15:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T15:11Z",
           "by": "claude",
           "what": "added"
         }

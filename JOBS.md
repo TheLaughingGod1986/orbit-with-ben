@@ -18,6 +18,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0091 | mini | open | – | – | 022 Sun: Studio finish before 18 Oct (end screen, cards, Test & Compare, Shorts related pill) | 6080962890 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
 | J0096 | mini | open (after J0095) | – | – | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
+| J0097 | mini | open | – | – | HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) |  |
 
 Recently finished:
 
