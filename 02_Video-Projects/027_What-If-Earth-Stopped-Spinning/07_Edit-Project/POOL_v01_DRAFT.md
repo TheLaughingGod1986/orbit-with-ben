@@ -53,3 +53,12 @@ From `search_pool_v01.py` → `pool_candidates_v01.json` and a second pass `pool
 | 34 melting ice | GSFC e001753 melt lake (IceBridge) | 3648×2048 | Reads as "melting ice". Alt: e000112 melt ponds 3093×2062. e000213 / chutes are 1500–2000 px and less clear. |
 
 Other checks from the fetch: EPIC e000265 is only 1920×1080 (fine at 1.0×). PIA13037 retroreflector is 752² (2.55× at full height → must be framed smaller or swapped). Eclipse NHQ201708210116 is a 12810×1500 strip (a sequence), not a single corona: pick another NHQ2017082101xx frame. SDO e002035 is 1024² (fit to height ~1.05×).
+
+## Claude #6083184015 rulings applied (Cursor covering, J0077, 9 Oct 2026), £0
+
+| Row | Pick | Size | Note |
+|---|---|---|---|
+| 25 | **as14-67-09386** "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts" | 4020×4020 | Claude's first choice met: a real Apollo photo with the reflector array as the subject, bootprints around it. A 16:9 crop of the full width is a downscale (~0.48×). PIA13037 kept as fallback only. Apollo 11 frames checked and dropped: AS11-40-5952 isn't in the API, and in AS11-40-5948 the seismometer fills the foreground and the reflector is ~235 px. |
+| 27 | **NHQ201708210100** "2017 Total Solar Eclipse" (Madras, Oregon, totality) | 3186×2527 | One full-frame corona, no text. A 16:9 crop is ~0.6×. Alt: NHQ201708210102 diamond ring (3239×2196). The 0116 strip is not used. |
+
+Frame 0 (rows 1, 15, 37): `fetch_epic_v01.py` downloads one day of EPIC natural-colour frames (2025-06-21, 22 frames at ~65 min, 2048² PNG) to `/private/tmp/owb027_epic_v01/` for a turning-Earth time-lapse. SVS 13056 (the produced EPIC video) has music and captions, so it isn't used.
