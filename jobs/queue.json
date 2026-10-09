@@ -1,5 +1,5 @@
 {
-  "next_id": 101,
+  "next_id": 102,
   "jobs": [
     {
       "id": "J0001",
@@ -4452,6 +4452,32 @@
       "history": [
         {
           "at": "2026-10-09T15:11Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0101",
+      "title": "HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 005 `wwcjcFfC-5M` (airs Thu 29 Oct 18:00): check and arm, in Studio on the HOS Studio browser.** Thumb audit item 13, and Cursor's #6084762629: the 2 Oct Test & Compare evidence was saved on the stray `0IfXGSX7Ypw`, so the scheduled copy probably has none.\n1. Read-only first: screenshot what's set on `wwcjcFfC-5M` (thumbnail, Test & Compare, end screen, cards), with no account details.\n2. Set thumbnail A (`hos_005_thumb_A_one_tight_band_v02.jpg`) if it's missing. Arm Test & Compare from 005's package (`PACKAGE_MANIFEST.json` / LAUNCH_PLAN pairs, the same ones saved on the stray on 2 Oct).\n3. Copy over the end screen and cards from the stray's 2 Oct settings, if they're missing.\n4. Don't touch `0IfXGSX7Ypw`: it stays private, and nothing is deleted.\nReport what was missing and what you set, on #99 and in an HOS PR.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T16:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T16:16Z",
           "by": "claude",
           "what": "added"
         }
