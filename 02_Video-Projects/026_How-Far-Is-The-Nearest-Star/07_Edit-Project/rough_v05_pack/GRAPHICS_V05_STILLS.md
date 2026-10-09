@@ -1,22 +1,27 @@
-# 026 v05: two new code graphics, stills for Claude (J0085)
+# 026 v05: two new code graphics, stills for the Chief (J0085)
 
-Rendered by `code_graphics.py lightyear|lightrace code_out_v05/` (Mini, 9 Oct). Text-free. Sheet: `code_out_v05_sheet.jpg`; full-size stills in `code_out_v05_stills/`.
+Rendered by `code_graphics.py lightyear|lightrace code_out_v05/` (Mini). Sheet: `code_out_v05_sheet.jpg`; full-size stills in `code_out_v05_stills/`.
 
-## `lightyear` (row 9), 9.6 s
-- Proxima (the code red-dwarf glow, as in `parallax`) left; real Earth right (LRO/Blue Marble `GSFC_20171208_Archive_e002130`, cut-out disc); full-frame star field; a very faint guide line.
-- One pulse leaves Proxima at 0.6 s and reaches Earth at 8.3 s at constant speed. Four ticks at 1/4.25 … 4/4.25 of the path light gold as it passes (one per year; the last quarter year has no tick). Earth glows briefly on arrival.
-- Stills: 0.3 s (start), 4.5 s (two ticks lit), 8.6 s (arrival).
-- **Placement (needs Claude's call):** row 9 runs 108.33–121.73 s. An 8 s graphic that only takes the `journey` slot (108.33–112.20) can't land on "four years ago" (120.26–121.0). Proposed v05 row 9: `iss073e0982679` 108.33–112.20 ("A light-year is a distance, not a time."), then `lightyear` 112.20–121.73 (hold_ok, 9.5 s), so the pulse arrives at 120.5 s on "four years ago". `eso1031a` leaves row 9 (it stays in rows 13 and 24's neighbours).
+**Round 2 (10 Oct), after the Chief's FIX (#6090651546).** Both graphics now carry short labels in house type (Arial/Helvetica bold, 60 pt, about 100 px cap-to-descender at 1080), white with the number in yellow (#ffd23f), in the empty band above or below the path, each fading in on its spoken word. Every label is the spoken words, and none says 4.25.
+
+## `lightyear` (row 9), 9.6 s, placed 112.20–121.73 (hold_ok)
+- Proxima (code red-dwarf glow, as in `parallax`) left; real Earth right (`GSFC_20171208_Archive_e002130`), now 1.4x (140 px across); full-frame star field.
+- Guide line 3 px at 35% white. Ticks 6 px wide and 44 px tall, grey until lit, then gold.
+- One pulse leaves Proxima at 0.6 s (112.8 s film) and reaches Earth at 8.3 s (120.5 s, on "four years ago") at constant speed. Four ticks at 1/4.25 … 4/4.25 of the path.
+- Labels: "Proxima" under the star from the row start; "1 year" (yellow) above the first tick as it lights at 2.41 s (114.61 s, "in a year" at 114.58); "More than **4 years**" above the path from 7.6 s (119.8 s, "more"), fully in by "four" (120.26 s).
+- Stills: 0.3 s, 4.5 s, 8.6 s.
 
 ## `lightrace` (row 27), 16.8 s, timed from the row start (361.80 s)
-- Real Earth disc right throughout. Left, in turn, each a cut-out disc on black space:
-  - Moon (`GSFC_20171208_Archive_e001982`, 2nd use): in at 1.9 s, pulse 3.3 → 4.3 s (1 s; "Moonlight" is at 3.12).
-  - Sun (`GSFC_20171208_Archive_e002035`, 2nd use): in at 6.0 s, pulse 6.5 → 9.5 s (3 s; "Sunlight" is at 6.38).
-  - Proxima (code red-dwarf glow): in at 9.7 s, pulse sets out at 10.2 s ("Light from the nearest star" is at 9.24) and crawls to 3.5% of the way by the end, holding that slow progress over "the shortest trip of its kind there is".
-- Stills: 3.8 s (Moon pulse), 8.0 s (Sun pulse mid-trip), 16.5 s (Proxima's sliver at the end).
-- **Flag:** `e002035` is SDO ultraviolet, so the Sun reads **blue**. Used as briefed. If Claude wants a yellow-white Sun, `e000790` or `e000759` are the alternatives in the pool (one constant change).
+- Real Earth disc right throughout (radius unchanged). Left, in turn:
+  - Moon (`GSFC_20171208_Archive_e001982`, 2nd use), now 0.5x Earth's width. Pulse 3.3 → 4.3 s. Label "Just over **a second**" from 4.56 s ("just").
+  - Sun, now `sun/GSFC_20171208_Archive_e000759.jpg` (gold, 2nd use), 1.5x Earth's width. It read bronze-orange next to Earth, so `disc()` grades it warm-white (that file only). Pulse 6.5 → 9.5 s. Label "About **8 minutes**" from 7.78 s ("eight").
+  - Proxima (code red-dwarf glow) from 9.7 s, with the same 3 px guide line to Earth and a solid gold trail behind the pulse. The pulse sets out at 10.2 s and crawls to 3.5% of the way by the end. Label "More than **4 years**" from 11.34 s ("more").
+- Timings unchanged otherwise (Moon 3.3→4.3, Sun 6.5→9.5, Proxima from 10.2).
+- Stills: 4.9 s (Moon pulse landed, label in), 8.4 s (Sun pulse mid-trip, label in), 16.5 s (Proxima's sliver at the end).
+
+## Row 9 placement (approved by the Chief)
+`iss073e0982679` 108.33–112.20 ("A light-year is a distance, not a time."), then `lightyear` 112.20–121.73 (hold_ok). `eso1031a` leaves row 9; `journey` drops to 2 uses.
 
 ## Still to do on J0085
-1. Claude OKs (or changes) the stills and the row 9 placement above.
-2. Two Omni takes (rows 11 and 24), Vertex `global`, one take each, balance read before each.
-3. v05 render from v04's cached segments, rows 9, 11, 24 and 27 changed; picture_qa, music_gate, clip_check; `OWB UAT/026_NearestStar_v05_PHONE.mp4`.
+1. ~~Omni takes rows 11 and 24~~ (done: 4537e72, 59e3a17).
+2. v05 render from v04's cached segments, rows 9, 11, 24 and 27 changed; picture_qa (both graphics added to `polish_reviewed_ok` as code graphics on black space), music_gate, clip_check; `OWB UAT/026_NearestStar_v05_PHONE.mp4`.

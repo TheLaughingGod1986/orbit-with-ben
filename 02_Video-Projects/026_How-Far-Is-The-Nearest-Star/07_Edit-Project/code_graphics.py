@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Code-drawn graphics for the nearest-star film (026). 1920x1080, 30 fps, PNG frames then MP4. Text-free by design.
+"""Code-drawn graphics for the nearest-star film (026). 1920x1080, 30 fps, PNG frames then MP4. Text-free, except
+the v05 graphics, which carry short house-type labels taken from the spoken line (AGENTS.md 7: read with the sound off).
 
   python3 code_graphics.py parallax   out/   # ch.2: Earth moves Jan -> Jul; the near star shifts against the far stars
   python3 code_graphics.py triple     out/   # ch.1: Alpha Cen A and B orbit each other; Proxima loops round them, far out
@@ -27,8 +28,10 @@ Numbers (01_Script/SOURCES.md):
 import argparse, math, os, subprocess, sys
 
 import numpy as np
+import logging
 import matplotlib
 matplotlib.use("Agg")
+logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Ellipse, Rectangle
 
@@ -40,6 +43,10 @@ DIM = "#8a8f9c"
 CYAN = "#5fd6ff"
 RED = "#ff6a4a"
 EARTH = "#3a7bd5"
+YELLOW = "#ffd23f"
+FONT = {"family": ["Arial", "Helvetica", "DejaVu Sans"], "weight": "bold"}
+LABEL_PT = 60
+UNIT_PX = W / 16
 
 
 def ease(t):
@@ -193,7 +200,7 @@ def render_scale(out, seconds, still):
 POOL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pool_v01")
 EARTH_IMG = "earth_moon/GSFC_20171208_Archive_e002130.jpg"
 MOON_IMG = "earth_moon/GSFC_20171208_Archive_e001982.jpg"
-SUN_IMG = "sun/GSFC_20171208_Archive_e002035.jpg"
+SUN_IMG = "sun/GSFC_20171208_Archive_e000759.jpg"  # gold SDO 171; graded warm-white in disc() so it reads as the Sun
 _DISCS = {}
 
 
@@ -214,6 +221,9 @@ def disc(rel, px=600):
     r = max(rows[-1] - rows[0], cols[-1] - cols[0]) / 2
     sq = im.crop((round(cx - r), round(cy - r), round(cx + r), round(cy + r))).resize((px, px), Image.Resampling.LANCZOS)
     rgb = np.asarray(sq, dtype=np.float32) / 255.0
+    if rel == SUN_IMG:
+        lum = np.clip(rgb.max(axis=2, keepdims=True), 0, 1) ** 0.4
+        rgb = np.clip(0.25 * rgb + 0.85 * lum * np.array([1.0, 0.9, 0.62], dtype=np.float32), 0, 1)
     yy, xx = np.mgrid[0:px, 0:px]
     d = np.hypot(xx - (px - 1) / 2, yy - (px - 1) / 2) / (px / 2)
     alpha = np.clip((1.0 - d) / 0.02, 0, 1)
@@ -256,71 +266,118 @@ def star_field(seed, n=900):
     return pts, size, alpha, tint
 
 
+_WIDTHS = {}
+
+
+def text_w(fig, text):
+    """Width of `text` in data units at label size, trailing spaces included."""
+    if text not in _WIDTHS:
+        r = fig.canvas.get_renderer()
+        def px(t):
+            h = fig.text(0, 0, t, fontsize=LABEL_PT, fontdict=FONT)
+            w = h.get_window_extent(r).width
+            h.remove()
+            return w
+        _WIDTHS[text] = (px(text + "|") - px("|")) / UNIT_PX
+    return _WIDTHS[text]
+
+
+def label(fig, ax, x, y, parts, alpha=1.0):
+    """A one-line label centred on (x, y), kept inside the frame. `parts` is [(text, colour), ...] so the number or hook
+    word can be yellow while the rest is white."""
+    if alpha <= 0.01:
+        return
+    total = sum(text_w(fig, t) for t, _ in parts)
+    left = min(max(x - total / 2, -7.6), 7.6 - total)
+    for t, col in parts:
+        ax.text(left, y, t, color=col, alpha=alpha, fontsize=LABEL_PT, fontdict=FONT, ha="left", va="center", zorder=10)
+        left += text_w(fig, t)
+
+
+def guide(ax, x0, x1, y):
+    ax.plot([x0, x1], [y, y], color="white", lw=3 * 72 / DPI, alpha=0.35, zorder=2, solid_capstyle="butt")
+
+
 def render_lightyear(out, seconds, still, leave=0.6, arrive=8.3):
     """Row 9: Proxima (red-dwarf glow, left) and a small real Earth (right) across a full-frame star field. One pulse
     leaves Proxima at `leave` s and reaches Earth at `arrive` s at constant speed. Four ticks at 1/4.25 .. 4/4.25 of the
-    path (one per year of the 4.25-year trip) light up as the pulse passes; the last quarter year has no tick."""
+    path (one per year of the 4.25-year trip) light up as the pulse passes; the last quarter year has no tick.
+    Labels (row starts at 112.20 s film time): "Proxima" throughout; "1 year" as the first tick lights (~114.6 s, "in a
+    year"); "More than 4 years" from "more" (119.80 s) through "four years ago"."""
     pts, size, alpha, tint = star_field(4246)
     n = int(seconds * FPS)
     PX, EX, Y = -6.2, 6.2, 0.0
     ticks = [PX + (EX - PX) * k / 4.25 for k in range(1, 5)]
+    first_tick = leave + (arrive - leave) / 4.25
+    TH = 22 / UNIT_PX
     frames = [int(n * 0.6)] if still else range(n)
     for i in frames:
         t = i / FPS
         fig, ax = canvas()
         ax.scatter(pts[:, 0], pts[:, 1], s=size, c=tint, alpha=alpha, lw=0)
-        ax.plot([PX, EX], [Y, Y], color=DIM, lw=1, alpha=0.18, zorder=2)
+        guide(ax, PX, EX, Y)
         s = min(1.0, max(0.0, (t - leave) / (arrive - leave)))
         x = PX + (EX - PX) * s
         for tx in ticks:
             lit = x >= tx
-            ax.plot([tx, tx], [Y - 0.22, Y + 0.22], color=GOLD if lit else DIM, lw=3 if lit else 2,
-                    alpha=0.95 if lit else 0.35, zorder=3)
+            ax.plot([tx, tx], [Y - TH, Y + TH], color=GOLD if lit else "#9a9a9a", lw=6 * 72 / DPI,
+                    alpha=1.0 if lit else 0.7, zorder=3, solid_capstyle="butt")
         red_dwarf(ax, PX, Y, scale=1.3)
-        put_disc(ax, EARTH_IMG, EX, Y, 0.42)
+        put_disc(ax, EARTH_IMG, EX, Y, 0.585)
         if t >= leave:
             fade = 1.0 - ease((t - arrive) / 0.5) if t > arrive else 1.0
-            pulse(ax, PX, Y, min(x, EX - 0.3), alpha=fade)
+            pulse(ax, PX, Y, min(x, EX - 0.4), alpha=fade)
         if t > arrive:
             g = 1.0 - ease((t - arrive) / 1.2)
-            ax.add_patch(Circle((EX, Y), 0.75, color="#fff3c8", alpha=0.25 * g, lw=0, zorder=9))
+            ax.add_patch(Circle((EX, Y), 0.9, color="#fff3c8", alpha=0.25 * g, lw=0, zorder=9))
+        label(fig, ax, PX, -1.95, [("Proxima", WHITE)], ease(t / 0.4))
+        label(fig, ax, ticks[0], 0.95, [("1 year", YELLOW)], ease((t - first_tick) / 0.4))
+        label(fig, ax, 0.0, 2.7, [("More than ", WHITE), ("4 years", YELLOW)], ease((t - 7.6) / 0.5))
         save(fig, out, i, still)
     finish(out, still)
 
 
 def render_lightrace(out, seconds, still):
     """Row 27, timed to the VO from the row's start (361.80 s): a small real Earth on the right throughout; on the left,
-    in turn, the real Moon (LRO e001982), the real Sun (SDO e002035) and Proxima (code red-dwarf glow), each a cut-out
-    disc on black space. Each sends a pulse to Earth: the Moon's lands in 1 s, the Sun's in 3 s, Proxima's sets out on
-    "Light from the nearest star" and is still only a sliver of the way across when the row ends. Text-free."""
+    in turn, the real Moon (LRO e001982, half Earth's width), the real Sun (SDO e000759, gold, 1.5x Earth's width) and
+    Proxima (code red-dwarf glow), each a cut-out disc on black space. Each sends a pulse to Earth: the Moon's lands in
+    1 s, the Sun's in 3 s, Proxima's sets out on "Light from the nearest star" along a faint guide line and is still only
+    a sliver of the way across when the row ends. A label under each source fades in on its spoken number: "just"
+    (4.56 s), "eight" (7.78 s), "more" (11.34 s)."""
     pts, size, alpha, tint = star_field(1338, 500)
     n = int(seconds * FPS)
     SX, EX, Y = -5.4, 5.8, 0.0
-    # (source, fade in, pulse leaves, pulse arrives, fade out); local seconds from the row start
-    beats = [("moon", 1.9, 3.3, 4.3, 5.9), ("sun", 6.0, 6.5, 9.5, 9.6), ("proxima", 9.7, 10.2, None, None)]
+    ER = 0.6
+    radius = {"moon": ER * 0.5, "sun": ER * 1.5, "proxima": 0.14}
+    # (source, fade in, pulse leaves, pulse arrives, fade out, label in, label); local seconds from the row start
+    beats = [("moon", 1.9, 3.3, 4.3, 5.9, 4.56, [("Just over ", WHITE), ("a second", YELLOW)]),
+             ("sun", 6.0, 6.5, 9.5, 9.6, 7.78, [("About ", WHITE), ("8 minutes", YELLOW)]),
+             ("proxima", 9.7, 10.2, None, None, 11.34, [("More than ", WHITE), ("4 years", YELLOW)])]
     crawl = 0.035 / max(0.1, seconds - 10.2)
     frames = [int(n * 0.6)] if still else range(n)
     for i in frames:
         t = i / FPS
         fig, ax = canvas()
         ax.scatter(pts[:, 0], pts[:, 1], s=size, c=tint, alpha=alpha * 0.8, lw=0)
-        put_disc(ax, EARTH_IMG, EX, Y, 0.6)
-        for name, fin, leave, arrive, fout in beats:
+        put_disc(ax, EARTH_IMG, EX, Y, ER)
+        for name, fin, leave, arrive, fout, lab_in, lab in beats:
             a = ease((t - fin) / 0.5) * (1.0 - ease((t - fout) / 0.5) if fout else 1.0)
             if a <= 0:
                 continue
+            r = radius[name]
             if name == "moon":
-                put_disc(ax, MOON_IMG, SX, Y, 0.75, a)
-                x0 = SX + 0.75
+                put_disc(ax, MOON_IMG, SX, Y, r, a)
             elif name == "sun":
-                put_disc(ax, SUN_IMG, SX, Y, 1.2, a)
-                x0 = SX + 1.2
+                put_disc(ax, SUN_IMG, SX, Y, r, a)
             else:
-                red_dwarf(ax, SX, Y, a, scale=1.5)
-                x0 = SX + 0.3
+                red_dwarf(ax, SX, Y, a, scale=1.0)
+            x0 = SX + r
+            x1 = EX - ER
+            label(fig, ax, SX, -1.9, lab, a * ease((t - lab_in) / 0.4))
             if t < leave:
+                if name == "proxima":
+                    guide(ax, x0, x1, Y)
                 continue
-            x1 = EX - 0.6
             if arrive:
                 s = min(1.0, (t - leave) / (arrive - leave))
                 fade = 1.0 - ease((t - arrive) / 0.4) if t > arrive else 1.0
@@ -329,8 +386,12 @@ def render_lightrace(out, seconds, still):
                     g = 1.0 - ease((t - arrive) / 1.0)
                     ax.add_patch(Circle((EX, Y), 0.95, color="#fff3c8", alpha=0.25 * g * a, lw=0, zorder=9))
             else:
-                s = crawl * (t - leave)
-                pulse(ax, x0, Y, x0 + (x1 - x0) * s, alpha=a, trail=0.35)
+                guide(ax, x0, x1, Y)
+                x = x0 + (x1 - x0) * crawl * (t - leave)
+                ax.plot([x0, x], [Y, Y], color=GOLD, lw=5, alpha=0.95 * a, solid_capstyle="round", zorder=6)
+                for rr, aa in ((0.2, 0.25), (0.1, 0.6)):
+                    ax.add_patch(Circle((x, Y), rr, color="#fff3c8", alpha=aa * a, lw=0, zorder=7))
+                ax.add_patch(Circle((x, Y), 0.05, color="white", alpha=a, zorder=8))
         save(fig, out, i, still)
     finish(out, still)
 
