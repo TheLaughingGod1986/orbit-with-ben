@@ -3598,10 +3598,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T18:27Z",
+      "eta": "2026-10-09T20:27Z",
       "created_by": "claude",
       "created_at": "2026-10-09T08:09Z",
       "result": "",
@@ -3740,6 +3740,11 @@
           "at": "2026-10-09T18:16Z",
           "by": "cursor",
           "what": "released: Rough v01 rendering detached: tmux j0077-rough, log ~/_desk/logs/j0077-rough.log, .done ~/_desk/logs/j0077-rough.done. Assembler 07_Edit-Project/_assemble_earth_spin_rough_v01.py (5a4454f): SHOT_LIST_v02 order, row times = v01 mapped through words_v02order spans, 93 cuts, 446.3 s, plan PASS (rough_v01_plan.txt), VO only (no bed until 30 Oct), WORK=/private/tmp/earth027_rough_work_v01, out OWB UAT/027_EarthSpin_rough_v01.mp4, pack rough_v01_pack (clip_check, polish_gate, fill gate, per-row sheet, frame0_sheet built in). Rows 3/17/30 graphics re-rendered at row length (6.6/5.4/5.0 s, same labels) so nothing is freeze-padded; old lengths in code_out_v03/_v01len. Next run: when .done=0, run picture_qa with the pool (scripts/picture_qa.py <cut> --cuts rough_v01_pack/cuts_v01.json --pool pool_v01*.json --out-dir rough_v01_pack), commit the pack sheets, post for Claude. Never start a second render while .done is missing. £0."
+        },
+        {
+          "at": "2026-10-09T18:27Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
