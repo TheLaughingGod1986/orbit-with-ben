@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -236,6 +237,107 @@ def load_briefs() -> dict:
     return films
 
 
+# ---- Watch links (Ben, 9 Oct 22:51): every cut waiting for Ben gets a button that opens it on his phone ----
+# One link per film, best first:
+#   1. an explicit `watch` {url, version, label} on the film: OWB status.json (top level), HOS PIPELINE.json (film),
+#      or film_briefs.json (film note). Set it when the link is something the board can't find by itself.
+#   2. the film's long upload in 00_Brand/Channel-Setup/social/UPLOADS.json (private/scheduled YouTube video), unless a
+#      newer cut sits in the UAT folder (Ben has to watch the newest one).
+#   3. the newest cut in iCloud Drive (OWB UAT/NNN_*.mp4; HOS UAT/NNN_*/... ), the *_PHONE.mp4 copy when there is one,
+#      as a Files-app link (shareddocuments://...): the file is already in Ben's iCloud Drive, nothing is shared.
+# Read where the files are (the Mini); elsewhere step 3 finds nothing and the board falls back to the folder note.
+UPLOADS = ROOT / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
+ICLOUD = Path.home() / "Library" / "Mobile Documents" / "com~apple~CloudDocs"
+UAT_DIRS = {"OWB": Path(os.environ.get("OWB_UAT_DIR", str(ICLOUD / "OWB UAT"))),
+            "HOS": Path(os.environ.get("HOS_UAT_DIR", str(ICLOUD / "HOS UAT")))}
+PHONE_ROOT = "/private/var/mobile/Library/Mobile Documents/com~apple~CloudDocs"
+WATCH_OK = ("https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
+VIDEO_EXT = (".mp4", ".mov", ".m4v")
+
+
+def version_of(name: str) -> str:
+    m = re.findall(r"_v(\d+[a-z]*)(?=[_.]|$)", Path(name).stem, flags=re.I)
+    return "v" + m[-1].lower() if m else ""
+
+
+def version_key(v: str) -> tuple:
+    m = re.fullmatch(r"v(\d+)([a-z]*)", v or "")
+    return (int(m.group(1)), m.group(2)) if m else (-1, "")
+
+
+def explicit_watch(w) -> dict | None:
+    if not isinstance(w, dict) or not str(w.get("url", "")).startswith(WATCH_OK):
+        return None
+    kind = "icloud" if "icloud.com" in w["url"] else "youtube"
+    return {"url": w["url"], "version": str(w.get("version", "")), "label": str(w.get("label", "")), "kind": kind,
+            "source": "set by hand"}
+
+
+def newest_uat(ch: str, film: str) -> dict | None:
+    root = UAT_DIRS[ch]
+    if not root.is_dir():
+        return None
+    pat = re.compile(rf"^(hos_)?{film}[_\-]", re.I)
+    files = []
+    try:
+        for p in root.iterdir():
+            if p.is_file() and pat.match(p.name) and p.suffix.lower() in VIDEO_EXT:
+                files.append(p)
+            elif p.is_dir() and pat.match(p.name):
+                files += [q for q in p.rglob("*") if q.is_file() and q.suffix.lower() in VIDEO_EXT
+                          and not any(w in part.lower() for part in q.relative_to(p).parts[:-1] for w in ("short", "stills"))]
+    except OSError:
+        return None
+    files = [p for p in files if version_of(p.name)]
+    if not files:
+        return None
+    top = max(version_key(version_of(p.name)) for p in files)
+    same = [p for p in files if version_key(version_of(p.name)) == top]
+    phone = [p for p in same if "_phone" in p.stem.lower()]
+    pick = max(phone or same, key=lambda p: p.stat().st_mtime)
+    rel = pick.relative_to(ICLOUD) if ICLOUD in pick.parents else pick.relative_to(root.parent)
+    from urllib.parse import quote
+    return {"url": "shareddocuments://" + quote(f"{PHONE_ROOT}/{rel.as_posix()}"), "version": version_of(pick.name),
+            "label": "", "kind": "files", "file": rel.as_posix(), "source": "iCloud Drive"}
+
+
+def uploaded_long(film: str) -> dict | None:
+    try:
+        vids = json.loads(UPLOADS.read_text()).get("videos", {})
+    except (OSError, ValueError):
+        return None
+    hits = [(vid, v) for vid, v in vids.items() if v.get("kind") == "long"
+            and re.match(rf"02_Video-Projects/{film}_", str(v.get("packageDir") or v.get("file") or ""))]
+    if not hits:
+        return None
+    vid, v = hits[-1]
+    return {"url": f"https://youtu.be/{vid}", "alt": f"https://studio.youtube.com/video/{vid}/edit",
+            "version": version_of(str(v.get("file", ""))), "label": "", "kind": "youtube", "source": "YouTube upload (private until it airs)"}
+
+
+def watch_links(hos: dict, owb: list[dict], briefs: dict) -> dict:
+    """{"OWB:026": {url, version, label, kind, source[, alt, file]}} for every film with something to watch."""
+    out = {}
+    films = [("OWB", str(f.get("film", "")), f.get("watch")) for f in owb] + \
+            [("HOS", str(f.get("id", "")), f.get("watch")) for f in hos.get("films", [])]
+    for ch, film, own in films:
+        if not re.fullmatch(r"\d{3}", film):
+            continue
+        key = f"{ch}:{film}"
+        w = explicit_watch(own) or explicit_watch((briefs.get(key) or {}).get("watch"))
+        if not w:
+            yt = uploaded_long(film) if ch == "OWB" else None
+            uat = newest_uat(ch, film)
+            if yt and uat and version_key(uat["version"]) > version_key(yt["version"]):
+                yt = None  # a newer cut than the upload is waiting: that's the one to watch
+            w = yt or uat
+        if w:
+            if not w["label"]:
+                w["label"] = f"Watch {w['version']}" if w.get("version") else "Watch it"
+            out[key] = w
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("page", type=Path, nargs="?")
@@ -288,8 +390,9 @@ def main(argv: list[str] | None = None) -> int:
         (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
         briefs = load_briefs()
         links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k == "uatFolderUrl"} if BRIEFS.exists() else {}
-        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, **links}, ensure_ascii=False))
-        print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
+        watch = watch_links(hos, owb, briefs)
+        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, **links}, ensure_ascii=False))
+        print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
               f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')})")
         if not a.page:
             return 0
