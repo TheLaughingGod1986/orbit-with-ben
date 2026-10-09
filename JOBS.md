@@ -17,11 +17,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
 | J0091 | mini | open | – | – | 022 Sun: Studio finish before 18 Oct (end screen, cards, Test & Compare, Shorts related pill) | 6080962890 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
-| J0095 | cloud | claimed | claude | 2026-10-09T15:11Z | for claude · 023 Venus: redraw albedo + deuterium code graphics (Ben's v05c notes) |  |
 | J0096 | mini | open (after J0095) | – | – | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
 
 Recently finished:
 
+- J0095 done: 023 Venus: redraw albedo + deuterium code graphics (Ben's v05c notes) (albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated)
 - J0093 done: Long-form view: Cursor on one 45–60 min video a month (Ben asked) (done)
 - J0092 done: Long-form view: Codex on one 45–60 min video a month (Ben asked) (Posted eight-line long-form recommendation: not yet; original documentary later, cost estimates and day-28 efficiency metric.)
 - J0090 cancelled: 027 bed take 2 for the re-ordered film (after the 30 Oct ElevenLabs reset; HOS voice first) ()
@@ -31,4 +31,3 @@ Recently finished:
 - J0081 done: Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) (Five ideas posted on #99: Related-video link check, Short as long-opening test, cached one-assembler builds, pre-render sentence sheet, HOS retro Shorts gate)
 - J0080 done: 027 Earth Stopped Spinning: its own score bed (Claude's brief) (Bed made, one full 490 s take (6,737 credits; EL 18,653 left). Raw earth-spin_score_bed_v01.mp3 + hush-lifted earth-spin_score_bed_v01_lift.mp3 on the Mini in 027/05_Music. music_gate FAIL on both: reused 0.80-0.815 vs 024/025/021 beds (just over 0.8), and on the lift a 6.1 s quiet tail at 7:41 (after VO end 460 s). Claude to decide: accept as metric false positive / trim tail, or one regeneration. Not laid in.)
 - J0079 done: 024 Light speed: its own score bed now (no ElevenLabs floor; no wait for 30 Oct) (024 own bed light-speed_score_bed_v01_full.mp3 (526 s; two takes joined at 5:16-5:24) on the Mini; music_gate PASS; EL 8,703 credits (34,093 -> 25,390). Waiting on Claude's listen before it's laid in.)
-- J0078 done: 023 Venus: its own score bed (Claude's brief; no ElevenLabs floor) (venus_score_bed_v01_full.mp3 (530 s, -14.4 LUFS, two takes joined at 3:44 chapter break); music_gate PASS; 8,250 ElevenLabs credits (34,093 left). Waits on Claude's listen before it's laid in.)

@@ -4202,13 +4202,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-10-09T13:41Z",
-      "eta": "2026-10-09T15:11Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T13:41Z",
-      "result": "",
+      "result": "albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated",
       "history": [
         {
           "at": "2026-10-09T13:41Z",
@@ -4219,16 +4219,22 @@
           "at": "2026-10-09T13:41Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T13:55Z",
+          "by": "claude",
+          "what": "done: albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated"
         }
       ],
-      "for": "claude"
+      "for": "claude",
+      "done_ref": "63eabdd"
     },
     {
       "id": "J0096",
       "title": "023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55)",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Ben's v05c notes (board, 9 Oct 13:36Z), 023 Venus → v05d.** New AGENTS rule (c5660ec): a code graphic must read with the sound off.\n\n1. **1:22 (rows 13c/14a, `albedo`): \"Need to make these animated diagrams better.\"** Claude is redrawing `albedo` in `code_graphics.py` (the companion Claude job): real Venus and Earth discs, labels, and bars that say what they are. Re-render once that lands.\n2. **3:55 (row 30b, ARC-1978-AC78-9245): \"Multiple probes, can we fact check this?\"** The fact checks out. Pioneer Venus Multiprobe (9 Dec 1978) dropped four probes: one large and three small. The heavy-hydrogen reading came from the **Large Probe's** mass spectrometer (Donahue et al. 1982, Science 216, 630). The VO's \"a NASA probe\" is right, but the painting shows all four. Fix: reframe both 9245 spans in 30b on the **large probe alone** (push in so the three small probes are out of frame). If the crop goes soft at 1080p, use the NSSDCA/NASA Ames image of the Pioneer Venus Large Probe instead.\n3. **4:02 (rows 31/32a, `deuterium`): \"Animated diagram hard to understand.\"** Claude is redrawing `deuterium` too. Re-render once it lands.\n4. **5:38 (rows 39a/39b): \"Same with this one.\"**\n   - **39a** (split, ocean world | steam lid): put a short label under each half from the line, \"Way 2016: shallow oceans\" | \"Turbet 2021: a lid of steam\", in house type at 4 words or fewer. Keep the slow push.\n   - **39b** (Magellan radar PIA00215): the grey radar texture means nothing on its own. Open on a Magellan global Venus (PIA00271 or PIA00104) with Alpha Regio ringed, then push into PIA00215, labelled \"Alpha Regio: Venus's oldest rock\".\n   - **Row 15b** uses PIA00246, so nothing repeats.\n\n**Then:** re-render only the changed rows; picture_qa with the reviewed_ok; freezedetect clean (no hold over 1.5 s); music_gate; phone copy `023_Venus_v05d_PHONE.mp4`. **Before the render,** post a still of each changed row on #99 for Claude (new AGENTS rule). Airs Sun 25 Oct, so there's time for one more watch.\n",
+      "body": "**J0095 is done (Claude, 63eabdd): the new graphics and their row timings.** Stills: `code_graphics_v02_stills_claude.jpg`.\n- Download once, next to `code_graphics.py` (both out of git): `venus_disc.jpg` = https://images-assets.nasa.gov/image/PIA23791/PIA23791~orig.jpg and `blue_marble.jpg` (the same file as 027's). Pillow is needed. Labels use Arial Bold.\n- **Rows 13c + 14a + 14b (78.2–96.3 s): one `albedo` clip, 18.1 s.** It replaces 14b's PIA00104, because the \"soaks up less\" payoff lands on 14b's words.\n- **Row 31 (236.2–247.1 s): new `heavyh`, 10.9 s.**\n- **Rows 32a + 32b (247.1–260.4 s): one `deuterium` clip, 13.3 s.** It replaces 32b's PIA00257. Row 32c stays.\n- Render at those exact lengths (`--seconds`), at offset 0 each, with no freeze-padding. The beats are timed to the voice inside each clip.\n\n**Ben's v05c notes (board, 9 Oct 13:36Z), 023 Venus → v05d.** New AGENTS rule (c5660ec): a code graphic must read with the sound off.\n\n1. **1:22 (rows 13c/14a, `albedo`): \"Need to make these animated diagrams better.\"** Claude is redrawing `albedo` in `code_graphics.py` (the companion Claude job): real Venus and Earth discs, labels, and bars that say what they are. Re-render once that lands.\n2. **3:55 (row 30b, ARC-1978-AC78-9245): \"Multiple probes, can we fact check this?\"** The fact checks out. Pioneer Venus Multiprobe (9 Dec 1978) dropped four probes: one large and three small. The heavy-hydrogen reading came from the **Large Probe's** mass spectrometer (Donahue et al. 1982, Science 216, 630). The VO's \"a NASA probe\" is right, but the painting shows all four. Fix: reframe both 9245 spans in 30b on the **large probe alone** (push in so the three small probes are out of frame). If the crop goes soft at 1080p, use the NSSDCA/NASA Ames image of the Pioneer Venus Large Probe instead.\n3. **4:02 (rows 31/32a, `deuterium`): \"Animated diagram hard to understand.\"** Claude is redrawing `deuterium` too. Re-render once it lands.\n4. **5:38 (rows 39a/39b): \"Same with this one.\"**\n   - **39a** (split, ocean world | steam lid): put a short label under each half from the line, \"Way 2016: shallow oceans\" | \"Turbet 2021: a lid of steam\", in house type at 4 words or fewer. Keep the slow push.\n   - **39b** (Magellan radar PIA00215): the grey radar texture means nothing on its own. Open on a Magellan global Venus (PIA00271 or PIA00104) with Alpha Regio ringed, then push into PIA00215, labelled \"Alpha Regio: Venus's oldest rock\".\n   - **Row 15b** uses PIA00246, so nothing repeats.\n\n**Then:** re-render only the changed rows; picture_qa with the reviewed_ok; freezedetect clean (no hold over 1.5 s); music_gate; phone copy `023_Venus_v05d_PHONE.mp4`. **Before the render,** post a still of each changed row on #99 for Claude (new AGENTS rule). Airs Sun 25 Oct, so there's time for one more watch.\n",
       "ref": "",
       "film": "",
       "stage": "",
