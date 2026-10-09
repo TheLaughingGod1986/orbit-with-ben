@@ -6,9 +6,22 @@ Generated from the 2026-10-09 snapshot by `npm run analytics:report`. Don't edit
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last day | +3 | 0 |
+| Last 24 hours | +3 | 0 |
 | Last 7 days (YouTube Analytics) | +17 | 0 |
 | Last 30 days (YouTube Analytics) | +372 | +1 |
+
+## Top videos, last 24 hours
+
+Public view-count change, snapshot 2026-10-08 to 2026-10-09.
+
+| Video | Format | Views | Share |
+|---|---|---:|---:|
+| [How Did We Discover the Periodic Table?](https://www.youtube.com/watch?v=AL_-qlWko_g) | long | +4 | 133.3% |
+| Other videos (15) | | 0 | 0.0% |
+| Not matched to a listed video | | -1 | -33.3% |
+| **Channel total, last 24 hours** | | **+3** | **100.0%** |
+
+YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
 
 ## Week on week (weeks start Monday)
 

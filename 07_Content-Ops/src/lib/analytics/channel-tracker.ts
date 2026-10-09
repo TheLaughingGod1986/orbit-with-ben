@@ -297,6 +297,74 @@ export type VideoRow = {
   retention: LongRetention | null;
 };
 
+/** How many videos the last-24-hours list names before the rest are summed into one row. */
+export const TOP_DAY_VIDEOS = 10;
+
+export type DayGainRow = {
+  id: string;
+  title: string;
+  format: "short" | "long";
+  url: string;
+  /** Views gained in the window, or null when the two snapshots can't be compared for this video. */
+  gain: number | null;
+  share: number | null;
+};
+
+/** Which videos brought in the last 24 hours' views. Every number here comes from the same two snapshots as the
+ * tile, so `rows` + `other` + `unaccounted` add up to `total` exactly; nothing is estimated or clamped. */
+export type DayGains = {
+  /** The tile's figure, which the rows add up to. */
+  total: number | null;
+  source: "snapshots" | "analytics" | null;
+  /** The two snapshots compared (`from` is null when there is no second one). */
+  from: string | null;
+  to: string;
+  rows: DayGainRow[];
+  /** Everything outside `rows` that could be compared: mostly videos that gained nothing. */
+  other: { videos: number; gain: number; share: number | null } | null;
+  /** Public videos the two snapshots can't compare. Counted, never guessed, and left out of the sums. */
+  unknown: { videos: number } | null;
+  /** The tile's figure less every video's gain: views YouTube counts on the channel but not on a listed video
+   * (a video made private or deleted since, or the channel total refreshing ahead of the per-video counts). */
+  unaccounted: number | null;
+  /** Why there is no list, when there isn't one. */
+  note: string | null;
+};
+
+export const videoUrl = (v: { id: string; format: "short" | "long" }): string =>
+  v.format === "short" ? `https://www.youtube.com/shorts/${v.id}` : `https://www.youtube.com/watch?v=${v.id}`;
+
+/** A gain as a share of the day's total, to one decimal place. Null when there's nothing to share out. */
+export function gainShare(gain: number | null, total: number | null): number | null {
+  if (gain == null || total == null || total <= 0) return null;
+  return Math.round((gain / total) * 1000) / 10;
+}
+
+/** The last-24-hours list: the biggest gains first, the rest summed, and whatever the videos don't account for. */
+export function dayGains(change: Change, videos: VideoRow[], window: { from: string | null; to: string }): DayGains {
+  const base: DayGains = { total: change?.views ?? null, source: change?.source ?? null, ...window, rows: [], other: null, unknown: null, unaccounted: null, note: null };
+  if (!change) return { ...base, note: "Which videos brought the views in starts with the second daily snapshot." };
+  if (change.source !== "snapshots" || !window.from) {
+    return { ...base, note: "This figure comes from YouTube Analytics, which doesn't break the last day down by video. The list returns once there are two daily snapshots." };
+  }
+  const known = videos.filter((v) => v.d1 != null);
+  const movers = known.filter((v) => v.d1 !== 0).sort((a, b) => (b.d1 as number) - (a.d1 as number));
+  // The top gains, plus every drop: a video losing views is never hidden inside the remainder row.
+  const shown = [...movers.slice(0, TOP_DAY_VIDEOS), ...movers.slice(TOP_DAY_VIDEOS).filter((v) => (v.d1 as number) < 0)];
+  const rest = known.filter((v) => !shown.includes(v));
+  const total = change.views;
+  const restGain = sum(rest.map((v) => v.d1 as number));
+  const unknown = videos.length - known.length;
+  return {
+    ...base,
+    total,
+    rows: shown.map((v) => ({ id: v.id, title: v.title, format: v.format, url: videoUrl(v), gain: v.d1, share: gainShare(v.d1, total) })),
+    other: rest.length ? { videos: rest.length, gain: restGain, share: gainShare(restGain, total) } : null,
+    unknown: unknown ? { videos: unknown } : null,
+    unaccounted: total - sum(known.map((v) => v.d1 as number)),
+  };
+}
+
 export type ChannelReport = {
   channel: ChannelKey;
   name: string;
@@ -306,6 +374,8 @@ export type ChannelReport = {
   analyticsThrough: string | null;
   totals: Snapshot["totals"];
   change: { d1: Change; d7: Change; d30: Change };
+  /** Which videos the 'Last 24 hours' tile's views came from. */
+  day1: DayGains;
   windowSource: { d7: "snapshots" | "analytics" | null; d30: "snapshots" | "analytics" | null };
   daily: { day: string; views: number; minutes: number | null; subsNet: number | null }[];
   weekly: PeriodRow[];
@@ -517,6 +587,12 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     }
   }
 
+  const change = {
+    d1: channelChange(now, old(t1, 1), daily, 1),
+    d7: channelChange(now, d7Snap, daily, 7),
+    d30: channelChange(now, d30Snap, daily, 30),
+  };
+
   return {
     channel,
     name: meta.name,
@@ -525,11 +601,8 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     firstSnapshot: snaps[0].date,
     analyticsThrough: dailyFile?.through ?? null,
     totals: now.totals,
-    change: {
-      d1: channelChange(now, old(t1, 1), daily, 1),
-      d7: channelChange(now, d7Snap, daily, 7),
-      d30: channelChange(now, d30Snap, daily, 30),
-    },
+    change,
+    day1: dayGains(change.d1, videos, { from: old(t1, 1)?.date ?? null, to: now.date }),
     windowSource: { d7: d7Snap ? "snapshots" : a ? "analytics" : null, d30: d30Snap ? "snapshots" : a ? "analytics" : null },
     daily: dailyOut,
     weekly: periods("week", series, uploadsBy(weekStart), source).slice(-26),
@@ -546,16 +619,34 @@ const signed = (x: number | null | undefined) => (x == null ? "–" : `${x > 0 ?
 const hours = (minutes: number | null | undefined) => (minutes == null ? "–" : (minutes / 60).toLocaleString("en-GB", { maximumFractionDigits: 1 }));
 const cell = (s: string) => s.replace(/\|/g, "\\|");
 
+/** 'Top videos, last 24 hours': the same rows the dashboard shows, adding up to the growth table's first row. */
+export function renderDayGains(d: DayGains): string[] {
+  const L = ["## Top videos, last 24 hours", ""];
+  const share = (x: number | null) => (x == null ? "–" : `${x.toFixed(1)}%`);
+  if (d.note) return [...L, d.note, ""];
+  L.push(`Public view-count change, snapshot ${d.from} to ${d.to}.`, "");
+  L.push("| Video | Format | Views | Share |", "|---|---|---:|---:|");
+  for (const v of d.rows) L.push(`| [${cell(v.title)}](${v.url}) | ${v.format} | ${signed(v.gain)} | ${share(v.share)} |`);
+  if (d.other) L.push(`| Other videos (${d.other.videos}) | | ${signed(d.other.gain)} | ${share(d.other.share)} |`);
+  if (d.unknown) L.push(`| Can't be compared (${d.unknown.videos}) | | unknown | – |`);
+  if (d.unaccounted) L.push(`| Not matched to a listed video | | ${signed(d.unaccounted)} | ${share(gainShare(d.unaccounted, d.total))} |`);
+  L.push(`| **Channel total, last 24 hours** | | **${signed(d.total)}** | **${d.total != null && d.total > 0 ? "100.0%" : "–"}** |`, "");
+  if (d.unknown) L.push(`${d.unknown.videos} public video${d.unknown.videos === 1 ? " is" : "s are"} missing from the ${d.from} snapshot, so the change can't be worked out and is left out of the sum.`, "");
+  if (d.unaccounted) L.push("YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.", "");
+  return L;
+}
+
 export function renderMarkdown(r: ChannelReport): string {
   const L: string[] = [];
   L.push(`# ${r.name}: channel tracker`, "");
   L.push(`Generated from the ${r.date} snapshot by \`npm run analytics:report\`. Don't edit by hand.`, "");
   L.push(`**${n0(r.totals.subscribers)} ${r.totals.subscribers === 1 ? "subscriber" : "subscribers"} · ${n0(r.totals.views)} views · ${r.totals.videos} videos**`, "");
   L.push("| Growth | Views | Subscribers |", "|---|---:|---:|");
-  for (const [label, c] of [["Last day", r.change.d1], ["Last 7 days", r.change.d7], ["Last 30 days", r.change.d30]] as const) {
+  for (const [label, c] of [["Last 24 hours", r.change.d1], ["Last 7 days", r.change.d7], ["Last 30 days", r.change.d30]] as const) {
     L.push(`| ${label}${c?.source === "analytics" ? " (YouTube Analytics)" : ""} | ${signed(c?.views)} | ${signed(c?.subscribers)} |`);
   }
   L.push("");
+  L.push(...renderDayGains(r.day1));
   const change = (x: number | null) => {
     if (x == null) return "–";
     const v = Math.round(x) || 0; // never "-0%"

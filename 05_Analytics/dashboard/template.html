@@ -86,6 +86,21 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
 .lede { margin: 0; font-size: .95rem; color: var(--ink); max-width: 75ch; }
 .lede b { font-family: var(--f-mono); font-weight: 500; }
 .pill.on { color: var(--up); } .pill.low { color: var(--ink-2); } .pill.off { color: var(--down); }
+/* Top videos, last 24 hours: a list, not a table, so a 390px phone never scrolls sideways. */
+.toplist { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.toplist li { border-bottom: 1px solid var(--grid); }
+.toplist li:last-child { border-bottom: 0; }
+.tv { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; min-height: 48px; padding: 8px 10px; border-radius: 6px; color: inherit; text-decoration: none; }
+a.tv:hover, a.tv:focus-visible { background: var(--chip); }
+a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.tv .bar { position: absolute; left: 0; bottom: 0; height: 2px; background: var(--accent); opacity: .5; border-radius: 2px; }
+.tv-title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; font-size: .9rem; }
+.tv-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 3px; font-size: .78rem; color: var(--ink-3); }
+.tv-gain { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: 1rem; text-align: right; white-space: nowrap; }
+.toplist .sum .tv-title { color: var(--ink-2); font-size: .85rem; }
+.toplist .sum { background: var(--bg); }
+.toplist .total { border-top: 1px solid var(--line); }
+.toplist .total .tv-title, .toplist .total .tv-gain { font-weight: 600; color: var(--ink); }
 @media (prefers-reduced-motion: no-preference) { .tab, .seg button { transition: background .15s, color .15s; } }
 </style>
 
@@ -99,6 +114,14 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
   </header>
   <div class="stamp" id="stamp"></div>
   <section class="readout" id="readout" aria-label="Totals and growth"></section>
+
+  <section class="panel" aria-labelledby="top24-h">
+    <div style="display:grid;gap:2px">
+      <h2 id="top24-h">Top videos, last 24 hours</h2>
+      <span class="stamp" id="top24Source"></span>
+    </div>
+    <ol class="toplist" id="top24"></ol>
+  </section>
 
   <section class="panel" aria-labelledby="period-h">
     <div class="row">
@@ -216,8 +239,39 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
     $("readout").innerHTML =
       `<div class="cell"><span class="eyebrow">Subscribers</span><span class="big">${fmt(c.totals.subscribers)}</span><span class="sub">${esc(c.handle)}</span></div>` +
       `<div class="cell"><span class="eyebrow">Total views</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} videos</span></div>` +
-      growth("Last day", ch.d1) + growth("Last 7 days", ch.d7) + growth("Last 30 days", ch.d30);
+      growth("Last 24 hours", ch.d1) + growth("Last 7 days", ch.d7) + growth("Last 30 days", ch.d30);
     $("stamp").textContent = `Snapshot ${ukDate(c.date)}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)}` : "") + ` · tracking since ${ukDate(c.firstSnapshot)}`;
+  }
+
+  // ---------------------------------------------------------------- top videos, last 24 hours
+  // Every row is a public view-count change between the same two snapshots as the "Last 24 hours" tile, so the
+  // rows add up to that figure exactly. Nothing is estimated: a video the snapshots can't compare reads "unknown"
+  // and stays out of the sum, and whatever the videos don't account for gets its own row.
+  const shareTxt = (x) => (x == null ? "–" : x.toFixed(1).replace(/\.0$/, "") + "%");
+  function drawTop24(c) {
+    const d = c.day1;
+    if (!d || (d.note && !d.rows.length)) {
+      $("top24Source").textContent = "";
+      $("top24").innerHTML = `<li><div class="tv"><span class="tv-title">${esc((d && d.note) || "No per-video breakdown in this build of the tracker.")}</span></div></li>`;
+      return;
+    }
+    $("top24Source").textContent = `Public view-count change, snapshot ${ukDate(d.from)} to ${ukDate(d.to)}`;
+    const widest = Math.max(1, ...d.rows.map((r) => Math.abs(r.gain || 0)));
+    const gainCell = (g) => (g == null ? '<span class="tv-gain delta flat">unknown</span>' : `<span class="tv-gain delta ${cls(g)}">${signed(g)}</span>`);
+    const sumRow = (klass, title, meta, gain) => `<li class="${klass}"><div class="tv"><span style="min-width:0">
+      <span class="tv-title">${esc(title)}</span>${meta ? `<span class="tv-meta">${esc(meta)}</span>` : ""}</span>${gainCell(gain)}</div></li>`;
+    let html = d.rows.map((v) => `<li><a class="tv" href="${esc(v.url)}" target="_blank" rel="noopener">
+      <span style="min-width:0">
+        <span class="tv-title">${esc(v.title)}</span>
+        <span class="tv-meta"><span class="pill ${v.format}">${v.format === "short" ? "Short" : "Long"}</span><span>${shareTxt(v.share)} of the day</span></span>
+      </span>${gainCell(v.gain)}
+      <i class="bar" style="width:${Math.max(Math.abs(v.gain || 0) / widest, 0) * 100}%"></i></a></li>`).join("");
+    if (!d.rows.length) html += `<li class="sum"><div class="tv"><span class="tv-title">No video's view count changed in this window.</span></div></li>`;
+    if (d.other) html += sumRow("sum", `Other videos (${d.other.videos})`, `${shareTxt(d.other.share)} of the day`, d.other.gain);
+    if (d.unknown) html += sumRow("sum", `Can't be compared (${d.unknown.videos})`, `missing from the ${ukDate(d.from)} snapshot · left out of the sum`, null);
+    if (d.unaccounted) html += sumRow("sum", "Not matched to a listed video", "channel total less every video's change", d.unaccounted);
+    html += sumRow("total", "Channel total, last 24 hours", "", d.total);
+    $("top24").innerHTML = html;
   }
 
   // ---------------------------------------------------------------- charts
@@ -462,8 +516,8 @@ input[type="search"] { font: 400 .85rem var(--f-body); color: var(--ink); backgr
 
   function render() {
     const c = cur();
-    drawTabs(); drawReadout(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
-    $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
+    drawTabs(); drawReadout(c); drawTop24(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
+    $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>Top videos, last 24 hours: each video's public view count, compared between the last two daily snapshots — the same two the tile uses. A video those snapshots can't compare reads "unknown" and stays out of the sum. YouTube refreshes the channel's view total and the per-video counts at different times, and a video made private keeps its views in the channel total, so anything the videos don't account for gets its own row instead of being spread over them.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
   }
   render();
   let rt;

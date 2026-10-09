@@ -6,9 +6,24 @@ Generated from the 2026-10-09 snapshot by `npm run analytics:report`. Don't edit
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last day | +84 | 0 |
+| Last 24 hours | +84 | 0 |
 | Last 7 days (YouTube Analytics) | +530 | +1 |
 | Last 30 days (YouTube Analytics) | +3,808 | +5 |
+
+## Top videos, last 24 hours
+
+Public view-count change, snapshot 2026-10-08 to 2026-10-09.
+
+| Video | Format | Views | Share |
+|---|---|---:|---:|
+| [This Star Is 20 km Wide and Heavier Than the Sun](https://www.youtube.com/shorts/pL339HhjDwo) | short | +45 | 53.6% |
+| [How Long Until Andromeda Hits Us?](https://www.youtube.com/shorts/e-7hzJv4c80) | short | +3 | 3.6% |
+| [What Happens When Galaxies Actually Collide?](https://www.youtube.com/shorts/CtllH6VOhEI) | short | +1 | 1.2% |
+| Other videos (69) | | 0 | 0.0% |
+| Not matched to a listed video | | +35 | 41.7% |
+| **Channel total, last 24 hours** | | **+84** | **100.0%** |
+
+YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
 
 ## Week on week (weeks start Monday)
 

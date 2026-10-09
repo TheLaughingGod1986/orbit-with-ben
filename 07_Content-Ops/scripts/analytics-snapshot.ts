@@ -42,9 +42,13 @@ const ANALYTICS_LAG_DAYS = 2;
 /** Google sometimes answers a valid token with 401 or 5xx for a second or two (HOS, 8 Oct 2026). */
 const RETRY_STATUSES = new Set([401, 429, 500, 502, 503, 504]);
 
-async function get(token: string, url: string) {
+/** Google's JSON. Each endpoint answers a different shape, read field by field at the call site. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ApiJson = Record<string, any>;
+
+async function get(token: string, url: string): Promise<ApiJson> {
   let res: Response;
-  let body: any;
+  let body: ApiJson = {};
   for (let attempt = 1; ; attempt++) {
     res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
     body = await res.json().catch(() => ({}));

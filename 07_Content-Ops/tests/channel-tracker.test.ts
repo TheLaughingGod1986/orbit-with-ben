@@ -6,7 +6,9 @@ import {
   addDays,
   buildReport,
   curveAt,
+  gainShare,
   longRetention,
+  renderDayGains,
   periods,
   toRetention,
   sourceShare,
@@ -146,6 +148,82 @@ describe("buildReport with YouTube Analytics", () => {
     expect(md).toContain("[Video a](https://youtu.be/a)");
     expect(md).toContain("| Last 7 days (YouTube Analytics) | +70 | +7 |");
     expect(md).toContain("60%");
+  });
+});
+
+describe("top videos, last 24 hours", () => {
+  const day = (id: string, views: number, format: "short" | "long" = "short") => video(id, views, "2026-09-01T10:30:00Z", format);
+
+  it("ranks the gains, sums the rest, and adds up to the tile", () => {
+    const before = snap("2026-10-08", 1000, 10, [day("a", 100), day("b", 200), day("c", 300, "long" as const)]);
+    const after = snap("2026-10-09", 1060, 10, [day("a", 140), day("b", 215), day("c", 300, "long" as const)]);
+    const d = buildReport("owb", [before, after], null).day1;
+    expect(d).toMatchObject({ total: 60, source: "snapshots", from: "2026-10-08", to: "2026-10-09", note: null });
+    expect(d.rows.map((r) => [r.title, r.gain, r.share, r.url])).toEqual([
+      ["Video a", 40, 66.7, "https://www.youtube.com/shorts/a"],
+      ["Video b", 15, 25, "https://www.youtube.com/shorts/b"],
+    ]);
+    expect(d.other).toEqual({ videos: 1, gain: 0, share: 0 }); // c gained nothing
+    // 40 + 15 + 0 accounted; the channel total is 5 ahead, so that 5 gets its own row rather than being spread.
+    expect(d.unaccounted).toBe(5);
+    expect(d.rows.reduce((t, r) => t + (r.gain ?? 0), 0) + d.other!.gain + d.unaccounted!).toBe(d.total);
+  });
+
+  it("names at most ten videos but never hides a drop, and links a long to its watch page", () => {
+    const ids = Array.from({ length: 12 }, (_, i) => `v${i}`);
+    const before = snap("2026-10-08", 0, 1, ids.map((id) => day(id, 100)));
+    const after = snap("2026-10-09", 78, 1, ids.map((id, i) => ({ ...day(id, 100 + (i === 11 ? -3 : 12 - i)), format: i === 0 ? ("long" as const) : ("short" as const) })));
+    const d = buildReport("owb", [before, after], null).day1;
+    expect(d.rows).toHaveLength(11); // the top ten, plus the one video that lost views
+    expect(d.rows[0].url).toBe("https://www.youtube.com/watch?v=v0");
+    expect(d.rows[d.rows.length - 1].gain).toBe(-3);
+    expect(d.other).toEqual({ videos: 1, gain: 2, share: expect.any(Number) }); // v10, squeezed out by the top ten
+  });
+
+  it("counts a video the two snapshots can't compare as unknown and leaves it out of the sum", () => {
+    const before = snap("2026-10-08", 100, 1, [day("a", 100)]);
+    const after = snap("2026-10-09", 150, 1, [day("a", 120), day("new", 30, "short")]);
+    const d = buildReport("owb", [before, after], null).day1;
+    expect(d.unknown).toEqual({ videos: 1 });
+    expect(d.rows.map((r) => [r.id, r.gain])).toEqual([["a", 20]]);
+    expect(d.unaccounted).toBe(30); // the 30 views of the unknown video are never guessed at
+    expect(renderDayGains(d).join("\n")).toContain("| Can't be compared (1) | | unknown | – |");
+  });
+
+  it("counts every view of a video published inside the window", () => {
+    const before = snap("2026-10-08", 100, 1, [day("a", 100)]);
+    const after = snap("2026-10-09", 125, 1, [day("a", 100), video("fresh", 25, "2026-10-09T06:00:00Z")]);
+    const d = buildReport("owb", [before, after], null).day1;
+    expect(d.rows.map((r) => [r.id, r.gain, r.share])).toEqual([["fresh", 25, 100]]);
+    expect(d.unaccounted).toBe(0);
+  });
+
+  it("says why there's no list when the tile doesn't come from two snapshots", () => {
+    const rows = Array.from({ length: 9 }, (_, i) => ({ day: addDays("2026-10-01", i), views: 10, minutes: 6, subsGained: 1, subsLost: 0, likes: 0, comments: 0, shares: 0 }));
+    const daily: ChannelDaily = { channel: "owb", through: "2026-10-09", rows };
+    const d = buildReport("owb", [snap("2026-10-09", 90, 9, [day("a", 90)])], daily).day1;
+    expect(d).toMatchObject({ total: 10, source: "analytics", from: null, rows: [], unaccounted: null });
+    expect(d.note).toMatch(/doesn't break the last day down by video/);
+    expect(renderDayGains(d)).toContain(d.note);
+  });
+
+  it("puts the list in REPORT.md under the growth table, adding up to its first row", () => {
+    const before = snap("2026-10-08", 1000, 10, [day("a", 100)]);
+    const after = snap("2026-10-09", 1040, 10, [day("a", 140)]);
+    const md = renderMarkdown(buildReport("owb", [before, after], null));
+    expect(md).toContain("| Last 24 hours | +40 | 0 |");
+    expect(md).toContain("## Top videos, last 24 hours");
+    expect(md).toContain("Public view-count change, snapshot 2026-10-08 to 2026-10-09.");
+    expect(md).toContain("| [Video a](https://www.youtube.com/shorts/a) | short | +40 | 100.0% |");
+    expect(md).toContain("| **Channel total, last 24 hours** | | **+40** | **100.0%** |");
+    expect(md).not.toContain("Not matched to a listed video");
+  });
+
+  it("works out a share only when there is a positive total to share out", () => {
+    expect(gainShare(5, 20)).toBe(25);
+    expect(gainShare(5, 0)).toBeNull();
+    expect(gainShare(null, 20)).toBeNull();
+    expect(gainShare(-2, 20)).toBe(-10);
   });
 });
 
