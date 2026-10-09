@@ -85,6 +85,12 @@
       "kinds": [
         "near-black"
       ]
+    },
+    "PIA04495.jpg": {
+      "note": "whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)",
+      "kinds": [
+        "near-black"
+      ]
     }
   },
   "swaps": [
@@ -247,5 +253,13 @@
       }
     ],
     "fill_gate": "For 026 the border-fill check is a WARN, not a FAIL: night-sky and space pictures touch the border with dark sky by nature. A real letterbox or pillarbox is caught by polish_gate's split-panel check, which is clean in v03."
+  },
+  "v04_review": {
+    "note": "Claude, 9 Oct, rough v04 review (pack bbfdb84). All four v04 fixes are right: 2:54 and 7:51 show the Milky Way band filling the frame, 3:42 is the full Moon, and 5:23 has the whole spacecraft. Frame 0 is unchanged. No re-render: v04 is the cut for Ben's watch.",
+    "next": [
+      "re-run picture_qa on the v04 file with this reviewed_ok (it should PASS), commit the report to rough_v04_pack",
+      "make OWB UAT/026_NearestStar_v04_PHONE.mp4 the same way as 025's phone copy",
+      "post both; Claude then puts 026 in Ben's box"
+    ]
   }
 }
