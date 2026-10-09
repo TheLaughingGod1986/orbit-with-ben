@@ -28,6 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0107 | mini | open | – | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0108 | mini | open | – | – | HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) |  |
 | J0109 | mini | open | – | – | HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first | hos#261 |
+| J0110 | any | open (after J0108) | – | – | for chief · Chief: OK the 009 long opening (desk #180) before its VO |  |
 
 Recently finished:
 
