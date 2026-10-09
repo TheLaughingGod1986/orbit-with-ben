@@ -1,5 +1,5 @@
 {
-  "next_id": 85,
+  "next_id": 86,
   "jobs": [
     {
       "id": "J0001",
@@ -3690,6 +3690,32 @@
       "film": "025",
       "stage": "upload",
       "after": "J0066",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T08:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T08:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0085",
+      "title": "026 Nearest Star: Ben's fixes, two graphics that show what the VO says (v05)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's fixes for 026 (board, 9 Oct 08:44Z): two graphics don't show what the narration says.**\n\n**1. At 1:48–1:52 (row 9, `journey`).** The VO says: *\"A light-year is a distance, not a time. It is how far light travels in a year. So when you look towards Proxima, you are seeing light that left it more than four years ago.\"* The cut shows `journey`, the three-line walk/car/jet race, which belongs to row 24. The shot list asked for a single light streak from Proxima to Earth.\n- **New code graphic `lightyear`, text-free, about 8 s:** Proxima (the red-dwarf glow the code graphics already use) on the left and a small blue Earth on the right, across a full-frame star field.\n- One bright pulse of light leaves Proxima and travels to Earth. Four and a quarter evenly spaced tick marks along the path light up as it passes them, one tick per year. The pulse arrives on \"light that left it more than four years ago\".\n- No labels or numbers, no boxed panel. It replaces only the `journey` cut at row 9, so `journey` drops to 2 uses.\n\n**2. At 6:02–6:18 (row 27, `lighttimes`).** The VO says: *\"Moonlight reaches you in just over a second. Sunlight takes about eight minutes. Light from the nearest star takes more than four years, and that is the shortest trip of its kind there is.\"* Bars on a log scale read as a chart; a viewer can't tell what they are. Make it an example instead of a graph.\n- **New code graphic `lightrace`, text-free, timed to each sentence:** a small real-photo Earth disc on the right, and on the left, in turn, the real source as a cut-out disc on black space (no box):\n  - the Moon (`GSFC_20171208_Archive_e001982`, its 2nd use);\n  - the Sun (`GSFC_20171208_Archive_e002035`, its 2nd use);\n  - Proxima (the code-drawn red-dwarf glow).\n- Each sends a pulse of light to Earth. The Moon's pulse arrives almost at once (about 1 s on screen). The Sun's visibly takes longer (about 3–4 s). Proxima's pulse sets out and is still only a sliver of the way across when the sentence ends, then holds on that slow progress over \"the shortest trip of its kind there is\".\n- No numbers or labels: the narration gives them.\n\n**Before rendering,** post three stills of each graphic (start, middle, end) for Claude. Then build v05 from the cached v04 segments with only rows 9 and 27 changed, and run picture_qa (reviewed_ok as v04, plus the two new graphics as code graphics), music_gate and clip_check. Make `OWB UAT/026_NearestStar_v05_PHONE.mp4`, and Claude checks before it goes back to Ben.\n",
+      "ref": "6077058676",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
       "eta_min": 120,
       "status": "open",
       "by": "",

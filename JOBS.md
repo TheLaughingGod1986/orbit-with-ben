@@ -22,6 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0082 | gemini | open | – | – | Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) | 6070129451 |
 | J0083 | mini | open | – | – | for codex · Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) | 6071491327 |
 | J0084 | mini | open (after J0066) | – | – | 025 upload · 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) | 6077231242 |
+| J0085 | mini | open | – | – | 026 edit · 026 Nearest Star: Ben's fixes, two graphics that show what the VO says (v05) | 6077058676 |
 
 Recently finished:
 
