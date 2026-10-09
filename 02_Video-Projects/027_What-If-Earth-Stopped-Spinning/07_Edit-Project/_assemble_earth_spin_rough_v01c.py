@@ -173,6 +173,7 @@ QA_OK={'PIA00271.jpg':dict(note='Magellan radar data on a globe; real terrain, f
  'epic_spin_v01.mp4':dict(note='row 37 is the planned return; row 15 a later turn (Claude #99)',kinds=['reuse'])}
 for s in segs:
  if s['src'].parent.parent in (CG,CG4):QA_OK[cname(s['src'])]=dict(note='our code graphic on the house background (Claude #6087174848)',kinds=['near-black'])
+POLISH_OK.update(QA_OK)
 def plan_cuts():return [dict(row=s['row'],timeline_in=s['timeline_in'],timeline_out=s['timeline_out'],source=cname(s['src']),
  framing={k:v for k,v in s['o'].items() if k in('quad','offset','vcrop','pan')}) for s in segs]
 SPANS={}
