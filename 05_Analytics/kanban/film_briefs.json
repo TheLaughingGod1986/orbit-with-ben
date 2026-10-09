@@ -132,49 +132,32 @@
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
     },
     "OWB:025": {
-      "updated": "2026-10-08T21:58Z",
-      "mood": "fixing",
-      "done": "Script, voice, shot list. Picture started today: the Mars robot clips were made (J0050) and the first full rough cut was built (J0051).",
-      "holdup": "Queued behind the Mini's disk clean-up (urgent: 3.7 GB free would break the render). Then J0068 makes v03d and a phone copy, Claude checks it, and it comes back to you.",
+      "updated": "2026-10-09T03:25Z",
+      "mood": "finished",
+      "done": "Script, voice, picture and the film's own music. Your 8 Oct notes fixed (v03f), plus Codex's picture ideas.",
+      "holdup": "Nothing is broken. It's waiting for your watch. While you watch, Cursor makes the thumbnails and upload package.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "picture: wobble fixed, unfinished frames swapped (v03 to v03c)",
+          "what": "your notes, own music, rover names, right rover on each passage (v03f)",
           "done": true,
-          "doneText": "done · Thu 8 Oct 20:53"
+          "doneText": "done · Fri 9 Oct 04:14"
         },
         {
           "who": "Claude",
-          "what": "check every frame",
+          "what": "check every frame and both new checks",
           "done": true,
-          "doneText": "passed · Thu 8 Oct 21:00"
+          "doneText": "passed · Fri 9 Oct 04:25"
         },
         {
           "who": "Ben",
-          "what": "watched v03c, sent two notes",
-          "done": true,
-          "doneText": "done · Thu 8 Oct 22:39"
+          "what": "watch iCloud Drive › OWB UAT › 025_MarsRobot_v03f_PHONE.mp4",
+          "when": "2026-10-12",
+          "whenText": "any time before Mon 12 Oct"
         },
         {
           "who": "Cursor",
-          "what": "swap the 2:54 picture, make 025's own music, build v03d + phone copy",
-          "job": "J0068"
-        },
-        {
-          "who": "Claude",
-          "what": "check the new picture and the music",
-          "afterJob": "J0068",
-          "lag": 60
-        },
-        {
-          "who": "Ben",
-          "what": "re-watch iCloud Drive › OWB UAT › 025_MarsRobot_v03d_PHONE.mp4",
-          "afterJob": "J0068",
-          "lag": 120
-        },
-        {
-          "who": "Cursor",
-          "what": "thumbnails and upload package",
+          "what": "thumbnails (one with a real rover up front) and upload package",
           "job": "J0066"
         },
         {
@@ -184,7 +167,10 @@
         }
       ],
       "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
-      "line": "Fixing your two notes: the 2:54 picture (an old computer model) becomes a real photo of Spirit stuck in the sand, and the film gets its own music. You were right, 023, 024 and 025 all had the same track."
+      "line": "Ready for you to watch: your two notes are fixed. The 2:54 picture is now a real photo of Spirit parked for winter, and the film has its own music. Every rover is named the first time it appears, and each passage shows the machine it's talking about. Both new checks passed and Claude looked at every frame.",
+      "you": "Watch iCloud Drive › OWB UAT › 025_MarsRobot_v03f_PHONE.mp4 any time before Mon 12 Oct. Tap Looks good or Needs a change.",
+      "youShort": "iCloud Drive › OWB UAT › 025_MarsRobot_v03f_PHONE.mp4 · by Mon 12 Oct",
+      "youWhen": "2026-10-09"
     },
     "OWB:026": {
       "updated": "2026-10-08T20:00Z",
