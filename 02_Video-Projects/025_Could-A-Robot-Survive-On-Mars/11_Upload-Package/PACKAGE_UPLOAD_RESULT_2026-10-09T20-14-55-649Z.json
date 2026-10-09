@@ -1,0 +1,135 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-08T18:00:00.000Z",
+    "platformPostId": "Js6EQJ8qDi8",
+    "platformUrl": "https://youtu.be/Js6EQJ8qDi8",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-08T18:00:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"Js6EQJ8qDi8\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-08T18:00:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package",
+    "sha256": "cce6268cbd571f1f404ee98b86e089bbe3cabed15017113bd9559951ee36e09f",
+    "title": "Could a Robot Survive on Mars?",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 20,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/08_Thumbnail/abc_v03/mars_robot_thumb_A_built-for-90-days.jpg",
+    "scheduledAt": "2026-11-08T18:00:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "descriptionFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Descriptions/mars_robot_long_description_v01.txt",
+      "tagsFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Tags/mars_robot_long_tags_v01.txt",
+      "pinnedCommentFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Pinned-Comments/mars_robot_long_pinned_v01.txt",
+      "video": "/private/tmp/mars025_full_work_v03f/025_MarsRobot_full_rough_v03f.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/08_Thumbnail/abc_v03/mars_robot_thumb_A_built-for-90-days.jpg",
+      "trailer": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Trailer/mars_robot_long_trailer_v01_41s.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": "{\"error\":{\"code\":403,\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"errors\":[{\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"domain\":\"youtube.commentThread\",\"reason\":\"forbidden\",\"location\":\"body\",\"locationType\":\"other\"}]}}",
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ac94b3ec4de2d2b12057da8"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ac94b3fbba9419ccbdd4dd8"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ac94b3fbba9419ccbdd4e20"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "Js6EQJ8qDi8",
+    "studioEditUrl": "https://studio.youtube.com/video/Js6EQJ8qDi8/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/Js6EQJ8qDi8/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (0) · thumbs (3). Not available via Data API.",
+        "studioUrlHint": "https://studio.youtube.com/video/Js6EQJ8qDi8/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)",
+        "studioUrlHint": "https://studio.youtube.com/video/Js6EQJ8qDi8/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/Js6EQJ8qDi8/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/Js6EQJ8qDi8/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/Js6EQJ8qDi8/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (Js6EQJ8qDi8). 4 required Studio finish step(s) remain."
+  }
+}
