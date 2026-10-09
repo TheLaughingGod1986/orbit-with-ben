@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
-"""Code-drawn graphics for the Venus film (023). 1920x1080, 30 fps, PNG frames then MP4. Text-free by design.
+"""Code-drawn graphics for the Venus film (023). 1920x1080, 30 fps, PNG frames then MP4.
 
-  python3 code_graphics.py albedo    out/   # ch.1 "The Twin Next Door": sunlight in, reflected, absorbed (Venus above, Earth below)
-  python3 code_graphics.py deuterium out/   # ch.3 "Where Did the Water Go?": water split high up, light H escapes, heavy D stays
+AGENTS (9 Oct, Ben's v05c notes): every graphic must read with the sound off: real bodies, short labels from the
+line being spoken (4 words at most), one idea at a time, timed to the voice.
+
+  python3 code_graphics.py albedo    out/   # rows 13c-14b, 18.1 s: sunlight in (Venus ~2x) -> 77% bounced back -> Venus soaks up less
+  python3 code_graphics.py heavyh    out/   # row 31, 10.9 s: hydrogen vs heavy hydrogen; Venus has ~100x the share Earth has
+  python3 code_graphics.py deuterium out/   # rows 32a-32b, 13.3 s: sunlight splits water high up; light H escapes, heavy H stays
   python3 code_graphics.py line      out/   # ch.4 "The Line Earth Hasn't Crossed": the inner limit moves out as the Sun brightens
   python3 code_graphics.py nightlid  out/   # ch.3 Turbet 2021 beat: clouds gather on the night side and hold the heat in
   python3 code_graphics.py all       out/
   add --still to write one frame only (review); --seconds N to change length
+
+Real bodies (put these next to this file, out of git):
+  venus_disc.jpg   NASA PIA23791 (Mariner 10, 1974), https://images-assets.nasa.gov/image/PIA23791/PIA23791~orig.jpg
+                   The left, natural-colour panel is used (the script crops it).
+  blue_marble.jpg  NASA Blue Marble Next Generation, the same file as 027's code graphics (see 027 code_graphics.py).
+Labels use Arial Bold (the house type), falling back to DejaVu Sans Bold.
 
 Each run writes out/<name>/%04d.png and out/<name>.mp4 (ffmpeg, yuv420p, crf 16). Media stays out of git.
 
@@ -23,13 +33,14 @@ Numbers (01_Script/SOURCES.md, NASA NSSDCA fact sheets):
              they warm the planet (they block outgoing heat) instead of shading the day side. Drawn as a lit day half,
              steam rising, cloud building over the night half, and heat arrows from the night side turned back down.
 """
-import argparse, math, os, subprocess, sys
+import argparse, logging, math, os, subprocess, sys
+logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle, Rectangle, Wedge
+from matplotlib.patches import Circle, Rectangle, Wedge, FancyArrow
 
 W, H, DPI, FPS = 1920, 1080, 120, 30
 BG = "#05060a"
@@ -55,141 +66,266 @@ def canvas():
     return fig, ax
 
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+_IMG = {}
+CYAN = "#5fd6ff"
+FONT = {"family": ["Arial", "Helvetica", "DejaVu Sans"], "weight": "bold"}
+
+
+def _load(name, env):
+    if name not in _IMG:
+        from PIL import Image
+        path = os.environ.get(env) or os.path.join(HERE, name)
+        if not os.path.exists(path):
+            sys.exit(f"missing {path} (see the docstring for the NASA download)")
+        im = Image.open(path).convert("RGB")
+        if name == "venus_disc.jpg" and im.width > 1.6 * im.height:
+            im = im.crop((0, 0, int(im.width * 0.46), im.height))   # PIA23791: the natural-colour panel only
+        _IMG[name] = im
+    return _IMG[name]
+
+
+def disc_rgba(px):
+    """The real Venus (Mariner 10) cropped tight to its disc, px square, with a round alpha edge."""
+    key = ("venus", px)
+    if key not in _IMG:
+        im = _load("venus_disc.jpg", "VENUS_DISC")
+        a = np.asarray(im.convert("L"), dtype=np.float32)
+        a[:, -int(a.shape[1] * 0.04):] = 0                          # ignore the panel's right edge
+        ys, xs = np.where(a > 40)
+        cx, cy = (xs.min() + xs.max()) / 2, (ys.min() + ys.max()) / 2
+        r = max(xs.max() - xs.min(), ys.max() - ys.min()) / 2
+        im = im.crop((int(cx - r), int(cy - r), int(cx + r), int(cy + r))).resize((px, px))
+        rgb = np.asarray(im, dtype=np.float32) / 255.0
+        u = np.linspace(-1, 1, px)
+        rr = u[None, :] ** 2 + u[:, None] ** 2
+        alpha = np.clip((1 - rr) * px * 0.5, 0, 1)
+        _IMG[key] = np.dstack([rgb, alpha])
+    return _IMG[key]
+
+
+def earth_rgba(px, phase=0.6):
+    """The real Earth (Blue Marble NG), orthographic, px square."""
+    key = ("earth", px, phase)
+    if key not in _IMG:
+        tex = np.asarray(_load("blue_marble.jpg", "BLUE_MARBLE").reduce(2), dtype=np.float32) / 255.0
+        th, tw = tex.shape[:2]
+        u = np.linspace(-1, 1, px)[None, :].repeat(px, 0)
+        v = np.linspace(1, -1, px)[:, None].repeat(px, 1)
+        rr = u ** 2 + v ** 2
+        z = np.sqrt(np.clip(1 - rr, 0, None))
+        lat = np.arcsin(np.clip(v, -1, 1))
+        lon = np.arctan2(u, z) - phase
+        ty = ((0.5 - lat / math.pi) * (th - 1)).astype(np.int32)
+        tx = (((lon / (2 * math.pi) + 0.5) % 1.0) * (tw - 1)).astype(np.int32)
+        rgb = tex[ty, tx] * (0.55 + 0.45 * z)[..., None]
+        _IMG[key] = np.dstack([rgb, np.clip((1 - rr) * px * 0.5, 0, 1) * (rr <= 1)])
+    return _IMG[key]
+
+
+def body(ax, which, x, y, r):
+    px = int(round(2 * r * H / 9.0))
+    img = disc_rgba(px) if which == "venus" else earth_rgba(px)
+    ax.imshow(img, extent=(x - r, x + r, y - r, y + r), zorder=3, interpolation="bilinear")
+
+
+def label(ax, x, y, text, size=40, color=WHITE, alpha=1.0, ha="left", va="center"):
+    if alpha <= 0.01:
+        return
+    ax.text(x, y, text, color=color, alpha=alpha, fontsize=size * 0.85, ha=ha, va=va, zorder=9, fontdict=FONT,
+            bbox=dict(facecolor=BG, alpha=0.7 * alpha, edgecolor="none", boxstyle="round,pad=0.25"))
+
+
+def phase_alpha(t, start, fade=0.6):
+    return ease((t - start) / fade)
+
+
 def render_albedo(out, seconds, still):
-    """Photons stream in from the left (the Sun is off frame). Venus (top) gets 1.91x the photons; 77% bounce back.
-    Earth (bottom) gets fewer; 29% bounce back. The rest are absorbed. A bar beside each planet grows with the
-    expected absorbed energy, so Venus's bar ends shorter than Earth's even though more light arrived."""
+    """Timed to rows 13c-14b (78.2-96.3 s, 18.1 s):
+      0-5.4 s   "...nearer the fire. But that answer breaks on one number."  Sunlight arrives; Venus gets about twice as
+                much. Bars: SUNLIGHT IN, Venus 1.9 against Earth 1.0.
+      5.4-11.8  "...bright cloud that reflects about three-quarters of that sunlight straight back"  White photons
+                bounce off Venus (77%), far fewer off Earth (29%). Labels say so.
+      11.8-18.1 "...back to space. So Venus actually soaks up less sunlight than Earth does."  The bars turn into
+                SOAKED UP: Venus 598 W/m2 against Earth 966. Venus's bar ends shorter.
+    Numbers: NSSDCA fact sheets (Venus 2,601 W/m2, Bond albedo 0.77; Earth 1,361, 0.29)."""
     rng = np.random.default_rng(23)
     n = int(seconds * FPS)
-    rows = [  # name, centre y, radius, colour, flux (W/m2), albedo
-        ("venus", 1.95, 1.05, VENUS, 2601.0, 0.77),
-        ("earth", -2.05, 1.10, EARTH, 1361.0, 0.29),
-    ]
-    PX = -0.6
-    base_rate = 3.2                                  # photons per frame for 1,361 W/m2
-    speed = 0.22
-    photons = []                                     # [x, y, vx, vy, row, reflected]
-    target = n // 2 if still else None
-    absorbed_max = max(f * (1 - a) for _, _, _, _, f, a in rows)
+    k = seconds / 18.1                                   # stretch the beats if a different length is asked for
+    T_BOUNCE, T_SOAK = 5.4 * k, 11.8 * k
+    rows = [("venus", 2.05, 1.25, 2601.0, 0.77, "VENUS", "77% BOUNCED BACK"),
+            ("earth", -2.15, 1.25, 1361.0, 0.29, "EARTH", "29% BOUNCED BACK")]
+    PX = -2.6
+    base_rate, speed = 2.6, 0.24
+    photons = []
+    target = int(n * 0.85) if still else None
     for i in range(n):
-        for r, (_, cy, rad, _, flux, alb) in enumerate(rows):
+        t = i / FPS
+        bounce_on = t >= T_BOUNCE
+        for r, (_, cy, rad, flux, alb, _, _) in enumerate(rows):
             for _ in range(rng.poisson(base_rate * flux / 1361.0)):
-                photons.append([-8.2, cy + rng.uniform(-rad * 0.95, rad * 0.95), speed, 0.0, r, False])
+                photons.append([-8.3, cy + rng.uniform(-rad * 0.9, rad * 0.9), speed, 0.0, r, False])
         keep = []
         for p in photons:
             p[0] += p[2]
             p[1] += p[3]
-            _, cy, rad, _, _, alb = rows[p[4]]
+            _, cy, rad, _, alb, _, _ = rows[p[4]]
             if not p[5]:
                 dy = p[1] - cy
                 surf = PX - math.sqrt(max(0.0, rad * rad - dy * dy))
                 if p[0] >= surf:
-                    if rng.random() < alb:           # reflected back out towards space
-                        p[0] = surf
-                        p[2] = -speed
-                        p[3] = dy / rad * 0.035 + rng.normal(0, 0.008)
-                        p[5] = True
-                    else:                            # absorbed: becomes heat in the planet
+                    if bounce_on and rng.random() < alb:
+                        p[0], p[2], p[5] = surf, -speed, True
+                        p[3] = dy / rad * 0.04 + rng.normal(0, 0.01)
+                    else:
                         continue
             if -8.5 < p[0] < 8.5 and -4.8 < p[1] < 4.8:
                 keep.append(p)
         photons = keep
         if still and i != target:
             continue
-        s = i / max(1, n - 1)
         fig, ax = canvas()
-        for r, (_, cy, rad, col, flux, alb) in enumerate(rows):
-            absorbed = flux * (1 - alb)
-            warm = absorbed / absorbed_max
-            ax.add_patch(Circle((PX, cy), rad * 1.18, color=HEAT, alpha=0.18 * warm * ease(s * 3), lw=0))
-            ax.add_patch(Circle((PX, cy), rad, color=col, lw=0))
-            # absorbed energy bar, to scale, growing as the light keeps arriving
-            L = 5.2 * absorbed / absorbed_max * ease((s - 0.15) / 0.7)
-            ax.add_patch(Rectangle((2.0, cy - 0.32), 5.4, 0.64, color=DIM, alpha=0.18, lw=0))
-            ax.add_patch(Rectangle((2.0, cy - 0.32), L, 0.64, color=HEAT, alpha=0.9, lw=0))
         pts = np.array([[p[0], p[1], p[5]] for p in photons]) if photons else np.zeros((0, 3))
         if len(pts):
-            inc = pts[pts[:, 2] == 0]
-            ref = pts[pts[:, 2] == 1]
-            ax.scatter(inc[:, 0], inc[:, 1], s=26, color=GOLD, alpha=0.95, lw=0)
-            ax.scatter(ref[:, 0], ref[:, 1], s=26, color=WHITE, alpha=0.75, lw=0)
+            inc, ref = pts[pts[:, 2] == 0], pts[pts[:, 2] == 1]
+            ax.scatter(inc[:, 0], inc[:, 1], s=22, color=GOLD, alpha=0.9, lw=0, zorder=2)
+            ax.scatter(ref[:, 0], ref[:, 1], s=26, color=WHITE, alpha=0.85, lw=0, zorder=2)
+        soak = ease((t - T_SOAK) / 1.2)
+        heading = "SUNLIGHT IN" if t < T_SOAK + 0.6 else "SOAKED UP"
+        ha = phase_alpha(t, 0.3) * (1 - ease((t - T_SOAK) / 0.6)) + ease((t - T_SOAK - 0.6) / 0.6)
+        label(ax, 1.4, 4.0, heading, size=44, color=GOLD, alpha=ha)
+        for r, (which, cy, rad, flux, alb, name, bounced) in enumerate(rows):
+            body(ax, which, PX, cy, rad)
+            label(ax, PX, cy - rad - 0.32, name, size=36, ha="center", alpha=phase_alpha(t, 0.2))
+            label(ax, PX, cy + rad + 0.32, bounced, size=30, ha="center", alpha=phase_alpha(t, T_BOUNCE + 0.8))
+            vin, vsoak = flux / 2601.0, flux * (1 - alb) / 2601.0
+            frac = vin + (vsoak - vin) * soak
+            grow = ease(t / 2.0)
+            L = 5.6 * frac * grow
+            ax.add_patch(Rectangle((1.4, cy - 0.36), 5.6, 0.72, color=DIM, alpha=0.16, lw=0, zorder=4))
+            ax.add_patch(Rectangle((1.4, cy - 0.36), L, 0.72, color=HEAT if t >= T_SOAK else GOLD, alpha=0.92, lw=0, zorder=5))
+        save(fig, out, i, still)
+    finish(out, still)
+
+
+def render_heavyh(out, seconds, still):
+    """Row 31 (236.2-247.1 s): "Some hydrogen is heavier than the rest. It is called deuterium. On Venus, the share of
+    heavy hydrogen is around a hundred times higher than on Earth."
+      0-4.5 s   Two atoms side by side: HYDROGEN (one proton) and HEAVY HYDROGEN (a proton and a neutron).
+      4.5-end   Two samples of hydrogen: EARTH, where 1 dot in a crowd is cyan; VENUS, where many are. Label "100x MORE".
+    Honest scale: on Earth about 1 hydrogen in 6,400 is heavy, far too rare to draw; so each sample shows the same
+    crowd of 400 and the Earth one gets a single heavy atom, the Venus one about a hundred times the share (Donahue
+    et al. 1982: D/H ~1.6e-2, ~100x Earth's). The drawing keeps the ratio between the planets, not the absolute share."""
+    rng = np.random.default_rng(31)
+    n = int(seconds * FPS)
+    k = seconds / 10.9
+    T2 = 4.5 * k
+    target = int(n * 0.8) if still else None
+    N = 400
+    pos = {c: rng.uniform([-1.9, -1.6], [1.9, 1.6], (N, 2)) for c in ("earth", "venus")}
+    heavy = {"earth": np.zeros(N, bool), "venus": np.zeros(N, bool)}
+    heavy["earth"][0] = True
+    heavy["venus"][rng.choice(N, 64, replace=False)] = True   # 16% drawn: ~100x Earth's 0.16%, rounded to what the eye can see
+    jitter = {c: rng.normal(0, 1, (n, 2)) for c in ("earth", "venus")}
+    for i in range(n):
+        if still and i != target:
+            continue
+        t = i / FPS
+        fig, ax = canvas()
+        a1 = phase_alpha(t, 0.2) * (1 - ease((t - T2) / 0.6))
+        if a1 > 0.01:
+            for x, heavy_atom, name in ((-3.4, False, "HYDROGEN"), (3.4, True, "HEAVY HYDROGEN")):
+                ax.add_patch(Circle((x, 0.3), 2.0, fill=False, ec=DIM, lw=1.5, alpha=0.5 * a1, zorder=3))
+                wob = 0.05 * math.sin(t * 3 + x)
+                ax.add_patch(Circle((x - (0.32 if heavy_atom else 0) + wob, 0.3), 0.42, color="#ff5a4a", alpha=a1, zorder=4))
+                if heavy_atom:
+                    ax.add_patch(Circle((x + 0.32 - wob, 0.3), 0.42, color="#c9c9cf", alpha=a1, zorder=4))
+                ang = t * 2.2 + x
+                ax.add_patch(Circle((x + 2.0 * math.cos(ang), 0.3 + 2.0 * math.sin(ang)), 0.14, color=CYAN if heavy_atom else WHITE, alpha=a1, zorder=5))
+                label(ax, x, -2.4, name, size=40, ha="center", color=CYAN if heavy_atom else WHITE, alpha=a1)
+        a2 = ease((t - T2 - 0.3) / 0.8)
+        if a2 > 0.01:
+            for c, cx, name in (("earth", -3.9, "EARTH"), ("venus", 3.9, "VENUS")):
+                p = pos[c] + 0.03 * jitter[c][i]
+                ax.add_patch(Rectangle((cx - 2.1, -1.8), 4.2, 3.6, fill=False, ec=DIM, lw=1.5, alpha=0.5 * a2, zorder=2))
+                lt = ~heavy[c]
+                ax.scatter(cx + p[lt, 0], p[lt, 1], s=14, color=WHITE, alpha=0.75 * a2, lw=0, zorder=3)
+                ax.scatter(cx + p[heavy[c], 0], p[heavy[c], 1], s=60, color=CYAN, alpha=a2, lw=0, zorder=4)
+                label(ax, cx, -2.4, name, size=40, ha="center", alpha=a2)
+            label(ax, 3.9, 2.45, "100x MORE", size=44, ha="center", color=CYAN, alpha=ease((t - T2 - 2.5) / 0.8))
         save(fig, out, i, still)
     finish(out, still)
 
 
 def render_deuterium(out, seconds, still):
-    """A column of air. Water molecules (one O, two hydrogens) drift; light from above splits the ones that rise
-    into the top band. Freed light hydrogen (small, white) shoots off the top and is gone; freed heavy hydrogen
-    (larger, cyan) mostly stays. A meter on the right shows the heavy share of the hydrogen left behind."""
+    """Rows 32a-32b (247.1-260.4 s): "That number is a fingerprint. High in the air, sunlight breaks water apart. The
+    light hydrogen escapes to space more easily than the heavy kind. Lose enough water that way..."
+    The real Venus sits low in frame; above it the high air, lit from the Sun on the left. Water molecules drift up,
+    sunlight splits them; white (light) hydrogen streams off the top, labelled ESCAPES TO SPACE; cyan (heavy)
+    hydrogen sinks back, labelled HEAVY STAYS. Labels come in as the voice says each part."""
     rng = np.random.default_rng(230)
     n = int(seconds * FPS)
-    N = 90
-    mol = rng.uniform([-5.5, -4.0], [3.5, 2.6], (N, 2))
-    heavy = rng.random((N, 2)) < 0.12                # exaggerated D share for the eye (see module docstring)
+    k = seconds / 13.3
+    T_SPLIT, T_ESC = 2.2 * k, 6.3 * k
+    target = int(n * 0.8) if still else None
+    VY, VR = -9.2, 6.2                                # Venus's limb arcs across the bottom of the frame
+    N = 70
+    mol = np.column_stack([rng.uniform(-6.5, 6.5, N), rng.uniform(-3.0, 0.5, N)])
+    heavy = rng.random((N, 2)) < 0.16
     alive = np.ones(N, bool)
-    free = []                                        # [x, y, vx, vy, is_heavy]
-    escaped_h = escaped_d = 0
-    target = int(n * 0.75) if still else None
-    TOP = 2.9
-    h0 = int((~heavy).sum())
-    d0 = int(heavy.sum())
-    start_share = d0 / (h0 + d0)
+    free = []
     for i in range(n):
-        mol[alive] += rng.normal(0, 0.035, (int(alive.sum()), 2)) + np.array([0, 0.012])
-        mol[:, 0] = np.clip(mol[:, 0], -5.8, 3.8)
-        mol[:, 1] = np.clip(mol[:, 1], -4.2, TOP + 0.6)
-        for k in np.where(alive & (mol[:, 1] > TOP))[0]:
-            if rng.random() < 0.06:                  # sunlight splits it
-                alive[k] = False
+        t = i / FPS
+        mol[alive] += rng.normal(0, 0.02, (int(alive.sum()), 2)) + np.array([0, 0.018])
+        mol[:, 0] = np.clip(mol[:, 0], -6.8, 6.8)
+        for kk in np.where(alive & (mol[:, 1] > 1.2))[0]:
+            if t > T_SPLIT and rng.random() < 0.08:
+                alive[kk] = False
                 for j in range(2):
-                    hv = bool(heavy[k, j])
-                    free.append([mol[k, 0] + (j - 0.5) * 0.3, mol[k, 1], rng.normal(0, 0.03),
-                                 (0.05 if hv else 0.16) + rng.normal(0, 0.015), hv])
+                    hv = bool(heavy[kk, j])
+                    free.append([mol[kk, 0] + (j - 0.5) * 0.3, mol[kk, 1], rng.normal(0, 0.02),
+                                 (0.0 if hv else 0.14) + rng.normal(0, 0.01), hv])
+            elif mol[kk, 1] > 2.2:
+                mol[kk, 1] = 2.2
+        if alive.sum() < N * 0.35:                     # keep the air supplied: new water rises from below
+            dead = np.where(~alive)[0][:6]
+            alive[dead] = True
+            mol[dead] = np.column_stack([rng.uniform(-6.5, 6.5, len(dead)), np.full(len(dead), -3.0)])
         nxt = []
         for f in free:
             f[0] += f[2]
             f[1] += f[3]
             if f[4]:
-                f[3] -= 0.004                        # heavy: gravity wins, it sinks back into the air below
-                if f[1] < TOP - 0.4:                 # then wanders there like the rest of the air
-                    f[2] = rng.normal(0, 0.03)
-                    f[3] = rng.normal(0, 0.03)
-                    f[1] = min(f[1], TOP - 0.4)
-            f[0] = min(max(f[0], -5.8), 3.8)
-            if f[1] > 4.7:
-                if f[4]:
-                    escaped_d += 1
-                else:
-                    escaped_h += 1
+                f[3] = max(f[3] - 0.006, -0.05)
+                if f[1] < 0.6:
+                    f[3] = abs(rng.normal(0, 0.01))
+            if f[1] > 4.8:
                 continue
             nxt.append(f)
         free = nxt
         if still and i != target:
             continue
         fig, ax = canvas()
-        # the top band, lit from above
-        ax.add_patch(Rectangle((-6.2, TOP), 10.4, 1.9, color="#6a5cff", alpha=0.10, lw=0))
-        for k in range(14):
-            x = -6 + k * 0.75 + (i * 0.05) % 0.75
-            ax.plot([x, x - 0.25], [4.5, TOP + 0.2], color="#9f8cff", lw=2, alpha=0.35)
+        body(ax, "venus", 0, VY, VR)
+        sun = phase_alpha(t, T_SPLIT - 1.0)
+        for kk in range(10):
+            y = 1.2 + kk * 0.32
+            ax.plot([-8, -7.2 + (t * 2 % 1.0)], [y, y - 0.05], color=GOLD, lw=2, alpha=0.35 * sun, zorder=2)
+        ax.add_patch(Rectangle((-8, 1.2), 16, 3.3, color=GOLD, alpha=0.05 * sun, lw=0, zorder=1))
         a = np.where(alive)[0]
-        ax.scatter(mol[a, 0], mol[a, 1], s=150, color="#ff5a4a", lw=0, zorder=3)
+        ax.scatter(mol[a, 0], mol[a, 1], s=150, color="#ff5a4a", lw=0, zorder=4)
         for j, dx in ((0, -0.17), (1, 0.17)):
             hv = heavy[a, j]
-            ax.scatter(mol[a, 0][~hv] + dx, mol[a, 1][~hv] + 0.12, s=45, color=WHITE, lw=0, zorder=4)
-            ax.scatter(mol[a, 0][hv] + dx, mol[a, 1][hv] + 0.12, s=95, color="#5fd6ff", lw=0, zorder=4)
+            ax.scatter(mol[a, 0][~hv] + dx, mol[a, 1][~hv] + 0.12, s=45, color=WHITE, lw=0, zorder=5)
+            ax.scatter(mol[a, 0][hv] + dx, mol[a, 1][hv] + 0.12, s=95, color=CYAN, lw=0, zorder=5)
         if free:
             fa = np.array(free, dtype=float)
             hv = fa[:, 4] > 0.5
-            ax.scatter(fa[~hv, 0], fa[~hv, 1], s=45, color=WHITE, lw=0)
-            ax.scatter(fa[hv, 0], fa[hv, 1], s=95, color="#5fd6ff", lw=0)
-        # meter: heavy share of the hydrogen still on the planet, scaled from its start value to 3x
-        h_left = h0 - escaped_h
-        d_left = d0 - escaped_d
-        share = d_left / max(1, h_left + d_left)
-        fill = min(1.0, (share / start_share - 1) / 2.0)
-        ax.add_patch(Rectangle((5.6, -3.6), 0.9, 7.0, color=DIM, alpha=0.18, lw=0))
-        ax.add_patch(Rectangle((5.6, -3.6), 0.9, 7.0 * (0.12 + 0.88 * fill), color="#5fd6ff", alpha=0.9, lw=0))
+            ax.scatter(fa[~hv, 0], fa[~hv, 1], s=45, color=WHITE, lw=0, zorder=5)
+            ax.scatter(fa[hv, 0], fa[hv, 1], s=95, color=CYAN, lw=0, zorder=5)
+        label(ax, -7.6, 3.9, "SUNLIGHT SPLITS WATER", size=34, color=GOLD, alpha=phase_alpha(t, T_SPLIT))
+        label(ax, 7.6, 3.9, "ESCAPES TO SPACE", size=34, ha="right", alpha=phase_alpha(t, T_ESC))
+        label(ax, 7.6, 0.55, "HEAVY STAYS", size=34, ha="right", color=CYAN, alpha=phase_alpha(t, T_ESC + 1.5))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -293,12 +429,12 @@ def finish(out, still):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["albedo", "deuterium", "line", "nightlid", "all"])
+    ap.add_argument("which", choices=["albedo", "heavyh", "deuterium", "line", "nightlid", "all"])
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
     a = ap.parse_args()
-    jobs = {"albedo": (render_albedo, 12), "deuterium": (render_deuterium, 12), "line": (render_line, 12),
+    jobs = {"albedo": (render_albedo, 18.1), "heavyh": (render_heavyh, 10.9), "deuterium": (render_deuterium, 13.3), "line": (render_line, 12),
             "nightlid": (render_nightlid, 12)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
