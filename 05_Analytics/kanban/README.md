@@ -4,6 +4,21 @@ Live board: https://studio-kanban.vercel.app (self-updating; see `scripts/board_
 The page is `studio_kanban.html`; its data is built by `scripts/kanban_snapshot.py --db-out` and published by the Mac
 mini to the `board-data` branch after every job change and every 5 minutes.
 
+## Channel Tracker web app (Ben, 10 Oct 2026)
+
+https://studio-kanban.vercel.app/tracker is the Channel Tracker (`05_Analytics/dashboard/template.html`, the page behind
+`dashboard.html`) as a phone web app on the same site: "Add to Home Screen" opens it full screen (`board_site/tracker.webmanifest`,
+icons in `board_site/static/`). The board header links to it and it links back.
+
+- **Data:** read at runtime from `tracker.json` on the `board-data` branch, which is main's
+  `05_Analytics/dashboard/data.json` byte for byte. `scripts/board_publish.py` puts it there: the 06:40 snapshot job
+  (`07_Content-Ops/launchd/analytics-snapshot.sh`) runs it right after pushing the new snapshot to main, and the 5-minute
+  launchd run catches any other change. A broken or missing data.json on main keeps the last good copy.
+- **Page:** `board_site/build.py` builds `dist/tracker.html` from the template (small checked patches, like the board) plus
+  `board_site/tracker_loader.js`. It shows this phone's saved copy at once, then the live file (reloading once if newer),
+  and re-checks when you come back to it and every 15 minutes. With no network it shows the copy built in at deploy time
+  and says so. Data never needs a redeploy; a template change does (the next routine redeploy of studio-kanban from main).
+
 ## Watch links (Ben, 9 Oct 2026)
 
 Whenever the board has a cut for Ben to watch, his card and the "Ready for you to check" card show a **▶ Watch vNN**
