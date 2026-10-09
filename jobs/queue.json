@@ -3598,10 +3598,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T15:06Z",
-      "eta": "2026-10-09T17:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T08:09Z",
       "result": "",
@@ -3675,6 +3675,11 @@
           "at": "2026-10-09T15:06Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T15:15Z",
+          "by": "cursor",
+          "what": "released: Frame-0 EPIC turning Earth done (6d3e576): epic_spin_v01.py re-projects the 22 EPIC frames of 2025-06-21 on the sphere, so land stays put and only clouds cross-fade; optical-flow (smear) and cross-blend (double continents) tried and rejected. Clip /private/tmp/owb027_epic_v01/epic_spin_v01.mp4, 1920x1080 30fps 21.0 s, disc 1000 px on black, ~16 deg/s turn, starts over the Pacific, Africa/Europe ~10 s. Sheet epic_spin_v01_sheet.jpg. Note for Claude: EPIC faces the sunlit side from L1, so row 1's 'day-night line moves by 1 s' can't be met by EPIC; the motion is the continents turning. If the terminator is a hard lock, row 1 needs the ISS terminator instead. tmux j0077-epicspin finished (log ~/_desk/logs/j0077-epicspin.log, .done=0). Next: remaining 'not found' rows (ISS cirrus/sunrise/night Europe, ESO star trails, Foucault, NOAA spray/tide, cuneiform, coral, NIST-F2, young-Earth art), then 2 Omni + 2 Veo Fast, rough v01 from SHOT_LIST_v02 + gates. Nothing spent. Disk ~8.9 GB free."
         }
       ]
     },
