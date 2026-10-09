@@ -22,6 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
 | J0101 | mini | open | – | – | HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) |  |
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
+| J0104 | mini | open | – | – | 021 edit · Saturn Short Qn56 end-card recut v03 (Mon 11:30) |  |
 
 Recently finished:
 
