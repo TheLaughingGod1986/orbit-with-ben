@@ -19,12 +19,13 @@ SHEETS = "--sheets" in sys.argv
 OUT = Path(args[0]) if args else HERE / "pool_v01"
 pool = json.loads((HERE / POOL).read_text())
 UA = {"User-Agent": "Mozilla/5.0 OrbitWithBenEarthSpin/1.0"}
-MAGIC = {".png": [b"\x89PNG"], ".jpg": [b"\xff\xd8"], ".gif": [b"GIF8"], ".tif": [b"II*\x00", b"MM\x00*"], ".mp4": [b"ftyp"]}
+MAGIC = {".png": [b"\x89PNG"], ".jpg": [b"\xff\xd8"], ".gif": [b"GIF8"], ".tif": [b"II*\x00", b"MM\x00*"], ".mp4": [b"ftyp"],
+         ".webm": [b"\x1a\x45\xdf\xa3"]}
 OUT.mkdir(parents=True, exist_ok=True)
 
 def ext_of(url: str) -> str:
     u = url.lower().split("?")[0]
-    for e in (".mp4", ".m4v", ".gif", ".tif", ".png", ".jpg", ".jpeg"):
+    for e in (".mp4", ".m4v", ".webm", ".gif", ".tif", ".png", ".jpg", ".jpeg"):
         if u.endswith(e):
             return {".jpeg": ".jpg", ".m4v": ".mp4"}.get(e, e)
     return ".jpg"
@@ -87,7 +88,7 @@ for e in pool:
     ok += good
     report.append({**e, "local": str(dest), "ok": good, "msg": msg})
 
-(OUT / "_fetch_report.json").write_text(json.dumps(report, indent=1, ensure_ascii=False))
+(OUT / ("_fetch_report.json" if POOL == "pool_v01.json" else f"_fetch_report_{Path(POOL).stem}.json")).write_text(json.dumps(report, indent=1, ensure_ascii=False))
 print(f"DONE ok={ok}/{len(pool)} out={OUT}")
 
 if SHEETS:

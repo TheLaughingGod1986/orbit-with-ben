@@ -62,3 +62,20 @@ Other checks from the fetch: EPIC e000265 is only 1920×1080 (fine at 1.0×). PI
 | 27 | **NHQ201708210100** "2017 Total Solar Eclipse" (Madras, Oregon, totality) | 3186×2527 | One full-frame corona, no text. A 16:9 crop is ~0.6×. Alt: NHQ201708210102 diamond ring (3239×2196). The 0116 strip is not used. |
 
 Frame 0 (rows 1, 15, 37): `fetch_epic_v01.py` downloads one day of EPIC natural-colour frames (2025-06-21, 22 frames at ~65 min, 2048² PNG) to `/private/tmp/owb027_epic_v01/` for a turning-Earth time-lapse. SVS 13056 (the produced EPIC video) has music and captions, so it isn't used.
+
+## pool_v01b (Cursor covering, J0077, 9 Oct 2026): rows 9, 27, 29, 32, £0
+
+`pool_v01b.json` → `pool_v01/` (local, gitignored) via `fetch_pool_v01.py --pool pool_v01b.json --sheets` (now takes `.webm`). 7 of 8 fetched. The Met's own API returned 410, so the Met CC0 tablets come through their Commons copies (Met Open Access uploads). Review sheet: `pool_v01b_sheet.jpg`. Every frame of both videos was checked on a 12-frame strip: no burnt-in text, no fades.
+
+| Row | Pick | Size | Licence / credit | Note |
+|---|---|---|---|---|
+| 9 footage | Griffith Observatory Foucault pendulum, July 2022 (webm) | 3840×2160, 13.7 s | CC0, Benoît Prieur | Real bob swinging over the floor marker. Handheld (slight drift). A small physical plaque sits at the right edge, unreadable at 1080; crop it out if Claude prefers. |
+| 9 footage (alt) | "Foucault pendulum 1" (webm) | 1920×1080, 32.2 s | CC BY-SA 4.0, Jud McCranie | Shows the **ring of pegs** the bob knocks over, which suits "the floor was". Visitors' legs at the top edge; a tight crop to the lower ~80% loses them (≤1.25×). |
+| 9 portrait | Portrait of Léon Foucault, 1860 | 1024×1395 | Public domain | Engraving. Has a signature line at the bottom: crop to head and shoulders (no text). Portrait shape, so feathered-blur fill. |
+| 27 tablet | Met "Cuneiform tablet: commentary on Enuma Anu Enlil, tablet 5" (DP-442-001) | 4000×3000 | CC0, The Met | **Astronomical:** Enuma Anu Enlil is the Babylonian celestial-omen series, so the caption can say so. Plain light-grey background, no labels. |
+| 27 tablet (alt) | Met "Cuneiform tablet: fragment of an astronomical table (?)" 86.11.374a,b | 3648×2736 | CC0, The Met | Two fragments on a white mat; the "(?)" in the Met title means keep any caption generic. |
+| 29 coral 1 | *Heliophyllum confluens* fossil coral, Columbus Limestone, Middle Devonian | 3615×2864 | CC BY 2.0, James St. John | Real Devonian rugose coral (the genus behind the classic ~400 days-a-year growth-line count). Growth lines are faint at this framing: a slow push into the ridged side. |
+| 29 coral 2 | *Eridophyllum seriale* fossil rugose coral, Middle Devonian | 3438×2768 | CC BY 2.0, James St. John | **Not fetched yet:** Commons returned 429 three times. Next run retries. |
+| 32 | NIST-F2 caesium fountain atomic clock (NIST, Physics Lab) | 1200×857 | Public domain | Two physicists at the fountain. 1.26× at full height. Row 32's "NIST lab plate" second half still needs a pick. |
+
+Still not found: ISS cirrus / orbital sunrise / night Europe (rows 2, 4, 6, 11, 13, 33), ESO star trails (7, 36), NOAA spray and tide (12, 23), the 2024 eclipse path (28), the young-Earth art (37), and row 32's second plate.
