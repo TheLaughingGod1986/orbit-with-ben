@@ -3595,13 +3595,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-09T10:02Z",
-      "eta": "2026-10-09T11:02Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T08:26Z",
-      "result": "",
+      "result": "Bed made, one full 490 s take (6,737 credits; EL 18,653 left). Raw earth-spin_score_bed_v01.mp3 + hush-lifted earth-spin_score_bed_v01_lift.mp3 on the Mini in 027/05_Music. music_gate FAIL on both: reused 0.80-0.815 vs 024/025/021 beds (just over 0.8), and on the lift a 6.1 s quiet tail at 7:41 (after VO end 460 s). Claude to decide: accept as metric false positive / trim tail, or one regeneration. Not laid in.",
       "history": [
         {
           "at": "2026-10-09T08:26Z",
@@ -3612,8 +3612,14 @@
           "at": "2026-10-09T10:02Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T10:07Z",
+          "by": "cursor",
+          "what": "done: Bed made, one full 490 s take (6,737 credits; EL 18,653 left). Raw earth-spin_score_bed_v01.mp3 + hush-lifted earth-spin_score_bed_v01_lift.mp3 on the Mini in 027/05_Music. music_gate FAIL on both: reused 0.80-0.815 vs 024/025/021 beds (just over 0.8), and on the lift a 6.1 s quiet tail at 7:41 (after VO end 460 s). Claude to decide: accept as metric false positive / trim tail, or one regeneration. Not laid in."
         }
-      ]
+      ],
+      "done_ref": "d7c6c96"
     },
     {
       "id": "J0081",
