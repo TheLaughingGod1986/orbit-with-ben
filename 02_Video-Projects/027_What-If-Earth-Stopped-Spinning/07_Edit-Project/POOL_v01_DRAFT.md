@@ -40,3 +40,16 @@ From `search_pool_v01.py` → `pool_candidates_v01.json` and a second pass `pool
 | 29 | Fossil coral, growth lines | Smithsonian Open Access / USGS |
 | 32 | NIST-F2 caesium fountain | nist.gov image gallery (PD) |
 | 37 | Young Earth / Moon-forming impact art | NASA SVS or JPL (artist concept: WARN class) |
+
+## Fetched 9 Oct (Cursor covering, J0077): `pool_v01.json` → `pool_v01/` (local, gitignored), 23/23 ok, £0
+
+`build_pool_v01.py` resolves each id to its largest copy; `fetch_pool_v01.py --sheets` downloads and writes `pool_v01/_contact/<section>.jpg`.
+
+| Row | Pick | Size | Note |
+|---|---|---|---|
+| 22 | PIA23791 Venus from Mariner 10 | 2245×1096 | **Split panel** (natural + enhanced, white divider). Use the left (natural colour) half only, disc fitted to height on near-black; ~1.0× scale. |
+| 34 molten core | USGS "Pahoehoe fountain" (Kīlauea) | 3072×2048 | Real photo, PD. Second choice: USGS "Cascade and fountain into Aloi Crater" 3596×2363. NASA PIA09968 / PIA22899 are false-colour satellite (drop); GSFC e000658 is a small night glow (drop). |
+| 34 oceans | Blue Marble e002130 | 3718² | The same plate as row 8: counts as its second use. |
+| 34 melting ice | GSFC e001753 melt lake (IceBridge) | 3648×2048 | Reads as "melting ice". Alt: e000112 melt ponds 3093×2062. e000213 / chutes are 1500–2000 px and less clear. |
+
+Other checks from the fetch: EPIC e000265 is only 1920×1080 (fine at 1.0×). PIA13037 retroreflector is 752² (2.55× at full height → must be framed smaller or swapped). Eclipse NHQ201708210116 is a 12810×1500 strip (a sequence), not a single corona: pick another NHQ2017082101xx frame. SDO e002035 is 1024² (fit to height ~1.05×).
