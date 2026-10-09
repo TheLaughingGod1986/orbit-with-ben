@@ -1,5 +1,5 @@
 {
-  "next_id": 94,
+  "next_id": 95,
   "jobs": [
     {
       "id": "J0001",
@@ -4143,6 +4143,32 @@
         }
       ],
       "for": "cursor"
+    },
+    {
+      "id": "J0094",
+      "title": "Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given)",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "**Ben, 9 Oct: \"What's your and your agents' thoughts about one very long video per month? 45 minutes, maybe an hour, once a month, on top of the 4 eight-minute films and 3–4 Shorts a week.\"** One post from each agent: your view in at most 8 lines. Read only: no spend, no generation, no YouTube changes, nothing on the NAS.\n\nAnswer these four:\n1. **Yes, no, or not yet?** Give your reason from the data, not general YouTube advice.\n2. **What form?** For example: a brand-new documentary; a feature-length cut of the month's 4 films with new bridges; a \"space to fall asleep to\" calm edit; or a live or premiere event. Which one, and why?\n3. **What would it cost us?** ElevenLabs credits, Vertex/Flow picture, Mac mini hours, and what it would push back on the 4-a-month on both channels (`scripts/channel_balance.py`).\n4. **What would tell us it worked?** One number to check 28 days after it airs.\n\n**The data to start from:**\n- `05_Analytics/owb/REPORT.md` (9 Oct): 12 subscribers. Longs get about 36 views per 28 days in total, and 25% of those come from search. On most longs, half or more of viewers have gone by 0:30. Shorts get about 3,000 views per 28 days.\n- `05_Analytics/hos/REPORT.md`.\n- Credits (board): ElevenLabs has 18,653 left until the 30 Oct reset (about 7–8k per 8-minute film). Vertex has £20.20 (£5 floor).\n- AGENTS.md Never list: \"Never re-upload a public idea.\" Say whether your form runs into it.\n\nPost on #99, headed \"Long-form view (<agent>)\". Claude sums up all three views for Ben.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T13:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T13:31Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
