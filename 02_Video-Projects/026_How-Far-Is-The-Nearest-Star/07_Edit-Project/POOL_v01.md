@@ -32,3 +32,19 @@ Built from `SHOT_LIST_v01` + Claude's 8 Oct rulings. Every ID resolved live by `
 ESO / ESO/M. Kornmesser / ESO/Digitized Sky Survey 2 (CC BY 4.0); ESA/Hubble & NASA (CC BY 4.0); ESA/Gaia/DPAC (CC BY-SA 3.0 IGO); NASA, NASA/JPL-Caltech, NASA/GSFC/SDO (public domain); Tycho Brahe and F. W. Bessel portraits, public domain via Wikimedia Commons.
 
 Next (J0065): still_motion pushes per row + polish/fill gates, then assemble rough v01.
+
+## v02 additions (J0065 step 4, Cursor covering, 9 Oct 2026)
+
+**Why:** with each picture capped at two uses and each hold at 6 s, v01's 27 items fill at most ~370 s of the 494 s cut. `build_pool_v02.py` → `pool_v02.json` (51 entries: v01 + 25 new, all resolved live, ESO ids checked against their ESO page titles). Fetched into the same `pool_v01/` folder; sheets in `rough_v01_pack/pool_v02_contact/`. £0.
+
+| Section | New ids | Notes |
+|---|---|---|
+| nightsky (new) | ESO eso0932a (Milky Way panorama, 6000×3000, S. Brunier), eso0934a (Paranal starscape, S. Guisard); NASA iss073e0982261, iss073e0982679 (Milky Way over airglow from the ISS), KSC-20191031-PH-GEB01_0003/_0005 (night sky over KSC), GSFC e000256 (Hubble star field) | **eso0932a slow pan is the proposed frame 0 / row 33 return** until Claude names ESO time-lapse ids. iss073e0982261 has ISS arrays in frame (WARN). |
+| alphacen | ESO eso1702b (Alpha Centauri system, 19k px) | |
+| voyager | PIA04495, PIA14111 (art), PIA21746, PIA21739 (1977 launch) | |
+| dsn | PIA25136, PIA25137 (DSS-53 at night), PIA24163 | |
+| sail | ACS3 CamB/CamC onboard views, ACS3_SolarPanels_001 (art) | CamB is portrait 1200×1920: crop only. |
+| sun | GSFC e000790 (filament), e000759 (coronal holes), e000885 (Moon transiting Sun) | |
+| earth_moon | GSFC e001982 (Moon, 1536 px), e001586 (City lights of the Nile, 720×1080), iss025e015176 (night Earth) | e001586 is 2.67× to fill: inset or crop-free use only, or skip. |
+
+Left out: eso1629c (diagram), eso1629f / eso1629j / eso1241b (annotated), potw1606a (a transporter truck, not sky).

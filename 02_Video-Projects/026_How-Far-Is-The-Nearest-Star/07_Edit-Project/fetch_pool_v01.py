@@ -13,10 +13,11 @@ import json, sys, time, urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-args = [a for a in sys.argv[1:] if not a.startswith("--")]
+POOL = sys.argv[sys.argv.index("--pool") + 1] if "--pool" in sys.argv else "pool_v01.json"
+args = [a for a in sys.argv[1:] if not a.startswith("--") and a != POOL]
 SHEETS = "--sheets" in sys.argv
 OUT = Path(args[0]) if args else HERE / "pool_v01"
-pool = json.loads((HERE / "pool_v01.json").read_text())
+pool = json.loads((HERE / POOL).read_text())
 UA = {"User-Agent": "Mozilla/5.0 OrbitWithBenNearestStar/1.0"}
 MAGIC = {".png": [b"\x89PNG"], ".jpg": [b"\xff\xd8"], ".gif": [b"GIF8"], ".tif": [b"II*\x00", b"MM\x00*"], ".mp4": [b"ftyp"]}
 OUT.mkdir(parents=True, exist_ok=True)
