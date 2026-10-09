@@ -86,6 +86,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
      - FAIL: a computer model or reconstruction, simulation, diagram, chart, schematic or labelled image (they look dated or like a textbook); upscale over 2.35×; a picture used more than twice; and polish_gate's low detail, split panels, near-black, noise and wobbly pushes.
      - WARN: an artist's concept, map, render, untitled source or upscale over 2×. These go on `picture_qa_review.jpg`, and Claude looks at each one full size.
      - Claude also looks at every cut on the per-row sheet and asks: would a viewer trust this as a real, sharp, finished picture of what the sentence says?
+     - **The first 30 seconds (9 Oct, Gemini's idea 1):** no more than one code graphic in a row, and real moving imagery between graphics. One observatory exterior at most in the first 60 s. The first concrete answer to the title comes before 0:30, not an agenda (Codex's idea 5).
    - **Music:** every film has its own score bed, at a pace that fits it.
      - Claude writes the music prompt with the shot list. It gives the film's mood and arc from the script, a `Pace: NN-NN BPM` line matched to the narration (calm explanation about 60-80, a lift only where the script builds), and what it must NOT sound like (every earlier bed).
      - Generate it once with `04_Audio/tools/generate_music_bed.py` (the API, never the website).
