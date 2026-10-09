@@ -37,6 +37,14 @@ PIA15115 is the strongest choice for frame 0: the rover is the subject, it's lar
 - Each image is already used twice in v03c (PIA17759: rows 5 and 20; PIA18079: rows 20 and 21). So the matched before→after in rows 20–21 must replace those uses, not add to them.
 - NASA API searches that returned nothing: "Opportunity solar panels before after cleaning", "Spirit solar panels cleaning event", "Opportunity rover deck dust".
 
-## Not started
+## Run 2 (01:41–02:05 BST): music done, per Claude #6071788192
+
+- Take 2 as a continuation: `05_Music/mars-robot_score_bed_v01b.mp3` (song id `2TXomRgGPX36PwLOcTGp`), asked 320 s, **returned 320.03 s**, −24.0 LUFS. Credits 54,306 → 49,906 (4,400). Ledger and `ai_spend.py` logged.
+- Joined: **`05_Music/mars-robot_score_bed_v01_full.mp3`**, 496.0 s, −17.0 LUFS, peak −0.7 dBFS. Take 2 raised +7.3 dB to match take 1, 7 s triangle crossfade over 176–183 s (end of take 1, after Spirit at Troy), limiter 0.95. No section repeated. Plan: `mars-robot_score_bed_v01_full_plan.json` (both song ids, both prompts, Pace and NOT).
+- Ear note for Claude: take 1 fades to a quiet tail from about 2:40 to 3:03 (−40 LUFS) before take 2 comes in at full level.
+- Bed-only `music_gate.py` **PASS** against 021, 022 and `jupiter-music.mp3` (matches none; about 120 BPM = 2× 60). The default comparison set crashes on an iCloud-evicted file in `OWB UAT` (Errno 11), so pass `--others` explicitly. 013's bed is not on the Mini (NAS).
+- Picture calls from Claude: 2:54 → PIA12102; opening → PIA17956 if its caption names Opportunity and it fills 16:9 (harvest it, add to pool with credit), PIA15115 only if its caption names Opportunity; cleaning → PIA17759 (dusty) up to ~261.6 s, then PIA18079 (clean), replacing existing uses so each stays ≤2.
+
+## Still to do (next run)
 
 Items 6b (name labels), 6c (one machine per passage), 6d (wheel-holes hold), the v03d assembler, the render, picture_qa, music_gate and the similarity matrix, and the phone copy.
