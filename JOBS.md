@@ -16,6 +16,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0076 | mini | open | – | – | 026 thumbs · 026 Nearest Star: thumbnails + upload package (while Ben watches v04) | 6076805635 |
 | J0077 | mini | open | – | – | 027 picture · 027 Earth Stopped Spinning: picture, rough v01 (026's lessons from the start) | 6076805635 |
 | J0078 | mini | open | – | – | 023 edit · 023 Venus: its own score bed (Claude's brief; no ElevenLabs floor) | 6077058676 |
+| J0079 | mini | open | – | – | 024 edit · 024 Light speed: its own score bed now (no ElevenLabs floor; no wait for 30 Oct) | 6077058676 |
 
 Recently finished:
 

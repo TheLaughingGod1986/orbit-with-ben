@@ -1,5 +1,5 @@
 {
-  "next_id": 79,
+  "next_id": 80,
   "jobs": [
     {
       "id": "J0001",
@@ -3502,6 +3502,32 @@
       "body": "**023's own score bed (AGENTS.md lesson 7). Claude wrote the brief from the script.** Ask for the full runtime: the VO cut runs 513 s.\n\nRun `04_Audio/tools/generate_music_bed.py --project venus --length-ms 540000 --out-dir 02_Video-Projects/023_What-Happened-To-Venus/05_Music --generate --prompt \"<below>\"`:\n\n\"Instrumental cinematic space documentary underscore for Orbit with Ben, Venus film. A mystery about a lost twin: calm curiosity at first, then a slow, heavy, smothering heat as the greenhouse story unfolds, a dim orange evening that never ends, then a reflective close about how lucky Earth is. Warm low drones, slow bowed cello and viola, muted brass swells far in the distance, soft heat-shimmer textures, a gentle rise for the runaway-greenhouse reveal, ending on a held unresolved chord. Pace: 60-72 BPM, slow and steady under British narration. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings, NOT the Mars robot's lonely felt piano and low strings, NOT the Nearest Star's glassy celesta and bells. No vocals, no choir words, no drums, no EDM, no trailer hit.\"\n\n**Rules:**\n- **Credits:** ElevenLabs has **no floor** (Ben, 9 Oct: \"keep going until the credit runs out\"). One account pays for both channels. Expect about 7,000 credits for a full-length bed. Read the balance first, and log it before and after.\n- **If the API returns short:** follow 025's method. Make one continuation take with the same prompt plus \"Continuation of the same piece: same key, tempo and instrumentation\", and join the takes with an 8 s equal-power crossfade at a chapter break. Never more than two takes, and never loop.\n- **Check:** `music_gate.py` on the bed must PASS (own, brief, not reused, no gap).\n- **Log:** both takes go in the ledger (`ai_spend.py`).\n- **Post:** the bed, its gate result and the credits. Claude listens before it's laid in.\n",
       "ref": "6077058676",
       "film": "023",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T08:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T08:26Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0079",
+      "title": "024 Light speed: its own score bed now (no ElevenLabs floor; no wait for 30 Oct)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**024's own score bed (AGENTS.md lesson 7). Claude wrote the brief from the script.** Ask for the full runtime: the VO cut runs 491 s.\n\nRun `04_Audio/tools/generate_music_bed.py --project light-speed --length-ms 520000 --out-dir 02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music --generate --prompt \"<below>\"`:\n\n\"Instrumental cinematic space documentary underscore for Orbit with Ben, Light Speed film. A forward pull that builds slowly: the quiet strangeness that your clock is already slow, the clean logic of why light sets the limit, a long journey out and back, and a bittersweet one-way ticket to the future. Pulsing arpeggiated synths like a steady clock, clean high strings, soft piano motif, a gradual build, one clear lift only at the time-dilation reveal, then settling to a reflective close on a held chord. Pace: 72-88 BPM, steady and moving under British narration. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings, NOT the Mars robot's lonely felt piano and low strings, NOT the Nearest Star's glassy celesta and bells, NOT Venus slow heat drones. No vocals, no choir words, no drums, no EDM, no trailer hit.\"\n\n**Rules:**\n- **Credits:** ElevenLabs has **no floor** (Ben, 9 Oct: \"keep going until the credit runs out\"). One account pays for both channels. Expect about 7,000 credits for a full-length bed. Read the balance first, and log it before and after.\n- **If the API returns short:** follow 025's method. Make one continuation take with the same prompt plus \"Continuation of the same piece: same key, tempo and instrumentation\", and join the takes with an 8 s equal-power crossfade at a chapter break. Never more than two takes, and never loop.\n- **Check:** `music_gate.py` on the bed must PASS (own, brief, not reused, no gap).\n- **Log:** both takes go in the ledger (`ai_spend.py`).\n- **Post:** the bed, its gate result and the credits. Claude listens before it's laid in.\n",
+      "ref": "6077058676",
+      "film": "024",
       "stage": "edit",
       "after": "",
       "eta_min": 60,
