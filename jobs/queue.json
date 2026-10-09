@@ -4096,10 +4096,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T23:37Z",
+      "eta": "2026-10-10T01:37Z",
       "created_by": "claude",
       "created_at": "2026-10-09T08:52Z",
       "result": "",
@@ -4148,6 +4148,11 @@
           "at": "2026-10-09T23:27Z",
           "by": "cursor",
           "what": "released: Stills FIX (#6090651546) done: lightyear + lightrace re-rendered with labels, thicker ticks/guide, gold e000759 Sun graded warm-white, Moon 0.5x / Sun 1.5x Earth, Proxima guide line + gold trail (074af2a, b4addd9). v05 render (full: v04 scratch was gone) running detached: tmux owb026-v05, log ~/_desk/logs/owb026-v05.log, .done ~/_desk/logs/owb026-v05.done; ~/_desk/logs/owb026-v05.sh also runs picture_qa + music_gate into rough_v05_pack. Assembler c18ed25. Next run: when .done exists, read exit + summary_v05.json, picture_qa_v05.txt, music_gate_v05.txt, clip_check_py.txt; commit the pack (no media) from a clean worktree; post to the Chief for the cut check; Watch link on the 026 card. Do not start a second render."
+        },
+        {
+          "at": "2026-10-09T23:37Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": 1
