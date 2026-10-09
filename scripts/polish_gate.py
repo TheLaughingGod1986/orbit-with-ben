@@ -10,6 +10,7 @@ cuts.json is the assembler's list of {row, timeline_in, timeline_out, source, fr
   (c) near-black or noise: mean luma < 28 (or 95th percentile < 50), or fine-grain noise with no structure under it
       (the 8x-downscaled frame is under the low-detail floor on both std and edge density);
   A source Claude has ruled on (--reviewed-ok) passes on the failure kinds named for it, and is listed as reviewed_ok.
+  A key 'source@offset' (the cut's framing offset) rules on that one stretch of footage only.
   (d) push jitter (stills only): consecutive frames of the push are phase-correlated on a centre patch; FAIL if the shift
       reverses against the trend or jumps more than 0.35 px off it. That is the 'wobbly' look Ben saw on 023.
 Exit 1 if any row fails; warnings never fail."""
@@ -137,6 +138,12 @@ def jitter(video, t0, t1, size):
     return out
 
 
+def stretch_key(c):
+    """'source@offset' for footage: a ruling on one stretch (Claude, #99) that leaves the rest of the file judged as usual."""
+    off = (c.get('framing') or {}).get('offset')
+    return f"{c['source']}@{off:g}" if off is not None else c['source']
+
+
 def judge(video, cuts, reviewed=None, use_jitter=True, log=print):
     """Every check above on every cut of the cut list; returns the gate result (also used by picture_qa.py)."""
     video = Path(video); reviewed = reviewed or {}
@@ -168,7 +175,7 @@ def judge(video, cuts, reviewed=None, use_jitter=True, log=print):
             r['jitter'] = j
             if j and j['fail']:
                 why.append(f"push jitter: {j['max_off_trend_px']} px off trend, {j['reversals']} reversals")
-        ok = reviewed.get(r['source'])
+        ok = reviewed.get(stretch_key(c)) or reviewed.get(r['source'])
         if ok and why:
             kept = [w for w in why if not any(w.startswith(kind) for kind in ok['kinds'])]
             if len(kept) < len(why):
@@ -201,7 +208,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('video'); ap.add_argument('--cuts', required=True); ap.add_argument('--out', required=True)
     ap.add_argument('--no-jitter', action='store_true')
-    ap.add_argument('--reviewed-ok', help='JSON {source: {"note": ..., "kinds": ["low detail", ...]}}: Claude-ruled passes')
+    ap.add_argument('--reviewed-ok', help='JSON {source or "source@offset": {"note": ..., "kinds": ["low detail", ...]}}: Claude-ruled passes')
     a = ap.parse_args()
     reviewed = json.loads(Path(a.reviewed_ok).read_text()) if a.reviewed_ok else {}
     res = judge(a.video, json.loads(Path(a.cuts).read_text()), reviewed, not a.no_jitter, log=lambda m: print(m, flush=True))

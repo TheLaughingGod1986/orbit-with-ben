@@ -61,6 +61,14 @@ class SourceChecks(unittest.TestCase):
         self.assertFalse(any(w.startswith("reuse") for w in rows[8]["fail"]))
         self.assertTrue(any(w.startswith("reuse: 6 stretches") for w in rows[10]["fail"]))
 
+    def test_a_ruling_on_one_stretch_leaves_the_rest_judged(self):
+        cuts = [dict(cut("gerst.webm", 0, 4), framing={"offset": 250}), cut("a.jpg", 4, 8),
+                dict(cut("gerst.webm", 8, 12), framing={"offset": 120})]
+        rows = qa.source_checks(cuts, {"gerst": "Earth from the ISS (Annotated)", "a": "A photo"})
+        qa.apply_reviewed(rows, {"gerst.webm@250": {"note": "lit", "kinds": ["kind of picture"]}})
+        self.assertEqual(rows[0]["fail"], [])
+        self.assertTrue(rows[2]["fail"])
+
     def test_a_run_that_replays_its_own_frames(self):
         cuts = [dict(cut("tides.mp4", 0, 4), framing={"offset": 0}), dict(cut("tides.mp4", 4, 8), framing={"offset": 4}),
                 dict(cut("tides.mp4", 8, 12), framing={"offset": 6}), dict(cut("tides.mp4", 12, 17), framing={"offset": 10})]

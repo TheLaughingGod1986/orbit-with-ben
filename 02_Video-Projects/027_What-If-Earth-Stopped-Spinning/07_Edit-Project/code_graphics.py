@@ -113,9 +113,13 @@ def earth_image(px, phase, rx=1.0, night=None, drain=None):
         lum = rgb.mean(axis=-1, keepdims=True)
         sand = np.clip(np.array([0.80, 0.66, 0.44]) * (0.75 + 0.9 * lum), 0, 1)
         ocean = np.clip(np.array([0.10, 0.24, 0.48]) * (0.8 + 0.6 * lum), 0, 1)
-        mid = (np.abs(lat) < band)[..., None]
-        target = np.where(mid, np.where(sea[..., None], sand, rgb), np.where(sea[..., None], rgb, ocean))
-        rgb = rgb * (1 - sd) + target * sd
+        # The new shore is a wavy line, not a ruler edge, and feathered over a few degrees; each place changes all the
+        # way (sea to sand, land to sea) as the shore passes it, so nothing is ever half-blended into grey.
+        shore = band + math.radians(2.5) * np.sin(3 * lon + 0.7) + math.radians(1.5) * np.sin(7 * lon + 2.1)
+        feather = math.radians(4)
+        dry = np.clip((shore - np.abs(lat)) / feather + 0.5, 0, 1)[..., None]
+        wet = np.clip((np.abs(lat) - shore) / feather + 0.5, 0, 1)[..., None] * min(1.0, sd * 1.5)
+        rgb = np.where(sea[..., None], rgb * (1 - dry) + sand * dry, rgb * (1 - wet) + ocean * wet)
     shade = 0.55 + 0.45 * z                                 # soft limb darkening
     if night is not None:
         dx, dy = night
@@ -214,7 +218,7 @@ def render_oceans(out, seconds, still):
         u = i / max(1, n - 1)
         s = ease(u / 0.8)
         fig, ax = canvas()
-        band = math.radians(8 + 37 * s)                   # the dry band widens to about 45 degrees either side
+        band = math.radians(45 * s)                       # the dry band spreads from the equator to about 45 degrees
         globe(ax, CX, 0, R, i / FPS * 0.05 * (1 - s), drain=(band, s))
         label(ax, CX + R + 0.35, R * 0.8, LABELS[0], alpha=ease((u - 0.35) / 0.15), ha="left")  # beside the north polar sea
         label(ax, CX, 0, LABELS[1], alpha=ease((u - 0.6) / 0.15))

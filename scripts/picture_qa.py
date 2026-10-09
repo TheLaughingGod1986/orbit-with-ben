@@ -27,7 +27,7 @@ How it looks (needs the video; scripts/polish_gate.py's checks): low detail, spl
 noise with no picture under it, and a wobbly still push.
 
 A source Claude has ruled on (--reviewed-ok {source: {"note", "kinds": ["kind of picture", "low detail", ...]}}) passes
-on the kinds named for it and is listed as reviewed.
+on the kinds named for it and is listed as reviewed. A key "source@offset" rules on that one stretch of footage only.
 
 Writes <out-dir>/picture_qa.json, PICTURE_QA.md (FAIL first, then the WARN list Claude looks at full size) and, with a
 video, picture_qa_review.jpg (every FAIL and WARN frame at 960 px, labelled m:ss). Exit 1 if any cut fails."""
@@ -165,13 +165,14 @@ def source_checks(cuts: list, pool: dict) -> list:
         fail += reuse[k][0]
         warn += reuse[k][1]
         rows.append(dict(cut=k, row=c.get("row"), source=c["source"], title=title, t=round(mid, 2), at=mmss(mid),
-                         fail=fail, warn=warn))
+                         fail=fail, warn=warn, offset=offset(c)))
     return rows
 
 
 def apply_reviewed(rows: list, reviewed: dict) -> None:
     for r in rows:
-        ok = reviewed.get(r["source"])
+        key = f"{r['source']}@{r['offset']:g}" if r.get("offset") is not None else None
+        ok = (key and reviewed.get(key)) or reviewed.get(r["source"])
         if not ok:
             continue
         passed = [w for w in r["fail"] + r["warn"] if any(w.startswith(kind) for kind in ok.get("kinds", []))]
