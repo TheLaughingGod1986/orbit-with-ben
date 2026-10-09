@@ -1,0 +1,975 @@
+{
+  "rule": "fail if near-black(<12)/near-white(>245) pixels touching the border cover > 1.5% of the row frame",
+  "verdict": "WARN",
+  "note": "For 026 the border-fill check is a WARN, not a FAIL: night-sky and space pictures touch the border with dark sky by nature. A real letterbox or pillarbox is caught by polish_gate's split-panel check, which is clean in v03.",
+  "fail": [
+    {
+      "row": "1",
+      "cut": 0,
+      "source": "uhd_yb_paranal_01.mp4",
+      "frac": 0.167
+    },
+    {
+      "row": "3",
+      "cut": 4,
+      "source": "potw1343a.jpg",
+      "frac": 0.1035
+    },
+    {
+      "row": "5",
+      "cut": 8,
+      "source": "potw1343a.jpg",
+      "frac": 0.2499
+    },
+    {
+      "row": "5",
+      "cut": 10,
+      "source": "eso1323a.jpg",
+      "frac": 0.0379
+    },
+    {
+      "row": "6",
+      "cut": 12,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "frac": 0.0194
+    },
+    {
+      "row": "8",
+      "cut": 22,
+      "source": "uhd_bt_paranal_07.mp4",
+      "frac": 0.0745
+    },
+    {
+      "row": "10",
+      "cut": 27,
+      "source": "iss073e0982261.jpg",
+      "frac": 0.0163
+    },
+    {
+      "row": "12",
+      "cut": 35,
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "frac": 0.0244
+    },
+    {
+      "row": "13",
+      "cut": 37,
+      "source": "eso0932a.jpg",
+      "frac": 0.0672
+    },
+    {
+      "row": "15",
+      "cut": 47,
+      "source": "GSFC_20171208_Archive_e001982.jpg",
+      "frac": 0.607
+    },
+    {
+      "row": "20",
+      "cut": 59,
+      "source": "GSFC_20171208_Archive_e001788.jpg",
+      "frac": 0.0358
+    },
+    {
+      "row": "20",
+      "cut": 60,
+      "source": "iss025e015176.jpg",
+      "frac": 0.0235
+    },
+    {
+      "row": "22",
+      "cut": 66,
+      "source": "PIA21739.jpg",
+      "frac": 0.0892
+    },
+    {
+      "row": "22",
+      "cut": 67,
+      "source": "PIA21746.jpg",
+      "frac": 0.082
+    },
+    {
+      "row": "24",
+      "cut": 72,
+      "source": "PIA21739.jpg",
+      "frac": 0.0764
+    },
+    {
+      "row": "25",
+      "cut": 73,
+      "source": "PIA14111.jpg",
+      "frac": 0.0201
+    },
+    {
+      "row": "25",
+      "cut": 74,
+      "source": "PIA21746.jpg",
+      "frac": 0.1463
+    },
+    {
+      "row": "25",
+      "cut": 75,
+      "source": "uhd_bt_paranal_07.mp4",
+      "frac": 0.1174
+    },
+    {
+      "row": "28",
+      "cut": 82,
+      "source": "eso1629e_video.mp4",
+      "frac": 0.4192
+    },
+    {
+      "row": "29",
+      "cut": 84,
+      "source": "eso1629e_video.mp4",
+      "frac": 0.3237
+    },
+    {
+      "row": "31",
+      "cut": 89,
+      "source": "ACD24-0020-061.jpg",
+      "frac": 0.1342
+    },
+    {
+      "row": "31",
+      "cut": 91,
+      "source": "CamA_Seq109_2024-08-28_17-17-11Z_V2_S560161.jpg",
+      "frac": 0.2128
+    },
+    {
+      "row": "31",
+      "cut": 92,
+      "source": "CamC_Seq109_2024-08-28_17-17-13Z_V2_S595171.jpg",
+      "frac": 0.0913
+    },
+    {
+      "row": "33",
+      "cut": 97,
+      "source": "PIA25137.jpg",
+      "frac": 0.078
+    },
+    {
+      "row": "33",
+      "cut": 99,
+      "source": "uhd_bt_paranal_06.mp4",
+      "frac": 0.0501
+    },
+    {
+      "row": "33",
+      "cut": 102,
+      "source": "uhd_yb_paranal_01.mp4",
+      "frac": 0.1497
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "4",
+      "cut": 5,
+      "source": "triple.mp4",
+      "frac": 0.9828,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "4",
+      "cut": 6,
+      "source": "parallax.mp4",
+      "frac": 0.9473,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "4",
+      "cut": 7,
+      "source": "journey.mp4",
+      "frac": 0.9846,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "8",
+      "cut": 20,
+      "source": "triple.mp4",
+      "frac": 0.9827,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "9",
+      "cut": 25,
+      "source": "lightyear.mp4",
+      "frac": 0.9268,
+      "status": "reviewed_ok",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)"
+    },
+    {
+      "row": "12",
+      "cut": 31,
+      "source": "parallax.mp4",
+      "frac": 0.9469,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "14",
+      "cut": 39,
+      "source": "parallax.mp4",
+      "frac": 0.9463,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "16",
+      "cut": 48,
+      "source": "starfield.mp4",
+      "frac": 0.9247,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "17",
+      "cut": 50,
+      "source": "starfield.mp4",
+      "frac": 0.8774,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "18",
+      "cut": 52,
+      "source": "scale.mp4",
+      "frac": 0.8474,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "18",
+      "cut": 53,
+      "source": "scale.mp4",
+      "frac": 0.8488,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "21",
+      "cut": 62,
+      "source": "starfield.mp4",
+      "frac": 0.8665,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "22",
+      "cut": 65,
+      "source": "PIA17049.jpg",
+      "frac": 0.8912,
+      "status": "reviewed_ok",
+      "note": "Voyager sharp and lit against black space; the dark is space (Claude, 9 Oct, rough v03 review)"
+    },
+    {
+      "row": "24",
+      "cut": 70,
+      "source": "journey.mp4",
+      "frac": 0.9614,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "24",
+      "cut": 71,
+      "source": "PIA04495.jpg",
+      "frac": 0.4337,
+      "status": "reviewed_ok",
+      "note": "whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)"
+    },
+    {
+      "row": "27",
+      "cut": 78,
+      "source": "lightrace.mp4",
+      "frac": 0.9483,
+      "status": "reviewed_ok",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)"
+    },
+    {
+      "row": "28",
+      "cut": 80,
+      "source": "eso1629d_video.mp4",
+      "frac": 0.75,
+      "status": "reviewed_ok",
+      "note": "Earth limb on black, label-free part only (first ~8 s); the constellation-label part is out (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "30",
+      "cut": 86,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "frac": 0.6271,
+      "status": "reviewed_ok",
+      "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "30",
+      "cut": 87,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "frac": 0.6456,
+      "status": "reviewed_ok",
+      "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)"
+    }
+  ],
+  "rows": [
+    {
+      "row": "1",
+      "cut": 0,
+      "source": "uhd_yb_paranal_01.mp4",
+      "frac": 0.167
+    },
+    {
+      "row": "1",
+      "cut": 1,
+      "source": "iss073e0982261.jpg",
+      "frac": 0.0006
+    },
+    {
+      "row": "2",
+      "cut": 2,
+      "source": "uhd_bt_paranal_01.mp4",
+      "frac": 0.0007
+    },
+    {
+      "row": "3",
+      "cut": 3,
+      "source": "uhd_bt_paranal_06.mp4",
+      "frac": 0.0084
+    },
+    {
+      "row": "3",
+      "cut": 4,
+      "source": "potw1343a.jpg",
+      "frac": 0.1035
+    },
+    {
+      "row": "4",
+      "cut": 5,
+      "source": "triple.mp4",
+      "frac": 0.9828,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "4",
+      "cut": 6,
+      "source": "parallax.mp4",
+      "frac": 0.9473,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "4",
+      "cut": 7,
+      "source": "journey.mp4",
+      "frac": 0.9846,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "5",
+      "cut": 8,
+      "source": "potw1343a.jpg",
+      "frac": 0.2499
+    },
+    {
+      "row": "5",
+      "cut": 9,
+      "source": "eso1302a.jpg",
+      "frac": 0.0116
+    },
+    {
+      "row": "5",
+      "cut": 10,
+      "source": "eso1323a.jpg",
+      "frac": 0.0379
+    },
+    {
+      "row": "5",
+      "cut": 11,
+      "source": "heic0809a.jpg",
+      "frac": 0.0004
+    },
+    {
+      "row": "6",
+      "cut": 12,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "frac": 0.0194
+    },
+    {
+      "row": "6",
+      "cut": 13,
+      "source": "GSFC_20171208_Archive_e000790.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "6",
+      "cut": 14,
+      "source": "eso1629i.jpg",
+      "frac": 0.0049
+    },
+    {
+      "row": "7",
+      "cut": 15,
+      "source": "eso1629i.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "7",
+      "cut": 16,
+      "source": "bt_lasilla_crux.mp4",
+      "frac": 0.0093
+    },
+    {
+      "row": "7",
+      "cut": 17,
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "frac": 0.001
+    },
+    {
+      "row": "7",
+      "cut": 18,
+      "source": "eso1241a.mp4",
+      "frac": 0.0007
+    },
+    {
+      "row": "7",
+      "cut": 19,
+      "source": "eso0905a.jpg",
+      "frac": 0.0019
+    },
+    {
+      "row": "8",
+      "cut": 20,
+      "source": "triple.mp4",
+      "frac": 0.9827,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "8",
+      "cut": 21,
+      "source": "eso0844a.jpg",
+      "frac": 0.0035
+    },
+    {
+      "row": "8",
+      "cut": 22,
+      "source": "uhd_bt_paranal_07.mp4",
+      "frac": 0.0745
+    },
+    {
+      "row": "8",
+      "cut": 23,
+      "source": "eso1250a_8k.jpg",
+      "frac": 0.0004
+    },
+    {
+      "row": "9",
+      "cut": 24,
+      "source": "iss073e0982679.jpg",
+      "frac": 0.0025
+    },
+    {
+      "row": "9",
+      "cut": 25,
+      "source": "lightyear.mp4",
+      "frac": 0.9268,
+      "status": "reviewed_ok",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)"
+    },
+    {
+      "row": "10",
+      "cut": 26,
+      "source": "GSFC_20171208_Archive_e000256.jpg",
+      "frac": 0.0085
+    },
+    {
+      "row": "10",
+      "cut": 27,
+      "source": "iss073e0982261.jpg",
+      "frac": 0.0163
+    },
+    {
+      "row": "11",
+      "cut": 28,
+      "source": "orbit_thumb_omni_v01.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "11",
+      "cut": 29,
+      "source": "eso1323a.jpg",
+      "frac": 0.0106
+    },
+    {
+      "row": "11",
+      "cut": 30,
+      "source": "iss073e0982679.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "12",
+      "cut": 31,
+      "source": "parallax.mp4",
+      "frac": 0.9469,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "12",
+      "cut": 32,
+      "source": "eso0934a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "12",
+      "cut": 33,
+      "source": "vltfromvistatimelapse.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "12",
+      "cut": 34,
+      "source": "GSFC_20171208_Archive_e000256.jpg",
+      "frac": 0.0023
+    },
+    {
+      "row": "12",
+      "cut": 35,
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "frac": 0.0244
+    },
+    {
+      "row": "13",
+      "cut": 36,
+      "source": "Tycho_Brahe.jpg",
+      "frac": 0.0056
+    },
+    {
+      "row": "13",
+      "cut": 37,
+      "source": "eso0932a.jpg",
+      "frac": 0.0672
+    },
+    {
+      "row": "13",
+      "cut": 38,
+      "source": "eso1031a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 39,
+      "source": "parallax.mp4",
+      "frac": 0.9463,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "14",
+      "cut": 40,
+      "source": "eso0934a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 41,
+      "source": "Bessel_Herterich_1825.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 42,
+      "source": "eso1250a_8k.jpg",
+      "frac": 0.0006
+    },
+    {
+      "row": "14",
+      "cut": 43,
+      "source": "uhd_bt_paranal_01.mp4",
+      "frac": 0.0018
+    },
+    {
+      "row": "15",
+      "cut": 44,
+      "source": "gaia_sky_in_colour.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "15",
+      "cut": 45,
+      "source": "eso0844a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "15",
+      "cut": 46,
+      "source": "gaia_sky_in_colour.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "15",
+      "cut": 47,
+      "source": "GSFC_20171208_Archive_e001982.jpg",
+      "frac": 0.607
+    },
+    {
+      "row": "16",
+      "cut": 48,
+      "source": "starfield.mp4",
+      "frac": 0.9247,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "16",
+      "cut": 49,
+      "source": "heic1007a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "17",
+      "cut": 50,
+      "source": "starfield.mp4",
+      "frac": 0.8774,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "17",
+      "cut": 51,
+      "source": "eso1302a.jpg",
+      "frac": 0.0007
+    },
+    {
+      "row": "18",
+      "cut": 52,
+      "source": "scale.mp4",
+      "frac": 0.8474,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "18",
+      "cut": 53,
+      "source": "scale.mp4",
+      "frac": 0.8488,
+      "status": "reviewed_ok",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "18",
+      "cut": 54,
+      "source": "heic1007a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "19",
+      "cut": 55,
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "frac": 0.0025
+    },
+    {
+      "row": "19",
+      "cut": 56,
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "19",
+      "cut": 57,
+      "source": "GSFC_20171208_Archive_e001788.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "20",
+      "cut": 58,
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "20",
+      "cut": 59,
+      "source": "GSFC_20171208_Archive_e001788.jpg",
+      "frac": 0.0358
+    },
+    {
+      "row": "20",
+      "cut": 60,
+      "source": "iss025e015176.jpg",
+      "frac": 0.0235
+    },
+    {
+      "row": "21",
+      "cut": 61,
+      "source": "bt_lasilla_crux.mp4",
+      "frac": 0.0013
+    },
+    {
+      "row": "21",
+      "cut": 62,
+      "source": "starfield.mp4",
+      "frac": 0.8665,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "21",
+      "cut": 63,
+      "source": "eso0905a.jpg",
+      "frac": 0.0016
+    },
+    {
+      "row": "21",
+      "cut": 64,
+      "source": "heic0809a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "22",
+      "cut": 65,
+      "source": "PIA17049.jpg",
+      "frac": 0.8912,
+      "status": "reviewed_ok",
+      "note": "Voyager sharp and lit against black space; the dark is space (Claude, 9 Oct, rough v03 review)"
+    },
+    {
+      "row": "22",
+      "cut": 66,
+      "source": "PIA21739.jpg",
+      "frac": 0.0892
+    },
+    {
+      "row": "22",
+      "cut": 67,
+      "source": "PIA21746.jpg",
+      "frac": 0.082
+    },
+    {
+      "row": "23",
+      "cut": 68,
+      "source": "PIA17464.jpg",
+      "frac": 0.0097
+    },
+    {
+      "row": "24",
+      "cut": 69,
+      "source": "orbit_walk_omni_v01.mp4",
+      "frac": 0.0009
+    },
+    {
+      "row": "24",
+      "cut": 70,
+      "source": "journey.mp4",
+      "frac": 0.9614,
+      "status": "reviewed_ok",
+      "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "24",
+      "cut": 71,
+      "source": "PIA04495.jpg",
+      "frac": 0.4337,
+      "status": "reviewed_ok",
+      "note": "whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)"
+    },
+    {
+      "row": "24",
+      "cut": 72,
+      "source": "PIA21739.jpg",
+      "frac": 0.0764
+    },
+    {
+      "row": "25",
+      "cut": 73,
+      "source": "PIA14111.jpg",
+      "frac": 0.0201
+    },
+    {
+      "row": "25",
+      "cut": 74,
+      "source": "PIA21746.jpg",
+      "frac": 0.1463
+    },
+    {
+      "row": "25",
+      "cut": 75,
+      "source": "uhd_bt_paranal_07.mp4",
+      "frac": 0.1174
+    },
+    {
+      "row": "25",
+      "cut": 76,
+      "source": "PIA17464.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "26",
+      "cut": 77,
+      "source": "PIA21839.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "27",
+      "cut": 78,
+      "source": "lightrace.mp4",
+      "frac": 0.9483,
+      "status": "reviewed_ok",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)"
+    },
+    {
+      "row": "28",
+      "cut": 79,
+      "source": "eso1629a.jpg",
+      "frac": 0.0093
+    },
+    {
+      "row": "28",
+      "cut": 80,
+      "source": "eso1629d_video.mp4",
+      "frac": 0.75,
+      "status": "reviewed_ok",
+      "note": "Earth limb on black, label-free part only (first ~8 s); the constellation-label part is out (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "28",
+      "cut": 81,
+      "source": "eso1629a.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "28",
+      "cut": 82,
+      "source": "eso1629e_video.mp4",
+      "frac": 0.4192
+    },
+    {
+      "row": "29",
+      "cut": 83,
+      "source": "eso1629e.jpg",
+      "frac": 0.0073
+    },
+    {
+      "row": "29",
+      "cut": 84,
+      "source": "eso1629e_video.mp4",
+      "frac": 0.3237
+    },
+    {
+      "row": "30",
+      "cut": 85,
+      "source": "eso1629e.jpg",
+      "frac": 0.0083
+    },
+    {
+      "row": "30",
+      "cut": 86,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "frac": 0.6271,
+      "status": "reviewed_ok",
+      "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "30",
+      "cut": 87,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "frac": 0.6456,
+      "status": "reviewed_ok",
+      "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)"
+    },
+    {
+      "row": "30",
+      "cut": 88,
+      "source": "GSFC_20171208_Archive_e000759.jpg",
+      "frac": 0.0008
+    },
+    {
+      "row": "31",
+      "cut": 89,
+      "source": "ACD24-0020-061.jpg",
+      "frac": 0.1342
+    },
+    {
+      "row": "31",
+      "cut": 90,
+      "source": "ACS3_SolarPanels_001.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "31",
+      "cut": 91,
+      "source": "CamA_Seq109_2024-08-28_17-17-11Z_V2_S560161.jpg",
+      "frac": 0.2128
+    },
+    {
+      "row": "31",
+      "cut": 92,
+      "source": "CamC_Seq109_2024-08-28_17-17-13Z_V2_S595171.jpg",
+      "frac": 0.0913
+    },
+    {
+      "row": "32",
+      "cut": 93,
+      "source": "PIA23214.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "32",
+      "cut": 94,
+      "source": "PIA24163.jpg",
+      "frac": 0.0042
+    },
+    {
+      "row": "32",
+      "cut": 95,
+      "source": "PIA25136.jpg",
+      "frac": 0.0051
+    },
+    {
+      "row": "33",
+      "cut": 96,
+      "source": "PIA26147.jpg",
+      "frac": 0.0011
+    },
+    {
+      "row": "33",
+      "cut": 97,
+      "source": "PIA25137.jpg",
+      "frac": 0.078
+    },
+    {
+      "row": "33",
+      "cut": 98,
+      "source": "eso0932a.jpg",
+      "frac": 0.013
+    },
+    {
+      "row": "33",
+      "cut": 99,
+      "source": "uhd_bt_paranal_06.mp4",
+      "frac": 0.0501
+    },
+    {
+      "row": "33",
+      "cut": 100,
+      "source": "vltfromvistatimelapse.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "33",
+      "cut": 101,
+      "source": "uhd_yb_paranal_02.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "33",
+      "cut": 102,
+      "source": "uhd_yb_paranal_01.mp4",
+      "frac": 0.1497
+    }
+  ]
+}
