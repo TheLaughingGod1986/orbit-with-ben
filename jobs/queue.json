@@ -2875,10 +2875,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T01:27Z",
+      "eta": "2026-10-09T03:27Z",
       "created_by": "claude",
       "created_at": "2026-10-08T21:50Z",
       "result": "",
@@ -2927,6 +2927,11 @@
           "at": "2026-10-09T01:17Z",
           "by": "cursor",
           "what": "released: Run 4: v03d assembler pushed (215cb06): PIA12102 at 2:54, own bed at v03c level, opening PIA17956 (greyscale Hazcam, Claude to check frame0), name labels, dusty->clean at 261.43 s, puncture photo PIA17751 held 359.93-365.33 then Orbit. Similarity matrix committed (max 0.643). RENDER RUNNING: tmux j0068-v03d-render, log ~/_desk/logs/j0068-v03d-render.log, done file ~/_desk/logs/j0068-v03d-render.done (0 = render+picture_qa+music_gate pass, 3 render fail, 4 gate fail -> full_rough_v03d_pack/gates_exit_v03d.txt). Don't start a second copy. Next: read .done, check pack, 6c audit, phone copy (J0067 way), post #99."
+        },
+        {
+          "at": "2026-10-09T01:27Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": true
