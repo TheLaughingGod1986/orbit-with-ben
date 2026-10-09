@@ -2271,13 +2271,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-09T07:34Z",
-      "eta": "2026-10-09T09:34Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T15:15Z",
-      "result": "",
+      "result": "Free 13.5 -> 15.5 GiB (16.7 GB), over Claude's 15 GB line. Moved 020 jupiter_film_v02/v03 (kept v04 uploaded master + v05) and OWB UAT/moon_leaving_part-03_rough_v05 to NAS, sha256 verified; removed 2 old cursor-server builds. 40 GB not reachable without 021 (12 Oct move) or 022+ (stay). Chrome cache clears pending profile close.",
       "history": [
         {
           "at": "2026-10-08T15:15Z",
@@ -2378,9 +2378,15 @@
           "at": "2026-10-09T07:34Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T07:39Z",
+          "by": "cursor",
+          "what": "done: Free 13.5 -> 15.5 GiB (16.7 GB), over Claude's 15 GB line. Moved 020 jupiter_film_v02/v03 (kept v04 uploaded master + v05) and OWB UAT/moon_leaving_part-03_rough_v05 to NAS, sha256 verified; removed 2 old cursor-server builds. 40 GB not reachable without 021 (12 Oct move) or 022+ (stay). Chrome cache clears pending profile close."
         }
       ],
-      "urgent": true
+      "urgent": true,
+      "done_ref": "97cbed5"
     },
     {
       "id": "J0055",
