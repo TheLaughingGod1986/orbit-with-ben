@@ -39,7 +39,34 @@ class SourceChecks(unittest.TestCase):
                                  cut("PIA12102.jpg", 10, 15, 1.5)], POOL)
         self.assertTrue(any(w.startswith("sharpness: upscaled 2.40x") for w in rows[0]["fail"]))
         self.assertTrue(any(w.startswith("sharpness") for w in rows[1]["warn"]))
-        self.assertTrue(all(any(w.startswith("reuse: used 3 times") for w in r["fail"]) for r in rows))
+        self.assertFalse(any(w.startswith("reuse") for r in rows for w in r["fail"]))  # back to back: one appearance
+
+    def test_a_still_may_appear_twice(self):
+        rows = qa.source_checks([cut("PIA12102.jpg", 0, 5), cut("x.jpg", 5, 10), cut("PIA12102.jpg", 10, 15),
+                                 cut("x.jpg", 15, 20), cut("PIA12102.jpg", 20, 25)], POOL)
+        self.assertEqual([any(w.startswith("reuse: appears 3 times") for w in r["fail"]) for r in rows],
+                         [False, False, False, False, True])
+
+    def test_footage_counts_stretches_not_files(self):
+        def clip(t0, off, row="1"):
+            return dict(cut("gerst.webm", t0, t0 + 4, row=row), framing={"offset": off})
+        cuts = [clip(0, 40), cut("a.jpg", 4, 8), clip(8, 120), cut("b.jpg", 12, 16), clip(16, 44), cut("c.jpg", 20, 24)]
+        rows = qa.source_checks(cuts, POOL)
+        self.assertFalse(any(w.startswith("reuse") for w in rows[2]["fail"]))           # a new stretch is a new picture
+        self.assertTrue(any(w.startswith("reuse: same stretch as 0:02") for w in rows[4]["fail"]))
+        many = []
+        for i, off in enumerate((0, 20, 40, 60, 80, 100)):
+            many += [clip(i * 8, off), cut(f"s{i}.jpg", i * 8 + 4, i * 8 + 8)]
+        rows = qa.source_checks(many, POOL)
+        self.assertFalse(any(w.startswith("reuse") for w in rows[8]["fail"]))
+        self.assertTrue(any(w.startswith("reuse: 6 stretches") for w in rows[10]["fail"]))
+
+    def test_a_run_that_replays_its_own_frames(self):
+        cuts = [dict(cut("tides.mp4", 0, 4), framing={"offset": 0}), dict(cut("tides.mp4", 4, 8), framing={"offset": 4}),
+                dict(cut("tides.mp4", 8, 12), framing={"offset": 6}), dict(cut("tides.mp4", 12, 17), framing={"offset": 10})]
+        rows = qa.source_checks(cuts, POOL)
+        self.assertEqual([any("replays frames" in w for w in r["fail"]) for r in rows], [False, False, True, False])
+        self.assertTrue(any(w.startswith("reuse: on screen 17.0s") for w in rows[0]["warn"]))
 
     def test_unknown_sources_are_a_look_but_our_own_clips_are_not(self):
         rows = qa.source_checks([cut("mystery.jpg", 0, 5), cut("orbit_mars_cold_omni_v01.mp4", 5, 10)], POOL)

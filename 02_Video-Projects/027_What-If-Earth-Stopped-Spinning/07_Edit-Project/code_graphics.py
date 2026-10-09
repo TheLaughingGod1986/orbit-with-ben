@@ -207,17 +207,17 @@ def render_air(out, seconds, still):
 def render_oceans(out, seconds, still):
     """Start as today's Earth; the sea drains to two polar oceans and one band of dry land spreads round the middle.
     The land keeps the real texture's light and shade (sand-coloured), so it reads as ground, not a printed band.
-    --label goes over the polar ocean at the top, --label2 across the band of land."""
+    --label goes beside the polar ocean at the top right, --label2 across the band of land."""
     n, frames = frames_for(seconds, still, at=0.95)
-    R = 3.4
+    R, CX = 3.4, -1.6                                   # left of centre so the label fits inside the frame
     for i in frames:
         u = i / max(1, n - 1)
         s = ease(u / 0.8)
         fig, ax = canvas()
         band = math.radians(8 + 37 * s)                   # the dry band widens to about 45 degrees either side
-        globe(ax, 0, 0, R, i / FPS * 0.05 * (1 - s), drain=(band, s))
-        label(ax, 0, 4.1, LABELS[0], alpha=ease((u - 0.35) / 0.15))
-        label(ax, 0, 0, LABELS[1], alpha=ease((u - 0.6) / 0.15))
+        globe(ax, CX, 0, R, i / FPS * 0.05 * (1 - s), drain=(band, s))
+        label(ax, CX + R + 0.35, R * 0.8, LABELS[0], alpha=ease((u - 0.35) / 0.15), ha="left")  # beside the north polar sea
+        label(ax, CX, 0, LABELS[1], alpha=ease((u - 0.6) / 0.15))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -226,22 +226,23 @@ def render_dayyear(out, seconds, still):
     """The Sun at centre; Earth goes once round. With no spin, the gold marker on its surface keeps pointing the same
     way, so it sits in daylight for half the year, then in night for the other half."""
     n, frames = frames_for(seconds, still, at=0.4)
-    R, er = 3.0, 0.95
+    R, er, CX = 3.4, 1.0, -2.0                             # fills the height; left of centre so the label fits
     for i in frames:
         th = 2 * math.pi * i / max(1, n)
         fig, ax = canvas()
-        ax.add_patch(Circle((0, 0), R, fill=False, ec=DIM, lw=1, alpha=0.4))
+        ax.add_patch(Circle((CX, 0), R, fill=False, ec=DIM, lw=1, alpha=0.4))
         for k, a in ((2.2, 0.08), (1.5, 0.2)):
-            ax.add_patch(Circle((0, 0), 0.5 * k, color=GOLD, alpha=a, lw=0))
-        ax.add_patch(Circle((0, 0), 0.5, color=GOLD))
-        ex, ey = R * math.cos(th), R * math.sin(th)
-        d = math.hypot(ex, ey)
-        globe(ax, ex, ey, er, 0.0, night=(-ex / d, -ey / d))   # phase fixed: no spin; the night side faces away
+            ax.add_patch(Circle((CX, 0), 0.5 * k, color=GOLD, alpha=a, lw=0))
+        ax.add_patch(Circle((CX, 0), 0.5, color=GOLD))
+        dx, dy = R * math.cos(th), R * math.sin(th)
+        ex, ey = CX + dx, dy
+        d = math.hypot(dx, dy)
+        globe(ax, ex, ey, er, 0.0, night=(-dx / d, -dy / d))   # phase fixed: no spin; the night side faces away
         mx, my = ex + er, ey                                     # the marker never turns: it points the same way
-        lit = -ex > 0
+        lit = -dx > 0
         ax.plot([ex + er * 0.82, mx + 0.18], [ey, my], color=GOLD if lit else DIM, lw=3, zorder=7)
         ax.add_patch(Circle((mx + 0.22, my), 0.13, color=GOLD if lit else DIM, zorder=7))
-        label(ax, 0, 4.05, LABELS[0], alpha=ease((i / max(1, n) - 0.08) / 0.1))           # e.g. 1 DAY = 1 YEAR
+        label(ax, CX + R + er + 0.5, R * 0.8, LABELS[0], alpha=ease((i / max(1, n) - 0.08) / 0.1), ha="left")  # e.g. 1 DAY = 1 YEAR
         save(fig, out, i, still)
     finish(out, still)
 

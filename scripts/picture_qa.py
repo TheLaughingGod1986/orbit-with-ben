@@ -17,7 +17,12 @@ What a cut is (from the cut list and the pool, before any pixel is looked at):
                      FAIL a source the pool marks `"labels": true` (label overlays, burnt-in text) or `"reject": "<why>"`.
   - sharpness        FAIL upscaled more than 2.35x. WARN more than 2x (may look soft; rover frames are often 1024 px, so up to
                      2x is normal).
-  - reuse            FAIL one picture used more than twice in the long.
+  - reuse            counted in appearances: back-to-back cuts from one source are one appearance.
+                     FAIL a still (or a clip with no offset recorded) that appears more than twice in the long.
+                     FAIL footage that comes back on a stretch within 10 s of one already shown (the same picture
+                     again: give a repeat a new stretch, or a code graphic a new render with its own state or label).
+                     FAIL footage seen in more than 5 different stretches. FAIL a cut that replays frames its own run
+                     has just shown. WARN one source on screen for more than 15 s in a row.
 How it looks (needs the video; scripts/polish_gate.py's checks): low detail, split panels and gutters, near-black,
 noise with no picture under it, and a wobbly still push.
 
@@ -39,7 +44,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 UPSCALE_FAIL, UPSCALE_WARN = 2.35, 2.0  # rover frames are often 1024 px, so up to 2x is normal
-MAX_REUSE = 2
+MAX_REUSE = 2          # appearances of one still
+MAX_STRETCHES = 5      # different stretches of one piece of footage
+SAME_STRETCH = 10.0    # seconds: footage starting this close to a stretch already shown is the same picture
+LONG_RUN = 15.0        # seconds of one source on screen in a row before Claude looks
+SLACK = 0.25           # seconds of overlap at a cut that is only rounding
 KIND_FAIL = re.compile(r"computer[- ]?(reconstruction|model|generated|simulation|graphic)|\bsimulation\b|\bdiagram|\bchart\b|"
                        r"\bgraph\b|\bschematic|\bannotated\b|\blabell?ed\b|\bscreen ?shot|\bwireframe|\bcad\b|\binfographic", re.I)
 OWN = re.compile(r"omni|veo|flow|code_graphic|orbit_|_card|title", re.I)  # our own clips and graphics: Claude reviews them in their own pack
@@ -78,8 +87,58 @@ def load_pool(paths) -> dict:
 FLAGS: dict = {}  # source stem -> why the pool marks it unusable ("labels": true, or "reject": "<why>")
 
 
+def offset(c: dict):
+    return (c.get("framing") or {}).get("offset")
+
+
+def reuse_checks(cuts: list) -> dict:
+    """{cut index: (fails, warns)} for reuse, counted in appearances (see the docstring)."""
+    out = {k: ([], []) for k in range(len(cuts))}
+    runs = []                                         # [source, [cut indices]]
+    for k, c in enumerate(cuts):
+        if runs and runs[-1][0] == c["source"]:
+            runs[-1][1].append(k)
+        else:
+            runs.append([c["source"], [k]])
+    seen = {}                                         # source -> [(start, end, film time)] of stretches shown
+    count = Counter()
+    for src, ks in runs:
+        span = cuts[ks[-1]]["timeline_out"] - cuts[ks[0]]["timeline_in"]
+        if span > LONG_RUN:
+            out[ks[0]][1].append(f"reuse: on screen {span:.1f}s in a row (look at it: {LONG_RUN:.0f}s is a lot for one picture)")
+        footage = all(offset(cuts[k]) is not None for k in ks)
+        count[src] += 1
+        if not footage:
+            if count[src] > MAX_REUSE:
+                for k in ks:
+                    out[k][0].append(f"reuse: appears {count[src]} times (limit {MAX_REUSE})")
+            continue
+        shown = seen.setdefault(src, [])
+        mine = []
+        for k in ks:
+            c = cuts[k]
+            a = offset(c)
+            b = a + c["timeline_out"] - c["timeline_in"]
+            if any(a < e - SLACK and s < b - SLACK for s, e, _ in mine):
+                out[k][0].append("reuse: replays frames this run has just shown")
+            same = [t for s, e, t in shown if abs(a - s) < SAME_STRETCH or (a < e - SLACK and s < b - SLACK)]
+            if same:
+                out[k][0].append(f"reuse: same stretch as {mmss(same[0])} (give it a new stretch, or a new render)")
+            mine.append((a, b, (c["timeline_in"] + c["timeline_out"]) / 2))
+        shown += mine
+        starts = []
+        for s, _, _ in shown:
+            if all(abs(s - x) >= SAME_STRETCH for x in starts):
+                starts.append(s)
+        n = len(starts)
+        if n > MAX_STRETCHES:
+            for k in ks:
+                out[k][0].append(f"reuse: {n} stretches of this footage (limit {MAX_STRETCHES})")
+    return out
+
+
 def source_checks(cuts: list, pool: dict) -> list:
-    uses = Counter(c["source"] for c in cuts)
+    reuse = reuse_checks(cuts)
     rows = []
     for k, c in enumerate(cuts):
         mid = (c["timeline_in"] + c["timeline_out"]) / 2
@@ -103,8 +162,8 @@ def source_checks(cuts: list, pool: dict) -> list:
             fail.append(f"sharpness: upscaled {up:.2f}x (limit {UPSCALE_FAIL}x)")
         elif up > UPSCALE_WARN:
             warn.append(f"sharpness: upscaled {up:.2f}x, may look soft")
-        if uses[c["source"]] > MAX_REUSE:
-            fail.append(f"reuse: used {uses[c['source']]} times (limit {MAX_REUSE})")
+        fail += reuse[k][0]
+        warn += reuse[k][1]
         rows.append(dict(cut=k, row=c.get("row"), source=c["source"], title=title, t=round(mid, 2), at=mmss(mid),
                          fail=fail, warn=warn))
     return rows
@@ -195,7 +254,7 @@ def main(argv=None) -> int:
     verdict = "FAIL" if any(r["fail"] for r in rows) else "PASS"
     res = dict(verdict=verdict, video=a.video or "", rules=dict(
         kind_fail=KIND_FAIL.pattern, kind_warn=KIND_WARN.pattern, upscale_fail=UPSCALE_FAIL, upscale_warn=UPSCALE_WARN,
-        max_reuse=MAX_REUSE, pixels="scripts/polish_gate.py" if a.video else "not run (no video)"),
+        max_reuse=MAX_REUSE, max_stretches=MAX_STRETCHES, same_stretch=SAME_STRETCH, pixels="scripts/polish_gate.py" if a.video else "not run (no video)"),
         failed=[r for r in rows if r["fail"]], warn=[r for r in rows if r["warn"] and not r["fail"]], rows=rows,
         polish=dict(edge_floor=polish["edge_floor"], low_detail_floor=polish["low_detail_floor"]) if polish else None)
     (out / "picture_qa.json").write_text(json.dumps(res, indent=2))
