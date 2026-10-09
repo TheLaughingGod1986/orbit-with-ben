@@ -7,7 +7,8 @@
   "title": "Hubble image of Proxima Centauri",
   "credit": "ESA/Hubble & NASA (CC BY 4.0)",
   "rows": "long 3,5,6; Mon S2,S3",
-  "orig": "https://cdn.esahubble.org/archives/images/large/potw1343a.jpg"
+  "orig": "https://cdn.esahubble.org/archives/images/large/potw1343a.jpg",
+  "dropped": "no insets (Claude #6074131477)"
  },
  {
   "section": "proxima",
@@ -17,7 +18,9 @@
   "title": "Proxima Centauri in the southern constellation of Centaurus",
   "credit": "ESO (CC BY 4.0)",
   "rows": "long 7",
-  "orig": "https://cdn.eso.org/images/large/eso1629g.jpg"
+  "orig": "https://cdn.eso.org/images/large/eso1629g.jpg",
+  "labels": true,
+  "labels_note": "white constellation chart with labels (Claude #6074131477; no unannotated variant on the ESO page)"
  },
  {
   "section": "proxima",
@@ -47,7 +50,9 @@
   "title": "The location of Proxima Centauri in the southern skies",
   "credit": "ESO (CC BY 4.0)",
   "rows": "long 7",
-  "orig": "https://cdn.eso.org/images/large/eso1629b.jpg"
+  "orig": "https://cdn.eso.org/images/large/eso1629b.jpg",
+  "labels": true,
+  "labels_note": "label overlays (Claude #6074131477; no unannotated variant on the ESO page)"
  },
  {
   "section": "alphacen",
@@ -57,7 +62,9 @@
   "title": "The Very Large Telescope and the star system Alpha Centauri",
   "credit": "ESO (CC BY 4.0)",
   "rows": "long 7,21,33",
-  "orig": "https://cdn.eso.org/images/large/eso1702a.jpg"
+  "orig": "https://cdn.eso.org/images/large/eso1702a.jpg",
+  "labels": true,
+  "labels_note": "label overlays (Claude #6074131477; no unannotated variant on the ESO page)"
  },
  {
   "section": "proxima_b",
@@ -117,7 +124,8 @@
   "title": "SDO view of the 17 April 2016 solar flare (video)",
   "credit": "NASA (public domain)",
   "rows": "long 30",
-  "orig": "https://images-assets.nasa.gov/video/GSFC_20160426_SDO_m12224_SolarFlare/GSFC_20160426_SDO_m12224_SolarFlare~orig.mp4"
+  "orig": "https://images-assets.nasa.gov/video/GSFC_20160426_SDO_m12224_SolarFlare/GSFC_20160426_SDO_m12224_SolarFlare~orig.mp4",
+  "labels_note": "opens on a burnt-in text card: cut in after it (Claude #6074131477)"
  },
  {
   "section": "earth_moon",
@@ -297,7 +305,9 @@
   "title": "The Alpha Centauri star system",
   "credit": "ESO (CC BY 4.0)",
   "rows": "long 7,21",
-  "orig": "https://cdn.eso.org/images/large/eso1702b.jpg"
+  "orig": "https://cdn.eso.org/images/large/eso1702b.jpg",
+  "labels": true,
+  "labels_note": "label overlays (\"Alpha Centauri A&B\") (Claude #6074131477; no unannotated variant on the ESO page)"
  },
  {
   "section": "nightsky",
@@ -497,7 +507,8 @@
   "title": "City lights illuminate the Nile",
   "credit": "NASA (public domain)",
   "rows": "long 20",
-  "orig": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001586/GSFC_20171208_Archive_e001586~orig.jpg"
+  "orig": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001586/GSFC_20171208_Archive_e001586~orig.jpg",
+  "dropped": "no insets (Claude #6074131477)"
  },
  {
   "section": "earth_moon",
@@ -508,5 +519,55 @@
   "credit": "NASA (public domain)",
   "rows": "long 19,20",
   "orig": "https://images-assets.nasa.gov/image/iss025e015176/iss025e015176~orig.jpg"
+ },
+ {
+  "section": "timelapse",
+  "source": "eso",
+  "id": "uhd_yb_paranal_01",
+  "file_id": "uhd_yb_paranal_01",
+  "title": "Milky Way revealed (time-lapse, UHD 7.6 s)",
+  "credit": "ESO (CC BY 4.0)",
+  "rows": "rows 1 and 33 (frame 0 + a different segment)",
+  "orig": "https://cdn.eso.org/videos/ultra_hd/uhd_yb_paranal_01.mp4",
+  "video": true,
+  "mute": true
+ },
+ {
+  "section": "timelapse",
+  "source": "eso",
+  "id": "uhd_bt_paranal_01",
+  "file_id": "uhd_bt_paranal_01",
+  "title": "Distant time-lapse of Paranal (UHD 8.1 s)",
+  "credit": "ESO (CC BY 4.0)",
+  "rows": "row 2",
+  "orig": "https://cdn.eso.org/videos/ultra_hd/uhd_bt_paranal_01.mp4",
+  "video": true,
+  "mute": true
+ },
+ {
+  "section": "timelapse",
+  "source": "eso",
+  "id": "bt_lasilla_crux",
+  "file_id": "bt_lasilla_crux",
+  "title": "Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)",
+  "credit": "ESO (CC BY 4.0)",
+  "rows": "row 7",
+  "orig": "https://cdn.eso.org/videos/ultra_hd/bt_lasilla_crux.mp4",
+  "video": true,
+  "mute": true,
+  "note": "vcrop x300 w3240 (pillarbox); 16:9 = (300,0,3240,1822)"
+ },
+ {
+  "section": "timelapse",
+  "source": "eso",
+  "id": "eso1241a",
+  "file_id": "eso1241a",
+  "title": "A journey to Alpha Centauri (720p, 70 s)",
+  "credit": "ESO (CC BY 4.0)",
+  "rows": "row 5/7 optional",
+  "orig": "https://cdn.eso.org/videos/hd_and_apple/eso1241a.m4v",
+  "video": true,
+  "mute": true,
+  "note": "clean only ~4.5-10 s: ESO logo 0-4 s, constellation lines and \"Alpha Centauri\" labels from ~15 s"
  }
 ]

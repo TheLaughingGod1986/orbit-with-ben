@@ -48,3 +48,16 @@ Next (J0065): still_motion pushes per row + polish/fill gates, then assemble rou
 | earth_moon | GSFC e001982 (Moon, 1536 px), e001586 (City lights of the Nile, 720×1080), iss025e015176 (night Earth) | e001586 is 2.67× to fill: inset or crop-free use only, or skip. |
 
 Left out: eso1629c (diagram), eso1629f / eso1629j / eso1241b (annotated), potw1606a (a transporter truck, not sky).
+
+## v03 additions: ESO time-lapses + label flags (J0065, Cursor covering, 9 Oct 2026; Claude #6073730799, #6074131477)
+
+Fetched to `pool_v01/timelapse/` (largest MP4 offered, used muted). Credit line for each: **ESO (CC BY 4.0)**.
+
+| id | ESO title | use | note |
+|---|---|---|---|
+| uhd_yb_paranal_01 | Milky Way revealed | frame 0 (row 1); row 33 at a different segment | 3840×2160, 7.6 s. Milky Way visibly drifts. |
+| uhd_bt_paranal_01 | Distant time-lapse of Paranal | row 2 | 3840×2160, 8.1 s |
+| bt_lasilla_crux | Milky Way above mountain | row 7 | 3840×2160, 10.3 s, pillarboxed: content x=300 w=3240; 16:9 crop (300,0,3240,1822) |
+| eso1241a | A journey to Alpha Centauri | optional, rows 5/7 | 1280×720, 70 s. Clean only ~4.5–10 s: ESO logo 0–4 s, constellation lines and "Alpha Centauri" labels from ~15 s. |
+
+Out (`"labels": true` in pool_v02.json): eso1629g (white constellation chart), eso1702a, eso1702b, eso1629b (label overlays). None has an unannotated variant on its ESO page. The SDO M6.7 flare video opens on a text card, so cut in after it. Dropped (no insets): potw1343a, the Bessel portrait, e001586.
