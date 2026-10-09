@@ -1,0 +1,1957 @@
+{
+  "verdict": "FAIL",
+  "video": "/private/tmp/earth027_rough_work_v01b/027_EarthSpin_rough_v01b.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 2.4,
+      "at": "0:02",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "1",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 7.05,
+      "at": "0:07",
+      "fail": [
+        "reuse: used 10 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "2",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 15.02,
+      "at": "0:15",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 9.85, p95 29.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 19.8,
+      "at": "0:20",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 13.74, p95 54.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "10",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 25.42,
+      "at": "0:25",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 8.31, p95 30.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "10",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 29.97,
+      "at": "0:30",
+      "fail": [
+        "reuse: used 10 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "11",
+      "source": "air.mp4",
+      "title": null,
+      "t": 35.68,
+      "at": "0:36",
+      "fail": [
+        "near-black: mean 14.03, p95 58.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 8,
+      "row": "11",
+      "source": "air.mp4",
+      "title": null,
+      "t": 41.98,
+      "at": "0:42",
+      "fail": [
+        "near-black: mean 15.85, p95 66.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 11,
+      "row": "13",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 55.92,
+      "at": "0:56",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "low detail: luma std 9.42 < 13.44 and edge density 0.0018 < 0.0259 (absolute floor)",
+        "near-black: mean 12.03, p95 25.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "13",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 60.12,
+      "at": "1:00",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 12.89, p95 48.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "13",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 64.33,
+      "at": "1:04",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 13.3, p95 46.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 15,
+      "row": "14",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 76.18,
+      "at": "1:16",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 15.0, p95 58.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 17,
+      "row": "15",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 85.47,
+      "at": "1:25",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 22,
+      "row": "6",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 106.4,
+      "at": "1:46",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 11.23, p95 66.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 110.23,
+      "at": "1:50",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "low detail: luma std 2.08 < 13.44 and edge density 0.0013 < 0.0259 (absolute floor)",
+        "near-black: mean 0.21, p95 0.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 113.97,
+      "at": "1:54",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "low detail: luma std 6.26 < 13.44 and edge density 0.0033 < 0.0259 (absolute floor)",
+        "near-black: mean 0.66, p95 2.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 118.23,
+      "at": "1:58",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 3.7, p95 47.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 123.02,
+      "at": "2:03",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 27,
+      "row": "8",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 127.68,
+      "at": "2:08",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 18.83, p95 75.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 28,
+      "row": "8",
+      "source": "bulge.mp4",
+      "title": null,
+      "t": 132.15,
+      "at": "2:12",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 13.59, p95 54.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 29,
+      "row": "8",
+      "source": "bulge.mp4",
+      "title": null,
+      "t": 137.0,
+      "at": "2:17",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 11.51, p95 35.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 31,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 146.5,
+      "at": "2:26",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 151.68,
+      "at": "2:32",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 33,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 156.67,
+      "at": "2:37",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 35,
+      "row": "16",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 167.2,
+      "at": "2:47",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 7.62, p95 21.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 36,
+      "row": "17",
+      "source": "oceans.mp4",
+      "title": null,
+      "t": 172.38,
+      "at": "2:52",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 22.33, p95 102.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 37,
+      "row": "18",
+      "source": "bulge.mp4",
+      "title": null,
+      "t": 177.42,
+      "at": "2:57",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 19.28, p95 66.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 40,
+      "row": "18",
+      "source": "oceans.mp4",
+      "title": null,
+      "t": 192.02,
+      "at": "3:12",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 15.75, p95 65.1"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 41,
+      "row": "19",
+      "source": "oceans.mp4",
+      "title": null,
+      "t": 196.98,
+      "at": "3:17",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal gutter at 0.063",
+        "near-black: mean 27.8, p95 130.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 43,
+      "row": "20",
+      "source": "dayyear.mp4",
+      "title": null,
+      "t": 206.6,
+      "at": "3:27",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.6, p95 7.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 44,
+      "row": "20",
+      "source": "dayyear.mp4",
+      "title": null,
+      "t": 212.3,
+      "at": "3:32",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.92, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 45,
+      "row": "20",
+      "source": "dayyear.mp4",
+      "title": null,
+      "t": 217.25,
+      "at": "3:37",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.83, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 47,
+      "row": "21",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 228.17,
+      "at": "3:48",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 15.89, p95 62.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 53,
+      "row": "24",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 259.35,
+      "at": "4:19",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 9.56, p95 48.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 54,
+      "row": "24",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 263.77,
+      "at": "4:24",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 9.77, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 55,
+      "row": "24",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 268.1,
+      "at": "4:28",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 10.21, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 56,
+      "row": "25",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 273.05,
+      "at": "4:33",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 10.59, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 57,
+      "row": "25",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 277.98,
+      "at": "4:38",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 10.23, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 65,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 319.6,
+      "at": "5:20",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 323.92,
+      "at": "5:24",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 67,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 327.57,
+      "at": "5:28",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 331.93,
+      "at": "5:32",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "30",
+      "source": "clock.mp4",
+      "title": null,
+      "t": 354.03,
+      "at": "5:54",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 7.98, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 78,
+      "row": "33",
+      "source": "clock.mp4",
+      "title": null,
+      "t": 374.27,
+      "at": "6:14",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.65, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "33",
+      "source": "clock.mp4",
+      "title": null,
+      "t": 378.68,
+      "at": "6:19",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 7.58, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 80,
+      "row": "33",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 383.13,
+      "at": "6:23",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 2.58, p95 10.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 85,
+      "row": "35",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 407.2,
+      "at": "6:47",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 13.43, p95 60.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 86,
+      "row": "35",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 412.55,
+      "at": "6:53",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 11.68, p95 40.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 87,
+      "row": "35",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 418.02,
+      "at": "6:58",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 15.42, p95 61.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 88,
+      "row": "36",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 423.7,
+      "at": "7:04",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 91,
+      "row": "37",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 441.8,
+      "at": "7:22",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    }
+  ],
+  "warn": [
+    {
+      "cut": 16,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 80.65,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 90.42,
+      "at": "1:30",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 34,
+      "row": "9",
+      "source": "Portrait_Leon_Foucault_1860.jpg",
+      "title": "Portrait Leon Foucault 1860.jpg",
+      "t": 161.92,
+      "at": "2:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.19x, may look soft"
+      ]
+    },
+    {
+      "cut": 42,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 201.58,
+      "at": "3:22",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 76,
+      "row": "32",
+      "source": "NIST-F2_cesium_fountain_atomic_clock.jpg",
+      "title": "NIST-F2 cesium fountain atomic clock.jpg",
+      "t": 363.95,
+      "at": "6:04",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft"
+      ]
+    },
+    {
+      "cut": 84,
+      "row": "35",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 401.67,
+      "at": "6:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 2.4,
+      "at": "0:02",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "1",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 7.05,
+      "at": "0:07",
+      "fail": [
+        "reuse: used 10 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 11.32,
+      "at": "0:11",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "2",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 15.02,
+      "at": "0:15",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 9.85, p95 29.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 19.8,
+      "at": "0:20",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 13.74, p95 54.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "10",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 25.42,
+      "at": "0:25",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 8.31, p95 30.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "10",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 29.97,
+      "at": "0:30",
+      "fail": [
+        "reuse: used 10 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "11",
+      "source": "air.mp4",
+      "title": null,
+      "t": 35.68,
+      "at": "0:36",
+      "fail": [
+        "near-black: mean 14.03, p95 58.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 8,
+      "row": "11",
+      "source": "air.mp4",
+      "title": null,
+      "t": 41.98,
+      "at": "0:42",
+      "fail": [
+        "near-black: mean 15.85, p95 66.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 9,
+      "row": "12",
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "title": "Waves crashing on rocks off Beach 4, Kalaloch Beach, Washington 02.webm",
+      "t": 47.22,
+      "at": "0:47",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "12",
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "title": "Waves crashing on rocks off Beach 4, Kalaloch Beach, Washington 02.webm",
+      "t": 52.0,
+      "at": "0:52",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "13",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 55.92,
+      "at": "0:56",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "low detail: luma std 9.42 < 13.44 and edge density 0.0018 < 0.0259 (absolute floor)",
+        "near-black: mean 12.03, p95 25.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "13",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 60.12,
+      "at": "1:00",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 12.89, p95 48.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "13",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 64.33,
+      "at": "1:04",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 13.3, p95 46.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 14,
+      "row": "14",
+      "source": "orbit_northpole_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 70.2,
+      "at": "1:10",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "14",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 76.18,
+      "at": "1:16",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 15.0, p95 58.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 16,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 80.65,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "15",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 85.47,
+      "at": "1:25",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 90.42,
+      "at": "1:30",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 19,
+      "row": "5",
+      "source": "cabin_pour_veo_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 94.85,
+      "at": "1:35",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "5",
+      "source": "AFRC2022-0059-49.jpg",
+      "title": "NASA\u2019s ER-2 performs a DCOTSS check flight",
+      "t": 98.62,
+      "at": "1:39",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 21,
+      "row": "5",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 102.4,
+      "at": "1:42",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "6",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 106.4,
+      "at": "1:46",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 11.23, p95 66.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 110.23,
+      "at": "1:50",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "low detail: luma std 2.08 < 13.44 and edge density 0.0013 < 0.0259 (absolute floor)",
+        "near-black: mean 0.21, p95 0.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 113.97,
+      "at": "1:54",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "low detail: luma std 6.26 < 13.44 and edge density 0.0033 < 0.0259 (absolute floor)",
+        "near-black: mean 0.66, p95 2.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 118.23,
+      "at": "1:58",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 3.7, p95 47.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 123.02,
+      "at": "2:03",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 27,
+      "row": "8",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 127.68,
+      "at": "2:08",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 18.83, p95 75.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 28,
+      "row": "8",
+      "source": "bulge.mp4",
+      "title": null,
+      "t": 132.15,
+      "at": "2:12",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 13.59, p95 54.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 29,
+      "row": "8",
+      "source": "bulge.mp4",
+      "title": null,
+      "t": 137.0,
+      "at": "2:17",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 11.51, p95 35.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 30,
+      "row": "8",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "NASA Blue Marble 2007 East",
+      "t": 141.52,
+      "at": "2:22",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 31,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 146.5,
+      "at": "2:26",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 151.68,
+      "at": "2:32",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 33,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 156.67,
+      "at": "2:37",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "9",
+      "source": "Portrait_Leon_Foucault_1860.jpg",
+      "title": "Portrait Leon Foucault 1860.jpg",
+      "t": 161.92,
+      "at": "2:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.19x, may look soft"
+      ]
+    },
+    {
+      "cut": 35,
+      "row": "16",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 167.2,
+      "at": "2:47",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 7.62, p95 21.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 36,
+      "row": "17",
+      "source": "oceans.mp4",
+      "title": null,
+      "t": 172.38,
+      "at": "2:52",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 22.33, p95 102.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 37,
+      "row": "18",
+      "source": "bulge.mp4",
+      "title": null,
+      "t": 177.42,
+      "at": "2:57",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 19.28, p95 66.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 38,
+      "row": "18",
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "title": "NASA Blue Marble 2007 West",
+      "t": 182.52,
+      "at": "3:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 39,
+      "row": "18",
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "title": "NASA Blue Marble 2007 West",
+      "t": 187.25,
+      "at": "3:07",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 40,
+      "row": "18",
+      "source": "oceans.mp4",
+      "title": null,
+      "t": 192.02,
+      "at": "3:12",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 15.75, p95 65.1"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 41,
+      "row": "19",
+      "source": "oceans.mp4",
+      "title": null,
+      "t": 196.98,
+      "at": "3:17",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "split panel: horizontal gutter at 0.063",
+        "near-black: mean 27.8, p95 130.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 42,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 201.58,
+      "at": "3:22",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 43,
+      "row": "20",
+      "source": "dayyear.mp4",
+      "title": null,
+      "t": 206.6,
+      "at": "3:27",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.6, p95 7.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 44,
+      "row": "20",
+      "source": "dayyear.mp4",
+      "title": null,
+      "t": 212.3,
+      "at": "3:32",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.92, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 45,
+      "row": "20",
+      "source": "dayyear.mp4",
+      "title": null,
+      "t": 217.25,
+      "at": "3:37",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.83, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 46,
+      "row": "21",
+      "source": "orbit_sunset_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 222.6,
+      "at": "3:43",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 47,
+      "row": "21",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 228.17,
+      "at": "3:48",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 15.89, p95 62.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 48,
+      "row": "22",
+      "source": "PIA00271.jpg",
+      "title": "Venus - Computer Simulated Global View of the Northern Hemisphere",
+      "t": 234.27,
+      "at": "3:54",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 49,
+      "row": "22",
+      "source": "PIA23791.jpg",
+      "title": "Venus from Mariner 10",
+      "t": 243.03,
+      "at": "4:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 50,
+      "row": "23",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "title": "Full Moon",
+      "t": 249.6,
+      "at": "4:10",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 51,
+      "row": "23",
+      "source": "Bay_of_Fundy_tide_in.jpg",
+      "title": "Bay of Fundy - Tide In.jpg",
+      "t": 252.63,
+      "at": "4:13",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 52,
+      "row": "23",
+      "source": "Bay_of_Fundy_tide_out.jpg",
+      "title": "Bay of Fundy - Tide Out.jpg",
+      "t": 255.65,
+      "at": "4:16",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 53,
+      "row": "24",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 259.35,
+      "at": "4:19",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 9.56, p95 48.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 54,
+      "row": "24",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 263.77,
+      "at": "4:24",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 9.77, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 55,
+      "row": "24",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 268.1,
+      "at": "4:28",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 10.21, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 56,
+      "row": "25",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 273.05,
+      "at": "4:33",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 10.59, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 57,
+      "row": "25",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 277.98,
+      "at": "4:38",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 10.23, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 58,
+      "row": "25",
+      "source": "as14-67-09386.jpg",
+      "title": "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts",
+      "t": 282.25,
+      "at": "4:42",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 59,
+      "row": "25",
+      "source": "as14-67-09386.jpg",
+      "title": "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts",
+      "t": 287.02,
+      "at": "4:47",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 60,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "title": "Full Moon",
+      "t": 292.15,
+      "at": "4:52",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 61,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "title": "The Far Side of the Moon -- And All the Way Around",
+      "t": 297.18,
+      "at": "4:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 62,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "title": "The Far Side of the Moon -- And All the Way Around",
+      "t": 302.4,
+      "at": "5:02",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 63,
+      "row": "27",
+      "source": "Cuneiform_tablet-_commentary_on_Enuma_Anu_Enlil_tablet_5_MET.jpg",
+      "title": "Cuneiform tablet- commentary on Enuma Anu Enlil, tablet 5 MET DP-442-001.jpg",
+      "t": 308.2,
+      "at": "5:08",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 64,
+      "row": "27",
+      "source": "NHQ201708210100.jpg",
+      "title": "2017 Total Solar Eclipse",
+      "t": 313.97,
+      "at": "5:14",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 65,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 319.6,
+      "at": "5:20",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 323.92,
+      "at": "5:24",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 67,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 327.57,
+      "at": "5:28",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 331.93,
+      "at": "5:32",
+      "fail": [
+        "reuse: used 4 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 69,
+      "row": "29",
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "title": "Heliophyllum confluens (fossil coral) (Columbus Limestone, Middle Devonian; Delaware County, Ohio, USA).jpg",
+      "t": 336.37,
+      "at": "5:36",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 70,
+      "row": "29",
+      "source": "Eridophyllum_seriale_2.jpg",
+      "title": "Eridophyllum seriale (fossil rugose coral) (Middle Devonian) 2 (35474153592).jpg",
+      "t": 340.75,
+      "at": "5:41",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 71,
+      "row": "29",
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "title": "Heliophyllum confluens (fossil coral) (Columbus Limestone, Middle Devonian; Delaware County, Ohio, USA).jpg",
+      "t": 345.07,
+      "at": "5:45",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 72,
+      "row": "29",
+      "source": "Eridophyllum_seriale_2.jpg",
+      "title": "Eridophyllum seriale (fossil rugose coral) (Middle Devonian) 2 (35474153592).jpg",
+      "t": 349.47,
+      "at": "5:49",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "30",
+      "source": "clock.mp4",
+      "title": null,
+      "t": 354.03,
+      "at": "5:54",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 7.98, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 74,
+      "row": "31",
+      "source": "phone_midnight_veo_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 357.42,
+      "at": "5:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 75,
+      "row": "31",
+      "source": "NIST_atomic_clock_006.jpg",
+      "title": "Atomic Clock006.jpg",
+      "t": 359.78,
+      "at": "6:00",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 76,
+      "row": "32",
+      "source": "NIST-F2_cesium_fountain_atomic_clock.jpg",
+      "title": "NIST-F2 cesium fountain atomic clock.jpg",
+      "t": 363.95,
+      "at": "6:04",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft"
+      ]
+    },
+    {
+      "cut": 77,
+      "row": "32",
+      "source": "NIST_ytterbium_lattice_clock.jpg",
+      "title": "Ytterbium Lattice Atomic Clock (10444764266).jpg",
+      "t": 369.35,
+      "at": "6:09",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 78,
+      "row": "33",
+      "source": "clock.mp4",
+      "title": null,
+      "t": 374.27,
+      "at": "6:14",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 8.65, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "33",
+      "source": "clock.mp4",
+      "title": null,
+      "t": 378.68,
+      "at": "6:19",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 7.58, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 80,
+      "row": "33",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 383.13,
+      "at": "6:23",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 2.58, p95 10.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 81,
+      "row": "34",
+      "source": "commons_Pahoeoe_fountain_original.jpg",
+      "title": "Pahoehoe fountain, Kilauea (USGS)",
+      "t": 387.63,
+      "at": "6:28",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 82,
+      "row": "34",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "NASA Blue Marble 2007 East",
+      "t": 392.22,
+      "at": "6:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 83,
+      "row": "34",
+      "source": "GSFC_20171208_Archive_e001753.jpg",
+      "title": "Frozen Greenland Meltpond",
+      "t": 396.85,
+      "at": "6:37",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 84,
+      "row": "35",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 401.67,
+      "at": "6:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft"
+      ]
+    },
+    {
+      "cut": 85,
+      "row": "35",
+      "source": "tides.mp4",
+      "title": null,
+      "t": 407.2,
+      "at": "6:47",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "near-black: mean 13.43, p95 60.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 86,
+      "row": "35",
+      "source": "speed.mp4",
+      "title": null,
+      "t": 412.55,
+      "at": "6:53",
+      "fail": [
+        "reuse: used 5 times (limit 2)",
+        "near-black: mean 11.68, p95 40.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 87,
+      "row": "35",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 418.02,
+      "at": "6:58",
+      "fail": [
+        "reuse: used 10 times (limit 2)",
+        "near-black: mean 15.42, p95 61.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 88,
+      "row": "36",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 423.7,
+      "at": "7:04",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 89,
+      "row": "36",
+      "source": "ESO_star_trails_VLT_Paranal.jpg",
+      "title": "Star trails over the VLT in Paranal.jpg",
+      "t": 428.92,
+      "at": "7:09",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 90,
+      "row": "37",
+      "source": "NASA_Bennu_journey_early_Earth.jpg",
+      "title": "BENNU\u2019S JOURNEY - Early Earth.jpg",
+      "t": 434.33,
+      "at": "7:14",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 91,
+      "row": "37",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 441.8,
+      "at": "7:22",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.005,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
