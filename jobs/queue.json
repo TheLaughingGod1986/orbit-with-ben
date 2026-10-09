@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T04:49Z",
-      "eta": "2026-10-09T08:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2839,6 +2839,11 @@
           "at": "2026-10-09T04:49Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T04:52Z",
+          "by": "cursor",
+          "what": "released: rough v02 rendering detached: tmux owb026-rough-v02, log ~/_desk/logs/owb026-rough-v02.log, done file ~/_desk/logs/owb026-rough-v02.done; the same run then runs picture_qa + music_gate into 026/07_Edit-Project/rough_v02_pack (picture_qa_v02.txt, music_gate_v02.txt). Next: read both, force-add the pack sheets, commit, post the pack to Claude. Assembler 1782440."
         }
       ]
     },
