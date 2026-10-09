@@ -55,30 +55,23 @@ def canvas():
 
 
 def render_parallax(out, seconds, still):
-    """Bottom: the Sun, Earth's orbit seen at a tilt, Earth moving from one side (January) to the other (July), with
-    a sight line to a near star above. Top: the sky view from Earth, far stars fixed and the near star sliding across
-    them as Earth moves."""
+    """The sky seen from Earth, full frame: far stars fill the frame and stay fixed; the near star (red, with a glow)
+    slides across them as Earth goes round the Sun. No panels or border lines."""
     rng = np.random.default_rng(1838)
     n = int(seconds * FPS)
-    far = rng.uniform([-7.5, 0.6], [7.5, 4.3], (160, 2))
+    far = rng.uniform([-8.2, -4.7], [8.2, 4.7], (1400, 2))
+    size = rng.pareto(2.2, 1400) * 3 + 2
+    alpha = rng.uniform(0.35, 0.95, 1400)
+    tint = np.where(rng.random(1400) < 0.15, "#ffd9a8", np.where(rng.random(1400) < 0.15, "#bcd4ff", WHITE))
     frames = [int(n * 0.8)] if still else range(n)
     for i in frames:
         s = ease((i / max(1, n - 1) - 0.1) / 0.8)
         fig, ax = canvas()
-        # sky panel
-        ax.add_patch(Rectangle((-7.8, 0.4), 15.6, 4.0, fill=False, ec=DIM, lw=1.5, alpha=0.5))
-        ax.scatter(far[:, 0], far[:, 1], s=6, color=WHITE, alpha=0.7, lw=0)
-        nx = 2.2 - 4.4 * s                           # near star slides opposite to Earth's move
-        ax.add_patch(Circle((nx, 2.5), 0.12, color=RED, zorder=5))
-        ax.add_patch(Circle((nx, 2.5), 0.35, color=RED, alpha=0.25, lw=0, zorder=4))
-        # orbit panel
-        ax.add_patch(Ellipse((0, -2.7), 9.0, 2.2, fill=False, ec=DIM, lw=1.5, alpha=0.7))
-        ax.add_patch(Circle((0, -2.7), 0.35, color=GOLD, zorder=5))
-        th = math.pi * (1 - s)                       # from the left side (Jan) to the right side (Jul) along the front
-        ex, ey = 4.5 * math.cos(th), -2.7 - 1.1 * math.sin(th)
-        ax.add_patch(Circle((ex, ey), 0.16, color=EARTH, zorder=6))
-        ax.plot([ex, 0], [ey, -0.2], color=RED, lw=1.5, alpha=0.6, ls=(0, (4, 4)))
-        ax.add_patch(Circle((0, -0.2), 0.1, color=RED, zorder=5))
+        ax.scatter(far[:, 0], far[:, 1], s=size, c=tint, alpha=alpha, lw=0)
+        nx = 3.2 - 6.4 * s
+        for r, a in ((0.9, 0.06), (0.55, 0.12), (0.3, 0.25)):
+            ax.add_patch(Circle((nx, 0.3), r, color=RED, alpha=a, lw=0, zorder=4))
+        ax.add_patch(Circle((nx, 0.3), 0.14, color="#ffd0c0", zorder=5))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -140,24 +133,28 @@ def render_journey(out, seconds, still):
 
 def render_lighttimes(out, seconds, still):
     """Three bars on a log10(seconds) scale from 0.1 s to 1e9 s: Moon (1.3 s), Sun (499 s), Proxima (1.34e8 s). Each
-    grows in turn. A faint tick marks each power of ten. Text-free."""
+    grows in turn. A faint tick marks each power of ten. Text-free. The longest bar is centred and reaches 80% of the
+    frame width; each bar starts within 1 s of the last, so no small bar is held alone."""
     n = int(seconds * FPS)
     vals = [1.3, 499.0, 1.34e8]
     cols = ["#d9d9d9", GOLD, RED]
     L0, L1 = -1.0, 9.0
-    X0, X1 = -6.5, 6.5
+    longest = (math.log10(max(vals)) - L0) / (L1 - L0)
+    X0 = -6.4
+    X1 = X0 + 12.8 / longest
     frames = [int(n * 0.95)] if still else range(n)
     for i in frames:
-        s = i / max(1, n - 1)
+        t = i / FPS
         fig, ax = canvas()
         for p in range(int(L0), int(L1) + 1):
             x = X0 + (X1 - X0) * (p - L0) / (L1 - L0)
-            ax.plot([x, x], [-3.2, 3.2], color=DIM, lw=1, alpha=0.18)
+            if x <= 6.5:
+                ax.plot([x, x], [-3.6, 3.6], color=DIM, lw=1, alpha=0.08)
         for k, (v, col) in enumerate(zip(vals, cols)):
-            g = ease((s - 0.05 - k * 0.3) / 0.25)
+            g = ease((t - 0.3 - k * 0.8) / 2.0)
             full = (math.log10(v) - L0) / (L1 - L0)
-            y = 2.0 - k * 2.0
-            ax.add_patch(Rectangle((X0, y - 0.35), (X1 - X0) * full * g, 0.7, color=col, lw=0))
+            y = 2.4 - k * 2.4
+            ax.add_patch(Rectangle((X0, y - 1.05), (X1 - X0) * full * g, 2.1, color=col, lw=0))
         save(fig, out, i, still)
     finish(out, still)
 
