@@ -1,5 +1,5 @@
 {
-  "next_id": 89,
+  "next_id": 90,
   "jobs": [
     {
       "id": "J0001",
@@ -3865,6 +3865,32 @@
           "at": "2026-10-09T09:52Z",
           "by": "claude",
           "what": "done: 027 SHOT_LIST_v02: VO re-ordered (agenda cut, sudden-stop chapter first); the first answer is at ~24 s, was 112 s; no new VO; J0077 builds from v02"
+        }
+      ]
+    },
+    {
+      "id": "J0089",
+      "title": "024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**024 Light speed v04: v03's picture and locked VO, with 024's own bed (Claude, 9 Oct).** Ben's note \"the audio seems the same\" was the shared `jupiter-music.mp3` (J0060). J0079 made `light-speed_score_bed_v01_full.mp3` (music_gate PASS).\n\n1. Post the loudness contour of the bed first: momentary LUFS over the full 526 s, with the 5:16–5:24 join and the 3:50–4:12 lift marked. Include the join check value. Claude rules from that, because the mp3 can't be heard from the cloud.\n2. Then rebuild v04: v03's picture and the locked VO unchanged, the new bed under it at the same mix level as 026, ducked under VO the same way.\n3. Run picture_qa, music_gate (with --video), clip_check and loudness (-14 LUFS).\n4. Make `OWB UAT/024_LightSpeed_v04_PHONE.mp4` and post the pack. Claude checks it, then it goes back to Ben for a re-watch. 024 airs Sun 1 Nov, so it uploads after his OK.\n",
+      "ref": "6078548423",
+      "film": "024",
+      "stage": "edit",
+      "after": "J0079",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T09:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T09:53Z",
+          "by": "claude",
+          "what": "added"
         }
       ]
     }
