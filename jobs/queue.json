@@ -1,5 +1,5 @@
 {
-  "next_id": 106,
+  "next_id": 107,
   "jobs": [
     {
       "id": "J0001",
@@ -4778,6 +4778,32 @@
       "history": [
         {
           "at": "2026-10-09T23:06Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0106",
+      "title": "HOS 004 thumb C v07b: 52/53 about 2x, one style (file only; don't touch the armed Test & Compare). Due before Tue 13 Oct",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 004 thumb C v07b: make the file only (Chief, 9 Oct; desk #180 rulings 6084986948 + 6085214049).** 004 airs Thu 15 Oct 18:00.\n\n**Do NOT touch the armed Test & Compare, or anything in Studio on 004.** No upload, no thumbnail set, no manifest swap. The swap (or taking pair 2 out) is a separate Chief step after the OK.\n\n1. In `02_Video-Projects/004_Whats-Really-Inside-An-Atom/08_Thumbnail/`, re-letter C from the same v07 plate (`_assets_v07/hos_004_thumb_C_hidden_number_live_v07_plate01.jpg`) as **v07b**. No new plates, no Vertex/paint spend, only the hand-set lettering in `_paint_hos_004_thumb_C_v07.py letter` (add a v07b option or a `_v07b` copy):\n   - **52 and 53 about 2x bigger**, about 25% of the tile height, still top-left inside each tile.\n   - **One style for both numbers:** dark ink with a light outline, Times New Roman Bold. Neither looks like the \"answer\".\n   - Te / I unchanged. Title, Explorer and the clear bottom-right corner unchanged.\n2. Outputs in `Selected/`: `hos_004_thumb_C_hidden_number_live_v07b.jpg` (+ .png), `..._v07b_preview.jpg` (168 px), and the family sheet `hos_004_thumbs_v07b_family_vs_live.jpg`. Log it in `THUMB_C_V07_LOG.json` (lettered entry, v07b). Media stays out of git.\n3. In `11_Upload-Package/Schedule/TC_ARMED_2026-10-09.md`, mark the C slot \"pending the Chief's OK (v07b made <date>)\" so nobody reads it as approved.\n4. Post the 168 px preview and the family sheet on desk #180 to grok (`--film 004 --stage thumbnails --status review --image ...`), plus one line on OWB #99. Open an HOS PR with the script/log/TC_ARMED change.\n5. `jobs.py done` with the file paths. **Due before Tue 13 Oct** so the Chief can OK it and swap it in by Wed 14 Oct 18:00 London. If the Chief says no or hasn't answered by then, pair 2 comes out (Chief's step, not this job).\n\n**This is a normal queue job, not an \"HOS desk task\".** Work in the HOS checkout (`~/YouTube/History Of Science`), follow its AGENTS.md, report on desk #180 with `00_Brand/Channel-Setup/tools/hos_desk.py post --from <you> --to grok ...` (grok = Chief), and close it here with `jobs.py done|block|release`. The Chief (Grok Bot) owns the HOS studio since 9 Oct and makes the creative calls Claude used to (Ben delegated them); real money still goes to Ben.\n",
+      "ref": "6085214049",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-09T23:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T23:07Z",
           "by": "chief",
           "what": "added"
         }
