@@ -23,6 +23,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0101 | mini | open | – | – | HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) |  |
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0104 | mini | open | – | – | 021 edit · Saturn Short Qn56 end-card recut v03 (Mon 11:30) |  |
+| J0105 | mini | open (after J0104) | – | – | Saturn Short v03 upload + Qn56 swap (Mon 11:30) |  |
 
 Recently finished:
 
