@@ -1,0 +1,135 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-18T17:00:00.000Z",
+    "platformPostId": "h8HGfyShEHI",
+    "platformUrl": "https://youtu.be/h8HGfyShEHI",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-18T17:00:00.000Z; thumbnail skipped: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The thumbnail can't be set for the specified video. The request might not be properly authorized.\",\n    \"errors\": [\n      {\n        \"message\": \"The thumbnail can't be set for the specified video. The request might not be properly authorized.\",\n        \"domain\": \"youtube.thumbnail\",\n        \"reason\": \"forbidden\",\n        \"location\": \"videoId\",\n        \"locationType\": \"parameter\"\n      }\n    ]\n  }\n}\n",
+    "responseSummary": "{\"id\":\"h8HGfyShEHI\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-18T17:00:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/11_Upload-Package",
+    "sha256": "91bb1ccb7222ed07c10d75c26a5ad07b041719b899fe2a89483b89e3d5ad417f",
+    "title": "Is the Sun Getting Brighter?",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 20,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png",
+    "scheduledAt": "2026-10-18T17:00:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "descriptionFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/11_Upload-Package/Descriptions/sun_long_description_v01.txt",
+      "tagsFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/11_Upload-Package/Tags/sun_long_tags_v01.txt",
+      "pinnedCommentFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/11_Upload-Package/Pinned-Comments/sun_long_pinned_v01.txt",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/07_Edit-Project/sun_film/sun_first_cut_v05.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png",
+      "trailer": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/11_Upload-Package/Trailer/sun_long_trailer_v01.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": "{\"error\":{\"code\":403,\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"errors\":[{\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"domain\":\"youtube.commentThread\",\"reason\":\"forbidden\",\"location\":\"body\",\"locationType\":\"other\"}]}}",
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ac8de3dc22cbf9dd5010a5e"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ac8de3e6324418386b35385"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ac8de3e1f64059136286e8d"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "h8HGfyShEHI",
+    "studioEditUrl": "https://studio.youtube.com/video/h8HGfyShEHI/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/h8HGfyShEHI/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (2) · thumbs (3). Not available via Data API.",
+        "studioUrlHint": "https://studio.youtube.com/video/h8HGfyShEHI/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)",
+        "studioUrlHint": "https://studio.youtube.com/video/h8HGfyShEHI/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/h8HGfyShEHI/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/h8HGfyShEHI/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/h8HGfyShEHI/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (h8HGfyShEHI). 4 required Studio finish step(s) remain."
+  }
+}
