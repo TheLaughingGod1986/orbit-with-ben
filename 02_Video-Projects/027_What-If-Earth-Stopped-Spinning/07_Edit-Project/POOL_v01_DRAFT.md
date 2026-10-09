@@ -102,3 +102,37 @@ Fetch (tmux `j0077-poolc`): 7 of 9 in `pool_v01/`. Both Bay of Fundy stills hit 
 **Gerst reel (`gerst_strip_v01c.jpg`, one frame every 10 s):** a small **ESA logo sits in the top-left corner** of most frames, so it's burnt-in branding. A crop that loses it is about 1.1× on the 4K source, well under 2.35×; Claude to rule crop vs drop. Candidate spans: cloud day passes 40–50 s and 310 s (row 4 cirrus); night cities 120 s, 280 s, 320 s, 350 s (rows 2, 13: Europe still to confirm by eye); airglow limb 250–260 s (rows 6, 33 sunrise feel). ISS hardware fills 160–240 s and 270–300 s: not used. 0 s is a black open.
 
 Still open: the 2024 eclipse path (28), young-Earth art (37), row 32's second plate.
+
+**Claude #6085748466 (Gerst reel):** use the Gerst 4K reel and **crop the ESA logo out on every row that uses it** (about 1.1×). Credit: "ESA/A. Gerst, CC BY-SA 3.0 IGO". The NASA public-domain ISS clips are fallbacks only. The rest of v01c is approved (La Silla + VLT trails, Kalaloch, the Fundy pair, the second coral).
+
+Retry on 9 Oct: the Fundy tide in/out pair and *Eridophyllum* are now fetched (pool_v01c 9 of 9).
+
+## pool_v01d (Cursor covering, J0077, 9 Oct 2026): rows 28, 32 second plate, 37, £0
+
+`build_pool_v01d.py` → `pool_v01d.json` → `fetch_pool_v01.py --pool pool_v01d.json --sheets` (tmux `j0077-poold`).
+
+| Row | Pick | Size | Licence / credit | Note |
+|---|---|---|---|---|
+| 28 | NASA SVS 5219 "2024 Path of Totality" flyover, **no-text** version (webm) | 3840×2160, 110 s | Public domain, NASA SVS | What the shot list asks for: the path sweeping across North America. It's a map visualisation, so picture_qa WARN (map/render): Claude to look full size. |
+| 28 (alt) | NOAA "Satellites View Total Solar Eclipse" 8 Apr 2024, **no-text** version (webm) | 3840×2160, 132 s | Public domain, NOAA | Real GOES satellite imagery of the Moon's shadow crossing North America. Real footage, so no WARN; it shows the same "seen from far away" idea. |
+| 32 second plate | NIST "Ytterbium Lattice Atomic Clock" | 2700×1793 | Public domain, NIST | Lab bench with the lattice clock optics. |
+| 32 (alt) | NIST "Atomic Clock006" | 6042×4641 | Public domain, NIST | Large lab plate. |
+| 37 | NASA Goddard "Bennu's Journey – Early Earth" | 5760×2160 | Public domain, NASA GSFC Conceptual Image Lab | Wide young-Earth art (artist's concept: picture_qa WARN). Crop to 16:9; then the return to the opening EPIC Earth as the shot list says. |
+| 37 (alt) | "Hadean" | 2092×1124 | CC BY-SA 4.0, Tim Bertelink | Young-Earth painting; carries a credit. |
+
+Fetch: 6 of 6 in `pool_v01/` (local). Sheets: `pool_v01/_contact/nist.jpg`, `young.jpg` (local); video strips committed as `svs5219_strip_v01d.jpg` (one frame / 10 s) and `noaa_eclipse_strip_v01d.jpg` (one frame / 11 s).
+
+**Strip check (every frame, not just the first):**
+- **SVS 5219 "notext" is not text-free:** the base map carries state, city and country names in every frame (TEXAS, OKLAHOMA, Great Lakes cities…). Under "no labels or burnt-in text" it fails. Not recommended for row 28.
+- **NOAA reel (recommended for row 28), usable spans, each with a small "NOAA" or "NASA" bug in a corner (crop it out, about 1.1–1.2×):**
+  - ~0–15 s: GOES full disk, the Moon's shadow on North America (bug bottom-left). Full disk on black, so it needs the 16:9 fill.
+  - ~55 s: real visible-light split view of the shadow over the US (bug top-left).
+  - ~66 s and ~110 s: DSCOVR EPIC full disk with the shadow (bug bottom-right). Same look as the frame-0 EPIC Earth, so it ties back.
+  - **Avoid:** ~22 s (NASA/SVS rendered globe with path lines), ~33 s (composite graphic), ~77 s (IR greyscale, OK but dull), ~88 s (data map full of labels and a timestamp), ~99 s (false-colour), ~121 s (corona plate, not this row).
+  - Exact in/out points still to set at assembly from a 1 fps strip of each span.
+- **Row 32:** Ytterbium lattice clock (colour, modern) after NIST-F2; Atomic Clock006 is a 1950s black-and-white NBS lab photo (alt).
+- **Row 37:** Bennu's Journey Early Earth (molten ground, meteor streaks, storm sky): crop 16:9 from the wide 5760×2160 (no upscale). Hadean alt shows a huge red Moon low over lava, which fits "Moon-forming" too but carries a credit.
+
+**Claude to rule:** row 28 = NOAA spans (real) instead of the shot list's SVS map, since the SVS flyover has labels throughout? Row 37 = Bennu Early Earth or Hadean?
+
+The pool is now complete for every row in SHOT_LIST_v02 except the 2 Omni + 2 Veo Fast beats (free Vertex, £5 floor).
