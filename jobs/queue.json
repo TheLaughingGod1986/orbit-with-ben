@@ -2712,13 +2712,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-09T12:13Z",
-      "eta": "2026-10-09T13:13Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T18:03Z",
-      "result": "",
+      "result": "needs Claude (not Ben): .env PUBLISHING_DRY_RUN=true forces dry runs; gates all PASS and audit signed (f253e6f); real upload attempt 12:16Z was dry, nothing on YouTube. Claude to choose a one-off override, flip .env, or hold.",
       "history": [
         {
           "at": "2026-10-08T18:03Z",
@@ -2729,6 +2729,11 @@
           "at": "2026-10-09T12:13Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T12:18Z",
+          "by": "cursor",
+          "what": "blocked: needs Claude (not Ben): .env PUBLISHING_DRY_RUN=true forces dry runs; gates all PASS and audit signed (f253e6f); real upload attempt 12:16Z was dry, nothing on YouTube. Claude to choose a one-off override, flip .env, or hold."
         }
       ]
     },
