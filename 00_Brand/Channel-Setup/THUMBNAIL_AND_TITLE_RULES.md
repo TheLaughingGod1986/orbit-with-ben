@@ -47,8 +47,10 @@ Added 4 Oct 2026 from [THUMB_AUDIT_2026-10-04](audits/THUMB_AUDIT_2026-10-04/AUD
 2. **Colour-grade every NASA plate** before it goes on a thumb: saturation, contrast, rim glow. "Approved material only" still needs finishing — raw plates read flat at phone size.
 3. **Text line height about 11–12% of frame height per line** (longs ~82 px on 720). Keep text **off the subject**. One yellow hook word; white on the rest. Oversized 15–20% lines crowd out the planet and break the subject-first read.
 4. **Whole subject large:** visible and at least **⅓ of the frame** (same intent as §2.1). Do not crop the hero to a strip.
-5. **One scale reference** when you can (probe, person, Earth, Sun). Gives story and size.
+5. **A main character or a scale reference on every thumbnail** (audit 9 Oct 2026): a rover, a probe, a person, Earth beside the subject. It gives story and size. 025 and 026 do; 024 v02 didn't, and B and C read as nothing at phone size.
 6. **Short cover text must fit inside the 16:9 centre band** of the 9:16 cover (the crop YouTube uses on TV / Related). Check with `thumb_preview.py short`. Set Short covers in Studio UI when the API returns blank tiles.
+7. **The cover must survive both crops.** A cover designed 16:9 is cut to 9:16 in the Shorts feed: nine live Shorts lost their words that way (audit 9 Oct: "RS DO / MASS", "BILLIONS YEARS"). Keep every word inside the area common to both crops, the centre about 56% of the width.
+8. **Back-to-back weeks don't share a look** (audit 9 Oct). If last week's primary was a big orange sphere on the right with two words on the left (022 Sun), this week's isn't (023 Venus). Change the layout, the colour family or the subject's size.
 
 ## 3. Shorts: the first frame is the thumbnail
 
