@@ -22,6 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0096 | mini | open (after J0095) | – | – | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
 | J0097 | mini | open | – | – | HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) |  |
 | J0098 | mini | open | – | – | 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) |  |
+| J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
 
 Recently finished:
 
