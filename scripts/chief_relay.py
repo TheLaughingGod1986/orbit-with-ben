@@ -248,11 +248,15 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
 
 1. Orbit With Ben ({owb}): git pull. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben", "Who does what",
    "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
-2. History of Science ({hos}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox: hos_desk.py inbox --as {agent}
+2. History of Science ({hos}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:
+     python3 00_Brand/Channel-Setup/tools/hos_desk.py inbox --as {agent}   (run in the HOS checkout; there is no scripts/hos_desk.py)
 3. Which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
      python3 scripts/channel_balance.py --hos "{hos}"
    If it says History of Science first: take the single oldest HOS desk task you can do now, and go to step 4. Only if
    there is none, fall through to the OWB queue below.
+   Queue jobs marked `hos` (repo: hos, e.g. "HOS 007 Shorts VO") are NOT HOS desk tasks: they are normal queue jobs
+   that `jobs.py next` hands out like any other. Do them in the HOS checkout, following its AGENTS.md. "HOS desk tasks"
+   means only desk #180 messages that are not in the queue.
    The OWB job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
    If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
@@ -471,8 +475,9 @@ def run_locked(at: dt.datetime) -> int:
         why = "Claude addressed a job to you by name" if addressed else ("; ".join(above) or "it is first in line")
         if worker_only:
             why = ("Grok Bot is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
-                   "job queue. In step 3 skip the channel check and HOS desk tasks: do only the job "
-                   "`jobs.py next` gives you; if it exits 10, stop without posting")
+                   "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
+                   "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
+                   "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS)
         log(f"run: {who} (cap {cap}s)")

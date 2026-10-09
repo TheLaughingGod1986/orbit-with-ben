@@ -184,6 +184,10 @@ The Synology share (`/Volumes/data/mac-mini-archive/`) is the archive, and often
 
 **Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
 
+**Credit holds until the 30 Oct ElevenLabs reset (Chief, 9 Oct 2026; Chief owns the studio since 9 Oct).**
+- **ElevenLabs** (one account, both channels): about 18,653 credits left (9 Oct). The HOS voice queue goes first: 007 Shorts B + C (J0109), then the 009 and 010 long VO (J0111, J0113). Every VO job reads the balance first and spends nothing if it is below what the job needs. **No OWB (or HOS) music bed is started without the Chief's OK until 30 Oct.** Laying in a bed that already exists (J0089) is fine.
+- **Vertex free trial:** £17.70 (9 Oct) with the £5 floor. **£11 of it is reserved for HOS 006 Part 03 (J0107).** Until J0107 is done, OWB jobs may spend Vertex only down to £5 + what is left of that reserve (about £1.70 of headroom today); anything bigger goes to the Chief first. Read the balance before each spend.
+
 **AI spend month (Ben, 8 Oct 2026; each plan from its own reset: Cursor 8 Oct, Google 12 Oct; check-in Sat 7 Nov, before Cursor renews).** Ben wants to know whether both channels can run on a ~£90 Claude plan, a ~£90 Google plan and ElevenLabs. So for both channels, every credit reading and every spend goes into `scripts/ai_spend.py` (ledger `05_Analytics/ai_spend/ledger.jsonl`), and the Kanban's AI spend panel shows it:
 - **Readings:** record a balance (`record --pool cursor|flow|vertex|elevenlabs --left N [--total N]`) at least once a day, and whenever you read one before or after a part.
 - **Spends:** record each take or VO as you make it (`spend --pool … --amount … --film HOS:006|OWB:025 --what …`). Flow is credits, Vertex is GBP and ElevenLabs is credits.
