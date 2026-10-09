@@ -5,8 +5,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent: J0097.** Ahead of everything, the focus film included.
-
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
@@ -19,7 +17,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
 | J0096 | mini | open (after J0095) | – | – | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
-| J0097 | mini | claimed | cursor | 2026-10-09T16:56Z | HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) |  |
 | J0098 | mini | open | – | – | 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) |  |
 | J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
@@ -27,6 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0097 done: HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) (C v07 repainted on Vertex (2 plates, $0.078): tiles painted in, Te 52 / I 53 by hand, lining figures. HOS PR #263; sheet on HOS desk #180 comment 6084976194. Claude to review by Tue 13 Oct 18:00 and queue Test & Compare arming (A/B/C, or A/B on Wed 14 Oct).)
 - J0095 done: 023 Venus: redraw albedo + deuterium code graphics (Ben's v05c notes) (albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated)
 - J0093 done: Long-form view: Cursor on one 45–60 min video a month (Ben asked) (done)
 - J0092 done: Long-form view: Codex on one 45–60 min video a month (Ben asked) (Posted eight-line long-form recommendation: not yet; original documentary later, cost estimates and day-28 efficiency metric.)
@@ -36,4 +34,3 @@ Recently finished:
 - J0083 done: Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) (Posted fifth OWB retention idea and two HOS ideas with source evidence, minimal tests, costs and caveats; no implementation or spend.)
 - J0082 done: Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) (done)
 - J0081 done: Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) (Five ideas posted on #99: Related-video link check, Short as long-opening test, cached one-assembler builds, pre-render sentence sheet, HOS retro Shorts gate)
-- J0080 done: 027 Earth Stopped Spinning: its own score bed (Claude's brief) (Bed made, one full 490 s take (6,737 credits; EL 18,653 left). Raw earth-spin_score_bed_v01.mp3 + hush-lifted earth-spin_score_bed_v01_lift.mp3 on the Mini in 027/05_Music. music_gate FAIL on both: reused 0.80-0.815 vs 024/025/021 beds (just over 0.8), and on the lift a 6.1 s quiet tail at 7:41 (after VO end 460 s). Claude to decide: accept as metric false positive / trim tail, or one regeneration. Not laid in.)
