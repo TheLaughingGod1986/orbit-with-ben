@@ -353,7 +353,7 @@ def tsheet(name,times):
 tsheet('frame0_sheet',[0,.2,.4,.6,.8,1])
 tsheet('sheet_0_8s',[0,1,2,3,4,5,6,6.4,6.6,7,7.5,8])
 om=[c for c in cuts if c['source'].startswith('orbit_')]
-tsheet('sheet_omni',[t for c in om for t in (c['timeline_in']+0.5,(c['timeline_in']+c['timeline_out'])/2,c['timeline_out']-0.5)])
+if om:tsheet('sheet_omni',[t for c in om for t in (c['timeline_in']+0.5,(c['timeline_in']+c['timeline_out'])/2,c['timeline_out']-0.5)])
 tsheet('sheet_cards_sub',[o['start']+1.0 for o in json.loads((PACK/'overlays_v01.json').read_text())])
 tsheet('sheet_end',[LAST_WORD-1,LAST_WORD+0.5,LAST_WORD+1.5,LAST_WORD+2.5,TOTAL-0.5,TOTAL-0.05])
 h=hashlib.sha256()
