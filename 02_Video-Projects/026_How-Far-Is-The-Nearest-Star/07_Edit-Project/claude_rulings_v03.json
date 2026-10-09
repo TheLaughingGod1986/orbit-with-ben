@@ -65,6 +65,20 @@
         "near-black",
         "low detail"
       ]
+    },
+    "eso1241a.m4v": {
+      "note": "Earth limb on dark space, label-free parts only (before ~20 s) (Claude, 9 Oct)",
+      "kinds": [
+        "near-black",
+        "low detail"
+      ]
+    },
+    "eso1241a.mp4": {
+      "note": "Earth limb on dark space, label-free parts only (before ~20 s) (Claude, 9 Oct)",
+      "kinds": [
+        "near-black",
+        "low detail"
+      ]
     }
   },
   "swaps": [
@@ -179,5 +193,19 @@
     "the five chapter cards and the one subscribe beat",
     "SDO flare disks",
     "all upscale WARNs (2.2-2.33x) look fine full size"
-  ]
+  ],
+  "calls_ok": {
+    "note": "Claude, 9 Oct, on Cursor's #6074882290 (d288f35)",
+    "ok": [
+      "1:21 eso1241a 8.0-13.5 s (label-free)",
+      "2:40 e000256",
+      "row 14 eso1250a_8k centre crop (2nd use)",
+      "2:44 e000214 tighter crop (2nd use)",
+      "3:42 eso1241a 0.5-5.5 s (2nd use, label-free)",
+      "6:34 eso1629e_video from 12 s"
+    ],
+    "changed": {
+      "6:16": "Not PIA21839 again 11 s after its hold. Run lighttimes to the end of row 27 instead, with the Proxima bar still drawing slowly (that slow draw is the 4.2 years). It passes as one animated code graphic, so the 6 s hold rule doesn't apply."
+    }
+  }
 }
