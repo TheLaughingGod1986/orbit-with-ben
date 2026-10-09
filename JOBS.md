@@ -18,7 +18,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0077 | mini | open | – | – | 027 picture · 027 Earth Stopped Spinning: picture, rough v01 (026's lessons from the start) | 6076805635 |
 | J0079 | mini | open | – | – | 024 edit · 024 Light speed: its own score bed now (no ElevenLabs floor; no wait for 30 Oct) | 6077058676 |
 | J0080 | mini | open | – | – | 027 edit · 027 Earth Stopped Spinning: its own score bed (Claude's brief) | 6077058676 |
-| J0081 | mini | claimed | cursor | 2026-10-09T09:42Z | for cursor · Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) | 6070129451 |
 | J0082 | gemini | open | – | – | Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) | 6070129451 |
 | J0083 | mini | open | – | – | for codex · Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) | 6071491327 |
 | J0084 | mini | open (after J0066) | – | – | 025 upload · 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) | 6077231242 |
@@ -26,6 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0081 done: Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) (Five ideas posted on #99: Related-video link check, Short as long-opening test, cached one-assembler builds, pre-render sentence sheet, HOS retro Shorts gate)
 - J0078 done: 023 Venus: its own score bed (Claude's brief; no ElevenLabs floor) (venus_score_bed_v01_full.mp3 (530 s, -14.4 LUFS, two takes joined at 3:44 chapter break); music_gate PASS; 8,250 ElevenLabs credits (34,093 left). Waits on Claude's listen before it's laid in.)
 - J0075 done: 026 Nearest Star: its own score bed (Claude's brief, credit guard) (026 bed nearest-star_score_bed_v01_full.mp3 (520 s, -16.6 LUFS): take 1 returned 170 s, one continuation take (380 s, +11 dB) joined with an 8 s equal-power crossfade at 111.8 s film (before chapter 2), slowed 0.93. music_gate PASS (66.7 BPM, brief 66-80). 7563 credits, 42343 left.)
 - J0074 done: Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command (Installed f165f55 relay; hashes match. Actual launchd wake at 00:51:56 has corrected cmd flags and started this session. Installed run_cli proving probe returned RELAY_PROBE_OK, exit 0. All 24 relay tests PASS with OWB_REPO isolated from live queue. Codex up; J0071 remains for next tick.)
@@ -35,4 +35,3 @@ Recently finished:
 - J0070 done: Tracker: retention curve per long (where viewers leave) (retention curve per long in the tracker (14d42e0); fills on the Mini's next daily snapshot)
 - J0068 done: 025 Mars robot: Ben's notes, swap the 2:54 image + 025's own music bed (v03d + phone copy) (v03f delivered: OWB UAT/025_MarsRobot_full_rough_v03f.mp4 + 025_MarsRobot_v03f_PHONE.mp4 (iCloud synced). picture_qa, music_gate, fill, polish PASS; 490.2 s, -14.3 LUFS. Pack ed06ca2. Per Claude #6073193234 straight to Ben's box.)
 - J0067 done: 025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy (done)
-- J0065 done: 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) (done)
