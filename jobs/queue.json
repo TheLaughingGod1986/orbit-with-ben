@@ -2271,10 +2271,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T06:53Z",
+      "eta": "2026-10-09T08:53Z",
       "created_by": "claude",
       "created_at": "2026-10-08T15:15Z",
       "result": "",
@@ -2353,6 +2353,11 @@
           "at": "2026-10-09T06:42Z",
           "by": "cursor",
           "what": "released: Pass 3 running detached: tmux j0054-nas3, log ~/_desk/logs/j0054-nas3.log, done file ~/_desk/logs/j0054-nas3.done, result ~/_desk/jobs/J0054/result_pass3.json. Moves superseded /tmp render scratch (mars025 v03c/d/e, nearest026 v03, 025 v03d/v03e PHONE copies) to NAS mini-tmp-scratch/2026-10-09 with sha256 verify. v03c done at 07:41 (1.6 GB). Next run: when .done appears, add pass3 folders to _evidence/nas_move_2026-10-08.json from a clean worktree, record free space. OWB UAT 023-026 superseded cuts are already iCloud-evicted (0 bytes local), so moving them frees nothing; left alone. 40 GB not reachable from approved sources (expect ~12.5 GB free)."
+        },
+        {
+          "at": "2026-10-09T06:53Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": true
