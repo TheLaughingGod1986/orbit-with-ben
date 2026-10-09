@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T05:52Z",
-      "eta": "2026-10-09T09:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2879,6 +2879,11 @@
           "at": "2026-10-09T05:52Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T05:56Z",
+          "by": "cursor",
+          "what": "released: Rough v03 rendered + pack committed 853f5f6: music_gate PASS, clip_check PASS, picture_qa FAIL 4/104 (eso0932a rows 13/33, PIA17049 row 22, PIA04495 row 24: near-black/jitter), fill gate FAIL on dark-space borders. Waiting on Claude's swap/reviewed_ok rulings (thread post). Next: v04 assembler with rulings, re-render detached (cache /private/tmp/nearest026_rough_work_v0*)."
         }
       ]
     },
