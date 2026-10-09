@@ -2875,10 +2875,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T02:07Z",
+      "eta": "2026-10-09T04:07Z",
       "created_by": "claude",
       "created_at": "2026-10-08T21:50Z",
       "result": "",
@@ -2947,6 +2947,11 @@
           "at": "2026-10-09T01:57Z",
           "by": "cursor",
           "what": "released: Run 6: Claude #6072407565 applied (9884d5f): 2:54 = PIA12457 lower-band framing 1.97x, PIA12102 rejected in pool, bed v02 opening ride (max +11 dB, music_gate PASS, VO >=19 dB over bed 0-25 s). RENDER 2 RUNNING: tmux j0068-v03d-render, log ~/_desk/logs/j0068-v03d-render.log, done ~/_desk/logs/j0068-v03d-render.done (0 pass, 3 render fail, 4 gate fail -> full_rough_v03d_pack/gates_exit_v03d.txt; current gates_exit file is stale from run 5 until .done appears). Don't start a second copy. Next: read .done, 6c audit, phone copy J0067 way (OWB UAT/025_MarsRobot_v03d_PHONE.mp4), post pack on #99. Notes: 07_Edit-Project/J0068_progress_cursor_2026-10-09.md"
+        },
+        {
+          "at": "2026-10-09T02:07Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": true
