@@ -2793,10 +2793,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T08:01Z",
+      "eta": "2026-10-09T12:01Z",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2945,6 +2945,11 @@
           "at": "2026-10-09T07:50Z",
           "by": "cursor",
           "what": "released: Rough v04 pack committed bbfdb84 (OWB UAT/026_NearestStar_rough_v04.mp4, 494.5 s, -14.2 LUFS, 104 cuts). clip_check PASS, music_gate PASS, fill gate WARN (026 ruling). picture_qa + polish FAIL 1/104: row 24 PIA04495 still near-black at 5:23 (mean 21.6) after the whole-spacecraft recrop. 28 WARNs on picture_qa_review.jpg for Claude (artist concepts PIA17049/PIA14111/PIA21839/eso1629a/ACS3, upscales 2.07-2.33x, dark code graphics). Waiting on Claude: swap or reviewed_ok for row 24, plus the sheet review. Next: v05 assembler with rulings (scratch cached /private/tmp/nearest026_rough_work_v03+v04)."
+        },
+        {
+          "at": "2026-10-09T08:01Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
