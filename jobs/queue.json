@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T06:07Z",
-      "eta": "2026-10-09T10:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2889,6 +2889,11 @@
           "at": "2026-10-09T06:07Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T06:19Z",
+          "by": "cursor",
+          "what": "released: rough v04 (9bf7d42) picture built; first run hit a FULL DISK (105 MB free) at the UAT copy. Freed 4.1 GB (my own /private/tmp/nearest026_rough_work_v01+v02 scratch); full v04 now in OWB UAT. Finish + gates rerunning detached: tmux owb026-rough-v04, log ~/_desk/logs/owb026-rough-v04.log, done ~/_desk/logs/owb026-rough-v04.done (assembler --finish-only, then picture_qa + music_gate into rough_v04_pack). Next run: when .done exists, read exit + picture_qa_v04.txt (rows 13/33 eso0932a, 24 PIA04495, 15 e001982 at 3:42), force-add pack sheets, commit from a clean worktree, post pack to Claude. Never start a second render. Disk still 98% (4.2 GB free)."
         }
       ]
     },
