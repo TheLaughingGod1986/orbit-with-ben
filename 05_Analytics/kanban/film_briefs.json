@@ -60,7 +60,7 @@
       "youShort": ""
     },
     "OWB:023": {
-      "updated": "2026-10-08T21:58Z",
+      "updated": "2026-10-09T08:40Z",
       "mood": "fixing",
       "done": "Script, voice, picture, edit, thumbnails and the upload package (passed ac6b9d5). The film is finished.",
       "holdup": "Your notes: some pictures wobble, and some frames look unfinished or unpolished. The wobble is most likely the slow zoom on still photos shaking by a fraction of a pixel each frame. A new check measures that on every zoom, and a second new check catches empty, murky or split-panel frames. Cursor runs both on v04, fixes what they find, and renders v05.",
@@ -73,19 +73,24 @@
         },
         {
           "who": "Cursor",
-          "what": "wobble and polish checks on every frame, fixes, then v05",
+          "what": "its own music",
+          "job": "J0078"
+        },
+        {
+          "who": "Cursor",
+          "what": "fix the wobbly and unfinished frames, v05",
           "job": "J0059"
         },
         {
           "who": "Claude",
-          "what": "check v05",
+          "what": "check v05 frame by frame",
           "afterJob": "J0059",
           "lag": 60
         },
         {
           "who": "Ben",
-          "what": "re-watch v05",
-          "whenText": "once Claude has passed it"
+          "what": "watch v05",
+          "whenText": "next week"
         }
       ],
       "you": "",
@@ -96,10 +101,10 @@
       "limit": "The new checks are being built on 025 first (the focus film), so 023's job follows straight after it."
     },
     "OWB:024": {
-      "updated": "2026-10-09T03:52Z",
+      "updated": "2026-10-09T08:40Z",
       "mood": "fixing",
       "done": "Script, voice, picture, edit (cut v03), thumbnails and the upload package. The film is finished.",
-      "holdup": "Waiting for the ElevenLabs renewal on Fri 30 Oct to make its own music, which keeps voice credits safe. Nothing for you until then.",
+      "holdup": "Nothing is holding it now. You lifted the ElevenLabs floor, so its own music is made now instead of after 30 Oct.",
       "steps": [
         {
           "who": "Ben",
@@ -109,24 +114,29 @@
         },
         {
           "who": "Cursor",
-          "what": "check the narration and music in v03 (about 30 min)",
+          "what": "check the narration and music in v03",
           "job": "J0060"
         },
         {
+          "who": "Cursor",
+          "what": "its own music",
+          "job": "J0079"
+        },
+        {
           "who": "Claude",
-          "what": "decide the fix",
-          "afterJob": "J0060",
+          "what": "listen to the music and check v04",
+          "afterJob": "J0079",
           "lag": 60
         },
         {
           "who": "Ben",
-          "what": "re-watch",
-          "whenText": "once the fix is in"
+          "what": "watch v04",
+          "whenText": "next week"
         }
       ],
       "you": "",
       "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "Your audio note was right: 023, 024 and 025 shared one music track. 024 gets its own music, made on 30 Oct when the ElevenLabs plan renews (this month's spare credits went to Mars, Nearest Star and Venus). The picture is fixed first so it can upload on 30–31 Oct for its 1 Nov slot.",
+      "line": "Your audio note was right: 023, 024 and 025 shared one music track. 024 gets its own music now, then a new version with the picture fixed, then it comes back to you.",
       "youWhen": "",
       "youShort": "",
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
@@ -196,11 +206,16 @@
       "youWhen": "2026-10-09"
     },
     "OWB:027": {
-      "updated": "2026-10-09T08:15Z",
+      "updated": "2026-10-09T08:40Z",
       "mood": "good",
       "done": "Script, voice, shot list and 7 code graphics.",
-      "holdup": "Nothing is holding it. It's next after the Mars and Nearest Star thumbnails. Its own music waits for the ElevenLabs renewal on Fri 30 Oct.",
+      "holdup": "Nothing is holding it. Picture and its own music both start after the films that air sooner.",
       "steps": [
+        {
+          "who": "Cursor",
+          "what": "its own music",
+          "job": "J0080"
+        },
         {
           "who": "Cursor",
           "what": "picture, rough cut 1 (2 Orbit clips, 2 everyday scenes)",
@@ -211,11 +226,6 @@
           "what": "check the rough cut frame by frame",
           "afterJob": "J0077",
           "lag": 60
-        },
-        {
-          "who": "Claude",
-          "what": "its own music",
-          "whenText": "after Fri 30 Oct"
         }
       ],
       "you": "",
