@@ -2589,10 +2589,10 @@
       "stage": "edit",
       "after": "J0058",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T11:03Z",
+      "eta": "2026-10-09T13:03Z",
       "created_by": "claude",
       "created_at": "2026-10-08T18:03Z",
       "result": "",
@@ -2621,6 +2621,11 @@
           "at": "2026-10-09T10:51Z",
           "by": "cursor",
           "what": "released: v05 rendered to OWB UAT/023_Venus_full_rough_v05.mp4 (513.0 s, -14.2 LUFS, clip_check PASS, sha f860e9835f97; assembler ad6d301). picture_qa + music_gate still running in tmux j0059-v05: log ~/_desk/logs/j0059-v05.log, done file ~/_desk/logs/j0059-v05.done. Next run: read QA results, force-add full_rough_v05_pack (sheets, picture_qa_v05, music_gate_v05.json) from a clean worktree, post the pack on #99 for Claude."
+        },
+        {
+          "at": "2026-10-09T11:03Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
