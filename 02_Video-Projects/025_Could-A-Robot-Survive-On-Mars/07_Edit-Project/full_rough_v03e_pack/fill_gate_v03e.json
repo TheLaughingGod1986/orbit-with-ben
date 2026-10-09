@@ -1,0 +1,768 @@
+{
+  "rule": "fail if near-black(<12)/near-white(>245) pixels touching the border cover > 1.5% of the row frame",
+  "verdict": "FAIL",
+  "fail": [
+    {
+      "row": "14",
+      "cut": 39,
+      "source": "PIA12457.jpg",
+      "frac": 0.086
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "2",
+      "cut": 1,
+      "source": "PIA07372.jpg",
+      "frac": 0.0285,
+      "status": "reviewed_ok",
+      "note": "scene content (rover deck), Claude #6066030404"
+    },
+    {
+      "row": "3",
+      "cut": 2,
+      "source": "PIA22210.jpg",
+      "frac": 0.0461,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if cropped above the stair-stepped bottom edge at <=2.35x, else drop (Claude, #6064654610)"
+    },
+    {
+      "row": "11",
+      "cut": 26,
+      "source": "PIA17792.jpg",
+      "frac": 0.0484,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610)"
+    },
+    {
+      "row": "13",
+      "cut": 34,
+      "source": "PIA20328.jpg",
+      "frac": 0.0212,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if the 16:9 window stays inside the tilted mosaic: no corner wedge at any point of the push (Claude, #6064654610)"
+    },
+    {
+      "row": "16",
+      "cut": 45,
+      "source": "PIA19400.jpg",
+      "frac": 0.0542,
+      "status": "reviewed_ok",
+      "note": "the dark ridge is scene (Claude, J0063 v03b sheet pass)"
+    },
+    {
+      "row": "16",
+      "cut": 49,
+      "source": "PIA13804.jpg",
+      "frac": 0.0309,
+      "status": "reviewed_ok",
+      "note": "scene content (lander deck), Claude #6066030404"
+    },
+    {
+      "row": "17",
+      "cut": 51,
+      "source": "PIA24264.jpg",
+      "frac": 0.0292,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if cropped above the black distorted base: sky and horizon, deck top at most (Claude, #6064654610)"
+    },
+    {
+      "row": "23",
+      "cut": 71,
+      "source": "PIA23177.jpg",
+      "frac": 0.0378,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610); pass unless the sheet shows a straight black/white edge"
+    },
+    {
+      "row": "25",
+      "cut": 79,
+      "source": "PIA26016.jpg",
+      "frac": 0.04,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610); pass unless the sheet shows a straight black/white edge"
+    },
+    {
+      "row": "28",
+      "cut": 96,
+      "source": "PIA24264.jpg",
+      "frac": 0.0167,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if cropped above the black distorted base: sky and horizon, deck top at most (Claude, #6064654610)"
+    },
+    {
+      "row": "30",
+      "cut": 103,
+      "source": "PIA20316.jpg",
+      "frac": 0.0167,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610)"
+    }
+  ],
+  "rows": [
+    {
+      "row": "1",
+      "cut": 0,
+      "source": "PIA15115.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "2",
+      "cut": 1,
+      "source": "PIA07372.jpg",
+      "frac": 0.0285,
+      "status": "reviewed_ok",
+      "note": "scene content (rover deck), Claude #6066030404"
+    },
+    {
+      "row": "3",
+      "cut": 2,
+      "source": "PIA22210.jpg",
+      "frac": 0.0461,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if cropped above the stair-stepped bottom edge at <=2.35x, else drop (Claude, #6064654610)"
+    },
+    {
+      "row": "3",
+      "cut": 3,
+      "source": "PIA21268.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "4",
+      "cut": 4,
+      "source": "PIA11132.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "4",
+      "cut": 5,
+      "source": "PIA15115.jpg",
+      "frac": 0.0004
+    },
+    {
+      "row": "5",
+      "cut": 6,
+      "source": "PIA20284.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "5",
+      "cut": 7,
+      "source": "PIA17759.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "5",
+      "cut": 8,
+      "source": "PIA19109.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "5",
+      "cut": 9,
+      "source": "PIA18098.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "6",
+      "cut": 10,
+      "source": "PIA20283.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "6",
+      "cut": 11,
+      "source": "PIA20284.jpg",
+      "frac": 0.0013
+    },
+    {
+      "row": "7",
+      "cut": 12,
+      "source": "PIA00382.jpg",
+      "frac": 0.0005
+    },
+    {
+      "row": "7",
+      "cut": 13,
+      "source": "PIA10738.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "7",
+      "cut": 14,
+      "source": "PIA25413.jpg",
+      "frac": 0.0078
+    },
+    {
+      "row": "8",
+      "cut": 15,
+      "source": "PIA13580.jpg",
+      "frac": 0.0012
+    },
+    {
+      "row": "8",
+      "cut": 16,
+      "source": "PIA26559.jpg",
+      "frac": 0.0014
+    },
+    {
+      "row": "8",
+      "cut": 17,
+      "source": "PIA25176.jpg",
+      "frac": 0.0115
+    },
+    {
+      "row": "8",
+      "cut": 18,
+      "source": "PIA22207.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "9",
+      "cut": 19,
+      "source": "PIA16096.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "9",
+      "cut": 20,
+      "source": "PIA20316.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "9",
+      "cut": 21,
+      "source": "PIA24543.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "9",
+      "cut": 22,
+      "source": "PIA23240.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "10",
+      "cut": 23,
+      "source": "PIA11798.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "10",
+      "cut": 24,
+      "source": "PIA12457.jpg",
+      "frac": 0.0004
+    },
+    {
+      "row": "10",
+      "cut": 25,
+      "source": "PIA21486.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "11",
+      "cut": 26,
+      "source": "PIA17792.jpg",
+      "frac": 0.0484,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610)"
+    },
+    {
+      "row": "11",
+      "cut": 27,
+      "source": "PIA23214.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "11",
+      "cut": 28,
+      "source": "PIA25681.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "11",
+      "cut": 29,
+      "source": "PIA26717.jpg",
+      "frac": 0.0107
+    },
+    {
+      "row": "12",
+      "cut": 30,
+      "source": "PIA09090.jpg",
+      "frac": 0.0002
+    },
+    {
+      "row": "12",
+      "cut": 31,
+      "source": "PIA15024.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "12",
+      "cut": 32,
+      "source": "PIA26673.gif",
+      "frac": 0.0008
+    },
+    {
+      "row": "13",
+      "cut": 33,
+      "source": "PIA07882.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "13",
+      "cut": 34,
+      "source": "PIA20328.jpg",
+      "frac": 0.0212,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if the 16:9 window stays inside the tilted mosaic: no corner wedge at any point of the push (Claude, #6064654610)"
+    },
+    {
+      "row": "13",
+      "cut": 35,
+      "source": "PIA19400.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "13",
+      "cut": 36,
+      "source": "orbit_mars_cold_omni_v01.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 37,
+      "source": "PIA12142.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 38,
+      "source": "PIA12203.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 39,
+      "source": "PIA12457.jpg",
+      "frac": 0.086
+    },
+    {
+      "row": "14",
+      "cut": 40,
+      "source": "PIA12203.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 41,
+      "source": "PIA07882.jpg",
+      "frac": 0.0004
+    },
+    {
+      "row": "15",
+      "cut": 42,
+      "source": "PIA07371.jpg",
+      "frac": 0.0009
+    },
+    {
+      "row": "15",
+      "cut": 43,
+      "source": "PIA01907.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "15",
+      "cut": 44,
+      "source": "PIA12142.jpg",
+      "frac": 0.0019
+    },
+    {
+      "row": "16",
+      "cut": 45,
+      "source": "PIA19400.jpg",
+      "frac": 0.0542,
+      "status": "reviewed_ok",
+      "note": "the dark ridge is scene (Claude, J0063 v03b sheet pass)"
+    },
+    {
+      "row": "16",
+      "cut": 46,
+      "source": "PIA13804.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "16",
+      "cut": 47,
+      "source": "PIA10665.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "16",
+      "cut": 48,
+      "source": "PIA12490.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "16",
+      "cut": 49,
+      "source": "PIA13804.jpg",
+      "frac": 0.0309,
+      "status": "reviewed_ok",
+      "note": "scene content (lander deck), Claude #6066030404"
+    },
+    {
+      "row": "17",
+      "cut": 50,
+      "source": "PIA24542.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "17",
+      "cut": 51,
+      "source": "PIA24264.jpg",
+      "frac": 0.0292,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if cropped above the black distorted base: sky and horizon, deck top at most (Claude, #6064654610)"
+    },
+    {
+      "row": "18",
+      "cut": 52,
+      "source": "PIA18093.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "18",
+      "cut": 53,
+      "source": "PIA16122.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "19",
+      "cut": 54,
+      "source": "PIA10128.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "19",
+      "cut": 55,
+      "source": "PIA11799.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "19",
+      "cut": 56,
+      "source": "PIA20329.jpg",
+      "frac": 0.0083
+    },
+    {
+      "row": "20",
+      "cut": 57,
+      "source": "PIA22909.jpg",
+      "frac": 0.0005
+    },
+    {
+      "row": "20",
+      "cut": 58,
+      "source": "PIA17759.jpg",
+      "frac": 0.0105
+    },
+    {
+      "row": "20",
+      "cut": 59,
+      "source": "PIA18079.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "20",
+      "cut": 60,
+      "source": "PIA18079.jpg",
+      "frac": 0.0011
+    },
+    {
+      "row": "20",
+      "cut": 61,
+      "source": "PIA06739.jpg",
+      "frac": 0.0025
+    },
+    {
+      "row": "21",
+      "cut": 62,
+      "source": "PIA22330.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "21",
+      "cut": 63,
+      "source": "PIA17956.jpg",
+      "frac": 0.0002
+    },
+    {
+      "row": "21",
+      "cut": 64,
+      "source": "PIA22520.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "21",
+      "cut": 65,
+      "source": "PIA26716.jpg",
+      "frac": 0.0026
+    },
+    {
+      "row": "21",
+      "cut": 66,
+      "source": "PIA22520.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "22",
+      "cut": 67,
+      "source": "PIA07372.jpg",
+      "frac": 0.0079
+    },
+    {
+      "row": "22",
+      "cut": 68,
+      "source": "PIA22928.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "23",
+      "cut": 69,
+      "source": "PIA23203.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "23",
+      "cut": 70,
+      "source": "PIA25286.jpg",
+      "frac": 0.0023
+    },
+    {
+      "row": "23",
+      "cut": 71,
+      "source": "PIA23177.jpg",
+      "frac": 0.0378,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610); pass unless the sheet shows a straight black/white edge"
+    },
+    {
+      "row": "23",
+      "cut": 72,
+      "source": "PIA22871.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "23",
+      "cut": 73,
+      "source": "PIA25287.jpg",
+      "frac": 0.0018
+    },
+    {
+      "row": "24",
+      "cut": 74,
+      "source": "PIA23305.jpg",
+      "frac": 0.0022
+    },
+    {
+      "row": "24",
+      "cut": 75,
+      "source": "PIA23306.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "24",
+      "cut": 76,
+      "source": "PIA22486.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "24",
+      "cut": 77,
+      "source": "PIA22486.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "25",
+      "cut": 78,
+      "source": "PIA15693.jpg",
+      "frac": 0.0093
+    },
+    {
+      "row": "25",
+      "cut": 79,
+      "source": "PIA26016.jpg",
+      "frac": 0.04,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610); pass unless the sheet shows a straight black/white edge"
+    },
+    {
+      "row": "25",
+      "cut": 80,
+      "source": "PIA17751.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "25",
+      "cut": 81,
+      "source": "orbit_mars_wheel_omni_v01.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "25",
+      "cut": 82,
+      "source": "PIA16112.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "26",
+      "cut": 83,
+      "source": "KSC-20200730-PH-FMX01_0042.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "26",
+      "cut": 84,
+      "source": "KSC-20200730-PH-KLS01_0001.jpg",
+      "frac": 0.0058
+    },
+    {
+      "row": "26",
+      "cut": 85,
+      "source": "PIA24333.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "26",
+      "cut": 86,
+      "source": "PIA14839.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "27",
+      "cut": 87,
+      "source": "PIA24593.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "27",
+      "cut": 88,
+      "source": "PIA18093.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "27",
+      "cut": 89,
+      "source": "PIA26236.jpg",
+      "frac": 0.0005
+    },
+    {
+      "row": "27",
+      "cut": 90,
+      "source": "PIA26237.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "27",
+      "cut": 91,
+      "source": "PIA26243.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "28",
+      "cut": 92,
+      "source": "PIA23305.jpg",
+      "frac": 0.0003
+    },
+    {
+      "row": "28",
+      "cut": 93,
+      "source": "PIA01907.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "28",
+      "cut": 94,
+      "source": "PIA19920.jpg",
+      "frac": 0.0005
+    },
+    {
+      "row": "28",
+      "cut": 95,
+      "source": "PIA26344.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "28",
+      "cut": 96,
+      "source": "PIA24264.jpg",
+      "frac": 0.0167,
+      "status": "reviewed_ok",
+      "note": "reviewed_ok only if cropped above the black distorted base: sky and horizon, deck top at most (Claude, #6064654610)"
+    },
+    {
+      "row": "29",
+      "cut": 97,
+      "source": "PIA23246.jpg",
+      "frac": 0.0003
+    },
+    {
+      "row": "29",
+      "cut": 98,
+      "source": "PIA14129.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "29",
+      "cut": 99,
+      "source": "PIA17590.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "30",
+      "cut": 100,
+      "source": "KSC-2011-6687.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "30",
+      "cut": 101,
+      "source": "PIA09090.jpg",
+      "frac": 0.0003
+    },
+    {
+      "row": "30",
+      "cut": 102,
+      "source": "PIA19920.jpg",
+      "frac": 0.0007
+    },
+    {
+      "row": "30",
+      "cut": 103,
+      "source": "PIA20316.jpg",
+      "frac": 0.0167,
+      "status": "reviewed_ok",
+      "note": "scene content, not an empty edge (Claude, thread #6064654610)"
+    },
+    {
+      "row": "31",
+      "cut": 104,
+      "source": "PIA15694.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "31",
+      "cut": 105,
+      "source": "PIA07371.jpg",
+      "frac": 0.0004
+    },
+    {
+      "row": "32",
+      "cut": 106,
+      "source": "PIA24765.jpg",
+      "frac": 0.0
+    }
+  ]
+}
