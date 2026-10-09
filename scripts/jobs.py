@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -314,6 +315,20 @@ def heartbeat(agent: str) -> None:
             pass
 
 
+def publish_board() -> None:
+    """Rebuild the Studio Kanban's data in the background (scripts/board_publish.py, Ben 9 Oct: the board updates
+    whenever a job moves). Fire-and-forget: it never blocks the job or changes its exit code. Off with BOARD_PUBLISH=0,
+    and a no-op anywhere without ~/_desk/state (cloud sessions, CI)."""
+    script = ROOT / "scripts" / "board_publish.py"
+    if os.environ.get("BOARD_PUBLISH", "1") == "0" or not chief_relay.STATE.is_dir() or not script.exists():
+        return
+    try:
+        subprocess.Popen([sys.executable, str(script), "--quiet"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                         stderr=subprocess.DEVNULL, start_new_session=True, cwd=str(ROOT))
+    except OSError:
+        pass
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -454,6 +469,8 @@ def main(argv=None) -> int:
     if err:
         print(f"jobs: {err}", file=sys.stderr)
         return 1
+    if job and not (args.cmd == "next" and args.peek):
+        publish_board()
     if args.cmd == "next" and not job:
         print("jobs: nothing waiting for you")
         return EX_NONE
