@@ -4096,10 +4096,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T23:37Z",
-      "eta": "2026-10-10T01:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T08:52Z",
       "result": "",
@@ -4153,6 +4153,11 @@
           "at": "2026-10-09T23:37Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T23:45Z",
+          "by": "cursor",
+          "what": "released: v05 rendered (exit 0): OWB UAT/026_NearestStar_v05_PHONE.mp4, 8:14, -14.2 LUFS, sha 7274bc1b; pack 8a55354. music_gate PASS, clip_check PASS, polish PASS. picture_qa FAIL: 7 same-stretch reuses (rule c2b15c5, added after v04 passed) in rows v05 didn't touch: 1:31 triple (r8), 3:23 uhd_bt_paranal_01 (r14), 4:40 bt_lasilla_crux (r21), 5:48 uhd_bt_paranal_07 (r25), 7:56/8:02/8:12 paranal_06, vltfromvista, yb_paranal_01 (r33). 6 of 7 clips are 7.6-13.4 s long, so no fresh 10 s stretch exists: needs a Chief call on replacement footage (only vltfromvista, 29 s, could shift). Waiting on that decision; no re-render started."
         }
       ],
       "urgent": 1
