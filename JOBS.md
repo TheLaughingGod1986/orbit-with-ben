@@ -15,10 +15,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0065 | mini | open (after J0064) | – | – | 026 picture · 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) |  |
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
-| J0075 | mini | claimed | cursor | 2026-10-09T04:23Z | 026 edit · 026 Nearest Star: its own score bed (Claude's brief, credit guard) |  |
 
 Recently finished:
 
+- J0075 done: 026 Nearest Star: its own score bed (Claude's brief, credit guard) (026 bed nearest-star_score_bed_v01_full.mp3 (520 s, -16.6 LUFS): take 1 returned 170 s, one continuation take (380 s, +11 dB) joined with an 8 s equal-power crossfade at 111.8 s film (before chapter 2), slowed 0.93. music_gate PASS (66.7 BPM, brief 66-80). 7563 credits, 42343 left.)
 - J0074 done: Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command (Installed f165f55 relay; hashes match. Actual launchd wake at 00:51:56 has corrected cmd flags and started this session. Installed run_cli proving probe returned RELAY_PROBE_OK, exit 0. All 24 relay tests PASS with OWB_REPO isolated from live queue. Codex up; J0071 remains for next tick.)
 - J0073 done: Relay: fix Codex's CLI flags (its first run exited 2), then let it run J0071 (done)
 - J0072 done: Relay: copy the new chief_relay.py to ~/_desk/bin and check Codex is signed in (for J0071) (done)
@@ -28,4 +28,3 @@ Recently finished:
 - J0067 done: 025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy (done)
 - J0064 done: 026 Nearest Star: fresh transcript and timing on the Shorts' locked voice files (Scribe + align) before picture (Scribe v2 re-run on the 3 LOCK takes; words.json now times the locked untrimmed files (sha-checked). Mon16 24.48s, Wed18 21.60s, Fri20 20.64s; all 22-27s with 2s hold; mismatches number/spelling only. Summary: 10_Shorts/SCRIBE_LOCK_v02.json)
 - J0063 done: 025: rough v03c (two frames: 216 s annotation box, 398.5 s blotchy sky), then to Ben (v03c pack d102274: OWB UAT/025_MarsRobot_full_rough_v03c.mp4, 490.2 s, -14.3 LUFS, fill+polish PASS, clip_check 0 errors)
-- J0062 done: 025: rough v03b (201 s swap to PIA19400, 393 s crop, two polish-gate tweaks), then to Ben (v03b pack b80aeb8 (OWB UAT/025_MarsRobot_full_rough_v03b.mp4, sha e6a1312a, 490.2 s, -14.3 LUFS, polish PASS, clip_check 0). Fill gate flags row 16 PIA19400 5.3% = dark foreground ridge, not fill: Claude to rule in sheet pass. Dark-static noise trigger + regression test ride J0059 per #6066936759.)
