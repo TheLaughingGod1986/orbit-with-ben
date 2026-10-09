@@ -143,10 +143,18 @@ def assemble(docs: dict, prev: dict, checks: dict, at: dt.datetime) -> tuple[dic
     return board, hashes
 
 
+# The repo is git-connected to the Vercel project orbit-content-ops (root 07_Content-Ops), so every push to any branch
+# would create a deployment there and eat the account's 100-a-day limit. A vercel.json in this branch's commit, at the
+# repo root and at that project root, turns deployments off for it.
+NO_DEPLOY = json.dumps({"git": {"deploymentEnabled": False}}) + "\n"
+
+
 def push(board: dict, at: dt.datetime) -> str:
     body = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
     blob = git(OWB, "hash-object", "-w", "--stdin", inp=body)
-    tree = git(OWB, "mktree", inp=f"100644 blob {blob}\tboard.json\n")
+    nd = git(OWB, "hash-object", "-w", "--stdin", inp=NO_DEPLOY)
+    sub = git(OWB, "mktree", inp=f"100644 blob {nd}\tvercel.json\n")
+    tree = git(OWB, "mktree", inp=f"040000 tree {sub}\t07_Content-Ops\n100644 blob {blob}\tboard.json\n100644 blob {nd}\tvercel.json\n")
     commit = git(OWB, "commit-tree", tree, "-m", f"board data {iso(at)}")
     git(OWB, "push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
     return commit
