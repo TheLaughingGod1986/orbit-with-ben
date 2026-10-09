@@ -1,0 +1,98 @@
+{
+  "job": "J0054",
+  "date": "2026-10-08",
+  "by": "cursor",
+  "method": "copy to NAS, sha256 manifest next to the folder on the NAS, verify every file, then remove the local copy; nothing on the NAS deleted; git-tracked files, final exports, upload packages and files modified in the last 24 h kept",
+  "free_gb": {
+    "start_of_job": 3.7,
+    "after_quick_clears": 8.5,
+    "after_aired_films_move": 15.7
+  },
+  "target_gb": 40,
+  "folders": [
+    {
+      "repo": "orbit-with-ben",
+      "folder": "02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us",
+      "nas_path": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us",
+      "file_count": 752,
+      "bytes": 1710929929,
+      "sha256_manifest": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/MANIFEST_2026-10-08_J0054.sha256",
+      "status": "moved",
+      "skipped_conflict": []
+    },
+    {
+      "repo": "orbit-with-ben",
+      "folder": "02_Video-Projects/019_Andromeda-Milky-Way-Collision",
+      "nas_path": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision",
+      "file_count": 2499,
+      "bytes": 1414094392,
+      "sha256_manifest": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/MANIFEST_2026-10-08_J0054.sha256",
+      "status": "moved",
+      "skipped_conflict": [],
+      "regenerable_not_archived": [
+        "07_Edit-Project/.venv",
+        "10_Shorts/k9pXeeJvLpc_recut/__pycache__"
+      ]
+    },
+    {
+      "repo": "orbit-with-ben",
+      "folder": "02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter",
+      "nas_path": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter",
+      "file_count": 350,
+      "bytes": 844225874,
+      "sha256_manifest": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/MANIFEST_2026-10-08_J0054.sha256",
+      "status": "moved",
+      "skipped_conflict": [],
+      "regenerable_not_archived": [
+        "07_Edit-Project/__pycache__"
+      ]
+    },
+    {
+      "repo": "History Of Science",
+      "folder": "02_Video-Projects/001_How-Did-We-Discover-Germs",
+      "nas_path": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/001_How-Did-We-Discover-Germs",
+      "file_count": 1181,
+      "bytes": 1430303370,
+      "sha256_manifest": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/001_How-Did-We-Discover-Germs/MANIFEST_2026-10-08_J0054.sha256",
+      "status": "moved",
+      "skipped_conflict": [],
+      "regenerable_not_archived": [
+        "07_Edit-Project/__pycache__",
+        "10_Shorts/__pycache__",
+        "10_Shorts/_venv"
+      ]
+    },
+    {
+      "repo": "History Of Science",
+      "folder": "02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table",
+      "nas_path": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table",
+      "file_count": 1854,
+      "bytes": 996270838,
+      "sha256_manifest": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/MANIFEST_2026-10-08_J0054.sha256",
+      "status": "moved",
+      "skipped_conflict": [],
+      "regenerable_not_archived": [
+        "02_Voiceover/__pycache__",
+        "07_Edit-Project/.venv_part03"
+      ]
+    },
+    {
+      "repo": "History Of Science",
+      "folder": "02_Video-Projects/003_Invisible-Bones-X-Rays",
+      "nas_path": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/003_Invisible-Bones-X-Rays",
+      "file_count": 164,
+      "bytes": 224263618,
+      "sha256_manifest": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/003_Invisible-Bones-X-Rays/MANIFEST_2026-10-08_J0054.sha256",
+      "status": "moved",
+      "skipped_conflict": [],
+      "regenerable_not_archived": [
+        "07_Edit-Project/__pycache__",
+        "07_Edit-Project/_qa_part05_batch_a/__pycache__"
+      ]
+    }
+  ],
+  "not_moved": {
+    "~/YouTube/hos-005-blood": "working tree not clean (modified PACKAGE_MANIFEST.json and SETTINGS_COMMIT_RESULT.json, untracked VO QA files); Claude condition 1 fails",
+    "OWB UAT superseded cuts (023 v01-v03, 024 v01-v02, 025 v01-v03b)": "live in iCloud Drive, which Claude listed as leave-alone; awaiting Claude"
+  }
+}
