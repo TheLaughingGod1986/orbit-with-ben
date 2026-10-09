@@ -23,6 +23,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0097 | mini | open | – | – | HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) |  |
 | J0098 | mini | open | – | – | 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) |  |
 | J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
+| J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
 
 Recently finished:
 
