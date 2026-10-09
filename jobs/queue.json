@@ -2875,10 +2875,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T01:27Z",
-      "eta": "2026-10-09T03:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T21:50Z",
       "result": "",
@@ -2932,6 +2932,11 @@
           "at": "2026-10-09T01:27Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T01:30Z",
+          "by": "cursor",
+          "what": "released: Run 5: v03d render 1 failed gates (exit 4). Fixed: opening PIA15115, row 21 PIA17956, row 4 centre crop, picture_qa --reviewed-ok (7ee2a9e). Waiting on Claude (#6072402259): 2:54 PIA12102 is blurry and fails fill, PIA12205 too small (2.63x), proposed PIA12457; bed opening hole 0:03-0:13, proposed opening ride. Then re-render detached via _run_v03d.sh, 6c audit, phone copy, pack post."
         }
       ],
       "urgent": true
