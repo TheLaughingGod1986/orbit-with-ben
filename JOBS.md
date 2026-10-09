@@ -5,8 +5,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent: J0102.** Ahead of everything, the focus film included.
-
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
@@ -23,10 +21,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
 | J0101 | mini | open | – | – | HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) |  |
-| J0102 | mini | claimed | cursor | 2026-10-09T17:09Z | HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct |  |
 
 Recently finished:
 
+- J0102 done: HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct (T&C armed Title+thumbnail A/B/C (C=v07), saved; Ineligible until public 15 Oct. HOS 5518d51)
 - J0097 done: HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) (C v07 repainted on Vertex (2 plates, $0.078): tiles painted in, Te 52 / I 53 by hand, lining figures. HOS PR #263; sheet on HOS desk #180 comment 6084976194. Claude to review by Tue 13 Oct 18:00 and queue Test & Compare arming (A/B/C, or A/B on Wed 14 Oct).)
 - J0095 done: 023 Venus: redraw albedo + deuterium code graphics (Ben's v05c notes) (albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated)
 - J0093 done: Long-form view: Cursor on one 45–60 min video a month (Ben asked) (done)
@@ -36,4 +34,3 @@ Recently finished:
 - J0088 done: 027 opening: first answer before 0:30, from existing VO (Codex idea 5) (027 SHOT_LIST_v02: VO re-ordered (agenda cut, sudden-stop chapter first); the first answer is at ~24 s, was 112 s; no new VO; J0077 builds from v02)
 - J0083 done: Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) (Posted fifth OWB retention idea and two HOS ideas with source evidence, minimal tests, costs and caveats; no implementation or spend.)
 - J0082 done: Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) (done)
-- J0081 done: Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) (Five ideas posted on #99: Related-video link check, Short as long-opening test, cached one-assembler builds, pre-render sentence sheet, HOS retro Shorts gate)
