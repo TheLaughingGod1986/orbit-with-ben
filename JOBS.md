@@ -19,10 +19,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0085 | mini | open | – | – | 026 edit · 026 Nearest Star: Ben's fixes, two graphics + Orbit's two scenes back in (v05) | 6077058676 |
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
-| J0088 | cloud | claimed | claude | 2026-10-09T10:50Z | 027 shots · 027 opening: first answer before 0:30, from existing VO (Codex idea 5) | 6077981911 |
 
 Recently finished:
 
+- J0088 done: 027 opening: first answer before 0:30, from existing VO (Codex idea 5) (027 SHOT_LIST_v02: VO re-ordered (agenda cut, sudden-stop chapter first); the first answer is at ~24 s, was 112 s; no new VO; J0077 builds from v02)
 - J0083 done: Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) (Posted fifth OWB retention idea and two HOS ideas with source evidence, minimal tests, costs and caveats; no implementation or spend.)
 - J0082 done: Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) (done)
 - J0081 done: Ideas round: Cursor's five ideas to improve the videos and packaging (Ben asked) (Five ideas posted on #99: Related-video link check, Short as long-opening test, cached one-assembler builds, pre-render sentence sheet, HOS retro Shorts gate)
@@ -32,4 +32,3 @@ Recently finished:
 - J0074 done: Relay: Codex still exits 2 when the relay wakes it; compare the launchd env and the logged command (Installed f165f55 relay; hashes match. Actual launchd wake at 00:51:56 has corrected cmd flags and started this session. Installed run_cli proving probe returned RELAY_PROBE_OK, exit 0. All 24 relay tests PASS with OWB_REPO isolated from live queue. Codex up; J0071 remains for next tick.)
 - J0073 done: Relay: fix Codex's CLI flags (its first run exited 2), then let it run J0071 (done)
 - J0072 done: Relay: copy the new chief_relay.py to ~/_desk/bin and check Codex is signed in (for J0071) (done)
-- J0071 done: Codex: your own ideas for the videos and packaging (one post, max 5) (Posted four original evidence-backed viewer-facing tests; no implementation or spend. HOS codex inbox parser limitation recorded.)
