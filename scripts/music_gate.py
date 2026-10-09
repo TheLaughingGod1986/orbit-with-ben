@@ -11,6 +11,8 @@ shipped to his watch on the same `jupiter-music.mp3`).
             05_Music, plus OWB UAT when it exists), even trimmed, offset or re-encoded. Similarity is the best mean
             cosine of 1 s band-energy frames over time offsets: the same track scores about 1, different music well
             under 0.5. FAIL at 0.8 or more.
+  gap       FAIL the bed sits more than 15 dB under its usual level for over 6 s anywhere but the opening and the end
+            fade, so it sounds as if the music stopped (025's first join, 9 Oct). Breaths of ~4 s are fine.
   length    FAIL (with --video) the bed is shorter than the cut: music runs the whole film, never looped or silent.
   pace      WARN the bed's measured tempo is well outside the brief's BPM range (ambient beds have weak beats, so this
             only asks Claude to listen).
@@ -30,6 +32,7 @@ import numpy as np
 SR = 8000
 BANDS = 24
 SIM_FAIL = 0.8
+GAP_DB, GAP_S = 15.0, 6.0  # "the music stopped": more than 15 dB under the bed's median level for over 6 s
 MAX_SECONDS = 300  # compare the first 5 minutes; a reused bed matches long before that
 REPO = Path(__file__).resolve().parent.parent
 UAT = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT"
@@ -70,6 +73,27 @@ def similarity(a: np.ndarray, b: np.ndarray, min_overlap: int = 20) -> float:
         if len(d) >= min_overlap:
             best = max(best, float(d.mean()))
     return best
+
+
+def longest_gap(x: np.ndarray, skip_start: float = 3.0, skip_end: float = 15.0) -> tuple:
+    """(seconds, starts at) of the longest stretch whose 3 s rolling level sits more than GAP_DB under the bed's median.
+    Phrased beds breathe for ~4 s at a time (025, 9 Oct), so only a longer hole counts. The opening and the end fade
+    are skipped."""
+    hop = SR // 10  # 100 ms
+    n = len(x) // hop
+    if n < 60:
+        return 0.0, 0.0
+    rms = np.sqrt((x[:n * hop].reshape(n, hop).astype(np.float64) ** 2).mean(1) + 1e-12)
+    win = 30  # 3 s
+    level = 20 * np.log10(np.sqrt(np.convolve(rms ** 2, np.ones(win) / win, "same")) + 1e-12)
+    lo, hi = int(skip_start * 10), max(int(n - skip_end * 10), int(skip_start * 10))
+    quiet = level[lo:hi] < np.median(level[lo:hi]) - GAP_DB
+    best, start, run = 0, 0, 0
+    for i, q in enumerate(quiet):
+        run = run + 1 if q else 0
+        if run > best:
+            best, start = run, i - run + 1
+    return round(best / 10, 1), round((lo + start) / 10, 1)
 
 
 def tempo(x: np.ndarray) -> float | None:
@@ -133,6 +157,10 @@ def judge(film_dir: Path, bed: Path, video: Path | None = None, others: list[Pat
         cut_s = duration(video)
         if bed_s + 0.5 < cut_s:
             fails.append(f"length: the bed is {bed_s:.1f} s, the cut {cut_s:.1f} s")
+    gap_s, gap_at = longest_gap(decode(bed, None))
+    if gap_s > GAP_S:
+        fails.append(f"gap: the music nearly stops for {gap_s} s from {int(gap_at // 60)}:{int(gap_at % 60):02d} "
+                     f"(over {GAP_DB:.0f} dB under its usual level)")
     bpm = tempo(decode(bed, 120))
     if pace and bpm:
         lo, hi = int(pace.group(1)), int(pace.group(2))

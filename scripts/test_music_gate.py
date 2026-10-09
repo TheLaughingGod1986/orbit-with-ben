@@ -84,6 +84,16 @@ class MusicGate(unittest.TestCase):
         res = mg.judge(self.film, bed, others=[])
         self.assertTrue(any("Pace" in f for f in res["fail"]) and any("NOT" in f for f in res["fail"]))
 
+    def test_a_hole_in_the_music_fails_but_a_breath_does_not(self):
+        y = piece(5, secs=80).copy()
+        breath = y.copy(); breath[30 * SR:34 * SR] *= 0.01   # 4 s breath
+        hole = y.copy(); hole[30 * SR:42 * SR] *= 0.01       # 12 s near silence
+        to8k = lambda a: np.interp(np.arange(0, len(a) / SR, 1 / mg.SR), np.arange(len(a)) / SR, a).astype(np.float32)
+        self.assertLessEqual(mg.longest_gap(to8k(breath))[0], mg.GAP_S)
+        s, at = mg.longest_gap(to8k(hole))
+        self.assertGreater(s, mg.GAP_S)
+        self.assertAlmostEqual(at, 31, delta=3)
+
     def test_an_unreadable_other_track_is_a_warning_not_a_crash(self):
         res = mg.judge(self.film, self.film / "05_Music/mars_score_bed_v01.mp3", others=[self.d / "other/missing.mp3"])
         self.assertEqual(res["verdict"], "PASS")
