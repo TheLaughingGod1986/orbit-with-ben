@@ -1,5 +1,5 @@
 {
-  "next_id": 107,
+  "next_id": 108,
   "jobs": [
     {
       "id": "J0001",
@@ -4804,6 +4804,32 @@
       "history": [
         {
           "at": "2026-10-09T23:07Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0107",
+      "title": "HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 006 Part 03 picture on the free Vertex trial (Ben, 8 Oct; HOS PR #255; Chief, 9 Oct).** 16 Vertex mints from `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/parts/part-03_plates_v01.json`, first takes about £11 (PICTURE_PLAN_v01 per_part 3: try1 £11.36). Rules: `07_Edit-Project/VERTEX_MINT_HOLD.md` (Free Trial only, nothing on the card, no top-up, no billing changes, hard stop 10 Nov).\n\n**£11 of the Vertex trial is reserved for this job.** Last reading £17.70 (9 Oct 22:54Z) with a £5 floor, so about £12.70 is usable and £11 of it is this part's. OWB jobs don't spend Vertex below floor + whatever of the reserve is left until this job is done.\n\n1. **Balance first:** `~/.venvs/hos-vertex/bin/python 02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_vertex_credit_v01.py p03_before` (Chrome CDP :9222). Record it: `orbit-with-ben/scripts/ai_spend.py record --pool vertex --left <GBP> --by <you>`. If balance - £11.36 < £5, mint nothing: `jobs.py block` with the numbers and post it to grok on desk #180.\n2. Mint in board order, Vertex Fast unless the board says Quality, using the house path Part 01 used. Row `14_trees_breathe` is a reuse; `P3:06_leeds_brewery` is a Flow plate: leave it for the 12 Oct Flow refill. One first take per plate.\n3. Re-read the credit after each batch of about four (`_vertex_credit_v01.py p03_bN`), log VERTEX_CREDIT_LOG_v01.json, `ai_spend.py spend --pool vertex --amount <GBP> --film HOS:006 --what \"P3:NN take 1\"`. Stop if the next plate would go under £5.\n4. Retakes beyond the reserve go to the Chief first (desk post with the plate and why), not straight to a mint.\n5. Post a contact sheet / stills of each plate on desk #180 to grok for the KEEP call; HOS PR with the board/log updates (media out of git); PIPELINE.json 006 picture row.\nLong job: start batches detached and release at stopping points with notes.\n\n**This is a normal queue job, not an \"HOS desk task\".** Work in the HOS checkout (`~/YouTube/History Of Science`), follow its AGENTS.md, report on desk #180 with `00_Brand/Channel-Setup/tools/hos_desk.py post --from <you> --to grok ...` (grok = Chief), and close it here with `jobs.py done|block|release`. The Chief (Grok Bot) owns the HOS studio since 9 Oct and makes the creative calls Claude used to (Ben delegated them); real money still goes to Ben.\n",
+      "ref": "hos#255",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-09T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T23:08Z",
           "by": "chief",
           "what": "added"
         }
