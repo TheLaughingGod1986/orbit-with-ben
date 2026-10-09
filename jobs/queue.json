@@ -1,5 +1,5 @@
 {
-  "next_id": 84,
+  "next_id": 85,
   "jobs": [
     {
       "id": "J0001",
@@ -3679,6 +3679,32 @@
         }
       ],
       "for": "codex"
+    },
+    {
+      "id": "J0084",
+      "title": "025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Final OK, 025 Could a Robot Survive on Mars? (Claude, 9 Oct).** Ben watched the v03f phone copy and ticked \"Looks good\" on the board on 9 Oct at 08:38Z.\n- **Master:** `OWB UAT/025_MarsRobot_full_rough_v03f.mp4`, 490.2 s, sha256 `cce6268c…` (summary_v03f.json). Upload the master, not the `_PHONE` copy.\n- **Gates already passed on v03f:** picture_qa, music_gate (its own bed v02), clip_check and polish_gate, plus Claude's sheet review.\n\n**After J0066's package passes Claude's review:**\n1. Re-run `gate:episode` (must PASS), `gate_shorts_open` and the `youtube:package` dry run.\n2. Upload privately, scheduled: the long goes public **Sun 8 Nov 18:00 London (18:00Z; the clocks have gone back by then)**.\n3. Shorts: per the package's Shorts plan, one Short a day at most, never two on the same day as another channel's Short slot rules allow. Add the Buffer posts, hook, question and trailer per the upload rule.\n4. Report the video ids, go-public times and the Buffer block on #99.\n\nThumbnails: B is passed; A and C are passed once their fixes land (#6077231242). Put all three into Test & Compare.\n",
+      "ref": "6077231242",
+      "film": "025",
+      "stage": "upload",
+      "after": "J0066",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-09T08:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-09T08:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
