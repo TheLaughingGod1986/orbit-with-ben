@@ -3598,10 +3598,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T18:54Z",
-      "eta": "2026-10-09T20:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T08:09Z",
       "result": "",
@@ -3765,6 +3765,11 @@
           "at": "2026-10-09T18:54Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T19:11Z",
+          "by": "cursor",
+          "what": "released: v01c rendered + packed (20a239f assembler, 31b64cc graphics sheet, 15ea269 pack): OWB UAT/027_EarthSpin_rough_v01c.mp4, 446.3 s, -14.2 LUFS, clip_check OK. picture_qa FAIL 6/90, all near-black footage: Gerst 1:16/1:46/6:58 + ESO 1:58 meet Claude's p95>=45 rule (gate still uses mean); row 6 Five Minutes 18 s lower crop is p95 9-15. Waiting on Claude: row 6 swap or ok, and row-level near-black ok for the p95>=45 night footage; then v01d (only changed segments re-render). v01 scratch moved to NAS mini-tmp-scratch/2026-10-09 (453 files sha-matched). Scratch now v01b (previous) + v01c (current)."
         }
       ]
     },
