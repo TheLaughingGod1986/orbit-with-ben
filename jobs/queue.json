@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T04:49Z",
+      "eta": "2026-10-09T08:49Z",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2834,6 +2834,11 @@
           "at": "2026-10-09T04:38Z",
           "by": "cursor",
           "what": "released: Pool v03 done (e640a31) per Claude #6074250379: 4 ESO time-lapses fetched to 026/07_Edit-Project/pool_v01/timelapse (uhd_bt_paranal_06 13.4 s clean; uhd_bt_paranal_07 use 2.0-8.8 s; uhd_yb_paranal_02 10.8 s clean; vltfromvistatimelapse 720p clean only 3.5-14.0 s) + 8 unannotated plates (eso0844a, heic0809a Omega Cen; eso1302a 47 Tuc; eso1323a NGC 6752; eso1250a/eso0905a/eso1031a Carina; heic1007a Mystic Mountain). eso1250a needs sips -Z 8000 before ffmpeg. eso1242a dropped (no large file). Sheets: rough_v01_pack/pool_v03_contact. Next: _assemble_nearest_star_rough_v02.py from v01 (pack rough_v02_pack, V01_CACHE /private/tmp/nearest026_rough_work_v01), POOL=pool_v03.json, ROWS per 25a30e5 note with at most 2 extra segments per time-lapse, fill from new plates; --plan clean, render detached in tmux, picture_qa + music_gate, post pack."
+        },
+        {
+          "at": "2026-10-09T04:49Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
