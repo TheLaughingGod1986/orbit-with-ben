@@ -2752,10 +2752,10 @@
       "stage": "picture",
       "after": "J0064",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T05:52Z",
+      "eta": "2026-10-09T09:52Z",
       "created_by": "claude",
       "created_at": "2026-10-08T19:55Z",
       "result": "",
@@ -2874,6 +2874,11 @@
           "at": "2026-10-09T05:42Z",
           "by": "cursor",
           "what": "released: v03 assembler committed 5308cbe (plan clean, 104 cuts). Render + picture_qa + music_gate running detached: tmux owb026-rough-v03, script ~/_desk/logs/owb026-rough-v03.sh, log ~/_desk/logs/owb026-rough-v03.log, done file ~/_desk/logs/owb026-rough-v03.done. Next run: if .done exists, read rough_v03_pack/summary_v03.json, picture_qa_v03.txt, music_gate_v03.txt; force-add the pack sheets/reports (no mp4) from a clean worktree and post the pack for Claude's sheet review. Code graphics need ~/.venvs/orbit-code-graphics/bin/python (system python3 has no matplotlib)."
+        },
+        {
+          "at": "2026-10-09T05:52Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
