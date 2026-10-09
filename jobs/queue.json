@@ -3598,10 +3598,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T18:00Z",
+      "eta": "2026-10-09T20:00Z",
       "created_by": "claude",
       "created_at": "2026-10-09T08:09Z",
       "result": "",
@@ -3720,6 +3720,11 @@
           "at": "2026-10-09T17:50Z",
           "by": "cursor",
           "what": "released: Omni + Veo running detached (839bab5). Omni rows 14/21: tmux j0077-omni, log ~/_desk/logs/j0077-omni.log, .done j0077-omni.done; row 14 ok (turn + shrug, on model; sheet committed), row 21 submitted. Veo Fast props rows 5 (8s) / 31 (4s) on Vertex us-central1 T2V: tmux j0077-veo, log j0077-veo.log, .done j0077-veo.done; report veo_gen_report_5_31_v01.json, ~0.90 GBP est. in ai_spend. Start frames: NASA ICESCAPE (PD, people cropped out), Poly Haven Qwantani sunset (CC0). Next run: check both .done, spot-check row 21 + props, commit sheets, then rough v01 from SHOT_LIST_v02 + gates."
+        },
+        {
+          "at": "2026-10-09T18:00Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
