@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-10-09T00:50:00+00:00",
+  "created_at": "2026-10-09T01:10:00+00:00",
   "project": "mars-robot",
   "audio_file": "mars-robot_score_bed_v01_full.mp3",
-  "status": "joined",
+  "status": "rejoined",
   "model_id": "music_v2",
   "force_instrumental": true,
   "prompt": "Instrumental cinematic space documentary underscore for Orbit with Ben, Mars robot film. Cold dusty red plains and a small machine that refuses to stop: lonely, patient, quietly brave, with a slow ache as the power fades. Soft low strings, muted felt piano, warm analog pads, sparse mechanical ticks kept very quiet, thin wind texture. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings. Vast quiet scale, room for British narration. Pace: 60-72 BPM, slow and steady under the narration, the low strings lifting only for the Opportunity farewell. No vocals, no drums, no EDM, no trailer hit.\n\nTake 2 (continuation, joined after take 1): Instrumental cinematic space documentary underscore for Orbit with Ben, Mars robot film. Cold dusty red plains and a small machine that refuses to stop: lonely, patient, quietly brave, with a slow ache as the power fades. Soft low strings, muted felt piano, warm analog pads, sparse mechanical ticks kept very quiet, thin wind texture. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings. Vast quiet scale, room for British narration. Pace: 60-72 BPM, slow and steady under the narration, the low strings lifting only for the Opportunity farewell. No vocals, no drums, no EDM, no trailer hit. Continuation of the same piece: same key, tempo and instrumentation. Pace: 56-66 BPM, the low strings darker as the power fades, then a slow warm lift for the Opportunity farewell, ending on a long held chord. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings.",
@@ -26,6 +26,33 @@
     }
   ],
   "join": {
+    "at_s_raw": 150.0,
+    "at_s_film": 159.4,
+    "crossfade_s_raw": 8,
+    "crossfade_s_film": 8.5,
+    "curve": "qsin (equal power)",
+    "take2_from_s": 7.0,
+    "take2_gain_db": 7.3,
+    "take2_fade_up": "3 s from -6 dB",
+    "take1_ride": "+4 dB over 139-149 s raw (2 s ramps): take 1 dips before its tail",
+    "tempo": 0.941,
+    "tempo_note": "whole joined bed slowed 6% (pitch kept) so it runs the 490.2 s cut once the quiet tail is gone",
+    "limiter": 0.95,
+    "result_seconds": 492.05,
+    "result_lufs": -16.5,
+    "result_true_peak_dbfs": -0.2,
+    "script": "_join_mars_bed_v01c.py",
+    "check": "mars-robot_score_bed_v01_full_join_check.json",
+    "quiet_runs": {
+      "around_join_2:10-3:20": "none below -33 LUFS short-term; longest below -28 is 4.3 s at 175 s",
+      "old_join_176s": "12.7 s below -33 from 173 s"
+    },
+    "decided_by": "Claude, PR #99 comment 6071929578"
+  },
+  "decided_by": "Claude, PR #99 comment 6071788192",
+  "by": "cursor",
+  "job": "J0068",
+  "previous_join": {
     "crossfade_s": 7,
     "curve": "tri",
     "at_s": "176-183 (end of take 1, after the Spirit-at-Troy passage)",
@@ -34,8 +61,5 @@
     "result_lufs": -17.0,
     "result_peak_dbfs": -0.7,
     "note": "take 1 ends on a quiet tail (about 160-183 s at -40 LUFS) before take 2 enters; no section repeated"
-  },
-  "decided_by": "Claude, PR #99 comment 6071788192",
-  "by": "cursor",
-  "job": "J0068"
+  }
 }

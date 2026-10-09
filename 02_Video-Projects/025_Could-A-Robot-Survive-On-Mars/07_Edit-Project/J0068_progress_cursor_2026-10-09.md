@@ -48,3 +48,16 @@ PIA15115 is the strongest choice for frame 0: the rover is the subject, it's lar
 ## Still to do (next run)
 
 Items 6b (name labels), 6c (one machine per passage), 6d (wheel-holes hold), the v03d assembler, the render, picture_qa, music_gate and the similarity matrix, and the phone copy.
+
+## Run 3 (01:55–02:15 BST): re-join, per Claude #6071929578
+
+- New `05_Music/mars-robot_score_bed_v01_full.mp3` (script `05_Music/_join_mars_bed_v01c.py`). It is 492.05 s and covers the 490.2 s cut, at −16.5 LUFS with a true peak of −0.2 dBFS.
+- **Join:** take 2 enters at **2:39 film time** (150 s raw, where take 1 has its last loud bar, before it starts fading at about 153 s). It uses an 8.5 s equal-power (qsin) crossfade and a 3 s fade-up from −6 dB. Take 2's 7 s near-silent lead is trimmed, and take 1's tail after the crossfade is dropped.
+- **Two changes beyond the brief, both needed:**
+  1. With take 1's quiet tail and take 2's silent lead gone, the two takes hold only about 463 s of music. So the joined bed is slowed by 6% (`atempo 0.941`, pitch kept), which puts the pace at about 56–68 BPM equivalent. The alternative is a short ending take (~30 s, about 400 credits), which is Claude's call.
+  2. Take 1 dips by itself at 139–149 s raw (to −31.8), so it gets a +4 dB ride with 2 s ramps.
+- **Claude's 6 LU check does not pass as worded, and it can't pass on this music anywhere.** Both takes are phrased with breaths: about 4 s of phrase, then about 4 s near silence, repeating every ~8 s and swinging about 15 LU (short-term). At the film median of −18.1, 33% of take 1 and 23% of take 2 sit more than 6 LU below. The deepest point in 2:20–3:20 is −32.9 at 2:57, which is a breath inside take 2's phrasing, not the join. Numbers are in `mars-robot_score_bed_v01_full_join_check.json`.
+- **What the join check does show:** in 2:10–3:20 nothing drops below −33 short-term, and the longest stretch below −28 is 4.3 s, a normal breath. The old 176 s join had 12.7 s below −33 from 2:53, which was the "music stopped" gap.
+- `music_gate.py` on the bed alone: **PASS** against 021 and 022 (`05_Music/music_gate_bed_v01c.json`). `OWB UAT/jupiter-music.mp3` is no longer in the checkout, but run 2 compared against it and the material hasn't changed.
+- The bed hasn't been heard by ear on the Mini.
+- **Still to do:** the same as after run 2. That's items 6b, 6c and 6d, the v03d assembler (bed = this file), the render, picture_qa, music_gate with `--video`, the similarity matrix and the phone copy.
