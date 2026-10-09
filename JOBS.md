@@ -11,7 +11,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
 | J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 | J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
-| J0065 | mini | claimed | cursor | 2026-10-09T12:01Z | 026 picture · 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) |  |
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
 
@@ -25,5 +24,5 @@ Recently finished:
 - J0070 done: Tracker: retention curve per long (where viewers leave) (retention curve per long in the tracker (14d42e0); fills on the Mini's next daily snapshot)
 - J0068 done: 025 Mars robot: Ben's notes, swap the 2:54 image + 025's own music bed (v03d + phone copy) (v03f delivered: OWB UAT/025_MarsRobot_full_rough_v03f.mp4 + 025_MarsRobot_v03f_PHONE.mp4 (iCloud synced). picture_qa, music_gate, fill, polish PASS; 490.2 s, -14.3 LUFS. Pack ed06ca2. Per Claude #6073193234 straight to Ben's box.)
 - J0067 done: 025 Mars robot: Ben's phone can't open v03c (iCloud -5009): check upload, add a fast phone copy (done)
+- J0065 done: 026 Nearest Star: picture, rough v01 (pool harvest + still_motion pushes + fill/polish/jitter gates) (done)
 - J0064 done: 026 Nearest Star: fresh transcript and timing on the Shorts' locked voice files (Scribe + align) before picture (Scribe v2 re-run on the 3 LOCK takes; words.json now times the locked untrimmed files (sha-checked). Mon16 24.48s, Wed18 21.60s, Fri20 20.64s; all 22-27s with 2s hold; mismatches number/spelling only. Summary: 10_Shorts/SCRIBE_LOCK_v02.json)
-- J0063 done: 025: rough v03c (two frames: 216 s annotation box, 398.5 s blotchy sky), then to Ben (v03c pack d102274: OWB UAT/025_MarsRobot_full_rough_v03c.mp4, 490.2 s, -14.3 LUFS, fill+polish PASS, clip_check 0 errors)
