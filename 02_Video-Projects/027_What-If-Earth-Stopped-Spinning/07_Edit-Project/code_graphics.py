@@ -13,6 +13,12 @@
 
 Each run writes out/<name>/%04d.png and out/<name>.mp4 (ffmpeg, yuv420p, crf 16). Media stays out of git.
 
+The globe is the real Earth (Claude, 9 Oct: no cartoon land blobs). It maps NASA's Blue Marble Next Generation
+(December 2004, topography + bathymetry; NASA Earth Observatory / Reto Stockli; public domain) onto the sphere:
+  curl -o blue_marble.jpg https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg
+Put it next to this file, or point BLUE_MARBLE at it. Without it the script stops rather than fall back to blobs.
+Credit line for the description: "Earth texture: NASA Earth Observatory (Blue Marble Next Generation)."
+
 Numbers (01_Script/SOURCES.md):
   speed    Ground speed = 465 m/s x cos(latitude): about 1,670 km/h at the equator, about 1,040 km/h at London (51.5 N),
            0 at the poles. Arrow length is proportional.
@@ -63,45 +69,69 @@ def frames_for(seconds, still, at=0.8):
     return n, ([int(n * at)] if still else range(n))
 
 
-def globe(ax, x, y, r, phase, rx=1.0, land=True):
-    """A side-on globe: sea disc, meridians that slide with phase (the spin), a few latitude lines."""
-    disc = Ellipse((x, y), 2 * r * rx, 2 * r, color=SEA, zorder=2)
-    ax.add_patch(disc)
-    if land:
-        rng = np.random.default_rng(3)
-        blobs = rng.uniform([-math.pi, -0.9], [math.pi, 0.9], (14, 2))
-        for lon, lat in blobs:
-            lo = (lon + phase + math.pi) % (2 * math.pi) - math.pi
-            if abs(lo) < math.pi / 2:
-                bx = x + r * rx * math.sin(lo) * math.cos(lat)
-                by = y + r * math.sin(lat)
-                w = 0.35 * r * math.cos(lo)
-                blob = Ellipse((bx, by), w, 0.28 * r, color=LAND, alpha=0.85, zorder=3)
-                ax.add_patch(blob)
-                blob.set_clip_path(disc)                     # no slivers past the limb
-    for k in range(12):
-        lo = (k * math.pi / 6 + phase + math.pi) % (2 * math.pi) - math.pi
-        if abs(lo) < math.pi / 2:
-            ys = np.linspace(-1, 1, 60)
-            xs = x + r * rx * math.sin(lo) * np.sqrt(1 - ys ** 2)
-            ax.plot(xs, y + r * ys, color=WHITE, lw=0.6, alpha=0.18, zorder=4)
-    for lat in (-60, -30, 0, 30, 60):
-        yy = y + r * math.sin(math.radians(lat))
-        hw = r * rx * math.cos(math.radians(lat))
-        ax.plot([x - hw, x + hw], [yy, yy], color=WHITE, lw=0.6, alpha=0.18, zorder=4)
-    ax.add_patch(Ellipse((x, y), 2 * r * rx, 2 * r, fill=False, ec=WHITE, lw=1, alpha=0.35, zorder=5))
+_TEX = None
+
+
+def texture():
+    """Blue Marble as a float array (H, W, 3), loaded once and halved for speed."""
+    global _TEX
+    if _TEX is None:
+        from PIL import Image
+        path = os.environ.get("BLUE_MARBLE") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "blue_marble.jpg")
+        if not os.path.exists(path):
+            sys.exit(f"missing Earth texture {path} (see the docstring for the NASA download)")
+        im = Image.open(path).convert("RGB")
+        im = im.resize((im.width // 2, im.height // 2), Image.LANCZOS)
+        _TEX = np.asarray(im, dtype=np.float32) / 255.0
+    return _TEX
+
+
+def earth_image(px, phase, rx=1.0, night=None):
+    """An orthographic view of the real Earth, px pixels tall, as RGBA. phase turns it east (radians).
+    night: a screen-space unit vector (dx, dy) pointing at the Sun; the far half is shaded."""
+    tex = texture()
+    th, tw = tex.shape[:2]
+    pw = max(2, int(round(px * rx)))
+    u = np.linspace(-1, 1, pw)[None, :]
+    v = np.linspace(1, -1, px)[:, None]
+    uu, vv = u / 1.0, np.broadcast_to(v, (px, pw))
+    uu = np.broadcast_to(uu, (px, pw))
+    rr = uu ** 2 + vv ** 2
+    inside = rr <= 1.0
+    z = np.sqrt(np.clip(1 - rr, 0, None))
+    lat = np.arcsin(np.clip(vv, -1, 1))
+    lon = np.arctan2(uu, z) - phase                       # features drift east (left to right) as phase grows
+    ty = ((0.5 - lat / math.pi) * (th - 1)).astype(np.int32)
+    tx = (((lon / (2 * math.pi) + 0.5) % 1.0) * (tw - 1)).astype(np.int32)
+    rgb = tex[ty, tx]
+    shade = 0.55 + 0.45 * z                                 # soft limb darkening
+    if night is not None:
+        dx, dy = night
+        lit = uu * dx + vv * dy + 0.0 * z
+        shade = shade * np.where(lit > 0, 1.0, 0.18) * (0.85 + 0.15 * np.clip(lit * 4 + 0.5, 0, 1))
+    rgb = rgb * shade[..., None]
+    a = np.clip((1 - rr) * px * 0.5, 0, 1) * inside       # an anti-aliased rim
+    return np.dstack([rgb, a])
+
+
+def globe(ax, x, y, r, phase, rx=1.0, land=True, night=None):
+    """The real Earth, side-on, turning with phase. Meridian and latitude guides are left out: the land shows the spin."""
+    px = int(round(2 * r * H / 9.0))                      # the canvas is 9 units tall
+    ax.imshow(earth_image(px, phase, rx, night), extent=(x - r * rx, x + r * rx, y - r, y + r), zorder=2,
+              interpolation="bilinear")
+    ax.add_patch(Ellipse((x, y), 2 * r * rx * 1.02, 2 * r * 1.02, fill=False, ec=AIR, lw=2.5, alpha=0.18, zorder=5))
 
 
 def speed_arrows(ax, x, y, r, scale, alpha=0.9, shift=0.0):
     for lat in (-75, -60, -45, -30, -15, 0, 15, 30, 45, 51.5, 60, 75):
         c = math.cos(math.radians(lat))
         yy = y + r * math.sin(math.radians(lat))
-        x0 = x + r * c + 0.15 + shift
+        x0 = x + shift                                    # from the central meridian, across the face, pointing east
         L = scale * c
         if L > 0.05:
             col = GOLD if lat == 51.5 else AIR
-            ax.add_patch(FancyArrow(x0, yy, L, 0, width=0.04, head_width=0.16, head_length=0.18,
-                                    length_includes_head=True, color=col, alpha=alpha, lw=0, zorder=6))
+            ax.add_patch(FancyArrow(x0, yy, L, 0, width=0.06, head_width=0.2, head_length=0.2,
+                                    length_includes_head=True, color=col, alpha=alpha, lw=0.8, ec="#05060a", zorder=6))
 
 
 def render_speed(out, seconds, still):
@@ -143,40 +173,42 @@ def render_air(out, seconds, still):
 
 
 def render_oceans(out, seconds, still):
-    """Start as a normal blue globe; the sea retreats to two polar caps and a band of land spreads round the middle."""
+    """Start as the real Earth; the sea drains to two polar caps and one band of land spreads round the middle."""
     n, frames = frames_for(seconds, still, at=0.95)
+    R = 3.4
     for i in frames:
         s = ease(i / max(1, n - 1) / 0.8)
         fig, ax = canvas()
-        globe(ax, 0, 0, 3.4, i / FPS * 0.05 * (1 - s))
-        band = 3.4 * (0.05 + 0.6 * s)
-        ax.add_patch(Ellipse((0, 0), 6.8, 6.8, color=LAND, alpha=0.0, zorder=5))
-        ys = np.linspace(-band, band, 80)
-        hw = np.sqrt(np.clip(3.4 ** 2 - ys ** 2, 0, None))
-        ax.fill_betweenx(ys, -hw, hw, color=LAND, alpha=0.9 * s, lw=0, zorder=6)
+        globe(ax, 0, 0, R, i / FPS * 0.05 * (1 - s))
+        band = R * (0.05 + 0.6 * s)
+        ys = np.linspace(-R, R, 240)
+        hw = np.sqrt(np.clip(R ** 2 - ys ** 2, 0, None))
+        cap = np.abs(ys) > band
+        ax.fill_betweenx(ys, -hw, hw, where=cap, color=SEA, alpha=0.75 * s, lw=0, zorder=6)       # the polar oceans
+        ax.fill_betweenx(ys, -hw, hw, where=~cap, color=LAND, alpha=min(1.0, 3 * s) * 0.8, lw=0, zorder=6)
         save(fig, out, i, still)
     finish(out, still)
 
 
 def render_dayyear(out, seconds, still):
-    """The Sun at centre; Earth goes once round. The lit half always faces the Sun, but with no spin a fixed marker
-    on the surface stays pointing the same way, so it sees half a year of day, then half a year of night."""
+    """The Sun at centre; Earth goes once round. With no spin, the gold marker on its surface keeps pointing the same
+    way, so it sits in daylight for half the year, then in night for the other half."""
     n, frames = frames_for(seconds, still, at=0.4)
-    R = 3.3
+    R, er = 3.0, 0.95
     for i in frames:
         th = 2 * math.pi * i / max(1, n)
         fig, ax = canvas()
         ax.add_patch(Circle((0, 0), R, fill=False, ec=DIM, lw=1, alpha=0.4))
         for k, a in ((2.2, 0.08), (1.5, 0.2)):
-            ax.add_patch(Circle((0, 0), 0.45 * k, color=GOLD, alpha=a, lw=0))
-        ax.add_patch(Circle((0, 0), 0.45, color=GOLD))
+            ax.add_patch(Circle((0, 0), 0.5 * k, color=GOLD, alpha=a, lw=0))
+        ax.add_patch(Circle((0, 0), 0.5, color=GOLD))
         ex, ey = R * math.cos(th), R * math.sin(th)
-        ax.add_patch(Circle((ex, ey), 0.55, color="#10131c", zorder=5))
-        sun_dir = math.degrees(math.atan2(-ey, -ex))
-        ax.add_patch(Wedge((ex, ey), 0.55, sun_dir - 90, sun_dir + 90, color=SEA, zorder=6))
-        mx, my = ex + 0.55, ey                                   # the marker never turns: it points the same way
-        lit = math.cos(math.radians(sun_dir)) > 0
-        ax.add_patch(Circle((mx, my), 0.09, color=GOLD if lit else DIM, zorder=7))
+        d = math.hypot(ex, ey)
+        globe(ax, ex, ey, er, 0.0, night=(-ex / d, -ey / d))   # phase fixed: no spin; the night side faces away
+        mx, my = ex + er, ey                                     # the marker never turns: it points the same way
+        lit = -ex > 0
+        ax.plot([ex + er * 0.82, mx + 0.18], [ey, my], color=GOLD if lit else DIM, lw=3, zorder=7)
+        ax.add_patch(Circle((mx + 0.22, my), 0.13, color=GOLD if lit else DIM, zorder=7))
         save(fig, out, i, still)
     finish(out, still)
 
