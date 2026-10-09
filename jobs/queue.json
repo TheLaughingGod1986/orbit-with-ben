@@ -3598,10 +3598,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-09T18:12Z",
+      "eta": "2026-10-09T20:12Z",
       "created_by": "claude",
       "created_at": "2026-10-09T08:09Z",
       "result": "",
@@ -3730,6 +3730,11 @@
           "at": "2026-10-09T18:01Z",
           "by": "cursor",
           "what": "released: VO re-cut to SHOT_LIST_v02 order (322b925): 02_Voiceover/_reorder_vo_v02order.py -> earth_spin_vo_v02order.wav (local, gitignored; rerun the script to rebuild) + words_v02order.json ({words:[text,start,end]}, spans map new<->v01). 442.86 s, last word 442.82, first answer 23.26 s, joins 0.6-0.65 s pauses, 41 agenda words out. Omni 14/21 + Veo 5/31 done (.done=0); sheets checked: row 21 on model (scale jump frame1->2), cabin pour usable ~0-5 s (hand/bottle flip after), phone clean; Veo sheets + gen reports committed. Next run: _assemble_earth_spin_rough_v01.py from 026 v04 assembler, VO=earth_spin_vo_v02order.wav, words=words_v02order.json, ROWS in v02 order (row times = v01 time mapped through spans), code graphics from code_out_v03/rowNN, no bed (BED waits for 30 Oct), WORK=/private/tmp/earth027_rough_work_v01; render in tmux. Disk 7.0 GB free. £0 this run."
+        },
+        {
+          "at": "2026-10-09T18:12Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
