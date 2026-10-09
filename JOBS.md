@@ -20,7 +20,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0085 | mini | open | – | – | 026 edit · 026 Nearest Star: Ben's fixes, two graphics that show what the VO says (v05) | 6077058676 |
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
-| J0088 | cloud | open | – | – | 027 shots · 027 opening: first answer before 0:30, from existing VO (Codex idea 5) | 6077981911 |
+| J0088 | cloud | claimed | claude | 2026-10-09T10:50Z | 027 shots · 027 opening: first answer before 0:30, from existing VO (Codex idea 5) | 6077981911 |
 
 Recently finished:
 
