@@ -1,10 +1,6 @@
-# Picture QA: FAIL
+# Picture QA: PASS
 
-/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/026_NearestStar_rough_v04.mp4 · 104 cuts · 1 fail · 28 for Claude to look at full size
-
-## Fix before anyone watches
-
-- **5:23** row 24 · PIA04495.jpg (Artist concept of Voyager): near-black: mean 21.6, p95 90.1
+/private/tmp/nearest026_rough_work_v04/026_NearestStar_rough_v04.mp4 · 104 cuts · 0 fail · 29 for Claude to look at full size
 
 ## Claude looks at these full size
 
@@ -25,6 +21,7 @@
 - **4:40** row 21 · bt_lasilla_crux.mp4 (Milky Way above mountain (time-lapse, UHD 10.3 s, pillarboxed)): low detail: luma std 12.81 < 18.0
 - **4:58** row 22 · PIA17049.jpg (Voyager in space artist concept): kind of picture: 'Voyager in space artist concept' (artist), look at it full size; sharpness: upscaled 2.33x, may look soft
 - **5:18** row 24 · journey.mp4 (Code graphic: journey times): low detail: luma std 16.95 < 18.0
+- **5:23** row 24 · PIA04495.jpg (Artist concept of Voyager): kind of picture: 'Artist concept of Voyager' (artist), look at it full size
 - **5:34** row 24 · PIA21739.jpg (Voyager 1's launch vehicle): sharpness: upscaled 2.33x, may look soft
 - **5:39** row 25 · PIA14111.jpg (Model of Voyager artist concept): kind of picture: 'Model of Voyager artist concept' (artist), look at it full size; sharpness: upscaled 2.22x, may look soft
 - **5:44** row 25 · PIA21746.jpg (Voyager 1 launch (2)): sharpness: upscaled 2.30x, may look soft; low detail: edge density 0.0053 < film p5 0.0059
@@ -54,6 +51,7 @@
 - **4:44** row 21 · starfield.mp4 (Code graphic: shrinking star field): code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)
 - **4:58** row 22 · PIA17049.jpg (Voyager in space artist concept): Voyager sharp and lit against black space; the dark is space (Claude, 9 Oct, rough v03 review)
 - **5:18** row 24 · journey.mp4 (Code graphic: journey times): code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)
+- **5:23** row 24 · PIA04495.jpg (Artist concept of Voyager): whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)
 - **5:58** row 26 · PIA21839.jpg (Voyager in deep space artist concept): Voyager lit against deep space; the dark is the picture (Claude, 9 Oct, rough v02 review)
 - **6:25** row 28 · eso1629d_video.mp4 (A journey to Proxima Centauri and its planet (video, mute)): Earth limb on black, label-free part only (first ~8 s); the constellation-label part is out (Claude, 9 Oct, rough v02 review)
 - **6:50** row 30 · GSFC_20160426_SDO_m12224_SolarFlare.mp4 (SDO view of the 17 April 2016 solar flare (video)): full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)

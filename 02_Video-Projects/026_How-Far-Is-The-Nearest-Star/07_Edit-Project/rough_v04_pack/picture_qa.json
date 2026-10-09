@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/026_NearestStar_rough_v04.mp4",
+  "verdict": "PASS",
+  "video": "/private/tmp/nearest026_rough_work_v04/026_NearestStar_rough_v04.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -9,22 +9,7 @@
     "max_reuse": 2,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 71,
-      "row": "24",
-      "source": "PIA04495.jpg",
-      "title": "Artist concept of Voyager",
-      "t": 323.48,
-      "at": "5:23",
-      "fail": [
-        "near-black: mean 21.6, p95 90.1"
-      ],
-      "warn": [
-        "kind of picture: 'Artist concept of Voyager' (artist), look at it full size"
-      ]
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 5,
@@ -309,6 +294,24 @@
         "passed": [
           "reuse: used 3 times (limit 2)",
           "near-black: mean 5.06, p95 3.0"
+        ]
+      }
+    },
+    {
+      "cut": 71,
+      "row": "24",
+      "source": "PIA04495.jpg",
+      "title": "Artist concept of Voyager",
+      "t": 323.48,
+      "at": "5:23",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist concept of Voyager' (artist), look at it full size"
+      ],
+      "reviewed_ok": {
+        "note": "whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)",
+        "passed": [
+          "near-black: mean 21.6, p95 90.1"
         ]
       }
     },
@@ -1315,12 +1318,16 @@
       "title": "Artist concept of Voyager",
       "t": 323.48,
       "at": "5:23",
-      "fail": [
-        "near-black: mean 21.6, p95 90.1"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: 'Artist concept of Voyager' (artist), look at it full size"
-      ]
+      ],
+      "reviewed_ok": {
+        "note": "whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)",
+        "passed": [
+          "near-black: mean 21.6, p95 90.1"
+        ]
+      }
     },
     {
       "cut": 72,
