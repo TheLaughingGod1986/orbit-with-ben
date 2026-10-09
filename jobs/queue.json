@@ -4039,13 +4039,13 @@
       "stage": "upload",
       "after": "J0066",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-09T22:39Z",
-      "eta": "2026-10-10T00:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T08:52Z",
-      "result": "",
+      "result": "Long uploaded: Js6EQJ8qDi8, private, publishAt Sun 8 Nov 18:00 London (upload log exit 0; sha256 cce6268c matches UPLOADS.json; Test & Compare A,C,B set by Cursor, #99 6088767763). End screen, pinned comment and the three Shorts moved to J0103.",
       "history": [
         {
           "at": "2026-10-09T08:52Z",
@@ -4076,8 +4076,14 @@
           "at": "2026-10-09T22:39Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T22:39Z",
+          "by": "chief",
+          "what": "done: Long uploaded: Js6EQJ8qDi8, private, publishAt Sun 8 Nov 18:00 London (upload log exit 0; sha256 cce6268c matches UPLOADS.json; Test & Compare A,C,B set by Cursor, #99 6088767763). End screen, pinned comment and the three Shorts moved to J0103."
         }
-      ]
+      ],
+      "done_ref": "6088767763"
     },
     {
       "id": "J0085",

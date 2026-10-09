@@ -9,7 +9,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
-| J0084 | mini | claimed | chief | 2026-10-10T00:39Z | 025 upload · 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) | 6077231242 |
 | J0085 | mini | open | – | – | 026 edit · 026 Nearest Star: Ben's fixes, two graphics + Orbit's two scenes back in (v05) | 6077058676 |
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
@@ -32,5 +31,5 @@ Recently finished:
 - J0091 done: 022 Sun: SET THUMBNAILS in Studio (API refused) + Studio finish before 18 Oct (022 long: thumb A + 3 Shorts covers (eb9c9b5); end screen Last Star REXYxuLOBoI + subscribe 8:18-8:38; card REXYxuLOBoI at 6:50; Test & Compare thumbnails A/B/C (title A only); Shorts related pill moved to 18 Oct go-live job)
 - J0090 cancelled: 027 bed take 2 for the re-ordered film (after the 30 Oct ElevenLabs reset; HOS voice first) ()
 - J0088 done: 027 opening: first answer before 0:30, from existing VO (Codex idea 5) (027 SHOT_LIST_v02: VO re-ordered (agenda cut, sudden-stop chapter first); the first answer is at ~24 s, was 112 s; no new VO; J0077 builds from v02)
+- J0084 done: 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) (Long uploaded: Js6EQJ8qDi8, private, publishAt Sun 8 Nov 18:00 London (upload log exit 0; sha256 cce6268c matches UPLOADS.json; Test & Compare A,C,B set by Cursor, #99 6088767763). End screen, pinned comment and the three Shorts moved to J0103.)
 - J0083 done: Ideas round: Codex's fifth idea + up to two HOS ideas (Ben asked) (Posted fifth OWB retention idea and two HOS ideas with source evidence, minimal tests, costs and caveats; no implementation or spend.)
-- J0082 done: Ideas round: Gemini's five ideas, a second opinion via agy (Ben asked) (done)
