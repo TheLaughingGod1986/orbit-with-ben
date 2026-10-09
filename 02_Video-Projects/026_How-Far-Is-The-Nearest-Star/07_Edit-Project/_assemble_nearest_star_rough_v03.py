@@ -56,7 +56,7 @@ def V(p,at=0.0,**k):
  """A video source from `at`, capped at what is left of the file."""
  p=p if isinstance(p,Path) else (CG3 if p in ('parallax','lighttimes') else CG)/f'{p}.mp4'
  L=_LEN.setdefault(p,probe(p))
- return (p,dict(video=1,at=at,max=min(MAX_HOLD,L-at-0.1),**k))
+ return (p,{**dict(video=1,at=at,max=min(MAX_HOLD,L-at-0.1)),**k})
 c=dict(quad='c')
 NS='nightsky/';PX='proxima/';AC='alphacen/';SUN='sun/';EM='earth_moon/';VG='voyager/';SL='sail/';DSN='dsn/';PB='proxima_b/'
 TL=H/'timelapse'
@@ -79,9 +79,9 @@ ROWS=[
  ('9',108.90,[V('journey',3),NS+'iss073e0982679.jpg',CAR3]),
  ('10',122.14,[NS+'GSFC_20171208_Archive_e000256.jpg',(NS+'iss073e0982261.jpg',c)]),
  ('11',128.10,[T(YB2),(NS+'iss073e0982679.jpg',c),(N6752,c)]),
- ('12',144.36,[V('parallax',3),NS+'eso0934a.jpg',T(VISTA,3.5),(NS+'GSFC_20171208_Archive_e000256.jpg',c),(PX+'GSFC_20171208_Archive_e000214.jpg',dict(box=(0.2,0.2,0.8,0.8)))]),
+ ('12',144.36,[V('parallax',3),NS+'eso0934a.jpg',T(VISTA,3.5),(NS+'GSFC_20171208_Archive_e000256.jpg',dict(box=(0.15,0.15,0.85,0.85))),(PX+'GSFC_20171208_Archive_e000214.jpg',dict(box=(0.12,0.12,0.88,0.88)))]),
  ('13',167.18,['portraits/Tycho_Brahe.jpg',(NS+'eso0932a.jpg',dict(pan=(0.2,0.4))),(CAR3,c)]),
- ('14',182.32,[V('parallax',6),(NS+'eso0934a.jpg',c),'portraits/Friedrich_Wilhelm_Bessel_1839_painting.jpg',(CAR1,c),T(BT1,2.0,vcrop=(640,360,2560,1440))]),
+ ('14',182.32,[V('parallax',6),(NS+'eso0934a.jpg',c),('portraits/Bessel_Herterich_1825.jpg',dict(box=(0.08,0.12,0.92,0.62))),(CAR1,c),T(BT1,2.0,vcrop=(640,360,2560,1440))]),
  ('15',205.78,['gaia/gaia_sky_in_colour.jpg',(OMC1,c),('gaia/gaia_sky_in_colour.jpg',c),T('eso1241a',0.5,max=5.0)]),
  ('16',224.94,[V(STARFIELD),MYST]),
  ('17',232.96,[V(STARFIELD,6),(TUC,c)]),
@@ -94,7 +94,7 @@ ROWS=[
  ('24',315.26,[V('journey',6),VG+'PIA04495.jpg',VG+'PIA21747.jpg',(VG+'PIA21739.jpg',c)]),
  ('25',336.98,[VG+'PIA14111.jpg',(VG+'PIA21746.jpg',c),T(BT7,2.0,vcrop=(1280,720,2560,1440)),(VG+'PIA17464.jpg',c)]),
  ('26',355.22,[(VG+'PIA21839.jpg',dict(hold_ok=1,max=8.0,pct=.04))]),
- ('27',362.16,[V('lighttimes'),V('lighttimes',4),(VG+'PIA21839.jpg',c)]),
+ ('27',362.16,[(CG3/'lighttimes.mp4',dict(video=1,at=0.0,max=17.8,hold_ok=1))]),
  ('28',378.98,[PB+'eso1629a.jpg',V(H/PB/'eso1629d_video.mp4'),(PB+'eso1629a.jpg',c),V(H/PB/'eso1629e_video.mp4',12)]),
  ('29',396.84,[PB+'eso1629e.jpg',V(H/PB/'eso1629e_video.mp4')]),
  ('30',403.98,[(PB+'eso1629e.jpg',c),V(SDO,8),V(SDO,16),SUN+'GSFC_20171208_Archive_e000759.jpg']),

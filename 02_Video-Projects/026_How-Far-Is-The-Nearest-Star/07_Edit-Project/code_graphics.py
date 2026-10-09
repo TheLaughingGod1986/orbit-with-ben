@@ -134,8 +134,10 @@ def render_journey(out, seconds, still):
 def render_lighttimes(out, seconds, still):
     """Three bars on a log10(seconds) scale from 0.1 s to 1e9 s: Moon (1.3 s), Sun (499 s), Proxima (1.34e8 s). Each
     grows in turn. A faint tick marks each power of ten. Text-free. The longest bar is centred and reaches 80% of the
-    frame width; each bar starts within 1 s of the last, so no small bar is held alone."""
+    frame width; each bar starts within 1 s of the last, so no small bar is held alone. Moon and Sun grow in 2 s;
+    Proxima keeps drawing slowly until 2 s before the end (row 27 runs it whole: the slow draw is the 4.2 years)."""
     n = int(seconds * FPS)
+    grow = [2.0, 2.0, max(2.0, seconds - 1.9 - 2.0)]
     vals = [1.3, 499.0, 1.34e8]
     cols = ["#d9d9d9", GOLD, RED]
     L0, L1 = -1.0, 9.0
@@ -151,7 +153,7 @@ def render_lighttimes(out, seconds, still):
             if x <= 6.5:
                 ax.plot([x, x], [-3.6, 3.6], color=DIM, lw=1, alpha=0.08)
         for k, (v, col) in enumerate(zip(vals, cols)):
-            g = ease((t - 0.3 - k * 0.8) / 2.0)
+            g = ease((t - 0.3 - k * 0.8) / grow[k])
             full = (math.log10(v) - L0) / (L1 - L0)
             y = 2.4 - k * 2.4
             ax.add_patch(Rectangle((X0, y - 1.05), (X1 - X0) * full * g, 2.1, color=col, lw=0))
@@ -210,7 +212,7 @@ def main():
     ap.add_argument("--still", action="store_true")
     a = ap.parse_args()
     jobs = {"parallax": (render_parallax, 12), "triple": (render_triple, 12), "journey": (render_journey, 14),
-            "lighttimes": (render_lighttimes, 10), "scale": (render_scale, 10)}
+            "lighttimes": (render_lighttimes, 18), "scale": (render_scale, 10)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
         fn(os.path.join(a.out, name), a.seconds or secs, a.still)
