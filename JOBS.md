@@ -9,7 +9,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
-| J0060 | mini | claimed | cursor | 2026-10-09T09:01Z | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 | J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
 | J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
