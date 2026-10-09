@@ -8,7 +8,7 @@ PACK=$ED/full_rough_v03d_pack
 CUT=/private/tmp/mars025_full_work_v03d/025_MarsRobot_full_rough_v03d.mp4
 cd "$ED" || exit 2
 python3 _assemble_mars_robot_full_v03d.py || exit 3
-python3 "$ROOT/scripts/picture_qa.py" "$CUT" --cuts "$PACK/cuts_v03d.json" --pool "$ED/nasa_pool_v01.json" --out-dir "$PACK" > "$PACK/picture_qa_v03d.txt" 2>&1
+python3 "$ROOT/scripts/picture_qa.py" "$CUT" --cuts "$PACK/cuts_v03d.json" --pool "$ED/nasa_pool_v01.json" --out-dir "$PACK" --reviewed-ok "$PACK/polish_reviewed_ok_v03d.json" > "$PACK/picture_qa_v03d.txt" 2>&1
 PQ=$?
 cd "$ROOT" || exit 2
 python3 scripts/music_gate.py "$EP" --bed "$EP/05_Music/mars-robot_score_bed_v01_full.mp3" --video "$CUT" \

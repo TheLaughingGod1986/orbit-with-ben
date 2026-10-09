@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """025 Could a Robot Survive on Mars? full rough v03d (J0068: Ben's notes on v03c: 2:54 PIA12337 -> PIA12102, 025's own score bed
-(05_Music/mars-robot_score_bed_v01_full.mp3); Codex picture ideas accepted by Claude: opening PIA17956 (Opportunity's shadow), machine
+(05_Music/mars-robot_score_bed_v01_full.mp3); Codex picture ideas accepted by Claude: opening PIA15115 (colour Opportunity self-portrait, Claude #6072284733; PIA17956 moves to row 21), machine
 name labels, cleaning shown dusty -> clean at "swept its panels clean", puncture photo held through the wheel-holes sentence, Orbit after it).
 v03c (J0063: Claude's v03b sheet pass: row 16 PIA12490 cropped between its green annotation
 boxes, row 27 PIA25739 right half -> PIA18093 left side (clear sky over the rim, its second use, new framing), PIA19400 at 201 s
@@ -63,10 +63,10 @@ def v(at,**k):return dict(video=1,at=at,**k)
 c=dict(quad='c')
 # (row, VO in from SHOT_LIST_v02, [sources]); a source is a pool path or (path, opts). One cut per source.
 ROWS=[
- ('1',0.12,['opp_deck/PIA17956.jpg']),
+ ('1',0.12,['opp_deck/PIA15115.jpg']),
  ('2',6.08,['opp_deck/PIA07372.jpg']),
  ('3',10.48,['gale_desert/PIA22210.jpg','gale_desert/PIA21268.jpg']),
- ('4',19.08,['frost/PIA11132.jpg','opp_deck/PIA15115.jpg']),
+ ('4',19.08,['frost/PIA11132.jpg',('opp_deck/PIA15115.jpg',c)]),
  ('5',26.28,[('gale_desert/PIA20284.jpg',dict(box=(0.0,0.05,0.35,0.95))),'dust/PIA17759.jpg','open_pan/PIA19109.jpg','open_pan/PIA18098.jpg']),
  ('6',41.26,['gale_desert/PIA20283.jpg','gale_desert/PIA20284.jpg']),
  ('7',51.08,['viking/PIA00382.jpg','viking/PIA10738.jpg','gale_desert/PIA25413.jpg']),
@@ -83,7 +83,7 @@ ROWS=[
  ('18',231.68,['open_pan/PIA18093.jpg','open_pan/PIA16122.jpg']),
  ('19',239.06,['dust/PIA10128.jpg','dust/PIA11799.jpg','dust/PIA20329.jpg']),
  ('20',254.80,['dust/PIA07458.jpg',('dust/PIA17759.jpg',c),('dust/PIA18079.jpg',dict(box=(0.15,0.15,0.85,0.78),near=261.4)),('dust/PIA18079.jpg',dict(quad='tl')),'dust/PIA06739.jpg']),
- ('21',275.08,[('power/PIA22330.jpg',dict(box=(0.505,0.0,1.0,1.0))),('opp_deck/PIA15115.jpg',c),('storm2018/PIA22520.jpg',dict(box=(0.505,0.12,1.0,1.0))),'dsn/PIA26716.jpg',('storm2018/PIA22520.jpg',dict(box=(0.0,0.12,0.495,1.0)))]),
+ ('21',275.08,[('power/PIA22330.jpg',dict(box=(0.505,0.0,1.0,1.0))),'opp_deck/PIA17956.jpg',('storm2018/PIA22520.jpg',dict(box=(0.505,0.12,1.0,1.0))),'dsn/PIA26716.jpg',('storm2018/PIA22520.jpg',dict(box=(0.0,0.12,0.495,1.0)))]),
  ('22',299.32,[('opp_deck/PIA07372.jpg',c),'open_pan/PIA22928.jpg']),
  ('23',308.44,['insight/PIA23203.jpg','insight/PIA25286.jpg','insight/PIA23177.jpg','insight/PIA22871.jpg','insight/PIA25287.jpg']),
  ('24',331.50,['power/PIA23305.jpg','power/PIA23306.jpg','power/PIA22486.jpg',('power/PIA22486.jpg',c)]),
