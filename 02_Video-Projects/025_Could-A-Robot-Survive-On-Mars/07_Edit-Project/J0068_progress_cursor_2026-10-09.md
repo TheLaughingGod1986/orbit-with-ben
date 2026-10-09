@@ -61,3 +61,16 @@ Items 6b (name labels), 6c (one machine per passage), 6d (wheel-holes hold), the
 - `music_gate.py` on the bed alone: **PASS** against 021 and 022 (`05_Music/music_gate_bed_v01c.json`). `OWB UAT/jupiter-music.mp3` is no longer in the checkout, but run 2 compared against it and the material hasn't changed.
 - The bed hasn't been heard by ear on the Mini.
 - **Still to do:** the same as after run 2. That's items 6b, 6c and 6d, the v03d assembler (bed = this file), the render, picture_qa, music_gate with `--video`, the similarity matrix and the phone copy.
+
+## Run 4 (02:07 BST): v03d assembler and render, per Claude #6072087799
+
+- Claude approved the 6% slowdown and the +4 dB ride; the bed is `05_Music/mars-robot_score_bed_v01_full.mp3` unchanged. It goes under the whole cut at v03c's level: v03c's bed was −16.9 LUFS × 0.14, this one is −16.5, so × 0.134; same −14 LUFS two-pass mix.
+- `_assemble_mars_robot_full_v03d.py` (from v03c, `--plan` clean: no problems, every still ≤2 uses, upscale ≤2.35):
+  - **Item 1:** row 14, 170.73–175.97 s is now PIA12102 (upscale 1.60). PIA12337 is gone from the long.
+  - **6a:** row 1 (0–5.67 s) is **PIA17956**, "Shadow Portrait of NASA Rover Opportunity on Martian Slope" (caption names Opportunity; rear Hazcam, 20 Mar 2014). It's harvested into `nasa_pool_v01/opp_deck/` and added to `nasa_pool_v01.json` (credit NASA/JPL-Caltech). It's 1024×1024 **greyscale**, upscale 2.01 (picture_qa will WARN over 2×). Claude: look at `frame0_sheet` and decide if a black-and-white Hazcam opening is right. The fallback is PIA15115 (colour, caption names Opportunity).
+  - **6b:** name labels, Arial Bold 46 px, white, blurred shadow, no box, lower left at (92, 954), 2.5 s each. Opportunity at 0.6 s (on screen from frame 0; the label waits so frame 0 is picture only). The rest at the first spoken name: Curiosity 74.18, Spirit 163.5, Phoenix 203.48, InSight 315.36, Ingenuity 393.92. None overlaps a chapter card.
+  - **6e:** row 20 is now PIA07458 → **PIA17759 dusty (258.87–261.43)** → **PIA18079 clean from 261.43** (the pause before "swept its panels clean") in two framings to 270.30 → PIA06739. To fill the 13 s after the switch at ≤6 s a hold, PIA18079's second framing moved from row 21 into row 20, and row 21 at 279.30 ("The sky over Opportunity grew so dark…") is now PIA15115 (dusty Opportunity, its second use, centre crop).
+  - **6d:** row 25 is reordered, timings only, no new clip: PIA15693 → PIA26016 → **PIA17751 (the holed wheel) 359.93–365.33**, through "holes … broken glass." → Orbit's wheel reaction 365.33–369.03 → PIA16112.
+  - **6c (one machine per passage) is not done.** It needs a row-by-row read of the per-row sheet against the narration. Next run, or Claude off the sheet.
+- **Render:** tmux `j0068-v03d-render`, log `~/_desk/logs/j0068-v03d-render.log`, `.done` file `~/_desk/logs/j0068-v03d-render.done` (exit 0 = render + picture_qa + music_gate all pass; 3 = render failed; 4 = a gate failed, see `full_rough_v03d_pack/gates_exit_v03d.txt`). Runner: `_run_v03d.sh`. Output: `OWB UAT/025_MarsRobot_full_rough_v03d.mp4`.
+- **Next run:** read the `.done` file; look over the pack (frame0_sheet, per_row_sheet_v03d, picture_qa_review.jpg); run the similarity matrix (025 bed vs 021, 022 and jupiter-music if iCloud gives it; 013 is on the NAS); make the phone copy the J0067 way; post on #99.
