@@ -11,7 +11,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0059 | mini | open (after J0058) | – | – | 023 edit · 023 Venus: Ben's fixes, wobbly pictures + unfinished/unpolished frames (v04 -> v05) |  |
 | J0060 | mini | open | – | – | 024 edit · 024 Light speed: Ben's fix, check the audio is 024's own (v03) |  |
 | J0061 | mini | open | – | – | 022 upload · 022 Sun: upload privately, scheduled (Claude's final OK 8 Oct) |  |
-| J0066 | mini | claimed | cursor | 2026-10-09T10:18Z | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
+| J0066 | mini | open | – | – | 025 thumbs · 025 Mars robot: thumbnails + upload package (while Ben watches v03c) |  |
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
 | J0076 | mini | open | – | – | 026 thumbs · 026 Nearest Star: thumbnails + upload package (while Ben watches v04) | 6076805635 |
 | J0077 | mini | open | – | – | 027 picture · 027 Earth Stopped Spinning: picture, rough v01 (026's lessons from the start) | 6076805635 |
