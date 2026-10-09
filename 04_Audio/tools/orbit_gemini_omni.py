@@ -199,7 +199,7 @@ def generate_omni_clip(
         "seconds": round(time.time() - t0, 1),
         "bytes": size,
         "model": model,
-        "engine": "gemini-api-omni",
+        "engine": "vertex_omni" if getattr(getattr(client, "_api_client", None), "vertexai", False) else "gemini-api-omni",
         "orbit_ref": str(ref),
         "interaction_id": getattr(interaction, "id", None),
     }
