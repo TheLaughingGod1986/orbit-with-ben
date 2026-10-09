@@ -2589,10 +2589,10 @@
       "stage": "edit",
       "after": "J0058",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-09T11:03Z",
-      "eta": "2026-10-09T13:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-08T18:03Z",
       "result": "",
@@ -2626,6 +2626,11 @@
           "at": "2026-10-09T11:03Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-09T11:04Z",
+          "by": "cursor",
+          "what": "released: v05 pack committed dc3afa1 and posted on #99. Picture QA 2/95 fail, both row 56 drift (encoder noise on a dark plate; segments pass on their own). Music gate PASS. Waiting on Claude's row 56 ruling: pass on review, hold still, or lower CRF, then re-render v05b reusing the other segments."
         }
       ]
     },
