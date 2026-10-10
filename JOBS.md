@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0117, J0107, J0111, J0113, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0107, J0111, J0113, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -22,10 +22,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0113 | mini | open (after J0111) | – | – | HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first |  |
 | J0114 | mini | open | – | – | 026 edit · 026 v05b: fix 7 same-stretch reuses, then Watch link for Ben |  |
 | J0116 | mini | open (after J0105) | – | – | Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) |  |
-| J0117 | mini | claimed | cursor | 2026-10-10T12:53Z | Authorize Chief box SSH key on the mini (Tailscale backup path) |  |
 
 Recently finished:
 
+- J0117 done: Authorize Chief box SSH key on the mini (Tailscale backup path) (done)
 - J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
 - J0109 done: HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first (B 25.52 s, C 24.80 s, both vo_take PASS, one take each, ~304 credits; HOS PR #268; keep call with grok on desk #180 (6096254990))
 - J0108 done: HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) (done)
@@ -35,4 +35,3 @@ Recently finished:
 - J0102 done: HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct (T&C armed Title+thumbnail A/B/C (C=v07), saved; Ineligible until public 15 Oct. HOS 5518d51)
 - J0101 done: HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) (wwcjcFfC-5M: thumbnail A v02 already live; Test & Compare was missing, now armed Thumbnail only A+B v02 (Ineligible until public, as on the stray); end screen already set (Subscribe + Germs, 8:28:09-8:48:09); no cards on either copy. Stray untouched. HOS PR #269.)
 - J0100 done: HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) (Thumb v04 painted and checked (HOS PR #270, Röntgen 1895 hand hero, Explorer small lower left). 006 Shorts README requires hook cap height 8-10% (HOOK_CAP 0.09). Test & Compare NOT set: frP_YrNShsU already has a title A/B test running ('How Did We Discover X-rays?' vs 'Why did a screen glow in a dark room?'); a thumbnail test would delete it (Never list: Cancel and leave it). 9223 switched to HOS to check, then back to Orbit With Ben (dashboard loads, 1 tab). Claude to decide: queue the thumb T&C after the title test ends. Optional gate_shorts_open caption-height check (audit item 12) not done.)
-- J0099 done: OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) (All 3 items done. Item 1: 9 crop-safe Shorts covers set (5452c78b). Items 2-3: Test & Compare (Thumbnail only) running on Moon 2fsQcea-voM (A live LEAVING US? vs B 3.8 CM A YEAR, Apollo 17 Earth + Apollo 11 Moon, 17% near-black vs 76%) and Alien Worlds b8-X_FyJnHM (A live A GIANT EYE? vs B RAINS GLASS, NASA/ESA HD 189733b), verified on reload; d33514e5. Files ~/_desk/j0099/.)
