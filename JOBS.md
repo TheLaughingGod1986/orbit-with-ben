@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0105, J0106, J0109, J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0115.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0115, J0105, J0106, J0109, J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -31,6 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0113 | mini | open (after J0111) | – | – | HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first |  |
 | J0114 | mini | open | – | – | 026 edit · 026 v05b: fix 7 same-stretch reuses, then Watch link for Ben |  |
 | J0115 | mini | open | – | – | Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor |  |
+| J0116 | mini | open (after J0105) | – | – | Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) |  |
 
 Recently finished:
 
