@@ -351,7 +351,7 @@ footer a{color:var(--ink-2)}
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
   <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
-  <details class="more fold" id="foldJobs"><summary>Mac mini job line</summary>
+  <details class="more fold" id="foldJobs" open><summary>Order of work (every queued job, in the order it runs)</summary>
   <section id="jobsBox" hidden>
     <div class="why" style="margin:6px 0"><span id="chief" class="qsub" style="margin:0"></span></div>
     <div class="box"><div id="jobs"></div></div>
@@ -635,6 +635,8 @@ function statusOf(b, rows){
   if(w.kind==="after") return {cls:"queue", short:`After ${esc(w.after)} · about ${clock(w.at)}`, title:`Waiting for ${esc(w.after)} to finish`,
     lines:[`Next: <b>${who}</b>, ${what}.`, `It can't start until ${esc(w.after)} is done; then it happens about <b>${clock(w.at)}</b> (${rel(w.at)}).`]};
   if(x.who==="Ben") return {cls:"you", short:`Waiting for you · ${w.text}`, title:"Waiting for you", lines:[`${what}.`, `When: ${w.text}.`]};
+  if(x.who==="Ready for you"){ const t = /^about /.test(w.text) ? w.text : "about "+w.text;
+    return {cls:"date", short:`Ready for you ${t}`, title:`Ready for you ${t}`, lines:[`Next for you: ${what}.`, "Nothing to watch yet; it reaches your For-you box with a Watch link when it's ready."]}; }
   return {cls:"date", short:`${who}: ${what} · ${w.text}`, title:`Booked: ${who}, ${what}`, lines:[`When: <b>${w.text}</b>.`, ...(b.mood==="waiting"?["Nobody is working on it until then; the reason is below."]:[])]};
 }
 
@@ -667,7 +669,7 @@ function renderNow(){
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h"><span class="dot"></span>${head}</div>`
     + (next.length ? `<ol>${next.map(j=>`<li>${jobLabel(j)} · starts about ${clock(P[j.id].start)}</li>`).join("")}</ol>` : "")
-    + `<div class="why">One job at a time, film jobs first (focus film ahead of the rest)${lastAct}.</div>`
+    + `<div class="why">One job at a time, in the queue's own order: urgent jobs in the order named, then the focus film, then other films${lastAct}.</div>`
     + (()=>{ const at = ts(fromDb.owbAt), age = Date.now()-at; if(isNaN(at)) return "";
         return `<div class="why${age>40*MINUTE?" late":""}">As of ${clock(at)}${age>40*MINUTE?` (${ago(at)}, so the Mac mini may have moved on since)`:""}. The board refreshes every hour and whenever the Mac mini posts.</div>`; })();
 }
@@ -713,9 +715,9 @@ function renderTracker(films){
       if(ck.verdict==="ok") b = Object.assign({}, b, {mood:"watched", you:"", youShort:"", youWhen:"",
         steps:(b.steps||[]).map(x=>x.who==="Ben" ? Object.assign({}, x, {done:true, doneText:`you watched it · ${when}`}) : x)});
       else if(!ck.handled) b = Object.assign({}, b, {mood:"fixing", you:"", youShort:"", youWhen:"", _fixes:fx,
-        steps:[{who:"Claude", what:`queue your ${fx.length} fix${fx.length===1?"":"es"}`, whenText:`by ${nextRun()}`}]
-          .concat((b.steps||[]).filter(x=>x.who!=="Ben")), line:`You asked for ${fx.length} fix${fx.length===1?"":"es"} (${when}). Claude queues them, then it comes back to you to watch again.`});
-      if(ck.verdict==="ok") b.line = `You watched it (${when}) and said it looks good. Next: Claude's final OK once the upload checks pass, then the upload. Nothing more for you.`;
+        steps:[{who:"Chief", what:`queue your ${fx.length} fix${fx.length===1?"":"es"}`, whenText:`by ${nextRun()}`}]
+          .concat((b.steps||[]).filter(x=>x.who!=="Ben")), line:`You asked for ${fx.length} fix${fx.length===1?"":"es"} (${when}). The Chief queues them, then it comes back to you to watch again.`});
+      if(ck.verdict==="ok") b.line = `You watched it (${when}) and said it looks good. Next: the Chief's final OK once the upload checks pass, then the upload. Nothing more for you.`;
     }
     const steps = (b.steps||[]).slice();
     // Any queued job for this film that the note doesn't mention yet still shows, with its live time.
@@ -735,8 +737,11 @@ function renderTracker(films){
     const isOpen = f.key in openState ? openState[f.key] : false;
     const line = live ? `Live since ${fd(pd(f.air))} 18:00.` : b.line || (b.auto ? b.done : "");
     const st = statusOf(b, rows);
+    const fj = f._ch==="OWB" ? (fromDb.jobs||[]).filter(j=>j.film===f.id).map(j=>({j,p:P[j.id]||{}})).sort((a,b)=>(a.p.state==="now"?-1:a.p.pos||99)-(b.p.state==="now"?-1:b.p.pos||99))[0] : null;
+    const ordChip = !fj ? "" : fj.p.state==="now" ? '<span class="pill you">Working on it</span>' : fj.p.pos===1 ? '<span class="pill you">Up next</span>'
+      : fj.p.pos ? `<span class="pill">#${fj.p.pos} in line</span>` : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
     lanes[f._ch][live ? "live" : COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
-      <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span class="pill ${cls}">${word}</span></div>
+      <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span>${ordChip} <span class="pill ${cls}">${word}</span></span></div>
       <div class="kt">${esc(f.title)}</div>
       <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
@@ -749,7 +754,7 @@ function renderTracker(films){
       ${checklist(f, rows, b.mood==="ready")}
       ${youSoon?"":`<div class="ky ${b.you?"yes":""}">For you: ${b.you?esc(b.you):"nothing"}</div>`}
       ${b.timing?`<div class="why" style="margin-top:6px;font-size:13px">${md(b.timing)}</div>`:""}
-      <div class="ft"><span>${b.auto?"From the stage data (no note from Claude yet)":`Updated ${esc(fw(b.updated))}`}${stale?` · <b class="soon">over a day old</b>`:""}</span>
+      <div class="ft"><span>${b.auto?"From the stage data (no film note yet)":`Updated ${esc(fw(b.updated))}`}${stale?` · <b class="soon">over a day old</b>`:""}</span>
       <button class="btn" data-show="${esc(f.key)}">Show its stages</button></div></div></details>`);
   }
   const defs = [["todo","To do","var(--todo)"],["doing","In progress","var(--doing)"],["sched","Scheduled","var(--accent)"],["live","Live","var(--done)"]];
@@ -894,11 +899,11 @@ function renderJobs(){
   $("jobs").innerHTML = rows.length ? `<ul class="q">` + rows.map(j=>{
     const p = P[j.id]||{}, L = j.last||{};
     const paused = j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude";
-    const when = j.status==="blocked" ? "—" : p.state==="now" ? "now" : paused ? "now" : p.start ? clock(p.start) : "later";
+    const when = j.status==="blocked" ? "—" : p.state==="now" ? "now" : paused ? "now" : p.pos ? `${(LANE[j.line]||"")==="Chief"?"Chief ":""}#${p.pos}` : p.start ? clock(p.start) : "later";
     const chip = j.status==="blocked" ? '<span class="state block">Blocked</span>' : j.needs==="ben" ? '<span class="state wait">Needs you</span>'
       : p.state==="now" ? '<span class="state on">Underway</span>' : paused ? '<span class="state on">Part done</span>' : '<span class="state q">Queued</span>';
     const sub = j.status==="blocked" ? (j.result ? `Blocked by: ${esc(String(j.result).slice(0,120))}` : "")
-      : p.done ? `${p.state==="now"||paused?"done":"about "+(j.estMin||25)+" min · done"} about ${clock(p.done)}` : j.after ? `after ${esc(j.after)}` : "";
+      : p.done ? `${p.state==="now"||paused?"done":"starts about "+clock(p.start)+" · about "+(j.estMin||25)+" min · done"} about ${clock(p.done)}` : (j.waitsFor||j.after) ? `waits for ${esc(j.waitsFor||j.after)}` : "";
     const film = j.film ? `<span class="ch OWB">OWB</span><b>${esc(j.film)}</b> ` : "";
     return `<li><span class="t">${when}</span><span>${film}${esc(shortTitle(j.title))}</span>${chip}${sub?`<span class="s">${sub}</span>`:""}</li>`;
   }).join("") + `</ul>` : '<div class="empty">Nothing waiting.</div>';
@@ -1012,24 +1017,31 @@ function clock(ms){
 }
 function rel(ms){ const m=Math.round((ms-Date.now())/MINUTE); if(m<=2) return "any minute"; if(m<60) return `in ${m} min`; const h=m/60; return h<24?`in about ${h<1.5?1:Math.round(h)} h`:`in ${Math.round(h/24)} d`; }
 function ago(ms){ const m=Math.round((Date.now()-ms)/MINUTE); return m<1?"just now":m<60?`${m} min ago`:m<1440?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} d ago`; }
-const LANE = {mini:"Mac mini · Cursor", gemini:"Gemini check", cloud:"Claude", ben:"You"};
+const LANE = {mini:"Mac mini · Cursor", gemini:"Gemini check", cloud:"Claude", chief:"Chief", ben:"You"};
 function nextRun(){ const d=new Date(); if(d.getMinutes()>=50) d.setHours(d.getHours()+1); d.setMinutes(50,0,0); return d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}); }
 function plan(){
   const jobs = fromDb.jobs || [], now = Date.now(), out = {};
   const byId = Object.fromEntries(jobs.map(j=>[j.id,j]));
-  for(const lane of ["mini","gemini","cloud"]){
+  const RO = fromDb.runOrder || null, laneOf = j => RO ? (j.line || j.needs) : j.needs;
+  for(const lane of RO ? Object.keys(RO) : ["mini","gemini","cloud"]){
     let t = now, pos = 0;
-    for(const j of jobs.filter(j=>j.needs===lane && j.status==="claimed")){
+    for(const j of jobs.filter(j=>laneOf(j)===lane && j.status==="claimed")){
       const st = ts(j.claimedAt) || now, est=(j.estMin||25)*MINUTE;
       const done = Math.max(st+est, now+5*MINUTE);
       out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
     }
-    const focus = fromDb.focus || [], rank = j => [j.urgent?0:1, focus.includes(j.film)?0:1, j.film?0:1, (j.eta_min||120)<=60?0:1, j.id];
-    const open = jobs.filter(j=>j.needs===lane && j.status==="open").sort((a,b)=>{ const x=rank(a), y=rank(b); return x[0]-y[0] || x[1]-y[1] || x[2]-y[2] || x[3]-y[3] || x[4].localeCompare(y[4]); });
-    const wake = lane==="mini" ? 5*MINUTE : lane==="cloud" ? 30*MINUTE : 15*MINUTE;
+    // Same order as scripts/jobs.py `next` (Ben, 10 Oct): the publisher writes it as owb.runOrder; urgent ranks are numbers.
+    const focus = fromDb.focus || [], ur = j => typeof j.urgent==="number" ? j.urgent : 0;
+    const rank = j => [j.for?0:1, j.urgent?0:1, j.urgent?ur(j):0, focus.includes(j.film)?0:1, j.film?0:1, (j.eta_min||120)<=60?0:1];
+    const idx = RO && RO[lane] ? Object.fromEntries(RO[lane].map((id,i)=>[id,i])) : null;
+    const open = jobs.filter(j=>laneOf(j)===lane && j.status==="open").sort((a,b)=>{
+      if(idx) return (idx[a.id]??9e9)-(idx[b.id]??9e9) || a.id.localeCompare(b.id);
+      const x=rank(a), y=rank(b); for(let i=0;i<x.length;i++) if(x[i]!==y[i]) return x[i]-y[i]; return a.id.localeCompare(b.id); });
+    const wake = lane==="mini" ? 5*MINUTE : lane==="cloud"||lane==="chief" ? 30*MINUTE : 15*MINUTE;
     for(const j of open){
       const dep = j.after && byId[j.after] ? out[j.after] : null;
       if(j.after && byId[j.after] && !dep){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
+      if(idx && !(j.id in idx)){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
       const start = Math.max(t, now + wake, dep ? dep.done + wake : 0);
       const done = start + (j.estMin||25)*MINUTE;
       out[j.id] = {state: dep ? "after" : "line", start, done, pos: ++pos}; t = done;
@@ -1265,7 +1277,7 @@ async function startDb(){
   db.doc("board/owb").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || !Array.isArray(d.films)) return;
-    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || [];
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null;
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
   }, ()=>{});
   dbApi = db;

@@ -74,3 +74,30 @@ class Briefs(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OrderAndHandoffs(unittest.TestCase):
+    def test_run_order_matches_jobs_py(self):
+        J = lambda i, **k: dict({"id": i, "needs": "mini", "status": "open", "film": "", "after": "", "eta_min": 120}, **k)
+        jobs = [J("J1"), J("J2", urgent=2), J("J3", urgent=1, after="J9"), J("J4", status="claimed"), J("J5", film="026"),
+                J("J9", status="blocked"), J("J6", needs="any", **{"for": "chief"})]
+        r = ks.run_order(jobs, ["026"])
+        self.assertEqual(r["lines"]["mini"], ["J4", "J2", "J5", "J1"])
+        self.assertEqual(r["pos"]["J4"]["pos"], 0)
+        self.assertEqual(r["pos"]["J2"]["pos"], 1)
+        self.assertIsNone(r["pos"]["J3"]["pos"])
+        self.assertEqual(r["pos"]["J3"]["waitsFor"], "J9")
+        self.assertEqual(r["lines"]["chief"], ["J6"])
+
+    def test_reviews_say_chief_and_future_handoffs_say_ready(self):
+        b = {"OWB:024": {"steps": [{"who": "Claude", "what": "final OK", "done": True},
+                                   {"who": "Claude", "what": "listen to the music and check v04"},
+                                   {"who": "Claude", "what": "redraw the diagram"},
+                                   {"who": "Ben", "what": "watch v05"}], "you": "",
+                         "limit": "If not, Claude's final OK goes ahead."}}
+        out = ks.ben_handoffs(ks.chief_reviews(b), {"OWB:024": {"url": "https://x"}})["OWB:024"]
+        self.assertEqual([s["who"] for s in out["steps"]], ["Claude", "Chief", "Claude", "Ready for you"])
+        self.assertIn("the Chief's final OK", out["limit"])
+        b["OWB:024"]["you"] = "Watch v05"
+        out = ks.ben_handoffs(b, {"OWB:024": {"url": "https://x"}})["OWB:024"]
+        self.assertEqual(out["steps"][-1]["who"], "Ben")

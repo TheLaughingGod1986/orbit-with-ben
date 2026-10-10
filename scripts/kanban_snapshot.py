@@ -237,6 +237,115 @@ def load_briefs() -> dict:
     return films
 
 
+# ---- Order of work (Ben, 10 Oct: "the order of work seems to be gone") ----
+# The board shows each live job's place in line, the same order scripts/jobs.py's `next` uses: what a worker holds
+# first, then jobs.order() (addressed to the agent, urgent in the order named, focus film, other films, quick jobs, id),
+# skipping a job until the job it waits for (`after`) is done. Two lines: the Mac mini's workers (Cursor/Codex take
+# mini, gemini and any) and the Chief (jobs addressed `for: chief`, and cloud). A job held up by a blocked job or one in
+# the other line has no number; it says what it waits for.
+WORKER_NEEDS = {"mini", "gemini", "any"}
+
+
+def _job_order():
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import jobs as _jobs  # the queue's own sort key, so the board can't drift from it
+        return _jobs.order
+    except Exception:  # noqa: BLE001  (fallback copy of jobs.order, 9 Oct)
+        def order(job, focus=()):
+            u = job.get("urgent")
+            rank = u if isinstance(u, int) and not isinstance(u, bool) else 0
+            return (0 if job.get("for") else 1, 0 if u else 1, rank if u else 0,
+                    0 if job.get("film") and job["film"] in focus else 1, 0 if job.get("film") else 1,
+                    0 if (job.get("eta_min") or 120) <= 60 else 1, job["id"])
+        return order
+
+
+def line_of(j: dict) -> str:
+    if j.get("needs") == "ben":
+        return "ben"
+    if j.get("for") == "chief" or j.get("needs") == "cloud":
+        return "chief"
+    return "mini" if j.get("needs") in WORKER_NEEDS else "other"
+
+
+def run_order(alljobs: list[dict], focus=()) -> dict:
+    """{"lines": {"mini": [ids in run order], "chief": [...]}, "pos": {id: {line, pos, waitsFor}}}. pos 0 = in hand now."""
+    order = _job_order()
+    live = {j["id"]: j for j in alljobs if j.get("status") in ("open", "claimed", "blocked")}
+    out, lines = {}, {}
+    for ln in ("mini", "chief"):
+        mine = [j for j in live.values() if line_of(j) == ln]
+        seq = [j["id"] for j in sorted((j for j in mine if j["status"] == "claimed"), key=lambda j: j["id"])]
+        for i in seq:
+            out[i] = {"line": ln, "pos": 0}
+        done, n = set(seq), 0
+        todo = [j for j in mine if j["status"] == "open"]
+        while True:
+            ready = [j for j in todo if j["id"] not in done and (not j.get("after") or j["after"] not in live or j["after"] in done)]
+            if not ready:
+                break
+            j = min(ready, key=lambda j: order(j, tuple(focus)))
+            done.add(j["id"]); seq.append(j["id"]); n += 1
+            out[j["id"]] = {"line": ln, "pos": n}
+        for j in mine:
+            if j["id"] not in out:
+                out[j["id"]] = {"line": ln, "pos": None,
+                                "waitsFor": "" if j["status"] == "blocked" else j.get("after", "")}
+        lines[ln] = seq
+    return {"lines": lines, "pos": out}
+
+
+# ---- Who reviews (Ben's studio, 9 Oct): reviews, PASSes, music checks and final OKs are the Chief's, not Claude's ----
+# The film notes and status files were written while Claude was Chief. The board says "Chief" for every review step
+# still to come; done steps keep who really did them. Claude's own making work (drawing, graphics) keeps its name.
+REVIEW_WORDS = re.compile(r"\b(check|checks|review|reviews|pass|passes|PASS|listen|final OK|OK|approve|launch check|look at|sees stills|frame by frame)\b", re.I)
+REVIEW_TEXT = [(re.compile(r"\bClaude's final OK\b"), "the Chief's final OK"),
+               (re.compile(r"\bClaude launch check\b"), "Chief launch check"),
+               (re.compile(r"\bClaude sees stills\b"), "The Chief sees stills"),
+               (re.compile(r"\bClaude (checks|reviews|passes|listens|OKs)\b"), r"The Chief \1")]
+
+
+def chief_text(s):
+    if not isinstance(s, str) or "Claude" not in s:
+        return s
+    for rx, rep in REVIEW_TEXT:
+        s = rx.sub(rep, s)
+    return re.sub(r"(^|[.!?]\s+)the Chief", r"\1The Chief", s)
+
+
+# ---- Ben's handoffs (Ben, 10 Oct: the card said "Waiting for you" while the For-you box said nothing to check) ----
+# "Waiting for you" only when the cut really is in Ben's For-you box: the note has `you` set and the board has a Watch
+# link for it. Any other step of Ben's still to come is a future handoff and reads "Ready for you" with its date.
+READY = "Ready for you"
+
+
+def ben_handoffs(briefs: dict, watch: dict) -> dict:
+    out = {}
+    for k, b in briefs.items():
+        ready_now = bool(b.get("you")) and k in watch
+        if not ready_now and any(st.get("who") == "Ben" and not st.get("done") for st in b.get("steps") or []):
+            b = dict(b, steps=[dict(st, who=READY) if st.get("who") == "Ben" and not st.get("done") else st
+                               for st in b["steps"]])
+        out[k] = b
+    return out
+
+
+def chief_reviews(briefs: dict) -> dict:
+    out = {}
+    for k, b in briefs.items():
+        b = {f: (chief_text(v) if f in ("line", "holdup", "limit", "timing", "you", "youShort") else v) for f, v in b.items()}
+        steps = []
+        for st in b.get("steps") or []:
+            if st.get("who") == "Claude" and not st.get("done") and REVIEW_WORDS.search(st.get("what", "")):
+                st = dict(st, who="Chief")
+            steps.append(st)
+        if "steps" in b:
+            b["steps"] = steps
+        out[k] = b
+    return out
+
+
 # ---- Watch links (Ben, 9 Oct 22:51): every cut waiting for Ben gets a button that opens it on his phone ----
 # One link per film, best first:
 #   1. an explicit `watch` {url, version, label} on the film: OWB status.json (top level), HOS PIPELINE.json (film),
@@ -331,6 +440,9 @@ def watch_links(hos: dict, owb: list[dict], briefs: dict) -> dict:
             if yt and uat and version_key(uat["version"]) > version_key(yt["version"]):
                 yt = None  # a newer cut than the upload is waiting: that's the one to watch
             w = yt or uat
+        wf = (briefs.get(key) or {}).get("watchFrom")  # e.g. "v05": no link until that version's phone copy exists
+        if w and wf and w.get("version") and version_key(w["version"]) < version_key(str(wf)):
+            w = None
         if w:
             if not w["label"]:
                 w["label"] = f"Watch {w['version']}" if w.get("version") else "Watch it"
@@ -363,7 +475,11 @@ def main(argv: list[str] | None = None) -> int:
         q = ROOT / "jobs" / "queue.json"
         alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
         learn_estimates(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent")},
+        focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
+        ro = run_order(alljobs, focus)
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent", "for")},
+                     line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
+                     waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""),
                      last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
@@ -373,8 +489,10 @@ def main(argv: list[str] | None = None) -> int:
         hb = mini_heartbeat()
         if hb:
             lanes.setdefault("mini", {})["heartbeat"] = hb
-        focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
-        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus,
+        for f in owb:
+            if isinstance(f.get("next"), str):
+                f["next"] = chief_text(f["next"])
+        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"],
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())}}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
@@ -391,6 +509,7 @@ def main(argv: list[str] | None = None) -> int:
         briefs = load_briefs()
         links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k == "uatFolderUrl"} if BRIEFS.exists() else {}
         watch = watch_links(hos, owb, briefs)
+        briefs = ben_handoffs(chief_reviews(briefs), watch)
         (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, **links}, ensure_ascii=False))
         print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
               f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')})")

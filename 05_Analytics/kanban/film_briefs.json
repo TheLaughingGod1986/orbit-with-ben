@@ -107,10 +107,10 @@
       "limit": ""
     },
     "OWB:024": {
-      "updated": "2026-10-09T08:40Z",
+      "updated": "2026-10-10T11:30Z",
       "mood": "fixing",
-      "done": "Script, voice, picture, edit (cut v03), thumbnails and the upload package. The film is finished.",
-      "holdup": "Nothing is holding it now. You lifted the ElevenLabs floor, so its own music is made now instead of after 30 Oct.",
+      "done": "Script, voice, thumbnails, the upload package and its own music. v04 has the new music laid in.",
+      "holdup": "v04's music is in, but the Chief failed it on the picture (10 Oct): the picture checks still fail on v03's unchanged shots. Cursor fixes the picture in v05, the Chief checks it, then it comes back to you. v04 isn't for you to watch.",
       "steps": [
         {
           "who": "Ben",
@@ -120,32 +120,33 @@
         },
         {
           "who": "Cursor",
-          "what": "check the narration and music in v03",
-          "job": "J0060"
+          "what": "its own music laid in (v04)",
+          "done": true,
+          "doneText": "done · Sat 10 Oct (J0089)"
         },
         {
           "who": "Cursor",
-          "what": "its own music",
-          "job": "J0079"
+          "what": "v05: fix the picture the Chief failed in v04",
+          "whenText": "next"
         },
         {
-          "who": "Claude",
-          "what": "listen to the music and check v04",
-          "afterJob": "J0079",
-          "lag": 60
+          "who": "Chief",
+          "what": "check v05",
+          "whenText": "after v05"
         },
         {
           "who": "Ben",
-          "what": "watch v04",
-          "whenText": "next week"
+          "what": "watch v05",
+          "whenText": "after the Chief's check"
         }
       ],
       "you": "",
       "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "Your audio note was right: 023, 024 and 025 shared one music track. 024 gets its own music now, then a new version with the picture fixed, then it comes back to you.",
+      "line": "Its own music is in. The picture needs fixing first (v05), then the Chief checks it and it comes back to you.",
       "youWhen": "",
       "youShort": "",
-      "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, Claude's final OK goes ahead."
+      "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, the Chief's final OK goes ahead.",
+      "watchFrom": "v05"
     },
     "OWB:025": {
       "updated": "2026-10-09T12:58Z",
