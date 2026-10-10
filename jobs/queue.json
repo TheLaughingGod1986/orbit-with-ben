@@ -1,5 +1,5 @@
 {
-  "next_id": 120,
+  "next_id": 121,
   "jobs": [
     {
       "id": "J0001",
@@ -6288,6 +6288,32 @@
           "at": "2026-10-10T19:54Z",
           "by": "chief",
           "what": "cancelled: PARKED, not dropped: reopen (jobs.py reopen J0119) on/after Sun 15 Nov 18:00 London when 026 is public. Studio can't link 026 before then."
+        }
+      ]
+    },
+    {
+      "id": "J0120",
+      "title": "HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Ben's direct instruction, 10 Oct 2026 21:10 London, in his chat with Chief (Grok): \"Any that the sound is broken can we fix\".** For these silent Shorts only, this overrides the \"never re-upload an idea that already went public\" rule and supersedes J0118 (cancelled). Chief (Grok) checked and built the fix. No spend, no new VO.\n\n**What's wrong:** HOS Short `93fPUG-hW0A` \"Invisible life is still everywhere\" (public since 6 Sep, 6 views) is digital silence for the whole file (-70 LUFS, -91 dB max, yt-dlp public stream re-measured 10 Oct 21:15). The uploaded master `hos_001_s05_soap_punch_v03.mp4` (sha de928d54…) is silent; the bug is in `_build_s05_soap_punch_v02.py` (stream-copy concat dropped the VO).\n\n**The fixed file (ready, checked):** `~/YouTube/History Of Science/02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/hos_001_s05_soap_punch_v04_audiofix.mp4`, also in iCloud `HOS UAT/`. sha256 `9625602b4ebdc60553f4b2afcf0af28d7aefb2be964491d0f4b36ee4ef01ad0a`. Picture = v03 untouched (stream copy). Audio = the locked VO+music mix from `hos_001_germs_full_v02.mp4` 343.200–359.325 s (same window the build script uses; NAS copy), placed at 0.0 s, -14.7 LUFS integrated, -2.3 dBTP. Envelope matches the audible v01 cut (r=0.994), 1080x1920, 23.83 s.\n\n**Do (HOS channel; check the channel name first):**\n1. Re-check the file: sha above, `ffmpeg -af ebur128` about -14 LUFS, and listen to the first 5 s (speech: \"Every time soap meets your hands...\").\n2. Upload it as a NEW video, scheduled **Tue 13 Oct 2026 11:30 London (2026-10-13T10:30:00Z)**. 13 Oct is a free HOS Short day (next HOS Shorts are 16, 18, 20 Oct) and it's the same day Buffer posts the 001 s05 social cut. Copy exactly from `93fPUG-hW0A`:\n   - Title: `Invisible life is still everywhere`\n   - Description (verbatim):\n     What else is still invisible? You meet that victory every time soap meets your hands.\n\n     Watch the full film — How Did We Discover Germs?:\n     https://www.youtube.com/watch?v=_C92tIJCk8A\n\n     #Germs #InvisibleLife #HistoryOfScience #Science #Shorts\n   - Tags: germ theory, history of medicine, history of science, invisible life, microbes\n   - Category 27 (Education), en-GB / en-GB audio, not made for kids, Altered content the same as the original.\n   - Cover: `10_Shorts/hos_001_s05_soap_cover_animistry_v02.jpg` (sha 220ead2b9f3a833a…, the live boy-at-basin \"WHAT ELSE IS STILL INVISIBLE?\" cover, copied back from the NAS).\n   - Related video (Studio): `_C92tIJCk8A` How Did We Discover Germs?\n3. Set `93fPUG-hW0A` Public → **Private**. Change nothing else on it. Never delete it.\n4. Reload Studio; screenshot both rows with the channel name. Confirm the new id reads Scheduled 13 Oct 11:30 and the old one Private.\n5. AGENTS lines on OWB #99 and HOS #180:\n   `93fPUG-hW0A public → private (silent master v03), OK'd by Ben 10 Oct 21:10, done by <agent>`\n   `<newid> new upload → scheduled 13 Oct 11:30 London (audio-fixed copy of 93fPUG-hW0A, v04_audiofix 9625602b), OK'd by Ben 10 Oct 21:10, done by <agent>`\n   Add both rows to `00_Brand/Channel-Setup/audits/SHORTS_LOG.md`.\n\nBuffer: the 13 Oct TikTok/Reels/FB posts use `hos_001_s05_soap_punch_social_v01.mp4`, built from the audible v01 (-20.9 LUFS) — leave them alone.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-10T20:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-10T20:25Z",
+          "by": "chief",
+          "what": "added"
         }
       ]
     }
