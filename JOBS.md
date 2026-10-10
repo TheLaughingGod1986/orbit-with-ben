@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0109, J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -22,7 +22,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0107 | mini | open | – | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0108 | mini | open | – | – | HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) |  |
-| J0109 | mini | claimed | cursor | 2026-10-10T10:43Z | HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first | hos#261 |
 | J0110 | any | open (after J0108) | – | – | for chief · Chief: OK the 009 long opening (desk #180) before its VO |  |
 | J0111 | mini | open (after J0110) | – | – | HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first |  |
 | J0112 | any | open (after J0108) | – | – | for chief · Chief: OK the 010 long opening (desk #180) before its VO |  |
@@ -33,6 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
+- J0109 done: HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first (B 25.52 s, C 24.80 s, both vo_take PASS, one take each, ~304 credits; HOS PR #268; keep call with grok on desk #180 (6096254990))
 - J0106 done: HOS 004 thumb C v07b: 52/53 about 2x, one style (file only; don't touch the armed Test & Compare). Due before Tue 13 Oct (done)
 - J0105 done: Saturn Short v03 upload + Qn56 swap (Mon 11:30) (done)
 - J0104 done: Saturn Short Qn56 end-card recut v03 (Mon 11:30) (monday_saturn_rings_already_falling_v03.mp4 (sha256 4e7f5161d244e4355cf0b88dc702c8dc0fb4d2fda3bdb86e9da2599d4b7c17b3, 23.93 s), gate PASS; Orbit Auditor re-check next)
@@ -41,4 +41,3 @@ Recently finished:
 - J0096 done: 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) (done)
 - J0095 done: 023 Venus: redraw albedo + deuterium code graphics (Ben's v05c notes) (albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated)
 - J0093 done: Long-form view: Cursor on one 45–60 min video a month (Ben asked) (done)
-- J0092 done: Long-form view: Codex on one 45–60 min video a month (Ben asked) (Posted eight-line long-form recommendation: not yet; original documentary later, cost estimates and day-28 efficiency metric.)
