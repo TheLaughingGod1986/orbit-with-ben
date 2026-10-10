@@ -737,10 +737,15 @@ function renderTracker(films){
     const isOpen = f.key in openState ? openState[f.key] : false;
     const line = live ? `Live since ${fd(pd(f.air))} 18:00.` : b.line || (b.auto ? b.done : "");
     const st = statusOf(b, rows);
-    const fj = f._ch==="OWB" ? (fromDb.jobs||[]).filter(j=>j.film===f.id).map(j=>({j,p:P[j.id]||{}})).sort((a,b)=>(a.p.state==="now"?-1:a.p.pos||99)-(b.p.state==="now"?-1:b.p.pos||99))[0] : null;
+    // A job belongs to this card by its film field, or by its title ("025 Mars robot: …", "HOS 006 Part 03 …").
+    const jobFilm = j => j.film ? "OWB:"+j.film : (/^HOS\s+(\d{3})\b/.exec(j.title||"")||[])[1] ? "HOS:"+/^HOS\s+(\d{3})\b/.exec(j.title)[1]
+      : (/^(\d{3})\b/.exec(j.title||"")||[])[1] ? "OWB:"+/^(\d{3})\b/.exec(j.title)[1] : "";
+    const fj = f.key ? (fromDb.jobs||[]).filter(j=>jobFilm(j)===f.key).map(j=>({j,p:P[j.id]||{}})).sort((a,b)=>(a.p.state==="now"?-1:a.p.pos||99)-(b.p.state==="now"?-1:b.p.pos||99))[0] : null;
     // Ben, 10 Oct: "a number to tell the order and ETA of the task", from the same plan() as the Mac mini box.
     const eta = p => p.done ? ` · done about ${clock(p.done)}` : "";
+    const partDone = fj && fj.j.status==="open" && /^released/.test(String((fj.j.last||{}).what||"")) && (fj.j.last||{}).by && fj.j.last.by!=="claude";
     const ordChip = !fj ? "" : fj.p.state==="now" ? `<span class="pill you">Working on it${eta(fj.p)}</span>`
+      : partDone ? `<span class="pill you">Part done${eta(fj.p)}</span>`
       : fj.p.pos===1 ? `<span class="pill you">Up next · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
       : fj.p.pos ? `<span class="pill">#${fj.p.pos} · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
       : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
