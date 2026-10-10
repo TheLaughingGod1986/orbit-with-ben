@@ -2,6 +2,7 @@
 """Venus 023 full cut v05d (J0096): Ben's v05c notes (board 9 Oct 13:36Z), Claude's J0095 graphics; only these rows change.
 - Rows 13c+14a+14b (78.20-96.27): one graphics_v03 `albedo` clip (18.1 s) from offset 0 across the three rows
   (14b's PIA00104 is out). Row 31: graphics_v03 `heavyh` (10.9 s). Rows 32a+32b: one `deuterium` (13.3 s), 32b's PIA00257 out.
+- Round 3 (Chief #6093640970): albedo and heavyh from graphics_v05 (4% linear pull-back, no hold over 1.5 s); deuterium stays graphics_v04.
 - Row 30b: both AC78-9245 spans (all four Multiprobe probes) -> the NSSDCA/NASA Ames painting of the Large Probe alone
   (pv_probe.jpg, 800x1051), on a feathered blur fill: whole painting first, then the probe and heat shield (lower 58%).
 - Rows 39a/39b: plates_v04 (round 2: 100 px two-line labels, graded backdrop under black; 39b PIA00257 globe, Alpha Regio ringed, push into PIA00147 ridged upland).
@@ -58,7 +59,7 @@ WORK=Path('/private/tmp/venus023_full_work_v05d'); PACK=HERE/'full_rough_v05d_pa
 VO=EP/'02_Voiceover/venus_vo_v01.mp3'
 OUT=Path('/private/tmp/023_Venus_full_rough_v05d.mp4')  # iCloud locks the UAT copy mid-read; the phone copy goes to UAT
 MAX_UP=2.35; RAINBOW={'PIA00007.jpg','PIA00008.jpg','PIA00157.jpg','PIA00158.jpg','PIA00159.jpg','PIA00160.jpg'}
-POOL=HERE/'nasa_pool_v01'; RAW=EP/'04_Generated-Clips/01_Raw'; G1=RAW/'graphics_v01'; G2=RAW/'graphics_v02'; G3=RAW/'graphics_v04'
+POOL=HERE/'nasa_pool_v01'; RAW=EP/'04_Generated-Clips/01_Raw'; G1=RAW/'graphics_v01'; G2=RAW/'graphics_v02'; G3=RAW/'graphics_v04'; G5=RAW/'graphics_v05'
 PL3=RAW/'plates_v04'; PROBE='pioneer/pv_probe.jpg'
 H4=POOL/'harvest_v04'; SVS=H4/'svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4'
 FPS=30; LAST_WORD=509.50; HOLD=2.5; FADE=1.0; TOTAL=round((LAST_WORD+HOLD+FADE)*FPS)/FPS
@@ -97,8 +98,8 @@ S=[('1',P[0],O+'PIA00254.jpg',dict(fixed=1)),('2',P[1],O+'PIA00106.jpg',dict(fix
  ('12a',P[11],L+'S91-50686.jpg',dict(fixed=1)),('12b',P[12],L+'PIA00252.jpg',dict(fixed=1)),
  ('13a',P[13],POOL/'sdo/AIA171VenusTransit_HD1080.mp4',dict(fixed=1,video=1,at=8.0,vcrop=(147,0,1626,915))),
  ('13b',P[14],POOL/'sdo/AIA171VenusTransit_HD1080.mp4',dict(fixed=1,video=1,at=8.0,base=P[13],vcrop=(147,0,1626,915))),
- ('13c',P[15],G3/'albedo.mp4',dict(fixed=1,video=1,at=0.0)),('14a',P[16],G3/'albedo.mp4',dict(fixed=1,video=1,at=0.0,base='13c')),
- ('14b',P[17],G3/'albedo.mp4',dict(fixed=1,video=1,at=0.0,base='13c')),('15a',P[18],L+'PIA00272.jpg',dict(fixed=1)),
+ ('13c',P[15],G5/'albedo.mp4',dict(fixed=1,video=1,at=0.0)),('14a',P[16],G5/'albedo.mp4',dict(fixed=1,video=1,at=0.0,base='13c')),
+ ('14b',P[17],G5/'albedo.mp4',dict(fixed=1,video=1,at=0.0,base='13c')),('15a',P[18],L+'PIA00272.jpg',dict(fixed=1)),
  ('15b',P[19],M+'PIA00215.jpg',dict(fixed=1,clear=1)),('16a',P[20],O+'PIA00240.jpg',dict(fixed=1,clear=1)),
  ('16b',P[21],M+'PIA00159.jpg',dict(fixed=1)),('17',P[22],M+'PIA00246.jpg',dict(fixed=1)),('17',124.97,L+'PIA00107.jpg',{}),
  ('18',P[24],L+'PIA00102.jpg',dict(fixed=1)),('18',134.07,L+'PIA00233.jpg',{}),('18',138.13,L+'PIA00268.jpg',{}),
@@ -110,7 +111,7 @@ S=[('1',P[0],O+'PIA00254.jpg',dict(fixed=1)),('2',P[1],O+'PIA00106.jpg',dict(fix
  ('26',201.97,L+'PIA00234.jpg',{}),('26',207.70,M+'PIA00200.jpg',{}),('27',212.17,O+'PIA00106.jpg',dict(quad='br')),
  ('28',218.13,'harvest_v03/S91-50688.jpg',dict(on_black=1,pct=.04)),
  ('30b',224.15,PROBE,dict(fixed=1,blur='full')),('30b',229.0,'pioneer/pvo_uv_790205.jpg',dict(on_black=1)),('30b',233.61,PROBE,dict(blur='low')),
- ('31',236.17,G3/'heavyh.mp4',dict(video=1,at=0.0)),('32a',247.10,G3/'deuterium.mp4',dict(video=1,at=0.0)),
+ ('31',236.17,G5/'heavyh.mp4',dict(video=1,at=0.0)),('32a',247.10,G3/'deuterium.mp4',dict(video=1,at=0.0)),
  ('32b',253.1,G3/'deuterium.mp4',dict(video=1,at=0.0,base='32a')),('32c',260.43,M+'PIA00084.jpg',dict(quad='tl')),('32c',264.3,M+'PIA00200.jpg',dict(quad='tl')),
  ('33',268.43,L+'PIA00102.jpg',dict(quad='bl')),('34a',274.90,L+'PIA00108.jpg',dict(box=(0.08,0.08,0.84))),
  ('34a',280.0,L+'PIA00233.jpg',dict(box=(0.08,0.10,0.84))),
