@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0117, J0107, J0111, J0113, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0117, J0107, J0111, J0113, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -14,7 +14,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
-| J0100 | mini | claimed | cursor | 2026-10-10T14:04Z | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0107 | mini | blocked | cursor | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0110 | any | open (after J0108) | – | – | for chief · Chief: OK the 009 long opening (desk #180) before its VO |  |
@@ -35,5 +34,5 @@ Recently finished:
 - J0104 done: Saturn Short Qn56 end-card recut v03 (Mon 11:30) (monday_saturn_rings_already_falling_v03.mp4 (sha256 4e7f5161d244e4355cf0b88dc702c8dc0fb4d2fda3bdb86e9da2599d4b7c17b3, 23.93 s), gate PASS; Orbit Auditor re-check next)
 - J0102 done: HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct (T&C armed Title+thumbnail A/B/C (C=v07), saved; Ineligible until public 15 Oct. HOS 5518d51)
 - J0101 done: HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) (wwcjcFfC-5M: thumbnail A v02 already live; Test & Compare was missing, now armed Thumbnail only A+B v02 (Ineligible until public, as on the stray); end screen already set (Subscribe + Germs, 8:28:09-8:48:09); no cards on either copy. Stray untouched. HOS PR #269.)
+- J0100 done: HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) (Thumb v04 painted and checked (HOS PR #270, Röntgen 1895 hand hero, Explorer small lower left). 006 Shorts README requires hook cap height 8-10% (HOOK_CAP 0.09). Test & Compare NOT set: frP_YrNShsU already has a title A/B test running ('How Did We Discover X-rays?' vs 'Why did a screen glow in a dark room?'); a thumbnail test would delete it (Never list: Cancel and leave it). 9223 switched to HOS to check, then back to Orbit With Ben (dashboard loads, 1 tab). Claude to decide: queue the thumb T&C after the title test ends. Optional gate_shorts_open caption-height check (audit item 12) not done.)
 - J0099 done: OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) (All 3 items done. Item 1: 9 crop-safe Shorts covers set (5452c78b). Items 2-3: Test & Compare (Thumbnail only) running on Moon 2fsQcea-voM (A live LEAVING US? vs B 3.8 CM A YEAR, Apollo 17 Earth + Apollo 11 Moon, 17% near-black vs 76%) and Alien Worlds b8-X_FyJnHM (A live A GIANT EYE? vs B RAINS GLASS, NASA/ESA HD 189733b), verified on reload; d33514e5. Files ~/_desk/j0099/.)
-- J0098 done: 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) (done)
