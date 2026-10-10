@@ -4526,10 +4526,10 @@
       "stage": "",
       "after": "J0095",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-10T00:22Z",
-      "eta": "2026-10-10T02:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T13:41Z",
       "result": "",
@@ -4563,6 +4563,11 @@
           "at": "2026-10-10T00:22Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T00:24Z",
+          "by": "cursor",
+          "what": "released: Part 3 done (63f78b2): _assemble_venus_full_v05d.py written, --plan clean (no problems); 30b blur-fill still posted. Not rendered: waits on Claude's OK of part 1/2/3 stills. Next: render detached tmux venus023-v05d, then picture_qa, freezedetect, music_gate, phone copy."
         }
       ],
       "urgent": 1
