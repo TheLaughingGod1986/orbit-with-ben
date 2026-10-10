@@ -5697,13 +5697,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-10T12:58Z",
-      "eta": "2026-10-10T14:58Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-09T23:55Z",
-      "result": "",
+      "result": "v05b in OWB UAT (026_NearestStar_v05b_PHONE.mp4, sha 43f93eec…); picture_qa PASS (0 of 103 fail), music_gate PASS, clip_check PASS, polish PASS; 494.5 s, -14.2 LUFS; card ready for Ben",
       "history": [
         {
           "at": "2026-10-09T23:55Z",
@@ -5714,9 +5714,15 @@
           "at": "2026-10-10T12:58Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T13:16Z",
+          "by": "cursor",
+          "what": "done: v05b in OWB UAT (026_NearestStar_v05b_PHONE.mp4, sha 43f93eec…); picture_qa PASS (0 of 103 fail), music_gate PASS, clip_check PASS, polish PASS; 494.5 s, -14.2 LUFS; card ready for Ben"
         }
       ],
-      "urgent": 7
+      "urgent": 7,
+      "done_ref": "ff01e9f1"
     },
     {
       "id": "J0115",
