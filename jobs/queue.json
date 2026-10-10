@@ -5204,10 +5204,10 @@
       "stage": "",
       "after": "J0104",
       "eta_min": 45,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-10T07:30Z",
-      "eta": "2026-10-10T08:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-09T23:06Z",
       "result": "",
@@ -5221,6 +5221,11 @@
           "at": "2026-10-10T07:30Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T07:31Z",
+          "by": "cursor",
+          "what": "released: Not started: no Orbit Auditor PASS on v03 found (thread read to 07:20Z J0104 post), and no Claude message OKing the upload/Qn56 publishAt change. Nothing touched on YouTube. Retry once Auditor PASS + Claude OK are on #99; Qn56 stays scheduled if not by Mon 09:30."
         }
       ],
       "urgent": 3
