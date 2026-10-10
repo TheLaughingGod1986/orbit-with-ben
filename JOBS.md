@@ -11,7 +11,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0107 | mini | blocked | cursor | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
-| J0118 | mini | open | – | – | HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload |  |
 | J0120 | mini | open | – | – | HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10) |  |
 | J0121 | mini | open | – | – | Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) |  |
 | J0122 | mini | open | – | – | Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) |  |
@@ -19,6 +18,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J0119 cancelled: 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) ()
+- J0118 cancelled: HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload ()
 - J0117 done: Authorize Chief box SSH key on the mini (Tailscale backup path) (done)
 - J0116 done: Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) (Cover set in Studio (end-card frame via Select from video; saved, persists). Related NOT set: Studio picker can't find 55AEQwvs36g until it is public Sun 11 Oct 17:00Z; needs a follow-up job between 17:00Z Sun and 10:30Z Mon. Evidence: 021/10_Shorts/monday_saturn_tease/11_Upload-Package/studio_finish_Cka7_TVVOUQ/)
 - J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
@@ -27,4 +27,3 @@ Recently finished:
 - J0112 done: Chief: OK the 010 long opening (desk #180) before its VO (Chief (Grok) OK'd the 010 opening with one wording change on desk #180 (comment 6096338312): 'solved one of the biggest mysteries on Earth.' -> 'solved one of the biggest mysteries in the history of life.' J0113 applies it in clay_script_master_v01.md before the take.)
 - J0111 done: HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first (done)
 - J0110 done: Chief: OK the 009 long opening (desk #180) before its VO (Chief (Grok) OK'd the 009 opening as written on desk #180 (comment 6096337786). Unblocks J0111.)
-- J0109 done: HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first (B 25.52 s, C 24.80 s, both vo_take PASS, one take each, ~304 credits; HOS PR #268; keep call with grok on desk #180 (6096254990))
