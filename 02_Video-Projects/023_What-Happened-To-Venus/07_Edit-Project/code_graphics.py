@@ -63,7 +63,20 @@ def canvas():
     ax.set_ylim(-4.5, 4.5)
     ax.set_aspect("equal")
     ax.axis("off")
+    ax.imshow(backdrop(), extent=(-8, 8, -4.5, 4.5), zorder=0, interpolation="bilinear")
     return fig, ax
+
+
+_BACK = []
+
+
+def backdrop():
+    """A deep warm-to-slate radial grade (luma ~34-60), so no graphic is mostly near-black (Chief, 10 Oct)."""
+    if not _BACK:
+        yy, xx = np.mgrid[0:270, 0:480].astype(np.float32)
+        r = np.clip(np.hypot((xx - 240) / 290, (yy - 120) / 200), 0, 1)[..., None]
+        _BACK.append((np.array([74, 56, 50]) * (1 - r) + np.array([34, 32, 46]) * r) / 255.0)
+    return _BACK[0]
 
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -129,10 +142,13 @@ def body(ax, which, x, y, r):
     ax.imshow(img, extent=(x - r, x + r, y - r, y + r), zorder=3, interpolation="bilinear")
 
 
-def label(ax, x, y, text, size=40, color=WHITE, alpha=1.0, ha="left", va="center"):
+HOUSE_PT = 60                                            # ~100 px at 1080: ~11-12% of frame height per line
+
+
+def label(ax, x, y, text, size=None, color=WHITE, alpha=1.0, ha="left", va="center"):
     if alpha <= 0.01:
         return
-    ax.text(x, y, text, color=color, alpha=alpha, fontsize=size * 0.85, ha=ha, va=va, zorder=9, fontdict=FONT,
+    ax.text(x, y, text, color=color, alpha=alpha, fontsize=HOUSE_PT, ha=ha, va=va, zorder=9, fontdict=FONT,
             bbox=dict(facecolor=BG, alpha=0.7 * alpha, edgecolor="none", boxstyle="round,pad=0.25"))
 
 
@@ -153,9 +169,9 @@ def render_albedo(out, seconds, still):
     n = int(seconds * FPS)
     k = seconds / 18.1                                   # stretch the beats if a different length is asked for
     T_BOUNCE, T_SOAK = 5.4 * k, 11.8 * k
-    rows = [("venus", 2.05, 1.25, 2601.0, 0.77, "VENUS", "77% BOUNCED BACK"),
-            ("earth", -2.15, 1.25, 1361.0, 0.29, "EARTH", "29% BOUNCED BACK")]
-    PX = -2.6
+    rows = [("venus", 1.55, 1.15, 2601.0, 0.77, "VENUS", "77% BOUNCED BACK"),
+            ("earth", -2.45, 1.15, 1361.0, 0.29, "EARTH", "29% BOUNCED BACK")]
+    PX, BX, BL = -5.2, 0.2, 7.4                          # disc x; bar start and full length
     base_rate, speed = 2.6, 0.24
     photons = []
     target = int(n * 0.85) if still else None
@@ -193,17 +209,17 @@ def render_albedo(out, seconds, still):
         soak = ease((t - T_SOAK) / 1.2)
         heading = "SUNLIGHT IN" if t < T_SOAK + 0.6 else "SOAKED UP"
         ha = phase_alpha(t, 0.3) * (1 - ease((t - T_SOAK) / 0.6)) + ease((t - T_SOAK - 0.6) / 0.6)
-        label(ax, 1.4, 4.0, heading, size=44, color=GOLD, alpha=ha)
+        label(ax, BX, 3.85, heading, color=GOLD, alpha=ha)
         for r, (which, cy, rad, flux, alb, name, bounced) in enumerate(rows):
             body(ax, which, PX, cy, rad)
-            label(ax, PX, cy - rad - 0.32, name, size=36, ha="center", alpha=phase_alpha(t, 0.2))
-            label(ax, PX, cy + rad + 0.32, bounced, size=30, ha="center", alpha=phase_alpha(t, T_BOUNCE + 0.8))
+            label(ax, BX, cy + 0.95, name, alpha=phase_alpha(t, 0.2))
+            label(ax, 7.8, cy - 0.95, bounced, ha="right", alpha=phase_alpha(t, T_BOUNCE + 0.8))
             vin, vsoak = flux / 2601.0, flux * (1 - alb) / 2601.0
             frac = vin + (vsoak - vin) * soak
             grow = ease(t / 2.0)
-            L = 5.6 * frac * grow
-            ax.add_patch(Rectangle((1.4, cy - 0.36), 5.6, 0.72, color=DIM, alpha=0.16, lw=0, zorder=4))
-            ax.add_patch(Rectangle((1.4, cy - 0.36), L, 0.72, color=HEAT if t >= T_SOAK else GOLD, alpha=0.92, lw=0, zorder=5))
+            L = BL * frac * grow
+            ax.add_patch(Rectangle((BX, cy - 0.36), BL, 0.72, color=DIM, alpha=0.25, lw=0, zorder=4))
+            ax.add_patch(Rectangle((BX, cy - 0.36), L, 0.72, color=HEAT if t >= T_SOAK else GOLD, alpha=0.92, lw=0, zorder=5))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -242,7 +258,7 @@ def render_heavyh(out, seconds, still):
                     ax.add_patch(Circle((x + 0.32 - wob, 0.3), 0.42, color="#c9c9cf", alpha=a1, zorder=4))
                 ang = t * 2.2 + x
                 ax.add_patch(Circle((x + 2.0 * math.cos(ang), 0.3 + 2.0 * math.sin(ang)), 0.14, color=CYAN if heavy_atom else WHITE, alpha=a1, zorder=5))
-                label(ax, x, -2.4, name, size=40, ha="center", color=CYAN if heavy_atom else WHITE, alpha=a1)
+                label(ax, x, -2.55, name, ha="center", color=CYAN if heavy_atom else WHITE, alpha=a1)
         a2 = ease((t - T2 - 0.3) / 0.8)
         if a2 > 0.01:
             for c, cx, name in (("earth", -3.9, "EARTH"), ("venus", 3.9, "VENUS")):
@@ -251,8 +267,8 @@ def render_heavyh(out, seconds, still):
                 lt = ~heavy[c]
                 ax.scatter(cx + p[lt, 0], p[lt, 1], s=14, color=WHITE, alpha=0.75 * a2, lw=0, zorder=3)
                 ax.scatter(cx + p[heavy[c], 0], p[heavy[c], 1], s=60, color=CYAN, alpha=a2, lw=0, zorder=4)
-                label(ax, cx, -2.4, name, size=40, ha="center", alpha=a2)
-            label(ax, 3.9, 2.45, "100x MORE", size=44, ha="center", color=CYAN, alpha=ease((t - T2 - 2.5) / 0.8))
+                label(ax, cx, -2.55, name, ha="center", alpha=a2)
+            label(ax, 3.9, 2.6, "100x MORE", ha="center", color=CYAN, alpha=ease((t - T2 - 2.5) / 0.8))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -323,9 +339,9 @@ def render_deuterium(out, seconds, still):
             hv = fa[:, 4] > 0.5
             ax.scatter(fa[~hv, 0], fa[~hv, 1], s=45, color=WHITE, lw=0, zorder=5)
             ax.scatter(fa[hv, 0], fa[hv, 1], s=95, color=CYAN, lw=0, zorder=5)
-        label(ax, -7.6, 3.9, "SUNLIGHT SPLITS WATER", size=34, color=GOLD, alpha=phase_alpha(t, T_SPLIT))
-        label(ax, 7.6, 3.9, "ESCAPES TO SPACE", size=34, ha="right", alpha=phase_alpha(t, T_ESC))
-        label(ax, 7.6, 0.55, "HEAVY STAYS", size=34, ha="right", color=CYAN, alpha=phase_alpha(t, T_ESC + 1.5))
+        label(ax, -7.6, 3.85, "SUNLIGHT SPLITS WATER", color=GOLD, alpha=phase_alpha(t, T_SPLIT))
+        label(ax, 7.6, 2.65, "ESCAPES TO SPACE", ha="right", alpha=phase_alpha(t, T_ESC))
+        label(ax, 7.6, 0.3, "HEAVY STAYS", ha="right", color=CYAN, alpha=phase_alpha(t, T_ESC + 1.5))
         save(fig, out, i, still)
     finish(out, still)
 

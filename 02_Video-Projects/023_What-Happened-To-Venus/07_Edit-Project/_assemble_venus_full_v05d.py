@@ -4,7 +4,7 @@
   (14b's PIA00104 is out). Row 31: graphics_v03 `heavyh` (10.9 s). Rows 32a+32b: one `deuterium` (13.3 s), 32b's PIA00257 out.
 - Row 30b: both AC78-9245 spans (all four Multiprobe probes) -> the NSSDCA/NASA Ames painting of the Large Probe alone
   (pv_probe.jpg, 800x1051), on a feathered blur fill: whole painting first, then the probe and heat shield (lower 58%).
-- Rows 39a/39b: plates_v03 (39a split labelled Way 2016 | Turbet 2021; 39b PIA00257 globe, Alpha Regio ringed, push into PIA00215).
+- Rows 39a/39b: plates_v04 (round 2: 100 px two-line labels, graded backdrop under black; 39b PIA00257 globe, Alpha Regio ringed, push into PIA00147 ridged upland).
 - A video segment that starts at offset 0 clones its first frame for the 0.2 s lead under the crossfade, so the
   clip's beats stay on the voice (v05c clamped that lead and ran the graphic 0.2 s early).
 v05c notes:
@@ -58,8 +58,8 @@ WORK=Path('/private/tmp/venus023_full_work_v05d'); PACK=HERE/'full_rough_v05d_pa
 VO=EP/'02_Voiceover/venus_vo_v01.mp3'
 OUT=Path('/private/tmp/023_Venus_full_rough_v05d.mp4')  # iCloud locks the UAT copy mid-read; the phone copy goes to UAT
 MAX_UP=2.35; RAINBOW={'PIA00007.jpg','PIA00008.jpg','PIA00157.jpg','PIA00158.jpg','PIA00159.jpg','PIA00160.jpg'}
-POOL=HERE/'nasa_pool_v01'; RAW=EP/'04_Generated-Clips/01_Raw'; G1=RAW/'graphics_v01'; G2=RAW/'graphics_v02'; G3=RAW/'graphics_v03'
-PL3=RAW/'plates_v03'; PROBE='pioneer/pv_probe.jpg'
+POOL=HERE/'nasa_pool_v01'; RAW=EP/'04_Generated-Clips/01_Raw'; G1=RAW/'graphics_v01'; G2=RAW/'graphics_v02'; G3=RAW/'graphics_v04'
+PL3=RAW/'plates_v04'; PROBE='pioneer/pv_probe.jpg'
 H4=POOL/'harvest_v04'; SVS=H4/'svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4'
 FPS=30; LAST_WORD=509.50; HOLD=2.5; FADE=1.0; TOTAL=round((LAST_WORD+HOLD+FADE)*FPS)/FPS
 FONT='/System/Library/Fonts/Supplemental/Arial Bold.ttf'
@@ -119,8 +119,8 @@ S=[('1',P[0],O+'PIA00254.jpg',dict(fixed=1)),('2',P[1],O+'PIA00106.jpg',dict(fix
  ('36',305.33,PLA,dict(video=1,at=0.0,base='35')),
  ('37',312.43,RAW/'plates_v02/venus_ch3_row37_plateB_steam_lid_sharp_v02.mp4',dict(video=1,tpad=1,move=(1.0,1.08))),
  ('38',320.33,G1/'nightlid.mp4',dict(video=1,at=0.0,move=(1.0,1.10))),
- ('39a',330.90,PL3/'venus_row39a_split_labelled_v03.mp4',dict(video=1,tpad=1)),
- ('39b',334.60,PL3/'venus_row39b_alpha_regio_v03.mp4',dict(video=1,tpad=1)),
+ ('39a',330.90,PL3/'venus_row39a_split_labelled_v04.mp4',dict(video=1,tpad=1)),
+ ('39b',334.60,PL3/'venus_row39b_alpha_regio_v04.mp4',dict(video=1,tpad=1)),
  ('40',338.47,L+'PIA00109.jpg',{}),('40',343.10,L+'PIA00209.jpg',{}),
  ('42b',347.89,E+'PIA18033.jpg',dict(fixed=1,quad='c')),
  ('43a',350.53,G2/'line.mp4',dict(video=1,at=0.0,move=(1.0,1.06))),('43b',356.33,G2/'line.mp4',dict(video=1,at=0.0,base='43a',move=(1.06,1.12))),
@@ -267,7 +267,12 @@ def prep_still(s,dest):
   k=1188/im.height;fg=im.resize((round(im.width*k),1188),Image.Resampling.LANCZOS)
   kb=max(2112/im.width,1188/im.height);bg=im.resize((round(im.width*kb),round(im.height*kb)),Image.Resampling.LANCZOS)
   bx,by=(bg.width-2112)//2,(bg.height-1188)//2;bg=bg.crop((bx,by,bx+2112,by+1188)).filter(ImageFilter.GaussianBlur(40))
-  bg=ImageEnhance.Brightness(bg).enhance(0.45)
+  bg=ImageEnhance.Brightness(bg).enhance(0.80)
+  # the fill's dark side goes onto a warm grade, so the frame isn't mostly near-black (Chief, 10 Oct: 30b 31-35%)
+  yy,xx=np.mgrid[0:1188,0:2112].astype(np.float32);rg=np.clip(np.hypot((xx-1056)/1300,(yy-594)/900),0,1)[...,None]
+  warm=np.array([110,48,30],np.float32)*(1-rg)+np.array([62,30,26],np.float32)*rg
+  f=np.asarray(bg,np.float32);w=np.clip(1-f.max(axis=2,keepdims=True)/90.0,0,1)
+  bg=Image.fromarray(np.clip(f*(1-w)+warm*w+f*w*0.5,0,255).astype(np.uint8))
   feather=60;m=np.ones(fg.width,float);r=np.linspace(0,1,feather);m[:feather]=r;m[-feather:]=r[::-1]
   mask=Image.fromarray((np.tile(m,(1188,1))*255).astype(np.uint8))
   bg.paste(fg,((2112-fg.width)//2,0),mask);bg.save(dest);return
