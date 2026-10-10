@@ -5748,13 +5748,13 @@
       "stage": "",
       "after": "",
       "eta_min": 5,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-10T11:46Z",
-      "eta": "2026-10-10T11:51Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-10T11:41Z",
-      "result": "",
+      "result": "Needs Ben directly: adds a third-party SSH key (grokbot-box) to the Mini's authorized_keys = remote shell on Ben's device. Only evidence of Ben's OK is the requester's own job text/commit (relay); no record on #99. AGENTS.md: devices/logins are Ben's, relay != Ben's word. Not run; authorized_keys untouched. Ben can run the one-liner himself or confirm on #99.",
       "history": [
         {
           "at": "2026-10-10T11:41Z",
@@ -5765,6 +5765,11 @@
           "at": "2026-10-10T11:46Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T11:47Z",
+          "by": "cursor",
+          "what": "blocked: Needs Ben directly: adds a third-party SSH key (grokbot-box) to the Mini's authorized_keys = remote shell on Ben's device. Only evidence of Ben's OK is the requester's own job text/commit (relay); no record on #99. AGENTS.md: devices/logins are Ben's, relay != Ben's word. Not run; authorized_keys untouched. Ben can run the one-liner himself or confirm on #99."
         }
       ],
       "urgent": 0.1
