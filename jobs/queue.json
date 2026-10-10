@@ -6343,13 +6343,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-10T20:39Z",
-      "eta": "2026-10-10T21:09Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-10T20:25Z",
-      "result": "",
+      "result": "Needs Claude's OK on #99 before any privacy change. Public->private is a Stop-and-ask item (Claude's 5 Oct exception); Ben's OK reached the queue only as a relay via Chief chat, and the worker rule allows YouTube privacy changes only when Claude's message for the task says so. No YouTube change made. To unblock: Claude replies OK on #99 and releases J0121.",
       "history": [
         {
           "at": "2026-10-10T20:25Z",
@@ -6360,6 +6360,11 @@
           "at": "2026-10-10T20:39Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T20:40Z",
+          "by": "cursor",
+          "what": "blocked: Needs Claude's OK on #99 before any privacy change. Public->private is a Stop-and-ask item (Claude's 5 Oct exception); Ben's OK reached the queue only as a relay via Chief chat, and the worker rule allows YouTube privacy changes only when Claude's message for the task says so. No YouTube change made. To unblock: Claude replies OK on #99 and releases J0121."
         }
       ]
     },
