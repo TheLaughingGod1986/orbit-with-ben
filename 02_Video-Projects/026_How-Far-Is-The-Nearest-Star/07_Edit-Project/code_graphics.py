@@ -85,15 +85,16 @@ def render_parallax(out, seconds, still):
     finish(out, still)
 
 
-def render_triple(out, seconds, still):
+def render_triple(out, seconds, still, t0=0.0):
     """Alpha Cen A (larger, yellow-white) and B (smaller, orange) circle their centre of mass fast; Proxima (small,
-    red) moves slowly on a wide loop round the pair. Not to scale (see module docstring)."""
+    red) moves slowly on a wide loop round the pair. Not to scale (see module docstring). `t0` starts the motion
+    later, so triple_b (t0=30) is its own state: Proxima half way round the loop, on the right."""
     rng = np.random.default_rng(4)
     n = int(seconds * FPS)
     bg = rng.uniform([-8, -4.5], [8, 4.5], (300, 2))
     frames = [int(n * 0.5)] if still else range(n)
     for i in frames:
-        t = i / FPS
+        t = t0 + i / FPS
         fig, ax = canvas()
         ax.scatter(bg[:, 0], bg[:, 1], s=3, color=WHITE, alpha=0.4, lw=0)
         a = 2 * math.pi * t / 4.0
@@ -414,12 +415,13 @@ def finish(out, still):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["parallax", "triple", "journey", "lighttimes", "scale", "lightyear", "lightrace", "all"])
+    ap.add_argument("which", choices=["parallax", "triple", "triple_b", "journey", "lighttimes", "scale", "lightyear", "lightrace", "all"])
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
     a = ap.parse_args()
-    jobs = {"parallax": (render_parallax, 12), "triple": (render_triple, 12), "journey": (render_journey, 14),
+    jobs = {"parallax": (render_parallax, 12), "triple": (render_triple, 12),
+            "triple_b": (lambda o, s, st: render_triple(o, s, st, t0=30.0), 8), "journey": (render_journey, 14),
             "lighttimes": (render_lighttimes, 18), "scale": (render_scale, 10),
             "lightyear": (render_lightyear, 9.6), "lightrace": (render_lightrace, 16.8)}
     for name in (jobs if a.which == "all" else [a.which]):
