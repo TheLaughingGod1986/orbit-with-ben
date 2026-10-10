@@ -6307,13 +6307,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-10T20:28Z",
-      "eta": "2026-10-10T21:28Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-10T20:25Z",
-      "result": "",
+      "result": "Needs Claude's OK on #99 first: job is a re-upload of a public idea (Never list) + public->private, queued by chief citing Ben in chat; AGENTS says only Claude relaxes the Never list and a relay is not Ben's word. File pre-check PASS (sha 9625602b, -14.7 LUFS, 1080x1920, 23.83 s, cover sha 220ead2b). Release back to queue once Claude OKs.",
       "history": [
         {
           "at": "2026-10-10T20:25Z",
@@ -6324,6 +6324,11 @@
           "at": "2026-10-10T20:28Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T20:29Z",
+          "by": "cursor",
+          "what": "blocked: Needs Claude's OK on #99 first: job is a re-upload of a public idea (Never list) + public->private, queued by chief citing Ben in chat; AGENTS says only Claude relaxes the Never list and a relay is not Ben's word. File pre-check PASS (sha 9625602b, -14.7 LUFS, 1080x1920, 23.83 s, cover sha 220ead2b). Release back to queue once Claude OKs."
         }
       ]
     },
