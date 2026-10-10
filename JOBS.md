@@ -8,7 +8,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
-| J0121 | mini | open | – | – | Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) |  |
+| J0121 | mini | claimed | cursor | 2026-10-10T23:18Z | Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) |  |
 
 Recently finished:
 
