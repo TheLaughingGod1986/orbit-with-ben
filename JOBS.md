@@ -14,10 +14,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0111 | mini | open (after J0110) | – | – | HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first |  |
 | J0113 | mini | open (after J0111) | – | – | HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first |  |
 | J0118 | mini | open | – | – | HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload |  |
-| J0119 | mini | open | – | – | 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) |  |
 
 Recently finished:
 
+- J0119 cancelled: 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) ()
 - J0117 done: Authorize Chief box SSH key on the mini (Tailscale backup path) (done)
 - J0116 done: Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) (Cover set in Studio (end-card frame via Select from video; saved, persists). Related NOT set: Studio picker can't find 55AEQwvs36g until it is public Sun 11 Oct 17:00Z; needs a follow-up job between 17:00Z Sun and 10:30Z Mon. Evidence: 021/10_Shorts/monday_saturn_tease/11_Upload-Package/studio_finish_Cka7_TVVOUQ/)
 - J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
@@ -27,4 +27,3 @@ Recently finished:
 - J0109 done: HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first (B 25.52 s, C 24.80 s, both vo_take PASS, one take each, ~304 credits; HOS PR #268; keep call with grok on desk #180 (6096254990))
 - J0108 done: HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) (done)
 - J0106 done: HOS 004 thumb C v07b: 52/53 about 2x, one style (file only; don't touch the armed Test & Compare). Due before Tue 13 Oct (done)
-- J0105 done: Saturn Short v03 upload + Qn56 swap (Mon 11:30) (done)
