@@ -72,10 +72,10 @@
       "youShort": ""
     },
     "OWB:023": {
-      "updated": "2026-10-09T13:58Z",
-      "mood": "fixing",
-      "done": "Script, voice, picture, edit, thumbnails and the upload package. v05c fixes your 2 notes: every slow zoom is checked for wobble, every frame for murky or unfinished pictures, and 023 now has its own music.",
-      "holdup": "Your 4 notes from the v05c watch. Three are diagrams that are hard to follow (1:22, 4:02, 5:38): Claude is redrawing the two worst with the real planets and short labels, and 5:38 gets labels plus a shot showing where on Venus the rocks are. 3:55: the fact holds (NASA sent four probes in Dec 1978; the water reading came from the big one), so the picture is cropped to that one probe.",
+      "updated": "2026-10-10T11:45Z",
+      "mood": "finished",
+      "done": "Script, voice, picture, edit, thumbnails and the upload package. v05d has your 4 fixes: the albedo, heavy-hydrogen and deuterium diagrams are redrawn with the real planets and big labels, 5:38 gets labels and a shot of where the rocks are, and 3:55 is cropped to the one big probe. Every check passed (picture, music, no frozen holds), and the Chief OK'd the redrawn stills.",
+      "holdup": "Nothing. v05d is in your OWB UAT folder for you to watch.",
       "steps": [
         {
           "who": "Ben",
@@ -86,24 +86,32 @@
         {
           "who": "Claude",
           "what": "redraw the two diagrams with real planets and labels",
-          "job": "J0095"
+          "done": true,
+          "doneText": "done · Fri 9 Oct (J0095)"
         },
         {
           "who": "Cursor",
           "what": "make v05d with your 4 fixes",
-          "job": "J0096"
+          "done": true,
+          "doneText": "done · Sat 10 Oct 08:08 (J0096)"
+        },
+        {
+          "who": "Chief",
+          "what": "check v05d",
+          "done": true,
+          "doneText": "passed · Sat 10 Oct (#99)"
         },
         {
           "who": "Ben",
           "what": "watch v05d",
-          "whenText": "about Sun 11 Oct"
+          "when": "2026-10-11"
         }
       ],
-      "you": "",
-      "timing": "Airs Sun 25 Oct 18:00 London. Time for this round and one more watch.",
-      "line": "You asked for 4 changes. Claude redraws the diagrams today, Cursor makes v05d, and it comes back to you.",
-      "youWhen": "",
-      "youShort": "",
+      "you": "Watch v05d (your 4 fixes are in).",
+      "timing": "Airs Sun 25 Oct 18:00 London. The Chief's final OK is Tue 20 Oct.",
+      "line": "Your 4 fixes are in v05d and every check passed. It's ready for you to watch.",
+      "youWhen": "2026-10-11",
+      "youShort": "Watch v05d",
       "limit": ""
     },
     "OWB:024": {
