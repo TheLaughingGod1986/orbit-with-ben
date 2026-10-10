@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0107 | mini | open | – | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0108 | mini | open | – | – | HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) |  |
-| J0109 | mini | open | – | – | HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first | hos#261 |
+| J0109 | mini | claimed | cursor | 2026-10-10T10:43Z | HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first | hos#261 |
 | J0110 | any | open (after J0108) | – | – | for chief · Chief: OK the 009 long opening (desk #180) before its VO |  |
 | J0111 | mini | open (after J0110) | – | – | HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first |  |
 | J0112 | any | open (after J0108) | – | – | for chief · Chief: OK the 010 long opening (desk #180) before its VO |  |
