@@ -5303,10 +5303,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-10T15:12Z",
-      "eta": "2026-10-10T17:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-09T22:39Z",
       "result": "",
@@ -5340,6 +5340,11 @@
           "at": "2026-10-10T15:12Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T15:15Z",
+          "by": "cursor",
+          "what": "released: Run 3 (Cursor, 10 Oct): Fri 13 Nov Short (Ingenuity 72) picture built, gate_shorts_open PASS (motion 10.3, Orbit 0.0, -14.3 LUFS), 26.4 s, sha256 d375bfbe, 753f1de4: 10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v01.mp4. Not uploaded: needs Claude's OK on the cut + social copy (hook/question/alt), same as Wed (#99 6098843117, still unanswered). Mon 9 waits on Claude's overlap ruling. Next run: upload Wed + Fri privately once Claude answers; build Mon per ruling."
         }
       ]
     },
