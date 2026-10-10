@@ -5400,13 +5400,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-10T09:56Z",
-      "eta": "2026-10-10T10:26Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-09T23:08Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-09T23:08Z",
@@ -5417,6 +5417,11 @@
           "at": "2026-10-10T09:56Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T09:57Z",
+          "by": "cursor",
+          "what": "done: done"
         }
       ],
       "urgent": 5
