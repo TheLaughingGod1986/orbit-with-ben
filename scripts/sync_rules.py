@@ -42,6 +42,7 @@ STALE = [
     (r"edit_post` with Ben's OK", "queued Buffer edits go to Claude (3 Oct 2026)"),
     (r"\*\*Claude owns `AGENTS\.md`", "Chief owns AGENTS.md and the Never list (Ben, 9-10 Oct 2026)"),
     (r"relay never counts as Ben's word", "a Chief relay of Ben's OK counts (Ben, 10 Oct 2026)"),
+    (r"with the £5 floor|stop at £5 left|down to £5 \+", "Vertex trial runs to £0 (Ben, 10 Oct 2026 22:50)"),
 ]
 BLOCK = re.compile(r"(<!-- SYNC: AGENTS\.md#(?P<head>[^>]+?) -->\n)(?P<body>.*?)(<!-- /SYNC -->)", re.S)
 
