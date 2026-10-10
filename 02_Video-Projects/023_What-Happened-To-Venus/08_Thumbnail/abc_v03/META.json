@@ -1,0 +1,51 @@
+{
+  "version": "v03",
+  "job": "J0098",
+  "brief": "audits/THUMB_AUDIT_2026-10-09/AUDIT.md item 3",
+  "rules": "THUMBNAIL_AND_TITLE_RULES.md \u00a72.5 (scale reference) and \u00a72.8 (week-to-week look)",
+  "title": "What Happened to Venus?",
+  "variants": [
+    {
+      "key": "A",
+      "text": "MELTS LEAD",
+      "yellow": "LEAD",
+      "file": "venus_thumb_A_melts-lead.png",
+      "near_black": 0.266,
+      "font_size": 119,
+      "cap_px": 85,
+      "cap_share": 0.118,
+      "min_gap_px": 88.4,
+      "tracking_px": -4,
+      "copied_from": "abc_v02"
+    },
+    {
+      "key": "B",
+      "text": "EARTH'S TWIN",
+      "yellow": "TWIN",
+      "file": "venus_thumb_B_earths-twin.png",
+      "source": "NASA AS17-148-22727 (Apollo 17 Blue Marble) + NASA S91-50688 (Magellan radar mosaic)",
+      "earth_d_px": 560,
+      "venus_d_px": 532,
+      "venus_to_earth": 0.95,
+      "near_black": 0.08,
+      "font_size": 119,
+      "cap_px": 85,
+      "cap_share": 0.118,
+      "min_gap_px": 82.0,
+      "tracking_px": -4
+    },
+    {
+      "key": "C",
+      "text": "WATER GONE?",
+      "yellow": "GONE?",
+      "file": "venus_thumb_C_water-gone.png",
+      "near_black": 0.272,
+      "font_size": 119,
+      "cap_px": 85,
+      "cap_share": 0.118,
+      "min_gap_px": 62.5,
+      "tracking_px": -4,
+      "copied_from": "abc_v02"
+    }
+  ]
+}
