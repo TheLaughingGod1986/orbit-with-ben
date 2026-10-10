@@ -20,7 +20,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
 | J0101 | mini | open | – | – | HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) |  |
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
-| J0105 | mini | open (after J0104) | – | – | Saturn Short v03 upload + Qn56 swap (Mon 11:30) |  |
+| J0105 | mini | claimed | cursor | 2026-10-10T08:26Z | Saturn Short v03 upload + Qn56 swap (Mon 11:30) |  |
 | J0106 | mini | open | – | – | HOS 004 thumb C v07b: 52/53 about 2x, one style (file only; don't touch the armed Test & Compare). Due before Tue 13 Oct | 6085214049 |
 | J0107 | mini | open | – | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0108 | mini | open | – | – | HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) |  |
