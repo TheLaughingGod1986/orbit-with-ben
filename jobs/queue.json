@@ -4526,10 +4526,10 @@
       "stage": "",
       "after": "J0095",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-10T03:37Z",
-      "eta": "2026-10-10T05:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T13:41Z",
       "result": "",
@@ -4733,6 +4733,11 @@
           "at": "2026-10-10T03:37Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T03:38Z",
+          "by": "cursor",
+          "what": "released: Acting-Chief re-check of round 2 stills (ee52814): OK on Grok's 3 fixes (labels house size, near-black 0-22%, 39b PIA00147, PIA00215 x2); --plan clean. Full v05d render running detached: tmux venus023-v05d, log ~/_desk/logs/venus023-v05d.log, done file ~/_desk/logs/venus023-v05d.done. Next: when .done exists, read exit + log, then picture_qa with reviewed_ok, freezedetect, music_gate, phone copy 023_Venus_v05d_PHONE.mp4, move v05b scratch to NAS per render-scratch rule."
         }
       ],
       "urgent": 1
