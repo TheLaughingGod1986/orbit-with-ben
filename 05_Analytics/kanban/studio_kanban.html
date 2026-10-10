@@ -738,8 +738,12 @@ function renderTracker(films){
     const line = live ? `Live since ${fd(pd(f.air))} 18:00.` : b.line || (b.auto ? b.done : "");
     const st = statusOf(b, rows);
     const fj = f._ch==="OWB" ? (fromDb.jobs||[]).filter(j=>j.film===f.id).map(j=>({j,p:P[j.id]||{}})).sort((a,b)=>(a.p.state==="now"?-1:a.p.pos||99)-(b.p.state==="now"?-1:b.p.pos||99))[0] : null;
-    const ordChip = !fj ? "" : fj.p.state==="now" ? '<span class="pill you">Working on it</span>' : fj.p.pos===1 ? '<span class="pill you">Up next</span>'
-      : fj.p.pos ? `<span class="pill">#${fj.p.pos} in line</span>` : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
+    // Ben, 10 Oct: "a number to tell the order and ETA of the task", from the same plan() as the Mac mini box.
+    const eta = p => p.done ? ` · done about ${clock(p.done)}` : "";
+    const ordChip = !fj ? "" : fj.p.state==="now" ? `<span class="pill you">Working on it${eta(fj.p)}</span>`
+      : fj.p.pos===1 ? `<span class="pill you">Up next · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
+      : fj.p.pos ? `<span class="pill">#${fj.p.pos} · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
+      : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
     lanes[f._ch][live ? "live" : COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
       <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span>${ordChip} <span class="pill ${cls}">${word}</span></span></div>
       <div class="kt">${esc(f.title)}</div>
