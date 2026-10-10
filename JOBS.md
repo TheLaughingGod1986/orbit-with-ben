@@ -5,14 +5,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0107, J0111, J0113, J0112.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0107, J0111, J0113.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0107 | mini | blocked | cursor | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0111 | mini | open (after J0110) | – | – | HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first |  |
-| J0112 | any | claimed | chief | 2026-10-10T20:03Z | for chief · Chief: OK the 010 long opening (desk #180) before its VO |  |
 | J0113 | mini | open (after J0111) | – | – | HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first |  |
 
 Recently finished:
@@ -21,9 +20,9 @@ Recently finished:
 - J0116 done: Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) (Cover set in Studio (end-card frame via Select from video; saved, persists). Related NOT set: Studio picker can't find 55AEQwvs36g until it is public Sun 11 Oct 17:00Z; needs a follow-up job between 17:00Z Sun and 10:30Z Mon. Evidence: 021/10_Shorts/monday_saturn_tease/11_Upload-Package/studio_finish_Cka7_TVVOUQ/)
 - J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
 - J0114 done: 026 v05b: fix 7 same-stretch reuses, then Watch link for Ben (v05b in OWB UAT (026_NearestStar_v05b_PHONE.mp4, sha 43f93eec…); picture_qa PASS (0 of 103 fail), music_gate PASS, clip_check PASS, polish PASS; 494.5 s, -14.2 LUFS; card ready for Ben)
+- J0112 done: Chief: OK the 010 long opening (desk #180) before its VO (Chief (Grok) OK'd the 010 opening with one wording change on desk #180 (comment 6096338312): 'solved one of the biggest mysteries on Earth.' -> 'solved one of the biggest mysteries in the history of life.' J0113 applies it in clay_script_master_v01.md before the take.)
 - J0110 done: Chief: OK the 009 long opening (desk #180) before its VO (Chief (Grok) OK'd the 009 opening as written on desk #180 (comment 6096337786). Unblocks J0111.)
 - J0109 done: HOS 007 Shorts B + C voiceover (v02 scripts, test B); ElevenLabs balance first (B 25.52 s, C 24.80 s, both vo_take PASS, one take each, ~304 credits; HOS PR #268; keep call with grok on desk #180 (6096254990))
 - J0108 done: HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) (done)
 - J0106 done: HOS 004 thumb C v07b: 52/53 about 2x, one style (file only; don't touch the armed Test & Compare). Due before Tue 13 Oct (done)
 - J0105 done: Saturn Short v03 upload + Qn56 swap (Mon 11:30) (done)
-- J0104 done: Saturn Short Qn56 end-card recut v03 (Mon 11:30) (monday_saturn_rings_already_falling_v03.mp4 (sha256 4e7f5161d244e4355cf0b88dc702c8dc0fb4d2fda3bdb86e9da2599d4b7c17b3, 23.93 s), gate PASS; Orbit Auditor re-check next)
