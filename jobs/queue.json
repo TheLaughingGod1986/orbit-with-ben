@@ -4526,10 +4526,10 @@
       "stage": "",
       "after": "J0095",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-10T04:33Z",
-      "eta": "2026-10-10T06:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T13:41Z",
       "result": "",
@@ -4783,6 +4783,11 @@
           "at": "2026-10-10T04:33Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T04:35Z",
+          "by": "cursor",
+          "what": "released: Round 3 done (a0133318): every gate passes except picture_qa FAIL 1, row 14a albedo 1:27 'split panel: vertical gutter at 0.044', a likely false positive on the graphic's dark left edge. Needs a ruling: add 'split panel' to albedo.mp4 kinds in full_rough_v05d_reviewed_ok.json, then re-run picture_qa only (no re-render) and copy /private/tmp/023_Venus_v05d_PHONE.mp4 to OWB UAT."
         }
       ],
       "urgent": 1
