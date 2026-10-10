@@ -20,7 +20,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0111 | mini | open (after J0110) | – | – | HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first |  |
 | J0112 | any | open (after J0108) | – | – | for chief · Chief: OK the 010 long opening (desk #180) before its VO |  |
 | J0113 | mini | open (after J0111) | – | – | HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first |  |
-| J0114 | mini | open | – | – | 026 edit · 026 v05b: fix 7 same-stretch reuses, then Watch link for Ben |  |
+| J0114 | mini | claimed | cursor | 2026-10-10T14:58Z | 026 edit · 026 v05b: fix 7 same-stretch reuses, then Watch link for Ben |  |
 | J0116 | mini | open (after J0105) | – | – | Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) |  |
 
 Recently finished:
