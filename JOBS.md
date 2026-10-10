@@ -5,12 +5,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0107.** Ahead of everything, the focus film included.
-
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
-| J0107 | mini | claimed | cursor | 2026-10-11T01:36Z | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11.36; balance first, spend to £0 (Ben 10 Oct) | hos#255 |
 | J0121 | mini | open | – | – | Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) |  |
 
 Recently finished:
