@@ -10,6 +10,39 @@
 import { put, list, del } from "@vercel/blob";
 
 const PREFIX = "board/checks/state-";
+// Ben's buttons go straight to the Chief (Ben, 10 Oct): every Approve / Request changes / Undo is also posted on the
+// Chief's thread, OWB on orbit-with-ben #99 and HOS on history-of-science #180, with env BOARD_GH_TOKEN (a fine-grained
+// GitHub token that can comment on those two repos; never in the page or the repo). Prefix: "[Ben] " then OK / changes /
+// undo, so the Chief's thread watch takes it as Ben's word. Without the token the tick still saves; the reply says so.
+const THREADS = { OWB: ["TheLaughingGod1986/orbit-with-ben", 99], HOS: ["TheLaughingGod1986/history-of-science", 180] };
+
+function londonTime(iso) {
+  try { return new Date(iso).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); }
+  catch (e) { return iso; }
+}
+
+export function benLine(id, doc, prev) {
+  const [ch, film] = String(id).split("-");
+  if (!THREADS[ch] || !/^\d{3}$/.test(film || "")) return null;
+  const what = `${film}${(doc || prev || {}).version ? " " + (doc || prev).version : ""}`;
+  const tail = `\n\n(Studio Kanban button, ${londonTime((doc && doc.at) || new Date().toISOString())} London)`;
+  if (!doc) return prev && !prev.handled ? `[Ben] undo ${what}: ignore my ${prev.verdict === "ok" ? "OK" : "change request"} from the board.${tail}` : null;
+  if (doc.handled) return null;
+  if (doc.verdict === "ok") return `[Ben] OK ${what}: watched it, looks good.${tail}`;
+  const fx = Array.isArray(doc.fixes) ? doc.fixes : [];
+  const list = fx.map((f, i) => `${i + 1}. ${f.t ? f.t + " " : ""}${String(f.text || "").slice(0, 1000)}`).join("\n") || String(doc.note || "").slice(0, 4000);
+  return `[Ben] changes ${what}:\n${list}${tail}`;
+}
+
+async function postToChief(id, body) {
+  const token = process.env.BOARD_GH_TOKEN;
+  if (!token) return "not posted: BOARD_GH_TOKEN isn't set";
+  const [repo, n] = THREADS[String(id).split("-")[0]];
+  const r = await fetch(`https://api.github.com/repos/${repo}/issues/${n}/comments`, { method: "POST",
+    headers: { authorization: `Bearer ${token}`, accept: "application/vnd.github+json", "user-agent": "studio-kanban", "content-type": "application/json" },
+    body: JSON.stringify({ body }) });
+  return r.ok ? `posted on ${repo.split("/")[1]} #${n}` : `not posted: GitHub ${r.status}`;
+}
 const ID = /^[A-Za-z0-9_.-]{1,48}$/;
 const KEEP = 20;
 
@@ -49,6 +82,7 @@ export default async function handler(req, res) {
     const b = await readBody(req);
     if (!ID.test(String(b.id || ""))) return res.status(400).json({ error: "bad id" });
     const { all, state } = await load();
+    const prev = state.checks[b.id] || null;
     if (b.delete) {
       delete state.checks[b.id];
     } else {
@@ -62,7 +96,12 @@ export default async function handler(req, res) {
       contentType: "application/json", cacheControlMaxAge: 31536000 });
     const old = all.slice(KEEP - 1).map(x => x.url);
     if (old.length) await del(old).catch(() => {});
-    return res.status(200).json({ ok: true, checks: state.checks });
+    // Post once per real change (a re-save of the same tick has the same `at`).
+    const doc = b.delete ? null : state.checks[b.id];
+    const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);
+    let chief = "";
+    if (line) chief = await postToChief(b.id, line).catch(e => `not posted: ${String(e && e.message || e).slice(0, 100)}`);
+    return res.status(200).json({ ok: true, checks: state.checks, chief });
   } catch (e) {
     return res.status(500).json({ error: String(e && e.message || e).slice(0, 300) });
   }

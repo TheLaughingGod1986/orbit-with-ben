@@ -80,16 +80,25 @@
       if (j && typeof j.checks === "object") { checksFresh = true; setServer(j.checks); emitChecks(); }
     } catch (e) {}
   }
+  // Ben, 10 Oct: "we used to have a button to add changes or approve". The buttons always show. Saving needs the board
+  // code (env BOARD_KEY): opening the board link once (#k=...) stores it on that device; if it isn't stored (e.g. the
+  // Home Screen copy keeps its own storage), the first tap asks for it once and keeps it.
   async function write(id, body) {
+    if (!key) {
+      const k = (window.prompt("One-time setup on this phone: paste the board code from your board link (the part after #k=).") || "").trim().replace(/^.*#k=/, "");
+      if (!k) throw new Error("no board code");
+      key = k; try { localStorage.setItem("studio-board-key", k); } catch (e) {}
+    }
     const r = await fetch(API, { method: "POST", headers: { "content-type": "application/json", "x-board-key": key || "" },
       body: JSON.stringify(Object.assign({ id }, body)) });
+    if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} }
     if (!r.ok) throw new Error("save failed " + r.status);
     const j = await r.json();
     if (j && j.checks) { checksFresh = true; setServer(j.checks); emitChecks(); }
   }
 
   const db = {
-    canWrite: !!key,
+    canWrite: true,
     doc(path) {
       return {
         onSnapshot(cb) {
