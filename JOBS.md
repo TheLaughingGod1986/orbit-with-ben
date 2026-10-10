@@ -11,12 +11,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0107 | mini | blocked | cursor | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
-| J0120 | mini | claimed | cursor | 2026-10-10T22:49Z | HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10) |  |
 | J0121 | mini | open | – | – | Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) |  |
 
 Recently finished:
 
 - J0122 cancelled: Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) ()
+- J0120 done: HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10) (qOZgess30h0 scheduled 2026-10-13T10:30Z (cover set via API); 93fPUG-hW0A private; HOS PR #274)
 - J0119 cancelled: 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) ()
 - J0118 cancelled: HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload ()
 - J0117 done: Authorize Chief box SSH key on the mini (Tailscale backup path) (done)
@@ -25,4 +25,3 @@ Recently finished:
 - J0114 done: 026 v05b: fix 7 same-stretch reuses, then Watch link for Ben (v05b in OWB UAT (026_NearestStar_v05b_PHONE.mp4, sha 43f93eec…); picture_qa PASS (0 of 103 fail), music_gate PASS, clip_check PASS, polish PASS; 494.5 s, -14.2 LUFS; card ready for Ben)
 - J0113 done: HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first (5 parts v01, 8:19.8 speech, 3,182 credits (11,984 left); vo_take all PASS; vo_check P01/P04 PASS, P03/P05 small.en-only flags, P02 'had/have floated' at ~0:23 for the Chief's ear; opening wording per J0112 applied; HOS PR #272; keep call with grok on desk #180 (6101770273))
 - J0112 done: Chief: OK the 010 long opening (desk #180) before its VO (Chief (Grok) OK'd the 010 opening with one wording change on desk #180 (comment 6096338312): 'solved one of the biggest mysteries on Earth.' -> 'solved one of the biggest mysteries in the history of life.' J0113 applies it in clay_script_master_v01.md before the take.)
-- J0111 done: HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first (done)
