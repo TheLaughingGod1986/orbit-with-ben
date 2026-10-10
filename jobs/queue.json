@@ -1,5 +1,5 @@
 {
-  "next_id": 115,
+  "next_id": 116,
   "jobs": [
     {
       "id": "J0001",
@@ -5534,6 +5534,32 @@
         }
       ],
       "urgent": 17
+    },
+    {
+      "id": "J0115",
+      "title": "Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Quick, no spend. Orbit Auditor can't reach the Mac mini and needs the Saturn Short v03 file to score it (J0105 is waiting on that PASS).\n1. Create branch `uat/saturn-short-v03` from main. Commit ONLY 02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/monday_saturn_tease/06_Final-Exports/monday_saturn_rings_already_falling_v03.mp4 (force-add it, about 20 MB, sha256 4e7f5161…). Push the branch and never merge it.\n2. Post on #99: \"[Chief] [<agent>] v03 on branch uat/saturn-short-v03 at <commit>, sha <full sha256>\".\nChief deletes the branch after the upload.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-10T08:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-10T08:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
