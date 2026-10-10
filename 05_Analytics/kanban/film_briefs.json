@@ -188,10 +188,10 @@
       "youWhen": ""
     },
     "OWB:026": {
-      "updated": "2026-10-09T13:08Z",
-      "mood": "fixing",
-      "done": "Script, voice, its own music and the picture. Passed every check, and Claude went through it frame by frame.",
-      "holdup": "Your three notes: the graphs at 1:52 and 6:15, and no Orbit. Both graphs get redrawn as clear examples, and Orbit's two scenes go back in (the thumb trick watching a star jump, and setting off on the long walk). Claude sees stills before the new version is made.",
+      "updated": "2026-10-10T13:16Z",
+      "mood": "ready",
+      "done": "Your three notes are in: light travelling to Earth past year-marks at 1:52, the Moon/Sun/star light race at 6:02, and Orbit's two scenes. Seven repeated bits of observatory footage were also swapped for fresh night-sky shots, and every check passes.",
+      "holdup": "Nothing: it's ready for you to watch.",
       "steps": [
         {
           "who": "Ben",
@@ -209,12 +209,21 @@
         {
           "who": "Cursor",
           "what": "redraw the two graphics, add Orbit's two scenes, make the new version",
-          "job": "J0085"
+          "job": "J0085",
+          "done": true,
+          "doneText": "made · Sat 10 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "swap 7 repeated footage stretches, make v05b",
+          "job": "J0114",
+          "done": true,
+          "doneText": "passed every check · Sat 10 Oct"
         },
         {
           "who": "Claude",
           "what": "check it",
-          "afterJob": "J0085",
+          "afterJob": "J0114",
           "lag": 60
         },
         {
@@ -223,11 +232,11 @@
           "whenText": "about Sun 11 Oct"
         }
       ],
-      "you": "",
+      "you": "Watch v05b on your phone (OWB UAT/026_NearestStar_v05b_PHONE.mp4), then tap Looks good or Needs a change.",
       "timing": "Ready for you about Sun 11 Oct. Airs Sun 15 Nov.",
-      "line": "You flagged two graphs and a missing Orbit. All three go into one new version: light travelling to Earth past year-marks, a Moon/Sun/star light race, and Orbit's two scenes.",
-      "youShort": "",
-      "youWhen": ""
+      "line": "v05b has your three fixes plus fresh night-sky shots where footage repeated. Ready for you to watch.",
+      "youShort": "watch v05b",
+      "youWhen": "this weekend"
     },
     "OWB:027": {
       "updated": "2026-10-09T19:45Z",
