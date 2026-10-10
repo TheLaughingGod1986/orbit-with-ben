@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0096, J0104, J0105, J0106, J0109, J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0104, J0105, J0106, J0109, J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -15,7 +15,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
-| J0096 | mini | claimed | cursor | 2026-10-10T09:06Z | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
 | J0098 | mini | open | – | – | 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) |  |
 | J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
@@ -37,6 +36,7 @@ Recently finished:
 
 - J0102 done: HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct (T&C armed Title+thumbnail A/B/C (C=v07), saved; Ineligible until public 15 Oct. HOS 5518d51)
 - J0097 done: HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) (C v07 repainted on Vertex (2 plates, $0.078): tiles painted in, Te 52 / I 53 by hand, lining figures. HOS PR #263; sheet on HOS desk #180 comment 6084976194. Claude to review by Tue 13 Oct 18:00 and queue Test & Compare arming (A/B/C, or A/B on Wed 14 Oct).)
+- J0096 done: 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) (done)
 - J0095 done: 023 Venus: redraw albedo + deuterium code graphics (Ben's v05c notes) (albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated)
 - J0093 done: Long-form view: Cursor on one 45–60 min video a month (Ben asked) (done)
 - J0092 done: Long-form view: Codex on one 45–60 min video a month (Ben asked) (Posted eight-line long-form recommendation: not yet; original documentary later, cost estimates and day-28 efficiency metric.)
@@ -44,4 +44,3 @@ Recently finished:
 - J0090 cancelled: 027 bed take 2 for the re-ordered film (after the 30 Oct ElevenLabs reset; HOS voice first) ()
 - J0088 done: 027 opening: first answer before 0:30, from existing VO (Codex idea 5) (027 SHOT_LIST_v02: VO re-ordered (agenda cut, sudden-stop chapter first); the first answer is at ~24 s, was 112 s; no new VO; J0077 builds from v02)
 - J0085 cancelled: 026 Nearest Star: Ben's fixes, two graphics + Orbit's two scenes back in (v05) ()
-- J0084 done: 025 Mars robot: upload privately, scheduled Sun 8 Nov (Ben OK 9 Oct; after the package) (Long uploaded: Js6EQJ8qDi8, private, publishAt Sun 8 Nov 18:00 London (upload log exit 0; sha256 cce6268c matches UPLOADS.json; Test & Compare A,C,B set by Cursor, #99 6088767763). End screen, pinned comment and the three Shorts moved to J0103.)
