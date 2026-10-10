@@ -65,3 +65,15 @@ Moon Shorts that already had voice: `rFzqmi8RWCY` Why Does the Moon Drift 3.8 cm
 Live longs, all pass: `2fsQcea-voM` Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone · `Yk1tLh23rko` What Happens If You Get Near a Neutron Star · `NbW5G1BpPY0` Could Life Exist Under The Ice Of Europa? · `REXYxuLOBoI` What Happens When the Last Star Dies? · `ziKBPJ6FY0U` JWST Found Galaxies That Shouldn't Exist Yet · `b8-X_FyJnHM` Alien Worlds: The Strangest Planets We've Ever Found · `3xrxdmaOwJI` What Happens If You Fall Into a Black Hole? · `Mo93x0fxB1Q` Why Haven't We Found Aliens Yet? The Fermi Paradox Explained.
 
 Every other live Short in the public catalogue passed the same listen (speech present, not a silent file), including the Neutron, Europa, Last Star, JWST, Fermi, Black Hole, and Alien Worlds clusters. None of those ids were replaced.
+
+## 10 Oct follow-up: three silent Moon Shorts made Private
+
+Chief's 10 Oct audio sweep (yt-dlp public streams + local exports) found three public Moon Shorts that are digital silence for the whole file (−70 LUFS, −91 dB max, on two YouTube audio formats). The 24 Sep listen above missed them. Ben OK'd the fix on 10 Oct 21:10 ("Any that the sound is broken can we fix"), relayed by Chief as job J0121. Each one already had an audible copy public since 21 Sep, so they were made Private with no re-upload. Nothing was deleted.
+
+| Silent Short (now Private) | Audible copy (public) |
+|---|---|
+| `osRFF1cBCEw` Why Does the Moon Drift 3.8 cm a Year? (347 views) | `rFzqmi8RWCY` The Moon Gets 3.8 cm Farther Away Every Year (−16.2 LUFS) |
+| `MYPIEBBs7B8` What If the Moon Just Left? (262 views) | `eSFhBf2rcZk` Is the Moon Leaving Us? (−16.8 LUFS) |
+| `2qTvliJQuqI` Why Were Earth's Days Only Hours Long? (173 views) | `cmeBDZLzPHs` A Day on Young Earth Lasted Just a Few Hours (−16.5 LUFS) |
+
+Done by Cursor on 10 Oct 2026 22:48Z with `07_Content-Ops/scripts/set-private.ts` (status-only change; title, kids flag, embed and licence kept). API before/after: `00_Brand/Channel-Setup/audits/moon_silent_private_2026-10-10.json`. Studio showed all three as Private on Orbit With Ben after a reload.
