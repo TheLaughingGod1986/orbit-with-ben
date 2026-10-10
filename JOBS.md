@@ -13,6 +13,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0107 | mini | blocked | cursor | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0118 | mini | open | – | – | HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload |  |
 | J0120 | mini | open | – | – | HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10) |  |
+| J0121 | mini | open | – | – | Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) |  |
 
 Recently finished:
 
