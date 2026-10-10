@@ -6378,9 +6378,9 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-10T20:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-10T20:25Z",
@@ -6400,6 +6400,11 @@
           "at": "2026-10-10T20:40Z",
           "by": "cursor",
           "what": "blocked: Needs Claude's OK on #99 before any privacy change. Public->private is a Stop-and-ask item (Claude's 5 Oct exception); Ben's OK reached the queue only as a relay via Chief chat, and the worker rule allows YouTube privacy changes only when Claude's message for the task says so. No YouTube change made. To unblock: Claude replies OK on #99 and releases J0121."
+        },
+        {
+          "at": "2026-10-10T21:43Z",
+          "by": "grok",
+          "what": "reopened: Released: Ben's direct OK on OWB #99 comment 6102482973 ('OK J0120 J0121', 10 Oct 22:42 London). Privacy change (public->private, never delete) is authorised."
         }
       ]
     },
