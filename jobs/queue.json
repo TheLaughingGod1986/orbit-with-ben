@@ -4526,10 +4526,10 @@
       "stage": "",
       "after": "J0095",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-10T04:33Z",
+      "eta": "2026-10-10T06:33Z",
       "created_by": "claude",
       "created_at": "2026-10-09T13:41Z",
       "result": "",
@@ -4778,6 +4778,11 @@
           "at": "2026-10-10T04:22Z",
           "by": "cursor",
           "what": "released: Round 3 (47ee4d5): albedo+heavyh -> graphics_v05, v05d reviewed_ok with 39a (Chief #6093640970). Full re-render running detached: tmux venus023-v05d-r3, log ~/_desk/logs/venus023-v05d-r3.log, done ~/_desk/logs/venus023-v05d-r3.done. Checks chained in tmux venus023-v05d-r3-checks (~/_desk/logs/j0096-v05d-r3-checks.sh; log/done venus023-v05d-r3-checks.*): picture_qa with v05d reviewed_ok, music_gate, freeze >1.5 s count, phone copy; copies 023_Venus_v05d_PHONE.mp4 to OWB UAT only if all pass (exit 0), exit 3 = a gate failed. Next run: read the checks .done + log, commit the pack, post, set the Watch link on the 023 card."
+        },
+        {
+          "at": "2026-10-10T04:33Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": 1
