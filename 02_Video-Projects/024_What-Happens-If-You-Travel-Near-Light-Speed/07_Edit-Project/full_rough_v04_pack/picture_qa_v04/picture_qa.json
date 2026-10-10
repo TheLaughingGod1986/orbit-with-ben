@@ -1,0 +1,3144 @@
+{
+  "verdict": "FAIL",
+  "video": "/private/tmp/024_LightSpeed_full_rough_v04.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [
+        "near-black: mean 14.03, p95 68.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 11.35,
+      "at": "0:11",
+      "fail": [
+        "low detail: luma std 10.64 < 13.44 and edge density 0.001 < 0.0259 (absolute floor)",
+        "near-black: mean 13.06, p95 25.0"
+      ],
+      "warn": [],
+      "offset": 122.0
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 15.97,
+      "at": "0:16",
+      "fail": [
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 4,
+      "row": "4",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 21.07,
+      "at": "0:21",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 9.63, p95 8.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 5,
+      "row": "5",
+      "source": "GPS_Block_IIIA.jpg",
+      "title": "File:GPS Block IIIA.jpg",
+      "t": 25.77,
+      "at": "0:26",
+      "fail": [
+        "push jitter: 0.994 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 6,
+      "row": "6",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 30.43,
+      "at": "0:30",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 7,
+      "row": "6",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 34.13,
+      "at": "0:34",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 11.21, p95 18.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 10.0
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 38.62,
+      "at": "0:39",
+      "fail": [
+        "low detail: luma std 10.4 < 13.44 and edge density 0.0095 < 0.0259 (absolute floor)",
+        "near-black: mean 6.81, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 9,
+      "row": "7",
+      "source": "GPS_Block_IIIA.jpg",
+      "title": "File:GPS Block IIIA.jpg",
+      "t": 42.9,
+      "at": "0:43",
+      "fail": [
+        "push jitter: 0.982 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 10,
+      "row": "7",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 47.02,
+      "at": "0:47",
+      "fail": [
+        "near-black: mean 15.34, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 11,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "title": "Deep Space Atomic Clock Hardware",
+      "t": 51.53,
+      "at": "0:52",
+      "fail": [
+        "push jitter: 1.094 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 12,
+      "row": "8",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 56.2,
+      "at": "0:56",
+      "fail": [
+        "reuse: same stretch as 0:47 (give it a new stretch, or a new render)",
+        "near-black: mean 19.55, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 13,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "title": "Deep Space Atomic Clock Hardware",
+      "t": 60.62,
+      "at": "1:01",
+      "fail": [
+        "push jitter: 0.992 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 14,
+      "row": "8",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 64.62,
+      "at": "1:05",
+      "fail": [
+        "reuse: same stretch as 0:47 (give it a new stretch, or a new render)",
+        "split panel: horizontal gutter at 0.654",
+        "near-black: mean 23.49, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 15,
+      "row": "9",
+      "source": "mapdrift.mp4",
+      "title": null,
+      "t": 69.38,
+      "at": "1:09",
+      "fail": [
+        "split panel: vertical seam at 0.096, vertical seam at 0.196, vertical seam at 0.296, vertical seam at 0.396, vertical seam at 0.496, vertical seam at 0.596, vertical seam at 0.696, vertical seam at 0.796, vertical seam at 0.896, horizontal seam at 0.159, horizontal seam at 0.169, horizontal seam at 0.326, horizontal seam at 0.335, horizontal seam at 0.493, horizontal seam at 0.502, horizontal seam at 0.659, horizontal seam at 0.669, horizontal seam at 0.826, horizontal seam at 0.837",
+        "near-black: mean 10.97, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 16,
+      "row": "9",
+      "source": "mapdrift.mp4",
+      "title": null,
+      "t": 74.57,
+      "at": "1:15",
+      "fail": [
+        "split panel: vertical seam at 0.096, vertical seam at 0.196, vertical seam at 0.296, vertical seam at 0.396, vertical seam at 0.496, vertical seam at 0.596, vertical seam at 0.696, vertical seam at 0.796, vertical seam at 0.896, horizontal seam at 0.159, horizontal seam at 0.169, horizontal seam at 0.326, horizontal seam at 0.335, horizontal seam at 0.493, horizontal seam at 0.502, horizontal seam at 0.659, horizontal seam at 0.669, horizontal seam at 0.826, horizontal seam at 0.837",
+        "near-black: mean 11.12, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 17,
+      "row": "9",
+      "source": "mapdrift.mp4",
+      "title": null,
+      "t": 78.62,
+      "at": "1:19",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "split panel: vertical seam at 0.096, vertical seam at 0.196, vertical seam at 0.296, vertical seam at 0.396, vertical seam at 0.496, vertical seam at 0.596, vertical seam at 0.696, vertical seam at 0.796, vertical seam at 0.896, horizontal seam at 0.159, horizontal seam at 0.169, horizontal seam at 0.326, horizontal seam at 0.335, horizontal seam at 0.493, horizontal seam at 0.502, horizontal seam at 0.659, horizontal seam at 0.669, horizontal seam at 0.826, horizontal seam at 0.837",
+        "near-black: mean 11.19, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 18,
+      "row": "10",
+      "source": "iss035e017673.jpg",
+      "title": "Earth Observations taken by the Expedition 35 Crew",
+      "t": 82.25,
+      "at": "1:22",
+      "fail": [
+        "near-black: mean 12.8, p95 43.0",
+        "push jitter: 1.027 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 19,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "title": "DC-8 Airborne Laboratory in flight",
+      "t": 86.38,
+      "at": "1:26",
+      "fail": [
+        "push jitter: 1.001 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "11",
+      "source": "EC98-44444-004.jpg",
+      "title": "DC-8 Airborne Laboratory in banked flight over snow-capped Sierra Nevada mountain range",
+      "t": 91.0,
+      "at": "1:31",
+      "fail": [
+        "push jitter: 0.953 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 21,
+      "row": "11",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 96.35,
+      "at": "1:36",
+      "fail": [
+        "push jitter: 0.98 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 22,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "title": "DC-8 Airborne Laboratory in flight",
+      "t": 101.3,
+      "at": "1:41",
+      "fail": [
+        "push jitter: 1.051 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 23,
+      "row": "12",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 105.52,
+      "at": "1:46",
+      "fail": [
+        "reuse: same stretch as 0:30 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 37.5s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 24,
+      "row": "12",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 108.73,
+      "at": "1:49",
+      "fail": [
+        "near-black: mean 7.26, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 17.0
+    },
+    {
+      "cut": 25,
+      "row": "13",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 112.13,
+      "at": "1:52",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "split panel: vertical seam at 0.798",
+        "near-black: mean 9.97, p95 30.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 26,
+      "row": "13",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 116.32,
+      "at": "1:56",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "split panel: vertical seam at 0.798",
+        "near-black: mean 8.62, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 27,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 120.13,
+      "at": "2:00",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.3, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 28,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 124.22,
+      "at": "2:04",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 29,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 128.98,
+      "at": "2:09",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.33, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 30,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 133.18,
+      "at": "2:13",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:30 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.5
+    },
+    {
+      "cut": 31,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 136.77,
+      "at": "2:17",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 16.6
+    },
+    {
+      "cut": 32,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 139.83,
+      "at": "2:20",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 33,
+      "row": "15",
+      "source": "orbit_lightclock_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 143.25,
+      "at": "2:23",
+      "fail": [
+        "near-black: mean 16.43, p95 60.0"
+      ],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 34,
+      "row": "15",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 147.68,
+      "at": "2:28",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 35,
+      "row": "15",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 152.07,
+      "at": "2:32",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 36,
+      "row": "15",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 155.28,
+      "at": "2:35",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "split panel: vertical seam at 0.798",
+        "near-black: mean 8.5, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 37,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 159.13,
+      "at": "2:39",
+      "fail": [
+        "near-black: mean 7.65, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 19.4s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 38,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 164.37,
+      "at": "2:44",
+      "fail": [
+        "near-black: mean 8.66, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 39,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 169.05,
+      "at": "2:49",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "near-black: mean 9.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 10.0
+    },
+    {
+      "cut": 40,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 173.5,
+      "at": "2:54",
+      "fail": [
+        "near-black: mean 9.9, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 14.0
+    },
+    {
+      "cut": 41,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 177.68,
+      "at": "2:58",
+      "fail": [
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.15, p95 38.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 42,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 181.98,
+      "at": "3:02",
+      "fail": [
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 14.15, p95 57.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.3
+    },
+    {
+      "cut": 43,
+      "row": "17",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 186.67,
+      "at": "3:07",
+      "fail": [
+        "push jitter: 0.95 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 190.78,
+      "at": "3:11",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.95, p95 51.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 46,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 197.08,
+      "at": "3:17",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.62, p95 46.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 47,
+      "row": "18",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 201.75,
+      "at": "3:22",
+      "fail": [
+        "push jitter: 0.952 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "18",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 206.87,
+      "at": "3:27",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.07, p95 36.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 50,
+      "row": "19",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 214.53,
+      "at": "3:35",
+      "fail": [
+        "reuse: same stretch as 0:21 (give it a new stretch, or a new render)",
+        "near-black: mean 8.43, p95 7.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 51,
+      "row": "19",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 217.78,
+      "at": "3:38",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 13.24, p95 56.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 52,
+      "row": "20",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 221.78,
+      "at": "3:42",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.01, p95 86.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 14.0
+    },
+    {
+      "cut": 55,
+      "row": "21",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 234.43,
+      "at": "3:54",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 14.18, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 56,
+      "row": "22",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 238.27,
+      "at": "3:58",
+      "fail": [
+        "near-black: mean 8.96, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 57,
+      "row": "22",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 243.33,
+      "at": "4:03",
+      "fail": [
+        "near-black: mean 8.13, p95 18.0",
+        "push jitter: 1.026 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 59,
+      "row": "22",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 251.2,
+      "at": "4:11",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 60,
+      "row": "23",
+      "source": "iss019e018483.jpg",
+      "title": "Expedition 19 crew tests water from Recycling system",
+      "t": 256.55,
+      "at": "4:17",
+      "fail": [
+        "push jitter: 1.11 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 61,
+      "row": "24",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 261.37,
+      "at": "4:21",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.86, p95 107.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 16.0
+    },
+    {
+      "cut": 62,
+      "row": "24",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 266.2,
+      "at": "4:26",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.89, p95 106.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 63,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 271.58,
+      "at": "4:32",
+      "fail": [
+        "near-black: mean 8.31, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 17.8s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 64,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 277.05,
+      "at": "4:37",
+      "fail": [
+        "near-black: mean 7.96, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 65,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 281.98,
+      "at": "4:42",
+      "fail": [
+        "near-black: mean 7.51, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 11.0
+    },
+    {
+      "cut": 66,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 285.42,
+      "at": "4:45",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "near-black: mean 7.48, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 67,
+      "row": "26",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 289.32,
+      "at": "4:49",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.96, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 68,
+      "row": "26",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 294.5,
+      "at": "4:54",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.35, p95 107.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 17.5
+    },
+    {
+      "cut": 69,
+      "row": "26",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 299.5,
+      "at": "5:00",
+      "fail": [
+        "reuse: same stretch as 4:11 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 70,
+      "row": "26",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 304.3,
+      "at": "5:04",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 10.74, p95 12.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 72,
+      "row": "27",
+      "source": "orbit_returns_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 314.88,
+      "at": "5:15",
+      "fail": [
+        "near-black: mean 19.46, p95 70.0"
+      ],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 73,
+      "row": "28",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 320.48,
+      "at": "5:20",
+      "fail": [
+        "push jitter: 1.018 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 74,
+      "row": "29",
+      "source": "SSC-20240229-s00309.tif",
+      "title": "NASA Caps Off February with RS-25 Engine Certification Test",
+      "t": 326.7,
+      "at": "5:27",
+      "fail": [
+        "push jitter: 1.0 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 75,
+      "row": "30",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 331.3,
+      "at": "5:31",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "low detail: luma std 10.14 < 13.44 and edge density 0.0095 < 0.0259 (absolute floor)",
+        "near-black: mean 6.78, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 76,
+      "row": "30",
+      "source": "SSC-2015-00064.jpg",
+      "title": "Lighting up the Night",
+      "t": 335.17,
+      "at": "5:35",
+      "fail": [
+        "push jitter: 0.898 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 77,
+      "row": "30",
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "title": "Black Marble - City Lights 2012",
+      "t": 339.63,
+      "at": "5:40",
+      "fail": [
+        "near-black: mean 6.46, p95 26.0",
+        "push jitter: 0.923 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 78,
+      "row": "30",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 344.15,
+      "at": "5:44",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "low detail: luma std 11.93 < 13.44 and edge density 0.0098 < 0.0259 (absolute floor)",
+        "near-black: mean 6.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 79,
+      "row": "30",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 348.8,
+      "at": "5:49",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "low detail: luma std 11.04 < 13.44 and edge density 0.0097 < 0.0259 (absolute floor)",
+        "near-black: mean 6.87, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 80,
+      "row": "31",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 353.82,
+      "at": "5:54",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "near-black: mean 7.5, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 81,
+      "row": "31",
+      "source": "SSC-20240229-s00309.tif",
+      "title": "NASA Caps Off February with RS-25 Engine Certification Test",
+      "t": 357.73,
+      "at": "5:58",
+      "fail": [
+        "push jitter: 1.022 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 82,
+      "row": "31",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 361.22,
+      "at": "6:01",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "near-black: mean 7.69, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 83,
+      "row": "31",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 365.88,
+      "at": "6:06",
+      "fail": [
+        "reuse: same stretch as 5:44 (give it a new stretch, or a new render)",
+        "near-black: mean 7.89, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 84,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "title": "Views of the overhead flight deck window showing debris impact damage",
+      "t": 371.05,
+      "at": "6:11",
+      "fail": [
+        "push jitter: 1.016 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 85,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "title": "Views of the overhead flight deck window showing debris impact damage",
+      "t": 376.25,
+      "at": "6:16",
+      "fail": [
+        "push jitter: 0.965 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 86,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "title": "Parker Solar Probe Launch",
+      "t": 381.83,
+      "at": "6:22",
+      "fail": [
+        "push jitter: 0.97 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 87,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "title": "Parker Solar Probe Launch",
+      "t": 387.02,
+      "at": "6:27",
+      "fail": [
+        "push jitter: 1.041 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 88,
+      "row": "34",
+      "source": "ACS3_SolarSailSunrise.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 3",
+      "t": 391.27,
+      "at": "6:31",
+      "fail": [
+        "push jitter: 1.141 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 3' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 89,
+      "row": "34",
+      "source": "ACS3_LookingDown.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 2",
+      "t": 396.02,
+      "at": "6:36",
+      "fail": [
+        "split panel: vertical seam at 0.485, vertical seam at 0.486",
+        "push jitter: 1.021 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 2' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "35",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 400.42,
+      "at": "6:40",
+      "fail": [
+        "reuse: same stretch as 0:21 (give it a new stretch, or a new render)",
+        "near-black: mean 11.61, p95 30.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 91,
+      "row": "35",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 404.37,
+      "at": "6:44",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:21 (give it a new stretch, or a new render)",
+        "near-black: mean 9.26, p95 8.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 92,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "title": "File:Gaia\u2019s sky in colour ESA393127.jpg",
+      "t": 409.58,
+      "at": "6:50",
+      "fail": [
+        "push jitter: 1.009 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 93,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "title": "File:Gaia\u2019s sky in colour ESA393127.jpg",
+      "t": 414.3,
+      "at": "6:54",
+      "fail": [
+        "push jitter: 0.994 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 94,
+      "row": "35",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 418.32,
+      "at": "6:58",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 13.2, p95 52.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 96,
+      "row": "36",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 427.07,
+      "at": "7:07",
+      "fail": [
+        "low detail: luma std 10.29 < 13.44 and edge density 0.0248 < 0.0259 (absolute floor)",
+        "near-black: mean 6.82, p95 20.0",
+        "push jitter: 1.021 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 98,
+      "row": "36",
+      "source": "iss040e091231.jpg",
+      "title": "Earth Observation",
+      "t": 433.5,
+      "at": "7:14",
+      "fail": [
+        "near-black: mean 11.89, p95 53.0",
+        "push jitter: 1.044 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 100,
+      "row": "37",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 440.5,
+      "at": "7:20",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 101,
+      "row": "37",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 444.22,
+      "at": "7:24",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 102,
+      "row": "37",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 447.3,
+      "at": "7:27",
+      "fail": [
+        "reuse: same stretch as 2:49 (give it a new stretch, or a new render)",
+        "near-black: mean 9.9, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 15.0
+    },
+    {
+      "cut": 103,
+      "row": "38",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 451.28,
+      "at": "7:31",
+      "fail": [
+        "reuse: same stretch as 0:47 (give it a new stretch, or a new render)",
+        "near-black: mean 15.73, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 104,
+      "row": "38",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 455.7,
+      "at": "7:36",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.12, p95 37.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 105,
+      "row": "38",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 461.2,
+      "at": "7:41",
+      "fail": [
+        "reuse: 6 stretches of this footage (limit 5)",
+        "near-black: mean 10.11, p95 13.0"
+      ],
+      "warn": [],
+      "offset": 176.0
+    },
+    {
+      "cut": 106,
+      "row": "39",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 478.0,
+      "at": "7:58",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 11.32, p95 18.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 26.1s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    }
+  ],
+  "warn": [
+    {
+      "cut": 54,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 230.65,
+      "at": "3:51",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0049"
+      ],
+      "offset": 380.0
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [
+        "near-black: mean 14.03, p95 68.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 8.08,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 11.35,
+      "at": "0:11",
+      "fail": [
+        "low detail: luma std 10.64 < 13.44 and edge density 0.001 < 0.0259 (absolute floor)",
+        "near-black: mean 13.06, p95 25.0"
+      ],
+      "warn": [],
+      "offset": 122.0
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 15.97,
+      "at": "0:16",
+      "fail": [
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 4,
+      "row": "4",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 21.07,
+      "at": "0:21",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 9.63, p95 8.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 5,
+      "row": "5",
+      "source": "GPS_Block_IIIA.jpg",
+      "title": "File:GPS Block IIIA.jpg",
+      "t": 25.77,
+      "at": "0:26",
+      "fail": [
+        "push jitter: 0.994 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 6,
+      "row": "6",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 30.43,
+      "at": "0:30",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 7,
+      "row": "6",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 34.13,
+      "at": "0:34",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 11.21, p95 18.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 10.0
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 38.62,
+      "at": "0:39",
+      "fail": [
+        "low detail: luma std 10.4 < 13.44 and edge density 0.0095 < 0.0259 (absolute floor)",
+        "near-black: mean 6.81, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 9,
+      "row": "7",
+      "source": "GPS_Block_IIIA.jpg",
+      "title": "File:GPS Block IIIA.jpg",
+      "t": 42.9,
+      "at": "0:43",
+      "fail": [
+        "push jitter: 0.982 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 10,
+      "row": "7",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 47.02,
+      "at": "0:47",
+      "fail": [
+        "near-black: mean 15.34, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 11,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "title": "Deep Space Atomic Clock Hardware",
+      "t": 51.53,
+      "at": "0:52",
+      "fail": [
+        "push jitter: 1.094 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 12,
+      "row": "8",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 56.2,
+      "at": "0:56",
+      "fail": [
+        "reuse: same stretch as 0:47 (give it a new stretch, or a new render)",
+        "near-black: mean 19.55, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 13,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "title": "Deep Space Atomic Clock Hardware",
+      "t": 60.62,
+      "at": "1:01",
+      "fail": [
+        "push jitter: 0.992 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 14,
+      "row": "8",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 64.62,
+      "at": "1:05",
+      "fail": [
+        "reuse: same stretch as 0:47 (give it a new stretch, or a new render)",
+        "split panel: horizontal gutter at 0.654",
+        "near-black: mean 23.49, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 15,
+      "row": "9",
+      "source": "mapdrift.mp4",
+      "title": null,
+      "t": 69.38,
+      "at": "1:09",
+      "fail": [
+        "split panel: vertical seam at 0.096, vertical seam at 0.196, vertical seam at 0.296, vertical seam at 0.396, vertical seam at 0.496, vertical seam at 0.596, vertical seam at 0.696, vertical seam at 0.796, vertical seam at 0.896, horizontal seam at 0.159, horizontal seam at 0.169, horizontal seam at 0.326, horizontal seam at 0.335, horizontal seam at 0.493, horizontal seam at 0.502, horizontal seam at 0.659, horizontal seam at 0.669, horizontal seam at 0.826, horizontal seam at 0.837",
+        "near-black: mean 10.97, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 16,
+      "row": "9",
+      "source": "mapdrift.mp4",
+      "title": null,
+      "t": 74.57,
+      "at": "1:15",
+      "fail": [
+        "split panel: vertical seam at 0.096, vertical seam at 0.196, vertical seam at 0.296, vertical seam at 0.396, vertical seam at 0.496, vertical seam at 0.596, vertical seam at 0.696, vertical seam at 0.796, vertical seam at 0.896, horizontal seam at 0.159, horizontal seam at 0.169, horizontal seam at 0.326, horizontal seam at 0.335, horizontal seam at 0.493, horizontal seam at 0.502, horizontal seam at 0.659, horizontal seam at 0.669, horizontal seam at 0.826, horizontal seam at 0.837",
+        "near-black: mean 11.12, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 17,
+      "row": "9",
+      "source": "mapdrift.mp4",
+      "title": null,
+      "t": 78.62,
+      "at": "1:19",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "split panel: vertical seam at 0.096, vertical seam at 0.196, vertical seam at 0.296, vertical seam at 0.396, vertical seam at 0.496, vertical seam at 0.596, vertical seam at 0.696, vertical seam at 0.796, vertical seam at 0.896, horizontal seam at 0.159, horizontal seam at 0.169, horizontal seam at 0.326, horizontal seam at 0.335, horizontal seam at 0.493, horizontal seam at 0.502, horizontal seam at 0.659, horizontal seam at 0.669, horizontal seam at 0.826, horizontal seam at 0.837",
+        "near-black: mean 11.19, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 18,
+      "row": "10",
+      "source": "iss035e017673.jpg",
+      "title": "Earth Observations taken by the Expedition 35 Crew",
+      "t": 82.25,
+      "at": "1:22",
+      "fail": [
+        "near-black: mean 12.8, p95 43.0",
+        "push jitter: 1.027 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 19,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "title": "DC-8 Airborne Laboratory in flight",
+      "t": 86.38,
+      "at": "1:26",
+      "fail": [
+        "push jitter: 1.001 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "11",
+      "source": "EC98-44444-004.jpg",
+      "title": "DC-8 Airborne Laboratory in banked flight over snow-capped Sierra Nevada mountain range",
+      "t": 91.0,
+      "at": "1:31",
+      "fail": [
+        "push jitter: 0.953 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 21,
+      "row": "11",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 96.35,
+      "at": "1:36",
+      "fail": [
+        "push jitter: 0.98 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 22,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "title": "DC-8 Airborne Laboratory in flight",
+      "t": 101.3,
+      "at": "1:41",
+      "fail": [
+        "push jitter: 1.051 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 23,
+      "row": "12",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 105.52,
+      "at": "1:46",
+      "fail": [
+        "reuse: same stretch as 0:30 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 37.5s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 24,
+      "row": "12",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 108.73,
+      "at": "1:49",
+      "fail": [
+        "near-black: mean 7.26, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 17.0
+    },
+    {
+      "cut": 25,
+      "row": "13",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 112.13,
+      "at": "1:52",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "split panel: vertical seam at 0.798",
+        "near-black: mean 9.97, p95 30.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 26,
+      "row": "13",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 116.32,
+      "at": "1:56",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "split panel: vertical seam at 0.798",
+        "near-black: mean 8.62, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 27,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 120.13,
+      "at": "2:00",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.3, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 28,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 124.22,
+      "at": "2:04",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 29,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 128.98,
+      "at": "2:09",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.33, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 30,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 133.18,
+      "at": "2:13",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:30 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.5
+    },
+    {
+      "cut": 31,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 136.77,
+      "at": "2:17",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 16.6
+    },
+    {
+      "cut": 32,
+      "row": "14",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 139.83,
+      "at": "2:20",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 33,
+      "row": "15",
+      "source": "orbit_lightclock_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 143.25,
+      "at": "2:23",
+      "fail": [
+        "near-black: mean 16.43, p95 60.0"
+      ],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 34,
+      "row": "15",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 147.68,
+      "at": "2:28",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.35, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 35,
+      "row": "15",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 152.07,
+      "at": "2:32",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "near-black: mean 7.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 36,
+      "row": "15",
+      "source": "lightclock.mp4",
+      "title": null,
+      "t": 155.28,
+      "at": "2:35",
+      "fail": [
+        "reuse: same stretch as 0:16 (give it a new stretch, or a new render)",
+        "split panel: vertical seam at 0.798",
+        "near-black: mean 8.5, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 37,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 159.13,
+      "at": "2:39",
+      "fail": [
+        "near-black: mean 7.65, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 19.4s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 38,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 164.37,
+      "at": "2:44",
+      "fail": [
+        "near-black: mean 8.66, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 39,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 169.05,
+      "at": "2:49",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "near-black: mean 9.34, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 10.0
+    },
+    {
+      "cut": 40,
+      "row": "16",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 173.5,
+      "at": "2:54",
+      "fail": [
+        "near-black: mean 9.9, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 14.0
+    },
+    {
+      "cut": 41,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 177.68,
+      "at": "2:58",
+      "fail": [
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.15, p95 38.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 42,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 181.98,
+      "at": "3:02",
+      "fail": [
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 14.15, p95 57.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.3
+    },
+    {
+      "cut": 43,
+      "row": "17",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 186.67,
+      "at": "3:07",
+      "fail": [
+        "push jitter: 0.95 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 190.78,
+      "at": "3:11",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.95, p95 51.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 45,
+      "row": "17",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 193.98,
+      "at": "3:14",
+      "fail": [],
+      "warn": [],
+      "offset": 50.0
+    },
+    {
+      "cut": 46,
+      "row": "17",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 197.08,
+      "at": "3:17",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.62, p95 46.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 47,
+      "row": "18",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 201.75,
+      "at": "3:22",
+      "fail": [
+        "push jitter: 0.952 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "18",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 206.87,
+      "at": "3:27",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.07, p95 36.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 49,
+      "row": "18",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 211.18,
+      "at": "3:31",
+      "fail": [],
+      "warn": [],
+      "offset": 26.0
+    },
+    {
+      "cut": 50,
+      "row": "19",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 214.53,
+      "at": "3:35",
+      "fail": [
+        "reuse: same stretch as 0:21 (give it a new stretch, or a new render)",
+        "near-black: mean 8.43, p95 7.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 51,
+      "row": "19",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 217.78,
+      "at": "3:38",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 13.24, p95 56.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 52,
+      "row": "20",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 221.78,
+      "at": "3:42",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.01, p95 86.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 14.0
+    },
+    {
+      "cut": 53,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 226.12,
+      "at": "3:46",
+      "fail": [],
+      "warn": [],
+      "offset": 260.0
+    },
+    {
+      "cut": 54,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 230.65,
+      "at": "3:51",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0049"
+      ],
+      "offset": 380.0
+    },
+    {
+      "cut": 55,
+      "row": "21",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 234.43,
+      "at": "3:54",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 14.18, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 56,
+      "row": "22",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 238.27,
+      "at": "3:58",
+      "fail": [
+        "near-black: mean 8.96, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 57,
+      "row": "22",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 243.33,
+      "at": "4:03",
+      "fail": [
+        "near-black: mean 8.13, p95 18.0",
+        "push jitter: 1.026 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 58,
+      "row": "22",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 247.33,
+      "at": "4:07",
+      "fail": [],
+      "warn": [],
+      "offset": 1740.0
+    },
+    {
+      "cut": 59,
+      "row": "22",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 251.2,
+      "at": "4:11",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 60,
+      "row": "23",
+      "source": "iss019e018483.jpg",
+      "title": "Expedition 19 crew tests water from Recycling system",
+      "t": 256.55,
+      "at": "4:17",
+      "fail": [
+        "push jitter: 1.11 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 61,
+      "row": "24",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 261.37,
+      "at": "4:21",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.86, p95 107.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 16.0
+    },
+    {
+      "cut": 62,
+      "row": "24",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 266.2,
+      "at": "4:26",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.89, p95 106.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 63,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 271.58,
+      "at": "4:32",
+      "fail": [
+        "near-black: mean 8.31, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 17.8s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 64,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 277.05,
+      "at": "4:37",
+      "fail": [
+        "near-black: mean 7.96, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 65,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 281.98,
+      "at": "4:42",
+      "fail": [
+        "near-black: mean 7.51, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 11.0
+    },
+    {
+      "cut": 66,
+      "row": "25",
+      "source": "contraction.mp4",
+      "title": null,
+      "t": 285.42,
+      "at": "4:45",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "near-black: mean 7.48, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 67,
+      "row": "26",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 289.32,
+      "at": "4:49",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.96, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 68,
+      "row": "26",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 294.5,
+      "at": "4:54",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 15.35, p95 107.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 17.5
+    },
+    {
+      "cut": 69,
+      "row": "26",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 299.5,
+      "at": "5:00",
+      "fail": [
+        "reuse: same stretch as 4:11 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 70,
+      "row": "26",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 304.3,
+      "at": "5:04",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 10.74, p95 12.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 71,
+      "row": "26",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 309.78,
+      "at": "5:10",
+      "fail": [],
+      "warn": [],
+      "offset": 110.0
+    },
+    {
+      "cut": 72,
+      "row": "27",
+      "source": "orbit_returns_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 314.88,
+      "at": "5:15",
+      "fail": [
+        "near-black: mean 19.46, p95 70.0"
+      ],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 73,
+      "row": "28",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 320.48,
+      "at": "5:20",
+      "fail": [
+        "push jitter: 1.018 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 74,
+      "row": "29",
+      "source": "SSC-20240229-s00309.tif",
+      "title": "NASA Caps Off February with RS-25 Engine Certification Test",
+      "t": 326.7,
+      "at": "5:27",
+      "fail": [
+        "push jitter: 1.0 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 75,
+      "row": "30",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 331.3,
+      "at": "5:31",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "low detail: luma std 10.14 < 13.44 and edge density 0.0095 < 0.0259 (absolute floor)",
+        "near-black: mean 6.78, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 76,
+      "row": "30",
+      "source": "SSC-2015-00064.jpg",
+      "title": "Lighting up the Night",
+      "t": 335.17,
+      "at": "5:35",
+      "fail": [
+        "push jitter: 0.898 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 77,
+      "row": "30",
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "title": "Black Marble - City Lights 2012",
+      "t": 339.63,
+      "at": "5:40",
+      "fail": [
+        "near-black: mean 6.46, p95 26.0",
+        "push jitter: 0.923 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 78,
+      "row": "30",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 344.15,
+      "at": "5:44",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "low detail: luma std 11.93 < 13.44 and edge density 0.0098 < 0.0259 (absolute floor)",
+        "near-black: mean 6.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 79,
+      "row": "30",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 348.8,
+      "at": "5:49",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "low detail: luma std 11.04 < 13.44 and edge density 0.0097 < 0.0259 (absolute floor)",
+        "near-black: mean 6.87, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 80,
+      "row": "31",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 353.82,
+      "at": "5:54",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "near-black: mean 7.5, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 81,
+      "row": "31",
+      "source": "SSC-20240229-s00309.tif",
+      "title": "NASA Caps Off February with RS-25 Engine Certification Test",
+      "t": 357.73,
+      "at": "5:58",
+      "fail": [
+        "push jitter: 1.022 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 82,
+      "row": "31",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 361.22,
+      "at": "6:01",
+      "fail": [
+        "reuse: same stretch as 0:39 (give it a new stretch, or a new render)",
+        "near-black: mean 7.69, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 83,
+      "row": "31",
+      "source": "energy.mp4",
+      "title": null,
+      "t": 365.88,
+      "at": "6:06",
+      "fail": [
+        "reuse: same stretch as 5:44 (give it a new stretch, or a new render)",
+        "near-black: mean 7.89, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 84,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "title": "Views of the overhead flight deck window showing debris impact damage",
+      "t": 371.05,
+      "at": "6:11",
+      "fail": [
+        "push jitter: 1.016 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 85,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "title": "Views of the overhead flight deck window showing debris impact damage",
+      "t": 376.25,
+      "at": "6:16",
+      "fail": [
+        "push jitter: 0.965 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 86,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "title": "Parker Solar Probe Launch",
+      "t": 381.83,
+      "at": "6:22",
+      "fail": [
+        "push jitter: 0.97 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 87,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "title": "Parker Solar Probe Launch",
+      "t": 387.02,
+      "at": "6:27",
+      "fail": [
+        "push jitter: 1.041 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 88,
+      "row": "34",
+      "source": "ACS3_SolarSailSunrise.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 3",
+      "t": 391.27,
+      "at": "6:31",
+      "fail": [
+        "push jitter: 1.141 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 3' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 89,
+      "row": "34",
+      "source": "ACS3_LookingDown.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 2",
+      "t": 396.02,
+      "at": "6:36",
+      "fail": [
+        "split panel: vertical seam at 0.485, vertical seam at 0.486",
+        "push jitter: 1.021 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 2' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "35",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 400.42,
+      "at": "6:40",
+      "fail": [
+        "reuse: same stretch as 0:21 (give it a new stretch, or a new render)",
+        "near-black: mean 11.61, p95 30.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 91,
+      "row": "35",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 404.37,
+      "at": "6:44",
+      "fail": [
+        "reuse: replays frames this run has just shown",
+        "reuse: same stretch as 0:21 (give it a new stretch, or a new render)",
+        "near-black: mean 9.26, p95 8.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 92,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "title": "File:Gaia\u2019s sky in colour ESA393127.jpg",
+      "t": 409.58,
+      "at": "6:50",
+      "fail": [
+        "push jitter: 1.009 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 93,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "title": "File:Gaia\u2019s sky in colour ESA393127.jpg",
+      "t": 414.3,
+      "at": "6:54",
+      "fail": [
+        "push jitter: 0.994 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 94,
+      "row": "35",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 418.32,
+      "at": "6:58",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 13.2, p95 52.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 95,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 422.87,
+      "at": "7:03",
+      "fail": [],
+      "warn": [],
+      "offset": 570.0
+    },
+    {
+      "cut": 96,
+      "row": "36",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 427.07,
+      "at": "7:07",
+      "fail": [
+        "low detail: luma std 10.29 < 13.44 and edge density 0.0248 < 0.0259 (absolute floor)",
+        "near-black: mean 6.82, p95 20.0",
+        "push jitter: 1.021 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 97,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 430.47,
+      "at": "7:10",
+      "fail": [],
+      "warn": [],
+      "offset": 1830.0
+    },
+    {
+      "cut": 98,
+      "row": "36",
+      "source": "iss040e091231.jpg",
+      "title": "Earth Observation",
+      "t": 433.5,
+      "at": "7:14",
+      "fail": [
+        "near-black: mean 11.89, p95 53.0",
+        "push jitter: 1.044 px off trend, 0 reversals"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 99,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 436.78,
+      "at": "7:17",
+      "fail": [],
+      "warn": [],
+      "offset": 2100.0
+    },
+    {
+      "cut": 100,
+      "row": "37",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 440.5,
+      "at": "7:20",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 101,
+      "row": "37",
+      "source": "twinclocks.mp4",
+      "title": null,
+      "t": 444.22,
+      "at": "7:24",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)",
+        "near-black: mean 8.97, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 102,
+      "row": "37",
+      "source": "gammaclocks.mp4",
+      "title": null,
+      "t": 447.3,
+      "at": "7:27",
+      "fail": [
+        "reuse: same stretch as 2:49 (give it a new stretch, or a new render)",
+        "near-black: mean 9.9, p95 6.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 15.0
+    },
+    {
+      "cut": 103,
+      "row": "38",
+      "source": "gpsclocks.mp4",
+      "title": null,
+      "t": 451.28,
+      "at": "7:31",
+      "fail": [
+        "reuse: same stretch as 0:47 (give it a new stretch, or a new render)",
+        "near-black: mean 15.73, p95 71.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 104,
+      "row": "38",
+      "source": "muons.mp4",
+      "title": null,
+      "t": 455.7,
+      "at": "7:36",
+      "fail": [
+        "reuse: same stretch as 2:58 (give it a new stretch, or a new render)",
+        "split panel: horizontal seam at 0.919",
+        "near-black: mean 13.12, p95 37.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 105,
+      "row": "38",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 461.2,
+      "at": "7:41",
+      "fail": [
+        "reuse: 6 stretches of this footage (limit 5)",
+        "near-black: mean 10.11, p95 13.0"
+      ],
+      "warn": [],
+      "offset": 176.0
+    },
+    {
+      "cut": 106,
+      "row": "39",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 478.0,
+      "at": "7:58",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
+        "near-black: mean 11.32, p95 18.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 26.1s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0049,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
