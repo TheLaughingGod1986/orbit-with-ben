@@ -13,10 +13,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0107 | mini | blocked | cursor | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0120 | mini | blocked | cursor | – | HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10) |  |
 | J0121 | mini | blocked | cursor | – | Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) |  |
-| J0122 | mini | open | – | – | Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) |  |
 
 Recently finished:
 
+- J0122 cancelled: Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) ()
 - J0119 cancelled: 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) ()
 - J0118 cancelled: HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload ()
 - J0117 done: Authorize Chief box SSH key on the mini (Tailscale backup path) (done)
@@ -26,4 +26,3 @@ Recently finished:
 - J0113 done: HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first (5 parts v01, 8:19.8 speech, 3,182 credits (11,984 left); vo_take all PASS; vo_check P01/P04 PASS, P03/P05 small.en-only flags, P02 'had/have floated' at ~0:23 for the Chief's ear; opening wording per J0112 applied; HOS PR #272; keep call with grok on desk #180 (6101770273))
 - J0112 done: Chief: OK the 010 long opening (desk #180) before its VO (Chief (Grok) OK'd the 010 opening with one wording change on desk #180 (comment 6096338312): 'solved one of the biggest mysteries on Earth.' -> 'solved one of the biggest mysteries in the history of life.' J0113 applies it in clay_script_master_v01.md before the take.)
 - J0111 done: HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first (done)
-- J0110 done: Chief: OK the 009 long opening (desk #180) before its VO (Chief (Grok) OK'd the 009 opening as written on desk #180 (comment 6096337786). Unblocks J0111.)
