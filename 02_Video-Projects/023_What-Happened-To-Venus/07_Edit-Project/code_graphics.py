@@ -56,14 +56,20 @@ def ease(t):
     return 0.5 - 0.5 * math.cos(math.pi * min(1, max(0, t)))
 
 
-def canvas():
+PULL = 0.04                                              # slow pull-back over a clip, so no beat reads as a freeze (>1.5 s)
+
+
+def canvas(p=None):
+    """p = progress through the clip (0-1): the view pulls back linearly by PULL, never cropping anything in frame."""
+    z = 1 + PULL * p if p is not None else 1
     fig = plt.figure(figsize=(W / DPI, H / DPI), dpi=DPI, facecolor=BG)
     ax = fig.add_axes([0, 0, 1, 1], facecolor=BG)
-    ax.set_xlim(-8, 8)
-    ax.set_ylim(-4.5, 4.5)
+    ax.set_xlim(-8 * z, 8 * z)
+    ax.set_ylim(-4.5 * z, 4.5 * z)
     ax.set_aspect("equal")
     ax.axis("off")
-    ax.imshow(backdrop(), extent=(-8, 8, -4.5, 4.5), zorder=0, interpolation="bilinear")
+    e = 1 + PULL + 0.01 if p is not None else 1
+    ax.imshow(backdrop(), extent=(-8 * e, 8 * e, -4.5 * e, 4.5 * e), zorder=0, interpolation="bilinear")
     return fig, ax
 
 
@@ -200,7 +206,7 @@ def render_albedo(out, seconds, still):
         photons = keep
         if still and i != target:
             continue
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         pts = np.array([[p[0], p[1], p[5]] for p in photons]) if photons else np.zeros((0, 3))
         if len(pts):
             inc, ref = pts[pts[:, 2] == 0], pts[pts[:, 2] == 1]
@@ -247,7 +253,7 @@ def render_heavyh(out, seconds, still):
         if still and i != target:
             continue
         t = i / FPS
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         a1 = phase_alpha(t, 0.2) * (1 - ease((t - T2) / 0.6))
         if a1 > 0.01:
             for x, heavy_atom, name in ((-3.4, False, "HYDROGEN"), (3.4, True, "HEAVY HYDROGEN")):
