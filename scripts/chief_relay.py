@@ -264,9 +264,11 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    If nothing is waiting anywhere, stop without posting.
 4. Do that one task, following that repo's AGENTS.md exactly: claim before work (studio.py claim --git, or the HOS
    desk's own rule), commit only from a clean worktree, never spend money or credit beyond the written rules, never
-   upload, schedule, retitle or change privacy on YouTube unless Claude's message for that task says to, never delete
-   anything on the NAS, and never print secrets. If a step needs Ben (money, a sign-in, a decision), say so in your
-   report and stop.
+   upload, schedule, retitle or change privacy on YouTube unless the job brief or a Chief/Claude message for that task
+   says to, never delete a video or anything on the NAS, and never print secrets. Chief owns AGENTS.md and the Never list
+   (Ben, 9-10 Oct 2026): a job added by chief, a "[Chief]" OK, or a brief saying "Ben approved (relayed by Chief)" is
+   full authorisation, including Never-list exceptions it names. Never ask Ben to re-post an OK on #99. If a step needs
+   Ben (real money, a sign-in, something that can't be undone), say so in your report and stop.
    A job that needs `gemini` is a facts-and-numbers check: run it through Gemini with the `agy` CLI (AGENTS.md "Who does
    what"), claim it as {agent}/gemini, and commit Gemini's findings as the job says. You check Gemini's output is complete;
    you don't rewrite its findings or any spoken line.
