@@ -4266,13 +4266,13 @@
       "stage": "edit",
       "after": "J0079",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-10T10:18Z",
-      "eta": "2026-10-10T12:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T09:53Z",
-      "result": "",
+      "result": "v04 built: OWB UAT/024_LightSpeed_v04_PHONE.mp4 (master /private/tmp/024_LightSpeed_full_rough_v04.mp4). Bed contour join 3.6 LU, no hole. -14.3 LUFS, clip_check PASS. music_gate FAIL only vs 027's parked take (0.836), PASS vs the other 12. picture_qa FAIL 97/107 on v03's unchanged picture. Claude to rule before Ben's re-watch.",
       "history": [
         {
           "at": "2026-10-09T09:53Z",
@@ -4283,9 +4283,15 @@
           "at": "2026-10-10T10:18Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T10:25Z",
+          "by": "cursor",
+          "what": "done: v04 built: OWB UAT/024_LightSpeed_v04_PHONE.mp4 (master /private/tmp/024_LightSpeed_full_rough_v04.mp4). Bed contour join 3.6 LU, no hole. -14.3 LUFS, clip_check PASS. music_gate FAIL only vs 027's parked take (0.836), PASS vs the other 12. picture_qa FAIL 97/107 on v03's unchanged picture. Claude to rule before Ben's re-watch."
         }
       ],
-      "urgent": 7
+      "urgent": 7,
+      "done_ref": "d3177e04"
     },
     {
       "id": "J0090",

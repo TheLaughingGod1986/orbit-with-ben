@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0107, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -13,7 +13,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0069 | mini | open | – | – | Shorts → long: audit and set the Related video on every Short |  |
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
-| J0089 | mini | claimed | cursor | 2026-10-10T12:18Z | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
 | J0098 | mini | open | – | – | 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) |  |
 | J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
