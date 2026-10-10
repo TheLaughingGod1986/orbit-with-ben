@@ -13,17 +13,19 @@
   },
   "failed": [
     {
-      "cut": 62,
-      "row": "39a",
-      "source": "venus_row39a_split_labelled_v04.mp4",
-      "title": "Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)",
-      "t": 332.75,
-      "at": "5:33",
+      "cut": 16,
+      "row": "14a",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 86.82,
+      "at": "1:27",
       "fail": [
-        "kind of picture: 'Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)' is a labelled, which looks dated or like a textbook"
+        "split panel: vertical gutter at 0.044"
       ],
-      "warn": [],
-      "offset": 0.0
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.433333333333337
     }
   ],
   "warn": [
@@ -53,19 +55,6 @@
         "reuse: on screen 18.1s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
-    },
-    {
-      "cut": 16,
-      "row": "14a",
-      "source": "albedo.mp4",
-      "title": null,
-      "t": 86.82,
-      "at": "1:27",
-      "fail": [],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 5.433333333333337
     },
     {
       "cut": 17,
@@ -344,7 +333,7 @@
       "at": "8:05",
       "fail": [],
       "warn": [
-        "low detail: luma std 14.48 < 18.0",
+        "low detail: luma std 14.49 < 18.0",
         "low detail: edge density 0.0017 < film p5 0.0021"
       ],
       "offset": null
@@ -579,7 +568,9 @@
       "title": null,
       "t": 86.82,
       "at": "1:27",
-      "fail": [],
+      "fail": [
+        "split panel: vertical gutter at 0.044"
+      ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1114,11 +1105,15 @@
       "title": "Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)",
       "t": 332.75,
       "at": "5:33",
-      "fail": [
-        "kind of picture: 'Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)' is a labelled, which looks dated or like a textbook"
-      ],
+      "fail": [],
       "warn": [],
-      "offset": 0.0
+      "offset": 0.0,
+      "reviewed_ok": {
+        "note": "Chief #6093640970 ruling 2: the two study captions Ben asked for (Way 2016 / Turbet 2021), not a textbook diagram; pool title left as is",
+        "passed": [
+          "kind of picture: 'Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)' is a labelled, which looks dated or like a textbook"
+        ]
+      }
     },
     {
       "cut": 63,
@@ -1469,7 +1464,7 @@
       "at": "8:05",
       "fail": [],
       "warn": [
-        "low detail: luma std 14.48 < 18.0",
+        "low detail: luma std 14.49 < 18.0",
         "low detail: edge density 0.0017 < film p5 0.0021"
       ],
       "offset": null
