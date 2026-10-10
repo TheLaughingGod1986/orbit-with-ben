@@ -1,0 +1,1571 @@
+{
+  "verdict": "FAIL",
+  "video": "/private/tmp/023_Venus_full_rough_v05d.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 62,
+      "row": "39a",
+      "source": "venus_row39a_split_labelled_v04.mp4",
+      "title": "Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)",
+      "t": 332.75,
+      "at": "5:33",
+      "fail": [
+        "kind of picture: 'Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)' is a labelled, which looks dated or like a textbook"
+      ],
+      "warn": [],
+      "offset": 0.0
+    }
+  ],
+  "warn": [
+    {
+      "cut": 13,
+      "row": "13a",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "SDO AIA 171 view of the 2012 transit of Venus across the Sun",
+      "t": 69.68,
+      "at": "1:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0011 < film p5 0.0021"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 15,
+      "row": "13c",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 80.92,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 18.1s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 16,
+      "row": "14a",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 86.82,
+      "at": "1:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.433333333333337
+    },
+    {
+      "cut": 17,
+      "row": "14b",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 93.13,
+      "at": "1:33",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 11.799999999999997
+    },
+    {
+      "cut": 28,
+      "row": "21a",
+      "source": "PIA00272.jpg",
+      "title": "Venus - Simulated Color of Ushas Mons",
+      "t": 151.3,
+      "at": "2:31",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.83 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 32,
+      "row": "22",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": "Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)",
+      "t": 173.68,
+      "at": "2:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size",
+        "low detail: edge density 0.002 < film p5 0.0021"
+      ],
+      "offset": 130.0
+    },
+    {
+      "cut": 46,
+      "row": "31",
+      "source": "heavyh.mp4",
+      "title": null,
+      "t": 241.63,
+      "at": "4:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 47,
+      "row": "32a",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 250.25,
+      "at": "4:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 48,
+      "row": "32b",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 256.92,
+      "at": "4:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.300000000000011
+    },
+    {
+      "cut": 51,
+      "row": "33",
+      "source": "PIA00102.jpg",
+      "title": "Venus - 3-D Perspective View of Estla Regio",
+      "t": 271.67,
+      "at": "4:32",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.58 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 56,
+      "row": "35",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": "Artist's impression of early Venus with oceans (NASA)",
+      "t": 293.52,
+      "at": "4:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of early Venus with oceans (NASA)' (artist), look at it full size"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 59,
+      "row": "36",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": "Artist's impression of early Venus with oceans (NASA)",
+      "t": 308.88,
+      "at": "5:09",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of early Venus with oceans (NASA)' (artist), look at it full size"
+      ],
+      "offset": 14.066666666666663
+    },
+    {
+      "cut": 61,
+      "row": "38",
+      "source": "nightlid.mp4",
+      "title": null,
+      "t": 325.62,
+      "at": "5:26",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
+        "passed": [
+          "near-black: mean 26.1, p95 158.0"
+        ]
+      }
+    },
+    {
+      "cut": 67,
+      "row": "43a",
+      "source": "line.mp4",
+      "title": null,
+      "t": 353.1,
+      "at": "5:53",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 16.1s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
+        "passed": [
+          "near-black: mean 21.69, p95 37.0"
+        ]
+      }
+    },
+    {
+      "cut": 68,
+      "row": "43b",
+      "source": "line.mp4",
+      "title": null,
+      "t": 361.17,
+      "at": "6:01",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.133333333333326,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
+        "passed": [
+          "near-black: mean 22.28, p95 42.0"
+        ]
+      }
+    },
+    {
+      "cut": 70,
+      "row": "44a",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "title": "SDO HMI view of the 2012 transit of Venus across the Sun (NASA SDO)",
+      "t": 378.48,
+      "at": "6:18",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: edge density 0.0015 < film p5 0.0021"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 71,
+      "row": "44b",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "title": "SDO HMI view of the 2012 transit of Venus across the Sun (NASA SDO)",
+      "t": 386.62,
+      "at": "6:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0014 < film p5 0.0021"
+      ],
+      "offset": 45.0
+    },
+    {
+      "cut": 84,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": "Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)",
+      "t": 446.47,
+      "at": "7:26",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size"
+      ],
+      "offset": 181.0
+    },
+    {
+      "cut": 85,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": "Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)",
+      "t": 451.37,
+      "at": "7:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size"
+      ],
+      "offset": 171.1
+    },
+    {
+      "cut": 86,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": "Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)",
+      "t": 458.03,
+      "at": "7:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)' (artist), look at it full size"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 87,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": "Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)",
+      "t": 464.13,
+      "at": "7:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)' (artist), look at it full size"
+      ],
+      "offset": 62.8
+    },
+    {
+      "cut": 88,
+      "row": "53",
+      "source": "veritas-cut7-16.jpg",
+      "title": null,
+      "t": 469.1,
+      "at": "7:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 91,
+      "row": "54",
+      "source": "S91-50687.jpg",
+      "title": "Magellan 3D perspective of Venus surface in western Eistla Regio",
+      "t": 484.6,
+      "at": "8:05",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.48 < 18.0",
+        "low detail: edge density 0.0017 < film p5 0.0021"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 93,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": "Moon Venus Conjunction",
+      "t": 497.9,
+      "at": "8:18",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 12.08 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "Claude #6079629063 item 1 (push jitter) + #6080054846: the dark twilight sky is the picture, Venus and the Moon both in frame",
+        "passed": [
+          "low detail: luma std 12.08 < 13.44 and edge density 0.0023 < 0.0259 (absolute floor)",
+          "push jitter: 0.585 px off trend, 0 reversals"
+        ]
+      }
+    },
+    {
+      "cut": 94,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": "Moon Venus Conjunction",
+      "t": 503.2,
+      "at": "8:23",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 11.49 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "Claude #6079629063 item 1 (push jitter) + #6080054846: the dark twilight sky is the picture, Venus and the Moon both in frame",
+        "passed": [
+          "low detail: luma std 11.49 < 13.44 and edge density 0.0021 < 0.0259 (absolute floor)",
+          "push jitter: 0.369 px off trend, 0 reversals"
+        ]
+      }
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "PIA00254.jpg",
+      "title": "Venus - 3-D Perspective View of Maat Mons",
+      "t": 2.72,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "PIA00106.jpg",
+      "title": "Venus - 3-D Perspective View of Maat Mons",
+      "t": 7.98,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "PIA13001.jpg",
+      "title": "Surface Warmth on a Venus Volcano",
+      "t": 13.02,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 3,
+      "row": "4",
+      "source": "PIA00241.jpg",
+      "title": "Venus - Lakshmi Planum and Maxwell Montes",
+      "t": 18.02,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 4,
+      "row": "5",
+      "source": "PIA00108.jpg",
+      "title": "Venus - 3-D Perspective View of Sif Mons",
+      "t": 22.53,
+      "at": "0:23",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 5,
+      "row": "6",
+      "source": "PIA23791.jpg",
+      "title": "Venus from Mariner 10",
+      "t": 27.05,
+      "at": "0:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 6,
+      "row": "7",
+      "source": "PIA00104.jpg",
+      "title": "Venus - Computer Simulated Global View Centered at 180 Degrees East Longitude",
+      "t": 32.57,
+      "at": "0:33",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 7,
+      "row": "8",
+      "source": "PIA00257.jpg",
+      "title": "Venus - Computer Simulated Global View Centered at 0 Degrees East Longitude",
+      "t": 37.57,
+      "at": "0:38",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "8",
+      "source": "PIA00107.jpg",
+      "title": "Venus - 3-D Perspective View of Sapas Mons",
+      "t": 41.57,
+      "at": "0:42",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 9,
+      "row": "11a",
+      "source": "PIA23791.jpg",
+      "title": "Venus from Mariner 10",
+      "t": 46.48,
+      "at": "0:46",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 10,
+      "row": "11b",
+      "source": "PIA00270.jpg",
+      "title": "Venus - Computer Simulated Global View Centered at 90 Degrees East Longitude",
+      "t": 52.2,
+      "at": "0:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 11,
+      "row": "12a",
+      "source": "S91-50686.jpg",
+      "title": "Magellan 3D view of Venus impact craters",
+      "t": 57.9,
+      "at": "0:58",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 12,
+      "row": "12b",
+      "source": "PIA00252.jpg",
+      "title": "Venus - Computer Simulated Global View of Northern Hemisphere",
+      "t": 63.8,
+      "at": "1:04",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 13,
+      "row": "13a",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "SDO AIA 171 view of the 2012 transit of Venus across the Sun",
+      "t": 69.68,
+      "at": "1:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0011 < film p5 0.0021"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 14,
+      "row": "13b",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "SDO AIA 171 view of the 2012 transit of Venus across the Sun",
+      "t": 75.38,
+      "at": "1:15",
+      "fail": [],
+      "warn": [],
+      "offset": 13.766666666666666
+    },
+    {
+      "cut": 15,
+      "row": "13c",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 80.92,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 18.1s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 16,
+      "row": "14a",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 86.82,
+      "at": "1:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.433333333333337
+    },
+    {
+      "cut": 17,
+      "row": "14b",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 93.13,
+      "at": "1:33",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 11.799999999999997
+    },
+    {
+      "cut": 18,
+      "row": "15a",
+      "source": "PIA00272.jpg",
+      "title": "Venus - Simulated Color of Ushas Mons",
+      "t": 99.53,
+      "at": "1:40",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 19,
+      "row": "15b",
+      "source": "PIA00215.jpg",
+      "title": "Venus - Alpha Regio",
+      "t": 106.23,
+      "at": "1:46",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "16a",
+      "source": "PIA00240.jpg",
+      "title": "Venus - Lakshmi Planum",
+      "t": 112.38,
+      "at": "1:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 21,
+      "row": "16b",
+      "source": "PIA00159.jpg",
+      "title": "Hemispheric View of Venus Centered at 180\u00b0 East Longitude",
+      "t": 117.53,
+      "at": "1:58",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 22,
+      "row": "17",
+      "source": "PIA00246.jpg",
+      "title": "Venus - 3-D Perspective View of Eastern Edge of Alpha Regio",
+      "t": 121.92,
+      "at": "2:02",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 23,
+      "row": "17",
+      "source": "PIA00107.jpg",
+      "title": "Venus - 3-D Perspective View of Sapas Mons",
+      "t": 126.93,
+      "at": "2:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 24,
+      "row": "18",
+      "source": "PIA00102.jpg",
+      "title": "Venus - 3-D Perspective View of Estla Regio",
+      "t": 131.55,
+      "at": "2:12",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 25,
+      "row": "18",
+      "source": "PIA00233.jpg",
+      "title": "Venus - 3-D Perspective View of Eistla Regio",
+      "t": 135.28,
+      "at": "2:15",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 26,
+      "row": "18",
+      "source": "PIA00268.jpg",
+      "title": "Venus - 3-D Perspective View of Latona Corona and Dali Chasma",
+      "t": 140.02,
+      "at": "2:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 27,
+      "row": "20b",
+      "source": "PIA00481.jpg",
+      "title": "Venus - Three-Dimensional Perspective View of Alpha Region",
+      "t": 145.6,
+      "at": "2:26",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 28,
+      "row": "21a",
+      "source": "PIA00272.jpg",
+      "title": "Venus - Simulated Color of Ushas Mons",
+      "t": 151.3,
+      "at": "2:31",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.83 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 29,
+      "row": "21b",
+      "source": "as17-148-22727.jpg",
+      "title": "View of the Earth seen by the Apollo 17 crew traveling toward the moon",
+      "t": 157.15,
+      "at": "2:37",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 30,
+      "row": "21c",
+      "source": "PIA00271.jpg",
+      "title": "Venus - Computer Simulated Global View of the Northern Hemisphere",
+      "t": 162.12,
+      "at": "2:42",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 31,
+      "row": "22",
+      "source": "PIA00103.jpg",
+      "title": "Venus - 3-D Perspective View of Lavinia Planitia",
+      "t": 167.15,
+      "at": "2:47",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 32,
+      "row": "22",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": "Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)",
+      "t": 173.68,
+      "at": "2:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size",
+        "low detail: edge density 0.002 < film p5 0.0021"
+      ],
+      "offset": 130.0
+    },
+    {
+      "cut": 33,
+      "row": "23",
+      "source": "PIA18033.jpg",
+      "title": "Earth",
+      "t": 179.73,
+      "at": "3:00",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 34,
+      "row": "23",
+      "source": "GSFC_20171208_Archive_e001435.jpg",
+      "title": "Sun Emits a Solstice CME",
+      "t": 184.17,
+      "at": "3:04",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 35,
+      "row": "24",
+      "source": "s129e007324.jpg",
+      "title": "Earth Observation taken by the STS-129 Crew",
+      "t": 187.17,
+      "at": "3:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 36,
+      "row": "24",
+      "source": "PIA03877.jpg",
+      "title": "Tarpum Bay, Bahamas",
+      "t": 191.22,
+      "at": "3:11",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 37,
+      "row": "25",
+      "source": "GSFC_20171208_Archive_e001435.jpg",
+      "title": "Sun Emits a Solstice CME",
+      "t": 195.78,
+      "at": "3:16",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 38,
+      "row": "25",
+      "source": "PIA03877.jpg",
+      "title": "Tarpum Bay, Bahamas",
+      "t": 199.8,
+      "at": "3:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 39,
+      "row": "26",
+      "source": "PIA00234.jpg",
+      "title": "Venus - 3-D Perspective View of Gula Mons",
+      "t": 204.83,
+      "at": "3:25",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 40,
+      "row": "26",
+      "source": "PIA00200.jpg",
+      "title": "Venus - False Color Perspective of Sif and Gula Mons",
+      "t": 209.93,
+      "at": "3:30",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 41,
+      "row": "27",
+      "source": "PIA00106.jpg",
+      "title": "Venus - 3-D Perspective View of Maat Mons",
+      "t": 215.15,
+      "at": "3:35",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 42,
+      "row": "28",
+      "source": "S91-50688.jpg",
+      "title": "Global view of Venus from Magellan, Pioneer, and Venera data",
+      "t": 221.13,
+      "at": "3:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 43,
+      "row": "30b",
+      "source": "pv_probe.jpg",
+      "title": "Pioneer Venus Large Probe (NSSDCA/NASA Ames)",
+      "t": 226.57,
+      "at": "3:47",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "30b",
+      "source": "pvo_uv_790205.jpg",
+      "title": "Ultraviolet image of Venus' clouds as seen by the Pioneer Venus Orbiter (Feb. 5, 1979)",
+      "t": 231.3,
+      "at": "3:51",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 45,
+      "row": "30b",
+      "source": "pv_probe.jpg",
+      "title": "Pioneer Venus Large Probe (NSSDCA/NASA Ames)",
+      "t": 234.88,
+      "at": "3:55",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 46,
+      "row": "31",
+      "source": "heavyh.mp4",
+      "title": null,
+      "t": 241.63,
+      "at": "4:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 47,
+      "row": "32a",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 250.25,
+      "at": "4:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 48,
+      "row": "32b",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 256.92,
+      "at": "4:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.300000000000011
+    },
+    {
+      "cut": 49,
+      "row": "32c",
+      "source": "PIA00084.jpg",
+      "title": "Venus - Eistla Region",
+      "t": 262.82,
+      "at": "4:23",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 50,
+      "row": "32c",
+      "source": "PIA00200.jpg",
+      "title": "Venus - False Color Perspective of Sif and Gula Mons",
+      "t": 266.82,
+      "at": "4:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 51,
+      "row": "33",
+      "source": "PIA00102.jpg",
+      "title": "Venus - 3-D Perspective View of Estla Regio",
+      "t": 271.67,
+      "at": "4:32",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.58 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 52,
+      "row": "34a",
+      "source": "PIA00108.jpg",
+      "title": "Venus - 3-D Perspective View of Sif Mons",
+      "t": 278.27,
+      "at": "4:38",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 53,
+      "row": "34a",
+      "source": "PIA00233.jpg",
+      "title": "Venus - 3-D Perspective View of Eistla Regio",
+      "t": 282.7,
+      "at": "4:43",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 54,
+      "row": "34b",
+      "source": "PIA00240.jpg",
+      "title": "Venus - Lakshmi Planum",
+      "t": 285.65,
+      "at": "4:46",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 55,
+      "row": "34b",
+      "source": "PIA00266.jpg",
+      "title": "Venus - Oblique View of Crater Riley",
+      "t": 289.4,
+      "at": "4:49",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 56,
+      "row": "35",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": "Artist's impression of early Venus with oceans (NASA)",
+      "t": 293.52,
+      "at": "4:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of early Venus with oceans (NASA)' (artist), look at it full size"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 57,
+      "row": "35",
+      "source": "S91-50687.jpg",
+      "title": "Magellan 3D perspective of Venus surface in western Eistla Regio",
+      "t": 298.48,
+      "at": "4:58",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 58,
+      "row": "35",
+      "source": "S91-50686.jpg",
+      "title": "Magellan 3D view of Venus impact craters",
+      "t": 303.27,
+      "at": "5:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 59,
+      "row": "36",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": "Artist's impression of early Venus with oceans (NASA)",
+      "t": 308.88,
+      "at": "5:09",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's impression of early Venus with oceans (NASA)' (artist), look at it full size"
+      ],
+      "offset": 14.066666666666663
+    },
+    {
+      "cut": 60,
+      "row": "37",
+      "source": "venus_ch3_row37_plateB_steam_lid_sharp_v02.mp4",
+      "title": "Venus's cloud lid",
+      "t": 316.38,
+      "at": "5:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 61,
+      "row": "38",
+      "source": "nightlid.mp4",
+      "title": null,
+      "t": 325.62,
+      "at": "5:26",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.0,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
+        "passed": [
+          "near-black: mean 26.1, p95 158.0"
+        ]
+      }
+    },
+    {
+      "cut": 62,
+      "row": "39a",
+      "source": "venus_row39a_split_labelled_v04.mp4",
+      "title": "Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)",
+      "t": 332.75,
+      "at": "5:33",
+      "fail": [
+        "kind of picture: 'Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)' is a labelled, which looks dated or like a textbook"
+      ],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 63,
+      "row": "39b",
+      "source": "venus_row39b_alpha_regio_v04.mp4",
+      "title": "Magellan global Venus with Alpha Regio ringed, pushing into the Alpha Regio tessera",
+      "t": 336.53,
+      "at": "5:37",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 64,
+      "row": "40",
+      "source": "PIA00109.jpg",
+      "title": "Venus - 3-D Perspective View of Idem-Kuva",
+      "t": 341.13,
+      "at": "5:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 65,
+      "row": "40",
+      "source": "PIA00209.jpg",
+      "title": "Venus - 3-D Perspective of Golubkina Crater",
+      "t": 345.85,
+      "at": "5:46",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 66,
+      "row": "42b",
+      "source": "PIA18033.jpg",
+      "title": "Earth",
+      "t": 349.22,
+      "at": "5:49",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 67,
+      "row": "43a",
+      "source": "line.mp4",
+      "title": null,
+      "t": 353.1,
+      "at": "5:53",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 16.1s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
+        "passed": [
+          "near-black: mean 21.69, p95 37.0"
+        ]
+      }
+    },
+    {
+      "cut": 68,
+      "row": "43b",
+      "source": "line.mp4",
+      "title": null,
+      "t": 361.17,
+      "at": "6:01",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.133333333333326,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
+        "passed": [
+          "near-black: mean 22.28, p95 42.0"
+        ]
+      }
+    },
+    {
+      "cut": 69,
+      "row": "43c",
+      "source": "S91-50688.jpg",
+      "title": "Global view of Venus from Magellan, Pioneer, and Venera data",
+      "t": 369.95,
+      "at": "6:10",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 70,
+      "row": "44a",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "title": "SDO HMI view of the 2012 transit of Venus across the Sun (NASA SDO)",
+      "t": 378.48,
+      "at": "6:18",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: edge density 0.0015 < film p5 0.0021"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 71,
+      "row": "44b",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "title": "SDO HMI view of the 2012 transit of Venus across the Sun (NASA SDO)",
+      "t": 386.62,
+      "at": "6:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0014 < film p5 0.0021"
+      ],
+      "offset": 45.0
+    },
+    {
+      "cut": 72,
+      "row": "45a",
+      "source": "s129e007324.jpg",
+      "title": "Earth Observation taken by the STS-129 Crew",
+      "t": 390.83,
+      "at": "6:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 73,
+      "row": "45a",
+      "source": "as17-148-22727.jpg",
+      "title": "View of the Earth seen by the Apollo 17 crew traveling toward the moon",
+      "t": 395.53,
+      "at": "6:36",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 74,
+      "row": "45b",
+      "source": "PIA00271.jpg",
+      "title": "Venus - Computer Simulated Global View of the Northern Hemisphere",
+      "t": 401.83,
+      "at": "6:42",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 75,
+      "row": "45c",
+      "source": "PIA00266.jpg",
+      "title": "Venus - Oblique View of Crater Riley",
+      "t": 407.18,
+      "at": "6:47",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 76,
+      "row": "46",
+      "source": "orbit_looks_back_earth_omni_v01_t0-5s.mp4",
+      "title": "our own clip or graphic",
+      "t": 411.65,
+      "at": "6:52",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 77,
+      "row": "46",
+      "source": "PIA00084.jpg",
+      "title": "Venus - Eistla Region",
+      "t": 415.47,
+      "at": "6:55",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 78,
+      "row": "48b",
+      "source": "PIA00241.jpg",
+      "title": "Venus - Lakshmi Planum and Maxwell Montes",
+      "t": 418.75,
+      "at": "6:59",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 79,
+      "row": "49",
+      "source": "PIA00157.jpg",
+      "title": "Hemispheric View of Venus Centered at 0 Degrees East Longitude",
+      "t": 422.85,
+      "at": "7:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 80,
+      "row": "49",
+      "source": "PIA00481.jpg",
+      "title": "Venus - Three-Dimensional Perspective View of Alpha Region",
+      "t": 427.6,
+      "at": "7:08",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 81,
+      "row": "49",
+      "source": "PIA00215.jpg",
+      "title": "Venus - Alpha Regio",
+      "t": 432.35,
+      "at": "7:12",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 82,
+      "row": "50",
+      "source": "PIA00109.jpg",
+      "title": "Venus - 3-D Perspective View of Idem-Kuva",
+      "t": 438.12,
+      "at": "7:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 83,
+      "row": "50",
+      "source": "PIA00268.jpg",
+      "title": "Venus - 3-D Perspective View of Latona Corona and Dali Chasma",
+      "t": 442.88,
+      "at": "7:23",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 84,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": "Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)",
+      "t": 446.47,
+      "at": "7:26",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size"
+      ],
+      "offset": 181.0
+    },
+    {
+      "cut": 85,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": "Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)",
+      "t": 451.37,
+      "at": "7:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size"
+      ],
+      "offset": 171.1
+    },
+    {
+      "cut": 86,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": "Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)",
+      "t": 458.03,
+      "at": "7:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)' (artist), look at it full size"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 87,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": "Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)",
+      "t": 464.13,
+      "at": "7:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Artist's animation of the DAVINCI probe descending to Venus (NASA SVS 13887)' (artist), look at it full size"
+      ],
+      "offset": 62.8
+    },
+    {
+      "cut": 88,
+      "row": "53",
+      "source": "veritas-cut7-16.jpg",
+      "title": null,
+      "t": 469.1,
+      "at": "7:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 89,
+      "row": "53",
+      "source": "PIA00103.jpg",
+      "title": "Venus - 3-D Perspective View of Lavinia Planitia",
+      "t": 473.43,
+      "at": "7:53",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "54",
+      "source": "PIA00252.jpg",
+      "title": "Venus - Computer Simulated Global View of Northern Hemisphere",
+      "t": 478.37,
+      "at": "7:58",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 91,
+      "row": "54",
+      "source": "S91-50687.jpg",
+      "title": "Magellan 3D perspective of Venus surface in western Eistla Regio",
+      "t": 484.6,
+      "at": "8:05",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.48 < 18.0",
+        "low detail: edge density 0.0017 < film p5 0.0021"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 92,
+      "row": "55",
+      "source": "PIA00270.jpg",
+      "title": "Venus - Computer Simulated Global View Centered at 90 Degrees East Longitude",
+      "t": 491.07,
+      "at": "8:11",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 93,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": "Moon Venus Conjunction",
+      "t": 497.9,
+      "at": "8:18",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 12.08 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "Claude #6079629063 item 1 (push jitter) + #6080054846: the dark twilight sky is the picture, Venus and the Moon both in frame",
+        "passed": [
+          "low detail: luma std 12.08 < 13.44 and edge density 0.0023 < 0.0259 (absolute floor)",
+          "push jitter: 0.585 px off trend, 0 reversals"
+        ]
+      }
+    },
+    {
+      "cut": 94,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": "Moon Venus Conjunction",
+      "t": 503.2,
+      "at": "8:23",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 11.49 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "Claude #6079629063 item 1 (push jitter) + #6080054846: the dark twilight sky is the picture, Venus and the Moon both in frame",
+        "passed": [
+          "low detail: luma std 11.49 < 13.44 and edge density 0.0021 < 0.0259 (absolute floor)",
+          "push jitter: 0.369 px off trend, 0 reversals"
+        ]
+      }
+    },
+    {
+      "cut": 95,
+      "row": "57",
+      "source": "PIA00254.jpg",
+      "title": "Venus - 3-D Perspective View of Maat Mons",
+      "t": 509.07,
+      "at": "8:29",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0021,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
