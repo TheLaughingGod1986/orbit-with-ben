@@ -5100,10 +5100,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-10T12:11Z",
-      "eta": "2026-10-10T13:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T15:11Z",
       "result": "",
@@ -5127,6 +5127,11 @@
           "at": "2026-10-10T12:11Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T12:12Z",
+          "by": "cursor",
+          "what": "released: Cursor 10 Oct 12:20Z: v04 checked by eye (HOS PR #270, open, no review yet): Röntgen 1895 hand radiograph hero on right two-thirds, Explorer small lower left, warm, five digits + ring OK. Test & Compare NOT set. HOS Studio is not on CDP 9222 (that Google account only has @beep61). HOS is on the 9223 account (benoats86: OpptiAI, Orbit, HOS), so T&C means switching the Orbit Studio browser to the HOS channel, then back. LEFT: (1) Claude PASS on v04 (PR #270); (2) in 9223, switch to History of Science, T&C on frP_YrNShsU with v04 vs live (if a test is already set: Cancel, never Continue), run npm run lint:package first and channel:audit after per HOS AGENTS, then switch 9223 back to Orbit With Ben; (3) optional gate_shorts_open caption-height check (audit item 12)."
         }
       ],
       "urgent": 4
