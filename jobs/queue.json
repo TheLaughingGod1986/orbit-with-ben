@@ -5788,10 +5788,10 @@
       "stage": "",
       "after": "",
       "eta_min": 5,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-10T12:48Z",
+      "eta": "2026-10-10T12:53Z",
       "created_by": "chief",
       "created_at": "2026-10-10T11:41Z",
       "result": "Needs Ben directly: adds a third-party SSH key (grokbot-box) to the Mini's authorized_keys = remote shell on Ben's device. Only evidence of Ben's OK is the requester's own job text/commit (relay); no record on #99. AGENTS.md: devices/logins are Ben's, relay != Ben's word. Not run; authorized_keys untouched. Ben can run the one-liner himself or confirm on #99.",
@@ -5815,6 +5815,11 @@
           "at": "2026-10-10T12:38Z",
           "by": "chief",
           "what": "reopened"
+        },
+        {
+          "at": "2026-10-10T12:48Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": 0.1
