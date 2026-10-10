@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0105, J0106, J0109, J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0106, J0109, J0108, J0107, J0089, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -20,7 +20,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
 | J0101 | mini | open | – | – | HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) |  |
 | J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
-| J0105 | mini | claimed | cursor | 2026-10-10T10:03Z | Saturn Short v03 upload + Qn56 swap (Mon 11:30) |  |
 | J0106 | mini | open | – | – | HOS 004 thumb C v07b: 52/53 about 2x, one style (file only; don't touch the armed Test & Compare). Due before Tue 13 Oct | 6085214049 |
 | J0107 | mini | open | – | – | HOS 006 Part 03 picture on the Vertex trial: 16 mints, ~£11 reserved; balance first, £5 floor | hos#255 |
 | J0108 | mini | open | – | – | HOS 009 + 010: post both long openings on desk #180 for the Chief's check before VO (no spend) |  |
@@ -35,6 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
+- J0105 done: Saturn Short v03 upload + Qn56 swap (Mon 11:30) (done)
 - J0104 done: Saturn Short Qn56 end-card recut v03 (Mon 11:30) (monday_saturn_rings_already_falling_v03.mp4 (sha256 4e7f5161d244e4355cf0b88dc702c8dc0fb4d2fda3bdb86e9da2599d4b7c17b3, 23.93 s), gate PASS; Orbit Auditor re-check next)
 - J0102 done: HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct (T&C armed Title+thumbnail A/B/C (C=v07), saved; Ineligible until public 15 Oct. HOS 5518d51)
 - J0097 done: HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) (C v07 repainted on Vertex (2 plates, $0.078): tiles painted in, Te 52 / I 53 by hand, lining figures. HOS PR #263; sheet on HOS desk #180 comment 6084976194. Claude to review by Tue 13 Oct 18:00 and queue Test & Compare arming (A/B/C, or A/B on Wed 14 Oct).)
@@ -43,4 +43,3 @@ Recently finished:
 - J0093 done: Long-form view: Cursor on one 45–60 min video a month (Ben asked) (done)
 - J0092 done: Long-form view: Codex on one 45–60 min video a month (Ben asked) (Posted eight-line long-form recommendation: not yet; original documentary later, cost estimates and day-28 efficiency metric.)
 - J0091 done: 022 Sun: SET THUMBNAILS in Studio (API refused) + Studio finish before 18 Oct (022 long: thumb A + 3 Shorts covers (eb9c9b5); end screen Last Star REXYxuLOBoI + subscribe 8:18-8:38; card REXYxuLOBoI at 6:50; Test & Compare thumbnails A/B/C (title A only); Shorts related pill moved to 18 Oct go-live job)
-- J0090 cancelled: 027 bed take 2 for the re-ordered film (after the 30 Oct ElevenLabs reset; HOS voice first) ()
