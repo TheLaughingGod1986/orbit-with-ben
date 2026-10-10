@@ -1,5 +1,5 @@
 {
-  "next_id": 122,
+  "next_id": 123,
   "jobs": [
     {
       "id": "J0001",
@@ -6328,6 +6328,32 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-10T20:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-10T20:25Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0122",
+      "title": "Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Do not start before Wed 14 Oct 2026 11:35 London.** This is part of Ben's 10 Oct 21:10 instruction (\"Any that the sound is broken can we fix\").\n\nOrbit Short `buaOI3QGm7U` \"Could a Robot Survive Falling Into Jupiter?\" (scheduled 14 Oct 11:30) is the only scheduled Short Chief couldn't measure. It was uploaded from a cloud session (`jupiter-survive-uat.mp4`), and there's no local copy on the mini. YouTube shows 1 audio stream. Every other scheduled Orbit and HOS Short's local upload master measured -14.7 to -22.8 LUFS (fine).\n\nOnce it's public: `yt-dlp -f bestaudio` it, then `ffmpeg -af ebur128,volumedetect`. If it's speech-level, mark this done with the LUFS. If it's silent or below -40 LUFS, set it Private (never delete), post the AGENTS line `buaOI3QGm7U public → private (silent), OK'd by Ben 10 Oct 21:10, done by <agent>` on #99, and block this job for Chief to rebuild the audio.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
       "status": "open",
       "by": "",
       "since": "",
