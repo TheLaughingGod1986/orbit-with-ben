@@ -223,7 +223,7 @@ def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
 def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     if job["status"] not in ("blocked", "done", "cancelled"):
         raise ValueError(f"{job['id']} is {job['status']}; only blocked, done or cancelled jobs reopen")
-    job.update(status="open", by="", since="", eta="")
+    job.update(status="open", by="", since="", eta="", result="")
     log(job, at, agent, "reopened" + (": " + note if note else ""))
 
 
