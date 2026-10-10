@@ -1,5 +1,5 @@
 {
-  "next_id": 117,
+  "next_id": 118,
   "jobs": [
     {
       "id": "J0001",
@@ -5736,6 +5736,32 @@
         }
       ],
       "urgent": 17
+    },
+    {
+      "id": "J0117",
+      "title": "Authorize Chief box SSH key on the mini (Tailscale backup path)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Authorize the Grok Bot box (Chief) to SSH into this Mac mini over Tailscale, as a backup path when the Grok Bot app link drops. Ben approved this (10 Oct 2026 12:41 London).\n\nRun exactly this as the normal user (benjaminoats) in Terminal/shell, nothing else:\n\nmkdir -p ~/.ssh && chmod 700 ~/.ssh && grep -qF 'grokbot-box->ben-mac-mini' ~/.ssh/authorized_keys 2>/dev/null || echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmaKz9kiErfDQwa/4ZRXpLTa0xA3kiKOLjbr+YUVqLh grokbot-box->ben-mac-mini (tailscale)' >> ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys; whoami; tail -1 ~/.ssh/authorized_keys\n\nDo not change sshd settings, Remote Login, or any other keys. Post a one-line [Chief] note on OWB #99 with the whoami output when done.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 5,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-10T11:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-10T11:41Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
