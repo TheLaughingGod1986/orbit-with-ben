@@ -15,7 +15,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0089 | mini | open (after J0079) | – | – | 024 edit · 024 Light speed v04: its own bed laid in (v03 picture + locked VO), contour first | 6078548423 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
-| J0096 | mini | claimed | cursor | 2026-10-10T03:17Z | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
+| J0096 | mini | open (after J0095) | – | – | 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) |  |
 | J0098 | mini | open | – | – | 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) |  |
 | J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
