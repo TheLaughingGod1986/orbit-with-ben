@@ -10,7 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0053 | mini | open | – | – | Mini heartbeat: make launchd run the repo's chief_relay.py and confirm the mini-heartbeat branch appears |  |
-| J0069 | mini | claimed | cursor | 2026-10-10T14:05Z | Shorts → long: audit and set the Related video on every Short |  |
+| J0069 | mini | claimed | cursor | 2026-10-10T14:44Z | Shorts → long: audit and set the Related video on every Short |  |
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
