@@ -4208,13 +4208,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-10T14:29Z",
-      "eta": "2026-10-10T15:59Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-09T09:35Z",
-      "result": "",
+      "result": "scripts/sentence_sheet.py built; 026 v04 test sheet in rough_v04_pack/sentence_sheet_v04_p01-04.jpg + .json (90 sentences, 104 cuts, no rows marked)",
       "history": [
         {
           "at": "2026-10-09T09:35Z",
@@ -4225,8 +4225,14 @@
           "at": "2026-10-10T14:29Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T14:31Z",
+          "by": "cursor",
+          "what": "done: scripts/sentence_sheet.py built; 026 v04 test sheet in rough_v04_pack/sentence_sheet_v04_p01-04.jpg + .json (90 sentences, 104 cuts, no rows marked)"
         }
-      ]
+      ],
+      "done_ref": "a505447e"
     },
     {
       "id": "J0087",
