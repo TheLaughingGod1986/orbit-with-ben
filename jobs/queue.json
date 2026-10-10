@@ -4526,10 +4526,10 @@
       "stage": "",
       "after": "J0095",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-10T04:07Z",
+      "eta": "2026-10-10T06:07Z",
       "created_by": "claude",
       "created_at": "2026-10-09T13:41Z",
       "result": "",
@@ -4748,6 +4748,11 @@
           "at": "2026-10-10T03:56Z",
           "by": "cursor",
           "what": "released: v05d rendered (exit 0) + pack 34c5ab6: clip_check PASS, -14.2 LUFS, music_gate PASS. Picture QA FAIL 1 (39a title 'labelled' — needs Claude ruling) and freezedetect holds >1.5 s inside albedo (80-96 s) and heavyh (237-241 s) — needs code_graphics fix. Phone copy at /private/tmp/023_Venus_v05d_PHONE.mp4, NOT in UAT. Next after Claude: re-render, QA, UAT; v05b scratch to NAS."
+        },
+        {
+          "at": "2026-10-10T04:07Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "urgent": 1
