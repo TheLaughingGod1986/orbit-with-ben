@@ -5166,13 +5166,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-10T07:18Z",
-      "eta": "2026-10-10T08:18Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-09T23:05Z",
-      "result": "",
+      "result": "monday_saturn_rings_already_falling_v03.mp4 (sha256 4e7f5161d244e4355cf0b88dc702c8dc0fb4d2fda3bdb86e9da2599d4b7c17b3, 23.93 s), gate PASS; Orbit Auditor re-check next",
       "history": [
         {
           "at": "2026-10-09T23:05Z",
@@ -5183,9 +5183,15 @@
           "at": "2026-10-10T07:18Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-10T07:20Z",
+          "by": "cursor",
+          "what": "done: monday_saturn_rings_already_falling_v03.mp4 (sha256 4e7f5161d244e4355cf0b88dc702c8dc0fb4d2fda3bdb86e9da2599d4b7c17b3, 23.93 s), gate PASS; Orbit Auditor re-check next"
         }
       ],
-      "urgent": 2
+      "urgent": 2,
+      "done_ref": "a1be55af"
     },
     {
       "id": "J0105",
