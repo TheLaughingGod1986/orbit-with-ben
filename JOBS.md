@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0107, J0111, J0113, J0098, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0107, J0111, J0113, J0099, J0101, J0100, J0110, J0112, J0114, J0116.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -14,7 +14,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0086 | mini | open | – | – | Ideas: pre-render sentence sheet (picture vs words before any render), test on 026 v04 | 6077757174 |
 | J0087 | mini | open | – | – | Ideas: HOS Shorts gate check on the 13 aired Shorts + title-vs-subject table (read-only) | 6078293622 |
 | J0094 | gemini | open | – | – | Long-form view: Gemini via agy on one 45–60 min video a month (Ben asked; post Gemini's answer as given) |  |
-| J0098 | mini | claimed | cursor | 2026-10-10T12:06Z | 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) |  |
 | J0099 | mini | open | – | – | OWB back catalogue: 9 cropped Shorts covers, Moon + Alien Worlds Test & Compare variants (thumb audit) |  |
 | J0100 | mini | open | – | – | HOS X-rays thumb repaint + Shorts caption size from 006 (thumb audit) |  |
 | J0101 | mini | open | – | – | HOS 005: check + arm thumbnail/Test & Compare/end screen on the scheduled wwcjcFfC-5M (stray copy got the 2 Oct settings) |  |
@@ -36,6 +35,6 @@ Recently finished:
 - J0105 done: Saturn Short v03 upload + Qn56 swap (Mon 11:30) (done)
 - J0104 done: Saturn Short Qn56 end-card recut v03 (Mon 11:30) (monday_saturn_rings_already_falling_v03.mp4 (sha256 4e7f5161d244e4355cf0b88dc702c8dc0fb4d2fda3bdb86e9da2599d4b7c17b3, 23.93 s), gate PASS; Orbit Auditor re-check next)
 - J0102 done: HOS 004: arm Test & Compare A/B/C (C = v07, passed) before Thu 15 Oct (T&C armed Title+thumbnail A/B/C (C=v07), saved; Ineligible until public 15 Oct. HOS 5518d51)
+- J0098 done: 024 thumbs v03 (traveller in frame) + 023 B with Earth (thumb audit) (done)
 - J0097 done: HOS 004: broken thumbnail C before Thu 15 Oct air; fix 005 manifest id (thumb audit) (C v07 repainted on Vertex (2 plates, $0.078): tiles painted in, Te 52 / I 53 by hand, lining figures. HOS PR #263; sheet on HOS desk #180 comment 6084976194. Claude to review by Tue 13 Oct 18:00 and queue Test & Compare arming (A/B/C, or A/B on Wed 14 Oct).)
 - J0096 done: 023 Venus v05d: Ben's 4 notes (diagrams at 1:22, 4:02, 5:38; Pioneer probe at 3:55) (done)
-- J0095 done: 023 Venus: redraw albedo + deuterium code graphics (Ben's v05c notes) (albedo, heavyh and deuterium redrawn with real Venus/Earth and labels, timed to rows 13c-14b, 31, 32a-32b (63eabdd); J0096 body updated)
