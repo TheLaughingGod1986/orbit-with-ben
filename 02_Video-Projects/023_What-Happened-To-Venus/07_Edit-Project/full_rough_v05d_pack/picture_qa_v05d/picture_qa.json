@@ -1,5 +1,5 @@
 {
-  "verdict": "FAIL",
+  "verdict": "PASS",
   "video": "/private/tmp/023_Venus_full_rough_v05d.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
@@ -11,23 +11,7 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 16,
-      "row": "14a",
-      "source": "albedo.mp4",
-      "title": null,
-      "t": 86.82,
-      "at": "1:27",
-      "fail": [
-        "split panel: vertical gutter at 0.044"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 5.433333333333337
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 13,
@@ -55,6 +39,25 @@
         "reuse: on screen 18.1s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
+    },
+    {
+      "cut": 16,
+      "row": "14a",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 86.82,
+      "at": "1:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.433333333333337,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it); Chief #6094884793: v05d row 14a split panel is a false positive (same graphic OK'd in round 2, ee52814)",
+        "passed": [
+          "split panel: vertical gutter at 0.044"
+        ]
+      }
     },
     {
       "cut": 17,
@@ -568,13 +571,17 @@
       "title": null,
       "t": 86.82,
       "at": "1:27",
-      "fail": [
-        "split panel: vertical gutter at 0.044"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 5.433333333333337
+      "offset": 5.433333333333337,
+      "reviewed_ok": {
+        "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it); Chief #6094884793: v05d row 14a split panel is a false positive (same graphic OK'd in round 2, ee52814)",
+        "passed": [
+          "split panel: vertical gutter at 0.044"
+        ]
+      }
     },
     {
       "cut": 17,

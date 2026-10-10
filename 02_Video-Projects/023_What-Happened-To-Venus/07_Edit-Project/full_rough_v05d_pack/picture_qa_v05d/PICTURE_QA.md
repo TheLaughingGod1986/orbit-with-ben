@@ -1,15 +1,12 @@
-# Picture QA: FAIL
+# Picture QA: PASS
 
-/private/tmp/023_Venus_full_rough_v05d.mp4 · 96 cuts · 1 fail · 24 for Claude to look at full size
-
-## Fix before anyone watches
-
-- **1:27** row 14a · albedo.mp4: split panel: vertical gutter at 0.044
+/private/tmp/023_Venus_full_rough_v05d.mp4 · 96 cuts · 0 fail · 25 for Claude to look at full size
 
 ## Claude looks at these full size
 
 - **1:10** row 13a · AIA171VenusTransit_HD1080.mp4 (SDO AIA 171 view of the 2012 transit of Venus across the Sun): low detail: edge density 0.0011 < film p5 0.0021
 - **1:21** row 13c · albedo.mp4: kind of picture: no title in the pool, so nobody can tell what it is; reuse: on screen 18.1s in a row (look at it: 15s is a lot for one picture)
+- **1:27** row 14a · albedo.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **1:33** row 14b · albedo.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **2:31** row 21a · PIA00272.jpg (Venus - Simulated Color of Ushas Mons): low detail: luma std 17.83 < 18.0
 - **2:54** row 22 · svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4 (Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)): kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size; low detail: edge density 0.002 < film p5 0.0021
@@ -35,6 +32,7 @@
 
 ## Passed on Claude's ruling
 
+- **1:27** row 14a · albedo.mp4: Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it); Chief #6094884793: v05d row 14a split panel is a false positive (same graphic OK'd in round 2, ee52814)
 - **5:26** row 38 · nightlid.mp4: Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)
 - **5:33** row 39a · venus_row39a_split_labelled_v04.mp4 (Artist's impression: early ocean Venus beside the steam-lidded Venus, labelled Way 2016 / Turbet 2021 (side-by-side comparison)): Chief #6093640970 ruling 2: the two study captions Ben asked for (Way 2016 / Turbet 2021), not a textbook diagram; pool title left as is
 - **5:53** row 43a · line.mp4: Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)
