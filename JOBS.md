@@ -14,6 +14,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0111 | mini | open (after J0110) | – | – | HOS 009 long voiceover (5 parts) after the Chief's opening OK; ElevenLabs balance first |  |
 | J0113 | mini | open (after J0111) | – | – | HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first |  |
 | J0118 | mini | open | – | – | HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload |  |
+| J0119 | mini | open | – | – | 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) |  |
 
 Recently finished:
 
