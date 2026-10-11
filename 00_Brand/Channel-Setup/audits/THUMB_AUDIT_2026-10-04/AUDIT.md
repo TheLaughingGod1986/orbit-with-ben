@@ -91,3 +91,17 @@ Scheduled average **16.5** against **21.8** for the top performers. The schedule
 - No CTR or impressions data was used, because Studio analytics weren't accessed.
 - I did **not** call the YouTube Data API with the Content Ops OAuth token. That would mean using the refresh token in `07_Content-Ops/.env`, and the hosted ops app was retired on 27 Sep. The set thumbnails come from the repo upload records ("thumbnail set" via thumbnails.set) and haven't been checked live in Studio. If Studio was edited after upload, what's live could differ.
 - The Saturn v02 iCloud folder (`OWB UAT/saturn_thumbs_v02/`) wasn't checked. The same A/B/C files were in the repo.
+
+## Proposal, not applied (Chief, 11 Oct 2026): count the lit subject, not the black
+
+**The evidence.** SEA's top 12 longs average **51% near-black** against **30%** for its bottom 6, so they win with more black, not less (`/workspace/sea-pack/TAKEAWAYS.md` T1). What they share is one glowing, saturated subject, lit at the centre: a black-hole ring, a pulsar beam, Higgs collision lines. Their losers are flat, low-saturation plates (sat about 84) or textures with no focal point. HOTU's one dark winner (STRING THEORY ON TRIAL, 80% black) has the same glow-on-black shape. Orbit's weak covers (NO FLOOR, LEAVING US?) failed because the plates were **ungraded and unlit**, not because they were black.
+
+**The proposal.** Keep §2.A.1's ≤30% near-black cap as the default. Allow up to about 55% only when all of these hold:
+1. the subject is lit (a rim light or bloom) and sits in the centre third;
+2. the subject's own mean luma is at least about 3× the frame median;
+3. the thumb still passes the saturation floor of `thumb_preview.py --score`.
+
+A `--lit-subject` mode for `--score` would measure (2).
+
+**Status.** This is a proposal only. The ≤30% cap, `thumb_preview.py --score` and *Packaging* §2.B.3 stand unchanged. Chief adopts it, or not, by a new entry in AGENTS.md after a Test & Compare on a glow-on-black long.
+

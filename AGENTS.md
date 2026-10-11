@@ -204,6 +204,73 @@ A Short is scored on 1 and 3 only. Any FAIL goes back to the edit before the cut
 - **Item 4:** spoken analogies and the hook start with scripts locked from 12 Oct (030 and later). 025–029 have their VO locked, so their DATA graphics may show a scale on screen with no VO change.
 - **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review).
 
+## Reference lessons (HOTU + SEA, 11 Oct 2026)
+
+Chief studied two more reference channels on 11 Oct 2026. *History of the Universe* (HOTU) was read through `cqGhCCDC_Sw`, *Have We Finally Proven Einstein Wrong?*, and SEA through `7oR0Pmd-WIk`, *Higgs Boson: The God Particle*. The evidence is in `/workspace/hotu-pack/TAKEAWAYS.md` and `/workspace/sea-pack/TAKEAWAYS.md` on the box. Ben delegates creative calls to Chief and the AIs, and these are Chief's calls. They add to *Teach on screen*, *Polish pass* and *Packaging*.
+
+**These hard rules don't change:**
+- the line-1 claim, the first concrete answer before 0:30 and the question by about 0:50;
+- the 22–27 s / under-40 s Shorts lock (plus the one *Packaging* length test);
+- the yellow hook word;
+- every `picture_qa`, `polish_gate` and `music_gate` FAIL.
+
+Where a lesson below meets one of them, the rule wins.
+
+**1. Craft lessons (Claude writes them into scripts and shot lists; Chief scores them at review).**
+- **Structure.**
+  - Each chapter opens cold, on a quote, a scene or a question.
+  - Each chapter ends on a question the next chapter answers.
+  - At about 60% of the runtime comes a midpoint twist: "Case closed? Wrong."
+  - Near the end, raise the scariest idea, explain it away with reasoning, then give a short sign-off. On Orbit the sign-off is the existing hand-off line to the next film: no goodbye, and no subscribe ask (that Never stands). It fits *Wonder, not threat*.
+- **People.**
+  - Every named person gets a year card (the WHO card) plus a cut-out portrait with gentle parallax. Use only a portrait we can source.
+  - Use rivalries where the history has them, told with back-and-forth portrait cuts.
+- **Hard ideas.**
+  - Put a quirky, concrete, sourced anecdote just before the hard idea (HOTU's cigar smoke).
+  - Show hard maths as a physical object: a slider that stops at a limit and then breaks past it (Bell's 2.0 → 2.83), or a map of icons that light up (loopholes).
+  - Jump between micro and macro scale.
+  - Make big numbers tangible on a scale card ("5 sigma = 1 in 3.5 million"). That's the SCALE rule, shown.
+- **On screen.**
+  - Keywords flash as they're spoken, with a plain-English sub-line, inside *Teach on screen*'s limit of 4 words or fewer per label.
+  - Years that fill the screen are the WHEN call-out.
+  - Give every shot a slow push-in or pull-out where it has no camera move of its own. It must be smooth: polish_gate fails wobbly pushes, and a card is never Ken-Burned.
+  - Use a recurring "case file" chapter card with a low bass thud.
+  - Show an old diagram with glowing light traced through it only as **our own redrawn code graphic**: a sourced diagram or scan is still a `picture_qa` FAIL here.
+- **Sound.**
+  - SFX on name cards and photo reveals (the house tick or whoosh).
+  - Music follows the emotion and changes by chapter (*Polish pass* 2). Near-silence at the key reveal is allowed, but the bed may dip for 6 s at most, or `music_gate` fails it as a gap.
+  - Cut to a human reaction at the emotional peak: a sourced archive face, or Orbit in Omni.
+- **Banned (weak spots):**
+  - **The same photo used 5 or more times.** Orbit's existing rule is stricter (a still appearing more than twice FAILs `picture_qa`), and it stands.
+  - **Generic glowing-dot or particle filler** standing in for a real subject.
+  - **Holding back the answer.**
+
+**2. Packaging rules.**
+- **Cover text never repeats the title** (§2.3, now backed by HOTU and SEA: their losers' covers repeat the title).
+- **Titles need a big subject plus one hook.** The hook is one of the six shapes, or one of three more: a famous nickname (*The God Particle*), the viewer inside the subject (*You Live in a Supervoid*), or a journey to the edge (*Journey to the Edge of the Solar System*). Catalogue labels (*Planetary Ring Systems*) fail (`THUMBNAIL_AND_TITLE_RULES.md` §1 rule 11).
+- **Descriptions** carry, in order:
+  1. the subject line;
+  2. chapters named as story beats (*Einstein vs Bohr*, not *Quantum Entanglement*), one per chapter card;
+  3. the Sources line;
+  4. the image and agency credits;
+  5. **one honest line on how the film is made**, for example *"Pictures: AI-generated scenes alongside NASA/ESA imagery. Facts: every number is checked against the sources listed below."*
+
+  Never claim "no AI", and never name the AI checkers. Say a person checked the facts only when one actually did. The altered-content disclosure stays on.
+
+**3. Shorts rules.**
+- **The myth-bust opener is an allowed format.** Line 1 states a belief people hold ("You've probably heard the Moon is drifting away"), and **"No"** (or the reversal) lands by about 0:15. It sits inside the 22–27 s lock and the six opening rules (the named thing moving at frame 0, the claim as the first words).
+- **No straight trailers.** A Short is never a clip trimmed from the long and posted as is. Every Short has its own open, frame 0, hook caption, 9–14 s title and loop (lesson: every Short gets its own open), and stands alone without the long.
+  - Already uploaded: `TtgHNLXfDSs`, cut from the long, isn't reworked.
+  - Exception: the *Packaging* length test (J0134). It lifts a stretch of the locked long so that it spends nothing, but its brief requires its own open, title card and loop, so it isn't a straight trim. Chief may still rule on it.
+
+**4. Graphics go to Codex** (`--kind chart`, `gpt-6-astra`, per *Who does what*): the limit slider, the lit-up icon map, the number scale card, the traced-diagram graphic (redrawn) and the case-file card. Each one is a per-film `code_graphics.py` render for its own row, like every code graphic.
+
+**5. Suggestions to test, not rule changes.**
+- **(a) No cover text.** SEA's top two longs have no cover text at all. One Test & Compare runs on one live long: the live thumb (A) against the same plate with no text (B). It's queued as a Studio job, parked for Chief's review before the test is set. Until a winner is called, the yellow-word rule stands.
+- **(b) The near-black cap.** SEA's winners run 51% near-black with a lit, glowing subject in the centre. The proposal is to count the lit subject, not the share of black. It's recorded in `audits/THUMB_AUDIT_2026-10-04/AUDIT.md` as a proposal only. The ≤30% cap and `thumb_preview.py --score` stand until Chief adopts a change here.
+
+**Applies to:** scripts locked from 12 Oct (030 on) for structure and people. Shot lists and cuts from 12 Oct get the picture and sound items, within each film's VO lock. Packaging applies to every new upload package. Nothing that's live, scheduled or approved is reworked.
+
 ## Packaging (Astrum ref, 11 Oct 2026)
 
 Ben, 11 Oct 2026, sent `@astrumspace`: *"anything we can learn from the thumbnails, packaging of shorts?"* Chief studied their top and bottom longs and Shorts against our last ten longs and decided the following the same night. Ben delegates creative calls to Chief and the AIs. Evidence: `/workspace/astrum-pack` on the box (contact sheets, `longs_meta.tsv`, `shorts_meta.tsv`).

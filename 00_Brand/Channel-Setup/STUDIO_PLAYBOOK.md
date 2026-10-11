@@ -295,7 +295,7 @@ Tools:
    - Until the Data API thumbnail refusal on the new Cloud project is sorted, after each `youtube:package` upload, check for "thumbnail skipped" and set the thumbnail in Studio.
 2. **Long:**
    - normal publish, Sunday 18:00, **no Premiere** until subscribers are in the hundreds;
-   - description: opens on the real subject, then chapters, then sources;
+   - description: opens on the real subject, then chapters named as story beats, then sources, image credits and one honest line on how the film is made (AI-generated scenes with NASA/ESA imagery, numbers checked against the sources; never "no AI", never naming the AI checkers; AGENTS.md → *Reference lessons*);
    - Test & Compare with 3 thumbs;
    - end screen: the best related long + Subscribe;
    - captions: Studio auto-sync from the VO script;
