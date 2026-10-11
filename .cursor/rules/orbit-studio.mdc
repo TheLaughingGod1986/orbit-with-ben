@@ -106,6 +106,75 @@ A Short is scored on 5 and 6 only, plus whichever of 1–4 its single overlay is
 - **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review) stay as they are, because adding overlays would mean re-rendering cuts that have already passed.
 <!-- /SYNC -->
 
+## Polish pass (Astrum ref, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
+
+<!-- SYNC: AGENTS.md#Polish pass (Astrum ref, 11 Oct 2026) -->
+Ben, 11 Oct 2026 22:17, sent Astrum's *What Is It Like on the Surface of a Black Hole Planet?* (`PxJSOWyYWkc`, 27 min, 1.1M views) as a style reference: *"let me know what you think we can incorporate into our workflow."* Chief adopted five of its techniques the same night. They apply to every cut started after 11 Oct 2026. They add to lesson 7, the edit locks and *Teach on screen*, and relax none of them.
+
+**Not adopted:** Astrum's long shot holds (6–8 s, some 15 s). That pace suits a 27-minute film, not our 8–9 minute longs and 22–27 s Shorts. The picture still changes every 4–6 s, and nothing holds still for more than 4 s.
+
+**1. Sound design (SFX).**
+- **Three kinds, where the shot calls for them:**
+  - a low rumble under a violent or huge shot (an impact, a collapse, a planet-sized scale reveal);
+  - a soft whoosh on a fly-through or a fast camera move;
+  - a subtle tick when a label, line, bar or timeline marker appears.
+- **Source: our own house kit.** Run `python3 scripts/sfx_kit.py make --out-dir <film>/06_Sound-Effects/kit_v01`. It synthesises the sounds itself, so there are no samples, no licence to track and no spend. The Mac mini has no licensed SFX library (checked 11 Oct: no Apple Loops or sample packs; macOS alert sounds aren't for video).
+  - A free library may be added only if its licence allows commercial YouTube use with no attribution. Record it in the film's `06_Sound-Effects/SOURCES.md`. Nothing is bought.
+  - ElevenLabs SFX spends the shared credit, so it waits for the 30 Oct reset and Chief's OK.
+  - Never use a video model's own audio as SFX (silent picture).
+- **Restraint:** no whoosh on plain cuts or on every card, at most one tick every 0.5 s, and no cartoon whooshes or comedy stings. Environment honesty still applies (water sounds only underwater).
+- **Level rule.** SFX sit under the VO, like the bed. Assemblers keep VO, music and SFX as separate stems in the pack, and `python3 scripts/sfx_kit.py level --vo <vo stem> --sfx <sfx stem> --bed <music stem> --minutes <length>` must PASS:
+  - the SFX stem is at least 12 LU under the VO's integrated loudness;
+  - while the VO speaks, the SFX and the bed are each at least 10 LU under the VO;
+  - in a VO pause, the SFX stay at least 6 LU under the VO's integrated loudness (a rumble may swell, never to speech level).
+
+  The full mix stays about −14 LUFS and −1 dBTP.
+- **Shorts** keep the frame-0 whoosh or impact (`FAMILIAR_DANGER_STRATEGY.md`) and may add ticks. The same level rule applies.
+
+**2. Music by chapter (longs).**
+- The score follows the chapters: an ambient drone under awe sections (reveals, scale, "what it's like"), and a light rhythmic or arpeggiated cue under explain and physics sections. Claude marks each chapter `awe` or `explain` in the music prompt, which keeps its `Pace:` line and NOT list.
+- **Credit hold:** until the 30 Oct reset, no new bed starts without Chief's OK. So the free way is one bed whose prompt asks for both moods, with its drone and pulse sections laid at the chapter cards. A second cue counts as a new bed.
+- The music changes at a chapter card with a 2–4 s crossfade, never a dip. `music_gate.py` still runs on the laid score: own music, a Pace and NOT brief for every cue, nothing that sounds like another film's bed, no gap, the whole runtime. The bed stays at least 10 LU under the VO.
+- Shorts keep one bed.
+
+**3. Explainer look.** For a hard-physics or mechanism section (how gravity bends light, why an orbit decays), switch to our own diagram look: thin glowing lines and arrows on a dark-navy grid. It's a code graphic (`chart` kind), so lesson 7 and *Teach on screen* apply in full:
+- real bodies on the diagram (the Blue Marble Earth, a real Sun image), never flat discs;
+- the navy is lifted, not black, so the frame passes polish_gate's near-black check (mean luma 28 or more, or p95 50 or more);
+- labels of 4 words or fewer, in large house type;
+- one idea per graphic, building with the line;
+- real moving imagery between any two diagrams, so a physics section alternates diagram and footage and never runs as a slideshow;
+- never a sourced diagram or schematic (still a `picture_qa.py` FAIL).
+
+**4. Script.**
+- **Every big number gets a scale.** Give it a plain comparison or an everyday analogy in the same or the next sentence ("about the width of the Atlantic"). Mark it on its DATA marker: `· DATA: <graphic> · SCALE: <comparison>`. The comparison's own numbers are a MUST QUOTE row in `SOURCES.md`.
+- **Long hook:**
+  - line 1 is still the claim, with the mystery in it, never "Imagine…";
+  - the huge claim and the first concrete answer to the title land before 0:30;
+  - the question the film answers is spoken by about 0:50.
+- **Word counts don't change:** about 1,200–1,300 spoken words, and `review:script` at 90 or more. An analogy replaces words; it doesn't add them. Shorts stay at 55–65 words.
+
+**5. Finishing.**
+- **Crossfades** of 0.5–1.5 s between scenes, where the move suits (a change of place or time, an awe section). Hard cuts elsewhere; they're not required on every cut. A crossfade never stretches a shot past the 4 s hold or the 4–6 s picture change, and chapter cards keep their ~0.4 s xfade.
+- **Fine film grain** over dark space backgrounds, to stop banding (for example ffmpeg `noise=alls=4:allf=t` before the final encode). It must not trip polish_gate's noise check, and it never rescues a near-black or empty frame.
+- **Depth-of-field blur** for scale where it helps (soft foreground debris, a sharp far body). It's never on the subject the line names, and never heavy.
+- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the subscribe cue. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
+
+**Review gate.** Chief adds six items to the frame review and stills check, each scored PASS or FAIL in the pack's review note:
+1. **SFX:** `sfx_kit.py level` PASSes, and the rumbles, whooshes and ticks sit on shots that call for them.
+2. **MUSIC:** the laid score changes by chapter (awe to explain) at least once, at a card, and `music_gate.py` PASSes.
+3. **GRAIN:** every dark space background shows grain at full size, with no banding, and polish_gate PASSes.
+4. **SCALE:** every DATA number has its SCALE comparison, spoken and sourced (`grep -c "SCALE:"` is at least the DATA count).
+5. **EXPLAINER:** physics sections use the diagram look within lesson 7 (real bodies, navy that passes near-black, footage between diagrams).
+6. **FINISH:** crossfades are 0.5–1.5 s with no hold over 4 s, credit labels are on CGI and agency picture, and DOF blur stays off the subject.
+
+A Short is scored on 1 and 3 only. Any FAIL goes back to the edit before the cut goes to OWB UAT.
+
+**What it applies to.**
+- **Items 1–3 and 5:** every rough cut or new version started from 12 Oct. That's 025 and 027 at their next version, then 026, 028, 029 and later.
+- **Item 4:** spoken analogies and the hook start with scripts locked from 12 Oct (030 and later). 025–029 have their VO locked, so their DATA graphics may show a scale on screen with no VO change.
+- **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review).
+<!-- /SYNC -->
+
 ## Stop and ask (generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`)
 
 <!-- SYNC: AGENTS.md#Stop and ask Ben -->
