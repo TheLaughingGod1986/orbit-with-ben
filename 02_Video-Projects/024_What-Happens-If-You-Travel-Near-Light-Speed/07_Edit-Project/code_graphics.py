@@ -55,7 +55,13 @@ VARIANTS = {
     "b": dict(seed=202, gold="#ffa64d", cyan="#6ff0c0", cam=((-0.5, 0.1, 0.95), (0.5, -0.1, 0.95))),
     "c": dict(seed=303, gold="#ffe27a", cyan="#a3a9ff", cam=((0.25, -0.2, 0.84), (0.0, 0.0, 1.06))),
     "d": dict(seed=404, gold="#ff9f8a", cyan="#7cc8ff", cam=((0.4, 0.2, 1.02), (-0.3, -0.15, 0.88))),
+    "e": dict(seed=505, gold="#ffd36b", cyan="#7fe3ff", cam=((-0.3, -0.2, 0.88), (0.45, 0.2, 1.04))),
+    "f": dict(seed=606, gold="#ffb870", cyan="#9cf5d4", cam=((0.5, -0.1, 1.0), (-0.45, 0.15, 0.9))),
+    "g": dict(seed=707, gold="#fff09a", cyan="#b7a3ff", cam=((0.0, 0.3, 0.92), (0.2, -0.25, 1.06))),
+    "h": dict(seed=808, gold="#ffab9a", cyan="#8ab8ff", cam=((-0.45, 0.1, 1.05), (0.3, -0.1, 0.87))),
 }
+# bed star count per plate: thin-line plates get fewer, so the stars don't read as grain over the element
+BED_STARS = dict(lightclock=700, energy=600)
 # tightest zoom per plate, so its key elements (outer clocks, the muon birth line, GPS bars) stay in frame
 ZMIN = dict(starfield=0.7, lightclock=0.86, energy=0.9, muons=0.99, gpsclocks=0.97, mapdrift=0.8, gammaclocks=0.98,
             twinclocks=0.8, contraction=0.92)
@@ -63,7 +69,7 @@ STYLE = dict(on=False, name="", cam=((0, 0, 1), (0, 0, 1)), bed=None, stars=None
 BED_EXT = (-11.0, 11.0, -6.5, 6.5)
 
 
-def make_bed(seed, stars=True):
+def make_bed(seed, stars=True, N=2600):
     """Lifted navy bed: a radial gradient with soft cloud texture and fixed background stars (mean luma ~40)."""
     from PIL import Image, ImageFilter
     rng = np.random.default_rng(seed)
@@ -78,7 +84,6 @@ def make_bed(seed, stars=True):
     img = edge + (centre - edge) * k[..., None]
     st = None
     if stars:
-        N = 2600
         st = dict(x=rng.uniform(BED_EXT[0], BED_EXT[1], N), y=rng.uniform(BED_EXT[2], BED_EXT[3], N),
                   s=1.0 + 9 * rng.uniform(0, 1, N) ** 4, a=rng.uniform(0.35, 0.9, N))
     return np.clip(img, 0, 1), st
@@ -167,16 +172,16 @@ def render_lightclock(out, seconds, still):
         ph = (t / tick) % 2
         yy = -1.5 + Hgap * (ph if ph <= 1 else 2 - ph)
         for yM in (-1.5, 1.5):
-            ax.plot([X0 - 0.8, X0 + 0.8], [yM, yM], color=WHITE, lw=5, solid_capstyle="round")
-        ax.add_patch(Circle((X0, yy), 0.16, color=GOLD, zorder=5))
-        ax.add_patch(Circle((X0, yy), 0.40, color=GOLD, alpha=0.18, lw=0))
+            ax.plot([X0 - 0.8, X0 + 0.8], [yM, yM], color=WHITE, lw=10, solid_capstyle="round")
+        ax.add_patch(Circle((X0, yy), 0.24, color=GOLD, zorder=5))
+        ax.add_patch(Circle((X0, yy), 0.70, color=GOLD, alpha=0.22, lw=0))
         # moving clock (right half): wraps across x in [-1, 8]
         span = 9.0
         x_c = -1.0 + (vx * t) % span
         ph2 = (t / (tick * g)) % 2
         y2 = -1.5 + Hgap * (ph2 if ph2 <= 1 else 2 - ph2)
         for yM in (-1.5, 1.5):
-            ax.plot([x_c - 0.8, x_c + 0.8], [yM, yM], color=WHITE, lw=5, solid_capstyle="round")
+            ax.plot([x_c - 0.8, x_c + 0.8], [yM, yM], color=WHITE, lw=10, solid_capstyle="round")
         # the zigzag trail of the photon over the last tick (one mirror-to-mirror trip)
         ts = np.linspace(max(0, t - tick * g), t, 80)
         xs = -1.0 + (vx * ts) % span
@@ -184,10 +189,11 @@ def render_lightclock(out, seconds, still):
         ys = -1.5 + Hgap * np.where(p <= 1, p, 2 - p)
         breaks = np.where(np.diff(xs) < 0)[0]
         for seg in np.split(np.arange(len(ts)), breaks + 1):
-            ax.plot(xs[seg], ys[seg], color=GOLD, lw=2.2, alpha=0.55)
-        ax.add_patch(Circle((x_c, y2), 0.16, color=GOLD, zorder=5))
-        ax.add_patch(Circle((x_c, y2), 0.40, color=GOLD, alpha=0.18, lw=0))
-        ax.plot([-1.6, -1.6], [-3.6, 3.6], color=DIM, lw=1.2, alpha=0.4)
+            ax.plot(xs[seg], ys[seg], color=GOLD, lw=5, alpha=0.7)
+        ax.add_patch(Circle((x_c, y2), 0.24, color=GOLD, zorder=5))
+        ax.add_patch(Circle((x_c, y2), 0.70, color=GOLD, alpha=0.22, lw=0))
+        if not STYLE["on"]:
+            ax.plot([-1.6, -1.6], [-3.6, 3.6], color=DIM, lw=1.2, alpha=0.4)
         save(fig, out, i, still)
     finish(out, still)
 
@@ -205,11 +211,15 @@ def render_energy(out, seconds, still):
         s = ease((i / max(1, n - 1) - 0.05) / 0.85)
         k = max(2, int(len(vv) * s))
         fig, ax = canvas(i / max(1, n - 1))
-        ax.plot([X0, X1 + 0.6], [Y0, Y0], color=DIM, lw=2)
-        ax.plot([X0, X0], [Y0, Y1 + 0.4], color=DIM, lw=2)
-        ax.plot([X0 + (X1 - X0) * 1.0] * 2, [Y0, Y1 + 0.4], color=WHITE, lw=2, ls=(0, (6, 6)), alpha=0.7)
-        ax.plot(xs[:k], ys[:k], color=GOLD, lw=4, solid_capstyle="round")
-        ax.add_patch(Circle((xs[k - 1], ys[k - 1]), 0.14, color=WHITE, zorder=5))
+        on = STYLE["on"]
+        ax.plot([X0, X1 + 0.6], [Y0, Y0], color=DIM, lw=4 if on else 2, alpha=0.7 if on else 1)
+        if not on:                                   # a full-height axis reads as a split-panel seam on the v05 bed
+            ax.plot([X0, X0], [Y0, Y1 + 0.4], color=DIM, lw=2)
+        ax.plot([X0 + (X1 - X0) * 1.0] * 2, [Y0, Y1 + 0.4], color=WHITE, lw=3 if on else 2, ls=(0, (6, 6)), alpha=0.7)
+        if on:
+            ax.plot(xs[:k], ys[:k], color=GOLD, lw=24, alpha=0.18, solid_capstyle="round")
+        ax.plot(xs[:k], ys[:k], color=GOLD, lw=10 if on else 4, solid_capstyle="round")
+        ax.add_patch(Circle((xs[k - 1], ys[k - 1]), 0.24 if on else 0.14, color=WHITE, zorder=5))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -239,9 +249,15 @@ def render_muons(out, seconds, still):
             continue
         fig, ax = canvas(i / max(1, n - 1))
         on = STYLE["on"]
-        ax.add_patch(Rectangle((-12, -8), 24, GROUND + 8, color="#16202a", lw=0, alpha=0.45 if on else 1))
-        ax.plot([-12, 12], [GROUND, GROUND], color=DIM, lw=1 if on else 2, alpha=0.35 if on else 1)
-        ax.plot([-8, 8], [TOP, TOP], color="#9f8cff", lw=1.5, alpha=0.5)
+        if on:                                       # soft ground haze and a dotted birth line: no straight seams
+            haze = np.zeros((64, 1, 4)); haze[..., :3] = (0.09, 0.13, 0.16); haze[:, 0, 3] = np.linspace(0.5, 0, 64) ** 1.5
+            ax.imshow(haze, extent=(-12, 12, -8, GROUND + 1.2), origin="lower", aspect="auto", interpolation="bilinear", zorder=-8)
+            ax.set_aspect("equal")
+            ax.plot([-8, 8], [TOP, TOP], color="#9f8cff", lw=2.5, alpha=0.6, ls=(0, (1, 5)))
+        else:
+            ax.add_patch(Rectangle((-12, -8), 24, GROUND + 8, color="#16202a", lw=0))
+            ax.plot([-12, 12], [GROUND, GROUND], color=DIM, lw=2)
+            ax.plot([-8, 8], [TOP, TOP], color="#9f8cff", lw=1.5, alpha=0.5)
         ax.plot([-8, 8], [classical, classical], color=WHITE, lw=1.2, ls=(0, (4, 6)), alpha=0.45)
         for m in mu:
             ax.plot([m[0] - m[2] * 10, m[0]], [m[1] + speed * 10, m[1]], color=CYAN, lw=2.2, alpha=0.75)
@@ -449,7 +465,7 @@ def main():
             continue
         V = VARIANTS[a.variant]
         GOLD, CYAN = V["gold"], V["cyan"]
-        bed, stars = make_bed(V["seed"] + len(name), stars=(name != "starfield"))
+        bed, stars = make_bed(V["seed"] + len(name), stars=(name != "starfield"), N=BED_STARS.get(name, 2600))
         STYLE.update(on=True, name=name, cam=V["cam"], bed=bed, stars=stars, seed=V["seed"] + len(name))
         fn(os.path.join(a.out, f"{name}_{a.variant}"), a.seconds or secs + 8, a.still)
 

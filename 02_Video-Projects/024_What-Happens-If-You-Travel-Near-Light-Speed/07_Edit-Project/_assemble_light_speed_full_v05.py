@@ -10,7 +10,9 @@ points, the locked VO and 024's own bed (light-speed_score_bed_v01_full.mp3 at 0
 - Every shot moves: the v05 plates run 8 s longer than their longest use, so nothing clone-pads; stills push with
   scripts/still_motion.push (float crop box, no integer zoompan).
 - Seams: lightclock no longer crops a quadrant (the 0.798 seam); ACS3_LookingDown keeps its right panel only (seam 0.485).
-Row 1 (frame 0) and the row 39 bookend keep their reviewed starfield renders. Cards and subscribe cue as v03.
+Row 1 (frame 0) keeps its reviewed starfield render; the row 39 bookend runs on its own graphics_v05 starfield variant
+(picture_qa matched v03's bookend render to the 0:03 open). Variants e-h (step 5) give every run a fresh variant, and the
+segment cache keys on the source's mtime so a re-rendered plate is never served stale. Cards and subscribe cue as v03.
 `--plan` prints the segment list, the variant/stretch allocation, reuse counts and checks without rendering."""
 from pathlib import Path
 import json, subprocess as sp, re, hashlib, math, sys, csv, io, shutil
@@ -85,7 +87,7 @@ S=[('1',0.0,SF2,v(12.0,hold_ok=1)),('2',6.5,EV,v(14.0)),('2',9.65,EV,f(122.0)),(
  ('36',420.54,NHQ,f(570.0,vcrop=NHQC)),('36',425.2,'iss040e085126.jpg',dict(quad='c',fixed=1)),('36',428.95,NHQ,f(1830.0,vcrop=NHQC)),('36',432.0,'iss040e091231.jpg',X),('36',435.0,NHQ,f(2100.0,vcrop=NHQC)),
  ('37',438.57,'',TW),('37',442.42,'',TW),('37',446.0,'',GM),
  ('38',448.61,'',GC),('38',453.98,'',MU),('38',457.42,EV,f(176.0,hold_ok=1)),
- ('39',464.98,SF3,f(0.0,push=0.06,hold_ok=1,bookend=1))]
+ ('39',464.98,'',dict(SF,hold_ok=1))]
 CHAPTERS=[('Your Clock Is Already Slow',42.0),('Why Light Sets the Limit',110.7),('The Trip',224.4),
  ('The Price of Every Nine',324.5),('A One-Way Ticket to the Future',399.2)]
 
@@ -122,8 +124,10 @@ while pending:
  plate,ss=pending.pop(0)
  L=ss[-1]['timeline_out']-ss[0]['timeline_in']+2*PAD
  best=None
- for var in 'abcd':
-  fp=G5/f'{plate}_{var}.mp4';dur=dur_of[fp] if fp in dur_of else dur_of.setdefault(fp,probe(fp))
+ for var in 'abcdefgh':
+  fp=G5/f'{plate}_{var}.mp4'
+  if not fp.exists():continue
+  dur=dur_of[fp] if fp in dur_of else dur_of.setdefault(fp,probe(fp))
   used=claimed[(plate,var)]
   off=PAD if not used else max(max(e for _,e in used)+PAD,max(st for st,_ in used)+SAME)
   if off+L>dur-0.2:continue
@@ -202,7 +206,7 @@ def prep_still(s):
 WORK.mkdir(parents=True,exist_ok=True);PACK.mkdir(parents=True,exist_ok=True)
 (PACK/'graphics_alloc_v05.json').write_text(json.dumps(alloc,indent=2))
 ENC=['-an','-c:v','libx264','-preset','fast','-crf','19','-threads','4']
-def okkey(s):return json.dumps([s['timeline_in'],s['timeline_out'],str(s['src']),s['o']],default=str,sort_keys=True)
+def okkey(s):return json.dumps([s['timeline_in'],s['timeline_out'],str(s['src']),s['src'].stat().st_mtime,s['o']],default=str,sort_keys=True)
 if '--finish-only' not in sys.argv:
  for i,s in enumerate(segs):
   pre=.2 if i else 0;post=.2 if i<len(segs)-1 else 0
