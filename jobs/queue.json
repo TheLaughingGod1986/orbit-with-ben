@@ -1,5 +1,5 @@
 {
-  "next_id": 130,
+  "next_id": 131,
   "jobs": [
     {
       "id": "J0001",
@@ -6802,6 +6802,32 @@
       "stage": "edit",
       "after": "",
       "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T18:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T18:03Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0130",
+      "title": "027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**027 Earth Stopped Spinning rough v01f: the Chief's frame-by-frame FAIL on v01e (11 Oct; frames every 2 s, 223 samples). Chief OK (added --by chief).** Start from v01e (`OWB UAT/027_EarthSpin_rough_v01e.mp4`, pack `rough_v01e_pack`, assembler from 9d4b2b6). Keep the VO, the order, the cut points and everything not listed. Re-render only the changed segments (hard-link the rest, as for v01e). Still no bed (J0080 / take 2 after 30 Oct). All times below are v01e times.\n\n1. **Near-black over the 30% cap.** 81 of 223 samples (36%) are more than half near-black (luma < 25). Put the code graphics on a lifted navy star bed (024 rule) and make the subject at least 1/3 of frame height:\n   - row 20 dayyear **3:24-3:39** (p95 ~11; Earth is ~20% of frame height): reframe so the orbit fills the frame and Earth is >= 1/3.\n   - rows 24-25 tides **4:17-4:40** (94% near-black for 22 s; the Moon is a dot): bigger Earth and Moon on the lifted bed, and break the run with a real shot (e.g. Fundy or an Apollo retroreflector plate) so no graphic holds more than ~10 s.\n   - rows 30/33 clock **5:52-5:56** and **6:12-6:20** (p95 6), row 35 tides/speed **6:44-6:55**, rows 3/11/13 speed/air **0:16-0:22, 0:32-0:44, 0:58-1:06**, row 8 bulge **2:06-2:17**: lifted bed.\n   - Real dark footage stays (ISS night 1:14-1:17, aurora 1:44-1:49 and 6:56-6:59: already reviewed-ok).\n   - Target: <= 30% of 2 s samples more than half near-black. Report the number.\n2. **Text size.** Every label and chapter card is ~3% of frame height; the Orbit standard is ~11-12% cap height, on empty sky/black, never over the subject. Re-render: \"THE AIR KEEPS GOING\" / \"FASTER THAN SOUND\" 0:36-0:44; \"BRITAIN 1,000 KM/H\" / \"FASTER THAN A JET\" 1:02-1:06; \"43 KM WIDER\" 2:12-2:17; \"POLAR OCEANS\" / \"ONE BAND OF LAND\" 3:12-3:19 (**\"ONE BAND OF LAND\" sits on the globe: move it off**); \"1 DAY = 1 YEAR\" 3:26-3:39; \"4 CM A YEAR\" 4:30-4:40; \"22 HOURS\" 5:52-5:56; chapter cards \"The Sudden Stop\" 0:24, \"The Speed You Cannot Feel\" 1:34, \"A Slow Stop\" 2:56, \"Earth Is Already Slowing\" 4:08, \"Keeping Score\" 5:56. One line per label where it fits. The two credit lines (\"Radar map · NASA Magellan\" 3:50-3:58, \"Artist's impression\" 7:11-7:17) stay as small credits. The label wording is correct, so keep it.\n3. **Grade the NASA plates.** `GSFC_20171208_Archive_e002130.jpg` (2:18-2:23) and `e002131.jpg` (2:55-3:05): oversaturated cyan/teal seas. Grade to natural, like the EPIC plates (saturation down, cyan pulled back). `commons_Pahoeoe_fountain_original.jpg` (6:26-6:29): the red lava clips. Pull the highlights and saturation down until there's detail in the fountain.\n4. **Row 28 NOAA eclipse spans 2 and 3** (only span 1 was fixed in v01e): the NOAA badge corner (\"AA\") shows **top left at 5:22-5:27**, and a logo corner shows **bottom right at 5:28-5:34**. **5:26 has a diagonal swath seam** (split panel). Crop each span clear of the bugs (<= 1.2x), and use a span or crop with no seam (or fall back to the 55 s visible-light view Claude named).\n5. **Wrong subject: 6:39-6:44** `GSFC_20171208_Archive_e002035.jpg` is the Sun in SDO blue, under \"Timekeepers now plan to stop adding leap seconds\". Replace it with an Earth or timekeeping shot. Also lose the 6:38 dissolve that lays the Sun over the Greenland melt pond. The 1:18 use (\"There is no brake... sunlight\") can stay as that still's only use.\n6. **No repeated stills.** Second uses to replace with a new plate: `e000265` 3:19-3:24 (same framing as 1:28-1:33); `e002130` 6:30-6:34 (first at 2:18); the Moon `e000868` 4:50-4:55 (first at 4:08, 40 s earlier); `ED07-0256-09.jpg` 1:41-1:44 (first at 0:10); `e002035` 6:39 (item 5).\n\n**Passes (don't touch):** frame 0 is real turning EPIC; Orbit is on screen at 1:06-1:13 and 3:40-3:45; every shot moves (Venus 3:58-4:07 is a slow push); no insets; Foucault, coral, cuneiform, eclipse and NIST rows read well.\n\n**Then:** picture_qa with all pools, polish_gate, clip_check, the fill gate, a near-black count at 2 s, `OWB UAT/027_EarthSpin_rough_v01f.mp4`, and the pack `rough_v01f_pack/` (per-row sheet + frame0_sheet). Post a [Chief] note on #99 with the pack commit for the Chief's re-check. £0. Render scratch: current + previous only (move v01c to the NAS first: the disk was at 99%).\n",
+      "ref": "",
+      "film": "027",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 180,
       "status": "open",
       "by": "",
       "since": "",
