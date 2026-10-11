@@ -7349,10 +7349,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-11T23:08Z",
-      "eta": "2026-10-12T00:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -7366,6 +7366,11 @@
           "at": "2026-10-11T23:08Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-11T23:08Z",
+          "by": "cursor",
+          "what": "released: date gate: not before Mon 12 Oct 09:00 London (claimed 00:08); no Flow read, no spend"
         }
       ],
       "kind": "video"
