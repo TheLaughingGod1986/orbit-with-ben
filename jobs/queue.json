@@ -6929,10 +6929,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-11T21:52Z",
+      "eta": "2026-10-12T00:52Z",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -7001,6 +7001,11 @@
           "at": "2026-10-11T21:41Z",
           "by": "cursor",
           "what": "released: Step 5 of 6 done: v01f rendered and packed (e3532735). picture_qa PASS 0 fail, polish_gate PASS, clip_check PASS, near-black 9.4% at 2 s, OWB UAT/027_EarthSpin_rough_v01f.mp4 + 027_rough_v01f_sheets/. Posted #99 (6114095862) for Chief's re-check. OPEN (step 6): row 26 Moon e000868 second use @4:52. Waiting on Chief: accept it, or fetch a real full-res Moon plate (Apollo/telescope, not SVS sims), swap row 26 in _assemble_earth_spin_rough_v01f.py and re-run it detached (it reuses finished segs). tmux j0130-v01f-render and j0130-pqa are finished."
+        },
+        {
+          "at": "2026-10-11T21:52Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "progress": {
