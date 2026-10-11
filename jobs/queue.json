@@ -6812,10 +6812,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-11T18:29Z",
+      "eta": "2026-10-11T22:29Z",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -6834,6 +6834,11 @@
           "at": "2026-10-11T18:18Z",
           "by": "cursor",
           "what": "released: Step 1 of v05 (4b87d471): code_graphics.py --variant a-d = per-beat renders of all 9 plates (own seed, float camera move, palette, lifted navy star bed mean ~50-55 p95 ~64-69; mapdrift grid/muons ground/GPS baseline faded; +8 s longer so no holds freeze). Rendering detached: tmux light024-g05, log ~/_desk/logs/light024-g05-render.log, done-file ~/_desk/logs/light024-g05-render.done, output 07_Edit-Project/graphics_v05/<plate>_<a-d>.mp4 (36 files). Watch: mapdrift still std ~12.9 vs polish floor 13.44 (edge 0.009) -> run polish_gate on mapdrift_*.mp4; if FAIL thicken grid alpha or star count and re-render mapdrift only. Next: _assemble_light_speed_full_v05.py (picture re-rendered, not v03 picture.mp4): one variant per beat, split 1:46-2:39 into >=4 shots with >=2 NASA, Earth Views <=5 stretches, subpixel still pushes via scripts/still_motion.py, crop muons/ACS3 seams; then audio items 6-7 and music_gate item 8 (RETIRED.md for 027 earth-spin beds not yet written)."
+        },
+        {
+          "at": "2026-10-11T18:29Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
