@@ -23,6 +23,8 @@ is alive and able claims it. The thread stays for discussion and reports; this q
   python3 scripts/jobs.py renew J0003 --agent cursor --eta 120 --git           # still working: push the ETA out
   python3 scripts/jobs.py progress J0003 --agent cursor --step 3 --of 8 --git   # finished step 3 of 8 (the board's % done)
   python3 scripts/jobs.py list [--all]                                          # open and claimed jobs (JOBS.md too)
+  python3 scripts/jobs.py reroute J0003 --agent relay --to cursor --model cursor-claude-opus-5-5 --note "Claude out of usage" --git
+          # Claude Code out of usage (Ben, 11 Oct 23:40): hand a Claude job to Cursor on the Claude model
 
 `next` exits 10 when nothing is waiting for that agent, so a loop can stop quietly. It hands out quick jobs (--eta 60
 or less) before long ones, oldest first within each, so a multi-day job can't hold up a 30-minute one.
@@ -261,6 +263,28 @@ def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     log(job, at, agent, "reopened" + (": " + note if note else ""))
 
 
+def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.datetime) -> None:
+    """Hand a job to another worker on a given model (Ben, 11 Oct 2026 23:40: "if Claude Code is out of usage you can
+    use a Claude model in Cursor"). The job becomes an open Mini job only `to` may claim, carrying `model`; what it was
+    before is kept in rerouted_from. An open, blocked, or claimed job (the holder's claim ends) can be rerouted."""
+    if job["status"] in ("done", "cancelled"):
+        raise ValueError(f"{job['id']} is {job['status']}; nothing to reroute")
+    if model and model not in routing.MODELS:
+        raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
+    if model and routing.RUNS_ON.get(model) != to:
+        raise ValueError(f"{model} doesn't run on {to}")
+    if job.get("kind") == "chief":
+        raise ValueError(f"{job['id']} is a Chief call; it has no stand-in")
+    job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
+                                     "status": job["status"], "by": job.get("by", "")})
+    job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
+    if job.get("result") and job["rerouted_from"].get("status") == "blocked":
+        job["result"] = ""
+    if model:
+        job["model"] = model
+    log(job, at, agent, f"rerouted to {to}" + (f" on {model}" if model else "") + (": " + note if note else ""))
+
+
 def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     if job["status"] == "done":
         raise ValueError(f"{job['id']} is already done")
@@ -361,7 +385,9 @@ def show(job: dict) -> str:
         lines.append(f"board: {job['film']} {job['stage']}")
     if job.get("kind") or job.get("model"):
         r = routing.KINDS.get(job.get("kind") or "")
-        lines.append(f"kind: {job.get('kind') or '-'}" + (f" (primary {r[1][0]} {r[1][1]}" + (f", backup {r[2][0]} {r[2][1]})" if r[2] else ", no stand-in)") if r else "")
+        fb = routing.fallbacks(job["kind"]) if r else []
+        lines.append(f"kind: {job.get('kind') or '-'}" + (f" (primary {r[1][0]} {r[1][1]}" + (
+            ", then " + " -> ".join(f"{a} {m}" for a, m in fb) + ")" if fb else ", no stand-in)") if r else "")
                      + (f"; model: {job['model']}" if job.get("model") else ""))
     if job.get("ref"):
         lines.append(f"ref: {job['ref']}")
@@ -417,7 +443,7 @@ def main(argv=None) -> int:
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
     n.add_argument("--eta", type=int, default=None)
     n.add_argument("--peek", action="store_true", help="show what you would get, claim nothing")
-    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress"):
+    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute"):
         p = sub.add_parser(name)
         p.add_argument("id")
         p.add_argument("--agent", default="")
@@ -429,6 +455,9 @@ def main(argv=None) -> int:
         if name == "progress":
             p.add_argument("--step", type=int, required=True, help="steps finished so far (0 at the start)")
             p.add_argument("--of", type=int, required=True, help="steps in the whole job")
+        if name == "reroute":
+            p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
+            p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
     w = sub.add_parser("watch", help="JSON for Claude's 2-hourly check: is the Mini quiet, what waits on Ben")
     w.add_argument("--quiet-hours", type=float, default=3)
     fo = sub.add_parser("focus", help="the film(s) every agent works on first, e.g. `focus 025`; no films clears it")
@@ -517,6 +546,11 @@ def main(argv=None) -> int:
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "cancel":
                 do_cancel(job, args.agent or "claude", args.note, at)
+            elif args.cmd == "reroute":
+                held = job.get("by") if job["status"] == "claimed" else ""
+                do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)
+                if held:
+                    board_release(job, held, "doing")
             if job.get("film"):
                 touched.append(film_status_path(job))
             return job, None, touched

@@ -27,6 +27,20 @@ How "up" is decided:
   python3 scripts/chief_relay.py down chief --reason "out of credit" [--until 2026-10-12T09:00]
   python3 scripts/chief_relay.py up cursor                      # clear a down mark
 
+Fallback chains (Ben, 11 Oct 2026 23:40: "if Claude Code is out of usage you can use a Claude model in Cursor"; 23:47:
+"remember we also have Gemini and Codex"). Each job kind has a chain in routing.CHAINS, e.g. a Claude job:
+Claude Code -> Cursor on the Claude model (`agent --model claude-opus-5-5`) -> Gemini (`agy -p`) -> Codex gpt-6-astra;
+code and graphics start at Codex. Every `run` walks them:
+  - Claude counts as out of usage when it is marked down (`chief_relay.py down claude --reason "usage limit" --until
+    ...`), a Claude ledger note in the last CHIEF_CLAUDE_OUT_H hours (default 5) says it hit a limit (`ai_spend.py
+    record --pool claude --note "hit the 5-hour limit"`), or Claude blocked a queue job with a usage/limit reason
+    (that also marks it down for CHIEF_RETRY_H). Its waiting jobs then go to the next worker up in their chain with
+    `jobs.py reroute`, addressed to that worker, so the same run wakes it instead of leaving the job parked.
+  - A Cursor, Codex or Gemini run that ends in a usage/limit/sign-in error marks that worker down and the job goes to
+    the next worker up in its chain in the same run; a rerouted job whose worker has since run out walks on.
+  - Each run is logged with the worker and model that actually ran it: "ran: J0300 by cursor on claude-opus-5-5
+    (lane 2 of 4)" here, and a line in ~/_desk/state/chief/runs.jsonl.
+
 `run` does nothing while Grok is Chief (Grok drives itself), outside CHIEF_HOURS (default: never), while
 ~/_desk/state/chief-relay.pause exists, or while a previous run holds the lock. Otherwise it wakes the acting
 CLI Chief for ONE job (25-minute cap), then exits. Every change of Chief is posted to the studio thread once.
@@ -37,7 +51,7 @@ branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's h
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
 Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
-CHIEF_RETRY_H (3), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
+CHIEF_RETRY_H (3), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
 from __future__ import annotations
@@ -70,7 +84,7 @@ def first_dir(*cands) -> pathlib.Path:
 HOS = pathlib.Path(os.environ.get("HOS_REPO") or first_dir(HOME / "YouTube" / "History Of Science",
                                                             HOME / "YouTube" / "history-of-science"))
 DEFAULT_CHAIN = "chief,cursor,codex"
-NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex"}
+NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude"}
 
 # What an out-of-credit, over-limit or signed-out CLI says. Only read when the run failed or printed almost nothing,
 # so a job that merely talks about a YouTube quota doesn't count.
@@ -80,6 +94,11 @@ CREDIT_RE = re.compile(
     r"limit (?:reached|exceeded)|hit your .*limit|not logged in|log ?in required|please (?:log|sign) ?in|"
     r"unauthori[sz]ed|authentication (?:failed|required)|\b402\b|\b429\b",
     re.I)
+
+# What Claude (Claude Code or a cloud session) says when it is out of usage: the CLI phrases above, plus the way agents
+# write it in a note or a block reason ("hit the 5-hour limit", "Claude Code out of usage", "weekly limit").
+CLAUDE_LIMIT_RE = re.compile(CREDIT_RE.pattern + r"|out of usage|\bhit (?:the|its|my|our|a) .*limit|"
+                             r"(?:5-hour|five-hour|weekly|session|usage) (?:limit|cap)|usage (?:cap|exhausted)", re.I)
 
 
 def now() -> dt.datetime:
@@ -153,10 +172,14 @@ def find_bin(env: str, name: str):
 
 def cli_spec(agent: str, model: str = ""):
     """(binary, args) for a CLI agent, or None if it isn't installed. `model` (from scripts/routing.py, AGENTS.md "Who
-    does what") is passed to Codex as `-m`; Cursor stays on its own Auto setting."""
+    does what") is passed to Codex as `-m`. Cursor stays on its own Auto setting unless the model is one it runs by
+    name: cursor-claude-opus-5-5 (a Claude job while Claude Code is out of usage) adds `--model claude-opus-5-5`."""
     if agent == "cursor":
         b = find_bin("CURSOR_AGENT_BIN", "agent")
         flags = os.environ.get("CURSOR_AGENT_FLAGS", "-p --force")
+        cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "cursor" else ""
+        if cm:
+            flags = f"{flags} --model {shlex.quote(cm)}"
     elif agent == "codex":
         b = find_bin("CODEX_BIN", "codex")
         # exec = one prompt, no chat window; --approve-for-me = workspace-write sandbox with approvals auto-reviewed;
@@ -171,6 +194,16 @@ def cli_spec(agent: str, model: str = ""):
                  f"--add-dir {shlex.quote(str(HOS))} --add-dir {shlex.quote(str(STATE.parent))}")
         if model.startswith("gpt-"):
             flags = flags.replace("exec ", f"exec -m {shlex.quote(model)} ", 1)
+    elif agent == "gemini":
+        # Gemini via Antigravity `agy` (Ben, 11 Oct 23:47: "remember we also have Gemini and Codex"): a stand-in in the
+        # job chains (routing.CHAINS) when Cursor or Codex are out. -p = one prompt, print, exit (as in `agy -p` fact
+        # checks since 8 Oct); --dangerously-skip-permissions is agy's unattended mode, like Cursor's --force.
+        b = find_bin("AGY_BIN", "agy")
+        flags = os.environ.get("AGY_FLAGS", f"-p --dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
+                                            f"--add-dir {shlex.quote(str(STATE.parent))}")
+        cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "gemini" else ""
+        if cm:
+            flags = f"{flags} --model {shlex.quote(cm)}"
     else:
         return None
     return (b, shlex.split(flags)) if b else None
@@ -237,7 +270,7 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
             return True, f"posted on the thread {age} min ago"
         return False, "no Grok post on the thread in the last {} h".format(fresh // 60) + (
             f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else "")
-    if agent in ("cursor", "codex"):
+    if agent in routing.MINI_WORKERS:
         return (True, "ready") if cli_spec(agent) else (False, "CLI not installed")
     return False, "unknown agent"
 
@@ -288,6 +321,8 @@ You are a stand-in for Grok Bot (the Chief): never make a protected call yoursel
    change to AGENTS.md or the Never list, no spend past the written rules, nothing irreversible. Park it for Chief with
    jobs.py block <id> --agent {agent} --reason "parked for Chief: <what needs deciding>" --git  and say so in your report.
    Each job's `kind` says which model does it best (AGENTS.md "Who does what"); do your part and leave the rest as a job.
+   A job rerouted to you while Claude Code is out of usage (model cursor-claude-opus-5-5: you are running on Claude) is
+   yours to do in full, as Claude would; Claude's own protected calls (final OK, PASS, merge) still park for Chief.
 Your run is killed at 25 minutes. Anything that takes longer (a full render, a big download, a batch of picture jobs):
 start it detached so it outlives you, e.g.
    tmux new -d -s <job>-render "cd <dir> && <command> > ~/_desk/logs/<job>-render.log 2>&1; echo $? > ~/_desk/logs/<job>-render.done"
@@ -459,19 +494,158 @@ def next_job(agent: str):
         return None
 
 
-def route_worker(who: str, rows) -> tuple:
-    """(worker, model) for the next job (AGENTS.md "Who does what", Ben 11 Oct 2026): a job whose kind/model belongs
-    to the other Mini worker wakes that one if it's up (a chart job wakes Codex on gpt-6-astra). If it's down, `who`
-    stands in, and the next job of that kind goes back to the primary once it's up (failover, then hand back)."""
-    up = {a for a, ok, _ in rows if ok}
+# ---- Claude out of usage: its jobs go to Cursor on the Claude model (Ben, 11 Oct 2026 23:40) ----
+
+def claude_ledger_note(at: dt.datetime):
+    """The newest Claude ledger note (ai_spend.py record --pool claude) from the last CHIEF_CLAUDE_OUT_H hours that says
+    it hit a limit, or None."""
+    hours = float(os.environ.get("CHIEF_CLAUDE_OUT_H", "5"))
+    ledger = OWB / "05_Analytics" / "ai_spend" / "ledger.jsonl"
+    try:
+        rows = [json.loads(l) for l in ledger.read_text().splitlines() if l.strip()]
+    except (OSError, ValueError):
+        return None
+    hits = [r for r in rows if r.get("pool") == "claude" and CLAUDE_LIMIT_RE.search(r.get("note") or "")
+            and r.get("at") and at - parse(r["at"]) <= dt.timedelta(hours=hours) and parse(r["at"]) <= at]
+    return max(hits, key=lambda r: r["at"]) if hits else None
+
+
+def claude_blocked_on_limit(job: dict) -> bool:
+    """Claude parked this job because it ran out of usage: blocked, the last block was by Claude, and the reason reads
+    like a usage/limit error."""
+    if job.get("status") != "blocked":
+        return False
+    blocks = [h for h in job.get("history", []) if str(h.get("what", "")).startswith("blocked")]
+    by = blocks[-1].get("by") if blocks else ""
+    return by == "claude" and bool(CLAUDE_LIMIT_RE.search(job.get("result") or (blocks[-1].get("what") if blocks else "")))
+
+
+def claude_out(at: dt.datetime, data=None) -> tuple:
+    """(out, why): is Claude (Claude Code / its cloud sessions) out of usage right now?"""
+    mark = read_json(d("down", "claude.json"))
+    if mark:
+        until = parse(mark["until"]) if mark.get("until") else None
+        if until and at >= until:
+            mark_up("claude")
+        else:
+            return True, f"marked down: {mark.get('reason') or 'out of usage'}"
+    note = claude_ledger_note(at)
+    if note:
+        return True, f"ledger note {note['at']}: {note.get('note')}"
+    for j in (data or {}).get("jobs", []):
+        if claude_blocked_on_limit(j):
+            return True, f"{j['id']} blocked by Claude: {j.get('result') or 'usage limit'}"
+    return False, "no usage-limit sign"
+
+
+def claude_jobs_to_reroute(data: dict, at: dt.datetime, out: bool) -> list:
+    """Claude-owned jobs that should go to a stand-in now: any Claude job Claude blocked on a usage/limit error, and,
+    while Claude is out, its waiting ones too (open, or claimed by Claude). Never a Chief call or a Ben job, never one
+    addressed to another agent, never twice (a job already rerouted walks on only via stranded_jobs / walk_on)."""
+    picked = []
+    for j in data.get("jobs", []):
+        if not routing.claude_owned(j) or j.get("kind") == "chief" or j.get("needs") == "ben":
+            continue
+        if j.get("rerouted_from") or (j.get("for") and j["for"] != "claude"):
+            continue
+        if claude_blocked_on_limit(j) or (out and (j.get("status") == "open" or (
+                j.get("status") == "claimed" and j.get("by") == "claude"))):
+            picked.append(j)
+    return picked
+
+
+def workers_up(at: dt.datetime) -> set:
+    """The Mini workers (cursor, codex, gemini) that are up: CLI installed and not marked down."""
+    return {a for a in routing.MINI_WORKERS if state_of(a, at)[0]}
+
+
+def stranded_jobs(data: dict, up: set) -> list:
+    """Jobs the relay already handed to a worker (rerouted_from) that haven't started, whose worker is now down (out of
+    usage): they walk on down their chain. Jobs Claude or Chief addressed by hand (no rerouted_from) wait for that
+    agent, e.g. a second opinion from Codex."""
+    return [j for j in data.get("jobs", []) if j.get("rerouted_from") and j.get("status") == "open"
+            and j.get("for") in routing.MINI_WORKERS and j["for"] not in up]
+
+
+def reroute(job: dict, to: str, model: str, note: str) -> bool:
+    """`jobs.py reroute <id> --to <to> --model <model> --git` in the OWB checkout. True when it went through."""
+    argv = [sys.executable, str(OWB / "scripts" / "jobs.py"), "reroute", job["id"], "--agent", "relay", "--to", to,
+            "--note", note, "--git"] + (["--model", model] if model and model in routing.MODELS else [])
+    try:
+        r = subprocess.run(argv, cwd=str(OWB), capture_output=True, text=True, timeout=180)
+    except (OSError, subprocess.SubprocessError) as e:
+        log(f"reroute {job['id']} failed: {e}")
+        return False
+    if r.returncode != 0:
+        log(f"reroute {job['id']} failed (exit {r.returncode}): {(r.stdout + r.stderr).strip()[-300:]}")
+        return False
+    return True
+
+
+def lane_model(lane) -> str:
+    """The model to pin on a rerouted job: the lane's model when that worker runs it by name, else none."""
+    return lane[1] if routing.RUNS_ON.get(lane[1]) == lane[0] else ""
+
+
+def reroute_work(at: dt.datetime) -> list:
+    """Walk the fallback chains (routing.CHAINS; Ben, 11 Oct 23:40 and 23:47). If Claude is out of usage, each waiting
+    Claude job goes to the next worker up in its chain (Cursor on the Claude model, then Gemini, then Codex). A job
+    already handed to a worker that has since run out walks on to the next one. Returns the ids moved; each is addressed
+    to its new worker, so this same run wakes it. Called once per pass, before a worker is picked."""
+    up = workers_up(at)
+    data = read_json(OWB / "jobs" / "queue.json") or {}
+    out, why = claude_out(at, data)
+    if any(claude_blocked_on_limit(j) for j in data.get("jobs", [])) and not read_json(d("down", "claude.json")):
+        retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
+        mark_down("claude", "a Claude job was blocked on a usage limit", at + dt.timedelta(hours=retry_h), at)
+    moves = [(j, routing.next_lane(j, "claude", up), f"Claude out of usage ({why})")
+             for j in claude_jobs_to_reroute(data, at, out)]
+    moves += [(j, routing.next_lane(j, j["for"], up, j.get("model") or ""), f"{NAMES.get(j['for'], j['for'])} is down too")
+              for j in stranded_jobs(data, up)]
+    moved = []
+    for j, lane, reason in moves:
+        if not lane:
+            log(f"chain: {j['id']} waits: no worker left in its chain is up")
+            continue
+        to, model = lane
+        if reroute(j, to, lane_model(lane), f"{reason}; next in its chain: {to} on {routing.cli_model(model) or 'its default'}"):
+            log(f"chain: {j['id']} rerouted to {to} on {model} ({reason})")
+            moved.append(f"{j['id']} -> {NAMES.get(to, to)}" + (f" on {routing.cli_model(model)}" if routing.cli_model(model) else ""))
+    if moved:
+        notify(f"Chief relay: walked the fallback chain: {'; '.join(moved)}. "
+               + (f"Claude is out of usage ({why}); it gets the next one after its reset." if out else ""))
+    return moved
+
+
+def route_worker(who: str, up: set) -> tuple:
+    """(worker, model) for the next job (AGENTS.md "Who does what", Ben 11 Oct 2026): the first worker in the job's
+    chain that is up wakes for it (a chart job wakes Codex on gpt-6-astra; with Codex out, Cursor; then Gemini). The
+    next job of that kind goes back to the primary once it's up (failover, then hand back)."""
     job = next_job(who)
     if job and not job.get("for"):
-        pref = routing.preferred_worker(job)
-        if pref and pref != who and pref in up:
-            log(f"routing: {job['id']} ({job.get('kind') or job.get('model')}) goes to {pref}, its primary")
+        pref = routing.preferred_worker(job, up)
+        if pref and pref != who:
+            log(f"routing: {job['id']} ({job.get('kind') or job.get('model')}) goes to {pref}, first up in its chain")
             who = pref
             job = next_job(who) or job
-    return who, (routing.model_for(job, who) if job else "")
+    return who, (routing.model_for(job, who) if job else ""), job
+
+
+def log_run(at: dt.datetime, job, who: str, model: str, code: int, usage: bool) -> None:
+    """Which worker actually ran which job, on which model (Ben, 11 Oct 23:47): one line in the log and in
+    ~/_desk/state/chief/runs.jsonl (the board and Chief read it)."""
+    jid = (job or {}).get("id", "")
+    ch = routing.job_chain(job) if job else []
+    lane = next((i for i, (a, m) in enumerate(ch, 1) if a == who and (not model or m == model)), 0)
+    row = {"at": iso(at), "job": jid, "kind": (job or {}).get("kind", ""), "worker": who, "model": model,
+           "cli_model": routing.cli_model(model) if model else "", "lane": lane, "of": len(ch), "exit": code,
+           "out_of_usage": usage}
+    log(f"ran: {jid or '(sweep)'} by {who}" + (f" on {row['cli_model'] or model}" if model else "")
+        + (f" (lane {lane} of {len(ch)})" if lane else "") + f", exit {code}" + (", out of usage" if usage else ""))
+    p = d("runs.jsonl")
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with p.open("a") as f:
+        f.write(json.dumps(row) + "\n")
 
 
 def run_locked(at: dt.datetime) -> int:
@@ -482,29 +656,38 @@ def run_locked(at: dt.datetime) -> int:
         rows, who = acting(at)
         handover(who, rows, at)
         log("chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in rows))
+        up = workers_up(at)
+        worker_only = False
         if who is None:
-            log("nobody up: nothing to run")
-            push_heartbeat(at, "no-chief", note="nobody in the chain is up")
-            return 0
+            if not up:
+                log("nobody up: nothing to run")
+                push_heartbeat(at, "no-chief", note="nobody in the chain is up")
+                return 0
+            # Grok, Cursor and Codex all down but Gemini up (Ben, 11 Oct 23:47): it runs queued jobs, no Chief work.
+            who, worker_only = next(a for a in routing.MINI_WORKERS if a in up), True
+        # Fallback chains (Ben, 11 Oct 23:40 / 23:47): Claude's jobs when it's out of usage, and jobs whose worker ran
+        # out, go to the next worker up in their chain, addressed to it, so the loop below wakes it in this same run.
+        rerouted = reroute_work(at)
         # A job addressed to one agent wakes that agent if it's up, ahead of the acting Chief: otherwise only the first
         # agent in the chain ever runs, and a second opinion from Codex would never happen.
         addressed = False
-        for a, up, _ in rows:
-            if up and a in ("cursor", "codex") and a != who and addressed_to(a):
+        for a in routing.MINI_WORKERS:
+            if a in up and a != who and addressed_to(a):
                 addressed = True
                 log(f"{a} has a job addressed to it ({', '.join(addressed_to(a))}): waking it first")
                 who = a
                 break
-        worker_only = False
         if who == "chief":
             # Grok Bot (9 Oct 2026, studio owner): Grok is Chief for reviews, PASS, merges, decisions and the board;
-            # Cursor/Codex stay the WORKERS for queued Mini jobs. So while Grok is up, wake the first worker that's up
-            # (Cursor, then Codex) for one queued job (no thread/desk sweep), instead of idling the Mini.
-            who = next((a for a, up, _ in rows if up and a in ("cursor", "codex")), None)
+            # the Mini CLIs stay the WORKERS for queued jobs. So while Grok is up, wake the first worker that's up
+            # (Cursor, Codex, then Gemini) for one queued job (no thread/desk sweep), instead of idling the Mini.
+            who = next((a for a in routing.MINI_WORKERS if a in up), None)
             if who is None:
                 log("Grok Bot is Chief and no worker is up: nothing to run")
                 return 0
             worker_only = True
+        if who == "gemini":
+            worker_only = True  # Gemini is never acting Chief: it only takes queued jobs
         last_wake = last_seen(who)
         # Overnight (Ben, 7 Oct: carry on overnight) agents are woken for queued jobs only; the 2-hourly sweep for
         # thread/desk tasks runs in the day, so an empty night costs no credit.
@@ -518,27 +701,38 @@ def run_locked(at: dt.datetime) -> int:
             log(f"nothing queued for {who}; last woken {ago}: not waking it")
             push_heartbeat(at, "idle", who, "nothing queued")
             return 0
-        above = [f"{NAMES.get(a, a)} is {why}" for a, up, why in rows[:[r[0] for r in rows].index(who)]]
+        names = [r[0] for r in rows]
+        above = [f"{NAMES.get(a, a)} is {why}" for a, ok, why in rows[:names.index(who)]] if who in names else []
         why = "Claude addressed a job to you by name" if addressed else ("; ".join(above) or "it is first in line")
-        if worker_only:
+        if addressed and rerouted:
+            why = (f"the job's earlier worker is out of usage, so the relay walked its fallback chain and handed it to "
+                   f"you ({', '.join(rerouted)}; Ben, 11 Oct 2026). Take it with jobs.py next; do it as the primary "
+                   f"would, and stop at the same protected calls")
+        elif worker_only:
             why = ("Grok Bot is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
                    "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
                    "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
                    "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
-        model = ""
-        if not addressed and who in ("cursor", "codex"):
-            who, model = route_worker(who, rows)
+        model, job = "", None
+        if not addressed and who in routing.MINI_WORKERS:
+            who, model, job = route_worker(who, up)
+        elif addressed:
+            job = next_job(who)  # the addressed job comes first in jobs.order: run it on its own model
+            model = routing.model_for(job, who) if job else ""
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS)
-        log(f"run: {who}{' on ' + model if model else ''} (cap {cap}s)")
-        push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for one job (cap {cap // 60} min)")
+        log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
+        push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
         seen(who, at)
         code, tail = run_cli(who, prompt, cap, model)
-        log(f"done: {who} exit {code}")
-        if out_of_credit(code, tail):
+        usage = out_of_credit(code, tail)
+        log_run(at, job, who, model, code, usage)
+        if usage:
             until = now() + dt.timedelta(hours=retry_h)
-            mark_down(who, "out of credit or signed out (its last run said so)", until, now())
-            log(f"{who} looks out of credit or signed out: down until {iso(until)}; trying the next in line")
+            mark_down(who, "out of usage, credit or signed out (its last run said so)", until, now())
+            log(f"{who} looks out of usage or signed out: down until {iso(until)}; walking the job's chain")
+            if job:
+                walk_on(job, who, model, now())
             at = now()
             continue
         if code not in (0, 124):
@@ -549,11 +743,30 @@ def run_locked(at: dt.datetime) -> int:
         return 0
 
 
+def walk_on(job: dict, who: str, model: str, at: dt.datetime) -> None:
+    """`who` ran out of usage on `job`: if the job is still open or held by `who`, hand it to the next worker up in its
+    chain (so it isn't left claimed by a worker that can't finish it). If nobody further down is up, it waits."""
+    data = read_json(OWB / "jobs" / "queue.json") or {}
+    cur = next((j for j in data.get("jobs", []) if j.get("id") == job.get("id")), None)
+    if not cur or not (cur.get("status") == "open" or (cur.get("status") == "claimed" and cur.get("by") == who)):
+        return
+    lane = routing.next_lane(cur, who, workers_up(at), model)
+    if not lane:
+        log(f"chain: {cur['id']} waits: nobody after {who} in its chain is up")
+        return
+    if reroute(cur, lane[0], lane_model(lane), f"{NAMES.get(who, who)} out of usage; next in its chain: {lane[0]}"):
+        log(f"chain: {cur['id']} rerouted from {who} to {lane[0]} on {lane[1]}")
+
+
 def cmd_status(at: dt.datetime) -> int:
     rows, who = acting(at)
     for a, up, why in rows:
         print(f"{'>' if a == who else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
     print(f"Chief: {NAMES.get(who, who) if who else 'nobody'}")
+    g_up, g_why = state_of("gemini", at)
+    print(f"  {'gemini':<7} {'Gemini':<9} {'UP  ' if g_up else 'down'}  {g_why} (worker only, never Chief)")
+    out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
+    print(f"Claude: {'OUT of usage (' + why + '); its jobs walk their chain: Cursor on ' + routing.CURSOR_CLAUDE_MODEL + ', Gemini, Codex' if out else 'up (' + why + ')'}")
     print(gemini_line())
     return 0
 
