@@ -15,6 +15,12 @@
 
 Each run writes out/<name>/%04d.png and out/<name>.mp4 (ffmpeg, yuv420p, crf 16). Media stays out of git.
 
+v05 variants (J0129, the Chief's v04 FAIL #99 6097002634): --variant a|b|c|d gives each beat its own render: its own
+seed, a continuous float camera move (no integer zoompan, so no push jitter), its own palette, and a lifted navy star
+bed under the plate (v04 plates were mean ~7, near-black). Mapdrift's grid, the muons ground line and the GPS
+baseline are faded so they no longer read as split-panel seams. Variant runs pipe frames straight into ffmpeg
+(no PNGs on disk) and write out/<name>_<variant>.mp4.
+
 Physics (01_Script/SOURCES.md):
   starfield  Relativistic aberration cos(t') = (cos t + b) / (1 + b cos t), azimuth unchanged; Doppler factor
              D = 1 / (g (1 - b cos t')). Stars with D > 1 shift blue, D < 1 red. Speed ramps 0.2c -> 0.99c.
@@ -43,11 +49,64 @@ def ease(t):
     return 0.5 - 0.5 * math.cos(math.pi * min(1, max(0, t)))
 
 
-def canvas():
+# camera: (cx, cy, zoom) at the start and end; zoom 1 = the original 16 x 9 view, < 1 pushes in
+VARIANTS = {
+    "a": dict(seed=101, gold="#ffc94a", cyan="#5fd6ff", cam=((0.0, 0.0, 1.06), (0.35, 0.15, 0.86))),
+    "b": dict(seed=202, gold="#ffa64d", cyan="#6ff0c0", cam=((-0.5, 0.1, 0.95), (0.5, -0.1, 0.95))),
+    "c": dict(seed=303, gold="#ffe27a", cyan="#a3a9ff", cam=((0.25, -0.2, 0.84), (0.0, 0.0, 1.06))),
+    "d": dict(seed=404, gold="#ff9f8a", cyan="#7cc8ff", cam=((0.4, 0.2, 1.02), (-0.3, -0.15, 0.88))),
+}
+# tightest zoom per plate, so its key elements (outer clocks, the muon birth line, GPS bars) stay in frame
+ZMIN = dict(starfield=0.7, lightclock=0.86, energy=0.9, muons=0.99, gpsclocks=0.97, mapdrift=0.8, gammaclocks=0.98,
+            twinclocks=0.8, contraction=0.92)
+STYLE = dict(on=False, name="", cam=((0, 0, 1), (0, 0, 1)), bed=None, stars=None)
+BED_EXT = (-11.0, 11.0, -6.5, 6.5)
+
+
+def make_bed(seed, stars=True):
+    """Lifted navy bed: a radial gradient with soft cloud texture and fixed background stars (mean luma ~40)."""
+    from PIL import Image, ImageFilter
+    rng = np.random.default_rng(seed)
+    h, w = 650, 1100
+    yy, xx = np.mgrid[0:h, 0:w]
+    r = np.hypot((xx - w * 0.55) / (w * 0.6), (yy - h * 0.45) / (h * 0.6))
+    g = np.clip(1 - r, 0, 1) ** 1.3
+    cloud = Image.fromarray((rng.random((26, 44)) * 255).astype(np.uint8)).resize((w, h), Image.BICUBIC)
+    cloud = np.asarray(cloud.filter(ImageFilter.GaussianBlur(18)), dtype=float) / 255
+    k = 0.5 * g + 0.65 * cloud * (0.5 + 0.5 * g)
+    edge, centre = np.array([0.05, 0.07, 0.16]), np.array([0.23, 0.33, 0.60])
+    img = edge + (centre - edge) * k[..., None]
+    st = None
+    if stars:
+        N = 2600
+        st = dict(x=rng.uniform(BED_EXT[0], BED_EXT[1], N), y=rng.uniform(BED_EXT[2], BED_EXT[3], N),
+                  s=1.0 + 9 * rng.uniform(0, 1, N) ** 4, a=rng.uniform(0.35, 0.9, N))
+    return np.clip(img, 0, 1), st
+
+
+def view(p):
+    (x0, y0, z0), (x1, y1, z1) = STYLE["cam"]
+    e = ease(p)
+    z = max(z0 + (z1 - z0) * e, ZMIN.get(STYLE["name"], 0.8))
+    m = z - ZMIN.get(STYLE["name"], 0.8) + 0.04
+    cx = float(np.clip(x0 + (x1 - x0) * e, -8 * m, 8 * m))
+    cy = float(np.clip(y0 + (y1 - y0) * e, -4.5 * m, 4.5 * m))
+    return cx, cy, z
+
+
+def canvas(p=0.0):
     fig = plt.figure(figsize=(W / DPI, H / DPI), dpi=DPI, facecolor=BG)
     ax = fig.add_axes([0, 0, 1, 1], facecolor=BG)
-    ax.set_xlim(-8, 8)
-    ax.set_ylim(-4.5, 4.5)
+    cx, cy, z = (0.0, 0.0, 1.0)
+    if STYLE["on"]:
+        cx, cy, z = view(p)
+        ax.imshow(STYLE["bed"], extent=BED_EXT, origin="lower", interpolation="bilinear", zorder=-10)
+        st = STYLE["stars"]
+        if st is not None:
+            rgba = np.column_stack([np.full_like(st["a"], 0.92), np.full_like(st["a"], 0.94), np.ones_like(st["a"]), st["a"]])
+            ax.scatter(st["x"], st["y"], s=st["s"], c=rgba, lw=0, zorder=-9)
+    ax.set_xlim(cx - 8 * z, cx + 8 * z)
+    ax.set_ylim(cy - 4.5 * z, cy + 4.5 * z)
     ax.set_aspect("equal")
     ax.axis("off")
     return fig, ax
@@ -64,7 +123,7 @@ def doppler_colour(D):
 
 
 def render_starfield(out, seconds, still):
-    rng = np.random.default_rng(24)
+    rng = np.random.default_rng(STYLE.get("seed", 24))
     n = int(seconds * FPS)
     N = 6000
     v = rng.normal(size=(N, 3))
@@ -85,7 +144,7 @@ def render_starfield(out, seconds, still):
         r = f * np.tan(thp[front])
         x, y = r * np.cos(ph[front]), r * np.sin(ph[front])
         s = 1.5 + 13 * mag[front] * np.clip(D[front], 0.3, 3) ** 1.2
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         vis = (np.abs(x) < 8.3) & (np.abs(y) < 4.8)
         ax.scatter(x[vis], y[vis], s=s[vis], c=doppler_colour(D[front][vis]), lw=0, alpha=0.95)
         save(fig, out, i, still)
@@ -102,7 +161,7 @@ def render_lightclock(out, seconds, still):
     frames = [int(n * 0.55)] if still else range(n)
     for i in frames:
         t = i / FPS
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         # rest clock (left)
         X0 = -5.0
         ph = (t / tick) % 2
@@ -145,7 +204,7 @@ def render_energy(out, seconds, still):
     for i in frames:
         s = ease((i / max(1, n - 1) - 0.05) / 0.85)
         k = max(2, int(len(vv) * s))
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         ax.plot([X0, X1 + 0.6], [Y0, Y0], color=DIM, lw=2)
         ax.plot([X0, X0], [Y0, Y1 + 0.4], color=DIM, lw=2)
         ax.plot([X0 + (X1 - X0) * 1.0] * 2, [Y0, Y1 + 0.4], color=WHITE, lw=2, ls=(0, (6, 6)), alpha=0.7)
@@ -156,7 +215,7 @@ def render_energy(out, seconds, still):
 
 
 def render_muons(out, seconds, still):
-    rng = np.random.default_rng(1963)
+    rng = np.random.default_rng(STYLE.get("seed", 1963))
     n = int(seconds * FPS)
     TOP, GROUND = 4.2, -3.8                          # 15 km column
     km = (TOP - GROUND) / 15.0
@@ -178,9 +237,10 @@ def render_muons(out, seconds, still):
         mu = nxt
         if i not in target:
             continue
-        fig, ax = canvas()
-        ax.add_patch(Rectangle((-8, -4.5), 16, GROUND + 4.5, color="#16202a", lw=0))
-        ax.plot([-8, 8], [GROUND, GROUND], color=DIM, lw=2)
+        fig, ax = canvas(i / max(1, n - 1))
+        on = STYLE["on"]
+        ax.add_patch(Rectangle((-12, -8), 24, GROUND + 8, color="#16202a", lw=0, alpha=0.45 if on else 1))
+        ax.plot([-12, 12], [GROUND, GROUND], color=DIM, lw=1 if on else 2, alpha=0.35 if on else 1)
         ax.plot([-8, 8], [TOP, TOP], color="#9f8cff", lw=1.5, alpha=0.5)
         ax.plot([-8, 8], [classical, classical], color=WHITE, lw=1.2, ls=(0, (4, 6)), alpha=0.45)
         for m in mu:
@@ -210,7 +270,7 @@ def render_gpsclocks(out, seconds, still):
     scale = 3.2 / 45.9
     for i in frames:
         s = i / max(1, n - 1)
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         ax.add_patch(Circle((-4.5, -9.0), 7.2, color="#1d4f8f", lw=0))
         a = math.radians(100 - 40 * s)
         R = 8.6
@@ -222,7 +282,7 @@ def render_gpsclocks(out, seconds, still):
             g = ease((s - 0.15 - 0.22 * k) / 0.2)
             h = val * scale * g
             ax.add_patch(Rectangle((x - 0.45, base if h >= 0 else base + h), 0.9, abs(h), color=col, lw=0))
-        ax.plot([2.2, 7.0], [base, base], color=DIM, lw=2)
+        ax.plot([2.2, 7.0], [base, base], color=DIM, lw=1.2 if STYLE["on"] else 2, alpha=0.45 if STYLE["on"] else 1)
         save(fig, out, i, still)
     finish(out, still)
 
@@ -234,11 +294,18 @@ def render_mapdrift(out, seconds, still):
     frames = [int(n * 0.8)] if still else range(n)
     for i in frames:
         s = ease(i / max(1, n - 1))
-        fig, ax = canvas()
-        for x in np.arange(-8, 8.1, 1.6):
-            ax.plot([x, x], [-4.5, 4.5], color="#2a3140", lw=6)
-        for y in np.arange(-4.5, 4.6, 1.5):
-            ax.plot([-8, 8], [y, y], color="#2a3140", lw=6)
+        fig, ax = canvas(i / max(1, n - 1))
+        if STYLE["on"]:
+            # faded streets (v04's solid grid read as split-panel seams); the camera move keeps them drifting
+            for x in np.arange(-11.2, 11.3, 1.6):
+                ax.plot([x, x], [-6.5, 6.5], color="#8fa0c4", lw=1.6, alpha=0.16)
+            for y in np.arange(-6.0, 6.1, 1.5):
+                ax.plot([-11.2, 11.2], [y, y], color="#8fa0c4", lw=1.6, alpha=0.16)
+        else:
+            for x in np.arange(-8, 8.1, 1.6):
+                ax.plot([x, x], [-4.5, 4.5], color="#2a3140", lw=6)
+            for y in np.arange(-4.5, 4.6, 1.5):
+                ax.plot([-8, 8], [y, y], color="#2a3140", lw=6)
         ax.add_patch(Circle((-3.2, -1.5), 0.45, fill=False, ec=WHITE, lw=3))
         ts = np.linspace(0, s, 60)
         px, py = -3.2 + 8.5 * ts, -1.5 + 4.2 * ts ** 1.2
@@ -259,12 +326,12 @@ def render_gammaclocks(out, seconds, still):
     for i in frames:
         t = i / FPS
         s = i / max(1, n - 1)
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         for k, rate in enumerate(rates):
             lit = ease((s - k * 0.17) / 0.1) if k else 1.0
             cx = -6.0 + k * 3.0
             col = WHITE if k == 0 else GOLD
-            dial(ax, cx, 0, 1.15, 2 * math.pi * 0.5 * t * rate, col, alpha=0.25 + 0.75 * lit)
+            dial(ax, cx, 0, 1.35 if STYLE["on"] else 1.15, 2 * math.pi * 0.5 * t * rate, col, alpha=0.25 + 0.75 * lit)
         save(fig, out, i, still)
     finish(out, still)
 
@@ -277,7 +344,7 @@ def render_twinclocks(out, seconds, still):
     frames = [int(n * 0.7)] if still else range(n)
     for i in frames:
         t = i / FPS
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         dial(ax, -3.5, 0, 2.3, 2 * math.pi * 0.35 * t, CYAN)
         dial(ax, 3.5, 0, 2.3, 2 * math.pi * 0.35 * t / g, GOLD)
         save(fig, out, i, still)
@@ -287,7 +354,7 @@ def render_twinclocks(out, seconds, still):
 def render_contraction(out, seconds, still):
     """Ship (left dot) to star (right): the gap is 10 ly at rest and shrinks to 1/7.09 of that in the ship's frame
     at 0.99c (to ~1.41 ly). The star slides in; no numbers. A faint ghost marks the rest-frame distance."""
-    rng = np.random.default_rng(10)
+    rng = np.random.default_rng(STYLE.get("seed", 10))
     n = int(seconds * FPS)
     bg = rng.uniform([-8, -4.5], [8, 4.5], (400, 2))
     frames = [int(n * 0.85)] if still else range(n)
@@ -295,7 +362,7 @@ def render_contraction(out, seconds, still):
     for i in frames:
         s = ease((i / max(1, n - 1) - 0.15) / 0.7)
         L = L0 * (1 - s * (1 - 1 / 7.0888))
-        fig, ax = canvas()
+        fig, ax = canvas(i / max(1, n - 1))
         ax.scatter(bg[:, 0], bg[:, 1], s=4, color=WHITE, alpha=0.5, lw=0)
         ax.add_patch(Circle((x0 + L0, 0), 0.35, fill=False, ec=DIM, lw=2, ls=(0, (3, 4))))
         ax.plot([x0, x0 + L], [0, 0], color=GOLD, lw=4)
@@ -306,7 +373,22 @@ def render_contraction(out, seconds, still):
     finish(out, still)
 
 
+PIPE = {}
+
+
 def save(fig, out, i, still):
+    if STYLE["on"] and not still:
+        if out not in PIPE:
+            PIPE[out] = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgba",
+                                          "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264",
+                                          "-pix_fmt", "yuv420p", "-crf", "16", out.rstrip("/") + ".mp4"],
+                                         stdin=subprocess.PIPE)
+        fig.canvas.draw()
+        buf = np.asarray(fig.canvas.buffer_rgba())
+        assert buf.shape[:2] == (H, W), buf.shape
+        PIPE[out].stdin.write(buf.tobytes())
+        plt.close(fig)
+        return
     os.makedirs(out, exist_ok=True)
     fig.savefig(os.path.join(out, "still.png" if still else f"{i:04d}.png"), facecolor=BG)
     plt.close(fig)
@@ -317,6 +399,12 @@ def finish(out, still):
         print("wrote", os.path.join(out, "still.png"))
         return
     mp4 = out.rstrip("/") + ".mp4"
+    if out in PIPE:
+        PIPE[out].stdin.close()
+        if PIPE.pop(out).wait():
+            raise SystemExit(f"ffmpeg failed on {mp4}")
+        print("wrote", mp4)
+        return
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", os.path.join(out, "%04d.png"),
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "16", mp4], check=True)
     print("wrote", mp4)
@@ -328,14 +416,23 @@ def main():
     ap.add_argument("out")
     ap.add_argument("--seconds", type=float)
     ap.add_argument("--still", action="store_true")
+    ap.add_argument("--variant", choices=sorted(VARIANTS))
     a = ap.parse_args()
+    global GOLD, CYAN
     jobs = {"starfield": (render_starfield, 14), "lightclock": (render_lightclock, 12),
             "energy": (render_energy, 10), "muons": (render_muons, 12),
             "gpsclocks": (render_gpsclocks, 12), "mapdrift": (render_mapdrift, 8), "gammaclocks": (render_gammaclocks, 18),
             "twinclocks": (render_twinclocks, 16), "contraction": (render_contraction, 10)}
     for name in (jobs if a.which == "all" else [a.which]):
         fn, secs = jobs[name]
-        fn(os.path.join(a.out, name), a.seconds or secs, a.still)
+        if not a.variant:
+            fn(os.path.join(a.out, name), a.seconds or secs, a.still)
+            continue
+        V = VARIANTS[a.variant]
+        GOLD, CYAN = V["gold"], V["cyan"]
+        bed, stars = make_bed(V["seed"] + len(name), stars=(name != "starfield"))
+        STYLE.update(on=True, name=name, cam=V["cam"], bed=bed, stars=stars, seed=V["seed"] + len(name))
+        fn(os.path.join(a.out, f"{name}_{a.variant}"), a.seconds or secs + 8, a.still)
 
 
 if __name__ == "__main__":
