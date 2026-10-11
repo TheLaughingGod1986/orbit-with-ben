@@ -41,7 +41,9 @@ async function postToChief(id, body) {
   const r = await fetch(`https://api.github.com/repos/${repo}/issues/${n}/comments`, { method: "POST",
     headers: { authorization: `Bearer ${token}`, accept: "application/vnd.github+json", "user-agent": "studio-kanban", "content-type": "application/json" },
     body: JSON.stringify({ body }) });
-  return r.ok ? `posted on ${repo.split("/")[1]} #${n}` : `not posted: GitHub ${r.status}`;
+  if (r.ok) return `posted on ${repo.split("/")[1]} #${n}`;
+  const why = await r.text().catch(() => "");
+  return `not posted: GitHub ${r.status} ${why.slice(0, 160)}`;
 }
 const ID = /^[A-Za-z0-9_.-]{1,48}$/;
 const KEEP = 20;
@@ -101,6 +103,7 @@ export default async function handler(req, res) {
     const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);
     let chief = "";
     if (line) chief = await postToChief(b.id, line).catch(e => `not posted: ${String(e && e.message || e).slice(0, 100)}`);
+    if (line) console.log(`checks ${b.id} ${b.delete ? "delete" : (doc || {}).verdict}: ${chief}`);   // shows in vercel logs
     return res.status(200).json({ ok: true, checks: state.checks, chief });
   } catch (e) {
     return res.status(500).json({ error: String(e && e.message || e).slice(0, 300) });

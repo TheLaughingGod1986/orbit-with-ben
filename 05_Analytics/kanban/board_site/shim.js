@@ -95,6 +95,7 @@
     if (!r.ok) throw new Error("save failed " + r.status);
     const j = await r.json();
     if (j && j.checks) { checksFresh = true; setServer(j.checks); emitChecks(); }
+    if (j && /^not posted/.test(j.chief || "")) alert("Saved on the board, but it didn't reach the Chief's thread (" + j.chief.slice(0, 80) + "). Tell the Chief in the chat as well.");
   }
 
   const db = {
