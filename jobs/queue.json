@@ -6812,10 +6812,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-11T20:16Z",
-      "eta": "2026-10-12T00:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -6889,6 +6889,11 @@
           "at": "2026-10-11T20:16Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-11T20:16Z",
+          "by": "cursor",
+          "what": "released: Step 7 of v05 (7988b599): step 6 chain exit 0. picture_qa 2 FAIL (energy_b/c low detail at 5:31/5:44, std 13.2 vs floor 13.44); mix -14.3 LUFS / -1.2 dBTP PASS; bed-under-VO gate 12 of 4394 windows <10 LU (worst 9.07 at 2:35, 3:40, 6:56; duck was pinned at its 12 dB cap). Fix: energy bed stars 1600->2600 (the default every passing plate uses), duck cap 16 dB x16 passes. RUNNING detached: tmux light024-v05s7-render, script /private/tmp/light024_v05s7.sh, log ~/_desk/logs/light024-v05s7-render.log, done-file ~/_desk/logs/light024-v05s7-render.done (energy b-d -> assemble -> mix -> picture_qa --reviewed-ok). Next run: read .done, picture_qa_v05/PICTURE_QA.md and full_rough_v05_pack/audio_v05.json (gate_pass); if both clean: ASR/WER of the mix vs light_speed_words_list.json (<=5%), polish_gate + freeze/black report, commit the pack from a worktree, [Chief] note on #99 with reviewed_ok_v05.json for the Chief to sign. music_gate item 8 already PASS (48a9dd06). Shared checkout is behind origin with stale copies of the 024 pack files (all now committed): commit from a worktree."
         }
       ]
     },
