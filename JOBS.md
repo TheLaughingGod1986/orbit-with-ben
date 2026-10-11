@@ -9,6 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0103 | mini | claimed | cursor | 2026-10-11T02:58Z | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
+| J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 
 Recently finished:
 
