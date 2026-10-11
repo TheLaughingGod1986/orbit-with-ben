@@ -143,5 +143,76 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
         self.assertNotIn('chan==="HOS"', js_function(page(), "renderNow"))
 
 
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class TickedCardsLeaveTheBox(unittest.TestCase):
+    """Ben, 11 Oct 21:39: "Been approved why is it still here". A ticked cut leaves his For-you box, handled or not;
+    a "Just approved" line with Undo stays for two hours; the box says one short line when nothing is left."""
+
+    NOW = "2026-10-11T20:40:00Z"
+
+    def run_js(self, body):
+        html = page()
+        lib = "\n".join(js_function(html, n) for n in ["esc", "MINUTE", "ts", "JUST_MS", "tickStands", "justTicks", "justLine"])
+        script = f"const NOW = Date.parse({json.dumps(self.NOW)});\n{lib}\nconsole.log(JSON.stringify((()=>{{ {body} }})()));"
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as f:
+            f.write(script)
+        out = subprocess.run(["node", f.name], capture_output=True, text=True, timeout=30)
+        Path(f.name).unlink()
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def test_a_tick_stands_handled_or_not(self):
+        r = self.run_js("""
+          const ok = {verdict:"ok", version:"v05e", at:"2026-10-11T19:26:10.800Z", handled:false};
+          const brief = {updated:"2026-10-11T18:05Z"};
+          return [tickStands(ok, brief, "v05e"), tickStands(Object.assign({}, ok, {handled:true}), brief, "v05e"),
+                  tickStands(Object.assign({}, ok, {handled:true}), {updated:"2026-10-11T20:43Z"}, "v05e"),
+                  tickStands(null, brief, "v05e")];""")
+        self.assertEqual(r, [True, True, True, False])
+
+    def test_a_newer_cut_brings_the_card_back(self):
+        r = self.run_js("""
+          const chg = {verdict:"change", version:"v05d", at:"2026-10-11T09:42Z", handled:true, fixes:[{t:"5:53",text:"x"}]};
+          return [tickStands(chg, {updated:"2026-10-11T18:05Z"}, "v05e"),          // v05e handed over
+                  tickStands(Object.assign({}, chg, {version:""}), {updated:"2026-10-11T18:05Z"}, ""),   // note rewritten
+                  tickStands(Object.assign({}, chg, {handled:false}), {updated:"2026-10-11T18:05Z"}, "v05e")];""")
+        self.assertEqual(r, [False, False, True])
+
+    def test_just_approved_line_for_two_hours_with_undo(self):
+        r = self.run_js("""
+          const f = {key:"OWB:023", id:"023", title:"What Happened to Venus?"};
+          const c = at => ({verdict:"ok", version:"v05e", at, handled:false});
+          const shown = justTicks([{f, c:c("2026-10-11T19:26:10.800Z")}], NOW).map(justLine);
+          const gone = justTicks([{f, c:c("2026-10-11T18:39:00Z")}], NOW).length;
+          const handled = justLine({f, c:Object.assign(c("2026-10-11T19:26:10.800Z"), {handled:true})});
+          const chg = justLine({f, c:{verdict:"change", version:"v05e", at:"2026-10-11T20:30Z", handled:false, fixes:[{},{}]}});
+          return {shown, gone, handled, chg};""")
+        self.assertEqual(len(r["shown"]), 1)
+        self.assertIn("Just approved: <b>023 What Happened to Venus? v05e</b>", r["shown"][0])
+        self.assertIn('data-undo="OWB-023"', r["shown"][0])
+        self.assertEqual(r["gone"], 0)
+        self.assertNotIn("data-undo", r["handled"])
+        self.assertIn("Just sent 2 fixes", r["chg"])
+        self.assertIn('data-more="OWB-023"', r["chg"])
+
+    def test_box_has_no_ticked_card_list_and_one_empty_line(self):
+        html = page()
+        self.assertNotIn("All checked. Nothing else for you right now.", html)
+        self.assertNotIn("You said it looks good (", html)
+        self.assertIn("<b>Nothing for you right now.</b>", html)
+        self.assertIn("if(b.you) forYou.push(", html)
+        self.assertIn('if(ck) b = Object.assign({}, b, {you:"", youShort:"", youWhen:""});', html)
+
+
+class VenusApproved(unittest.TestCase):
+    def test_023_note_is_off_bens_box_and_shipping(self):
+        j = json.loads((PAGE.parent / "film_briefs.json").read_text())["films"]["OWB:023"]
+        self.assertEqual(j["you"], "")
+        self.assertEqual(j["mood"], "watched")
+        self.assertTrue(j["line"].startswith("Approved by Ben Sun 11 Oct 20:26"))
+        self.assertTrue(any(s["who"] == "Claude" and s["what"].startswith("ship v05e") for s in j["steps"]))
+        self.assertTrue(all(s.get("done") for s in j["steps"] if s["who"] == "Ben"))
+
+
 if __name__ == "__main__":
     unittest.main()
