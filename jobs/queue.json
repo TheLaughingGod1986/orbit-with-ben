@@ -6812,10 +6812,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-11T18:53Z",
+      "eta": "2026-10-11T22:53Z",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -6844,6 +6844,11 @@
           "at": "2026-10-11T18:31Z",
           "by": "cursor",
           "what": "released: Step 2 of v05 (4f0ff1b5): g05 render finished (exit 0, 36 plates in graphics_v05/). All 4 mapdrift plates FAILed polish_gate (faded grid = split-panel seams; a/c low detail), so mapdrift now draws curved lit-road dots instead of a grid; re-rendered a-d (16 s each), all PASS with WARN low detail only (full_rough_v05_pack/polish_gate_mapdrift_v05.json). Next: _assemble_light_speed_full_v05.py built on the v03 renderer (re-render picture, not v03 picture.mp4): one graphics_v05 variant per beat, split 1:46-2:39 into >=4 shots with >=2 NASA, Earth Views <=5 stretches, subpixel still pushes via scripts/still_motion.py, crop muons/ACS3/gpsclocks seams; render it detached in tmux. Then audio items 6-7; item 8: RETIRED.md for 027 earth-spin beds not yet written; jupiter-music.mp3 is in OWB UAT (iCloud) for the music_gate --others re-run."
+        },
+        {
+          "at": "2026-10-11T18:53Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
