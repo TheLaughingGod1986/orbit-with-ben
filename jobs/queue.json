@@ -1,5 +1,5 @@
 {
-  "next_id": 132,
+  "next_id": 133,
   "jobs": [
     {
       "id": "J0001",
@@ -7072,6 +7072,33 @@
         }
       ],
       "urgent": 1
+    },
+    {
+      "id": "J0132",
+      "title": "024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**024 Light Speed v05b: the two repeat fixes from the Chief's v05 FAIL (#99 comment 6114454146, 11 Oct). Chief OK (added --by chief).** v05 passes everything else: near-black 13.8%, no freeze ≥4 s, -14.3 LUFS / -1.2 dBTP, bed gate 0/4394, WER 1.49%, and reviewed_ok_v05 signed in full. Start from v05 (`/private/tmp/024_LightSpeed_full_rough_v05.mp4`, work dir `/private/tmp/light024_full_work_v05`, pack `full_rough_v05_pack`). Keep the locked VO, the ducked bed and the mix chain, every cut point, and every row not listed. Re-render only rows 37 and 39, and hard-link the rest.\n\n1. **Row 37, 7:18.6–7:26.0:** twinclocks_a.mp4 is reused from row 22 (3:55.8). Render a new `twinclocks_e` (own seed, own colour pair: not cyan/orange as in a, nor the c/d pairs at 4:47/4:57) and use it here. Same layout and timing, and it must move the whole time.\n2. **Row 39, 7:45.0–8:11.0:** starfield_f.mp4 is reused from row 26 (4:51.7), and it runs as one 26.1 s shot. Split 7:45–8:07.5 (the last word) into at least 4 shots, none over ~6 s, with at least 2 of them real picture. Earth Views (both files) and Artemis are already at 5 stretches each, so don't use them. Use a still used once (iss019e018483, SSC-2015-00064, EC98-44444-004), a new NASA plate (graded), or Orbit omni. The closing shot plus the 2.5 s hold and 1 s fade go on a new render, `starfield_i` (own seed). No still more than twice in the film, subpixel pushes only (the J0096 method), every graphic on the lifted navy bed, near-black stays ≤30%.\n\n**Then:** picture_qa (0 fails outside reviewed_ok_v05), polish_gate, clip_check, the freeze/black report, reuse report (no code graphic from the same render in two places), the bed-under-VO gate re-run over 7:15–8:11, mix -14 ±0.5 LUFS and ≤ -1.0 dBTP, then `OWB UAT/024_LightSpeed_v05b_PHONE.mp4` and the pack `full_rough_v05b_pack/`. Post a [Chief] note on #99 with the pack commit. The Chief rechecks rows 37 and 39, and after a PASS it goes to Ben's watch with a Watch link on the board. £0: no paid generation. Render scratch: current + previous only.\n",
+      "ref": "6114454146",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T22:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T22:14Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
