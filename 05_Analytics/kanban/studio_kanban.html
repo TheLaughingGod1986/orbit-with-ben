@@ -209,6 +209,8 @@ details.more .subs{margin-top:8px}
 .youbar.has{border-left-color:var(--doing)}
 .youbar b{font-weight:600}
 .youbar .why{margin-top:2px}
+.youbar .just{margin-top:6px;padding-top:6px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.youbar .just b{color:var(--ink)}
 .yl{list-style:none;margin:6px 0 4px;padding:0}
 .yl li{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:0 4px;padding:5px 0;border-top:1px solid var(--line);font-size:14px}
 .yl li:first-child{border-top:0}
@@ -732,18 +734,43 @@ function watchLink(key){
 }
 // Jobs whose line shows on a film card this render (one per card); the Mac mini box lists every other live job.
 const ON_CARD = new Set();
+// Ben, 11 Oct 21:39, at a ticked card still in his box: "Been approved why is it still here". Once he has ticked a cut,
+// OK or changes, it leaves his For-you box straight away, handled or not. A tick stands for the cut it was made on: the
+// card comes back only when a newer cut is handed to him (another watch version, or the film note rewritten after the
+// Chief handled the tick). For two hours after the tap one short "Just approved" / "Just sent" line keeps Undo in reach.
+const JUST_MS = 2*3600000;
+function tickStands(c, brief, watchVer){
+  if(!c) return false;
+  if(!c.handled) return true;
+  if(c.version && watchVer) return c.version===watchVer;
+  const u = ts((brief||{}).updated), a = Date.parse(c.at||"");
+  return !(u > a);
+}
+function justTicks(list, now){
+  const at = x => Date.parse(x.c.at||"");
+  return list.filter(x=>x.c && now-at(x) < JUST_MS && at(x)-now < 5*MINUTE).sort((a,b)=>at(b)-at(a));
+}
+function justLine(x){
+  const {f, c} = x, id = f.key.replace(":","-"), n = Array.isArray(c.fixes) ? c.fixes.length : (c.note ? 1 : 0);
+  const what = `${esc(f.id)} ${esc(f.title)}${c.version?" "+esc(c.version):""}`;
+  const head = c.verdict==="ok" ? `Just approved: <b>${what}</b>` : `Just sent ${n} fix${n===1?"":"es"}: <b>${what}</b>`;
+  const tail = c.handled ? " · the Chief has it" : ` · ${c.verdict==="ok"?"":`<button class="lnk" data-more="${id}">Add another fix</button> · `}<button class="lnk" data-undo="${id}">Undo</button>`;
+  return `<div class="just">${head}${tail}</div>`;
+}
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
   const all = films.concat(readyFilms).filter(f=>f.air ? recent(f.air) : true).sort((a,b)=>String(a.air||"9999").localeCompare(String(b.air||"9999")) || a.key.localeCompare(b.key));
   const P = fromDb.jobs ? plan() : {}, briefs = fromDb.briefs || {};
   const laneWho = {mini:"Cursor", gemini:"Gemini", cloud:"Claude", ben:"Ben"};
-  const lanes = {OWB:{doing:[], todo:[], sched:[], live:[]}, HOS:{doing:[], todo:[], sched:[], live:[]}}, forYou = [], rankIn = [];
+  const lanes = {OWB:{doing:[], todo:[], sched:[], live:[]}, HOS:{doing:[], todo:[], sched:[], live:[]}}, forYou = [], rankIn = [], ticked = [];
   ON_CARD.clear();
   for(const f of all){
     let b = briefs[f.key] || autoBrief(f);
     // Ben's tick (checks/<OWB-022>) shows on the card straight away: his watch step ticked, nothing left for him, and
     // what happens next. Claude's hourly run then does the next step and rewrites the note.
-    const ck = (fromDb.checks||{})[f.key.replace(":","-")];
+    const ck0 = (fromDb.checks||{})[f.key.replace(":","-")];
+    const ck = tickStands(ck0, briefs[f.key]||b, ((fromDb.watch||{})[f.key]||{}).version) ? ck0 : null;
+    if(ck) ticked.push({f, c:ck});
     if(ck && b.you){
       const when = fw(ck.at), fx = Array.isArray(ck.fixes) ? ck.fixes : [];
       if(ck.verdict==="ok") b = Object.assign({}, b, {mood:"watched", you:"", youShort:"", youWhen:"",
@@ -753,6 +780,7 @@ function renderTracker(films){
           .concat((b.steps||[]).filter(x=>x.who!=="Ben")), line:`You asked for ${fx.length} fix${fx.length===1?"":"es"} (${when}). The Chief queues them, then it comes back to you to watch again.`});
       if(ck.verdict==="ok") b.line = `You watched it (${when}) and said it looks good. Next: the Chief's final OK once the upload checks pass, then the upload. Nothing more for you.`;
     }
+    if(ck) b = Object.assign({}, b, {you:"", youShort:"", youWhen:""});   // ticked, handled or not: nothing left on Ben for this cut
     const steps = (b.steps||[]).slice();
     // Any queued job for this film that the note doesn't mention yet still shows, with its live time.
     const named = new Set(steps.flatMap(x=>[x.job,x.afterJob]).filter(Boolean));
@@ -764,7 +792,7 @@ function renderTracker(films){
     const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=1) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
     const moodKey = live ? "live" : youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
     const [cls, word] = MOOD[moodKey];
-    if(b.you || (ck && !ck.handled && (briefs[f.key]||{}).you)) forYou.push({f, b: Object.assign({}, briefs[f.key]||b), soon: ck ? true : youSoon, checked: !!ck});
+    if(b.you) forYou.push({f, b: Object.assign({}, briefs[f.key]||b), soon: youSoon});   // a ticked cut has no "you" left: out of the box
     const pct = moodKey==="ready" || moodKey==="live" ? 100 : filmPct(f), air = pd(f.air);
     const age = b.updated ? Date.now()-ts(b.updated) : NaN;
     const stale = !b.auto && (isNaN(age) || age > 30*3600000);
@@ -866,23 +894,18 @@ function renderTracker(films){
       <span class="acts"><button class="btn ok" data-send="${id}">${fx.length?`Send ${fx.length} change${fx.length===1?"":"s"} to the Chief`:"Send to the Chief"}</button><button class="lnk" data-cancel="${id}">Cancel</button></span>
     </span>`; };
   const item = x => {
-    const id = x.f.key.replace(":","-"), c = (fromDb.checks||{})[id];
+    const id = x.f.key.replace(":","-");
     const url = [x.b.uatUrl, fromDb.uatUrl].find(u=>/^https:\/\/www\.icloud\.com\//.test(u||""));
     const wl = watchLink(x.f.key);
     const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}${url?` <a class="open" href="${esc(url)}" target="_blank" rel="noopener">Open in iCloud ↗</a>`:""}</span>${wl?`<span class="acts">${wl}</span>`:""}`;
-    if(c && !c.handled){
-      const fx = Array.isArray(c.fixes) ? c.fixes : (c.note ? [{t:"", text:c.note}] : []);
-      if(c.verdict==="ok") return `<li class="done"><span>✓</span><span>${head}<span class="said">You said it looks good (${esc(fw(c.at))}). Sent to the Chief. <button class="lnk" data-undo="${id}">Undo</button></span></span></li>`;
-      return `<li class="chg"><span>✎</span><span>${head}<span class="said">You asked for ${fx.length} fix${fx.length===1?"":"es"} (${esc(fw(c.at))}). Sent to the Chief. <button class="lnk" data-undo="${id}">Undo</button></span>
-        ${fixList(fx, id, false)}${changeOpen===id ? editor(id, true) : `<span class="acts"><button class="btn" data-more="${id}">Add another fix</button></span>`}</span></li>`;
-    }
     const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Request changes</button></span>${changeOpen===id?editor(id, false):""}` : "";
     return `<li><span>☐</span><span>${head}${btns}</span></li>`;
   };
-  const left = soon.filter(x=>{ const c=(fromDb.checks||{})[x.f.key.replace(":","-")]; return !c||c.handled; }).length;
-  yb.innerHTML = soon.length ? `<b>${left?`Ready for you to check (${left})`:"All checked. Nothing else for you right now."}</b><ul class="yl">${soon.map(item).join("")}</ul>
+  const just = justTicks(ticked, Date.now());
+  const justHtml = just.map(x=>justLine(x) + (changeOpen===x.f.key.replace(":","-") && x.c.verdict!=="ok" ? `<ul class="yl"><li class="chg"><span>✎</span>${editor(changeOpen, true)}</li></ul>` : "")).join("");
+  yb.innerHTML = (soon.length ? `<b>Ready for you to check (${soon.length})</b><ul class="yl">${soon.map(item).join("")}</ul>
       <div class="why">${soon.every(x=>watchLink(x.f.key))?"Tap <b>▶ Watch</b> to open it on your phone (also in iCloud Drive › <b>OWB UAT</b> / <b>HOS UAT</b>).":"Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder."} ${dbApi?"Watch it, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":`When you've checked one, tell the Chief "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
-    : `<b>Nothing for you to check right now.</b>`;
+    : `<b>Nothing for you right now.</b>`) + justHtml;
   const keyOf = id => id.replace("-",":");
   const saveCheck = async (id, verdict, fixes) => {
     if(!dbApi) return;
