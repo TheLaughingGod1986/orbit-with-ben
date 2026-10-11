@@ -1,5 +1,5 @@
 {
-  "next_id": 123,
+  "next_id": 124,
   "jobs": [
     {
       "id": "J0001",
@@ -6606,6 +6606,32 @@
           "at": "2026-10-10T20:56Z",
           "by": "chief",
           "what": "cancelled"
+        }
+      ]
+    },
+    {
+      "id": "J0123",
+      "title": "025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Date gate for the 025 leftovers (Cursor as acting Chief, 11 Oct 2026; split from J0103, which cycled 40+ runs with nothing doable).\n\nMark this job done **only on or after Sun 8 Nov 2026 18:00Z**, once 025's long `Js6EQJ8qDi8` shows as public. Not before: the Mini job waiting on it (`--after`) needs the long public.\nIf the long's publishAt changes, move this date with it.\n",
+      "ref": "6103189873",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-11T00:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T00:58Z",
+          "by": "cursor",
+          "what": "added"
         }
       ]
     }
