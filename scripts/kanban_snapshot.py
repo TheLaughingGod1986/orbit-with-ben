@@ -492,7 +492,10 @@ def main(argv: list[str] | None = None) -> int:
         for f in owb:
             if isinstance(f.get("next"), str):
                 f["next"] = chief_text(f["next"])
-        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"],
+        recent = sorted(({"id": j["id"], "title": j.get("title", ""), "film": j.get("film", ""), "by": j.get("by", ""),
+                          "at": next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("done")), "")}
+                         for j in alljobs if j.get("status") == "done"), key=lambda r: r["at"], reverse=True)[:5]
+        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"], "recent": recent,
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())}}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,

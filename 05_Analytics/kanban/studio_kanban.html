@@ -78,6 +78,7 @@ h1 span{color:var(--accent)}
 .state.wait{background:var(--accent-soft);color:var(--soon)}
 .state.block{background:var(--blocked-soft);color:var(--blocked)}
 .state.q{background:var(--todo-soft);color:var(--todo)}
+.state.ok{background:var(--panel-2);color:var(--ink-3)}
 @keyframes pulse{50%{opacity:.25}}
 @media (prefers-reduced-motion:reduce){.state.on::before{animation:none}}
 .card .who-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:8px}
@@ -350,13 +351,11 @@ footer a{color:var(--ink-2)}
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
-  <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
-  <details class="more fold" id="foldJobs" open><summary>Order of work (every queued job, in the order it runs)</summary>
-  <section id="jobsBox" hidden>
-    <div class="why" style="margin:6px 0"><span id="chief" class="qsub" style="margin:0"></span></div>
+  <section id="jobsBox" hidden style="margin:-4px 0 14px">
+    <h2 class="sec" style="margin:0 0 4px">Order of work <span class="qsub" id="chief"></span></h2>
     <div class="box"><div id="jobs"></div></div>
   </section>
-  </details>
+  <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
   </section>
   </details>
   <details class="more fold" id="foldStages"><summary id="stageboard">Every stage of every film (detail)</summary>
@@ -896,26 +895,44 @@ function renderLower(films){
 }
 
 const NEED_WORD = {mini:"Mac mini", gemini:"Gemini check", cloud:"Claude", ben:"Ben", any:"anyone"};
+// Ben, 11 Oct: "the list of what's being worked on and what's next and the estimated times", near the top, both
+// channels. One row per live job in the queue's real order (plan() follows owb.runOrder from jobs.py), then what
+// finished last, then HOS stages in hand (HOS work that isn't a queue job).
+function jobTag(j){
+  const h = /^HOS\s+(\d{3})\b/.exec(j.title||""), o = j.film || (/^(\d{3})\b/.exec(j.title||"")||[])[1];
+  return h ? `<span class="ch HOS">HOS</span><b>${esc(h[1])}</b> ` : o ? `<span class="ch OWB">OWB</span><b>${esc(o)}</b> ` : "";
+}
+function jobName(j){ return esc(shortTitle(String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,""))); }
 function renderJobs(){
   const box = $("jobsBox"), jobs = fromDb.jobs;
-  box.hidden = !jobs || chan==="HOS";
+  box.hidden = !jobs;
   if(box.hidden) return;
   const c = fromDb.chief;
-  $("chief").textContent = c && c.name ? `one job at a time · chief: ${c.name}` : "one job at a time";
-  const order = {claimed:0, blocked:1, open:2};
+  $("chief").textContent = c && c.name ? `one job at a time on the Mac mini · chief: ${c.name}` : "one job at a time on the Mac mini";
   const P = plan();
-  const rows = jobs.slice().sort((a,b)=>(order[a.status]-order[b.status]) || ((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15) || a.id.localeCompare(b.id));
-  $("jobs").innerHTML = rows.length ? `<ul class="q">` + rows.map(j=>{
-    const p = P[j.id]||{}, L = j.last||{};
-    const paused = j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude";
-    const when = j.status==="blocked" ? "—" : p.state==="now" ? "now" : paused ? "now" : p.pos ? `${(LANE[j.line]||"")==="Chief"?"Chief ":""}#${p.pos}` : p.start ? clock(p.start) : "later";
+  const paused = j => j.status==="open" && /^released/.test(String((j.last||{}).what||"")) && (j.last||{}).by && j.last.by!=="claude";
+  const lineRank = j => (j.line||j.needs)==="chief"||(j.line||j.needs)==="cloud" ? 1 : 0;
+  const key = j => { const p=P[j.id]||{}; return j.status==="claimed"||p.state==="now" ? 0 : paused(j) ? 1 : p.pos ? 2 : j.status==="blocked" ? 4 : 3; };
+  const rows = jobs.slice().sort((a,b)=>key(a)-key(b) || lineRank(a)-lineRank(b) || ((P[a.id]||{}).pos||99)-((P[b.id]||{}).pos||99) || a.id.localeCompare(b.id));
+  const hm = t => clock(t);
+  const items = rows.map(j=>{
+    const p = P[j.id]||{}, pd_ = paused(j), chiefLine = lineRank(j)===1;
+    const num = j.status==="blocked" ? "—" : p.state==="now" ? "now" : pd_ ? "now" : p.pos ? `${chiefLine?"C":""}#${p.pos}` : "later";
     const chip = j.status==="blocked" ? '<span class="state block">Blocked</span>' : j.needs==="ben" ? '<span class="state wait">Needs you</span>'
-      : p.state==="now" ? '<span class="state on">Underway</span>' : paused ? '<span class="state on">Part done</span>' : '<span class="state q">Queued</span>';
-    const sub = j.status==="blocked" ? (j.result ? `Blocked by: ${esc(String(j.result).slice(0,120))}` : "")
-      : p.done ? `${p.state==="now"||paused?"done":"starts about "+clock(p.start)+" · about "+(j.estMin||25)+" min · done"} about ${clock(p.done)}` : (j.waitsFor||j.after) ? `waits for ${esc(j.waitsFor||j.after)}` : "";
-    const film = j.film ? `<span class="ch OWB">OWB</span><b>${esc(j.film)}</b> ` : "";
-    return `<li><span class="t">${when}</span><span>${film}${esc(shortTitle(j.title))}</span>${chip}${sub?`<span class="s">${sub}</span>`:""}</li>`;
-  }).join("") + `</ul>` : '<div class="empty">Nothing waiting.</div>';
+      : p.state==="now" ? '<span class="state on">Working</span>' : pd_ ? '<span class="state on">Part done</span>' : '<span class="state q">Queued</span>';
+    const who = j.status==="claimed" ? AGENT(j.by) : chiefLine ? "Chief" : "Mac mini";
+    const sub = j.status==="blocked" ? `Blocked: ${esc(String(j.result||"no reason given").slice(0,140))}`
+      : p.state==="now" ? `${esc(who)} since ${hm(p.start)} → done about <b>${hm(p.done)}</b> (${rel(p.done)})`
+      : p.start ? `${esc(who)} · ${hm(p.start)} → done about <b>${hm(p.done)}</b> · about ${j.estMin||25} min`
+      : (j.waitsFor||j.after) ? `waits for ${esc(j.waitsFor||j.after)} · ${esc(who)}` : esc(who);
+    return `<li><span class="t">${num}</span><span>${jobTag(j)}${jobName(j)} <span class="mono" style="color:var(--ink-3);font-size:11px">${esc(j.id)}</span></span>${chip}<span class="s">${sub}</span></li>`;
+  });
+  const recent = (fromDb.recent||[]).slice(0,3).map(j=>`<li class="done"><span class="t">done</span><span>${jobTag(j)}${jobName(j)}</span><span class="state ok">Done</span><span class="s">${esc(AGENT(j.by||""))} · ${j.at?fw(j.at):""}</span></li>`);
+  const hosNow = (data&&data.films||[]).flatMap(f=>(data.stages||[]).filter(s=>["doing","blocked"].includes((f.stages[s.key]||{}).status)).map(s=>{
+    const st=f.stages[s.key]; return `<li><span class="t">HOS</span><span><span class="ch HOS">HOS</span><b>${esc(f.id)}</b> ${esc(s.label)}</span>${st.status==="blocked"?'<span class="state block">Blocked</span>':'<span class="state on">In hand</span>'}<span class="s">${esc(st.owner||s.owner||"—")}${st.eta||st.due?` · due ${esc(fd(pd(st.eta||st.due)))}`:""}${st.waiting?` · ${esc(String(st.waiting).slice(0,120))}`:""}</span></li>`; }));
+  $("jobs").innerHTML = `<ul class="q">${items.join("") || '<li><span class="t">—</span><span>Nothing queued right now.</span></li>'}</ul>`
+    + (recent.length ? `<div class="why" style="margin-top:8px"><b>Just finished</b></div><ul class="q">${recent.join("")}</ul>` : "")
+    + (hosNow.length && chan!=="OWB" ? `<div class="why" style="margin-top:8px"><b>HOS stages in hand</b> (not queue jobs)</div><ul class="q">${hosNow.join("")}</ul>` : "");
 }
 
 function renderSource(){
@@ -1286,7 +1303,7 @@ async function startDb(){
   db.doc("board/owb").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || !Array.isArray(d.films)) return;
-    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null;
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : [];
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
   }, ()=>{});
   dbApi = db;
