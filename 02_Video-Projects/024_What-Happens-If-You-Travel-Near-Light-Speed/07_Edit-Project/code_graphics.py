@@ -292,15 +292,34 @@ def render_mapdrift(out, seconds, still):
     (sped up), leaving a trail. Shows what uncorrected GPS clocks would do."""
     n = int(seconds * FPS)
     frames = [int(n * 0.8)] if still else range(n)
+    roads = None
+    if STYLE["on"]:
+        # curved, lit roads as scattered dots: any straight full-frame line (v04's grid, v05's faded grid) reads
+        # as a split-panel seam in polish_gate
+        rng = np.random.default_rng(STYLE.get("seed", 24) + 7)
+        xs, ys = [], []
+        for k in range(14):
+            t = rng.uniform(0, 1, 260)
+            if k % 2:
+                y0, amp, ph, fq = rng.uniform(-6.2, 6.2), rng.uniform(0.4, 1.4), rng.uniform(0, 6.3), rng.uniform(0.25, 0.6)
+                x = -11.2 + 22.4 * t
+                y = y0 + amp * np.sin(fq * x + ph)
+            else:
+                x0, amp, ph, fq = rng.uniform(-10.5, 10.5), rng.uniform(0.4, 1.4), rng.uniform(0, 6.3), rng.uniform(0.3, 0.7)
+                y = -6.5 + 13 * t
+                x = x0 + amp * np.sin(fq * y + ph)
+            xs.append(x + rng.normal(0, 0.05, t.size)); ys.append(y + rng.normal(0, 0.05, t.size))
+        sx, sy = rng.uniform(-11, 11, 900), rng.uniform(-6.4, 6.4, 900)
+        roads = dict(x=np.concatenate(xs + [sx]), y=np.concatenate(ys + [sy]),
+                     s=np.concatenate([rng.uniform(2, 9, 14 * 260), rng.uniform(1, 4, 900)]),
+                     a=np.concatenate([rng.uniform(0.45, 0.85, 14 * 260), rng.uniform(0.2, 0.5, 900)]))
     for i in frames:
         s = ease(i / max(1, n - 1))
         fig, ax = canvas(i / max(1, n - 1))
-        if STYLE["on"]:
-            # faded streets (v04's solid grid read as split-panel seams); the camera move keeps them drifting
-            for x in np.arange(-11.2, 11.3, 1.6):
-                ax.plot([x, x], [-6.5, 6.5], color="#8fa0c4", lw=1.6, alpha=0.16)
-            for y in np.arange(-6.0, 6.1, 1.5):
-                ax.plot([-11.2, 11.2], [y, y], color="#8fa0c4", lw=1.6, alpha=0.16)
+        if roads is not None:
+            rgba = np.column_stack([np.full_like(roads["a"], 1.0), np.full_like(roads["a"], 0.80),
+                                    np.full_like(roads["a"], 0.52), roads["a"]])
+            ax.scatter(roads["x"], roads["y"], s=roads["s"], c=rgba, lw=0, zorder=1)
         else:
             for x in np.arange(-8, 8.1, 1.6):
                 ax.plot([x, x], [-4.5, 4.5], color="#2a3140", lw=6)

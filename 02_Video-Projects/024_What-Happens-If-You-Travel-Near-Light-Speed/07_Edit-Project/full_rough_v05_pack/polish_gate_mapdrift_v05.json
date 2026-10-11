@@ -1,0 +1,306 @@
+{
+ "a": {
+  "rule": {
+   "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+   "split_panel": "full-height/width seam or gutter",
+   "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+   "near_black": "mean < 28.0 or p95 < 50.0",
+   "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+   "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+   "std": 13.44,
+   "edge": 0.0259,
+   "calibration": {
+    "video": "025_MarsRobot_full_rough_v02d.mp4",
+    "factor": 1.2,
+    "frames": [
+     {
+      "source": "PIA22223.jpg",
+      "t": 201.0,
+      "std": 12.1,
+      "edge": 0.0223
+     },
+     {
+      "source": "PIA22223.jpg",
+      "t": 216.3,
+      "std": 11.2,
+      "edge": 0.0216
+     },
+     {
+      "source": "PIA22929.jpg",
+      "t": 297.4,
+      "std": 26.54,
+      "edge": 0.5735
+     }
+    ]
+   }
+  },
+  "video": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/07_Edit-Project/graphics_v05/mapdrift_a.mp4",
+  "edge_floor": 0.0458,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+   {
+    "row": "mda",
+    "cut": 0,
+    "t": 8.0,
+    "source": "mapdrift_a.mp4",
+    "why": [
+     "low detail: luma std 15.03 < 18.0"
+    ]
+   }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+   {
+    "cut": 0,
+    "row": "mda",
+    "source": "mapdrift_a.mp4",
+    "t": 8.0,
+    "std": 15.03,
+    "mean": 51.69,
+    "p95": 66.0,
+    "edge": 0.0458,
+    "hf": 8.99,
+    "lf": 10.05,
+    "std8": 10.62,
+    "edge8": 0.0262,
+    "seams": [],
+    "video": false,
+    "fail": [],
+    "warn": [
+     "low detail: luma std 15.03 < 18.0"
+    ]
+   }
+  ]
+ },
+ "b": {
+  "rule": {
+   "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+   "split_panel": "full-height/width seam or gutter",
+   "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+   "near_black": "mean < 28.0 or p95 < 50.0",
+   "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+   "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+   "std": 13.44,
+   "edge": 0.0259,
+   "calibration": {
+    "video": "025_MarsRobot_full_rough_v02d.mp4",
+    "factor": 1.2,
+    "frames": [
+     {
+      "source": "PIA22223.jpg",
+      "t": 201.0,
+      "std": 12.1,
+      "edge": 0.0223
+     },
+     {
+      "source": "PIA22223.jpg",
+      "t": 216.3,
+      "std": 11.2,
+      "edge": 0.0216
+     },
+     {
+      "source": "PIA22929.jpg",
+      "t": 297.4,
+      "std": 26.54,
+      "edge": 0.5735
+     }
+    ]
+   }
+  },
+  "video": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/07_Edit-Project/graphics_v05/mapdrift_b.mp4",
+  "edge_floor": 0.0463,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+   {
+    "row": "mdb",
+    "cut": 0,
+    "t": 8.0,
+    "source": "mapdrift_b.mp4",
+    "why": [
+     "low detail: luma std 15.65 < 18.0"
+    ]
+   }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+   {
+    "cut": 0,
+    "row": "mdb",
+    "source": "mapdrift_b.mp4",
+    "t": 8.0,
+    "std": 15.65,
+    "mean": 52.36,
+    "p95": 71.0,
+    "edge": 0.0463,
+    "hf": 8.95,
+    "lf": 10.98,
+    "std8": 11.53,
+    "edge8": 0.0267,
+    "seams": [],
+    "video": false,
+    "fail": [],
+    "warn": [
+     "low detail: luma std 15.65 < 18.0"
+    ]
+   }
+  ]
+ },
+ "c": {
+  "rule": {
+   "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+   "split_panel": "full-height/width seam or gutter",
+   "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+   "near_black": "mean < 28.0 or p95 < 50.0",
+   "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+   "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+   "std": 13.44,
+   "edge": 0.0259,
+   "calibration": {
+    "video": "025_MarsRobot_full_rough_v02d.mp4",
+    "factor": 1.2,
+    "frames": [
+     {
+      "source": "PIA22223.jpg",
+      "t": 201.0,
+      "std": 12.1,
+      "edge": 0.0223
+     },
+     {
+      "source": "PIA22223.jpg",
+      "t": 216.3,
+      "std": 11.2,
+      "edge": 0.0216
+     },
+     {
+      "source": "PIA22929.jpg",
+      "t": 297.4,
+      "std": 26.54,
+      "edge": 0.5735
+     }
+    ]
+   }
+  },
+  "video": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/07_Edit-Project/graphics_v05/mapdrift_c.mp4",
+  "edge_floor": 0.0516,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+   {
+    "row": "mdc",
+    "cut": 0,
+    "t": 8.0,
+    "source": "mapdrift_c.mp4",
+    "why": [
+     "low detail: luma std 15.51 < 18.0"
+    ]
+   }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+   {
+    "cut": 0,
+    "row": "mdc",
+    "source": "mapdrift_c.mp4",
+    "t": 8.0,
+    "std": 15.51,
+    "mean": 51.21,
+    "p95": 70.0,
+    "edge": 0.0516,
+    "hf": 9.69,
+    "lf": 9.92,
+    "std8": 10.62,
+    "edge8": 0.0364,
+    "seams": [],
+    "video": false,
+    "fail": [],
+    "warn": [
+     "low detail: luma std 15.51 < 18.0"
+    ]
+   }
+  ]
+ },
+ "d": {
+  "rule": {
+   "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+   "split_panel": "full-height/width seam or gutter",
+   "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+   "near_black": "mean < 28.0 or p95 < 50.0",
+   "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+   "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+   "std": 13.44,
+   "edge": 0.0259,
+   "calibration": {
+    "video": "025_MarsRobot_full_rough_v02d.mp4",
+    "factor": 1.2,
+    "frames": [
+     {
+      "source": "PIA22223.jpg",
+      "t": 201.0,
+      "std": 12.1,
+      "edge": 0.0223
+     },
+     {
+      "source": "PIA22223.jpg",
+      "t": 216.3,
+      "std": 11.2,
+      "edge": 0.0216
+     },
+     {
+      "source": "PIA22929.jpg",
+      "t": 297.4,
+      "std": 26.54,
+      "edge": 0.5735
+     }
+    ]
+   }
+  },
+  "video": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/07_Edit-Project/graphics_v05/mapdrift_d.mp4",
+  "edge_floor": 0.0497,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+   {
+    "row": "mdd",
+    "cut": 0,
+    "t": 8.0,
+    "source": "mapdrift_d.mp4",
+    "why": [
+     "low detail: luma std 15.9 < 18.0"
+    ]
+   }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+   {
+    "cut": 0,
+    "row": "mdd",
+    "source": "mapdrift_d.mp4",
+    "t": 8.0,
+    "std": 15.9,
+    "mean": 52.18,
+    "p95": 70.0,
+    "edge": 0.0497,
+    "hf": 9.41,
+    "lf": 10.87,
+    "std8": 11.47,
+    "edge8": 0.0314,
+    "seams": [],
+    "video": false,
+    "fail": [],
+    "warn": [
+     "low detail: luma std 15.9 < 18.0"
+    ]
+   }
+  ]
+ }
+}
