@@ -72,53 +72,41 @@
       "youShort": ""
     },
     "OWB:023": {
-      "updated": "2026-10-10T11:45Z",
+      "updated": "2026-10-11T18:15Z",
       "mood": "finished",
-      "done": "Script, voice, picture, edit, thumbnails and the upload package. v05d has your 4 fixes: the albedo, heavy-hydrogen and deuterium diagrams are redrawn with the real planets and big labels, 5:38 gets labels and a shot of where the rocks are, and 3:55 is cropped to the one big probe. Every check passed (picture, music, no frozen holds), and the Chief OK'd the redrawn stills.",
-      "holdup": "Nothing. v05d is in your OWB UAT folder for you to watch.",
+      "done": "Script, voice, picture, edit, thumbnails and the upload package. v05e has your fixes from v05d: the planets are labelled (5:53), it's clear a probe landed, not people (7:16), and the new missions have their dates (7:40-7:50). Every check passed (picture, music, clip check).",
+      "holdup": "Nothing. v05e is in your OWB UAT folder for you to watch.",
       "steps": [
         {
           "who": "Ben",
-          "what": "watch v05c",
+          "what": "watch v05d",
           "done": true,
-          "doneText": "you watched it · Fri 9 Oct, 4 notes"
-        },
-        {
-          "who": "Claude",
-          "what": "redraw the two diagrams with real planets and labels",
-          "done": true,
-          "doneText": "done · Fri 9 Oct (J0095)"
+          "doneText": "you watched it · Sun 11 Oct 10:42, 2 fixes"
         },
         {
           "who": "Cursor",
-          "what": "make v05d with your 4 fixes",
+          "what": "make v05e with your fixes",
           "done": true,
-          "doneText": "done · Sat 10 Oct 08:08 (J0096)"
-        },
-        {
-          "who": "Chief",
-          "what": "check v05d",
-          "done": true,
-          "doneText": "passed · Sat 10 Oct (#99)"
+          "doneText": "done · Sun 11 Oct 11:31 (J0125)"
         },
         {
           "who": "Ben",
-          "what": "watch v05d",
+          "what": "watch v05e",
           "when": "2026-10-11"
         }
       ],
-      "you": "Watch v05d (your 4 fixes are in).",
+      "you": "Watch v05e (your fixes are in).",
       "timing": "Airs Sun 25 Oct 18:00 London. The Chief's final OK is Tue 20 Oct.",
-      "line": "Your 4 fixes are in v05d and every check passed. It's ready for you to watch.",
+      "line": "v05e is ready for you to watch: your planet labels, probe and mission-date fixes are in.",
       "youWhen": "2026-10-11",
-      "youShort": "Watch v05d",
+      "youShort": "Watch v05e",
       "limit": ""
     },
     "OWB:024": {
-      "updated": "2026-10-10T11:30Z",
+      "updated": "2026-10-11T18:15Z",
       "mood": "fixing",
       "done": "Script, voice, thumbnails, the upload package and its own music. v04 has the new music laid in.",
-      "holdup": "v04's music is in, but the Chief failed it on the picture (10 Oct): the picture checks still fail on v03's unchanged shots. Cursor fixes the picture in v05, the Chief checks it, then it comes back to you. v04 isn't for you to watch.",
+      "holdup": "v04's music is in, but the Chief failed it on the picture (10 Oct): repeated shots, long freezes, dark graphics and jittery pushes carried over from v03. Cursor fixes them in v05 (J0129), the Chief checks it, then it comes back to you. v04 isn't for you to watch.",
       "steps": [
         {
           "who": "Ben",
@@ -135,12 +123,13 @@
         {
           "who": "Cursor",
           "what": "v05: fix the picture the Chief failed in v04",
-          "whenText": "next"
+          "job": "J0129"
         },
         {
           "who": "Chief",
           "what": "check v05",
-          "whenText": "after v05"
+          "afterJob": "J0129",
+          "lag": 60
         },
         {
           "who": "Ben",
@@ -150,7 +139,7 @@
       ],
       "you": "",
       "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "Its own music is in. The picture needs fixing first (v05), then the Chief checks it and it comes back to you.",
+      "line": "Its own music is in. Cursor is fixing the picture in v05 (J0129), then the Chief checks it and it comes back to you.",
       "youWhen": "",
       "youShort": "",
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, the Chief's final OK goes ahead.",
@@ -239,31 +228,43 @@
       "youWhen": "this weekend"
     },
     "OWB:027": {
-      "updated": "2026-10-09T19:45Z",
-      "mood": "good",
+      "updated": "2026-10-11T18:15Z",
+      "mood": "held",
       "done": "Script, voice (re-ordered so the first answer comes at 23 seconds), shot list, 7 code graphics, real footage for every shot, and all four made clips: Orbit at the North Pole and at sunset, a drink poured on a plane, a phone at midnight. £0 spent.",
-      "holdup": "Nothing is holding it. The first cut passes every picture check; one last tiny fix (a logo corner at 5:17) is going in tonight. Its own music comes after 30 Oct, then it's yours to watch.",
+      "holdup": "The Chief checked rough cut v01e frame by frame (11 Oct) and failed it on the picture: too much near-black (36%, the cap is 30%), labels and chapter cards too small, a few ungraded NASA photos, logo corners and a seam in the eclipse shots, one wrong picture (the Sun at 6:39) and some repeated stills. Cursor fixes them in v01f (J0130). Its own music comes after 30 Oct, then it's yours to watch.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "its own music",
-          "job": "J0080"
+          "what": "picture, rough cut 1 (2 Orbit clips, 2 everyday scenes)",
+          "done": true,
+          "doneText": "done · Fri 9 Oct 21:01 (J0077)"
+        },
+        {
+          "who": "Chief",
+          "what": "check the rough cut frame by frame",
+          "done": true,
+          "doneText": "failed v01e · Sun 11 Oct (#99, 6 fixes)"
         },
         {
           "who": "Cursor",
-          "what": "picture, rough cut 1 (2 Orbit clips, 2 everyday scenes)",
-          "job": "J0077"
+          "what": "v01f: the Chief's 6 picture fixes",
+          "job": "J0130"
         },
         {
-          "who": "Claude",
-          "what": "check the rough cut frame by frame",
-          "afterJob": "J0077",
+          "who": "Chief",
+          "what": "check v01f",
+          "afterJob": "J0130",
           "lag": 60
+        },
+        {
+          "who": "Cursor",
+          "what": "its own music (take 2)",
+          "when": "2026-10-30"
         }
       ],
       "you": "",
       "timing": "Airs Sun 22 Nov.",
-      "line": "First cut passes all picture checks. One tiny fix tonight, music after 30 Oct, then your watch."
+      "line": "The Chief failed rough cut v01e on 6 picture points. Cursor is fixing them in v01f (J0130); music after 30 Oct, then your watch."
     },
     "OWB:028": {
       "updated": "2026-10-08T16:05Z",
@@ -334,12 +335,12 @@
         {
           "who": "Cursor",
           "what": "read the Flow balance after the refill and price Parts 04 and 05",
-          "when": "2026-10-12"
+          "when": "2026-10-11"
         },
         {
           "who": "Claude",
           "what": "pass the prices before anything is spent",
-          "when": "2026-10-12"
+          "when": "2026-10-11"
         },
         {
           "who": "Cursor",
