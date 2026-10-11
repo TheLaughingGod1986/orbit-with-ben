@@ -15,8 +15,11 @@ claude.ai artifact store: board/hos, board/owb, board/briefs, board/credits) and
 
 Triggers (all on the Mini):
   - scripts/jobs.py runs it in the background after every queue change (add, claim, done, block, release, renew, ...)
-  - launchd com.owb.board-publish every 5 min (picks up cloud pushes to main, HOS PIPELINE.json and the Mini
-    heartbeat); a no-op when nothing changed
+  - launchd com.owb.board-publish every 5 min (picks up cloud pushes to main, HOS PIPELINE.json, the Mini
+    heartbeat and Ben's board buttons); a no-op when nothing changed
+Ben's buttons (Approve / Request changes / Undo, stored by the site's /api/checks): every run reads the store's small
+change stamp from the CDN and re-reads the ticks only when it moved (and hourly regardless), so a tap is on the board
+within one run, about 5 minutes. This script never posts anywhere; the [Ben] comments on #99/#180 come from the site.
 It never blocks or fails a job: the hook is fire-and-forget and every error here is logged and swallowed.
 
 Each section keeps the time its content last changed (`changedAt`), so the page header shows the real last change,
@@ -49,7 +52,9 @@ STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" 
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
 SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
-CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: re-read from the site at most hourly (Blob free-tier list calls)
+CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: a full re-read (one Blob list call) at least hourly, as a safety net
+CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minute (the stamp can lag a write by 60 s)
+CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
 
 OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
@@ -144,19 +149,66 @@ def tracker_text() -> str | None:
         return None
 
 
-def fetch_checks(prev: dict, at: dt.datetime, force: bool) -> tuple[dict, str]:
+def stamp_version(url: str) -> str | None:
+    """The checks store's change stamp (board/checks/stamp.json, a public Blob URL served from the CDN, so no Blob
+    operation on a cache hit). None when it can't be read; the caller then keeps the hourly re-read."""
+    try:
+        with urllib.request.urlopen(url, timeout=10) as r:
+            v = json.loads(r.read().decode()).get("version")
+        return v if isinstance(v, str) else None
+    except Exception as e:  # noqa: BLE001
+        log(f"checks stamp not read: {e}")
+        return None
+
+
+def _age(last: str, at: dt.datetime) -> float:
+    try:
+        return (at - dt.datetime.fromisoformat(last.replace("Z", "+00:00"))).total_seconds()
+    except ValueError:
+        return float("inf")
+
+
+def checks_due(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version) -> bool:
+    """Should this run re-read Ben's ticks from /api/checks (the one Blob list call)? Every run (scheduled every 5 min
+    and after each queue change) looks at the cheap change stamp, so a button tap reaches board.json on the next run:
+      - --force, the first run, or an hour since the last re-read: yes (the safety net)
+      - the stamp's URL not known yet (key absent: a state file from before the stamp): yes, once, to learn it
+      - the site gave no stamp URL (an older site deploy): only hourly, so the list calls stay as they were
+      - the stamp's version moved since the last re-read (a tap, an undo, or the Chief marking one handled): yes,
+        but at most once a minute
+    """
     last = prev.get("checksAt") or ""
-    if not force and last and (at - dt.datetime.fromisoformat(last.replace("Z", "+00:00"))).total_seconds() < CHECKS_EVERY_S:
-        return prev.get("checks") or {}, last
+    if force or not last or _age(last, at) >= CHECKS_EVERY_S:
+        return True
+    if "stampUrl" not in prev:
+        return True
+    url = prev.get("stampUrl") or ""
+    if not url or _age(last, at) < CHECKS_MIN_GAP_S:
+        return False
+    v = stamp(url)
+    if v is None or v == prev.get("checksVersion"):
+        return False
+    log(f"checks: the board's buttons changed (stamp {v[-24:]}), re-reading")
+    return True
+
+
+def fetch_checks(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version) -> tuple[dict, str, dict]:
+    """(checks, checksAt, {checksVersion, stampUrl}). Keeps the previous copy when nothing changed or the site is down."""
+    keep = (prev.get("checks") or {}, prev.get("checksAt") or "",
+            {k: prev[k] for k in ("checksVersion", "stampUrl") if k in prev})
+    if not checks_due(prev, at, force, stamp):
+        return keep
     try:
         with urllib.request.urlopen(f"{SITE}/api/checks?t={int(at.timestamp())}", timeout=15) as r:
             body = json.loads(r.read().decode())
         checks = body.get("checks") if isinstance(body, dict) else None
         if isinstance(checks, dict):
-            return checks, iso(at)
+            v, u = body.get("version"), body.get("stampUrl")
+            return checks, iso(at), {"checksVersion": v if isinstance(v, str) else None,
+                                     "stampUrl": u if isinstance(u, str) else ""}
     except Exception as e:  # noqa: BLE001 - the site being down must never stop the data
         log(f"checks not read: {e}")
-    return prev.get("checks") or {}, last
+    return keep
 
 
 def assemble(docs: dict, prev: dict, checks: dict, at: dt.datetime) -> tuple[dict, dict]:
@@ -206,7 +258,7 @@ def run_once(a) -> int:
     except (OSError, ValueError):
         prev = {}
     docs = build(STATE / "out")
-    checks, checks_at = fetch_checks(prev, at, a.force)
+    checks, checks_at, checks_meta = fetch_checks(prev, at, a.force)
     board, hashes = assemble(docs, prev, checks, at)
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
@@ -220,12 +272,16 @@ def run_once(a) -> int:
         print(f"dry run: {summary}; would {'push' if whole != prev.get('whole') or a.force else 'skip (unchanged)'}")
         return 0
     if whole == prev.get("whole") and not a.force:
+        seen = {"checks": checks, "checksAt": checks_at, **checks_meta}
+        if any(prev.get(k) != seen.get(k) for k in CHECK_FIELDS if k in seen):
+            prev_path.write_text(json.dumps({**prev, **seen}, indent=1))  # remember the re-read; nothing to push
         if not a.quiet:
             print("unchanged")
         return 0
     commit = push(board, at, tracker)
     prev_path.write_text(json.dumps({"hashes": hashes, "changedAt": board["changedAt"], "whole": whole,
-                                     "checks": checks, "checksAt": checks_at, "pushed": iso(at), "commit": commit}, indent=1))
+                                     "checks": checks, "checksAt": checks_at, **checks_meta, "pushed": iso(at),
+                                     "commit": commit}, indent=1))
     log(f"pushed {commit[:8]} to {BRANCH}: {summary}")
     if not a.quiet:
         print(f"pushed {commit[:8]} to {BRANCH}: {summary}")

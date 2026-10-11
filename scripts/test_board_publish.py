@@ -146,5 +146,111 @@ class Tracker(unittest.TestCase):
                 bp.STATE, bp.WT = old_state, old_wt
 
 
+class ButtonStamp(unittest.TestCase):
+    """Ben's board buttons reach board.json on the next run via the cheap change stamp (11 Oct)."""
+    URL = "https://x.public.blob.vercel-storage.com/board/checks/stamp.json"
+
+    def prev(self, mins_ago=10, version="v1", **kw):
+        p = {"checks": {"OWB-023": {"verdict": "ok"}}, "checksAt": bp.iso(T0 - dt.timedelta(minutes=mins_ago)),
+             "checksVersion": version, "stampUrl": self.URL}
+        p.update(kw)
+        return p
+
+    def stamp(self, v, calls=None):
+        def f(url):
+            if calls is not None:
+                calls.append(url)
+            return v
+        return f
+
+    def test_unchanged_stamp_means_no_reread(self):
+        self.assertFalse(bp.checks_due(self.prev(), T0, False, self.stamp("v1")))
+
+    def test_moved_stamp_means_reread_on_this_run(self):
+        self.assertTrue(bp.checks_due(self.prev(), T0, False, self.stamp("v2")))
+
+    def test_unreadable_stamp_falls_back_to_hourly(self):
+        self.assertFalse(bp.checks_due(self.prev(), T0, False, self.stamp(None)))
+        self.assertTrue(bp.checks_due(self.prev(mins_ago=61), T0, False, self.stamp(None)))
+
+    def test_hourly_force_and_first_run_still_reread(self):
+        self.assertTrue(bp.checks_due(self.prev(mins_ago=60), T0, False, self.stamp("v1")))
+        self.assertTrue(bp.checks_due(self.prev(), T0, True, self.stamp("v1")))
+        self.assertTrue(bp.checks_due({}, T0, False, self.stamp("v1")))
+
+    def test_old_state_learns_the_stamp_url_once(self):
+        p = self.prev()
+        del p["stampUrl"]
+        self.assertTrue(bp.checks_due(p, T0, False, self.stamp("v1")))
+
+    def test_an_older_site_without_a_stamp_stays_hourly(self):
+        calls = []
+        self.assertFalse(bp.checks_due(self.prev(stampUrl=""), T0, False, self.stamp("v2", calls)))
+        self.assertEqual(calls, [])
+
+    def test_at_most_one_stamp_reread_a_minute(self):
+        calls = []
+        self.assertFalse(bp.checks_due(self.prev(mins_ago=0.5), T0, False, self.stamp("v2", calls)))
+        self.assertEqual(calls, [])
+
+    def test_fetch_keeps_the_previous_copy_when_unchanged(self):
+        prev = self.prev()
+        checks, at, meta = bp.fetch_checks(prev, T0, False, self.stamp("v1"))
+        self.assertEqual((checks, at), (prev["checks"], prev["checksAt"]))
+        self.assertEqual(meta, {"checksVersion": "v1", "stampUrl": self.URL})
+
+    def test_fetch_rereads_and_records_the_new_version(self):
+        body = {"checks": {"OWB-023": {"verdict": "change"}}, "version": "v2", "stampUrl": self.URL}
+
+        class R:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+            def read(self):
+                return json.dumps(body).encode()
+
+        real = bp.urllib.request.urlopen
+        bp.urllib.request.urlopen = lambda *a, **k: R()
+        try:
+            checks, at, meta = bp.fetch_checks(self.prev(), T0, False, self.stamp("v2"))
+        finally:
+            bp.urllib.request.urlopen = real
+        self.assertEqual(checks["OWB-023"]["verdict"], "change")
+        self.assertEqual(at, bp.iso(T0))
+        self.assertEqual(meta, {"checksVersion": "v2", "stampUrl": self.URL})
+
+    def test_site_down_keeps_the_previous_copy_and_retries(self):
+        def boom(*a, **k):
+            raise OSError("down")
+        real = bp.urllib.request.urlopen
+        bp.urllib.request.urlopen = boom
+        try:
+            checks, at, meta = bp.fetch_checks(self.prev(), T0, False, self.stamp("v2"))
+        finally:
+            bp.urllib.request.urlopen = real
+        self.assertEqual(meta["checksVersion"], "v1")  # so the next run sees the moved stamp again
+
+    def test_site_writes_the_stamp_and_posting_is_unchanged(self):
+        js = (HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").read_text()
+        self.assertIn('const STAMP = "board/checks/stamp.json";', js)
+        self.assertIn("await writeStamp(saved.pathname).catch(() => {});", js)
+        self.assertIn("allowOverwrite: true", js)
+        self.assertIn("version, stampUrl", js)
+        # one post per real change, exactly as before
+        self.assertIn("const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);", js)
+        self.assertEqual(js.count("postToChief(b.id, line)"), 1)
+        self.assertLess(js.index("writeStamp(saved.pathname)"), js.index("postToChief(b.id, line)"))
+        # old snapshots are pruned from the snapshot list only, never the stamp
+        self.assertIn("b.pathname.startsWith(PREFIX)", js)
+
+    def test_the_mini_never_posts(self):
+        src = (HERE / "board_publish.py").read_text()
+        self.assertNotIn("api.github.com", src)
+        self.assertNotIn("issues/", src)
+
+
 if __name__ == "__main__":
     unittest.main()

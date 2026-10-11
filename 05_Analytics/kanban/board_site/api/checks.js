@@ -7,9 +7,17 @@
 // ignore query strings, so a file overwritten in place reads stale. Each write therefore saves a new immutable
 // snapshot board/checks/state-<time>.json and a read lists the prefix and takes the newest (one list call per read;
 // the Hobby plan allows 2,000 a month, so the page reads on load and on return to the tab, and the Mini hourly).
+//
+// The change stamp (Ben, 11 Oct: the board should show a button tap straight away, not within the hour): every write
+// also overwrites one small fixed blob, board/checks/stamp.json = {version: <newest snapshot's pathname>, at}. The Mini
+// reads that blob's public URL on every 5-minute run; it's served from the CDN (a cache HIT costs no Blob operation,
+// and an overwrite reaches the CDN within 60 s), and only when the version moves does the Mini do a full GET here (the
+// one list call). GET returns {version, stampUrl} for that, and re-writes the stamp if it's missing or older than the
+// newest snapshot, so a failed stamp write heals itself on the next read.
 import { put, list, del } from "@vercel/blob";
 
 const PREFIX = "board/checks/state-";
+const STAMP = "board/checks/stamp.json";
 // Ben's buttons go straight to the Chief (Ben, 10 Oct): every Approve / Request changes / Undo is also posted on the
 // Chief's thread, OWB on orbit-with-ben #99 and HOS on history-of-science #180, with env BOARD_GH_TOKEN (a fine-grained
 // GitHub token that can comment on those two repos; never in the page or the repo). Prefix: "[Ben] " then OK / changes /
@@ -48,18 +56,36 @@ async function postToChief(id, body) {
 const ID = /^[A-Za-z0-9_.-]{1,48}$/;
 const KEEP = 20;
 
+// One list call for both the snapshots (newest first; ISO time in the name) and the stamp.
+export function splitListing(blobs) {
+  const all = blobs.filter(b => b.pathname.startsWith(PREFIX)).sort((a, b) => (a.pathname < b.pathname ? 1 : -1));
+  return { all, stamp: blobs.find(b => b.pathname === STAMP) || null };
+}
+
 async function snapshots() {
-  const { blobs } = await list({ prefix: PREFIX, limit: 1000 });
-  return blobs.sort((a, b) => (a.pathname < b.pathname ? 1 : -1));   // newest first (ISO time in the name)
+  const { blobs } = await list({ prefix: "board/checks/", limit: 1000 });
+  return splitListing(blobs);
+}
+
+export function stampIsStale(stamp, newest) {
+  if (!stamp) return true;
+  if (!newest) return false;
+  return new Date(stamp.uploadedAt).getTime() < new Date(newest.uploadedAt).getTime();
+}
+
+async function writeStamp(version) {
+  const b = await put(STAMP, JSON.stringify({ version, at: new Date().toISOString() }), { access: "public",
+    addRandomSuffix: false, allowOverwrite: true, contentType: "application/json", cacheControlMaxAge: 86400 });
+  return b.url;
 }
 
 async function load() {
-  const all = await snapshots();
-  if (!all.length) return { all, state: { checks: {}, history: [] } };
+  const { all, stamp } = await snapshots();
+  if (!all.length) return { all, stamp, state: { checks: {}, history: [] } };
   const r = await fetch(all[0].url, { cache: "no-store" });
   if (!r.ok) throw new Error(`blob read ${r.status}`);
   const j = await r.json();
-  return { all, state: { checks: j.checks || {}, history: Array.isArray(j.history) ? j.history : [] } };
+  return { all, stamp, state: { checks: j.checks || {}, history: Array.isArray(j.history) ? j.history : [] } };
 }
 
 async function readBody(req) {
@@ -75,8 +101,11 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   try {
     if (req.method === "GET") {
-      const { state } = await load();
-      return res.status(200).json({ checks: state.checks, at: new Date().toISOString() });
+      const { all, stamp, state } = await load();
+      const version = all.length ? all[0].pathname : "";
+      let stampUrl = stamp ? stamp.url : "";
+      if (stampIsStale(stamp, all[0])) stampUrl = await writeStamp(version).catch(() => stampUrl);
+      return res.status(200).json({ checks: state.checks, at: new Date().toISOString(), version, stampUrl });
     }
     if (req.method !== "POST") return res.status(405).json({ error: "GET or POST" });
     const key = process.env.BOARD_KEY;
@@ -94,8 +123,9 @@ export default async function handler(req, res) {
     }
     const at = new Date().toISOString();
     state.history = [...state.history, { id: b.id, op: b.delete ? "delete" : "set", at, verdict: b.doc?.verdict || "" }].slice(-300);
-    await put(`${PREFIX}${at.replace(/[:.]/g, "-")}.json`, JSON.stringify(state), { access: "public", addRandomSuffix: true,
+    const saved = await put(`${PREFIX}${at.replace(/[:.]/g, "-")}.json`, JSON.stringify(state), { access: "public", addRandomSuffix: true,
       contentType: "application/json", cacheControlMaxAge: 31536000 });
+    await writeStamp(saved.pathname).catch(() => {});   // the Mini's cue to re-read; never fails the tick
     const old = all.slice(KEEP - 1).map(x => x.url);
     if (old.length) await del(old).catch(() => {});
     // Post once per real change (a re-save of the same tick has the same `at`).
