@@ -7,7 +7,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0103 | mini | claimed | cursor | 2026-10-11T02:04Z | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
+| J0103 | mini | open | – | – | 025 Mars robot: Studio end screen + the three Shorts (Mon 9 / Wed 11 / Fri 13 Nov), split from J0084 | 6088767763 |
 
 Recently finished:
 
