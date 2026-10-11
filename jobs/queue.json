@@ -1,5 +1,5 @@
 {
-  "next_id": 133,
+  "next_id": 134,
   "jobs": [
     {
       "id": "J0001",
@@ -7131,6 +7131,34 @@
         "by": "cursor",
         "note": "v05b pack 5511d7ea posted"
       }
+    },
+    {
+      "id": "J0133",
+      "title": "OWB back catalogue: rebuild 5 long thumbs to Packaging §2.B (top band off the subject, harder grade, naming hook), Chief review, then set in Studio",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Packaging (Astrum study), Chief OK 11 Oct 2026.** Orbit Creator's lane, run by the Mini worker. Rebuild five live long thumbnails to `THUMBNAIL_AND_TITLE_RULES.md` §2.B, then set them in Studio **only after the Chief's review OK**. No video file changes. Title, description, schedule and privacy are not touched. Spend nothing: no new generation. Use each thumb's original clean plate (the builder in the film's `08_Thumbnail/` or `00_Brand/Channel-Setup/tools/`), a master frame from the film, or a graded NASA plate.\n\n| Video | Long | Live text | New hook (yellow word in caps) |\n|---|---|---|---|\n| `ojk-dfOpAmw` | Andromeda (019) | WHEN THEY MEET (vague teaser) | THIS IS **ANDROMEDA** (names the object). Live near-black is 56%, so use a fuller, graded galaxy plate |\n| `Yk1tLh23rko` | Neutron Star (007) | CRUSHED **FLAT** | keep the words |\n| `NbW5G1BpPY0` | Europa (006) | A HIDDEN **OCEAN** | keep the words. Live near-black is 35%; `--pale` is allowed for the ice |\n| `REXYxuLOBoI` | Last Star (005) | LAST **LIGHT** | keep the words |\n| `3xrxdmaOwJI` | Black Hole (002) | NO WAY **OUT** | keep the words |\n\nFor each thumb:\n1. **Rollback first.** Save the live thumb (`https://i.ytimg.com/vi/<id>/maxresdefault.jpg`) and any original file to `~/_desk/thumb_packaging_1011/rollback/live_<id>.jpg`, and record the sha256 values in the result note.\n2. **Build at 1280×720:**\n   - 2–3 words in a band across the top (or a clear edge), never over the subject;\n   - the house heavy font, outline, yellow hook word and white rest;\n   - the subject whole, at least ⅓ of the frame, below or beside the band;\n   - nothing in the bottom-right corner;\n   - grade harder (saturation, contrast, rim glow), with no flat colour slabs;\n   - no Orbit.\n   Write it under the film's `08_Thumbnail/packaging_v01/`, with the builder script next to it, as earlier thumb jobs did.\n3. **Check:** `python3 00_Brand/Channel-Setup/tools/thumb_preview.py long <5 new> <5 live> --out <sheet.jpg> --score` must PASS for all five new thumbs (saturation 100+, or 85+ with `--pale`; near-black 30% or less). Every word must read at 168×94.\n4. **Review:** post one before/after sheet plus the `--score` lines on #99 (`scripts/owb_thread.py post`), then run `jobs.py block <this id> --agent <you> --reason \"parked for Chief: thumbnail review\" --git`. Chief scores HOOK / BAND / GRADE / PHONE and reopens the job with an OK, or gives fixes.\n5. **After the Chief's OK,** set each one in desktop Studio on the Orbit channel (CDP **9223**; check that the channel is `UC_esArsDKd3GJvOkeO0DUog`). Follow the `scripts/apply_melodysheep_long_thumbs_v01.py` pattern: image-only file input, never Replace or the video file, no visibility or date dialogs. Reload to confirm it stuck.\n   - **If a video has a Test & Compare running, don't touch it.** Never press Continue on \"Run a new test?\". Skip that video and say so in the result.\n6. **Done:** post a [Cursor] note on #99 with each id, old → new text, the score, the rollback path and the result. Then `jobs.py done`.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T22:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T22:29Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "model": "cursor-auto"
     }
   ],
   "focus": [
