@@ -101,7 +101,7 @@
       "fail": [],
       "warn": [
         "sharpness: upscaled 2.33x, may look soft",
-        "low detail: edge density 0.0067 < film p5 0.0107"
+        "low detail: edge density 0.0066 < film p5 0.0116"
       ],
       "offset": null
     },
@@ -149,6 +149,25 @@
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": null
+    },
+    {
+      "cut": 22,
+      "row": "6",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 107.0,
+      "at": "1:47",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0108 < film p5 0.0116"
+      ],
+      "offset": 250.0,
+      "reviewed_ok": {
+        "note": "aurora and city lights (p95 66) (Claude #6087573310)",
+        "passed": [
+          "near-black: mean 11.7, p95 72.0"
+        ]
+      }
     },
     {
       "cut": 26,
@@ -304,7 +323,7 @@
       "at": "4:03",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0028 < film p5 0.0107"
+        "low detail: edge density 0.0028 < film p5 0.0116"
       ],
       "offset": null
     },
@@ -374,19 +393,6 @@
       "offset": 19.3
     },
     {
-      "cut": 57,
-      "row": "26",
-      "source": "GSFC_20171208_Archive_e000868.jpg",
-      "title": "Full Moon",
-      "t": 292.15,
-      "at": "4:52",
-      "fail": [],
-      "warn": [
-        "low detail: edge density 0.0107 < film p5 0.0107"
-      ],
-      "offset": null
-    },
-    {
       "cut": 61,
       "row": "27",
       "source": "NHQ201708210100.jpg",
@@ -395,7 +401,7 @@
       "at": "5:14",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.005 < film p5 0.0107"
+        "low detail: edge density 0.005 < film p5 0.0116"
       ],
       "offset": null
     },
@@ -537,7 +543,7 @@
       "at": "6:58",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0008 < film p5 0.0107"
+        "low detail: edge density 0.0008 < film p5 0.0116"
       ],
       "offset": 330.0,
       "reviewed_ok": {
@@ -772,7 +778,7 @@
       "fail": [],
       "warn": [
         "sharpness: upscaled 2.33x, may look soft",
-        "low detail: edge density 0.0067 < film p5 0.0107"
+        "low detail: edge density 0.0066 < film p5 0.0116"
       ],
       "offset": null
     },
@@ -851,7 +857,9 @@
       "t": 107.0,
       "at": "1:47",
       "fail": [],
-      "warn": [],
+      "warn": [
+        "low detail: edge density 0.0108 < film p5 0.0116"
+      ],
       "offset": 250.0,
       "reviewed_ok": {
         "note": "aurora and city lights (p95 66) (Claude #6087573310)",
@@ -1146,7 +1154,7 @@
       "at": "4:03",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0028 < film p5 0.0107"
+        "low detail: edge density 0.0028 < film p5 0.0116"
       ],
       "offset": null
     },
@@ -1273,14 +1281,12 @@
     {
       "cut": 57,
       "row": "26",
-      "source": "GSFC_20171208_Archive_e000868.jpg",
-      "title": "Full Moon",
+      "source": "as11-44-6667.jpg",
+      "title": "View of a full Moon photographed from the Apollo 11 spacecraft on its trans-Earth journey (21 July 1969)",
       "t": 292.15,
       "at": "4:52",
       "fail": [],
-      "warn": [
-        "low detail: edge density 0.0107 < film p5 0.0107"
-      ],
+      "warn": [],
       "offset": null
     },
     {
@@ -1325,7 +1331,7 @@
       "at": "5:14",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.005 < film p5 0.0107"
+        "low detail: edge density 0.005 < film p5 0.0116"
       ],
       "offset": null
     },
@@ -1610,7 +1616,7 @@
       "at": "6:58",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0008 < film p5 0.0107"
+        "low detail: edge density 0.0008 < film p5 0.0116"
       ],
       "offset": 330.0,
       "reviewed_ok": {
@@ -1674,7 +1680,7 @@
     }
   ],
   "polish": {
-    "edge_floor": 0.0107,
+    "edge_floor": 0.0116,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

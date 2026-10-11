@@ -14,13 +14,13 @@
   13    64.3s row13_speed.mp4              ok
   14    70.2s orbit_northpole_omni_v01.mp4 ok
   14    76.2s Gerst_Earth_timelapses_2017. ok (reviewed_ok: near-black: mean 15.0, p95 58.0)
-  15    80.7s GSFC_20171208_Archive_e00203 WARN low detail: edge density 0.0067 < film p5 0.0107
+  15    80.7s GSFC_20171208_Archive_e00203 WARN low detail: edge density 0.0066 < film p5 0.0116
   15    85.5s epic_spin_v01.mp4            ok
   15    90.4s GSFC_20171208_Archive_e00026 ok
    5    94.8s cabin_pour_veo_v01.mp4       ok
    5    98.6s AFRC2022-0059-49.jpg         ok
    5   102.4s EC04-0047-004.jpg            ok
-   6   107.0s Gerst_Earth_timelapses_2017. ok (reviewed_ok: near-black: mean 11.7, p95 72.0)
+   6   107.0s Gerst_Earth_timelapses_2017. WARN low detail: edge density 0.0108 < film p5 0.0116 (reviewed_ok: near-black: mean 11.7, p95 72.0)
    6   113.0s iss070e062746.jpg            ok
    7   118.2s ESO_timelapse_La_Silla.webm  ok
    7   123.0s ESO_timelapse_La_Silla.webm  ok
@@ -44,7 +44,7 @@
   21   222.6s orbit_sunset_omni_v01.mp4    ok
   21   228.2s Gerst_Earth_timelapses_2017. ok
   22   234.3s PIA00271.jpg                 ok
-  22   243.0s PIA23791.jpg                 WARN low detail: edge density 0.0028 < film p5 0.0107
+  22   243.0s PIA23791.jpg                 WARN low detail: edge density 0.0028 < film p5 0.0116
   23   249.6s GSFC_20171208_Archive_e00086 ok
   23   252.6s Bay_of_Fundy_tide_in.jpg     ok
   23   255.7s Bay_of_Fundy_tide_out.jpg    ok
@@ -55,11 +55,11 @@
   25   277.6s row24-25_tides.mp4           ok
   25   282.2s as14-67-09386.jpg            ok
   25   287.0s as14-67-09386.jpg            ok
-  26   292.1s GSFC_20171208_Archive_e00086 WARN low detail: edge density 0.0107 < film p5 0.0107
+  26   292.1s as11-44-6667.jpg             ok
   26   297.2s GSFC_20171208_Archive_e00193 ok
   26   302.4s GSFC_20171208_Archive_e00193 ok
   27   308.2s Cuneiform_tablet-_commentary ok
-  27   314.0s NHQ201708210100.jpg          WARN low detail: edge density 0.005 < film p5 0.0107
+  27   314.0s NHQ201708210100.jpg          WARN low detail: edge density 0.005 < film p5 0.0116
   28   319.6s NOAA_sat_eclipse_2024_notext ok
   28   325.1s NOAA_sat_eclipse_2024_notext ok
   28   331.0s NOAA_sat_eclipse_2024_notext ok
@@ -81,7 +81,7 @@
   35   401.7s PIA24573.jpg                 ok
   35   407.2s row35_tides.mp4              ok
   35   412.6s row35_speed.mp4              ok (reviewed_ok: near-black: mean 36.7, p95 45.0)
-  35   418.0s Gerst_Earth_timelapses_2017. WARN low detail: edge density 0.0008 < film p5 0.0107 (reviewed_ok: near-black: mean 15.42, p95 61.0)
+  35   418.0s Gerst_Earth_timelapses_2017. WARN low detail: edge density 0.0008 < film p5 0.0116 (reviewed_ok: near-black: mean 15.42, p95 61.0)
   36   423.7s ESO_timelapse_La_Silla.webm  ok
   36   428.9s ESO_star_trails_VLT_Paranal. ok
   37   434.3s NASA_Bennu_journey_early_Ear ok

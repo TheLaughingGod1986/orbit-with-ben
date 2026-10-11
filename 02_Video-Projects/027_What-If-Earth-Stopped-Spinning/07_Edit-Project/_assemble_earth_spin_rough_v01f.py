@@ -12,7 +12,8 @@ row 28 NOAA span 2 from 50 s cropped (600,0,3200,1800) clear of the badge and en
 cropped (200,120,3200,1800) clear of the NASA bug (<=1.2x); e002130/e002131 graded (saturation and cyan down), Pahoeoe
 highlights and saturation pulled; chapter cards auto-fit to ~11% cap height. New plates for repeats/Sun: row 5 DC-8
 EC04-0047-004, row 19 Sahara iss072e068304, row 24 tidal flats iss026e005121 breaks the tides graphic (row 25 resumes at
-14.2 s, a new stretch), row 34 Greenland e000112, row 35 Deep Space Atomic Clock PIA24573 (no Sun, no 6:38 dissolve).
+14.2 s, a new stretch), row 34 Greenland e000112, row 35 Deep Space Atomic Clock PIA24573 (no Sun, no 6:38 dissolve),
+row 26 Apollo 11 full Moon AS11-44-6667 (the near side, cropped to the disc) in place of the e000868 second use.
 v01e (Claude #6087961804): row 28's first NOAA span cropped to (576,0,3264,1836), clear of the logo badge (x 187-527,
 y 1877-2054 in the 3840x2160 source); every other segment reused from v01d.
 v01d (Claude #6087573310): row 6 Five Minutes -> ISS city-lights still iss070e062746 (slow push, crop clear of the
@@ -91,7 +92,7 @@ BM,BM2='earth/GSFC_20171208_Archive_e002130.jpg','earth/GSFC_20171208_Archive_e0
 SEAG=dict(grade='sea')
 SUN='sun/GSFC_20171208_Archive_e002035.jpg'
 MOON,FAR='moon/GSFC_20171208_Archive_e000868.jpg','moon/GSFC_20171208_Archive_e001939.jpg'
-AS14='moon/as14-67-09386.jpg'; VENUS='venus/PIA23791.jpg'
+AS14='moon/as14-67-09386.jpg'; AS11='moon/as11-44-6667.jpg'; VENUS='venus/PIA23791.jpg'
 CORAL1,CORAL2='coral/Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg','coral/Eridophyllum_seriale_2.jpg'
 TIGHT=(240,135,1440,810)
 # (row, VO in from SHOT_LIST_v01 -> nt(), [sources]) in SHOT_LIST_v02 order; v01 row 4 (the agenda) is cut.
@@ -120,7 +121,7 @@ ROWS=[
  ('23',nt(265.90),[MOON,'tide/Bay_of_Fundy_tide_in.jpg','tide/Bay_of_Fundy_tide_out.jpg']),
  ('24',nt(275.10),[G4('row24-25','tides'),G4('row24-25','tides',cont=1),('tide/iss026e005121.jpg',dict(box=(0.0,0.0,1.0,0.86)))]),
  ('25',nt(287.98),[G4('row24-25','tides',14.2),G4('row24-25','tides',cont=1),AS14,(AS14,c)]),
- ('26',nt(307.52),[(MOON,c),FAR,(FAR,dict(box=(0.08,0.2,0.92,0.75)))]),
+ ('26',nt(307.52),[(AS11,dict(box=(0.19,0.2637,0.841,0.6285))),FAR,(FAR,dict(box=(0.08,0.2,0.92,0.75)))]),
  ('27',nt(323.28),[('tablet/Cuneiform_tablet-_commentary_on_Enuma_Anu_Enlil_tablet_5_MET.jpg',dict(pct=.06)),'eclipse/NHQ201708210100.jpg']),
  ('28',nt(334.66),[V(NOAA,2.0,vcrop=(576,0,3264,1836)),V(NOAA,50.0,vcrop=(600,0,3200,1800),max=5.6),V(NOAA,63.0,vcrop=(200,120,3200,1800),max=7.0,hold_ok=1)]),
  ('29',nt(352.16),[(CORAL1,dict(pct=.06)),CORAL2,(CORAL1,c),(CORAL2,c)]),

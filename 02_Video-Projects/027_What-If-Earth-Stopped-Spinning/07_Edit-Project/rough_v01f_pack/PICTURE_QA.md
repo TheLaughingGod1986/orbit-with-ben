@@ -10,10 +10,11 @@
 - **0:42** row 11 · row11_air.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **1:00** row 13 · row13_speed.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **1:04** row 13 · row13_speed.mp4: kind of picture: no title in the pool, so nobody can tell what it is
-- **1:21** row 15 · GSFC_20171208_Archive_e002035.jpg (Full disk view of the sun June 21, 2010): sharpness: upscaled 2.33x, may look soft; low detail: edge density 0.0067 < film p5 0.0107
+- **1:21** row 15 · GSFC_20171208_Archive_e002035.jpg (Full disk view of the sun June 21, 2010): sharpness: upscaled 2.33x, may look soft; low detail: edge density 0.0066 < film p5 0.0116
 - **1:25** row 15 · epic_spin_v01.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **1:30** row 15 · GSFC_20171208_Archive_e000265.jpg (One Year on Earth – Seen From 1 Million Miles): sharpness: upscaled 2.33x, may look soft
 - **1:42** row 5 · EC04-0047-004.jpg: kind of picture: no title in the pool, so nobody can tell what it is
+- **1:47** row 6 · Gerst_Earth_timelapses_2017.webm (Alexander Gerst’s Earth timelapses (2017 reissue).webm): low detail: edge density 0.0108 < film p5 0.0116
 - **2:09** row 8 · row08_bulge.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 17.9 < 18.0
 - **2:15** row 8 · row08_bulge.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **2:26** row 9 · Foucault_pendulum_1.webm (Foucault pendulum 1.webm): reuse: on screen 15.6s in a row (look at it: 15s is a lot for one picture)
@@ -25,14 +26,13 @@
 - **3:27** row 20 · row20_dayyear.mp4: kind of picture: no title in the pool, so nobody can tell what it is; reuse: on screen 15.4s in a row (look at it: 15s is a lot for one picture)
 - **3:32** row 20 · row20_dayyear.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **3:37** row 20 · row20_dayyear.mp4: kind of picture: no title in the pool, so nobody can tell what it is
-- **4:03** row 22 · PIA23791.jpg (Venus from Mariner 10): low detail: edge density 0.0028 < film p5 0.0107
+- **4:03** row 22 · PIA23791.jpg (Venus from Mariner 10): low detail: edge density 0.0028 < film p5 0.0116
 - **4:19** row 24 · row24-25_tides.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **4:24** row 24 · row24-25_tides.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **4:28** row 24 · iss026e005121.jpg: kind of picture: no title in the pool, so nobody can tell what it is
 - **4:33** row 25 · row24-25_tides.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **4:38** row 25 · row24-25_tides.mp4: kind of picture: no title in the pool, so nobody can tell what it is
-- **4:52** row 26 · GSFC_20171208_Archive_e000868.jpg (Full Moon): low detail: edge density 0.0107 < film p5 0.0107
-- **5:14** row 27 · NHQ201708210100.jpg (2017 Total Solar Eclipse): low detail: edge density 0.005 < film p5 0.0107
+- **5:14** row 27 · NHQ201708210100.jpg (2017 Total Solar Eclipse): low detail: edge density 0.005 < film p5 0.0116
 - **5:20** row 28 · NOAA_sat_eclipse_2024_notext.webm (NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm): reuse: on screen 17.4s in a row (look at it: 15s is a lot for one picture)
 - **5:54** row 30 · row30_clock.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **6:04** row 32 · NIST-F2_cesium_fountain_atomic_clock.jpg (NIST-F2 cesium fountain atomic clock.jpg): sharpness: upscaled 2.31x, may look soft
@@ -41,7 +41,7 @@
 - **6:42** row 35 · PIA24573.jpg: kind of picture: no title in the pool, so nobody can tell what it is
 - **6:47** row 35 · row35_tides.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **6:53** row 35 · row35_speed.mp4: kind of picture: no title in the pool, so nobody can tell what it is
-- **6:58** row 35 · Gerst_Earth_timelapses_2017.webm (Alexander Gerst’s Earth timelapses (2017 reissue).webm): low detail: edge density 0.0008 < film p5 0.0107
+- **6:58** row 35 · Gerst_Earth_timelapses_2017.webm (Alexander Gerst’s Earth timelapses (2017 reissue).webm): low detail: edge density 0.0008 < film p5 0.0116
 - **7:22** row 37 · epic_spin_v01.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 
 ## Passed on Claude's ruling
