@@ -57,7 +57,7 @@ class Briefs(unittest.TestCase):
                 self.assertIn(k, b, key)
             self.assertIn(b["mood"], ("good", "waiting", "held", "finished", "watched", "fixing", "ready"), key)
             for st in b["steps"]:
-                self.assertTrue(st.get("who") and st.get("what"), key)
+                self.assertTrue((st.get("who") or st.get("kind") in ks.routing_doc()) and st.get("what"), key)  # kind: routed (12 Oct)
                 self.assertTrue(st.get("done") or st.get("job") or st.get("afterJob") or st.get("when") or st.get("whenText"), f"{key}: {st}")
 
     def test_bad_key_is_refused(self):
@@ -142,3 +142,49 @@ class DateGates(unittest.TestCase):
 
     def test_london_time_without_z(self):
         self.assertEqual(ks.gate_of({"title": "not before Thu 15 Oct 2026 18:00"}), "2026-10-15T17:00Z")
+
+
+class RoutedSteps(unittest.TestCase):
+    """Ben, 12 Oct ("Is Gemini not used at all?"): steps still to do show the routed worker by kind; done steps keep
+    their doer; HOS queue jobs join the HOS film note like OWB jobs do."""
+    jobs = [{"id": "J1", "status": "open", "title": "HOS 006 Part 03 rough v01 (P3:06 held)", "kind": "assembly", "needs": "mini"},
+            {"id": "J2", "status": "claimed", "by": "codex", "title": "HOS 006 graphics", "kind": "chart"},
+            {"id": "J3", "status": "done", "by": "cursor", "title": "HOS 006 Part 03 picture", "kind": "video"},
+            {"id": "J4", "status": "open", "title": "025 Mars Short", "kind": "chart"}]
+
+    def test_names_by_kind(self):
+        self.assertEqual(ks.routed_who("facts"), "Gemini")
+        self.assertEqual(ks.routed_who("chart"), "Codex")
+        self.assertEqual(ks.routed_who("script"), "Claude")
+        self.assertEqual(ks.routed_who("chief"), "Chief")
+        self.assertEqual(ks.routed_who("", "cursor-claude-opus-5-5"), "Claude (in Cursor)")
+        self.assertEqual(ks.routing_doc()["facts"]["who"], "Gemini")
+
+    def test_todo_steps_route_done_steps_keep_their_doer(self):
+        b = {"HOS:006": {"steps": [
+            {"who": "Grok", "what": "Fact check", "done": True},
+            {"who": "Grok", "what": "check every number and date on the graphics"},
+            {"who": "Cursor", "what": "graphics", "job": "J2"},
+            {"what": "picture", "job": "J3"},
+            {"kind": "script", "who": "Grok", "what": "script for the Short"},
+            {"who": "Ben", "what": "final OK", "kind": "qa"}]}}
+        out = [s["who"] for s in ks.route_steps(b, self.jobs)["HOS:006"]["steps"]]
+        self.assertEqual(out, ["Grok", "Gemini", "Codex", "Cursor", "Claude", "Ben"])
+
+    def test_hos_queue_jobs_join_the_note_before_ben(self):
+        b = {"HOS:006": {"steps": [{"who": "Cursor", "what": "x", "job": "J2"}, {"who": "Ben", "what": "final OK"}]},
+             "OWB:025": {"steps": []}}
+        out = ks.hos_job_steps(b, self.jobs)
+        self.assertEqual([s.get("job") for s in out["HOS:006"]["steps"]], ["J2", "J1", None])
+        self.assertEqual(out["HOS:006"]["steps"][1]["who"], "Cursor")
+        self.assertEqual(out["HOS:006"]["steps"][1]["what"], "Part 03 rough v01")
+        self.assertEqual(out["OWB:025"]["steps"], [])  # OWB jobs: the page adds them
+
+    def test_todo_hos_stages_get_the_routed_owner(self):
+        hos = {"films": [{"id": "006", "stages": {"facts": {"status": "done"}, "thumbnails": {"status": "todo"},
+                                                  "edit": {"status": "todo", "owner": "Cursor"}}}]}
+        ks.route_hos_stages(hos)
+        st = hos["films"][0]["stages"]
+        self.assertNotIn("owner", st["facts"])
+        self.assertEqual(st["thumbnails"]["owner"], "Codex")
+        self.assertEqual(st["edit"]["owner"], "Cursor")

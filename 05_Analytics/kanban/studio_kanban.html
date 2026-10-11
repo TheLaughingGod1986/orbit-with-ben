@@ -509,7 +509,7 @@ function health(f){
   return ["ok","on track"];
 }
 
-const AV_COLORS = {Grok:"#2f6fb5", Claude:"#c47a0b", Ben:"#2e7d4f", Gemini:"#7b5cc4", Cursor:"#4b5563", Codex:"#0f766e"};
+const AV_COLORS = {Grok:"#2f6fb5", Chief:"#2f6fb5", Claude:"#c47a0b", "Claude (in Cursor)":"#c47a0b", Ben:"#2e7d4f", Gemini:"#7b5cc4", Cursor:"#4b5563", Codex:"#0f766e"};
 const ownerOf = (s,st) => st.owner || s.owner || "—";
 const whoText = n => n==="—" ? "nobody yet" : n;
 function av(name){ const c = AV_COLORS[name] || "#6b7280"; return `<span class="av" style="background:${c}" aria-hidden="true">${esc((name||"?")[0])}</span>`; }
@@ -826,7 +826,7 @@ function renderTracker(films){
     // Any queued job for this film that the note doesn't mention yet still shows, with its live time.
     const named = new Set(steps.flatMap(x=>[x.job,x.afterJob]).filter(Boolean));
     for(const j of (fromDb.jobs||[])) if(f._ch==="OWB" && j.film===f.id && !named.has(j.id))
-      steps.push({who: j.status==="claimed" ? AGENT(j.by) : laneWho[j.needs]||j.needs, what: shortTitle(j.title).replace(/^\d{3}\s*/,""), job:j.id});
+      steps.push({who: j.status==="claimed" ? AGENT(j.by) : j.routedTo||laneWho[j.needs]||j.needs, what: shortTitle(j.title).replace(/^\d{3}\s*/,""), job:j.id});   // routedTo: scripts/routing.py by kind (Ben, 12 Oct)
     const rows = steps.map(x=>({x, w:stepWhen(x,P)}));
     const live = isLive(f);
     if(live) for(const r of rows) if(!r.w.ok && r.w.at && r.w.at <= Date.now()) r.w = {ok:true, text:"done"};   // aired: past steps are done
