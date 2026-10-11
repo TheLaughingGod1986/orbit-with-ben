@@ -20,6 +20,7 @@ Full steps: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2–§4 and §7. Hooks
   - Picture changes every 4–6 s. Every number sourced. No goodbye; the last line hands off to the next film.
   - One `[SUBSCRIBE BEAT]` right after the first payoff (25–50% of spoken words): one line of 20 words or fewer from `templates/SUBSCRIBE_BEAT_LINES.md`, with no numbers and no stock phrases. It's gate-checked. A 4-second lower-right cue plays under it while the picture keeps moving.
   - `[VISUAL MUST]` + `[TEACH]` on every scene; `[ORBIT ACTS]` on Orbit beats only.
+  - **Teach on screen (Ben, 11 Oct 2026):** inside `[VISUAL MUST: …]`, mark at least 3 `· DATA:` moments, a `· WHO:` card (name, years, role) for each named person at first mention, `· WHEN:` for every date (a timeline for 3 or more dates) and 2–4 `· FACT:` beats. Full rule: AGENTS.md → *Teach on screen*.
 - **Gates:** `npm run review:script` scores 90 or more, then `npm run gate:episode` PASSes. No VO or picture spend before both.
 - **Voice:** Ben Orbit Narrator (`04_Audio/tools/orbit_voice.py`). VO comes before picture. Speech around −19 to −28 dB mean; never silent.
 - **Assembly** (`docs/ORBIT_PLAYBOOK_LESSONS.md` §2 + `STUDIO_PLAYBOOK.md` §7):

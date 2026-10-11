@@ -53,6 +53,7 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 
   `gate:episode` fails a script without exactly one valid beat.
 - **No goodbye and no second ask** ("in conclusion", "thanks for watching", "like and subscribe"). The last spoken line hands off to the next film ("Next, Orbit falls into Jupiter.") and the end screen shows it.
+- **Teach on screen (Ben, 11 Oct 2026):** at least 3 `DATA:` moments, a `WHO:` card for every named person at first mention, a `WHEN:` call-out for every date (a timeline for 3 or more dates) and 2–4 `FACT:` beats, all marked inside `[VISUAL MUST: …]`. Full rule in §5, *Teach on screen*.
 - **Layout:** every scene carries `[VISUAL MUST: …]` and `[TEACH: …]`. Only the Orbit beats carry `[ORBIT ACTS: …]`. The gate flags more than 2 Orbit beats.
 - **Gates (both must pass before any voice or picture spend):**
   ```bash
@@ -74,6 +75,7 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 - **The last 4 s** return to the opening picture so the Short loops.
 - **The spoken end line depends on the test week** (the week-2 test drops "Watch the full film"). When the film is named, use its exact live title.
 - **Captions** run the whole way.
+- **One overlay at most** (fact card, date call-out or one-number scale bar), only where it helps; never in the first 2 s or over the 9–14 s title, inside the 16:9 centre band, with no added words or seconds (§5, *Teach on screen*).
 - The long-form script reviewer caps Shorts below 90. **Don't pad a Short to chase it.**
 
 ## 4. Voice
@@ -105,6 +107,47 @@ No Kling, Seedance or ElevenLabs Image & Video.
 - **Ocean or shore POV:** no Earth globe in the sky. One Earth and one Moon, or one Moon only. Check a mid-plate frame, not just the first and last.
 - **Frame sizes** (`YOUTUBE_FRAME_SIZES.md`): long 1920×1080 MP4; Short 1080×1920; long thumbnail file 1280×720.
 - **Picture QA (Ben, 8 Oct):** `scripts/picture_qa.py` must PASS before Claude's review. It catches computer models, diagrams and labelled images, soft upscales, reused pictures and polish_gate's checks, each at its film time (m:ss); Claude looks at every WARN full size. Rules: AGENTS.md lesson 7.
+
+### Teach on screen (Ben, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
+
+<!-- SYNC: AGENTS.md#Teach on screen (Ben, 11 Oct 2026) -->
+Ben, 11 Oct 2026 21:45, for every future video on both channels: *"add more graphs and charts when needed, more overlays, more animations, and more interesting facts to explain about dates, explain about the people we're mentioning, and make it more educational and more useful."* This applies to every script locked and every cut started after 11 Oct 2026. It adds to lesson 7 and the edit locks, and it relaxes none of them.
+
+**Script.** Mark these inside the scene's `[VISUAL MUST: …]`, so `review:script` doesn't count them as spoken words and `gate:episode` doesn't change. Chief counts them at script review (`grep -o "DATA:" <script> | wc -l`, and the same for each marker).
+- **DATA: at least 3 in every long (aim for 3–6).** Wherever the VO says a number, size, distance, time span or trend, add `· DATA: <what the graphic shows>`: an animated bar or line chart, a scale bar or size comparison, a counter, or a timeline. At least one comes before the `[SUBSCRIBE BEAT]`. Every DATA number is a MUST QUOTE row in `SOURCES.md`.
+- **WHO: a card for every named person at first mention.** Use `· WHO: <name> (<born>–<died>, or "born <year>") — <role, 4 words or fewer>`. Later mentions get no card. The years go into `SOURCES.md` and the Gemini claims pass, like any spoken number.
+- **WHEN: every date or era that's said.** Add `· WHEN: <year or era>` for a date call-out. A story with 3 or more dates gets one timeline that builds as each date is said, and it counts as one DATA moment. Later dates drop onto that timeline.
+- **FACT: 2–4 per long.** Each is one surprising, sourced fact, said in a line and shown as a card: `· FACT: <card text, 4 words or fewer>`. Make it a "huh, I didn't know that" beat, never a list. It's quote-checked like every number.
+- **Shorts (22–27 s): at most one overlay** (a fact card, a date call-out or a one-number scale bar), and only where it helps the line being said. It adds no words and no seconds, so the Short stays at 22–27 s and 55–65 words. It never appears in the first 2 s (frame 0 has the hook caption only) or over the 9–14 s title, and it stays inside the 16:9 centre band.
+
+**Picture.**
+- Every DATA, WHO, WHEN and FACT item is our own code graphic or edit overlay, rendered for its own row (`code_graphic_<film>_<row>…`) and listed in the cut list. A chart, graph, diagram or labelled image taken from a source still FAILs `picture_qa.py`. Never pull one in to meet the count.
+- **Everything animates.** A chart builds in time with the spoken number: bars grow, the line draws, the counter runs, timeline markers drop in. A card slides or fades in over about 0.3–0.5 s, then out again. An overlay that animates over a moving plate counts as that window's 4–6 s picture change. No card holds still for more than 4 s, and a card is never Ken-Burned (that Never still stands).
+- **The house picture rules still win:**
+  - real bodies, not flat discs (lesson 7);
+  - labels of 4 words or fewer, taken from the line being spoken, in large house type;
+  - one idea per graphic;
+  - never two code graphics back to back anywhere in the film, with real moving imagery between them (the first-30-seconds rule, now film-wide);
+  - WHO, WHEN and FACT cards ride over moving or blurred real picture, never a flat black slab or an empty black panel, and the frame passes polish_gate's near-black check;
+  - any NASA plate behind a graphic is colour-graded, and text stays off the subject;
+  - a Short's overlay lines are 11–12% of the 16:9 band height (the house Short size), inside that band.
+- **WHO card layout:** lower third, with the name on line one and the years and role on line two. It stays on screen 3–4 s while the name is spoken. Show no portrait we can't source; the card can sit over the scene alone.
+
+**Review gate.** Chief's frame review and stills check score each item PASS or FAIL in the pack's review note:
+1. **DATA:** a long has 3 or more animated data moments. Each matches its line, reads with the sound off, and shows the same number as `SOURCES.md`.
+2. **WHO:** every named person has a card at first mention, with sourced years.
+3. **WHEN:** every spoken date or era has a call-out, and 3 or more dates have a timeline.
+4. **FACT:** a long has 2–4 fact beats, each one sourced.
+5. **STYLE:** every overlay is our own render, with 4 words or fewer per label, in house type, off the subject, with no black slab, passing near-black and over graded plates. A Short's overlay sits inside the 16:9 band, clear of 0–2 s and the 9–14 s title.
+6. **MOTION:** every overlay and chart animates in, none holds still for more than 4 s, and no two code graphics run back to back.
+
+A Short is scored on 5 and 6 only, plus whichever of 1–4 its single overlay is, if it has one. Any FAIL goes back to the shot list before the cut goes to OWB UAT.
+
+**What it applies to.**
+- **All four markers:** scripts locked from 12 Oct on (030 and later).
+- **Shot-list overlays only:** 025–029 already have their VO locked. Their shot lists add WHO, WHEN and DATA overlays on lines that are already spoken, with no VO change, before picture is cut. 025 picks them up at its next rough cut.
+- **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review) stay as they are, because adding overlays would mean re-rendering cuts that have already passed.
+<!-- /SYNC -->
 
 ## 6. Orbit (character lock)
 
