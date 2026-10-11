@@ -9,7 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0127 | mini | open | – | – | 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots |  |
+| J0127 | mini | claimed | cursor | 2026-10-11T23:03Z | 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots |  |
 | J0128 | mini | open | – | – | HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row |  |
 | J0133 | mini | open | – | – | studio · `cursor-auto` · OWB back catalogue: rebuild 5 long thumbs to Packaging §2.B (top band off the subject, harder grade, naming hook), Chief review, then set in Studio |  |
 | J0134 | mini | open | – | – | assembly · `cursor-auto` · 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) |  |
