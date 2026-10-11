@@ -1,5 +1,5 @@
 {
-  "next_id": 134,
+  "next_id": 135,
   "jobs": [
     {
       "id": "J0001",
@@ -7158,6 +7158,34 @@
         }
       ],
       "kind": "studio",
+      "model": "cursor-auto"
+    },
+    {
+      "id": "J0134",
+      "title": "025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Short length test, Chief OK 11 Oct 2026. A one-off exception to the 22–27 s lock** (AGENTS.md → *Packaging*). Astrum's Shorts mostly run 55–80 s and ours run 22–27 s. One 50–60 s Orbit Short goes out alongside the usual three that week, and the numbers decide.\n\n- **Source: the locked 025 long, `Js6EQJ8qDi8`** (`02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/09_Final-Export/025_MarsRobot_full_rough_v03f.mp4`, sha256 `cce6268c…` in UPLOADS.json). It's uploaded, and the file on an id is never swapped, so this picture and VO are final.\n  - Lift one self-contained 50–60 s stretch of its VO and picture, and reframe it to 9:16 the way the house Shorts do.\n  - **Spend nothing:** no new VO, no new picture generation, no new music bed (use the long's laid bed). The house SFX kit is fine.\n  - Pick a story that isn't the main subject of that week's three Shorts: Mon 9 Nov `iyvWYFP_ETA`, Wed 11 Nov `TtgHNLXfDSs`, Fri 13 Nov `bSjWiCbB7pY` (Ingenuity). For example, Opportunity's 90 days → 14 years and the 2018 storm, if the long covers it.\n- **Slot: Thu 12 Nov 2026, 11:30 London (11:30Z).** It's the only Short that day, after the four-week test (ends 6 Nov), with the long already public (Sun 8 Nov 18:00).\n- **Every other Short rule still applies:**\n  - the six opening rules: the named thing at frame 0, moving, no Orbit, the frame-0 whoosh, the 2–4 word hook caption;\n  - the exact long title on screen at 9–14 s;\n  - captions throughout;\n  - the last 4 s loop to the open;\n  - the Polish pass Short items (SFX level PASS, grain);\n  - a custom cover (§4).\n  - The title is new, in one of the six shapes, and not a copy of an existing one (Chief OKs it).\n- **Gate:** `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date 2026-11-12 --length-test` must PASS (band 50–60 s, FAIL at 61 s; frame 0 distinct from Mon/Wed/Fri). Also `sfx_kit.py level`.\n- **Review:** post the cut path, a contact sheet and the gate output on #99, then run `jobs.py block <this id> --agent <you> --reason \"parked for Chief: final OK\" --git`.\n- **After the Chief's OK:** upload Private with publishAt `2026-11-12T11:30:00Z` through `youtube:package` (it mirrors Buffer at the same time). Set the cover in Studio (CDP 9223), and register it in UPLOADS.json with `\"lengthTest\": true`. Then run `gate_shorts_open.py add`. Related → `Js6EQJ8qDi8` is a separate job, after the long is public.\n- **Priority:** lowest. It yields to every 024–027 focus job and never delays a locked schedule. It must be uploaded by Tue 10 Nov. If it can't make that, block with the reason and the slot is dropped (no rescheduling into another Short's day).\n- **Measure:** the Orbit Auditor logs it against the week's three 22–27 s Shorts in its next numbers report, in `00_Brand/Channel-Setup/audits/SHORT_LENGTH_TEST_2026-11/TEST_LOG.md`.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T22:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T22:29Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
       "model": "cursor-auto"
     }
   ],
