@@ -355,12 +355,14 @@ def render_deuterium(out, seconds, still):
 def render_line(out, seconds, still):
     """The Sun at left, Venus and Earth on their orbits (arcs). A hot zone reaches out from the Sun to the inner
     limit (sqrt(L) scaling). Over the clip the Sun brightens from today to +10% and the limit's edge slides out
-    from ~0.95 AU to Earth's orbit. Venus sits inside the whole time."""
+    from ~0.95 AU to Earth's orbit. Venus sits inside the whole time.
+    Labels SUN, VENUS (above) and EARTH (below), so the bodies read with the sound off (Ben's v05d UAT, 11 Oct)."""
     n = int(seconds * FPS)
     SX = -7.4
     scale = 11.0                                     # canvas units per AU
     frames = [int(n * 0.85)] if still else range(n)
     for i in frames:
+        t = i / FPS
         s = ease((i / max(1, n - 1) - 0.12) / 0.8)
         L = 1.0 + 0.10 * s
         limit = 0.95 * math.sqrt(L)
@@ -375,6 +377,10 @@ def render_line(out, seconds, still):
         glow = 0.55 + 0.35 * s
         for rr, al in ((1.9, 0.10 * glow), (1.4, 0.22 * glow), (1.0, 0.95)):
             ax.add_patch(Circle((SX, 0), rr, color=GOLD, alpha=al, lw=0, zorder=5))
+        la = phase_alpha(t, 0.3)
+        label(ax, -7.6, -2.45, "SUN", color=GOLD, alpha=la)
+        label(ax, SX + 0.723 * scale, 1.15, "VENUS", ha="center", alpha=la)
+        label(ax, SX + 1.0 * scale, -1.15, "EARTH", ha="center", alpha=la)
         save(fig, out, i, still)
     finish(out, still)
 
