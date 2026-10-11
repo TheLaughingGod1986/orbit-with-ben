@@ -6812,13 +6812,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-11T20:48Z",
-      "eta": "2026-10-12T00:48Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
-      "result": "",
+      "result": "v05 pack complete: picture_qa PASS 0/107, polish_gate PASS, clip_check PASS, no hold >=4 s, mix -14.3 LUFS/-1.2 dBTP, bed >=10 LU under VO everywhere, WER 1.49%, music_gate PASS. Posted #99 6113618406. Awaiting Chief review + signature of reviewed_ok_v05.json (2 Omni rows need a ruling).",
       "history": [
         {
           "at": "2026-10-11T18:03Z",
@@ -6909,8 +6909,14 @@
           "at": "2026-10-11T20:48Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-11T20:51Z",
+          "by": "cursor",
+          "what": "done: v05 pack complete: picture_qa PASS 0/107, polish_gate PASS, clip_check PASS, no hold >=4 s, mix -14.3 LUFS/-1.2 dBTP, bed >=10 LU under VO everywhere, WER 1.49%, music_gate PASS. Posted #99 6113618406. Awaiting Chief review + signature of reviewed_ok_v05.json (2 Omni rows need a ruling)."
         }
-      ]
+      ],
+      "done_ref": "bf86ca26"
     },
     {
       "id": "J0130",
