@@ -55,9 +55,30 @@ def ease(t):
     return 0.5 - 0.5 * math.cos(math.pi * min(1, max(0, t)))
 
 
+_BED = None
+
+
+def star_bed():
+    """Lifted navy with faint stars (Chief's v01e review, 11 Oct: no frame more than half near-black; luma >= ~30 at
+    the corners, ~50 at the centre)."""
+    global _BED
+    if _BED is None:
+        yy, xx = np.mgrid[0:H, 0:W]
+        d = np.clip(np.hypot((xx - W / 2) / W, (yy - H / 2) / H) / 0.7, 0, 1)[..., None]
+        c0, c1 = np.array([0x1c, 0x33, 0x5e]) / 255, np.array([0x12, 0x22, 0x40]) / 255
+        img = c0 + (c1 - c0) * d
+        rng = np.random.default_rng(27)
+        n = 700
+        ys, xs = rng.integers(0, H, n), rng.integers(0, W, n)
+        img[ys, xs] = np.clip(img[ys, xs] + rng.uniform(0.25, 0.75, n)[:, None], 0, 1)
+        _BED = img
+    return _BED
+
+
 def canvas():
     fig = plt.figure(figsize=(W / DPI, H / DPI), dpi=DPI, facecolor=BG)
     ax = fig.add_axes([0, 0, 1, 1], facecolor=BG)
+    ax.imshow(star_bed(), extent=(-8, 8, -4.5, 4.5), zorder=0, interpolation="nearest")
     ax.set_xlim(-8, 8)
     ax.set_ylim(-4.5, 4.5)
     ax.set_aspect("equal")
@@ -142,11 +163,46 @@ LABELS = ["", ""]                                     # set per row from --label
 FONT = {"family": ["Arial", "Helvetica", "DejaVu Sans"], "weight": "bold"}
 
 
-def label(ax, x, y, text, alpha=1.0, color=WHITE, size=34, ha="center"):
+_FIT = {}
+CAP = 0.11                                            # house label cap height, as a share of frame height
+
+
+def fit(ax, text, box):
+    """The largest size (cap height <= CAP) at which text fits box, on one line or split over two. One line wins
+    unless two lines is more than a third bigger. Worked out once per label so the size never changes between frames."""
+    key = (text, box)
+    if key not in _FIT:
+        r = ax.figure.canvas.get_renderer()
+        x0, y0, x1, y1 = box
+        bw, bh = (x1 - x0) * H / 9, (y1 - y0) * H / 9
+        words = text.split()
+        best = []
+        for s in [text] + ["\n".join([" ".join(words[:k]), " ".join(words[k:])]) for k in range(1, len(words))]:
+            size = CAP * H / 0.716 * 72 / DPI
+            while size > 6:
+                t = ax.text(0, 0, s, fontsize=size, fontdict=FONT, ha="center", va="center", linespacing=1.05)
+                bb = t.get_window_extent(r)
+                t.remove()
+                if bb.width <= bw and bb.height <= bh:
+                    break
+                size *= 0.96
+            best.append((s, size))
+        one, two = best[0], max(best[1:], key=lambda b: b[1], default=best[0])
+        _FIT[key] = one if one[1] * 1.33 >= two[1] else two
+        print(f"label {text!r}: {_FIT[key][1]:.0f} pt, cap {_FIT[key][1] * DPI / 72 * 0.716 / H:.1%} of frame height",
+              file=sys.stderr)
+    return _FIT[key]
+
+
+def label(ax, box, text, alpha=1.0, color=WHITE):
+    """Large house type centred in box (x0, y0, x1, y1 in canvas units), on the bed, never over the subject."""
     if not text or alpha <= 0.01:
         return
-    ax.text(x, y, text, color=color, alpha=alpha, fontsize=size * 0.85, ha=ha, va="center", zorder=9, fontdict=FONT,
-            bbox=dict(facecolor=BG, alpha=0.7 * alpha, edgecolor="none", boxstyle="round,pad=0.25"))
+    from matplotlib import patheffects
+    s, size = fit(ax, text, box)
+    ax.text((box[0] + box[2]) / 2, (box[1] + box[3]) / 2, s, color=color, alpha=alpha, fontsize=size, ha="center",
+            va="center", zorder=9, fontdict=FONT, linespacing=1.05,
+            path_effects=[patheffects.withStroke(linewidth=7, foreground="#071022", alpha=0.8 * alpha)])
 
 
 def speed_arrows(ax, x, y, r, scale, alpha=0.9, shift=0.0):
@@ -166,11 +222,12 @@ def render_speed(out, seconds, still):
     for i in frames:
         s = ease(i / max(1, n - 1) / 0.5)
         fig, ax = canvas()
-        globe(ax, -1.5, 0, 3.2, i / FPS * 0.35)
-        speed_arrows(ax, -1.5, 0, 3.2, 3.6 * s)
+        cx = -4.4 if LABELS[0] else -1.5
+        globe(ax, cx, 0, 3.2, i / FPS * 0.35)
+        speed_arrows(ax, cx, 0, 3.2, 3.6 * s)
         la = ease((i / max(1, n - 1) - 0.55) / 0.12)
-        label(ax, 2.6, 3.2 * math.sin(math.radians(51.5)), LABELS[0], alpha=la, color=GOLD, ha="left")  # by the gold arrow
-        label(ax, 2.6, 0, LABELS[1], alpha=la, ha="left")                                                  # by the equator arrow
+        label(ax, (-0.4, 0.3, 7.4, 4.3), LABELS[0], alpha=la, color=GOLD)   # level with the gold arrow
+        label(ax, (-0.4, -4.3, 7.4, -0.3), LABELS[1], alpha=la)
         save(fig, out, i, still)
     finish(out, still)
 
@@ -180,12 +237,13 @@ def render_bulge(out, seconds, still):
     for i in frames:
         s = ease(i / max(1, n - 1) / 0.6)
         fig, ax = canvas()
-        globe(ax, 0, 0, 3.4, i / FPS * 0.35, rx=1 + 0.08 * s)
-        ax.add_patch(Circle((0, 0), 3.4, fill=False, ec=DIM, lw=1.2, ls=(0, (5, 5)), alpha=0.6 * s, zorder=6))
+        cx = -3.4 if LABELS[0] else 0
+        globe(ax, cx, 0, 3.4, i / FPS * 0.35, rx=1 + 0.08 * s)
+        ax.add_patch(Circle((cx, 0), 3.4, fill=False, ec=DIM, lw=1.2, ls=(0, (5, 5)), alpha=0.6 * s, zorder=6))
         if LABELS[0]:
-            ax.annotate("", xy=(-3.4 * (1 + 0.08 * s), -3.9), xytext=(3.4 * (1 + 0.08 * s), -3.9),
-                        arrowprops=dict(arrowstyle="<->", color=WHITE, lw=2, alpha=s), zorder=8)
-        label(ax, 0, -3.9, LABELS[0], alpha=ease((i / max(1, n - 1) - 0.5) / 0.15))
+            ax.annotate("", xy=(cx - 3.4 * (1 + 0.08 * s), -3.9), xytext=(cx + 3.4 * (1 + 0.08 * s), -3.9),
+                        arrowprops=dict(arrowstyle="<->", color=WHITE, lw=3, alpha=s), zorder=8)
+        label(ax, (0.6, -2.4, 7.4, 2.4), LABELS[0], alpha=ease((i / max(1, n - 1) - 0.5) / 0.15))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -198,12 +256,13 @@ def render_air(out, seconds, still):
         u = i / max(1, n - 1)
         phase = min(u, stop) * seconds * 0.35
         fig, ax = canvas()
-        globe(ax, -2.5, 0, 3.2, phase)
-        drift = max(0.0, u - stop) * 6.0
+        cx = -4.4 if LABELS[0] else -2.5
+        globe(ax, cx, 0, 3.2, phase)
+        drift = max(0.0, u - stop) * 4.0
         for k in range(3):
-            speed_arrows(ax, -2.5, 0, 3.2, 1.6, alpha=0.8 - 0.25 * k, shift=(drift + 1.8 * k) % 5.4)
-        label(ax, 4.6, 3.7, LABELS[0], alpha=ease((u - stop - 0.05) / 0.12))        # e.g. THE AIR KEEPS GOING
-        label(ax, 4.6, -3.7, LABELS[1], alpha=ease((u - 0.55) / 0.12))             # e.g. FASTER THAN SOUND
+            speed_arrows(ax, cx, 0, 3.2, 1.6, alpha=0.8 - 0.25 * k, shift=(drift + 1.2 * k) % (3.6 if LABELS[0] else 5.4))
+        label(ax, (1.0, 0.3, 7.4, 4.3), LABELS[0], alpha=ease((u - stop - 0.05) / 0.12))   # e.g. THE AIR KEEPS GOING
+        label(ax, (1.0, -4.3, 7.4, -0.3), LABELS[1], alpha=ease((u - 0.55) / 0.12))        # e.g. FASTER THAN SOUND
         save(fig, out, i, still)
     finish(out, still)
 
@@ -213,15 +272,15 @@ def render_oceans(out, seconds, still):
     The land keeps the real texture's light and shade (sand-coloured), so it reads as ground, not a printed band.
     --label goes beside the polar ocean at the top right, --label2 across the band of land."""
     n, frames = frames_for(seconds, still, at=0.95)
-    R, CX = 3.4, -1.6                                   # left of centre so the label fits inside the frame
+    R, CX = 3.4, (-3.8 if LABELS[0] else -1.6)          # labels go right of the globe, never on it
     for i in frames:
         u = i / max(1, n - 1)
         s = ease(u / 0.8)
         fig, ax = canvas()
         band = math.radians(45 * s)                       # the dry band spreads from the equator to about 45 degrees
         globe(ax, CX, 0, R, i / FPS * 0.05 * (1 - s), drain=(band, s))
-        label(ax, CX + R + 0.35, R * 0.8, LABELS[0], alpha=ease((u - 0.35) / 0.15), ha="left")  # beside the north polar sea
-        label(ax, CX, 0, LABELS[1], alpha=ease((u - 0.6) / 0.15))
+        label(ax, (0.0, 0.3, 7.4, 4.3), LABELS[0], alpha=ease((u - 0.35) / 0.15))      # level with the north polar sea
+        label(ax, (0.0, -4.3, 7.4, -0.3), LABELS[1], alpha=ease((u - 0.6) / 0.15))
         save(fig, out, i, still)
     finish(out, still)
 
@@ -230,23 +289,23 @@ def render_dayyear(out, seconds, still):
     """The Sun at centre; Earth goes once round. With no spin, the gold marker on its surface keeps pointing the same
     way, so it sits in daylight for half the year, then in night for the other half."""
     n, frames = frames_for(seconds, still, at=0.4)
-    R, er, CX = 3.4, 1.0, -2.0                             # fills the height; left of centre so the label fits
+    R, er, CX = 2.9, 1.55, -3.3                            # orbit + Earth fill the height; Earth is 1/3 of it
     for i in frames:
         th = 2 * math.pi * i / max(1, n)
         fig, ax = canvas()
         ax.add_patch(Circle((CX, 0), R, fill=False, ec=DIM, lw=1, alpha=0.4))
         for k, a in ((2.2, 0.08), (1.5, 0.2)):
-            ax.add_patch(Circle((CX, 0), 0.5 * k, color=GOLD, alpha=a, lw=0))
-        ax.add_patch(Circle((CX, 0), 0.5, color=GOLD))
+            ax.add_patch(Circle((CX, 0), 0.6 * k, color=GOLD, alpha=a, lw=0))
+        ax.add_patch(Circle((CX, 0), 0.6, color=GOLD))
         dx, dy = R * math.cos(th), R * math.sin(th)
         ex, ey = CX + dx, dy
         d = math.hypot(dx, dy)
         globe(ax, ex, ey, er, 0.0, night=(-dx / d, -dy / d))   # phase fixed: no spin; the night side faces away
         mx, my = ex + er, ey                                     # the marker never turns: it points the same way
         lit = -dx > 0
-        ax.plot([ex + er * 0.82, mx + 0.18], [ey, my], color=GOLD if lit else DIM, lw=3, zorder=7)
-        ax.add_patch(Circle((mx + 0.22, my), 0.13, color=GOLD if lit else DIM, zorder=7))
-        label(ax, CX + R + er + 0.5, R * 0.8, LABELS[0], alpha=ease((i / max(1, n) - 0.08) / 0.1), ha="left")  # e.g. 1 DAY = 1 YEAR
+        ax.plot([ex + er * 0.82, mx + 0.25], [ey, my], color=GOLD if lit else DIM, lw=4, zorder=7)
+        ax.add_patch(Circle((mx + 0.3, my), 0.18, color=GOLD if lit else DIM, zorder=7))
+        label(ax, (2.1, -2.6, 7.4, 2.6), LABELS[0], alpha=ease((i / max(1, n) - 0.08) / 0.1))  # e.g. 1 DAY = 1 YEAR
         save(fig, out, i, still)
     finish(out, still)
 
@@ -257,13 +316,14 @@ def render_tides(out, seconds, still):
         u = i / max(1, n - 1)
         th = 2 * math.pi * u * 1.5
         fig, ax = canvas()
-        rm = 3.0 + 0.7 * ease(u)                                   # stays on screen at every angle
-        ax.add_patch(Circle((0, 0), rm, fill=False, ec=DIM, lw=1, alpha=0.35))
+        cx = -2.6 if LABELS[0] else 0.0
+        rm = 3.15 + 0.55 * ease(u)                                 # Moon (r 0.7) stays on screen at every angle
+        ax.add_patch(Circle((cx, 0), rm, fill=False, ec=DIM, lw=1.5, alpha=0.45))
         bulge = math.degrees(th) + 18                             # the bulge leads the Moon
-        ax.add_patch(Ellipse((0, 0), 3.5, 2.9, angle=bulge, color=SEA, alpha=0.45, zorder=3))
-        globe(ax, 0, 0, 1.4, i / FPS * 1.2)
-        ax.add_patch(Circle((rm * math.cos(th), rm * math.sin(th)), 0.38, color=MOON, zorder=6))
-        label(ax, 5.6, 0, LABELS[0], alpha=ease((u - 0.5) / 0.12))                      # e.g. 4 CM A YEAR
+        ax.add_patch(Ellipse((cx, 0), 5.4, 4.5, angle=bulge, color=SEA, alpha=0.45, zorder=3))
+        globe(ax, cx, 0, 2.1, i / FPS * 1.2)
+        ax.add_patch(Circle((cx + rm * math.cos(th), rm * math.sin(th)), 0.7, color=MOON, zorder=6))
+        label(ax, (2.2, -2.6, 7.4, 2.6), LABELS[0], alpha=ease((u - 0.5) / 0.12))     # e.g. 4 CM A YEAR
         save(fig, out, i, still)
     finish(out, still)
 
@@ -276,18 +336,20 @@ def render_clock(out, seconds, still):
         s = ease((u - 0.45) / 0.4)
         ticks = 22 + 2 * s
         fig, ax = canvas()
-        ax.add_patch(Circle((0, 0), 3.4, fill=False, ec=WHITE, lw=2, alpha=0.8))
+        cx = -3.0 if LABELS[0] else 0.0
+        ax.add_patch(Circle((cx, 0), 3.4, fill=False, ec=WHITE, lw=2, alpha=0.8))
         whole = int(math.floor(ticks))
         for k in range(whole + (1 if ticks > whole else 0)):
             a = math.pi / 2 - 2 * math.pi * k / ticks
             al = 1.0 if k < whole else ticks - whole
-            ax.plot([3.0 * math.cos(a), 3.35 * math.cos(a)], [3.0 * math.sin(a), 3.35 * math.sin(a)],
+            ax.plot([cx + 3.0 * math.cos(a), cx + 3.35 * math.cos(a)], [3.0 * math.sin(a), 3.35 * math.sin(a)],
                     color=GOLD if k % 6 == 0 else WHITE, lw=3, alpha=0.9 * al)
         h = math.pi / 2 - 2 * math.pi * (u * 1.6 % 1)
-        ax.plot([0, 2.7 * math.cos(h)], [0, 2.7 * math.sin(h)], color=GOLD, lw=4)
-        ax.add_patch(Circle((0, 0), 0.12, color=GOLD))
-        label(ax, 5.6, 0.5, LABELS[0], alpha=ease(u / 0.1) * (1 - ease((u - 0.45) / 0.1)) if LABELS[1] else ease(u / 0.1))
-        label(ax, 5.6, 0.5, LABELS[1], alpha=ease((u - 0.85) / 0.1), color=GOLD)      # e.g. 22 HOURS, then TODAY: 24
+        ax.plot([cx, cx + 2.7 * math.cos(h)], [0, 2.7 * math.sin(h)], color=GOLD, lw=4)
+        ax.add_patch(Circle((cx, 0), 0.12, color=GOLD))
+        box = (1.0, -2.4, 7.4, 2.4)
+        label(ax, box, LABELS[0], alpha=ease(u / 0.1) * (1 - ease((u - 0.45) / 0.1)) if LABELS[1] else ease(u / 0.1))
+        label(ax, box, LABELS[1], alpha=ease((u - 0.85) / 0.1), color=GOLD)      # e.g. 22 HOURS, then TODAY: 24
         save(fig, out, i, still)
     finish(out, still)
 
