@@ -14,6 +14,12 @@ in, the text is too small or too long.
 Usage
   python3 thumb_preview.py long  thumb.jpg [other.jpg ...] --out /tmp/long_preview.jpg
   python3 thumb_preview.py short thumb.jpg [other.jpg ...] --out /tmp/short_preview.jpg
+  python3 thumb_preview.py long  thumb.jpg --out /tmp/x.jpg --score   # + colour numbers (Packaging, 11 Oct 2026)
+
+--score prints, per thumb, mean HSV saturation (0-255) and the near-black share (luma < 26), and
+exits 1 on a FAIL (THUMBNAIL_AND_TITLE_RULES.md §2.B): long saturation below SAT_FAIL, or near-black
+over 30%. Orbit's last ten longs averaged about 94-97; Astrum's top longs about 139-141 (11 Oct 2026).
+HOS covers are scored on near-black only (period paper: no saturation push), with --house hos.
 
 Needs Pillow (pip install pillow).
 """
@@ -29,6 +35,27 @@ SIZES = {
     "short": [("tile", (110, 196)), ("centre crop", (168, 94))],
 }
 GAP = 12
+SAT_TARGET = 120   # Orbit longs aim here (Astrum top ~139, ours ~94 on 11 Oct 2026)
+SAT_FAIL = 100     # below this an Orbit long thumb FAILs the Chief / Auditor review
+SAT_FAIL_PALE = 85 # --pale: a naturally pale subject (the Moon, Europa ice, Saturn); Chief notes it in the review
+NEAR_BLACK_MAX = 0.30
+
+
+def score(path: Path, kind: str, house: str = "owb", pale: bool = False) -> dict:
+    """Colour numbers for the Packaging check (11 Oct 2026). Pillow only."""
+    im = Image.open(path).convert("RGB")
+    sat = Image.open(path).convert("HSV").getchannel("S")
+    hist = sat.histogram()
+    mean_sat = sum(i * n for i, n in enumerate(hist)) / max(1, sum(hist))
+    lh = im.convert("L").histogram()
+    nb = sum(lh[:26]) / max(1, sum(lh))
+    fails = []
+    if nb > NEAR_BLACK_MAX:
+        fails.append(f"near-black {nb:.0%} > 30%")
+    floor = SAT_FAIL_PALE if pale else SAT_FAIL
+    if house == "owb" and kind == "long" and mean_sat < floor:
+        fails.append(f"saturation {mean_sat:.0f} < {floor} (target {SAT_TARGET}+)")
+    return {"file": str(path), "saturation": round(mean_sat, 1), "near_black": round(nb, 3), "fails": fails}
 
 
 def render(path: Path, kind: str) -> list[Image.Image]:
@@ -50,6 +77,9 @@ def main() -> int:
     ap.add_argument("kind", choices=SIZES)
     ap.add_argument("thumbs", nargs="+", type=Path)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--score", action="store_true", help="print saturation / near-black and FAIL on the §2.B limits")
+    ap.add_argument("--house", choices=("owb", "hos"), default="owb")
+    ap.add_argument("--pale", action="store_true", help="naturally pale subject: saturation floor 85 instead of 100")
     ns = ap.parse_args()
 
     rows = [render(p, ns.kind) for p in ns.thumbs]
@@ -68,6 +98,14 @@ def main() -> int:
     ns.out.parent.mkdir(parents=True, exist_ok=True)
     sheet.save(ns.out, quality=90)
     print(ns.out)
+    if ns.score:
+        bad = 0
+        for p in ns.thumbs:
+            r = score(p, ns.kind, ns.house, ns.pale)
+            bad += bool(r["fails"])
+            verdict = "FAIL " + "; ".join(r["fails"]) if r["fails"] else "PASS"
+            print(f"{verdict}  {p.name}  saturation={r['saturation']}  near_black={r['near_black']:.0%}")
+        return 1 if bad else 0
     return 0
 
 

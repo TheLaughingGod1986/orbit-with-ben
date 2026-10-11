@@ -54,7 +54,8 @@ def upcoming(snapshot: dict, uploads: dict, now: datetime, days: int) -> list[di
             continue
         when = datetime.fromisoformat(at.replace("Z", "+00:00"))
         if now <= when <= now + timedelta(days=days):
-            out.append({"id": v["id"], "title": v.get("title", ""), "publishAt": at, "air": london_date(at), "file": entry.get("file")})
+            out.append({"id": v["id"], "title": v.get("title", ""), "publishAt": at, "air": london_date(at), "file": entry.get("file"),
+                        "length_test": bool(entry.get("lengthTest"))})
     return sorted(out, key=lambda r: r["publishAt"])
 
 
@@ -132,7 +133,9 @@ def main(argv: list[str] | None = None) -> int:
                     lib = code == 0 and in_library(r["id"])
                     if code:
                         details.append(f"### {r['id']}: library add failed\n\n```\n{out[-1500:]}\n```\n")
-                code, out = run([sys.executable, str(GATE), "check", str(f), "--air-date", r["air"], "--id", r["id"]])
+                # The one Chief-OK'd 50-60 s length-test Short (UPLOADS.json "lengthTest": true; AGENTS.md Packaging, 11 Oct 2026)
+                code, out = run([sys.executable, str(GATE), "check", str(f), "--air-date", r["air"], "--id", r["id"]]
+                                + (["--length-test"] if r.get("length_test") else []))
                 used = waived(f, fail_lines(out)) if code else None
                 verdict = "PASS" if code == 0 else ("PASS (waived)" if used else "**FAIL**")
                 if used:

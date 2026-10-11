@@ -26,6 +26,7 @@ Readable copy with the evidence: `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RUL
 - A familiar noun (Moon, Sun, star, sky, Earth, you) in the first four words.
 - **FAIL:** hedged claims ("We may have…", "We could…", "might", "What if…"; a yes/no question starting "Could a…?" is fine), descriptions of what something can do, poetic images, hashtags, series suffixes, a copy of an existing public title, threat framing.
 - Longs: the searched phrase as a question ("What Happens When…", "What Would You See If…"), keyword in the first five words.
+- **News framing is OK on a real new result** (Packaging, 11 Oct 2026): "We Found…", "We Just Saw…", a mission name. Needs a dated result in SOURCES.md; never on an old fact; still no hedge or threat.
 
 ## Long thumbs
 
@@ -35,6 +36,14 @@ Readable copy with the evidence: `00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RUL
 - One heavy capitals font on every thumb. Keep text off the subject and out of the bottom-right corner (duration badge).
 - Same promise as the title. No Orbit (until a Test & Compare on a long with more than 1,000 impressions says otherwise).
 - Set up Test & Compare with 3 variants. Judge CTR only past about 500 impressions.
+
+## Packaging (Astrum study, 11 Oct 2026; THUMBNAIL_AND_TITLE_RULES.md §2.B wins where it differs)
+
+- **Hook text names the object or dares** (THIS IS TRITON, DON'T GO HERE). No vague questions or teasers (WHAT ARE THEY?, HOW LONG?, WHEN THEY MEET). A question only if it names the subject (SIGNAL ON MARS?).
+- **2–3 words in a band across the top** (or a clear edge), **never over the subject.** Keep the yellow hook word, white rest, house font and outline.
+- **Grade harder:** `thumb_preview.py long <thumb> --out <sheet> --score` must PASS: saturation 100+ (target 120; 85+ with `--pale` for the Moon, Europa ice, Saturn), near-black 30% or less.
+- Optional: one small white arrow for a "look at this" discovery, never over the subject's centre.
+- Chief / Orbit Auditor score HOOK, BAND, GRADE, PHONE on every new or rebuilt long thumb; any FAIL goes back before it's set.
 
 ## Shorts
 
