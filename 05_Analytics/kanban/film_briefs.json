@@ -114,10 +114,10 @@
       "limit": ""
     },
     "OWB:024": {
-      "updated": "2026-10-11T18:05Z",
+      "updated": "2026-10-11T22:30Z",
       "mood": "fixing",
-      "done": "Script, voice, thumbnails, the upload package and its own music. v04 has the new music laid in.",
-      "holdup": "v04's music is in, but the Chief failed it on the picture (10 Oct): repeated shots, long freezes, dark graphics and jittery pushes carried over from v03. Cursor fixes them in v05 (J0129), the Chief checks it, then it comes back to you. v04 isn't for you to watch.",
+      "done": "Script, voice, thumbnails, the upload package and its own music. v05 fixed nearly all of the v04 picture: dark frames down to 14%, no freezes, music sitting under the voice.",
+      "holdup": "The Chief failed v05 on two shots only (11 Oct): a clock graphic reused at 7:19 and one starfield shot that runs 26 s at the end and is a repeat. Cursor fixes those two in v05b (J0132), the Chief checks it, then it comes to you. v05 isn't for you to watch.",
       "steps": [
         {
           "who": "Ben",
@@ -134,27 +134,39 @@
         {
           "who": "Cursor",
           "what": "v05: fix the picture the Chief failed in v04",
-          "job": "J0129"
+          "done": true,
+          "doneText": "done · Sun 11 Oct (J0129)"
         },
         {
           "who": "Chief",
           "what": "check v05",
-          "afterJob": "J0129",
+          "done": true,
+          "doneText": "failed on 2 shots · Sun 11 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "v05b: replace the 2 repeated shots",
+          "job": "J0132"
+        },
+        {
+          "who": "Chief",
+          "what": "check v05b",
+          "afterJob": "J0132",
           "lag": 60
         },
         {
           "who": "Ben",
-          "what": "watch v05",
+          "what": "watch v05b",
           "whenText": "after the Chief's check"
         }
       ],
       "you": "",
       "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "Its own music is in. Cursor is fixing the picture in v05 (J0129), then the Chief checks it and it comes back to you.",
+      "line": "v05 is nearly there. Cursor swaps two repeated shots in v05b (J0132), then the Chief checks it and it comes to you.",
       "youWhen": "",
       "youShort": "",
       "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, the Chief's final OK goes ahead.",
-      "watchFrom": "v05"
+      "watchFrom": "v05b"
     },
     "OWB:025": {
       "updated": "2026-10-09T12:58Z",
