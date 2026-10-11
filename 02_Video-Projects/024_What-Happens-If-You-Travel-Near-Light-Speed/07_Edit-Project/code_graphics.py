@@ -61,7 +61,7 @@ VARIANTS = {
     "h": dict(seed=808, gold="#ffab9a", cyan="#8ab8ff", cam=((-0.45, 0.1, 1.05), (0.3, -0.1, 0.87))),
 }
 # bed star count per plate: thin-line plates get fewer, so the stars don't read as grain over the element
-BED_STARS = dict(lightclock=700, energy=1600)
+BED_STARS = dict(lightclock=700, energy=2600)
 # tightest zoom per plate, so its key elements (outer clocks, the muon birth line, GPS bars) stay in frame
 ZMIN = dict(starfield=0.7, lightclock=0.86, energy=0.9, muons=0.99, gpsclocks=0.97, mapdrift=0.8, gammaclocks=0.98,
             twinclocks=0.8, contraction=0.92)

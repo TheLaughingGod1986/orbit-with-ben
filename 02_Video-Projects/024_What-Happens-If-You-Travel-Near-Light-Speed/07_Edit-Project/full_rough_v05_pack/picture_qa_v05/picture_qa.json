@@ -20,7 +20,7 @@
       "t": 331.3,
       "at": "5:31",
       "fail": [
-        "low detail: luma std 12.94 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
+        "low detail: luma std 13.23 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
@@ -35,22 +35,7 @@
       "t": 344.15,
       "at": "5:44",
       "fail": [
-        "low detail: luma std 12.92 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 82,
-      "row": "31",
-      "source": "energy_d.mp4",
-      "title": null,
-      "t": 361.22,
-      "at": "6:01",
-      "fail": [
-        "low detail: luma std 13.24 < 13.44 and edge density 0.0101 < 0.0259 (absolute floor)"
+        "low detail: luma std 13.27 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
@@ -804,7 +789,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 17.11 < 18.0"
+        "low detail: luma std 17.37 < 18.0"
       ],
       "offset": 4.733
     },
@@ -835,6 +820,20 @@
       "offset": null
     },
     {
+      "cut": 82,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "title": null,
+      "t": 361.22,
+      "at": "6:01",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.69 < 18.0"
+      ],
+      "offset": 0.5
+    },
+    {
       "cut": 83,
       "row": "31",
       "source": "energy_d.mp4",
@@ -844,7 +843,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 15.64 < 18.0"
+        "low detail: luma std 15.99 < 18.0"
       ],
       "offset": 4.6
     },
@@ -2027,7 +2026,7 @@
       "t": 331.3,
       "at": "5:31",
       "fail": [
-        "low detail: luma std 12.94 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
+        "low detail: luma std 13.23 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
@@ -2070,7 +2069,7 @@
       "t": 344.15,
       "at": "5:44",
       "fail": [
-        "low detail: luma std 12.92 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
+        "low detail: luma std 13.27 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
@@ -2087,7 +2086,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 17.11 < 18.0"
+        "low detail: luma std 17.37 < 18.0"
       ],
       "offset": 4.733
     },
@@ -2124,11 +2123,10 @@
       "title": null,
       "t": 361.22,
       "at": "6:01",
-      "fail": [
-        "low detail: luma std 13.24 < 13.44 and edge density 0.0101 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.69 < 18.0"
       ],
       "offset": 0.5
     },
@@ -2142,7 +2140,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 15.64 < 18.0"
+        "low detail: luma std 15.99 < 18.0"
       ],
       "offset": 4.6
     },
