@@ -6929,10 +6929,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-11T21:39Z",
+      "eta": "2026-10-12T00:39Z",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -6981,6 +6981,11 @@
           "at": "2026-10-11T21:28Z",
           "by": "cursor",
           "what": "released: Step 3 done (253bc74): new plates for row 5 (DC-8 EC04-0047-004), row 19 (Sahara iss072e068304), row 24 tides break (tidal flats iss026e005121; row 25 tides resumes at 14.2 s so picture_qa sees a new stretch), row 34 (Greenland e000112), row 35 Sun -> Deep Space Atomic Clock PIA24573 (6:38 Sun dissolve gone). New files in pool_v01/{airborne,desert,tide,nist}. Full v01f render running detached: tmux j0130-v01f-render, log ~/_desk/logs/j0130-v01f-render.log, .done ~/_desk/logs/j0130-v01f-render.done (do not start a second copy). OPEN: row 26 Moon e000868 second use @4:50 (quad c) - no real full-res Moon photo found yet (s103e5050 640 px; e001861/e001515 are SVS simulations); needs a real Apollo/telescope Moon plate, then re-run the assembler (it reuses finished segments). Then: picture_qa all pools, near-black count at 2 s, pack commit, [Chief] note on #99."
+        },
+        {
+          "at": "2026-10-11T21:39Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "progress": {
