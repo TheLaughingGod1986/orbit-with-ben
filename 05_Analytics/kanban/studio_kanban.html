@@ -661,7 +661,7 @@ function renderNow(){
     head = `Mac mini is working on ${jobLabel(j)} · ${esc(AGENT(j.by))} since ${clock(ts(j.claimedAt))} · done about <b>${clock(p.done)}</b> (${rel(p.done)})`; }
   else if(part.length){ const j = part[0], p = P[j.id]||{};
     head = `Mac mini is between steps of ${jobLabel(j)} · carries on within 10 min${p.done?` · done about <b>${clock(p.done)}</b>`:""}`; }
-  else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
+  else if(line.some(j=>P[j.id].state!=="gated")){ cls = q && q.quiet ? "asleep" : "idle";
     head = q && q.quiet ? `Mac mini has been quiet for over 3 hours with work waiting; it may be asleep` : `Mac mini is between jobs · the next one starts at its next wake-up (within 10 min)`; }
   else { cls = "idle"; head = "Mac mini has nothing queued"; }
   const next = line.filter(j=>!part.includes(j)).slice(0,3);
@@ -902,7 +902,7 @@ function jobTag(j){
   const h = /^HOS\s+(\d{3})\b/.exec(j.title||""), o = j.film || (/^(\d{3})\b/.exec(j.title||"")||[])[1];
   return h ? `<span class="ch HOS">HOS</span><b>${esc(h[1])}</b> ` : o ? `<span class="ch OWB">OWB</span><b>${esc(o)}</b> ` : "";
 }
-function jobName(j){ return esc(shortTitle(String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,""))); }
+function jobName(j){ return esc(shortTitle(String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s+/,""))); }
 function renderJobs(){
   const box = $("jobsBox"), jobs = fromDb.jobs;
   box.hidden = !jobs;
@@ -917,19 +917,22 @@ function renderJobs(){
   const hm = t => clock(t);
   const items = rows.map(j=>{
     const p = P[j.id]||{}, pd_ = paused(j), chiefLine = lineRank(j)===1;
-    const num = j.status==="blocked" ? "—" : p.state==="now" ? "now" : pd_ ? "now" : p.pos ? `${chiefLine?"C":""}#${p.pos}` : "later";
+    const num = j.status==="blocked" ? "—" : p.state==="now" ? "now" : pd_ ? "now" : p.pos ? `${chiefLine?"C":""}#${p.pos}` : p.state==="gated" ? "gate" : p.start ? "after" : "later";
     const chip = j.status==="blocked" ? '<span class="state block">Blocked</span>' : j.needs==="ben" ? '<span class="state wait">Needs you</span>'
-      : p.state==="now" ? '<span class="state on">Working</span>' : pd_ ? '<span class="state on">Part done</span>' : '<span class="state q">Queued</span>';
+      : p.state==="now" ? '<span class="state on">Working</span>' : pd_ ? '<span class="state on">Part done</span>' : p.state==="gated" ? '<span class="state wait">Date gate</span>' : '<span class="state q">Queued</span>';
     const who = j.status==="claimed" ? AGENT(j.by) : chiefLine ? "Chief" : "Mac mini";
-    const sub = j.status==="blocked" ? `Blocked: ${esc(String(j.result||"no reason given").slice(0,140))}`
+    const dep = (j.waitsFor||j.after) ? jobs.find(x=>x.id===(j.waitsFor||j.after)) : null;
+    const sub = j.status==="blocked" ? `<b>no estimate: blocked</b> · ${esc(String(j.result||"no reason given").slice(0,140))}`
       : p.state==="now" ? `${esc(who)} since ${hm(p.start)} → done about <b>${hm(p.done)}</b> (${rel(p.done)})`
-      : p.start ? `${esc(who)} · ${hm(p.start)} → done about <b>${hm(p.done)}</b> · about ${j.estMin||25} min`
-      : (j.waitsFor||j.after) ? `waits for ${esc(j.waitsFor||j.after)} · ${esc(who)}` : esc(who);
+      : p.state==="gated" ? `${esc(who)} · <b>starts ${hm(p.start)}</b> (date gate) → done about <b>${hm(p.done)}</b>${dep?` · after ${esc(dep.id)}`:""}`
+      : p.start ? `${esc(who)} · ${hm(p.start)} → done about <b>${hm(p.done)}</b> · about ${j.estMin||25} min${dep?` · after ${esc(dep.id)}`:""}`
+      : dep ? `${esc(who)} · <b>no estimate: needs ${esc(dep.id)}</b>${dep.status==="blocked"?" (blocked)":""} first`
+      : `${esc(who)} · <b>no estimate: not in the queue's line yet</b>`;
     return `<li><span class="t">${num}</span><span>${jobTag(j)}${jobName(j)} <span class="mono" style="color:var(--ink-3);font-size:11px">${esc(j.id)}</span></span>${chip}<span class="s">${sub}</span></li>`;
   });
   const recent = (fromDb.recent||[]).slice(0,3).map(j=>`<li class="done"><span class="t">done</span><span>${jobTag(j)}${jobName(j)}</span><span class="state ok">Done</span><span class="s">${esc(AGENT(j.by||""))} · ${j.at?fw(j.at):""}</span></li>`);
   const hosNow = (data&&data.films||[]).flatMap(f=>(data.stages||[]).filter(s=>["doing","blocked"].includes((f.stages[s.key]||{}).status)).map(s=>{
-    const st=f.stages[s.key]; return `<li><span class="t">HOS</span><span><span class="ch HOS">HOS</span><b>${esc(f.id)}</b> ${esc(s.label)}</span>${st.status==="blocked"?'<span class="state block">Blocked</span>':'<span class="state on">In hand</span>'}<span class="s">${esc(st.owner||s.owner||"—")}${st.eta||st.due?` · due ${esc(fd(pd(st.eta||st.due)))}`:""}${st.waiting?` · ${esc(String(st.waiting).slice(0,120))}`:""}</span></li>`; }));
+    const st=f.stages[s.key]; return `<li><span class="t">HOS</span><span><span class="ch HOS">HOS</span><b>${esc(f.id)}</b> ${esc(s.label)}</span>${st.status==="blocked"?'<span class="state block">Blocked</span>':'<span class="state on">In hand</span>'}<span class="s">${esc(st.owner||s.owner||"—")} · ${st.eta||st.due?`<b>done by ${esc(fd(pd(st.eta||st.due)))}</b> <span class="${cdCls(pd(st.eta||st.due))}">(${cd(pd(st.eta||st.due))})</span>`:"<b>no estimate: no due date in PIPELINE.json</b>"}${st.waiting?` · ${esc(String(st.waiting).slice(0,120))}`:""}</span></li>`; }));
   $("jobs").innerHTML = `<ul class="q">${items.join("") || '<li><span class="t">—</span><span>Nothing queued right now.</span></li>'}</ul>`
     + (recent.length ? `<div class="why" style="margin-top:8px"><b>Just finished</b></div><ul class="q">${recent.join("")}</ul>` : "")
     + (hosNow.length && chan!=="OWB" ? `<div class="why" style="margin-top:8px"><b>HOS stages in hand</b> (not queue jobs)</div><ul class="q">${hosNow.join("")}</ul>` : "");
@@ -1068,11 +1071,23 @@ function plan(){
       const dep = j.after && byId[j.after] ? out[j.after] : null;
       if(j.after && byId[j.after] && !dep){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
       if(idx && !(j.id in idx)){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
+      // Date gate (Ben, 11 Oct): a job that can't start before a date starts then and doesn't hold up the rest of its line.
+      const nb = ts(j.notBefore);
+      if(nb > now){ const start = Math.max(nb, dep ? dep.done : 0), done = j.gateOnly ? start : start + (j.estMin||25)*MINUTE;
+        out[j.id] = {state:"gated", start, done, gate:nb, pos: ++pos}; continue; }
       const start = Math.max(t, now + wake, dep ? dep.done + wake : 0);
       const done = start + (j.estMin||25)*MINUTE;
       out[j.id] = {state: dep ? "after" : "line", start, done, pos: ++pos}; t = done;
     }
   }
+  // Chains across lines (a Mac mini job after a Chief job, or after a gate): estimate from the job it waits for.
+  for(let pass=0; pass<5; pass++){ let moved = false;
+    for(const j of jobs){ const o = out[j.id];
+      if(j.status!=="open" || (o && o.state!=="blocked-dep")) continue;
+      const dep = out[j.after]; if(!dep || dep.state==="blocked-dep" || !dep.done) continue;
+      const nb = ts(j.notBefore), start = Math.max(dep.done + (dep.state==="gated" && byId[j.after] && byId[j.after].gateOnly ? 0 : 5*MINUTE), nb>now?nb:0, now+5*MINUTE);
+      out[j.id] = {state: nb>now ? "gated" : "after", start, done: start + (j.estMin||25)*MINUTE, gate: nb>now?nb:null, pos:null}; moved = true; }
+    if(!moved) break; }
   return out;
 }
 function laneQuiet(){

@@ -269,6 +269,57 @@ def line_of(j: dict) -> str:
     return "mini" if j.get("needs") in WORKER_NEEDS else "other"
 
 
+# ---- Date gates (Ben, 11 Oct: "No eta" on a job that can't start before an air date) ----
+# A job's not-before time: its own `not_before` field if it has one, else a date written next to gate words in its title
+# or the top of its body ("mark done on/after Sun 8 Nov 18:00Z", "once ... is public (Sun 8 Nov 18:00Z)"). A trailing Z
+# is UTC; otherwise London time. A job waiting (`after`) on a gated job inherits the gate.
+GATE_WORDS = re.compile(r"date gate|on/after|on or after|not before|only on|go(?:es)?[- ]public|is public|shows as public", re.I)
+GATE_DATE = re.compile(r"\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*"
+                       r"(?:\s+(\d{4}))?\s+(\d{1,2}):(\d{2})\s*(Z|UTC)?")
+MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+
+
+def gate_of(j: dict, today=None) -> str:
+    import datetime as _dt
+    from zoneinfo import ZoneInfo
+    if j.get("not_before"):
+        return str(j["not_before"])
+    for text in (j.get("title") or "", (j.get("body") or "")[:400]):
+        if not GATE_WORDS.search(text):
+            continue
+        m = GATE_DATE.search(text)
+        if not m:
+            continue
+        d, mon, yr, hh, mm, z = m.groups()
+        today = today or _dt.datetime.now(_dt.timezone.utc)
+        year = int(yr) if yr else today.year
+        tz = _dt.timezone.utc if z else ZoneInfo("Europe/London")
+        t = _dt.datetime(year, MONTHS.index(mon[:3]) + 1, int(d), int(hh), int(mm), tzinfo=tz)
+        if not yr and t < today - _dt.timedelta(days=60):
+            t = t.replace(year=year + 1)
+        return t.astimezone(_dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+    return ""
+
+
+def gates(alljobs: list[dict]) -> dict:
+    """{id: not-before ISO} for live jobs, own gate or inherited along `after`."""
+    byid = {j["id"]: j for j in alljobs}
+    out = {}
+
+    def g(j, seen=()):
+        if j["id"] in out:
+            return out[j["id"]]
+        own = gate_of(j)
+        dep = byid.get(j.get("after") or "")
+        inh = g(dep, seen + (j["id"],)) if dep and dep["id"] not in seen and dep.get("status") != "done" else ""
+        out[j["id"]] = max(own, inh)
+        return out[j["id"]]
+    for j in alljobs:
+        if j.get("status") in ("open", "claimed", "blocked"):
+            g(j)
+    return {k: v for k, v in out.items() if v}
+
+
 def run_order(alljobs: list[dict], focus=()) -> dict:
     """{"lines": {"mini": [ids in run order], "chief": [...]}, "pos": {id: {line, pos, waitsFor}}}. pos 0 = in hand now."""
     order = _job_order()
@@ -477,9 +528,11 @@ def main(argv: list[str] | None = None) -> int:
         learn_estimates(alljobs)
         focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
         ro = run_order(alljobs, focus)
+        gate = gates(alljobs)
         live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent", "for")},
                      line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
-                     waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""),
+                     waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),
+                     gateOnly=bool(re.search(r"\bdate gate\b", j.get("title", ""), re.I)),
                      last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
