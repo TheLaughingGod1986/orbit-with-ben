@@ -9,7 +9,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0127 | mini | claimed | cursor | 2026-10-11T23:03Z | 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots |  |
 | J0128 | mini | open | – | – | HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row |  |
 | J0133 | mini | open | – | – | studio · `cursor-auto` · OWB back catalogue: rebuild 5 long thumbs to Packaging §2.B (top band off the subject, harder grade, naming hook), Chief review, then set in Studio |  |
 | J0134 | mini | open | – | – | assembly · `cursor-auto` · 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) |  |
@@ -21,9 +20,9 @@ Recently finished:
 - J0131 cancelled: Orbit Instagram bio link -> Saturn long 55AEQwvs36g (before Mon 11:30) (needs Ben to sign Instagram in on the mini: the Orbit Studio Chrome (CDP 9223) is signed into historyofscienceyt, not orbitwithben; Switch accounts asks for the orbitwithben password. Also, Instagram web now locks the Website field ('Editing your links is only available on mobile'), so even once signed in this likely has to be done in the Instagram app on Ben's phone: Edit profile > Links > https://youtu.be/55AEQwvs36g. Nothing changed on either profile.)
 - J0130 done: 027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats) (v01f pack 9750bf2 (all 6 items; row 26 Apollo 11 Moon). picture_qa/polish/clip_check PASS, near-black 9.4%. Awaiting Chief frame re-check.)
 - J0129 done: 024 Light Speed v05: picture fixes from the Chief's v04 FAIL (repeats, motion, jitter, near-black, seams) + bed hush/duck (v05 pack complete: picture_qa PASS 0/107, polish_gate PASS, clip_check PASS, no hold >=4 s, mix -14.3 LUFS/-1.2 dBTP, bed >=10 LU under VO everywhere, WER 1.49%, music_gate PASS. Posted #99 6113618406. Awaiting Chief review + signature of reviewed_ok_v05.json (2 Omni rows need a ruling).)
+- J0127 done: 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots (description restored to LOCKED v02 (diff verified after reload); end screen + 5:25 card (2fsQcea-voM) screenshots at ~/_desk/scratch/j0127; Studio left on Orbit; report on #99)
 - J0126 done: Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 (done)
 - J0125 done: 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) (v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it.)
 - J0122 cancelled: Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) ()
 - J0121 done: Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) (done)
 - J0120 done: HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10) (qOZgess30h0 scheduled 2026-10-13T10:30Z (cover set via API); 93fPUG-hW0A private; HOS PR #274)
-- J0119 cancelled: 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) ()
