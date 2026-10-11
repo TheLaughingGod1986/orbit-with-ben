@@ -6677,13 +6677,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-11T10:24Z",
-      "eta": "2026-10-11T11:54Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T10:00Z",
-      "result": "",
+      "result": "v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it.",
       "history": [
         {
           "at": "2026-10-11T10:00Z",
@@ -6704,6 +6704,11 @@
           "at": "2026-10-11T10:24Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-11T10:31Z",
+          "by": "cursor",
+          "what": "done: v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it."
         }
       ]
     }

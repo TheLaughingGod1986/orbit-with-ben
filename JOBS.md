@@ -9,10 +9,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0125 | mini | claimed | cursor | 2026-10-11T11:54Z | 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) |  |
 
 Recently finished:
 
+- J0125 done: 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) (v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it.)
 - J0122 cancelled: Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) ()
 - J0121 done: Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) (done)
 - J0120 done: HOS: upload audio-fixed 93fPUG-hW0A copy (sched Tue 13 Oct 11:30) + make silent original Private (Ben OK 10 Oct 21:10) (qOZgess30h0 scheduled 2026-10-13T10:30Z (cover set via API); 93fPUG-hW0A private; HOS PR #274)
@@ -22,4 +22,3 @@ Recently finished:
 - J0116 done: Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) (Cover set in Studio (end-card frame via Select from video; saved, persists). Related NOT set: Studio picker can't find 55AEQwvs36g until it is public Sun 11 Oct 17:00Z; needs a follow-up job between 17:00Z Sun and 10:30Z Mon. Evidence: 021/10_Shorts/monday_saturn_tease/11_Upload-Package/studio_finish_Cka7_TVVOUQ/)
 - J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
 - J0114 done: 026 v05b: fix 7 same-stretch reuses, then Watch link for Ben (v05b in OWB UAT (026_NearestStar_v05b_PHONE.mp4, sha 43f93eec…); picture_qa PASS (0 of 103 fail), music_gate PASS, clip_check PASS, polish PASS; 494.5 s, -14.2 LUFS; card ready for Ben)
-- J0113 done: HOS 010 long voiceover (5 parts) after 009's VO and the Chief's opening OK (J0112); ElevenLabs balance first (5 parts v01, 8:19.8 speech, 3,182 credits (11,984 left); vo_take all PASS; vo_check P01/P04 PASS, P03/P05 small.en-only flags, P02 'had/have floated' at ~0:23 for the Chief's ear; opening wording per J0112 applied; HOS PR #272; keep call with grok on desk #180 (6101770273))
