@@ -21,7 +21,49 @@ One long (8–9 min) on Sunday at 18:00 UK as a **normal publish**. Three Shorts
 
 ## Topic pick — neighbour pass (1 Oct 2026)
 
-Before topic lock: at least three big education/space neighbours (≈1M+ views) on the same subject (`STUDIO_PLAYBOOK.md` §2). Log them in the topic score and pre-build audit. Package with their subject words; never name those channels in the listing. Claude locks the topic on the thread (3 Oct order).
+Before topic lock: at least three big education/space neighbours (≈1M+ views) on the same subject (`STUDIO_PLAYBOOK.md` §2). Log them in the topic score and pre-build audit. Package with their subject words; never name those channels in the listing. Chief locks the topic on the thread (Claude recommends; Chief since 9 Oct).
+
+## Who does what (generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`)
+
+<!-- SYNC: AGENTS.md#Who does what (11 Oct 2026) -->
+Ben, 11 Oct 2026 21:48: *"Make sure all the tasks are correctly dedicated to the correct LLM that can do the job."* Each kind of job goes to the model that does it best, with one backup. The code copy is `scripts/routing.py` (`test_routing.py` checks this table against it), and a queue job carries its kind (`jobs.py add --kind …`). Model ids are the ones configured on the Mac mini on 11 Oct 2026. Never write a model name that isn't installed.
+
+| Job type | `--kind` | Primary | Backup |
+|---|---|---|---|
+| Script writing and fact research | `script` | Claude · `claude-opus-5-5` | Codex · `gpt-6-astra` (draft only; Claude or Chief locks it) |
+| Sources and claims check (SOURCES.md, CLAUDE_CLAIMS) | `facts` | Gemini via `agy` · `gemini-agy`, run by the Mini worker as `<driver>/gemini` | Claude · `claude-opus-5-5` (its quote check against the sources) |
+| Script review, reasoning, KEEP, shot lists, music prompts | `review` | Claude · `claude-opus-5-5` | Codex · `gpt-6-astra` (advisory; Chief decides) |
+| Voice-over | `vo` | ElevenLabs `eleven_v3`, Ben Orbit Narrator, API only (`vo_take.py`), Scribe `scribe_v2` check; run by Cursor | the same, run by Codex. No other voice, ever: out of credit means wait for the reset |
+| Stills, plates and thumbnail art | `image` | Master frame or NASA plate first, else Vertex `gemini-2.5-flash-image` (no text in it); run by Cursor | the same, run by Codex |
+| Charts, graphs, overlays, people cards, date call-outs, thumbnail builders | `chart` | Codex · `gpt-6-astra` (our own code graphics in Python/ffmpeg, one render per row) | Cursor · `cursor-auto` |
+| Video generation | `video` | Vertex Veo `veo-3.1-fast-generate-001` (`veo-3.1-generate-001` for one hero); Orbit only on Omni `gemini-omni-flash-preview`, location `global`; run by Cursor | the same, run by Codex |
+| Picture assembly, ffmpeg, code and tools | `assembly` | Cursor · `cursor-auto` | Codex · `gpt-6.1-sol` |
+| Frame review and QA (after `picture_qa`, `polish_gate`, `music_gate` PASS) | `qa` | Claude · `claude-opus-5-5` looks at every flagged frame | Codex · `gpt-6-astra` (advisory) |
+| Titles, descriptions, tags, SEO | `listing` | Claude · `claude-opus-5-5` (Gemini checks any fact in it) | Codex · `gpt-6-astra` |
+| Studio browser tasks (CDP 9223) | `studio` | Chief · `grok` | Cursor · `cursor-auto` |
+| Merges, final OK, PASS, `AGENTS.md`, the Never list | `chief` | Chief · `grok` | none: parked for Chief |
+
+- **Chief (Grok Bot) owns reviews, PASS, merges, final OKs, `AGENTS.md` and the Never list (Ben, 9–10 Oct).** Claude reviews and recommends; Chief makes the call. **Real money and anything irreversible stay with Ben.**
+- **Failover, then hand back (Ben).** When the primary hits its limit, the backup takes the job. Once the primary is up again, the next job of that kind goes back to it. On the Mini the relay does this by itself: a `chart` job wakes Codex with `-m gpt-6-astra`; if Codex is marked down, Cursor stands in. When Claude hits its usage limit (`ai_spend.py record --pool claude --note …`), Chief re-adds its waiting `script`, `review`, `qa` or `listing` job as `--kind <kind> --for codex`, then back to Claude after its reset.
+- **A stand-in never makes a protected call:** no final OK or PASS, no merge, no change to `AGENTS.md` or the Never list, no spend past the written rules, nothing irreversible. It parks the job for Chief: `jobs.py block <id> --agent <you> --reason "parked for Chief: …" --git`.
+- **"GPT-Astra" is Codex's `gpt-6-astra`.** It's a reasoning and coding model on Ben's Codex plan, not an image generator. It writes the code that draws our charts, overlays and thumbnail text. Pixels come from Vertex (above). `gpt-image-2` (the July 001/002 thumbnail tests) would need a paid OpenAI API key, so it stays off unless Ben turns it on.
+
+| Agent | Where | Runs |
+|---|---|---|
+| **Chief (Grok Bot)** | Mac mini app | The calls above. Drives the Mini, Studio and the studio thread. Agent id `chief` (its heartbeat). |
+| **Claude** | Cloud sessions (Claude Code is also on the Mini, but the relay doesn't wake it) | `claude-opus-5-5`: scripts, reviews, shot lists, music prompts, listings, the tracker and board page. |
+| **Cursor** | Mac mini (`agent` CLI, model Auto) | The first Mini worker: assembly, VO and picture runs, Studio stand-in. Next in line for acting Chief (see "Chief relay"). |
+| **Codex** | Mac mini (`codex` CLI 0.160) | `gpt-6-astra` for charts and graphics and as Claude's backup; `gpt-6.1-sol` (its default) for code. Third in line for acting Chief. |
+| **Gemini** | Mac mini (Antigravity `agy`) | **The second check on facts and numbers.** Drafts `01_Script/SOURCES.md` with exact quotes and links, verifies every row of Claude's `CLAUDE_CLAIMS` file, and flags errors. It never rewrites spoken lines (Claude's call). Not in the relay chain: whoever is the Mini worker runs it. No spend. |
+| **Ben** | | Real money, things only he can do (his voice, logins, devices), and changes of direction. |
+
+Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Mini worker or Chief starts it, so a script waiting on sources is the Chief's job to kick off.
+
+**Quotes must be real (8 Oct 2026).** On 029, Gemini presented a sentence as an exact quote ("bright enough to cast crisp shadows") that is not in the paper it cited. So:
+- Every quote in `SOURCES.md` carries the URL of the page it was copied from (an abstract, a press release or a paper page). A quote that can't be found on that page is a **FLAG**, not OK.
+- Before any script is locked for VO, Claude checks the key spoken numbers (every MUST QUOTE row) against the sources directly and records it in `01_Script/CLAUDE_QUOTE_CHECK_vNN.md`. A spoken line whose quote doesn't hold up is cut or softened, never kept on trust.
+- The VO job waits (`--after`) on a cloud "lock script" job, not on the Gemini job, so the Mini never claims a take before the lock.
+<!-- /SYNC -->
 
 ## Teach on screen (generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`)
 
@@ -69,7 +111,7 @@ A Short is scored on 5 and 6 only, plus whichever of 1–4 its single overlay is
 <!-- SYNC: AGENTS.md#Stop and ask Ben -->
 **Chief owns the studio (Ben's handover to Chief, 9 Oct 2026; Ben, 10 Oct 2026: *"I should not need to give permission all the time"*).** Wherever this file says Claude decides, OKs, gives the final OK or makes an exception, Chief (Grok Bot) now holds that call in place of Claude. A Chief OK is a plain "[Chief]" post on #99 or HOS #180, or a job added `--by chief`; a job brief saying "Ben approved (relayed by Chief)" counts as Ben's word. Workers act on either and never ask Ben to re-post an OK on #99. Ben is asked only for real money (past £0) and what truly can't be undone; deleting a video stays on the Never list.
 
-**Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
+**Standing order: ask Chief first, not Ben** (Ben, 3 Oct 2026, to Claude: *"Instead of asking me, always ask Claude first."* Chief has held that role since 9 Oct). Anything that used to be marked NEEDS BEN goes to Chief on the PR #99 thread first; Claude's review and recommendation come with it. Chief decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
 1. **Spending money:** any top-up, new paid service or plan (see Budget).
 2. **Anything irreversible:** anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Chief can OK it. **Making a public Orbit or HOS video private is Chief's call** (Ben to Claude, 5 Oct 2026; Chief since 9 Oct): a takedown is always done by making the video private, because private can be undone, with the reason on the thread and Ben told.

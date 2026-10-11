@@ -139,18 +139,40 @@ A Short is scored on 5 and 6 only, plus whichever of 1–4 its single overlay is
 
 Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOOK.md` §2: at least **three** big education/space videos (≈1M+ views) on the same subject, logged in `templates/TOPIC_OPPORTUNITY_SCORE.md` and `PRE_BUILD_VIDIQ_AUDIT.md`. Use their subject words for description first lines and tags — **never** put channel names in the listing. A strong neighbour pool is evidence for Ben; it does not pick the topic for him. Orbit only — do not apply HOS packaging habits here.
 
-## Who does what (7 Oct 2026)
+## Who does what (11 Oct 2026)
 
-| Agent | Where | Does |
+Ben, 11 Oct 2026 21:48: *"Make sure all the tasks are correctly dedicated to the correct LLM that can do the job."* Each kind of job goes to the model that does it best, with one backup. The code copy is `scripts/routing.py` (`test_routing.py` checks this table against it), and a queue job carries its kind (`jobs.py add --kind …`). Model ids are the ones configured on the Mac mini on 11 Oct 2026. Never write a model name that isn't installed.
+
+| Job type | `--kind` | Primary | Backup |
+|---|---|---|---|
+| Script writing and fact research | `script` | Claude · `claude-opus-5-5` | Codex · `gpt-6-astra` (draft only; Claude or Chief locks it) |
+| Sources and claims check (SOURCES.md, CLAUDE_CLAIMS) | `facts` | Gemini via `agy` · `gemini-agy`, run by the Mini worker as `<driver>/gemini` | Claude · `claude-opus-5-5` (its quote check against the sources) |
+| Script review, reasoning, KEEP, shot lists, music prompts | `review` | Claude · `claude-opus-5-5` | Codex · `gpt-6-astra` (advisory; Chief decides) |
+| Voice-over | `vo` | ElevenLabs `eleven_v3`, Ben Orbit Narrator, API only (`vo_take.py`), Scribe `scribe_v2` check; run by Cursor | the same, run by Codex. No other voice, ever: out of credit means wait for the reset |
+| Stills, plates and thumbnail art | `image` | Master frame or NASA plate first, else Vertex `gemini-2.5-flash-image` (no text in it); run by Cursor | the same, run by Codex |
+| Charts, graphs, overlays, people cards, date call-outs, thumbnail builders | `chart` | Codex · `gpt-6-astra` (our own code graphics in Python/ffmpeg, one render per row) | Cursor · `cursor-auto` |
+| Video generation | `video` | Vertex Veo `veo-3.1-fast-generate-001` (`veo-3.1-generate-001` for one hero); Orbit only on Omni `gemini-omni-flash-preview`, location `global`; run by Cursor | the same, run by Codex |
+| Picture assembly, ffmpeg, code and tools | `assembly` | Cursor · `cursor-auto` | Codex · `gpt-6.1-sol` |
+| Frame review and QA (after `picture_qa`, `polish_gate`, `music_gate` PASS) | `qa` | Claude · `claude-opus-5-5` looks at every flagged frame | Codex · `gpt-6-astra` (advisory) |
+| Titles, descriptions, tags, SEO | `listing` | Claude · `claude-opus-5-5` (Gemini checks any fact in it) | Codex · `gpt-6-astra` |
+| Studio browser tasks (CDP 9223) | `studio` | Chief · `grok` | Cursor · `cursor-auto` |
+| Merges, final OK, PASS, `AGENTS.md`, the Never list | `chief` | Chief · `grok` | none: parked for Chief |
+
+- **Chief (Grok Bot) owns reviews, PASS, merges, final OKs, `AGENTS.md` and the Never list (Ben, 9–10 Oct).** Claude reviews and recommends; Chief makes the call. **Real money and anything irreversible stay with Ben.**
+- **Failover, then hand back (Ben).** When the primary hits its limit, the backup takes the job. Once the primary is up again, the next job of that kind goes back to it. On the Mini the relay does this by itself: a `chart` job wakes Codex with `-m gpt-6-astra`; if Codex is marked down, Cursor stands in. When Claude hits its usage limit (`ai_spend.py record --pool claude --note …`), Chief re-adds its waiting `script`, `review`, `qa` or `listing` job as `--kind <kind> --for codex`, then back to Claude after its reset.
+- **A stand-in never makes a protected call:** no final OK or PASS, no merge, no change to `AGENTS.md` or the Never list, no spend past the written rules, nothing irreversible. It parks the job for Chief: `jobs.py block <id> --agent <you> --reason "parked for Chief: …" --git`.
+- **"GPT-Astra" is Codex's `gpt-6-astra`.** It's a reasoning and coding model on Ben's Codex plan, not an image generator. It writes the code that draws our charts, overlays and thumbnail text. Pixels come from Vertex (above). `gpt-image-2` (the July 001/002 thumbnail tests) would need a paid OpenAI API key, so it stays off unless Ben turns it on.
+
+| Agent | Where | Runs |
 |---|---|---|
-| **Claude** | Cloud sessions | Scripts, reviews, shot lists, code and tools, the channel tracker. Can't reach the Mini. Final OKs and the Never list moved to Chief (Ben, 9 Oct). |
-| **Chief (Grok Bot)** | Mac mini | **Owns the studio, `AGENTS.md`, the Never list and final OKs (Ben, 9–10 Oct).** First in line for Chief. Runs the Mini: picture, edit, uploads, Studio jobs. Drives Gemini and the assembler. Posts on the studio thread. |
-| **Cursor** | Mac mini (`agent` CLI) | Code on the Mini. **Next in line for Chief** (see "Chief relay"): while Grok is out, the relay wakes it to do one job at a time as acting Chief (checks every 10 min; wakes it only when a job is queued, plus a sweep every 2 h). |
-| **Codex** | Mac mini (`codex` CLI) | **Third in line for Chief:** acts as Chief when Grok and Cursor are both down. Otherwise code jobs when Ben starts it. |
-| **Gemini** | Mac mini (Antigravity `agy` CLI) | **The second check on facts and numbers.** Drafts `01_Script/SOURCES.md` with exact quotes and links, verifies every row of Claude's `CLAUDE_CLAIMS` file, and flags errors. It never rewrites spoken lines (Claude's call). Run by whoever is Chief; claims as `<driver>/gemini` (e.g. `chief/gemini`, `cursor/gemini`). No spend. |
-| **Ben** | | Real money, things only he can do, and changes of direction. |
+| **Chief (Grok Bot)** | Mac mini app | The calls above. Drives the Mini, Studio and the studio thread. Agent id `chief` (its heartbeat). |
+| **Claude** | Cloud sessions (Claude Code is also on the Mini, but the relay doesn't wake it) | `claude-opus-5-5`: scripts, reviews, shot lists, music prompts, listings, the tracker and board page. |
+| **Cursor** | Mac mini (`agent` CLI, model Auto) | The first Mini worker: assembly, VO and picture runs, Studio stand-in. Next in line for acting Chief (see "Chief relay"). |
+| **Codex** | Mac mini (`codex` CLI 0.160) | `gpt-6-astra` for charts and graphics and as Claude's backup; `gpt-6.1-sol` (its default) for code. Third in line for acting Chief. |
+| **Gemini** | Mac mini (Antigravity `agy`) | **The second check on facts and numbers.** Drafts `01_Script/SOURCES.md` with exact quotes and links, verifies every row of Claude's `CLAUDE_CLAIMS` file, and flags errors. It never rewrites spoken lines (Claude's call). Not in the relay chain: whoever is the Mini worker runs it. No spend. |
+| **Ben** | | Real money, things only he can do (his voice, logins, devices), and changes of direction. |
 
-Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Chief (or whoever is acting Chief) starts it, so a script waiting on sources is the Chief's job to kick off.
+Every script gets a Gemini source and claims pass before VO is locked. Gemini only runs when the Mini worker or Chief starts it, so a script waiting on sources is the Chief's job to kick off.
 
 **Quotes must be real (8 Oct 2026).** On 029, Gemini presented a sentence as an exact quote ("bright enough to cast crisp shadows") that is not in the paper it cited. So:
 - Every quote in `SOURCES.md` carries the URL of the page it was copied from (an abstract, a press release or a paper page). A quote that can't be found on that page is a **FLAG**, not OK.
@@ -168,7 +190,7 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 | Codex | `mini,gemini,any` |
 | Claude | `cloud,any` |
 
-- **Claude adds every task as a job:** `jobs.py add --needs mini|gemini|cloud|ben|any --title … --body-file … [--film NNN --stage …] [--after Jnnnn] [--ref <thread comment>] --by claude --git`. The thread carries the discussion and links the job id. To ask one agent by name (a second opinion from Codex, say), add `--for codex`: only that agent can claim the job, and the relay wakes it ahead of the acting Chief.
+- **Claude adds every task as a job:** `jobs.py add --needs mini|gemini|cloud|ben|any --kind <Who does what kind> --title … --body-file … [--film NNN --stage …] [--after Jnnnn] [--ref <thread comment>] --by claude --git`. The thread carries the discussion and links the job id. To ask one agent by name (a second opinion from Codex, say), add `--for codex`: only that agent can claim the job, and the relay wakes it ahead of the acting Chief.
 - **Every agent, at the start of every session and every loop:** `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. It returns the job you already hold, or claims the next one you can do: quick jobs (`--eta` 60 or less) first, then oldest first. Exit 10 means nothing is waiting. Then `done`, `block --reason` (anything needing Ben), `release --note` at a stopping point, or `renew --eta N` if you're still on it.
 - **A claim past its ETA is stalled,** and the next able agent takes it over. So don't sit on a claim; release it if you stop.
 - A job with `--film/--stage` claims that board stage too, so the board and the queue always agree.
@@ -187,6 +209,7 @@ Ben: the Chief of Staff is in charge, and when it's down or out of credit the ne
 - **Long work outlives the 25-minute run:** renders, big downloads and batches start detached in `tmux` with a log and a `.done` file. The run releases the job with a note naming them, and the next run checks the `.done` file. Never start a second copy of a render that's still running.
 - **If the Mini goes quiet:** Claude's 2-hourly check runs `jobs.py watch`. If Mini work is waiting and nothing has touched the queue for 3 hours, it posts here and pushes Ben's phone once. It also pushes Ben when a job needs him or is blocked on him.
 - **Acting Chief** uses its own agent id everywhere (`--agent cursor`, `--by codex`), never `chief`. Only Grok Bot is `chief`, because that id is Grok's heartbeat. Its reports start "<Name> covering".
+- **Routing (11 Oct 2026):** before it wakes a worker, the relay reads the next job's `kind` (or `model`) and wakes the worker whose model does it best ("Who does what"), passing Codex its model with `-m`. If that worker is down, the other stands in, and the relay goes back to the primary for the next job once it's up.
 
 ## Studio board and claims (5 Oct 2026)
 
@@ -214,7 +237,7 @@ The Synology share (`/Volumes/data/mac-mini-archive/`) is the archive, and often
 
 **Chief owns the studio (Ben's handover to Chief, 9 Oct 2026; Ben, 10 Oct 2026: *"I should not need to give permission all the time"*).** Wherever this file says Claude decides, OKs, gives the final OK or makes an exception, Chief (Grok Bot) now holds that call in place of Claude. A Chief OK is a plain "[Chief]" post on #99 or HOS #180, or a job added `--by chief`; a job brief saying "Ben approved (relayed by Chief)" counts as Ben's word. Workers act on either and never ask Ben to re-post an OK on #99. Ben is asked only for real money (past £0) and what truly can't be undone; deleting a video stays on the Never list.
 
-**Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
+**Standing order: ask Chief first, not Ben** (Ben, 3 Oct 2026, to Claude: *"Instead of asking me, always ask Claude first."* Chief has held that role since 9 Oct). Anything that used to be marked NEEDS BEN goes to Chief on the PR #99 thread first; Claude's review and recommendation come with it. Chief decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
 1. **Spending money:** any top-up, new paid service or plan (see Budget).
 2. **Anything irreversible:** anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Chief can OK it. **Making a public Orbit or HOS video private is Chief's call** (Ben to Claude, 5 Oct 2026; Chief since 9 Oct): a takedown is always done by making the video private, because private can be undone, with the reason on the thread and Ben told.

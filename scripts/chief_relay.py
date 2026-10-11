@@ -58,6 +58,10 @@ import sys
 HOME = pathlib.Path.home()
 STATE = pathlib.Path(os.environ.get("DESK_STATE", HOME / "_desk" / "state"))
 OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and model)
+
+
 def first_dir(*cands) -> pathlib.Path:
     return next((c for c in cands if c.is_dir()), cands[0])
 
@@ -147,8 +151,9 @@ def find_bin(env: str, name: str):
     return next((c for c in cands if c and os.access(c, os.X_OK)), None)
 
 
-def cli_spec(agent: str):
-    """(binary, args) for a CLI agent, or None if it isn't installed."""
+def cli_spec(agent: str, model: str = ""):
+    """(binary, args) for a CLI agent, or None if it isn't installed. `model` (from scripts/routing.py, AGENTS.md "Who
+    does what") is passed to Codex as `-m`; Cursor stays on its own Auto setting."""
     if agent == "cursor":
         b = find_bin("CURSOR_AGENT_BIN", "agent")
         flags = os.environ.get("CURSOR_AGENT_FLAGS", "-p --force")
@@ -164,6 +169,8 @@ def cli_spec(agent: str):
             log("CODEX_FLAGS is set in the environment and ignored; the flags come from cli_spec()")
         flags = (f"exec --approve-for-me -c sandbox_workspace_write.network_access=true "
                  f"--add-dir {shlex.quote(str(HOS))} --add-dir {shlex.quote(str(STATE.parent))}")
+        if model.startswith("gpt-"):
+            flags = flags.replace("exec ", f"exec -m {shlex.quote(model)} ", 1)
     else:
         return None
     return (b, shlex.split(flags)) if b else None
@@ -274,6 +281,10 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    you don't rewrite its findings or any spoken line.
 5. Report: OWB with  python3 scripts/owb_thread.py post "..."  (start with "{name} covering"); HOS with
    hos_desk.py post --from {agent} --to claude ...  Say what you did, what's next, and what blocks you.
+You are a stand-in for Grok Bot (the Chief): never make a protected call yourself. No final OK or PASS, no merge, no
+   change to AGENTS.md or the Never list, no spend past the written rules, nothing irreversible. Park it for Chief with
+   jobs.py block <id> --agent {agent} --reason "parked for Chief: <what needs deciding>" --git  and say so in your report.
+   Each job's `kind` says which model does it best (AGENTS.md "Who does what"); do your part and leave the rest as a job.
 Your run is killed at 25 minutes. Anything that takes longer (a full render, a big download, a batch of picture jobs):
 start it detached so it outlives you, e.g.
    tmux new -d -s <job>-render "cd <dir> && <command> > ~/_desk/logs/<job>-render.log 2>&1; echo $? > ~/_desk/logs/<job>-render.done"
@@ -306,10 +317,10 @@ def notify(text: str) -> bool:
     return True
 
 
-def run_cli(agent: str, prompt: str, cap_s: int) -> tuple:
+def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     """(exit code, tail of output). Exit 124 = killed at the cap. The whole process group is killed, so a CLI's
     child processes don't outlive the cap."""
-    b, args = cli_spec(agent)
+    b, args = cli_spec(agent, model)
     # The exact command, minus the prompt, so a usage error (exit 2) can be matched to its flags. Flags hold no secrets.
     log(f"cmd: {b} {' '.join(shlex.quote(a) for a in args)} <prompt>" + (" (flags from the env)" if os.environ.get(
         {"cursor": "CURSOR_AGENT_FLAGS"}.get(agent, "")) else ""))
@@ -429,6 +440,37 @@ def addressed_to(agent: str) -> list:
     return [j["id"] for j in q.get("jobs", []) if j.get("for") == agent and j.get("status") == "open"]
 
 
+def next_job(agent: str):
+    """The queue job `agent` would get next (the one it holds, else the next claimable Mini job), or None."""
+    try:
+        import jobs  # noqa: E402  (jobs imports this module; by now it's loaded)
+        data = jobs.load(OWB / "jobs" / "queue.json")
+        at = jobs.now()
+        held = next((j for j in data["jobs"] if j.get("by") == agent and j.get("status") == "claimed"), None)
+        if held:
+            return held
+        return next((j for j in sorted(data["jobs"], key=lambda j: jobs.order(j, data.get("focus") or ()))
+                     if jobs.claimable(data, j, jobs.MINI_NEEDS, at, agent)), None)
+    except Exception as e:  # an unreadable queue never stops a run: the worker just gets its default model
+        log(f"routing: queue not readable ({e.__class__.__name__}); default worker and model")
+        return None
+
+
+def route_worker(who: str, rows) -> tuple:
+    """(worker, model) for the next job (AGENTS.md "Who does what", Ben 11 Oct 2026): a job whose kind/model belongs
+    to the other Mini worker wakes that one if it's up (a chart job wakes Codex on gpt-6-astra). If it's down, `who`
+    stands in, and the next job of that kind goes back to the primary once it's up (failover, then hand back)."""
+    up = {a for a, ok, _ in rows if ok}
+    job = next_job(who)
+    if job and not job.get("for"):
+        pref = routing.preferred_worker(job)
+        if pref and pref != who and pref in up:
+            log(f"routing: {job['id']} ({job.get('kind') or job.get('model')}) goes to {pref}, its primary")
+            who = pref
+            job = next_job(who) or job
+    return who, (routing.model_for(job, who) if job else "")
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
@@ -480,12 +522,15 @@ def run_locked(at: dt.datetime) -> int:
                    "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
                    "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
                    "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
+        model = ""
+        if not addressed and who in ("cursor", "codex"):
+            who, model = route_worker(who, rows)
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS)
-        log(f"run: {who} (cap {cap}s)")
+        log(f"run: {who}{' on ' + model if model else ''} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for one job (cap {cap // 60} min)")
         seen(who, at)
-        code, tail = run_cli(who, prompt, cap)
+        code, tail = run_cli(who, prompt, cap, model)
         log(f"done: {who} exit {code}")
         if out_of_credit(code, tail):
             until = now() + dt.timedelta(hours=retry_h)

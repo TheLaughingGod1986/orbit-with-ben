@@ -529,7 +529,7 @@ def main(argv: list[str] | None = None) -> int:
         focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
         ro = run_order(alljobs, focus)
         gate = gates(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent", "for")},
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model")},
                      line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
                      waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),
                      gateOnly=bool(re.search(r"\bdate gate\b", j.get("title", ""), re.I)),
