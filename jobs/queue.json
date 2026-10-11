@@ -1,5 +1,5 @@
 {
-  "next_id": 141,
+  "next_id": 142,
   "jobs": [
     {
       "id": "J0001",
@@ -7454,6 +7454,33 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0141",
+      "title": "026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**026 Nearest Star Shorts: Orbit Desk test (Chief OK, 12 Oct 2026). Assembly level only. No VO, picture or credit spend.**\nSource: Orbit Creator's pack `026_shorts_pack_v01.md` (read on main `90f223f`). Shorts: `10_Shorts/mon16_cant_see_nearest_star`, `wed18_robot_reach_nearest_star`, `fri20_grapefruit_cherry` (Mon 16 / Wed 18 / Fri 20 Nov, 11:30 London).\n\n**DEPENDENCY: don't render until the 026 long has a real upload id.** The long (`How Far Is the Nearest Star?`, Sun 15 Nov 18:00) isn't uploaded yet, and no upload job exists. This job is held (blocked) until it has an id in UPLOADS.json / the upload result; Chief reopens it then. Never render a card with a placeholder id.\n\n1. **Titles (listing and on-screen):**\n   - Mon: \"If You Can't See the Nearest Star, How Far Away Is It?\"\n   - Wed: \"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\"\n   - Fri: \"The Nearest Star Is a Cherry Past Cairo. How Do We Know?\"\n   These replace Claude's 6 Oct titles. The on-screen title at 9–14 s must match the listing title exactly.\n2. **End card, over the last ~4 s.** It holds at least 2 s past the last VO word and stays readable through the final frame. Contents: the long's thumb A (`08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg`, \"YOU CAN'T SEE IT\", unaltered), the exact long title `How Far Is the Nearest Star?` in white, and the long's real upload id in yellow. All of it sits inside the 16:9 centre band (layout in pack §1.3). No Orbit.\n   Quote line, word for word from the long's VO:\n   - Mon: \"Your two eyes are a ruler.\" (long VO ~2:21)\n   - Wed: \"Could we ever go and look?\" (~7:00)\n   - Fri: a small \"VOYAGER\" label above \"It has barely left the town.\" (~5:10)\n3. **Loop exception (Chief OK, 12 Oct):** on these three Shorts only, the end card replaces the last-3-s loop back to the open. The loop rule stands everywhere else.\n4. **VO stays locked** (`_vo_v01_LOCK`): no re-voicing, no new VO line, **no trim on Wed** (its take is 21.60 s; a trim would break 22 s). The Wed myth-bust at ~0:11–0:15 is logged as soft borderline, not FAIL.\n5. **026 long: no Studio Test & Compare during its Shorts week**, so the long shows thumb A, matching the card. (Thumb testing stays on 024.)\n\n**Pass conditions (Orbit Auditor's checks):**\n- each card quote's timestamp measured in the final long cut, not the VO file; any moved quote logged with its new time;\n- every Short runs 22 s or more (locked takes Mon 24.48, Wed 21.60, Fri 20.64 s; Wed and Fri clear 22 s only through the end-card hold);\n- the on-screen title at 9–14 s matches the listing title exactly;\n- the card shows thumb A, the exact long title, a yellow id from the real upload, and the Fri \"VOYAGER\" label.\nMeasure: the 026 long's day-7 views against Mars (025). Mars week stays unchanged as the control.\n",
+      "ref": "026_shorts_pack_v01.md (Orbit Creator, main 90f223f)",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T23:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T23:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [

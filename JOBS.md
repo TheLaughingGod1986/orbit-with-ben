@@ -17,6 +17,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0138 | mini | open (starts 09:00) | – | – | video · HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05 |  |
 | J0139 | any | open (after J0138) | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
 | J0140 | mini | open (after J0139) | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
+| J0141 | mini | open | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 
 Recently finished:
 
