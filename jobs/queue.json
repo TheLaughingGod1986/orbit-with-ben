@@ -1,5 +1,5 @@
 {
-  "next_id": 125,
+  "next_id": 126,
   "jobs": [
     {
       "id": "J0001",
@@ -6662,6 +6662,32 @@
         {
           "at": "2026-10-11T00:58Z",
           "by": "cursor",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0125",
+      "title": "023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Apply Ben's UAT fixes to OWB 023 Venus v05d -> v05e. Fixes are listed in OWB #99 comment 6107826583: label the planets at 5:53/6:01; at 7:16 make clear a probe landed, not people; at 7:40/7:50 give the dates of the new missions. Re-render, then update OWB UAT/023_Venus_v05e_PHONE.mp4 and put the Watch link on the board card. Chief OK (relayed Ben UAT notes). Post a [Chief] note on #99 when done.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T10:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T10:00Z",
+          "by": "chief",
           "what": "added"
         }
       ]
