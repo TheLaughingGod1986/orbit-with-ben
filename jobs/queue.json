@@ -1,5 +1,5 @@
 {
-  "next_id": 142,
+  "next_id": 143,
   "jobs": [
     {
       "id": "J0001",
@@ -7466,6 +7466,33 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T23:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T23:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0142",
+      "title": "027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**027 Earth Stopped Spinning: open the long on the end-card hero picture (Orbit Desk test, Chief OK, 12 Oct 2026). No credit.**\nBase: rough v01f (`07_Edit-Project/_assemble_earth_spin_rough_v01f.py`, `rough_v01f_pack/`).\n\n1. Re-cut the long's first 10 s so it opens on the same hero picture that 027's Shorts' end cards will use, which is 027's thumb A image. Use **existing plates only** (pool_v01f), with no new generation and no credit. VO unchanged; the line-1 claim and the 0:30 answer rules still hold.\n2. 027 has no thumbnails yet. If thumb A doesn't exist when you start, pick the hero frame from the existing plates, note it as the proposed thumb A base, and the thumbnail job builds from it.\n3. **If no existing plate fits:** don't generate anything. Add the hero shot to 027's shot list (`07_Edit-Project/SHOT_LIST_v02.md`) before any new picture is made, then **block this job \"parked for Chief: 027 hero shot added to shot list, needs a plate\"**.\n4. Re-run picture_qa / polish_gate / music_gate on the re-cut, and the frame-review pack as usual.\nPass (Orbit Auditor): frame similarity between the end-card hero and the long's 0–10 s; no Orbit; the subject is in the first sentence. Measure: the 027 long's day-7 views. Mars week (025) stays unchanged as the control.\n",
+      "ref": "",
+      "film": "027",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
       "status": "open",
       "by": "",
       "since": "",
