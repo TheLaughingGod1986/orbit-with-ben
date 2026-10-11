@@ -13,6 +13,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0133 | mini | open | – | – | studio · `cursor-auto` · OWB back catalogue: rebuild 5 long thumbs to Packaging §2.B (top band off the subject, harder grade, naming hook), Chief review, then set in Studio |  |
 | J0134 | mini | open | – | – | assembly · `cursor-auto` · 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) |  |
 | J0135 | mini | open (after J0123) | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
+| J0136 | mini | open | – | – | studio · `cursor-auto` · OWB no-cover-text Test & Compare on JWST ziKBPJ6FY0U (A live vs B no text), parked for Chief review before setting (Reference lessons 5a; test, not a rule change) |  |
 
 Recently finished:
 

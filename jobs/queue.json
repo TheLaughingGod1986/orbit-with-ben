@@ -1,5 +1,5 @@
 {
-  "next_id": 136,
+  "next_id": 137,
   "jobs": [
     {
       "id": "J0001",
@@ -7245,6 +7245,34 @@
       "history": [
         {
           "at": "2026-10-11T22:29Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "model": "cursor-auto"
+    },
+    {
+      "id": "J0136",
+      "title": "OWB no-cover-text Test & Compare on JWST ziKBPJ6FY0U (A live vs B no text), parked for Chief review before setting (Reference lessons 5a; test, not a rule change)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**No-cover-text Test & Compare (Reference lessons 5a, Chief OK 11 Oct 2026). A test, not a rule change.** SEA's two fastest longs have no cover text at all. One Orbit long tests the same idea.\n\n- **Long: JWST `ziKBPJ6FY0U`** (*JWST Found Galaxies That Shouldn't Exist Yet*). The glowing galaxies are already the hook, and no Test & Compare is on record for it.\n  - Not one of the five J0133 longs, nor Moon `2fsQcea-voM` or Alien Worlds `b8-X_FyJnHM` (J0099 tests running), Mars `Js6EQJ8qDi8` or Sun `h8HGfyShEHI` (A/B/C set).\n  - **Fallback: Jupiter `-jmMROGoZCM`.** Use it only if Studio shows a test already running on JWST. If both have one, block with the reason. Never press Continue on \"Run a new test?\".\n- **Build B** = the live thumb's plate with **no text at all**, same crop and grade.\n  - Rebuild it from the clean plate (the builder under `00_Brand/Channel-Setup/tools/` or the film's `08_Thumbnail/`).\n  - Never inpaint text away with an image model, and spend nothing. If no clean plate exists, block with \"parked for Chief: no clean plate\".\n  - Save the live thumb as A (`https://i.ytimg.com/vi/<id>/maxresdefault.jpg`) to `~/_desk/notext_tc_1011/` with sha256 values, for rollback.\n  - `thumb_preview.py long <A> <B> --out <sheet> --score` (B gets no text-size check).\n- **Review:** post the A/B sheet and the score lines on #99, then run `jobs.py block <this id> --agent <you> --reason \"parked for Chief: no-text T&C review\" --git`.\n- **After the Chief's OK:** in Orbit Studio (CDP 9223; check the channel is `UC_esArsDKd3GJvOkeO0DUog`), open Test & Compare, choose **Thumbnail only**, and set A = live and B = no-text.\n  - Image-only inputs. Don't touch the title, schedule or privacy.\n  - Reload, and confirm \"Running…\".\n  - Record it in `00_Brand/Channel-Setup/audits/THUMB_AUDIT_2026-10-09/notext_test_compare.json`, like `j0099_test_compare.json`.\n- **Read:** past about 500 impressions, or when YouTube names a winner. The Orbit Auditor reports it. The yellow-word rule stands until Chief changes it in AGENTS.md.\n- **Done:** post a [Cursor] note on #99 with the id, the variants and the result.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T22:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T22:50Z",
           "by": "chief",
           "what": "added"
         }
