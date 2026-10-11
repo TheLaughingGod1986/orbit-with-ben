@@ -6812,10 +6812,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-11T19:06Z",
+      "eta": "2026-10-11T23:06Z",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -6854,6 +6854,11 @@
           "at": "2026-10-11T18:56Z",
           "by": "cursor",
           "what": "released: Step 3 of v05 (f15511a9): _assemble_light_speed_full_v05.py written, --plan PASS (107 cuts, every code graphic run on its own graphics_v05 variant + stretch >=10 s from any other, no clone pad; 1:46-2:39 = 4 lightclock variants + NHQ ISS 1200 s + Artemis I 500 s; Earth Views 5 stretches; row 18 + row 35 end moved to Artemis I stretches 620/800 s; stills via still_motion.push; ACS3_LookingDown right panel). Render detached: tmux light024-v05-render, log ~/_desk/logs/light024-v05-render.log, done-file ~/_desk/logs/light024-v05-render.done; writes /private/tmp/024_LightSpeed_full_rough_v05.mp4, OWB UAT/024_LightSpeed_v05_PHONE.mp4 and full_rough_v05_pack/. Next when done: picture_qa (cuts_v05.json) + polish_gate; check ART 500/620/800 s and NHQ 1200 s frames on per_row_sheet fit their lines; then audio items 6-7 (hush +3 dB at 3:48-4:13, ebur128 VO-vs-bed gate, duck where <10 LU), item 8 (RETIRED.md for 027 earth-spin beds, music_gate re-run), commit pack, [Chief] note. v04 scratch is now 'previous'; v03 is on NAS."
+        },
+        {
+          "at": "2026-10-11T19:06Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
