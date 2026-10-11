@@ -59,7 +59,10 @@ VARIANTS = {
     "f": dict(seed=606, gold="#ffb870", cyan="#9cf5d4", cam=((0.5, -0.1, 1.0), (-0.45, 0.15, 0.9))),
     "g": dict(seed=707, gold="#fff09a", cyan="#b7a3ff", cam=((0.0, 0.3, 0.92), (0.2, -0.25, 1.06))),
     "h": dict(seed=808, gold="#ffab9a", cyan="#8ab8ff", cam=((-0.45, 0.1, 1.05), (0.3, -0.1, 0.87))),
+    "i": dict(seed=909, gold="#ffc6e8", cyan="#b9f7a6", cam=((0.35, 0.25, 1.04), (-0.25, -0.2, 0.8))),
 }
+# v05b (J0132): twinclocks_e at 7:19 needs a colour pair of its own, clear of a's cyan/orange and the c/d pairs
+VARIANT_COLOURS = {("twinclocks", "e"): dict(gold="#ff8fd0", cyan="#a6ff9a")}
 # bed star count per plate: thin-line plates get fewer, so the stars don't read as grain over the element
 BED_STARS = dict(lightclock=700, energy=2600)
 # tightest zoom per plate, so its key elements (outer clocks, the muon birth line, GPS bars) stay in frame
@@ -464,7 +467,8 @@ def main():
             fn(os.path.join(a.out, name), a.seconds or secs, a.still)
             continue
         V = VARIANTS[a.variant]
-        GOLD, CYAN = V["gold"], V["cyan"]
+        C = VARIANT_COLOURS.get((name, a.variant), V)
+        GOLD, CYAN = C["gold"], C["cyan"]
         bed, stars = make_bed(V["seed"] + len(name), stars=(name != "starfield"), N=BED_STARS.get(name, 2600))
         STYLE.update(on=True, name=name, cam=V["cam"], bed=bed, stars=stars, seed=V["seed"] + len(name))
         fn(os.path.join(a.out, f"{name}_{a.variant}"), a.seconds or secs + 8, a.still)
