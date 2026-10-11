@@ -17,7 +17,7 @@ VO=EP/'02_Voiceover/light_speed_vo_v01.mp3'; BED=EP/'05_Music/light-speed_score_
 OUT=Path('/private/tmp/024_LightSpeed_full_rough_v05.mp4')
 UAT=Path.home()/'Library/Mobile Documents/com~apple~CloudDocs/OWB UAT'; PHONE=UAT/'024_LightSpeed_v05_PHONE.mp4'
 SR=48000; LAST_WORD=487.544; HOLD=2.5; FADE=1.0; FPS=30; TOTAL=round((LAST_WORD+HOLD+FADE)*FPS)/FPS
-BED_VOL=0.095; HUSH=(228.0,253.0); HUSH_DB=3.0; RAMP=3.0; GAP_LU=10.0; MARGIN=0.5; MAX_DUCK=12.0
+BED_VOL=0.095; HUSH=(228.0,253.0); HUSH_DB=3.0; RAMP=3.0; GAP_LU=10.0; MARGIN=1.5; MAX_DUCK=12.0
 words=json.loads((EP/'02_Voiceover/words.json').read_text())['words']
 
 def ff(*a):
@@ -56,7 +56,7 @@ write(bed,WORK/'bed_rode.wav')
 t,sv,sb,d,on=gaps(WORK/'vo_laid.wav',WORK/'bed_rode.wav')
 before=dict(windows=int(on.sum()),under=int((on&(d<GAP_LU)).sum()),min_gap=round(float(d[on].min()),2))
 grid=t.copy();duck=np.zeros_like(grid);k=int(0.5*SR);rode=bed
-for _ in range(6):  # measure, add the shortfall, measure again
+for _ in range(12):  # measure, add the shortfall, measure again
  cut=np.where(on,np.clip(GAP_LU+MARGIN-d,0,None),0.0)
  if not cut.any():break
  held=np.array([cut[max(0,i-30):i+1].max() for i in range(len(cut))])  # a window ending at t covers t-3..t: duck all of it

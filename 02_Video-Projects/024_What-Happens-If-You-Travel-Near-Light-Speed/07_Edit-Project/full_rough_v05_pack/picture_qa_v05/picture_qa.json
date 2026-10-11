@@ -13,327 +13,6 @@
   },
   "failed": [
     {
-      "cut": 0,
-      "row": "1",
-      "source": "starfield.mp4",
-      "title": null,
-      "t": 3.25,
-      "at": "0:03",
-      "fail": [
-        "near-black: mean 14.03, p95 68.0"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 12.0
-    },
-    {
-      "cut": 2,
-      "row": "2",
-      "source": "Earth_Views_from_the_International_Space_Station.mp4",
-      "title": "Earth Views from the International Space Station",
-      "t": 11.35,
-      "at": "0:11",
-      "fail": [
-        "low detail: luma std 10.64 < 13.44 and edge density 0.001 < 0.0259 (absolute floor)",
-        "near-black: mean 13.06, p95 25.0"
-      ],
-      "warn": [],
-      "offset": 122.0
-    },
-    {
-      "cut": 3,
-      "row": "3",
-      "source": "lightclock_a.mp4",
-      "title": null,
-      "t": 15.97,
-      "at": "0:16",
-      "fail": [
-        "noise: grain 6.73 over structure 11.35, 8x-downscaled std 12.36 < 13.44 and edge 0.0258 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 8,
-      "row": "6",
-      "source": "energy_a.mp4",
-      "title": null,
-      "t": 38.62,
-      "at": "0:39",
-      "fail": [
-        "noise: grain 7.13 over structure 10.01, 8x-downscaled std 10.55 < 13.44 and edge 0.0089 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 18,
-      "row": "10",
-      "source": "iss035e017673.jpg",
-      "title": "Earth Observations taken by the Expedition 35 Crew",
-      "t": 82.25,
-      "at": "1:22",
-      "fail": [
-        "near-black: mean 12.87, p95 43.0"
-      ],
-      "warn": [],
-      "offset": null
-    },
-    {
-      "cut": 23,
-      "row": "12",
-      "source": "lightclock_c.mp4",
-      "title": null,
-      "t": 105.52,
-      "at": "1:46",
-      "fail": [
-        "split panel: vertical seam at 0.365, vertical seam at 0.366"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 24,
-      "row": "12",
-      "source": "lightclock_c.mp4",
-      "title": null,
-      "t": 108.73,
-      "at": "1:49",
-      "fail": [
-        "split panel: vertical seam at 0.37"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 3.8
-    },
-    {
-      "cut": 27,
-      "row": "14",
-      "source": "lightclock_d.mp4",
-      "title": null,
-      "t": 120.13,
-      "at": "2:00",
-      "fail": [
-        "noise: grain 6.51 over structure 11.65, 8x-downscaled std 12.51 < 13.44 and edge 0.0257 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 28,
-      "row": "14",
-      "source": "lightclock_d.mp4",
-      "title": null,
-      "t": 124.22,
-      "at": "2:04",
-      "fail": [
-        "noise: grain 6.4 over structure 11.56, 8x-downscaled std 12.56 < 13.44 and edge 0.0251 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 3.433
-    },
-    {
-      "cut": 32,
-      "row": "14",
-      "source": "lightclock_b.mp4",
-      "title": null,
-      "t": 139.83,
-      "at": "2:20",
-      "fail": [
-        "noise: grain 6.36 over structure 11.71, 8x-downscaled std 12.65 < 13.44 and edge 0.0256 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 13.567
-    },
-    {
-      "cut": 33,
-      "row": "15",
-      "source": "orbit_lightclock_omni_v01.mp4",
-      "title": "our own clip or graphic",
-      "t": 143.25,
-      "at": "2:23",
-      "fail": [
-        "near-black: mean 16.43, p95 59.0"
-      ],
-      "warn": [],
-      "offset": 4.5
-    },
-    {
-      "cut": 34,
-      "row": "15",
-      "source": "lightclock_c.mp4",
-      "title": null,
-      "t": 147.68,
-      "at": "2:28",
-      "fail": [
-        "reuse: same stretch as 1:49 (give it a new stretch, or a new render)"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.71 < 18.0"
-      ],
-      "offset": 10.5
-    },
-    {
-      "cut": 35,
-      "row": "15",
-      "source": "lightclock_d.mp4",
-      "title": null,
-      "t": 152.07,
-      "at": "2:32",
-      "fail": [
-        "reuse: same stretch as 2:04 (give it a new stretch, or a new render)",
-        "noise: grain 6.32 over structure 11.58, 8x-downscaled std 13.09 < 13.44 and edge 0.0244 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 10.5
-    },
-    {
-      "cut": 36,
-      "row": "15",
-      "source": "lightclock_d.mp4",
-      "title": null,
-      "t": 155.28,
-      "at": "2:35",
-      "fail": [
-        "noise: grain 6.31 over structure 11.54, 8x-downscaled std 13.09 < 13.44 and edge 0.0241 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 14.167
-    },
-    {
-      "cut": 41,
-      "row": "17",
-      "source": "muons_a.mp4",
-      "title": null,
-      "t": 177.68,
-      "at": "2:58",
-      "fail": [
-        "split panel: horizontal seam at 0.054, horizontal seam at 0.056, horizontal seam at 0.898"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 42,
-      "row": "17",
-      "source": "muons_a.mp4",
-      "title": null,
-      "t": 181.98,
-      "at": "3:02",
-      "fail": [
-        "split panel: horizontal seam at 0.039, horizontal seam at 0.919"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 3.8
-    },
-    {
-      "cut": 44,
-      "row": "17",
-      "source": "muons_b.mp4",
-      "title": null,
-      "t": 190.78,
-      "at": "3:11",
-      "fail": [
-        "split panel: horizontal seam at 0.039, horizontal seam at 0.933, horizontal seam at 0.937"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 46,
-      "row": "17",
-      "source": "muons_c.mp4",
-      "title": null,
-      "t": 197.08,
-      "at": "3:17",
-      "fail": [
-        "split panel: horizontal seam at 0.904, horizontal seam at 0.906"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 48,
-      "row": "18",
-      "source": "muons_d.mp4",
-      "title": null,
-      "t": 206.87,
-      "at": "3:27",
-      "fail": [
-        "split panel: horizontal seam at 0.056, horizontal seam at 0.933, horizontal seam at 0.937"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 49,
-      "row": "18",
-      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
-      "title": "Artemis I Isolated Launch Views",
-      "t": 211.18,
-      "at": "3:31",
-      "fail": [
-        "near-black: mean 10.04, p95 14.0"
-      ],
-      "warn": [],
-      "offset": 620.0
-    },
-    {
-      "cut": 57,
-      "row": "22",
-      "source": "iss040e085126.jpg",
-      "title": "Earth Observation",
-      "t": 243.33,
-      "at": "4:03",
-      "fail": [
-        "near-black: mean 8.32, p95 18.0"
-      ],
-      "warn": [],
-      "offset": null
-    },
-    {
-      "cut": 72,
-      "row": "27",
-      "source": "orbit_returns_omni_v01.mp4",
-      "title": "our own clip or graphic",
-      "t": 314.88,
-      "at": "5:15",
-      "fail": [
-        "near-black: mean 19.46, p95 70.0"
-      ],
-      "warn": [],
-      "offset": 5.0
-    },
-    {
       "cut": 75,
       "row": "30",
       "source": "energy_b.mp4",
@@ -341,27 +20,12 @@
       "t": 331.3,
       "at": "5:31",
       "fail": [
-        "low detail: luma std 12.51 < 13.44 and edge density 0.0237 < 0.0259 (absolute floor)",
-        "split panel: vertical seam at 0.1",
-        "noise: grain 6.93 over structure 8.82, 8x-downscaled std 9.43 < 13.44 and edge 0.0094 < 0.0259"
+        "low detail: luma std 12.94 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": 0.5
-    },
-    {
-      "cut": 77,
-      "row": "30",
-      "source": "GSFC_20171208_Archive_e001593.jpg",
-      "title": "Black Marble - City Lights 2012",
-      "t": 339.63,
-      "at": "5:40",
-      "fail": [
-        "near-black: mean 6.48, p95 26.0"
-      ],
-      "warn": [],
-      "offset": null
     },
     {
       "cut": 78,
@@ -371,29 +35,12 @@
       "t": 344.15,
       "at": "5:44",
       "fail": [
-        "low detail: luma std 12.19 < 13.44 and edge density 0.0221 < 0.0259 (absolute floor)",
-        "noise: grain 6.81 over structure 8.42, 8x-downscaled std 9.08 < 13.44 and edge 0.008 < 0.0259"
+        "low detail: luma std 12.92 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": 0.5
-    },
-    {
-      "cut": 79,
-      "row": "30",
-      "source": "energy_c.mp4",
-      "title": null,
-      "t": 348.8,
-      "at": "5:49",
-      "fail": [
-        "split panel: vertical seam at 0.044, vertical seam at 0.046",
-        "noise: grain 7.21 over structure 9.29, 8x-downscaled std 9.94 < 13.44 and edge 0.0233 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 4.733
     },
     {
       "cut": 82,
@@ -403,147 +50,68 @@
       "t": 361.22,
       "at": "6:01",
       "fail": [
-        "low detail: luma std 13.18 < 13.44 and edge density 0.0249 < 0.0259 (absolute floor)",
-        "noise: grain 7.12 over structure 9.56, 8x-downscaled std 10.18 < 13.44 and edge 0.0159 < 0.0259"
+        "low detail: luma std 13.24 < 13.44 and edge density 0.0101 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": 0.5
-    },
-    {
-      "cut": 83,
-      "row": "31",
-      "source": "energy_d.mp4",
-      "title": null,
-      "t": 365.88,
-      "at": "6:06",
-      "fail": [
-        "noise: grain 7.11 over structure 9.68, 8x-downscaled std 10.32 < 13.44 and edge 0.0253 < 0.0259"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 4.6
-    },
-    {
-      "cut": 90,
-      "row": "35",
-      "source": "starfield_c.mp4",
-      "title": null,
-      "t": 400.42,
-      "at": "6:40",
-      "fail": [
-        "reuse: same stretch as 3:38 (give it a new stretch, or a new render)"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 12.183
-    },
-    {
-      "cut": 91,
-      "row": "35",
-      "source": "starfield_c.mp4",
-      "title": null,
-      "t": 404.37,
-      "at": "6:44",
-      "fail": [
-        "reuse: same stretch as 3:42 (give it a new stretch, or a new render)"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 15.483
-    },
-    {
-      "cut": 94,
-      "row": "35",
-      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
-      "title": "Artemis I Isolated Launch Views",
-      "t": 418.32,
-      "at": "6:58",
-      "fail": [
-        "near-black: mean 4.92, p95 15.0"
-      ],
-      "warn": [],
-      "offset": 800.0
-    },
-    {
-      "cut": 96,
-      "row": "36",
-      "source": "iss040e085126.jpg",
-      "title": "Earth Observation",
-      "t": 427.07,
-      "at": "7:07",
-      "fail": [
-        "low detail: luma std 10.23 < 13.44 and edge density 0.0245 < 0.0259 (absolute floor)",
-        "near-black: mean 6.82, p95 20.0"
-      ],
-      "warn": [],
-      "offset": null
-    },
-    {
-      "cut": 98,
-      "row": "36",
-      "source": "iss040e091231.jpg",
-      "title": "Earth Observation",
-      "t": 433.5,
-      "at": "7:14",
-      "fail": [
-        "near-black: mean 11.91, p95 53.0"
-      ],
-      "warn": [],
-      "offset": null
-    },
-    {
-      "cut": 104,
-      "row": "38",
-      "source": "muons_a.mp4",
-      "title": null,
-      "t": 455.7,
-      "at": "7:36",
-      "fail": [
-        "reuse: same stretch as 3:02 (give it a new stretch, or a new render)",
-        "split panel: horizontal seam at 0.039, horizontal seam at 0.935"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 10.5
-    },
-    {
-      "cut": 105,
-      "row": "38",
-      "source": "Earth_Views_from_the_International_Space_Station.mp4",
-      "title": "Earth Views from the International Space Station",
-      "t": 461.2,
-      "at": "7:41",
-      "fail": [
-        "near-black: mean 10.11, p95 13.0"
-      ],
-      "warn": [],
-      "offset": 176.0
-    },
-    {
-      "cut": 106,
-      "row": "39",
-      "source": "starfield.mp4",
-      "title": null,
-      "t": 478.0,
-      "at": "7:58",
-      "fail": [
-        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
-        "near-black: mean 11.32, p95 18.0"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "reuse: on screen 26.1s in a row (look at it: 15s is a lot for one picture)"
-      ],
-      "offset": 0.0
     }
   ],
   "warn": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0,
+      "reviewed_ok": {
+        "note": "0:03 open: real-physics starfield on black, frame 0 reviewed at v03 (Chief to sign)",
+        "passed": [
+          "near-black: mean 14.03, p95 68.0"
+        ]
+      }
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 11.35,
+      "at": "0:11",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.64 < 18.0",
+        "low detail: edge density 0.001 < film p5 0.0032"
+      ],
+      "offset": 122.0,
+      "reviewed_ok": {
+        "note": "0:11 ISS night pass over Earth (NASA footage; Chief to sign)",
+        "passed": [
+          "low detail: luma std 10.64 < 13.44 and edge density 0.001 < 0.0259 (absolute floor)",
+          "near-black: mean 13.06, p95 25.0"
+        ]
+      }
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "lightclock_a.mp4",
+      "title": null,
+      "t": 15.97,
+      "at": "0:16",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
     {
       "cut": 4,
       "row": "4",
@@ -566,8 +134,7 @@
       "at": "0:30",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.38 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": 0.5
     },
@@ -582,6 +149,20 @@
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
         "low detail: luma std 17.97 < 18.0"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "energy_a.mp4",
+      "title": null,
+      "t": 38.62,
+      "at": "0:39",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.82 < 18.0"
       ],
       "offset": 0.5
     },
@@ -609,7 +190,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 14.55 < 18.0"
+        "low detail: luma std 14.56 < 18.0"
       ],
       "offset": 0.5
     },
@@ -651,7 +232,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 15.01 < 18.0"
+        "low detail: luma std 15.02 < 18.0"
       ],
       "offset": 5.067
     },
@@ -665,37 +246,158 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 14.45 < 18.0"
+        "low detail: luma std 14.46 < 18.0"
       ],
       "offset": 10.867
     },
     {
+      "cut": 18,
+      "row": "10",
+      "source": "iss035e017673.jpg",
+      "title": "Earth Observations taken by the Expedition 35 Crew",
+      "t": 82.25,
+      "at": "1:22",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.49 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "1:22 ISS night still, Expedition 35 (Chief to sign)",
+        "passed": [
+          "near-black: mean 12.87, p95 43.0"
+        ]
+      }
+    },
+    {
+      "cut": 23,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "title": null,
+      "t": 105.52,
+      "at": "1:46",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 24,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "title": null,
+      "t": 108.73,
+      "at": "1:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.8
+    },
+    {
+      "cut": 27,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "title": null,
+      "t": 120.13,
+      "at": "2:00",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 28,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "title": null,
+      "t": 124.22,
+      "at": "2:04",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.433
+    },
+    {
       "cut": 30,
       "row": "14",
-      "source": "lightclock_a.mp4",
+      "source": "lightclock_e.mp4",
       "title": null,
       "t": 133.18,
       "at": "2:13",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.07 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 31,
       "row": "14",
-      "source": "lightclock_b.mp4",
+      "source": "lightclock_e.mp4",
       "title": null,
       "t": 136.77,
       "at": "2:17",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.12 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 4.6
+    },
+    {
+      "cut": 32,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "title": null,
+      "t": 139.83,
+      "at": "2:20",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.667
+    },
+    {
+      "cut": 34,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "title": null,
+      "t": 147.68,
+      "at": "2:28",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 35,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "title": null,
+      "t": 152.07,
+      "at": "2:32",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.6
+    },
+    {
+      "cut": 36,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "title": null,
+      "t": 155.28,
+      "at": "2:35",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.267
     },
     {
       "cut": 37,
@@ -752,6 +454,32 @@
       "offset": 14.8
     },
     {
+      "cut": 41,
+      "row": "17",
+      "source": "muons_a.mp4",
+      "title": null,
+      "t": 177.68,
+      "at": "2:58",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 42,
+      "row": "17",
+      "source": "muons_a.mp4",
+      "title": null,
+      "t": 181.98,
+      "at": "3:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.8
+    },
+    {
       "cut": 43,
       "row": "17",
       "source": "iss071e439624.jpg",
@@ -765,6 +493,32 @@
       "offset": null
     },
     {
+      "cut": 44,
+      "row": "17",
+      "source": "muons_b.mp4",
+      "title": null,
+      "t": 190.78,
+      "at": "3:11",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 46,
+      "row": "17",
+      "source": "muons_c.mp4",
+      "title": null,
+      "t": 197.08,
+      "at": "3:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
       "cut": 47,
       "row": "18",
       "source": "iss071e439624.jpg",
@@ -776,6 +530,39 @@
         "low detail: edge density 0.0001 < film p5 0.0032"
       ],
       "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "18",
+      "source": "muons_d.mp4",
+      "title": null,
+      "t": 206.87,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 49,
+      "row": "18",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 211.18,
+      "at": "3:31",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.14 < 18.0",
+        "low detail: edge density 0.0002 < film p5 0.0032"
+      ],
+      "offset": 620.0,
+      "reviewed_ok": {
+        "note": "3:31 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 10.04, p95 14.0"
+        ]
+      }
     },
     {
       "cut": 50,
@@ -873,28 +660,30 @@
     {
       "cut": 61,
       "row": "24",
-      "source": "starfield_a.mp4",
+      "source": "starfield_e.mp4",
       "title": null,
       "t": 261.37,
       "at": "4:21",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.49 < 18.0"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 62,
       "row": "24",
-      "source": "starfield_a.mp4",
+      "source": "starfield_e.mp4",
       "title": null,
       "t": 266.2,
       "at": "4:26",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.94 < 18.0"
       ],
-      "offset": 14.367
+      "offset": 4.367
     },
     {
       "cut": 63,
@@ -968,7 +757,7 @@
     {
       "cut": 68,
       "row": "26",
-      "source": "starfield_b.mp4",
+      "source": "starfield_f.mp4",
       "title": null,
       "t": 294.5,
       "at": "4:54",
@@ -976,7 +765,7 @@
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 69,
@@ -994,15 +783,30 @@
     {
       "cut": 70,
       "row": "26",
-      "source": "starfield_d.mp4",
+      "source": "starfield_g.mp4",
       "title": null,
       "t": 304.3,
       "at": "5:04",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.51 < 18.0"
       ],
-      "offset": 10.5
+      "offset": 0.5
+    },
+    {
+      "cut": 79,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 348.8,
+      "at": "5:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.11 < 18.0"
+      ],
+      "offset": 4.733
     },
     {
       "cut": 80,
@@ -1013,8 +817,7 @@
       "at": "5:54",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.46 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": 9.8
     },
@@ -1030,6 +833,20 @@
         "sharpness: upscaled 2.10x, may look soft"
       ],
       "offset": null
+    },
+    {
+      "cut": 83,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "title": null,
+      "t": 365.88,
+      "at": "6:06",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 15.64 < 18.0"
+      ],
+      "offset": 4.6
     },
     {
       "cut": 88,
@@ -1057,6 +874,72 @@
         "sharpness: upscaled 2.10x, may look soft"
       ],
       "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "35",
+      "source": "starfield_h.mp4",
+      "title": null,
+      "t": 400.42,
+      "at": "6:40",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 91,
+      "row": "35",
+      "source": "starfield_h.mp4",
+      "title": null,
+      "t": 404.37,
+      "at": "6:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.8
+    },
+    {
+      "cut": 94,
+      "row": "35",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 418.32,
+      "at": "6:58",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.93 < 18.0",
+        "low detail: edge density 0.0007 < film p5 0.0032"
+      ],
+      "offset": 800.0,
+      "reviewed_ok": {
+        "note": "6:58 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 4.92, p95 15.0"
+        ]
+      }
+    },
+    {
+      "cut": 96,
+      "row": "36",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 427.07,
+      "at": "7:07",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.23 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "low detail: luma std 10.23 < 13.44 and edge density 0.0245 < 0.0259 (absolute floor)",
+          "near-black: mean 6.82, p95 20.0"
+        ]
+      }
     },
     {
       "cut": 100,
@@ -1111,6 +994,33 @@
         "low detail: luma std 13.98 < 18.0"
       ],
       "offset": 0.5
+    },
+    {
+      "cut": 104,
+      "row": "38",
+      "source": "muons_e.mp4",
+      "title": null,
+      "t": 455.7,
+      "at": "7:36",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 106,
+      "row": "39",
+      "source": "starfield_f.mp4",
+      "title": null,
+      "t": 478.0,
+      "at": "7:58",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 26.1s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 10.5
     }
   ],
   "rows": [
@@ -1121,13 +1031,17 @@
       "title": null,
       "t": 3.25,
       "at": "0:03",
-      "fail": [
-        "near-black: mean 14.03, p95 68.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 12.0
+      "offset": 12.0,
+      "reviewed_ok": {
+        "note": "0:03 open: real-physics starfield on black, frame 0 reviewed at v03 (Chief to sign)",
+        "passed": [
+          "near-black: mean 14.03, p95 68.0"
+        ]
+      }
     },
     {
       "cut": 1,
@@ -1147,12 +1061,19 @@
       "title": "Earth Views from the International Space Station",
       "t": 11.35,
       "at": "0:11",
-      "fail": [
-        "low detail: luma std 10.64 < 13.44 and edge density 0.001 < 0.0259 (absolute floor)",
-        "near-black: mean 13.06, p95 25.0"
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.64 < 18.0",
+        "low detail: edge density 0.001 < film p5 0.0032"
       ],
-      "warn": [],
-      "offset": 122.0
+      "offset": 122.0,
+      "reviewed_ok": {
+        "note": "0:11 ISS night pass over Earth (NASA footage; Chief to sign)",
+        "passed": [
+          "low detail: luma std 10.64 < 13.44 and edge density 0.001 < 0.0259 (absolute floor)",
+          "near-black: mean 13.06, p95 25.0"
+        ]
+      }
     },
     {
       "cut": 3,
@@ -1161,9 +1082,7 @@
       "title": null,
       "t": 15.97,
       "at": "0:16",
-      "fail": [
-        "noise: grain 6.73 over structure 11.35, 8x-downscaled std 12.36 < 13.44 and edge 0.0258 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1202,8 +1121,7 @@
       "at": "0:30",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.38 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": 0.5
     },
@@ -1228,11 +1146,10 @@
       "title": null,
       "t": 38.62,
       "at": "0:39",
-      "fail": [
-        "noise: grain 7.13 over structure 10.01, 8x-downscaled std 10.55 < 13.44 and edge 0.0089 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.82 < 18.0"
       ],
       "offset": 0.5
     },
@@ -1282,7 +1199,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 14.55 < 18.0"
+        "low detail: luma std 14.56 < 18.0"
       ],
       "offset": 0.5
     },
@@ -1335,7 +1252,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 15.01 < 18.0"
+        "low detail: luma std 15.02 < 18.0"
       ],
       "offset": 5.067
     },
@@ -1349,7 +1266,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 14.45 < 18.0"
+        "low detail: luma std 14.46 < 18.0"
       ],
       "offset": 10.867
     },
@@ -1360,11 +1277,17 @@
       "title": "Earth Observations taken by the Expedition 35 Crew",
       "t": 82.25,
       "at": "1:22",
-      "fail": [
-        "near-black: mean 12.87, p95 43.0"
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.49 < 18.0"
       ],
-      "warn": [],
-      "offset": null
+      "offset": null,
+      "reviewed_ok": {
+        "note": "1:22 ISS night still, Expedition 35 (Chief to sign)",
+        "passed": [
+          "near-black: mean 12.87, p95 43.0"
+        ]
+      }
     },
     {
       "cut": 19,
@@ -1417,9 +1340,7 @@
       "title": null,
       "t": 105.52,
       "at": "1:46",
-      "fail": [
-        "split panel: vertical seam at 0.365, vertical seam at 0.366"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1432,9 +1353,7 @@
       "title": null,
       "t": 108.73,
       "at": "1:49",
-      "fail": [
-        "split panel: vertical seam at 0.37"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1469,9 +1388,7 @@
       "title": null,
       "t": 120.13,
       "at": "2:00",
-      "fail": [
-        "noise: grain 6.51 over structure 11.65, 8x-downscaled std 12.51 < 13.44 and edge 0.0257 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1484,9 +1401,7 @@
       "title": null,
       "t": 124.22,
       "at": "2:04",
-      "fail": [
-        "noise: grain 6.4 over structure 11.56, 8x-downscaled std 12.56 < 13.44 and edge 0.0251 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1506,45 +1421,41 @@
     {
       "cut": 30,
       "row": "14",
-      "source": "lightclock_a.mp4",
+      "source": "lightclock_e.mp4",
       "title": null,
       "t": 133.18,
       "at": "2:13",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.07 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 31,
       "row": "14",
-      "source": "lightclock_b.mp4",
+      "source": "lightclock_e.mp4",
       "title": null,
       "t": 136.77,
       "at": "2:17",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.12 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 4.6
     },
     {
       "cut": 32,
       "row": "14",
-      "source": "lightclock_b.mp4",
+      "source": "lightclock_e.mp4",
       "title": null,
       "t": 139.83,
       "at": "2:20",
-      "fail": [
-        "noise: grain 6.36 over structure 11.71, 8x-downscaled std 12.65 < 13.44 and edge 0.0256 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 13.567
+      "offset": 7.667
     },
     {
       "cut": 33,
@@ -1553,58 +1464,54 @@
       "title": "our own clip or graphic",
       "t": 143.25,
       "at": "2:23",
-      "fail": [
-        "near-black: mean 16.43, p95 59.0"
-      ],
+      "fail": [],
       "warn": [],
-      "offset": 4.5
+      "offset": 4.5,
+      "reviewed_ok": {
+        "note": "2:23 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+        "passed": [
+          "near-black: mean 16.43, p95 59.0"
+        ]
+      }
     },
     {
       "cut": 34,
       "row": "15",
-      "source": "lightclock_c.mp4",
+      "source": "lightclock_f.mp4",
       "title": null,
       "t": 147.68,
       "at": "2:28",
-      "fail": [
-        "reuse: same stretch as 1:49 (give it a new stretch, or a new render)"
-      ],
+      "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.71 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 35,
       "row": "15",
-      "source": "lightclock_d.mp4",
+      "source": "lightclock_f.mp4",
       "title": null,
       "t": 152.07,
       "at": "2:32",
-      "fail": [
-        "reuse: same stretch as 2:04 (give it a new stretch, or a new render)",
-        "noise: grain 6.32 over structure 11.58, 8x-downscaled std 13.09 < 13.44 and edge 0.0244 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 5.6
     },
     {
       "cut": 36,
       "row": "15",
-      "source": "lightclock_d.mp4",
+      "source": "lightclock_f.mp4",
       "title": null,
       "t": 155.28,
       "at": "2:35",
-      "fail": [
-        "noise: grain 6.31 over structure 11.54, 8x-downscaled std 13.09 < 13.44 and edge 0.0241 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 14.167
+      "offset": 9.267
     },
     {
       "cut": 37,
@@ -1667,9 +1574,7 @@
       "title": null,
       "t": 177.68,
       "at": "2:58",
-      "fail": [
-        "split panel: horizontal seam at 0.054, horizontal seam at 0.056, horizontal seam at 0.898"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1682,9 +1587,7 @@
       "title": null,
       "t": 181.98,
       "at": "3:02",
-      "fail": [
-        "split panel: horizontal seam at 0.039, horizontal seam at 0.919"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1710,9 +1613,7 @@
       "title": null,
       "t": 190.78,
       "at": "3:11",
-      "fail": [
-        "split panel: horizontal seam at 0.039, horizontal seam at 0.933, horizontal seam at 0.937"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1736,9 +1637,7 @@
       "title": null,
       "t": 197.08,
       "at": "3:17",
-      "fail": [
-        "split panel: horizontal seam at 0.904, horizontal seam at 0.906"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1764,9 +1663,7 @@
       "title": null,
       "t": 206.87,
       "at": "3:27",
-      "fail": [
-        "split panel: horizontal seam at 0.056, horizontal seam at 0.933, horizontal seam at 0.937"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
@@ -1779,11 +1676,18 @@
       "title": "Artemis I Isolated Launch Views",
       "t": 211.18,
       "at": "3:31",
-      "fail": [
-        "near-black: mean 10.04, p95 14.0"
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.14 < 18.0",
+        "low detail: edge density 0.0002 < film p5 0.0032"
       ],
-      "warn": [],
-      "offset": 620.0
+      "offset": 620.0,
+      "reviewed_ok": {
+        "note": "3:31 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 10.04, p95 14.0"
+        ]
+      }
     },
     {
       "cut": 50,
@@ -1883,11 +1787,15 @@
       "title": "Earth Observation",
       "t": 243.33,
       "at": "4:03",
-      "fail": [
-        "near-black: mean 8.32, p95 18.0"
-      ],
+      "fail": [],
       "warn": [],
-      "offset": null
+      "offset": null,
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "near-black: mean 8.32, p95 18.0"
+        ]
+      }
     },
     {
       "cut": 58,
@@ -1927,28 +1835,30 @@
     {
       "cut": 61,
       "row": "24",
-      "source": "starfield_a.mp4",
+      "source": "starfield_e.mp4",
       "title": null,
       "t": 261.37,
       "at": "4:21",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.49 < 18.0"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 62,
       "row": "24",
-      "source": "starfield_a.mp4",
+      "source": "starfield_e.mp4",
       "title": null,
       "t": 266.2,
       "at": "4:26",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.94 < 18.0"
       ],
-      "offset": 14.367
+      "offset": 4.367
     },
     {
       "cut": 63,
@@ -2022,7 +1932,7 @@
     {
       "cut": 68,
       "row": "26",
-      "source": "starfield_b.mp4",
+      "source": "starfield_f.mp4",
       "title": null,
       "t": 294.5,
       "at": "4:54",
@@ -2030,7 +1940,7 @@
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 69,
@@ -2048,15 +1958,16 @@
     {
       "cut": 70,
       "row": "26",
-      "source": "starfield_d.mp4",
+      "source": "starfield_g.mp4",
       "title": null,
       "t": 304.3,
       "at": "5:04",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.51 < 18.0"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 71,
@@ -2076,11 +1987,15 @@
       "title": "our own clip or graphic",
       "t": 314.88,
       "at": "5:15",
-      "fail": [
-        "near-black: mean 19.46, p95 70.0"
-      ],
+      "fail": [],
       "warn": [],
-      "offset": 5.0
+      "offset": 5.0,
+      "reviewed_ok": {
+        "note": "5:15 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+        "passed": [
+          "near-black: mean 19.46, p95 70.0"
+        ]
+      }
     },
     {
       "cut": 73,
@@ -2112,9 +2027,7 @@
       "t": 331.3,
       "at": "5:31",
       "fail": [
-        "low detail: luma std 12.51 < 13.44 and edge density 0.0237 < 0.0259 (absolute floor)",
-        "split panel: vertical seam at 0.1",
-        "noise: grain 6.93 over structure 8.82, 8x-downscaled std 9.43 < 13.44 and edge 0.0094 < 0.0259"
+        "low detail: luma std 12.94 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
@@ -2139,11 +2052,15 @@
       "title": "Black Marble - City Lights 2012",
       "t": 339.63,
       "at": "5:40",
-      "fail": [
-        "near-black: mean 6.48, p95 26.0"
-      ],
+      "fail": [],
       "warn": [],
-      "offset": null
+      "offset": null,
+      "reviewed_ok": {
+        "note": "5:40 Black Marble city lights (NASA; Chief to sign)",
+        "passed": [
+          "near-black: mean 6.48, p95 26.0"
+        ]
+      }
     },
     {
       "cut": 78,
@@ -2153,8 +2070,7 @@
       "t": 344.15,
       "at": "5:44",
       "fail": [
-        "low detail: luma std 12.19 < 13.44 and edge density 0.0221 < 0.0259 (absolute floor)",
-        "noise: grain 6.81 over structure 8.42, 8x-downscaled std 9.08 < 13.44 and edge 0.008 < 0.0259"
+        "low detail: luma std 12.92 < 13.44 and edge density 0.0102 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
@@ -2168,12 +2084,10 @@
       "title": null,
       "t": 348.8,
       "at": "5:49",
-      "fail": [
-        "split panel: vertical seam at 0.044, vertical seam at 0.046",
-        "noise: grain 7.21 over structure 9.29, 8x-downscaled std 9.94 < 13.44 and edge 0.0233 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.11 < 18.0"
       ],
       "offset": 4.733
     },
@@ -2186,8 +2100,7 @@
       "at": "5:54",
       "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 16.46 < 18.0"
+        "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
       "offset": 9.8
     },
@@ -2212,8 +2125,7 @@
       "t": 361.22,
       "at": "6:01",
       "fail": [
-        "low detail: luma std 13.18 < 13.44 and edge density 0.0249 < 0.0259 (absolute floor)",
-        "noise: grain 7.12 over structure 9.56, 8x-downscaled std 10.18 < 13.44 and edge 0.0159 < 0.0259"
+        "low detail: luma std 13.24 < 13.44 and edge density 0.0101 < 0.0259 (absolute floor)"
       ],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
@@ -2227,11 +2139,10 @@
       "title": null,
       "t": 365.88,
       "at": "6:06",
-      "fail": [
-        "noise: grain 7.11 over structure 9.68, 8x-downscaled std 10.32 < 13.44 and edge 0.0253 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 15.64 < 18.0"
       ],
       "offset": 4.6
     },
@@ -2309,32 +2220,28 @@
     {
       "cut": 90,
       "row": "35",
-      "source": "starfield_c.mp4",
+      "source": "starfield_h.mp4",
       "title": null,
       "t": 400.42,
       "at": "6:40",
-      "fail": [
-        "reuse: same stretch as 3:38 (give it a new stretch, or a new render)"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 12.183
+      "offset": 0.5
     },
     {
       "cut": 91,
       "row": "35",
-      "source": "starfield_c.mp4",
+      "source": "starfield_h.mp4",
       "title": null,
       "t": 404.37,
       "at": "6:44",
-      "fail": [
-        "reuse: same stretch as 3:42 (give it a new stretch, or a new render)"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 15.483
+      "offset": 3.8
     },
     {
       "cut": 92,
@@ -2365,11 +2272,18 @@
       "title": "Artemis I Isolated Launch Views",
       "t": 418.32,
       "at": "6:58",
-      "fail": [
-        "near-black: mean 4.92, p95 15.0"
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.93 < 18.0",
+        "low detail: edge density 0.0007 < film p5 0.0032"
       ],
-      "warn": [],
-      "offset": 800.0
+      "offset": 800.0,
+      "reviewed_ok": {
+        "note": "6:58 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 4.92, p95 15.0"
+        ]
+      }
     },
     {
       "cut": 95,
@@ -2389,12 +2303,18 @@
       "title": "Earth Observation",
       "t": 427.07,
       "at": "7:07",
-      "fail": [
-        "low detail: luma std 10.23 < 13.44 and edge density 0.0245 < 0.0259 (absolute floor)",
-        "near-black: mean 6.82, p95 20.0"
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.23 < 18.0"
       ],
-      "warn": [],
-      "offset": null
+      "offset": null,
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "low detail: luma std 10.23 < 13.44 and edge density 0.0245 < 0.0259 (absolute floor)",
+          "near-black: mean 6.82, p95 20.0"
+        ]
+      }
     },
     {
       "cut": 97,
@@ -2414,11 +2334,15 @@
       "title": "Earth Observation",
       "t": 433.5,
       "at": "7:14",
-      "fail": [
-        "near-black: mean 11.91, p95 53.0"
-      ],
+      "fail": [],
       "warn": [],
-      "offset": null
+      "offset": null,
+      "reviewed_ok": {
+        "note": "7:14 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "near-black: mean 11.91, p95 53.0"
+        ]
+      }
     },
     {
       "cut": 99,
@@ -2488,18 +2412,15 @@
     {
       "cut": 104,
       "row": "38",
-      "source": "muons_a.mp4",
+      "source": "muons_e.mp4",
       "title": null,
       "t": 455.7,
       "at": "7:36",
-      "fail": [
-        "reuse: same stretch as 3:02 (give it a new stretch, or a new render)",
-        "split panel: horizontal seam at 0.039, horizontal seam at 0.935"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is"
       ],
-      "offset": 10.5
+      "offset": 0.5
     },
     {
       "cut": 105,
@@ -2508,28 +2429,29 @@
       "title": "Earth Views from the International Space Station",
       "t": 461.2,
       "at": "7:41",
-      "fail": [
-        "near-black: mean 10.11, p95 13.0"
-      ],
+      "fail": [],
       "warn": [],
-      "offset": 176.0
+      "offset": 176.0,
+      "reviewed_ok": {
+        "note": "7:41 ISS night pass over Earth (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 10.11, p95 13.0"
+        ]
+      }
     },
     {
       "cut": 106,
       "row": "39",
-      "source": "starfield.mp4",
+      "source": "starfield_f.mp4",
       "title": null,
       "t": 478.0,
       "at": "7:58",
-      "fail": [
-        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)",
-        "near-black: mean 11.32, p95 18.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
         "reuse: on screen 26.1s in a row (look at it: 15s is a lot for one picture)"
       ],
-      "offset": 0.0
+      "offset": 10.5
     }
   ],
   "polish": {
