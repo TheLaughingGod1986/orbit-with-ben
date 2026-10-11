@@ -18,12 +18,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0139 | any | open (after J0138) | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
 | J0140 | mini | open (after J0139) | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
-| J0142 | mini | claimed | cursor | 2026-10-12T01:40Z | 027 edit · assembly · 027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test) |  |
 | J0143 | mini | open | – | – | 024 thumbs · chart · 024 Light Speed: two new covers (answers the title: age vs Earth / teases it), one glowing ship, no Orbit, <=30% near-black, --score PASS; park for Chief review, then Test & Compare from day 1 |  |
 | J0144 | any | open | – | – | chief · Orbit Auditor: per-chapter teaching gate on 024 onward (number shown as an object per chapter; keywords match VO word for word) | AGENTS.md Reference lessons 6 (#138) |
 
 Recently finished:
 
+- J0142 done: 027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test) (done)
 - J0132 done: 024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45) (done)
 - J0131 cancelled: Orbit Instagram bio link -> Saturn long 55AEQwvs36g (before Mon 11:30) (needs Ben to sign Instagram in on the mini: the Orbit Studio Chrome (CDP 9223) is signed into historyofscienceyt, not orbitwithben; Switch accounts asks for the orbitwithben password. Also, Instagram web now locks the Website field ('Editing your links is only available on mobile'), so even once signed in this likely has to be done in the Instagram app on Ben's phone: Edit profile > Links > https://youtu.be/55AEQwvs36g. Nothing changed on either profile.)
 - J0130 done: 027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats) (v01f pack 9750bf2 (all 6 items; row 26 Apollo 11 Moon). picture_qa/polish/clip_check PASS, near-black 9.4%. Awaiting Chief frame re-check.)
@@ -33,4 +33,3 @@ Recently finished:
 - J0126 done: Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 (done)
 - J0125 done: 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) (v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it.)
 - J0122 cancelled: Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) ()
-- J0121 done: Orbit: make 3 silent Moon Shorts Private (osRFF1cBCEw, MYPIEBBs7B8, 2qTvliJQuqI) — audible copies already public (Ben OK 10 Oct 21:10) (done)
