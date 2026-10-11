@@ -8,18 +8,22 @@ The board page (05_Analytics/kanban/board_site, hosted on Vercel) reads one file
 It also carries the Channel Tracker's data (Ben, 10 Oct: the tracker as a phone web app at /tracker on the same site):
   tracker.json on the same branch is 05_Analytics/dashboard/data.json from main, byte for byte. The 06:40 snapshot job
   (07_Content-Ops/launchd/analytics-snapshot.sh) pushes that file to main and then kicks this script, so the tracker page
-  has the new snapshot within a minute; the 5-minute run below would pick it up anyway.
+  has the new snapshot within a minute; the every-minute run below would pick it up anyway.
 
 This script builds board.json from main with scripts/kanban_snapshot.py (the same documents Claude used to write into the
 claude.ai artifact store: board/hos, board/owb, board/briefs, board/credits) and pushes it only when something changed.
 
 Triggers (all on the Mini):
-  - scripts/jobs.py runs it in the background after every queue change (add, claim, done, block, release, renew, ...)
-  - launchd com.owb.board-publish every 5 min (picks up cloud pushes to main, HOS PIPELINE.json, the Mini
-    heartbeat and Ben's board buttons); a no-op when nothing changed
+  - scripts/jobs.py runs it in the background after every queue change (add, claim, progress, done, block, release, ...)
+  - launchd com.owb.board-publish every minute (Ben, 11 Oct 22:09: "let's update this board a bit more often"; was
+    5 min). It picks up cloud pushes to main, HOS PIPELINE.json, the Mini heartbeat and Ben's board buttons. A run
+    where nothing moved is cheap: three `git ls-remote` calls and the CDN-cached checks stamp, compared with the last
+    run (quick_key); the full rebuild (fetch, worktrees, kanban_snapshot) runs only when one of them moved, or every
+    FULL_EVERY_S anyway (local-only inputs such as the UAT folder's watch links).
 Ben's buttons (Approve / Request changes / Undo, stored by the site's /api/checks): every run reads the store's small
 change stamp from the CDN and re-reads the ticks only when it moved (and hourly regardless), so a tap is on the board
-within one run, about 5 minutes. This script never posts anywhere; the [Ben] comments on #99/#180 come from the site.
+within one run, about a minute. Running every minute doesn't add Blob operations: the stamp is a CDN hit, and the
+list call stays hourly plus once per real tap (at most once a minute). This script never posts anywhere; the [Ben] comments on #99/#180 come from the site.
 It never blocks or fails a job: the hook is fire-and-forget and every error here is logged and swallowed.
 
 Each section keeps the time its content last changed (`changedAt`), so the page header shows the real last change,
@@ -55,6 +59,7 @@ SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstr
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: a full re-read (one Blob list call) at least hourly, as a safety net
 CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minute (the stamp can lag a write by 60 s)
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
+FULL_EVERY_S = 5 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
 OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
@@ -169,7 +174,7 @@ def _age(last: str, at: dt.datetime) -> float:
 
 
 def checks_due(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version) -> bool:
-    """Should this run re-read Ben's ticks from /api/checks (the one Blob list call)? Every run (scheduled every 5 min
+    """Should this run re-read Ben's ticks from /api/checks (the one Blob list call)? Every run (scheduled every minute
     and after each queue change) looks at the cheap change stamp, so a button tap reaches board.json on the next run:
       - --force, the first run, or an hour since the last re-read: yes (the safety net)
       - the stamp's URL not known yet (key absent: a state file from before the stamp): yes, once, to learn it
@@ -192,11 +197,12 @@ def checks_due(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version) ->
     return True
 
 
-def fetch_checks(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version) -> tuple[dict, str, dict]:
-    """(checks, checksAt, {checksVersion, stampUrl}). Keeps the previous copy when nothing changed or the site is down."""
+def fetch_checks(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version, due: bool | None = None) -> tuple[dict, str, dict]:
+    """(checks, checksAt, {checksVersion, stampUrl}). Keeps the previous copy when nothing changed or the site is down.
+    `due` is checks_due's answer when the caller already asked (so the stamp is read once per run)."""
     keep = (prev.get("checks") or {}, prev.get("checksAt") or "",
             {k: prev[k] for k in ("checksVersion", "stampUrl") if k in prev})
-    if not checks_due(prev, at, force, stamp):
+    if not (checks_due(prev, at, force, stamp) if due is None else due):
         return keep
     try:
         with urllib.request.urlopen(f"{SITE}/api/checks?t={int(at.timestamp())}", timeout=15) as r:
@@ -250,6 +256,32 @@ def push(board: dict, at: dt.datetime, tracker: str | None = None) -> str:
     return commit
 
 
+def ls_remote(repo: pathlib.Path, *refs: str) -> str:
+    return git(repo, "ls-remote", "origin", *refs, timeout=30)
+
+
+def quick_key(remote=ls_remote) -> str | None:
+    """A cheap fingerprint of everything a rebuild reads that can move between runs: main and mini-heartbeat of
+    orbit-with-ben, main of history-of-science (one ls-remote each, no fetch) and the Mini's acting-Chief file.
+    None if a remote can't be read; the caller then does the full rebuild."""
+    try:
+        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat"), remote(HOS, "refs/heads/main")]
+    except Exception as e:  # noqa: BLE001
+        log(f"quick check failed, full rebuild: {e!r}"[:300])
+        return None
+    try:
+        parts.append((HOME / "_desk" / "state" / "chief" / "current.json").read_text())
+    except OSError:
+        parts.append("")
+    return digest(parts)
+
+
+def skip_quick(prev: dict, key: str | None, at: dt.datetime, checks_wanted: bool) -> bool:
+    """True when this run can stop before the rebuild: no ref moved since the last full build, that build is under
+    FULL_EVERY_S old, and Ben's ticks don't need a re-read."""
+    return bool(key) and key == prev.get("key") and _age(prev.get("built") or "", at) < FULL_EVERY_S and not checks_wanted
+
+
 def run_once(a) -> int:
     at = now()
     prev_path = STATE / "last.json"
@@ -257,13 +289,20 @@ def run_once(a) -> int:
         prev = json.loads(prev_path.read_text())
     except (OSError, ValueError):
         prev = {}
+    key = None if a.force else quick_key()
+    due = checks_due(prev, at, a.force)
+    if not a.force and not a.dry_run and skip_quick(prev, key, at, due):
+        if not a.quiet:
+            print("unchanged (quick check)")
+        return 0
     docs = build(STATE / "out")
-    checks, checks_at, checks_meta = fetch_checks(prev, at, a.force)
+    checks, checks_at, checks_meta = fetch_checks(prev, at, a.force, due=due)
     board, hashes = assemble(docs, prev, checks, at)
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
         whole = digest([whole, hashlib.sha256(tracker.encode()).hexdigest()])
+    board["publishedAt"] = iso(at)  # the page's small "Updated HH:MM"; after the digest, so it never forces a push
     (STATE / "board.json").write_text(json.dumps(board, ensure_ascii=False, indent=1))
     summary = (f"{len(docs['hos']['pipeline']['films'])} HOS films, {len(docs['owb']['films'])} OWB films, "
                f"{len(docs['owb'].get('jobs') or [])} live jobs, {len(checks)} checks; last change {board['dataChangedAt']}"
@@ -271,17 +310,18 @@ def run_once(a) -> int:
     if a.dry_run:
         print(f"dry run: {summary}; would {'push' if whole != prev.get('whole') or a.force else 'skip (unchanged)'}")
         return 0
+    built = {"key": key, "built": iso(at)} if key else {"built": iso(at)}
     if whole == prev.get("whole") and not a.force:
         seen = {"checks": checks, "checksAt": checks_at, **checks_meta}
-        if any(prev.get(k) != seen.get(k) for k in CHECK_FIELDS if k in seen):
-            prev_path.write_text(json.dumps({**prev, **seen}, indent=1))  # remember the re-read; nothing to push
+        # remember the re-read and this build's fingerprint; nothing to push
+        prev_path.write_text(json.dumps({**prev, **seen, **built}, indent=1))
         if not a.quiet:
             print("unchanged")
         return 0
     commit = push(board, at, tracker)
     prev_path.write_text(json.dumps({"hashes": hashes, "changedAt": board["changedAt"], "whole": whole,
                                      "checks": checks, "checksAt": checks_at, **checks_meta, "pushed": iso(at),
-                                     "commit": commit}, indent=1))
+                                     "commit": commit, **built}, indent=1))
     log(f"pushed {commit[:8]} to {BRANCH}: {summary}")
     if not a.quiet:
         print(f"pushed {commit[:8]} to {BRANCH}: {summary}")

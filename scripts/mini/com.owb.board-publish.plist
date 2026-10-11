@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- Studio Kanban data (scripts/board_publish.py): every 5 min, a no-op unless main, HOS PIPELINE.json or the Mini
-     heartbeat changed. jobs.py also runs it straight after every queue change.
+<!-- Studio Kanban data (scripts/board_publish.py): every minute (Ben, 11 Oct 22:09: update the board more often; was
+     5 min). A run where nothing moved stops after three git ls-remote calls and the CDN checks stamp; the full rebuild
+     runs only when main, HOS main or the Mini heartbeat moved (or every 5 min regardless). jobs.py also runs it straight
+     after every queue change, including each `jobs.py progress` step.
      Install: cp scripts/mini/com.owb.board-publish.plist ~/Library/LaunchAgents/ && launchctl load -w ~/Library/LaunchAgents/com.owb.board-publish.plist -->
 <plist version="1.0">
 <dict>
@@ -16,7 +18,7 @@
     <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
     <key>HOS_REPO</key><string>/Users/benjaminoats/YouTube/History Of Science</string>
   </dict>
-  <key>StartInterval</key><integer>300</integer>
+  <key>StartInterval</key><integer>60</integer>
   <key>RunAtLoad</key><true/>
   <key>LowPriorityIO</key><true/>
   <key>Nice</key><integer>10</integer>

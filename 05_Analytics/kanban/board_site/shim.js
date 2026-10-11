@@ -66,7 +66,7 @@
       const j = JSON.parse(text);
       lastHash = text;
       board = { hos: j.hos, owb: j.owb, briefs: j.briefs, credits: j.credits };
-      window.__boardData = { dataChangedAt: j.dataChangedAt, changedAt: j.changedAt };
+      window.__boardData = { dataChangedAt: j.dataChangedAt, changedAt: j.changedAt, publishedAt: j.publishedAt };
       if (j.checks && typeof j.checks === "object" && !checksFresh) setServer(j.checks);
       emitAll();
     } catch (e) {}

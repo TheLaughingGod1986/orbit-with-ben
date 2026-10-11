@@ -21,6 +21,7 @@ is alive and able claims it. The thread stays for discussion and reports; this q
   python3 scripts/jobs.py block J0003 --agent cursor --reason "needs Ben: Vertex credit" --git
   python3 scripts/jobs.py release J0003 --agent cursor --note "stopping point; rows 1-40 done" --git
   python3 scripts/jobs.py renew J0003 --agent cursor --eta 120 --git           # still working: push the ETA out
+  python3 scripts/jobs.py progress J0003 --agent cursor --step 3 --of 8 --git   # finished step 3 of 8 (the board's % done)
   python3 scripts/jobs.py list [--all]                                          # open and claimed jobs (JOBS.md too)
 
 `next` exits 10 when nothing is waiting for that agent, so a loop can stop quietly. It hands out quick jobs (--eta 60
@@ -233,10 +234,30 @@ def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
     log(job, at, agent, f"renewed to {job['eta']}")
 
 
+def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "") -> None:
+    """Ben, 11 Oct 22:09: the board says "Working on X, 20% done, finished in about 30 min". A worker reports each
+    finished step: `progress J0130 --step 3 --of 8` = 3 of 8 steps done. The page turns it into % done and an ETA from
+    the pace so far. Kept across a release (the next run carries on from it); cleared when the job is reopened.
+    Allowed on a job the agent holds, or an open one it released between steps."""
+    if not agent:
+        raise ValueError("progress needs --agent")
+    if of < 1 or step < 0 or step > of:
+        raise ValueError(f"--step {step} --of {of}: need 0 <= step <= of and of >= 1")
+    if job["status"] == "claimed" and job.get("by") != agent:
+        raise ValueError(f"{job['id']} is claimed by {job['by']}, not {agent}")
+    if job["status"] not in ("claimed", "open"):
+        raise ValueError(f"{job['id']} is {job['status']}; progress is for a job in hand")
+    job["progress"] = {"step": step, "of": of, "at": studio.iso(at), "by": agent}
+    if note:
+        job["progress"]["note"] = note[:120]
+    log(job, at, agent, f"step {step} of {of} done" + (": " + note if note else ""))
+
+
 def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     if job["status"] not in ("blocked", "done", "cancelled"):
         raise ValueError(f"{job['id']} is {job['status']}; only blocked, done or cancelled jobs reopen")
     job.update(status="open", by="", since="", eta="", result="")
+    job.pop("progress", None)
     log(job, at, agent, "reopened" + (": " + note if note else ""))
 
 
@@ -396,7 +417,7 @@ def main(argv=None) -> int:
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
     n.add_argument("--eta", type=int, default=None)
     n.add_argument("--peek", action="store_true", help="show what you would get, claim nothing")
-    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show"):
+    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress"):
         p = sub.add_parser(name)
         p.add_argument("id")
         p.add_argument("--agent", default="")
@@ -405,6 +426,9 @@ def main(argv=None) -> int:
         p.add_argument("--note", default="")
         p.add_argument("--ref", default="")
         p.add_argument("--eta", type=int, default=DEFAULT_ETA)
+        if name == "progress":
+            p.add_argument("--step", type=int, required=True, help="steps finished so far (0 at the start)")
+            p.add_argument("--of", type=int, required=True, help="steps in the whole job")
     w = sub.add_parser("watch", help="JSON for Claude's 2-hourly check: is the Mini quiet, what waits on Ben")
     w.add_argument("--quiet-hours", type=float, default=3)
     fo = sub.add_parser("focus", help="the film(s) every agent works on first, e.g. `focus 025`; no films clears it")
@@ -486,6 +510,9 @@ def main(argv=None) -> int:
                 do_renew(job, args.agent, args.eta, at)
                 if job.get("film"):
                     board_claim(job, args.agent, at)
+            elif args.cmd == "progress":
+                do_progress(job, args.agent, args.step, args.of, at, args.note)
+                return job, None, touched  # the film's board stage doesn't change
             elif args.cmd == "reopen":
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "cancel":

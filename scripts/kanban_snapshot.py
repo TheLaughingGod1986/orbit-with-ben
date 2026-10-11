@@ -106,6 +106,43 @@ def makes_video(j: dict) -> bool:
     return j.get("stage") == "edit" and any(w in t for w in ("rough", "cut", "picture", "assemble"))
 
 
+# ---- Plain progress (Ben, 11 Oct 22:09: "we're currently working on X, 20% done, finished in 30 minutes") ----
+STEP_RE = re.compile(r"\bsteps?\s+(\d{1,3})\s*(?:/|of)\s*(\d{1,3})\b", re.I)
+
+
+def job_progress(j: dict) -> dict | None:
+    """Real step progress for a job, or None: `jobs.py progress` (job["progress"]: step k of n finished) if the worker
+    reported it, else the newest "step k of n" in the job's own history notes since it was last added or reopened
+    (a release note like "stopping point; step 3 of 8 done"). The page turns it into % done; without it the page uses
+    the time since work started against the estimate, capped at 95%."""
+    p = j.get("progress")
+    if isinstance(p, dict) and isinstance(p.get("step"), int) and isinstance(p.get("of"), int) and 0 <= p["step"] <= p["of"] and p["of"] >= 1:
+        return {"step": p["step"], "of": p["of"], "at": p.get("at", ""), **({"note": p["note"]} if p.get("note") else {})}
+    found = None
+    for h in j.get("history") or []:
+        what = str(h.get("what", ""))
+        if what.startswith(("added", "reopened")):
+            found = None
+            continue
+        m = STEP_RE.search(what)
+        if m and 0 <= int(m.group(1)) <= int(m.group(2)) and int(m.group(2)) >= 1:
+            found = {"step": int(m.group(1)), "of": int(m.group(2)), "at": h.get("at", "")}
+    return found
+
+
+def work_start(j: dict) -> str:
+    """When work on this job began: its first claim since it was added or last reopened (released-and-reclaimed
+    stretches count as one piece of work), so % done by time covers the whole job, not just the latest run."""
+    start = ""
+    for h in j.get("history") or []:
+        what = str(h.get("what", ""))
+        if what.startswith(("added", "reopened")):
+            start = ""
+        elif what.startswith("claimed") and not start:
+            start = h.get("at", "")
+    return start
+
+
 def mini_heartbeat() -> dict | None:
     """The Mini's relay heartbeat (scripts/chief_relay.py push_heartbeat) from the mini-heartbeat branch, if any."""
     import subprocess
@@ -536,6 +573,7 @@ def main(argv: list[str] | None = None) -> int:
                      last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
+                     workStart=work_start(j), progress=job_progress(j),
                      estMin=est_minutes(j), watch=makes_video(j))
                 for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
         lanes = lanes_info(alljobs)
