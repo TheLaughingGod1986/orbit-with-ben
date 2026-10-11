@@ -1,5 +1,5 @@
 {
-  "next_id": 131,
+  "next_id": 132,
   "jobs": [
     {
       "id": "J0001",
@@ -6868,6 +6868,32 @@
       "history": [
         {
           "at": "2026-10-11T18:03Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
+    },
+    {
+      "id": "J0131",
+      "title": "Orbit Instagram bio link -> Saturn long 55AEQwvs36g (before Mon 11:30)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Set Orbit With Ben's Instagram bio link to the Saturn long film before Mon 12 Oct 11:30 London. Ben asked for this (11 Oct 19:32 London); Chief OK. Reversible.\n\nUse the mini's Chrome with Playwright/browser on instagram.com (the Orbit With Ben Instagram account, the one Buffer posts to). Edit profile -> Links / Website: set the bio link to https://youtu.be/55AEQwvs36g (\"How Long Do Saturn's Rings Have Left?\"). Before changing, record the current link value exactly (so it can be restored). Change nothing else on the profile (bio text, name, photo). Do not post, DM, or follow anything.\n\nIf Instagram is not signed in, or asks for a code/2FA/captcha, STOP: don't try passwords; mark the job blocked with \"needs Ben to sign Instagram in on the mini\".\n\nDone = reload the profile and confirm the link shows youtu.be/55AEQwvs36g. Post a one-line [Chief] note on OWB #99 with the old link and the new link.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T18:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T18:32Z",
           "by": "chief",
           "what": "added"
         }
