@@ -15,6 +15,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0136 | mini | open | – | – | studio · `cursor-auto` · OWB no-cover-text Test & Compare on JWST ziKBPJ6FY0U (A live vs B no text), parked for Chief review before setting (Reference lessons 5a; test, not a rule change) |  |
 | J0137 | mini | open | – | – | assembly · HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) | hos#276 |
 | J0138 | mini | open | – | – | video · HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05 |  |
+| J0139 | any | open (after J0138) | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
 
 Recently finished:
 
