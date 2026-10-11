@@ -378,7 +378,7 @@ def render_line(out, seconds, still):
         for rr, al in ((1.9, 0.10 * glow), (1.4, 0.22 * glow), (1.0, 0.95)):
             ax.add_patch(Circle((SX, 0), rr, color=GOLD, alpha=al, lw=0, zorder=5))
         la = phase_alpha(t, 0.3)
-        label(ax, -7.6, -2.45, "SUN", color=GOLD, alpha=la)
+        label(ax, -6.5, -2.45, "SUN", color=GOLD, alpha=la)       # clear of the assembler's 1.12x push crop
         label(ax, SX + 0.723 * scale, 1.15, "VENUS", ha="center", alpha=la)
         label(ax, SX + 1.0 * scale, -1.15, "EARTH", ha="center", alpha=la)
         save(fig, out, i, still)
