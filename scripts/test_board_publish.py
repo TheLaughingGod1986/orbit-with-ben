@@ -150,6 +150,15 @@ class ButtonStamp(unittest.TestCase):
     """Ben's board buttons reach board.json on the next run via the cheap change stamp (11 Oct)."""
     URL = "https://x.public.blob.vercel-storage.com/board/checks/stamp.json"
 
+    def setUp(self):  # keep the Mini's real publish.log clean when the suite runs there
+        self._tmp = tempfile.TemporaryDirectory()
+        self._state = bp.STATE
+        bp.STATE = Path(self._tmp.name)
+
+    def tearDown(self):
+        bp.STATE = self._state
+        self._tmp.cleanup()
+
     def prev(self, mins_ago=10, version="v1", **kw):
         p = {"checks": {"OWB-023": {"verdict": "ok"}}, "checksAt": bp.iso(T0 - dt.timedelta(minutes=mins_ago)),
              "checksVersion": version, "stampUrl": self.URL}
