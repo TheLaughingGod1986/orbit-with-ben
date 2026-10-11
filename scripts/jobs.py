@@ -10,6 +10,9 @@ is alive and able claims it. The thread stays for discussion and reports; this q
           cloud   a Claude cloud session: reviews, scripts, shot lists, code, the tracker
           ben     only Ben: money, a sign-in, a decision
           any     whoever is free
+  kind    what sort of job it is (scripts/routing.py, AGENTS.md "Who does what", Ben 11 Oct 2026): script, facts,
+          review, vo, image, chart, video, assembly, qa, listing, studio, chief. The relay wakes the worker whose
+          model does that kind best (chart -> Codex on gpt-6-astra) and passes the model; --model overrides it.
 
   python3 scripts/jobs.py add --needs mini --title "Sun 022 first cut" --body-file brief.md --film 022 --stage edit \\
           --ref 6036709461 --by claude --git
@@ -40,6 +43,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chief_relay  # noqa: E402
+import routing  # noqa: E402
 import studio  # noqa: E402
 
 ROOT = studio.ROOT
@@ -80,9 +84,14 @@ def log(job: dict, at: dt.datetime, agent: str, what: str) -> None:
 
 # ----------------------------------------------------------------------------- pure operations
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
-           stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "") -> dict:
+           stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
+           kind: str = "", model: str = "") -> dict:
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
+    if kind and kind not in routing.KINDS:
+        raise ValueError(f"kind must be one of {', '.join(routing.KINDS)}")
+    if model and model not in routing.MODELS:
+        raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
     if bool(film) != bool(stage):
         raise ValueError("--film and --stage go together")
     if stage and stage not in studio.STAGES:
@@ -95,6 +104,10 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
            "result": "", "history": []}
     if for_agent:
         job["for"] = for_agent
+    if kind:
+        job["kind"] = kind
+    if model:
+        job["model"] = model
     log(job, at, by, "added" + (f" for {for_agent}" if for_agent else ""))
     data["next_id"] += 1
     data["jobs"].append(job)
@@ -275,6 +288,8 @@ def render(data: dict, at: dt.datetime) -> str:
         st = "**stalled**" if stalled(j, at) else j["status"] + (f" (after {j['after']})" if j.get("after") and j["status"] == "open" else "")
         film = f"{j['film']} {j['stage']} · " if j.get("film") else ""
         film += f"for {j['for']} · " if j.get("for") else ""
+        film += f"{j['kind']} · " if j.get("kind") else ""
+        film += f"`{j['model']}` · " if j.get("model") else ""
         L.append(f"| {j['id']} | {j['needs']} | {st} | {j.get('by') or '–'} | {j.get('eta') or '–'} | {film}{j['title']} | {j.get('ref') or ''} |")
     if not live:
         L.append("| – | | nothing waiting | | | | |")
@@ -323,6 +338,10 @@ def show(job: dict) -> str:
              f"title: {job['title']}"]
     if job.get("film"):
         lines.append(f"board: {job['film']} {job['stage']}")
+    if job.get("kind") or job.get("model"):
+        r = routing.KINDS.get(job.get("kind") or "")
+        lines.append(f"kind: {job.get('kind') or '-'}" + (f" (primary {r[1][0]} {r[1][1]}" + (f", backup {r[2][0]} {r[2][1]})" if r[2] else ", no stand-in)") if r else "")
+                     + (f"; model: {job['model']}" if job.get("model") else ""))
     if job.get("ref"):
         lines.append(f"ref: {job['ref']}")
     if job.get("body"):
@@ -370,6 +389,8 @@ def main(argv=None) -> int:
     a.add_argument("--eta", type=int, default=DEFAULT_ETA, help="minutes a claim lasts before it counts as stalled")
     a.add_argument("--by", required=True)
     a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")
+    a.add_argument("--kind", default="", choices=[""] + list(routing.KINDS), help="job type; routes it (AGENTS.md 'Who does what')")
+    a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
     n = sub.add_parser("next")
     n.add_argument("--agent", required=True)
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
@@ -426,7 +447,7 @@ def main(argv=None) -> int:
                 body = args.body_file.read_text() if args.body_file else args.body
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
-                             for_agent=args.for_agent)
+                             for_agent=args.for_agent, kind=args.kind, model=args.model)
                 return job, None, touched
             if args.cmd == "focus":
                 data["focus"] = [f.strip() for f in args.films if f.strip()]

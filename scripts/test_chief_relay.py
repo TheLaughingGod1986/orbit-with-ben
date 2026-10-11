@@ -247,6 +247,59 @@ class Relay(unittest.TestCase):
         finally:
             cr.OWB, cr.queue_has_work = old_owb, old_q
 
+    def routed_queue(self, jobs_json):
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "jobs" / "queue.json").write_text(jobs_json)
+
+    def test_a_chart_job_wakes_codex_on_gpt_6_astra_while_grok_is_chief(self):
+        old_q = cr.queue_has_work
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args')
+        self.routed_queue('{"jobs": [{"id": "J0200", "kind": "chart", "status": "open", "needs": "mini"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertFalse(self.ran("cursor"))
+            self.assertIn("exec -m gpt-6-astra --approve-for-me", (self.tmp / "codex.args").read_text())
+        finally:
+            cr.queue_has_work = old_q
+
+    def test_with_codex_down_cursor_stands_in_then_hands_back(self):
+        old_q = cr.queue_has_work
+        self.routed_queue('{"jobs": [{"id": "J0200", "kind": "chart", "status": "open", "needs": "mini"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.mark_down("codex", "usage limit", T0 + 60 * MIN, T0)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))  # the backup takes the chart job
+            self.assertFalse(self.ran("codex"))
+            (self.tmp / "cursor.ran").unlink()
+            cr.seen("chief", T0 + 61 * MIN)
+            cr.cmd_run(T0 + 61 * MIN)  # Codex's limit is over: the next chart job goes back to it
+            self.assertTrue(self.ran("codex"))
+            self.assertFalse(self.ran("cursor"))
+        finally:
+            cr.queue_has_work = old_q
+
+    def test_an_assembly_job_stays_with_cursor_and_no_model_flag(self):
+        old_q = cr.queue_has_work
+        self.routed_queue('{"jobs": [{"id": "J0201", "kind": "assembly", "status": "open", "needs": "mini"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))
+            self.assertFalse(self.ran("codex"))
+        finally:
+            cr.queue_has_work = old_q
+
+    def test_stand_ins_are_told_to_park_protected_calls(self):
+        self.assertIn("parked for Chief", cr.PROMPT)
+        self.assertIn("No final OK or PASS, no merge", cr.PROMPT)
+
     def test_a_stale_codex_flags_env_is_ignored(self):
         os.environ["CODEX_FLAGS"] = "exec -s workspace-write --approve-for-me"
         b, args = cr.cli_spec("codex")

@@ -347,12 +347,12 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
 
 ## 13. Sign-offs
 
-Every sign-off goes to Claude on the thread first (3 Oct 2026). This copy is generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
+Every sign-off goes to Chief on the thread first (Claude until 9 Oct 2026). This copy is generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
 
 <!-- SYNC: AGENTS.md#Stop and ask Ben -->
 **Chief owns the studio (Ben's handover to Chief, 9 Oct 2026; Ben, 10 Oct 2026: *"I should not need to give permission all the time"*).** Wherever this file says Claude decides, OKs, gives the final OK or makes an exception, Chief (Grok Bot) now holds that call in place of Claude. A Chief OK is a plain "[Chief]" post on #99 or HOS #180, or a job added `--by chief`; a job brief saying "Ben approved (relayed by Chief)" counts as Ben's word. Workers act on either and never ask Ben to re-post an OK on #99. Ben is asked only for real money (past £0) and what truly can't be undone; deleting a video stays on the Never list.
 
-**Standing order (Ben, 2–3 Oct 2026): ask Claude first.** Ben, 3 Oct, confirmed to Claude directly: *"Instead of asking me, always ask Claude first."* Anything that used to be marked NEEDS BEN goes to Claude on the PR #99 thread first. Claude decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
+**Standing order: ask Chief first, not Ben** (Ben, 3 Oct 2026, to Claude: *"Instead of asking me, always ask Claude first."* Chief has held that role since 9 Oct). Anything that used to be marked NEEDS BEN goes to Chief on the PR #99 thread first; Claude's review and recommendation come with it. Chief decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
 1. **Spending money:** any top-up, new paid service or plan (see Budget).
 2. **Anything irreversible:** anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Chief can OK it. **Making a public Orbit or HOS video private is Chief's call** (Ben to Claude, 5 Oct 2026; Chief since 9 Oct): a takedown is always done by making the video private, because private can be undone, with the reason on the thread and Ben told.

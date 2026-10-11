@@ -43,6 +43,10 @@ STALE = [
     (r"\*\*Claude owns `AGENTS\.md`", "Chief owns AGENTS.md and the Never list (Ben, 9-10 Oct 2026)"),
     (r"relay never counts as Ben's word", "a Chief relay of Ben's OK counts (Ben, 10 Oct 2026)"),
     (r"with the £5 floor|stop at £5 left|down to £5 \+", "Vertex trial runs to £0 (Ben, 10 Oct 2026 22:50)"),
+    (r"Who does what \(7 Oct 2026\)", "routing table is 'Who does what (11 Oct 2026)' (Ben, 11 Oct 2026)"),
+    (r"Claude\*\* \| Cloud sessions \| .*Can't reach the Mini", "Claude Code is on the Mini; routing by job kind (11 Oct 2026)"),
+    (r"Standing order \(Ben, 2–3 Oct 2026\): ask Claude first", "ask Chief first; Chief holds Claude's old role (9 Oct 2026)"),
+    (r"Otherwise code jobs when Ben starts it", "Codex is a routed worker (gpt-6-astra for charts), 11 Oct 2026"),
 ]
 BLOCK = re.compile(r"(<!-- SYNC: AGENTS\.md#(?P<head>[^>]+?) -->\n)(?P<body>.*?)(<!-- /SYNC -->)", re.S)
 
