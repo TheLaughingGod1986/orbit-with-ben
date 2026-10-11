@@ -9,7 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0125 | mini | open | – | – | 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) |  |
+| J0125 | mini | claimed | cursor | 2026-10-11T11:31Z | 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) |  |
 
 Recently finished:
 
