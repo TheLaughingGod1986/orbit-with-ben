@@ -1,5 +1,5 @@
 {
-  "next_id": 138,
+  "next_id": 139,
   "jobs": [
     {
       "id": "J0001",
@@ -7337,6 +7337,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0138",
+      "title": "HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 006: Flow balance after the refill, then price what's left (Chief, 12 Oct).** Not before Mon 12 Oct 09:00 (AI Ultra renews 12 Oct; Flow had 52 credits before it). Read only, no spend.\n\n1. Read the live Flow credit balance in the Mini's Flow tab (Chrome CDP :9222, the HOS Flow account) and record it: `orbit-with-ben/scripts/ai_spend.py record --pool flow --left <credits> --by <you>`. If the refill hasn't landed, release with the reading and try again after 15:00.\n2. Price, on Flow rates (`07_Edit-Project/PICTURE_PLAN_v01.json` flow.cost_per_clip; Fast 10, Quality 100, Nano Banana 2 still 0): `P3:06_leeds_brewery`, then Parts 04 and 05 from `parts/part-04_plates_v01.json` and `part-05_plates_v01.json` (Flow first; any row Flow can't do goes on the ~£4.25 Vertex trial left, never past £0). Then 007's plates on what's left.\n3. Post the table (plate, quality, credits, running total vs balance) on desk #180 to grok for the price pass (J0139), and update PIPELINE.json credits (Flow row) + the 006 picture row in a HOS PR.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T23:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T23:05Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [
