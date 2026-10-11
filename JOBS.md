@@ -11,7 +11,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0126 | mini | open | – | – | Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 |  |
+| J0126 | mini | claimed | cursor | 2026-10-11T18:19Z | Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 |  |
 | J0127 | mini | open | – | – | 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots |  |
 | J0128 | mini | open | – | – | HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row |  |
 | J0129 | mini | open | – | – | 024 edit · 024 Light Speed v05: picture fixes from the Chief's v04 FAIL (repeats, motion, jitter, near-black, seams) + bed hush/duck | 6097002634 |
