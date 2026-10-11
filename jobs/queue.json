@@ -6812,10 +6812,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-11T20:16Z",
+      "eta": "2026-10-12T00:16Z",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -6884,6 +6884,11 @@
           "at": "2026-10-11T19:51Z",
           "by": "cursor",
           "what": "released: Step 6 running detached (1d8ed2a1). Step 5: render exit 0, clip_check PASS 107, picture_qa 3 FAIL (energy b/c/d low detail 5:31/5:44/6:01), mix -14.3 LUFS/-1.2 dBTP PASS, VO-bed gate 48/4394 windows <10 LU (worst 8.06), phone copy in OWB UAT. Step 6 = energy b/c/d with 1600 bed stars + reassemble + remix (duck MARGIN 1.5 x12) + picture_qa: tmux light024-v05s6-render, /private/tmp/light024_v05s6.sh, log ~/_desk/logs/light024-v05s6-render.log, done ~/_desk/logs/light024-v05s6-render.done. Next: read done-file, check PICTURE_QA.md + audio_v05.json gate_pass, commit pack; then ASR/WER on mix, polish_gate, freeze/black report, music_gate re-run without 027 parked, [Chief] note on #99. Thread 6113042908."
+        },
+        {
+          "at": "2026-10-11T20:16Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
