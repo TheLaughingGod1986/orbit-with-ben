@@ -5,8 +5,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0131.** Ahead of everything, the focus film included.
-
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
@@ -15,10 +13,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0128 | mini | open | – | – | HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row |  |
 | J0129 | mini | claimed | cursor | 2026-10-12T00:32Z | 024 edit · 024 Light Speed v05: picture fixes from the Chief's v04 FAIL (repeats, motion, jitter, near-black, seams) + bed hush/duck | 6097002634 |
 | J0130 | mini | open | – | – | 027 picture · 027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats) |  |
-| J0131 | mini | blocked | cursor | – | Orbit Instagram bio link -> Saturn long 55AEQwvs36g (before Mon 11:30) |  |
 
 Recently finished:
 
+- J0131 cancelled: Orbit Instagram bio link -> Saturn long 55AEQwvs36g (before Mon 11:30) (needs Ben to sign Instagram in on the mini: the Orbit Studio Chrome (CDP 9223) is signed into historyofscienceyt, not orbitwithben; Switch accounts asks for the orbitwithben password. Also, Instagram web now locks the Website field ('Editing your links is only available on mobile'), so even once signed in this likely has to be done in the Instagram app on Ben's phone: Edit profile > Links > https://youtu.be/55AEQwvs36g. Nothing changed on either profile.)
 - J0126 done: Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 (done)
 - J0125 done: 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) (v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it.)
 - J0122 cancelled: Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) ()
@@ -28,4 +26,3 @@ Recently finished:
 - J0118 cancelled: HOS: make silent Short 93fPUG-hW0A private (Chief OK 10 Oct), never delete, no re-upload ()
 - J0117 done: Authorize Chief box SSH key on the mini (Tailscale backup path) (done)
 - J0116 done: Saturn Short v03: Related pill 55AEQwvs36g + cover in Studio (after J0105) (Cover set in Studio (end-card frame via Select from video; saved, persists). Related NOT set: Studio picker can't find 55AEQwvs36g until it is public Sun 11 Oct 17:00Z; needs a follow-up job between 17:00Z Sun and 10:30Z Mon. Evidence: 021/10_Shorts/monday_saturn_tease/11_Upload-Package/studio_finish_Cka7_TVVOUQ/)
-- J0115 done: Push Saturn Short v03 mp4 to branch uat/saturn-short-v03 for Auditor (done)
