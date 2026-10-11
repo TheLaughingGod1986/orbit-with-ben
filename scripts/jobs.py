@@ -22,6 +22,7 @@ is alive and able claims it. The thread stays for discussion and reports; this q
   python3 scripts/jobs.py release J0003 --agent cursor --note "stopping point; rows 1-40 done" --git
   python3 scripts/jobs.py renew J0003 --agent cursor --eta 120 --git           # still working: push the ETA out
   python3 scripts/jobs.py progress J0003 --agent cursor --step 3 --of 8 --git   # finished step 3 of 8 (the board's % done)
+  python3 scripts/jobs.py schedule J0003 --not-before "2026-10-12 09:00" --agent chief --git   # nobody gets it before then
   python3 scripts/jobs.py list [--all]                                          # open and claimed jobs (JOBS.md too)
   python3 scripts/jobs.py reroute J0003 --agent relay --to cursor --model cursor-claude-opus-5-5 --note "Claude out of usage" --git
           # Claude Code out of usage (Ben, 11 Oct 23:40): hand a Claude job to Cursor on the Claude model
@@ -29,7 +30,9 @@ is alive and able claims it. The thread stays for discussion and reports; this q
 `next` exits 10 when nothing is waiting for that agent, so a loop can stop quietly. It hands out quick jobs (--eta 60
 or less) before long ones, oldest first within each, so a multi-day job can't hold up a 30-minute one.
 Rules: a claim lasts until its ETA. A claim past its ETA counts as stalled, and the next able agent may take it over
-(the takeover is noted). A job with --after waits until that job is done. A job with --film/--stage also claims that
+(the takeover is noted). A job with --after waits until that job is done. A job with --not-before "YYYY-MM-DD HH:MM"
+(London time; stored as UTC in "not_before") is skipped by `next`, `next --peek` and the relay until then; the board
+shows it as "starts HH:MM". A job with --film/--stage also claims that
 stage on the studio board in the same commit (and releases it on done/release/block), so the board and the queue
 always agree. Mutating commands take --git: pull, write, commit only the queue files (+ the film's status.json and
 STATUS.md), push, and retry if another agent raced the push.
@@ -43,6 +46,7 @@ import os
 import pathlib
 import subprocess
 import sys
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chief_relay  # noqa: E402
@@ -56,6 +60,7 @@ NEEDS = ["mini", "gemini", "cloud", "ben", "any"]
 EX_NONE = 10
 DEFAULT_ETA = 120
 QUICK_MIN = 60
+LONDON = ZoneInfo("Europe/London")
 
 
 def now():
@@ -85,10 +90,44 @@ def log(job: dict, at: dt.datetime, agent: str, what: str) -> None:
     job.setdefault("history", []).append({"at": studio.iso(at), "by": agent, "what": what})
 
 
+def parse_not_before(text: str) -> str:
+    """"YYYY-MM-DD HH:MM" in London time -> the queue's UTC stamp ("2026-10-12T08:00Z"); "" clears it."""
+    text = (text or "").strip()
+    if not text:
+        return ""
+    try:
+        local = dt.datetime.strptime(text, "%Y-%m-%d %H:%M").replace(tzinfo=LONDON)
+    except ValueError:
+        raise ValueError(f'--not-before must be "YYYY-MM-DD HH:MM" (London time), not {text!r}')
+    return studio.iso(local.astimezone(dt.timezone.utc))
+
+
+def london_hm(stamp: str) -> str:
+    """UTC queue stamp -> "HH:MM" London (with the date when it isn't today in London)."""
+    t = studio.parse(stamp).astimezone(LONDON)
+    return t.strftime("%H:%M") if t.date() == now().astimezone(LONDON).date() else t.strftime("%a %d %b %H:%M")
+
+
+def waiting_to_start(job: dict, at: dt.datetime) -> bool:
+    """A job with a not-before time nobody may claim (or take over) until then (Chief, 12 Oct 2026)."""
+    return bool(job.get("not_before")) and studio.parse(job["not_before"]) > at
+
+
+def do_schedule(job: dict, agent: str, not_before: str, at: dt.datetime) -> None:
+    """Set (or clear, with "") a job's not-before time; London "YYYY-MM-DD HH:MM" in, UTC stored."""
+    stamp = parse_not_before(not_before)
+    if stamp:
+        job["not_before"] = stamp
+        log(job, at, agent, f"not before {not_before.strip()} London ({stamp})")
+    else:
+        job.pop("not_before", None)
+        log(job, at, agent, "not-before cleared")
+
+
 # ----------------------------------------------------------------------------- pure operations
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
            stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
-           kind: str = "", model: str = "") -> dict:
+           kind: str = "", model: str = "", not_before: str = "") -> dict:
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if kind and kind not in routing.KINDS:
@@ -101,6 +140,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
         raise ValueError(f"stage must be one of {', '.join(studio.STAGES)}")
     if after and not find(data, after):
         raise ValueError(f"--after {after}: no such job")
+    nb = parse_not_before(not_before)
     job = {"id": f"J{data['next_id']:04d}", "title": title, "needs": needs, "repo": repo, "body": body, "ref": ref,
            "film": film, "stage": stage, "after": after.upper() if after else "", "eta_min": eta_min,
            "status": "open", "by": "", "since": "", "eta": "", "created_by": by, "created_at": studio.iso(at),
@@ -111,6 +151,8 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
         job["kind"] = kind
     if model:
         job["model"] = model
+    if nb:
+        job["not_before"] = nb
     log(job, at, by, "added" + (f" for {for_agent}" if for_agent else ""))
     data["next_id"] += 1
     data["jobs"].append(job)
@@ -122,6 +164,8 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
         return False
     if job.get("for") and job["for"] != agent:
         return False  # addressed to one agent (e.g. Claude asking Codex for its own view)
+    if waiting_to_start(job, at):
+        return False  # not before its start time (the relay and `next --peek` use this too)
     if job["status"] == "open" or stalled(job, at):
         dep = find(data, job["after"]) if job.get("after") else None
         return dep is None or dep["status"] == "done"
@@ -331,6 +375,8 @@ def render(data: dict, at: dt.datetime) -> str:
     live = [j for j in data["jobs"] if j["status"] in ("open", "claimed", "blocked")]
     for j in sorted(live, key=lambda j: j["id"]):
         st = "**stalled**" if stalled(j, at) else j["status"] + (f" (after {j['after']})" if j.get("after") and j["status"] == "open" else "")
+        if waiting_to_start(j, at) and j["status"] == "open":
+            st += f" (starts {london_hm(j['not_before'])})"
         film = f"{j['film']} {j['stage']} · " if j.get("film") else ""
         film += f"for {j['for']} · " if j.get("for") else ""
         film += f"{j['kind']} · " if j.get("kind") else ""
@@ -389,6 +435,8 @@ def show(job: dict) -> str:
         lines.append(f"kind: {job.get('kind') or '-'}" + (f" (primary {r[1][0]} {r[1][1]}" + (
             ", then " + " -> ".join(f"{a} {m}" for a, m in fb) + ")" if fb else ", no stand-in)") if r else "")
                      + (f"; model: {job['model']}" if job.get("model") else ""))
+    if job.get("not_before"):
+        lines.append(f"not before: {studio.parse(job['not_before']).astimezone(LONDON):%Y-%m-%d %H:%M} London ({job['not_before']})")
     if job.get("ref"):
         lines.append(f"ref: {job['ref']}")
     if job.get("body"):
@@ -438,6 +486,11 @@ def main(argv=None) -> int:
     a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")
     a.add_argument("--kind", default="", choices=[""] + list(routing.KINDS), help="job type; routes it (AGENTS.md 'Who does what')")
     a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
+    a.add_argument("--not-before", default="", help='"YYYY-MM-DD HH:MM" London time: nobody is handed it before then')
+    sc = sub.add_parser("schedule", help="set or clear a job's not-before time")
+    sc.add_argument("id")
+    sc.add_argument("--agent", default="")
+    sc.add_argument("--not-before", required=True, help='"YYYY-MM-DD HH:MM" London time; "" clears it')
     n = sub.add_parser("next")
     n.add_argument("--agent", required=True)
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
@@ -500,7 +553,7 @@ def main(argv=None) -> int:
                 body = args.body_file.read_text() if args.body_file else args.body
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
-                             for_agent=args.for_agent, kind=args.kind, model=args.model)
+                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before)
                 return job, None, touched
             if args.cmd == "focus":
                 data["focus"] = [f.strip() for f in args.films if f.strip()]
@@ -544,6 +597,8 @@ def main(argv=None) -> int:
                 return job, None, touched  # the film's board stage doesn't change
             elif args.cmd == "reopen":
                 do_reopen(job, args.agent or "claude", args.note, at)
+            elif args.cmd == "schedule":
+                do_schedule(job, args.agent or "claude", args.not_before, at)
             elif args.cmd == "cancel":
                 do_cancel(job, args.agent or "claude", args.note, at)
             elif args.cmd == "reroute":
