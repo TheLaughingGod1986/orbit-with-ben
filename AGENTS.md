@@ -204,6 +204,36 @@ A Short is scored on 1 and 3 only. Any FAIL goes back to the edit before the cut
 - **Item 4:** spoken analogies and the hook start with scripts locked from 12 Oct (030 and later). 025–029 have their VO locked, so their DATA graphics may show a scale on screen with no VO change.
 - **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review).
 
+## Packaging (Astrum ref, 11 Oct 2026)
+
+Ben, 11 Oct 2026, sent `@astrumspace`: *"anything we can learn from the thumbnails, packaging of shorts?"* Chief studied their top and bottom longs and Shorts against our last ten longs and decided the following the same night. Ben delegates creative calls to Chief and the AIs. Evidence: `/workspace/astrum-pack` on the box (contact sheets, `longs_meta.tsv`, `shorts_meta.tsv`).
+
+**1. Long thumbnails (`THUMBNAIL_AND_TITLE_RULES.md` §2.B, which wins where it differs):**
+- **Hook text names the object or dares** (THIS IS TRITON, DON'T GO HERE). No vague questions or teasers (WHAT ARE THEY?, HOW LONG?). A question is fine only if it names the subject (SIGNAL ON MARS?).
+- **2–3 words in a band across the top** (or a clear edge), **never over the subject.** Keep the yellow hook word, the white rest, and the house font and outline.
+- **Grade harder.** Mean saturation must be 100 or more, with a target of 120 (85 with `--pale` for a naturally pale subject). Ours ran about 94, Astrum's top about 139. Near-black stays at 30% or less. Check with `thumb_preview.py long <thumb> --out <sheet> --score`.
+- **Optional:** one small white arrow on a "look at this" discovery story.
+
+**2. Titles:** news framing ("We Found…", "We Just Saw…", the mission name) is allowed on a real, dated new result (§1 rule 10). The hedge and threat bans stand.
+
+**3. Review gate.** Chief and the Orbit Auditor score every new or rebuilt long thumb in the pack's review note, PASS or FAIL:
+- **HOOK:** it names the subject or dares.
+- **BAND:** 2–3 words in a top band or clear edge, none over the subject, yellow hook word.
+- **GRADE:** `--score` PASS.
+- **PHONE:** readable at 168×94.
+
+Any FAIL goes back to the builder before the thumb is set. Live thumbs aren't reworked, except the five that break the band rule: Andromeda `ojk-dfOpAmw`, Neutron Star `Yk1tLh23rko`, Europa `NbW5G1BpPY0`, Last Star `REXYxuLOBoI` and Black Hole `3xrxdmaOwJI`. They're rebuilt in one Studio job. Rollback copies are kept, and Chief reviews before they're set.
+
+**4. Shorts packaging.** Ours already open full-frame on the subject with word-by-word captions, as Astrum's do. No change.
+
+**5. Short length test: a Chief-OK'd one-off exception to the 22–27 s lock (11 Oct 2026).**
+- Astrum's Shorts mostly run 55–80 s, and ours run 22–27 s. So **one** Orbit Short of 50–60 s runs alongside the usual three.
+- **The Short:** a stretch lifted from the locked 025 long `Js6EQJ8qDi8`, with no new VO, picture or bed, so nothing is spent.
+- **The slot:** Thu 12 Nov 2026, 11:30 London. That's 025 week, after the four-week test, and the only Short that day.
+- **The gate:** `gate_shorts_open.py check … --length-test` (band 50–60 s, FAIL at 61 s). Every other Short rule applies.
+- **The read:** the Orbit Auditor logs it against that week's Mon/Wed/Fri Shorts (`iyvWYFP_ETA`, `TtgHNLXfDSs`, `bSjWiCbB7pY`) in its next numbers report, in `00_Brand/Channel-Setup/audits/SHORT_LENGTH_TEST_2026-11/TEST_LOG.md`.
+- **What it doesn't change:** every other Short stays 22–27 s and 55–65 words, and the 40 s Never line holds for everything else. One Short is a signal, not a verdict. Chief decides whether to run a second test; the lock changes only by a new entry here.
+
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)
 
 Before asking Ben to lock a topic, run the **neighbour pass** in `STUDIO_PLAYBOOK.md` §2: at least **three** big education/space videos (≈1M+ views) on the same subject, logged in `templates/TOPIC_OPPORTUNITY_SCORE.md` and `PRE_BUILD_VIDIQ_AUDIT.md`. Use their subject words for description first lines and tags — **never** put channel names in the listing. A strong neighbour pool is evidence for Ben; it does not pick the topic for him. Orbit only — do not apply HOS packaging habits here.
@@ -357,7 +387,7 @@ Once the final OK is given (Chief's since 9 Oct), the upload goes up under the s
 - **Publishing:**
   - Premiere a long.
   - Air more than one Short a day.
-  - Ship a Short of 40 s or more.
+  - Ship a Short of 40 s or more. (Sole exception: the one Chief-OK'd 50–60 s length-test Short, *Packaging*, 11 Oct 2026. Never over 60 s.)
   - Ship a silent or near-silent file.
   - Put Orbit at frame 0 of a Short or on any thumbnail.
 - **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only, and the count goes in the pinned comment.

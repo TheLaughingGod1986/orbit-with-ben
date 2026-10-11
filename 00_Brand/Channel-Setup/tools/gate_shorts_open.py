@@ -3,7 +3,9 @@
 
 Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
 
-  1. duration ≥ 40 s                                  (existing lock)
+  1. duration ≥ 40 s                                  (existing lock; `--length-test` lifts it to
+                                                        ≥ 61 s for the one Chief-OK'd 50–60 s Short
+                                                        length test, AGENTS.md, 11 Oct 2026)
   2. first frame (0.3 s) within 10 dHash bits of any   (new — Europa week shipped six
      Short published / scheduled ±14 days of air date   Shorts on one plate; feed saw
                                                         the same video six days running)
@@ -75,6 +77,9 @@ FLAT_VAR = 25.0      # a block this flat in both frames (black space, sky) prove
 MIN_TEXTURED = 12    # fewer textured blocks than this: no verdict (dHash still applies)
 DUR_FAIL = 40.0
 DUR_BAND = (22.0, 27.0)
+# One-off Short length test (Chief OK, 11 Oct 2026, AGENTS.md "Short length test"). Only with --length-test.
+TEST_DUR_FAIL = 61.0
+TEST_DUR_BAND = (50.0, 60.0)
 VISOR_FAIL = 0.003
 VISOR_WARN = 0.001
 SHEET_TIMES = (0.0, 0.3, 1.0, 2.0, 3.0, 4.0)
@@ -346,15 +351,26 @@ def contact_sheet(path: Path, out: Path) -> None:
         run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"hstack=inputs={len(tiles)}", str(out)])
 
 
+def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], list[str]]:
+    """(fails, warns) for the duration. length_test: the one Chief-OK'd 50–60 s test Short (11 Oct 2026)."""
+    fail_at, band = (TEST_DUR_FAIL, TEST_DUR_BAND) if length_test else (DUR_FAIL, DUR_BAND)
+    if dur >= fail_at:
+        return [f"duration {dur:.1f}s ≥ {fail_at:.0f}s"], []
+    if not (band[0] <= dur <= band[1] + 0.5):
+        return [], [f"duration {dur:.1f}s outside {band[0]:.0f}–{band[1]:.0f}s band"]
+    return [], []
+
+
 def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, self_id: str | None = None,
-          last: int = LOOKBACK_LAST) -> dict:
+          last: int = LOOKBACK_LAST, length_test: bool = False) -> dict:
     res: dict = {"file": str(path), "air_date": air.isoformat(), "fails": [], "warns": []}
     dur = duration_s(path)
     res["duration_s"] = round(dur, 2)
-    if dur >= DUR_FAIL:
-        res["fails"].append(f"duration {dur:.1f}s ≥ {DUR_FAIL:.0f}s")
-    elif not (DUR_BAND[0] <= dur <= DUR_BAND[1] + 0.5):
-        res["warns"].append(f"duration {dur:.1f}s outside {DUR_BAND[0]:.0f}–{DUR_BAND[1]:.0f}s band")
+    if length_test:
+        res["length_test"] = True
+    fails, warns = duration_verdict(dur, length_test)
+    res["fails"] += fails
+    res["warns"] += warns
 
     if not has_audio(path):
         res["audio"] = {"stream": False}
@@ -427,6 +443,8 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--sheet-dir", type=Path, default=Path(tempfile.gettempdir()) / "orbit_shorts_gate")
     c.add_argument("--id", default=None, help="candidate's own YouTube id (skips its library entry on re-check)")
     c.add_argument("--json", action="store_true")
+    c.add_argument("--length-test", action="store_true",
+                   help="the one Chief-OK'd 50-60 s Short length test (AGENTS.md, 11 Oct 2026): band 50-60 s, FAIL at 61 s")
 
     a = sub.add_parser("add", help="register a published/scheduled Short from a local file or frame")
     a.add_argument("--id", required=True)
@@ -462,7 +480,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if ns.cmd == "check":
         air = date.fromisoformat(ns.air_date)
-        results = [check(p.resolve(), air, ns.days, lib, ns.sheet_dir, ns.id, ns.last) for p in ns.files]
+        results = [check(p.resolve(), air, ns.days, lib, ns.sheet_dir, ns.id, ns.last, ns.length_test) for p in ns.files]
         if ns.json:
             print(json.dumps(results, indent=2, ensure_ascii=False))
         else:
