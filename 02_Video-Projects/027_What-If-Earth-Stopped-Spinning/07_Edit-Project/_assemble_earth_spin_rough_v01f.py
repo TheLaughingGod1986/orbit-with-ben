@@ -10,7 +10,9 @@ shrug (~8.4 s into the take), not on the idle; row 22 = Magellan PIA00271 (<=8.2
 v01f (Chief J0130, 11 Oct): code graphics from code_out_v06 (lifted navy star bed, labels ~8-11% cap height off the subject);
 row 28 NOAA span 2 from 50 s cropped (600,0,3200,1800) clear of the badge and ending before the 56.5 s swath seam, span 3
 cropped (200,120,3200,1800) clear of the NASA bug (<=1.2x); e002130/e002131 graded (saturation and cyan down), Pahoeoe
-highlights and saturation pulled; chapter cards auto-fit to ~11% cap height.
+highlights and saturation pulled; chapter cards auto-fit to ~11% cap height. New plates for repeats/Sun: row 5 DC-8
+EC04-0047-004, row 19 Sahara iss072e068304, row 24 tidal flats iss026e005121 breaks the tides graphic (row 25 resumes at
+14.2 s, a new stretch), row 34 Greenland e000112, row 35 Deep Space Atomic Clock PIA24573 (no Sun, no 6:38 dissolve).
 v01e (Claude #6087961804): row 28's first NOAA span cropped to (576,0,3264,1836), clear of the logo badge (x 187-527,
 y 1877-2054 in the 3840x2160 source); every other segment reused from v01d.
 v01d (Claude #6087573310): row 6 Five Minutes -> ISS city-lights still iss070e062746 (slow push, crop clear of the
@@ -103,7 +105,7 @@ ROWS=[
  ('13',nt(143.12),[V(ISS,44.0),G('row13','speed',2.0),G('row13','speed',7.0)]),
  ('14',nt(155.24),[V(NP,0.0,max=8.8,hold_ok=1),V(GERST,316.0,vcrop=GC,near=74.5)]),
  ('15',nt(167.16),[SUN,V(EPIC,8.0,vcrop=(460,180,1000,563)),'earth/GSFC_20171208_Archive_e000265.jpg']),
- ('5',nt(40.38),[V(POUR,0.0,max=4.8),'airborne/AFRC2022-0059-49.jpg',('airborne/ED07-0256-09.jpg',c)]),
+ ('5',nt(40.38),[V(POUR,0.0,max=4.8),'airborne/AFRC2022-0059-49.jpg','airborne/EC04-0047-004.jpg']),
  ('6',nt(51.32),[V(GERST,250.0,vcrop=GC),(CITY,dict(box=(0.0,0.30,0.80,0.75),pct=.06,hold_ok=1,max=9.0))]),
  ('7',nt(63.32),[V(SILLA,3.4),V(SILLA,3.4,cont=1)]),
  ('8',nt(72.98),[G4('row08','bulge',max=7.0,hold_ok=1),G4('row08','bulge',cont=1),(BM,SEAG)]),
@@ -111,13 +113,13 @@ ROWS=[
  ('16',nt(182.42),[V(ISS,56.0)]),
  ('17',nt(187.84),[G5('row17','oceans',max=5.3,hold_ok=1)]),
  ('18',nt(192.84),[(BM2,SEAG),(BM2,dict(quad='c',grade='sea')),G5('row18-19','oceans',max=10.0,hold_ok=1)]),
- ('19',nt(212.52),[G5('row18-19','oceans',cont=1),('earth/GSFC_20171208_Archive_e000265.jpg',c)]),
+ ('19',nt(212.52),[G5('row18-19','oceans',cont=1),'desert/iss072e068304.jpg']),
  ('20',nt(221.96),[G4('row20','dayyear'),G4('row20','dayyear',cont=1),G4('row20','dayyear',cont=1)]),
  ('21',nt(237.30),[V(SUNSET,1.7,max=8.2,hold_ok=1),V(GERST,278.5,vcrop=GC)]),
  ('22',nt(248.76),[('venus/PIA00271.jpg',dict(hold_ok=1,max=8.2,pct=.04)),(VENUS,dict(box=(0.0,0.0,0.46,1.0),hold_ok=1,max=10.5,pct=.04))]),
  ('23',nt(265.90),[MOON,'tide/Bay_of_Fundy_tide_in.jpg','tide/Bay_of_Fundy_tide_out.jpg']),
- ('24',nt(275.10),[G4('row24-25','tides'),G4('row24-25','tides',cont=1),G4('row24-25','tides',cont=1)]),
- ('25',nt(287.98),[G4('row24-25','tides',cont=1),G4('row24-25','tides',cont=1),AS14,(AS14,c)]),
+ ('24',nt(275.10),[G4('row24-25','tides'),G4('row24-25','tides',cont=1),('tide/iss026e005121.jpg',dict(box=(0.0,0.0,1.0,0.86)))]),
+ ('25',nt(287.98),[G4('row24-25','tides',14.2),G4('row24-25','tides',cont=1),AS14,(AS14,c)]),
  ('26',nt(307.52),[(MOON,c),FAR,(FAR,dict(box=(0.08,0.2,0.92,0.75)))]),
  ('27',nt(323.28),[('tablet/Cuneiform_tablet-_commentary_on_Enuma_Anu_Enlil_tablet_5_MET.jpg',dict(pct=.06)),'eclipse/NHQ201708210100.jpg']),
  ('28',nt(334.66),[V(NOAA,2.0,vcrop=(576,0,3264,1836)),V(NOAA,50.0,vcrop=(600,0,3200,1800),max=5.6),V(NOAA,63.0,vcrop=(200,120,3200,1800),max=7.0,hold_ok=1)]),
@@ -126,8 +128,8 @@ ROWS=[
  ('31',nt(374.30),[V(PHONE,0.0),'nist/NIST_atomic_clock_006.jpg']),
  ('32',nt(379.14),['nist/NIST-F2_cesium_fountain_atomic_clock.jpg','nist/NIST_ytterbium_lattice_clock.jpg']),
  ('33',nt(389.62),[G('row33','clock',0.0,vcrop=TIGHT),G('row33','clock',6.0),V(ISS,68.0)]),
- ('34',nt(403.46),[('kilauea/commons_Pahoeoe_fountain_original.jpg',dict(grade='lava')),(BM,dict(quad='c',grade='sea')),'greenland/GSFC_20171208_Archive_e001753.jpg']),
- ('35',nt(416.88),[(SUN,dict(box=(0.05,0.2,0.95,0.7))),G('row35','tides',2.0,vcrop=TIGHT),G('row35','speed',6.0),V(GERST,330.0,vcrop=GC,max=8.3,hold_ok=1)]),
+ ('34',nt(403.46),[('kilauea/commons_Pahoeoe_fountain_original.jpg',dict(grade='lava')),'greenland/GSFC_20171208_Archive_e000112.jpg','greenland/GSFC_20171208_Archive_e001753.jpg']),
+ ('35',nt(416.88),[('nist/PIA24573.jpg',dict(box=(0.22,0.08,0.78,0.62))),G('row35','tides',2.0,vcrop=TIGHT),G('row35','speed',6.0),V(GERST,330.0,vcrop=GC,max=8.3,hold_ok=1)]),
  ('36',nt(439.12),[V(SILLA,24.0),'stars/ESO_star_trails_VLT_Paranal.jpg']),
  ('37',nt(449.30),[('young/NASA_Bennu_journey_early_Earth.jpg',dict(box=(0.2,0.0,0.8,1.0))),
    (EPIC,dict(video=1,at=4.0,max=16.9,hold_ok=1,bookend=1))]),
