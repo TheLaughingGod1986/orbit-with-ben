@@ -1,5 +1,5 @@
 {
-  "next_id": 137,
+  "next_id": 138,
   "jobs": [
     {
       "id": "J0001",
@@ -7310,6 +7310,33 @@
       ],
       "kind": "studio",
       "model": "cursor-auto"
+    },
+    {
+      "id": "J0137",
+      "title": "HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS 006 Part 03 rough v01 (Chief, 12 Oct).** All 16 Part 03 first takes from J0107 are KEEP (Chief, desk #180 comment 6102934743, 10 Oct 23:38 London; HOS PR #276). Row `16_repair_reuse` is a window of `14_trees_breathe` (use the new 14 mint). `P3:06_leeds_brewery` is the one Flow plate: it comes after the Mon 12 Oct refill (J0140), so hold its slot with a black/plate-board placeholder of the right length and say so on the sheet.\n\n1. Assemble Part 03 rough v01 on the locked v02 VO the same way Part 02 rough v02 was built (VO-first order, board timings from `07_Edit-Project/parts/part-03_plates_v01.json`). No spend.\n2. Run the house checks (picture_qa / freeze check); post a UAT proxy + contact sheet on desk #180 to grok for the KEEP call.\n3. HOS PR: rough build script/log (media out of git), PIPELINE.json 006 picture row (what Part 03 is at, next step). `jobs.py progress` as you go so the board shows % done.\nWork in the HOS checkout, follow its AGENTS.md; close here with `jobs.py done|block|release`.\n",
+      "ref": "hos#276",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T23:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T23:04Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
