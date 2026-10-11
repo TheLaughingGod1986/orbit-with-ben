@@ -2,6 +2,27 @@
 
 Command-line tools for **Orbit With Ben**. There is no web app and no database: the hosted ops app (Vercel project `orbit-content-ops`, Neon Postgres) was retired on 27 Sep 2026 and lives in `_archive/07_Content-Ops/`.
 
+## Vercel / `/go` door (do not auto-deploy)
+
+The live affiliate door is still **https://orbit-content-ops.vercel.app/go** (Vercel project `orbit-content-ops`, root `07_Content-Ops`, Amazon tag `orbitgo-21` in Vercel env only). Git must **not** create deployments for this project: every push used to open a CANCELED Ignored Build Step deploy, and those **count** toward the Hobby `api-deployments-free-per-day` (100/day) quota.
+
+- Project: Git Hub `createDeployments` is **disabled**, and `vercel.json` has `"git": { "deploymentEnabled": false }`.
+- `ignoreCommand` / `scripts/vercel-ignore-build.sh` stays as a backstop if git deploys are ever re-enabled.
+- Studio/jobs/board pushes to `main` must not touch this project's deploy quota.
+
+### Ship a real `/go` change (Chief OK only)
+
+1. Get **Chief OK** (Ben via Chief of Staff).
+2. From a machine signed into Vercel team **ben's projects**, with the CLI linked to `orbit-content-ops`:
+   ```bash
+   cd 07_Content-Ops
+   vercel --prod
+   ```
+3. Confirm `https://orbit-content-ops.vercel.app/go` returns **200** and a known slug (e.g. `/go/jwst-book`) still redirects with `tag=orbitgo-21`.
+4. Do **not** reconnect git auto-deploy, pause, delete the project, or change env vars unless Ben asked.
+
+Note: today's `07_Content-Ops` tree is local CLIs (no Next.js). The door is the last READY Next deploy from before the 27 Sep ops-app retire. If you need to change `/go` code, restore the Next app into this root (or point the project Root Directory at the restored app) **before** `vercel --prod`, or you will overwrite the live door with a non-app build. Money King owns the door; ask Chief before either restore or prod CLI deploy.
+
 ## Setup (once)
 
 ```bash
