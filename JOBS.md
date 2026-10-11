@@ -11,7 +11,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0127 | mini | open | – | – | 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots |  |
 | J0128 | mini | open | – | – | HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row |  |
-| J0130 | mini | claimed | cursor | 2026-10-12T00:39Z | 027 picture · 027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats) |  |
+| J0130 | mini | open | – | – | 027 picture · 027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats) |  |
 
 Recently finished:
 
