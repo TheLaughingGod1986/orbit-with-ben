@@ -22,6 +22,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
-| 027 | edit | cursor | 2026-10-11T23:40Z | 2026-10-12T01:39Z | J0142 027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test) |
+| 027 | edit | cursor | 2026-10-11T23:40Z | 2026-10-12T00:05Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
