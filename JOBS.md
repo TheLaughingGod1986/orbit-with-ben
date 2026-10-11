@@ -16,6 +16,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0137 | mini | open | – | – | assembly · HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) | hos#276 |
 | J0138 | mini | open | – | – | video · HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05 |  |
 | J0139 | any | open (after J0138) | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
+| J0140 | mini | open (after J0139) | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 
 Recently finished:
 
