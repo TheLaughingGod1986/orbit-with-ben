@@ -261,5 +261,48 @@ class ButtonStamp(unittest.TestCase):
         self.assertNotIn("issues/", src)
 
 
+class QuickNoOp(unittest.TestCase):
+    """Every-minute runs (Ben, 11 Oct 22:09) stop early when nothing moved."""
+
+    def test_same_refs_recent_build_and_no_ticks_skip(self):
+        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(minutes=2))}
+        self.assertTrue(bp.skip_quick(prev, "k1", T0, False))
+
+    def test_a_moved_ref_a_tap_an_old_build_or_no_key_rebuild(self):
+        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(minutes=2))}
+        self.assertFalse(bp.skip_quick(prev, "k2", T0, False))
+        self.assertFalse(bp.skip_quick(prev, "k1", T0, True))
+        self.assertFalse(bp.skip_quick(dict(prev, built=bp.iso(T0 - dt.timedelta(seconds=bp.FULL_EVERY_S))), "k1", T0, False))
+        self.assertFalse(bp.skip_quick(prev, None, T0, False))
+        self.assertFalse(bp.skip_quick({}, "k1", T0, False))
+
+    def test_quick_key_follows_the_refs_and_fails_open(self):
+        refs = {"main": "a"}
+        remote = lambda repo, *r: f"{repo}:{refs['main']}:{','.join(r)}"
+        k1 = bp.quick_key(remote)
+        self.assertEqual(k1, bp.quick_key(remote))
+        refs["main"] = "b"
+        self.assertNotEqual(k1, bp.quick_key(remote))
+
+        def broken(repo, *r):
+            raise RuntimeError("offline")
+        with tempfile.TemporaryDirectory() as d:
+            old = bp.STATE
+            bp.STATE = Path(d)
+            try:
+                self.assertIsNone(bp.quick_key(broken))
+            finally:
+                bp.STATE = old
+
+    def test_launchd_runs_every_minute(self):
+        plist = (HERE / "mini" / "com.owb.board-publish.plist").read_text()
+        self.assertIn("<key>StartInterval</key><integer>60</integer>", plist)
+
+    def test_page_polls_board_data_every_minute(self):
+        shim = (HERE.parent / "05_Analytics/kanban/board_site/shim.js").read_text()
+        self.assertIn("setInterval(pollData, 60 * 1000);", shim)
+        self.assertIn("publishedAt: j.publishedAt", shim)
+
+
 if __name__ == "__main__":
     unittest.main()

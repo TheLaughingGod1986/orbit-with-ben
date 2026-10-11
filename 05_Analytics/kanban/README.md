@@ -2,7 +2,7 @@
 
 Live board: https://studio-kanban.vercel.app (self-updating; see `scripts/board_publish.py` and `board_site/build.py`).
 The page is `studio_kanban.html`; its data is built by `scripts/kanban_snapshot.py --db-out` and published by the Mac
-mini to the `board-data` branch after every job change and every 5 minutes.
+mini to the `board-data` branch after every job change (including each `jobs.py progress` step) and checks every minute.
 
 ## Channel Tracker web app (Ben, 10 Oct 2026)
 
@@ -36,5 +36,5 @@ button that opens it on his phone. `kanban_snapshot.py` picks one link per film 
 
 **For whoever hands Ben a cut (Cursor, Codex, Claude, Grok):** put it in `OWB UAT` / `HOS UAT/<NNN_film>/` with the film
 number first and the version as `_vNN[letter]` in the name (e.g. `026_NearestStar_v05_PHONE.mp4`), and set the film
-note's `you` in `film_briefs.json` as usual. The button then appears by itself within 5 minutes. Never upload or change
+note's `you` in `film_briefs.json` as usual. The button then appears by itself within a couple of minutes. Never upload or change
 privacy just to get a link; a private upload counts only once the upload job has made it.

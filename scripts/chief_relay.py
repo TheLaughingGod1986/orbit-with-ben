@@ -266,6 +266,9 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    means only desk #180 messages that are not in the queue.
    The OWB job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
+   Ben watches % done on the board: split the job into n steps (keep n from any earlier `progress` on it) and run
+     python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
+   with k=0 when you start and again after each finished step (k = steps done), before you release or finish.
    If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
    desk, or a Claude message on #99 asking the Chief for something with no Chief reply yet).
    If nothing is waiting anywhere, stop without posting.

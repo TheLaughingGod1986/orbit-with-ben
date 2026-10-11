@@ -245,6 +245,11 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .nowbar .why{margin-top:3px}
 .nowbar ul.also{margin:2px 0 0;padding-left:20px;font-size:13px;color:var(--ink-2)}
 .nowbar .bl{margin-top:5px;font-size:13px;font-weight:600;color:var(--blocked);background:var(--blocked-soft);border-radius:6px;padding:4px 8px}
+.nowbar .pbar{display:flex;align-items:center;gap:8px;margin-top:5px;font-size:13px;font-weight:600}
+.nowbar .pbar .track{flex:0 0 150px;max-width:40%;height:8px;border-radius:4px;background:var(--doing-soft);overflow:hidden}
+.nowbar .pbar .track i{display:block;height:100%;background:var(--doing);border-radius:4px}
+.nowbar .nx{margin-top:3px;font-size:13px;color:var(--ink-2)}
+.nowbar .upd{margin-top:5px;font-size:11px;color:var(--ink-3)}
 .kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
 @media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.kb{grid-template-columns:1fr}}
@@ -658,13 +663,63 @@ function jobLabel(j){
   return tag + esc(t);
 }
 // Ben, 11 Oct 20:52: "Not sure we need this as we have the swim lanes": the Order of work list is gone, the cards carry
-// each film's rank and ETA. So this box carries what the Mac mini is on, its next jobs, every live job no card shows
-// (a Short or listing job with no film card, a date gate, a film's second job) and every blocked job with its reason.
+// each film's rank and ETA. Since 11 Oct 22:09 the box above them is plain (renderNow): now, % done, next two, blocked.
 const jobLine = j => j.line || j.needs;
 function shortReason(r){
   let t = String(r||"").replace(/\s+/g," ").trim(); if(!t) return "no reason given";
   const cut = t.search(/[:;.](\s|$)/); if(cut>=12) t = t.slice(0,cut);
   return t.length>90 ? t.slice(0,88)+"…" : t;
+}
+// Ben, 11 Oct 22:09: "I just want to literally say, we're currently working on X, Y, Z. We are twenty percent of the way
+// through, we'll be finished in thirty minutes." So the box is plain: what's being worked on, a bar with % done and when
+// it finishes, the next two jobs, any blocked job, and a small "Updated HH:MM". A job released between steps still reads
+// "Working on" (it carries on at the next wake-up). % done comes from real data only (progressOf).
+// Step pace from `jobs.py progress` (step k of n finished, at a time): each step has taken (at - work start) / k so far.
+function stepPace(j){
+  const p = j.progress; if(!p || !(p.of>=1) || !(p.step>=1) || p.step>p.of) return null;
+  const s = ts(j.workStart||j.claimedAt), at = ts(p.at);
+  if(isNaN(s) || isNaN(at) || at<=s) return null;
+  const per = (at-s)/p.step;
+  return {per, at, left: per*(p.of-p.step)};
+}
+// % done and finish time. With steps: k of n done plus the current step by its usual length (never past the next step);
+// without: time since work started against the estimate, capped at 95%. Never 100% until the job is done.
+function progressOf(j, P){
+  const now = Date.now(), p = j.progress, pace = stepPace(j), pl = (P||{})[j.id]||{};
+  let frac;
+  const done = pl.done || (pace ? Math.max(pace.at + pace.left, now+MINUTE) : NaN);
+  // the current step by time only while someone holds the job; released between steps, nobody is on it
+  if(pace) frac = Math.min(0.99, (p.step + (j.status==="claimed" ? Math.min(0.9, Math.max(0, now-pace.at)/pace.per) : 0)) / p.of);
+  else {
+    const s = ts(j.workStart||j.claimedAt);
+    frac = !isNaN(s) && done>s ? (now-s)/(done-s) : 0;
+    frac = Math.min(frac, 0.95, p && p.of>=1 ? (p.step+0.95)/p.of : 1);
+  }
+  return {pct: Math.max(0, Math.min(99, Math.floor(frac*100))), done};
+}
+function finishIn(ms){
+  if(!ms || isNaN(ms)) return "finish time not known yet";
+  const m = Math.max(1, Math.round((ms-Date.now())/MINUTE)), d = new Date(ms);
+  const hm = d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"});
+  const day = x => x.toLocaleDateString("en-GB",{timeZone:"Europe/London"});
+  const at = day(d)===day(new Date()) ? hm : d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",timeZone:"Europe/London"})+" "+hm;
+  return `finished in about ${m<60?`${m} min`:`${Math.floor(m/60)} h${m%60?` ${m%60} min`:""}`} (${at})`;
+}
+// "027 What If Earth Stopped Spinning? – Chief's frame-review fixes": film number and title, then the job in a few words.
+function plainJob(j){
+  const h = /^HOS\s+(\d{3})\b/.exec(j.title||""), no = j.film || (h ? "" : ((/^(\d{3})\b/.exec(j.title||"")||[])[1]||""));
+  let task = String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s*/,"").replace(/\s*\([^)]*\)/g,"").trim();
+  let film = "";
+  if(no){ const f = (fromDb.owb||[]).find(x=>String(x.film)===String(no)); film = `${no}${f&&f.title?" "+f.title:""}`; }
+  else if(h){ const f = ((fromDb.hos||{}).films||[]).find(x=>String(x.id)===h[1]); film = `HOS ${h[1]}${f&&f.title?" "+f.title:""}`; }
+  if(film && task.includes(":")) task = task.slice(task.indexOf(":")+1).trim();   // "Earth Stopped Spinning rough v01f: fixes" -> "fixes"
+  if(task.length>64) task = task.slice(0,62)+"…";
+  return film ? `<b>${esc(film)}</b> – ${esc(task)}` : esc(task);
+}
+function updatedAt(){
+  const bd = typeof window!=="undefined" ? (window.__boardData||{}) : {};
+  const t = ts(bd.publishedAt) || ts(fromDb.owbAt);
+  return isNaN(t) ? "" : `<div class="upd">Updated ${clock(t)}</div>`;
 }
 function renderNow(){
   const box = $("nowbar"); if(!box) return;
@@ -676,35 +731,21 @@ function renderNow(){
   const busy = jobs.filter(j=>j.status==="claimed");
   const part = jobs.filter(j=>j.status==="open" && /^released/.test(String((j.last||{}).what||"")) && (j.last||{}).by && j.last.by!=="claude");
   const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
-  const lastAct = q && !isNaN(q.at) ? ` · last activity ${ago(q.at)}` : "";
-  let cls = "", head, headJob = null;
-  if(busy.length){ const j = headJob = busy[0], p = P[j.id]||{};
-    head = `Mac mini is working on ${jobLabel(j)} · ${esc(AGENT(j.by))} since ${clock(ts(j.claimedAt))} · <b>${etaOf(p.done)}</b>`; }
-  else if(part.length){ const j = headJob = part[0], p = P[j.id]||{};
-    head = `Mac mini is between steps of ${jobLabel(j)} · carries on within 10 min${p.done?` · <b>${etaOf(p.done)}</b>`:""}`; }
+  let cls = "", head, bar = "", headJob = busy[0] || part[0] || null;
+  if(headJob){ const pr = progressOf(headJob, P);
+    head = `Working on: ${plainJob(headJob)}`;
+    bar = `<div class="pbar"><span class="track"><i style="width:${pr.pct}%"></i></span><span>${pr.pct}% done · ${finishIn(pr.done)}</span></div>`; }
   else if(line.some(j=>P[j.id].state!=="gated")){ cls = q && q.quiet ? "asleep" : "idle";
-    head = q && q.quiet ? `Mac mini has been quiet for over 3 hours with work waiting; it may be asleep` : `Mac mini is between jobs · the next one starts at its next wake-up (within 10 min)`; }
-  else { cls = "idle"; head = "Mac mini has nothing queued"; }
-  const next = line.filter(j=>!part.includes(j)).slice(0,3);
-  const nextTxt = j => { const p = P[j.id]; return p.state==="gated" ? `starts ${clock(p.start)} (date gate)` : `starts about ${clock(p.start)}`; };
-  // Every other live job that no film card shows, in start order: other lines (Chief, You) included.
-  const shown = new Set(next.concat(headJob ? [headJob] : []).map(j=>j.id));
-  const lineWord = j => j.needs==="ben" ? "You" : jobLine(j)==="chief"||jobLine(j)==="cloud" ? "Chief" : "Mac mini";
-  const also = all.filter(j=>j.status!=="blocked" && j.status!=="done" && !shown.has(j.id) && !ON_CARD.has(j.id))
-    .sort((a,b)=>((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15) || a.id.localeCompare(b.id))
-    .map(j=>{ const p = P[j.id]||{}, dep = j.waitsFor||j.after;
-      const when = p.state==="now" ? `working · ${etaOf(p.done)}` : p.state==="gated" ? `starts ${clock(p.start)} (date gate)`
-        : p.start ? `starts about ${clock(p.start)} · ${etaOf(p.done)}` : dep ? `no estimate: needs ${esc(dep)} first` : "no estimate: not in the queue's line yet";
-      return `<li>${esc(lineWord(j))}: ${jobLabel(j)} · ${when}</li>`; });
+    head = q && q.quiet ? "Mac mini has been quiet for over 3 hours with work waiting; it may be asleep" : "Working on: nothing right now · the next job starts within 10 min"; }
+  else { cls = "idle"; head = "Nothing queued for the Mac mini"; }
+  const next = line.filter(j=>j!==headJob).slice(0,2);
+  const when = j => { const p = P[j.id]; return p.state==="gated" ? `starts ${clock(p.start)}` : `starts about ${clock(p.start)}`; };
   const blocked = all.filter(j=>j.status==="blocked").map(j=>`<div class="bl">Blocked: ${jobLabel(j)} - ${esc(shortReason(j.result || ((j.last||{}).what||"").replace(/^blocked:\s*/,"")))}</div>`);
   box.className = "nowbar" + (cls ? " "+cls : "");
-  box.innerHTML = `<div class="h"><span class="dot"></span>${head}</div>`
-    + (next.length ? `<ol>${next.map(j=>`<li>${jobLabel(j)} · ${nextTxt(j)}</li>`).join("")}</ol>` : "")
-    + (also.length ? `<div class="why"><b>Also queued</b> (no card shows these)</div><ul class="also">${also.join("")}</ul>` : "")
+  box.innerHTML = `<div class="h"><span class="dot"></span>${head}</div>` + bar
+    + next.map((j,i)=>`<div class="nx">${i?"Then":"Next"}: ${plainJob(j)} · ${when(j)}</div>`).join("")
     + blocked.join("")
-    + `<div class="why">One job at a time, in the queue's own order: urgent jobs in the order named, then the focus film, then other films${lastAct}. Each film's card shows its rank and ETA.</div>`
-    + (()=>{ const at = ts(fromDb.owbAt), age = Date.now()-at; if(isNaN(at)) return "";
-        return `<div class="why${age>40*MINUTE?" late":""}">As of ${clock(at)}${age>40*MINUTE?` (${ago(at)}, so the Mac mini may have moved on since)`:""}. The board refreshes every hour and whenever the Mac mini posts.</div>`; })();
+    + updatedAt();
 }
 
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
@@ -1126,8 +1167,8 @@ function plan(){
   for(const lane of RO ? Object.keys(RO) : ["mini","gemini","cloud"]){
     let t = now, pos = 0;
     for(const j of jobs.filter(j=>laneOf(j)===lane && j.status==="claimed")){
-      const st = ts(j.claimedAt) || now, est=(j.estMin||25)*MINUTE;
-      const done = Math.max(st+est, now+5*MINUTE);
+      const st = ts(j.claimedAt) || now, est=(j.estMin||25)*MINUTE, pace = stepPace(j);
+      const done = pace ? Math.max(pace.at + pace.left, now+MINUTE) : Math.max(st+est, now+5*MINUTE);
       out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
     }
     // Same order as scripts/jobs.py `next` (Ben, 10 Oct): the publisher writes it as owb.runOrder; urgent ranks are numbers.
@@ -1146,8 +1187,8 @@ function plan(){
       const nb = ts(j.notBefore);
       if(nb > now){ const start = Math.max(nb, dep ? dep.done : 0), done = j.gateOnly ? start : start + (j.estMin||25)*MINUTE;
         out[j.id] = {state:"gated", start, done, gate:nb, pos: ++pos}; continue; }
-      const start = Math.max(t, now + wake, dep ? dep.done + wake : 0);
-      const done = start + (j.estMin||25)*MINUTE;
+      const start = Math.max(t, now + wake, dep ? dep.done + wake : 0), pace = stepPace(j);
+      const done = start + (pace ? Math.max(pace.left, MINUTE) : (j.estMin||25)*MINUTE);   // a released job: only what's left
       out[j.id] = {state: dep ? "after" : "line", start, done, pos: ++pos}; t = done;
     }
   }

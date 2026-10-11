@@ -72,6 +72,33 @@ class Briefs(unittest.TestCase):
                 ks.BRIEFS = old
 
 
+class JobProgress(unittest.TestCase):
+    """The board's % done (Ben, 11 Oct 22:09): real step data from the queue, else nothing (the page uses time)."""
+
+    def test_reported_progress_wins(self):
+        j = {"progress": {"step": 2, "of": 6, "at": "2026-10-11T21:00Z", "by": "cursor"},
+             "history": [{"at": "2026-10-11T20:00Z", "what": "released: step 1 of 3 done"}]}
+        self.assertEqual(ks.job_progress(j), {"step": 2, "of": 6, "at": "2026-10-11T21:00Z"})
+
+    def test_step_k_of_n_in_a_release_note(self):
+        j = {"history": [{"at": "2026-10-11T19:00Z", "what": "added"}, {"at": "2026-10-11T19:10Z", "what": "claimed"},
+                         {"at": "2026-10-11T19:40Z", "what": "released: stopping point, step 3 of 8 done"}]}
+        self.assertEqual(ks.job_progress(j), {"step": 3, "of": 8, "at": "2026-10-11T19:40Z"})
+
+    def test_no_numbers_no_progress_and_reopen_resets(self):
+        self.assertIsNone(ks.job_progress({"history": [{"at": "t", "what": "released: Step 1 of v01f done"}]}))
+        j = {"history": [{"at": "a", "what": "released: step 2 of 4"}, {"at": "b", "what": "reopened: redo"}]}
+        self.assertIsNone(ks.job_progress(j))
+        self.assertIsNone(ks.job_progress({"progress": {"step": 5, "of": 4}, "history": []}))
+
+    def test_work_start_is_the_first_claim_since_added_or_reopened(self):
+        h = [{"at": "1", "what": "added"}, {"at": "2", "what": "claimed"}, {"at": "3", "what": "released"},
+             {"at": "4", "what": "claimed"}]
+        self.assertEqual(ks.work_start({"history": h}), "2")
+        self.assertEqual(ks.work_start({"history": h + [{"at": "5", "what": "reopened"}, {"at": "6", "what": "claimed"}]}), "6")
+        self.assertEqual(ks.work_start({"history": [{"at": "1", "what": "added"}]}), "")
+
+
 if __name__ == "__main__":
     unittest.main()
 

@@ -33,13 +33,13 @@ TRACKER = HERE.parent.parent / "dashboard" / "template.html"
 TRACKER_DATA = HERE.parent.parent / "dashboard" / "data.json"
 
 FOOTER = ('<footer>This board updates itself. The Mac mini rebuilds its data from <span class="mono">main</span> of both '
-          'repos whenever a job in the queue moves (claimed, done, blocked, released) and every 5 minutes, and pushes it only '
+          'repos whenever a job in the queue moves (claimed, a step done, done, blocked, released) and checks every minute, and pushes it only '
           'when something changed (<span class="mono">scripts/board_publish.py</span> → branch <span class="mono">board-data</span>). '
           'This page re-reads it every minute; the time at the top is the last real change. <b>HOS</b> comes from '
           '<span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science; <b>OWB</b> from each film\'s '
           '<span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span>, the job queue and '
           '<span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben ("chief" is shown as Grok). '
-          'Your ticks are saved straight away with your board link; the Mac mini picks them up within 5 minutes. '
+          'Your ticks are saved straight away with your board link; the Mac mini picks them up within about a minute. '
           'YouTube numbers: <a href="/tracker">Channel Tracker</a>.</footer>')
 
 PATCHES = [

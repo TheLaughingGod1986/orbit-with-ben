@@ -159,5 +159,58 @@ class BoardLink(unittest.TestCase):
                 studio.FILMS = old
 
 
+class Progress(unittest.TestCase):
+    """Ben, 11 Oct 22:09: % done on the board comes from `jobs.py progress <id> --step k --of n`."""
+
+    def test_records_steps_and_logs_them(self):
+        d = queue(("mini", "027 fixes", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        jobs.do_progress(j, "cursor", 3, 8, T0 + 10 * MIN, note="grade done")
+        self.assertEqual(j["progress"], {"step": 3, "of": 8, "at": "2026-10-07T12:10Z", "by": "cursor", "note": "grade done"})
+        self.assertEqual(j["history"][-1]["what"], "step 3 of 8 done: grade done")
+
+    def test_kept_across_a_release_and_cleared_on_reopen(self):
+        d = queue(("mini", "027 fixes", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        jobs.do_progress(j, "cursor", 1, 4, T0 + MIN)
+        jobs.do_release(j, "cursor", "stopping point", T0 + 2 * MIN)
+        self.assertEqual(j["progress"]["step"], 1)
+        jobs.do_progress(j, "cursor", 2, 4, T0 + 3 * MIN)   # between steps, the job is open: still allowed
+        self.assertEqual(j["progress"]["step"], 2)
+        j2 = jobs.do_next(d, "chief", {"mini"}, T0 + 4 * MIN)
+        jobs.do_done(j2, "chief", "ok", T0 + 5 * MIN)
+        jobs.do_reopen(j2, "claude", "again", T0 + 6 * MIN)
+        self.assertNotIn("progress", j2)
+
+    def test_rejects_bad_steps_and_someone_elses_claim(self):
+        d = queue(("mini", "027 fixes", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        for step, of in ((5, 4), (-1, 4), (0, 0)):
+            with self.assertRaises(ValueError):
+                jobs.do_progress(j, "cursor", step, of, T0)
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "chief", 1, 4, T0)
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "", 1, 4, T0)
+        jobs.do_done(j, "cursor", "ok", T0)
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "cursor", 4, 4, T0)
+
+    def test_cli_progress(self):
+        d = queue(("mini", "027 fixes", {}))
+        jobs.do_next(d, "cursor", {"mini"}, T0)
+        saved = []
+        with tempfile.TemporaryDirectory() as tmp:
+            old = (jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat)
+            jobs.load, jobs.save = (lambda *a: d), (lambda data, *a: saved.append(data))
+            jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = pathlib.Path(tmp) / "JOBS.md", (lambda: None), (lambda a: None)
+            try:
+                rc = jobs.main(["progress", "J0001", "--agent", "cursor", "--step", "2", "--of", "5"])
+            finally:
+                jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = old
+        self.assertEqual(rc, 0)
+        self.assertEqual(saved[0]["jobs"][0]["progress"]["step"], 2)
+
+
 if __name__ == "__main__":
     unittest.main()
