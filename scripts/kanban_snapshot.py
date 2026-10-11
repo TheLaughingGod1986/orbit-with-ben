@@ -402,6 +402,134 @@ def chief_text(s):
     return re.sub(r"(^|[.!?]\s+)the Chief", r"\1The Chief", s)
 
 
+# ---- Who does each step still to do (Ben, 12 Oct: "Is Gemini not used at all?") ----
+# From 11 Oct, scripts/routing.py decides who does each kind of job (AGENTS.md "Who does what"). Past steps keep their
+# true doer (a done stage's owner, or the agent that claimed/finished the job). A step still to do shows the routed
+# worker for its kind: a film-note step with `kind`, or with a `job` whose queue entry has a kind. A job that is claimed
+# shows whoever holds it. HOS queue jobs ("HOS 006 ...") the note doesn't name are added to the note, as the page does
+# for OWB jobs, so an HOS card moves with the queue too.
+HOS_STAGE_KIND = {"topic": "review", "script": "script", "facts": "facts", "package": "listing", "vo": "vo",
+                  "shorts_scripts": "script", "shorts_vo": "vo", "picture": "video", "edit": "assembly",
+                  "thumbnails": "chart", "scheduled": "studio"}
+HOS_JOB = re.compile(r"^HOS\s+(\d{3})\b")
+# A step with no kind still routes when its words say plainly what it is: a facts check (Gemini) or code graphics (Codex).
+KIND_WORDS = [("facts", re.compile(r"\bfact[- ]?checks?\b|\bsources\b|\bcheck (?:every|the|all) (?:numbers?|dates?|claims?|facts?)", re.I)),
+              ("chart", re.compile(r"\bcharts?\b|\bgraphs?\b|people cards?|code graphics|\boverlays?\b|date stamps?|\bWHO cards?", re.I))]
+
+
+def kind_of_step(what: str) -> str:
+    return next((k for k, rx in KIND_WORDS if rx.search(what or "")), "")
+
+
+def worker_name(agent: str, model: str = "") -> str:
+    """Board name for a routing lane: the model's maker for model-led lanes, else the worker."""
+    if model == "grok" or agent == "chief":
+        return "Chief"
+    if model == "cursor-claude-opus-5-5":
+        return "Claude (in Cursor)"
+    if model.startswith("claude"):
+        return "Claude"
+    if model == "gemini-agy":
+        return "Gemini"
+    if model.startswith("gpt-"):
+        return "Codex"
+    return {"cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude"}.get(agent, agent.title())
+
+
+def _routing():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import routing
+    return routing
+
+
+def routing_doc() -> dict:
+    """{kind: {what, who, chain}} for the page: who does each kind first, then the stand-ins in order."""
+    r = _routing()
+    return {k: {"what": what, "who": worker_name(*ch[0]), "chain": [worker_name(a, m) for a, m in ch]}
+            for k, (what, ch, _how) in r.CHAINS.items()}
+
+
+def routed_who(kind: str = "", model: str = "") -> str:
+    r = _routing()
+    if model and model in r.RUNS_ON and not kind:
+        return worker_name(r.RUNS_ON[model], model)
+    ch = r.job_chain({"kind": kind, "model": model})
+    if not ch:
+        return ""
+    if model and model in r.RUNS_ON:  # a job pinned to a model runs on that model's worker
+        return worker_name(r.RUNS_ON[model], model)
+    return worker_name(*ch[0])
+
+
+def job_doer(j: dict) -> str:
+    """The agent that holds or finished a job ("chief/gemini" is Gemini run by the Chief; "chief" alone is Grok)."""
+    b = str(j.get("by") or "").lower()
+    last = b.split("/")[-1]
+    if last in ("gemini", "agy"):
+        return "Gemini"
+    if b == "chief" or b.startswith("chief/"):
+        return "Grok"
+    return last.title() if last else ""
+
+
+def job_who(j: dict) -> str:
+    """Who a queue job shows on a card: whoever holds or did it, else the routed worker for its kind."""
+    if j.get("status") in ("claimed", "done") and j.get("by"):
+        return job_doer(j)
+    return routed_who(j.get("kind") or "", j.get("model") or "")
+
+
+def hos_job_steps(briefs: dict, alljobs: list[dict]) -> dict:
+    """Add live HOS queue jobs a note doesn't name yet (before Ben's own steps), each with its job id and kind."""
+    out = {}
+    live = [j for j in alljobs if j.get("status") in ("open", "claimed", "blocked")]
+    for k, b in briefs.items():
+        if not k.startswith("HOS:"):
+            out[k] = b
+            continue
+        steps = list(b.get("steps") or [])
+        named = {x for st in steps for x in (st.get("job"), st.get("afterJob")) if x}
+        extra = []
+        for j in live:
+            m = HOS_JOB.match(j.get("title") or "")
+            if (j.get("film") == k or (m and "HOS:" + m.group(1) == k)) and j["id"] not in named:
+                what = re.sub(r"\s*\([^)]*\)", "", HOS_JOB.sub("", j.get("title") or "")).strip(" :·")
+                extra.append({"who": job_who(j), "what": what[:90], "job": j["id"], **({"kind": j["kind"]} if j.get("kind") else {})})
+        if extra:
+            at = next((i for i, st in enumerate(steps) if st.get("who") == "Ben" and not st.get("done")), len(steps))
+            steps[at:at] = extra
+            b = dict(b, steps=steps)
+        out[k] = b
+    return out
+
+
+def route_steps(briefs: dict, alljobs: list[dict]) -> dict:
+    """A step still to do shows the routed worker for its kind (or whoever holds its job); Ben's steps and done steps
+    keep their name."""
+    byid = {j["id"]: j for j in alljobs}
+    out = {}
+    for k, b in briefs.items():
+        steps = []
+        for st in b.get("steps") or []:
+            if not st.get("done") and st.get("who") != "Ben":
+                j = byid.get(st.get("job") or "")
+                kind = st.get("kind") or (j or {}).get("kind") or kind_of_step(st.get("what", ""))
+                who = job_who(j) if j and (j.get("status") in ("claimed", "done") or j.get("kind")) else routed_who(kind) if kind else ""
+                if who:
+                    st = dict(st, who=who, **({"kind": kind} if kind else {}))
+            steps.append(st)
+        out[k] = dict(b, steps=steps) if "steps" in b else b
+    return out
+
+
+def route_hos_stages(hos: dict) -> None:
+    """HOS stages still to do with no owner: the routed worker for the stage's kind (done stages keep their doer)."""
+    for f in hos.get("films", []):
+        for key, st in (f.get("stages") or {}).items():
+            if st.get("status") == "todo" and not st.get("owner") and key in HOS_STAGE_KIND:
+                st["owner"] = routed_who(HOS_STAGE_KIND[key])
+
+
 # ---- Ben's handoffs (Ben, 10 Oct: the card said "Waiting for you" while the For-you box said nothing to check) ----
 # "Waiting for you" only when the cut really is in Ben's For-you box: the note has `you` set and the board has a Watch
 # link for it. Any other step of Ben's still to come is a future handoff and reads "Ready for you" with its date.
@@ -558,6 +686,7 @@ def main(argv: list[str] | None = None) -> int:
         now = datetime.now(timezone.utc).isoformat(timespec="seconds")
         a.db_out.mkdir(parents=True, exist_ok=True)
         add_since_hos(a.hos, hos)
+        route_hos_stages(hos)
         add_since_owb(owb)
         (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
         q = ROOT / "jobs" / "queue.json"
@@ -574,7 +703,7 @@ def main(argv: list[str] | None = None) -> int:
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
                      workStart=work_start(j), progress=job_progress(j),
-                     estMin=est_minutes(j), watch=makes_video(j))
+                     estMin=est_minutes(j), watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""))
                 for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
         lanes = lanes_info(alljobs)
         hb = mini_heartbeat()
@@ -587,7 +716,8 @@ def main(argv: list[str] | None = None) -> int:
                           "at": next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("done")), "")}
                          for j in alljobs if j.get("status") == "done"), key=lambda r: r["at"], reverse=True)[:5]
         doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"], "recent": recent,
-               "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())}}
+               "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
+               "routing": routing_doc()}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
                             "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}
@@ -603,7 +733,7 @@ def main(argv: list[str] | None = None) -> int:
         briefs = load_briefs()
         links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k == "uatFolderUrl"} if BRIEFS.exists() else {}
         watch = watch_links(hos, owb, briefs)
-        briefs = ben_handoffs(chief_reviews(briefs), watch)
+        briefs = ben_handoffs(chief_reviews(route_steps(hos_job_steps(briefs, alljobs), alljobs)), watch)
         (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, **links}, ensure_ascii=False))
         print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
               f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')})")

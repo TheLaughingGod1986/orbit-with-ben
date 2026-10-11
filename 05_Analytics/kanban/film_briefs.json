@@ -1,5 +1,5 @@
 {
-  "_note": "Ben, 8 Oct: one plain note per film on the Studio Kanban. Done so far / The holdup / Second limit / Next (who, what, when) / For you. Claude keeps these current on every hourly studio run; the page shows each note's 'updated' time and flags it if it is over a day old. Steps with 'job' take their times live from the job queue; 'afterJob' + 'lag' (minutes) means 'that long after the job is done'. 'when' is an ISO date or time; 'whenText' says it in words when there is no fixed time. 'mood' picks the column: good or held = In progress, waiting = To do, finished or ready = Done. 'line' is the one plain sentence on the card. 'you' is empty when there is nothing for Ben. 'uatFolderUrl' (top level) is Ben's iCloud share link to the OWB UAT folder (icloud.com links only); a film's 'uatUrl' is a share link to its own file, if Ben ever makes one.",
+  "_note": "Ben, 8 Oct: one plain note per film on the Studio Kanban. Done so far / The holdup / Second limit / Next (who, what, when) / For you. Claude keeps these current on every hourly studio run; the page shows each note's 'updated' time and flags it if it is over a day old. Steps with 'job' take their times live from the job queue; 'afterJob' + 'lag' (minutes) means 'that long after the job is done'. 'when' is an ISO date or time; 'whenText' says it in words when there is no fixed time. 'mood' picks the column: good or held = In progress, waiting = To do, finished or ready = Done. 'line' is the one plain sentence on the card. A step's 'kind' (scripts/routing.py: script, facts, review, vo, image, chart, video, assembly, qa, listing, studio, chief) sets who it shows for a step still to do: the routed worker (Ben, 12 Oct), or whoever holds its job; done steps keep their doer. 'you' is empty when there is nothing for Ben. 'uatFolderUrl' (top level) is Ben's iCloud share link to the OWB UAT folder (icloud.com links only); a film's 'uatUrl' is a share link to its own file, if Ben ever makes one.",
   "uatFolderUrl": "",
   "films": {
     "OWB:021": {
@@ -344,32 +344,61 @@
       "line": "Finished and scheduled with its three Shorts."
     },
     "HOS:006": {
-      "updated": "2026-10-08T16:05Z",
+      "updated": "2026-10-11T23:08Z",
       "mood": "good",
-      "done": "Script, voice and the Shorts. Picture is about a third done: Part 01 is kept and Part 02's rough cut is held.",
-      "holdup": "Picture credit, not work. Flow has only 52 credits until it refills on Mon 12 Oct. So Part 03 goes on the free Vertex trial now (your call today), and Parts 04 and 05 wait for the refill.",
-      "limit": "The Vertex trial runs down to £0 (Ben, 10 Oct; £16.17 on 10 Oct), so it covers Part 03 only. The Mac mini is shared with Orbit With Ben, so the two take turns.",
+      "done": "Script, voice and the Shorts. Picture is about half done: Part 01 is kept, Part 02's rough cut is held, and all 16 Part 03 shots made on the free Vertex trial (Sat 10 Oct) are kept.",
+      "holdup": "Part 03's rough cut is next on the Mac mini (no spend). Its one Flow shot and Parts 04 and 05 wait for Flow, whose credits refill on Mon 12 Oct.",
+      "limit": "The Vertex trial has about £4.25 left after Part 03 (it runs down to £0, never onto the card). Flow had 52 credits before the refill; the new balance is read on Monday after 09:00 and priced before anything is spent. The Mac mini is shared with Orbit With Ben, so the two take turns.",
       "steps": [
         {
+          "kind": "video",
           "who": "Cursor",
-          "what": "Part 03 picture on the free Vertex trial (16 shots, about £11)",
-          "whenText": "now, about a day"
+          "what": "Part 03 picture on the free Vertex trial: all 16 shots made and kept",
+          "done": true,
+          "doneText": "done Sat 10 Oct (J0107)"
         },
         {
-          "who": "Cursor",
-          "what": "read the Flow balance after the refill and price Parts 04 and 05",
-          "when": "2026-10-11"
+          "kind": "assembly",
+          "job": "J0137",
+          "what": "Part 03 rough cut from the 16 kept shots (the Flow shot's slot held)"
         },
         {
-          "who": "Claude",
-          "what": "pass the prices before anything is spent",
-          "when": "2026-10-11"
+          "kind": "video",
+          "job": "J0138",
+          "what": "read the Flow balance after the refill and price the last Part 03 shot and Parts 04 and 05"
         },
         {
-          "who": "Cursor",
-          "what": "Parts 04 and 05 picture on Flow, then edit and thumbnails",
+          "kind": "chief",
+          "job": "J0139",
+          "what": "pass the prices before anything is spent"
+        },
+        {
+          "kind": "video",
+          "job": "J0140",
+          "what": "the last Part 03 shot and Parts 04 and 05 picture on Flow, then their rough cuts",
+          "when": "2026-10-25",
+          "whenText": "picture by Sun 25 Oct"
+        },
+        {
+          "kind": "chart",
+          "what": "teaching graphics: charts, people cards and date stamps",
+          "when": "2026-10-27"
+        },
+        {
+          "kind": "facts",
+          "what": "check every number and date on the graphics",
+          "when": "2026-10-28"
+        },
+        {
+          "kind": "assembly",
+          "what": "edit and master",
           "when": "2026-10-29",
-          "whenText": "picture by Sun 25 Oct, edit by Thu 29 Oct"
+          "whenText": "by Thu 29 Oct"
+        },
+        {
+          "kind": "chart",
+          "what": "thumbnails (art on Flow, lettering from the cover builder)",
+          "when": "2026-10-29"
         },
         {
           "who": "Ben",
@@ -379,8 +408,8 @@
       ],
       "you": "Your final OK on Sun 1 Nov. Nothing before then.",
       "youWhen": "2026-11-01",
-      "timing": "Airs Thu 5 Nov. On time if the Flow refill lands on Monday as expected.",
-      "line": "Picture about a third done. Part 03 is being made now; Parts 04 and 05 wait for Monday's Flow refill.",
+      "timing": "Airs Thu 5 Nov. On time if Monday's Flow refill covers Parts 04 and 05.",
+      "line": "Picture about half done. All 16 Part 03 shots are kept; its rough cut is next, then Parts 04 and 05 on Flow after Monday's refill.",
       "youShort": "your final OK Sun 1 Nov"
     },
     "HOS:007": {
