@@ -11,7 +11,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0127 | mini | open | – | – | 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots |  |
 | J0128 | mini | open | – | – | HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row |  |
-| J0132 | mini | open | – | – | 024 edit · assembly · 024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45) | 6114454146 |
+| J0132 | mini | claimed | cursor | 2026-10-12T00:14Z | 024 edit · assembly · 024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45) | 6114454146 |
 
 Recently finished:
 
