@@ -269,6 +269,12 @@ Where a lesson below meets one of them, the rule wins.
 - **(a) No cover text.** SEA's top two longs have no cover text at all. One Test & Compare runs on one live long: the live thumb (A) against the same plate with no text (B). It's queued as a Studio job, parked for Chief's review before the test is set. Until a winner is called, the yellow-word rule stands.
 - **(b) The near-black cap.** SEA's winners run 51% near-black with a lit, glowing subject in the centre. The proposal is to count the lit subject, not the share of black. It's recorded in `audits/THUMB_AUDIT_2026-10-04/AUDIT.md` as a proposal only. The ≤30% cap and `thumb_preview.py --score` stand until Chief adopts a change here.
 
+**6. Per-chapter teaching gate (Chief, 12 Oct 2026; Orbit Auditor scores it, from 024 on).** Jupiter `-jmMROGoZCM` went live with no teaching labels at all. So on every long from 024, the Orbit Auditor scores each chapter PASS or FAIL in the pack's review note, alongside Chief's *Teach on screen* review gate:
+- **NUMBER:** the chapter shows at least one number as an object (a slider, scale card, graph, counter or timeline), not only spoken. A chapter with none FAILs.
+- **WORDS:** every on-screen keyword or label matches the VO word for word at the moment it shows. A label that paraphrases or contradicts the VO FAILs.
+- The note lists every chapter with its result and the timestamp of its number object. The gate result per chapter is the measure; its growth effect only shows in Studio's average % viewed, which the Auditor reports as UNKNOWN unless someone reads Studio.
+- It adds to *Teach on screen* (DATA 3 or more per long, labels of 4 words or fewer from the line being spoken) and relaxes nothing. Films already live, scheduled or approved aren't reworked; on a VO-locked film it's met with overlays only.
+
 **Applies to:** scripts locked from 12 Oct (030 on) for structure and people. Shot lists and cuts from 12 Oct get the picture and sound items, within each film's VO lock. Packaging applies to every new upload package. Nothing that's live, scheduled or approved is reworked.
 
 ## Packaging (Astrum ref, 11 Oct 2026)
