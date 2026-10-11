@@ -1,11 +1,6 @@
-# Picture QA: FAIL
+# Picture QA: PASS
 
-/private/tmp/024_LightSpeed_full_rough_v05.mp4 · 107 cuts · 2 fail · 70 for Claude to look at full size
-
-## Fix before anyone watches
-
-- **5:31** row 30 · energy_b.mp4: low detail: luma std 13.23 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)
-- **5:44** row 30 · energy_c.mp4: low detail: luma std 13.27 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)
+/private/tmp/024_LightSpeed_full_rough_v05.mp4 · 107 cuts · 0 fail · 72 for Claude to look at full size
 
 ## Claude looks at these full size
 
@@ -62,11 +57,13 @@
 - **4:54** row 26 · starfield_f.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **5:00** row 26 · twinclocks_d.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **5:04** row 26 · starfield_g.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 17.51 < 18.0
-- **5:49** row 30 · energy_c.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 17.37 < 18.0
+- **5:31** row 30 · energy_b.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 13.71 < 18.0
+- **5:44** row 30 · energy_c.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 13.64 < 18.0
+- **5:49** row 30 · energy_c.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 17.65 < 18.0
 - **5:54** row 31 · energy_c.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **5:58** row 31 · SSC-20240229-s00309.tif (NASA Caps Off February with RS-25 Engine Certification Test): sharpness: upscaled 2.10x, may look soft
-- **6:01** row 31 · energy_d.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 13.69 < 18.0
-- **6:06** row 31 · energy_d.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 15.99 < 18.0
+- **6:01** row 31 · energy_d.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 14.24 < 18.0
+- **6:06** row 31 · energy_d.mp4: kind of picture: no title in the pool, so nobody can tell what it is; low detail: luma std 16.39 < 18.0
 - **6:31** row 34 · ACS3_SolarSailSunrise.png (Advanced Composite Solar Sail System Artist’s Concept 3): kind of picture: 'Advanced Composite Solar Sail System Artist’s Concept 3' (composite), look at it full size
 - **6:36** row 34 · ACS3_LookingDown.png (Advanced Composite Solar Sail System Artist’s Concept 2): kind of picture: 'Advanced Composite Solar Sail System Artist’s Concept 2' (composite), look at it full size; sharpness: upscaled 2.10x, may look soft
 - **6:40** row 35 · starfield_h.mp4: kind of picture: no title in the pool, so nobody can tell what it is

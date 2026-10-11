@@ -59,7 +59,7 @@ grid=t.copy();duck=np.zeros_like(grid);k=int(0.5*SR);rode=bed
 for _ in range(16):  # measure, add the shortfall, measure again
  cut=np.where(on,np.clip(GAP_LU+MARGIN-d,0,None),0.0)
  if not cut.any():break
- held=np.array([cut[max(0,i-30):i+1].max() for i in range(len(cut))])  # a window ending at t covers t-3..t: duck all of it
+ held=np.array([cut[max(0,i-5):i+36].max() for i in range(len(cut))])  # sample t sits in every window ending t..t+3; +0.5 s each side for the smoothing
  duck=np.minimum(duck+np.interp(grid,t,held,left=0,right=0),MAX_DUCK)
  env_db=np.convolve(np.interp(T,grid,duck,left=0,right=0),np.ones(k)/k,mode='same')
  bed=rode*(10**(-env_db/20))[:,None]

@@ -1,5 +1,5 @@
 {
-  "verdict": "FAIL",
+  "verdict": "PASS",
   "video": "/private/tmp/024_LightSpeed_full_rough_v05.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
@@ -11,38 +11,7 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 75,
-      "row": "30",
-      "source": "energy_b.mp4",
-      "title": null,
-      "t": 331.3,
-      "at": "5:31",
-      "fail": [
-        "low detail: luma std 13.23 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    },
-    {
-      "cut": 78,
-      "row": "30",
-      "source": "energy_c.mp4",
-      "title": null,
-      "t": 344.15,
-      "at": "5:44",
-      "fail": [
-        "low detail: luma std 13.27 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
-      ],
-      "offset": 0.5
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 0,
@@ -780,6 +749,34 @@
       "offset": 0.5
     },
     {
+      "cut": 75,
+      "row": "30",
+      "source": "energy_b.mp4",
+      "title": null,
+      "t": 331.3,
+      "at": "5:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.71 < 18.0"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 78,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 344.15,
+      "at": "5:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.64 < 18.0"
+      ],
+      "offset": 0.5
+    },
+    {
       "cut": 79,
       "row": "30",
       "source": "energy_c.mp4",
@@ -789,7 +786,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 17.37 < 18.0"
+        "low detail: luma std 17.65 < 18.0"
       ],
       "offset": 4.733
     },
@@ -829,7 +826,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 13.69 < 18.0"
+        "low detail: luma std 14.24 < 18.0"
       ],
       "offset": 0.5
     },
@@ -843,7 +840,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 15.99 < 18.0"
+        "low detail: luma std 16.39 < 18.0"
       ],
       "offset": 4.6
     },
@@ -1469,7 +1466,7 @@
       "reviewed_ok": {
         "note": "2:23 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
         "passed": [
-          "near-black: mean 16.43, p95 59.0"
+          "near-black: mean 16.43, p95 60.0"
         ]
       }
     },
@@ -2025,11 +2022,10 @@
       "title": null,
       "t": 331.3,
       "at": "5:31",
-      "fail": [
-        "low detail: luma std 13.23 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.71 < 18.0"
       ],
       "offset": 0.5
     },
@@ -2068,11 +2064,10 @@
       "title": null,
       "t": 344.15,
       "at": "5:44",
-      "fail": [
-        "low detail: luma std 13.27 < 13.44 and edge density 0.0149 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [
-        "kind of picture: no title in the pool, so nobody can tell what it is"
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 13.64 < 18.0"
       ],
       "offset": 0.5
     },
@@ -2086,7 +2081,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 17.37 < 18.0"
+        "low detail: luma std 17.65 < 18.0"
       ],
       "offset": 4.733
     },
@@ -2126,7 +2121,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 13.69 < 18.0"
+        "low detail: luma std 14.24 < 18.0"
       ],
       "offset": 0.5
     },
@@ -2140,7 +2135,7 @@
       "fail": [],
       "warn": [
         "kind of picture: no title in the pool, so nobody can tell what it is",
-        "low detail: luma std 15.99 < 18.0"
+        "low detail: luma std 16.39 < 18.0"
       ],
       "offset": 4.6
     },
