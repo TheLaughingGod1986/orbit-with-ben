@@ -12,6 +12,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0126 | mini | open | – | – | Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 |  |
+| J0127 | mini | open | – | – | 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots |  |
 
 Recently finished:
 

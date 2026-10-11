@@ -1,5 +1,5 @@
 {
-  "next_id": 127,
+  "next_id": 128,
   "jobs": [
     {
       "id": "J0001",
@@ -6738,6 +6738,32 @@
         }
       ],
       "urgent": 1
+    },
+    {
+      "id": "J0127",
+      "title": "021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Saturn 021 listing fix from Orbit Auditor's gate (notes: /workspace/audits/saturn-gate-2026-10-11/GATE.md on the Grok box; summary on Orbit Desk). In YouTube Studio, first confirm the channel is Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog) and switch if not. On 55AEQwvs36g:\n1) Restore the description's line 1 and paragraph 2 to LOCKED v02 from the repo's 021 upload package. Line 1 is: 'Saturn is losing its rings. The ice rings are raining away into the planet right now.' Keep the chapters, sources and NASA credits. This must restore the words 'losing its rings' and 'gas giant'. No /go/ links.\n2) Screenshot the end screen editor and the ~5:25 card (it should point to 2fsQcea-voM), and push the screenshots to the uat branch or post the paths.\nDon't change the title, thumbnail or schedule. Do this after J0126. Leave Studio on Orbit and post a [Chief] note on #99 saying which channel Studio is on at the end. Chief OK.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-11T18:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-11T18:00Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
