@@ -6929,10 +6929,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-11T21:26Z",
+      "eta": "2026-10-12T00:26Z",
       "created_by": "chief",
       "created_at": "2026-10-11T18:03Z",
       "result": "",
@@ -6961,6 +6961,11 @@
           "at": "2026-10-11T21:16Z",
           "by": "cursor",
           "what": "released: Step 2 done (32bb28d): _assemble_earth_spin_rough_v01f.py uses code_out_v06 (all 13 rows rendered, j0130-cg.done=0); row 28 NOAA span 2 = V(NOAA,50.0,crop 600,0,3200,1800,max 5.6) (clean disc 47.0-56.0 s, swath seam starts 56.5 s), span 3 crop (200,120,3200,1800) clear of the NASA bug; e002130/e002131 sea grade, Pahoeoe lava grade; chapter cards auto-fit ~11% cap, shadow text, no panel. --plan: 88 segs, 446.3 s, no problems. NOT rendered yet. Still to do before render: (5) row 35 Sun e002035 at 6:39 -> Earth/timekeeping plate (Five_Minutes_in_Orbit.webm is unused in v01e; ISS reel and Gerst are both at 5 stretches); (6) new plates for repeats e000265 row 19 @3:19 (band of dry land), e002130 row 34 @6:30, Moon e000868 row 26 @4:50, ED07-0256-09 row 5 @1:41 - the pool has no unused fitting plate, so fetch new NASA images (verify IDs, GBP0); (1) break rows 24-25 tides with a real shot (Fundy is already used at 4:11/4:14, so a new retroreflector/tide plate). Then render detached in tmux, picture_qa, polish_gate, clip_check, near-black count at 2 s, pack, [Chief] note."
+        },
+        {
+          "at": "2026-10-11T21:26Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ]
     },
