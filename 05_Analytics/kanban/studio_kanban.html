@@ -310,6 +310,11 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .ck li .w{grid-column:2;font-size:12px;color:var(--ink-3)}
 .ck li .w.late{color:var(--late)}
 .st1{font-size:12px;font-weight:600;margin-top:6px;color:var(--ink-2)}
+.mk{font-size:12.5px;font-weight:600;line-height:1.35;padding:5px 9px;border-radius:8px;margin:0 0 7px;background:var(--panel-2);color:var(--ink-2)}
+.mk.now{background:var(--doing-soft);color:var(--doing)}.mk.now::before{content:"▶ "}
+.mk.next{background:var(--todo-soft);color:var(--todo)}.mk.next::before{content:"⏳ "}
+.mk.wait{background:var(--accent-soft);color:var(--soon)}.mk.wait::before{content:"◷ "}
+.mk.bad{background:var(--blocked-soft);color:var(--blocked)}.mk.bad::before{content:"⛔ "}
 .st1::before{margin-right:4px}
 .st1.now{color:var(--doing)}.st1.now::before{content:"▶"}
 .st1.queue::before{content:"⏳"}
@@ -748,8 +753,37 @@ function renderTracker(films){
       : fj.p.pos===1 ? `<span class="pill you">Up next · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
       : fj.p.pos ? `<span class="pill">#${fj.p.pos} · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
       : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
-    lanes[f._ch][live ? "live" : COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing"].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
-      <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span>${ordChip} <span class="pill ${cls}">${word}</span></span></div>
+    // Ben, 11 Oct 18:52: "a marker to say in the in progress lane what's worked on and the eta". One coloured line at
+    // the top of every card that isn't live or scheduled: Now / Next / Waiting / Blocked, from the same plan() as the
+    // Order of work; else the film note's next step; else the stage in hand; never blank.
+    const col = live ? "live" : COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing";
+    const jn = j => `${esc(shortTitle(String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s+/,"")))} (${esc(j.id)})`;
+    const lineWho = j => (j.line||j.needs)==="chief"||(j.line||j.needs)==="cloud" ? "Chief" : "Mac mini";
+    const sinceTxt = t => t ? ` · since ${esc(fw(t))}` : "";
+    const firstOpen = rows.find(r=>!r.w.ok);
+    const doingSt = f._stages.map(s=>[s,stOf(f,s)]).find(([,x])=>["doing","blocked"].includes(x.status));
+    let mk = null;
+    if(fj && fj.p.state==="now") mk = ["now", `Now: ${esc(AGENT(fj.j.by))}, ${jn(fj.j)} · done about ${clock(fj.p.done)}`];
+    else if(partDone) mk = ["now", `Now: ${esc(AGENT(fj.j.last.by))}, ${jn(fj.j)} · part done, carries on within 10 min${fj.p.done?` · done about ${clock(fj.p.done)}`:""}`];
+    else if(fj && fj.p.start) mk = ["next", `Next${fj.p.pos?` (#${fj.p.pos} in line)`:""}: ${lineWho(fj.j)}, ${jn(fj.j)} · starts ${fj.p.state==="gated"?"":"about "}${clock(fj.p.start)}${fj.p.state==="gated"?" (date gate)":""} · done about ${clock(fj.p.done)}`];
+    else if(fj && fj.j.status==="blocked") mk = ["bad", `Blocked: ${jn(fj.j)} · ${esc(String(fj.j.result||"no reason given").slice(0,90))}`];
+    else if(fj) mk = ["wait", `Waiting: ${jn(fj.j)} · no estimate: needs ${esc(fj.j.waitsFor||fj.j.after||"another job")} first`];
+    else if(f._ch==="HOS" && doingSt && doingSt[1].status==="doing"){ const [sg,x] = doingSt, due = x.eta || x.due;
+      mk = ["now", `Now: ${esc(x.owner || whoOf(f,sg))}, ${esc(sg.label)} · ${due?`done by ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
+    else if(firstOpen){ const {x,w} = firstOpen, who = x.who==="Ready for you"||x.who==="Ben" ? "you" : x.who, what = esc(x.what);
+      mk = w.kind==="now" ? ["now", `Now: ${esc(w.by||who)}, ${what} · done about ${clock(w.done)}`]
+        : w.kind==="part" ? ["now", `Now: ${esc(w.by||who)}, ${what} · part done${w.done?` · done about ${clock(w.done)}`:""}`]
+        : w.kind==="blocked" ? ["bad", `Blocked: ${esc(who)}, ${what} · ${esc(String(w.reason||"").slice(0,90))}`]
+        : (w.kind==="queue"||w.kind==="after") && w.at ? ["next", `Next: ${esc(who)}, ${what} · ${w.start?`starts about ${clock(w.start)} · `:""}done about ${clock(w.at)}`]
+        : w.text && !/no date yet/.test(w.text) ? ["wait", `Waiting: ${esc(who)}, ${what} · ${w.text}${!w.at && who!=="you" && !x.job && !/\d/.test(w.text) ? " · no estimate: not in the job queue yet" : ""}${who==="you"?"":sinceTxt(doingSt&&doingSt[1].since || b.updated)}`]
+        : ["wait", `Waiting: ${esc(who)}, ${what} · no estimate: no date in the film note${sinceTxt(b.updated)}`]; }
+    else if(doingSt){ const [sg,x] = doingSt, due = x.eta || x.due, who = esc(x.owner || whoOf(f,sg));
+      mk = [x.status==="blocked"?"bad":"now", `${x.status==="blocked"?"Blocked":"Now"}: ${who}, ${esc(sg.label)} · ${due?`done by ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
+    else mk = ["wait", `Waiting: nothing queued for it · no estimate: no next step in the film note`];
+    const mkRow = col==="live"||col==="sched" ? "" : `<div class="mk ${mk[0]}">${mk[1]}</div>`;
+    lanes[f._ch][col].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
+      ${mkRow}
+      <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span>${mkRow?"":ordChip} <span class="pill ${cls}">${word}</span></span></div>
       <div class="kt">${esc(f.title)}</div>
       <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
