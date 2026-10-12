@@ -10615,10 +10615,10 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-12T19:51Z",
+      "eta": "2026-10-12T22:51Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10667,6 +10667,11 @@
           "at": "2026-10-12T19:41Z",
           "by": "cursor",
           "what": "reopened: J0203 done (hos@331de9f): S1-S4 plates ready in docs/STANDALONE_SHORTS_TEST_2026-10/plates_v01. Scope now S1-S4 only (pause-trim VO ~0.4 s on S1/S4); Chief KEEP on the 3 flagged plates first or alongside. S5-S8 follow after their VO + a follow-on plates job."
+        },
+        {
+          "at": "2026-10-12T19:51Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly"
