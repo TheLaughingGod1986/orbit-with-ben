@@ -31,6 +31,12 @@ Films kept: 45:11. With the recorded VO (2:10), breaths, holds and five cards, t
 
 **Subscribe beats: the plan's premise was wrong. Chief to confirm at J0168.** Only 021 has a mid-film beat ("We make one of these every week. Subscribing is how the next one finds you.", 3:29.7–3:39.6 in the film, 9.9 s with its music tail). 013, 019 and 005 have none, and 007's ask is its end card, trimmed with the end. Chief's lock kept "the last (005's)", which doesn't exist. The default keeps 021's, so the film has exactly one mid-film beat (the Never list allows one). To run with none, set `apply: true` on that cut; it's a 0.6 s-breath cut on a measured gap.
 
+## Plates (step 5a done, 12 Oct 21:20Z)
+
+Plate picks for the intro, the four bridges and the closing are in `COMPILATION_PLATES_v01.json`: one ~6 s window from a film's own passed cut per spoken line, checked on contact sheets and single frames. No window is used more than twice, none in its film's first 30 s for the intro, and none sits next to its own film's out point. Four picks are marked "verify" at full size before render.
+
+**Open for Chief: the bed.** 005 has no music stem anywhere (Mini, the NAS 005 folder, NAS Desktop), so "the 005 bed under the new material" can't be laid as planned. Cursor recommends lifting music-only stretches from the films' own trimmed outros (no spend), with Chief ruling whether music_gate's "sounds like another film's bed" check is waived for a compilation. The alternatives are a new bed (needs Chief's OK under the credit hold until 30 Oct) or the house SFX drone only.
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.
