@@ -10705,13 +10705,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T21:13Z",
-      "eta": "2026-10-13T00:13Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: KEEP/FAIL on S3 v02 (opens+loops on handle-off plate) and S4 v02 (no-hands archive plate, ~£0.03 Vertex), both gate_shorts_open PASS (hos ece3e5b, HOS #180 6132796254). Covers split to J0209 (chart). S5-S8 wait on VO+plates.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10847,6 +10847,11 @@
           "at": "2026-10-12T21:19Z",
           "by": "cursor",
           "what": "step 4 of 5 done: S3/S4 v02 posted HOS #180 6132796254; covers split to J0209"
+        },
+        {
+          "at": "2026-10-12T21:19Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: KEEP/FAIL on S3 v02 (opens+loops on handle-off plate) and S4 v02 (no-hands archive plate, ~£0.03 Vertex), both gate_shorts_open PASS (hos ece3e5b, HOS #180 6132796254). Covers split to J0209 (chart). S5-S8 wait on VO+plates."
         }
       ],
       "kind": "assembly",
