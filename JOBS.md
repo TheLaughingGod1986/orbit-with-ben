@@ -47,10 +47,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0177 | gemini | open | – | – | facts · HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) | https://github.com/TheLaughingGod1986/history-of-science/pull/291 |
-| J0178 | mini | claimed | cursor | 2026-10-12T15:41Z | assembly · Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) |  |
 
 Recently finished:
 
+- J0178 done: Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) (done)
 - J0161 done: OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) (Chief locked the 8 scripts + titles + slots on OWB #99 (6125827198); Gemini facts pass Q1-Q19 (Q18 FLAG) goes with VO J0162)
 - J0158 done: URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader (done)
 - J0146 done: HOS 004: add thumb C v07b as 3rd variant in armed Test & Compare (Chief PASS 6119854326; Ben wants now) (T&C deleted and re-armed (Chief one-off OK 6120597964): A v04 / C v07b / B v04, same 3 titles, Set test + Save 'Changes saved'; reload shows 3 titles and Studio's stored thumbs A, C v07b, B. Still Scheduled 15 Oct 17:00Z, not MFK, main thumb A. HOS 77bf286)
@@ -60,4 +60,3 @@ Recently finished:
 - J0137 done: HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) (Part 03 rough v01 built: 94.83 s on locked v02 VO, 16 KEEP takes, P3:06 held by plate board (J0140). iCloud HOS UAT/006_part03_rough_v01 (sha d7f825fe). freezedetect: placeholder only. picture_qa FAIL 1 row (16 reuse of 14 per board) parked for Chief with the KEEP call, desk #180 6116202964. HOS PR #285 (merge = Chief).)
 - J0134 done: 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) (Uploaded Private N42gKBbD7tE, publishAt 2026-11-12T11:30Z; cover set (API + Studio); Buffer x3; UPLOADS lengthTest; gate library; commit 54a4813e. J0135 (Related) next.)
 - J0133 done: OWB back catalogue: rebuild 5 long thumbs to Packaging §2.B (top band off the subject, harder grade, naming hook), Chief review, then set in Studio (5/5 long thumbs set in Studio (CDP 9223, no T&C running, reload confirmed). REFRESH_LOG + apply script 73bb5395; rollback ~/_desk/thumb_packaging_1011/rollback/)
-- J0132 done: 024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45) (done)
