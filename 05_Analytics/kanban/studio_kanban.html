@@ -8,6 +8,7 @@
 .tf{border-left-color:var(--line)!important}
 .tf .bar i{background:var(--ink-3)!important;opacity:.6}
 .tf .wnow{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--doing-soft);color:var(--doing);vertical-align:1px}
+.tf.runcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
 #foldJobs,#foldPlans{margin:8px 0}
 #foldJobs .jb{margin-top:8px}
 </style></head><body>
@@ -1727,7 +1728,32 @@ setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" curr
     const n = j.film || ((/^(?:OWB\s+)?(\d{3})\b/.exec(j.title||""))||[])[1]; return n ? `${chanOf(j)}:${String(n).padStart(3,"0")}` : ""; };
   const badge = () => { const run = ((typeof fromDb!=="undefined" && fromDb.jobs)||[]).filter(j=>j.status==="claimed" && (j.needs==="mini" || jobLine(j)==="mini"));
     const keys = new Set(run.map(keyOf).filter(Boolean));
-    t.querySelectorAll(".tf").forEach(c=>{ const on = keys.has(c.dataset.key), b = c.querySelector(".wnow");
+    // Ben, 12 Oct 21:32: a running job always shows. No number: match a card by title keywords; failing that, a small
+    // "Working now" card at the top of its channel's In progress lane.
+    const STOP = /^(the|and|for|with|from|film|films|short|shorts|long|cut|min|test|owb|hos|set|fix|then|into|what|why|how|does|did|is|are|a|an|of|to|in|on|at|its|it)$/i;
+    const words = x => String(x||"").toLowerCase().match(/[a-z]{4,}/g)||[];
+    const extra = [];
+    for(const j of run){ if(keyOf(j) && t.querySelector(`.tf[data-key="${keyOf(j)}"]`)) continue;
+      const jw = new Set(words(j.title).filter(w=>!STOP.test(w)));
+      let best = null, hits = 0;
+      t.querySelectorAll(`.tf[data-key^="${chanOf(j)}:"]`).forEach(c=>{ const n = words((c.querySelector(".kt")||{}).textContent).filter(w=>jw.has(w)).length; if(n>hits){ hits=n; best=c; } });
+      if(best && hits>=2) keys.add(best.dataset.key); else extra.push(j); }
+    t.querySelectorAll(".tf.runcard").forEach(c=>{ if(!extra.some(j=>j.id===c.dataset.run)) c.remove(); });
+    for(const j of extra){
+      const P = plan(), pr = progressOf(j, P), ch = chanOf(j);
+      let name = cleanTitle(j, 200).replace(/^(OWB|HOS)\s+/i,""), task = "";
+      const ci = name.indexOf(":"); if(ci>0){ task = name.slice(ci+1).trim(); name = name.slice(0,ci).trim(); }
+      name = name.charAt(0).toUpperCase()+name.slice(1);
+      const st = `${task?esc(task.length>40?task.slice(0,39)+"…":task)+" · ":""}${esc(readyAt(pr.done)||"working")}`;
+      const html = `<span class="wnow">Working now</span></span></div><div class="kt">${esc(name)}</div><div class="ka"><span>Mac mini job</span><span>${pr.pct}%</span></div><div class="bar"><i style="width:${pr.pct}%"></i></div><div class="st1 now">${st}</div>`;
+      let c = t.querySelector(`.tf.runcard[data-run="${j.id}"]`);
+      if(c){ const s2 = c.querySelector(".st1"); if(s2 && s2.innerHTML!==st) s2.innerHTML = st; continue; }
+      const lane = [...t.querySelectorAll("section.lane")].find(l=>(l.querySelector("h3 .ch")||{}).textContent===ch); if(!lane) continue;
+      const col = [...lane.querySelectorAll(".kcol")].find(k=>/In progress/i.test((k.querySelector("h2")||{}).textContent)); if(!col) continue;
+      const cards = col.querySelector(".cards"); if(!cards) continue;
+      cards.insertAdjacentHTML("afterbegin", `<div class="tf runcard" data-run="${esc(j.id)}"><div class="kh"><span><span class="ch ${ch}">${ch}</span> ${html}</div>`);
+    }
+    t.querySelectorAll(".tf").forEach(c=>{ if(c.classList.contains("runcard")) return; const on = keys.has(c.dataset.key), b = c.querySelector(".wnow");
       if(on && !b){ const tag = c.querySelector(".kh > span"); if(tag) tag.insertAdjacentHTML("beforeend",' <span class="wnow">Working now</span>'); }
       else if(!on && b) b.remove(); }); };
   new MutationObserver(()=>{ tidy(); badge(); }).observe(t, {childList:true, subtree:true}); })();
