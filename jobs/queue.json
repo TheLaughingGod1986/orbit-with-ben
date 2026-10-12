@@ -9200,13 +9200,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T13:53Z",
-      "eta": "2026-10-12T15:53Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:49Z",
-      "result": "",
+      "result": "parked for Chief: Vertex Free Trial reads £4.93 but status is now 'Expiring in 30 days' (ends 11 Nov), not 'Available', so _vertex_credit_v01.py refuses and the brief says nothing is minted. Decide: (a) accept 'Expiring in N days' as active (still refuse Expired/Used) and (b) budget from the conservative figure min(console £4.93, 10 Oct plateau £16.11 - £11.86 logged = £4.25) since billing is a Paid account. Then ~£4.15 usable ≈ 5-6 Fast 6-8 s takes. Nothing minted; reading logged in ai_spend; screenshot HOS 006 07_Edit-Project/_evidence/vertex_credits_j0160_before.png",
       "history": [
         {
           "at": "2026-10-12T13:49Z",
@@ -9227,6 +9227,11 @@
           "at": "2026-10-12T13:54Z",
           "by": "cursor",
           "what": "step 1 of 4 done: credit read: £4.93, status not Available"
+        },
+        {
+          "at": "2026-10-12T13:54Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Vertex Free Trial reads £4.93 but status is now 'Expiring in 30 days' (ends 11 Nov), not 'Available', so _vertex_credit_v01.py refuses and the brief says nothing is minted. Decide: (a) accept 'Expiring in N days' as active (still refuse Expired/Used) and (b) budget from the conservative figure min(console £4.93, 10 Oct plateau £16.11 - £11.86 logged = £4.25) since billing is a Paid account. Then ~£4.15 usable ≈ 5-6 Fast 6-8 s takes. Nothing minted; reading logged in ai_spend; screenshot HOS 006 07_Edit-Project/_evidence/vertex_credits_j0160_before.png"
         }
       ],
       "kind": "video",
