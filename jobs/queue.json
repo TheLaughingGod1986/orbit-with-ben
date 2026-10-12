@@ -10573,13 +10573,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "chief",
-      "since": "2026-10-12T19:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "waits for input: J0203 (Chief chose (a) Vertex flash-image stills for S1-S4; no long plates; no Flow; Veo only if trial allows after stills). Reopen when J0203 lands plates. J0171 then assembles S1-S4; S5-S8 after their VO + picture.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10620,6 +10620,11 @@
           "at": "2026-10-12T19:33Z",
           "by": "chief",
           "what": "blocked: waits for input: J0203 (Chief chose (a) Vertex flash-image stills for S1-S4; no long plates; no Flow; Veo only if trial allows after stills). Reopen when J0203 lands plates. J0171 then assembles S1-S4; S5-S8 after their VO + picture."
+        },
+        {
+          "at": "2026-10-12T19:41Z",
+          "by": "cursor",
+          "what": "reopened: J0203 done (hos@331de9f): S1-S4 plates ready in docs/STANDALONE_SHORTS_TEST_2026-10/plates_v01. Scope now S1-S4 only (pause-trim VO ~0.4 s on S1/S4); Chief KEEP on the 3 flagged plates first or alongside. S5-S8 follow after their VO + a follow-on plates job."
         }
       ],
       "kind": "assembly"
