@@ -10570,18 +10570,18 @@
       "needs": "mini",
       "repo": "hos",
       "body": "Build each Short 9:16 from existing plates/stock/code graphics (no paid generation unless within subscription/trial credit at floor 0), captions throughout, house SFX, gate_shorts_open.py check PASS (band ~20 s), custom cover. Contact sheet + gate output on the thread, then park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
-      "ref": "",
+      "ref": "6131173528",
       "film": "",
       "stage": "",
-      "after": "J0170",
+      "after": "J0203",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-12T19:33Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "waits for input: J0203 (Chief chose (a) Vertex flash-image stills for S1-S4; no long plates; no Flow; Veo only if trial allows after stills). Reopen when J0203 lands plates. J0171 then assembles S1-S4; S5-S8 after their VO + picture.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10612,6 +10612,16 @@
           "at": "2026-10-12T19:32Z",
           "by": "chief",
           "what": "reopened: Chief taking park: picture path decided (a)=J0203"
+        },
+        {
+          "at": "2026-10-12T19:33Z",
+          "by": "chief",
+          "what": "claimed (wire after=J0203; Chief picture ruling)"
+        },
+        {
+          "at": "2026-10-12T19:33Z",
+          "by": "chief",
+          "what": "blocked: waits for input: J0203 (Chief chose (a) Vertex flash-image stills for S1-S4; no long plates; no Flow; Veo only if trial allows after stills). Reopen when J0203 lands plates. J0171 then assembles S1-S4; S5-S8 after their VO + picture."
         }
       ],
       "kind": "assembly"
@@ -12138,10 +12148,16 @@
           "at": "2026-10-12T19:32Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-12T19:33Z",
+          "by": "chief",
+          "what": "urgent: Short 1 airs Mon 19 Oct; stills by ~Wed 14"
         }
       ],
       "kind": "image",
-      "model": "gemini-2.5-flash-image"
+      "model": "gemini-2.5-flash-image",
+      "urgent": true
     },
     {
       "id": "J0204",
