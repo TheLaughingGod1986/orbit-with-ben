@@ -11146,10 +11146,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T22:08Z",
-      "eta": "2026-10-13T02:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11228,6 +11228,11 @@
           "at": "2026-10-12T22:14Z",
           "by": "cursor",
           "what": "step 4 of 6 done: plates: 002/001 open picks closed, HOS #300 feee0d8"
+        },
+        {
+          "at": "2026-10-12T22:14Z",
+          "by": "cursor",
+          "what": "released: Run 4 (step 4/6 holds): closed the open plate picks on HOS PR #300 (feee0d8): _label_scan_v01.py finds label-free windows (box look 002-005; italic look 001 + eye check). Picks: intro cards 002 303.5-307 s (FLAG for Chief: some card symbols aren't real elements, fallback 002 120 s); Bridge 3 = 001 theatre 330.5-334 s then 002 desk cards 117-125 s; Bridge 4 = 002 glowing empty chair 230-235 s (002's empty-grid shots are labelled throughout). Only 006 plates (willow, sunlit leaf, Bridge 1 cross) remain. Render stage (step 5) waits on J0204 graphics; deliverable waits on 006 master (ETA 25 Oct). For Chief: card symbols; Bridge 2 sunlit vs candlelit ward; 001/002/003 mid-film end cards; 004 bed reuse vs music_gate."
         }
       ],
       "kind": "assembly",
