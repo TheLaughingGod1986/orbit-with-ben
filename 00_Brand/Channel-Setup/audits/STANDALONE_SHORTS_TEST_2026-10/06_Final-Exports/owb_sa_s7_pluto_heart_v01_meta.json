@@ -1,0 +1,108 @@
+{
+  "job": "J0163",
+  "short": "s7",
+  "air_provisional": "2026-11-10",
+  "title_on_screen": "Pluto's Heart Has No Craters",
+  "file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v01.mp4",
+  "frames": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v01_frames.jpg",
+  "sha256": "a3572604f0daa5cac6b82511f5fb4bb17ff551c85d0ff8d4365d0e4da5e0e36b",
+  "duration_s": 22.433333,
+  "vo": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/vo_s5-s8_v01/trim/owb_sa_s7_pluto_heart_vo_v01_trim.wav",
+  "words": 43,
+  "last_word_end_s": 19.42,
+  "spoken": "Pluto's heart doesn't have a single crater. Stay, and I'll show you why that's strange. In 2015, New Horizons flew past and photographed it. Its great plain is frozen nitrogen gas, no craters anywhere on it, and somehow Pluto's heart stays perfectly smooth",
+  "hook": "NO CRATERS (yellow CRATERS), 0-2.2 s",
+  "title_window_s": [
+    9.0,
+    14.0
+  ],
+  "overlay": {
+    "kind": "fact",
+    "lines": [
+      "2015",
+      "NEW HORIZONS"
+    ],
+    "window": [
+      5.8,
+      8.9
+    ],
+    "spoken": "In 2015, New Horizons flew past"
+  },
+  "cuts": [
+    {
+      "row": 1,
+      "start_s": 0.0,
+      "end_s": 5.88,
+      "file": "s7_pluto/PIA19952.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.08
+      ],
+      "max_upscale": 0.47
+    },
+    {
+      "row": 2,
+      "start_s": 5.88,
+      "end_s": 10.5,
+      "file": "s7_pluto/PIA21863.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.08,
+        1.0
+      ],
+      "max_upscale": 1.51
+    },
+    {
+      "row": 3,
+      "start_s": 10.5,
+      "end_s": 13.62,
+      "file": "s7_pluto/PIA20726.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.1
+      ],
+      "max_upscale": 0.72
+    },
+    {
+      "row": 4,
+      "start_s": 13.62,
+      "end_s": 19.42,
+      "file": "s7_pluto/PIA19708.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.0,
+        1.1
+      ],
+      "max_upscale": 1.16
+    },
+    {
+      "row": 5,
+      "start_s": 19.42,
+      "end_s": 22.42,
+      "file": "s7_pluto/PIA19952.jpg",
+      "mode": "loop",
+      "note": "0.5 s crossfade back to the opening plate, pull-back to frame 0"
+    }
+  ],
+  "orbit_slot": {
+    "start_s": 1.0,
+    "status": "open: J0200 Omni insert, opening plate runs under it until then"
+  },
+  "audio": {
+    "vo_gain": 1.0,
+    "bed": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+    "bed_gain": 0.065,
+    "bed_hold_gain": 0.35,
+    "sfx": "sfx_owb_whoosh_soft_v01.wav at 0 s, tick at 5.85 s",
+    "stems": {
+      "vo": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s7_pluto_heart/stem_vo.wav",
+      "bed": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s7_pluto_heart/stem_bed.wav",
+      "sfx": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s7_pluto_heart/stem_sfx.wav"
+    },
+    "mix": "-14 LUFS, -1.5 dBTP"
+  },
+  "grain": "noise=alls=4:allf=t",
+  "spend": "none"
+}

@@ -28,6 +28,10 @@ COVERS = {
     "s2": {"lines": ["2,000 KM/H", "WINDS"], "yellow": {"2,000"}, "hero": 0},
     "s3": {"lines": ["DAWN EACH", "90 MINUTES"], "yellow": {"90"}, "hero": 1},
     "s4": {"lines": ["TIPPED ON", "ITS SIDE"], "yellow": {"SIDE"}, "hero": 1},
+    "s5": {"lines": ["COMET", "CRUMBS"], "yellow": {"COMET"}, "hero": 0},
+    "s6": {"lines": ["60% MORE", "AIR PRESSURE"], "yellow": {"60%"}, "hero": 0},
+    "s7": {"lines": ["FROZEN", "NITROGEN"], "yellow": {"NITROGEN"}, "hero": 1},
+    "s8": {"lines": ["26 BILLION", "KM"], "yellow": {"26"}, "hero": 0},
 }
 
 
@@ -46,7 +50,9 @@ def frame0(key: str) -> Path:
 
 def main() -> None:
     keys = [k for k in sys.argv[1:] if k in COVERS] or list(COVERS)
-    rows = []
+    built = {asm.SHORTS[k]["stem"] for k in keys}
+    old = json.loads((OUT / "MANIFEST.json").read_text())["shorts"] if (OUT / "MANIFEST.json").exists() else []
+    rows = [r for r in old if r.get("id") not in built]
     for key in keys:
         spec, cov = asm.SHORTS[key], COVERS[key]
         title = " ".join(spec["title"])

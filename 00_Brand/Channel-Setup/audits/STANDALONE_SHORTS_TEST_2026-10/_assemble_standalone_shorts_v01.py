@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Standalone story Shorts S1-S4 v01 (J0163, Ben 12 Oct 2026: ~20 s, not cut from a long).
+"""Standalone story Shorts S1-S8 v01 (J0163, Ben 12 Oct 2026: ~20 s, not cut from a long).
 
-Does not upload or schedule. Picture is NASA plates (plates_v01.json) and, on S4, ESA/Webb weic2310a (CC BY 4.0),
+Does not upload or schedule. Picture is NASA plates (plates_v01.json for S1-S4, plates_v02.json for S5-S8; S5-S8 VO
+is pause-trimmed by _pause_trim_v02.py) and, on S4, ESA/Webb weic2310a (CC BY 4.0),
 drawn frame by frame with a smooth sub-pixel push per row; hard cuts between rows, and the last ~3 s crossfade back
 to the opening plate (pull-back ending on frame 0's framing) so each Short loops.
 Audio: the pause-trimmed VO (vo_v01/trim), the one standalone-Shorts bed (05_Music, Chief 6131710376) and the house
 SFX kit (whoosh or rumble at frame 0, one tick on the overlay). VO, bed and SFX stems are written for sfx_kit level.
 The Orbit row at ~1 s is left open in the cut list (J0200); the opening plate runs under it until the insert lands.
-Usage: _assemble_standalone_shorts_v01.py [s1 s2 s3 s4]
+Usage: _assemble_standalone_shorts_v01.py [s1 ... s8]
 """
 from __future__ import annotations
 
@@ -30,6 +31,7 @@ KIT = Path("/private/tmp/owb_sa_shorts/sfx_kit_v01")
 WORK = Path("/private/tmp/owb_sa_shorts/build_v01")
 BED = HERE / "05_Music/owb-standalone-shorts_score_bed_v01.mp3"
 TRIM = HERE / "vo_v01/trim"
+TRIM2 = HERE / "vo_s5-s8_v01/trim"
 OUT = HERE / "06_Final-Exports"
 
 W, H, FPS = 1080, 1920, 30
@@ -105,6 +107,60 @@ SHORTS = {
         ],
         "overlay": {"kind": "fact", "lines": ("TIPPED", "97°"), "window": (6.4, 9.0),
                     "spoken": "Uranus is tipped ninety-seven degrees"},
+    },
+    "s5": {
+        "stem": "owb_sa_s5_shooting_stars", "vo": "owb_sa_s5_shooting_stars_vo_v01", "trim": TRIM2, "air": "2026-11-03",
+        "title": ("Shooting Stars", "Aren't Stars"), "hook": (("NOT", "A", "STAR"),), "yellow": "STAR",
+        "sfx0": "whoosh", "kick": 0.2,
+        "rows": [
+            (0.0, "s5_meteors/NHQ202108110001.jpg", "cover", 0.63, 0.35, 1.0, 1.06),
+            (4.7, "s5_meteors/NHQ202108110005.jpg", "cover", 0.50, 0.40, 1.0, 1.10),
+            (8.9, "s5_meteors/NHQ202108100009.jpg", "cover", 0.55, 0.45, 1.08, 1.0),
+            (13.36, "s5_meteors/NHQ202108110003.jpg", "cover", 0.32, 0.45, 1.0, 1.08),
+        ],
+        "overlay": {"kind": "scale", "labels": ("SAND", "PEA"), "window": (6.5, 8.9),
+                    "spoken": "between a grain of sand and a pea"},
+    },
+    "s6": {
+        "stem": "owb_sa_s6_titan", "vo": "owb_sa_s6_titan_vo_v01", "trim": TRIM2, "air": "2026-11-07",
+        "title": ("Standing on Titan Feels Like", "Diving 15 Metres Down"), "hook": (("15", "M"), ("UNDERWATER",)),
+        "yellow": "15", "sfx0": "rumble", "fix": {"meters": "metres"}, "kick": 0.30,
+        "rows": [
+            (0.0, "s6_titan/PIA14925.jpg", "cover", 0.5, 0.5, 1.0, 1.06),
+            (4.3, "s6_titan/PIA06230.jpg", "fit", 0.5, 0.5, 1.0, 1.10),
+            (8.7, "s6_titan/PIA09739.jpg", "cover", 0.3, 0.5, 1.0, 1.04),
+            (13.62, "s6_titan/PIA21625.jpg", "fit", 0.5, 0.5, 1.0, 1.10),
+        ],
+        "overlay": {"kind": "fact", "lines": ("2034", "LANDS"), "window": (17.3, 20.4),
+                    "spoken": "and lands in 2034"},
+    },
+    "s7": {
+        "stem": "owb_sa_s7_pluto_heart", "vo": "owb_sa_s7_pluto_heart_vo_v01", "trim": TRIM2, "air": "2026-11-10",
+        "title": ("Pluto's Heart Has", "No Craters"), "hook": (("NO", "CRATERS"),), "yellow": "CRATERS",
+        "sfx0": "whoosh",
+        "rows": [
+            (0.0, "s7_pluto/PIA19952.jpg", "cover", 0.62, 0.58, 1.0, 1.08),
+            (5.88, "s7_pluto/PIA21863.jpg", "cover", 0.55, 0.5, 1.08, 1.0),
+            (10.5, "s7_pluto/PIA20726.jpg", "cover", 0.5, 0.5, 1.0, 1.10),
+            (13.62, "s7_pluto/PIA19708.jpg", "fit", 0.5, 0.5, 1.0, 1.10),
+        ],
+        "overlay": {"kind": "fact", "lines": ("2015", "NEW HORIZONS"), "window": (5.8, 8.9),
+                    "spoken": "In 2015, New Horizons flew past"},
+    },
+    "s8": {
+        "stem": "owb_sa_s8_voyager1", "vo": "owb_sa_s8_voyager1_vo_v01", "trim": TRIM2, "air": "2026-11-14",
+        "title": ("Voyager 1 Is About to Be", "One Light-Day Away"), "hook": (("ONE", "LIGHT-DAY"), ("AWAY",)),
+        "yellow": "LIGHT-DAY", "sfx0": "whoosh", "fix": {"kilometers": "kilometres"},
+        "open_pan": (0.66, 0.56),
+        "rows": [
+            (0.0, "s8_voyager/PIA04495.jpg", "cover", 0.40, 0.45, 1.0, 1.08),
+            (4.6, "s8_voyager/PIA17049.jpg", "fit", 0.5, 0.5, 1.0, 1.10),
+            (6.9, "s8_voyager/PIA23645.jpg", "cover", 0.5, 0.5, 1.0, 1.08),
+            (9.98, "s8_voyager/PIA21741.jpg", "cover", 0.5, 0.45, 1.0, 1.08),
+            (14.12, "s8_voyager/PIA17464.jpg", "cover", 0.5, 0.5, 1.0, 1.08),
+        ],
+        "overlay": {"kind": "counter", "to": 25.9, "decimals": 1, "run": 1.6, "label": "BILLION KM",
+                    "window": (6.9, 8.95), "spoken": "Nearly 26 billion kilometres"},
     },
 }
 
@@ -279,11 +335,27 @@ def overlay_frame(ov: dict, t: float) -> Image.Image | None:
             d.rounded_rectangle((x0 + 6, y + 6, x0 + 6 + wbar, y + 28), radius=11, fill=(YELLOW if i else WHITE) + (255,))
             y += 34 + 40
     elif ov["kind"] == "counter":
-        n = max(1, min(ov["to"], 1 + int((ov["to"] - 1) * ease((t - a0 - 0.2) / 2.6))))
-        big = fit_font(d, str(ov["to"]), LINE_H + 90, int(W * 0.6), 8)
-        y += centred(d, y, str(n), big, YELLOW, 8) + 26
+        dec = ov.get("decimals", 0)
+        k = ease((t - a0 - 0.2) / ov.get("run", 2.6))
+        n = ov["to"] * k if dec else max(1, min(ov["to"], 1 + int((ov["to"] - 1) * k)))
+        big = fit_font(d, f"{ov['to']:.{dec}f}", LINE_H + 90, int(W * 0.6), 8)
+        y += centred(d, y, f"{n:.{dec}f}", big, YELLOW, 8) + 26
         small = fit_font(d, ov["label"], LINE_H, int(W * 0.86), 5)
         centred(d, y, ov["label"], small, WHITE, 5)
+    elif ov["kind"] == "scale":
+        # a grain growing into a pea along a drawn line: SAND (small) to PEA (big), labels under each
+        x_a, x_b, cy = int(W * 0.22), int(W * 0.78), y + 90
+        line = ease((t - a0 - 0.2) / 0.8)
+        d.line((x_a, cy, x_a + (x_b - x_a) * line, cy), fill=WHITE + (255,), width=6)
+        d.ellipse((x_a - 12, cy - 12, x_a + 12, cy + 12), fill=(235, 215, 170, 255), outline=(0, 0, 0, 255), width=3)
+        r = int(70 * ease((t - a0 - 0.9) / 0.6))
+        if r > 2:
+            d.ellipse((x_b - r, cy - r, x_b + r, cy + r), fill=(140, 190, 90, 255), outline=(0, 0, 0, 255), width=4)
+        font = fit_font(d, "SAND", LINE_H, int(W * 0.4), 6)
+        for x, label, col in ((x_a, ov["labels"][0], WHITE), (x_b, ov["labels"][1], YELLOW)):
+            box = d.textbbox((0, 0), label, font=font, stroke_width=6)
+            d.text((x - (box[2] - box[0]) // 2 - box[0], cy + 100), label, font=font, fill=col, stroke_width=6,
+                   stroke_fill=(0, 0, 0, 255))
     if alpha < 1:
         im.putalpha(Image.eval(im.getchannel("A"), lambda v: int(v * alpha)))
     return im
@@ -294,9 +366,16 @@ def build(key: str) -> dict:
     work = WORK / spec["stem"]
     work.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(parents=True, exist_ok=True)
-    vo = TRIM / f"{spec['vo']}_trim.wav"
-    words = json.loads((TRIM / f"{spec['vo']}_trim_words.json").read_text())["words"]
-    words = [{"word": w["word"].strip(), "start": w["start"], "end": w["end"]} for w in words]
+    trim = spec.get("trim", TRIM)
+    vo = trim / f"{spec['vo']}_trim.wav"
+    words = json.loads((trim / f"{spec['vo']}_trim_words.json").read_text())["words"]
+    fix = spec.get("fix", {})
+
+    def spelled(word: str) -> str:
+        core = word.rstrip(".,?!")
+        return fix.get(core.lower(), core) + word[len(core):]
+
+    words = [{"word": spelled(w["word"].strip()), "start": w["start"], "end": w["end"]} for w in words]
     last_end = words[-1]["end"]
     total = round(min(last_end + HOLD, MAX_TOTAL), 3)
     nframes = int(round(total * FPS))

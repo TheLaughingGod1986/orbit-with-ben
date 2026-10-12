@@ -88,9 +88,46 @@ S1–S4 v01 are now clean on `gate_shorts_open` and `sfx_kit level`, apart from 
 
 For Chief: S4's words sit over the Uranus disc (the Short centre-stack, as on past Short covers; the long-thumb "never over the subject" band rule isn't applied to Shorts). S2 says WINDS where the title says Wind; the check passes, but Chief may prefer a different second word.
 
+## Steps 8–9: S5–S8 v01 assembled, with covers (Cursor, 13 Oct 00:05)
+
+The same assembler and covers script, extended to S5–S8. No spend.
+- **VO:** the same 0.4 s pause trim as S1–S4 (`_pause_trim_v02.py`): S5 18.72 → 17.08 s, S6 20.16 → 19.04 s, S7 21.36 → 19.48 s, S8 19.12 → 17.80 s. The captions use British spelling where Scribe wrote US ("METRES", "KILOMETRES"; a per-Short `fix` map).
+- **Plates** (`_harvest_plates_v02.py`, images-api.nasa.gov, free; ids, titles and pages in `plates_v02.json`):
+  - S5: NASA/Bill Ingalls Perseid frames, with NHQ202108110001's meteor streak live at frame 0.
+  - S6: Cassini PIA14925 → PIA06230 → PIA09739 → PIA21625. PIA02238 was dropped at 2.41× and the Huygens surface PIA07232 at 3.5× (over the 2.35× cap).
+  - S7: New Horizons PIA19952 → PIA21863 → PIA20726 → PIA19708. PIA20202 was dropped because it has a drawn inset box.
+  - S8: PIA04495 (artist's concept) → PIA17049 (artist's concept) → PIA23645 (Pale Blue Dot Revisited) → PIA21741 (Golden Record) → PIA17464 (1977 launch).
+- **Overlays** (one each, clear of 0–2 s and the 9–14 s title):
+  - S5: a SAND → PEA scale, 6.5–8.9 s.
+  - S6: "2034 / LANDS", 17.3–20.4 s.
+  - S7: "2015 / NEW HORIZONS", 5.8–8.9 s, over the flyover limb rather than the disc.
+  - S8: a counter running to 25.9 with "BILLION KM", 6.9–8.95 s.
+- **Covers** (`08_Covers`, the MANIFEST now lists all 8; no title words repeated):
+  - S5: **COMET** CRUMBS
+  - S6: **60%** MORE AIR PRESSURE
+  - S7: FROZEN **NITROGEN**
+  - S8: **26** BILLION KM
+
+| Short | Length | `gate_shorts_open` | Motion 0–1 s | `sfx_kit level` |
+|---|---|---|---|---|
+| S5 Shooting stars | 20.00 s | PASS (length warning; visor 0.0022 warning, eyeballed: no Orbit, it's the treeline) | 13.06 | PASS |
+| S6 Titan | 21.97 s | PASS (length warning) | 10.23 (opening push raised 0.15 → 0.30) | PASS |
+| S7 Pluto's heart | 22.43 s | PASS | 15.51 | PASS |
+| S8 Voyager 1 | 20.74 s | PASS (length warning) | 12.75 | PASS |
+
+**S8's first render FAILed:** the Orbit detector read Voyager's gold bus against black space as Orbit's visor (0.0247). Frame 0 is now reframed to cx 0.66, panning to 0.56 (visor 0.0). Orbit was never in the picture.
+
+**For Chief at review:**
+- S8's frame 0 is mostly blue sky and the boom, and the dish only enters at about 1 s. Its cover still uses the earlier framing with the spacecraft bus, so the cover and frame 0 differ.
+- S8's first two plates are artist's concepts (`picture_qa` WARN class).
+- S6's PIA09739 row (8.7–13.6 s) is a near-featureless grey disc, so check it full size.
+- S6 has no Dragonfly picture on "a flying robot" (no NASA still was harvested).
+
+The `.mp4`s and frame sheets are on the Mini only (git-ignored). The Orbit ~1 s row stays open for J0200, as on S1–S4.
+
 ## Next
 
-- S5–S8 assembly (steps 8–9; all VO in, J0202), then contact sheets and gates on the thread and park for Chief (step 10).
+- Step 10: sheets and gates on #99, then park for Chief (J0164 review and schedule).
 - Superseded list below kept for history.
 
 3. Orbit inserts at ~1 s on S1–S4 (Chief, #99 6125827198 item 4): 4 short Omni takes, a separate `video` job.
