@@ -1,5 +1,5 @@
 {
-  "next_id": 161,
+  "next_id": 177,
   "jobs": [
     {
       "id": "J0001",
@@ -9183,6 +9183,438 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0161",
+      "title": "OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "4-week standalone story Shorts test (Ben OK 12 Oct 14:50): 2 per week for 4 weeks = 8 Shorts. Each ~20 s (18-22 s), one complete story with a hook at frame 0, payoff, last beat loops to open; Orbit With Ben space 'what if' / one surprising fact. New topics, not lifted from a long. House opening rules, caption hook 2-4 words, sourced (SOURCES rows). Propose 8 titles + air slots (2/week, not on another Short's day). Park for Chief: scripts + titles. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
+    },
+    {
+      "id": "J0162",
+      "title": "OWB standalone Shorts test: VO for the 8 passed scripts",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Record the 8 Chief-passed scripts with ElevenLabs via the house client (floor 0; skip a take that doesn't fit the balance and park until the 30 Oct reset). vo_check PASS each. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0161",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
+    },
+    {
+      "id": "J0163",
+      "title": "OWB standalone Shorts test: assemble the 8 Shorts",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build each Short 9:16 from existing plates/stock/code graphics (no paid generation unless within subscription/trial credit at floor 0), captions throughout, house SFX, gate_shorts_open.py check PASS (band ~20 s), custom cover. Contact sheet + gate output on the thread, then park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0162",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0164",
+      "title": "OWB standalone Shorts test: Chief review + schedule",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief PASS/FAIL each Short; on PASS upload Private with publishAt on the planned 2/week slots via youtube:package, register in UPLOADS with \"standaloneTest\": true. Then start the measurement log. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0163",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chief"
+    },
+    {
+      "id": "J0165",
+      "title": "OWB compilation film (45-60 min) from finished films: plan + fresh intro/chapter script",
+      "needs": "any",
+      "repo": "owb",
+      "body": "One 45-60 min compilation per channel built from existing finished, already-public films (Ben OK 12 Oct 14:50). Pick 5-8 films with a common thread, order them, write a fresh intro (~60 s), chapter cards and short bridging lines/transitions; no picture or VO from the films is changed. Title/thumbnail options. Park for Chief: plan + script. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
+    },
+    {
+      "id": "J0166",
+      "title": "OWB compilation film: VO for intro and bridges",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Record the passed intro + bridge lines via the house ElevenLabs client (floor 0; park if it doesn't fit). vo_check PASS. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0165",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
+    },
+    {
+      "id": "J0167",
+      "title": "OWB compilation film: assemble 45-60 min cut",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble from the finished masters: fresh intro, chapter cards, transitions, consistent loudness (music_gate/sfx levels), chapters list for the description, end screen. picture_qa/polish_gate PASS. Park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0166",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0168",
+      "title": "OWB compilation film: Chief review + schedule",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief PASS/FAIL; on PASS upload Private with a publishAt slot that doesn't clash with a new long, via youtube:package. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0167",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chief"
+    },
+    {
+      "id": "J0169",
+      "title": "HOS standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "4-week standalone story Shorts test (Ben OK 12 Oct 14:50): 2 per week for 4 weeks = 8 Shorts. Each ~20 s (18-22 s), one complete story with a hook at frame 0, payoff, last beat loops to open; History of Science discovery story: a person, a date, a twist. New topics, not lifted from a long. House opening rules, caption hook 2-4 words, sourced (SOURCES rows). Propose 8 titles + air slots (2/week, not on another Short's day). Park for Chief: scripts + titles. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
+    },
+    {
+      "id": "J0170",
+      "title": "HOS standalone Shorts test: VO for the 8 passed scripts",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record the 8 Chief-passed scripts with ElevenLabs via the house client (floor 0; skip a take that doesn't fit the balance and park until the 30 Oct reset). vo_check PASS each. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0169",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
+    },
+    {
+      "id": "J0171",
+      "title": "HOS standalone Shorts test: assemble the 8 Shorts",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Build each Short 9:16 from existing plates/stock/code graphics (no paid generation unless within subscription/trial credit at floor 0), captions throughout, house SFX, gate_shorts_open.py check PASS (band ~20 s), custom cover. Contact sheet + gate output on the thread, then park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0170",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0172",
+      "title": "HOS standalone Shorts test: Chief review + schedule",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Chief PASS/FAIL each Short; on PASS upload Private with publishAt on the planned 2/week slots via youtube:package, register in UPLOADS with \"standaloneTest\": true. Then start the measurement log. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0171",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chief"
+    },
+    {
+      "id": "J0173",
+      "title": "HOS compilation film (45-60 min) from finished films: plan + fresh intro/chapter script",
+      "needs": "any",
+      "repo": "hos",
+      "body": "One 45-60 min compilation per channel built from existing finished, already-public films (Ben OK 12 Oct 14:50). Pick 5-8 films with a common thread, order them, write a fresh intro (~60 s), chapter cards and short bridging lines/transitions; no picture or VO from the films is changed. Title/thumbnail options. Park for Chief: plan + script. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
+    },
+    {
+      "id": "J0174",
+      "title": "HOS compilation film: VO for intro and bridges",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record the passed intro + bridge lines via the house ElevenLabs client (floor 0; park if it doesn't fit). vo_check PASS. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0173",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
+    },
+    {
+      "id": "J0175",
+      "title": "HOS compilation film: assemble 45-60 min cut",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Assemble from the finished masters: fresh intro, chapter cards, transitions, consistent loudness (music_gate/sfx levels), chapters list for the description, end screen. picture_qa/polish_gate PASS. Park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0174",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0176",
+      "title": "HOS compilation film: Chief review + schedule",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Chief PASS/FAIL; on PASS upload Private with a publishAt slot that doesn't clash with a new long, via youtube:package. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0175",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chief"
     }
   ],
   "focus": [
