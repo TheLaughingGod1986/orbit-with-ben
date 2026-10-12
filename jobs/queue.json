@@ -1,5 +1,5 @@
 {
-  "next_id": 201,
+  "next_id": 202,
   "jobs": [
     {
       "id": "J0001",
@@ -11897,6 +11897,33 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0201",
+      "title": "OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback)",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Run Gemini (agy) on SCRIPTS_v01.md rows Q10-Q17 and Q19 against their live NASA pages, as GEMINI_FACTS_S1-S4_v01.md did for Q1-Q9: quote found on page, spoken line matches, OK/FLAG. Q18 is not checked: Chief ruled S7 uses its fallback line (#99 6125827198 item 2). Commit GEMINI_FACTS_S5-S8_v01.md unedited. Then the S5-S8 VO job can run.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T19:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T19:02Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
     }
   ],
   "focus": [
