@@ -29,6 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0157 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0158 | mini | open | – | – | for cursor · studio · URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader |  |
 | J0159 | mini | open | – | – | vo · Spend ElevenLabs to 0: VO for locked scripts with no take (HOS 007–010 Shorts first), house client, stop at 0 |  |
+| J0160 | mini | open | – | – | 006 picture · video · Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account) |  |
 
 Recently finished:
 

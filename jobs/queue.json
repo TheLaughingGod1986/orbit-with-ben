@@ -1,5 +1,5 @@
 {
-  "next_id": 160,
+  "next_id": 161,
   "jobs": [
     {
       "id": "J0001",
@@ -9146,6 +9146,33 @@
         }
       ],
       "kind": "vo"
+    },
+    {
+      "id": "J0160",
+      "title": "Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Use the Vertex free trial down to £0.10 (Ben, 12 Oct 2026 14:46).** Live trial £4.93 on 11 Oct; the billing account is a **Paid account**, so it can bill the card: hard stop at £0.10.\n- Before each batch run 006 `_vertex_credit_v01.py` (FLOOR_GBP 0.10 after HOS #287); it must read the Free Trial row as Available, else nothing is minted. Budget = live − spend logged in `ai_spend.py` since that reading − estimate ≥ £0.10.\n- Spend it on HOS 006 picture in board order (P3:06 first, then Part 04 plates) with the existing mint script, one first take each; log every take (`ai_spend.py spend --pool vertex`). Re-read after each batch.\n- When the next take would go under £0.10: stop, block \"Vertex trial at margin: parked (would bill the card)\", report the last reading. Never upgrade, add budget or enable billing.\n- Contact sheets on desk #180 for KEEP; nothing published.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:49Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [
