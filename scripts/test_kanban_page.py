@@ -92,7 +92,7 @@ class MacMiniBox(unittest.TestCase):
     def render(self, on_card=(), jobs=None):
         html = page()
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "plan", "laneQuiet", "shortTitle", "jobTag",
-                 "jobName", "jobLabel", "jobLine", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
+                 "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
                  "updatedAt", "renderNow"]
         lib = "\n".join(js_function(html, n) for n in names)
         board = {"jobs": self.JOBS if jobs is None else jobs,
@@ -180,6 +180,12 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
         r = self.render()
         self.assertIn('<div class="bl">Blocked: Orbit Instagram bio link -&gt; Saturn long 55AEQwvs36g - '
                       'needs Ben to sign Instagram in on the mini</div>', r["html"])
+
+    def test_chief_review_park_is_amber_not_blocked(self):
+        # Ben, 12 Oct: a job parked for the Chief's review is waiting, not blocked.
+        r = self.render(jobs=self.with_jobs(J0131={"result": "parked for Chief: thumbnail review"}))
+        self.assertIn('<div class="rv">Waiting for Chief review: ', r["html"])
+        self.assertNotIn('<div class="bl">', r["html"])
 
     def test_idle_box_is_plain_too(self):
         r = self.render(jobs=self.with_jobs(J0129=None))
