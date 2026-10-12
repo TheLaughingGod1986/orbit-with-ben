@@ -1,0 +1,68 @@
+{
+  "stem": "owb_comp_bridge2_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "J0165-chief-lock-30ef7dba"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 170,
+      "duration_s": 12.32
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 170,
+  "words": 30,
+  "duration_s": 12.32,
+  "loudness": {
+    "lufs_integrated": -20.4,
+    "mean_volume_db": -23.4,
+    "max_volume_db": -4.0
+  },
+  "sha256_mp3": "c3a61943f1044cec74461342509df4632b889a82edf6c80a9595bdc008a04846",
+  "scribe": {
+    "transcript": "The Moon lets go a few centimeters at a time. But the biggest change coming to our sky isn't something leaving. It's something arriving, and it's billions of years away",
+    "script_words": 30,
+    "scribe_words": 30,
+    "match_rate_pct": 96.67,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "centimetres"
+        ],
+        "scribe": [
+          "centimeters"
+        ]
+      }
+    ]
+  },
+  "vo_check": "PASS",
+  "credits": {
+    "before": {
+      "used": 198669,
+      "limit": 209536,
+      "remaining": 10867
+    },
+    "after": {
+      "used": 198669,
+      "limit": 209536,
+      "remaining": 10867
+    },
+    "counter_delta": 0
+  },
+  "text": "The Moon lets go a few centimetres at a time.\n\nBut the biggest change coming to our sky isn't something leaving. It's something arriving, and it's billions of years away.",
+  "made_at": "2026-10-12T19:03:36+0100"
+}

@@ -1,0 +1,77 @@
+{
+  "stem": "owb_comp_closing_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "J0165-chief-lock-30ef7dba"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 276,
+      "duration_s": 20.08
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 276,
+  "words": 51,
+  "duration_s": 20.08,
+  "loudness": {
+    "lufs_integrated": -21.2,
+    "mean_volume_db": -24.0,
+    "max_volume_db": -4.0
+  },
+  "sha256_mp3": "966cc62ec5096afe84f1f7d8eb4eea1e7bf4d8f76570eecd9fc2fe9a076e207b",
+  "scribe": {
+    "transcript": "So that's the countdown. The moon, a few centimeters a year, the rings, a few hundred million years, galaxies merging in billions, and the last starlight about 10 trillion years from now. Every clock in the sky is running, and right now we get to see all of them at once",
+    "script_words": 51,
+    "scribe_words": 51,
+    "match_rate_pct": 96.08,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "centimetres"
+        ],
+        "scribe": [
+          "centimeters"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "ten"
+        ],
+        "scribe": [
+          "10"
+        ]
+      }
+    ]
+  },
+  "vo_check": "PASS",
+  "credits": {
+    "before": {
+      "used": 199214,
+      "limit": 209536,
+      "remaining": 10322
+    },
+    "after": {
+      "used": 199214,
+      "limit": 209536,
+      "remaining": 10322
+    },
+    "counter_delta": 0
+  },
+  "text": "So that's the countdown.\n\nThe Moon, a few centimetres a year. The rings, a few hundred million years. Galaxies merging in billions. And the last starlight, about ten trillion years from now.\n\nEvery clock in the sky is running. And right now, we get to see all of them at once.",
+  "made_at": "2026-10-12T19:04:01+0100"
+}
