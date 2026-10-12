@@ -22,5 +22,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
+| 024 | edit | cursor | 2026-10-12T07:54Z | 2026-10-12T09:53Z | J0145 Orbit Auditor prep: per-chapter teaching gate sheet for 024 v05b (then 026, 027): chapter list, number-object timestamps, VO keyword match; Chief reviews |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
