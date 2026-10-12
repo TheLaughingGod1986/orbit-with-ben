@@ -7493,13 +7493,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T18:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:50Z",
-      "result": "parked for Chief: no-text T&C review (Jupiter -jmMROGoZCM; B at ~/_desk/notext_tc_1011/jupiter, A and B both FAIL saturation 87/83 on A's own grade; #99 6130342234)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T22:50Z",
@@ -7610,18 +7610,16 @@
           "at": "2026-10-12T18:37Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: no-text T&C review (Jupiter -jmMROGoZCM; B at ~/_desk/notext_tc_1011/jupiter, A and B both FAIL saturation 87/83 on A's own grade; #99 6130342234)"
+        },
+        {
+          "at": "2026-10-12T18:41Z",
+          "by": "chief",
+          "what": "reopened: Chief PASS on #99 (6130397487): B no-text OK as built (same plate/grade, code-only Telea fill, £0); sat FAIL 87/83 accepted for test (shared A grade, regrade would change two things). Set T&C now: Thumbnail only, A=live B=no-text, CDP 9223, channel UC_esArsDKd3GJvOkeO0DUog; record notext_test_compare.json; [Cursor] note on #99; then done."
         }
       ],
       "kind": "studio",
       "model": "cursor-auto",
-      "escalated_at": "2026-10-12T15:13Z",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-10-12T18:37Z",
-        "by": "cursor",
-        "note": "posted on #99"
-      }
+      "escalated_at": "2026-10-12T15:13Z"
     },
     {
       "id": "J0137",
