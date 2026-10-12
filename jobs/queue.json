@@ -1,5 +1,5 @@
 {
-  "next_id": 185,
+  "next_id": 186,
   "jobs": [
     {
       "id": "J0001",
@@ -10757,6 +10757,34 @@
       ],
       "kind": "assembly",
       "backlog": "hos-plate-prep"
+    },
+    {
+      "id": "J0185",
+      "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-12T16:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T16:28Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "qa",
+      "backlog": "both-qa-sweep"
     }
   ],
   "focus": [
@@ -10779,6 +10807,7 @@
     "hos-live-listing-fixes": "2026-10-12T16:07Z",
     "owb-next-script": "2026-10-12T16:12Z",
     "hos-next-script": "2026-10-12T16:18Z",
-    "hos-plate-prep": "2026-10-12T16:23Z"
+    "hos-plate-prep": "2026-10-12T16:23Z",
+    "both-qa-sweep": "2026-10-12T16:28Z"
   }
 }
