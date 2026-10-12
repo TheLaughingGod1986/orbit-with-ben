@@ -7303,13 +7303,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T01:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:29Z",
-      "result": "parked for Chief: final OK on the v01 cut (54.63 s, gates PASS, e2e191ae) and the title; then cover, package, Private upload publishAt 2026-11-12T11:30Z",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T22:29Z",
@@ -7345,17 +7345,15 @@
           "at": "2026-10-12T01:05Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: final OK on the v01 cut (54.63 s, gates PASS, e2e191ae) and the title; then cover, package, Private upload publishAt 2026-11-12T11:30Z"
+        },
+        {
+          "at": "2026-10-12T07:24Z",
+          "by": "chief",
+          "what": "reopened: Chief PASS on #99 (6119251981, 12 Oct 07:55): v01 (54.63 s) picture PASS. Next: loudness (sfx_kit level) + caption-safe checks, then upload Private publishAt 2026-11-12T11:30Z; J0135 follows."
         }
       ],
       "kind": "assembly",
-      "model": "cursor-auto",
-      "progress": {
-        "step": 5,
-        "of": 6,
-        "at": "2026-10-12T01:05Z",
-        "by": "cursor",
-        "note": "posted on #99; parked for Chief"
-      }
+      "model": "cursor-auto"
     },
     {
       "id": "J0135",
