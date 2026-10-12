@@ -1,5 +1,5 @@
 {
-  "next_id": 208,
+  "next_id": 209,
   "jobs": [
     {
       "id": "J0001",
@@ -12733,6 +12733,33 @@
         }
       ],
       "kind": "chart"
+    },
+    {
+      "id": "J0208",
+      "title": "HOS: land Chief-PASSed VO PRs #271 (009), #272 (010), #268 (007 Shorts): lock, PIPELINE, board, merge main",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Land three HOS VO PRs that the Chief already PASSed. They're sitting unmerged with stale boards or conflicts. No spend, no new takes.\n\n1. **HOS #271, 009 long VO v01 (J0111).** Chief KEEP all five parts (HOS #180 6101629662). On the PR branch: lock the takes as `_v01_LOCK` the usual way, set PIPELINE 009 `vo` to done, regenerate STATUS.md and the kanban so `status-board` passes, then push.\n2. **HOS #272, 010 long VO v01 (J0113).** Chief KEEP all five parts, no pickups (6101773293). The VO keep is final. Ignore the line in 6128033635 saying it was \"still with me\". Same steps as #271: `_v01_LOCK`, PIPELINE 010 `vo` done, board regen. Check whether the Vercel preview failure is just the board, and fix it if so.\n3. **HOS #268, 007 Shorts B + C v02 VO (J0109).** Chief KEEP (6096257381). The PR conflicts with main. Bring main into the branch with a merge (never a force-push), set PIPELINE 007 `shorts_vo` to done, then push.\n\nPost on HOS #180 when all three are green. The Chief merges them; you don't need to wait for anything else. Do not touch audio files. Media stays out of git.\n",
+      "ref": "6132703471",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T21:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T21:16Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
