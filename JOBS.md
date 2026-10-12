@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0153 | mini | blocked | cursor | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0154 | mini | blocked | cursor | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0155 | any | blocked | cursor | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
-| J0156 | any | claimed | cursor | 2026-10-12T17:59Z | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0156 | any | blocked | cursor | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0157 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0159 | mini | open (after J0174) | – | – | vo · Spend ElevenLabs to 0: VO for locked scripts with no take (HOS 007–010 Shorts first), house client, stop at 0 |  |
 | J0160 | mini | blocked | cursor | – | 006 picture · video · Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account) |  |
