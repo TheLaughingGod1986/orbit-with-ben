@@ -43,6 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0207 | mini | open | – | – | chart · OWB compilation: 5 chapter cards + countdown timeline x3 code graphics |  |
 | J0208 | mini | claimed | cursor | 2026-10-12T22:20Z | assembly · HOS: land Chief-PASSed VO PRs #271 (009), #272 (010), #268 (007 Shorts): lock, PIPELINE, board, merge main | 6132703471 |
 | J0209 | mini | open | – | – | chart · HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates) | 6132241581 |
+| J0210 | mini | open | – | – | studio · Daily Studio read: impressions + CTR for every OWB and HOS long film -> tracker |  |
 
 Recently finished:
 
