@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
 | J0204 | mini | open | – | – | chart · HOS compilation: timeline x4 + chapter cards x6 code graphics |  |
 | J0205 | any | open | – | – | listing · Upload packages for 3 Chief-PASSed Shorts (OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01, HOS 005 s04 'Is the Heart a Pump?'): listing + manifest, no publishAt (prereq for J0188) |  |
-| J0206 | mini | claimed | cursor | 2026-10-12T22:09Z | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
+| J0206 | mini | blocked | cursor | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
 
 Recently finished:
 
