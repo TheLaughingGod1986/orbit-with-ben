@@ -1,0 +1,40 @@
+{
+  "job": "J0136",
+  "items": [
+    "Reference lessons 5a (no-cover-text test; a test, not a rule change)"
+  ],
+  "by": "cursor",
+  "ok": "Chief PASS on #99, comment 6130397487 (12 Oct 2026 18:40Z): B as built, no regrade",
+  "set_at": {
+    "-jmMROGoZCM": "2026-10-12T19:52:46+0100"
+  },
+  "mode": "Studio Test & Compare, Thumbnail only, CDP 9223, channel UC_esArsDKd3GJvOkeO0DUog checked; A = live thumbnail, B = no text; no existing test (no delete warning)",
+  "verified": "Thumbnail section shows A+B and 'Running\u2026' on reload; title, schedule and privacy untouched (Public)",
+  "variants": [
+    {
+      "video": "-jmMROGoZCM",
+      "title": "Why You Can't Stand On Jupiter",
+      "A_live": "A_live_-jmMROGoZCM.jpg",
+      "A_sha256": "f87d750690494138bc8b8b0983d61abdab495c47ad24442213fff17c17230f9c",
+      "B_new": "B_notext_-jmMROGoZCM.jpg",
+      "B_sha256": "6294f270d45f3b7611fd7faa39bfdc1e4235a2fa49862a4009e196fe19ca605a",
+      "text_A": "NO FLOOR?",
+      "text_B": null,
+      "B_builder": "00_Brand/Channel-Setup/tools/build_jupiter_notext_tc_b_j0136.py (f4f1d4b0)",
+      "B_method": "Telea fill on median-filtered A + A's own top-left stars; globe, glow and probe untouched",
+      "score": {
+        "A": {
+          "saturation": 87.1,
+          "near_black": 0.06
+        },
+        "B": {
+          "saturation": 83.5,
+          "near_black": 0.03
+        },
+        "note": "both FAIL saturation <100 on A's 4 Oct grade; Chief PASS anyway so only the text changes"
+      },
+      "files": "~/_desk/notext_tc_1011/jupiter/ (rollback copy of A with SHA256SUMS)"
+    }
+  ],
+  "read": "past ~500 impressions, or when YouTube names a winner; Orbit Auditor reports it. Yellow-word rule stands until Chief changes AGENTS.md."
+}
