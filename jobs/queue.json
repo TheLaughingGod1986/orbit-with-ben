@@ -7673,13 +7673,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "cursor",
+      "since": "2026-10-12T15:50Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "",
+      "result": "waits for input: Flow AI Ultra refill on the HOS Flow account (:9222). Still 52 credits at 16:47 London (13th read today). Price draft ready at ~/_desk/logs/J0138_price_draft.md: 006 P3:06 + Parts 04-05 = 1,410 credits at 1 take. Unblock (reopen) when a Flow reading shows the refill, then steps 2-3 (#180 table, PIPELINE PR).",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8035,6 +8035,16 @@
           "at": "2026-10-12T15:50Z",
           "by": "cursor",
           "what": "released: 16:5x London: not re-read: last Flow read was 16:47 London (52 credits, 13th read today, ledger), 3 min before this claim. Refill not landed. Price draft unchanged at ~/_desk/logs/J0138_price_draft.md (006 needs 1,410 credits at 1 take). Next hourly read 17:45."
+        },
+        {
+          "at": "2026-10-12T15:50Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-12T15:50Z",
+          "by": "cursor",
+          "what": "blocked: waits for input: Flow AI Ultra refill on the HOS Flow account (:9222). Still 52 credits at 16:47 London (13th read today). Price draft ready at ~/_desk/logs/J0138_price_draft.md: 006 P3:06 + Parts 04-05 = 1,410 credits at 1 take. Unblock (reopen) when a Flow reading shows the refill, then steps 2-3 (#180 table, PIPELINE PR)."
         }
       ],
       "kind": "video",
