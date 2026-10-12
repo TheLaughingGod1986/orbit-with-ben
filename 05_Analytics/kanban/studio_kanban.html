@@ -328,6 +328,13 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .mk.next{background:var(--todo-soft);color:var(--todo)}.mk.next::before{content:"⏳ "}
 .mk.wait{background:var(--accent-soft);color:var(--soon)}.mk.wait::before{content:"◷ "}
 .mk.bad{background:var(--blocked-soft);color:var(--blocked)}.mk.bad::before{content:"⛔ "}
+.mk.review{background:var(--accent-soft);color:var(--soon)}.mk.review::before{content:"👀 "}
+.mk.sched{background:var(--done-soft);color:var(--done)}.mk.sched::before{content:"✓ "}
+.mk-opt{font-size:12px;color:var(--ink-3);margin:-4px 0 7px 2px}
+.st1.review{color:var(--soon)}.st1.review::before{content:"👀"}
+.stbox.review{border-left-color:var(--soon);background:var(--accent-soft)}
+.pill.review{background:var(--accent-soft);color:var(--soon)}
+.nowbar .rv{margin-top:5px;font-size:13px;font-weight:600;color:var(--soon);background:var(--accent-soft);border-radius:6px;padding:4px 8px}
 .st1::before{margin-right:4px}
 .st1.now{color:var(--doing)}.st1.now::before{content:"▶"}
 .st1.queue::before{content:"⏳"}
@@ -607,6 +614,7 @@ function stepWhen(stp, P){
     const j = byId[stp.job];
     if(jobs && !j) return {ok:true, text:`done (${esc(stp.job)})`};
     if(j){ const p=P[j.id]||{}, L=j.last||{};
+      if(isChiefPark(j)) return {kind:"review", reason:blockWhy(j), text:"waiting for Chief review"};
       if(j.status==="blocked") return {kind:"blocked", reason:String(j.result||""), text:`blocked: ${esc(String(j.result||"").slice(0,100))}`, late:true};
       if(p.state==="now") return {kind:"now", by:AGENT(j.by), start:p.start, done:p.done, text:`underway now · ${etaOf(p.done)}`, at:p.done};
       if(j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude") return {kind:"part", by:AGENT(L.by), done:p.done, text:`part done · carries on within 10 min · ${etaOf(p.done)}`, at:p.done};
@@ -640,6 +648,7 @@ function statusOf(b, rows){
     lines:[`<b>${esc(w.by||x.who)}</b> is doing: ${what}.`, `Started ${clock(w.start)}. ${minsLeft(w.done)} left, <b>${etaOf(w.done)}</b>.`]};
   if(w.kind==="part") return {cls:"now", short:`Part done · ${etaOf(w.done)}`, title:"Part done, carrying on",
     lines:[`<b>${esc(w.by||x.who)}</b> stopped at a safe point on: ${what}. It picks up again within 10 minutes.`, `Done about <b>${clock(w.done)}</b> (${rel(w.done)}).`]};
+  if(w.kind==="review") return {cls:"review", short:"Waiting for Chief review", title:"Waiting for Chief review", lines:[`${who}: ${what}.`, "The work is done and parked for the Chief to check. Nothing is blocking it."]};
   if(w.kind==="blocked") return {cls:"bad", short:"Blocked", title:"Blocked", lines:[`${who}: ${what}.`, `What's blocking it: ${esc(w.reason||"not given")}`]};
   if(w.kind==="queue") return {cls:"queue", short:`${w.ord} in the queue · ${etaOf(w.done)}`, title:`Not started yet: ${w.ord} in the Mac mini's queue`,
     lines:[`Next job: <b>${who}</b>, ${what}.`,
@@ -665,6 +674,11 @@ function jobLabel(j){
 // Ben, 11 Oct 20:52: "Not sure we need this as we have the swim lanes": the Order of work list is gone, the cards carry
 // each film's rank and ETA. Since 11 Oct 22:09 the box above them is plain (renderNow): now, % done, next two, blocked.
 const jobLine = j => j.line || j.needs;
+// Ben, 12 Oct: a job parked for the Chief's review is not a blocker. Amber "Waiting for Chief review"; red only for real
+// blockers (a missing upload id, something only Ben can do).
+const CHIEF_PARK = /park(ed)?\s+for\s+(the\s+)?chief|chief('s)?\s+(review|ok|pass)|for\s+chief\b|awaiting\s+chief/i;
+function blockWhy(j){ return String((j&&j.result) || ((j&&j.last||{}).what||"").replace(/^blocked:\s*/,"")); }
+function isChiefPark(j){ return !!j && j.status==="blocked" && CHIEF_PARK.test(blockWhy(j)) && !/needs ben|only ben|upload id/i.test(blockWhy(j)); }
 function shortReason(r){
   let t = String(r||"").replace(/\s+/g," ").trim(); if(!t) return "no reason given";
   const cut = t.search(/[:;.](\s|$)/); if(cut>=12) t = t.slice(0,cut);
@@ -740,11 +754,12 @@ function renderNow(){
   else { cls = "idle"; head = "Nothing queued for the Mac mini"; }
   const next = line.filter(j=>j!==headJob).slice(0,2);
   const when = j => { const p = P[j.id]; return p.state==="gated" ? `starts ${clock(p.start)}` : `starts about ${clock(p.start)}`; };
-  const blocked = all.filter(j=>j.status==="blocked").map(j=>`<div class="bl">Blocked: ${jobLabel(j)} - ${esc(shortReason(j.result || ((j.last||{}).what||"").replace(/^blocked:\s*/,"")))}</div>`);
+  const review = all.filter(isChiefPark).map(j=>`<div class="rv">Waiting for Chief review: ${jobLabel(j)}</div>`);
+  const blocked = all.filter(j=>j.status==="blocked" && !isChiefPark(j)).map(j=>`<div class="bl">Blocked: ${jobLabel(j)} - ${esc(shortReason(j.result || ((j.last||{}).what||"").replace(/^blocked:\s*/,"")))}</div>`);
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h"><span class="dot"></span>${head}</div>` + bar
     + next.map((j,i)=>`<div class="nx">${i?"Then":"Next"}: ${plainJob(j)} · ${when(j)}</div>`).join("")
-    + blocked.join("")
+    + review.join("") + blocked.join("")
     + updatedAt();
 }
 
@@ -758,7 +773,9 @@ function checklist(f, rows, ready){
   const grp = (who, sub, items) => `<div class="g"><div class="nm">${av(who)}${esc(who)} <small>${sub}</small></div><ul>${items.join("")}</ul></div>`;
   let html = "";
   for(const [who,items] of done) html += grp(who, "did", items.map(x=>`<li class="ok"><span>${esc(x)}</span></li>`));
-  for(const n of now) html += grp(n.who, "doing now", [`<li class="now"><span>${esc(n.what)}</span>${n.since?`<span class="w">since ${esc(fw(n.since))} (${stageDays(n.since)})</span>`:""}</li>`]);
+  const lc = t => String(t||"").toLowerCase();
+  for(const n of now.filter(n=>!rows.some(r=>!r.w.ok && r.x.who===n.who && (lc(r.x.what).includes(lc(n.what).replace(/\s*\(.*\)/,"").trim().slice(0,5)) || lc(n.what).includes(lc(r.x.what))))))
+    html += grp(n.who, "doing now", [`<li class="now"><span>${esc(n.what)}</span>${n.since?`<span class="w">since ${esc(fw(n.since))} (${stageDays(n.since)})</span>`:""}</li>`]);
   // steps in order; a run of steps by the same person is one group
   let run = null; const runs = [];
   for(const r of rows){ if(!run || run.who!==r.x.who){ run={who:r.x.who, items:[]}; runs.push(run); } run.items.push(r); }
@@ -852,6 +869,7 @@ function renderTracker(films){
       : partDone ? `<span class="pill you">Part done${eta(fj.p)}</span>`
       : fj.p.pos===1 ? `<span class="pill you">Up next · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
       : fj.p.pos ? `<span class="pill">#${fj.p.pos} · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
+      : isChiefPark(fj.j) ? '<span class="pill review">Waiting for Chief review</span>'
       : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
     // Ben, 11 Oct 18:52: "a marker to say in the in progress lane what's worked on and the eta". One coloured line at
     // the top of every card that isn't live or scheduled: Now / Next / Waiting / Blocked, from the same plan() as the
@@ -862,10 +880,17 @@ function renderTracker(films){
     const sinceTxt = t => t ? ` · since ${esc(fw(t))}` : "";
     const firstOpen = rows.find(r=>!r.w.ok);
     const doingSt = f._stages.map(s=>[s,stOf(f,s)]).find(([,x])=>["doing","blocked"].includes(x.status));
-    let mk = null;
-    if(fj && fj.p.state==="now") mk = ["now", `Now: ${esc(AGENT(fj.j.by))}, ${jn(fj.j)} · ${etaOf(fj.p.done)}`];
+    let mk = null, optLine = "";
+    // Ben, 12 Oct: a film already scheduled reads "Scheduled: <day date time>"; extras on it are a small Optional line.
+    const schedSt = f._stages.find(s=>s.key==="scheduled"), isSched = !live && air && (moodKey==="ready" || (schedSt && stOf(f,schedSt).status==="done"));
+    if(isSched){ const dueM = fj && /due(?:\s+before)?\s+((?:mon|tue|wed|thu|fri|sat|sun)\w*\s+\d{1,2}\s+\w{3})/i.exec(fj.j.title||"");
+      const dueT = dueM ? dueM[1] : fj && fj.j.not_before ? fd(new Date(fj.j.not_before)) : "";
+      if(fj) optLine = `Optional: ${esc(shortTitle(String(fj.j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s+/,"")).split(/[:(]/)[0].trim())}${dueT?`, due ${esc(dueT)}`:""}${isChiefPark(fj.j)?" · waiting for Chief review":""}`;
+      mk = ["sched", `Scheduled: ${fd(air)} ${String(AIR_HOUR).padStart(2,"0")}:00`]; }
+    else if(fj && fj.p.state==="now") mk = ["now", `Now: ${esc(AGENT(fj.j.by))}, ${jn(fj.j)} · ${etaOf(fj.p.done)}`];
     else if(partDone) mk = ["now", `Now: ${esc(AGENT(fj.j.last.by))}, ${jn(fj.j)} · part done, carries on within 10 min${fj.p.done?` · ${etaOf(fj.p.done)}`:""}`];
     else if(fj && fj.p.start) mk = ["next", `Next${fj.p.pos?` (#${fj.p.pos} in line)`:""}: ${lineWho(fj.j)}, ${jn(fj.j)} · starts ${fj.p.state==="gated"?"":"about "}${clock(fj.p.start)}${fj.p.state==="gated"?" (date gate)":""} · ${etaOf(fj.p.done)}`];
+    else if(fj && isChiefPark(fj.j)) mk = ["review", `Waiting for Chief review: ${jn(fj.j)}`];
     else if(fj && fj.j.status==="blocked") mk = ["bad", `Blocked: ${jn(fj.j)} · ${esc(String(fj.j.result||"no reason given").slice(0,90))}`];
     else if(fj) mk = ["wait", `Waiting: ${jn(fj.j)} · no estimate: needs ${esc(fj.j.waitsFor||fj.j.after||"another job")} first`];
     else if(f._ch==="HOS" && doingSt && doingSt[1].status==="doing"){ const [sg,x] = doingSt, due = x.eta || x.due;
@@ -873,6 +898,7 @@ function renderTracker(films){
     else if(firstOpen){ const {x,w} = firstOpen, who = x.who==="Ready for you"||x.who==="Ben" ? "you" : x.who, what = esc(x.what);
       mk = w.kind==="now" ? ["now", `Now: ${esc(w.by||who)}, ${what} · ${etaOf(w.done)}`]
         : w.kind==="part" ? ["now", `Now: ${esc(w.by||who)}, ${what} · part done${w.done?` · ${etaOf(w.done)}`:""}`]
+        : w.kind==="review" ? ["review", `Waiting for Chief review: ${esc(who)}, ${what}`]
         : w.kind==="blocked" ? ["bad", `Blocked: ${esc(who)}, ${what} · ${esc(String(w.reason||"").slice(0,90))}`]
         : (w.kind==="queue"||w.kind==="after") && w.at ? ["next", `Next: ${esc(who)}, ${what} · ${w.start?`starts about ${clock(w.start)} · `:""}${etaOf(w.at)}`]
         : w.text && !/no date yet/.test(w.text) ? ["wait", `Waiting: ${esc(who)}, ${what} · ${w.text}${!w.at && who!=="you" && !x.job && !/\d/.test(w.text) ? " · no estimate: not in the job queue yet" : ""}${who==="you"?"":sinceTxt(doingSt&&doingSt[1].since || b.updated)}`]
@@ -881,7 +907,7 @@ function renderTracker(films){
       mk = [x.status==="blocked"?"bad":"now", `${x.status==="blocked"?"Blocked":"Now"}: ${who}, ${esc(sg.label)} · ${due?`ETA ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
     else mk = ["wait", `Waiting: nothing queued for it · no estimate: no next step in the film note`];
     const ranked = col==="todo"||col==="doing";
-    const mkRow = !ranked ? "" : `<div class="rkrow">@@R:${esc(f.key)}@@<div class="mk ${mk[0]}">${mk[1]}</div></div>`;
+    const mkRow = !ranked ? "" : `<div class="rkrow">@@R:${esc(f.key)}@@<div class="mk ${mk[0]}">${mk[1]}</div></div>${optLine?`<div class="mk-opt">${optLine}</div>`:""}`;
     // Ben, 11 Oct 19:03: "1st, 2nd, 3rd": one work order across both channels. Running/part-done jobs first, then queued
     // jobs by start time, then films with no queue job (In progress before To do, then air date), then date-gated work.
     if(ranked) rankIn.push({key:f.key, tier: !fj ? 2 : fj.p.state==="now"||partDone ? 0 : fj.p.state==="gated" ? 3 : fj.p.start ? 1 : 2,
@@ -892,7 +918,7 @@ function renderTracker(films){
       <div class="kt">${esc(f.title)}</div>
       <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
-      <div class="st1 ${st.cls}">${st.short}</div>
+      <div class="st1 ${isSched?"ok":st.cls}">${isSched?mk[1]:st.short}</div>${isSched&&!mkRow&&optLine?`<div class="mk-opt">${optLine}</div>`:""}
       ${youSoon?`<div class="ky yes">For you: ${esc(b.youShort||b.you)}${watchLink(f.key)?`<br>${watchLink(f.key)}`:""}</div>`:""}
     </summary><div class="body">
       ${line?`<div class="kl" style="margin:0 0 8px">${md(line)}</div>`:""}
