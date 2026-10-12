@@ -253,6 +253,8 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .nowbar .h.one{font-size:15px;white-space:normal;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:6px}
 .nowbar .h.one .tt{flex:1 1 60%;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nowbar .h.one .meta{flex:0 0 auto;font-size:13px;white-space:nowrap}
+.nowbar .jid{display:inline-block;font:600 11px/1.5 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:9px;background:#e8ecf2;color:#3a4656;vertical-align:1px}
+.nowbar .run{display:inline-block;font-size:11px;font-weight:700;line-height:1.5;padding:0 7px;border-radius:9px;background:#dff3e4;color:#1d7a3a;vertical-align:1px}
 .nowbar .who{color:var(--ink-2);font-weight:500}
 .nowbar .eta{color:var(--doing);font-weight:600}
 .nowbar details.more{margin-top:6px}
@@ -788,7 +790,7 @@ function renderNow(){
   const headJob = busy[0] || null;
   let cls = "", head;
   if(headJob){ const pr = progressOf(headJob, P);
-    head = `<span class="tt"><b>Now:</b> ${esc(cleanTitle(headJob))}</span><span class="meta"><span class="who">${esc(WORKER[headJob.by]||headJob.by||"Mac mini")}</span> <span class="eta">· ${esc(readyAt(pr.done)||"working")}</span></span>`; }
+    head = `<span class="tt"><b>Now:</b> ${esc(cleanTitle(headJob))}</span><span class="meta"><span class="run">Running</span> <span class="jid">${esc(headJob.id||"")}</span> <span class="who">${esc(WORKER[headJob.by]||headJob.by||"Mac mini")}</span> <span class="eta">· ${esc(readyAt(pr.done)||"working")}</span></span>`; }
   else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
     head = q && q.quiet ? "<b>Now:</b> Mac mini quiet for 3 h+ with work waiting" : "<b>Now:</b> starting the next job"; }
   else { cls = "idle"; head = "<b>Now:</b> nothing queued"; }
@@ -807,7 +809,7 @@ function renderNow(){
   const benLine = groups.ben.length ? `<div class="bl">Needs Ben: ${esc(cleanTitle(groups.ben[0], 60))}${groups.ben.length>1?` (+${groups.ben.length-1})`:""}</div>` : "";
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>`
-    + (nx ? `<div class="nx one"><b>Next:</b> ${esc(cleanTitle(nx, 60))}</div>` : "")
+    + (nx ? `<div class="nx one"><span class="jid">${esc(nx.id||"")}</span> <b>Next:</b> ${esc(cleanTitle(nx, 60))}</div>` : "")
     + benLine + details + updatedAt();
 }
 
