@@ -7737,13 +7737,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T15:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "waits for input: Flow AI Ultra refill on the HOS Flow account (:9222). Still 52 credits at 16:47 London (13th read today). Price draft ready at ~/_desk/logs/J0138_price_draft.md: 006 P3:06 + Parts 04-05 = 1,410 credits at 1 take. Unblock (reopen) when a Flow reading shows the refill, then steps 2-3 (#180 table, PIPELINE PR).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8109,15 +8109,14 @@
           "at": "2026-10-12T15:50Z",
           "by": "cursor",
           "what": "blocked: waits for input: Flow AI Ultra refill on the HOS Flow account (:9222). Still 52 credits at 16:47 London (13th read today). Price draft ready at ~/_desk/logs/J0138_price_draft.md: 006 P3:06 + Parts 04-05 = 1,410 credits at 1 take. Unblock (reopen) when a Flow reading shows the refill, then steps 2-3 (#180 table, PIPELINE PR)."
+        },
+        {
+          "at": "2026-10-12T22:19Z",
+          "by": "chief",
+          "what": "reopened: Flow refill landed (Ben 23:19; read 25,050 credits at 23:21 London). Floor 0: never buy, top up or spill into billing."
         }
       ],
       "kind": "video",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-10-12T15:49Z",
-        "by": "cursor"
-      },
       "reset": "AI Ultra/Flow credit refill: re-read hourly until it lands (read only)"
     },
     {
@@ -8131,13 +8130,13 @@
       "stage": "",
       "after": "J0138",
       "eta_min": 30,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8148,6 +8147,11 @@
           "at": "2026-10-12T14:08Z",
           "by": "chief",
           "what": "blocked: waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill."
+        },
+        {
+          "at": "2026-10-12T22:19Z",
+          "by": "chief",
+          "what": "reopened: Flow refill landed (Ben 23:19; read 25,050 credits at 23:21 London). Floor 0: never buy, top up or spill into billing."
         }
       ],
       "kind": "chief"
@@ -8163,13 +8167,13 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8180,6 +8184,11 @@
           "at": "2026-10-12T14:08Z",
           "by": "chief",
           "what": "blocked: waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill."
+        },
+        {
+          "at": "2026-10-12T22:19Z",
+          "by": "chief",
+          "what": "reopened: Flow refill landed (Ben 23:19; read 25,050 credits at 23:21 London). Floor 0: never buy, top up or spill into billing."
         }
       ],
       "kind": "video"
