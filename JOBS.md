@@ -39,11 +39,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0198 | gemini | open | – | – | facts · HOS 011 Anesthesia: Gemini facts pass on SOURCES_v01 rows 1-37 before VO |  |
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
-| J0201 | gemini | claimed | cursor | 2026-10-12T19:43Z | facts · OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) |  |
 | J0202 | mini | open (after J0201) | – | – | vo · OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) | 6125827198 |
 
 Recently finished:
 
+- J0201 done: OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) (done)
 - J0186 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS Saturn 'clock' Short v01 (d5eb0a50, gate PASS). Air in the next free OWB Short slot (follow-on studio job).)
 - J0185 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (done)
 - J0183 done: Backlog HOS: next script or opening draft (009/010 first) (Chief PASS HOS 011 script v01 (HOS PR #295, 91.1); topic + spelling locked in J0180. VO waits on Gemini facts pass on SOURCES_v01 rows 1-37 (follow-on job).)
@@ -53,4 +53,3 @@ Recently finished:
 - J0178 done: Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) (done)
 - J0177 done: HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) (done)
 - J0174 done: HOS compilation film: VO for intro and bridges (Chief PASS on HOS #180 (6130399806): KEEP all 7 _vo_v01 takes (HOS PR #298 d9e150b), word for word from locked COMPILATION_SCRIPT_v01 (#293 126bfec); Bridge 1 REVIEW numeral only, KEEP; Bridge 2 a/the, KEEP, listen once at J0175 assembly. J0175 assembly may start.)
-- J0173 done: HOS compilation film (45-60 min) from finished films: plan + fresh intro/chapter script (Chief LOCK HOS compilation plan + script v01 (HOS PR #293): six films by proof year 005,006,001,002,003,004 (~51 min), upload only after 006 airs 5 Nov; trim the 3 end hand-offs; same own-films re-upload exception as OWB; title/cover option 1 pending autocomplete. Gemini claims pass on MUST QUOTE (Pasteur 1860s row) before VO J0174 (follow-on job).)
