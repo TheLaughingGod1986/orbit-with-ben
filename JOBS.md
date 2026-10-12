@@ -43,12 +43,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0207 | mini | open | – | – | chart · OWB compilation: 5 chapter cards + countdown timeline x3 code graphics |  |
 | J0210 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
-| J0212 | gemini | claimed | cursor | 2026-10-12T22:43Z | facts · HOS standalone Shorts S5: exact quote that the pigeons were blamed (lock condition before S5 VO) | 6127927589 |
 | J0213 | mini | open (after J0212) | – | – | vo · HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines) | 6127927589 |
 | J0214 | mini | open (after J0213) | – | – | image · HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) | 6131173528 |
 
 Recently finished:
 
+- J0212 done: HOS standalone Shorts S5: exact quote that the pigeons were blamed (lock condition before S5 VO) (done)
 - J0209 done: HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates) (PASS HOOK/BAND/PHONE ×4; wording KEEP; #301 merged; HOS #180 6133005305. Cursor to attach covers on package.)
 - J0208 done: HOS: land Chief-PASSed VO PRs #271 (009), #272 (010), #268 (007 Shorts): lock, PIPELINE, board, merge main (done)
 - J0203 done: HOS standalone Shorts S1-S4: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (20 x 9:16 still plates for S1-S4 on Vertex gemini-2.5-flash-image (~£0.62; trial est ≈£0.63 left, console £1.46 lagging). HOS docs/STANDALONE_SHORTS_TEST_2026-10/PLATES_STATUS_v01.md; sheets plates_v01/s{1..4}_sheet_v01.jpg (Mini). KEEP flags for Chief: S1-05 smoke look, S2 Brand inconsistent, S3-05 handle still on pump.)
@@ -58,4 +58,3 @@ Recently finished:
 - J0187 done: 024 Light Speed: Test & Compare A/B covers from day 1 at upload (J0143 PASS) (Chief PASS J0187 prep: PR #139 (9f3b93dc) + #153 (fc13971a) merged; covers stay at 08_Thumbnail/j0143_v02 and ~/_desk/handoff/J0143-v02. Studio Test & Compare waits until 024 has a video id (final OK Mon 26 Oct / airs Sun 1 Nov). OWB #99 6131722365. No 024 upload job exists yet — Cursor must add the Studio T&C follow-on with --after the upload job when upload is queued (follow-on J id created in this commit).)
 - J0186 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS Saturn 'clock' Short v01 (d5eb0a50, gate PASS). Air in the next free OWB Short slot (follow-on studio job).)
 - J0185 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (done)
-- J0183 done: Backlog HOS: next script or opening draft (009/010 first) (Chief PASS HOS 011 script v01 (HOS PR #295, 91.1); topic + spelling locked in J0180. VO waits on Gemini facts pass on SOURCES_v01 rows 1-37 (follow-on job).)
