@@ -9403,13 +9403,13 @@
       "stage": "",
       "after": "J0161",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T14:27Z",
-      "eta": "2026-10-12T15:57Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: S1-S4 VO recorded (17aca874, 1,116 credits). Accept 3 vo_check REVIEWs (S1/S3/S4: Scribe numerals only, every word as scripted) and S2 27.3 s / S3 27.8 s vs 18-22 s target (~23.5/25.5 s after pause trim at J0163), or order script trims + retakes. Gemini Q1-Q9 OK. Thread 6126434686.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -9460,6 +9460,11 @@
           "at": "2026-10-12T14:36Z",
           "by": "cursor",
           "what": "step 6 of 6 done: 4 takes committed 17aca874"
+        },
+        {
+          "at": "2026-10-12T14:36Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: S1-S4 VO recorded (17aca874, 1,116 credits). Accept 3 vo_check REVIEWs (S1/S3/S4: Scribe numerals only, every word as scripted) and S2 27.3 s / S3 27.8 s vs 18-22 s target (~23.5/25.5 s after pause trim at J0163), or order script trims + retakes. Gemini Q1-Q9 OK. Thread 6126434686."
         }
       ],
       "kind": "vo",
