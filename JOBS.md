@@ -49,6 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0179 | any | open | – | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0180 | any | open | – | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0181 | any | blocked | cursor | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0182 | any | open | – | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 
 Recently finished:
 
