@@ -10365,10 +10365,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-12T20:27Z",
+      "eta": "2026-10-13T00:27Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10417,6 +10417,11 @@
           "at": "2026-10-12T19:51Z",
           "by": "cursor",
           "what": "released: Step 2 of 8 done (e1796d95): 005+007 Studio owner downloads in 09_Final-Export, NAS copies sha256-matched. Word timings running detached: tmux J0167-words, log ~/_desk/logs/J0167-words.log, done file ~/_desk/logs/J0167-words.done, output /private/tmp/owb_comp/words/. Next run: if .done present, mark subscribe-beat and hand-off trims (step 3); never start a second copy."
+        },
+        {
+          "at": "2026-10-12T20:27Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
