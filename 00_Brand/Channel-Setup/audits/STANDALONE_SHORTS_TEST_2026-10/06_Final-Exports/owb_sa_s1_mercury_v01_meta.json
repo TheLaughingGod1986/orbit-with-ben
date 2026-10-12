@@ -1,0 +1,108 @@
+{
+  "job": "J0163",
+  "short": "s1",
+  "air_provisional": "2026-10-20",
+  "title_on_screen": "A Day on Mercury Lasts Two Years",
+  "file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01.mp4",
+  "frames": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01_frames.jpg",
+  "sha256": "ba583baf8c38eeb5cb931ac2c422bfd9a3c109f91ae9f064778c1863a4d90b3e",
+  "duration_s": 20.44,
+  "vo": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/vo_v01/trim/owb_sa_s1_mercury_vo_v01_trim.wav",
+  "words": 41,
+  "last_word_end_s": 17.44,
+  "spoken": "On Mercury, one day lasts two years. Stay, and I'll show you how. Mercury races round the sun every 88 Earth days, but it spins so slowly, sunrise to sunrise takes 176. Two trips round the sun before it's morning again",
+  "hook": "ONE DAY, / TWO YEARS (yellow DAY,), 0-2.2 s",
+  "title_window_s": [
+    9.0,
+    14.0
+  ],
+  "overlay": {
+    "kind": "fact",
+    "lines": [
+      "176",
+      "EARTH DAYS"
+    ],
+    "window": [
+      14.0,
+      17.2
+    ],
+    "spoken": "sunrise to sunrise takes a hundred and seventy-six"
+  },
+  "cuts": [
+    {
+      "row": 1,
+      "start_s": 0.0,
+      "end_s": 5.5,
+      "file": "s1_mercury/PIA11351.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.04
+      ],
+      "max_upscale": 2.23
+    },
+    {
+      "row": 2,
+      "start_s": 5.5,
+      "end_s": 9.7,
+      "file": "s1_mercury/PIA14083.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.05,
+        1.15
+      ],
+      "max_upscale": 2.16
+    },
+    {
+      "row": 3,
+      "start_s": 9.7,
+      "end_s": 15.1,
+      "file": "s1_mercury/PIA12266.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.1
+      ],
+      "max_upscale": 2.06
+    },
+    {
+      "row": 4,
+      "start_s": 15.1,
+      "end_s": 17.44,
+      "file": "s1_mercury/PIA13674.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.25,
+        1.35
+      ],
+      "max_upscale": 0.75
+    },
+    {
+      "row": 5,
+      "start_s": 17.44,
+      "end_s": 20.44,
+      "file": "s1_mercury/PIA11351.jpg",
+      "mode": "loop",
+      "note": "0.5 s crossfade back to the opening plate, pull-back to frame 0"
+    }
+  ],
+  "orbit_slot": {
+    "start_s": 1.0,
+    "status": "open: J0200 Omni insert, opening plate runs under it until then"
+  },
+  "audio": {
+    "vo_gain": 1.0,
+    "bed": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+    "bed_gain": 0.065,
+    "bed_hold_gain": 0.35,
+    "sfx": "sfx_owb_whoosh_soft_v01.wav at 0 s, tick at 14.05 s",
+    "stems": {
+      "vo": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s1_mercury/stem_vo.wav",
+      "bed": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s1_mercury/stem_bed.wav",
+      "sfx": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s1_mercury/stem_sfx.wav"
+    },
+    "mix": "-14 LUFS, -1.5 dBTP"
+  },
+  "grain": "noise=alls=4:allf=t",
+  "spend": "none"
+}

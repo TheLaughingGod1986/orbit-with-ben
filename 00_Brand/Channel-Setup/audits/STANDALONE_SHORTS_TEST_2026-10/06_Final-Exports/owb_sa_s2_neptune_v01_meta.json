@@ -1,0 +1,114 @@
+{
+  "job": "J0163",
+  "short": "s2",
+  "air_provisional": "2026-10-24",
+  "title_on_screen": "The Wind on Neptune Is Supersonic",
+  "file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v01.mp4",
+  "frames": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v01_frames.jpg",
+  "sha256": "6c258dd02e079b1784e89c4ee1ff0a975d59d376a480068526c7565e23662182",
+  "duration_s": 25.28,
+  "vo": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/vo_v01/trim/owb_sa_s2_neptune_vo_v01_trim.wav",
+  "words": 51,
+  "last_word_end_s": 22.28,
+  "spoken": "The wind on Neptune is supersonic. Stay and I'll show you how fast. Clouds of frozen methane race past at over two thousand kilometers an hour. Earth's strongest winds barely reach four hundred. And out here, thirty times farther from the sun, there's hardly any sunlight to drive it. And still",
+  "hook": "SUPERSONIC / WIND (yellow SUPERSONIC), 0-2.2 s",
+  "title_window_s": [
+    9.0,
+    14.0
+  ],
+  "overlay": {
+    "kind": "bars",
+    "rows": [
+      [
+        "EARTH 400",
+        0.2
+      ],
+      [
+        "NEPTUNE 2,000 KM/H",
+        1.0
+      ]
+    ],
+    "window": [
+      14.1,
+      17.9
+    ],
+    "spoken": "Earth's strongest winds barely reach four hundred"
+  },
+  "cuts": [
+    {
+      "row": 1,
+      "start_s": 0.0,
+      "end_s": 5.9,
+      "file": "s2_neptune/PIA01492.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.55,
+        1.75
+      ],
+      "max_upscale": 2.01
+    },
+    {
+      "row": 2,
+      "start_s": 5.9,
+      "end_s": 11.6,
+      "file": "s2_neptune/PIA00063.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.0,
+        1.12
+      ],
+      "max_upscale": 1.43
+    },
+    {
+      "row": 3,
+      "start_s": 11.6,
+      "end_s": 16.3,
+      "file": "s2_neptune/PIA00058.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.12,
+        1.0
+      ],
+      "max_upscale": 1.77
+    },
+    {
+      "row": 4,
+      "start_s": 16.3,
+      "end_s": 22.28,
+      "file": "s2_neptune/PIA02210.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.6,
+        1.8
+      ],
+      "max_upscale": 1.94
+    },
+    {
+      "row": 5,
+      "start_s": 22.28,
+      "end_s": 25.28,
+      "file": "s2_neptune/PIA01492.jpg",
+      "mode": "loop",
+      "note": "0.5 s crossfade back to the opening plate, pull-back to frame 0"
+    }
+  ],
+  "orbit_slot": {
+    "start_s": 1.0,
+    "status": "open: J0200 Omni insert, opening plate runs under it until then"
+  },
+  "audio": {
+    "vo_gain": 1.0,
+    "bed": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+    "bed_gain": 0.065,
+    "bed_hold_gain": 0.35,
+    "sfx": "sfx_owb_whoosh_soft_v01.wav at 0 s, tick at 14.15 s",
+    "stems": {
+      "vo": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s2_neptune/stem_vo.wav",
+      "bed": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s2_neptune/stem_bed.wav",
+      "sfx": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s2_neptune/stem_sfx.wav"
+    },
+    "mix": "-14 LUFS, -1.5 dBTP"
+  },
+  "grain": "noise=alls=4:allf=t",
+  "spend": "none"
+}

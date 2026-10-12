@@ -1,0 +1,120 @@
+{
+  "job": "J0163",
+  "short": "s4",
+  "air_provisional": "2026-10-31",
+  "title_on_screen": "This Planet Has 21-Year Winters",
+  "file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
+  "frames": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01_frames.jpg",
+  "sha256": "c4d1262afa79c2bb3424751509f7e664bae2b8f80818dea71745ed5d9ad2b10e",
+  "duration_s": 21.166667,
+  "vo": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/vo_v01/trim/owb_sa_s4_uranus_vo_v01_trim.wav",
+  "words": 51,
+  "last_word_end_s": 18.16,
+  "spoken": "This planet has winters that last 21 years. Stay, and I'll show you why. Uranus is tipped 97 degrees, so it rolls on its side. One orbit takes 84 years. For about a quarter of that, the sun stares down on one pole while the other half sits in the dark",
+  "hook": "21-YEAR / WINTER (yellow WINTER), 0-2.2 s",
+  "title_window_s": [
+    9.0,
+    14.0
+  ],
+  "overlay": {
+    "kind": "fact",
+    "lines": [
+      "TIPPED",
+      "97°"
+    ],
+    "window": [
+      6.4,
+      9.0
+    ],
+    "spoken": "Uranus is tipped ninety-seven degrees"
+  },
+  "cuts": [
+    {
+      "row": 1,
+      "start_s": 0.0,
+      "end_s": 5.9,
+      "file": "s4_uranus/webb_weic2310a.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.25,
+        1.42
+      ],
+      "max_upscale": 1.37
+    },
+    {
+      "row": 2,
+      "start_s": 5.9,
+      "end_s": 9.9,
+      "file": "s4_uranus/PIA00143.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.08
+      ],
+      "max_upscale": 2.16
+    },
+    {
+      "row": 3,
+      "start_s": 9.9,
+      "end_s": 12.7,
+      "file": "s4_uranus/PIA18182.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.0,
+        1.08
+      ],
+      "max_upscale": 0.68
+    },
+    {
+      "row": 4,
+      "start_s": 12.7,
+      "end_s": 16.2,
+      "file": "s4_uranus/PIA01391.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.08,
+        1.0
+      ],
+      "max_upscale": 2.07
+    },
+    {
+      "row": 5,
+      "start_s": 16.2,
+      "end_s": 18.16,
+      "file": "s4_uranus/PIA00346.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.0,
+        1.08
+      ],
+      "max_upscale": 2.16
+    },
+    {
+      "row": 6,
+      "start_s": 18.16,
+      "end_s": 21.16,
+      "file": "s4_uranus/webb_weic2310a.jpg",
+      "mode": "loop",
+      "note": "0.5 s crossfade back to the opening plate, pull-back to frame 0"
+    }
+  ],
+  "orbit_slot": {
+    "start_s": 1.0,
+    "status": "open: J0200 Omni insert, opening plate runs under it until then"
+  },
+  "audio": {
+    "vo_gain": 1.0,
+    "bed": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+    "bed_gain": 0.065,
+    "bed_hold_gain": 0.35,
+    "sfx": "sfx_owb_rumble_low_v01.wav at 0 s, tick at 6.45 s",
+    "stems": {
+      "vo": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s4_uranus/stem_vo.wav",
+      "bed": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s4_uranus/stem_bed.wav",
+      "sfx": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s4_uranus/stem_sfx.wav"
+    },
+    "mix": "-14 LUFS, -1.5 dBTP"
+  },
+  "grain": "noise=alls=4:allf=t",
+  "spend": "none"
+}

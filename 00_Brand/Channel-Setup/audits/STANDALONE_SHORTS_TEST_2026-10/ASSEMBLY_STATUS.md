@@ -43,6 +43,31 @@ Also waiting: **J0200** (Orbit Omni inserts at about 1 s, Chief item 4). The ass
 - **House SFX kit** made: `/private/tmp/owb_sa_shorts/sfx_kit_v01/` (rumble, whoosh, tick).
 - **J0200** (Orbit inserts) is still open. The build goes ahead with the ~1 s Orbit row left open, and Orbit drops in once J0200 lands.
 
+## Steps 4–5: S1–S4 v01 assembled (Cursor, 12 Oct 22:00)
+
+`_assemble_standalone_shorts_v01.py` builds all four from the plates above, with no spend.
+- **Picture:** every frame is drawn in Python with a float crop box, so the pushes don't step. Each opener gets a fast ease-out push (+15% in the first second), so frame 0 is already moving. There's a hard cut every 3–6 s. The last ~3 s crossfade (0.5 s) back to the opening plate and pull back onto frame 0's framing, so each Short loops. Plates too small to fill 9:16 (PIA00063, PIA00058, PIA02210, PIA00346, and the Webb rings) are fitted to the width over a blurred, darkened copy of themselves, with feathered edges. Every row stays under the 2.35× upscale cap (the per-row `max_upscale` is in each meta). Grain is `noise=alls=4:allf=t`.
+- **On screen:** the hook caption runs 0–2.2 s (yellow hook word). Each Short's own title shows at 9–14 s. Captions run throughout (3-word groups). One animated overlay sits inside the 16:9 band, at 11.5% of the band height per line:
+  - S1: "176 / EARTH DAYS", 14.0–17.2 s
+  - S2: Earth 400 vs Neptune 2,000 KM/H, two growing bars, 14.1–17.9 s
+  - S3: a counter running 1→16 with "EVERY 90 MINUTES", 17.5–21.6 s
+  - S4: "TIPPED / 97°", 6.4–9.0 s, over the dark side of a crescent (not on the disc)
+- **Sound:** the trimmed VO, the standalone bed at 0.065 (0.35 in the loop hold), a house whoosh at frame 0 (a rumble on S4) and one tick on the overlay. The mix is −14 LUFS. VO, bed and SFX stems are in `/private/tmp/owb_sa_shorts/build_v01/<stem>/`.
+- **Orbit row** at ~1 s is left open (`orbit_slot` in each meta) for J0200; the opening plate runs under it for now.
+- **Outputs:** `06_Final-Exports/<stem>_v01.mp4` (git-ignored, on the Mini), plus a `_frames.jpg` contact sheet, `_gate.txt`, `_sfx_level.txt` and `_meta.json` (cut list) for each.
+- **Gates:** see the results table below. Every Short carries the duration warning, because they run ~20–25 s against the house 22–27 s band (Ben's exception, and the gate counts it as a warning only).
+
+**Results (22:07):**
+
+| Short | Length | `gate_shorts_open` | Motion 0–1 s | `sfx_kit level` | Left to do |
+|---|---|---|---|---|---|
+| S1 Mercury | 20.44 s | PASS (length warning only) | 10.6 | PASS | nothing |
+| S2 Neptune | 25.28 s | PASS | 6.8 (warning) | PASS | Re-cut the opening: the smooth blue disc barely changes even with a 35% push. Try PIA00058's streaks for frame 0 (fitted, panning) and move PIA01492 later. |
+| S3 ISS | 27.40 s | PASS | 13.4 | FAIL: the whoosh is within 10 LU of the VO at 0.5 s for 0.3 s | Drop S3's whoosh gain to ~0.15. S3 is at the 27.4 s ceiling: the hold is 2.3 s. |
+| S4 Uranus | 21.17 s | PASS (length warning only) | 16.1 | PASS | nothing |
+
+S4 also warned once that its open plate was 16 bits from `pL339HhjDwo` (7 Oct). That was on the earlier frame 0, and it cleared on the final render.
+
 ## Next
 
 3. Orbit inserts at ~1 s on S1–S4 (Chief, #99 6125827198 item 4): 4 short Omni takes, a separate `video` job.
