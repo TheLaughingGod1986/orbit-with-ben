@@ -1,5 +1,5 @@
 {
-  "next_id": 207,
+  "next_id": 208,
   "jobs": [
     {
       "id": "J0001",
@@ -12538,6 +12538,33 @@
         "by": "cursor",
         "note": "checked: 024 has no video id"
       }
+    },
+    {
+      "id": "J0207",
+      "title": "OWB compilation: 5 chapter cards + countdown timeline x3 code graphics",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "For J0167 (OWB compilation film assembly). Spec: `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/COMPILATION_SCRIPT_v01.md` (Bridge 1, Bridge 3, Closing VISUAL MUST lines and the five [CHAPTER CARD] lines) and `COMPILATION_ASSEMBLY_STATUS.md`.\n\nRender, one file per appearance, 1920x1080 30 fps, into `/private/tmp/owb_comp/graphics_v01/` (media not in git; commit the builder script beside the plan as `_build_comp_graphics_v01.py` plus a stills sheet `graphics_v01_sheet.jpg`):\n\n1. **Chapter cards x5, ~3 s each** (house chapter-card look, large house type, animates in 0.3-0.5 s and out, no hold over 4 s, ~0.4 s xfade at the cut, rides over a lifted/blurred moving plate from the film it introduces, never a flat black slab; must pass polish_gate near-black, mean luma 28+ or p95 50+):\n   `code_graphic_owbcomp_card_01` The Rings Are Leaving · `_card_02` The Moon Lets Go · `_card_03` Two Galaxies Meet · `_card_04` What Dead Stars Leave · `_card_05` The Last Light.\n   Card text is the chapter name (these four-word titles are the chapter names, Chief locked them in J0165).\n2. **Countdown timeline, log scale, three appearances** (DATA, one graphic per appearance, transparent ProRes 4444 or alpha PNG sequence so the assembler can lay it over a graded moving plate; labels 4 words or fewer, house type, off the subject; markers drop in with a tick-cue time written to `graphics_v01/ticks.json`):\n   - `code_graphic_owbcomp_timeline_b1`: timeline draws on, marker 1 drops: SATURN'S RINGS · 100–300 MILLION YEARS. Timed to Bridge 1 VO `vo_compilation_v01/owb_comp_bridge1_vo_v02.wav` (15.44 s; marker on \"three hundred million years\", take the word time from its `stt/` Scribe JSON).\n   - `code_graphic_owbcomp_timeline_b3`: returns with marker 1 already in place, marker 2 drops: GALAXIES MERGE · BILLIONS OF YEARS (no number). Timed to `owb_comp_bridge3_vo_v01.wav` (16.48 s).\n   - `code_graphic_owbcomp_timeline_close`: markers 1-2 in place, marker 3 drops: LAST STARS · ~10 TRILLION YEARS; the whole timeline reads sound-off, then fades. Timed to `owb_comp_closing_vo_v01.wav` (20.08 s; marker on \"ten trillion years\").\n   Numbers are only the ones already in the locked script's MUST QUOTE table. No new numbers.\n\nRules: AGENTS.md lesson 7, *Teach on screen* (STYLE, MOTION) and *Polish pass* item 3 look where it fits (thin glowing lines on lifted dark navy). No sourced chart or diagram. No spend. Mark done with the stills sheet path in the result; J0167 lays them in, and Chief scores STYLE and MOTION on the whole cut at J0168.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T20:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T20:30Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [
