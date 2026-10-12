@@ -10167,13 +10167,13 @@
       "stage": "",
       "after": "J0162",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T22:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: S1-S8 v01 built (bcb11034); all 8 gate_shorts_open + sfx_kit level PASS. Chief PASS/FAIL each (J0164); S8 frame 0 (reframed after a gold-foil visor false-FAIL) vs cover framing; Orbit ~1 s row still open for J0200",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10339,16 +10339,14 @@
           "at": "2026-10-12T23:03Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: S1-S8 v01 built (bcb11034); all 8 gate_shorts_open + sfx_kit level PASS. Chief PASS/FAIL each (J0164); S8 frame 0 (reframed after a gold-foil visor false-FAIL) vs cover framing; Orbit ~1 s row still open for J0200"
+        },
+        {
+          "at": "2026-10-12T23:07Z",
+          "by": "chief",
+          "what": "reopened: Chief review J0164 (13 Oct ~00:10 London, sheets + gates + covers): S1–S7 PASS. S8 cut PASS, cover FAIL — rebuild cover_owb_sa_s8_voyager1 from the current reframed frame 0 (cx 0.66 boom/sky; dish enters ~1 s). Do not revert the visor fix. Artist-concept plates KEEP. S6 grey PIA09739 + missing Dragonfly: note only, not blocking. Approve without waiting on J0200 Orbit inserts. Length ~20 s warnings under Ben's exception. After S8 cover, re-run thumb_preview short, update MANIFEST, park again for final OK then J0164 schedule. Detail: OWB #99 (this sweep)."
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 10,
-        "of": 10,
-        "at": "2026-10-12T23:03Z",
-        "by": "cursor",
-        "note": "S1-S8 built, gates PASS"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0164",
