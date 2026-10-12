@@ -1,5 +1,5 @@
 {
-  "next_id": 202,
+  "next_id": 203,
   "jobs": [
     {
       "id": "J0001",
@@ -11924,6 +11924,33 @@
         }
       ],
       "kind": "facts"
+    },
+    {
+      "id": "J0202",
+      "title": "OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "One take each with vo_take.py --text (Ben Orbit Narrator, eleven_v3, speed 1.04), word for word from SCRIPTS_v01.md, S7 with its fallback last line (Chief #99 6125827198 item 2). Chief's VO order puts the Shorts test first. Read the ElevenLabs balance first and spend nothing if it is below the job (~1.2k credits); no top-up. Scribe check, VO_STATUS.md like vo_v01, log ai_spend --film OWB:SA. Park for Chief's VO PASS; then J0163 builds S5-S8.",
+      "ref": "6125827198",
+      "film": "",
+      "stage": "",
+      "after": "J0201",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T19:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T19:02Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
     }
   ],
   "focus": [

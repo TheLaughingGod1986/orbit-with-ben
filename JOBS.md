@@ -40,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
 | J0201 | gemini | open | – | – | facts · OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) |  |
+| J0202 | mini | open (after J0201) | – | – | vo · OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) | 6125827198 |
 
 Recently finished:
 
