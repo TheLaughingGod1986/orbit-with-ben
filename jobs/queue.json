@@ -7864,10 +7864,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T07:41Z",
-      "eta": "2026-10-12T09:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T07:24Z",
       "result": "",
@@ -7901,6 +7901,11 @@
           "at": "2026-10-12T07:43Z",
           "by": "cursor",
           "what": "step 3 of 4 done: 024 sheet committed"
+        },
+        {
+          "at": "2026-10-12T07:44Z",
+          "by": "cursor",
+          "what": "released: 024 v05b prep sheet done (7200f386, full_rough_v05b_pack/TEACHING_GATE_PREP_v05b.md). Next: 026 v05b (its code_graphics + assembler draw labels and name cards, so check each label word for word against nearest_star_rough_v05b_assembled.csv; v05b mp4 not in /private/tmp, find it in OWB UAT or rebuild path from rough_v05b_pack). 027 waits on a rough cut."
         }
       ],
       "kind": "qa",
