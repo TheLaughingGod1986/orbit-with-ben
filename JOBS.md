@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0166 | mini | open (after J0165) | – | – | vo · OWB compilation film: VO for intro and bridges |  |
 | J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
-| J0170 | mini | open (after J0169) | – | – | vo · HOS standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
+| J0170 | mini | claimed | cursor | 2026-10-12T19:55Z | vo · HOS standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
 | J0171 | mini | open (after J0170) | – | – | assembly · HOS standalone Shorts test: assemble the 8 Shorts |  |
 | J0172 | any | open (after J0171) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
 | J0174 | mini | blocked | cursor | – | vo · HOS compilation film: VO for intro and bridges |  |
