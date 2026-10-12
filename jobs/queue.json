@@ -11045,13 +11045,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T23:37Z",
-      "eta": "2026-10-13T02:37Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: KEEP/FAIL on S5-S8 v01 (HOS #307 23c7c54, desk 6134823664): gate_shorts_open PASS x4 (20.0-21.5 s), sfx_kit level PASS x4, S7-03 crop_no_flame, 4-line hook 8% cap, S5 whoosh -18 dB, S6 bed -2 dB; merge #307. Covers queued as a chart job. No spend, no upload.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11287,6 +11287,11 @@
           "at": "2026-10-12T23:50Z",
           "by": "cursor",
           "what": "step 4 of 4 done: S5-S8 v01 built, HOS #307, desk posted"
+        },
+        {
+          "at": "2026-10-12T23:50Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: KEEP/FAIL on S5-S8 v01 (HOS #307 23c7c54, desk 6134823664): gate_shorts_open PASS x4 (20.0-21.5 s), sfx_kit level PASS x4, S7-03 crop_no_flame, 4-line hook 8% cap, S5 whoosh -18 dB, S6 bed -2 dB; merge #307. Covers queued as a chart job. No spend, no upload."
         }
       ],
       "kind": "assembly",
