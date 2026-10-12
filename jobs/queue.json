@@ -7981,8 +7981,8 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-12T07:54Z",
       "eta": "",
       "created_by": "chief",
@@ -8048,6 +8048,11 @@
           "at": "2026-10-12T07:57Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: 024 (7200f386) and 026 (a901da4f) prep sheets done; Chief to score both (rule: does a text-free to-scale graphic count as NUMBER; is '1 year' for spoken 'a year' a WORDS pass) and queue the overlay chart jobs. 027 has no rough cut yet: close this job and re-add 027 after its rough cut, or keep it parked."
+        },
+        {
+          "at": "2026-10-12T10:49Z",
+          "by": "chief",
+          "what": "cancelled: Closed by Chief with rulings: to-scale graphic without a numeral does NOT count as NUMBER; '1 year' for spoken 'a year' is a WORDS PASS. 024 FAILs NUMBER on every chapter -> overlay job J0147; 026 -> J0148; 027 re-added after its rough cut."
         }
       ],
       "kind": "qa",
