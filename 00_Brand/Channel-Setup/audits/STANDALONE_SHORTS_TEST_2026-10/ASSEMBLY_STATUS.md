@@ -75,9 +75,22 @@ S4 also warned once that its open plate was 16 bits from `pL339HhjDwo` (7 Oct). 
 
 S1–S4 v01 are now clean on `gate_shorts_open` and `sfx_kit level`, apart from the ~20 s length warning on S1 and S4 (Ben's exception).
 
+## Step 7: S1–S4 covers (Cursor, 12 Oct 23:35)
+
+`_build_covers_s1-s4_v01.py` draws each cover on that Short's own frame-0 picture, rendered by the assembler's `Plate` class at the opening zoom with no burned-in text, so the cover matches frame 0. It uses the house v04 type (Arial Black, yellow hook word, white rest, words inside the 16:9 centre band) with no Orbit. The script refuses any cover word that is also in the title (§2.3). Covers go in `08_Covers/` (the jpgs are git-ignored and stay on the Mini; `MANIFEST.json` is tracked). Each has a `thumb_preview.py short` sheet, and the words read in both the 9:16 and the 16:9 crop.
+
+| Short | Title | Cover (yellow word) | Plate |
+|---|---|---|---|
+| S1 | A Day on Mercury Lasts Two Years | **SLOWEST** / SUNRISE | PIA11351 |
+| S2 | The Wind on Neptune Is Supersonic | **2,000** KM/H / WINDS | PIA01492 |
+| S3 | Astronauts See 16 Sunrises Every Day | DAWN EACH / **90** MINUTES | iss040e080833 |
+| S4 | This Planet Has 21-Year Winters | TIPPED ON / ITS **SIDE** | ESA/Webb weic2310a |
+
+For Chief: S4's words sit over the Uranus disc (the Short centre-stack, as on past Short covers; the long-thumb "never over the subject" band rule isn't applied to Shorts). S2 says WINDS where the title says Wind; the check passes, but Chief may prefer a different second word.
+
 ## Next
 
-- Covers for S1–S4 (step 7), then S5–S8 assembly (steps 8–9; all VO in, J0202), then contact sheets and gates on the thread and park for Chief (step 10).
+- S5–S8 assembly (steps 8–9; all VO in, J0202), then contact sheets and gates on the thread and park for Chief (step 10).
 - Superseded list below kept for history.
 
 3. Orbit inserts at ~1 s on S1–S4 (Chief, #99 6125827198 item 4): 4 short Omni takes, a separate `video` job.
