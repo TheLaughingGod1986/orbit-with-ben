@@ -11275,10 +11275,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T22:44Z",
-      "eta": "2026-10-13T02:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11377,6 +11377,11 @@
           "at": "2026-10-12T22:49Z",
           "by": "cursor",
           "what": "step 4 of 6 done: segment stage written; 003 label find"
+        },
+        {
+          "at": "2026-10-12T22:49Z",
+          "by": "cursor",
+          "what": "released: Run 5 (step 4/6 holds): segment render stage on HOS PR #300 (1bc96e0): shots with 0.5 s xfades, VO -15 LUFS + 004 bed 14 LU under as separate stems, -1 dBTP limiter, cuts.json, polish_gate runs on it. Bridge 4 test rendered (14.29 s, -15.8 LUFS, TP -1.05, polish_gate PASS) but REJECTED by eye: 003 has a lower-third caption (WHY COVER THE TUBE) at 90.5-94.9 s that _label_scan misses, plus italic CARDBOARD/FLUORESCENT labels from ~103 s, so the scan's 'clean 85-134.5 s' for 003 is wrong. Bridge 4 now uses 002 230-235 + 003 95.2-101.8 and needs one more checked ~3.3 s shot. Next: add a lower-third check to _label_scan, re-check every 003 plate pick (intro 130 s, bridge5 120 s), find Bridge 4's third shot. Still waiting on J0204 graphics and the 006 master (ETA 25 Oct)."
         }
       ],
       "kind": "assembly",
