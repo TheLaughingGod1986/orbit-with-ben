@@ -10519,10 +10519,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T22:34Z",
-      "eta": "2026-10-13T02:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10641,6 +10641,11 @@
           "at": "2026-10-12T22:40Z",
           "by": "cursor",
           "what": "step 4 of 8 done: 5c plates v02 + segments v02; closing_01a re-pick"
+        },
+        {
+          "at": "2026-10-12T22:40Z",
+          "by": "cursor",
+          "what": "released: Step 5c done (b281c8c9): COMPILATION_PLATES_v02.json re-picks intro_10 (019 clock 240.2 + 005 nebula 172.2), bridge2_01 (013@420), closing_01 (3 windows); builder gains --plates and split windows. Segments v02 rendered (tmux J0167-seg2, exit 0) to /private/tmp/owb_comp/segments_v02/ with check sheets. Left: closing_01a and intro_06 use 013@60, which turns into a green Earth-Moon beam graphic at 2-3 s; re-pick from 013's eclipse shots, re-render --only intro,closing. Then step 6 waits on J0207 graphics and Chief's bed ruling (#99 6132695926)."
         }
       ],
       "kind": "assembly",
