@@ -111,6 +111,34 @@ class Relay(unittest.TestCase):
         self.assertEqual(self.chief(T0 + 25 * MIN), "chief")
         self.assertFalse((cr.STATE / "chief" / "down" / "chief.json").exists())
 
+    def _chain(self, ids):
+        """Patch the queue so next_job hands out `ids` in turn; return the list of jobs the relay ran."""
+        ran, left = [], list(ids)
+        saved = (cr.next_job, cr.queue_has_work, cr.run_cli)
+        self.addCleanup(lambda: setattr(cr, "next_job", saved[0]) or setattr(cr, "queue_has_work", saved[1])
+                        or setattr(cr, "run_cli", saved[2]))
+        cr.next_job = lambda agent: {"id": left[0], "kind": "assembly"} if left else None
+        cr.queue_has_work = lambda agent: bool(left)
+        def run_cli(who, prompt, cap, model):
+            ran.append(left[0])
+            if left[0] != "SAME":
+                left.pop(0)
+            return 0, "done"
+        cr.run_cli = run_cli
+        return ran
+
+    def test_when_a_job_ends_the_next_ready_job_starts_in_the_same_run(self):
+        ran = self._chain(["J0001", "J0002", "J0003"])
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(ran, ["J0001", "J0002", "J0003"])  # back to back, no wait for the next tick
+
+    def test_a_job_released_to_retry_later_is_not_rerun_in_a_tight_loop(self):
+        ran = self._chain(["SAME"])
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(ran, ["SAME"])
+
     def test_cursor_takes_over_when_grok_goes_quiet(self):
         cr.seen("chief", T0 - 200 * MIN)
         self.assertEqual(self.chief(), "cursor")

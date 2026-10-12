@@ -420,6 +420,27 @@ def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "")
     """One parentless commit holding heartbeat.json, force-pushed to refs/heads/mini-heartbeat. Never raises."""
     if os.environ.get("CHIEF_HEARTBEAT", "1") == "0" or not (OWB / ".git").exists():
         return
+    # The relay ticks every minute (Ben, 12 Oct: next job within a minute): don't re-push the same idle/busy state
+    # more than once per CHIEF_HB_REPEAT_MIN (10) minutes.
+    if state in ("idle", "busy"):
+        mark = d("heartbeat.last")
+        try:
+            prev_state, prev_at = mark.read_text().split()
+            if prev_state == state and (at - parse(prev_at)) < dt.timedelta(
+                    minutes=int(os.environ.get("CHIEF_HB_REPEAT_MIN", "10"))):
+                return
+        except (OSError, ValueError):
+            pass
+        try:
+            mark.parent.mkdir(parents=True, exist_ok=True)
+            mark.write_text(f"{state} {iso(at)}\n")
+        except OSError:
+            pass
+    else:
+        try:
+            d("heartbeat.last").unlink()
+        except OSError:
+            pass
     body = json.dumps(heartbeat_doc(at, state, agent, note)) + "\n"
     try:
         git = ["git", "-C", str(OWB)]
@@ -457,8 +478,8 @@ def cmd_run(at: dt.datetime) -> int:
 
 
 def queue_has_work(agent: str) -> bool:
-    """Is a Mini job waiting for this agent (jobs.py next --peek)? The relay runs every 10 min (Ben, 7 Oct: one job per
-    30 min left the Mini idle most of the time), but only wakes a CLI when there's work, plus a sweep every 2 h for
+    """Is a Mini job waiting for this agent (jobs.py next --peek)? The relay runs every minute and chains jobs back to back (Ben,
+    12 Oct: the Mini never idles), but only wakes a CLI when there's work, plus a sweep every 2 h for
     thread/desk tasks outside the queue. If the queue can't be read, it wakes the agent anyway."""
     jobs = OWB / "scripts" / "jobs.py"
     if not jobs.exists():
@@ -687,6 +708,11 @@ def run_locked(at: dt.datetime) -> int:
         escalate_stale()
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
     retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
+    # Ben, 12 Oct 2026: the Mini never idles. When a job ends, the next ready job starts straight away in this same
+    # run (no waiting for the next launchd tick); CHIEF_CHAIN_MAX bounds one run, and a job that comes straight back
+    # open (released to retry later) ends the chain so it isn't re-run in a tight loop.
+    chain_max = int(os.environ.get("CHIEF_CHAIN_MAX", "12"))
+    chained, last_ran = 0, None
     while True:
         rows, who = acting(at)
         handover(who, rows, at)
@@ -756,11 +782,16 @@ def run_locked(at: dt.datetime) -> int:
         elif addressed:
             job = next_job(who)  # the addressed job comes first in jobs.order: run it on its own model
             model = routing.model_for(job, who) if job else ""
+        if chained and (job is None or (last_ran and job.get("id") == last_ran)):
+            log(f"chain: stop after {chained} job(s): " + ("next job is the one just run (released to retry later)"
+                                                         if job else "no next job identified"))
+            return 0
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS)
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
         seen(who, at)
+        started = now()
         code, tail = run_cli(who, prompt, cap, model)
         usage = out_of_credit(code, tail)
         log_run(at, job, who, model, code, usage)
@@ -777,7 +808,13 @@ def run_locked(at: dt.datetime) -> int:
             if addressed:
                 # Woken only for a job addressed to it: don't wake it again every 10 minutes into the same failure.
                 mark_down(who, f"its run for an addressed job failed (exit {code})", now() + dt.timedelta(hours=retry_h), now())
-        return 0
+            return 0
+        chained += 1
+        last_ran = job.get("id") if job else None
+        if chained >= chain_max or not job:
+            return 0
+        log(f"chain: {last_ran} ended; starting the next ready job now ({chained}/{chain_max})")
+        at = at + (now() - started)  # the run's own clock moved on by the job's length
 
 
 def walk_on(job: dict, who: str, model: str, at: dt.datetime) -> None:
