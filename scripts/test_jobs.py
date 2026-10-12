@@ -222,7 +222,7 @@ class NotBefore(unittest.TestCase):
             jobs.parse_not_before("12 Oct 09:00")
 
     def test_next_and_peek_skip_it_until_its_time(self):
-        d = queue(("mini", "flow balance", {"not_before": "2026-10-07 14:00"}), ("mini", "later job", {}))
+        d = queue(("mini", "flow balance", {"not_before": "2026-10-07 14:00", "reset": "credit window"}), ("mini", "later job", {}))
         self.assertEqual(d["jobs"][0]["not_before"], "2026-10-07T13:00Z")
         self.assertFalse(jobs.claimable(d, d["jobs"][0], jobs.MINI_NEEDS, T0, "cursor"))
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["id"], "J0002")  # the gated job doesn't hold up the line
@@ -232,7 +232,7 @@ class NotBefore(unittest.TestCase):
     def test_schedule_sets_and_clears_and_the_board_shows_it(self):
         d = queue(("mini", "flow balance", {}))
         j = d["jobs"][0]
-        jobs.do_schedule(j, "chief", "2026-10-07 14:00", T0)
+        jobs.do_schedule(j, "chief", "2026-10-07 14:00", T0, "credit window")
         self.assertEqual(j["not_before"], "2026-10-07T13:00Z")
         self.assertIn("not before 2026-10-07 14:00 London", j["history"][-1]["what"])
         self.assertIn("starts", jobs.render(d, T0))
@@ -243,7 +243,7 @@ class NotBefore(unittest.TestCase):
 
     def test_relay_next_job_respects_it(self):
         import chief_relay
-        d = queue(("mini", "flow balance", {"not_before": "2099-01-01 09:00"}))
+        d = queue(("mini", "flow balance", {"not_before": "2099-01-01 09:00", "reset": "credit window"}))
         old = (jobs.load,)
         jobs.load = lambda *a: d
         try:
@@ -259,7 +259,7 @@ class NotBefore(unittest.TestCase):
             jobs.load, jobs.save = (lambda *a: d), (lambda data, *a: saved.append(data))
             jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = pathlib.Path(tmp) / "JOBS.md", (lambda: None), (lambda a: None)
             try:
-                rc = jobs.main(["schedule", "J0001", "--agent", "chief", "--not-before", "2026-10-12 09:00"])
+                rc = jobs.main(["schedule", "J0001", "--agent", "chief", "--not-before", "2026-10-12 09:00", "--reset", "AI Ultra renews"])
             finally:
                 jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = old
         self.assertEqual(rc, 0)

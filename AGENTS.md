@@ -368,6 +368,11 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 - **A claim past its ETA is stalled,** and the next able agent takes it over. So don't sit on a claim; release it if you stop.
 - A job with `--film/--stage` claims that board stage too, so the board and the queue always agree.
 
+## Always on (Ben, 12 Oct 2026)
+- **The Mini never idles.** When fewer than 3 Mini jobs are ready, the relay adds the next no-spend items from `jobs/backlog.json` (`scripts/refill.py refill`). Backlog work never spends, deletes or goes public, and ends parked for Chief.
+- **Reviews are done as soon as they land.** No fixed review slot. A parked review holds only its own job; everything else keeps running. A review parked over 2 h is posted once on #99 for Chief (`refill.py escalate`).
+- **Jobs start as soon as their inputs are ready.** Use `--after <job>` for inputs. A start time (`--not-before`) is allowed only with `--reset "<window>"` naming a real quota, credit or usage reset or an air date; `jobs.py` refuses it otherwise.
+
 ## Chief relay (7 Oct 2026)
 
 Ben: the Chief of Staff is in charge, and when it's down or out of credit the next one in line takes over. **Chain: Grok Bot (`chief`) → Cursor (`cursor`) → Codex (`codex`).** The first one that is up is the acting Chief. `scripts/chief_relay.py` runs it on the Mini (launchd `com.owb.chief-relay`, every 10 min, round the clock (Ben, 7 Oct); an agent is woken only when a job is queued, plus a daytime sweep every 2 h for thread or desk tasks):
