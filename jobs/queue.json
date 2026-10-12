@@ -12134,13 +12134,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-12T19:33Z",
-      "eta": "2026-10-12T21:33Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T19:32Z",
-      "result": "",
+      "result": "20 x 9:16 still plates for S1-S4 on Vertex gemini-2.5-flash-image (~£0.62; trial est ≈£0.63 left, console £1.46 lagging). HOS docs/STANDALONE_SHORTS_TEST_2026-10/PLATES_STATUS_v01.md; sheets plates_v01/s{1..4}_sheet_v01.jpg (Mini). KEEP flags for Chief: S1-05 smoke look, S2 Brand inconsistent, S3-05 handle still on pump.",
       "history": [
         {
           "at": "2026-10-12T19:32Z",
@@ -12181,6 +12181,11 @@
           "at": "2026-10-12T19:40Z",
           "by": "cursor",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-10-12T19:40Z",
+          "by": "cursor",
+          "what": "done: 20 x 9:16 still plates for S1-S4 on Vertex gemini-2.5-flash-image (~£0.62; trial est ≈£0.63 left, console £1.46 lagging). HOS docs/STANDALONE_SHORTS_TEST_2026-10/PLATES_STATUS_v01.md; sheets plates_v01/s{1..4}_sheet_v01.jpg (Mini). KEEP flags for Chief: S1-05 smoke look, S2 Brand inconsistent, S3-05 handle still on pump."
         }
       ],
       "kind": "image",
@@ -12191,7 +12196,8 @@
         "of": 5,
         "at": "2026-10-12T19:40Z",
         "by": "cursor"
-      }
+      },
+      "done_ref": "hos@331de9f"
     },
     {
       "id": "J0204",
