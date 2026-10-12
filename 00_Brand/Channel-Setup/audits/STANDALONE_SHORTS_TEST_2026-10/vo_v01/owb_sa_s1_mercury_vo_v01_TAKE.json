@@ -1,0 +1,82 @@
+{
+  "stem": "owb_sa_s1_mercury_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6125827198"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 251,
+      "duration_s": 18.96
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 251,
+  "words": 44,
+  "duration_s": 18.96,
+  "loudness": {
+    "lufs_integrated": -21.2,
+    "mean_volume_db": -24.3,
+    "max_volume_db": -4.7
+  },
+  "sha256_mp3": "b7ca684a6747709046af12477aa22dc9c8cb1076872480d99bd4d84a50fdc004",
+  "scribe": {
+    "transcript": "On Mercury, one day lasts two years. Stay, and I'll show you how. Mercury races round the sun every 88 Earth days, but it spins so slowly, sunrise to sunrise takes 176. Two trips round the sun before it's morning again",
+    "script_words": 46,
+    "scribe_words": 41,
+    "match_rate_pct": 84.78,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "eighty",
+          "eight"
+        ],
+        "scribe": [
+          "88"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "a",
+          "hundred",
+          "and",
+          "seventy",
+          "six"
+        ],
+        "scribe": [
+          "176"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 197601,
+      "limit": 209536,
+      "remaining": 11935
+    },
+    "after": {
+      "used": 197601,
+      "limit": 209536,
+      "remaining": 11935
+    },
+    "counter_delta": 0
+  },
+  "text": "On Mercury, one day lasts two years. Stay, and I'll show you how. Mercury races round the Sun every eighty-eight Earth days. But it spins so slowly, sunrise to sunrise takes a hundred and seventy-six. Two trips round the Sun before it's morning again.",
+  "made_at": "2026-10-12T15:34:21+0100"
+}
