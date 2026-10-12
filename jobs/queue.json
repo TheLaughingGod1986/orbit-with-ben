@@ -7210,13 +7210,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T00:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:29Z",
-      "result": "parked for Chief: thumbnail review (HOOK/BAND/GRADE/PHONE) of 5 packaging_v01 thumbs; sheet ~/_desk/thumb_packaging_1011/before_after_v03.jpg; builder 77012db7; 5/5 --score PASS; reopen with OK to set in Studio (step 5 of 5)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T22:29Z",
@@ -7282,17 +7282,15 @@
           "at": "2026-10-12T00:50Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: thumbnail review (HOOK/BAND/GRADE/PHONE) of 5 packaging_v01 thumbs; sheet ~/_desk/thumb_packaging_1011/before_after_v03.jpg; builder 77012db7; 5/5 --score PASS; reopen with OK to set in Studio (step 5 of 5)"
+        },
+        {
+          "at": "2026-10-12T07:23Z",
+          "by": "chief",
+          "what": "reopened: Chief PASS on #99 (6119251981, 12 Oct 07:55): v03 all 5 PASS. Next: set in Studio (CDP 9223), log REFRESH_LOG, keep rollback/."
         }
       ],
       "kind": "studio",
-      "model": "cursor-auto",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-10-12T00:49Z",
-        "by": "cursor",
-        "note": "builder v03; 5/5 pass; review posted"
-      }
+      "model": "cursor-auto"
     },
     {
       "id": "J0134",
