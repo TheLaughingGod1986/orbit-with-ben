@@ -15,6 +15,25 @@ import path from "path";
 import { ANALYTICS_ROOT } from "./analytics-snapshot";
 import { CHANNELS, buildReport, renderMarkdown, type ChannelDaily, type ChannelKey, type ChannelReport, type Snapshot } from "../src/lib/analytics/channel-tracker";
 
+/** Impressions and impressions CTR come from a daily read-only Studio read (the Analytics API has no CTR), written to
+ *  05_Analytics/<key>/studio_ctr.json by the `studio-ctr-daily` job (Ben, 12 Oct 22:19). Merged onto each video. */
+export function mergeStudioCtr(root: string, key: string, r: ChannelReport): void {
+  const f = path.join(root, key, "studio_ctr.json");
+  if (!fs.existsSync(f)) return;
+  try {
+    const s = JSON.parse(fs.readFileSync(f, "utf8")) as { readAt?: string; videos?: Record<string, { impressions?: number; impressionsCtr?: number }> };
+    for (const v of r.videos as Array<ChannelReport["videos"][number] & { impressions?: number; impressionsCtr?: number; ctrReadAt?: string }>) {
+      const m = s.videos?.[v.id];
+      if (!m || typeof m.impressionsCtr !== "number") continue;
+      v.impressionsCtr = m.impressionsCtr;
+      if (typeof m.impressions === "number") v.impressions = m.impressions;
+      if (s.readAt) v.ctrReadAt = s.readAt;
+    }
+  } catch {
+    /* a broken sidecar never breaks the report */
+  }
+}
+
 /** Embed the data in the page. `<` is escaped so a title can never close the script tag. */
 export function injectData(template: string, data: unknown): string {
   const json = JSON.stringify(data).replace(/</g, "\\u003c");
@@ -46,6 +65,7 @@ export function run(root = ANALYTICS_ROOT): string[] {
       continue;
     }
     const r = buildReport(key, snaps, daily);
+    mergeStudioCtr(root, key, r);
     reports.push(r);
     fs.writeFileSync(path.join(root, key, "REPORT.md"), renderMarkdown(r));
     out.push(`${key}: REPORT.md from ${snaps.length} snapshot(s), latest ${r.date}`);
