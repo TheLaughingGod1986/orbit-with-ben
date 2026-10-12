@@ -55,7 +55,11 @@ The three re-picks are in `COMPILATION_PLATES_v02.json`, which supersedes v01. E
 - **bridge2_01** uses the plan's fallback, 013 @420 (the full Moon over the sea; its second and last use).
 - **closing_01** splits three ways. "So that's the countdown. The Moon…" runs over 013 @60 (laser ranging on the Moon; its second and last use). "The rings…" runs over 005's ringed gas giant (275.2 s; clean 275.2–283.0). "Galaxies merging… the last starlight…" runs over 005's burning world shrinking to an ember (290.9 s; clean 290.8–299). The v01 window (005 @470) ran onto Orbit with constellation linework and sat within 20 s of 005's 488.05 out point. 005 @275 alone was 0.3 s short of the line.
 
-All six segments are re-rendering to `/private/tmp/owb_comp/segments_v02/` (tmux `J0167-seg2`, `~/_desk/logs/J0167-seg2.log` and `.done`). Bridges 1, 3 and 4 are unchanged from v01. Next run: when `.done` reads 0, make the v02 contact sheets and check intro_10a/b and closing_01a–c by eye, then go to step 6 once J0207 and the bed ruling land.
+All six segments rendered to `/private/tmp/owb_comp/segments_v02/` (tmux `J0167-seg2`, exit 0, `~/_desk/logs/J0167-seg2.log`). Bridges 1, 3 and 4 are unchanged from v01. Check sheets (1 fps) are `check_intro10.jpg`, `check_bridge2.jpg` and `check_closing01.jpg` in the same folder.
+- **intro_10a/b: OK.** The clock push-in runs to the cut, then the nebula star flares and goes dark. No Orbit, no diagram.
+- **bridge2_01: OK.** The full Moon over the sea, then 013's own huge Moon over the waves.
+- **closing_01b/c: OK.** The ringed gas giant, then the burning world shrinks to an ember.
+- **closing_01a: re-pick needed.** 013 @60 turns into a green laser burst at about 1 s, then a green Earth–Moon beam graphic at 2–3 s (a diagram FAIL risk), then the moonlit sea at about 4 s. **intro_06 uses the same window (013 @60, 5.6 s), so it carries the same risk and needs the same check.** Next run: find a clean 013 Moon window that isn't already used twice. 013's "Last Perfect Eclipse" shots (the Moon over the Sun) fit "The Moon, a few centimetres a year". Use it for closing_01a and, if intro_06 shows the beam graphic, for intro_06 too. Re-render with `--only intro,closing`, then go to step 6 once J0207 and the bed ruling land.
 
 **Still open:** J0207 graphics (not started), and Chief's bed ruling (#99 6132695926, no reply yet).
 
