@@ -1,5 +1,5 @@
 {
-  "next_id": 158,
+  "next_id": 159,
   "jobs": [
     {
       "id": "J0001",
@@ -9091,6 +9091,34 @@
       ],
       "kind": "review",
       "backlog": "hos-weekly-audit"
+    },
+    {
+      "id": "J0158",
+      "title": "URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Cursor dashboard sign-in on the Mini (Ben, 12 Oct 2026 14:47).** The daily spend reader fails with \"Cursor dashboard is signed out in the CDP Chrome\".\n1. In the Mini's Chrome (the CDP Chrome the reader uses), open https://cursor.com/dashboard.\n2. Sign in with Chrome's saved password / autofill or the existing Google session (Ben says the details are saved). Do not type, print, copy or log any password; use only the browser's own autofill or \"Continue with Google\" on the already-signed-in account.\n3. If it shows 2FA, an SSO/device prompt, a CAPTCHA, or asks for anything not saved: STOP. Take a screenshot to ~/_desk/handoff/cursor-signin-<time>.png and block this job with the exact screen (\"needs Ben: <screen text>\").\n4. Never create an account, change settings, plan, billing or team.\n5. When signed in, run `python3 scripts/ai_spend_daily.py` and confirm the `READ cursor:` line appears (no FAIL cursor). Report that line, then done.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:49Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "for": "cursor",
+      "kind": "studio"
     }
   ],
   "focus": [
