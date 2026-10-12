@@ -9122,19 +9122,18 @@
       "title": "URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Cursor dashboard sign-in on the Mini (Ben, 12 Oct 2026 14:47).** The daily spend reader fails with \"Cursor dashboard is signed out in the CDP Chrome\".\n1. In the Mini's Chrome (the CDP Chrome the reader uses), open https://cursor.com/dashboard.\n2. Sign in with Chrome's saved password / autofill or the existing Google session (Ben says the details are saved). Do not type, print, copy or log any password; use only the browser's own autofill or \"Continue with Google\" on the already-signed-in account.\n3. If it shows 2FA, an SSO/device prompt, a CAPTCHA, or asks for anything not saved: STOP. Take a screenshot to ~/_desk/handoff/cursor-signin-<time>.png and block this job with the exact screen (\"needs Ben: <screen text>\").\n4. Never create an account, change settings, plan, billing or team.\n5. When signed in, run `python3 scripts/ai_spend_daily.py` and confirm the `READ cursor:` line appears (no FAIL cursor). Report that line, then done.\n",
+      "body": "**Cursor dashboard sign-in on the Mini (Ben, 12 Oct 2026 14:47).** The daily spend reader fails with \"Cursor dashboard is signed out in the CDP Chrome\".\n1. In the Mini's Chrome (the CDP Chrome the reader uses), open https://cursor.com/dashboard.\n2. Sign in with Chrome's saved password / autofill or the existing Google session (Ben says the details are saved). Do not type, print, copy or log any password; use only the browser's own autofill or \"Continue with Google\" on the already-signed-in account.\n3. If it shows 2FA, an SSO/device prompt, a CAPTCHA, or asks for anything not saved: STOP. Take a screenshot to ~/_desk/handoff/cursor-signin-<time>.png and block this job with the exact screen (\"needs Ben: <screen text>\").\n4. Never create an account, change settings, plan, billing or team.\n5. When signed in, run `python3 scripts/ai_spend_daily.py` and confirm the `READ cursor:` line appears (no FAIL cursor). Report that line, then done.\n\n\nBen confirmed (OWB #99 6125878218): sign in with Google as benoats@googlemail.com, that is the right Cursor account. Choose it in the chooser, then re-run python3 scripts/ai_spend_daily.py and report the READ cursor line. Still never create an account or change settings.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "open",
       "since": "2026-10-12T13:51Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:49Z",
-      "result": "needs Ben: cursor.com sign-in on Mini CDP Chrome :9222 has no saved Cursor password (only an 'Enable iCloud Passwords AutoFill' prompt). 'Continue with Google' offers only benoats@googlemail.com, but the Mini's Cursor account is benoats@gmail.com (agent status). Picking it could create a second Cursor account (brief: never create one), so stopped at the Google account chooser without choosing. Screens: ~/_desk/handoff/cursor-signin-1452.png, -1452-google.png, -1453-chooser.png. Ben: sign that Chrome into cursor.com once (or confirm Google sign-in for benoats@googlemail.com is the same Cursor account), then re-run python3 scripts/ai_spend_daily.py.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:49Z",
@@ -9160,6 +9159,11 @@
           "at": "2026-10-12T13:53Z",
           "by": "cursor",
           "what": "blocked: needs Ben: cursor.com sign-in on Mini CDP Chrome :9222 has no saved Cursor password (only an 'Enable iCloud Passwords AutoFill' prompt). 'Continue with Google' offers only benoats@googlemail.com, but the Mini's Cursor account is benoats@gmail.com (agent status). Picking it could create a second Cursor account (brief: never create one), so stopped at the Google account chooser without choosing. Screens: ~/_desk/handoff/cursor-signin-1452.png, -1452-google.png, -1453-chooser.png. Ben: sign that Chrome into cursor.com once (or confirm Google sign-in for benoats@googlemail.com is the same Cursor account), then re-run python3 scripts/ai_spend_daily.py."
+        },
+        {
+          "at": "2026-10-12T14:08Z",
+          "by": "chief",
+          "what": "reopened: Ben confirmed (OWB #99 6125878218): sign in with Google as benoats@googlemail.com, that is the right Cursor account. Choose it in the chooser, then re-run python3 scripts/ai_spend_daily.py and report the READ cursor line. Still never create an account or change settings."
         }
       ],
       "for": "cursor",
@@ -9274,13 +9278,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-12T13:55Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: lock 8 standalone Short scripts + titles + Tue/Sat slots (SCRIPTS_v01.md, 0c1fa046); then Gemini facts pass Q1-Q19 (Q18 FLAG) before VO",
+      "result": "Chief locked the 8 scripts + titles + slots on OWB #99 (6125827198); Gemini facts pass Q1-Q19 (Q18 FLAG) goes with VO J0162",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -9316,6 +9320,11 @@
           "at": "2026-10-12T14:00Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: lock 8 standalone Short scripts + titles + Tue/Sat slots (SCRIPTS_v01.md, 0c1fa046); then Gemini facts pass Q1-Q19 (Q18 FLAG) before VO"
+        },
+        {
+          "at": "2026-10-12T14:08Z",
+          "by": "chief",
+          "what": "done: Chief locked the 8 scripts + titles + slots on OWB #99 (6125827198); Gemini facts pass Q1-Q19 (Q18 FLAG) goes with VO J0162"
         }
       ],
       "kind": "script",

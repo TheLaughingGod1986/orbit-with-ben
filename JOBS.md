@@ -29,10 +29,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0155 | any | blocked | cursor | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0156 | any | open | – | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0157 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0158 | mini | blocked | cursor | – | for cursor · studio · URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader |  |
+| J0158 | mini | open | – | – | for cursor · studio · URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader |  |
 | J0159 | mini | open (after J0174) | – | – | vo · Spend ElevenLabs to 0: VO for locked scripts with no take (HOS 007–010 Shorts first), house client, stop at 0 |  |
 | J0160 | mini | open | – | – | 006 picture · video · Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account) |  |
-| J0161 | any | blocked | cursor | – | script · OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) |  |
 | J0162 | mini | open (after J0161) | – | – | vo · OWB standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
 | J0163 | mini | open (after J0162) | – | – | assembly · OWB standalone Shorts test: assemble the 8 Shorts |  |
 | J0164 | any | open (after J0163) | – | – | chief · OWB standalone Shorts test: Chief review + schedule |  |
@@ -51,6 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0161 done: OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) (Chief locked the 8 scripts + titles + slots on OWB #99 (6125827198); Gemini facts pass Q1-Q19 (Q18 FLAG) goes with VO J0162)
 - J0146 done: HOS 004: add thumb C v07b as 3rd variant in armed Test & Compare (Chief PASS 6119854326; Ben wants now) (T&C deleted and re-armed (Chief one-off OK 6120597964): A v04 / C v07b / B v04, same 3 titles, Set test + Save 'Changes saved'; reload shows 3 titles and Studio's stored thumbs A, C v07b, B. Still Scheduled 15 Oct 17:00Z, not MFK, main thumb A. HOS 77bf286)
 - J0145 cancelled: Orbit Auditor prep: per-chapter teaching gate sheet for 024 v05b (then 026, 027): chapter list, number-object timestamps, VO keyword match; Chief reviews (parked for Chief: 024 (7200f386) and 026 (a901da4f) prep sheets done; Chief to score both (rule: does a text-free to-scale graphic count as NUMBER; is '1 year' for spoken 'a year' a WORDS pass) and queue the overlay chart jobs. 027 has no rough cut yet: close this job and re-add 027 after its rough cut, or keep it parked.)
 - J0144 cancelled: Orbit Auditor: per-chapter teaching gate on 024 onward (number shown as an object per chapter; keywords match VO word for word) (parked for Chief: kind=chief (no stand-in per Who does what). The per-chapter NUMBER/WORDS PASS/FAIL scoring on 024 v05b, 026, 027 is a protected PASS call for the Orbit Auditor/Chief; Cursor can draft an advisory chapter/timestamp sheet if Chief re-adds it as kind=qa or review.)
@@ -60,4 +60,3 @@ Recently finished:
 - J0133 done: OWB back catalogue: rebuild 5 long thumbs to Packaging §2.B (top band off the subject, harder grade, naming hook), Chief review, then set in Studio (5/5 long thumbs set in Studio (CDP 9223, no T&C running, reload confirmed). REFRESH_LOG + apply script 73bb5395; rollback ~/_desk/thumb_packaging_1011/rollback/)
 - J0132 done: 024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45) (done)
 - J0131 cancelled: Orbit Instagram bio link -> Saturn long 55AEQwvs36g (before Mon 11:30) (needs Ben to sign Instagram in on the mini: the Orbit Studio Chrome (CDP 9223) is signed into historyofscienceyt, not orbitwithben; Switch accounts asks for the orbitwithben password. Also, Instagram web now locks the Website field ('Editing your links is only available on mobile'), so even once signed in this likely has to be done in the Instagram app on Ben's phone: Edit profile > Links > https://youtu.be/55AEQwvs36g. Nothing changed on either profile.)
-- J0130 done: 027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats) (v01f pack 9750bf2 (all 6 items; row 26 Apollo 11 Moon). picture_qa/polish/clip_check PASS, near-black 9.4%. Awaiting Chief frame re-check.)
