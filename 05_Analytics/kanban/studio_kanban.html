@@ -848,8 +848,10 @@ function renderNow(){
   const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
   const headJob = busy[0] || null;
   let cls = "", head;
-  if(headJob){ const pr = progressOf(headJob, P), r = readyAt(pr.done);
-    head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 60))}</span>${r?`<span class="meta eta">· ${esc(r)}</span>`:""}`; }
+  let bar = "";
+  if(headJob){ const pr = progressOf(headJob, P);
+    head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 60))}</span>`;
+    bar = `<div class="pbar"><span class="track"><i style="width:${pr.pct}%"></i></span><span>${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
   else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
     head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours" : "<b>Now:</b> starting the next job"; }
   else { cls = "idle"; head = "<b>Now:</b> nothing to do right now"; }
@@ -865,7 +867,7 @@ function renderNow(){
     + order.map(r=>`<div class="sh">${esc(WAIT_WORD[r].replace(/^for /,"Waiting for "))}</div><ul>${groups[r].map(j=>`<li><span class="t">${esc(plainTitle(j))}</span></li>`).join("")}</ul>`).join("")
     + `</details>` : "";
   box.className = "nowbar" + (cls ? " "+cls : "");
-  box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>`
+  box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>` + bar
     + (nx ? `<div class="nx one"><b>Next:</b> ${esc(plainTitle(nx, 60))}</div>` : "")
     + details + updatedAt();
 }
