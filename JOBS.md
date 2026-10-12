@@ -40,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
 | J0204 | mini | open | – | – | chart · HOS compilation: timeline x4 + chapter cards x6 code graphics |  |
+| J0205 | any | open | – | – | listing · Upload packages for 3 Chief-PASSed Shorts (OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01, HOS 005 s04 'Is the Heart a Pump?'): listing + manifest, no publishAt (prereq for J0188) |  |
 
 Recently finished:
 
