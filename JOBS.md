@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0179 | any | open | – | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0180 | any | open | – | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
-| J0181 | any | claimed | cursor | 2026-10-12T17:07Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0181 | any | blocked | cursor | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
