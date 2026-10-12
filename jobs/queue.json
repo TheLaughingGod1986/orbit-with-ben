@@ -10884,13 +10884,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T21:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "waits for input: S5-S8 VO (J0213) and plates (J0214). S1-S4 done and Chief kept S4 v04 (HOS #180 6133395873; #303 on main 8fafeb6). No upload until Chief OKs the S1-S4 packages.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11096,16 +11096,14 @@
           "at": "2026-10-12T22:06Z",
           "by": "chief",
           "what": "Chief review done (KEEP S4 v04, 6133395873); now waits for input: S5-S8 VO (J0213) and plates (J0214). S1-S4 done and Chief kept S4 v04 (HOS #180 6133395873; #303 on main 8fafeb6). No upload until Chief OKs the S1-S4 packages."
+        },
+        {
+          "at": "2026-10-12T22:54Z",
+          "by": "chief",
+          "what": "reopened"
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-12T21:57Z",
-        "by": "cursor",
-        "note": "S4 v04 built, gates PASS, PR #303"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0172",
