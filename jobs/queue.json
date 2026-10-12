@@ -7478,10 +7478,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-12T12:14Z",
+      "eta": "2026-10-12T13:44Z",
       "created_by": "chief",
       "created_at": "2026-10-11T22:50Z",
       "result": "",
@@ -7540,6 +7540,11 @@
           "at": "2026-10-12T10:49Z",
           "by": "chief",
           "what": "reopened: Chief: changes. No clean plate for JWST = drop JWST (a NASA-plate B changes picture AND text, so it tests nothing). Use the Jupiter -jmMROGoZCM fallback only if its clean plate exists and no test is running; build B no-text, score, park again. If Jupiter has no clean plate either, cancel this job with that reason."
+        },
+        {
+          "at": "2026-10-12T12:14Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
