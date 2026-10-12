@@ -7451,13 +7451,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T09:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:50Z",
-      "result": "parked for Chief: no clean plate for JWST ziKBPJ6FY0U (A saved to ~/_desk/notext_tc_1011); choose Jupiter fallback, a NASA-plate B, or drop",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T22:50Z",
@@ -7508,17 +7508,15 @@
           "at": "2026-10-12T09:41Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: no clean plate for JWST ziKBPJ6FY0U (A saved to ~/_desk/notext_tc_1011); choose Jupiter fallback, a NASA-plate B, or drop"
+        },
+        {
+          "at": "2026-10-12T10:49Z",
+          "by": "chief",
+          "what": "reopened: Chief: changes. No clean plate for JWST = drop JWST (a NASA-plate B changes picture AND text, so it tests nothing). Use the Jupiter -jmMROGoZCM fallback only if its clean plate exists and no test is running; build B no-text, score, park again. If Jupiter has no clean plate either, cancel this job with that reason."
         }
       ],
       "kind": "studio",
-      "model": "cursor-auto",
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-10-12T09:41Z",
-        "by": "cursor",
-        "note": "A saved; no clean plate found"
-      }
+      "model": "cursor-auto"
     },
     {
       "id": "J0137",
