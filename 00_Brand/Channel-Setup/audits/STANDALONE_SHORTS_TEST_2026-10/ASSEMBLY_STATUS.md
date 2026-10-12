@@ -24,6 +24,18 @@ All four stay under the 40 s gate. S2 and S3 are over the 18–22 s target, whic
 | S3 ISS | iss059e027932 (sunrise burst on the limb, 5568 px), iss040e080833, iss061e123823 | none |
 | S4 Uranus | PIA18182 (disc), PIA00143 and PIA01391 (crescents) | NASA's library has no rings-upright view. The script's frame 0 asks for Uranus on its side with its rings upright, so it needs a Veo plate or the Webb image (ESA/Webb, CC BY 4.0, credit in the description). |
 
+## Parked for Chief (Cursor, 12 Oct 2026 20:55)
+
+S5–S8 VO is in (J0202 PASS), so all 8 have voice. Two decisions stop the assembly before any render:
+
+1. **Music bed.** Every Short needs a bed for its full length (lesson 5), but these 8 have no long, so there's no film bed to lay. New beds are held until the 30 Oct reset without Chief's OK. The options:
+   - (a) One new standalone-Shorts bed through `generate_music_bed.py` (API, Pace and NOT brief), laid under all 8 and trimmed per Short. It spends ElevenLabs credit (about 6,800 left after J0202) and needs Chief's OK.
+   - (b) Lay the nearest film's existing bed, at no spend: S1 Mercury and S3 ISS on 022's `sun-brighter_score_bed_v01`, S2 Neptune and S4 Uranus on 024's `light-speed_score_bed_v01`, and so on. This blurs the "own score" rule and the music_gate's similarity check.
+   - (c) A synthesised house drone (own code, no spend, no licence), extending `sfx_kit.py`. It's thin compared with a scored bed.
+2. **S4 Uranus frame 0.** NASA has no rings-upright plate. Use the Webb image (ESA/Webb, CC BY 4.0, credit in the description), or a Veo plate under the Vertex £0.10 rule.
+
+Also waiting: **J0200** (Orbit Omni inserts at about 1 s, Chief item 4). The assembly needs those clips at row 2, or else a re-render once they land.
+
 ## Next
 
 3. Orbit inserts at ~1 s on S1–S4 (Chief, #99 6125827198 item 4): 4 short Omni takes, a separate `video` job.
