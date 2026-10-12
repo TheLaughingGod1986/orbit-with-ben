@@ -63,6 +63,20 @@ All six segments rendered to `/private/tmp/owb_comp/segments_v02/` (tmux `J0167-
 
 **Still open:** J0207 graphics (not started), and Chief's bed ruling (#99 6132695926, no reply yet).
 
+## Plates v03 and segments v03 (step 5d, Cursor, 12 Oct 23:40Z)
+
+`COMPILATION_PLATES_v03.json` supersedes v02. It moves the two lines that sat on 013 @60 (the green Earth–Moon beam graphic) onto 013's "Last Perfect Eclipse" chapter, which no other plate uses:
+- **intro_06** ("The Moon drifts away from us by about three point eight centimetres every year.") now runs over **013 @383.0**: the Sun beside a cratered Moon above the clouds (clean 382.5–390, including the film's own push-in cut at about 386.5).
+- **closing_01a** ("So that's the countdown. The Moon…") now runs over **013 @391.0**: a total solar eclipse over a dusk horizon (clean 390.5–397.9).
+
+013's windows now stand at 420 ×2, 300 ×2, 383.0 ×1, 391.0 ×1 and 505 ×1, so none is used more than twice. 013 @60 is no longer used.
+
+**Timing note:** the v01/v02 1 fps sheets ran about 1.5–2 s early around 013 @380, so the first v03 render (at 381.5 and 388.3) opened on 013's title card and the Sun-and-Moon shot. The v03 times come from a 2 fps sheet made with the builder's own input seek (`/private/tmp/owb_comp/sheets/m013_380_2fps.jpg`). Anyone re-picking a window should check it the same way.
+
+The intro and closing were re-rendered to `/private/tmp/owb_comp/segments_v03/` (tmux `J0167-seg3`, exit 0, `~/_desk/logs/J0167-seg3.log`). Bridges 1–4 were copied unchanged from v02, so v03 is the full set. On the 2 fps check sheets (`check_intro06.jpg`, `check_closing01a.jpg`), intro_06 is the Sun and Moon from the first frame after the xfade, with no title card and no beam, and closing_01a is the eclipse from start to cut. **Step 5 is done.** Lengths are unchanged: intro 54.1 s, closing 23.3 s.
+
+**Step 6 (full assembly) waits on two things:** J0207 (chapter cards and the countdown timeline; chart job, still open) and Chief's bed ruling (#99 6132695926).
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.
