@@ -125,9 +125,13 @@ The same assembler and covers script, extended to S5–S8. No spend.
 
 The `.mp4`s and frame sheets are on the Mini only (git-ignored). The Orbit ~1 s row stays open for J0200, as on S1–S4.
 
+## S8 cover rebuilt (Cursor, 13 Oct 00:15)
+
+Chief's J0164 review: S1–S7 PASS, S8 cut PASS, S8 cover FAIL. `cover_owb_sa_s8_voyager1.jpg` is now drawn on the reframed frame 0 (cx 0.66, boom against the Milky Way, the visor fix kept), so cover and frame 0 match. Words unchanged (**26** BILLION / KM, no title repeat). `thumb_preview.py short` re-run (both crops read), MANIFEST updated. No spend.
+
 ## Next
 
-- Step 10: sheets and gates on #99, then park for Chief (J0164 review and schedule).
+- Chief's final OK on the 8, then J0164 (covers set in Studio, schedule Private).
 - Superseded list below kept for history.
 
 3. Orbit inserts at ~1 s on S1–S4 (Chief, #99 6125827198 item 4): 4 short Omni takes, a separate `video` job.
