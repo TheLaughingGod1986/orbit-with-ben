@@ -2,8 +2,10 @@
 """J0133: rebuild five back-catalogue long thumbs to THUMBNAIL_AND_TITLE_RULES.md §2.B (Packaging, 11 Oct 2026).
 
 Top band of 2-3 words off the subject, yellow hook word, harder grade, no Orbit. No generation:
-the original clean plates are gone, so 002/005/006/007 lift the live art (rollback copy) with the
-centre caption inpainted out, and 019 uses NASA/JPL-Caltech GALEX PIA15416 (Andromeda).
+the original clean plates are gone, so 005/007 lift the live art (rollback copy) with the centre
+caption inpainted out, 006 uses frame 0 of its own master (europa_v02_STUDIO_OWNER.mp4 on the NAS),
+002 uses 9:48 of its own live video (3xrxdmaOwJI, the live thumb's source frame), and 019 uses
+NASA/JPL-Caltech GALEX PIA15416 (Andromeda).
 The subject is recomposed lower over a blurred fill of its own plate so the band sits clear of it.
 
 Needs OpenCV: run with ~/_desk/venvs/thumbs/bin/python. Does not upload or touch Studio.
@@ -35,15 +37,16 @@ JOBS = [
     {"id": "Yk1tLh23rko", "film": "007_What-Happens-To-Your-Body-Near-A-Neutron-Star", "words": ["CRUSHED", "FLAT"],
      "yellow": "FLAT", "plate": "live", "fg_scale": 0.76},
     {"id": "NbW5G1BpPY0", "film": "006_Could-Life-Exist-Under-The-Ice-Of-Europa", "words": ["A", "HIDDEN", "OCEAN"],
-     "yellow": "OCEAN", "plate": "live", "fg_scale": 0.78, "pale": True, "lift": True},
+     "yellow": "OCEAN", "plate": "frame", "frame": "europa_master_t0.png", "fg_scale": 0.78, "pale": True,
+     "lift": True},
     {"id": "REXYxuLOBoI", "film": "005_The-Last-Star-In-The-Universe", "words": ["LAST", "LIGHT"],
      "yellow": "LIGHT", "plate": "live", "fg_scale": 0.80, "lift": True},
     {"id": "3xrxdmaOwJI", "film": "002_What-Happens-If-You-Fall-Into-A-Black-Hole", "words": ["NO", "WAY", "OUT"],
-     "yellow": "OUT", "plate": "live", "fg_scale": 0.78},
+     "yellow": "OUT", "plate": "frame", "frame": "blackhole_master_t588.png", "fg_scale": 0.78},
 ]
 
 
-def strip_caption(path: Path) -> Image.Image:
+def strip_caption(path: Path, min_area: int = 1500, seam: int = 12) -> Image.Image:
     bgr = cv2.imread(str(path))
     x0, y0, x1, y1 = CAPTION_BOX
     roi = bgr[y0:y1, x0:x1].astype(int)
@@ -54,7 +57,7 @@ def strip_caption(path: Path) -> Image.Image:
     m[y0:y1, x0:x1] = ((yellow | white) * 255).astype(np.uint8)
     m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, np.ones((25, 25), np.uint8))
     n, lab, st, _ = cv2.connectedComponentsWithStats(m)
-    m = np.isin(lab, [i for i in range(1, n) if st[i, 4] > 1500]).astype(np.uint8) * 255
+    m = np.isin(lab, [i for i in range(1, n) if st[i, 4] > min_area]).astype(np.uint8) * 255
     # wide enough to take the black outline and drop shadow with the letters
     m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (37, 37)))
     # Telea/FSR leave a blotch on the subject; borrow the subject's own texture from above and
@@ -65,7 +68,8 @@ def strip_caption(path: Path) -> Image.Image:
     src = bgr.copy()
     src[ty0:mid] = bgr[ty0 - shift:mid - shift]
     src[mid:ty1] = bgr[mid + shift:ty1 + shift]
-    src[mid - 12:mid + 12] = cv2.GaussianBlur(src[mid - 12:mid + 12].copy(), (1, 25), 0)
+    k = 2 * seam + 1
+    src[mid - seam:mid + seam] = cv2.GaussianBlur(src[mid - seam:mid + seam].copy(), (1, k), 0)
     bm = cv2.dilate(m, np.ones((9, 9), np.uint8))
     sl = (slice(ty0 - pad, ty1 + pad), slice(tx0 - pad, tx1 + pad))
     centre = ((tx0 + tx1) // 2, (ty0 + ty1) // 2)
@@ -137,9 +141,12 @@ def build(job: dict) -> dict:
     if job["plate"] == "nasa":
         src = PLATES / "andromeda_PIA15416.jpg"
         plate = cover(Image.open(src).convert("RGB").crop(job["crop"]), W, H)
+    elif job["plate"] == "frame":
+        src = PLATES / job["frame"]
+        plate = cover(Image.open(src).convert("RGB"), W, H)
     else:
         src = ROLLBACK / f"live_{job['id']}.jpg"
-        plate = strip_caption(src)
+        plate = strip_caption(src, job.get("min_area", 1500), job.get("seam", 12))
     im = recompose(plate, job["fg_scale"])
     # top band darkened a touch so the words read at 168x94; a gradient, never a flat slab
     shade = Image.new("L", (W, H), 0)
