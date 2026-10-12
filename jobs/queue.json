@@ -10872,10 +10872,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T20:02Z",
-      "eta": "2026-10-13T00:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10924,6 +10924,11 @@
           "at": "2026-10-12T20:08Z",
           "by": "cursor",
           "what": "step 3 of 6 done: assembler prep+plan, HOS #300 cc8827e; prep running"
+        },
+        {
+          "at": "2026-10-12T20:08Z",
+          "by": "cursor",
+          "what": "released: Step 3/6: assembler prep+plan stages on HOS PR #300 (cc8827e). Prep running detached: tmux J0175-prep, log ~/_desk/logs/J0175-prep.log, exit code ~/_desk/logs/J0175-prep.done; outputs /private/tmp/hos_comp_v01/film_NNN_norm.mp4 + prep_report.json. 005 done (489.20 s, -14.2 LUFS, TP -0.85: final render's limiter must hold -1 dBTP); 001/002/003/004 in progress (~3 min each). Next: once J0204 graphics land, write the render stage (crossfades, VO/bed/SFX stems, gates) and pick intro/bridge plates. Deliverable still waits on 006 master (ETA 25 Oct). For Chief (from run 2): 001/002/003 mid-film end cards; 004 bed reuse vs music_gate."
         }
       ],
       "kind": "assembly",
