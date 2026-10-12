@@ -121,7 +121,7 @@ def parse_billing(text: str) -> tuple[float, str]:
     rows = [ln.strip() for ln in text.splitlines() if ln.strip()]
     lines, trial = [], None
     for i, ln in enumerate(rows):
-        if re.fullmatch(r"(Free Trial|.*Developer Program.*|.*credit.*)", ln, re.I) and len(ln) < 60:
+        if re.fullmatch(r"(Free Trial|.*Developer Program.*|.*credit.*)", ln, re.I) and len(ln) < 90:
             window = " ".join(rows[i:i + 8])
             m = re.search(r"£([\d,]+\.\d\d)", window)
             if not m or ln.lower().startswith("credit application type") or re.search(r"CreditId|Credit-", ln):
@@ -129,16 +129,18 @@ def parse_billing(text: str) -> tuple[float, str]:
             amt = float(m.group(1).replace(",", ""))
             status = _credit_status(" ".join(rows[i + 1:i + 3]))
             lines.append(f"{ln}: £{amt:.2f} {status}")
-            if ln == "Free Trial" and status.startswith("Available") and trial is None:
-                trial = amt
+            if status.startswith("Available"):
+                # Ben, 12 Oct 2026 23:51: the pool is every active promo credit (Free Trial + Developer Program
+                # monthly), all scoped to Vertex on billing account 0124D1. Used/Expired rows count nothing.
+                trial = (trial or 0.0) + amt
     if trial is None:
-        raise RuntimeError("could not read an Available Free Trial row on Cloud Billing > Credits")
-    return trial, "; ".join(dict.fromkeys(lines))
+        raise RuntimeError("could not read an Available credit row on Cloud Billing > Credits")
+    return round(trial, 2), "; ".join(dict.fromkeys(lines))
 
 
 def read_vertex() -> dict:
     trial, lines = parse_billing(_page_text(BILLING_URL, "Free Trial", settle_ms=2500))
-    return {"left": trial, "note": f"Cloud Billing > Credits: {lines}"}
+    return {"left": trial, "note": f"promo pool (all Available credits; jobs stop at £1 margin) · Cloud Billing > Credits: {lines}"}
 
 
 CURSOR_POOLS = {"cursor models": "Cursor Models", "other models": "Other Models", "weekly usage": "Grok Bot weekly"}
