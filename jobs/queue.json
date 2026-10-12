@@ -10645,13 +10645,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T20:14Z",
-      "eta": "2026-10-12T23:14Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: S1-S4 v01 assembled (HOS 85bb707, all gate_shorts_open PASS, 22.2-23.0 s); KEEP the cuts + hook placement call (HOS #180 6132032431). Then covers, sfx level, S5-S8 after their VO + plates.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10747,6 +10747,11 @@
           "at": "2026-10-12T20:26Z",
           "by": "cursor",
           "what": "step 5 of 6 done: S1-S4 v01 built, all gate PASS"
+        },
+        {
+          "at": "2026-10-12T20:26Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: S1-S4 v01 assembled (HOS 85bb707, all gate_shorts_open PASS, 22.2-23.0 s); KEEP the cuts + hook placement call (HOS #180 6132032431). Then covers, sfx level, S5-S8 after their VO + plates."
         }
       ],
       "kind": "assembly",
