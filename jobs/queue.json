@@ -7210,13 +7210,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-12T08:59Z",
-      "eta": "2026-10-12T11:59Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:29Z",
-      "result": "",
+      "result": "5/5 long thumbs set in Studio (CDP 9223, no T&C running, reload confirmed). REFRESH_LOG + apply script 73bb5395; rollback ~/_desk/thumb_packaging_1011/rollback/",
       "history": [
         {
           "at": "2026-10-11T22:29Z",
@@ -7307,6 +7307,11 @@
           "at": "2026-10-12T09:04Z",
           "by": "cursor",
           "what": "step 5 of 5 done: 5/5 set in Studio"
+        },
+        {
+          "at": "2026-10-12T09:04Z",
+          "by": "cursor",
+          "what": "done: 5/5 long thumbs set in Studio (CDP 9223, no T&C running, reload confirmed). REFRESH_LOG + apply script 73bb5395; rollback ~/_desk/thumb_packaging_1011/rollback/"
         }
       ],
       "kind": "studio",
