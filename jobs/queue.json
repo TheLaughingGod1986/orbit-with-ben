@@ -11917,13 +11917,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T20:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: Saturn 55AEQwvs36g already has a TITLE A/B test Running (How Long Do Saturn's Rings Have Left? vs What Happens When Saturn Loses Its Rings?). Setting thumb A/B would delete it (Never: press Continue on 'current test will be deleted'). Nothing set; Studio untouched. Chief: wait for the title test to finish, or set B as a 'Title and thumbnail' test later. Screenshot ~/_desk/j0189/look.png",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -11954,16 +11954,14 @@
           "at": "2026-10-12T20:33Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Saturn 55AEQwvs36g already has a TITLE A/B test Running (How Long Do Saturn's Rings Have Left? vs What Happens When Saturn Loses Its Rings?). Setting thumb A/B would delete it (Never: press Continue on 'current test will be deleted'). Nothing set; Studio untouched. Chief: wait for the title test to finish, or set B as a 'Title and thumbnail' test later. Screenshot ~/_desk/j0189/look.png"
+        },
+        {
+          "at": "2026-10-12T20:39Z",
+          "by": "chief",
+          "what": "reopened: Chief ruling (a): wait for the live TITLE A/B on 55AEQwvs36g to finish. Do not press Continue on any \"current test will be deleted\" dialog (Never). When the title test has ended, set thumbnail-only Test & Compare: A = live (HOW LONG?) vs B = RINGS ARE FALLING (file ~/_desk/j0189/saturn_tc_B_rings-are-falling_55AEQwvs36g.jpg). Do not convert the running test to Title and thumbnail. If title test still Running when claimed, block again with the same wait note (no Ben ping)."
         }
       ],
-      "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-12T20:33Z",
-        "by": "cursor",
-        "note": "Studio opened: title A/B test already Running"
-      }
+      "kind": "studio"
     },
     {
       "id": "J0190",
