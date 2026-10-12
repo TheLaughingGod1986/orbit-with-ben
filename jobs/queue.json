@@ -9405,13 +9405,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T14:01Z",
-      "eta": "2026-10-12T16:01Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: lock compilation plan + script v01 (30ef7dba). Rule on: trimming 4 of 5 subscribe beats + the end hand-offs; record the re-upload Never-list exception; 022 as optional 6th; title/cover pick. Gemini claims pass on the MUST QUOTE table before VO J0166.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -9432,6 +9432,11 @@
           "at": "2026-10-12T14:05Z",
           "by": "cursor",
           "what": "step 4 of 5 done: plan + script committed 30ef7dba"
+        },
+        {
+          "at": "2026-10-12T14:05Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: lock compilation plan + script v01 (30ef7dba). Rule on: trimming 4 of 5 subscribe beats + the end hand-offs; record the re-upload Never-list exception; 022 as optional 6th; title/cover pick. Gemini claims pass on the MUST QUOTE table before VO J0166."
         }
       ],
       "kind": "script",
