@@ -10150,10 +10150,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T15:25Z",
-      "eta": "2026-10-12T16:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-12T14:11Z",
       "result": "",
@@ -10202,6 +10202,11 @@
           "at": "2026-10-12T15:26Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Gemini re-run (old worktree lost)"
+        },
+        {
+          "at": "2026-10-12T15:44Z",
+          "by": "cursor",
+          "what": "released: Gemini re-run detached: tmux j0177-gemini, log ~/_desk/logs/j0177-gemini.log, done-file ~/_desk/logs/j0177-gemini.done; edits land in worktree /tmp/j0177-wt (branch scripts/standalone-shorts-j0169). Next run: if .done=0, check SOURCES_v01.md complete (27 rows + findings), commit+push from /tmp/j0177-wt. Run 1 (16:02, 26 OK/1 FLAG 4c) wrote to a lost worktree; its edits are gone."
         }
       ],
       "kind": "facts",
