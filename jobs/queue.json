@@ -13160,13 +13160,13 @@
       "stage": "",
       "after": "J0212",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T22:03Z",
-      "eta": "2026-10-12T23:03Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-12T21:55Z",
-      "result": "",
+      "result": "parked for Chief: KEEP on HOS SA S5-S8 VO v01 takes (HOS a61063b, vo_v01/VO_STATUS.md). S5 22.72 s PASS 100%, S6 22.80 s REVIEW (US spelling mould->mold only), S7 21.20 s PASS, S8 22.80 s PASS; ~19.4-21.0 s after pause trim. 1,110 credits, ~4,828 left. S5 keeps the pigeons line (J0212 OK).",
       "history": [
         {
           "at": "2026-10-12T21:55Z",
@@ -13192,6 +13192,11 @@
           "at": "2026-10-12T22:07Z",
           "by": "cursor",
           "what": "step 4 of 4 done: takes logged, VO_STATUS a61063b"
+        },
+        {
+          "at": "2026-10-12T22:07Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: KEEP on HOS SA S5-S8 VO v01 takes (HOS a61063b, vo_v01/VO_STATUS.md). S5 22.72 s PASS 100%, S6 22.80 s REVIEW (US spelling mould->mold only), S7 21.20 s PASS, S8 22.80 s PASS; ~19.4-21.0 s after pause trim. 1,110 credits, ~4,828 left. S5 keeps the pigeons line (J0212 OK)."
         }
       ],
       "kind": "vo",
