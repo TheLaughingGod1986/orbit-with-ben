@@ -6,7 +6,11 @@ muted) under its recorded VO, one plate per spoken line, timed from the VO's Scr
 lanczos to 1080p30. Writes per segment: <seg>.mp4 (picture + VO + SFX, no bed), <seg>_vo.wav, <seg>_sfx.wav and
 <seg>_cuts.json (picture_qa format). The bed and the J0207 chapter cards / timeline overlays are laid at step 6.
 
-  python3 _assemble_compilation_segments_v01.py [--out /private/tmp/owb_comp/segments_v01] [--only intro,bridge1] [--plan]
+  python3 _assemble_compilation_segments_v01.py [--plates COMPILATION_PLATES_v02.json]
+      [--out /private/tmp/owb_comp/segments_v02] [--only intro,bridge1] [--plan]
+
+A plate with `windows` splits its line across several master windows, cut at the VO gap before each window's `from`
+words.
 """
 import argparse
 import json
@@ -16,7 +20,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-PLATES = HERE / "COMPILATION_PLATES_v01.json"
+PLATES = HERE / "COMPILATION_PLATES_v02.json"
 VO_DIR = HERE / "vo_compilation_v01"
 KIT = HERE / "06_Sound-Effects" / "compilation_kit_v01"
 MASTERS = json.loads(Path("/private/tmp/owb_comp/masters.json").read_text())
@@ -40,19 +44,26 @@ def words_of(stem):
     return [w for w in d["words"] if w.get("type") == "word"], d.get("audio_duration_secs")
 
 
+def find_words(text, words, i, n=3):
+    toks = [norm(t) for t in text.replace("...", " ").split() if norm(t)][:n]
+    for j in range(i, len(words)):
+        if all(j + k < len(words) and norm(words[j + k]["text"]) == toks[k] for k in range(len(toks))):
+            return j
+    sys.exit(f"not found in Scribe words: {text!r}")
+
+
 def line_starts(lines, words):
     """Index of each line's first word in the Scribe word list, matched in order on its first three tokens."""
     out, i = [], 0
     for ln in lines:
-        toks = [norm(t) for t in ln.replace("...", " ").split() if norm(t)][:3]
-        for j in range(i, len(words)):
-            if all(j + k < len(words) and norm(words[j + k]["text"]) == toks[k] for k in range(len(toks))):
-                out.append(j)
-                i = j + 1
-                break
-        else:
-            sys.exit(f"line not found in Scribe words: {ln!r}")
+        j = find_words(ln, words, i)
+        out.append(j)
+        i = j + 1
     return out
+
+
+def gap_mid(words, k):
+    return LEAD + (words[k - 1]["end"] + words[k]["start"]) / 2
 
 
 def probe_dur(path):
@@ -69,17 +80,20 @@ def plan_segment(seg):
     idx = line_starts(lines, words)
     tail = TAIL_CLOSING if seg["segment"] == "closing" else TAIL
     total = LEAD + vo_len + tail
-    bounds = [0.0]
-    for k in idx[1:]:
-        prev_end, start = words[k - 1]["end"], words[k]["start"]
-        bounds.append(LEAD + (prev_end + start) / 2)
-    bounds.append(total)
+    bounds = [0.0] + [gap_mid(words, k) for k in idx[1:]] + [total]
     cuts = []
     for n, p in enumerate(seg["plates"]):
-        cuts.append(dict(row=f"{seg['segment']}_{n + 1:02d}", source=Path(MASTERS[p["film"]]).stem, film=p["film"],
-                         timeline_in=round(bounds[n], 3), timeline_out=round(bounds[n + 1], 3),
-                         framing={"offset": p["at"]}, what=p["what"], line=p["line"], sfx=p.get("sfx"),
-                         overlay=p.get("overlay")))
+        wins = p.get("windows") or [dict(film=p["film"], at=p["at"], what=p["what"])]
+        edges = [bounds[n]]
+        for w in wins[1:]:
+            edges.append(gap_mid(words, find_words(w["from"], words, idx[n] + 1, n=2)))
+        edges.append(bounds[n + 1])
+        for m, w in enumerate(wins):
+            row = f"{seg['segment']}_{n + 1:02d}" + (chr(ord("a") + m) if len(wins) > 1 else "")
+            cuts.append(dict(row=row, source=Path(MASTERS[w["film"]]).stem, film=w["film"],
+                             timeline_in=round(edges[m], 3), timeline_out=round(edges[m + 1], 3),
+                             framing={"offset": w["at"]}, what=w["what"], line=p["line"],
+                             sfx=p.get("sfx") if m == 0 else None, overlay=p.get("overlay") if m == 0 else None))
     return dict(segment=seg["segment"], vo=str(vo), vo_s=round(vo_len, 3), total_s=round(total, 3), cuts=cuts)
 
 
@@ -141,13 +155,14 @@ def plan_lead_ms():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="/private/tmp/owb_comp/segments_v01")
+    ap.add_argument("--plates", default=str(PLATES))
+    ap.add_argument("--out", default="/private/tmp/owb_comp/segments_v02")
     ap.add_argument("--only", default="")
     ap.add_argument("--plan", action="store_true", help="print the timing plan only, render nothing")
     a = ap.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    segs = json.loads(PLATES.read_text())["segments"]
+    segs = json.loads(Path(a.plates).read_text())["segments"]
     if a.only:
         segs = [s for s in segs if s["segment"] in a.only.split(",")]
     plans = [plan_segment(s) for s in segs]

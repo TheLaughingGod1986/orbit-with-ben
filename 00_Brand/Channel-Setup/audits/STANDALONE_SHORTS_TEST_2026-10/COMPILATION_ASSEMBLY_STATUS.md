@@ -48,6 +48,17 @@ Plate picks for the intro, the four bridges and the closing are in `COMPILATION_
 
 Lines longer than about 6.5 s (intro_09, B1 ×2, B2_02, B3_02, B4_02, closing ×2) run past the vetted ~6 s window. The masters cut on their own inside those spans, and the sheet shows no cards or captions in them apart from the three above. Smaller notes: intro_06 (013 @60) runs into 013's moonlit-sea shot around 18 s, which is close to intro_01 and closing_02, so picture_qa may count it as a repeat. B2_02 (019 @210) shows 019's own constellation linework (no labels).
 
+## Plates v02 and segments v02 (step 5c, Cursor, 12 Oct 22:55Z)
+
+The three re-picks are in `COMPILATION_PLATES_v02.json`, which supersedes v01. Every window was checked at 1 fps, with frame grabs at its edges. The builder now takes `--plates`, and it can split a line across several master windows with `windows`, cutting at the VO gap before each window's `from` words. The re-picks:
+- **intro_10** splits in two. "We start with the shortest clock…" runs over 019's antique clock face push-in (240.2 s; clean 240–247.9). "…and end with the longest: the last starlight…" runs over 005's nebula, where a star flares and goes dark (172.2 s; clean 172–179.9, no Orbit).
+- **bridge2_01** uses the plan's fallback, 013 @420 (the full Moon over the sea; its second and last use).
+- **closing_01** splits three ways. "So that's the countdown. The Moon…" runs over 013 @60 (laser ranging on the Moon; its second and last use). "The rings…" runs over 005's ringed gas giant (275.2 s; clean 275.2–283.0). "Galaxies merging… the last starlight…" runs over 005's burning world shrinking to an ember (290.9 s; clean 290.8–299). The v01 window (005 @470) ran onto Orbit with constellation linework and sat within 20 s of 005's 488.05 out point. 005 @275 alone was 0.3 s short of the line.
+
+All six segments are re-rendering to `/private/tmp/owb_comp/segments_v02/` (tmux `J0167-seg2`, `~/_desk/logs/J0167-seg2.log` and `.done`). Bridges 1, 3 and 4 are unchanged from v01. Next run: when `.done` reads 0, make the v02 contact sheets and check intro_10a/b and closing_01a–c by eye, then go to step 6 once J0207 and the bed ruling land.
+
+**Still open:** J0207 graphics (not started), and Chief's bed ruling (#99 6132695926, no reply yet).
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.
