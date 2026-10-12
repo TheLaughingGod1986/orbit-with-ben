@@ -102,6 +102,14 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .toplist .total { border-top: 1px solid var(--line); }
 .toplist .total .tv-title, .toplist .total .tv-gain { font-weight: 600; color: var(--ink); }
 @media (prefers-reduced-motion: no-preference) { .tab, .seg button { transition: background .15s, color .15s; } }
+
+/* Ben, 12 Oct 22:17: every long film aims for 4% impressions CTR and 35% average audience retention. */
+.tgt { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.tgt li { display: grid; grid-template-columns: 1fr auto auto; gap: 4px 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: .88rem; }
+.tgt .t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tgt .m { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tgt .hit { color: #1d7a3a; font-weight: 600; } .tgt .miss { color: #b4432f; font-weight: 600; } .tgt .na { color: var(--ink-3); }
+.tgt .sub { grid-column: 1 / -1; color: var(--ink-3); font-size: .78rem; }
 </style>
 
 <div class="wrap">
@@ -114,6 +122,11 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   </header>
   <div class="stamp" id="stamp"></div>
   <section class="readout" id="readout" aria-label="Totals and growth"></section>
+
+  <section class="panel" aria-labelledby="tgt-h">
+    <h2 id="tgt-h">Long films vs targets <span class="stamp" id="tgtNote"></span></h2>
+    <ul class="tgt" id="tgtList"></ul>
+  </section>
 
   <section class="panel" aria-labelledby="top24-h">
     <div style="display:grid;gap:2px">
@@ -514,9 +527,25 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   seg("ageWin", "ageWin", "w", Number);
   seg("ageMin", "ageMin", "a", Number);
 
+  // Ben, 12 Oct 22:17: targets for every long film. Retention = average % viewed (lifetime); CTR = impressions
+  // click-through rate, which the Analytics API doesn't return: it shows once a Studio read adds `impressionsCtr` (%).
+  const TARGETS = { ctr: 4, retention: 35 };
+  function drawTargets(c) {
+    const longs = c.videos.filter((v) => v.format === "long").sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 8);
+    const mark = (val, tgt, label) => val == null ? `<span class="m na">${label} –</span>`
+      : `<span class="m ${val >= tgt ? "hit" : "miss"}">${label} ${val.toFixed(1)}% ${val >= tgt ? "✓ hit" : "✗ miss"}</span>`;
+    $("tgtNote").textContent = `targets: CTR ${TARGETS.ctr}% · retention ${TARGETS.retention}%`;
+    $("tgtList").innerHTML = longs.map((v) => {
+      const lt = v.lifetime || v.last28 || {}, ret = lt.avgViewPct, ctr = v.impressionsCtr != null ? v.impressionsCtr : (v.ctr != null ? v.ctr : null);
+      const few = (lt.views || 0) < 20;
+      return `<li><span class="t"><a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a></span>${mark(ctr, TARGETS.ctr, "CTR")}${mark(ret, TARGETS.retention, "Ret")}
+        <span class="sub">${ukDate(v.publishedAt)} · ${fmt(v.views)} views${few ? " · too few views to judge yet" : ""}${ctr == null ? " · CTR needs a Studio read" : ""}</span></li>`;
+    }).join("") || `<li class="na">No long films yet.</li>`;
+  }
+
   function render() {
     const c = cur();
-    drawTabs(); drawReadout(c); drawTop24(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
+    drawTabs(); drawReadout(c); drawTargets(c); drawTop24(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
     $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>Top videos, last 24 hours: each video's public view count, compared between the last two daily snapshots — the same two the tile uses. A video those snapshots can't compare reads "unknown" and stays out of the sum. YouTube refreshes the channel's view total and the per-video counts at different times, and a video made private keeps its views in the channel total, so anything the videos don't account for gets its own row instead of being spread over them.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
   }
   render();
