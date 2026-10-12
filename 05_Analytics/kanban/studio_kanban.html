@@ -1,4 +1,15 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* Ben, 12 Oct 21:11: one clean phone board. Each film card once: tag, number, title, air date, % bar, one short status
+   line. The long header strip, status pill and "Optional" line repeated the same thing; job board and plans fold away. */
+.tf .rkrow,.tf .mk,.tf .mk-opt,.tf .kh .pill{display:none}
+.tf .st1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500;color:var(--ink-3)}
+.tf .st1.bad,.tf .st1.now,.tf .st1.ok,.tf .st1.review{color:var(--ink-2)}
+.tf .st1.you{color:var(--blocked)}
+.tf{border-left-color:var(--line)!important}
+.tf .bar i{background:var(--ink-3)!important;opacity:.6}
+#foldJobs,#foldPlans{margin:8px 0}
+#foldJobs .jb{margin-top:8px}
+</style></head><body>
 
 <title>Studio Kanban</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -428,7 +439,9 @@ footer a{color:var(--ink-2)}
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
   <div class="stats" id="daystats" hidden></div>
+  <details class="more fold" id="foldJobs"><summary>All jobs: queue, running, done</summary>
   <div class="jb" id="jobboard" hidden></div>
+  </details>
   <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
   </section>
   </details>
@@ -441,8 +454,9 @@ footer a{color:var(--ink-2)}
   </div>
   <div class="agents" id="agents" style="margin-top:14px"></div>
   </details>
+  <details class="more fold" id="foldPlans"><summary>AI plans this month</summary>
   <section class="plansec">
-  <h2 class="sec" style="margin-top:22px">AI plans this month <span class="qsub" id="spendSum"></span></h2>
+  <h2 class="sec" style="margin-top:22px"><span class="qsub" id="spendSum"></span></h2>
   <section class="spend" id="spendBox">
     <div class="head"><div class="why" id="spendWhen"></div></div>
     <div class="verdict" id="verdict"></div>
@@ -454,6 +468,7 @@ footer a{color:var(--ink-2)}
     </details>
   </section>
   </section>
+  </details>
   <footer>The studio agent refreshes this page every hour, round the clock, and again whenever the Mac mini posts a finished or paused job. Times like "done about" recount every minute. The film-by-film notes are Claude's, from <span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben, refreshed on the same run; job times come live from the job queue. <b>HOS</b> comes from <span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science (the file behind <a href="https://github.com/TheLaughingGod1986/history-of-science/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>). <b>OWB</b> from each film's <span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span> in orbit-with-ben (the files behind its <a href="https://github.com/TheLaughingGod1986/orbit-with-ben/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>; "chief" is shown as Grok). Both from <span class="mono">main</span>.</footer>
 </div>
 
@@ -1702,6 +1717,11 @@ render();
 startDb();
 startLive();
 setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" current
+
+// Ben, 12 Oct 21:11: drop a card's status line when it only repeats the air date shown above it.
+(function(){ const t = document.getElementById("tracker"); if(!t || typeof MutationObserver==="undefined") return;
+  const tidy = () => t.querySelectorAll(".tf .st1").forEach(e=>{ if(/^(Scheduled|Live)\b/i.test(e.textContent.trim()) && !/\b(fix|wait|block|need)/i.test(e.textContent)) e.remove(); });
+  new MutationObserver(tidy).observe(t, {childList:true, subtree:true}); })();
 </script>
 
 </body></html>
