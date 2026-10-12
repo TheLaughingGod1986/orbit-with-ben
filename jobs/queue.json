@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T23:24Z",
-      "eta": "2026-10-13T03:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8307,6 +8307,11 @@
           "at": "2026-10-12T23:36Z",
           "by": "cursor",
           "what": "step 1 of 6 done: still step built; P4:10 re-probe running"
+        },
+        {
+          "at": "2026-10-12T23:36Z",
+          "by": "cursor",
+          "what": "released: Still step committed (HOS PR #306, 7b0c4bf): _flow_still_v01.py + minter --stills --take; Flow Image switches to Nano Banana 2.1 16:9 OK. P4:10 t2 re-probe running in tmux j0140-probe2 (log ~/_desk/logs/j0140-probe2.log, .done when finished; it stops if a still costs credits). Style-ref chips did NOT attach: uploads were still in progress (24%) when Create was clicked, so this still runs on the text style lock only (logged style_ref_chips=0). Next run: read .done; if the still/take came out, post still + sheet on #180 and park for KEEP. Fix: wait for upload tiles to hit 100%, then select from Uploads into the prompt before arming. 0 credits spent this run so far (25,040)."
         }
       ],
       "kind": "video",
