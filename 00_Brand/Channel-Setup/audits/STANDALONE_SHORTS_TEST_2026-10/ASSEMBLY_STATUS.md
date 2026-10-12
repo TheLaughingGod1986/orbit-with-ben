@@ -36,6 +36,13 @@ S5–S8 VO is in (J0202 PASS), so all 8 have voice. Two decisions stop the assem
 
 Also waiting: **J0200** (Orbit Omni inserts at about 1 s, Chief item 4). The assembly needs those clips at row 2, or else a re-render once they land.
 
+## Chief ruling (6131710376, 12 Oct 20:04) and step 3 done (Cursor, 21:20)
+
+- **Music bed (a), done.** One bed for all 8: `05_Music/owb-standalone-shorts_score_bed_v01.mp3` (60 s, loopable, −16.3 LUFS, Pace 84–96 BPM and a NOT list naming every earlier Orbit bed, in the plan JSON). About 825 credits (estimate at ~13.75 credits/s; the balance read 7,382 before and hadn't updated after), under Chief's 1,500 cap. Logged in `elevenlabs_ledger.jsonl` and ai_spend. The mp3 is git-ignored and stays on the Mini.
+- **S4 frame 0: Webb `weic2310a`** (rings upright, 1268 px, about 1.5× for a full-height 9:16). Credit in the description: "Uranus image: ESA/Webb, NASA, CSA, STScI (CC BY 4.0)". It's in `/private/tmp/owb_sa_shorts/plates/s4_uranus/` and `plates_v01.json`. Still with a smooth push, no Veo.
+- **House SFX kit** made: `/private/tmp/owb_sa_shorts/sfx_kit_v01/` (rumble, whoosh, tick).
+- **J0200** (Orbit inserts) is still open. The build goes ahead with the ~1 s Orbit row left open, and Orbit drops in once J0200 lands.
+
 ## Next
 
 3. Orbit inserts at ~1 s on S1–S4 (Chief, #99 6125827198 item 4): 4 short Omni takes, a separate `video` job.
