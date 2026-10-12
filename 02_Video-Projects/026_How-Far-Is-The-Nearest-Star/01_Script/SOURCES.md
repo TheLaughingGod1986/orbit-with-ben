@@ -50,3 +50,13 @@ No product is named. No `/go/` link.
 | The missing stellar parallax was long used as an argument against a moving Earth (e.g. Tycho Brahe) | Standard history of astronomy; e.g. Hirshfeld, *Parallax: The Race to Measure the Cosmos* (2001) |
 | At the 1 : 10¹⁰ scale, Alpha Cen A (1.22 R☉) is about 17 cm and B (0.86 R☉) about 12 cm, at about 4,130 km | Kervella et al. (2017) A&A 597, A137 |
 | At the 1 : 10¹⁰ scale the Moon's orbit (384,400 km; the human distance record, Apollo 13 at about 400,000 km and Artemis II in Apr 2026 at about 406,800 km, is still about 4 cm) is about 3.8–4.0 cm from the pin | NASA Moon fact sheet; Apollo 13 distance record (Guinness / NASA) |
+
+## J0148 Bessel card source rows (Codex, 12 Oct 2026)
+
+| Marker / claim | Exact excerpt | Source |
+|---|---|---|
+| MUST QUOTE · WHO: Friedrich Bessel born 1784 | “Born” / “1784-07-22” | Royal Astronomical Society, [Bessel obituary register](https://ras.ac.uk/obituaries/Friedrich_Wilhelm/Bessel), checked 12 Oct 2026. |
+| MUST QUOTE · WHO: Friedrich Bessel died 1846 | “Died” / “1846-03-07” | Royal Astronomical Society, same register. The card uses the year only. |
+| MUST QUOTE · WHEN: 61 Cygni parallax measurement, 1838 | “In 1838, based on his measurements, Bessel calculated that the star 61 Cygni” | ESA, [Why was it so difficult to study the Milky Way before Gaia?](https://www.esa.int/Science_Exploration/Space_Science/Gaia/Why_was_it_so_difficult_to_study_the_Milky_Way_before_Gaia), checked 12 Oct 2026. The page identifies Bessel as an astronomer and describes his reliable parallax measurement. |
+
+Overlay only: `Friedrich Bessel` / `1784–1846 · Astronomer`. Existing `1838` WHEN label retained. Locked narration unchanged. Gemini findings are recorded separately.
