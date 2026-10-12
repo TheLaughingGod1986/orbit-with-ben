@@ -1,0 +1,2955 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/026_NearestStar_v05c_PHONE.mp4",
+  "edge_floor": 0.0059,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "4",
+      "cut": 5,
+      "t": 22.33,
+      "source": "triple.mp4",
+      "why": [
+        "low detail: luma std 13.61 < 18.0"
+      ]
+    },
+    {
+      "row": "4",
+      "cut": 6,
+      "t": 26.65,
+      "source": "parallax.mp4",
+      "why": [
+        "low detail: luma std 11.24 < 18.0"
+      ]
+    },
+    {
+      "row": "4",
+      "cut": 7,
+      "t": 30.93,
+      "source": "journey.mp4",
+      "why": [
+        "low detail: luma std 9.29 < 18.0",
+        "low detail: edge density 0.0058 < film p5 0.0059"
+      ]
+    },
+    {
+      "row": "6",
+      "cut": 12,
+      "t": 52.0,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "why": [
+        "low detail: edge density 0.0055 < film p5 0.0059"
+      ]
+    },
+    {
+      "row": "7",
+      "cut": 16,
+      "t": 71.05,
+      "source": "bt_lasilla_crux.mp4",
+      "why": [
+        "low detail: luma std 16.68 < 18.0"
+      ]
+    },
+    {
+      "row": "8",
+      "cut": 20,
+      "t": 90.63,
+      "source": "triple_b.mp4",
+      "why": [
+        "low detail: luma std 13.62 < 18.0"
+      ]
+    },
+    {
+      "row": "12",
+      "cut": 31,
+      "t": 146.27,
+      "source": "parallax.mp4",
+      "why": [
+        "low detail: luma std 11.25 < 18.0"
+      ]
+    },
+    {
+      "row": "14",
+      "cut": 39,
+      "t": 184.17,
+      "source": "parallax.mp4",
+      "why": [
+        "low detail: luma std 16.62 < 18.0"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 52,
+      "t": 241.5,
+      "source": "scale.mp4",
+      "why": [
+        "low detail: edge density 0.0028 < film p5 0.0059"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 53,
+      "t": 245.0,
+      "source": "scale.mp4",
+      "why": [
+        "low detail: edge density 0.0027 < film p5 0.0059"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 70,
+      "t": 326.38,
+      "source": "journey.mp4",
+      "why": [
+        "low detail: luma std 16.79 < 18.0"
+      ]
+    },
+    {
+      "row": "25",
+      "cut": 74,
+      "t": 343.6,
+      "source": "PIA21746.jpg",
+      "why": [
+        "low detail: edge density 0.0052 < film p5 0.0059"
+      ]
+    },
+    {
+      "row": "25",
+      "cut": 76,
+      "t": 352.23,
+      "source": "PIA17464.jpg",
+      "why": [
+        "low detail: edge density 0.0041 < film p5 0.0059"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "4",
+      "cut": 5,
+      "t": 22.33,
+      "source": "triple.mp4",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 4.07, p95 3.0"
+      ]
+    },
+    {
+      "row": "4",
+      "cut": 6,
+      "t": 26.65,
+      "source": "parallax.mp4",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "low detail: luma std 11.24 < 13.44 and edge density 0.023 < 0.0259 (absolute floor)",
+        "near-black: mean 4.33, p95 3.0",
+        "noise: grain 8.01 over structure 5.09, 8x-downscaled std 5.97 < 13.44 and edge 0.0171 < 0.0259"
+      ]
+    },
+    {
+      "row": "4",
+      "cut": 7,
+      "t": 30.93,
+      "source": "journey.mp4",
+      "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "low detail: luma std 9.29 < 13.44 and edge density 0.0058 < 0.0259 (absolute floor)",
+        "near-black: mean 3.64, p95 3.0"
+      ]
+    },
+    {
+      "row": "7",
+      "cut": 18,
+      "t": 81.05,
+      "source": "eso1241a.mp4",
+      "note": "Earth limb on dark space, label-free parts only (before ~20 s) (Claude, 9 Oct)",
+      "why": [
+        "near-black: mean 19.72, p95 63.0"
+      ]
+    },
+    {
+      "row": "8",
+      "cut": 20,
+      "t": 90.63,
+      "source": "triple_b.mp4",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+      "why": [
+        "near-black: mean 4.07, p95 3.0"
+      ]
+    },
+    {
+      "row": "9",
+      "cut": 25,
+      "t": 116.97,
+      "source": "lightyear.mp4",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+      "why": [
+        "near-black: mean 7.06, p95 10.0"
+      ]
+    },
+    {
+      "row": "12",
+      "cut": 31,
+      "t": 146.27,
+      "source": "parallax.mp4",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "low detail: luma std 11.25 < 13.44 and edge density 0.023 < 0.0259 (absolute floor)",
+        "near-black: mean 4.34, p95 4.0",
+        "noise: grain 8.01 over structure 5.11, 8x-downscaled std 6.0 < 13.44 and edge 0.0163 < 0.0259"
+      ]
+    },
+    {
+      "row": "14",
+      "cut": 39,
+      "t": 184.17,
+      "source": "parallax.mp4",
+      "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 5.31, p95 9.0",
+        "noise: grain 8.69 over structure 10.48, 8x-downscaled std 11.5 < 13.44 and edge 0.0258 < 0.0259"
+      ]
+    },
+    {
+      "row": "16",
+      "cut": 48,
+      "t": 225.93,
+      "source": "starfield.mp4",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 5.43, p95 4.0"
+      ]
+    },
+    {
+      "row": "17",
+      "cut": 50,
+      "t": 233.73,
+      "source": "starfield.mp4",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 7.71, p95 27.0"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 52,
+      "t": 241.5,
+      "source": "scale.mp4",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 12.41, p95 60.0"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 53,
+      "t": 245.0,
+      "source": "scale.mp4",
+      "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 13.02, p95 63.0"
+      ]
+    },
+    {
+      "row": "21",
+      "cut": 62,
+      "t": 284.35,
+      "source": "starfield.mp4",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 8.68, p95 20.0"
+      ]
+    },
+    {
+      "row": "22",
+      "cut": 65,
+      "t": 298.37,
+      "source": "PIA17049.jpg",
+      "note": "Voyager sharp and lit against black space; the dark is space (Claude, 9 Oct, rough v03 review)",
+      "why": [
+        "near-black: mean 10.37, p95 86.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 70,
+      "t": 326.38,
+      "source": "journey.mp4",
+      "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 5.04, p95 3.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 71,
+      "t": 330.62,
+      "source": "PIA04495.jpg",
+      "note": "whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)",
+      "why": [
+        "near-black: mean 21.53, p95 90.0"
+      ]
+    },
+    {
+      "row": "26",
+      "cut": 77,
+      "t": 358.27,
+      "source": "PIA21839.jpg",
+      "note": "Voyager lit against deep space; the dark is the picture (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 22.87, p95 69.0"
+      ]
+    },
+    {
+      "row": "27",
+      "cut": 78,
+      "t": 370.17,
+      "source": "lightrace.mp4",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+      "why": [
+        "near-black: mean 9.14, p95 4.0"
+      ]
+    },
+    {
+      "row": "28",
+      "cut": 80,
+      "t": 385.2,
+      "source": "eso1629d_video.mp4",
+      "note": "Earth limb on black, label-free part only (first ~8 s); the constellation-label part is out (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 11.77, p95 34.0"
+      ]
+    },
+    {
+      "row": "30",
+      "cut": 86,
+      "t": 410.17,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 18.48, p95 78.0"
+      ]
+    },
+    {
+      "row": "30",
+      "cut": 87,
+      "t": 414.95,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 17.01, p95 77.0"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "uhd_yb_paranal_01.mp4",
+      "t": 1.87,
+      "std": 32.48,
+      "mean": 51.09,
+      "p95": 104.0,
+      "edge": 0.0622,
+      "hf": 7.69,
+      "lf": 31.1,
+      "std8": 31.18,
+      "edge8": 0.0302,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "1",
+      "source": "iss073e0982261.jpg",
+      "t": 5.87,
+      "std": 47.18,
+      "mean": 85.85,
+      "p95": 201.0,
+      "edge": 0.0875,
+      "hf": 7.82,
+      "lf": 45.33,
+      "std8": 46.13,
+      "edge8": 0.1141,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 101,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "uhd_bt_paranal_01.mp4",
+      "t": 10.77,
+      "std": 21.81,
+      "mean": 39.37,
+      "p95": 68.0,
+      "edge": 0.0396,
+      "hf": 6.26,
+      "lf": 20.42,
+      "std8": 20.54,
+      "edge8": 0.0218,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "uhd_bt_paranal_06.mp4",
+      "t": 15.4,
+      "std": 20.42,
+      "mean": 48.63,
+      "p95": 81.0,
+      "edge": 0.0657,
+      "hf": 7.56,
+      "lf": 17.86,
+      "std8": 18.27,
+      "edge8": 0.0491,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "potw1343a.jpg",
+      "t": 18.68,
+      "std": 65.13,
+      "mean": 61.86,
+      "p95": 212.0,
+      "edge": 0.0065,
+      "hf": 1.25,
+      "lf": 64.29,
+      "std8": 64.95,
+      "edge8": 0.1262,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 58,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "4",
+      "source": "triple.mp4",
+      "t": 22.33,
+      "std": 13.61,
+      "mean": 4.07,
+      "p95": 3.0,
+      "edge": 0.0082,
+      "hf": 3.16,
+      "lf": 11.5,
+      "std8": 12.52,
+      "edge8": 0.0089,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 4.07, p95 3.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.61 < 18.0"
+      ]
+    },
+    {
+      "cut": 6,
+      "row": "4",
+      "source": "parallax.mp4",
+      "t": 26.65,
+      "std": 11.24,
+      "mean": 4.33,
+      "p95": 3.0,
+      "edge": 0.023,
+      "hf": 8.01,
+      "lf": 5.09,
+      "std8": 5.97,
+      "edge8": 0.0171,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "low detail: luma std 11.24 < 13.44 and edge density 0.023 < 0.0259 (absolute floor)",
+          "near-black: mean 4.33, p95 3.0",
+          "noise: grain 8.01 over structure 5.09, 8x-downscaled std 5.97 < 13.44 and edge 0.0171 < 0.0259"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 11.24 < 18.0"
+      ]
+    },
+    {
+      "cut": 7,
+      "row": "4",
+      "source": "journey.mp4",
+      "t": 30.93,
+      "std": 9.29,
+      "mean": 3.64,
+      "p95": 3.0,
+      "edge": 0.0058,
+      "hf": 2.82,
+      "lf": 6.83,
+      "std8": 8.07,
+      "edge8": 0.0067,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "low detail: luma std 9.29 < 13.44 and edge density 0.0058 < 0.0259 (absolute floor)",
+          "near-black: mean 3.64, p95 3.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 9.29 < 18.0",
+        "low detail: edge density 0.0058 < film p5 0.0059"
+      ]
+    },
+    {
+      "cut": 8,
+      "row": "5",
+      "source": "potw1343a.jpg",
+      "t": 35.45,
+      "std": 59.82,
+      "mean": 46.86,
+      "p95": 195.0,
+      "edge": 0.014,
+      "hf": 6.6,
+      "lf": 57.51,
+      "std8": 58.58,
+      "edge8": 0.1303,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 111,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "5",
+      "source": "eso1302a.jpg",
+      "t": 39.55,
+      "std": 57.81,
+      "mean": 63.37,
+      "p95": 182.0,
+      "edge": 0.5375,
+      "hf": 21.8,
+      "lf": 50.04,
+      "std8": 51.16,
+      "edge8": 0.3589,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.007,
+        "trend_y": -0.004,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 81,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "5",
+      "source": "eso1323a.jpg",
+      "t": 43.52,
+      "std": 67.35,
+      "mean": 61.31,
+      "p95": 209.0,
+      "edge": 0.5112,
+      "hf": 31.41,
+      "lf": 50.54,
+      "std8": 52.99,
+      "edge8": 0.6409,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 104,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "5",
+      "source": "heic0809a.jpg",
+      "t": 47.7,
+      "std": 45.99,
+      "mean": 77.83,
+      "p95": 163.0,
+      "edge": 0.7774,
+      "hf": 27.73,
+      "lf": 29.74,
+      "std8": 32.02,
+      "edge8": 0.4976,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 92,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "6",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "t": 52.0,
+      "std": 31.49,
+      "mean": 40.44,
+      "p95": 97.0,
+      "edge": 0.0055,
+      "hf": 3.59,
+      "lf": 30.06,
+      "std8": 30.77,
+      "edge8": 0.125,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 110,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0055 < film p5 0.0059"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "6",
+      "source": "GSFC_20171208_Archive_e000790.jpg",
+      "t": 56.68,
+      "std": 30.77,
+      "mean": 66.35,
+      "p95": 126.0,
+      "edge": 0.0747,
+      "hf": 6.33,
+      "lf": 26.38,
+      "std8": 28.34,
+      "edge8": 0.4241,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.016,
+        "reversals": 0,
+        "frames": 116,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 14,
+      "row": "6",
+      "source": "eso1629i.jpg",
+      "t": 61.4,
+      "std": 41.43,
+      "mean": 57.15,
+      "p95": 144.0,
+      "edge": 0.5027,
+      "hf": 19.15,
+      "lf": 35.89,
+      "std8": 36.24,
+      "edge8": 0.0415,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.0,
+        "reversals": 0,
+        "frames": 114,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "7",
+      "source": "eso1629i.jpg",
+      "t": 66.03,
+      "std": 34.48,
+      "mean": 54.73,
+      "p95": 124.0,
+      "edge": 0.5586,
+      "hf": 27.26,
+      "lf": 16.01,
+      "std8": 17.38,
+      "edge8": 0.1994,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 110,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 16,
+      "row": "7",
+      "source": "bt_lasilla_crux.mp4",
+      "t": 71.05,
+      "std": 16.68,
+      "mean": 59.83,
+      "p95": 83.0,
+      "edge": 0.0689,
+      "hf": 6.88,
+      "lf": 12.13,
+      "std8": 13.18,
+      "edge8": 0.0736,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.68 < 18.0"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "7",
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "t": 76.45,
+      "std": 48.0,
+      "mean": 50.5,
+      "p95": 160.0,
+      "edge": 0.0078,
+      "hf": 1.59,
+      "lf": 47.11,
+      "std8": 47.67,
+      "edge8": 0.1252,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 18,
+      "row": "7",
+      "source": "eso1241a.mp4",
+      "t": 81.05,
+      "std": 26.48,
+      "mean": 19.72,
+      "p95": 63.0,
+      "edge": 0.0289,
+      "hf": 5.11,
+      "lf": 24.62,
+      "std8": 25.43,
+      "edge8": 0.0486,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "Earth limb on dark space, label-free parts only (before ~20 s) (Claude, 9 Oct)",
+        "why": [
+          "near-black: mean 19.72, p95 63.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 19,
+      "row": "7",
+      "source": "eso0905a.jpg",
+      "t": 85.65,
+      "std": 51.9,
+      "mean": 86.34,
+      "p95": 190.0,
+      "edge": 0.0743,
+      "hf": 11.32,
+      "lf": 48.79,
+      "std8": 49.33,
+      "edge8": 0.2274,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.012,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "8",
+      "source": "triple_b.mp4",
+      "t": 90.63,
+      "std": 13.62,
+      "mean": 4.07,
+      "p95": 3.0,
+      "edge": 0.0082,
+      "hf": 3.16,
+      "lf": 11.51,
+      "std8": 12.48,
+      "edge8": 0.0099,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "why": [
+          "near-black: mean 4.07, p95 3.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.62 < 18.0"
+      ]
+    },
+    {
+      "cut": 21,
+      "row": "8",
+      "source": "eso0844a.jpg",
+      "t": 95.55,
+      "std": 62.77,
+      "mean": 81.36,
+      "p95": 207.0,
+      "edge": 0.6153,
+      "hf": 25.19,
+      "lf": 54.9,
+      "std8": 55.56,
+      "edge8": 0.3066,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.003,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 129,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "8",
+      "source": "uhd_bt_paranal_07.mp4",
+      "t": 101.02,
+      "std": 34.42,
+      "mean": 55.34,
+      "p95": 118.0,
+      "edge": 0.1631,
+      "hf": 12.1,
+      "lf": 31.11,
+      "std8": 31.48,
+      "edge8": 0.0912,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "8",
+      "source": "eso1250a_8k.jpg",
+      "t": 106.1,
+      "std": 47.37,
+      "mean": 87.63,
+      "p95": 169.0,
+      "edge": 0.1991,
+      "hf": 14.23,
+      "lf": 42.89,
+      "std8": 43.7,
+      "edge8": 0.2912,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 108,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "9",
+      "source": "iss073e0982679.jpg",
+      "t": 110.27,
+      "std": 44.88,
+      "mean": 82.8,
+      "p95": 181.0,
+      "edge": 0.0893,
+      "hf": 8.19,
+      "lf": 43.32,
+      "std8": 43.88,
+      "edge8": 0.0704,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 89,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "9",
+      "source": "lightyear.mp4",
+      "t": 116.97,
+      "std": 24.37,
+      "mean": 7.06,
+      "p95": 10.0,
+      "edge": 0.0267,
+      "hf": 8.4,
+      "lf": 17.09,
+      "std8": 19.71,
+      "edge8": 0.0486,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "why": [
+          "near-black: mean 7.06, p95 10.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "10",
+      "source": "GSFC_20171208_Archive_e000256.jpg",
+      "t": 123.32,
+      "std": 47.25,
+      "mean": 47.03,
+      "p95": 153.0,
+      "edge": 0.4087,
+      "hf": 28.68,
+      "lf": 25.43,
+      "std8": 29.91,
+      "edge8": 0.5839,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 68,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 27,
+      "row": "10",
+      "source": "iss073e0982261.jpg",
+      "t": 126.28,
+      "std": 52.54,
+      "mean": 115.23,
+      "p95": 227.0,
+      "edge": 0.2382,
+      "hf": 11.65,
+      "lf": 50.49,
+      "std8": 50.99,
+      "edge8": 0.0755,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 56,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 28,
+      "row": "11",
+      "source": "orbit_thumb_omni_v01.mp4",
+      "t": 132.4,
+      "std": 47.53,
+      "mean": 70.65,
+      "p95": 184.0,
+      "edge": 0.1957,
+      "hf": 12.18,
+      "lf": 44.11,
+      "std8": 44.95,
+      "edge8": 0.1048,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 29,
+      "row": "11",
+      "source": "eso1323a.jpg",
+      "t": 138.97,
+      "std": 73.34,
+      "mean": 120.09,
+      "p95": 237.0,
+      "edge": 0.5621,
+      "hf": 21.04,
+      "lf": 56.17,
+      "std8": 60.88,
+      "edge8": 0.8282,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.003,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 83,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "11",
+      "source": "iss073e0982679.jpg",
+      "t": 142.33,
+      "std": 28.87,
+      "mean": 90.83,
+      "p95": 137.0,
+      "edge": 0.2036,
+      "hf": 11.09,
+      "lf": 25.8,
+      "std8": 26.13,
+      "edge8": 0.0316,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 65,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 31,
+      "row": "12",
+      "source": "parallax.mp4",
+      "t": 146.27,
+      "std": 11.25,
+      "mean": 4.34,
+      "p95": 4.0,
+      "edge": 0.023,
+      "hf": 8.01,
+      "lf": 5.11,
+      "std8": 6.0,
+      "edge8": 0.0163,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "low detail: luma std 11.25 < 13.44 and edge density 0.023 < 0.0259 (absolute floor)",
+          "near-black: mean 4.34, p95 4.0",
+          "noise: grain 8.01 over structure 5.11, 8x-downscaled std 6.0 < 13.44 and edge 0.0163 < 0.0259"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 11.25 < 18.0"
+      ]
+    },
+    {
+      "cut": 32,
+      "row": "12",
+      "source": "eso0934a.jpg",
+      "t": 150.7,
+      "std": 53.62,
+      "mean": 91.83,
+      "p95": 197.0,
+      "edge": 0.1089,
+      "hf": 7.45,
+      "lf": 52.0,
+      "std8": 52.52,
+      "edge8": 0.2168,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.004,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 96,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 33,
+      "row": "12",
+      "source": "vltfromvistatimelapse.mp4",
+      "t": 155.15,
+      "std": 32.17,
+      "mean": 86.57,
+      "p95": 152.0,
+      "edge": 0.0424,
+      "hf": 6.27,
+      "lf": 30.57,
+      "std8": 31.04,
+      "edge8": 0.0421,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "12",
+      "source": "GSFC_20171208_Archive_e000256.jpg",
+      "t": 159.88,
+      "std": 48.88,
+      "mean": 56.39,
+      "p95": 167.0,
+      "edge": 0.4337,
+      "hf": 28.31,
+      "lf": 25.57,
+      "std8": 30.64,
+      "edge8": 0.6935,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 112,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 35,
+      "row": "12",
+      "source": "GSFC_20171208_Archive_e000214.jpg",
+      "t": 164.43,
+      "std": 45.47,
+      "mean": 44.0,
+      "p95": 148.0,
+      "edge": 0.0096,
+      "hf": 1.66,
+      "lf": 44.56,
+      "std8": 45.12,
+      "edge8": 0.1193,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 107,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 36,
+      "row": "13",
+      "source": "Tycho_Brahe.jpg",
+      "t": 169.0,
+      "std": 73.05,
+      "mean": 103.75,
+      "p95": 225.0,
+      "edge": 0.0709,
+      "hf": 7.24,
+      "lf": 71.03,
+      "std8": 71.66,
+      "edge8": 0.2297,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 114,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 37,
+      "row": "13",
+      "source": "eso0932a.jpg",
+      "t": 173.8,
+      "std": 36.79,
+      "mean": 36.71,
+      "p95": 112.0,
+      "edge": 0.3393,
+      "hf": 13.01,
+      "lf": 33.38,
+      "std8": 33.91,
+      "edge8": 0.1098,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 120,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 38,
+      "row": "13",
+      "source": "eso1031a.jpg",
+      "t": 178.98,
+      "std": 35.27,
+      "mean": 87.82,
+      "p95": 147.0,
+      "edge": 0.058,
+      "hf": 9.41,
+      "lf": 31.36,
+      "std8": 32.3,
+      "edge8": 0.1739,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 136,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 39,
+      "row": "14",
+      "source": "parallax.mp4",
+      "t": 184.17,
+      "std": 16.62,
+      "mean": 5.31,
+      "p95": 9.0,
+      "edge": 0.0247,
+      "hf": 8.69,
+      "lf": 10.48,
+      "std8": 11.5,
+      "edge8": 0.0258,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, black space by design; 3 uses allowed because Earth moves round the orbit each time; noise is the star dots (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 5.31, p95 9.0",
+          "noise: grain 8.69 over structure 10.48, 8x-downscaled std 11.5 < 13.44 and edge 0.0258 < 0.0259"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.62 < 18.0"
+      ]
+    },
+    {
+      "cut": 40,
+      "row": "14",
+      "source": "eso0934a.jpg",
+      "t": 188.77,
+      "std": 34.63,
+      "mean": 95.59,
+      "p95": 154.0,
+      "edge": 0.3088,
+      "hf": 10.94,
+      "lf": 31.45,
+      "std8": 32.08,
+      "edge8": 0.173,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 101,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 41,
+      "row": "14",
+      "source": "Bessel_Herterich_1825.jpg",
+      "t": 193.15,
+      "std": 62.98,
+      "mean": 164.78,
+      "p95": 224.0,
+      "edge": 0.3853,
+      "hf": 20.77,
+      "lf": 56.73,
+      "std8": 57.84,
+      "edge8": 0.3359,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.011,
+        "reversals": 0,
+        "frames": 107,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 42,
+      "row": "14",
+      "source": "eso1250a_8k.jpg",
+      "t": 197.95,
+      "std": 37.25,
+      "mean": 127.35,
+      "p95": 185.0,
+      "edge": 0.0999,
+      "hf": 9.92,
+      "lf": 33.63,
+      "std8": 34.34,
+      "edge8": 0.225,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 125,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 43,
+      "row": "14",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 202.82,
+      "std": 53.63,
+      "mean": 85.62,
+      "p95": 207.0,
+      "edge": 0.0503,
+      "hf": 7.99,
+      "lf": 51.63,
+      "std8": 52.24,
+      "edge8": 0.1188,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 44,
+      "row": "15",
+      "source": "gaia_sky_in_colour.jpg",
+      "t": 207.3,
+      "std": 40.23,
+      "mean": 65.33,
+      "p95": 149.0,
+      "edge": 0.0697,
+      "hf": 6.27,
+      "lf": 39.07,
+      "std8": 39.41,
+      "edge8": 0.0854,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.008,
+        "reversals": 0,
+        "frames": 102,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 45,
+      "row": "15",
+      "source": "eso0844a.jpg",
+      "t": 212.17,
+      "std": 54.95,
+      "mean": 150.58,
+      "p95": 230.0,
+      "edge": 0.5773,
+      "hf": 21.52,
+      "lf": 43.87,
+      "std8": 45.92,
+      "edge8": 0.4803,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 46,
+      "row": "15",
+      "source": "gaia_sky_in_colour.jpg",
+      "t": 217.15,
+      "std": 42.67,
+      "mean": 99.95,
+      "p95": 182.0,
+      "edge": 0.2378,
+      "hf": 9.57,
+      "lf": 40.52,
+      "std8": 41.01,
+      "edge8": 0.1427,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 111,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 47,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e001982.jpg",
+      "t": 221.92,
+      "std": 66.99,
+      "mean": 46.86,
+      "p95": 185.0,
+      "edge": 0.0487,
+      "hf": 6.56,
+      "lf": 64.65,
+      "std8": 65.83,
+      "edge8": 0.1895,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 122,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 48,
+      "row": "16",
+      "source": "starfield.mp4",
+      "t": 225.93,
+      "std": 18.63,
+      "mean": 5.43,
+      "p95": 4.0,
+      "edge": 0.0372,
+      "hf": 14.61,
+      "lf": 3.65,
+      "std8": 6.13,
+      "edge8": 0.1056,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 5.43, p95 4.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 49,
+      "row": "16",
+      "source": "heic1007a.jpg",
+      "t": 229.75,
+      "std": 40.77,
+      "mean": 102.21,
+      "p95": 186.0,
+      "edge": 0.0616,
+      "hf": 7.59,
+      "lf": 36.21,
+      "std8": 38.13,
+      "edge8": 0.3321,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 111,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 50,
+      "row": "17",
+      "source": "starfield.mp4",
+      "t": 233.73,
+      "std": 25.78,
+      "mean": 7.71,
+      "p95": 27.0,
+      "edge": 0.0501,
+      "hf": 16.84,
+      "lf": 11.52,
+      "std8": 13.95,
+      "edge8": 0.1497,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 7.71, p95 27.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 51,
+      "row": "17",
+      "source": "eso1302a.jpg",
+      "t": 237.45,
+      "std": 58.54,
+      "mean": 123.1,
+      "p95": 223.0,
+      "edge": 0.4922,
+      "hf": 18.83,
+      "lf": 50.65,
+      "std8": 52.26,
+      "edge8": 0.5229,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 93,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 52,
+      "row": "18",
+      "source": "scale.mp4",
+      "t": 241.5,
+      "std": 32.51,
+      "mean": 12.41,
+      "p95": 60.0,
+      "edge": 0.0028,
+      "hf": 2.03,
+      "lf": 31.99,
+      "std8": 32.36,
+      "edge8": 0.0104,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 12.41, p95 60.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0028 < film p5 0.0059"
+      ]
+    },
+    {
+      "cut": 53,
+      "row": "18",
+      "source": "scale.mp4",
+      "t": 245.0,
+      "std": 34.21,
+      "mean": 13.02,
+      "p95": 63.0,
+      "edge": 0.0027,
+      "hf": 2.04,
+      "lf": 33.7,
+      "std8": 34.07,
+      "edge8": 0.0111,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, black space by design (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 13.02, p95 63.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0027 < film p5 0.0059"
+      ]
+    },
+    {
+      "cut": 54,
+      "row": "18",
+      "source": "heic1007a.jpg",
+      "t": 248.25,
+      "std": 46.31,
+      "mean": 119.69,
+      "p95": 204.0,
+      "edge": 0.0548,
+      "hf": 8.12,
+      "lf": 41.18,
+      "std8": 43.58,
+      "edge8": 0.4102,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 81,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 55,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "t": 252.35,
+      "std": 50.55,
+      "mean": 91.66,
+      "p95": 187.0,
+      "edge": 0.3247,
+      "hf": 15.03,
+      "lf": 43.52,
+      "std8": 45.53,
+      "edge8": 0.5027,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 111,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 56,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "t": 256.58,
+      "std": 42.58,
+      "mean": 148.58,
+      "p95": 220.0,
+      "edge": 0.0609,
+      "hf": 6.44,
+      "lf": 40.7,
+      "std8": 41.32,
+      "edge8": 0.2193,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 88,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 57,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e001788.jpg",
+      "t": 260.92,
+      "std": 47.3,
+      "mean": 131.89,
+      "p95": 222.0,
+      "edge": 0.3407,
+      "hf": 15.8,
+      "lf": 39.89,
+      "std8": 41.8,
+      "edge8": 0.4749,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 117,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 58,
+      "row": "20",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "t": 265.8,
+      "std": 55.57,
+      "mean": 95.86,
+      "p95": 195.0,
+      "edge": 0.2833,
+      "hf": 15.18,
+      "lf": 48.61,
+      "std8": 50.69,
+      "edge8": 0.5318,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 120,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 59,
+      "row": "20",
+      "source": "GSFC_20171208_Archive_e001788.jpg",
+      "t": 270.17,
+      "std": 54.38,
+      "mean": 150.12,
+      "p95": 248.0,
+      "edge": 0.2519,
+      "hf": 15.14,
+      "lf": 47.02,
+      "std8": 48.83,
+      "edge8": 0.4678,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.02,
+        "reversals": 0,
+        "frames": 87,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 60,
+      "row": "20",
+      "source": "iss025e015176.jpg",
+      "t": 274.72,
+      "std": 43.11,
+      "mean": 74.64,
+      "p95": 150.0,
+      "edge": 0.0486,
+      "hf": 5.66,
+      "lf": 38.77,
+      "std8": 41.09,
+      "edge8": 0.5168,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 132,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 61,
+      "row": "21",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 279.72,
+      "std": 51.01,
+      "mean": 93.27,
+      "p95": 210.0,
+      "edge": 0.1041,
+      "hf": 10.95,
+      "lf": 47.93,
+      "std8": 48.7,
+      "edge8": 0.1553,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 62,
+      "row": "21",
+      "source": "starfield.mp4",
+      "t": 284.35,
+      "std": 28.3,
+      "mean": 8.68,
+      "p95": 20.0,
+      "edge": 0.0769,
+      "hf": 19.97,
+      "lf": 8.15,
+      "std8": 11.47,
+      "edge8": 0.2324,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 8.68, p95 20.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 63,
+      "row": "21",
+      "source": "eso0905a.jpg",
+      "t": 289.2,
+      "std": 44.4,
+      "mean": 106.71,
+      "p95": 189.0,
+      "edge": 0.0384,
+      "hf": 6.77,
+      "lf": 41.68,
+      "std8": 42.22,
+      "edge8": 0.1846,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.017,
+        "reversals": 0,
+        "frames": 126,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 64,
+      "row": "21",
+      "source": "heic0809a.jpg",
+      "t": 293.83,
+      "std": 49.92,
+      "mean": 111.0,
+      "p95": 205.0,
+      "edge": 0.8398,
+      "hf": 35.69,
+      "lf": 21.46,
+      "std8": 26.51,
+      "edge8": 0.6972,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 97,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 65,
+      "row": "22",
+      "source": "PIA17049.jpg",
+      "t": 298.37,
+      "std": 38.52,
+      "mean": 10.37,
+      "p95": 86.0,
+      "edge": 0.0426,
+      "hf": 8.25,
+      "lf": 35.4,
+      "std8": 36.56,
+      "edge8": 0.0932,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.018,
+        "reversals": 0,
+        "frames": 120,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "Voyager sharp and lit against black space; the dark is space (Claude, 9 Oct, rough v03 review)",
+        "why": [
+          "near-black: mean 10.37, p95 86.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "22",
+      "source": "PIA21739.jpg",
+      "t": 303.67,
+      "std": 71.48,
+      "mean": 81.45,
+      "p95": 223.0,
+      "edge": 0.1403,
+      "hf": 11.49,
+      "lf": 64.44,
+      "std8": 66.9,
+      "edge8": 0.4818,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.014,
+        "reversals": 0,
+        "frames": 143,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 67,
+      "row": "22",
+      "source": "PIA21746.jpg",
+      "t": 309.17,
+      "std": 47.9,
+      "mean": 113.92,
+      "p95": 252.0,
+      "edge": 0.0177,
+      "hf": 6.76,
+      "lf": 44.98,
+      "std8": 45.63,
+      "edge8": 0.0946,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 132,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "23",
+      "source": "PIA17464.jpg",
+      "t": 313.33,
+      "std": 64.02,
+      "mean": 77.92,
+      "p95": 195.0,
+      "edge": 0.0078,
+      "hf": 5.24,
+      "lf": 62.7,
+      "std8": 63.07,
+      "edge8": 0.0704,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 62,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 69,
+      "row": "24",
+      "source": "orbit_walk_omni_v01.mp4",
+      "t": 319.23,
+      "std": 36.38,
+      "mean": 47.62,
+      "p95": 124.0,
+      "edge": 0.321,
+      "hf": 17.49,
+      "lf": 23.7,
+      "std8": 26.93,
+      "edge8": 0.4552,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 70,
+      "row": "24",
+      "source": "journey.mp4",
+      "t": 326.38,
+      "std": 16.79,
+      "mean": 5.04,
+      "p95": 3.0,
+      "edge": 0.0198,
+      "hf": 6.39,
+      "lf": 11.24,
+      "std8": 13.65,
+      "edge8": 0.0349,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic; 3 uses allowed, the lines and the walker's progress change each time (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 5.04, p95 3.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.79 < 18.0"
+      ]
+    },
+    {
+      "cut": 71,
+      "row": "24",
+      "source": "PIA04495.jpg",
+      "t": 330.62,
+      "std": 44.54,
+      "mean": 21.53,
+      "p95": 90.0,
+      "edge": 0.0438,
+      "hf": 10.23,
+      "lf": 40.15,
+      "std8": 41.87,
+      "edge8": 0.097,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.007,
+        "trend_y": 0.012,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 62,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "whole Voyager sharp and lit against a blue nebula; the dark is space (Claude, 9 Oct, rough v04 review)",
+        "why": [
+          "near-black: mean 21.53, p95 90.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 72,
+      "row": "24",
+      "source": "PIA21739.jpg",
+      "t": 334.33,
+      "std": 62.02,
+      "mean": 67.95,
+      "p95": 187.0,
+      "edge": 0.074,
+      "hf": 7.66,
+      "lf": 57.19,
+      "std8": 59.36,
+      "edge8": 0.3452,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 107,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "25",
+      "source": "PIA14111.jpg",
+      "t": 338.93,
+      "std": 41.82,
+      "mean": 59.04,
+      "p95": 137.0,
+      "edge": 0.0866,
+      "hf": 11.35,
+      "lf": 34.7,
+      "std8": 37.18,
+      "edge8": 0.2277,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.008,
+        "max_off_trend_px": 0.02,
+        "reversals": 0,
+        "frames": 115,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 74,
+      "row": "25",
+      "source": "PIA21746.jpg",
+      "t": 343.6,
+      "std": 54.31,
+      "mean": 126.24,
+      "p95": 252.0,
+      "edge": 0.0052,
+      "hf": 1.64,
+      "lf": 53.68,
+      "std8": 53.92,
+      "edge8": 0.0508,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 110,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0052 < film p5 0.0059"
+      ]
+    },
+    {
+      "cut": 75,
+      "row": "25",
+      "source": "ESO_star_trails_VLT_Paranal.jpg",
+      "t": 347.82,
+      "std": 31.91,
+      "mean": 68.96,
+      "p95": 131.0,
+      "edge": 0.3415,
+      "hf": 17.87,
+      "lf": 21.38,
+      "std8": 22.98,
+      "edge8": 0.2853,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.0,
+        "reversals": 0,
+        "frames": 87,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 76,
+      "row": "25",
+      "source": "PIA17464.jpg",
+      "t": 352.23,
+      "std": 52.2,
+      "mean": 115.81,
+      "p95": 193.0,
+      "edge": 0.0041,
+      "hf": 2.56,
+      "lf": 51.52,
+      "std8": 51.75,
+      "edge8": 0.0561,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 122,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0041 < film p5 0.0059"
+      ]
+    },
+    {
+      "cut": 77,
+      "row": "26",
+      "source": "PIA21839.jpg",
+      "t": 358.27,
+      "std": 20.13,
+      "mean": 22.87,
+      "p95": 69.0,
+      "edge": 0.0232,
+      "hf": 4.76,
+      "lf": 18.03,
+      "std8": 18.82,
+      "edge8": 0.0502,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 185,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "Voyager lit against deep space; the dark is the picture (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 22.87, p95 69.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 78,
+      "row": "27",
+      "source": "lightrace.mp4",
+      "t": 370.17,
+      "std": 32.22,
+      "mean": 9.14,
+      "p95": 4.0,
+      "edge": 0.0207,
+      "hf": 7.36,
+      "lf": 26.73,
+      "std8": 28.68,
+      "edge8": 0.0588,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "why": [
+          "near-black: mean 9.14, p95 4.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 79,
+      "row": "28",
+      "source": "eso1629a.jpg",
+      "t": 380.78,
+      "std": 41.9,
+      "mean": 53.66,
+      "p95": 142.0,
+      "edge": 0.064,
+      "hf": 8.5,
+      "lf": 38.9,
+      "std8": 39.91,
+      "edge8": 0.1257,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.004,
+        "trend_y": 0.016,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 107,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 80,
+      "row": "28",
+      "source": "eso1629d_video.mp4",
+      "t": 385.2,
+      "std": 24.57,
+      "mean": 11.77,
+      "p95": 34.0,
+      "edge": 0.0122,
+      "hf": 6.39,
+      "lf": 20.83,
+      "std8": 22.15,
+      "edge8": 0.0639,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "Earth limb on black, label-free part only (first ~8 s); the constellation-label part is out (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 11.77, p95 34.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 81,
+      "row": "28",
+      "source": "eso1629a.jpg",
+      "t": 389.63,
+      "std": 47.61,
+      "mean": 78.42,
+      "p95": 186.0,
+      "edge": 0.0521,
+      "hf": 5.88,
+      "lf": 46.49,
+      "std8": 46.93,
+      "edge8": 0.1011,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": 0.013,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 109,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 82,
+      "row": "28",
+      "source": "eso1629e_video.mp4",
+      "t": 394.15,
+      "std": 42.01,
+      "mean": 31.36,
+      "p95": 130.0,
+      "edge": 0.028,
+      "hf": 6.6,
+      "lf": 40.08,
+      "std8": 40.5,
+      "edge8": 0.0223,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 83,
+      "row": "29",
+      "source": "eso1629e.jpg",
+      "t": 398.1,
+      "std": 67.79,
+      "mean": 119.15,
+      "p95": 233.0,
+      "edge": 0.0172,
+      "hf": 3.57,
+      "lf": 66.52,
+      "std8": 67.09,
+      "edge8": 0.2664,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 74,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 84,
+      "row": "29",
+      "source": "eso1629e_video.mp4",
+      "t": 401.7,
+      "std": 37.89,
+      "mean": 32.86,
+      "p95": 121.0,
+      "edge": 0.0284,
+      "hf": 4.65,
+      "lf": 37.3,
+      "std8": 37.5,
+      "edge8": 0.0117,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 85,
+      "row": "30",
+      "source": "eso1629e.jpg",
+      "t": 405.82,
+      "std": 67.81,
+      "mean": 119.22,
+      "p95": 233.0,
+      "edge": 0.0179,
+      "hf": 3.65,
+      "lf": 66.53,
+      "std8": 67.1,
+      "edge8": 0.2633,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 105,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 86,
+      "row": "30",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "t": 410.17,
+      "std": 29.92,
+      "mean": 18.48,
+      "p95": 78.0,
+      "edge": 0.0196,
+      "hf": 3.6,
+      "lf": 28.18,
+      "std8": 29.06,
+      "edge8": 0.1286,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 18.48, p95 78.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 87,
+      "row": "30",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "t": 414.95,
+      "std": 28.7,
+      "mean": 17.01,
+      "p95": 77.0,
+      "edge": 0.0183,
+      "hf": 3.64,
+      "lf": 27.26,
+      "std8": 27.96,
+      "edge8": 0.1338,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "full Sun disk on black sky; the dark is space (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 17.01, p95 77.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 88,
+      "row": "30",
+      "source": "GSFC_20171208_Archive_e000759.jpg",
+      "t": 419.58,
+      "std": 37.46,
+      "mean": 118.14,
+      "p95": 186.0,
+      "edge": 0.0087,
+      "hf": 2.93,
+      "lf": 35.76,
+      "std8": 36.52,
+      "edge8": 0.2656,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 92,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 89,
+      "row": "31",
+      "source": "ACD24-0020-061.jpg",
+      "t": 424.2,
+      "std": 79.29,
+      "mean": 60.14,
+      "p95": 221.0,
+      "edge": 0.0939,
+      "hf": 13.26,
+      "lf": 71.06,
+      "std8": 74.85,
+      "edge8": 0.32,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.003,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 132,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 90,
+      "row": "31",
+      "source": "ACS3_SolarPanels_001.jpg",
+      "t": 429.52,
+      "std": 54.37,
+      "mean": 125.81,
+      "p95": 215.0,
+      "edge": 0.0415,
+      "hf": 5.67,
+      "lf": 51.95,
+      "std8": 53.11,
+      "edge8": 0.2692,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.054,
+        "reversals": 0,
+        "frames": 134,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 91,
+      "row": "31",
+      "source": "CamA_Seq109_2024-08-28_17-17-11Z_V2_S560161.jpg",
+      "t": 434.38,
+      "std": 96.85,
+      "mean": 114.08,
+      "p95": 252.0,
+      "edge": 0.2042,
+      "hf": 16.44,
+      "lf": 91.76,
+      "std8": 93.47,
+      "edge8": 0.3126,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.003,
+        "trend_y": 0.005,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 104,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 92,
+      "row": "31",
+      "source": "CamC_Seq109_2024-08-28_17-17-13Z_V2_S595171.jpg",
+      "t": 439.35,
+      "std": 91.83,
+      "mean": 164.08,
+      "p95": 252.0,
+      "edge": 0.3479,
+      "hf": 19.44,
+      "lf": 85.03,
+      "std8": 87.31,
+      "edge8": 0.3622,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.003,
+        "trend_y": 0.003,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 141,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 93,
+      "row": "32",
+      "source": "PIA23214.jpg",
+      "t": 444.68,
+      "std": 42.84,
+      "mean": 118.82,
+      "p95": 185.0,
+      "edge": 0.1493,
+      "hf": 10.06,
+      "lf": 39.58,
+      "std8": 40.67,
+      "edge8": 0.1879,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.006,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.009,
+        "reversals": 0,
+        "frames": 125,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 94,
+      "row": "32",
+      "source": "PIA24163.jpg",
+      "t": 449.83,
+      "std": 52.03,
+      "mean": 129.23,
+      "p95": 187.0,
+      "edge": 0.0632,
+      "hf": 9.63,
+      "lf": 47.38,
+      "std8": 48.57,
+      "edge8": 0.2186,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.005,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 128,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 95,
+      "row": "32",
+      "source": "PIA25136.jpg",
+      "t": 454.92,
+      "std": 56.9,
+      "mean": 171.04,
+      "p95": 236.0,
+      "edge": 0.1752,
+      "hf": 14.4,
+      "lf": 52.07,
+      "std8": 52.74,
+      "edge8": 0.2466,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.008,
+        "reversals": 0,
+        "frames": 122,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 96,
+      "row": "33",
+      "source": "PIA26147.jpg",
+      "t": 460.33,
+      "std": 53.74,
+      "mean": 54.89,
+      "p95": 196.0,
+      "edge": 0.1612,
+      "hf": 19.95,
+      "lf": 47.68,
+      "std8": 48.35,
+      "edge8": 0.1538,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.003,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 149,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 97,
+      "row": "33",
+      "source": "PIA25137.jpg",
+      "t": 465.97,
+      "std": 87.03,
+      "mean": 120.6,
+      "p95": 252.0,
+      "edge": 0.2394,
+      "hf": 18.74,
+      "lf": 77.69,
+      "std8": 80.86,
+      "edge8": 0.4258,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.005,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 98,
+      "row": "33",
+      "source": "eso0932a.jpg",
+      "t": 471.12,
+      "std": 31.93,
+      "mean": 35.87,
+      "p95": 101.0,
+      "edge": 0.4486,
+      "hf": 16.48,
+      "lf": 26.47,
+      "std8": 26.86,
+      "edge8": 0.0634,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 120,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 99,
+      "row": "33",
+      "source": "uhd_bt_paranal_06.mp4",
+      "t": 474.88,
+      "std": 19.39,
+      "mean": 44.15,
+      "p95": 73.0,
+      "edge": 0.0405,
+      "hf": 6.08,
+      "lf": 17.45,
+      "std8": 17.74,
+      "edge8": 0.05,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 100,
+      "row": "33",
+      "source": "ESO_star_trails_VLT_Paranal.jpg",
+      "t": 479.2,
+      "std": 34.27,
+      "mean": 73.39,
+      "p95": 143.0,
+      "edge": 0.3321,
+      "hf": 18.85,
+      "lf": 22.26,
+      "std8": 24.41,
+      "edge8": 0.3616,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 152,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 101,
+      "row": "33",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 485.08,
+      "std": 51.97,
+      "mean": 96.85,
+      "p95": 213.0,
+      "edge": 0.1494,
+      "hf": 13.41,
+      "lf": 47.51,
+      "std8": 48.46,
+      "edge8": 0.2047,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 102,
+      "row": "33",
+      "source": "uhd_yb_paranal_02.mp4",
+      "t": 491.22,
+      "std": 30.26,
+      "mean": 60.39,
+      "p95": 107.0,
+      "edge": 0.0804,
+      "hf": 8.77,
+      "lf": 27.93,
+      "std8": 28.32,
+      "edge8": 0.0564,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
