@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0207 | mini | open | – | – | chart · OWB compilation: 5 chapter cards + countdown timeline x3 code graphics |  |
 | J0210 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
-| J0214 | mini | claimed | cursor | 2026-10-12T23:23Z | image · HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) | 6131173528 |
+| J0214 | mini | claimed | cursor | 2026-10-12T22:48Z | image · HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) | 6131173528 |
 
 Recently finished:
 
