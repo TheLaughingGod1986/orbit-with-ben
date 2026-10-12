@@ -7990,13 +7990,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T08:21Z",
-      "eta": "2026-10-12T10:21Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T08:15Z",
-      "result": "",
+      "result": "parked for Chief: HOS 004 GHZDsiH7L7A T&C is already armed with 3 pairs (A v04, C v07, B v04; Ineligible until 15 Oct 17:00Z). Studio offers no in-place edit: the strip menu's A/B Testing opens 'Run a new test? Your current test will be deleted' (Cancel pressed, nothing changed). Swapping C to v07b means deleting and re-arming all 3 pairs, i.e. pressing Continue (Never list, 9 Oct). Chief: OK that one-off exception to re-arm A/C v07b/B with the same titles, or keep v07. PR #267 (branch c6b0f3b) already merged.",
       "history": [
         {
           "at": "2026-10-12T08:15Z",
@@ -8017,6 +8017,11 @@
           "at": "2026-10-12T08:27Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Studio checked; swap needs test delete"
+        },
+        {
+          "at": "2026-10-12T08:27Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: HOS 004 GHZDsiH7L7A T&C is already armed with 3 pairs (A v04, C v07, B v04; Ineligible until 15 Oct 17:00Z). Studio offers no in-place edit: the strip menu's A/B Testing opens 'Run a new test? Your current test will be deleted' (Cancel pressed, nothing changed). Swapping C to v07b means deleting and re-arming all 3 pairs, i.e. pressing Continue (Never list, 9 Oct). Chief: OK that one-off exception to re-arm A/C v07b/B with the same titles, or keep v07. PR #267 (branch c6b0f3b) already merged."
         }
       ],
       "kind": "studio",
