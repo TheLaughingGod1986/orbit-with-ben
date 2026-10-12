@@ -1,5 +1,5 @@
 {
-  "next_id": 217,
+  "next_id": 218,
   "jobs": [
     {
       "id": "J0001",
@@ -13784,6 +13784,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0217",
+      "title": "HOS standalone Shorts S5-S8: custom 9:16 covers",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS standalone Shorts S5-S8: custom 9:16 covers (split from J0171, like J0209 for S1-S4; cover composer = `chart` kind, Codex first).\n\nCuts: HOS `docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/hos_sa_s{5..8}_*_v01.mp4` (media on the Mini; index SHORTS_INDEX_v01.json; HOS PR #307 23c7c54; desk 6134823664).\n\n- One cover per Short, 1080x1920, composed in code with `compose_covers_j0209.py` (extend it, same house look and checks as COVERS_J0209_*) over that Short's frame-0 plate: `plates_v01/s5/01_pigeons_horn_v01.jpg`, `s6/01_mouldy_dish_v01.jpg`, `s7/01_candle_jar_v01.jpg`, `s8/01_tall_tube_v01.jpg`. No new pixels, no spend.\n- The cover word reads with the Short's hook (BLAMED THE PIGEONS / SAVED BY MOULD / MINT FIXED THE AIR / BLOOD EIGHT FEET UP), but follows the J0209 rules Chief passed (cover text never just repeats the title).\n- Output `covers_j0209_v01/hos_sa_s{5..8}_cover_v01.png` so `_stems_level_v01.py --only s5 s6 s7 s8` picks them up (its all_pass needs a cover per Short). Then rerun that script, post a sheet on HOS #180 and park for Chief KEEP. No upload.\n",
+      "ref": "6134823664",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T23:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T23:49Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [
