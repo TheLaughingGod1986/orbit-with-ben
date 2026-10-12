@@ -1,5 +1,5 @@
 {
-  "next_id": 213,
+  "next_id": 214,
   "jobs": [
     {
       "id": "J0001",
@@ -13090,6 +13090,33 @@
         }
       ],
       "kind": "facts"
+    },
+    {
+      "id": "J0213",
+      "title": "HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS standalone Shorts S5-S8 VO: one take each with `04_Audio/tools/vo_take.py --text` (Ben Orbit Narrator, eleven_v3, speed 1.04 as S1-S4), `--dry-run` first, word for word the Chief-locked lines 5-8 in docs/STANDALONE_SHORTS_TEST_2026-10/SCRIPTS_v02.md (HOS #180 6127927589). Short 5's first line and caption follow the S5 quote result of the facts job this waits on (OK keeps \"blamed on pigeons\"; FLAG uses the lock's fallback line). About 1,100 characters total.\n\nCredit: read the ElevenLabs balance first; HOS long VO (J0111/J0113) keeps its priority if still open; spend nothing if below what the job needs; no top-up or overage. Log each take in ai_spend (pool elevenlabs, film HOS:SA). Output in vo_v01/ (audio gitignored) as hos_sa_s5..s8_<slug>_vo_v01; update vo_v01/VO_STATUS.md with length, vo_check, Scribe and pause totals (S1-S4 table format). Then park for Chief KEEP on the takes. Commit from a clean worktree.\n",
+      "ref": "6127927589",
+      "film": "",
+      "stage": "",
+      "after": "J0212",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T21:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T21:55Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
     }
   ],
   "focus": [
