@@ -9,6 +9,7 @@
 .tf .bar i{background:var(--ink-3)!important;opacity:.6}
 .tf .wnow{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--doing-soft);color:var(--doing);vertical-align:1px}
 .tf.runcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.tf .ch{background:var(--panel-2)!important;color:var(--ink-2)!important;font-weight:500}
 #foldJobs,#foldPlans{margin:8px 0}
 #foldJobs .jb{margin-top:8px}
 </style></head><body>
@@ -556,7 +557,7 @@ function view(){
   }
   return out;
 }
-const chb = f => `<span class="ch ${f._ch}">${f._ch}</span>`;
+const chb = f => `<span class="ch ${f._ch}">${f._ch==="OWB"?"Orbit":"HOS"}</span>`;
 
 function progress(st){
   if(st.status==="done") return 1;
@@ -1117,7 +1118,7 @@ function renderTracker(films){
     // jobs by start time, then films with no queue job (In progress before To do, then air date), then date-gated work.
     if(ranked) rankIn.push({key:f.key, tier: !fj ? 2 : fj.p.state==="now"||partDone ? 0 : fj.p.state==="gated" ? 3 : fj.p.start ? 1 : 2,
       k1: fj && fj.p.start ? (fj.p.state==="now"||partDone ? (fj.p.done||0) : fj.p.start) : (col==="doing"?0:1), k2: air ? air.getTime ? air.getTime() : +air : 9e15});
-    lanes[f._ch][col].push(`<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
+    lanes[f._ch][col].push(`@@A:${air&&!isNaN(air)?+air:0}@@<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
       ${mkRow}
       <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span>${mkRow?"":ordChip} <span class="pill ${cls}">${word}</span></span></div>
       <div class="kt">${esc(f.title)}</div>
@@ -1142,11 +1143,21 @@ function renderTracker(films){
   for(const ch of ["OWB","HOS"]) for(const k of ["todo","doing"])
     lanes[ch][k] = lanes[ch][k].sort((a,b)=>rk(a)-rk(b)).map(h=>h.replace(/@@R:([^@]+)@@/, (m,key)=>{ const n=rankOf[key.replace(/&amp;/g,"&")]; return n?`<span class="rk${n<=3?" top":""}" title="Place in the overall work order, both channels">${ord(n)}</span>`:""; }));
   const defs = [["todo","To do","var(--todo)"],["doing","In progress","var(--doing)"],["sched","Scheduled","var(--accent)"],["live","Live","var(--done)"]];
-  const laneName = {OWB:"Orbit With Ben", HOS:"History of Science"};
+  // Ben, 12 Oct 23:05: one set of lanes for both channels, each card with a muted Orbit/HOS chip. To do and In progress
+  // keep the overall work order; Scheduled soonest air date first; Live newest first. The header tabs filter by channel.
+  const airOf2 = h => +((/^@@A:(\d+)@@/.exec(h)||[])[1]||0);
+  const merged = {};
+  for(const [k] of defs){
+    let arr = ["OWB","HOS"].filter(ch=>chan==="all"||chan===ch).flatMap(ch=>lanes[ch][k]);
+    if(k==="todo"||k==="doing") arr = arr.map((h,i)=>[h,i]).sort((x,y)=>(rankOf[(/data-key="([^"]+)"/.exec(x[0])||[])[1]]||999)-(rankOf[(/data-key="([^"]+)"/.exec(y[0])||[])[1]]||999)||x[1]-y[1]).map(x=>x[0]);
+    if(k==="sched") arr.sort((x,y)=>(airOf2(x)||9e15)-(airOf2(y)||9e15));
+    if(k==="live") arr.sort((x,y)=>airOf2(y)-airOf2(x));
+    merged[k] = arr.map(h=>h.replace(/^@@A:\d+@@/,""));
+  }
   box.className = "";
-  box.innerHTML = ["OWB","HOS"].filter(ch=>chan==="all"||chan===ch).map(ch=>`<section class="lane"><h3><span class="ch ${ch}">${ch}</span>${laneName[ch]}</h3><div class="kb">`
-    + defs.map(([k,label,c])=>`<section class="kcol"><h2><span class="sw" style="background:${c}"></span>${label}<span class="n">${lanes[ch][k].length}</span></h2>
-      <div class="cards">${lanes[ch][k].join("") || `<div class="empty">Nothing here.</div>`}</div></section>`).join("") + `</div></section>`).join("");
+  box.innerHTML = `<section class="lane one"><div class="kb">`
+    + defs.map(([k,label,c])=>`<section class="kcol"><h2><span class="sw" style="background:${c}"></span>${label}<span class="n">${merged[k].length}</span></h2>
+      <div class="cards">${merged[k].join("") || `<div class="empty">Nothing here.</div>`}</div></section>`).join("") + `</div></section>`;
   box.querySelectorAll("details.tf>summary").forEach(sm=>sm.addEventListener("click",()=>{ const d=sm.parentElement; openState[d.dataset.key]=!d.open; }));
   box.querySelectorAll("[data-show]").forEach(btn=>btn.onclick=()=>{
     filter = btn.dataset.show; try{ localStorage.setItem("studio-kanban-film",filter); }catch(e){}
@@ -1748,10 +1759,10 @@ setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" curr
       const html = `<span class="wnow">Working now</span></span></div><div class="kt">${esc(name)}</div><div class="ka"><span>Mac mini job</span><span>${pr.pct}%</span></div><div class="bar"><i style="width:${pr.pct}%"></i></div><div class="st1 now">${st}</div>`;
       let c = t.querySelector(`.tf.runcard[data-run="${j.id}"]`);
       if(c){ const s2 = c.querySelector(".st1"); if(s2 && s2.innerHTML!==st) s2.innerHTML = st; continue; }
-      const lane = [...t.querySelectorAll("section.lane")].find(l=>(l.querySelector("h3 .ch")||{}).textContent===ch); if(!lane) continue;
+      const lane = t.querySelector("section.lane.one") || [...t.querySelectorAll("section.lane")].find(l=>(l.querySelector("h3 .ch")||{}).textContent===ch); if(!lane) continue;
       const col = [...lane.querySelectorAll(".kcol")].find(k=>/In progress/i.test((k.querySelector("h2")||{}).textContent)); if(!col) continue;
       const cards = col.querySelector(".cards"); if(!cards) continue;
-      cards.insertAdjacentHTML("afterbegin", `<div class="tf runcard" data-run="${esc(j.id)}"><div class="kh"><span><span class="ch ${ch}">${ch}</span> ${html}</div>`);
+      cards.insertAdjacentHTML("afterbegin", `<div class="tf runcard" data-run="${esc(j.id)}"><div class="kh"><span><span class="ch ${ch}">${ch==="OWB"?"Orbit":"HOS"}</span> ${html}</div>`);
     }
     t.querySelectorAll(".tf").forEach(c=>{ if(c.classList.contains("runcard")) return; const on = keys.has(c.dataset.key), b = c.querySelector(".wnow");
       if(on && !b){ const tag = c.querySelector(".kh > span"); if(tag) tag.insertAdjacentHTML("beforeend",' <span class="wnow">Working now</span>'); }
