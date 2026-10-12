@@ -1,0 +1,87 @@
+{
+  "stem": "owb_sa_s8_voyager1_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6125827198"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 286,
+      "duration_s": 19.12
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 286,
+  "words": 51,
+  "duration_s": 19.12,
+  "loudness": {
+    "lufs_integrated": -20.2,
+    "mean_volume_db": -23.3,
+    "max_volume_db": -4.4
+  },
+  "sha256_mp3": "d9786626cd12cfb9c6c725c6719c1004f3d7f6be4a8a21ed80e384c6621c8afd",
+  "scribe": {
+    "transcript": "On November 18th, Voyager 1 reaches one light day from Earth. Stay, and I'll show you how far that is. Nearly 26 billion kilometers. A message from us at the speed of light takes a whole day to get there. Nothing we've built has ever been this far, and it's still going",
+    "script_words": 53,
+    "scribe_words": 52,
+    "match_rate_pct": 92.45,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "eighteenth"
+        ],
+        "scribe": [
+          "18th"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "six"
+        ],
+        "scribe": [
+          "26"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 201677,
+      "limit": 209536,
+      "remaining": 7859
+    },
+    "after": {
+      "used": 201677,
+      "limit": 209536,
+      "remaining": 7859
+    },
+    "counter_delta": 0
+  },
+  "text": "On November eighteenth, Voyager 1 reaches one light-day from Earth. Stay, and I'll show you how far that is. Nearly twenty-six billion kilometres. A message from us, at the speed of light, takes a whole day to get there. Nothing we've built has ever been this far. And it's still going.",
+  "made_at": "2026-10-12T20:09:33+0100"
+}
