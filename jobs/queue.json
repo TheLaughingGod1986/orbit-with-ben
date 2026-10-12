@@ -1,5 +1,5 @@
 {
-  "next_id": 204,
+  "next_id": 205,
   "jobs": [
     {
       "id": "J0001",
@@ -12132,6 +12132,33 @@
       ],
       "kind": "image",
       "model": "gemini-2.5-flash-image"
+    },
+    {
+      "id": "J0204",
+      "title": "HOS compilation: timeline x4 + chapter cards x6 code graphics",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "For J0175 (HOS compilation). Spec: HOS PR #300 docs/STANDALONE_SHORTS_TEST_2026-10/COMPILATION_ASSEMBLY_INVENTORY_v01.md (branch cursor/j0175-compilation-assembly) + COMPILATION_SCRIPT_v01.md. One ink-drawn timeline (cream on brown or white Didot italic over a moving plate), one render per appearance: code_graphic_comp_timeline_b1 (1628 · HARVEY), _b3 (+1779 · INGENHOUSZ, 1860s · PASTEUR), _b5 (+1869 · MENDELEEV, 1895 · RÖNTGEN), _close (+1911 · RUTHERFORD, whole timeline reads sound-off then fades). Markers ink in >=0.5 s apart (pen-tap tick cue times in a JSON). Six case-file / cream-on-brown inked chapter cards ~3 s: The Hidden Circle, Built From Air, The Invisible Enemy, The Empty Chairs, A Light Through Skin, Inside the Atom (code_graphic_comp_card_01..06). 1920x1080 30 fps, labels <=4 words, house type, everything animates in 0.3-0.5 s, no hold >4 s, no flat black slab, must pass polish_gate near-black. Render into the HOS checkout's docs/STANDALONE_SHORTS_TEST_2026-10/graphics_v01/ (media not in git; commit the builder script + a stills sheet). No spend. Park for Chief with a stills sheet.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T19:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T19:32Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [
