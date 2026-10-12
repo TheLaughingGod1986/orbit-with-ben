@@ -141,6 +141,12 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     <ul class="tgt" id="tgtList"></ul>
   </section>
 
+  <section class="panel" aria-labelledby="stgt-h" id="shortTgt" hidden>
+    <h2 id="stgt-h">Shorts vs targets <span class="stamp">aim: 80% retention · 70% stayed to watch</span></h2>
+    <details class="tiers"><summary>Tiers</summary><div class="stamp">Average retention: 50–70% Developing · Good from 90% (15–20 s), 80% (20–35 s), 70% (35–60 s), 60% (60–180 s) · 100%+ Excellent<br>Stayed to watch: 40–60% Developing · 65–75% Good · 80%+ Excellent<br>Likes per 100 views: 1–2 Developing · 3–5 Good · 6+ Excellent</div></details>
+    <ul class="tgt" id="shortList"></ul>
+  </section>
+
   <section class="panel" aria-labelledby="top24-h">
     <div style="display:grid;gap:2px">
       <h2 id="top24-h">Top videos, last 24 hours</h2>
@@ -604,11 +610,35 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     }).join("") || `<li class="na">No long films yet.</li>`;
   }
 
+  // Ben, 12 Oct 22:50: Shorts have their own targets, shown in the Shorts view only. Good retention depends on length.
+  // Gaps count as the lower tier (70-75% Developing, 60-65% stayed Developing, 2-3 likes Developing, 5-6 Good).
+  const SHORT_AIM = { ret: 80, stayed: 70 };
+  const goodRetFloor = (sec) => sec == null ? 75 : sec <= 20 ? 90 : sec <= 35 ? 80 : sec <= 60 ? 70 : 60;
+  const shortRetTier = (pct, sec) => pct == null ? null : pct >= 100 ? "Excellent" : pct >= goodRetFloor(sec) ? "Good" : pct >= 50 ? "Developing" : "Below";
+  const stayedTier = (pct) => pct == null ? null : pct >= 80 ? "Excellent" : pct >= 65 ? "Good" : pct >= 40 ? "Developing" : "Below";
+  const likesTier = (x) => x == null ? null : x >= 6 ? "Excellent" : x >= 3 ? "Good" : x >= 1 ? "Developing" : "Below";
+  function drawShortTargets(c) {
+    const box = $("shortTgt"); box.hidden = state.gf !== "short"; if (box.hidden) return;
+    const all = DATA.channels.find((x) => x.channel === state.ch) || c;
+    const shorts = all.videos.filter(isShort).sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 12);
+    const chip = (label, txt, t) => t ? `<span class="m">${label} ${txt} <span class="tier ${t.toLowerCase()}">${t}</span></span>` : `<span class="m na">${label} –</span>`;
+    $("shortList").innerHTML = shorts.map((v) => {
+      const lt = v.lifetime || v.last28 || {};
+      const ret = v.studioAvgViewPct != null ? v.studioAvgViewPct : lt.avgViewPct;
+      const sec = v.seconds != null ? v.seconds : (lt.avgViewSeconds && lt.avgViewPct ? Math.round(lt.avgViewSeconds / (lt.avgViewPct / 100)) : null);
+      const stayed = v.studioStayedPct != null ? v.studioStayedPct : null;
+      const views = v.studioViews != null ? Math.max(v.studioViews, v.views || 0) : v.views;
+      const lpv = views ? (v.likes || 0) / views * 100 : null;
+      return `<li><span class="t"><a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a></span>${chip("Ret", ret == null ? "" : ret.toFixed(0) + "%", shortRetTier(ret, sec))}${chip("Stayed", stayed == null ? "" : stayed.toFixed(0) + "%", stayedTier(stayed))}${chip("Likes/100", lpv == null ? "" : lpv.toFixed(1), likesTier(lpv))}
+        <span class="sub">${ukDate(v.publishedAt)} · ${fmt(views)} views${sec ? ` · ${sec}s (Good from ${goodRetFloor(sec)}%)` : ""}${stayed == null ? " · stayed-to-watch needs a Studio read" : ""}</span></li>`;
+    }).join("") || `<li class="na">No Shorts yet.</li>`;
+  }
+
   function render() {
     const c = cur();
     $("gfmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === state.gf)));
     $("fmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.f === state.f)));
-    drawTabs(); drawReadout(c); drawTargets(c); drawTop24(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
+    drawTabs(); drawReadout(c); drawTargets(c); drawShortTargets(c); drawTop24(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
     $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>Top videos, last 24 hours: each video's public view count, compared between the last two daily snapshots — the same two the tile uses. A video those snapshots can't compare reads "unknown" and stays out of the sum. YouTube refreshes the channel's view total and the per-video counts at different times, and a video made private keeps its views in the channel total, so anything the videos don't account for gets its own row instead of being spread over them.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
   }
   render();
