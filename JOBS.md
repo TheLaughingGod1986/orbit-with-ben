@@ -13,7 +13,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0134 | mini | blocked | cursor | – | assembly · `cursor-auto` · 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) |  |
 | J0135 | mini | open (after J0123) | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
 | J0136 | mini | blocked | cursor | – | studio · `cursor-auto` · OWB no-cover-text Test & Compare on JWST ziKBPJ6FY0U (A live vs B no text), parked for Chief review before setting (Reference lessons 5a; test, not a rule change) |  |
-| J0137 | mini | claimed | cursor | 2026-10-12T03:59Z | assembly · HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) | hos#276 |
 | J0138 | mini | open (starts 09:00) | – | – | video · HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05 |  |
 | J0139 | any | open (after J0138) | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
 | J0140 | mini | open (after J0139) | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
@@ -24,6 +23,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J0142 done: 027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test) (done)
+- J0137 done: HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) (Part 03 rough v01 built: 94.83 s on locked v02 VO, 16 KEEP takes, P3:06 held by plate board (J0140). iCloud HOS UAT/006_part03_rough_v01 (sha d7f825fe). freezedetect: placeholder only. picture_qa FAIL 1 row (16 reuse of 14 per board) parked for Chief with the KEEP call, desk #180 6116202964. HOS PR #285 (merge = Chief).)
 - J0132 done: 024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45) (done)
 - J0131 cancelled: Orbit Instagram bio link -> Saturn long 55AEQwvs36g (before Mon 11:30) (needs Ben to sign Instagram in on the mini: the Orbit Studio Chrome (CDP 9223) is signed into historyofscienceyt, not orbitwithben; Switch accounts asks for the orbitwithben password. Also, Instagram web now locks the Website field ('Editing your links is only available on mobile'), so even once signed in this likely has to be done in the Instagram app on Ben's phone: Edit profile > Links > https://youtu.be/55AEQwvs36g. Nothing changed on either profile.)
 - J0130 done: 027 Earth Stopped Spinning rough v01f: Chief's frame-review fixes (near-black 36%, text size, grade, NOAA bugs/seam, Sun still, repeats) (v01f pack 9750bf2 (all 6 items; row 26 Apollo 11 Moon). picture_qa/polish/clip_check PASS, near-black 9.4%. Awaiting Chief frame re-check.)
@@ -32,4 +32,3 @@ Recently finished:
 - J0127 done: 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots (description restored to LOCKED v02 (diff verified after reload); end screen + 5:25 card (2fsQcea-voM) screenshots at ~/_desk/scratch/j0127; Studio left on Orbit; report on #99)
 - J0126 done: Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 (done)
 - J0125 done: 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) (v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it.)
-- J0122 cancelled: Orbit: sound-check Jupiter Short buaOI3QGm7U after it airs (not before Wed 14 Oct 11:35 London) ()

@@ -7453,13 +7453,13 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-12T01:29Z",
-      "eta": "2026-10-12T03:59Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:04Z",
-      "result": "",
+      "result": "Part 03 rough v01 built: 94.83 s on locked v02 VO, 16 KEEP takes, P3:06 held by plate board (J0140). iCloud HOS UAT/006_part03_rough_v01 (sha d7f825fe). freezedetect: placeholder only. picture_qa FAIL 1 row (16 reuse of 14 per board) parked for Chief with the KEEP call, desk #180 6116202964. HOS PR #285 (merge = Chief).",
       "history": [
         {
           "at": "2026-10-11T23:04Z",
@@ -7495,6 +7495,11 @@
           "at": "2026-10-12T01:36Z",
           "by": "cursor",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-12T01:36Z",
+          "by": "cursor",
+          "what": "done: Part 03 rough v01 built: 94.83 s on locked v02 VO, 16 KEEP takes, P3:06 held by plate board (J0140). iCloud HOS UAT/006_part03_rough_v01 (sha d7f825fe). freezedetect: placeholder only. picture_qa FAIL 1 row (16 reuse of 14 per board) parked for Chief with the KEEP call, desk #180 6116202964. HOS PR #285 (merge = Chief)."
         }
       ],
       "kind": "assembly",
@@ -7503,7 +7508,8 @@
         "of": 4,
         "at": "2026-10-12T01:36Z",
         "by": "cursor"
-      }
+      },
+      "done_ref": "hos#285"
     },
     {
       "id": "J0138",
