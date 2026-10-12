@@ -52,10 +52,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0182 | any | blocked | cursor | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0183 | any | open | – | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0184 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
-| J0185 | mini | claimed | cursor | 2026-10-12T17:28Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
 
+- J0185 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (done)
 - J0178 done: Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) (done)
 - J0177 done: HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) (done)
 - J0161 done: OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) (Chief locked the 8 scripts + titles + slots on OWB #99 (6125827198); Gemini facts pass Q1-Q19 (Q18 FLAG) goes with VO J0162)
@@ -65,4 +65,3 @@ Recently finished:
 - J0144 cancelled: Orbit Auditor: per-chapter teaching gate on 024 onward (number shown as an object per chapter; keywords match VO word for word) (parked for Chief: kind=chief (no stand-in per Who does what). The per-chapter NUMBER/WORDS PASS/FAIL scoring on 024 v05b, 026, 027 is a protected PASS call for the Orbit Auditor/Chief; Cursor can draft an advisory chapter/timestamp sheet if Chief re-adds it as kind=qa or review.)
 - J0142 done: 027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test) (done)
 - J0137 done: HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) (Part 03 rough v01 built: 94.83 s on locked v02 VO, 16 KEEP takes, P3:06 held by plate board (J0140). iCloud HOS UAT/006_part03_rough_v01 (sha d7f825fe). freezedetect: placeholder only. picture_qa FAIL 1 row (16 reuse of 14 per board) parked for Chief with the KEEP call, desk #180 6116202964. HOS PR #285 (merge = Chief).)
-- J0134 done: 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) (Uploaded Private N42gKBbD7tE, publishAt 2026-11-12T11:30Z; cover set (API + Studio); Buffer x3; UPLOADS lengthTest; gate library; commit 54a4813e. J0135 (Related) next.)
