@@ -109,16 +109,17 @@ def london_hm(stamp: str) -> str:
 
 
 def waiting_to_start(job: dict, at: dt.datetime) -> bool:
-    """A job with a not-before time nobody may claim (or take over) until then (Chief, 12 Oct 2026)."""
-    return bool(job.get("not_before")) and studio.parse(job["not_before"]) > at
+    """Ben, 12 Oct 2026 14:37: no fixed start times. A job starts as soon as its inputs are ready and a worker is free,
+    so a stored not_before is ignored. An input that isn't ready is `--after <job>` or a block with the input named."""
+    return False
 
 
 def need_reset(not_before: str, reset: str) -> None:
     """Ben, 12 Oct 2026: jobs start as soon as their inputs are ready, and reviews are done as soon as they land. A
     start time is allowed only when it's tied to a real reset (a quota, credit or usage window, an air date)."""
-    if (not_before or "").strip() and not (reset or "").strip():
-        raise ValueError("--not-before needs --reset \"<the quota/credit/air-date window it waits for>\": no arbitrary "
-                         "start-time holds (Ben, 12 Oct 2026). Use --after <job> for an input that isn't ready yet.")
+    if (not_before or "").strip():
+        raise ValueError("no fixed start times (Ben, 12 Oct 2026 14:37): jobs start when their inputs are ready. Use "
+                         "--after <job>, or block the job naming the input it waits for. YouTube publishAt is separate.")
 
 
 def do_schedule(job: dict, agent: str, not_before: str, at: dt.datetime, reset: str = "") -> None:
@@ -232,12 +233,29 @@ def do_urgent(data: dict, found: list[dict], off: bool = False) -> list[str]:
     return [j["id"] for j in sorted(live, key=lambda j: (urgent_rank(j), j["id"]))]
 
 
+RETRY_COOL_MIN = 30
+
+
+def recently_released(job: dict, at: dt.datetime | None = None) -> bool:
+    """Its last event is a release less than RETRY_COOL_MIN ago (a poll like the Flow balance read): it goes behind
+    every other ready job so it isn't re-run back to back, but it is still claimable if nothing else is ready."""
+    h = (job.get("history") or [])[-1:] 
+    if not h or not str(h[0].get("what", "")).startswith("released"):
+        return False
+    try:
+        return ((at or now()) - studio.parse(h[0]["at"])) < dt.timedelta(minutes=RETRY_COOL_MIN)
+    except (KeyError, ValueError):
+        return False
+
+
 def order(job: dict, focus=()) -> tuple:
     """An urgent job first (Claude's call: e.g. the Mini's disk at 99% would break every render after it), then the focus film's jobs (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
     films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
     every stopping point (a first cut) would come back first every time and starve the quick ones."""
     return (0 if job.get("for") else 1,  # a job addressed to this agent (only it can see it) first: it was woken for it
             0 if job.get("urgent") else 1,
+            1 if job.get("backlog") else 0,  # refill/growth tier only when no pipeline job is ready (Ben, 12 Oct)
+            1 if recently_released(job) else 0,  # released to retry: other ready work first, never a time hold
             urgent_rank(job) if job.get("urgent") else 0,
             0 if job.get("film") and job["film"] in focus else 1,
             0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
@@ -388,7 +406,7 @@ def render(data: dict, at: dt.datetime) -> str:
     for j in sorted(live, key=lambda j: j["id"]):
         st = "**stalled**" if stalled(j, at) else j["status"] + (f" (after {j['after']})" if j.get("after") and j["status"] == "open" else "")
         if waiting_to_start(j, at) and j["status"] == "open":
-            st += f" (starts {london_hm(j['not_before'])})"
+            pass  # no start times (Ben, 12 Oct 2026 14:37)
         film = f"{j['film']} {j['stage']} · " if j.get("film") else ""
         film += f"for {j['for']} · " if j.get("for") else ""
         film += f"{j['kind']} · " if j.get("kind") else ""

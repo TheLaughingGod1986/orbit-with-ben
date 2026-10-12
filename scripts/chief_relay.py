@@ -672,7 +672,7 @@ def log_run(at: dt.datetime, job, who: str, model: str, code: int, usage: bool) 
 def keep_busy() -> list:
     """Ben, 12 Oct 2026: the Mini never idles. Top the queue up from the standing backlog (scripts/refill.py) so at
     least 3 Mini jobs are ready. False/empty if nothing was added or the refill couldn't run."""
-    if os.environ.get("CHIEF_REFILL", "1") == "0":
+    if os.environ.get("CHIEF_REFILL", "1") == "0" or not (OWB / "scripts" / "refill.py").exists():
         return []
     try:
         r = subprocess.run([sys.executable, str(OWB / "scripts" / "refill.py"), "refill", "--git"], cwd=str(OWB),
@@ -757,8 +757,9 @@ def run_locked(at: dt.datetime) -> int:
             not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
         if worker_only:
             sweep = False
-        if not queue_has_work(who) and not sweep and keep_busy():
-            log("queue was dry: refilled from jobs/backlog.json")
+        added = keep_busy()  # every pass, not only when dry: keeps >=3 Mini jobs ready (Ben, 12 Oct 14:36)
+        if added:
+            log(f"refill: added {' '.join(added)} from jobs/backlog.json")
         if not queue_has_work(who) and not sweep:
             ago = f"{int((at - last_wake).total_seconds() // 60)} min ago" if last_wake else "never"
             log(f"nothing queued for {who}; last woken {ago}: not waking it")

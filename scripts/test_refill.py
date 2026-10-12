@@ -34,6 +34,7 @@ class Refill(unittest.TestCase):
         d = empty()
         refill.do_refill(d, ITEMS[:1], T0)
         d["jobs"][0]["status"] = "done"
+        jobs.do_add(d, title="pipeline", needs="mini", body="", by="chief", at=T0)  # something is ready
         self.assertEqual(refill.do_refill(d, ITEMS[:1], T0 + H), [])
         self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + 13 * H)), 1)
 
@@ -56,17 +57,36 @@ class Escalate(unittest.TestCase):
         self.assertEqual(refill.do_escalate(d, T0 + 4 * H), [])
 
 
+class NeverEmpty(unittest.TestCase):
+    def test_nothing_ready_adds_the_oldest_key_despite_cooldown(self):
+        d = empty()
+        refill.do_refill(d, ITEMS[:1], T0)
+        d["jobs"][0]["status"] = "done"
+        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)  # cooldown waived: queue was empty
+
+    def test_parked_key_can_run_again(self):
+        d = empty()
+        refill.do_refill(d, ITEMS[:1], T0)
+        d["jobs"][0]["status"] = "blocked"
+        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)
+
+    def test_backlog_has_weekly_audits_and_ideas_for_both_channels(self):
+        keys = {it["key"]: it for it in refill.load_backlog()}
+        for k in ("owb-weekly-audit", "hos-weekly-audit", "owb-ideas", "hos-ideas"):
+            self.assertIn(k, keys)
+        self.assertEqual(keys["owb-weekly-audit"]["every_h"], 168)
+        for it in refill.load_backlog():
+            self.assertNotIn(it["kind"], ("video", "vo"))  # never spends on generation or TTS
+
+
 class NoArbitraryHolds(unittest.TestCase):
-    def test_start_time_needs_a_real_reset(self):
+    def test_no_start_time_can_be_set(self):
         d = empty()
         j = jobs.do_add(d, title="r", needs="mini", body="", by="chief", at=T0)
         with self.assertRaises(ValueError):
-            jobs.do_schedule(j, "chief", "2026-10-12 15:00", T0)
-        jobs.do_schedule(j, "chief", "2026-10-12 15:00", T0, "Flow AI Ultra credit renews")
-        self.assertEqual(j["reset"], "Flow AI Ultra credit renews")
+            jobs.do_schedule(j, "chief", "2026-10-12 15:00", T0, "Flow AI Ultra credit renews")
         with self.assertRaises(ValueError):
-            jobs.do_add(d, title="x", needs="mini", body="", by="chief", at=T0, not_before="2026-10-12 15:00")
-
+            jobs.do_add(d, title="x", needs="mini", body="", by="chief", at=T0, not_before="2026-10-12 15:00", reset="x")
 
 if __name__ == "__main__":
     unittest.main()

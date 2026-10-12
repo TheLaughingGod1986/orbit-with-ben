@@ -4,6 +4,8 @@
 Two rules, run by chief_relay.py on every 10-minute tick (and by hand):
 
   refill    When fewer than MIN_READY Mini jobs are ready to claim, add the next items from jobs/backlog.json
+            (lowest tier: `jobs.order` runs them only when no pipeline job is ready; weekly audits and idea/script
+            drafts for both channels come first in the file, then polish)
             (no-spend standing work for both channels: Shorts cut from locked longs, thumb B variants, teaching
             overlays, listing fixes, next scripts, HOS plate prep, QA sweeps). A key is skipped while a job from it is
             open, claimed or parked, and for every_h hours after its last one. Each backlog job routes by its kind
@@ -44,23 +46,38 @@ def ready(data: dict, at: dt.datetime) -> list:
 
 
 def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY) -> list:
+    """Top up to min_ready claimable Mini jobs. A key is skipped while a job from it is open or claimed (a job parked
+    for Chief holds only itself, so the next one can start: Ben, 12 Oct) and for every_h hours after its last one.
+    Never empty: if after that nothing at all is ready, the key whose last job is oldest is added anyway."""
     added = []
     have = len(ready(data, at))
     last = data.setdefault("backlog_last", {})
+
+    def busy(key):
+        return any(j.get("backlog") == key and j["status"] in ("open", "claimed") for j in data["jobs"])
+
+    def add(it):
+        nonlocal have
+        j = jobs.do_add(data, title=it["title"], needs=it["needs"], body=it["body"], by="refill", at=at,
+                        repo=it.get("repo", "owb"), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""))
+        j["backlog"] = it["key"]
+        last[it["key"]] = studio.iso(at)
+        added.append(j["id"])
+        have += 1
+
     for it in items:
         if have >= min_ready:
             break
         key = it["key"]
-        if any(j.get("backlog") == key and j["status"] in LIVE for j in data["jobs"]):
+        if busy(key):
             continue
         if key in last and at - studio.parse(last[key]) < dt.timedelta(hours=it.get("every_h", 24)):
             continue
-        j = jobs.do_add(data, title=it["title"], needs=it["needs"], body=it["body"], by="refill", at=at,
-                        repo=it.get("repo", "owb"), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""))
-        j["backlog"] = key
-        last[key] = studio.iso(at)
-        added.append(j["id"])
-        have += 1
+        add(it)
+    if have == 0:
+        free = [it for it in items if not busy(it["key"])]
+        if free:
+            add(min(free, key=lambda it: last.get(it["key"], "")))
     return added
 
 
