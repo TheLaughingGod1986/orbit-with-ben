@@ -8162,13 +8162,13 @@
       "stage": "",
       "after": "J0138",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T22:22Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T22:22:50+00:00",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "parked for Chief: kind chief (no stand-in). PASS or trim of J0138's HOS 006 Flow price table on desk #180 is Chief's call; J0140 mints after it",
+      "result": "PASS (Chief): 006 only, 28 un-minted plates (P4:05-16, P5:01-23), one first take each = 1,270 Flow credits of 25,050 paid. No retakes, no 007, no Vertex; never buy/top up/billing, floor 0. Desk #180 comment 6133713891.",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8194,9 +8194,25 @@
           "at": "2026-10-12T22:22Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: kind chief (no stand-in). PASS or trim of J0138's HOS 006 Flow price table on desk #180 is Chief's call; J0140 mints after it"
+        },
+        {
+          "at": "2026-10-12T22:22Z",
+          "by": "chief",
+          "what": "reopened: Chief takes the parked price pass"
+        },
+        {
+          "at": "2026-10-12T22:22Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-12T22:22Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): 006 only, 28 un-minted plates (P4:05-16, P5:01-23), one first take each = 1,270 Flow credits of 25,050 paid. No retakes, no 007, no Vertex; never buy/top up/billing, floor 0. Desk #180 comment 6133713891."
         }
       ],
-      "kind": "chief"
+      "kind": "chief",
+      "done_ref": "history-of-science#180"
     },
     {
       "id": "J0140",
