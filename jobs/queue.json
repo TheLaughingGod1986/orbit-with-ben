@@ -13381,13 +13381,13 @@
       "stage": "",
       "after": "J0213",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T22:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-12T21:55Z",
-      "result": "parked for Chief: KEEP/FAIL on S5-S8 plates v01 (HOS 0ae7674, PLATES_STATUS_v01.md; flags S5-04, S6-04, S7-03). Then J0171 assembles S5-S8.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T21:55Z",
@@ -13428,16 +13428,14 @@
           "at": "2026-10-12T22:30Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: KEEP/FAIL on S5-S8 plates v01 (HOS 0ae7674, PLATES_STATUS_v01.md; flags S5-04, S6-04, S7-03). Then J0171 assembles S5-S8."
+        },
+        {
+          "at": "2026-10-12T22:34Z",
+          "by": "chief",
+          "what": "reopened: Chief KEEP/FAIL HOS #180 6133904346 (re 6133844628): KEEP S5 01/02/03/05 DROP 04; KEEP S6 01-05; FAIL S7-03 one retake (mint + extinguished candle, face-lock 02) else DROP; KEEP S8 01-04. Then park for KEEP on S7-03 v02; J0171 assembles S5-S8."
         }
       ],
-      "kind": "image",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-12T22:30Z",
-        "by": "cursor",
-        "note": "18 plates minted, sheets built; parked for Chief KEEP/FAIL"
-      }
+      "kind": "image"
     }
   ],
   "focus": [
