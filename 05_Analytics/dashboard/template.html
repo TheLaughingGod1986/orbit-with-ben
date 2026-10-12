@@ -552,12 +552,13 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   // click-through rate, which the Analytics API doesn't return: it shows once a Studio read adds `impressionsCtr` (%).
   const TARGETS = { ctr: 4, retention: 35 };
   function drawTargets(c) {
-    const want = state.gf === "short" ? "short" : "long";   // targets default to Long
-    $("tgt-h").firstChild.textContent = want === "short" ? "Shorts vs targets " : "Long films vs targets ";
-    const longs = c.videos.filter((v) => (want === "short") === isShort(v)).sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 8);
+    // Ben, 12 Oct 22:45: targets are for long films only, so this panel always lists long films (whole channel,
+    // whatever the All / Long / Shorts toggle says) and says so when Shorts is selected.
+    const all = DATA.channels.find((x) => x.channel === state.ch) || c;
+    const longs = all.videos.filter((v) => !isShort(v)).sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 8);
     const mark = (val, tgt, label) => val == null ? `<span class="m na">${label} –</span>`
       : `<span class="m ${val >= tgt ? "hit" : "miss"}">${label} ${val.toFixed(1)}% ${val >= tgt ? "✓ hit" : "✗ miss"}</span>`;
-    $("tgtNote").textContent = `targets: CTR ${TARGETS.ctr}% · retention ${TARGETS.retention}%`;
+    $("tgtNote").textContent = `targets: CTR ${TARGETS.ctr}% · retention ${TARGETS.retention}%` + (state.gf === "short" ? " · long films only, so Shorts have no targets" : "");
     $("tgtList").innerHTML = longs.map((v) => {
       const lt0 = v.lifetime || v.last28 || {}, lt = { views: v.studioViews != null ? v.studioViews : lt0.views };
       const ret = v.studioAvgViewPct != null ? v.studioAvgViewPct : lt0.avgViewPct, ctr = v.impressionsCtr != null ? v.impressionsCtr : (v.ctr != null ? v.ctr : null);
