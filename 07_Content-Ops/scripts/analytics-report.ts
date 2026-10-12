@@ -21,8 +21,8 @@ export function mergeStudioCtr(root: string, key: string, r: ChannelReport): voi
   const f = path.join(root, key, "studio_ctr.json");
   if (!fs.existsSync(f)) return;
   try {
-    const s = JSON.parse(fs.readFileSync(f, "utf8")) as { readAt?: string; videos?: Record<string, { impressions?: number; impressionsCtr?: number; views?: number; avgViewPct?: number; avgViewSeconds?: number }> };
-    for (const v of r.videos as Array<ChannelReport["videos"][number] & { impressions?: number; impressionsCtr?: number; ctrReadAt?: string; studioViews?: number; studioAvgViewPct?: number; studioAvgViewSeconds?: number }>) {
+    const s = JSON.parse(fs.readFileSync(f, "utf8")) as { readAt?: string; videos?: Record<string, { impressions?: number; impressionsCtr?: number; views?: number; avgViewPct?: number; avgViewSeconds?: number; stayedToWatch?: number }> };
+    for (const v of r.videos as Array<ChannelReport["videos"][number] & { impressions?: number; impressionsCtr?: number; ctrReadAt?: string; studioViews?: number; studioAvgViewPct?: number; studioAvgViewSeconds?: number; studioStayedPct?: number }>) {
       const m = s.videos?.[v.id];
       if (!m) continue;
       // Studio is live; the Analytics API lags 2-3 days (Saturn 021 read 99.7% from 1 view when Studio had 63 views
@@ -31,6 +31,7 @@ export function mergeStudioCtr(root: string, key: string, r: ChannelReport): voi
       if (typeof m.avgViewPct === "number") v.studioAvgViewPct = m.avgViewPct;
       if (typeof m.avgViewSeconds === "number") v.studioAvgViewSeconds = m.avgViewSeconds;
       if (typeof m.impressionsCtr === "number") v.impressionsCtr = m.impressionsCtr;
+      if (typeof m.stayedToWatch === "number") v.studioStayedPct = m.stayedToWatch;   // Shorts: "Stayed to watch" %
       if (typeof m.impressions === "number") v.impressions = m.impressions;
       if (s.readAt) v.ctrReadAt = s.readAt;
     }
