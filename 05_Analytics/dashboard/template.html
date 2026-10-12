@@ -110,6 +110,7 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .tgt .m { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .tgt .hit { color: #1d7a3a; font-weight: 600; } .tgt .miss { color: #b4432f; font-weight: 600; } .tgt .na { color: var(--ink-3); }
 .tgt .sub { grid-column: 1 / -1; color: var(--ink-3); font-size: .78rem; }
+#gfmt { justify-self: end; margin-top: 6px; }
 </style>
 
 <div class="wrap">
@@ -119,6 +120,7 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
       <h1>Channel Tracker</h1>
     </div>
     <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="seg" id="gfmt" aria-label="Film type"><button type="button" data-g="all">All</button><button type="button" data-g="long">Long</button><button type="button" data-g="short">Shorts</button></div>
   </header>
   <div class="stamp" id="stamp"></div>
   <section class="readout" id="readout" aria-label="Totals and growth"></section>
@@ -227,9 +229,23 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   const ukDate = (d) => (d ? new Date(String(d).slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "–");
   const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
 
-  const state = { ch: store.get("tracker.ch") || (DATA.channels[0] && DATA.channels[0].channel), days: 90, period: "weekly", ageWin: 30, ageMin: 30, f: "all", q: "", sort: "publishedAt", dir: -1 };
+  const state = { ch: store.get("tracker.ch") || (DATA.channels[0] && DATA.channels[0].channel), days: 90, period: "weekly", ageWin: 30, ageMin: 30, f: store.get("tracker.gf") || "all", gf: store.get("tracker.gf") || "all", q: "", sort: "publishedAt", dir: -1 };
   if (!DATA.channels.some((c) => c.channel === state.ch) && DATA.channels[0]) state.ch = DATA.channels[0].channel;
-  const cur = () => DATA.channels.find((c) => c.channel === state.ch);
+  // Ben, 12 Oct 22:38: All / Long / Shorts across the page. A Short is format "short", or 180 s or less when the
+  // format is missing. Per-video lists, top 24 h, new-vs-older and the readout follow it; the daily trace, period
+  // totals and sources are channel-wide (YouTube gives them per channel) and say so.
+  const isShort = (v) => v.format ? v.format === "short" : (v.seconds != null && v.seconds <= 180);
+  const keep = (v) => state.gf === "all" || (state.gf === "short") === isShort(v);
+  const sumOf = (vs, k) => vs.reduce((n, v) => n + (v[k] || 0), 0);
+  const cur = () => {
+    const c = DATA.channels.find((x) => x.channel === state.ch);
+    if (!c || state.gf === "all") return c;
+    const vs = c.videos.filter(keep), ids = new Set(vs.map((v) => v.id));
+    const day1 = c.day1 && c.day1.rows ? Object.assign({}, c.day1, { rows: c.day1.rows.filter((r) => ids.has(r.id)) }) : c.day1;
+    const ch = (k) => ({ views: sumOf(vs, k), subscribers: null, source: "videos" });
+    return Object.assign({}, c, { videos: vs, day1, change: { d1: ch("d1"), d7: ch("d7"), d30: ch("d30") },
+      totals: Object.assign({}, c.totals, { views: sumOf(vs, "views"), videos: vs.length }) });
+  };
   const colorVar = (key) => (key === "hos" ? "var(--hos)" : "var(--owb)");
 
   if (!DATA.channels.length) {
@@ -253,7 +269,7 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
       `<div class="cell"><span class="eyebrow">Subscribers</span><span class="big">${fmt(c.totals.subscribers)}</span><span class="sub">${esc(c.handle)}</span></div>` +
       `<div class="cell"><span class="eyebrow">Total views</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} videos</span></div>` +
       growth("Last 24 hours", ch.d1) + growth("Last 7 days", ch.d7) + growth("Last 30 days", ch.d30);
-    $("stamp").textContent = `Snapshot ${ukDate(c.date)}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)}` : "") + ` · tracking since ${ukDate(c.firstSnapshot)}`;
+    $("stamp").textContent = (state.gf !== "all" ? `${state.gf === "short" ? "Shorts" : "Long films"} only (views summed per video; daily chart, weekly totals and sources are whole channel) · ` : "") + `Snapshot ${ukDate(c.date)}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)}` : "") + ` · tracking since ${ukDate(c.firstSnapshot)}`;
   }
 
   // ---------------------------------------------------------------- top videos, last 24 hours
@@ -524,6 +540,10 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   seg("range", "days", "days", Number);
   seg("period", "period", "p");
   seg("fmt", "f", "f");
+  $("gfmt").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.gf = state.f = b.dataset.g; store.set("tracker.gf", state.gf); render();
+  });
   seg("ageWin", "ageWin", "w", Number);
   seg("ageMin", "ageMin", "a", Number);
 
@@ -532,7 +552,9 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   // click-through rate, which the Analytics API doesn't return: it shows once a Studio read adds `impressionsCtr` (%).
   const TARGETS = { ctr: 4, retention: 35 };
   function drawTargets(c) {
-    const longs = c.videos.filter((v) => v.format === "long").sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 8);
+    const want = state.gf === "short" ? "short" : "long";   // targets default to Long
+    $("tgt-h").firstChild.textContent = want === "short" ? "Shorts vs targets " : "Long films vs targets ";
+    const longs = c.videos.filter((v) => (want === "short") === isShort(v)).sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 8);
     const mark = (val, tgt, label) => val == null ? `<span class="m na">${label} –</span>`
       : `<span class="m ${val >= tgt ? "hit" : "miss"}">${label} ${val.toFixed(1)}% ${val >= tgt ? "✓ hit" : "✗ miss"}</span>`;
     $("tgtNote").textContent = `targets: CTR ${TARGETS.ctr}% · retention ${TARGETS.retention}%`;
@@ -547,6 +569,8 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
   function render() {
     const c = cur();
+    $("gfmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === state.gf)));
+    $("fmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.f === state.f)));
     drawTabs(); drawReadout(c); drawTargets(c); drawTop24(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
     $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>Top videos, last 24 hours: each video's public view count, compared between the last two daily snapshots — the same two the tile uses. A video those snapshots can't compare reads "unknown" and stays out of the sum. YouTube refreshes the channel's view total and the per-video counts at different times, and a video made private keeps its views in the channel total, so anything the videos don't account for gets its own row instead of being spread over them.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
   }
