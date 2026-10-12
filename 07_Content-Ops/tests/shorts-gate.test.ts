@@ -31,6 +31,14 @@ describe("Shorts ship gate in the upload path", () => {
     expect(runShortsGate({ videoPath: "/x/a.mp4", repoRoot: "/repo" }, ((() => ({ status: null, stdout: "", stderr: "ENOENT" })) as GateRunner)).ok).toBe(false);
   });
 
+  it("passes --length-test only for the length-test Short (Packaging 5)", () => {
+    const r = runner(0, "PASS");
+    runShortsGate({ videoPath: "/x/len.mp4", repoRoot: "/repo", scheduledAt: new Date("2026-11-12T11:30:00Z"), lengthTest: true }, r);
+    runShortsGate({ videoPath: "/x/std.mp4", repoRoot: "/repo" }, r);
+    expect(r.calls[0].slice(-1)).toEqual(["--length-test"]);
+    expect(r.calls[1]).not.toContain("--length-test");
+  });
+
   it("uses the scheduled date as the air date, else today", () => {
     expect(airDateFor(new Date("2026-11-23T11:30:00Z"))).toBe("2026-11-23");
     expect(airDateFor(null, new Date("2026-10-06T08:00:00Z"))).toBe("2026-10-06");

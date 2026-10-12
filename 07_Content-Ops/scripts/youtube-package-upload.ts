@@ -85,7 +85,10 @@ async function main() {
 
   // Shorts ship gate: a hard stop, dry run included, so the dry run shows the verdict. No override (Never list).
   if (resolved.format === "shorts") {
-    const gate = runShortsGate({ videoPath: resolved.videoPath, repoRoot: REPO_ROOT, scheduledAt: resolved.scheduledAt });
+    const gate = runShortsGate({
+      videoPath: resolved.videoPath, repoRoot: REPO_ROOT, scheduledAt: resolved.scheduledAt,
+      lengthTest: resolved.lengthTest,
+    });
     console.log(gate.output);
     if (!gate.ok) {
       console.error(`gate_shorts_open FAILED (exit ${gate.exitCode}, air date ${gate.airDate}): not uploading. Fix the cut.`);

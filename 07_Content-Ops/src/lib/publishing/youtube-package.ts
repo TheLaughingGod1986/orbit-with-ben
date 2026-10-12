@@ -31,6 +31,8 @@ export type YouTubePackageManifest = {
   relatedVideoId?: string;
   privacy?: "private" | "public" | "unlisted";
   madeForKids?: boolean;
+  /** Shorts only: the one Chief-OK'd 50–60 s length-test Short; the ship gate runs with `--length-test`. */
+  lengthTest?: boolean;
   categoryId?: string;
   /** Buffer mirror copy: hook, question, thumbnail alt text, Reel cover (ms). */
   social?: SocialCopy;
@@ -54,6 +56,7 @@ export type ResolvedYouTubePackage = {
   relatedVideoId: string | null;
   privacy: "private" | "public" | "unlisted";
   madeForKids: boolean;
+  lengthTest: boolean;
   social: SocialCopy | null;
   trailerPath: string | null;
   sources: Record<string, string>;
@@ -482,6 +485,7 @@ export function loadYouTubePackage(input: {
     relatedVideoId: merged.relatedVideoId || null,
     privacy: merged.privacy || "private",
     madeForKids: merged.madeForKids ?? false,
+    lengthTest: format === "shorts" && merged.lengthTest === true,
     social: merged.social ?? null,
     trailerPath,
     sources,
