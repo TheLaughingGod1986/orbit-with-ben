@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0207 | mini | open | – | – | chart · OWB compilation: 5 chapter cards + countdown timeline x3 code graphics |  |
 | J0210 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
-| J0214 | mini | claimed | cursor | 2026-10-12T23:41Z | image · HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) | 6131173528 |
 
 Recently finished:
 
+- J0214 done: HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (done)
 - J0213 done: HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines) (Chief KEEP S5-S8 VO v01 (HOS #180 6133703986): word for word v02 lines 5-8, -19.6 to -20.4 LUFS; pause trim ~0.4 s at assembly; captions keep UK spelling. J0214 plates clear.)
 - J0212 done: HOS standalone Shorts S5: exact quote that the pigeons were blamed (lock condition before S5 VO) (done)
 - J0209 done: HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates) (PASS HOOK/BAND/PHONE ×4; wording KEEP; #301 merged; HOS #180 6133005305. Cursor to attach covers on package.)
@@ -54,4 +54,3 @@ Recently finished:
 - J0201 done: OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) (done)
 - J0190 done: OWB Studio: fix wrong long title in descriptions of Shorts pL339HhjDwo + Ih2zhZTbIR0 (J0155) (Descriptions of Shorts pL339HhjDwo + Ih2zhZTbIR0 now name the long's exact title (1935b64e). Description-only API edit via new redescribe-videos.ts; titles, privacy (public) and publishAt unchanged.)
 - J0187 done: 024 Light Speed: Test & Compare A/B covers from day 1 at upload (J0143 PASS) (Chief PASS J0187 prep: PR #139 (9f3b93dc) + #153 (fc13971a) merged; covers stay at 08_Thumbnail/j0143_v02 and ~/_desk/handoff/J0143-v02. Studio Test & Compare waits until 024 has a video id (final OK Mon 26 Oct / airs Sun 1 Nov). OWB #99 6131722365. No 024 upload job exists yet — Cursor must add the Studio T&C follow-on with --after the upload job when upload is queued (follow-on J id created in this commit).)
-- J0186 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS Saturn 'clock' Short v01 (d5eb0a50, gate PASS). Air in the next free OWB Short slot (follow-on studio job).)
