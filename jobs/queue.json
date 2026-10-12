@@ -1,5 +1,5 @@
 {
-  "next_id": 150,
+  "next_id": 153,
   "jobs": [
     {
       "id": "J0001",
@@ -8525,6 +8525,90 @@
         "by": "cursor",
         "note": "row 2 -> EV@75.0; render started (tmux j0149-render)"
       }
+    },
+    {
+      "id": "J0150",
+      "title": "Backlog OWB: next Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Pick the locked or live OWB long with the fewest Shorts built (STATUS.md, 10_Shorts/). Lift one self-contained 22-27 s stretch of its own VO and picture, reframe 9:16 the house way, house SFX kit only. Every Short rule applies (frame-0 named thing, hook caption, exact long title at 9-14 s, captions, loop, custom cover). Teach on screen: a number object or timeline call-out in frame. gate_shorts_open.py check must PASS. Spend nothing. Post the cut, contact sheet and gate output on #99, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-12T12:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T12:56Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "owb-short-from-locked"
+    },
+    {
+      "id": "J0151",
+      "title": "Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Test B rule (HOS PR #261): two search-titled Shorts per film. Pick the locked HOS long (004, 005, then the next locked) with the fewest built Shorts. Lift one stretch of its own VO and picture, 9:16, person card or date call-out on screen, captions throughout, search-shaped title draft. Spend nothing. Post on desk #180, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-12T12:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T12:56Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "hos-short-from-locked"
+    },
+    {
+      "id": "J0152",
+      "title": "Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "From 00_Brand/Channel-Setup/audits/ and the *_test_compare.json files, pick a live long with no test running or on record. Build B from existing plates only (no image-model spend, never inpaint), Packaging section 2.B. thumb_preview.py long <A> <B> --out <sheet> --score must PASS. Post the sheet on #99, block 'parked for Chief: thumb B review'. Never touch an armed test.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-12T12:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T12:56Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "chart",
+      "backlog": "owb-thumb-b"
     }
   ],
   "focus": [
@@ -8533,5 +8617,9 @@
     "026",
     "027"
   ],
-  "backlog_last": {}
+  "backlog_last": {
+    "owb-short-from-locked": "2026-10-12T12:56Z",
+    "hos-short-from-locked": "2026-10-12T12:56Z",
+    "owb-thumb-b": "2026-10-12T12:56Z"
+  }
 }
