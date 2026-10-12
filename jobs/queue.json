@@ -7990,13 +7990,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T08:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T08:15Z",
-      "result": "parked for Chief: HOS 004 GHZDsiH7L7A T&C is already armed with 3 pairs (A v04, C v07, B v04; Ineligible until 15 Oct 17:00Z). Studio offers no in-place edit: the strip menu's A/B Testing opens 'Run a new test? Your current test will be deleted' (Cancel pressed, nothing changed). Swapping C to v07b means deleting and re-arming all 3 pairs, i.e. pressing Continue (Never list, 9 Oct). Chief: OK that one-off exception to re-arm A/C v07b/B with the same titles, or keep v07. PR #267 (branch c6b0f3b) already merged.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T08:15Z",
@@ -8022,17 +8022,15 @@
           "at": "2026-10-12T08:27Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 004 GHZDsiH7L7A T&C is already armed with 3 pairs (A v04, C v07, B v04; Ineligible until 15 Oct 17:00Z). Studio offers no in-place edit: the strip menu's A/B Testing opens 'Run a new test? Your current test will be deleted' (Cancel pressed, nothing changed). Swapping C to v07b means deleting and re-arming all 3 pairs, i.e. pressing Continue (Never list, 9 Oct). Chief: OK that one-off exception to re-arm A/C v07b/B with the same titles, or keep v07. PR #267 (branch c6b0f3b) already merged."
+        },
+        {
+          "at": "2026-10-12T08:29Z",
+          "by": "chief",
+          "what": "reopened: Chief OK (HOS #180 6120597964): one-off Never exception for J0146 only. Press Continue on Run a new test, re-arm A v04 / C v07b / B v04 with the same 3 titles. Screenshot before and after. If the re-arm fails, restore the A v04 / C v07 / B v04 set. Deadline Wed 14 Oct 23:59 London, else keep v07."
         }
       ],
       "kind": "studio",
-      "urgent": 1,
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-12T08:27Z",
-        "by": "cursor",
-        "note": "Studio checked; swap needs test delete"
-      }
+      "urgent": 1
     }
   ],
   "focus": [
