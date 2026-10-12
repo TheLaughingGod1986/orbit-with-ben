@@ -45,6 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
 | J0212 | gemini | open (after J0177) | – | – | facts · HOS standalone Shorts S5: exact quote that the pigeons were blamed (lock condition before S5 VO) | 6127927589 |
 | J0213 | mini | open (after J0212) | – | – | vo · HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines) | 6127927589 |
+| J0214 | mini | open (after J0213) | – | – | image · HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) | 6131173528 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 214,
+  "next_id": 215,
   "jobs": [
     {
       "id": "J0001",
@@ -13117,6 +13117,33 @@
         }
       ],
       "kind": "vo"
+    },
+    {
+      "id": "J0214",
+      "title": "HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS standalone Shorts S5-S8 plates: same method as J0203 (Chief ruling (a), HOS #180 re 6131173528): purpose-built 9:16 stills on Vertex gemini-2.5-flash-image, ~5 per Short in VO order, no text in the image, no Flow, no Veo, no long's plates. Extend docs/STANDALONE_SHORTS_TEST_2026-10/_mint_plates_v01.py (prompts in the script, one row per plate) and log each still in PLATES_MINT_LOG_v01.json. Beats from SCRIPTS_v01.md picture notes as amended by SCRIPTS_v02.md (S5 frame 0/caption per the S5 quote result; S6 frame 0 and loop on the stacked dishes, a mouldy dish; S7 never shows or says oxygen; S8 a horse and tall glass tube, 1733). Keep one face per person across a Short's plates (S2 lesson: lock the face from the first plate).\n\nCredit: balance-first per AGENTS.md (Vertex trial, job runs only if live balance - unbilled logged spend - estimate >= GBP 0.10; HOS 006 Part 03 J0107 first). ~20 x $0.039 ~ GBP 0.62. Log in ai_spend (pool vertex, film HOS:standalone). Contact sheets per Short, flag anything doubtful, park for Chief KEEP/FAIL. Then J0171 assembles S5-S8. Commit from a clean worktree.\n",
+      "ref": "6131173528",
+      "film": "",
+      "stage": "",
+      "after": "J0213",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T21:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T21:55Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "image"
     }
   ],
   "focus": [
