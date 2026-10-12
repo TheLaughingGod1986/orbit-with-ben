@@ -37,6 +37,17 @@ Plate picks for the intro, the four bridges and the closing are in `COMPILATION_
 
 **Open for Chief: the bed.** 005 has no music stem anywhere (Mini, the NAS 005 folder, NAS Desktop), so "the 005 bed under the new material" can't be laid as planned. Cursor recommends lifting music-only stretches from the films' own trimmed outros (no spend), with Chief ruling whether music_gate's "sounds like another film's bed" check is waived for a compilation. The alternatives are a new bed (needs Chief's OK under the credit hold until 30 Oct) or the house SFX drone only.
 
+## Segments v01 (step 5b, 12 Oct 21:57Z)
+
+`_assemble_compilation_segments_v01.py` builds the intro, the four bridges and the closing from `COMPILATION_PLATES_v01.json`. Each plate covers one spoken line, timed from the VO's Scribe word times. Master audio is muted, the cut is 1080p30 lanczos with a 0.4 s xfade, the lead-in is 0.6 s and the tail 0.8 s (2.6 s plus a fade on the closing). The house kit is in `06_Sound-Effects/compilation_kit_v01` (own synthesis, no spend), with a rumble on the Andromeda line. All six rendered (tmux `J0167-seg`, exit 0) to `/private/tmp/owb_comp/segments_v01/` on the Mini. Each segment has its mp4, separate `_vo.wav` and `_sfx.wav` stems, a picture_qa-format `_cuts.json`, and contact sheets `sheet_intro.jpg` and `sheet_bridges.jpg`. Lengths: intro 54.1 s, B1 16.8, B2 13.7, B3 17.9, B4 14.2, closing 23.3. There is no bed and there are no cards yet. The VO stem sits at about −20 LUFS raw and gets normalised at step 6.
+
+**The contact sheet found three re-picks, needed before step 6** (they go in a v02 of the plates file):
+1. **intro_10** ("We start with the shortest clock…", 005 @345, 11.9 s): after about 2 s of the ringed grey world, the shot becomes Orbit in front of a wall of molecule diagrams for about 9 s. That risks a diagram FAIL and doesn't match the line. Keep the first ~4 s and cut to a second window (a long clock or starfield shot that isn't a diagram).
+2. **bridge2_01** ("The Moon lets go a few centimetres at a time.", 013 @120): it's the Moon-forming debris impact, so it fails the plate's own "verify". Use the plan's fallback, 013 @420 (second use).
+3. **closing_01** (005 @470, 14.7 s): it ends on the same Orbit and molecule-diagram shot. Split it into two windows and keep it off the diagram backdrop.
+
+Lines longer than about 6.5 s (intro_09, B1 ×2, B2_02, B3_02, B4_02, closing ×2) run past the vetted ~6 s window. The masters cut on their own inside those spans, and the sheet shows no cards or captions in them apart from the three above. Smaller notes: intro_06 (013 @60) runs into 013's moonlit-sea shot around 18 s, which is close to intro_01 and closing_02, so picture_qa may count it as a repeat. B2_02 (019 @210) shows 019's own constellation linework (no labels).
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.
