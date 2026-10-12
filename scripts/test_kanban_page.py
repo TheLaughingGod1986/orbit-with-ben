@@ -60,7 +60,7 @@ class OrderOfWorkRemoved(unittest.TestCase):
 
     def test_cards_render_before_the_box_and_rank_code_is_unchanged(self):
         html = page()
-        self.assertIn("renderSource(); renderTracker(films); renderNow(); ", html)
+        self.assertIn("renderSource(); renderTracker(films); renderNow(); renderJobBoard(); ", html)
         self.assertIn("if(fj) ON_CARD.add(fj.j.id);", html)
         # PR #122's work order across both channels: same tiers as before.
         self.assertIn("tier: !fj ? 2 : fj.p.state===\"now\"||partDone ? 0 : fj.p.state===\"gated\" ? 3 : fj.p.start ? 1 : 2", html)
@@ -248,3 +248,87 @@ class VenusApproved(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class JobBoard(unittest.TestCase):
+    """Ben, 12 Oct 15:49: five columns, one-line cards, Needs-you strip only for money/irreversible, stuck alarm,
+    three header numbers with a dash for any missing source."""
+
+    NOW = "2026-10-12T15:00:00Z"
+    JOBS = [
+        {"id": "J0201", "title": "HOS 006 picture: Part 03 plates", "needs": "mini", "status": "claimed", "by": "cursor",
+         "claimedAt": "2026-10-12T13:00Z", "workStart": "2026-10-12T13:00Z", "estMin": 30, "typMin": 30, "kindKey": "omni", "last": {}},
+        {"id": "J0202", "title": "025 Mars robot rough v02", "needs": "mini", "status": "open", "estMin": 20, "last": {}},
+        {"id": "J0203", "title": "024 Light Speed covers", "needs": "mini", "status": "blocked",
+         "result": "parked for Chief: two covers", "last": {"at": "2026-10-12T14:30Z", "what": "blocked: parked for Chief"}},
+        {"id": "J0204", "title": "025 date gate", "needs": "cloud", "status": "blocked",
+         "result": "waits for input: 025 long public (publishAt Sun 8 Nov 18:00Z)", "last": {}},
+    ]
+
+    def render(self, jobs=None, extra=None, credits=None):
+        html = page()
+        names = ["esc", "AGENT", "MINUTE", "ts", "clock", "pd", "fd", "pw", "fw", "today", "days", "etaOf", "ago", "plan",
+                 "laneQuiet", "shortTitle", "jobTag", "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark",
+                 "shortReason", "stepPace", "progressOf", "finishIn", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER",
+                 "readyAt", "jobKind", "MONEY_IRREV", "chanOf", "AIR_RX", "airOf", "sinceMin", "dur", "isStuck", "jobCard",
+                 "renderJobBoard"]
+        lib = "\n".join(js_function(html, n) for n in names)
+        board = {"jobs": self.JOBS if jobs is None else jobs, "runOrder": {"mini": ["J0202"]}, "lanes": {}, "focus": [],
+                 "owb": [], "extra": extra if extra is not None else {}, "credits": credits}
+        script = f"""
+const RealDate = Date, FIXED = RealDate.parse({json.dumps(self.NOW)});
+globalThis.Date = class extends RealDate {{ constructor(...a){{ super(...(a.length?a:[FIXED])); }} static now(){{ return FIXED; }} }};
+const els = {{jobboard:{{hidden:true,innerHTML:""}}, daystats:{{hidden:true,innerHTML:""}}, needsyou:{{hidden:true,innerHTML:""}}}};
+const $ = id => els[id] || null;
+const DAY = 86400000;
+const fromDb = Object.assign({{chief:null}}, {json.dumps(board)});
+const ON_CARD = new Set();
+{lib}
+renderJobBoard();
+console.log(JSON.stringify(els));
+"""
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as f:
+            f.write(script)
+        out = subprocess.run(["node", f.name], capture_output=True, text=True, timeout=30)
+        Path(f.name).unlink()
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def test_five_columns_and_one_line_cards(self):
+        r = self.render()
+        h = r["jobboard"]["innerHTML"]
+        for col in ("Next", "Running", "Waiting for review", "Ready to ship", "Scheduled"):
+            self.assertIn(f"<h4>{col}", h)
+        self.assertIn('<span class="jid">J0201</span><span class="cdot HOS"', h)
+        self.assertIn('<span class="jid">J0202</span><span class="cdot OWB"', h)
+        self.assertIn("Airs Sun 8 Nov 18:00", h)  # 18:00Z in November is 18:00 London
+
+    def test_stuck_running_card_turns_amber(self):
+        h = self.render()["jobboard"]["innerHTML"]
+        self.assertIn('class="jc HOS stuck"', h)          # 120 min > 2 x 30
+        self.assertNotIn('class="jc OWB stuck"', h)        # the 30-min-old review is fine (default 240)
+
+    def test_needs_you_absent_unless_money_or_irreversible(self):
+        self.assertTrue(self.render()["needsyou"]["hidden"])
+        jobs = self.JOBS + [{"id": "J0205", "title": "ElevenLabs top-up?", "needs": "mini", "status": "blocked",
+                             "result": "needs Ben: approve a paid top-up", "last": {}}]
+        r = self.render(jobs=jobs)
+        self.assertFalse(r["needsyou"]["hidden"])
+        self.assertIn("J0205", r["needsyou"]["innerHTML"])
+
+    def test_missing_sources_show_a_dash(self):
+        s = self.render()["daystats"]["innerHTML"]
+        self.assertEqual(s.count(">—<"), 2)
+        self.assertIn("ElevenLabs — · Flow — · Vertex —", s)
+        s = self.render(extra={"day": {"doneToday": 7, "idleMin": 12}},
+                        credits={"pools": {"flow": {"latest": {"left": 52}}, "vertex": {"latest": {"left": 4.93}}}})["daystats"]["innerHTML"]
+        self.assertIn(">7<", s)
+        self.assertIn("Flow 52 · Vertex £4.93", s)
+
+    def test_done_over_48h_goes_to_archive(self):
+        done = [{"id": "J0190", "title": "OWB new", "at": "2026-10-12T10:00Z"}, {"id": "J0180", "title": "OWB old", "at": "2026-10-08T10:00Z"}]
+        h = self.render(extra={"done": done})["jobboard"]["innerHTML"]
+        self.assertIn("Archive (1)", h)
+        self.assertLess(h.index("J0190"), h.index("Archive (1)"))
+        self.assertGreater(h.index("J0180"), h.index("Archive (1)"))
