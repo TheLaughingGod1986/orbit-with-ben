@@ -7737,13 +7737,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-12T22:20Z",
-      "eta": "2026-10-12T22:35Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "",
+      "result": "Flow 25,050 (refill landed). Price table: 006 rest 1,270 at 1 take / 2,680 at 2 (P3:06 + P4:01-04 already have Vertex t1 from J0160); 007 3,050 / 6,100; total 8,780 fits. Desk #180 6133699074, HOS PR #304. No spend; J0139 (Chief) next.",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8134,6 +8134,11 @@
           "at": "2026-10-12T22:21Z",
           "by": "cursor",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-10-12T22:21Z",
+          "by": "cursor",
+          "what": "done: Flow 25,050 (refill landed). Price table: 006 rest 1,270 at 1 take / 2,680 at 2 (P3:06 + P4:01-04 already have Vertex t1 from J0160); 007 3,050 / 6,100; total 8,780 fits. Desk #180 6133699074, HOS PR #304. No spend; J0139 (Chief) next."
         }
       ],
       "kind": "video",
@@ -8143,7 +8148,8 @@
         "of": 3,
         "at": "2026-10-12T22:21Z",
         "by": "cursor"
-      }
+      },
+      "done_ref": "hos#304"
     },
     {
       "id": "J0139",
