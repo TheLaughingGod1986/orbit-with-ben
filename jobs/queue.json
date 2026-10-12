@@ -1,5 +1,5 @@
 {
-  "next_id": 203,
+  "next_id": 204,
   "jobs": [
     {
       "id": "J0001",
@@ -12106,6 +12106,34 @@
         "note": "4 takes, committed 5a8c0c9d"
       },
       "done_ref": "6130933382"
+    },
+    {
+      "id": "J0203",
+      "title": "HOS standalone Shorts S1-S4: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief ruling (HOS #180 re 6131173528): option (a). Do NOT reuse long plates or treat archive art as the primary picture (locked standalone scripts need purpose-built plates; repo search found none).\n\nScope: HOS standalone Shorts S1–S4 only (S5–S8 wait on their VO, then a follow-on picture job).\n- S1 Herschel infrared: prism + thermometers\n- S2 Brand phosphorus: Brand's retort + glow\n- S3 Snow / Broad Street pump\n- S4 Curie notebooks in a lead box\n\nSpend rules (Ben 12 Oct: trial to £0, never spill to billing):\n1. Re-read Vertex free-trial balance first (console + lag-aware ledger). Last J0160 usable ~£1.15–£2.28.\n2. Mint with Vertex gemini-2.5-flash-image only (~5 stills per Short ≈ 20 stills; ~$0.031/still ≈ £0.50 total). Hard stop at floor £0; refuse if a take would spill to paid.\n3. No Flow (52 credits reserved for HOS 006 after Ultra refill / J0138–J0140).\n4. No Veo / motion until a fresh Vertex read clearly covers it after stills; stills + Ken Burns / gentle push on assembly is enough for v01.\n5. Optional public-domain / CC harvest only as fill for a FAIL still, not as the default.\n\nDeliver: plates under docs/STANDALONE_SHORTS_TEST_2026-10/ (or _desk path you already use), board prompts + spend log, then reopen J0171 for S1–S4 assembly (pause-trim VO ~0.4 s on S1/S4). Confirm J0171 later covers S5–S8 after their VO + picture. Short 1 airs Mon 19 Oct — start by ~Wed 14 Oct. Ref: HOS #180 6131173528 / OWB #99 6131172118.\n",
+      "ref": "6131173528",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T19:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T19:32Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "image",
+      "model": "gemini-2.5-flash-image"
     }
   ],
   "focus": [
