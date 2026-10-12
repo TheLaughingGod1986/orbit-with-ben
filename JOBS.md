@@ -19,6 +19,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0143 | mini | open | – | – | 024 thumbs · chart · 024 Light Speed: two new covers (answers the title: age vs Earth / teases it), one glowing ship, no Orbit, <=30% near-black, --score PASS; park for Chief review, then Test & Compare from day 1 |  |
 | J0145 | any | blocked | cursor | – | 024 edit · qa · Orbit Auditor prep: per-chapter teaching gate sheet for 024 v05b (then 026, 027): chapter list, number-object timestamps, VO keyword match; Chief reviews | 6119251981 |
 | J0147 | mini | open | – | – | 024 edit · chart · 024 Light Speed v05b: teaching overlays per J0145 prep table (Chief FAIL on NUMBER) |  |
+| J0148 | mini | open | – | – | chart · 026 Nearest Star: teaching overlays per J0145 026 prep sheet (a901da4f), same rulings |  |
 
 Recently finished:
 
