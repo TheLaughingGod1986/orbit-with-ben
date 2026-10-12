@@ -131,7 +131,7 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
     def test_one_line_now_with_worker_and_ready_time(self):
         r = self.render()
         self.assertFalse(r["hidden"])
-        self.assertIn('<b>Now:</b> 024 Light Speed v05: picture fixes <span class="who">· Cursor</span>', r["html"])
+        self.assertIn('<b>Now:</b> 024 Light Speed v05: picture fixes</span><span class="meta"><span class="who">Cursor</span>', r["html"])
         self.assertIn("ready in about 40 min", r["html"])
         self.assertIn('<div class="upd">Updated ', r["html"])
         self.assertNotIn("J0129", r["html"])
