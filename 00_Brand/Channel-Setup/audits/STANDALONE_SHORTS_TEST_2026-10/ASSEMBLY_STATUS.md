@@ -68,7 +68,17 @@ Also waiting: **J0200** (Orbit Omni inserts at about 1 s, Chief item 4). The ass
 
 S4 also warned once that its open plate was 16 bits from `pL339HhjDwo` (7 Oct). That was on the earlier frame 0, and it cleared on the final render.
 
+## Step 6: S2 and S3 fixed (Cursor, 12 Oct 23:05)
+
+- **S3:** whoosh gain 0.22 → 0.15 (a per-Short `sfx_gain`). `sfx_kit level` now PASSes (SFX −37.4 LUFS against VO −20.8), and the gate still PASSes at 27.40 s.
+- **S2:** opening plate PIA00058 (fitted streaks) only reached motion 4.0, because the fitted plate sits over a still blur and the gate compares 72×128 frames. So frame 0 is back on PIA01492 (Voyager 2 disc) with a fast ease-out pan across the limb onto the Great Dark Spot and its streaks (`open_pan` 0.26 → 0.44, push 0.25). The loop pans back to the same frame-0 framing. Rows are now PIA01492 → PIA00063 → PIA00058 → PIA02210, all under 2× upscale. Motion is 11.96, the gate PASSes with no warning, and `sfx_kit level` PASSes.
+
+S1–S4 v01 are now clean on `gate_shorts_open` and `sfx_kit level`, apart from the ~20 s length warning on S1 and S4 (Ben's exception).
+
 ## Next
+
+- Covers for S1–S4 (step 7), then S5–S8 assembly (steps 8–9; all VO in, J0202), then contact sheets and gates on the thread and park for Chief (step 10).
+- Superseded list below kept for history.
 
 3. Orbit inserts at ~1 s on S1–S4 (Chief, #99 6125827198 item 4): 4 short Omni takes, a separate `video` job.
 4–7. Assemble S1–S4 v01 (the J0150 pattern: hook caption, own title at 9–14 s, one overlay, captions, house whoosh and tick, loop to frame 0), then run `gate_shorts_open.py check` and `sfx_kit.py level`.

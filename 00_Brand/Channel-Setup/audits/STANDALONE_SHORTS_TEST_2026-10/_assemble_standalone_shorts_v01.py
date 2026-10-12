@@ -65,10 +65,11 @@ SHORTS = {
     },
     "s2": {
         "stem": "owb_sa_s2_neptune", "vo": "owb_sa_s2_neptune_vo_v01", "air": "2026-10-24",
-        "title": ("The Wind on Neptune", "Is Supersonic"), "kick": 0.35, "hook": (("SUPERSONIC",), ("WIND",)), "yellow": "SUPERSONIC",
+        "title": ("The Wind on Neptune", "Is Supersonic"), "kick": 0.25, "open_pan": (0.26, 0.44),
+        "hook": (("SUPERSONIC",), ("WIND",)), "yellow": "SUPERSONIC",
         "sfx0": "whoosh",
         "rows": [
-            (0.0, "s2_neptune/PIA01492.jpg", "cover", 0.55, 0.47, 1.55, 1.75),
+            (0.0, "s2_neptune/PIA01492.jpg", "cover", 0.44, 0.47, 1.55, 1.65),
             (5.9, "s2_neptune/PIA00063.jpg", "fit", 0.5, 0.5, 1.0, 1.12),
             (11.6, "s2_neptune/PIA00058.jpg", "fit", 0.5, 0.5, 1.12, 1.0),
             (16.3, "s2_neptune/PIA02210.jpg", "fit", 0.5, 0.5, 1.6, 1.8),
@@ -79,7 +80,7 @@ SHORTS = {
     "s3": {
         "stem": "owb_sa_s3_iss_sunrises", "vo": "owb_sa_s3_iss_sunrises_vo_v01", "air": "2026-10-27",
         "title": ("Astronauts See 16", "Sunrises Every Day"), "hook": (("16", "SUNRISES"), ("A", "DAY")), "yellow": "16",
-        "sfx0": "whoosh",
+        "sfx0": "whoosh", "sfx_gain": 0.15,
         "rows": [
             (0.0, "s3_iss/iss040e080833.jpg", "cover", 0.62, 0.45, 1.0, 1.12),
             (4.0, "s3_iss/iss054e002538.jpg", "cover", 0.30, 0.45, 1.0, 1.10),
@@ -183,11 +184,12 @@ class Plate:
         """Output pixels per original source pixel."""
         return self.base * zoom * self.down
 
-    def frame(self, zoom: float) -> Image.Image:
+    def frame(self, zoom: float, cx: float | None = None) -> Image.Image:
+        cx = self.cx if cx is None else cx
         s = self.base * zoom
         out_h = self.fg_h
         cw, ch = W / s, out_h / s
-        x0 = min(max(self.cx * self.im.width - cw / 2, 0), self.im.width - cw)
+        x0 = min(max(cx * self.im.width - cw / 2, 0), self.im.width - cw)
         y0 = min(max(self.cy * self.im.height - ch / 2, 0), self.im.height - ch)
         fg = self.im.transform((W, out_h), Image.EXTENT, (x0, y0, x0 + cw, y0 + ch), Image.BICUBIC)
         if self.mode == "cover":
@@ -321,15 +323,24 @@ def build(key: str) -> dict:
                 # fast ease-out push in the first second, so frame 0 is already moving (gate motion check)
                 x = min(t / OPEN_PUSH_S, 1.0)
                 z = r[5] * (1 + spec.get("kick", OPEN_KICK) * (1 - (1 - x) ** 2)) + (r[6] - r[5]) * (t / ends[0])
+                cx = None
+                if "open_pan" in spec:
+                    a, b = spec["open_pan"]
+                    cx = a + (b - a) * (1 - (1 - x) ** 2)
             else:
                 z = r[5] + (r[6] - r[5]) * ease((t - r[0]) / (ends[i] - r[0]))
-            frame = plates[i].frame(z)
+                cx = None
+            frame = plates[i].frame(z, cx)
             max_up[r[1]] = max(max_up.get(r[1], 0), plates[i].upscale(z))
         else:
             # loop: pull back onto frame 0's framing, crossfading from the last row
             k = (t - last_end) / max(total - last_end, 1e-3)
             z = z_open_from + (z_open_to - z_open_from) * 0.5 * (1 - ease(k))
-            frame = opening.frame(z)
+            cx = None
+            if "open_pan" in spec:
+                a, b = spec["open_pan"]
+                cx = b + (a - b) * ease(k)
+            frame = opening.frame(z, cx)
             dt = t - last_end
             if dt < LOOP_XFADE:
                 r = rows[-1]
@@ -362,7 +373,7 @@ def build(key: str) -> dict:
     run(["ffmpeg", "-y", "-v", "error", "-stream_loop", "-1", "-i", BED, "-af",
          f"aresample=48000,atrim=0:{total},volume='{hold_ramp}':eval=frame,afade=t=in:st=0:d=0.3,"
          f"afade=t=out:st={total - 0.6:.3f}:d=0.6", "-ac", "2", bed_stem])
-    sfx_gain = 0.45 if spec["sfx0"] == "rumble" else 0.22
+    sfx_gain = spec.get("sfx_gain", 0.45 if spec["sfx0"] == "rumble" else 0.22)
     run(["ffmpeg", "-y", "-v", "error", "-i", sfx0, "-i", tick, "-filter_complex",
          f"[0:a]aresample=48000,volume={sfx_gain},afade=t=out:st=1.6:d=0.8,atrim=0:2.4[s0];"
          f"[1:a]aresample=48000,volume=0.3,adelay={int((c0 + 0.05) * 1000)}:all=1[tk];"
