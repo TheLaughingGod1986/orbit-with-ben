@@ -1,0 +1,78 @@
+{
+  "stem": "027_short_wed25_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6002577120"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 333,
+      "duration_s": 22.64
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 333,
+  "words": 58,
+  "duration_s": 22.64,
+  "loudness": {
+    "lufs_integrated": -19.3,
+    "mean_volume_db": -22.6,
+    "max_volume_db": -4.7
+  },
+  "sha256_mp3": "e5a5aa25a7d56a469faebe55f60592c52bab0ad312abf1ca65491ad040812f29",
+  "scribe": {
+    "transcript": "Could a robot survive if Earth suddenly stops spinning? The rock stops, the air doesn't. At the equator, the wind keeps going at more than fifteen hundred kilometers an hour, faster than sound. No robot on the ground there survives that. But at the North Pole, it would barely notice. The full film, What if Earth Stopped Spinning?",
+    "script_words": 58,
+    "scribe_words": 58,
+    "match_rate_pct": 96.55,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "stopped"
+        ],
+        "scribe": [
+          "stops"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ]
+      }
+    ]
+  },
+  "vo_check": "PASS",
+  "credits": {
+    "before": {
+      "used": 135339,
+      "limit": 209536,
+      "remaining": 74197
+    },
+    "after": {
+      "used": 135346,
+      "limit": 209536,
+      "remaining": 74190
+    },
+    "counter_delta": 7
+  },
+  "text": "Could a robot survive if Earth suddenly stopped spinning? The rock stops. The air doesn't. At the equator, the wind keeps going at more than fifteen hundred kilometres an hour, faster than sound. No robot on the ground there survives that. But at the North Pole, it would barely notice. The full film: What If Earth Stopped Spinning?",
+  "made_at": "2026-10-05T21:49:28+0100",
+  "rescored_at": "2026-10-05T21:50:35+0100"
+}

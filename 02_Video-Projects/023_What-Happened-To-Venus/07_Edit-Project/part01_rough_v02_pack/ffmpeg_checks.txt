@@ -1,0 +1,42 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/023_Venus_Part01_rough_v02.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf63.1.101
+  Duration: 00:02:22.23, start: 0.000000, bitrate: 6631 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 6427 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc63.1.101 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 195 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf63.1.101
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      encoder         : Lavc63.1.101 wrapped_avframe
+      handler_name    : VideoHandler
+frame=  372 fps=0.0 q=-0.0 size=N/A time=00:00:12.40 bitrate=N/A speed=24.3x elapsed=0:00:00.51    
+frame=  731 fps=717 q=-0.0 size=N/A time=00:00:24.36 bitrate=N/A speed=23.9x elapsed=0:00:01.01    
+frame= 1144 fps=749 q=-0.0 size=N/A time=00:00:38.13 bitrate=N/A speed=  25x elapsed=0:00:01.52    
+frame= 1530 fps=753 q=-0.0 size=N/A time=00:00:51.00 bitrate=N/A speed=25.1x elapsed=0:00:02.03    
+frame= 1923 fps=758 q=-0.0 size=N/A time=00:01:04.10 bitrate=N/A speed=25.3x elapsed=0:00:02.53    
+[vf#0:0 @ 0x871110000] Reconfiguring filter graph because video parameters changed to yuv420p(tv, bt709), 1920x1080, unspecified alpha
+[vf#0:0 @ 0x871110000] Reconfiguring filter graph because video parameters changed to yuv420p(tv, unknown), 1920x1080, unspecified alpha
+frame= 2355 fps=774 q=-0.0 size=N/A time=00:01:18.50 bitrate=N/A speed=25.8x elapsed=0:00:03.04    
+frame= 2724 fps=768 q=-0.0 size=N/A time=00:01:30.80 bitrate=N/A speed=25.6x elapsed=0:00:03.54    
+frame= 3075 fps=758 q=-0.0 size=N/A time=00:01:42.50 bitrate=N/A speed=25.3x elapsed=0:00:04.05    
+frame= 3372 fps=738 q=-0.0 size=N/A time=00:01:52.40 bitrate=N/A speed=24.6x elapsed=0:00:04.56    
+frame= 3672 fps=724 q=-0.0 size=N/A time=00:02:02.40 bitrate=N/A speed=24.1x elapsed=0:00:05.07    
+frame= 4011 fps=720 q=-0.0 size=N/A time=00:02:13.70 bitrate=N/A speed=  24x elapsed=0:00:05.57    
+[out#0/null @ 0x87100ca80] video:1767KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 4267 fps=713 q=-0.0 Lsize=N/A time=00:02:22.23 bitrate=N/A speed=23.8x elapsed=0:00:05.98    

@@ -1,0 +1,200 @@
+{
+  "text_report": [
+    {
+      "stretch": "grains_22.6-28.2",
+      "src": "22.6-28.2s on HD file",
+      "max_bright_frac_bottom": 1.0683760683760684e-05,
+      "max_bright_frac_top": 0.0,
+      "heuristic": "NO_OBVIOUS_TEXT",
+      "frame_scores": [
+        {
+          "t": 22.6,
+          "top": {
+            "bright_frac": 0.0,
+            "lum_std": 4.86672438247852
+          },
+          "bottom": {
+            "bright_frac": 0.0,
+            "lum_std": 19.333504455729255
+          },
+          "full": {
+            "bright_frac": 0.0005078125,
+            "lum_std": 28.92128724891793
+          }
+        },
+        {
+          "t": 24.46666666666667,
+          "top": {
+            "bright_frac": 0.0,
+            "lum_std": 5.7829733415349285
+          },
+          "bottom": {
+            "bright_frac": 0.0,
+            "lum_std": 20.49456855414814
+          },
+          "full": {
+            "bright_frac": 0.0007431520061728395,
+            "lum_std": 29.634682275899454
+          }
+        },
+        {
+          "t": 26.333333333333332,
+          "top": {
+            "bright_frac": 0.0,
+            "lum_std": 7.377437924282527
+          },
+          "bottom": {
+            "bright_frac": 0.0,
+            "lum_std": 20.378720875912023
+          },
+          "full": {
+            "bright_frac": 0.0007074652777777778,
+            "lum_std": 29.67222284245468
+          }
+        },
+        {
+          "t": 28.2,
+          "top": {
+            "bright_frac": 0.0,
+            "lum_std": 6.867763096212467
+          },
+          "bottom": {
+            "bright_frac": 1.0683760683760684e-05,
+            "lum_std": 20.047286871656553
+          },
+          "full": {
+            "bright_frac": 0.0008897569444444444,
+            "lum_std": 29.71287644446699
+          }
+        }
+      ],
+      "best_twitter_offset_s": 0.0,
+      "best_mad": 1.3969881534576416
+    },
+    {
+      "stretch": "rain_35.0-40.0",
+      "src": "35.0-40.0s on HD file",
+      "max_bright_frac_bottom": 0.0006436965811965812,
+      "max_bright_frac_top": 0.0006338824289405685,
+      "heuristic": "NO_OBVIOUS_TEXT",
+      "frame_scores": [
+        {
+          "t": 35.0,
+          "top": {
+            "bright_frac": 0.0003916343669250646,
+            "lum_std": 11.896668429096259
+          },
+          "bottom": {
+            "bright_frac": 8.814102564102565e-05,
+            "lum_std": 26.0439944680846
+          },
+          "full": {
+            "bright_frac": 0.0002932098765432099,
+            "lum_std": 69.88886115863207
+          }
+        },
+        {
+          "t": 36.666666666666664,
+          "top": {
+            "bright_frac": 0.0006338824289405685,
+            "lum_std": 13.844772822147979
+          },
+          "bottom": {
+            "bright_frac": 0.0005288461538461538,
+            "lum_std": 26.598669495026968
+          },
+          "full": {
+            "bright_frac": 0.0005208333333333333,
+            "lum_std": 70.25901651694376
+          }
+        },
+        {
+          "t": 38.333333333333336,
+          "top": {
+            "bright_frac": 7.671188630490956e-05,
+            "lum_std": 8.90887199522191
+          },
+          "bottom": {
+            "bright_frac": 0.0003979700854700855,
+            "lum_std": 26.90010529660632
+          },
+          "full": {
+            "bright_frac": 0.0006447723765432099,
+            "lum_std": 70.24303638622922
+          }
+        },
+        {
+          "t": 40.0,
+          "top": {
+            "bright_frac": 0.0,
+            "lum_std": 7.778486506431816
+          },
+          "bottom": {
+            "bright_frac": 0.0006436965811965812,
+            "lum_std": 27.56396268408372
+          },
+          "full": {
+            "bright_frac": 0.0007146990740740741,
+            "lum_std": 70.01207363340885
+          }
+        }
+      ],
+      "best_twitter_offset_s": 0.0,
+      "best_mad": 1.1989762783050537
+    }
+  ],
+  "offset_notes": [
+    {
+      "stretch": "grains_22.6-28.2",
+      "t": 22.6,
+      "mean_abs_diff_same_t": 2.7374390753600824
+    },
+    {
+      "stretch": "grains_22.6-28.2",
+      "t": 24.46666666666667,
+      "mean_abs_diff_same_t": 2.672042984825103
+    },
+    {
+      "stretch": "grains_22.6-28.2",
+      "t": 26.333333333333332,
+      "mean_abs_diff_same_t": 2.869516139403292
+    },
+    {
+      "stretch": "grains_22.6-28.2",
+      "t": 28.2,
+      "mean_abs_diff_same_t": 2.9961183449074076
+    },
+    {
+      "stretch": "grains_22.6-28.2",
+      "best_twitter_offset_s": 0.0,
+      "best_mad": 1.3969881534576416,
+      "note": "positive = Twitter frame is later than HD at same clock"
+    },
+    {
+      "stretch": "rain_35.0-40.0",
+      "t": 35.0,
+      "mean_abs_diff_same_t": 1.5973657728909465
+    },
+    {
+      "stretch": "rain_35.0-40.0",
+      "t": 36.666666666666664,
+      "mean_abs_diff_same_t": 1.885628375771605
+    },
+    {
+      "stretch": "rain_35.0-40.0",
+      "t": 38.333333333333336,
+      "mean_abs_diff_same_t": 1.9894614840534979
+    },
+    {
+      "stretch": "rain_35.0-40.0",
+      "t": 40.0,
+      "mean_abs_diff_same_t": 1.7958997235082304
+    },
+    {
+      "stretch": "rain_35.0-40.0",
+      "best_twitter_offset_s": 0.0,
+      "best_mad": 1.1989762783050537,
+      "note": "positive = Twitter frame is later than HD at same clock"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "engine": "vertex_omni_one_shot",
+  "project": "gen-lang-client-0538779324",
+  "location": "us-central1",
+  "model": "gemini-omni-flash-preview",
+  "identity": "/Users/benjaminoats/YouTube/orbit-with-ben/01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png",
+  "composition": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/04_Generated-Clips/stills_v02/saturn_orbit_along_rings_v02.png",
+  "startedAt": "2026-10-01T15:12:28Z",
+  "status": "FAILED",
+  "error_type": "InternalServerError",
+  "error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}",
+  "seconds": 13.3,
+  "traceback": " call last):\n  File \"<stdin>\", line 60, in <module>\n  File \"/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/.venv/lib/python3.14/site-packages/google/genai/_gaos/google_genai.py\", line 289, in create\n    response = wrap_sdk_call(\n        super().create,\n    ...<5 lines>...\n        timeout=timeout,\n    )\n  File \"/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/.venv/lib/python3.14/site-packages/google/genai/_gaos/lib/compat_errors.py\", line 369, in wrap_sdk_call\n    return fn(*args, **kwargs)\n  File \"/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/.venv/lib/python3.14/site-packages/google/genai/_gaos/interactions.py\", line 759, in create\n    response_helpers.raise_parse_error(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        self.sdk_configuration.__dict__[\"_hooks\"],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<2 lines>...\n        parse_exc_,\n        ^^^^^^^^^^^\n    )\n    ^\n  File \"/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/.venv/lib/python3.14/site-packages/google/genai/_gaos/utils/response_helpers.py\", line 93, in raise_parse_error\n    raise parse_error from exc\ngoogle.genai._gaos.lib.compat_errors.InternalServerError: Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}\n",
+  "finishedAt": "2026-10-01T15:12:41Z"
+}

@@ -1,0 +1,13 @@
+{
+  "ben_notes": "1 Oct 21:58 \u2014 Next sounds like Net; cards too short",
+  "source_cut": "v03c",
+  "vo_patch": {
+    "word": "Next",
+    "issue": "LOCK end ASR/heard as Net; Ben at 8:53/9:09",
+    "fix": "splice clear 'next' from subscribe line LOCK 206.22-206.60 into end after temporary (~519.45), pad to keep 523.62s",
+    "patched_vo": "/tmp/saturn_v03d/saturn_rings_vo_v03d_next_patch.wav",
+    "lock_untouched": "02_Voiceover/parts/saturn_rings_vo_v03b_tightened_LOCK.wav"
+  },
+  "cards": "+2.0s each (keep 0.65s breath + 0.4s xfade)",
+  "shot_list": "shot_list_v03i.csv"
+}
