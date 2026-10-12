@@ -10056,13 +10056,13 @@
       "stage": "",
       "after": "J0165",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-12T18:29Z",
-      "eta": "2026-10-12T19:29Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "Compilation VO complete per Chief ruling (cb5259da): Bridge 3 owb_comp_bridge3_vo_v01 PASS 16.48 s (teaspoon = a mountain); Bridge 1 owb_comp_bridge1_vo_v02 REVIEW 15.44 s, numerals only (Scribe hears 'between 100 and 300 million'), use v02 not v01. Script + VO_STATUS updated. 440 chars, 1,952 total. J0167 can lay intro, bridges 1v02/2/3/4, closing.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10113,6 +10113,11 @@
           "at": "2026-10-12T18:31Z",
           "by": "cursor",
           "what": "step 5 of 5 done: Bridge 3 + Bridge 1 v02 recorded (cb5259da)"
+        },
+        {
+          "at": "2026-10-12T18:31Z",
+          "by": "cursor",
+          "what": "done: Compilation VO complete per Chief ruling (cb5259da): Bridge 3 owb_comp_bridge3_vo_v01 PASS 16.48 s (teaspoon = a mountain); Bridge 1 owb_comp_bridge1_vo_v02 REVIEW 15.44 s, numerals only (Scribe hears 'between 100 and 300 million'), use v02 not v01. Script + VO_STATUS updated. 440 chars, 1,952 total. J0167 can lay intro, bridges 1v02/2/3/4, closing."
         }
       ],
       "kind": "vo",
@@ -10123,7 +10128,8 @@
         "at": "2026-10-12T18:31Z",
         "by": "cursor",
         "note": "Bridge 3 + Bridge 1 v02 recorded (cb5259da)"
-      }
+      },
+      "done_ref": "cb5259da"
     },
     {
       "id": "J0167",
