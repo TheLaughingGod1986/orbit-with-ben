@@ -5,8 +5,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0146.** Ahead of everything, the focus film included.
-
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
@@ -21,10 +19,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0143 | mini | blocked | codex | – | 024 thumbs · chart · 024 Light Speed: two new covers (answers the title: age vs Earth / teases it), one glowing ship, no Orbit, <=30% near-black, --score PASS; park for Chief review, then Test & Compare from day 1 |  |
 | J0145 | any | blocked | cursor | – | 024 edit · qa · Orbit Auditor prep: per-chapter teaching gate sheet for 024 v05b (then 026, 027): chapter list, number-object timestamps, VO keyword match; Chief reviews | 6119251981 |
-| J0146 | mini | claimed | cursor | 2026-10-12T10:38Z | 004 thumbs · studio · HOS 004: add thumb C v07b as 3rd variant in armed Test & Compare (Chief PASS 6119854326; Ben wants now) | 6119854326 |
 
 Recently finished:
 
+- J0146 done: HOS 004: add thumb C v07b as 3rd variant in armed Test & Compare (Chief PASS 6119854326; Ben wants now) (T&C deleted and re-armed (Chief one-off OK 6120597964): A v04 / C v07b / B v04, same 3 titles, Set test + Save 'Changes saved'; reload shows 3 titles and Studio's stored thumbs A, C v07b, B. Still Scheduled 15 Oct 17:00Z, not MFK, main thumb A. HOS 77bf286)
 - J0144 cancelled: Orbit Auditor: per-chapter teaching gate on 024 onward (number shown as an object per chapter; keywords match VO word for word) (parked for Chief: kind=chief (no stand-in per Who does what). The per-chapter NUMBER/WORDS PASS/FAIL scoring on 024 v05b, 026, 027 is a protected PASS call for the Orbit Auditor/Chief; Cursor can draft an advisory chapter/timestamp sheet if Chief re-adds it as kind=qa or review.)
 - J0142 done: 027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test) (done)
 - J0137 done: HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) (Part 03 rough v01 built: 94.83 s on locked v02 VO, 16 KEEP takes, P3:06 held by plate board (J0140). iCloud HOS UAT/006_part03_rough_v01 (sha d7f825fe). freezedetect: placeholder only. picture_qa FAIL 1 row (16 reuse of 14 per board) parked for Chief with the KEEP call, desk #180 6116202964. HOS PR #285 (merge = Chief).)
@@ -34,4 +32,3 @@ Recently finished:
 - J0129 done: 024 Light Speed v05: picture fixes from the Chief's v04 FAIL (repeats, motion, jitter, near-black, seams) + bed hush/duck (v05 pack complete: picture_qa PASS 0/107, polish_gate PASS, clip_check PASS, no hold >=4 s, mix -14.3 LUFS/-1.2 dBTP, bed >=10 LU under VO everywhere, WER 1.49%, music_gate PASS. Posted #99 6113618406. Awaiting Chief review + signature of reviewed_ok_v05.json (2 Omni rows need a ruling).)
 - J0128 done: HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row (done)
 - J0127 done: 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots (description restored to LOCKED v02 (diff verified after reload); end screen + 5:25 card (2fsQcea-voM) screenshots at ~/_desk/scratch/j0127; Studio left on Orbit; report on #99)
-- J0126 done: Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 (done)
