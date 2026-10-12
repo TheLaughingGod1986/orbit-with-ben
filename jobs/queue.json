@@ -10415,13 +10415,13 @@
       "stage": "",
       "after": "J0163",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T23:24Z",
-      "eta": "2026-10-13T00:24Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: kind=chief (no stand-in). Needs Chief PASS/FAIL on each standalone Short and the OK to upload Private with publishAt on the 2/week slots; Cursor can then run the uploads + UPLOADS register + TEST_LOG start as a follow-up job",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10437,6 +10437,11 @@
           "at": "2026-10-12T23:24Z",
           "by": "cursor",
           "what": "step 0 of 1 done"
+        },
+        {
+          "at": "2026-10-12T23:24Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: kind=chief (no stand-in). Needs Chief PASS/FAIL on each standalone Short and the OK to upload Private with publishAt on the 2/week slots; Cursor can then run the uploads + UPLOADS register + TEST_LOG start as a follow-up job"
         }
       ],
       "kind": "chief",
