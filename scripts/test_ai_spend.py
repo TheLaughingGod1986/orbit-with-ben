@@ -92,6 +92,18 @@ class CursorSpending(unittest.TestCase):
         self.assertIn("Free Trial: £4.93 Available (expiring in 30 days)", note)
         self.assertIn("Free Trial: £225.63 Expired", note)
 
+    def test_billing_pool_sums_every_available_credit(self):
+        # Ben's screenshot, 12 Oct 2026 23:51: the new Developer Program credit plus the trial's tail.
+        import ai_spend_daily
+        page = ("Google Developer Program premium benefit - CREDIT_TYPE_MONTHLY\n Available\n100%\n£75.39\n£75.39 One-time\n"
+                "f8b5-CREDIT_TYPE_MONTHLY-357d\nFollowing services: All of Google Cloud Platform\n12 October 2026\n"
+                "Free Trial\n Expiring in 30 days\nDanger\n0%\n£0.67\n£225.63 One-time\nFreeTrialUpgrade:x\n"
+                "Google Developer Program premium benefit - CREDIT_TYPE_MONTHLY\n Used\nDanger\n0%\n£0.00\n£30.09\n"
+                "Google Developer Program premium benefit - CREDIT_TYPE_MONTHLY\n Expired\n—\n£9.62\n£30.09\n")
+        pool, note = ai_spend_daily.parse_billing(page)
+        self.assertEqual(pool, 76.06)
+        self.assertIn("£9.62 Expired", note)
+
     def test_changed_page_fails_loudly(self):
         import ai_spend_daily
         with self.assertRaises(RuntimeError):
