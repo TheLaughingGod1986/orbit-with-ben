@@ -27,12 +27,13 @@ YELLOW = (255, 230, 0)
 WHITE = (255, 255, 255)
 BAND_H = 150
 CAPTION_BOX = (420, 262, 862, 478)  # where the v04 live caption sits on all four lifted thumbs
+CLONE_SHIFT = 115
 
 JOBS = [
     {"id": "ojk-dfOpAmw", "film": "019_Andromeda-Milky-Way-Collision", "words": ["THIS", "IS", "ANDROMEDA"],
      "yellow": "ANDROMEDA", "plate": "nasa", "crop": (1400, 1610, 8000, 5322), "fg_scale": 0.84, "lift": True},
     {"id": "Yk1tLh23rko", "film": "007_What-Happens-To-Your-Body-Near-A-Neutron-Star", "words": ["CRUSHED", "FLAT"],
-     "yellow": "FLAT", "plate": "live", "fg_scale": 0.76, "lift": True},
+     "yellow": "FLAT", "plate": "live", "fg_scale": 0.76},
     {"id": "NbW5G1BpPY0", "film": "006_Could-Life-Exist-Under-The-Ice-Of-Europa", "words": ["A", "HIDDEN", "OCEAN"],
      "yellow": "OCEAN", "plate": "live", "fg_scale": 0.78, "pale": True, "lift": True},
     {"id": "REXYxuLOBoI", "film": "005_The-Last-Star-In-The-Universe", "words": ["LAST", "LIGHT"],
@@ -52,8 +53,23 @@ def strip_caption(path: Path) -> Image.Image:
     m = np.zeros(bgr.shape[:2], np.uint8)
     m[y0:y1, x0:x1] = ((yellow | white) * 255).astype(np.uint8)
     m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, np.ones((25, 25), np.uint8))
-    m = cv2.dilate(m, np.ones((27, 27), np.uint8))
-    out = cv2.inpaint(bgr, m, 11, cv2.INPAINT_TELEA)
+    n, lab, st, _ = cv2.connectedComponentsWithStats(m)
+    m = np.isin(lab, [i for i in range(1, n) if st[i, 4] > 1500]).astype(np.uint8) * 255
+    # wide enough to take the black outline and drop shadow with the letters
+    m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (37, 37)))
+    # Telea/FSR leave a blotch on the subject; borrow the subject's own texture from above and
+    # below the caption instead, then Poisson-blend it in so the colour matches the hole's edge
+    ys, xs = np.where(m > 0)
+    ty0, ty1, tx0, tx1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
+    mid, shift, pad = (ty0 + ty1) // 2, CLONE_SHIFT, 10
+    src = bgr.copy()
+    src[ty0:mid] = bgr[ty0 - shift:mid - shift]
+    src[mid:ty1] = bgr[mid + shift:ty1 + shift]
+    src[mid - 12:mid + 12] = cv2.GaussianBlur(src[mid - 12:mid + 12].copy(), (1, 25), 0)
+    bm = cv2.dilate(m, np.ones((9, 9), np.uint8))
+    sl = (slice(ty0 - pad, ty1 + pad), slice(tx0 - pad, tx1 + pad))
+    centre = ((tx0 + tx1) // 2, (ty0 + ty1) // 2)
+    out = cv2.seamlessClone(src[sl], bgr, bm[sl], centre, cv2.NORMAL_CLONE)
     return Image.fromarray(cv2.cvtColor(out, cv2.COLOR_BGR2RGB))
 
 
