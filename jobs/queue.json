@@ -10745,13 +10745,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T21:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: KEEP/FAIL on S4 v03 (v02 picture, bed -3 dB on last word to pass sfx_kit level); land HOS #302 (58386eb, on cursor/j0171-s3s4-v02). sfx_kit level PASS x4, gate_shorts_open PASS x4, covers J0209 paired. Then S1-S4 listings (kind listing) before packaging; S5-S8 wait on VO+plates. No spend, no upload.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10922,16 +10922,14 @@
           "at": "2026-10-12T21:38Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: KEEP/FAIL on S4 v03 (v02 picture, bed -3 dB on last word to pass sfx_kit level); land HOS #302 (58386eb, on cursor/j0171-s3s4-v02). sfx_kit level PASS x4, gate_shorts_open PASS x4, covers J0209 paired. Then S1-S4 listings (kind listing) before packaging; S5-S8 wait on VO+plates. No spend, no upload."
+        },
+        {
+          "at": "2026-10-12T21:53Z",
+          "by": "chief",
+          "what": "reopened: Chief KEEP S4 v03 (HOS #180); #302 → main 887498c. Next: S1-S4 listings (kind listing) then packages; S5-S8 still wait VO+plates. No upload."
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-12T21:38Z",
-        "by": "cursor",
-        "note": "level PASS x4, S4 v03, HOS #302"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0172",
