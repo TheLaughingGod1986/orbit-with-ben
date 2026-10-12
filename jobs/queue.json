@@ -1,5 +1,5 @@
 {
-  "next_id": 184,
+  "next_id": 185,
   "jobs": [
     {
       "id": "J0001",
@@ -10697,6 +10697,34 @@
       ],
       "kind": "script",
       "backlog": "hos-next-script"
+    },
+    {
+      "id": "J0184",
+      "title": "Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "For the next HOS film whose picture plan isn't done, write the plate board rows (prompt, reference, Flow quality, price) from the locked VO. Mint nothing. Commit in a HOS PR and block 'parked for Chief: price pass'.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-12T16:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T16:23Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "hos-plate-prep"
     }
   ],
   "focus": [
@@ -10718,6 +10746,7 @@
     "hos-ideas": "2026-10-12T16:03Z",
     "hos-live-listing-fixes": "2026-10-12T16:07Z",
     "owb-next-script": "2026-10-12T16:12Z",
-    "hos-next-script": "2026-10-12T16:18Z"
+    "hos-next-script": "2026-10-12T16:18Z",
+    "hos-plate-prep": "2026-10-12T16:23Z"
   }
 }
