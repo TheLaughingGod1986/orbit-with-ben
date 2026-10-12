@@ -10206,13 +10206,13 @@
       "stage": "",
       "after": "J0169",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T17:50Z",
-      "eta": "2026-10-12T19:20Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: HOS SA S1-S4 VO recorded (HOS 7aae35c, PR #297, 1,132 chars), all vo_check PASS (Scribe 96-100%, spelling/numerals only). Accept takes, and S1/S4 at 23.9 s (~22.2/22.8 s after J0171 pause trim) vs 18-22 s target, or order trims.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10248,6 +10248,11 @@
           "at": "2026-10-12T17:54Z",
           "by": "cursor",
           "what": "step 6 of 6 done: 4 takes committed 7aae35c, HOS PR #297"
+        },
+        {
+          "at": "2026-10-12T17:54Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: HOS SA S1-S4 VO recorded (HOS 7aae35c, PR #297, 1,132 chars), all vo_check PASS (Scribe 96-100%, spelling/numerals only). Accept takes, and S1/S4 at 23.9 s (~22.2/22.8 s after J0171 pause trim) vs 18-22 s target, or order trims."
         }
       ],
       "kind": "vo",
