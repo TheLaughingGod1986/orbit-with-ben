@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T22:31Z",
-      "eta": "2026-10-13T02:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8257,6 +8257,11 @@
           "at": "2026-10-12T22:32Z",
           "by": "cursor",
           "what": "step 0 of 6 done: scoped: 28 Flow plates per J0139 PASS"
+        },
+        {
+          "at": "2026-10-12T22:32Z",
+          "by": "cursor",
+          "what": "released: 0 spent. Scope per J0139 PASS (desk 6133713891): 28 Flow first takes, P4:05-16 + P5:01-23 rows of J0138 table, 1,270 cr; P3:06 uses its J0160 Vertex t1 (no Flow). Next run: write 006 Flow-only minter 07_Edit-Project/_mint_flow_cdp_v01.py from 004 _mint_part05_flow_cdp_v01.py with Gemini/Vertex fallback REMOVED, one-plate probe on CDP 9222 (no Flow tab open now; account benoats@googlemail.com), then Part 04 batch detached in tmux j0140-p4. Note: HOS Mini checkout is dirty (standalone-shorts files, not mine) so git pull aborts; work and commit from a worktree."
         }
       ],
       "kind": "video",
