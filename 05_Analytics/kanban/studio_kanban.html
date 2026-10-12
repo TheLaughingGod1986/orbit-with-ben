@@ -270,6 +270,8 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .nowbar details li .w{font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:480px){.nowbar{padding:8px 12px;margin:-4px 0 10px}}
 .nowbar .upd{margin-top:5px;font-size:11px;color:var(--ink-3)}
+.nowbar details.more .chip{white-space:normal;color:var(--ink-2);background:transparent;border:1px solid var(--line);font-weight:500;border-radius:8px;text-align:left}
+.nowbar details.more.ben .chip{color:var(--blocked);border-color:var(--blocked-soft)}
 /* Ben, 12 Oct 15:49: job board. Needs-you strip, three numbers, five columns of one-line cards. */
 .needs{background:var(--blocked-soft);color:var(--blocked);border:1px solid var(--blocked);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:14px;font-weight:600}
 .needs ul{margin:4px 0 0;padding-left:18px;font-weight:500}
@@ -809,6 +811,32 @@ function jobKind(j){
   if(j.status==="blocked") return WAITS_INPUT.test(blockWhy(j)) || WAITS_INPUT.test(j.title||"") ? "sched" : "held";
   return "";
 }
+// Ben, 12 Oct 19:45: "Red and orange messages make little sense and information overload." The box is three plain
+// lines: Now (short title + when done), Next (one job), and one muted line counting what's waiting, grouped by reason in
+// plain words; tap it for short titles only (no job ids, no "waits for input", no instructions). Red only for Ben.
+function plainTitle(j, max){
+  max = max||52;
+  const vid = /\b(?=[A-Za-z0-9_-]{11}\b)(?=[^\s]*\d)(?=[^\s]*[A-Z])[A-Za-z0-9_-]{11}\b/g;
+  let t = cleanTitle(j, 300).replace(/^(blocked|waiting for chief review|chief|urgent)\s*:\s*/i,"")
+    .replace(/\s*[-–·]\s*waits?\s+for\b.*$/i,"").replace(/[;,]?\s*\bWAITS?\b.*$/,"").replace(vid,"").replace(/\s+after go-public/i,"").replace(/\s{2,}/g," ");
+  let head = "", task = t; const c = t.indexOf(": ");
+  if(c>0 && c<40){ head = t.slice(0,c).trim(); task = t.slice(c+2).trim(); }
+  task = task.split(/\s+(?:once|until|before|after|so that|per|then|on\/after)\s+|;\s*|,\s+then\s+/i)[0].trim();
+  if(task.length>34) task = task.split(/,\s+/)[0].trim();
+  task = task.replace(/(\s+(on|to|with|and|the))+$/i,"").trim();
+  t = head && task ? `${head} – ${task}` : (head||task||cleanTitle(j, max));
+  return t.length>max ? t.slice(0,max-1).trim()+"…" : t;
+}
+function waitReason(j, kind){
+  const w = (blockWhy(j)+" "+(j.title||""));
+  if(kind==="ben") return "ben";
+  if(kind==="chief") return "review";
+  if(/flow|ai ultra|refill|credit|payment|top[- ]?up|price pass/i.test(w)) return "flow";
+  if(/public|upload id|publishAt|goes live|go live|premiere|after the long/i.test(w)) return "public";
+  if(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|\bon\/after\b|scheduled|date/i.test(w)) return "date";
+  return "other";
+}
+const WAIT_WORD = {ben:"for you", review:"for my review", public:"for films to go public", flow:"for the Flow payment", date:"for a later date", other:"for other jobs to finish"};
 function renderNow(){
   const box = $("nowbar"); if(!box) return;
   const all = fromDb.jobs||[];
@@ -820,28 +848,26 @@ function renderNow(){
   const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
   const headJob = busy[0] || null;
   let cls = "", head;
-  if(headJob){ const pr = progressOf(headJob, P);
-    head = `<span class="tt"><b>Now:</b> ${esc(cleanTitle(headJob))}</span><span class="meta"><span class="run">Running</span> <span class="jid">${esc(headJob.id||"")}</span> <span class="who">${esc(WORKER[headJob.by]||headJob.by||"Mac mini")}</span> <span class="eta">· ${esc(readyAt(pr.done)||"working")}</span></span>`; }
+  if(headJob){ const pr = progressOf(headJob, P), r = readyAt(pr.done);
+    head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 60))}</span>${r?`<span class="meta eta">· ${esc(r)}</span>`:""}`; }
   else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
-    head = q && q.quiet ? "<b>Now:</b> Mac mini quiet for 3 h+ with work waiting" : "<b>Now:</b> starting the next job"; }
-  else { cls = "idle"; head = "<b>Now:</b> nothing queued"; }
+    head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours" : "<b>Now:</b> starting the next job"; }
+  else { cls = "idle"; head = "<b>Now:</b> nothing to do right now"; }
   const nx = line.find(j=>j!==headJob);
-  const groups = {ben:[], chief:[], sched:[], held:[]};
-  for(const j of all) { const k = jobKind(j); if(k) groups[k].push(j); }
-  const n = groups.chief.length, b = groups.ben.length, sc = groups.sched.length, h = groups.held.length;
-  const chip = [n?`${n} waiting on Chief`:"", b?`${b} need${b===1?"s":""} Ben`:"", sc?`${sc} scheduled`:"", h?`${h} held`:""].filter(Boolean).join(" · ");
-  const row = (j, why) => `<li><span class="t">${esc(cleanTitle(j, 60))}</span>${why?`<span class="w">${esc(why)}</span>`:""}</li>`;
-  const sec = (title, arr, f) => arr.length ? `<div class="sh">${title}</div><ul>${arr.map(f).join("")}</ul>` : "";
-  const details = chip ? `<details class="more"><summary><span class="chip">${esc(chip)}</span><span class="sa">Show all</span></summary>`
-    + sec("Waiting on Chief", groups.chief, j=>row(j,""))
-    + sec("Scheduled", groups.sched, j=>row(j, shortReason(blockWhy(j).replace(/^waits? for input:\s*/i,""))))
-    + sec("Held", groups.held, j=>row(j, shortReason(blockWhy(j))))
+  const groups = {};
+  for(const j of all){ if(j===headJob) continue; const k = jobKind(j); if(!k) continue;
+    const r = waitReason(j, k); (groups[r] = groups[r] || []).push(j); }
+  const order = ["ben","public","flow","date","review","other"].filter(r=>groups[r]);
+  const total = order.reduce((n,r)=>n+groups[r].length, 0);
+  const parts = order.map(r=>`${groups[r].length} ${WAIT_WORD[r]}`);
+  const summary = total ? `${total} job${total===1?"":"s"} waiting: ${parts.join(", ")}` : "";
+  const details = total ? `<details class="more${groups.ben?" ben":""}"><summary><span class="chip">${esc(summary)}</span></summary>`
+    + order.map(r=>`<div class="sh">${esc(WAIT_WORD[r].replace(/^for /,"Waiting for "))}</div><ul>${groups[r].map(j=>`<li><span class="t">${esc(plainTitle(j))}</span></li>`).join("")}</ul>`).join("")
     + `</details>` : "";
-  const benLine = groups.ben.length ? `<div class="bl">Needs Ben: ${esc(cleanTitle(groups.ben[0], 60))}${groups.ben.length>1?` (+${groups.ben.length-1})`:""}</div>` : "";
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>`
-    + (nx ? `<div class="nx one"><span class="jid">${esc(nx.id||"")}</span> <b>Next:</b> ${esc(cleanTitle(nx, 60))}</div>` : "")
-    + benLine + details + updatedAt();
+    + (nx ? `<div class="nx one"><b>Next:</b> ${esc(plainTitle(nx, 60))}</div>` : "")
+    + details + updatedAt();
 }
 
 // ---------- Job board (Ben, 12 Oct 15:49) ----------
