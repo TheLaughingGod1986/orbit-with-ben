@@ -1,0 +1,79 @@
+{
+  "stem": "owb_comp_bridge1_vo_v02",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "J0166-chief-ruling-2026-10-12T18:10Z"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 210,
+      "duration_s": 15.44
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 210,
+  "words": 36,
+  "duration_s": 15.44,
+  "loudness": {
+    "lufs_integrated": -19.2,
+    "mean_volume_db": -22.5,
+    "max_volume_db": -3.7
+  },
+  "sha256_mp3": "1024e3bbeeb866dbbaf50faa086530deaa2b144a646bab5641068ed4a84d3481",
+  "scribe": {
+    "transcript": "So the rings have somewhere between 100 and 300 million years, a blink for Saturn. Closer to home, something else is leaving far more slowly. Every year, the moon moves a little further away",
+    "script_words": 36,
+    "scribe_words": 34,
+    "match_rate_pct": 88.89,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "a",
+          "hundred"
+        ],
+        "scribe": [
+          "100"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "three",
+          "hundred"
+        ],
+        "scribe": [
+          "300"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 200557,
+      "limit": 209536,
+      "remaining": 8979
+    },
+    "after": {
+      "used": 200557,
+      "limit": 209536,
+      "remaining": 8979
+    },
+    "counter_delta": 0
+  },
+  "text": "So the rings have somewhere between a hundred and three hundred million years. A blink, for Saturn.\n\nCloser to home, something else is leaving, far more slowly. Every year, the Moon moves a little further away.",
+  "made_at": "2026-10-12T19:30:13+0100"
+}

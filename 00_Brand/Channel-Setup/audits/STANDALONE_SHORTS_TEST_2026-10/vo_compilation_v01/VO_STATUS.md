@@ -5,16 +5,14 @@ One take per segment with `vo_take.py --text-file` (Ben Orbit Narrator, eleven_v
 | Segment | Stem | Length | vo_check | Scribe | Mismatches | Credits |
 |---|---|---|---|---|---|---|
 | Intro | `owb_comp_intro_vo_v01` | 52.72 s | PASS | 99.2% | "centimeters" spelling | 679 |
-| Bridge 1 (after 021) | `owb_comp_bridge1_vo_v01` | 14.32 s | REVIEW | 94.3% | numeral only ("three hundred" → 300) | 204 |
+| Bridge 1 (after 021) | `owb_comp_bridge1_vo_v02` (**use this**; v01 superseded) | 15.44 s | REVIEW | 88.9% | numerals only ("a hundred" → 100, "three hundred" → 300) | 210 |
 | Bridge 2 (after 013) | `owb_comp_bridge2_vo_v01` | 12.32 s | PASS | 96.7% | "centimeters" spelling | 170 |
-| Bridge 3 (after 019) | — | — | **held** | — | — | 0 |
+| Bridge 3 (after 019) | `owb_comp_bridge3_vo_v01` | 16.48 s | PASS | 100% | none | 230 |
 | Bridge 4 (after 007) | `owb_comp_bridge4_vo_v01` | 12.80 s | PASS | 100% | none | 183 |
 | Closing (after 005) | `owb_comp_closing_vo_v01` | 20.08 s | PASS | 96.1% | spelling + numeral ("ten" → 10) | 276 |
 
-1,512 credits spent; about 10,885 left before the first take, about 9,800 after (ledger lags the account counter).
+1,512 credits spent on the first five takes; about 10,885 left before the first take. Chief-ruling pickups (Bridge 3, Bridge 1 v02): 440 more, 1,952 in all; the account counter read 8,979 before them and lags the ledger.
 
-**Bridge 3 is held, not recorded.** Gemini flags C8: "a teaspoon of it would outweigh mountains" overstates NASA ("a teaspoon would weigh more than a billion tons, as much as a mountain"). Per *Quotes must be real*, the line is softened, not kept on trust, and the wording is Chief's call (Claude's script kind). One option that keeps the beat and matches the source: "…leave behind something so dense that a teaspoon of it would weigh as much as a mountain." Once Chief rules, Bridge 3 is one `--text` take of about 200 characters, stem `owb_comp_bridge3_vo_v01`.
-
-**Bridge 1 REVIEW is numeral formatting only;** every word is spoken as scripted. No retake proposed. One note for Chief: "between one and three hundred million years" can be heard as 1–300 million rather than 100–300 million. Gemini passed it, so it stands unless Chief orders a pickup.
+**Chief ruling (J0166, 12 Oct 2026, 19:10 London), done 19:30.** Bridge 3 recorded with the softened line that matches NASA's quote (Gemini C8): "…leave behind something so dense that a teaspoon of it would weigh as much as a mountain." Bridge 1 re-recorded as v02 with "between a hundred and three hundred million years", because v01 was heard as 1–300 million; Scribe now hears "between 100 and 300 million". Its REVIEW is numeral formatting only, every word spoken as scripted. Text: `text/bridge3.txt`, `text/bridge1_v02.txt`. Intro, Bridge 2, Bridge 4 and the closing are kept (Chief). `owb_comp_bridge1_vo_v01` stays on disk but isn't used; J0167 lays v02.
 
 **Not recorded:** the optional "Next: Is the Sun Getting Brighter?" hand-off (Chief's J0165 ruling: no 022 and all end hand-offs trimmed).

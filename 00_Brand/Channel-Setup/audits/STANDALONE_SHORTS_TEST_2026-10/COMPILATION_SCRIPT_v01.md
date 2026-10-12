@@ -1,6 +1,6 @@
 # OWB compilation film: intro, bridges and closing, script v01 (J0165)
 
-Draft by Cursor, covering Claude's `script` job, 12 Oct 2026. **Not locked:** Chief locks it after a Gemini claims pass on the MUST QUOTE table below (AGENTS.md "Quotes must be real"). Plan and running order: `COMPILATION_PLAN_v01.md`.
+Draft by Cursor, covering Claude's `script` job, 12 Oct 2026. **Chief ruling (J0166, 12 Oct 19:10 London):** Bridge 1 line 1 now says "between a hundred and three hundred million years" (heard as 1–300 million before), and Bridge 3's teaspoon line now matches NASA (Gemini C8). **Not locked:** Chief locks it after a Gemini claims pass on the MUST QUOTE table below (AGENTS.md "Quotes must be real"). Plan and running order: `COMPILATION_PLAN_v01.md`.
 
 Voice: Ben Orbit Narrator, eleven_v3, the house settings (`vo_take.py --script`). Spoken words: about 305, about 1,730 characters (intro ~125, bridges ~35 each, closing ~45). Wonder, not dread: no goodbye and no subscribe ask.
 
@@ -32,7 +32,7 @@ Every one of those clocks is still ticking. First, the rings.
 
 [VISUAL MUST: Saturn pull-out to the inner Solar System, then the Moon over Earth · DATA: countdown timeline (log scale) appears; marker 1 drops at "three hundred million years": SATURN'S RINGS, 100–300 MILLION YEARS · tick on the marker]
 
-So the rings have somewhere between one and three hundred million years. A blink, for Saturn.
+So the rings have somewhere between a hundred and three hundred million years. A blink, for Saturn.
 
 Closer to home, something else is leaving, far more slowly. Every year, the Moon moves a little further away.
 
@@ -62,7 +62,7 @@ But the biggest change coming to our sky isn't something leaving. It's something
 
 When galaxies collide, almost every star sails through untouched.
 
-But no star lasts forever on its own. The biggest end in an explosion, and leave behind something so dense that a teaspoon of it would outweigh mountains.
+But no star lasts forever on its own. The biggest end in an explosion, and leave behind something so dense that a teaspoon of it would weigh as much as a mountain.
 
 [CHAPTER CARD: What Dead Stars Leave]
 
@@ -115,5 +115,5 @@ Every number is one already spoken in its own film and checked there. Gemini con
 | Intro, Closing | The smallest stars shine about ten trillion years | 005 Shorts `FRIDAY_LAST_STAR_SHORT.md` TEACH line; 005 SOURCES (on NAS or the 005 pack) |
 | Bridge 2, Closing | The Milky Way–Andromeda meeting is billions of years away | 019 sources (not in the repo; Gemini to confirm the wording covers 019's figure) |
 | Bridge 3 | In a galaxy collision almost every star passes untouched | 019 and its Short `xQlV9G9lqLI` (*Why Stars Don't Crash When Galaxies Meet*) |
-| Bridge 3 | The biggest stars end in an explosion and can leave a neutron star; a teaspoon outweighs mountains | 007 script (teaspoon line); 007 SOURCES |
+| Bridge 3 | The biggest stars end in an explosion and can leave a neutron star; a teaspoon weighs as much as a mountain | 007 script (teaspoon line); 007 SOURCES |
 | Bridge 4 | The smallest stars outlive every other kind | 005 (red dwarfs are the last stars) |
