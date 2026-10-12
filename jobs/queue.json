@@ -7210,10 +7210,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T00:19Z",
-      "eta": "2026-10-12T03:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:29Z",
       "result": "",
@@ -7242,6 +7242,11 @@
           "at": "2026-10-12T00:22Z",
           "by": "cursor",
           "what": "step 2 of 5 done: builder v01; 4/5 pass score"
+        },
+        {
+          "at": "2026-10-12T00:22Z",
+          "by": "cursor",
+          "what": "released: Step 2 of 5. Rollback: ~/_desk/thumb_packaging_1011/rollback/. Builder tools/build_packaging_long_thumbs_j0133.py (e29ed5ed; run with ~/_desk/venvs/thumbs/bin/python). Drafts in each film's 08_Thumbnail/packaging_v01/ (uncommitted). --score: 002/005/019 PASS, 006 PASS --pale, 007 FAIL sat 91 (drop navy lift for 007). Next: fix 007, check for caption ghosts at full size, post before/after sheet on #99, block for Chief."
         }
       ],
       "kind": "studio",
