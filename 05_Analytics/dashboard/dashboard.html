@@ -111,6 +111,15 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .tgt .hit { color: #1d7a3a; font-weight: 600; } .tgt .miss { color: #b4432f; font-weight: 600; } .tgt .na { color: var(--ink-3); }
 .tgt .sub { grid-column: 1 / -1; color: var(--ink-3); font-size: .78rem; }
 #gfmt { justify-self: end; margin-top: 6px; }
+.tgt li { grid-template-columns: auto auto 1fr; } .tgt .t { grid-column: 1 / -1; }
+.tier { display: inline-block; font-size: .72rem; font-weight: 600; padding: 0 7px; border-radius: 9px; background: var(--bg); color: var(--ink-2); border: 1px solid var(--line); }
+.tier.below { color: #9a5b4f; } .tier.developing { color: #8a6d2f; } .tier.good { color: #4f7a5c; } .tier.excellent { color: #3f6a8a; }
+.miles { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.miles li { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; font-size: .85rem; }
+.miles .mn { grid-row: span 3; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); display: grid; place-items: center; font-size: .75rem; color: var(--ink-2); }
+.miles .track { height: 6px; border-radius: 3px; background: var(--bg); border: 1px solid var(--line); overflow: hidden; } .miles .track i { display: block; height: 100%; background: var(--ink-3); }
+.miles .ms { color: var(--ink-3); font-size: .78rem; }
+.tiers summary { cursor: pointer; color: var(--ink-3); font-size: .8rem; }
 </style>
 
 <div class="wrap">
@@ -127,6 +136,8 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
   <section class="panel" aria-labelledby="tgt-h">
     <h2 id="tgt-h">Long films vs targets <span class="stamp" id="tgtNote"></span></h2>
+    <ol class="miles" id="tgtMiles"></ol>
+    <details class="tiers"><summary>Tiers</summary><div class="stamp">CTR: under 2% Below · 2–4% Developing · 4–7% Good · 7%+ Excellent<br>Retention: under 20% Below · 20–35% Developing · 35–50% Good · 50%+ Excellent</div></details>
     <ul class="tgt" id="tgtList"></ul>
   </section>
 
@@ -550,21 +561,46 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   // Ben, 12 Oct 22:17: targets for every long film. Retention = average % viewed (lifetime; Studio's figure first,
   // since the Analytics API lags 2-3 days); CTR = impressions
   // click-through rate, which the Analytics API doesn't return: it shows once a Studio read adds `impressionsCtr` (%).
-  const TARGETS = { ctr: 4, retention: 35 };
+  // Ben, 12 Oct 22:48: tiers and milestones replace the flat 4% / 35%. Long films only.
+  // Retention gaps: 30-35% counts as Developing, 45-50% as Good (a tier is reached only at its floor).
+  const CTR_TIERS = [[7, "Excellent"], [4, "Good"], [2, "Developing"], [0, "Below"]];
+  const RET_TIERS = [[50, "Excellent"], [35, "Good"], [20, "Developing"], [0, "Below"]];
+  const tierOf = (val, tiers) => val == null ? null : tiers.find(([f]) => val >= f)[1];
+  const MILESTONES = [
+    { n: 5, label: "Next 5 long films", ret: 20, ctr: 3 },
+    { n: 10, label: "Next 10 long films", ret: 35, ctr: 4 },
+    { n: null, label: "Long-term", ret: 45, ctr: 6 },
+  ];
+  const MILESTONE_FROM = "2026-10-12";   // films published on or after this day count
+  const figs = (v) => {
+    const lt0 = v.lifetime || v.last28 || {};
+    return { views: v.studioViews != null ? v.studioViews : lt0.views,
+      ret: v.studioAvgViewPct != null ? v.studioAvgViewPct : lt0.avgViewPct,
+      ctr: v.impressionsCtr != null ? v.impressionsCtr : (v.ctr != null ? v.ctr : null) };
+  };
   function drawTargets(c) {
     // Ben, 12 Oct 22:45: targets are for long films only, so this panel always lists long films (whole channel,
     // whatever the All / Long / Shorts toggle says) and says so when Shorts is selected.
     const all = DATA.channels.find((x) => x.channel === state.ch) || c;
-    const longs = all.videos.filter((v) => !isShort(v)).sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 8);
-    const mark = (val, tgt, label) => val == null ? `<span class="m na">${label} –</span>`
-      : `<span class="m ${val >= tgt ? "hit" : "miss"}">${label} ${val.toFixed(1)}% ${val >= tgt ? "✓ hit" : "✗ miss"}</span>`;
-    $("tgtNote").textContent = `targets: CTR ${TARGETS.ctr}% · retention ${TARGETS.retention}%` + (state.gf === "short" ? " · long films only, so Shorts have no targets" : "");
+    const allLongs = all.videos.filter((v) => !isShort(v));
+    const longs = allLongs.slice().sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt))).slice(0, 8);
+    const chip = (val, tiers, label) => { const t = tierOf(val, tiers);
+      return t ? `<span class="m">${label} ${val.toFixed(1)}% <span class="tier ${t.toLowerCase()}">${t}</span></span>` : `<span class="m na">${label} –</span>`; };
+    $("tgtNote").textContent = "long films only" + (state.gf === "short" ? ", so Shorts have no targets" : "");
+    // Milestones: count films from 12 Oct 2026 in publish order.
+    const fresh = allLongs.filter((v) => String(v.publishedAt || "").slice(0, 10) >= MILESTONE_FROM)
+      .sort((a, b) => String(a.publishedAt).localeCompare(String(b.publishedAt)));
+    const hits = (vs, m) => vs.filter((v) => { const f = figs(v); return f.ret != null && f.ctr != null && f.ret >= m.ret && f.ctr >= m.ctr; }).length;
+    $("tgtMiles").innerHTML = MILESTONES.map((m, i) => {
+      const vs = m.n ? fresh.slice(0, m.n) : fresh, h = hits(vs, m), of = m.n || fresh.length;
+      const pct = of ? Math.round(h / of * 100) : 0;
+      const done = m.n ? `${h} of ${m.n} hit · ${vs.length} out so far` : `${h} of ${fresh.length} since 12 Oct hit`;
+      return `<li><span class="mn">${i + 1}</span><span class="ml"><b>${m.label}</b>: ${m.ret}%${m.n ? "" : "+"} retention, ${m.ctr}%${m.n ? "" : "+"} CTR</span><span class="track"><i style="width:${pct}%"></i></span><span class="ms">${done}</span></li>`;
+    }).join("");
     $("tgtList").innerHTML = longs.map((v) => {
-      const lt0 = v.lifetime || v.last28 || {}, lt = { views: v.studioViews != null ? v.studioViews : lt0.views };
-      const ret = v.studioAvgViewPct != null ? v.studioAvgViewPct : lt0.avgViewPct, ctr = v.impressionsCtr != null ? v.impressionsCtr : (v.ctr != null ? v.ctr : null);
-      const few = (lt.views || 0) < 20;
-      return `<li><span class="t"><a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a></span>${mark(ctr, TARGETS.ctr, "CTR")}${mark(ret, TARGETS.retention, "Ret")}
-        <span class="sub">${ukDate(v.publishedAt)} · ${fmt(v.studioViews != null ? Math.max(v.studioViews, v.views || 0) : v.views)} views${v.studioAvgViewPct != null || ctr != null ? " · Studio" + (v.ctrReadAt ? " " + ukDate(v.ctrReadAt) : "") : " · API, 2-3 days behind"}${few ? " · too few views to judge yet" : ""}${ctr == null ? " · CTR needs a Studio read" : ""}</span></li>`;
+      const f = figs(v), few = (f.views || 0) < 20;
+      return `<li><span class="t"><a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a></span>${chip(f.ctr, CTR_TIERS, "CTR")}${chip(f.ret, RET_TIERS, "Ret")}
+        <span class="sub">${ukDate(v.publishedAt)} · ${fmt(v.studioViews != null ? Math.max(v.studioViews, v.views || 0) : v.views)} views${v.studioAvgViewPct != null || f.ctr != null ? " · Studio" + (v.ctrReadAt ? " " + ukDate(v.ctrReadAt) : "") : " · API, 2-3 days behind"}${few ? " · too few views to judge yet" : ""}${f.ctr == null ? " · CTR needs a Studio read" : ""}</span></li>`;
     }).join("") || `<li class="na">No long films yet.</li>`;
   }
 
