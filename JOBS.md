@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0210 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
 | J0216 | mini | open (after J0164) | – | – | studio · OWB standalone Shorts: Private+scheduled uploads (J0164 OK) |  |
-| J0217 | mini | claimed | codex | 2026-10-13T00:51Z | chart · HOS standalone Shorts S5-S8: custom 9:16 covers | 6134823664 |
+| J0217 | mini | blocked | codex | – | chart · HOS standalone Shorts S5-S8: custom 9:16 covers | 6134823664 |
 
 Recently finished:
 
