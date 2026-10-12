@@ -7478,13 +7478,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T12:14Z",
-      "eta": "2026-10-12T13:44Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:50Z",
-      "result": "",
+      "result": "parked for Chief: no clean plate for JWST ziKBPJ6FY0U thumb (not in repo, NAS or Mini); A saved to ~/_desk/notext_tc_1011; suggest Jupiter -jmMROGoZCM (NASA PD plates, rebuildable) or another long",
       "history": [
         {
           "at": "2026-10-11T22:50Z",
@@ -7555,6 +7555,11 @@
           "at": "2026-10-12T12:15Z",
           "by": "cursor",
           "what": "step 2 of 5 done: A saved; no clean JWST plate found"
+        },
+        {
+          "at": "2026-10-12T12:15Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: no clean plate for JWST ziKBPJ6FY0U thumb (not in repo, NAS or Mini); A saved to ~/_desk/notext_tc_1011; suggest Jupiter -jmMROGoZCM (NASA PD plates, rebuildable) or another long"
         }
       ],
       "kind": "studio",
