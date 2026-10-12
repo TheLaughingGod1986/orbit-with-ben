@@ -1,0 +1,68 @@
+{
+  "job": "J0167",
+  "by": "cursor",
+  "at": "2026-10-12T20:45Z",
+  "method": "faster_whisper medium.en word timings (/private/tmp/owb_comp/words/<film>.json) + 50 ms RMS envelope; every cut sits in a measured VO gap, never on a word",
+  "rules": "Chief J0165 lock: trim mid-film subscribe beats except one, and every film's end hand-off; picture cuts inside a film get a ~0.4 s xfade, audio an 80 ms crossfade; film ends crossfade 0.5-1.5 s into the next bridge or the Closing",
+  "films": [
+    {
+      "film": "021",
+      "id": "55AEQwvs36g",
+      "duration": 559.125,
+      "cuts": [
+        {
+          "what": "subscribe beat (KEPT by default, see note)",
+          "remove": [209.65, 219.55],
+          "removed_s": 9.9,
+          "text": "We make one of these every week. Subscribing is how the next one finds you.",
+          "before": "away. ends 209.30",
+          "after": "Here starts 219.80",
+          "breath_s": 0.6,
+          "apply": false
+        }
+      ],
+      "out": 540.2,
+      "out_reason": "end hand-off 'What happens when the last star dies?' (540.56-543.90) and its hold trimmed; last kept word 'temporary.' ends 539.88"
+    },
+    {
+      "film": "013",
+      "id": "2fsQcea-voM",
+      "duration": 518.806,
+      "cuts": [],
+      "out": 500.8,
+      "out_reason": "no spoken hand-off or subscribe beat; last word 'perspective.' ends 498.04; 2.76 s hold kept, ~18 s moonlit-sea outro trimmed"
+    },
+    {
+      "film": "019",
+      "id": "ojk-dfOpAmw",
+      "duration": 620.292,
+      "cuts": [],
+      "out": 612.8,
+      "out_reason": "no spoken hand-off or subscribe beat; last word 'forever?' ends 610.10; 2.7 s hold kept, galaxy outro trimmed",
+      "upscale": "lanczos 720p to 1080p"
+    },
+    {
+      "film": "007",
+      "id": "Yk1tLh23rko",
+      "duration": 582.937,
+      "cuts": [],
+      "out": 569.4,
+      "out_reason": "end ask 'Follow Orbit for the next mystery... Please like and subscribe... Thanks for watching.' (569.58-580.02) and the THANKS FOR WATCHING end card trimmed; last kept word 'line.' ends 567.24, 2.16 s hold",
+      "upscale": "lanczos 720p to 1080p"
+    },
+    {
+      "film": "005",
+      "id": "REXYxuLOBoI",
+      "duration": 517.387,
+      "cuts": [],
+      "out": 488.05,
+      "out_reason": "book plug (Katie Mack, 488.18-497.68), sign-off 'What happens next? Orbit will keep asking...' and outro replaced by the Closing; last kept word 'ride.' ends 487.84, gap is -85 dB at 488.05",
+      "upscale": "lanczos 720p to 1080p"
+    }
+  ],
+  "subscribe_beat_note": "The plan assumed all five films carry a mid-film [SUBSCRIBE BEAT]. Transcripts show only 021 has one (3:29-3:36 in the film). 013, 019 and 005 have none; 007's ask is its end card (trimmed with the end). Chief's lock said keep the last (005's), which doesn't exist. Default: keep 021's beat so the film has exactly one mid-film beat (the plan's original recommendation, Never list: one only). Set apply=true on the 021 cut to run with none. Chief decides at J0168.",
+  "films_kept_s": {"021": 540.2, "013": 500.8, "019": 612.8, "007": 569.4, "005": 488.05},
+  "films_total_s": 2711.25,
+  "films_total": "45:11",
+  "with_new_material_est": "about 47:50 (recorded VO: intro 52.7 s, bridges 1v02/2/3/4 57.0 s, closing 20.1 s; plus breaths and holds ~15 s and 5 cards ~15 s)"
+}
