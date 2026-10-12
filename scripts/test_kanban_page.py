@@ -91,7 +91,7 @@ class MacMiniBox(unittest.TestCase):
 
     def render(self, on_card=(), jobs=None):
         html = page()
-        names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "plan", "laneQuiet", "shortTitle", "jobTag",
+        names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "jobMin", "plan", "laneQuiet", "shortTitle", "jobTag",
                  "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
                  "updatedAt", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "renderNow"]
         lib = "\n".join(js_function(html, n) for n in names)
@@ -276,7 +276,7 @@ class JobBoard(unittest.TestCase):
 
     def render(self, jobs=None, extra=None, credits=None):
         html = page()
-        names = ["esc", "AGENT", "MINUTE", "ts", "clock", "pd", "fd", "pw", "fw", "today", "days", "etaOf", "ago", "plan",
+        names = ["esc", "AGENT", "MINUTE", "ts", "clock", "pd", "fd", "pw", "fw", "today", "days", "etaOf", "ago", "jobMin", "plan",
                  "laneQuiet", "shortTitle", "jobTag", "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark",
                  "shortReason", "stepPace", "progressOf", "finishIn", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER",
                  "readyAt", "jobKind", "MONEY_IRREV", "chanOf", "AIR_RX", "airOf", "sinceMin", "dur", "isStuck", "jobCard",
