@@ -8769,13 +8769,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-12T18:38Z",
-      "eta": "2026-10-12T21:38Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T10:49Z",
-      "result": "",
+      "result": "parked for Chief: review Bessel WHO correction v05d and PR #152 (158fba69); picture_qa and polish_gate report zero failures, audio identical; worker steps 4/4 complete",
       "history": [
         {
           "at": "2026-10-12T10:49Z",
@@ -8851,6 +8851,11 @@
           "at": "2026-10-12T18:48Z",
           "by": "codex",
           "what": "step 4 of 4 done: v05d complete: both automated gates zero failures; audio identical; 158fba69 ready for Chief"
+        },
+        {
+          "at": "2026-10-12T18:49Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review Bessel WHO correction v05d and PR #152 (158fba69); picture_qa and polish_gate report zero failures, audio identical; worker steps 4/4 complete"
         }
       ],
       "kind": "chart",

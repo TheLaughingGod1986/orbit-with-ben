@@ -15,7 +15,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0139 | any | blocked | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
 | J0140 | mini | blocked | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
-| J0148 | mini | claimed | codex | 2026-10-12T21:38Z | chart · 026 Nearest Star: teaching overlays per J0145 026 prep sheet (a901da4f), same rulings |  |
+| J0148 | mini | blocked | codex | – | chart · 026 Nearest Star: teaching overlays per J0145 026 prep sheet (a901da4f), same rulings |  |
 | J0154 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0159 | mini | open (after J0174) | – | – | vo · Spend ElevenLabs to 0: VO for locked scripts with no take (HOS 007–010 Shorts first), house client, stop at 0 |  |
 | J0163 | mini | open (after J0162) | – | – | assembly · OWB standalone Shorts test: assemble the 8 Shorts |  |
