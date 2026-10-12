@@ -21,7 +21,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0149 | mini | blocked | cursor | – | 024 edit · assembly · 024 Light Speed v05d: row 2 new picture in-point so '7 years' holds >=1.2 s before the fade (Chief PASS v05c 22/23) |  |
 | J0150 | mini | blocked | cursor | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0151 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0152 | mini | claimed | cursor | 2026-10-12T14:51Z | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
+| J0152 | mini | blocked | cursor | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 
 Recently finished:
 
