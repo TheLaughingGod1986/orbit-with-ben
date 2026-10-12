@@ -15,17 +15,22 @@ import path from "path";
 import { ANALYTICS_ROOT } from "./analytics-snapshot";
 import { CHANNELS, buildReport, renderMarkdown, type ChannelDaily, type ChannelKey, type ChannelReport, type Snapshot } from "../src/lib/analytics/channel-tracker";
 
-/** Impressions and impressions CTR come from a daily read-only Studio read (the Analytics API has no CTR), written to
+/** Impressions, impressions CTR, views and average % viewed come from a daily read-only Studio read (the Analytics API has no CTR), written to
  *  05_Analytics/<key>/studio_ctr.json by the `studio-ctr-daily` job (Ben, 12 Oct 22:19). Merged onto each video. */
 export function mergeStudioCtr(root: string, key: string, r: ChannelReport): void {
   const f = path.join(root, key, "studio_ctr.json");
   if (!fs.existsSync(f)) return;
   try {
-    const s = JSON.parse(fs.readFileSync(f, "utf8")) as { readAt?: string; videos?: Record<string, { impressions?: number; impressionsCtr?: number }> };
-    for (const v of r.videos as Array<ChannelReport["videos"][number] & { impressions?: number; impressionsCtr?: number; ctrReadAt?: string }>) {
+    const s = JSON.parse(fs.readFileSync(f, "utf8")) as { readAt?: string; videos?: Record<string, { impressions?: number; impressionsCtr?: number; views?: number; avgViewPct?: number; avgViewSeconds?: number }> };
+    for (const v of r.videos as Array<ChannelReport["videos"][number] & { impressions?: number; impressionsCtr?: number; ctrReadAt?: string; studioViews?: number; studioAvgViewPct?: number; studioAvgViewSeconds?: number }>) {
       const m = s.videos?.[v.id];
-      if (!m || typeof m.impressionsCtr !== "number") continue;
-      v.impressionsCtr = m.impressionsCtr;
+      if (!m) continue;
+      // Studio is live; the Analytics API lags 2-3 days (Saturn 021 read 99.7% from 1 view when Studio had 63 views
+      // at 6.8%, Ben 12 Oct 22:33). Studio's views and average % viewed take priority on the tracker.
+      if (typeof m.views === "number") v.studioViews = m.views;
+      if (typeof m.avgViewPct === "number") v.studioAvgViewPct = m.avgViewPct;
+      if (typeof m.avgViewSeconds === "number") v.studioAvgViewSeconds = m.avgViewSeconds;
+      if (typeof m.impressionsCtr === "number") v.impressionsCtr = m.impressionsCtr;
       if (typeof m.impressions === "number") v.impressions = m.impressions;
       if (s.readAt) v.ctrReadAt = s.readAt;
     }
