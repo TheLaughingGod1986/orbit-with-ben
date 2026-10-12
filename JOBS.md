@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0179 | any | open | – | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
+| J0180 | any | open | – | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
 
 Recently finished:
 
