@@ -11977,13 +11977,13 @@
       "stage": "",
       "after": "J0201",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T19:07Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T19:15Z",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-12T19:02Z",
-      "result": "parked for Chief: VO PASS on S5-S8 (S5/S7 PASS, S6/S8 numeral/spelling-only REVIEW; 5a8c0c9d, vo_s5-s8_v01/VO_STATUS.md)",
+      "result": "Chief VO PASS on #99 (6130933382): OWB standalone Shorts S5-S8 vo_s5-s8_v01 locked as recorded. Text word for word from SCRIPTS_v01 (S7 fallback line); Gemini Q10-Q17/Q19 OK. 18.72/20.16/21.36/19.12 s, all in the 18-22 s band, no trim; -20.2/-20.1/-19.9/-20.2 LUFS. S6/S8 Scribe REVIEW is numerals/US spelling only, no retake. 1,070 credits, no top-up. J0163 builds S5-S8 (UK spelling in captions).",
       "history": [
         {
           "at": "2026-10-12T19:02Z",
@@ -12019,6 +12019,16 @@
           "at": "2026-10-12T19:10Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: VO PASS on S5-S8 (S5/S7 PASS, S6/S8 numeral/spelling-only REVIEW; 5a8c0c9d, vo_s5-s8_v01/VO_STATUS.md)"
+        },
+        {
+          "at": "2026-10-12T19:15Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T19:15Z",
+          "by": "chief",
+          "what": "done: Chief VO PASS on #99 (6130933382): OWB standalone Shorts S5-S8 vo_s5-s8_v01 locked as recorded. Text word for word from SCRIPTS_v01 (S7 fallback line); Gemini Q10-Q17/Q19 OK. 18.72/20.16/21.36/19.12 s, all in the 18-22 s band, no trim; -20.2/-20.1/-19.9/-20.2 LUFS. S6/S8 Scribe REVIEW is numerals/US spelling only, no retake. 1,070 credits, no top-up. J0163 builds S5-S8 (UK spelling in captions)."
         }
       ],
       "kind": "vo",
@@ -12028,7 +12038,8 @@
         "at": "2026-10-12T19:10Z",
         "by": "cursor",
         "note": "4 takes, committed 5a8c0c9d"
-      }
+      },
+      "done_ref": "6130933382"
     }
   ],
   "focus": [

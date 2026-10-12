@@ -39,10 +39,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0198 | gemini | open | – | – | facts · HOS 011 Anesthesia: Gemini facts pass on SOURCES_v01 rows 1-37 before VO |  |
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
-| J0202 | mini | blocked | cursor | – | vo · OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) | 6125827198 |
 
 Recently finished:
 
+- J0202 done: OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) (Chief VO PASS on #99 (6130933382): OWB standalone Shorts S5-S8 vo_s5-s8_v01 locked as recorded. Text word for word from SCRIPTS_v01 (S7 fallback line); Gemini Q10-Q17/Q19 OK. 18.72/20.16/21.36/19.12 s, all in the 18-22 s band, no trim; -20.2/-20.1/-19.9/-20.2 LUFS. S6/S8 Scribe REVIEW is numerals/US spelling only, no retake. 1,070 credits, no top-up. J0163 builds S5-S8 (UK spelling in captions).)
 - J0201 done: OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) (done)
 - J0186 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS Saturn 'clock' Short v01 (d5eb0a50, gate PASS). Air in the next free OWB Short slot (follow-on studio job).)
 - J0185 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (done)
@@ -52,4 +52,3 @@ Recently finished:
 - J0179 done: OWB ideas + script draft: next film beyond the pipeline (Chief LOCK 030 Apophis (IDEAS_2026-10-12_J0179.md). Short-first line stands: an Apophis standalone Short must clear 200 views/40% before the long's VO. Neighbour pass queued.)
 - J0178 done: Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) (done)
 - J0177 done: HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) (done)
-- J0174 done: HOS compilation film: VO for intro and bridges (Chief PASS on HOS #180 (6130399806): KEEP all 7 _vo_v01 takes (HOS PR #298 d9e150b), word for word from locked COMPILATION_SCRIPT_v01 (#293 126bfec); Bridge 1 REVIEW numeral only, KEEP; Bridge 2 a/the, KEEP, listen once at J0175 assembly. J0175 assembly may start.)
