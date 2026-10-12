@@ -7453,13 +7453,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T09:31Z",
-      "eta": "2026-10-12T11:01Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:50Z",
-      "result": "",
+      "result": "parked for Chief: no clean plate for JWST ziKBPJ6FY0U (A saved to ~/_desk/notext_tc_1011); choose Jupiter fallback, a NASA-plate B, or drop",
       "history": [
         {
           "at": "2026-10-11T22:50Z",
@@ -7505,6 +7505,11 @@
           "at": "2026-10-12T09:41Z",
           "by": "cursor",
           "what": "step 1 of 5 done: A saved; no clean plate found"
+        },
+        {
+          "at": "2026-10-12T09:41Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: no clean plate for JWST ziKBPJ6FY0U (A saved to ~/_desk/notext_tc_1011); choose Jupiter fallback, a NASA-plate B, or drop"
         }
       ],
       "kind": "studio",
