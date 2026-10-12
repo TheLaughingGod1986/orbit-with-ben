@@ -904,7 +904,7 @@ function jobCard(j, col, eta){
     j.result && j.result!==last.what ? `<div><b>Note:</b> ${esc(j.result)}</div>` : "",
     j.ref ? `<div><b>Ref:</b> <span class="mono">${esc(j.ref)}</span></div>` : "",
     stuck ? `<div><b>Stuck?</b> over 2× the usual ${col==="review" ? `${esc(String(((fromDb.extra||{}).typical||{})._review||240))} min for a Chief review` : `${esc(String(j.typMin||((fromDb.extra||{}).typical||{})._default||30))} min for ${esc(j.kindKey||"this kind")}`}</div>` : "",
-  ].join("");
+  ].slice(0, col==="next" ? 2 : undefined).join("");   // Ben, 12 Oct 21:08: Next cards show only Worker and Job
   return `<details class="jc ${ch}${stuck?" stuck":""}"><summary><span class="jid">${esc(j.id||"")}</span><span class="cdot ${ch}" title="${ch}"></span><span class="nm">${esc(cleanTitle(j, 70))}</span><span class="et">${esc(eta||"")}</span></summary><div class="cx">${cx}</div></details>`;
 }
 function renderJobBoard(){
