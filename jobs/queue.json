@@ -7598,10 +7598,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-12T11:59Z",
+      "eta": "2026-10-12T12:59Z",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -7695,6 +7695,11 @@
           "at": "2026-10-12T11:48Z",
           "by": "cursor",
           "what": "released: 12:50 London: Flow still 52 credits after a tab reload (2nd check today, same as pre-renewal). Refill not landed; recorded in ai_spend. Retry after 15:00 per brief. Steps 2-3 (pricing, #180 table, PIPELINE PR) not started."
+        },
+        {
+          "at": "2026-10-12T11:59Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "video",
