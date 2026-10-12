@@ -1,5 +1,5 @@
 {
-  "next_id": 212,
+  "next_id": 213,
   "jobs": [
     {
       "id": "J0001",
@@ -13063,6 +13063,33 @@
         }
       ],
       "kind": "listing"
+    },
+    {
+      "id": "J0212",
+      "title": "HOS standalone Shorts S5: exact quote that the pigeons were blamed (lock condition before S5 VO)",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "HOS standalone Shorts S5 (CMB / pigeons): the Chief lock (SCRIPTS_v02.md, HOS #180 6127927589) sets a condition before Short 5 VO: add one exact quote, with the URL it was copied from, that Penzias and Wilson suspected or blamed the pigeons or their droppings for the noise (Smithsonian \"How Two Pigeons Helped Scientists Confirm the Big Bang Theory\", NRAO, Nokia Bell Labs or APS pages). SOURCES_v01.md row 5b quotes only \"droppings of pigeons nesting in the antenna\"; \"blamed\" is uncovered (Gemini findings lines 70-71).\n\nRun through Gemini (`agy`), claim as <you>/gemini. Add the quote row to docs/STANDALONE_SHORTS_TEST_2026-10/SOURCES_v01.md (row 5c) as OK, or record FLAG with what was searched. Do not rewrite any spoken line. If FLAG, the lock already says what changes: line 1 becomes \"In 1964, a strange noise turned out to be the Big Bang.\" and the caption NOT THE **PIGEONS**; note that for the VO job. Commit from a clean worktree; no spend.\n",
+      "ref": "6127927589",
+      "film": "",
+      "stage": "",
+      "after": "J0177",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T21:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T21:55Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
     }
   ],
   "focus": [
