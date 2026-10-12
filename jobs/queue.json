@@ -10550,13 +10550,13 @@
       "stage": "",
       "after": "J0173",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T18:06Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T18:41Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: HOS compilation VO recorded (HOS PR #298, d9e150b, 2,044 chars): Gemini 12/12 OK; intro, bridges 1-5, closing; vo_check 6 PASS + Bridge 1 REVIEW (numeral only). Accept takes; Bridge 2 Scribe heard one 'a' as 'the' (listen at assembly).",
+      "result": "Chief PASS on HOS #180 (6130399806): KEEP all 7 _vo_v01 takes (HOS PR #298 d9e150b), word for word from locked COMPILATION_SCRIPT_v01 (#293 126bfec); Bridge 1 REVIEW numeral only, KEEP; Bridge 2 a/the, KEEP, listen once at J0175 assembly. J0175 assembly may start.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10587,6 +10587,16 @@
           "at": "2026-10-12T18:24Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS compilation VO recorded (HOS PR #298, d9e150b, 2,044 chars): Gemini 12/12 OK; intro, bridges 1-5, closing; vo_check 6 PASS + Bridge 1 REVIEW (numeral only). Accept takes; Bridge 2 Scribe heard one 'a' as 'the' (listen at assembly)."
+        },
+        {
+          "at": "2026-10-12T18:41Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T18:41Z",
+          "by": "chief",
+          "what": "done: Chief PASS on HOS #180 (6130399806): KEEP all 7 _vo_v01 takes (HOS PR #298 d9e150b), word for word from locked COMPILATION_SCRIPT_v01 (#293 126bfec); Bridge 1 REVIEW numeral only, KEEP; Bridge 2 a/the, KEEP, listen once at J0175 assembly. J0175 assembly may start."
         }
       ],
       "kind": "vo",
@@ -10597,7 +10607,8 @@
         "at": "2026-10-12T18:24Z",
         "by": "cursor",
         "note": "7 takes, HOS PR #298"
-      }
+      },
+      "done_ref": "6130399806"
     },
     {
       "id": "J0175",

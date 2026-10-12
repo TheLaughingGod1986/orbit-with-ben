@@ -5,8 +5,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0174.** Ahead of everything, the focus film included.
-
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0123 | cloud | blocked | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
@@ -26,7 +24,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0171 | mini | open (after J0170) | – | – | assembly · HOS standalone Shorts test: assemble the 8 Shorts |  |
 | J0172 | any | open (after J0171) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
-| J0174 | mini | blocked | cursor | – | vo · HOS compilation film: VO for intro and bridges |  |
 | J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0181 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
@@ -55,5 +52,5 @@ Recently finished:
 - J0179 done: OWB ideas + script draft: next film beyond the pipeline (Chief LOCK 030 Apophis (IDEAS_2026-10-12_J0179.md). Short-first line stands: an Apophis standalone Short must clear 200 views/40% before the long's VO. Neighbour pass queued.)
 - J0178 done: Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) (done)
 - J0177 done: HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) (done)
+- J0174 done: HOS compilation film: VO for intro and bridges (Chief PASS on HOS #180 (6130399806): KEEP all 7 _vo_v01 takes (HOS PR #298 d9e150b), word for word from locked COMPILATION_SCRIPT_v01 (#293 126bfec); Bridge 1 REVIEW numeral only, KEEP; Bridge 2 a/the, KEEP, listen once at J0175 assembly. J0175 assembly may start.)
 - J0173 done: HOS compilation film (45-60 min) from finished films: plan + fresh intro/chapter script (Chief LOCK HOS compilation plan + script v01 (HOS PR #293): six films by proof year 005,006,001,002,003,004 (~51 min), upload only after 006 airs 5 Nov; trim the 3 end hand-offs; same own-films re-upload exception as OWB; title/cover option 1 pending autocomplete. Gemini claims pass on MUST QUOTE (Pasteur 1860s row) before VO J0174 (follow-on job).)
-- J0170 done: HOS standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) (S2+S3 retaken word for word from Chief-locked v02 (_vo_v02, vo_take vo_check PASS, Scribe 100%, 22.4 s / 21.6 s; ~21.0 / 18.8 s after pause trim), 537 EL chars, 9,230 left. HOS PR #297 175490c (VO_STATUS: use _vo_v02 for S2/S3). SCRIPTS_v02.md + Chief-sourced SOURCES rows saved on HOS PR #291 437dfc9. S1/S4 v01 stand per Chief KEEP. J0171 assembly can start.)
