@@ -10437,13 +10437,13 @@
       "stage": "",
       "after": "J0163",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T23:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: kind=chief (no stand-in). Needs Chief PASS/FAIL on each standalone Short and the OK to upload Private with publishAt on the 2/week slots; Cursor can then run the uploads + UPLOADS register + TEST_LOG start as a follow-up job",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10464,15 +10464,14 @@
           "at": "2026-10-12T23:24Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: kind=chief (no stand-in). Needs Chief PASS/FAIL on each standalone Short and the OK to upload Private with publishAt on the 2/week slots; Cursor can then run the uploads + UPLOADS register + TEST_LOG start as a follow-up job"
+        },
+        {
+          "at": "2026-10-12T23:27Z",
+          "by": "chief",
+          "what": "reopened: Chief taking: S1-S8 already PASS from J0163; lock slots (shift off Tue 20 Saturn), OK Private+scheduled uploads"
         }
       ],
-      "kind": "chief",
-      "progress": {
-        "step": 0,
-        "of": 1,
-        "at": "2026-10-12T23:24Z",
-        "by": "cursor"
-      }
+      "kind": "chief"
     },
     {
       "id": "J0165",
