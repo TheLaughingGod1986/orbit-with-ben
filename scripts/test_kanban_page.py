@@ -93,7 +93,7 @@ class MacMiniBox(unittest.TestCase):
         html = page()
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "plan", "laneQuiet", "shortTitle", "jobTag",
                  "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
-                 "updatedAt", "renderNow"]
+                 "updatedAt", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "renderNow"]
         lib = "\n".join(js_function(html, n) for n in names)
         board = {"jobs": self.JOBS if jobs is None else jobs,
                  "runOrder": {"mini": ["J0130", "J0126", "J0128", "J0132"], "chief": ["J0123"]},
@@ -127,70 +127,49 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
             out.append(dict(j, **(changes.get(j["id"]) or {})))
         return out
 
-    def test_plain_working_on_line_with_film_title(self):
+    # Ben, 12 Oct 15:05: one glance. Now (title, worker, ready time), Next, one chip; the rest behind "Show all".
+    def test_one_line_now_with_worker_and_ready_time(self):
         r = self.render()
         self.assertFalse(r["hidden"])
-        head = r["html"].split('<div class="pbar">')[0]
-        self.assertIn("Working on: <b>024 What Happens If You Travel Near Light Speed?</b> – picture fixes", head)
-        for gone in ("Mac mini is", "between steps", "carries on within", "<ol>", '<ul class="also">',
-                     "One job at a time", "refreshes every hour"):
-            self.assertNotIn(gone, r["html"])
+        self.assertIn('<b>Now:</b> 024 Light Speed v05: picture fixes <span class="who">· Cursor</span>', r["html"])
+        self.assertIn("ready in about 40 min", r["html"])
         self.assertIn('<div class="upd">Updated ', r["html"])
+        self.assertNotIn("J0129", r["html"])
 
-    def test_percent_from_time_when_no_steps_reported(self):
-        # claimed 19:30, about 60 min: at 19:50 a third of the way, done about 20:30 UTC = 21:30 London
+    def test_one_next_line_only(self):
         r = self.render()
-        self.assertIn('<i style="width:33%"></i>', r["html"])
-        self.assertIn("33% done · finished in about 40 min (21:30)", r["html"])
+        self.assertEqual(r["html"].count('<div class="nx one">'), 1)
+        self.assertIn("<b>Next:</b> 027 Earth Stopped Spinning rough v01f: frame-review fixes", r["html"])
+        self.assertNotIn("Saturn Short", r["html"])
 
-    def test_time_based_percent_is_capped_at_95(self):
-        r = self.render(jobs=self.with_jobs(J0129={"claimedAt": "2026-10-11T15:00Z", "estMin": 30}))
-        self.assertIn("95% done", r["html"])
-
-    def test_percent_from_reported_steps(self):
-        # 2 of 8 steps done by 19:40 after starting 19:30: 5 min a step, so 6 steps (30 min) left from 19:40
-        j = {"workStart": "2026-10-11T19:30Z", "progress": {"step": 2, "of": 8, "at": "2026-10-11T19:40:00Z"}}
-        r = self.render(jobs=self.with_jobs(J0129=j))
-        self.assertIn("36% done · finished in about 20 min (21:10)", r["html"])   # (2 + 0.9 of step 3) / 8
-
-    def test_never_100_until_done(self):
-        j = {"workStart": "2026-10-11T19:30Z", "progress": {"step": 8, "of": 8, "at": "2026-10-11T19:49:00Z"}}
-        r = self.render(jobs=self.with_jobs(J0129=j))
-        self.assertIn("99% done", r["html"])
-        self.assertNotIn("100%", r["html"])
-
-    def test_released_between_steps_still_reads_working_on(self):
-        j = {"last": {"what": "released: Step 1 of v01f done", "by": "cursor"}, "workStart": "2026-10-11T19:20Z",
-             "progress": {"step": 1, "of": 4, "at": "2026-10-11T19:35:00Z"}}
-        r = self.render(jobs=self.with_jobs(J0129=None, J0130=j))
-        self.assertIn("Working on: <b>027 What If Earth Stopped Spinning?</b> – frame-review fixes", r["html"])
-        self.assertNotIn("between steps", r["html"])
-        self.assertIn("25% done · finished in about", r["html"])   # 1 of 4, no creep while nobody holds it
-        self.assertNotIn("027 What If", r["html"].split('<div class="nx">')[1] if '<div class="nx">' in r["html"] else "")
-
-    def test_next_and_then_two_lines_max(self):
+    def test_needs_ben_is_one_red_line(self):
         r = self.render()
-        nx = r["html"].split('<div class="nx">')[1:]
-        self.assertEqual(len(nx), 2)
-        self.assertTrue(nx[0].startswith("Next: <b>027 What If Earth Stopped Spinning?</b> – frame-review fixes · starts about "))
-        self.assertTrue(nx[1].startswith("Then: Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g · starts about "))
-        self.assertNotIn("Spare job four", r["html"])
+        self.assertIn('<div class="bl">Needs Ben: Orbit Instagram bio link -&gt; Saturn long 55AEQwvs36g</div>', r["html"])
 
-    def test_blocked_job_has_its_own_line(self):
-        r = self.render()
-        self.assertIn('<div class="bl">Blocked: Orbit Instagram bio link -&gt; Saturn long 55AEQwvs36g - '
-                      'needs Ben to sign Instagram in on the mini</div>', r["html"])
+    def test_chief_parks_collapse_into_a_chip(self):
+        many = {f"J09{i:02d}": None for i in range(1)}
+        jobs = self.with_jobs(J0131={"result": "parked for Chief: thumbnail review"}) + [
+            {"id": f"J09{i:02d}", "title": f"Backlog OWB: thing {i}", "needs": "mini", "line": "mini", "status": "blocked",
+             "result": "parked for Chief: review", "last": {}} for i in range(5)]
+        r = self.render(jobs=jobs)
+        self.assertIn('<span class="chip">6 waiting on Chief</span><span class="sa">Show all</span>', r["html"])
+        self.assertIn("<details", r["html"])
+        self.assertNotIn('<div class="bl">', r["html"])
+        self.assertNotIn("Backlog OWB:", r["html"])
+        self.assertIn("OWB: thing 0", r["html"])
 
-    def test_chief_review_park_is_amber_not_blocked(self):
-        # Ben, 12 Oct: a job parked for the Chief's review is waiting, not blocked.
-        r = self.render(jobs=self.with_jobs(J0131={"result": "parked for Chief: thumbnail review"}))
-        self.assertIn('<div class="rv">Waiting for Chief review: ', r["html"])
+    def test_date_bound_job_is_scheduled_not_red(self):
+        jobs = self.with_jobs(J0131=None) + [{"id": "J0135", "title": "025 set Related once the long is public",
+            "needs": "mini", "line": "mini", "status": "blocked", "last": {},
+            "result": "waits for input: 025 long Js6EQJ8qDi8 public"}]
+        r = self.render(jobs=jobs)
+        self.assertIn("1 scheduled", r["html"])
+        self.assertIn('<div class="sh">Scheduled</div>', r["html"])
         self.assertNotIn('<div class="bl">', r["html"])
 
     def test_idle_box_is_plain_too(self):
         r = self.render(jobs=self.with_jobs(J0129=None))
-        self.assertIn("Working on: nothing right now", r["html"])
-        self.assertNotIn('<div class="pbar">', r["html"])
+        self.assertIn("<b>Now:</b> starting the next job", r["html"])
 
     def test_box_shows_on_every_channel(self):
         self.assertNotIn('chan==="HOS"', js_function(page(), "renderNow"))

@@ -249,6 +249,22 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .nowbar .pbar .track{flex:0 0 150px;max-width:40%;height:8px;border-radius:4px;background:var(--doing-soft);overflow:hidden}
 .nowbar .pbar .track i{display:block;height:100%;background:var(--doing);border-radius:4px}
 .nowbar .nx{margin-top:3px;font-size:13px;color:var(--ink-2)}
+.nowbar .one{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nowbar .h.one{font-size:15px}
+.nowbar .who{color:var(--ink-2);font-weight:500}
+.nowbar .eta{color:var(--doing);font-weight:600}
+.nowbar details.more{margin-top:6px}
+.nowbar details.more summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nowbar details.more summary::-webkit-details-marker{display:none}
+.nowbar .chip{display:inline-block;font-size:12px;font-weight:600;color:var(--ink-2);background:var(--accent-soft);border-radius:999px;padding:3px 10px}
+.nowbar .sa{font-size:12px;color:var(--doing);font-weight:600}
+.nowbar details[open] .sa{display:none}
+.nowbar .sh{margin-top:8px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600}
+.nowbar details ul{margin:2px 0 0;padding:0;list-style:none;font-size:13px}
+.nowbar details li{display:flex;flex-direction:column;padding:4px 0;border-bottom:1px solid var(--line)}
+.nowbar details li .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nowbar details li .w{font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:480px){.nowbar{padding:8px 12px;margin:-4px 0 10px}}
 .nowbar .upd{margin-top:5px;font-size:11px;color:var(--ink-3)}
 .kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
 @media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -735,6 +751,29 @@ function updatedAt(){
   const t = ts(bd.publishedAt) || ts(fromDb.owbAt);
   return isNaN(t) ? "" : `<div class="upd">Updated ${clock(t)}</div>`;
 }
+// Ben, 12 Oct 15:05: "should be one glance: I know what it's currently working on, how long until it's ready." One
+// line for Now (plain title, worker, ready time), one for Next, one summary chip; the full list sits behind "Show all".
+// Only real Ben items (a sign-in, money) show as one red line; date/input-bound jobs read "Scheduled", never red.
+const NEEDS_BEN = /needs ben|only ben|ben to sign|sign(?:-|\s)?in\b|top[- ]?up|payment/i;
+const WAITS_INPUT = /waits? for input|once .* (is )?public|go(?:es)?[- ]public|upload id|publishAt|after the long/i;
+function cleanTitle(j, max){
+  let t = String((j&&j.title)||"").replace(/^URGENT:\s*/i,"").replace(/^Backlog\s+(OWB|HOS)\s*:\s*/i,"$1: ")
+    .replace(/\bJ\d{4}\b[:,]?\s*/g,"").replace(/\s*\([^)]*\)/g,"").replace(/\s*[-–;,]\s*park(ed)?\s+for\s+chief.*$/i,"")
+    .replace(/,\s*park.*$/i,"").replace(/\s+/g," ").trim();
+  max = max||56; return t.length>max ? t.slice(0,max-1).trim()+"…" : t;
+}
+const WORKER = {cursor:"Cursor", codex:"Codex", gemini:"Gemini", claude:"Claude", chief:"Grok"};
+function readyAt(ms){
+  if(!ms || isNaN(ms)) return "";
+  const m = Math.max(1, Math.round((ms-Date.now())/MINUTE));
+  return m<=90 ? `ready in about ${m} min` : `ready ~${clock(ms)}`;
+}
+function jobKind(j){
+  if(j.needs==="ben" || (j.status==="blocked" && NEEDS_BEN.test(blockWhy(j)) && !isChiefPark(j))) return "ben";
+  if(isChiefPark(j)) return "chief";
+  if(j.status==="blocked") return WAITS_INPUT.test(blockWhy(j)) || WAITS_INPUT.test(j.title||"") ? "sched" : "held";
+  return "";
+}
 function renderNow(){
   const box = $("nowbar"); if(!box) return;
   const all = fromDb.jobs||[];
@@ -743,24 +782,31 @@ function renderNow(){
   if(box.hidden) return;
   const P = plan(), q = laneQuiet();
   const busy = jobs.filter(j=>j.status==="claimed");
-  const part = jobs.filter(j=>j.status==="open" && /^released/.test(String((j.last||{}).what||"")) && (j.last||{}).by && j.last.by!=="claude");
   const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
-  let cls = "", head, bar = "", headJob = busy[0] || part[0] || null;
+  const headJob = busy[0] || null;
+  let cls = "", head;
   if(headJob){ const pr = progressOf(headJob, P);
-    head = `Working on: ${plainJob(headJob)}`;
-    bar = `<div class="pbar"><span class="track"><i style="width:${pr.pct}%"></i></span><span>${pr.pct}% done · ${finishIn(pr.done)}</span></div>`; }
-  else if(line.some(j=>P[j.id].state!=="gated")){ cls = q && q.quiet ? "asleep" : "idle";
-    head = q && q.quiet ? "Mac mini has been quiet for over 3 hours with work waiting; it may be asleep" : "Working on: nothing right now · the next job starts within 10 min"; }
-  else { cls = "idle"; head = "Nothing queued for the Mac mini"; }
-  const next = line.filter(j=>j!==headJob).slice(0,2);
-  const when = j => { const p = P[j.id]; return p.state==="gated" ? `starts ${clock(p.start)}` : `starts about ${clock(p.start)}`; };
-  const review = all.filter(isChiefPark).map(j=>`<div class="rv">Waiting for Chief review: ${jobLabel(j)}</div>`);
-  const blocked = all.filter(j=>j.status==="blocked" && !isChiefPark(j)).map(j=>`<div class="bl">Blocked: ${jobLabel(j)} - ${esc(shortReason(j.result || ((j.last||{}).what||"").replace(/^blocked:\s*/,"")))}</div>`);
+    head = `<b>Now:</b> ${esc(cleanTitle(headJob))} <span class="who">· ${esc(WORKER[headJob.by]||headJob.by||"Mac mini")}</span> <span class="eta">· ${esc(readyAt(pr.done)||"working")}</span>`; }
+  else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
+    head = q && q.quiet ? "<b>Now:</b> Mac mini quiet for 3 h+ with work waiting" : "<b>Now:</b> starting the next job"; }
+  else { cls = "idle"; head = "<b>Now:</b> nothing queued"; }
+  const nx = line.find(j=>j!==headJob);
+  const groups = {ben:[], chief:[], sched:[], held:[]};
+  for(const j of all) { const k = jobKind(j); if(k) groups[k].push(j); }
+  const n = groups.chief.length, b = groups.ben.length, sc = groups.sched.length, h = groups.held.length;
+  const chip = [n?`${n} waiting on Chief`:"", b?`${b} need${b===1?"s":""} Ben`:"", sc?`${sc} scheduled`:"", h?`${h} held`:""].filter(Boolean).join(" · ");
+  const row = (j, why) => `<li><span class="t">${esc(cleanTitle(j, 60))}</span>${why?`<span class="w">${esc(why)}</span>`:""}</li>`;
+  const sec = (title, arr, f) => arr.length ? `<div class="sh">${title}</div><ul>${arr.map(f).join("")}</ul>` : "";
+  const details = chip ? `<details class="more"><summary><span class="chip">${esc(chip)}</span><span class="sa">Show all</span></summary>`
+    + sec("Waiting on Chief", groups.chief, j=>row(j,""))
+    + sec("Scheduled", groups.sched, j=>row(j, shortReason(blockWhy(j)).replace(/^waits? for input:\s*/i,"")))
+    + sec("Held", groups.held, j=>row(j, shortReason(blockWhy(j))))
+    + `</details>` : "";
+  const benLine = groups.ben.length ? `<div class="bl">Needs Ben: ${esc(cleanTitle(groups.ben[0], 60))}${groups.ben.length>1?` (+${groups.ben.length-1})`:""}</div>` : "";
   box.className = "nowbar" + (cls ? " "+cls : "");
-  box.innerHTML = `<div class="h"><span class="dot"></span>${head}</div>` + bar
-    + next.map((j,i)=>`<div class="nx">${i?"Then":"Next"}: ${plainJob(j)} · ${when(j)}</div>`).join("")
-    + review.join("") + blocked.join("")
-    + updatedAt();
+  box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>`
+    + (nx ? `<div class="nx one"><b>Next:</b> ${esc(cleanTitle(nx, 60))}</div>` : "")
+    + benLine + details + updatedAt();
 }
 
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
