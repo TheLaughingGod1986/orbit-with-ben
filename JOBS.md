@@ -23,7 +23,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0160 | mini | blocked | cursor | – | 006 picture · video · Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account) |  |
 | J0163 | mini | open (after J0162) | – | – | assembly · OWB standalone Shorts test: assemble the 8 Shorts |  |
 | J0164 | any | open (after J0163) | – | – | chief · OWB standalone Shorts test: Chief review + schedule |  |
-| J0166 | mini | claimed | cursor | 2026-10-12T18:54Z | vo · OWB compilation film: VO for intro and bridges |  |
+| J0166 | mini | blocked | cursor | – | vo · OWB compilation film: VO for intro and bridges |  |
 | J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0170 | mini | blocked | cursor | – | vo · HOS standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
