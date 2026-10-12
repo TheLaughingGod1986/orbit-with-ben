@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0152 | mini | blocked | cursor | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0153 | mini | open | – | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0154 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0155 | any | claimed | cursor | 2026-10-12T14:26Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J0155 | any | blocked | cursor | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
