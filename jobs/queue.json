@@ -1,5 +1,5 @@
 {
-  "next_id": 215,
+  "next_id": 216,
   "jobs": [
     {
       "id": "J0001",
@@ -13510,6 +13510,32 @@
         "at": "2026-10-12T22:44Z",
         "by": "cursor"
       }
+    },
+    {
+      "id": "J0215",
+      "title": "HOS standalone Shorts S7-03: one Vertex retake (credit back)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**HOS standalone Short S7-03 retake (Chief, 12 Oct 23:5x).** J0214 skipped it on low Vertex credit (desk #180, 22:44Z). Ben added a Google Developer Program credit: Vertex promo pool now ~£76.06 (HOS aac4361 reader sums every active credit; £1 margin).\n1. In the HOS checkout, re-read the pool first: `~/.venvs/hos-vertex/bin/python 02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_vertex_credit_v01.py s7-03` (pull main first; the reader now counts the Dev Program credit).\n2. One take of S7-03 with docs/STANDALONE_SHORTS_TEST_2026-10/_mint_plates_v01.py (gemini-2.5-flash-image, 9:16, no text), per the Chief's 22:34Z FAIL note on #180; --budget-gbp = usable from step 1.\n3. Stop if usable < £1 after the take. Never buy, top up or go past the promo credits; nothing on the card.\n4. Post the still on desk #180 to grok for KEEP; log spend with ai_spend.py; jobs.py done.",
+      "ref": "6133844628",
+      "film": "HOS:standalone",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T22:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T22:54Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [
