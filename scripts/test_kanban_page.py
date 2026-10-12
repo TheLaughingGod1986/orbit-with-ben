@@ -93,7 +93,7 @@ class MacMiniBox(unittest.TestCase):
         html = page()
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "plan", "laneQuiet", "shortTitle", "jobTag",
                  "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
-                 "updatedAt", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "renderNow"]
+                 "updatedAt", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "renderNow"]
         lib = "\n".join(js_function(html, n) for n in names)
         board = {"jobs": self.JOBS if jobs is None else jobs,
                  "runOrder": {"mini": ["J0130", "J0126", "J0128", "J0132"], "chief": ["J0123"]},
@@ -127,49 +127,57 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
             out.append(dict(j, **(changes.get(j["id"]) or {})))
         return out
 
-    # Ben, 12 Oct 15:05: one glance. Now (title, worker, ready time), Next, one chip; the rest behind "Show all".
+    # Ben, 12 Oct 19:45 / 21:07: three plain lines. Now (short title) with the progress bar, Next, and one muted
+    # "N jobs waiting: ..." line grouped by plain reasons; no job ids, no worker badge, red only for Ben.
     def test_one_line_now_with_worker_and_ready_time(self):
         r = self.render()
         self.assertFalse(r["hidden"])
-        self.assertIn('<b>Now:</b> 024 Light Speed v05: picture fixes</span><span class="meta"><span class="run">Running</span> <span class="jid">J0129</span> <span class="who">Cursor</span>', r["html"])
-        self.assertIn("ready in about 40 min", r["html"])
+        self.assertIn('<span class="tt"><b>Now:</b> 024 Light Speed v05 – picture fixes</span>', r["html"])
+        self.assertIn('<div class="pbar">', r["html"])
+        self.assertIn("33% done · finished in about 40 min", r["html"])
         self.assertIn('<div class="upd">Updated ', r["html"])
-        self.assertEqual(r["html"].count("J0129"), 1)
+        self.assertNotIn("J0129", r["html"])
+        self.assertNotIn('class="jid"', r["html"])
 
     def test_one_next_line_only(self):
         r = self.render()
         self.assertEqual(r["html"].count('<div class="nx one">'), 1)
-        self.assertIn("<b>Next:</b> 027 Earth Stopped Spinning rough v01f: frame-review fixes", r["html"])
+        self.assertIn("<b>Next:</b> 027 Earth Stopped Spinning rough v01f – frame-review fixes", r["html"])
         self.assertNotIn("Saturn Short", r["html"])
 
     def test_needs_ben_is_one_red_line(self):
         r = self.render()
-        self.assertIn('<div class="bl">Needs Ben: Orbit Instagram bio link -&gt; Saturn long 55AEQwvs36g</div>', r["html"])
+        self.assertIn('<details class="more ben"><summary><span class="chip">1 job waiting: 1 for you</span>', r["html"])
+        self.assertIn('<div class="sh">Waiting for you</div>', r["html"])
+        self.assertIn("Orbit Instagram bio link -&gt; Saturn long", r["html"])
+        self.assertNotIn("needs Ben to sign", r["html"])
 
     def test_chief_parks_collapse_into_a_chip(self):
-        many = {f"J09{i:02d}": None for i in range(1)}
         jobs = self.with_jobs(J0131={"result": "parked for Chief: thumbnail review"}) + [
             {"id": f"J09{i:02d}", "title": f"Backlog OWB: thing {i}", "needs": "mini", "line": "mini", "status": "blocked",
              "result": "parked for Chief: review", "last": {}} for i in range(5)]
         r = self.render(jobs=jobs)
-        self.assertIn('<span class="chip">6 waiting on Chief</span><span class="sa">Show all</span>', r["html"])
-        self.assertIn("<details", r["html"])
-        self.assertNotIn('<div class="bl">', r["html"])
+        self.assertIn('<span class="chip">6 jobs waiting: 6 for my review</span>', r["html"])
+        self.assertIn('<details class="more">', r["html"])
+        self.assertNotIn("more ben", r["html"])
         self.assertNotIn("Backlog OWB:", r["html"])
-        self.assertIn("OWB: thing 0", r["html"])
+        self.assertIn("OWB – thing 0", r["html"])
 
     def test_date_bound_job_is_scheduled_not_red(self):
         jobs = self.with_jobs(J0131=None) + [{"id": "J0135", "title": "025 set Related once the long is public",
             "needs": "mini", "line": "mini", "status": "blocked", "last": {},
             "result": "waits for input: 025 long Js6EQJ8qDi8 public"}]
         r = self.render(jobs=jobs)
-        self.assertIn("1 scheduled", r["html"])
-        self.assertIn('<div class="sh">Scheduled</div>', r["html"])
-        self.assertNotIn('<div class="bl">', r["html"])
+        self.assertIn("1 job waiting: 1 for 025 to go public", r["html"])
+        self.assertIn('<div class="sh">Waiting for 025 to go public</div>', r["html"])
+        self.assertIn("025 set Related", r["html"])
+        self.assertNotIn("waits for input", r["html"])
+        self.assertNotIn("more ben", r["html"])
 
     def test_idle_box_is_plain_too(self):
         r = self.render(jobs=self.with_jobs(J0129=None))
         self.assertIn("<b>Now:</b> starting the next job", r["html"])
+        self.assertNotIn('<div class="pbar">', r["html"])
 
     def test_box_shows_on_every_channel(self):
         self.assertNotIn('chan==="HOS"', js_function(page(), "renderNow"))
