@@ -648,8 +648,43 @@ def log_run(at: dt.datetime, job, who: str, model: str, code: int, usage: bool) 
         f.write(json.dumps(row) + "\n")
 
 
+def keep_busy() -> list:
+    """Ben, 12 Oct 2026: the Mini never idles. Top the queue up from the standing backlog (scripts/refill.py) so at
+    least 3 Mini jobs are ready. False/empty if nothing was added or the refill couldn't run."""
+    if os.environ.get("CHIEF_REFILL", "1") == "0":
+        return []
+    try:
+        r = subprocess.run([sys.executable, str(OWB / "scripts" / "refill.py"), "refill", "--git"], cwd=str(OWB),
+                           capture_output=True, text=True, timeout=180)
+    except (OSError, subprocess.SubprocessError) as e:
+        log(f"refill failed: {e}")
+        return []
+    added = [x for x in r.stdout.split() if x.startswith("J")]
+    if r.returncode != 0:
+        log(f"refill failed (exit {r.returncode}): {(r.stdout + r.stderr).strip()[-300:]}")
+    return added
+
+
+def escalate_stale() -> None:
+    """A review parked for Chief past CHIEF_STALE_H hours (default 2) is posted once on #99 for the Chief. Parking
+    holds only that job; every other job keeps running."""
+    try:
+        r = subprocess.run([sys.executable, str(OWB / "scripts" / "refill.py"), "escalate", "--git",
+                            "--hours", os.environ.get("CHIEF_STALE_H", "2")], cwd=str(OWB),
+                           capture_output=True, text=True, timeout=180)
+    except (OSError, subprocess.SubprocessError) as e:
+        log(f"escalate failed: {e}")
+        return
+    lines = [x for x in r.stdout.splitlines() if x.strip()]
+    if lines:
+        notify("[relay] @Chief stale reviews (parked over " + os.environ.get("CHIEF_STALE_H", "2") + " h): "
+               + "; ".join(lines))
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
+    if (OWB / "scripts" / "refill.py").exists():
+        escalate_stale()
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
     retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
     while True:
@@ -696,6 +731,8 @@ def run_locked(at: dt.datetime) -> int:
             not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
         if worker_only:
             sweep = False
+        if not queue_has_work(who) and not sweep and keep_busy():
+            log("queue was dry: refilled from jobs/backlog.json")
         if not queue_has_work(who) and not sweep:
             ago = f"{int((at - last_wake).total_seconds() // 60)} min ago" if last_wake else "never"
             log(f"nothing queued for {who}; last woken {ago}: not waking it")
