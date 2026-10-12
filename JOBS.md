@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0158 | mini | blocked | cursor | – | for cursor · studio · URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader |  |
 | J0159 | mini | open (after J0174) | – | – | vo · Spend ElevenLabs to 0: VO for locked scripts with no take (HOS 007–010 Shorts first), house client, stop at 0 |  |
 | J0160 | mini | blocked | cursor | – | 006 picture · video · Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account) |  |
-| J0161 | any | claimed | cursor | 2026-10-12T15:25Z | script · OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) |  |
+| J0161 | any | blocked | cursor | – | script · OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) |  |
 | J0162 | mini | open (after J0161) | – | – | vo · OWB standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
 | J0163 | mini | open (after J0162) | – | – | assembly · OWB standalone Shorts test: assemble the 8 Shorts |  |
 | J0164 | any | open (after J0163) | – | – | chief · OWB standalone Shorts test: Chief review + schedule |  |
