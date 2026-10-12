@@ -9113,13 +9113,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T13:51Z",
-      "eta": "2026-10-12T14:21Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:49Z",
-      "result": "",
+      "result": "needs Ben: cursor.com sign-in on Mini CDP Chrome :9222 has no saved Cursor password (only an 'Enable iCloud Passwords AutoFill' prompt). 'Continue with Google' offers only benoats@googlemail.com, but the Mini's Cursor account is benoats@gmail.com (agent status). Picking it could create a second Cursor account (brief: never create one), so stopped at the Google account chooser without choosing. Screens: ~/_desk/handoff/cursor-signin-1452.png, -1452-google.png, -1453-chooser.png. Ben: sign that Chrome into cursor.com once (or confirm Google sign-in for benoats@googlemail.com is the same Cursor account), then re-run python3 scripts/ai_spend_daily.py.",
       "history": [
         {
           "at": "2026-10-12T13:49Z",
@@ -9140,6 +9140,11 @@
           "at": "2026-10-12T13:53Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Google chooser reached; email mismatch, stopped"
+        },
+        {
+          "at": "2026-10-12T13:53Z",
+          "by": "cursor",
+          "what": "blocked: needs Ben: cursor.com sign-in on Mini CDP Chrome :9222 has no saved Cursor password (only an 'Enable iCloud Passwords AutoFill' prompt). 'Continue with Google' offers only benoats@googlemail.com, but the Mini's Cursor account is benoats@gmail.com (agent status). Picking it could create a second Cursor account (brief: never create one), so stopped at the Google account chooser without choosing. Screens: ~/_desk/handoff/cursor-signin-1452.png, -1452-google.png, -1453-chooser.png. Ben: sign that Chrome into cursor.com once (or confirm Google sign-in for benoats@googlemail.com is the same Cursor account), then re-run python3 scripts/ai_spend_daily.py."
         }
       ],
       "for": "cursor",
