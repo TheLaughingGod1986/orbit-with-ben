@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0170, J0166, J0174.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0166, J0174.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -25,7 +25,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0166 | mini | open (after J0165) | – | – | vo · OWB compilation film: VO for intro and bridges |  |
 | J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
-| J0170 | mini | claimed | cursor | 2026-10-12T19:55Z | vo · HOS standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
 | J0171 | mini | open (after J0170) | – | – | assembly · HOS standalone Shorts test: assemble the 8 Shorts |  |
 | J0172 | any | open (after J0171) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
 | J0174 | mini | blocked | cursor | – | vo · HOS compilation film: VO for intro and bridges |  |
@@ -58,4 +57,4 @@ Recently finished:
 - J0178 done: Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) (done)
 - J0177 done: HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) (done)
 - J0173 done: HOS compilation film (45-60 min) from finished films: plan + fresh intro/chapter script (Chief LOCK HOS compilation plan + script v01 (HOS PR #293): six films by proof year 005,006,001,002,003,004 (~51 min), upload only after 006 airs 5 Nov; trim the 3 end hand-offs; same own-films re-upload exception as OWB; title/cover option 1 pending autocomplete. Gemini claims pass on MUST QUOTE (Pasteur 1860s row) before VO J0174 (follow-on job).)
-- J0169 done: HOS standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) (Chief LOCK HOS 8 standalone Short scripts, titles and Mon/Wed slots (HOS PR #291), subject to the queued Gemini facts pass and an autocomplete check on titles. No 9-14 s long-title card: standalone Shorts stay self-contained.)
+- J0170 done: HOS standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) (S2+S3 retaken word for word from Chief-locked v02 (_vo_v02, vo_take vo_check PASS, Scribe 100%, 22.4 s / 21.6 s; ~21.0 / 18.8 s after pause trim), 537 EL chars, 9,230 left. HOS PR #297 175490c (VO_STATUS: use _vo_v02 for S2/S3). SCRIPTS_v02.md + Chief-sourced SOURCES rows saved on HOS PR #291 437dfc9. S1/S4 v01 stand per Chief KEEP. J0171 assembly can start.)
