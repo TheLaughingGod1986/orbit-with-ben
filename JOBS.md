@@ -18,10 +18,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0140 | mini | open (after J0139) | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0143 | mini | open | – | – | 024 thumbs · chart · 024 Light Speed: two new covers (answers the title: age vs Earth / teases it), one glowing ship, no Orbit, <=30% near-black, --score PASS; park for Chief review, then Test & Compare from day 1 |  |
-| J0144 | any | blocked | cursor | – | chief · Orbit Auditor: per-chapter teaching gate on 024 onward (number shown as an object per chapter; keywords match VO word for word) | AGENTS.md Reference lessons 6 (#138) |
 
 Recently finished:
 
+- J0144 cancelled: Orbit Auditor: per-chapter teaching gate on 024 onward (number shown as an object per chapter; keywords match VO word for word) (parked for Chief: kind=chief (no stand-in per Who does what). The per-chapter NUMBER/WORDS PASS/FAIL scoring on 024 v05b, 026, 027 is a protected PASS call for the Orbit Auditor/Chief; Cursor can draft an advisory chapter/timestamp sheet if Chief re-adds it as kind=qa or review.)
 - J0142 done: 027 Earth Stopped Spinning v01f: re-cut first 10 s to open on the end-card hero (thumb A) from existing plates, no credit; else shot list + park for Chief (Orbit Desk test) (done)
 - J0137 done: HOS 006 Part 03 rough v01: assemble the 16 kept Vertex takes on the locked VO (P3:06 slot held for Flow) (Part 03 rough v01 built: 94.83 s on locked v02 VO, 16 KEEP takes, P3:06 held by plate board (J0140). iCloud HOS UAT/006_part03_rough_v01 (sha d7f825fe). freezedetect: placeholder only. picture_qa FAIL 1 row (16 reuse of 14 per board) parked for Chief with the KEEP call, desk #180 6116202964. HOS PR #285 (merge = Chief).)
 - J0132 done: 024 Light Speed v05b: Chief v05 FAIL fixes (twinclocks_a reuse 7:19, starfield_f reuse + 26 s shot 7:45) (done)
@@ -31,4 +31,3 @@ Recently finished:
 - J0128 done: HOS 002 A/B day-14 read (read-only Studio) + AB_TEST row (done)
 - J0127 done: 021 Saturn listing: restore LOCKED v02 description + end screen/card screenshots (description restored to LOCKED v02 (diff verified after reload); end screen + 5:25 card (2fsQcea-voM) screenshots at ~/_desk/scratch/j0127; Studio left on Orbit; report on #99)
 - J0126 done: Saturn Short v03 Cka7_TVVOUQ: set Related to 55AEQwvs36g before Mon 11:30 (done)
-- J0125 done: 023 Venus v05e: Ben's 3 UAT fixes (planet labels, probe not people, mission dates) (v05e rendered and gated (a2653822, 8ee82329): picture_qa PASS 0/96 fail, music_gate PASS, clip_check PASS 96 rows, 513 s, -14.2 LUFS. Phone copy OWB UAT/023_Venus_v05e_PHONE.mp4; the board's Watch link for 023 resolves to it.)
