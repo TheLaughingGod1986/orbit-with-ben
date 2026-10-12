@@ -367,8 +367,13 @@ def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 
 
 # ----------------------------------------------------------------------------- board link (film/stage claims)
+def on_board(job: dict) -> bool:
+    """Only OWB jobs have a film folder on this repo's studio board; HOS films live in the HOS checkout."""
+    return bool(job.get("film")) and job.get("repo", "owb") != "hos"
+
+
 def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
-    if not job.get("film"):
+    if not on_board(job):
         return None
     path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
     d = studio.load(path)
@@ -381,7 +386,7 @@ def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
 
 
 def board_release(job: dict, agent: str, state: str, ref: str = "") -> None:
-    if not job.get("film"):
+    if not on_board(job):
         return
     path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
     d = studio.load(path)
@@ -450,7 +455,7 @@ def with_git(apply, message: str, tries: int = 3):
 
 
 def film_status_path(job: dict):
-    return studio.film_dir(studio.FILMS, job["film"]) / "status.json" if job.get("film") else None
+    return studio.film_dir(studio.FILMS, job["film"]) / "status.json" if on_board(job) else None
 
 
 def show(job: dict) -> str:
@@ -601,7 +606,7 @@ def main(argv=None) -> int:
                     job = next((j for j in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())) if claimable(data, j, can, at, args.agent)), None)
                     return job, None, touched
                 job = do_next(data, args.agent, can, at, args.eta)
-                if job and job.get("film") and job["history"][-1]["what"].startswith("claimed"):
+                if job and on_board(job) and job["history"][-1]["what"].startswith("claimed"):
                     err = board_claim(job, args.agent, at)
                     if err:
                         do_release(job, args.agent, f"board stage held: {err}", at)
@@ -622,7 +627,7 @@ def main(argv=None) -> int:
                 board_release(job, args.agent, "doing")
             elif args.cmd == "renew":
                 do_renew(job, args.agent, args.eta, at)
-                if job.get("film"):
+                if on_board(job):
                     board_claim(job, args.agent, at)
             elif args.cmd == "progress":
                 do_progress(job, args.agent, args.step, args.of, at, args.note)
@@ -638,7 +643,7 @@ def main(argv=None) -> int:
                 do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)
                 if held:
                     board_release(job, held, "doing")
-            if job.get("film"):
+            if on_board(job):
                 touched.append(film_status_path(job))
             return job, None, touched
         except ValueError as e:
