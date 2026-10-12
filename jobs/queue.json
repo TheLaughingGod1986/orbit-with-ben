@@ -10745,13 +10745,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T21:53Z",
-      "eta": "2026-10-13T00:53Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "Chief AMEND 6133314609: S4 v03 duck FAIL — v04 with >=1.0s smooth ramp; picture KEEP. Listings J0211 may continue.",
+      "result": "parked for Chief: KEEP/FAIL on S4 v04 (smooth 1.3 s bed duck 19.8-21.1 s; gate_shorts_open PASS, sfx_kit level PASS x4) and merge HOS #303 (8ef137a); desk HOS #180 6133356700. S5-S8 now wait on J0212 (S5 quote) -> J0213 (VO) -> J0214 (plates). J0211 listings can continue. No spend, no upload.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10947,6 +10947,11 @@
           "at": "2026-10-12T21:57Z",
           "by": "cursor",
           "what": "step 4 of 4 done: S4 v04 built, gates PASS, PR #303"
+        },
+        {
+          "at": "2026-10-12T21:57Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: KEEP/FAIL on S4 v04 (smooth 1.3 s bed duck 19.8-21.1 s; gate_shorts_open PASS, sfx_kit level PASS x4) and merge HOS #303 (8ef137a); desk HOS #180 6133356700. S5-S8 now wait on J0212 (S5 quote) -> J0213 (VO) -> J0214 (plates). J0211 listings can continue. No spend, no upload."
         }
       ],
       "kind": "assembly",
