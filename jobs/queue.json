@@ -1,5 +1,5 @@
 {
-  "next_id": 159,
+  "next_id": 160,
   "jobs": [
     {
       "id": "J0001",
@@ -9119,6 +9119,33 @@
       ],
       "for": "cursor",
       "kind": "studio"
+    },
+    {
+      "id": "J0159",
+      "title": "Spend ElevenLabs to 0: VO for locked scripts with no take (HOS 007–010 Shorts first), house client, stop at 0",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Use the ElevenLabs credit down to 0 (Ben, 12 Oct 2026 14:46: all floors are zero).** About 11,935 credits left (daily reader 12 Oct), resets 30 Oct 10:50 UTC.\n- Record VO only for scripts that are already locked/passed and have no take yet, in this order: the channel `channel_balance.py` puts first, then earliest air date. Candidates: HOS 007–010 Shorts VO (v02 scripts), any OWB Short scripts passed with no take.\n- Every request goes through the house client (HOS `04_Audio/tools/el_client.py` / el_guard: floor 0). Check the live balance before each take and skip a take that needs more than is left. Never top up, upgrade or enable overage. When a take would not fit, stop, block \"credits at 0: parked until 30 Oct reset\", and say what is left unrecorded.\n- vo_check PASS on each take; post takes on the desk/thread for the normal PASS. Nothing is published.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T13:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T13:49Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
     }
   ],
   "focus": [
