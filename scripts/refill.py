@@ -65,7 +65,21 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
         added.append(j["id"])
         have += 1
 
+    # Daily items (Ben, 12 Oct 22:19): an item with "daily_at": "HH:MM" (London) is added once per London day as soon
+    # as that time has passed, whatever the ready count, and put first in line (urgent), so it runs before 09:00.
     for it in items:
+        if not it.get("daily_at") or busy(it["key"]):
+            continue
+        ln = at.astimezone(jobs.LONDON)
+        hh, mm = (int(x) for x in it["daily_at"].split(":"))
+        prev = last.get(it["key"])
+        if (ln.hour, ln.minute) < (hh, mm) or (prev and studio.parse(prev).astimezone(jobs.LONDON).date() == ln.date()):
+            continue
+        add(it)
+        data["jobs"][-1]["urgent"] = 0
+    for it in items:
+        if it.get("daily_at"):
+            continue
         if have >= min_ready:
             break
         key = it["key"]
@@ -75,7 +89,7 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
             continue
         add(it)
     if have == 0:
-        free = [it for it in items if not busy(it["key"])]
+        free = [it for it in items if not busy(it["key"]) and not it.get("daily_at")]
         if free:
             add(min(free, key=lambda it: last.get(it["key"], "")))
     return added

@@ -79,6 +79,22 @@ class NeverEmpty(unittest.TestCase):
             self.assertNotIn(it["kind"], ("video", "vo"))  # never spends on generation or TTS
 
 
+class Daily(unittest.TestCase):
+    ITEM = {"key": "ctr", "title": "ctr", "needs": "mini", "body": "", "kind": "studio", "daily_at": "07:00"}
+
+    def test_added_once_a_day_after_its_time_and_urgent(self):
+        d = empty()
+        early = dt.datetime(2026, 10, 13, 5, 30, tzinfo=dt.timezone.utc)   # 06:30 London
+        self.assertEqual(refill.do_refill(d, [self.ITEM], early), [])
+        late = early + H                                                      # 07:30 London
+        added = refill.do_refill(d, [self.ITEM], late)
+        self.assertEqual(len(added), 1)
+        self.assertEqual(d["jobs"][-1]["urgent"], 0)
+        d["jobs"][-1]["status"] = "done"
+        self.assertEqual(refill.do_refill(d, [self.ITEM], late + 3 * H), [])  # same day: not again
+        self.assertEqual(len(refill.do_refill(d, [self.ITEM], late + 24 * H)), 1)  # next day
+
+
 class NoArbitraryHolds(unittest.TestCase):
     def test_no_start_time_can_be_set(self):
         d = empty()
