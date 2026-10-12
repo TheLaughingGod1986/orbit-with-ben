@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0174 | mini | open (after J0173) | – | – | vo · HOS compilation film: VO for intro and bridges |  |
 | J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
-| J0177 | gemini | claimed | cursor | 2026-10-12T15:39Z | facts · HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) | https://github.com/TheLaughingGod1986/history-of-science/pull/291 |
+| J0177 | gemini | claimed | cursor | 2026-10-12T15:04Z | facts · HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01) | https://github.com/TheLaughingGod1986/history-of-science/pull/291 |
 | J0178 | mini | open (after J0158) | – | – | assembly · Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) |  |
 
 Recently finished:
