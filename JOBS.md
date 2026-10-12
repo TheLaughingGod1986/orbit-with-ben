@@ -17,7 +17,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0154 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0163 | mini | open (after J0162) | – | – | assembly · OWB standalone Shorts test: assemble the 8 Shorts |  |
 | J0164 | any | open (after J0163) | – | – | chief · OWB standalone Shorts test: Chief review + schedule |  |
-| J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
+| J0167 | mini | claimed | cursor | 2026-10-13T01:47Z | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0171 | mini | blocked | cursor | – | assembly · HOS standalone Shorts test: assemble the 8 Shorts | 6131173528 |
 | J0172 | any | open (after J0171) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
