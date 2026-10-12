@@ -41,12 +41,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0205 | any | open | – | – | listing · Upload packages for 3 Chief-PASSed Shorts (OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01, HOS 005 s04 'Is the Heart a Pump?'): listing + manifest, no publishAt (prereq for J0188) |  |
 | J0206 | mini | blocked | cursor | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
 | J0207 | mini | open | – | – | chart · OWB compilation: 5 chapter cards + countdown timeline x3 code graphics |  |
-| J0208 | mini | claimed | cursor | 2026-10-12T22:20Z | assembly · HOS: land Chief-PASSed VO PRs #271 (009), #272 (010), #268 (007 Shorts): lock, PIPELINE, board, merge main | 6132703471 |
 | J0209 | mini | open | – | – | chart · HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates) | 6132241581 |
 | J0210 | mini | open | – | – | studio · Daily Studio read: impressions + CTR for every OWB and HOS long film -> tracker |  |
 
 Recently finished:
 
+- J0208 done: HOS: land Chief-PASSed VO PRs #271 (009), #272 (010), #268 (007 Shorts): lock, PIPELINE, board, merge main (done)
 - J0203 done: HOS standalone Shorts S1-S4: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (20 x 9:16 still plates for S1-S4 on Vertex gemini-2.5-flash-image (~£0.62; trial est ≈£0.63 left, console £1.46 lagging). HOS docs/STANDALONE_SHORTS_TEST_2026-10/PLATES_STATUS_v01.md; sheets plates_v01/s{1..4}_sheet_v01.jpg (Mini). KEEP flags for Chief: S1-05 smoke look, S2 Brand inconsistent, S3-05 handle still on pump.)
 - J0202 done: OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) (Chief VO PASS on #99 (6130933382): OWB standalone Shorts S5-S8 vo_s5-s8_v01 locked as recorded. Text word for word from SCRIPTS_v01 (S7 fallback line); Gemini Q10-Q17/Q19 OK. 18.72/20.16/21.36/19.12 s, all in the 18-22 s band, no trim; -20.2/-20.1/-19.9/-20.2 LUFS. S6/S8 Scribe REVIEW is numerals/US spelling only, no retake. 1,070 credits, no top-up. J0163 builds S5-S8 (UK spelling in captions).)
 - J0201 done: OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) (done)
@@ -56,4 +56,3 @@ Recently finished:
 - J0185 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (done)
 - J0183 done: Backlog HOS: next script or opening draft (009/010 first) (Chief PASS HOS 011 script v01 (HOS PR #295, 91.1); topic + spelling locked in J0180. VO waits on Gemini facts pass on SOURCES_v01 rows 1-37 (follow-on job).)
 - J0182 done: Backlog OWB: next script draft for the earliest film without a locked script (Chief PASS 030 Apophis script v01 (review:script 94.5) as draft-lock; VO waits on the Gemini facts pass on SOURCES.md v01 and the neighbour pass (follow-on jobs).)
-- J0180 done: HOS ideas + script draft: next film beyond the pipeline (Chief LOCK HOS 011 = Surgery before anaesthesia (Ben said yes, HOS #180 6128594677). Title spelling 'Anesthesia' (search neighbour word); UK spelling allowed in description. Claude script v01 then Gemini facts pass.)
