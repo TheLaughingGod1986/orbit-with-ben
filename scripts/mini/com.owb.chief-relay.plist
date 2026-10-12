@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-  Chief relay (scripts/chief_relay.py), every 10 minutes, round the clock (wakes an agent only when a job is queued, plus a 2-hourly daytime sweep). Whoever is first in line and up acts as
+  Chief relay (scripts/chief_relay.py), every minute (chains jobs back to back, PR #142), round the clock (wakes an agent only when a job is queued, plus a 2-hourly daytime sweep). Whoever is first in line and up acts as
   Chief: Grok Bot, then Cursor, then Codex (Ben, 7 Oct 2026). While Grok is Chief it does nothing. Replaces the
   Cursor-only worker (cursor_worker.sh), which never got installed.
   Install once (copies the script to ~/_desk/bin so a git pull can't change it mid-run):
@@ -28,6 +28,11 @@
     <!-- launchd's zsh -lc has no Homebrew or user bins on PATH, and "~" isn't expanded here: full paths only (gh, agy, agent, codex) -->
     <key>PATH</key>
     <string>/Users/benjaminoats/.local/bin:/Users/benjaminoats/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <!-- as installed on the Mini (12 Oct 2026): launchd can't find codex or the HOS checkout without these -->
+    <key>CODEX_BIN</key>
+    <string>/Users/benjaminoats/.npm-global/bin/codex</string>
+    <key>HOS_REPO</key>
+    <string>/Users/benjaminoats/YouTube/History Of Science</string>
   </dict>
   <key>StartInterval</key>
   <integer>60</integer>
