@@ -8483,13 +8483,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T12:39Z",
-      "eta": "2026-10-12T14:39Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T12:17Z",
-      "result": "",
+      "result": "parked for Chief: 024 v05d row 2 (EV in-point 75.0 s, '7 years' 1.82 s on bright picture; picture_qa + polish_gate PASS; cut 07_Edit-Project/024_LightSpeed_full_rough_v05d.mp4, commit 6e1a1eb3)",
       "history": [
         {
           "at": "2026-10-12T12:17Z",
@@ -8510,6 +8510,11 @@
           "at": "2026-10-12T12:43Z",
           "by": "cursor",
           "what": "step 2 of 5 done: row 2 -> EV@75.0; render started (tmux j0149-render)"
+        },
+        {
+          "at": "2026-10-12T12:56Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: 024 v05d row 2 (EV in-point 75.0 s, '7 years' 1.82 s on bright picture; picture_qa + polish_gate PASS; cut 07_Edit-Project/024_LightSpeed_full_rough_v05d.mp4, commit 6e1a1eb3)"
         }
       ],
       "kind": "assembly",
