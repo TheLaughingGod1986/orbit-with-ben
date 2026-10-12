@@ -7667,10 +7667,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T13:49Z",
-      "eta": "2026-10-12T14:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -7839,6 +7839,11 @@
           "at": "2026-10-12T13:50Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Flow 52 at 14:55; refill not landed"
+        },
+        {
+          "at": "2026-10-12T13:50Z",
+          "by": "cursor",
+          "what": "released: 14:55 London: Flow still 52 credits (6th read today, account panel on :9222). Refill not landed; recorded in ai_spend. Price table ready at ~/_desk/logs/J0138_price_draft.md (006 = 1410 credits at 1 take / 2820 at 2). Next run after 15:00: re-read, then step 3 (desk #180 to grok + HOS PR)."
         }
       ],
       "kind": "video",
