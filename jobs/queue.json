@@ -1,5 +1,5 @@
 {
-  "next_id": 177,
+  "next_id": 178,
   "jobs": [
     {
       "id": "J0001",
@@ -9808,6 +9808,33 @@
         }
       ],
       "kind": "chief"
+    },
+    {
+      "id": "J0177",
+      "title": "HOS standalone Shorts test: Gemini facts pass on the 8 draft scripts (SOURCES_v01)",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "On branch scripts/standalone-shorts-j0169 (HOS PR #291), fill docs/STANDALONE_SHORTS_TEST_2026-10/SOURCES_v01.md: for every MUST QUOTE row, an exact sentence copied from a real page plus its URL, and OK or FLAG. A quote not on the page is a FLAG. Never rewrite spoken lines in SCRIPTS_v01.md; list any line that needs cutting or softening for Chief/Claude. Commit to the same branch. No spend.",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/291",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T14:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T14:11Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
     }
   ],
   "focus": [
