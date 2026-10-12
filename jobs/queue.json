@@ -7598,10 +7598,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T11:59Z",
-      "eta": "2026-10-12T12:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -7700,6 +7700,11 @@
           "at": "2026-10-12T11:59Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-12T12:00Z",
+          "by": "cursor",
+          "what": "released: 13:00 London: Flow still 52 credits (3rd read today, account picker). Refill not landed; recorded in ai_spend. Steps 2-3 not started. Next hourly read from 14:00."
         }
       ],
       "kind": "video",
