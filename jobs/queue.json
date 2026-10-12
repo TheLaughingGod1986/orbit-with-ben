@@ -13814,13 +13814,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-12T23:51Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T23:59Z",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-12T23:49Z",
-      "result": "parked for Chief: S5-S8 cover KEEP and HOOK/BAND/PHONE decision; drafts and SFX checks complete in HOS branch codex/j0217-hos-covers f1a3d45. Base board check stale; centre-crop limitation and S8 asymmetric layout documented.",
+      "result": "PASS HOOK/BAND/PHONE ×4; wording KEEP; #308 merged 7d6af66; HOS #180 6134925830. Cursor to attach covers on package.",
       "history": [
         {
           "at": "2026-10-12T23:49Z",
@@ -13861,15 +13861,25 @@
           "at": "2026-10-12T23:54Z",
           "by": "codex",
           "what": "blocked: parked for Chief: S5-S8 cover KEEP and HOOK/BAND/PHONE decision; drafts and SFX checks complete in HOS branch codex/j0217-hos-covers f1a3d45. Base board check stale; centre-crop limitation and S8 asymmetric layout documented."
+        },
+        {
+          "at": "2026-10-12T23:59Z",
+          "by": "chief",
+          "what": "reopened: Chief PASS on S5–S8 covers; closing"
+        },
+        {
+          "at": "2026-10-12T23:59Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-12T23:59Z",
+          "by": "chief",
+          "what": "done: PASS HOOK/BAND/PHONE ×4; wording KEEP; #308 merged 7d6af66; HOS #180 6134925830. Cursor to attach covers on package."
         }
       ],
       "kind": "chart",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-12T23:54Z",
-        "by": "codex"
-      }
+      "done_ref": "6134925830"
     }
   ],
   "focus": [

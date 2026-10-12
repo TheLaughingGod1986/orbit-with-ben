@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0210 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
 | J0216 | mini | open (after J0164) | – | – | studio · OWB standalone Shorts: Private+scheduled uploads (J0164 OK) |  |
-| J0217 | mini | blocked | codex | – | chart · HOS standalone Shorts S5-S8: custom 9:16 covers | 6134823664 |
 
 Recently finished:
 
+- J0217 done: HOS standalone Shorts S5-S8: custom 9:16 covers (PASS HOOK/BAND/PHONE ×4; wording KEEP; #308 merged 7d6af66; HOS #180 6134925830. Cursor to attach covers on package.)
 - J0215 done: HOS standalone Shorts S7-03: one Vertex retake (credit back) (S7-03 v02 minted (£0.03, HOS 0462e90); flame still faint, parked on #180 for Chief KEEP/FAIL)
 - J0214 done: HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (done)
 - J0213 done: HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines) (Chief KEEP S5-S8 VO v01 (HOS #180 6133703986): word for word v02 lines 5-8, -19.6 to -20.4 LUFS; pause trim ~0.4 s at assembly; captions keep UK spelling. J0214 plates clear.)
@@ -53,4 +53,3 @@ Recently finished:
 - J0203 done: HOS standalone Shorts S1-S4: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (20 x 9:16 still plates for S1-S4 on Vertex gemini-2.5-flash-image (~£0.62; trial est ≈£0.63 left, console £1.46 lagging). HOS docs/STANDALONE_SHORTS_TEST_2026-10/PLATES_STATUS_v01.md; sheets plates_v01/s{1..4}_sheet_v01.jpg (Mini). KEEP flags for Chief: S1-05 smoke look, S2 Brand inconsistent, S3-05 handle still on pump.)
 - J0202 done: OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) (Chief VO PASS on #99 (6130933382): OWB standalone Shorts S5-S8 vo_s5-s8_v01 locked as recorded. Text word for word from SCRIPTS_v01 (S7 fallback line); Gemini Q10-Q17/Q19 OK. 18.72/20.16/21.36/19.12 s, all in the 18-22 s band, no trim; -20.2/-20.1/-19.9/-20.2 LUFS. S6/S8 Scribe REVIEW is numerals/US spelling only, no retake. 1,070 credits, no top-up. J0163 builds S5-S8 (UK spelling in captions).)
 - J0201 done: OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) (done)
-- J0190 done: OWB Studio: fix wrong long title in descriptions of Shorts pL339HhjDwo + Ih2zhZTbIR0 (J0155) (Descriptions of Shorts pL339HhjDwo + Ih2zhZTbIR0 now name the long's exact title (1935b64e). Description-only API edit via new redescribe-videos.ts; titles, privacy (public) and publishAt unchanged.)
