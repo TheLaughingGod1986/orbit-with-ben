@@ -7305,13 +7305,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T01:00Z",
-      "eta": "2026-10-12T05:00Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:29Z",
-      "result": "",
+      "result": "parked for Chief: final OK on the v01 cut (54.63 s, gates PASS, e2e191ae) and the title; then cover, package, Private upload publishAt 2026-11-12T11:30Z",
       "history": [
         {
           "at": "2026-10-11T22:29Z",
@@ -7342,6 +7342,11 @@
           "at": "2026-10-12T01:05Z",
           "by": "cursor",
           "what": "step 5 of 6 done: posted on #99; parked for Chief"
+        },
+        {
+          "at": "2026-10-12T01:05Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: final OK on the v01 cut (54.63 s, gates PASS, e2e191ae) and the title; then cover, package, Private upload publishAt 2026-11-12T11:30Z"
         }
       ],
       "kind": "assembly",
