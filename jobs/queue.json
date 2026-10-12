@@ -9244,12 +9244,12 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "since": "2026-10-12T14:17Z",
-      "eta": "2026-10-12T16:17Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:49Z",
-      "result": "",
+      "result": "Vertex trial at margin: parked (would bill the card). Live £4.93 (Expiring in 30 days) at 15:18; 5 first takes ~£3.68 (P3:06, P4:01-04); next plate P4:05 Quality ~£1.31 passes Chief's £4.15 budget. Takes PENDING_UAT for Chief KEEP; HOS PR #292 (merge is Chief's).",
       "history": [
         {
           "at": "2026-10-12T13:49Z",
@@ -9305,6 +9305,11 @@
           "at": "2026-10-12T14:26Z",
           "by": "cursor",
           "what": "step 4 of 4 done: 5 takes minted, stopped at budget"
+        },
+        {
+          "at": "2026-10-12T14:26Z",
+          "by": "cursor",
+          "what": "blocked: Vertex trial at margin: parked (would bill the card). Live £4.93 (Expiring in 30 days) at 15:18; 5 first takes ~£3.68 (P3:06, P4:01-04); next plate P4:05 Quality ~£1.31 passes Chief's £4.15 budget. Takes PENDING_UAT for Chief KEEP; HOS PR #292 (merge is Chief's)."
         }
       ],
       "kind": "video",
