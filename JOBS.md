@@ -21,7 +21,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0143 | mini | blocked | codex | – | 024 thumbs · chart · 024 Light Speed: two new covers (answers the title: age vs Earth / teases it), one glowing ship, no Orbit, <=30% near-black, --score PASS; park for Chief review, then Test & Compare from day 1 |  |
 | J0145 | any | blocked | cursor | – | 024 edit · qa · Orbit Auditor prep: per-chapter teaching gate sheet for 024 v05b (then 026, 027): chapter list, number-object timestamps, VO keyword match; Chief reviews | 6119251981 |
-| J0146 | mini | open | – | – | 004 thumbs · studio · HOS 004: add thumb C v07b as 3rd variant in armed Test & Compare (Chief PASS 6119854326; Ben wants now) | 6119854326 |
+| J0146 | mini | claimed | cursor | 2026-10-12T10:38Z | 004 thumbs · studio · HOS 004: add thumb C v07b as 3rd variant in armed Test & Compare (Chief PASS 6119854326; Ben wants now) | 6119854326 |
 
 Recently finished:
 
