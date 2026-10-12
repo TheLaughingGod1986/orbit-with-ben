@@ -19,7 +19,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0147 | mini | blocked | cursor | – | 024 edit · for cursor · chart · `cursor-auto` · 024 Light Speed v05b: teaching overlays per J0145 prep table (Chief FAIL on NUMBER) |  |
 | J0148 | mini | blocked | cursor | – | chart · 026 Nearest Star: teaching overlays per J0145 026 prep sheet (a901da4f), same rulings |  |
 | J0149 | mini | blocked | cursor | – | 024 edit · assembly · 024 Light Speed v05d: row 2 new picture in-point so '7 years' holds >=1.2 s before the fade (Chief PASS v05c 22/23) |  |
-| J0150 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0150 | mini | claimed | cursor | 2026-10-12T15:04Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0151 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0152 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 
