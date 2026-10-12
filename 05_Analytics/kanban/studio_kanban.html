@@ -10,6 +10,16 @@
 .tf .wnow{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--doing-soft);color:var(--doing);vertical-align:1px}
 .tf.runcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
 .tf .ch{background:var(--panel-2)!important;color:var(--ink-2)!important;font-weight:500}
+.tf .etl{font-size:12px;color:var(--ink-2);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+details.jl{margin:-6px 0 0;padding:4px 12px 6px;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;font-size:12px}
+details.jl>summary{cursor:pointer;color:var(--ink-3);list-style:none}
+details.jl>summary::before{content:"▸ "}details.jl[open]>summary::before{content:"▾ "}
+details.jl ul{list-style:none;margin:4px 0 0;padding:0}
+details.jl li{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:5px 0;border-top:1px solid var(--line);align-items:center}
+details.jl .jt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+details.jl .js{color:var(--ink-2);font-weight:600}details.jl .js.ok{color:var(--done)}details.jl .js.now{color:var(--doing)}
+details.jl .jb{height:4px;border-radius:2px;background:var(--panel-2);overflow:hidden}details.jl .jb i{display:block;height:100%;background:var(--ink-3)}
+details.jl .jw{color:var(--ink-3);text-align:right}
 #foldJobs,#foldPlans{margin:8px 0}
 #foldJobs .jb{margin-top:8px}
 </style></head><body>
@@ -1402,6 +1412,8 @@ function rel(ms){ const m=Math.round((ms-Date.now())/MINUTE); if(m<=2) return "a
 function ago(ms){ const m=Math.round((Date.now()-ms)/MINUTE); return m<1?"just now":m<60?`${m} min ago`:m<1440?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} d ago`; }
 const LANE = {mini:"Mac mini · Cursor", gemini:"Gemini check", cloud:"Claude", chief:"Chief", ben:"You"};
 function nextRun(){ const d=new Date(); if(d.getMinutes()>=50) d.setHours(d.getHours()+1); d.setMinutes(50,0,0); return d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}); }
+// Ben, 12 Oct 23:07: estimates use the typical time for the job's kind from the queue history when the snapshot has it.
+const jobMin = j => +j.typMin || +(((fromDb.extra||{}).typical||{})[j.kindKey||j.kind]) || j.estMin || 25;
 function plan(){
   const jobs = fromDb.jobs || [], now = Date.now(), out = {};
   const byId = Object.fromEntries(jobs.map(j=>[j.id,j]));
@@ -1409,7 +1421,7 @@ function plan(){
   for(const lane of RO ? Object.keys(RO) : ["mini","gemini","cloud"]){
     let t = now, pos = 0;
     for(const j of jobs.filter(j=>laneOf(j)===lane && j.status==="claimed")){
-      const st = ts(j.claimedAt) || now, est=(j.estMin||25)*MINUTE, pace = stepPace(j);
+      const st = ts(j.claimedAt) || now, est=jobMin(j)*MINUTE, pace = stepPace(j);
       const done = pace ? Math.max(pace.at + pace.left, now+MINUTE) : Math.max(st+est, now+5*MINUTE);
       out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
     }
@@ -1427,10 +1439,10 @@ function plan(){
       if(idx && !(j.id in idx)){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
       // Date gate (Ben, 11 Oct): a job that can't start before a date starts then and doesn't hold up the rest of its line.
       const nb = ts(j.notBefore);
-      if(nb > now){ const start = Math.max(nb, dep ? dep.done : 0), done = j.gateOnly ? start : start + (j.estMin||25)*MINUTE;
+      if(nb > now){ const start = Math.max(nb, dep ? dep.done : 0), done = j.gateOnly ? start : start + jobMin(j)*MINUTE;
         out[j.id] = {state:"gated", start, done, gate:nb, pos: ++pos}; continue; }
       const start = Math.max(t, now + wake, dep ? dep.done + wake : 0), pace = stepPace(j);
-      const done = start + (pace ? Math.max(pace.left, MINUTE) : (j.estMin||25)*MINUTE);   // a released job: only what's left
+      const done = start + (pace ? Math.max(pace.left, MINUTE) : jobMin(j)*MINUTE);   // a released job: only what's left
       out[j.id] = {state: dep ? "after" : "line", start, done, pos: ++pos}; t = done;
     }
   }
@@ -1440,7 +1452,7 @@ function plan(){
       if(j.status!=="open" || (o && o.state!=="blocked-dep")) continue;
       const dep = out[j.after]; if(!dep || dep.state==="blocked-dep" || !dep.done) continue;
       const nb = ts(j.notBefore), start = Math.max(dep.done + (dep.state==="gated" && byId[j.after] && byId[j.after].gateOnly ? 0 : 5*MINUTE), nb>now?nb:0, now+5*MINUTE);
-      out[j.id] = {state: nb>now ? "gated" : "after", start, done: start + (j.estMin||25)*MINUTE, gate: nb>now?nb:null, pos:null}; moved = true; }
+      out[j.id] = {state: nb>now ? "gated" : "after", start, done: start + jobMin(j)*MINUTE, gate: nb>now?nb:null, pos:null}; moved = true; }
     if(!moved) break; }
   return out;
 }
@@ -1767,7 +1779,56 @@ setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" curr
     t.querySelectorAll(".tf").forEach(c=>{ if(c.classList.contains("runcard")) return; const on = keys.has(c.dataset.key), b = c.querySelector(".wnow");
       if(on && !b){ const tag = c.querySelector(".kh > span"); if(tag) tag.insertAdjacentHTML("beforeend",' <span class="wnow">Working now</span>'); }
       else if(!on && b) b.remove(); }); };
-  new MutationObserver(()=>{ tidy(); badge(); }).observe(t, {childList:true, subtree:true}); })();
+  // Ben, 12 Oct 23:07: every film card says when its next job starts, and a tap-to-open list of all its jobs.
+  const rel = ms => { const m = Math.max(1, Math.round((ms-Date.now())/MINUTE)); return m<60 ? `~${m} min` : m<48*60 ? `~${Math.round(m/60)} h` : `~${Math.round(m/1440)} d`; };
+  const ordn = n => n + (n%100>=11&&n%100<=13 ? "th" : ({1:"st",2:"nd",3:"rd"})[n%10] || "th");
+  const WHO = {chief:"my review", cloud:"Claude", gemini:"the Gemini check", ben:"you"};
+  const jobState = (j, P) => {
+    const p = P[j.id] || {}, ln = j.line || j.needs;
+    if(j.status==="done") return {w:"Done", cls:"ok", pct:100, t:""};
+    if(j.status==="claimed"){ const pr = progressOf(j, P); return {w:"Working now", cls:"now", pct:pr.pct, t: pr.done ? `ready in ${rel(pr.done)}` : "working"}; }
+    if(j.status==="blocked"){ const k = jobKind(j), r = waitReason(j, k||"held"); return {w:"Waiting", cls:"wait", pct:0, t: (WAIT_WORD[r]||"for something else").replace(/^for /,"for ")}; }
+    if(p.start){ const who = ln==="mini" ? "" : ` (${WHO[ln]||ln})`;
+      const lead = ln==="mini" && p.pos===1 ? "Next up" : ln==="mini" && p.pos ? `${ordn(p.pos)} in queue` : p.state==="gated" ? "Booked" : "Queued";
+      return {w: lead+who, cls:"queue", pct:0, t:`starts in ${rel(p.start)}`, start:p.start}; }
+    return {w:"Queued", cls:"queue", pct:0, t:"start not known yet"};
+  };
+  const eta = () => {
+    const jobsAll = (typeof fromDb!=="undefined" && fromDb.jobs) || []; if(!jobsAll.length) return;
+    const P = plan(), by = {};
+    for(const j of jobsAll){ const k = keyOf(j); if(k) (by[k] = by[k] || []).push(j); }
+    const seen = new Set(jobsAll.map(j=>j.id));
+    for(const d of (((fromDb.extra||{}).done)||[]).slice().reverse()){ if(seen.has(d.id)) continue; const j = Object.assign({status:"done"}, d); const k = keyOf(j); if(k) (by[k] = by[k] || []).push(j); }
+    t.querySelectorAll("details.tf[data-key]").forEach(c=>{
+      const js = (by[c.dataset.key]||[]);
+      const live = js.filter(j=>j.status!=="done"), done = js.filter(j=>j.status==="done").slice(-3);
+      // card line: the job that will move this film next
+      let pick = live.find(j=>j.status==="claimed");
+      if(!pick) pick = live.filter(j=>j.status==="open" && (P[j.id]||{}).start).sort((a,b)=>P[a.id].start-P[b.id].start)[0];
+      if(!pick) pick = live.find(j=>j.status==="blocked");
+      let line = "";
+      if(pick){ const st = jobState(pick, P); line = st.w==="Waiting" ? `Waiting ${st.t}` : `${st.w} · ${st.t}`; }
+      let el = c.querySelector("summary .etl");
+      const lane = (c.closest(".kcol")||{}).querySelector ? (c.closest(".kcol").querySelector("h2")||{}).textContent||"" : "";
+      if(!line && /To do|In progress/.test(lane)) line = "No job in the queue yet";
+      if(line){ if(!el){ const bar = c.querySelector("summary .bar"); if(bar){ bar.insertAdjacentHTML("afterend", '<div class="etl"></div>'); el = c.querySelector("summary .etl"); } }
+        if(el && el.textContent!==line) el.textContent = line; }
+      else if(el) el.remove();
+      // job list: a sibling under the card, collapsed
+      const rows = [...done, ...live.sort((a,b)=>((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15))];
+      let jl = c.nextElementSibling && c.nextElementSibling.classList.contains("jl") ? c.nextElementSibling : null;
+      if(!rows.length){ if(jl) jl.remove(); return; }
+      const html = rows.map(j=>{ const st = jobState(j, P);
+        return `<li><span class="jt">${esc(plainTitle(j, 46))}</span><span class="js ${st.cls}">${st.cls==="ok"?"✓ Done":esc(st.w)}</span>${st.cls==="ok"?"":`<span class="jb"><i style="width:${st.pct}%"></i></span>`}<span class="jw">${esc(st.t)}</span></li>`; }).join("");
+      const sum = "Jobs · " + [live.length?`${live.length} to go`:"", done.length?`${done.length} done`:""].filter(Boolean).join(", ");
+      if(!jl){ c.insertAdjacentHTML("afterend", `<details class="jl"><summary></summary><ul></ul></details>`); jl = c.nextElementSibling; }
+      const s1 = jl.querySelector("summary"), ul = jl.querySelector("ul");
+      if(s1.textContent!==sum) s1.textContent = sum;
+      if(jl.dataset.h!==html){ jl.dataset.h = html; ul.innerHTML = html; }   // compare our own string: innerHTML re-serialises
+    });
+  };
+  let busyObs = false;
+  new MutationObserver(()=>{ if(busyObs) return; busyObs = true; try { tidy(); badge(); eta(); } finally { busyObs = false; } }).observe(t, {childList:true, subtree:true}); })();
 </script>
 
 </body></html>
