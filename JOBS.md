@@ -25,7 +25,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0181 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0184 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
-| J0187 | mini | blocked | cursor | – | studio · 024 Light Speed: Test & Compare A/B covers from day 1 at upload (J0143 PASS) |  |
 | J0188 | mini | blocked | cursor | – | studio · Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?' |  |
 | J0189 | mini | open | – | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
 | J0190 | mini | open | – | – | studio · OWB Studio: fix wrong long title in descriptions of Shorts pL339HhjDwo + Ih2zhZTbIR0 (J0155) |  |
@@ -41,16 +40,17 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
 | J0204 | mini | open | – | – | chart · HOS compilation: timeline x4 + chapter cards x6 code graphics |  |
 | J0205 | any | open | – | – | listing · Upload packages for 3 Chief-PASSed Shorts (OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01, HOS 005 s04 'Is the Heart a Pump?'): listing + manifest, no publishAt (prereq for J0188) |  |
+| J0206 | mini | open | – | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
 
 Recently finished:
 
 - J0203 done: HOS standalone Shorts S1-S4: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (20 x 9:16 still plates for S1-S4 on Vertex gemini-2.5-flash-image (~£0.62; trial est ≈£0.63 left, console £1.46 lagging). HOS docs/STANDALONE_SHORTS_TEST_2026-10/PLATES_STATUS_v01.md; sheets plates_v01/s{1..4}_sheet_v01.jpg (Mini). KEEP flags for Chief: S1-05 smoke look, S2 Brand inconsistent, S3-05 handle still on pump.)
 - J0202 done: OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) (Chief VO PASS on #99 (6130933382): OWB standalone Shorts S5-S8 vo_s5-s8_v01 locked as recorded. Text word for word from SCRIPTS_v01 (S7 fallback line); Gemini Q10-Q17/Q19 OK. 18.72/20.16/21.36/19.12 s, all in the 18-22 s band, no trim; -20.2/-20.1/-19.9/-20.2 LUFS. S6/S8 Scribe REVIEW is numerals/US spelling only, no retake. 1,070 credits, no top-up. J0163 builds S5-S8 (UK spelling in captions).)
 - J0201 done: OWB standalone Shorts S5-S8: Gemini facts pass Q10-Q19 (Q18 dropped: S7 fallback) (done)
+- J0187 done: 024 Light Speed: Test & Compare A/B covers from day 1 at upload (J0143 PASS) (Chief PASS J0187 prep: PR #139 (9f3b93dc) + #153 (fc13971a) merged; covers stay at 08_Thumbnail/j0143_v02 and ~/_desk/handoff/J0143-v02. Studio Test & Compare waits until 024 has a video id (final OK Mon 26 Oct / airs Sun 1 Nov). OWB #99 6131722365. No 024 upload job exists yet — Cursor must add the Studio T&C follow-on with --after the upload job when upload is queued (follow-on J id created in this commit).)
 - J0186 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS Saturn 'clock' Short v01 (d5eb0a50, gate PASS). Air in the next free OWB Short slot (follow-on studio job).)
 - J0185 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (done)
 - J0183 done: Backlog HOS: next script or opening draft (009/010 first) (Chief PASS HOS 011 script v01 (HOS PR #295, 91.1); topic + spelling locked in J0180. VO waits on Gemini facts pass on SOURCES_v01 rows 1-37 (follow-on job).)
 - J0182 done: Backlog OWB: next script draft for the earliest film without a locked script (Chief PASS 030 Apophis script v01 (review:script 94.5) as draft-lock; VO waits on the Gemini facts pass on SOURCES.md v01 and the neighbour pass (follow-on jobs).)
 - J0180 done: HOS ideas + script draft: next film beyond the pipeline (Chief LOCK HOS 011 = Surgery before anaesthesia (Ben said yes, HOS #180 6128594677). Title spelling 'Anesthesia' (search neighbour word); UK spelling allowed in description. Claude script v01 then Gemini facts pass.)
 - J0179 done: OWB ideas + script draft: next film beyond the pipeline (Chief LOCK 030 Apophis (IDEAS_2026-10-12_J0179.md). Short-first line stands: an Apophis standalone Short must clear 200 views/40% before the long's VO. Neighbour pass queued.)
-- J0178 done: Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more) (done)

@@ -1,5 +1,5 @@
 {
-  "next_id": 206,
+  "next_id": 207,
   "jobs": [
     {
       "id": "J0001",
@@ -11703,13 +11703,13 @@
       "stage": "",
       "after": "J0143",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T19:56Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T20:05Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: prep done (PR #153 points the 024 package at J0143 v02: answer = primary thumbnail, [answer, tease] = thumbnailAbc; dry run PASS, master e0f2ba6d). Merge #153 (after #139) is Chief's. Studio Test & Compare can only be set once 024 has a video id: re-add as a studio job --after the 024 upload job (final OK Mon 26 Oct, airs Sun 1 Nov). Covers are in 08_Thumbnail/j0143_v02 and ~/_desk/handoff/J0143-v02 on the Mini.",
+      "result": "Chief PASS J0187 prep: PR #139 (9f3b93dc) + #153 (fc13971a) merged; covers stay at 08_Thumbnail/j0143_v02 and ~/_desk/handoff/J0143-v02. Studio Test & Compare waits until 024 has a video id (final OK Mon 26 Oct / airs Sun 1 Nov). OWB #99 6131722365. No 024 upload job exists yet — Cursor must add the Studio T&C follow-on with --after the upload job when upload is queued (follow-on J id created in this commit).",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -11735,6 +11735,16 @@
           "at": "2026-10-12T19:58Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: prep done (PR #153 points the 024 package at J0143 v02: answer = primary thumbnail, [answer, tease] = thumbnailAbc; dry run PASS, master e0f2ba6d). Merge #153 (after #139) is Chief's. Studio Test & Compare can only be set once 024 has a video id: re-add as a studio job --after the 024 upload job (final OK Mon 26 Oct, airs Sun 1 Nov). Covers are in 08_Thumbnail/j0143_v02 and ~/_desk/handoff/J0143-v02 on the Mini."
+        },
+        {
+          "at": "2026-10-12T20:05Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-12T20:05Z",
+          "by": "chief",
+          "what": "done: Chief PASS J0187 prep: PR #139 (9f3b93dc) + #153 (fc13971a) merged; covers stay at 08_Thumbnail/j0143_v02 and ~/_desk/handoff/J0143-v02. Studio Test & Compare waits until 024 has a video id (final OK Mon 26 Oct / airs Sun 1 Nov). OWB #99 6131722365. No 024 upload job exists yet — Cursor must add the Studio T&C follow-on with --after the upload job when upload is queued (follow-on J id created in this commit)."
         }
       ],
       "kind": "studio",
@@ -11744,7 +11754,8 @@
         "at": "2026-10-12T19:58Z",
         "by": "cursor",
         "note": "manifest repointed, dry run PASS, PR #153"
-      }
+      },
+      "done_ref": "6131722365"
     },
     {
       "id": "J0188",
@@ -12386,6 +12397,33 @@
         }
       ],
       "kind": "listing"
+    },
+    {
+      "id": "J0206",
+      "title": "024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After 024 Light Speed has a YouTube video id (upload job done), set Studio Test & Compare A/B: answer (primary / j0143_v02) vs tease. Covers already pointed by PR #153. No public change beyond arming T&C. Final OK Mon 26 Oct / airs Sun 1 Nov. No --after set yet because no 024 upload job exists in the queue; when Cursor queues the upload job, retarget this job --after that upload id (or recreate with --after).",
+      "ref": "6131722365",
+      "film": "024",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T20:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T20:05Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [
