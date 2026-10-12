@@ -11045,13 +11045,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T23:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: KEEP/FAIL on S5-S8 v01 (HOS #307 23c7c54, desk 6134823664): gate_shorts_open PASS x4 (20.0-21.5 s), sfx_kit level PASS x4, S7-03 crop_no_flame, 4-line hook 8% cap, S5 whoosh -18 dB, S6 bed -2 dB; merge #307. Covers queued as a chart job. No spend, no upload.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11292,16 +11292,14 @@
           "at": "2026-10-12T23:50Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: KEEP/FAIL on S5-S8 v01 (HOS #307 23c7c54, desk 6134823664): gate_shorts_open PASS x4 (20.0-21.5 s), sfx_kit level PASS x4, S7-03 crop_no_flame, 4-line hook 8% cap, S5 whoosh -18 dB, S6 bed -2 dB; merge #307. Covers queued as a chart job. No spend, no upload."
+        },
+        {
+          "at": "2026-10-12T23:54Z",
+          "by": "chief",
+          "what": "reopened: Chief KEEP S5/S6/S8 v01; FAIL S7 only (lit candle on burn-out/air-spent). Retime: hold S7-01 through 'The air was spent' (~10.54s), then crop_no_flame 03, then 04, loop 01; drop 02 (optional ≤1s face flash). Desk 6134869893. No spend. Park S7 v02 for KEEP."
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-12T23:50Z",
-        "by": "cursor",
-        "note": "S5-S8 v01 built, HOS #307, desk posted"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0172",
