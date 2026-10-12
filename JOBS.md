@@ -9,7 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0123 | cloud | open | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0134 | mini | open | – | – | assembly · `cursor-auto` · 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) |  |
+| J0134 | mini | claimed | cursor | 2026-10-12T16:09Z | assembly · `cursor-auto` · 025 Mars Short length test: one 50–60 s Short lifted from locked long Js6EQJ8qDi8, private-scheduled Thu 12 Nov 11:30 London (Chief-OK'd one-off; lowest priority) |  |
 | J0135 | mini | open (after J0123) | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
 | J0136 | mini | open | – | – | studio · `cursor-auto` · OWB no-cover-text Test & Compare on JWST ziKBPJ6FY0U (A live vs B no text), parked for Chief review before setting (Reference lessons 5a; test, not a rule change) |  |
 | J0138 | mini | open (starts 14:00) | – | – | video · HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05 |  |
