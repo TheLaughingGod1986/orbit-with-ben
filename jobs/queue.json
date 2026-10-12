@@ -10575,13 +10575,13 @@
       "stage": "",
       "after": "J0170",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T19:28Z",
-      "eta": "2026-10-12T22:28Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: no picture exists for the standalone Shorts. VO is ready for S1-S4 only (S1/S4 v01, S2/S3 _vo_v02; S5-S8 have no VO yet). The locked scripts (SCRIPTS_v01 format, v02 lines) need new picture per Short (prism+thermometers, Brand's retort+glow, Broad Street pump, Curie notebook in lead box) and forbid reusing a long's plates; a repo-wide search found none. Decide: (a) add an image/video job (kind image, Vertex gemini-2.5-flash-image ~5 stills per Short = ~20 stills, frame-0 motion via Veo fast ~4 s per Short only if Vertex trial allows after J0107; or Flow if HOS Flow credit is up), then J0171 assembles S1-S4; or (b) allow existing HOS plates/archive art in place of new picture. Also confirm J0171 covers S1-S4 now and S5-S8 after their VO job.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10602,6 +10602,11 @@
           "at": "2026-10-12T19:29Z",
           "by": "cursor",
           "what": "step 1 of 6 done: inputs checked: VO S1-S4 ok, no plates"
+        },
+        {
+          "at": "2026-10-12T19:29Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: no picture exists for the standalone Shorts. VO is ready for S1-S4 only (S1/S4 v01, S2/S3 _vo_v02; S5-S8 have no VO yet). The locked scripts (SCRIPTS_v01 format, v02 lines) need new picture per Short (prism+thermometers, Brand's retort+glow, Broad Street pump, Curie notebook in lead box) and forbid reusing a long's plates; a repo-wide search found none. Decide: (a) add an image/video job (kind image, Vertex gemini-2.5-flash-image ~5 stills per Short = ~20 stills, frame-0 motion via Veo fast ~4 s per Short only if Vertex trial allows after J0107; or Flow if HOS Flow credit is up), then J0171 assembles S1-S4; or (b) allow existing HOS plates/archive art in place of new picture. Also confirm J0171 covers S1-S4 now and S5-S8 after their VO job."
         }
       ],
       "kind": "assembly",
