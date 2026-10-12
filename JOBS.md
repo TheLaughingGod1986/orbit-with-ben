@@ -17,7 +17,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0143 | mini | blocked | codex | – | 024 thumbs · chart · 024 Light Speed: two new covers (answers the title: age vs Earth / teases it), one glowing ship, no Orbit, <=30% near-black, --score PASS; park for Chief review, then Test & Compare from day 1 |  |
 | J0147 | mini | blocked | cursor | – | 024 edit · for cursor · chart · `cursor-auto` · 024 Light Speed v05b: teaching overlays per J0145 prep table (Chief FAIL on NUMBER) |  |
-| J0148 | mini | open | – | – | chart · 026 Nearest Star: teaching overlays per J0145 026 prep sheet (a901da4f), same rulings |  |
+| J0148 | mini | claimed | cursor | 2026-10-12T15:16Z | chart · 026 Nearest Star: teaching overlays per J0145 026 prep sheet (a901da4f), same rulings |  |
 
 Recently finished:
 
