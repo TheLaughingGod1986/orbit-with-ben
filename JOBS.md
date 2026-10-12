@@ -39,7 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0198 | gemini | open | – | – | facts · HOS 011 Anesthesia: Gemini facts pass on SOURCES_v01 rows 1-37 before VO |  |
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
-| J0202 | mini | claimed | cursor | 2026-10-12T20:07Z | vo · OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) | 6125827198 |
+| J0202 | mini | claimed | cursor | 2026-10-12T19:33Z | vo · OWB standalone Shorts S5-S8: VO (4 locked scripts, weeks 3-4) | 6125827198 |
 
 Recently finished:
 
