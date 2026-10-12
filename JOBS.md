@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0170 | mini | open (after J0169) | – | – | vo · HOS standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
 | J0171 | mini | open (after J0170) | – | – | assembly · HOS standalone Shorts test: assemble the 8 Shorts |  |
 | J0172 | any | open (after J0171) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
-| J0173 | any | claimed | cursor | 2026-10-12T17:03Z | script · HOS compilation film (45-60 min) from finished films: plan + fresh intro/chapter script |  |
+| J0173 | any | blocked | cursor | – | script · HOS compilation film (45-60 min) from finished films: plan + fresh intro/chapter script |  |
 | J0174 | mini | open (after J0173) | – | – | vo · HOS compilation film: VO for intro and bridges |  |
 | J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
