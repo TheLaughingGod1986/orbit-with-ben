@@ -11751,13 +11751,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T19:59Z",
-      "eta": "2026-10-12T21:59Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "parked for Chief: (1) pick air slots, since Mon/Wed/Fri to 6 Nov belong to 022/023/024 Shorts and the standalone test (2/week) has no days set yet. Free off-days proposed: OWB Jupiter no-crust Sat 17 Oct 11:30, OWB Saturn clock Tue 20 Oct 11:30 (after the Cka7_TVVOUQ day-1 feed read); HOS s04 Thu 22 Oct 11:30 (clear of 18/20/30 Oct, 1/3/8/15 Nov). (2) No upload package exists for any of the three, so the listing job J0205 comes first; HOS s04 is only on unmerged branch cursor/hos-005-s04-galen-short-v01 (c9f4356). Reopen J0188 once J0205 is done and slots are set.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -11778,6 +11778,11 @@
           "at": "2026-10-12T20:01Z",
           "by": "cursor",
           "what": "step 1 of 4 done: PASS + package check done; packages missing -> J0205"
+        },
+        {
+          "at": "2026-10-12T20:01Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: (1) pick air slots, since Mon/Wed/Fri to 6 Nov belong to 022/023/024 Shorts and the standalone test (2/week) has no days set yet. Free off-days proposed: OWB Jupiter no-crust Sat 17 Oct 11:30, OWB Saturn clock Tue 20 Oct 11:30 (after the Cka7_TVVOUQ day-1 feed read); HOS s04 Thu 22 Oct 11:30 (clear of 18/20/30 Oct, 1/3/8/15 Nov). (2) No upload package exists for any of the three, so the listing job J0205 comes first; HOS s04 is only on unmerged branch cursor/hos-005-s04-galen-short-v01 (c9f4356). Reopen J0188 once J0205 is done and slots are set."
         }
       ],
       "kind": "studio",
