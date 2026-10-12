@@ -7793,13 +7793,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T01:47Z",
-      "eta": "2026-10-12T03:17Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:38Z",
-      "result": "",
+      "result": "parked for Chief: kind=chief (no stand-in per Who does what). The per-chapter NUMBER/WORDS PASS/FAIL scoring on 024 v05b, 026, 027 is a protected PASS call for the Orbit Auditor/Chief; Cursor can draft an advisory chapter/timestamp sheet if Chief re-adds it as kind=qa or review.",
       "history": [
         {
           "at": "2026-10-11T23:38Z",
@@ -7810,6 +7810,11 @@
           "at": "2026-10-12T01:47Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-12T01:47Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: kind=chief (no stand-in per Who does what). The per-chapter NUMBER/WORDS PASS/FAIL scoring on 024 v05b, 026, 027 is a protected PASS call for the Orbit Auditor/Chief; Cursor can draft an advisory chapter/timestamp sheet if Chief re-adds it as kind=qa or review."
         }
       ],
       "kind": "chief"
