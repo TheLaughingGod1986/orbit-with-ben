@@ -10438,13 +10438,13 @@
       "stage": "",
       "after": "J0173",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T18:06Z",
-      "eta": "2026-10-12T19:06Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: HOS compilation VO recorded (HOS PR #298, d9e150b, 2,044 chars): Gemini 12/12 OK; intro, bridges 1-5, closing; vo_check 6 PASS + Bridge 1 REVIEW (numeral only). Accept takes; Bridge 2 Scribe heard one 'a' as 'the' (listen at assembly).",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10470,6 +10470,11 @@
           "at": "2026-10-12T18:24Z",
           "by": "cursor",
           "what": "step 5 of 5 done: 7 takes, HOS PR #298"
+        },
+        {
+          "at": "2026-10-12T18:24Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: HOS compilation VO recorded (HOS PR #298, d9e150b, 2,044 chars): Gemini 12/12 OK; intro, bridges 1-5, closing; vo_check 6 PASS + Bridge 1 REVIEW (numeral only). Accept takes; Bridge 2 Scribe heard one 'a' as 'the' (listen at assembly)."
         }
       ],
       "kind": "vo",
