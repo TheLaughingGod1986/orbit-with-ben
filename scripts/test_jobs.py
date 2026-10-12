@@ -221,50 +221,25 @@ class NotBefore(unittest.TestCase):
         with self.assertRaises(ValueError):
             jobs.parse_not_before("12 Oct 09:00")
 
-    def test_next_and_peek_skip_it_until_its_time(self):
-        d = queue(("mini", "flow balance", {"not_before": "2026-10-07 14:00", "reset": "credit window"}), ("mini", "later job", {}))
-        self.assertEqual(d["jobs"][0]["not_before"], "2026-10-07T13:00Z")
-        self.assertFalse(jobs.claimable(d, d["jobs"][0], jobs.MINI_NEEDS, T0, "cursor"))
-        self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["id"], "J0002")  # the gated job doesn't hold up the line
-        self.assertIsNone(jobs.do_next(d, "codex", {"mini"}, T0 + 59 * MIN))
-        self.assertEqual(jobs.do_next(d, "codex", {"mini"}, T0 + 60 * MIN)["id"], "J0001")
+    def test_no_fixed_start_times(self):
+        """Ben, 12 Oct 2026 14:37: a stored not_before is ignored and none can be set."""
+        d = queue(("mini", "flow balance", {}), ("mini", "later job", {}))
+        d["jobs"][0]["not_before"] = "2099-01-01T09:00Z"  # an old field left on a job
+        self.assertTrue(jobs.claimable(d, d["jobs"][0], jobs.MINI_NEEDS, T0, "cursor"))
+        with self.assertRaises(ValueError):
+            jobs.do_schedule(d["jobs"][1], "chief", "2026-10-07 14:00", T0, "credit window")
+        jobs.do_schedule(d["jobs"][1], "chief", "", T0)  # clearing is still fine
+        self.assertNotIn("starts", jobs.render(d, T0))
 
-    def test_schedule_sets_and_clears_and_the_board_shows_it(self):
-        d = queue(("mini", "flow balance", {}))
-        j = d["jobs"][0]
-        jobs.do_schedule(j, "chief", "2026-10-07 14:00", T0, "credit window")
-        self.assertEqual(j["not_before"], "2026-10-07T13:00Z")
-        self.assertIn("not before 2026-10-07 14:00 London", j["history"][-1]["what"])
-        self.assertIn("starts", jobs.render(d, T0))
-        self.assertIn("not before: 2026-10-07 14:00 London", jobs.show(j))
-        jobs.do_schedule(j, "chief", "", T0)
-        self.assertNotIn("not_before", j)
-        self.assertTrue(jobs.claimable(d, j, {"mini"}, T0, "cursor"))
+    def test_released_job_goes_behind_other_ready_work(self):
+        d = queue(("mini", "poll", {}), ("mini", "real work", {}))
+        jobs.log(d["jobs"][0], jobs.now(), "cursor", "released: retry later")
+        self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["id"], "J0002")
 
-    def test_relay_next_job_respects_it(self):
-        import chief_relay
-        d = queue(("mini", "flow balance", {"not_before": "2099-01-01 09:00", "reset": "credit window"}))
-        old = (jobs.load,)
-        jobs.load = lambda *a: d
-        try:
-            self.assertIsNone(chief_relay.next_job("cursor"))
-        finally:
-            jobs.load, = old
-
-    def test_cli_schedule(self):
-        d = queue(("mini", "flow balance", {}))
-        saved = []
-        with tempfile.TemporaryDirectory() as tmp:
-            old = (jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat)
-            jobs.load, jobs.save = (lambda *a: d), (lambda data, *a: saved.append(data))
-            jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = pathlib.Path(tmp) / "JOBS.md", (lambda: None), (lambda a: None)
-            try:
-                rc = jobs.main(["schedule", "J0001", "--agent", "chief", "--not-before", "2026-10-12 09:00", "--reset", "AI Ultra renews"])
-            finally:
-                jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = old
-        self.assertEqual(rc, 0)
-        self.assertEqual(saved[0]["jobs"][0]["not_before"], "2026-10-12T08:00Z")
-
+    def test_backlog_tier_runs_last(self):
+        d = queue(("mini", "growth", {}), ("mini", "pipeline", {}))
+        d["jobs"][0]["backlog"] = "owb-ideas"
+        self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["id"], "J0002")
 
 if __name__ == "__main__":
     unittest.main()

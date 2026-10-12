@@ -131,17 +131,10 @@ class OrderAndHandoffs(unittest.TestCase):
 
 
 class DateGates(unittest.TestCase):
-    def test_gate_from_title_and_inherited_by_after(self):
-        jobs = [{"id": "J1", "status": "open", "title": "025 date gate: mark done on/after Sun 8 Nov 18:00Z once X is public", "body": ""},
-                {"id": "J2", "status": "open", "title": "025 after go-public", "body": "Related video", "after": "J1"},
-                {"id": "J3", "status": "open", "title": "plain job", "body": "Mon 9 Nov 11:30Z upload"}]
-        g = ks.gates(jobs)
-        self.assertEqual(g["J1"], "2026-11-08T18:00Z")
-        self.assertEqual(g["J2"], "2026-11-08T18:00Z")
-        self.assertNotIn("J3", g)
-
-    def test_london_time_without_z(self):
-        self.assertEqual(ks.gate_of({"title": "not before Thu 15 Oct 2026 18:00"}), "2026-10-15T17:00Z")
+    def test_no_start_gates_on_the_board(self):  # Ben, 12 Oct 2026 14:37
+        jobs = [{"id": "J1", "status": "open", "title": "025 date gate: mark done on/after Sun 8 Nov 18:00Z", "body": ""},
+                {"id": "J2", "status": "open", "title": "x", "body": "", "not_before": "2026-10-12T14:00Z"}]
+        self.assertEqual(ks.gates(jobs), {})
 
 
 class RoutedSteps(unittest.TestCase):

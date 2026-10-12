@@ -317,6 +317,12 @@ MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 
 
 def gate_of(j: dict, today=None) -> str:
+    """Ben, 12 Oct 2026 14:37: no fixed start times on the board. A job waiting on an input is blocked/after, not
+    clocked, so there is no start gate to show."""
+    return ""
+
+
+def _old_gate_of(j: dict, today=None) -> str:  # kept for reference; unused
     import datetime as _dt
     from zoneinfo import ZoneInfo
     if j.get("not_before"):
