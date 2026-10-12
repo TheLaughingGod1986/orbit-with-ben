@@ -9661,12 +9661,12 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "since": "2026-10-12T14:17Z",
+      "status": "done",
+      "since": "2026-10-12T18:10Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:49Z",
-      "result": "Vertex trial at margin: parked (would bill the card). Live £4.93 (Expiring in 30 days) at 15:18; 5 first takes ~£3.68 (P3:06, P4:01-04); next plate P4:05 Quality ~£1.31 passes Chief's £4.15 budget. Takes PENDING_UAT for Chief KEEP; HOS PR #292 (merge is Chief's).",
+      "result": "Chief UAT done (HOS #180 6126300569): KEEP P4:01-04, FAIL P3:06 brewery (fires under vats + style drift). HOS PR #292 merged b019df4. Brewery retake + P4:05 go to Flow with J0140 once the AI Ultra refill lands (Vertex only if a real re-read leaves room above the 0.10 floor). Free-trial spend only, nothing for Ben.",
       "history": [
         {
           "at": "2026-10-12T13:49Z",
@@ -9727,6 +9727,16 @@
           "at": "2026-10-12T14:26Z",
           "by": "cursor",
           "what": "blocked: Vertex trial at margin: parked (would bill the card). Live £4.93 (Expiring in 30 days) at 15:18; 5 first takes ~£3.68 (P3:06, P4:01-04); next plate P4:05 Quality ~£1.31 passes Chief's £4.15 budget. Takes PENDING_UAT for Chief KEEP; HOS PR #292 (merge is Chief's)."
+        },
+        {
+          "at": "2026-10-12T18:10Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T18:10Z",
+          "by": "chief",
+          "what": "done: Chief UAT done (HOS #180 6126300569): KEEP P4:01-04, FAIL P3:06 brewery (fires under vats + style drift). HOS PR #292 merged b019df4. Brewery retake + P4:05 go to Flow with J0140 once the AI Ultra refill lands (Vertex only if a real re-read leaves room above the 0.10 floor). Free-trial spend only, nothing for Ben."
         }
       ],
       "kind": "video",
@@ -9738,7 +9748,8 @@
         "note": "5 takes minted, stopped at budget"
       },
       "urgent": 1,
-      "by": "cursor"
+      "by": "chief",
+      "done_ref": "6126300569"
     },
     {
       "id": "J0161",
@@ -10045,13 +10056,13 @@
       "stage": "",
       "after": "J0165",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T17:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: compilation VO 4 of 5 recorded (5fc3057c): intro, bridges 1/2/4, closing; vo_check 4 PASS + 1 REVIEW (Bridge 1, numeral only). Gemini C8 FLAG: 'a teaspoon would outweigh mountains' overstates NASA ('as much as a mountain'). Rule the Bridge 3 wording (suggest 'would weigh as much as a mountain'), then one ~200-char take owb_comp_bridge3_vo_v01. Accept Bridge 1 REVIEW.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10082,17 +10093,15 @@
           "at": "2026-10-12T18:05Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: compilation VO 4 of 5 recorded (5fc3057c): intro, bridges 1/2/4, closing; vo_check 4 PASS + 1 REVIEW (Bridge 1, numeral only). Gemini C8 FLAG: 'a teaspoon would outweigh mountains' overstates NASA ('as much as a mountain'). Rule the Bridge 3 wording (suggest 'would weigh as much as a mountain'), then one ~200-char take owb_comp_bridge3_vo_v01. Accept Bridge 1 REVIEW."
+        },
+        {
+          "at": "2026-10-12T18:10Z",
+          "by": "chief",
+          "what": "reopened: Chief ruling (sweep 19:10 London): Bridge 3 line becomes 'The biggest end in an explosion, and leave behind something so dense that a teaspoon of it would weigh as much as a mountain.' (matches NASA C8 quote). Bridge 1: pick up, because STT heard 'between one and 300 million' and viewers will too; new first line 'So the rings have somewhere between a hundred and three hundred million years. A blink, for Saturn.' (rest of Bridge 1 unchanged; C2 OK). Record owb_comp_bridge3_vo_v01 + owb_comp_bridge1_vo_v02, update both lines in COMPILATION_SCRIPT_v01.md and VO_STATUS.md, vo_check, then done. Intro, Bridge 2, Bridge 4, closing KEEP. J0167 assembly follows."
         }
       ],
       "kind": "vo",
-      "urgent": 4,
-      "progress": {
-        "step": 3,
-        "of": 5,
-        "at": "2026-10-12T18:04Z",
-        "by": "cursor",
-        "note": "5 takes recorded, Bridge 3 held"
-      }
+      "urgent": 4
     },
     {
       "id": "J0167",
@@ -10238,13 +10247,13 @@
       "stage": "",
       "after": "J0169",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T17:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: HOS SA S1-S4 VO recorded (HOS 7aae35c, PR #297, 1,132 chars), all vo_check PASS (Scribe 96-100%, spelling/numerals only). Accept takes, and S1/S4 at 23.9 s (~22.2/22.8 s after J0171 pause trim) vs 18-22 s target, or order trims.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10285,17 +10294,15 @@
           "at": "2026-10-12T17:54Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS SA S1-S4 VO recorded (HOS 7aae35c, PR #297, 1,132 chars), all vo_check PASS (Scribe 96-100%, spelling/numerals only). Accept takes, and S1/S4 at 23.9 s (~22.2/22.8 s after J0171 pause trim) vs 18-22 s target, or order trims."
+        },
+        {
+          "at": "2026-10-12T18:10Z",
+          "by": "chief",
+          "what": "reopened: Chief correction (sweep 19:10 London): the 17:56Z KEEP (HOS #180 6129698941) stands for S1 and S4 only. S2 and S3 were recorded from SCRIPTS_v01, but the lock is v02 (HOS #180 6127927589), which softened unsourced lines. Retake S2 + S3 word for word from v02: S2 'He boiled it down to a black sludge.' and 'Instead, a white substance that glowed in the dark.'; S3 'and many still blamed bad air.' and 'John Snow tracked where the dead had lived.' Save SCRIPTS_v02.md on #291 as ordered at 16:03Z. vo_check both, update #297 (stems _vo_v02), then done. S1/S4 length call stands (pause trim, no line cut). J0171 assembly follows. ~530 ElevenLabs chars."
         }
       ],
       "kind": "vo",
-      "urgent": 3,
-      "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-10-12T17:54Z",
-        "by": "cursor",
-        "note": "4 takes committed 7aae35c, HOS PR #297"
-      }
+      "urgent": 3
     },
     {
       "id": "J0171",
