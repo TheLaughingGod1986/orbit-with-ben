@@ -270,6 +270,34 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .nowbar details li .w{font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:480px){.nowbar{padding:8px 12px;margin:-4px 0 10px}}
 .nowbar .upd{margin-top:5px;font-size:11px;color:var(--ink-3)}
+/* Ben, 12 Oct 15:49: job board. Needs-you strip, three numbers, five columns of one-line cards. */
+.needs{background:var(--blocked-soft);color:var(--blocked);border:1px solid var(--blocked);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:14px;font-weight:600}
+.needs ul{margin:4px 0 0;padding-left:18px;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.stats .s{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.stats .n{font-size:20px;font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stats .n.sm{font-size:13px;line-height:1.35;white-space:normal}
+.stats .l{font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em}
+.jb{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:start;margin:0 0 18px}
+@media (max-width:1000px){.jb{grid-template-columns:1fr}}
+.jb .col{background:var(--panel-2);border-radius:10px;padding:8px;min-width:0}
+.jb .col h4{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
+.jb .col h4 i{font-style:normal;color:var(--ink-3);font-weight:500}
+.jb .col .none{font-size:12px;color:var(--ink-3);padding:2px 4px}
+.jc{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ink-3);border-radius:8px;margin:0 0 5px;font-size:13px}
+.jc.OWB{border-left-color:#2f6fb5}.jc.HOS{border-left-color:#a0522d}
+.jc.stuck{background:#fff4dc;border-color:var(--soon)}
+.jc summary{list-style:none;display:flex;align-items:center;gap:6px;padding:6px 8px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.jc summary::-webkit-details-marker{display:none}
+.jc .jid{flex:none;font:600 11px/1.5 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:9px;background:#e8ecf2;color:#3a4656}
+.jc .cdot{flex:none;width:8px;height:8px;border-radius:50%}
+.jc .cdot.OWB{background:#2f6fb5}.jc .cdot.HOS{background:#a0522d}
+.jc .nm{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.jc .et{flex:none;font-size:12px;color:var(--ink-2)}
+.jc.stuck .et{color:var(--soon);font-weight:700}
+.jc .cx{padding:0 8px 8px 8px;font-size:12px;color:var(--ink-2);word-break:break-word}
+.jc .cx div{margin-top:2px}
+.jb details.arch>summary,.jb details.morej>summary{font-size:12px;color:var(--doing);font-weight:600;cursor:pointer;padding:2px 4px}
 .kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
 @media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.kb{grid-template-columns:1fr}}
@@ -392,10 +420,13 @@ footer a{color:var(--ink-2)}
       <div class="src"><span class="dot" id="dot"></span><span id="srctxt">Snapshot</span><button class="btn" id="refresh" hidden>Refresh</button></div>
     </div>
   </header>
+  <div class="needs" id="needsyou" hidden></div>
   <div class="banner" id="banner"></div>
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
+  <div class="stats" id="daystats" hidden></div>
+  <div class="jb" id="jobboard" hidden></div>
   <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
   </section>
   </details>
@@ -437,7 +468,7 @@ const DAY = 86400000;
 let data = SNAPSHOT, source = "snapshot", fetchedAt = null, filter = null, chan = "all";
 // The studio agent writes the board into this page's own store (board/hos, board/owb) several times a day, so the
 // page stays current without the viewer's GitHub connector. GitHub live, when it works, still wins.
-const fromDb = {hos:null, owb:null, hosAt:null, owbAt:null, jobs:null, credits:null, briefs:null, checks:{}};
+const fromDb = {extra:{}, hos:null, owb:null, hosAt:null, owbAt:null, jobs:null, credits:null, briefs:null, checks:{}};
 // Ben's ticks on "Ready for you to check" (8 Oct): checks/<OWB-022> = {film, verdict: ok|change, note, at}. Claude's
 // hourly run reads them, acts (final OK and upload, or the fix) and marks them handled.
 let dbApi = null, changeOpen = null; const drafts = {};   // fixes Ben has added but not sent yet
@@ -811,6 +842,76 @@ function renderNow(){
   box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>`
     + (nx ? `<div class="nx one"><span class="jid">${esc(nx.id||"")}</span> <b>Next:</b> ${esc(cleanTitle(nx, 60))}</div>` : "")
     + benLine + details + updatedAt();
+}
+
+// ---------- Job board (Ben, 12 Oct 15:49) ----------
+// Five columns of one-line cards (id pill, channel colour, film/job name, ETA); tap a card for model, log and paths.
+// "Needs you" only for money or irreversible calls. A Running/Review card past 2x its kind's typical time turns amber.
+// The three numbers come from the queue history and the credit reads; anything missing shows "—", never a guess.
+const MONEY_IRREV = /top[- ]?up|payment|pay\b|buy|purchase|upgrade|overage|billing|spend|£|\$\d|delete|irreversible|go(?:es)? public|publish now|make (it )?public/i;
+function chanOf(j){ return /\bHOS\b|history of science/i.test((j.title||"")+" "+(j.for||"")) ? "HOS" : "OWB"; }
+const AIR_RX = /\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*(\s+\d{1,2}:\d{2}Z?)?/;
+function airOf(j){
+  const m = AIR_RX.exec(blockWhy(j)+" "+(j.title||""));
+  if(m){ let t = m[0].replace(/(\d{1,2}):(\d{2})Z$/, (x,h,mm)=>{ const d=new Date(Date.UTC(2026,0,1,+h,+mm)); return d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}); }); return "Airs "+t; }
+  const nb = ts(j.notBefore); if(!isNaN(nb)) return "Airs "+fw(new Date(nb).toISOString().slice(0,16));
+  const f = (fromDb.owb||[]).find(x=>j.film && x.film===j.film);
+  return f && f.air ? "Airs "+fd(pd(f.air)) : "date to come";
+}
+function sinceMin(s){ const t=ts(s); return isNaN(t) ? NaN : (Date.now()-t)/MINUTE; }
+function dur(m){ return m<60 ? `${Math.round(m)} min` : m<48*60 ? `${Math.round(m/60*2)/2} h` : `${Math.round(m/1440)} d`; }
+function isStuck(j, col){
+  const T = (fromDb.extra||{}).typical||{};
+  const typ = col==="review" ? (+T._review || 240) : (+j.typMin || +T._default || 30);
+  const m = sinceMin(col==="run" ? (j.workStart||j.claimedAt) : (j.last||{}).at);
+  return !isNaN(m) && m > 2*typ;
+}
+function jobCard(j, col, eta){
+  const ch = chanOf(j), stuck = (col==="run"||col==="review") && isStuck(j, col);
+  const last = j.last||{};
+  const cx = [
+    j.by||last.by ? `<div><b>Worker:</b> ${esc(WORKER[j.by||last.by]||j.by||last.by)}${j.model?` · <b>Model:</b> ${esc(j.model)}`:""}</div>` : (j.model?`<div><b>Model:</b> ${esc(j.model)}</div>`:""),
+    `<div><b>Job:</b> ${esc(j.title||"")}</div>`,
+    last.what ? `<div><b>Log:</b> ${esc(last.at||"")} ${esc(last.what)}</div>` : "",
+    j.result && j.result!==last.what ? `<div><b>Note:</b> ${esc(j.result)}</div>` : "",
+    j.ref ? `<div><b>Ref:</b> <span class="mono">${esc(j.ref)}</span></div>` : "",
+    stuck ? `<div><b>Stuck?</b> over 2× the usual ${col==="review" ? `${esc(String(((fromDb.extra||{}).typical||{})._review||240))} min for a Chief review` : `${esc(String(j.typMin||((fromDb.extra||{}).typical||{})._default||30))} min for ${esc(j.kindKey||"this kind")}`}</div>` : "",
+  ].join("");
+  return `<details class="jc ${ch}${stuck?" stuck":""}"><summary><span class="jid">${esc(j.id||"")}</span><span class="cdot ${ch}" title="${ch}"></span><span class="nm">${esc(cleanTitle(j, 70))}</span><span class="et">${esc(eta||"")}</span></summary><div class="cx">${cx}</div></details>`;
+}
+function renderJobBoard(){
+  const box = $("jobboard"), st = $("daystats"), nb = $("needsyou");
+  const all = fromDb.jobs; if(!box) return;
+  box.hidden = !all; if(st) st.hidden = !all;
+  // Needs you: Ben-only calls that cost money or can't be undone. Absent when there are none.
+  const needs = (all||[]).filter(j=>jobKind(j)==="ben" && MONEY_IRREV.test(blockWhy(j)+" "+(j.title||"")));
+  if(nb){ nb.hidden = !needs.length; nb.innerHTML = needs.length ? `Needs you (${needs.length})<ul>${needs.map(j=>`<li><span class="mono">${esc(j.id)}</span> ${esc(cleanTitle(j,80))}: ${esc(shortReason(blockWhy(j)))}</li>`).join("")}</ul>` : ""; }
+  if(!all) return;
+  const P = plan();
+  const run = all.filter(j=>j.status==="claimed");
+  const next = all.filter(j=>j.status==="open").sort((a,b)=>((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15));
+  const review = all.filter(j=>jobKind(j)==="chief");
+  const sched = all.filter(j=>jobKind(j)==="sched" || jobKind(j)==="held" || (j.status==="open" && j.gateOnly));
+  const nextLive = next.filter(j=>!sched.includes(j));
+  const done = (fromDb.extra||{}).done || null;
+  const recent = done ? done.filter(d=>sinceMin(d.at) <= 48*60) : [], old = done ? done.filter(d=>sinceMin(d.at) > 48*60) : [];
+  const cap = (arr, f, n) => arr.slice(0,n).map(f).join("") + (arr.length>n ? `<details class="morej"><summary>+${arr.length-n} more</summary>${arr.slice(n).map(f).join("")}</details>` : "");
+  const col = (title, arr, f, extra) => `<div class="col"><h4>${title} <i>${arr.length}</i></h4>${arr.length ? cap(arr, f, 6) : `<div class="none">nothing</div>`}${extra||""}</div>`;
+  const doneCard = d => jobCard(Object.assign({}, d, {last:{at:d.at, by:d.by, what:"done"}}), "ship", `done ${fw(String(d.at).slice(0,16))}`);
+  box.innerHTML =
+      col("Next", nextLive, j=>jobCard(j, "next", (P[j.id]&&P[j.id].done) ? readyAt(P[j.id].done) : `~${j.estMin||25} min`))
+    + col("Running", run, j=>{ const pr = progressOf(j, P); return jobCard(j, "run", readyAt(pr.done) || "working"); })
+    + col("Waiting for review", review, j=>{ const m = sinceMin((j.last||{}).at); return jobCard(j, "review", isNaN(m) ? "" : `waiting ${dur(m)}`); })
+    + (done ? col("Ready to ship", recent, doneCard, old.length ? `<details class="arch"><summary>Archive (${old.length})</summary>${old.map(doneCard).join("")}</details>` : "")
+            : `<div class="col"><h4>Ready to ship</h4><div class="none">— (needs the next board publish)</div></div>`)
+    + col("Scheduled", sched, j=>jobCard(j, "sched", airOf(j)));
+  // Three numbers: done today, Mini idle minutes today, credits left. "—" when a source is missing.
+  const day = (fromDb.extra||{}).day, pools = ((fromDb.credits||{}).pools)||{};
+  const left = k => { const l = ((pools[k]||{}).latest||{}).left; return (l===undefined||l===null||isNaN(+l)) ? "—" : k==="vertex" ? "£"+(+l).toFixed(2) : (+l>=10000 ? Math.round(+l/1000)+"k" : Math.round(+l).toLocaleString("en-GB")); };
+  if(st) st.innerHTML =
+      `<div class="s"><div class="n">${day && day.doneToday!=null ? esc(String(day.doneToday)) : "—"}</div><div class="l">Jobs done today</div></div>`
+    + `<div class="s"><div class="n">${day && day.idleMin!=null ? esc(String(day.idleMin))+"<small> min</small>" : "—"}</div><div class="l">Mini idle today</div></div>`
+    + `<div class="s"><div class="n sm">ElevenLabs ${esc(left("elevenlabs"))} · Flow ${esc(left("flow"))} · Vertex ${esc(left("vertex"))}</div><div class="l">Credits left</div></div>`;
 }
 
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
@@ -1412,7 +1513,7 @@ function renderVerdict(c){
 function render(){
   const films = view();
   if(filter && !films.some(f=>f.key===filter)) filter = null;
-  renderSource(); renderTracker(films); renderNow(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  renderSource(); renderTracker(films); renderNow(); renderJobBoard(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
 
@@ -1506,7 +1607,7 @@ async function startDb(){
   db.doc("board/owb").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || !Array.isArray(d.films)) return;
-    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : [];
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : []; fromDb.extra = {typical: d.typical||null, day: d.day||null, done: Array.isArray(d.done) ? d.done : null};
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
   }, ()=>{});
   dbApi = db;

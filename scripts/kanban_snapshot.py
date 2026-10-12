@@ -93,6 +93,81 @@ def learn_estimates(alljobs: list[dict]) -> None:
     LEARNED.update({k: round(statistics.median(v)) for k, v in per.items() if len(v) >= 3})
 
 
+# Ben, 12 Oct 15:49: job board numbers. All from the queue's own history; nothing estimated or made up.
+def _done_at(j: dict) -> str:
+    return next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("done")), "")
+
+
+def kind_key(j: dict) -> str:
+    """A job's kind for typical durations: its queue kind if set, else the title keyword family."""
+    k = kind_of(j)
+    return (j.get("kind") or "") or (EST[k][0][0] if k >= 0 else "other")
+
+
+def typical_minutes(alljobs: list[dict], default: int = 30) -> dict:
+    """Median claimed->done minutes per kind_key (3+ done jobs, floor 15 min so quick jobs do not alarm), runs over 8 h ignored; others fall back to `default`."""
+    import statistics
+    per: dict = {}
+    for j in alljobs:
+        if j.get("status") != "done":
+            continue
+        claimed = next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("claimed")), "")
+        a, b = _t(claimed), _t(_done_at(j))
+        if a and b and 0 < (b - a).total_seconds() < 8 * 3600:
+            per.setdefault(kind_key(j), []).append((b - a).total_seconds() / 60)
+    out = {k: max(15, round(statistics.median(v))) for k, v in per.items() if len(v) >= 3}
+    out["_default"] = default
+    # Chief reviews: from "parked for Chief" to the next step on that job (done/reopened/claimed), floor 60 min, default 4 h.
+    rev = []
+    for j in alljobs:
+        a = None
+        for h in j.get("history") or []:
+            what, at = str(h.get("what", "")).lower(), _t(h.get("at", ""))
+            if what.startswith("blocked") and "chief" in what:
+                a = at
+            elif a and at and what.split(":")[0] in ("done", "reopened", "claimed", "open", "unblocked"):
+                if 0 < (at - a).total_seconds() < 3 * 86400:
+                    rev.append((at - a).total_seconds() / 60)
+                a = None
+    out["_review"] = max(60, round(statistics.median(rev))) if len(rev) >= 3 else 240
+    return out
+
+
+def day_numbers(alljobs: list[dict], now=None) -> dict:
+    """Jobs done since London midnight, and minutes since then that no Mac mini job was claimed (the Mini idle)."""
+    from datetime import datetime, timezone
+    from zoneinfo import ZoneInfo
+    now = now or datetime.now(timezone.utc)
+    start = now.astimezone(ZoneInfo("Europe/London")).replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
+    done = sum(1 for j in alljobs for h in j.get("history") or []
+               if str(h.get("what", "")).startswith("done") and (_t(h.get("at", "")) or start) >= start and _t(h.get("at", "")))
+    spans = []
+    for j in alljobs:
+        if j.get("needs") != "mini":
+            continue
+        a = None
+        for h in j.get("history") or []:
+            what, at = str(h.get("what", "")), _t(h.get("at", ""))
+            if what.startswith("claimed"):
+                a = at
+            elif a and at and what.split(":")[0] in ("released", "done", "blocked", "block", "reopened"):
+                spans.append((a, at)); a = None
+        if a and j.get("status") == "claimed":
+            spans.append((a, now))
+    busy, cur = 0.0, None
+    for a, b in sorted((max(a, start), min(b, now)) for a, b in spans if b > start and a < now):
+        if cur and a <= cur[1]:
+            cur = (cur[0], max(cur[1], b))
+        else:
+            if cur:
+                busy += (cur[1] - cur[0]).total_seconds()
+            cur = (a, b)
+    if cur:
+        busy += (cur[1] - cur[0]).total_seconds()
+    idle = max(0, round(((now - start).total_seconds() - busy) / 60))
+    return {"since": start.strftime("%Y-%m-%dT%H:%MZ"), "doneToday": done, "idleMin": idle}
+
+
 def est_minutes(j: dict) -> int:
     k = kind_of(j)
     if k in LEARNED:
@@ -701,6 +776,7 @@ def main(argv: list[str] | None = None) -> int:
         focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
         ro = run_order(alljobs, focus)
         gate = gates(alljobs)
+        typ = typical_minutes(alljobs)
         live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model")},
                      line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
                      waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),
@@ -709,7 +785,8 @@ def main(argv: list[str] | None = None) -> int:
                      claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
                      workStart=work_start(j), progress=job_progress(j),
-                     estMin=est_minutes(j), watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""))
+                     estMin=est_minutes(j), typMin=typ.get(kind_key(j), typ["_default"]), kindKey=kind_key(j),
+                     watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""))
                 for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
         lanes = lanes_info(alljobs)
         hb = mini_heartbeat()
@@ -723,7 +800,10 @@ def main(argv: list[str] | None = None) -> int:
                          for j in alljobs if j.get("status") == "done"), key=lambda r: r["at"], reverse=True)[:5]
         doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"], "recent": recent,
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
-               "routing": routing_doc()}
+               "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs),
+               "done": sorted(({"id": j["id"], "title": j.get("title", ""), "film": j.get("film", ""), "by": j.get("by", ""),
+                                "model": j.get("model", ""), "ref": j.get("ref", ""), "result": j.get("result", ""), "at": _done_at(j)}
+                               for j in alljobs if j.get("status") == "done" and _done_at(j)), key=lambda r: r["at"], reverse=True)[:60]}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
                             "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}
