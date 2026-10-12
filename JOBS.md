@@ -10,7 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0123 | cloud | blocked | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | blocked | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0135 | mini | blocked | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
-| J0140 | mini | open (after J0139) | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
+| J0140 | mini | claimed | cursor | 2026-10-13T03:08Z | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0154 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0163 | mini | open (after J0162) | – | – | assembly · OWB standalone Shorts test: assemble the 8 Shorts |  |
