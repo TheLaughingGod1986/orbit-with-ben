@@ -832,11 +832,12 @@ function waitReason(j, kind){
   if(kind==="ben") return "ben";
   if(kind==="chief") return "review";
   if(/flow|ai ultra|refill|credit|payment|top[- ]?up|price pass/i.test(w)) return "flow";
-  if(/public|upload id|publishAt|goes live|go live|premiere|after the long/i.test(w)) return "public";
+  if(/upload id|not (yet )?uploaded|no \d{3} upload|upload job/i.test(w)) return "upload";
+  if(/public|publishAt|goes live|go live|premiere|after the long/i.test(w)) return "public";
   if(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|\bon\/after\b|scheduled|date/i.test(w)) return "date";
   return "other";
 }
-const WAIT_WORD = {ben:"for you", review:"for my review", public:"for films to go public", flow:"for the Flow payment", date:"for a later date", other:"for other jobs to finish"};
+const WAIT_WORD = {ben:"for you", review:"for my review", public:"for films to go public", upload:"for a film to be uploaded", flow:"for the Flow payment", date:"for a later date", other:"for other jobs to finish"};
 function renderNow(){
   const box = $("nowbar"); if(!box) return;
   const all = fromDb.jobs||[];
@@ -859,12 +860,20 @@ function renderNow(){
   const groups = {};
   for(const j of all){ if(j===headJob) continue; const k = jobKind(j); if(!k) continue;
     const r = waitReason(j, k); (groups[r] = groups[r] || []).push(j); }
-  const order = ["ben","public","flow","date","review","other"].filter(r=>groups[r]);
+  const order = ["ben","public","upload","flow","date","review","other"].filter(r=>groups[r]);
   const total = order.reduce((n,r)=>n+groups[r].length, 0);
-  const parts = order.map(r=>`${groups[r].length} ${WAIT_WORD[r]}`);
+  // Ben, 12 Oct 21:09: name the film and its public date when all the go-public jobs wait on one film.
+  const word = Object.assign({}, WAIT_WORD);
+  if(groups.public){ const txt = j => (j.title||"")+" "+blockWhy(j);
+    const nos = [...new Set(groups.public.map(j=>((/^(?:HOS\s+)?(\d{3})\b/.exec(j.title||""))||[])[1]).filter(Boolean))];
+    const dm = groups.public.map(j=>(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*/.exec(txt(j))||[])[0]).filter(Boolean)[0];
+    if(nos.length===1) word.public = `for ${nos[0]} to go public${dm?` (${dm})`:""}`; }
+  if(groups.upload){ const nos = [...new Set(groups.upload.map(j=>((/^(?:HOS\s+)?(\d{3})\b/.exec(j.title||""))||[])[1]).filter(Boolean))];
+    if(nos.length===1) word.upload = `for ${nos[0]} to be uploaded`; }
+  const parts = order.map(r=>`${groups[r].length} ${word[r]}`);
   const summary = total ? `${total} job${total===1?"":"s"} waiting: ${parts.join(", ")}` : "";
   const details = total ? `<details class="more${groups.ben?" ben":""}"><summary><span class="chip">${esc(summary)}</span></summary>`
-    + order.map(r=>`<div class="sh">${esc(WAIT_WORD[r].replace(/^for /,"Waiting for "))}</div><ul>${groups[r].map(j=>`<li><span class="t">${esc(plainTitle(j))}</span></li>`).join("")}</ul>`).join("")
+    + order.map(r=>`<div class="sh">${esc(word[r].replace(/^for /,"Waiting for "))}</div><ul>${groups[r].map(j=>`<li><span class="t">${esc(plainTitle(j))}</span></li>`).join("")}</ul>`).join("")
     + `</details>` : "";
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>` + bar
