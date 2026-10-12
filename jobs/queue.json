@@ -1,5 +1,5 @@
 {
-  "next_id": 200,
+  "next_id": 201,
   "jobs": [
     {
       "id": "J0001",
@@ -11870,6 +11870,33 @@
         }
       ],
       "kind": "facts"
+    },
+    {
+      "id": "J0200",
+      "title": "OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief #99 6125827198 item 4: Orbit appears at about 1 s on all 8. For S1-S4 make one short Omni take each (gemini-omni-flash-preview, location global, Orbit reference still) of the ORBIT ACTS line in SCRIPTS_v01.md: S1 lands on Mercury rock, squints at a stalled Sun, taps wrist; S2 blown sideways through Neptune's white streaks, gripping its antenna; S3 clings to an ISS truss as sunrise sweeps over, shields eyes then grins; S4 frosts over at Uranus's dark pole, glow dimming, looks back at a tiny Sun. Start frames from the plates picked in ASSEMBLY_STATUS.md (never a whole planet as a start frame). Vertex trial rule: read the live Free Trial balance first; run only if balance - estimate >= GBP 0.10; log each take in ai_spend.py (--film OWB:SA). Outputs to /private/tmp/owb_sa_shorts/orbit/. Unblocks J0163 steps 4-7.",
+      "ref": "6125827198",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T19:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T19:02Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [
