@@ -9,7 +9,8 @@ Pools:
 - elevenlabs: API `/v1/user/subscription` (character_count / character_limit). Key via el_client; never printed.
 - flow:       the Flow page in the Mini's CDP Chrome (:9222), "N credits" text, as the HOS mint scripts read it.
 - vertex:     Cloud Billing > Credits (all) in the same Chrome. Free Trial is `--left`; every credit line goes in --note.
-- cursor:     cursor.com dashboard usage page in the same Chrome: included usage left this cycle, in USD.
+- cursor:     cursor.com/dashboard/spending in the same Chrome: percent of the Other Models pool left this cycle
+              (the page shows % used per pool and no $ since 12 Oct); Cursor Models and Grok Bot weekly go in --note.
 
 A pool whose read fails records nothing; the reason goes to the log (and stdout). Never guess a number.
 Log: ~/Library/Logs/owb-ai-spend.log (launchd). Exit 0 if every pool read, 1 if any failed.
@@ -28,7 +29,7 @@ TOOLS = ROOT / "04_Audio" / "tools"
 CDP = "http://127.0.0.1:9222"
 BILLING_URL = "https://console.cloud.google.com/billing/0124D1-E6EFD6-40F6DA/credits/all?project=gen-lang-client-0538779324"
 FLOW_URL = "https://flow.google.com/"
-CURSOR_URL = "https://cursor.com/dashboard?tab=usage"
+CURSOR_URL = "https://cursor.com/dashboard/spending"
 ALL = ("elevenlabs", "flow", "vertex", "cursor")
 
 
@@ -107,6 +108,15 @@ def read_flow() -> dict:
     return {"left": parse_flow(text), "note": f"Flow account picker credits ({who}, CDP :9222)"}
 
 
+def _credit_status(cell: str) -> str:
+    """The row's own status cell. Since 12 Oct 2026 an active credit near its end date reads "Expiring in N days"."""
+    for word, status in (("Expired", "Expired"), ("Used", "Used"), ("Available", "Available")):
+        if re.search(rf"\b{word}\b", cell):
+            return status
+    m = re.search(r"Expiring in \d+ days?", cell, re.I)
+    return f"Available ({m.group(0).lower()})" if m else "?"
+
+
 def parse_billing(text: str) -> tuple[float, str]:
     rows = [ln.strip() for ln in text.splitlines() if ln.strip()]
     lines, trial = [], None
@@ -114,12 +124,12 @@ def parse_billing(text: str) -> tuple[float, str]:
         if re.fullmatch(r"(Free Trial|.*Developer Program.*|.*credit.*)", ln, re.I) and len(ln) < 60:
             window = " ".join(rows[i:i + 8])
             m = re.search(r"£([\d,]+\.\d\d)", window)
-            if not m or ln.lower().startswith("credit application type"):
+            if not m or ln.lower().startswith("credit application type") or re.search(r"CreditId|Credit-", ln):
                 continue
             amt = float(m.group(1).replace(",", ""))
-            status = "Available" if "Available" in window else ("Expired" if "Expired" in window else "?")
+            status = _credit_status(" ".join(rows[i + 1:i + 3]))
             lines.append(f"{ln}: £{amt:.2f} {status}")
-            if ln == "Free Trial" and status == "Available" and trial is None:
+            if ln == "Free Trial" and status.startswith("Available") and trial is None:
                 trial = amt
     if trial is None:
         raise RuntimeError("could not read an Available Free Trial row on Cloud Billing > Credits")
@@ -131,24 +141,45 @@ def read_vertex() -> dict:
     return {"left": trial, "note": f"Cloud Billing > Credits: {lines}"}
 
 
-def parse_cursor(text: str) -> tuple[float, float | None]:
-    # e.g. "$12.34 of $20 included usage used" / "Included usage ... $7.66 remaining"
-    m = re.search(r"\$([\d,]+(?:\.\d+)?)\s*(?:/|of)\s*\$([\d,]+(?:\.\d+)?)", text)
-    if m:
-        used, total = float(m.group(1).replace(",", "")), float(m.group(2).replace(",", ""))
-        return round(total - used, 2), total
-    m = re.search(r"\$([\d,]+(?:\.\d+)?)\s*(?:left|remaining)", text, re.I)
-    if m:
-        return float(m.group(1).replace(",", "")), None
-    raise RuntimeError("no included-usage dollar figure on the Cursor dashboard (signed out, or the page changed)")
+CURSOR_POOLS = {"cursor models": "Cursor Models", "other models": "Other Models", "weekly usage": "Grok Bot weekly"}
+
+
+def parse_cursor(text: str) -> dict:
+    """The /dashboard/spending page (12 Oct 2026): a percent used per pool, no $ figure.
+
+    Cursor Models overflow into Other Models, then on-demand (disabled), so Other Models is the pool that runs out:
+    `left` is its percent left of 100. The other pools and the reset dates go in the note."""
+    rows = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    used: dict[str, int] = {}
+    label = None
+    for ln in rows:
+        key = next((k for k in CURSOR_POOLS if ln.lower().startswith(k)), None)
+        if key:
+            label = key
+            continue
+        m = re.fullmatch(r"(\d{1,3})%\s+used", ln, re.I)
+        if m and label and label not in used:
+            used[label] = int(m.group(1))
+            label = None
+    if "other models" not in used:
+        raise RuntimeError("no 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
+    reset = re.search(r"Usage limits reset on ([^\n(]+?)\s*(?:\(|\n|$)", text)
+    weekly = re.search(r"Weekly usage\s+\d{1,3}%\s+used\s+Resets ([^\n(]+?)\s*(?:\(|\n|$)", text)
+    bits = [f"{CURSOR_POOLS[k]} {used[k]}% used" for k in CURSOR_POOLS if k in used]
+    if reset:
+        bits.append(f"limits reset {reset.group(1).strip()}")
+    if weekly:
+        bits.append(f"weekly resets {weekly.group(1).strip()}")
+    return {"left": 100 - used["other models"], "total": 100, "used": used, "note": "; ".join(bits)}
 
 
 def read_cursor() -> dict:
     text = _page_text(CURSOR_URL, None, settle_ms=8000)
-    if re.search(r"\bsign in\b|\blog in\b", text[:2000], re.I) and "$" not in text:
+    if re.search(r"\bsign in\b|\blog in\b", text[:2000], re.I) and "% used" not in text:
         raise RuntimeError("Cursor dashboard is signed out in the CDP Chrome")
-    left, total = parse_cursor(text)
-    return {"left": left, "total": total, "note": "Cursor dashboard included usage (CDP :9222)"}
+    r = parse_cursor(text)
+    return {"left": r["left"], "total": r["total"],
+            "note": f"Cursor spending page, % of Other Models left: {r['note']} (CDP :9222)"}
 
 
 def flow_refill(r: dict, last_left: float | None) -> dict:

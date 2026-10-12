@@ -49,5 +49,54 @@ class FlowRefill(unittest.TestCase):
         self.assertNotIn("total", ai_spend_daily.flow_refill({"left": 40, "note": "n"}, 52))
 
 
+SPENDING_PAGE = """Spending
+CURRENT PLAN
+Ultra
+$200/mo
+Usage limits reset on 6 Nov (25 days left)
+Adjust Plan
+Included in Ultra
+Cursor Models · Includes Cursor Grok and Composer
+14% used
+Additional usage beyond limits consumes Other Models quota or on-demand spend.
+Other Models
+30% used
+Additional usage beyond limits consumes on-demand spend.
+Grok Bot
+Included in Ultra. Learn more
+Weekly usage
+80% used
+Resets 16 Oct (5 days left)
+On-Demand Usage
+On-demand spending is currently disabled
+"""
+
+
+class CursorSpending(unittest.TestCase):
+    def test_percent_layout(self):
+        import ai_spend_daily
+        r = ai_spend_daily.parse_cursor(SPENDING_PAGE)
+        self.assertEqual((r["left"], r["total"]), (70, 100))
+        self.assertEqual(r["used"], {"cursor models": 14, "other models": 30, "weekly usage": 80})
+        self.assertIn("limits reset 6 Nov", r["note"])
+        self.assertIn("weekly resets 16 Oct", r["note"])
+        self.assertEqual(ai_spend.POOLS["cursor"], "%")
+
+    def test_billing_expiring_row_is_available(self):
+        import ai_spend_daily
+        page = ("Free Trial\n Expiring in 30 days\nDanger\n2%\n£4.93\n£225.63 One-time\nFreeTrialUpgrade:x\n"
+                "Google Developer Program premium benefit - CREDIT_TYPE_MONTHLY\n Used\nDanger\n0%\n£0.00\n£30.09\n"
+                "Free Trial\n Expired\n—\n£225.63\n£225.63 One-time\n")
+        trial, note = ai_spend_daily.parse_billing(page)
+        self.assertEqual(trial, 4.93)
+        self.assertIn("Free Trial: £4.93 Available (expiring in 30 days)", note)
+        self.assertIn("Free Trial: £225.63 Expired", note)
+
+    def test_changed_page_fails_loudly(self):
+        import ai_spend_daily
+        with self.assertRaises(RuntimeError):
+            ai_spend_daily.parse_cursor("Usage\nTotal tokens 801.1M\nIncluded 801.1M\nOn-demand 0")
+
+
 if __name__ == "__main__":
     unittest.main()

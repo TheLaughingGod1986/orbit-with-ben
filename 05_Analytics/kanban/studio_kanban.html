@@ -1238,9 +1238,9 @@ function renderSource(){
 const POOL_NAME = {cursor:"Cursor Ultra", flow:"Google AI Ultra · Flow (Gemini video)", vertex:"Google Cloud trial credit (Vertex)", elevenlabs:"ElevenLabs (voice)", claude:"Claude"};
 const NO_READING = {
   flow: "Its month starts Mon 12 Oct, when the credits refill. The Mac mini reads the balance every morning at 08:30, and every picture take logs its cost against its film.",
-  cursor: "No reading yet: the Mac mini can't read cursor.com until you sign in there once, in the Mac mini's Chrome. What Cursor did is below either way.",
+  cursor: "Read every morning at 08:30 from cursor.com's spending page: the share of the Other Models pool left (the page shows percentages, no dollars). What Cursor did is below either way.",
   elevenlabs: "Read every morning at 08:30.", vertex: "Read every morning at 08:30.", claude: ""};
-const num = (v, unit) => v==null||v==="" ? "—" : unit==="GBP" ? "£"+Number(v).toFixed(2) : unit==="USD" ? "≈£"+Math.round(Number(v)*0.75)+" ($"+Number(v).toFixed(0)+")" : Math.round(Number(v)).toLocaleString("en-GB");
+const num = (v, unit) => v==null||v==="" ? "—" : unit==="GBP" ? "£"+Number(v).toFixed(2) : unit==="USD" ? "≈£"+Math.round(Number(v)*0.75)+" ($"+Number(v).toFixed(0)+")" : unit==="%" ? Math.round(Number(v))+"%" : Math.round(Number(v)).toLocaleString("en-GB");
 function spark(series){
   const pts = (series||[]).filter(p=>p[1]!=null);
   if(pts.length<2) return "";
@@ -1483,7 +1483,7 @@ function poolUse(k, p, c){
     projected: days>=1 ? used/days*cyc : null};
 }
 function fitHtml(k, p, c){
-  const u = poolUse(k,p,c), unit = k==="cursor" ? (v=>"$"+Math.round(v)) : (v=>Math.round(v).toLocaleString("en-GB"));
+  const u = poolUse(k,p,c), unit = p.unit==="%" ? (v=>Math.round(v)+"%") : p.unit==="USD" ? (v=>"$"+Math.round(v)) : (v=>Math.round(v).toLocaleString("en-GB"));
   if(!u) return "";
   if(u.future) return `<div class="fit"><div class="why">The plan month starts <b>${fd(u.start)}</b>. Figures from then.</div></div>`;
   const ahead = u.usedPct - u.monthPct, cls = ahead>15 ? "bad" : ahead>5 ? "risk" : "";
@@ -1492,8 +1492,10 @@ function fitHtml(k, p, c){
     <div class="r ${cls}"><span>Used <b>${unit(u.used)}</b> of ${unit(u.total)}</span><span><b>${u.usedPct}%</b> used</span><div class="bar"><i style="width:${Math.min(100,u.usedPct)}%"></i></div></div>
     <div class="why">${ahead>5?"Using it faster than the month is passing.":ahead<-5?"Using it slower than the month is passing.":"About in step with the month."} Flat fee: if it runs out, work stops; there's no bill.</div>`;
   const tiers = ((c&&c.tiers)||{})[k];
+  // A % pool is a share of the current plan, so each tier's allowance is scaled to that plan = 100%.
+  const curT = tiers && tiers.find(t=>t.current), scale = p.unit==="%" && curT ? 100/curT.allow : 1;
   if(tiers && u.projected!=null && u.days>=3){
-    html += `<div class="why">At this rate a month needs about <b>${unit(u.projected)}</b>. Each plan:</div>` + tiers.map(t=>{ const pct = Math.round(100*u.projected/t.allow), cl = pct>100?"bad":pct>85?"risk":"";
+    html += `<div class="why">At this rate a month needs about <b>${unit(u.projected)}</b>. Each plan:</div>` + tiers.map(t=>{ const pct = Math.round(100*u.projected/(t.allow*scale)), cl = pct>100?"bad":pct>85?"risk":"";
       const tag = t.current&&t.target?"you have it; target":t.current?"you have it":t.target?"target":"";
       return `<div class="r ${cl}"><span>${esc(t.name)} · £${t.gbp}${tag?` · <i>${tag}</i>`:""}</span><span><b>${pct}%</b> ${pct>100?"too small":pct>85?"tight":"fits"}</span><div class="bar"><i style="width:${Math.min(100,pct)}%"></i></div></div>`; }).join("");
   } else if(tiers) html += `<div class="why">Which plan would fit shows from day 3 of the month.</div>`;
