@@ -9128,9 +9128,9 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "since": "2026-10-12T13:51Z",
-      "eta": "",
+      "status": "claimed",
+      "since": "2026-10-12T14:13Z",
+      "eta": "2026-10-12T14:43Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:49Z",
       "result": "",
@@ -9164,6 +9164,11 @@
           "at": "2026-10-12T14:08Z",
           "by": "chief",
           "what": "reopened: Ben confirmed (OWB #99 6125878218): sign in with Google as benoats@googlemail.com, that is the right Cursor account. Choose it in the chooser, then re-run python3 scripts/ai_spend_daily.py and report the READ cursor line. Still never create an account or change settings."
+        },
+        {
+          "at": "2026-10-12T14:13Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "for": "cursor",
@@ -9174,7 +9179,8 @@
         "at": "2026-10-12T13:53Z",
         "by": "cursor",
         "note": "Google chooser reached; email mismatch, stopped"
-      }
+      },
+      "by": "cursor"
     },
     {
       "id": "J0159",
