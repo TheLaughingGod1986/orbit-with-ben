@@ -10078,10 +10078,10 @@
       "stage": "",
       "after": "J0162",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-12T21:40Z",
+      "eta": "2026-10-13T00:40Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10185,6 +10185,11 @@
           "at": "2026-10-12T21:08Z",
           "by": "cursor",
           "what": "released: Steps 4-5 of 10 done (bf889b67): _assemble_standalone_shorts_v01.py renders S1-S4 v01 (06_Final-Exports on the Mini, no spend). gate_shorts_open PASS on all 4. sfx_kit level PASS S1/S2/S4; S3 FAIL (whoosh within 10 LU of VO at 0.5 s; drop its whoosh gain to ~0.15). S2 motion-0-1s warning 6.8 (<10): re-cut its open, e.g. PIA00058 streaks at frame 0. S1/S4 clean apart from the ~20 s length warning (Ben's exception). Orbit ~1 s row left open for J0200. Next: fix S2 open + S3 whoosh (python3 _assemble_standalone_shorts_v01.py s2 s3), covers (step 8), then S5-S8 (steps 9-10). tmux renders finished (J0163-render.done=0, J0163-s2.done=0)."
+        },
+        {
+          "at": "2026-10-12T21:40Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
