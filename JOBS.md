@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0162, J0170, J0166, J0174.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0160, J0162, J0170, J0166, J0174.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -13,9 +13,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0124 | mini | blocked | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0135 | mini | blocked | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
 | J0136 | mini | blocked | cursor | – | studio · `cursor-auto` · OWB no-cover-text Test & Compare on JWST ziKBPJ6FY0U (A live vs B no text), parked for Chief review before setting (Reference lessons 5a; test, not a rule change) |  |
-| J0138 | mini | open | – | – | video · HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05 |  |
-| J0139 | any | open (after J0138) | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
-| J0140 | mini | open (after J0139) | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
+| J0138 | mini | open | – | – | video · HOS 006: re-read the Flow balance until the AI Ultra refill lands, then post the price table (draft ready) |  |
+| J0139 | any | blocked | – | – | chief · Chief: pass the HOS 006 Flow prices (P3:06 + Parts 04–05) before anything is spent |  |
+| J0140 | mini | blocked | – | – | video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0143 | mini | blocked | cursor | – | 024 thumbs · chart · 024 Light Speed: two new covers (answers the title: age vs Earth / teases it), one glowing ship, no Orbit, <=30% near-black, --score PASS; park for Chief review, then Test & Compare from day 1 |  |
 | J0147 | mini | blocked | cursor | – | 024 edit · for cursor · chart · `cursor-auto` · 024 Light Speed v05b: teaching overlays per J0145 prep table (Chief FAIL on NUMBER) |  |
@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0157 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0158 | mini | blocked | cursor | – | for cursor · studio · URGENT: sign the Mini's Chrome into cursor.com/dashboard (saved autofill/Google session only), re-run the daily spend reader |  |
 | J0159 | mini | open (after J0174) | – | – | vo · Spend ElevenLabs to 0: VO for locked scripts with no take (HOS 007–010 Shorts first), house client, stop at 0 |  |
-| J0160 | mini | blocked | cursor | – | 006 picture · video · Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account) |  |
+| J0160 | mini | open | – | – | 006 picture · video · Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account) |  |
 | J0161 | any | blocked | cursor | – | script · OWB standalone Shorts test: 8 scripts (~20 s, self-contained, NOT cut from longs) |  |
 | J0162 | mini | open (after J0161) | – | – | vo · OWB standalone Shorts test: VO for the first 2 weeks' Shorts (4 passed scripts) |  |
 | J0163 | mini | open (after J0162) | – | – | assembly · OWB standalone Shorts test: assemble the 8 Shorts |  |

@@ -7658,7 +7658,7 @@
     },
     {
       "id": "J0138",
-      "title": "HOS 006 date gate not before Mon 12 Oct 09:00: read the Flow balance after the refill, price P3:06 + Parts 04–05",
+      "title": "HOS 006: re-read the Flow balance until the AI Ultra refill lands, then post the price table (draft ready)",
       "needs": "mini",
       "repo": "hos",
       "body": "**HOS 006: Flow balance after the refill, then price what's left (Chief, 12 Oct).** Not before Mon 12 Oct 09:00 (AI Ultra renews 12 Oct; Flow had 52 credits before it). Read only, no spend.\n\n1. Read the live Flow credit balance in the Mini's Flow tab (Chrome CDP :9222, the HOS Flow account) and record it: `orbit-with-ben/scripts/ai_spend.py record --pool flow --left <credits> --by <you>`. If the refill hasn't landed, release with the reading and try again after 15:00.\n2. Price, on Flow rates (`07_Edit-Project/PICTURE_PLAN_v01.json` flow.cost_per_clip; Fast 10, Quality 100, Nano Banana 2 still 0): `P3:06_leeds_brewery`, then Parts 04 and 05 from `parts/part-04_plates_v01.json` and `part-05_plates_v01.json` (Flow first; any row Flow can't do goes on the ~£4.25 Vertex trial left, never past £0). Then 007's plates on what's left.\n3. Post the table (plate, quality, credits, running total vs balance) on desk #180 to grok for the price pass (J0139), and update PIPELINE.json credits (Flow row) + the 006 picture row in a HOS PR.\n",
@@ -7666,7 +7666,7 @@
       "film": "",
       "stage": "",
       "after": "",
-      "eta_min": 60,
+      "eta_min": 15,
       "status": "open",
       "by": "",
       "since": "",
@@ -7844,6 +7844,11 @@
           "at": "2026-10-12T13:50Z",
           "by": "cursor",
           "what": "released: 14:55 London: Flow still 52 credits (6th read today, account panel on :9222). Refill not landed; recorded in ai_spend. Price table ready at ~/_desk/logs/J0138_price_draft.md (006 = 1410 credits at 1 take / 2820 at 2). Next run after 15:00: re-read, then step 3 (desk #180 to grok + HOS PR)."
+        },
+        {
+          "at": "2026-10-12T14:08Z",
+          "by": "chief",
+          "what": "stale date gate removed from title; 15-min poll (Ben, 12 Oct 15:07)"
         }
       ],
       "kind": "video",
@@ -7867,18 +7872,23 @@
       "stage": "",
       "after": "J0138",
       "eta_min": 30,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "",
+      "result": "waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill.",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-12T14:08Z",
+          "by": "chief",
+          "what": "blocked: waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill."
         }
       ],
       "kind": "chief"
@@ -7894,18 +7904,23 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "",
+      "result": "waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill.",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-12T14:08Z",
+          "by": "chief",
+          "what": "blocked: waits for input: Flow refill. HOS 006 P3:06 + Parts 04–05 need about 1,410 Flow credits (1 take each; price draft ~/_desk/logs/J0138_price_draft.md); Flow has 52 (6 reads today). Starts the moment J0138 reads the refill."
         }
       ],
       "kind": "video"
@@ -9194,19 +9209,18 @@
       "title": "Spend Vertex trial to £0.10: HOS 006 picture P3:06 then Part 04 plates (hard stop, paid billing account)",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Use the Vertex free trial down to £0.10 (Ben, 12 Oct 2026 14:46).** Live trial £4.93 on 11 Oct; the billing account is a **Paid account**, so it can bill the card: hard stop at £0.10.\n- Before each batch run 006 `_vertex_credit_v01.py` (FLOOR_GBP 0.10 after HOS #287); it must read the Free Trial row as Available, else nothing is minted. Budget = live − spend logged in `ai_spend.py` since that reading − estimate ≥ £0.10.\n- Spend it on HOS 006 picture in board order (P3:06 first, then Part 04 plates) with the existing mint script, one first take each; log every take (`ai_spend.py spend --pool vertex`). Re-read after each batch.\n- When the next take would go under £0.10: stop, block \"Vertex trial at margin: parked (would bill the card)\", report the last reading. Never upgrade, add budget or enable billing.\n- Contact sheets on desk #180 for KEEP; nothing published.\n",
+      "body": "**Use the Vertex free trial down to £0.10 (Ben, 12 Oct 2026 14:46).** Live trial £4.93 on 11 Oct; the billing account is a **Paid account**, so it can bill the card: hard stop at £0.10.\n- Before each batch run 006 `_vertex_credit_v01.py` (FLOOR_GBP 0.10 after HOS #287); it must read the Free Trial row as Available, else nothing is minted. Budget = live − spend logged in `ai_spend.py` since that reading − estimate ≥ £0.10.\n- Spend it on HOS 006 picture in board order (P3:06 first, then Part 04 plates) with the existing mint script, one first take each; log every take (`ai_spend.py spend --pool vertex`). Re-read after each batch.\n- When the next take would go under £0.10: stop, block \"Vertex trial at margin: parked (would bill the card)\", report the last reading. Never upgrade, add budget or enable billing.\n- Contact sheets on desk #180 for KEEP; nothing published.\n\n\nChief ruling 12 Oct 15:10 (Ben GO): (a) 'Expiring in N days' is active credit (HOS PR #290 fixes the reader); (b) budget from the conservative figure min(console £4.93, plateau £16.11 − £11.86 logged = £4.25) − £0.10 floor ≈ £4.15 (~5–6 Fast 6–8 s takes). Mint P3:06 first, then Part 04 plates in board order, one take each, re-read after each batch, hard stop at £0.10 (paid billing account). If PR #290 isn't on main yet, apply the same rule by hand from the screenshot.",
       "ref": "",
       "film": "006",
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "open",
       "since": "2026-10-12T13:53Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:49Z",
-      "result": "parked for Chief: Vertex Free Trial reads £4.93 but status is now 'Expiring in 30 days' (ends 11 Nov), not 'Available', so _vertex_credit_v01.py refuses and the brief says nothing is minted. Decide: (a) accept 'Expiring in N days' as active (still refuse Expired/Used) and (b) budget from the conservative figure min(console £4.93, 10 Oct plateau £16.11 - £11.86 logged = £4.25) since billing is a Paid account. Then ~£4.15 usable ≈ 5-6 Fast 6-8 s takes. Nothing minted; reading logged in ai_spend; screenshot HOS 006 07_Edit-Project/_evidence/vertex_credits_j0160_before.png",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:49Z",
@@ -9232,6 +9246,11 @@
           "at": "2026-10-12T13:54Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Vertex Free Trial reads £4.93 but status is now 'Expiring in 30 days' (ends 11 Nov), not 'Available', so _vertex_credit_v01.py refuses and the brief says nothing is minted. Decide: (a) accept 'Expiring in N days' as active (still refuse Expired/Used) and (b) budget from the conservative figure min(console £4.93, 10 Oct plateau £16.11 - £11.86 logged = £4.25) since billing is a Paid account. Then ~£4.15 usable ≈ 5-6 Fast 6-8 s takes. Nothing minted; reading logged in ai_spend; screenshot HOS 006 07_Edit-Project/_evidence/vertex_credits_j0160_before.png"
+        },
+        {
+          "at": "2026-10-12T14:08Z",
+          "by": "chief",
+          "what": "reopened: Chief ruling 12 Oct 15:10 (Ben GO): (a) 'Expiring in N days' is active credit (HOS PR #290 fixes the reader); (b) budget from the conservative figure min(console £4.93, plateau £16.11 − £11.86 logged = £4.25) − £0.10 floor ≈ £4.15 (~5–6 Fast 6–8 s takes). Mint P3:06 first, then Part 04 plates in board order, one take each, re-read after each batch, hard stop at £0.10 (paid billing account). If PR #290 isn't on main yet, apply the same rule by hand from the screenshot."
         }
       ],
       "kind": "video",
@@ -9241,7 +9260,8 @@
         "at": "2026-10-12T13:54Z",
         "by": "cursor",
         "note": "credit read: £4.93, status not Available"
-      }
+      },
+      "urgent": 1
     },
     {
       "id": "J0161",
