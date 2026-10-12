@@ -1,5 +1,5 @@
 {
-  "next_id": 209,
+  "next_id": 210,
   "jobs": [
     {
       "id": "J0001",
@@ -12765,6 +12765,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0209",
+      "title": "HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS standalone Shorts S1-S4: custom 9:16 covers (split from J0171; cover composer = `chart` kind, Codex first).\n\nChief asked for covers after the S3/S4 fix (HOS #180 6132241581 item 5). Cuts: HOS `docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/` (S1/S2 v01, S3/S4 v02; media on the Mini, index in SHORTS_INDEX_v01.json, branch cursor/j0171-s3s4-v02 @ ece3e5b).\n\n- One cover per Short, 1080x1920, composed in code over that Short's frame-0 plate (`plates_v01/s1/01_beyond_red_v01.jpg`, `s2/01_glowing_flask_v01.jpg`, `s3/05_handle_off_v03.jpg`, `s4/01_lead_box_v01.jpg`). No new pixels, no spend.\n- House Shorts cover look (HOS AGENTS.md + `00_Brand/Channel-Setup/style/shorts/`): chunky rounded cream/gold lettering, thick dark outline, one small teal middle word, text off the hero object.\n- 2-3 words that name the thing or dare and never repeat the title (titles: Who Discovered Infrared Light? / How Was Phosphorus Discovered? / How Did John Snow Stop Cholera? / Are Marie Curie's Notebooks Still Radioactive?). Draft words, Chief picks.\n- No Explorer on these plates unless Chief asks (standalone plates have none).\n- Check each with `style_sheet.py short <cover> --out <sheet>` and `thumb_preview.py`; post sheets on HOS #180; park for Chief (HOOK / BAND / PHONE). No upload, no Studio change.\n",
+      "ref": "6132241581",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T21:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T21:18Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [
