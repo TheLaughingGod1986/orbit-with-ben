@@ -8813,13 +8813,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T13:33Z",
-      "eta": "2026-10-12T15:03Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T13:26Z",
-      "result": "",
+      "result": "parked for Chief: no HOS live/scheduled film without a Test & Compare (001-005 all have one); retire item or re-scope to a follow-up test on 001/003",
       "history": [
         {
           "at": "2026-10-12T13:26Z",
@@ -8840,6 +8840,11 @@
           "at": "2026-10-12T13:34Z",
           "by": "cursor",
           "what": "step 1 of 4 done: no eligible film: all 5 HOS longs have a T&C"
+        },
+        {
+          "at": "2026-10-12T13:34Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: no HOS live/scheduled film without a Test & Compare (001-005 all have one); retire item or re-scope to a follow-up test on 001/003"
         }
       ],
       "kind": "chart",
