@@ -10653,13 +10653,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T16:24Z",
-      "eta": "2026-10-12T18:24Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:12Z",
-      "result": "",
+      "result": "parked for Chief: script review of 030 Apophis v01 (review:script 94.5) and topic lock after the neighbour pass; then a Gemini facts job on SOURCES.md v01",
       "history": [
         {
           "at": "2026-10-12T16:12Z",
@@ -10685,6 +10685,11 @@
           "at": "2026-10-12T16:27Z",
           "by": "cursor",
           "what": "step 3 of 4 done: v01 PASS 94.5; committing"
+        },
+        {
+          "at": "2026-10-12T16:27Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: script review of 030 Apophis v01 (review:script 94.5) and topic lock after the neighbour pass; then a Gemini facts job on SOURCES.md v01"
         }
       ],
       "kind": "script",
