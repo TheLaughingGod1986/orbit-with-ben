@@ -22,7 +22,7 @@ is alive and able claims it. The thread stays for discussion and reports; this q
   python3 scripts/jobs.py release J0003 --agent cursor --note "stopping point; rows 1-40 done" --git
   python3 scripts/jobs.py renew J0003 --agent cursor --eta 120 --git           # still working: push the ETA out
   python3 scripts/jobs.py progress J0003 --agent cursor --step 3 --of 8 --git   # finished step 3 of 8 (the board's % done)
-  python3 scripts/jobs.py schedule J0003 --not-before "2026-10-12 09:00" --agent chief --git   # nobody gets it before then
+  python3 scripts/jobs.py schedule J0003 --not-before "2026-10-12 09:00" --reset "AI Ultra credit renews" --agent chief --git
   python3 scripts/jobs.py list [--all]                                          # open and claimed jobs (JOBS.md too)
   python3 scripts/jobs.py reroute J0003 --agent relay --to cursor --model cursor-claude-opus-5-5 --note "Claude out of usage" --git
           # Claude Code out of usage (Ben, 11 Oct 23:40): hand a Claude job to Cursor on the Claude model
@@ -113,12 +113,22 @@ def waiting_to_start(job: dict, at: dt.datetime) -> bool:
     return bool(job.get("not_before")) and studio.parse(job["not_before"]) > at
 
 
-def do_schedule(job: dict, agent: str, not_before: str, at: dt.datetime) -> None:
+def need_reset(not_before: str, reset: str) -> None:
+    """Ben, 12 Oct 2026: jobs start as soon as their inputs are ready, and reviews are done as soon as they land. A
+    start time is allowed only when it's tied to a real reset (a quota, credit or usage window, an air date)."""
+    if (not_before or "").strip() and not (reset or "").strip():
+        raise ValueError("--not-before needs --reset \"<the quota/credit/air-date window it waits for>\": no arbitrary "
+                         "start-time holds (Ben, 12 Oct 2026). Use --after <job> for an input that isn't ready yet.")
+
+
+def do_schedule(job: dict, agent: str, not_before: str, at: dt.datetime, reset: str = "") -> None:
     """Set (or clear, with "") a job's not-before time; London "YYYY-MM-DD HH:MM" in, UTC stored."""
+    need_reset(not_before, reset)
     stamp = parse_not_before(not_before)
     if stamp:
         job["not_before"] = stamp
-        log(job, at, agent, f"not before {not_before.strip()} London ({stamp})")
+        job["reset"] = reset.strip()
+        log(job, at, agent, f"not before {not_before.strip()} London ({stamp}); reset: {reset.strip()}")
     else:
         job.pop("not_before", None)
         log(job, at, agent, "not-before cleared")
@@ -127,7 +137,7 @@ def do_schedule(job: dict, agent: str, not_before: str, at: dt.datetime) -> None
 # ----------------------------------------------------------------------------- pure operations
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
            stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
-           kind: str = "", model: str = "", not_before: str = "") -> dict:
+           kind: str = "", model: str = "", not_before: str = "", reset: str = "") -> dict:
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if kind and kind not in routing.KINDS:
@@ -140,6 +150,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
         raise ValueError(f"stage must be one of {', '.join(studio.STAGES)}")
     if after and not find(data, after):
         raise ValueError(f"--after {after}: no such job")
+    need_reset(not_before, reset)
     nb = parse_not_before(not_before)
     job = {"id": f"J{data['next_id']:04d}", "title": title, "needs": needs, "repo": repo, "body": body, "ref": ref,
            "film": film, "stage": stage, "after": after.upper() if after else "", "eta_min": eta_min,
@@ -153,6 +164,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
         job["model"] = model
     if nb:
         job["not_before"] = nb
+        job["reset"] = reset.strip()
     log(job, at, by, "added" + (f" for {for_agent}" if for_agent else ""))
     data["next_id"] += 1
     data["jobs"].append(job)
@@ -487,10 +499,12 @@ def main(argv=None) -> int:
     a.add_argument("--kind", default="", choices=[""] + list(routing.KINDS), help="job type; routes it (AGENTS.md 'Who does what')")
     a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
     a.add_argument("--not-before", default="", help='"YYYY-MM-DD HH:MM" London time: nobody is handed it before then')
+    a.add_argument("--reset", default="", help="the real window --not-before waits for (quota/credit reset, air date)")
     sc = sub.add_parser("schedule", help="set or clear a job's not-before time")
     sc.add_argument("id")
     sc.add_argument("--agent", default="")
     sc.add_argument("--not-before", required=True, help='"YYYY-MM-DD HH:MM" London time; "" clears it')
+    sc.add_argument("--reset", default="", help="required with a time: the quota/credit/air-date window it waits for")
     n = sub.add_parser("next")
     n.add_argument("--agent", required=True)
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
@@ -553,7 +567,7 @@ def main(argv=None) -> int:
                 body = args.body_file.read_text() if args.body_file else args.body
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
-                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before)
+                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset)
                 return job, None, touched
             if args.cmd == "focus":
                 data["focus"] = [f.strip() for f in args.films if f.strip()]
@@ -598,7 +612,7 @@ def main(argv=None) -> int:
             elif args.cmd == "reopen":
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "schedule":
-                do_schedule(job, args.agent or "claude", args.not_before, at)
+                do_schedule(job, args.agent or "claude", args.not_before, at, args.reset)
             elif args.cmd == "cancel":
                 do_cancel(job, args.agent or "claude", args.note, at)
             elif args.cmd == "reroute":

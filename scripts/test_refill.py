@@ -56,5 +56,17 @@ class Escalate(unittest.TestCase):
         self.assertEqual(refill.do_escalate(d, T0 + 4 * H), [])
 
 
+class NoArbitraryHolds(unittest.TestCase):
+    def test_start_time_needs_a_real_reset(self):
+        d = empty()
+        j = jobs.do_add(d, title="r", needs="mini", body="", by="chief", at=T0)
+        with self.assertRaises(ValueError):
+            jobs.do_schedule(j, "chief", "2026-10-12 15:00", T0)
+        jobs.do_schedule(j, "chief", "2026-10-12 15:00", T0, "Flow AI Ultra credit renews")
+        self.assertEqual(j["reset"], "Flow AI Ultra credit renews")
+        with self.assertRaises(ValueError):
+            jobs.do_add(d, title="x", needs="mini", body="", by="chief", at=T0, not_before="2026-10-12 15:00")
+
+
 if __name__ == "__main__":
     unittest.main()
