@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0182 | any | blocked | cursor | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0183 | any | blocked | cursor | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0184 | mini | blocked | cursor | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
-| J0186 | mini | claimed | cursor | 2026-10-12T18:48Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0186 | mini | blocked | cursor | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 

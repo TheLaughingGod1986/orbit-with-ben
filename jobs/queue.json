@@ -10940,13 +10940,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-12T16:48Z",
-      "eta": "2026-10-12T18:48Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:48Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS on 021 Saturn clock Short v01 (d5eb0a50; gate PASS; 50 words; slot after Cka7_TVVOUQ feed read)",
       "history": [
         {
           "at": "2026-10-12T16:48Z",
@@ -10972,16 +10972,25 @@
           "at": "2026-10-12T16:54Z",
           "by": "cursor",
           "what": "step 3 of 5 done: cut built, gating"
+        },
+        {
+          "at": "2026-10-12T16:55Z",
+          "by": "cursor",
+          "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-10-12T16:55Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Short PASS on 021 Saturn clock Short v01 (d5eb0a50; gate PASS; 50 words; slot after Cka7_TVVOUQ feed read)"
         }
       ],
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-10-12T16:54Z",
-        "by": "cursor",
-        "note": "cut built, gating"
+        "at": "2026-10-12T16:55Z",
+        "by": "cursor"
       }
     }
   ],
