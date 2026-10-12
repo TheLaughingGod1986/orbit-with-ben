@@ -28,8 +28,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0188 | mini | open (after J0205) | – | – | studio · Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?' | 6131998795 |
 | J0189 | mini | open | – | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
 | J0191 | gemini | open | – | – | facts · OWB 020 Jupiter: Gemini facts pass -> SOURCES.md, then Sources line on -jmMROGoZCM |  |
-| J0192 | mini | open | – | – | studio · OWB read-only Studio: CTR read + 022 Shorts Related-video check (J0156) |  |
-| J0193 | mini | open | – | – | studio · HOS read-only Studio: CTR + 002 Test & Compare read; relabel SUBSCRIBER as Browse features in analytics-report.ts (J0157) |  |
+| J0192 | mini | open | – | – | studio · OWB read-only Studio: 022 Shorts Related-video check (J0156) |  |
+| J0193 | mini | open | – | – | studio · HOS read-only Studio: 002 Test & Compare read; relabel SUBSCRIBER as Browse features in analytics-report.ts (J0157) |  |
 | J0194 | gemini | open | – | – | facts · OWB compilation: Gemini claims pass on MUST QUOTE table before VO J0166 |  |
 | J0195 | gemini | open | – | – | facts · HOS compilation: Gemini claims pass on MUST QUOTE (Pasteur 1860s row) before VO J0174 |  |
 | J0196 | gemini | open | – | – | facts · 030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows) |  |

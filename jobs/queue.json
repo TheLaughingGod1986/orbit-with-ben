@@ -12169,10 +12169,10 @@
     },
     {
       "id": "J0192",
-      "title": "OWB read-only Studio: CTR read + 022 Shorts Related-video check (J0156)",
+      "title": "OWB read-only Studio: 022 Shorts Related-video check (J0156)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed. CTR read removed (Chief, 12 Oct 22:32): the daily J0210 / studio-ctr-daily job covers impressions + CTR for every long film.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -12190,16 +12190,21 @@
           "at": "2026-10-12T17:38Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-12T21:33Z",
+          "by": "chief",
+          "what": "trimmed: CTR read moved to J0210 (daily studio-ctr-daily)"
         }
       ],
       "kind": "studio"
     },
     {
       "id": "J0193",
-      "title": "HOS read-only Studio: CTR + 002 Test & Compare read; relabel SUBSCRIBER as Browse features in analytics-report.ts (J0157)",
+      "title": "HOS read-only Studio: 002 Test & Compare read; relabel SUBSCRIBER as Browse features in analytics-report.ts (J0157)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed. CTR read removed (Chief, 12 Oct 22:32): the daily J0210 / studio-ctr-daily job covers impressions + CTR for every long film.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -12217,6 +12222,11 @@
           "at": "2026-10-12T17:38Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-12T21:33Z",
+          "by": "chief",
+          "what": "trimmed: CTR read moved to J0210 (daily studio-ctr-daily)"
         }
       ],
       "kind": "studio"
