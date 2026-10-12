@@ -7,6 +7,7 @@
 .tf .st1.you{color:var(--blocked)}
 .tf{border-left-color:var(--line)!important}
 .tf .bar i{background:var(--ink-3)!important;opacity:.6}
+.tf .wnow{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--doing-soft);color:var(--doing);vertical-align:1px}
 #foldJobs,#foldPlans{margin:8px 0}
 #foldJobs .jb{margin-top:8px}
 </style></head><body>
@@ -1721,7 +1722,15 @@ setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" curr
 // Ben, 12 Oct 21:11: drop a card's status line when it only repeats the air date shown above it.
 (function(){ const t = document.getElementById("tracker"); if(!t || typeof MutationObserver==="undefined") return;
   const tidy = () => t.querySelectorAll(".tf .st1").forEach(e=>{ if(/^(Scheduled|Live)\b/i.test(e.textContent.trim()) && !/\b(fix|wait|block|need)/i.test(e.textContent)) e.remove(); });
-  new MutationObserver(tidy).observe(t, {childList:true, subtree:true}); })();
+  // Ben, 12 Oct 21:28: "Working now" pill on the card of the film the Mac mini is on (its running job's film + channel).
+  const keyOf = j => { const h = /^HOS\s+(\d{3})\b/.exec(j.title||""); if(h) return "HOS:"+h[1];
+    const n = j.film || ((/^(?:OWB\s+)?(\d{3})\b/.exec(j.title||""))||[])[1]; return n ? `${chanOf(j)}:${String(n).padStart(3,"0")}` : ""; };
+  const badge = () => { const run = ((typeof fromDb!=="undefined" && fromDb.jobs)||[]).filter(j=>j.status==="claimed" && (j.needs==="mini" || jobLine(j)==="mini"));
+    const keys = new Set(run.map(keyOf).filter(Boolean));
+    t.querySelectorAll(".tf").forEach(c=>{ const on = keys.has(c.dataset.key), b = c.querySelector(".wnow");
+      if(on && !b){ const tag = c.querySelector(".kh > span"); if(tag) tag.insertAdjacentHTML("beforeend",' <span class="wnow">Working now</span>'); }
+      else if(!on && b) b.remove(); }); };
+  new MutationObserver(()=>{ tidy(); badge(); }).observe(t, {childList:true, subtree:true}); })();
 </script>
 
 </body></html>
