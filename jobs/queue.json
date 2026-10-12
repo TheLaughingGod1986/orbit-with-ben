@@ -1,5 +1,5 @@
 {
-  "next_id": 178,
+  "next_id": 179,
   "jobs": [
     {
       "id": "J0001",
@@ -9860,6 +9860,33 @@
         }
       ],
       "kind": "facts"
+    },
+    {
+      "id": "J0178",
+      "title": "Cursor spend reader: parse the new % layout on cursor.com/dashboard/spending (no $ figure any more)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Cursor spend reader: the dashboard no longer shows a dollar figure (found by J0158, 12 Oct 2026).**\n\nThe Mini's CDP Chrome (:9222) is now signed into cursor.com as benoats@googlemail.com (Ultra). `python3 scripts/ai_spend_daily.py` still prints `FAIL cursor: no included-usage dollar figure`, because the page changed:\n- `/dashboard?tab=usage` redirects to `/dashboard/usage`, which shows tokens only (\"Total tokens 801.1M · Included 801.1M · On-demand 0\"), with no $.\n- `/dashboard/spending` shows \"$200/mo\", \"Usage limits reset on 6 Nov (25 days left)\", then percentages: Cursor Models \"14% used\", the other models pool \"28% used\", \"Weekly usage 74% used\" (Grok Bot pauses at the weekly limit).\n\nTo do:\n1. Point `read_cursor` at `/dashboard/spending` and parse the \"N% used\" lines with their labels and the reset date.\n2. Decide the unit. `ai_spend.py` POOLS says cursor = USD. Either record percent left (e.g. `left=72 total=100`, with the note naming the pool and the weekly %), or change the unit to `%`, and update `kanban_snapshot.py`, the board panel and `test_ai_spend.py` to match. This changes measurement only, no spend rule.\n3. Re-run `ai_spend_daily.py`, confirm a `READ cursor:` line, and run `python3 scripts/test_ai_spend.py`.\n\nAlso seen on the same run: `FAIL vertex: could not read an Available Free Trial row on Cloud Billing > Credits`. That's a separate reader, so check whether the billing page changed too (HOS `_vertex_credit_v01.py` changed on 12 Oct).\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0158",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-12T14:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T14:16Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
