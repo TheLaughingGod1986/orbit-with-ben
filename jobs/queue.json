@@ -7667,10 +7667,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T14:37Z",
-      "eta": "2026-10-12T14:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -7864,6 +7864,11 @@
           "at": "2026-10-12T14:38Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Flow 52, refill not landed (15:39)"
+        },
+        {
+          "at": "2026-10-12T14:38Z",
+          "by": "cursor",
+          "what": "released: 15:39 London: Flow still 52 credits (7th read today, account picker, CDP :9222). Refill not landed; recorded in ai_spend. Steps 2-3 (pricing, #180 table, PIPELINE PR) not started. Next hourly read from 16:40."
         }
       ],
       "kind": "video",
