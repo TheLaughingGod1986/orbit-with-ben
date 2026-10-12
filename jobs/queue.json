@@ -1,5 +1,5 @@
 {
-  "next_id": 187,
+  "next_id": 200,
   "jobs": [
     {
       "id": "J0001",
@@ -7487,19 +7487,19 @@
       "title": "OWB no-cover-text Test & Compare on JWST ziKBPJ6FY0U (A live vs B no text), parked for Chief review before setting (Reference lessons 5a; test, not a rule change)",
       "needs": "mini",
       "repo": "owb",
-      "body": "**No-cover-text Test & Compare (Reference lessons 5a, Chief OK 11 Oct 2026). A test, not a rule change.** SEA's two fastest longs have no cover text at all. One Orbit long tests the same idea.\n\n- **Long: JWST `ziKBPJ6FY0U`** (*JWST Found Galaxies That Shouldn't Exist Yet*). The glowing galaxies are already the hook, and no Test & Compare is on record for it.\n  - Not one of the five J0133 longs, nor Moon `2fsQcea-voM` or Alien Worlds `b8-X_FyJnHM` (J0099 tests running), Mars `Js6EQJ8qDi8` or Sun `h8HGfyShEHI` (A/B/C set).\n  - **Fallback: Jupiter `-jmMROGoZCM`.** Use it only if Studio shows a test already running on JWST. If both have one, block with the reason. Never press Continue on \"Run a new test?\".\n- **Build B** = the live thumb's plate with **no text at all**, same crop and grade.\n  - Rebuild it from the clean plate (the builder under `00_Brand/Channel-Setup/tools/` or the film's `08_Thumbnail/`).\n  - Never inpaint text away with an image model, and spend nothing. If no clean plate exists, block with \"parked for Chief: no clean plate\".\n  - Save the live thumb as A (`https://i.ytimg.com/vi/<id>/maxresdefault.jpg`) to `~/_desk/notext_tc_1011/` with sha256 values, for rollback.\n  - `thumb_preview.py long <A> <B> --out <sheet> --score` (B gets no text-size check).\n- **Review:** post the A/B sheet and the score lines on #99, then run `jobs.py block <this id> --agent <you> --reason \"parked for Chief: no-text T&C review\" --git`.\n- **After the Chief's OK:** in Orbit Studio (CDP 9223; check the channel is `UC_esArsDKd3GJvOkeO0DUog`), open Test & Compare, choose **Thumbnail only**, and set A = live and B = no-text.\n  - Image-only inputs. Don't touch the title, schedule or privacy.\n  - Reload, and confirm \"Running…\".\n  - Record it in `00_Brand/Channel-Setup/audits/THUMB_AUDIT_2026-10-09/notext_test_compare.json`, like `j0099_test_compare.json`.\n- **Read:** past about 500 impressions, or when YouTube names a winner. The Orbit Auditor reports it. The yellow-word rule stands until Chief changes it in AGENTS.md.\n- **Done:** post a [Cursor] note on #99 with the id, the variants and the result.\n",
+      "body": "**No-cover-text Test & Compare (Reference lessons 5a, Chief OK 11 Oct 2026). A test, not a rule change.** SEA's two fastest longs have no cover text at all. One Orbit long tests the same idea.\n\n- **Long: JWST `ziKBPJ6FY0U`** (*JWST Found Galaxies That Shouldn't Exist Yet*). The glowing galaxies are already the hook, and no Test & Compare is on record for it.\n  - Not one of the five J0133 longs, nor Moon `2fsQcea-voM` or Alien Worlds `b8-X_FyJnHM` (J0099 tests running), Mars `Js6EQJ8qDi8` or Sun `h8HGfyShEHI` (A/B/C set).\n  - **Fallback: Jupiter `-jmMROGoZCM`.** Use it only if Studio shows a test already running on JWST. If both have one, block with the reason. Never press Continue on \"Run a new test?\".\n- **Build B** = the live thumb's plate with **no text at all**, same crop and grade.\n  - Rebuild it from the clean plate (the builder under `00_Brand/Channel-Setup/tools/` or the film's `08_Thumbnail/`).\n  - Never inpaint text away with an image model, and spend nothing. If no clean plate exists, block with \"parked for Chief: no clean plate\".\n  - Save the live thumb as A (`https://i.ytimg.com/vi/<id>/maxresdefault.jpg`) to `~/_desk/notext_tc_1011/` with sha256 values, for rollback.\n  - `thumb_preview.py long <A> <B> --out <sheet> --score` (B gets no text-size check).\n- **Review:** post the A/B sheet and the score lines on #99, then run `jobs.py block <this id> --agent <you> --reason \"parked for Chief: no-text T&C review\" --git`.\n- **After the Chief's OK:** in Orbit Studio (CDP 9223; check the channel is `UC_esArsDKd3GJvOkeO0DUog`), open Test & Compare, choose **Thumbnail only**, and set A = live and B = no-text.\n  - Image-only inputs. Don't touch the title, schedule or privacy.\n  - Reload, and confirm \"Running…\".\n  - Record it in `00_Brand/Channel-Setup/audits/THUMB_AUDIT_2026-10-09/notext_test_compare.json`, like `j0099_test_compare.json`.\n- **Read:** past about 500 impressions, or when YouTube names a winner. The Orbit Auditor reports it. The yellow-word rule stands until Chief changes it in AGENTS.md.\n- **Done:** post a [Cursor] note on #99 with the id, the variants and the result.\n\n\nChief review 12 Oct: Chief: switch the no-cover-text Test & Compare to Jupiter -jmMROGoZCM (NASA PD plates, rebuildable). Build B = same plate with no text, --score, park for Chief before setting.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T12:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:50Z",
-      "result": "parked for Chief: no clean plate for JWST ziKBPJ6FY0U thumb (not in repo, NAS or Mini); A saved to ~/_desk/notext_tc_1011; suggest Jupiter -jmMROGoZCM (NASA PD plates, rebuildable) or another long",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T22:50Z",
@@ -7580,17 +7580,15 @@
           "at": "2026-10-12T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "reopened: Chief: switch the no-cover-text Test & Compare to Jupiter -jmMROGoZCM (NASA PD plates, rebuildable). Build B = same plate with no text, --score, park for Chief before setting."
         }
       ],
       "kind": "studio",
       "model": "cursor-auto",
-      "progress": {
-        "step": 2,
-        "of": 5,
-        "at": "2026-10-12T12:15Z",
-        "by": "cursor",
-        "note": "A saved; no clean JWST plate found"
-      },
       "escalated_at": "2026-10-12T15:13Z"
     },
     {
@@ -8221,13 +8219,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T12:34Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:38Z",
-      "result": "parked for Chief: 024 cover review (v02). Sheet ~/_desk/handoff/J0143-v02/024_j0143_v02_phone_sheet.jpg; PR #139 185c4ff0. Free generated ship (no Orbit, no spend) at 41% height with blue rim; both --score PASS (sat 194/200, near-black 19/18%). Chief to confirm generated ship OK and restate primary cover. No Studio change.",
+      "result": "Chief PASS 024 covers v02 (PR #139 185c4ff0): generated ship OK (no Orbit, no spend, both --score PASS). Primary A = 'YOU: 1 YEAR / EARTH: 7 YEARS' (answers the title), B = 'OUTRUN EARTH'S CLOCK'. Test & Compare A/B from day 1 at upload (follow-on job).",
       "history": [
         {
           "at": "2026-10-11T23:38Z",
@@ -8353,6 +8351,16 @@
           "at": "2026-10-12T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS 024 covers v02 (PR #139 185c4ff0): generated ship OK (no Orbit, no spend, both --score PASS). Primary A = 'YOU: 1 YEAR / EARTH: 7 YEARS' (answers the title), B = 'OUTRUN EARTH'S CLOCK'. Test & Compare A/B from day 1 at upload (follow-on job)."
         }
       ],
       "kind": "chart",
@@ -8612,13 +8620,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T11:19Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T10:49Z",
-      "result": "parked for Chief: 024 overlays PASS (v05c 39733487: picture_qa + polish_gate PASS); score NUMBER/WORDS/STYLE/MOTION, decide the 0:11.4 black in row 2",
+      "result": "Chief PASS 024 overlays v05c (39733487): NUMBER/WORDS/STYLE/MOTION all PASS. Row-2 0:11.4 black is superseded by v05d (J0149).",
       "history": [
         {
           "at": "2026-10-12T10:49Z",
@@ -8689,6 +8697,16 @@
           "at": "2026-10-12T13:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS 024 overlays v05c (39733487): NUMBER/WORDS/STYLE/MOTION all PASS. Row-2 0:11.4 black is superseded by v05d (J0149)."
         }
       ],
       "kind": "chart",
@@ -8715,19 +8733,19 @@
       "title": "026 Nearest Star: teaching overlays per J0145 026 prep sheet (a901da4f), same rulings",
       "needs": "mini",
       "repo": "owb",
-      "body": "Apply the J0145 Chief rulings to the 026 sheet: each chapter needs a numeral-bearing object; labels word for word with the VO. Overlay rows only, no spend, gates PASS, then park for Chief.",
+      "body": "Apply the J0145 Chief rulings to the 026 sheet: each chapter needs a numeral-bearing object; labels word for word with the VO. Overlay rows only, no spend, gates PASS, then park for Chief.\n\nChief review 12 Oct: Chief FIX: 026 overlays otherwise PASS; OK labels running across one cut. Bessel WHO card must carry sourced years (1784-1846; 61 Cygni parallax 1838) with a SOURCES row each, then re-run picture_qa + polish_gate and park.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T12:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T10:49Z",
-      "result": "parked for Chief: 026 overlays PASS (v05c de8954b7: picture_qa + polish_gate PASS); score NUMBER/WORDS/STYLE/MOTION, OK labels running across one cut, Bessel WHO card needs sourced years",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T10:49Z",
@@ -8768,16 +8786,14 @@
           "at": "2026-10-12T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "reopened: Chief FIX: 026 overlays otherwise PASS; OK labels running across one cut. Bessel WHO card must carry sourced years (1784-1846; 61 Cygni parallax 1838) with a SOURCES row each, then re-run picture_qa + polish_gate and park."
         }
       ],
       "kind": "chart",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-12T12:33Z",
-        "by": "cursor",
-        "note": "v05c gates PASS, stills on #99"
-      },
       "escalated_at": "2026-10-12T15:13Z"
     },
     {
@@ -8791,13 +8807,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T12:39Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T12:17Z",
-      "result": "parked for Chief: 024 v05d row 2 (EV in-point 75.0 s, '7 years' 1.82 s on bright picture; picture_qa + polish_gate PASS; cut 07_Edit-Project/024_LightSpeed_full_rough_v05d.mp4, commit 6e1a1eb3)",
+      "result": "Chief PASS 024 v05d (6e1a1eb3): '7 years' holds 1.82 s (>=1.2) on bright picture; picture_qa + polish_gate PASS. v05d = 024 picture lock.",
       "history": [
         {
           "at": "2026-10-12T12:17Z",
@@ -8828,6 +8844,16 @@
           "at": "2026-10-12T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS 024 v05d (6e1a1eb3): '7 years' holds 1.82 s (>=1.2) on bright picture; picture_qa + polish_gate PASS. v05d = 024 picture lock."
         }
       ],
       "kind": "assembly",
@@ -8851,13 +8877,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T13:04Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T12:56Z",
-      "result": "parked for Chief: Short PASS (020 Jupiter lift jupiter_no_crust_v01, gate PASS, e4d0fd29) + air slot",
+      "result": "Chief PASS Short 020 Jupiter jupiter_no_crust_v01 (e4d0fd29). Air in the next free OWB Short slot (follow-on studio job).",
       "history": [
         {
           "at": "2026-10-12T12:56Z",
@@ -8918,6 +8944,16 @@
           "at": "2026-10-12T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS Short 020 Jupiter jupiter_no_crust_v01 (e4d0fd29). Air in the next free OWB Short slot (follow-on studio job)."
         }
       ],
       "kind": "assembly",
@@ -8942,13 +8978,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T13:15Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T12:56Z",
-      "result": "parked for Chief: Short PASS (HOS 005 s04 Galen stove v01, gate + vo_check PASS, HOS #286 c9f4356, desk #180 6125123120) + title 'Is the Heart a Pump?' + air slot",
+      "result": "Chief PASS HOS 005 s04 Galen stove v01 (HOS c9f4356); title 'Is the Heart a Pump?' KEEP. Air in the next free HOS Short slot (follow-on studio job).",
       "history": [
         {
           "at": "2026-10-12T12:56Z",
@@ -9019,6 +9055,16 @@
           "at": "2026-10-12T15:21Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS HOS 005 s04 Galen stove v01 (HOS c9f4356); title 'Is the Heart a Pump?' KEEP. Air in the next free HOS Short slot (follow-on studio job)."
         }
       ],
       "kind": "assembly",
@@ -9043,13 +9089,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T13:21Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T12:56Z",
-      "result": "parked for Chief: thumb B review. Saturn 55AEQwvs36g B 'RINGS ARE FALLING' (--score PASS sat 132, NB 23%; live A FAILS sat 68). Sheet ~/_desk/handoff/J0152/saturn_tc_AB_sheet.jpg; 1d7e9d37; #99 6125208083. No Studio change.",
+      "result": "Chief PASS Saturn 55AEQwvs36g B 'RINGS ARE FALLING' (score PASS; live A fails sat 68). Set Test & Compare A vs B in Studio (follow-on job); keep A as rollback.",
       "history": [
         {
           "at": "2026-10-12T12:56Z",
@@ -9095,6 +9141,16 @@
           "at": "2026-10-12T15:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS Saturn 55AEQwvs36g B 'RINGS ARE FALLING' (score PASS; live A fails sat 68). Set Test & Compare A vs B in Studio (follow-on job); keep A as rollback."
         }
       ],
       "kind": "chart",
@@ -9119,8 +9175,8 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-12T13:33Z",
       "eta": "",
       "created_by": "refill",
@@ -9156,6 +9212,11 @@
           "at": "2026-10-12T15:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "cancelled: Chief: retired. All HOS live films 001-005 already have a Test & Compare; nothing to build."
         }
       ],
       "kind": "chart",
@@ -9174,19 +9235,19 @@
       "title": "Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards)",
       "needs": "mini",
       "repo": "owb",
-      "body": "AGENTS.md Reference lessons item 6 (Chief ruling 12 Oct: a to-scale graphic with no numeral does NOT count as NUMBER). For the newest long not yet uploaded, take the next chapter with no numeral-bearing object and render overlay rows: the VO's own words, 4 words or fewer, numbers checked against 01_Script/SOURCES.md. Overlays only on VO-locked films. picture_qa must PASS. Post the before/after stills on #99, block 'parked for Chief: overlay PASS'.",
+      "body": "AGENTS.md Reference lessons item 6 (Chief ruling 12 Oct: a to-scale graphic with no numeral does NOT count as NUMBER). For the newest long not yet uploaded, take the next chapter with no numeral-bearing object and render overlay rows: the VO's own words, 4 words or fewer, numbers checked against 01_Script/SOURCES.md. Overlays only on VO-locked films. picture_qa must PASS. Post the before/after stills on #99, block 'parked for Chief: overlay PASS'.\n\nChief review 12 Oct: Chief FIX: 027 v01h overlays otherwise PASS; OK labels beside row 33 clock. Add a SOURCES row backing '24 hours' (or drop the number), re-run gates, park.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T13:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T13:26Z",
-      "result": "parked for Chief: overlay PASS: 027 v01h ch5 'Keeping Score' NUMBER overlays (26d10530; picture_qa + polish_gate PASS); score NUMBER/WORDS/STYLE/MOTION, OK labels beside the row 33 clock graphic, '24 hours' needs a SOURCES row",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:26Z",
@@ -9222,17 +9283,15 @@
           "at": "2026-10-12T15:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "reopened: Chief FIX: 027 v01h overlays otherwise PASS; OK labels beside row 33 clock. Add a SOURCES row backing '24 hours' (or drop the number), re-run gates, park."
         }
       ],
       "kind": "chart",
       "backlog": "owb-teach-overlays",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-12T13:45Z",
-        "by": "cursor",
-        "note": "027 v01h gates PASS, stills on #99"
-      },
       "escalated_at": "2026-10-12T15:48Z"
     },
     {
@@ -9246,13 +9305,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T13:26Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T13:26Z",
-      "result": "parked for Chief: live fixes — 3 proposed in 05_Analytics/live_fixes/2026-10-12.md (0a8c3d0e): Jupiter -jmMROGoZCM has no Sources line and 020 has no SOURCES.md (needs a facts job first); Shorts pL339HhjDwo and Ih2zhZTbIR0 descriptions name the wrong long title",
+      "result": "Chief PASS OWB live-fix list (0a8c3d0e): fix the wrong long title in Shorts pL339HhjDwo + Ih2zhZTbIR0; 020 SOURCES.md facts job first, then Jupiter -jmMROGoZCM Sources line (follow-on jobs).",
       "history": [
         {
           "at": "2026-10-12T13:26Z",
@@ -9298,6 +9357,16 @@
           "at": "2026-10-12T15:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS OWB live-fix list (0a8c3d0e): fix the wrong long title in Shorts pL339HhjDwo + Ih2zhZTbIR0; 020 SOURCES.md facts job first, then Jupiter -jmMROGoZCM Sources line (follow-on jobs)."
         }
       ],
       "kind": "listing",
@@ -9321,13 +9390,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T15:59Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T13:41Z",
-      "result": "parked for Chief: adopt/drop the 5 changes in 05_Analytics/weekly_audit/OWB_2026-10-12.md; queue a studio job for CTR + 022 Shorts Related-video check?; neighbour pass for any of the 3 ideas",
+      "result": "Chief: adopt all 5 no-spend changes in OWB_2026-10-12.md for films from 027 on; OK the read-only Studio CTR + 022 Shorts Related check (follow-on job); neighbour pass on the 3 ideas folds into the 030 neighbour job.",
       "history": [
         {
           "at": "2026-10-12T13:41Z",
@@ -9363,6 +9432,16 @@
           "at": "2026-10-12T16:03Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: adopt/drop the 5 changes in 05_Analytics/weekly_audit/OWB_2026-10-12.md; queue a studio job for CTR + 022 Shorts Related-video check?; neighbour pass for any of the 3 ideas"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief: adopt all 5 no-spend changes in OWB_2026-10-12.md for films from 027 on; OK the read-only Studio CTR + 022 Shorts Related check (follow-on job); neighbour pass on the 3 ideas folds into the 030 neighbour job."
         }
       ],
       "kind": "review",
@@ -9386,13 +9465,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:03Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T13:41Z",
-      "result": "parked for Chief: adopt any of the 5 changes for HOS 006-010 (HOS 02_Video-Projects/_analytics/HOS_2026-10-12.md, 4f9d733); pick 1 of 3 new ideas for the neighbour pass; OK a read-only Studio read of CTR + 002 Test & Compare; OK relabelling SUBSCRIBER as Browse features in analytics-report.ts. Desk #180 comment 6127991542",
+      "result": "Chief: adopt the 5 changes for HOS 006-010 (no spend); OK read-only Studio read of CTR + 002 Test & Compare and the SUBSCRIBER->Browse features relabel in analytics-report.ts (follow-on jobs). Idea #1 goes to the neighbour pass after 011.",
       "history": [
         {
           "at": "2026-10-12T13:41Z",
@@ -9433,6 +9512,16 @@
           "at": "2026-10-12T16:07Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: adopt any of the 5 changes for HOS 006-010 (HOS 02_Video-Projects/_analytics/HOS_2026-10-12.md, 4f9d733); pick 1 of 3 new ideas for the neighbour pass; OK a read-only Studio read of CTR + 002 Test & Compare; OK relabelling SUBSCRIBER as Browse features in analytics-report.ts. Desk #180 comment 6127991542"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief: adopt the 5 changes for HOS 006-010 (no spend); OK read-only Studio read of CTR + 002 Test & Compare and the SUBSCRIBER->Browse features relabel in analytics-report.ts (follow-on jobs). Idea #1 goes to the neighbour pass after 011."
         }
       ],
       "kind": "review",
@@ -9731,13 +9820,13 @@
       "stage": "",
       "after": "J0161",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T14:27Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: S1-S4 VO recorded (17aca874, 1,116 credits). Accept 3 vo_check REVIEWs (S1/S3/S4: Scribe numerals only, every word as scripted) and S2 27.3 s / S3 27.8 s vs 18-22 s target (~23.5/25.5 s after pause trim at J0163), or order script trims + retakes. Gemini Q1-Q9 OK. Thread 6126434686.",
+      "result": "Chief PASS S1-S4 VO (17aca874): accept the 3 vo_check REVIEWs (Scribe numerals only). Lengths OK for the test only if J0163's pause trim lands each at <=25.5 s; any Short still over that gets one line cut at assembly, no retake.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -9798,6 +9887,16 @@
           "at": "2026-10-12T16:42Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS S1-S4 VO (17aca874): accept the 3 vo_check REVIEWs (Scribe numerals only). Lengths OK for the test only if J0163's pause trim lands each at <=25.5 s; any Short still over that gets one line cut at assembly, no retake."
         }
       ],
       "kind": "vo",
@@ -9876,13 +9975,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T14:01Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: lock compilation plan + script v01 (30ef7dba). Rule on: trimming 4 of 5 subscribe beats + the end hand-offs; record the re-upload Never-list exception; 022 as optional 6th; title/cover pick. Gemini claims pass on the MUST QUOTE table before VO J0166.",
+      "result": "Chief LOCK OWB compilation plan + script v01 (30ef7dba): trim 4 of 5 subscribe beats (keep the last) and all end hand-offs; no 022 sixth film; re-upload exception recorded for compilations of our own finished films only; title/cover = option 1 pending autocomplete check. Gemini MUST QUOTE claims pass before VO J0166 (follow-on job).",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -9913,6 +10012,16 @@
           "at": "2026-10-12T16:42Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief LOCK OWB compilation plan + script v01 (30ef7dba): trim 4 of 5 subscribe beats (keep the last) and all end hand-offs; no 022 sixth film; re-upload exception recorded for compilations of our own finished films only; title/cover = option 1 pending autocomplete check. Gemini MUST QUOTE claims pass before VO J0166 (follow-on job)."
         }
       ],
       "kind": "script",
@@ -10018,13 +10127,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T14:06Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: lock 8 standalone Short scripts, titles and Mon/Wed slots (HOS PR #291, SCRIPTS_v01.md 'For Chief to decide'); also rule on the 9-14 s long-title card for standalone Shorts. Gemini facts pass queued; titles need autocomplete check.",
+      "result": "Chief LOCK HOS 8 standalone Short scripts, titles and Mon/Wed slots (HOS PR #291), subject to the queued Gemini facts pass and an autocomplete check on titles. No 9-14 s long-title card: standalone Shorts stay self-contained.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10065,6 +10174,16 @@
           "at": "2026-10-12T16:42Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief LOCK HOS 8 standalone Short scripts, titles and Mon/Wed slots (HOS PR #291), subject to the queued Gemini facts pass and an autocomplete check on titles. No 9-14 s long-title card: standalone Shorts stay self-contained."
         }
       ],
       "kind": "script",
@@ -10174,13 +10293,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T15:03Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: lock HOS compilation plan + script v01 (HOS PR #293, 126bfec). Rule on: six films by proof year 005,006,001,002,003,004 (~51 min, upload after 006 airs 5 Nov) vs five-film fallback (~42 min, under 45) or +007; trimming 3 end hand-offs (005, 006, 004); record the re-upload Never-list exception; title/cover. Gemini claims pass on MUST QUOTE (row 5 Pasteur 1860s is new text) before VO J0174.",
+      "result": "Chief LOCK HOS compilation plan + script v01 (HOS PR #293): six films by proof year 005,006,001,002,003,004 (~51 min), upload only after 006 airs 5 Nov; trim the 3 end hand-offs; same own-films re-upload exception as OWB; title/cover option 1 pending autocomplete. Gemini claims pass on MUST QUOTE (Pasteur 1860s row) before VO J0174 (follow-on job).",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -10211,6 +10330,16 @@
           "at": "2026-10-12T15:09Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: lock HOS compilation plan + script v01 (HOS PR #293, 126bfec). Rule on: six films by proof year 005,006,001,002,003,004 (~51 min, upload after 006 airs 5 Nov) vs five-film fallback (~42 min, under 45) or +007; trimming 3 end hand-offs (005, 006, 004); record the re-upload Never-list exception; title/cover. Gemini claims pass on MUST QUOTE (row 5 Pasteur 1860s is new text) before VO J0174."
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief LOCK HOS compilation plan + script v01 (HOS PR #293): six films by proof year 005,006,001,002,003,004 (~51 min), upload only after 006 airs 5 Nov; trim the 3 end hand-offs; same own-films re-upload exception as OWB; title/cover option 1 pending autocomplete. Gemini claims pass on MUST QUOTE (Pasteur 1860s row) before VO J0174 (follow-on job)."
         }
       ],
       "kind": "script",
@@ -10481,13 +10610,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:13Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T15:59Z",
-      "result": "parked for Chief: (1) lock 030 Apophis or pick another of the 5 in ideas/IDEAS_2026-10-12_J0179.md; (2) waive the Short-first line or require an Apophis standalone Short to clear 200 views/40% first; (3) run the neighbour pass. v00 scores 86.7 on review:script (needs Claude v01 to reach 90); all 24 SOURCES rows TO VERIFY by Gemini. Commit 602b67d5",
+      "result": "Chief LOCK 030 Apophis (IDEAS_2026-10-12_J0179.md). Short-first line stands: an Apophis standalone Short must clear 200 views/40% before the long's VO. Neighbour pass queued.",
       "history": [
         {
           "at": "2026-10-12T15:59Z",
@@ -10523,6 +10652,16 @@
           "at": "2026-10-12T16:18Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: (1) lock 030 Apophis or pick another of the 5 in ideas/IDEAS_2026-10-12_J0179.md; (2) waive the Short-first line or require an Apophis standalone Short to clear 200 views/40% first; (3) run the neighbour pass. v00 scores 86.7 on review:script (needs Claude v01 to reach 90); all 24 SOURCES rows TO VERIFY by Gemini. Commit 602b67d5"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief LOCK 030 Apophis (IDEAS_2026-10-12_J0179.md). Short-first line stands: an Apophis standalone Short must clear 200 views/40% before the long's VO. Neighbour pass queued."
         }
       ],
       "kind": "script",
@@ -10546,13 +10685,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:19Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:03Z",
-      "result": "parked for Chief: (1) lock HOS 011 = Surgery before anaesthesia (Ether Day 1846; neighbour gate PASS, 5 big incl. TED-Ed 19.7M + 2.6M) or pick another of the 5 in HOS 00_Brand/Channel-Setup/ideas/IDEAS_2026-10-12_J0180.md; (2) title spelling anesthesia (neighbour word) vs anaesthesia (UK); (3) if locked: Claude script v01 from opening_and_outline_v00, then Gemini facts pass on SOURCES_v00 (20 rows, all TO VERIFY). HOS commit a7de6a3",
+      "result": "Chief LOCK HOS 011 = Surgery before anaesthesia (Ben said yes, HOS #180 6128594677). Title spelling 'Anesthesia' (search neighbour word); UK spelling allowed in description. Claude script v01 then Gemini facts pass.",
       "history": [
         {
           "at": "2026-10-12T16:03Z",
@@ -10583,6 +10722,16 @@
           "at": "2026-10-12T16:23Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: (1) lock HOS 011 = Surgery before anaesthesia (Ether Day 1846; neighbour gate PASS, 5 big incl. TED-Ed 19.7M + 2.6M) or pick another of the 5 in HOS 00_Brand/Channel-Setup/ideas/IDEAS_2026-10-12_J0180.md; (2) title spelling anesthesia (neighbour word) vs anaesthesia (UK); (3) if locked: Claude script v01 from opening_and_outline_v00, then Gemini facts pass on SOURCES_v00 (20 rows, all TO VERIFY). HOS commit a7de6a3"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief LOCK HOS 011 = Surgery before anaesthesia (Ben said yes, HOS #180 6128594677). Title spelling 'Anesthesia' (search neighbour word); UK spelling allowed in description. Claude script v01 then Gemini facts pass."
         }
       ],
       "kind": "script",
@@ -10600,19 +10749,19 @@
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
       "needs": "any",
       "repo": "hos",
-      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.\n\nChief review 12 Oct: Chief PASS of the HOS fix list (PR #294); do step 4 now in Studio (CDP, Orbit rules apply per channel): fix literal \\n in sILtQxgYQk8, end screen on _C92tIJCk8A, long title+link on 1lszTrYRp-8, JyRjM-9Yc8g, Pp5LmjsduI4, mTY67qet7cM, x_3L_IdYgEc. Atom Sources block waits on a facts job. No deletes.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:07Z",
-      "result": "parked for Chief: live fixes — HOS PR #294 (audits/live_fixes/2026-10-12.md): fix literal \\n in sILtQxgYQk8 description; add end screen to Germs _C92tIJCk8A; add long title+link to 5 scheduled Shorts (1lszTrYRp-8, JyRjM-9Yc8g, Pp5LmjsduI4, mTY67qet7cM, x_3L_IdYgEc); optional Sources block on Atom GHZDsiH7L7A before 15 Oct (needs a facts job first, no SOURCES.md exists); Studio-finish checks on scheduled end screens/Related",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T16:07Z",
@@ -10648,17 +10797,15 @@
           "at": "2026-10-12T16:12Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: live fixes — HOS PR #294 (audits/live_fixes/2026-10-12.md): fix literal \\n in sILtQxgYQk8 description; add end screen to Germs _C92tIJCk8A; add long title+link to 5 scheduled Shorts (1lszTrYRp-8, JyRjM-9Yc8g, Pp5LmjsduI4, mTY67qet7cM, x_3L_IdYgEc); optional Sources block on Atom GHZDsiH7L7A before 15 Oct (needs a facts job first, no SOURCES.md exists); Studio-finish checks on scheduled end screens/Related"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "reopened: Chief PASS of the HOS fix list (PR #294); do step 4 now in Studio (CDP, Orbit rules apply per channel): fix literal \\n in sILtQxgYQk8, end screen on _C92tIJCk8A, long title+link on 1lszTrYRp-8, JyRjM-9Yc8g, Pp5LmjsduI4, mTY67qet7cM, x_3L_IdYgEc. Atom Sources block waits on a facts job. No deletes."
         }
       ],
       "kind": "listing",
-      "backlog": "hos-live-listing-fixes",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-10-12T16:12Z",
-        "by": "cursor",
-        "note": "fix list on HOS PR #294"
-      }
+      "backlog": "hos-live-listing-fixes"
     },
     {
       "id": "J0182",
@@ -10671,13 +10818,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:24Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:12Z",
-      "result": "parked for Chief: script review of 030 Apophis v01 (review:script 94.5) and topic lock after the neighbour pass; then a Gemini facts job on SOURCES.md v01",
+      "result": "Chief PASS 030 Apophis script v01 (review:script 94.5) as draft-lock; VO waits on the Gemini facts pass on SOURCES.md v01 and the neighbour pass (follow-on jobs).",
       "history": [
         {
           "at": "2026-10-12T16:12Z",
@@ -10708,6 +10855,16 @@
           "at": "2026-10-12T16:27Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: script review of 030 Apophis v01 (review:script 94.5) and topic lock after the neighbour pass; then a Gemini facts job on SOURCES.md v01"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS 030 Apophis script v01 (review:script 94.5) as draft-lock; VO waits on the Gemini facts pass on SOURCES.md v01 and the neighbour pass (follow-on jobs)."
         }
       ],
       "kind": "script",
@@ -10731,13 +10888,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:32Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:18Z",
-      "result": "parked for Chief: script review of HOS 011 script v01 draft (HOS PR #295; review:script 91.1 PASS); needs J0180 topic + spelling lock first, then Gemini facts pass on SOURCES_v01 rows 1-37 before VO",
+      "result": "Chief PASS HOS 011 script v01 (HOS PR #295, 91.1); topic + spelling locked in J0180. VO waits on Gemini facts pass on SOURCES_v01 rows 1-37 (follow-on job).",
       "history": [
         {
           "at": "2026-10-12T16:18Z",
@@ -10768,6 +10925,16 @@
           "at": "2026-10-12T16:37Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: script review of HOS 011 script v01 draft (HOS PR #295; review:script 91.1 PASS); needs J0180 topic + spelling lock first, then Gemini facts pass on SOURCES_v01 rows 1-37 before VO"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS HOS 011 script v01 (HOS PR #295, 91.1); topic + spelling locked in J0180. VO waits on Gemini facts pass on SOURCES_v01 rows 1-37 (follow-on job)."
         }
       ],
       "kind": "script",
@@ -10785,19 +10952,19 @@
       "title": "Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint)",
       "needs": "mini",
       "repo": "hos",
-      "body": "For the next HOS film whose picture plan isn't done, write the plate board rows (prompt, reference, Flow quality, price) from the locked VO. Mint nothing. Commit in a HOS PR and block 'parked for Chief: price pass'.",
+      "body": "For the next HOS film whose picture plan isn't done, write the plate board rows (prompt, reference, Flow quality, price) from the locked VO. Mint nothing. Commit in a HOS PR and block 'parked for Chief: price pass'.\n\nChief review 12 Oct: Chief FIX on 008 boards (PR #296): turn every continuation row that holds the prior plate into a reuse, move non-hero Quality rows to Fast, keep Quality only for hero/thumbnail plates; reprice v02 and park. Flow/Vertex split waits for the Ultra refill. No spend.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:23Z",
-      "result": "parked for Chief: price pass on HOS PR #296 (008 plate boards v01: 112 rows, 64 Q / 45 F / 3 reuse, 12 continuation rows; all-Flow ~17,476 cr expected vs 52 cr; all-Vertex ~£224 vs £4.83 usable). Decide which continuations become reuses, any Quality->Fast, and the Flow/Vertex split after the Ultra refill. No spend.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T16:23Z",
@@ -10848,17 +11015,15 @@
           "at": "2026-10-12T16:47Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: price pass on HOS PR #296 (008 plate boards v01: 112 rows, 64 Q / 45 F / 3 reuse, 12 continuation rows; all-Flow ~17,476 cr expected vs 52 cr; all-Vertex ~£224 vs £4.83 usable). Decide which continuations become reuses, any Quality->Fast, and the Flow/Vertex split after the Ultra refill. No spend."
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "reopened: Chief FIX on 008 boards (PR #296): turn every continuation row that holds the prior plate into a reuse, move non-hero Quality rows to Fast, keep Quality only for hero/thumbnail plates; reprice v02 and park. Flow/Vertex split waits for the Ultra refill. No spend."
         }
       ],
       "kind": "assembly",
-      "backlog": "hos-plate-prep",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-10-12T16:47Z",
-        "by": "cursor",
-        "note": "boards built and priced (PR #296)"
-      }
+      "backlog": "hos-plate-prep"
     },
     {
       "id": "J0185",
@@ -10940,13 +11105,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T16:48Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-12T17:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:48Z",
-      "result": "parked for Chief: Short PASS on 021 Saturn clock Short v01 (d5eb0a50; gate PASS; 50 words; slot after Cka7_TVVOUQ feed read)",
+      "result": "Chief PASS Saturn 'clock' Short v01 (d5eb0a50, gate PASS). Air in the next free OWB Short slot (follow-on studio job).",
       "history": [
         {
           "at": "2026-10-12T16:48Z",
@@ -10982,6 +11147,16 @@
           "at": "2026-10-12T16:55Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Short PASS on 021 Saturn clock Short v01 (d5eb0a50; gate PASS; 50 words; slot after Cka7_TVVOUQ feed read)"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "done: Chief PASS Saturn 'clock' Short v01 (d5eb0a50, gate PASS). Air in the next free OWB Short slot (follow-on studio job)."
         }
       ],
       "kind": "assembly",
@@ -10992,6 +11167,357 @@
         "at": "2026-10-12T16:55Z",
         "by": "cursor"
       }
+    },
+    {
+      "id": "J0187",
+      "title": "024 Light Speed: Test & Compare A/B covers from day 1 at upload (J0143 PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0143",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0188",
+      "title": "Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?'",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0189",
+      "title": "Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0190",
+      "title": "OWB Studio: fix wrong long title in descriptions of Shorts pL339HhjDwo + Ih2zhZTbIR0 (J0155)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0191",
+      "title": "OWB 020 Jupiter: Gemini facts pass -> SOURCES.md, then Sources line on -jmMROGoZCM",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
+    },
+    {
+      "id": "J0192",
+      "title": "OWB read-only Studio: CTR read + 022 Shorts Related-video check (J0156)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0193",
+      "title": "HOS read-only Studio: CTR + 002 Test & Compare read; relabel SUBSCRIBER as Browse features in analytics-report.ts (J0157)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0194",
+      "title": "OWB compilation: Gemini claims pass on MUST QUOTE table before VO J0166",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
+    },
+    {
+      "id": "J0195",
+      "title": "HOS compilation: Gemini claims pass on MUST QUOTE (Pasteur 1860s row) before VO J0174",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
+    },
+    {
+      "id": "J0196",
+      "title": "030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows)",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
+    },
+    {
+      "id": "J0197",
+      "title": "030 Apophis: standalone Short script (Short-first line: 200 views/40% before long VO)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
+    },
+    {
+      "id": "J0198",
+      "title": "HOS 011 Anesthesia: Gemini facts pass on SOURCES_v01 rows 1-37 before VO",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
+    },
+    {
+      "id": "J0199",
+      "title": "HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Chief review 12 Oct 2026. No spend, no deletes; park for Chief where a PASS is needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-12T17:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-12T17:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
     }
   ],
   "focus": [
