@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T00:43Z",
-      "eta": "2026-10-13T04:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8327,6 +8327,11 @@
           "at": "2026-10-13T00:57Z",
           "by": "cursor",
           "what": "step 1 of 6 done: P4:10 t2 still + i2v made; harvest fix next"
+        },
+        {
+          "at": "2026-10-13T00:57Z",
+          "by": "cursor",
+          "what": "released: P4:10 t2 made, not yet downloaded. Still (0 cr) saved: hos-006-trees/.../part04/refs/v02_flow_stills/10_only_green_t2.png (stylised warm 3D, not photoreal; style-ref chips 0). Cause of probe2 timeout: gallery_media_srcs skips tiles with y<80 = top row in this viewport; fixed (all_img_srcs) + minter reuses saved still and retries unspent FAILs: HOS PR #310 (00b95e1; #306 already merged). i2v ran in tmux j0140-probe3 (.done=0, log ~/_desk/logs/j0140-probe3.log): 10 cr spent, Flow 25,040 -> 25,030 (ai_spend logged), clip is in Flow project https://flow.google.com/project/f269dd3e-3c5b-43d7-8eb6-569c6f7af99d (first tile with play icon) but harvest() timed out: clicking the tile does not open a player and no video request fires. Next run: fix harvest (open the tile's menu/Download, or hover-play then capture), save as part04/raw/v01/10_only_green_t2.mp4, contact sheet, post still + sheet on desk #180 to grok and park for KEEP before the other 27 (1,260 cr untouched). No retake: the take is paid for."
         }
       ],
       "kind": "video",
