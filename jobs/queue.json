@@ -10952,15 +10952,35 @@
           "at": "2026-10-13T02:15Z",
           "by": "cursor",
           "what": "released: step 5 of 8 done (segments v03, bed v01, bodies v01). 6b waits on J0207, now running on Codex gpt-6-astra: tmux J0207-codex, log ~/_desk/logs/J0207-codex.log, done ~/_desk/logs/J0207-codex.done. Take J0167 back once J0207 is done."
+        },
+        {
+          "at": "2026-10-13T03:03Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-13T03:04Z",
+          "by": "cursor",
+          "what": "step 5 of 8 done: 6b: final join started (J0207 in)"
+        },
+        {
+          "at": "2026-10-13T03:08Z",
+          "by": "cursor",
+          "what": "step 5 of 8 done: 6b: final render running (tmux J0167-final)"
+        },
+        {
+          "at": "2026-10-13T03:08Z",
+          "by": "cursor",
+          "what": "released: Step 6b running (4d7302d6): J0207 graphics in; _assemble_compilation_v01.py renders the whole film (47:37, 16 pieces, chapters 0:00/0:53/10:12/18:47/29:19/39:04) to /private/tmp/owb_comp/final_v01/owb_compilation_v01.mp4 with VO/SFX/bed/film stems, cuts.json, chapters.txt, assembly.json. Detached: tmux J0167-final, log ~/_desk/logs/J0167-final.log, done ~/_desk/logs/J0167-final.done. Never start a second copy. Next run: if .done is 0 and the log ends 'done', contact-sheet every join, then step 7 gates (picture_qa, polish_gate, music_gate, sfx_kit level), then park for Chief (J0168)."
         }
       ],
       "kind": "assembly",
       "progress": {
         "step": 5,
         "of": 8,
-        "at": "2026-10-13T02:12Z",
+        "at": "2026-10-13T03:08Z",
         "by": "cursor",
-        "note": "6b waits on J0207; Codex started on it"
+        "note": "6b: final render running (tmux J0167-final)"
       }
     },
     {
@@ -11657,13 +11677,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "cursor",
+      "since": "2026-10-13T03:09Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: no doable work left until inputs land. Needs J0204 (timeline x4 + chapter cards x6, open, unclaimed) for the render stage, and 006 picture (J0140 open; no 006 clips on disk or in /private/tmp) for intro, Bridge 1, Bridge 2 plates (willow, sunlit leaf, cross). Bridges 3/4/5 + closing drafted (HOS PR #300 ef3e43f). Reopen when J0204 is done; deliverable waits on the 006 master (ETA 25 Oct). Decisions for Chief: Lister basin vs spray (Bridge 3); intro card symbols; Bridge 2 sunlit vs candlelit ward; 001/002/003 mid-film end cards; 004 bed reuse vs music_gate.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11819,6 +11839,16 @@
           "at": "2026-10-13T01:49Z",
           "by": "cursor",
           "what": "released: Run 8 (step 4/6 holds): HOS PR #300 ef3e43f. Closing shots listed and draft-rendered: 9 label-free windows, one per spoken object (004 atom 227.6, 005 arm 287.6, 001 flask 298.0, 002 round table 162.3, 003 hand at screen 163.8, 004 nucleus 224.0, 004 beam into foil 252.0, 004 atom in space + dark hall 310.0-318.3 and orb 214.6-222.8 under the timeline/end card). 37.09 s, -17.0 LUFS (6 s end-card hold), TP -1.18, polish_gate PASS (one low-detail WARN, 004's own dark hall), eye-checked on a 0.5 s sheet. The arm holds over 'a tree made of air' until a 006 willow plate lands. Now only intro, Bridge 1 and Bridge 2 are undrafted, and all three need 006 plates. Still waiting on J0204 graphics (timeline, cards, end card) and the 006 master (ETA 25 Oct). For Chief: Lister basin vs spray for Bridge 3; card symbols; Bridge 2 sunlit vs candlelit ward; 001/002/003 mid-film end cards; 004 bed reuse vs music_gate."
+        },
+        {
+          "at": "2026-10-13T03:09Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-13T03:10Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: no doable work left until inputs land. Needs J0204 (timeline x4 + chapter cards x6, open, unclaimed) for the render stage, and 006 picture (J0140 open; no 006 clips on disk or in /private/tmp) for intro, Bridge 1, Bridge 2 plates (willow, sunlit leaf, cross). Bridges 3/4/5 + closing drafted (HOS PR #300 ef3e43f). Reopen when J0204 is done; deliverable waits on the 006 master (ETA 25 Oct). Decisions for Chief: Lister basin vs spray (Bridge 3); intro card symbols; Bridge 2 sunlit vs candlelit ward; 001/002/003 mid-film end cards; 004 bed reuse vs music_gate."
         }
       ],
       "kind": "assembly",
@@ -12873,10 +12903,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-13T03:12Z",
+      "eta": "2026-10-13T05:12Z",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
       "result": "",
@@ -12930,9 +12960,26 @@
           "at": "2026-10-13T02:21Z",
           "by": "chief",
           "what": "reopened: Chief PASSsources + OK description push (OWB #99 6136800385). Flip approved in 2026-10-13_descriptions.json, run redescribe-videos.ts on -jmMROGoZCM, confirm Sources line live, then done. No VO change."
+        },
+        {
+          "at": "2026-10-13T03:12Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-13T03:12Z",
+          "by": "cursor",
+          "what": "step 4 of 5 done: Chief PASS; pushing Sources line"
         }
       ],
-      "kind": "facts"
+      "kind": "facts",
+      "progress": {
+        "step": 4,
+        "of": 5,
+        "at": "2026-10-13T03:12Z",
+        "by": "cursor",
+        "note": "Chief PASS; pushing Sources line"
+      }
     },
     {
       "id": "J0192",
@@ -14760,13 +14807,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-13T02:58Z",
-      "eta": "2026-10-13T03:58Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T02:56Z",
-      "result": "",
+      "result": "parked for Chief: overlay complete at local commit fc43697d on codex/j0225-scale in /private/tmp/j0225-wt; automatic approval review rejected remote push as unverified destination/insufficient push authorization. Approve source branch push and visual review. Media and sidecar available in main checkout standalone_apophis/code_graphics_v01.",
       "history": [
         {
           "at": "2026-10-13T02:56Z",
@@ -14782,14 +14829,35 @@
           "at": "2026-10-13T02:58Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-13T03:00Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Layout and reproducible renderer ready; NASA Blue Marble source located"
+        },
+        {
+          "at": "2026-10-13T03:00Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 108-frame ProRes 4444 and fully built PNG rendered; sidecar written"
+        },
+        {
+          "at": "2026-10-13T03:03Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Graphic and verification complete; local commit fc43697d; remote push rejected by approval review"
+        },
+        {
+          "at": "2026-10-13T03:03Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: overlay complete at local commit fc43697d on codex/j0225-scale in /private/tmp/j0225-wt; automatic approval review rejected remote push as unverified destination/insufficient push authorization. Approve source branch push and visual review. Media and sidecar available in main checkout standalone_apophis/code_graphics_v01."
         }
       ],
       "kind": "chart",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-13T02:58Z",
-        "by": "codex"
+        "at": "2026-10-13T03:03Z",
+        "by": "codex",
+        "note": "Graphic and verification complete; local commit fc43697d; remote push rejected by approval review"
       }
     },
     {

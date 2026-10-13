@@ -16,13 +16,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0172 | any | open (after J0218) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
-| J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
+| J0175 | mini | blocked | cursor | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0181 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0184 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0188 | mini | open (after J0205) | – | – | studio · Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?' | 6131998795 |
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
-| J0191 | gemini | open | – | – | facts · OWB 020 Jupiter: Gemini facts pass -> SOURCES.md, then Sources line on -jmMROGoZCM |  |
+| J0191 | gemini | claimed | cursor | 2026-10-13T05:12Z | facts · OWB 020 Jupiter: Gemini facts pass -> SOURCES.md, then Sources line on -jmMROGoZCM |  |
 | J0196 | gemini | open | – | – | facts · 030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows) |  |
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
 | J0224 | cloud | open (after J0198) | – | – | review · HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS) |  |
-| J0225 | mini | claimed | codex | 2026-10-13T03:58Z | chart · 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) | J0223 |
+| J0225 | mini | blocked | codex | – | chart · 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) | J0223 |
 | J0226 | mini | open (after J0225) | – | – | 030 edit · assembly · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 
 Recently finished:
