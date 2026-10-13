@@ -15311,10 +15311,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T04:50Z",
-      "eta": "2026-10-13T05:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T04:49Z",
       "result": "",
@@ -15358,6 +15358,11 @@
           "at": "2026-10-13T04:59Z",
           "by": "cursor",
           "what": "step 3 of 4 done: 024 v04/v05/v05b moved; final_v01 copy running"
+        },
+        {
+          "at": "2026-10-13T04:59Z",
+          "by": "cursor",
+          "what": "released: Chief's tmux j0229-archive (/private/tmp/j0229_archive.sh, log ~/_desk/logs/J0229-archive.log, no .done file: check 'DONE' line in log / tmux ls) moved owb_comp segments_v01+v02 and is rsyncing final_v01 (13 GB, 3.7 GB copied at 06:00, ~10 MB/s, ETA ~06:30); sha-verified delete on match. Cursor moved 024_LightSpeed_full_rough_v04/v05/v05b.mp4 to NAS 2026-10-13/loose_renders (sha256 verified, local removed; log J0229-loose.log, .done=0; note /private/tmp/MOVED_TO_NAS_J0229.txt). Free 3.8 GB now, ~17 GB expected after final_v01. To reach 20 GB, next: decide on owb_comp bodies_v01 (3.1 GB) / bed_v01 / segments_v03 with J0167's owner (v02 chain still reads segments_v03 intro+bridge3). Everything else in /private/tmp is current or previous version. Last step: confirm final_v01 verified, df, done."
         }
       ],
       "kind": "assembly",
