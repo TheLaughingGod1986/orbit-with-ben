@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
 | J0191 | gemini | blocked | cursor | – | facts · OWB 020 Jupiter: Gemini facts pass -> SOURCES.md, then Sources line on -jmMROGoZCM |  |
 | J0193 | mini | blocked | cursor | – | studio · HOS read-only Studio: 002 Test & Compare read; relabel SUBSCRIBER as Browse features in analytics-report.ts (J0157) |  |
-| J0196 | gemini | open | – | – | facts · 030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows) |  |
+| J0196 | gemini | claimed | cursor | 2026-10-13T03:53Z | facts · 030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows) |  |
 | J0197 | any | open | – | – | script · 030 Apophis: standalone Short script (Short-first line: 200 views/40% before long VO) |  |
 | J0198 | gemini | open | – | – | facts · HOS 011 Anesthesia: Gemini facts pass on SOURCES_v01 rows 1-37 before VO |  |
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
