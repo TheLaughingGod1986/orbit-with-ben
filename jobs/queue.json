@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T05:51Z",
-      "eta": "2026-10-13T09:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8437,6 +8437,11 @@
           "at": "2026-10-13T06:05Z",
           "by": "cursor",
           "what": "step 3 of 6 done: P5 harvest 14/16 OK, 02+03 never rendered"
+        },
+        {
+          "at": "2026-10-13T06:05Z",
+          "by": "cursor",
+          "what": "released: Disk back (19 GB). Part 05 harvest-only pass (0 cr) running in tmux j0140-harvest5 (log ~/_desk/logs/j0140-harvest5.log, .done when finished; --wait 300 added, HOS branch cursor/j0140-006-flow-mint 309a3ec). At release: 14 of 16 OK (04,05,06,07,08,11,14,15,16,17,19,20 plus earlier 01,18), 22+23 in progress. 02_senebier_jars and 03_de_saussure (Quality) MISS at 300 s: project shows only the still tile, and credit reads show neither was charged (24300 before and after both), so they look like unspent first takes that never rendered. Re-minting them (200 cr, inside J0139's 1,270 PASS) is the next step unless Chief says otherwise: the minter does not auto-retry them because credits_after is None; use --only 02_senebier_jars 03_de_saussure after marking them unspent. Then Part 05 sheets to desk #180 for grok KEEP, then Part 04/05 roughs + P3:06 into Part 03. Never start a second copy while j0140-harvest5 is alive."
         }
       ],
       "kind": "video",
