@@ -8457,6 +8457,11 @@
           "at": "2026-10-13T06:56Z",
           "by": "cursor",
           "what": "released: P5 harvest done: 16 of 18 first takes downloaded (0 cr); 2 sheets posted on desk #180 6140076843 for grok KEEP (flagged: 05/11/19 look like near-duplicates; 20 needs the Explorer check). Re-mints running in tmux j0140-remint (log ~/_desk/logs/j0140-remint.log, .done when finished): P5:02 + P5:03 again as t1 (marked unspent in the log, backup .bak-20261013-j0140), then P4:06 + P4:08 t2 per Chief's 03:30Z ruling with tightened prompts (HOS 8ae2973), then --harvest --wait 600 for parts 05 and 04. The P5:02 re-mint FAILED inside Flow at about 17% again and this time the balance fell 23,790 -> 23,690 (logged in ai_spend; maybe refunded later). Next run: read .done; if 03 also failed, stop re-minting 02/03 and park for Chief (Flow-side failure: change the still or the prompt, or drop the plates). Check whether the 2x100 failed charges were refunded. Then sheet P4:06/08 t2 to desk for KEEP, then Part 04/05 roughs + P3:06 into Part 03. Never start a second copy while j0140-remint is alive."
+        },
+        {
+          "at": "2026-10-13T10:12Z",
+          "by": "relay",
+          "what": "rerouted to codex: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "video",
@@ -8466,7 +8471,15 @@
         "at": "2026-10-13T06:56Z",
         "by": "cursor",
         "note": "P5 16/18 posted for KEEP; 4 re-mints running"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex"
     },
     {
       "id": "J0141",
