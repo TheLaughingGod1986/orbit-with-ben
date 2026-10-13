@@ -16,7 +16,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0172 | any | open (after J0218) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
-| J0175 | mini | claimed | cursor | 2026-10-13T05:45Z | assembly · HOS compilation film: assemble 45-60 min cut |  |
+| J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0181 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0184 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
