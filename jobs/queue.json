@@ -13113,13 +13113,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-13T01:51Z",
-      "eta": "2026-10-13T03:51Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "Already met: Gemini claims pass HOS docs/STANDALONE_SHORTS_TEST_2026-10/GEMINI_FACTS_COMPILATION_v01.md row 5 (Pasteur swan-neck, 1860s) OK, on HOS main via #298 de599e1, run inside J0174 (12/12 OK, Chief PASS 6130399806). Cursor re-checked 13 Oct: OpenStax Microbiology 3.1 quote is verbatim on the page (Alhumbert Prize 1862, lecture 1864); 1860s marker holds. No new Gemini run, no spend.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13135,6 +13135,11 @@
           "at": "2026-10-13T01:52Z",
           "by": "cursor",
           "what": "step 1 of 1 done: row 5 already in Gemini pass; quote verified"
+        },
+        {
+          "at": "2026-10-13T01:52Z",
+          "by": "cursor",
+          "what": "done: Already met: Gemini claims pass HOS docs/STANDALONE_SHORTS_TEST_2026-10/GEMINI_FACTS_COMPILATION_v01.md row 5 (Pasteur swan-neck, 1860s) OK, on HOS main via #298 de599e1, run inside J0174 (12/12 OK, Chief PASS 6130399806). Cursor re-checked 13 Oct: OpenStax Microbiology 3.1 quote is verbatim on the page (Alhumbert Prize 1862, lecture 1864); 1860s marker holds. No new Gemini run, no spend."
         }
       ],
       "kind": "facts",
