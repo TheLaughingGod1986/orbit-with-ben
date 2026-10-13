@@ -10705,10 +10705,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T02:11Z",
-      "eta": "2026-10-13T06:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10927,6 +10927,11 @@
           "at": "2026-10-13T02:12Z",
           "by": "cursor",
           "what": "step 5 of 8 done: 6b waits on J0207; Codex started on it"
+        },
+        {
+          "at": "2026-10-13T02:15Z",
+          "by": "cursor",
+          "what": "released: step 5 of 8 done (segments v03, bed v01, bodies v01). 6b waits on J0207, now running on Codex gpt-6-astra: tmux J0207-codex, log ~/_desk/logs/J0207-codex.log, done ~/_desk/logs/J0207-codex.done. Take J0167 back once J0207 is done."
         }
       ],
       "kind": "assembly",
