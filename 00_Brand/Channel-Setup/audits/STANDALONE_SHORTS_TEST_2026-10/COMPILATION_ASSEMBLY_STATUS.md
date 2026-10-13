@@ -200,3 +200,17 @@ QA v02 (`qa_compilation_v02/`) failed on three gates. Two are fixed; one needs a
 - **Disk:** v03 left 2.8 GB free. The v04 chain first moves `final_v02` (now the version before last) to `NAS mini-tmp-scratch/2026-10-13/owb_comp/final_v02` by rsync, checks sha256 manifests on both sides, and removes the local copy only on a full match (a mismatch stops the chain and keeps the local copy). final_v03 still holds its own hardlinks to the shared pieces.
 - **Running detached:** tmux `J0167-v04`, script `~/_desk/logs/J0167-v04-chain.sh`, log `~/_desk/logs/J0167-v04.log`, done file `~/_desk/logs/J0167-v04.done`. It runs the archive (about 35 min, like final_v01), then segments_v06 (intro only), then final_v04 (reusing v03's pieces except the intro), then QA into `qa_compilation_v04/`. **Never start a second copy.**
 - **Next run:** if the done file reads 0, read `qa_compilation_v04/qa_summary.json`. Expected: picture_qa PASS, sfx PASS, and only the music_gate gap FAIL. Look at intro_05 and intro_01 on `picture_qa_review.jpg` and `joins_sheet.jpg`. Then step 8: park J0167 for Chief at J0168 with the gap ruling, the sfx_kit silence fault, the push-jitter QA-input note, and the 021 subscribe-beat default. If the done file reads 3, the NAS manifest didn't match: final_v02 is still local, so look at `/tmp/J0167_v02_*.sha256`.
+
+
+## Codex resume, 13 Oct 2026 (J0167, still step 6 of 8)
+
+The overnight `J0167-v04` chain exited 3 before rendering. Comparing its manifests shows all 47 local payload hashes match the NAS; the only 47 extra NAS files are macOS AppleDouble `._` metadata. No payload mismatch is recorded.
+
+Started one detached continuation, `J0167-v04-resume`. It re-runs rsync, freshly hashes every local file and its NAS counterpart, permits only NAS AppleDouble extras and the manifest, writes the payload manifest, then removes only the verified local final_v02 scratch. It never deletes NAS files. Any real mismatch stops before local removal. It then runs the original segments_v06 intro, final_v04 reuse, and QA commands.
+
+- Log: `/Users/benjaminoats/_desk/logs/J0167-v04-resume.log`
+- Exit marker: `/Users/benjaminoats/_desk/logs/J0167-v04-resume.done`
+- Runner: `/Users/benjaminoats/_desk/logs/J0167-v04-resume-chain.sh`
+- Archive evidence: `/Users/benjaminoats/_desk/logs/J0167-v04-resume-archive.json`
+
+Next worker: missing exit marker means still running; never start another copy. Exit 0 means inspect qa_compilation_v04/qa_summary.json, joins_sheet.jpg and intro_01/05 at full size. Other exits mean inspect the log. The music-gap ruling, noise-floored SFX measurement, overlay QA-input change and 021 subscribe default remain for Chief. No protected PASS, upload or spend was made in this run.
