@@ -280,6 +280,8 @@ def main():
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--seg", help="segments dir (default segments_v03)")
     ap.add_argument("--bed", help="bed dir (default bed_v01)")
+    ap.add_argument("--resume", action="store_true",
+                    help="reuse the out dir's timeline overlays and picture.mp4; rebuild audio, then mux")
     a = ap.parse_args()
     global SEG, BED
     SEG = Path(a.seg) if a.seg else SEG
@@ -297,11 +299,20 @@ def main():
     print("\n".join(chap_lines))
     if a.plan:
         return
-    overlay_timelines(pieces, out)
+    if a.resume:
+        for p in pieces:
+            tl = out / f"{p['name']}_tl.mp4"
+            if p.get("timeline") and tl.exists():
+                p["video"] = tl
+        if not (out / "picture.mp4").exists():
+            sys.exit("--resume needs picture.mp4 in the out dir")
+    else:
+        overlay_timelines(pieces, out)
     for p in pieces:
         p["frames"] = frames(p["video"])
     report, peak = build_audio(pieces, joins, out)
-    build_video(pieces, joins, out)
+    if not a.resume:
+        build_video(pieces, joins, out)
     final = out / f"owb_compilation_{out.name.split('_')[-1]}.mp4"
     run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(out / "picture.mp4"), "-i", str(out / "master.wav"),
          "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-ar", str(SR),
