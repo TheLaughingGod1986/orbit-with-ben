@@ -99,6 +99,8 @@ J0207 (cards and timeline) is still open with no claim: Codex is up, but the rel
 
 **Step 6b** (the final join: segments v03 + bed v01 + cards and timeline + bodies, 0.5–1.5 s crossfades at film ends, chapter list) waits only on J0207.
 
+**J0207 dispatched (Cursor, 13 Oct 02:15Z).** J0207 had sat open for about 6 h. Cursor rerouted it to Codex on `gpt-6-astra` (its primary) and started Codex on it detached: tmux `J0207-codex`, log `~/_desk/logs/J0207-codex.log`, done file `~/_desk/logs/J0207-codex.done`, prompt `~/_desk/logs/J0207-codex-prompt.md`. Codex claimed it at 02:14Z. Step 6b starts once J0207 is done and `graphics_v01/` holds the five cards, the three timelines and `ticks.json`.
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.
