@@ -1,5 +1,5 @@
 {
-  "next_id": 223,
+  "next_id": 225,
   "jobs": [
     {
       "id": "J0001",
@@ -13330,13 +13330,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-13T02:16Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-13T02:41Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: Gemini facts pass done (HOS PR #311, stacked on #295): OK 35, PARTIAL 1 (row 15, already hedged), FLAG 0. Needs Claude's CLAUDE_QUOTE_CHECK on MUST QUOTE rows + topic/script lock before VO",
+      "result": "Chief PASS Gemini facts on HOS 011 SOURCES_v01 (PR #311, stacked on #295): OK 35, PARTIAL 1 (row 15 Liston 'Yankee dodge' — keep script hedge 'is said to have'), FLAG 0; row 19 superseded by 35; all 10 WHO years OK. Topic+script already locked (J0180/J0183). Next: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows on #180, then VO. No spend.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13367,6 +13367,16 @@
           "at": "2026-10-13T02:34Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Gemini facts pass done (HOS PR #311, stacked on #295): OK 35, PARTIAL 1 (row 15, already hedged), FLAG 0. Needs Claude's CLAUDE_QUOTE_CHECK on MUST QUOTE rows + topic/script lock before VO"
+        },
+        {
+          "at": "2026-10-13T02:41Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-13T02:41Z",
+          "by": "chief",
+          "what": "done: Chief PASS Gemini facts on HOS 011 SOURCES_v01 (PR #311, stacked on #295): OK 35, PARTIAL 1 (row 15 Liston 'Yankee dodge' — keep script hedge 'is said to have'), FLAG 0; row 19 superseded by 35; all 10 WHO years OK. Topic+script already locked (J0180/J0183). Next: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows on #180, then VO. No spend."
         }
       ],
       "kind": "facts",
@@ -13375,7 +13385,8 @@
         "of": 4,
         "at": "2026-10-13T02:34Z",
         "by": "cursor"
-      }
+      },
+      "done_ref": "311"
     },
     {
       "id": "J0199",
@@ -14520,13 +14531,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-13T02:35Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-13T02:41Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-13T02:22Z",
-      "result": "parked for Chief: OK VO loudness (-20.2 LUFS raw) + duration 24.56 s before picture; take 4d793e9b, thread 6136965014",
+      "result": "Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands.",
       "history": [
         {
           "at": "2026-10-13T02:22Z",
@@ -14562,6 +14573,16 @@
           "at": "2026-10-13T02:36Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: OK VO loudness (-20.2 LUFS raw) + duration 24.56 s before picture; take 4d793e9b, thread 6136965014"
+        },
+        {
+          "at": "2026-10-13T02:41Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-13T02:41Z",
+          "by": "chief",
+          "what": "done: Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands."
         }
       ],
       "kind": "vo",
@@ -14570,7 +14591,8 @@
         "of": 4,
         "at": "2026-10-13T02:36Z",
         "by": "cursor"
-      }
+      },
+      "done_ref": "6136965014"
     },
     {
       "id": "J0222",
@@ -14630,6 +14652,60 @@
         "by": "cursor"
       },
       "done_ref": "c0476c0b"
+    },
+    {
+      "id": "J0223",
+      "title": "030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief VO PASS on J0221 (vo_v01). Build per SCRIPT_v01 visual musts: Veo rock tumble + Earth limb (NASA plate), Omni Orbit insert ~1 s, DATA scale bar 32,000 vs 36,000 km (Codex chart), assemble with UK spelling in captions, gate_shorts_open check. Air private+publishAt Thu 22 Oct 11:30 UK. No spend past Vertex trial floor 0; no deletes.",
+      "ref": "",
+      "film": "030",
+      "stage": "edit",
+      "after": "J0221",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-13T02:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T02:41Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0224",
+      "title": "HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS)",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "Chief PASS on J0198 / HOS PR #311 (OK 35, PARTIAL 1 row 15 keep hedge, FLAG 0). Run CLAUDE_QUOTE_CHECK on every MUST QUOTE row against the exact URLs in SOURCES_v01; keep row 8 and row 15 hedges. Post result on HOS #180. VO only after this PASS. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0198",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-13T02:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T02:41Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "review"
     }
   ],
   "focus": [

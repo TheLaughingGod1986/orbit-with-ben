@@ -24,7 +24,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
 | J0191 | gemini | open | – | – | facts · OWB 020 Jupiter: Gemini facts pass -> SOURCES.md, then Sources line on -jmMROGoZCM |  |
 | J0196 | gemini | open | – | – | facts · 030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows) |  |
-| J0198 | gemini | blocked | cursor | – | facts · HOS 011 Anesthesia: Gemini facts pass on SOURCES_v01 rows 1-37 before VO |  |
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
 | J0204 | mini | open | – | – | chart · HOS compilation: timeline x4 + chapter cards x6 code graphics |  |
@@ -36,11 +35,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0218 | any | open | – | – | listing · HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs | 6135034321 |
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
-| J0221 | mini | blocked | cursor | – | 030 vo · vo · 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) | 6136803753 |
+| J0223 | mini | open (after J0221) | – | – | 030 edit · video · 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) |  |
+| J0224 | cloud | open (after J0198) | – | – | review · HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS) |  |
 
 Recently finished:
 
 - J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
+- J0221 done: 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) (Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands.)
 - J0217 done: HOS standalone Shorts S5-S8: custom 9:16 covers (PASS HOOK/BAND/PHONE ×4; wording KEEP; #308 merged 7d6af66; HOS #180 6134925830. Cursor to attach covers on package.)
 - J0215 done: HOS standalone Shorts S7-03: one Vertex retake (credit back) (S7-03 v02 minted (£0.03, HOS 0462e90); flame still faint, parked on #180 for Chief KEEP/FAIL)
 - J0214 done: HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (done)
@@ -49,4 +50,3 @@ Recently finished:
 - J0209 done: HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates) (PASS HOOK/BAND/PHONE ×4; wording KEEP; #301 merged; HOS #180 6133005305. Cursor to attach covers on package.)
 - J0208 done: HOS: land Chief-PASSed VO PRs #271 (009), #272 (010), #268 (007 Shorts): lock, PIPELINE, board, merge main (done)
 - J0207 done: OWB compilation: 5 chapter cards + countdown timeline x3 code graphics (Sheet: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/graphics_v01_sheet.jpg (visually inspected). /private/tmp/owb_comp/graphics_v01/: code_graphic_owbcomp_card_01.mp4, code_graphic_owbcomp_card_02.mp4, code_graphic_owbcomp_card_03.mp4, code_graphic_owbcomp_card_04.mp4, code_graphic_owbcomp_card_05.mp4 (3s each); code_graphic_owbcomp_timeline_b1.mov 15.466667s, code_graphic_owbcomp_timeline_b3.mov 16.5s, code_graphic_owbcomp_timeline_close.mov 20.1s; ticks.json, checks.json, alpha_checks.json. All 1920x1080 30fps. Timeline VO-zero placement (+0.6s segment lead-in); cue times 3.06/0.98/11.84s. Near-black all 90 frames/card measured at 480x270 gray: min mean/p95 01 124.66/170, 02 81.54/152, 03 90.66/165, 04 62.09/81, 05 91.50/132. Builder a44b2e24 + sheet a08c0cd0 pushed from clean worktree, removed. No spend. J0167 assembly next; Chief scores STYLE/MOTION at J0168. Thread 6136778160.)
-- J0203 done: HOS standalone Shorts S1-S4: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (20 x 9:16 still plates for S1-S4 on Vertex gemini-2.5-flash-image (~£0.62; trial est ≈£0.63 left, console £1.46 lagging). HOS docs/STANDALONE_SHORTS_TEST_2026-10/PLATES_STATUS_v01.md; sheets plates_v01/s{1..4}_sheet_v01.jpg (Mini). KEEP flags for Chief: S1-05 smoke look, S2 Brand inconsistent, S3-05 handle still on pump.)
