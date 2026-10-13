@@ -50,7 +50,7 @@ FINAL_STEM = "030_apophis_short_v02"
 AIR = "2026-10-22"
 
 W, H, FPS = sa.W, sa.H, sa.FPS
-HOOK_END, TITLE, HOLD, MAX_TOTAL = 2.2, (9.0, 14.0), 0.4, 25.5
+HOOK_END, TITLE, HOLD, MAX_TOTAL = 2.2, (9.0, 14.0), 0.5, 25.5  # gate_shorts_open floor is 22.0 s
 BAND = (656, 1264)
 LOOP_XFADE = 0.5
 MAX_GAP, LEAD, TAIL = 0.40, 0.10, 0.35
@@ -181,18 +181,23 @@ class Rock:
         edge = np.clip((np.arange(W, dtype=np.float32) - 32.0) / 48.0, 0.0, 1.0)
         q = core.resize((W // 4, H // 4), Image.BILINEAR)
         # Garbage matte: the textured core dilated ~12 px; the smooth outer rim line lies ~20 px out, so it is zeroed.
-        garb = q.filter(ImageFilter.MaxFilter(7)).filter(ImageFilter.GaussianBlur(1.0)).resize((W, H), Image.BILINEAR)
+        # Blurred ~12 px so the quarter-res blocks never show as a stepped edge.
+        garb = q.filter(ImageFilter.MaxFilter(7)).filter(ImageFilter.GaussianBlur(3.0)).resize((W, H), Image.BILINEAR)
         garb = np.asarray(garb).astype(np.float32) / 255.0 * edge[None, :]
         a = np.asarray(im).astype(np.float32)
         r, b = a[..., 0], a[..., 2]
         grey = np.clip(1.0 - (b - r - 6.0) / 14.0, 0.0, 1.0)
         rock = a * (grey * garb)[..., None]
         lum = rock.mean(axis=2)
-        # Luma key, black transparent; the key closed (~12 px) fills the dark craters without growing past the lit edge.
-        lk = Image.fromarray((np.clip((lum - 4.0) / 18.0, 0.0, 1.0) * 255).astype(np.uint8)).resize((W // 4, H // 4))
-        fill = lk.filter(ImageFilter.MaxFilter(7)).filter(ImageFilter.MinFilter(7)).filter(ImageFilter.GaussianBlur(1.0))
-        fill = np.asarray(fill.resize((W, H), Image.BILINEAR)).astype(np.float32) / 255.0
-        alpha = np.maximum(np.clip((lum - 4.0) / 18.0, 0.0, 1.0), fill) * garb
+        # Luma key, black transparent. Dark craters are holes in that key, so the silhouette is the lit surface with
+        # the background flood-filled from a corner. The unlit side is as black as the Veo's sky and can't be keyed, so
+        # it stays out of the silhouette: anything darker would be an opaque black smudge on the plate.
+        lit = Image.fromarray(((lum > 14.0) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(2.0))
+        sil = lit.point(lambda v: 255 if v > 127 else 0).filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(5))
+        ImageDraw.floodfill(sil, (0, 0), 128)
+        solid = Image.fromarray(((np.asarray(sil) != 128) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))
+        fill = np.asarray(solid).astype(np.float32) / 255.0
+        alpha = np.maximum(np.clip((lum - 10.0) / 12.0, 0.0, 1.0), fill) * garb
         rgba = np.dstack([rock, alpha * 255.0]).clip(0, 255).astype(np.uint8)
         im = Image.fromarray(rgba, "RGBA")
         if scale != 1.0:
@@ -238,9 +243,11 @@ def main() -> None:
 
     dusk = sa.Plate(cropped("iss023e057948"), "cover", 0.35, 0.42)
     night = sa.Plate(cropped("iss023e058455"), "cover", 0.55, 0.50)
-    day = sa.Plate(PLATES / "iss034e048455.jpg", "cover", 0.50, 0.40)
+    # Row 3 sits on a dark framing of the night plate (aurora out of frame): over the bright day plate the unlit
+    # side of the keyed rock showed see-through lace (Chief review of v01, fix 2).
+    night_low = sa.Plate(cropped("iss023e058455"), "cover", 0.15, 0.80)
     dusk_low = sa.Plate(lowered(cropped("iss023e057948")), "cover", 0.40, 0.70)
-    for pl in (dusk, night, day, dusk_low):
+    for pl in (dusk, night, night_low, dusk_low):
         pl.im = grade(pl.im)
 
     omni_src0 = 1.6
@@ -248,7 +255,7 @@ def main() -> None:
     rows = [
         (0.0, stay, "iss023e057948 + Veo rock", dusk, 1.0, 1.08, (0.0, 2.6, 1.0, 0, -120), "rock"),
         (stay, close_end + 0.15, "Omni Orbit + geo satellite", None, 1.0, 1.0, None, "orbit"),
-        (close_end + 0.15, TITLE[0], "iss034e048455 + Veo rock", day, 1.0, 1.06, (2.6, 4.8, 0.82, 60, -330), "rock"),
+        (close_end + 0.15, TITLE[0], "iss023e058455 dark framing + Veo rock", night_low, 1.0, 1.06, (2.6, 4.8, 0.82, 60, -330), "rock"),
         (TITLE[0], TITLE[1], "iss023e058455 + Veo rock (title)", night, 1.04, 1.12, (4.8, 8.0, 0.9, 40, 60), "rock"),
         (TITLE[1], loop_start, "iss023e057948 lowered, band dimmed (DATA overlay)", dusk_low, 1.0, 1.08, None,
          "plate"),
@@ -348,9 +355,16 @@ def main() -> None:
         run(["cp", p, stems_dir / p.name])
 
     final = OUT / f"{FINAL_STEM}.mp4"
+    mix = "[1:a][2:a][3:a]amix=inputs=3:duration=first:normalize=0,"
+    probe = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", raw, "-i", vo_stem, "-i", bed_stem,
+                            "-i", sfx_stem, "-filter_complex",
+                            mix + "loudnorm=I=-14:TP=-1:LRA=11:print_format=json[a]", "-map", "[a]", "-f", "null", "-"],
+                           capture_output=True, text=True, check=True).stderr
+    m = json.loads(probe[probe.rindex("{"):probe.rindex("}") + 1])
+    norm = (f"loudnorm=I=-14:TP=-1:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+            f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
     run(["ffmpeg", "-y", "-v", "error", "-i", raw, "-i", vo_stem, "-i", bed_stem, "-i", sfx_stem,
-         "-filter_complex", "[1:a][2:a][3:a]amix=inputs=3:duration=first:normalize=0,"
-                            "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]",
+         "-filter_complex", mix + norm + ",aresample=48000[a]",
          "-map", "0:v", "-map", "[a]", *shorts_encode_args(fps=FPS), "-t", f"{total:.3f}",
          "-movflags", "+faststart", final])
 
@@ -385,7 +399,7 @@ def main() -> None:
         "cuts": cuts,
         "audio": {"bed": str(BED.relative_to(REPO)), "bed_gain": BED_GAIN, "bed_hold_gain": BED_HOLD_GAIN,
                   "sfx": f"rumble at 0 s (gain {RUMBLE_GAIN}), one tick at {tick_at:.2f} s",
-                  "stems": str(stems_dir.relative_to(REPO)), "mix": "-14 LUFS, -1.5 dBTP"},
+                  "stems": str(stems_dir.relative_to(REPO)), "mix": "two-pass loudnorm -14 LUFS, -1 dBTP"},
         "grain": "noise=alls=4:allf=t", "spend": "none",
         "plates": "plates_v01.json (graded: contrast 1.10, colour 1.18)",
     }
