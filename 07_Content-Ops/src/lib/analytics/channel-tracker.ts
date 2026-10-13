@@ -128,7 +128,8 @@ export const SOURCE_NAMES: Record<string, string> = {
   YT_SEARCH: "YouTube search",
   RELATED_VIDEO: "Suggested",
   BROWSE: "Browse / home",
-  SUBSCRIBER: "Subscriptions",
+  // The API's SUBSCRIBER is Studio's "Browse features": home page plus the subscriptions feed.
+  SUBSCRIBER: "Browse features",
   YT_CHANNEL: "Channel page",
   PLAYLIST: "Playlists",
   NOTIFICATION: "Notifications",
