@@ -15026,10 +15026,10 @@
       "stage": "edit",
       "after": "J0225",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-13T04:17Z",
+      "eta": "2026-10-13T06:17Z",
       "created_by": "cursor",
       "created_at": "2026-10-13T02:57Z",
       "result": "",
@@ -15093,6 +15093,11 @@
           "at": "2026-10-13T04:06Z",
           "by": "chief",
           "what": "reopened: Chief frame review 030_apophis_short_v01 (5ada7283): FIX -> v02. Hook, Orbit beat (on model, not at frame 0), title window 9-14 s, captions UK and synced, gates all good; keep them. Five fixes: (1) DATA row 5 (14-19.46 s) does not read: the scale overlay sits on the bright daytime plate iss034e048455, so the thin ring arc and rock path vanish and a tiny Earth disc over a photo of Earth confuses. Put row 5 on a dark plate (black space with the limb low in frame, e.g. the dusk plate iss023e057948 graded down or the night plate iss023e058455), or darken+blur the plate inside the 656-1264 band by about 60%, so \"rock passes inside the satellite ring\" reads in 1 s. If the arc/path still read thin on dark, scale the overlay about 1.3x in assembly; only if that fails, open a small Codex chart job for thicker strokes (ring >=6 px, path >=5 px, Earth disc >=180 px). (2) Rock key leaves a dark smudge halo round the rock on bright plates (very visible on row 3 at ~7 s): composite with a real alpha (luma key to alpha, black fully transparent) or move rows 3/5 to darker plates; no darkening fringe on any row. (3) Left-edge glow line on the dusk rows (0-3.7 s, 19.5 s-end, plus a thin arc above the rock at ~24 s) is visible: keep the current loose key but add a garbage matte (rock alpha dilated ~10-12 px, everything outside it zeroed) so the outer rim line goes without tightening the key; re-run the visor gate honestly, no gate threshold changes. (4) Tail: last word ends 21.56 s but the cut runs to 24.57 s, ~3 s with no words. End about 0.4 s after \"watch\" (~22.0 s) so it loops straight into frame 0; row 6 may run 2.5 s. (5) Mix measures -15.8 LUFS integrated, -1.3 dBTP; spec is -14 LUFS / -1 dBTP: normalise to -14 +/-0.5. Re-gate (gate_shorts_open --air-date 2026-10-22, sfx_kit level), export v02 with meta/frames, park for Chief. No spend."
+        },
+        {
+          "at": "2026-10-13T04:17Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly"
