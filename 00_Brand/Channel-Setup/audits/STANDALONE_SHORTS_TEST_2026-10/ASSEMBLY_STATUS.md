@@ -129,6 +129,21 @@ The `.mp4`s and frame sheets are on the Mini only (git-ignored). The Orbit ~1 s 
 
 Chief's J0164 review: S1–S7 PASS, S8 cut PASS, S8 cover FAIL. `cover_owb_sa_s8_voyager1.jpg` is now drawn on the reframed frame 0 (cx 0.66, boom against the Milky Way, the visor fix kept), so cover and frame 0 match. Words unchanged (**26** BILLION / KM, no title repeat). `thumb_preview.py short` re-run (both crops read), MANIFEST updated. No spend.
 
+## J0200: Orbit Omni takes for S1–S4 (Cursor, 13 Oct 05:20)
+
+`_mint_sa_orbit_s1-s4_v01.py` made one take each with `gemini-omni-flash-preview` at location `global` (9:16, 720×1280, 10 s, on the Vertex promo pool). The live read beforehand showed the Developer Program credit at £75.39 and the Free Trial at £0.10. Omni takes are unpriced and billed late, so each is logged at £0 under `OWB:SA`. Each start frame is a 9:16 crop of a plate picked above, with Orbit cut from ORBIT_REF and its `orbit_source` sidecar written. None shows a whole planet. The takes are in `/private/tmp/owb_sa_shorts/orbit/` (media, not in git), and the report is `orbit_gen_report_s1-s4_v01.json`.
+
+S1, S3 and S4 were refused at submission (`content_blocked`), so no take was made and nothing was billed. Each got one plainer resubmit (as on 022, J0012), and all three went through. The first attempt is in `orbit_gen_report_s1-s4_v01_attempt1.json`.
+
+| Short | Start plate | Take | Usable | Notes for the KEEP pick |
+|---|---|---|---|---|
+| S1 Mercury | PIA11351 (1.25×) | `orbit_sa_s1_mercury_omni_v01.mp4` | 0–10 s | Orbit drifts down and settles on the ridge, with light top right and the wrist tap at about 5–6 s. On-model. The ground reads close up and Moon-like. |
+| S2 Neptune | PIA00058 (2.15×) | `orbit_sa_s2_neptune_omni_v01.mp4` | **0–2.5 s only** | The streaks race past and Orbit is blown sideways. From about 3 s the clouds turn Earth-like over dark terrain and Orbit grows large; at about 4 s an open mouth appears (off-model). Use only the first ~2.5 s, or fall back to the opening plate. |
+| S3 ISS | iss054e002538 | `orbit_sa_s3_iss_omni_v01.mp4` | 0–10 s | Orbit holds the module, the sunrise flares on the horizon at about 4 s, he lifts a hand to his visor, then smiles. On-model. |
+| S4 Uranus | PIA01391 crop (1.83×) | `orbit_sa_s4_uranus_omni_v01.mp4` | 0–8 s | Frost forms over the shell and Orbit turns to look back, with a tiny point of light at about 8 s. Orbit grows larger in frame from about 5 s. |
+
+All four takes carry model audio, which the assembler strips (silent picture). No second take without Chief. Next: the KEEP pick (Chief), then J0163 drops each one into its ~1 s `orbit_slot` and re-runs the gates.
+
 ## Next
 
 - Chief's final OK on the 8, then J0164 (covers set in Studio, schedule Private).
