@@ -12926,13 +12926,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-13T01:24Z",
-      "eta": "2026-10-13T03:24Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "parked for Chief: HOS 002 Test & Compare finished 11 Oct 19:35 with no winner (all watch-time shares '–', A visible to all; HOS 3eb60ad AB_TEST_RESULT_2026-10-13.md). Decide: run a fresh 2-variant test (e.g. A vs C) or leave A. SUBSCRIBER relabel done (OWB 13ab121a).",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -12968,6 +12968,11 @@
           "at": "2026-10-13T01:31Z",
           "by": "cursor",
           "what": "step 4 of 4 done: done, parked for Chief"
+        },
+        {
+          "at": "2026-10-13T01:31Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: HOS 002 Test & Compare finished 11 Oct 19:35 with no winner (all watch-time shares '–', A visible to all; HOS 3eb60ad AB_TEST_RESULT_2026-10-13.md). Decide: run a fresh 2-variant test (e.g. A vs C) or leave A. SUBSCRIBER relabel done (OWB 13ab121a)."
         }
       ],
       "kind": "studio",
