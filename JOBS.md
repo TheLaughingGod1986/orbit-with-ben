@@ -41,6 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0216 | mini | open (after J0164) | – | – | studio · OWB standalone Shorts: Private+scheduled uploads (J0164 OK) |  |
 | J0218 | any | open | – | – | listing · HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs | 6135034321 |
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
+| J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
 
 Recently finished:
 

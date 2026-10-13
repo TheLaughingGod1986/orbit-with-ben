@@ -1,5 +1,5 @@
 {
-  "next_id": 220,
+  "next_id": 221,
   "jobs": [
     {
       "id": "J0001",
@@ -14119,6 +14119,33 @@
         }
       ],
       "kind": "chief"
+    },
+    {
+      "id": "J0220",
+      "title": "022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**022 Sun, after go-public: set the Studio Related video on the three scheduled Shorts to the long `h8HGfyShEHI`.** This is the \"18 Oct go-live job\" that J0091 handed the Shorts' Related video to (Claude #6084230818). It was never queued. J0192 found it missing on 13 Oct (read-only; all three read \"Related video: None\").\n\n- Runs once `h8HGfyShEHI` is **public** (Sun 18 Oct 17:00Z / 18:00 London). Studio's picker only lists public videos.\n- **Deadline: before Mon 19 Oct 10:30Z (11:30 London),** when the first Short airs.\n- Shorts: `y-SPHQ0-VjQ` (Mon 19 Oct 10:30Z), `n_4XskX0yZk` (Wed 21 Oct 10:30Z), `2e-giqFmfy8` (Fri 23 Oct 10:30Z).\n- Orbit Studio on CDP **9223**. Check the channel is Orbit With Ben first. Pattern: `02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/10_Shorts/monday_moon_cover/upload/_finish_monday_cdp.py` (the Related video block).\n- Change only the Related video field. Leave file, schedule, privacy, title, description and cover as they are. No pinned comment on a Short. No Test & Compare \"Continue\".\n- Reopen after reload, check each one shows the long's title, and write `02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/RELATED_SET_<date>.json`. Post the result on #99.\n- If the long isn't public by 18:30 London, block and post on #99 (`parked for Chief: 022 long not public`).\n- No spend.\n",
+      "ref": "J0192",
+      "film": "",
+      "stage": "",
+      "after": "J0219",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-13T01:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T01:23Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [
