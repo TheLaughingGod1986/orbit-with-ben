@@ -10810,10 +10810,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T06:57Z",
-      "eta": "2026-10-13T10:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11127,6 +11127,11 @@
           "at": "2026-10-13T07:10Z",
           "by": "cursor",
           "what": "step 6 of 8 done: 7e: v04 chain running (NAS archive, intro, QA)"
+        },
+        {
+          "at": "2026-10-13T07:10Z",
+          "by": "cursor",
+          "what": "released: Step 7e (9d83892e): QA v03 = sfx_kit level PASS (QA now feeds noise-floored stems: ebur128 skips digital silence, which misaligned VO vs bed by ~9 min), 013 5-stretch FAIL fixed (plates v05: intro_01 007@319.8, closing_01a 007@544.6, closing_02 021@384.4). One picture FAIL left: intro_05 021@60 near-black 27.86 < 28, re-picked to 021@63.6 in plates v06. music_gate gap FAIL is the bed vs films' narration-heavy audio: needs a Chief ruling (status note 7d). Running detached: tmux J0167-v04 (final_v02 -> NAS with sha256 verify, then segments_v06 intro, final_v04 reusing v03 pieces, qa_compilation_v04), log ~/_desk/logs/J0167-v04.log, done ~/_desk/logs/J0167-v04.done (~45 min). Never start a second copy. Next run: done=0 -> read qa_compilation_v04/qa_summary.json, eye intro_01/05, then park for Chief at J0168; done=3 -> NAS manifest mismatch, final_v02 kept local."
         }
       ],
       "kind": "assembly",
