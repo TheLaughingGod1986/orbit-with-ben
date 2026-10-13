@@ -1,5 +1,5 @@
 {
-  "next_id": 225,
+  "next_id": 226,
   "jobs": [
     {
       "id": "J0001",
@@ -14738,6 +14738,33 @@
         }
       ],
       "kind": "review"
+    },
+    {
+      "id": "J0225",
+      "title": "030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**030 Apophis standalone Short: the one DATA overlay (split from J0223, kind `chart`).** SCRIPT_v01 visual must, `02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/SCRIPT_v01.md`.\n\n- **What:** a scale bar. Our own real-body Earth (Blue Marble crop, never a flat disc) at the bottom of the band; a thin satellite ring arc above it labelled **36,000 KM**; the rock's path drawing in *under* the ring, labelled **32,000 KM**. One idea: the rock passes inside the satellite ring.\n- **Numbers (MUST QUOTE, NASA Apophis Facts, SCRIPT_v01 row A2):** 32,000 km from the surface; geosynchronous satellites ~36,000 km altitude. Labels exactly \"36,000 KM\" and \"32,000 KM\" (UK captions; KM in caps is fine).\n- **Render:** one transparent overlay clip for its own row, `code_graphic_030short_r05_scale_v01.mov` (ProRes 4444 with alpha, 1080×1920, 30 fps, **3.6 s**), plus a PNG still of its fully built frame. Put the script at `10_Shorts/standalone_apophis/_build_code_graphic_scale_v01.py` and the render in `10_Shorts/standalone_apophis/code_graphics_v01/` (media is git-ignored).\n- **Timing inside the clip:** 0–0.4 s Earth + ring fade/slide in; at **0.5 s** the \"36,000 KM\" label ticks in (the assembler lands this on the spoken \"36,000\", raw VO 18.58 s, earlier after pause trim); 0.5–1.6 s the rock path draws in under the ring and \"32,000 KM\" ticks in; hold to 3.2 s; 3.2–3.6 s fade out. Nothing holds still over 4 s. Write the tick times into a sidecar JSON so the assembler can lay the house tick (≤1 per 0.5 s).\n- **House rules:** inside the 16:9 centre band of the 9:16 frame (y 656–1264), label lines 11–12% of that band's height (~67–73 px cap height), Arial Black white with dark outline, ≤4 words per label, no black slab or panel (it rides over the moving rock/limb plate), no sourced chart or diagram.\n- **Leave:** assembly to the next job. No spend.\n",
+      "ref": "J0223",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-13T02:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T02:56Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [
