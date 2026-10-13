@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0226 | mini | open (after J0225) | – | – | 030 edit · assembly · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 | J0227 | cloud | open | – | – | review · 030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196) |  |
 | J0228 | cloud | open (after J0199) | – | – | listing · HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z |  |
-| J0229 | mini | open | – | – | assembly · Mini disk full (121 MB free): move old render scratch to the NAS |  |
+| J0229 | mini | claimed | cursor | 2026-10-13T06:14Z | assembly · Mini disk full (121 MB free): move old render scratch to the NAS |  |
 
 Recently finished:
 
