@@ -89,6 +89,12 @@ Built under Chief's bed ruling (#99 6134719677, rule a): music-only stretches fr
 
 **Step 6 now waits only on J0207** (chapter cards and the countdown timeline).
 
+## Film bodies (step 6a, Cursor, 13 Oct 01:05Z)
+
+J0207 (cards and timeline) is still open with no claim: Codex is up, but the relay wakes no worker while Grok is Chief, so the chart job hasn't been dispatched. To keep step 6 moving, the part that doesn't need graphics is rendering now. `_render_film_bodies_v01.py` cuts each master from 0 to its `out` in `COMPILATION_TRIMS_v01.json` (021's subscribe-beat cut stays `apply: false`), scales it lanczos to 1920×1080 at 30 fps and writes `body_<film>.mp4` (h264 crf 17), a `body_<film>.wav` film-audio stem (48 kHz, level untouched) and `bodies.json` (duration, planned length, integrated LUFS and true peak per body) to `/private/tmp/owb_comp/bodies_v01/`. It runs detached: tmux `J0167-bodies`, log `~/_desk/logs/J0167-bodies.log`, done file `~/_desk/logs/J0167-bodies.done`. Loudness is only measured here; step 6b normalises the whole cut to about −14 LUFS.
+
+**Step 6b** (the final join: segments v03 + bed v01 + cards and timeline + bodies, 0.5–1.5 s crossfades at film ends, chapter list) waits only on J0207.
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.
