@@ -12783,13 +12783,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-13T01:19Z",
-      "eta": "2026-10-13T03:19Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "parked for Chief: PASS on SOURCES.md (a21efe56; row 11 'large suitcase' FLAG, row 20 Juno lightning SOFTEN; live film, no VO change) and OK to push the Sources line to -jmMROGoZCM: cd 07_Content-Ops && npx tsx --env-file=.env scripts/redescribe-videos.ts --file ../05_Analytics/live_fixes/2026-10-13_descriptions.json (dry run matched once)",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -12830,6 +12830,11 @@
           "at": "2026-10-13T01:20Z",
           "by": "cursor",
           "what": "step 4 of 5 done: SOURCES.md committed; description dry run OK"
+        },
+        {
+          "at": "2026-10-13T01:20Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: PASS on SOURCES.md (a21efe56; row 11 'large suitcase' FLAG, row 20 Juno lightning SOFTEN; live film, no VO change) and OK to push the Sources line to -jmMROGoZCM: cd 07_Content-Ops && npx tsx --env-file=.env scripts/redescribe-videos.ts --file ../05_Analytics/live_fixes/2026-10-13_descriptions.json (dry run matched once)"
         }
       ],
       "kind": "facts",
