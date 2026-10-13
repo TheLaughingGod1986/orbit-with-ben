@@ -10908,10 +10908,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-13T11:17Z",
+      "eta": "2026-10-13T15:17Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11250,6 +11250,11 @@
           "at": "2026-10-13T10:41Z",
           "by": "codex",
           "what": "released: Step 6/8 retained. Overnight v04 exit 3 was NAS AppleDouble metadata only: all 47 payload hashes match. Fresh payload verification then archive+v04 render+QA running detached: tmux J0167-v04-resume; log /Users/benjaminoats/_desk/logs/J0167-v04-resume.log; marker /Users/benjaminoats/_desk/logs/J0167-v04-resume.done. Missing marker means running: never duplicate. Exit 0: inspect qa_compilation_v04 and intro 01/05, then park music gap and protected decisions for Chief. Evidence PR #172, commit 9afc4082. HOS pull blocked by pre-existing local changes; untouched."
+        },
+        {
+          "at": "2026-10-13T11:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
