@@ -15473,6 +15473,11 @@
           "at": "2026-10-13T07:12Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-10-13T07:13Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex is down too; next in its chain: gemini on its default"
         }
       ],
       "kind": "assembly",
@@ -15489,8 +15494,8 @@
         "status": "claimed",
         "by": "cursor"
       },
-      "for": "codex",
-      "model": "gpt-6.1-sol"
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0227",
