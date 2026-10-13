@@ -40,3 +40,7 @@ The timeline builds across the film, so it counts as one DATA moment. No two cod
 3. **WHO years:** Tholen's birth year (1955) has no source yet. Bernardi's has only a secondary source.
 4. **Picture:** the Chelyabinsk dash-cam licence, before the shot list.
 5. **Hand-off line:** the last line hands off to 031 once 031 is locked (a one-line pickup).
+
+## J0222 (Cursor on Claude, 13 Oct 2026)
+
+Line 58 softened per Chief (J0197, #99 6136803753): "only about once in a thousand years" -> "only every few thousand years on average" (NASA Apophis Facts wording; same 7 words). TEACH note and SOURCES row 14 updated with the NASA URL and candidate quote; row stays TO VERIFY until Gemini confirms it on the page. review:script still PASS 94.5.
