@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-20T10:30:00.000Z",
+    "platformPostId": "lbW2iQ9YvqA",
+    "platformUrl": "https://youtu.be/lbW2iQ9YvqA",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-20T10:30:00.000Z; thumbnail skipped: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The thumbnail can't be set for the specified video. The request might not be properly authorized.\",\n    \"errors\": [\n      {\n        \"message\": \"The thumbnail can't be set for the specified video. The request might not be properly authorized.\",\n        \"domain\": \"youtube.thumbnail\",\n        \"reason\": \"forbidden\",\n        \"location\": \"videoId\",\n        \"locationType\": \"parameter\"\n      }\n    ]\n  }\n}\n",
+    "responseSummary": "{\"id\":\"lbW2iQ9YvqA\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-20T10:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/11_Upload-Package",
+    "sha256": "1b3bd3e01c5da1da06448ffe429a487adedb661fd42cf44f6aea6a23c65f9416",
+    "title": "Saturn's Rings Are on a Clock",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01_cover.jpg",
+    "scheduledAt": "2026-10-20T10:30:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/codex-J0188/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace0db7daa3ebd6c4907cee"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace0db706d8b03d5e00e3c3"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace0db806d8b03d5e00e3ee"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "lbW2iQ9YvqA",
+    "studioEditUrl": "https://studio.youtube.com/video/lbW2iQ9YvqA/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Primary thumbnail",
+        "detail": "Upload primary thumb in Studio or re-run with --thumbnail",
+        "studioUrlHint": "https://studio.youtube.com/video/lbW2iQ9YvqA/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/lbW2iQ9YvqA/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/lbW2iQ9YvqA/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/lbW2iQ9YvqA/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: set Related video to 55AEQwvs36g (that week’s Thursday long only). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/lbW2iQ9YvqA/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/lbW2iQ9YvqA/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (lbW2iQ9YvqA). 2 required Studio finish step(s) remain."
+  }
+}
