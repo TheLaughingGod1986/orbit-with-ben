@@ -198,6 +198,16 @@ class Rock:
         solid = Image.fromarray(((np.asarray(sil) != 128) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))
         fill = np.asarray(solid).astype(np.float32) / 255.0
         alpha = np.maximum(np.clip((lum - 10.0) / 12.0, 0.0, 1.0), fill) * garb
+        # Keep only the body connected to the rock: early Veo frames carry a detached rim streak at the top left.
+        m4 = Image.fromarray(((alpha > 0.2) * 255).astype(np.uint8)).resize((W // 4, H // 4), Image.NEAREST)
+        on = np.argwhere(np.asarray(m4) > 0)
+        if len(on):
+            sy, sx = on[np.argmin(((on - [H // 8, W // 8]) ** 2).sum(axis=1))]
+            ImageDraw.floodfill(m4, (int(sx), int(sy)), 128)
+            body = Image.fromarray(((np.asarray(m4) == 128) * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5))
+            body = body.filter(ImageFilter.GaussianBlur(1.0)).resize((W, H), Image.BILINEAR)
+            alpha = alpha * (np.asarray(body).astype(np.float32) / 255.0)
+            rock = rock * (np.asarray(body).astype(np.float32) / 255.0)[..., None]
         rgba = np.dstack([rock, alpha * 255.0]).clip(0, 255).astype(np.uint8)
         im = Image.fromarray(rgba, "RGBA")
         if scale != 1.0:
@@ -241,7 +251,7 @@ def main() -> None:
     ov_end = ov_start + len(ov_frames) / FPS
     loop_start = round(ov_end, 3)
 
-    dusk = sa.Plate(cropped("iss023e057948"), "cover", 0.35, 0.42)
+    dusk = sa.Plate(cropped("iss023e057948"), "cover", 0.30, 0.50)
     night = sa.Plate(cropped("iss023e058455"), "cover", 0.55, 0.50)
     # Row 3 sits on a dark framing of the night plate (aurora out of frame): over the bright day plate the unlit
     # side of the keyed rock showed see-through lace (Chief review of v01, fix 2).
@@ -253,13 +263,13 @@ def main() -> None:
     omni_src0 = 1.6
     # (start, end, label, plate, zoom_from, zoom_to, rock: (src_from, src_to, scale, dx, dy) or None, kind)
     rows = [
-        (0.0, stay, "iss023e057948 + Veo rock", dusk, 1.0, 1.08, (0.0, 2.6, 1.0, 0, -120), "rock"),
+        (0.0, stay, "iss023e057948 + Veo rock", dusk, 1.0, 1.08, (0.0, 2.6, 0.9, 0, -240), "rock"),
         (stay, close_end + 0.15, "Omni Orbit + geo satellite", None, 1.0, 1.0, None, "orbit"),
         (close_end + 0.15, TITLE[0], "iss023e058455 dark framing + Veo rock", night_low, 1.0, 1.06, (2.6, 4.8, 0.82, 60, -330), "rock"),
         (TITLE[0], TITLE[1], "iss023e058455 + Veo rock (title)", night, 1.04, 1.12, (4.8, 8.0, 0.9, 40, 60), "rock"),
         (TITLE[1], loop_start, "iss023e057948 lowered, band dimmed (DATA overlay)", dusk_low, 1.0, 1.08, None,
          "plate"),
-        (loop_start, total, "iss023e057948 + Veo rock (loop to frame 0)", dusk, 1.08, 1.0, (2.6, 0.0, 1.0, 0, -120),
+        (loop_start, total, "iss023e057948 + Veo rock (loop to frame 0)", dusk, 1.08, 1.0, (2.6, 0.0, 0.9, 0, -240),
          "loop"),
     ]
 
