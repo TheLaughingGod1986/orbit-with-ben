@@ -40,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
 | J0216 | mini | open (after J0164) | – | – | studio · OWB standalone Shorts: Private+scheduled uploads (J0164 OK) |  |
 | J0218 | any | open | – | – | listing · HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs | 6135034321 |
+| J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 
 Recently finished:
 
