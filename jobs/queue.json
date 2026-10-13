@@ -13313,13 +13313,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-13T02:16Z",
-      "eta": "2026-10-13T04:16Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "parked for Chief: Gemini facts pass done (HOS PR #311, stacked on #295): OK 35, PARTIAL 1 (row 15, already hedged), FLAG 0. Needs Claude's CLAUDE_QUOTE_CHECK on MUST QUOTE rows + topic/script lock before VO",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13345,6 +13345,11 @@
           "at": "2026-10-13T02:34Z",
           "by": "cursor",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-10-13T02:34Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Gemini facts pass done (HOS PR #311, stacked on #295): OK 35, PARTIAL 1 (row 15, already hedged), FLAG 0. Needs Claude's CLAUDE_QUOTE_CHECK on MUST QUOTE rows + topic/script lock before VO"
         }
       ],
       "kind": "facts",
