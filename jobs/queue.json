@@ -12992,13 +12992,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-13T01:24Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-13T03:22Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: HOS 002 Test & Compare finished 11 Oct 19:35 with no winner (all watch-time shares '–', A visible to all; HOS 3eb60ad AB_TEST_RESULT_2026-10-13.md). Decide: run a fresh 2-variant test (e.g. A vs C) or leave A. SUBSCRIBER relabel done (OWB 13ab121a).",
+      "result": "LEAVE A (HOS #180 6136801998): 002 T&C finished inconclusive (all shares –); keep current title+thumbnail. No fresh test. SUBSCRIBER relabel already done (13ab121a). No Studio change.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13039,6 +13039,16 @@
           "at": "2026-10-13T01:31Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 002 Test & Compare finished 11 Oct 19:35 with no winner (all watch-time shares '–', A visible to all; HOS 3eb60ad AB_TEST_RESULT_2026-10-13.md). Decide: run a fresh 2-variant test (e.g. A vs C) or leave A. SUBSCRIBER relabel done (OWB 13ab121a)."
+        },
+        {
+          "at": "2026-10-13T03:22Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-13T03:22Z",
+          "by": "chief",
+          "what": "done: LEAVE A (HOS #180 6136801998): 002 T&C finished inconclusive (all shares –); keep current title+thumbnail. No fresh test. SUBSCRIBER relabel already done (13ab121a). No Studio change."
         }
       ],
       "kind": "studio",
@@ -13048,7 +13058,8 @@
         "at": "2026-10-13T01:31Z",
         "by": "cursor",
         "note": "done, parked for Chief"
-      }
+      },
+      "done_ref": "6136801998"
     },
     {
       "id": "J0194",
@@ -13232,13 +13243,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-13T02:08Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-13T03:22Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: lock the Apophis standalone Short script v01 (83b66c5a, 10_Shorts/standalone_apophis/SCRIPT_v01.md, 51 words), title, slot Thu 22 Oct 11:30, and whether it counts in the 8-Short test. Also FLAG: 030 long line 58 'once in a thousand years' vs NASA 'every few thousand years'.",
+      "result": "PASS lock (OWB #99 6136803753): SCRIPT_v01 + title 'An Asteroid Will Skim Past Earth on Friday the 13th' + slot Thu 22 Oct 11:30 UK. Extra story Short (S1–S8 pack already filled); still measured. Long FLAG: SOFTEN line 58 to NASA 'every few thousand years' on next long pass. Next: VO/picture/DATA/assembly jobs.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13269,6 +13280,16 @@
           "at": "2026-10-13T02:11Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: lock the Apophis standalone Short script v01 (83b66c5a, 10_Shorts/standalone_apophis/SCRIPT_v01.md, 51 words), title, slot Thu 22 Oct 11:30, and whether it counts in the 8-Short test. Also FLAG: 030 long line 58 'once in a thousand years' vs NASA 'every few thousand years'."
+        },
+        {
+          "at": "2026-10-13T03:22Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-13T03:22Z",
+          "by": "chief",
+          "what": "done: PASS lock (OWB #99 6136803753): SCRIPT_v01 + title 'An Asteroid Will Skim Past Earth on Friday the 13th' + slot Thu 22 Oct 11:30 UK. Extra story Short (S1–S8 pack already filled); still measured. Long FLAG: SOFTEN line 58 to NASA 'every few thousand years' on next long pass. Next: VO/picture/DATA/assembly jobs."
         }
       ],
       "kind": "script",
@@ -13278,7 +13299,8 @@
         "at": "2026-10-13T02:11Z",
         "by": "cursor",
         "note": "committed 83b66c5a; parked for Chief lock"
-      }
+      },
+      "done_ref": "6136803753"
     },
     {
       "id": "J0198",
