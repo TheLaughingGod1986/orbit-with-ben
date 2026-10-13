@@ -16,7 +16,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0172 | any | open (after J0218) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
-| J0175 | mini | blocked | cursor | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
+| J0175 | mini | blocked | chief | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0181 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0184 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
@@ -36,11 +36,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
 | J0224 | cloud | open (after J0198) | – | – | review · HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS) |  |
-| J0225 | mini | blocked | codex | – | chart · 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) | J0223 |
 | J0226 | mini | open (after J0225) | – | – | 030 edit · assembly · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 
 Recently finished:
 
+- J0225 done: 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) (PASS visual. Labels 36,000 KM / 32,000 KM; ProRes 4444 alpha 1080x1920 3.6s; ticks 0.5/1.1s; band + tech check OK. #171 squash-merged 74a3f02d. Media on Mini code_graphics_v01/. Unblocks J0226.)
 - J0223 done: 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) (Picture inputs done (d18cdf1a): Veo Fast rock tumble 9:16 8 s (£0.60 est.), Omni Orbit geo-satellite beat 9:16 (rock sweeps past, Orbit looks up/ducks/peers; on model in 6-frame sheet; Omni unpriced, billed late), flash-image satellite plate (£0.03), NASA limb plates iss023e057948/iss023e058455/iss034e048455 (plates_v01.json). Split: DATA bar -> J0225 (chart, Codex); assembly + gate -> next job (after J0225).)
 - J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
 - J0221 done: 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) (Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands.)
@@ -50,4 +50,3 @@ Recently finished:
 - J0213 done: HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines) (Chief KEEP S5-S8 VO v01 (HOS #180 6133703986): word for word v02 lines 5-8, -19.6 to -20.4 LUFS; pause trim ~0.4 s at assembly; captions keep UK spelling. J0214 plates clear.)
 - J0212 done: HOS standalone Shorts S5: exact quote that the pigeons were blamed (lock condition before S5 VO) (done)
 - J0209 done: HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates) (PASS HOOK/BAND/PHONE ×4; wording KEEP; #301 merged; HOS #180 6133005305. Cursor to attach covers on package.)
-- J0208 done: HOS: land Chief-PASSed VO PRs #271 (009), #272 (010), #268 (007 Shorts): lock, PIPELINE, board, merge main (done)
