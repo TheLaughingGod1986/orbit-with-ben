@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0204 | mini | open | – | – | chart · HOS compilation: timeline x4 + chapter cards x6 code graphics |  |
 | J0205 | any | open | – | – | listing · Upload packages for 3 Chief-PASSed Shorts (OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01, HOS 005 s04 'Is the Heart a Pump?'): listing + manifest, no publishAt (prereq for J0188) |  |
 | J0206 | mini | blocked | cursor | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
-| J0207 | mini | open | – | – | for codex · chart · `gpt-6-astra` · OWB compilation: 5 chapter cards + countdown timeline x3 code graphics |  |
+| J0207 | mini | claimed | codex | 2026-10-13T04:13Z | for codex · chart · `gpt-6-astra` · OWB compilation: 5 chapter cards + countdown timeline x3 code graphics |  |
 | J0210 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | open | – | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
 | J0216 | mini | open (after J0164) | – | – | studio · OWB standalone Shorts: Private+scheduled uploads (J0164 OK) |  |
