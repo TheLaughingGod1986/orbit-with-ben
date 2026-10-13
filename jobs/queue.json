@@ -13056,10 +13056,10 @@
       "stage": "",
       "after": "J0205",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-13T17:41Z",
+      "eta": "2026-10-13T19:41Z",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
       "result": "",
@@ -13148,6 +13148,11 @@
           "at": "2026-10-13T17:38Z",
           "by": "codex",
           "what": "released: 2/4 complete preserved. No uploads or state changes this run. HOS Studio CDP 9460 /json/list responds, but raw WebSocket connection to HOS dashboard times out after 8s; cannot verify scheduled calendar. Resume only after browser recovery; HOS s04 remains NOT uploaded. OWB already scheduled: 23KZK7OjsEE 2026-10-17T10:30Z; lbW2iQ9YvqA 2026-10-20T10:30Z, do not re-upload. Prior worktrees /private/tmp/codex-J0188 and /private/tmp/codex-J0188-hos. Shared pulls blocked by local file collisions; sparse queue worktree /private/tmp/codex-one-job-sparse-20261013 used. Disk 100%, 128Mi free; failed full checkout /private/tmp/codex-one-job-20261013-b left in place, no deletion. No detached render started."
+        },
+        {
+          "at": "2026-10-13T17:41Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
