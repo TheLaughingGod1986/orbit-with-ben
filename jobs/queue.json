@@ -1,5 +1,5 @@
 {
-  "next_id": 229,
+  "next_id": 230,
   "jobs": [
     {
       "id": "J0001",
@@ -15289,6 +15289,33 @@
         }
       ],
       "kind": "listing"
+    },
+    {
+      "id": "J0229",
+      "title": "Mini disk full (121 MB free): move old render scratch to the NAS",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Data volume 100% (121 MB free, 13 Oct 05:48 London). It killed J0140's Part 05 harvest (ENOSPC writing PART05_FLOW_MINT_LOG_v01.json) and the tmux server (J0167-v02 session also gone). /private/tmp is 44 GB: owb_comp 29 GB (J0167 compilation: bed_v01/v02, final_v01/v02, bodies_v01, dl, graphics_v01), hos_comp_v01 2.5 GB, owb_sa_shorts 2.2 GB, venus023_full_work_v05e 1.5 GB, light024_full_work_v05d 1.2 GB. Per AGENTS.md Render scratch: keep only current + previous per film; move the version before last to /Volumes/data/mac-mini-archive/mini-tmp-scratch/<date>/ (rsync, sha256 manifest both sides, delete local only on full match, MOVED_TO_NAS.txt). Check with J0167's owner before moving anything owb_comp it still reads. Never delete on the NAS. Target: 20 GB+ free. Candidate for jobs.py urgent (Claude/Chief).",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-13T04:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T04:49Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
