@@ -13538,10 +13538,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-13T04:22Z",
+      "eta": "2026-10-13T06:22Z",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
       "result": "",
@@ -13570,6 +13570,11 @@
           "at": "2026-10-13T03:46Z",
           "by": "cursor",
           "what": "released: Gemini (agy) running detached in tmux j0199-gemini, worktree /tmp/j0199-wt (HOS branch cursor/j0199-atom-sources, prompt _j0199_gemini_prompt.md), log ~/_desk/logs/j0199-gemini.log, done-file ~/_desk/logs/j0199-gemini.done. Next run: when .done exists, check 004.../01_Script/SOURCES.md for completeness (every spoken claim, verbatim quote + URL, spot-check quotes), commit via HOS PR, then add a listing job for the Sources block; Chief PASS before it goes in the description. Don't start a second agy."
+        },
+        {
+          "at": "2026-10-13T04:22Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "facts",
