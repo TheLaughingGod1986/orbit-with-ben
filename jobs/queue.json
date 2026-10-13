@@ -8225,13 +8225,13 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-13T10:34Z",
-      "eta": "2026-10-13T14:34Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "",
+      "result": "parked for Chief: detached recovery settled with P5:02 FAIL before Create; select/KEEP cover fallback, KEEP P4:08 t2, decide missing paid P4:06 t2; 10-credit balance change unverified. Evidence HOS PR #310; progress 3/6; no retry or spend this run.",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8542,6 +8542,11 @@
           "at": "2026-10-13T10:36Z",
           "by": "codex",
           "what": "step 3 of 6 done: settled detached FAIL verified; no duplicate; evidence and board parked for Chief"
+        },
+        {
+          "at": "2026-10-13T10:36Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: detached recovery settled with P5:02 FAIL before Create; select/KEEP cover fallback, KEEP P4:08 t2, decide missing paid P4:06 t2; 10-credit balance change unverified. Evidence HOS PR #310; progress 3/6; no retry or spend this run."
         }
       ],
       "kind": "video",
