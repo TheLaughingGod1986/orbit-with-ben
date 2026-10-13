@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0218 | any | open | – | – | listing · HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs | 6135034321 |
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
-| J0223 | mini | open (after J0221) | – | – | 030 edit · video · 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) |  |
+| J0223 | mini | claimed | cursor | 2026-10-13T05:51Z | 030 edit · video · 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) |  |
 | J0224 | cloud | open (after J0198) | – | – | review · HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS) |  |
 
 Recently finished:
