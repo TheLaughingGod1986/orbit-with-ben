@@ -33,7 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0226 | mini | blocked | cursor | – | 030 edit · assembly · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 | J0227 | cloud | open | – | – | review · 030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196) |  |
 | J0228 | cloud | open (after J0199) | – | – | listing · HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z |  |
-| J0230 | mini | claimed | cursor | 2026-10-13T07:32Z | image · HOS 005 Short s04 'Is the Heart a Pump?' cover (covers_v02 style), set in its package manifest (prereq for J0188) |  |
+| J0230 | mini | claimed | cursor | 2026-10-13T06:57Z | image · HOS 005 Short s04 'Is the Heart a Pump?' cover (covers_v02 style), set in its package manifest (prereq for J0188) |  |
 
 Recently finished:
 
