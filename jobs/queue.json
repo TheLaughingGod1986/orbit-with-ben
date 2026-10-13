@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T02:38Z",
-      "eta": "2026-10-13T06:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8367,6 +8367,11 @@
           "at": "2026-10-13T02:39Z",
           "by": "cursor",
           "what": "step 2 of 6 done: claimed: minting the other 27 plates"
+        },
+        {
+          "at": "2026-10-13T02:50Z",
+          "by": "cursor",
+          "what": "released: Batch running: tmux j0140-mint (Part 04 then Part 05, --stills, t1), log ~/_desk/logs/j0140-mint.log, .done when finished. Minter now STOPs if a take is charged above its board price (HOS PR #310 branch, pushed). Start read 24,940 (90 below the 25,030 after the probe: not this job, check who). P4:05 t1 charged 100 (correct) but harvest timed out at 360 s (Quality still rendering); paid, project_url in PART04_FLOW_MINT_LOG_v01.json; spent FAILs are never retried. Next run: read .done; then add a 0-credit harvest-only pass over spent FAILs with a project_url (longer wait ~900 s for Quality), contact sheets, post on desk #180 to grok for KEEP. Never start a second copy while j0140-mint is alive."
         }
       ],
       "kind": "video",
