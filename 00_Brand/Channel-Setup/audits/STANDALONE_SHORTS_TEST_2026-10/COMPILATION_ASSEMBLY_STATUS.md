@@ -101,6 +101,27 @@ J0207 (cards and timeline) is still open with no claim: Codex is up, but the rel
 
 **J0207 dispatched (Cursor, 13 Oct 02:15Z).** J0207 had sat open for about 6 h. Cursor rerouted it to Codex on `gpt-6-astra` (its primary) and started Codex on it detached: tmux `J0207-codex`, log `~/_desk/logs/J0207-codex.log`, done file `~/_desk/logs/J0207-codex.done`, prompt `~/_desk/logs/J0207-codex-prompt.md`. Codex claimed it at 02:14Z. Step 6b starts once J0207 is done and `graphics_v01/` holds the five cards, the three timelines and `ticks.json`.
 
+## Final join (step 6b, Cursor, 13 Oct 03:25Z)
+
+J0207 landed (Codex, `a44b2e24`/`a08c0cd0`): five chapter cards over their films' own blurred plates and three alpha countdown timelines, with tick cues in `ticks.json`. The sheet checks out: labels sit in a band clear of the subject, over real moving plates, never a black slab.
+
+`_assemble_compilation_v01.py` builds the whole film. It's running detached: tmux `J0167-final`, log `~/_desk/logs/J0167-final.log`, done file `~/_desk/logs/J0167-final.done`, output `/private/tmp/owb_comp/final_v01/owb_compilation_v01.mp4`. **Never start a second copy.**
+- **Order:** intro, card 1, 021, bridge 1, card 2, 013, bridge 2, card 3, 019, bridge 3, card 4, 007, bridge 4, card 5, 005, closing. **Length 47:37.**
+- **Picture:** the timelines are laid over bridge 1, bridge 3 and the closing at VO zero (+0.6 s). Each piece is cut to its middle frames and each join is its own xfade clip, all with the same x264 settings, then joined with the concat demuxer (a 16-input xfade graph would buffer whole films in RAM on a 16 GB Mini). Joins are 0.4 s at the cards, 1.2 s from 013, 019 and 007 into their bridges, and 0.5 s from 021 and 005, which keep only 0.2–0.3 s after their last word, so the next VO never lands on it.
+- **Audio:** built in numpy, one stem at a time, overlap-added with linear crossfades matching each picture join. Segments are VO + bed v01 + SFX, with a house tick at each timeline marker (bridge 1 at 3.66 s, bridge 3 at 1.58 s, closing at 12.44 s). Each card has a 3 s bed piece from the 013/019 outro stretches plus the low rumble at −20 dB, at about −24 LUFS. Every film keeps its own audio. Each piece is set to −14 LUFS integrated (019 needed +10.5 dB, 007 +6.9 dB), and the master goes through a −1.5 dBFS limiter. The VO, SFX, bed and film stems are written beside the master for the gates.
+- **Chapters for the description** (`final_v01/chapters.txt`):
+  - 0:00 Nothing in the sky is permanent
+  - 0:53 The Rings Are Leaving
+  - 10:12 The Moon Lets Go
+  - 18:47 Two Galaxies Meet
+  - 29:19 What Dead Stars Leave
+  - 39:04 The Last Light
+- `final_v01/cuts.json` is the whole-film cut list: segment plate rows, cards and timelines as code graphics, and each film body as one row.
+
+**Next run (step 7):** once `J0167-final.done` reads 0, check the log ends `done …`, look at a contact sheet across every join, then run the gates: `picture_qa.py` (the film bodies are one row each, so reuse of a film window in the intro may WARN or FAIL as "footage back on a stretch"; that's the plan's by-design reuse, at most twice per window, for Chief to rule), `polish_gate`, `music_gate` (bed checks waived by Chief's rule (a); gap and length enforced), and `sfx_kit.py level` on each segment. Bridges 2 and 4 carry no SFX, by design, so "present" fails there. Then step 8: park for Chief at J0168.
+
+**End screen:** there's no end card yet. The closing holds about 2.6 s and fades, and YouTube's end-screen elements are set in Studio at J0168 (last 5–20 s, over the closing's hold). If Chief wants a longer hold for the end screen, the closing's tail can be lengthened without re-rendering the films.
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.
