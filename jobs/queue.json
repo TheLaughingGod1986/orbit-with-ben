@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T04:03Z",
-      "eta": "2026-10-13T08:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8402,6 +8402,11 @@
           "at": "2026-10-13T04:03Z",
           "by": "cursor",
           "what": "step 3 of 6 done: P5 minting: 6 of 18 submitted"
+        },
+        {
+          "at": "2026-10-13T04:04Z",
+          "by": "cursor",
+          "what": "released: Check-in 05:05 London, 0 cr spent this run. tmux j0140-mint2 still alive (pid 2716, Part 05 --stills at P5:07 of 18; log ~/_desk/logs/j0140-mint2.log, .done when finished; it chains --harvest for 04 and 05 at the end). Part 04 all 10 submitted (5 harvested earlier, P4:13-16 await the chained harvest). P5:01-06 submitted, all harvest-timeout FAILs pending the chained harvest. Flow 24,270; 12 Part 05 plates left = 480 cr at board price -> ~23,790 at the end. Watch: P5:02/03 balance moves (24300->24200->24200->24290) suggest one Quality take was refunded or never charged; after harvest, any plate with no clip AND no charge is an unspent FAIL the minter may retry; a paid one is never retaken. Next run: if .done exists read it, run --part NN --harvest (0 cr) for misses, contact sheets to desk #180 for grok KEEP, then Part 04/05 roughs. Never start a second copy while j0140-mint2 is alive."
         }
       ],
       "kind": "video",
