@@ -14503,13 +14503,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-13T02:35Z",
-      "eta": "2026-10-13T03:00Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-13T02:22Z",
-      "result": "",
+      "result": "parked for Chief: OK VO loudness (-20.2 LUFS raw) + duration 24.56 s before picture; take 4d793e9b, thread 6136965014",
       "history": [
         {
           "at": "2026-10-13T02:22Z",
@@ -14540,6 +14540,11 @@
           "at": "2026-10-13T02:36Z",
           "by": "cursor",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-13T02:36Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: OK VO loudness (-20.2 LUFS raw) + duration 24.56 s before picture; take 4d793e9b, thread 6136965014"
         }
       ],
       "kind": "vo",
