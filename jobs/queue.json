@@ -11752,13 +11752,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "chief",
-      "since": "2026-10-13T03:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "waiting on inputs (not Chief): J0204 timeline×4 + chapter cards×6 still open; 006 picture J0140 (willow/leaf/cross plates, master ETA 25 Oct). Chief ruled Bridge 3: KEEP Lister at the basin 325.5–330.3 (not spray). Prior rulings stand: sunlit ward Bridge 2; trim 001/002/003 end cards; 004 bed reuse logged exception; no made-up 002 element symbols. Reopen when J0204 lands (006 can stay placeholder until master).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11939,6 +11939,11 @@
           "at": "2026-10-13T03:14Z",
           "by": "chief",
           "what": "blocked: waiting on inputs (not Chief): J0204 timeline×4 + chapter cards×6 still open; 006 picture J0140 (willow/leaf/cross plates, master ETA 25 Oct). Chief ruled Bridge 3: KEEP Lister at the basin 325.5–330.3 (not spray). Prior rulings stand: sunlit ward Bridge 2; trim 001/002/003 end cards; 004 bed reuse logged exception; no made-up 002 element symbols. Reopen when J0204 lands (006 can stay placeholder until master)."
+        },
+        {
+          "at": "2026-10-13T04:40Z",
+          "by": "chief",
+          "what": "reopened: J0204 PASS; resume assembly with 006 placeholder until J0140"
         }
       ],
       "kind": "assembly"
@@ -13911,13 +13916,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-13T04:30Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-13T04:40Z",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-12T19:32Z",
-      "result": "parked for Chief: review ten compilation graphics and stills sheet on HOS branch codex/j0204-compilation-graphics (6f11000); machine gates pass, existing base board-sync check fails; approve before J0175 integration",
+      "result": "PASS (Chief 13 Oct ~05:40 London): ten graphics KEEP. Six-name close readable; Built From Air desk KEEP until J0140 willow. #313 squash-merge pending/done. Media Mini graphics_v01/. Desk HOS #180 6138372644. Unblocks J0175 (006 placeholder OK).",
       "history": [
         {
           "at": "2026-10-12T19:32Z",
@@ -13953,16 +13958,25 @@
           "at": "2026-10-13T04:36Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review ten compilation graphics and stills sheet on HOS branch codex/j0204-compilation-graphics (6f11000); machine gates pass, existing base board-sync check fails; approve before J0175 integration"
+        },
+        {
+          "at": "2026-10-13T04:40Z",
+          "by": "chief",
+          "what": "reopened: Chief PASS review"
+        },
+        {
+          "at": "2026-10-13T04:40Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-13T04:40Z",
+          "by": "chief",
+          "what": "done: PASS (Chief 13 Oct ~05:40 London): ten graphics KEEP. Six-name close readable; Built From Air desk KEEP until J0140 willow. #313 squash-merge pending/done. Media Mini graphics_v01/. Desk HOS #180 6138372644. Unblocks J0175 (006 placeholder OK)."
         }
       ],
       "kind": "chart",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-13T04:36Z",
-        "by": "codex",
-        "note": "Graphics, gates and review evidence committed; ready for Chief"
-      }
+      "done_ref": "6f11000"
     },
     {
       "id": "J0205",
