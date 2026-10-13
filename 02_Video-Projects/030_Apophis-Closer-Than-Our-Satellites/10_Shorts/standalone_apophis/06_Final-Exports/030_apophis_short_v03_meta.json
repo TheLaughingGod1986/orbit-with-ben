@@ -1,0 +1,133 @@
+{
+  "job": "J0226",
+  "air_provisional": "2026-10-22",
+  "title_on_screen": "An Asteroid Will Skim Past Earth on Friday the 13th",
+  "file": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v03.mp4",
+  "frames": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v03_frames.jpg",
+  "sha256": "0efe7399f74b65b6439c4a4d5394d3617f0b2b00b9e952e0c8cec3052dcdcb45",
+  "duration_s": 22.066667,
+  "vo": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/02_Voiceover/trim/030_apophis_short_vo_v01_trim.wav",
+  "pause_trim": {
+    "source_s": 24.56,
+    "trimmed_s": 21.7,
+    "segments": 8,
+    "max_gap_s": 0.4
+  },
+  "words": 46,
+  "last_word_end_s": 21.56,
+  "spoken": "An asteroid will fly closer than some of our satellites. Stay, and I'll show you how close. Apophis, 340 metres wide, passes 32,000 kilometres up on Friday the 13th, 2029. Many satellites orbit at 36,000. It will miss. Half the world can look up and watch",
+  "hook": "CLOSER THAN / SATELLITES (yellow SATELLITES), 0-2.2 s",
+  "title_window_s": [
+    9.0,
+    14.0
+  ],
+  "overlay": {
+    "file": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/code_graphics_v01/code_graphic_030short_r05_scale_v01.mov",
+    "row": "code_graphic_030short_r05_scale_v01",
+    "window_s": [
+      15.86,
+      19.46
+    ],
+    "spoken": "Many satellites orbit at 36,000",
+    "word_36000_s": 16.36
+  },
+  "cuts": [
+    {
+      "row": 1,
+      "start_s": 0.0,
+      "end_s": 3.74,
+      "picture": "iss023e057948 + Veo rock",
+      "kind": "rock",
+      "zoom": [
+        1.0,
+        1.08
+      ],
+      "veo_src_s": [
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "row": 2,
+      "start_s": 3.74,
+      "end_s": 5.87,
+      "picture": "Omni Orbit + geo satellite",
+      "kind": "orbit",
+      "zoom": [
+        1.0,
+        1.0
+      ],
+      "omni_src_s": [
+        1.6,
+        3.73
+      ]
+    },
+    {
+      "row": 3,
+      "start_s": 5.87,
+      "end_s": 9.0,
+      "picture": "iss023e058455 dark framing + Veo rock",
+      "kind": "rock",
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "veo_src_s": [
+        2.6,
+        4.8
+      ]
+    },
+    {
+      "row": 4,
+      "start_s": 9.0,
+      "end_s": 14.0,
+      "picture": "iss023e058455 + Veo rock (title)",
+      "kind": "rock",
+      "zoom": [
+        1.04,
+        1.12
+      ],
+      "veo_src_s": [
+        4.8,
+        8.0
+      ]
+    },
+    {
+      "row": 5,
+      "start_s": 14.0,
+      "end_s": 19.46,
+      "picture": "iss023e057948 lowered, band dimmed (DATA overlay)",
+      "kind": "plate",
+      "zoom": [
+        1.0,
+        1.08
+      ]
+    },
+    {
+      "row": 6,
+      "start_s": 19.46,
+      "end_s": 22.06,
+      "picture": "iss023e057948 + Veo rock (loop to frame 0)",
+      "kind": "loop",
+      "zoom": [
+        1.08,
+        1.0
+      ],
+      "veo_src_s": [
+        2.6,
+        0.0
+      ]
+    }
+  ],
+  "audio": {
+    "bed": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+    "bed_gain": 0.065,
+    "bed_hold_gain": 0.35,
+    "sfx": "rumble at 0 s (gain 0.45), one tick at 16.36 s",
+    "stems": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v03_stems",
+    "mix": "two-pass loudnorm -14 LUFS, -1 dBTP"
+  },
+  "grain": "noise=alls=4:allf=t",
+  "spend": "none",
+  "plates": "plates_v01.json (graded: contrast 1.10, colour 1.18)"
+}
