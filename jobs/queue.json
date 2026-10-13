@@ -15311,10 +15311,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T05:04Z",
-      "eta": "2026-10-13T06:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T04:49Z",
       "result": "",
@@ -15403,6 +15403,11 @@
           "at": "2026-10-13T05:12Z",
           "by": "cursor",
           "what": "step 2 of 4 done: final_v01 13 GB copying to NAS"
+        },
+        {
+          "at": "2026-10-13T05:12Z",
+          "by": "cursor",
+          "what": "released: Still running: tmux j0229-archive (/private/tmp/j0229_archive.sh), log ~/_desk/logs/J0229-archive.log; it is done when the log ends 'DONE' (no .done file). It is copying owb_comp/final_v01 (13 GB; 7.6 GB on the NAS at 06:17), then checks sha256 and removes the local copy. Already moved and checked: owb_comp segments_v01/v02, 024 rough v04/v05/v05b, plus 3 git worktrees whose jobs were done. Expect about 17-18 GB free when it finishes. Everything else in /private/tmp is current + previous (about 18 GB, mostly owb_comp final_v02 9.7G + bodies_v01 3.1G, hos_comp 2.5G, owb_sa_shorts 2.2G), so reaching 20 GB+ means touching non-scratch space or J0167's live v02: Chief to decide. Next run: when DONE, check the log for VERIFY FAIL and run df."
         }
       ],
       "kind": "assembly",
