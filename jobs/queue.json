@@ -1,5 +1,5 @@
 {
-  "next_id": 218,
+  "next_id": 219,
   "jobs": [
     {
       "id": "J0001",
@@ -11075,13 +11075,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-13T00:02Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-13T00:51Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: KEEP/FAIL on S7 v02 (01 holds through 'The air was spent' with a seamless same-plate push from 5.14 s, 03 crop_no_flame at 10.42 s, 04, loop 01; 02 dropped). gate_shorts_open PASS 19.97 s, sfx_kit level PASS; merge HOS #309 (05eb0fa); desk HOS #180 6134992207. No spend, no upload.",
+      "result": "Chief KEEP S7 v02 (HOS #180 6135034321); #309 merged -> main ff51e70. All 8 HOS standalone Shorts assembled and kept: S1-S3 v01/v02, S4 v04, S5/S6/S8 v01, S7 v02; covers J0209 (S1-S4) + J0217 (S5-S8). Next: listings (J0211 S1-S4 + S5-S8 listing job) and packages, then J0172 Chief review + schedule. No upload.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11347,6 +11347,16 @@
           "at": "2026-10-13T00:04Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: KEEP/FAIL on S7 v02 (01 holds through 'The air was spent' with a seamless same-plate push from 5.14 s, 03 crop_no_flame at 10.42 s, 04, loop 01; 02 dropped). gate_shorts_open PASS 19.97 s, sfx_kit level PASS; merge HOS #309 (05eb0fa); desk HOS #180 6134992207. No spend, no upload."
+        },
+        {
+          "at": "2026-10-13T00:51Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-13T00:51Z",
+          "by": "chief",
+          "what": "done: Chief KEEP S7 v02 (HOS #180 6135034321); #309 merged -> main ff51e70. All 8 HOS standalone Shorts assembled and kept: S1-S3 v01/v02, S4 v04, S5/S6/S8 v01, S7 v02; covers J0209 (S1-S4) + J0217 (S5-S8). Next: listings (J0211 S1-S4 + S5-S8 listing job) and packages, then J0172 Chief review + schedule. No upload."
         }
       ],
       "kind": "assembly",
@@ -11356,7 +11366,8 @@
         "at": "2026-10-13T00:04Z",
         "by": "cursor",
         "note": "S7 v02 built, gates PASS, HOS #309"
-      }
+      },
+      "done_ref": "ff51e70"
     },
     {
       "id": "J0172",
@@ -13953,6 +13964,33 @@
       ],
       "kind": "chart",
       "done_ref": "6134925830"
+    },
+    {
+      "id": "J0218",
+      "title": "HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Same format as J0211 (S1-S4). Files: shorts_v01 S5/S6/S8 v01, S7 hos_sa_s7_priestley_mint_v02.mp4 (main ff51e70); covers J0217 (#308 7d6af66). Locked titles from HOS PR #291 SCRIPTS_v01 (autocomplete check). UK spelling. Each description points to the full HOS channel per Buffer rules where relevant. No upload, no publishAt. Park for Chief.",
+      "ref": "6135034321",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-13T00:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T00:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [
