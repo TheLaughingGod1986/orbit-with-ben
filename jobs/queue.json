@@ -14566,13 +14566,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-13T02:37Z",
-      "eta": "2026-10-13T03:07Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-13T02:22Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-13T02:22Z",
@@ -14598,6 +14598,11 @@
           "at": "2026-10-13T02:38Z",
           "by": "cursor",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-10-13T02:38Z",
+          "by": "cursor",
+          "what": "done: done"
         }
       ],
       "kind": "script",
@@ -14606,7 +14611,8 @@
         "of": 3,
         "at": "2026-10-13T02:38Z",
         "by": "cursor"
-      }
+      },
+      "done_ref": "c0476c0b"
     }
   ],
   "focus": [
