@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-17T10:30:00.000Z",
+    "platformPostId": "23KZK7OjsEE",
+    "platformUrl": "https://youtu.be/23KZK7OjsEE",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-17T10:30:00.000Z; thumbnail skipped: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The thumbnail can't be set for the specified video. The request might not be properly authorized.\",\n    \"errors\": [\n      {\n        \"message\": \"The thumbnail can't be set for the specified video. The request might not be properly authorized.\",\n        \"domain\": \"youtube.thumbnail\",\n        \"reason\": \"forbidden\",\n        \"location\": \"videoId\",\n        \"locationType\": \"parameter\"\n      }\n    ]\n  }\n}\n",
+    "responseSummary": "{\"id\":\"23KZK7OjsEE\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-17T10:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/11_Upload-Package",
+    "sha256": "f51b094ab7bac245c931a2cd954a947bbaae23e0fbf9d17a792d82c8f41f7d86",
+    "title": "Jupiter Has No Ground",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/08_Covers/cover_jupiter_no_crust_v01.jpg",
+    "scheduledAt": "2026-10-17T10:30:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/codex-J0188/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/08_Covers/cover_jupiter_no_crust_v01.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace0d5c56d0e5a755e71082"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace0d5c95a61d8e02c607e6"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace0d5da449b60ba8c95a39"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "23KZK7OjsEE",
+    "studioEditUrl": "https://studio.youtube.com/video/23KZK7OjsEE/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Primary thumbnail",
+        "detail": "Upload primary thumb in Studio or re-run with --thumbnail",
+        "studioUrlHint": "https://studio.youtube.com/video/23KZK7OjsEE/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/23KZK7OjsEE/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/23KZK7OjsEE/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/23KZK7OjsEE/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: set Related video to -jmMROGoZCM (that week’s Thursday long only). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/23KZK7OjsEE/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/23KZK7OjsEE/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (23KZK7OjsEE). 2 required Studio finish step(s) remain."
+  }
+}
