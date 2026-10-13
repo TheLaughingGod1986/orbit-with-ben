@@ -11065,13 +11065,13 @@
       "stage": "",
       "after": "J0203",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-13T00:02Z",
-      "eta": "2026-10-13T03:02Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: KEEP/FAIL on S7 v02 (01 holds through 'The air was spent' with a seamless same-plate push from 5.14 s, 03 crop_no_flame at 10.42 s, 04, loop 01; 02 dropped). gate_shorts_open PASS 19.97 s, sfx_kit level PASS; merge HOS #309 (05eb0fa); desk HOS #180 6134992207. No spend, no upload.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11332,6 +11332,11 @@
           "at": "2026-10-13T00:04Z",
           "by": "cursor",
           "what": "step 4 of 4 done: S7 v02 built, gates PASS, HOS #309"
+        },
+        {
+          "at": "2026-10-13T00:04Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: KEEP/FAIL on S7 v02 (01 holds through 'The air was spent' with a seamless same-plate push from 5.14 s, 03 crop_no_flame at 10.42 s, 04, loop 01; 02 dropped). gate_shorts_open PASS 19.97 s, sfx_kit level PASS; merge HOS #309 (05eb0fa); desk HOS #180 6134992207. No spend, no upload."
         }
       ],
       "kind": "assembly",
