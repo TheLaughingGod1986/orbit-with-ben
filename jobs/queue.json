@@ -8225,13 +8225,13 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-13T01:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "parked for Chief: KEEP or FAIL on the P4:10 t2 probe (Flow still + Veo Fast i2v, 10 cr), on desk #180 comment 6136148107. Harvest is fixed by hover fetch (HOS PR #310, 0 cr). On KEEP, the other 27 plates (1,260 cr) mint in detached batches. Flow 25,030.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8352,16 +8352,14 @@
           "at": "2026-10-13T01:34Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: KEEP or FAIL on the P4:10 t2 probe (Flow still + Veo Fast i2v, 10 cr), on desk #180 comment 6136148107. Harvest is fixed by hover fetch (HOS PR #310, 0 cr). On KEEP, the other 27 plates (1,260 cr) mint in detached batches. Flow 25,030."
+        },
+        {
+          "at": "2026-10-13T02:21Z",
+          "by": "chief",
+          "what": "reopened: Chief KEEP P4:10 only_green t2 (HOS #180 6136802509). Mint other 27 plates (~1,260 cr) still-then-i2v, detached batches per part, ai_spend log, stop before paid top-up. Floor 0. Flow ~25,030."
         }
       ],
-      "kind": "video",
-      "progress": {
-        "step": 2,
-        "of": 6,
-        "at": "2026-10-13T01:34Z",
-        "by": "cursor",
-        "note": "P4:10 t2 posted for KEEP"
-      }
+      "kind": "video"
     },
     {
       "id": "J0141",
