@@ -10795,10 +10795,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-13T06:06Z",
+      "eta": "2026-10-13T10:06Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11077,6 +11077,11 @@
           "at": "2026-10-13T04:28Z",
           "by": "cursor",
           "what": "released: Step 7b (eae6eb44): 013@140 verified, so bridge1_02b starts at 139.0 (canyon only). Bed v02 swaps the sidechain duck for a computed dip (gap fix); sfx level PASS on all 6 segments. Card beds wait 0.5 s (39:03 fix). Assembler --seg/--bed. Timeline overlay rows marked as riding on plates in the QA cuts (push-jitter false positive; Chief to note). Chain running detached: tmux J0167-v02 (final_v02 then qa_compilation_v02), log ~/_desk/logs/J0167-v02.log, done ~/_desk/logs/J0167-v02.done. Never start a second copy. Next run: if .done is 0, read qa_compilation_v02/qa_summary.json and joins_sheet.jpg; all PASS means step 8, park for Chief (J0168)."
+        },
+        {
+          "at": "2026-10-13T06:06Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
