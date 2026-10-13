@@ -10745,10 +10745,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-13T03:47Z",
+      "eta": "2026-10-13T07:47Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10992,6 +10992,11 @@
           "at": "2026-10-13T03:08Z",
           "by": "cursor",
           "what": "released: Step 6b running (4d7302d6): J0207 graphics in; _assemble_compilation_v01.py renders the whole film (47:37, 16 pieces, chapters 0:00/0:53/10:12/18:47/29:19/39:04) to /private/tmp/owb_comp/final_v01/owb_compilation_v01.mp4 with VO/SFX/bed/film stems, cuts.json, chapters.txt, assembly.json. Detached: tmux J0167-final, log ~/_desk/logs/J0167-final.log, done ~/_desk/logs/J0167-final.done. Never start a second copy. Next run: if .done is 0 and the log ends 'done', contact-sheet every join, then step 7 gates (picture_qa, polish_gate, music_gate, sfx_kit level), then park for Chief (J0168)."
+        },
+        {
+          "at": "2026-10-13T03:47Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
