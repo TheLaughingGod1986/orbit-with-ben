@@ -13700,9 +13700,23 @@
           "at": "2026-10-12T20:30Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-10-13T02:12Z",
+          "by": "cursor",
+          "what": "rerouted to codex on gpt-6-astra: chart primary is up; relay doesn't wake workers while Grok is Chief; J0167 step 6b waits on it"
         }
       ],
-      "kind": "chart"
+      "kind": "chart",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6-astra"
     },
     {
       "id": "J0208",
