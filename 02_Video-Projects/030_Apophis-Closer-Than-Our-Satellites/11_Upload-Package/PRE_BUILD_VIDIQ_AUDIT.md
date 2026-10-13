@@ -89,10 +89,13 @@ cd 07_Content-Ops && npm run review:script -- --file <path-to-script.md>
 
 Pull outliers for the primary topic (≤80K–mid sub channels preferred). Ignore meme/movie noise.
 
+**Neighbour pass (J0196, 13 Oct 2026):** full tables in `NEIGHBOURS_J0196.md`. Three direct Apophis videos at ≈1M+ (4.48M, 1.53M, 1.10M) plus a 2M–81M planetary-defence pool. Exact-title check FLAG: two public videos already use the working title word for word.
+
 | Outlier / pattern | Views / multiple | Steal (structure) | Do **not** copy |
 |-------------------|------------------|-------------------|-----------------|
-| | | journey / assumption-flip / roadmap | dread / fearbait |
-| | | | |
+| `hxy_Z6qp59g` Apophis + NASA's plan | 1.53M | mission angle (OSIRIS-APEX) | "risky plan" tease |
+| `c-yXhTmSSro` Apophis "Ground Zero" | 4.48M | dated story, people | impact / dread framing |
+| `4Wrc4fHSCpw` asteroids to worry about | 81M | how we find and track them | — |
 
 **Patterns we will use in this script:**
 
