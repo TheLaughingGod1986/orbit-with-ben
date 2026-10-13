@@ -1,0 +1,49 @@
+{
+  "note": "J0223 NASA plates for the 030 Apophis Short (images-api.nasa.gov, public domain). Files on the Mini in /private/tmp/owb_030_short/plates/ (1920 px 'large' renditions). None of these is an opening background in the last 10 Shorts (S3 used iss059e027932 / iss040e080833 / iss061e123823).",
+  "plates": [
+    {
+      "nasa_id": "iss023e057948",
+      "use": "frame 0 + last ~3 s: Earth limb at dusk (orange/blue airglow band) behind the Veo rock",
+      "size": [
+        1920,
+        1314
+      ],
+      "upscale_9x16_full_height": 1.46,
+      "page": "https://images.nasa.gov/details/iss023e057948"
+    },
+    {
+      "nasa_id": "iss023e058455",
+      "use": "9-14 s title beat: the rock crossing the night side (green aurora over the dark Earth)",
+      "size": [
+        1920,
+        1314
+      ],
+      "upscale_9x16_full_height": 1.46,
+      "page": "https://images.nasa.gov/details/iss023e058455"
+    },
+    {
+      "nasa_id": "iss034e048455",
+      "use": "spare: portrait day-side limb for the 'half the world can look up' line",
+      "size": [
+        1277,
+        1920
+      ],
+      "upscale_9x16_full_height": 1.0,
+      "page": "https://images.nasa.gov/details/iss034e048455"
+    }
+  ],
+  "rejected": [
+    {
+      "nasa_id": "iss030-s-001",
+      "why": "mission patch"
+    },
+    {
+      "nasa_id": "iss040e062704",
+      "why": "ISS hardware fills frame"
+    },
+    {
+      "nasa_id": "iss031e123071",
+      "why": "flat day limb, weaker than iss023e057948"
+    }
+  ]
+}
