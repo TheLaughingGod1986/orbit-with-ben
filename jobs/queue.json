@@ -15261,13 +15261,13 @@
       "stage": "edit",
       "after": "J0225",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-13T06:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T02:57Z",
-      "result": "parked for Chief: v03 frame review (rock matte rows 3-4 rebuilt; gate_shorts_open PASS 22.07 s, sfx_kit level PASS, -14.5 LUFS / -0.9 dBTP). Export 06_Final-Exports/030_apophis_short_v03.mp4 + _frames.jpg; commits d9bf24bb, b989283c",
+      "result": "",
       "history": [
         {
           "at": "2026-10-13T02:57Z",
@@ -15438,15 +15438,14 @@
           "at": "2026-10-13T06:48Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: v03 frame review (rock matte rows 3-4 rebuilt; gate_shorts_open PASS 22.07 s, sfx_kit level PASS, -14.5 LUFS / -0.9 dBTP). Export 06_Final-Exports/030_apophis_short_v03.mp4 + _frames.jpg; commits d9bf24bb, b989283c"
+        },
+        {
+          "at": "2026-10-13T06:58Z",
+          "by": "chief",
+          "what": "reopened: Chief v03 frame review FIX -> v04 (OWB #99 6140127290): 1) hard vertical cut + dark source-border block at right frame edge rows 4-5 (~10-12.5 s); 2) blocky quarter-res matte on shadow edge, dark ghost smudges outside rock, floating specks - full-res/edge-aware matte, drop islands, fade unlit side inside silhouette; 3) pale grey 8-12 px halo on lit limb - tighten, 2-3 px feather. Optional: trim Veo ease-in. Re-gate, export v04 + 6.7/10/12.5 s edge crops, park for Chief. No spend."
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-13T06:48Z",
-        "by": "cursor"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0227",
