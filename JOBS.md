@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0184 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0188 | mini | open (after J0205) | – | – | studio · Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?' | 6131998795 |
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
-| J0196 | gemini | open | – | – | facts · 030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows) |  |
+| J0196 | gemini | claimed | cursor | 2026-10-13T05:28Z | facts · 030 Apophis: neighbour pass + Gemini facts pass on SOURCES.md v01 (24 rows) |  |
 | J0199 | gemini | open | – | – | facts · HOS Atom GHZDsiH7L7A: facts job -> SOURCES.md, then Sources block before 15 Oct |  |
 | J0200 | mini | open | – | – | video · OWB standalone Shorts S1-S4: Orbit Omni inserts at ~1 s (4 short takes) | 6125827198 |
 | J0204 | mini | open | – | – | chart · HOS compilation: timeline x4 + chapter cards x6 code graphics |  |
