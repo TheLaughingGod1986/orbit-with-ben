@@ -77,6 +77,18 @@ The intro and closing were re-rendered to `/private/tmp/owb_comp/segments_v03/` 
 
 **Step 6 (full assembly) waits on two things:** J0207 (chapter cards and the countdown timeline; chart job, still open) and Chief's bed ruling (#99 6132695926).
 
+## Bed v01 (step 5e, Cursor, 13 Oct 00:15Z)
+
+Built under Chief's bed ruling (#99 6134719677, rule a): music-only stretches from the films' own trimmed outros, laid under the new material only. No spend, nothing generated. Builder: `_build_compilation_bed_v01.py`. Plan: `05_Music/compilation_bed_plan.json` (every source file, time range and the segment it sits under). Media: `/private/tmp/owb_comp/bed_v01/` on the Mini.
+
+- **Stretches.** A is 013's moonlit-sea outro, 499.2–514.5 s (15.3 s). B is 019's galaxy outro, 610.4–617.8 s (7.4 s). Both windows open after the film's last word and close before the master's own fade-out. **Clean check:** local Whisper medium.en on each lifted stretch heard only the tail of the last word ("perspective.", "forever."), which ends before each window opens. The voice band (300–3400 Hz) stays a steady 6–9 dB under the full band through both windows, with no speech pattern.
+- **Laying.** A and B alternate, with 2 s triangular crossfades at every join (loop points included). Each segment opens on a different stretch or offset. There's a 0.4 s fade-in, a 0.6 s fade-out (2.6 s on the closing), and a sidechain duck under the segment's VO stem.
+- **Checks, all six segments:** `sfx_kit.py level` bed and speech lines PASS. While the VO speaks the bed sits a median 18–23 LU under it (the 10 LU floor holds for every 0.3 s run). Each bed is exactly its segment's length. The longest stretch more than 15 dB under the bed's median (music_gate's 3 s rolling gap test) is 0 s.
+- `sfx_kit.py level` still FAILs "present" on the bridges and the closing, because their SFX stems are empty until the J0207 cards and timeline bring their ticks at step 6. The intro passes in full (2 hits).
+- **By ear:** Cursor can't listen. VO + bed + SFX preview mixes at −14 LUFS are at `/private/tmp/owb_comp/bed_v01/<segment>_preview.wav` for Chief or Claude to hear before step 6.
+
+**Step 6 now waits only on J0207** (chapter cards and the countdown timeline).
+
 ## Next steps (4–8)
 
 4. Code graphics: five chapter cards and the countdown timeline (Bridge 1, Bridge 3, Closing), each its own render. Queued as **J0207** (`chart`, Codex `gpt-6-astra` first), rendering to `/private/tmp/owb_comp/graphics_v01/`. Step 5 can start on the intro, bridge and closing plates while it runs.

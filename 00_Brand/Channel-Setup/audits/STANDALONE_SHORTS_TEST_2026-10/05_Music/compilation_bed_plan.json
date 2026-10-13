@@ -1,0 +1,270 @@
+{
+  "job": "J0167",
+  "by": "cursor",
+  "ruling": "Chief #99 6134719677 rule (a): music-only stretches from 013 and 019 outros; reused/own/brief waived for this compilation, gap and length enforced",
+  "method": "stretches alternate with 2.0 s triangular crossfades (loop points too); 0.4 s fade in, 0.6 s fade out (2.6 s on the closing); sidechain duck under the segment VO; sfx_kit.py level per segment",
+  "clean_check": "Whisper medium.en on each lifted stretch heard only the tail of the film's last word before the window; voice-band (300-3400 Hz) envelope steady at 6-9 dB under the full band through each window",
+  "stretches": {
+    "A": {
+      "film": "013",
+      "from": 499.2,
+      "to": 514.5,
+      "why": "013 moonlit-sea outro; last word 'perspective.' ends 498.04, master fades from 514.5",
+      "len": 15.3,
+      "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4"
+    },
+    "B": {
+      "film": "019",
+      "from": 610.4,
+      "to": 617.8,
+      "why": "019 galaxy outro; last word 'forever?' ends 610.10, master fades from 618.0",
+      "len": 7.4,
+      "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4"
+    }
+  },
+  "segments": [
+    {
+      "segment": "intro",
+      "length_s": 54.13,
+      "file": "/private/tmp/owb_comp/bed_v01/intro_bed.wav",
+      "vo_lufs": -20.4,
+      "bed_gain_db": -10.2,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 21.5,
+        "least": 5.7
+      },
+      "level_report": "SFX level PASS: VO -20.4 LUFS, SFX -49.8 LUFS, 2 hits",
+      "pieces": [
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 499.2,
+          "to": 514.5,
+          "segment_in": 0.0,
+          "segment_out": 15.3
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 13.3,
+          "segment_out": 20.7
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 499.2,
+          "to": 514.5,
+          "segment_in": 18.7,
+          "segment_out": 34.0
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 32.0,
+          "segment_out": 39.4
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 499.2,
+          "to": 514.5,
+          "segment_in": 37.4,
+          "segment_out": 52.7
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 50.7,
+          "segment_out": 54.13
+        }
+      ]
+    },
+    {
+      "segment": "bridge1",
+      "length_s": 16.84,
+      "file": "/private/tmp/owb_comp/bed_v01/bridge1_bed.wav",
+      "vo_lufs": -19.2,
+      "bed_gain_db": -8.7,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 22.6,
+        "least": 7.4
+      },
+      "level_report": "SFX level FAIL: VO -19.2 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 0.0,
+          "segment_out": 7.4
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 499.2,
+          "to": 514.5,
+          "segment_in": 5.4,
+          "segment_out": 16.84
+        }
+      ]
+    },
+    {
+      "segment": "bridge2",
+      "length_s": 13.72,
+      "file": "/private/tmp/owb_comp/bed_v01/bridge2_bed.wav",
+      "vo_lufs": -20.5,
+      "bed_gain_db": -8.8,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 20.1,
+        "least": 5.2
+      },
+      "level_report": "SFX level FAIL: VO -20.5 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 505.2,
+          "to": 514.5,
+          "segment_in": 0.0,
+          "segment_out": 9.3
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 7.3,
+          "segment_out": 13.72
+        }
+      ]
+    },
+    {
+      "segment": "bridge3",
+      "length_s": 17.88,
+      "file": "/private/tmp/owb_comp/bed_v01/bridge3_bed.wav",
+      "vo_lufs": -20.0,
+      "bed_gain_db": -5.0,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 18.2,
+        "least": 1.5
+      },
+      "level_report": "SFX level FAIL: VO -20.0 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 613.9,
+          "to": 617.8,
+          "segment_in": 0.0,
+          "segment_out": 3.9
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 499.2,
+          "to": 514.5,
+          "segment_in": 1.9,
+          "segment_out": 17.2
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 15.2,
+          "segment_out": 17.88
+        }
+      ]
+    },
+    {
+      "segment": "bridge4",
+      "length_s": 14.2,
+      "file": "/private/tmp/owb_comp/bed_v01/bridge4_bed.wav",
+      "vo_lufs": -18.1,
+      "bed_gain_db": -4.9,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 21.9,
+        "least": 3.9
+      },
+      "level_report": "SFX level FAIL: VO -18.1 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 509.2,
+          "to": 514.5,
+          "segment_in": 0.0,
+          "segment_out": 5.3
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 3.3,
+          "segment_out": 10.7
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 499.2,
+          "to": 514.5,
+          "segment_in": 8.7,
+          "segment_out": 14.2
+        }
+      ]
+    },
+    {
+      "segment": "closing",
+      "length_s": 23.28,
+      "file": "/private/tmp/owb_comp/bed_v01/closing_bed.wav",
+      "vo_lufs": -21.2,
+      "bed_gain_db": -10.7,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 21.1,
+        "least": 4.7
+      },
+      "level_report": "SFX level FAIL: VO -21.2 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 611.9,
+          "to": 617.8,
+          "segment_in": 0.0,
+          "segment_out": 5.9
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+          "film": "013",
+          "from": 499.2,
+          "to": 514.5,
+          "segment_in": 3.9,
+          "segment_out": 19.2
+        },
+        {
+          "source": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+          "film": "019",
+          "from": 610.4,
+          "to": 617.8,
+          "segment_in": 17.2,
+          "segment_out": 23.28
+        }
+      ]
+    }
+  ],
+  "under_films": "film segments keep their own audio; this bed sits under the new material only"
+}
