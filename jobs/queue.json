@@ -12857,13 +12857,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-13T01:21Z",
-      "eta": "2026-10-13T03:21Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "Read-only: all 3 022 Shorts (y-SPHQ0-VjQ, n_4XskX0yZk, 2e-giqFmfy8) show Related video None; long h8HGfyShEHI still Scheduled so it can't be picked yet. The J0091 '18 Oct go-live job' was never queued: added J0219 (date gate, cloud/Chief) + J0220 (mini studio set, after J0219, before Mon 19 Oct 10:30Z). Nothing changed in Studio.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -12899,6 +12899,11 @@
           "at": "2026-10-13T01:23Z",
           "by": "cursor",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-10-13T01:23Z",
+          "by": "cursor",
+          "what": "done: Read-only: all 3 022 Shorts (y-SPHQ0-VjQ, n_4XskX0yZk, 2e-giqFmfy8) show Related video None; long h8HGfyShEHI still Scheduled so it can't be picked yet. The J0091 '18 Oct go-live job' was never queued: added J0219 (date gate, cloud/Chief) + J0220 (mini studio set, after J0219, before Mon 19 Oct 10:30Z). Nothing changed in Studio."
         }
       ],
       "kind": "studio",
@@ -12907,7 +12912,8 @@
         "of": 3,
         "at": "2026-10-13T01:23Z",
         "by": "cursor"
-      }
+      },
+      "done_ref": "dba44766"
     },
     {
       "id": "J0193",
