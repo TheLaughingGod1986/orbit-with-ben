@@ -77,7 +77,8 @@ async function main() {
       privacy: item.status?.privacyStatus,
       publishAt: item.status?.publishAt || null,
     };
-    if (countOf(current, row.replace) > 0 && countOf(current, row.find) === 0) {
+    // `replace` often contains `find` (insert-before fixes), so the presence of `replace` alone means done.
+    if (countOf(current, row.replace) > 0) {
       results.push({ id: row.id, skipped: "already_fixed", before });
       continue;
     }
