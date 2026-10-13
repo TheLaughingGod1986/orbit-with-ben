@@ -11526,10 +11526,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T00:05Z",
-      "eta": "2026-10-13T04:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11648,6 +11648,11 @@
           "at": "2026-10-13T00:10Z",
           "by": "cursor",
           "what": "step 4 of 6 done: lower-third scan + Bridge 4 shots closed, HOS #300 512b454"
+        },
+        {
+          "at": "2026-10-13T00:10Z",
+          "by": "cursor",
+          "what": "released: Run 6 (step 4/6 holds): HOS PR #300 512b454. _label_scan_v01.py now checks the lower-third caption panel on every look (counts rows of thin bright letter strokes: captions 30-32 rows, clean frames 0, no hits on the 005 arm or 004 telescopes); 003 moved to the italic look. All 14 plate windows re-checked: no lower thirds. Bridge 4 shots closed: 002 230.3-235.0 (EMPTY CHAIR cuts off at 230.1 s), 003 95.2-101.8 dark screen, 003 145.2-149.4 lit screen; re-rendered 14.29 s, -15.8 LUFS, TP -1.05, polish_gate PASS, every frame checked by eye. 003 windows: intro 129.8-133.5, Bridge 5 118.3-124.5 (X on the slate from 125 s; a small labelled anatomy poster soft in the background: Chief may prefer 129.8-133.5). The scan can't see chapter cards or in-picture titles (003 151-160 s), so windows still get a 1 s eye sheet. Next: render the intro/Bridge 2/3/5/closing segments with --draft once their shots are listed in SEGMENT_SHOTS; still waiting on J0204 graphics and the 006 master (ETA 25 Oct). For Chief: card symbols; Bridge 2 sunlit vs candlelit ward; 001/002/003 mid-film end cards; 004 bed reuse vs music_gate."
         }
       ],
       "kind": "assembly",
