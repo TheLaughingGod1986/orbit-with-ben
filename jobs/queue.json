@@ -10665,10 +10665,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-12T23:56Z",
-      "eta": "2026-10-13T03:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10832,6 +10832,11 @@
           "at": "2026-10-13T00:01Z",
           "by": "cursor",
           "what": "step 5 of 8 done: bed v01 built (14cca295); step 6 waits on J0207"
+        },
+        {
+          "at": "2026-10-13T00:01Z",
+          "by": "cursor",
+          "what": "released: Bed v01 done (14cca295): 013/019 outro stretches under intro/bridges/closing, level+gap+length PASS on all 6; plan 05_Music/compilation_bed_plan.json; previews /private/tmp/owb_comp/bed_v01/*_preview.wav for a by-ear check. Step 6 (full assembly) waits only on J0207 graphics."
         }
       ],
       "kind": "assembly",
