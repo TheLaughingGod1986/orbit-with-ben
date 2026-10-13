@@ -1,5 +1,5 @@
 {
-  "next_id": 227,
+  "next_id": 228,
   "jobs": [
     {
       "id": "J0001",
@@ -14975,6 +14975,33 @@
         "by": "cursor",
         "note": "rendered; gate visor false positive, fix next run"
       }
+    },
+    {
+      "id": "J0227",
+      "title": "030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Gemini facts pass for 030 is in SOURCES.md (8c310ce3, J0196): Gemini marked 29 OK, 0 PARTIAL, 0 FLAG. Cursor's spot check of 14 quotes on the live pages found three rows that need you before VO:\n- Row 13: the quote \"visual magnitude 3.1\" is not on the JPL radar page (it says \"about 3rd-4th magnitude\"). Treat as FLAG; the Plough/Megrez line likely still holds on the real quote.\n- Row 20 / script line 87: \"around fifteen hundred people were hurt\" vs NASA \"injured over 1,600 people\".\n- Row 7 / script line 18: \"By Christmas it reaches about one in thirty-seven\" vs CNEOS 24 Dec 2004 \"about 1.6%\"; the peak at 2.7% came about 27 Dec.\nDo CLAUDE_QUOTE_CHECK_v01.md over every MUST QUOTE row, soften or keep lines 18 and 87 (your call), then lock the script for Chief. No spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-13T03:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T03:30Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "review"
     }
   ],
   "focus": [
