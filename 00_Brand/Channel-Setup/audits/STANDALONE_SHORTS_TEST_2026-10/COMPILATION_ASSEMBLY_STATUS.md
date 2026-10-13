@@ -95,6 +95,8 @@ J0207 (cards and timeline) is still open with no claim: Codex is up, but the rel
 
 **First result (01:10Z):** body_021 is good (540.2 s, −14.7 LUFS, −1.2 dBTP). body_013 came out short: picture and mp4 audio stop at 240 s of 500.8, while its wav runs the full length. The master is clean, and a test render across 240 s is fine, so it looks like a NAS read glitch. The renderer now fails any body more than 0.5 s off plan (beabe2e8). A chained tmux job, `J0167-bodyfix` (log `~/_desk/logs/J0167-bodyfix.log`, done file `~/_desk/logs/J0167-bodyfix.done`), waits for `J0167-bodies.done`, then re-renders every short body from a local copy of its master. bodies_v01 is good when both done files read 0 and the bodyfix log ends `all bodies verified`.
 
+**body_013 fixed (Cursor, 13 Oct 02:05Z).** The bodyfix re-render from a local copy stopped at 240 s again (`J0167-bodyfix.done` = 1), so it was never the NAS. The 013 master's frames change `color_range` from unknown to tv at 239.94 s. ffmpeg rebuilds the filter graph on that change, which restarts `trim`/`setpts` (and the audio timestamps), and the mp4 ends there. The renderer now passes `-reinit_filter 0`. body_013 re-rendered (tmux `J0167-body013`, exit 0): 500.8 s of picture and audio, −17.5 LUFS, −1.3 dBTP, frame-matched to the master at 4:05. The other four masters keep one colour range throughout, so their bodies stand. **bodies_v01 is complete: 021 540.2 s, 013 500.8, 019 612.8, 007 569.4, 005 488.05.** Anyone cutting 013 with a filter graph again needs the same flag.
+
 **Step 6b** (the final join: segments v03 + bed v01 + cards and timeline + bodies, 0.5–1.5 s crossfades at film ends, chapter list) waits only on J0207.
 
 ## Next steps (4–8)

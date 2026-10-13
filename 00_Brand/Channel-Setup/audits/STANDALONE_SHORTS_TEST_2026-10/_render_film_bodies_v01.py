@@ -78,7 +78,9 @@ def render(film, src, out_dir):
         chains.append(f"[{a}]asplit=2[aout][awav]")
     mp4 = out_dir / f"body_{film['film']}.mp4"
     wav = out_dir / f"body_{film['film']}.wav"
-    cmd = ["ffmpeg", "-hide_banner", "-y", "-loglevel", "error", "-i", src,
+    # 013's master switches color_range unknown -> tv at 239.94 s; a filter reinit there restarts
+    # trim/setpts and ends the mp4 at 240 s, so the graph must never reinit mid-stream.
+    cmd = ["ffmpeg", "-hide_banner", "-y", "-loglevel", "error", "-reinit_filter", "0", "-i", src,
            "-filter_complex", ";".join(chains),
            "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
            "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-b:a", "256k", "-ar", "48000",
@@ -87,7 +89,6 @@ def render(film, src, out_dir):
     print(f"render {film['film']}: {n} span(s) {spans} -> {mp4}", flush=True)
     subprocess.run(cmd, check=True)
     planned = round(sum(b - a for a, b in spans) - 0.4 * (n - 1), 3)
-    # a NAS read hiccup once cut body_013's picture at 240 s of 500.8 with no ffmpeg error
     got = {"video": duration(mp4, "v"), "audio": duration(mp4, "a"), "wav": duration(wav)}
     short = {k: v for k, v in got.items() if abs(v - planned) > 0.5}
     if short:
