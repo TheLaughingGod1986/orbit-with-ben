@@ -142,8 +142,14 @@ class Rock:
         if key in self.cache:
             return self.cache[key]
         im = Image.open(self.paths[i]).convert("RGB")
-        ramp = np.clip((np.arange(W, dtype=np.float32) / W - 0.095) / 0.035, 0.0, 1.0)
-        im = Image.fromarray((np.asarray(im).astype(np.float32) * ramp[None, :, None]).astype(np.uint8))
+        # The rim's white core is neutral, so the blue key misses it; it is a smooth gradient and the rock is cratered.
+        # A hard column ramp cuts a step into that gradient and reads as texture, so the mask is measured unramped.
+        blk = np.asarray(im).astype(np.float32).mean(axis=2).reshape(H // 8, 8, W // 8, 8).std(axis=(1, 3))
+        tex = Image.fromarray((np.clip((blk - 4.0) / 6.0, 0.0, 1.0) * 255).astype(np.uint8))
+        tex = tex.filter(ImageFilter.MaxFilter(7)).filter(ImageFilter.GaussianBlur(1.5)).resize((W, H), Image.BILINEAR)
+        edge = np.clip((np.arange(W, dtype=np.float32) - 32.0) / 48.0, 0.0, 1.0)
+        tex = np.asarray(tex).astype(np.float32) / 255.0 * edge[None, :]
+        im = Image.fromarray((np.asarray(im).astype(np.float32) * tex[..., None]).astype(np.uint8))
         if scale != 1.0:
             im = im.resize((round(W * scale), round(H * scale)), Image.LANCZOS)
         canvas = Image.new("RGB", (W, H), (0, 0, 0))
@@ -194,7 +200,7 @@ def main() -> None:
     ov_end = ov_start + len(ov_frames) / FPS
     loop_start = round(ov_end, 3)
 
-    dusk = sa.Plate(cropped("iss023e057948"), "cover", 0.50, 0.42)
+    dusk = sa.Plate(cropped("iss023e057948"), "cover", 0.35, 0.42)
     night = sa.Plate(cropped("iss023e058455"), "cover", 0.55, 0.50)
     day = sa.Plate(PLATES / "iss034e048455.jpg", "cover", 0.50, 0.40)
     for pl in (dusk, night, day):
