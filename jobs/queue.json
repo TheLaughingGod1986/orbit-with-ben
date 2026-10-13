@@ -10745,10 +10745,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T03:47Z",
-      "eta": "2026-10-13T07:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11002,6 +11002,11 @@
           "at": "2026-10-13T03:47Z",
           "by": "cursor",
           "what": "step 6 of 8 done: 6b render done 47:38; gates next"
+        },
+        {
+          "at": "2026-10-13T03:53Z",
+          "by": "cursor",
+          "what": "released: Step 7 gates on final v01 (d1f72ec8): FAIL. picture_qa: 4 plate reuses of intro stretches (fixed in COMPILATION_PLATES_v04.json, not rendered; verify 013@140 first) + 3 push-jitter on alpha timeline overlays (likely false positive: give overlay rows an offset in cuts_qa). sfx_kit level: bed within 10 LU of VO at 39:03.2 (bridge4>card_05). music_gate gap: intro bed >15 dB under films' level for 50 s (own/brief/reused waived, Chief rule a). Next: segments_v04 --only bridge1,bridge2,bridge4,closing; add --seg to the final assembler; fix duck + intro bed level; re-join final_v02 detached (~17 min); re-run _qa_compilation_v01.py. Details: COMPILATION_ASSEMBLY_STATUS.md. Thread 6137852200."
         }
       ],
       "kind": "assembly",
