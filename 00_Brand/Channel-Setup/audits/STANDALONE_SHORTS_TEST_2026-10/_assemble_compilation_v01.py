@@ -22,6 +22,7 @@ goes through a -1.5 dBFS limiter. Stems (VO, SFX, bed, films) are written beside
 """
 import argparse
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -214,19 +215,36 @@ def encode(src, start_f, n_f, dst, vf=""):
     run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(src), "-vf", chain + vf, *X264, str(dst)])
 
 
-def build_video(pieces, joins, out):
+def reused(dst, reuse, redo, names):
+    """Hardlink dst's namesake from an earlier render when none of its pieces is being redone."""
+    if not reuse or any(n in redo for n in names):
+        return False
+    src = reuse / dst.name
+    if not src.exists():
+        return False
+    dst.unlink(missing_ok=True)
+    os.link(src, dst)
+    print("reused", dst.name, flush=True)
+    return True
+
+
+def build_video(pieces, joins, out, reuse=None, redo=()):
     parts = []
     for i, p in enumerate(pieces):
         d_in = joins[i - 1] if i else 0
         d_out = joins[i] if i < len(joins) else 0
         mid = out / f"v{i:02d}_{p['name']}.mp4"
-        encode(p["video"], d_in, p["frames"] - d_in - d_out, mid)
+        if not reused(mid, reuse, redo, [p["name"]]):
+            encode(p["video"], d_in, p["frames"] - d_in - d_out, mid)
+            print("mid", mid.name, flush=True)
         parts.append(mid)
-        print("mid", mid.name, flush=True)
         if i < len(joins):
             nxt, d = pieces[i + 1], joins[i]
             x = out / f"x{i:02d}_{p['name']}__{nxt['name']}.mp4"
             fa = p["frames"] - d
+            if reused(x, reuse, redo, [p["name"], nxt["name"]]):
+                parts.append(x)
+                continue
             run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(p["video"]), "-i", str(nxt["video"]),
                  "-filter_complex",
                  f"[0:v]trim=start_frame={fa}:end_frame={fa + d},setpts=PTS-STARTPTS,fps={FPS},setsar=1[a];"
@@ -282,6 +300,8 @@ def main():
     ap.add_argument("--bed", help="bed dir (default bed_v01)")
     ap.add_argument("--resume", action="store_true",
                     help="reuse the out dir's timeline overlays and picture.mp4; rebuild audio, then mux")
+    ap.add_argument("--reuse", help="earlier final dir: hardlink its encoded pieces except those touching --redo")
+    ap.add_argument("--redo", default="", help="comma list of piece names to re-encode with --reuse (e.g. intro,closing)")
     a = ap.parse_args()
     global SEG, BED
     SEG = Path(a.seg) if a.seg else SEG
@@ -312,7 +332,8 @@ def main():
         p["frames"] = frames(p["video"])
     report, peak = build_audio(pieces, joins, out)
     if not a.resume:
-        build_video(pieces, joins, out)
+        build_video(pieces, joins, out, Path(a.reuse) if a.reuse else None,
+                    {n for n in a.redo.split(",") if n})
     final = out / f"owb_compilation_{out.name.split('_')[-1]}.mp4"
     run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(out / "picture.mp4"), "-i", str(out / "master.wav"),
          "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-ar", str(SR),

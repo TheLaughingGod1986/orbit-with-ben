@@ -86,6 +86,21 @@ def laid_score(final: Path) -> Path:
     return p
 
 
+def floored(final: Path, key: str) -> Path:
+    """A copy of a stem with a -120 dBFS noise floor. ffmpeg's ebur128 prints no line for digital silence, so on the
+    VO stem (silent under every film body) sfx_kit's 100 ms steps drifted ~9 min off the bed's and judged the wrong
+    moments (final v02: VO at 9:58 against the bed at 0:55)."""
+    d = final / "floored"
+    d.mkdir(exist_ok=True)
+    p = d / f"stem_{key}.flac"
+    if not p.exists():
+        sp.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(final / f"stem_{key}.wav"), "-f", "lavfi",
+                "-i", "anoisesrc=a=0.000001:c=white:r=48000", "-filter_complex",
+                "[1:a]aformat=channel_layouts=stereo[n];[0:a][n]amix=inputs=2:duration=first:normalize=0",
+                "-c:a", "flac", str(p)], check=True)
+    return p
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--final", default="/private/tmp/owb_comp/final_v01")
@@ -101,8 +116,8 @@ def main():
         res["picture_qa"], txt = run([sys.executable, REPO / "scripts/picture_qa.py", video, "--cuts", cuts,
                                       "--pool", out / "pool_qa.json", "--out-dir", out], log)
         res["picture_qa_tail"] = txt.strip().splitlines()[-1] if txt.strip() else ""
-        res["sfx_level"], txt = run([sys.executable, REPO / "scripts/sfx_kit.py", "level", "--vo", final / "stem_vo.wav",
-                                     "--sfx", final / "stem_sfx.wav", "--bed", final / "stem_bed.wav",
+        res["sfx_level"], txt = run([sys.executable, REPO / "scripts/sfx_kit.py", "level", "--vo", floored(final, "vo"),
+                                     "--sfx", floored(final, "sfx"), "--bed", floored(final, "bed"),
                                      "--minutes", f"{minutes:.3f}", "--out", out / "sfx_level.json"], log)
         res["sfx_level_out"] = txt.strip()
         score = laid_score(final)
