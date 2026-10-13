@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T03:23Z",
-      "eta": "2026-10-13T07:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8387,6 +8387,11 @@
           "at": "2026-10-13T03:28Z",
           "by": "cursor",
           "what": "step 3 of 6 done: 5 paid P4 takes harvested; rest minting"
+        },
+        {
+          "at": "2026-10-13T03:28Z",
+          "by": "cursor",
+          "what": "released: 5 paid P4 takes (05,06,08,11,12) harvested at 0 cr via new --harvest pass; sheets posted on desk #180 for KEEP. P4:12 drifted to Quality (+90 cr, ledger corrected); drift fixed (minter sets ORBIT_FLOW_VEO_MODEL per plate), commit 144024e. Remaining P4:13-16 + Part 05 minting in tmux j0140-mint2 (log ~/_desk/logs/j0140-mint2.log, .done when finished; chained --harvest for 04 and 05 at the end). Next run: read .done; if any FAIL harvest timeout remains, run --part NN --harvest (0 cr); then sheets to desk for KEEP. Never start a second copy while j0140-mint2 is alive."
         }
       ],
       "kind": "video",
