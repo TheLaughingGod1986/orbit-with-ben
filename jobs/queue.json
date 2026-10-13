@@ -11955,10 +11955,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-13T10:43Z",
+      "eta": "2026-10-13T14:43Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12167,6 +12167,11 @@
           "at": "2026-10-13T06:20Z",
           "by": "cursor",
           "what": "released: Run 9 (step 4/6 holds): HOS PR #300 7d33c93. The J0204 timelines are cut into Bridge 3, Bridge 5 and the closing (manifest sha256 checked), with moving footage on both sides. Each sharp shot after a timeline starts at the graphic's plate offset + 3.5 s, so the dissolve reads as a focus pull. Pen-tap ticks come from the house kit at the manifest cues, as their own SFX stem. The closing is retimed to the VO phrases: the beam runs on to the two scientists at ~257 s for 'by people who refused...', and the timeline lands on 'So what is still invisible'. Plate 25 is dropped: its dark hall is near-black (mean luma 22-26) and its atom is the timeline's own plate. polish_gate PASS on B3/B4/B5/closing; the only WARNs are low detail on the graphics' blur and one 002 shot. sfx_kit level FAILs on the bed in 0.3-0.7 s pockets at word tails, even at -32 LUFS (17 LU under). Next: sidechain-duck the bed under the VO, then a 0.5 s eye sheet per segment. B4 has no timeline, so its 'no SFX hit' FAIL is by design. Also fixed: an apad branch wrote a 16 GB stem that filled the disk; it was deleted and every output is now capped with -t. Still missing: an end-card graphic (the closing's 6 s hold has no END CARD render; it needs a chart job) and the 006 plates for the intro and Bridges 1-2 (J0140)."
+        },
+        {
+          "at": "2026-10-13T10:43Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
