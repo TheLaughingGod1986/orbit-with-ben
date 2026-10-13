@@ -1,5 +1,5 @@
 {
-  "next_id": 226,
+  "next_id": 227,
   "jobs": [
     {
       "id": "J0001",
@@ -14775,6 +14775,33 @@
         }
       ],
       "kind": "chart"
+    },
+    {
+      "id": "J0226",
+      "title": "030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**030 Apophis standalone Short: assembly + gate (split from J0223, kind `assembly`).** Air private + publishAt **Thu 22 Oct 2026 11:30 UK** (upload is a later job, after Chief's final OK).\n\n**Inputs, all made by J0223 (on the Mini, media git-ignored), under `02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/`:**\n- VO: `02_Voiceover/030_apophis_short_vo_v01.wav` (Chief PASS, 24.56 s, word times in `02_Voiceover/stt/030_apophis_short_vo_v01/stt_raw.json`). Pause-trim gaps over 0.4 s like `audits/STANDALONE_SHORTS_TEST_2026-10/_pause_trim_v02.py` (ceiling 25.5 s per J0162).\n- Rock: `04_Generated-Clips/veo_v01/apophis_rock_tumble_veo_v01.mp4` (Veo Fast 9:16 1080p, 8 s, silent; rock on black with a faint blue rim on the left). Composite it (screen/lighten or luma key) over the graded NASA limb plate. Never a whole planet.\n- Plates: `plates_v01.json` (files in `/private/tmp/owb_030_short/plates/`): frame 0 + last ~3 s `iss023e057948` (dusk limb), title beat 9–14 s `iss023e058455` (night side + aurora), spare `iss034e048455`.\n- Orbit (~1 s, on \"Stay, and I'll show you how close\"): `04_Generated-Clips/omni_v01/orbit_geo_sat_omni_v01.mp4` (Omni 9:16, see `orbit_gen_report_v01.json`; spot-check start/middle/end for Orbit identity before using; if it failed, keep the rock plate under the slot). Never at frame 0.\n- DATA overlay: the chart job's `code_graphics_v01/code_graphic_030short_r05_scale_v01.mov` + tick sidecar, landed on the spoken \"36,000\".\n\n**Build** (pattern: `audits/STANDALONE_SHORTS_TEST_2026-10/_assemble_standalone_shorts_v01.py`): hook caption CLOSER THAN **SATELLITES** (yellow SATELLITES) 0–2.2 s; title *An Asteroid Will Skim Past Earth on Friday the 13th* at 9–14 s; 3-word captions in UK spelling (metres, kilometres, \"Friday the 13th\"); picture change every 3–6 s; last ~3 s back to the rock past the limb so \"and watch…\" loops into frame 0; standalone bed `audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3`; low rumble at frame 0, one tick on the overlay; grain `noise=alls=4:allf=t`; mix −14 LUFS / −1 dBTP; VO, bed and SFX stems kept. Export `06_Final-Exports/030_apophis_short_v01.mp4` with `_meta.json` (cut list), `_frames.jpg`.\n\n**Gates:** `gate_shorts_open.py check <mp4> --air-date 2026-10-22` PASS (length warning OK), `sfx_kit.py level` PASS. Then park for Chief's frame review (Teach on screen STYLE + MOTION + DATA, Polish SFX + GRAIN). No spend.\n",
+      "ref": "J0223",
+      "film": "030",
+      "stage": "edit",
+      "after": "J0225",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-13T02:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-13T02:57Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
