@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-13T10:30Z",
-      "eta": "2026-10-13T14:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8522,6 +8522,11 @@
           "at": "2026-10-13T10:31Z",
           "by": "codex",
           "what": "step 3 of 6 done: verified existing tmux recovery still live; completion marker absent; no duplicate or spend"
+        },
+        {
+          "at": "2026-10-13T10:31Z",
+          "by": "codex",
+          "what": "released: Existing tmux j0140-senebier-fast-v02 remains live; .done absent. Log /Users/benjaminoats/_desk/logs/j0140-senebier-fast-v02.log, exit marker /Users/benjaminoats/_desk/logs/j0140-senebier-fast-v02.done. Log currently reports style-ref attachment failures; guard has not logged any generation charge. Leave live process untouched; next run reads marker/log before action. No duplicate generation, spend, or protected decision this run. Chief KEEP P4:08 t2 and decision on missing paid P4:06 t2 still needed. HOS pull blocked by pre-existing changes, preserved."
         }
       ],
       "kind": "video",
