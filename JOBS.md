@@ -5,8 +5,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0229.** Ahead of everything, the focus film included.
-
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0123 | cloud | blocked | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
@@ -36,10 +34,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0226 | mini | open (after J0225) | – | – | 030 edit · assembly · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 | J0227 | cloud | open | – | – | review · 030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196) |  |
 | J0228 | cloud | open (after J0199) | – | – | listing · HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z |  |
-| J0229 | mini | claimed | cursor | 2026-10-13T05:39Z | assembly · Mini disk full (121 MB free): move old render scratch to the NAS |  |
 
 Recently finished:
 
+- J0229 done: Mini disk full (121 MB free): move old render scratch to the NAS (done)
 - J0225 done: 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) (PASS visual. Labels 36,000 KM / 32,000 KM; ProRes 4444 alpha 1080x1920 3.6s; ticks 0.5/1.1s; band + tech check OK. #171 squash-merged 74a3f02d. Media on Mini code_graphics_v01/. Unblocks J0226.)
 - J0223 done: 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) (Picture inputs done (d18cdf1a): Veo Fast rock tumble 9:16 8 s (£0.60 est.), Omni Orbit geo-satellite beat 9:16 (rock sweeps past, Orbit looks up/ducks/peers; on model in 6-frame sheet; Omni unpriced, billed late), flash-image satellite plate (£0.03), NASA limb plates iss023e057948/iss023e058455/iss034e048455 (plates_v01.json). Split: DATA bar -> J0225 (chart, Codex); assembly + gate -> next job (after J0225).)
 - J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
@@ -49,4 +47,3 @@ Recently finished:
 - J0214 done: HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (done)
 - J0213 done: HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines) (Chief KEEP S5-S8 VO v01 (HOS #180 6133703986): word for word v02 lines 5-8, -19.6 to -20.4 LUFS; pause trim ~0.4 s at assembly; captions keep UK spelling. J0214 plates clear.)
 - J0212 done: HOS standalone Shorts S5: exact quote that the pigeons were blamed (lock condition before S5 VO) (done)
-- J0209 done: HOS standalone Shorts S1-S4: custom covers (code-composed on frame-0 plates) (PASS HOOK/BAND/PHONE ×4; wording KEEP; #301 merged; HOS #180 6133005305. Cursor to attach covers on package.)
