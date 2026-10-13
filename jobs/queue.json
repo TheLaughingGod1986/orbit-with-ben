@@ -8225,10 +8225,10 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T04:37Z",
-      "eta": "2026-10-13T08:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
       "result": "",
@@ -8417,6 +8417,11 @@
           "at": "2026-10-13T04:49Z",
           "by": "cursor",
           "what": "step 3 of 6 done: all 28 minted; P5 harvest stopped: disk full"
+        },
+        {
+          "at": "2026-10-13T04:49Z",
+          "by": "cursor",
+          "what": "released: All 28 plates minted (Flow 24,940 -> 23,790, every take in ai_spend). Part 04: 11 of 11 harvested, sheets in part04/uat. Part 05: 18 submitted, chained --harvest got only 01 then died at 02_senebier_jars with ENOSPC (Mini disk 121 MB free); tmux server gone, no .done. PART05_FLOW_MINT_LOG_v01.json still parses. Waits on J0229 (free disk). Next run after space is back: run the minter --part 05 --harvest (0 cr), sheets to desk #180 for grok KEEP, then Part 04/05 roughs. P5:22/23 show FAIL used=None but were charged (10/100): paid, never retake, harvest only."
         }
       ],
       "kind": "video",
@@ -15306,10 +15311,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-13T04:50Z",
+      "eta": "2026-10-13T05:50Z",
       "created_by": "cursor",
       "created_at": "2026-10-13T04:49Z",
       "result": "",
@@ -15318,6 +15323,11 @@
           "at": "2026-10-13T04:49Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-10-13T04:50Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly"
