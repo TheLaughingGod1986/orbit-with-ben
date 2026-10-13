@@ -13162,10 +13162,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T01:53Z",
-      "eta": "2026-10-13T03:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
       "result": "",
@@ -13194,6 +13194,11 @@
           "at": "2026-10-13T02:07Z",
           "by": "cursor",
           "what": "step 2 of 4 done: neighbour pass committed c25e731e; Gemini facts pass running in tmux"
+        },
+        {
+          "at": "2026-10-13T02:07Z",
+          "by": "cursor",
+          "what": "released: Neighbour pass done (c25e731e, NEIGHBOURS_J0196.md). Gemini facts pass running detached: tmux j0196-gemini, worktree /tmp/j0196-wt (edits only 01_Script/SOURCES.md there), log ~/_desk/logs/j0196-gemini.log, exit code in ~/_desk/logs/j0196-gemini.done, prompt ~/_desk/logs/j0196-gemini.prompt.md. Next run: when .done exists, check every row has a quote+URL and verdict and the findings section, then commit SOURCES.md from /tmp/j0196-wt. Don't start a second agy run while the session is alive."
         }
       ],
       "kind": "facts",
