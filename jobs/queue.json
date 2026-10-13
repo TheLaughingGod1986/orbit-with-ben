@@ -15311,10 +15311,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T05:01Z",
-      "eta": "2026-10-13T06:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T04:49Z",
       "result": "",
@@ -15383,6 +15383,11 @@
           "at": "2026-10-13T05:03Z",
           "by": "cursor",
           "what": "step 2 of 5 done: worktrees cleared; final_v01 5.6/13 GB copied"
+        },
+        {
+          "at": "2026-10-13T05:03Z",
+          "by": "cursor",
+          "what": "released: Still running: tmux j0229-archive (/private/tmp/j0229_archive.sh, log ~/_desk/logs/J0229-archive.log, no .done file: look for the DATE DONE line in the log, or tmux ls). It is rsyncing owb_comp/final_v01 to NAS 2026-10-13/owb_comp (5.6 of 13 GB at 06:07 BST, ~7 MB/s, ETA ~06:30 plus sha check), then deletes local only on sha256 match. Do not start a second copy. This run removed 3 clean OWB git worktrees whose jobs are done and commits are on origin (j0148-codex-wt, j0196-wt, j0225-wt, ~1.1 GB; logged in /private/tmp/MOVED_TO_NAS_J0229.txt). Free 4.9 GB now, ~18 GB expected after final_v01. owb_comp/bodies_v01 (3.1 GB) stays: _assemble_compilation_v01.py still reads it (J0167). HOS /private/tmp worktrees left alone. Next run: confirm VERIFIED+REMOVED final_v01 in log, df; if under 20 GB, ask J0167 owner about bodies_v01/segments_v03 after the compilation build, then done."
         }
       ],
       "kind": "assembly",
