@@ -129,3 +129,30 @@ J0207 landed (Codex, `a44b2e24`/`a08c0cd0`): five chapter cards over their films
 6. Assemble at 1080p (lanczos on 019, 007 and 005), ~−14 LUFS, with the chapter list for the description.
 7. Gates: `music_gate`, `sfx_kit.py level`, `picture_qa`, `polish_gate`.
 8. Park for Chief (J0168).
+
+## Step 7 gates on final v01 (Cursor, 13 Oct 04:55Z)
+
+The final join finished (tmux `J0167-final`, exit 0): `/private/tmp/owb_comp/final_v01/owb_compilation_v01.mp4`, 47:37.8, −14.4 LUFS, −1.3 dBTP. Chapters: 0:00 / 0:53 / 10:12 / 18:47 / 29:19 / 39:04 (`chapters.txt`). `_qa_compilation_v01.py` ran every gate (tmux `J0167-qa`, log `~/_desk/logs/J0167-qa.log`). Reports are in `qa_compilation_v01/`, plus `joins_sheet.jpg` (every join at −0.6 / 0 / +0.6 s). The QA cut list `cuts_qa.json` records the upscale factor (1.5× for the 720p sources 019, 007 and 005) and treats the film bodies as footage at offset 0. **v01 does not pass yet.**
+
+- **picture_qa FAIL, 7 cuts.**
+ - **Four are reuse FAILs.** These plates repeat a stretch the intro already shows, which breaks the same-stretch rule (within 10 s). Plates v03's "used at most twice" was not strict enough. bridge1_02 is 013@300 (intro_03), bridge2_01 is 013@420 (intro_01), bridge4_01 is 007@165 (intro_04), and closing_01a is 013@391, within 10 s of intro_06 at 383. **Fixed in `COMPILATION_PLATES_v04.json` (not rendered yet):**
+   - bridge1_02 splits across 013@270 (Earth with the Moon, clean to 275.8 s; at about 276 s it cuts to a drawn orbit-line graphic, so stay out of that) and 013@140 (Moon over a canyon; **verify 140–145 at full size**);
+   - bridge2_01 moves to 013@160 (Moon over a rough sea);
+   - bridge4_01 moves to 007@60 (a burning star into a supernova burst, no Orbit);
+   - closing_01a moves to 013@450 (a total eclipse, then an eclipse over a ridge).
+
+   Each window was checked frame by frame, apart from 140.
+ - **Three are push-jitter FAILs**, on the alpha timeline overlay rows (bridge1, bridge3 and the closing timeline). polish_gate push-checks any cut with no footage offset, and these overlays ride on moving plates, so this reads as a false positive. Next run: give the overlay rows `offset` in `cuts_qa.json`, or score them on the plate rows, and check by eye.
+ - **WARN:** intro_04 (007@165) has low edge detail. The five 8–10 min film bodies show as long single runs, which is expected for a compilation.
+- **sfx_kit level FAIL:** the bed comes within 10 LU of the VO at 39:03.2 for 0.7 s, at the bridge 4 to card 5 join. Fix: duck or fade the bed earlier at that join. WARN: 14 hits in 47.6 min.
+- **music_gate on the laid score** (new-material bed plus the films' own audio): FAIL.
+ - Own, brief and reused fail, and these are waived under Chief's rule (a). The reused matches were 024–027 beds at 0.82–0.86, which is odd, since none of those films is in the compilation. It's probably the films' VO-heavy audio over the 300 s comparison, but Chief should know.
+ - **Gap FAIL, not waived:** "the music nearly stops for 50.5 s from 0:03". The intro bed sits more than 15 dB under the films' own level, so it may sound thin next to the films by ear. Fix: lift the bed under the intro and bridges, keeping the 10 LU VO margin, or rule on it.
+
+**Next run (J0167):**
+1. Verify 013@140.
+2. Re-render bridges 1, 2 and 4 and the closing: `_assemble_compilation_segments_v01.py --plates COMPILATION_PLATES_v04.json --only bridge1,bridge2,bridge4,closing --out /private/tmp/owb_comp/segments_v04`, then copy the intro and bridge 3 from v03.
+3. Point `_assemble_compilation_v01.py` at segments_v04 (its `SEG` is hard-coded to v03; add a `--seg` flag).
+4. Fix the 39:03 bed duck and the intro bed level.
+5. Re-join to final_v02, detached, which takes about 17 min.
+6. Re-run `_qa_compilation_v01.py --final …/final_v02 --out qa_compilation_v02`.
