@@ -44,10 +44,12 @@ def loudness(path):
     return (float(i.group(1)) if i else None, float(p.group(1)) if p else None)
 
 
-def duration(path):
-    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
-                          "-of", "csv=p=0", str(path)], capture_output=True, text=True).stdout
-    return round(float(out.strip()), 3)
+def duration(path, stream=None):
+    sel = ["-select_streams", stream, "-show_entries", "stream=duration"] if stream else \
+          ["-show_entries", "format=duration"]
+    out = subprocess.run(["ffprobe", "-v", "error", *sel, "-of", "csv=p=0", str(path)],
+                         capture_output=True, text=True).stdout
+    return round(float(out.split()[0]), 3)
 
 
 def render(film, src, out_dir):
@@ -84,11 +86,16 @@ def render(film, src, out_dir):
            "-map", "[awav]", "-c:a", "pcm_s16le", "-ar", "48000", str(wav)]
     print(f"render {film['film']}: {n} span(s) {spans} -> {mp4}", flush=True)
     subprocess.run(cmd, check=True)
+    planned = round(sum(b - a for a, b in spans) - 0.4 * (n - 1), 3)
+    # a NAS read hiccup once cut body_013's picture at 240 s of 500.8 with no ffmpeg error
+    got = {"video": duration(mp4, "v"), "audio": duration(mp4, "a"), "wav": duration(wav)}
+    short = {k: v for k, v in got.items() if abs(v - planned) > 0.5}
+    if short:
+        raise SystemExit(f"body_{film['film']} length check FAIL: planned {planned} s, got {got}")
     lufs, peak = loudness(wav)
     rec = {"film": film["film"], "id": film["id"], "src": src, "spans": spans,
-           "mp4": str(mp4), "wav": str(wav), "duration": duration(mp4),
-           "planned": round(sum(b - a for a, b in spans) - 0.4 * (n - 1), 3),
-           "lufs_i": lufs, "true_peak_dbfs": peak}
+           "mp4": str(mp4), "wav": str(wav), "duration": duration(mp4), "streams": got,
+           "planned": planned, "lufs_i": lufs, "true_peak_dbfs": peak}
     print(f"  done {film['film']}: {rec['duration']} s (planned {rec['planned']}), {lufs} LUFS, peak {peak}",
           flush=True)
     return rec
@@ -98,10 +105,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
     ap.add_argument("--out-dir", default="/private/tmp/owb_comp/bodies_v01")
+    ap.add_argument("--src", action="append", default=[],
+                    help="film=path override for masters.json, e.g. a local copy of a NAS master")
     args = ap.parse_args()
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     masters = json.loads(MASTERS.read_text())
+    masters.update(dict(s.split("=", 1) for s in args.src))
     trims = json.loads(TRIMS.read_text())
     only = {s for s in args.only.split(",") if s}
     index = out_dir / "bodies.json"
