@@ -1,0 +1,58 @@
+{
+  "job": "J0225",
+  "row": "030short_r05",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frames": 108,
+  "duration_seconds": 3.6,
+  "alpha": "straight; ProRes 4444",
+  "centre_band_y": [
+    656,
+    1264
+  ],
+  "label_cap_height_px": 69,
+  "labels": [
+    "36,000 KM",
+    "32,000 KM"
+  ],
+  "ticks": [
+    {
+      "seconds": 0.5,
+      "label": "36,000 KM"
+    },
+    {
+      "seconds": 1.1,
+      "label": "32,000 KM"
+    }
+  ],
+  "animation": {
+    "earth_ring_in": [
+      0,
+      0.4
+    ],
+    "path_draw": [
+      0.5,
+      1.6
+    ],
+    "hold": [
+      1.6,
+      3.2
+    ],
+    "out": [
+      3.2,
+      3.6
+    ]
+  },
+  "assembly": "Place clip start 0.5 s before trimmed VO word 36,000 (raw 18.58 s). Keep clear of title and first 2 s; composite over moving graded plate. Silent clip; assembler supplies house ticks.",
+  "geometry": "Earth radius 50 px; ring radius 50*(1+36000/6371); closest path height 50*(1+32000/6371). Altitudes measured from surface. Straight schematic flyby segment, not an orbit.",
+  "source": {
+    "asset": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/07_Edit-Project/blue_marble.jpg",
+    "credit": "NASA Blue Marble",
+    "sha256": "a9f0088972dee0254610af851c4d6838ca3f2cf79176987e0a5713e2c15ec042"
+  },
+  "files": {
+    "code_graphic_030short_r05_scale_v01.mov": "458b54d2108c9fc8a7676420270cf90103e8c0f0902ecdb10e454ebc94d85fa1",
+    "code_graphic_030short_r05_scale_v01.png": "b58c733e997ebbb2f1fe28a1596e8c1ded5f61b57bf2692e583132b6f8f5fb41"
+  }
+}
