@@ -37,6 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
 | J0221 | mini | open | – | – | 030 vo · vo · 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) | 6136803753 |
+| J0222 | any | open | – | – | 030 script · script · 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' | 6136803753 |
 
 Recently finished:
 
