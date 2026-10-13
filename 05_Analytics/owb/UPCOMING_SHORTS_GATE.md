@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-10-12 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-10-13 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-10-12 11:30 | [Saturn's Rings Are Already Falling](https://youtu.be/Cka7_TVVOUQ) `Cka7_TVVOUQ` | yes | PASS |
 | 2026-10-14 11:30 | [Could a Robot Survive Falling Into Jupiter?](https://youtu.be/buaOI3QGm7U) `buaOI3QGm7U` | yes | PASS |
 | 2026-10-16 11:30 | [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) `1NeQFVnzO2Q` | yes | PASS (waived) |
 | 2026-10-19 11:30 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) `y-SPHQ0-VjQ` | yes | PASS |
