@@ -10705,10 +10705,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-13T01:35Z",
-      "eta": "2026-10-13T05:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -10912,6 +10912,11 @@
           "at": "2026-10-13T01:41Z",
           "by": "cursor",
           "what": "step 5 of 8 done: 6a done: all 5 bodies verified; 6b waits on J0207"
+        },
+        {
+          "at": "2026-10-13T01:41Z",
+          "by": "cursor",
+          "what": "released: Step 6a done (9f76492a): body_013 fixed. The bodyfix run failed again from a local copy, so it wasn't the NAS: 013's master switches color_range unknown->tv at 239.94 s, ffmpeg reinits the filter graph there and the trim/setpts chain ends the mp4 at 240 s. Renderer now passes -reinit_filter 0; body_013 = 500.8 s, -17.5 LUFS, frame-matched to master at 4:05. /private/tmp/owb_comp/bodies_v01/ is complete (021 540.2, 013 500.8, 019 612.8, 007 569.4, 005 488.05). Step 6b (final join) waits only on J0207 graphics, still open and unclaimed."
         }
       ],
       "kind": "assembly",
