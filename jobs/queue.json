@@ -13715,13 +13715,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-13T02:13Z",
-      "eta": "2026-10-13T04:13Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-12T20:30Z",
-      "result": "",
+      "result": "Sheet: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/graphics_v01_sheet.jpg (visually inspected). /private/tmp/owb_comp/graphics_v01/: code_graphic_owbcomp_card_01.mp4, code_graphic_owbcomp_card_02.mp4, code_graphic_owbcomp_card_03.mp4, code_graphic_owbcomp_card_04.mp4, code_graphic_owbcomp_card_05.mp4 (3s each); code_graphic_owbcomp_timeline_b1.mov 15.466667s, code_graphic_owbcomp_timeline_b3.mov 16.5s, code_graphic_owbcomp_timeline_close.mov 20.1s; ticks.json, checks.json, alpha_checks.json. All 1920x1080 30fps. Timeline VO-zero placement (+0.6s segment lead-in); cue times 3.06/0.98/11.84s. Near-black all 90 frames/card measured at 480x270 gray: min mean/p95 01 124.66/170, 02 81.54/152, 03 90.66/165, 04 62.09/81, 05 91.50/132. Builder a44b2e24 + sheet a08c0cd0 pushed from clean worktree, removed. No spend. J0167 assembly next; Chief scores STYLE/MOTION at J0168. Thread 6136778160.",
       "history": [
         {
           "at": "2026-10-12T20:30Z",
@@ -13762,6 +13762,11 @@
           "at": "2026-10-13T02:18Z",
           "by": "codex",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-13T02:20Z",
+          "by": "codex",
+          "what": "done: Sheet: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/graphics_v01_sheet.jpg (visually inspected). /private/tmp/owb_comp/graphics_v01/: code_graphic_owbcomp_card_01.mp4, code_graphic_owbcomp_card_02.mp4, code_graphic_owbcomp_card_03.mp4, code_graphic_owbcomp_card_04.mp4, code_graphic_owbcomp_card_05.mp4 (3s each); code_graphic_owbcomp_timeline_b1.mov 15.466667s, code_graphic_owbcomp_timeline_b3.mov 16.5s, code_graphic_owbcomp_timeline_close.mov 20.1s; ticks.json, checks.json, alpha_checks.json. All 1920x1080 30fps. Timeline VO-zero placement (+0.6s segment lead-in); cue times 3.06/0.98/11.84s. Near-black all 90 frames/card measured at 480x270 gray: min mean/p95 01 124.66/170, 02 81.54/152, 03 90.66/165, 04 62.09/81, 05 91.50/132. Builder a44b2e24 + sheet a08c0cd0 pushed from clean worktree, removed. No spend. J0167 assembly next; Chief scores STYLE/MOTION at J0168. Thread 6136778160."
         }
       ],
       "kind": "chart",
@@ -13779,7 +13784,8 @@
         "of": 4,
         "at": "2026-10-13T02:18Z",
         "by": "codex"
-      }
+      },
+      "done_ref": "a08c0cd0"
     },
     {
       "id": "J0208",
