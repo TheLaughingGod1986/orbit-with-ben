@@ -45,7 +45,7 @@ def qa_cuts(final: Path, out: Path) -> Path:
     cuts = json.loads((final / "cuts.json").read_text())
     for c in cuts:
         c["upscale"] = UPSCALE.get(c.get("film"), 1.0)
-        if c["source"] in BODY_FILM:
+        if c["source"] in BODY_FILM or c.get("overlay"):
             c.setdefault("framing", {})["offset"] = 0
     p = out / "cuts_qa.json"
     p.write_text(json.dumps(cuts, indent=1))
@@ -58,7 +58,7 @@ def qa_cuts(final: Path, out: Path) -> Path:
 def join_sheet(final: Path, out: Path) -> Path:
     from PIL import Image, ImageDraw
     a = json.loads((final / "assembly.json").read_text())
-    video = final / "owb_compilation_v01.mp4"
+    video = Path(a["file"])
     joins = [(p["start_s"], f"{a['pieces'][i - 1]['name']} > {p['name']}") for i, p in enumerate(a["pieces"]) if i]
     w, h = 480, 270
     sheet = Image.new("RGB", (w * 3, h * len(joins)), (20, 20, 20))
@@ -93,7 +93,7 @@ def main():
     a = ap.parse_args()
     final, out = Path(a.final), Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    video = final / "owb_compilation_v01.mp4"
+    video = Path(json.loads((final / "assembly.json").read_text())["file"])
     minutes = json.loads((final / "assembly.json").read_text())["duration_s"] / 60
     res = {"job": "J0167", "video": str(video), "minutes": round(minutes, 2)}
     with open(out / "qa_run.log", "w") as log:

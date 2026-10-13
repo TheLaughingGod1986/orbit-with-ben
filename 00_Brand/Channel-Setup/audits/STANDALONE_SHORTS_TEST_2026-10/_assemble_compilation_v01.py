@@ -39,6 +39,7 @@ LIMIT = 10 ** (-1.5 / 20)
 X264 = ["-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(FPS),
         "-g", "60", "-bf", "2", "-video_track_timescale", "15360", "-an"]
 TL_LEAD = 0.6
+CARD_BED_LEAD = 0.5  # card bed waits out the 0.4 s join, so it never rises under the last VO word
 TICK_DB, RUMBLE_DB = -22.0, -20.0
 FILMS = {"021": "Saturn", "013": "Moon", "019": "Andromeda", "007": "Neutron Star", "005": "Last Star"}
 CHAPTERS = [("01", "The Rings Are Leaving", "021"), ("02", "The Moon Lets Go", "013"),
@@ -130,8 +131,9 @@ def piece_audio(p, idx, n, kit):
         off = int((2.0 + 1.7 * idx) % 6.0 * SR)
         bed = fit(st[off:].copy(), n)
         ramp = np.ones(n, np.float32)
-        f_in, f_out = int(0.4 * SR), int(0.5 * SR)
-        ramp[:f_in] = np.linspace(0, 1, f_in)
+        lead, f_in, f_out = int(CARD_BED_LEAD * SR), int(0.6 * SR), int(0.5 * SR)
+        ramp[:lead] = 0
+        ramp[lead:lead + f_in] = np.linspace(0, 1, f_in)
         ramp[-f_out:] = np.linspace(1, 0, f_out)
         bed *= ramp[:, None] * kit["card_bed_gain"][idx]
         place(sfx, kit["rumble"], 0.35, RUMBLE_DB)
@@ -276,7 +278,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(COMP / "final_v01"))
     ap.add_argument("--plan", action="store_true")
+    ap.add_argument("--seg", help="segments dir (default segments_v03)")
+    ap.add_argument("--bed", help="bed dir (default bed_v01)")
     a = ap.parse_args()
+    global SEG, BED
+    SEG = Path(a.seg) if a.seg else SEG
+    BED = Path(a.bed) if a.bed else BED
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     pieces, joins = plan_pieces()
@@ -295,7 +302,7 @@ def main():
         p["frames"] = frames(p["video"])
     report, peak = build_audio(pieces, joins, out)
     build_video(pieces, joins, out)
-    final = out / "owb_compilation_v01.mp4"
+    final = out / f"owb_compilation_{out.name.split('_')[-1]}.mp4"
     run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(out / "picture.mp4"), "-i", str(out / "master.wav"),
          "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-ar", str(SR),
          "-shortest", "-movflags", "+faststart", str(final)])
@@ -306,7 +313,7 @@ def main():
     tp = float(tail.split("Peak:")[1].split("dBFS")[0])
     (out / "cuts.json").write_text(json.dumps(cuts, indent=1))
     (out / "chapters.txt").write_text("\n".join(chap_lines) + "\n")
-    meta = {"job": "J0167", "by": "cursor", "file": str(final), "duration_s": round(total, 2),
+    meta = {"job": "J0167", "by": "cursor", "file": str(final), "segments": str(SEG), "bed": str(BED), "duration_s": round(total, 2),
             "pieces": [{k: (str(v) if isinstance(v, Path) else v) for k, v in p.items()
                         if k not in ("timeline", "n")} for p in pieces],
             "joins_frames": joins, "audio": report, "prelimit_peak_dbfs": round(peak, 1),

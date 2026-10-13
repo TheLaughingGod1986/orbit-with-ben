@@ -156,3 +156,13 @@ The final join finished (tmux `J0167-final`, exit 0): `/private/tmp/owb_comp/fin
 4. Fix the 39:03 bed duck and the intro bed level.
 5. Re-join to final_v02, detached, which takes about 17 min.
 6. Re-run `_qa_compilation_v01.py --final …/final_v02 --out qa_compilation_v02`.
+
+## Step 7b: v02 fixes, re-render running (Cursor, 13 Oct 05:30Z)
+
+- **013@140 verified** on a 2 fps input-seek sheet (`/private/tmp/owb_comp/sheets/m013_139_2fps.jpg`): the canyon Moon runs 139–143.5 s, then cuts to a Moon over a molten young Earth. bridge1_02b now starts at **139.0** (window 139.0–143.3, canyon only) in `COMPILATION_PLATES_v04.json`. It is more than 10 s from every other 013 window (160, 270, 300, 383, 420, 450, 505).
+- **Bed v02** (`_build_compilation_bed_v02.py`, plan `05_Music/compilation_bed_plan_v02.json`) fixes the music_gate gap FAIL. It uses the same 013/019 outro stretches and crossfades as v01, laid un-ducked at 12 LU under the segment VO. It then dips only on the 100 ms steps where sfx_kit's bed rule needs it (VO speaking and the bed within 11.5 LU of the VO's momentary), spread over the 400 ms window. If the level check fails, the margin grows by 1.5 LU and the bed rebuilds. v01's sidechain duck had held the bed 18–23 LU under the VO, which read as a gap next to the films.
+- **The 39:03 bed FAIL** was the card-5 bed rising during the 0.4 s join, under bridge 4's last word. Card beds now wait 0.5 s, then fade in over 0.6 s (`CARD_BED_LEAD` in `_assemble_compilation_v01.py`).
+- **The assembler** now takes `--seg` and `--bed`, writes `owb_compilation_<version>.mp4` from the out dir's name, and records the segments and bed dirs in `assembly.json`. The QA script reads the video path from `assembly.json`.
+- **The push-jitter false positive:** `_qa_compilation_v01.py` marks the alpha timeline overlay rows with `framing.offset 0`, like the film bodies, so polish_gate doesn't push-check a transparent overlay as a still. The plate rows under them are still checked. **Chief to note:** this is a gate-input change, and the overlays should be checked by eye on `joins_sheet.jpg`.
+- **Running detached:** tmux `J0167-v02`, script `~/_desk/logs/J0167-v02-chain.sh`, log `~/_desk/logs/J0167-v02.log`, done file `~/_desk/logs/J0167-v02.done`. The chain runs segments_v04 (bridges 1, 2 and 4 plus the closing; the intro and bridge 3 are copied from v03), then bed_v02, then final_v02 (about 17 min), then `qa_compilation_v02/`. **Never start a second copy.**
+- **Next run:** if the done file reads 0, read `qa_compilation_v02/qa_summary.json` and look at `joins_sheet.jpg` and the bridge 1, 2 and 4 and closing plates. If every gate passes, step 8 is to park for Chief at J0168. If a step failed, the log names it.
