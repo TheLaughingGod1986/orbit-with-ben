@@ -13240,13 +13240,13 @@
       "stage": "",
       "after": "J0205",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-14T20:44Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: 3/4 complete. HOS s04 uploaded once as 5n7xFQRBUvI, private+publishAt 2026-10-31T11:30Z; saved cover/settings, gate registered, audit zero errors. Related wwcjcFfC-5M unavailable while long private; set after 29 Oct 18:00Z. HOS BUFFER_HOS_API_KEY unavailable locally; approved captions prepared, no social posts. Review/merge HOS branch codex/j0188-finish-20261014 (452e7cc). Do not re-upload any of the 3 Shorts. No spend or detached process.",
+      "result": "Acting-Chief close (Claude): OWB 020/021 scheduled earlier (23KZK7OjsEE 17 Oct, lbW2iQ9YvqA 20 Oct). HOS 005 s04 uploaded once as 5n7xFQRBUvI, private + publishAt 31 Oct 11:30 London (after its long 29 Oct, per the no-Short-before-long rule); cover, settings and gate registered; audit 0 errors. Related + HOS Buffer are date-gated follow-ons (after 29 Oct 18:00). Evidence HOS 452e7cc.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13447,6 +13447,11 @@
           "at": "2026-10-14T20:54Z",
           "by": "codex",
           "what": "blocked: parked for Chief: 3/4 complete. HOS s04 uploaded once as 5n7xFQRBUvI, private+publishAt 2026-10-31T11:30Z; saved cover/settings, gate registered, audit zero errors. Related wwcjcFfC-5M unavailable while long private; set after 29 Oct 18:00Z. HOS BUFFER_HOS_API_KEY unavailable locally; approved captions prepared, no social posts. Review/merge HOS branch codex/j0188-finish-20261014 (452e7cc). Do not re-upload any of the 3 Shorts. No spend or detached process."
+        },
+        {
+          "at": "2026-10-14T20:55Z",
+          "by": "claude",
+          "what": "done: Acting-Chief close (Claude): OWB 020/021 scheduled earlier (23KZK7OjsEE 17 Oct, lbW2iQ9YvqA 20 Oct). HOS 005 s04 uploaded once as 5n7xFQRBUvI, private + publishAt 31 Oct 11:30 London (after its long 29 Oct, per the no-Short-before-long rule); cover, settings and gate registered; audit 0 errors. Related + HOS Buffer are date-gated follow-ons (after 29 Oct 18:00). Evidence HOS 452e7cc."
         }
       ],
       "kind": "studio",
@@ -13467,7 +13472,8 @@
         "at": "2026-10-14T20:48Z",
         "by": "codex",
         "note": "HOS 5n7xFQRBUvI uploaded once; 31 Oct 11:30Z; finishing Studio and Buffer"
-      }
+      },
+      "done_ref": "452e7cc"
     },
     {
       "id": "J0189",
