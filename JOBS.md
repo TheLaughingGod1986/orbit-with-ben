@@ -12,7 +12,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0123 | cloud | blocked | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | blocked | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0135 | mini | blocked | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
-| J0140 | mini | blocked | codex | – | for codex · video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
+| J0140 | mini | open (after J0139) | – | – | for codex · video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0167 | mini | blocked | codex | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
@@ -20,7 +20,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0175 | mini | blocked | codex | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0181 | mini | open | – | – | for codex · listing · `gpt-6-astra` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J0184 | mini | blocked | codex | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0188 | mini | open (after J0205) | – | – | for codex · studio · `gpt-6.1-sol` · Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?' | 6131998795 |
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
 | J0206 | mini | blocked | cursor | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
