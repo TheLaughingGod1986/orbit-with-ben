@@ -300,7 +300,8 @@ class QuickNoOp(unittest.TestCase):
 
     def test_page_polls_board_data_every_minute(self):
         shim = (HERE.parent / "05_Analytics/kanban/board_site/shim.js").read_text()
-        self.assertIn("setInterval(pollData, 60 * 1000);", shim)
+        self.assertIn("const PERIOD = 60 * 1000;", shim)   # re-read a minute after the last read (Refresh restarts it)
+        self.assertIn("timer = setTimeout(() => { pollData().then(schedule); }", shim)
         self.assertIn("publishedAt: j.publishedAt", shim)
 
 
