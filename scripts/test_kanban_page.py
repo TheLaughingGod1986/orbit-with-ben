@@ -60,7 +60,7 @@ class OrderOfWorkRemoved(unittest.TestCase):
 
     def test_cards_render_before_the_box_and_rank_code_is_unchanged(self):
         html = page()
-        self.assertIn("renderSource(); renderTracker(films); renderNow(); renderJobBoard(); ", html)
+        self.assertIn("renderSource(); renderTracker(films); renderNow(); renderDone(); renderJobBoard(); ", html)
         self.assertIn("if(fj) ON_CARD.add(fj.j.id);", html)
         # PR #122's work order across both channels: same tiers as before.
         self.assertIn("tier: !fj ? 2 : fj.p.state===\"now\"||partDone ? 0 : fj.p.state===\"gated\" ? 3 : fj.p.start ? 1 : 2", html)
@@ -89,15 +89,15 @@ class MacMiniBox(unittest.TestCase):
          "Studio Chrome is signed into historyofscienceyt; Instagram web locks the Website field.", "last": {}},
     ]
 
-    def render(self, on_card=(), jobs=None):
+    def render(self, on_card=(), jobs=None, extra=None, lanes=None):
         html = page()
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "jobMin", "plan", "laneQuiet", "shortTitle", "jobTag",
                  "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
-                 "updatedAt", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "renderNow"]
+                 "updatedAt", "STALL_MIN", "stallOf", "hbLine", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "renderNow"]
         lib = "\n".join(js_function(html, n) for n in names)
         board = {"jobs": self.JOBS if jobs is None else jobs,
                  "runOrder": {"mini": ["J0130", "J0126", "J0128", "J0132"], "chief": ["J0123"]},
-                 "lanes": {}, "focus": [], "owbAt": "2026-10-11T19:49Z",
+                 "lanes": lanes or {}, "focus": [], "owbAt": "2026-10-11T19:49Z", "extra": extra or {},
                  "owb": [{"film": "024", "title": "What Happens If You Travel Near Light Speed?"},
                          {"film": "027", "title": "What If Earth Stopped Spinning?"}]}
         script = f"""
@@ -109,7 +109,7 @@ const fromDb = Object.assign({{chief:null}}, {json.dumps(board)});
 const ON_CARD = new Set({json.dumps(list(on_card))});
 {lib}
 renderNow();
-console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
+console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML, className: box.className}}));
 """
         with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as f:
             f.write(script)
@@ -133,7 +133,7 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
         r = self.render()
         self.assertFalse(r["hidden"])
         self.assertIn('<span class="tt"><b>Now:</b> 024 Light Speed v05 – picture fixes</span>', r["html"])
-        self.assertIn('<div class="pbar">', r["html"])
+        self.assertIn('<div class="pbar" data-live>', r["html"])
         self.assertIn("33% done · finished in about 40 min", r["html"])
         self.assertIn('<div class="upd">Updated ', r["html"])
         self.assertNotIn("J0129", r["html"])
@@ -177,7 +177,23 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML}}));
     def test_idle_box_is_plain_too(self):
         r = self.render(jobs=self.with_jobs(J0129=None))
         self.assertIn("<b>Now:</b> starting the next job", r["html"])
-        self.assertNotIn('<div class="pbar">', r["html"])
+        self.assertNotIn('<div class="pbar"', r["html"])
+
+    def test_stalled_queue_says_how_long_since_a_job_finished(self):
+        # Ben, 14 Oct: the box read "starting the next job" for hours while nothing ran.
+        lanes = {"mini": {"lastAt": "2026-10-11T19:10Z", "lastBy": "codex", "lastWhat": "blocked: parked for Chief: Studio sign-in",
+                          "heartbeat": {"at": "2026-10-11T19:46Z", "state": "running"}}}
+        r = self.render(jobs=self.with_jobs(J0129=None), extra={"done": [{"id": "J0100", "at": "2026-10-10T15:50Z"}]}, lanes=lanes)
+        self.assertIn("nothing running · last job finished", r["html"])
+        self.assertIn(">1 d ago<", r["html"])
+        self.assertIn("nowbar asleep", r["className"])
+        self.assertIn("Mac mini checked in <span", r["html"])
+        self.assertIn("last: Codex blocked: parked for Chief: Studio sign-in (", r["html"])
+        # a job finished an hour ago: still the plain idle line
+        r = self.render(jobs=self.with_jobs(J0129=None), extra={"done": [{"id": "J0100", "at": "2026-10-11T18:50Z"}]})
+        self.assertIn("<b>Now:</b> starting the next job", r["html"])
+        # a running job: no check-in line, the bar instead
+        self.assertNotIn('class="hb"', self.render(lanes=lanes)["html"])
 
     def test_box_shows_on_every_channel(self):
         self.assertNotIn('chan==="HOS"', js_function(page(), "renderNow"))
@@ -279,7 +295,7 @@ class JobBoard(unittest.TestCase):
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "pd", "fd", "pw", "fw", "today", "days", "etaOf", "ago", "jobMin", "plan",
                  "laneQuiet", "shortTitle", "jobTag", "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark",
                  "shortReason", "stepPace", "progressOf", "finishIn", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER",
-                 "readyAt", "jobKind", "MONEY_IRREV", "chanOf", "AIR_RX", "airOf", "sinceMin", "dur", "isStuck", "jobCard",
+                 "readyAt", "jobKind", "plainTitle", "rel", "JOB_KINDS", "jobKindOf", "jobPlan", "MONEY_IRREV", "chanOf", "AIR_RX", "airOf", "sinceMin", "dur", "isStuck", "jobCard",
                  "renderJobBoard"]
         lib = "\n".join(js_function(html, n) for n in names)
         board = {"jobs": self.JOBS if jobs is None else jobs, "runOrder": {"mini": ["J0202"]}, "lanes": {}, "focus": [],
@@ -333,6 +349,98 @@ console.log(JSON.stringify(els));
                         credits={"pools": {"flow": {"latest": {"left": 52}}, "vertex": {"latest": {"left": 4.93}}}})["daystats"]["innerHTML"]
         self.assertIn(">7<", s)
         self.assertIn("Flow 52 · Vertex £4.93", s)
+
+    def test_week_bars_and_low_credit_flag(self):
+        week = [{"date": f"2026-10-{d:02d}", "done": n, "idleMin": i, "min": m}
+                for d, n, i, m in [(6, 30, 900, 1440), (7, 20, 1000, 1440), (8, 32, 1057, 1440), (9, 27, 1009, 1440),
+                                   (10, 27, 1234, 1440), (11, 8, 1331, 1440), (12, 2, 600, 900)]]
+        credits = {"pools": {"elevenlabs": {"latest": {"left": 5275, "total": 209536}}, "cursor": {"unit": "%", "latest": {"left": 0, "total": 100}},
+                             "flow": {"latest": {"left": 23690}}}}
+        s = self.render(extra={"day": {"doneToday": 2, "idleMin": 600}, "week": week}, credits=credits)["daystats"]["innerHTML"]
+        self.assertEqual(s.count('<span class="spk'), 2)
+        self.assertIn("24 a day, last 6 days", s)
+        self.assertIn("67% of today", s)
+        self.assertIn("Flow 24k · Vertex — · Cursor 0%", s)
+        self.assertIn("Low: ElevenLabs 3% left · Cursor used up", s)
+        self.assertIn('data-open="foldPlans"', s)
+        # no week from the Mini yet: no bars, no flag without a known pool size
+        s = self.render(extra={"day": {"doneToday": 2, "idleMin": 600}}, credits={"pools": {"flow": {"latest": {"left": 10}}}})["daystats"]["innerHTML"]
+        self.assertNotIn("spk", s)
+        self.assertNotIn("Low:", s)
+
+    def test_job_cards_have_a_kind_a_bar_and_a_step_plan(self):
+        # Ben, 14 Oct: "updating text or improving SEO or working on thumbnails ... a percentage bar to each job and a full
+        # breakdown with the ETA on when each part will be complete".
+        jobs = self.JOBS + [
+            {"id": "J0211", "title": "HOS standalone Shorts S1-S4: titles, descriptions, tags (listing)", "needs": "mini", "status": "claimed",
+             "by": "codex", "claimedAt": "2026-10-12T14:00Z", "workStart": "2026-10-12T14:00Z", "kindKey": "listing", "estMin": 60,
+             "progress": {"step": 2, "of": 4, "at": "2026-10-12T14:30Z", "note": "S1 and S2 drafted"}, "last": {}},
+            {"id": "J0167", "title": "OWB compilation film: assemble 45-60 min cut", "needs": "mini", "status": "blocked", "kindKey": "assembly",
+             "result": "parked for Chief: music gap", "progress": {"step": 7, "of": 8, "at": "2026-10-12T11:18Z"},
+             "last": {"at": "2026-10-12T11:18Z", "what": "blocked: parked for Chief"}}]
+        h = self.render(jobs=jobs)["jobboard"]["innerHTML"]
+        self.assertIn('<span class="kd seo">SEO &amp; listing</span>', h)
+        self.assertIn('<span class="kd edit">Edit</span><span class="pb wait"><i style="width:88%"></i></span><span class="pc">88%</span>', h)
+        self.assertIn('<span class="kd picture">Picture</span><span class="pb "><i style="width:95%"></i></span><span class="pc">95%</span>', h)
+        plan = h[h.index("J0211"):]
+        plan = plan[plan.index('<ol class="plan">'):plan.index("</ol>")]
+        self.assertEqual(plan.count('<li class="ok">'), 2)
+        self.assertEqual(plan.count('<li class="now">'), 1)
+        self.assertIn("S1 and S2 drafted", plan)
+        self.assertIn("<span>Ready</span>", plan)
+        self.assertIn("Step 4 of 4", plan)
+        self.assertIn("parked for the Chief&#39;s check", h)
+        self.assertIn("Mac mini line: ", h)
+
+    def test_kind_labels_from_real_titles(self):
+        html = page()
+        lib = "\n".join(js_function(html, n) for n in ["JOB_KINDS", "jobKindOf"])
+        titles = ["OWB compilation film: Chief review + schedule", "Daily Studio read: long films (impressions, CTR, views)",
+                  "026 Nearest Star: long thumbnail v02", "HOS Atom GHZDsiH7L7A: Sources line for description",
+                  "030 Apophis: Claude quote check v01 + fix rows 7/13/20", "HOS 006 picture: P3:06 on Flow after the Chief's price pass",
+                  "030 Apophis Short: assembly + gate_shorts_open", "025 date gate: mark done once Js6EQJ8qDi8 is public",
+                  "027 long VO take 2", "Mini disk full: move old render scratch"]
+        script = f"{lib}\nconsole.log(JSON.stringify({json.dumps(titles)}.map(t=>jobKindOf({{title:t}}).label)));"
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as f:
+            f.write(script)
+        out = subprocess.run(["node", f.name], capture_output=True, text=True, timeout=30)
+        Path(f.name).unlink()
+        self.assertEqual(out.returncode, 0, out.stderr)
+        self.assertEqual(json.loads(out.stdout), ["Review", "Analytics", "Thumbnails", "SEO & listing", "Review", "Picture", "Edit",
+                                                  "Upload & schedule", "Voiceover", "Other"])
+
+    def test_recently_done_strip_shows_the_last_five(self):
+        # Ben, 14 Oct: "I'm not seeing tasks that are done."
+        html = page()
+        names = ["esc", "MINUTE", "ts", "ago", "WORKER", "cleanTitle", "plainTitle", "JOB_KINDS", "jobKindOf", "renderDone"]
+        lib = "\n".join(js_function(html, n) for n in names)
+        done = [{"id": f"J0{i}", "title": t, "by": "cursor", "at": at} for i, (t, at) in enumerate([
+            ("HOS 005 Short s04 cover, set in its package manifest", "2026-10-12T14:30Z"),
+            ("Upload packages for 3 Shorts: listing + manifest", "2026-10-12T14:00Z"),
+            ("027 long VO take 2", "2026-10-11T09:00Z")])]
+        script = f"""
+const RealDate = Date, FIXED = RealDate.parse({json.dumps(self.NOW)});
+globalThis.Date = class extends RealDate {{ constructor(...a){{ super(...(a.length?a:[FIXED])); }} static now(){{ return FIXED; }} }};
+const box = {{hidden:true, className:"", innerHTML:""}};
+const $ = id => id==="donebar" ? box : null;
+const fromDb = {{extra: {{done: {json.dumps(done)}}}}};
+{lib}
+renderDone();
+console.log(JSON.stringify(box));
+"""
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as f:
+            f.write(script)
+        out = subprocess.run(["node", f.name], capture_output=True, text=True, timeout=30)
+        Path(f.name).unlink()
+        self.assertEqual(out.returncode, 0, out.stderr)
+        r = json.loads(out.stdout)
+        self.assertFalse(r["hidden"])
+        self.assertEqual(r["className"], "donebar")   # something finished in the last day
+        self.assertIn("2 in the last 24 h", r["innerHTML"])
+        self.assertIn('<span class="kd thumb">Thumbnails</span>', r["innerHTML"])
+        self.assertIn('<span class="kd vo">Voiceover</span>', r["innerHTML"])
+        self.assertLess(r["innerHTML"].index("HOS 005"), r["innerHTML"].index("027 long VO"))   # newest first
+        self.assertIn("Cursor · <span data-ago=", r["innerHTML"])
 
     def test_done_over_48h_goes_to_archive(self):
         done = [{"id": "J0190", "title": "OWB new", "at": "2026-10-12T10:00Z"}, {"id": "J0180", "title": "OWB old", "at": "2026-10-08T10:00Z"}]

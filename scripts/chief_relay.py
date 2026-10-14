@@ -155,6 +155,30 @@ def mark_down(agent: str, reason: str, until, at: dt.datetime) -> None:
     write_json(d("down", agent + ".json"), {"since": iso(at), "until": iso(until) if until else None, "reason": reason})
 
 
+def mark_model_down(model: str, reason: str, until: dt.datetime, at: dt.datetime) -> None:
+    """One model is out of credit while its worker's other models still run (routing.SEPARATE_POOLS: Claude-in-Cursor
+    bills Cursor's "Other Models" pool, Cursor Auto its own; Ben, 14 Oct 2026)."""
+    write_json(d("down_models", model + ".json"), {"since": iso(at), "until": iso(until), "reason": reason})
+
+
+def load_out(at: dt.datetime) -> dict:
+    """Out-of-credit flags in force this run: scripts/credit_flags.json (committed by Claude or Chief, with the known
+    reset time) plus the relay's own model marks. Sets routing.OUT so every chain skips those lanes. {id: reason}."""
+    flags = routing.read_flags(at, str(OWB / "scripts" / "credit_flags.json"))
+    for p in sorted(d("down_models").glob("*.json")) if d("down_models").is_dir() else []:
+        m = read_json(p) or {}
+        try:
+            until = parse(m["until"])
+        except (KeyError, ValueError, TypeError):
+            until = at
+        if until > at:
+            flags.setdefault(p.stem, f"{m.get('reason') or 'out of credit'} (until {m['until']})")
+        else:
+            p.unlink(missing_ok=True)
+    routing.OUT = set(flags)
+    return flags
+
+
 def mark_up(agent: str) -> None:
     try:
         d("down", agent + ".json").unlink()
@@ -198,12 +222,16 @@ def cli_spec(agent: str, model: str = ""):
         # Gemini via Antigravity `agy` (Ben, 11 Oct 23:47: "remember we also have Gemini and Codex"): a stand-in in the
         # job chains (routing.CHAINS) when Cursor or Codex are out. -p = one prompt, print, exit (as in `agy -p` fact
         # checks since 8 Oct); --dangerously-skip-permissions is agy's unattended mode, like Cursor's --force.
+        # `-p` takes the next argument as the prompt, so it goes last, straight before the prompt run_cli appends.
+        # With `-p` first, agy read --dangerously-skip-permissions as its prompt and exited 2 on every wake (Cursor,
+        # #99 6136609471; 88 "run failed" posts 13-14 Oct).
         b = find_bin("AGY_BIN", "agy")
-        flags = os.environ.get("AGY_FLAGS", f"-p --dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
+        flags = os.environ.get("AGY_FLAGS", f"--dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
                                             f"--add-dir {shlex.quote(str(STATE.parent))}")
         cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "gemini" else ""
         if cm:
             flags = f"{flags} --model {shlex.quote(cm)}"
+        flags = shlex.join([a for a in shlex.split(flags) if a != "-p"] + ["-p"])
     else:
         return None
     return (b, shlex.split(flags)) if b else None
@@ -260,6 +288,10 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
             mark_up(agent)  # Grok has worked since it was marked down: it's back
         else:
             return False, f"marked down: {mark.get('reason') or 'no reason given'}" + (f" (retry after {mark['until']})" if until else "")
+    flag = routing.read_flags(at, str(OWB / "scripts" / "credit_flags.json")).get(agent)
+    if flag and not (agent == "chief" and grok_post_age(at) is not None
+                     and grok_post_age(at) <= int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))):
+        return False, f"flagged out of credit: {flag}"   # Grok posting again proves it's back, flag or not
     if agent == "chief":
         fresh = int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))
         beat = last_seen(agent)
@@ -275,10 +307,32 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
     return False, "unknown agent"
 
 
+def override(at: dt.datetime):
+    """Ben's standing order naming a Chief outside the Mini chain (scripts/chief_override.json), while it holds:
+    {"agent": "claude", "until": ISO, "reason": ...}. Ben, 14 Oct 2026: "Grokbot is out of credits until Friday, so you
+    should be taking over as the main agent to run this as chief." Grok posting on the thread again ends it early."""
+    o = read_json(OWB / "scripts" / "chief_override.json") or {}
+    try:
+        until = parse(o["until"])
+    except (KeyError, ValueError, TypeError):
+        return None
+    return o if o.get("agent") and at < until else None
+
+
 def acting(at: dt.datetime):
-    """The chain with each agent's state, and the first one that's up (or None)."""
+    """The chain with each agent's state, and the first one that's up (or None). Ben's override (a Chief such as
+    Claude, who isn't woken on the Mini) comes after Grok and ahead of the Mini CLIs."""
     rows = [(a,) + state_of(a, at) for a in chain()]
-    return rows, next((a for a, up, _ in rows if up), None)
+    first = next((a for a, up, _ in rows if up), None)
+    o = override(at)
+    if o and first != "chief":
+        return rows + [(o["agent"], True, f"named Chief by Ben until {o['until']}")], o["agent"]
+    return rows, first
+
+
+def cloud_chief(who) -> bool:
+    """A Chief that isn't a Mini CLI (Grok Bot, or Claude under Ben's override): the Mini CLIs are its workers."""
+    return who is not None and who not in routing.MINI_WORKERS
 
 
 # ---- the run ----
@@ -286,6 +340,10 @@ def acting(at: dt.datetime):
 PROMPT = """You are {name}, acting as Chief of Staff on the Mac mini because {why}. You run unattended: do ONE job, then stop.
 Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk.py --as/--from).
 
+0. If a git pull fails (no space left, or local files in the way), run  python3 scripts/mini_repair.py --apply
+   (safe: caches, clean temp worktrees; blocking files are kept in ~/_desk/rescue, local edits stashed, local commits
+   pushed to a rescue branch first) and pull again. Still under 20 GB free: move render scratch to the NAS by
+   AGENTS.md "Render scratch" before anything else.
 1. Orbit With Ben ({owb}): git pull. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben", "Who does what",
    "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
 2. History of Science ({hos}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:
@@ -402,6 +460,12 @@ def handover(new, rows, at: dt.datetime) -> None:
                     f"Ben: top-ups stay your call.")
     elif new == "chief":
         ok = notify(f"Chief relay: **Grok Bot is Chief again** ({states}). Cursor and Codex keep running the job queue as workers; Chief owns reviews/decisions.")
+    elif new not in chain():
+        o = override(at) or {}
+        ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** until {o.get('until', '?')} "
+                    f"({o.get('reason') or 'Ben named it'}). Cursor, Codex and Gemini run the job queue as workers on "
+                    f"whatever model has credit; reviews, PASS, merges and final OKs go to {NAMES.get(new, new)} on "
+                    f"this thread. Grok Bot takes back over by itself once it posts again.")
     else:
         later = [NAMES.get(a, a) for a in chain()[chain().index(new) + 1:]]
         ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** ({states}). "
@@ -585,7 +649,8 @@ def stranded_jobs(data: dict, up: set) -> list:
     usage): they walk on down their chain. Jobs Claude or Chief addressed by hand (no rerouted_from) wait for that
     agent, e.g. a second opinion from Codex."""
     return [j for j in data.get("jobs", []) if j.get("rerouted_from") and j.get("status") == "open"
-            and j.get("for") in routing.MINI_WORKERS and j["for"] not in up]
+            and j.get("for") in routing.MINI_WORKERS
+            and (j["for"] not in up or (j.get("model") and not routing.lane_ok(j["for"], j["model"])))]
 
 
 def reroute(job: dict, to: str, model: str, note: str) -> bool:
@@ -702,8 +767,72 @@ def escalate_stale() -> None:
                + "; ".join(lines))
 
 
+def self_heal(at: dt.datetime) -> bool:
+    """Ben, 14 Oct 2026: "It just seems to have ground to a halt." On 13-14 Oct the Mini had ~110 MB free and local
+    files blocked the shared checkouts' pull, so every wake stopped at `git pull` and this relay (run from that
+    checkout) never got its own fixes. Each run: if the disk is under CHIEF_MIN_FREE_MB or the OWB pull fails, run
+    scripts/mini_repair.py's safe steps (caches, clean temp worktrees, blocking files kept in ~/_desk/rescue, local
+    edits stashed, local commits pushed to a rescue branch first), at most every CHIEF_HEAL_MIN minutes, and say what
+    it did on the thread. Returns False when the disk is still too full to run anything (wakes would only fail)."""
+    min_mb = int(os.environ.get("CHIEF_MIN_FREE_MB", "2048"))
+    hard_mb = int(os.environ.get("CHIEF_HARD_MIN_FREE_MB", "300"))
+    try:
+        free = shutil.disk_usage(str(HOME)).free // (1024 * 1024)
+    except OSError:
+        free = min_mb
+    pulled = True
+    if (OWB / ".git").exists():
+        try:
+            pulled = subprocess.run(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], capture_output=True,
+                                    timeout=120).returncode == 0
+        except (OSError, subprocess.SubprocessError):
+            pulled = False
+    if pulled and free >= min_mb:
+        return True
+    last = read_json(d("heal.json")) or {}
+    gap = dt.timedelta(minutes=int(os.environ.get("CHIEF_HEAL_MIN", "30")))
+    if last.get("at") and at - parse(last["at"]) < gap:
+        return free >= hard_mb
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("mini_repair", OWB / "scripts" / "mini_repair.py")
+        if spec is None or not (OWB / "scripts" / "mini_repair.py").exists():
+            spec = importlib.util.spec_from_file_location("mini_repair", pathlib.Path(__file__).with_name("mini_repair.py"))
+        mr = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mr)
+        rep = mr.repair(apply=True, repos=[r for r in (OWB, HOS) if (r / ".git").exists()],
+                        do_caches=free < min_mb, scan=free < min_mb)
+    except Exception as e:  # never let the repair stop the relay
+        log(f"heal failed: {e.__class__.__name__}: {e}")
+        write_json(d("heal.json"), {"at": iso(at), "error": str(e)[:300]})
+        return free >= hard_mb
+    write_json(d("heal.json"), {"at": iso(at), "before_mb": rep["before_mb"], "after_mb": rep["after_mb"]})
+    acts = [f"{pathlib.Path(c['repo']).name}: {'; '.join(c['actions'])}" for c in rep["checkouts"]
+            if c["actions"] and c["actions"] != ["already at origin/main"]]
+    gone = [w for w in rep["worktrees"] if ": remove (" in w]
+    log(f"heal: {rep['before_mb']} MB -> {rep['after_mb']} MB free; {'; '.join(acts) or 'checkouts fine'}; "
+        f"{len(gone)} temp worktree(s) removed")
+    if acts or gone or rep["after_mb"] - rep["before_mb"] > 100 or rep["after_mb"] < min_mb:
+        big = "; ".join(x.strip() for x in rep["biggest"][:4])
+        notify(f"Chief relay: repaired the Mini (scripts/mini_repair.py): {rep['before_mb']:,} MB -> "
+               f"{rep['after_mb']:,} MB free. {' '.join(acts) or 'Checkouts pull cleanly.'}"
+               + (f" {len(gone)} clean temp worktree(s) removed." if gone else "")
+               + (f" Still under {min_mb // 1024} GB free: move the version-before-last render scratch to the NAS "
+                  f"(AGENTS.md 'Render scratch'). Biggest: {big}" if rep["after_mb"] < min_mb else ""))
+    if rep["after_mb"] < hard_mb:
+        push_heartbeat(at, "disk-full", note=f"{rep['after_mb']} MB free after repair; render scratch must move to the NAS")
+        return False
+    return True
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
+    flags = load_out(at)
+    if flags:
+        log("out of credit: " + "; ".join(f"{k} ({v})" for k, v in sorted(flags.items())))
+    if not self_heal(at):
+        log("disk still too full to run a worker: waiting for the next repair")
+        return 0
     if (OWB / "scripts" / "refill.py").exists():
         escalate_stale()
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
@@ -738,13 +867,15 @@ def run_locked(at: dt.datetime) -> int:
                 log(f"{a} has a job addressed to it ({', '.join(addressed_to(a))}): waking it first")
                 who = a
                 break
-        if who == "chief":
-            # Grok Bot (9 Oct 2026, studio owner): Grok is Chief for reviews, PASS, merges, decisions and the board;
-            # the Mini CLIs stay the WORKERS for queued jobs. So while Grok is up, wake the first worker that's up
-            # (Cursor, Codex, then Gemini) for one queued job (no thread/desk sweep), instead of idling the Mini.
+        chief_name = NAMES.get(who, who) if cloud_chief(who) else ""
+        if cloud_chief(who):
+            # Grok Bot (9 Oct 2026, studio owner), or Claude under Ben's override (14 Oct): the Chief does reviews,
+            # PASS, merges, decisions and the board; the Mini CLIs stay the WORKERS for queued jobs. So wake the first
+            # worker that's up (Cursor, Codex, then Gemini) for one queued job (no thread/desk sweep).
             who = next((a for a in routing.MINI_WORKERS if a in up), None)
             if who is None:
-                log("Grok Bot is Chief and no worker is up: nothing to run")
+                log(f"{chief_name} is Chief and no worker is up: nothing to run")
+                push_heartbeat(at, "no-worker", note=f"{chief_name} is Chief; no Mini worker has credit")
                 return 0
             worker_only = True
         if who == "gemini":
@@ -773,7 +904,7 @@ def run_locked(at: dt.datetime) -> int:
                    f"you ({', '.join(rerouted)}; Ben, 11 Oct 2026). Take it with jobs.py next; do it as the primary "
                    f"would, and stop at the same protected calls")
         elif worker_only:
-            why = ("Grok Bot is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
+            why = (f"{chief_name or 'Grok Bot'} is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
                    "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
                    "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
                    "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
@@ -798,17 +929,26 @@ def run_locked(at: dt.datetime) -> int:
         log_run(at, job, who, model, code, usage)
         if usage:
             until = now() + dt.timedelta(hours=retry_h)
-            mark_down(who, "out of usage, credit or signed out (its last run said so)", until, now())
-            log(f"{who} looks out of usage or signed out: down until {iso(until)}; walking the job's chain")
+            if model in routing.SEPARATE_POOLS:
+                # Only this model's pool is empty (Claude-in-Cursor): flag the model, keep the worker up for its other
+                # models, and move the job on down its chain (Ben, 14 Oct 2026: run 24/7 on whoever has credit).
+                mark_model_down(model, f"{NAMES.get(who, who)} on {routing.cli_model(model)} said out of credit", until, now())
+                routing.OUT.add(model)
+                log(f"{who} on {model} looks out of credit: that model is flagged until {iso(until)}; {who} stays up")
+            else:
+                mark_down(who, "out of usage, credit or signed out (its last run said so)", until, now())
+                log(f"{who} looks out of usage or signed out: down until {iso(until)}; walking the job's chain")
             if job:
                 walk_on(job, who, model, now())
             at = now()
             continue
         if code not in (0, 124):
             notify(f"Chief relay: {NAMES.get(who, who)}'s run failed (exit {code}). Log: ~/Library/Logs/chief-relay.log")
-            if addressed:
-                # Woken only for a job addressed to it: don't wake it again every 10 minutes into the same failure.
-                mark_down(who, f"its run for an addressed job failed (exit {code})", now() + dt.timedelta(hours=retry_h), now())
+            # Don't wake it again every minute into the same failure (Gemini exit 2, 13-14 Oct: 88 posts in 20 h).
+            # An addressed job waits the usual retry; a plain worker run waits CHIEF_FAIL_RETRY_H, so others take the queue.
+            fail_h = retry_h if addressed else float(os.environ.get("CHIEF_FAIL_RETRY_H", "1"))
+            mark_down(who, f"its {'run for an addressed job' if addressed else 'last run'} failed (exit {code})",
+                      now() + dt.timedelta(hours=fail_h), now())
             return 0
         chained += 1
         last_ran = job.get("id") if job else None
@@ -834,6 +974,7 @@ def walk_on(job: dict, who: str, model: str, at: dt.datetime) -> None:
 
 
 def cmd_status(at: dt.datetime) -> int:
+    flags = load_out(at)
     rows, who = acting(at)
     for a, up, why in rows:
         print(f"{'>' if a == who else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
@@ -843,6 +984,12 @@ def cmd_status(at: dt.datetime) -> int:
     out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
     print(f"Claude: {'OUT of usage (' + why + '); its jobs walk their chain: Cursor on ' + routing.CURSOR_CLAUDE_MODEL + ', Gemini, Codex' if out else 'up (' + why + ')'}")
     print(gemini_line())
+    for k, v in sorted(flags.items()):
+        print(f"Out of credit: {k}: {v}")
+    try:
+        print(f"Disk: {shutil.disk_usage(str(HOME)).free // (1024 * 1024):,} MB free")
+    except OSError:
+        pass
     return 0
 
 

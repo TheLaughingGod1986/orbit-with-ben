@@ -22,6 +22,34 @@ details.jl .jb{height:4px;border-radius:2px;background:var(--panel-2);overflow:h
 details.jl .jw{color:var(--ink-3);text-align:right}
 #foldJobs,#foldPlans{margin:8px 0}
 #foldJobs .jb{margin-top:8px}
+/* Ben, 14 Oct: "make it more dynamic". Times count by themselves, the Mini's last check-in and a stall show in the Now box,
+   the three tiles carry 7-day bars and low-credit flags, and tapping a tile opens its fold. */
+.nowbar .hb{margin-top:4px;font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nowbar.asleep .h b+span,.nowbar .stall{color:var(--soon);font-weight:600}
+.stats .s[data-open]{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.stats .s[data-open]:hover{border-color:var(--ink-3)}
+.stats .n small{font-size:12px;font-weight:500;color:var(--ink-3)}
+.stats .sub2{font-size:11px;color:var(--ink-3);margin-top:2px;line-height:1.3}
+.stats .lo{font-size:11px;font-weight:600;color:var(--blocked);margin-top:2px}
+/* Ben, 14 Oct: "I'm not seeing tasks that are done": the last few finished jobs, always in view. */
+.donebar{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:13px}
+.donebar .dh{display:flex;justify-content:space-between;gap:8px;font-weight:600;color:var(--ink)}
+.donebar .dh span{font-weight:500;color:var(--ink-3)}
+.donebar ul{list-style:none;margin:4px 0 0;padding:0}
+.donebar li{display:flex;align-items:center;gap:6px;padding:3px 0;border-top:1px solid var(--line);white-space:nowrap}
+.donebar li:first-child{border-top:0}
+.donebar li .ok{color:var(--done);font-weight:700}
+.donebar li .t{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.donebar li .w{flex:none;color:var(--ink-3);font-size:12px}
+.donebar .kd{flex:none;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--panel-2);color:var(--ink-2)}
+.donebar.cold{border-left-color:var(--soon)}
+.spk{display:flex;align-items:flex-end;gap:2px;height:18px;margin-top:4px}
+.spk i{flex:1 1 0;min-width:3px;max-width:10px;background:var(--ink-3);opacity:.35;border-radius:2px 2px 0 0}
+.spk i.t{background:var(--doing);opacity:1}
+.spk.idle i{background:var(--soon)}.spk.idle i.t{background:var(--soon)}
+@keyframes flashIn{0%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:0 0 0 0 transparent}}
+.flash{animation:flashIn 2.4s ease-out 1}
+@media (prefers-reduced-motion:reduce){.flash{animation:none}}
 </style></head><body>
 
 <title>Studio Kanban</title>
@@ -323,6 +351,29 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .jc.stuck .et{color:var(--soon);font-weight:700}
 .jc .cx{padding:0 8px 8px 8px;font-size:12px;color:var(--ink-2);word-break:break-word}
 .jc .cx div{margin-top:2px}
+/* Ben, 14 Oct: "a percentage bar to each job and a full breakdown with the ETA on when each part will be complete".
+   Line 1: id, channel, name, ready time. Line 2: what kind of work, bar, %. Tap: each step with its time. */
+.jc summary{display:block;white-space:normal}
+.jc .l1,.jc .l2{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.jc .l2{margin-top:5px}
+.jc .kd{flex:none;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--panel-2);color:var(--ink-2)}
+.kd.thumb{background:#f6e7cc!important;color:#8a5a00!important}.kd.seo{background:#dce8f6!important;color:#245a94!important}.kd.facts{background:#e9e1f7!important;color:#5b3fa0!important}
+.kd.vo{background:#d9eee1!important;color:#23633e!important}.kd.picture{background:#f6dcd7!important;color:#9a3526!important}.kd.edit{background:#dcefee!important;color:#0f5f5a!important}
+.kd.upload{background:#e7e7ea!important;color:#4b5563!important}.kd.review{background:#fff4dc!important;color:#8a5a00!important}.kd.data{background:#e3ecf3!important;color:#36566e!important}
+:root[data-theme="dark"] .jc .kd{filter:brightness(.85)}
+.jc .pb{flex:1 1 auto;min-width:40px;height:5px;border-radius:3px;background:var(--panel-2);overflow:hidden}
+.jc .pb i{display:block;height:100%;background:var(--doing);border-radius:3px;transition:width .6s}
+.jc .pb.ok i{background:var(--done)}.jc .pb.wait i{background:var(--soon)}.jc .pb.q i{background:var(--ink-3)}
+.jc .l2 .et{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.jc .pc{flex:none;font:500 11px ui-monospace,Menlo,monospace;color:var(--ink-2);min-width:3em;text-align:right}
+.jc ol.plan{list-style:none;margin:6px 0 4px;padding:0;border-left:2px solid var(--line)}
+.jc ol.plan li{display:grid;grid-template-columns:1.3em minmax(0,1fr) auto;gap:0 6px;padding:2px 0 2px 6px;align-items:baseline}
+.jc ol.plan li .w{color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.jc ol.plan li .n{grid-column:2/-1;color:var(--ink-3);font-size:11px}
+.jc ol.plan li.ok>span:first-child{color:var(--done)}.jc ol.plan li.now>span:first-child{color:var(--doing)}
+.jc ol.plan li.wait>span:first-child{color:var(--soon)}.jc ol.plan li.todo{color:var(--ink-2)}
+.jc ol.plan li.now{font-weight:600}
+.jbsum{font-size:12px;color:var(--ink-2);margin:8px 2px 0}
 .jb details.arch>summary,.jb details.morej>summary{font-size:12px;color:var(--doing);font-weight:600;cursor:pointer;padding:2px 4px}
 .kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
 @media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -451,6 +502,7 @@ footer a{color:var(--ink-2)}
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
+  <div class="donebar" id="donebar" hidden></div>
   <div class="stats" id="daystats" hidden></div>
   <details class="more fold" id="foldJobs"><summary>All jobs: queue, running, done</summary>
   <div class="jb" id="jobboard" hidden></div>
@@ -568,6 +620,11 @@ function view(){
   return out;
 }
 const chb = f => `<span class="ch ${f._ch}">${f._ch==="OWB"?"Orbit":"HOS"}</span>`;
+// Ben, 14 Oct: inside three days the air date counts down live ("in 1 d 7 h"), to 18:00 on the day.
+function untilTxt(ms){ const m = Math.round((ms-Date.now())/60000); if(m<=0) return "now"; if(m<60) return `in ${m} min`;
+  const h = Math.floor(m/60); return h<48 ? `in ${h} h${m%60?` ${m%60} min`:""}` : `in ${Math.floor(h/24)} d ${h%24} h`; }
+function airIn(air){ const at = air.getTime() + AIR_HOUR*3600000, left = at - Date.now();
+  return left>0 && left<3*DAY ? `<span data-until="${at}">${untilTxt(at)}</span>` : cd(air); }
 
 function progress(st){
   if(st.status==="done") return 1;
@@ -814,7 +871,26 @@ function plainJob(j){
 function updatedAt(){
   const bd = typeof window!=="undefined" ? (window.__boardData||{}) : {};
   const t = ts(bd.publishedAt) || ts(fromDb.owbAt);
-  return isNaN(t) ? "" : `<div class="upd">Updated ${clock(t)}</div>`;
+  return isNaN(t) ? "" : `<div class="upd">Updated ${clock(t)} · <span data-ago="${t}">${ago(t)}</span></div>`;
+}
+// Ben, 14 Oct (board read "starting the next job" for hours while nothing ran): with jobs waiting and nothing running,
+// say how long since a job last finished once that's over 2 h. From the queue's done list; no list, no claim.
+const STALL_MIN = 120;
+function stallOf(){
+  const x = (fromDb.extra||{}).done || fromDb.recent || [];
+  const at = Math.max(...x.map(d=>ts(d.at)).filter(t=>!isNaN(t)), -Infinity);
+  return isFinite(at) && Date.now()-at > STALL_MIN*MINUTE ? {at, min: Math.round((Date.now()-at)/MINUTE)} : null;
+}
+// When the Mini's relay last checked in (it pushes a heartbeat every 10 min) and the last thing a worker did on its line.
+function hbLine(){
+  const L = (fromDb.lanes||{}).mini; if(!L) return "";
+  const hb = L.heartbeat, bits = [], a = hb ? ts(hb.at) : NaN, l = ts(L.lastAt);
+  if(!isNaN(a)) bits.push(Date.now()-a > 75*MINUTE ? `<b class="late">Mac mini last checked in <span data-ago="${a}">${ago(a)}</span></b>`
+    : `Mac mini checked in <span data-ago="${a}">${ago(a)}</span>`);
+  const HBW = {"disk-full":"disk full", "no-worker":"no worker has credit", "no-chief":"nobody has credit", paused:"paused"};
+  if(hb && HBW[hb.state]) bits.push(`<b class="late">${esc(HBW[hb.state])}${hb.note?`: ${esc(String(hb.note).slice(0,90))}`:""}</b>`);
+  if(!isNaN(l) && L.lastWhat) bits.push(`last: ${esc(WORKER[L.lastBy]||L.lastBy||"")} ${esc(shortReason(L.lastWhat))} (<span data-ago="${l}">${ago(l)}</span>)`);
+  return bits.length ? `<div class="hb">${bits.join(" · ")}</div>` : "";
 }
 // Ben, 12 Oct 15:05: "should be one glance: I know what it's currently working on, how long until it's ready." One
 // line for Now (plain title, worker, ready time), one for Next, one summary chip; the full list sits behind "Show all".
@@ -880,9 +956,10 @@ function renderNow(){
   let bar = "";
   if(headJob){ const pr = progressOf(headJob, P);
     head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 60))}</span>`;
-    bar = `<div class="pbar"><span class="track"><i style="width:${pr.pct}%"></i></span><span>${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
-  else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
-    head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours" : "<b>Now:</b> starting the next job"; }
+    bar = `<div class="pbar" data-live><span class="track"><i style="width:${pr.pct}%"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
+  else if(line.length){ const sl = stallOf(); cls = (q && q.quiet) || sl ? "asleep" : "idle";
+    head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours"
+      : sl ? `<b>Now:</b> <span>nothing running · last job finished <span data-ago="${sl.at}">${ago(sl.at)}</span></span>` : "<b>Now:</b> starting the next job"; }
   else { cls = "idle"; head = "<b>Now:</b> nothing to do right now"; }
   const nx = line.find(j=>j!==headJob);
   const groups = {};
@@ -906,7 +983,7 @@ function renderNow(){
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>` + bar
     + (nx ? `<div class="nx one"><b>Next:</b> ${esc(plainTitle(nx, 60))}</div>` : "")
-    + details + updatedAt();
+    + (headJob ? "" : hbLine()) + details + updatedAt();
 }
 
 // ---------- Job board (Ben, 12 Oct 15:49) ----------
@@ -931,9 +1008,57 @@ function isStuck(j, col){
   const m = sinceMin(col==="run" ? (j.workStart||j.claimedAt) : (j.last||{}).at);
   return !isNaN(m) && m > 2*typ;
 }
+// What kind of work a job is, in Ben's words: from its title first, else the queue's kind.
+const JOB_KINDS = (() => { return [
+  ["review", "Review", /chief review|quote[ _]check|\breview\b/i, ["chief","review"]],
+  ["data", "Analytics", /studio read|analytics|metrics|\bctr\b|impressions|day-\d+ read/i, []],
+  ["thumb", "Thumbnails", /thumb|cover|end card/i, ["thumb","cover"]],
+  ["seo", "SEO & listing", /listing|titles?\b|description|tags|\bseo\b|chapters|related|pinned comment|end screen|test & compare|\ba\/b\b/i, ["listing","package"]],
+  ["facts", "Script & facts", /script|quote|sources?\b|fact|claims/i, ["facts","script"]],
+  ["vo", "Voiceover", /\bvo\b|voice|narrat/i, ["vo","vo take"]],
+  ["picture", "Picture", /picture|plates?\b|omni|veo|image|graphic|overlay|chart|boards?\b/i, ["omni","image","video","chart"]],
+  ["edit", "Edit", /assembl|rough|\bedit\b|\bcut\b|master/i, ["assemble","assembly"]],
+  ["upload", "Upload & schedule", /upload|schedul|publish|go-public|date gate/i, ["studio"]],
+
+]; })();
+function jobKindOf(j){
+  const t = String((j&&j.title)||""), k = String((j&&(j.kindKey||j.kind))||"").toLowerCase();
+  const hit = JOB_KINDS.find(x=>x[2].test(t)) || JOB_KINDS.find(x=>x[3].includes(k));
+  return hit ? {key:hit[0], label:hit[1]} : {key:"other", label:"Other"};
+}
+// % done and the plan of a job: each step with when it finished or should finish. Steps come from `jobs.py progress`
+// (step k of n, at a time); past steps show no time except the latest, future ones are spaced evenly to the finish.
+function jobPlan(j, P){
+  const now = Date.now(), p = j.progress && j.progress.of>=1 ? j.progress : null, pl = (P||{})[j.id]||{};
+  const rows = [], when = t => !t || isNaN(t) ? "" : `${t<now?"":"about "}${clock(t)}`;
+  if(j.status==="done") return {pct:100, cls:"ok", rows:[{st:"ok", label:"Done", when: when(ts(j.at || (j.last||{}).at))}]};
+  let pct = 0, cls = "q", start = NaN, done = NaN;
+  if(j.status==="claimed"){ const pr = progressOf(j, P); pct = pr.pct; done = pr.done; start = ts(j.workStart||j.claimedAt); cls = ""; }
+  else if(j.status==="blocked"){ pct = p ? Math.round(100*p.step/p.of) : 0; cls = p && p.step>=p.of ? "ok" : "wait"; }
+  else { start = pl.start; done = pl.done; if(p) pct = Math.round(100*p.step/p.of); }
+  const parked = j.status==="blocked" ? (isChiefPark(j) ? "parked for the Chief's check" : `waiting: ${shortReason(blockWhy(j))}`) : "";
+  if(p){
+    const left = p.of - p.step, from = j.status==="claimed" ? Math.max(ts(p.at)||start||now, start||0) : start;
+    const per = left>0 && done>from ? (done-from)/left : NaN;
+    for(let k=1; k<=p.of; k++){
+      if(k<=p.step){ rows.push({st:"ok", label:`Step ${k} of ${p.of}`, when: k===p.step ? `done ${clock(ts(p.at))}` : "done", note: k===p.step ? p.note : ""}); continue; }
+      const eta = from + per*(k-p.step), cur = k===p.step+1;
+      rows.push({st: cur && j.status==="claimed" ? "now" : cur && parked ? "wait" : "todo", label:`Step ${k} of ${p.of}`,
+        when: cur && parked ? parked : isNaN(eta) ? "" : when(eta)});
+    }
+  } else {
+    if(j.status==="claimed") rows.push({st:"now", label:`Working${j.by?` · ${WORKER[j.by]||j.by}`:""}`, when: isNaN(start) ? "" : `since ${clock(start)}`});
+    else if(parked) rows.push({st:"wait", label:"Waiting", when: parked});
+    else rows.push({st:"todo", label:"Starts", when: isNaN(start) ? "not booked yet" : when(start)});
+  }
+  if(!parked) rows.push({st:"todo", label:"Ready", when: isNaN(done) ? "time not known yet" : `${when(done)}${done>now?` (${rel(done)})`:""}`});
+  return {pct: Math.max(0, Math.min(j.status==="done" || (p && p.step>=p.of) ? 100 : 99, pct)), cls, rows};   // 100 only when every step is done
+}
 function jobCard(j, col, eta){
   const ch = chanOf(j), stuck = (col==="run"||col==="review") && isStuck(j, col);
-  const last = j.last||{};
+  const last = j.last||{}, kd = jobKindOf(j), plan0 = col==="sched" ? null : jobPlan(j, plan());
+  const l2 = `<span class="l2"><span class="kd ${kd.key}">${esc(kd.label)}</span>${plan0 ? `<span class="pb ${plan0.cls}"><i style="width:${plan0.pct}%"></i></span><span class="pc">${plan0.pct}%</span>` : `<span class="pb" style="visibility:hidden"></span>`}<span class="et">${esc(eta||"")}</span></span>`;
+  const steps = plan0 && col!=="next" ? `<ol class="plan">${plan0.rows.map(r=>`<li class="${r.st}"><span>${({ok:"✓",now:"◐",wait:"⏸",todo:"○"})[r.st]}</span><span>${esc(r.label)}</span><span class="w">${esc(r.when||"")}</span>${r.note?`<span class="n">${esc(String(r.note).slice(0,140))}</span>`:""}</li>`).join("")}</ol>` : "";
   const cx = [
     j.by||last.by ? `<div><b>Worker:</b> ${esc(WORKER[j.by||last.by]||j.by||last.by)}${j.model?` · <b>Model:</b> ${esc(j.model)}`:""}</div>` : (j.model?`<div><b>Model:</b> ${esc(j.model)}</div>`:""),
     `<div><b>Job:</b> ${esc(j.title||"")}</div>`,
@@ -942,7 +1067,19 @@ function jobCard(j, col, eta){
     j.ref ? `<div><b>Ref:</b> <span class="mono">${esc(j.ref)}</span></div>` : "",
     stuck ? `<div><b>Stuck?</b> over 2× the usual ${col==="review" ? `${esc(String(((fromDb.extra||{}).typical||{})._review||240))} min for a Chief review` : `${esc(String(j.typMin||((fromDb.extra||{}).typical||{})._default||30))} min for ${esc(j.kindKey||"this kind")}`}</div>` : "",
   ].slice(0, col==="next" ? 2 : undefined).join("");   // Ben, 12 Oct 21:08: Next cards show only Worker and Job
-  return `<details class="jc ${ch}${stuck?" stuck":""}"><summary><span class="jid">${esc(j.id||"")}</span><span class="cdot ${ch}" title="${ch}"></span><span class="nm">${esc(cleanTitle(j, 70))}</span><span class="et">${esc(eta||"")}</span></summary><div class="cx">${cx}</div></details>`;
+  const nextPlan = col==="next" && plan0 ? `<ol class="plan">${plan0.rows.map(r=>`<li class="${r.st}"><span>${({ok:"✓",now:"◐",wait:"⏸",todo:"○"})[r.st]}</span><span>${esc(r.label)}</span><span class="w">${esc(r.when||"")}</span></li>`).join("")}</ol>` : "";
+  return `<details class="jc ${ch}${stuck?" stuck":""}"><summary><span class="l1"><span class="jid">${esc(j.id||"")}</span><span class="cdot ${ch}" title="${ch}"></span><span class="nm">${esc(plainTitle(j, 70))}</span></span>${l2}</summary><div class="cx">${steps||nextPlan}${cx}</div></details>`;
+}
+// Ben, 14 Oct: "I'm not seeing tasks that are done." The last five finished jobs stay in view under the Now box, with
+// what kind of work each was, who did it and how long ago; amber when nothing has finished for a day.
+function renderDone(){
+  const box = $("donebar"); if(!box) return;
+  const done = ((fromDb.extra||{}).done || fromDb.recent || []).filter(d=>!isNaN(ts(d.at))).sort((a,b)=>ts(b.at)-ts(a.at));
+  box.hidden = !done.length; if(!done.length) return;
+  const day = done.filter(d=>Date.now()-ts(d.at) < 24*60*MINUTE).length, last = ts(done[0].at);
+  box.className = "donebar" + (Date.now()-last > 24*60*MINUTE ? " cold" : "");
+  box.innerHTML = `<div class="dh">Recently done<span>${day} in the last 24 h</span></div><ul>${done.slice(0,5).map(d=>{ const k = jobKindOf(d);
+    return `<li><span class="ok">✓</span><span class="kd ${k.key}">${esc(k.label)}</span><span class="t">${esc(plainTitle(d, 60))}</span><span class="w">${esc(WORKER[d.by]||d.by||"")} · <span data-ago="${ts(d.at)}">${ago(ts(d.at))}</span></span></li>`; }).join("")}</ul>`;
 }
 function renderJobBoard(){
   const box = $("jobboard"), st = $("daystats"), nb = $("needsyou");
@@ -962,22 +1099,43 @@ function renderJobBoard(){
   const recent = done ? done.filter(d=>sinceMin(d.at) <= 48*60) : [], old = done ? done.filter(d=>sinceMin(d.at) > 48*60) : [];
   const cap = (arr, f, n) => arr.slice(0,n).map(f).join("") + (arr.length>n ? `<details class="morej"><summary>+${arr.length-n} more</summary>${arr.slice(n).map(f).join("")}</details>` : "");
   const col = (title, arr, f, extra) => `<div class="col"><h4>${title} <i>${arr.length}</i></h4>${arr.length ? cap(arr, f, 6) : `<div class="none">nothing</div>`}${extra||""}</div>`;
-  const doneCard = d => jobCard(Object.assign({}, d, {last:{at:d.at, by:d.by, what:"done"}}), "ship", `done ${fw(String(d.at).slice(0,16))}`);
+  const doneCard = d => jobCard(Object.assign({}, d, {status:"done", last:{at:d.at, by:d.by, what:"done"}}), "ship", `done ${fw(String(d.at).slice(0,16))}`);
   box.innerHTML =
       col("Next", nextLive, j=>jobCard(j, "next", (P[j.id]&&P[j.id].done) ? readyAt(P[j.id].done) : `~${j.estMin||25} min`))
     + col("Running", run, j=>{ const pr = progressOf(j, P); return jobCard(j, "run", readyAt(pr.done) || "working"); })
     + col("Waiting for review", review, j=>{ const m = sinceMin((j.last||{}).at); return jobCard(j, "review", isNaN(m) ? "" : `waiting ${dur(m)}`); })
     + (done ? col("Ready to ship", recent, doneCard, old.length ? `<details class="arch"><summary>Archive (${old.length})</summary>${old.map(doneCard).join("")}</details>` : "")
             : `<div class="col"><h4>Ready to ship</h4><div class="none">— (needs the next board publish)</div></div>`)
-    + col("Scheduled", sched, j=>jobCard(j, "sched", airOf(j)));
+    + col("Scheduled", sched, j=>jobCard(j, "sched", airOf(j)))
+    + (()=>{ const mine = nextLive.filter(j=>(j.line||j.needs)==="mini" && P[j.id] && P[j.id].done).concat(run.filter(j=>(j.line||j.needs)==="mini"));
+        if(!mine.length) return "";
+        const end = Math.max(...mine.map(j=>(P[j.id]||{}).done||0)), work = mine.reduce((a,j)=>a+jobMin(j),0);
+        return `<div class="jbsum" style="grid-column:1/-1">Mac mini line: ${mine.length} job${mine.length===1?"":"s"}, about ${dur(work)} of work, all done about <b>${esc(clock(end))}</b> (${esc(rel(end))}) if it keeps running.</div>`; })();
   // Three numbers: done today, Mini idle minutes today, credits left. "—" when a source is missing.
   const day = (fromDb.extra||{}).day, pools = ((fromDb.credits||{}).pools)||{};
-  const left = k => { const l = ((pools[k]||{}).latest||{}).left; return (l===undefined||l===null||isNaN(+l)) ? "—" : k==="vertex" ? "£"+(+l).toFixed(2) : (+l>=10000 ? Math.round(+l/1000)+"k" : Math.round(+l).toLocaleString("en-GB")); };
+  const left = k => { const l = ((pools[k]||{}).latest||{}).left; return (l===undefined||l===null||isNaN(+l)) ? "—" : k==="vertex" ? "£"+(+l).toFixed(2) : k==="cursor" ? Math.round(+l)+"%" : (+l>=10000 ? Math.round(+l/1000)+"k" : Math.round(+l).toLocaleString("en-GB")); };
+  // Ben, 14 Oct: seven days of each number as small bars (today last, in blue), from owb.week; none until the Mini sends it.
+  const week = Array.isArray((fromDb.extra||{}).week) && fromDb.extra.week.length>1 ? fromDb.extra.week : null;
+  const bars = (vals, cls, tip) => { const hi = Math.max(1, ...vals);
+    return `<span class="spk${cls?" "+cls:""}" title="${esc(tip)}">${vals.map((v,i)=>`<i${i===vals.length-1?' class="t"':""} style="height:${Math.max(8, Math.round(100*v/hi))}%"></i>`).join("")}</span>`; };
+  const wd = d => new Date(pd(d.date)).toLocaleDateString("en-GB",{weekday:"short"});
+  let doneX = "", idleX = "";
+  if(week){ const past = week.slice(0,-1), avg = Math.round(past.reduce((a,d)=>a+(+d.done||0),0)/past.length);
+    doneX = bars(week.map(d=>+d.done||0), "", week.map(d=>`${wd(d)} ${d.done}`).join(" · ")) + `<div class="sub2">${avg} a day, last ${past.length} days</div>`;
+    const pc = d => d.min ? Math.round(100*(+d.idleMin||0)/d.min) : 0;
+    idleX = bars(week.map(pc), "idle", week.map(d=>`${wd(d)} ${pc(d)}% idle`).join(" · ")) + `<div class="sub2">${pc(week[week.length-1])}% of today</div>`; }
+  // Low: a pool with a known size under 10% left (Cursor reads as % of its pool).
+  const low = ["elevenlabs","flow","vertex","cursor"].map(k=>{ const L=(pools[k]||{}).latest||{}, l=+L.left, t = L.total!=null ? +L.total : (pools[k]||{}).unit==="%" ? 100 : NaN;
+    return !isNaN(l) && t>0 && l/t < 0.1 ? `${({elevenlabs:"ElevenLabs",flow:"Flow",vertex:"Vertex",cursor:"Cursor"})[k]} ${l<=0?"used up":Math.max(1,Math.round(100*l/t))+"% left"}` : ""; }).filter(Boolean);
   if(st) st.innerHTML =
-      `<div class="s"><div class="n">${day && day.doneToday!=null ? esc(String(day.doneToday)) : "—"}</div><div class="l">Jobs done today</div></div>`
-    + `<div class="s"><div class="n">${day && day.idleMin!=null ? esc(String(day.idleMin))+"<small> min</small>" : "—"}</div><div class="l">Mini idle today</div></div>`
-    + `<div class="s"><div class="n sm">ElevenLabs ${esc(left("elevenlabs"))} · Flow ${esc(left("flow"))} · Vertex ${esc(left("vertex"))}</div><div class="l">Credits left</div></div>`;
+      `<div class="s" data-open="foldJobs"><div class="n">${day && day.doneToday!=null ? esc(String(day.doneToday)) : "—"}</div><div class="l">Jobs done today</div>${doneX}</div>`
+    + `<div class="s" data-open="foldJobs"><div class="n">${day && day.idleMin!=null ? esc(String(day.idleMin))+"<small> min</small>" : "—"}</div><div class="l">Mini idle today</div>${idleX}</div>`
+    + `<div class="s" data-open="foldPlans"><div class="n sm">ElevenLabs ${esc(left("elevenlabs"))} · Flow ${esc(left("flow"))} · Vertex ${esc(left("vertex"))}${pools.cursor?` · Cursor ${esc(left("cursor"))}`:""}</div><div class="l">Credits left</div>${low.length?`<div class="lo">Low: ${esc(low.join(" · "))}</div>`:""}</div>`;
 }
+// A tile opens its fold (jobs, or the AI plans) and scrolls to it.
+if(typeof document!=="undefined" && document.addEventListener) document.addEventListener("click", e=>{
+  const t = e.target && e.target.closest && e.target.closest(".stats [data-open]"); if(!t) return;
+  const d = document.getElementById(t.dataset.open); if(!d) return; d.open = true; d.scrollIntoView({behavior:"smooth", block:"start"}); });
 
 // Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
 function whoOf(f, s){ const st=stOf(f,s); return st.owner || (f._ch==="OWB" ? OWB_OWNER[s.key] : s.owner) || "Team"; }
@@ -1132,7 +1290,7 @@ function renderTracker(films){
       ${mkRow}
       <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span>${mkRow?"":ordChip} <span class="pill ${cls}">${word}</span></span></div>
       <div class="kt">${esc(f.title)}</div>
-      <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
+      <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${airIn(air)})`:""}</span><span>${pct}%</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
       <div class="st1 ${isSched?"ok":st.cls}">${isSched?mk[1]:st.short}</div>${isSched&&!mkRow&&optLine?`<div class="mk-opt">${optLine}</div>`:""}
       ${youSoon?`<div class="ky yes">For you: ${esc(b.youShort||b.you)}${watchLink(f.key)?`<br>${watchLink(f.key)}`:""}</div>`:""}
@@ -1589,10 +1747,27 @@ function renderVerdict(c){
   v.innerHTML = bits.length ? `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}On this month's pace: ${bits.join(" · ")}.` : `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}Which plan would fit shows from day 3 of each plan's month.`;
 }
 
+// A fold someone opened (the "17 jobs waiting" list, a job card, "+3 more") stays open when the page re-renders.
+function openKey(d){
+  if(d.id) return "#"+d.id;
+  if(d.dataset.key) return null;   // film cards: openState
+  const s = d.querySelector("summary"), box = d.parentElement && d.parentElement.closest("[id]");
+  return `${box?box.id:""}|${d.className}|${s?s.textContent.replace(/\d+/g,"#").trim().slice(0,60):""}`;
+}
 function render(){
+  const was = new Set([...document.querySelectorAll("details[open]")].map(openKey).filter(Boolean));
   const films = view();
   if(filter && !films.some(f=>f.key===filter)) filter = null;
-  renderSource(); renderTracker(films); renderNow(); renderJobBoard(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  renderSource(); renderTracker(films); renderNow(); renderDone(); renderJobBoard(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  if(was.size) document.querySelectorAll("details:not([open])").forEach(d=>{ const k = openKey(d); if(k && was.has(k)) d.open = true; });
+}
+// Between renders, times count by themselves: "12 min ago", "in 1 d 7 h", and the running job's bar and finish time.
+function tickTimes(){
+  document.querySelectorAll("[data-ago]").forEach(e=>{ const t = ago(+e.dataset.ago); if(e.textContent!==t) e.textContent = t; });
+  document.querySelectorAll("[data-until]").forEach(e=>{ const t = untilTxt(+e.dataset.until); if(e.textContent!==t) e.textContent = t; });
+  const pb = document.querySelector("#nowbar .pbar[data-live]"), j = pb && (fromDb.jobs||[]).find(x=>x.status==="claimed" && (x.needs==="mini" || jobLine(x)==="mini"));   // renderNow's job
+  if(j){ const pr = progressOf(j, plan()), i = pb.querySelector(".track i"), s = pb.querySelector(".ptxt"), t = `${pr.pct}% done · ${finishIn(pr.done)}`;
+    if(i) i.style.width = pr.pct+"%"; if(s && s.textContent!==t) s.textContent = t; }
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
 
@@ -1686,7 +1861,7 @@ async function startDb(){
   db.doc("board/owb").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || !Array.isArray(d.films)) return;
-    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : []; fromDb.extra = {typical: d.typical||null, day: d.day||null, done: Array.isArray(d.done) ? d.done : null};
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : []; fromDb.extra = {typical: d.typical||null, day: d.day||null, week: Array.isArray(d.week) ? d.week : null, done: Array.isArray(d.done) ? d.done : null};
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
   }, ()=>{});
   dbApi = db;
@@ -1742,6 +1917,7 @@ render();
 startDb();
 startLive();
 setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" current
+setInterval(tickTimes, 10*1000);
 
 // Ben, 12 Oct 21:11: drop a card's status line when it only repeats the air date shown above it.
 (function(){ const t = document.getElementById("tracker"); if(!t || typeof MutationObserver==="undefined") return;
@@ -1793,6 +1969,7 @@ setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" curr
       return {w: lead+who, cls:"queue", pct:0, t:`starts in ${rel(p.start)}`, start:p.start}; }
     return {w:"Queued", cls:"queue", pct:0, t:"start not known yet"};
   };
+  const OPEN_JL = new Set();
   const eta = () => {
     const jobsAll = (typeof fromDb!=="undefined" && fromDb.jobs) || []; if(!jobsAll.length) return;
     const P = plan(), by = {};
@@ -1821,7 +1998,8 @@ setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" curr
       const html = rows.map(j=>{ const st = jobState(j, P);
         return `<li><span class="jt">${esc(plainTitle(j, 46))}</span><span class="js ${st.cls}">${st.cls==="ok"?"✓ Done":esc(st.w)}</span>${st.cls==="ok"?"":`<span class="jb"><i style="width:${st.pct}%"></i></span>`}<span class="jw">${esc(st.t)}</span></li>`; }).join("");
       const sum = "Jobs · " + [live.length?`${live.length} to go`:"", done.length?`${done.length} done`:""].filter(Boolean).join(", ");
-      if(!jl){ c.insertAdjacentHTML("afterend", `<details class="jl"><summary></summary><ul></ul></details>`); jl = c.nextElementSibling; }
+      if(!jl){ c.insertAdjacentHTML("afterend", `<details class="jl"><summary></summary><ul></ul></details>`); jl = c.nextElementSibling;
+        const k = c.dataset.key; if(OPEN_JL.has(k)) jl.open = true; jl.addEventListener("toggle", ()=>{ if(jl.open) OPEN_JL.add(k); else OPEN_JL.delete(k); }); }
       const s1 = jl.querySelector("summary"), ul = jl.querySelector("ul");
       if(s1.textContent!==sum) s1.textContent = sum;
       if(jl.dataset.h!==html){ jl.dataset.h = html; ul.innerHTML = html; }   // compare our own string: innerHTML re-serialises
