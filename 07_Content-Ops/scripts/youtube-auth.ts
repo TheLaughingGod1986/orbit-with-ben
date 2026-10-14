@@ -10,16 +10,33 @@
  * with http://localhost:3000/api/oauth/google/callback as an authorised redirect URI
  * (or set YOUTUBE_AUTH_REDIRECT_URI to another localhost URI registered on the client).
  * Sign in as the Orbit With Ben channel.
+ *
+ * Read-only sign-in for the channel tracker (scripts/analytics-snapshot.ts), one per channel:
+ *   npx tsx --env-file=.env scripts/youtube-auth.ts --analytics owb   # sign in as Orbit With Ben
+ *   npx tsx --env-file=.env scripts/youtube-auth.ts --analytics hos   # sign in as History of Science
+ * It asks only for youtube.readonly + yt-analytics.readonly (it can't upload or change anything)
+ * and saves YT_ANALYTICS_REFRESH_TOKEN_OWB / _HOS, leaving the upload login alone.
  */
 import fs from "fs";
 import http from "http";
 import path from "path";
 import crypto from "crypto";
 import { execFile } from "child_process";
-import { YOUTUBE_SCOPES } from "../src/lib/youtube/upload";
+import { YOUTUBE_SCOPES, YT_READONLY } from "../src/lib/youtube/upload";
+import { CHANNELS, type ChannelKey } from "../src/lib/analytics/channel-tracker";
 
 const ENV_FILE = path.resolve(__dirname, "../.env");
-const CHANNEL_ID = "UC_esArsDKd3GJvOkeO0DUog";
+const YT_ANALYTICS_READONLY = "https://www.googleapis.com/auth/yt-analytics.readonly";
+
+/** What this run signs in for: the upload login (default) or one channel's read-only tracker login. */
+export function authTarget(argv: string[]): { scopes: string[]; envKey: string; channelId: string; channelName: string } {
+  const i = argv.indexOf("--analytics");
+  if (i < 0) return { scopes: YOUTUBE_SCOPES, envKey: "YOUTUBE_REFRESH_TOKEN", channelId: CHANNELS.owb.id, channelName: CHANNELS.owb.name };
+  const key = argv[i + 1] as ChannelKey;
+  if (!(key in CHANNELS)) throw new Error("--analytics needs owb or hos");
+  const ch = CHANNELS[key];
+  return { scopes: [YT_READONLY, YT_ANALYTICS_READONLY], envKey: ch.tokenKey, channelId: ch.id, channelName: ch.name };
+}
 
 function redirectUri(): URL {
   const candidates = [process.env.YOUTUBE_AUTH_REDIRECT_URI, process.env.GOOGLE_REDIRECT_URI];
@@ -38,6 +55,7 @@ export function upsertEnvLine(text: string, key: string, value: string): string 
 async function main() {
   const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
   if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) throw new Error("GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET missing from .env");
+  const target = authTarget(process.argv.slice(2));
   const redirect = redirectUri();
   const state = crypto.randomBytes(16).toString("hex");
   const auth = new URL("https://accounts.google.com/o/oauth2/v2/auth");
@@ -45,7 +63,7 @@ async function main() {
     client_id: GOOGLE_CLIENT_ID,
     redirect_uri: redirect.toString(),
     response_type: "code",
-    scope: YOUTUBE_SCOPES.join(" "),
+    scope: target.scopes.join(" "),
     access_type: "offline",
     prompt: "consent",
     state,
@@ -60,13 +78,13 @@ async function main() {
       }
       const ok = url.searchParams.get("state") === state && url.searchParams.get("code");
       res.writeHead(ok ? 200 : 400, { "Content-Type": "text/plain" });
-      res.end(ok ? "Orbit With Ben: YouTube connected. You can close this tab." : "Sign-in failed. Check the terminal.");
+      res.end(ok ? `${target.channelName}: YouTube connected. You can close this tab.` : "Sign-in failed. Check the terminal.");
       server.close();
       if (ok) resolve(url.searchParams.get("code")!);
       else reject(new Error(`Google returned ${url.searchParams.get("error") || "a mismatched state"}`));
     });
     server.listen(Number(redirect.port || 80), redirect.hostname, () => {
-      console.log(`Open this link and sign in as Orbit With Ben:\n\n${auth.toString()}\n`);
+      console.log(`Open this link and sign in as ${target.channelName}:\n\n${auth.toString()}\n`);
       if (process.platform === "darwin") execFile("open", [auth.toString()], () => undefined);
     });
     server.on("error", reject);
@@ -88,15 +106,17 @@ async function main() {
     throw new Error(`Token exchange failed: ${body.error || res.status}${body.refresh_token ? "" : " (no refresh token returned)"}`);
   }
 
-  const current = fs.existsSync(ENV_FILE) ? fs.readFileSync(ENV_FILE, "utf8") : "";
-  fs.writeFileSync(ENV_FILE, upsertEnvLine(current, "YOUTUBE_REFRESH_TOKEN", body.refresh_token), { mode: 0o600 });
-
+  // Check the channel before saving, so a sign-in as the wrong channel never replaces a working login.
   const ch = await fetch("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true", {
     headers: { Authorization: `Bearer ${body.access_token}` },
   }).then((r) => r.json());
   const channel = ch.items?.[0];
-  console.log(`Saved YOUTUBE_REFRESH_TOKEN to .env. Signed in as: ${channel?.snippet?.title ?? "unknown"} (${channel?.id ?? "?"})`);
-  if (channel?.id !== CHANNEL_ID) console.error(`Warning: that is not Orbit With Ben (${CHANNEL_ID}). Run again and pick the right channel.`);
+  if (channel?.id !== target.channelId) {
+    throw new Error(`Signed in as ${channel?.snippet?.title ?? "unknown"} (${channel?.id ?? "?"}), not ${target.channelName} (${target.channelId}). Nothing saved. Run again and pick the right channel.`);
+  }
+  const current = fs.existsSync(ENV_FILE) ? fs.readFileSync(ENV_FILE, "utf8") : "";
+  fs.writeFileSync(ENV_FILE, upsertEnvLine(current, target.envKey, body.refresh_token), { mode: 0o600 });
+  console.log(`Saved ${target.envKey} to .env. Signed in as: ${channel.snippet?.title} (${channel.id})`);
 }
 
 if (require.main === module) {

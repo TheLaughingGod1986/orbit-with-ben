@@ -13,19 +13,31 @@ alwaysApply: false
 
 Full steps: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2–§4 and §7. Hooks: `FAMILIAR_DANGER_STRATEGY.md` → *Long hook*.
 
-- **Topic:** a familiar thing in danger, with no existing public long on that subject. Run a competition check on the exact title (signed out, top five results). Fill `PRE_BUILD_VIDIQ_AUDIT.md`. **Ben picks.**
+- **Topic:** a familiar thing in danger, with no existing public long on that subject. Run the **neighbour pass** first (`STUDIO_PLAYBOOK.md` §2): at least three big education/space videos (≈1M+ views) on the same subject, then a competition check on the exact title (signed out, top five results). Fill `TOPIC_OPPORTUNITY_SCORE.md` + `PRE_BUILD_VIDIQ_AUDIT.md` (neighbours, subject-only tags, description first lines — no channel names in the listing). **Claude locks it on the thread (3 Oct order).**
 - **Script** (about 1,200–1,300 spoken words):
   - The first 3 s of picture are the danger. Sentence one is the promise, with the payoff named by 30 s.
   - 4–6 acts told as cause and effect. The world does the science; Orbit is in 1–2 beats only.
   - Picture changes every 4–6 s. Every number sourced. No goodbye; the last line hands off to the next film.
   - One `[SUBSCRIBE BEAT]` right after the first payoff (25–50% of spoken words): one line of 20 words or fewer from `templates/SUBSCRIBE_BEAT_LINES.md`, with no numbers and no stock phrases. It's gate-checked. A 4-second lower-right cue plays under it while the picture keeps moving.
   - `[VISUAL MUST]` + `[TEACH]` on every scene; `[ORBIT ACTS]` on Orbit beats only.
+  - **Teach on screen (Ben, 11 Oct 2026):** inside `[VISUAL MUST: …]`, mark at least 3 `· DATA:` moments, a `· WHO:` card (name, years, role) for each named person at first mention, `· WHEN:` for every date (a timeline for 3 or more dates) and 2–4 `· FACT:` beats. Full rule: AGENTS.md → *Teach on screen*.
+  - **Polish pass (Astrum ref, 11 Oct 2026):** every big number gets a `· SCALE:` comparison on its DATA marker (no extra words); hook = the claim with its mystery, huge claim and first answer before 0:30, the film's question by ~0:50. In the edit: house SFX kit (`scripts/sfx_kit.py make`; rumble, soft whoosh, tick) with `sfx_kit.py level` PASS (12 LU under VO, 10 LU while it speaks), music changes awe → explain at chapter cards, 0.5–1.5 s crossfades where they suit, fine grain on dark space, small corner credits. No long holds: 4–6 s picture change, 4 s max hold. AGENTS.md → *Polish pass*.
+  - **Reference lessons (HOTU + SEA, 11 Oct 2026):**
+    - Chapters open cold and end on a question the next one answers; a "case closed? wrong" twist comes at about 60%.
+    - The film ends on the scariest idea, explained away, then the hand-off line.
+    - A sourced anecdote comes before each hard idea.
+    - Every named person gets a WHO card plus a sourced parallax portrait.
+    - Maths becomes an object (a limit slider, an icon map), as a `chart` job for Codex.
+    - Keywords flash with a plain sub-line.
+    - Banned: glowing-dot filler, holding back the answer.
+    - The 0:30 / 0:50 hook rule and every gate still win. AGENTS.md → *Reference lessons*.
 - **Gates:** `npm run review:script` scores 90 or more, then `npm run gate:episode` PASSes. No VO or picture spend before both.
 - **Voice:** Ben Orbit Narrator (`04_Audio/tools/orbit_voice.py`). VO comes before picture. Speech around −19 to −28 dB mean; never silent.
-- **Assembly:**
-  - normalise inputs to 1920×1080 stereo and check A/V lengths match;
+- **Assembly** (`docs/ORBIT_PLAYBOOK_LESSONS.md` §2 + `STUDIO_PLAYBOOK.md` §7):
+  - normalise inputs to 1920×1080 stereo and check A/V lengths match; fill 16:9 (no flat bars; feathered blur OK; upscale ≤~2.35×);
   - a remint is picture only (keep the original audio);
-  - soft chapter cards with 1.5 s breath and music under;
-  - an end hold of 15–20 s with a music fade (a silent hold fails);
+  - chapter cards: VO sentence finishes → 0.5–0.8 s breath → ~0.4 s xfade; never clip a line;
+  - end: picture+music past last VO word, hold 2–3 s, then fade; music full runtime; mix ~−14 LUFS;
+  - pre-delivery: `python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> [--words vo_words.json]`;
   - export `09_Final-Export/<slug>_broadcast_v0N.mp4`.
 - **Publish:** normal publish, Sunday 18:00 UK. Test & Compare with 3 thumbs; end screen = best related long + Subscribe; captions via auto-sync; a pinned comment (question + subscriber thank-you) via `scripts/update-pinned-comment.ts --create`, then pinned in Studio.

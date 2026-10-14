@@ -1,0 +1,57 @@
+{
+  "verdict": "FAIL",
+  "bed": "02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_bed_v01.mp3",
+  "seconds": 490.0,
+  "bpm": 52.2,
+  "brief_pace": "Pace: 70-84 BPM",
+  "fail": [
+    "reused: sounds like light-speed_score_bed_v01_full.mp3 (0.836), light-speed_score_bed_v01.mp3 (0.831), mars-robot_score_bed_v01_full.mp3 (0.869), mars-robot_score_bed_v01.mp3 (0.806), mars-robot_score_bed_v02_full.mp3 (0.806), saturn-rings_score_bed_v01.mp3 (0.837)",
+    "gap: the music nearly stops for 10.3 s from 5:32 (over 15 dB under its usual level)"
+  ],
+  "warn": [
+    "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+    "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+    "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v02_LISTEN.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read monday_saturn_short_vo_v02_how_long.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03_tightened.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read monday_saturn_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read monday_saturn_short_vo_v02_how_long.mp3 to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others",
+    "pace: measured about 52.2 BPM against the brief's 70-84; Claude listens"
+  ],
+  "matches": [
+    {
+      "file": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music/light-speed_score_bed_v01_full.mp3",
+      "similarity": 0.836
+    },
+    {
+      "file": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music/light-speed_score_bed_v01.mp3",
+      "similarity": 0.831
+    },
+    {
+      "file": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v01_full.mp3",
+      "similarity": 0.869
+    },
+    {
+      "file": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v01.mp3",
+      "similarity": 0.806
+    },
+    {
+      "file": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v02_full.mp3",
+      "similarity": 0.806
+    },
+    {
+      "file": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/05_Music/saturn-rings_score_bed_v01.mp3",
+      "similarity": 0.837
+    }
+  ],
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  }
+}

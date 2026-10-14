@@ -1,0 +1,108 @@
+{
+  "job": "J0163",
+  "short": "s5",
+  "air_provisional": "2026-11-03",
+  "title_on_screen": "Shooting Stars Aren't Stars",
+  "file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s5_shooting_stars_v01.mp4",
+  "frames": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s5_shooting_stars_v01_frames.jpg",
+  "sha256": "f21070efa7264706fc5bed8f058768da597f1686bf0dc5863cc5b673db60ead5",
+  "duration_s": 20.0,
+  "vo": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/vo_s5-s8_v01/trim/owb_sa_s5_shooting_stars_vo_v01_trim.wav",
+  "words": 51,
+  "last_word_end_s": 17.0,
+  "spoken": "That shooting star isn't a star. Stay, and I'll show you what it really is. Most are crumbs of comet between a grain of sand and a pea. They hit our air at tens of thousands of miles an hour and burn up. Every November, the Leonids come from Comet Tempel-Tuttle",
+  "hook": "NOT A STAR (yellow STAR), 0-2.2 s",
+  "title_window_s": [
+    9.0,
+    14.0
+  ],
+  "overlay": {
+    "kind": "scale",
+    "labels": [
+      "SAND",
+      "PEA"
+    ],
+    "window": [
+      6.5,
+      8.9
+    ],
+    "spoken": "between a grain of sand and a pea"
+  },
+  "cuts": [
+    {
+      "row": 1,
+      "start_s": 0.0,
+      "end_s": 4.7,
+      "file": "s5_meteors/NHQ202108110001.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "max_upscale": 0.65
+    },
+    {
+      "row": 2,
+      "start_s": 4.7,
+      "end_s": 8.9,
+      "file": "s5_meteors/NHQ202108110005.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.1
+      ],
+      "max_upscale": 0.52
+    },
+    {
+      "row": 3,
+      "start_s": 8.9,
+      "end_s": 13.36,
+      "file": "s5_meteors/NHQ202108100009.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.08,
+        1.0
+      ],
+      "max_upscale": 0.56
+    },
+    {
+      "row": 4,
+      "start_s": 13.36,
+      "end_s": 17.0,
+      "file": "s5_meteors/NHQ202108110003.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.08
+      ],
+      "max_upscale": 0.7
+    },
+    {
+      "row": 5,
+      "start_s": 17.0,
+      "end_s": 20.0,
+      "file": "s5_meteors/NHQ202108110001.jpg",
+      "mode": "loop",
+      "note": "0.5 s crossfade back to the opening plate, pull-back to frame 0"
+    }
+  ],
+  "orbit_slot": {
+    "start_s": 1.0,
+    "status": "open: J0200 Omni insert, opening plate runs under it until then"
+  },
+  "audio": {
+    "vo_gain": 1.0,
+    "bed": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+    "bed_gain": 0.065,
+    "bed_hold_gain": 0.35,
+    "sfx": "sfx_owb_whoosh_soft_v01.wav at 0 s, tick at 6.55 s",
+    "stems": {
+      "vo": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s5_shooting_stars/stem_vo.wav",
+      "bed": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s5_shooting_stars/stem_bed.wav",
+      "sfx": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s5_shooting_stars/stem_sfx.wav"
+    },
+    "mix": "-14 LUFS, -1.5 dBTP"
+  },
+  "grain": "noise=alls=4:allf=t",
+  "spend": "none"
+}

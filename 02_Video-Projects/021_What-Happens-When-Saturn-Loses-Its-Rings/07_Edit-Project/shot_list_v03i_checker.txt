@@ -1,0 +1,25 @@
+clip_check: 115 rows — PASS
+OK: sentence/card boundaries and end-after-VO checks clear.
+115 rows, 110 pictures, 97 NASA IDs, ends 561.07s
+--- clip_check ---
+--- end clip_check ---
+FAIL: 19 problem(s)
+ - row 5: duration 1.2s outside 3.5–6.5s
+ - row 5: clip span 3.70s != row length 1.20s (no slow-mo or stretch)
+ - row 6: duration 0.7s outside 3.5–6.5s
+ - row 6: unknown source 'BREATH'
+ - row 7: chapter card 3.5s > 2.5s
+ - row 27: duration 10.2s outside 3.5–6.5s
+ - row 28: duration 0.7s outside 3.5–6.5s
+ - row 28: unknown source 'BREATH'
+ - row 29: chapter card 3.5s > 2.5s
+ - row 47: duration 0.7s outside 3.5–6.5s
+ - row 47: unknown source 'BREATH'
+ - row 48: chapter card 4.2s > 2.5s
+ - row 75: duration 0.7s outside 3.5–6.5s
+ - row 75: unknown source 'BREATH'
+ - row 76: chapter card 3.5s > 2.5s
+ - row 94: duration 0.7s outside 3.5–6.5s
+ - row 94: unknown source 'BREATH'
+ - row 95: chapter card 4.5s > 2.5s
+ - row 114: duration 9.4s outside 3.5–6.5s

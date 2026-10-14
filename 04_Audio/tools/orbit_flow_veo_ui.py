@@ -1109,6 +1109,29 @@ def wait_and_download(
     raise TimeoutError(f"Flow video not ready after {timeout_s}s")
 
 
+
+FLOW_TAKE_CREDITS = {"quality": 100, "fast": 10, "lite": 5}
+
+
+def _record_flow_spend(dest: Path, model: str) -> None:
+    """One ai_spend line per Flow take (AI spend month, 8 Oct 2026), written at Create because Flow charges on submit."""
+    import subprocess
+    tier = model.rsplit("-", 1)[-1].strip().lower()
+    credits = 0 if "low" in model.lower() else FLOW_TAKE_CREDITS.get(tier, 0)
+    m = re.search(r"02_Video-Projects/(\d{3})_", str(Path(dest).resolve()))
+    try:
+        r = subprocess.run([sys.executable, str(REPO / "scripts" / "ai_spend.py"), "spend", "--pool", "flow",
+                            "--amount", str(credits), "--film", f"OWB:{m.group(1)}" if m else "",
+                            "--what", f"Flow take {Path(dest).stem} ({model})",
+                            "--by", (os.environ.get("OWB_AGENT") or "flow-minter").lower()],
+                           cwd=REPO, capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.SubprocessError) as e:
+        print(f"  ai_spend: not recorded ({type(e).__name__}: {e})"[:240], flush=True)
+        return
+    if r.returncode != 0:
+        print(f"  ai_spend: not recorded ({(r.stderr or r.stdout).strip()[:200]})", flush=True)
+
+
 def _generate_clip_once(
     page,
     prompt: str,
@@ -1167,6 +1190,7 @@ def _generate_clip_once(
         print("  submitting Create…", flush=True)
         submit_create(page)
         print("  submitted Create (scenery-only, no Orbit ref)", flush=True)
+        _record_flow_spend(dest, model)
     else:
         print("  ensuring Orbit agent instruction…", flush=True)
         ensure_orbit_agent_instruction(page)
@@ -1184,6 +1208,7 @@ def _generate_clip_once(
         print("  submitting Create…", flush=True)
         submit_create(page)
         print("  submitted Create (identity-locked, Orbit ref attached)", flush=True)
+        _record_flow_spend(dest, model)
     media_id = wait_and_download(
         page, dest, before_ids=before, timeout_s=timeout_s
     )

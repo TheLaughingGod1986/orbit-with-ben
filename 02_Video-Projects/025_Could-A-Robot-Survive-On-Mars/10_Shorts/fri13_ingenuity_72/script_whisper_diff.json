@@ -1,0 +1,30 @@
+{
+  "script_words": 58,
+  "whisper_words": 57,
+  "match_rate_pct": 93.1,
+  "mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "one",
+        "percent"
+      ],
+      "whisper": [
+        "1"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "two",
+        "thousand"
+      ],
+      "whisper": [
+        "2",
+        "000"
+      ]
+    }
+  ],
+  "script_norm": "this helicopter was built for five flights on mars it flew seventy two the air there is about one percent as thick as ours its blades spun more than two thousand times a minute to lift it in 2024 a damaged blade finally grounded it it's still standing there the full film could a robot survive on mars",
+  "whisper_norm": "this helicopter was built for five flights on mars it flew seventy two the air there is about 1 as thick as ours its blades spun more than 2 000 times a minute to lift it in 2024 a damaged blade finally grounded it it's still standing there the full film could a robot survive on mars"
+}

@@ -1,0 +1,109 @@
+
+> content-ops@0.1.0 youtube:package
+> tsx --env-file=.env scripts/youtube-package-upload.ts --package ../02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package --video /private/tmp/mars025_full_work_v03f/025_MarsRobot_full_rough_v03f.mp4 --dry-run
+
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-08T18:00:00.000Z",
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. Would upload now with publishAt=2026-11-08T18:00:00.000Z.",
+    "responseSummary": "{\"title\":\"Could a Robot Survive on Mars?\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-08T18:00:00.000Z\",\"madeForKids\":false,\"containsSyntheticMedia\":true,\"contentFormat\":\"longform\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package",
+    "sha256": "cce6268cbd571f1f404ee98b86e089bbe3cabed15017113bd9559951ee36e09f",
+    "title": "Could a Robot Survive on Mars?",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 20,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/08_Thumbnail/abc_v02/mars_robot_thumb_A_built-for-90-days.jpg",
+    "scheduledAt": "2026-11-08T18:00:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "descriptionFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Descriptions/mars_robot_long_description_v01.txt",
+      "tagsFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Tags/mars_robot_long_tags_v01.txt",
+      "pinnedCommentFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Pinned-Comments/mars_robot_long_pinned_v01.txt",
+      "video": "/private/tmp/mars025_full_work_v03f/025_MarsRobot_full_rough_v03f.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/08_Thumbnail/abc_v02/mars_robot_thumb_A_built-for-90-days.jpg",
+      "trailer": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/Trailer/mars_robot_long_trailer_v01_41s.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": null,
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (0) · thumbs (3). Not available via Data API."
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}
+Wrote /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/11_Upload-Package/PACKAGE_UPLOAD_RESULT_2026-10-09T12-46-42-925Z.json

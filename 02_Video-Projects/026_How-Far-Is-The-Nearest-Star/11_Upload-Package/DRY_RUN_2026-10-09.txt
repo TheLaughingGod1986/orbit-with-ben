@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-15T18:00:00.000Z",
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. Would upload now with publishAt=2026-11-15T18:00:00.000Z.",
+    "responseSummary": "{\"title\":\"How Far Is the Nearest Star?\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-15T18:00:00.000Z\",\"madeForKids\":false,\"containsSyntheticMedia\":true,\"contentFormat\":\"longform\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package",
+    "sha256": "7d0087d8a66a75b67446198c00c52c4feea5a65ce13caebf65acaeb77016aaf4",
+    "title": "How Far Is the Nearest Star?",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 19,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg",
+    "scheduledAt": "2026-11-15T18:00:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "descriptionFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/Descriptions/nearest_star_long_description_v01.txt",
+      "tagsFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/Tags/nearest_star_long_tags_v01.txt",
+      "pinnedCommentFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/Pinned-Comments/nearest_star_long_pinned_v01.txt",
+      "video": "/private/tmp/026_NearestStar_v04_PHONE.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": null,
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (0) · thumbs (3). Not available via Data API."
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}
+Wrote /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/PACKAGE_UPLOAD_RESULT_2026-10-09T13-00-41-389Z.json

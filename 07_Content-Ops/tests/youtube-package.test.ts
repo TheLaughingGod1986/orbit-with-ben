@@ -109,4 +109,27 @@ describe("loadYouTubePackage", () => {
     expect(pkg.pinnedComment).toBe("Please pin");
     expect(pkg.scheduledAt?.toISOString()).toBe("2026-08-20T18:00:00.000Z");
   });
+  it("keeps manifest values when CLI flags are unset (undefined)", () => {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), "yt-pkg-"));
+    const video = path.join(root, "short.mp4");
+    fs.writeFileSync(video, "fake");
+    fs.writeFileSync(
+      path.join(root, "PACKAGE_MANIFEST.json"),
+      JSON.stringify({
+        format: "shorts",
+        title: "Could a Robot Survive Touching the Sun?",
+        description: "Is the Sun Getting Brighter?",
+        tags: ["sun"],
+        schedule: "2026-10-21T10:30:00.000Z",
+      }),
+    );
+    const pkg = loadYouTubePackage({
+      packageDir: root,
+      videoPath: video,
+      overrides: { title: undefined, format: undefined, schedule: undefined },
+    });
+    expect(pkg.title).toBe("Could a Robot Survive Touching the Sun?");
+    expect(pkg.format).toBe("shorts");
+    expect(pkg.scheduledAt?.toISOString()).toBe("2026-10-21T10:30:00.000Z");
+  });
 });

@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-13T11:30:00.000Z",
+    "platformPostId": "bSjWiCbB7pY",
+    "platformUrl": "https://youtu.be/bSjWiCbB7pY",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-13T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"bSjWiCbB7pY\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-13T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/11_Upload-Package",
+    "sha256": "45683cdf147e228d5870f6e9b76da5c31440de9be4422720a87afd15011a262c",
+    "title": "How Did a Helicopter Fly 72 Times on Mars?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/08_Covers/cover_fri13_ingenuity_72.jpg",
+    "scheduledAt": "2026-11-13T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/08_Covers/cover_fri13_ingenuity_72.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": false,
+        "error": "Buffer LimitReachedError: Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed."
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": false,
+        "error": "Buffer LimitReachedError: Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed."
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": false,
+        "error": "Buffer LimitReachedError: Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed."
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "bSjWiCbB7pY",
+    "studioEditUrl": "https://studio.youtube.com/video/bSjWiCbB7pY/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/bSjWiCbB7pY/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/bSjWiCbB7pY/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/bSjWiCbB7pY/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/bSjWiCbB7pY/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: set Related video to Js6EQJ8qDi8 (that week’s Thursday long only). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/bSjWiCbB7pY/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/bSjWiCbB7pY/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (bSjWiCbB7pY). 1 required Studio finish step(s) remain."
+  }
+}

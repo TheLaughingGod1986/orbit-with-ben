@@ -30,10 +30,11 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 ## 2. Pick the topic (before any script)
 
 1. **Use the channel's own data.** Read the latest `audits/weekly/<date>/REPORT.md`, `audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md` and `audits/THUMBNAIL_TITLE_AUDIT_2026-09-25/`. What wins is a familiar thing in danger (the Moon, the Sun, a star, your body) told as an ending, a body impossibility, a yes/no question, something hidden, or one real number.
-2. **Competition check.** Search the exact title on YouTube, signed out. If all top five results are channels with millions of subscribers, narrow the angle.
-3. **Score it:** `templates/TOPIC_OPPORTUNITY_SCORE.md`.
-4. **Pre-build vidIQ audit:** copy `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` into the project's `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Wonder beats a higher vidIQ score for fear or conspiracy.
-5. **Scaffold:** copy `02_Video-Projects/_template_NNN_Episode-Slug/` to `02_Video-Projects/NNN_Slug/`.
+2. **Neighbour pass (blocking · Ben standing order 1 Oct 2026).** Before topic lock, find **at least three** big education or space videos (about **1M+** views) on the same subject — the kind of films YouTube already suggests next to each other (Kurzgesagt, TED-Ed, Veritasium, SciShow Space, PBS Space Time, NASA, Crash Course, BBC Earth Science, and peers). Write them into the topic score and the pre-build audit: title, channel, id, views, and the **subject words** they use in title / description / tags. Goal: package so Orbit can sit in their Suggested / related neighbourhood (the HOS 002 ↔ TED-Ed pattern), without naming those channels in our listing. **Claude locks the topic** on the thread (3 Oct order) — a strong neighbour pool is evidence, not an auto-lock.
+3. **Competition check.** Search the exact title on YouTube, signed out. If all top five results are channels with millions of subscribers, narrow the angle.
+4. **Score it:** `templates/TOPIC_OPPORTUNITY_SCORE.md` (include the neighbour table).
+5. **Pre-build vidIQ audit:** copy `PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md` into the project's `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`. Fill the neighbour-pass section. Draft description first line(s) and **5–8 subject-only tags** from the neighbours' words — never channel names. Wonder beats a higher vidIQ score for fear or conspiracy.
+6. **Scaffold:** copy `02_Video-Projects/_template_NNN_Episode-Slug/` to `02_Video-Projects/NNN_Slug/`.
 
 ## 3. Script
 
@@ -52,6 +53,7 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 
   `gate:episode` fails a script without exactly one valid beat.
 - **No goodbye and no second ask** ("in conclusion", "thanks for watching", "like and subscribe"). The last spoken line hands off to the next film ("Next, Orbit falls into Jupiter.") and the end screen shows it.
+- **Teach on screen (Ben, 11 Oct 2026):** at least 3 `DATA:` moments, a `WHO:` card for every named person at first mention, a `WHEN:` call-out for every date (a timeline for 3 or more dates) and 2–4 `FACT:` beats, all marked inside `[VISUAL MUST: …]`. Full rule in §5, *Teach on screen*.
 - **Layout:** every scene carries `[VISUAL MUST: …]` and `[TEACH: …]`. Only the Orbit beats carry `[ORBIT ACTS: …]`. The gate flags more than 2 Orbit beats.
 - **Gates (both must pass before any voice or picture spend):**
   ```bash
@@ -73,6 +75,7 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 - **The last 4 s** return to the opening picture so the Short loops.
 - **The spoken end line depends on the test week** (the week-2 test drops "Watch the full film"). When the film is named, use its exact live title.
 - **Captions** run the whole way.
+- **One overlay at most** (fact card, date call-out or one-number scale bar), only where it helps; never in the first 2 s or over the 9–14 s title, inside the 16:9 centre band, with no added words or seconds (§5, *Teach on screen*).
 - The long-form script reviewer caps Shorts below 90. **Don't pad a Short to chase it.**
 
 ## 4. Voice
@@ -85,13 +88,13 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 
 ## 5. Picture
 
-**Home: Google AI Studio.**
+**Home: Vertex AI** on the free credit already on the account (Omni from location `global`). Never AI Studio prepaid credit.
 
 | Job | Tool |
 |---|---|
 | World plates | **Veo** (Fast by default; one Quality hero if it earns the thumbnail) |
 | Orbit moving | **Omni, only for Orbit** |
-| Stills / boards | AI Studio image |
+| Stills / boards | Vertex image |
 
 No Kling, Seedance or ElevenLabs Image & Video.
 
@@ -103,6 +106,117 @@ No Kling, Seedance or ElevenLabs Image & Video.
 - **Environment honesty:** no bubbles in vacuum; water SFX only underwater.
 - **Ocean or shore POV:** no Earth globe in the sky. One Earth and one Moon, or one Moon only. Check a mid-plate frame, not just the first and last.
 - **Frame sizes** (`YOUTUBE_FRAME_SIZES.md`): long 1920×1080 MP4; Short 1080×1920; long thumbnail file 1280×720.
+- **Picture QA (Ben, 8 Oct):** `scripts/picture_qa.py` must PASS before Claude's review. It catches computer models, diagrams and labelled images, soft upscales, reused pictures and polish_gate's checks, each at its film time (m:ss); Claude looks at every WARN full size. Rules: AGENTS.md lesson 7.
+
+### Teach on screen (Ben, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
+
+<!-- SYNC: AGENTS.md#Teach on screen (Ben, 11 Oct 2026) -->
+Ben, 11 Oct 2026 21:45, for every future video on both channels: *"add more graphs and charts when needed, more overlays, more animations, and more interesting facts to explain about dates, explain about the people we're mentioning, and make it more educational and more useful."* This applies to every script locked and every cut started after 11 Oct 2026. It adds to lesson 7 and the edit locks, and it relaxes none of them.
+
+**Script.** Mark these inside the scene's `[VISUAL MUST: …]`, so `review:script` doesn't count them as spoken words and `gate:episode` doesn't change. Chief counts them at script review (`grep -o "DATA:" <script> | wc -l`, and the same for each marker).
+- **DATA: at least 3 in every long (aim for 3–6).** Wherever the VO says a number, size, distance, time span or trend, add `· DATA: <what the graphic shows>`: an animated bar or line chart, a scale bar or size comparison, a counter, or a timeline. At least one comes before the `[SUBSCRIBE BEAT]`. Every DATA number is a MUST QUOTE row in `SOURCES.md`.
+- **WHO: a card for every named person at first mention.** Use `· WHO: <name> (<born>–<died>, or "born <year>") — <role, 4 words or fewer>`. Later mentions get no card. The years go into `SOURCES.md` and the Gemini claims pass, like any spoken number.
+- **WHEN: every date or era that's said.** Add `· WHEN: <year or era>` for a date call-out. A story with 3 or more dates gets one timeline that builds as each date is said, and it counts as one DATA moment. Later dates drop onto that timeline.
+- **FACT: 2–4 per long.** Each is one surprising, sourced fact, said in a line and shown as a card: `· FACT: <card text, 4 words or fewer>`. Make it a "huh, I didn't know that" beat, never a list. It's quote-checked like every number.
+- **Shorts (22–27 s): at most one overlay** (a fact card, a date call-out or a one-number scale bar), and only where it helps the line being said. It adds no words and no seconds, so the Short stays at 22–27 s and 55–65 words. It never appears in the first 2 s (frame 0 has the hook caption only) or over the 9–14 s title, and it stays inside the 16:9 centre band.
+
+**Picture.**
+- Every DATA, WHO, WHEN and FACT item is our own code graphic or edit overlay, rendered for its own row (`code_graphic_<film>_<row>…`) and listed in the cut list. A chart, graph, diagram or labelled image taken from a source still FAILs `picture_qa.py`. Never pull one in to meet the count.
+- **Everything animates.** A chart builds in time with the spoken number: bars grow, the line draws, the counter runs, timeline markers drop in. A card slides or fades in over about 0.3–0.5 s, then out again. An overlay that animates over a moving plate counts as that window's 4–6 s picture change. No card holds still for more than 4 s, and a card is never Ken-Burned (that Never still stands).
+- **The house picture rules still win:**
+  - real bodies, not flat discs (lesson 7);
+  - labels of 4 words or fewer, taken from the line being spoken, in large house type;
+  - one idea per graphic;
+  - never two code graphics back to back anywhere in the film, with real moving imagery between them (the first-30-seconds rule, now film-wide);
+  - WHO, WHEN and FACT cards ride over moving or blurred real picture, never a flat black slab or an empty black panel, and the frame passes polish_gate's near-black check;
+  - any NASA plate behind a graphic is colour-graded, and text stays off the subject;
+  - a Short's overlay lines are 11–12% of the 16:9 band height (the house Short size), inside that band.
+- **WHO card layout:** lower third, with the name on line one and the years and role on line two. It stays on screen 3–4 s while the name is spoken. Show no portrait we can't source; the card can sit over the scene alone.
+
+**Review gate.** Chief's frame review and stills check score each item PASS or FAIL in the pack's review note:
+1. **DATA:** a long has 3 or more animated data moments. Each matches its line, reads with the sound off, and shows the same number as `SOURCES.md`.
+2. **WHO:** every named person has a card at first mention, with sourced years.
+3. **WHEN:** every spoken date or era has a call-out, and 3 or more dates have a timeline.
+4. **FACT:** a long has 2–4 fact beats, each one sourced.
+5. **STYLE:** every overlay is our own render, with 4 words or fewer per label, in house type, off the subject, with no black slab, passing near-black and over graded plates. A Short's overlay sits inside the 16:9 band, clear of 0–2 s and the 9–14 s title.
+6. **MOTION:** every overlay and chart animates in, none holds still for more than 4 s, and no two code graphics run back to back.
+
+A Short is scored on 5 and 6 only, plus whichever of 1–4 its single overlay is, if it has one. Any FAIL goes back to the shot list before the cut goes to OWB UAT.
+
+**What it applies to.**
+- **All four markers:** scripts locked from 12 Oct on (030 and later).
+- **Shot-list overlays only:** 025–029 already have their VO locked. Their shot lists add WHO, WHEN and DATA overlays on lines that are already spoken, with no VO change, before picture is cut. 025 picks them up at its next rough cut.
+- **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review) stay as they are, because adding overlays would mean re-rendering cuts that have already passed.
+<!-- /SYNC -->
+
+### Polish pass (Astrum ref, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
+
+<!-- SYNC: AGENTS.md#Polish pass (Astrum ref, 11 Oct 2026) -->
+Ben, 11 Oct 2026 22:17, sent Astrum's *What Is It Like on the Surface of a Black Hole Planet?* (`PxJSOWyYWkc`, 27 min, 1.1M views) as a style reference: *"let me know what you think we can incorporate into our workflow."* Chief adopted five of its techniques the same night. They apply to every cut started after 11 Oct 2026. They add to lesson 7, the edit locks and *Teach on screen*, and relax none of them.
+
+**Not adopted:** Astrum's long shot holds (6–8 s, some 15 s). That pace suits a 27-minute film, not our 8–9 minute longs and 22–27 s Shorts. The picture still changes every 4–6 s, and nothing holds still for more than 4 s.
+
+**1. Sound design (SFX).**
+- **Three kinds, where the shot calls for them:**
+  - a low rumble under a violent or huge shot (an impact, a collapse, a planet-sized scale reveal);
+  - a soft whoosh on a fly-through or a fast camera move;
+  - a subtle tick when a label, line, bar or timeline marker appears.
+- **Source: our own house kit.** Run `python3 scripts/sfx_kit.py make --out-dir <film>/06_Sound-Effects/kit_v01`. It synthesises the sounds itself, so there are no samples, no licence to track and no spend. The Mac mini has no licensed SFX library (checked 11 Oct: no Apple Loops or sample packs; macOS alert sounds aren't for video).
+  - A free library may be added only if its licence allows commercial YouTube use with no attribution. Record it in the film's `06_Sound-Effects/SOURCES.md`. Nothing is bought.
+  - ElevenLabs SFX spends the shared credit, so it waits for the 30 Oct reset and Chief's OK.
+  - Never use a video model's own audio as SFX (silent picture).
+- **Restraint:** no whoosh on plain cuts or on every card, at most one tick every 0.5 s, and no cartoon whooshes or comedy stings. Environment honesty still applies (water sounds only underwater).
+- **Level rule.** SFX sit under the VO, like the bed. Assemblers keep VO, music and SFX as separate stems in the pack, and `python3 scripts/sfx_kit.py level --vo <vo stem> --sfx <sfx stem> --bed <music stem> --minutes <length>` must PASS:
+  - the SFX stem is at least 12 LU under the VO's integrated loudness;
+  - while the VO speaks, the SFX and the bed are each at least 10 LU under the VO;
+  - in a VO pause, the SFX stay at least 6 LU under the VO's integrated loudness (a rumble may swell, never to speech level).
+
+  The full mix stays about −14 LUFS and −1 dBTP.
+- **Shorts** keep the frame-0 whoosh or impact (`FAMILIAR_DANGER_STRATEGY.md`) and may add ticks. The same level rule applies.
+
+**2. Music by chapter (longs).**
+- The score follows the chapters: an ambient drone under awe sections (reveals, scale, "what it's like"), and a light rhythmic or arpeggiated cue under explain and physics sections. Claude marks each chapter `awe` or `explain` in the music prompt, which keeps its `Pace:` line and NOT list.
+- **Credit hold:** until the 30 Oct reset, no new bed starts without Chief's OK. So the free way is one bed whose prompt asks for both moods, with its drone and pulse sections laid at the chapter cards. A second cue counts as a new bed.
+- The music changes at a chapter card with a 2–4 s crossfade, never a dip. `music_gate.py` still runs on the laid score: own music, a Pace and NOT brief for every cue, nothing that sounds like another film's bed, no gap, the whole runtime. The bed stays at least 10 LU under the VO.
+- Shorts keep one bed.
+
+**3. Explainer look.** For a hard-physics or mechanism section (how gravity bends light, why an orbit decays), switch to our own diagram look: thin glowing lines and arrows on a dark-navy grid. It's a code graphic (`chart` kind), so lesson 7 and *Teach on screen* apply in full:
+- real bodies on the diagram (the Blue Marble Earth, a real Sun image), never flat discs;
+- the navy is lifted, not black, so the frame passes polish_gate's near-black check (mean luma 28 or more, or p95 50 or more);
+- labels of 4 words or fewer, in large house type;
+- one idea per graphic, building with the line;
+- real moving imagery between any two diagrams, so a physics section alternates diagram and footage and never runs as a slideshow;
+- never a sourced diagram or schematic (still a `picture_qa.py` FAIL).
+
+**4. Script.**
+- **Every big number gets a scale.** Give it a plain comparison or an everyday analogy in the same or the next sentence ("about the width of the Atlantic"). Mark it on its DATA marker: `· DATA: <graphic> · SCALE: <comparison>`. The comparison's own numbers are a MUST QUOTE row in `SOURCES.md`.
+- **Long hook:**
+  - line 1 is still the claim, with the mystery in it, never "Imagine…";
+  - the huge claim and the first concrete answer to the title land before 0:30;
+  - the question the film answers is spoken by about 0:50.
+- **Word counts don't change:** about 1,200–1,300 spoken words, and `review:script` at 90 or more. An analogy replaces words; it doesn't add them. Shorts stay at 55–65 words.
+
+**5. Finishing.**
+- **Crossfades** of 0.5–1.5 s between scenes, where the move suits (a change of place or time, an awe section). Hard cuts elsewhere; they're not required on every cut. A crossfade never stretches a shot past the 4 s hold or the 4–6 s picture change, and chapter cards keep their ~0.4 s xfade.
+- **Fine film grain** over dark space backgrounds, to stop banding (for example ffmpeg `noise=alls=4:allf=t` before the final encode). It must not trip polish_gate's noise check, and it never rescues a near-black or empty frame.
+- **Depth-of-field blur** for scale where it helps (soft foreground debris, a sharp far body). It's never on the subject the line names, and never heavy.
+- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the subscribe cue. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
+
+**Review gate.** Chief adds six items to the frame review and stills check, each scored PASS or FAIL in the pack's review note:
+1. **SFX:** `sfx_kit.py level` PASSes, and the rumbles, whooshes and ticks sit on shots that call for them.
+2. **MUSIC:** the laid score changes by chapter (awe to explain) at least once, at a card, and `music_gate.py` PASSes.
+3. **GRAIN:** every dark space background shows grain at full size, with no banding, and polish_gate PASSes.
+4. **SCALE:** every DATA number has its SCALE comparison, spoken and sourced (`grep -c "SCALE:"` is at least the DATA count).
+5. **EXPLAINER:** physics sections use the diagram look within lesson 7 (real bodies, navy that passes near-black, footage between diagrams).
+6. **FINISH:** crossfades are 0.5–1.5 s with no hold over 4 s, credit labels are on CGI and agency picture, and DOF blur stays off the subject.
+
+A Short is scored on 1 and 3 only. Any FAIL goes back to the edit before the cut goes to OWB UAT.
+
+**What it applies to.**
+- **Items 1–3 and 5:** every rough cut or new version started from 12 Oct. That's 025 and 027 at their next version, then 026, 028, 029 and later.
+- **Item 4:** spoken analogies and the hook start with scripts locked from 12 Oct (030 and later). 025–029 have their VO locked, so their DATA graphics may show a scale on screen with no VO change.
+- **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review).
+<!-- /SYNC -->
 
 ## 6. Orbit (character lock)
 
@@ -128,11 +242,20 @@ No Kling, Seedance or ElevenLabs Image & Video.
 
 ## 7. Assembly and technical checks
 
-- **Normalise every input to 1920×1080 stereo before concat.** Probe after: audio and video durations must match.
+Standing edit locks (Ben v03b / 1 Oct 2026) are also in `docs/ORBIT_PLAYBOOK_LESSONS.md` §2.
+
+- **Normalise every input to 1920×1080 stereo before concat.** Probe after: audio and video durations must match. Fill 16:9 with no flat bars; feathered blurred background if needed; upscale no more than about **2.35×**.
 - **Remint = picture only.** Take video from the remint and audio from the original part (`-map 0:v:0 -map 1:a:0`). Never `-c copy` a remint's own audio.
-- **Chapter cards:** a soft starfield/gradient card (never a flat black box), about 1.5 s breath lead-in, music continuing underneath.
-- **End hold:** at least 15–20 s of slow picture after the last line. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.**
+- **Chapter cards:** wait for the VO sentence to finish → **0.5–0.8 s** breathing room → cross-fade the card in about **0.4 s**. Soft starfield/gradient (never a flat black box); music continuing underneath. **No line is ever clipped** by a row or card boundary.
+- **Music:** every film has its own score bed, written by Claude with the shot list (mood and arc from the script, `Pace: NN-NN BPM` matched to the narration, NOT every earlier bed), generated once, and `scripts/music_gate.py` must PASS (own, not a reused track, whole runtime). Never a shared file like `jupiter-music.mp3`. Rules: AGENTS.md lesson 7.
+- **End hold:** picture and music run past the last VO word, hold **2–3 s**, then fade. Keep a longer slow end plate (about 15–20 s total after the last line) with music over the full runtime. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.**
+- **Mix:** about **−14 LUFS** integrated with clear VO. Check for repeated or stumbled VO phrases before delivery.
 - **Bed parity** across parts: about −20 dB mean under VO.
+- **Pre-delivery clip check** (blocking before Ben review):
+  ```bash
+  python3 00_Brand/Channel-Setup/tools/clip_check.py <07_Edit-Project/shot_list.csv> [--words vo_words.json] [--vo-end SEC]
+  ```
+  Project assemblers may wrap this (e.g. Saturn `check_shot_list.py --words …`). Exit 0 only on pass.
 - **Large file transfers:** chunk ≤500 KB and verify the sha256.
 - **Subscribe cue:** under the `[SUBSCRIBE BEAT]` line, a 4-second subscribe cue in the lower-right corner (small button, no sound louder than the VO) over the moving picture. Orbit may nod or point toward it in-scene. Never a full-screen card.
 - **Export** to `09_Final-Export/<slug>_broadcast_v0N.mp4`.
@@ -156,7 +279,7 @@ Follow `THUMBNAIL_AND_TITLE_RULES.md`:
 Tools:
 - **Builders:** `tools/build_melodysheep_long_thumbs_v01.py` (long), `tools/build_yellow_white_short_thumbs_v04.py` (Short cover, 1080×1920, centre-safe for the 16:9 crop).
 - **Check:** `python3 00_Brand/Channel-Setup/tools/thumb_preview.py long|short <thumb> --out <sheet>`.
-- **Plate:** the strongest frame from the film's own master. If none works, an AI Studio still with no text in it. Text always comes from the builders, never from AI.
+- **Plate:** the strongest frame from the film's own master. If none works, a Vertex still with no text in it. Text always comes from the builders, never from AI.
 - **Longs:** 3 variants in Studio Test & Compare. Don't judge CTR under about 500 impressions.
 
 ## 9. Upload and Studio finish
@@ -172,7 +295,7 @@ Tools:
    - Until the Data API thumbnail refusal on the new Cloud project is sorted, after each `youtube:package` upload, check for "thumbnail skipped" and set the thumbnail in Studio.
 2. **Long:**
    - normal publish, Sunday 18:00, **no Premiere** until subscribers are in the hundreds;
-   - description: opens on the real subject, then chapters, then sources;
+   - description: opens on the real subject, then chapters named as story beats, then sources, image credits and one honest line on how the film is made (AI-generated scenes with NASA/ESA imagery, numbers checked against the sources; never "no AI", never naming the AI checkers; AGENTS.md → *Reference lessons*);
    - Test & Compare with 3 thumbs;
    - end screen: the best related long + Subscribe;
    - captions: Studio auto-sync from the VO script;
@@ -266,7 +389,7 @@ Buffer's API has a request limit (a 429 on 28 Sep 2026 held edits for about 17 h
 
 **It refuses:**
 - a Short that goes public before its long;
-- a video public for more than a day (back catalogue needs Ben's OK, then `--allow-late`);
+- a video public for more than a day (back catalogue needs Chief's OK on the thread, then `--allow-late`);
 - a time less than 10 minutes away (wait until it's public, then `mirror`: it shares now);
 - a video with no go-public time;
 - a file it can't host at a direct public URL (Buffer fetches media when the post goes out; no share links, no signed URLs).
@@ -291,15 +414,53 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
    Wake the Mac for it: `sudo pmset repeat wakeorpoweron MTWRFSU 07:00:00` (check with `pmset -g sched`). The Mac must stay logged in to Ben's account; asleep is fine. Log: `tail -n 20 ~/Library/Logs/orbit-buffer-check.log`.
 5. Optional: the Buffer MCP (`.cursor/mcp.json`, OAuth) for looking at the queue from Cursor, and for the fallback.
 
-## 13. Ben signs off
+## 13. Sign-offs
 
-Stop and wait for Ben's OK at each of these points:
-1. topic;
-2. long script (after it reaches 90);
-3. Short scripts;
-4. voice (listen);
-5. picture (QA/UAT on the moving cut, never stills);
-6. thumbnails;
-7. anything that goes public, is renamed or deleted. **Standing OK for uploads (Ben, 28 Sep 2026):** once 1–6 are OK'd and every gate passes (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run), the upload goes ahead without asking, with its Buffer posts, hook, question and trailer. Report the result straight after. Renames, deletes, back catalogue and edits to posts already in Buffer still wait for Ben.
+Every sign-off goes to Chief on the thread first (Claude until 9 Oct 2026). This copy is generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
 
-Docs-only PRs may merge. Video-cut PRs wait for Ben's UAT.
+<!-- SYNC: AGENTS.md#Stop and ask Ben -->
+**Chief owns the studio (Ben's handover to Chief, 9 Oct 2026; Ben, 10 Oct 2026: *"I should not need to give permission all the time"*).** Wherever this file says Claude decides, OKs, gives the final OK or makes an exception, Chief (Grok Bot) now holds that call in place of Claude. A Chief OK is a plain "[Chief]" post on #99 or HOS #180, or a job added `--by chief`; a job brief saying "Ben approved (relayed by Chief)" counts as Ben's word. Workers act on either and never ask Ben to re-post an OK on #99. Ben is asked only for real money (past £0) and what truly can't be undone; deleting a video stays on the Never list.
+
+**Standing order: ask Chief first, not Ben** (Ben, 3 Oct 2026, to Claude: *"Instead of asking me, always ask Claude first."* Chief has held that role since 9 Oct). Anything that used to be marked NEEDS BEN goes to Chief on the PR #99 thread first; Claude's review and recommendation come with it. Chief decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
+
+1. **Spending money:** any top-up, new paid service or plan (see Budget).
+2. **Anything irreversible:** anything going public outside a scheduled upload, and anything else that can't be undone. A scheduled upload stays reversible until it airs, so Chief can OK it. **Making a public Orbit or HOS video private is Chief's call** (Ben to Claude, 5 Oct 2026; Chief since 9 Oct): a takedown is always done by making the video private, because private can be undone, with the reason on the thread and Ben told.
+3. **What only Ben can do:** his voice, his logins and accounts, and his devices (waking the Mac mini).
+4. **Any change to the channel's direction** (a new series, a new format, a change of voice).
+
+**Chief owns `AGENTS.md` and the Never list** (Ben to Claude, 5 Oct 2026; handed to Chief 9 Oct, confirmed 10 Oct). Chief changes them and OKs one-off Never-list exceptions for reversible studio actions (e.g. re-uploading a fixed copy of a broken Short, a video going private), recording each with its date and reason on the thread and in the commit, and telling Ben. Workers (Cursor, Codex, acting Chief) don't relax the Never list themselves. **Real money stays with Ben** (item 1), and no OK covers deleting a video.
+
+**Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
+
+**Credit holds until the 30 Oct ElevenLabs reset (Chief, 9 Oct 2026; Chief owns the studio since 9 Oct).**
+- **ElevenLabs** (one account, both channels): about 18,653 credits left (9 Oct). The HOS voice queue goes first: 007 Shorts B + C (J0109), then the 009 and 010 long VO (J0111, J0113). Every VO job reads the balance first and spends nothing if it is below what the job needs. **No OWB (or HOS) music bed is started without the Chief's OK until 30 Oct.** Laying in a bed that already exists (J0089) is fine.
+- **Vertex free trial: spend it down to £0 (Ben, 10 Oct 2026 22:50: *"use the vertex credit until its £0"*; this replaces the £5 floor).** Before each job, read the live Free Trial balance (`_vertex_credit_v01.py` must read the Free Trial row as Available, or nothing is minted) and take off any spend logged in `ai_spend.py` since that reading that billing hasn't shown yet. A job runs if that figure − its estimate ≥ £0.10; re-read after each batch and stop before a take that would go under £0.10. **Billing risk (checked 12 Oct 2026 14:50): billing account 0124D1-E6EFD6-40F6DA is a *Paid account*, so once the trial is used up Vertex would bill the card. The £0.10 is the safety margin for billing lag (Ben, 12 Oct 14:46).** A job that needs more than that would bill real money: it stops, the job type parks until new credit, and it goes to Ben. Nothing ever goes on the card; never top up, upgrade or enable overage. **HOS 006 Part 03 (J0107, ~£11.36) goes first:** until it's done, OWB jobs may spend only what's left above its remaining estimate, and anything bigger goes to the Chief.
+
+**AI spend month (Ben, 8 Oct 2026; each plan from its own reset: Cursor 8 Oct, Google 12 Oct; check-in Sat 7 Nov, before Cursor renews).** Ben wants to know whether both channels can run on a ~£90 Claude plan, a ~£90 Google plan and ElevenLabs. So for both channels, every credit reading and every spend goes into `scripts/ai_spend.py` (ledger `05_Analytics/ai_spend/ledger.jsonl`), and the Kanban's AI spend panel shows it:
+- **Readings:** record a balance (`record --pool cursor|flow|vertex|elevenlabs --left N [--total N]`) at least once a day, and whenever you read one before or after a part.
+- **Spends:** record each take or VO as you make it (`spend --pool … --amount … --film HOS:006|OWB:025 --what …`). Flow is credits, Vertex is GBP and ElevenLabs is credits.
+- **Claude:** note a usage-limit hit with `record --pool claude --note …`.
+
+This is measurement only. It changes no spend rule.
+
+**Four a month on each channel (Ben, 9 Oct 2026).** *"Each channel has 4 videos a month. If we have 4 videos already set up on Orbit and complete, then we need to work on History of Science. Allocate credits accordingly."*
+- `python3 scripts/channel_balance.py --hos <HOS checkout>` counts each channel's long videos per month: planned, and complete (edit passed). The channel whose earliest month is short of 4 complete goes first. If both are short in the same month, the one further from 4 goes first.
+- **Work:** the Chief relay checks it before every run. When History of Science is first, its oldest desk task goes ahead of the OWB queue. The other channel's work still runs when the first has nothing doable right now.
+- **Credits** (ElevenLabs, Vertex, Flow): the first channel's spends go first.
+- **Topics:** a month with fewer than 4 films planned is short too. Claude picks the topics for that channel's missing slots.
+
+**One film at a time, then Ben watches it (Ben, 8 Oct 2026).** *"If we're working on one video, that should be the main priority and done in a day, maybe two… then I can check the video out."*
+- **Focus film.** Each channel has one focus film. On OWB it's set with `python3 scripts/jobs.py focus NNN --git`, and its jobs go first in every lane. Other films' jobs come next, and admin jobs (readings, installs, disk) last. When an admin job blocks a film (a full disk), Claude marks it `python3 scripts/jobs.py urgent J00NN --git`, which puts it ahead of everything, the focus film included.
+- **Render scratch (Claude, 9 Oct).** Each film keeps its current and previous render scratch in /private/tmp only. When a new pack posts, the version before last moves to the NAS (`mac-mini-archive/mini-tmp-scratch/<date>/`): copy it, check it against a sha256 manifest, and only then remove the local copy. Each version adds about 2 GB, and that filled the Mini twice.
+- **Finish it end to end.** Every agent works the focus film from picture through edit, thumbnails, package and gates, aiming for a day or two. A credit limit (HOS Flow) can stretch that, and its film note says so.
+- **Ben's watch.** When the focus film is finished and has passed Claude's checks, it goes to OWB UAT. Ben is told with one push notification and the board's top line. Then the next film becomes the focus.
+- **Watch window.** Ben's watch happens before upload, because a fix after upload means a fresh upload (no file swaps, no deletes). Each finished film's note gives a watch-by date. If Ben hasn't flagged anything by then, Chief's final OK and the upload go ahead, so no film stalls waiting on him. Ben signs off on the board: **Looks good** or **Needs a change** (with a note) under "Ready for you to check". That writes `checks/<OWB-022>` in the board's store, and Claude acts on it at the next hourly run.
+
+**Studio Kanban (Ben, 8 Oct 2026).** Claude owns the page (`05_Analytics/kanban/studio_kanban.html`, published at the board's one URL) and republishes it. Other chats and agents change what it reads (`PIPELINE.json`, `status.json`, the job queue), not the page, so a republish doesn't undo their work. The board runs one lane per channel with four columns: **To do · In progress · Scheduled · Live**. Scheduled means uploaded and waiting for its air time; Live means aired in the last two weeks, and a film moves across at 18:00 on its air day by itself (Ben, 8 Oct). Its "Film by film" section answers Ben's question for every film: *what's the holdup, what is it waiting for, and when does that happen?* Claude writes those notes in `05_Analytics/kanban/film_briefs.json`. The board refreshes every hour round the clock (Ben, 8 Oct), and again each time a Mac mini post on the studio thread wakes Claude. Overnight (22:00–07:00 London) it still refreshes, but Ben gets no phone notifications; they wait for one morning summary. Each note has what's done, the holdup, any second limit, who does the next step and when (tied to the job where one exists), and what's on Ben ("nothing" when nothing is).
+
+Once the final OK is given (Chief's since 9 Oct), the upload goes up under the standing upload rule: the package must pass every gate (`gate:episode`, `gate_shorts_open`, the `youtube:package` dry run) and go up with its Buffer posts, hook, question and trailer. Report the result (video id, go-public time, `buffer` block) straight after. The report also says, for each video, whether the thumbnail or cover was **set or refused**, read from the upload log message. A refused one (403, as on 022) is set in Studio before go-live, and so is every Short's cover, since the API's cover often doesn't show (022, 9 Oct).
+
+**The real upload is the only run that passes `PUBLISHING_DRY_RUN=false` (Claude, 9 Oct 2026).** The Mini's `07_Content-Ops/.env` keeps `PUBLISHING_DRY_RUN=true`, so a stray `youtube:package` run can never upload. The upload job sets `PUBLISHING_DRY_RUN=false` on that one command line, only after every gate above has passed, and never edits the .env to do it.
+<!-- /SYNC -->
+
+Docs-only PRs may merge. Video-cut PRs wait for Chief's review (Chief owns merges, 9 Oct).

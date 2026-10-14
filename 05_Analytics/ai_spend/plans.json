@@ -1,0 +1,137 @@
+{
+  "note": "Ben is UK-based: the board shows pounds including 20% VAT, converted from each plan's published dollar price (checked 8 Oct 2026) at about £0.75 to the dollar. Bank statements are the real figure. Each plan is measured from its own reset date. Check-in Sat 7 Nov, before Cursor renews on Sun 8 Nov.",
+  "period": {
+    "start": "2026-10-08",
+    "end": "2026-11-12",
+    "checkIn": "2026-11-07"
+  },
+  "subscriptions": [
+    {
+      "name": "Google AI Ultra (top tier)",
+      "usd": 199.99,
+      "gbp": 180,
+      "tier": "25,000 Flow credits",
+      "cycleStart": "2026-10-12",
+      "covers": "Flow credits (HOS picture), Gemini checks"
+    },
+    {
+      "name": "Cursor Ultra",
+      "usd": 200,
+      "gbp": 180,
+      "tier": "Pro is $20, Pro+ $60",
+      "cycleStart": "2026-10-08",
+      "covers": "Mini worker and Chief (Grok Bot)"
+    },
+    {
+      "name": "ChatGPT Plus (Codex)",
+      "usd": 20,
+      "gbp": 18,
+      "tier": "Codex is included",
+      "cycleStart": "",
+      "covers": "third in line as Chief"
+    },
+    {
+      "name": "Claude Pro",
+      "usd": 20,
+      "gbp": 18,
+      "tier": "$17 a month if paid yearly",
+      "cycleStart": "",
+      "covers": "scripts, reviews, decisions, thread"
+    },
+    {
+      "name": "ElevenLabs Creator",
+      "usd": 22,
+      "gbp": 20,
+      "tier": "121,000 credits a month (unused credits roll over; the pool showed 209,536 on 7 Oct)",
+      "cycleStart": "",
+      "covers": "Ben's narrator voice, both channels",
+      "renews": "2026-10-30"
+    }
+  ],
+  "target": {
+    "label": "Claude Max 5x + Google AI Ultra $100 tier (10,000 Flow credits) + ElevenLabs Creator",
+    "usd": 221.99,
+    "gbp": 200,
+    "needs": "Flow credits: about 10,000 a month covers 4 HOS longs only on the lean picture mix (about 20,000 at today's mix)"
+  },
+  "decisions": [
+    {
+      "date": "2026-10-08",
+      "by": "Ben",
+      "decision": "Stay with Google for video (Flow/Veo, Vertex). Kling via Higgsfield looked at and not taken: dearer per second at our volume, and Kling stays on the HOS Never list."
+    }
+  ],
+  "fx": {
+    "gbpPerUsd": 0.75,
+    "vat": 0.2,
+    "checked": "2026-10-08",
+    "shown": "gbp including VAT"
+  },
+  "poolStarts": {
+    "cursor": "2026-10-08",
+    "flow": "2026-10-12",
+    "vertex": "2026-10-08",
+    "elevenlabs": "2026-10-08",
+    "claude": "2026-10-08"
+  },
+  "tiers": {
+    "_note": "What each plan gives a month, for the 'would it fit' bars. gbp includes VAT. Cursor's included usage is approximate (third-party figures, 8 Oct).",
+    "flow": [
+      {
+        "name": "Google AI Ultra $200 tier",
+        "gbp": 180,
+        "allow": 25000,
+        "current": true
+      },
+      {
+        "name": "Google AI Ultra $100 tier",
+        "gbp": 90,
+        "allow": 10000,
+        "target": true
+      },
+      {
+        "name": "Google AI Pro",
+        "gbp": 18,
+        "allow": 1000
+      }
+    ],
+    "cursor": [
+      {
+        "name": "Cursor Ultra",
+        "gbp": 180,
+        "allow": 400,
+        "current": true
+      },
+      {
+        "name": "Cursor Pro+",
+        "gbp": 54,
+        "allow": 70
+      },
+      {
+        "name": "Cursor Pro",
+        "gbp": 18,
+        "allow": 20
+      }
+    ],
+    "elevenlabs": [
+      {
+        "name": "ElevenLabs Pro",
+        "gbp": 89,
+        "allow": 600000
+      },
+      {
+        "name": "ElevenLabs Creator",
+        "gbp": 20,
+        "allow": 121000,
+        "current": true,
+        "target": true
+      },
+      {
+        "name": "ElevenLabs Starter",
+        "gbp": 5,
+        "allow": 30000
+      }
+    ]
+  },
+  "cycleDays": 30
+}

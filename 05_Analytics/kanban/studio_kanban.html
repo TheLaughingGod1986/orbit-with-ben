@@ -1,0 +1,1834 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* Ben, 12 Oct 21:11: one clean phone board. Each film card once: tag, number, title, air date, % bar, one short status
+   line. The long header strip, status pill and "Optional" line repeated the same thing; job board and plans fold away. */
+.tf .rkrow,.tf .mk,.tf .mk-opt,.tf .kh .pill{display:none}
+.tf .st1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500;color:var(--ink-3)}
+.tf .st1.bad,.tf .st1.now,.tf .st1.ok,.tf .st1.review{color:var(--ink-2)}
+.tf .st1.you{color:var(--blocked)}
+.tf{border-left-color:var(--line)!important}
+.tf .bar i{background:var(--ink-3)!important;opacity:.6}
+.tf .wnow{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--doing-soft);color:var(--doing);vertical-align:1px}
+.tf.runcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.tf .ch{background:var(--panel-2)!important;color:var(--ink-2)!important;font-weight:500}
+.tf .etl{font-size:12px;color:var(--ink-2);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+details.jl{margin:-6px 0 0;padding:4px 12px 6px;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;font-size:12px}
+details.jl>summary{cursor:pointer;color:var(--ink-3);list-style:none}
+details.jl>summary::before{content:"▸ "}details.jl[open]>summary::before{content:"▾ "}
+details.jl ul{list-style:none;margin:4px 0 0;padding:0}
+details.jl li{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:5px 0;border-top:1px solid var(--line);align-items:center}
+details.jl .jt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+details.jl .js{color:var(--ink-2);font-weight:600}details.jl .js.ok{color:var(--done)}details.jl .js.now{color:var(--doing)}
+details.jl .jb{height:4px;border-radius:2px;background:var(--panel-2);overflow:hidden}details.jl .jb i{display:block;height:100%;background:var(--ink-3)}
+details.jl .jw{color:var(--ink-3);text-align:right}
+#foldJobs,#foldPlans{margin:8px 0}
+#foldJobs .jb{margin-top:8px}
+</style></head><body>
+
+<title>Studio Kanban</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f2ee;--panel:#ffffff;--panel-2:#ebe8e2;--ink:#1d2126;--ink-2:#545b64;--ink-3:#868c94;
+  --line:#dcd8d0;--accent:#c47a0b;--accent-soft:#f6e7cc;
+  --doing:#2f6fb5;--doing-soft:#dce8f6;--blocked:#b8402f;--blocked-soft:#f6dcd7;
+  --done:#2e7d4f;--done-soft:#d9eee1;--todo:#6b7280;--todo-soft:#e7e7ea;
+  --late:#b8402f;--soon:#b06d00;
+  --shadow:0 1px 2px rgba(20,24,30,.06),0 2px 8px rgba(20,24,30,.05);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15181c;--panel:#1d2126;--panel-2:#252a30;--ink:#ece9e3;--ink-2:#aab0b8;--ink-3:#7c838c;
+  --line:#30363d;--accent:#f0a83a;--accent-soft:#3a2f1c;
+  --doing:#6aa5e8;--doing-soft:#1d2d40;--blocked:#ec7a68;--blocked-soft:#3e231f;
+  --done:#62c48a;--done-soft:#1b3326;--todo:#9aa1aa;--todo-soft:#2a2f35;
+  --late:#ec7a68;--soon:#f0a83a;--shadow:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#15181c;--panel:#1d2126;--panel-2:#252a30;--ink:#ece9e3;--ink-2:#aab0b8;--ink-3:#7c838c;
+  --line:#30363d;--accent:#f0a83a;--accent-soft:#3a2f1c;
+  --doing:#6aa5e8;--doing-soft:#1d2d40;--blocked:#ec7a68;--blocked-soft:#3e231f;
+  --done:#62c48a;--done-soft:#1b3326;--todo:#9aa1aa;--todo-soft:#2a2f35;
+  --late:#ec7a68;--soon:#f0a83a;--shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1360px;margin:0 auto;padding:20px 16px 48px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:18px}
+h1{font:800 clamp(26px,4vw,38px)/1 "Bricolage Grotesque",sans-serif;margin:0;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.sub{color:var(--ink-2);margin-top:6px;font-size:14px}
+.src{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);flex-wrap:wrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ink-3);flex:none}
+.dot.live{background:var(--done);box-shadow:0 0 0 3px var(--done-soft)}
+.dot.warn{background:var(--soon)}
+.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.btn:hover{border-color:var(--ink-3)}
+.banner{background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:14px;display:none}
+.banner.show{display:block}
+
+.films{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:18px}
+@media (max-width:520px){.films{grid-template-columns:1fr 1fr}.film .t{font-size:12px}.film .meta{flex-wrap:wrap}}
+.film{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;text-align:left;font:inherit;color:inherit;box-shadow:var(--shadow);transition:border-color .15s}
+.film:hover{border-color:var(--ink-3)}
+.film.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.film .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.film .id{font:800 20px/1 "Bricolage Grotesque",sans-serif}
+.film .pct{font:500 14px "IBM Plex Mono",monospace;color:var(--ink-2)}
+.film .t{font-size:13px;color:var(--ink-2);margin:4px 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}
+.bar{height:6px;background:var(--panel-2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.film .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);margin-top:8px;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--panel-2);color:var(--ink-2);white-space:nowrap}
+.chip.ok{background:var(--done-soft);color:var(--done)}
+.chip.risk{background:var(--accent-soft);color:var(--soon)}
+.chip.bad{background:var(--blocked-soft);color:var(--blocked)}
+.agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:18px}
+.agent{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.agent .nm{display:flex;align-items:center;gap:8px;font:700 16px/1 "Bricolage Grotesque",sans-serif;margin-bottom:8px}
+.av{width:24px;height:24px;border-radius:50%;display:inline-grid;place-items:center;font:600 12px "IBM Plex Sans",sans-serif;color:#fff;flex:none}
+.agent ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--ink-2)}
+.agent li{padding:3px 0;display:flex;gap:6px;align-items:baseline}
+.agent li .k{flex:none;width:68px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3)}
+.agent li .v{min-width:0;overflow-wrap:anywhere}
+.agent li .v b{color:var(--ink);font-weight:500}
+.who{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2)}
+.who .av{width:18px;height:18px;font-size:10px}
+.state{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;padding:1px 8px;border-radius:99px}
+.state.on{background:var(--done-soft);color:var(--done)}
+.state.on::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--done);animation:pulse 1.6s ease-in-out infinite}
+.state.wait{background:var(--accent-soft);color:var(--soon)}
+.state.block{background:var(--blocked-soft);color:var(--blocked)}
+.state.q{background:var(--todo-soft);color:var(--todo)}
+.state.ok{background:var(--panel-2);color:var(--ink-3)}
+@keyframes pulse{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.state.on::before{animation:none}}
+.card .who-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:8px}
+.card .why{font-size:12px;color:var(--ink-2);margin-top:4px}
+h2.sec{font:600 15px/1 "Bricolage Grotesque",sans-serif;margin:0 0 10px;color:var(--ink-2)}
+.tabs{display:inline-flex;background:var(--panel-2);border-radius:10px;padding:3px;gap:2px}
+.tabs button{font:inherit;font-size:13px;border:0;background:transparent;color:var(--ink-2);padding:5px 12px;border-radius:8px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow);font-weight:600}
+.ch{display:inline-block;font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.05em;padding:3px 5px;border-radius:4px;vertical-align:2px;margin-right:4px}
+.ch.HOS{background:var(--accent-soft);color:var(--soon)}
+.ch.OWB{background:var(--doing-soft);color:var(--doing)}
+.chnote{font-size:13px;color:var(--ink-2);margin:-8px 0 12px;display:none}
+.chnote.show{display:block}
+.filterline{display:flex;align-items:center;gap:10px;margin:-6px 0 14px;font-size:13px;color:var(--ink-2);min-height:28px}
+
+.board{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:14px;align-items:start}
+@media (max-width:900px){.board{grid-template-columns:1fr}}
+.col{background:var(--panel-2);border-radius:14px;padding:10px;min-width:0}
+.col h2{font:600 15px/1 "Bricolage Grotesque",sans-serif;margin:4px 4px 10px;display:flex;align-items:center;gap:8px}
+.col h2 .n{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-3)}
+.col h2 .sw{width:10px;height:10px;border-radius:3px}
+.cards{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--todo);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow);min-width:0}
+.card.doing{border-left-color:var(--doing)}
+.card.blocked{border-left-color:var(--blocked)}
+.card.done{border-left-color:var(--done)}
+.card .hd{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.card .stage{font-weight:600}
+.card .fid{font:500 12px "IBM Plex Mono",monospace;color:var(--accent);white-space:nowrap}
+.card .note{font-size:13px;color:var(--ink-2);margin-top:4px;overflow-wrap:anywhere}
+.card .row{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--ink-2);margin-top:8px}
+.card .row b{font-weight:500;color:var(--ink)}
+.card .prog{display:flex;align-items:center;gap:8px;margin-top:8px}
+.card .prog .bar{flex:1}
+.card .prog .bar i{background:var(--doing)}
+.card.blocked .prog .bar i{background:var(--blocked)}
+.card .prog span{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-2);min-width:3.5em;text-align:right}
+.late{color:var(--late)!important;font-weight:600}
+.soon{color:var(--soon)!important;font-weight:600}
+.empty{font-size:13px;color:var(--ink-3);padding:10px 4px}
+details.donegrp{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;padding:8px 12px}
+details.donegrp summary{cursor:pointer;display:flex;justify-content:space-between;gap:8px;list-style:none;font-size:14px}
+details.donegrp summary::-webkit-details-marker{display:none}
+details.donegrp summary .fid{font:500 12px "IBM Plex Mono",monospace;color:var(--accent)}
+details.donegrp ul{margin:8px 0 2px;padding-left:18px;font-size:13px;color:var(--ink-2)}
+details.donegrp li span{color:var(--ink-3)}
+
+.lower{display:grid;grid-template-columns:3fr 2fr;gap:14px;margin-top:22px}
+@media (max-width:900px){.lower{grid-template-columns:1fr}}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);min-width:0}
+.box h3{font:600 16px/1 "Bricolage Grotesque",sans-serif;margin:2px 0 10px}
+.box ol{margin:0;padding-left:20px;font-size:14px}
+.box ol li{margin-bottom:6px}
+.credit{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.credit:first-of-type{border-top:0}
+.credit .l{font:500 13px "IBM Plex Mono",monospace;text-align:right}
+.credit .r{grid-column:1/-1;font-size:12px;color:var(--ink-3)}
+/* AI spend month (Ben, 8 Oct): board/credits from scripts/ai_spend.py */
+.spend{margin:0 0 18px}
+.spend .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+.spend .head .why{margin:0}
+.subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:10px}
+.sub-i{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.sub-i .n{font-size:13px;color:var(--ink-2);overflow-wrap:anywhere}
+.sub-i .p{font:600 18px/1.2 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.sub-i .g{font-size:12px;color:var(--ink-3);margin-top:2px;overflow-wrap:anywhere}
+.sub-i.tot{background:var(--panel-2)}
+.sub-i.tgt{background:var(--done-soft);border-color:transparent}
+.sub-i.tgt .p{color:var(--done)}
+.pools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:10px}
+.pool{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.pool .nm{display:flex;justify-content:space-between;gap:8px;font:700 15px/1.2 "Bricolage Grotesque",sans-serif}
+.pool .big{font:600 22px/1.2 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;margin-top:6px}
+.pool .big small{font:400 13px "IBM Plex Sans",sans-serif;color:var(--ink-3)}
+.pool svg{display:block;width:100%;height:44px;margin-top:6px}
+.pool .why{margin-top:6px}
+.byfilm{overflow-x:auto}
+.pv{margin-top:8px;border-top:1px solid var(--line);padding-top:6px}
+.pvr{display:flex;justify-content:space-between;gap:8px;font-size:13px;padding:2px 0;font-variant-numeric:tabular-nums}
+.pool .why,.pool .fit .why{font-size:13px;line-height:1.45}
+.pool .nm span:first-child{min-width:0}
+.maxq{margin-top:8px;font-size:13px;line-height:1.45;background:var(--panel-2);border-radius:8px;padding:8px 10px}
+.byfilm table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+.byfilm th,.byfilm td{padding:5px 8px;border-top:1px solid var(--line);text-align:right;white-space:nowrap}
+.byfilm th:first-child,.byfilm td:first-child{text-align:left}
+.byfilm th{font-weight:500;color:var(--ink-3);font-size:12px;border-top:0}
+/* At a glance (Ben, 8 Oct): what's happening now, what's next, when the next video lands */
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-bottom:18px}
+.gl{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.gl h3{font:600 12px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:0 0 8px}
+.gl .big{font:700 17px/1.3 "Bricolage Grotesque",sans-serif;overflow-wrap:anywhere}
+.gl .when{font:600 15px/1.3 "IBM Plex Mono",monospace;margin-top:4px;font-variant-numeric:tabular-nums}
+.gl .why{margin-top:6px}
+.gl.watch{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.lineup{list-style:none;margin:0;padding:0;font-size:13px}
+.lineup li{display:grid;grid-template-columns:auto 1fr auto;gap:2px 8px;padding:5px 0;border-top:1px solid var(--line);align-items:baseline}
+.lineup li:first-child{border-top:0}
+.lineup .t{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.lineup .w{grid-column:2/-1;font-size:12px;color:var(--ink-3)}
+.fit{margin-top:8px;display:grid;gap:5px}
+.fit .r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;font-size:12px;color:var(--ink-2)}
+.fit .r .bar{grid-column:1/-1;height:6px}
+.fit .r .bar i{background:var(--done)}
+.fit .r.risk .bar i{background:var(--soon)}
+.fit .r.bad .bar i{background:var(--blocked)}
+.fit .r b{font-weight:600;color:var(--ink)}
+.readyrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;margin-bottom:18px}
+.rf{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;padding:8px 12px;font-size:14px;min-width:0}
+.verdict{font-size:14px;margin:0 0 10px;color:var(--ink-2)}
+.verdict b{color:var(--ink)}
+details.more{margin:0 0 10px}
+details.more>summary{cursor:pointer;font-size:13px;color:var(--ink-2);list-style:none;padding:4px 0}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"▸ ";color:var(--ink-3)}
+details.more[open]>summary::before{content:"▾ "}
+details.more .subs{margin-top:8px}
+.qsub{font:400 13px "IBM Plex Sans",sans-serif;color:var(--ink-3);margin-left:6px}
+.q{list-style:none;margin:0;padding:0}
+.q li{display:grid;grid-template-columns:4.2em minmax(0,1fr) auto;gap:2px 10px;align-items:baseline;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.q li:first-child{border-top:0}
+.q .t{font:500 13px "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.q .s{grid-column:2/-1;font-size:12px;color:var(--ink-3)}
+.gl .line{font-size:14px;margin-top:6px}
+.gl .line:first-of-type{margin-top:0}
+/* Film by film (Ben, 8 Oct): per film, what's done, the holdup, who acts next and when, and what's on Ben */
+/* The board (Ben, 8 Oct: "a very simple Kanban: what's in progress, what's to do, what's done"): one card per film */
+.youbar{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:15px}
+.youbar.has{border-left-color:var(--doing)}
+.youbar b{font-weight:600}
+.youbar .why{margin-top:2px}
+.youbar .just{margin-top:6px;padding-top:6px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.youbar .just b{color:var(--ink)}
+.yl{list-style:none;margin:6px 0 4px;padding:0}
+.yl li{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:0 4px;padding:5px 0;border-top:1px solid var(--line);font-size:14px}
+.yl li:first-child{border-top:0}
+.yl li .why{display:block;margin-top:1px}
+.yl li.done{color:var(--done)} .yl li.done>span:first-child{font-weight:700}
+.yl li.chg>span:first-child{color:var(--doing)}
+.yl .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.yl .btn.ok{background:var(--done-soft);border-color:transparent;color:var(--done);font-weight:600}
+.yl .chgbox{display:flex;flex-direction:column;gap:6px;margin-top:8px;padding:8px 10px;border:1px dashed var(--line);border-radius:8px}
+.fx{margin:6px 0 2px;padding-left:22px;font-size:13px}
+.yl .fx li{display:list-item;padding:2px 0;border-top:0}
+.fx .ft2{font:500 12px "IBM Plex Mono",monospace;background:var(--panel-2);border-radius:4px;padding:0 5px;margin-right:6px}
+.fxrow{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+.fxrow input{font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
+.fxt{width:5.5em}
+.fxx{flex:1 1 220px;min-width:0}
+.btn[disabled]{opacity:.5;cursor:default}
+a.open{display:inline-block;margin-left:6px;font-weight:600;color:var(--doing);text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:0 7px;background:var(--panel)}
+a.open:hover{border-color:var(--doing)}
+a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);padding:2px 10px;margin:4px 6px 0 0}
+.yl textarea{flex:1 1 260px;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--panel);color:var(--ink)}
+.yl .said{display:block;font-size:13px;margin-top:4px;color:var(--ink-2)}
+.lnk{font:inherit;font-size:12px;background:none;border:0;color:var(--ink-3);text-decoration:underline;cursor:pointer;padding:0 0 0 6px}
+.nowbar{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--doing);border-radius:10px;padding:9px 14px;margin:-4px 0 14px;font-size:14px;line-height:1.45}
+.nowbar.idle{border-left-color:var(--ink-3)}
+.nowbar.asleep{border-left-color:var(--soon)}
+.nowbar .h{font-weight:600}
+.nowbar .h .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--doing);margin-right:6px;vertical-align:1px;animation:pulse 1.6s ease-in-out infinite}
+.nowbar.idle .h .dot{background:var(--ink-3);animation:none}
+.nowbar.asleep .h .dot{background:var(--soon);animation:none}
+.nowbar ol{margin:4px 0 0;padding-left:20px;font-size:13px;color:var(--ink-2)}
+.nowbar .why{margin-top:3px}
+.nowbar ul.also{margin:2px 0 0;padding-left:20px;font-size:13px;color:var(--ink-2)}
+.nowbar .bl{margin-top:5px;font-size:13px;font-weight:600;color:var(--blocked);background:var(--blocked-soft);border-radius:6px;padding:4px 8px}
+.nowbar .pbar{display:flex;align-items:center;gap:8px;margin-top:5px;font-size:13px;font-weight:600}
+.nowbar .pbar .track{flex:0 0 150px;max-width:40%;height:8px;border-radius:4px;background:var(--doing-soft);overflow:hidden}
+.nowbar .pbar .track i{display:block;height:100%;background:var(--doing);border-radius:4px}
+.nowbar .nx{margin-top:3px;font-size:13px;color:var(--ink-2)}
+.nowbar .one{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nowbar .h.one{font-size:15px;white-space:normal;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:6px}
+.nowbar .h.one .tt{flex:1 1 60%;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nowbar .h.one .meta{flex:0 0 auto;font-size:13px;white-space:nowrap}
+.nowbar .jid{display:inline-block;font:600 11px/1.5 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:9px;background:#e8ecf2;color:#3a4656;vertical-align:1px}
+.nowbar .run{display:inline-block;font-size:11px;font-weight:700;line-height:1.5;padding:0 7px;border-radius:9px;background:#dff3e4;color:#1d7a3a;vertical-align:1px}
+.nowbar .who{color:var(--ink-2);font-weight:500}
+.nowbar .eta{color:var(--doing);font-weight:600}
+.nowbar details.more{margin-top:6px}
+.nowbar details.more summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nowbar details.more summary::-webkit-details-marker{display:none}
+.nowbar .chip{display:inline-block;font-size:12px;font-weight:600;color:var(--ink-2);background:var(--accent-soft);border-radius:999px;padding:3px 10px}
+.nowbar .sa{font-size:12px;color:var(--doing);font-weight:600}
+.nowbar details[open] .sa{display:none}
+.nowbar .sh{margin-top:8px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600}
+.nowbar details ul{margin:2px 0 0;padding:0;list-style:none;font-size:13px}
+.nowbar details li{display:flex;flex-direction:column;padding:4px 0;border-bottom:1px solid var(--line)}
+.nowbar details li .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nowbar details li .w{font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:480px){.nowbar{padding:8px 12px;margin:-4px 0 10px}}
+.nowbar .upd{margin-top:5px;font-size:11px;color:var(--ink-3)}
+.nowbar details.more .chip{white-space:normal;color:var(--ink-2);background:transparent;border:1px solid var(--line);font-weight:500;border-radius:8px;text-align:left}
+.nowbar details.more.ben .chip{color:var(--blocked);border-color:var(--blocked-soft)}
+/* Ben, 12 Oct 15:49: job board. Needs-you strip, three numbers, five columns of one-line cards. */
+.needs{background:var(--blocked-soft);color:var(--blocked);border:1px solid var(--blocked);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:14px;font-weight:600}
+.needs ul{margin:4px 0 0;padding-left:18px;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.stats .s{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.stats .n{font-size:20px;font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stats .n.sm{font-size:13px;line-height:1.35;white-space:normal}
+.stats .l{font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em}
+.jb{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:start;margin:0 0 18px}
+@media (max-width:1000px){.jb{grid-template-columns:1fr}}
+.jb .col{background:var(--panel-2);border-radius:10px;padding:8px;min-width:0}
+.jb .col h4{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
+.jb .col h4 i{font-style:normal;color:var(--ink-3);font-weight:500}
+.jb .col .none{font-size:12px;color:var(--ink-3);padding:2px 4px}
+.jc{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ink-3);border-radius:8px;margin:0 0 5px;font-size:13px}
+.jc.OWB{border-left-color:#2f6fb5}.jc.HOS{border-left-color:#a0522d}
+.jc.stuck{background:#fff4dc;border-color:var(--soon)}
+.jc summary{list-style:none;display:flex;align-items:center;gap:6px;padding:6px 8px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.jc summary::-webkit-details-marker{display:none}
+.jc .jid{flex:none;font:600 11px/1.5 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:9px;background:#e8ecf2;color:#3a4656}
+.jc .cdot{flex:none;width:8px;height:8px;border-radius:50%}
+.jc .cdot.OWB{background:#2f6fb5}.jc .cdot.HOS{background:#a0522d}
+.jc .nm{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.jc .et{flex:none;font-size:12px;color:var(--ink-2)}
+.jc.stuck .et{color:var(--soon);font-weight:700}
+.jc .cx{padding:0 8px 8px 8px;font-size:12px;color:var(--ink-2);word-break:break-word}
+.jc .cx div{margin-top:2px}
+.jb details.arch>summary,.jb details.morej>summary{font-size:12px;color:var(--doing);font-weight:600;cursor:pointer;padding:2px 4px}
+.kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:20px}
+@media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.kb{grid-template-columns:1fr}}
+.kcol{background:var(--panel-2);border-radius:14px;padding:10px;min-width:0}
+.kcol h2{font:700 16px/1 "Bricolage Grotesque",sans-serif;margin:4px 4px 10px;display:flex;align-items:center;gap:8px}
+.kcol h2 .n{font:500 12px "IBM Plex Mono",monospace;color:var(--ink-3)}
+.kcol h2 .sw{width:10px;height:10px;border-radius:3px}
+.kcol .cards{display:flex;flex-direction:column;gap:8px}
+.tf{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--todo);border-radius:10px;box-shadow:var(--shadow);min-width:0}
+.tf.good,.tf.ready,.tf.finished{border-left-color:var(--done)}
+.tf.you{border-left-color:var(--doing)}
+.tf.held{border-left-color:var(--blocked)}
+.tf.waiting{border-left-color:var(--ink-3)}
+.tf>summary{list-style:none;cursor:pointer;padding:10px 12px}
+.tf>summary::-webkit-details-marker{display:none}
+.tf .kh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 8px}
+.tf .kh>span:first-child{white-space:nowrap}
+.tf .kh b{font:800 16px "Bricolage Grotesque",sans-serif}
+.tf .kt{font-size:13px;color:var(--ink-2);margin:2px 0 6px;line-height:1.3}
+.pill{flex:none;font-size:12px;font-weight:600;padding:1px 8px;border-radius:99px;white-space:nowrap;background:var(--todo-soft);color:var(--todo)}
+.pill.good,.pill.ready,.pill.finished{background:var(--done-soft);color:var(--done)}
+.pill.you{background:var(--doing-soft);color:var(--doing)}
+.pill.held{background:var(--blocked-soft);color:var(--blocked)}
+.tf .ka{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2);margin-bottom:4px}
+.tf .ka b{color:var(--ink);font-weight:600}
+.tf .bar{height:4px}
+.tf .bar i{background:var(--done)}
+.tf.waiting .bar i{background:var(--ink-3)}
+.tf.held .bar i{background:var(--blocked)}
+.tf .kl{font-size:14px;margin-top:8px;line-height:1.4}
+.tf .kn{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+.tf .kn b{color:var(--ink);font-weight:600}
+.tf .ky{font-size:13px;margin-top:4px;font-weight:600;color:var(--done)}
+.tf .ky.yes{color:var(--doing)}
+.tf .more{font-size:12px;color:var(--ink-3);margin-top:6px}
+.tf[open] .more{display:none}
+.tf .body{padding:0 12px 10px}
+.tf dl{display:grid;grid-template-columns:1fr;gap:2px;margin:0;font-size:13px;line-height:1.4;border-top:1px solid var(--line);padding-top:8px}
+.tf dt{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);margin-top:6px}
+.tf dt:first-child{margin-top:0}
+.tf dd{margin:0;overflow-wrap:anywhere}
+.tf dd.none{color:var(--done);font-weight:600}
+.tf dd.yes{color:var(--doing);font-weight:600}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:0 6px;padding:3px 0}
+.steps li .av{width:18px;height:18px;font-size:10px;margin-top:1px}
+.steps li .w{grid-column:2;font-size:12px;color:var(--ink-3)}
+.steps li.ok{opacity:.55}
+.steps li.ok .w{color:var(--done)}
+.tf .ft{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:8px;margin-top:8px}
+.tf .ft .btn{padding:3px 9px;font-size:12px}
+.lane{margin-bottom:18px}
+.lane>h3{font:700 13px "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);margin:0 0 8px;display:flex;align-items:center;gap:6px}
+.lane .kb{margin-bottom:0}
+.tf .ky{margin-top:6px}
+.ck{margin:0;padding:0}
+.ck .g{margin:6px 0 2px}
+.ck .g .nm{display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px}
+.ck .g .nm .av{width:18px;height:18px;font-size:10px}
+.ck .g .nm small{font-weight:400;color:var(--ink-3)}
+.ck ul{list-style:none;margin:2px 0 0 24px;padding:0;font-size:13px}
+.ck li{padding:1px 0;display:grid;grid-template-columns:1.2em minmax(0,1fr);gap:0 4px}
+.ck li::before{content:"☐";color:var(--ink-3)}
+.ck li.ok::before{content:"✓";color:var(--done);font-weight:700}
+.ck li.ok{color:var(--ink-2)}
+.ck li.now::before{content:"◐";color:var(--doing)}
+.ck li .w{grid-column:2;font-size:12px;color:var(--ink-3)}
+.ck li .w.late{color:var(--late)}
+.st1{font-size:12px;font-weight:600;margin-top:6px;color:var(--ink-2)}
+.rkrow{display:flex;gap:8px;align-items:flex-start;margin:0 0 7px}
+.rkrow .mk{margin:0;flex:1}
+.rk{flex:none;min-width:46px;text-align:center;font:800 20px/1 "Bricolage Grotesque",sans-serif;padding:7px 8px;border-radius:9px;background:var(--ink-2);color:var(--panel)}
+.rk.top{background:var(--doing);color:var(--panel)}
+.mk{font-size:12.5px;font-weight:600;line-height:1.35;padding:5px 9px;border-radius:8px;margin:0 0 7px;background:var(--panel-2);color:var(--ink-2)}
+.mk.now{background:var(--doing-soft);color:var(--doing)}.mk.now::before{content:"▶ "}
+.mk.next{background:var(--todo-soft);color:var(--todo)}.mk.next::before{content:"⏳ "}
+.mk.wait{background:var(--accent-soft);color:var(--soon)}.mk.wait::before{content:"◷ "}
+.mk.bad{background:var(--blocked-soft);color:var(--blocked)}.mk.bad::before{content:"⛔ "}
+.mk.review{background:var(--accent-soft);color:var(--soon)}.mk.review::before{content:"👀 "}
+.mk.sched{background:var(--done-soft);color:var(--done)}.mk.sched::before{content:"✓ "}
+.mk-opt{font-size:12px;color:var(--ink-3);margin:-4px 0 7px 2px}
+.st1.review{color:var(--soon)}.st1.review::before{content:"👀"}
+.stbox.review{border-left-color:var(--soon);background:var(--accent-soft)}
+.pill.review{background:var(--accent-soft);color:var(--soon)}
+.nowbar .rv{margin-top:5px;font-size:13px;font-weight:600;color:var(--soon);background:var(--accent-soft);border-radius:6px;padding:4px 8px}
+.st1::before{margin-right:4px}
+.st1.now{color:var(--doing)}.st1.now::before{content:"▶"}
+.st1.queue::before{content:"⏳"}
+.st1.bad{color:var(--blocked)}.st1.bad::before{content:"⛔"}
+.st1.you{color:var(--doing)}.st1.you::before{content:"●"}
+.st1.date::before{content:"◷"}
+.st1.ok{color:var(--done)}.st1.ok::before{content:"✓"}
+.stbox{border:1px solid var(--line);border-left:4px solid var(--ink-3);border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.45;margin-bottom:8px}
+.stbox .h{font-weight:700;font-size:14px;margin-bottom:2px}
+.stbox div+div{margin-top:3px}
+.stbox.now{border-left-color:var(--doing);background:var(--doing-soft)}
+.stbox.queue{border-left-color:var(--soon);background:var(--accent-soft)}
+.stbox.bad{border-left-color:var(--blocked);background:var(--blocked-soft)}
+.stbox.you{border-left-color:var(--doing);background:var(--doing-soft)}
+.stbox.ok{border-left-color:var(--done);background:var(--done-soft)}
+.tf .hold{background:var(--panel-2);border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.45;margin-top:2px}
+.tf .hold b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);margin-bottom:2px}
+details.fold{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 12px;margin:0 0 10px}
+details.fold>summary{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink)}
+.legend{font-size:13px;color:var(--ink-2);margin:-4px 0 10px}
+footer{margin-top:22px;font-size:12px;color:var(--ink-3)}
+footer a{color:var(--ink-2)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Studio <span>·</span> Kanban</h1>
+      <div class="sub" id="asof">Loading…</div>
+    </div>
+    <div class="src" style="flex-direction:column;align-items:flex-end">
+      <div class="tabs" role="group" aria-label="Channel" id="tabs">
+        <button data-ch="all">Both</button><button data-ch="HOS">History of Science</button><button data-ch="OWB">Orbit With Ben</button>
+      </div>
+      <div class="src"><span class="dot" id="dot"></span><span id="srctxt">Snapshot</span><button class="btn" id="refresh" hidden>Refresh</button></div>
+    </div>
+  </header>
+  <div class="needs" id="needsyou" hidden></div>
+  <div class="banner" id="banner"></div>
+  <div class="chnote" id="owbnote"></div>
+  <div class="youbar" id="youbar">Loading…</div>
+  <div class="nowbar" id="nowbar" hidden></div>
+  <div class="stats" id="daystats" hidden></div>
+  <details class="more fold" id="foldJobs"><summary>All jobs: queue, running, done</summary>
+  <div class="jb" id="jobboard" hidden></div>
+  </details>
+  <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
+  </section>
+  </details>
+  <details class="more fold" id="foldStages"><summary id="stageboard">Every stage of every film (detail)</summary>
+  <div class="filterline" id="filterline"></div>
+  <div class="board" id="board"></div>
+  <div class="lower">
+    <div class="box"><h3>Next steps</h3><ol id="next"></ol></div>
+    <div class="box" id="creditbox"><h3>HOS credit checks</h3><div id="credits"></div></div>
+  </div>
+  <div class="agents" id="agents" style="margin-top:14px"></div>
+  </details>
+  <details class="more fold" id="foldPlans"><summary>AI plans this month</summary>
+  <section class="plansec">
+  <h2 class="sec" style="margin-top:22px"><span class="qsub" id="spendSum"></span></h2>
+  <section class="spend" id="spendBox">
+    <div class="head"><div class="why" id="spendWhen"></div></div>
+    <div class="verdict" id="verdict"></div>
+    <div class="pools" id="pools"></div>
+    <details class="more"><summary>Plans and prices</summary>
+      <div class="subs" id="subs"></div>
+      <div class="why" id="subsNote"></div>
+      <div class="box byfilm" id="byFilmBox" hidden><h3>Spent per film</h3><div id="byFilm"></div></div>
+    </details>
+  </section>
+  </section>
+  </details>
+  <footer>The studio agent refreshes this page every hour, round the clock, and again whenever the Mac mini posts a finished or paused job. Times like "done about" recount every minute. The film-by-film notes are Claude's, from <span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben, refreshed on the same run; job times come live from the job queue. <b>HOS</b> comes from <span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science (the file behind <a href="https://github.com/TheLaughingGod1986/history-of-science/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>). <b>OWB</b> from each film's <span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span> in orbit-with-ben (the files behind its <a href="https://github.com/TheLaughingGod1986/orbit-with-ben/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>; "chief" is shown as Grok). Both from <span class="mono">main</span>.</footer>
+</div>
+
+<script>
+// Owner: the Orbit With Ben studio agent (Claude), Ben's call 8 Oct. It republishes this page from
+// orbit-with-ben 05_Analytics/kanban/studio_kanban.html. Other chats: change the data (PIPELINE.json, status.json,
+// film_briefs.json, the job queue), not this page, or the next republish undoes your change.
+const SNAPSHOT = {"updated":"2026-10-07","updated_by":"Claude (desk reviewer)","board_url":"https://claude.ai/artifact/Hhk519dkbHMzeaZfp3efhc","stages":[{"key":"topic","label":"Topic","weight":3,"owner":"Claude"},{"key":"script","label":"Script","weight":10,"owner":"Grok"},{"key":"facts","label":"Fact check","weight":5,"owner":"Grok"},{"key":"package","label":"Audit + upload package","weight":4,"owner":"Grok"},{"key":"vo","label":"Voiceover (long)","weight":10,"owner":"Grok"},{"key":"shorts_scripts","label":"Shorts scripts","weight":3,"owner":"Grok"},{"key":"shorts_vo","label":"Shorts voiceover","weight":5,"owner":"Grok"},{"key":"picture","label":"Picture","weight":35,"owner":"Grok"},{"key":"edit","label":"Edit + master","weight":10,"owner":"Grok"},{"key":"thumbnails","label":"Thumbnails","weight":5,"owner":"Grok"},{"key":"ben_ok","label":"Ben's final OK","weight":5,"owner":"Ben"},{"key":"scheduled","label":"Scheduled","weight":5,"owner":"Grok"}],"next_steps":["007 Shorts A–C voiceover (Cursor, now), then 009 and 010 long voiceover, then the 008–010 Shorts voiceover. At about 0.47 credits per char the whole queue needs about 12k of the 70k pool; floor 40k until the 30 Oct reset.","Mon 12 Oct: Flow credits refill (AI Ultra). Cursor posts the new balance and re-prices 006 Parts 03–05, then 007, on Flow rates; Claude passes before any mint.","006 picture: Parts 03–05 once priced (Flow first, then free Vertex, never past £0), then the 006 edit and thumbnails, ready for Ben by Sun 1 Nov.","007 picture: plate boards priced (96 rows, 80 mints); spend starts after 006 and once the whole voiceover batch has passed.","008 edit: narration runs 9:14.8, over the 7–9 min window; the §4 pause trim on the assembled film has to bring it in.","Thu 29 Oct 18:05: 005 post-air jobs (Related on its three Shorts, cards, end screen, pinned comment)."],"credits":[{"pool":"ElevenLabs (voice)","left":"70,237 of 209,536","rule":"voice only; floor 40k until the Fri 30 Oct reset (Ben, 7 Oct), then 50k; eleven_v3 bills about 0.47 credits per char (008: 7,497 chars cost 3,523)","checked":"7 Oct"},{"pool":"Vertex free trial (picture)","left":"£25.59 (11%)","rule":"never past £0, keep £5 buffer; trial ends 10 Nov","checked":"7 Oct"},{"pool":"Flow (picture)","left":"52 credits; refills 12 Oct","rule":"Flow first for picture; AI Ultra active (renews 12 Oct, Ben 7 Oct) — no picture spend before the refill","checked":"7 Oct"}],"films":[{"id":"005","title":"The Tied Arm That Proved Your Blood Circulates","air":"2026-10-29","ready_by":"2026-10-02","summary":"Finished and scheduled. Long `wwcjcFfC-5M` airs Thu 29 Oct 18:00; Shorts A (30 Oct), B `mTY67qet7cM` (8 Nov) and C `x_3L_IdYgEc` (15 Nov) are scheduled.","stages":{"topic":{"status":"done"},"script":{"status":"done"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"done"},"picture":{"status":"done"},"edit":{"status":"done","note":"master v02"},"thumbnails":{"status":"done","note":"A/B/C in Test & Compare"},"ben_ok":{"status":"done","note":"2 Oct"},"scheduled":{"status":"done","note":"Thu 29 Oct 18:00; post-air jobs at 18:05"}}},{"id":"006","title":"The Willow Tree That Was Made of Air","air":"2026-11-05","ready_by":"2026-11-01","summary":"Words and voice are finished. Picture is the long pole: Part 01 is all kept and Part 02's rough cut is held; Parts 03–05 wait for pricing after Tuesday's credit resets.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v02, 93.7"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done","note":"v02, all five parts PASS"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"done","note":"A v02 · B v03b · C v01 locked"},"picture":{"status":"doing","progress":0.36,"owner":"Cursor","due":"2026-10-25","note":"Part 01 12/12 kept; Part 02 rough v02 held (VO-first order); Parts 03–05 not started, re-priced after the Tue 6 Oct resets; pace set by Flow and Vertex credit","steps":[1,5],"steps_unit":"parts kept","left":"about 3 weeks","eta":"2026-10-25","underway":false,"waiting":"Cursor to post today's Flow and Vertex balances (Tue resets) from the Mini; then Claude prices Parts 03–05","since":"2026-10-06"},"edit":{"status":"todo","due":"2026-10-29"},"thumbnails":{"status":"todo","due":"2026-10-29"},"ben_ok":{"status":"todo","due":"2026-11-01"},"scheduled":{"status":"todo","due":"2026-11-02"}}},{"id":"007","title":"Why Vaccines Are Named After a Cow","air":"2026-11-12","ready_by":"2026-11-08","summary":"Script, facts and long voiceover are done. Shorts voiceover is queued; picture waits until the whole voiceover batch has passed.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 92.3"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done","note":"about 8.4 min; Part 01 v03 with the shut-up-house pickup"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","owner":"Cursor","due":"2026-10-07","left":"about 1 hour once started","waiting":"after 008 long VO"},"picture":{"status":"todo","due":"2026-11-01","note":"plate boards BOARD_V01: re-timed from the locked VO (8:32) and priced 7 Oct (96 rows: 80 mints = 25 Quality + 55 Fast, 2 of them on Flow, 16 reuses; 36 rows added because the VO runs longer than the script's estimate). First takes about £58, about £139 with usual retakes, against £20.59 usable Vertex. Waits for Claude's review, the voiceover batch and credit; nothing minted","steps_unit":"plates","owner":"Claude","since":"2026-10-07","waiting":"Claude's review of the boards; then the voiceover batch and picture credit"},"edit":{"status":"todo","due":"2026-11-05"},"thumbnails":{"status":"todo","due":"2026-11-05"},"ben_ok":{"status":"todo","due":"2026-11-08"},"scheduled":{"status":"todo","due":"2026-11-09"}}},{"id":"008","title":"Why Did Franklin Fly a Kite in a Storm?","air":"2026-11-19","ready_by":"2026-11-15","summary":"Script, facts, audit and package are done. The long voiceover starts as soon as the Mac mini is back online.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 92.1"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"done","owner":"Cursor","due":"2026-10-07","note":"long VO locked 7 Oct: 5 parts, 555 s (9:14.8), 7,497 chars; Part 01 pause trimmed, Part 05 one sentence re-recorded; Claude PASS each part (VO_TAKES_KEEP.json)","steps":[5,5],"steps_unit":"parts passed","since":"2026-10-07","underway":false},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","due":"2026-10-08","owner":"Cursor"},"picture":{"status":"todo","due":"2026-11-08","owner":"Cursor","note":"shot list v01 ready (07_Edit-Project/SHOT_LIST_v01.md, about 58 plates; 8 period details P1–P8 to confirm first); plates start after the whole VO batch passes"},"edit":{"status":"todo","due":"2026-11-12"},"thumbnails":{"status":"todo","due":"2026-11-12"},"ben_ok":{"status":"todo","due":"2026-11-15"},"scheduled":{"status":"todo","due":"2026-11-16"}}},{"id":"009","title":"Why Doesn't the Moon Fall to Earth?","air":"2026-11-26","ready_by":"2026-11-22","summary":"Script, facts, audit and package are done. Voiceover is next in the queue after 008 and the 007 Shorts.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 91.3"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"todo","due":"2026-10-07","waiting":"after 007 Shorts VO","owner":"Cursor"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","due":"2026-10-08","owner":"Cursor"},"picture":{"status":"todo","due":"2026-11-15","owner":"Cursor","note":"shot list v01 ready (07_Edit-Project/SHOT_LIST_v01.md, about 58 plates; 8 period details P1–P8 to confirm first); plates start after the whole VO batch passes"},"edit":{"status":"todo","due":"2026-11-19"},"thumbnails":{"status":"todo","due":"2026-11-19"},"ben_ok":{"status":"todo","due":"2026-11-22"},"scheduled":{"status":"todo","due":"2026-11-23"}}},{"id":"010","title":"What Killed the Dinosaurs Was Hidden in a Line of Clay","air":"2026-12-03","ready_by":"2026-11-29","summary":"Script, facts, audit and package are done. Voiceover follows 009.","stages":{"topic":{"status":"done"},"script":{"status":"done","note":"v01, 92.1"},"facts":{"status":"done"},"package":{"status":"done"},"vo":{"status":"todo","due":"2026-10-07","waiting":"after 009 VO","owner":"Cursor"},"shorts_scripts":{"status":"done"},"shorts_vo":{"status":"todo","due":"2026-10-08","owner":"Cursor"},"picture":{"status":"todo","due":"2026-11-22","owner":"Cursor","note":"shot list v01 ready (07_Edit-Project/SHOT_LIST_v01.md, about 55 plates; 8 period details P1–P8 to confirm first); plates start after the whole VO batch passes"},"edit":{"status":"todo","due":"2026-11-26"},"thumbnails":{"status":"todo","due":"2026-11-26"},"ben_ok":{"status":"todo","due":"2026-11-29"},"scheduled":{"status":"todo","due":"2026-11-30"}}}]};
+const OWB_SNAPSHOT = [{"film":"013","title":"","air":"","stages":{"edit":{"state":"done"}},"claims":[],"next":""},{"film":"021","title":"What Happens When Saturn Loses Its Rings?","air":"2026-10-11","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"},"picture":{"state":"done"},"edit":{"state":"done"},"thumbs":{"state":"done"},"upload":{"state":"doing"}},"claims":[],"next":"Claude launch check Sun 11 Oct 17:45Z"},{"film":"022","title":"Is the Sun Getting Brighter?","air":"2026-10-18","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"},"picture":{"state":"doing"},"edit":{"state":"doing"}},"claims":[],"next":"Cut review Sat 10 Oct; Claude final OK Tue 13 Oct"},{"film":"023","title":"What Happened to Venus?","air":"2026-10-25","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"},"picture":{"state":"doing"},"edit":{"state":"doing"}},"claims":[{"stage":"edit","by":"cursor","at":"2026-10-06T20:58Z","eta":"2026-10-07T01:58Z","note":"Part 01 rough"}],"next":"Part 01 rough (rows 1-18): Cursor covering for the Chief (Grok Bot out of credit). Ben by Wed 7 Oct 12:00 London; first cut Sat 17 Oct"},{"film":"024","title":"What Happens If You Travel Near Light Speed?","air":"2026-11-01","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"}},"claims":[],"next":"Picture after Venus; 9 code graphics rendered"},{"film":"025","title":"Could a Robot Survive on Mars?","air":"2026-11-08","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"}},"claims":[],"next":"Picture after 024; Omni queue: cold, wheel, night (Wed Short)"},{"film":"026","title":"How Far Is the Nearest Star?","air":"2026-11-15","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done"},"vo":{"state":"done"},"shots":{"state":"done"}},"claims":[],"next":"Picture after 025; re-run Scribe on Shorts LOCK wavs + align before picture"},{"film":"027","title":"What If Earth Stopped Spinning?","air":"2026-11-22","stages":{"topic":{"state":"done"},"script":{"state":"done"},"sources":{"state":"done","ref":"dd053ee"},"vo":{"state":"done","ref":"e340171a"}},"claims":[],"next":"VO complete (long + 3 Shorts PASS 6002694271); shot list after 026"}];
+const HOS_REPO = {owner:"TheLaughingGod1986", repo:"history-of-science", path:"00_Brand/Channel-Setup/PIPELINE.json"};
+const OWB = {owner:"TheLaughingGod1986", repo:"orbit-with-ben", dir:"02_Video-Projects"};
+const WORD = {done:"done", doing:"in progress", blocked:"blocked", todo:"to do", skip:"not needed"};
+const DAY = 86400000;
+let data = SNAPSHOT, source = "snapshot", fetchedAt = null, filter = null, chan = "all";
+// The studio agent writes the board into this page's own store (board/hos, board/owb) several times a day, so the
+// page stays current without the viewer's GitHub connector. GitHub live, when it works, still wins.
+const fromDb = {extra:{}, hos:null, owb:null, hosAt:null, owbAt:null, jobs:null, credits:null, briefs:null, checks:{}};
+// Ben's ticks on "Ready for you to check" (8 Oct): checks/<OWB-022> = {film, verdict: ok|change, note, at}. Claude's
+// hourly run reads them, acts (final OK and upload, or the fix) and marks them handled.
+let dbApi = null, changeOpen = null; const drafts = {};   // fixes Ben has added but not sent yet
+try { filter = localStorage.getItem("studio-kanban-film") || null; chan = localStorage.getItem("studio-kanban-ch") || "all"; } catch (e) {}
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const md = s => esc(s).replace(/`([^`]+)`/g, '<span class="mono">$1</span>');
+function pd(s){ if(!s) return null; const [y,m,d]=String(s).slice(0,10).split("-").map(Number); return new Date(y,m-1,d); }
+function today(){ const n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); }
+function fd(d){ return d ? d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}) : "—"; }
+function days(d){ return Math.round((d - today())/DAY); }
+function cd(d){ if(!d) return ""; const n=days(d); return n<0?`${-n} d late`:n===0?"today":n===1?"tomorrow":`in ${n} d`; }
+function cdCls(d){ if(!d) return ""; const n=days(d); return n<0?"late":n<=1?"soon":""; }
+const tm = ms => new Date(ms).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+
+// ---------- OWB: one status.json per film (scripts/studio.py), normalised to the HOS card model ----------
+const OWB_STAGES = [["topic","Topic"],["script","Script"],["sources","Sources"],["vo","Voiceover"],["shots","Shot list"],
+  ["picture","Picture"],["edit","Edit"],["thumbs","Thumbnails"],["upload","Upload"]].map(([key,label])=>({key,label,weight:100/9}));
+// Claims name the agent doing the work last: "chief/gemini" is Gemini (run by the Chief), "chief" alone is Grok.
+const AGENT = by => {
+  const b = String(by||"").toLowerCase(), last = b.split("/").pop();
+  if(last==="gemini"||last==="agy") return "Gemini";
+  if(b==="chief"||b.startsWith("chief/")) return "Grok";
+  return last ? last[0].toUpperCase()+last.slice(1) : "";
+};
+function owbFilm(j){
+  const stages = {};
+  for(const s of OWB_STAGES){
+    const raw = (j.stages||{})[s.key] || {}; const state = raw.state || "todo";
+    const st = state==="review" ? {status:"doing", owner:"Claude", review:true} : {status: WORD[state]?state:"todo"};
+    if(raw.ref) st.note = "ref " + raw.ref;
+    if(raw.since) st.since = raw.since;
+    stages[s.key] = st;
+  }
+  for(const c of (j.claims||[])){
+    const st = stages[c.stage]; if(!st) continue;
+    const live = new Date(c.eta) > new Date();
+    Object.assign(st, {status: st.status==="done"?st.status:"doing", owner: AGENT(c.by), since: c.at, eta: c.eta, note: c.note || st.note,
+      underway: live, waiting: live ? "" : "claim stalled: its ETA has passed"});
+  }
+  return {id: j.film, title: j.title || "(untitled)", air: j.air || "", summary: j.next ? "Next: " + j.next : "", next: j.next || "",
+    stages, _ch:"OWB", _stages: OWB_STAGES, key: "OWB:" + j.film};
+}
+const owb = {files:{}, missing:new Set(), state: OWB_SNAPSHOT ? "snapshot" : "loading", msg:"", at:null};
+if(OWB_SNAPSHOT) for(const j of OWB_SNAPSHOT) owb.files[j.film] = j;
+
+let readyFilms = [];
+// Ben, 8 Oct: Done splits into Scheduled (uploaded, waiting for its time) and Live (aired in the last two weeks).
+const LIVE_DAYS = 14, AIR_HOUR = 18;   // both channels go public at 18:00 London
+const recent = air => pd(air) >= new Date(today().getTime() - LIVE_DAYS*DAY);
+const isLive = f => !!f.air && Date.now() >= pd(f.air).getTime() + AIR_HOUR*3600000;   // made and passed, waiting only for upload or air day: shown in one slim row, off the board
+function view(){
+  const out = []; readyFilms = [];
+  if(chan!=="OWB" && data) for(const f of data.films){
+    const x = Object.assign({}, f, {_ch:"HOS", _stages:data.stages, key:"HOS:"+f.id});
+    if(data.stages.every(s=>["done","skip"].includes((f.stages[s.key]||{}).status))){ if(!f.air || recent(f.air)) readyFilms.push(x); continue; }
+    out.push(x);
+  }
+  if(chan!=="HOS") for(const j of Object.values(owb.files).sort((a,b)=>String(a.film).localeCompare(String(b.film)))){
+    const f = owbFilm(j);
+    if(OWB_STAGES.every(s=>["done","skip"].includes(f.stages[s.key].status))){ if(f.air && recent(f.air)) readyFilms.push(f); continue; } // aired over two weeks ago: off the board
+    if(f.air && OWB_STAGES.every(s=>s.key==="upload" || ["done","skip"].includes(f.stages[s.key].status))){ readyFilms.push(f); continue; }
+    if(!f.air && OWB_STAGES.filter(s=>f.stages[s.key].status!=="todo").length<=1) continue; // stub files (no air date, nothing started)
+    out.push(f);
+  }
+  return out;
+}
+const chb = f => `<span class="ch ${f._ch}">${f._ch==="OWB"?"Orbit":"HOS"}</span>`;
+
+function progress(st){
+  if(st.status==="done") return 1;
+  if(typeof st.progress==="number") return st.progress;
+  if(Array.isArray(st.steps)&&st.steps[1]) return st.steps[0]/st.steps[1];
+  return 0;
+}
+// Same rules as status_board.py: skipped stages don't count; "now" is the first stage not done or skipped.
+const stOf = (f,s) => f.stages[s.key] || {status:"todo"};
+function filmPct(f){
+  let tot=0, got=0;
+  for(const s of f._stages){ const st=stOf(f,s); if(st.status==="skip") continue; tot+=s.weight;
+    got+=s.weight*(st.status==="done"?1:st.review?0.8:(st.status==="doing"||st.status==="blocked")?progress(st):0); }
+  return tot ? Math.round(100*got/tot) : 100;
+}
+function current(f){
+  const live = f._stages.find(s=>{ const st=stOf(f,s); return st.status==="doing"||st.status==="blocked"; });
+  if(f._ch==="OWB" && live) return [live, stOf(f,live)];  // OWB runs stages in parallel; show the live one
+  for(const s of f._stages){ const st=stOf(f,s); if(st.status!=="done"&&st.status!=="skip") return [s,st]; }
+  return null;
+}
+function health(f){
+  if(f._stages.some(s=>stOf(f,s).status==="blocked")) return ["bad","blocked"];
+  const t=today();
+  if(f._stages.some(s=>{ const st=stOf(f,s); return st.status!=="done"&&st.status!=="skip"&&st.due&&pd(st.due)<t; })) return ["risk","behind"];
+  if(f._stages.some(s=>stOf(f,s).underway===false && /stalled/.test(stOf(f,s).waiting||""))) return ["risk","stalled"];
+  return ["ok","on track"];
+}
+
+const AV_COLORS = {Grok:"#2f6fb5", Chief:"#2f6fb5", Claude:"#c47a0b", "Claude (in Cursor)":"#c47a0b", Ben:"#2e7d4f", Gemini:"#7b5cc4", Cursor:"#4b5563", Codex:"#0f766e"};
+const ownerOf = (s,st) => st.owner || s.owner || "—";
+const whoText = n => n==="—" ? "nobody yet" : n;
+function av(name){ const c = AV_COLORS[name] || "#6b7280"; return `<span class="av" style="background:${c}" aria-hidden="true">${esc((name||"?")[0])}</span>`; }
+function pw(s){ if(!s) return null; const d=new Date(String(s).length>10?s:s+"T00:00"); return isNaN(d)?null:d; }
+function fw(s){ const d=pw(s); if(!d) return ""; return fd(d)+(String(s).length>10?" "+d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):""); }
+// Same words as status_board.py activity()
+function stateOf(st){
+  if(st.status==="doing"){
+    if(st.review) return ["wait","In review",""];
+    if(st.underway===true) return ["on","Underway",""];
+    if(st.underway===false) return ["wait","Waiting",st.waiting||""];
+    return ["q","In progress",""];
+  }
+  if(st.status==="blocked") return ["block","Blocked",st.waiting||""];
+  if(st.status==="todo") return ["q","Queued",st.waiting||""];
+  return ["q",WORD[st.status]||st.status,""];
+}
+function stateChip(st){ const [c,t]=stateOf(st); return `<span class="state ${c}">${t}</span>`; }
+
+function renderAgents(films){
+  const names = ["Claude","Grok","Gemini","Cursor","Ben"];   // Gemini (Antigravity on the Mini): sources and fact-checks
+  for(const f of films) for(const s of f._stages){ const o=ownerOf(s,stOf(f,s)); if(o && o!=="—" && !names.includes(o)) names.push(o); }
+  $("agents").innerHTML = names.map(who=>{
+    const now=[], wait=[], next=[];
+    for(const f of films){
+      let queued=false;
+      for(const s of f._stages){
+        const st=stOf(f,s); if(ownerOf(s,st)!==who) continue;
+        const tag=`${chb(f)}<b>${esc(f.id)}</b> ${esc(s.label)}`;
+        if(st.status==="doing" && st.underway!==false && !st.review){
+          const bits=[]; if(st.since) bits.push("since "+fw(st.since));
+          if(Array.isArray(st.steps)) bits.push(`${st.steps[0]}/${st.steps[1]} ${esc(st.steps_unit||"steps")}`);
+          if(st.left) bits.push(esc(st.left)+" left");
+          if(st.eta && f._ch==="OWB") bits.push("ETA "+fw(st.eta));
+          now.push(tag+(bits.length?` · ${bits.join(" · ")}`:""));
+        } else if(st.status==="doing"||st.status==="blocked"){
+          wait.push(tag+(st.review?" · review":st.waiting?` · ${md(st.waiting)}`:""));
+        } else if(st.status==="todo" && !queued){
+          queued=true; next.push([st.due||"9999", tag+(st.due?` · due ${fd(pd(st.due))}`:"")]);
+        }
+      }
+    }
+    next.sort((a,b)=>a[0].localeCompare(b[0]));
+    const row=(k,v)=>`<li><span class="k">${k}</span><span class="v">${v}</span></li>`;
+    return `<div class="agent"><div class="nm">${av(who)}${esc(who)} ${now.length?'<span class="state on">Underway</span>':wait.length?'<span class="state wait">Waiting</span>':'<span class="state q">Free</span>'}</div><ul>
+      ${row("Underway", now.length?now.join("<br>"):"nothing right now")}
+      ${wait.length?row("Waiting", wait.join("<br>")):""}
+      ${next.length?row("Next up", next.slice(0,3).map(x=>x[1]).join("<br>")):""}
+    </ul></div>`;
+  }).join("");
+}
+
+function renderFilms(films){
+  const f = films.concat(readyFilms).find(x=>x.key===filter);
+  $("filterline").innerHTML = f ? `Showing ${chb(f)}<b>${esc(f.id)}</b>&nbsp;only · ${md(f.summary||"")} <button class="btn" id="clear">Show all</button>` : "Every stage of every film in progress. Use a film's <b>Show its stages</b> button to see one film only.";
+  if(f) $("clear").onclick=()=>{ filter=null; try{localStorage.removeItem("studio-kanban-film");}catch(e){} render(); };
+}
+
+// ---------- Film by film (Ben, 8 Oct): "what's the holdup, what is it waiting for, and when will that happen?" ----------
+// Claude's note per film (board/briefs, from film_briefs.json) gives the words; the job queue gives live times; the
+// stage files give progress and how long the film has sat in its current stage. With no note, it's built from the data.
+const MOOD = {live:["ready","Live"], good:["good","On track"], ready:["ready","Scheduled"], finished:["finished","Ready for your watch"], watched:["good","You've OK'd it"], fixing:["held","Fixing your notes"], waiting:["waiting","Waiting its turn"], held:["held","Held up"], you:["you","Needs you"]};
+const OWB_OWNER = {topic:"Claude", script:"Claude", sources:"Gemini", vo:"Cursor", shots:"Claude", picture:"Cursor", edit:"Cursor", thumbs:"Cursor", upload:"Cursor"};
+// The column follows the film's state; "Needs you" only changes the label, so a finished film stays in Done.
+const COLUMN = {live:"live", watched:"doing", fixing:"doing", good:"doing", held:"doing", you:"doing", waiting:"todo", finished:"doing", ready:"sched"};
+const openState = {};   // only what the viewer chose; otherwise films in hand open and films waiting their turn closed
+function stageDays(since){ const t=ts(since); if(isNaN(t)) return ""; const h=(Date.now()-t)/3600000;
+  return h<1?"under an hour":h<36?`${Math.round(h)} h`:`${Math.round(h/24)} days`; }
+function nowLine(f){
+  const live = f._stages.filter(s=>["doing","blocked"].includes(stOf(f,s).status));
+  if(!live.length){ const c=current(f); return c ? `Next stage: ${esc(c[0].label)}` : "Every stage done."; }
+  return live.map(s=>{ const st=stOf(f,s), who=ownerOf(s,st), [,word]=stateOf(st);
+    const d = st.since ? stageDays(st.since) : "";
+    const long = st.since && Date.now()-ts(st.since) > 48*3600000;
+    return `<b>${esc(s.label)}</b> · ${word.toLowerCase()}${who!=="—"?` · ${esc(who)}`:""}${d?` · <span class="${long?"soon":""}">in this stage ${d}</span> (since ${esc(fw(st.since))})`:""}`; }).join("<br>");
+}
+function autoBrief(f){
+  const done = f._stages.filter(s=>stOf(f,s).status==="done").map(s=>s.label);
+  const c = current(f), steps = [];
+  if(c){ const [s,st]=c; steps.push({who:ownerOf(s,st)==="—"?"Not assigned yet":ownerOf(s,st), what:s.label.toLowerCase(), when:st.eta||st.due||""}); }
+  const nxt = f._stages.find(s=>stOf(f,s).status==="todo" && (!c || s.key!==c[0].key));
+  if(nxt){ const st=stOf(f,nxt); steps.push({who:ownerOf(nxt,st)==="—"?"Not assigned yet":ownerOf(nxt,st), what:nxt.label.toLowerCase(), when:st.due||""}); }
+  const ok = f._ch==="HOS" && f.stages.ben_ok && f.stages.ben_ok.status!=="done" && f.stages.ben_ok.due;
+  const [hc] = health(f);
+  return {auto:true, mood: hc==="bad"?"held":hc==="risk"?"waiting":"good", done: done.length?done.join(", ")+".":"Nothing yet.",
+    holdup: (c && (c[1].waiting||"")) || "None listed.", steps, you: ok?`Your final OK by ${fd(pd(f.stages.ben_ok.due))}.`:"", youWhen: ok||""};
+}
+// When a step happens: live from the job queue when it names a job, else the note's own date or words.
+function stepWhen(stp, P){
+  const jobs = fromDb.jobs, byId = Object.fromEntries((jobs||[]).map(j=>[j.id,j]));
+  const fromDate = w => { const t = String(w).length>10 ? ts(w) : NaN, d = pd(w);
+    return !isNaN(t) ? {text:`${clock(t)} (${t<Date.now()?"done or due":rel(t)})`, at:t} : d ? {text:`${fd(d)} (${cd(d)})`, at:d.getTime(), late: days(d)<0} : null; };
+  if(stp.done) return {ok:true, text: stp.doneText || "done"};
+  if(stp.job){
+    const j = byId[stp.job];
+    if(jobs && !j) return {ok:true, text:`done (${esc(stp.job)})`};
+    if(j){ const p=P[j.id]||{}, L=j.last||{};
+      if(isChiefPark(j)) return {kind:"review", reason:blockWhy(j), text:"waiting for Chief review"};
+      if(j.status==="blocked") return {kind:"blocked", reason:String(j.result||""), text:`blocked: ${esc(String(j.result||"").slice(0,100))}`, late:true};
+      if(p.state==="now") return {kind:"now", by:AGENT(j.by), start:p.start, done:p.done, text:`underway now · ${etaOf(p.done)}`, at:p.done};
+      if(j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude") return {kind:"part", by:AGENT(L.by), done:p.done, text:`part done · carries on within 10 min · ${etaOf(p.done)}`, at:p.done};
+      if(p.start){
+        const ahead = (jobs||[]).filter(x=>x.id!==j.id && x.needs===j.needs && P[x.id] && P[x.id].start!=null && P[x.id].start < p.start)
+          .sort((a,b)=>P[a.id].start-P[b.id].start).map(x=>(x.film?x.film+" ":"")+shortTitle(x.title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim());
+        const nth = ahead.length+1, ord = nth===1?"next":nth===2?"2nd":nth===3?"3rd":nth+"th";
+        return {kind:"queue", nth, ord, ahead, start:p.start, done:p.done, est:j.estMin||25, text:`${ord} in the Mac mini's queue${ahead.length?` (first: ${esc(ahead.join("; "))})`:""} · starts about ${clock(p.start)} · ${etaOf(p.done)}`, at:p.done};
+      }
+    }
+  }
+  if(stp.afterJob){
+    const j = byId[stp.afterJob], p = j && P[j.id];
+    if(jobs && !j) return {text:`now (${esc(stp.afterJob)} is done)`, at:Date.now()};
+    if(p && p.done){ const t=p.done+(stp.lag||0)*MINUTE; return {kind:"after", after:stp.afterJob, text:`about ${clock(t)} (${rel(t)}), after ${esc(stp.afterJob)}`, at:t}; }
+  }
+  const d = stp.when ? fromDate(stp.when) : null;
+  if(stp.whenText) return {kind:"date", text: esc(stp.whenText) + (d && d.at>Date.now() && String(stp.when).length<=10 ? ` · ${cd(pd(stp.when))}` : ""), at:d&&d.at};
+  if(d) return Object.assign({kind:"date"}, d);
+  return {text: stp.job ? `in the Mac mini's line (${esc(stp.job)})` : "no date yet"};
+}
+// Ben, 8 Oct: "is it being worked on right now, and how long is left? If not, why not: blocked, or just a queue (3rd,
+// done in about 2 h)?" One answer per film, from its first step not yet done.
+function minsLeft(t){ const m=Math.max(1,Math.round((t-Date.now())/MINUTE)); return m<60?`about ${m} min`:`about ${Math.round(m/60*2)/2} h`; }
+function statusOf(b, rows){
+  const r = rows.find(x=>!x.w.ok);
+  if(!r) return b.mood==="ready" ? {cls:"ok", short:"Scheduled", title:"Done: scheduled", lines:[]} : {cls:"ok", short:"Nothing left", title:"Nothing left to do", lines:[]};
+  const {x, w} = r, who = esc(x.who), what = esc(x.what);
+  const busy = (fromDb.jobs||[]).filter(j=>j.needs==="mini" && j.status==="claimed");
+  if(w.kind==="now") return {cls:"now", short:`Working on it · ${etaOf(w.done)}`, title:"Working on it now",
+    lines:[`<b>${esc(w.by||x.who)}</b> is doing: ${what}.`, `Started ${clock(w.start)}. ${minsLeft(w.done)} left, <b>${etaOf(w.done)}</b>.`]};
+  if(w.kind==="part") return {cls:"now", short:`Part done · ${etaOf(w.done)}`, title:"Part done, carrying on",
+    lines:[`<b>${esc(w.by||x.who)}</b> stopped at a safe point on: ${what}. It picks up again within 10 minutes.`, `Done about <b>${clock(w.done)}</b> (${rel(w.done)}).`]};
+  if(w.kind==="review") return {cls:"review", short:"Waiting for Chief review", title:"Waiting for Chief review", lines:[`${who}: ${what}.`, "The work is done and parked for the Chief to check. Nothing is blocking it."]};
+  if(w.kind==="blocked") return {cls:"bad", short:"Blocked", title:"Blocked", lines:[`${who}: ${what}.`, `What's blocking it: ${esc(w.reason||"not given")}`]};
+  if(w.kind==="queue") return {cls:"queue", short:`${w.ord} in the queue · ${etaOf(w.done)}`, title:`Not started yet: ${w.ord} in the Mac mini's queue`,
+    lines:[`Next job: <b>${who}</b>, ${what}.`,
+      `Why not now: the Mac mini does one job at a time${w.ahead.length?`, and ${w.ahead.length===1?"this goes":"these go"} first: ${esc(w.ahead.join("; "))}`:""}.${busy.length?` It's working on ${esc((busy[0].film?busy[0].film+" ":"")+shortTitle(busy[0].title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim())} right now.`:""}`,
+      `Starts about <b>${clock(w.start)}</b>, takes about ${w.est} min, <b>${etaOf(w.done)}</b>.`]};
+  if(w.kind==="after") return {cls:"queue", short:`After ${esc(w.after)} · about ${clock(w.at)}`, title:`Waiting for ${esc(w.after)} to finish`,
+    lines:[`Next: <b>${who}</b>, ${what}.`, `It can't start until ${esc(w.after)} is done; then it happens about <b>${clock(w.at)}</b> (${rel(w.at)}).`]};
+  if(x.who==="Ben") return {cls:"you", short:`Waiting for you · ${w.text}`, title:"Waiting for you", lines:[`${what}.`, `When: ${w.text}.`]};
+  if(x.who==="Ready for you"){ const t = /^about /.test(w.text) ? w.text : "about "+w.text;
+    return {cls:"date", short:`Ready for you ${t}`, title:`Ready for you ${t}`, lines:[`Next for you: ${what}.`, "Nothing to watch yet; it reaches your For-you box with a Watch link when it's ready."]}; }
+  return {cls:"date", short:`${who}: ${what} · ${w.text}`, title:`Booked: ${who}, ${what}`, lines:[`When: <b>${w.text}</b>.`, ...(b.mood==="waiting"?["Nobody is working on it until then; the reason is below."]:[])]};
+}
+
+// Ben, 8 Oct: "I can see 4th, 3rd, 2nd and next in the queue. I can't see what the queue is currently working on."
+function jobLabel(j){
+  // Film from the job's film field, else its title ("021 Saturn listing: …", "HOS 002 A/B …"), so cardless jobs keep their tag.
+  const tag = j.film ? `<span class="ch OWB">OWB</span><b>${esc(j.film)}</b> ` : jobTag(j);
+  let t = String(j.title||"").replace(/^HOS\s+\d{3}\s*/,"").replace(/^\d{3}\s*/,"").replace(/\s*\([^)]*\)/g,"").trim();
+  if(tag && t.includes(":")) t = t.slice(t.indexOf(":")+1).trim();   // "Light speed: Ben's fix, …" -> the job itself
+  if(t.length>70) t = t.slice(0,68)+"…";
+  return tag + esc(t);
+}
+// Ben, 11 Oct 20:52: "Not sure we need this as we have the swim lanes": the Order of work list is gone, the cards carry
+// each film's rank and ETA. Since 11 Oct 22:09 the box above them is plain (renderNow): now, % done, next two, blocked.
+const jobLine = j => j.line || j.needs;
+// Ben, 12 Oct: a job parked for the Chief's review is not a blocker. Amber "Waiting for Chief review"; red only for real
+// blockers (a missing upload id, something only Ben can do).
+const CHIEF_PARK = /park(ed)?\s+for\s+(the\s+)?chief|chief('s)?\s+(review|ok|pass)|for\s+chief\b|awaiting\s+chief/i;
+function blockWhy(j){ return String((j&&j.result) || ((j&&j.last||{}).what||"").replace(/^blocked:\s*/,"")); }
+function isChiefPark(j){ return !!j && j.status==="blocked" && CHIEF_PARK.test(blockWhy(j)) && !/needs ben|only ben|upload id/i.test(blockWhy(j)); }
+function shortReason(r){
+  let t = String(r||"").replace(/\s+/g," ").trim(); if(!t) return "no reason given";
+  const cut = t.search(/[:;.](\s|$)/); if(cut>=12) t = t.slice(0,cut);
+  return t.length>90 ? t.slice(0,88)+"…" : t;
+}
+// Ben, 11 Oct 22:09: "I just want to literally say, we're currently working on X, Y, Z. We are twenty percent of the way
+// through, we'll be finished in thirty minutes." So the box is plain: what's being worked on, a bar with % done and when
+// it finishes, the next two jobs, any blocked job, and a small "Updated HH:MM". A job released between steps still reads
+// "Working on" (it carries on at the next wake-up). % done comes from real data only (progressOf).
+// Step pace from `jobs.py progress` (step k of n finished, at a time): each step has taken (at - work start) / k so far.
+function stepPace(j){
+  const p = j.progress; if(!p || !(p.of>=1) || !(p.step>=1) || p.step>p.of) return null;
+  const s = ts(j.workStart||j.claimedAt), at = ts(p.at);
+  if(isNaN(s) || isNaN(at) || at<=s) return null;
+  const per = (at-s)/p.step;
+  return {per, at, left: per*(p.of-p.step)};
+}
+// % done and finish time. With steps: k of n done plus the current step by its usual length (never past the next step);
+// without: time since work started against the estimate, capped at 95%. Never 100% until the job is done.
+function progressOf(j, P){
+  const now = Date.now(), p = j.progress, pace = stepPace(j), pl = (P||{})[j.id]||{};
+  let frac;
+  const done = pl.done || (pace ? Math.max(pace.at + pace.left, now+MINUTE) : NaN);
+  // the current step by time only while someone holds the job; released between steps, nobody is on it
+  if(pace) frac = Math.min(0.99, (p.step + (j.status==="claimed" ? Math.min(0.9, Math.max(0, now-pace.at)/pace.per) : 0)) / p.of);
+  else {
+    const s = ts(j.workStart||j.claimedAt);
+    frac = !isNaN(s) && done>s ? (now-s)/(done-s) : 0;
+    frac = Math.min(frac, 0.95, p && p.of>=1 ? (p.step+0.95)/p.of : 1);
+  }
+  return {pct: Math.max(0, Math.min(99, Math.floor(frac*100))), done};
+}
+function finishIn(ms){
+  if(!ms || isNaN(ms)) return "finish time not known yet";
+  const m = Math.max(1, Math.round((ms-Date.now())/MINUTE)), d = new Date(ms);
+  const hm = d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"});
+  const day = x => x.toLocaleDateString("en-GB",{timeZone:"Europe/London"});
+  const at = day(d)===day(new Date()) ? hm : d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",timeZone:"Europe/London"})+" "+hm;
+  return `finished in about ${m<60?`${m} min`:`${Math.floor(m/60)} h${m%60?` ${m%60} min`:""}`} (${at})`;
+}
+// "027 What If Earth Stopped Spinning? – Chief's frame-review fixes": film number and title, then the job in a few words.
+function plainJob(j){
+  const h = /^HOS\s+(\d{3})\b/.exec(j.title||""), no = j.film || (h ? "" : ((/^(\d{3})\b/.exec(j.title||"")||[])[1]||""));
+  let task = String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s*/,"").replace(/\s*\([^)]*\)/g,"").trim();
+  let film = "";
+  if(no){ const f = (fromDb.owb||[]).find(x=>String(x.film)===String(no)); film = `${no}${f&&f.title?" "+f.title:""}`; }
+  else if(h){ const f = ((fromDb.hos||{}).films||[]).find(x=>String(x.id)===h[1]); film = `HOS ${h[1]}${f&&f.title?" "+f.title:""}`; }
+  if(film && task.includes(":")) task = task.slice(task.indexOf(":")+1).trim();   // "Earth Stopped Spinning rough v01f: fixes" -> "fixes"
+  if(task.length>64) task = task.slice(0,62)+"…";
+  return film ? `<b>${esc(film)}</b> – ${esc(task)}` : esc(task);
+}
+function updatedAt(){
+  const bd = typeof window!=="undefined" ? (window.__boardData||{}) : {};
+  const t = ts(bd.publishedAt) || ts(fromDb.owbAt);
+  return isNaN(t) ? "" : `<div class="upd">Updated ${clock(t)}</div>`;
+}
+// Ben, 12 Oct 15:05: "should be one glance: I know what it's currently working on, how long until it's ready." One
+// line for Now (plain title, worker, ready time), one for Next, one summary chip; the full list sits behind "Show all".
+// Only real Ben items (a sign-in, money) show as one red line; date/input-bound jobs read "Scheduled", never red.
+const NEEDS_BEN = /needs ben|only ben|ben to sign|sign(?:-|\s)?in\b|top[- ]?up|payment/i;
+const WAITS_INPUT = /waits? for input|once .* (is )?public|go(?:es)?[- ]public|upload id|publishAt|after the long/i;
+function cleanTitle(j, max){
+  let t = String((j&&j.title)||"").replace(/^URGENT:\s*/i,"").replace(/^Backlog\s+(OWB|HOS)\s*:\s*/i,"$1: ")
+    .replace(/\bJ\d{4}\b[:,]?\s*/g,"").replace(/\s*\([^)]*\)/g,"").replace(/\s*[-–;,]\s*park(ed)?\s+for\s+chief.*$/i,"")
+    .replace(/,\s*park.*$/i,"").replace(/\s+/g," ").trim();
+  max = max||56; return t.length>max ? t.slice(0,max-1).trim()+"…" : t;
+}
+const WORKER = {cursor:"Cursor", codex:"Codex", gemini:"Gemini", claude:"Claude", chief:"Grok"};
+function readyAt(ms){
+  if(!ms || isNaN(ms)) return "";
+  const m = Math.max(1, Math.round((ms-Date.now())/MINUTE));
+  return m<=90 ? `ready in about ${m} min` : `ready ~${clock(ms)}`;
+}
+function jobKind(j){
+  if(j.needs==="ben" || (j.status==="blocked" && NEEDS_BEN.test(blockWhy(j)) && !isChiefPark(j))) return "ben";
+  if(isChiefPark(j)) return "chief";
+  if(j.status==="blocked") return WAITS_INPUT.test(blockWhy(j)) || WAITS_INPUT.test(j.title||"") ? "sched" : "held";
+  return "";
+}
+// Ben, 12 Oct 19:45: "Red and orange messages make little sense and information overload." The box is three plain
+// lines: Now (short title + when done), Next (one job), and one muted line counting what's waiting, grouped by reason in
+// plain words; tap it for short titles only (no job ids, no "waits for input", no instructions). Red only for Ben.
+function plainTitle(j, max){
+  max = max||52;
+  const vid = /\b(?=[A-Za-z0-9_-]{11}\b)(?=[^\s]*\d)(?=[^\s]*[A-Z])[A-Za-z0-9_-]{11}\b/g;
+  let t = cleanTitle(j, 300).replace(/^(blocked|waiting for chief review|chief|urgent)\s*:\s*/i,"")
+    .replace(/\s*[-–·]\s*waits?\s+for\b.*$/i,"").replace(/[;,]?\s*\bWAITS?\b.*$/,"").replace(vid,"").replace(/\s+after go-public/i,"").replace(/\s{2,}/g," ");
+  let head = "", task = t; const c = t.indexOf(": ");
+  if(c>0 && c<40){ head = t.slice(0,c).trim(); task = t.slice(c+2).trim(); }
+  task = task.split(/\s+(?:once|until|before|after|so that|per|then|on\/after)\s+|;\s*|,\s+then\s+/i)[0].trim();
+  if(task.length>34) task = task.split(/,\s+/)[0].trim();
+  task = task.replace(/(\s+(on|to|with|and|the))+$/i,"").trim();
+  t = head && task ? `${head} – ${task}` : (head||task||cleanTitle(j, max));
+  return t.length>max ? t.slice(0,max-1).trim()+"…" : t;
+}
+function waitReason(j, kind){
+  const w = (blockWhy(j)+" "+(j.title||""));
+  if(kind==="ben") return "ben";
+  if(kind==="chief") return "review";
+  if(/flow|ai ultra|refill|credit|payment|top[- ]?up|price pass/i.test(w)) return "flow";
+  if(/upload id|not (yet )?uploaded|no \d{3} upload|upload job/i.test(w)) return "upload";
+  if(/public|publishAt|goes live|go live|premiere|after the long/i.test(w)) return "public";
+  if(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|\bon\/after\b|scheduled|date/i.test(w)) return "date";
+  return "other";
+}
+const WAIT_WORD = {ben:"for you", review:"for my review", public:"for films to go public", upload:"for a film to be uploaded", flow:"for the Flow payment", date:"for a later date", other:"for other jobs to finish"};
+function renderNow(){
+  const box = $("nowbar"); if(!box) return;
+  const all = fromDb.jobs||[];
+  const jobs = all.filter(j=>j.needs==="mini" || jobLine(j)==="mini");
+  box.hidden = !fromDb.jobs;
+  if(box.hidden) return;
+  const P = plan(), q = laneQuiet();
+  const busy = jobs.filter(j=>j.status==="claimed");
+  const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
+  const headJob = busy[0] || null;
+  let cls = "", head;
+  let bar = "";
+  if(headJob){ const pr = progressOf(headJob, P);
+    head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 60))}</span>`;
+    bar = `<div class="pbar"><span class="track"><i style="width:${pr.pct}%"></i></span><span>${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
+  else if(line.length){ cls = q && q.quiet ? "asleep" : "idle";
+    head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours" : "<b>Now:</b> starting the next job"; }
+  else { cls = "idle"; head = "<b>Now:</b> nothing to do right now"; }
+  const nx = line.find(j=>j!==headJob);
+  const groups = {};
+  for(const j of all){ if(j===headJob) continue; const k = jobKind(j); if(!k) continue;
+    const r = waitReason(j, k); (groups[r] = groups[r] || []).push(j); }
+  const order = ["ben","public","upload","flow","date","review","other"].filter(r=>groups[r]);
+  const total = order.reduce((n,r)=>n+groups[r].length, 0);
+  // Ben, 12 Oct 21:09: name the film and its public date when all the go-public jobs wait on one film.
+  const word = Object.assign({}, WAIT_WORD);
+  if(groups.public){ const txt = j => (j.title||"")+" "+blockWhy(j);
+    const nos = [...new Set(groups.public.map(j=>((/^(?:HOS\s+)?(\d{3})\b/.exec(j.title||""))||[])[1]).filter(Boolean))];
+    const dm = groups.public.map(j=>(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*/.exec(txt(j))||[])[0]).filter(Boolean)[0];
+    if(nos.length===1) word.public = `for ${nos[0]} to go public${dm?` (${dm})`:""}`; }
+  if(groups.upload){ const nos = [...new Set(groups.upload.map(j=>((/^(?:HOS\s+)?(\d{3})\b/.exec(j.title||""))||[])[1]).filter(Boolean))];
+    if(nos.length===1) word.upload = `for ${nos[0]} to be uploaded`; }
+  const parts = order.map(r=>`${groups[r].length} ${word[r]}`);
+  const summary = total ? `${total} job${total===1?"":"s"} waiting: ${parts.join(", ")}` : "";
+  const details = total ? `<details class="more${groups.ben?" ben":""}"><summary><span class="chip">${esc(summary)}</span></summary>`
+    + order.map(r=>`<div class="sh">${esc(word[r].replace(/^for /,"Waiting for "))}</div><ul>${groups[r].map(j=>`<li><span class="t">${esc(plainTitle(j))}</span></li>`).join("")}</ul>`).join("")
+    + `</details>` : "";
+  box.className = "nowbar" + (cls ? " "+cls : "");
+  box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>` + bar
+    + (nx ? `<div class="nx one"><b>Next:</b> ${esc(plainTitle(nx, 60))}</div>` : "")
+    + details + updatedAt();
+}
+
+// ---------- Job board (Ben, 12 Oct 15:49) ----------
+// Five columns of one-line cards (id pill, channel colour, film/job name, ETA); tap a card for model, log and paths.
+// "Needs you" only for money or irreversible calls. A Running/Review card past 2x its kind's typical time turns amber.
+// The three numbers come from the queue history and the credit reads; anything missing shows "—", never a guess.
+const MONEY_IRREV = /top[- ]?up|payment|pay\b|buy|purchase|upgrade|overage|billing|spend|£|\$\d|delete|irreversible|go(?:es)? public|publish now|make (it )?public/i;
+function chanOf(j){ return /\bHOS\b|history of science/i.test((j.title||"")+" "+(j.for||"")) ? "HOS" : "OWB"; }
+const AIR_RX = /\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*(\s+\d{1,2}:\d{2}Z?)?/;
+function airOf(j){
+  const m = AIR_RX.exec(blockWhy(j)+" "+(j.title||""));
+  if(m){ let t = m[0].replace(/(\d{1,2}):(\d{2})Z$/, (x,h,mm)=>{ const d=new Date(Date.UTC(2026,0,1,+h,+mm)); return d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}); }); return "Airs "+t; }
+  const nb = ts(j.notBefore); if(!isNaN(nb)) return "Airs "+fw(new Date(nb).toISOString().slice(0,16));
+  const f = (fromDb.owb||[]).find(x=>j.film && x.film===j.film);
+  return f && f.air ? "Airs "+fd(pd(f.air)) : "date to come";
+}
+function sinceMin(s){ const t=ts(s); return isNaN(t) ? NaN : (Date.now()-t)/MINUTE; }
+function dur(m){ return m<60 ? `${Math.round(m)} min` : m<48*60 ? `${Math.round(m/60*2)/2} h` : `${Math.round(m/1440)} d`; }
+function isStuck(j, col){
+  const T = (fromDb.extra||{}).typical||{};
+  const typ = col==="review" ? (+T._review || 240) : (+j.typMin || +T._default || 30);
+  const m = sinceMin(col==="run" ? (j.workStart||j.claimedAt) : (j.last||{}).at);
+  return !isNaN(m) && m > 2*typ;
+}
+function jobCard(j, col, eta){
+  const ch = chanOf(j), stuck = (col==="run"||col==="review") && isStuck(j, col);
+  const last = j.last||{};
+  const cx = [
+    j.by||last.by ? `<div><b>Worker:</b> ${esc(WORKER[j.by||last.by]||j.by||last.by)}${j.model?` · <b>Model:</b> ${esc(j.model)}`:""}</div>` : (j.model?`<div><b>Model:</b> ${esc(j.model)}</div>`:""),
+    `<div><b>Job:</b> ${esc(j.title||"")}</div>`,
+    last.what ? `<div><b>Log:</b> ${esc(last.at||"")} ${esc(last.what)}</div>` : "",
+    j.result && j.result!==last.what ? `<div><b>Note:</b> ${esc(j.result)}</div>` : "",
+    j.ref ? `<div><b>Ref:</b> <span class="mono">${esc(j.ref)}</span></div>` : "",
+    stuck ? `<div><b>Stuck?</b> over 2× the usual ${col==="review" ? `${esc(String(((fromDb.extra||{}).typical||{})._review||240))} min for a Chief review` : `${esc(String(j.typMin||((fromDb.extra||{}).typical||{})._default||30))} min for ${esc(j.kindKey||"this kind")}`}</div>` : "",
+  ].slice(0, col==="next" ? 2 : undefined).join("");   // Ben, 12 Oct 21:08: Next cards show only Worker and Job
+  return `<details class="jc ${ch}${stuck?" stuck":""}"><summary><span class="jid">${esc(j.id||"")}</span><span class="cdot ${ch}" title="${ch}"></span><span class="nm">${esc(cleanTitle(j, 70))}</span><span class="et">${esc(eta||"")}</span></summary><div class="cx">${cx}</div></details>`;
+}
+function renderJobBoard(){
+  const box = $("jobboard"), st = $("daystats"), nb = $("needsyou");
+  const all = fromDb.jobs; if(!box) return;
+  box.hidden = !all; if(st) st.hidden = !all;
+  // Needs you: Ben-only calls that cost money or can't be undone. Absent when there are none.
+  const needs = (all||[]).filter(j=>jobKind(j)==="ben" && MONEY_IRREV.test(blockWhy(j)+" "+(j.title||"")));
+  if(nb){ nb.hidden = !needs.length; nb.innerHTML = needs.length ? `Needs you (${needs.length})<ul>${needs.map(j=>`<li><span class="mono">${esc(j.id)}</span> ${esc(cleanTitle(j,80))}: ${esc(shortReason(blockWhy(j)))}</li>`).join("")}</ul>` : ""; }
+  if(!all) return;
+  const P = plan();
+  const run = all.filter(j=>j.status==="claimed");
+  const next = all.filter(j=>j.status==="open").sort((a,b)=>((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15));
+  const review = all.filter(j=>jobKind(j)==="chief");
+  const sched = all.filter(j=>jobKind(j)==="sched" || jobKind(j)==="held" || (j.status==="open" && j.gateOnly));
+  const nextLive = next.filter(j=>!sched.includes(j));
+  const done = (fromDb.extra||{}).done || null;
+  const recent = done ? done.filter(d=>sinceMin(d.at) <= 48*60) : [], old = done ? done.filter(d=>sinceMin(d.at) > 48*60) : [];
+  const cap = (arr, f, n) => arr.slice(0,n).map(f).join("") + (arr.length>n ? `<details class="morej"><summary>+${arr.length-n} more</summary>${arr.slice(n).map(f).join("")}</details>` : "");
+  const col = (title, arr, f, extra) => `<div class="col"><h4>${title} <i>${arr.length}</i></h4>${arr.length ? cap(arr, f, 6) : `<div class="none">nothing</div>`}${extra||""}</div>`;
+  const doneCard = d => jobCard(Object.assign({}, d, {last:{at:d.at, by:d.by, what:"done"}}), "ship", `done ${fw(String(d.at).slice(0,16))}`);
+  box.innerHTML =
+      col("Next", nextLive, j=>jobCard(j, "next", (P[j.id]&&P[j.id].done) ? readyAt(P[j.id].done) : `~${j.estMin||25} min`))
+    + col("Running", run, j=>{ const pr = progressOf(j, P); return jobCard(j, "run", readyAt(pr.done) || "working"); })
+    + col("Waiting for review", review, j=>{ const m = sinceMin((j.last||{}).at); return jobCard(j, "review", isNaN(m) ? "" : `waiting ${dur(m)}`); })
+    + (done ? col("Ready to ship", recent, doneCard, old.length ? `<details class="arch"><summary>Archive (${old.length})</summary>${old.map(doneCard).join("")}</details>` : "")
+            : `<div class="col"><h4>Ready to ship</h4><div class="none">— (needs the next board publish)</div></div>`)
+    + col("Scheduled", sched, j=>jobCard(j, "sched", airOf(j)));
+  // Three numbers: done today, Mini idle minutes today, credits left. "—" when a source is missing.
+  const day = (fromDb.extra||{}).day, pools = ((fromDb.credits||{}).pools)||{};
+  const left = k => { const l = ((pools[k]||{}).latest||{}).left; return (l===undefined||l===null||isNaN(+l)) ? "—" : k==="vertex" ? "£"+(+l).toFixed(2) : (+l>=10000 ? Math.round(+l/1000)+"k" : Math.round(+l).toLocaleString("en-GB")); };
+  if(st) st.innerHTML =
+      `<div class="s"><div class="n">${day && day.doneToday!=null ? esc(String(day.doneToday)) : "—"}</div><div class="l">Jobs done today</div></div>`
+    + `<div class="s"><div class="n">${day && day.idleMin!=null ? esc(String(day.idleMin))+"<small> min</small>" : "—"}</div><div class="l">Mini idle today</div></div>`
+    + `<div class="s"><div class="n sm">ElevenLabs ${esc(left("elevenlabs"))} · Flow ${esc(left("flow"))} · Vertex ${esc(left("vertex"))}</div><div class="l">Credits left</div></div>`;
+}
+
+// Checklist grouped by who: done stages (✓), stages in hand (◐), then the note's steps still to do (☐).
+function whoOf(f, s){ const st=stOf(f,s); return st.owner || (f._ch==="OWB" ? OWB_OWNER[s.key] : s.owner) || "Team"; }
+function checklist(f, rows, ready){
+  const done = new Map(), now = [];
+  for(const s of f._stages){ const st=stOf(f,s), w=whoOf(f,s);
+    if(st.status==="done" || ready){ if(!done.has(w)) done.set(w,[]); done.get(w).push(s.label); }
+    else if((st.status==="doing"||st.status==="blocked") && !st.review) now.push({who: st.review?"Claude":w, what: s.label + (st.review?" (checking)":""), since: st.since}); }
+  const grp = (who, sub, items) => `<div class="g"><div class="nm">${av(who)}${esc(who)} <small>${sub}</small></div><ul>${items.join("")}</ul></div>`;
+  let html = "";
+  for(const [who,items] of done) html += grp(who, "did", items.map(x=>`<li class="ok"><span>${esc(x)}</span></li>`));
+  const lc = t => String(t||"").toLowerCase();
+  for(const n of now.filter(n=>!rows.some(r=>!r.w.ok && r.x.who===n.who && (lc(r.x.what).includes(lc(n.what).replace(/\s*\(.*\)/,"").trim().slice(0,5)) || lc(n.what).includes(lc(r.x.what))))))
+    html += grp(n.who, "doing now", [`<li class="now"><span>${esc(n.what)}</span>${n.since?`<span class="w">since ${esc(fw(n.since))} (${stageDays(n.since)})</span>`:""}</li>`]);
+  // steps in order; a run of steps by the same person is one group
+  let run = null; const runs = [];
+  for(const r of rows){ if(!run || run.who!==r.x.who){ run={who:r.x.who, items:[]}; runs.push(run); } run.items.push(r); }
+  for(const r of runs) html += grp(r.who, r.items.every(x=>x.w.ok)?"did":"to do", r.items.map(({x,w})=>`<li class="${w.ok?"ok":""}"><span>${esc(x.what)}</span><span class="w ${w.late?"late":""}">${w.text}</span></li>`));
+  return `<div class="ck">${html||"Nothing listed."}</div>`;
+}
+// Watch links (Ben, 9 Oct): the cut waiting for Ben opens on his phone. board/briefs.watch["OWB:026"] = {url, label,
+// version, kind: youtube|files|icloud, alt}; kanban_snapshot.py picks the best link (explicit, YouTube upload, iCloud file).
+function watchLink(key){
+  const w = (fromDb.watch||{})[key]; if(!w || !/^(https:|shareddocuments:)/.test(w.url||"")) return "";
+  const tgt = w.kind==="files" ? "" : ` target="_blank" rel="noopener"`;
+  return `<a class="open watch" href="${esc(w.url)}"${tgt}>▶ ${esc(w.label||"Watch it")}${w.kind==="files"?" (Files)":w.kind==="youtube"?" (YouTube)":""}</a>`
+    + (w.alt ? `<a class="open" href="${esc(w.alt)}" target="_blank" rel="noopener">Studio ↗</a>` : "");
+}
+// Jobs whose line shows on a film card this render (one per card); the Mac mini box lists every other live job.
+const ON_CARD = new Set();
+// Ben, 11 Oct 21:39, at a ticked card still in his box: "Been approved why is it still here". Once he has ticked a cut,
+// OK or changes, it leaves his For-you box straight away, handled or not. A tick stands for the cut it was made on: the
+// card comes back only when a newer cut is handed to him (another watch version, or the film note rewritten after the
+// Chief handled the tick). For two hours after the tap one short "Just approved" / "Just sent" line keeps Undo in reach.
+const JUST_MS = 2*3600000;
+function tickStands(c, brief, watchVer){
+  if(!c) return false;
+  if(!c.handled) return true;
+  if(c.version && watchVer) return c.version===watchVer;
+  const u = ts((brief||{}).updated), a = Date.parse(c.at||"");
+  return !(u > a);
+}
+function justTicks(list, now){
+  const at = x => Date.parse(x.c.at||"");
+  return list.filter(x=>x.c && now-at(x) < JUST_MS && at(x)-now < 5*MINUTE).sort((a,b)=>at(b)-at(a));
+}
+function justLine(x){
+  const {f, c} = x, id = f.key.replace(":","-"), n = Array.isArray(c.fixes) ? c.fixes.length : (c.note ? 1 : 0);
+  const what = `${esc(f.id)} ${esc(f.title)}${c.version?" "+esc(c.version):""}`;
+  const head = c.verdict==="ok" ? `Just approved: <b>${what}</b>` : `Just sent ${n} fix${n===1?"":"es"}: <b>${what}</b>`;
+  const tail = c.handled ? " · the Chief has it" : ` · ${c.verdict==="ok"?"":`<button class="lnk" data-more="${id}">Add another fix</button> · `}<button class="lnk" data-undo="${id}">Undo</button>`;
+  return `<div class="just">${head}${tail}</div>`;
+}
+function renderTracker(films){
+  const box = $("tracker"); if(!box) return;
+  const all = films.concat(readyFilms).filter(f=>f.air ? recent(f.air) : true).sort((a,b)=>String(a.air||"9999").localeCompare(String(b.air||"9999")) || a.key.localeCompare(b.key));
+  const P = fromDb.jobs ? plan() : {}, briefs = fromDb.briefs || {};
+  const laneWho = {mini:"Cursor", gemini:"Gemini", cloud:"Claude", ben:"Ben"};
+  const lanes = {OWB:{doing:[], todo:[], sched:[], live:[]}, HOS:{doing:[], todo:[], sched:[], live:[]}}, forYou = [], rankIn = [], ticked = [];
+  ON_CARD.clear();
+  for(const f of all){
+    let b = briefs[f.key] || autoBrief(f);
+    // Ben's tick (checks/<OWB-022>) shows on the card straight away: his watch step ticked, nothing left for him, and
+    // what happens next. Claude's hourly run then does the next step and rewrites the note.
+    const ck0 = (fromDb.checks||{})[f.key.replace(":","-")];
+    const ck = tickStands(ck0, briefs[f.key]||b, ((fromDb.watch||{})[f.key]||{}).version) ? ck0 : null;
+    if(ck) ticked.push({f, c:ck});
+    if(ck && b.you){
+      const when = fw(ck.at), fx = Array.isArray(ck.fixes) ? ck.fixes : [];
+      if(ck.verdict==="ok") b = Object.assign({}, b, {mood:"watched", you:"", youShort:"", youWhen:"",
+        steps:(b.steps||[]).map(x=>x.who==="Ben" ? Object.assign({}, x, {done:true, doneText:`you watched it · ${when}`}) : x)});
+      else if(!ck.handled) b = Object.assign({}, b, {mood:"fixing", you:"", youShort:"", youWhen:"", _fixes:fx,
+        steps:[{who:"Chief", what:`queue your ${fx.length} fix${fx.length===1?"":"es"}`, whenText:`by ${nextRun()}`}]
+          .concat((b.steps||[]).filter(x=>x.who!=="Ben")), line:`You asked for ${fx.length} fix${fx.length===1?"":"es"} (${when}). The Chief queues them, then it comes back to you to watch again.`});
+      if(ck.verdict==="ok") b.line = `You watched it (${when}) and said it looks good. Next: the Chief's final OK once the upload checks pass, then the upload. Nothing more for you.`;
+    }
+    if(ck) b = Object.assign({}, b, {you:"", youShort:"", youWhen:""});   // ticked, handled or not: nothing left on Ben for this cut
+    const steps = (b.steps||[]).slice();
+    // Any queued job for this film that the note doesn't mention yet still shows, with its live time.
+    const named = new Set(steps.flatMap(x=>[x.job,x.afterJob]).filter(Boolean));
+    for(const j of (fromDb.jobs||[])) if(f._ch==="OWB" && j.film===f.id && !named.has(j.id))
+      steps.push({who: j.status==="claimed" ? AGENT(j.by) : j.routedTo||laneWho[j.needs]||j.needs, what: shortTitle(j.title).replace(/^\d{3}\s*/,""), job:j.id});   // routedTo: scripts/routing.py by kind (Ben, 12 Oct)
+    const rows = steps.map(x=>({x, w:stepWhen(x,P)}));
+    const live = isLive(f);
+    if(live) for(const r of rows) if(!r.w.ok && r.w.at && r.w.at <= Date.now()) r.w = {ok:true, text:"done"};   // aired: past steps are done
+    const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=1) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
+    const moodKey = live ? "live" : youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
+    const [cls, word] = MOOD[moodKey];
+    if(b.you) forYou.push({f, b: Object.assign({}, briefs[f.key]||b), soon: youSoon});   // a ticked cut has no "you" left: out of the box
+    const pct = moodKey==="ready" || moodKey==="live" ? 100 : filmPct(f), air = pd(f.air);
+    const age = b.updated ? Date.now()-ts(b.updated) : NaN;
+    const stale = !b.auto && (isNaN(age) || age > 30*3600000);
+    const isOpen = f.key in openState ? openState[f.key] : false;
+    const line = live ? `Live since ${fd(pd(f.air))} 18:00.` : b.line || (b.auto ? b.done : "");
+    const st = statusOf(b, rows);
+    // A job belongs to this card by its film field, or by its title ("025 Mars robot: …", "HOS 006 Part 03 …").
+    const jobFilm = j => j.film ? "OWB:"+j.film : (/^HOS\s+(\d{3})\b/.exec(j.title||"")||[])[1] ? "HOS:"+/^HOS\s+(\d{3})\b/.exec(j.title)[1]
+      : (/^(\d{3})\b/.exec(j.title||"")||[])[1] ? "OWB:"+/^(\d{3})\b/.exec(j.title)[1] : "";
+    const fj = f.key ? (fromDb.jobs||[]).filter(j=>jobFilm(j)===f.key).map(j=>({j,p:P[j.id]||{}})).sort((a,b)=>(a.p.state==="now"?-1:a.p.pos||99)-(b.p.state==="now"?-1:b.p.pos||99))[0] : null;
+    if(fj) ON_CARD.add(fj.j.id);
+    // Ben, 10 Oct: "a number to tell the order and ETA of the task", from the same plan() as the Mac mini box.
+    const eta = p => p.done ? ` · ${etaOf(p.done)}` : "";
+    const partDone = fj && fj.j.status==="open" && /^released/.test(String((fj.j.last||{}).what||"")) && (fj.j.last||{}).by && fj.j.last.by!=="claude";
+    const ordChip = !fj ? "" : fj.p.state==="now" ? `<span class="pill you">Working on it${eta(fj.p)}</span>`
+      : partDone ? `<span class="pill you">Part done${eta(fj.p)}</span>`
+      : fj.p.pos===1 ? `<span class="pill you">Up next · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
+      : fj.p.pos ? `<span class="pill">#${fj.p.pos} · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
+      : isChiefPark(fj.j) ? '<span class="pill review">Waiting for Chief review</span>'
+      : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
+    // Ben, 11 Oct 18:52: "a marker to say in the in progress lane what's worked on and the eta". One coloured line at
+    // the top of every card that isn't live or scheduled: Now / Next / Waiting / Blocked, from the same plan() as the
+    // Mac mini box; else the film note's next step; else the stage in hand; never blank.
+    const col = live ? "live" : COLUMN[MOOD[b.mood]?b.mood:"good"]||"doing";
+    const jn = j => `${esc(shortTitle(String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s+/,"")))} (${esc(j.id)})`;
+    const lineWho = j => (j.line||j.needs)==="chief"||(j.line||j.needs)==="cloud" ? "Chief" : "Mac mini";
+    const sinceTxt = t => t ? ` · since ${esc(fw(t))}` : "";
+    const firstOpen = rows.find(r=>!r.w.ok);
+    const doingSt = f._stages.map(s=>[s,stOf(f,s)]).find(([,x])=>["doing","blocked"].includes(x.status));
+    let mk = null, optLine = "";
+    // Ben, 12 Oct: a film already scheduled reads "Scheduled: <day date time>"; extras on it are a small Optional line.
+    const schedSt = f._stages.find(s=>s.key==="scheduled"), isSched = !live && air && (moodKey==="ready" || (schedSt && stOf(f,schedSt).status==="done"));
+    if(isSched){ const dueM = fj && /due(?:\s+before)?\s+((?:mon|tue|wed|thu|fri|sat|sun)\w*\s+\d{1,2}\s+\w{3})/i.exec(fj.j.title||"");
+      const dueT = dueM ? dueM[1] : fj && fj.j.not_before ? fd(new Date(fj.j.not_before)) : "";
+      if(fj) optLine = `Optional: ${esc(shortTitle(String(fj.j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s+/,"")).split(/[:(]/)[0].trim())}${dueT?`, due ${esc(dueT)}`:""}${isChiefPark(fj.j)?" · waiting for Chief review":""}`;
+      mk = ["sched", `Scheduled: ${fd(air)} ${String(AIR_HOUR).padStart(2,"0")}:00`]; }
+    else if(fj && fj.p.state==="now") mk = ["now", `Now: ${esc(AGENT(fj.j.by))}, ${jn(fj.j)} · ${etaOf(fj.p.done)}`];
+    else if(partDone) mk = ["now", `Now: ${esc(AGENT(fj.j.last.by))}, ${jn(fj.j)} · part done, carries on within 10 min${fj.p.done?` · ${etaOf(fj.p.done)}`:""}`];
+    else if(fj && fj.p.start) mk = ["next", `Next${fj.p.pos?` (#${fj.p.pos} in line)`:""}: ${lineWho(fj.j)}, ${jn(fj.j)} · starts ${fj.p.state==="gated"?"":"about "}${clock(fj.p.start)}${fj.p.state==="gated"?" (date gate)":""} · ${etaOf(fj.p.done)}`];
+    else if(fj && isChiefPark(fj.j)) mk = ["review", `Waiting for Chief review: ${jn(fj.j)}`];
+    else if(fj && fj.j.status==="blocked") mk = ["bad", `Blocked: ${jn(fj.j)} · ${esc(String(fj.j.result||"no reason given").slice(0,90))}`];
+    else if(fj) mk = ["wait", `Waiting: ${jn(fj.j)} · no estimate: needs ${esc(fj.j.waitsFor||fj.j.after||"another job")} first`];
+    else if(f._ch==="HOS" && doingSt && doingSt[1].status==="doing"){ const [sg,x] = doingSt, due = x.eta || x.due;
+      mk = ["now", `Now: ${esc(x.owner || whoOf(f,sg))}, ${esc(sg.label)} · ${due?`ETA ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
+    else if(firstOpen){ const {x,w} = firstOpen, who = x.who==="Ready for you"||x.who==="Ben" ? "you" : x.who, what = esc(x.what);
+      mk = w.kind==="now" ? ["now", `Now: ${esc(w.by||who)}, ${what} · ${etaOf(w.done)}`]
+        : w.kind==="part" ? ["now", `Now: ${esc(w.by||who)}, ${what} · part done${w.done?` · ${etaOf(w.done)}`:""}`]
+        : w.kind==="review" ? ["review", `Waiting for Chief review: ${esc(who)}, ${what}`]
+        : w.kind==="blocked" ? ["bad", `Blocked: ${esc(who)}, ${what} · ${esc(String(w.reason||"").slice(0,90))}`]
+        : (w.kind==="queue"||w.kind==="after") && w.at ? ["next", `Next: ${esc(who)}, ${what} · ${w.start?`starts about ${clock(w.start)} · `:""}${etaOf(w.at)}`]
+        : w.text && !/no date yet/.test(w.text) ? ["wait", `Waiting: ${esc(who)}, ${what} · ${w.text}${!w.at && who!=="you" && !x.job && !/\d/.test(w.text) ? " · no estimate: not in the job queue yet" : ""}${who==="you"?"":sinceTxt(doingSt&&doingSt[1].since || b.updated)}`]
+        : ["wait", `Waiting: ${esc(who)}, ${what} · no estimate: no date in the film note${sinceTxt(b.updated)}`]; }
+    else if(doingSt){ const [sg,x] = doingSt, due = x.eta || x.due, who = esc(x.owner || whoOf(f,sg));
+      mk = [x.status==="blocked"?"bad":"now", `${x.status==="blocked"?"Blocked":"Now"}: ${who}, ${esc(sg.label)} · ${due?`ETA ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
+    else mk = ["wait", `Waiting: nothing queued for it · no estimate: no next step in the film note`];
+    const ranked = col==="todo"||col==="doing";
+    const mkRow = !ranked ? "" : `<div class="rkrow">@@R:${esc(f.key)}@@<div class="mk ${mk[0]}">${mk[1]}</div></div>${optLine?`<div class="mk-opt">${optLine}</div>`:""}`;
+    // Ben, 11 Oct 19:03: "1st, 2nd, 3rd": one work order across both channels. Running/part-done jobs first, then queued
+    // jobs by start time, then films with no queue job (In progress before To do, then air date), then date-gated work.
+    if(ranked) rankIn.push({key:f.key, tier: !fj ? 2 : fj.p.state==="now"||partDone ? 0 : fj.p.state==="gated" ? 3 : fj.p.start ? 1 : 2,
+      k1: fj && fj.p.start ? (fj.p.state==="now"||partDone ? (fj.p.done||0) : fj.p.start) : (col==="doing"?0:1), k2: air ? air.getTime ? air.getTime() : +air : 9e15});
+    lanes[f._ch][col].push(`@@A:${air&&!isNaN(air)?+air:0}@@<details class="tf ${cls}" data-key="${esc(f.key)}"${isOpen?" open":""}><summary>
+      ${mkRow}
+      <div class="kh"><span>${chb(f)}<b>${esc(f.id)}</b></span><span>${mkRow?"":ordChip} <span class="pill ${cls}">${word}</span></span></div>
+      <div class="kt">${esc(f.title)}</div>
+      <div class="ka"><span>Airs <b>${fd(air)}</b>${air?` (${cd(air)})`:""}</span><span>${pct}%</span></div>
+      <div class="bar"><i style="width:${pct}%"></i></div>
+      <div class="st1 ${isSched?"ok":st.cls}">${isSched?mk[1]:st.short}</div>${isSched&&!mkRow&&optLine?`<div class="mk-opt">${optLine}</div>`:""}
+      ${youSoon?`<div class="ky yes">For you: ${esc(b.youShort||b.you)}${watchLink(f.key)?`<br>${watchLink(f.key)}`:""}</div>`:""}
+    </summary><div class="body">
+      ${line?`<div class="kl" style="margin:0 0 8px">${md(line)}</div>`:""}
+      <div class="stbox ${st.cls}"><div class="h">${st.title}</div>${st.lines.map(l=>`<div>${l}</div>`).join("")}</div>
+      <div class="hold"><b>${b.mood==="waiting"?"Why it hasn't started yet":b.mood==="ready"?"Left to do":"More detail"}</b>${md(b.holdup||"None.")}${b.limit?`<br><br>${md(b.limit)}`:""}</div>
+      ${checklist(f, rows, b.mood==="ready")}
+      ${youSoon?"":`<div class="ky ${b.you?"yes":""}">For you: ${b.you?esc(b.you):"nothing"}</div>`}
+      ${b.timing?`<div class="why" style="margin-top:6px;font-size:13px">${md(b.timing)}</div>`:""}
+      <div class="ft"><span>${b.auto?"From the stage data (no film note yet)":`Updated ${esc(fw(b.updated))}`}${stale?` · <b class="soon">over a day old</b>`:""}</span>
+      <button class="btn" data-show="${esc(f.key)}">Show its stages</button></div></div></details>`);
+  }
+  const ord = n => n + (n%100>=11&&n%100<=13 ? "th" : ({1:"st",2:"nd",3:"rd"})[n%10] || "th");
+  rankIn.sort((a,b)=>a.tier-b.tier || a.k1-b.k1 || a.k2-b.k2 || a.key.localeCompare(b.key));
+  const rankOf = Object.fromEntries(rankIn.map((r,i)=>[r.key,i+1]));
+  const rk = h => { const m=/@@R:([^@]+)@@/.exec(h); return m ? rankOf[m[1].replace(/&amp;/g,"&")]||999 : 999; };
+  for(const ch of ["OWB","HOS"]) for(const k of ["todo","doing"])
+    lanes[ch][k] = lanes[ch][k].sort((a,b)=>rk(a)-rk(b)).map(h=>h.replace(/@@R:([^@]+)@@/, (m,key)=>{ const n=rankOf[key.replace(/&amp;/g,"&")]; return n?`<span class="rk${n<=3?" top":""}" title="Place in the overall work order, both channels">${ord(n)}</span>`:""; }));
+  const defs = [["todo","To do","var(--todo)"],["doing","In progress","var(--doing)"],["sched","Scheduled","var(--accent)"],["live","Live","var(--done)"]];
+  // Ben, 12 Oct 23:05: one set of lanes for both channels, each card with a muted Orbit/HOS chip. To do and In progress
+  // keep the overall work order; Scheduled soonest air date first; Live newest first. The header tabs filter by channel.
+  const airOf2 = h => +((/^@@A:(\d+)@@/.exec(h)||[])[1]||0);
+  const merged = {};
+  for(const [k] of defs){
+    let arr = ["OWB","HOS"].filter(ch=>chan==="all"||chan===ch).flatMap(ch=>lanes[ch][k]);
+    if(k==="todo"||k==="doing") arr = arr.map((h,i)=>[h,i]).sort((x,y)=>(rankOf[(/data-key="([^"]+)"/.exec(x[0])||[])[1]]||999)-(rankOf[(/data-key="([^"]+)"/.exec(y[0])||[])[1]]||999)||x[1]-y[1]).map(x=>x[0]);
+    if(k==="sched") arr.sort((x,y)=>(airOf2(x)||9e15)-(airOf2(y)||9e15));
+    if(k==="live") arr.sort((x,y)=>airOf2(y)-airOf2(x));
+    merged[k] = arr.map(h=>h.replace(/^@@A:\d+@@/,""));
+  }
+  box.className = "";
+  box.innerHTML = `<section class="lane one"><div class="kb">`
+    + defs.map(([k,label,c])=>`<section class="kcol"><h2><span class="sw" style="background:${c}"></span>${label}<span class="n">${merged[k].length}</span></h2>
+      <div class="cards">${merged[k].join("") || `<div class="empty">Nothing here.</div>`}</div></section>`).join("") + `</div></section>`;
+  box.querySelectorAll("details.tf>summary").forEach(sm=>sm.addEventListener("click",()=>{ const d=sm.parentElement; openState[d.dataset.key]=!d.open; }));
+  box.querySelectorAll("[data-show]").forEach(btn=>btn.onclick=()=>{
+    filter = btn.dataset.show; try{ localStorage.setItem("studio-kanban-film",filter); }catch(e){}
+    $("foldStages").open = true; render(); $("stageboard").scrollIntoView({behavior:"smooth"});
+  });
+  // One line at the top: is anything on Ben, and what airs next.
+  const yb = $("youbar"); if(!yb) return;
+  const soon = forYou.filter(x=>x.soon);
+  yb.className = "youbar" + (soon.length ? " has" : "");
+  if(yb.contains(document.activeElement) && ["TEXTAREA","INPUT"].includes(document.activeElement.tagName) && document.activeElement.value) return;   // don't wipe a fix being typed
+  const fixList = (fx, id, editable) => fx.length ? `<ol class="fx">${fx.map((f,k)=>`<li>${f.t?`<span class="ft2">${esc(f.t)}</span>`:""}<span>${esc(f.text)}</span>${editable?`<button class="lnk" data-rm="${id}:${k}" aria-label="Remove">remove</button>`:""}</li>`).join("")}</ol>` : "";
+  const editor = (id, sent) => { const fx = drafts[id] || [];
+    return `<span class="chgbox">
+      <span class="why">${sent?"Add more fixes:":"Add each thing you want fixed. The time in the video is optional."}</span>
+      ${fixList(fx, id, true)}
+      <span class="fxrow"><input id="t-${id}" class="fxt" placeholder="3:10" aria-label="Time in the video (optional)"><input id="x-${id}" class="fxx" placeholder="What should change? e.g. the music is too loud here" aria-label="What should change"><button class="btn" data-add="${id}">Add</button></span>
+      <span class="acts"><button class="btn ok" data-send="${id}">${fx.length?`Send ${fx.length} change${fx.length===1?"":"s"} to the Chief`:"Send to the Chief"}</button><button class="lnk" data-cancel="${id}">Cancel</button></span>
+    </span>`; };
+  const item = x => {
+    const id = x.f.key.replace(":","-");
+    const url = [x.b.uatUrl, fromDb.uatUrl].find(u=>/^https:\/\/www\.icloud\.com\//.test(u||""));
+    const wl = watchLink(x.f.key);
+    const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}${url?` <a class="open" href="${esc(url)}" target="_blank" rel="noopener">Open in iCloud ↗</a>`:""}</span>${wl?`<span class="acts">${wl}</span>`:""}`;
+    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Request changes</button></span>${changeOpen===id?editor(id, false):""}` : "";
+    return `<li><span>☐</span><span>${head}${btns}</span></li>`;
+  };
+  const just = justTicks(ticked, Date.now());
+  const justHtml = just.map(x=>justLine(x) + (changeOpen===x.f.key.replace(":","-") && x.c.verdict!=="ok" ? `<ul class="yl"><li class="chg"><span>✎</span>${editor(changeOpen, true)}</li></ul>` : "")).join("");
+  yb.innerHTML = (soon.length ? `<b>Ready for you to check (${soon.length})</b><ul class="yl">${soon.map(item).join("")}</ul>
+      <div class="why">${soon.every(x=>watchLink(x.f.key))?"Tap <b>▶ Watch</b> to open it on your phone (also in iCloud Drive › <b>OWB UAT</b> / <b>HOS UAT</b>).":"Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder."} ${dbApi?"Watch it, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":`When you've checked one, tell the Chief "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
+    : `<b>Nothing for you right now.</b>`) + justHtml;
+  const keyOf = id => id.replace("-",":");
+  const saveCheck = async (id, verdict, fixes) => {
+    if(!dbApi) return;
+    try {
+      await dbApi.doc("checks/"+id).set({film:keyOf(id), version:((fromDb.watch||{})[keyOf(id)]||{}).version||"", verdict, fixes:fixes||[], note:(fixes||[]).map(f=>(f.t?f.t+" ":"")+f.text).join(" | ").slice(0,4000), at:new Date().toISOString(), handled:false});
+      changeOpen=null; delete drafts[id]; render();
+    } catch(e){ alert("Couldn't save that (" + (e && e.code || "error") + "). Tell the Chief in the chat instead."); }
+  };
+  const addDraft = id => { const t=$("t-"+id), x=$("x-"+id), text=(x&&x.value||"").trim(); if(!text){ x&&x.focus(); return; }
+    (drafts[id] = drafts[id] || []).push({t:(t&&t.value||"").trim().slice(0,12), text:text.slice(0,1000)}); render(); const nx=$("x-"+id); if(nx) nx.focus(); };
+  const sentFixes = id => { const c=(fromDb.checks||{})[id]; return c && c.verdict==="change" && !c.handled ? (Array.isArray(c.fixes)?c.fixes:(c.note?[{t:"",text:c.note}]:[])) : []; };
+  yb.querySelectorAll("[data-ok]").forEach(b=>b.onclick=()=>saveCheck(b.dataset.ok,"ok"));
+  yb.querySelectorAll("[data-chg],[data-more]").forEach(b=>b.onclick=()=>{ const id=b.dataset.chg||b.dataset.more; changeOpen=id; render(); const x=$("x-"+id); if(x) x.focus(); });
+  yb.querySelectorAll("[data-cancel]").forEach(b=>b.onclick=()=>{ changeOpen=null; delete drafts[b.dataset.cancel]; render(); });
+  yb.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>addDraft(b.dataset.add));
+  yb.querySelectorAll(".fxx").forEach(inp=>inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); addDraft(inp.id.slice(2)); } });
+  yb.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>{ const [id,k]=b.dataset.rm.split(":"); (drafts[id]||[]).splice(Number(k),1); render(); });
+  yb.querySelectorAll("[data-send]").forEach(b=>b.onclick=()=>{ const id=b.dataset.send; const t=$("x-"+id);
+    if(t && t.value.trim()) addDraft(id);   // a typed fix not yet added still goes
+    const all = sentFixes(id).concat(drafts[id]||[]); if(!all.length) return; saveCheck(id,"change",all); });
+  yb.querySelectorAll("[data-undo]").forEach(b=>b.onclick=async()=>{ try{ await dbApi.doc("checks/"+b.dataset.undo).delete(); }catch(e){} });
+}
+
+function cardHtml(f, s, st){
+  const p = progress(st), due=pd(st.due), eta=pd(st.eta);
+  const bits=[];
+  if(Array.isArray(st.steps)) bits.push(`<b>${st.steps[0]}/${st.steps[1]}</b> ${esc(st.steps_unit||"steps")}`);
+  if(st.left) bits.push(`<b>${esc(st.left)}</b> left`);
+  if(eta) bits.push(`ETA <b>${String(st.eta).length>10?fw(st.eta):fd(eta)}</b> <span class="${cdCls(eta)}">(${cd(eta)})</span>`);
+  if(due) bits.push(`Due <b>${fd(due)}</b> <span class="${cdCls(due)}">(${cd(due)})</span>`);
+  const showProg = (st.status==="doing"||st.status==="blocked") && (typeof st.progress==="number"||Array.isArray(st.steps));
+  const prog = showProg ? `<div class="prog"><div class="bar"><i style="width:${Math.round(p*100)}%"></i></div><span>${Math.round(p*100)}%</span></div>` : "";
+  const [, label, why] = stateOf(st);
+  return `<div class="card ${st.status}">
+    <div class="hd"><span class="stage">${esc(s.label)}</span><span class="fid">${chb(f)}${esc(f.id)}</span></div>
+    ${filter?"":`<div class="note" style="margin-top:2px">${esc(f.title)}</div>`}
+    <div class="who-row"><span class="who">${ownerOf(s,st)==="—"?"Not claimed yet":`${av(ownerOf(s,st))}With <b>${esc(ownerOf(s,st))}</b>`}${st.since?` since ${fw(st.since)}`:""}</span>${stateChip(st)}</div>
+    ${why?`<div class="why">${({Queued:"Starts ",Waiting:"Waiting for: ",Blocked:"Blocked by: "})[label]||""}${md(why)}</div>`:""}
+    ${prog}
+    ${st.note?`<div class="note">${md(st.note)}</div>`:""}
+    ${bits.length?`<div class="row">${bits.map(b=>`<span>${b}</span>`).join("")}</div>`:""}
+  </div>`;
+}
+
+function renderBoard(films){
+  const shown = filter ? films.filter(f=>f.key===filter) : films;
+  const cols = {blocked:[], doing:[], todo:[], done:[]};
+  for(const f of shown) for(const [i,s] of f._stages.entries()){
+    const st = stOf(f,s);
+    if(st.status==="skip") continue;
+    (cols[st.status]||cols.todo).push({f,s,st,i});
+  }
+  const air = x => x.f.air || "9999";
+  cols.todo.sort((a,b)=>(a.st.due||air(a)).localeCompare(b.st.due||air(b)) || a.f.key.localeCompare(b.f.key) || a.i-b.i);
+  cols.doing.sort((a,b)=>String(a.st.eta||a.st.due||"9999").localeCompare(String(b.st.eta||b.st.due||"9999")));
+  const defs = [
+    ...(cols.blocked.length?[["blocked","Blocked","var(--blocked)"]]:[]),
+    ["doing","In progress","var(--doing)"],["todo","To do","var(--todo)"],["done","Done","var(--done)"]
+  ];
+  $("board").style.setProperty("--cols", defs.length);
+  $("board").innerHTML = defs.map(([k,label,c])=>{
+    let body;
+    if(k==="done"){
+      const byFilm = new Map();
+      for(const x of cols.done){ if(!byFilm.has(x.f.key)) byFilm.set(x.f.key,{f:x.f,items:[]}); byFilm.get(x.f.key).items.push(x); }
+      body = [...byFilm.values()].map(({f,items})=>`<details class="donegrp"${filter?" open":""}>
+        <summary><span>${chb(f)}<span class="fid">${esc(f.id)}</span> ${items.length===f._stages.length?"every stage":items.length+" of "+f._stages.length+" stages"}</span><span>▾</span></summary>
+        <ul>${items.map(x=>`<li>${esc(x.s.label)}${x.st.note?` <span>· ${md(x.st.note)}</span>`:""}</li>`).join("")}</ul></details>`).join("");
+    } else {
+      const list = k==="todo" && !filter ? cols.todo.slice(0,14) : cols[k];
+      body = list.map(x=>cardHtml(x.f,x.s,x.st)).join("");
+      if(k==="todo" && !filter && cols.todo.length>14) body += `<div class="empty">+ ${cols.todo.length-14} more later stages. Tap a film above to see all of its cards.</div>`;
+    }
+    return `<section class="col"><h2><span class="sw" style="background:${c}"></span>${label}<span class="n">${cols[k].length}</span></h2>
+      <div class="cards">${body||`<div class="empty">Nothing here.</div>`}</div></section>`;
+  }).join("");
+}
+
+function renderLower(films){
+  const items = [];
+  if(chan!=="OWB" && data) for(const s of (data.next_steps||[])) items.push(`<span class="ch HOS">HOS</span>${md(s)}`);
+  if(chan!=="HOS") for(const f of films) if(f._ch==="OWB" && f.next) items.push(`${chb(f)}<b>${esc(f.id)}</b> ${md(f.next)}`);
+  $("next").innerHTML = items.map(x=>`<li>${x}</li>`).join("") || "<li>Nothing listed.</li>";
+  $("creditbox").style.display = chan==="OWB" ? "none" : "";
+  $("credits").innerHTML = ((data&&data.credits)||[]).map(c=>`<div class="credit"><span>${esc(c.pool)}</span><span class="l">${esc(c.left)}</span><span class="r">${esc(c.rule)} · checked ${esc(c.checked)}</span></div>`).join("");
+}
+
+const NEED_WORD = {mini:"Mac mini", gemini:"Gemini check", cloud:"Claude", ben:"Ben", any:"anyone"};
+// Job tag and short name, used by the Mac mini box for jobs that don't show on a film card.
+function jobTag(j){
+  const h = /^HOS\s+(\d{3})\b/.exec(j.title||""), o = j.film || (/^(\d{3})\b/.exec(j.title||"")||[])[1];
+  return h ? `<span class="ch HOS">HOS</span><b>${esc(h[1])}</b> ` : o ? `<span class="ch OWB">OWB</span><b>${esc(o)}</b> ` : "";
+}
+function jobName(j){ return esc(shortTitle(String(j.title||"").replace(/^HOS\s+\d{3}\s*[:·]?\s*/,"").replace(/^\d{3}\s*[:·]?\s+/,""))); }
+function renderSource(){
+  const bits = [];
+  if(chan!=="OWB" && data) bits.push(`HOS board updated ${fd(pd(data.updated))} by ${data.updated_by||"—"}`);
+  if(chan!=="HOS") bits.push(owb.state==="live" ? `OWB read ${tm(owb.at)}` : owb.state==="db" ? `OWB updated ${fw(fromDb.owbAt)}` : owb.state==="snapshot" ? "OWB from the built-in snapshot" : owb.state==="loading" ? "OWB loading…" : "OWB not available");
+  bits.push(`today is ${fd(today())}`);
+  $("asof").textContent = bits.join(" · ");
+  const dot=$("dot"), t=$("srctxt");
+  dot.className = "dot" + (source==="live"?" live":source==="stale"?" warn":"");
+  if(source==="live") t.textContent = `Live from GitHub · read ${tm(fetchedAt)}`;
+  else if(source==="stale") t.textContent = `Last good read ${tm(fetchedAt)} · retrying`;
+  else if(source==="db") { dot.className = "dot live"; t.textContent = `Updated by the studio agent · ${fw(fromDb.hosAt || fromDb.owbAt)}`; }
+  else t.textContent = "Snapshot built into this page";
+  const n=$("owbnote"); n.innerHTML = chan!=="HOS" && owb.msg ? owb.msg : ""; n.classList.toggle("show", !!(chan!=="HOS" && owb.msg));
+  document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.ch===chan)));
+}
+
+// ---------- AI spend month (board/credits, written by the studio agent from scripts/ai_spend.py) ----------
+const POOL_NAME = {cursor:"Cursor Ultra", flow:"Google AI Ultra · Flow (Gemini video)", vertex:"Google Cloud trial credit (Vertex)", elevenlabs:"ElevenLabs (voice)", claude:"Claude"};
+const NO_READING = {
+  flow: "Its month starts Mon 12 Oct, when the credits refill. The Mac mini reads the balance every morning at 08:30, and every picture take logs its cost against its film.",
+  cursor: "Read every morning at 08:30 from cursor.com's spending page: the share of the Other Models pool left (the page shows percentages, no dollars). What Cursor did is below either way.",
+  elevenlabs: "Read every morning at 08:30.", vertex: "Read every morning at 08:30.", claude: ""};
+const num = (v, unit) => v==null||v==="" ? "—" : unit==="GBP" ? "£"+Number(v).toFixed(2) : unit==="USD" ? "≈£"+Math.round(Number(v)*0.75)+" ($"+Number(v).toFixed(0)+")" : unit==="%" ? Math.round(Number(v))+"%" : Math.round(Number(v)).toLocaleString("en-GB");
+function spark(series){
+  const pts = (series||[]).filter(p=>p[1]!=null);
+  if(pts.length<2) return "";
+  const W=240,H=44,P=3, t=pts.map(p=>Date.parse(p[0])), v=pts.map(p=>Number(p[1]));
+  const t0=Math.min(...t), t1=Math.max(...t)||t0+1, hi=Math.max(...v), lo=Math.min(0,...v);
+  const x=i=>P+(W-2*P)*((t[i]-t0)/((t1-t0)||1)), y=i=>H-P-(H-2*P)*((v[i]-lo)/((hi-lo)||1));
+  const line=pts.map((_,i)=>`${i?"L":"M"}${x(i).toFixed(1)},${y(i).toFixed(1)}`).join("");
+  const n=pts.length-1;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+    <path d="${line}L${x(n).toFixed(1)},${H-P}L${x(0).toFixed(1)},${H-P}Z" fill="var(--accent-soft)" stroke="none"></path>
+    <path d="${line}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+    <circle cx="${x(n).toFixed(1)}" cy="${y(n).toFixed(1)}" r="3" fill="var(--accent)"></circle></svg>`;
+}
+function renderSpend(){
+  const c = fromDb.credits;
+  const per = (c && c.period) || {start:"2026-10-08", end:"2026-11-12", checkIn:"2026-11-07"};
+  const plans = (c && c.plans) || [], fx = (c && c.fx) || {}, ci = pd(per.checkIn);
+  const cycles = plans.filter(p=>p.cycleStart).map(p=>`${esc(p.name.replace(/ \(.*\)$/,""))} from <b>${fd(pd(p.cycleStart))}</b>`);
+  $("spendWhen").innerHTML = `check-in <b>${fd(ci)}</b> <span class="${cdCls(ci)}">(${cd(ci)})</span>`;
+  const usd = v => "$" + Number(v).toLocaleString("en-GB",{minimumFractionDigits:Number(v)%1?2:0, maximumFractionDigits:2});
+  const sub = (cls, name, main, small) => `<div class="sub-i ${cls}"><div class="n">${name}</div><div class="p">${main}</div><div class="g">${small}</div></div>`;
+  const totG = plans.reduce((a,p)=>a+Number(p.gbp||0),0), tgt = c && c.target;
+  $("subs").innerHTML = plans.length ? plans.map(p=>sub("", esc(p.name), `£${Math.round(p.gbp)}`,
+      [p.usd!=null?`list ${usd(p.usd)}`:"", esc(p.tier||""), p.cycleStart?`renews ${fd(pd(p.cycleStart))}`:""].filter(Boolean).join(" · "))).join("")
+    + sub("tot", "Now, a month", `£${Math.round(totG)}`, "including VAT")
+    + (tgt && tgt.gbp ? sub("tgt", "Target", `£${Math.round(tgt.gbp)}`, esc(tgt.label||"")) : "")
+    : `<div class="empty">Subscriptions load from the studio agent's next update.</div>`;
+  $("subsNote").textContent = plans.length ? `Including VAT, at about £${fx.gbpPerUsd||0.75} to the dollar. Your bank statement is the real figure.${cycles.length?" Each plan is counted from its own reset.":""}` : "";
+  renderVerdict(c);
+  const pools = (c && c.pools) || {};
+  const order = ["flow","cursor","elevenlabs","vertex","claude"].filter(k=>pools[k] || ["flow","cursor","claude"].includes(k));
+  const bf = (c && c.byFilm) || {}, W = (c && c.miniWork) || null;
+  const perVideo = (rows, fmt) => rows.length ? `<div class="pv"><div class="why"><b>Per video</b></div>${rows.map(([f,v])=>{ const [ch,id]=f.split(":"); return `<div class="pvr"><span>${id?`<span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id)}`:esc(f)}</span><span>${fmt(v)}</span></div>`; }).join("")}</div>` : "";
+  const hrs = m => m<60 ? `${Math.round(m)} min` : `${(m/60).toFixed(1)} h`;
+  $("pools").innerHTML = order.map(k=>{
+    const p=pools[k], L=(p&&p.latest)||{}, total = L.total ?? (p&&p.first||{}).total;
+    const filmRows = Object.entries(bf).filter(([f,d])=>f!=="(none)" && d[k]).map(([f,d])=>[f,d[k]]).sort((a,b)=>b[1]-a[1]);
+    if(k==="claude"){
+      const ns=((p&&p.notes)||[]).slice(-3).reverse();
+      return `<div class="pool"><div class="nm"><span>Claude Pro</span><span class="chip">£18</span></div>
+        <div class="why">Usage-limit hits this month: <b>${((p&&p.notes)||[]).length}</b>${ns.length?"<br>"+ns.map(n=>`${esc(fw(n.at))}: ${esc(n.note)}`).join("<br>"):""}</div></div>`;
+    }
+    let body = p && L.left!=null ? `<div class="big">${num(L.left,p.unit)} <small>left${total!=null?" of "+num(total,p.unit):""}</small></div>${spark(p.series)}<div class="why">read ${esc(fw(L.at))}</div>${fitHtml(k,p,c)}`
+      : `<div class="why" style="margin-top:6px">${NO_READING[k]||"No reading yet."}</div>`;
+    if(k==="flow") body += perVideo(filmRows, v=>Math.round(v).toLocaleString("en-GB")+" credits");
+    if(k==="vertex" || k==="elevenlabs") body += perVideo(filmRows, v=>k==="vertex"?"£"+Number(v).toFixed(2):Math.round(v).toLocaleString("en-GB"));
+    if(k==="cursor" && W){
+      const rows = Object.entries(W.byFilm||{}).filter(([f])=>f!=="admin").sort((a,b)=>b[1]-a[1]);
+      body += `<div class="pv"><div class="why"><b>What the Mac mini did</b> since ${fd(pd(W.since))}: ${W.jobs} jobs, ${hrs(W.minutes)} of agent time${(W.byFilm||{}).admin?` (${hrs(W.byFilm.admin)} of it admin)`:""}.</div>
+        ${rows.map(([f,m])=>{ const [ch,id]=f.split(":"); return `<div class="pvr"><span><span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id)}</span><span>${hrs(m)}</span></div>`; }).join("")}</div>
+        <div class="maxq"><b>Would Claude Max cover it?</b> Claude Max (£90) would have to take on these hours of Mac mini work on top of Claude's own. At the check-in we compare three things: Cursor's dollars used against its $400, these hours, and how often Claude hits its limit. Low on all three means downgrading is safe.</div>`;
+    }
+    const price = {flow:"£180", cursor:"£180", elevenlabs:"£20", vertex:"free trial"}[k] || "";
+    return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]||esc(k)}</span>${price?`<span class="chip">${price}</span>`:""}</div>${body}</div>`;
+  }).join("");
+  const sums = order.filter(k=>k!=="claude" && pools[k]).map(k=>{ const u=poolUse(k,pools[k],c); return u && !u.future ? `${POOL_NAME[k]} ${u.usedPct}% used, ${u.monthPct}% of its month gone` : null; }).filter(Boolean);
+  $("spendSum").textContent = sums.length ? sums.join(" · ") : "";
+  const films = Object.keys(bf).filter(f=>f!=="(none)");
+  $("byFilmBox").hidden = !films.length;
+  if(films.length){
+    const cols = ["flow","vertex","elevenlabs","cursor"].filter(k=>films.some(f=>bf[f][k]));
+    $("byFilm").innerHTML = `<table><thead><tr><th>Film</th>${cols.map(k=>`<th>${POOL_NAME[k]}</th>`).join("")}</tr></thead><tbody>`
+      + films.map(f=>{ const [ch,id]=f.split(":"); return `<tr><td><span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id||"")}</td>${cols.map(k=>`<td>${bf[f][k]?num(bf[f][k], pools[k]?pools[k].unit:"credits"):"—"}</td>`).join("")}</tr>`; }).join("")
+      + `</tbody></table>`;
+  }
+}
+
+// Plain titles: no "025:" prefix, no "(024 v03 rules)", no "for Claude review", and cut at the first colon of a long one.
+function shortTitle(s){
+  let x = String(s||"").replace(/^\d{3}\s*[:·]\s*/,"").replace(/\s*\([^)]*\)/g,"").replace(/\s+for Claude review$/i,"").trim();
+  if(x.length>60 && x.includes(":")) x = x.split(":")[0];
+  return x.length>70 ? x.slice(0,68)+"…" : x;
+}
+// ---------- At a glance (Ben, 8 Oct): where each job sits in its lane, when it should start and finish ----------
+// One worker per lane. The Mac mini (Cursor) takes Mini jobs one at a time; the Chief relay wakes it every 10 minutes
+// when work is queued, and a run lasts about 25 minutes. Times are estimates from each job's usual length.
+const MINUTE = 60000;
+function ts(s){ if(!s) return NaN; let x=String(s); if(/T\d\d:\d\dZ$/.test(x)) x=x.replace(/Z$/,":00Z"); return Date.parse(x); }
+function clock(ms){
+  const d=new Date(ms), same=d.toDateString()===new Date().toDateString();
+  const hm=d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+  return same ? hm : d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})+" "+hm;
+}
+// Ben, 11 Oct 19:03: ETAs read "ETA 19:33 (30 min)" today, "ETA Sun 8 Nov 18:44" on another day (London time).
+function etaOf(ms){
+  if(!ms || isNaN(ms)) return "ETA unknown";
+  const d=new Date(ms), now=new Date(), hm=d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"});
+  const day = x => x.toLocaleDateString("en-GB",{timeZone:"Europe/London"});
+  if(day(d)!==day(now)) return `ETA ${d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",timeZone:"Europe/London"})} ${hm}`;
+  const m=Math.max(1,Math.round((ms-now.getTime())/MINUTE));
+  return `ETA ${hm} (${m<60?`${m} min`:`${Math.floor(m/60)} h${m%60?` ${m%60} min`:""}`})`;
+}
+function rel(ms){ const m=Math.round((ms-Date.now())/MINUTE); if(m<=2) return "any minute"; if(m<60) return `in ${m} min`; const h=m/60; return h<24?`in about ${h<1.5?1:Math.round(h)} h`:`in ${Math.round(h/24)} d`; }
+function ago(ms){ const m=Math.round((Date.now()-ms)/MINUTE); return m<1?"just now":m<60?`${m} min ago`:m<1440?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} d ago`; }
+const LANE = {mini:"Mac mini · Cursor", gemini:"Gemini check", cloud:"Claude", chief:"Chief", ben:"You"};
+function nextRun(){ const d=new Date(); if(d.getMinutes()>=50) d.setHours(d.getHours()+1); d.setMinutes(50,0,0); return d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}); }
+// Ben, 12 Oct 23:07: estimates use the typical time for the job's kind from the queue history when the snapshot has it.
+const jobMin = j => +j.typMin || +(((fromDb.extra||{}).typical||{})[j.kindKey||j.kind]) || j.estMin || 25;
+function plan(){
+  const jobs = fromDb.jobs || [], now = Date.now(), out = {};
+  const byId = Object.fromEntries(jobs.map(j=>[j.id,j]));
+  const RO = fromDb.runOrder || null, laneOf = j => RO ? (j.line || j.needs) : j.needs;
+  for(const lane of RO ? Object.keys(RO) : ["mini","gemini","cloud"]){
+    let t = now, pos = 0;
+    for(const j of jobs.filter(j=>laneOf(j)===lane && j.status==="claimed")){
+      const st = ts(j.claimedAt) || now, est=jobMin(j)*MINUTE, pace = stepPace(j);
+      const done = pace ? Math.max(pace.at + pace.left, now+MINUTE) : Math.max(st+est, now+5*MINUTE);
+      out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
+    }
+    // Same order as scripts/jobs.py `next` (Ben, 10 Oct): the publisher writes it as owb.runOrder; urgent ranks are numbers.
+    const focus = fromDb.focus || [], ur = j => typeof j.urgent==="number" ? j.urgent : 0;
+    const rank = j => [j.for?0:1, j.urgent?0:1, j.urgent?ur(j):0, focus.includes(j.film)?0:1, j.film?0:1, (j.eta_min||120)<=60?0:1];
+    const idx = RO && RO[lane] ? Object.fromEntries(RO[lane].map((id,i)=>[id,i])) : null;
+    const open = jobs.filter(j=>laneOf(j)===lane && j.status==="open").sort((a,b)=>{
+      if(idx) return (idx[a.id]??9e9)-(idx[b.id]??9e9) || a.id.localeCompare(b.id);
+      const x=rank(a), y=rank(b); for(let i=0;i<x.length;i++) if(x[i]!==y[i]) return x[i]-y[i]; return a.id.localeCompare(b.id); });
+    const wake = lane==="mini" ? 5*MINUTE : lane==="cloud"||lane==="chief" ? 30*MINUTE : 15*MINUTE;
+    for(const j of open){
+      const dep = j.after && byId[j.after] ? out[j.after] : null;
+      if(j.after && byId[j.after] && !dep){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
+      if(idx && !(j.id in idx)){ out[j.id] = {state:"blocked-dep", pos:null}; continue; }
+      // Date gate (Ben, 11 Oct): a job that can't start before a date starts then and doesn't hold up the rest of its line.
+      const nb = ts(j.notBefore);
+      if(nb > now){ const start = Math.max(nb, dep ? dep.done : 0), done = j.gateOnly ? start : start + jobMin(j)*MINUTE;
+        out[j.id] = {state:"gated", start, done, gate:nb, pos: ++pos}; continue; }
+      const start = Math.max(t, now + wake, dep ? dep.done + wake : 0), pace = stepPace(j);
+      const done = start + (pace ? Math.max(pace.left, MINUTE) : jobMin(j)*MINUTE);   // a released job: only what's left
+      out[j.id] = {state: dep ? "after" : "line", start, done, pos: ++pos}; t = done;
+    }
+  }
+  // Chains across lines (a Mac mini job after a Chief job, or after a gate): estimate from the job it waits for.
+  for(let pass=0; pass<5; pass++){ let moved = false;
+    for(const j of jobs){ const o = out[j.id];
+      if(j.status!=="open" || (o && o.state!=="blocked-dep")) continue;
+      const dep = out[j.after]; if(!dep || dep.state==="blocked-dep" || !dep.done) continue;
+      const nb = ts(j.notBefore), start = Math.max(dep.done + (dep.state==="gated" && byId[j.after] && byId[j.after].gateOnly ? 0 : 5*MINUTE), nb>now?nb:0, now+5*MINUTE);
+      out[j.id] = {state: nb>now ? "gated" : "after", start, done: start + jobMin(j)*MINUTE, gate: nb>now?nb:null, pos:null}; moved = true; }
+    if(!moved) break; }
+  return out;
+}
+function laneQuiet(){
+  const L = (fromDb.lanes||{}).mini; if(!L) return null;
+  const waiting = (fromDb.jobs||[]).some(j=>j.needs==="mini" && j.status!=="blocked");
+  const age = Date.now() - ts(L.lastAt);
+  return {at: ts(L.lastAt), by: L.lastBy, quiet: waiting && age > 3*60*MINUTE, hb: L.heartbeat || null};
+}
+// The relay on the Mini checks in every 10 minutes (heartbeat on the mini-heartbeat branch). The board refreshes hourly,
+// so "checked 40 min ago" can still mean the Mini is fine; over 75 min it's worth a look.
+const HB_WORD = {idle:"awake, nothing queued", running:"awake, working", busy:"awake, still on a long job", paused:"paused", "no-chief":"awake, but no agent is up"};
+function miniLine(q){
+  if(!q) return "";
+  if(q.hb){
+    const age = Date.now()-ts(q.hb.at), cls = age>3*60*MINUTE?"late":age>75*MINUTE?"soon":"";
+    return `Mac mini ${cls?`<b class="${cls}">last checked in ${ago(ts(q.hb.at))}</b>${cls==="late"?" · it may be asleep":""}`:`<b>${esc(HB_WORD[q.hb.state]||q.hb.state)}</b> · checked in ${ago(ts(q.hb.at))}`}`
+      + ` · last job activity ${ago(q.at)}${q.quiet?" · <b class=\"late\">quiet for over 3 h with work waiting</b>":""}`;
+  }
+  return `Mac mini last active ${ago(q.at)}${q.quiet?" · <b class=\"late\">quiet for over 3 h with work waiting</b>":""}`;
+}
+function jobWhy(j, P){
+  const p = P[j.id] || {};
+  if(j.status==="blocked") return {chip:'<span class="state block">Blocked</span>', why: j.result ? `Blocked by: ${md(j.result)}` : "Blocked."};
+  if(j.needs==="ben") return {chip:'<span class="state wait">Needs you</span>', why:"Only you can do this one."};
+  if(p.state==="now") return {chip:'<span class="state on">Underway</span>',
+    why:`${av(AGENT(j.by))}<b>${esc(AGENT(j.by))}</b> on it since ${clock(p.start)} · usually about ${j.estMin} min · <b>${etaOf(p.done)}</b>`};
+  if(p.state==="blocked-dep") return {chip:'<span class="state q">Queued</span>', why:`Starts when ${esc(j.after)} is done.`};
+  const L = j.last || {};
+  if(j.status==="open" && /^released/.test(String(L.what||"")) && L.by && L.by!=="claude")
+    return {chip:'<span class="state on">Part done</span>', why:`${av(AGENT(L.by))}<b>${esc(AGENT(L.by))}</b> stopped at a safe point at ${clock(ts(L.at))} and carries on at the next wake-up (within 10 min) · <span class="mono">${esc(String(L.what).replace(/^released:\s*/,"").slice(0,160))}</span>`};
+  const ahead = (fromDb.jobs||[]).filter(x=>x.needs===j.needs && (P[x.id]||{}).state==="now").map(x=>x.id);
+  const lead = p.state==="after" ? `Starts after ${esc(j.after)} is done` :
+    p.pos===1 && ahead.length ? `Next on the ${LANE[j.needs]||j.needs} after ${ahead.map(esc).join(", ")}` :
+    p.pos===1 ? `Next on the ${LANE[j.needs]||j.needs}; it starts at the next wake-up (the relay checks every 10 min)` :
+    `Number ${p.pos} in line on the ${LANE[j.needs]||j.needs}`;
+  const label = p.pos===1 && !ahead.length && p.state!=="after" ? "Next" : "In line";
+  return {chip:`<span class="state q">${label}</span>`,
+    why:`${lead} · starts about <b>${clock(p.start)}</b> (${rel(p.start)}), about ${j.estMin} min of work, ${etaOf(p.done)}`};
+}
+function renderGlance(films){
+  const box=$("glance"), jobs=fromDb.jobs; if(!box) return;
+  const P = jobs ? plan() : {}, cards = [];
+  const tag = j => j.film ? `<span class="ch OWB">OWB</span><b>${esc(j.film)}</b> ` : "";
+  // 1. Right now: one line per job in hand, and one per HOS stage in progress
+  const now = (jobs||[]).filter(j=>j.status==="claimed");
+  const between = (jobs||[]).filter(j=>j.status==="open" && /^released/.test(String((j.last||{}).what||"")) && (j.last||{}).by && j.last.by!=="claude");
+  const lines = [
+    ...now.map(j=>{ const p=P[j.id]||{}; return `<div class="line">${tag(j)}${esc(shortTitle(j.title))} · ${esc(AGENT(j.by))} · <b>${p.done?etaOf(p.done):"—"}</b></div>`; }),
+    ...between.map(j=>{ const p=P[j.id]||{}; return `<div class="line">${tag(j)}${esc(shortTitle(j.title))} · ${esc(AGENT((j.last||{}).by))} · part done${p.done?`, finishes about <b>${clock(p.done)}</b>`:""}</div>`; }),
+    ...(chan==="OWB"?[]:(data&&data.films||[]).flatMap(f=>(data.stages||[]).filter(s=>["doing","blocked"].includes((f.stages[s.key]||{}).status)).map(s=>{
+      const st=f.stages[s.key]; const step = Array.isArray(st.steps)?` · ${st.steps[0]}/${st.steps[1]} ${esc(st.steps_unit||"")}`:"";
+      return `<div class="line"><span class="ch HOS">HOS</span><b>${esc(f.id)}</b> ${esc(s.label)} · ${esc(st.owner||"—")}${step}</div>`; })))
+  ];
+  const q = laneQuiet();
+  const mini = q && q.hb && Date.now()-ts(q.hb.at) > 75*MINUTE ? `<div class="why"><b class="late">Mac mini last checked in ${ago(ts(q.hb.at))}</b></div>` : "";
+  cards.push(`<div class="gl"><h3>Right now</h3>${lines.length?lines.join(""):`<div class="line">Nothing in hand.</div>`}${mini}</div>`);
+  // 2. Next for you: the next cut to watch, the next to air, the next HOS film for your OK
+  const watch = (jobs||[]).filter(j=>j.watch && P[j.id] && P[j.id].done).sort((a,b)=>P[a.id].done-P[b.id].done)[0];
+  const upcoming = films.concat(readyFilms).filter(f=>f.air && pd(f.air)>=today()).sort((a,b)=>String(a.air).localeCompare(String(b.air)))[0];
+  const hosNext = chan==="OWB" ? null : (data&&data.films||[]).filter(f=>f.stages&&f.stages.ben_ok&&f.stages.ben_ok.status!=="done").sort((a,b)=>String(a.ready_by).localeCompare(String(b.ready_by)))[0];
+  cards.push(`<div class="gl watch"><h3>Next for you</h3>
+    ${watch?`<div class="line">Watch ${tag(watch)}${esc(shortTitle(watch.title))} · about <b>${clock(P[watch.id].done)}</b></div>`:""}
+    ${hosNext?`<div class="line">Your OK <span class="ch HOS">HOS</span><b>${esc(hosNext.id)}</b> ${esc(hosNext.title)} · by <b>${fd(pd(hosNext.ready_by))}</b></div>`:""}
+    ${upcoming?`<div class="line">Airs next ${chb(upcoming)}<b>${esc(upcoming.id)}</b> ${esc(upcoming.title)} · <b>${fd(pd(upcoming.air))}</b></div>`:""}
+    ${!watch&&!hosNext&&!upcoming?`<div class="line">Nothing for you yet.</div>`:""}</div>`);
+  // 3. Needs you (and anything blocked)
+  const ben = (jobs||[]).filter(j=>j.needs==="ben"&&j.status!=="blocked").map(j=>`<div class="line">${tag(j)}${esc(shortTitle(j.title))}</div>`);
+  const blocked = (jobs||[]).filter(j=>j.status==="blocked").map(j=>`<div class="line"><b class="late">Blocked</b> ${tag(j)}${esc(shortTitle(j.title))}</div>`);
+  cards.push(`<div class="gl"><h3>Needs you</h3>${ben.length||blocked.length?[...ben,...blocked].join(""):`<div class="line">Nothing.</div>`}</div>`);
+  box.innerHTML = cards.join("");
+  const ra = $("ready");
+  if(ra){
+    const rows = readyFilms.slice().sort((a,b)=>String(a.air).localeCompare(String(b.air)));
+    ra.hidden = !rows.length;
+    ra.innerHTML = rows.length ? `<h2 class="sec">Ready to air</h2><div class="readyrow">${rows.map(f=>{
+      const up = f._ch==="OWB" ? stOf(f,{key:"upload"}) : null;
+      const what = f._ch==="HOS" ? "scheduled" : up.status==="done" ? "scheduled" : up.review ? "final OK, then upload" : "upload next";
+      return `<div class="rf">${chb(f)}<b>${esc(f.id)}</b> ${esc(f.title)}<div class="why">Airs <b>${fd(pd(f.air))}</b> (${cd(pd(f.air))}) · ${what}</div></div>`; }).join("")}</div>` : "";
+  }
+}
+// Plan-fit bars for the spend cards: this cycle's use, projected to a full month, against each plan's allowance.
+// Ben, 8 Oct: "this month so far: we're N days into the subscription, X% of the month gone, and we've used Y%". So each
+// card compares how much of the plan month has passed with how much of the plan's credit is used. A plan month starts at
+// the plan's own reset (plans.json cycleStart, or its renewal date less a month). Total = the pool's size this month as
+// read (ElevenLabs carries unused credit over), else the plan's allowance. Plans are flat fees: running out stops work,
+// it doesn't bill.
+const PLAN_OF = {elevenlabs:/ElevenLabs/i, flow:/Google/i, cursor:/Cursor/i};
+function planStart(k, c){
+  const plan = ((c&&c.plans)||[]).find(x=>PLAN_OF[k] && PLAN_OF[k].test(x.name)) || {};
+  if(plan.cycleStart) return pd(plan.cycleStart);
+  if(plan.renews){ const r=pd(plan.renews); r.setMonth(r.getMonth()-1); return r; }
+  return null;
+}
+function poolUse(k, p, c){
+  const L=p.latest||{}; if(L.left==null) return null;
+  const cur = (((c&&c.tiers)||{})[k]||[]).find(t=>t.current);
+  const total = L.total!=null ? Number(L.total) : cur ? cur.allow : null;
+  const start = planStart(k, c), cyc = (c&&c.cycleDays)||30;
+  if(total==null || !start) return null;
+  const days = (Date.now()-start.getTime())/(24*60*MINUTE);
+  if(days<0) return {future:true, start};
+  const used = Math.max(0, total-Number(L.left));
+  return {used, total, days, start, cyc, monthPct: Math.min(100, Math.round(100*days/cyc)), usedPct: Math.round(100*used/total),
+    projected: days>=1 ? used/days*cyc : null};
+}
+function fitHtml(k, p, c){
+  const u = poolUse(k,p,c), unit = p.unit==="%" ? (v=>Math.round(v)+"%") : p.unit==="USD" ? (v=>"$"+Math.round(v)) : (v=>Math.round(v).toLocaleString("en-GB"));
+  if(!u) return "";
+  if(u.future) return `<div class="fit"><div class="why">The plan month starts <b>${fd(u.start)}</b>. Figures from then.</div></div>`;
+  const ahead = u.usedPct - u.monthPct, cls = ahead>15 ? "bad" : ahead>5 ? "risk" : "";
+  let html = `<div class="fit">
+    <div class="r"><span>Month: day <b>${Math.max(1,Math.ceil(u.days))}</b> of ${u.cyc} (since ${fd(u.start)})</span><span><b>${u.monthPct}%</b> gone</span><div class="bar"><i style="width:${u.monthPct}%;background:var(--ink-3)"></i></div></div>
+    <div class="r ${cls}"><span>Used <b>${unit(u.used)}</b> of ${unit(u.total)}</span><span><b>${u.usedPct}%</b> used</span><div class="bar"><i style="width:${Math.min(100,u.usedPct)}%"></i></div></div>
+    <div class="why">${ahead>5?"Using it faster than the month is passing.":ahead<-5?"Using it slower than the month is passing.":"About in step with the month."} Flat fee: if it runs out, work stops; there's no bill.</div>`;
+  const tiers = ((c&&c.tiers)||{})[k];
+  // A % pool is a share of the current plan, so each tier's allowance is scaled to that plan = 100%.
+  const curT = tiers && tiers.find(t=>t.current), scale = p.unit==="%" && curT ? 100/curT.allow : 1;
+  if(tiers && u.projected!=null && u.days>=3){
+    html += `<div class="why">At this rate a month needs about <b>${unit(u.projected)}</b>. Each plan:</div>` + tiers.map(t=>{ const pct = Math.round(100*u.projected/(t.allow*scale)), cl = pct>100?"bad":pct>85?"risk":"";
+      const tag = t.current&&t.target?"you have it; target":t.current?"you have it":t.target?"target":"";
+      return `<div class="r ${cl}"><span>${esc(t.name)} · £${t.gbp}${tag?` · <i>${tag}</i>`:""}</span><span><b>${pct}%</b> ${pct>100?"too small":pct>85?"tight":"fits"}</span><div class="bar"><i style="width:${Math.min(100,pct)}%"></i></div></div>`; }).join("");
+  } else if(tiers) html += `<div class="why">Which plan would fit shows from day 3 of the month.</div>`;
+  return html + `</div>`;
+}
+function renderVerdict(c){
+  const v=$("verdict"); if(!v) return;
+  const pools=(c&&c.pools)||{}, bits=[];
+  for(const [k,name] of [["flow","Flow"],["elevenlabs","ElevenLabs"],["cursor","Cursor"]]){
+    const p=pools[k]; const u=p&&poolUse(k,p,c); const tiers=((c&&c.tiers)||{})[k]||[];
+    const tgt=tiers.find(t=>t.target) || tiers.find(t=>t.current);
+    if(u && !u.future && u.projected!=null && u.days>=3 && tgt) bits.push(`${name} would use <b>${Math.round(100*u.projected/tgt.allow)}%</b> of ${esc(tgt.name)}`);
+  }
+  v.innerHTML = bits.length ? `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}On this month's pace: ${bits.join(" · ")}.` : `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}Which plan would fit shows from day 3 of each plan's month.`;
+}
+
+function render(){
+  const films = view();
+  if(filter && !films.some(f=>f.key===filter)) filter = null;
+  renderSource(); renderTracker(films); renderNow(); renderJobBoard(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
+
+function banner(html){ const b=$("banner"); b.innerHTML=html||""; b.classList.toggle("show",!!html); }
+
+function jsonOf(result){
+  if(result.payload && typeof result.payload==="object") return result.payload;
+  for(const b of result.content||[]){
+    const txt = b.type==="text" ? b.text : (b.type==="resource" && b.resource) ? b.resource.text : null;
+    if(typeof txt!=="string") continue;
+    try { return JSON.parse(txt); } catch(e) {}
+  }
+  return null;
+}
+function parsePipeline(result){ const j=jsonOf(result); return j&&Array.isArray(j.films)?j:null; }
+
+function errorCopy(e, what){
+  switch(e.code){
+    case "server_not_connected": case "server_not_found":
+      return `To see ${what} live, connect the <b>GitHub</b> connector in claude.ai Settings → Connectors, then reopen this page.`;
+    case "needs_reauth":
+      return `GitHub needs you to sign in again (claude.ai Settings → Connectors → GitHub) to read ${what}.`;
+    case "not_granted": case "consent_required": case "approval_required":
+      return `This page reads ${what} from GitHub only if you allow it: use this page's <b>Permissions</b> menu.`;
+    case "selection_required":
+      return `You have more than one GitHub connector. Choose one when this page asks (or reopen the page), so it can read ${what}.`;
+    case "not_in_manifest": case "blocked_by_policy": case "capability_disabled": case "capability_removed":
+      return `Live reading of ${what} is turned off for this page.`;
+    case "upstream_error":
+      return `claude.ai hasn't confirmed this page's access to your <b>GitHub</b> connector, so it can't read ${what} live. Tap <b>GitHub permissions</b> and allow GitHub for this page. If it's already allowed, reconnect GitHub in claude.ai Settings → Connectors, then tap Refresh.`;
+    case "tool_error":
+      return `GitHub answered but refused to read ${what}${e.message?`: <span class="mono">${esc(e.message).slice(0,200)}</span>`:""}. Check that your GitHub connector can see the repository.`;
+    default: return null;
+  }
+}
+// The code behind every failure, so a screenshot says what went wrong.
+const errTag = e => ` <span class="mono" style="opacity:.7">(${esc(e.code||"error")}${e.message?": "+esc(String(e.message)).slice(0,140):""})</span>`;
+// One automatic retry per page load for retryable failures (e.g. the first call before consent settled).
+const retried = new Set();
+function retryOnce(mcp, key, e, input){
+  if(!e.retryable || retried.has(key)) return false;
+  retried.add(key);
+  setTimeout(()=>{ mcp.invalidate?.("github","get_file_contents",input).catch(()=>{}); }, (e.retryAfterMs||3000) + Math.random()*1500);
+  return true;
+}
+
+function watchOwb(mcp){
+  const subs = {};
+  const watchFile = (name, path) => {
+    if(subs[path] || owb.missing.has(path)) return;
+    subs[path] = mcp.watchTool("github","get_file_contents",{owner:OWB.owner, repo:OWB.repo, path},ev=>{
+      if(ev.type==="data"){
+        const j = jsonOf(ev.result);
+        if(j && j.stages && j.film){ owb.files[j.film]=j; owb.state="live"; owb.at=ev.result.cache?.storedAt||Date.now(); owb.msg=""; render(); }
+      } else if(ev.error?.code==="tool_error" || ev.error?.code==="bad_request"){
+        owb.missing.add(path); subs[path]&&subs[path](); delete subs[path];   // this film has no status.json
+      }
+    },{refetchInterval:600000});
+  };
+  mcp.watchTool("github","get_file_contents",{owner:OWB.owner, repo:OWB.repo, path:OWB.dir},ev=>{
+    if(ev.type==="data"){
+      const list = jsonOf(ev.result);
+      if(!Array.isArray(list)){ owb.msg="GitHub answered, but the OWB film list could not be read."; render(); return; }
+      for(const e of list) if(e.type==="dir" && /^\d{3}_/.test(e.name)) watchFile(e.name, `${e.path}/status.json`);
+    } else {
+      const e=ev.error||{}; if(e.code==="user_changed") return;
+      if(owb.state==="db"){ owb.msg=""; render(); return; }   // the agent's copy is current
+      const copy = errorCopy(e, "Orbit With Ben");
+      const again = retryOnce(mcp, "owb", e, {owner:OWB.owner, repo:OWB.repo, path:OWB.dir});
+      owb.msg = (copy ? copy + " Showing the OWB snapshot." : (again ? "Orbit With Ben: GitHub didn't answer; trying again in a few seconds." : "Couldn't read Orbit With Ben from GitHub; it tries again every 10 minutes, or tap Refresh.")) + errTag(e);
+      if(copy && owb.state==="live"){ owb.files={}; if(OWB_SNAPSHOT) for(const j of OWB_SNAPSHOT) owb.files[j.film]=j; owb.state=OWB_SNAPSHOT?"snapshot":"error"; }
+      else if(owb.state==="loading") owb.state = OWB_SNAPSHOT ? "snapshot" : "error";
+      render();
+    }
+  },{refetchInterval:600000});
+}
+
+const permBtn = ` <button class="btn" onclick="openPerms()">GitHub permissions</button>`;
+async function openPerms(){ try { const p = await window.claude?.use?.("permissions"); await p?.manage?.(); } catch(e) {} }
+
+async function startDb(){
+  let db = null;
+  try { db = await window.claude?.use?.("db"); } catch(e){ db = null; }
+  if(!db) return;
+  db.doc("board/hos").onSnapshot(snap=>{
+    const d = snap.exists ? snap.data() : null;
+    if(!d || !d.pipeline || !Array.isArray(d.pipeline.films)) return;
+    fromDb.hos = d.pipeline; fromDb.hosAt = d.updatedAt || null;
+    if(source!=="live"){ data = d.pipeline; source = "db"; banner(""); render(); }
+  }, ()=>{});
+  db.doc("board/owb").onSnapshot(snap=>{
+    const d = snap.exists ? snap.data() : null;
+    if(!d || !Array.isArray(d.films)) return;
+    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : []; fromDb.extra = {typical: d.typical||null, day: d.day||null, done: Array.isArray(d.done) ? d.done : null};
+    if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
+  }, ()=>{});
+  dbApi = db;
+  db.collection("checks").onSnapshot(snap=>{
+    const m = {}; for(const d of snap.docs) if(d.exists) m[d.id] = d.data();
+    fromDb.checks = m; render();
+  }, ()=>{});
+  db.doc("board/briefs").onSnapshot(snap=>{
+    const d = snap.exists ? snap.data() : null;
+    if(!d || typeof d.films!=="object") return;
+    fromDb.briefs = d.films; fromDb.uatUrl = d.uatFolderUrl || ""; fromDb.watch = d.watch || {}; render();
+  }, ()=>{});
+  db.doc("board/credits").onSnapshot(snap=>{
+    const d = snap.exists ? snap.data() : null;
+    if(!d || typeof d.pools!=="object") return;
+    fromDb.credits = d; render();
+  }, ()=>{});
+}
+
+let unsub = null;
+async function startLive(){
+  let mcp = null;
+  try { mcp = await window.claude?.use?.("mcp"); } catch(e){ mcp = null; }
+  // No connector declared or available: the studio agent's copy (startDb) is the live source, so stay quiet.
+  if(!mcp){ if(owb.state!=="db") owb.state = OWB_SNAPSHOT ? "snapshot" : "error"; render(); return; }
+  const btn=$("refresh"); btn.hidden=false;
+  btn.onclick = async()=>{ btn.disabled=true; retried.clear(); try{ await mcp.invalidate?.("github","get_file_contents"); }catch(e){} setTimeout(()=>btn.disabled=false,1500); };
+  unsub = mcp.watchTool("github","get_file_contents",HOS_REPO,ev=>{
+    if(ev.type==="data"){
+      const j = parsePipeline(ev.result);
+      if(!j){ banner("GitHub answered, but the HOS board file could not be read. Showing the last good data."); if(source==="live") source="stale"; render(); return; }
+      data=j; source="live"; fetchedAt = ev.result.cache?.storedAt || Date.now(); banner(""); render();
+    } else {
+      const e=ev.error||{}; if(e.code==="user_changed"){ unsub&&unsub(); return; }
+      const copy = errorCopy(e, "History of Science");
+      if(copy){ if(e.code==="upstream_error") retryOnce(mcp, "hos", e, HOS_REPO);
+        if(source==="live"){ if(fromDb.hos){ data=fromDb.hos; source="db"; } else { data=SNAPSHOT; source="snapshot"; } }
+        if(source==="db"){ banner(""); render(); return; }   // the agent's copy is current: nothing to fix here
+        banner(copy + " Showing the HOS snapshot." + errTag(e) + permBtn); render(); }
+      else {
+        if(source==="db"){ render(); return; }
+        if(source==="live") source="stale";
+        const again = retryOnce(mcp, "hos", e, HOS_REPO);
+        banner((again ? "GitHub didn't answer; trying again in a few seconds." : "Couldn't read the board from GitHub. Showing the last good data; tap Refresh to try again.") + errTag(e) + permBtn);
+        render();
+      }
+    }
+  },{refetchInterval:300000});
+  watchOwb(mcp);
+}
+
+render();
+startDb();
+startLive();
+setInterval(()=>render(), 60*1000);   // keeps "in 20 min" and "done about" current
+
+// Ben, 12 Oct 21:11: drop a card's status line when it only repeats the air date shown above it.
+(function(){ const t = document.getElementById("tracker"); if(!t || typeof MutationObserver==="undefined") return;
+  const tidy = () => t.querySelectorAll(".tf .st1").forEach(e=>{ if(/^(Scheduled|Live)\b/i.test(e.textContent.trim()) && !/\b(fix|wait|block|need)/i.test(e.textContent)) e.remove(); });
+  // Ben, 12 Oct 21:28: "Working now" pill on the card of the film the Mac mini is on (its running job's film + channel).
+  const keyOf = j => { const h = /^HOS\s+(\d{3})\b/.exec(j.title||""); if(h) return "HOS:"+h[1];
+    const n = j.film || ((/^(?:OWB\s+)?(\d{3})\b/.exec(j.title||""))||[])[1]; return n ? `${chanOf(j)}:${String(n).padStart(3,"0")}` : ""; };
+  const badge = () => { const run = ((typeof fromDb!=="undefined" && fromDb.jobs)||[]).filter(j=>j.status==="claimed" && (j.needs==="mini" || jobLine(j)==="mini"));
+    const keys = new Set(run.map(keyOf).filter(Boolean));
+    // Ben, 12 Oct 21:32: a running job always shows. No number: match a card by title keywords; failing that, a small
+    // "Working now" card at the top of its channel's In progress lane.
+    const STOP = /^(the|and|for|with|from|film|films|short|shorts|long|cut|min|test|owb|hos|set|fix|then|into|what|why|how|does|did|is|are|a|an|of|to|in|on|at|its|it)$/i;
+    const words = x => String(x||"").toLowerCase().match(/[a-z]{4,}/g)||[];
+    const extra = [];
+    for(const j of run){ if(keyOf(j) && t.querySelector(`.tf[data-key="${keyOf(j)}"]`)) continue;
+      const jw = new Set(words(j.title).filter(w=>!STOP.test(w)));
+      let best = null, hits = 0;
+      t.querySelectorAll(`.tf[data-key^="${chanOf(j)}:"]`).forEach(c=>{ const n = words((c.querySelector(".kt")||{}).textContent).filter(w=>jw.has(w)).length; if(n>hits){ hits=n; best=c; } });
+      if(best && hits>=2) keys.add(best.dataset.key); else extra.push(j); }
+    t.querySelectorAll(".tf.runcard").forEach(c=>{ if(!extra.some(j=>j.id===c.dataset.run)) c.remove(); });
+    for(const j of extra){
+      const P = plan(), pr = progressOf(j, P), ch = chanOf(j);
+      let name = cleanTitle(j, 200).replace(/^(OWB|HOS)\s+/i,""), task = "";
+      const ci = name.indexOf(":"); if(ci>0){ task = name.slice(ci+1).trim(); name = name.slice(0,ci).trim(); }
+      name = name.charAt(0).toUpperCase()+name.slice(1);
+      const st = `${task?esc(task.length>40?task.slice(0,39)+"…":task)+" · ":""}${esc(readyAt(pr.done)||"working")}`;
+      const html = `<span class="wnow">Working now</span></span></div><div class="kt">${esc(name)}</div><div class="ka"><span>Mac mini job</span><span>${pr.pct}%</span></div><div class="bar"><i style="width:${pr.pct}%"></i></div><div class="st1 now">${st}</div>`;
+      let c = t.querySelector(`.tf.runcard[data-run="${j.id}"]`);
+      if(c){ const s2 = c.querySelector(".st1"); if(s2 && s2.innerHTML!==st) s2.innerHTML = st; continue; }
+      const lane = t.querySelector("section.lane.one") || [...t.querySelectorAll("section.lane")].find(l=>(l.querySelector("h3 .ch")||{}).textContent===ch); if(!lane) continue;
+      const col = [...lane.querySelectorAll(".kcol")].find(k=>/In progress/i.test((k.querySelector("h2")||{}).textContent)); if(!col) continue;
+      const cards = col.querySelector(".cards"); if(!cards) continue;
+      cards.insertAdjacentHTML("afterbegin", `<div class="tf runcard" data-run="${esc(j.id)}"><div class="kh"><span><span class="ch ${ch}">${ch==="OWB"?"Orbit":"HOS"}</span> ${html}</div>`);
+    }
+    t.querySelectorAll(".tf").forEach(c=>{ if(c.classList.contains("runcard")) return; const on = keys.has(c.dataset.key), b = c.querySelector(".wnow");
+      if(on && !b){ const tag = c.querySelector(".kh > span"); if(tag) tag.insertAdjacentHTML("beforeend",' <span class="wnow">Working now</span>'); }
+      else if(!on && b) b.remove(); }); };
+  // Ben, 12 Oct 23:07: every film card says when its next job starts, and a tap-to-open list of all its jobs.
+  const rel = ms => { const m = Math.max(1, Math.round((ms-Date.now())/MINUTE)); return m<60 ? `~${m} min` : m<48*60 ? `~${Math.round(m/60)} h` : `~${Math.round(m/1440)} d`; };
+  const ordn = n => n + (n%100>=11&&n%100<=13 ? "th" : ({1:"st",2:"nd",3:"rd"})[n%10] || "th");
+  const WHO = {chief:"my review", cloud:"Claude", gemini:"the Gemini check", ben:"you"};
+  const jobState = (j, P) => {
+    const p = P[j.id] || {}, ln = j.line || j.needs;
+    if(j.status==="done") return {w:"Done", cls:"ok", pct:100, t:""};
+    if(j.status==="claimed"){ const pr = progressOf(j, P); return {w:"Working now", cls:"now", pct:pr.pct, t: pr.done ? `ready in ${rel(pr.done)}` : "working"}; }
+    if(j.status==="blocked"){ const k = jobKind(j), r = waitReason(j, k||"held"); return {w:"Waiting", cls:"wait", pct:0, t: (WAIT_WORD[r]||"for something else").replace(/^for /,"for ")}; }
+    if(p.start){ const who = ln==="mini" ? "" : ` (${WHO[ln]||ln})`;
+      const lead = ln==="mini" && p.pos===1 ? "Next up" : ln==="mini" && p.pos ? `${ordn(p.pos)} in queue` : p.state==="gated" ? "Booked" : "Queued";
+      return {w: lead+who, cls:"queue", pct:0, t:`starts in ${rel(p.start)}`, start:p.start}; }
+    return {w:"Queued", cls:"queue", pct:0, t:"start not known yet"};
+  };
+  const eta = () => {
+    const jobsAll = (typeof fromDb!=="undefined" && fromDb.jobs) || []; if(!jobsAll.length) return;
+    const P = plan(), by = {};
+    for(const j of jobsAll){ const k = keyOf(j); if(k) (by[k] = by[k] || []).push(j); }
+    const seen = new Set(jobsAll.map(j=>j.id));
+    for(const d of (((fromDb.extra||{}).done)||[]).slice().reverse()){ if(seen.has(d.id)) continue; const j = Object.assign({status:"done"}, d); const k = keyOf(j); if(k) (by[k] = by[k] || []).push(j); }
+    t.querySelectorAll("details.tf[data-key]").forEach(c=>{
+      const js = (by[c.dataset.key]||[]);
+      const live = js.filter(j=>j.status!=="done"), done = js.filter(j=>j.status==="done").slice(-3);
+      // card line: the job that will move this film next
+      let pick = live.find(j=>j.status==="claimed");
+      if(!pick) pick = live.filter(j=>j.status==="open" && (P[j.id]||{}).start).sort((a,b)=>P[a.id].start-P[b.id].start)[0];
+      if(!pick) pick = live.find(j=>j.status==="blocked");
+      let line = "";
+      if(pick){ const st = jobState(pick, P); line = st.w==="Waiting" ? `Waiting ${st.t}` : `${st.w} · ${st.t}`; }
+      let el = c.querySelector("summary .etl");
+      const lane = (c.closest(".kcol")||{}).querySelector ? (c.closest(".kcol").querySelector("h2")||{}).textContent||"" : "";
+      if(!line && /To do|In progress/.test(lane)) line = "No job in the queue yet";
+      if(line){ if(!el){ const bar = c.querySelector("summary .bar"); if(bar){ bar.insertAdjacentHTML("afterend", '<div class="etl"></div>'); el = c.querySelector("summary .etl"); } }
+        if(el && el.textContent!==line) el.textContent = line; }
+      else if(el) el.remove();
+      // job list: a sibling under the card, collapsed
+      const rows = [...done, ...live.sort((a,b)=>((P[a.id]||{}).start||9e15)-((P[b.id]||{}).start||9e15))];
+      let jl = c.nextElementSibling && c.nextElementSibling.classList.contains("jl") ? c.nextElementSibling : null;
+      if(!rows.length){ if(jl) jl.remove(); return; }
+      const html = rows.map(j=>{ const st = jobState(j, P);
+        return `<li><span class="jt">${esc(plainTitle(j, 46))}</span><span class="js ${st.cls}">${st.cls==="ok"?"✓ Done":esc(st.w)}</span>${st.cls==="ok"?"":`<span class="jb"><i style="width:${st.pct}%"></i></span>`}<span class="jw">${esc(st.t)}</span></li>`; }).join("");
+      const sum = "Jobs · " + [live.length?`${live.length} to go`:"", done.length?`${done.length} done`:""].filter(Boolean).join(", ");
+      if(!jl){ c.insertAdjacentHTML("afterend", `<details class="jl"><summary></summary><ul></ul></details>`); jl = c.nextElementSibling; }
+      const s1 = jl.querySelector("summary"), ul = jl.querySelector("ul");
+      if(s1.textContent!==sum) s1.textContent = sum;
+      if(jl.dataset.h!==html){ jl.dataset.h = html; ul.innerHTML = html; }   // compare our own string: innerHTML re-serialises
+    });
+  };
+  let busyObs = false;
+  new MutationObserver(()=>{ if(busyObs) return; busyObs = true; try { tidy(); badge(); eta(); } finally { busyObs = false; } }).observe(t, {childList:true, subtree:true}); })();
+</script>
+
+</body></html>

@@ -29,6 +29,7 @@
  * --media-url / --thumb-url / --trailer-url (already public files), --kind short|long,
  * --hook / --question / --alt / --cover-ms (social copy; mirror uses UPLOADS.json's when not given).
  */
+import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
 import path from "path";
 import { BUFFER_CHANNELS, type BufferChannel, type Plan } from "../src/lib/publishing/buffer-mirror";
@@ -184,6 +185,8 @@ async function main() {
     process.exit(1);
   }
 }
+
+ensureDeskLock();
 
 main().catch((e) => {
   console.error(e instanceof Error ? e.message : e);

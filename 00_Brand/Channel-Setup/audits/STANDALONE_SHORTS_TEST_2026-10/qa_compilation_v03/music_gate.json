@@ -1,0 +1,46 @@
+{
+  "verdict": "FAIL",
+  "bed": "/private/tmp/owb_comp/final_v03/score_laid.wav",
+  "seconds": 2857.8,
+  "bpm": 150.0,
+  "brief_pace": null,
+  "fail": [
+    "own: the bed is /private/tmp/owb_comp/final_v03/score_laid.wav, not in this film's 05_Music",
+    "own: no plan next to the bed (score_laid_plan.json)",
+    "reused: sounds like light-speed_score_bed_v01b.mp3 (0.824), earth-spin_score_bed_v01.mp3 (0.829), mars-robot_score_bed_v01.mp3 (0.805)",
+    "gap: the music nearly stops for 28.3 s from 0:25 (over 15 dB under its usual level)"
+  ],
+  "warn": [
+    "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+    "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+    "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v02_LISTEN.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read monday_saturn_short_vo_v02_how_long.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03_tightened.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read monday_saturn_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read monday_saturn_short_vo_v02_how_long.mp3 to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others"
+  ],
+  "matches": [
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music/light-speed_score_bed_v01b.mp3",
+      "similarity": 0.824
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_bed_v01.mp3",
+      "similarity": 0.829
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v01.mp3",
+      "similarity": 0.805
+    }
+  ],
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  }
+}

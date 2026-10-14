@@ -13,6 +13,7 @@
  *
  * Config: 00_Brand/Channel-Setup/PINNED_COMMENTS.json
  */
+import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
 import path from "path";
 import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
@@ -106,6 +107,8 @@ async function main() {
   }
   console.log(JSON.stringify({ subscribers, dry, results }, null, 2));
 }
+
+ensureDeskLock();
 
 main()
   .catch((e) => {

@@ -1,0 +1,31 @@
+{
+  "startedAt": "2026-10-07T17:25:50+00:00",
+  "engine": "vertex_omni",
+  "project": "gen-lang-client-0538779324",
+  "location": "global",
+  "model": "gemini-omni-flash-preview",
+  "request": "Claude #99 6042034289 (J0012): one take each",
+  "rows": [
+    {
+      "row": 67,
+      "id": "sun_orbit_row67_omni_v01",
+      "start": "sun_orbit_row67_start_v01.png",
+      "fallback": "NASA s04-41-1206 push 4%",
+      "prompt": "Space above Earth long ago. Top right, part off frame, the young Sun: a dim, warm orange glowing star in the black sky. Below, the ocean and cloud horizon seen from orbit stays as in the start frame. Orbit hangs small against the dimmer disc, visor tilted up towards it, and slowly lifts one hand. The camera barely drifts. The Sun stays a glowing star exactly as in the start frame: not a planet, no rings, no bands, no surface map. IDENTITY LOCK: Exactly one solid matte orange floating robot (Orbit) \u2014 one large black curved visor as the whole face, two cream circular eyes with dark pupils, stubby orange arms with dark three-finger hands, one antenna with glowing bulb, one soft underside glow, NO LEGS. Orbit stays small in frame. Not a toy, not a second face, not a second Orbit, no HUD, no text, no logo. No text, no logo. Silent picture only.",
+      "status": "fail",
+      "seconds": 3.5,
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': \"The input could not be submitted. This input contains content that violates Google's Responsible AI practices. If you think this was an error, send feedback.\", 'code': 'content_blocked'}}"
+    },
+    {
+      "row": 81,
+      "id": "sun_orbit_row81_omni_v01",
+      "start": "sun_orbit_row81_start_v01.png",
+      "fallback": "NASA iss071e364425 push 4%",
+      "prompt": "Space above Earth's horizon in the far future. Top left, part off frame, a brighter white-hot Sun. Below, a thin bright skin of cloud along the horizon stays as in the start frame. Orbit stays small and low in frame, tips towards the brighter disc, then turns and tips towards the thin bright skin of cloud. The camera barely drifts. The Sun stays a glowing star exactly as in the start frame: not a planet, no rings, no bands, no surface map. IDENTITY LOCK: Exactly one solid matte orange floating robot (Orbit) \u2014 one large black curved visor as the whole face, two cream circular eyes with dark pupils, stubby orange arms with dark three-finger hands, one antenna with glowing bulb, one soft underside glow, NO LEGS. Orbit stays small in frame. Not a toy, not a second face, not a second Orbit, no HUD, no text, no logo. No text, no logo. Silent picture only.",
+      "status": "fail",
+      "seconds": 43.3,
+      "error": "TypeError: dict.update() got multiple values for keyword argument 'seconds'"
+    }
+  ],
+  "finishedAt": "2026-10-07T17:26:37+00:00"
+}

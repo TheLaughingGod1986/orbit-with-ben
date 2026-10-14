@@ -1,0 +1,38 @@
+{
+ "job": "J0091",
+ "by": "cursor",
+ "at": "2026-10-09T17:03+01:00",
+ "videoId": "h8HGfyShEHI",
+ "end_screen": {
+  "status": "set",
+  "layout": "1 video + 1 subscribe, both top of frame (clear of burned-in captions)",
+  "window": "8:18-8:38 of 8:39",
+  "video_element": "REXYxuLOBoI (What Happens When the Last Star Dies?)",
+  "subscribe": "Orbit With Ben",
+  "verified": "reopened after reload"
+ },
+ "card": {
+  "status": "set",
+  "type": "video",
+  "target": "REXYxuLOBoI",
+  "at": "6:50",
+  "line": "The great red swelling comes later and it belongs to another film. (VO 6:50.88, words.json; VO starts at 0 in the v05 cut)",
+  "verified": "reopened after reload"
+ },
+ "test_and_compare": {
+  "status": "set",
+  "mode": "Thumbnail only",
+  "variants": [
+   "A sun_thumb_A_burning-harder.png",
+   "B sun_thumb_B_its-climbing.png",
+   "C sun_thumb_C_running-down.png"
+  ],
+  "title": "Is the Sun Getting Brighter? (A, unchanged)",
+  "not_tested": "second title 'Why Is the Sun Getting Brighter?': Studio pairs one title with one thumbnail per variant (max 3), so 2 titles x 3 thumbs can't run together; playbook sec.187 says 3 thumbs",
+  "verified": "A/B button now prompts 'Run a new test? Your current test will be deleted' (cancelled)"
+ },
+ "playlist": "n/a (no playlistId)",
+ "shorts_related": "moved to the 18 Oct go-live job (Claude #6084230818)",
+ "unchanged": "file, schedule (Scheduled), privacy, title, description",
+ "screenshots": "local on the Mini: /tmp/j0091_verify_endscreen.png, /tmp/j0091_verify_cards.png, /tmp/j0091_ab_upload.png, /tmp/j0091_ab_saved.png"
+}

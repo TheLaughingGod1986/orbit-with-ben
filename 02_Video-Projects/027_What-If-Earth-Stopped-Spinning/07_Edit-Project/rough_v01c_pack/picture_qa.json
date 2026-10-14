@@ -1,0 +1,1843 @@
+{
+  "verdict": "FAIL",
+  "video": "/private/tmp/earth027_rough_work_v01c/027_EarthSpin_rough_v01c.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 15,
+      "row": "14",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 76.18,
+      "at": "1:16",
+      "fail": [
+        "near-black: mean 15.0, p95 58.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "6",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 106.4,
+      "at": "1:46",
+      "fail": [
+        "near-black: mean 11.23, p95 66.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 110.23,
+      "at": "1:50",
+      "fail": [
+        "near-black: mean 3.67, p95 15.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 113.97,
+      "at": "1:54",
+      "fail": [
+        "near-black: mean 2.51, p95 9.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 118.23,
+      "at": "1:58",
+      "fail": [
+        "near-black: mean 3.7, p95 47.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 85,
+      "row": "35",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 418.02,
+      "at": "6:58",
+      "fail": [
+        "near-black: mean 15.42, p95 61.0"
+      ],
+      "warn": []
+    }
+  ],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 2.4,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "row03_speed.mp4",
+      "title": null,
+      "t": 19.8,
+      "at": "0:20",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.74, p95 54.0"
+        ]
+      }
+    },
+    {
+      "cut": 7,
+      "row": "11",
+      "source": "row10_air.mp4",
+      "title": null,
+      "t": 35.68,
+      "at": "0:36",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 14.05, p95 58.0"
+        ]
+      }
+    },
+    {
+      "cut": 8,
+      "row": "11",
+      "source": "row11_air.mp4",
+      "title": null,
+      "t": 41.98,
+      "at": "0:42",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 15.85, p95 66.0"
+        ]
+      }
+    },
+    {
+      "cut": 12,
+      "row": "13",
+      "source": "row13_speed.mp4",
+      "title": null,
+      "t": 60.12,
+      "at": "1:00",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 12.93, p95 48.0"
+        ]
+      }
+    },
+    {
+      "cut": 13,
+      "row": "13",
+      "source": "row13_speed.mp4",
+      "title": null,
+      "t": 64.33,
+      "at": "1:04",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.3, p95 46.0"
+        ]
+      }
+    },
+    {
+      "cut": 16,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 80.65,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft",
+        "low detail: edge density 0.0067 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "15",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 85.47,
+      "at": "1:25",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "row 37 is the planned return; row 15 a later turn (Claude #99)",
+        "passed": [
+          "reuse: same stretch as 0:02 (give it a new stretch, or a new render)"
+        ]
+      }
+    },
+    {
+      "cut": 18,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 90.42,
+      "at": "1:30",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 27,
+      "row": "8",
+      "source": "row08_bulge.mp4",
+      "title": null,
+      "t": 128.77,
+      "at": "2:09",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.26, p95 52.0"
+        ]
+      }
+    },
+    {
+      "cut": 28,
+      "row": "8",
+      "source": "row08_bulge.mp4",
+      "title": null,
+      "t": 134.77,
+      "at": "2:15",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 12.09, p95 44.0"
+        ]
+      }
+    },
+    {
+      "cut": 30,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 146.5,
+      "at": "2:26",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 15.6s in a row (look at it: 15s is a lot for one picture)"
+      ]
+    },
+    {
+      "cut": 33,
+      "row": "9",
+      "source": "Portrait_Leon_Foucault_1860.jpg",
+      "title": "Portrait Leon Foucault 1860.jpg",
+      "t": 161.92,
+      "at": "2:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.19x, may look soft"
+      ]
+    },
+    {
+      "cut": 35,
+      "row": "17",
+      "source": "row17_oceans.mp4",
+      "title": null,
+      "t": 172.38,
+      "at": "2:52",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 22.33, p95 102.0"
+        ]
+      }
+    },
+    {
+      "cut": 38,
+      "row": "18",
+      "source": "row18-19_oceans.mp4",
+      "title": null,
+      "t": 190.17,
+      "at": "3:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 16.57, p95 68.0"
+        ]
+      }
+    },
+    {
+      "cut": 39,
+      "row": "19",
+      "source": "row18-19_oceans.mp4",
+      "title": null,
+      "t": 196.98,
+      "at": "3:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 40,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 201.58,
+      "at": "3:22",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 41,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "title": null,
+      "t": 206.6,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 15.4s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.64, p95 8.0"
+        ]
+      }
+    },
+    {
+      "cut": 42,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "title": null,
+      "t": 211.93,
+      "at": "3:32",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.95, p95 7.0"
+        ]
+      }
+    },
+    {
+      "cut": 43,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "title": null,
+      "t": 216.88,
+      "at": "3:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.93, p95 7.0"
+        ]
+      }
+    },
+    {
+      "cut": 47,
+      "row": "22",
+      "source": "PIA23791.jpg",
+      "title": "Venus from Mariner 10",
+      "t": 243.03,
+      "at": "4:03",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0058 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 51,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 259.35,
+      "at": "4:19",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 22.6s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: luma std 16.3 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 9.55, p95 48.0"
+        ]
+      }
+    },
+    {
+      "cut": 52,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 263.77,
+      "at": "4:24",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.05 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 9.77, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 53,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 268.1,
+      "at": "4:28",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.79 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 9.96, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 54,
+      "row": "25",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 272.62,
+      "at": "4:33",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 10.68, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 55,
+      "row": "25",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 277.55,
+      "at": "4:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 10.75, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 62,
+      "row": "27",
+      "source": "NHQ201708210100.jpg",
+      "title": "2017 Total Solar Eclipse",
+      "t": 313.97,
+      "at": "5:14",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.005 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 319.6,
+      "at": "5:20",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 17.4s in a row (look at it: 15s is a lot for one picture)"
+      ]
+    },
+    {
+      "cut": 71,
+      "row": "30",
+      "source": "row30_clock.mp4",
+      "title": null,
+      "t": 354.03,
+      "at": "5:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 7.98, p95 6.0"
+        ]
+      }
+    },
+    {
+      "cut": 74,
+      "row": "32",
+      "source": "NIST-F2_cesium_fountain_atomic_clock.jpg",
+      "title": "NIST-F2 cesium fountain atomic clock.jpg",
+      "t": 363.95,
+      "at": "6:04",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft"
+      ]
+    },
+    {
+      "cut": 76,
+      "row": "33",
+      "source": "row33_clock.mp4",
+      "title": null,
+      "t": 374.27,
+      "at": "6:14",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.64, p95 6.0"
+        ]
+      }
+    },
+    {
+      "cut": 77,
+      "row": "33",
+      "source": "row33_clock.mp4",
+      "title": null,
+      "t": 378.68,
+      "at": "6:19",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.13 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 7.58, p95 6.0"
+        ]
+      }
+    },
+    {
+      "cut": 82,
+      "row": "35",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 401.67,
+      "at": "6:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft",
+        "low detail: edge density 0.0072 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 83,
+      "row": "35",
+      "source": "row35_tides.mp4",
+      "title": null,
+      "t": 407.2,
+      "at": "6:47",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.43, p95 60.0"
+        ]
+      }
+    },
+    {
+      "cut": 84,
+      "row": "35",
+      "source": "row35_speed.mp4",
+      "title": null,
+      "t": 412.55,
+      "at": "6:53",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 11.68, p95 40.0"
+        ]
+      }
+    },
+    {
+      "cut": 89,
+      "row": "37",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 441.8,
+      "at": "7:22",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "row 37 is the planned return; row 15 a later turn (Claude #99)",
+        "passed": [
+          "reuse: same stretch as 0:02 (give it a new stretch, or a new render)"
+        ]
+      }
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 2.4,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "1",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 7.05,
+      "at": "0:07",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 11.32,
+      "at": "0:11",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "2",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "title": "Sunrise To Sunset Aboard The ISS.ogv",
+      "t": 15.02,
+      "at": "0:15",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "3",
+      "source": "row03_speed.mp4",
+      "title": null,
+      "t": 19.8,
+      "at": "0:20",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.74, p95 54.0"
+        ]
+      }
+    },
+    {
+      "cut": 5,
+      "row": "10",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "title": "Sunrise To Sunset Aboard The ISS.ogv",
+      "t": 25.42,
+      "at": "0:25",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "10",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "title": "Sunrise To Sunset Aboard The ISS.ogv",
+      "t": 29.97,
+      "at": "0:30",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "11",
+      "source": "row10_air.mp4",
+      "title": null,
+      "t": 35.68,
+      "at": "0:36",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 14.05, p95 58.0"
+        ]
+      }
+    },
+    {
+      "cut": 8,
+      "row": "11",
+      "source": "row11_air.mp4",
+      "title": null,
+      "t": 41.98,
+      "at": "0:42",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 15.85, p95 66.0"
+        ]
+      }
+    },
+    {
+      "cut": 9,
+      "row": "12",
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "title": "Waves crashing on rocks off Beach 4, Kalaloch Beach, Washington 02.webm",
+      "t": 47.22,
+      "at": "0:47",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "12",
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "title": "Waves crashing on rocks off Beach 4, Kalaloch Beach, Washington 02.webm",
+      "t": 52.0,
+      "at": "0:52",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "13",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "title": "Sunrise To Sunset Aboard The ISS.ogv",
+      "t": 55.92,
+      "at": "0:56",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "13",
+      "source": "row13_speed.mp4",
+      "title": null,
+      "t": 60.12,
+      "at": "1:00",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 12.93, p95 48.0"
+        ]
+      }
+    },
+    {
+      "cut": 13,
+      "row": "13",
+      "source": "row13_speed.mp4",
+      "title": null,
+      "t": 64.33,
+      "at": "1:04",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.3, p95 46.0"
+        ]
+      }
+    },
+    {
+      "cut": 14,
+      "row": "14",
+      "source": "orbit_northpole_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 70.2,
+      "at": "1:10",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "14",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 76.18,
+      "at": "1:16",
+      "fail": [
+        "near-black: mean 15.0, p95 58.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 16,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 80.65,
+      "at": "1:21",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft",
+        "low detail: edge density 0.0067 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "15",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 85.47,
+      "at": "1:25",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "row 37 is the planned return; row 15 a later turn (Claude #99)",
+        "passed": [
+          "reuse: same stretch as 0:02 (give it a new stretch, or a new render)"
+        ]
+      }
+    },
+    {
+      "cut": 18,
+      "row": "15",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 90.42,
+      "at": "1:30",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 19,
+      "row": "5",
+      "source": "cabin_pour_veo_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 94.85,
+      "at": "1:35",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "5",
+      "source": "AFRC2022-0059-49.jpg",
+      "title": "NASA\u2019s ER-2 performs a DCOTSS check flight",
+      "t": 98.62,
+      "at": "1:39",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 21,
+      "row": "5",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 102.4,
+      "at": "1:42",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "6",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 106.4,
+      "at": "1:46",
+      "fail": [
+        "near-black: mean 11.23, p95 66.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 110.23,
+      "at": "1:50",
+      "fail": [
+        "near-black: mean 3.67, p95 15.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "6",
+      "source": "Five_Minutes_in_Orbit.webm",
+      "title": "Five Minutes in Orbit (154728).webm",
+      "t": 113.97,
+      "at": "1:54",
+      "fail": [
+        "near-black: mean 2.51, p95 9.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 118.23,
+      "at": "1:58",
+      "fail": [
+        "near-black: mean 3.7, p95 47.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "7",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 123.02,
+      "at": "2:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 27,
+      "row": "8",
+      "source": "row08_bulge.mp4",
+      "title": null,
+      "t": 128.77,
+      "at": "2:09",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.26, p95 52.0"
+        ]
+      }
+    },
+    {
+      "cut": 28,
+      "row": "8",
+      "source": "row08_bulge.mp4",
+      "title": null,
+      "t": 134.77,
+      "at": "2:15",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 12.09, p95 44.0"
+        ]
+      }
+    },
+    {
+      "cut": 29,
+      "row": "8",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "NASA Blue Marble 2007 East",
+      "t": 140.68,
+      "at": "2:21",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 146.5,
+      "at": "2:26",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 15.6s in a row (look at it: 15s is a lot for one picture)"
+      ]
+    },
+    {
+      "cut": 31,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 151.68,
+      "at": "2:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "9",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum 1.webm",
+      "t": 156.67,
+      "at": "2:37",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 33,
+      "row": "9",
+      "source": "Portrait_Leon_Foucault_1860.jpg",
+      "title": "Portrait Leon Foucault 1860.jpg",
+      "t": 161.92,
+      "at": "2:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.19x, may look soft"
+      ]
+    },
+    {
+      "cut": 34,
+      "row": "16",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "title": "Sunrise To Sunset Aboard The ISS.ogv",
+      "t": 167.2,
+      "at": "2:47",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 35,
+      "row": "17",
+      "source": "row17_oceans.mp4",
+      "title": null,
+      "t": 172.38,
+      "at": "2:52",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 22.33, p95 102.0"
+        ]
+      }
+    },
+    {
+      "cut": 36,
+      "row": "18",
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "title": "NASA Blue Marble 2007 West",
+      "t": 177.42,
+      "at": "2:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 37,
+      "row": "18",
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "title": "NASA Blue Marble 2007 West",
+      "t": 182.82,
+      "at": "3:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 38,
+      "row": "18",
+      "source": "row18-19_oceans.mp4",
+      "title": null,
+      "t": 190.17,
+      "at": "3:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 16.57, p95 68.0"
+        ]
+      }
+    },
+    {
+      "cut": 39,
+      "row": "19",
+      "source": "row18-19_oceans.mp4",
+      "title": null,
+      "t": 196.98,
+      "at": "3:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 40,
+      "row": "19",
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "title": "One Year on Earth \u2013 Seen From 1 Million Miles",
+      "t": 201.58,
+      "at": "3:22",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 41,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "title": null,
+      "t": 206.6,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 15.4s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.64, p95 8.0"
+        ]
+      }
+    },
+    {
+      "cut": 42,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "title": null,
+      "t": 211.93,
+      "at": "3:32",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.95, p95 7.0"
+        ]
+      }
+    },
+    {
+      "cut": 43,
+      "row": "20",
+      "source": "row20_dayyear.mp4",
+      "title": null,
+      "t": 216.88,
+      "at": "3:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.93, p95 7.0"
+        ]
+      }
+    },
+    {
+      "cut": 44,
+      "row": "21",
+      "source": "orbit_sunset_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 222.6,
+      "at": "3:43",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 45,
+      "row": "21",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 228.17,
+      "at": "3:48",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 46,
+      "row": "22",
+      "source": "PIA00271.jpg",
+      "title": "Venus - Computer Simulated Global View of the Northern Hemisphere",
+      "t": 234.27,
+      "at": "3:54",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 47,
+      "row": "22",
+      "source": "PIA23791.jpg",
+      "title": "Venus from Mariner 10",
+      "t": 243.03,
+      "at": "4:03",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0058 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 48,
+      "row": "23",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "title": "Full Moon",
+      "t": 249.6,
+      "at": "4:10",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 49,
+      "row": "23",
+      "source": "Bay_of_Fundy_tide_in.jpg",
+      "title": "Bay of Fundy - Tide In.jpg",
+      "t": 252.63,
+      "at": "4:13",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 50,
+      "row": "23",
+      "source": "Bay_of_Fundy_tide_out.jpg",
+      "title": "Bay of Fundy - Tide Out.jpg",
+      "t": 255.65,
+      "at": "4:16",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 51,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 259.35,
+      "at": "4:19",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 22.6s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: luma std 16.3 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 9.55, p95 48.0"
+        ]
+      }
+    },
+    {
+      "cut": 52,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 263.77,
+      "at": "4:24",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.05 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 9.77, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 53,
+      "row": "24",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 268.1,
+      "at": "4:28",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 17.79 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 9.96, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 54,
+      "row": "25",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 272.62,
+      "at": "4:33",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 10.68, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 55,
+      "row": "25",
+      "source": "row24-25_tides.mp4",
+      "title": null,
+      "t": 277.55,
+      "at": "4:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 10.75, p95 49.0"
+        ]
+      }
+    },
+    {
+      "cut": 56,
+      "row": "25",
+      "source": "as14-67-09386.jpg",
+      "title": "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts",
+      "t": 282.25,
+      "at": "4:42",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 57,
+      "row": "25",
+      "source": "as14-67-09386.jpg",
+      "title": "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts",
+      "t": 287.02,
+      "at": "4:47",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 58,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "title": "Full Moon",
+      "t": 292.15,
+      "at": "4:52",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 59,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "title": "The Far Side of the Moon -- And All the Way Around",
+      "t": 297.18,
+      "at": "4:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 60,
+      "row": "26",
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "title": "The Far Side of the Moon -- And All the Way Around",
+      "t": 302.4,
+      "at": "5:02",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 61,
+      "row": "27",
+      "source": "Cuneiform_tablet-_commentary_on_Enuma_Anu_Enlil_tablet_5_MET.jpg",
+      "title": "Cuneiform tablet- commentary on Enuma Anu Enlil, tablet 5 MET DP-442-001.jpg",
+      "t": 308.2,
+      "at": "5:08",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 62,
+      "row": "27",
+      "source": "NHQ201708210100.jpg",
+      "title": "2017 Total Solar Eclipse",
+      "t": 313.97,
+      "at": "5:14",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.005 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 319.6,
+      "at": "5:20",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 17.4s in a row (look at it: 15s is a lot for one picture)"
+      ]
+    },
+    {
+      "cut": 64,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 323.92,
+      "at": "5:24",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 65,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 327.57,
+      "at": "5:28",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "28",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA Satellites View Total Solar Eclipse (NESDIS 2024-04-12 2024-4-12-Total-Solar-Eclipse-NO-TEXT).webm",
+      "t": 331.93,
+      "at": "5:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 67,
+      "row": "29",
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "title": "Heliophyllum confluens (fossil coral) (Columbus Limestone, Middle Devonian; Delaware County, Ohio, USA).jpg",
+      "t": 336.37,
+      "at": "5:36",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "29",
+      "source": "Eridophyllum_seriale_2.jpg",
+      "title": "Eridophyllum seriale (fossil rugose coral) (Middle Devonian) 2 (35474153592).jpg",
+      "t": 340.75,
+      "at": "5:41",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 69,
+      "row": "29",
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "title": "Heliophyllum confluens (fossil coral) (Columbus Limestone, Middle Devonian; Delaware County, Ohio, USA).jpg",
+      "t": 345.07,
+      "at": "5:45",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 70,
+      "row": "29",
+      "source": "Eridophyllum_seriale_2.jpg",
+      "title": "Eridophyllum seriale (fossil rugose coral) (Middle Devonian) 2 (35474153592).jpg",
+      "t": 349.47,
+      "at": "5:49",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 71,
+      "row": "30",
+      "source": "row30_clock.mp4",
+      "title": null,
+      "t": 354.03,
+      "at": "5:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 7.98, p95 6.0"
+        ]
+      }
+    },
+    {
+      "cut": 72,
+      "row": "31",
+      "source": "phone_midnight_veo_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 357.42,
+      "at": "5:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "31",
+      "source": "NIST_atomic_clock_006.jpg",
+      "title": "Atomic Clock006.jpg",
+      "t": 359.78,
+      "at": "6:00",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 74,
+      "row": "32",
+      "source": "NIST-F2_cesium_fountain_atomic_clock.jpg",
+      "title": "NIST-F2 cesium fountain atomic clock.jpg",
+      "t": 363.95,
+      "at": "6:04",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft"
+      ]
+    },
+    {
+      "cut": 75,
+      "row": "32",
+      "source": "NIST_ytterbium_lattice_clock.jpg",
+      "title": "Ytterbium Lattice Atomic Clock (10444764266).jpg",
+      "t": 369.35,
+      "at": "6:09",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 76,
+      "row": "33",
+      "source": "row33_clock.mp4",
+      "title": null,
+      "t": 374.27,
+      "at": "6:14",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 8.64, p95 6.0"
+        ]
+      }
+    },
+    {
+      "cut": 77,
+      "row": "33",
+      "source": "row33_clock.mp4",
+      "title": null,
+      "t": 378.68,
+      "at": "6:19",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: luma std 16.13 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 7.58, p95 6.0"
+        ]
+      }
+    },
+    {
+      "cut": 78,
+      "row": "33",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "title": "Sunrise To Sunset Aboard The ISS.ogv",
+      "t": 383.13,
+      "at": "6:23",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 79,
+      "row": "34",
+      "source": "commons_Pahoeoe_fountain_original.jpg",
+      "title": "Pahoehoe fountain, Kilauea (USGS)",
+      "t": 387.63,
+      "at": "6:28",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 80,
+      "row": "34",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "NASA Blue Marble 2007 East",
+      "t": 392.22,
+      "at": "6:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 81,
+      "row": "34",
+      "source": "GSFC_20171208_Archive_e001753.jpg",
+      "title": "Frozen Greenland Meltpond",
+      "t": 396.85,
+      "at": "6:37",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 82,
+      "row": "35",
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "title": "Full disk view of the sun June 21, 2010",
+      "t": 401.67,
+      "at": "6:42",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft",
+        "low detail: edge density 0.0072 < film p5 0.0078"
+      ]
+    },
+    {
+      "cut": 83,
+      "row": "35",
+      "source": "row35_tides.mp4",
+      "title": null,
+      "t": 407.2,
+      "at": "6:47",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 13.43, p95 60.0"
+        ]
+      }
+    },
+    {
+      "cut": 84,
+      "row": "35",
+      "source": "row35_speed.mp4",
+      "title": null,
+      "t": 412.55,
+      "at": "6:53",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "our code graphic on the house background (Claude #6087174848)",
+        "passed": [
+          "near-black: mean 11.68, p95 40.0"
+        ]
+      }
+    },
+    {
+      "cut": 85,
+      "row": "35",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "Alexander Gerst\u2019s Earth timelapses (2017 reissue).webm",
+      "t": 418.02,
+      "at": "6:58",
+      "fail": [
+        "near-black: mean 15.42, p95 61.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 86,
+      "row": "36",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "Time-lapse Over La Silla.webm",
+      "t": 423.7,
+      "at": "7:04",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 87,
+      "row": "36",
+      "source": "ESO_star_trails_VLT_Paranal.jpg",
+      "title": "Star trails over the VLT in Paranal.jpg",
+      "t": 428.92,
+      "at": "7:09",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 88,
+      "row": "37",
+      "source": "NASA_Bennu_journey_early_Earth.jpg",
+      "title": "BENNU\u2019S JOURNEY - Early Earth.jpg",
+      "t": 434.33,
+      "at": "7:14",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 89,
+      "row": "37",
+      "source": "epic_spin_v01.mp4",
+      "title": null,
+      "t": 441.8,
+      "at": "7:22",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "reviewed_ok": {
+        "note": "row 37 is the planned return; row 15 a later turn (Claude #99)",
+        "passed": [
+          "reuse: same stretch as 0:02 (give it a new stretch, or a new render)"
+        ]
+      }
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0078,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

@@ -101,6 +101,10 @@ export async function executeActions(
       if (a.action === "skip") {
         results.push({ channel: a.channel, action: a.action, ok: true, reason: a.reason });
       } else if (a.action === "create_post") {
+        // Re-read immediately before each create, under the CLI's desk lock.
+        const current = await store.load();
+        const existing = current.videos[plan.videoId]?.channels[a.channel]?.postId;
+        if (existing) throw new Error(`Refusing duplicate Buffer post for ${plan.videoId}/${a.channel}: ${existing}`);
         const post = await client.createPost(a.input);
         await store.record(plan, a.channel, post.id);
         results.push({ channel: a.channel, action: a.action, ok: true, postId: post.id });
@@ -112,8 +116,9 @@ export async function executeActions(
         try {
           await client.deletePost(a.input.postId);
         } catch (e) {
-          // Already gone in Buffer: forget it here too.
-          if (!/NotFound/i.test((e as Error).message)) throw e;
+          // Already gone in Buffer: forget it here too. Buffer says "VoidMutationError: Document not found"
+          // (with spaces), so match "not found" loosely; the old /NotFound/ missed it and failed every 07:05 run.
+          if (!/not ?found/i.test((e as Error).message)) throw e;
         }
         await store.record(plan, a.channel, null);
         results.push({ channel: a.channel, action: a.action, ok: true, postId: null });

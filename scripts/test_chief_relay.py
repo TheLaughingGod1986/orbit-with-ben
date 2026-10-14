@@ -1,0 +1,532 @@
+"""chief_relay.py: the first agent in the chain that is up acts as Chief; out of credit falls through; Grok takes back."""
+import datetime as dt, os, pathlib, stat, sys, tempfile, unittest
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import chief_relay as cr  # noqa: E402
+
+T0 = dt.datetime(2026, 10, 7, 12, 0, tzinfo=dt.timezone.utc)
+MIN = dt.timedelta(minutes=1)
+
+
+class Relay(unittest.TestCase):
+    def setUp(self):
+        self.tmp = pathlib.Path(tempfile.mkdtemp())
+        self.old_state, self.old_home, self.old_fetch, self.old_owb = cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB
+        cr.STATE, cr.HOME = self.tmp / "state", self.tmp  # so a real CLI on this machine can't stand in for a fake
+        cr.OWB = self.tmp / "no-owb"  # never the live queue: an addressed job there (J0071, 9 Oct) changed who ran
+        self.thread = []  # fake studio thread: (created_at, body)
+        cr.fetch_comments = lambda since: [{"created_at": t, "body": b} for t, b in self.thread if cr.parse(t) >= since]
+        cr.STATE.mkdir()
+        self.posts = self.tmp / "posts.txt"
+        notify = self.tmp / "notify.sh"
+        notify.write_text(f'#!/bin/sh\necho "$1" >> "{self.posts}"\n')
+        notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
+        self.env = dict(os.environ)
+        os.environ.update({"CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
+                           "CHIEF_HEARTBEAT": "0"})  # never push a heartbeat from a test run on the Mini
+        self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
+        self.codex = self.fake("codex", 'echo "codex did J0001"')
+        os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
+        # Always a fake agy: on the Mini the real one is on PATH, and a test must never wake it.
+        os.environ["AGY_BIN"] = str(self.fake("agy", 'echo "gemini did it"'))
+
+    def tearDown(self):
+        cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB = self.old_state, self.old_home, self.old_fetch, self.old_owb
+        os.environ.clear()
+        os.environ.update(self.env)
+
+    def fake(self, name, body):
+        p = self.tmp / name
+        p.write_text(f"#!/bin/sh\necho ran >> {self.tmp}/{name}.ran\n{body}\n")
+        p.chmod(p.stat().st_mode | stat.S_IEXEC)
+        return p
+
+    def ran(self, name):
+        return (self.tmp / f"{name}.ran").exists()
+
+    def chief(self, at=T0):
+        return cr.acting(at)[1]
+
+    def test_grok_is_chief_while_its_heartbeat_is_fresh(self):
+        cr.seen("chief", T0 - 30 * MIN)
+        self.assertEqual(self.chief(), "chief")
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False
+        try:
+            cr.cmd_run(T0)
+        finally:
+            cr.queue_has_work = old
+        self.assertFalse(self.ran("cursor"))  # Grok drives itself; with no queued job no worker runs
+
+    def post(self, at, body):
+        self.thread.append((cr.iso(at), body))
+
+    def test_a_grok_post_on_the_thread_makes_it_chief_again(self):
+        cr.cmd_run(T0)
+        self.assertTrue(self.ran("cursor"))
+        (self.tmp / "cursor.ran").unlink()
+        self.post(T0 + 10 * MIN, "[Chief] Re 123: claimed, working")  # Grok, back with credit
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False  # nothing queued, so no worker wakes (and no sweep under Grok)
+        try:
+            cr.cmd_run(T0 + 30 * MIN)
+        finally:
+            cr.queue_has_work = old
+        self.assertFalse(self.ran("cursor"))
+        self.assertEqual(self.chief(T0 + 30 * MIN), "chief")
+        self.assertIn("Grok Bot is Chief again", self.posts.read_text())
+        self.assertIn("keep running the job queue as workers", self.posts.read_text())
+        self.assertNotIn("stand down", self.posts.read_text())
+
+    def test_cursor_codex_and_relay_posts_are_not_grok(self):
+        for body in ("[Chief] [Cursor] Cursor covering. J0007 done", "[Chief] Cursor covering: J0001 started",
+                     "[Chief] [Codex] Codex covering.", "[Chief] Chief relay: **Cursor is acting Chief**"):
+            self.post(T0 - 5 * MIN, body)
+        cr.cmd_run(T0)
+        self.assertEqual(self.chief(T0), "cursor")
+
+    def test_grok_goes_quiet_three_hours_after_its_last_post(self):
+        self.post(T0 - 170 * MIN, "[Chief] Done 456")
+        cr.note_grok_posts(T0)
+        self.assertEqual(self.chief(T0), "chief")
+        cr.note_grok_posts(T0 + 20 * MIN)
+        self.assertEqual(self.chief(T0 + 20 * MIN), "cursor")
+
+    def test_an_unreadable_thread_keeps_the_last_known_post(self):
+        self.post(T0 - 10 * MIN, "[Chief] Done 456")
+        cr.note_grok_posts(T0)
+        def boom(since):
+            raise OSError("offline")
+        cr.fetch_comments = boom
+        cr.note_grok_posts(T0 + 30 * MIN)
+        self.assertEqual(self.chief(T0 + 30 * MIN), "chief")
+
+    def test_a_down_mark_on_grok_clears_when_it_posts_again(self):
+        cr.mark_down("chief", "out of credit", None, T0)
+        self.post(T0 - 5 * MIN, "[Chief] old post, before the mark")
+        cr.note_grok_posts(T0 + 1 * MIN)
+        self.assertEqual(self.chief(T0 + 1 * MIN), "cursor")
+        self.post(T0 + 20 * MIN, "[Chief] Re 789: claimed, working")
+        cr.note_grok_posts(T0 + 25 * MIN)
+        self.assertEqual(self.chief(T0 + 25 * MIN), "chief")
+        self.assertFalse((cr.STATE / "chief" / "down" / "chief.json").exists())
+
+    def _chain(self, ids):
+        """Patch the queue so next_job hands out `ids` in turn; return the list of jobs the relay ran."""
+        ran, left = [], list(ids)
+        saved = (cr.next_job, cr.queue_has_work, cr.run_cli)
+        self.addCleanup(lambda: setattr(cr, "next_job", saved[0]) or setattr(cr, "queue_has_work", saved[1])
+                        or setattr(cr, "run_cli", saved[2]))
+        cr.next_job = lambda agent: {"id": left[0], "kind": "assembly"} if left else None
+        cr.queue_has_work = lambda agent: bool(left)
+        def run_cli(who, prompt, cap, model):
+            ran.append(left[0])
+            if left[0] != "SAME":
+                left.pop(0)
+            return 0, "done"
+        cr.run_cli = run_cli
+        return ran
+
+    def test_when_a_job_ends_the_next_ready_job_starts_in_the_same_run(self):
+        ran = self._chain(["J0001", "J0002", "J0003"])
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(ran, ["J0001", "J0002", "J0003"])  # back to back, no wait for the next tick
+
+    def test_a_job_released_to_retry_later_is_not_rerun_in_a_tight_loop(self):
+        ran = self._chain(["SAME"])
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(ran, ["SAME"])
+
+    def test_cursor_takes_over_when_grok_goes_quiet(self):
+        cr.seen("chief", T0 - 200 * MIN)
+        self.assertEqual(self.chief(), "cursor")
+        cr.cmd_run(T0)
+        self.assertTrue(self.ran("cursor"))
+        self.assertFalse(self.ran("codex"))
+        self.assertIn("Cursor is acting Chief", self.posts.read_text())
+
+    def test_out_of_credit_falls_through_to_codex_in_the_same_run(self):
+        self.fake("cursor", 'echo "Error: You are out of credits. Upgrade your plan."; exit 1')
+        cr.cmd_run(T0)
+        self.assertTrue(self.ran("cursor"))
+        self.assertTrue(self.ran("codex"))
+        self.assertEqual(self.chief(cr.now()), "codex")  # Cursor stays down until its retry time
+        self.assertIn("retry after", cr.state_of("cursor", cr.now())[1])
+        self.assertIn("Codex is acting Chief", self.posts.read_text())
+
+    def test_a_down_mark_expires(self):
+        cr.mark_down("cursor", "out of credit", T0 + 60 * MIN, T0)
+        self.assertEqual(self.chief(T0), "codex")
+        self.assertEqual(self.chief(T0 + 61 * MIN), "cursor")
+
+    def test_grok_takes_back_over_when_it_runs_jobs_again(self):
+        cr.mark_down("chief", "out of credit", None, T0)
+        cr.seen("chief", T0 - 10 * MIN)  # before the mark: still down
+        self.assertEqual(self.chief(T0), "cursor")
+        cr.seen("chief", T0 + 5 * MIN)  # Grok ran jobs.py after the mark: it's back
+        self.assertEqual(self.chief(T0 + 6 * MIN), "chief")
+
+    def test_nobody_up_posts_once_and_runs_nothing(self):
+        cr.mark_down("cursor", "out of credit", None, T0)
+        cr.mark_down("codex", "out of credit", None, T0)
+        cr.mark_down("gemini", "out of credit", None, T0)
+        cr.cmd_run(T0)
+        cr.cmd_run(T0 + 30 * MIN)
+        self.assertFalse(self.ran("cursor") or self.ran("codex") or self.ran("agy"))
+        self.assertEqual(self.posts.read_text().count("nobody can act as Chief"), 1)
+
+    def test_with_grok_cursor_and_codex_down_gemini_still_takes_queued_jobs(self):
+        old_q = cr.queue_has_work
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.mark_down("cursor", "out of credit", None, T0)
+            cr.mark_down("codex", "out of credit", None, T0)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("agy"))
+        finally:
+            cr.queue_has_work = old_q
+
+    def test_a_failed_thread_post_is_retried_next_run(self):
+        cr.seen("chief", T0 - 200 * MIN)
+        os.environ["CHIEF_NOTIFY"] = "false"  # e.g. no GitHub token under launchd
+        cr.cmd_run(T0)
+        self.assertFalse((cr.STATE / "chief" / "current.json").exists())
+        os.environ["CHIEF_NOTIFY"] = str(self.tmp / "notify.sh")
+        cr.cmd_run(T0 + 30 * MIN)
+        self.assertIn("Cursor is acting Chief", self.posts.read_text())
+
+    def test_a_missing_cli_is_skipped(self):
+        os.environ["CURSOR_AGENT_BIN"] = str(self.tmp / "nope")
+        os.environ["PATH"] = str(self.tmp / "empty")
+        self.assertEqual(self.chief(), "codex")
+
+    def test_an_ordinary_failure_does_not_wake_the_next_agent(self):
+        self.fake("cursor", 'echo "Traceback: KeyError"; exit 1')
+        cr.cmd_run(T0)
+        self.assertFalse(self.ran("codex"))
+        self.assertIn("run failed (exit 1)", self.posts.read_text())
+
+    def test_a_long_job_that_mentions_quota_is_not_out_of_credit(self):
+        self.assertFalse(cr.out_of_credit(0, "checked the YouTube quota exceeded warning ... " + "x" * 800))
+        self.assertTrue(cr.out_of_credit(1, "usage limit reached, try again at 5pm"))
+        self.assertFalse(cr.out_of_credit(124, "rate limit"))
+
+    def test_no_wake_when_nothing_is_queued_but_a_sweep_every_two_hours(self):
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False
+        try:
+            cr.seen("cursor", T0 - 30 * MIN)  # woken half an hour ago, queue empty: stay asleep
+            cr.cmd_run(T0)
+            self.assertFalse(self.ran("cursor"))
+            cr.seen("cursor", T0 - 130 * MIN)  # two hours on: one sweep for thread/desk tasks
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))
+        finally:
+            cr.queue_has_work = old
+
+    def test_while_grok_is_chief_cursor_still_runs_one_queued_job_as_worker(self):
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)  # Grok is Chief
+            self.assertEqual(self.chief(), "chief")
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))  # the Mini doesn't idle (9 Oct stall)
+            self.assertFalse(self.ran("codex"))
+        finally:
+            cr.queue_has_work = old
+
+    def test_while_grok_is_chief_an_empty_queue_wakes_no_worker_and_no_sweep(self):
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: False
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.seen("cursor", T0 - 300 * MIN)  # a sweep would be due if Cursor were Chief
+            cr.cmd_run(T0)
+            self.assertFalse(self.ran("cursor"))
+            self.assertFalse(self.ran("codex"))
+        finally:
+            cr.queue_has_work = old
+
+    def test_a_job_addressed_to_codex_wakes_codex_while_cursor_is_chief(self):
+        old_owb, old_q = cr.OWB, cr.queue_has_work
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True)
+        q = cr.OWB / "jobs" / "queue.json"
+        q.write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "open", "needs": "any"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertFalse(self.ran("cursor"))
+            self.assertEqual(self.chief(), "cursor")  # Cursor is still the acting Chief
+            (self.tmp / "codex.ran").unlink()
+            q.write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "done", "needs": "any"}]}')
+            cr.cmd_run(T0 + 11 * MIN)
+            self.assertTrue(self.ran("cursor"))
+            self.assertFalse(self.ran("codex"))
+        finally:
+            cr.OWB, cr.queue_has_work = old_owb, old_q
+
+    def test_a_failed_addressed_run_is_not_retried_every_tick(self):
+        old_owb, old_q = cr.OWB, cr.queue_has_work
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True)
+        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "open", "needs": "any"}]}')
+        self.fake("codex", 'echo "error: unexpected argument"; exit 2')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertIn("run failed (exit 2)", self.posts.read_text())
+            self.assertFalse(cr.state_of("codex", cr.now())[0])  # marked down for the retry time
+            (self.tmp / "codex.ran").unlink()
+            cr.cmd_run(T0 + 11 * MIN)
+            self.assertFalse(self.ran("codex"))
+            self.assertTrue(self.ran("cursor"))  # the acting Chief carries on
+        finally:
+            cr.OWB, cr.queue_has_work = old_owb, old_q
+
+    def routed_queue(self, jobs_json):
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "jobs" / "queue.json").write_text(jobs_json)
+
+    def test_a_chart_job_wakes_codex_on_gpt_6_astra_while_grok_is_chief(self):
+        old_q = cr.queue_has_work
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args')
+        self.routed_queue('{"jobs": [{"id": "J0200", "kind": "chart", "status": "open", "needs": "mini"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertFalse(self.ran("cursor"))
+            self.assertIn("exec -m gpt-6-astra --approve-for-me", (self.tmp / "codex.args").read_text())
+        finally:
+            cr.queue_has_work = old_q
+
+    def test_with_codex_down_cursor_stands_in_then_hands_back(self):
+        old_q = cr.queue_has_work
+        self.routed_queue('{"jobs": [{"id": "J0200", "kind": "chart", "status": "open", "needs": "mini"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.mark_down("codex", "usage limit", T0 + 60 * MIN, T0)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))  # the backup takes the chart job
+            self.assertFalse(self.ran("codex"))
+            (self.tmp / "cursor.ran").unlink()
+            cr.seen("chief", T0 + 61 * MIN)
+            cr.cmd_run(T0 + 61 * MIN)  # Codex's limit is over: the next chart job goes back to it
+            self.assertTrue(self.ran("codex"))
+            self.assertFalse(self.ran("cursor"))
+        finally:
+            cr.queue_has_work = old_q
+
+    def test_an_assembly_job_stays_with_cursor_and_no_model_flag(self):
+        old_q = cr.queue_has_work
+        self.routed_queue('{"jobs": [{"id": "J0201", "kind": "assembly", "status": "open", "needs": "mini"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.seen("chief", T0 - 10 * MIN)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("cursor"))
+            self.assertFalse(self.ran("codex"))
+        finally:
+            cr.queue_has_work = old_q
+
+    def test_stand_ins_are_told_to_park_protected_calls(self):
+        self.assertIn("parked for Chief", cr.PROMPT)
+        self.assertIn("No final OK or PASS, no merge", cr.PROMPT)
+
+    def test_a_stale_codex_flags_env_is_ignored(self):
+        os.environ["CODEX_FLAGS"] = "exec -s workspace-write --approve-for-me"
+        b, args = cr.cli_spec("codex")
+        self.assertNotIn("-s", args)
+        self.assertEqual(args[:2], ["exec", "--approve-for-me"])
+
+    def test_pause_file_stops_runs(self):
+        (cr.STATE / "chief-relay.pause").write_text("")
+        cr.cmd_run(T0)
+        self.assertFalse(self.ran("cursor"))
+
+    def test_status_shows_gemini_as_the_checker(self):
+        os.environ["AGY_BIN"] = str(self.cursor)
+        self.assertIn("Checker: Gemini (agy found)", cr.gemini_line())
+
+    def test_default_codex_flags_parse_on_codex_0_160(self):
+        os.environ.pop("CODEX_FLAGS", None)
+        _, args = cr.cli_spec("codex")
+        self.assertEqual(args[:2], ["exec", "--approve-for-me"])
+        self.assertFalse({"-s", "--sandbox"} & set(args))  # 0.160 refuses --sandbox with --approve-for-me
+
+    def test_chain_order_comes_from_the_env(self):
+        os.environ["CHIEF_CHAIN"] = "chief,codex,cursor"
+        self.assertEqual(self.chief(), "codex")
+
+
+    # ---- Claude out of usage -> Cursor on the Claude model (Ben, 11 Oct 2026 23:40) ----
+
+    def claude_setup(self, jobs_json):
+        import json
+        import jobs
+        self.routed_queue(jobs_json)
+        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "codex did it"')
+        self.old_reroute, self.old_q = cr.reroute, cr.queue_has_work
+        q = cr.OWB / "jobs" / "queue.json"
+
+        def fake_reroute(job, to, model, note):  # jobs.py reroute, on the test queue (never the live one)
+            data = json.loads(q.read_text())
+            j = next(x for x in data["jobs"] if x["id"] == job["id"])
+            jobs.do_reroute(j, "relay", to, model, note, cr.now())
+            q.write_text(json.dumps(data))
+            return True
+        cr.reroute, cr.queue_has_work = fake_reroute, (lambda agent: True)
+        self.addCleanup(lambda: setattr(cr, "reroute", self.old_reroute))
+        self.addCleanup(lambda: setattr(cr, "queue_has_work", self.old_q))
+        return q
+
+    def job(self, q, jid):
+        import json
+        return next(j for j in json.loads(q.read_text())["jobs"] if j["id"] == jid)
+
+    def test_a_claude_job_blocked_on_a_usage_limit_is_redispatched_to_cursor_on_the_claude_model(self):
+        q = self.claude_setup('{"jobs": [{"id": "J0300", "kind": "script", "status": "blocked", "needs": "cloud", '
+                              '"by": "claude", "result": "Claude Code: usage limit reached, resets 04:00", "history": '
+                              '[{"by": "claude", "what": "blocked: Claude Code: usage limit reached, resets 04:00"}]}]}')
+        cr.seen("chief", T0 - 10 * MIN)  # Grok is Chief: Cursor is the worker
+        cr.cmd_run(T0)
+        j = self.job(q, "J0300")
+        self.assertEqual((j["status"], j["for"], j["needs"], j["model"]), ("open", "cursor", "mini", "cursor-claude-opus-5-5"))
+        self.assertEqual(j["rerouted_from"]["needs"], "cloud")
+        self.assertTrue(self.ran("cursor"))  # woken in the same run, not left parked
+        self.assertFalse(self.ran("codex"))
+        self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
+        self.assertTrue(cr.claude_out(T0 + MIN)[0])  # Claude marked down for the retry time
+        self.assertTrue((cr.STATE / "chief" / "down" / "claude.json").exists())
+        self.assertIn("Claude is out of usage", self.posts.read_text())
+
+    def test_claude_marked_out_reroutes_only_claude_owned_jobs(self):
+        q = self.claude_setup('{"jobs": ['
+                              '{"id": "J0301", "kind": "review", "status": "open", "needs": "cloud"}, '
+                              '{"id": "J0302", "kind": "assembly", "status": "open", "needs": "mini"}, '
+                              '{"id": "J0303", "kind": "chief", "status": "open", "needs": "cloud"}, '
+                              '{"id": "J0304", "model": "claude-opus-5-5", "status": "open", "needs": "ben"}]}')
+        cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(self.job(q, "J0301").get("for"), "cursor")
+        for jid in ("J0302", "J0303", "J0304"):
+            self.assertNotIn("rerouted_from", self.job(q, jid), jid)
+        self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
+
+    def test_with_cursor_down_the_claude_job_goes_to_gemini_before_codex(self):
+        os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
+        q = self.claude_setup('{"jobs": [{"id": "J0308", "kind": "listing", "status": "open", "needs": "cloud"}]}')
+        cr.mark_down("claude", "usage limit", None, T0)
+        cr.mark_down("cursor", "out of credit", T0 + 60 * MIN, T0)
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        j = self.job(q, "J0308")
+        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-agy"))
+        self.assertTrue(self.ran("agy"))
+        self.assertFalse(self.ran("codex"))
+        self.assertTrue((self.tmp / "agy.args").read_text().startswith("-p --dangerously-skip-permissions"))
+
+    def test_a_worker_out_of_usage_mid_job_hands_it_down_the_chain_in_the_same_run_and_logs_who_ran_it(self):
+        import json
+        os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
+        q = self.claude_setup('{"jobs": [{"id": "J0309", "kind": "review", "status": "open", "needs": "cloud"}]}')
+        self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "Error: usage limit reached for this model"; exit 1')
+        cr.mark_down("claude", "usage limit", None, T0)  # 1) Claude Code is out
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())  # 2) Cursor on Claude tried
+        self.assertTrue(self.ran("agy"))  # 3) Gemini took it in the same run, not parked
+        self.assertFalse(self.ran("codex"))
+        j = self.job(q, "J0309")
+        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-agy"))
+        self.assertIn("retry after", cr.state_of("cursor", cr.now())[1])
+        runs = [json.loads(l) for l in (cr.STATE / "chief" / "runs.jsonl").read_text().splitlines()]
+        self.assertEqual([(r["job"], r["worker"], r["cli_model"], r["lane"], r["out_of_usage"]) for r in runs],
+                         [("J0309", "cursor", "claude-opus-5-5", 2, True), ("J0309", "gemini", "", 3, False)])
+
+    def test_codex_out_of_usage_on_a_chart_job_moves_to_cursor(self):
+        q = self.claude_setup('{"jobs": [{"id": "J0310", "kind": "chart", "status": "open", "needs": "mini"}]}')
+        self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "ERROR: You have hit your usage limit"; exit 1')
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())  # code and graphics: Codex first
+        self.assertTrue(self.ran("cursor"))  # then the next in the chart chain
+        self.assertNotIn("--model", (self.tmp / "cursor.args").read_text())  # Cursor on Auto for a chart
+        self.assertEqual(self.job(q, "J0310")["for"], "cursor")
+
+    def test_with_cursor_and_gemini_down_the_claude_job_goes_to_codex_on_astra(self):
+        q = self.claude_setup('{"jobs": [{"id": "J0305", "kind": "listing", "status": "open", "needs": "cloud"}]}')
+        cr.mark_down("claude", "usage limit", None, T0)
+        cr.mark_down("cursor", "out of credit", T0 + 60 * MIN, T0)
+        cr.mark_down("gemini", "quota exhausted", T0 + 60 * MIN, T0)
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        j = self.job(q, "J0305")
+        self.assertEqual((j["for"], j["model"]), ("codex", "gpt-6-astra"))
+        self.assertTrue(self.ran("codex"))
+        self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())
+
+    def test_while_claude_is_up_its_jobs_stay_with_claude(self):
+        q = self.claude_setup('{"jobs": [{"id": "J0306", "kind": "script", "status": "open", "needs": "cloud"}, '
+                              '{"id": "J0307", "kind": "qa", "status": "blocked", "needs": "cloud", "result": "needs Ben: a sign-in", '
+                              '"history": [{"by": "claude", "what": "blocked: needs Ben: a sign-in"}]}]}')
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertNotIn("for", self.job(q, "J0306"))
+        self.assertNotIn("for", self.job(q, "J0307"))  # an ordinary block is not a usage limit
+        self.assertFalse(cr.claude_out(cr.now())[0])
+
+    def test_a_claude_ledger_note_about_its_limit_counts_as_out(self):
+        led = self.tmp / "owb" / "05_Analytics" / "ai_spend"
+        led.mkdir(parents=True)
+        cr.OWB = self.tmp / "owb"
+        (led / "ledger.jsonl").write_text('{"at": "%s", "kind": "record", "pool": "claude", "note": "hit the 5-hour limit"}\n'
+                                          % cr.iso(T0 - 30 * MIN))
+        self.assertTrue(cr.claude_out(T0)[0])
+        self.assertFalse(cr.claude_out(T0 + 6 * 60 * MIN)[0])  # older than CHIEF_CLAUDE_OUT_H (5 h)
+
+    def test_cursor_gets_the_claude_model_flag_only_for_claude_work(self):
+        _, args = cr.cli_spec("cursor", "cursor-claude-opus-5-5")
+        self.assertEqual(args[-2:], ["--model", "claude-opus-5-5"])
+        _, args = cr.cli_spec("cursor", "cursor-auto")
+        self.assertNotIn("--model", args)
+        _, args = cr.cli_spec("cursor", "gpt-6-astra")
+        self.assertNotIn("--model", args)
+
+
+    def test_heartbeat_is_one_parentless_commit_on_its_own_branch(self):
+        import json, subprocess
+        remote, repo = self.tmp / "remote.git", self.tmp / "repo"
+        subprocess.run(["git", "init", "-q", "--bare", str(remote)], check=True)
+        subprocess.run(["git", "init", "-q", str(repo)], check=True)
+        for k, v in (("user.name", "t"), ("user.email", "t@t")):
+            subprocess.run(["git", "-C", str(repo), "config", k, v], check=True)
+        subprocess.run(["git", "-C", str(repo), "remote", "add", "origin", str(remote)], check=True)
+        old_owb = cr.OWB
+        try:
+            cr.OWB = repo
+            os.environ["CHIEF_HEARTBEAT"] = "1"
+            cr.push_heartbeat(T0, "idle", "cursor", "nothing queued")
+            cr.push_heartbeat(T0 + 10 * MIN, "running", "cursor", "woke Cursor")
+        finally:
+            cr.OWB = old_owb
+        log = subprocess.run(["git", "-C", str(remote), "log", "--format=%P|%s", "mini-heartbeat"], capture_output=True, text=True, check=True).stdout
+        self.assertEqual(len(log.strip().splitlines()), 1)  # replaced, not stacked
+        self.assertTrue(log.startswith("|"))  # no parent
+        doc = json.loads(subprocess.run(["git", "-C", str(remote), "show", "mini-heartbeat:heartbeat.json"], capture_output=True, text=True, check=True).stdout)
+        self.assertEqual((doc["state"], doc["agent"]), ("running", "cursor"))
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,10 @@
+VO CHECK — Light-speed 024 Short Mon 2 (GPS / relativity)
+Status: PASS
+Duration: 21.561s (raw 24.72s → pause-trim max_gap=0.4s)
+LUFS integrated: -20.9
+mean_volume: -23.6 dB | max_volume: -4.5 dB
+Pace: 155.8 wpm (56 words)
+Script vs Scribe: 98.25% match; see script_whisper_diff.json
+Fails: none
+Warns: none
+Notes: HOS vo_check.py crashed (faster-whisper/av metadata_errors on Py3.14). Used same loudness/silence gates + ElevenLabs Scribe word diff.

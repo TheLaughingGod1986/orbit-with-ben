@@ -51,6 +51,24 @@ Pull GB (or primary market) research for 5–8 terms.
 
 ---
 
+## 2b. Neighbour pass (blocking · 1 Oct 2026)
+
+At least **three** big education/space videos (≈1M+ views) on this subject. Copy from `templates/TOPIC_OPPORTUNITY_SCORE.md`. Package so Orbit can sit next to them in Suggested / related — **subject words only; never channel names** in title, description, or tags.
+
+| # | Views | Channel (internal) | id | Title | Words we may reuse |
+|---|------:|--------------------|----|-------|--------------------|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
+
+**Proposed description first line(s)** (use neighbour subject language; keep wonder brand):  
+
+**Proposed subject-only tags (5–8):**  
+
+**Locked title unchanged by this pass?** yes / no (default: keep locked title; neighbours inform desc + tags only)
+
+---
+
 ## 3. Title ABC (score before VO)
 
 **Growth System v2:** one promise · prefer ≤ ~60 characters · **do not** append `| Orbit's Cosmic Journey` (or similar series suffix). Brand lives in the content.

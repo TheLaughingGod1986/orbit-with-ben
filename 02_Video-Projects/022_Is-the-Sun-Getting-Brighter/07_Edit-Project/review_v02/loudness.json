@@ -1,0 +1,68 @@
+{
+  "film": "sun_first_cut_v02.mp4",
+  "duration_s": 518.667,
+  "integrated_lufs": -15.0,
+  "true_peak_dbtp": -0.7,
+  "lra_lu": 3.6,
+  "bed_alone": {
+    "integrated_lufs": -32.2,
+    "true_peak_dbtp": -19.8,
+    "lra_lu": 4.4
+  },
+  "vo_alone": {
+    "integrated_lufs": -20.5,
+    "true_peak_dbtp": -4.0,
+    "lra_lu": 4.4
+  },
+  "vo_to_bed_points": [
+    {
+      "t": 20.0,
+      "window_s": 10,
+      "vo_lufs": -20.1,
+      "bed_lufs": -33.7,
+      "vo_minus_bed_lu": 13.6,
+      "film_lufs": -14.7
+    },
+    {
+      "t": 120.0,
+      "window_s": 10,
+      "vo_lufs": -20.9,
+      "bed_lufs": -32.8,
+      "vo_minus_bed_lu": 11.9,
+      "film_lufs": -14.9
+    },
+    {
+      "t": 238.0,
+      "window_s": 10,
+      "vo_lufs": -21.5,
+      "bed_lufs": -33.3,
+      "vo_minus_bed_lu": 11.8,
+      "film_lufs": -16.7
+    },
+    {
+      "t": 330.0,
+      "window_s": 10,
+      "vo_lufs": -19.9,
+      "bed_lufs": -31.5,
+      "vo_minus_bed_lu": 11.6,
+      "film_lufs": -14.7
+    },
+    {
+      "t": 457.5,
+      "window_s": 10,
+      "vo_lufs": -20.1,
+      "bed_lufs": -31.8,
+      "vo_minus_bed_lu": 11.7,
+      "film_lufs": -15.1
+    },
+    {
+      "t": 495.0,
+      "window_s": 10,
+      "vo_lufs": -19.7,
+      "bed_lufs": -32.3,
+      "vo_minus_bed_lu": 12.6,
+      "film_lufs": -14.5
+    }
+  ],
+  "note": "Stems measured before the final loudnorm; the gap is VO stem minus bed stem in the same 10 s window."
+}

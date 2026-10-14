@@ -1,0 +1,80 @@
+{
+  "stem": "owb_sa_s6_titan_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6125827198"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 262,
+      "duration_s": 20.16
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 262,
+  "words": 45,
+  "duration_s": 20.16,
+  "loudness": {
+    "lufs_integrated": -20.1,
+    "mean_volume_db": -23.0,
+    "max_volume_db": -4.1
+  },
+  "sha256_mp3": "d9aa0530661f2830ce41e07d221771679a89413a5b7b9cf49262706aa68e964d",
+  "scribe": {
+    "transcript": "Standing on Titan feels like being 15 meters underwater. Stay, and I'll show you why NASA's going. The air on Saturn's biggest moon presses 60% harder than ours, so NASA is sending Dragonfly, a flying robot. It launches in 2028 and lands in 2034",
+    "script_words": 45,
+    "scribe_words": 44,
+    "match_rate_pct": 91.11,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "fifteen",
+          "metres"
+        ],
+        "scribe": [
+          "15",
+          "meters"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "sixty",
+          "percent"
+        ],
+        "scribe": [
+          "60"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 201657,
+      "limit": 209536,
+      "remaining": 7879
+    },
+    "after": {
+      "used": 201657,
+      "limit": 209536,
+      "remaining": 7879
+    },
+    "counter_delta": 0
+  },
+  "text": "Standing on Titan feels like being fifteen metres underwater. Stay, and I'll show you why NASA's going. The air on Saturn's biggest moon presses sixty percent harder than ours. So NASA is sending Dragonfly, a flying robot. It launches in 2028, and lands in 2034.",
+  "made_at": "2026-10-12T20:09:07+0100"
+}

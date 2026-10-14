@@ -1,0 +1,2817 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/024_LightSpeed_full_rough_v05c.mp4",
+  "edge_floor": 0.0039,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "2",
+      "cut": 2,
+      "t": 11.35,
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "why": [
+        "low detail: luma std 10.68 < 18.0",
+        "low detail: edge density 0.0012 < film p5 0.0039"
+      ]
+    },
+    {
+      "row": "6",
+      "cut": 7,
+      "t": 34.13,
+      "source": "starfield_b.mp4",
+      "why": [
+        "low detail: luma std 17.97 < 18.0"
+      ]
+    },
+    {
+      "row": "6",
+      "cut": 8,
+      "t": 38.62,
+      "source": "energy_a.mp4",
+      "why": [
+        "low detail: luma std 13.81 < 18.0"
+      ]
+    },
+    {
+      "row": "7",
+      "cut": 10,
+      "t": 47.02,
+      "source": "gpsclocks_a.mp4",
+      "why": [
+        "low detail: luma std 15.03 < 18.0"
+      ]
+    },
+    {
+      "row": "9",
+      "cut": 15,
+      "t": 69.38,
+      "source": "mapdrift_a.mp4",
+      "why": [
+        "low detail: luma std 15.42 < 18.0"
+      ]
+    },
+    {
+      "row": "9",
+      "cut": 16,
+      "t": 74.57,
+      "source": "mapdrift_a.mp4",
+      "why": [
+        "low detail: luma std 15.01 < 18.0"
+      ]
+    },
+    {
+      "row": "10",
+      "cut": 18,
+      "t": 82.25,
+      "source": "iss035e017673.jpg",
+      "why": [
+        "low detail: luma std 17.48 < 18.0"
+      ]
+    },
+    {
+      "row": "17",
+      "cut": 43,
+      "t": 186.67,
+      "source": "iss071e439624.jpg",
+      "why": [
+        "low detail: edge density 0.0023 < film p5 0.0039"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 47,
+      "t": 201.75,
+      "source": "iss071e439624.jpg",
+      "why": [
+        "low detail: edge density 0.0026 < film p5 0.0039"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 49,
+      "t": 211.18,
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "why": [
+        "low detail: luma std 14.14 < 18.0",
+        "low detail: edge density 0.0002 < film p5 0.0039"
+      ]
+    },
+    {
+      "row": "19",
+      "cut": 50,
+      "t": 214.53,
+      "source": "starfield_c.mp4",
+      "why": [
+        "low detail: luma std 16.77 < 18.0"
+      ]
+    },
+    {
+      "row": "21",
+      "cut": 54,
+      "t": 230.65,
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "why": [
+        "low detail: edge density 0.0002 < film p5 0.0039"
+      ]
+    },
+    {
+      "row": "21",
+      "cut": 55,
+      "t": 234.43,
+      "source": "starfield_d.mp4",
+      "why": [
+        "low detail: luma std 17.96 < 18.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 61,
+      "t": 261.37,
+      "source": "starfield_e.mp4",
+      "why": [
+        "low detail: luma std 16.49 < 18.0"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 62,
+      "t": 266.2,
+      "source": "starfield_e.mp4",
+      "why": [
+        "low detail: luma std 16.94 < 18.0"
+      ]
+    },
+    {
+      "row": "25",
+      "cut": 63,
+      "t": 271.58,
+      "source": "contraction_a.mp4",
+      "why": [
+        "low detail: luma std 17.89 < 18.0"
+      ]
+    },
+    {
+      "row": "25",
+      "cut": 66,
+      "t": 285.42,
+      "source": "contraction_b.mp4",
+      "why": [
+        "low detail: luma std 16.57 < 18.0"
+      ]
+    },
+    {
+      "row": "26",
+      "cut": 70,
+      "t": 304.3,
+      "source": "starfield_g.mp4",
+      "why": [
+        "low detail: luma std 17.51 < 18.0"
+      ]
+    },
+    {
+      "row": "30",
+      "cut": 75,
+      "t": 331.3,
+      "source": "energy_b.mp4",
+      "why": [
+        "low detail: luma std 13.71 < 18.0"
+      ]
+    },
+    {
+      "row": "30",
+      "cut": 78,
+      "t": 344.15,
+      "source": "energy_c.mp4",
+      "why": [
+        "low detail: luma std 14.17 < 18.0"
+      ]
+    },
+    {
+      "row": "30",
+      "cut": 79,
+      "t": 348.8,
+      "source": "energy_c.mp4",
+      "why": [
+        "low detail: luma std 17.66 < 18.0"
+      ]
+    },
+    {
+      "row": "31",
+      "cut": 82,
+      "t": 361.22,
+      "source": "energy_d.mp4",
+      "why": [
+        "low detail: luma std 14.23 < 18.0"
+      ]
+    },
+    {
+      "row": "31",
+      "cut": 83,
+      "t": 365.88,
+      "source": "energy_d.mp4",
+      "why": [
+        "low detail: luma std 16.4 < 18.0"
+      ]
+    },
+    {
+      "row": "35",
+      "cut": 94,
+      "t": 418.32,
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "why": [
+        "low detail: luma std 17.93 < 18.0",
+        "low detail: edge density 0.0007 < film p5 0.0039"
+      ]
+    },
+    {
+      "row": "36",
+      "cut": 96,
+      "t": 427.07,
+      "source": "iss040e085126.jpg",
+      "why": [
+        "low detail: luma std 10.22 < 18.0"
+      ]
+    },
+    {
+      "row": "37",
+      "cut": 102,
+      "t": 447.3,
+      "source": "gammaclocks_b.mp4",
+      "why": [
+        "low detail: luma std 17.02 < 18.0"
+      ]
+    },
+    {
+      "row": "38",
+      "cut": 103,
+      "t": 451.28,
+      "source": "gpsclocks_d.mp4",
+      "why": [
+        "low detail: luma std 13.98 < 18.0"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "1",
+      "cut": 0,
+      "t": 3.25,
+      "source": "starfield.mp4",
+      "note": "0:03 open: real-physics starfield on black, frame 0 reviewed at v03 (Chief to sign)",
+      "why": [
+        "near-black: mean 14.04, p95 68.0"
+      ]
+    },
+    {
+      "row": "2",
+      "cut": 2,
+      "t": 11.35,
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "note": "0:11 ISS night pass over Earth (NASA footage; Chief to sign)",
+      "why": [
+        "low detail: luma std 10.68 < 13.44 and edge density 0.0012 < 0.0259 (absolute floor)",
+        "near-black: mean 13.11, p95 25.0"
+      ]
+    },
+    {
+      "row": "10",
+      "cut": 18,
+      "t": 82.25,
+      "source": "iss035e017673.jpg",
+      "note": "1:22 ISS night still, Expedition 35 (Chief to sign)",
+      "why": [
+        "near-black: mean 13.12, p95 43.0"
+      ]
+    },
+    {
+      "row": "15",
+      "cut": 33,
+      "t": 143.25,
+      "source": "orbit_lightclock_omni_v01.mp4",
+      "note": "2:23 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+      "why": [
+        "near-black: mean 16.45, p95 59.0"
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 49,
+      "t": 211.18,
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "note": "3:31 Artemis I night launch (NASA footage; Chief to sign)",
+      "why": [
+        "near-black: mean 10.04, p95 14.0"
+      ]
+    },
+    {
+      "row": "22",
+      "cut": 57,
+      "t": 243.33,
+      "source": "iss040e085126.jpg",
+      "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+      "why": [
+        "near-black: mean 10.1, p95 30.0"
+      ]
+    },
+    {
+      "row": "27",
+      "cut": 72,
+      "t": 314.88,
+      "source": "orbit_returns_omni_v01.mp4",
+      "note": "5:15 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+      "why": [
+        "near-black: mean 19.48, p95 70.0"
+      ]
+    },
+    {
+      "row": "30",
+      "cut": 77,
+      "t": 339.63,
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "note": "5:40 Black Marble city lights (NASA; Chief to sign)",
+      "why": [
+        "near-black: mean 6.6, p95 27.0"
+      ]
+    },
+    {
+      "row": "35",
+      "cut": 94,
+      "t": 418.32,
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "note": "6:58 Artemis I night launch (NASA footage; Chief to sign)",
+      "why": [
+        "near-black: mean 4.92, p95 15.0"
+      ]
+    },
+    {
+      "row": "36",
+      "cut": 96,
+      "t": 427.07,
+      "source": "iss040e085126.jpg",
+      "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+      "why": [
+        "low detail: luma std 10.22 < 13.44 and edge density 0.0242 < 0.0259 (absolute floor)",
+        "near-black: mean 6.89, p95 20.0"
+      ]
+    },
+    {
+      "row": "36",
+      "cut": 98,
+      "t": 433.5,
+      "source": "iss040e091231.jpg",
+      "note": "7:14 ISS night still, Expedition 40 (Chief to sign)",
+      "why": [
+        "near-black: mean 11.95, p95 53.0"
+      ]
+    },
+    {
+      "row": "38",
+      "cut": 105,
+      "t": 461.2,
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "note": "7:41 ISS night pass over Earth (NASA footage; Chief to sign)",
+      "why": [
+        "near-black: mean 10.12, p95 13.0"
+      ]
+    },
+    {
+      "row": "39",
+      "cut": 109,
+      "t": 481.63,
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "note": "5:40 Black Marble city lights (NASA; Chief to sign)",
+      "why": [
+        "near-black: mean 13.84, p95 57.0"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "starfield.mp4",
+      "t": 3.25,
+      "std": 33.63,
+      "mean": 14.04,
+      "p95": 68.0,
+      "edge": 0.0994,
+      "hf": 22.03,
+      "lf": 13.21,
+      "std8": 16.35,
+      "edge8": 0.2545,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "0:03 open: real-physics starfield on black, frame 0 reviewed at v03 (Chief to sign)",
+        "why": [
+          "near-black: mean 14.04, p95 68.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "t": 8.08,
+      "std": 61.83,
+      "mean": 80.31,
+      "p95": 188.0,
+      "edge": 0.0406,
+      "hf": 6.43,
+      "lf": 60.14,
+      "std8": 61.05,
+      "edge8": 0.1192,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "t": 11.35,
+      "std": 10.68,
+      "mean": 13.11,
+      "p95": 25.0,
+      "edge": 0.0012,
+      "hf": 1.47,
+      "lf": 10.3,
+      "std8": 10.46,
+      "edge8": 0.0025,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "0:11 ISS night pass over Earth (NASA footage; Chief to sign)",
+        "why": [
+          "low detail: luma std 10.68 < 13.44 and edge density 0.0012 < 0.0259 (absolute floor)",
+          "near-black: mean 13.11, p95 25.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.68 < 18.0",
+        "low detail: edge density 0.0012 < film p5 0.0039"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "lightclock_a.mp4",
+      "t": 15.97,
+      "std": 20.11,
+      "mean": 50.41,
+      "p95": 68.0,
+      "edge": 0.0113,
+      "hf": 5.15,
+      "lf": 15.78,
+      "std8": 17.63,
+      "edge8": 0.0388,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "4",
+      "source": "starfield_a.mp4",
+      "t": 21.07,
+      "std": 18.54,
+      "mean": 49.14,
+      "p95": 69.0,
+      "edge": 0.0373,
+      "hf": 11.99,
+      "lf": 11.05,
+      "std8": 11.71,
+      "edge8": 0.0665,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "5",
+      "source": "GPS_Block_IIIA.jpg",
+      "t": 25.77,
+      "std": 57.91,
+      "mean": 31.91,
+      "p95": 152.0,
+      "edge": 0.0663,
+      "hf": 10.32,
+      "lf": 53.46,
+      "std8": 55.14,
+      "edge8": 0.1617,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.009,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 125,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "6",
+      "source": "lightclock_b.mp4",
+      "t": 30.43,
+      "std": 20.64,
+      "mean": 53.02,
+      "p95": 71.0,
+      "edge": 0.0102,
+      "hf": 5.03,
+      "lf": 16.27,
+      "std8": 18.72,
+      "edge8": 0.042,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "6",
+      "source": "starfield_b.mp4",
+      "t": 34.13,
+      "std": 17.97,
+      "mean": 51.59,
+      "p95": 72.0,
+      "edge": 0.035,
+      "hf": 11.3,
+      "lf": 11.0,
+      "std8": 11.68,
+      "edge8": 0.0596,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.97 < 18.0"
+      ]
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "energy_a.mp4",
+      "t": 38.62,
+      "std": 13.81,
+      "mean": 49.03,
+      "p95": 69.0,
+      "edge": 0.01,
+      "hf": 4.26,
+      "lf": 11.5,
+      "std8": 12.17,
+      "edge8": 0.0311,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.81 < 18.0"
+      ]
+    },
+    {
+      "cut": 9,
+      "row": "7",
+      "source": "GPS_Block_IIIA.jpg",
+      "t": 42.9,
+      "std": 64.23,
+      "mean": 43.96,
+      "p95": 187.0,
+      "edge": 0.0795,
+      "hf": 13.52,
+      "lf": 55.41,
+      "std8": 58.87,
+      "edge8": 0.2237,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.012,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 54,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "7",
+      "source": "gpsclocks_a.mp4",
+      "t": 47.02,
+      "std": 15.03,
+      "mean": 51.86,
+      "p95": 71.0,
+      "edge": 0.0164,
+      "hf": 5.43,
+      "lf": 12.93,
+      "std8": 13.3,
+      "edge8": 0.0103,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.03 < 18.0"
+      ]
+    },
+    {
+      "cut": 11,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "t": 51.53,
+      "std": 62.53,
+      "mean": 188.48,
+      "p95": 255.0,
+      "edge": 0.0843,
+      "hf": 9.54,
+      "lf": 58.77,
+      "std8": 60.19,
+      "edge8": 0.2864,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.003,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 79,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "8",
+      "source": "gpsclocks_b.mp4",
+      "t": 56.2,
+      "std": 18.98,
+      "mean": 53.73,
+      "p95": 71.0,
+      "edge": 0.0188,
+      "hf": 7.04,
+      "lf": 14.33,
+      "std8": 15.4,
+      "edge8": 0.022,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 13,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "t": 60.62,
+      "std": 52.72,
+      "mean": 145.18,
+      "p95": 222.0,
+      "edge": 0.0982,
+      "hf": 9.16,
+      "lf": 46.81,
+      "std8": 49.11,
+      "edge8": 0.3546,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.003,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 63,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 14,
+      "row": "8",
+      "source": "gpsclocks_c.mp4",
+      "t": 64.62,
+      "std": 21.02,
+      "mean": 55.16,
+      "p95": 71.0,
+      "edge": 0.0197,
+      "hf": 7.92,
+      "lf": 14.87,
+      "std8": 16.42,
+      "edge8": 0.029,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "9",
+      "source": "mapdrift_a.mp4",
+      "t": 69.38,
+      "std": 15.42,
+      "mean": 50.4,
+      "p95": 66.0,
+      "edge": 0.0508,
+      "hf": 9.38,
+      "lf": 10.25,
+      "std8": 10.9,
+      "edge8": 0.028,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.42 < 18.0"
+      ]
+    },
+    {
+      "cut": 16,
+      "row": "9",
+      "source": "mapdrift_a.mp4",
+      "t": 74.57,
+      "std": 15.01,
+      "mean": 51.98,
+      "p95": 67.0,
+      "edge": 0.045,
+      "hf": 8.76,
+      "lf": 10.14,
+      "std8": 10.76,
+      "edge8": 0.0298,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.01 < 18.0"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "9",
+      "source": "mapdrift_a.mp4",
+      "t": 78.62,
+      "std": 22.34,
+      "mean": 54.02,
+      "p95": 69.0,
+      "edge": 0.0462,
+      "hf": 10.51,
+      "lf": 13.67,
+      "std8": 15.48,
+      "edge8": 0.0556,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 18,
+      "row": "10",
+      "source": "iss035e017673.jpg",
+      "t": 82.25,
+      "std": 17.48,
+      "mean": 13.12,
+      "p95": 43.0,
+      "edge": 0.0728,
+      "hf": 8.85,
+      "lf": 12.23,
+      "std8": 13.55,
+      "edge8": 0.0879,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.004,
+        "max_off_trend_px": 0.013,
+        "reversals": 0,
+        "frames": 123,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "1:22 ISS night still, Expedition 35 (Chief to sign)",
+        "why": [
+          "near-black: mean 13.12, p95 43.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.48 < 18.0"
+      ]
+    },
+    {
+      "cut": 19,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "t": 86.38,
+      "std": 50.28,
+      "mean": 114.39,
+      "p95": 231.0,
+      "edge": 0.1258,
+      "hf": 10.98,
+      "lf": 45.24,
+      "std8": 47.34,
+      "edge8": 0.2441,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.003,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 71,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "11",
+      "source": "EC98-44444-004.jpg",
+      "t": 91.0,
+      "std": 54.89,
+      "mean": 139.74,
+      "p95": 230.0,
+      "edge": 0.0876,
+      "hf": 8.56,
+      "lf": 51.48,
+      "std8": 52.69,
+      "edge8": 0.2695,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.006,
+        "reversals": 0,
+        "frames": 150,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 21,
+      "row": "11",
+      "source": "ED07-0256-09.jpg",
+      "t": 96.35,
+      "std": 37.75,
+      "mean": 126.9,
+      "p95": 206.0,
+      "edge": 0.1839,
+      "hf": 11.2,
+      "lf": 30.58,
+      "std8": 33.3,
+      "edge8": 0.3051,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.003,
+        "trend_y": -0.004,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 117,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "t": 101.3,
+      "std": 56.29,
+      "mean": 150.43,
+      "p95": 242.0,
+      "edge": 0.1444,
+      "hf": 9.69,
+      "lf": 52.13,
+      "std8": 53.72,
+      "edge8": 0.2594,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.006,
+        "reversals": 0,
+        "frames": 126,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "t": 105.52,
+      "std": 22.26,
+      "mean": 55.71,
+      "p95": 72.0,
+      "edge": 0.011,
+      "hf": 5.23,
+      "lf": 17.6,
+      "std8": 19.36,
+      "edge8": 0.0483,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "t": 108.73,
+      "std": 22.03,
+      "mean": 55.33,
+      "p95": 72.0,
+      "edge": 0.0107,
+      "hf": 5.2,
+      "lf": 17.47,
+      "std8": 20.05,
+      "edge8": 0.043,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "13",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "t": 112.13,
+      "std": 68.06,
+      "mean": 143.41,
+      "p95": 192.0,
+      "edge": 0.032,
+      "hf": 7.81,
+      "lf": 65.52,
+      "std8": 66.74,
+      "edge8": 0.172,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "13",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "t": 116.32,
+      "std": 65.6,
+      "mean": 148.96,
+      "p95": 192.0,
+      "edge": 0.021,
+      "hf": 3.91,
+      "lf": 64.62,
+      "std8": 65.25,
+      "edge8": 0.1241,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 27,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "t": 120.13,
+      "std": 19.54,
+      "mean": 50.76,
+      "p95": 70.0,
+      "edge": 0.0096,
+      "hf": 4.63,
+      "lf": 15.88,
+      "std8": 17.19,
+      "edge8": 0.0345,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 28,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "t": 124.22,
+      "std": 19.85,
+      "mean": 51.48,
+      "p95": 70.0,
+      "edge": 0.0099,
+      "hf": 4.8,
+      "lf": 15.78,
+      "std8": 17.83,
+      "edge8": 0.0369,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 29,
+      "row": "14",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "t": 128.98,
+      "std": 40.87,
+      "mean": 71.44,
+      "p95": 154.0,
+      "edge": 0.0104,
+      "hf": 3.08,
+      "lf": 40.02,
+      "std8": 40.39,
+      "edge8": 0.0465,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "t": 133.18,
+      "std": 21.73,
+      "mean": 54.34,
+      "p95": 71.0,
+      "edge": 0.0109,
+      "hf": 5.22,
+      "lf": 17.02,
+      "std8": 19.6,
+      "edge8": 0.0452,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 31,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "t": 136.77,
+      "std": 21.49,
+      "mean": 53.68,
+      "p95": 71.0,
+      "edge": 0.011,
+      "hf": 5.14,
+      "lf": 17.01,
+      "std8": 19.56,
+      "edge8": 0.0438,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "t": 139.83,
+      "std": 21.36,
+      "mean": 52.78,
+      "p95": 71.0,
+      "edge": 0.0109,
+      "hf": 5.12,
+      "lf": 16.99,
+      "std8": 19.27,
+      "edge8": 0.0425,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 33,
+      "row": "15",
+      "source": "orbit_lightclock_omni_v01.mp4",
+      "t": 143.25,
+      "std": 29.43,
+      "mean": 16.45,
+      "p95": 59.0,
+      "edge": 0.0504,
+      "hf": 10.93,
+      "lf": 23.24,
+      "std8": 25.15,
+      "edge8": 0.1104,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "2:23 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+        "why": [
+          "near-black: mean 16.45, p95 59.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "t": 147.68,
+      "std": 20.39,
+      "mean": 51.94,
+      "p95": 72.0,
+      "edge": 0.011,
+      "hf": 4.99,
+      "lf": 16.35,
+      "std8": 18.61,
+      "edge8": 0.0368,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 35,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "t": 152.07,
+      "std": 19.01,
+      "mean": 52.01,
+      "p95": 72.0,
+      "edge": 0.0098,
+      "hf": 4.8,
+      "lf": 14.95,
+      "std8": 16.11,
+      "edge8": 0.0327,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 36,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "t": 155.28,
+      "std": 21.0,
+      "mean": 52.95,
+      "p95": 73.0,
+      "edge": 0.0111,
+      "hf": 5.2,
+      "lf": 16.39,
+      "std8": 17.53,
+      "edge8": 0.0416,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 37,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "t": 159.13,
+      "std": 18.29,
+      "mean": 49.91,
+      "p95": 70.0,
+      "edge": 0.0341,
+      "hf": 8.24,
+      "lf": 12.11,
+      "std8": 13.62,
+      "edge8": 0.0434,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 38,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "t": 164.37,
+      "std": 20.57,
+      "mean": 51.27,
+      "p95": 70.0,
+      "edge": 0.0362,
+      "hf": 9.12,
+      "lf": 12.95,
+      "std8": 14.92,
+      "edge8": 0.0644,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 39,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "t": 169.05,
+      "std": 22.57,
+      "mean": 52.41,
+      "p95": 70.0,
+      "edge": 0.0391,
+      "hf": 10.01,
+      "lf": 13.87,
+      "std8": 16.11,
+      "edge8": 0.0856,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 40,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "t": 173.5,
+      "std": 25.03,
+      "mean": 53.14,
+      "p95": 71.0,
+      "edge": 0.0423,
+      "hf": 11.02,
+      "lf": 15.16,
+      "std8": 17.9,
+      "edge8": 0.1087,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 41,
+      "row": "17",
+      "source": "muons_a.mp4",
+      "t": 177.68,
+      "std": 23.22,
+      "mean": 52.29,
+      "p95": 81.0,
+      "edge": 0.0764,
+      "hf": 12.84,
+      "lf": 13.26,
+      "std8": 15.51,
+      "edge8": 0.1467,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 42,
+      "row": "17",
+      "source": "muons_a.mp4",
+      "t": 181.98,
+      "std": 23.15,
+      "mean": 53.06,
+      "p95": 81.0,
+      "edge": 0.075,
+      "hf": 12.64,
+      "lf": 13.13,
+      "std8": 15.37,
+      "edge8": 0.1462,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 43,
+      "row": "17",
+      "source": "iss071e439624.jpg",
+      "t": 186.67,
+      "std": 63.9,
+      "mean": 28.15,
+      "p95": 207.0,
+      "edge": 0.0023,
+      "hf": 1.34,
+      "lf": 63.03,
+      "std8": 63.82,
+      "edge8": 0.1178,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 95,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0023 < film p5 0.0039"
+      ]
+    },
+    {
+      "cut": 44,
+      "row": "17",
+      "source": "muons_b.mp4",
+      "t": 190.78,
+      "std": 23.14,
+      "mean": 53.23,
+      "p95": 78.0,
+      "edge": 0.0687,
+      "hf": 12.92,
+      "lf": 12.89,
+      "std8": 15.18,
+      "edge8": 0.163,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 45,
+      "row": "17",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "t": 193.98,
+      "std": 91.99,
+      "mean": 129.03,
+      "p95": 241.0,
+      "edge": 0.0175,
+      "hf": 5.94,
+      "lf": 90.19,
+      "std8": 91.16,
+      "edge8": 0.2284,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 46,
+      "row": "17",
+      "source": "muons_c.mp4",
+      "t": 197.08,
+      "std": 23.25,
+      "mean": 54.03,
+      "p95": 85.0,
+      "edge": 0.0801,
+      "hf": 12.84,
+      "lf": 12.6,
+      "std8": 15.28,
+      "edge8": 0.1324,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 47,
+      "row": "18",
+      "source": "iss071e439624.jpg",
+      "t": 201.75,
+      "std": 82.21,
+      "mean": 56.04,
+      "p95": 246.0,
+      "edge": 0.0026,
+      "hf": 3.59,
+      "lf": 81.42,
+      "std8": 81.96,
+      "edge8": 0.0891,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 135,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0026 < film p5 0.0039"
+      ]
+    },
+    {
+      "cut": 48,
+      "row": "18",
+      "source": "muons_d.mp4",
+      "t": 206.87,
+      "std": 21.67,
+      "mean": 52.21,
+      "p95": 73.0,
+      "edge": 0.0648,
+      "hf": 11.86,
+      "lf": 12.49,
+      "std8": 14.67,
+      "edge8": 0.1291,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 49,
+      "row": "18",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "t": 211.18,
+      "std": 14.14,
+      "mean": 10.04,
+      "p95": 14.0,
+      "edge": 0.0002,
+      "hf": 0.21,
+      "lf": 13.76,
+      "std8": 14.07,
+      "edge8": 0.0118,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "3:31 Artemis I night launch (NASA footage; Chief to sign)",
+        "why": [
+          "near-black: mean 10.04, p95 14.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.14 < 18.0",
+        "low detail: edge density 0.0002 < film p5 0.0039"
+      ]
+    },
+    {
+      "cut": 50,
+      "row": "19",
+      "source": "starfield_c.mp4",
+      "t": 214.53,
+      "std": 16.77,
+      "mean": 54.15,
+      "p95": 71.0,
+      "edge": 0.0317,
+      "hf": 10.94,
+      "lf": 9.59,
+      "std8": 10.27,
+      "edge8": 0.0554,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.77 < 18.0"
+      ]
+    },
+    {
+      "cut": 51,
+      "row": "19",
+      "source": "starfield_c.mp4",
+      "t": 217.78,
+      "std": 20.04,
+      "mean": 54.41,
+      "p95": 71.0,
+      "edge": 0.0407,
+      "hf": 12.65,
+      "lf": 11.26,
+      "std8": 12.35,
+      "edge8": 0.0765,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 52,
+      "row": "20",
+      "source": "starfield_c.mp4",
+      "t": 221.78,
+      "std": 21.78,
+      "mean": 53.93,
+      "p95": 72.0,
+      "edge": 0.0566,
+      "hf": 13.96,
+      "lf": 11.41,
+      "std8": 12.6,
+      "edge8": 0.1264,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 53,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "t": 226.12,
+      "std": 32.69,
+      "mean": 42.34,
+      "p95": 92.0,
+      "edge": 0.0068,
+      "hf": 4.37,
+      "lf": 30.82,
+      "std8": 31.62,
+      "edge8": 0.0522,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 54,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "t": 230.65,
+      "std": 47.0,
+      "mean": 80.33,
+      "p95": 182.0,
+      "edge": 0.0002,
+      "hf": 0.52,
+      "lf": 46.84,
+      "std8": 47.01,
+      "edge8": 0.0191,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0039"
+      ]
+    },
+    {
+      "cut": 55,
+      "row": "21",
+      "source": "starfield_d.mp4",
+      "t": 234.43,
+      "std": 17.96,
+      "mean": 50.33,
+      "p95": 67.0,
+      "edge": 0.0373,
+      "hf": 11.92,
+      "lf": 9.99,
+      "std8": 10.79,
+      "edge8": 0.0737,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.96 < 18.0"
+      ]
+    },
+    {
+      "cut": 56,
+      "row": "22",
+      "source": "twinclocks_a.mp4",
+      "t": 238.27,
+      "std": 20.07,
+      "mean": 50.54,
+      "p95": 67.0,
+      "edge": 0.0344,
+      "hf": 8.71,
+      "lf": 13.1,
+      "std8": 14.82,
+      "edge8": 0.0768,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 57,
+      "row": "22",
+      "source": "iss040e085126.jpg",
+      "t": 243.33,
+      "std": 29.6,
+      "mean": 10.1,
+      "p95": 30.0,
+      "edge": 0.0227,
+      "hf": 6.49,
+      "lf": 25.13,
+      "std8": 26.93,
+      "edge8": 0.0588,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.003,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 128,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "why": [
+          "near-black: mean 10.1, p95 30.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 58,
+      "row": "22",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "t": 247.33,
+      "std": 57.43,
+      "mean": 106.99,
+      "p95": 191.0,
+      "edge": 0.1447,
+      "hf": 9.77,
+      "lf": 53.69,
+      "std8": 55.07,
+      "edge8": 0.3416,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 59,
+      "row": "22",
+      "source": "twinclocks_b.mp4",
+      "t": 251.2,
+      "std": 20.4,
+      "mean": 53.21,
+      "p95": 71.0,
+      "edge": 0.0328,
+      "hf": 8.49,
+      "lf": 13.62,
+      "std8": 15.38,
+      "edge8": 0.0845,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 60,
+      "row": "23",
+      "source": "iss019e018483.jpg",
+      "t": 256.55,
+      "std": 55.62,
+      "mean": 94.59,
+      "p95": 190.0,
+      "edge": 0.2,
+      "hf": 14.3,
+      "lf": 45.52,
+      "std8": 49.39,
+      "edge8": 0.5447,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.013,
+        "reversals": 0,
+        "frames": 147,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 61,
+      "row": "24",
+      "source": "starfield_e.mp4",
+      "t": 261.37,
+      "std": 16.49,
+      "mean": 53.02,
+      "p95": 68.0,
+      "edge": 0.0306,
+      "hf": 10.78,
+      "lf": 9.59,
+      "std8": 10.25,
+      "edge8": 0.0542,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.49 < 18.0"
+      ]
+    },
+    {
+      "cut": 62,
+      "row": "24",
+      "source": "starfield_e.mp4",
+      "t": 266.2,
+      "std": 16.94,
+      "mean": 53.05,
+      "p95": 69.0,
+      "edge": 0.0332,
+      "hf": 10.93,
+      "lf": 9.83,
+      "std8": 10.52,
+      "edge8": 0.0618,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.94 < 18.0"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "25",
+      "source": "contraction_a.mp4",
+      "t": 271.58,
+      "std": 17.89,
+      "mean": 50.09,
+      "p95": 69.0,
+      "edge": 0.0288,
+      "hf": 7.37,
+      "lf": 13.84,
+      "std8": 14.63,
+      "edge8": 0.0334,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.89 < 18.0"
+      ]
+    },
+    {
+      "cut": 64,
+      "row": "25",
+      "source": "contraction_a.mp4",
+      "t": 277.05,
+      "std": 21.62,
+      "mean": 52.12,
+      "p95": 70.0,
+      "edge": 0.0282,
+      "hf": 8.42,
+      "lf": 15.69,
+      "std8": 17.28,
+      "edge8": 0.0404,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 65,
+      "row": "25",
+      "source": "contraction_b.mp4",
+      "t": 281.98,
+      "std": 21.37,
+      "mean": 52.72,
+      "p95": 70.0,
+      "edge": 0.0281,
+      "hf": 8.3,
+      "lf": 15.27,
+      "std8": 16.99,
+      "edge8": 0.0495,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "25",
+      "source": "contraction_b.mp4",
+      "t": 285.42,
+      "std": 16.57,
+      "mean": 52.17,
+      "p95": 70.0,
+      "edge": 0.0242,
+      "hf": 6.42,
+      "lf": 13.28,
+      "std8": 13.98,
+      "edge8": 0.0316,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.57 < 18.0"
+      ]
+    },
+    {
+      "cut": 67,
+      "row": "26",
+      "source": "twinclocks_c.mp4",
+      "t": 289.32,
+      "std": 21.67,
+      "mean": 55.84,
+      "p95": 70.0,
+      "edge": 0.0324,
+      "hf": 9.13,
+      "lf": 13.44,
+      "std8": 15.53,
+      "edge8": 0.0987,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "26",
+      "source": "starfield_f.mp4",
+      "t": 294.5,
+      "std": 18.07,
+      "mean": 51.6,
+      "p95": 66.0,
+      "edge": 0.0368,
+      "hf": 11.99,
+      "lf": 10.25,
+      "std8": 10.99,
+      "edge8": 0.0633,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 69,
+      "row": "26",
+      "source": "twinclocks_d.mp4",
+      "t": 299.5,
+      "std": 19.36,
+      "mean": 51.14,
+      "p95": 69.0,
+      "edge": 0.0332,
+      "hf": 8.39,
+      "lf": 12.85,
+      "std8": 14.41,
+      "edge8": 0.08,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 70,
+      "row": "26",
+      "source": "starfield_g.mp4",
+      "t": 304.3,
+      "std": 17.51,
+      "mean": 52.17,
+      "p95": 71.0,
+      "edge": 0.033,
+      "hf": 11.31,
+      "lf": 10.4,
+      "std8": 11.07,
+      "edge8": 0.0551,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.51 < 18.0"
+      ]
+    },
+    {
+      "cut": 71,
+      "row": "26",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "t": 309.78,
+      "std": 78.32,
+      "mean": 96.88,
+      "p95": 188.0,
+      "edge": 0.062,
+      "hf": 9.97,
+      "lf": 75.84,
+      "std8": 77.02,
+      "edge8": 0.2033,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 72,
+      "row": "27",
+      "source": "orbit_returns_omni_v01.mp4",
+      "t": 314.88,
+      "std": 26.9,
+      "mean": 19.48,
+      "p95": 70.0,
+      "edge": 0.0558,
+      "hf": 6.58,
+      "lf": 22.19,
+      "std8": 24.06,
+      "edge8": 0.1402,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "5:15 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+        "why": [
+          "near-black: mean 19.48, p95 70.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "28",
+      "source": "ED07-0256-09.jpg",
+      "t": 320.48,
+      "std": 43.86,
+      "mean": 127.91,
+      "p95": 220.0,
+      "edge": 0.1082,
+      "hf": 8.88,
+      "lf": 38.59,
+      "std8": 40.72,
+      "edge8": 0.2926,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 178,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 74,
+      "row": "29",
+      "source": "SSC-20240229-s00309.tif",
+      "t": 326.7,
+      "std": 55.54,
+      "mean": 129.26,
+      "p95": 218.0,
+      "edge": 0.1777,
+      "hf": 14.56,
+      "lf": 48.5,
+      "std8": 50.76,
+      "edge8": 0.4167,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 140,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 75,
+      "row": "30",
+      "source": "energy_b.mp4",
+      "t": 331.3,
+      "std": 13.71,
+      "mean": 50.49,
+      "p95": 65.0,
+      "edge": 0.021,
+      "hf": 5.94,
+      "lf": 10.46,
+      "std8": 11.06,
+      "edge8": 0.0104,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.71 < 18.0"
+      ]
+    },
+    {
+      "cut": 76,
+      "row": "30",
+      "source": "SSC-2015-00064.jpg",
+      "t": 335.17,
+      "std": 56.21,
+      "mean": 69.58,
+      "p95": 190.0,
+      "edge": 0.0662,
+      "hf": 8.29,
+      "lf": 53.67,
+      "std8": 54.66,
+      "edge8": 0.1808,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 96,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 77,
+      "row": "30",
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "t": 339.63,
+      "std": 18.98,
+      "mean": 6.6,
+      "p95": 27.0,
+      "edge": 0.0161,
+      "hf": 5.08,
+      "lf": 15.58,
+      "std8": 16.83,
+      "edge8": 0.0469,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": 0.003,
+        "max_off_trend_px": 0.021,
+        "reversals": 0,
+        "frames": 116,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "5:40 Black Marble city lights (NASA; Chief to sign)",
+        "why": [
+          "near-black: mean 6.6, p95 27.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 78,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "t": 344.15,
+      "std": 14.17,
+      "mean": 52.63,
+      "p95": 66.0,
+      "edge": 0.022,
+      "hf": 5.94,
+      "lf": 10.6,
+      "std8": 11.47,
+      "edge8": 0.0446,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.17 < 18.0"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "t": 348.8,
+      "std": 17.66,
+      "mean": 52.94,
+      "p95": 67.0,
+      "edge": 0.0204,
+      "hf": 6.14,
+      "lf": 13.62,
+      "std8": 14.72,
+      "edge8": 0.0357,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.66 < 18.0"
+      ]
+    },
+    {
+      "cut": 80,
+      "row": "31",
+      "source": "energy_c.mp4",
+      "t": 353.82,
+      "std": 22.07,
+      "mean": 52.12,
+      "p95": 69.0,
+      "edge": 0.0254,
+      "hf": 6.9,
+      "lf": 17.37,
+      "std8": 19.04,
+      "edge8": 0.0495,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 81,
+      "row": "31",
+      "source": "SSC-20240229-s00309.tif",
+      "t": 357.73,
+      "std": 48.53,
+      "mean": 134.58,
+      "p95": 212.0,
+      "edge": 0.1023,
+      "hf": 8.44,
+      "lf": 43.51,
+      "std8": 45.12,
+      "edge8": 0.3714,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 59,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 82,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "t": 361.22,
+      "std": 14.23,
+      "mean": 49.82,
+      "p95": 66.0,
+      "edge": 0.0224,
+      "hf": 6.23,
+      "lf": 10.95,
+      "std8": 11.75,
+      "edge8": 0.036,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.23 < 18.0"
+      ]
+    },
+    {
+      "cut": 83,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "t": 365.88,
+      "std": 16.4,
+      "mean": 51.32,
+      "p95": 68.0,
+      "edge": 0.0214,
+      "hf": 6.22,
+      "lf": 12.68,
+      "std8": 13.59,
+      "edge8": 0.0339,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.4 < 18.0"
+      ]
+    },
+    {
+      "cut": 84,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "t": 371.05,
+      "std": 29.74,
+      "mean": 115.52,
+      "p95": 164.0,
+      "edge": 0.0105,
+      "hf": 4.02,
+      "lf": 28.8,
+      "std8": 29.16,
+      "edge8": 0.0466,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 125,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 85,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "t": 376.25,
+      "std": 29.67,
+      "mean": 110.26,
+      "p95": 162.0,
+      "edge": 0.0103,
+      "hf": 4.66,
+      "lf": 28.79,
+      "std8": 29.09,
+      "edge8": 0.0299,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 131,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 86,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "t": 381.83,
+      "std": 58.86,
+      "mean": 77.96,
+      "p95": 189.0,
+      "edge": 0.1924,
+      "hf": 16.14,
+      "lf": 53.65,
+      "std8": 54.53,
+      "edge8": 0.3434,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.008,
+        "reversals": 0,
+        "frames": 149,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 87,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "t": 387.02,
+      "std": 43.2,
+      "mean": 86.59,
+      "p95": 145.0,
+      "edge": 0.0986,
+      "hf": 10.48,
+      "lf": 39.13,
+      "std8": 39.84,
+      "edge8": 0.2036,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 108,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 88,
+      "row": "34",
+      "source": "ACS3_SolarSailSunrise.png",
+      "t": 391.27,
+      "std": 61.72,
+      "mean": 57.52,
+      "p95": 173.0,
+      "edge": 0.0218,
+      "hf": 4.71,
+      "lf": 60.51,
+      "std8": 61.13,
+      "edge8": 0.1367,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.006,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 93,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 89,
+      "row": "34",
+      "source": "ACS3_LookingDown.png",
+      "t": 396.02,
+      "std": 56.4,
+      "mean": 95.12,
+      "p95": 192.0,
+      "edge": 0.0395,
+      "hf": 8.67,
+      "lf": 53.89,
+      "std8": 54.81,
+      "edge8": 0.2389,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.004,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.033,
+        "reversals": 0,
+        "frames": 138,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 90,
+      "row": "35",
+      "source": "starfield_h.mp4",
+      "t": 400.42,
+      "std": 24.97,
+      "mean": 51.09,
+      "p95": 71.0,
+      "edge": 0.0437,
+      "hf": 13.82,
+      "lf": 14.3,
+      "std8": 16.6,
+      "edge8": 0.0877,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 91,
+      "row": "35",
+      "source": "starfield_h.mp4",
+      "t": 404.37,
+      "std": 18.8,
+      "mean": 50.64,
+      "p95": 70.0,
+      "edge": 0.0395,
+      "hf": 11.95,
+      "lf": 11.18,
+      "std8": 11.94,
+      "edge8": 0.075,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 92,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "t": 409.58,
+      "std": 41.64,
+      "mean": 38.97,
+      "p95": 121.0,
+      "edge": 0.0173,
+      "hf": 3.88,
+      "lf": 40.88,
+      "std8": 41.22,
+      "edge8": 0.0765,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 148,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 93,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "t": 414.3,
+      "std": 43.45,
+      "mean": 79.57,
+      "p95": 166.0,
+      "edge": 0.1121,
+      "hf": 8.66,
+      "lf": 40.78,
+      "std8": 41.51,
+      "edge8": 0.1137,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 80,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 94,
+      "row": "35",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "t": 418.32,
+      "std": 17.93,
+      "mean": 4.92,
+      "p95": 15.0,
+      "edge": 0.0007,
+      "hf": 0.85,
+      "lf": 17.44,
+      "std8": 17.78,
+      "edge8": 0.0121,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "6:58 Artemis I night launch (NASA footage; Chief to sign)",
+        "why": [
+          "near-black: mean 4.92, p95 15.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.93 < 18.0",
+        "low detail: edge density 0.0007 < film p5 0.0039"
+      ]
+    },
+    {
+      "cut": 95,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "t": 422.87,
+      "std": 60.16,
+      "mean": 124.19,
+      "p95": 191.0,
+      "edge": 0.0628,
+      "hf": 8.13,
+      "lf": 57.62,
+      "std8": 58.54,
+      "edge8": 0.2016,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 96,
+      "row": "36",
+      "source": "iss040e085126.jpg",
+      "t": 427.07,
+      "std": 10.22,
+      "mean": 6.89,
+      "p95": 20.0,
+      "edge": 0.0242,
+      "hf": 4.61,
+      "lf": 6.77,
+      "std8": 7.71,
+      "edge8": 0.0439,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.003,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 84,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "why": [
+          "low detail: luma std 10.22 < 13.44 and edge density 0.0242 < 0.0259 (absolute floor)",
+          "near-black: mean 6.89, p95 20.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.22 < 18.0"
+      ]
+    },
+    {
+      "cut": 97,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "t": 430.47,
+      "std": 65.18,
+      "mean": 120.75,
+      "p95": 191.0,
+      "edge": 0.0764,
+      "hf": 7.06,
+      "lf": 63.17,
+      "std8": 64.09,
+      "edge8": 0.2448,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 98,
+      "row": "36",
+      "source": "iss040e091231.jpg",
+      "t": 433.5,
+      "std": 20.91,
+      "mean": 11.95,
+      "p95": 53.0,
+      "edge": 0.0705,
+      "hf": 7.63,
+      "lf": 16.03,
+      "std8": 17.45,
+      "edge8": 0.1462,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.003,
+        "trend_y": -0.003,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 62,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "7:14 ISS night still, Expedition 40 (Chief to sign)",
+        "why": [
+          "near-black: mean 11.95, p95 53.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 99,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "t": 436.78,
+      "std": 67.97,
+      "mean": 138.73,
+      "p95": 191.0,
+      "edge": 0.01,
+      "hf": 2.69,
+      "lf": 67.08,
+      "std8": 67.74,
+      "edge8": 0.1494,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 100,
+      "row": "37",
+      "source": "twinclocks_e.mp4",
+      "t": 440.5,
+      "std": 21.52,
+      "mean": 54.36,
+      "p95": 70.0,
+      "edge": 0.033,
+      "hf": 9.19,
+      "lf": 13.31,
+      "std8": 15.52,
+      "edge8": 0.0954,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 101,
+      "row": "37",
+      "source": "twinclocks_e.mp4",
+      "t": 444.22,
+      "std": 21.44,
+      "mean": 54.0,
+      "p95": 70.0,
+      "edge": 0.033,
+      "hf": 9.08,
+      "lf": 13.38,
+      "std8": 15.72,
+      "edge8": 0.0954,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 102,
+      "row": "37",
+      "source": "gammaclocks_b.mp4",
+      "t": 447.3,
+      "std": 17.02,
+      "mean": 51.3,
+      "p95": 70.0,
+      "edge": 0.0292,
+      "hf": 7.66,
+      "lf": 11.31,
+      "std8": 12.59,
+      "edge8": 0.0325,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.02 < 18.0"
+      ]
+    },
+    {
+      "cut": 103,
+      "row": "38",
+      "source": "gpsclocks_d.mp4",
+      "t": 451.28,
+      "std": 13.98,
+      "mean": 52.21,
+      "p95": 71.0,
+      "edge": 0.0159,
+      "hf": 5.25,
+      "lf": 11.91,
+      "std8": 12.35,
+      "edge8": 0.0078,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.98 < 18.0"
+      ]
+    },
+    {
+      "cut": 104,
+      "row": "38",
+      "source": "muons_e.mp4",
+      "t": 455.7,
+      "std": 24.21,
+      "mean": 53.81,
+      "p95": 79.0,
+      "edge": 0.0726,
+      "hf": 13.42,
+      "lf": 13.39,
+      "std8": 16.06,
+      "edge8": 0.1795,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 105,
+      "row": "38",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "t": 461.2,
+      "std": 24.88,
+      "mean": 10.12,
+      "p95": 13.0,
+      "edge": 0.0051,
+      "hf": 2.71,
+      "lf": 21.45,
+      "std8": 23.59,
+      "edge8": 0.0453,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "7:41 ISS night pass over Earth (NASA footage; Chief to sign)",
+        "why": [
+          "near-black: mean 10.12, p95 13.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 106,
+      "row": "39",
+      "source": "SSC-2015-00064.jpg",
+      "t": 467.6,
+      "std": 62.84,
+      "mean": 69.3,
+      "p95": 202.0,
+      "edge": 0.0663,
+      "hf": 9.31,
+      "lf": 59.67,
+      "std8": 61.01,
+      "edge8": 0.2345,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.007,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 132,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 107,
+      "row": "39",
+      "source": "EC98-44444-004.jpg",
+      "t": 472.97,
+      "std": 58.31,
+      "mean": 138.68,
+      "p95": 232.0,
+      "edge": 0.0931,
+      "hf": 8.97,
+      "lf": 54.83,
+      "std8": 56.12,
+      "edge8": 0.2727,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.015,
+        "reversals": 0,
+        "frames": 137,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 108,
+      "row": "39",
+      "source": "iss019e018483.jpg",
+      "t": 477.73,
+      "std": 53.56,
+      "mean": 97.66,
+      "p95": 187.0,
+      "edge": 0.1415,
+      "hf": 10.87,
+      "lf": 46.06,
+      "std8": 49.16,
+      "edge8": 0.4944,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.005,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 95,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 109,
+      "row": "39",
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "t": 481.63,
+      "std": 25.6,
+      "mean": 13.84,
+      "p95": 57.0,
+      "edge": 0.0241,
+      "hf": 5.08,
+      "lf": 22.03,
+      "std8": 23.53,
+      "edge8": 0.0682,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.012,
+        "reversals": 0,
+        "frames": 85,
+        "fail": false
+      },
+      "reviewed_ok": {
+        "note": "5:40 Black Marble city lights (NASA; Chief to sign)",
+        "why": [
+          "near-black: mean 13.84, p95 57.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 110,
+      "row": "39",
+      "source": "starfield_i.mp4",
+      "t": 487.27,
+      "std": 19.12,
+      "mean": 50.61,
+      "p95": 68.0,
+      "edge": 0.0418,
+      "hf": 12.58,
+      "lf": 10.78,
+      "std8": 11.56,
+      "edge8": 0.0769,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

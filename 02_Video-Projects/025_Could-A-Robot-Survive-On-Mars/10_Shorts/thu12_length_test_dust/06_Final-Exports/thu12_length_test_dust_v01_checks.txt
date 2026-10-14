@@ -1,0 +1,21 @@
+J0134 thu12_length_test_dust_v01.mp4 (sha256 7c399d5c…, 54.63 s) — loudness + caption-safe checks, 12 Oct 2026 (Cursor)
+
+Loudness (ffmpeg ebur128, peak=true)
+  Integrated -15.1 LUFS, LRA 4.4 LU, true peak -1.5 dBTP.  House: about -14 LUFS and -1 dBTP.
+  PASS with a note: 0.9 LU under -14, peak inside -1. A +0.5 dB audio-only lift (picture stream copied) would give
+  about -14.6 LUFS / -1.0 dBTP; not done, it would change the file Chief passed.
+  sfx_kit.py level: PASS (VO -20.4, SFX -38.3 LUFS).
+
+Caption-safe (text boxes measured from the assembler's own layout, 1080x1920)
+  Hook   SAVED BY / THE WIND  x 88-992,  y 166-454   clear of the top bar (y<~150). OK
+  Title  2 lines + long id    x 140-939, y 219-485   clear of top bar and right buttons. OK
+  Captions (49 groups)        x 68-1012, y 1608-1699
+    WARN: the caption line sits in the bottom strip where the Shorts player draws the channel name and title,
+    and 23 of 49 groups reach past x 940, under the right-hand button column / music disc.
+    Same layout (H*0.83, width 0.88W) as every shipped house Short (022 Mon/Wed/Fri, 025 Wed). Moving it
+    (e.g. y 0.70H, width 0.80W) is a re-render of the passed picture: Chief's call.
+
+Cover: 08_Covers/cover_thu12_length_test_dust.jpg (SAVED BY / yellow WIND, stack 80% of width, master frame 256.5 s,
+  PIA22909, 1.78x). Preview: 08_Covers/cover_thu12_preview.jpg.
+Package: 11_Upload-Package/PACKAGE_MANIFEST.json ("lengthTest": true, Private, publishAt 2026-11-12T11:30Z,
+  Related Js6EQJ8qDi8). youtube:package --dry-run PASS with gate_shorts_open --length-test.

@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-12T11:30:00.000Z",
+    "platformPostId": "N42gKBbD7tE",
+    "platformUrl": "https://youtu.be/N42gKBbD7tE",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-12T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"N42gKBbD7tE\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-12T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/11_Upload-Package",
+    "sha256": "7c399d5c3d75ac971a52fb1f8dc3e92aa41c7cf7b3fcc84cbf35a9cac82ed85e",
+    "title": "Why Wind Kept a Mars Rover Alive for 14 Years",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/08_Covers/cover_thu12_length_test_dust.jpg",
+    "scheduledAt": "2026-11-12T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/08_Covers/cover_thu12_length_test_dust.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6accce2cc1658fce94d88d72"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6accce2c5e5ffb1101e72216"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6accce2d0543a6114d444ceb"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "N42gKBbD7tE",
+    "studioEditUrl": "https://studio.youtube.com/video/N42gKBbD7tE/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/N42gKBbD7tE/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/N42gKBbD7tE/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/N42gKBbD7tE/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/N42gKBbD7tE/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: set Related video to Js6EQJ8qDi8 (that week’s Thursday long only). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/N42gKBbD7tE/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/N42gKBbD7tE/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (N42gKBbD7tE). 1 required Studio finish step(s) remain."
+  }
+}

@@ -6,6 +6,7 @@
  *   npx tsx scripts/update-shorts-listings.ts --file ../00_Brand/Channel-Setup/audits/vidiq_optimize_2026-09-03/SHORTS_LISTING_UPDATES.json
  *   npx tsx scripts/update-shorts-listings.ts --file ... --dry-run
  */
+import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
 import path from "path";
 import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
@@ -123,6 +124,8 @@ async function main() {
   fs.writeFileSync(out, JSON.stringify({ dry, finishedAt: new Date().toISOString(), results }, null, 2) + "\n");
   console.log(JSON.stringify({ wrote: out, n: results.length, dry }, null, 2));
 }
+
+ensureDeskLock();
 
 main().catch((e) => {
   console.error(e);

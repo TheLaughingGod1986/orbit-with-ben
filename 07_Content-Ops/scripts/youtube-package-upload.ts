@@ -12,6 +12,8 @@
  * Optional: PACKAGE_MANIFEST.json inside the package dir, or --manifest path.
  * After a live upload, writes *_PACKAGE_UPLOAD_RESULT.json into Schedule/ (or package root).
  */
+import { ensureDeskLock } from "./with-desk-lock";
+import { checkPackageDuplicate } from "../src/lib/publishing/package-duplicate";
 import fs from "fs";
 import path from "path";
 import { isDryRun } from "../src/lib/env";
@@ -27,6 +29,7 @@ import {
 import { REPO_ROOT, UPLOADS_FILE, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
 import { registerUpload } from "../src/lib/publishing/media-finder";
 import { mirrorVideo } from "../src/lib/publishing/buffer-runner";
+import { runShortsGate } from "../src/lib/publishing/shorts-gate";
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -50,7 +53,7 @@ async function main() {
   const packageDir = arg("package");
   if (!packageDir) {
     console.error(
-      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--no-buffer] [--standalone] [--dry-run]",
+      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--no-buffer] [--standalone] [--force-new] [--dry-run]",
     );
     process.exit(1);
   }
@@ -74,6 +77,24 @@ async function main() {
         arg("made-for-kids") != null ? parseBool(arg("made-for-kids"), false) : undefined,
     },
   });
+
+  const identity = await checkPackageDuplicate({
+    packageDir: resolved.packageDir, videoPath: resolved.videoPath,
+    uploadsFile: UPLOADS_FILE, repoRoot: REPO_ROOT, forceNew: flag("force-new"),
+  });
+
+  // Shorts ship gate: a hard stop, dry run included, so the dry run shows the verdict. No override (Never list).
+  if (resolved.format === "shorts") {
+    const gate = runShortsGate({
+      videoPath: resolved.videoPath, repoRoot: REPO_ROOT, scheduledAt: resolved.scheduledAt,
+      lengthTest: resolved.lengthTest,
+    });
+    console.log(gate.output);
+    if (!gate.ok) {
+      console.error(`gate_shorts_open FAILED (exit ${gate.exitCode}, air date ${gate.airDate}): not uploading. Fix the cut.`);
+      process.exit(1);
+    }
+  }
 
   // Dry runs never need the YouTube login.
   const accessToken = dryRun ? "" : await getYouTubeAccessToken();
@@ -138,6 +159,7 @@ async function main() {
   if (!dryRun && upload.success && upload.platformPostId) {
     // Record which files this upload came from, so the daily check can always find them.
     registerUpload(UPLOADS_FILE, REPO_ROOT, upload.platformPostId, {
+      ...identity,
       kind: resolved.format === "shorts" ? "short" : "long",
       file: resolved.videoPath,
       thumb: resolved.thumbnailPath ?? undefined,
@@ -184,6 +206,14 @@ async function main() {
     }
   }
 
+  // The upload succeeds even when YouTube refuses the thumbnail (403 on 022, 9 Oct): the reason is only in the message.
+  const thumbnailSkipped = /thumbnail skipped/i.test(upload.message || "");
+  if (!dryRun && resolved.thumbnailPath && thumbnailSkipped) {
+    console.error(
+      `THUMBNAIL NOT SET on ${upload.platformPostId}: ${upload.message}. Set it in Studio (or re-run the thumbnail) before go-live; the video shows an auto frame until then.`,
+    );
+  }
+
   const checklist = buildStudioFinishChecklist({
     videoId: upload.platformPostId || null,
     format: resolved.format,
@@ -192,7 +222,7 @@ async function main() {
     pinnedComment: resolved.pinnedComment,
     relatedVideoId: resolved.relatedVideoId,
     firstCommentPosted,
-    thumbnailSet: Boolean(resolved.thumbnailPath) && (dryRun || upload.success),
+    thumbnailSet: Boolean(resolved.thumbnailPath) && (dryRun || (upload.success && !thumbnailSkipped)),
     playlistAdded,
     playlistId: resolved.playlistId,
   });
@@ -211,6 +241,7 @@ async function main() {
       responseSummary: upload.responseSummary || null,
     },
     package: {
+      ...identity,
       title: resolved.title,
       format: resolved.format,
       privacy: resolved.privacy,
@@ -242,6 +273,8 @@ async function main() {
 
   if (!upload.success) process.exit(1);
 }
+
+ensureDeskLock();
 
 main().catch((e) => {
   console.error(e);

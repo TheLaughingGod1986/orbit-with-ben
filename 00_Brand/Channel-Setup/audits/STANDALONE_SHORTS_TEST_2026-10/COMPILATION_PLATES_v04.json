@@ -1,0 +1,244 @@
+{
+ "job": "J0167",
+ "step": "7a: picture_qa reuse re-picks",
+ "by": "cursor",
+ "at": "2026-10-13T04:05Z",
+ "method": "contact sheets of all five masters (1 frame / 15 s) plus single-frame checks at each pick (/private/tmp/owb_comp/sheets/cands.jpg). Each plate is a ~6 s window from the film's own passed cut, starting at `at` (seconds in the master). The builder lays one plate per spoken line from the VO's Scribe word times (vo_compilation_v01/stt/), 4-6 s each, ~0.4 s xfade, lanczos to 1080p30 on 019/007/005. A plate may carry `windows` instead of one `film`/`at`: the line is split at the VO gap before the window's `from` words (Scribe times). Window times in v03 are read from a 2 fps sheet made with the builder's own accurate input seek (the v01/v02 1 fps sheets ran about 1.5-2 s early around 013 @380).",
+ "masters": "/private/tmp/owb_comp/masters.json",
+ "rules_checked": [
+  "intro: no plate from the first 30 s of its own film",
+  "no plate within 10 s of the film's own out point or of the stretch next to the bridge it sits in",
+  "no master window used more than twice across the compilation (picture_qa)",
+  "no chapter cards or title cards from the films (007 @345 is a card: rejected)",
+  "Orbit only where the film already had him (005 plates are Orbit-heavy; picks avoid him where possible)",
+  "v04: picture_qa same-stretch rule: no footage window within 10 s of one already shown anywhere in the compilation (stricter than \"used at most twice\")"
+ ],
+ "segments": [
+  {
+   "segment": "intro",
+   "vo": "vo_compilation_v01/owb_comp_intro_vo_v01.wav",
+   "vo_s": 52.7,
+   "plates": [
+    {
+     "line": "Nothing you can see in the night sky is permanent.",
+     "film": "013",
+     "at": 420,
+     "what": "full Moon over the sea"
+    },
+    {
+     "line": "Not Saturn's rings.",
+     "film": "021",
+     "at": 150,
+     "what": "ring plane close-up"
+    },
+    {
+     "line": "Not the Moon, where it hangs tonight.",
+     "film": "013",
+     "at": 300,
+     "what": "Earth with the Moon beside it"
+    },
+    {
+     "line": "Not even the stars.",
+     "film": "007",
+     "at": 165,
+     "what": "white star"
+    },
+    {
+     "line": "Saturn's rings are raining into the planet right now.",
+     "film": "021",
+     "at": 60,
+     "what": "bright ring detail (verify at full size)"
+    },
+    {
+     "line": "The Moon drifts away from us by about three point eight centimetres every year.",
+     "film": "013",
+     "at": 383.0,
+     "what": "013 'Last Perfect Eclipse': the Sun beside a cratered Moon above the clouds (382.5-390 clean, after the chapter title clears at ~382.4; the film's own push-in cut at ~386.5; first use)",
+     "repick": "v02 013@60 turned into a green laser burst at ~1 s and a green Earth-Moon beam graphic at 2-3 s (diagram FAIL risk)"
+    },
+    {
+     "line": "Our galaxy is heading for a meeting with Andromeda.",
+     "film": "019",
+     "at": 180,
+     "what": "Andromeda approach",
+     "sfx": "rumble"
+    },
+    {
+     "line": "And every star will one day go out, even the very last one.",
+     "film": "005",
+     "at": 210,
+     "what": "star with a flare"
+    },
+    {
+     "line": "So how long does each of them have? That's this film. Five stories, one countdown.",
+     "film": "019",
+     "at": 315,
+     "what": "two galaxies meeting"
+    },
+    {
+     "line": "We start with the shortest clock ... about ten trillion years from now.",
+     "windows": [
+      {
+       "film": "019",
+       "at": 240.2,
+       "what": "019's antique clock face, slow push-in (240-247.9 clean)"
+      },
+      {
+       "film": "005",
+       "at": 172.2,
+       "what": "nebula field: a star flares and goes dark (172-179.9 clean, no Orbit)",
+       "from": "and end"
+      }
+     ],
+     "repick": "v01 005@345 ran into Orbit on a molecule-diagram wall at ~347 s (diagram FAIL risk, off the line)"
+    },
+    {
+     "line": "Every one of those clocks is still ticking. First, the rings.",
+     "film": "021",
+     "at": 255,
+     "what": "full Saturn, rings open"
+    }
+   ],
+   "then": "code_graphic_owbcomp_card_01 (J0207)"
+  },
+  {
+   "segment": "bridge1",
+   "vo": "vo_compilation_v01/owb_comp_bridge1_vo_v02.wav",
+   "vo_s": 15.44,
+   "plates": [
+    {
+     "line": "So the rings have somewhere between a hundred and three hundred million years. A blink, for Saturn.",
+     "film": "021",
+     "at": 360,
+     "what": "Saturn backlit, slow pull-out",
+     "overlay": "code_graphic_owbcomp_timeline_b1 (J0207), marker 1 + tick"
+    },
+    {
+     "line": "Closer to home, something else is leaving, far more slowly. Every year, the Moon moves a little further away.",
+     "what": "split: 013@270 Earth-Moon, then 013@139 Moon over canyon",
+     "windows": [
+      {
+       "film": "013",
+       "at": 270.0,
+       "what": "Earth with the Moon beside it (270-275.8 clean; cuts to a drawn orbit-line graphic at ~276, keep out)"
+      },
+      {
+       "film": "013",
+       "at": 139.0,
+       "what": "full Moon over a canyon; verified 13 Oct on a 2 fps input-seek sheet: canyon Moon 139-143.5, then a Moon over molten Earth from ~143.5, so start at 139.0 (window 139.0-143.3)",
+       "from": "Every year"
+      }
+     ],
+     "repick": "v03 013@300 repeated intro_03 013@300 (picture_qa: same stretch)"
+    }
+   ],
+   "then": "code_graphic_owbcomp_card_02 (J0207)"
+  },
+  {
+   "segment": "bridge2",
+   "vo": "vo_compilation_v01/owb_comp_bridge2_vo_v01.wav",
+   "plates": [
+    {
+     "line": "The Moon lets go a few centimetres at a time.",
+     "film": "013",
+     "at": 160.0,
+     "what": "full Moon over a rough sea (160-164.8 clean)",
+     "repick": "v03 013@420 repeated intro_01 013@420 (picture_qa: same stretch)"
+    },
+    {
+     "line": "But the biggest change coming to our sky ... billions of years away.",
+     "film": "019",
+     "at": 210,
+     "what": "Andromeda small and far in a dark field"
+    }
+   ],
+   "overlay": "none (timeline not back to back)",
+   "then": "code_graphic_owbcomp_card_03 (J0207)"
+  },
+  {
+   "segment": "bridge3",
+   "vo": "vo_compilation_v01/owb_comp_bridge3_vo_v01.wav",
+   "vo_s": 16.48,
+   "plates": [
+    {
+     "line": "When galaxies collide, almost every star sails through untouched.",
+     "film": "019",
+     "at": 495,
+     "what": "merged galaxy glow",
+     "overlay": "code_graphic_owbcomp_timeline_b3 (J0207), marker 2 + tick"
+    },
+    {
+     "line": "But no star lasts forever on its own. The biggest end in an explosion, and leave behind something so dense that a teaspoon of it would weigh as much as a mountain.",
+     "film": "007",
+     "at": 255,
+     "what": "neutron star with its beam"
+    }
+   ],
+   "then": "code_graphic_owbcomp_card_04 (J0207)"
+  },
+  {
+   "segment": "bridge4",
+   "vo": "vo_compilation_v01/owb_comp_bridge4_vo_v01.wav",
+   "plates": [
+    {
+     "line": "That's how the biggest stars end: fast, and violently.",
+     "film": "007",
+     "at": 60.0,
+     "what": "007 burning star into a supernova burst (60-65.5 clean, no Orbit)",
+     "repick": "v03 007@165 repeated intro_04 007@165 (picture_qa: same stretch)"
+    },
+    {
+     "line": "The smallest stars do the opposite ... long after every other star has gone out.",
+     "film": "005",
+     "at": 150,
+     "what": "starfield / nebula (005 sheet tile 10-11; verify no Orbit, else 005 @165)"
+    }
+   ],
+   "overlay": "none",
+   "then": "code_graphic_owbcomp_card_05 (J0207)"
+  },
+  {
+   "segment": "closing",
+   "vo": "vo_compilation_v01/owb_comp_closing_vo_v01.wav",
+   "vo_s": 20.08,
+   "plates": [
+    {
+     "line": "So that's the countdown. The Moon ... ten trillion years from now.",
+     "overlay": "code_graphic_owbcomp_timeline_close (J0207), marker 3 + tick, whole timeline reads sound-off",
+     "windows": [
+      {
+       "film": "013",
+       "at": 450.0,
+       "what": "013 total eclipse corona, then eclipse over a ridge (450-454.8 clean)"
+      },
+      {
+       "film": "005",
+       "at": 275.2,
+       "what": "ringed gas giant with a far star (275.2-283.0 clean, no Orbit)",
+       "from": "the rings"
+      },
+      {
+       "film": "005",
+       "at": 290.9,
+       "what": "burning world in a nebula shrinking to a dim ember (290.8-299 clean)",
+       "from": "galaxies merging"
+      }
+     ],
+     "repick": "v01 005@470 ran onto Orbit with constellation linework and sat within 20 s of 005's 488.05 out point; 005@275 alone was 0.3 s short of the line, so the line splits three ways; v03: closing_01a off 013@60 (green Earth-Moon beam graphic at 2-3 s) onto 013@388.3 eclipse; v04: closing_01a 013@391 sat within 10 s of intro_06 013@383 (picture_qa: same stretch), moved to 013@450"
+    },
+    {
+     "line": "Every clock in the sky is running. And right now, we get to see all of them at once.",
+     "film": "013",
+     "at": 505,
+     "what": "moonlit sea, today's night sky (from 013's trimmed outro, so not a repeat)",
+     "hold": "2-3 s past the last word, then fade"
+    }
+   ]
+  }
+ ],
+ "open_for_chief": {
+  "bed": "The plan lays the 005 Last Star bed under the new material, but 005 has no music stem anywhere (Mini, NAS 005 folder, NAS Desktop; checked 12 Oct 21:15Z). Options: (a) lift music-only stretches from the films' own trimmed outros (013 500.8-518.8 moonlit-sea outro, 019 612.8-620.3, 005 after its sign-off) and loop/crossfade them under each bridge, no spend; (b) one new compilation bed via generate_music_bed.py, which needs Chief's OK under the ElevenLabs credit hold until 30 Oct; (c) the house SFX kit drone only. Cursor recommends (a), with music_gate run on the result; music_gate's 'sounds like another film's bed' check will hit by design on a compilation, so Chief rules whether that check is waived here. Still open at plates v02 (no Chief reply to #99 6132695926 by 22:50Z).",
+  "orbit": "005 plates are Orbit-heavy; Orbit on screen in a long is allowed (Never list covers Short frame 0 and thumbnails only)."
+ },
+ "supersedes": "COMPILATION_PLATES_v03.json"
+}

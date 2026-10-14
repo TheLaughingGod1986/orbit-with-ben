@@ -54,6 +54,18 @@ Today we will explain the history of black holes in a calm lecture style.
 `;
 
 describe("script reviewer v2", () => {
+  it("rewards multiple science and escalation matches", () => {
+    const single = reviewScript(
+      "But gravity changes the view. Also motion changes the path. Also size shapes the scene. Also air fills the sky. Also energy crosses the gap. Also light reaches the detector.",
+    );
+    const multi = reviewScript(
+      "But gravity changes the view. However orbit changes the path. Then mass shapes the scene. Worse atmosphere fills the sky. Suddenly radiation crosses the gap. Now photon reaches the detector.",
+    );
+
+    expect(multi.scores.scientificAccuracy).toBeGreaterThan(single.scores.scientificAccuracy);
+    expect(multi.scores.escalation).toBeGreaterThan(single.scores.escalation);
+  });
+
   it("rejects weak definition / intro opens", () => {
     const result = reviewScript(WEAK_SCRIPT);
     expect(result.decision).toBe("REJECT");

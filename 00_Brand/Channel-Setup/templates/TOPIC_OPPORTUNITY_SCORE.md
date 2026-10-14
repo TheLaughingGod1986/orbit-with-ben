@@ -18,14 +18,29 @@ Rank future ideas on emotionally compelling questions. Prefer high scores; rejec
 | Evergreen potential | | |
 | Shorts potential | | 3–5 micro-stories |
 | Orbit brand fit | | |
+| Big-neighbour pool | | ≥3 education/space videos ≈1M+ views on this subject |
 
 **Orbit Opportunity Score** (average): ____ / 10
+
+## Neighbour pass (blocking before topic lock · 1 Oct 2026)
+
+List at least **three** big education or space videos (≈1M+ views) that already own this subject. Goal: sit next to them in Suggested / related. Do **not** put channel names in our public listing — harvest subject words only.
+
+| # | Views | Channel (internal note) | YouTube id | Title | Subject words to reuse |
+|---|------:|-------------------------|------------|-------|------------------------|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
+| 4+ | | | | | |
+
+**Pool strength:** strong / medium / weak  
+**Fail if fewer than three ≈1M+ neighbours** unless Ben overrides in writing.
 
 ## Decision
 
 - [ ] Produce now  
 - [ ] Park for later  
-- [ ] Reject (off-brand / weak)
+- [ ] Reject (off-brand / weak / neighbour pool too thin)
 
 ## Cluster sketch (if long)
 

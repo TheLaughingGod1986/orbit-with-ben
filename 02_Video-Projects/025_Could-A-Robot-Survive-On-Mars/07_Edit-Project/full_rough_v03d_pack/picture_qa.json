@@ -1,0 +1,1528 @@
+{
+  "verdict": "PASS",
+  "video": "/private/tmp/mars025_full_work_v03d/025_MarsRobot_full_rough_v03d.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 8,
+      "row": "5",
+      "source": "PIA19109.jpg",
+      "title": "High Viewpoint for 11-Year-Old Rover Mission on Mars",
+      "t": 35.7,
+      "at": "0:36",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.32 < 18.0"
+      ]
+    },
+    {
+      "cut": 12,
+      "row": "7",
+      "source": "PIA00382.jpg",
+      "title": "First Panoramic View From The Surface Of Mars",
+      "t": 53.75,
+      "at": "0:54",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.25x, may look soft"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "7",
+      "source": "PIA10738.jpg",
+      "title": "Mars Surface near Viking Lander 1 Footpad",
+      "t": 58.8,
+      "at": "0:59",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft"
+      ]
+    },
+    {
+      "cut": 16,
+      "row": "8",
+      "source": "PIA26559.jpg",
+      "title": "Curiosity's First 360-Degree View of Boxwork Patterns",
+      "t": 72.72,
+      "at": "1:13",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.22x, may look soft"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "8",
+      "source": "PIA25176.jpg",
+      "title": "Curiosity's 360-Degree Panorama of Gator-Back Rocks on Greenheugh",
+      "t": 76.67,
+      "at": "1:17",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.11x, may look soft"
+      ]
+    },
+    {
+      "cut": 26,
+      "row": "11",
+      "source": "PIA17792.jpg",
+      "title": "Goldstone 70-m Antenna",
+      "t": 113.77,
+      "at": "1:54",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 32,
+      "row": "12",
+      "source": "PIA26673.gif",
+      "title": "Curiosity Works Its Robotic Arm During Sunset",
+      "t": 142.47,
+      "at": "2:22",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 34,
+      "row": "13",
+      "source": "PIA20328.jpg",
+      "title": "Opportunity Shadow and Tracks on Martian Slope",
+      "t": 150.5,
+      "at": "2:30",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.20x, may look soft"
+      ]
+    },
+    {
+      "cut": 35,
+      "row": "13",
+      "source": "PIA19400.jpg",
+      "title": "Sunset in Mars Gale Crater",
+      "t": 154.7,
+      "at": "2:35",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0007 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 37,
+      "row": "14",
+      "source": "PIA12142.jpg",
+      "title": "Spirit View from Troy",
+      "t": 163.25,
+      "at": "2:43",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.36 < 18.0"
+      ]
+    },
+    {
+      "cut": 44,
+      "row": "15",
+      "source": "PIA16933.jpg",
+      "title": "View Back at Record-Setting Drive by Opportunity",
+      "t": 196.47,
+      "at": "3:16",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0027 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 45,
+      "row": "16",
+      "source": "PIA19400.jpg",
+      "title": "Sunset in Mars Gale Crater",
+      "t": 200.97,
+      "at": "3:21",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft",
+        "low detail: edge density 0.0014 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 48,
+      "row": "16",
+      "source": "PIA12490.jpg",
+      "title": "Phoenix Lander Amid Disappearing Spring Ice",
+      "t": 216.33,
+      "at": "3:36",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.27x, may look soft"
+      ]
+    },
+    {
+      "cut": 52,
+      "row": "18",
+      "source": "PIA18093.jpg",
+      "title": "Endeavour Crater Rim From Murray Ridge on Mars",
+      "t": 233.05,
+      "at": "3:53",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.2 < 18.0"
+      ]
+    },
+    {
+      "cut": 56,
+      "row": "19",
+      "source": "PIA20329.jpg",
+      "title": "Streaks on Opportunity Solar Panel After Uphill Drive",
+      "t": 251.52,
+      "at": "4:12",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.00x, may look soft"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "21",
+      "source": "PIA17956.jpg",
+      "title": "Shadow Portrait of NASA Rover Opportunity on Martian Slope",
+      "t": 281.28,
+      "at": "4:41",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.01x, may look soft"
+      ]
+    },
+    {
+      "cut": 64,
+      "row": "21",
+      "source": "PIA22520.jpg",
+      "title": "Curiosity's View of the June 2018 Dust Storm",
+      "t": 286.27,
+      "at": "4:46",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 65,
+      "row": "21",
+      "source": "PIA26716.jpg",
+      "title": "Goldstone\u2019s 70-Meter Antenna Under the Stars",
+      "t": 291.48,
+      "at": "4:51",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.08x, may look soft"
+      ]
+    },
+    {
+      "cut": 66,
+      "row": "21",
+      "source": "PIA22520.jpg",
+      "title": "Curiosity's View of the June 2018 Dust Storm",
+      "t": 296.2,
+      "at": "4:56",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 72,
+      "row": "23",
+      "source": "PIA22871.jpg",
+      "title": "Full View of InSight's Deck and Two Science Instruments",
+      "t": 323.88,
+      "at": "5:24",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.05x, may look soft"
+      ]
+    },
+    {
+      "cut": 75,
+      "row": "24",
+      "source": "PIA23306.jpg",
+      "title": "Mars 2020's MMRTG",
+      "t": 338.12,
+      "at": "5:38",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.23x, may look soft"
+      ]
+    },
+    {
+      "cut": 78,
+      "row": "25",
+      "source": "PIA15693.jpg",
+      "title": "Martian Soil on Curiosity Wheels After Sol 22 Drive",
+      "t": 353.05,
+      "at": "5:53",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.17x, may look soft"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "25",
+      "source": "PIA26016.jpg",
+      "title": "Curiosity's Navcams View Its Wheels",
+      "t": 357.55,
+      "at": "5:58",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.05x, may look soft"
+      ]
+    },
+    {
+      "cut": 86,
+      "row": "26",
+      "source": "PIA14839.jpg",
+      "title": "Curiosity Sky Crane Maneuver, Artist Concept",
+      "t": 388.8,
+      "at": "6:29",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Curiosity Sky Crane Maneuver, Artist Concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 87,
+      "row": "27",
+      "source": "PIA24593.jpg",
+      "title": "First Aerial Color Image of Mars",
+      "t": 393.37,
+      "at": "6:33",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 12.02 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "Ingenuity's shadow, cropped clear of the blue rotor disc; reviewed_ok against the floor (Claude, #6066558180)",
+        "passed": [
+          "low detail: luma std 12.02 < 13.44 and edge density 0.0218 < 0.0259 (absolute floor)"
+        ]
+      }
+    },
+    {
+      "cut": 88,
+      "row": "27",
+      "source": "PIA18093.jpg",
+      "title": "Endeavour Crater Rim From Murray Ridge on Mars",
+      "t": 398.53,
+      "at": "6:39",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.1 < 18.0",
+        "low detail: edge density 0.0 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 96,
+      "row": "28",
+      "source": "PIA24264.jpg",
+      "title": "Mastcam-Z's First 360-Degree Panorama",
+      "t": 437.03,
+      "at": "7:17",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.78 < 18.0"
+      ]
+    },
+    {
+      "cut": 104,
+      "row": "31",
+      "source": "PIA15694.jpg",
+      "title": "Tracks from Eastbound Drive on Curiosity Sol 22",
+      "t": 475.33,
+      "at": "7:55",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.24x, may look soft",
+        "low detail: luma std 15.67 < 18.0"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "PIA15115.jpg",
+      "title": "Dusty Mars Rover Self Portrait",
+      "t": 2.83,
+      "at": "0:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "PIA07372.jpg",
+      "title": "Opportunity Self-Portrait, Sols 322-323",
+      "t": 7.75,
+      "at": "0:08",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "PIA22210.jpg",
+      "title": "Wide-Angle Panorama from Ridge in Mars' Gale Crater",
+      "t": 11.97,
+      "at": "0:12",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "PIA21268.jpg",
+      "title": "Full-Circle Vista With a Linear Shaped Martian Sand Dune",
+      "t": 16.45,
+      "at": "0:16",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "4",
+      "source": "PIA11132.jpg",
+      "title": "Frost on Mars",
+      "t": 20.9,
+      "at": "0:21",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "4",
+      "source": "PIA15115.jpg",
+      "title": "Dusty Mars Rover Self Portrait",
+      "t": 24.4,
+      "at": "0:24",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "5",
+      "source": "PIA20284.jpg",
+      "title": "Full-Circle Panorama Beside Namib Dune on Mars",
+      "t": 27.82,
+      "at": "0:28",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "5",
+      "source": "PIA17759.jpg",
+      "title": "Self-Portrait by Opportunity Mars Rover in January 2014",
+      "t": 32.08,
+      "at": "0:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "5",
+      "source": "PIA19109.jpg",
+      "title": "High Viewpoint for 11-Year-Old Rover Mission on Mars",
+      "t": 35.7,
+      "at": "0:36",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.32 < 18.0"
+      ]
+    },
+    {
+      "cut": 9,
+      "row": "5",
+      "source": "PIA18098.jpg",
+      "title": "Opportunity Tracks Near Crater Rim Ridgeline",
+      "t": 38.95,
+      "at": "0:39",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "6",
+      "source": "PIA20283.jpg",
+      "title": "Mastcam Telephoto of a Martian Dune Downwind Face",
+      "t": 43.38,
+      "at": "0:43",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "6",
+      "source": "PIA20284.jpg",
+      "title": "Full-Circle Panorama Beside Namib Dune on Mars",
+      "t": 48.37,
+      "at": "0:48",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 12,
+      "row": "7",
+      "source": "PIA00382.jpg",
+      "title": "First Panoramic View From The Surface Of Mars",
+      "t": 53.75,
+      "at": "0:54",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.25x, may look soft"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "7",
+      "source": "PIA10738.jpg",
+      "title": "Mars Surface near Viking Lander 1 Footpad",
+      "t": 58.8,
+      "at": "0:59",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.21x, may look soft"
+      ]
+    },
+    {
+      "cut": 14,
+      "row": "7",
+      "source": "PIA25413.jpg",
+      "title": "Curiosity's View of Paraitepuy Pass",
+      "t": 63.67,
+      "at": "1:04",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "8",
+      "source": "PIA13580.jpg",
+      "title": "Radiation Assessment Detector for Mars Science Laboratory",
+      "t": 68.52,
+      "at": "1:09",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 16,
+      "row": "8",
+      "source": "PIA26559.jpg",
+      "title": "Curiosity's First 360-Degree View of Boxwork Patterns",
+      "t": 72.72,
+      "at": "1:13",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.22x, may look soft"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "8",
+      "source": "PIA25176.jpg",
+      "title": "Curiosity's 360-Degree Panorama of Gator-Back Rocks on Greenheugh",
+      "t": 76.67,
+      "at": "1:17",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.11x, may look soft"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "8",
+      "source": "PIA22207.jpg",
+      "title": "Mount Sharp 'Photobombs' Curiosity",
+      "t": 80.42,
+      "at": "1:20",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 19,
+      "row": "9",
+      "source": "PIA16096.jpg",
+      "title": "Curiosity First Arm Extension, Full Resolution",
+      "t": 84.33,
+      "at": "1:24",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "9",
+      "source": "PIA20316.jpg",
+      "title": "Curiosity Self-Portrait at Martian Sand Dune",
+      "t": 88.25,
+      "at": "1:28",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 21,
+      "row": "9",
+      "source": "PIA24543.jpg",
+      "title": "Curiosity's Selfie at Mont Mercou",
+      "t": 91.87,
+      "at": "1:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 22,
+      "row": "9",
+      "source": "PIA23240.jpg",
+      "title": "Curiosity's Selfie at \"Aberlady\" and \"Kilmarie\"",
+      "t": 95.58,
+      "at": "1:36",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "10",
+      "source": "PIA11798.jpg",
+      "title": "Very Dusty Solar Panel on Spirit, Sol 1811",
+      "t": 99.53,
+      "at": "1:40",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 24,
+      "row": "10",
+      "source": "PIA12457.jpg",
+      "title": "Spirit Rear View After Parking for Fourth Winter",
+      "t": 103.93,
+      "at": "1:44",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 25,
+      "row": "10",
+      "source": "PIA21486.jpg",
+      "title": "Break in Raised Tread on Curiosity Wheel",
+      "t": 108.75,
+      "at": "1:49",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 26,
+      "row": "11",
+      "source": "PIA17792.jpg",
+      "title": "Goldstone 70-m Antenna",
+      "t": 113.77,
+      "at": "1:54",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 27,
+      "row": "11",
+      "source": "PIA23214.jpg",
+      "title": "NASA's Deep Space Network Goldstone Complex",
+      "t": 119.12,
+      "at": "1:59",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 28,
+      "row": "11",
+      "source": "PIA25681.jpg",
+      "title": "Perseverance's Three Forks Sample Depot Selfie",
+      "t": 124.77,
+      "at": "2:05",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 29,
+      "row": "11",
+      "source": "PIA26717.jpg",
+      "title": "Goldstone\u2019s DSS-15 Antenna at Sunset",
+      "t": 130.53,
+      "at": "2:11",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "12",
+      "source": "PIA09090.jpg",
+      "title": "Spirit Winter Home",
+      "t": 135.17,
+      "at": "2:15",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 31,
+      "row": "12",
+      "source": "PIA15024.jpg",
+      "title": "Opportunity Late Afternoon View of Mars",
+      "t": 138.73,
+      "at": "2:19",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "12",
+      "source": "PIA26673.gif",
+      "title": "Curiosity Works Its Robotic Arm During Sunset",
+      "t": 142.47,
+      "at": "2:22",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.33x, may look soft"
+      ]
+    },
+    {
+      "cut": 33,
+      "row": "13",
+      "source": "PIA07882.jpg",
+      "title": "Lookout Panorama from Spirit",
+      "t": 146.72,
+      "at": "2:27",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "13",
+      "source": "PIA20328.jpg",
+      "title": "Opportunity Shadow and Tracks on Martian Slope",
+      "t": 150.5,
+      "at": "2:30",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.20x, may look soft"
+      ]
+    },
+    {
+      "cut": 35,
+      "row": "13",
+      "source": "PIA19400.jpg",
+      "title": "Sunset in Mars Gale Crater",
+      "t": 154.7,
+      "at": "2:35",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0007 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 36,
+      "row": "13",
+      "source": "orbit_mars_cold_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 159.12,
+      "at": "2:39",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 37,
+      "row": "14",
+      "source": "PIA12142.jpg",
+      "title": "Spirit View from Troy",
+      "t": 163.25,
+      "at": "2:43",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.36 < 18.0"
+      ]
+    },
+    {
+      "cut": 38,
+      "row": "14",
+      "source": "PIA12203.jpg",
+      "title": "Calypso Panorama of Spirit View from Troy",
+      "t": 168.18,
+      "at": "2:48",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 39,
+      "row": "14",
+      "source": "PIA12457.jpg",
+      "title": "Spirit Rear View After Parking for Fourth Winter",
+      "t": 173.35,
+      "at": "2:53",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 40,
+      "row": "14",
+      "source": "PIA12203.jpg",
+      "title": "Calypso Panorama of Spirit View from Troy",
+      "t": 178.3,
+      "at": "2:58",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 41,
+      "row": "14",
+      "source": "PIA07882.jpg",
+      "title": "Lookout Panorama from Spirit",
+      "t": 183.22,
+      "at": "3:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 42,
+      "row": "15",
+      "source": "PIA07371.jpg",
+      "title": "Spirit Self-Portrait, Sols 329-330",
+      "t": 188.03,
+      "at": "3:08",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 43,
+      "row": "15",
+      "source": "PIA01907.jpg",
+      "title": "McMurdo Panorama from Spirit Winter Haven",
+      "t": 192.27,
+      "at": "3:12",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 44,
+      "row": "15",
+      "source": "PIA16933.jpg",
+      "title": "View Back at Record-Setting Drive by Opportunity",
+      "t": 196.47,
+      "at": "3:16",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0027 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 45,
+      "row": "16",
+      "source": "PIA19400.jpg",
+      "title": "Sunset in Mars Gale Crater",
+      "t": 200.97,
+      "at": "3:21",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.31x, may look soft",
+        "low detail: edge density 0.0014 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 46,
+      "row": "16",
+      "source": "PIA13804.jpg",
+      "title": "Mars Panorama of Phoenix Landing Site and Lander Deck",
+      "t": 205.8,
+      "at": "3:26",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 47,
+      "row": "16",
+      "source": "PIA10665.jpg",
+      "title": "Phoenix Soaks up the Sun",
+      "t": 211.28,
+      "at": "3:31",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 48,
+      "row": "16",
+      "source": "PIA12490.jpg",
+      "title": "Phoenix Lander Amid Disappearing Spring Ice",
+      "t": 216.33,
+      "at": "3:36",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.27x, may look soft"
+      ]
+    },
+    {
+      "cut": 49,
+      "row": "16",
+      "source": "PIA13804.jpg",
+      "title": "Mars Panorama of Phoenix Landing Site and Lander Deck",
+      "t": 221.38,
+      "at": "3:41",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 50,
+      "row": "17",
+      "source": "PIA24542.jpg",
+      "title": "Perseverance's Selfie with Ingenuity",
+      "t": 225.73,
+      "at": "3:46",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 51,
+      "row": "17",
+      "source": "PIA24264.jpg",
+      "title": "Mastcam-Z's First 360-Degree Panorama",
+      "t": 229.03,
+      "at": "3:49",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 52,
+      "row": "18",
+      "source": "PIA18093.jpg",
+      "title": "Endeavour Crater Rim From Murray Ridge on Mars",
+      "t": 233.05,
+      "at": "3:53",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.2 < 18.0"
+      ]
+    },
+    {
+      "cut": 53,
+      "row": "18",
+      "source": "PIA16122.jpg",
+      "title": "Opportunity Surroundings on 3,000th Sol",
+      "t": 236.9,
+      "at": "3:57",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 54,
+      "row": "19",
+      "source": "PIA10128.jpg",
+      "title": "Dusty Solar Panels on Spirit",
+      "t": 241.35,
+      "at": "4:01",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 55,
+      "row": "19",
+      "source": "PIA11799.jpg",
+      "title": "Spirit Solar Panel on Sol 1813, Still Very Dusty",
+      "t": 246.32,
+      "at": "4:06",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 56,
+      "row": "19",
+      "source": "PIA20329.jpg",
+      "title": "Streaks on Opportunity Solar Panel After Uphill Drive",
+      "t": 251.52,
+      "at": "4:12",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.00x, may look soft"
+      ]
+    },
+    {
+      "cut": 57,
+      "row": "20",
+      "source": "PIA07458.jpg",
+      "title": "Dust Devils Seen by Spirit",
+      "t": 256.67,
+      "at": "4:17",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 58,
+      "row": "20",
+      "source": "PIA17759.jpg",
+      "title": "Self-Portrait by Opportunity Mars Rover in January 2014",
+      "t": 260.15,
+      "at": "4:20",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 59,
+      "row": "20",
+      "source": "PIA18079.jpg",
+      "title": "Self-Portrait by Freshly Cleaned Opportunity Mars Rover in March 2014",
+      "t": 263.98,
+      "at": "4:24",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 60,
+      "row": "20",
+      "source": "PIA18079.jpg",
+      "title": "Self-Portrait by Freshly Cleaned Opportunity Mars Rover in March 2014",
+      "t": 268.42,
+      "at": "4:28",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 61,
+      "row": "20",
+      "source": "PIA06739.jpg",
+      "title": "Opportunity Catches its Shadow on Sol 180",
+      "t": 272.43,
+      "at": "4:32",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 62,
+      "row": "21",
+      "source": "PIA22330.jpg",
+      "title": "Duluth After Dust Storm",
+      "t": 276.93,
+      "at": "4:37",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 63,
+      "row": "21",
+      "source": "PIA17956.jpg",
+      "title": "Shadow Portrait of NASA Rover Opportunity on Martian Slope",
+      "t": 281.28,
+      "at": "4:41",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.01x, may look soft"
+      ]
+    },
+    {
+      "cut": 64,
+      "row": "21",
+      "source": "PIA22520.jpg",
+      "title": "Curiosity's View of the June 2018 Dust Storm",
+      "t": 286.27,
+      "at": "4:46",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 65,
+      "row": "21",
+      "source": "PIA26716.jpg",
+      "title": "Goldstone\u2019s 70-Meter Antenna Under the Stars",
+      "t": 291.48,
+      "at": "4:51",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.08x, may look soft"
+      ]
+    },
+    {
+      "cut": 66,
+      "row": "21",
+      "source": "PIA22520.jpg",
+      "title": "Curiosity's View of the June 2018 Dust Storm",
+      "t": 296.2,
+      "at": "4:56",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 67,
+      "row": "22",
+      "source": "PIA07372.jpg",
+      "title": "Opportunity Self-Portrait, Sols 322-323",
+      "t": 301.18,
+      "at": "5:01",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 68,
+      "row": "22",
+      "source": "PIA22928.jpg",
+      "title": "Looking Back on a Golden Opportunity",
+      "t": 305.65,
+      "at": "5:06",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 69,
+      "row": "23",
+      "source": "PIA23203.jpg",
+      "title": "InSight's Dusty Selfie",
+      "t": 309.93,
+      "at": "5:10",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 70,
+      "row": "23",
+      "source": "PIA25286.jpg",
+      "title": "InSight's Dusty Solar Panel",
+      "t": 314.48,
+      "at": "5:14",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 71,
+      "row": "23",
+      "source": "PIA23177.jpg",
+      "title": "InSight's Seismometer on the Martian Surface",
+      "t": 319.33,
+      "at": "5:19",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 72,
+      "row": "23",
+      "source": "PIA22871.jpg",
+      "title": "Full View of InSight's Deck and Two Science Instruments",
+      "t": 323.88,
+      "at": "5:24",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.05x, may look soft"
+      ]
+    },
+    {
+      "cut": 73,
+      "row": "23",
+      "source": "PIA25287.jpg",
+      "title": "InSight's Final Selfie",
+      "t": 328.42,
+      "at": "5:28",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 74,
+      "row": "24",
+      "source": "PIA23305.jpg",
+      "title": "Power for Mars 2020",
+      "t": 333.28,
+      "at": "5:33",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 75,
+      "row": "24",
+      "source": "PIA23306.jpg",
+      "title": "Mars 2020's MMRTG",
+      "t": 338.12,
+      "at": "5:38",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.23x, may look soft"
+      ]
+    },
+    {
+      "cut": 76,
+      "row": "24",
+      "source": "PIA22486.jpg",
+      "title": "Curiosity's Dusty Selfie",
+      "t": 343.23,
+      "at": "5:43",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 77,
+      "row": "24",
+      "source": "PIA22486.jpg",
+      "title": "Curiosity's Dusty Selfie",
+      "t": 348.37,
+      "at": "5:48",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 78,
+      "row": "25",
+      "source": "PIA15693.jpg",
+      "title": "Martian Soil on Curiosity Wheels After Sol 22 Drive",
+      "t": 353.05,
+      "at": "5:53",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.17x, may look soft"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "25",
+      "source": "PIA26016.jpg",
+      "title": "Curiosity's Navcams View Its Wheels",
+      "t": 357.55,
+      "at": "5:58",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.05x, may look soft"
+      ]
+    },
+    {
+      "cut": 80,
+      "row": "25",
+      "source": "PIA17751.jpg",
+      "title": "Left-Front Wheel of Curiosity Rover, Approaching Three Miles",
+      "t": 362.63,
+      "at": "6:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 81,
+      "row": "25",
+      "source": "orbit_mars_wheel_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 367.18,
+      "at": "6:07",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 82,
+      "row": "25",
+      "source": "PIA16112.jpg",
+      "title": "Curiosity Tracks Its Tracks",
+      "t": 371.17,
+      "at": "6:11",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 83,
+      "row": "26",
+      "source": "KSC-20200730-PH-FMX01_0042.jpg",
+      "title": "Mars 2020 Liftoff",
+      "t": 375.57,
+      "at": "6:16",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 84,
+      "row": "26",
+      "source": "KSC-20200730-PH-KLS01_0001.jpg",
+      "title": "Mars 2020 Liftoff",
+      "t": 380.22,
+      "at": "6:20",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 85,
+      "row": "26",
+      "source": "PIA24333.jpg",
+      "title": "Perseverance and Mars 2020 Spacecraft Components on the Surface",
+      "t": 384.73,
+      "at": "6:25",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 86,
+      "row": "26",
+      "source": "PIA14839.jpg",
+      "title": "Curiosity Sky Crane Maneuver, Artist Concept",
+      "t": 388.8,
+      "at": "6:29",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Curiosity Sky Crane Maneuver, Artist Concept' (artist), look at it full size"
+      ]
+    },
+    {
+      "cut": 87,
+      "row": "27",
+      "source": "PIA24593.jpg",
+      "title": "First Aerial Color Image of Mars",
+      "t": 393.37,
+      "at": "6:33",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 12.02 < 18.0"
+      ],
+      "reviewed_ok": {
+        "note": "Ingenuity's shadow, cropped clear of the blue rotor disc; reviewed_ok against the floor (Claude, #6066558180)",
+        "passed": [
+          "low detail: luma std 12.02 < 13.44 and edge density 0.0218 < 0.0259 (absolute floor)"
+        ]
+      }
+    },
+    {
+      "cut": 88,
+      "row": "27",
+      "source": "PIA18093.jpg",
+      "title": "Endeavour Crater Rim From Murray Ridge on Mars",
+      "t": 398.53,
+      "at": "6:39",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.1 < 18.0",
+        "low detail: edge density 0.0 < film p5 0.0035"
+      ]
+    },
+    {
+      "cut": 89,
+      "row": "27",
+      "source": "PIA26236.jpg",
+      "title": "Perseverance Spots Ingenuity at Its Final Airfield",
+      "t": 403.72,
+      "at": "6:44",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 90,
+      "row": "27",
+      "source": "PIA26237.jpg",
+      "title": " Ingenuity at 'Valinor Hills'",
+      "t": 408.88,
+      "at": "6:49",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 91,
+      "row": "27",
+      "source": "PIA26243.jpg",
+      "title": " Ingenuity Spots the Shadow of Its Damaged Rotor Blade",
+      "t": 414.05,
+      "at": "6:54",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 92,
+      "row": "28",
+      "source": "PIA23305.jpg",
+      "title": "Power for Mars 2020",
+      "t": 418.77,
+      "at": "6:59",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 93,
+      "row": "28",
+      "source": "PIA01907.jpg",
+      "title": "McMurdo Panorama from Spirit Winter Haven",
+      "t": 423.35,
+      "at": "7:03",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 94,
+      "row": "28",
+      "source": "PIA19920.jpg",
+      "title": "Curiosity Self-Portrait at Big Sky Drilling Site",
+      "t": 427.98,
+      "at": "7:08",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 95,
+      "row": "28",
+      "source": "PIA26344.jpg",
+      "title": "Perseverance's Selfie With 'Cheyava Falls'",
+      "t": 432.47,
+      "at": "7:12",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 96,
+      "row": "28",
+      "source": "PIA24264.jpg",
+      "title": "Mastcam-Z's First 360-Degree Panorama",
+      "t": 437.03,
+      "at": "7:17",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.78 < 18.0"
+      ]
+    },
+    {
+      "cut": 97,
+      "row": "29",
+      "source": "PIA23246.jpg",
+      "title": "Opportunity's Tracks in Perseverance Valley",
+      "t": 441.37,
+      "at": "7:21",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 98,
+      "row": "29",
+      "source": "PIA14129.jpg",
+      "title": "Autonomous Hazard Checks Leave Patterned Rover Tracks on Mars",
+      "t": 445.6,
+      "at": "7:26",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 99,
+      "row": "29",
+      "source": "PIA17590.jpg",
+      "title": "Tracks of a Climb on Opportunity Sol 3485",
+      "t": 449.55,
+      "at": "7:30",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 100,
+      "row": "30",
+      "source": "KSC-2011-6687.jpg",
+      "title": "KSC-2011-6687",
+      "t": 453.88,
+      "at": "7:34",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 101,
+      "row": "30",
+      "source": "PIA09090.jpg",
+      "title": "Spirit Winter Home",
+      "t": 459.18,
+      "at": "7:39",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 102,
+      "row": "30",
+      "source": "PIA19920.jpg",
+      "title": "Curiosity Self-Portrait at Big Sky Drilling Site",
+      "t": 464.43,
+      "at": "7:44",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 103,
+      "row": "30",
+      "source": "PIA20316.jpg",
+      "title": "Curiosity Self-Portrait at Martian Sand Dune",
+      "t": 469.62,
+      "at": "7:50",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 104,
+      "row": "31",
+      "source": "PIA15694.jpg",
+      "title": "Tracks from Eastbound Drive on Curiosity Sol 22",
+      "t": 475.33,
+      "at": "7:55",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.24x, may look soft",
+        "low detail: luma std 15.67 < 18.0"
+      ]
+    },
+    {
+      "cut": 105,
+      "row": "31",
+      "source": "PIA07371.jpg",
+      "title": "Spirit Self-Portrait, Sols 329-330",
+      "t": 480.82,
+      "at": "8:01",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 106,
+      "row": "32",
+      "source": "PIA24765.jpg",
+      "title": "Perseverance's Office on Mars",
+      "t": 486.77,
+      "at": "8:07",
+      "fail": [],
+      "warn": []
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0035,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

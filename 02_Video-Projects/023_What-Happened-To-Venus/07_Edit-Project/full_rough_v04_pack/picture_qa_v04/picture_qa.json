@@ -1,0 +1,2589 @@
+{
+  "verdict": "FAIL",
+  "video": "/private/tmp/j0059_v04qa/v04.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "PIA00254.jpg",
+      "title": "",
+      "t": 2.72,
+      "at": "0:03",
+      "fail": [
+        "push jitter: 1.081 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "PIA00106.jpg",
+      "title": "",
+      "t": 7.98,
+      "at": "0:08",
+      "fail": [
+        "push jitter: 1.05 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "PIA13001.jpg",
+      "title": null,
+      "t": 13.02,
+      "at": "0:13",
+      "fail": [
+        "push jitter: 0.971 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "4",
+      "source": "PIA00241.jpg",
+      "title": "",
+      "t": 18.02,
+      "at": "0:18",
+      "fail": [
+        "push jitter: 1.006 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "5",
+      "source": "PIA00108.jpg",
+      "title": null,
+      "t": 22.53,
+      "at": "0:23",
+      "fail": [
+        "push jitter: 1.044 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "6",
+      "source": "PIA23791.jpg",
+      "title": "",
+      "t": 27.05,
+      "at": "0:27",
+      "fail": [
+        "push jitter: 0.939 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "7",
+      "source": "PIA00104.jpg",
+      "title": null,
+      "t": 32.57,
+      "at": "0:33",
+      "fail": [
+        "push jitter: 0.966 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 7,
+      "row": "8",
+      "source": "PIA00257.jpg",
+      "title": null,
+      "t": 37.57,
+      "at": "0:38",
+      "fail": [
+        "push jitter: 1.035 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 8,
+      "row": "8",
+      "source": "PIA00107.jpg",
+      "title": null,
+      "t": 41.57,
+      "at": "0:42",
+      "fail": [
+        "push jitter: 1.077 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 9,
+      "row": "11a",
+      "source": "PIA23791.jpg",
+      "title": "",
+      "t": 46.48,
+      "at": "0:46",
+      "fail": [
+        "push jitter: 0.486 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "11b",
+      "source": "PIA00270.jpg",
+      "title": null,
+      "t": 52.2,
+      "at": "0:52",
+      "fail": [
+        "push jitter: 0.982 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 11,
+      "row": "12a",
+      "source": "S91-50686.jpg",
+      "title": null,
+      "t": 57.9,
+      "at": "0:58",
+      "fail": [
+        "push jitter: 1.05 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 12,
+      "row": "12b",
+      "source": "PIA00252.jpg",
+      "title": null,
+      "t": 63.8,
+      "at": "1:04",
+      "fail": [
+        "push jitter: 1.031 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "13a",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "",
+      "t": 69.68,
+      "at": "1:10",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 14,
+      "row": "13b",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "",
+      "t": 75.38,
+      "at": "1:15",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "13c",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 80.92,
+      "at": "1:21",
+      "fail": [
+        "near-black: mean 16.64, p95 115.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 16,
+      "row": "14a",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 86.82,
+      "at": "1:27",
+      "fail": [
+        "near-black: mean 20.43, p95 143.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "14b",
+      "source": "PIA00104.jpg",
+      "title": null,
+      "t": 93.13,
+      "at": "1:33",
+      "fail": [
+        "push jitter: 0.973 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "15a",
+      "source": "PIA00272.jpg",
+      "title": null,
+      "t": 99.53,
+      "at": "1:40",
+      "fail": [
+        "push jitter: 1.011 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 19,
+      "row": "15b",
+      "source": "PIA00215.jpg",
+      "title": "",
+      "t": 106.23,
+      "at": "1:46",
+      "fail": [
+        "push jitter: 1.016 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "16a",
+      "source": "PIA00240.jpg",
+      "title": "",
+      "t": 112.38,
+      "at": "1:52",
+      "fail": [
+        "push jitter: 1.062 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 21,
+      "row": "16b",
+      "source": "PIA00159.jpg",
+      "title": null,
+      "t": 117.53,
+      "at": "1:58",
+      "fail": [
+        "push jitter: 1.007 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 22,
+      "row": "17",
+      "source": "PIA00246.jpg",
+      "title": "",
+      "t": 121.92,
+      "at": "2:02",
+      "fail": [
+        "push jitter: 0.989 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "17",
+      "source": "PIA00107.jpg",
+      "title": null,
+      "t": 126.93,
+      "at": "2:07",
+      "fail": [
+        "push jitter: 1.026 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 24,
+      "row": "18",
+      "source": "PIA00102.jpg",
+      "title": null,
+      "t": 131.55,
+      "at": "2:12",
+      "fail": [
+        "push jitter: 1.091 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 25,
+      "row": "18",
+      "source": "PIA00233.jpg",
+      "title": null,
+      "t": 135.28,
+      "at": "2:15",
+      "fail": [
+        "push jitter: 1.069 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 26,
+      "row": "18",
+      "source": "PIA00268.jpg",
+      "title": null,
+      "t": 140.02,
+      "at": "2:20",
+      "fail": [
+        "push jitter: 1.027 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 27,
+      "row": "20b",
+      "source": "PIA00481.jpg",
+      "title": null,
+      "t": 145.6,
+      "at": "2:26",
+      "fail": [
+        "push jitter: 1.008 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 28,
+      "row": "21a",
+      "source": "PIA00272.jpg",
+      "title": null,
+      "t": 151.3,
+      "at": "2:31",
+      "fail": [
+        "push jitter: 1.066 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 29,
+      "row": "21b",
+      "source": "as17-148-22727.jpg",
+      "title": "",
+      "t": 157.15,
+      "at": "2:37",
+      "fail": [
+        "push jitter: 1.016 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "21c",
+      "source": "PIA00271.jpg",
+      "title": null,
+      "t": 162.12,
+      "at": "2:42",
+      "fail": [
+        "push jitter: 1.051 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 31,
+      "row": "22",
+      "source": "PIA00103.jpg",
+      "title": "",
+      "t": 167.15,
+      "at": "2:47",
+      "fail": [
+        "push jitter: 1.055 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "22",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 173.68,
+      "at": "2:54",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.002 < film p5 0.0027"
+      ]
+    },
+    {
+      "cut": 33,
+      "row": "23",
+      "source": "PIA18033.jpg",
+      "title": "",
+      "t": 179.73,
+      "at": "3:00",
+      "fail": [
+        "push jitter: 1.04 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "23",
+      "source": "GSFC_20171208_Archive_e001435.jpg",
+      "title": null,
+      "t": 184.17,
+      "at": "3:04",
+      "fail": [
+        "push jitter: 1.091 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 35,
+      "row": "24",
+      "source": "s129e007324.jpg",
+      "title": null,
+      "t": 187.17,
+      "at": "3:07",
+      "fail": [
+        "push jitter: 0.879 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 36,
+      "row": "24",
+      "source": "PIA03877.jpg",
+      "title": null,
+      "t": 191.22,
+      "at": "3:11",
+      "fail": [
+        "push jitter: 0.999 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 37,
+      "row": "25",
+      "source": "GSFC_20171208_Archive_e001435.jpg",
+      "title": null,
+      "t": 195.78,
+      "at": "3:16",
+      "fail": [
+        "push jitter: 0.983 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 38,
+      "row": "25",
+      "source": "PIA03877.jpg",
+      "title": null,
+      "t": 199.8,
+      "at": "3:20",
+      "fail": [
+        "push jitter: 0.904 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 39,
+      "row": "26",
+      "source": "PIA00234.jpg",
+      "title": null,
+      "t": 204.83,
+      "at": "3:25",
+      "fail": [
+        "push jitter: 1.006 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 40,
+      "row": "26",
+      "source": "PIA00200.jpg",
+      "title": null,
+      "t": 209.93,
+      "at": "3:30",
+      "fail": [
+        "push jitter: 1.021 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 41,
+      "row": "27",
+      "source": "PIA00106.jpg",
+      "title": "",
+      "t": 215.15,
+      "at": "3:35",
+      "fail": [
+        "push jitter: 0.991 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 42,
+      "row": "28",
+      "source": "S91-50688.jpg",
+      "title": null,
+      "t": 221.13,
+      "at": "3:41",
+      "fail": [
+        "push jitter: 0.998 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 43,
+      "row": "30b",
+      "source": "ARC-1978-AC78-9245.jpg",
+      "title": null,
+      "t": 226.57,
+      "at": "3:47",
+      "fail": [
+        "push jitter: 0.957 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 44,
+      "row": "30b",
+      "source": "ARC-1978-AC78-0238.jpg",
+      "title": null,
+      "t": 231.3,
+      "at": "3:51",
+      "fail": [
+        "push jitter: 0.985 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 45,
+      "row": "30b",
+      "source": "ARC-1978-AC78-9245.jpg",
+      "title": null,
+      "t": 234.88,
+      "at": "3:55",
+      "fail": [
+        "push jitter: 0.997 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 46,
+      "row": "31",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 241.63,
+      "at": "4:02",
+      "fail": [
+        "near-black: mean 11.66, p95 29.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 47,
+      "row": "32a",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 250.25,
+      "at": "4:10",
+      "fail": [
+        "near-black: mean 13.09, p95 29.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 48,
+      "row": "32b",
+      "source": "PIA00257.jpg",
+      "title": null,
+      "t": 256.92,
+      "at": "4:17",
+      "fail": [
+        "push jitter: 0.48 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 49,
+      "row": "32c",
+      "source": "PIA00084.jpg",
+      "title": null,
+      "t": 262.82,
+      "at": "4:23",
+      "fail": [
+        "push jitter: 1.066 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 50,
+      "row": "32c",
+      "source": "PIA00200.jpg",
+      "title": null,
+      "t": 266.82,
+      "at": "4:27",
+      "fail": [
+        "push jitter: 1.035 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 51,
+      "row": "33",
+      "source": "PIA00102.jpg",
+      "title": null,
+      "t": 271.67,
+      "at": "4:32",
+      "fail": [
+        "push jitter: 0.98 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 52,
+      "row": "34a",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 279.33,
+      "at": "4:39",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 53,
+      "row": "34b",
+      "source": "PIA00240.jpg",
+      "title": "",
+      "t": 285.65,
+      "at": "4:46",
+      "fail": [
+        "push jitter: 1.03 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 54,
+      "row": "34b",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 289.4,
+      "at": "4:49",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 56,
+      "row": "35",
+      "source": "S91-50687.jpg",
+      "title": null,
+      "t": 298.48,
+      "at": "4:58",
+      "fail": [
+        "push jitter: 1.033 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 57,
+      "row": "35",
+      "source": "S91-50686.jpg",
+      "title": null,
+      "t": 303.27,
+      "at": "5:03",
+      "fail": [
+        "push jitter: 0.962 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 60,
+      "row": "38",
+      "source": "nightlid.mp4",
+      "title": null,
+      "t": 325.62,
+      "at": "5:26",
+      "fail": [
+        "near-black: mean 24.91, p95 158.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 61,
+      "row": "39a",
+      "source": "venus_ch3_row39a_split_ocean_vs_steamlid_v02.mp4",
+      "title": null,
+      "t": 332.75,
+      "at": "5:33",
+      "fail": [
+        "split panel: vertical gutter at 0.48"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "40",
+      "source": "PIA00109.jpg",
+      "title": null,
+      "t": 341.13,
+      "at": "5:41",
+      "fail": [
+        "push jitter: 0.92 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 64,
+      "row": "40",
+      "source": "PIA00209.jpg",
+      "title": null,
+      "t": 345.85,
+      "at": "5:46",
+      "fail": [
+        "push jitter: 0.974 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 65,
+      "row": "42b",
+      "source": "PIA18033.jpg",
+      "title": "",
+      "t": 349.22,
+      "at": "5:49",
+      "fail": [
+        "push jitter: 1.032 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "43a",
+      "source": "line.mp4",
+      "title": null,
+      "t": 353.1,
+      "at": "5:53",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 21.96, p95 37.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 67,
+      "row": "43b",
+      "source": "line.mp4",
+      "title": null,
+      "t": 361.17,
+      "at": "6:01",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 22.49, p95 44.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 68,
+      "row": "43c",
+      "source": "S91-50688.jpg",
+      "title": null,
+      "t": 369.95,
+      "at": "6:10",
+      "fail": [
+        "push jitter: 0.971 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 70,
+      "row": "44b",
+      "source": "line.mp4",
+      "title": null,
+      "t": 386.62,
+      "at": "6:27",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 23.01, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 71,
+      "row": "45a",
+      "source": "s129e007324.jpg",
+      "title": null,
+      "t": 390.83,
+      "at": "6:31",
+      "fail": [
+        "push jitter: 0.819 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 72,
+      "row": "45a",
+      "source": "as17-148-22727.jpg",
+      "title": "",
+      "t": 394.57,
+      "at": "6:35",
+      "fail": [
+        "push jitter: 1.046 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "45b",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "",
+      "t": 400.87,
+      "at": "6:41",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 74,
+      "row": "45c",
+      "source": "PIA00266.jpg",
+      "title": null,
+      "t": 407.18,
+      "at": "6:47",
+      "fail": [
+        "push jitter: 0.966 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 76,
+      "row": "46",
+      "source": "PIA00084.jpg",
+      "title": null,
+      "t": 415.47,
+      "at": "6:55",
+      "fail": [
+        "push jitter: 1.064 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 77,
+      "row": "48b",
+      "source": "PIA00241.jpg",
+      "title": "",
+      "t": 418.75,
+      "at": "6:59",
+      "fail": [
+        "push jitter: 0.989 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 78,
+      "row": "49",
+      "source": "PIA00157.jpg",
+      "title": null,
+      "t": 422.85,
+      "at": "7:03",
+      "fail": [
+        "push jitter: 1.028 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "49",
+      "source": "PIA00481.jpg",
+      "title": null,
+      "t": 427.6,
+      "at": "7:08",
+      "fail": [
+        "push jitter: 1.005 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 80,
+      "row": "49",
+      "source": "PIA00215.jpg",
+      "title": "",
+      "t": 432.35,
+      "at": "7:12",
+      "fail": [
+        "push jitter: 1.019 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 81,
+      "row": "50",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 438.12,
+      "at": "7:18",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 82,
+      "row": "50",
+      "source": "PIA00268.jpg",
+      "title": null,
+      "t": 442.88,
+      "at": "7:23",
+      "fail": [
+        "push jitter: 1.011 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 83,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 446.47,
+      "at": "7:26",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 84,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 451.37,
+      "at": "7:31",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "split panel: vertical gutter at 0.954"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 87,
+      "row": "53",
+      "source": "veritas-cut7-16.jpg",
+      "title": null,
+      "t": 469.1,
+      "at": "7:49",
+      "fail": [
+        "push jitter: 0.998 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 88,
+      "row": "53",
+      "source": "PIA00103.jpg",
+      "title": "",
+      "t": 473.43,
+      "at": "7:53",
+      "fail": [
+        "push jitter: 1.03 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 89,
+      "row": "54",
+      "source": "PIA00252.jpg",
+      "title": null,
+      "t": 478.37,
+      "at": "7:58",
+      "fail": [
+        "push jitter: 1.019 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 90,
+      "row": "54",
+      "source": "S91-50687.jpg",
+      "title": null,
+      "t": 484.6,
+      "at": "8:05",
+      "fail": [
+        "push jitter: 0.957 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 91,
+      "row": "55",
+      "source": "PIA00270.jpg",
+      "title": null,
+      "t": 491.07,
+      "at": "8:11",
+      "fail": [
+        "push jitter: 1.018 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 92,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": null,
+      "t": 497.9,
+      "at": "8:18",
+      "fail": [
+        "low detail: luma std 6.83 < 13.44 and edge density 0.0007 < 0.0259 (absolute floor)",
+        "push jitter: 1.007 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 93,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": null,
+      "t": 503.2,
+      "at": "8:23",
+      "fail": [
+        "low detail: luma std 8.74 < 13.44 and edge density 0.0015 < 0.0259 (absolute floor)",
+        "push jitter: 1.069 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 94,
+      "row": "57",
+      "source": "PIA00254.jpg",
+      "title": "",
+      "t": 509.07,
+      "at": "8:29",
+      "fail": [
+        "push jitter: 1.012 px off trend, 0 reversals"
+      ],
+      "warn": []
+    }
+  ],
+  "warn": [
+    {
+      "cut": 55,
+      "row": "35",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": null,
+      "t": 293.52,
+      "at": "4:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 58,
+      "row": "36",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": null,
+      "t": 308.88,
+      "at": "5:09",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 59,
+      "row": "37",
+      "source": "venus_ch3_row37_plateB_steam_lid_sharp_v02.mp4",
+      "title": null,
+      "t": 316.38,
+      "at": "5:16",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 62,
+      "row": "39b",
+      "source": "venus_ch3_row39b_magellan_alpha_regio_tessera_PIA00215_v02.mp4",
+      "title": null,
+      "t": 336.53,
+      "at": "5:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 69,
+      "row": "44a",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "title": null,
+      "t": 378.48,
+      "at": "6:18",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 85,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": null,
+      "t": 458.03,
+      "at": "7:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 86,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": null,
+      "t": 464.13,
+      "at": "7:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "PIA00254.jpg",
+      "title": "",
+      "t": 2.72,
+      "at": "0:03",
+      "fail": [
+        "push jitter: 1.081 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "PIA00106.jpg",
+      "title": "",
+      "t": 7.98,
+      "at": "0:08",
+      "fail": [
+        "push jitter: 1.05 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "PIA13001.jpg",
+      "title": null,
+      "t": 13.02,
+      "at": "0:13",
+      "fail": [
+        "push jitter: 0.971 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "4",
+      "source": "PIA00241.jpg",
+      "title": "",
+      "t": 18.02,
+      "at": "0:18",
+      "fail": [
+        "push jitter: 1.006 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "5",
+      "source": "PIA00108.jpg",
+      "title": null,
+      "t": 22.53,
+      "at": "0:23",
+      "fail": [
+        "push jitter: 1.044 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "6",
+      "source": "PIA23791.jpg",
+      "title": "",
+      "t": 27.05,
+      "at": "0:27",
+      "fail": [
+        "push jitter: 0.939 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "7",
+      "source": "PIA00104.jpg",
+      "title": null,
+      "t": 32.57,
+      "at": "0:33",
+      "fail": [
+        "push jitter: 0.966 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 7,
+      "row": "8",
+      "source": "PIA00257.jpg",
+      "title": null,
+      "t": 37.57,
+      "at": "0:38",
+      "fail": [
+        "push jitter: 1.035 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 8,
+      "row": "8",
+      "source": "PIA00107.jpg",
+      "title": null,
+      "t": 41.57,
+      "at": "0:42",
+      "fail": [
+        "push jitter: 1.077 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 9,
+      "row": "11a",
+      "source": "PIA23791.jpg",
+      "title": "",
+      "t": 46.48,
+      "at": "0:46",
+      "fail": [
+        "push jitter: 0.486 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "11b",
+      "source": "PIA00270.jpg",
+      "title": null,
+      "t": 52.2,
+      "at": "0:52",
+      "fail": [
+        "push jitter: 0.982 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 11,
+      "row": "12a",
+      "source": "S91-50686.jpg",
+      "title": null,
+      "t": 57.9,
+      "at": "0:58",
+      "fail": [
+        "push jitter: 1.05 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 12,
+      "row": "12b",
+      "source": "PIA00252.jpg",
+      "title": null,
+      "t": 63.8,
+      "at": "1:04",
+      "fail": [
+        "push jitter: 1.031 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 13,
+      "row": "13a",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "",
+      "t": 69.68,
+      "at": "1:10",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 14,
+      "row": "13b",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "",
+      "t": 75.38,
+      "at": "1:15",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 15,
+      "row": "13c",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 80.92,
+      "at": "1:21",
+      "fail": [
+        "near-black: mean 16.64, p95 115.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 16,
+      "row": "14a",
+      "source": "albedo.mp4",
+      "title": null,
+      "t": 86.82,
+      "at": "1:27",
+      "fail": [
+        "near-black: mean 20.43, p95 143.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "14b",
+      "source": "PIA00104.jpg",
+      "title": null,
+      "t": 93.13,
+      "at": "1:33",
+      "fail": [
+        "push jitter: 0.973 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "15a",
+      "source": "PIA00272.jpg",
+      "title": null,
+      "t": 99.53,
+      "at": "1:40",
+      "fail": [
+        "push jitter: 1.011 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 19,
+      "row": "15b",
+      "source": "PIA00215.jpg",
+      "title": "",
+      "t": 106.23,
+      "at": "1:46",
+      "fail": [
+        "push jitter: 1.016 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 20,
+      "row": "16a",
+      "source": "PIA00240.jpg",
+      "title": "",
+      "t": 112.38,
+      "at": "1:52",
+      "fail": [
+        "push jitter: 1.062 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 21,
+      "row": "16b",
+      "source": "PIA00159.jpg",
+      "title": null,
+      "t": 117.53,
+      "at": "1:58",
+      "fail": [
+        "push jitter: 1.007 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 22,
+      "row": "17",
+      "source": "PIA00246.jpg",
+      "title": "",
+      "t": 121.92,
+      "at": "2:02",
+      "fail": [
+        "push jitter: 0.989 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 23,
+      "row": "17",
+      "source": "PIA00107.jpg",
+      "title": null,
+      "t": 126.93,
+      "at": "2:07",
+      "fail": [
+        "push jitter: 1.026 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 24,
+      "row": "18",
+      "source": "PIA00102.jpg",
+      "title": null,
+      "t": 131.55,
+      "at": "2:12",
+      "fail": [
+        "push jitter: 1.091 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 25,
+      "row": "18",
+      "source": "PIA00233.jpg",
+      "title": null,
+      "t": 135.28,
+      "at": "2:15",
+      "fail": [
+        "push jitter: 1.069 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 26,
+      "row": "18",
+      "source": "PIA00268.jpg",
+      "title": null,
+      "t": 140.02,
+      "at": "2:20",
+      "fail": [
+        "push jitter: 1.027 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 27,
+      "row": "20b",
+      "source": "PIA00481.jpg",
+      "title": null,
+      "t": 145.6,
+      "at": "2:26",
+      "fail": [
+        "push jitter: 1.008 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 28,
+      "row": "21a",
+      "source": "PIA00272.jpg",
+      "title": null,
+      "t": 151.3,
+      "at": "2:31",
+      "fail": [
+        "push jitter: 1.066 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 29,
+      "row": "21b",
+      "source": "as17-148-22727.jpg",
+      "title": "",
+      "t": 157.15,
+      "at": "2:37",
+      "fail": [
+        "push jitter: 1.016 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 30,
+      "row": "21c",
+      "source": "PIA00271.jpg",
+      "title": null,
+      "t": 162.12,
+      "at": "2:42",
+      "fail": [
+        "push jitter: 1.051 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 31,
+      "row": "22",
+      "source": "PIA00103.jpg",
+      "title": "",
+      "t": 167.15,
+      "at": "2:47",
+      "fail": [
+        "push jitter: 1.055 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 32,
+      "row": "22",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 173.68,
+      "at": "2:54",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "low detail: edge density 0.002 < film p5 0.0027"
+      ]
+    },
+    {
+      "cut": 33,
+      "row": "23",
+      "source": "PIA18033.jpg",
+      "title": "",
+      "t": 179.73,
+      "at": "3:00",
+      "fail": [
+        "push jitter: 1.04 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 34,
+      "row": "23",
+      "source": "GSFC_20171208_Archive_e001435.jpg",
+      "title": null,
+      "t": 184.17,
+      "at": "3:04",
+      "fail": [
+        "push jitter: 1.091 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 35,
+      "row": "24",
+      "source": "s129e007324.jpg",
+      "title": null,
+      "t": 187.17,
+      "at": "3:07",
+      "fail": [
+        "push jitter: 0.879 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 36,
+      "row": "24",
+      "source": "PIA03877.jpg",
+      "title": null,
+      "t": 191.22,
+      "at": "3:11",
+      "fail": [
+        "push jitter: 0.999 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 37,
+      "row": "25",
+      "source": "GSFC_20171208_Archive_e001435.jpg",
+      "title": null,
+      "t": 195.78,
+      "at": "3:16",
+      "fail": [
+        "push jitter: 0.983 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 38,
+      "row": "25",
+      "source": "PIA03877.jpg",
+      "title": null,
+      "t": 199.8,
+      "at": "3:20",
+      "fail": [
+        "push jitter: 0.904 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 39,
+      "row": "26",
+      "source": "PIA00234.jpg",
+      "title": null,
+      "t": 204.83,
+      "at": "3:25",
+      "fail": [
+        "push jitter: 1.006 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 40,
+      "row": "26",
+      "source": "PIA00200.jpg",
+      "title": null,
+      "t": 209.93,
+      "at": "3:30",
+      "fail": [
+        "push jitter: 1.021 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 41,
+      "row": "27",
+      "source": "PIA00106.jpg",
+      "title": "",
+      "t": 215.15,
+      "at": "3:35",
+      "fail": [
+        "push jitter: 0.991 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 42,
+      "row": "28",
+      "source": "S91-50688.jpg",
+      "title": null,
+      "t": 221.13,
+      "at": "3:41",
+      "fail": [
+        "push jitter: 0.998 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 43,
+      "row": "30b",
+      "source": "ARC-1978-AC78-9245.jpg",
+      "title": null,
+      "t": 226.57,
+      "at": "3:47",
+      "fail": [
+        "push jitter: 0.957 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 44,
+      "row": "30b",
+      "source": "ARC-1978-AC78-0238.jpg",
+      "title": null,
+      "t": 231.3,
+      "at": "3:51",
+      "fail": [
+        "push jitter: 0.985 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 45,
+      "row": "30b",
+      "source": "ARC-1978-AC78-9245.jpg",
+      "title": null,
+      "t": 234.88,
+      "at": "3:55",
+      "fail": [
+        "push jitter: 0.997 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 46,
+      "row": "31",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 241.63,
+      "at": "4:02",
+      "fail": [
+        "near-black: mean 11.66, p95 29.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 47,
+      "row": "32a",
+      "source": "deuterium.mp4",
+      "title": null,
+      "t": 250.25,
+      "at": "4:10",
+      "fail": [
+        "near-black: mean 13.09, p95 29.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 48,
+      "row": "32b",
+      "source": "PIA00257.jpg",
+      "title": null,
+      "t": 256.92,
+      "at": "4:17",
+      "fail": [
+        "push jitter: 0.48 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 49,
+      "row": "32c",
+      "source": "PIA00084.jpg",
+      "title": null,
+      "t": 262.82,
+      "at": "4:23",
+      "fail": [
+        "push jitter: 1.066 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 50,
+      "row": "32c",
+      "source": "PIA00200.jpg",
+      "title": null,
+      "t": 266.82,
+      "at": "4:27",
+      "fail": [
+        "push jitter: 1.035 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 51,
+      "row": "33",
+      "source": "PIA00102.jpg",
+      "title": null,
+      "t": 271.67,
+      "at": "4:32",
+      "fail": [
+        "push jitter: 0.98 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 52,
+      "row": "34a",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 279.33,
+      "at": "4:39",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 53,
+      "row": "34b",
+      "source": "PIA00240.jpg",
+      "title": "",
+      "t": 285.65,
+      "at": "4:46",
+      "fail": [
+        "push jitter: 1.03 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 54,
+      "row": "34b",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 289.4,
+      "at": "4:49",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 55,
+      "row": "35",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": null,
+      "t": 293.52,
+      "at": "4:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 56,
+      "row": "35",
+      "source": "S91-50687.jpg",
+      "title": null,
+      "t": 298.48,
+      "at": "4:58",
+      "fail": [
+        "push jitter: 1.033 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 57,
+      "row": "35",
+      "source": "S91-50686.jpg",
+      "title": null,
+      "t": 303.27,
+      "at": "5:03",
+      "fail": [
+        "push jitter: 0.962 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 58,
+      "row": "36",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": null,
+      "t": 308.88,
+      "at": "5:09",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 59,
+      "row": "37",
+      "source": "venus_ch3_row37_plateB_steam_lid_sharp_v02.mp4",
+      "title": null,
+      "t": 316.38,
+      "at": "5:16",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 60,
+      "row": "38",
+      "source": "nightlid.mp4",
+      "title": null,
+      "t": 325.62,
+      "at": "5:26",
+      "fail": [
+        "near-black: mean 24.91, p95 158.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 61,
+      "row": "39a",
+      "source": "venus_ch3_row39a_split_ocean_vs_steamlid_v02.mp4",
+      "title": null,
+      "t": 332.75,
+      "at": "5:33",
+      "fail": [
+        "split panel: vertical gutter at 0.48"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 62,
+      "row": "39b",
+      "source": "venus_ch3_row39b_magellan_alpha_regio_tessera_PIA00215_v02.mp4",
+      "title": null,
+      "t": 336.53,
+      "at": "5:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 63,
+      "row": "40",
+      "source": "PIA00109.jpg",
+      "title": null,
+      "t": 341.13,
+      "at": "5:41",
+      "fail": [
+        "push jitter: 0.92 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 64,
+      "row": "40",
+      "source": "PIA00209.jpg",
+      "title": null,
+      "t": 345.85,
+      "at": "5:46",
+      "fail": [
+        "push jitter: 0.974 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 65,
+      "row": "42b",
+      "source": "PIA18033.jpg",
+      "title": "",
+      "t": 349.22,
+      "at": "5:49",
+      "fail": [
+        "push jitter: 1.032 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 66,
+      "row": "43a",
+      "source": "line.mp4",
+      "title": null,
+      "t": 353.1,
+      "at": "5:53",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 21.96, p95 37.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 67,
+      "row": "43b",
+      "source": "line.mp4",
+      "title": null,
+      "t": 361.17,
+      "at": "6:01",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 22.49, p95 44.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 68,
+      "row": "43c",
+      "source": "S91-50688.jpg",
+      "title": null,
+      "t": 369.95,
+      "at": "6:10",
+      "fail": [
+        "push jitter: 0.971 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 69,
+      "row": "44a",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "title": null,
+      "t": 378.48,
+      "at": "6:18",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 70,
+      "row": "44b",
+      "source": "line.mp4",
+      "title": null,
+      "t": 386.62,
+      "at": "6:27",
+      "fail": [
+        "reuse: used 3 times (limit 2)",
+        "near-black: mean 23.01, p95 49.0"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 71,
+      "row": "45a",
+      "source": "s129e007324.jpg",
+      "title": null,
+      "t": 390.83,
+      "at": "6:31",
+      "fail": [
+        "push jitter: 0.819 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 72,
+      "row": "45a",
+      "source": "as17-148-22727.jpg",
+      "title": "",
+      "t": 394.57,
+      "at": "6:35",
+      "fail": [
+        "push jitter: 1.046 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 73,
+      "row": "45b",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "",
+      "t": 400.87,
+      "at": "6:41",
+      "fail": [
+        "reuse: used 3 times (limit 2)"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 74,
+      "row": "45c",
+      "source": "PIA00266.jpg",
+      "title": null,
+      "t": 407.18,
+      "at": "6:47",
+      "fail": [
+        "push jitter: 0.966 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 75,
+      "row": "46",
+      "source": "orbit_looks_back_earth_omni_v01_t0-5s.mp4",
+      "title": "our own clip or graphic",
+      "t": 411.65,
+      "at": "6:52",
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 76,
+      "row": "46",
+      "source": "PIA00084.jpg",
+      "title": null,
+      "t": 415.47,
+      "at": "6:55",
+      "fail": [
+        "push jitter: 1.064 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 77,
+      "row": "48b",
+      "source": "PIA00241.jpg",
+      "title": "",
+      "t": 418.75,
+      "at": "6:59",
+      "fail": [
+        "push jitter: 0.989 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 78,
+      "row": "49",
+      "source": "PIA00157.jpg",
+      "title": null,
+      "t": 422.85,
+      "at": "7:03",
+      "fail": [
+        "push jitter: 1.028 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 79,
+      "row": "49",
+      "source": "PIA00481.jpg",
+      "title": null,
+      "t": 427.6,
+      "at": "7:08",
+      "fail": [
+        "push jitter: 1.005 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 80,
+      "row": "49",
+      "source": "PIA00215.jpg",
+      "title": "",
+      "t": 432.35,
+      "at": "7:12",
+      "fail": [
+        "push jitter: 1.019 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 81,
+      "row": "50",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 438.12,
+      "at": "7:18",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 82,
+      "row": "50",
+      "source": "PIA00268.jpg",
+      "title": null,
+      "t": 442.88,
+      "at": "7:23",
+      "fail": [
+        "push jitter: 1.011 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 83,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 446.47,
+      "at": "7:26",
+      "fail": [
+        "reuse: used 6 times (limit 2)"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 84,
+      "row": "51",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "title": null,
+      "t": 451.37,
+      "at": "7:31",
+      "fail": [
+        "reuse: used 6 times (limit 2)",
+        "split panel: vertical gutter at 0.954"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 85,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": null,
+      "t": 458.03,
+      "at": "7:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 86,
+      "row": "52",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": null,
+      "t": 464.13,
+      "at": "7:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 87,
+      "row": "53",
+      "source": "veritas-cut7-16.jpg",
+      "title": null,
+      "t": 469.1,
+      "at": "7:49",
+      "fail": [
+        "push jitter: 0.998 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 88,
+      "row": "53",
+      "source": "PIA00103.jpg",
+      "title": "",
+      "t": 473.43,
+      "at": "7:53",
+      "fail": [
+        "push jitter: 1.03 px off trend, 0 reversals"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 89,
+      "row": "54",
+      "source": "PIA00252.jpg",
+      "title": null,
+      "t": 478.37,
+      "at": "7:58",
+      "fail": [
+        "push jitter: 1.019 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 90,
+      "row": "54",
+      "source": "S91-50687.jpg",
+      "title": null,
+      "t": 484.6,
+      "at": "8:05",
+      "fail": [
+        "push jitter: 0.957 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 91,
+      "row": "55",
+      "source": "PIA00270.jpg",
+      "title": null,
+      "t": 491.07,
+      "at": "8:11",
+      "fail": [
+        "push jitter: 1.018 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 92,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": null,
+      "t": 497.9,
+      "at": "8:18",
+      "fail": [
+        "low detail: luma std 6.83 < 13.44 and edge density 0.0007 < 0.0259 (absolute floor)",
+        "push jitter: 1.007 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 93,
+      "row": "56",
+      "source": "NHQ202605180003.jpg",
+      "title": null,
+      "t": 503.2,
+      "at": "8:23",
+      "fail": [
+        "low detail: luma std 8.74 < 13.44 and edge density 0.0015 < 0.0259 (absolute floor)",
+        "push jitter: 1.069 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ]
+    },
+    {
+      "cut": 94,
+      "row": "57",
+      "source": "PIA00254.jpg",
+      "title": "",
+      "t": 509.07,
+      "at": "8:29",
+      "fail": [
+        "push jitter: 1.012 px off trend, 0 reversals"
+      ],
+      "warn": []
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0027,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

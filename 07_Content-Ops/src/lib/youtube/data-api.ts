@@ -13,26 +13,32 @@ let cached: { token: string; expiresAt: number } | null = null;
 /** A fresh access token from the stored refresh token. Never logs either. */
 export async function getYouTubeAccessToken(): Promise<string> {
   if (cached && cached.expiresAt > Date.now() + 60_000) return cached.token;
-  const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN } = process.env;
-  if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) throw new Error("GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET missing from .env");
+  const { YOUTUBE_REFRESH_TOKEN } = process.env;
   if (!YOUTUBE_REFRESH_TOKEN) throw new Error("YOUTUBE_REFRESH_TOKEN missing from .env: run `npx tsx --env-file=.env scripts/youtube-auth.ts` once");
+  cached = await refreshAccessToken(YOUTUBE_REFRESH_TOKEN);
+  return cached.token;
+}
+
+/** Trade a refresh token for an access token with the .env OAuth client. Never logs either. */
+export async function refreshAccessToken(refreshToken: string): Promise<{ token: string; expiresAt: number }> {
+  const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
+  if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) throw new Error("GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET missing from .env");
   const res = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
       client_id: GOOGLE_CLIENT_ID,
       client_secret: GOOGLE_CLIENT_SECRET,
-      refresh_token: YOUTUBE_REFRESH_TOKEN,
+      refresh_token: refreshToken,
       grant_type: "refresh_token",
     }),
   });
   const body = await res.json().catch(() => ({}));
   if (!res.ok || !body.access_token) {
-    const reason = body.error === "invalid_grant" ? "the YouTube login expired or was revoked; run scripts/youtube-auth.ts again" : body.error || res.status;
+    const reason = body.error === "invalid_grant" ? "the YouTube login expired or was revoked; run the sign-in script again" : body.error || res.status;
     throw new Error(`YouTube token refresh failed: ${reason}`);
   }
-  cached = { token: body.access_token as string, expiresAt: Date.now() + Number(body.expires_in || 3600) * 1000 };
-  return cached.token;
+  return { token: body.access_token as string, expiresAt: Date.now() + Number(body.expires_in || 3600) * 1000 };
 }
 
 async function get(token: string, url: string) {

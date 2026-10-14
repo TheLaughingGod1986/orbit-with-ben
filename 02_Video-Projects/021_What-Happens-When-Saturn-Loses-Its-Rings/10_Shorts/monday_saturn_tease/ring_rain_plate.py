@@ -10,6 +10,7 @@ On screen it is an illustration over a NASA photo: caption it that way and credi
   python3 ring_rain_plate.py --still out.png            # one frame for review
   python3 ring_rain_plate.py --frames out_dir --seconds 6 --fps 30
   ffmpeg -framerate 30 -i out_dir/%04d.png -c:v libx264 -pix_fmt yuv420p -crf 16 plate.mp4
+  python3 ring_rain_plate.py --still thumb.png --thumb  # 1280x720 long-thumbnail plate, planet right, brighter ice
 
 Needs Pillow and numpy. Downloads the NASA original on first run (about 10 MB).
 """
@@ -29,6 +30,7 @@ R = 470.0                        # planet radius on the 9:16 canvas (whole disk 
 CX, CY = 540.0, 1010.0           # planet centre: keeps ring + rain between 30% and 75% of the height
 CAM = np.array([0.0, math.sin(B), math.cos(B)])
 ICE = np.array([205.0, 228.0, 255.0])
+GAIN = 1.0                       # streak brightness/width multiplier (thumbnails need more)
 
 
 def project(p):
@@ -101,16 +103,16 @@ def frame(base, lines, t):
                 continue
             w = (t0 - a0) / (a1 - a0 + 1e-6)
             val = int(255 * min(v0, v1) * (0.25 + 0.75 * w))
-            dg.line([P0, P1], fill=val, width=5)
-            dc.line([P0, P1], fill=int(val * 0.9), width=1)
+            dg.line([P0, P1], fill=val, width=round(5 * GAIN))
+            dc.line([P0, P1], fill=int(val * 0.9), width=max(1, round(GAIN)))
         for g, (jx, jy) in zip(ln["grains"], ln["jit"]):
             tt = a0 + g * (a1 - a0)
             P, v = pts[min(n, int(tt * n))]
             if v:
                 x, y = P[0] + jx, P[1] + jy
                 dc.ellipse([x - 0.8, y - 0.8, x + 0.8, y + 0.8], fill=int(200 * v))
-    g = np.asarray(glow.filter(ImageFilter.GaussianBlur(4)), float) / 255 * 0.45
-    c = np.asarray(core.filter(ImageFilter.GaussianBlur(0.6)), float) / 255 * 0.85
+    g = np.asarray(glow.filter(ImageFilter.GaussianBlur(4 * GAIN)), float) / 255 * min(0.9, 0.45 * GAIN)
+    c = np.asarray(core.filter(ImageFilter.GaussianBlur(0.6 * GAIN)), float) / 255 * 0.85
     lay = np.clip(g + c, 0, 1)[..., None]
     return Image.fromarray(np.clip(base + (ICE - base) * lay, 0, 255).astype("uint8"))
 
@@ -121,10 +123,17 @@ def main():
     ap.add_argument("--frames")
     ap.add_argument("--seconds", type=float, default=6.0)
     ap.add_argument("--fps", type=int, default=30)
+    ap.add_argument("--thumb", action="store_true", help="16:9 thumbnail plate: rendered at 2560x1440, saved at 1280x720")
     a = ap.parse_args()
+    global W, H, R, CX, CY, GAIN
+    if a.thumb:
+        W, H, R, CX, CY, GAIN = 2560, 1440, 600.0, 1640.0, 760.0, 2.2   # planet right, room for text on the left
     base, lines = base_plate(), build_lines()
     if a.still:
-        frame(base, lines, 1.0).save(a.still)
+        img = frame(base, lines, 1.3 if a.thumb else 1.0)
+        if a.thumb:
+            img = img.resize((1280, 720), Image.LANCZOS)
+        img.save(a.still)
         print("wrote", a.still)
     if a.frames:
         os.makedirs(a.frames, exist_ok=True)

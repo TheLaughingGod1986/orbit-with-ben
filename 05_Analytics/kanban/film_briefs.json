@@ -1,0 +1,539 @@
+{
+  "_note": "Ben, 8 Oct: one plain note per film on the Studio Kanban. Done so far / The holdup / Second limit / Next (who, what, when) / For you. Claude keeps these current on every hourly studio run; the page shows each note's 'updated' time and flags it if it is over a day old. Steps with 'job' take their times live from the job queue; 'afterJob' + 'lag' (minutes) means 'that long after the job is done'. 'when' is an ISO date or time; 'whenText' says it in words when there is no fixed time. 'mood' picks the column: good or held = In progress, waiting = To do, finished or ready = Done. 'line' is the one plain sentence on the card. A step's 'kind' (scripts/routing.py: script, facts, review, vo, image, chart, video, assembly, qa, listing, studio, chief) sets who it shows for a step still to do: the routed worker (Ben, 12 Oct), or whoever holds its job; done steps keep their doer. 'you' is empty when there is nothing for Ben. 'uatFolderUrl' (top level) is Ben's iCloud share link to the OWB UAT folder (icloud.com links only); a film's 'uatUrl' is a share link to its own file, if Ben ever makes one.",
+  "uatFolderUrl": "",
+  "films": {
+    "OWB:021": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "ready",
+      "done": "Everything. It is uploaded and scheduled on YouTube.",
+      "holdup": "None. It goes public on its own on Sunday.",
+      "steps": [
+        {
+          "who": "YouTube",
+          "what": "goes public",
+          "when": "2026-10-11T17:00Z"
+        },
+        {
+          "who": "Claude",
+          "what": "launch check: it's live, title, end screen, pinned comment",
+          "when": "2026-10-11T17:45Z"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 11 Oct 18:00 London.",
+      "line": "Uploaded and scheduled. Goes public on its own on Sunday."
+    },
+    "OWB:022": {
+      "updated": "2026-10-09T12:40Z",
+      "mood": "ready",
+      "done": "Everything. The film is on YouTube, private and scheduled: the long goes public Sun 18 Oct 18:00 London, and the Shorts Mon 19, Wed 21 and Fri 23 Oct at 11:30. The Instagram, Facebook and Threads posts are queued for the same times.",
+      "holdup": "Nothing is wrong. Small Studio jobs are left: the end screen, cards, the title and thumbnail test, and a check on each Short's link to the long (J0091, before 18 Oct). The pinned comment goes on once the long is public, because YouTube won't take comments on a private video.",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch cut v05",
+          "done": true,
+          "doneText": "you watched it · Thu 8 Oct 17:19, looks good"
+        },
+        {
+          "who": "Cursor",
+          "what": "commit the Short covers and run the upload checks",
+          "done": true,
+          "doneText": "done · Thu 8 Oct 18:33"
+        },
+        {
+          "who": "Claude",
+          "what": "final OK",
+          "done": true,
+          "doneText": "given · Thu 8 Oct 19:10"
+        },
+        {
+          "who": "Cursor",
+          "what": "upload privately, scheduled: long Sun 18 Oct 18:00, Shorts Mon 19, Wed 21, Fri 23 Oct",
+          "job": "J0061",
+          "done": true,
+          "doneText": "uploaded · Fri 9 Oct 13:32"
+        },
+        {
+          "who": "Cursor",
+          "what": "Studio finish: end screen, cards, title and thumbnail test, Shorts' link to the long",
+          "job": "J0091"
+        },
+        {
+          "who": "Cursor",
+          "what": "pinned comment once it's public",
+          "whenText": "Sun 18 Oct 18:05"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 18 Oct 18:00 London.",
+      "line": "It's uploaded and scheduled. Nothing for you.",
+      "youWhen": "",
+      "youShort": ""
+    },
+    "OWB:023": {
+      "updated": "2026-10-11T20:43Z",
+      "mood": "watched",
+      "done": "Script, voice, picture, edit, thumbnails and the upload package. v05e has your fixes from v05d: the planets are labelled (5:53), it's clear a probe landed, not people (7:16), and the new missions have their dates (7:40-7:50). Every check passed (picture, music, clip check).",
+      "holdup": "Nothing on you. v05e is the locked picture; Claude runs the ship steps through the worker queue (asked on #99, Sun 11 Oct 20:30).",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch v05d",
+          "done": true,
+          "doneText": "you watched it · Sun 11 Oct 10:42, 2 fixes"
+        },
+        {
+          "who": "Cursor",
+          "what": "make v05e with your fixes",
+          "done": true,
+          "doneText": "done · Sun 11 Oct 11:31 (J0125)"
+        },
+        {
+          "who": "Ben",
+          "what": "watch v05e",
+          "done": true,
+          "doneText": "you approved it · Sun 11 Oct 20:26"
+        },
+        {
+          "who": "Claude",
+          "what": "ship v05e: final export, private upload for Sun 25 Oct 18:00, listing, thumbnail, Shorts",
+          "whenText": "through the worker queue (asked on #99, Sun 11 Oct 20:30)"
+        },
+        {
+          "who": "Chief",
+          "what": "final OK once the upload checks pass",
+          "when": "2026-10-20"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 25 Oct 18:00 London. The Chief's final OK is Tue 20 Oct.",
+      "line": "Approved by Ben Sun 11 Oct 20:26 – shipping: final export, private upload set for Sun 25 Oct 18:00, listing, thumbnail and Shorts.",
+      "youWhen": "",
+      "youShort": "",
+      "limit": ""
+    },
+    "OWB:024": {
+      "updated": "2026-10-11T22:30Z",
+      "mood": "fixing",
+      "done": "Script, voice, thumbnails, the upload package and its own music. v05 fixed nearly all of the v04 picture: dark frames down to 14%, no freezes, music sitting under the voice.",
+      "holdup": "The Chief failed v05 on two shots only (11 Oct): a clock graphic reused at 7:19 and one starfield shot that runs 26 s at the end and is a repeat. Cursor fixes those two in v05b (J0132), the Chief checks it, then it comes to you. v05 isn't for you to watch.",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch v03",
+          "done": true,
+          "doneText": "you watched it · Thu 8 Oct 18:30, 1 fix"
+        },
+        {
+          "who": "Cursor",
+          "what": "its own music laid in (v04)",
+          "done": true,
+          "doneText": "done · Sat 10 Oct (J0089)"
+        },
+        {
+          "who": "Cursor",
+          "what": "v05: fix the picture the Chief failed in v04",
+          "done": true,
+          "doneText": "done · Sun 11 Oct (J0129)"
+        },
+        {
+          "who": "Chief",
+          "what": "check v05",
+          "done": true,
+          "doneText": "failed on 2 shots · Sun 11 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "v05b: replace the 2 repeated shots",
+          "job": "J0132"
+        },
+        {
+          "who": "Chief",
+          "what": "check v05b",
+          "afterJob": "J0132",
+          "lag": 60
+        },
+        {
+          "who": "Ben",
+          "what": "watch v05b",
+          "whenText": "after the Chief's check"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 1 Nov 18:00 London.",
+      "line": "v05 is nearly there. Cursor swaps two repeated shots in v05b (J0132), then the Chief checks it and it comes to you.",
+      "youWhen": "",
+      "youShort": "",
+      "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, the Chief's final OK goes ahead.",
+      "watchFrom": "v05b"
+    },
+    "OWB:025": {
+      "updated": "2026-10-09T12:58Z",
+      "mood": "watched",
+      "done": "Script, voice, picture and the film's own music. Your 8 Oct notes fixed (v03f), plus Codex's picture ideas.",
+      "holdup": "Nothing is holding it. The thumbnails and upload details passed Claude's review. Cursor tidies one thumbnail's edge, then uploads it privately, set to go public on Sun 8 Nov.",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch it",
+          "done": true,
+          "doneText": "you said looks good · Fri 9 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "thumbnails and upload details",
+          "job": "J0066",
+          "done": true,
+          "doneText": "passed · Fri 9 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "fix thumbnail A's edge, then upload privately, set to go public Sun 8 Nov 18:00",
+          "job": "J0084"
+        }
+      ],
+      "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
+      "line": "You passed it. It gets uploaded privately and goes public on Sun 8 Nov.",
+      "you": "",
+      "youShort": "",
+      "youWhen": ""
+    },
+    "OWB:026": {
+      "updated": "2026-10-10T13:16Z",
+      "mood": "ready",
+      "done": "Your three notes are in: light travelling to Earth past year-marks at 1:52, the Moon/Sun/star light race at 6:02, and Orbit's two scenes. Seven repeated bits of observatory footage were also swapped for fresh night-sky shots, and every check passes.",
+      "holdup": "Nothing: it's ready for you to watch.",
+      "steps": [
+        {
+          "who": "Ben",
+          "what": "watch it",
+          "done": true,
+          "doneText": "you watched it · Fri 9 Oct, 2 fixes"
+        },
+        {
+          "who": "Cursor",
+          "what": "thumbnails and upload details",
+          "job": "J0076",
+          "done": true,
+          "doneText": "passed · Fri 9 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "redraw the two graphics, add Orbit's two scenes, make the new version",
+          "job": "J0085",
+          "done": true,
+          "doneText": "made · Sat 10 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "swap 7 repeated footage stretches, make v05b",
+          "job": "J0114",
+          "done": true,
+          "doneText": "passed every check · Sat 10 Oct"
+        },
+        {
+          "who": "Claude",
+          "what": "check it",
+          "afterJob": "J0114",
+          "lag": 60
+        },
+        {
+          "who": "Ben",
+          "what": "watch the new version",
+          "whenText": "about Sun 11 Oct"
+        }
+      ],
+      "you": "Watch v05b on your phone (OWB UAT/026_NearestStar_v05b_PHONE.mp4), then tap Looks good or Needs a change.",
+      "timing": "Ready for you about Sun 11 Oct. Airs Sun 15 Nov.",
+      "line": "v05b has your three fixes plus fresh night-sky shots where footage repeated. Ready for you to watch.",
+      "youShort": "watch v05b",
+      "youWhen": "this weekend"
+    },
+    "OWB:027": {
+      "updated": "2026-10-11T18:05Z",
+      "mood": "held",
+      "done": "Script, voice (re-ordered so the first answer comes at 23 seconds), shot list, 7 code graphics, real footage for every shot, and all four made clips: Orbit at the North Pole and at sunset, a drink poured on a plane, a phone at midnight. £0 spent.",
+      "holdup": "The Chief checked rough cut v01e frame by frame (11 Oct) and failed it on the picture: too much near-black (36%, the cap is 30%), labels and chapter cards too small, a few ungraded NASA photos, logo corners and a seam in the eclipse shots, one wrong picture (the Sun at 6:39) and some repeated stills. Cursor fixes them in v01f (J0130). Its own music comes after 30 Oct, then it's yours to watch.",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "picture, rough cut 1 (2 Orbit clips, 2 everyday scenes)",
+          "done": true,
+          "doneText": "done · Fri 9 Oct 21:01 (J0077)"
+        },
+        {
+          "who": "Chief",
+          "what": "check the rough cut frame by frame",
+          "done": true,
+          "doneText": "failed v01e · Sun 11 Oct (#99, 6 fixes)"
+        },
+        {
+          "who": "Cursor",
+          "what": "v01f: the Chief's 6 picture fixes",
+          "job": "J0130"
+        },
+        {
+          "who": "Chief",
+          "what": "check v01f",
+          "afterJob": "J0130",
+          "lag": 60
+        },
+        {
+          "who": "Cursor",
+          "what": "its own music (take 2)",
+          "when": "2026-10-30"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 22 Nov.",
+      "line": "The Chief failed rough cut v01e on 6 picture points. Cursor is fixing them in v01f (J0130); music after 30 Oct, then your watch."
+    },
+    "OWB:028": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "waiting",
+      "done": "Script, voice, shot list and 7 code graphics.",
+      "holdup": "Waiting its turn behind 027 for picture.",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "gather the source footage, then picture (2 Omni clips, 2 Veo props)",
+          "whenText": "after 027's picture, about the week of 26 Oct"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 29 Nov.",
+      "line": "Script and voice done. Picture after 027, about the week of 26 Oct."
+    },
+    "OWB:029": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "waiting",
+      "done": "Script, voice, shot list (39 rows) and 6 code graphics.",
+      "holdup": "Waiting its turn behind 028 for picture.",
+      "limit": "One picture (the Super-Kamiokande detector, row 24) needs its licence checked before it's used.",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "gather the source footage, then picture (2 Omni clips)",
+          "whenText": "after 028's picture, early November"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Sun 6 Dec.",
+      "line": "Script and voice done. Picture after 028, early November."
+    },
+    "HOS:005": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "ready",
+      "done": "Everything. The long film and its three Shorts are scheduled on YouTube.",
+      "holdup": "None.",
+      "steps": [
+        {
+          "who": "YouTube",
+          "what": "goes public",
+          "when": "2026-10-29T18:00Z"
+        },
+        {
+          "who": "Cursor",
+          "what": "after-air jobs: Related links on the Shorts, cards, end screen, pinned comment",
+          "when": "2026-10-29T18:05Z"
+        }
+      ],
+      "you": "",
+      "timing": "Airs Thu 29 Oct 18:00. Shorts 30 Oct, 8 Nov and 15 Nov.",
+      "line": "Finished and scheduled with its three Shorts."
+    },
+    "HOS:006": {
+      "updated": "2026-10-11T23:08Z",
+      "mood": "good",
+      "done": "Script, voice and the Shorts. Picture is about half done: Part 01 is kept, Part 02's rough cut is held, and all 16 Part 03 shots made on the free Vertex trial (Sat 10 Oct) are kept.",
+      "holdup": "Part 03's rough cut is next on the Mac mini (no spend). Its one Flow shot and Parts 04 and 05 wait for Flow, whose credits refill on Mon 12 Oct.",
+      "limit": "The Vertex trial has about £4.25 left after Part 03 (it runs down to £0, never onto the card). Flow had 52 credits before the refill; the new balance is read on Monday after 09:00 and priced before anything is spent. The Mac mini is shared with Orbit With Ben, so the two take turns.",
+      "steps": [
+        {
+          "kind": "video",
+          "who": "Cursor",
+          "what": "Part 03 picture on the free Vertex trial: all 16 shots made and kept",
+          "done": true,
+          "doneText": "done Sat 10 Oct (J0107)"
+        },
+        {
+          "kind": "assembly",
+          "job": "J0137",
+          "what": "Part 03 rough cut from the 16 kept shots (the Flow shot's slot held)"
+        },
+        {
+          "kind": "video",
+          "job": "J0138",
+          "what": "read the Flow balance after the refill and price the last Part 03 shot and Parts 04 and 05"
+        },
+        {
+          "kind": "chief",
+          "job": "J0139",
+          "what": "pass the prices before anything is spent"
+        },
+        {
+          "kind": "video",
+          "job": "J0140",
+          "what": "the last Part 03 shot and Parts 04 and 05 picture on Flow, then their rough cuts",
+          "when": "2026-10-25",
+          "whenText": "picture by Sun 25 Oct"
+        },
+        {
+          "kind": "chart",
+          "what": "teaching graphics: charts, people cards and date stamps",
+          "when": "2026-10-27"
+        },
+        {
+          "kind": "facts",
+          "what": "check every number and date on the graphics",
+          "when": "2026-10-28"
+        },
+        {
+          "kind": "assembly",
+          "what": "edit and master",
+          "when": "2026-10-29",
+          "whenText": "by Thu 29 Oct"
+        },
+        {
+          "kind": "chart",
+          "what": "thumbnails (art on Flow, lettering from the cover builder)",
+          "when": "2026-10-29"
+        },
+        {
+          "who": "Ben",
+          "what": "final OK",
+          "when": "2026-11-01"
+        }
+      ],
+      "you": "Your final OK on Sun 1 Nov. Nothing before then.",
+      "youWhen": "2026-11-01",
+      "timing": "Airs Thu 5 Nov. On time if Monday's Flow refill covers Parts 04 and 05.",
+      "line": "Picture about half done. All 16 Part 03 shots are kept; its rough cut is next, then Parts 04 and 05 on Flow after Monday's refill.",
+      "youShort": "your final OK Sun 1 Nov"
+    },
+    "HOS:007": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "waiting",
+      "done": "Script, fact check, long voiceover, and the plate boards (96 rows, priced).",
+      "holdup": "Waiting its turn. The Shorts voiceover was due Wed 7 Oct but slipped behind 008's voiceover and today's 006 picture. Picture can't start until the voiceover batch is done and the Flow credits refill.",
+      "limit": "Picture costs about £58 for first takes (about £139 with the usual retakes), so it needs the 12 Oct Flow refill.",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "Shorts A to C voiceover (about an hour)",
+          "whenText": "after 006 Part 03, about Fri 9 Oct"
+        },
+        {
+          "who": "Claude",
+          "what": "review the plate boards",
+          "whenText": "before picture starts"
+        },
+        {
+          "who": "Cursor",
+          "what": "picture, after 006's picture",
+          "when": "2026-11-01",
+          "whenText": "due Sun 1 Nov"
+        },
+        {
+          "who": "Ben",
+          "what": "final OK",
+          "when": "2026-11-08"
+        }
+      ],
+      "you": "Your final OK on Sun 8 Nov. Nothing before then.",
+      "youWhen": "2026-11-08",
+      "timing": "Airs Thu 12 Nov.",
+      "line": "Script and voice done. Shorts voice next, then picture after 006's.",
+      "youShort": "your final OK Sun 8 Nov"
+    },
+    "HOS:008": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "waiting",
+      "done": "Script, fact check, upload package, and the long voiceover (locked 7 Oct).",
+      "holdup": "Waiting its turn in the voiceover queue for the Shorts. The narration runs 9:15, a little over the 9-minute target, so the edit trims pauses to bring it in.",
+      "limit": "Eight period details (P1 to P8) need confirming before picture.",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "Shorts voiceover",
+          "whenText": "after 009 and 010's long voiceover"
+        },
+        {
+          "who": "Cursor",
+          "what": "picture (about 58 plates)",
+          "when": "2026-11-08",
+          "whenText": "due Sun 8 Nov"
+        },
+        {
+          "who": "Ben",
+          "what": "final OK",
+          "when": "2026-11-15"
+        }
+      ],
+      "you": "Your final OK on Sun 15 Nov.",
+      "youWhen": "2026-11-15",
+      "timing": "Airs Thu 19 Nov.",
+      "line": "Script and voice done. Shorts voice and picture are queued behind 007, 009 and 010.",
+      "youShort": "your final OK Sun 15 Nov"
+    },
+    "HOS:009": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "waiting",
+      "done": "Script, fact check and upload package.",
+      "holdup": "The long voiceover is a day late. It was due Wed 7 Oct, but 008's voiceover took the Mac mini first and today 006's picture went ahead of it. The air date isn't affected: picture isn't due until 15 Nov.",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "long voiceover (about 1 to 2 hours)",
+          "whenText": "after 007's Shorts voiceover, about Fri 9 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "Shorts voiceover, then picture",
+          "when": "2026-11-15",
+          "whenText": "picture due Sun 15 Nov"
+        },
+        {
+          "who": "Ben",
+          "what": "final OK",
+          "when": "2026-11-22"
+        }
+      ],
+      "you": "Your final OK on Sun 22 Nov.",
+      "youWhen": "2026-11-22",
+      "timing": "Airs Thu 26 Nov.",
+      "line": "Script done. Its voiceover is next, about Fri 9 Oct (a day late; air date unaffected).",
+      "youShort": "your final OK Sun 22 Nov"
+    },
+    "HOS:010": {
+      "updated": "2026-10-08T16:05Z",
+      "mood": "waiting",
+      "done": "Script, fact check and upload package.",
+      "holdup": "Waiting its turn: its voiceover follows 009's.",
+      "steps": [
+        {
+          "who": "Cursor",
+          "what": "long voiceover",
+          "whenText": "after 009's, about Sat 10 Oct"
+        },
+        {
+          "who": "Cursor",
+          "what": "Shorts voiceover, then picture",
+          "when": "2026-11-22",
+          "whenText": "picture due Sun 22 Nov"
+        },
+        {
+          "who": "Ben",
+          "what": "final OK",
+          "when": "2026-11-29"
+        }
+      ],
+      "you": "Your final OK on Sun 29 Nov.",
+      "youWhen": "2026-11-29",
+      "timing": "Airs Thu 3 Dec.",
+      "line": "Script done. Voiceover after 009's, about Sat 10 Oct.",
+      "youShort": "your final OK Sun 29 Nov"
+    }
+  }
+}

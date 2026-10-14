@@ -1,0 +1,33 @@
+{
+  "script_words": 53,
+  "whisper_words": 52,
+  "match_rate_pct": 90.57,
+  "mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "seventeen",
+        "kilometres"
+      ],
+      "whisper": [
+        "17",
+        "kilometers"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "seventy",
+        "five",
+        "thousand"
+      ],
+      "whisper": [
+        "75",
+        "000"
+      ]
+    }
+  ],
+  "script_norm": "our fastest robot leaving the solar system is voyager 1 could a robot like it reach the nearest star voyager moves seventeen kilometres every second at that speed the trip would take about seventy five thousand years and voyager isn't even heading that way the full film how far is the nearest star",
+  "whisper_norm": "our fastest robot leaving the solar system is voyager 1 could a robot like it reach the nearest star voyager moves 17 kilometers every second at that speed the trip would take about 75 000 years and voyager isn't even heading that way the full film how far is the nearest star",
+  "mismatches_are_number_spelling_only": true
+}

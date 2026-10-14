@@ -1,0 +1,856 @@
+{
+  "rule": "fail if near-black(<12)/near-white(>245) pixels touching the border cover > 1.5% of the row frame",
+  "verdict": "WARN",
+  "note": "027 rough v01: EPIC disc and code graphics sit on near-black space; WARN for Claude to look at full size.",
+  "fail": [
+    {
+      "row": "1",
+      "cut": 0,
+      "source": "epic_spin_v01.mp4",
+      "frac": 0.6193
+    },
+    {
+      "row": "1",
+      "cut": 1,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.4255
+    },
+    {
+      "row": "2",
+      "cut": 3,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.0961
+    },
+    {
+      "row": "3",
+      "cut": 4,
+      "source": "row03_speed.mp4",
+      "frac": 0.7608
+    },
+    {
+      "row": "10",
+      "cut": 5,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1063
+    },
+    {
+      "row": "10",
+      "cut": 6,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1138
+    },
+    {
+      "row": "11",
+      "cut": 7,
+      "source": "row10_air.mp4",
+      "frac": 0.7399
+    },
+    {
+      "row": "11",
+      "cut": 8,
+      "source": "row11_air.mp4",
+      "frac": 0.7241
+    },
+    {
+      "row": "13",
+      "cut": 11,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1568
+    },
+    {
+      "row": "13",
+      "cut": 12,
+      "source": "row13_speed.mp4",
+      "frac": 0.7626
+    },
+    {
+      "row": "13",
+      "cut": 13,
+      "source": "row13_speed.mp4",
+      "frac": 0.7466
+    },
+    {
+      "row": "14",
+      "cut": 15,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.6329
+    },
+    {
+      "row": "15",
+      "cut": 16,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "frac": 0.0155
+    },
+    {
+      "row": "15",
+      "cut": 17,
+      "source": "epic_spin_v01.mp4",
+      "frac": 0.0687
+    },
+    {
+      "row": "15",
+      "cut": 18,
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "frac": 0.0246
+    },
+    {
+      "row": "5",
+      "cut": 19,
+      "source": "cabin_pour_veo_v01.mp4",
+      "frac": 0.0558
+    },
+    {
+      "row": "6",
+      "cut": 22,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.7478
+    },
+    {
+      "row": "7",
+      "cut": 24,
+      "source": "ESO_timelapse_La_Silla.webm",
+      "frac": 0.0282
+    },
+    {
+      "row": "8",
+      "cut": 26,
+      "source": "row08_bulge.mp4",
+      "frac": 0.7207
+    },
+    {
+      "row": "8",
+      "cut": 27,
+      "source": "row08_bulge.mp4",
+      "frac": 0.7039
+    },
+    {
+      "row": "16",
+      "cut": 33,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1474
+    },
+    {
+      "row": "17",
+      "cut": 34,
+      "source": "row17_oceans.mp4",
+      "frac": 0.7325
+    },
+    {
+      "row": "18",
+      "cut": 37,
+      "source": "row18-19_oceans.mp4",
+      "frac": 0.7326
+    },
+    {
+      "row": "19",
+      "cut": 38,
+      "source": "row18-19_oceans.mp4",
+      "frac": 0.7262
+    },
+    {
+      "row": "19",
+      "cut": 39,
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "frac": 0.0255
+    },
+    {
+      "row": "20",
+      "cut": 40,
+      "source": "row20_dayyear.mp4",
+      "frac": 0.7262
+    },
+    {
+      "row": "20",
+      "cut": 41,
+      "source": "row20_dayyear.mp4",
+      "frac": 0.7269
+    },
+    {
+      "row": "20",
+      "cut": 42,
+      "source": "row20_dayyear.mp4",
+      "frac": 0.7262
+    },
+    {
+      "row": "21",
+      "cut": 44,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.0783
+    },
+    {
+      "row": "22",
+      "cut": 46,
+      "source": "PIA23791.jpg",
+      "frac": 0.2004
+    },
+    {
+      "row": "24",
+      "cut": 50,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.7965
+    },
+    {
+      "row": "24",
+      "cut": 51,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.7822
+    },
+    {
+      "row": "24",
+      "cut": 52,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.7574
+    },
+    {
+      "row": "25",
+      "cut": 53,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.723
+    },
+    {
+      "row": "25",
+      "cut": 54,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.6979
+    },
+    {
+      "row": "25",
+      "cut": 55,
+      "source": "as14-67-09386.jpg",
+      "frac": 0.0161
+    },
+    {
+      "row": "28",
+      "cut": 62,
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "frac": 0.4639
+    },
+    {
+      "row": "28",
+      "cut": 63,
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "frac": 0.5372
+    },
+    {
+      "row": "28",
+      "cut": 64,
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "frac": 0.6831
+    },
+    {
+      "row": "30",
+      "cut": 69,
+      "source": "row30_clock.mp4",
+      "frac": 0.7374
+    },
+    {
+      "row": "31",
+      "cut": 70,
+      "source": "phone_midnight_veo_v01.mp4",
+      "frac": 0.219
+    },
+    {
+      "row": "31",
+      "cut": 71,
+      "source": "NIST_atomic_clock_006.jpg",
+      "frac": 0.0335
+    },
+    {
+      "row": "32",
+      "cut": 72,
+      "source": "NIST-F2_cesium_fountain_atomic_clock.jpg",
+      "frac": 0.0209
+    },
+    {
+      "row": "33",
+      "cut": 74,
+      "source": "row33_clock.mp4",
+      "frac": 0.9695
+    },
+    {
+      "row": "33",
+      "cut": 75,
+      "source": "row33_clock.mp4",
+      "frac": 0.7422
+    },
+    {
+      "row": "33",
+      "cut": 76,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.2102
+    },
+    {
+      "row": "34",
+      "cut": 77,
+      "source": "commons_Pahoeoe_fountain_original.jpg",
+      "frac": 0.016
+    },
+    {
+      "row": "35",
+      "cut": 80,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "frac": 0.0592
+    },
+    {
+      "row": "35",
+      "cut": 81,
+      "source": "row35_tides.mp4",
+      "frac": 0.5975
+    },
+    {
+      "row": "35",
+      "cut": 82,
+      "source": "row35_speed.mp4",
+      "frac": 0.7607
+    },
+    {
+      "row": "35",
+      "cut": 83,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.6446
+    },
+    {
+      "row": "37",
+      "cut": 86,
+      "source": "NASA_Bennu_journey_early_Earth.jpg",
+      "frac": 0.1094
+    },
+    {
+      "row": "37",
+      "cut": 87,
+      "source": "epic_spin_v01.mp4",
+      "frac": 0.6192
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "row": "1",
+      "cut": 0,
+      "source": "epic_spin_v01.mp4",
+      "frac": 0.6193
+    },
+    {
+      "row": "1",
+      "cut": 1,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.4255
+    },
+    {
+      "row": "2",
+      "cut": 2,
+      "source": "ED07-0256-09.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "2",
+      "cut": 3,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.0961
+    },
+    {
+      "row": "3",
+      "cut": 4,
+      "source": "row03_speed.mp4",
+      "frac": 0.7608
+    },
+    {
+      "row": "10",
+      "cut": 5,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1063
+    },
+    {
+      "row": "10",
+      "cut": 6,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1138
+    },
+    {
+      "row": "11",
+      "cut": 7,
+      "source": "row10_air.mp4",
+      "frac": 0.7399
+    },
+    {
+      "row": "11",
+      "cut": 8,
+      "source": "row11_air.mp4",
+      "frac": 0.7241
+    },
+    {
+      "row": "12",
+      "cut": 9,
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "frac": 0.0
+    },
+    {
+      "row": "12",
+      "cut": 10,
+      "source": "Kalaloch_waves_rocks_02.webm",
+      "frac": 0.001
+    },
+    {
+      "row": "13",
+      "cut": 11,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1568
+    },
+    {
+      "row": "13",
+      "cut": 12,
+      "source": "row13_speed.mp4",
+      "frac": 0.7626
+    },
+    {
+      "row": "13",
+      "cut": 13,
+      "source": "row13_speed.mp4",
+      "frac": 0.7466
+    },
+    {
+      "row": "14",
+      "cut": 14,
+      "source": "orbit_northpole_omni_v01.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "14",
+      "cut": 15,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.6329
+    },
+    {
+      "row": "15",
+      "cut": 16,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "frac": 0.0155
+    },
+    {
+      "row": "15",
+      "cut": 17,
+      "source": "epic_spin_v01.mp4",
+      "frac": 0.0687
+    },
+    {
+      "row": "15",
+      "cut": 18,
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "frac": 0.0246
+    },
+    {
+      "row": "5",
+      "cut": 19,
+      "source": "cabin_pour_veo_v01.mp4",
+      "frac": 0.0558
+    },
+    {
+      "row": "5",
+      "cut": 20,
+      "source": "AFRC2022-0059-49.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "5",
+      "cut": 21,
+      "source": "ED07-0256-09.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "6",
+      "cut": 22,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.7478
+    },
+    {
+      "row": "6",
+      "cut": 23,
+      "source": "iss070e062746.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "7",
+      "cut": 24,
+      "source": "ESO_timelapse_La_Silla.webm",
+      "frac": 0.0282
+    },
+    {
+      "row": "7",
+      "cut": 25,
+      "source": "ESO_timelapse_La_Silla.webm",
+      "frac": 0.0016
+    },
+    {
+      "row": "8",
+      "cut": 26,
+      "source": "row08_bulge.mp4",
+      "frac": 0.7207
+    },
+    {
+      "row": "8",
+      "cut": 27,
+      "source": "row08_bulge.mp4",
+      "frac": 0.7039
+    },
+    {
+      "row": "8",
+      "cut": 28,
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "frac": 0.0018
+    },
+    {
+      "row": "9",
+      "cut": 29,
+      "source": "Foucault_pendulum_1.webm",
+      "frac": 0.0001
+    },
+    {
+      "row": "9",
+      "cut": 30,
+      "source": "Foucault_pendulum_1.webm",
+      "frac": 0.0001
+    },
+    {
+      "row": "9",
+      "cut": 31,
+      "source": "Foucault_pendulum_1.webm",
+      "frac": 0.0
+    },
+    {
+      "row": "9",
+      "cut": 32,
+      "source": "Portrait_Leon_Foucault_1860.jpg",
+      "frac": 0.0004
+    },
+    {
+      "row": "16",
+      "cut": 33,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.1474
+    },
+    {
+      "row": "17",
+      "cut": 34,
+      "source": "row17_oceans.mp4",
+      "frac": 0.7325
+    },
+    {
+      "row": "18",
+      "cut": 35,
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "frac": 0.0145
+    },
+    {
+      "row": "18",
+      "cut": 36,
+      "source": "GSFC_20171208_Archive_e002131.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "18",
+      "cut": 37,
+      "source": "row18-19_oceans.mp4",
+      "frac": 0.7326
+    },
+    {
+      "row": "19",
+      "cut": 38,
+      "source": "row18-19_oceans.mp4",
+      "frac": 0.7262
+    },
+    {
+      "row": "19",
+      "cut": 39,
+      "source": "GSFC_20171208_Archive_e000265.jpg",
+      "frac": 0.0255
+    },
+    {
+      "row": "20",
+      "cut": 40,
+      "source": "row20_dayyear.mp4",
+      "frac": 0.7262
+    },
+    {
+      "row": "20",
+      "cut": 41,
+      "source": "row20_dayyear.mp4",
+      "frac": 0.7269
+    },
+    {
+      "row": "20",
+      "cut": 42,
+      "source": "row20_dayyear.mp4",
+      "frac": 0.7262
+    },
+    {
+      "row": "21",
+      "cut": 43,
+      "source": "orbit_sunset_omni_v01.mp4",
+      "frac": 0.0
+    },
+    {
+      "row": "21",
+      "cut": 44,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.0783
+    },
+    {
+      "row": "22",
+      "cut": 45,
+      "source": "PIA00271.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "22",
+      "cut": 46,
+      "source": "PIA23791.jpg",
+      "frac": 0.2004
+    },
+    {
+      "row": "23",
+      "cut": 47,
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "frac": 0.0001
+    },
+    {
+      "row": "23",
+      "cut": 48,
+      "source": "Bay_of_Fundy_tide_in.jpg",
+      "frac": 0.0033
+    },
+    {
+      "row": "23",
+      "cut": 49,
+      "source": "Bay_of_Fundy_tide_out.jpg",
+      "frac": 0.0055
+    },
+    {
+      "row": "24",
+      "cut": 50,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.7965
+    },
+    {
+      "row": "24",
+      "cut": 51,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.7822
+    },
+    {
+      "row": "24",
+      "cut": 52,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.7574
+    },
+    {
+      "row": "25",
+      "cut": 53,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.723
+    },
+    {
+      "row": "25",
+      "cut": 54,
+      "source": "row24-25_tides.mp4",
+      "frac": 0.6979
+    },
+    {
+      "row": "25",
+      "cut": 55,
+      "source": "as14-67-09386.jpg",
+      "frac": 0.0161
+    },
+    {
+      "row": "25",
+      "cut": 56,
+      "source": "as14-67-09386.jpg",
+      "frac": 0.0018
+    },
+    {
+      "row": "26",
+      "cut": 57,
+      "source": "GSFC_20171208_Archive_e000868.jpg",
+      "frac": 0.0002
+    },
+    {
+      "row": "26",
+      "cut": 58,
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "26",
+      "cut": 59,
+      "source": "GSFC_20171208_Archive_e001939.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "27",
+      "cut": 60,
+      "source": "Cuneiform_tablet-_commentary_on_Enuma_Anu_Enlil_tablet_5_MET.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "27",
+      "cut": 61,
+      "source": "NHQ201708210100.jpg",
+      "frac": 0.0019
+    },
+    {
+      "row": "28",
+      "cut": 62,
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "frac": 0.4639
+    },
+    {
+      "row": "28",
+      "cut": 63,
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "frac": 0.5372
+    },
+    {
+      "row": "28",
+      "cut": 64,
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "frac": 0.6831
+    },
+    {
+      "row": "29",
+      "cut": 65,
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "frac": 0.0019
+    },
+    {
+      "row": "29",
+      "cut": 66,
+      "source": "Eridophyllum_seriale_2.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "29",
+      "cut": 67,
+      "source": "Heliophyllum_confluens_fossil_coral_Columbus_Limestone_Middl.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "29",
+      "cut": 68,
+      "source": "Eridophyllum_seriale_2.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "30",
+      "cut": 69,
+      "source": "row30_clock.mp4",
+      "frac": 0.7374
+    },
+    {
+      "row": "31",
+      "cut": 70,
+      "source": "phone_midnight_veo_v01.mp4",
+      "frac": 0.219
+    },
+    {
+      "row": "31",
+      "cut": 71,
+      "source": "NIST_atomic_clock_006.jpg",
+      "frac": 0.0335
+    },
+    {
+      "row": "32",
+      "cut": 72,
+      "source": "NIST-F2_cesium_fountain_atomic_clock.jpg",
+      "frac": 0.0209
+    },
+    {
+      "row": "32",
+      "cut": 73,
+      "source": "NIST_ytterbium_lattice_clock.jpg",
+      "frac": 0.0093
+    },
+    {
+      "row": "33",
+      "cut": 74,
+      "source": "row33_clock.mp4",
+      "frac": 0.9695
+    },
+    {
+      "row": "33",
+      "cut": 75,
+      "source": "row33_clock.mp4",
+      "frac": 0.7422
+    },
+    {
+      "row": "33",
+      "cut": 76,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "frac": 0.2102
+    },
+    {
+      "row": "34",
+      "cut": 77,
+      "source": "commons_Pahoeoe_fountain_original.jpg",
+      "frac": 0.016
+    },
+    {
+      "row": "34",
+      "cut": 78,
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "34",
+      "cut": 79,
+      "source": "GSFC_20171208_Archive_e001753.jpg",
+      "frac": 0.0
+    },
+    {
+      "row": "35",
+      "cut": 80,
+      "source": "GSFC_20171208_Archive_e002035.jpg",
+      "frac": 0.0592
+    },
+    {
+      "row": "35",
+      "cut": 81,
+      "source": "row35_tides.mp4",
+      "frac": 0.5975
+    },
+    {
+      "row": "35",
+      "cut": 82,
+      "source": "row35_speed.mp4",
+      "frac": 0.7607
+    },
+    {
+      "row": "35",
+      "cut": 83,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "frac": 0.6446
+    },
+    {
+      "row": "36",
+      "cut": 84,
+      "source": "ESO_timelapse_La_Silla.webm",
+      "frac": 0.0001
+    },
+    {
+      "row": "36",
+      "cut": 85,
+      "source": "ESO_star_trails_VLT_Paranal.jpg",
+      "frac": 0.0016
+    },
+    {
+      "row": "37",
+      "cut": 86,
+      "source": "NASA_Bennu_journey_early_Earth.jpg",
+      "frac": 0.1094
+    },
+    {
+      "row": "37",
+      "cut": 87,
+      "source": "epic_spin_v01.mp4",
+      "frac": 0.6192
+    }
+  ]
+}

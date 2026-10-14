@@ -1,0 +1,108 @@
+{
+  "job": "J0163",
+  "short": "s6",
+  "air_provisional": "2026-11-07",
+  "title_on_screen": "Standing on Titan Feels Like Diving 15 Metres Down",
+  "file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4",
+  "frames": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01_frames.jpg",
+  "sha256": "afe0e80f044aca2887b9a9ef1d2aaf9fee9098285315fdc5d667eaca0019ca6c",
+  "duration_s": 21.966667,
+  "vo": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/vo_s5-s8_v01/trim/owb_sa_s6_titan_vo_v01_trim.wav",
+  "words": 44,
+  "last_word_end_s": 18.96,
+  "spoken": "Standing on Titan feels like being 15 metres underwater. Stay, and I'll show you why NASA's going. The air on Saturn's biggest moon presses 60% harder than ours, so NASA is sending Dragonfly, a flying robot. It launches in 2028 and lands in 2034",
+  "hook": "15 M / UNDERWATER (yellow 15), 0-2.2 s",
+  "title_window_s": [
+    9.0,
+    14.0
+  ],
+  "overlay": {
+    "kind": "fact",
+    "lines": [
+      "2034",
+      "LANDS"
+    ],
+    "window": [
+      17.3,
+      20.4
+    ],
+    "spoken": "and lands in 2034"
+  },
+  "cuts": [
+    {
+      "row": 1,
+      "start_s": 0.0,
+      "end_s": 4.3,
+      "file": "s6_titan/PIA14925.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "max_upscale": 2.25
+    },
+    {
+      "row": 2,
+      "start_s": 4.3,
+      "end_s": 8.7,
+      "file": "s6_titan/PIA06230.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.0,
+        1.1
+      ],
+      "max_upscale": 1.57
+    },
+    {
+      "row": 3,
+      "start_s": 8.7,
+      "end_s": 13.62,
+      "file": "s6_titan/PIA09739.jpg",
+      "mode": "cover",
+      "zoom": [
+        1.0,
+        1.04
+      ],
+      "max_upscale": 2.02
+    },
+    {
+      "row": 4,
+      "start_s": 13.62,
+      "end_s": 18.96,
+      "file": "s6_titan/PIA21625.jpg",
+      "mode": "fit",
+      "zoom": [
+        1.0,
+        1.1
+      ],
+      "max_upscale": 1.42
+    },
+    {
+      "row": 5,
+      "start_s": 18.96,
+      "end_s": 21.96,
+      "file": "s6_titan/PIA14925.jpg",
+      "mode": "loop",
+      "note": "0.5 s crossfade back to the opening plate, pull-back to frame 0"
+    }
+  ],
+  "orbit_slot": {
+    "start_s": 1.0,
+    "status": "open: J0200 Omni insert, opening plate runs under it until then"
+  },
+  "audio": {
+    "vo_gain": 1.0,
+    "bed": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+    "bed_gain": 0.065,
+    "bed_hold_gain": 0.35,
+    "sfx": "sfx_owb_rumble_low_v01.wav at 0 s, tick at 17.35 s",
+    "stems": {
+      "vo": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s6_titan/stem_vo.wav",
+      "bed": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s6_titan/stem_bed.wav",
+      "sfx": "/private/tmp/owb_sa_shorts/build_v01/owb_sa_s6_titan/stem_sfx.wav"
+    },
+    "mix": "-14 LUFS, -1.5 dBTP"
+  },
+  "grain": "noise=alls=4:allf=t",
+  "spend": "none"
+}

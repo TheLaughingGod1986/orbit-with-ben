@@ -1,0 +1,108 @@
+{
+  "stem": "030_apophis_short_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6136803753"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 310,
+      "duration_s": 24.56
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 310,
+  "words": 51,
+  "duration_s": 24.56,
+  "loudness": {
+    "lufs_integrated": -20.2,
+    "mean_volume_db": -23.9,
+    "max_volume_db": -3.8
+  },
+  "sha256_mp3": "faec0f67dce131334f9d66618c80ac044318c326fe6346cd837a8470fb0528eb",
+  "scribe": {
+    "transcript": "An asteroid will fly closer than some of our satellites. Stay, and I'll show you how close. Apophis, 340 meters wide, passes 32,000 kilometers up on Friday the 13th, 2029. Many satellites orbit at 36,000. It will miss. Half the world can look up and watch",
+    "script_words": 53,
+    "scribe_words": 48,
+    "match_rate_pct": 75.47,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "three",
+          "hundred",
+          "and",
+          "forty",
+          "metres"
+        ],
+        "scribe": [
+          "340",
+          "meters"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "thirty",
+          "two",
+          "thousand",
+          "kilometres"
+        ],
+        "scribe": [
+          "32",
+          "000",
+          "kilometers"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "thirteenth"
+        ],
+        "scribe": [
+          "13th"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "thirty",
+          "six",
+          "thousand"
+        ],
+        "scribe": [
+          "36",
+          "000"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 204117,
+      "limit": 209536,
+      "remaining": 5419
+    },
+    "after": {
+      "used": 204253,
+      "limit": 209536,
+      "remaining": 5283
+    },
+    "counter_delta": 136
+  },
+  "text": "An asteroid will fly closer than some of our satellites. Stay, and I'll show you how close. Apophis, three hundred and forty metres wide, passes thirty-two thousand kilometres up, on Friday the thirteenth, 2029. Many satellites orbit at thirty-six thousand. It will miss. Half the world can look up, and watch…",
+  "made_at": "2026-10-13T03:35:52+0100"
+}

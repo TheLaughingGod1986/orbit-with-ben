@@ -3,7 +3,9 @@
 
 Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
 
-  1. duration ≥ 40 s                                  (existing lock)
+  1. duration ≥ 40 s                                  (existing lock; `--length-test` lifts it to
+                                                        ≥ 61 s for the one Chief-OK'd 50–60 s Short
+                                                        length test, AGENTS.md, 11 Oct 2026)
   2. first frame (0.3 s) within 10 dHash bits of any   (new — Europa week shipped six
      Short published / scheduled ±14 days of air date   Shorts on one plate; feed saw
                                                         the same video six days running)
@@ -30,6 +32,10 @@ Usage
   python3 gate_shorts_open.py compare                                     # pairwise table of library
 
 Library: 00_Brand/Channel-Setup/audits/shorts_open_library/library.json (+ frames/<id>.jpg)
+Frame-0 lookback (Shorts feed rule R3, Claude ruling 5 Oct 2026): check 2 compares against every
+Short within ±14 days of the air date AND the last 10 Shorts aired before it, whichever reaches
+further back (`--days`, `--last`).
+
 Exit code 0 = PASS, 1 = FAIL, 2 = tool error.
 """
 from __future__ import annotations
@@ -52,10 +58,28 @@ FRAMES = LIB_DIR / "frames"
 
 OPEN_T = 0.3  # seconds — first real frame after any fade-in
 LOOKBACK_DAYS = 14
+LOOKBACK_LAST = 10  # R3 (5 Oct 2026): never reuse an opening background from the last 10 Shorts
 DHASH_FAIL_BITS = 10
 DHASH_WARN_BITS = 16
+# Background match on a 27x48 grey thumbnail (6 Oct 2026). dHash alone missed dQlOgsDGmtA vs Ih2zhZTbIR0: same Jupiter
+# plate, 17 bits apart. Orbit or a caption over the same plate wrecks a global score, so this counts the share of 4x4
+# blocks that still match (block SSIM >= BLOCK_SSIM, best of a ±BLOCK_SHIFT px nudge for a slow push-in): overlays only
+# knock out the blocks they cover. Scored both ways and averaged. Calibrated 6 Oct on the library (`compare --ssim`,
+# 29 thumbs, 351 pairs, Chief b62a3b4): same plate 0.56-1.00 (Jupiter pair 0.56, Europa crops 0.57+), different
+# plates 0.18 or less. The first cut (3x3, SSIM >= 0.90, no nudge) scored the Jupiter pair 0.19, below an honest pair.
+THUMB_W, THUMB_H = 27, 48
+BLOCK = 4
+BLOCK_SHIFT = 1
+BLOCK_SSIM = 0.70
+BG_FAIL = 0.40
+BG_WARN = 0.30
+FLAT_VAR = 25.0      # a block this flat in both frames (black space, sky) proves nothing, so it isn't counted
+MIN_TEXTURED = 12    # fewer textured blocks than this: no verdict (dHash still applies)
 DUR_FAIL = 40.0
 DUR_BAND = (22.0, 27.0)
+# One-off Short length test (Chief OK, 11 Oct 2026, AGENTS.md "Short length test"). Only with --length-test.
+TEST_DUR_FAIL = 61.0
+TEST_DUR_BAND = (50.0, 60.0)
 VISOR_FAIL = 0.003
 VISOR_WARN = 0.001
 SHEET_TIMES = (0.0, 0.3, 1.0, 2.0, 3.0, 4.0)
@@ -117,6 +141,60 @@ def dhash(path: Path, t: float | None = OPEN_T) -> int:
         for x in range(8):
             bits = (bits << 1) | (1 if g[y * 9 + x] > g[y * 9 + x + 1] else 0)
     return bits
+
+
+def thumb(path: Path, t: float | None = OPEN_T) -> str:
+    """Frame 0 as an 27x48 grey thumbnail, hex-encoded, for the background SSIM check."""
+    return raw_frame(path, THUMB_W, THUMB_H, t, "gray").hex()
+
+
+def ssim(x: list[int] | bytes, y: list[int] | bytes) -> float:
+    """SSIM of two equal-length grey pixel runs. 1.0 = identical."""
+    n = min(len(x), len(y))
+    if n == 0:
+        return 0.0
+    mx, my = sum(x[:n]) / n, sum(y[:n]) / n
+    vx = sum((v - mx) ** 2 for v in x[:n]) / n
+    vy = sum((v - my) ** 2 for v in y[:n]) / n
+    cov = sum((x[i] - mx) * (y[i] - my) for i in range(n)) / n
+    c1, c2 = (0.01 * 255) ** 2, (0.03 * 255) ** 2
+    return ((2 * mx * my + c1) * (2 * cov + c2)) / ((mx * mx + my * my + c1) * (vx + vy + c2))
+
+
+def background_match(a: str | bytes, b: str | bytes) -> float:
+    """Share of BLOCKxBLOCK blocks that match between two thumbnails (hex or bytes), averaged over both directions.
+    An overlay (Orbit, a caption) only removes the blocks it covers, so the same plate under different overlays
+    still scores high."""
+    x = bytes.fromhex(a) if isinstance(a, str) else a
+    y = bytes.fromhex(b) if isinstance(b, str) else b
+    if len(x) != THUMB_W * THUMB_H or len(y) != THUMB_W * THUMB_H:
+        return 0.0
+    return (_block_share(x, y) + _block_share(y, x)) / 2
+
+
+def _block_share(x: bytes, y: bytes) -> float:
+    def var(v):
+        m = sum(v) / len(v)
+        return sum((p - m) ** 2 for p in v) / len(v)
+
+    def block(img, by, bx):
+        return [img[(by + j) * THUMB_W + bx + i] for j in range(BLOCK) for i in range(BLOCK)]
+
+    hits = total = 0
+    for by in range(0, THUMB_H - BLOCK + 1, BLOCK):
+        for bx in range(0, THUMB_W - BLOCK + 1, BLOCK):
+            bx_ = block(x, by, bx)
+            if var(bx_) < FLAT_VAR and var(block(y, by, bx)) < FLAT_VAR:
+                continue
+            total += 1
+            best = max(
+                ssim(bx_, block(y, by + dy, bx + dx))
+                for dy in range(-BLOCK_SHIFT, BLOCK_SHIFT + 1)
+                for dx in range(-BLOCK_SHIFT, BLOCK_SHIFT + 1)
+                if 0 <= by + dy <= THUMB_H - BLOCK and 0 <= bx + dx <= THUMB_W - BLOCK
+            )
+            hits += best >= BLOCK_SSIM
+    return hits / total if total >= MIN_TEXTURED else 0.0
 
 
 def hamming(a: int, b: int) -> int:
@@ -199,13 +277,15 @@ def upsert(lib: dict, entry: dict) -> None:
     lib["entries"].append(entry)
 
 
-def window(lib: dict, air: date, days: int) -> list[dict]:
+def window(lib: dict, air: date, days: int, last: int = 0, exclude: str | None = None) -> list[dict]:
+    """Entries within ±days of air, plus the `last` most recent entries aired before it (R3)."""
     lo, hi = air - timedelta(days=days), air + timedelta(days=days)
-    out = []
-    for e in lib["entries"]:
-        d = date.fromisoformat(e["date"])
-        if lo <= d <= hi and e.get("status", "live") != "retired":
-            out.append(e)
+    live = [e for e in lib["entries"] if e.get("status", "live") != "retired" and e["id"] != exclude]
+    out = [e for e in live if lo <= date.fromisoformat(e["date"]) <= hi]
+    if last > 0:
+        before = sorted((e for e in live if date.fromisoformat(e["date"]) < air), key=lambda e: (e["date"], e["id"]))
+        seen = {e["id"] for e in out}
+        out += [e for e in before[-last:] if e["id"] not in seen]
     return out
 
 
@@ -219,6 +299,7 @@ def add_entry(lib: dict, vid: str, d: str, title: str, src: Path, source: str, t
         "date": d,
         "title": title,
         "dhash": f"{h:016x}",
+        "thumb": thumb(src, t),
         "orbit": sc,
         "source": source,
         "frame": str(frame.relative_to(ROOT)),
@@ -270,14 +351,26 @@ def contact_sheet(path: Path, out: Path) -> None:
         run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"hstack=inputs={len(tiles)}", str(out)])
 
 
-def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, self_id: str | None = None) -> dict:
+def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], list[str]]:
+    """(fails, warns) for the duration. length_test: the one Chief-OK'd 50–60 s test Short (11 Oct 2026)."""
+    fail_at, band = (TEST_DUR_FAIL, TEST_DUR_BAND) if length_test else (DUR_FAIL, DUR_BAND)
+    if dur >= fail_at:
+        return [f"duration {dur:.1f}s ≥ {fail_at:.0f}s"], []
+    if not (band[0] <= dur <= band[1] + 0.5):
+        return [], [f"duration {dur:.1f}s outside {band[0]:.0f}–{band[1]:.0f}s band"]
+    return [], []
+
+
+def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, self_id: str | None = None,
+          last: int = LOOKBACK_LAST, length_test: bool = False) -> dict:
     res: dict = {"file": str(path), "air_date": air.isoformat(), "fails": [], "warns": []}
     dur = duration_s(path)
     res["duration_s"] = round(dur, 2)
-    if dur >= DUR_FAIL:
-        res["fails"].append(f"duration {dur:.1f}s ≥ {DUR_FAIL:.0f}s")
-    elif not (DUR_BAND[0] <= dur <= DUR_BAND[1] + 0.5):
-        res["warns"].append(f"duration {dur:.1f}s outside {DUR_BAND[0]:.0f}–{DUR_BAND[1]:.0f}s band")
+    if length_test:
+        res["length_test"] = True
+    fails, warns = duration_verdict(dur, length_test)
+    res["fails"] += fails
+    res["warns"] += warns
 
     if not has_audio(path):
         res["audio"] = {"stream": False}
@@ -300,14 +393,19 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
         )
 
     h = dhash(path)
+    th = thumb(path)
     res["dhash"] = f"{h:016x}"
     near = []
-    for e in window(lib, air, days):
-        if self_id and e["id"] == self_id:
-            continue
+    for e in window(lib, air, days, last, exclude=self_id):
         dist = hamming(h, int(e["dhash"], 16))
+        sim = round(background_match(th, e["thumb"]), 3) if e.get("thumb") else None
+        if sim is not None and sim >= BG_WARN and dist > DHASH_WARN_BITS:
+            tag = "FAIL" if sim >= BG_FAIL else "warn"
+            msg = f"same opening background as {e['id']} ({e['date']} · {e['title']}): {sim:.0%} of blocks match, dHash {dist} bits"
+            (res["fails"] if tag == "FAIL" else res["warns"]).append(msg)
         if dist <= DHASH_WARN_BITS:
-            near.append({"id": e["id"], "date": e["date"], "title": e["title"], "bits": dist, "source": e.get("source", "")})
+            near.append({"id": e["id"], "date": e["date"], "title": e["title"], "bits": dist, "ssim": sim,
+                         "source": e.get("source", "")})
     near.sort(key=lambda x: x["bits"])
     res["near_opens"] = near
     for n in near:
@@ -341,9 +439,12 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("files", nargs="+", type=Path)
     c.add_argument("--air-date", default=date.today().isoformat())
     c.add_argument("--days", type=int, default=LOOKBACK_DAYS)
+    c.add_argument("--last", type=int, default=LOOKBACK_LAST, help="also compare the last N Shorts aired before --air-date (R3)")
     c.add_argument("--sheet-dir", type=Path, default=Path(tempfile.gettempdir()) / "orbit_shorts_gate")
     c.add_argument("--id", default=None, help="candidate's own YouTube id (skips its library entry on re-check)")
     c.add_argument("--json", action="store_true")
+    c.add_argument("--length-test", action="store_true",
+                   help="the one Chief-OK'd 50-60 s Short length test (AGENTS.md, 11 Oct 2026): band 50-60 s, FAIL at 61 s")
 
     a = sub.add_parser("add", help="register a published/scheduled Short from a local file or frame")
     a.add_argument("--id", required=True)
@@ -367,16 +468,19 @@ def main(argv: list[str] | None = None) -> int:
     l = sub.add_parser("list")
     l.add_argument("--air-date", default=date.today().isoformat())
     l.add_argument("--days", type=int, default=LOOKBACK_DAYS)
+    l.add_argument("--last", type=int, default=LOOKBACK_LAST)
     l.add_argument("--all", action="store_true")
 
-    sub.add_parser("compare", help="pairwise dHash distances inside the library")
+    cmp_ = sub.add_parser("compare", help="pairwise dHash distances inside the library")
+    cmp_.add_argument("--ssim", action="store_true", help="print the 30 closest background matches (calibration)")
+    sub.add_parser("thumbs", help="backfill the SSIM thumbnail of every entry from its saved frame")
 
     ns = ap.parse_args(argv)
     lib = load_lib()
 
     if ns.cmd == "check":
         air = date.fromisoformat(ns.air_date)
-        results = [check(p.resolve(), air, ns.days, lib, ns.sheet_dir, ns.id) for p in ns.files]
+        results = [check(p.resolve(), air, ns.days, lib, ns.sheet_dir, ns.id, ns.last, ns.length_test) for p in ns.files]
         if ns.json:
             print(json.dumps(results, indent=2, ensure_ascii=False))
         else:
@@ -427,13 +531,32 @@ def main(argv: list[str] | None = None) -> int:
 
     if ns.cmd == "list":
         air = date.fromisoformat(ns.air_date)
-        rows = lib["entries"] if ns.all else window(lib, air, ns.days)
+        rows = lib["entries"] if ns.all else window(lib, air, ns.days, ns.last)
         for e in rows:
             print(f"{e['date']}  {e['id']}  {e['dhash']}  visor={e['orbit']['visor_frac']:.4f}  {e.get('status','live'):9s} {e['title']}")
         return 0
 
+    if ns.cmd == "thumbs":
+        done = 0
+        for e in lib["entries"]:
+            frame = ROOT / e.get("frame", "")
+            if e.get("frame") and frame.exists():
+                e["thumb"] = thumb(frame, None)
+                done += 1
+            else:
+                print(f"no frame for {e['id']} ({e.get('frame')}); re-add it from its file")
+        save_lib(lib)
+        print(f"thumbnails: {done}/{len(lib['entries'])}")
+        return 0
     if ns.cmd == "compare":
         es = [e for e in lib["entries"] if e.get("status") != "retired"]
+        if ns.ssim:
+            pairs = sorted(((background_match(a_["thumb"], b_["thumb"]), a_, b_) for i, a_ in enumerate(es) for b_ in es[i + 1:]
+                            if a_.get("thumb") and b_.get("thumb")), key=lambda p: -p[0])
+            for s, a_, b_ in pairs[:30]:
+                print(f"bg match {s:.0%}  {a_['id']} ({a_['date']})  ↔  {b_['id']} ({b_['date']})")
+            print(f"{len(pairs)} pairs; FAIL ≥ {BG_FAIL:.0%}, warn ≥ {BG_WARN:.0%}")
+            return 0
         for i, a_ in enumerate(es):
             for b_ in es[i + 1:]:
                 bits = hamming(int(a_["dhash"], 16), int(b_["dhash"], 16))

@@ -1,0 +1,10 @@
+VO CHECK — Venus 023 Short Mon 26 (less light)
+Status: PASS
+Duration: 24.341s (raw 26.88s → pause-trim max_gap=0.4s)
+LUFS integrated: -19.4
+mean_volume: -22.4 dB | max_volume: -4.4 dB
+Pace: 135.6 wpm (55 words)
+Script vs Scribe: 89.47% match; mismatches = number spelling only
+Fails: none
+Warns: ['pace 135.6 wpm under 145 (Short house target ~23-25s / ~132-143 wpm)']
+Notes: HOS vo_check.py crashed (faster-whisper/av metadata_errors on Py3.14). Used same loudness/silence gates + ElevenLabs Scribe word diff.

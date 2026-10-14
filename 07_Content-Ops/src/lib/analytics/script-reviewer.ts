@@ -65,9 +65,9 @@ const TEACH_MARKER = /\[TEACH:/i;
 const CHAPTER_MARKER = /\[CHAPTER CARD:|^\s*#{1,3}\s+chapter\b|^chapter\s+\d+/gim;
 
 const YOU_STAKES = /\b(what would you|would you|you (see|feel|hear|survive)|what happens next|what if)\b/i;
-const ESCALATION = /\b(but |however |then |worse |deeper |beyond |until |suddenly |now )\b/i;
+const ESCALATION = /\b(but |however |then |worse |deeper |beyond |until |suddenly |now )\b/gi;
 const CURIOSITY = /\b(why |how |what if|nobody|never|secret|mystery|paradox|impossible|unknown)\b/i;
-const SCIENCE = /\b(light[- ]year|gravity|orbit|mass|atmosphere|radiation|wavelength|event horizon|biosignature|parsec|neutron|photon|spectrum)\b/i;
+const SCIENCE = /\b(light[- ]year|gravity|orbit|mass|atmosphere|radiation|wavelength|event horizon|biosignature|parsec|neutron|photon|spectrum)\b/gi;
 
 function clampScore(n: number): number {
   return Math.max(0, Math.min(10, Math.round(n * 10) / 10));

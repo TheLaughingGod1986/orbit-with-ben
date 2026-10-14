@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AI spend month (J0052, Ben 8 Oct 2026): at 08:30 local time, scripts/ai_spend_daily.py reads the ElevenLabs,
+  Flow, Google Cloud credit and Cursor balances and records one ai_spend.py line per pool, pushed to main.
+  A pool whose read fails records nothing; the reason is in the log.
+  Log: ~/Library/Logs/owb-ai-spend.log
+  Install (or reinstall after a change to this file):
+    launchctl bootout gui/$(id -u)/com.owb.ai-spend-daily 2>/dev/null
+    cp 07_Content-Ops/launchd/com.owb.ai-spend-daily.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.ai-spend-daily.plist
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.owb.ai-spend-daily</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>cd /Users/benjaminoats/YouTube/orbit-with-ben &amp;&amp; git pull -q --ff-only; python3 scripts/ai_spend_daily.py --git</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>8</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/benjaminoats/Library/Logs/owb-ai-spend.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/benjaminoats/Library/Logs/owb-ai-spend.log</string>
+</dict>
+</plist>

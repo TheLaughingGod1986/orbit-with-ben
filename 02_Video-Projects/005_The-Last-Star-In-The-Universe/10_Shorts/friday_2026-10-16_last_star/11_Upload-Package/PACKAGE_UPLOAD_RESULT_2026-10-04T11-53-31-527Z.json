@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-16T10:30:00.000Z",
+    "platformPostId": "gZCw94x9mP8",
+    "platformUrl": "https://youtu.be/gZCw94x9mP8",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-16T10:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"gZCw94x9mP8\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-16T10:30:00.000Z\"}"
+  },
+  "package": {
+    "title": "Why No Black Dwarf Exists Yet",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/THUMB_AUDIT_2026-10-04/blackdwarf_short_mZ82-ijANk4.jpg",
+    "scheduledAt": "2026-10-16T10:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/10_Shorts/friday_2026-10-16_last_star/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/10_Shorts/friday_2026-10-16_last_star/06_Final-Exports/friday_black_dwarf_why_none_yet_v04.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/THUMB_AUDIT_2026-10-04/blackdwarf_short_mZ82-ijANk4.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": null,
+  "studioFinish": {
+    "videoId": "gZCw94x9mP8",
+    "studioEditUrl": "https://studio.youtube.com/video/gZCw94x9mP8/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/gZCw94x9mP8/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/gZCw94x9mP8/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/gZCw94x9mP8/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/gZCw94x9mP8/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: set Related video to REXYxuLOBoI (that week’s Thursday long only). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/gZCw94x9mP8/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/gZCw94x9mP8/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (gZCw94x9mP8). 1 required Studio finish step(s) remain."
+  }
+}

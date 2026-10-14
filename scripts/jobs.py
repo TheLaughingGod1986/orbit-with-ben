@@ -1,0 +1,683 @@
+#!/usr/bin/env python3
+"""Studio job queue: any agent that is up can do any job it is able to, whoever was meant to (7 Oct 2026).
+
+Jobs used to be addressed to an agent by name in prose on the studio thread ("Chief, please ..."). When that agent
+was down (Grok Bot out of credit), its jobs sat. Here a job says what it NEEDS, not who does it, and whichever agent
+is alive and able claims it. The thread stays for discussion and reports; this queue is the work list.
+
+  needs   mini    the Mac mini: media, ffmpeg, picture, edit, YouTube/Studio, launchd (Grok Bot or Cursor)
+          gemini  a facts-and-numbers check run through Gemini (Antigravity `agy`) on the Mini
+          cloud   a Claude cloud session: reviews, scripts, shot lists, code, the tracker
+          ben     only Ben: money, a sign-in, a decision
+          any     whoever is free
+  kind    what sort of job it is (scripts/routing.py, AGENTS.md "Who does what", Ben 11 Oct 2026): script, facts,
+          review, vo, image, chart, video, assembly, qa, listing, studio, chief. The relay wakes the worker whose
+          model does that kind best (chart -> Codex on gpt-6-astra) and passes the model; --model overrides it.
+
+  python3 scripts/jobs.py add --needs mini --title "Sun 022 first cut" --body-file brief.md --film 022 --stage edit \\
+          --ref 6036709461 --by claude --git
+  python3 scripts/jobs.py next --agent cursor --can mini,gemini,any --git      # claims the oldest job it can do
+  python3 scripts/jobs.py done J0003 --agent cursor --result "cut v01 at OWB UAT/..." --ref 1a2b3c4 --git
+  python3 scripts/jobs.py block J0003 --agent cursor --reason "needs Ben: Vertex credit" --git
+  python3 scripts/jobs.py release J0003 --agent cursor --note "stopping point; rows 1-40 done" --git
+  python3 scripts/jobs.py renew J0003 --agent cursor --eta 120 --git           # still working: push the ETA out
+  python3 scripts/jobs.py progress J0003 --agent cursor --step 3 --of 8 --git   # finished step 3 of 8 (the board's % done)
+  python3 scripts/jobs.py schedule J0003 --not-before "2026-10-12 09:00" --reset "AI Ultra credit renews" --agent chief --git
+  python3 scripts/jobs.py list [--all]                                          # open and claimed jobs (JOBS.md too)
+  python3 scripts/jobs.py reroute J0003 --agent relay --to cursor --model cursor-claude-opus-5-5 --note "Claude out of usage" --git
+          # Claude Code out of usage (Ben, 11 Oct 23:40): hand a Claude job to Cursor on the Claude model
+
+`next` exits 10 when nothing is waiting for that agent, so a loop can stop quietly. It hands out quick jobs (--eta 60
+or less) before long ones, oldest first within each, so a multi-day job can't hold up a 30-minute one.
+Rules: a claim lasts until its ETA. A claim past its ETA counts as stalled, and the next able agent may take it over
+(the takeover is noted). A job with --after waits until that job is done. A job with --not-before "YYYY-MM-DD HH:MM"
+(London time; stored as UTC in "not_before") is skipped by `next`, `next --peek` and the relay until then; the board
+shows it as "starts HH:MM". A job with --film/--stage also claims that
+stage on the studio board in the same commit (and releases it on done/release/block), so the board and the queue
+always agree. Mutating commands take --git: pull, write, commit only the queue files (+ the film's status.json and
+STATUS.md), push, and retry if another agent raced the push.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+import os
+import pathlib
+import subprocess
+import sys
+from zoneinfo import ZoneInfo
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import chief_relay  # noqa: E402
+import routing  # noqa: E402
+import studio  # noqa: E402
+
+ROOT = studio.ROOT
+QUEUE = ROOT / "jobs" / "queue.json"
+JOBS_MD = ROOT / "JOBS.md"
+NEEDS = ["mini", "gemini", "cloud", "ben", "any"]
+EX_NONE = 10
+DEFAULT_ETA = 120
+QUICK_MIN = 60
+LONDON = ZoneInfo("Europe/London")
+
+
+def now():
+    return studio.now()
+
+
+def load(path: pathlib.Path = QUEUE) -> dict:
+    if path.exists():
+        return json.loads(path.read_text())
+    return {"next_id": 1, "jobs": []}
+
+
+def save(data: dict, path: pathlib.Path = QUEUE) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+
+
+def find(data: dict, jid: str) -> dict | None:
+    return next((j for j in data["jobs"] if j["id"] == jid.upper()), None)
+
+
+def stalled(job: dict, at: dt.datetime) -> bool:
+    return job["status"] == "claimed" and bool(job.get("eta")) and studio.parse(job["eta"]) < at
+
+
+def log(job: dict, at: dt.datetime, agent: str, what: str) -> None:
+    job.setdefault("history", []).append({"at": studio.iso(at), "by": agent, "what": what})
+
+
+def parse_not_before(text: str) -> str:
+    """"YYYY-MM-DD HH:MM" in London time -> the queue's UTC stamp ("2026-10-12T08:00Z"); "" clears it."""
+    text = (text or "").strip()
+    if not text:
+        return ""
+    try:
+        local = dt.datetime.strptime(text, "%Y-%m-%d %H:%M").replace(tzinfo=LONDON)
+    except ValueError:
+        raise ValueError(f'--not-before must be "YYYY-MM-DD HH:MM" (London time), not {text!r}')
+    return studio.iso(local.astimezone(dt.timezone.utc))
+
+
+def london_hm(stamp: str) -> str:
+    """UTC queue stamp -> "HH:MM" London (with the date when it isn't today in London)."""
+    t = studio.parse(stamp).astimezone(LONDON)
+    return t.strftime("%H:%M") if t.date() == now().astimezone(LONDON).date() else t.strftime("%a %d %b %H:%M")
+
+
+def waiting_to_start(job: dict, at: dt.datetime) -> bool:
+    """Ben, 12 Oct 2026 14:37: no fixed start times. A job starts as soon as its inputs are ready and a worker is free,
+    so a stored not_before is ignored. An input that isn't ready is `--after <job>` or a block with the input named."""
+    return False
+
+
+def need_reset(not_before: str, reset: str) -> None:
+    """Ben, 12 Oct 2026: jobs start as soon as their inputs are ready, and reviews are done as soon as they land. A
+    start time is allowed only when it's tied to a real reset (a quota, credit or usage window, an air date)."""
+    if (not_before or "").strip():
+        raise ValueError("no fixed start times (Ben, 12 Oct 2026 14:37): jobs start when their inputs are ready. Use "
+                         "--after <job>, or block the job naming the input it waits for. YouTube publishAt is separate.")
+
+
+def do_schedule(job: dict, agent: str, not_before: str, at: dt.datetime, reset: str = "") -> None:
+    """Set (or clear, with "") a job's not-before time; London "YYYY-MM-DD HH:MM" in, UTC stored."""
+    need_reset(not_before, reset)
+    stamp = parse_not_before(not_before)
+    if stamp:
+        job["not_before"] = stamp
+        job["reset"] = reset.strip()
+        log(job, at, agent, f"not before {not_before.strip()} London ({stamp}); reset: {reset.strip()}")
+    else:
+        job.pop("not_before", None)
+        log(job, at, agent, "not-before cleared")
+
+
+# ----------------------------------------------------------------------------- pure operations
+def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
+           stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
+           kind: str = "", model: str = "", not_before: str = "", reset: str = "") -> dict:
+    if needs not in NEEDS:
+        raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
+    if kind and kind not in routing.KINDS:
+        raise ValueError(f"kind must be one of {', '.join(routing.KINDS)}")
+    if model and model not in routing.MODELS:
+        raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
+    if bool(film) != bool(stage):
+        raise ValueError("--film and --stage go together")
+    if stage and stage not in studio.STAGES:
+        raise ValueError(f"stage must be one of {', '.join(studio.STAGES)}")
+    if after and not find(data, after):
+        raise ValueError(f"--after {after}: no such job")
+    need_reset(not_before, reset)
+    nb = parse_not_before(not_before)
+    job = {"id": f"J{data['next_id']:04d}", "title": title, "needs": needs, "repo": repo, "body": body, "ref": ref,
+           "film": film, "stage": stage, "after": after.upper() if after else "", "eta_min": eta_min,
+           "status": "open", "by": "", "since": "", "eta": "", "created_by": by, "created_at": studio.iso(at),
+           "result": "", "history": []}
+    if for_agent:
+        job["for"] = for_agent
+    if kind:
+        job["kind"] = kind
+    if model:
+        job["model"] = model
+    if nb:
+        job["not_before"] = nb
+        job["reset"] = reset.strip()
+    log(job, at, by, "added" + (f" for {for_agent}" if for_agent else ""))
+    data["next_id"] += 1
+    data["jobs"].append(job)
+    return job
+
+
+def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
+    if job["needs"] not in can:
+        return False
+    if job.get("for") and job["for"] != agent:
+        return False  # addressed to one agent (e.g. Claude asking Codex for its own view)
+    if waiting_to_start(job, at):
+        return False  # not before its start time (the relay and `next --peek` use this too)
+    if job["status"] == "open" or stalled(job, at):
+        dep = find(data, job["after"]) if job.get("after") else None
+        return dep is None or dep["status"] == "done"
+    return False
+
+
+MINI_NEEDS = {"mini", "gemini", "any"}
+
+
+def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
+    """What Claude's 2-hourly check alerts Ben about (read only):
+    quiet  Mini work is waiting or stalled, nothing holds a live Mini claim, and no agent but Claude has touched the
+           queue for quiet_h hours: the Mini, the relay or every Chief in the chain is down.
+    ben    jobs only Ben can do (needs ben, open) and jobs blocked on him, with when each started waiting."""
+    def mini_able(j):
+        return claimable(data, j, MINI_NEEDS, at, j.get("for") or "")
+    waiting = [j["id"] for j in data["jobs"] if j["needs"] in MINI_NEEDS and mini_able(j)]
+    live = [j["id"] for j in data["jobs"] if j["status"] == "claimed" and not stalled(j, at) and j["needs"] in MINI_NEEDS]
+    stamps = [studio.parse(h["at"]) for j in data["jobs"] for h in j.get("history", []) if h.get("by") not in ("claude", "")]
+    last = max(stamps) if stamps else None
+    quiet = bool(waiting) and not live and (last is None or at - last > dt.timedelta(hours=quiet_h))
+    ben = []
+    for j in data["jobs"]:
+        if (j["needs"] == "ben" and j["status"] in ("open", "claimed")) or j["status"] == "blocked":
+            since = j["history"][-1]["at"] if j.get("history") else ""
+            ben.append({"id": j["id"], "title": j["title"], "status": j["status"], "since": since,
+                        "why": (j.get("result") if j["status"] == "blocked" else "") or j.get("body", "")[:200]})
+    return {"quiet": quiet, "last_mini_activity": studio.iso(last) if last else None, "waiting_mini": waiting,
+            "live_claims": live, "ben": ben}
+
+
+def urgent_rank(job: dict) -> int:
+    """Urgent jobs run in the order they were named (Grok Bot, 9 Oct: `urgent J0085 J0096 J0089` = that order). The
+    rank is stored in "urgent" (1 = first); an older plain `true` counts as rank 0, then id order."""
+    u = job.get("urgent")
+    return u if isinstance(u, int) and not isinstance(u, bool) else 0
+
+
+def do_urgent(data: dict, found: list[dict], off: bool = False) -> list[str]:
+    """Mark jobs urgent in the order named, after any other urgent jobs (a named one that was already urgent moves to
+    its named place); --off clears them. Returns the urgent ids in run order."""
+    for j in found:
+        if off:
+            j.pop("urgent", None)
+    if not off:
+        named = [j["id"] for j in found]
+        rest = [j for j in sorted(data["jobs"], key=lambda j: (urgent_rank(j), j["id"]))
+                if j.get("urgent") and j["id"] not in named and j["status"] in ("open", "claimed", "blocked")]
+        for k, j in enumerate(rest + found, 1):
+            j["urgent"] = k
+    live = (j for j in data["jobs"] if j.get("urgent") and j["status"] in ("open", "claimed", "blocked"))
+    return [j["id"] for j in sorted(live, key=lambda j: (urgent_rank(j), j["id"]))]
+
+
+RETRY_COOL_MIN = 30
+
+
+def recently_released(job: dict, at: dt.datetime | None = None) -> bool:
+    """Its last event is a release less than RETRY_COOL_MIN ago (a poll like the Flow balance read): it goes behind
+    every other ready job so it isn't re-run back to back, but it is still claimable if nothing else is ready."""
+    h = (job.get("history") or [])[-1:] 
+    if not h or not str(h[0].get("what", "")).startswith("released"):
+        return False
+    try:
+        return ((at or now()) - studio.parse(h[0]["at"])) < dt.timedelta(minutes=RETRY_COOL_MIN)
+    except (KeyError, ValueError):
+        return False
+
+
+def order(job: dict, focus=()) -> tuple:
+    """An urgent job first (Claude's call: e.g. the Mini's disk at 99% would break every render after it), then the focus film's jobs (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
+    films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
+    every stopping point (a first cut) would come back first every time and starve the quick ones."""
+    return (0 if job.get("for") else 1,  # a job addressed to this agent (only it can see it) first: it was woken for it
+            0 if job.get("urgent") else 1,
+            1 if job.get("backlog") else 0,  # refill/growth tier only when no pipeline job is ready (Ben, 12 Oct)
+            1 if recently_released(job) else 0,  # released to retry: other ready work first, never a time hold
+            urgent_rank(job) if job.get("urgent") else 0,
+            0 if job.get("film") and job["film"] in focus else 1,
+            0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
+            0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
+
+
+def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None) -> dict | None:
+    """Claim the next job this agent can do (open, or stalled past its ETA): quick jobs first, then oldest first.
+    None when nothing is waiting."""
+    for job in sorted(data["jobs"], key=lambda j: j["id"]):
+        if job.get("by") == agent and job["status"] == "claimed":
+            return job  # finish what you hold before taking more
+    for job in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())):
+        if claimable(data, job, can, at, agent):
+            took = stalled(job, at)
+            prev = job.get("by", "")
+            job.update(status="claimed", by=agent, since=studio.iso(at),
+                       eta=studio.iso(at + dt.timedelta(minutes=eta_min or job.get("eta_min") or DEFAULT_ETA)))
+            log(job, at, agent, f"claimed (took over a stalled claim by {prev})" if took else "claimed")
+            return job
+    return None
+
+
+def _mine(job: dict, agent: str) -> None:
+    if job["status"] != "claimed" or job.get("by") != agent:
+        raise ValueError(f"{job['id']} is {job['status']}" + (f" by {job['by']}" if job.get("by") else "") + f", not claimed by {agent}")
+
+
+def do_done(job: dict, agent: str, result: str, at: dt.datetime, ref: str = "") -> None:
+    _mine(job, agent)
+    job.update(status="done", result=result, eta="")
+    if ref:
+        job["done_ref"] = ref
+    log(job, at, agent, "done: " + result)
+
+
+def do_block(job: dict, agent: str, reason: str, at: dt.datetime) -> None:
+    _mine(job, agent)
+    job.update(status="blocked", result=reason, eta="")
+    log(job, at, agent, "blocked: " + reason)
+
+
+def do_release(job: dict, agent: str, note: str, at: dt.datetime) -> None:
+    _mine(job, agent)
+    job.update(status="open", by="", since="", eta="")
+    log(job, at, agent, "released" + (": " + note if note else ""))
+
+
+def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
+    _mine(job, agent)
+    job["eta"] = studio.iso(at + dt.timedelta(minutes=eta_min))
+    log(job, at, agent, f"renewed to {job['eta']}")
+
+
+def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "") -> None:
+    """Ben, 11 Oct 22:09: the board says "Working on X, 20% done, finished in about 30 min". A worker reports each
+    finished step: `progress J0130 --step 3 --of 8` = 3 of 8 steps done. The page turns it into % done and an ETA from
+    the pace so far. Kept across a release (the next run carries on from it); cleared when the job is reopened.
+    Allowed on a job the agent holds, or an open one it released between steps."""
+    if not agent:
+        raise ValueError("progress needs --agent")
+    if of < 1 or step < 0 or step > of:
+        raise ValueError(f"--step {step} --of {of}: need 0 <= step <= of and of >= 1")
+    if job["status"] == "claimed" and job.get("by") != agent:
+        raise ValueError(f"{job['id']} is claimed by {job['by']}, not {agent}")
+    if job["status"] not in ("claimed", "open"):
+        raise ValueError(f"{job['id']} is {job['status']}; progress is for a job in hand")
+    job["progress"] = {"step": step, "of": of, "at": studio.iso(at), "by": agent}
+    if note:
+        job["progress"]["note"] = note[:120]
+    log(job, at, agent, f"step {step} of {of} done" + (": " + note if note else ""))
+
+
+def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
+    if job["status"] not in ("blocked", "done", "cancelled"):
+        raise ValueError(f"{job['id']} is {job['status']}; only blocked, done or cancelled jobs reopen")
+    job.update(status="open", by="", since="", eta="", result="")
+    job.pop("progress", None)
+    log(job, at, agent, "reopened" + (": " + note if note else ""))
+
+
+def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.datetime) -> None:
+    """Hand a job to another worker on a given model (Ben, 11 Oct 2026 23:40: "if Claude Code is out of usage you can
+    use a Claude model in Cursor"). The job becomes an open Mini job only `to` may claim, carrying `model`; what it was
+    before is kept in rerouted_from. An open, blocked, or claimed job (the holder's claim ends) can be rerouted."""
+    if job["status"] in ("done", "cancelled"):
+        raise ValueError(f"{job['id']} is {job['status']}; nothing to reroute")
+    if model and model not in routing.MODELS:
+        raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
+    if model and routing.RUNS_ON.get(model) != to:
+        raise ValueError(f"{model} doesn't run on {to}")
+    if job.get("kind") == "chief":
+        raise ValueError(f"{job['id']} is a Chief call; it has no stand-in")
+    job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
+                                     "status": job["status"], "by": job.get("by", "")})
+    job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
+    if job.get("result") and job["rerouted_from"].get("status") == "blocked":
+        job["result"] = ""
+    if model:
+        job["model"] = model
+    log(job, at, agent, f"rerouted to {to}" + (f" on {model}" if model else "") + (": " + note if note else ""))
+
+
+def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
+    if job["status"] == "done":
+        raise ValueError(f"{job['id']} is already done")
+    job.update(status="cancelled", by="", eta="")
+    log(job, at, agent, "cancelled" + (": " + note if note else ""))
+
+
+# ----------------------------------------------------------------------------- board link (film/stage claims)
+def on_board(job: dict) -> bool:
+    """Only OWB jobs have a film folder on this repo's studio board; HOS films live in the HOS checkout."""
+    return bool(job.get("film")) and job.get("repo", "owb") != "hos"
+
+
+def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
+    if not on_board(job):
+        return None
+    path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
+    d = studio.load(path)
+    mins = max(1, int((studio.parse(job["eta"]) - at).total_seconds() // 60))
+    err = studio.do_claim(d, job["stage"], agent, mins, f"{job['id']} {job['title']}", at)
+    if err:
+        return err
+    studio.save(path, d)
+    return None
+
+
+def board_release(job: dict, agent: str, state: str, ref: str = "") -> None:
+    if not on_board(job):
+        return
+    path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
+    d = studio.load(path)
+    if any(c["stage"] == job["stage"] and c["by"] == agent for c in d.get("claims", [])):
+        studio.do_release(d, job["stage"], agent, state, ref)
+        studio.save(path, d)
+
+
+# ----------------------------------------------------------------------------- JOBS.md
+def render(data: dict, at: dt.datetime) -> str:
+    L = ["# Studio job queue", "", "Generated by `python3 scripts/jobs.py` from `jobs/queue.json`. Don't edit by hand.",
+         "Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what you can do>`.", ""]
+    if data.get("focus"):
+        L += [f"**Focus film: {', '.join(data['focus'])}.** Its jobs go first (Ben, 8 Oct: one film at a time).", ""]
+    urgent = [j["id"] for j in sorted(data["jobs"], key=lambda j: (urgent_rank(j), j["id"]))
+              if j.get("urgent") and j["status"] in ("open", "claimed", "blocked")]
+    if urgent:
+        L += [f"**Urgent, in this order: {', '.join(urgent)}.** Ahead of everything, the focus film included.", ""]
+    L += [
+         "| Job | Needs | Status | Who | ETA (UTC) | Title | Ref |", "|---|---|---|---|---|---|---|"]
+    live = [j for j in data["jobs"] if j["status"] in ("open", "claimed", "blocked")]
+    for j in sorted(live, key=lambda j: j["id"]):
+        st = "**stalled**" if stalled(j, at) else j["status"] + (f" (after {j['after']})" if j.get("after") and j["status"] == "open" else "")
+        if waiting_to_start(j, at) and j["status"] == "open":
+            pass  # no start times (Ben, 12 Oct 2026 14:37)
+        film = f"{j['film']} {j['stage']} · " if j.get("film") else ""
+        film += f"for {j['for']} · " if j.get("for") else ""
+        film += f"{j['kind']} · " if j.get("kind") else ""
+        film += f"`{j['model']}` · " if j.get("model") else ""
+        L.append(f"| {j['id']} | {j['needs']} | {st} | {j.get('by') or '–'} | {j.get('eta') or '–'} | {film}{j['title']} | {j.get('ref') or ''} |")
+    if not live:
+        L.append("| – | | nothing waiting | | | | |")
+    done = [j for j in data["jobs"] if j["status"] in ("done", "cancelled")][-10:]
+    if done:
+        L += ["", "Recently finished:", ""] + [f"- {j['id']} {j['status']}: {j['title']} ({j.get('result') or ''})" for j in reversed(done)]
+    return "\n".join(L) + "\n"
+
+
+# ----------------------------------------------------------------------------- git transaction
+def with_git(apply, message: str, tries: int = 3):
+    """Pull, apply, commit only the queue files and any touched film board files, push; retry on a push race."""
+    for _ in range(tries):
+        if studio.git("pull", "-q", "--rebase", "--autostash", "origin", "main").returncode != 0:
+            return None, "git pull failed; resolve the working tree first"
+        data = load()
+        before = json.dumps(data, sort_keys=True)
+        out, err, touched = apply(data)
+        if err:
+            return None, err
+        if json.dumps(data, sort_keys=True) == before and not touched:
+            return out, None  # nothing changed (e.g. `next` with nothing waiting): no commit, no push
+        save(data)
+        JOBS_MD.write_text(render(data, now()))
+        paths = [str(QUEUE), str(JOBS_MD)]
+        if touched:
+            studio.write_status(studio.FILMS)
+            paths += [str(p) for p in touched] + [str(studio.status_path(studio.FILMS))]
+        studio.git("add", *paths)
+        if studio.git("commit", "-q", "-m", message, "--", *paths).returncode != 0:
+            return None, "git commit failed"
+        if studio.git("push", "-q", "origin", "HEAD:main").returncode == 0:
+            return out, None
+        studio.git("reset", "-q", "HEAD~1")
+        studio.git("checkout", "-q", "--", *paths)
+    return None, "push kept racing; try again"
+
+
+def film_status_path(job: dict):
+    return studio.film_dir(studio.FILMS, job["film"]) / "status.json" if on_board(job) else None
+
+
+def show(job: dict) -> str:
+    who = (f" by {job['by']}" if job.get("by") else "") + (f" until {job['eta']}" if job.get("eta") else "")
+    lines = [f"{job['id']} [{job['needs']}] {job['status']}{who}",
+             f"title: {job['title']}"]
+    if job.get("film"):
+        lines.append(f"board: {job['film']} {job['stage']}")
+    if job.get("kind") or job.get("model"):
+        r = routing.KINDS.get(job.get("kind") or "")
+        fb = routing.fallbacks(job["kind"]) if r else []
+        lines.append(f"kind: {job.get('kind') or '-'}" + (f" (primary {r[1][0]} {r[1][1]}" + (
+            ", then " + " -> ".join(f"{a} {m}" for a, m in fb) + ")" if fb else ", no stand-in)") if r else "")
+                     + (f"; model: {job['model']}" if job.get("model") else ""))
+    if job.get("not_before"):
+        lines.append(f"not before: {studio.parse(job['not_before']).astimezone(LONDON):%Y-%m-%d %H:%M} London ({job['not_before']})")
+    if job.get("ref"):
+        lines.append(f"ref: {job['ref']}")
+    if job.get("body"):
+        lines += ["", job["body"]]
+    return "\n".join(lines)
+
+
+def heartbeat(agent: str) -> None:
+    """On the Mini, tell the Chief relay this agent is alive (chief_relay.py: Grok Bot counts as up while it runs jobs.py).
+    A no-op anywhere without ~/_desk/state, e.g. cloud sessions."""
+    if agent and chief_relay.STATE.is_dir():
+        try:
+            chief_relay.seen(agent)
+        except OSError:
+            pass
+
+
+def publish_board() -> None:
+    """Rebuild the Studio Kanban's data in the background (scripts/board_publish.py, Ben 9 Oct: the board updates
+    whenever a job moves). Fire-and-forget: it never blocks the job or changes its exit code. Off with BOARD_PUBLISH=0,
+    and a no-op anywhere without ~/_desk/state (cloud sessions, CI)."""
+    script = ROOT / "scripts" / "board_publish.py"
+    if os.environ.get("BOARD_PUBLISH", "1") == "0" or not chief_relay.STATE.is_dir() or not script.exists():
+        return
+    try:
+        subprocess.Popen([sys.executable, str(script), "--quiet"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                         stderr=subprocess.DEVNULL, start_new_session=True, cwd=str(ROOT))
+    except OSError:
+        pass
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    a = sub.add_parser("add")
+    a.add_argument("--title", required=True)
+    a.add_argument("--needs", required=True, choices=NEEDS)
+    a.add_argument("--body", default="")
+    a.add_argument("--body-file", type=pathlib.Path)
+    a.add_argument("--ref", default="")
+    a.add_argument("--film", default="")
+    a.add_argument("--stage", default="")
+    a.add_argument("--after", default="")
+    a.add_argument("--repo", default="owb", choices=["owb", "hos"])
+    a.add_argument("--eta", type=int, default=DEFAULT_ETA, help="minutes a claim lasts before it counts as stalled")
+    a.add_argument("--by", required=True)
+    a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")
+    a.add_argument("--kind", default="", choices=[""] + list(routing.KINDS), help="job type; routes it (AGENTS.md 'Who does what')")
+    a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
+    a.add_argument("--not-before", default="", help='"YYYY-MM-DD HH:MM" London time: nobody is handed it before then')
+    a.add_argument("--reset", default="", help="the real window --not-before waits for (quota/credit reset, air date)")
+    sc = sub.add_parser("schedule", help="set or clear a job's not-before time")
+    sc.add_argument("id")
+    sc.add_argument("--agent", default="")
+    sc.add_argument("--not-before", required=True, help='"YYYY-MM-DD HH:MM" London time; "" clears it')
+    sc.add_argument("--reset", default="", help="required with a time: the quota/credit/air-date window it waits for")
+    n = sub.add_parser("next")
+    n.add_argument("--agent", required=True)
+    n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
+    n.add_argument("--eta", type=int, default=None)
+    n.add_argument("--peek", action="store_true", help="show what you would get, claim nothing")
+    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute"):
+        p = sub.add_parser(name)
+        p.add_argument("id")
+        p.add_argument("--agent", default="")
+        p.add_argument("--result", default="")
+        p.add_argument("--reason", default="")
+        p.add_argument("--note", default="")
+        p.add_argument("--ref", default="")
+        p.add_argument("--eta", type=int, default=DEFAULT_ETA)
+        if name == "progress":
+            p.add_argument("--step", type=int, required=True, help="steps finished so far (0 at the start)")
+            p.add_argument("--of", type=int, required=True, help="steps in the whole job")
+        if name == "reroute":
+            p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
+            p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
+    w = sub.add_parser("watch", help="JSON for Claude's 2-hourly check: is the Mini quiet, what waits on Ben")
+    w.add_argument("--quiet-hours", type=float, default=3)
+    fo = sub.add_parser("focus", help="the film(s) every agent works on first, e.g. `focus 025`; no films clears it")
+    fo.add_argument("films", nargs="*")
+    fo.add_argument("--by", default="claude")
+    ur = sub.add_parser("urgent", help="put job(s) ahead of everything, even the focus film, in the order named, after any "
+                        "other urgent jobs, e.g. `urgent J0085 J0096`; --off undoes it")
+    ur.add_argument("ids", nargs="+")
+    ur.add_argument("--off", action="store_true")
+    ur.add_argument("--by", default="claude")
+    lst = sub.add_parser("list")
+    lst.add_argument("--all", action="store_true")
+    for p in sub.choices.values():
+        p.add_argument("--git", action="store_true")
+    args = ap.parse_args(argv)
+    at = now()
+    heartbeat(getattr(args, "agent", ""))
+
+    if args.cmd == "list":
+        data = load()
+        for j in data["jobs"]:
+            if args.all or j["status"] in ("open", "claimed", "blocked"):
+                print(f"{j['id']} [{j['needs']}] {'stalled' if stalled(j, at) else j['status']}"
+                      f"{' by ' + j['by'] if j.get('by') else ''}  {j['title']}")
+        return 0
+    if args.cmd == "watch":
+        print(json.dumps(do_watch(load(), at, args.quiet_hours), indent=2))
+        return 0
+    if args.cmd == "show":
+        job = find(load(), args.id)
+        if not job:
+            sys.exit(f"jobs: no {args.id}")
+        print(show(job))
+        return 0
+
+    def apply(data):
+        touched = []
+        try:
+            if args.cmd == "add":
+                body = args.body_file.read_text() if args.body_file else args.body
+                job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
+                             film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
+                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset)
+                return job, None, touched
+            if args.cmd == "focus":
+                data["focus"] = [f.strip() for f in args.films if f.strip()]
+                return {"id": "focus", "focus": data["focus"]}, None, touched
+            if args.cmd == "urgent":
+                found = [find(data, i) for i in args.ids]
+                if not all(found):
+                    return None, "no " + ", ".join(i for i, j in zip(args.ids, found) if not j), touched
+                return {"id": "urgent", "urgent": do_urgent(data, found, args.off)}, None, touched
+            if args.cmd == "next":
+                can = {c.strip() for c in args.can.split(",") if c.strip()}
+                if args.peek:
+                    job = next((j for j in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())) if claimable(data, j, can, at, args.agent)), None)
+                    return job, None, touched
+                job = do_next(data, args.agent, can, at, args.eta)
+                if job and on_board(job) and job["history"][-1]["what"].startswith("claimed"):
+                    err = board_claim(job, args.agent, at)
+                    if err:
+                        do_release(job, args.agent, f"board stage held: {err}", at)
+                        return None, f"{job['id']}: the board stage is held ({err}); left open", touched
+                    touched.append(film_status_path(job))
+                return job, None, touched
+            job = find(data, args.id)
+            if not job:
+                return None, f"no {args.id}", touched
+            if args.cmd == "done":
+                do_done(job, args.agent, args.result or "done", at, args.ref)
+                board_release(job, args.agent, "review", args.ref)
+            elif args.cmd == "block":
+                do_block(job, args.agent, args.reason or args.result, at)
+                board_release(job, args.agent, "blocked")
+            elif args.cmd == "release":
+                do_release(job, args.agent, args.note, at)
+                board_release(job, args.agent, "doing")
+            elif args.cmd == "renew":
+                do_renew(job, args.agent, args.eta, at)
+                if on_board(job):
+                    board_claim(job, args.agent, at)
+            elif args.cmd == "progress":
+                do_progress(job, args.agent, args.step, args.of, at, args.note)
+                return job, None, touched  # the film's board stage doesn't change
+            elif args.cmd == "reopen":
+                do_reopen(job, args.agent or "claude", args.note, at)
+            elif args.cmd == "schedule":
+                do_schedule(job, args.agent or "claude", args.not_before, at, args.reset)
+            elif args.cmd == "cancel":
+                do_cancel(job, args.agent or "claude", args.note, at)
+            elif args.cmd == "reroute":
+                held = job.get("by") if job["status"] == "claimed" else ""
+                do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)
+                if held:
+                    board_release(job, held, "doing")
+            if on_board(job):
+                touched.append(film_status_path(job))
+            return job, None, touched
+        except ValueError as e:
+            return None, str(e), touched
+
+    if args.git and not (args.cmd == "next" and args.peek):
+        who = getattr(args, "agent", "") or getattr(args, "by", "")
+        what = " ".join(x for x in ("jobs:", args.cmd, " ".join(getattr(args, "ids", [])) or getattr(args, "id", "") or (args.title if args.cmd == "add" else ""), "by", who) if x)
+        job, err = with_git(apply, what)
+    else:
+        data = load()
+        job, err, touched = apply(data)
+        if not err and not (args.cmd == "next" and args.peek):
+            save(data)
+            JOBS_MD.write_text(render(data, at))
+            if touched:  # the film's status.json was written by board_claim / board_release
+                studio.write_status(studio.FILMS)
+    if err:
+        print(f"jobs: {err}", file=sys.stderr)
+        return 1
+    if job and not (args.cmd == "next" and args.peek):
+        publish_board()
+    if args.cmd == "next" and not job:
+        print("jobs: nothing waiting for you")
+        return EX_NONE
+    if args.cmd == "focus":
+        print("focus: " + (", ".join(job["focus"]) or "none"))
+        return 0
+    if args.cmd == "urgent":
+        print("urgent: " + (", ".join(job["urgent"]) or "none"))
+        return 0
+    print(show(job) if job else "ok")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

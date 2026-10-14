@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-10-09T03:50:00+00:00",
+  "project": "nearest-star",
+  "audio_file": "nearest-star_score_bed_v01_full.mp3",
+  "status": "joined",
+  "model_id": "music_v2",
+  "force_instrumental": true,
+  "prompt": "Instrumental cinematic space documentary underscore for Orbit with Ben, Nearest Star film. Night-sky wonder and quiet curiosity: the hush of looking up on a clear night, then the dizzying scale of the gap between the stars, then a long patient journey outward. Glassy celesta and soft bell tones, airy synth pads, gentle pulsing low strings, a slow-building warm string swell for the scale reveal, a hopeful lift near the end, closing on a long held chord. Pace: 66-80 BPM, steady and unhurried under British narration. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings, NOT the Mars robot's lonely felt piano and low strings. No vocals, no choir words, no drums, no EDM, no trailer hit.\n\nTake 2 (continuation, joined after take 1): the same prompt plus \"Continuation of the same piece: same key, tempo and instrumentation.\"",
+  "takes": [
+    {
+      "file": "nearest-star_score_bed_v01.mp3",
+      "song_id": "5eXs1giOO8x25fotCbiD",
+      "length_ms_asked": 520000,
+      "seconds_returned": 170.03,
+      "lufs": -16.8,
+      "note": "returned short; fades out from ~112 s raw, near-silent 120-145 s"
+    },
+    {
+      "file": "nearest-star_score_bed_v01b.mp3",
+      "song_id": "Xg5MTnVdTG0fV5kBkk43",
+      "length_ms_asked": 380000,
+      "seconds_returned": 380.03,
+      "lufs": -27.8,
+      "gain_db_applied": 11.0,
+      "note": "breathes: ~3 s dips every ~13 s; ends on its own fade (365-380 s raw)"
+    }
+  ],
+  "join": {
+    "at_s_raw": 104.0,
+    "at_s_film": 111.8,
+    "crossfade_s_raw": 8,
+    "crossfade_s_film": 8.6,
+    "curve": "qsin (equal power)",
+    "chapter_break": "lands just before chapter 2 'Measuring the Gap' (VO 122.1 s)",
+    "take2_from_s": 0.0,
+    "take2_gain_db": 11.0,
+    "take2_fade_up": "3 s from -6 dB",
+    "tempo": 0.93,
+    "tempo_note": "whole joined bed slowed 7% (pitch kept) so it runs 520 s, past the 491 s VO with room for breaths and the end hold",
+    "limiter": 0.95,
+    "result_seconds": 520.45,
+    "result_lufs": -16.6,
+    "result_true_peak_dbfs": -0.3,
+    "script": "_join_nearest_star_bed_v01.py",
+    "check": "nearest-star_score_bed_v01_full_join_check.json"
+  },
+  "brief_by": "Claude, J0075",
+  "by": "cursor",
+  "job": "J0075"
+}

@@ -1,0 +1,41 @@
+{
+  "script_words": 57,
+  "whisper_words": 54,
+  "match_rate_pct": 89.47,
+  "mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "tonne"
+      ],
+      "whisper": [
+        "ton"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "ninety",
+        "percent"
+      ],
+      "whisper": [
+        "90"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "ninety",
+        "nine",
+        "percent"
+      ],
+      "whisper": [
+        "99"
+      ]
+    }
+  ],
+  "script_norm": "nothing with mass can reach light speed could a robot do it push one tonne to ninety percent a fifth of the world's yearly energy ninety nine percent costs nearly the whole year every extra nine costs more at the limit it never ends the full film what happens if you travel near the speed of light",
+  "whisper_norm": "nothing with mass can reach light speed could a robot do it push one ton to 90 a fifth of the world's yearly energy 99 costs nearly the whole year every extra nine costs more at the limit it never ends the full film what happens if you travel near the speed of light",
+  "mismatches_are_number_spelling_only": true,
+  "mismatch_note": "number spelling (90/99) + tonne/ton STT spelling; no clipped words; PASS under \u226585% house rule"
+}

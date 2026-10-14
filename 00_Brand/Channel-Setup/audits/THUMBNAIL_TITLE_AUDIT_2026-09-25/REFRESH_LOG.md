@@ -206,3 +206,15 @@ Full rows: `refresh/sweep/SWEEP_GRADE.json`.
 `-jmMROGoZCM`: Cloud Deck → NO FLOOR on the Cloud Deck picture. Set in Studio because `thumbnails.set` returned forbidden. Adds the no-surface hook instead of repeating the title, set before release.
 
 `-jmMROGoZCM`: title → Why You Can't Stand On Jupiter. Reason: vidIQ. Set before release.
+
+## 2026-10-12
+
+J0133, Packaging §2.B (Astrum ref, 11 Oct): five live long thumbs rebuilt with a top text band off the subject and a harder grade. Chief PASS on #99 (#6119251981). Set in desktop Studio (CDP 9223, channel `UC_esArsDKd3GJvOkeO0DUog`) by Cursor with `scripts/apply_packaging_long_thumbs_j0133.py`, image input only; each reload showed the new thumb. No Test & Compare was running on any of them. Title, description, schedule and privacy untouched. Rollback copies of the old thumbs: `~/_desk/thumb_packaging_1011/rollback/live_<id>.jpg` on the Mini.
+
+| Video | Old → new text | `--score` | New file sha256 | Rollback sha256 |
+|---|---|---|---|---|
+| `ojk-dfOpAmw` Andromeda | WHEN THEY MEET → THIS IS ANDROMEDA (NASA/JPL-Caltech GALEX PIA15416) | PASS, sat 131.7, near-black 5% | 250c9980…2515 | 953965c2…958c |
+| `Yk1tLh23rko` Neutron Star | CRUSHED FLAT (kept), band moved to top | PASS, sat 125.1, near-black 30% | ca1451a4…522f | 59d18cd9…ba77 |
+| `NbW5G1BpPY0` Europa | A HIDDEN OCEAN (kept), band moved to top | PASS `--pale`, sat 104.3, near-black 4% | 5b509a39…2d82 | e14b3173…3388 |
+| `REXYxuLOBoI` Last Star | LAST LIGHT (kept), band moved to top | PASS, sat 122.7, near-black 3% | bc922b7e…21fc | 20cd727d…1a09 |
+| `3xrxdmaOwJI` Black Hole | NO WAY OUT (kept), band moved to top | PASS, sat 125.0, near-black 20% | dbace4ad…7e16 | ffe8e13e…272e |

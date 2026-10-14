@@ -1,0 +1,29 @@
+{
+  "script_words": 58,
+  "whisper_words": 58,
+  "match_rate_pct": 94.83,
+  "mismatches": [
+    {
+      "op": "replace",
+      "script": [
+        "kilometres"
+      ],
+      "whisper": [
+        "kilometers"
+      ]
+    },
+    {
+      "op": "replace",
+      "script": [
+        "fourteen",
+        "hundred"
+      ],
+      "whisper": [
+        "1",
+        "400"
+      ]
+    }
+  ],
+  "script_norm": "nothing we've built has flown this close to the sun could a robot survive touching it parker solar probe passes six million kilometres from the surface its shield takes nearly fourteen hundred degrees behind it room temperature but there is no ground to touch only gas hotter than any shield the full film is the sun getting brighter",
+  "whisper_norm": "nothing we've built has flown this close to the sun could a robot survive touching it parker solar probe passes six million kilometers from the surface its shield takes nearly 1 400 degrees behind it room temperature but there is no ground to touch only gas hotter than any shield the full film is the sun getting brighter"
+}

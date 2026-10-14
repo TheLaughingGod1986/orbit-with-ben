@@ -8,6 +8,7 @@
  *   npx tsx scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/STUDIO_FIXES.json --dry-run
  *   npx tsx scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/STUDIO_FIXES.json
  */
+import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
 import path from "path";
 import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
@@ -115,6 +116,8 @@ async function main() {
   fs.writeFileSync(out, JSON.stringify({ dry, finishedAt: new Date().toISOString(), results }, null, 2) + "\n");
   console.log(JSON.stringify({ wrote: out, n: results.length, dry }, null, 2));
 }
+
+ensureDeskLock();
 
 main().catch((e) => {
   console.error(e);
