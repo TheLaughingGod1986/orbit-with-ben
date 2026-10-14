@@ -16400,13 +16400,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-14T14:17Z",
-      "eta": "2026-10-14T15:02Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-14T11:16Z",
-      "result": "",
+      "result": "Studio access unavailable: localhost CDP 9223 and 9222 both return connection refused, verified outside sandbox. Needs signed-in Mini browser sessions restored; no metrics or YouTube state changed.",
       "history": [
         {
           "at": "2026-10-14T11:16Z",
@@ -16427,6 +16427,11 @@
           "at": "2026-10-14T14:18Z",
           "by": "codex",
           "what": "step 1 of 4 done: Preflight complete; both CDP endpoints refuse connections; no metrics read"
+        },
+        {
+          "at": "2026-10-14T14:18Z",
+          "by": "codex",
+          "what": "blocked: Studio access unavailable: localhost CDP 9223 and 9222 both return connection refused, verified outside sandbox. Needs signed-in Mini browser sessions restored; no metrics or YouTube state changed."
         }
       ],
       "kind": "studio",
