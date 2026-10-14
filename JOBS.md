@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0235, J0188, J0231, J0181, J0236, J0237, J0238.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0235, J0188, J0231, J0181, J0236, J0238.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -34,12 +34,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0234 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0235 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') | 6165997020 |
 | J0236 | mini | open | – | – | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
-| J0237 | mini | claimed | gemini | 2026-10-14T21:28Z | studio · HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z | 6166069752 |
 | J0238 | mini | open | – | – | studio · Mini: install the CDP browser watchdog (HOS #318) so Studio jobs self-heal; post status |  |
 | J0239 | mini | open | – | – | qa · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 
 Recently finished:
 
+- J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
 - J0230 done: HOS 005 Short s04 'Is the Heart a Pump?' cover (covers_v02 style), set in its package manifest (prereq for J0188) (done)
 - J0229 done: Mini disk full (121 MB free): move old render scratch to the NAS (done)
 - J0228 done: HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z (Acting Chief PASS (Claude): Sources line in #99 6166069752 passes as written; apply queued as J0237 (Mini, urgent) before 15 Oct 17:00Z.)
@@ -49,4 +49,3 @@ Recently finished:
 - J0223 done: 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) (Picture inputs done (d18cdf1a): Veo Fast rock tumble 9:16 8 s (£0.60 est.), Omni Orbit geo-satellite beat 9:16 (rock sweeps past, Orbit looks up/ducks/peers; on model in 6-frame sheet; Omni unpriced, billed late), flash-image satellite plate (£0.03), NASA limb plates iss023e057948/iss023e058455/iss034e048455 (plates_v01.json). Split: DATA bar -> J0225 (chart, Codex); assembly + gate -> next job (after J0225).)
 - J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
 - J0221 done: 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) (Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands.)
-- J0218 done: HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs (Acting-Chief PASS (Claude): S5-S8 listings and covers accepted, HOS PR #316 merged (2cdd596). S7 title stays: Priestley's mint restored the air the candle had used up, the gas he named later as oxygen, and the description keeps that distinction. S7 Related = HOS 006 once it's public (5 Nov); until then the channel link. J0172 can now schedule S5-S8 after J0211.)
