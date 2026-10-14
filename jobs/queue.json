@@ -1,5 +1,5 @@
 {
-  "next_id": 234,
+  "next_id": 235,
   "jobs": [
     {
       "id": "J0001",
@@ -16500,6 +16500,34 @@
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked"
+    },
+    {
+      "id": "J0234",
+      "title": "Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "From 00_Brand/Channel-Setup/audits/ and the *_test_compare.json files, pick a live long with no test running or on record. Build B from existing plates only (no image-model spend, never inpaint), Packaging section 2.B. thumb_preview.py long <A> <B> --out <sheet> --score must PASS. Post the sheet on #99, block 'parked for Chief: thumb B review'. Never touch an armed test.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T15:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T15:11Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "chart",
+      "backlog": "owb-thumb-b"
     }
   ],
   "focus": [
@@ -16511,7 +16539,7 @@
   "backlog_last": {
     "owb-short-from-locked": "2026-10-14T11:16Z",
     "hos-short-from-locked": "2026-10-14T11:16Z",
-    "owb-thumb-b": "2026-10-12T12:56Z",
+    "owb-thumb-b": "2026-10-14T15:11Z",
     "hos-thumb-b": "2026-10-12T13:26Z",
     "owb-teach-overlays": "2026-10-12T13:26Z",
     "owb-live-listing-fixes": "2026-10-12T13:26Z",
