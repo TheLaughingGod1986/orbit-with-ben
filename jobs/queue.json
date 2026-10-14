@@ -17062,10 +17062,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-14T22:58Z",
+      "eta": "2026-10-15T00:28Z",
       "created_by": "claude",
       "created_at": "2026-10-14T15:49Z",
       "result": "",
@@ -17109,6 +17109,11 @@
           "at": "2026-10-14T20:32Z",
           "by": "claude",
           "what": "reopened: re-run `_assemble_venus_full_v05e.py` locally (£0 ffmpeg) to rebuild the CRF 18 v05e master. Write it straight to OWB UAT (or the NAS), never /private/tmp. Check it against the phone encode before us"
+        },
+        {
+          "at": "2026-10-14T22:58Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
