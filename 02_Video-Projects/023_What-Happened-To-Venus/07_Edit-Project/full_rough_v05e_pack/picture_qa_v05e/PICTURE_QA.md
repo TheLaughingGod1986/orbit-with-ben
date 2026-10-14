@@ -1,6 +1,6 @@
 # Picture QA: PASS
 
-/private/tmp/023_Venus_full_rough_v05e.mp4 · 96 cuts · 0 fail · 25 for Claude to look at full size
+/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/023_Venus_full_rough_v05e.mp4 · 96 cuts · 0 fail · 25 for Claude to look at full size
 
 ## Claude looks at these full size
 
@@ -19,7 +19,7 @@
 - **5:26** row 38 · nightlid.mp4: kind of picture: no title in the pool, so nobody can tell what it is
 - **5:53** row 43a · line.mp4: kind of picture: no title in the pool, so nobody can tell what it is; reuse: on screen 16.1s in a row (look at it: 15s is a lot for one picture)
 - **6:01** row 43b · line.mp4: kind of picture: no title in the pool, so nobody can tell what it is
-- **6:18** row 44a · HMIVenusTransit_HD1080.mp4 (SDO HMI view of the 2012 transit of Venus across the Sun (NASA SDO)): reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture); low detail: edge density 0.0015 < film p5 0.0021
+- **6:18** row 44a · HMIVenusTransit_HD1080.mp4 (SDO HMI view of the 2012 transit of Venus across the Sun (NASA SDO)): reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture); low detail: edge density 0.0016 < film p5 0.0021
 - **6:27** row 44b · HMIVenusTransit_HD1080.mp4 (SDO HMI view of the 2012 transit of Venus across the Sun (NASA SDO)): low detail: edge density 0.0014 < film p5 0.0021
 - **7:26** row 51 · svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4 (Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)): kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size
 - **7:31** row 51 · svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4 (Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)): kind of picture: 'Parker Solar Probe Venus flyby animation with WISPR night-side views (NASA SVS 14095)' (animation), look at it full size

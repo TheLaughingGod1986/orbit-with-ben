@@ -1,6 +1,6 @@
 {
   "verdict": "PASS",
-  "video": "/private/tmp/023_Venus_full_rough_v05e.mp4",
+  "video": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/023_Venus_full_rough_v05e.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -192,7 +192,7 @@
       "reviewed_ok": {
         "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
         "passed": [
-          "near-black: mean 26.1, p95 158.0"
+          "near-black: mean 26.94, p95 158.0"
         ]
       }
     },
@@ -233,7 +233,7 @@
       "fail": [],
       "warn": [
         "reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: edge density 0.0015 < film p5 0.0021"
+        "low detail: edge density 0.0016 < film p5 0.0021"
       ],
       "offset": 5.0
     },
@@ -1089,7 +1089,7 @@
       "reviewed_ok": {
         "note": "Claude #6079012304 ruling 1: code graphic dark by design (sentence sheet J0086 checks it)",
         "passed": [
-          "near-black: mean 26.1, p95 158.0"
+          "near-black: mean 26.94, p95 158.0"
         ]
       }
     },
@@ -1202,7 +1202,7 @@
       "fail": [],
       "warn": [
         "reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: edge density 0.0015 < film p5 0.0021"
+        "low detail: edge density 0.0016 < film p5 0.0021"
       ],
       "offset": 5.0
     },

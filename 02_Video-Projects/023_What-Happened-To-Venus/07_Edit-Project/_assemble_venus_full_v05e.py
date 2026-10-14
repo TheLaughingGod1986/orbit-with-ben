@@ -64,7 +64,7 @@ HERE=Path(__file__).resolve().parent; EP=HERE.parent
 UAT=Path.home()/'Library/Mobile Documents/com~apple~CloudDocs/OWB UAT'
 WORK=Path('/private/tmp/venus023_full_work_v05e'); PACK=HERE/'full_rough_v05e_pack'
 VO_SRC=EP/'02_Voiceover/venus_vo_v01.mp3'; VO=WORK/'venus_vo_v01_muted_people.wav'; MUTE=(435.40,436.70)
-OUT=Path('/private/tmp/023_Venus_full_rough_v05e.mp4')  # iCloud locks the UAT copy mid-read; the phone copy goes to UAT
+OUT=UAT/'023_Venus_full_rough_v05e.mp4'
 MAX_UP=2.35; RAINBOW={'PIA00007.jpg','PIA00008.jpg','PIA00157.jpg','PIA00158.jpg','PIA00159.jpg','PIA00160.jpg'}
 POOL=HERE/'nasa_pool_v01'; RAW=EP/'04_Generated-Clips/01_Raw'; G1=RAW/'graphics_v01'; G2=RAW/'graphics_v02'; G3=RAW/'graphics_v04'; G5=RAW/'graphics_v05'; G6=RAW/'graphics_v06'
 PL3=RAW/'plates_v04'; PROBE='pioneer/pv_probe.jpg'
