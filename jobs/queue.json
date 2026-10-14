@@ -13056,13 +13056,13 @@
       "stage": "",
       "after": "J0205",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-13T17:41Z",
-      "eta": "2026-10-13T19:41Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "parked for Chief: recover frozen HOS Studio CDP 9460 or authorize an alternative calendar verification route. /json/list and WebSocket handshake respond, but Runtime.evaluate times out after 8s. Prior 2/4 retained. No YouTube changes this run; HOS 005 s04 remains not uploaded. Do not re-upload OWB 23KZK7OjsEE or lbW2iQ9YvqA. Shared pulls blocked by existing local work; clean sparse worktree /private/tmp/owb-codex-20261014-sparse used. Disk nearly full (138Mi available before sparse checkout).",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13183,6 +13183,11 @@
           "at": "2026-10-14T02:40Z",
           "by": "codex",
           "what": "step 2 of 4 done: HOS CDP 9460 handshake succeeds; Runtime.evaluate times out after 8s; calendar unverified"
+        },
+        {
+          "at": "2026-10-14T02:41Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: recover frozen HOS Studio CDP 9460 or authorize an alternative calendar verification route. /json/list and WebSocket handshake respond, but Runtime.evaluate times out after 8s. Prior 2/4 retained. No YouTube changes this run; HOS 005 s04 remains not uploaded. Do not re-upload OWB 23KZK7OjsEE or lbW2iQ9YvqA. Shared pulls blocked by existing local work; clean sparse worktree /private/tmp/owb-codex-20261014-sparse used. Disk nearly full (138Mi available before sparse checkout)."
         }
       ],
       "kind": "studio",
