@@ -107,5 +107,14 @@ class Routing(unittest.TestCase):
         self.assertIn("chart · ", jobs.render(d, T0))
 
 
+
+class HosPictureOnFlow(unittest.TestCase):
+    def test_hos_video_and_image_chains_use_flow_models(self):
+        for kind, flow in (("video", "flow-veo-3.1"), ("image", "flow-nano-banana-2")):
+            ch = routing.job_chain({"kind": kind, "repo": "hos"})
+            self.assertTrue(ch and all(m == flow for _, m in ch), ch)
+        self.assertEqual(routing.job_chain({"kind": "video"})[0][1], "veo-3.1-fast-generate-001")  # OWB keeps Vertex
+
+
 if __name__ == "__main__":
     unittest.main()
