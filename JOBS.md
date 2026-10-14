@@ -19,7 +19,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0172 | any | open (after J0218) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
 | J0175 | mini | blocked | codex | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
-| J0181 | mini | open | – | – | for cursor · listing · `cursor-auto` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0181 | mini | open | – | – | for codex · listing · `gpt-6-astra` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0184 | mini | blocked | codex | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0188 | mini | open (after J0205) | – | – | for cursor · studio · `cursor-auto` · Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?' | 6131998795 |
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
