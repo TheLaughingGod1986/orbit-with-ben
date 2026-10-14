@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0231, J0181, J0236, J0238, J0167.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0181, J0236, J0238, J0167.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -26,7 +26,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
 | J0226 | mini | open (after J0225) | – | – | 030 edit · for gemini · assembly · `gemini-agy` · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
-| J0231 | mini | claimed | codex | 2026-10-14T21:41Z | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
@@ -41,10 +40,10 @@ Recently finished:
 - J0242 cancelled: HOS 005 s04 5n7xFQRBUvI: set Related video = wwcjcFfC-5M (after the long is public, before 31 Oct 11:30 London) ()
 - J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
 - J0235 done: HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') (HOS 003 thumbnail-only A/B test saved and reload-verified running on frP_YrNShsU; A existing live, B supplied larger-hand INSIDE HER HAND; unchanged title. Preview HOS #180 6177937450; evidence commit 19a9c43. Read-only follow-up Sun 18 Oct. No spend or blockers.)
+- J0231 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (10 OWB + 3 HOS longs; 57 OWB + 12 HOS Shorts. CTR hits vs 4%: OWB 0/10, HOS 1/3 (_C92tIJCk8A 6.7%). Studio lacks avgViewPct for TE_HDKAnqms; omitted. Tracker merge verified and published; commit 71c19296. Read-only, no spend.)
 - J0230 done: HOS 005 Short s04 'Is the Heart a Pump?' cover (covers_v02 style), set in its package manifest (prereq for J0188) (done)
 - J0229 done: Mini disk full (121 MB free): move old render scratch to the NAS (done)
 - J0228 done: HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z (Acting Chief PASS (Claude): Sources line in #99 6166069752 passes as written; apply queued as J0237 (Mini, urgent) before 15 Oct 17:00Z.)
 - J0227 done: 030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196) (Quote check done (CLAUDE_QUOTE_CHECK_v01.md). Script v02 locked: lines 18 (at its peak), 58 (cut 'billions'; 'in advance') and 87 (more than sixteen hundred) fixed; row 8 and 13 quotes corrected. review:script PASS 94.5. Acting Chief PASS for VO from v02.)
 - J0225 done: 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) (PASS visual. Labels 36,000 KM / 32,000 KM; ProRes 4444 alpha 1080x1920 3.6s; ticks 0.5/1.1s; band + tech check OK. #171 squash-merged 74a3f02d. Media on Mini code_graphics_v01/. Unblocks J0226.)
 - J0224 done: HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS) (Quote check done (HOS #311 0b41ca1, CLAUDE_QUOTE_CHECK_v01.md, HOS #180 6172862675). Rows 14/28 quotes replaced with the real primary text; row 33 FLAG hedged. Script v02 locked: 4 VO lines fixed (Wells pain, Liston hedge, Simpson 'out cold', safety maths). review:script PASS 91.1.)
-- J0223 done: 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) (Picture inputs done (d18cdf1a): Veo Fast rock tumble 9:16 8 s (£0.60 est.), Omni Orbit geo-satellite beat 9:16 (rock sweeps past, Orbit looks up/ducks/peers; on model in 6-frame sheet; Omni unpriced, billed late), flash-image satellite plate (£0.03), NASA limb plates iss023e057948/iss023e058455/iss034e048455 (plates_v01.json). Split: DATA bar -> J0225 (chart, Codex); assembly + gate -> next job (after J0225).)
