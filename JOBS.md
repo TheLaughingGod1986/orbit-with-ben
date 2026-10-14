@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0235, J0188, J0231, J0181, J0236, J0238, J0167.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0188, J0231, J0181, J0236, J0238, J0167.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -31,7 +31,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
-| J0235 | mini | claimed | codex | 2026-10-14T22:36Z | for codex · studio · `gpt-6.1-sol` · HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') | 6165997020 |
 | J0236 | mini | open | – | – | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
 | J0238 | mini | open | – | – | studio · Mini: install the CDP browser watchdog (HOS #318) so Studio jobs self-heal; post status |  |
 | J0239 | mini | open | – | – | qa · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
@@ -40,6 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
+- J0235 done: HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') (HOS 003 thumbnail-only A/B test saved and reload-verified running on frP_YrNShsU; A existing live, B supplied larger-hand INSIDE HER HAND; unchanged title. Preview HOS #180 6177937450; evidence commit 19a9c43. Read-only follow-up Sun 18 Oct. No spend or blockers.)
 - J0230 done: HOS 005 Short s04 'Is the Heart a Pump?' cover (covers_v02 style), set in its package manifest (prereq for J0188) (done)
 - J0229 done: Mini disk full (121 MB free): move old render scratch to the NAS (done)
 - J0228 done: HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z (Acting Chief PASS (Claude): Sources line in #99 6166069752 passes as written; apply queued as J0237 (Mini, urgent) before 15 Oct 17:00Z.)
@@ -48,4 +48,3 @@ Recently finished:
 - J0224 done: HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS) (Quote check done (HOS #311 0b41ca1, CLAUDE_QUOTE_CHECK_v01.md, HOS #180 6172862675). Rows 14/28 quotes replaced with the real primary text; row 33 FLAG hedged. Script v02 locked: 4 VO lines fixed (Wells pain, Liston hedge, Simpson 'out cold', safety maths). review:script PASS 91.1.)
 - J0223 done: 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) (Picture inputs done (d18cdf1a): Veo Fast rock tumble 9:16 8 s (£0.60 est.), Omni Orbit geo-satellite beat 9:16 (rock sweeps past, Orbit looks up/ducks/peers; on model in 6-frame sheet; Omni unpriced, billed late), flash-image satellite plate (£0.03), NASA limb plates iss023e057948/iss023e058455/iss034e048455 (plates_v01.json). Split: DATA bar -> J0225 (chart, Codex); assembly + gate -> next job (after J0225).)
 - J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
-- J0221 done: 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) (Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands.)
