@@ -25,5 +25,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
+| 030 | edit | gemini | 2026-10-14T18:35Z | 2026-10-14T20:34Z | J0226 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
