@@ -241,5 +241,29 @@ class NotBefore(unittest.TestCase):
         d["jobs"][0]["backlog"] = "owb-ideas"
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["id"], "J0002")
 
+class HandBack(unittest.TestCase):
+    """Ben, 14 Oct 2026: when Claude is back online, its work switches back to it."""
+    def test_an_unstarted_rerouted_job_goes_back(self):
+        import datetime as _dt
+        at = _dt.datetime(2026, 10, 14, 22, 0, tzinfo=_dt.timezone.utc)
+        job = {"id": "J0900", "needs": "cloud", "status": "open", "by": "", "kind": "review", "history": []}
+        jobs.do_reroute(job, "relay", "cursor", "cursor-claude-opus-5-5", "Claude out", at)
+        self.assertEqual((job["needs"], job["for"]), ("mini", "cursor"))
+        jobs.do_handback(job, "relay", "Claude is back online", at)
+        self.assertEqual(job["needs"], "cloud")
+        self.assertNotIn("for", job)
+        self.assertNotIn("model", job)
+        self.assertNotIn("rerouted_from", job)
+
+    def test_a_started_one_stays_with_the_stand_in(self):
+        import datetime as _dt
+        at = _dt.datetime(2026, 10, 14, 22, 0, tzinfo=_dt.timezone.utc)
+        job = {"id": "J0901", "needs": "cloud", "status": "open", "by": "", "kind": "review", "history": []}
+        jobs.do_reroute(job, "relay", "codex", "gpt-6-astra", "Claude out", at)
+        job.update(status="claimed", by="codex")
+        with self.assertRaises(ValueError):
+            jobs.do_handback(job, "relay", "", at)
+
+
 if __name__ == "__main__":
     unittest.main()

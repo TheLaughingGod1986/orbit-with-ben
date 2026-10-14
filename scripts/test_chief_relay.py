@@ -625,6 +625,43 @@ class Relay(unittest.TestCase):
         self.assertEqual(self.chief(), "chief")  # Grok working again ends it early
         self.assertIsNone(cr.override(dt.datetime(2026, 10, 17, tzinfo=dt.timezone.utc)))  # and it expires
 
+    def beat(self, at, **extra):
+        cr.write_json(cr.d("claude_beat.json"), {"fetched": cr.iso(T0), "beat": dict({"at": cr.iso(at), "who": "claude"}, **extra)})
+
+    def test_claude_is_out_when_its_heartbeat_goes_quiet_and_back_when_it_returns(self):
+        # Ben, 14 Oct 2026: flag Claude out when it runs out of usage, switch back automatically when it's back.
+        self.beat(T0 - 30 * MIN)
+        self.assertFalse(cr.claude_out(T0)[0])
+        self.beat(T0 - 160 * MIN)
+        out, why = cr.claude_out(T0)
+        self.assertTrue(out)
+        self.assertIn("no Claude run for 160 min", why)
+        cr.mark_down("claude", "a Claude job was blocked on a usage limit", T0 + 60 * MIN, T0)
+        self.beat(T0 + 5 * MIN)   # the next run after the reset
+        self.assertFalse(cr.claude_out(T0 + 6 * MIN)[0])
+        self.assertFalse(cr.d("down", "claude.json").exists())   # the fresh beat cleared the mark
+
+    def test_claude_can_say_it_is_out_until_its_reset(self):
+        self.beat(T0, out=True, until=cr.iso(T0 + 3 * 60 * MIN), reason="5-hour limit")
+        self.assertTrue(cr.claude_out(T0 + 60 * MIN)[0])
+        self.assertFalse(cr.claude_out(T0 + 4 * 60 * MIN)[0])           # past the reset: given the usual window to beat
+        self.assertTrue(cr.claude_out(T0 + 6 * 60 * MIN)[0])            # and still silent 150 min after it: out
+
+    def test_no_heartbeat_yet_changes_nothing(self):
+        self.assertFalse(cr.claude_out(T0)[0])
+
+    def test_while_claude_is_out_the_next_one_down_is_chief_then_claude_takes_it_back(self):
+        import json
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "scripts" / "chief_override.json").write_text(json.dumps(
+            {"agent": "claude", "until": "2026-10-16T18:00:00Z", "reason": "Ben, 14 Oct"}))
+        self.beat(T0 - 200 * MIN)
+        self.assertEqual(self.chief(), "cursor")                 # Claude out: the Mini chain covers
+        rows = cr.acting(T0)[0]
+        self.assertTrue(any(a == "claude" and not up and "out of usage" in why for a, up, why in rows))
+        self.beat(T0 - 1 * MIN)
+        self.assertEqual(self.chief(), "claude")                 # back: Claude is Chief again
+
     def test_a_stuck_mini_repairs_itself_once_and_says_so(self):
         import json
         self.routed_queue('{"jobs": []}')
