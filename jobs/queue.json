@@ -1,5 +1,5 @@
 {
-  "next_id": 231,
+  "next_id": 236,
   "jobs": [
     {
       "id": "J0001",
@@ -8547,6 +8547,11 @@
           "at": "2026-10-13T10:36Z",
           "by": "codex",
           "what": "blocked: parked for Chief: detached recovery settled with P5:02 FAIL before Create; select/KEEP cover fallback, KEEP P4:08 t2, decide missing paid P4:06 t2; 10-credit balance change unverified. Evidence HOS PR #310; progress 3/6; no retry or spend this run."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "video",
@@ -8564,7 +8569,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex"
+      "for": "codex",
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0141",
@@ -9824,11 +9830,16 @@
           "at": "2026-10-14T09:29Z",
           "by": "codex",
           "what": "blocked: parked for Chief: overlay PASS; NASA SOURCES row 22 added for nominal 24 hours, unchanged v01h checksum verified; fresh picture_qa and polish_gate exit 0, evidence in rough_v01h_pack/j0154_gate_rerun_20261014"
+        },
+        {
+          "at": "2026-10-14T11:29Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "chart",
       "backlog": "owb-teach-overlays",
-      "escalated_at": "2026-10-12T15:48Z",
+      "escalated_at": "2026-10-14T11:29Z",
       "progress": {
         "step": 4,
         "of": 4,
@@ -11312,6 +11323,11 @@
           "at": "2026-10-13T11:18Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v04 complete 47:38; picture/SFX tool checks pass, music gap 28.3s from 0:25 remains FAIL; J0168 must rule on compilation music measurement, inherited-master/overlay review and subscribe default. Evidence COMPILATION_V04_HANDOFF_CODEX.md; step 7/8."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 23 h"
         }
       ],
       "kind": "assembly",
@@ -11321,7 +11337,8 @@
         "at": "2026-10-13T11:18Z",
         "by": "codex",
         "note": "v04 render verified; QA evidence recorded; music gap needs Chief"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0168",
@@ -12249,6 +12266,11 @@
           "at": "2026-10-13T10:47Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Bridge 4 mandatory SFX-presence gate still FAILs (no motivated hit); bed-level failures fixed on B3/B4/B5/closing, HOS PR #300. Inputs still missing: 006 plates/master J0140 and closing end-card graphic; resume at 4/6 after ruling and inputs."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "assembly",
@@ -12258,7 +12280,8 @@
         "at": "2026-10-13T10:46Z",
         "by": "codex",
         "note": "Music ducking fixed; B3/B5/closing sound gate clears, B4 no-hit failure parked for Chief"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0176",
@@ -12601,7 +12624,7 @@
     {
       "id": "J0181",
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.\n\nChief review 12 Oct: Chief PASS of the HOS fix list (PR #294); do step 4 now in Studio (CDP, Orbit rules apply per channel): fix literal \\n in sILtQxgYQk8, end screen on _C92tIJCk8A, long title+link on 1lszTrYRp-8, JyRjM-9Yc8g, Pp5LmjsduI4, mTY67qet7cM, x_3L_IdYgEc. Atom Sources block waits on a facts job. No deletes.",
       "ref": "",
@@ -12609,13 +12632,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-14T02:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T16:07Z",
-      "result": "parked for Chief: restore HOS Studio access on CDP 9222; signed-in channel is Benjamin Oats @beep61, channel switcher lists no HOS channel, target sILtQxgYQk8 edit shows Oops something went wrong. No YouTube changes made; audit remains 3/4.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T16:07Z",
@@ -12686,17 +12709,36 @@
           "at": "2026-10-14T09:09Z",
           "by": "codex",
           "what": "blocked: parked for Chief: restore HOS Studio access on CDP 9222; signed-in channel is Benjamin Oats @beep61, channel switcher lists no HOS channel, target sILtQxgYQk8 edit shows Oops something went wrong. No YouTube changes made; audit remains 3/4."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-14T15:37Z",
+          "by": "claude",
+          "what": "reopened: CDP browsers restored by Ben 14 Oct"
+        },
+        {
+          "at": "2026-10-14T15:40Z",
+          "by": "claude",
+          "what": "rerouted to cursor on cursor-auto: Ben 14 Oct: Cursor runs these (Auto)"
         }
       ],
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-10-14T09:08Z",
-        "by": "codex",
-        "note": "Resumed existing audit; Chief-authorized Studio fixes remain"
-      }
+      "escalated_at": "2026-10-14T11:15Z",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-auto",
+      "urgent": 4
     },
     {
       "id": "J0182",
@@ -12946,6 +12988,11 @@
           "at": "2026-10-14T09:39Z",
           "by": "codex",
           "what": "blocked: parked for Chief: price pass on HOS PR #317 (a1475cd), v02 conditional estimate 15 Quality / 82 Fast / 15 reuse; 5,525 Flow cr or £130.95 Vertex expected. Fast prompt eligibility and unused moving KEEP coverage need review; no mint or spend."
+        },
+        {
+          "at": "2026-10-14T11:43Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "assembly",
@@ -12956,7 +13003,8 @@
         "at": "2026-10-14T09:39Z",
         "by": "codex",
         "note": "Committed a1475cd; HOS draft PR #317 extends #296; board parked for Chief"
-      }
+      },
+      "escalated_at": "2026-10-14T11:43Z"
     },
     {
       "id": "J0185",
@@ -13177,13 +13225,13 @@
       "stage": "",
       "after": "J0205",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-13T17:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: recover frozen HOS Studio CDP 9460 or authorize an alternative calendar verification route. /json/list and WebSocket handshake respond, but Runtime.evaluate times out after 8s. Prior 2/4 retained. No YouTube changes this run; HOS 005 s04 remains not uploaded. Do not re-upload OWB 23KZK7OjsEE or lbW2iQ9YvqA. Shared pulls blocked by existing local work; clean sparse worktree /private/tmp/owb-codex-20261014-sparse used. Disk nearly full (138Mi available before sparse checkout).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13309,16 +13357,35 @@
           "at": "2026-10-14T02:41Z",
           "by": "codex",
           "what": "blocked: parked for Chief: recover frozen HOS Studio CDP 9460 or authorize an alternative calendar verification route. /json/list and WebSocket handshake respond, but Runtime.evaluate times out after 8s. Prior 2/4 retained. No YouTube changes this run; HOS 005 s04 remains not uploaded. Do not re-upload OWB 23KZK7OjsEE or lbW2iQ9YvqA. Shared pulls blocked by existing local work; clean sparse worktree /private/tmp/owb-codex-20261014-sparse used. Disk nearly full (138Mi available before sparse checkout)."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 8 h"
+        },
+        {
+          "at": "2026-10-14T15:37Z",
+          "by": "claude",
+          "what": "reopened: CDP browsers restored by Ben 14 Oct"
+        },
+        {
+          "at": "2026-10-14T15:40Z",
+          "by": "claude",
+          "what": "rerouted to cursor on cursor-auto: Ben 14 Oct: Cursor runs these (Auto)"
         }
       ],
       "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-14T02:40Z",
-        "by": "codex",
-        "note": "HOS CDP 9460 handshake succeeds; Runtime.evaluate times out after 8s; calendar unverified"
-      }
+      "escalated_at": "2026-10-14T11:15Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-auto",
+      "urgent": 2
     },
     {
       "id": "J0189",
@@ -14890,6 +14957,11 @@
           "at": "2026-10-14T09:44Z",
           "by": "codex",
           "what": "blocked: parked for Chief: restore reachable signed-in Studio CDP sessions; 127.0.0.1:9223 and :9222 time out even outside sandbox. No Studio metrics read or tracker values changed."
+        },
+        {
+          "at": "2026-10-14T11:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "studio",
@@ -14901,7 +14973,8 @@
         "at": "2026-10-14T09:43Z",
         "by": "codex",
         "note": "Read brief and checked Studio endpoints; both time out"
-      }
+      },
+      "escalated_at": "2026-10-14T11:44Z"
     },
     {
       "id": "J0211",
@@ -14956,6 +15029,11 @@
           "at": "2026-10-13T11:05Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review HOS ef1335b listing drafts; arrange pending Gemini facts review (external call rejected by automatic approval review) and confirm S4 v04 versus brief v03 KEEP before package approval. All four titles and eight local media hashes validated; no upload."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "listing",
@@ -14965,7 +15043,8 @@
         "at": "2026-10-13T11:05Z",
         "by": "codex",
         "note": "Drafts validated and committed as HOS ef1335b; handoff ready, Chief approval pending"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0212",
@@ -15305,6 +15384,11 @@
           "at": "2026-10-13T11:15Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review/merge records PR #174 (90b8cbbf); all 8 Shorts uploaded private/scheduled and covers saved. Voyager kKN8Ale42sE Buffer mirrors await free-plan capacity (10/10); retry only its IG/FB/Threads mirrors once slots open, never re-upload."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "studio",
@@ -15314,7 +15398,8 @@
         "at": "2026-10-13T11:15Z",
         "by": "codex",
         "note": "Covers saved, readback verified, registries and measurement log committed 90b8cbbf"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0217",
@@ -15452,6 +15537,11 @@
           "at": "2026-10-13T17:33Z",
           "by": "codex",
           "what": "blocked: parked for Chief: HOS PR #316 (8324bdf) S5-S8 listing/cover acceptance and merge; confirm S7 title scope and HOS 006 Related id; existing main generated-board check stale. Worker steps 3/3 complete; no upload or scheduling."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 17 h"
         }
       ],
       "kind": "listing",
@@ -15461,7 +15551,8 @@
         "at": "2026-10-13T17:33Z",
         "by": "codex",
         "note": "Validation recorded; HOS PR 316 commit 8324bdf ready for Chief"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0219",
@@ -16323,6 +16414,200 @@
         "at": "2026-10-13T06:35Z",
         "by": "cursor"
       }
+    },
+    {
+      "id": "J0231",
+      "title": "Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Free, read-only. Runs daily after the 06:40 snapshot and must finish before 09:00 London (Ben, 12 Oct 22:19). 1) In YouTube Studio, read only, change nothing: Orbit With Ben in the Orbit Studio browser (CDP 9223); History of Science in its own signed-in Studio session (never the 9222 Flow browser for Orbit pages). 2) For every long film (format long in 05_Analytics/dashboard/data.json, both channels), open Analytics > Reach for the video, period Lifetime, and read Impressions and Impressions click-through rate (%), and on Overview/Engagement the lifetime Views, Average view duration (seconds) and Average percentage viewed (%; if Studio shows only duration, compute duration / video length x 100). 2b) For every Short (both channels), read lifetime Views, Average percentage viewed (%) and 'Stayed to watch' (%, Studio's Shorts engagement figure, viewed vs swiped away); write them under the same videos map as \"views\", \"avgViewPct\" and \"stayedToWatch\" (Ben, 12 Oct 22:50). 3) Write 05_Analytics/<owb|hos>/studio_ctr.json: {\"readAt\": <ISO UTC>, \"period\": \"lifetime\", \"videos\": {\"<videoId>\": {\"impressions\": <int>, \"impressionsCtr\": <number, % e.g. 3.8>, \"views\": <int>, \"avgViewSeconds\": <int>, \"avgViewPct\": <number, %>}}}. A film Studio can't show yet: leave it out. 4) Rebuild: cd 07_Content-Ops && npx tsx scripts/analytics-report.ts (it merges studio_ctr.json into data.json; Studio values take priority on the tracker), then python3 scripts/board_publish.py so /tracker's 'Long films vs targets' panel fills in. 5) Commit only those files to main with a message naming the counts, then jobs.py done <id> --result \"<n> OWB + <m> HOS longs; CTR hits vs 4%: ...\" --git. Never: edit any video, title, thumbnail or setting; spend anything; paid API.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T11:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T11:16Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-14T14:17Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-14T14:17Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-14T14:18Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Preflight complete; both CDP endpoints refuse connections; no metrics read"
+        },
+        {
+          "at": "2026-10-14T14:18Z",
+          "by": "codex",
+          "what": "blocked: Studio access unavailable: localhost CDP 9223 and 9222 both return connection refused, verified outside sandbox. Needs signed-in Mini browser sessions restored; no metrics or YouTube state changed."
+        },
+        {
+          "at": "2026-10-14T15:37Z",
+          "by": "claude",
+          "what": "reopened: CDP browsers restored by Ben 14 Oct"
+        },
+        {
+          "at": "2026-10-14T15:40Z",
+          "by": "claude",
+          "what": "rerouted to cursor on cursor-auto: Ben 14 Oct: Cursor runs these (Auto)"
+        }
+      ],
+      "kind": "studio",
+      "backlog": "studio-ctr-daily",
+      "urgent": 3,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-auto"
+    },
+    {
+      "id": "J0232",
+      "title": "Backlog OWB: next Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Pick the locked or live OWB long with the fewest Shorts built (STATUS.md, 10_Shorts/). Lift one self-contained 22-27 s stretch of its own VO and picture, reframe 9:16 the house way, house SFX kit only. Every Short rule applies (frame-0 named thing, hook caption, exact long title at 9-14 s, captions, loop, custom cover). Teach on screen: a number object or timeline call-out in frame. gate_shorts_open.py check must PASS. Spend nothing. Post the cut, contact sheet and gate output on #99, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T11:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T11:16Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "owb-short-from-locked"
+    },
+    {
+      "id": "J0233",
+      "title": "Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Test B rule (HOS PR #261): two search-titled Shorts per film. Pick the locked HOS long (004, 005, then the next locked) with the fewest built Shorts. Lift one stretch of its own VO and picture, 9:16, person card or date call-out on screen, captions throughout, search-shaped title draft. Spend nothing. Post on desk #180, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T11:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T11:16Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "hos-short-from-locked"
+    },
+    {
+      "id": "J0234",
+      "title": "Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "From 00_Brand/Channel-Setup/audits/ and the *_test_compare.json files, pick a live long with no test running or on record. Build B from existing plates only (no image-model spend, never inpaint), Packaging section 2.B. thumb_preview.py long <A> <B> --out <sheet> --score must PASS. Post the sheet on #99, block 'parked for Chief: thumb B review'. Never touch an armed test.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T15:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T15:11Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "chart",
+      "backlog": "owb-thumb-b"
+    },
+    {
+      "id": "J0235",
+      "title": "HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND')",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ben OK 14 Oct (HOS #180 6165997020): house thumbnail rules waived for this one. Post the chosen mockup + 168px preview on #180 first, record the current test's numbers, then new 2-variant thumbnail-only test on frP_YrNShsU, same title. Read-back Sun 18 Oct. No other changes, no spend.",
+      "ref": "6165997020",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-14T15:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T15:37Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-14T15:40Z",
+          "by": "claude",
+          "what": "rerouted to cursor on cursor-auto: Ben 14 Oct: Cursor runs these (Auto)"
+        }
+      ],
+      "kind": "studio",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-auto",
+      "urgent": 1
     }
   ],
   "focus": [
@@ -16332,9 +16617,9 @@
     "027"
   ],
   "backlog_last": {
-    "owb-short-from-locked": "2026-10-12T16:48Z",
-    "hos-short-from-locked": "2026-10-12T12:56Z",
-    "owb-thumb-b": "2026-10-12T12:56Z",
+    "owb-short-from-locked": "2026-10-14T11:16Z",
+    "hos-short-from-locked": "2026-10-14T11:16Z",
+    "owb-thumb-b": "2026-10-14T15:11Z",
     "hos-thumb-b": "2026-10-12T13:26Z",
     "owb-teach-overlays": "2026-10-12T13:26Z",
     "owb-live-listing-fixes": "2026-10-12T13:26Z",
@@ -16347,6 +16632,6 @@
     "hos-next-script": "2026-10-12T16:18Z",
     "hos-plate-prep": "2026-10-12T16:23Z",
     "both-qa-sweep": "2026-10-12T16:28Z",
-    "studio-ctr-daily": "2026-10-12T21:21Z"
+    "studio-ctr-daily": "2026-10-14T11:16Z"
   }
 }
