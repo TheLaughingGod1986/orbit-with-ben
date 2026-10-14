@@ -14931,6 +14931,11 @@
           "at": "2026-10-14T09:44Z",
           "by": "codex",
           "what": "blocked: parked for Chief: restore reachable signed-in Studio CDP sessions; 127.0.0.1:9223 and :9222 time out even outside sandbox. No Studio metrics read or tracker values changed."
+        },
+        {
+          "at": "2026-10-14T11:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "studio",
@@ -14942,7 +14947,8 @@
         "at": "2026-10-14T09:43Z",
         "by": "codex",
         "note": "Read brief and checked Studio endpoints; both time out"
-      }
+      },
+      "escalated_at": "2026-10-14T11:44Z"
     },
     {
       "id": "J0211",
