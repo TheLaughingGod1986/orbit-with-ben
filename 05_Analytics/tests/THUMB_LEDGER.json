@@ -1,0 +1,60 @@
+{
+  "_about": "Thumbnail Test & Compare ledger (Ben, 14 Oct 2026). One row per test: who made A and B, and at read-back YouTube's watch-time share per variant. `python3 scripts/thumb_ledger.py verdict` says when a maker (e.g. codex) has earned the house default. Makers: house (the old house-style builder), codex, cursor, ben.",
+  "tests": [
+    {
+      "id": "T001",
+      "status": "running",
+      "started": "2026-10-14",
+      "channel": "hos",
+      "video": "frP_YrNShsU",
+      "title": "How Did We Discover X-rays?",
+      "job": "J0235",
+      "a": {
+        "maker": "house",
+        "file": "live thumbnail"
+      },
+      "b": {
+        "maker": "codex",
+        "file": "_desk/003/20261014-2038_thumbnail/hos_003_mockup2_inside_her_hand.jpg"
+      },
+      "result": null,
+      "readBack": "2026-10-18"
+    },
+    {
+      "id": "T002",
+      "status": "queued",
+      "started": "",
+      "channel": "owb",
+      "video": "3xrxdmaOwJI",
+      "title": "What Happens If You Fall Into a Black Hole?",
+      "job": "J0243",
+      "a": {
+        "maker": "house",
+        "file": "live thumbnail"
+      },
+      "b": {
+        "maker": "codex",
+        "file": "00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/blackhole_B_no_way_out.jpg"
+      },
+      "result": null
+    },
+    {
+      "id": "T003",
+      "status": "queued",
+      "started": "",
+      "channel": "owb",
+      "video": "-jmMROGoZCM",
+      "title": "Why You Can't Stand On Jupiter",
+      "job": "J0243",
+      "a": {
+        "maker": "house",
+        "file": "live thumbnail"
+      },
+      "b": {
+        "maker": "codex",
+        "file": "00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/jupiter_B_no_solid_ground.jpg"
+      },
+      "result": null
+    }
+  ]
+}
