@@ -15836,21 +15836,27 @@
       "stage": "",
       "after": "J0198",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-13T02:41Z",
-      "result": "",
+      "result": "Quote check done (HOS #311 0b41ca1, CLAUDE_QUOTE_CHECK_v01.md, HOS #180 6172862675). Rows 14/28 quotes replaced with the real primary text; row 33 FLAG hedged. Script v02 locked: 4 VO lines fixed (Wells pain, Liston hedge, Simpson 'out cold', safety maths). review:script PASS 91.1.",
       "history": [
         {
           "at": "2026-10-13T02:41Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-14T16:14Z",
+          "by": "claude",
+          "what": "done: Quote check done (HOS #311 0b41ca1, CLAUDE_QUOTE_CHECK_v01.md, HOS #180 6172862675). Rows 14/28 quotes replaced with the real primary text; row 33 FLAG hedged. Script v02 locked: 4 VO lines fixed (Wells pain, Liston hedge, Simpson 'out cold', safety maths). review:script PASS 91.1."
         }
       ],
-      "kind": "review"
+      "kind": "review",
+      "done_ref": "6172862675"
     },
     {
       "id": "J0225",
