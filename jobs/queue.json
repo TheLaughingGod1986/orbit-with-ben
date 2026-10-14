@@ -12624,7 +12624,7 @@
     {
       "id": "J0181",
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.\n\nChief review 12 Oct: Chief PASS of the HOS fix list (PR #294); do step 4 now in Studio (CDP, Orbit rules apply per channel): fix literal \\n in sILtQxgYQk8, end screen on _C92tIJCk8A, long title+link on 1lszTrYRp-8, JyRjM-9Yc8g, Pp5LmjsduI4, mTY67qet7cM, x_3L_IdYgEc. Atom Sources block waits on a facts job. No deletes.",
       "ref": "",
@@ -12719,11 +12719,25 @@
           "at": "2026-10-14T15:37Z",
           "by": "claude",
           "what": "reopened: CDP browsers restored by Ben 14 Oct"
+        },
+        {
+          "at": "2026-10-14T15:40Z",
+          "by": "claude",
+          "what": "rerouted to cursor on cursor-auto: Ben 14 Oct: Cursor runs these (Auto)"
         }
       ],
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
-      "escalated_at": "2026-10-14T11:15Z"
+      "escalated_at": "2026-10-14T11:15Z",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-auto"
     },
     {
       "id": "J0182",
