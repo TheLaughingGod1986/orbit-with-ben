@@ -13239,13 +13239,13 @@
       "stage": "",
       "after": "J0205",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-14T17:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: HOS 005 s04 approved 22 Oct 11:30 London precedes related long wwcjcFfC-5M scheduled 29 Oct 18:00 London (confirmed Studio and channel:audit 14 Oct). HOS Never forbids Short before long. Choose a slot after long or explicitly name an exception; no upload or state changes this run. Prior OWB uploads 23KZK7OjsEE and lbW2iQ9YvqA remain complete; progress 2/4. Browser 9460 now works; lint and Short gate PASS; dry run ok. Channel audit has 5 existing language errors on private duplicate drafts.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13416,6 +13416,11 @@
           "at": "2026-10-14T17:28Z",
           "by": "codex",
           "what": "blocked: parked for Chief: HOS 005 s04 approved 22 Oct 11:30 London precedes related long wwcjcFfC-5M scheduled 29 Oct 18:00 London (confirmed Studio and channel:audit 14 Oct). HOS Never forbids Short before long. Choose a slot after long or explicitly name an exception; no upload or state changes this run. Prior OWB uploads 23KZK7OjsEE and lbW2iQ9YvqA remain complete; progress 2/4. Browser 9460 now works; lint and Short gate PASS; dry run ok. Channel audit has 5 existing language errors on private duplicate drafts."
+        },
+        {
+          "at": "2026-10-14T20:05Z",
+          "by": "claude",
+          "what": "reopened: Claude ruling HOS #180: no Short-before-long exception; s04 slot = first day on/after Fri 30 Oct with no other HOS Short in live Studio calendar, 11:30 London (=11:30Z after 25 Oct)"
         }
       ],
       "kind": "studio",
@@ -13429,14 +13434,7 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "urgent": 2,
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-14T17:28Z",
-        "by": "codex",
-        "note": "HOS browser recovered; preflight checks pass; approved 22 Oct slot precedes related long on 29 Oct"
-      }
+      "urgent": 2
     },
     {
       "id": "J0189",
