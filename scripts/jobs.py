@@ -359,6 +359,24 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
     log(job, at, agent, f"rerouted to {to}" + (f" on {model}" if model else "") + (": " + note if note else ""))
 
 
+def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
+    """Undo a reroute once the original agent is back (Ben, 14 Oct 2026: "when you're back online, it switches back
+    to you"): only a job no stand-in has started (still open) goes back to what it was before."""
+    rf = job.get("rerouted_from")
+    if not rf:
+        raise ValueError(f"{job['id']} was never rerouted")
+    if job["status"] != "open":
+        raise ValueError(f"{job['id']} is {job['status']}; a stand-in has it, so it stays")
+    job.update(needs=rf.get("needs") or job["needs"], status="open", by="", since="", eta="")
+    for k in ("for", "model"):
+        if rf.get(k):
+            job[k] = rf[k]
+        else:
+            job.pop(k, None)
+    job.pop("rerouted_from", None)
+    log(job, at, agent, "handed back" + (": " + note if note else ""))
+
+
 def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     if job["status"] == "done":
         raise ValueError(f"{job['id']} is already done")
@@ -533,7 +551,7 @@ def main(argv=None) -> int:
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
     n.add_argument("--eta", type=int, default=None)
     n.add_argument("--peek", action="store_true", help="show what you would get, claim nothing")
-    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute"):
+    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute", "handback"):
         p = sub.add_parser(name)
         p.add_argument("id")
         p.add_argument("--agent", default="")
@@ -638,6 +656,8 @@ def main(argv=None) -> int:
                 do_schedule(job, args.agent or "claude", args.not_before, at, args.reset)
             elif args.cmd == "cancel":
                 do_cancel(job, args.agent or "claude", args.note, at)
+            elif args.cmd == "handback":
+                do_handback(job, args.agent or "relay", args.note, at)
             elif args.cmd == "reroute":
                 held = job.get("by") if job["status"] == "claimed" else ""
                 do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)

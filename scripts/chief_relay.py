@@ -332,6 +332,12 @@ def acting(at: dt.datetime):
     rows = [(a,) + state_of(a, at) for a in chain()]
     first = next((a for a, up, _ in rows if up), None)
     o = override(at)
+    if o and o.get("agent") == "claude" and first != "chief":
+        out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
+        if out:
+            # Ben, 14 Oct 2026: while Claude is out of usage the next one down runs as Chief, and Claude takes it back
+            # by itself when its heartbeat returns.
+            return rows + [("claude", False, f"named Chief by Ben, but out of usage ({why})")], first
     if o and first != "chief":
         return rows + [(o["agent"], True, f"named Chief by Ben until {o['until']}")], o["agent"]
     return rows, first
@@ -612,8 +618,65 @@ def claude_blocked_on_limit(job: dict) -> bool:
     return by == "claude" and bool(CLAUDE_LIMIT_RE.search(job.get("result") or (blocks[-1].get("what") if blocks else "")))
 
 
+CLAUDE_BEAT_BRANCH = "claude-heartbeat"
+
+
+def fetch_claude_beat(at: dt.datetime):
+    """Claude's heartbeat (Ben, 14 Oct 2026: "if ever an agent like yourself is down, out of usage for a few hours ...
+    switch to the next model down, and when it's back, switch back automatically"). Every Claude run (the hourly studio
+    run, any working session) pushes heartbeat.json to the claude-heartbeat branch with scripts/claude_beat.py. A Claude
+    that is out of usage can't say so, so its silence is the signal. Fetched at most every CHIEF_CLAUDE_BEAT_FETCH_MIN
+    (5) minutes; the last good read is cached in state."""
+    st = read_json(d("claude_beat.json")) or {}
+    every = int(os.environ.get("CHIEF_CLAUDE_BEAT_FETCH_MIN", "5"))
+    if st.get("fetched") and at - parse(st["fetched"]) < dt.timedelta(minutes=every):
+        return st.get("beat")
+    beat = st.get("beat")
+    try:
+        subprocess.run(["git", "-C", str(OWB), "fetch", "-q", "origin",
+                        f"+refs/heads/{CLAUDE_BEAT_BRANCH}:refs/remotes/origin/{CLAUDE_BEAT_BRANCH}"],
+                       capture_output=True, timeout=60)
+        r = subprocess.run(["git", "-C", str(OWB), "show", f"origin/{CLAUDE_BEAT_BRANCH}:heartbeat.json"],
+                           capture_output=True, text=True, timeout=30)
+        if r.returncode == 0:
+            beat = json.loads(r.stdout)
+    except (OSError, subprocess.SubprocessError, ValueError):
+        pass
+    write_json(d("claude_beat.json"), {"fetched": iso(at), "beat": beat})
+    return beat
+
+
+def claude_beat_state(at: dt.datetime):
+    """(out, why) from Claude's heartbeat alone, or None when there is no heartbeat yet (then the other signs decide).
+    Out when the last beat is older than CHIEF_CLAUDE_STALE_MIN (150: two missed hourly runs) or Claude said it's out.
+    A fresh beat after a down mark clears the mark: Claude is back, and its work comes back to it."""
+    beat = (read_json(d("claude_beat.json")) or {}).get("beat")
+    if not beat or not beat.get("at"):
+        return None
+    try:
+        bat = parse(beat["at"])
+    except (ValueError, TypeError):
+        return None
+    if beat.get("out"):
+        until = parse(beat["until"]) if beat.get("until") else bat + dt.timedelta(hours=5)
+        if at < until:
+            return True, f"Claude said it's out of usage until {iso(until)}" + (f": {beat['reason']}" if beat.get("reason") else "")
+        bat = until   # past its reset: the stale clock starts there, so a Claude that doesn't come back still counts out
+    mark = read_json(d("down", "claude.json"))
+    if mark and not beat.get("out") and parse(mark["since"]) < bat:
+        mark_up("claude")
+        log(f"claude: heartbeat {beat['at']} is newer than its down mark: Claude is back")
+    age = int((at - bat).total_seconds() // 60)
+    if age > int(os.environ.get("CHIEF_CLAUDE_STALE_MIN", "150")):
+        return True, f"no Claude run for {age} min (heartbeat {beat['at']})"
+    return None
+
+
 def claude_out(at: dt.datetime, data=None) -> tuple:
     """(out, why): is Claude (Claude Code / its cloud sessions) out of usage right now?"""
+    hb = claude_beat_state(at)
+    if hb:
+        return hb
     mark = read_json(d("down", "claude.json"))
     if mark:
         until = parse(mark["until"]) if mark.get("until") else None
@@ -675,6 +738,31 @@ def reroute(job: dict, to: str, model: str, note: str) -> bool:
     return True
 
 
+def hand_back_claude(data: dict) -> list:
+    """Claude is back (Ben, 14 Oct 2026: "when you're back online, it switches back to you"): every Claude job that was
+    walked down the chain while Claude was out and that no stand-in has started yet (still open) goes back to Claude."""
+    back = []
+    for j in data.get("jobs", []):
+        rf = j.get("rerouted_from") or {}
+        if j.get("status") != "open" or rf.get("needs") != "cloud" or rf.get("for", "") not in ("", "claude"):
+            continue
+        argv = [sys.executable, str(OWB / "scripts" / "jobs.py"), "handback", j["id"], "--agent", "relay",
+                "--note", "Claude is back online", "--git"]
+        try:
+            r = subprocess.run(argv, cwd=str(OWB), capture_output=True, text=True, timeout=180)
+        except (OSError, subprocess.SubprocessError) as e:
+            log(f"handback {j['id']} failed: {e}")
+            continue
+        if r.returncode == 0:
+            back.append(j["id"])
+        else:
+            log(f"handback {j['id']} failed (exit {r.returncode}): {(r.stdout + r.stderr).strip()[-300:]}")
+    if back:
+        log(f"claude: handed back {', '.join(back)}")
+        notify(f"Chief relay: **Claude is back**: handed back {', '.join(back)} (not started by a stand-in).")
+    return back
+
+
 def lane_model(lane) -> str:
     """The model to pin on a rerouted job: the lane's model when that worker runs it by name, else none."""
     return lane[1] if routing.RUNS_ON.get(lane[1]) == lane[0] else ""
@@ -691,6 +779,8 @@ def reroute_work(at: dt.datetime) -> list:
     if any(claude_blocked_on_limit(j) for j in data.get("jobs", [])) and not read_json(d("down", "claude.json")):
         retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
         mark_down("claude", "a Claude job was blocked on a usage limit", at + dt.timedelta(hours=retry_h), at)
+    if not out:
+        hand_back_claude(data)
     moves = [(j, routing.next_lane(j, "claude", up), f"Claude out of usage ({why})")
              for j in claude_jobs_to_reroute(data, at, out)]
     moves += [(j, routing.next_lane(j, j["for"], up, j.get("model") or ""), f"{NAMES.get(j['for'], j['for'])} is down too")
@@ -834,6 +924,7 @@ def self_heal(at: dt.datetime) -> bool:
 
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
+    fetch_claude_beat(at)
     flags = load_out(at)
     if flags:
         log("out of credit: " + "; ".join(f"{k} ({v})" for k, v in sorted(flags.items())))
