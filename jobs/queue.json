@@ -17062,13 +17062,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-14T22:58Z",
-      "eta": "2026-10-15T00:28Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-14T15:49Z",
-      "result": "",
+      "result": "v05e master rebuilt to OWB UAT/023_Venus_full_rough_v05e.mp4 (sha256 5d8a8f73, 513.0 s, -14.2 LUFS; phone match: dur diff 0.0s, max dHash dist 1 bit across 10 frames, LUFS diff 0.1 LU); gate:episode PASS 94/100, picture_qa PASS 0 fail, music_gate PASS; uploaded Private as VBaYRPp85Sw (publishAt 2026-10-25T18:00:00Z, thumbnail A set, synthetic disclosure on, not made for kids, registered in UPLOADS.json; Buffer plan saved at buffer-plans/VBaYRPp85Sw.json, queued behind 10-post cap for daily 07:05 check)",
       "history": [
         {
           "at": "2026-10-14T15:49Z",
@@ -17139,6 +17139,11 @@
           "at": "2026-10-14T23:21Z",
           "by": "gemini",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-14T23:21Z",
+          "by": "gemini",
+          "what": "done: v05e master rebuilt to OWB UAT/023_Venus_full_rough_v05e.mp4 (sha256 5d8a8f73, 513.0 s, -14.2 LUFS; phone match: dur diff 0.0s, max dHash dist 1 bit across 10 frames, LUFS diff 0.1 LU); gate:episode PASS 94/100, picture_qa PASS 0 fail, music_gate PASS; uploaded Private as VBaYRPp85Sw (publishAt 2026-10-25T18:00:00Z, thumbnail A set, synthetic disclosure on, not made for kids, registered in UPLOADS.json; Buffer plan saved at buffer-plans/VBaYRPp85Sw.json, queued behind 10-post cap for daily 07:05 check)"
         }
       ],
       "kind": "studio",
@@ -17148,7 +17153,8 @@
         "of": 4,
         "at": "2026-10-14T23:21Z",
         "by": "gemini"
-      }
+      },
+      "done_ref": "ed970a66"
     },
     {
       "id": "J0237",

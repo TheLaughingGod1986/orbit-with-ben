@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0236, J0238, J0167, J0243, J0244.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0238, J0167, J0243, J0244.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -28,7 +28,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | thumb · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
-| J0236 | mini | claimed | gemini | 2026-10-15T00:28Z | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
 | J0238 | mini | open | – | – | studio · Mini: install the CDP browser watchdog (HOS #318) so Studio jobs self-heal; post status |  |
 | J0239 | mini | open | – | – | qa · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | open | – | – | review · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
@@ -45,9 +44,9 @@ Recently finished:
 - J0247 done: Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0242 cancelled: HOS 005 s04 5n7xFQRBUvI: set Related video = wwcjcFfC-5M (after the long is public, before 31 Oct 11:30 London) ()
 - J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
+- J0236 done: 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) (v05e master rebuilt to OWB UAT/023_Venus_full_rough_v05e.mp4 (sha256 5d8a8f73, 513.0 s, -14.2 LUFS; phone match: dur diff 0.0s, max dHash dist 1 bit across 10 frames, LUFS diff 0.1 LU); gate:episode PASS 94/100, picture_qa PASS 0 fail, music_gate PASS; uploaded Private as VBaYRPp85Sw (publishAt 2026-10-25T18:00:00Z, thumbnail A set, synthetic disclosure on, not made for kids, registered in UPLOADS.json; Buffer plan saved at buffer-plans/VBaYRPp85Sw.json, queued behind 10-post cap for daily 07:05 check))
 - J0235 done: HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') (HOS 003 thumbnail-only A/B test saved and reload-verified running on frP_YrNShsU; A existing live, B supplied larger-hand INSIDE HER HAND; unchanged title. Preview HOS #180 6177937450; evidence commit 19a9c43. Read-only follow-up Sun 18 Oct. No spend or blockers.)
 - J0231 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (10 OWB + 3 HOS longs; 57 OWB + 12 HOS Shorts. CTR hits vs 4%: OWB 0/10, HOS 1/3 (_C92tIJCk8A 6.7%). Studio lacks avgViewPct for TE_HDKAnqms; omitted. Tracker merge verified and published; commit 71c19296. Read-only, no spend.)
 - J0230 done: HOS 005 Short s04 'Is the Heart a Pump?' cover (covers_v02 style), set in its package manifest (prereq for J0188) (done)
 - J0229 done: Mini disk full (121 MB free): move old render scratch to the NAS (done)
 - J0228 done: HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z (Acting Chief PASS (Claude): Sources line in #99 6166069752 passes as written; apply queued as J0237 (Mini, urgent) before 15 Oct 17:00Z.)
-- J0227 done: 030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196) (Quote check done (CLAUDE_QUOTE_CHECK_v01.md). Script v02 locked: lines 18 (at its peak), 58 (cut 'billions'; 'in advance') and 87 (more than sixteen hundred) fixed; row 8 and 13 quotes corrected. review:script PASS 94.5. Acting Chief PASS for VO from v02.)
