@@ -35,10 +35,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0239 | mini | open | – | – | qa · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | open | – | – | review · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
-| J0242 | mini | open | – | – | studio · HOS 005 s04 5n7xFQRBUvI: set Related video = wwcjcFfC-5M (after the long is public, before 31 Oct 11:30 London) | 6178266521 |
 
 Recently finished:
 
+- J0242 cancelled: HOS 005 s04 5n7xFQRBUvI: set Related video = wwcjcFfC-5M (after the long is public, before 31 Oct 11:30 London) ()
 - J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
 - J0235 done: HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') (HOS 003 thumbnail-only A/B test saved and reload-verified running on frP_YrNShsU; A existing live, B supplied larger-hand INSIDE HER HAND; unchanged title. Preview HOS #180 6177937450; evidence commit 19a9c43. Read-only follow-up Sun 18 Oct. No spend or blockers.)
 - J0230 done: HOS 005 Short s04 'Is the Heart a Pump?' cover (covers_v02 style), set in its package manifest (prereq for J0188) (done)
@@ -48,4 +48,3 @@ Recently finished:
 - J0225 done: 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) (PASS visual. Labels 36,000 KM / 32,000 KM; ProRes 4444 alpha 1080x1920 3.6s; ticks 0.5/1.1s; band + tech check OK. #171 squash-merged 74a3f02d. Media on Mini code_graphics_v01/. Unblocks J0226.)
 - J0224 done: HOS 011 Anesthesia: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0198 Gemini PASS) (Quote check done (HOS #311 0b41ca1, CLAUDE_QUOTE_CHECK_v01.md, HOS #180 6172862675). Rows 14/28 quotes replaced with the real primary text; row 33 FLAG hedged. Script v02 locked: 4 VO lines fixed (Wells pain, Liston hedge, Simpson 'out cold', safety maths). review:script PASS 91.1.)
 - J0223 done: 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) (Picture inputs done (d18cdf1a): Veo Fast rock tumble 9:16 8 s (£0.60 est.), Omni Orbit geo-satellite beat 9:16 (rock sweeps past, Orbit looks up/ducks/peers; on model in 6-frame sheet; Omni unpriced, billed late), flash-image satellite plate (£0.03), NASA limb plates iss023e057948/iss023e058455/iss034e048455 (plates_v01.json). Split: DATA bar -> J0225 (chart, Codex); assembly + gate -> next job (after J0225).)
-- J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
