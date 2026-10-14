@@ -37,11 +37,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0244 | mini | open | – | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0246 | mini | open | – | – | for codex · review · Packaging panel (codex): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
-| J0248 | mini | claimed | gemini | 2026-10-14T23:25Z | for gemini · review · `gemini-agy` · Packaging panel (cursor): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
 | J0249 | cloud | open (after J0248) | – | – | review · Packaging panel decision: 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
 
 Recently finished:
 
+- J0248 done: Packaging panel (cursor): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0247 done: Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0242 cancelled: HOS 005 s04 5n7xFQRBUvI: set Related video = wwcjcFfC-5M (after the long is public, before 31 Oct 11:30 London) ()
 - J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
@@ -51,4 +51,3 @@ Recently finished:
 - J0229 done: Mini disk full (121 MB free): move old render scratch to the NAS (done)
 - J0228 done: HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z (Acting Chief PASS (Claude): Sources line in #99 6166069752 passes as written; apply queued as J0237 (Mini, urgent) before 15 Oct 17:00Z.)
 - J0227 done: 030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196) (Quote check done (CLAUDE_QUOTE_CHECK_v01.md). Script v02 locked: lines 18 (at its peak), 58 (cut 'billions'; 'in advance') and 87 (more than sixteen hundred) fixed; row 8 and 13 quotes corrected. review:script PASS 94.5. Acting Chief PASS for VO from v02.)
-- J0225 done: 030 Apophis Short: DATA scale bar overlay 32,000 vs 36,000 KM (split from J0223) (PASS visual. Labels 36,000 KM / 32,000 KM; ProRes 4444 alpha 1080x1920 3.6s; ticks 0.5/1.1s; band + tech check OK. #171 squash-merged 74a3f02d. Media on Mini code_graphics_v01/. Unblocks J0226.)
