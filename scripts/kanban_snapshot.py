@@ -133,14 +133,10 @@ def typical_minutes(alljobs: list[dict], default: int = 30) -> dict:
     return out
 
 
-def day_numbers(alljobs: list[dict], now=None) -> dict:
-    """Jobs done since London midnight, and minutes since then that no Mac mini job was claimed (the Mini idle)."""
-    from datetime import datetime, timezone
-    from zoneinfo import ZoneInfo
-    now = now or datetime.now(timezone.utc)
-    start = now.astimezone(ZoneInfo("Europe/London")).replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
+def _mini_numbers(alljobs: list[dict], start, end) -> tuple[int, int]:
+    """Jobs done in [start, end), and minutes of that window in which no Mac mini job was claimed (the Mini idle)."""
     done = sum(1 for j in alljobs for h in j.get("history") or []
-               if str(h.get("what", "")).startswith("done") and (_t(h.get("at", "")) or start) >= start and _t(h.get("at", "")))
+               if str(h.get("what", "")).startswith("done") and _t(h.get("at", "")) and start <= _t(h.get("at", "")) < end)
     spans = []
     for j in alljobs:
         if j.get("needs") != "mini":
@@ -153,9 +149,9 @@ def day_numbers(alljobs: list[dict], now=None) -> dict:
             elif a and at and what.split(":")[0] in ("released", "done", "blocked", "block", "reopened"):
                 spans.append((a, at)); a = None
         if a and j.get("status") == "claimed":
-            spans.append((a, now))
+            spans.append((a, end))
     busy, cur = 0.0, None
-    for a, b in sorted((max(a, start), min(b, now)) for a, b in spans if b > start and a < now):
+    for a, b in sorted((max(a, start), min(b, end)) for a, b in spans if b > start and a < end):
         if cur and a <= cur[1]:
             cur = (cur[0], max(cur[1], b))
         else:
@@ -164,8 +160,38 @@ def day_numbers(alljobs: list[dict], now=None) -> dict:
             cur = (a, b)
     if cur:
         busy += (cur[1] - cur[0]).total_seconds()
-    idle = max(0, round(((now - start).total_seconds() - busy) / 60))
+    return done, max(0, round(((end - start).total_seconds() - busy) / 60))
+
+
+def _london_midnight(t):
+    from datetime import timezone
+    from zoneinfo import ZoneInfo
+    return t.astimezone(ZoneInfo("Europe/London")).replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
+
+
+def day_numbers(alljobs: list[dict], now=None) -> dict:
+    """Jobs done since London midnight, and minutes since then that no Mac mini job was claimed (the Mini idle)."""
+    from datetime import datetime, timezone
+    now = now or datetime.now(timezone.utc)
+    start = _london_midnight(now)
+    done, idle = _mini_numbers(alljobs, start, now)
     return {"since": start.strftime("%Y-%m-%dT%H:%MZ"), "doneToday": done, "idleMin": idle}
+
+
+def week_numbers(alljobs: list[dict], now=None, days: int = 7) -> list[dict]:
+    """The same two numbers for each of the last `days` London days, oldest first, today (so far) last. The board's
+    tiles draw them as small bars (Ben, 14 Oct: "make it more dynamic"), so a quiet day stands out next to a busy one."""
+    from datetime import datetime, timedelta, timezone
+    from zoneinfo import ZoneInfo
+    now = now or datetime.now(timezone.utc)
+    out, start = [], _london_midnight(now)
+    for _ in range(days):
+        end = min(now, _london_midnight(start + timedelta(hours=36)))  # next London midnight (DST-safe)
+        done, idle = _mini_numbers(alljobs, start, end)
+        out.append({"date": start.astimezone(ZoneInfo("Europe/London")).strftime("%Y-%m-%d"), "done": done, "idleMin": idle,
+                    "min": round((end - start).total_seconds() / 60)})
+        start = _london_midnight(start - timedelta(hours=12))
+    return out[::-1]
 
 
 def est_minutes(j: dict) -> int:
@@ -800,7 +826,7 @@ def main(argv: list[str] | None = None) -> int:
                          for j in alljobs if j.get("status") == "done"), key=lambda r: r["at"], reverse=True)[:5]
         doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"], "recent": recent,
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
-               "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs),
+               "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs), "week": week_numbers(alljobs),
                "done": sorted(({"id": j["id"], "title": j.get("title", ""), "film": j.get("film", ""), "by": j.get("by", ""),
                                 "model": j.get("model", ""), "ref": j.get("ref", ""), "result": j.get("result", ""), "at": _done_at(j)}
                                for j in alljobs if j.get("status") == "done" and _done_at(j)), key=lambda r: r["at"], reverse=True)[:60]}

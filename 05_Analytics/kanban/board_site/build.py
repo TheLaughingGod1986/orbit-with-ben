@@ -3,9 +3,10 @@
 
   python3 05_Analytics/kanban/board_site/build.py [--out DIR]    # default: 05_Analytics/kanban/board_site/dist
 
-Takes ../studio_kanban.html unchanged (the Claude artifact keeps working from it), inlines shim.js before the page's
-script, and makes a few small text patches: ticks only show with a saving link, the header shows the real time of the
-last data change, and the footer says where the data comes from. Output: dist/index.html.
+Takes ../studio_kanban.html unchanged, inlines shim.js before the page's script and live.js after it (Ben, 14 Oct:
+"make it more dynamic": a next-check countdown with Refresh, pull-to-refresh, and a note plus a flash when jobs move),
+and makes a few small text patches: ticks only show with a saving link, the header shows the real time of the last data
+change, and the footer says where the data comes from. Output: dist/index.html.
 
 Also builds the Channel Tracker as a phone web app (Ben, 10 Oct): dist/tracker.html, served at /tracker (vercel.json
 rewrite), from ../../dashboard/template.html (the same template 07_Content-Ops/scripts/analytics-report.ts fills in for
@@ -113,6 +114,10 @@ def build(out: pathlib.Path) -> None:
     if html.count(marker) != 1:
         sys.exit("build: expected one bare <script> line in studio_kanban.html")
     html = html.replace(marker, "\n<script>\n" + (HERE / "shim.js").read_text() + "</script>" + marker, 1)
+    end = "</script>\n\n</body></html>"
+    if html.count(end) != 1:
+        sys.exit("build: expected the page to end with its script, then </body></html>")
+    html = html.replace(end, "</script>\n<script>\n" + (HERE / "live.js").read_text() + "</script>\n\n</body></html>")
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)

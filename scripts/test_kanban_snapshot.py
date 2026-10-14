@@ -181,3 +181,26 @@ class RoutedSteps(unittest.TestCase):
         self.assertNotIn("owner", st["facts"])
         self.assertEqual(st["thumbnails"]["owner"], "Codex")
         self.assertEqual(st["edit"]["owner"], "Cursor")
+
+
+class WeekNumbers(unittest.TestCase):
+    """Ben, 14 Oct: the board's tiles show seven days of jobs done and Mini idle, today last."""
+
+    def test_seven_london_days_today_last(self):
+        from datetime import datetime, timezone
+        now = datetime(2026, 10, 14, 10, 0, tzinfo=timezone.utc)   # 11:00 London (BST)
+        jobs = [{"id": "J1", "needs": "mini", "status": "done", "history": [
+                    {"what": "claimed", "at": "2026-10-13T09:00Z"}, {"what": "done: ok", "at": "2026-10-13T11:00Z"}]},
+                {"id": "J2", "needs": "mini", "status": "claimed", "history": [{"what": "claimed", "at": "2026-10-14T09:00Z"}]},
+                {"id": "J3", "needs": "cloud", "status": "done", "history": [{"what": "done", "at": "2026-10-13T22:30Z"}]}]  # 23:30 London, 13th
+        w = ks.week_numbers(jobs, now)
+        self.assertEqual([d["date"] for d in w], [f"2026-10-{d:02d}" for d in range(8, 15)])
+        self.assertEqual([d["done"] for d in w], [0, 0, 0, 0, 0, 2, 0])
+        self.assertEqual(w[-2], {"date": "2026-10-13", "done": 2, "idleMin": 1440 - 120, "min": 1440})
+        self.assertEqual(w[-1], {"date": "2026-10-14", "done": 0, "idleMin": 660 - 60, "min": 660})
+        self.assertEqual(ks.day_numbers(jobs, now), {"since": "2026-10-13T23:00Z", "doneToday": 0, "idleMin": 600})
+
+    def test_clock_change_day_is_25_hours(self):
+        from datetime import datetime, timezone
+        w = ks.week_numbers([], datetime(2026, 10, 26, 12, 0, tzinfo=timezone.utc))
+        self.assertEqual(next(d for d in w if d["date"] == "2026-10-25")["min"], 25 * 60)

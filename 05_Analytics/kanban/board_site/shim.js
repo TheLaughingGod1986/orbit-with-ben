@@ -1,7 +1,7 @@
 // Studio Kanban, self-updating host (Ben, 9 Oct). Stands in for the claude.ai artifact runtime the page was written
 // for: window.claude.use("db") serves board/hos, board/owb, board/briefs, board/credits and checks/* from
 //   - board.json on the orbit-with-ben `board-data` branch (pushed by the Mac mini's scripts/board_publish.py
-//     whenever a job moves or main changes), re-read every 60 s; and
+//     whenever a job moves or main changes), re-read every 60 s (and on Refresh / pull-to-refresh, live.js); and
 //   - /api/checks (Ben's OK / needs-a-change ticks), re-read on load, after a tick and on return to the tab
 //     (board.json also carries them, from the Mini's hourly read).
 // use("mcp") returns null, so the page never asks for a GitHub connector.
@@ -51,25 +51,49 @@
   const REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
   const AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   let lastSha = "";
+  // Ben, 14 Oct ("make it more dynamic"): the page's live layer (live.js) shows when the last check was, counts down to the
+  // next, offers Refresh / pull-to-refresh (window.__boardRefresh), and gets a "board:data" event with what changed.
+  const PERIOD = 60 * 1000;
+  const poll = window.__boardPoll = { last: 0, next: Date.now(), ok: true, busy: false, period: PERIOD };
+  const say = (type, detail) => { try { document.dispatchEvent(new CustomEvent(type, { detail })); } catch (e) {} };
+  // Jobs that moved between two board.json reads: started, done, blocked, released, a step, added.
+  function diffJobs(prev, next) {
+    if (!prev) return [];
+    const by = d => Object.fromEntries((((d || {}).owb || {}).jobs || []).map(j => [j.id, j]));
+    const a = by(prev), b = by(next), done = new Set((((next || {}).owb || {}).done || []).map(d => d.id)), out = [];
+    for (const [id, j] of Object.entries(b)) {
+      const p = a[id], row = { id, title: j.title || "", film: j.film || "", by: j.by || (j.last || {}).by || "" };
+      if (!p) out.push(Object.assign(row, { what: "added" }));
+      else if (p.status !== j.status) out.push(Object.assign(row, { what: j.status }));
+      else if (j.progress && JSON.stringify(p.progress || null) !== JSON.stringify(j.progress)) out.push(Object.assign(row, { what: "step", step: j.progress.step, of: j.progress.of }));
+    }
+    for (const [id, p] of Object.entries(a)) if (!b[id]) out.push({ id, title: p.title || "", film: p.film || "", by: p.by || "", what: done.has(id) ? "done" : "removed" });
+    return out;
+  }
   async function pollData() {
+    poll.busy = true; say("board:poll", poll);
     try {
       let url = DATA + "?t=" + Date.now(), sha = "";
       try {
         const g = await fetch(REF, { cache: "no-cache" });
-        if (g.ok) { sha = ((await g.json()).object || {}).sha || ""; if (sha && sha === lastSha && board) return; if (sha) url = AT(sha); }
+        if (g.ok) { sha = ((await g.json()).object || {}).sha || ""; if (sha && sha === lastSha && board) { poll.ok = true; return; } if (sha) url = AT(sha); }
       } catch (e) {}
       const r = await fetch(url, { cache: sha ? "force-cache" : "no-store" });
-      if (!r.ok) return;
+      if (!r.ok) { poll.ok = false; return; }
       const text = await r.text();
+      poll.ok = true;
       if (sha) lastSha = sha;
       if (text === lastHash) return;
       const j = JSON.parse(text);
+      const first = !board, diff = diffJobs(board, j);
       lastHash = text;
       board = { hos: j.hos, owb: j.owb, briefs: j.briefs, credits: j.credits };
       window.__boardData = { dataChangedAt: j.dataChangedAt, changedAt: j.changedAt, publishedAt: j.publishedAt };
       if (j.checks && typeof j.checks === "object" && !checksFresh) setServer(j.checks);
       emitAll();
-    } catch (e) {}
+      say("board:data", { first, diff });
+    } catch (e) { poll.ok = false; }
+    finally { poll.busy = false; poll.last = Date.now(); poll.next = poll.last + PERIOD; say("board:poll", poll); }
   }
   let checksFresh = false;
   async function pollChecks() {
@@ -124,7 +148,10 @@
     },
   };
   window.claude = { use: async what => (what === "db" ? db : null) };
-  pollData(); pollChecks();
-  setInterval(pollData, 60 * 1000);
-  document.addEventListener("visibilitychange", () => { if (!document.hidden) { pollData(); pollChecks(); } });
+  // One timer that re-reads a minute after the last read, so a manual refresh restarts the countdown.
+  let timer = null;
+  const schedule = () => { clearTimeout(timer); timer = setTimeout(() => { pollData().then(schedule); }, Math.max(1000, poll.next - Date.now())); };
+  window.__boardRefresh = async () => { if (poll.busy) return; await Promise.all([pollData(), pollChecks()]); schedule(); };
+  pollData().then(schedule); pollChecks();
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) window.__boardRefresh(); });
 })();
