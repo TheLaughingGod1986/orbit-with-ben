@@ -9742,13 +9742,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-14T09:24Z",
-      "eta": "2026-10-14T11:24Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T13:26Z",
-      "result": "",
+      "result": "parked for Chief: overlay PASS; NASA SOURCES row 22 added for nominal 24 hours, unchanged v01h checksum verified; fresh picture_qa and polish_gate exit 0, evidence in rough_v01h_pack/j0154_gate_rerun_20261014",
       "history": [
         {
           "at": "2026-10-12T13:26Z",
@@ -9819,6 +9819,11 @@
           "at": "2026-10-14T09:29Z",
           "by": "codex",
           "what": "step 4 of 4 done: NASA source correction and both full-video gate reruns recorded; handing to Chief"
+        },
+        {
+          "at": "2026-10-14T09:29Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: overlay PASS; NASA SOURCES row 22 added for nominal 24 hours, unchanged v01h checksum verified; fresh picture_qa and polish_gate exit 0, evidence in rough_v01h_pack/j0154_gate_rerun_20261014"
         }
       ],
       "kind": "chart",
