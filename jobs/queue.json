@@ -17268,7 +17268,7 @@
       "title": "OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben, 14 Oct ~22:15 London: \"Added new thumbnails to OWB/ new thumbnails ... The new thumbnail you think would work, let's get them up.\" The house thumbnail rules are waived for these, as for J0243.\n\n1. **Find the folder.** It's probably iCloud Drive › OWB › new thumbnails (`~/Library/Mobile Documents/com~apple~CloudDocs/OWB/new thumbnails`). Also check under `OWB UAT`, and any folder whose name contains \"new thumbnail\". List every image: name, size and pixel dimensions.\n2. **Send them for review.** For each image:\n   - make a 1280×720 JPEG (quality 90, under 2 MB, keeping 16:9) and a 168 px preview (`thumb_preview.py long`);\n   - `git add -f` both to the branch `review/new-thumbnails-14oct` under `00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/new/`, keeping Ben's file names;\n   - push, and post the branch link on #99 with the file list and which film each one looks like it's for.\n3. **Park:** \"parked for Chief: pick thumbnails\". The Chief picks, then the same job (or a follow-on) arms thumbnail-only Test & Compare tests in OWB Studio on CDP 9223, the same way as J0243.\n\nNo YouTube change before the Chief's pick. No spend. If the folder can't be found, block with \"needs Ben: where is 'OWB/new thumbnails'?\" and list the folders you checked.\n",
+      "body": "**Exact folder (Ben, 14 Oct 22:15, screenshot):** iCloud Drive › **OWB UAT › New thumbnail** (6 items, added 22:08). That's `~/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/New thumbnail/`, beside the 0xx_PHONE files. If the files show as cloud-only, download them first with `brctl download <path>` (the J0236 pattern). Use all 6.\n\nBen, 14 Oct ~22:15 London: \"Added new thumbnails to OWB/ new thumbnails ... The new thumbnail you think would work, let's get them up.\" The house thumbnail rules are waived for these, as for J0243.\n\n1. **Find the folder.** It's probably iCloud Drive › OWB › new thumbnails (`~/Library/Mobile Documents/com~apple~CloudDocs/OWB/new thumbnails`). Also check under `OWB UAT`, and any folder whose name contains \"new thumbnail\". List every image: name, size and pixel dimensions.\n2. **Send them for review.** For each image:\n   - make a 1280×720 JPEG (quality 90, under 2 MB, keeping 16:9) and a 168 px preview (`thumb_preview.py long`);\n   - `git add -f` both to the branch `review/new-thumbnails-14oct` under `00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/new/`, keeping Ben's file names;\n   - push, and post the branch link on #99 with the file list and which film each one looks like it's for.\n3. **Park:** \"parked for Chief: pick thumbnails\". The Chief picks, then the same job (or a follow-on) arms thumbnail-only Test & Compare tests in OWB Studio on CDP 9223, the same way as J0243.\n\nNo YouTube change before the Chief's pick. No spend. If the folder can't be found, block with \"needs Ben: where is 'OWB/new thumbnails'?\" and list the folders you checked.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -17286,6 +17286,11 @@
           "at": "2026-10-14T21:11Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-14T21:15Z",
+          "by": "claude",
+          "what": "Ben gave the exact folder: OWB UAT/New thumbnail (6 items)"
         }
       ],
       "kind": "studio",
