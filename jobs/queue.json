@@ -17471,10 +17471,23 @@
           "at": "2026-10-14T21:23Z",
           "by": "claude",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-14T22:10Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
         }
       ],
-      "for": "cursor",
-      "kind": "review"
+      "for": "gemini",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-agy"
     },
     {
       "id": "J0249",
