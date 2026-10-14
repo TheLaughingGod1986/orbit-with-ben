@@ -8547,6 +8547,11 @@
           "at": "2026-10-13T10:36Z",
           "by": "codex",
           "what": "blocked: parked for Chief: detached recovery settled with P5:02 FAIL before Create; select/KEEP cover fallback, KEEP P4:08 t2, decide missing paid P4:06 t2; 10-credit balance change unverified. Evidence HOS PR #310; progress 3/6; no retry or spend this run."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "video",
@@ -8564,7 +8569,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex"
+      "for": "codex",
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0141",
@@ -11312,6 +11318,11 @@
           "at": "2026-10-13T11:18Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v04 complete 47:38; picture/SFX tool checks pass, music gap 28.3s from 0:25 remains FAIL; J0168 must rule on compilation music measurement, inherited-master/overlay review and subscribe default. Evidence COMPILATION_V04_HANDOFF_CODEX.md; step 7/8."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 23 h"
         }
       ],
       "kind": "assembly",
@@ -11321,7 +11332,8 @@
         "at": "2026-10-13T11:18Z",
         "by": "codex",
         "note": "v04 render verified; QA evidence recorded; music gap needs Chief"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0168",
@@ -12249,6 +12261,11 @@
           "at": "2026-10-13T10:47Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Bridge 4 mandatory SFX-presence gate still FAILs (no motivated hit); bed-level failures fixed on B3/B4/B5/closing, HOS PR #300. Inputs still missing: 006 plates/master J0140 and closing end-card graphic; resume at 4/6 after ruling and inputs."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "assembly",
@@ -12258,7 +12275,8 @@
         "at": "2026-10-13T10:46Z",
         "by": "codex",
         "note": "Music ducking fixed; B3/B5/closing sound gate clears, B4 no-hit failure parked for Chief"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0176",
@@ -12686,6 +12704,11 @@
           "at": "2026-10-14T09:09Z",
           "by": "codex",
           "what": "blocked: parked for Chief: restore HOS Studio access on CDP 9222; signed-in channel is Benjamin Oats @beep61, channel switcher lists no HOS channel, target sILtQxgYQk8 edit shows Oops something went wrong. No YouTube changes made; audit remains 3/4."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "listing",
@@ -12696,7 +12719,8 @@
         "at": "2026-10-14T09:08Z",
         "by": "codex",
         "note": "Resumed existing audit; Chief-authorized Studio fixes remain"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0182",
@@ -13309,6 +13333,11 @@
           "at": "2026-10-14T02:41Z",
           "by": "codex",
           "what": "blocked: parked for Chief: recover frozen HOS Studio CDP 9460 or authorize an alternative calendar verification route. /json/list and WebSocket handshake respond, but Runtime.evaluate times out after 8s. Prior 2/4 retained. No YouTube changes this run; HOS 005 s04 remains not uploaded. Do not re-upload OWB 23KZK7OjsEE or lbW2iQ9YvqA. Shared pulls blocked by existing local work; clean sparse worktree /private/tmp/owb-codex-20261014-sparse used. Disk nearly full (138Mi available before sparse checkout)."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 8 h"
         }
       ],
       "kind": "studio",
@@ -13318,7 +13347,8 @@
         "at": "2026-10-14T02:40Z",
         "by": "codex",
         "note": "HOS CDP 9460 handshake succeeds; Runtime.evaluate times out after 8s; calendar unverified"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0189",
@@ -14956,6 +14986,11 @@
           "at": "2026-10-13T11:05Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review HOS ef1335b listing drafts; arrange pending Gemini facts review (external call rejected by automatic approval review) and confirm S4 v04 versus brief v03 KEEP before package approval. All four titles and eight local media hashes validated; no upload."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "listing",
@@ -14965,7 +15000,8 @@
         "at": "2026-10-13T11:05Z",
         "by": "codex",
         "note": "Drafts validated and committed as HOS ef1335b; handoff ready, Chief approval pending"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0212",
@@ -15305,6 +15341,11 @@
           "at": "2026-10-13T11:15Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review/merge records PR #174 (90b8cbbf); all 8 Shorts uploaded private/scheduled and covers saved. Voyager kKN8Ale42sE Buffer mirrors await free-plan capacity (10/10); retry only its IG/FB/Threads mirrors once slots open, never re-upload."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 24 h"
         }
       ],
       "kind": "studio",
@@ -15314,7 +15355,8 @@
         "at": "2026-10-13T11:15Z",
         "by": "codex",
         "note": "Covers saved, readback verified, registries and measurement log committed 90b8cbbf"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0217",
@@ -15452,6 +15494,11 @@
           "at": "2026-10-13T17:33Z",
           "by": "codex",
           "what": "blocked: parked for Chief: HOS PR #316 (8324bdf) S5-S8 listing/cover acceptance and merge; confirm S7 title scope and HOS 006 Related id; existing main generated-board check stale. Worker steps 3/3 complete; no upload or scheduling."
+        },
+        {
+          "at": "2026-10-14T11:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 17 h"
         }
       ],
       "kind": "listing",
@@ -15461,7 +15508,8 @@
         "at": "2026-10-13T17:33Z",
         "by": "codex",
         "note": "Validation recorded; HOS PR 316 commit 8324bdf ready for Chief"
-      }
+      },
+      "escalated_at": "2026-10-14T11:15Z"
     },
     {
       "id": "J0219",
