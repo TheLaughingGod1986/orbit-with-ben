@@ -13239,13 +13239,13 @@
       "stage": "",
       "after": "J0205",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-14T17:26Z",
-      "eta": "2026-10-14T19:26Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "",
+      "result": "parked for Chief: HOS 005 s04 approved 22 Oct 11:30 London precedes related long wwcjcFfC-5M scheduled 29 Oct 18:00 London (confirmed Studio and channel:audit 14 Oct). HOS Never forbids Short before long. Choose a slot after long or explicitly name an exception; no upload or state changes this run. Prior OWB uploads 23KZK7OjsEE and lbW2iQ9YvqA remain complete; progress 2/4. Browser 9460 now works; lint and Short gate PASS; dry run ok. Channel audit has 5 existing language errors on private duplicate drafts.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13411,6 +13411,11 @@
           "at": "2026-10-14T17:28Z",
           "by": "codex",
           "what": "step 2 of 4 done: HOS browser recovered; preflight checks pass; approved 22 Oct slot precedes related long on 29 Oct"
+        },
+        {
+          "at": "2026-10-14T17:28Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: HOS 005 s04 approved 22 Oct 11:30 London precedes related long wwcjcFfC-5M scheduled 29 Oct 18:00 London (confirmed Studio and channel:audit 14 Oct). HOS Never forbids Short before long. Choose a slot after long or explicitly name an exception; no upload or state changes this run. Prior OWB uploads 23KZK7OjsEE and lbW2iQ9YvqA remain complete; progress 2/4. Browser 9460 now works; lint and Short gate PASS; dry run ok. Channel audit has 5 existing language errors on private duplicate drafts."
         }
       ],
       "kind": "studio",
