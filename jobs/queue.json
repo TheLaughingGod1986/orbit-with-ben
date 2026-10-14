@@ -13210,13 +13210,13 @@
       "stage": "",
       "after": "J0205",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-13T17:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: recover frozen HOS Studio CDP 9460 or authorize an alternative calendar verification route. /json/list and WebSocket handshake respond, but Runtime.evaluate times out after 8s. Prior 2/4 retained. No YouTube changes this run; HOS 005 s04 remains not uploaded. Do not re-upload OWB 23KZK7OjsEE or lbW2iQ9YvqA. Shared pulls blocked by existing local work; clean sparse worktree /private/tmp/owb-codex-20261014-sparse used. Disk nearly full (138Mi available before sparse checkout).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13347,16 +13347,14 @@
           "at": "2026-10-14T11:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 8 h"
+        },
+        {
+          "at": "2026-10-14T15:37Z",
+          "by": "claude",
+          "what": "reopened: CDP browsers restored by Ben 14 Oct"
         }
       ],
       "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-14T02:40Z",
-        "by": "codex",
-        "note": "HOS CDP 9460 handshake succeeds; Runtime.evaluate times out after 8s; calendar unverified"
-      },
       "escalated_at": "2026-10-14T11:15Z"
     },
     {
