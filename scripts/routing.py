@@ -99,6 +99,11 @@ CHAINS = {
     "chart":    ("Charts, graphs, overlays, people cards, date call-outs, thumbnail builders",
                  [ASTRA, ("cursor", "cursor-auto"), GEMINI],
                  "our own code graphics (Python/ffmpeg), rendered per row"),
+    "thumb":    ("Thumbnail design: the whole thumbnail (art, character, hook text) and its Test & Compare variants",
+                 [ASTRA, ("cursor", "cursor-auto"), GEMINI],
+                 "Codex designs it (Ben, 14 Oct 2026: Codex built NO WAY OUT? / NO SOLID GROUND?, which beat the house "
+                 "style on sight); every new design goes in as Test & Compare B against the live thumb and the result "
+                 "decides; checks: 1280x720, under 2 MB, readable at 168 px, nothing under the duration badge"),
     "video":    ("Video generation", [("cursor", "veo-3.1-fast-generate-001"), ("codex", "veo-3.1-fast-generate-001"),
                                       ("gemini", "veo-3.1-fast-generate-001")],
                  "OWB: Vertex Veo (Quality only for a hero), Omni gemini-omni-flash-preview at global for Orbit only; "

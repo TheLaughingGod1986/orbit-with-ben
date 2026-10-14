@@ -11,7 +11,7 @@ is alive and able claims it. The thread stays for discussion and reports; this q
           ben     only Ben: money, a sign-in, a decision
           any     whoever is free
   kind    what sort of job it is (scripts/routing.py, AGENTS.md "Who does what", Ben 11 Oct 2026): script, facts,
-          review, vo, image, chart, video, assembly, qa, listing, studio, chief. The relay wakes the worker whose
+          review, vo, image, chart, thumb, video, assembly, qa, listing, studio, chief. The relay wakes the worker whose
           model does that kind best (chart -> Codex on gpt-6-astra) and passes the model; --model overrides it.
 
   python3 scripts/jobs.py add --needs mini --title "Sun 022 first cut" --body-file brief.md --film 022 --stage edit \\
