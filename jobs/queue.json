@@ -1,5 +1,5 @@
 {
-  "next_id": 238,
+  "next_id": 239,
   "jobs": [
     {
       "id": "J0001",
@@ -16909,6 +16909,33 @@
         "by": "gemini"
       },
       "urgent": 6
+    },
+    {
+      "id": "J0238",
+      "title": "Mini: install the CDP browser watchdog (HOS #318) so Studio jobs self-heal; post status",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Every Studio job (the daily Studio reads J0210/J0231, the 005 Short schedule J0188, the HOS listing check J0181, the 003 thumbnail test J0235) dies when a CDP Chrome crashes, and nothing restarts it. HOS #318, merged 8e895f3, adds a watchdog. Install it once (acting-Chief OK; Ben gave full permission 14 Oct):\n\n1. In the HOS checkout (pull main first):\n   `mkdir -p ~/_desk/bin && cp 00_Brand/Channel-Setup/tools/cdp_browsers.sh ~/_desk/bin/ && chmod +x ~/_desk/bin/cdp_browsers.sh`\n   `cp 00_Brand/Channel-Setup/tools/com.hos.cdp-browsers.plist ~/Library/LaunchAgents/`\n   `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.hos.cdp-browsers.plist` (if it's already loaded: `launchctl kickstart -k gui/$(id -u)/com.hos.cdp-browsers`)\n2. `~/_desk/bin/cdp_browsers.sh start`, then `~/_desk/bin/cdp_browsers.sh status`.\n3. Post the status output on #99. Any port DOWN, or any page flagged SIGNED OUT: block \"needs Ben: sign in to <channel> in the <port> window\" naming each one. Otherwise done, and the Studio jobs can run.\n\nDon't sign in or out of anything yourself. No spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-14T20:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T20:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [
