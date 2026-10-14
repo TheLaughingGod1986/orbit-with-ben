@@ -6,8 +6,8 @@ Generated from the 2026-10-13 snapshot by `npm run analytics:report`. Don't edit
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last 24 hours | -782 | 0 |
-| Last 7 days | -644 | 0 |
+| Last 24 hours | +113 | 0 |
+| Last 7 days | +256 | 0 |
 | Last 30 days (YouTube Analytics) | +3,685 | +5 |
 
 ## Top videos, last 24 hours
@@ -16,17 +16,14 @@ Public view-count change, snapshot 2026-10-12 to 2026-10-13.
 
 | Video | Format | Views | Share |
 |---|---|---:|---:|
-| [How Long Do Saturn's Rings Have Left?](https://www.youtube.com/watch?v=55AEQwvs36g) | long | +69 | – |
-| [Saturn's Rings Are Already Falling](https://www.youtube.com/shorts/Cka7_TVVOUQ) | short | +43 | – |
-| [There's an Ocean Under That Ice](https://www.youtube.com/shorts/QNTeou-w-gY) | short | +1 | – |
-| Other videos (63) | | 0 | – |
+| [How Long Do Saturn's Rings Have Left?](https://www.youtube.com/watch?v=55AEQwvs36g) | long | +69 | 61.1% |
+| [Saturn's Rings Are Already Falling](https://www.youtube.com/shorts/Cka7_TVVOUQ) | short | +43 | 38.1% |
+| [There's an Ocean Under That Ice](https://www.youtube.com/shorts/QNTeou-w-gY) | short | +1 | 0.9% |
+| Other videos (63) | | 0 | 0.0% |
 | Can't be compared (1) | | unknown | – |
-| Not matched to a listed video | | -895 | – |
-| **Channel total, last 24 hours** | | **-782** | **–** |
+| **Channel total, last 24 hours** | | **+113** | **100.0%** |
 
 1 public video is missing from the 2026-10-12 snapshot, so the change can't be worked out and is left out of the sum.
-
-YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
 
 ## Week on week (weeks start Monday)
 

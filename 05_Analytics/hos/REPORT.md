@@ -6,8 +6,8 @@ Generated from the 2026-10-13 snapshot by `npm run analytics:report`. Don't edit
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last 24 hours | -5 | 0 |
-| Last 7 days | +8 | 0 |
+| Last 24 hours | +8 | 0 |
+| Last 7 days | +21 | 0 |
 | Last 30 days (YouTube Analytics) | +338 | +1 |
 
 ## Top videos, last 24 hours
@@ -16,13 +16,10 @@ Public view-count change, snapshot 2026-10-12 to 2026-10-13.
 
 | Video | Format | Views | Share |
 |---|---|---:|---:|
-| [How Did We Discover the Periodic Table?](https://www.youtube.com/watch?v=AL_-qlWko_g) | long | +6 | – |
-| [Germs hitch a ride on you](https://www.youtube.com/shorts/8_Edn_HCi1s) | short | +2 | – |
-| Other videos (13) | | 0 | – |
-| Not matched to a listed video | | -13 | – |
-| **Channel total, last 24 hours** | | **-5** | **–** |
-
-YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
+| [How Did We Discover the Periodic Table?](https://www.youtube.com/watch?v=AL_-qlWko_g) | long | +6 | 75.0% |
+| [Germs hitch a ride on you](https://www.youtube.com/shorts/8_Edn_HCi1s) | short | +2 | 25.0% |
+| Other videos (13) | | 0 | 0.0% |
+| **Channel total, last 24 hours** | | **+8** | **100.0%** |
 
 ## Week on week (weeks start Monday)
 

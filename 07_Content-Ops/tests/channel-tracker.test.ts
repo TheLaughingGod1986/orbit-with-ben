@@ -95,6 +95,13 @@ describe("buildReport from snapshots only", () => {
     expect(r.change.d1).toEqual({ views: 100, subscribers: 2, source: "snapshots" });
     expect(r.videos.find((v) => v.id === "a")!.d1).toBe(50);
   });
+  it("never shows the channel losing views when YouTube's total drops but the videos gained (13 Oct 2026)", () => {
+    const before = snap("2026-10-12", 7532, 12, [video("a", 600), video("b", 400), video("gone", 500)]);
+    const after = snap("2026-10-13", 6750, 12, [video("a", 690), video("b", 434)]); // "gone" went private
+    const d = buildReport("owb", [before, after], null);
+    expect(d.change.d1).toEqual({ views: 124, subscribers: 0, source: "snapshots" });
+    expect(d.day1.total).toBe(124);
+  });
   it("counts all views of a video published after the earlier snapshot", () => {
     expect(r.videos.find((v) => v.id === "c")!.d1).toBe(30);
   });
