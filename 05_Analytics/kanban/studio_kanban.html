@@ -43,6 +43,28 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .donebar li .w{flex:none;color:var(--ink-3);font-size:12px}
 .donebar .kd{flex:none;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--panel-2);color:var(--ink-2)}
 .donebar.cold{border-left-color:var(--soon)}
+/* Ben, 14 Oct: the simple Videos list at the top */
+.videos{margin:0 0 12px}
+.videos .vh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:700;font-size:15px;margin:2px 2px 6px;color:var(--ink)}
+.videos .vh span{font-weight:500;font-size:12px;color:var(--ink-3)}
+.vr{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px 9px;margin:0 0 6px;cursor:pointer}
+.vr:hover{border-color:var(--ink-3)}
+.vr .v1{display:flex;align-items:center;gap:6px;min-width:0}
+.vr .v1 b{flex:none}
+.vr .vt{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2)}
+.vr .vp{flex:none;font-weight:700;font-variant-numeric:tabular-nums}
+.vr .bar{margin:6px 0 5px}
+.vr .v2{display:flex;align-items:center;gap:6px;min-width:0;font-size:13px}
+.vr .v2 .pill{flex:none}
+.vr .vn{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2)}
+.vr .v3{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2px 10px;margin-top:3px;font-size:12px;color:var(--ink-3)}
+.vr .vy{color:var(--accent);font-weight:600}
+.youbar.quiet{display:none}
+.vr .pill.now{background:var(--doing-soft);color:var(--doing)}
+.vr .pill.next{background:var(--accent-soft);color:var(--accent)}
+.vr .pill.bad{background:var(--blocked-soft);color:var(--blocked)}
+.vr .pill.live,.vr .pill.sched{background:var(--done-soft);color:var(--done)}
+.vr .pill.you{background:var(--accent);color:#fff}
 .spk{display:flex;align-items:flex-end;gap:2px;height:18px;margin-top:4px}
 .spk i{flex:1 1 0;min-width:3px;max-width:10px;background:var(--ink-3);opacity:.35;border-radius:2px 2px 0 0}
 .spk i.t{background:var(--doing);opacity:1}
@@ -502,13 +524,13 @@ footer a{color:var(--ink-2)}
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
+  <section class="videos" id="videos"><div class="empty">Loading…</div></section>
   <div class="donebar" id="donebar" hidden></div>
-  <div class="stats" id="daystats" hidden></div>
   <details class="more fold" id="foldJobs"><summary>All jobs: queue, running, done</summary>
   <div class="jb" id="jobboard" hidden></div>
   </details>
+  <details class="more fold" id="foldBoard"><summary>Board: every video by lane (detail)</summary>
   <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
-  </section>
   </details>
   <details class="more fold" id="foldStages"><summary id="stageboard">Every stage of every film (detail)</summary>
   <div class="filterline" id="filterline"></div>
@@ -519,7 +541,8 @@ footer a{color:var(--ink-2)}
   </div>
   <div class="agents" id="agents" style="margin-top:14px"></div>
   </details>
-  <details class="more fold" id="foldPlans"><summary>AI plans this month</summary>
+  <details class="more fold" id="foldPlans"><summary>Credits, AI plans and Mini stats</summary>
+  <div class="stats" id="daystats" hidden></div>
   <section class="plansec">
   <h2 class="sec" style="margin-top:22px"><span class="qsub" id="spendSum"></span></h2>
   <section class="spend" id="spendBox">
@@ -1078,7 +1101,7 @@ function renderDone(){
   box.hidden = !done.length; if(!done.length) return;
   const day = done.filter(d=>Date.now()-ts(d.at) < 24*60*MINUTE).length, last = ts(done[0].at);
   box.className = "donebar" + (Date.now()-last > 24*60*MINUTE ? " cold" : "");
-  box.innerHTML = `<div class="dh">Recently done<span>${day} in the last 24 h</span></div><ul>${done.slice(0,5).map(d=>{ const k = jobKindOf(d);
+  box.innerHTML = `<div class="dh">Recently done<span>${day} in the last 24 h</span></div><ul>${done.slice(0,3).map(d=>{ const k = jobKindOf(d);
     return `<li><span class="ok">✓</span><span class="kd ${k.key}">${esc(k.label)}</span><span class="t">${esc(plainTitle(d, 60))}</span><span class="w">${esc(WORKER[d.by]||d.by||"")} · <span data-ago="${ts(d.at)}">${ago(ts(d.at))}</span></span></li>`; }).join("")}</ul>`;
 }
 function renderJobBoard(){
@@ -1189,6 +1212,31 @@ function justLine(x){
   const tail = c.handled ? " · the Chief has it" : ` · ${c.verdict==="ok"?"":`<button class="lnk" data-more="${id}">Add another fix</button> · `}<button class="lnk" data-undo="${id}">Undo</button>`;
   return `<div class="just">${head}${tail}</div>`;
 }
+// The top list (Ben, 14 Oct): every video in work order, then scheduled by air date, then what went live in the last
+// three days. Each row: channel, number, title, % done, what is happening now, when it reaches Ben, and the air date.
+// Tapping a row opens its full card in the board fold below.
+function renderVideos(rows, rankOf){
+  const box = $("videos"); if(!box) return;
+  const strip = h => String(h||"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").replace(/&#39;/g,"'").replace(/&quot;/g,'"');
+  const tier = r => r.live ? 3 : r.isSched ? 2 : r.col==="doing" ? 0 : 1;
+  const keep = rows.filter(r=>chan==="all"||chan===r.f._ch).filter(r=>!r.live || (r.air && Date.now()-r.air < 3*DAY));
+  keep.sort((a,b)=>tier(a)-tier(b) || (tier(a)<2 ? (rankOf[a.f.key]||999)-(rankOf[b.f.key]||999) : 0)
+    || (tier(a)===3 ? (b.air||0)-(a.air||0) : (a.air||9e15)-(b.air||9e15)));
+  const word = r => r.live ? ["live","Live"] : r.isSched ? ["sched","Scheduled"] : r.you ? ["you","For you"]
+    : ({now:["now","Working now"], next:["next","Up next"], review:["review","In review"], bad:["bad","Blocked"]})[r.mk[0]] || ["wait","Waiting"];
+  box.innerHTML = `<div class="vh">Videos<span>${keep.length} in work · tap one for detail</span></div>` + (keep.length ? keep.map(r=>{
+    const [cls, w] = word(r), now = (r.live||r.isSched) ? "" : strip(r.mk[1]).replace(/^[A-Z][^:]{0,40}:\s*/,"");
+    // airIn() gives a ticking <span data-until> under a day out, so `when` stays HTML; the note texts are plain.
+    const when = r.live ? `Live since ${esc(fd(r.air))}` : r.air ? `Airs ${esc(fd(r.air))} · ${airIn(r.air)}` : "No air date yet";
+    const ready = r.you ? `For you now: ${strip(r.you)}` : !r.live && !r.isSched && r.ready ? `Ready for you: ${strip(r.ready)}` : "";
+    return `<button class="vr" data-vkey="${esc(r.f.key)}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span><span class="vp">${r.pct}%</span></div>
+      <div class="bar"><i style="width:${r.pct}%"></i></div>
+      <div class="v2"><span class="pill ${cls}">${w}</span>${now?`<span class="vn">${esc(now)}</span>`:""}</div>
+      <div class="v3"><span>${when}</span>${ready?`<span class="vy">${esc(ready)}</span>`:""}</div></button>`; }).join("")
+    : `<div class="empty">Nothing in work.</div>`);
+  box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; openState[k] = true; $("foldBoard").open = true; render();
+    const c = document.querySelector(`details.tf[data-key="${CSS.escape(k)}"]`); if(c){ c.open = true; c.scrollIntoView({behavior:"smooth", block:"start"}); } });
+}
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
   const all = films.concat(readyFilms).filter(f=>f.air ? recent(f.air) : true).sort((a,b)=>String(a.air||"9999").localeCompare(String(b.air||"9999")) || a.key.localeCompare(b.key));
@@ -1196,6 +1244,7 @@ function renderTracker(films){
   const laneWho = {mini:"Cursor", gemini:"Gemini", cloud:"Claude", ben:"Ben"};
   const lanes = {OWB:{doing:[], todo:[], sched:[], live:[]}, HOS:{doing:[], todo:[], sched:[], live:[]}}, forYou = [], rankIn = [], ticked = [];
   ON_CARD.clear();
+  const simple = [];
   for(const f of all){
     let b = briefs[f.key] || autoBrief(f);
     // Ben's tick (checks/<OWB-022>) shows on the card straight away: his watch step ticked, nothing left for him, and
@@ -1281,6 +1330,11 @@ function renderTracker(films){
       mk = [x.status==="blocked"?"bad":"now", `${x.status==="blocked"?"Blocked":"Now"}: ${who}, ${esc(sg.label)} · ${due?`ETA ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
     else mk = ["wait", `Waiting: nothing queued for it · no estimate: no next step in the film note`];
     const ranked = col==="todo"||col==="doing";
+    // Ben, 14 Oct: "a very simple, clean, quick" view: one row per video with its progress, what's happening and when
+    // it reaches him. "Ready for you" is the first open step that is his (the watch), from the same times as the card.
+    const benRow = rows.find(r=>!r.w.ok && (r.x.who==="Ben"||r.x.who==="Ready for you"));
+    simple.push({f, pct, air, col, live, isSched, mk, you: youSoon ? (b.youShort||b.you) : "",
+      ready: benRow ? (benRow.w.at ? fd(new Date(benRow.w.at)) : benRow.w.text || "") : ""});
     const mkRow = !ranked ? "" : `<div class="rkrow">@@R:${esc(f.key)}@@<div class="mk ${mk[0]}">${mk[1]}</div></div>${optLine?`<div class="mk-opt">${optLine}</div>`:""}`;
     // Ben, 11 Oct 19:03: "1st, 2nd, 3rd": one work order across both channels. Running/part-done jobs first, then queued
     // jobs by start time, then films with no queue job (In progress before To do, then air date), then date-gated work.
@@ -1322,6 +1376,7 @@ function renderTracker(films){
     if(k==="live") arr.sort((x,y)=>airOf2(y)-airOf2(x));
     merged[k] = arr.map(h=>h.replace(/^@@A:\d+@@/,""));
   }
+  renderVideos(simple, rankOf);
   box.className = "";
   box.innerHTML = `<section class="lane one"><div class="kb">`
     + defs.map(([k,label,c])=>`<section class="kcol"><h2><span class="sw" style="background:${c}"></span>${label}<span class="n">${merged[k].length}</span></h2>
@@ -1334,7 +1389,8 @@ function renderTracker(films){
   // One line at the top: is anything on Ben, and what airs next.
   const yb = $("youbar"); if(!yb) return;
   const soon = forYou.filter(x=>x.soon);
-  yb.className = "youbar" + (soon.length ? " has" : "");
+  // Ben, 14 Oct: no "Nothing for you right now" box taking space; it shows only when there is something for him.
+  yb.className = "youbar" + (soon.length ? " has" : justTicks(ticked, Date.now()).length ? "" : " quiet");
   if(yb.contains(document.activeElement) && ["TEXTAREA","INPUT"].includes(document.activeElement.tagName) && document.activeElement.value) return;   // don't wipe a fix being typed
   const fixList = (fx, id, editable) => fx.length ? `<ol class="fx">${fx.map((f,k)=>`<li>${f.t?`<span class="ft2">${esc(f.t)}</span>`:""}<span>${esc(f.text)}</span>${editable?`<button class="lnk" data-rm="${id}:${k}" aria-label="Remove">remove</button>`:""}</li>`).join("")}</ol>` : "";
   const editor = (id, sent) => { const fx = drafts[id] || [];

@@ -51,7 +51,7 @@ branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's h
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
 Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
-CHIEF_RETRY_H (3), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
+CHIEF_RETRY_H (1), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
 from __future__ import annotations
@@ -836,7 +836,10 @@ def run_locked(at: dt.datetime) -> int:
     if (OWB / "scripts" / "refill.py").exists():
         escalate_stale()
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
-    retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
+    # A worker that says it's out of credit is retried after 1 h, not 3 (Ben, 14 Oct 2026: "no worker has credit. I
+    # don't believe this"; a 429, or one model's pool read as the whole agent out for 3 h, left the Mini idle). A real
+    # longer outage goes in scripts/credit_flags.json with its true reset time.
+    retry_h = float(os.environ.get("CHIEF_RETRY_H", "1"))
     # Ben, 12 Oct 2026: the Mini never idles. When a job ends, the next ready job starts straight away in this same
     # run (no waiting for the next launchd tick); CHIEF_CHAIN_MAX bounds one run, and a job that comes straight back
     # open (released to retry later) ends the chain so it isn't re-run in a tight loop.
