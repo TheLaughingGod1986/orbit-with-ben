@@ -1,5 +1,5 @@
 {
-  "next_id": 239,
+  "next_id": 240,
   "jobs": [
     {
       "id": "J0001",
@@ -16943,6 +16943,33 @@
       ],
       "kind": "studio",
       "urgent": 7
+    },
+    {
+      "id": "J0239",
+      "title": "HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "For J0172 (the Chief's PASS before scheduling). S1 airs Mon 19 Oct 11:30 London, so this is needed by Fri 16 Oct.\n\nFiles and covers are listed in HOS `docs/STANDALONE_SHORTS_TEST_2026-10/LISTINGS_S1_S4_J0211_v01.md` (merged b025cbe). S4 is v04.\n1. Run the Shorts gate (`gate_shorts_open`, the same one J0226 uses) on each of the four mp4s and the SFX level check. Paste each PASS/FAIL line.\n2. For each Short, make a contact sheet: 12 frames, one per 2 s, plus frame 0 and the last frame. Make each cover's 168 px preview (`thumb_preview.py short`).\n3. Push the sheets and previews (jpg, under 1.5 MB each) with `git add -f` to the HOS branch `review/standalone-s1-s4`, and post the branch link plus the gate lines on HOS #180.\n4. Park for Chief: \"parked for Chief: S1-S4 frame + cover review\". No upload, no schedule, no re-render, no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-14T20:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T20:34Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "qa"
     }
   ],
   "focus": [
