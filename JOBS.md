@@ -35,6 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
 | J0243 | mini | open | – | – | studio · OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) |  |
 | J0244 | mini | open | – | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
+| J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 
 Recently finished:
 
