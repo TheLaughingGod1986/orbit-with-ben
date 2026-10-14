@@ -198,12 +198,16 @@ def cli_spec(agent: str, model: str = ""):
         # Gemini via Antigravity `agy` (Ben, 11 Oct 23:47: "remember we also have Gemini and Codex"): a stand-in in the
         # job chains (routing.CHAINS) when Cursor or Codex are out. -p = one prompt, print, exit (as in `agy -p` fact
         # checks since 8 Oct); --dangerously-skip-permissions is agy's unattended mode, like Cursor's --force.
+        # `-p` takes the next argument as the prompt, so it goes last, straight before the prompt run_cli appends.
+        # With `-p` first, agy read --dangerously-skip-permissions as its prompt and exited 2 on every wake (Cursor,
+        # #99 6136609471; 88 "run failed" posts 13-14 Oct).
         b = find_bin("AGY_BIN", "agy")
-        flags = os.environ.get("AGY_FLAGS", f"-p --dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
+        flags = os.environ.get("AGY_FLAGS", f"--dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
                                             f"--add-dir {shlex.quote(str(STATE.parent))}")
         cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "gemini" else ""
         if cm:
             flags = f"{flags} --model {shlex.quote(cm)}"
+        flags = shlex.join([a for a in shlex.split(flags) if a != "-p"] + ["-p"])
     else:
         return None
     return (b, shlex.split(flags)) if b else None
@@ -806,9 +810,11 @@ def run_locked(at: dt.datetime) -> int:
             continue
         if code not in (0, 124):
             notify(f"Chief relay: {NAMES.get(who, who)}'s run failed (exit {code}). Log: ~/Library/Logs/chief-relay.log")
-            if addressed:
-                # Woken only for a job addressed to it: don't wake it again every 10 minutes into the same failure.
-                mark_down(who, f"its run for an addressed job failed (exit {code})", now() + dt.timedelta(hours=retry_h), now())
+            # Don't wake it again every minute into the same failure (Gemini exit 2, 13-14 Oct: 88 posts in 20 h).
+            # An addressed job waits the usual retry; a plain worker run waits CHIEF_FAIL_RETRY_H, so others take the queue.
+            fail_h = retry_h if addressed else float(os.environ.get("CHIEF_FAIL_RETRY_H", "1"))
+            mark_down(who, f"its {'run for an addressed job' if addressed else 'last run'} failed (exit {code})",
+                      now() + dt.timedelta(hours=fail_h), now())
             return 0
         chained += 1
         last_ran = job.get("id") if job else None

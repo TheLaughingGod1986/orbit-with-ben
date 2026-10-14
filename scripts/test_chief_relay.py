@@ -289,6 +289,33 @@ class Relay(unittest.TestCase):
         finally:
             cr.OWB, cr.queue_has_work = old_owb, old_q
 
+    def test_agy_gets_the_prompt_straight_after_p(self):
+        # `agy -p` takes the next argument as the prompt; with -p first it read a flag as the prompt (exit 2, 13 Oct).
+        _, args = cr.cli_spec("gemini")
+        self.assertEqual(args[-1], "-p")
+        self.assertIn("--dangerously-skip-permissions", args)
+        os.environ["AGY_FLAGS"] = "-p --dangerously-skip-permissions"  # an old env value is put right too
+        _, args = cr.cli_spec("gemini")
+        self.assertEqual((args.count("-p"), args[-1]), (1, "-p"))
+
+    def test_a_failing_worker_is_backed_off_not_woken_every_minute(self):
+        # 13-14 Oct: Gemini exited 2 on every 60 s relay run and posted "run failed" 88 times in 20 h.
+        old_q = cr.queue_has_work
+        cr.queue_has_work = lambda agent: True
+        self.fake("agy", 'echo "error: unexpected argument"; exit 2')
+        try:
+            cr.mark_down("cursor", "out of credit", None, T0)
+            cr.mark_down("codex", "out of credit", None, T0)
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("agy"))
+            self.assertFalse(cr.state_of("gemini", T0 + MIN)[0])
+            (self.tmp / "agy.ran").unlink()
+            cr.cmd_run(T0 + MIN)
+            self.assertFalse(self.ran("agy"))
+            self.assertEqual(self.posts.read_text().count("run failed (exit 2)"), 1)
+        finally:
+            cr.queue_has_work = old_q
+
     def routed_queue(self, jobs_json):
         cr.OWB = self.tmp / "owb"
         (cr.OWB / "jobs").mkdir(parents=True, exist_ok=True)
@@ -435,7 +462,9 @@ class Relay(unittest.TestCase):
         self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-agy"))
         self.assertTrue(self.ran("agy"))
         self.assertFalse(self.ran("codex"))
-        self.assertTrue((self.tmp / "agy.args").read_text().startswith("-p --dangerously-skip-permissions"))
+        agy = (self.tmp / "agy.args").read_text()
+        self.assertTrue(agy.startswith("--dangerously-skip-permissions"))
+        self.assertIn(" -p You are Gemini", agy)  # the prompt comes straight after -p
 
     def test_a_worker_out_of_usage_mid_job_hands_it_down_the_chain_in_the_same_run_and_logs_who_ran_it(self):
         import json
