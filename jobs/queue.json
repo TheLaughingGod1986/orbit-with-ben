@@ -15346,13 +15346,13 @@
       "stage": "",
       "after": "J0164",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-13T11:07Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-14T15:54Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T23:27Z",
-      "result": "parked for Chief: review/merge records PR #174 (90b8cbbf); all 8 Shorts uploaded private/scheduled and covers saved. Voyager kKN8Ale42sE Buffer mirrors await free-plan capacity (10/10); retry only its IG/FB/Threads mirrors once slots open, never re-upload.",
+      "result": "Chief merge (Claude acting Chief, 14 Oct): records PR #174 merged; all 8 OWB standalone Shorts private+scheduled with covers. Voyager kKN8Ale42sE Buffer mirrors still wait for free-plan capacity (retry mirrors only, never re-upload).",
       "history": [
         {
           "at": "2026-10-12T23:27Z",
@@ -15398,6 +15398,16 @@
           "at": "2026-10-14T11:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 24 h"
+        },
+        {
+          "at": "2026-10-14T15:54Z",
+          "by": "claude",
+          "what": "claimed (acting Chief, to record the merge)"
+        },
+        {
+          "at": "2026-10-14T15:54Z",
+          "by": "claude",
+          "what": "done: Chief merge (Claude acting Chief, 14 Oct): records PR #174 merged; all 8 OWB standalone Shorts private+scheduled with covers. Voyager kKN8Ale42sE Buffer mirrors still wait for free-plan capacity (retry mirrors only, never re-upload)."
         }
       ],
       "kind": "studio",
@@ -15408,7 +15418,8 @@
         "by": "codex",
         "note": "Covers saved, readback verified, registries and measurement log committed 90b8cbbf"
       },
-      "escalated_at": "2026-10-14T11:15Z"
+      "escalated_at": "2026-10-14T11:15Z",
+      "done_ref": "#174"
     },
     {
       "id": "J0217",

@@ -26,7 +26,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0206 | mini | blocked | cursor | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
 | J0210 | mini | blocked | codex | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | blocked | codex | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
-| J0216 | mini | blocked | codex | – | studio · OWB standalone Shorts: Private+scheduled uploads (J0164 OK) |  |
 | J0218 | any | blocked | codex | – | listing · HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs | 6135034321 |
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
@@ -50,6 +49,6 @@ Recently finished:
 - J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
 - J0221 done: 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) (Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands.)
 - J0217 done: HOS standalone Shorts S5-S8: custom 9:16 covers (PASS HOOK/BAND/PHONE ×4; wording KEEP; #308 merged 7d6af66; HOS #180 6134925830. Cursor to attach covers on package.)
+- J0216 done: OWB standalone Shorts: Private+scheduled uploads (J0164 OK) (Chief merge (Claude acting Chief, 14 Oct): records PR #174 merged; all 8 OWB standalone Shorts private+scheduled with covers. Voyager kKN8Ale42sE Buffer mirrors still wait for free-plan capacity (retry mirrors only, never re-upload).)
 - J0215 done: HOS standalone Shorts S7-03: one Vertex retake (credit back) (S7-03 v02 minted (£0.03, HOS 0462e90); flame still faint, parked on #180 for Chief KEEP/FAIL)
 - J0214 done: HOS standalone Shorts S5-S8: Vertex flash-image plates (~5/Short, balance-first, no Flow/Veo) (done)
-- J0213 done: HOS standalone Shorts S5-S8: VO (one take each, locked v02 lines) (Chief KEEP S5-S8 VO v01 (HOS #180 6133703986): word for word v02 lines 5-8, -19.6 to -20.4 LUFS; pause trim ~0.4 s at assembly; captions keep UK spelling. J0214 plates clear.)
