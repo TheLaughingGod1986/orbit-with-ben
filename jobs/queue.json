@@ -1,5 +1,5 @@
 {
-  "next_id": 241,
+  "next_id": 242,
   "jobs": [
     {
       "id": "J0001",
@@ -17094,6 +17094,33 @@
         }
       ],
       "kind": "review"
+    },
+    {
+      "id": "J0241",
+      "title": "HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-on from J0188 (acting-Chief close, Claude 14 Oct). The HOS 005 Short s04 `5n7xFQRBUvI` is private with publishAt 31 Oct 11:30 London. Its long `wwcjcFfC-5M` goes public on Thu 29 Oct 18:00 London.\n1. After the long is public, check it reads Public in the API. Then, in HOS Studio (CDP 9460, check the channel name first), set `5n7xFQRBUvI`'s **Related video** to `wwcjcFfC-5M`. Change nothing else.\n2. HOS Buffer for the s04 Short (the HOS Buffer org only, with `BUFFER_HOS_API_KEY`; never the Orbit org or the Buffer connector). Use the approved captions in HOS `evidence_J0188_20261014/buffer_draft.json`, timed for the Short's air on 31 Oct 11:30 London. Look for the key in the HOS checkout's `07_Content-Ops/.env` and in the launchd env. If it isn't anywhere, block with \"needs Ben: BUFFER_HOS_API_KEY for the HOS Buffer org\".\n3. Read back the Related video and the Buffer queue, post on HOS #180, and mark done. No re-upload, no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-14T20:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T20:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [

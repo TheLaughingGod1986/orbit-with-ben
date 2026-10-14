@@ -34,6 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0238 | mini | open | – | – | studio · Mini: install the CDP browser watchdog (HOS #318) so Studio jobs self-heal; post status |  |
 | J0239 | mini | open | – | – | qa · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | open | – | – | review · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
+| J0241 | mini | open | – | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
 
 Recently finished:
 
