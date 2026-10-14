@@ -1,5 +1,5 @@
 {
-  "next_id": 231,
+  "next_id": 234,
   "jobs": [
     {
       "id": "J0001",
@@ -16371,6 +16371,91 @@
         "at": "2026-10-13T06:35Z",
         "by": "cursor"
       }
+    },
+    {
+      "id": "J0231",
+      "title": "Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Free, read-only. Runs daily after the 06:40 snapshot and must finish before 09:00 London (Ben, 12 Oct 22:19). 1) In YouTube Studio, read only, change nothing: Orbit With Ben in the Orbit Studio browser (CDP 9223); History of Science in its own signed-in Studio session (never the 9222 Flow browser for Orbit pages). 2) For every long film (format long in 05_Analytics/dashboard/data.json, both channels), open Analytics > Reach for the video, period Lifetime, and read Impressions and Impressions click-through rate (%), and on Overview/Engagement the lifetime Views, Average view duration (seconds) and Average percentage viewed (%; if Studio shows only duration, compute duration / video length x 100). 2b) For every Short (both channels), read lifetime Views, Average percentage viewed (%) and 'Stayed to watch' (%, Studio's Shorts engagement figure, viewed vs swiped away); write them under the same videos map as \"views\", \"avgViewPct\" and \"stayedToWatch\" (Ben, 12 Oct 22:50). 3) Write 05_Analytics/<owb|hos>/studio_ctr.json: {\"readAt\": <ISO UTC>, \"period\": \"lifetime\", \"videos\": {\"<videoId>\": {\"impressions\": <int>, \"impressionsCtr\": <number, % e.g. 3.8>, \"views\": <int>, \"avgViewSeconds\": <int>, \"avgViewPct\": <number, %>}}}. A film Studio can't show yet: leave it out. 4) Rebuild: cd 07_Content-Ops && npx tsx scripts/analytics-report.ts (it merges studio_ctr.json into data.json; Studio values take priority on the tracker), then python3 scripts/board_publish.py so /tracker's 'Long films vs targets' panel fills in. 5) Commit only those files to main with a message naming the counts, then jobs.py done <id> --result \"<n> OWB + <m> HOS longs; CTR hits vs 4%: ...\" --git. Never: edit any video, title, thumbnail or setting; spend anything; paid API.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T11:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T11:16Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "backlog": "studio-ctr-daily",
+      "urgent": 0
+    },
+    {
+      "id": "J0232",
+      "title": "Backlog OWB: next Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Pick the locked or live OWB long with the fewest Shorts built (STATUS.md, 10_Shorts/). Lift one self-contained 22-27 s stretch of its own VO and picture, reframe 9:16 the house way, house SFX kit only. Every Short rule applies (frame-0 named thing, hook caption, exact long title at 9-14 s, captions, loop, custom cover). Teach on screen: a number object or timeline call-out in frame. gate_shorts_open.py check must PASS. Spend nothing. Post the cut, contact sheet and gate output on #99, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T11:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T11:16Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "owb-short-from-locked"
+    },
+    {
+      "id": "J0233",
+      "title": "Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Test B rule (HOS PR #261): two search-titled Shorts per film. Pick the locked HOS long (004, 005, then the next locked) with the fewest built Shorts. Lift one stretch of its own VO and picture, 9:16, person card or date call-out on screen, captions throughout, search-shaped title draft. Spend nothing. Post on desk #180, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-14T11:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T11:16Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "hos-short-from-locked"
     }
   ],
   "focus": [
@@ -16380,8 +16465,8 @@
     "027"
   ],
   "backlog_last": {
-    "owb-short-from-locked": "2026-10-12T16:48Z",
-    "hos-short-from-locked": "2026-10-12T12:56Z",
+    "owb-short-from-locked": "2026-10-14T11:16Z",
+    "hos-short-from-locked": "2026-10-14T11:16Z",
     "owb-thumb-b": "2026-10-12T12:56Z",
     "hos-thumb-b": "2026-10-12T13:26Z",
     "owb-teach-overlays": "2026-10-12T13:26Z",
@@ -16395,6 +16480,6 @@
     "hos-next-script": "2026-10-12T16:18Z",
     "hos-plate-prep": "2026-10-12T16:23Z",
     "both-qa-sweep": "2026-10-12T16:28Z",
-    "studio-ctr-daily": "2026-10-12T21:21Z"
+    "studio-ctr-daily": "2026-10-14T11:16Z"
   }
 }

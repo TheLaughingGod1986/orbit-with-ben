@@ -33,6 +33,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0226 | mini | open (after J0225) | – | – | 030 edit · for gemini · assembly · `gemini-agy` · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 | J0227 | cloud | open | – | – | review · 030 Apophis: Claude quote check v01 + fix rows 7/13/20 before VO lock (after J0196) |  |
 | J0228 | cloud | open (after J0199) | – | – | listing · HOS Atom GHZDsiH7L7A: Sources line for description (from J0199 SOURCES.md, PR #312), Chief PASS, before 15 Oct 17:00Z |  |
+| J0231 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
