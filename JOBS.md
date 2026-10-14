@@ -14,10 +14,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0135 | mini | blocked | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
 | J0140 | mini | open (after J0139) | – | – | for codex · video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
-| J0167 | mini | blocked | codex | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
+| J0167 | mini | open (after J0166) | – | – | assembly · OWB compilation film: assemble 45-60 min cut |  |
 | J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0172 | any | open (after J0218) | – | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
-| J0175 | mini | blocked | codex | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
+| J0175 | mini | open (after J0174) | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0181 | mini | open | – | – | for codex · listing · `gpt-6-astra` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0188 | mini | open (after J0205) | – | – | for codex · studio · `gpt-6.1-sol` · Schedule PASSed Shorts in next free slots, private+publishAt, no collisions: OWB 020 jupiter_no_crust_v01, OWB 021 saturn_clock_v01; HOS 005 'Is the Heart a Pump?' | 6131998795 |

@@ -10962,19 +10962,19 @@
       "title": "OWB compilation film: assemble 45-60 min cut",
       "needs": "mini",
       "repo": "owb",
-      "body": "Assemble from the finished masters: fresh intro, chapter cards, transitions, consistent loudness (music_gate/sfx levels), chapters list for the description, end screen. picture_qa/polish_gate PASS. Park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "body": "Assemble from the finished masters: fresh intro, chapter cards, transitions, consistent loudness (music_gate/sfx levels), chapters list for the description, end screen. picture_qa/polish_gate PASS. Park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.\n\n**Acting-Chief ruling (Claude, 14 Oct 20:55Z), for J0168.**\n0. **First:** copy `owb_compilation_v04.mp4` off /private/tmp to the NAS or OWB UAT now. /private/tmp is purged after 3 days, which is how the 023 Venus master was lost. Check the sha256 (f8de3958…) after the copy. Do all render scratch on the NAS (the disk was at 1.9 GiB).\n1. **music_gate:** measure it only over the new sections (intros, bridges, chapter cards, close). The five inherited film bodies keep the mix of their already-passed masters, so they're excluded; that exception is accepted. The 28.3 s gap from 0:25 is in new intro VO, so it's a real fix: lay the house bed under it at the bed level used in the other intros. Then re-run music_gate on the new sections and the SFX level check.\n2. **Subscribe:** confirmed, keep only 021's subscribe beat (one per film).\n3. **Overlay motion and inherited shots:** Ben's watch is the check. Make the phone encode (the 023 PHONE settings) into OWB UAT as `OWB_compilation_v05_PHONE.mp4`, and say so on #99 so the Chief can flag it to Ben as ready to watch.\nNo upload or schedule until Ben has watched it and the Chief gives the final OK (J0168).\n",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-13T11:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: v04 complete 47:38; picture/SFX tool checks pass, music gap 28.3s from 0:25 remains FAIL; J0168 must rule on compilation music measurement, inherited-master/overlay review and subscribe default. Evidence COMPILATION_V04_HANDOFF_CODEX.md; step 7/8.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11335,16 +11335,14 @@
           "at": "2026-10-14T11:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 23 h"
+        },
+        {
+          "at": "2026-10-14T20:35Z",
+          "by": "claude",
+          "what": "reopened: acting-Chief ruling: move v04 off /tmp; fix intro-01 bed gap; compilation music exception for inherited bodies; 021 subscribe only; phone encode to UAT"
         }
       ],
       "kind": "assembly",
-      "progress": {
-        "step": 7,
-        "of": 8,
-        "at": "2026-10-13T11:18Z",
-        "by": "codex",
-        "note": "v04 render verified; QA evidence recorded; music gap needs Chief"
-      },
       "escalated_at": "2026-10-14T11:15Z"
     },
     {
@@ -12035,19 +12033,19 @@
       "title": "HOS compilation film: assemble 45-60 min cut",
       "needs": "mini",
       "repo": "hos",
-      "body": "Assemble from the finished masters: fresh intro, chapter cards, transitions, consistent loudness (music_gate/sfx levels), chapters list for the description, end screen. picture_qa/polish_gate PASS. Park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.",
+      "body": "Assemble from the finished masters: fresh intro, chapter cards, transitions, consistent loudness (music_gate/sfx levels), chapters list for the description, end screen. picture_qa/polish_gate PASS. Park for Chief. **Measure (Ben, 12 Oct 2026 14:50):** after 4 weeks compare views, retention (APV/AVD) and subs gained against the same channel's current Shorts (cut from longs) and longs over the same weeks; log in the channel's STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (OWB 00_Brand/Channel-Setup/audits/, HOS analytics).  No paid spend beyond subscription credit (floors 0, never top up). Nothing public without the normal PASS gates; uploads Private/scheduled only after Chief OK.\n\n**Acting-Chief ruling (Claude, 14 Oct 20:55Z), for J0176.**\n1. **Bridge 4 SFX gate:** add one motivated hit on the bridge's main visual event (the title or card reveal), at the house SFX level. Then re-run the gate.\n2. **Closing end card:** make it as a £0 code graphic in the HOS explainer look, with the channel name and 'More discovery stories'. No Orbit or Explorer, no subscribe text.\n3. **006 input:** the HOS compilation waits for the 006 master (picture due 25 Oct, airs 5 Nov), so park after steps 1–2 with 'waits for 006 master'. Keep all render scratch on the NAS, not /private/tmp.\n",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-13T10:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: Bridge 4 mandatory SFX-presence gate still FAILs (no motivated hit); bed-level failures fixed on B3/B4/B5/closing, HOS PR #300. Inputs still missing: 006 plates/master J0140 and closing end-card graphic; resume at 4/6 after ruling and inputs.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -12278,16 +12276,14 @@
           "at": "2026-10-14T11:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 24 h"
+        },
+        {
+          "at": "2026-10-14T20:35Z",
+          "by": "claude",
+          "what": "reopened: acting-Chief ruling: Bridge 4 one motivated hit; code-graphic end card; then wait for 006 master"
         }
       ],
       "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 6,
-        "at": "2026-10-13T10:46Z",
-        "by": "codex",
-        "note": "Music ducking fixed; B3/B5/closing sound gate clears, B4 no-hit failure parked for Chief"
-      },
       "escalated_at": "2026-10-14T11:15Z"
     },
     {
