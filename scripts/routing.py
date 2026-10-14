@@ -174,12 +174,21 @@ def fallbacks(kind: str) -> list:
 lanes = chain  # older name
 
 
+HOS_FLOW = {"veo-3.1-fast-generate-001": "flow-veo-3.1", "veo-3.1-generate-001": "flow-veo-3.1",
+            "gemini-2.5-flash-image": "flow-nano-banana-2"}
+
+
 def job_chain(job: dict) -> list:
     """The chain for one job: its kind's chain; a job naming only a model gets the chain of the first kind whose
     primary runs that model (claude-opus-5-5 -> the Claude chain), else just that model."""
     kind = job.get("kind")
     if kind in CHAINS:
-        return chain(kind)
+        ch = chain(kind)
+        if job.get("repo") == "hos" and kind in ("video", "image"):
+            # HOS picture is minted in Flow on the Ultra credits; Vertex is a separate, priced route (Claude as acting
+            # Chief, 14 Oct 2026: J0140 was walked to "Gemini on veo-3.1-fast-generate-001", which reads as Vertex).
+            ch = [(a, HOS_FLOW.get(m, m)) for a, m in ch]
+        return ch
     m = job.get("model") or ""
     for k, (_, ch, _) in CHAINS.items():
         if ch[0][1] == m:
