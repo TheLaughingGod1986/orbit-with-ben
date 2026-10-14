@@ -403,10 +403,29 @@ function videoDelta(v: VideoStat, then: Snapshot | null): number | null {
   return null;
 }
 
+/** Views every video in `now` gained since `then` (each video once, never below 0). */
+export function videoGains(now: Snapshot, then: Snapshot): number {
+  const seen = new Set<string>();
+  let total = 0;
+  for (const v of now.videos) {
+    if (seen.has(v.id)) continue;
+    seen.add(v.id);
+    total += Math.max(0, videoDelta(v, then) ?? 0);
+  }
+  return total;
+}
+
+/** Views gained between two snapshots. YouTube's channel total drops when a video goes private or spam views are
+ *  removed (13 Oct 2026: 7,532 -> 6,750 while the videos gained 124, so the tracker read "-782 views in 24 h",
+ *  Ben 14 Oct: "there are some errors here"). The change is never less than what the listed videos gained. */
+export function snapshotViews(now: Snapshot, then: Snapshot): number {
+  return Math.max(now.totals.views - then.totals.views, videoGains(now, then));
+}
+
 function channelChange(now: Snapshot, then: Snapshot | null, daily: DailyRow[], days: number): Change {
   if (then && then.date < now.date) {
     const subs = now.totals.subscribers != null && then.totals.subscribers != null ? now.totals.subscribers - then.totals.subscribers : null;
-    return { views: now.totals.views - then.totals.views, subscribers: subs, source: "snapshots" };
+    return { views: snapshotViews(now, then), subscribers: subs, source: "snapshots" };
   }
   if (daily.length >= days) {
     const rows = daily.slice(-days);
@@ -518,7 +537,7 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     const a = snaps[i - 1];
     const b = snaps[i];
     const subs = a.totals.subscribers != null && b.totals.subscribers != null ? b.totals.subscribers - a.totals.subscribers : null;
-    derived.push({ day: b.date, views: b.totals.views - a.totals.views, subsNet: subs });
+    derived.push({ day: b.date, views: snapshotViews(b, a), subsNet: subs });
   }
 
   // Once per id: snapshots from before 7 Oct can hold a video twice (the uploads playlist repeats some).
