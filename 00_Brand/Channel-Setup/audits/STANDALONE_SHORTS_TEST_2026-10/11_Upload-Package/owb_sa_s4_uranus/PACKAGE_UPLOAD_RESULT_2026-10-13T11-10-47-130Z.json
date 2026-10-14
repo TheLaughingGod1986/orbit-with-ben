@@ -1,0 +1,130 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-03T11:30:00.000Z",
+    "platformPostId": "ZpEA8stoSPA",
+    "platformUrl": "https://youtu.be/ZpEA8stoSPA",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-03T11:30:00.000Z",
+    "responseSummary": "{\"id\":\"ZpEA8stoSPA\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-03T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s4_uranus",
+    "sha256": "c4d1262afa79c2bb3424751509f7e664bae2b8f80818dea71745ed5d9ad2b10e",
+    "title": "This Planet Has 21-Year Winters",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 3,
+    "hasPinnedComment": false,
+    "thumbnailPath": null,
+    "scheduledAt": "2026-11-03T11:30:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/codex-J0216/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s4_uranus/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11b556d0e5a755e8461f"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11b7a449b60ba8ca89c7"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11b7a449b60ba8ca8a15"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "ZpEA8stoSPA",
+    "studioEditUrl": "https://studio.youtube.com/video/ZpEA8stoSPA/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Primary thumbnail",
+        "detail": "Upload primary thumb in Studio or re-run with --thumbnail",
+        "studioUrlHint": "https://studio.youtube.com/video/ZpEA8stoSPA/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/ZpEA8stoSPA/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/ZpEA8stoSPA/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/ZpEA8stoSPA/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/ZpEA8stoSPA/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/ZpEA8stoSPA/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (ZpEA8stoSPA). 2 required Studio finish step(s) remain."
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-10T11:30:00.000Z",
+    "platformPostId": "RLSJm59OSzI",
+    "platformUrl": "https://youtu.be/RLSJm59OSzI",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-10T11:30:00.000Z",
+    "responseSummary": "{\"id\":\"RLSJm59OSzI\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-10T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s6_titan",
+    "sha256": "afe0e80f044aca2887b9a9ef1d2aaf9fee9098285315fdc5d667eaca0019ca6c",
+    "title": "Standing on Titan Feels Like Diving 15 Metres Down",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 3,
+    "hasPinnedComment": false,
+    "thumbnailPath": null,
+    "scheduledAt": "2026-11-10T11:30:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/codex-J0216/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s6_titan/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11d106d8b03d5e0205cc"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11d206d8b03d5e02061a"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11d395a61d8e02c76492"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "RLSJm59OSzI",
+    "studioEditUrl": "https://studio.youtube.com/video/RLSJm59OSzI/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Primary thumbnail",
+        "detail": "Upload primary thumb in Studio or re-run with --thumbnail",
+        "studioUrlHint": "https://studio.youtube.com/video/RLSJm59OSzI/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/RLSJm59OSzI/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/RLSJm59OSzI/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/RLSJm59OSzI/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/RLSJm59OSzI/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/RLSJm59OSzI/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (RLSJm59OSzI). 2 required Studio finish step(s) remain."
+  }
+}

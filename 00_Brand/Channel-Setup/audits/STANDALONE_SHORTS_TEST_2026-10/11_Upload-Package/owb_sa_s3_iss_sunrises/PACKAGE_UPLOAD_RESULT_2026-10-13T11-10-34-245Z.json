@@ -1,0 +1,130 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-31T11:30:00.000Z",
+    "platformPostId": "XKlq0TK1OVA",
+    "platformUrl": "https://youtu.be/XKlq0TK1OVA",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-31T11:30:00.000Z",
+    "responseSummary": "{\"id\":\"XKlq0TK1OVA\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-31T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s3_iss_sunrises",
+    "sha256": "3ab16465a14ab6ca7cd664e420d7603fc4961ec58b48e167330c736d4dbcddda",
+    "title": "Astronauts See 16 Sunrises Every Day",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 3,
+    "hasPinnedComment": false,
+    "thumbnailPath": null,
+    "scheduledAt": "2026-10-31T11:30:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/codex-J0216/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s3_iss_sunrises/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s3_iss_sunrises_v01.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11a9daa3ebd6c49176f8"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11aa95a61d8e02c757f5"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6ace11aa3b22eef928260615"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "XKlq0TK1OVA",
+    "studioEditUrl": "https://studio.youtube.com/video/XKlq0TK1OVA/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Primary thumbnail",
+        "detail": "Upload primary thumb in Studio or re-run with --thumbnail",
+        "studioUrlHint": "https://studio.youtube.com/video/XKlq0TK1OVA/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/XKlq0TK1OVA/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/XKlq0TK1OVA/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/XKlq0TK1OVA/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video pill (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/XKlq0TK1OVA/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/XKlq0TK1OVA/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (XKlq0TK1OVA). 2 required Studio finish step(s) remain."
+  }
+}
