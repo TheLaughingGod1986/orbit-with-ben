@@ -39,6 +39,12 @@ class Routing(unittest.TestCase):
         self.assertEqual(routing.model_for(job, "codex"), "gpt-6-astra")
         self.assertEqual(routing.model_for(job, "cursor"), "cursor-auto")
 
+    def test_thumbnails_go_to_codex(self):
+        """Ben, 14 Oct 2026: Codex built the new thumbnails; Codex builds them from now on."""
+        self.assertEqual(routing.preferred_worker({"kind": "thumb"}), "codex")
+        self.assertEqual(routing.model_for({"kind": "thumb"}, "codex"), "gpt-6-astra")
+        self.assertEqual(routing.chain("thumb")[1:], [("cursor", "cursor-auto"), ("gemini", "gemini-agy")])
+
     def test_an_explicit_model_wins(self):
         job = {"kind": "assembly", "model": "gpt-6-astra"}
         self.assertEqual(routing.preferred_worker(job), "codex")
