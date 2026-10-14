@@ -1,5 +1,5 @@
 {
-  "next_id": 236,
+  "next_id": 237,
   "jobs": [
     {
       "id": "J0001",
@@ -16608,6 +16608,33 @@
       "for": "cursor",
       "model": "cursor-auto",
       "urgent": 1
+    },
+    {
+      "id": "J0236",
+      "title": "023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben approved v05e on the board (Sun 11 Oct 20:26, checks/OWB-023 verdict ok). Acting-Chief final OK (Claude, acting Chief per Ben 14 Oct; Ben approved, relayed by Claude as acting Chief), on condition that steps 1-3 pass:\n\n1. Package to v05e: in 02_Video-Projects/023_What-Happened-To-Venus/11_Upload-Package, point PACKAGE_MANIFEST.json `film` at the v05e master (OWB UAT/023_Venus_full_rough_v05e*.mp4 or its final export; record its sha256 and duration, 513 s per J0125). Rebuild the captions for v05e (_build_captions_v01.py pattern, en-GB) and re-time the description's chapter marks to v05e. Title, tags, thumbnail A (abc_v02 melts-lead), pinned comment and trailer stay as passed on 8 Oct (ac6b9d5).\n2. Gates on the v05e master: gate:episode, picture_qa / music_gate results from J0125 still apply (same file, checksum match), captions line up.\n3. Upload Private with publishAt 2026-10-25T18:00:00Z (the manifest's slot), set thumbnail A, synthetic disclosure on, not made for kids, register in UPLOADS.json, Buffer mirror per its rule. No Public, no Replace, £0.\n4. status.json upload stage done with the video id; post the id and the slot on #99; jobs.py done.\n\nIf any gate fails: block \"parked for Chief: <what failed>\" and stop. Do not re-render.\n",
+      "ref": "6172323177",
+      "film": "023",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-14T15:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T15:49Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [
