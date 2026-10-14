@@ -26,16 +26,15 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0206 | mini | blocked | cursor | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
 | J0210 | mini | blocked | codex | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0211 | any | blocked | codex | – | listing · HOS standalone Shorts S1-S4: titles, descriptions, tags (listing) for the four file+cover pairs | 6133298480 |
-| J0218 | any | blocked | codex | – | listing · HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs | 6135034321 |
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
-| J0226 | mini | blocked | gemini | – | 030 edit · for gemini · assembly · `gemini-agy` · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
+| J0226 | mini | open (after J0225) | – | – | 030 edit · for gemini · assembly · `gemini-agy` · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 | J0231 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0235 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') | 6165997020 |
-| J0236 | mini | blocked | gemini | – | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
+| J0236 | mini | open | – | – | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
 | J0237 | mini | claimed | gemini | 2026-10-14T21:28Z | studio · HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z | 6166069752 |
 
 Recently finished:
@@ -49,4 +48,4 @@ Recently finished:
 - J0223 done: 030 Apophis standalone Short: picture + DATA bar + assembly (after J0221 VO PASS) (Picture inputs done (d18cdf1a): Veo Fast rock tumble 9:16 8 s (£0.60 est.), Omni Orbit geo-satellite beat 9:16 (rock sweeps past, Orbit looks up/ducks/peers; on model in 6-frame sheet; Omni unpriced, billed late), flash-image satellite plate (£0.03), NASA limb plates iss023e057948/iss023e058455/iss034e048455 (plates_v01.json). Split: DATA bar -> J0225 (chart, Codex); assembly + gate -> next job (after J0225).)
 - J0222 done: 030 Apophis long: SOFTEN line 58 to NASA 'every few thousand years' (done)
 - J0221 done: 030 Apophis standalone Short: VO (SCRIPT_v01 locked, Thu 22 Oct 11:30) (Chief VO PASS 030 Apophis standalone Short vo_v01 (take 4d793e9b, #99 6136965014): 24.56 s, −20.2 LUFS; word-for-word from locked SCRIPT_v01; Scribe REVIEW is numerals/US spelling only (metres/kilometres → meters/kilometers), no retake. Outside the 18–22 s S1–S8 band but under the 25.5 s pause-trim ceiling (J0162); assembly may tighten end pause. Picture next (Veo rock + Omni Orbit + DATA bar). 136 credits, no top-up. Slot Thu 22 Oct 11:30 UK stands.)
-- J0217 done: HOS standalone Shorts S5-S8: custom 9:16 covers (PASS HOOK/BAND/PHONE ×4; wording KEEP; #308 merged 7d6af66; HOS #180 6134925830. Cursor to attach covers on package.)
+- J0218 done: HOS standalone Shorts S5-S8: titles, descriptions, tags (listing) for the four file+cover pairs (Acting-Chief PASS (Claude): S5-S8 listings and covers accepted, HOS PR #316 merged (2cdd596). S7 title stays: Priestley's mint restored the air the candle had used up, the gas he named later as oxygen, and the description keeps that distinction. S7 Related = HOS 006 once it's public (5 Nov); until then the channel link. J0172 can now schedule S5-S8 after J0211.)

@@ -15550,13 +15550,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-13T11:22Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-13T00:51Z",
-      "result": "parked for Chief: HOS PR #316 (8324bdf) S5-S8 listing/cover acceptance and merge; confirm S7 title scope and HOS 006 Related id; existing main generated-board check stale. Worker steps 3/3 complete; no upload or scheduling.",
+      "result": "Acting-Chief PASS (Claude): S5-S8 listings and covers accepted, HOS PR #316 merged (2cdd596). S7 title stays: Priestley's mint restored the air the candle had used up, the gas he named later as oxygen, and the description keeps that distinction. S7 Related = HOS 006 once it's public (5 Nov); until then the channel link. J0172 can now schedule S5-S8 after J0211.",
       "history": [
         {
           "at": "2026-10-13T00:51Z",
@@ -15602,6 +15602,11 @@
           "at": "2026-10-14T11:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 17 h"
+        },
+        {
+          "at": "2026-10-14T20:32Z",
+          "by": "claude",
+          "what": "done: Acting-Chief PASS (Claude): S5-S8 listings and covers accepted, HOS PR #316 merged (2cdd596). S7 title stays: Priestley's mint restored the air the candle had used up, the gas he named later as oxygen, and the description keeps that distinction. S7 Related = HOS 006 once it's public (5 Nov); until then the channel link. J0172 can now schedule S5-S8 after J0211."
         }
       ],
       "kind": "listing",
@@ -15612,7 +15617,8 @@
         "by": "codex",
         "note": "Validation recorded; HOS PR 316 commit 8324bdf ready for Chief"
       },
-      "escalated_at": "2026-10-14T11:15Z"
+      "escalated_at": "2026-10-14T11:15Z",
+      "done_ref": "2cdd596"
     },
     {
       "id": "J0219",
@@ -15976,19 +15982,19 @@
       "title": "030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225)",
       "needs": "mini",
       "repo": "owb",
-      "body": "**030 Apophis standalone Short: assembly + gate (split from J0223, kind `assembly`).** Air private + publishAt **Thu 22 Oct 2026 11:30 UK** (upload is a later job, after Chief's final OK).\n\n**Inputs, all made by J0223 (on the Mini, media git-ignored), under `02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/`:**\n- VO: `02_Voiceover/030_apophis_short_vo_v01.wav` (Chief PASS, 24.56 s, word times in `02_Voiceover/stt/030_apophis_short_vo_v01/stt_raw.json`). Pause-trim gaps over 0.4 s like `audits/STANDALONE_SHORTS_TEST_2026-10/_pause_trim_v02.py` (ceiling 25.5 s per J0162).\n- Rock: `04_Generated-Clips/veo_v01/apophis_rock_tumble_veo_v01.mp4` (Veo Fast 9:16 1080p, 8 s, silent; rock on black with a faint blue rim on the left). Composite it (screen/lighten or luma key) over the graded NASA limb plate. Never a whole planet.\n- Plates: `plates_v01.json` (files in `/private/tmp/owb_030_short/plates/`): frame 0 + last ~3 s `iss023e057948` (dusk limb), title beat 9–14 s `iss023e058455` (night side + aurora), spare `iss034e048455`.\n- Orbit (~1 s, on \"Stay, and I'll show you how close\"): `04_Generated-Clips/omni_v01/orbit_geo_sat_omni_v01.mp4` (Omni 9:16, see `orbit_gen_report_v01.json`; spot-check start/middle/end for Orbit identity before using; if it failed, keep the rock plate under the slot). Never at frame 0.\n- DATA overlay: the chart job's `code_graphics_v01/code_graphic_030short_r05_scale_v01.mov` + tick sidecar, landed on the spoken \"36,000\".\n\n**Build** (pattern: `audits/STANDALONE_SHORTS_TEST_2026-10/_assemble_standalone_shorts_v01.py`): hook caption CLOSER THAN **SATELLITES** (yellow SATELLITES) 0–2.2 s; title *An Asteroid Will Skim Past Earth on Friday the 13th* at 9–14 s; 3-word captions in UK spelling (metres, kilometres, \"Friday the 13th\"); picture change every 3–6 s; last ~3 s back to the rock past the limb so \"and watch…\" loops into frame 0; standalone bed `audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3`; low rumble at frame 0, one tick on the overlay; grain `noise=alls=4:allf=t`; mix −14 LUFS / −1 dBTP; VO, bed and SFX stems kept. Export `06_Final-Exports/030_apophis_short_v01.mp4` with `_meta.json` (cut list), `_frames.jpg`.\n\n**Gates:** `gate_shorts_open.py check <mp4> --air-date 2026-10-22` PASS (length warning OK), `sfx_kit.py level` PASS. Then park for Chief's frame review (Teach on screen STYLE + MOTION + DATA, Polish SFX + GRAIN). No spend.\n",
+      "body": "**030 Apophis standalone Short: assembly + gate (split from J0223, kind `assembly`).** Air private + publishAt **Thu 22 Oct 2026 11:30 UK** (upload is a later job, after Chief's final OK).\n\n**Inputs, all made by J0223 (on the Mini, media git-ignored), under `02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/`:**\n- VO: `02_Voiceover/030_apophis_short_vo_v01.wav` (Chief PASS, 24.56 s, word times in `02_Voiceover/stt/030_apophis_short_vo_v01/stt_raw.json`). Pause-trim gaps over 0.4 s like `audits/STANDALONE_SHORTS_TEST_2026-10/_pause_trim_v02.py` (ceiling 25.5 s per J0162).\n- Rock: `04_Generated-Clips/veo_v01/apophis_rock_tumble_veo_v01.mp4` (Veo Fast 9:16 1080p, 8 s, silent; rock on black with a faint blue rim on the left). Composite it (screen/lighten or luma key) over the graded NASA limb plate. Never a whole planet.\n- Plates: `plates_v01.json` (files in `/private/tmp/owb_030_short/plates/`): frame 0 + last ~3 s `iss023e057948` (dusk limb), title beat 9–14 s `iss023e058455` (night side + aurora), spare `iss034e048455`.\n- Orbit (~1 s, on \"Stay, and I'll show you how close\"): `04_Generated-Clips/omni_v01/orbit_geo_sat_omni_v01.mp4` (Omni 9:16, see `orbit_gen_report_v01.json`; spot-check start/middle/end for Orbit identity before using; if it failed, keep the rock plate under the slot). Never at frame 0.\n- DATA overlay: the chart job's `code_graphics_v01/code_graphic_030short_r05_scale_v01.mov` + tick sidecar, landed on the spoken \"36,000\".\n\n**Build** (pattern: `audits/STANDALONE_SHORTS_TEST_2026-10/_assemble_standalone_shorts_v01.py`): hook caption CLOSER THAN **SATELLITES** (yellow SATELLITES) 0–2.2 s; title *An Asteroid Will Skim Past Earth on Friday the 13th* at 9–14 s; 3-word captions in UK spelling (metres, kilometres, \"Friday the 13th\"); picture change every 3–6 s; last ~3 s back to the rock past the limb so \"and watch…\" loops into frame 0; standalone bed `audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3`; low rumble at frame 0, one tick on the overlay; grain `noise=alls=4:allf=t`; mix −14 LUFS / −1 dBTP; VO, bed and SFX stems kept. Export `06_Final-Exports/030_apophis_short_v01.mp4` with `_meta.json` (cut list), `_frames.jpg`.\n\n**Gates:** `gate_shorts_open.py check <mp4> --air-date 2026-10-22` PASS (length warning OK), `sfx_kit.py level` PASS. Then park for Chief's frame review (Teach on screen STYLE + MOTION + DATA, Polish SFX + GRAIN). No spend.\n\n**Acting-Chief (Claude, 14 Oct 20:35Z):** I can't review frames that are only on the Mini. Push `030_apophis_short_v04_frames.jpg` and the three crops (06.7 / 10.0 / 12.5 s), each under 1.5 MB, with `git add -f` to the branch `review/j0226-v04`, post the branch link on #99, then park again for Chief. No re-render.\n",
       "ref": "J0223",
       "film": "030",
       "stage": "edit",
       "after": "J0225",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-14T18:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T02:57Z",
-      "result": "parked for Chief: 030 Apophis Short v04 frame review (gate_shorts_open PASS, sfx_kit level PASS, 6.7 / 10 / 12.5 s full-res edge crops at 06_Final-Exports/030_apophis_short_v04_crop_{06.7,10.0,12.5}s.jpg)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-13T02:57Z",
@@ -16244,15 +16250,14 @@
           "at": "2026-10-14T19:43Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 030 Apophis Short v04 frame review (gate_shorts_open PASS, sfx_kit level PASS, 6.7 / 10 / 12.5 s full-res edge crops at 06_Final-Exports/030_apophis_short_v04_crop_{06.7,10.0,12.5}s.jpg)"
+        },
+        {
+          "at": "2026-10-14T20:32Z",
+          "by": "claude",
+          "what": "reopened: I can't review frames that are only on the Mini. Push `030_apophis_short_v04_frames.jpg` and the three crops (06.7 / 10.0 / 12.5 s), each under 1.5 MB, with `git add -f` to the branch `review/j0226-v"
         }
       ],
       "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-14T19:43Z",
-        "by": "gemini"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -16798,19 +16803,19 @@
       "title": "023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben approved v05e on the board (Sun 11 Oct 20:26, checks/OWB-023 verdict ok). Acting-Chief final OK (Claude, acting Chief per Ben 14 Oct; Ben approved, relayed by Claude as acting Chief), on condition that steps 1-3 pass:\n\n1. Package to v05e: in 02_Video-Projects/023_What-Happened-To-Venus/11_Upload-Package, point PACKAGE_MANIFEST.json `film` at the v05e master (OWB UAT/023_Venus_full_rough_v05e*.mp4 or its final export; record its sha256 and duration, 513 s per J0125). Rebuild the captions for v05e (_build_captions_v01.py pattern, en-GB) and re-time the description's chapter marks to v05e. Title, tags, thumbnail A (abc_v02 melts-lead), pinned comment and trailer stay as passed on 8 Oct (ac6b9d5).\n2. Gates on the v05e master: gate:episode, picture_qa / music_gate results from J0125 still apply (same file, checksum match), captions line up.\n3. Upload Private with publishAt 2026-10-25T18:00:00Z (the manifest's slot), set thumbnail A, synthetic disclosure on, not made for kids, register in UPLOADS.json, Buffer mirror per its rule. No Public, no Replace, £0.\n4. status.json upload stage done with the video id; post the id and the slot on #99; jobs.py done.\n\nIf any gate fails: block \"parked for Chief: <what failed>\" and stop. Do not re-render.\n",
+      "body": "Ben approved v05e on the board (Sun 11 Oct 20:26, checks/OWB-023 verdict ok). Acting-Chief final OK (Claude, acting Chief per Ben 14 Oct; Ben approved, relayed by Claude as acting Chief), on condition that steps 1-3 pass:\n\n1. Package to v05e: in 02_Video-Projects/023_What-Happened-To-Venus/11_Upload-Package, point PACKAGE_MANIFEST.json `film` at the v05e master (OWB UAT/023_Venus_full_rough_v05e*.mp4 or its final export; record its sha256 and duration, 513 s per J0125). Rebuild the captions for v05e (_build_captions_v01.py pattern, en-GB) and re-time the description's chapter marks to v05e. Title, tags, thumbnail A (abc_v02 melts-lead), pinned comment and trailer stay as passed on 8 Oct (ac6b9d5).\n2. Gates on the v05e master: gate:episode, picture_qa / music_gate results from J0125 still apply (same file, checksum match), captions line up.\n3. Upload Private with publishAt 2026-10-25T18:00:00Z (the manifest's slot), set thumbnail A, synthetic disclosure on, not made for kids, register in UPLOADS.json, Buffer mirror per its rule. No Public, no Replace, £0.\n4. status.json upload stage done with the video id; post the id and the slot on #99; jobs.py done.\n\nIf any gate fails: block \"parked for Chief: <what failed>\" and stop. Do not re-render.\n\n**Acting-Chief ruling (Claude, 14 Oct 20:35Z):** re-run `_assemble_venus_full_v05e.py` locally (£0 ffmpeg) to rebuild the CRF 18 v05e master. Write it straight to OWB UAT (or the NAS), never /private/tmp. Check it against the phone encode before use: duration 513.0 s ±0.1, the same dHash (±4 bits) on frames at 10 evenly spaced times, and integrated loudness within 0.5 LU. Record the new sha256 in PACKAGE_MANIFEST.json, then carry on with steps 2–4. Never upload the phone encode (CRF 23, 1.8 Mb/s). If the rebuild differs from the phone encode on any check, park for Chief with the numbers.\n",
       "ref": "6172323177",
       "film": "023",
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-14T19:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-14T15:49Z",
-      "result": "parked for Chief: step 1 + gate:episode PASS committed (f6d12d8b), but v05e CRF 18 master /private/tmp/023_Venus_full_rough_v05e.mp4 (sha256 f7eb38b3, 11 Oct) was purged by 3-day /private/tmp cleanup and never copied to OWB UAT/NAS; only phone encode OWB UAT/023_Venus_v05e_PHONE.mp4 (sha256 72171d8f, CRF 23 maxrate 1800k, 105 MB, 513.0 s) is on disk. Brief forbids re-render: rule whether to re-run _assemble_venus_full_v05e.py (£0 local ffmpeg) or upload the phone encode.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-14T15:49Z",
@@ -16846,15 +16851,14 @@
           "at": "2026-10-14T20:27Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: step 1 + gate:episode PASS committed (f6d12d8b), but v05e CRF 18 master /private/tmp/023_Venus_full_rough_v05e.mp4 (sha256 f7eb38b3, 11 Oct) was purged by 3-day /private/tmp cleanup and never copied to OWB UAT/NAS; only phone encode OWB UAT/023_Venus_v05e_PHONE.mp4 (sha256 72171d8f, CRF 23 maxrate 1800k, 105 MB, 513.0 s) is on disk. Brief forbids re-render: rule whether to re-run _assemble_venus_full_v05e.py (£0 local ffmpeg) or upload the phone encode."
+        },
+        {
+          "at": "2026-10-14T20:32Z",
+          "by": "claude",
+          "what": "reopened: re-run `_assemble_venus_full_v05e.py` locally (£0 ffmpeg) to rebuild the CRF 18 v05e master. Write it straight to OWB UAT (or the NAS), never /private/tmp. Check it against the phone encode before us"
         }
       ],
       "kind": "studio",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-14T20:27Z",
-        "by": "gemini"
-      },
       "urgent": 5
     },
     {
