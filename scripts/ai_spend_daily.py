@@ -9,7 +9,7 @@ Pools:
 - elevenlabs: API `/v1/user/subscription` (character_count / character_limit). Key via el_client; never printed.
 - flow:       the Flow page in the Mini's CDP Chrome (:9222), "N credits" text, as the HOS mint scripts read it.
 - vertex:     Cloud Billing > Credits (all) in the same Chrome. Free Trial is `--left`; every credit line goes in --note.
-- cursor:     cursor.com/dashboard/spending in the same Chrome: percent of the Other Models pool left this cycle
+- cursor:     cursor.com/dashboard/spending in the same Chrome: percent of the Cursor Models pool left this cycle
               (the page shows % used per pool and no $ since 12 Oct); Cursor Models and Grok Bot weekly go in --note.
 
 A pool whose read fails records nothing; the reason goes to the log (and stdout). Never guess a number.
@@ -149,8 +149,10 @@ CURSOR_POOLS = {"cursor models": "Cursor Models", "other models": "Other Models"
 def parse_cursor(text: str) -> dict:
     """The /dashboard/spending page (12 Oct 2026): a percent used per pool, no $ figure.
 
-    Cursor Models overflow into Other Models, then on-demand (disabled), so Other Models is the pool that runs out:
-    `left` is its percent left of 100. The other pools and the reset dates go in the note."""
+    `left` is the percent left of Cursor Models, the pool the Mini's Cursor runs on (Auto, Composer): when it fills,
+    usage overflows into Other Models, which also carries Claude-in-Cursor. Until 14 Oct `left` was Other Models, so the
+    board read "Cursor 0%" while Cursor's own models were 86% free (Ben, 14 Oct 2026: "plenty left in cursor").
+    Other Models (Claude-in-Cursor, flagged in scripts/credit_flags.json when used up) and the reset dates go in the note."""
     rows = [ln.strip() for ln in text.splitlines() if ln.strip()]
     used: dict[str, int] = {}
     label = None
@@ -163,8 +165,8 @@ def parse_cursor(text: str) -> dict:
         if m and label and label not in used:
             used[label] = int(m.group(1))
             label = None
-    if "other models" not in used:
-        raise RuntimeError("no 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
+    if "other models" not in used and "cursor models" not in used:
+        raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
     reset = re.search(r"Usage limits reset on ([^\n(]+?)\s*(?:\(|\n|$)", text)
     weekly = re.search(r"Weekly usage\s+\d{1,3}%\s+used\s+Resets ([^\n(]+?)\s*(?:\(|\n|$)", text)
     bits = [f"{CURSOR_POOLS[k]} {used[k]}% used" for k in CURSOR_POOLS if k in used]
@@ -172,7 +174,8 @@ def parse_cursor(text: str) -> dict:
         bits.append(f"limits reset {reset.group(1).strip()}")
     if weekly:
         bits.append(f"weekly resets {weekly.group(1).strip()}")
-    return {"left": 100 - used["other models"], "total": 100, "used": used, "note": "; ".join(bits)}
+    return {"left": 100 - used.get("cursor models", used.get("other models", 0)), "total": 100, "used": used,
+            "note": "; ".join(bits)}
 
 
 def read_cursor() -> dict:
@@ -181,7 +184,7 @@ def read_cursor() -> dict:
         raise RuntimeError("Cursor dashboard is signed out in the CDP Chrome")
     r = parse_cursor(text)
     return {"left": r["left"], "total": r["total"],
-            "note": f"Cursor spending page, % of Other Models left: {r['note']} (CDP :9222)"}
+            "note": f"Cursor spending page, % of Cursor Models left: {r['note']} (CDP :9222)"}
 
 
 def flow_refill(r: dict, last_left: float | None) -> dict:

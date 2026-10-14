@@ -76,7 +76,7 @@ class CursorSpending(unittest.TestCase):
     def test_percent_layout(self):
         import ai_spend_daily
         r = ai_spend_daily.parse_cursor(SPENDING_PAGE)
-        self.assertEqual((r["left"], r["total"]), (70, 100))
+        self.assertEqual((r["left"], r["total"]), (86, 100))   # Cursor Models: the pool the Mini's Cursor runs on
         self.assertEqual(r["used"], {"cursor models": 14, "other models": 30, "weekly usage": 80})
         self.assertIn("limits reset 6 Nov", r["note"])
         self.assertIn("weekly resets 16 Oct", r["note"])

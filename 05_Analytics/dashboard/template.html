@@ -43,6 +43,8 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); ou
 .cell .sub { font-size: .8rem; color: var(--ink-3); }
 .delta { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
 .delta.up { color: var(--up); } .delta.down { color: var(--down); } .delta.flat { color: var(--ink-3); }
+.cell .vs { display: block; font-size: .72rem; color: var(--ink-3); margin-top: 2px; }
+.cell .vs .delta { font-size: .72rem; }
 .row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
 .seg button { font: 500 .82rem var(--f-body); background: transparent; color: var(--ink-2); border: 0; padding: 5px 11px; cursor: pointer; }
@@ -281,11 +283,29 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   function drawReadout(c) {
     document.documentElement.style.setProperty("--accent", colorVar(c.channel));
     const ch = c.change;
-    const growth = (label, x) => `<div class="cell"><span class="eyebrow">${label}</span><span class="big delta ${cls(x && x.views)}">${signed(x && x.views)}</span><span class="sub">views · <span class="delta ${cls(x && x.subscribers)}">${signed(x && x.subscribers)}</span> subs${x && x.source === "analytics" ? " · YT Analytics" : ""}</span></div>`;
+    // Ben, 14 Oct: "the progress and percentage in smaller font ... of the previous week, previous year, previous day, to
+    // show that the channel is growing or declining". Like for like from YouTube Analytics days (c.daily, whole channel):
+    // the latest n days against the n days before them, and against the same n days a year earlier once there are any.
+    const days = (c.daily || []).slice().sort((a, b) => a.day.localeCompare(b.day));
+    const sumDays = (from, to) => { const r = days.filter((d) => d.day > from && d.day <= to); return r.length ? r.reduce((n, d) => n + (d.views || 0), 0) : null; };
+    const shift = (day, n) => { const d = new Date(day + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() - n); return d.toISOString().slice(0, 10); };
+    const last = days.length ? days[days.length - 1].day : null;
+    const pctTxt = (now, then) => (now == null || then == null) ? null : then === 0 ? (now > 0 ? ["up", "new"] : ["flat", "0%"])
+      : ((p) => [p > 0 ? "up" : p < 0 ? "down" : "flat", (p > 0 ? "▲ " : p < 0 ? "▼ " : "") + Math.abs(p).toFixed(Math.abs(p) < 10 ? 1 : 0) + "%"])(100 * (now - then) / then);
+    const vsLine = (n, word) => {
+      if (!last || state.gf !== "all") return "";
+      const nowV = sumDays(shift(last, n), last), first = days[0].day;
+      if (nowV == null) return "";
+      const prevV = shift(last, 2 * n) >= shift(first, 1) ? sumDays(shift(last, 2 * n), shift(last, n)) : null;
+      const yearV = shift(last, 365 + n) >= shift(first, 1) ? sumDays(shift(last, 365 + n), shift(last, 365)) : null;
+      const a = pctTxt(nowV, prevV), y = pctTxt(nowV, yearV);
+      return `<span class="vs" title="YouTube Analytics: ${nowV.toLocaleString("en-GB")} views in the ${n === 1 ? "day" : n + " days"} to ${ukDate(last)}${prevV != null ? `, ${prevV.toLocaleString("en-GB")} in the ${n === 1 ? "day" : n + " days"} before` : ""}">${a ? `<span class="delta ${a[0]}">${a[1]}</span> vs ${word}` : `vs ${word}: not enough days yet`} · ${y ? `<span class="delta ${y[0]}">${y[1]}</span> vs last year` : "last year: no data yet"}</span>`;
+    };
+    const growth = (label, x, n, word) => `<div class="cell"><span class="eyebrow">${label}</span><span class="big delta ${cls(x && x.views)}">${signed(x && x.views)}</span><span class="sub">views · <span class="delta ${cls(x && x.subscribers)}">${signed(x && x.subscribers)}</span> subs${x && x.source === "analytics" ? " · YT Analytics" : ""}</span>${vsLine(n, word)}</div>`;
     $("readout").innerHTML =
       `<div class="cell"><span class="eyebrow">Subscribers</span><span class="big">${fmt(c.totals.subscribers)}</span><span class="sub">${esc(c.handle)}</span></div>` +
       `<div class="cell"><span class="eyebrow">Total views</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} videos</span></div>` +
-      growth("Last 24 hours", ch.d1) + growth("Last 7 days", ch.d7) + growth("Last 30 days", ch.d30);
+      growth("Last 24 hours", ch.d1, 1, "the day before") + growth("Last 7 days", ch.d7, 7, "the week before") + growth("Last 30 days", ch.d30, 30, "the 30 days before");
     $("stamp").textContent = (state.gf !== "all" ? `${state.gf === "short" ? "Shorts" : "Long films"} only (views summed per video; daily chart, weekly totals and sources are whole channel) · ` : "") + `Snapshot ${ukDate(c.date)}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)}` : "") + ` · tracking since ${ukDate(c.firstSnapshot)}`;
   }
 

@@ -12,7 +12,7 @@ AI Ultra credits refill on Mon 12 Oct. Every agent that reads a balance or spend
   python3 scripts/ai_spend.py report            # the month so far, per pool and per film
   python3 scripts/ai_spend.py doc               # the board/credits document (JSON) the Kanban page reads
 
-Pools and units: cursor (% of Cursor's Other Models pool left, of 100, from its spending page; it shows no $ since
+Pools and units: cursor (% of Cursor's own Cursor Models pool left, of 100, from its spending page; it shows no $ since
 12 Oct), flow (Flow credits), vertex (GBP of
 Google Cloud credit), elevenlabs (credits), claude (notes only, e.g. "hit the 5-hour limit"). Each pool counts from its
 plan's reset date (plans.json poolStarts): Cursor from 8 Oct, Flow from 12 Oct. `record` is a balance reading; `spend` is one use. Add --git to
