@@ -9,7 +9,8 @@ HERE = Path(__file__).resolve().parent
 PROJ = HERE.parent
 SCRIPT = PROJ / "01_Script" / "venus_script_master_v02.md"
 WORDS = PROJ / "02_Voiceover" / "words.json"
-OUT = HERE / "Captions" / "venus_long_v04_en-GB.srt"
+OUT = HERE / "Captions" / "venus_long_v05e_en-GB.srt"
+MUTE = (435.40, 436.70)  # v05e (J0125): "People have landed there." silenced in VO
 MAX = 84  # two lines of 42
 
 
@@ -93,10 +94,11 @@ def main():
         rows[c][1] = max(rows[c][1], rows[c][0] + 1.0)
         if c + 1 < len(rows) and rows[c + 1][0] is not None:
             rows[c][1] = min(rows[c][1] + 0.4, max(rows[c + 1][0], rows[c][0] + 1.0))
+    kept = [(t, (a, b)) for t, (a, b) in zip(caps, rows) if not (a >= MUTE[0] and b <= MUTE[1] + 0.5)]
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(f"{i}\n{srt_time(a)} --> {srt_time(b)}\n{two_lines(t)}\n"
-                             for i, (t, (a, b)) in enumerate(zip(caps, rows), 1)))
-    print(f"{OUT.name}: {len(caps)} cues, last ends {rows[-1][1]:.1f} s; matched {len(m)}/{len(sn)} script words")
+                             for i, (t, (a, b)) in enumerate(kept, 1)))
+    print(f"{OUT.name}: {len(kept)} cues (dropped {len(caps) - len(kept)} muted), last ends {kept[-1][1][1]:.1f} s; matched {len(m)}/{len(sn)} script words")
 
 
 if __name__ == "__main__":
