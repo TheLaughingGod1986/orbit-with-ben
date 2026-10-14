@@ -37,7 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0244 | mini | open | – | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0246 | mini | open | – | – | for codex · review · Packaging panel (codex): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
-| J0247 | mini | open | – | – | for gemini · review · Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
+| J0247 | mini | claimed | gemini | 2026-10-14T23:21Z | for gemini · review · Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
 | J0248 | mini | open | – | – | for gemini · review · `gemini-agy` · Packaging panel (cursor): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
 | J0249 | cloud | open (after J0248) | – | – | review · Packaging panel decision: 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
 
