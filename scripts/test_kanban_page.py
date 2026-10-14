@@ -266,7 +266,7 @@ class VenusApproved(unittest.TestCase):
         self.assertEqual(j["you"], "")
         self.assertEqual(j["mood"], "watched")
         self.assertTrue(j["line"].startswith("Approved by Ben Sun 11 Oct 20:26"))
-        self.assertTrue(any(s["who"] == "Claude" and s["what"].startswith("ship v05e") for s in j["steps"]))
+        self.assertTrue(any(s["what"].startswith("ship v05e") for s in j["steps"]))   # Claude, or the Mac mini (J0236, 14 Oct)
         self.assertTrue(all(s.get("done") for s in j["steps"] if s["who"] == "Ben"))
 
 
