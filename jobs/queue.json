@@ -16400,13 +16400,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-14T14:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-14T11:16Z",
-      "result": "Studio access unavailable: localhost CDP 9223 and 9222 both return connection refused, verified outside sandbox. Needs signed-in Mini browser sessions restored; no metrics or YouTube state changed.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-14T11:16Z",
@@ -16432,18 +16432,16 @@
           "at": "2026-10-14T14:18Z",
           "by": "codex",
           "what": "blocked: Studio access unavailable: localhost CDP 9223 and 9222 both return connection refused, verified outside sandbox. Needs signed-in Mini browser sessions restored; no metrics or YouTube state changed."
+        },
+        {
+          "at": "2026-10-14T15:37Z",
+          "by": "claude",
+          "what": "reopened: CDP browsers restored by Ben 14 Oct"
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
-      "urgent": 0,
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-14T14:18Z",
-        "by": "codex",
-        "note": "Preflight complete; both CDP endpoints refuse connections; no metrics read"
-      }
+      "urgent": 0
     },
     {
       "id": "J0232",
