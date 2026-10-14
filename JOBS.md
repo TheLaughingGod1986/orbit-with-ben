@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
-| J0235 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') | 6165997020 |
+| J0235 | mini | claimed | codex | 2026-10-14T22:36Z | for codex · studio · `gpt-6.1-sol` · HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') | 6165997020 |
 | J0236 | mini | open | – | – | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
 | J0238 | mini | open | – | – | studio · Mini: install the CDP browser watchdog (HOS #318) so Studio jobs self-heal; post status |  |
 | J0239 | mini | open | – | – | qa · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
