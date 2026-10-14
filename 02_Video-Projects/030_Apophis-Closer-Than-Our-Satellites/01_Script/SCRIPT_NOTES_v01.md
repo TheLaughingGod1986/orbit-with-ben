@@ -44,3 +44,7 @@ The timeline builds across the film, so it counts as one DATA moment. No two cod
 ## J0222 (Cursor on Claude, 13 Oct 2026)
 
 Line 58 softened per Chief (J0197, #99 6136803753): "only about once in a thousand years" -> "only every few thousand years on average" (NASA Apophis Facts wording; same 7 words). TEACH note and SOURCES row 14 updated with the NASA URL and candidate quote; row stays TO VERIFY until Gemini confirms it on the page. review:script still PASS 94.5.
+
+## J0227 (Claude, 14 Oct 2026): quote check, script v02 locked for Chief
+
+`apophis_script_master_v02.md`, review:script PASS 94.5. Line 18: "By Christmas" becomes "At its peak" (on 24 Dec CNEOS gave 1.6%; the 2.7% peak has no dated source). Line 87: "around fifteen hundred" becomes "more than sixteen hundred" (NASA: "over 1,600"). Line 58: the unsourced "Billions of people…" sentence is cut, and "known about" becomes "known about in advance" (NASA wording). The TEACH notes no longer say "magnitude 3.1" (the JPL page says "about 3rd-4th magnitude"). Details: `CLAUDE_QUOTE_CHECK_v01.md`.
