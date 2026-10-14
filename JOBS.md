@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0235 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') | 6165997020 |
-| J0236 | mini | claimed | gemini | 2026-10-14T22:24Z | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
+| J0236 | mini | blocked | gemini | – | 023 upload · studio · 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) | 6172323177 |
 | J0237 | mini | open | – | – | studio · HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z | 6166069752 |
 
 Recently finished:

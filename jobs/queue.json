@@ -16806,13 +16806,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-14T19:44Z",
-      "eta": "2026-10-14T22:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-14T15:49Z",
-      "result": "",
+      "result": "parked for Chief: step 1 + gate:episode PASS committed (f6d12d8b), but v05e CRF 18 master /private/tmp/023_Venus_full_rough_v05e.mp4 (sha256 f7eb38b3, 11 Oct) was purged by 3-day /private/tmp cleanup and never copied to OWB UAT/NAS; only phone encode OWB UAT/023_Venus_v05e_PHONE.mp4 (sha256 72171d8f, CRF 23 maxrate 1800k, 105 MB, 513.0 s) is on disk. Brief forbids re-render: rule whether to re-run _assemble_venus_full_v05e.py (£0 local ffmpeg) or upload the phone encode.",
       "history": [
         {
           "at": "2026-10-14T15:49Z",
@@ -16843,6 +16843,11 @@
           "at": "2026-10-14T20:27Z",
           "by": "gemini",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-10-14T20:27Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: step 1 + gate:episode PASS committed (f6d12d8b), but v05e CRF 18 master /private/tmp/023_Venus_full_rough_v05e.mp4 (sha256 f7eb38b3, 11 Oct) was purged by 3-day /private/tmp cleanup and never copied to OWB UAT/NAS; only phone encode OWB UAT/023_Venus_v05e_PHONE.mp4 (sha256 72171d8f, CRF 23 maxrate 1800k, 105 MB, 513.0 s) is on disk. Brief forbids re-render: rule whether to re-run _assemble_venus_full_v05e.py (£0 local ffmpeg) or upload the phone encode."
         }
       ],
       "kind": "studio",
