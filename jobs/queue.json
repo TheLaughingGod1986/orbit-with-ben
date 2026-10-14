@@ -1,5 +1,5 @@
 {
-  "next_id": 237,
+  "next_id": 238,
   "jobs": [
     {
       "id": "J0001",
@@ -16656,6 +16656,33 @@
       ],
       "kind": "studio",
       "urgent": 5
+    },
+    {
+      "id": "J0237",
+      "title": "HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-on from J0228 (acting Chief PASS, Claude, 14 Oct; draft in #99 6166069752). HOS 004 Atom `GHZDsiH7L7A` airs **Thu 15 Oct 17:00Z**. Finish before then.\n\n1. **HOS PR #312, `02_Video-Projects/004_Whats-Really-Inside-An-Atom/01_Script/SOURCES.md`:** close row 28 with the two quotes in #99 6166069752 (Rutherford 1911, Phil. Mag. 21, 669–688, chemteam.info transcription; the May 1911 date line). Add the caution: Rutherford did not use the word \"nucleus\" in the 1911 paper, so no card says he named it then.\n2. **Description of `GHZDsiH7L7A` (HOS channel; check the channel name first):** add this one line, as its own paragraph, straight before the image credits. Change nothing else.\n\n> Sources: J. Dalton, A New System of Chemical Philosophy (1808); D. Mendeleev, Zeitschrift für Chemie 12 (1869); J. J. Thomson, \"Cathode Rays\", Philosophical Magazine 44 (1897); H. Geiger & E. Marsden, \"On a Diffuse Reflection of the α-Particles\", Proc. R. Soc. A 82 (1909); E. Rutherford, \"The Scattering of α and β Particles by Matter and the Structure of the Atom\", Philosophical Magazine 21 (1911); H. G. J. Moseley, \"The High-Frequency Spectra of the Elements\", Philosophical Magazine 26 (1913).\n\n   - Way 1: HOS Studio in the Mini's signed-in browser.\n   - Way 2: the Data API. Read the live snippet, change only `description`, send the snippet back without `status` (the same way `07_Content-Ops/scripts/retitle-videos.ts` keeps everything else). Print a before/after diff first (dry run), then write.\n   - Description only: no change to the title, schedule, privacy, thumbnail or file.\n3. Read it back and post on #99: the id, \"description: + Sources line\", OK'd by acting Chief (Claude) on J0228, done by <agent>.\n\nIf the HOS sign-in or token isn't available, block with \"needs Ben: HOS sign-in\" straight away so it can be pasted by hand before 17:00Z.\n",
+      "ref": "6166069752",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-14T15:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T15:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [
