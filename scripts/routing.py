@@ -118,6 +118,48 @@ CHAINS = {
 # Older view kept for callers: kind -> (job type, primary, first fallback or None, how).
 KINDS = {k: (what, ch[0], ch[1] if len(ch) > 1 else None, how) for k, (what, ch, how) in CHAINS.items()}
 
+# ---- Out of credit, per model (Ben, 14 Oct 2026: "Once Cursor and also Grokbot have run out of credits, please add a
+# flag onto the system ... and switch it then to Codex or to Cursor or to Gemini to run. We need this system up 24/7").
+# A flag names a model (one lane) or an agent (all its lanes). Two sources:
+#   - scripts/credit_flags.json, committed: Claude or Chief set it from the credit readings (ai_spend.py) with the
+#     known reset time, e.g. Cursor's "Other Models" pool (Claude-in-Cursor) used up until 6 Nov while its own
+#     models (Auto) still have credit;
+#   - the relay's own marks (chief_relay.py): a run that ends out of credit on a model with its own pool flags that
+#     model only, so Cursor on Auto keeps working while Claude-in-Cursor waits.
+# The chains skip flagged lanes, so a job goes straight to the next worker and model that can run it.
+# Models that bill a pool of their own, separate from the worker's other models (an out-of-credit run on one of these
+# flags the model, not the whole worker).
+SEPARATE_POOLS = {"cursor-claude-opus-5-5"}
+OUT = set()   # flagged model ids and agent ids; chief_relay.py fills it each run (credit_flags.json + its own marks)
+FLAGS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "credit_flags.json")
+
+
+def read_flags(now=None, path: str = FLAGS_FILE) -> dict:
+    """{model or agent: reason} for flags in credit_flags.json still in force (out_until in the future, ISO UTC)."""
+    import datetime as dt
+    import json
+    now = now or dt.datetime.now(dt.timezone.utc)
+    try:
+        flags = json.load(open(path)).get("flags", {})
+    except (OSError, ValueError, AttributeError):
+        return {}
+    out = {}
+    for k, v in flags.items():
+        try:
+            until = dt.datetime.fromisoformat(str(v.get("out_until", "")).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if until.tzinfo is None:
+            until = until.replace(tzinfo=dt.timezone.utc)
+        if until > now:
+            out[k] = f"{v.get('reason') or 'out of credit'} (until {v['out_until']})"
+    return out
+
+
+def lane_ok(agent: str, model: str) -> bool:
+    """A lane can run unless its model or its whole agent is flagged out of credit."""
+    return model not in OUT and agent not in OUT
+
 
 def chain(kind: str) -> list:
     """Primary, then every fallback in order."""
@@ -154,7 +196,7 @@ def next_lane(job: dict, after_agent: str = "", up=None, after_model: str = ""):
         idx = [i for i, (a, m) in enumerate(ch) if a == after_agent and (not after_model or m == after_model)]
         start = idx[0] + 1 if idx else 0
     for a, m in ch[start:]:
-        if a in MINI_WORKERS and (up is None or a in up):
+        if a in MINI_WORKERS and (up is None or a in up) and lane_ok(a, m):
             return (a, m)
     return None
 
@@ -190,10 +232,10 @@ def model_for(job: dict, agent: str) -> str:
     table's model for this agent in the job's kind (primary, then fallbacks in order), else "" (the agent's default).
     A Claude job handed to Cursor gets cursor-claude-opus-5-5, so Cursor runs it on the Claude model, not Auto."""
     m = job.get("model") or ""
-    if m and RUNS_ON.get(m) == agent:
+    if m and RUNS_ON.get(m) == agent and lane_ok(agent, m):
         return m
     for a, lm in job_chain(job):
-        if a == agent:  # this agent's first lane in the chain decides (facts: Cursor drives agy, not Claude)
+        if a == agent and lane_ok(a, lm):  # this agent's first lane with credit decides (facts: Cursor drives agy)
             return lm if RUNS_ON.get(lm) == agent else ""
     return ""
 
@@ -202,7 +244,7 @@ def preferred_worker(job: dict, up=None) -> str:
     """The Mini worker a job should go to: its own model's worker, else the first Mini worker in its chain that is in
     `up` (all of them when up is None); "" when the chain names none (any worker will do)."""
     m = job.get("model") or ""
-    if RUNS_ON.get(m) in MINI_WORKERS and (up is None or RUNS_ON[m] in up):
+    if RUNS_ON.get(m) in MINI_WORKERS and (up is None or RUNS_ON[m] in up) and lane_ok(RUNS_ON[m], m):
         return RUNS_ON[m]
     lane = next_lane(job, up=up)
     return lane[0] if lane else ""

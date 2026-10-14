@@ -23,7 +23,7 @@ class Relay(unittest.TestCase):
         notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
         self.env = dict(os.environ)
         os.environ.update({"CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
-                           "CHIEF_HEARTBEAT": "0"})  # never push a heartbeat from a test run on the Mini
+                           "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0"})  # never push a heartbeat from a test run on the Mini
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
@@ -32,6 +32,7 @@ class Relay(unittest.TestCase):
 
     def tearDown(self):
         cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB = self.old_state, self.old_home, self.old_fetch, self.old_owb
+        cr.routing.OUT = set()
         os.environ.clear()
         os.environ.update(self.env)
 
@@ -479,7 +480,9 @@ class Relay(unittest.TestCase):
         self.assertFalse(self.ran("codex"))
         j = self.job(q, "J0309")
         self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-agy"))
-        self.assertIn("retry after", cr.state_of("cursor", cr.now())[1])
+        # Ben, 14 Oct: only Claude-in-Cursor's pool is empty; Cursor stays up for its own models (Auto)
+        self.assertEqual(cr.state_of("cursor", cr.now())[1], "ready")
+        self.assertIn("cursor-claude-opus-5-5", cr.load_out(cr.now()))
         runs = [json.loads(l) for l in (cr.STATE / "chief" / "runs.jsonl").read_text().splitlines()]
         self.assertEqual([(r["job"], r["worker"], r["cli_model"], r["lane"], r["out_of_usage"]) for r in runs],
                          [("J0309", "cursor", "claude-opus-5-5", 2, True), ("J0309", "gemini", "", 3, False)])
@@ -555,6 +558,98 @@ class Relay(unittest.TestCase):
         self.assertTrue(log.startswith("|"))  # no parent
         doc = json.loads(subprocess.run(["git", "-C", str(remote), "show", "mini-heartbeat:heartbeat.json"], capture_output=True, text=True, check=True).stdout)
         self.assertEqual((doc["state"], doc["agent"]), ("running", "cursor"))
+
+    # ---- Ben, 14 Oct 2026: out-of-credit flags, Claude as acting Chief, and the Mini repairing itself ----
+
+    def flags(self, flags):
+        import json
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "scripts" / "credit_flags.json").write_text(json.dumps({"flags": flags}))
+
+    def test_a_flagged_model_is_skipped_and_its_worker_keeps_its_other_models(self):
+        q = self.claude_setup('{"jobs": [{"id": "J0401", "kind": "review", "status": "open", "needs": "cloud"},'
+                              ' {"id": "J0402", "kind": "assembly", "status": "open", "needs": "mini"}]}')
+        os.environ["AGY_BIN"] = str(self.fake("agy", 'echo "gemini did it"'))
+        self.flags({"cursor-claude-opus-5-5": {"out_until": "2026-11-06T00:00:00Z", "reason": "Other Models used up"}})
+        cr.mark_down("claude", "usage limit", None, T0)
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(self.job(q, "J0401")["for"], "gemini")  # straight past Claude-in-Cursor to Gemini
+        self.assertTrue(self.ran("agy"))
+        self.assertEqual(cr.state_of("cursor", T0)[1], "ready")  # Cursor itself is fine for Auto jobs
+        self.assertEqual(cr.routing.model_for({"kind": "assembly"}, "cursor"), "cursor-auto")
+
+    def test_an_agent_flag_takes_it_out_until_the_reset_and_grok_posting_clears_it(self):
+        self.routed_queue('{"jobs": []}')
+        self.flags({"chief": {"out_until": "2026-10-16T18:00:00Z", "reason": "out of credit until Friday"},
+                    "codex": {"out_until": "2026-10-07T11:00:00Z", "reason": "already over"}})
+        cr.seen("chief", T0 - 10 * MIN)  # even a fresh heartbeat: the flag wins
+        self.assertIn("flagged out of credit", cr.state_of("chief", T0)[1])
+        self.assertTrue(cr.state_of("codex", T0)[0])  # an expired flag is ignored
+        self.thread.append(("2026-10-07T11:50:00Z", "[Chief] back: PASS on J0123"))
+        cr.note_grok_posts(T0)
+        self.assertTrue(cr.state_of("chief", T0)[0])  # Grok posting again is proof it's back
+
+    def test_ben_names_claude_chief_and_the_mini_clis_run_as_workers(self):
+        import json
+        self.routed_queue('{"jobs": [{"id": "J0403", "kind": "assembly", "status": "open", "needs": "mini"}]}')
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "scripts" / "chief_override.json").write_text(json.dumps(
+            {"agent": "claude", "until": "2026-10-16T18:00:00Z", "reason": "Ben, 14 Oct: Grok out until Friday"}))
+        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: True
+        try:
+            self.assertEqual(self.chief(), "claude")
+            cr.cmd_run(T0)
+        finally:
+            cr.queue_has_work = old
+        self.assertIn("Claude is Chief (reviews, PASS, merges", (self.tmp / "cursor.args").read_text())
+        posts = self.posts.read_text()
+        self.assertIn("**Claude is acting Chief** until 2026-10-16T18:00:00Z", posts)
+        self.assertIn("Grok out until Friday", posts)
+        cr.seen("chief", T0 - 10 * MIN)
+        self.assertEqual(self.chief(), "chief")  # Grok working again ends it early
+        self.assertIsNone(cr.override(dt.datetime(2026, 10, 17, tzinfo=dt.timezone.utc)))  # and it expires
+
+    def test_a_stuck_mini_repairs_itself_once_and_says_so(self):
+        import json
+        self.routed_queue('{"jobs": []}')
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        calls = self.tmp / "repair.calls"
+        (cr.OWB / "scripts" / "mini_repair.py").write_text(
+            "def repair(apply, repos=None, do_caches=True, scan=True):\n"
+            f"    open({str(calls)!r}, 'a').write('x')\n"
+            "    return {'before_mb': 110, 'after_mb': 25000, 'caches': [], 'worktrees': ['/private/tmp/a: remove (clean)'],\n"
+            "            'checkouts': [{'repo': '/x/orbit-with-ben', 'ok': True, 'actions': ['moved 7 untracked file(s)']}],\n"
+            "            'biggest': []}\n")
+        os.environ["CHIEF_MIN_FREE_MB"] = str(10 ** 9)  # the disk counts as low
+        self.assertTrue(cr.self_heal(T0))
+        self.assertTrue(cr.self_heal(T0 + 5 * MIN))  # throttled: no second repair within 30 min
+        self.assertEqual(calls.read_text(), "x")
+        post = self.posts.read_text()
+        self.assertIn("repaired the Mini", post)
+        self.assertIn("110 MB -> 25,000 MB free", post)
+        self.assertIn("moved 7 untracked file(s)", post)
+        self.assertEqual(json.loads((cr.STATE / "chief" / "heal.json").read_text())["after_mb"], 25000)
+
+    def test_a_disk_still_full_after_repair_wakes_nobody(self):
+        self.routed_queue('{"jobs": [{"id": "J0404", "kind": "assembly", "status": "open", "needs": "mini"}]}')
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "scripts" / "mini_repair.py").write_text(
+            "def repair(apply, repos=None, do_caches=True, scan=True):\n"
+            "    return {'before_mb': 110, 'after_mb': 120, 'caches': [], 'worktrees': [], 'checkouts': [],\n"
+            "            'biggest': ['  29,000 MB  /private/tmp/owb_comp']}\n")
+        os.environ["CHIEF_MIN_FREE_MB"] = str(10 ** 9)
+        os.environ["CHIEF_HARD_MIN_FREE_MB"] = "300"
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+        finally:
+            cr.queue_has_work = old
+        self.assertFalse(self.ran("cursor"))  # a wake would only fail at git pull and burn credit
+        self.assertIn("move the version-before-last render scratch to the NAS", self.posts.read_text())
 
 
 if __name__ == "__main__":

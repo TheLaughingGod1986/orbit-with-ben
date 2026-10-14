@@ -60,7 +60,7 @@ class OrderOfWorkRemoved(unittest.TestCase):
 
     def test_cards_render_before_the_box_and_rank_code_is_unchanged(self):
         html = page()
-        self.assertIn("renderSource(); renderTracker(films); renderNow(); renderJobBoard(); ", html)
+        self.assertIn("renderSource(); renderTracker(films); renderNow(); renderDone(); renderJobBoard(); ", html)
         self.assertIn("if(fj) ON_CARD.add(fj.j.id);", html)
         # PR #122's work order across both channels: same tiers as before.
         self.assertIn("tier: !fj ? 2 : fj.p.state===\"now\"||partDone ? 0 : fj.p.state===\"gated\" ? 3 : fj.p.start ? 1 : 2", html)
@@ -408,6 +408,39 @@ console.log(JSON.stringify(els));
         self.assertEqual(out.returncode, 0, out.stderr)
         self.assertEqual(json.loads(out.stdout), ["Review", "Analytics", "Thumbnails", "SEO & listing", "Review", "Picture", "Edit",
                                                   "Upload & schedule", "Voiceover", "Other"])
+
+    def test_recently_done_strip_shows_the_last_five(self):
+        # Ben, 14 Oct: "I'm not seeing tasks that are done."
+        html = page()
+        names = ["esc", "MINUTE", "ts", "ago", "WORKER", "cleanTitle", "plainTitle", "JOB_KINDS", "jobKindOf", "renderDone"]
+        lib = "\n".join(js_function(html, n) for n in names)
+        done = [{"id": f"J0{i}", "title": t, "by": "cursor", "at": at} for i, (t, at) in enumerate([
+            ("HOS 005 Short s04 cover, set in its package manifest", "2026-10-12T14:30Z"),
+            ("Upload packages for 3 Shorts: listing + manifest", "2026-10-12T14:00Z"),
+            ("027 long VO take 2", "2026-10-11T09:00Z")])]
+        script = f"""
+const RealDate = Date, FIXED = RealDate.parse({json.dumps(self.NOW)});
+globalThis.Date = class extends RealDate {{ constructor(...a){{ super(...(a.length?a:[FIXED])); }} static now(){{ return FIXED; }} }};
+const box = {{hidden:true, className:"", innerHTML:""}};
+const $ = id => id==="donebar" ? box : null;
+const fromDb = {{extra: {{done: {json.dumps(done)}}}}};
+{lib}
+renderDone();
+console.log(JSON.stringify(box));
+"""
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as f:
+            f.write(script)
+        out = subprocess.run(["node", f.name], capture_output=True, text=True, timeout=30)
+        Path(f.name).unlink()
+        self.assertEqual(out.returncode, 0, out.stderr)
+        r = json.loads(out.stdout)
+        self.assertFalse(r["hidden"])
+        self.assertEqual(r["className"], "donebar")   # something finished in the last day
+        self.assertIn("2 in the last 24 h", r["innerHTML"])
+        self.assertIn('<span class="kd thumb">Thumbnails</span>', r["innerHTML"])
+        self.assertIn('<span class="kd vo">Voiceover</span>', r["innerHTML"])
+        self.assertLess(r["innerHTML"].index("HOS 005"), r["innerHTML"].index("027 long VO"))   # newest first
+        self.assertIn("Cursor · <span data-ago=", r["innerHTML"])
 
     def test_done_over_48h_goes_to_archive(self):
         done = [{"id": "J0190", "title": "OWB new", "at": "2026-10-12T10:00Z"}, {"id": "J0180", "title": "OWB old", "at": "2026-10-08T10:00Z"}]
