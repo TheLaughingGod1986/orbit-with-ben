@@ -1,5 +1,5 @@
 {
-  "next_id": 240,
+  "next_id": 241,
   "jobs": [
     {
       "id": "J0001",
@@ -16989,6 +16989,33 @@
         }
       ],
       "kind": "qa"
+    },
+    {
+      "id": "J0240",
+      "title": "HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-on from J0184 (acting-Chief price PASS with conditions; HOS #317 merged 520cbe7). Boards only, **no mint, no spend**.\n\nIn HOS `02_Video-Projects/008_*/07_Edit-Project/parts/part-0*_plates_v02.json`:\n(a) Rewrite every Fast row flagged emissive (candles, sparks, flicker) into non-emissive framing. Keep the light off-screen, or show it by its effect on faces or walls without the flame in shot. If the flame is the story, move the row into the 15 Quality heroes and drop another Quality row to Fast, so the totals hold.\n(b) Turn the flat-card and diagram rows into code graphics (£0, our own renderer, explainer look), each with its own row spec.\n(c) For each reuse row, measure the unused moving footage in its source KEEP clip. A row that can't get a distinct window of its full length becomes a priced Fast mint. Never loop, freeze-pad or replay frames.\nThen save the boards as `_v03`, re-run the price script and post the new totals (Flow expected) on HOS #180. Park for Chief: \"parked for Chief: 008 v03 boards\".\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-14T20:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-14T20:35Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "review"
     }
   ],
   "focus": [
