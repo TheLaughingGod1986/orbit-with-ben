@@ -19875,13 +19875,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-15T11:39Z",
-      "eta": "2026-10-15T12:39Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-15T06:22Z",
-      "result": "",
+      "result": "v01j locked (Chief waiver). music_gate PASS, reused 0.831 waived, pace WARN 54.5. SFX already PASS. v01k grain polish_gate PASS (0/88) at OWB UAT/027_EarthSpin_rough_v01k.mp4 sha 4f418069. v01j sha 1eebce5b stays the listen copy. No more EL spend. NAS hung, UAT is the master. Next polish: corner credits.",
       "history": [
         {
           "at": "2026-10-15T06:22Z",
@@ -20012,6 +20012,11 @@
           "at": "2026-10-15T11:49Z",
           "by": "cursor",
           "what": "step 5 of 5 done: v01k grain polish PASS"
+        },
+        {
+          "at": "2026-10-15T11:49Z",
+          "by": "cursor",
+          "what": "done: v01j locked (Chief waiver). music_gate PASS, reused 0.831 waived, pace WARN 54.5. SFX already PASS. v01k grain polish_gate PASS (0/88) at OWB UAT/027_EarthSpin_rough_v01k.mp4 sha 4f418069. v01j sha 1eebce5b stays the listen copy. No more EL spend. NAS hung, UAT is the master. Next polish: corner credits."
         }
       ],
       "kind": "assembly",
@@ -20022,7 +20027,8 @@
         "at": "2026-10-15T11:49Z",
         "by": "cursor",
         "note": "v01k grain polish PASS"
-      }
+      },
+      "done_ref": "a12715a2"
     },
     {
       "id": "J0266",
