@@ -3,25 +3,20 @@
 // (env BOARD_KEY; Ben's board link carries it as #k=...) writes one. The Mac mini's scripts/board_publish.py copies
 // them into board.json, so the Chief sees them on the board-data branch too.
 //
-// Storage: this project's Vercel Blob store (env BLOB_READ_WRITE_TOKEN). Blob URLs are CDN-cached for at least 60 s and
-// ignore query strings, so a file overwritten in place reads stale. Each write therefore saves a new immutable
-// snapshot board/checks/state-<time>.json and a read lists the prefix and takes the newest (one list call per read;
-// the Hobby plan allows 2,000 a month, so the page reads on load and on return to the tab, and the Mini hourly).
+// Storage (15 Oct 2026): the body of one GitHub issue, orbit-with-ben #219, written with env BOARD_GH_TOKEN (the same
+// token that posts Ben's taps to the Chief's thread). The Vercel Blob store used before was suspended on the Hobby plan
+// (limits exceeded), so every tap failed with "blob read 403". The issue body holds one fenced JSON block,
+// {checks, history}: a read is one GitHub call, a write one PATCH. Free, no new account, nothing to suspend.
 //
-// The change stamp (Ben, 11 Oct: the board should show a button tap straight away, not within the hour): every write
-// also overwrites one small fixed blob, board/checks/stamp.json = {version: <newest snapshot's pathname>, at}. The Mini
-// reads that blob's public URL on every 5-minute run; it's served from the CDN (a cache HIT costs no Blob operation,
-// and an overwrite reaches the CDN within 60 s), and only when the version moves does the Mini do a full GET here (the
-// one list call). GET returns {version, stampUrl} for that, and re-writes the stamp if it's missing or older than the
-// newest snapshot, so a failed stamp write heals itself on the next read.
-import { put, list, del } from "@vercel/blob";
+// The change stamp: the issue's updated_at is the version. GET ?stamp=1 answers {version} only, and GET returns
+// stampUrl pointing there, so the Mini's every-minute check stays one small read (scripts/board_publish.py).
 
-const PREFIX = "board/checks/state-";
-const STAMP = "board/checks/stamp.json";
+const STORE = ["TheLaughingGod1986/orbit-with-ben", 219];
+const HISTORY_KEEP = 150;
 // Ben's buttons go straight to the Chief (Ben, 10 Oct): every Approve / Request changes / Undo is also posted on the
 // Chief's thread, OWB on orbit-with-ben #99 and HOS on history-of-science #180, with env BOARD_GH_TOKEN (a fine-grained
 // GitHub token that can comment on those two repos; never in the page or the repo). Prefix: "[Ben] " then OK / changes /
-// undo, so the Chief's thread watch takes it as Ben's word. Without the token the tick still saves; the reply says so.
+// undo, so the Chief's thread watch takes it as Ben's word.
 const THREADS = { OWB: ["TheLaughingGod1986/orbit-with-ben", 99], HOS: ["TheLaughingGod1986/history-of-science", 180] };
 
 function londonTime(iso) {
@@ -42,55 +37,47 @@ export function benLine(id, doc, prev) {
   return `[Ben] changes ${what}:\n${list}${tail}`;
 }
 
-async function postToChief(id, body) {
+function gh(path, init = {}) {
   const token = process.env.BOARD_GH_TOKEN;
-  if (!token) return "not posted: BOARD_GH_TOKEN isn't set";
+  if (!token) throw new Error("BOARD_GH_TOKEN isn't set");
+  return fetch(`https://api.github.com/${path}`, { ...init, headers: { authorization: `Bearer ${token}`,
+    accept: "application/vnd.github+json", "user-agent": "studio-kanban", "content-type": "application/json" } });
+}
+
+async function postToChief(id, body) {
   const [repo, n] = THREADS[String(id).split("-")[0]];
-  const r = await fetch(`https://api.github.com/repos/${repo}/issues/${n}/comments`, { method: "POST",
-    headers: { authorization: `Bearer ${token}`, accept: "application/vnd.github+json", "user-agent": "studio-kanban", "content-type": "application/json" },
-    body: JSON.stringify({ body }) });
+  const r = await gh(`repos/${repo}/issues/${n}/comments`, { method: "POST", body: JSON.stringify({ body }) });
   if (r.ok) return `posted on ${repo.split("/")[1]} #${n}`;
   const why = await r.text().catch(() => "");
   return `not posted: GitHub ${r.status} ${why.slice(0, 160)}`;
 }
+
 const ID = /^[A-Za-z0-9_.-]{1,48}$/;
-const KEEP = 20;
 
-// One list call for both the snapshots (newest first; ISO time in the name) and the stamp.
-export function splitListing(blobs) {
-  const all = blobs.filter(b => b.pathname.startsWith(PREFIX)).sort((a, b) => (a.pathname < b.pathname ? 1 : -1));
-  return { all, stamp: blobs.find(b => b.pathname === STAMP) || null };
+// The store issue's body: a note, then one ```json fenced block.
+export function parseStore(body) {
+  const m = String(body || "").match(/```json\s*([\s\S]*?)```/);
+  const j = m ? JSON.parse(m[1]) : {};
+  return { checks: j.checks && typeof j.checks === "object" ? j.checks : {}, history: Array.isArray(j.history) ? j.history : [] };
 }
 
-async function snapshots() {
-  const { blobs } = await list({ prefix: "board/checks/", limit: 1000 });
-  return splitListing(blobs);
-}
-
-export function stampIsStale(stamp, newest) {
-  if (!stamp) return true;
-  if (!newest) return false;
-  return new Date(stamp.uploadedAt).getTime() < new Date(newest.uploadedAt).getTime();
-}
-
-async function writeStamp(version) {
-  const b = await put(STAMP, JSON.stringify({ version, at: new Date().toISOString() }), { access: "public",
-    addRandomSuffix: false, allowOverwrite: true, contentType: "application/json", cacheControlMaxAge: 86400 });
-  return b.url;
+export function renderStore(state) {
+  return "Studio Kanban stores Ben's OK / Request changes buttons in this issue's body (15 Oct 2026: replaces the " +
+    "suspended Vercel Blob store). Only the board's `/api/checks` writes it. Don't edit by hand.\n\n```json\n" +
+    JSON.stringify({ checks: state.checks, history: state.history.slice(-HISTORY_KEEP) }) + "\n```\n";
 }
 
 async function load() {
-  const { all, stamp } = await snapshots();
-  if (!all.length) return { all, stamp, state: { checks: {}, history: [] } };
-  // Take the newest snapshot that reads; a 403/404 on one (15 Oct: the newest returned 403 and every read 500'd) falls back to the next.
-  let j = null, bad = 0;
-  for (const b of all.slice(0, 5)) {
-    const r = await fetch(b.url, { cache: "no-store" });
-    if (r.ok) { j = await r.json(); break; }
-    bad = r.status;
-  }
-  if (!j) throw new Error(`blob read ${bad}`);
-  return { all, stamp, state: { checks: j.checks || {}, history: Array.isArray(j.history) ? j.history : [] } };
+  const r = await gh(`repos/${STORE[0]}/issues/${STORE[1]}`);
+  if (!r.ok) throw new Error(`store read ${r.status}`);
+  const issue = await r.json();
+  return { version: issue.updated_at || "", state: parseStore(issue.body) };
+}
+
+async function save(state) {
+  const r = await gh(`repos/${STORE[0]}/issues/${STORE[1]}`, { method: "PATCH", body: JSON.stringify({ body: renderStore(state) }) });
+  if (!r.ok) throw new Error(`store write ${r.status} ${(await r.text().catch(() => "")).slice(0, 120)}`);
+  return (await r.json()).updated_at || "";
 }
 
 async function readBody(req) {
@@ -106,10 +93,9 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   try {
     if (req.method === "GET") {
-      const { all, stamp, state } = await load();
-      const version = all.length ? all[0].pathname : "";
-      let stampUrl = stamp ? stamp.url : "";
-      if (stampIsStale(stamp, all[0])) stampUrl = await writeStamp(version).catch(() => stampUrl);
+      const { version, state } = await load();
+      if (req.query && req.query.stamp) return res.status(200).json({ version });
+      const stampUrl = `https://${req.headers.host}/api/checks?stamp=1`;
       return res.status(200).json({ checks: state.checks, at: new Date().toISOString(), version, stampUrl });
     }
     if (req.method !== "POST") return res.status(405).json({ error: "GET or POST" });
@@ -117,7 +103,7 @@ export default async function handler(req, res) {
     if (!key || req.headers["x-board-key"] !== key) return res.status(401).json({ error: "this link can't save ticks" });
     const b = await readBody(req);
     if (!ID.test(String(b.id || ""))) return res.status(400).json({ error: "bad id" });
-    const { all, state } = await load();
+    const { state } = await load();
     const prev = state.checks[b.id] || null;
     if (b.delete) {
       delete state.checks[b.id];
@@ -127,12 +113,8 @@ export default async function handler(req, res) {
       state.checks[b.id] = doc;
     }
     const at = new Date().toISOString();
-    state.history = [...state.history, { id: b.id, op: b.delete ? "delete" : "set", at, verdict: b.doc?.verdict || "" }].slice(-300);
-    const saved = await put(`${PREFIX}${at.replace(/[:.]/g, "-")}.json`, JSON.stringify(state), { access: "public", addRandomSuffix: true,
-      contentType: "application/json", cacheControlMaxAge: 31536000 });
-    await writeStamp(saved.pathname).catch(() => {});   // the Mini's cue to re-read; never fails the tick
-    const old = all.slice(KEEP - 1).map(x => x.url);
-    if (old.length) await del(old).catch(() => {});
+    state.history = [...state.history, { id: b.id, op: b.delete ? "delete" : "set", at, verdict: b.doc?.verdict || "" }];
+    await save(state);
     // Post once per real change (a re-save of the same tick has the same `at`).
     const doc = b.delete ? null : state.checks[b.id];
     const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);

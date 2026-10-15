@@ -242,18 +242,17 @@ class ButtonStamp(unittest.TestCase):
             bp.urllib.request.urlopen = real
         self.assertEqual(meta["checksVersion"], "v1")  # so the next run sees the moved stamp again
 
-    def test_site_writes_the_stamp_and_posting_is_unchanged(self):
+    def test_site_stores_ticks_in_the_github_issue_and_posting_is_unchanged(self):
         js = (HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").read_text()
-        self.assertIn('const STAMP = "board/checks/stamp.json";', js)
-        self.assertIn("await writeStamp(saved.pathname).catch(() => {});", js)
-        self.assertIn("allowOverwrite: true", js)
+        # 15 Oct 2026: the store is orbit-with-ben #219's body, not the suspended Vercel Blob store
+        self.assertIn('const STORE = ["TheLaughingGod1986/orbit-with-ben", 219];', js)
+        self.assertNotIn("@vercel/blob", js)
         self.assertIn("version, stampUrl", js)
-        # one post per real change, exactly as before
+        self.assertIn("/api/checks?stamp=1", js)
+        # one post per real change, exactly as before, and only after the tick is saved
         self.assertIn("const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);", js)
         self.assertEqual(js.count("postToChief(b.id, line)"), 1)
-        self.assertLess(js.index("writeStamp(saved.pathname)"), js.index("postToChief(b.id, line)"))
-        # old snapshots are pruned from the snapshot list only, never the stamp
-        self.assertIn("b.pathname.startsWith(PREFIX)", js)
+        self.assertLess(js.index("await save(state);"), js.index("postToChief(b.id, line)"))
 
     def test_the_mini_never_posts(self):
         src = (HERE / "board_publish.py").read_text()

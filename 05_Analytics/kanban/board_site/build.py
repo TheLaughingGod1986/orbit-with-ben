@@ -17,7 +17,7 @@ tracker.webmanifest and static/ (home-screen icons), so "Add to Home Screen" ope
 
 Hosting: Vercel project studio-kanban (not git-connected, so pushes to main never deploy it). It is deployed from a
 commit of this repo with root directory 05_Analytics/kanban/board_site, build command `python3 build.py`, output
-directory `dist`; api/checks.js (Ben's ticks, Vercel Blob) and vercel.json sit next to this file. Data changes never
+directory `dist`; api/checks.js (Ben's ticks, stored in orbit-with-ben issue #219) and vercel.json sit next to this file. Data changes never
 need a redeploy; only page changes do. Fails loudly if a patch target has moved, so a redesign of the page can't silently break the host.
 """
 from __future__ import annotations
