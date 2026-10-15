@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0226 | mini | blocked | gemini | – | 030 edit · for gemini · assembly · `gemini-agy` · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
 | J0232 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0234 | mini | open | – | – | for gemini · thumb · `gemini-agy` · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
+| J0234 | mini | claimed | gemini | 2026-10-15T05:11Z | for gemini · thumb · `gemini-agy` · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0239 | mini | blocked | gemini | – | for gemini · qa · `gemini-agy` · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | blocked | gemini | – | for gemini · review · `gemini-agy` · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
