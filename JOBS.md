@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
 | J0226 | mini | blocked | gemini | – | 030 edit · for gemini · assembly · `gemini-agy` · 030 Apophis Short: assembly + gate_shorts_open (split from J0223, after J0225) | J0223 |
-| J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0232 | mini | claimed | codex | 2026-10-15T04:58Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | thumb · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0239 | mini | blocked | gemini | – | for gemini · qa · `gemini-agy` · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
