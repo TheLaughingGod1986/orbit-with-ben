@@ -19212,13 +19212,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-15T06:04Z",
-      "eta": "2026-10-15T07:04Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T05:48Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 26e30f36, HOS ea6d766); fix jobs J0265 (027 v01i music_gate FAIL) and J0266 (HOS 006 P3/P4 picture_qa/polish_gate FAILs) queued",
       "history": [
         {
           "at": "2026-10-15T05:48Z",
@@ -19259,6 +19259,11 @@
           "at": "2026-10-15T06:22Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed gate outputs (OWB 26e30f36, HOS ea6d766) and queued no-spend fix jobs J0265 + J0266"
+        },
+        {
+          "at": "2026-10-15T06:23Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 26e30f36, HOS ea6d766); fix jobs J0265 (027 v01i music_gate FAIL) and J0266 (HOS 006 P3/P4 picture_qa/polish_gate FAILs) queued"
         }
       ],
       "kind": "qa",
