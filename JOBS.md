@@ -28,6 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
 | J0303 | mini | claimed | cursor | 2026-10-15T18:55Z | assembly · 027 Short FIX v02: stand-alone open (Chief FIX on J0297 v01) |  |
 | J0304 | gemini | open (after J0299) | – | – | facts · HOS 013 Darwin–Wallace: Gemini facts quote pass on FACT_NOTES_v01 (30 rows) | 6197550164 |
+| J0305 | cloud | open | – | – | script · HOS 013 Darwin–Wallace: script v02 (Chief FIX on J0299 v01: 4 chronology fixes + Wallace age) | 9db5a26 |
 
 Recently finished:
 
