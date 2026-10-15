@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0255 | mini | blocked | cursor | – | for cursor · chart · `cursor-auto` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0256 | mini | blocked | cursor | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0257 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
-| J0258 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0258 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0259 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0260 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0261 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
