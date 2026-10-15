@@ -21211,13 +21211,13 @@
       "stage": "upload",
       "after": "J0226",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-15T12:11Z",
-      "eta": "2026-10-15T12:26Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T10:31Z",
-      "result": "",
+      "result": "PASS (Chief): 030 Apophis Short v05 BbsyFrV8kCY Private + publishAt 2026-10-22T10:30:00Z (Thu 22 Oct 11:30 London). Title matches. Master sha cbb8e9a55e… matches; duration PT23S; uploadStatus processed; not Made-for-Kids; UPLOADS registered. Cover not custom-set (YouTube auto thumbs present; Studio cover before go-live = follow-on). Buffer blocked (Vercel Blob store suspended) = follow-on. Related unset (no Apophis long yet; Short-first). containsSyntheticMedia null on read-back = follow-on to set true.",
       "history": [
         {
           "at": "2026-10-15T10:31Z",
@@ -21263,6 +21263,11 @@
           "at": "2026-10-15T12:11Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-15T12:11Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): 030 Apophis Short v05 BbsyFrV8kCY Private + publishAt 2026-10-22T10:30:00Z (Thu 22 Oct 11:30 London). Title matches. Master sha cbb8e9a55e… matches; duration PT23S; uploadStatus processed; not Made-for-Kids; UPLOADS registered. Cover not custom-set (YouTube auto thumbs present; Studio cover before go-live = follow-on). Buffer blocked (Vercel Blob store suspended) = follow-on. Related unset (no Apophis long yet; Short-first). containsSyntheticMedia null on read-back = follow-on to set true."
         }
       ],
       "kind": "studio"
