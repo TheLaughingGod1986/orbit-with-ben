@@ -21211,13 +21211,13 @@
       "stage": "upload",
       "after": "J0226",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T12:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T10:31Z",
-      "result": "parked for Chief: read-back BbsyFrV8kCY privacy=private publishAt=2026-10-22T10:30:00Z (Thu 22 Oct 11:30 London). Title set. Cover not set (no thumb sent). Buffer not sent (Vercel Blob store suspended). Related left unset (no Apophis long). uploadStatus still uploaded (processing).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T10:31Z",
@@ -21253,16 +21253,14 @@
           "at": "2026-10-15T12:07Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: read-back BbsyFrV8kCY privacy=private publishAt=2026-10-22T10:30:00Z (Thu 22 Oct 11:30 London). Title set. Cover not set (no thumb sent). Buffer not sent (Vercel Blob store suspended). Related left unset (no Apophis long). uploadStatus still uploaded (processing)."
+        },
+        {
+          "at": "2026-10-15T12:11Z",
+          "by": "chief",
+          "what": "reopened: Chief review of parked upload read-back"
         }
       ],
-      "kind": "studio",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-15T12:07Z",
-        "by": "cursor",
-        "note": "uploaded BbsyFrV8kCY; read-back private 2026-10-22T10:30:00Z"
-      }
+      "kind": "studio"
     }
   ],
   "focus": [
