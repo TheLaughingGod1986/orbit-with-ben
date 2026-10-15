@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0287 | mini | blocked | chief | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
 | J0288 | mini | blocked | claude | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0292 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0293 | mini | claimed | codex | 2026-10-15T16:49Z | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
+| J0293 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 
 Recently finished:
 
