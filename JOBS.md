@@ -30,6 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0282 | mini | open | – | – | assembly · HOS 008 PR #322 rebase + squash-merge after J0240 PASS |  |
 | J0285 | mini | open | – | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: set containsSyntheticMedia=true before go-live |  |
 | J0286 | mini | open | – | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: set Studio Short cover before Thu 22 Oct 11:30 |  |
+| J0287 | mini | open | – | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
 
 Recently finished:
 
