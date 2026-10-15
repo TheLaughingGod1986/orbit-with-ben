@@ -255,7 +255,7 @@ class TickedCardsLeaveTheBox(unittest.TestCase):
         html = page()
         self.assertNotIn("All checked. Nothing else for you right now.", html)
         self.assertNotIn("You said it looks good (", html)
-        self.assertIn("<b>Nothing for you right now.</b>", html)
+        self.assertIn("Nothing to watch right now.", html)   # Ben, 15 Oct 2026: the box always shows
         self.assertIn("if(b.you) forYou.push(", html)
         self.assertIn('if(ck) b = Object.assign({}, b, {you:"", youShort:"", youWhen:""});', html)
 
