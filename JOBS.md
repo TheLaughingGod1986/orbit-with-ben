@@ -51,6 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0270 | mini | open | – | – | assembly · Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at |  |
 | J0271 | mini | claimed | codex | 2026-10-15T08:42Z | for codex · thumb · Thumbnail redo with gpt-image-2 (Ben, 15 Oct): plan + first 3 B variants for the lowest-CTR live longs |  |
 | J0272 | mini | open | – | – | for cursor · assembly · Codex check: Ben says Codex has credit. Clear its down mark and test each Codex model |  |
+| J0273 | mini | open | – | – | for codex · thumb · Thumbnail redo batch 2: Moon, Last Star, Neutron Star B candidates |  |
 
 Recently finished:
 
