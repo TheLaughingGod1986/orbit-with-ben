@@ -227,6 +227,18 @@ class Relay(unittest.TestCase):
         self.assertTrue(cr.out_of_credit(1, "usage limit reached, try again at 5pm"))
         self.assertFalse(cr.out_of_credit(124, "rate limit"))
 
+    def test_a_worker_quoting_a_429_mid_run_is_not_out_of_credit(self):
+        # Ben, 15 Oct 2026: Cursor and Codex were marked out overnight with credit left. Only the CLI's own last lines count.
+        work = "buffer: 401 Unauthorized for the HOS key\nyoutube: HTTP 429\n" + "step 3 of 5 done\n" * 80
+        self.assertFalse(cr.out_of_credit(1, work + "Traceback: KeyError 'slot'"))
+        said = cr.credit_phrase(1, work + "Error: You've hit your usage limit. Try again at 4am.")
+        self.assertIn("usage limit", said)
+
+    def test_the_mark_says_what_the_cli_said(self):
+        self.fake("cursor", 'echo "Error: You are out of credits. Upgrade your plan."; exit 1')
+        cr.cmd_run(T0)
+        self.assertIn("out of credits", cr.state_of("cursor", cr.now())[1])
+
     def test_no_wake_when_nothing_is_queued_but_a_sweep_every_two_hours(self):
         old = cr.queue_has_work
         cr.queue_has_work = lambda agent: False
@@ -645,7 +657,14 @@ class Relay(unittest.TestCase):
         self.beat(T0, out=True, until=cr.iso(T0 + 3 * 60 * MIN), reason="5-hour limit")
         self.assertTrue(cr.claude_out(T0 + 60 * MIN)[0])
         self.assertFalse(cr.claude_out(T0 + 4 * 60 * MIN)[0])           # past the reset: given the usual window to beat
-        self.assertTrue(cr.claude_out(T0 + 6 * 60 * MIN)[0])            # and still silent 150 min after it: out
+        self.assertTrue(cr.claude_out(T0 + 6 * 60 * MIN)[0])            # and still silent 90 min after it: out
+
+    def test_claude_counts_out_after_one_missed_hourly_run(self):
+        # Ben, 15 Oct 2026: "when your usage ran out, work stopped again": 150 min was too long to wait.
+        self.beat(T0 - 80 * MIN)
+        self.assertFalse(cr.claude_out(T0)[0])
+        self.beat(T0 - 95 * MIN)
+        self.assertTrue(cr.claude_out(T0)[0])
 
     def test_no_heartbeat_yet_changes_nothing(self):
         self.assertFalse(cr.claude_out(T0)[0])
