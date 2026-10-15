@@ -389,7 +389,7 @@ console.log(JSON.stringify(els));
     def test_recently_done_strip_shows_the_last_five(self):
         # Ben, 14 Oct: "I'm not seeing tasks that are done."
         html = page()
-        names = ["esc", "MINUTE", "ts", "ago", "WORKER", "cleanTitle", "plainTitle", "JOB_KINDS", "jobKindOf", "renderDone"]
+        names = ["esc", "MINUTE", "ts", "ago", "WORKER", "cleanTitle", "plainTitle", "JOB_KINDS", "jobKindOf", "pw", "fd", "fw", "doneOpen", "renderDone"]
         lib = "\n".join(js_function(html, n) for n in names)
         done = [{"id": f"J0{i}", "title": t, "by": "cursor", "at": at} for i, (t, at) in enumerate([
             ("HOS 005 Short s04 cover, set in its package manifest", "2026-10-12T14:30Z"),
