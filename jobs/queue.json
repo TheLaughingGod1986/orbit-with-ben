@@ -24041,13 +24041,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T19:55Z",
-      "eta": "2026-10-15T21:55Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T19:37Z",
-      "result": "",
+      "result": "parked for Chief: captions + trailer ready, dry-run PASS Private 2026-11-15T18:00:00Z, video sha 69c89d83 unchanged. Branch cursor/j0326-026-captions 1e64b5bf (not pushed, not merged). Trailer sha 2cda4aaf on NAS youtube-staging/026. Final OK is Chief's.",
       "history": [
         {
           "at": "2026-10-15T19:37Z",
@@ -24073,6 +24073,11 @@
           "at": "2026-10-15T20:02Z",
           "by": "cursor",
           "what": "step 5 of 5 done: dry-run PASS; commit 1e64b5bf parked for Chief"
+        },
+        {
+          "at": "2026-10-15T20:02Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: captions + trailer ready, dry-run PASS Private 2026-11-15T18:00:00Z, video sha 69c89d83 unchanged. Branch cursor/j0326-026-captions 1e64b5bf (not pushed, not merged). Trailer sha 2cda4aaf on NAS youtube-staging/026. Final OK is Chief's."
         }
       ],
       "kind": "assembly",
