@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0325 | mini | blocked | cursor | – | 027 upload · assembly · 027 Earth Stopped Spinning: dry-run Private package for Sun 22 Nov (v01l picture lock, J0319 PASS) | 6200213333 |
 | J0329 | mini | open | – | – | 008 picture · chart · HOS 008 Franklin: build the 11 £0 code graphics from boards v03 (PICTURE_PLAN_v03 code_graphics), no mint | 231603f |
-| J0330 | mini | open | – | – | 029 picture · video · 029 Betelgeuse: plate boards v02 per the J0311 price-pass conditions (no mint) | 6202235397 |
+| J0330 | mini | claimed | cursor | 2026-10-16T01:43Z | 029 picture · video · 029 Betelgeuse: plate boards v02 per the J0311 price-pass conditions (no mint) | 6202235397 |
 | J0331 | mini | open | – | – | 006 edit · assembly · HOS 006: full_join_v02 — new stretches on 6 picture_qa callback reuses (J0312 FIX), no mint |  |
 | J0332 | mini | open (after J0331) | – | – | 006 edit · chart · HOS 006: Codex £0 teach overlays from TEACH_OVERLAYS_v01.md (after full_join_v02) |  |
 | J0334 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v02 per the J0314 price-pass conditions (no mint) | 6203192061 |
