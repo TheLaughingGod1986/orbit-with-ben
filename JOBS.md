@@ -37,7 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0332 | mini | open (after J0331) | – | – | 006 edit · chart · HOS 006: Codex £0 teach overlays from TEACH_OVERLAYS_v01.md (after full_join_v02) |  |
 | J0334 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v02 per the J0314 price-pass conditions (no mint) | 6203192061 |
 | J0338 | mini | open (after J0337) | – | – | 028 picture · chart · 028 Gliese 710: build the £0 Codex code graphics from plate boards v02 (19 code beats + card), no mint | J0321 |
-| J0339 | cloud | open | – | – | 031 script · script · 031 Magnetic Field Flip: soft-edit PARTIAL spoken lines after J0318 FIX (script v02 + SOURCES) | 666bacf8 |
+| J0339 | cloud | claimed | claude | 2026-10-16T01:31Z | 031 script · script · 031 Magnetic Field Flip: soft-edit PARTIAL spoken lines after J0318 FIX (script v02 + SOURCES) | 666bacf8 |
 
 Recently finished:
 
