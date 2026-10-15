@@ -1,6 +1,12 @@
 {
   "_note": "Ben, 8 Oct: one plain note per film on the Studio Kanban. Done so far / The holdup / Second limit / Next (who, what, when) / For you. Claude keeps these current on every hourly studio run; the page shows each note's 'updated' time and flags it if it is over a day old. Steps with 'job' take their times live from the job queue; 'afterJob' + 'lag' (minutes) means 'that long after the job is done'. 'when' is an ISO date or time; 'whenText' says it in words when there is no fixed time. 'mood' picks the column: good or held = In progress, waiting = To do, finished or ready = Done. 'line' is the one plain sentence on the card. A step's 'kind' (scripts/routing.py: script, facts, review, vo, image, chart, video, assembly, qa, listing, studio, chief) sets who it shows for a step still to do: the routed worker (Ben, 12 Oct), or whoever holds its job; done steps keep their doer. 'you' is empty when there is nothing for Ben. 'uatFolderUrl' (top level) is Ben's iCloud share link to the OWB UAT folder (icloud.com links only); a film's 'uatUrl' is a share link to its own file, if Ben ever makes one.",
   "uatFolderUrl": "",
+  "extraWatch": [
+    {"id": "HOS S1", "title": "Herschel (standalone Short)", "note": "airs Monday; needs your OK before anything is scheduled", "airs": "Mon 19 Oct", "where": "iCloud Drive \u203a HOS UAT \u203a docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/"},
+    {"id": "HOS S2", "title": "Brand (standalone Short)", "note": "", "airs": "", "where": "iCloud Drive \u203a HOS UAT \u203a docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/"},
+    {"id": "HOS S3", "title": "Snow v02 (standalone Short)", "note": "", "airs": "", "where": "iCloud Drive \u203a HOS UAT \u203a docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/"},
+    {"id": "HOS S4", "title": "Curie v04 (standalone Short)", "note": "", "airs": "", "where": "iCloud Drive \u203a HOS UAT \u203a docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/"}
+  ],
   "films": {
     "OWB:021": {
       "updated": "2026-10-08T16:05Z",
