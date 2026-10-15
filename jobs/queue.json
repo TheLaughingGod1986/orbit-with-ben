@@ -1,5 +1,5 @@
 {
-  "next_id": 329,
+  "next_id": 330,
   "jobs": [
     {
       "id": "J0001",
@@ -24286,6 +24286,33 @@
         "note": "Worker build and checks complete; be77ab3b pushed for Chief review; media verified on NAS"
       },
       "done_ref": "61003f68"
+    },
+    {
+      "id": "J0329",
+      "title": "HOS 008 Franklin: build the 11 £0 code graphics from boards v03 (PICTURE_PLAN_v03 code_graphics), no mint",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief review sweep 15 Oct ~21:40 London: HOS 008 is in work (40%, Picture blocked on the mint gate) but had no open or blocked job in the queue (standing sweep rule). Boards v03 are on main (J0240 Chief PASS, J0282 squash-merge 231603f). The mint stays gated: after 006 and 007, and only when a live Flow reading leaves at least 3,000 credits after 008's expected 5,605. That gate is NOT lifted by this job.\n£0 work that can go ahead now: render the 11 code graphics listed under code_graphics in 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/PICTURE_PLAN_v03.json (P2:14, P2:15, P3:03, P3:04, P3:15, P4:06, P4:08, P5:08, P5:09, P5:10, P5:11) with the house python-pillow-ffmpeg explainer renderer, following each entry's style, layout_mode, label, elements, animation and tick_ink_s, timed to the part VO. For the two moving_plate_overlay rows whose background plate is not minted yet, render the overlay on alpha (or a neutral period-paper stand-in) so it can be composited later; note which.\nSave the renders under 07_Edit-Project/code_graphics_v01/ with a contact sheet and sha256 list, mirror to the NAS, commit the builder script (no media in git) on a branch, and park for Chief review. No Flow, no Vertex, no ElevenLabs, no spend, no deletes.",
+      "ref": "231603f",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T20:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T20:31Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [
