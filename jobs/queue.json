@@ -1,5 +1,5 @@
 {
-  "next_id": 301,
+  "next_id": 302,
   "jobs": [
     {
       "id": "J0001",
@@ -22645,6 +22645,33 @@
       ],
       "kind": "chart",
       "backlog": "owb-teach-overlays"
+    },
+    {
+      "id": "J0301",
+      "title": "032 Titan: fix FLAG rows 1/9/15 + PARTIALs in SOURCES.md and script v01 (Chief notes on J0296)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Chief review of J0296 (15 Oct 2026 ~17:30 London). Neighbour pass PASS (11 at about 1M+, b15b1529). Facts quote pass: FIX the three FLAG rows before any VO. Source of truth: 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/01_Script/SOURCES.md (commit 97a11fdd) and titan_landing_script_master_v00.md. No VO, no picture mint, no Studio change, no spend, no deletes.\n\nRow 1 (surface pressure). Re-point \"Where to look\" to the pages that actually carry it: Huygens in Nature (https://www.nature.com/articles/nature04314, \"the pressure was 1,467 ± 1 hPa\") and ESA Facts about Titan (\"1500 mbar (1.5 times Earth's)\"). Script/VO says \"about one and a half times Earth's air pressure\". Do not say \"50% higher\" next to NASA's \"60 percent greater\"; pick the measured Huygens number. CUT the \"5 metres down in a swimming pool\" analogy (unsourced, and NASA's own comparison is 15 m in the ocean, which conflicts). SOFTEN \"you would not need a pressurised suit\" to \"the pressure itself wouldn't hurt you; the deadly part is the cold and no oxygen\" unless an open NASA/ESA page states the no-pressure-suit point, in which case quote it.\n\nRow 9 (air mix, gravity, density). Re-point to NASA Science Titan Facts (\"mostly nitrogen (about 95 percent) and methane (about 5 percent), with small amounts of other carbon-rich compounds\") and Dragonfly Why-Titan (\"four times denser than Earth's and its gravity is about 1/7th of Earth's\"). Script keeps \"about 95% nitrogen, about 5% methane\", \"about four times denser\", \"about one-seventh of Earth's gravity\". CUT \"hydrogen cyanide\" by name (say \"traces of other carbon-rich gases\"), and CUT the 0.138 g and 5.3 vs 1.225 kg/m3 figures from VO and charts unless a named open page quotes them verbatim.\n\nRow 15 (flight). The 28x lift-to-weight is our own arithmetic, so keep it only as a labelled on-screen sum (\"4x the air, 1/7 the weight, roughly 28x easier to stay up\"), not as a quoted or attributed fact. The human flapping-wing flight claim needs an open source with a verbatim quote (e.g. a NASA/ESA/APL page or open Lorenz text); if none is found, SOFTEN to \"flying is so easy there that NASA is sending a flying drone, Dragonfly\" (quote https://dragonfly.jhuapl.edu/What-Is-Dragonfly/ \"make flying an ideal way to travel\"). Do not attribute a calculation to Lorenz without an open link.\n\nDone when: the three rows are re-anchored with verbatim quotes and URLs and marked OK (or the claim is cut/softened in both SOURCES.md and the script), the 13 PARTIAL rows are each either re-anchored to the page that carries them or softened, the script master is bumped to v01 with a short change note, and both are committed. Then park for Chief with the commit hash. No VO until Chief PASSes.\n",
+      "ref": "",
+      "film": "032",
+      "stage": "sources",
+      "after": "J0296",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T16:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T16:26Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
     }
   ],
   "focus": [
