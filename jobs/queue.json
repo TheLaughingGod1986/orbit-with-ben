@@ -1,5 +1,5 @@
 {
-  "next_id": 265,
+  "next_id": 266,
   "jobs": [
     {
       "id": "J0001",
@@ -19330,6 +19330,33 @@
         }
       ],
       "kind": "qa"
+    },
+    {
+      "id": "J0265",
+      "title": "027 Earth Stopped Spinning: fix music_gate FAIL on v01i (prepare chapter awe/explain score plan + house SFX stems, no spend)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "QA sweep J0262 ran music_gate on 027 rough_v01h_pack and rough_v01i_pack: FAIL on retired earth-spin_score_bed_v01_lift.mp3 (reused similarity 0.807 vs 024, 0.800 vs 025, 0.815 vs 021; 6.1 s near-gap at 7:41; 52.2 BPM vs brief 70-84 BPM; J0090 was cancelled). With zero ElevenLabs spend: (1) build the 027 house SFX stem using scripts/sfx_kit.py make and verify scripts/sfx_kit.py level PASS against 027 VO; (2) prepare the chapter-by-chapter awe/explain score layout plan and crossfade timestamps from 05_Music/BED_BRIEF_take2.md for v01i (444.8 s) so it is ready to mux the moment Chief OKs take 2 or the 30 Oct ElevenLabs reset lands; (3) park for Chief.",
+      "ref": "",
+      "film": "027",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-15T06:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T06:22Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
