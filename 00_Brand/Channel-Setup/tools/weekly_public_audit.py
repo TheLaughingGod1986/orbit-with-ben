@@ -10,7 +10,9 @@ Checks
   - every upload that is new since the last snapshot
   - frame 0 of each new Short (i.ytimg.com/vi/<id>/frame0.jpg): Orbit at frame 0, or a
     dark frame 0 (THUMBNAIL_AND_TITLE_RULES.md §3 — world first-frames median 86.5 views,
-    Orbit 23.5, dark cards 16.5)
+    Orbit 23.5, dark cards 16.5). The three Orbit-first labelled test Shorts
+    (FAMILIAR_DANGER_STRATEGY.md; Claude #99 6036942792) are not counted as
+    Orbit-at-frame-0 breaches — they stay public and unchanged on purpose.
   - titles: hashtags, hedged claims, and duplicate titles across the channel
 Cannot check from public pages: stayed-to-watch, CTR, or a silent soundtrack. Those stay
 Studio / `gate_shorts_open.py check` jobs.
@@ -44,6 +46,23 @@ UA = {"User-Agent": "Mozilla/5.0", "Accept-Language": "en-GB"}
 BRIGHT_LEVEL = 60
 DARK_BRIGHT_FRAC = 0.10
 HEDGE = re.compile(r"\b(?:we|it|they|this|you|scientists)\s+(?:may|might|could)\b|\bmay have\b|\bmight\b|^what if\b", re.I)
+# Orbit-first labelled test Shorts (FAMILIAR_DANGER_STRATEGY.md). Claude #99 6036942792:
+# leave them public/unchanged; do not count Orbit at frame 0 as a breach in reports.
+# youtube:package and gate_upcoming.py still block Orbit at frame 0 on every other Short.
+ORBIT_FIRST_TEST_IDS = frozenset({
+    "Ih2zhZTbIR0",  # Fri 2 Oct
+    "dQlOgsDGmtA",  # Mon 5 Oct Moon cover
+    "pL339HhjDwo",  # Wed 7 Oct
+})
+
+
+def frame0_breach_flags(vid: str, flags: list[str] | None) -> list[str] | None:
+    """Flags that count as breaches. Orbit-first labelled tests keep Orbit at frame 0 on purpose."""
+    if flags is None:
+        return None
+    if vid in ORBIT_FIRST_TEST_IDS:
+        return [f for f in flags if f != "Orbit at frame 0"]
+    return list(flags)
 
 
 # ----------------------------------------------------------------------------- fetch
@@ -225,7 +244,15 @@ def main() -> int:
         for v in new_longs:
             lines.append(f"| long | `{v['id']}` | {cell(v['title'])} | {v['views']} | — |")
         for s in new_shorts:
-            f0 = "not checked (no ffmpeg)" if s.get("frame0_flags") is None else (", ".join(s["frame0_flags"]) or "ok")
+            raw = s.get("frame0_flags")
+            breach = frame0_breach_flags(s["id"], raw)
+            if raw is None:
+                f0 = "not checked (no ffmpeg)"
+            elif s["id"] in ORBIT_FIRST_TEST_IDS and raw and "Orbit at frame 0" in raw:
+                rest = [f for f in (breach or [])]
+                f0 = ", ".join(["Orbit-first labelled test (not a breach)"] + rest)
+            else:
+                f0 = ", ".join(breach or []) or "ok"
             lines.append(f"| short | `{s['id']}` | {cell(s['title'])} | {s['views']} | {f0} |")
     if returning:
         lines += ["", f"Back in the newest-48 list (older, not new): {', '.join('`' + x['id'] + '`' for x in returning)}."]
@@ -245,8 +272,9 @@ def main() -> int:
     for v, f in flagged:
         lines.append(f"- **{', '.join(f).capitalize()}:** `{v['id']}` *{v['title']}*")
     for s in new_shorts:
-        if s.get("frame0_flags"):
-            lines.append(f"- **{', '.join(s['frame0_flags']).capitalize()}:** `{s['id']}` *{s['title']}* (THUMBNAIL_AND_TITLE_RULES.md §3)")
+        breach = frame0_breach_flags(s["id"], s.get("frame0_flags"))
+        if breach:
+            lines.append(f"- **{', '.join(breach).capitalize()}:** `{s['id']}` *{s['title']}* (THUMBNAIL_AND_TITLE_RULES.md §3)")
     lines += ["", "## Still needs Studio",
               "", "Public pages cannot show stayed-to-watch, CTR or a silent soundtrack. Add stayed-to-watch at 48 h for each new Short to `could-orbit-survive/TEST_LOG.md`, and run `gate_shorts_open.py check` on every export before upload.", ""]
     (out_dir / "REPORT.md").write_text("\n".join(lines))

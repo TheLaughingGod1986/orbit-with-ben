@@ -3,8 +3,11 @@ import path from "path";
 
 /**
  * The Shorts ship gate (`00_Brand/Channel-Setup/tools/gate_shorts_open.py check`) as a hard stop in the upload path.
- * Two Orbit-at-frame-0 Shorts (dQlOgsDGmtA, Ih2zhZTbIR0) went out in Sept because no upload path ran it (#99 6012375100).
- * There is no override: Orbit at frame 0 is on the Never list.
+ * Two Orbit-at-frame-0 Shorts (dQlOgsDGmtA, Ih2zhZTbIR0) went out before the upload path ran it (#99 6012375100).
+ * There is no override here: Orbit at frame 0 is on the Never list for every new Short.
+ * The three Orbit-first labelled test Shorts (Ih2zhZTbIR0, dQlOgsDGmtA, pL339HhjDwo) already aired;
+ * Claude (#99 6036942792) left them public/unchanged and exempted them from *report* breach counts only
+ * (`weekly_public_audit.py`), not from this ship gate.
  */
 export type GateRunner = (cmd: string, args: string[]) => { status: number | null; stdout: string; stderr: string };
 
