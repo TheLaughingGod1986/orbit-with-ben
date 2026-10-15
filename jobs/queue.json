@@ -1,5 +1,5 @@
 {
-  "next_id": 323,
+  "next_id": 324,
   "jobs": [
     {
       "id": "J0001",
@@ -23809,6 +23809,33 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0323",
+      "title": "026 Nearest Star: put picture-lock v05d (teaching overlays, J0148) in OWB UAT for Ben's watch, then dry-run the Private upload (airs Sun 15 Nov)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Same as J0309 for 024. 026's board note still pointed Ben at v05b (11 Oct); J0148 then added the teaching overlays and the Chief passed v05d (PR #152 158fba69). Copy the v05d master to OWB UAT as 026_NearestStar_v05d.mp4 and the NAS youtube-staging/026/, record sha256, post the path on #99. Dry-run youtube-package-upload Private for Sun 15 Nov 18:00 London. Park for Chief final OK after Ben's watch. No live upload, no spend.",
+      "ref": "",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T18:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T18:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
