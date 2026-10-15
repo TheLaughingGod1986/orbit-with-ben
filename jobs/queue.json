@@ -1,5 +1,5 @@
 {
-  "next_id": 279,
+  "next_id": 284,
   "jobs": [
     {
       "id": "J0001",
@@ -8225,13 +8225,13 @@
       "stage": "",
       "after": "J0139",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-14T21:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:05Z",
-      "result": "parked for Chief: KEEP rulings on review/j0140 (P4:06 t3, P4:08 t2, P4:13-16 t1, P5:02 cover, P5:11/19 code graphics, desk #180 6180235843), review of Part 03 v02 + Part 04 v01 + Part 05 v01 roughs, and merge of HOS PR #310 (78745b3)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T23:05Z",
@@ -8612,6 +8612,11 @@
           "at": "2026-10-15T01:01Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: KEEP (Chief): P4:06 t3; P4:08 t2; P4:13–16 t1; P5:02 cover; P5:11/19 code graphics. Part 03 v02 / 04 v01 / 05 v01 roughs KEEP. #310 → 85e16bbb. Continue remaining picture on main; no top-up."
         }
       ],
       "kind": "video",
@@ -8623,14 +8628,7 @@
         "by": ""
       },
       "for": "gemini",
-      "escalated_at": "2026-10-15T01:01Z",
-      "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-10-14T22:50Z",
-        "by": "gemini",
-        "note": "all 4 acting-Chief rulings executed; P4:06 t3 Fast minted+harvested (10 cr, Flow 23,730); P5:11/19 code graphics built; "
-      }
+      "escalated_at": "2026-10-15T01:01Z"
     },
     {
       "id": "J0141",
@@ -11030,13 +11028,13 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T02:07Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: v05 complete (47:37.8, -14.4 LUFS, -1.3 dBTP) per Acting-Chief ruling (ea55635a); final_v04 and final_v05 archived on NAS with SHA-256; music_gate PASS (155.0s new sections, 0s gap), sfx_kit level PASS (VO -14.1, SFX -46.0 LUFS), picture_qa PASS (0 fails); OWB_compilation_v05_PHONE.mp4 in OWB UAT ready for Ben's watch and Chief final OK (J0168)",
+      "result": "PASS (Chief): OWB compilation v05 KEEP (47:37.8, −14.4 LUFS). Ben GO already on J0168 (Wed 21 Oct 18:00 London). Assembly closed.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11462,18 +11460,26 @@
           "at": "2026-10-15T04:40Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): OWB compilation v05 KEEP (47:37.8, −14.4 LUFS). Ben GO already on J0168 (Wed 21 Oct 18:00 London). Assembly closed."
         }
       ],
       "kind": "assembly",
       "escalated_at": "2026-10-15T04:40Z",
       "urgent": 1,
-      "progress": {
-        "step": 8,
-        "of": 8,
-        "at": "2026-10-15T02:26Z",
-        "by": "gemini",
-        "note": "v05 NAS master + PHONE UAT encode + QA v05 complete (ea55635a)"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -12011,13 +12017,13 @@
       "stage": "",
       "after": "J0218",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-15T02:37Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: kind chief has no stand-in; Chief must PASS/FAIL each HOS standalone Short and give upload/schedule OK before worker execution. No review decision, upload, scheduling or spend performed.",
+      "result": "PASS (Chief): HOS standalone Shorts S1–S4 PASS for Private+scheduled upload on locked Mon/Wed slots (S1 Mon 19 Oct 11:30 London). S5–S8 KEEP from J0171. Worker: youtube:package Private+publishAt; UPLOADS standaloneTest=true; start TEST_LOG. Buffer only after public → full film.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -12048,16 +12054,24 @@
           "at": "2026-10-15T04:40Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): HOS standalone Shorts S1–S4 PASS for Private+scheduled upload on locked Mon/Wed slots (S1 Mon 19 Oct 11:30 London). S5–S8 KEEP from J0171. Worker: youtube:package Private+publishAt; UPLOADS standaloneTest=true; start TEST_LOG. Buffer only after public → full film."
         }
       ],
       "kind": "chief",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-10-15T02:37Z",
-        "by": "codex",
-        "note": "Chief review, authorised scheduling, measurement log; protected review requires Chief."
-      },
       "escalated_at": "2026-10-15T04:40Z"
     },
     {
@@ -12588,6 +12602,11 @@
           "at": "2026-10-12T13:51Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "left open: waits on J0175 (not Chief)."
         }
       ],
       "kind": "chief"
@@ -13864,6 +13883,11 @@
           "at": "2026-10-13T00:31Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "left parked: ruling (a) stands — wait for TITLE A/B on 55AEQwvs36g to end; no Continue on delete dialogs."
         }
       ],
       "kind": "studio",
@@ -15361,6 +15385,11 @@
           "at": "2026-10-14T11:44Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "left parked: infra — Studio CDP unreachable; health keeper."
         }
       ],
       "kind": "studio",
@@ -16344,13 +16373,13 @@
       "stage": "edit",
       "after": "J0225",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-14T21:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T02:57Z",
-      "result": "parked for Chief: 030 Apophis Short v04 frame review on branch review/j0226-v04 (1ba7c081) — 030_apophis_short_v04_frames.jpg + crops 06.7/10.0/12.5 s pushed",
+      "result": "",
       "history": [
         {
           "at": "2026-10-13T02:57Z",
@@ -16641,6 +16670,11 @@
           "at": "2026-10-14T23:51Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: FIX → v05 (Chief): mix −14.4 LUFS + 22.07 s KEEP. Still FAIL: (1) dark halo around rock on aurora ~9–13 s — real alpha; (2) left-edge glow line (garbage matte). DATA 36k/32k KEEP. review/j0226-v04 reviewed."
         }
       ],
       "kind": "assembly",
@@ -16653,13 +16687,6 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-14T21:18Z",
-        "by": "gemini",
-        "note": "pushed review/j0226-v04 (1ba7c081)"
-      },
       "escalated_at": "2026-10-14T23:51Z"
     },
     {
@@ -17074,13 +17101,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-15T02:58Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-14T11:16Z",
-      "result": "parked for Chief: Short PASS; review local commit b015ec6b and /Users/benjaminoats/_desk/J0232-venus-short; automatic review refused remote push",
+      "result": "PASS (Chief): Venus Short venus_two_hours_v01 KEEP (26.53s, gate PASS, −14.9 LUFS, NEARLY 1 KM DEEP number card). Worker: push review/j0232-venus-short (earlier push refused). Air in next free OWB Short slot.",
       "history": [
         {
           "at": "2026-10-14T11:16Z",
@@ -17126,17 +17153,25 @@
           "at": "2026-10-15T07:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 4 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): Venus Short venus_two_hours_v01 KEEP (26.53s, gate PASS, −14.9 LUFS, NEARLY 1 KM DEEP number card). Worker: push review/j0232-venus-short (earlier push refused). Air in next free OWB Short slot."
         }
       ],
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T03:06Z",
-        "by": "codex",
-        "note": "Cut and evidence complete in local commit b015ec6b; Chief approval outstanding"
-      },
       "escalated_at": "2026-10-15T07:06Z"
     },
     {
@@ -17150,13 +17185,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T03:07Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-14T11:16Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "PASS (Chief): HOS 004 s04 cathode rays v01 KEEP; title 'What Are Cathode Rays?' (answers the lifted VO; alt reserved). #323 squash-merged → a64835d3.",
       "history": [
         {
           "at": "2026-10-14T11:16Z",
@@ -17202,17 +17237,27 @@
           "at": "2026-10-15T07:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): HOS 004 s04 cathode rays v01 KEEP; title 'What Are Cathode Rays?' (answers the lifted VO; alt reserved). #323 squash-merged → a64835d3."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T03:30Z",
-        "by": "gemini"
-      },
-      "escalated_at": "2026-10-15T07:06Z"
+      "escalated_at": "2026-10-15T07:06Z",
+      "done_ref": "a64835d3"
     },
     {
       "id": "J0234",
@@ -17225,13 +17270,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T03:41Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-14T15:11Z",
-      "result": "parked for Chief: thumb B review",
+      "result": "PASS (Chief): Andromeda ojk-dfOpAmw B 'NO STARS CRASH?' KEEP. Arm T&C when CDP healthy.",
       "history": [
         {
           "at": "2026-10-14T15:11Z",
@@ -17287,6 +17332,21 @@
           "at": "2026-10-15T07:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): Andromeda ojk-dfOpAmw B 'NO STARS CRASH?' KEEP. Arm T&C when CDP healthy."
         }
       ],
       "kind": "thumb",
@@ -17300,12 +17360,6 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T04:02Z",
-        "by": "gemini"
-      },
       "escalated_at": "2026-10-15T07:06Z"
     },
     {
@@ -17678,13 +17732,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T00:15Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-14T20:34Z",
-      "result": "parked for Chief: S1-S4 frame + cover review",
+      "result": "PASS (Chief): HOS standalone S1–S4 frames + covers KEEP. Gates PASS; covers HOOK/BAND/PHONE OK. Prior KEEP on J0171 stands. Unblocks J0172.",
       "history": [
         {
           "at": "2026-10-14T20:34Z",
@@ -17735,6 +17789,21 @@
           "at": "2026-10-15T02:46Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): HOS standalone S1–S4 frames + covers KEEP. Gates PASS; covers HOOK/BAND/PHONE OK. Prior KEEP on J0171 stands. Unblocks J0172."
         }
       ],
       "kind": "qa",
@@ -17747,12 +17816,6 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T00:25Z",
-        "by": "gemini"
-      },
       "escalated_at": "2026-10-15T02:46Z"
     },
     {
@@ -17766,13 +17829,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T00:35Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-14T20:35Z",
-      "result": "parked for Chief: 008 v03 boards",
+      "result": "PASS (Chief): HOS 008 boards v03 KEEP (non-emissive Fast, 11 £0 code graphics, measured reuse→Fast). PR #322 conflicts — rebase then squash-merge; no mint until on main.",
       "history": [
         {
           "at": "2026-10-14T20:35Z",
@@ -17868,6 +17931,21 @@
           "at": "2026-10-15T04:40Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): HOS 008 boards v03 KEEP (non-emissive Fast, 11 £0 code graphics, measured reuse→Fast). PR #322 conflicts — rebase then squash-merge; no mint until on main."
         }
       ],
       "kind": "review",
@@ -17880,12 +17958,6 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T02:06Z",
-        "by": "gemini"
-      },
       "escalated_at": "2026-10-15T04:40Z"
     },
     {
@@ -18124,21 +18196,32 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-14T21:15Z",
-      "result": "",
+      "result": "PASS (Chief): J0181 OK; #321 → d8d24b8f. Four Related fixes routed as follow-on studio job.",
       "history": [
         {
           "at": "2026-10-14T21:15Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): J0181 OK; #321 → d8d24b8f. Four Related fixes routed as follow-on studio job."
         }
       ],
-      "kind": "chief"
+      "kind": "chief",
+      "done_ref": "d8d24b8f"
     },
     {
       "id": "J0246",
@@ -18435,13 +18518,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-15T01:32Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-15T00:32Z",
-      "result": "parked for Chief: review completed panel B and orientation note, then merge PR #189 (805b7376); automated scores pass; no spend or YouTube changes",
+      "result": "PASS (Chief): 024 panel B '7 YEARS GONE' KEEP; mirror/exhaust-left orientation OK (nose points right). #189 squash-merged → fe74fe3f. Automated scores PASS. No Studio arm yet (J0206 after authorised upload).",
       "history": [
         {
           "at": "2026-10-15T00:32Z",
@@ -18482,17 +18565,27 @@
           "at": "2026-10-15T04:40Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): 024 panel B '7 YEARS GONE' KEEP; mirror/exhaust-left orientation OK (nose points right). #189 squash-merged → fe74fe3f. Automated scores PASS. No Studio arm yet (J0206 after authorised upload)."
         }
       ],
       "for": "codex",
       "kind": "thumb",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-15T01:34Z",
-        "by": "codex"
-      },
-      "escalated_at": "2026-10-15T04:40Z"
+      "escalated_at": "2026-10-15T04:40Z",
+      "done_ref": "fe74fe3f"
     },
     {
       "id": "J0251",
@@ -18694,13 +18787,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T04:14Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T03:40Z",
-      "result": "parked for Chief: Short PASS (021 saturn_late_arrival_4_5b_v01.mp4, 25.0s, gate PASS, sfx_kit level PASS, UAT pack ready)",
+      "result": "PASS (Chief): OWB 021 saturn_late_arrival_4_5b_v01 KEEP (25.0s, gate PASS, sfx PASS). Air in next free OWB Short slot.",
       "history": [
         {
           "at": "2026-10-15T03:40Z",
@@ -18761,6 +18854,21 @@
           "at": "2026-10-15T07:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): OWB 021 saturn_late_arrival_4_5b_v01 KEEP (25.0s, gate PASS, sfx PASS). Air in next free OWB Short slot."
         }
       ],
       "kind": "assembly",
@@ -18774,12 +18882,6 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T04:52Z",
-        "by": "gemini"
-      },
       "escalated_at": "2026-10-15T07:06Z"
     },
     {
@@ -18793,13 +18895,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T04:54Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T03:40Z",
-      "result": "parked for Chief: Short PASS + title (Why Do Veins Have Valves?) + slot for HOS 005 s05 valves v01; HOS PR #324, desk #180 comment 6184778940",
+      "result": "PASS (Chief): HOS 005 s05 valves v01 KEEP; title 'Why Do Veins Have Valves?' KEEP (autocomplete exact hit). #324 squash-merged → fc20c7b2. Slot: next free HOS search-titled Short slot after s04 (scheduler picks clear Mon/Wed).",
       "history": [
         {
           "at": "2026-10-15T03:40Z",
@@ -18835,18 +18937,27 @@
           "at": "2026-10-15T07:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): HOS 005 s05 valves v01 KEEP; title 'Why Do Veins Have Valves?' KEEP (autocomplete exact hit). #324 squash-merged → fc20c7b2. Slot: next free HOS search-titled Short slot after s04 (scheduler picks clear Mon/Wed)."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T04:59Z",
-        "by": "cursor",
-        "note": "built, gated, PR 324, desk posted"
-      },
-      "escalated_at": "2026-10-15T07:06Z"
+      "escalated_at": "2026-10-15T07:06Z",
+      "done_ref": "fc20c7b2"
     },
     {
       "id": "J0255",
@@ -18859,13 +18970,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T05:21Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T04:03Z",
-      "result": "parked for Chief: thumb B review (HOS 002 THE MISSING ELEMENT, desk #180 issuecomment-6185077094; fresh 2-way test on 002 or leave A)",
+      "result": "LEAVE A (Chief): HOS 002 keep live A. B lacks Explorer + hero size; fresh test only after 0-credit Flow plate with Explorer, else leave A.",
       "history": [
         {
           "at": "2026-10-15T04:03Z",
@@ -18901,6 +19012,21 @@
           "at": "2026-10-15T05:23Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: thumb B review (HOS 002 THE MISSING ELEMENT, desk #180 issuecomment-6185077094; fresh 2-way test on 002 or leave A)"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: LEAVE A (Chief): HOS 002 keep live A. B lacks Explorer + hero size; fresh test only after 0-credit Flow plate with Explorer, else leave A."
         }
       ],
       "kind": "chart",
@@ -18913,13 +19039,7 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-auto",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T05:23Z",
-        "by": "cursor"
-      }
+      "model": "cursor-auto"
     },
     {
       "id": "J0256",
@@ -18932,13 +19052,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T05:23Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T04:14Z",
-      "result": "parked for Chief: overlay PASS: 027 v01i open label 'About 1,000 km/h' 0:06.9 (3e0c8dab; picture_qa + polish_gate PASS, audio = v01g); score NUMBER/WORDS/STYLE/MOTION",
+      "result": "PASS (Chief): 027 v01i open label 'About 1,000 km/h' at 0:06.9 KEEP (3e0c8dab). NUMBER counts; picture_qa + polish_gate PASS.",
       "history": [
         {
           "at": "2026-10-15T04:14Z",
@@ -18974,17 +19094,25 @@
           "at": "2026-10-15T05:32Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: overlay PASS: 027 v01i open label 'About 1,000 km/h' 0:06.9 (3e0c8dab; picture_qa + polish_gate PASS, audio = v01g); score NUMBER/WORDS/STYLE/MOTION"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): 027 v01i open label 'About 1,000 km/h' at 0:06.9 KEEP (3e0c8dab). NUMBER counts; picture_qa + polish_gate PASS."
         }
       ],
       "kind": "chart",
-      "backlog": "owb-teach-overlays",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T05:32Z",
-        "by": "cursor",
-        "note": "027 v01i gates PASS, stills on #99"
-      }
+      "backlog": "owb-teach-overlays"
     },
     {
       "id": "J0257",
@@ -19134,13 +19262,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T05:49Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T05:20Z",
-      "result": "parked for Chief: script review",
+      "result": "PASS (Chief): OWB 031 Magnetic Field Flip script v01 draft-lock (e034fdc3). Next: facts + quote check.",
       "history": [
         {
           "at": "2026-10-15T05:20Z",
@@ -19181,6 +19309,21 @@
           "at": "2026-10-15T06:02Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: script review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): OWB 031 Magnetic Field Flip script v01 draft-lock (e034fdc3). Next: facts + quote check."
         }
       ],
       "kind": "script",
@@ -19193,14 +19336,7 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T06:02Z",
-        "by": "gemini",
-        "note": "Posting report and parking for Chief script review"
-      }
+      "model": "gemini-agy"
     },
     {
       "id": "J0260",
@@ -19213,13 +19349,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T06:33Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T05:20Z",
-      "result": "parked for Chief: script review (HOS 012 Gregor Mendel script v01 93.5 PASS + SOURCES v01 rows 1-33, commit 7a5b3e3, desk #180)",
+      "result": "PASS (Chief): HOS 012 Mendel LOCK; script v01 draft-lock 93.5 (7a5b3e3). Next: facts + quote check. Cancel J0268/J0269 duplicates.",
       "history": [
         {
           "at": "2026-10-15T05:20Z",
@@ -19265,6 +19401,21 @@
           "at": "2026-10-15T06:55Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: script review (HOS 012 Gregor Mendel script v01 93.5 PASS + SOURCES v01 rows 1-33, commit 7a5b3e3, desk #180)"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): HOS 012 Mendel LOCK; script v01 draft-lock 93.5 (7a5b3e3). Next: facts + quote check. Cancel J0268/J0269 duplicates."
         }
       ],
       "kind": "script",
@@ -19277,13 +19428,7 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T06:55Z",
-        "by": "gemini"
-      }
+      "model": "gemini-agy"
     },
     {
       "id": "J0261",
@@ -19558,13 +19703,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T08:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-15T06:22Z",
-      "result": "needs Ben: ElevenLabs API key's account (creator tier) reads 5,275 of 209,536 left at 08:15Z, overage disabled, reset 30 Oct 10:50Z. Take 2 (>=450 s, ~6,500 credits at 13.75/s) cannot be made on it; nothing spent. Ben's '83% remaining' must be another account/workspace: Ben to check which account the API key in 04_Audio (el_auth) belongs to, or supply a key for the account with credit. SFX stem + lay script ready (07c096f4); run _lay_score_take2_v01i.py the moment a take exists.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T06:22Z",
@@ -19635,17 +19780,15 @@
           "at": "2026-10-15T08:10Z",
           "by": "cursor",
           "what": "blocked: needs Ben: ElevenLabs API key's account (creator tier) reads 5,275 of 209,536 left at 08:15Z, overage disabled, reset 30 Oct 10:50Z. Take 2 (>=450 s, ~6,500 credits at 13.75/s) cannot be made on it; nothing spent. Ben's '83% remaining' must be another account/workspace: Ben to check which account the API key in 04_Audio (el_auth) belongs to, or supply a key for the account with credit. SFX stem + lay script ready (07c096f4); run _lay_score_take2_v01i.py the moment a take exists."
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: No-spend path (Chief): do NOT wait on Ben for top-up. (a) Prefer existing OWB bed that music_gate PASSes vs 027 (try 026 nearest-star or 021 saturn — not retired earth-spin lift). (b) Else take-2 bed ≤380 s / ≤5,200 credits on API-key account. SFX stem PASS. Ben-only: which EL account is '83%'."
         }
       ],
       "kind": "assembly",
-      "urgent": 3,
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-10-15T08:10Z",
-        "by": "cursor",
-        "note": "blocked: API key account has 5,275 credits"
-      }
+      "urgent": 3
     },
     {
       "id": "J0266",
@@ -19762,6 +19905,11 @@
           "at": "2026-10-15T08:16Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: NAS NFS mount /Volumes/data hung (192.168.1.119 pings; ls and mkdir hang; 08:11 copy in tmux j0267-nas still stuck in mkdir). mini_repair.py run, no effect. Needs a remount of /Volumes/data (or NAS restart) before the NAS copy. Master is safe meanwhile: OWB UAT and 027 07_Edit-Project copies both sha f74ca3e8 = pack."
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "left parked: infra — NAS NFS hung; master safe in two places; health keeper."
         }
       ],
       "kind": "assembly",
@@ -19784,7 +19932,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -19796,6 +19944,11 @@
           "at": "2026-10-15T07:07Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "cancelled: duplicate of J0260 Mendel script v01 (7a5b3e3); cancel-not-delete"
         }
       ],
       "kind": "script"
@@ -19811,7 +19964,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -19823,6 +19976,11 @@
           "at": "2026-10-15T07:08Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "cancelled: duplicate of J0260 Mendel script v01 (7a5b3e3); cancel-not-delete"
         }
       ],
       "kind": "script"
@@ -19838,13 +19996,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T08:17Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:26Z",
-      "result": "parked for Chief: merge PR #201 (agy Argon id gemini-argon -> gemini-4-argon-high; gemini-argon is rejected by agy); fix AGENTS.md 'agy --model gemini-argon' line; decide Luna/Terra lanes (proposal in 05_Analytics/ai_spend/MODELS_2026-10-15.md)",
+      "result": "PASS (Chief): PR #201 already merged f7f265f7 (agy Argon id gemini-4-argon-high). AGENTS.md Best-fit line already shows gemini-4-argon-high. Luna: adopt gpt-6-luna for Codex assembly only when --eta ≤ 30 (JSON/manifest/gate re-runs); Sol stays for real code. Terra gpt-5.6-terra: no lane (older gen; Luna/Sol cover it). Effort tiers deferred.",
       "history": [
         {
           "at": "2026-10-15T07:26Z",
@@ -19880,16 +20038,24 @@
           "at": "2026-10-15T08:19Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: merge PR #201 (agy Argon id gemini-argon -> gemini-4-argon-high; gemini-argon is rejected by agy); fix AGENTS.md 'agy --model gemini-argon' line; decide Luna/Terra lanes (proposal in 05_Analytics/ai_spend/MODELS_2026-10-15.md)"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): PR #201 already merged f7f265f7 (agy Argon id gemini-4-argon-high). AGENTS.md Best-fit line already shows gemini-4-argon-high. Luna: adopt gpt-6-luna for Codex assembly only when --eta ≤ 30 (JSON/manifest/gate re-runs); Sol stays for real code. Terra gpt-5.6-terra: no lane (older gen; Luna/Sol cover it). Effort tiers deferred."
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T08:19Z",
-        "by": "cursor",
-        "note": "PR #201"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0271",
@@ -19902,13 +20068,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-15T07:42Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:28Z",
-      "result": "parked for Chief: choose Fermi/Europa/JWST B thumbnails; branch codex/j0271-thumb-redo commit 94092932, local A/B sheets /Users/benjaminoats/_desk/J0271-thumbnails; automated colour gates pass, creative caveats in J0271_REVIEW.md; no tests armed",
+      "result": "PASS hooks (Chief): Fermi/Europa/JWST B hooks KEEP. Orbit exception stands (6187325272). Polish is J0277 — do not arm Studio until J0277 PASS.",
       "history": [
         {
           "at": "2026-10-15T07:28Z",
@@ -19949,17 +20115,25 @@
           "at": "2026-10-15T07:52Z",
           "by": "codex",
           "what": "blocked: parked for Chief: choose Fermi/Europa/JWST B thumbnails; branch codex/j0271-thumb-redo commit 94092932, local A/B sheets /Users/benjaminoats/_desk/J0271-thumbnails; automated colour gates pass, creative caveats in J0271_REVIEW.md; no tests armed"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS hooks (Chief): Fermi/Europa/JWST B hooks KEEP. Orbit exception stands (6187325272). Polish is J0277 — do not arm Studio until J0277 PASS."
         }
       ],
       "for": "codex",
-      "kind": "thumb",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T07:52Z",
-        "by": "codex",
-        "note": "Evidence committed; queued ledger candidates and follow-on batches J0273/J0274; Chief review next"
-      }
+      "kind": "thumb"
     },
     {
       "id": "J0272",
@@ -20031,13 +20205,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-15T08:02Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-15T07:50Z",
-      "result": "parked for Chief: choose Orbit v02 Last Star and Neutron Star candidates under exception 6187325272; branch codex/j0273-thumb-redo. Media /Users/benjaminoats/_desk/J0273-thumbnails/*_B_v02.jpg and *_AB_v02.jpg; colour gates pass, no tests armed. Moon skipped due J0099.",
+      "result": "PASS (Chief): Last Star B v02 + Neutron Star B v02 KEEP (Orbit exception). Moon skipped (J0099). Do not arm until ledger OK.",
       "history": [
         {
           "at": "2026-10-15T07:50Z",
@@ -20113,17 +20287,25 @@
           "at": "2026-10-15T08:06Z",
           "by": "codex",
           "what": "blocked: parked for Chief: choose Orbit v02 Last Star and Neutron Star candidates under exception 6187325272; branch codex/j0273-thumb-redo. Media /Users/benjaminoats/_desk/J0273-thumbnails/*_B_v02.jpg and *_AB_v02.jpg; colour gates pass, no tests armed. Moon skipped due J0099."
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): Last Star B v02 + Neutron Star B v02 KEEP (Orbit exception). Moon skipped (J0099). Do not arm until ledger OK."
         }
       ],
       "for": "codex",
-      "kind": "thumb",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T08:06Z",
-        "by": "codex",
-        "note": "Orbit v02 metadata committed; T008/T009 queued; Chief review next"
-      }
+      "kind": "thumb"
     },
     {
       "id": "J0274",
@@ -20136,13 +20318,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T08:08Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T08:47Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-15T07:50Z",
-      "result": "parked for Chief: Alien Worlds b8-X_FyJnHM has J0099 Test & Compare running since 10 Oct (no read-back), so skipped; HOS Germs _C92tIJCk8A needs a decision: OK gpt-image-2 for HOS or route to Flow Nano Banana 2 per HOS AGENTS. Note: 05_Analytics/tests/J0274_REVIEW.md on branch cursor/j0274-thumb-redo (e89a3323). Nothing built or spent.",
+      "result": "Ruling (Chief): Alien Worlds skip OK (J0099). HOS Germs B: NOT gpt-image-2 — Flow Nano Banana 2 per HOS AGENTS.md. Follow-on image job added; this job closed, no spend.",
       "history": [
         {
           "at": "2026-10-15T07:50Z",
@@ -20188,17 +20370,25 @@
           "at": "2026-10-15T08:09Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Alien Worlds b8-X_FyJnHM has J0099 Test & Compare running since 10 Oct (no read-back), so skipped; HOS Germs _C92tIJCk8A needs a decision: OK gpt-image-2 for HOS or route to Flow Nano Banana 2 per HOS AGENTS. Note: 05_Analytics/tests/J0274_REVIEW.md on branch cursor/j0274-thumb-redo (e89a3323). Nothing built or spent."
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "done: Ruling (Chief): Alien Worlds skip OK (J0099). HOS Germs B: NOT gpt-image-2 — Flow Nano Banana 2 per HOS AGENTS.md. Follow-on image job added; this job closed, no spend."
         }
       ],
       "for": "cursor",
       "kind": "thumb",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-15T08:09Z",
-        "by": "cursor",
-        "note": "review note e89a3323"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "codex",
@@ -20360,6 +20550,141 @@
         {
           "at": "2026-10-15T08:09Z",
           "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0279",
+      "title": "HOS Germs thumb B via Flow Nano Banana 2 (not gpt-image-2)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief J0274: HOS AGENTS.md — thumbnail key art = Flow Nano Banana 2 (0 credits), then Vertex. Build Germs (_C92tIJCk8A) B in house look (Explorer LL, cream/gold). Score HOOK/BAND/PHONE; park for Chief. No gpt-image-2. No Studio arm.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T08:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "image"
+    },
+    {
+      "id": "J0280",
+      "title": "HOS Related fixes ×4 after longs public (from J0245)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) 1lszTrYRp-8 → wwcjcFfC-5M\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) JyRjM-9Yc8g → GHZDsiH7L7A\nWait until long is public. No other Studio writes.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T08:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0281",
+      "title": "OWB: schedule PASS Shorts (Venus J0232, Saturn late-arrival J0253)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS J0232 + J0253. Upload Private+publishAt next free OWB Short slots; register UPLOADS. Push J0232 review branch if still local-only.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T08:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0282",
+      "title": "HOS 008 PR #322 rebase + squash-merge after J0240 PASS",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS J0240 boards v03. PR #322 conflicts — rebase onto main, check_all on 008, squash-merge. No mint until merged.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T08:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0283",
+      "title": "HOS: schedule PASS Shorts (004 s04 cathode; 005 s05 valves) + standalone S1-S4",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS J0233, J0254, J0172. (1) youtube:package HOS standalone S1–S4 Private+publishAt locked Mon/Wed (S1 Mon 19 Oct 11:30 London); UPLOADS standaloneTest=true. (2) Schedule 004 s04 + 005 s05 on next free search-titled slots. Buffer only after public → full film.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T08:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T08:47Z",
+          "by": "chief",
           "what": "added"
         }
       ],
