@@ -20105,13 +20105,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-15T12:08Z",
-      "eta": "2026-10-15T12:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T06:59Z",
-      "result": "",
+      "result": "NAS archive copy sha f74ca3e8 matches pack, OWB UAT and the film folder. Recorded in MASTER_COPIES.md (fc5a53f3). /Volumes/data umount pid 20236 still stuck in U; the file was written via a temporary second mount of the same export, then that mount was removed.",
       "history": [
         {
           "at": "2026-10-15T06:59Z",
@@ -20212,6 +20212,11 @@
           "at": "2026-10-15T12:13Z",
           "by": "cursor",
           "what": "step 4 of 4 done: NAS sha f74ca3e8 match"
+        },
+        {
+          "at": "2026-10-15T12:13Z",
+          "by": "cursor",
+          "what": "done: NAS archive copy sha f74ca3e8 matches pack, OWB UAT and the film folder. Recorded in MASTER_COPIES.md (fc5a53f3). /Volumes/data umount pid 20236 still stuck in U; the file was written via a temporary second mount of the same export, then that mount was removed."
         }
       ],
       "kind": "assembly",
@@ -20221,7 +20226,8 @@
         "at": "2026-10-15T12:13Z",
         "by": "cursor",
         "note": "NAS sha f74ca3e8 match"
-      }
+      },
+      "done_ref": "fc5a53f3"
     },
     {
       "id": "J0268",
