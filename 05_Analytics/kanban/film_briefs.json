@@ -356,15 +356,23 @@
       "watchFrom": "v01l"
     },
     "OWB:028": {
-      "updated": "2026-10-15T18:25Z",
+      "updated": "2026-10-15T22:55Z",
       "mood": "good",
       "done": "Script, voice, shot list and 7 code graphics.",
-      "holdup": "Waiting its turn behind 027 for picture.",
+      "holdup": "Shot boards v02 with the Chief's ten rulings are done (PR #218): almost all free footage and code graphics, 279 Flow credits, and two Omni clips at about £1.30 of free promo credit. Waiting on the Chief's check and its turn in the Flow credit plan.",
       "steps": [
         {
           "who": "Cursor",
           "what": "gather source footage and write the shot boards (no spend)",
-          "job": "J0310"
+          "job": "J0310",
+          "done": true,
+          "doneText": "v01 · Chief price pass with changes"
+        },
+        {
+          "who": "Cursor",
+          "what": "shot boards v02 with the Chief's rulings",
+          "job": "J0321",
+          "whenText": "v02 on PR #218 · waits for the Chief"
         },
         {
           "who": "Cursor",
@@ -584,16 +592,16 @@
       "youShort": "your final OK Sun 15 Nov"
     },
     "HOS:009": {
-      "updated": "2026-10-15T21:55Z",
+      "updated": "2026-10-15T22:55Z",
       "mood": "good",
       "done": "Script, fact check, upload package, voiceover and the shot boards.",
-      "holdup": "Shot boards v02 are done (HOS PR #331): about 13,850 of the 23,740 Flow credits left, so no money, and 9,890 spare. They wait for the Chief's check; the mint order after 006 and 007 is the Chief's call.",
+      "holdup": "Shot boards v04 are done (HOS PR #331), split to fit the Chief's credit plan: first half about 7,350 Flow credits now, the rest about 5,180 after the ~12 Nov renewal. No money. They wait for the Chief's check.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "shot boards v02 with the Chief price-pass changes",
+          "what": "shot boards v04, split into two halves to fit the credits",
           "job": "J0313",
-          "whenText": "v02 on HOS PR #331 · waits for the Chief"
+          "whenText": "v04 on HOS PR #331 · waits for the Chief"
         },
         {
           "who": "Cursor",
