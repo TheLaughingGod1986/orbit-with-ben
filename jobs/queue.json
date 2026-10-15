@@ -1,5 +1,5 @@
 {
-  "next_id": 271,
+  "next_id": 272,
   "jobs": [
     {
       "id": "J0001",
@@ -19791,6 +19791,34 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0271",
+      "title": "Thumbnail redo with gpt-image-2 (Ben, 15 Oct): plan + first 3 B variants for the lowest-CTR live longs",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 15 Oct 2026: 'use Codex GPT Image 2 to redo all the thumbnails with a higher click-through rate'. AGENTS.md 'Who does what' (gpt-image-2 rule).\n1. From 05_Analytics/studio_ctr.json list every live long on both channels by CTR (lowest first, with impressions). Skip any with a Test & Compare running (Jupiter -jmMROGoZCM until ~26 Oct; Saturn 55AEQwvs36g J0189) and anything already queued (024 J0250, Andromeda J0234).\n2. Write 05_Analytics/tests/THUMB_REDO_PLAN_2026-10-15.md: one line per video with the hook idea (2-3 words, a question or danger, one subject, Orbit for OWB / house style for HOS).\n3. Build B for the first 3 with gpt-image-2 (Codex's built-in image tool on Ben's plan; if it asks for an API key or payment, stop and park for Ben). Art from gpt-image-2; hook text set by our builder, readable at 168 px, clear of the duration badge; 1280x720 under 2 MB; thumb_preview.py --score PASS.\n4. Add each to THUMB_LEDGER.json (thumb_ledger.py add) and park for Chief with a 168 px A/B sheet per video. Chief picks, then a studio job arms Test & Compare. Queue the rest in batches of 3 after.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T07:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T07:28Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "for": "codex",
+      "kind": "thumb"
     }
   ],
   "focus": [
