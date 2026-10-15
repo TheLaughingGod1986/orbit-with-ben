@@ -1,5 +1,5 @@
 {
-  "next_id": 337,
+  "next_id": 338,
   "jobs": [
     {
       "id": "J0001",
@@ -24957,6 +24957,33 @@
         "by": "cursor",
         "note": "CI green, squash-merged 8f1068d"
       }
+    },
+    {
+      "id": "J0337",
+      "title": "028 Gliese 710: fix PR #218 Flow headroom table, then rebase + squash-merge plate boards v02 (J0321 PASS; no mint)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS J0321 (15 Oct ~23:58 London): 028 plate boards v02 on OWB PR #218 (2819288a) accepted. Boards only: no mint, no spend, no top-up.\n\nBefore merging, correct the Flow headroom section of PRICE_REVIEW_v02.md and `fits_now` in PLATE_BOARDS_v02.json (edit _build_plate_boards_v02.py and rebuild; v01 files stay unchanged):\n- HOS 006 expected = 0 Flow (picture comes from existing KEEPs, J0331 full_join_v02; the 3,182 figure is stale).\n- HOS 009 = tranche 1 only, 7,354 expected (boards v04 on HOS main 8f1068d). Tranche 2 (5,180) waits for the ~12 Nov AI Ultra renewal and is not charged against today's balance; list it in a note, not in the sum.\n- HOS 007 stays 7,553 for now (J0322 boards v02 may change it; say so). HOS 008 stays 5,605.\n- Corrected sum 20,512; Flow 23,740 leaves 3,228; after 028's 279 leaves 2,949, so the 3,000 gate misses by 51 today.\n- Mint order (Chief ruling): 006 (0) > 007 > 008 > 009 tranche 1 > 028's two Veo plates (279). 028 mints only when a live Flow read leaves >=3,000 after it; otherwise it rides with 009 tranche 2 after the renewal. Omni x2 (£1.30 + £1.30 late room, Vertex promo) is priced and fits but is not authorised to generate until Chief queues the 028 picture-mint job.\n\nThen rebase onto main if needed, run the repo checks for 028, wait for CI green, squash-merge PR #218. Report the merge sha and the corrected headroom numbers in the result. Never force-push over someone else's work, no deletes or resets.\n",
+      "ref": "J0321",
+      "film": "028",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T23:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T23:02Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
