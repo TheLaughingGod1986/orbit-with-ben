@@ -12195,13 +12195,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "waits for input: NAS I/O stall (tmux J0175-ruling-v03 / J0175-closing-v04 live, check their .done files first) and 006 master (picture due 25 Oct). Parked by Claude so it stops being re-handed every few minutes (HOS #180 6183327401).",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -12532,6 +12532,11 @@
           "at": "2026-10-15T02:56Z",
           "by": "codex",
           "what": "released: Step 4/6 holds. Existing tmux sessions J0175-ruling-v03 and J0175-closing-v04 are live. Logs /Users/benjaminoats/_desk/logs/J0175-bridge4-v03.log and J0175-closing-v04.log empty; corresponding .done files absent. No duplicate render started. Implementation already HOS PR #300, 2c40585. Next run checks exit files, then gates/card review. Full compilation waits for 006 master; prior NAS I/O stall unresolved."
+        },
+        {
+          "at": "2026-10-15T02:57Z",
+          "by": "claude",
+          "what": "blocked: waits for input: NAS I/O stall (tmux J0175-ruling-v03 / J0175-closing-v04 live, check their .done files first) and 006 master (picture due 25 Oct). Parked by Claude so it stops being re-handed every few minutes (HOS #180 6183327401)."
         }
       ],
       "kind": "assembly",
