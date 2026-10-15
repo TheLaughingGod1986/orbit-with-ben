@@ -37,13 +37,14 @@ class Routing(unittest.TestCase):
         job = {"kind": "chart"}
         self.assertEqual(routing.preferred_worker(job), "codex")
         self.assertEqual(routing.model_for(job, "codex"), "gpt-6-astra")
-        self.assertEqual(routing.model_for(job, "cursor"), "cursor-auto")
+        self.assertEqual(routing.model_for(job, "cursor"), "cursor-grok-4-7")
 
     def test_thumbnails_go_to_codex(self):
         """Ben, 14 Oct 2026: Codex built the new thumbnails; Codex builds them from now on."""
         self.assertEqual(routing.preferred_worker({"kind": "thumb"}), "codex")
         self.assertEqual(routing.model_for({"kind": "thumb"}, "codex"), "gpt-6-astra")
-        self.assertEqual(routing.chain("thumb")[1:], [("cursor", "cursor-auto"), ("gemini", "gemini-agy")])
+        self.assertEqual(routing.chain("thumb")[1:], [("cursor", "cursor-grok-4-7"), ("cursor", "cursor-auto"),
+                                                      ("gemini", "gemini-agy")])
 
     def test_an_explicit_model_wins(self):
         job = {"kind": "assembly", "model": "gpt-6-astra"}
@@ -54,9 +55,9 @@ class Routing(unittest.TestCase):
         """Ben, 11 Oct 2026 23:40 ("a Claude model in Cursor") and 23:47 ("we also have Gemini and Codex")."""
         for kind in ("script", "review", "qa", "listing"):
             self.assertEqual(routing.chain(kind), [("claude", "claude-opus-5-5"), ("cursor", "cursor-claude-opus-5-5"),
-                                                   ("gemini", "gemini-agy"), ("codex", "gpt-6-astra")], kind)
+                                                   ("gemini", "gemini-argon"), ("codex", "gpt-6-astra")], kind)
             self.assertEqual(routing.model_for({"kind": kind}, "cursor"), "cursor-claude-opus-5-5")
-            self.assertEqual(routing.model_for({"kind": kind}, "gemini"), "gemini-agy")
+            self.assertEqual(routing.model_for({"kind": kind}, "gemini"), "gemini-argon")
             self.assertEqual(routing.model_for({"kind": kind}, "codex"), "gpt-6-astra")
         self.assertEqual(routing.model_for({"kind": "facts"}, "cursor"), "")  # Cursor drives agy there, not Claude
         self.assertEqual(routing.chain("chart")[0], ("codex", "gpt-6-astra"))  # code and graphics: Codex first
@@ -78,10 +79,10 @@ class Routing(unittest.TestCase):
     def test_next_lane_skips_workers_that_are_down(self):
         job = {"kind": "script"}
         self.assertEqual(routing.next_lane(job, "claude", {"cursor", "gemini", "codex"}), ("cursor", "cursor-claude-opus-5-5"))
-        self.assertEqual(routing.next_lane(job, "claude", {"gemini", "codex"}), ("gemini", "gemini-agy"))
+        self.assertEqual(routing.next_lane(job, "claude", {"gemini", "codex"}), ("gemini", "gemini-argon"))
         self.assertEqual(routing.next_lane(job, "gemini", {"cursor", "codex"}), ("codex", "gpt-6-astra"))
         self.assertIsNone(routing.next_lane(job, "codex", {"cursor", "gemini", "codex"}))
-        self.assertEqual(routing.next_lane({"kind": "chart"}, "codex", {"cursor"}), ("cursor", "cursor-auto"))
+        self.assertEqual(routing.next_lane({"kind": "chart"}, "codex", {"cursor"}), ("cursor", "cursor-grok-4-7"))
         self.assertEqual(routing.preferred_worker({"kind": "chart"}, {"cursor", "gemini"}), "cursor")
         self.assertEqual(routing.preferred_worker({"kind": "chart"}, {"gemini"}), "gemini")
 

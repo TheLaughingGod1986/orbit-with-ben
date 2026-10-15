@@ -35,6 +35,10 @@ MODELS = {
     "gpt-6-astra": "GPT-6-Astra (Codex CLI 0.160, `-m gpt-6-astra`; checked on the Mini 11 Oct)",
     "gpt-6.1-sol": "GPT-6.1-Sol (Codex CLI default)",
     "cursor-auto": "Cursor agent CLI, model Auto",
+    "cursor-grok-4-7": "Grok 4.7 inside the Cursor agent CLI (`agent --model grok-4.7`; Ben, 15 Oct 2026: plenty of "
+                       "usage left). Cursor's own default for code, assembly and Studio work",
+    "gemini-argon": "Gemini Argon via Antigravity `agy --model gemini-argon` (Ben, 15 Oct 2026: for really complex "
+                    "tasks): Gemini's lane for reasoning, review, QA, listings and claim checks",
     "cursor-claude-opus-5-5": "Claude Opus 5.5 inside the Cursor agent CLI on the Mini (`agent --model claude-opus-5-5`); "
                               "Claude's first fallback when Claude Code is out of usage",
     "gemini-agy": "Gemini via Antigravity `agy` (its default model)",
@@ -50,7 +54,8 @@ MODELS = {
 
 # The agent (jobs.py --agent) that runs each model. "gemini" = the Antigravity `agy` CLI woken by the relay itself.
 RUNS_ON = {"grok": "chief", "claude-opus-5-5": "claude", "gpt-6-astra": "codex", "gpt-6.1-sol": "codex",
-           "cursor-auto": "cursor", "cursor-claude-opus-5-5": "cursor", "gemini-agy": "gemini"}
+           "cursor-auto": "cursor", "cursor-claude-opus-5-5": "cursor", "cursor-grok-4-7": "cursor",
+           "gemini-agy": "gemini", "gemini-argon": "gemini"}
 
 # The Mini workers the relay can wake (chief_relay.cli_spec). Claude and Chief are woken elsewhere.
 MINI_WORKERS = ("cursor", "codex", "gemini")
@@ -63,19 +68,31 @@ MINI_WORKERS = ("cursor", "codex", "gemini")
 CURSOR_CLAUDE_MODEL = os.environ.get("CURSOR_CLAUDE_MODEL", "claude-opus-5-5")
 
 # routing key -> the string the worker's CLI takes. "" = the CLI's own default (Cursor Auto, agy's default Gemini).
-CLI_MODEL = {"cursor-auto": "", "cursor-claude-opus-5-5": CURSOR_CLAUDE_MODEL, "gemini-agy": ""}
+# Ben, 15 Oct 2026: "choose the best fit model for the job ... Cursor doesn't always have to be on Auto, it could be
+# on Grok 4.7 ... Gemini could use Gemini Argon if it's a really complex task". The CLI ids can be overridden from the
+# relay's environment if the Mini's lists name them differently (`agent --list-models`, `agy` model list); a run that
+# fails on an unknown model flags that model and the job walks on, so a wrong id never stops the queue.
+CURSOR_GROK_MODEL = os.environ.get("CURSOR_GROK_MODEL", "grok-4.7")
+AGY_ARGON_MODEL = os.environ.get("AGY_ARGON_MODEL", "gemini-argon")
+CLI_MODEL = {"cursor-auto": "", "cursor-claude-opus-5-5": CURSOR_CLAUDE_MODEL, "cursor-grok-4-7": CURSOR_GROK_MODEL,
+             "gemini-agy": "", "gemini-argon": AGY_ARGON_MODEL}
 
 # Claude's first fallback when Claude Code is out of usage or rate-limited (Ben, 11 Oct 2026 23:40).
 CLAUDE_FALLBACK = ("cursor", "cursor-claude-opus-5-5")
 GEMINI = ("gemini", "gemini-agy")
+ARGON = ("gemini", "gemini-argon")
 ASTRA = ("codex", "gpt-6-astra")
+SOL = ("codex", "gpt-6.1-sol")
+CURSOR_GROK = ("cursor", "cursor-grok-4-7")
+CURSOR_AUTO = ("cursor", "cursor-auto")
 
 # Calls only Chief (Grok) makes; real money and the irreversible stay with Ben.
 PROTECTED = ("final OK / PASS", "merge", "AGENTS.md and the Never list", "spend past the written rules",
              "anything irreversible")
 
 # Reasoning, scripts, listings and review notes: Claude Code -> Cursor on Claude -> Gemini -> Codex (last resort).
-_CLAUDE_CHAIN = [("claude", "claude-opus-5-5"), CLAUDE_FALLBACK, GEMINI, ASTRA]
+# Gemini stands in on Argon here: these are the hard reasoning jobs (Ben, 15 Oct 2026).
+_CLAUDE_CHAIN = [("claude", "claude-opus-5-5"), CLAUDE_FALLBACK, ARGON, ASTRA]
 
 # kind: (job type, chain [(agent, model), ...] primary first, how the job runs). Code and graphics: Codex first.
 # Tool jobs (vo, image, video): the same tool, run by whichever worker is up.
@@ -83,7 +100,7 @@ CHAINS = {
     "script":   ("Script writing and fact research", _CLAUDE_CHAIN,
                  "Claude writes; Gemini (agy) drafts SOURCES.md and checks every claim (kind facts). A Gemini or Codex "
                  "draft is a draft only; Claude or Chief locks it"),
-    "facts":    ("Sources and claims check", [("cursor", "gemini-agy"), GEMINI, ("claude", "claude-opus-5-5"),
+    "facts":    ("Sources and claims check", [("cursor", "gemini-agy"), ARGON, ("claude", "claude-opus-5-5"),
                                                CLAUDE_FALLBACK, ASTRA],
                  "the worker runs `agy` (claims as <driver>/gemini), or the relay wakes agy itself; Claude's quote "
                  "check backs it"),
@@ -97,10 +114,10 @@ CHAINS = {
                  "OWB: master frame or NASA plate first, else a Vertex still; HOS: Flow Nano Banana 2, then Vertex. "
                  "Text always from the builders, never the image model"),
     "chart":    ("Charts, graphs, overlays, people cards, date call-outs, thumbnail builders",
-                 [ASTRA, ("cursor", "cursor-auto"), GEMINI],
+                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI],
                  "our own code graphics (Python/ffmpeg), rendered per row"),
     "thumb":    ("Thumbnail design: the whole thumbnail (art, character, hook text) and its Test & Compare variants",
-                 [ASTRA, ("cursor", "cursor-auto"), GEMINI],
+                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI],
                  "Codex designs it (Ben, 14 Oct 2026: Codex built NO WAY OUT? / NO SOLID GROUND?, which beat the house "
                  "style on sight); every new design goes in as Test & Compare B against the live thumb and the result "
                  "decides; checks: 1280x720, under 2 MB, readable at 168 px, nothing under the duration badge"),
@@ -108,13 +125,13 @@ CHAINS = {
                                       ("gemini", "veo-3.1-fast-generate-001")],
                  "OWB: Vertex Veo (Quality only for a hero), Omni gemini-omni-flash-preview at global for Orbit only; "
                  "HOS: Flow Veo 3.1, fallback Vertex Veo"),
-    "assembly": ("Picture assembly, ffmpeg, code and tools", [("cursor", "cursor-auto"), ("codex", "gpt-6.1-sol"), GEMINI],
+    "assembly": ("Picture assembly, ffmpeg, code and tools", [CURSOR_GROK, CURSOR_AUTO, SOL, GEMINI],
                  "on the Mini; long renders in detached tmux"),
     "qa":       ("Frame review and QA", _CLAUDE_CHAIN,
                  "picture_qa / polish_gate / music_gate must PASS first; Chief gives the PASS"),
     "listing":  ("Titles, descriptions, tags, SEO", _CLAUDE_CHAIN,
                  "Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
-    "studio":   ("Studio browser tasks", [("chief", "grok"), ("cursor", "cursor-auto"), ("codex", "gpt-6.1-sol")],
+    "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL],
                  "OWB Studio CDP 9223, HOS Flow 9222; never Replace, never delete"),
     "chief":    ("Merges, final OK, PASS, AGENTS.md", [("chief", "grok")],
                  "no stand-in: parked for Chief; money and the irreversible go to Ben"),

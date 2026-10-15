@@ -105,6 +105,9 @@ CLAUDE_LIMIT_RE = re.compile(CREDIT_RE.pattern + r"|out of usage|\bhit (?:the|it
 # A CLI saying one model's pool is spent, not the whole agent (Cursor Ultra: "hit your usage limit for Opus ... Switch
 # to a different model").
 MODEL_LIMIT_RE = re.compile(r"usage limit for \w|switch to a different model", re.I)
+# A CLI that doesn't know the model it was given (a renamed or mistyped id): flag that model, keep the worker up.
+UNKNOWN_MODEL_RE = re.compile(r"(?:unknown|invalid|unsupported|unrecognized|unrecognised) model|model\b[^\n]{0,60}"
+                              r"(?:not found|not available|does not exist|isn't available|is not supported)", re.I)
 
 
 def now() -> dt.datetime:
@@ -217,10 +220,14 @@ def cli_spec(agent: str, model: str = ""):
         b = find_bin("CURSOR_AGENT_BIN", "agent")
         flags = os.environ.get("CURSOR_AGENT_FLAGS", "-p --force")
         cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "cursor" else ""
-        if not cm and cursor_default_out(now()):
-            # Cursor's own default model on the Mini hit its pool limit ("You've hit your usage limit for Opus ...
-            # Switch to a different model", 15 Oct 2026 03:40Z): run on Auto until that mark ends.
-            cm = os.environ.get("CURSOR_FALLBACK_MODEL", "auto")
+        if not cm and model != "cursor-auto":
+            # Ben, 15 Oct 2026: "Cursor doesn't always have to be on Auto, it could be on Grok 4.7". A job with no
+            # Cursor model of its own runs on Grok 4.7; on Auto when Grok is flagged, or when Cursor's default model
+            # hit its pool limit ("You've hit your usage limit for Opus ... Switch to a different model", 03:40Z).
+            if cursor_default_out(now()) or not routing.lane_ok("cursor", "cursor-grok-4-7"):
+                cm = os.environ.get("CURSOR_FALLBACK_MODEL", "auto")
+            else:
+                cm = routing.cli_model("cursor-grok-4-7")
         if cm:
             flags = f"{flags} --model {shlex.quote(cm)}"
     elif agent == "codex":
@@ -1110,6 +1117,19 @@ def run_locked(at: dt.datetime) -> int:
                 log(f"{who} looks out of usage or signed out: down until {iso(until)}; walking the job's chain")
             if job:
                 walk_on(job, who, model, now())
+            at = now()
+            continue
+        bad_model = (model or ("cursor-grok-4-7" if who == "cursor" and not cursor_default_out(now()) else ""))
+        if code not in (0, 124) and bad_model and UNKNOWN_MODEL_RE.search(tail[-1500:]):
+            # The worker doesn't know that model id (Ben, 15 Oct 2026: best-fit models per job). Flag the model for a
+            # day, keep the worker up, and walk the job on so a wrong id never stops the queue.
+            mark_model_down(bad_model, f"{NAMES.get(who, who)} didn't recognise model {routing.cli_model(bad_model)}",
+                            now() + dt.timedelta(hours=24), now())
+            routing.OUT.add(bad_model)
+            notify(f"Chief relay: {NAMES.get(who, who)} doesn't know model `{routing.cli_model(bad_model)}`; flagged "
+                   f"for 24 h and the job walks on. Fix the id in scripts/routing.py (`agent --list-models` / codex / agy).")
+            if job:
+                walk_on(job, who, bad_model, now())
             at = now()
             continue
         if code not in (0, 124):
