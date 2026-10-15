@@ -65,6 +65,31 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .vr .pill.bad{background:var(--blocked-soft);color:var(--blocked)}
 .vr .pill.live,.vr .pill.sched{background:var(--done-soft);color:var(--done)}
 .vr .pill.you{background:var(--accent);color:#fff}
+/* Ben, 14 Oct 2026: "the progress bar change colours depending on how far through the job" (red → amber → green). */
+.bar i.pc,.pbar .track i.pc{background:var(--pc)!important;opacity:1!important}
+/* Ben, 14 Oct 2026: tap a video for its total ETA and every task in order: working on, next, 3rd, 4th ... */
+.vw{margin:0 0 6px}
+.vw .vr{margin:0}
+.vw.open .vr{border-bottom-left-radius:0;border-bottom-right-radius:0;border-color:var(--ink-3)}
+.vr .chev{flex:none;color:var(--ink-3);font-size:12px;transition:transform .15s}
+.vw.open .vr .chev{transform:rotate(90deg)}
+.vd{background:var(--panel-2);border:1px solid var(--ink-3);border-top:0;border-radius:0 0 10px 10px;padding:8px 12px 10px;font-size:13px}
+.vd .vtot{display:flex;flex-wrap:wrap;gap:2px 12px;margin:0 0 6px;color:var(--ink-2)}
+.vd .vtot b{color:var(--ink)}
+.vd ol{list-style:none;margin:0;padding:0}
+.vd li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:0 8px;padding:5px 0;border-top:1px solid var(--line)}
+.vd li:first-child{border-top:0}
+.vd .o{font-weight:700;font-size:12px;color:var(--ink-3);padding-top:1px}
+.vd li.now .o{color:var(--doing)}
+.vd li.nx .o{color:var(--accent)}
+.vd li.bad .o{color:var(--blocked)}
+.vd li.rv .o{color:var(--soon)}
+.vd li.ok{opacity:.6}
+.vd li.ok .o{color:var(--done)}
+.vd .t{min-width:0}
+.vd .t b{font-weight:600;color:var(--ink)}
+.vd .w{display:block;font-size:12px;color:var(--ink-3);margin-top:1px}
+.vd .donesum{display:block;cursor:pointer;color:var(--done);font-size:12px;margin:0 0 4px;padding:0;text-decoration:none}
 .spk{display:flex;align-items:flex-end;gap:2px;height:18px;margin-top:4px}
 .spk i{flex:1 1 0;min-width:3px;max-width:10px;background:var(--ink-3);opacity:.35;border-radius:2px 2px 0 0}
 .spk i.t{background:var(--doing);opacity:1}
@@ -527,13 +552,16 @@ footer a{color:var(--ink-2)}
   <div class="donebar" id="donebar" hidden></div>
   <div class="stats" id="daystats" hidden></div>
   <section class="videos" id="videos"><div class="empty">Loading…</div></section>
-  <details class="more fold" id="foldJobs"><summary>All jobs: queue, running, done</summary>
+  <!-- Ben, 14 Oct 2026: "Never open these 3 now. Let's remove": the job list, the lane board and the stage board are
+       gone from the page. Their holders stay hidden so the render code that fills them still runs; each video row
+       now opens its own task list. -->
+  <div id="foldJobs" hidden>
   <div class="jb" id="jobboard" hidden></div>
-  </details>
-  <details class="more fold" id="foldBoard"><summary>Board: every video by lane (detail)</summary>
+  </div>
+  <div id="foldBoard" hidden>
   <div class="kb" id="tracker"><div class="empty">Loading…</div></div>
-  </details>
-  <details class="more fold" id="foldStages"><summary id="stageboard">Every stage of every film (detail)</summary>
+  </div>
+  <div id="foldStages" hidden><span id="stageboard"></span>
   <div class="filterline" id="filterline"></div>
   <div class="board" id="board"></div>
   <div class="lower">
@@ -541,7 +569,7 @@ footer a{color:var(--ink-2)}
     <div class="box" id="creditbox"><h3>HOS credit checks</h3><div id="credits"></div></div>
   </div>
   <div class="agents" id="agents" style="margin-top:14px"></div>
-  </details>
+  </div>
   <details class="more fold" id="foldPlans"><summary>AI plans this month</summary>
   <section class="plansec">
   <h2 class="sec" style="margin-top:22px"><span class="qsub" id="spendSum"></span></h2>
@@ -979,7 +1007,7 @@ function renderNow(){
   let bar = "";
   if(headJob){ const pr = progressOf(headJob, P);
     head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 60))}</span>`;
-    bar = `<div class="pbar" data-live><span class="track"><i style="width:${pr.pct}%"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
+    bar = `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
   else if(line.length){ const sl = stallOf(); cls = (q && q.quiet) || sl ? "asleep" : "idle";
     head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours"
       : sl ? `<b>Now:</b> <span>nothing running · last job finished <span data-ago="${sl.at}">${ago(sl.at)}</span></span>` : "<b>Now:</b> starting the next job"; }
@@ -1151,8 +1179,8 @@ function renderJobBoard(){
   const low = ["elevenlabs","flow","vertex","cursor"].map(k=>{ const L=(pools[k]||{}).latest||{}, l=+L.left, t = L.total!=null ? +L.total : (pools[k]||{}).unit==="%" ? 100 : NaN;
     return !isNaN(l) && t>0 && l/t < 0.1 ? `${({elevenlabs:"ElevenLabs",flow:"Flow",vertex:"Vertex",cursor:"Cursor"})[k]} ${l<=0?"used up":Math.max(1,Math.round(100*l/t))+"% left"}` : ""; }).filter(Boolean);
   if(st) st.innerHTML =
-      `<div class="s" data-open="foldJobs"><div class="n">${day && day.doneToday!=null ? esc(String(day.doneToday)) : "—"}</div><div class="l">Jobs done today</div>${doneX}</div>`
-    + `<div class="s" data-open="foldJobs"><div class="n">${day && day.idleMin!=null ? esc(String(day.idleMin))+"<small> min</small>" : "—"}</div><div class="l">Mini idle today</div>${idleX}</div>`
+      `<div class="s"><div class="n">${day && day.doneToday!=null ? esc(String(day.doneToday)) : "—"}</div><div class="l">Jobs done today</div>${doneX}</div>`
+    + `<div class="s"><div class="n">${day && day.idleMin!=null ? esc(String(day.idleMin))+"<small> min</small>" : "—"}</div><div class="l">Mini idle today</div>${idleX}</div>`
     + `<div class="s" data-open="foldPlans"><div class="n sm">ElevenLabs ${esc(left("elevenlabs"))} · Flow ${esc(left("flow"))} · Vertex ${esc(left("vertex"))}${pools.cursor?` · Cursor ${esc(left("cursor"))}`:""}</div><div class="l">Credits left</div>${low.length?`<div class="lo">Low: ${esc(low.join(" · "))}</div>`:""}</div>`;
 }
 // A tile opens its fold (jobs, or the AI plans) and scrolls to it.
@@ -1215,6 +1243,10 @@ function justLine(x){
 // The top list (Ben, 14 Oct): every video in work order, then scheduled by air date, then what went live in the last
 // three days. Each row: channel, number, title, % done, what is happening now, when it reaches Ben, and the air date.
 // Tapping a row opens its full card in the board fold below.
+// red at 0%, amber at 50%, green at 100% (Ben, 14 Oct 2026).
+function pcCol(p){ const v = Math.max(0, Math.min(100, +p||0)); return `hsl(${Math.round(v*1.2)} 70% 46%)`; }
+function pcBar(p){ return `<i class="pc" style="width:${p}%;--pc:${pcCol(p)}"></i>`; }
+const vOpen = {};   // which video rows are open; kept across the minute re-render
 function renderVideos(rows, rankOf){
   const box = $("videos"); if(!box) return;
   const strip = h => String(h||"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").replace(/&#39;/g,"'").replace(/&quot;/g,'"');
@@ -1229,13 +1261,40 @@ function renderVideos(rows, rankOf){
     // airIn() gives a ticking <span data-until> under a day out, so `when` stays HTML; the note texts are plain.
     const when = r.live ? `Live since ${esc(fd(r.air))}` : r.air ? `Airs ${esc(fd(r.air))} · ${airIn(r.air)}` : "No air date yet";
     const ready = r.you ? `For you now: ${strip(r.you)}` : !r.live && !r.isSched && r.ready ? `Ready for you: ${strip(r.ready)}` : "";
-    return `<button class="vr" data-vkey="${esc(r.f.key)}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span><span class="vp">${r.pct}%</span></div>
-      <div class="bar"><i style="width:${r.pct}%"></i></div>
+    const open = !!vOpen[r.f.key];
+    return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span><span class="vp">${r.pct}%</span><span class="chev">▸</span></div>
+      <div class="bar">${pcBar(r.pct)}</div>
       <div class="v2"><span class="pill ${cls}">${w}</span>${now?`<span class="vn">${esc(now)}</span>`:""}</div>
-      <div class="v3"><span>${when}</span>${ready?`<span class="vy">${esc(ready)}</span>`:""}</div></button>`; }).join("")
+      <div class="v3"><span>${when}</span>${ready?`<span class="vy">${esc(ready)}</span>`:""}</div></button>${open?videoDrop(r, when):""}</div>`; }).join("")
     : `<div class="empty">Nothing in work.</div>`);
-  box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; openState[k] = true; $("foldBoard").open = true; render();
-    const c = document.querySelector(`details.tf[data-key="${CSS.escape(k)}"]`); if(c){ c.open = true; c.scrollIntoView({behavior:"smooth", block:"start"}); } });
+  box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; vOpen[k] = !vOpen[k]; renderVideos(rows, rankOf); });
+  box.querySelectorAll("[data-vdone]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vdone; vOpen[k+"#done"] = !vOpen[k+"#done"]; renderVideos(rows, rankOf); });
+}
+// The drop-down under a video (Ben, 14 Oct 2026): the total ETA, then every task left in order, labelled Working on,
+// Next, 3rd, 4th ..., each with who does it and when; the tasks already done fold into one line.
+function videoDrop(r, when){
+  const steps = r.steps || [], done = steps.filter(s=>s.w.ok), isNowS = s => s.w.kind==="now"||s.w.kind==="part";
+  const left = steps.filter(s=>!s.w.ok && isNowS(s)).concat(steps.filter(s=>!s.w.ok && !isNowS(s)));   // what's running first, then the note's order
+  const ordn = n => n + (n%100>=11&&n%100<=13 ? "th" : ({1:"st",2:"nd",3:"rd"})[n%10] || "th");
+  const working = left.some(s=>s.w.kind==="now"||s.w.kind==="part");
+  let k = 0;
+  const li = left.map(s=>{
+    const w = s.w, isNow = w.kind==="now"||w.kind==="part";
+    let o, c;
+    if(isNow){ o = "Working on"; c = "now"; }
+    else { k++; o = k===1 ? "Next" : ordn(k + (working?1:0)); c = k===1 ? "nx" : ""; }
+    if(w.kind==="blocked"){ c = "bad"; o += " · blocked"; }
+    else if(w.kind==="review"){ c = "rv"; }
+    const who = s.who==="Ready for you"||s.who==="Ben" ? "You" : s.who;
+    return `<li class="${c}"><span class="o">${o}</span><span class="t"><b>${esc(who||"")}</b>${who?": ":""}${esc(s.what||"")}<span class="w">${w.text||""}</span></span></li>`;
+  });
+  const showDone = !!vOpen[r.f.key+"#done"];
+  const dl = done.map(s=>`<li class="ok"><span class="o">✓ Done</span><span class="t"><b>${esc(s.who||"")}</b>${s.who?": ":""}${esc(s.what||"")}<span class="w">${s.w.text||""}</span></span></li>`);
+  // The total ETA is the last task's time; when the last task has none yet, say so rather than guess from an earlier one.
+  const tail = left[left.length-1], last = tail && tail.w.at ? Math.max(...left.filter(s=>s.w.at).map(s=>s.w.at)) : 0;
+  const tot = r.live ? "Live" : r.isSched ? "Finished and scheduled" : last ? `All done about <b>${esc(new Date(last).getHours()||new Date(last).getMinutes() ? clock(last) : fd(new Date(last)))}</b>` : left.length ? "No finish time yet: the last task has no date" : "Nothing left to do";
+  const head = `<div class="vtot"><span>${tot}${left.length?` · ${left.length} task${left.length===1?"":"s"} left`:""}</span>${r.ready&&!r.live&&!r.isSched?`<span>Ready for you: <b>${esc(String(r.ready).replace(/<[^>]+>/g,""))}</b></span>`:""}<span>${when}</span></div>`;
+  return `<div class="vd">${head}${done.length?`<button class="lnk donesum" data-vdone="${esc(r.f.key)}">✓ ${done.length} done${showDone?" (hide)":" (show)"}</button>`:""}<ol>${showDone?dl.join(""):""}${li.join("")}</ol>${!steps.length?`<div class="w">No task list for this video yet.</div>`:""}</div>`;
 }
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
@@ -1333,7 +1392,7 @@ function renderTracker(films){
     // Ben, 14 Oct: "a very simple, clean, quick" view: one row per video with its progress, what's happening and when
     // it reaches him. "Ready for you" is the first open step that is his (the watch), from the same times as the card.
     const benRow = rows.find(r=>!r.w.ok && (r.x.who==="Ben"||r.x.who==="Ready for you"));
-    simple.push({f, pct, air, col, live, isSched, mk, you: youSoon ? (b.youShort||b.you) : "",
+    simple.push({f, pct, air, col, live, isSched, mk, you: youSoon ? (b.youShort||b.you) : "", steps: rows.map(r=>({who:r.x.who, what:r.x.what, w:r.w})),
       ready: benRow ? (benRow.w.at ? fd(new Date(benRow.w.at)) : benRow.w.text || "") : ""});
     const mkRow = !ranked ? "" : `<div class="rkrow">@@R:${esc(f.key)}@@<div class="mk ${mk[0]}">${mk[1]}</div></div>${optLine?`<div class="mk-opt">${optLine}</div>`:""}`;
     // Ben, 11 Oct 19:03: "1st, 2nd, 3rd": one work order across both channels. Running/part-done jobs first, then queued
@@ -1823,7 +1882,7 @@ function tickTimes(){
   document.querySelectorAll("[data-until]").forEach(e=>{ const t = untilTxt(+e.dataset.until); if(e.textContent!==t) e.textContent = t; });
   const pb = document.querySelector("#nowbar .pbar[data-live]"), j = pb && (fromDb.jobs||[]).find(x=>x.status==="claimed" && (x.needs==="mini" || jobLine(x)==="mini"));   // renderNow's job
   if(j){ const pr = progressOf(j, plan()), i = pb.querySelector(".track i"), s = pb.querySelector(".ptxt"), t = `${pr.pct}% done · ${finishIn(pr.done)}`;
-    if(i) i.style.width = pr.pct+"%"; if(s && s.textContent!==t) s.textContent = t; }
+    if(i){ i.style.width = pr.pct+"%"; i.style.setProperty("--pc", pcCol(pr.pct)); } if(s && s.textContent!==t) s.textContent = t; }
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{ chan=b.dataset.ch; try{localStorage.setItem("studio-kanban-ch",chan);}catch(e){} render(); });
 
