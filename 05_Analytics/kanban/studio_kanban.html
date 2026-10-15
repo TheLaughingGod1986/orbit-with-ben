@@ -1022,7 +1022,8 @@ function renderNow(){
   box.hidden = !fromDb.jobs;
   if(box.hidden) return;
   const P = plan(), q = laneQuiet();
-  const busy = jobs.filter(j=>j.status==="claimed");
+  // Ben, 15 Oct 2026: "Still seems to be stuck". A claim whose lease ran out over 45 min ago is a dead worker, not a running job.
+  const busy = jobs.filter(j=>j.status==="claimed" && !(j.eta && Date.parse(j.eta) < Date.now() - 45*MINUTE));
   const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
   const headJob = busy[0] || null;
   let cls = "", head;
