@@ -398,7 +398,7 @@ console.log(JSON.stringify(els));
         script = f"""
 const RealDate = Date, FIXED = RealDate.parse({json.dumps(self.NOW)});
 globalThis.Date = class extends RealDate {{ constructor(...a){{ super(...(a.length?a:[FIXED])); }} static now(){{ return FIXED; }} }};
-const box = {{hidden:true, className:"", innerHTML:""}};
+const box = {{hidden:true, className:"", innerHTML:"", querySelectorAll: () => []}};
 const $ = id => id==="donebar" ? box : null;
 const fromDb = {{extra: {{done: {json.dumps(done)}}}}};
 {lib}
