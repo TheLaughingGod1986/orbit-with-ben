@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0258 | mini | **stalled** | gemini | 2026-10-15T11:27Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0261 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
-| J0279 | mini | blocked | cursor | – | image · HOS Germs thumb B via Flow Nano Banana 2 (not gpt-image-2) |  |
+| J0279 | mini | open | – | – | image · HOS Germs thumb B via Flow Nano Banana 2 (not gpt-image-2) |  |
 | J0280 | mini | blocked | cursor | – | studio · HOS Related fixes ×4 after longs public (from J0245) |  |
 | J0281 | mini | claimed | cursor | 2026-10-15T14:30Z | studio · OWB: schedule PASS Shorts (Venus J0232, Saturn late-arrival J0253) |  |
 | J0287 | mini | blocked | chief | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
