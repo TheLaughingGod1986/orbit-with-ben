@@ -29,7 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0308 | mini | open | – | – | studio · HOS 004 s05 Dalton Short v02: package Private + publishAt on next free search-titled slot (J0306 PASS) |  |
 | J0309 | mini | blocked | cursor | – | 024 edit · assembly · 024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London) |  |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
-| J0318 | gemini | open | – | – | 031 sources · facts · 031 Magnetic Field Flip: Gemini facts quote pass on SOURCES.md (MUST QUOTE rows) | 6198817961 |
+| J0318 | gemini | claimed | cursor | 2026-10-15T23:35Z | 031 sources · facts · 031 Magnetic Field Flip: Gemini facts quote pass on SOURCES.md (MUST QUOTE rows) | 6198817961 |
 | J0321 | mini | open | – | – | 028 picture · video · 028 Gliese 710: plate boards v02 per the J0310 price-pass conditions (no mint) | 6199532687 |
 | J0322 | mini | open | – | – | 007 picture · video · HOS 007: plate boards v02 per Claude review (Flow-first price table; lettering-risk plates to real scans / code graphics), no mint |  |
 | J0323 | mini | blocked | cursor | – | 026 edit · assembly · 026 Nearest Star: put picture-lock v05d (teaching overlays, J0148) in OWB UAT for Ben's watch, then dry-run the Private upload (airs Sun 15 Nov) |  |
