@@ -787,6 +787,24 @@ def stranded_jobs(data: dict, up: set) -> list:
             and (j["for"] not in up or (j.get("model") and not routing.lane_ok(j["for"], j["model"])))]
 
 
+def stalled_claims(data: dict, at: dt.datetime) -> list:
+    """Jobs a Mini worker claimed and then went quiet on (15 Oct 2026: Gemini held J0258 for 3 h past its ETA, so the
+    board showed it running and nobody took it over). A claim over CHIEF_STALL_MIN (45) min past its ETA is dead: a
+    worker run is capped at 25 min. Chief-kind jobs and jobs held by Claude or Chief are left alone."""
+    lim = dt.timedelta(minutes=float(os.environ.get("CHIEF_STALL_MIN", "45")))
+    out = []
+    for j in data.get("jobs", []):
+        if j.get("status") != "claimed" or j.get("by") not in routing.MINI_WORKERS or j.get("kind") == "chief":
+            continue
+        try:
+            eta = dt.datetime.strptime(j.get("eta", ""), "%Y-%m-%dT%H:%MZ").replace(tzinfo=dt.timezone.utc)
+        except ValueError:
+            continue
+        if at - eta > lim:
+            out.append(j)
+    return out
+
+
 def reroute(job: dict, to: str, model: str, note: str) -> bool:
     """`jobs.py reroute <id> --to <to> --model <model> --git` in the OWB checkout. True when it went through."""
     argv = [sys.executable, str(OWB / "scripts" / "jobs.py"), "reroute", job["id"], "--agent", "relay", "--to", to,
@@ -849,6 +867,8 @@ def reroute_work(at: dt.datetime) -> list:
              for j in claude_jobs_to_reroute(data, at, out)]
     moves += [(j, routing.next_lane(j, j["for"], up, j.get("model") or ""), f"{NAMES.get(j['for'], j['for'])} is down too")
               for j in stranded_jobs(data, up)]
+    moves += [(j, routing.next_lane(j, j["by"], up, j.get("model") or ""), f"{NAMES.get(j['by'], j['by'])} stopped answering on it (claim past its ETA)")
+              for j in stalled_claims(data, at)]
     moved = []
     for j, lane, reason in moves:
         if not lane:
