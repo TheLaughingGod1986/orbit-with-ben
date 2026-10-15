@@ -21900,13 +21900,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-15T14:07Z",
-      "eta": "2026-10-15T15:07Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T13:54Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB add4e06c: 023 v05e & 027 v01k all PASS; HOS c0e87a6/cf5ac5f: 006 P1 v01, P3 v03, P4 v02 polish_gate PASS; 006 P2 v02 picture_qa 5 FAIL + polish_gate 1 FAIL -> fix job queued)",
       "history": [
         {
           "at": "2026-10-15T13:54Z",
@@ -21942,6 +21942,11 @@
           "at": "2026-10-15T14:27Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed gate outputs (OWB add4e06c, HOS c0e87a6/cf5ac5f) and queued no-spend fix job for HOS 006 Part 02 rough"
+        },
+        {
+          "at": "2026-10-15T14:27Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB add4e06c: 023 v05e & 027 v01k all PASS; HOS c0e87a6/cf5ac5f: 006 P1 v01, P3 v03, P4 v02 polish_gate PASS; 006 P2 v02 picture_qa 5 FAIL + polish_gate 1 FAIL -> fix job queued)"
         }
       ],
       "kind": "qa",
