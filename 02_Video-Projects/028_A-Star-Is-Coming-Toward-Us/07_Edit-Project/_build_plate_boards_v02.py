@@ -38,14 +38,17 @@ OMNI_GBP = round(OMNI_USD * GBP_PER_USD, 2)  # one take
 Q_EXP = 259  # 100 * 2.59
 F_EXP = 20  # round(10 * 1.96) — v01's 279 = 259 + 20
 
-# Expected Flow already reserved for earlier films (takes-per-KEEP where a film
-# has no published "expected" column). See PRICE_REVIEW_v02.md.
+# Expected Flow already reserved for earlier films, charged against today's
+# balance. J0337 (Chief, 15 Oct): 006 is 0 (picture from existing KEEPs,
+# J0331 full_join_v02; the old 3,182 is stale). 009 is tranche 1 only
+# (boards v04 on HOS main 8f1068d). Tranche 2 is not in the sum.
 HOS_EXPECTED = {
-    "006": 3182,  # 17 Fast + 11 Quality still unminted
-    "007": 7553,  # 55 Fast + 25 Quality
+    "006": 0,  # picture from existing KEEPs, J0331; not a Flow mint
+    "007": 7553,  # stays for now; J0322 boards v02 may change it
     "008": 5605,  # PRICE_REVIEW_v03
-    "009": 13848,  # boards v02
+    "009": 7354,  # tranche 1 only, boards v04 on HOS main 8f1068d
 }
+HOS_009_TRANCHE2 = 5180  # ~12 Nov AI Ultra renewal; not charged today
 
 
 def zero(p: dict) -> None:
@@ -445,6 +448,12 @@ def main() -> None:
     after_hos = FLOW_LEFT - hos_sum
     after_028 = after_hos - flow_exp
     headroom_ok = after_028 >= 3000
+    misses_by = 3000 - after_028
+    if (hos_sum, after_hos, after_028, flow_exp, misses_by) != (20512, 3228, 2949, 279, 51):
+        raise SystemExit(
+            f"headroom drift: sum={hos_sum} after_hos={after_hos} "
+            f"after_028={after_028} flow_exp={flow_exp} misses_by={misses_by}"
+        )
 
     def nroute(name: str) -> int:
         return sum(1 for p in plates if p["route"] == name)
@@ -452,7 +461,10 @@ def main() -> None:
     boards["version"] = "v02"
     boards["job"] = "J0321"
     boards["mint"] = False
-    boards["status"] = "parked for Chief — conditions applied, no mint"
+    boards["status"] = (
+        "Chief PASS J0321; J0337 headroom corrected; no mint. "
+        "028's two Veo plates mint only when a live Flow read leaves >=3000 after them."
+    )
     boards["built"] = "2026-10-15"
     boards["readings"] = {
         "flow_credits_left": FLOW_LEFT,
@@ -501,9 +513,27 @@ def main() -> None:
         "flow_left": FLOW_LEFT,
         "hos_006_009_expected": HOS_EXPECTED,
         "hos_006_009_sum": hos_sum,
+        "hos_009_tranche": 1,
+        "hos_009_tranche_2_expected_not_in_sum": HOS_009_TRANCHE2,
+        "hos_009_tranche_2_note": (
+            "Waits for the ~12 Nov AI Ultra renewal. Not charged against today's balance."
+        ),
         "after_hos_before_028": after_hos,
         "after_028": after_028,
         "headroom_required": 3000,
+        "misses_3000_gate_by": misses_by,
+        "mint_order": [
+            "HOS 006 (0)",
+            "HOS 007",
+            "HOS 008",
+            "HOS 009 tranche 1",
+            "OWB 028 two Veo plates (279)",
+        ],
+        "mint_rule": (
+            "028 mints only when a live Flow read leaves >=3000 after it; "
+            "otherwise it rides with 009 tranche 2 after the renewal. "
+            "Omni x2 is priced and fits but is not authorised until Chief queues the 028 picture-mint job."
+        ),
     }
     boards["harvest_stretches"] = {k: v for k, v in stretches.items()}
     groups: OrderedDict[str, list[str]] = OrderedDict()
@@ -630,7 +660,7 @@ def main() -> None:
 
     review = f"""# 028 price review v02
 
-Cursor, 15 Oct 2026, J0321. Applies Chief's price PASS with conditions on PR #218 (comment 6199532687). **No mint. No spend. No merge.** Parked for Chief. Mint order stays the Chief's call.
+Cursor, 15 Oct 2026, J0321. Applies Chief's price PASS with conditions on PR #218 (comment 6199532687). J0337 corrects the Flow headroom table before merge (Chief, 15 Oct). **No mint. No spend.** Omni x2 is priced and fits, and is not authorised until Chief queues the 028 picture-mint job.
 
 v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`.
 
@@ -653,22 +683,24 @@ v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`.
 
 ## Flow headroom
 
-Expected credits already reserved, takes-per-KEEP (Quality 2.59, Fast 1.96), the same rates as v01:
+Expected credits charged against today's Flow balance (Chief, 15 Oct, J0337). The old 3,182 for HOS 006 is stale: picture comes from existing KEEPs (J0331 full_join_v02), so 006 is 0. HOS 009 is tranche 1 only.
 
 | Film | Expected | Where it comes from |
 |---|---:|---|
-| HOS 006 | {HOS_EXPECTED['006']} | 17 Fast and 11 Quality still unminted (J0138's 1,270 try-1). The five Vertex first-takes are not in this. |
-| HOS 007 | {HOS_EXPECTED['007']} | 55 Fast and 25 Quality (J0138's 3,050 try-1) |
+| HOS 006 | {HOS_EXPECTED['006']} | Picture from existing KEEPs, J0331 full_join_v02. Not a Flow mint. |
+| HOS 007 | {HOS_EXPECTED['007']} | Stays for now. J0322 boards v02 may change it. |
 | HOS 008 | {HOS_EXPECTED['008']} | PRICE_REVIEW_v03 |
-| HOS 009 | {HOS_EXPECTED['009']} | boards v02. A later v03 would reserve more, not less. |
+| HOS 009 | {HOS_EXPECTED['009']} | Tranche 1 only. Boards v04 on HOS main 8f1068d. |
 | **Sum** | **{hos_sum}** | |
 | OWB 028 | {flow_exp} | one Quality ({Q_EXP}) and one Fast ({F_EXP}) |
 
-Flow left {FLOW_LEFT}. After 006/007/008/009: **{after_hos}**. After 028's {flow_exp}: **{after_028}**.
+Note, not in the sum: HOS 009 tranche 2 is {HOS_009_TRANCHE2} expected. It waits for the ~12 Nov AI Ultra renewal and is not charged against today's balance.
 
-The gate is 3,000 left after those spends. **It does not pass today.** The two Veo plates stay planned on Flow. They are not moved to Vertex, and they are not authorised to mint. Alone, {flow_exp} against {FLOW_LEFT} would fit. The mint waits until a live reading leaves 3,000 after the earlier films' expected spend, which is the Chief's call on order.
+Flow left {FLOW_LEFT}. After 006/007/008/009 tranche 1: **{after_hos}**. After 028's {flow_exp}: **{after_028}**.
 
-A Flow retake of 006's five already-minted Vertex plates, if UAT rejects them, is not in the {HOS_EXPECTED['006']}. That would add about 337 expected credits and the headroom would be worse.
+The gate is 3,000 left after those spends. **It misses by {misses_by} today** ({after_028} left). The two Veo plates stay planned on Flow. They are not moved to Vertex, and they are not authorised to mint.
+
+Mint order (Chief ruling): 006 (0) > 007 > 008 > 009 tranche 1 > 028's two Veo plates ({flow_exp}). 028 mints only when a live Flow read leaves 3,000 or more after it. Otherwise it rides with 009 tranche 2 after the renewal.
 
 ## Vertex
 

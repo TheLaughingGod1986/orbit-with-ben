@@ -4,7 +4,7 @@
   "version": "v02",
   "job": "J0321",
   "mint": false,
-  "status": "parked for Chief \u2014 conditions applied, no mint",
+  "status": "Chief PASS J0321; J0337 headroom corrected; no mint. 028's two Veo plates mint only when a live Flow read leaves >=3000 after them.",
   "built": "2026-10-15",
   "vo": "02_Voiceover/star_coming_vo_v01.wav",
   "shot_list": "07_Edit-Project/SHOT_LIST_v01.md",
@@ -66,15 +66,27 @@
     "vertex_omni": true,
     "flow_left": 23740,
     "hos_006_009_expected": {
-      "006": 3182,
+      "006": 0,
       "007": 7553,
       "008": 5605,
-      "009": 13848
+      "009": 7354
     },
-    "hos_006_009_sum": 30188,
-    "after_hos_before_028": -6448,
-    "after_028": -6727,
-    "headroom_required": 3000
+    "hos_006_009_sum": 20512,
+    "hos_009_tranche": 1,
+    "hos_009_tranche_2_expected_not_in_sum": 5180,
+    "hos_009_tranche_2_note": "Waits for the ~12 Nov AI Ultra renewal. Not charged against today's balance.",
+    "after_hos_before_028": 3228,
+    "after_028": 2949,
+    "headroom_required": 3000,
+    "misses_3000_gate_by": 51,
+    "mint_order": [
+      "HOS 006 (0)",
+      "HOS 007",
+      "HOS 008",
+      "HOS 009 tranche 1",
+      "OWB 028 two Veo plates (279)"
+    ],
+    "mint_rule": "028 mints only when a live Flow read leaves >=3000 after it; otherwise it rides with 009 tranche 2 after the renewal. Omni x2 is priced and fits but is not authorised until Chief queues the 028 picture-mint job."
   },
   "harvest_stretches": {
     "gaia_motion_1_6my": [

@@ -1,6 +1,6 @@
 # 028 price review v02
 
-Cursor, 15 Oct 2026, J0321. Applies Chief's price PASS with conditions on PR #218 (comment 6199532687). **No mint. No spend. No merge.** Parked for Chief. Mint order stays the Chief's call.
+Cursor, 15 Oct 2026, J0321. Applies Chief's price PASS with conditions on PR #218 (comment 6199532687). J0337 corrects the Flow headroom table before merge (Chief, 15 Oct). **No mint. No spend.** Omni x2 is priced and fits, and is not authorised until Chief queues the 028 picture-mint job.
 
 v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`.
 
@@ -23,22 +23,24 @@ v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`.
 
 ## Flow headroom
 
-Expected credits already reserved, takes-per-KEEP (Quality 2.59, Fast 1.96), the same rates as v01:
+Expected credits charged against today's Flow balance (Chief, 15 Oct, J0337). The old 3,182 for HOS 006 is stale: picture comes from existing KEEPs (J0331 full_join_v02), so 006 is 0. HOS 009 is tranche 1 only.
 
 | Film | Expected | Where it comes from |
 |---|---:|---|
-| HOS 006 | 3182 | 17 Fast and 11 Quality still unminted (J0138's 1,270 try-1). The five Vertex first-takes are not in this. |
-| HOS 007 | 7553 | 55 Fast and 25 Quality (J0138's 3,050 try-1) |
+| HOS 006 | 0 | Picture from existing KEEPs, J0331 full_join_v02. Not a Flow mint. |
+| HOS 007 | 7553 | Stays for now. J0322 boards v02 may change it. |
 | HOS 008 | 5605 | PRICE_REVIEW_v03 |
-| HOS 009 | 13848 | boards v02. A later v03 would reserve more, not less. |
-| **Sum** | **30188** | |
+| HOS 009 | 7354 | Tranche 1 only. Boards v04 on HOS main 8f1068d. |
+| **Sum** | **20512** | |
 | OWB 028 | 279 | one Quality (259) and one Fast (20) |
 
-Flow left 23740. After 006/007/008/009: **-6448**. After 028's 279: **-6727**.
+Note, not in the sum: HOS 009 tranche 2 is 5180 expected. It waits for the ~12 Nov AI Ultra renewal and is not charged against today's balance.
 
-The gate is 3,000 left after those spends. **It does not pass today.** The two Veo plates stay planned on Flow. They are not moved to Vertex, and they are not authorised to mint. Alone, 279 against 23740 would fit. The mint waits until a live reading leaves 3,000 after the earlier films' expected spend, which is the Chief's call on order.
+Flow left 23740. After 006/007/008/009 tranche 1: **3228**. After 028's 279: **2949**.
 
-A Flow retake of 006's five already-minted Vertex plates, if UAT rejects them, is not in the 3182. That would add about 337 expected credits and the headroom would be worse.
+The gate is 3,000 left after those spends. **It misses by 51 today** (2949 left). The two Veo plates stay planned on Flow. They are not moved to Vertex, and they are not authorised to mint.
+
+Mint order (Chief ruling): 006 (0) > 007 > 008 > 009 tranche 1 > 028's two Veo plates (279). 028 mints only when a live Flow read leaves 3,000 or more after it. Otherwise it rides with 009 tranche 2 after the renewal.
 
 ## Vertex
 
