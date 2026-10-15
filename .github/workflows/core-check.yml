@@ -1,0 +1,18 @@
+name: Studio core check
+
+# Shared tooling lives once (Ben, 15 Oct 2026: unify HOS and OWB, keep their own rules). studio-core/CORE_FILES.json
+# locks every shared file by sha256 in both repos; editing one in a single repo fails here.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/core_sync.py check

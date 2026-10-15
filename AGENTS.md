@@ -511,6 +511,10 @@ Once the final OK is given (Chief's since 9 Oct), the upload goes up under the s
   - TikTok: connect, upload or retry while it's paused.
 - **Secrets:** commit or print them.
 
+## Studio core (Ben, 15 Oct 2026)
+
+Ben: *"unify HOS and OWB but keeping their own rules."* Tooling both channels share lives once. `studio-core/CORE_FILES.json` locks each shared file by sha256, in this repo and in history-of-science, and CI (`core-check.yml`) fails a repo whose copy differs. **Change a core file only in orbit-with-ben**, then run `python3 scripts/core_sync.py lock` and `python3 scripts/core_sync.py push --to <history-of-science checkout>`, and commit in both. A file joins the core with `core_sync.py add <path>` once it is identical in both repos. Channel rules are never core: strategy, thumbnail and title rules, the playbook, production locks, the HOS contract code, channel ids. Plan and order: `docs/STUDIO_SYSTEM_REVIEW_2026-10-15.md`.
+
 ## Changing the rules
 
 Change the doc in force (1–8 above) and its Cursor rule in the same commit, with the date and the evidence. Don't add a new "locked" doc that restates or contradicts one of them. Move anything it supersedes to `_archive/`. Updates to standing lessons go in `docs/ORBIT_PLAYBOOK_LESSONS.md` and a pointer here.
