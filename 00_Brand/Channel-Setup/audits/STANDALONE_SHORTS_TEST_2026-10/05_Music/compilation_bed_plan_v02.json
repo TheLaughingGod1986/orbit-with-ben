@@ -1,0 +1,223 @@
+{
+  "job": "J0167",
+  "by": "cursor",
+  "supersedes": "compilation_bed_plan.json (v01)",
+  "ruling": "Chief #99 6134719677 rule (a), as v01",
+  "method": "v01 stretches and crossfades, laid un-ducked at -12.0 LU under the segment VO, then a computed dip only where sfx_kit's bed rule needs it (VO speaking, bed within 11.5 LU of VO momentary), spread over the 400 ms window; margin +1.5 LU per failed level check",
+  "why": "final v01 music_gate gap FAIL: v01's sidechain duck sat the bed 18-23 LU under the VO",
+  "stretches": {
+    "A": {
+      "film": "013",
+      "from": 499.2,
+      "to": 514.5,
+      "why": "013 moonlit-sea outro; last word 'perspective.' ends 498.04, master fades from 514.5",
+      "len": 15.3
+    },
+    "B": {
+      "film": "019",
+      "from": 610.4,
+      "to": 617.8,
+      "why": "019 galaxy outro; last word 'forever?' ends 610.10, master fades from 618.0",
+      "len": 7.4
+    }
+  },
+  "segments": [
+    {
+      "segment": "intro",
+      "length_s": 54.13,
+      "file": "/private/tmp/owb_comp/bed_v02/intro_bed.wav",
+      "vo_lufs": -20.4,
+      "bed_gain_db": -8.2,
+      "dip_margin_lu": 11.5,
+      "dip_max_db": 9.8,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 15.4,
+        "least": 11.5
+      },
+      "level_report": "SFX level PASS: VO -20.4 LUFS, SFX -49.8 LUFS, 2 hits",
+      "pieces": [
+        {
+          "stretch": "A",
+          "from": 0.0,
+          "to": 15.3
+        },
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        },
+        {
+          "stretch": "A",
+          "from": 0.0,
+          "to": 15.3
+        },
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        },
+        {
+          "stretch": "A",
+          "from": 0.0,
+          "to": 15.3
+        },
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        }
+      ]
+    },
+    {
+      "segment": "bridge1",
+      "length_s": 16.84,
+      "file": "/private/tmp/owb_comp/bed_v02/bridge1_bed.wav",
+      "vo_lufs": -19.2,
+      "bed_gain_db": -5.2,
+      "dip_margin_lu": 11.5,
+      "dip_max_db": 11.6,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 14.3,
+        "least": 11.5
+      },
+      "level_report": "SFX level FAIL: VO -19.2 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        },
+        {
+          "stretch": "A",
+          "from": 0.0,
+          "to": 15.3
+        }
+      ]
+    },
+    {
+      "segment": "bridge2",
+      "length_s": 13.72,
+      "file": "/private/tmp/owb_comp/bed_v02/bridge2_bed.wav",
+      "vo_lufs": -20.5,
+      "bed_gain_db": -8.3,
+      "dip_margin_lu": 11.5,
+      "dip_max_db": 8.1,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 15.9,
+        "least": 11.5
+      },
+      "level_report": "SFX level FAIL: VO -20.5 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "stretch": "A",
+          "from": 6.0,
+          "to": 15.3
+        },
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        }
+      ]
+    },
+    {
+      "segment": "bridge3",
+      "length_s": 17.88,
+      "file": "/private/tmp/owb_comp/bed_v02/bridge3_bed.wav",
+      "vo_lufs": -20.0,
+      "bed_gain_db": -6.0,
+      "dip_margin_lu": 11.5,
+      "dip_max_db": 9.8,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 14.9,
+        "least": 11.5
+      },
+      "level_report": "SFX level FAIL: VO -20.0 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "stretch": "B",
+          "from": 3.5,
+          "to": 7.4
+        },
+        {
+          "stretch": "A",
+          "from": 0.0,
+          "to": 15.3
+        },
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        }
+      ]
+    },
+    {
+      "segment": "bridge4",
+      "length_s": 14.2,
+      "file": "/private/tmp/owb_comp/bed_v02/bridge4_bed.wav",
+      "vo_lufs": -18.1,
+      "bed_gain_db": -5.9,
+      "dip_margin_lu": 11.5,
+      "dip_max_db": 9.3,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 15.5,
+        "least": 11.5
+      },
+      "level_report": "SFX level FAIL: VO -18.1 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "stretch": "A",
+          "from": 10.0,
+          "to": 15.3
+        },
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        },
+        {
+          "stretch": "A",
+          "from": 0.0,
+          "to": 15.3
+        }
+      ]
+    },
+    {
+      "segment": "closing",
+      "length_s": 23.28,
+      "file": "/private/tmp/owb_comp/bed_v02/closing_bed.wav",
+      "vo_lufs": -21.2,
+      "bed_gain_db": -7.2,
+      "dip_margin_lu": 11.5,
+      "dip_max_db": 11.9,
+      "bed_level": "PASS",
+      "under_vo_speaking_lu": {
+        "median": 15.5,
+        "least": 11.5
+      },
+      "level_report": "SFX level FAIL: VO -21.2 LUFS, SFX -70.0 LUFS, 0 hits\nFAIL present: no SFX hit anywhere in the stem",
+      "pieces": [
+        {
+          "stretch": "B",
+          "from": 1.5,
+          "to": 7.4
+        },
+        {
+          "stretch": "A",
+          "from": 0.0,
+          "to": 15.3
+        },
+        {
+          "stretch": "B",
+          "from": 0.0,
+          "to": 7.4
+        }
+      ]
+    }
+  ]
+}
