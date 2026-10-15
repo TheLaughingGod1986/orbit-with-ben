@@ -53,6 +53,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0276 | mini | open | – | – | listing · Upload OWB compilation v05: Private, publishAt Wed 21 Oct 2026 18:00 London (17:00Z), via youtube:package (Ben GO, Chief OK J0168) |  |
 | J0277 | mini | open | – | – | for codex · thumb · Thumbnail redo: add Orbit to the OWB B variants (Fermi Mo93x0fxB1Q, Europa NbW5G1BpPY0, JWST ziKBPJ6FY0U), keep HOS house style |  |
+| J0278 | mini | open | – | – | studio · NAS: create youtube-staging folder + README (Ben's OK 15 Oct) |  |
 
 Recently finished:
 
