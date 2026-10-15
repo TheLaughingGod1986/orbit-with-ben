@@ -1,5 +1,5 @@
 {
-  "next_id": 284,
+  "next_id": 285,
   "jobs": [
     {
       "id": "J0001",
@@ -16387,13 +16387,13 @@
       "stage": "edit",
       "after": "J0225",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T09:16Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T10:31Z",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T02:57Z",
-      "result": "parked for Chief: 030 Apophis Short v05 frame review on branch review/j0226-v05 (4593be3f) — real unpremultiplied alpha + exterior brightness-envelope carve + left-edge glow matte; gate_shorts_open PASS, sfx_kit level PASS",
+      "result": "PASS (Chief): 030 Apophis Short v05 KEEP (22.07 s, gate_shorts_open PASS, sfx level PASS, −14.4 LUFS). v04 FIX cleared: dark halo on aurora ~9–13 s gone (true unpremultiplied alpha + exterior brightness-envelope carve); left-edge glow matte cleaned. DATA 36k/32k KEEP. review/j0226-v05 (4593be3f) / main 44365ecd. Air Private+publishAt Thu 22 Oct 2026 11:30 London (follow-on upload job).",
       "history": [
         {
           "at": "2026-10-13T02:57Z",
@@ -16719,6 +16719,21 @@
           "at": "2026-10-15T10:18Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 030 Apophis Short v05 frame review on branch review/j0226-v05 (4593be3f) — real unpremultiplied alpha + exterior brightness-envelope carve + left-edge glow matte; gate_shorts_open PASS, sfx_kit level PASS"
+        },
+        {
+          "at": "2026-10-15T10:31Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-15T10:31Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T10:31Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): 030 Apophis Short v05 KEEP (22.07 s, gate_shorts_open PASS, sfx level PASS, −14.4 LUFS). v04 FIX cleared: dark halo on aurora ~9–13 s gone (true unpremultiplied alpha + exterior brightness-envelope carve); left-edge glow matte cleaned. DATA 36k/32k KEEP. review/j0226-v05 (4593be3f) / main 44365ecd. Air Private+publishAt Thu 22 Oct 2026 11:30 London (follow-on upload job)."
         }
       ],
       "kind": "assembly",
@@ -16729,15 +16744,9 @@
         "status": "claimed",
         "by": "cursor"
       },
-      "for": "gemini",
       "model": "gemini-agy",
       "escalated_at": "2026-10-14T23:51Z",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T10:18Z",
-        "by": "gemini"
-      }
+      "done_ref": "4593be3f"
     },
     {
       "id": "J0227",
@@ -20934,6 +20943,33 @@
       "history": [
         {
           "at": "2026-10-15T08:47Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0284",
+      "title": "Upload 030 Apophis Short v05: Private, publishAt Thu 22 Oct 2026 11:30 London (J0226 PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS J0226 (030 Apophis standalone Short v05). Upload Private with publishAt **Thu 22 Oct 2026 11:30 London (10:30Z)** via youtube:package. Master: `02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v05.mp4` (sha256 cbb8e9a55ea0d7f48bebfcede932760186c8d42177e5c3bcb1655a09bccdc0b3). Title on screen: An Asteroid Will Skim Past Earth on Friday the 13th. Register UPLOADS; read back privacy + publishAt. No spend. Park for Chief with the read-back.",
+      "ref": "",
+      "film": "030",
+      "stage": "upload",
+      "after": "J0226",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T10:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T10:31Z",
           "by": "chief",
           "what": "added"
         }
