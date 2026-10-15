@@ -753,6 +753,17 @@ class Relay(unittest.TestCase):
         self.assertFalse(self.ran("cursor"))  # a wake would only fail at git pull and burn credit
         self.assertIn("move the version-before-last render scratch to the NAS", self.posts.read_text())
 
+    def test_a_claim_far_past_its_eta_is_a_dead_worker_and_walks_the_chain(self):
+        # 15 Oct 2026: Gemini held J0258 for 3 h past its ETA and the board showed it running.
+        data = {"jobs": [
+            {"id": "J1", "status": "claimed", "by": "gemini", "eta": "2026-10-07T10:00Z", "kind": "listing"},   # 2 h past
+            {"id": "J2", "status": "claimed", "by": "cursor", "eta": "2026-10-07T11:40Z", "kind": "listing"},   # 20 min past: still live
+            {"id": "J3", "status": "claimed", "by": "cursor", "eta": "2026-10-07T09:00Z", "kind": "chief"},     # Chief calls have no stand-in
+            {"id": "J4", "status": "claimed", "by": "claude", "eta": "2026-10-07T09:00Z", "kind": "listing"},   # not a Mini worker
+            {"id": "J5", "status": "claimed", "by": "codex", "eta": "", "kind": "listing"},                     # no ETA: unknown, left alone
+        ]}
+        self.assertEqual([j["id"] for j in cr.stalled_claims(data, T0)], ["J1"])
+
 
 if __name__ == "__main__":
     unittest.main()
