@@ -23868,13 +23868,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T23:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T18:27Z",
-      "result": "parked for Chief: facts quote PASS. Gemini (gemini-4-argon-high) filled all 19 rows: 9 OK, 10 PARTIAL, 0 FLAG, no TO VERIFY verdicts. Claim column unchanged. Commit 666bacf8 (SOURCES.md + GEMINI_QUOTE_PASS_v01.md). The J0259 history line still says TO VERIFY; the table does not.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T18:27Z",
@@ -23930,16 +23930,14 @@
           "at": "2026-10-15T23:22Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: facts quote PASS. Gemini (gemini-4-argon-high) filled all 19 rows: 9 OK, 10 PARTIAL, 0 FLAG, no TO VERIFY verdicts. Claim column unchanged. Commit 666bacf8 (SOURCES.md + GEMINI_QUOTE_PASS_v01.md). The J0259 history line still says TO VERIFY; the table does not."
+        },
+        {
+          "at": "2026-10-15T23:28Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked facts quote review"
         }
       ],
-      "kind": "facts",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T23:22Z",
-        "by": "cursor",
-        "note": "ready to park for Chief facts quote PASS"
-      }
+      "kind": "facts"
     },
     {
       "id": "J0319",
