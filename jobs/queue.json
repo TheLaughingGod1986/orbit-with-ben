@@ -19644,10 +19644,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-15T07:07Z",
-      "eta": "2026-10-15T07:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T06:59Z",
       "result": "",
@@ -19676,6 +19676,11 @@
           "at": "2026-10-15T07:15Z",
           "by": "cursor",
           "what": "step 2 of 3 done: UAT done; NAS copy detached"
+        },
+        {
+          "at": "2026-10-15T07:15Z",
+          "by": "cursor",
+          "what": "released: OWB UAT copy sha f74ca3e8 verified, recorded in rough_v01i_pack/MASTER_COPIES.md (42e59b67). mini_repair ran. NAS hangs on mkdir/ls: copy running detached in tmux j0267-nas, log ~/_desk/logs/j0267-nas.log, done file ~/_desk/logs/j0267-nas.done. Next run: if .done=0 check the log sha = f74ca3e8 and mark NAS verified in MASTER_COPIES.md, then done. If still hung, leave it running (never start a second copy)."
         }
       ],
       "kind": "assembly",
