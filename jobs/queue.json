@@ -19055,7 +19055,7 @@
     {
       "id": "J0259",
       "title": "Backlog OWB: next script draft for the earliest film without a locked script",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "From STATUS.md pick the earliest OWB film whose script isn't locked (else the top idea in the ideas sort). Draft or revise the script with SOURCES.md, marking for each chapter its number object and any timeline or person-card call-out. Spend nothing. Post on #99, block 'parked for Chief: script review'.",
       "ref": "",
@@ -19075,10 +19075,24 @@
           "at": "2026-10-15T05:20Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T05:48Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Claude out of usage (no Claude run for 103 min (heartbeat 2026-10-15T04:04:53Z)); next in its chain: gemini on its default"
         }
       ],
       "kind": "script",
-      "backlog": "owb-next-script"
+      "backlog": "owb-next-script",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0260",
