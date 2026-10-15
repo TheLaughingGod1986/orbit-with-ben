@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0308 | mini | open | – | – | studio · HOS 004 s05 Dalton Short v02: package Private + publishAt on next free search-titled slot (J0306 PASS) |  |
 | J0309 | mini | blocked | cursor | – | 024 edit · assembly · 024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London) |  |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
-| J0322 | mini | blocked | cursor | – | 007 picture · video · HOS 007: plate boards v02 per Claude review (Flow-first price table; lettering-risk plates to real scans / code graphics), no mint |  |
+| J0322 | mini | open | – | – | 007 picture · video · HOS 007: plate boards v02 per Claude review (Flow-first price table; lettering-risk plates to real scans / code graphics), no mint |  |
 | J0323 | mini | blocked | cursor | – | 026 edit · assembly · 026 Nearest Star: put picture-lock v05d (teaching overlays, J0148) in OWB UAT for Ben's watch, then dry-run the Private upload (airs Sun 15 Nov) |  |
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0325 | mini | blocked | cursor | – | 027 upload · assembly · 027 Earth Stopped Spinning: dry-run Private package for Sun 22 Nov (v01l picture lock, J0319 PASS) | 6200213333 |
