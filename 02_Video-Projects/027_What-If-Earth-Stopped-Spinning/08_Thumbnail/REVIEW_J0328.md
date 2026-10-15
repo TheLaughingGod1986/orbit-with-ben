@@ -32,6 +32,6 @@ Each NAS copy was SHA-256 verified. Source `epic_master_frame0.png` is kept ther
 
 ## Next
 
-Chief reviews the three hooks and contact sheet and merges the PR if accepted. The existing package still needs its other outstanding items (including trailer and captions) and final approval. This job neither changes those nor approves the existing title. No upload or Test & Compare has been started.
+Chief reviews the three hooks and contact sheet and merges the PR if accepted. Chief reported J0327 captions/trailer landed during this run (#6201424056). Their manifest fields and captions are preserved in this branch; final approval remains outstanding. This job does not approve the existing title. No upload or Test & Compare has been started.
 
 Disk: 13 GiB free. Existing MOVED_TO_NAS notes confirm older 027 scratch was archived earlier today; current/previous cuts retained. No additional superseded render batch identified, and no files deleted.
