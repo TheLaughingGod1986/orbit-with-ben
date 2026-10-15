@@ -1,0 +1,53 @@
+{
+  "job": "J0276",
+  "readbackAt": "2026-10-15T09:06:10Z",
+  "videoId": "m09jUdwC5hk",
+  "studioEditUrl": "https://studio.youtube.com/video/m09jUdwC5hk/edit",
+  "watchUrl": "https://youtu.be/m09jUdwC5hk",
+  "master": {
+    "source": "NAS /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/owb_comp/final_v05/owb_compilation_v05.mp4",
+    "localCopy": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_compilation_v05.mp4",
+    "bytes": 2796439567,
+    "sha256": "ee7850d24601a58f48d8bb4ebac827815c7dc237c4986fceae2271229664e729",
+    "durationSeconds": 2857.77
+  },
+  "dataApiReadback": {
+    "title": "How Long Will Anything in Space Last?",
+    "spoilsUnreleasedFilm": false,
+    "privacyStatus": "private",
+    "publishAt": "2026-10-21T17:00:00Z",
+    "uploadStatus": "processed",
+    "processingStatus": "succeeded",
+    "definition": "hd",
+    "duration": "PT47M38S",
+    "hasCustomThumbnail": true,
+    "selfDeclaredMadeForKids": false,
+    "madeForKids": false,
+    "chapters": [
+      "0:00 Nothing in the sky is permanent",
+      "0:53 The Rings Are Leaving",
+      "10:12 The Moon Lets Go",
+      "18:47 Two Galaxies Meet",
+      "29:19 What Dead Stars Leave",
+      "39:04 The Last Light"
+    ],
+    "sourcesLine": "Sources: Iess et al. 2019 (Science), Saturn ring mass · O'Donoghue et al. 2019 (Icarus), Saturn ring rain from Keck · Waite et al. 2018 (Science), Cassini Grand Finale ring inflow · Dickey et al. 1994 (Science), Lunar Laser Ranging 3.8 cm/yr Moon recession · van der Marel et al. 2012 (ApJ), Hubble M31–Milky Way collision · Laughlin, Bodenheimer & Adams 1997 (ApJ), red dwarf 10-trillion-year lifetimes."
+  },
+  "studioReadback": {
+    "alteredContent": "Yes (VIDEO_HAS_ALTERED_CONTENT_YES checked)",
+    "madeForKids": "No (VIDEO_MADE_FOR_KIDS_NOT_MFK checked)",
+    "primaryCover": "cover_owb_compilation_v05_A_the-last-light.jpg (THE LAST LIGHT)",
+    "endScreen": {
+      "saved": true,
+      "window": "47:17:22 - 47:37:22",
+      "elements": [
+        "Subscribe: Orbit With Ben",
+        "Video: Best for viewer"
+      ]
+    }
+  },
+  "noteOnFailedInitialAttempt": {
+    "abortedStubId": "ZGD5pHs2KKE",
+    "detail": "Created at 2026-10-15T08:47:14Z when upload.ts used fs.readFile on the 2.60 GiB master (>2 GiB Node buffer limit) before sending 0 bytes (duration P0D). Fixed in d8ee5e1e (fs.createReadStream); left untouched per Never-delete rule."
+  }
+}

@@ -23,10 +23,19 @@ Four weeks: 24 October–20 November 2026 (UK). Readout from 21 November. Compar
 
 Voyager `kKN8Ale42sE`: retry Buffer mirrors after a scheduled post clears capacity. Keep the exact YouTube time (17 November 11:30 UTC). Do not upgrade, change dates, or re-upload. Registry has `standalone` and `standaloneTest` true. Daily Buffer check can retry once the records are on main.
 
+## Scheduled compilation film (J0168 / J0276)
+
+Four-week compilation measurement window: 21 October–18 November 2026 (UK), readout from 19 November 2026. Compare views, retention (APV and AVD), and subscribers gained against Orbit Shorts (cut from longs) and regular Orbit longs over the same four weeks.
+
+| Film | YouTube id | PublishAt (UTC) | Duration | Master SHA-256 | Cover |
+|---|---|---|---|---|---|
+| How Long Will Anything in Space Last? (`owb_compilation_v05.mp4`) | `m09jUdwC5hk` | `2026-10-21T17:00:00Z` (Wed 21 Oct 18:00 London) | 47:37.8 (2857.77 s) | `ee7850d24601a58f48d8bb4ebac827815c7dc237c4986fceae2271229664e729` | Set via API (`THE LAST LIGHT`) |
+
 ## Readout
 
 | Cohort | Views | APV | AVD | Subscribers gained |
 |---|---|---|---|---|
 | Standalone Shorts | pending | pending | pending | pending |
+| Compilation film (`m09jUdwC5hk`) | pending | pending | pending | pending |
 | Shorts cut from longs | pending | pending | pending | pending |
 | Longs | pending | pending | pending | pending |
