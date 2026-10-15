@@ -23972,13 +23972,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T19:28Z",
-      "eta": "2026-10-15T21:28Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T19:27Z",
-      "result": "",
+      "result": "parked for Chief: final OK before Private upload of 027 v01l. Dry-run complete, publishAt 2026-11-22T18:00:00Z, sha256 7d51961f. Watch OWB UAT/027_EarthSpin_rough_v01l.mp4 by Mon 19 Oct 23:59 London. Thumbnail and trailer still unset. No upload.",
       "history": [
         {
           "at": "2026-10-15T19:27Z",
@@ -24004,6 +24004,11 @@
           "at": "2026-10-15T19:36Z",
           "by": "cursor",
           "what": "step 4 of 4 done: dry-run done, parking for Chief"
+        },
+        {
+          "at": "2026-10-15T19:36Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: final OK before Private upload of 027 v01l. Dry-run complete, publishAt 2026-11-22T18:00:00Z, sha256 7d51961f. Watch OWB UAT/027_EarthSpin_rough_v01l.mp4 by Mon 19 Oct 23:59 London. Thumbnail and trailer still unset. No upload."
         }
       ],
       "kind": "assembly",
