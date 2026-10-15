@@ -1,0 +1,259 @@
+{
+  "film": "028",
+  "version": "v01",
+  "job": "J0310",
+  "checked": "2026-10-15",
+  "rule": "NASA public domain. ESA/Gaia/DPAC CC BY-SA 3.0 IGO. ESO and ESA/Hubble CC BY 4.0 unless a row says HOLD. No DSS2, no Aladin cut-outs, no University of Rochester Scholz's-star art.",
+  "assets": [
+    {
+      "id": "gaia_motion_1_6my",
+      "title": "Gaia's stellar motion for the next 1.6 million years (3 Dec 2020)",
+      "credit": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "licence": "CC BY-SA 3.0 IGO",
+      "page": "https://www.esa.int/ESA_Multimedia/Videos/2020/12/Gaia_s_stellar_motion_for_the_next_1.6_million_years",
+      "file": "https://dlmultimedia.esa.int/download/public/videos/2020/12/004/2012_004_AR_EN.mp4",
+      "status": "ok",
+      "note": "Data animation of 40,000 stars. picture_qa may call it a diagram. Six shot-list stretches; the cap is five."
+    },
+    {
+      "id": "gaia_gliese_encounter",
+      "title": "Waiting for a stellar encounter (Gliese 710, 31 Aug 2017)",
+      "credit": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "licence": "CC BY-SA 3.0 IGO",
+      "page": "https://www.esa.int/ESA_Multimedia/Videos/2017/08/Waiting_for_a_stellar_encounter",
+      "file": "https://dlmultimedia.esa.int/download/public/videos/2017/08/022/1708_022_AR_EN.mp4",
+      "status": "ok",
+      "note": "The Gliese 710 flyby. Not the annotated 'Tracking stellar motions' cut (that one draws a circle and a line)."
+    },
+    {
+      "id": "gaia_edr3_sky",
+      "title": "Colour of the sky, Gaia Early Data Release 3 (Dec 2020)",
+      "credit": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "licence": "CC BY-SA 3.0 IGO",
+      "page": "https://www.esa.int/ESA_Multimedia/Images/2020/12/Interactive_map_of_the_sky_from_Gaia_s_Early_Data_Release_3",
+      "file": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2020/12/interactive_map_of_the_sky_from_gaia_s_early_data_release_3/25364650-1-eng-GB/Interactive_map_of_the_sky_from_Gaia_s_Early_Data_Release_3.png",
+      "status": "ok",
+      "note": "EDR3 colour sky, not a DR3 chemistry or radial-velocity map (those are labelled). Confirm pixel size at harvest. No DSS2."
+    },
+    {
+      "id": "eso_mw_lasilla",
+      "title": "La Silla Milky Way time-lapse",
+      "credit": "ESO/S. Brunier (CC BY 4.0)",
+      "licence": "CC BY 4.0",
+      "page": "https://www.eso.org/public/videos/brunier_la_silla/",
+      "file": "https://cdn.eso.org/videos/hd_1080p25_screen/brunier_la_silla.mp4",
+      "status": "ok",
+      "note": "Galactic plane over the 3.6 m dome. Not a dedicated Serpens crop."
+    },
+    {
+      "id": "eso_startrails",
+      "title": "Time-lapse over La Silla (star trails)",
+      "credit": "R. Wesson/ESO (CC BY 4.0)",
+      "licence": "CC BY 4.0",
+      "page": "https://www.eso.org/public/videos/lasilla_timelapse_rw1/",
+      "file": "https://cdn.eso.org/videos/hd_1080p25_screen/lasilla_timelapse_rw1.mp4",
+      "status": "ok",
+      "note": "Star trails. A different film from the Brunier Milky Way lapse."
+    },
+    {
+      "id": "eso_chajnantor",
+      "title": "Milky Way over Chajnantor",
+      "credit": "ESO (CC BY 4.0)",
+      "licence": "CC BY 4.0",
+      "page": "https://www.eso.org/public/videos/chajnantormilkyway/",
+      "file": "https://cdn.eso.org/videos/medium_podcast/chajnantormilkyway.m4v",
+      "status": "ok",
+      "note": "Southern Milky Way, Coalsack visible. File found is the medium podcast, not 1080p."
+    },
+    {
+      "id": "eso_night_tafreshi",
+      "title": "Milky Way time-lapse, La Silla (Tafreshi)",
+      "credit": "ESO/B. Tafreshi (twanight.org) (CC BY 4.0 unless the page says otherwise)",
+      "licence": "CC BY 4.0 default",
+      "page": "https://www.eso.org/public/videos/bt_lasilla_fd2/",
+      "file": null,
+      "status": "gap",
+      "note": "Page returned 200. No cdn file URL in the HTML, and the usual 1080p path 404'd. Do not invent a file."
+    },
+    {
+      "id": "sdo_aia335",
+      "title": "SDO AIA 335 full disk, 2 Jun 2010",
+      "credit": "NASA/SDO (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002035",
+      "file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002035/GSFC_20171208_Archive_e002035~orig.jpg",
+      "status": "ok",
+      "note": "ULTRAVIOLET (AIA 335), not the visible-light Sun the shot list asked for. One use only until a visible-light second framing is pinned."
+    },
+    {
+      "id": "k_dwarf_goldilocks",
+      "title": "Comparison of G, K and M stars (Hubble 2020)",
+      "credit": "NASA, ESA, and Z. Levy (STScI)",
+      "licence": "public domain",
+      "page": "https://science.nasa.gov/asset/hubble/comparison-of-g-k-and-m-stars-for-habitability/",
+      "file": "https://esahubble.org/images/opo2006a/",
+      "status": "reject",
+      "note": "Labelled infographic (ESA/Hubble type: Chart). picture_qa FAIL. Do not crop the labels off."
+    },
+    {
+      "id": "proxima",
+      "title": "Hubble image of Proxima Centauri (potw1343a)",
+      "credit": "ESA/Hubble & NASA (CC BY 4.0)",
+      "licence": "CC BY 4.0",
+      "page": "https://esahubble.org/images/potw1343a/",
+      "file": "https://cdn.esahubble.org/archives/images/large/potw1343a.jpg",
+      "status": "ok",
+      "note": "Same plate 026 already uses. No DSS2 companion."
+    },
+    {
+      "id": "hipparcos_art",
+      "title": "Artist's impression of the Hipparcos spacecraft (4 Apr 2000)",
+      "credit": "ESA",
+      "licence": "ESA standard licence; confirm before the cut",
+      "page": "https://sci.esa.int/web/hipparcos/-/14060-an-artist-s-impression-of-the-hipparcos-spacecraft",
+      "file": null,
+      "status": "gap",
+      "note": "Page verified. The still is not linked as a file in the HTML."
+    },
+    {
+      "id": "gaia_craft",
+      "title": "The Gaia spacecraft (artist's impression)",
+      "credit": "ESA/ATG medialab; background: ESO/S. Brunier (CC BY 4.0 via ESO)",
+      "licence": "CC BY 4.0",
+      "page": "https://www.eso.org/public/images/eso1908d/",
+      "file": "https://cdn.eso.org/images/large/eso1908d.jpg",
+      "status": "ok",
+      "note": "Artist's impression (WARN). Background is Brunier's Milky Way still, not the Brunier video."
+    },
+    {
+      "id": "neptune",
+      "title": "Neptune full disk, Voyager 2 (PIA01492)",
+      "credit": "NASA/JPL (public domain)",
+      "licence": "public domain",
+      "page": "https://science.nasa.gov/photojournal/neptune-full-disk-view/",
+      "file": "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg",
+      "status": "ok",
+      "note": "Green and orange filters, not a true-colour still. Say so if a credit line names the filters."
+    },
+    {
+      "id": "oort_page",
+      "title": "Oort Cloud illustration",
+      "credit": "NASA",
+      "licence": "public domain if the NASA page's file is used",
+      "page": "https://science.nasa.gov/resource/oort-cloud/",
+      "file": null,
+      "status": "gap",
+      "note": "Page verified, file not pinned. Do not use the Feild/STScI diagram (WEB12119): it has an inset chart."
+    },
+    {
+      "id": "neowise_dc",
+      "title": "Comet NEOWISE over Washington, 12 Jul 2020",
+      "credit": "NASA/Bill Ingalls (public domain)",
+      "licence": "public domain",
+      "page": "https://www.nasa.gov/image-article/comet-neowise-over-washington-dc-2/",
+      "file": "https://images-assets.nasa.gov/image/NHQ202007120002/NHQ202007120002~orig.tif",
+      "status": "ok",
+      "note": "C/2020 F3. Second use is a new crop only."
+    },
+    {
+      "id": "iss_sunrise",
+      "title": "Orbital sunrise above Namibia",
+      "credit": "NASA (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/iss072e487315",
+      "file": "https://images-assets.nasa.gov/image/iss072e487315/iss072e487315~orig.jpg",
+      "status": "ok",
+      "note": "Cloud tops at sunrise from the ISS. A still, not a moving sunrise."
+    },
+    {
+      "id": "hale_bopp",
+      "title": "Comet Hale-Bopp, 14 Mar 1997 (phot-mar14-hbs-2)",
+      "credit": "ESO/E. Slawik",
+      "licence": "HOLD",
+      "page": "https://www.eso.org/public/images/phot-mar14-hbs-2/",
+      "file": "https://cdn.eso.org/images/large/phot-mar14-hbs-2.jpg",
+      "status": "hold",
+      "note": "HOLD for Chief. The 1997 event page says \u00a9 Eckhard Slawik. This 2009 ESO page sits under ESO's CC BY 4.0 default. Do not use until the licence is confirmed."
+    },
+    {
+      "id": "comet_a3",
+      "title": "Comet C/2023 A3 from the ISS, 28 Sep 2024",
+      "credit": "NASA/Matthew Dominick (public domain)",
+      "licence": "public domain",
+      "page": "https://www.nasa.gov/image-article/ancient-comet-makes-appearance/",
+      "file": "https://images-assets.nasa.gov/image/iss072e020907/iss072e020907~orig.jpg",
+      "status": "ok",
+      "note": "Oort-cloud comet, as the shot list asked."
+    },
+    {
+      "id": "jupiter_juno",
+      "title": "Jupiter's colourful cloud belts (PIA21974)",
+      "credit": "NASA/JPL-Caltech/SwRI/MSSS (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/PIA21974",
+      "file": "https://images-assets.nasa.gov/image/PIA21974/PIA21974~orig.tif",
+      "status": "ok",
+      "note": "Juno, colour-enhanced, not true colour. Credit the enhancement."
+    },
+    {
+      "id": "saturn",
+      "title": "The greatest Saturn portrait (PIA06193)",
+      "credit": "NASA/JPL/Space Science Institute (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/PIA06193",
+      "file": "https://images-assets.nasa.gov/image/PIA06193/PIA06193~orig.jpg",
+      "status": "ok",
+      "note": "Cassini natural-colour portrait. Chosen over PIA14922, which puts Titan in front."
+    },
+    {
+      "id": "conjunction",
+      "title": "Jupiter and Saturn after sunset, 21 Dec 2020",
+      "credit": "NASA/Bill Ingalls (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/NHQ202012210001",
+      "file": "https://images-assets.nasa.gov/image/NHQ202012210001/NHQ202012210001~orig.tif",
+      "status": "ok",
+      "note": "The Ingalls conjunction series. Saturn is in the frame with Jupiter."
+    },
+    {
+      "id": "moon_lro",
+      "title": "Full Moon (LRO)",
+      "credit": "NASA (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000868",
+      "file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000868/GSFC_20171208_Archive_e000868~orig.jpg",
+      "status": "ok",
+      "note": "Second use is a crop. That is the twice-still cap."
+    },
+    {
+      "id": "wise_sky",
+      "title": "Entire WISE sky (PIA15481)",
+      "credit": "NASA/JPL-Caltech/UCLA (public domain)",
+      "licence": "public domain",
+      "page": "https://photojournal.jpl.nasa.gov/catalog/PIA15481",
+      "file": "https://images-assets.nasa.gov/image/PIA15481/PIA15481~orig.jpg",
+      "status": "ok",
+      "note": "All-sky mosaic. Inspect for axis labels before the cut. A labelled map FAILs picture_qa."
+    },
+    {
+      "id": "wise_craft",
+      "title": "NEOWISE spacecraft, artist concept (PIA17254)",
+      "credit": "NASA/JPL-Caltech (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/PIA17254",
+      "file": "https://images-assets.nasa.gov/image/PIA17254/PIA17254~orig.jpg",
+      "status": "ok",
+      "note": "Artist's concept (WARN). It is the WISE spacecraft, which flew the NEOWISE mission."
+    },
+    {
+      "id": "ngc3603",
+      "title": "Starburst cluster (Hubble, GSFC archive e002049)",
+      "credit": "NASA, ESA, Hubble (public domain)",
+      "licence": "public domain",
+      "page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002049",
+      "file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002049/GSFC_20171208_Archive_e002049~orig.jpg",
+      "status": "ok",
+      "note": "Young cluster in gas and dust. Confirm it is clean of caption text at harvest."
+    }
+  ]
+}
