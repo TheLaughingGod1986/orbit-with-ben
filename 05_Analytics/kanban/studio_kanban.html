@@ -66,6 +66,19 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .vr .pill.bad{background:var(--blocked-soft);color:var(--blocked)}
 .vr .pill.live,.vr .pill.sched{background:var(--done-soft);color:var(--done)}
 .vr .pill.you{background:var(--accent);color:#fff}
+/* Ben, 15 Oct 2026: swim lanes + thin rows */
+.vl{margin:0 0 8px}
+.vlh{display:flex;align-items:center;gap:8px;width:100%;font:inherit;color:inherit;background:none;border:0;border-bottom:1px solid var(--line);padding:6px 2px;margin:0 0 6px;cursor:pointer;text-align:left}
+.vlh .vln{font-weight:700;font-size:14px}
+.vlh .vlc{font-size:12px;font-weight:700;padding:0 8px;border-radius:9px;background:var(--panel-2);color:var(--ink-2)}
+.vlh .chev{margin-left:auto;transition:transform .15s}
+.vl.open>.vlh .chev{transform:rotate(90deg)}
+.vl.you .vlc{background:var(--accent);color:#fff}
+.vr .vt{white-space:normal;overflow:visible;text-overflow:clip}
+.vr .bar.thin{height:3px;margin:5px 0 4px}
+.vr .bar.thin i{height:100%}
+.vr .v2 .vdt{flex:none;max-width:48%;color:var(--ink-3);font-size:12px;text-align:right}
+.vr .v2 .vbad{flex:none;width:8px;height:8px;border-radius:50%;background:var(--blocked)}
 /* Ben, 14 Oct 2026: "the progress bar change colours depending on how far through the job" (red → amber → green). */
 .bar i.pc,.pbar .track i.pc{background:var(--pc)!important;opacity:1!important}
 /* Ben, 14 Oct 2026: tap a video for its total ETA and every task in order: working on, next, 3rd, 4th ... */
@@ -1258,26 +1271,37 @@ function justLine(x){
 function pcCol(p){ const v = Math.max(0, Math.min(100, +p||0)); return `hsl(${Math.round(v*1.2)} 70% 46%)`; }
 function pcBar(p){ return `<i class="pc" style="width:${p}%;--pc:${pcCol(p)}"></i>`; }
 const vOpen = {};   // which video rows are open; kept across the minute re-render
+const vLane = {};   // which lanes Ben has toggled; the others keep their default (Needs you and Working open)
+// Ben, 15 Oct 2026: "clean this up, maybe swim lanes". Lanes by what each film is waiting on, thin one-line rows.
+const LANES = [["you","Needs you",true],["now","Working",true],["wait","Waiting",false],["sched","Scheduled",false],["live","Live",false]];
 function renderVideos(rows, rankOf){
   const box = $("videos"); if(!box) return;
   const strip = h => String(h||"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").replace(/&#39;/g,"'").replace(/&quot;/g,'"');
-  const tier = r => r.live ? 3 : r.isSched ? 2 : r.col==="doing" ? 0 : 1;
+  const short = t => { const x = strip(t).split(" · ")[0].trim(); return x.length>64 ? x.slice(0,61).trimEnd()+"…" : x; };
   const keep = rows.filter(r=>chan==="all"||chan===r.f._ch).filter(r=>!r.live || (r.air && Date.now()-r.air < 3*DAY));
-  keep.sort((a,b)=>tier(a)-tier(b) || (tier(a)<2 ? (rankOf[a.f.key]||999)-(rankOf[b.f.key]||999) : 0)
-    || (tier(a)===3 ? (b.air||0)-(a.air||0) : (a.air||9e15)-(b.air||9e15)));
-  const word = r => r.live ? ["live","Live"] : r.isSched ? ["sched","Scheduled"] : r.you ? ["you","For you"]
-    : ({now:["now","Working now"], next:["next","Up next"], review:["review","In review"], bad:["bad","Blocked"]})[r.mk[0]] || ["wait","Waiting"];
-  box.innerHTML = `<div class="vh">Videos<span>${keep.length} in work · tap one for detail</span></div>` + (keep.length ? keep.map(r=>{
-    const [cls, w] = word(r), now = (r.live||r.isSched) ? "" : strip(r.mk[1]).replace(/^[A-Z][^:]{0,40}:\s*/,"");
+  const laneOf = r => r.live ? "live" : r.isSched ? "sched" : r.you ? "you" : r.mk[0]==="now" ? "now" : "wait";
+  const byRank = (a,b)=>(rankOf[a.f.key]||999)-(rankOf[b.f.key]||999) || (a.air||9e15)-(b.air||9e15);
+  const row = r => {
+    const lane = laneOf(r), open = !!vOpen[r.f.key];
+    const status = lane==="live" ? "" : lane==="sched" ? "" : short(strip(r.mk[1]).replace(/^[A-Z][^:]{0,40}:\s*/,""));
+    const bad = r.mk[0]==="bad" ? `<i class="vbad" title="Blocked"></i>` : "";
     // airIn() gives a ticking <span data-until> under a day out, so `when` stays HTML; the note texts are plain.
     const when = r.live ? `Live since ${esc(fd(r.air))}` : r.air ? `Airs ${esc(fd(r.air))} · ${airIn(r.air)}` : "No air date yet";
-    const ready = r.you ? `For you now: ${strip(r.you)}` : !r.live && !r.isSched && r.ready ? `Ready for you: ${strip(r.ready)}` : "";
-    const open = !!vOpen[r.f.key];
+    const date = lane==="you" ? (r.you ? short(r.you) : "") : (!r.live && !r.isSched && r.ready) ? `Ready for you ${short(r.ready)}` : r.air ? `${r.live?"Live":"Airs"} ${esc(fd(r.air))}` : "";
     return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span><span class="vp">${r.pct}%</span><span class="chev">▸</span></div>
-      <div class="bar">${pcBar(r.pct)}</div>
-      <div class="v2"><span class="pill ${cls}">${w}</span>${now?`<span class="vn">${esc(now)}</span>`:""}</div>
-      <div class="v3"><span>${when}</span>${ready?`<span class="vy">${esc(ready)}</span>`:""}</div></button>${open?videoDrop(r, when):""}</div>`; }).join("")
+      <div class="bar thin">${pcBar(r.pct)}</div>
+      <div class="v2">${bad}<span class="vn">${esc(status)}</span>${date?`<span class="vdt">${lane==="you"||/^Ready/.test(date)?esc(date):date}</span>`:""}</div></button>${open?videoDrop(r, when):""}</div>`; };
+  const groups = Object.fromEntries(LANES.map(l=>[l[0],[]]));
+  for(const r of keep) groups[laneOf(r)].push(r);
+  for(const k of ["you","now","wait"]) groups[k].sort(byRank);
+  groups.sched.sort((a,b)=>(a.air||9e15)-(b.air||9e15));
+  groups.live.sort((a,b)=>(b.air||0)-(a.air||0));
+  box.innerHTML = `<div class="vh">Videos<span>${keep.length} in work · tap a video for detail</span></div>` + (keep.length
+    ? LANES.filter(([k])=>groups[k].length).map(([k,label,dflt])=>{
+        const open = k in vLane ? vLane[k] : dflt;
+        return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${groups[k].length}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
     : `<div class="empty">Nothing in work.</div>`);
+  box.querySelectorAll("[data-vlane]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vlane, d = LANES.find(l=>l[0]===k)[2]; vLane[k] = !(k in vLane ? vLane[k] : d); renderVideos(rows, rankOf); });
   box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; vOpen[k] = !vOpen[k]; renderVideos(rows, rankOf); });
   box.querySelectorAll("[data-vdone]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vdone; vOpen[k+"#done"] = !vOpen[k+"#done"]; renderVideos(rows, rankOf); });
 }
