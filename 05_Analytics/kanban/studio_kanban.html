@@ -36,7 +36,11 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .donebar .dh{display:flex;justify-content:space-between;gap:8px;font-weight:600;color:var(--ink)}
 .donebar .dh span{font-weight:500;color:var(--ink-3)}
 .donebar ul{list-style:none;margin:4px 0 0;padding:0}
-.donebar li{display:flex;align-items:center;gap:6px;padding:3px 0;border-top:1px solid var(--line);white-space:nowrap}
+.donebar li{padding:3px 0;border-top:1px solid var(--line)}
+.donebar li summary{display:flex;align-items:center;gap:6px;white-space:nowrap;cursor:pointer;list-style:none}
+.donebar li summary::-webkit-details-marker{display:none}
+.donebar li .dd{margin:4px 0 4px 18px;font-size:12.5px;line-height:1.45;color:var(--ink-2);white-space:normal;overflow-wrap:anywhere}
+.donebar li .dd div{margin:2px 0}
 .donebar li:first-child{border-top:0}
 .donebar li .ok{color:var(--done);font-weight:700}
 .donebar li .t{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
@@ -1150,6 +1154,7 @@ function jobCard(j, col, eta){
 }
 // Ben, 14 Oct: "I'm not seeing tasks that are done." The last five finished jobs stay in view under the Now box, with
 // what kind of work each was, who did it and how long ago; amber when nothing has finished for a day.
+const doneOpen = new Set();   // finished jobs Ben has opened; kept across the minute re-render
 function renderDone(){
   const box = $("donebar"); if(!box) return;
   const done = ((fromDb.extra||{}).done || fromDb.recent || []).filter(d=>!isNaN(ts(d.at))).sort((a,b)=>ts(b.at)-ts(a.at));
@@ -1157,7 +1162,13 @@ function renderDone(){
   const day = done.filter(d=>Date.now()-ts(d.at) < 24*60*MINUTE).length, last = ts(done[0].at);
   box.className = "donebar" + (Date.now()-last > 24*60*MINUTE ? " cold" : "");
   box.innerHTML = `<div class="dh">Recently done<span>${day} in the last 24 h</span></div><ul>${done.slice(0,3).map(d=>{ const k = jobKindOf(d);
-    return `<li><span class="ok">✓</span><span class="kd ${k.key}">${esc(k.label)}</span><span class="t">${esc(plainTitle(d, 60))}</span><span class="w">${esc(WORKER[d.by]||d.by||"")} · <span data-ago="${ts(d.at)}">${ago(ts(d.at))}</span></span></li>`; }).join("")}</ul>`;
+    // Ben, 15 Oct 2026: tap a finished job to see what it was and what came of it.
+    const body = [`<div><b>Job:</b> <span class="mono">${esc(d.id||"")}</span> ${esc(d.title||"")}</div>`,
+      `<div><b>Done by:</b> ${esc(WORKER[d.by]||d.by||"")}${d.model?` · ${esc(d.model)}`:""} · ${esc(fw(String(d.at).slice(0,16)))}</div>`,
+      d.result ? `<div><b>Result:</b> ${esc(d.result)}</div>` : "",
+      d.ref ? `<div><b>Ref:</b> <span class="mono">${esc(d.ref)}</span></div>` : ""].join("");
+    return `<li><details data-did="${esc(d.id||"")}"${doneOpen.has(d.id)?" open":""}><summary><span class="ok">✓</span><span class="kd ${k.key}">${esc(k.label)}</span><span class="t">${esc(plainTitle(d, 60))}</span><span class="w">${esc(WORKER[d.by]||d.by||"")} · <span data-ago="${ts(d.at)}">${ago(ts(d.at))}</span></span></summary><div class="dd">${body}</div></details></li>`; }).join("")}</ul>`;
+  box.querySelectorAll("details[data-did]").forEach(x=>x.addEventListener("toggle",()=>{ x.open ? doneOpen.add(x.dataset.did) : doneOpen.delete(x.dataset.did); }));
 }
 function renderJobBoard(){
   const box = $("jobboard"), st = $("daystats"), nb = $("needsyou");
