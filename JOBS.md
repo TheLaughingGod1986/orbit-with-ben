@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0287 | mini | blocked | chief | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
 | J0288 | mini | blocked | claude | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0298 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0299 | cloud | open | – | – | script · HOS 013 Darwin–Wallace: full script v01 from locked opening_and_outline_v00 (review:script ≥ 90) | 6196336541 |
+| J0299 | cloud | claimed | chief | 2026-10-15T19:00Z | script · HOS 013 Darwin–Wallace: full script v01 from locked opening_and_outline_v00 (review:script ≥ 90) | 6196336541 |
 | J0300 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
 | J0303 | mini | claimed | cursor | 2026-10-15T18:55Z | assembly · 027 Short FIX v02: stand-alone open (Chief FIX on J0297 v01) |  |
