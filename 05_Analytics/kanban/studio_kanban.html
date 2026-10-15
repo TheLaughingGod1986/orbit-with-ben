@@ -1286,7 +1286,8 @@ function renderVideos(rows, rankOf){
   // "Approved" badge and its next step. Standalone Shorts (film_briefs extraWatch) have no film card, so they get a row here.
   const xrows = (fromDb.extraWatch||[]).filter(x=>x && x.id && x.title).map(x=>{
     const c = (fromDb.checks||{})[xid(x)], ok = !!c && tickStands(c, null, "");
-    return {f:{key:"HOS:"+String(x.id).replace(/^HOS\s+/,""), id:x.id, title:x.title, _ch:"HOS"}, pct:null, air:0, airText:x.airs||"", live:false, isSched:false, extra:true,
+    // Shorts have no film-style task list, so the bar is by stage: made and passed 60%, you approved it 75%; uploaded and scheduled files it under Scheduled.
+    return {f:{key:"HOS:"+String(x.id).replace(/^HOS\s+/,""), id:x.id, title:x.title, _ch:"HOS"}, pct: ok ? 75 : 60, air:0, airText:x.airs||"", live:false, isSched:false, extra:true,
       you: ok ? "" : "watch and approve", mk:["wait", ok ? (x.next||"the Chief schedules it") : "waiting for your OK"], ready:"",
       steps: ok && x.next ? [{who:"Mac mini", what:x.next, w:{kind:"next", text:""}}] : []}; });
   const keep = rows.concat(xrows).filter(r=>chan==="all"||chan===r.f._ch).filter(r=>!r.live || (r.air && Date.now()-r.air < 3*DAY));
@@ -1294,7 +1295,7 @@ function renderVideos(rows, rankOf){
   const byRank = (a,b)=>(rankOf[a.f.key]||999)-(rankOf[b.f.key]||999) || (a.air||9e15)-(b.air||9e15);
   const row = r => {
     const lane = laneOf(r), open = !!vOpen[r.f.key];
-    const status = lane==="live" ? "" : lane==="sched" ? "" : short(strip(r.mk[1]).replace(/^[A-Z][^:]{0,40}:\s*/,""));
+    const status = lane==="live" ? "" : lane==="sched" ? "" : short(r.extra ? r.mk[1] : strip(r.mk[1]).replace(/^[A-Z][^:]{0,40}:\s*/,""));
     const ck = (fromDb.checks||{})[String(r.f.key).replace(":","-")], recent = ck && ck.verdict==="ok" && Date.now()-Date.parse(ck.at||0) < 2*DAY;
     const badge = recent ? `<span class="vok" title="You approved this ${esc(fw(ck.at))}">✓ Approved</span>` : "";
     const bad = r.mk[0]==="bad" ? `<i class="vbad" title="Blocked"></i>` : "";
