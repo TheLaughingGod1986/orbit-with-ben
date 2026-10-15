@@ -1,5 +1,5 @@
 {
-  "next_id": 290,
+  "next_id": 291,
   "jobs": [
     {
       "id": "J0001",
@@ -21948,6 +21948,33 @@
         "by": "gemini",
         "note": "HOS 006 gates: P1 v01 polish_gate PASS (0/12), P3 v03 polish_gate PASS (0/18), P4 v02 polish_gate PASS (0/16), P2 v02 pi"
       }
+    },
+    {
+      "id": "J0290",
+      "title": "HOS 006 Part 02 rough v03: fix picture_qa + polish_gate FAILs (reuse tails, replays, 15_desk_candle horizontal seam, freeze-pad removal, no spend)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "QA sweep J0289 ran picture_qa + polish_gate on HOS 006 Part 02 rough v02 (commit c0e87a6 / cf5ac5f, consolidated on main in 747a834): 5 picture_qa FAILs and 1 polish_gate FAIL: (1) 0:42 row 09_weights_169 (09_weights_169_t1.mp4: same stretch as 0:08 stand-in 02_balance_200); (2) 0:50 row 11_furnace_again (01_furnace_soil_t1.mp4: same stretch as 0:03); (3) 1:11 row 15_desk_candle (15_desk_candle_t1.mp4: split panel horizontal seam at 0.785); (4) 1:21 row 17_mostly_wrong (17_mostly_wrong_t1.mp4: same stretch as 1:06 cover 14_why_grown); (5) 1:43 row 21_gas_window (20_shimmer_coals_t1.mp4: replays frames this run has just shown + 7.79s freeze-pad in part02_rough_v02_freezedetect.json). With zero spend: write reusable tail/cover clips to separate files (like J0266 did for P3/P4), replace the freeze-pads on 21/22 with moving KEEP stretches or code graphic/trim, crop/reframe or add reviewed-ok for 15_desk_candle desk edge, re-render part02_rough_v03, and verify picture_qa + polish_gate PASS.",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-15T14:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T14:27Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
