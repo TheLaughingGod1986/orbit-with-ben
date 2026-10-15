@@ -12001,13 +12001,13 @@
       "stage": "",
       "after": "J0218",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-15T02:37Z",
-      "eta": "2026-10-15T03:37Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: kind chief has no stand-in; Chief must PASS/FAIL each HOS standalone Short and give upload/schedule OK before worker execution. No review decision, upload, scheduling or spend performed.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -12028,6 +12028,11 @@
           "at": "2026-10-15T02:37Z",
           "by": "codex",
           "what": "step 0 of 3 done: Chief review, authorised scheduling, measurement log; protected review requires Chief."
+        },
+        {
+          "at": "2026-10-15T02:37Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: kind chief has no stand-in; Chief must PASS/FAIL each HOS standalone Short and give upload/schedule OK before worker execution. No review decision, upload, scheduling or spend performed."
         }
       ],
       "kind": "chief",
