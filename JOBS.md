@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0232 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0233 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0234 | mini | open | – | – | thumb · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
-| J0239 | mini | open | – | – | for gemini · qa · `gemini-agy` · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
+| J0239 | mini | claimed | gemini | 2026-10-15T01:00Z | for gemini · qa · `gemini-agy` · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | open | – | – | for gemini · review · `gemini-agy` · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
 | J0243 | mini | open | – | – | studio · OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) |  |
