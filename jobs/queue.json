@@ -19826,13 +19826,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T08:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T06:59Z",
-      "result": "parked for Chief: NAS NFS mount /Volumes/data hung (192.168.1.119 pings; ls and mkdir hang; 08:11 copy in tmux j0267-nas still stuck in mkdir). mini_repair.py run, no effect. Needs a remount of /Volumes/data (or NAS restart) before the NAS copy. Master is safe meanwhile: OWB UAT and 027 07_Edit-Project copies both sha f74ca3e8 = pack.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T06:59Z",
@@ -19908,16 +19908,14 @@
           "at": "2026-10-15T08:47Z",
           "by": "chief",
           "what": "left parked: infra — NAS NFS hung; master safe in two places; health keeper."
+        },
+        {
+          "at": "2026-10-15T08:52Z",
+          "by": "chief",
+          "what": "reopened: NAS /Volumes/data responds again (ls ok; nfs mounted). Reopened so master copy to NAS archive + OWB UAT can finish. Hung tmux j0267-nas may need kill before re-claim."
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-15T08:16Z",
-        "by": "cursor",
-        "note": "UAT sha OK; local copy; NAS hung"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0268",

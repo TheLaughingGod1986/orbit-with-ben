@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0261 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0265 | mini | open | – | – | 027 edit · assembly · 027 Earth Stopped Spinning: fix music_gate FAIL on v01i (prepare chapter awe/explain score plan + house SFX stems, no spend) |  |
 | J0266 | mini | open (after J0140) | – | – | 006 edit · assembly · HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend) |  |
-| J0267 | mini | blocked | cursor | – | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
+| J0267 | mini | open | – | – | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0276 | mini | claimed | gemini | 2026-10-15T09:28Z | listing · Upload OWB compilation v05: Private, publishAt Wed 21 Oct 2026 18:00 London (17:00Z), via youtube:package (Ben GO, Chief OK J0168) |  |
 | J0277 | mini | open | – | – | for codex · thumb · Thumbnail redo: add Orbit to the OWB B variants (Fermi Mo93x0fxB1Q, Europa NbW5G1BpPY0, JWST ziKBPJ6FY0U), keep HOS house style |  |
