@@ -12195,10 +12195,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-15T02:56Z",
-      "eta": "2026-10-15T06:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12527,6 +12527,11 @@
           "at": "2026-10-15T02:56Z",
           "by": "codex",
           "what": "step 4 of 6 done: Both existing render sessions live; exit files absent, logs empty; no duplicate"
+        },
+        {
+          "at": "2026-10-15T02:56Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing tmux sessions J0175-ruling-v03 and J0175-closing-v04 are live. Logs /Users/benjaminoats/_desk/logs/J0175-bridge4-v03.log and J0175-closing-v04.log empty; corresponding .done files absent. No duplicate render started. Implementation already HOS PR #300, 2c40585. Next run checks exit files, then gates/card review. Full compilation waits for 006 master; prior NAS I/O stall unresolved."
         }
       ],
       "kind": "assembly",
