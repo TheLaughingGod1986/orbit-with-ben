@@ -237,13 +237,15 @@ class Relay(unittest.TestCase):
 
     def test_cursor_out_of_its_opus_pool_runs_on_auto_and_stays_up(self):
         # 15 Oct 2026 03:40Z: "You've hit your usage limit for Opus ... Switch to a different model" benched all of Cursor.
-        self.assertEqual(cr.cli_spec("cursor")[1].count("--model"), 0)
+        args = cr.cli_spec("cursor")[1]
+        self.assertEqual(args[args.index("--model") + 1], "grok-4.7")   # Ben, 15 Oct 2026: Grok 4.7, not Auto, by default
         cr.write_json(cr.d("cursor_default_out.json"), {"until": cr.iso(cr.now() + dt.timedelta(hours=1))})
         args = cr.cli_spec("cursor")[1]
         self.assertEqual(args[args.index("--model") + 1], "auto")
         self.assertTrue(cr.state_of("cursor", cr.now())[0])
         cr.write_json(cr.d("cursor_default_out.json"), {"until": cr.iso(cr.now() - dt.timedelta(minutes=1))})
-        self.assertNotIn("--model", cr.cli_spec("cursor")[1])   # the mark ended: back to Cursor's own default
+        args = cr.cli_spec("cursor")[1]
+        self.assertEqual(args[args.index("--model") + 1], "grok-4.7")   # the mark ended: back to Grok 4.7
         self.assertTrue(cr.MODEL_LIMIT_RE.search("ActionRequiredError: You've hit your usage limit for Opus You've saved $780"))
         self.assertFalse(cr.MODEL_LIMIT_RE.search("ERROR: You've hit your usage limit. Upgrade to Pro"))
 
@@ -498,7 +500,7 @@ class Relay(unittest.TestCase):
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
         j = self.job(q, "J0308")
-        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-agy"))
+        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-argon"))
         self.assertTrue(self.ran("agy"))
         self.assertFalse(self.ran("codex"))
         agy = (self.tmp / "agy.args").read_text()
@@ -517,13 +519,13 @@ class Relay(unittest.TestCase):
         self.assertTrue(self.ran("agy"))  # 3) Gemini took it in the same run, not parked
         self.assertFalse(self.ran("codex"))
         j = self.job(q, "J0309")
-        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-agy"))
+        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-argon"))
         # Ben, 14 Oct: only Claude-in-Cursor's pool is empty; Cursor stays up for its own models (Auto)
         self.assertEqual(cr.state_of("cursor", cr.now())[1], "ready")
         self.assertIn("cursor-claude-opus-5-5", cr.load_out(cr.now()))
         runs = [json.loads(l) for l in (cr.STATE / "chief" / "runs.jsonl").read_text().splitlines()]
         self.assertEqual([(r["job"], r["worker"], r["cli_model"], r["lane"], r["out_of_usage"]) for r in runs],
-                         [("J0309", "cursor", "claude-opus-5-5", 2, True), ("J0309", "gemini", "", 3, False)])
+                         [("J0309", "cursor", "claude-opus-5-5", 2, True), ("J0309", "gemini", "gemini-argon", 3, False)])
 
     def test_codex_out_of_usage_on_a_chart_job_moves_to_cursor(self):
         q = self.claude_setup('{"jobs": [{"id": "J0310", "kind": "chart", "status": "open", "needs": "mini"}]}')
@@ -532,7 +534,7 @@ class Relay(unittest.TestCase):
         cr.cmd_run(T0)
         self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())  # code and graphics: Codex first
         self.assertTrue(self.ran("cursor"))  # then the next in the chart chain
-        self.assertNotIn("--model", (self.tmp / "cursor.args").read_text())  # Cursor on Auto for a chart
+        self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())  # Cursor on Grok 4.7 for a chart
         self.assertEqual(self.job(q, "J0310")["for"], "cursor")
 
     def test_with_cursor_and_gemini_down_the_claude_job_goes_to_codex_on_astra(self):
@@ -566,13 +568,19 @@ class Relay(unittest.TestCase):
         self.assertTrue(cr.claude_out(T0)[0])
         self.assertFalse(cr.claude_out(T0 + 6 * 60 * MIN)[0])  # older than CHIEF_CLAUDE_OUT_H (5 h)
 
+    def test_a_model_the_cli_does_not_know_is_flagged_and_the_job_walks_on(self):
+        # Ben, 15 Oct 2026: best-fit model per job; a wrong id must never stop the queue.
+        self.assertTrue(cr.UNKNOWN_MODEL_RE.search("Error: Unknown model 'grok-4.7'. Run agent --list-models"))
+        self.assertTrue(cr.UNKNOWN_MODEL_RE.search("The model gemini-argon does not exist or you lack access"))
+        self.assertFalse(cr.UNKNOWN_MODEL_RE.search("Traceback: KeyError 'model'"))
+
     def test_cursor_gets_the_claude_model_flag_only_for_claude_work(self):
         _, args = cr.cli_spec("cursor", "cursor-claude-opus-5-5")
         self.assertEqual(args[-2:], ["--model", "claude-opus-5-5"])
         _, args = cr.cli_spec("cursor", "cursor-auto")
         self.assertNotIn("--model", args)
         _, args = cr.cli_spec("cursor", "gpt-6-astra")
-        self.assertNotIn("--model", args)
+        self.assertEqual(args[-2:], ["--model", "grok-4.7"])   # not Cursor's own model: its default lane, Grok 4.7
 
 
     def test_heartbeat_is_one_parentless_commit_on_its_own_branch(self):
@@ -615,7 +623,7 @@ class Relay(unittest.TestCase):
         self.assertEqual(self.job(q, "J0401")["for"], "gemini")  # straight past Claude-in-Cursor to Gemini
         self.assertTrue(self.ran("agy"))
         self.assertEqual(cr.state_of("cursor", T0)[1], "ready")  # Cursor itself is fine for Auto jobs
-        self.assertEqual(cr.routing.model_for({"kind": "assembly"}, "cursor"), "cursor-auto")
+        self.assertEqual(cr.routing.model_for({"kind": "assembly"}, "cursor"), "cursor-grok-4-7")
 
     def test_an_agent_flag_takes_it_out_until_the_reset_and_grok_posting_clears_it(self):
         self.routed_queue('{"jobs": []}')
