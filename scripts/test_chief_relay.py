@@ -525,7 +525,8 @@ class Relay(unittest.TestCase):
         self.assertIn("cursor-claude-opus-5-5", cr.load_out(cr.now()))
         runs = [json.loads(l) for l in (cr.STATE / "chief" / "runs.jsonl").read_text().splitlines()]
         self.assertEqual([(r["job"], r["worker"], r["cli_model"], r["lane"], r["out_of_usage"]) for r in runs],
-                         [("J0309", "cursor", "claude-opus-5-5", 2, True), ("J0309", "gemini", "gemini-argon", 3, False)])
+                         [("J0309", "cursor", "claude-opus-5-5", 2, True),
+                          ("J0309", "gemini", cr.routing.AGY_ARGON_MODEL, 3, False)])
 
     def test_codex_out_of_usage_on_a_chart_job_moves_to_cursor(self):
         q = self.claude_setup('{"jobs": [{"id": "J0310", "kind": "chart", "status": "open", "needs": "mini"}]}')

@@ -72,8 +72,11 @@ CURSOR_CLAUDE_MODEL = os.environ.get("CURSOR_CLAUDE_MODEL", "claude-opus-5-5")
 # on Grok 4.7 ... Gemini could use Gemini Argon if it's a really complex task". The CLI ids can be overridden from the
 # relay's environment if the Mini's lists name them differently (`agent --list-models`, `agy` model list); a run that
 # fails on an unknown model flags that model and the job walks on, so a wrong id never stops the queue.
+# Read on the Mini 15 Oct 2026 (J0270, 05_Analytics/ai_spend/MODELS_2026-10-15.md): `agent` takes the bare "grok-4.7"
+# (its list shows only grok-4.7-low…xhigh, but the bare id ran); `agy` has no "gemini-argon" (it exits "not recognized")
+# and lists gemini-4-argon-low/-medium/-high, so the hard lanes take High.
 CURSOR_GROK_MODEL = os.environ.get("CURSOR_GROK_MODEL", "grok-4.7")
-AGY_ARGON_MODEL = os.environ.get("AGY_ARGON_MODEL", "gemini-argon")
+AGY_ARGON_MODEL = os.environ.get("AGY_ARGON_MODEL", "gemini-4-argon-high")
 CLI_MODEL = {"cursor-auto": "", "cursor-claude-opus-5-5": CURSOR_CLAUDE_MODEL, "cursor-grok-4-7": CURSOR_GROK_MODEL,
              "gemini-agy": "", "gemini-argon": AGY_ARGON_MODEL}
 
