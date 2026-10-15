@@ -1,5 +1,5 @@
 {
-  "next_id": 334,
+  "next_id": 335,
   "jobs": [
     {
       "id": "J0001",
@@ -24689,6 +24689,33 @@
         "by": "cursor",
         "note": "v02 read; writing v03 boards"
       }
+    },
+    {
+      "id": "J0334",
+      "title": "HOS 010: plate boards v02 per the J0314 price-pass conditions (no mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J0314 Chief price PASS with conditions on HOS PR #336 (desk #180 comment 6203192061; PR comment 6203192922). Apply as plate boards **v02** on the same branch/PR (`cursor/j0314-010-plate-boards`). **No mint, no spend, no merge.**\n\nConditions to apply:\n1. **Flow-first only.** Vertex not authorised (£146.88 > £70.02). Reprice Flow expected after board edits.\n2. **Fast edit-holds that leave picture holes → own Fast mints** (J0313 lesson). Convert these three; do **not** leave as edit-holds:\n   - `P1:03_bench_three_c1` shortfall 2.6 s\n   - `P5:07_deccan_note_c1` shortfall 6.22 s\n   - `P5:07_deccan_note_c2` shortfall 6.22 s\n3. **Quality continuations:** keep as second Quality mints where shortfall is real. Exception: `P3:08_asaro_michel_c1` shortfall only 0.06 s — prefer edit-hold/reuse of parent instead of a second Quality mint; reprice.\n4. **Teach diagrams stay £0 code graphics** (13 rows) — keep.\n5. Nothing `generation_authorized`. VO timing stays locked to KEEP VO.\n6. Mint order stays **006 > 007 > 008 > 009 > 010**. This board does not mint. 010 mints only later when a live Flow reading covers repriced expected **plus ≥3,000 headroom** after reserved expected for 006–009 (and authorised OWB Flow e.g. 028).\n\nSave boards as `_v02`, update PRICE_REVIEW / PICTURE_PLAN, post new Flow expected on HOS #180. Park for Chief: \"parked for Chief: 010 plate boards v02\". No mint, no spend, no merge.\n",
+      "ref": "6203192061",
+      "film": "010",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T22:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T22:02Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [
