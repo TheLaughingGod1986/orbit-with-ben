@@ -38,6 +38,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0251 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0252 | any | open | – | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0253 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0254 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
