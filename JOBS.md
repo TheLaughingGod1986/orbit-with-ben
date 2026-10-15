@@ -48,7 +48,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0269 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
 | J0270 | mini | open | – | – | assembly · Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at |  |
 | J0271 | mini | blocked | codex | – | for codex · thumb · Thumbnail redo with gpt-image-2 (Ben, 15 Oct): plan + first 3 B variants for the lowest-CTR live longs |  |
-| J0272 | mini | claimed | cursor | 2026-10-15T08:13Z | for cursor · assembly · Codex check: Ben says Codex has credit. Clear its down mark and test each Codex model |  |
 | J0273 | mini | open | – | – | for codex · thumb · Thumbnail redo batch 2: Moon, Last Star, Neutron Star B candidates |  |
 | J0274 | mini | open | – | – | for codex · thumb · Thumbnail redo batch 3: Alien Worlds and HOS Germs B candidates |  |
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
@@ -56,6 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0272 done: Codex check: Ben says Codex has credit. Clear its down mark and test each Codex model (done)
 - J0264 done: Shorts gate gaps: register 23KZK7OjsEE (Jupiter, airs Sat 17 Oct) + lbW2iQ9YvqA (Saturn, 20 Oct), find exports for vlkj8RQKmH8 + oyRcrFTYyDY, gate all four (done)
 - J0263 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 3 HOS longs (+54 OWB, 13 HOS Shorts); CTR hits vs 4%: HOS _C92tIJCk8A Germs 6.7% (30 impr). None on OWB: best -jmMROGoZCM 3.2% (31 impr), Saturn 55AEQwvs36g 2.1% on 820. OWB Short buaOI3QGm7U left out (Studio shows no data). HOS read from the channel table (per-video table blank on 9222). Commit 960fa93e.)
 - J0262 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (acting Chief: QA sweep accepted; fixes ride J0265 (027 music) and J0266 (HOS 006 P3/P4))
@@ -65,4 +65,3 @@ Recently finished:
 - J0248 done: Packaging panel (cursor): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0247 done: Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0246 done: Packaging panel (codex): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (Test revised A: EARTH AGES FASTER, with a readable traveller beside Earth; independent critique committed as 694e2077.)
-- J0244 done: OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare (acting Chief picks (15 Oct): your 6 files are 3 designs (Saturn x2, Jupiter x3 identical copies, black hole x1). All 3 pass at 168 px. Black hole NO WAY OUT? is strongest (clear danger, face, contrast) and is already live as 3xrxdmaOwJI's thumbnail. Jupiter NO SOLID GROUND? is next-best: goes in as B on -jmMROGoZCM when its running NO FLOOR? test ends (~26 Oct, ledger T003). Saturn RINGS VANISHING? is the weakest (calm face, planet reads like Jupiter): B on 55AEQwvs36g after J0189's test, ledger T001-T002 order kept. Nothing replaces a running test (Never rule).)
