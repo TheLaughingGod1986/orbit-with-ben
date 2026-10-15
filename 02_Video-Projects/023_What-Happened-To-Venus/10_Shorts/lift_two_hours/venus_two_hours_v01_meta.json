@@ -1,0 +1,53 @@
+{
+  "job": "J0232",
+  "air_provisional": "2026-11-17",
+  "related": "VBaYRPp85Sw",
+  "title_on_screen": "What Happened to Venus?",
+  "file": "/Users/benjaminoats/_desk/J0232-venus-short/venus_two_hours_v01.mp4",
+  "frames": "/Users/benjaminoats/_desk/J0232-venus-short/venus_two_hours_v01_frames.jpg",
+  "sha256": "44edc9ed82859fa41055371720a8c44e9228b2dced4386274de708b60e69d577",
+  "duration_s": 26.533333,
+  "master": {
+    "file": "iCloud OWB UAT/023_Venus_full_rough_v05e.mp4",
+    "sha256_prefix": "5d8a8f73454f889a38590661885a21702690a42c8ebfd940868d033f0174e6fc",
+    "from_s": 0.0,
+    "to_s": 23.52,
+    "picture_from_s": 0.0,
+    "picture_note": "picture and VO use the same locked master times"
+  },
+  "spoken": "Venus is the planet most like Earth. So what happened to it? This is the ground on Venus seen through the clouds by radar. Why radar? Because ordinary light cannot get through. It is hot enough to melt lead. The air presses down like the sea nearly a kilometer deep. No machine we have landed there could survive it for much more than two hours.",
+  "words": 65,
+  "last_word": {
+    "word": "hours.",
+    "end_s": 23.52
+  },
+  "hold_s": 3.0,
+  "loop": "0.5 s crossfade from 22.52 s back to the opening plate (master 0.0 s)",
+  "reframe": "crop 608x1080 at x=656, scale 1080x1920 (1.78x), 10% push over 1.2 s at the open",
+  "hook": "VENUS MELTS / LEAD (yellow LEAD), 0-2.5 s",
+  "title_windows_s": [
+    [
+      9.0,
+      14.0
+    ],
+    [
+      22.0,
+      26.52
+    ]
+  ],
+  "overlay": {
+    "kind": "one-number scale card",
+    "text": [
+      "NEARLY 1 KM",
+      "DEEP"
+    ],
+    "window_s": [
+      16.9,
+      19.1
+    ],
+    "spoken": "nearly a kilometer deep"
+  },
+  "audio": "locked original VO 0-24.05 s; 023 own score 0-26.52 s at 0.06 gain; house kit whoosh at 0 + tick on the card, -14 LUFS",
+  "orbit": "none on screen",
+  "spend": "none"
+}
