@@ -25167,13 +25167,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-15T23:37Z",
-      "eta": "2026-10-16T01:37Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T23:29Z",
-      "result": "",
+      "result": "PASS (Chief, 16 Oct ~00:35 London): 031 Magnetic Field Flip script soft-PASS after J0318 FIX. Commit 37eab443; review:script 95.8 PASS (~9.2 min, 6 chapters). Spot-check cleared FIX list (beyond six hundred km / STScI 7–9 / about a tenth / several poles / South America / about 3,000 km core depth; no Hitomi, laptop, 10–20%, 4/6/8, August, Brazil, ~2890, hotter-than in spoken lines). Next: CLAUDE_QUOTE_CHECK before VO. £0.",
       "history": [
         {
           "at": "2026-10-15T23:29Z",
@@ -25199,9 +25199,15 @@
           "at": "2026-10-15T23:37Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-15T23:37Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 16 Oct ~00:35 London): 031 Magnetic Field Flip script soft-PASS after J0318 FIX. Commit 37eab443; review:script 95.8 PASS (~9.2 min, 6 chapters). Spot-check cleared FIX list (beyond six hundred km / STScI 7–9 / about a tenth / several poles / South America / about 3,000 km core depth; no Hitomi, laptop, 10–20%, 4/6/8, August, Brazil, ~2890, hotter-than in spoken lines). Next: CLAUDE_QUOTE_CHECK before VO. £0."
         }
       ],
-      "kind": "script"
+      "kind": "script",
+      "done_ref": "37eab443"
     }
   ],
   "focus": [],
