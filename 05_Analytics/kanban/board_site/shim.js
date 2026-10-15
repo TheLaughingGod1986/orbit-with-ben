@@ -14,6 +14,18 @@
     if (m) { localStorage.setItem("studio-board-key", m[1]); history.replaceState(null, "", location.pathname + location.search); }
     key = localStorage.getItem("studio-board-key");
   } catch (e) {}
+  // Watch links (Ben, 15 Oct: "Clicking watch does not play the film"): /api/watch needs the board code, which is
+  // never in board.json (public). Add it to the link at the tap; if this phone has no code yet, ask once and keep it.
+  document.addEventListener("click", ev => {
+    const a = ev.target && ev.target.closest ? ev.target.closest("a[href*='/api/watch?']") : null;
+    if (!a) return;
+    if (!key) {
+      const k = (window.prompt("One-time setup on this phone: paste the board code from your board link (the part after #k=).") || "").trim().replace(/^.*#k=/, "");
+      if (!k) { ev.preventDefault(); return; }
+      key = k; try { localStorage.setItem("studio-board-key", k); } catch (e) {}
+    }
+    const u = new URL(a.href, location.href); u.searchParams.set("k", key); a.href = u.toString();
+  }, true);
 
   let board = null, lastHash = "", server = {}, local = {};   // local: ticks saved from this page, until the server echoes them
   const docSubs = {}, colSubs = [];
