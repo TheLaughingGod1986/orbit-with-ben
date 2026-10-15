@@ -15,11 +15,12 @@ Copy into each project as:
 
 | Field | Value |
 |-------|-------|
-| ID / slug | |
-| Working title | |
-| Date pulled | |
-| Credits used (approx) | |
+| ID / slug | `032_What-Would-Happen-If-You-Landed-On-Titan` |
+| Working title | What Would Happen If You Landed on Titan? |
+| Date pulled | 15 Oct 2026, about 16:00 UTC (`yt-dlp` public search, Mini). Job J0296. |
+| Credits used (approx) | 0 (no vidIQ; no spend) |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA |
+| Neighbour pass | **Strong.** Eleven education or space videos at about 1M+ views on Titan, Huygens, the lakes or Dragonfly. Full table: `TOPIC_OPPORTUNITY_SCORE.md`. |
 
 ---
 
@@ -46,8 +47,36 @@ Pull GB (or primary market) research for 5–8 terms.
 | | | | | umbrella | |
 | | | | | Shorts hooks | |
 
-**Decision:** Primary keyword for title lead =  
-**Description first 100 chars must include:**  
+**Decision:** Primary keyword for title lead = Titan (subject word from the neighbour titles; vidIQ scores not pulled this pass)  
+**Description first 100 chars must include:** landed on Titan, Saturn's largest moon
+
+Draft first line (no channel names): What would happen if you landed on Titan, Saturn's largest moon, under a nitrogen sky thicker than Earth's?
+
+**Tags (5–8, subject only):** titan · saturn's moon · huygens · landing on titan · methane lakes · dragonfly · cassini · kraken mare
+
+---
+
+## 2b. Neighbour pass (J0296, 15 Oct 2026)
+
+Channel names below are internal notes. They never go in the title, description or tags. Views via `yt-dlp`, 15 Oct 2026, about 16:00 UTC. Full table and the below-1M notes: `TOPIC_OPPORTUNITY_SCORE.md`.
+
+| Views | Id | Title (channel, internal) |
+|------:|----|---------------------------|
+| 7.20M | `9L471ct7YDo` | What Huygens Saw On Titan - New Image Processing (VideoFromSpace) |
+| 4.58M | `uE5POhMnN78` | Destination: Titan (Dinco422) |
+| 3.59M | `-Q6t9VWoGu4` | The First and Only Photos From Titan, Saturn's Largest Moon (V101 SPACE) |
+| 3.55M | `kx4UzkzjERM` | What If You Swam in Titan's Lakes for 5 Seconds? (What If) |
+| 3.26M | `msiLWxDayuA` | Titan Touchdown (NASA Jet Propulsion Laboratory) |
+| 2.73M | `wJuWuJBbc1s` | NASA's Dragonfly Mission to Titan (Real Engineering) |
+| 2.30M | `va2iJ5W3wrQ` | What If You Could Swim in Titan's Lakes? (What If) |
+| 2.07M | `B7497mQRn2Y` | The Bizarre Characteristics of Titan (Astrum) |
+| 1.56M | `1_xm-KIO7jc` | Why It Would Be Preferable To Colonize Titan Instead Of Mars (Insane Curiosity) |
+| 1.51M | `iltPgUQiPtw` | What NASA Found on Titan (The Space Race) |
+| 1.21M | `ILQ5X97Ak18` | What If We Settled on Titan? (What If) |
+
+**Pool strength:** strong (eleven at about 1M+ on Titan itself). Subject words: Titan, Saturn's largest moon, Huygens, Cassini, landing, methane lakes, Kraken Mare, Dragonfly, colonize Titan.
+
+Fear-leaning neighbour titles ("instead of Mars", survival hooks) stay neighbours only. Orbit's public title keeps the locked question, with no threat framing.  
 
 ---
 
