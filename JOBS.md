@@ -30,7 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0266 | mini | open (after J0140) | – | – | 006 edit · assembly · HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend) |  |
 | J0267 | mini | open | – | – | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
-| J0277 | mini | blocked | cursor | – | for cursor · thumb · `cursor-grok-4-7` · Thumbnail redo: add Orbit to the OWB B variants (Fermi Mo93x0fxB1Q, Europa NbW5G1BpPY0, JWST ziKBPJ6FY0U), keep HOS house style |  |
+| J0277 | mini | open | – | – | for cursor · thumb · `cursor-grok-4-7` · Thumbnail redo: add Orbit to the OWB B variants (Fermi Mo93x0fxB1Q, Europa NbW5G1BpPY0, JWST ziKBPJ6FY0U), keep HOS house style |  |
 | J0278 | mini | open | – | – | studio · NAS: create youtube-staging folder + README (Ben's OK 15 Oct) |  |
 | J0279 | mini | open | – | – | image · HOS Germs thumb B via Flow Nano Banana 2 (not gpt-image-2) |  |
 | J0280 | mini | open | – | – | studio · HOS Related fixes ×4 after longs public (from J0245) |  |
