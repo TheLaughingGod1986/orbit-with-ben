@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0261 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0265 | mini | blocked | cursor | – | 027 edit · assembly · 027 Earth Stopped Spinning: fix music_gate FAIL on v01i (prepare chapter awe/explain score plan + house SFX stems, no spend) |  |
 | J0266 | mini | open (after J0140) | – | – | 006 edit · assembly · HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend) |  |
-| J0267 | mini | claimed | cursor | 2026-10-15T08:41Z | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
+| J0267 | mini | blocked | cursor | – | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
 | J0268 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
 | J0269 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
 | J0270 | mini | open | – | – | assembly · Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at |  |
