@@ -843,7 +843,7 @@ def main(argv: list[str] | None = None) -> int:
                                         or json.loads(ai_spend.PLANS.read_text()).get("poolStarts", {}).get("cursor", "2026-10-08"))
         (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
         briefs = load_briefs()
-        links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k == "uatFolderUrl"} if BRIEFS.exists() else {}
+        links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k in ("uatFolderUrl", "extraWatch")} if BRIEFS.exists() else {}
         watch = watch_links(hos, owb, briefs)
         briefs = ben_handoffs(chief_reviews(route_steps(hos_job_steps(briefs, alljobs), alljobs)), watch)
         (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, **links}, ensure_ascii=False))
