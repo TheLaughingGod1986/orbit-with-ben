@@ -1,0 +1,106 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-26T11:30:00.000Z",
+    "platformPostId": "dM1OgGPAYvw",
+    "platformUrl": "https://youtu.be/dM1OgGPAYvw",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-26T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"dM1OgGPAYvw\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-26T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/11_Upload-Package",
+    "sha256": "4ab2b6581e0e7bb2e107af2870bbf99be7ff9940ee77865ac479002ce49e51ff",
+    "title": "What If Earth Stopped Spinning?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v02_cover.jpg",
+    "scheduledAt": "2026-10-26T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v02.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v02_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": null,
+  "studioFinish": {
+    "videoId": "dM1OgGPAYvw",
+    "studioEditUrl": "https://studio.youtube.com/video/dM1OgGPAYvw/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/dM1OgGPAYvw/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/dM1OgGPAYvw/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/dM1OgGPAYvw/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/dM1OgGPAYvw/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/dM1OgGPAYvw/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/dM1OgGPAYvw/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (dM1OgGPAYvw). 1 required Studio finish step(s) remain."
+  }
+}
