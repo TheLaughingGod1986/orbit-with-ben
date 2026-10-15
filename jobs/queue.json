@@ -19131,7 +19131,7 @@
     {
       "id": "J0257",
       "title": "Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Read-only audit: chapter timestamps against the cut, source links in descriptions, end screen present, Shorts' Related pill set to their long. Write the fix list to 05_Analytics/live_fixes/<date>.md with exact proposed text. Block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
       "ref": "",
@@ -19196,11 +19196,25 @@
           "at": "2026-10-15T07:07Z",
           "by": "claude",
           "what": "reopened: acting Chief PASS: run redescribe-videos.ts --file ../05_Analytics/live_fixes/2026-10-15_descriptions.json (buaOI3QGm7U long-title line), read it back, then done"
+        },
+        {
+          "at": "2026-10-15T09:40Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 109 min (heartbeat 2026-10-15T07:51:18Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
-      "escalated_at": "2026-10-15T07:06Z"
+      "escalated_at": "2026-10-15T07:06Z",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J0258",
