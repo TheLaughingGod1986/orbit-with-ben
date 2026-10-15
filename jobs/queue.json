@@ -21294,13 +21294,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-15T12:14Z",
-      "eta": "2026-10-15T12:34Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T12:11Z",
-      "result": "",
+      "result": "Set containsSyntheticMedia=true on BbsyFrV8kCY. videos.update 200 echoed containsSyntheticMedia true. privacyStatus stayed private, publishAt stayed 2026-10-22T10:30:00Z, title unchanged. videos.list omits the property on this id and on other videos (public NbW5G1BpPY0, Yk1tLh23rko, and vlkj8RQKmH8 which listed true on 13 Oct), so the update response is the read-back. No spend. No privacy or publishAt change.",
       "history": [
         {
           "at": "2026-10-15T12:11Z",
@@ -21321,6 +21321,11 @@
           "at": "2026-10-15T12:18Z",
           "by": "cursor",
           "what": "step 2 of 2 done: update returned true; list omits field"
+        },
+        {
+          "at": "2026-10-15T12:18Z",
+          "by": "cursor",
+          "what": "done: Set containsSyntheticMedia=true on BbsyFrV8kCY. videos.update 200 echoed containsSyntheticMedia true. privacyStatus stayed private, publishAt stayed 2026-10-22T10:30:00Z, title unchanged. videos.list omits the property on this id and on other videos (public NbW5G1BpPY0, Yk1tLh23rko, and vlkj8RQKmH8 which listed true on 13 Oct), so the update response is the read-back. No spend. No privacy or publishAt change."
         }
       ],
       "kind": "studio",
