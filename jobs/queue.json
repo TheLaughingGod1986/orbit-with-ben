@@ -22462,13 +22462,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T16:18Z",
-      "eta": "2026-10-15T17:48Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T15:49Z",
-      "result": "",
+      "result": "parked for Chief: MUST QUOTE rows 1, 9 and 15 are FLAG. Neighbour pool is strong (11 at about 1M+). Gemini gemini-4-argon-high counts OK 1, PARTIAL 13, FLAG 3. Commit 97a11fdd. No PASS. No VO until those lines are cut or softened.",
       "history": [
         {
           "at": "2026-10-15T15:49Z",
@@ -22514,6 +22514,11 @@
           "at": "2026-10-15T16:22Z",
           "by": "cursor",
           "what": "step 4 of 4 done: SOURCES.md committed 97a11fdd. Parking for Chief: FLAG on must-quote rows 1, 9, 15."
+        },
+        {
+          "at": "2026-10-15T16:22Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: MUST QUOTE rows 1, 9 and 15 are FLAG. Neighbour pool is strong (11 at about 1M+). Gemini gemini-4-argon-high counts OK 1, PARTIAL 13, FLAG 3. Commit 97a11fdd. No PASS. No VO until those lines are cut or softened."
         }
       ],
       "kind": "facts",
