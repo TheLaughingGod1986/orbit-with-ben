@@ -1,0 +1,12 @@
+# J0273 built-in image prompts
+
+Built-in image_gen only; no API fallback. Tool does not expose a model selector, so exact backend model is not independently verified.
+
+## Last Star
+Use case: ads-marketing. Create a 16:9 cinematic space science YouTube thumbnail background, no text. Last star in the distant future: a single complete red dwarf sphere glowing deep crimson and golden orange, detailed stellar plasma surface, dominant whole circular subject occupying lower right two thirds, all edges visible, diameter 65% image height, top edge below 25% image height. A small unlit rocky planet at lower left provides scale and a lonely story, no other stars or galaxies. Beautiful restrained cobalt blue to violet diffuse backdrop, luminous enough to avoid black areas, smooth not busy, strong saturated complementary color. Top 23% is empty gently lit navy space for a later title, do not paint a flat panel. Emotion wonder and final warmth, not catastrophe. No robot, no people, no letters, no watermark, no debris, no explosion.
+
+## Neutron Star
+Use case: ads-marketing. 16:9 cinematic space science YouTube thumbnail art with no text. A neutron star, a brilliant blue-white compact stellar sphere with finely detailed luminous surface and cyan magnetic arcs very close around it, dominant complete circular subject in lower right occupying 65 percent image height. Whole sphere visible, its top starts below the upper quarter. One very small realistic unmanned space probe in lower left foreground, safely separated, a scale/story cue. Rich teal-blue and violet diffuse illuminated space backdrop with no large black empty areas, very sparse stars, not busy. The entire upper 23 percent is quiet luminous deep blue negative space for later typography. High contrast, premium realistic scientific concept art, immediate clarity at tiny size. No accretion disk, no black hole, no Earth, no robot, no person, no explosions, no text or letters, no watermark. Wonder, not horror.
+
+## Last Star shadow revision
+Edit the last-star artwork only. Keep the exact composition, red star, small rocky planet, texture and no-text layout. Lift the darkest blue shadows in the backdrop substantially to clearly visible luminous cobalt/navy blue, especially upper left and lower left. Keep saturated color, no flat panels. Near-black areas should occupy less than 15 percent. No text added. Preserve all objects.
