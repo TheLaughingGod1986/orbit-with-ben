@@ -20459,13 +20459,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T08:28Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T09:10Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:52Z",
-      "result": "parked for Chief: OWB compilation v05 master (m09jUdwC5hk) uploaded Private with publishAt 2026-10-21T17:00:00Z via youtube:package; API + Studio read-back (privacy, publishAt, chapters, Sources line, cover, end screen) saved in J0276_YOUTUBE_READBACK.json and 4-week cohort logged in TEST_LOG.md",
+      "result": "PASS (Chief): OWB compilation v05 m09jUdwC5hk Private + publishAt 2026-10-21T17:00:00Z (Wed 21 Oct 18:00 London). Master sha ee7850d2… matches; duration PT47M38S; chapters×6 + Sources line; cover THE LAST LIGHT; end screen Subscribe + Best-for-viewer saved; altered-content Yes; not Made-for-Kids; UPLOADS + TEST_LOG cohort logged. Stub ZGD5pHs2KKE left untouched (Never-delete). No further upload work.",
       "history": [
         {
           "at": "2026-10-15T07:52Z",
@@ -20516,15 +20516,24 @@
           "at": "2026-10-15T09:06Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: OWB compilation v05 master (m09jUdwC5hk) uploaded Private with publishAt 2026-10-21T17:00:00Z via youtube:package; API + Studio read-back (privacy, publishAt, chapters, Sources line, cover, end screen) saved in J0276_YOUTUBE_READBACK.json and 4-week cohort logged in TEST_LOG.md"
+        },
+        {
+          "at": "2026-10-15T09:10Z",
+          "by": "chief",
+          "what": "reopened: Chief takes the parked upload read-back"
+        },
+        {
+          "at": "2026-10-15T09:10Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-15T09:10Z",
+          "by": "chief",
+          "what": "done: PASS (Chief): OWB compilation v05 m09jUdwC5hk Private + publishAt 2026-10-21T17:00:00Z (Wed 21 Oct 18:00 London). Master sha ee7850d2… matches; duration PT47M38S; chapters×6 + Sources line; cover THE LAST LIGHT; end screen Subscribe + Best-for-viewer saved; altered-content Yes; not Made-for-Kids; UPLOADS + TEST_LOG cohort logged. Stub ZGD5pHs2KKE left untouched (Never-delete). No further upload work."
         }
       ],
-      "kind": "listing",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T09:06Z",
-        "by": "gemini"
-      }
+      "kind": "listing"
     },
     {
       "id": "J0277",

@@ -30,7 +30,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0266 | mini | open (after J0140) | – | – | 006 edit · assembly · HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend) |  |
 | J0267 | mini | open | – | – | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
-| J0276 | mini | blocked | gemini | – | listing · Upload OWB compilation v05: Private, publishAt Wed 21 Oct 2026 18:00 London (17:00Z), via youtube:package (Ben GO, Chief OK J0168) |  |
 | J0277 | mini | claimed | cursor | 2026-10-15T09:54Z | for cursor · thumb · `cursor-grok-4-7` · Thumbnail redo: add Orbit to the OWB B variants (Fermi Mo93x0fxB1Q, Europa NbW5G1BpPY0, JWST ziKBPJ6FY0U), keep HOS house style |  |
 | J0278 | mini | open | – | – | studio · NAS: create youtube-staging folder + README (Ben's OK 15 Oct) |  |
 | J0279 | mini | open | – | – | image · HOS Germs thumb B via Flow Nano Banana 2 (not gpt-image-2) |  |
@@ -41,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J0276 done: Upload OWB compilation v05: Private, publishAt Wed 21 Oct 2026 18:00 London (17:00Z), via youtube:package (Ben GO, Chief OK J0168) (PASS (Chief): OWB compilation v05 m09jUdwC5hk Private + publishAt 2026-10-21T17:00:00Z (Wed 21 Oct 18:00 London). Master sha ee7850d2… matches; duration PT47M38S; chapters×6 + Sources line; cover THE LAST LIGHT; end screen Subscribe + Best-for-viewer saved; altered-content Yes; not Made-for-Kids; UPLOADS + TEST_LOG cohort logged. Stub ZGD5pHs2KKE left untouched (Never-delete). No further upload work.)
 - J0274 done: Thumbnail redo batch 3: Alien Worlds and HOS Germs B candidates (Ruling (Chief): Alien Worlds skip OK (J0099). HOS Germs B: NOT gpt-image-2 — Flow Nano Banana 2 per HOS AGENTS.md. Follow-on image job added; this job closed, no spend.)
 - J0273 done: Thumbnail redo batch 2: Moon, Last Star, Neutron Star B candidates (PASS (Chief): Last Star B v02 + Neutron Star B v02 KEEP (Orbit exception). Moon skipped (J0099). Do not arm until ledger OK.)
 - J0272 done: Codex check: Ben says Codex has credit. Clear its down mark and test each Codex model (done)
@@ -50,4 +50,3 @@ Recently finished:
 - J0268 cancelled: HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 ()
 - J0264 done: Shorts gate gaps: register 23KZK7OjsEE (Jupiter, airs Sat 17 Oct) + lbW2iQ9YvqA (Saturn, 20 Oct), find exports for vlkj8RQKmH8 + oyRcrFTYyDY, gate all four (done)
 - J0263 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 3 HOS longs (+54 OWB, 13 HOS Shorts); CTR hits vs 4%: HOS _C92tIJCk8A Germs 6.7% (30 impr). None on OWB: best -jmMROGoZCM 3.2% (31 impr), Saturn 55AEQwvs36g 2.1% on 820. OWB Short buaOI3QGm7U left out (Studio shows no data). HOS read from the channel table (per-video table blank on 9222). Commit 960fa93e.)
-- J0262 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (acting Chief: QA sweep accepted; fixes ride J0265 (027 music) and J0266 (HOS 006 P3/P4))
