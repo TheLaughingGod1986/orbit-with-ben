@@ -1,5 +1,5 @@
 {
-  "next_id": 266,
+  "next_id": 267,
   "jobs": [
     {
       "id": "J0001",
@@ -19341,6 +19341,33 @@
       "film": "027",
       "stage": "edit",
       "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-15T06:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T06:22Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0266",
+      "title": "HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "QA sweep J0262 found 3 gate FAILs across HOS 006's newest rough renders (commit ea6d766): (1) Part 03 rough v02 picture_qa FAIL at 1:25 row 16_repair_reuse (14_trees_breathe_t1.mp4: same stretch as 1:17); (2) Part 04 rough v01 picture_qa FAIL at 0:51 row 09_bubbles_again (05_bubbles_macro_t1.mp4: same stretch as 0:25); (3) Part 04 rough v01 picture_qa + polish_gate FAIL at 1:01 row 11_night_jars (11_night_jars_t1.mp4: near-black mean 19.95 < 20.0, p95 118.0). With zero mint/spend: update _assemble_part03_04_05_roughs_v01.py so P3:16 and P4:09 use distinct non-overlapping source stretches (and record distinct offsets in cuts JSON) and apply a gentle shadow/luma lift on P4:11_night_jars so mean luma >= 21.0 (unless Chief marks 11_night_jars reviewed-ok for the night scene), re-render part03_rough_v03 and part04_rough_v02, and verify picture_qa + polish_gate PASS on Parts 03, 04, and 05.",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "J0140",
       "eta_min": 60,
       "status": "open",
       "by": "",
