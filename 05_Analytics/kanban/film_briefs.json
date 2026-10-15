@@ -377,16 +377,23 @@
       "line": "Script and voice done. Shot boards are being written now (J0310), then the Chief prices the picture."
     },
     "OWB:029": {
-      "updated": "2026-10-15T18:25Z",
+      "updated": "2026-10-15T21:55Z",
       "mood": "good",
       "done": "Script, voice, shot list (39 rows) and 6 code graphics.",
-      "holdup": "Waiting its turn behind 028 for picture.",
+      "holdup": "The shot boards v01 passed the Chief's price check with changes: no paid credits expected, two Omni clips wait on a fresh price (else free Orbit reuse). Cursor writes boards v02 (J0330). Picture comes after 028.",
       "limit": "One picture (the Super-Kamiokande detector, row 24) needs its licence checked before it's used.",
       "steps": [
         {
           "who": "Cursor",
           "what": "gather source footage and write the shot boards (no spend)",
-          "job": "J0311"
+          "job": "J0311",
+          "done": true,
+          "doneText": "v01 · Thu 15 Oct (Chief price PASS with changes)"
+        },
+        {
+          "who": "Cursor",
+          "what": "shot boards v02 with the Chief's changes",
+          "job": "J0330"
         },
         {
           "who": "Cursor",
@@ -420,16 +427,29 @@
       "line": "Finished and scheduled with its three Shorts. Nothing for you."
     },
     "HOS:006": {
-      "updated": "2026-10-15T18:25Z",
+      "updated": "2026-10-15T21:55Z",
       "mood": "good",
       "done": "Script, voice and the Shorts. Picture is about half done: Part 01 is kept, Part 02's rough cut is held, and all 16 Part 03 shots made on the free Vertex trial (Sat 10 Oct) are kept.",
-      "holdup": "Rough cuts for Parts 01, 03 and 04 pass the picture and polish checks. Part 02's v02 failed (5 repeated shots and a seam); Cursor fixed it in v03 (J0290), which passes, and the Chief kept it. Part 05 and the full cut come next.",
+      "holdup": "All five parts are cut. The full join v01 (8:28) failed one check: six shots reuse the same stretch of footage as an earlier part. Cursor re-cuts them from other stretches of the same kept plates at no cost (J0331), then the teaching graphics go on (J0332). Music waits until 30 Oct.",
       "limit": "The Vertex trial has about £4.25 left after Part 03 (it runs down to £0, never onto the card). Flow had 52 credits before the refill; the new balance is read on Monday after 09:00 and priced before anything is spent. The Mac mini is shared with Orbit With Ben, so the two take turns.",
       "steps": [
         {
           "who": "Cursor",
-          "what": "join Parts 01-05 into the full film, then teaching graphics",
-          "job": "J0312"
+          "what": "join Parts 01-05 into the full film",
+          "job": "J0312",
+          "done": true,
+          "doneText": "v01 joined · Thu 15 Oct (Chief FIX: 6 repeated stretches)"
+        },
+        {
+          "who": "Cursor",
+          "what": "full join v02: new stretches for the 6 repeated shots",
+          "job": "J0331"
+        },
+        {
+          "who": "Codex",
+          "what": "teaching graphics on the full cut",
+          "job": "J0332",
+          "afterJob": "J0331"
         },
         {
           "kind": "video",
@@ -564,15 +584,16 @@
       "youShort": "your final OK Sun 15 Nov"
     },
     "HOS:009": {
-      "updated": "2026-10-15T18:25Z",
+      "updated": "2026-10-15T21:55Z",
       "mood": "good",
       "done": "Script, fact check, upload package, voiceover and the shot boards.",
-      "holdup": "Locked voice; shot boards v01 for all 90 rows are done (J0261, HOS PR #331). On Flow they need about 15,600 of the 23,700 credits left, so no money; Vertex would cost more than is left, so it isn't used. The Chief prices it before anything is made.",
+      "holdup": "Shot boards v02 are done (HOS PR #331): about 13,850 of the 23,740 Flow credits left, so no money, and 9,890 spare. They wait for the Chief's check; the mint order after 006 and 007 is the Chief's call.",
       "steps": [
         {
           "who": "Cursor",
           "what": "shot boards v02 with the Chief price-pass changes",
-          "job": "J0313"
+          "job": "J0313",
+          "whenText": "v02 on HOS PR #331 · waits for the Chief"
         },
         {
           "who": "Cursor",
