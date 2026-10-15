@@ -1,5 +1,5 @@
 {
-  "next_id": 264,
+  "next_id": 265,
   "jobs": [
     {
       "id": "J0001",
@@ -19293,6 +19293,33 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J0264",
+      "title": "Shorts gate gaps: register 23KZK7OjsEE (Jupiter, airs Sat 17 Oct) + lbW2iQ9YvqA (Saturn, 20 Oct), find exports for vlkj8RQKmH8 + oyRcrFTYyDY, gate all four",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "05_Analytics/owb/UPCOMING_SHORTS_GATE.md (15 Oct 06:40) shows four scheduled Shorts the gate can't check:\n- 23KZK7OjsEE 'Jupiter Has No Ground' (Sat 17 Oct 11:30) and lbW2iQ9YvqA 'Saturn's Rings Are on a Clock' (Tue 20 Oct 11:30): NOT REGISTERED (not in social/UPLOADS.json). Find each one's export (match title/duration against 02_Video-Projects/*/10_Shorts/*/06_Final-Exports and the NAS archive) and add the UPLOADS.json entry.\n- vlkj8RQKmH8 (Mercury, 24 Oct) and oyRcrFTYyDY (Neptune, 27 Oct): NO FILE at 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s{1,2}_*_v01.mp4. Find where the exports went (NAS, /private/tmp purge) and fix the UPLOADS.json path, or restore the file.\nThen run gate_upcoming.py so all four read PASS or a named FAIL. A real FAIL on the 17 Oct Jupiter Short: park for Chief at once (it airs Saturday). Read-only on YouTube: no reschedule, no upload. Commit UPLOADS.json + the regenerated gate file to main.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T06:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T06:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "qa"
     }
   ],
   "focus": [
