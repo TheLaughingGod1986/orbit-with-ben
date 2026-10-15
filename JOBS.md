@@ -25,6 +25,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0288 | mini | blocked | claude | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0295 | any | blocked | gemini | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0296 | gemini | open | – | – | 032 sources · facts · 032 Titan: neighbour pass + Gemini facts quote pass on SOURCES.md (17 rows) |  |
+| J0297 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0298 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
