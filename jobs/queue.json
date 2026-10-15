@@ -24896,13 +24896,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-15T22:50Z",
-      "eta": "2026-10-15T23:50Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T22:40Z",
-      "result": "",
+      "result": "HOS 009 boards v04 on main: PR #331 rebased, check_all PASS (script 91.3), CI green, squash-merged 8f1068d. Picture stays blocked: no mint until after 006 (0 Flow), 007 and 008; tranche 1 is 7,354 expected and only if a live Flow read stays at least 3,000 after it; tranche 2 is 5,180 after the ~12 Nov renewal. Nothing minted. Desk and #99 posted.",
       "history": [
         {
           "at": "2026-10-15T22:40Z",
@@ -24933,6 +24933,11 @@
           "at": "2026-10-15T22:55Z",
           "by": "cursor",
           "what": "step 3 of 4 done: CI green, squash-merged 8f1068d"
+        },
+        {
+          "at": "2026-10-15T22:55Z",
+          "by": "cursor",
+          "what": "done: HOS 009 boards v04 on main: PR #331 rebased, check_all PASS (script 91.3), CI green, squash-merged 8f1068d. Picture stays blocked: no mint until after 006 (0 Flow), 007 and 008; tranche 1 is 7,354 expected and only if a live Flow read stays at least 3,000 after it; tranche 2 is 5,180 after the ~12 Nov renewal. Nothing minted. Desk and #99 posted."
         }
       ],
       "kind": "assembly",
