@@ -7,3 +7,6 @@ HANDLE = "OrbitWithBen"
 ROBOT_FRAME0_CHECK = True
 ROBOT_NAME = "Orbit"
 SHORTS_LOG = "could-orbit-survive/TEST_LOG.md"
+SLUG = "orbit"
+# gate_shorts_open: same opening background as a recent Short (block-SSIM, calibrated on the OWB library 6 Oct 2026).
+BACKGROUND_SSIM_CHECK = True
