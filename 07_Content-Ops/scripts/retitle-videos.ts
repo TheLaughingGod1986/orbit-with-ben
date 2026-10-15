@@ -5,13 +5,18 @@
  * description, tags, category and languages stay as they are. Does not
  * send status, so privacy and publishAt stay untouched.
  *
- *   npx tsx scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/STUDIO_FIXES.json --dry-run
- *   npx tsx scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/CHANNEL_AUDIT_2026-09-24/STUDIO_FIXES.json
+ * Input: { "retitle": [{ id, expectCurrentTitle, title }] }. A row whose live title no longer
+ * matches expectCurrentTitle is skipped.
+ *
+ *   npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json> --dry-run
+ *   npx tsx --env-file=.env scripts/retitle-videos.ts --file <fixes.json>
+ *
+ * Studio core: identical in orbit-with-ben and history-of-science; the channel's own sign-in and desk guard come from
+ * ./channel-youtube. Edit it in orbit-with-ben only (scripts/core_sync.py).
  */
-import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
 import path from "path";
-import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
+import { afterRun, beforeRun, youtubeAccessToken } from "./channel-youtube";
 
 type RetitleRow = {
   id: string;
@@ -52,7 +57,7 @@ async function main() {
   const dry = process.argv.includes("--dry-run");
   const pack = JSON.parse(fs.readFileSync(path.resolve(file), "utf8"));
   const rows: RetitleRow[] = pack.retitle;
-  const token = await getYouTubeAccessToken();
+  const token = await youtubeAccessToken();
   const results: unknown[] = [];
 
   for (const row of rows) {
@@ -117,9 +122,11 @@ async function main() {
   console.log(JSON.stringify({ wrote: out, n: results.length, dry }, null, 2));
 }
 
-ensureDeskLock();
+beforeRun();
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(() => afterRun());
