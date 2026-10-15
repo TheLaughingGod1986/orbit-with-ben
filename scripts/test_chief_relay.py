@@ -81,7 +81,8 @@ class Relay(unittest.TestCase):
 
     def test_cursor_codex_and_relay_posts_are_not_grok(self):
         for body in ("[Chief] [Cursor] Cursor covering. J0007 done", "[Chief] Cursor covering: J0001 started",
-                     "[Chief] [Codex] Codex covering.", "[Chief] Chief relay: **Cursor is acting Chief**"):
+                     "[Chief] [Codex] Codex covering.", "[Chief] Chief relay: **Cursor is acting Chief**",
+                     "[Chief] [relay] @Chief stale reviews (parked over 2 h): J0226 030 Apophis Short"):   # 15 Oct 01:01Z
             self.post(T0 - 5 * MIN, body)
         cr.cmd_run(T0)
         self.assertEqual(self.chief(T0), "cursor")
