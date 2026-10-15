@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0267 | mini | open | – | – | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
 | J0268 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
 | J0269 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
+| J0270 | mini | open | – | – | assembly · Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at |  |
 
 Recently finished:
 

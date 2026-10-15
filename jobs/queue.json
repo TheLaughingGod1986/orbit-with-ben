@@ -1,5 +1,5 @@
 {
-  "next_id": 270,
+  "next_id": 271,
   "jobs": [
     {
       "id": "J0001",
@@ -19764,6 +19764,33 @@
         }
       ],
       "kind": "script"
+    },
+    {
+      "id": "J0270",
+      "title": "Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 15 Oct 2026: pick the best-fit model per job (PR #192 routes Cursor to grok-4.7 and Gemini's hard lanes to gemini-argon). On the Mini: run 'agent --list-models', read Codex's models_cache (or its model list) for the Sol / Luna / Astra / Terra ids and their one-line descriptions, and agy's model list for Argon. Write 05_Analytics/ai_spend/MODELS_2026-10-15.md with each exact id and its own description. If grok-4.7 or gemini-argon differ from those ids, fix CURSOR_GROK_MODEL / AGY_ARGON_MODEL in scripts/routing.py via a PR with tests passing. Park for Chief with a proposal for where Luna and Terra fit. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T07:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T07:26Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
