@@ -1,7 +1,11 @@
 #!/usr/bin/env tsx
 /**
- * Orbit YouTube package upload — Data API for everything it can do,
- * plus a Studio finish checklist for ABC / pin / Related / end screens.
+ * YouTube package upload, shared by Orbit With Ben and History of Science (studio core, 15 Oct 2026) — Data API
+ * for everything it can do, plus a Studio finish checklist for ABC / pin / Related / end screens.
+ *
+ * What stays each channel's own lives in its scripts/channel-youtube.ts: the sign-in, the desk guard, the category
+ * and language (UPLOAD), the duplicate check before the upload and what runs after it (Orbit: uploads.json and the
+ * Buffer mirror). The Shorts ship gate is shared and has no override.
  *
  * Usage:
  *   npm run youtube:package -- \
@@ -12,13 +16,11 @@
  * Optional: PACKAGE_MANIFEST.json inside the package dir, or --manifest path.
  * After a live upload, writes *_PACKAGE_UPLOAD_RESULT.json into Schedule/ (or package root).
  */
-import { ensureDeskLock } from "./with-desk-lock";
-import { checkPackageDuplicate } from "../src/lib/publishing/package-duplicate";
 import fs from "fs";
 import path from "path";
+import * as channel from "./channel-youtube";
 import { isDryRun } from "../src/lib/env";
 import { uploadToYouTube } from "../src/lib/youtube/upload";
-import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
 import {
   addVideoToYouTubePlaylist,
   buildStudioFinishChecklist,
@@ -26,10 +28,9 @@ import {
   loadYouTubePackage,
   postYouTubeTopLevelComment,
 } from "../src/lib/publishing/youtube-package";
-import { REPO_ROOT, UPLOADS_FILE, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
-import { registerUpload } from "../src/lib/publishing/media-finder";
-import { mirrorVideo } from "../src/lib/publishing/buffer-runner";
 import { runShortsGate } from "../src/lib/publishing/shorts-gate";
+
+const REPO_ROOT = path.resolve(__dirname, "..", "..");
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -53,7 +54,7 @@ async function main() {
   const packageDir = arg("package");
   if (!packageDir) {
     console.error(
-      "Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--no-buffer] [--standalone] [--force-new] [--dry-run]",
+      `Usage: youtube-package-upload.ts --package <11_Upload-Package> --video <mp4> [--manifest path] [--schedule ISO] [--thumbnail path] [--playlist-id ID] [--related-video-id ID] [--format longform|shorts] [--privacy private] [--made-for-kids false] [--skip-comment] [--dry-run] ${channel.UPLOAD_FLAGS}`,
     );
     process.exit(1);
   }
@@ -78,10 +79,8 @@ async function main() {
     },
   });
 
-  const identity = await checkPackageDuplicate({
-    packageDir: resolved.packageDir, videoPath: resolved.videoPath,
-    uploadsFile: UPLOADS_FILE, repoRoot: REPO_ROOT, forceNew: flag("force-new"),
-  });
+  // The channel's own check before anything is sent (Orbit: refuses a second upload of the same film).
+  const identity = await channel.beforeUpload({ resolved, flag, repoRoot: REPO_ROOT });
 
   // Shorts ship gate: a hard stop, dry run included, so the dry run shows the verdict. No override (Never list).
   if (resolved.format === "shorts") {
@@ -97,7 +96,7 @@ async function main() {
   }
 
   // Dry runs never need the YouTube login.
-  const accessToken = dryRun ? "" : await getYouTubeAccessToken();
+  const accessToken = dryRun ? "" : await channel.youtubeAccessToken();
 
   const hashtagsJson = JSON.stringify(resolved.tags);
 
@@ -116,9 +115,8 @@ async function main() {
       thumbnailPath: resolved.thumbnailPath,
       contentFormat: resolved.format,
     },
-    { dryRun, accessToken },
+    { dryRun, accessToken, channel: channel.UPLOAD },
   );
-
 
   let firstCommentPosted = false;
   let commentMessage: string | null = null;
@@ -153,58 +151,11 @@ async function main() {
     }
   }
 
-  // Mirror to Instagram, Facebook and Threads through Buffer, for the YouTube go-public
-  // time (STUDIO_PLAYBOOK.md §12). A Buffer problem never fails the upload; it's reported.
-  let buffer: Record<string, unknown> | null = null;
-  if (!dryRun && upload.success && upload.platformPostId) {
-    // Record which files this upload came from, so the daily check can always find them.
-    registerUpload(UPLOADS_FILE, REPO_ROOT, upload.platformPostId, {
-      ...identity,
-      kind: resolved.format === "shorts" ? "short" : "long",
-      file: resolved.videoPath,
-      thumb: resolved.thumbnailPath ?? undefined,
-      trailer: resolved.trailerPath ?? undefined,
-      long: resolved.format === "shorts" ? resolved.relatedVideoId ?? undefined : undefined,
-      standalone: (resolved.format === "shorts" && flag("standalone")) || undefined,
-      social: resolved.social ?? undefined,
-    });
-  }
-  if (!dryRun && upload.success && upload.platformPostId && !flag("no-buffer")) {
-    const isShortUpload = resolved.format === "shorts";
-    try {
-      const deps = createMirrorDeps();
-      const outcome = await mirrorVideo(
-        {
-          videoId: upload.platformPostId,
-          kind: isShortUpload ? "short" : "long",
-          longId: isShortUpload ? resolved.relatedVideoId : null,
-          standalone: isShortUpload && flag("standalone"),
-          mediaPath: isShortUpload ? resolved.videoPath : null,
-          thumbPath: isShortUpload ? null : resolved.thumbnailPath,
-          trailerPath: isShortUpload ? null : resolved.trailerPath,
-          social: resolved.social ?? undefined,
-        },
-        deps,
-      );
-      buffer = {
-        sent: outcome.sent,
-        planOnly: !deps.client,
-        errors: outcome.plan.errors,
-        warnings: outcome.plan.warnings,
-        results: outcome.results,
-      };
-    } catch (e) {
-      buffer = { sent: false, errors: [(e as Error).message] };
-    }
-    const errs = (buffer.errors as string[]) ?? [];
-    const failed = ((buffer.results as { ok: boolean }[]) ?? []).filter((r) => !r.ok);
-    if (!buffer.sent || errs.length || failed.length) {
-      console.error(
-        `Buffer mirror incomplete for ${upload.platformPostId}: ${[...errs, ...failed.map((f) => JSON.stringify(f))].join("; ") || "planning only (no BUFFER_API_KEY)"}. ` +
-          "Fix it, then run scripts/buffer-mirror.ts mirror (STUDIO_PLAYBOOK.md §12).",
-      );
-    }
-  }
+  // The channel's own steps after a live upload (Orbit: uploads.json and the Buffer mirror). Never fails the upload.
+  const after =
+    !dryRun && upload.success && upload.platformPostId
+      ? await channel.afterUpload({ videoId: upload.platformPostId, resolved, identity, flag, repoRoot: REPO_ROOT })
+      : {};
 
   // The upload succeeds even when YouTube refuses the thumbnail (403 on 022, 9 Oct): the reason is only in the message.
   const thumbnailSkipped = /thumbnail skipped/i.test(upload.message || "");
@@ -257,7 +208,7 @@ async function main() {
       playlistAdded,
       playlistMessage,
     },
-    buffer,
+    ...after,
     studioFinish: checklist,
   };
 
@@ -274,9 +225,11 @@ async function main() {
   if (!upload.success) process.exit(1);
 }
 
-ensureDeskLock();
+channel.beforeRun();
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exitCode = 1;
+  })
+  .finally(() => channel.afterRun());

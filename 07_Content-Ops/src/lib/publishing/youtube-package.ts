@@ -5,7 +5,19 @@ import {
   appendAffiliateSectionToDescription,
   type AffiliateDescriptionLink,
 } from "@/lib/affiliate/description";
-import type { SocialCopy } from "@/lib/publishing/buffer-mirror";
+
+/** Social copy for a channel's Buffer mirror (hook, question, thumbnail alt text, Reel cover). Lives here, in the
+ *  shared package loader, so the manifest field is typed the same on both channels; Orbit's buffer-mirror re-exports it. */
+export type SocialCopy = {
+  /** First line of every post, written for the feed. Default: the YouTube title. */
+  hook?: string;
+  /** Closing question, to start the comments. */
+  question?: string;
+  /** What the thumbnail shows, for screen readers. Default: names the film. */
+  alt?: string;
+  /** Instagram Reel cover: this many ms into the video. */
+  coverMs?: number;
+};
 
 export type YouTubePackageManifest = {
   format?: "longform" | "shorts";
@@ -261,10 +273,10 @@ export function buildStudioFinishChecklist(input: {
         : input.relatedVideoId
           ? "pending_studio"
           : "pending_studio",
-    title: "Related video pill (full film)",
+    title: "Related video (full film)",
     detail: input.relatedVideoId
-      ? `Desktop Studio: set Related video to ${input.relatedVideoId} (that week’s Thursday long only). No new Short pins.`
-      : "Desktop Studio: Content → Short → Related video → that week’s Thursday long → Save. Required. No new Short pins.",
+      ? `Desktop Studio: set Related video to ${input.relatedVideoId} (its own full film). No new Short pins.`
+      : "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins.",
     studioUrlHint: studioEditUrl || undefined,
   });
 
@@ -305,6 +317,11 @@ export function buildStudioFinishChecklist(input: {
   return { videoId, studioEditUrl, items, summary };
 }
 
+/** CLI flags that weren't given arrive as `undefined`; they must not wipe manifest values. */
+export function definedOnly<T extends object>(obj: T): Partial<T> {
+  return Object.fromEntries(Object.entries(obj).filter(([, v]) => v !== undefined)) as Partial<T>;
+}
+
 export function loadYouTubePackage(input: {
   packageDir: string;
   videoPath?: string;
@@ -337,11 +354,7 @@ export function loadYouTubePackage(input: {
     manifest = JSON.parse(readText(manifestPath)) as YouTubePackageManifest;
     sources.manifest = manifestPath;
   }
-  // Unset CLI flags arrive as undefined and must not blank the manifest's values.
-  const overrides = Object.fromEntries(
-    Object.entries(input.overrides ?? {}).filter(([, v]) => v !== undefined),
-  );
-  const merged: YouTubePackageManifest = { ...manifest, ...overrides };
+  const merged: YouTubePackageManifest = { ...manifest, ...definedOnly(input.overrides ?? {}) };
 
   const format = merged.format || "longform";
   const titleVariant = merged.titleVariant || "A";
