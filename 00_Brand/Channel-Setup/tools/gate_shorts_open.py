@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Shorts open gate — run on every Short export BEFORE upload (10 Sep 2026 audit fix).
 
+Studio core: identical in orbit-with-ben and history-of-science (edit it in orbit-with-ben only, scripts/core_sync.py).
+What differs per channel is in channel_profile.py: the robot-at-frame-0 check (Orbit only; it misfires on HOS's warm
+lamp-and-wood frames, so on HOS the Explorer-at-frame-0 rule is checked by eye on the contact sheet) and the
+same-background check.
+
 Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
 
   1. duration ≥ 40 s                                  (existing lock; `--length-test` lifts it to
@@ -9,7 +14,7 @@ Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
   2. first frame (0.3 s) within 10 dHash bits of any   (new — Europa week shipped six
      Short published / scheduled ±14 days of air date   Shorts on one plate; feed saw
                                                         the same video six days running)
-  3. Orbit in frame at 0 s                             (new — `TE_HDKAnqms` / `mAAMsbhm88w`
+  3. Orbit in frame at 0 s (OWB only)                 (new — `TE_HDKAnqms` / `mAAMsbhm88w`
                                                         Orbit-first opens got 0 % feed traffic)
   4. no audio stream, or mean volume below −40 dB      (24 Sep 2026 — four Moon Shorts aired
                                                         with the whole file at about −90 dB)
@@ -51,7 +56,9 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]  # tools → Channel-Setup → 00_Brand → orbit-with-ben
+sys.path.insert(0, str(HERE))
+import channel_profile as channel  # noqa: E402  (this repo's own settings)
+ROOT = HERE.parents[2]  # tools → Channel-Setup → 00_Brand → repo root
 LIB_DIR = ROOT / "00_Brand/Channel-Setup/audits/shorts_open_library"
 LIB_JSON = LIB_DIR / "library.json"
 FRAMES = LIB_DIR / "frames"
@@ -262,7 +269,7 @@ def motion_first_second(path: Path) -> float:
 def load_lib() -> dict:
     if LIB_JSON.exists():
         return json.loads(LIB_JSON.read_text())
-    return {"about": "first-frame dHash of every Orbit Short (live + scheduled) — gate_shorts_open.py", "entries": []}
+    return {"about": f"first-frame dHash of every {channel.NAME} Short (live + scheduled) — gate_shorts_open.py", "entries": []}
 
 
 def save_lib(lib: dict) -> None:
@@ -291,7 +298,7 @@ def window(lib: dict, air: date, days: int, last: int = 0, exclude: str | None =
 
 def add_entry(lib: dict, vid: str, d: str, title: str, src: Path, source: str, t: float | None, status: str = "live") -> dict:
     h = dhash(src, t)
-    sc = orbit_score(src, t)
+    sc = orbit_score(src, t) if channel.ROBOT_FRAME0_CHECK else None
     frame = FRAMES / f"{vid}.jpg"
     save_frame(src, t, frame)
     entry = {
@@ -300,7 +307,7 @@ def add_entry(lib: dict, vid: str, d: str, title: str, src: Path, source: str, t
         "title": title,
         "dhash": f"{h:016x}",
         "thumb": thumb(src, t),
-        "orbit": sc,
+        **({"orbit": sc} if sc else {}),
         "source": source,
         "frame": str(frame.relative_to(ROOT)),
         "status": status,
@@ -398,7 +405,7 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
     near = []
     for e in window(lib, air, days, last, exclude=self_id):
         dist = hamming(h, int(e["dhash"], 16))
-        sim = round(background_match(th, e["thumb"]), 3) if e.get("thumb") else None
+        sim = round(background_match(th, e["thumb"]), 3) if channel.BACKGROUND_SSIM_CHECK and e.get("thumb") else None
         if sim is not None and sim >= BG_WARN and dist > DHASH_WARN_BITS:
             tag = "FAIL" if sim >= BG_FAIL else "warn"
             msg = f"same opening background as {e['id']} ({e['date']} · {e['title']}): {sim:.0%} of blocks match, dHash {dist} bits"
@@ -415,12 +422,13 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
         else:
             res["warns"].append(f"open plate {n['bits']} bits from {n['id']} ({n['date']}){approx}")
 
-    sc = orbit_score(path)
-    res["orbit"] = sc
-    if sc["visor_frac"] >= VISOR_FAIL:
-        res["fails"].append(f"Orbit in frame at 0 s (visor {sc['visor_frac']:.4f} ≥ {VISOR_FAIL}) — picture-first lock")
-    elif sc["visor_frac"] >= VISOR_WARN:
-        res["warns"].append(f"possible Orbit at 0 s (visor {sc['visor_frac']:.4f}) — eyeball the sheet")
+    if channel.ROBOT_FRAME0_CHECK:
+        sc = orbit_score(path)
+        res["orbit"] = sc
+        if sc["visor_frac"] >= VISOR_FAIL:
+            res["fails"].append(f"Orbit in frame at 0 s (visor {sc['visor_frac']:.4f} ≥ {VISOR_FAIL}) — picture-first lock")
+        elif sc["visor_frac"] >= VISOR_WARN:
+            res["warns"].append(f"possible Orbit at 0 s (visor {sc['visor_frac']:.4f}) — eyeball the sheet")
 
     if sheet_dir is not None:
         sheet = sheet_dir / f"{path.stem}_open_sheet.jpg"
@@ -440,7 +448,7 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--air-date", default=date.today().isoformat())
     c.add_argument("--days", type=int, default=LOOKBACK_DAYS)
     c.add_argument("--last", type=int, default=LOOKBACK_LAST, help="also compare the last N Shorts aired before --air-date (R3)")
-    c.add_argument("--sheet-dir", type=Path, default=Path(tempfile.gettempdir()) / "orbit_shorts_gate")
+    c.add_argument("--sheet-dir", type=Path, default=Path(tempfile.gettempdir()) / f"{channel.SLUG}_shorts_gate")
     c.add_argument("--id", default=None, help="candidate's own YouTube id (skips its library entry on re-check)")
     c.add_argument("--json", action="store_true")
     c.add_argument("--length-test", action="store_true",
@@ -487,7 +495,7 @@ def main(argv: list[str] | None = None) -> int:
             for r in results:
                 db = r["audio"].get("mean_db")
                 audio = f"{db:.1f}dB" if db is not None else "none"
-                print(f"{r['verdict']}  {Path(r['file']).name}  dur={r['duration_s']}s  audio={audio}  motion={r['motion_0_1s']}  dhash={r['dhash']}  visor={r['orbit']['visor_frac']}")
+                print(f"{r['verdict']}  {Path(r['file']).name}  dur={r['duration_s']}s  audio={audio}  motion={r['motion_0_1s']}  dhash={r['dhash']}" + (f"  visor={r['orbit']['visor_frac']}" if r.get("orbit") else ""))
                 for x in r["fails"]:
                     print(f"   FAIL  {x}")
                 for x in r["warns"]:
@@ -533,7 +541,7 @@ def main(argv: list[str] | None = None) -> int:
         air = date.fromisoformat(ns.air_date)
         rows = lib["entries"] if ns.all else window(lib, air, ns.days, ns.last)
         for e in rows:
-            print(f"{e['date']}  {e['id']}  {e['dhash']}  visor={e['orbit']['visor_frac']:.4f}  {e.get('status','live'):9s} {e['title']}")
+            print(f"{e['date']}  {e['id']}  {e['dhash']}" + (f"  visor={e['orbit']['visor_frac']:.4f}" if e.get("orbit") else "") + f"  {e.get('status','live'):9s} {e['title']}")
         return 0
 
     if ns.cmd == "thumbs":
