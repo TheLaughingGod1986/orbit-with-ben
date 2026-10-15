@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0288 | mini | blocked | claude | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0292 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0293 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
-| J0294 | any | open | – | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
+| J0294 | any | claimed | gemini | 2026-10-15T16:52Z | script · OWB ideas + script draft: next film beyond the pipeline |  |
 
 Recently finished:
 
