@@ -14,18 +14,18 @@ All media: `/Users/benjaminoats/_desk/J0273-thumbnails/`. Manifest records paths
 
 | Video | B hook | JPEG | A/B sheet | Automated colour result |
 |---|---|---|---|---|
-| REXYxuLOBoI | ONE STAR LEFT | laststar_B_v01.jpg | laststar_AB_v01.jpg | saturation 220.3; near-black 4%; exit 0 |
-| Yk1tLh23rko | DON’T TOUCH THIS | neutron_B_v01.jpg | neutron_AB_v01.jpg | saturation 198.7; near-black 4%; exit 0 |
+| REXYxuLOBoI | ONE STAR LEFT | laststar_B_v02.jpg | laststar_AB_v02.jpg | saturation 235.4; near-black 9%; exit 0 |
+| Yk1tLh23rko | DON’T TOUCH THIS | neutron_B_v02.jpg | neutron_AB_v02.jpg | saturation 207.2; near-black 5%; exit 0 |
 
-Both RGB 1280×720, below 2 MB (323210 and 362948 bytes). `thumb_preview.py long <file> --out <preview> --score` ran for both. Last Star initially failed at 31% near-black; a built-in shadow edit fixed it before delivery. These tool results are not a Chief PASS.
+Both RGB 1280×720, below 2 MB (261833 and 393822 bytes). `thumb_preview.py long <file> --out <preview> --score` ran for both. Last Star initially failed at 31% near-black; a built-in shadow edit fixed it before delivery. These tool results are not a Chief PASS.
 
-Codex visually inspected both literal 168×94 A/B sheets: three-word white/yellow hooks remain legible, upper-left lettering avoids the whole hero sphere and bottom-right duration position. Arial Black typography matches the prior batch builder. Last Star uses ONE STAR LEFT instead of the plan’s THE FINAL GLOW to name the subject plainly. No Orbit.
+Codex visually inspected both literal 168×94 A/B sheets: three-word white/yellow hooks remain legible, upper-left lettering avoids the whole hero sphere and bottom-right duration position. Arial Black typography matches the prior batch builder. Last Star uses ONE STAR LEFT instead of the plan’s THE FINAL GLOW to name the subject plainly. Orbit now appears under the explicit acting-Chief exception in thread #6187325272, received during this run. Canonical character reference was supplied to the built-in edit tool. The original no-Orbit v01 images remain preserved, but v02 supersedes them.
 
 ## Creative review caveats
 
-Both are illustrative concept art, not telescope observations or physically scaled arrangements. Last Star uses a bright coloured background for thumbnail visibility; it should not be read as a literal nebula surviving into the last-star era. Its rocky planet is a conceptual scale cue. Neutron Star depicts magnetic arcs and a tiny generic probe; the probe must not imply an actual mission or safe proximity. It is small at phone size. Chief should judge these implications and whether the saturated background is too busy before choosing either B. No claim of improved CTR: both videos have fewer than 500 impressions in the plan.
+Both are illustrative concept art, not telescope observations or physically scaled arrangements. Last Star uses a bright smooth coloured background for thumbnail visibility, not literal surrounding gas. An intermediate edit introduced extra background stars; these were removed so ONE STAR LEFT is visually consistent. Orbit replaces the rocky planet and probe in v02. Neutron Star depicts illustrative magnetic arcs; Orbit is a story character, not a physical scale or safe-distance claim. Chief should judge these implications and whether the saturated background is too busy before choosing either B. No claim of improved CTR: both videos have fewer than 500 impressions in the plan.
 
-The job-authorised built-in image tool was used; no API key, paid fallback or top-up. The tool exposes no model selector, so an exact gpt-image-2 backend is not independently verified. Prompts are in J0273_PROMPTS.md.
+The job-authorised built-in image tool was used; no API key, paid fallback or top-up. The tool exposes no model selector, so an exact gpt-image-2 backend is not independently verified. Prompts are in J0273_PROMPTS.md and J0273_ORBIT_PROMPTS.md.
 
 ## Handoff
 

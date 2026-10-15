@@ -1,0 +1,11 @@
+## Acting-Chief Orbit revision
+Authority: thread comment 6187325272, claimed in 6187415662. Canonical character reference: 01_Orbit-Character/05_Seedance-References/orbit-seedance-reference-16x9-v01.png.
+
+### Last Star
+Edit target image 1 (red last star artwork). Image 2 is reference ONLY for the exact identity of Orbit, small orange spherical hovering robot, oval black face screen with two expressive white eyes, side ear-like orange pods, tiny antenna with glowing tip and bottom warm thruster. Replace the small rocky planet at lower left with Orbit, roughly 32% frame height, entirely visible in lower left below the title area, looking in awe toward the red star. Match the reference robot faithfully, no arms or legs. Preserve the whole red star at right and its scale and framing. Simplify the busy clouds into a smooth luminous saturated cobalt/violet deep-space backdrop (no black regions, no literal nebula gas). Upper-left quarter remains empty for typography. No Jupiter from reference. No lettering, no watermark. Preserve 16:9.
+
+### Neutron Star
+Edit image 1 neutron star background. Image 2 reference ONLY for Orbit identity: orange spherical hovering robot, black oval face screen, two white expressive eyes, orange side pods, glowing antenna tip and warm thruster beneath, no arms or legs. Replace the tiny space probe in lower left with this exact robot roughly 32% image height, full body visible, looking with fascinated caution toward neutron star. No Jupiter from reference. Preserve whole blue-white neutron star, magnetic arcs, overall layout and luminous saturated blue background. Upper left quarter clear for typography. No text, no watermark. 16:9. Character must remain clearly separated from star.
+
+### Remove contradictory background stars
+Precise edit: remove ALL tiny white/blue star points and sparkling speckles from the blue background. There is exactly ONE star in this image: the huge red sphere on the right. Replace background with clean smooth luminous cobalt-blue to violet gradient, gently mottled but NO stars, NO pinpoints, NO sparkles, NO galaxies or gas clouds. Keep Orbit robot at lower left absolutely unchanged, and keep huge red star unchanged. Keep image bright and saturated, especially the upper left. No text.
