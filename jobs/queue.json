@@ -11025,10 +11025,10 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-14T23:25Z",
-      "eta": "2026-10-15T03:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -11422,6 +11422,11 @@
           "at": "2026-10-15T00:13Z",
           "by": "gemini",
           "what": "step 7 of 8 done: Intro bed gap fixed; music_gate and sfx_kit verified PASS on new sections; v04/v05 NAS mux + PHONE encode running detached"
+        },
+        {
+          "at": "2026-10-15T00:13Z",
+          "by": "gemini",
+          "what": "released: Step 7/8 (ccc62204): pre-verified music_gate PASS (compilation_new_sections_bed_v05.wav, 155.0 s, 0.0 s gap) and sfx_kit level PASS (VO -14.1 LUFS, SFX -46.0 LUFS, 15 hits) after lifting the 0:25-0:53.3 intro bed dip. Running detached: _build_compilation_v05.py (PID 73498; log ~/_desk/logs/J0167-v05.log; done marker ~/_desk/logs/J0167-v05.done) to finish NAS final_v04/final_v05 mux + sha256 manifests, qa_compilation_v05/ outputs, and OWB_compilation_v05_PHONE.mp4 in OWB UAT. Never start a second copy while ~/_desk/logs/J0167-v05.done is missing. Next run: once done=0, commit qa_compilation_v05/ and park J0167 for Chief/Ben watch (J0168)."
         }
       ],
       "kind": "assembly",
