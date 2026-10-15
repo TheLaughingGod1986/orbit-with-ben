@@ -1,5 +1,5 @@
 {
-  "next_id": 326,
+  "next_id": 328,
   "jobs": [
     {
       "id": "J0001",
@@ -23918,6 +23918,11 @@
           "at": "2026-10-15T19:27Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: final OK before Private upload of 026 v05d. Copies done (OWB UAT/026_NearestStar_v05d.mp4 and NAS youtube-staging/026/, sha256 69c89d83abe51131a95fd2d3ad77af236366c7613f7c15ba92b4e2945da94cfc). Dry-run PASS, Private, publishAt 2026-11-15T18:00:00Z. No upload. Captions and trailer still unset."
+        },
+        {
+          "at": "2026-10-15T19:37Z",
+          "by": "chief",
+          "what": "left parked (Chief review): bytes verified. iCloud OWB UAT/026_NearestStar_v05d.mp4, NAS youtube-staging/026/ and 07_Edit-Project copy all sha256 69c89d83, identical to the Chief-passed v05d in PR #152 158fba69 rough_v05d_pack/SHA256.txt, so the rebuild from NAS v05b via v05c->v05d overlay scripts is the passed picture. Dry-run Private publishAt 2026-11-15T18:00:00Z PASS. Gap: captionsFile and trailer are null (024/025 packages carry both), so queued J0326 (captions + trailer + re-dry-run). Final OK waits for J0326 PASS and Ben's watch/KEEP of OWB UAT/026_NearestStar_v05d.mp4, or Fri 23 Oct 23:59 London if no reply (then Chief final OK goes ahead). No upload. £0."
         }
       ],
       "kind": "assembly",
@@ -24019,6 +24024,60 @@
         "by": "cursor",
         "note": "dry-run done, parking for Chief"
       }
+    },
+    {
+      "id": "J0326",
+      "title": "026 Nearest Star: en-GB captions + ~40 s trailer for the v05d package, re-dry-run Private Sun 15 Nov (J0323 gap)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**026 Nearest Star: captions + trailer for the v05d upload package (Chief review sweep, J0323 gap). £0.**\nJ0323 parked 026 v05d (sha256 69c89d83, Chief-verified) with `captionsFile: null` and `trailer: null` in `11_Upload-Package/PACKAGE_MANIFEST.json`. The 024 and 025 packages carry both (`Captions/<film>_long_<ver>_en-GB.srt`, `Trailer/<film>_long_trailer_v01_~41s.mp4`); follow the same pipeline and naming as those jobs (J0048 / 024 package).\n1. Captions: en-GB SRT timed to the v05d picture lock (494.476 s), built from the locked long VO (`OWB UAT/026_NearestStar_Long_VO/words.json` / script) with the existing alignment, no re-voicing, no paid transcription unless already in subscription credit (floors 0, never top up). Spot-check 5 cues against v05d (open, ~2:21 \"Your two eyes are a ruler.\", ~5:10, ~7:00, last line). Save as `Captions/nearest_star_long_v05d_en-GB.srt`.\n2. Trailer: ~40 s cut from v05d only (existing picture + VO + bed, no new generation), same spec as the 024/025 trailers. Save as `Trailer/nearest_star_long_trailer_v01_<len>s.mp4`.\n3. Point PACKAGE_MANIFEST captionsFile and trailer at them, re-run the youtube-package-upload dry-run (Private, `--schedule 2026-11-15T18:00:00Z`, video NAS youtube-staging/026/026_NearestStar_v05d.mp4 unchanged). No live upload.\nDone when: SRT + trailer committed/recorded with sha256, dry-run PASS with both set, result posted on #99. Park for Chief. No spend, no deletes.\n",
+      "ref": "",
+      "film": "026",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T19:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T19:37Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0327",
+      "title": "027 Earth Stopped Spinning: en-GB captions + ~40 s trailer for the v01l package, re-dry-run Private Sun 22 Nov (after J0325)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**027 Earth Stopped Spinning: captions + trailer for the v01l upload package (Chief review sweep, J0325 follow-on). £0.**\nThe 027 package (J0325, v01l sha256 7d51961f, Sun 22 Nov) has `captionsFile: null` and `trailer: null` in `11_Upload-Package/PACKAGE_MANIFEST.json`. The 024 and 025 packages carry both (`Captions/<film>_long_<ver>_en-GB.srt`, `Trailer/<film>_long_trailer_v01_~41s.mp4`); follow the same pipeline and naming as those jobs (J0048 / 024 package).\n1. Captions: en-GB SRT timed to the v01l picture lock (v01l), built from the locked long VO (`the 027 locked long VO words.json` / script) with the existing alignment, no re-voicing, no paid transcription unless already in subscription credit (floors 0, never top up). Spot-check 5 cues against v01l (open, three mid-film, last line). Save as `Captions/earth_spin_long_v01l_en-GB.srt`.\n2. Trailer: ~40 s cut from v01l only (existing picture + VO + bed, no new generation), same spec as the 024/025 trailers. Save as `Trailer/earth_spin_long_trailer_v01_<len>s.mp4`.\n3. Point PACKAGE_MANIFEST captionsFile and trailer at them, re-run the youtube-package-upload dry-run (Private, `--schedule 2026-11-22T18:00:00Z`, video NAS youtube-staging/027/027_EarthSpin_rough_v01l.mp4 unchanged). No live upload.\nDone when: SRT + trailer committed/recorded with sha256, dry-run PASS with both set, result posted on #99. Park for Chief. No spend, no deletes.\n",
+      "ref": "",
+      "film": "027",
+      "stage": "upload",
+      "after": "J0325",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T19:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T19:37Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
