@@ -26,11 +26,14 @@ class WatchLinks(unittest.TestCase):
         (hos / "006_Trees" / "10_Shorts" / "hos_006_s01_v09.mp4").write_bytes(b"x")
         self.uploads.write_text(json.dumps({"videos": {"Js6EQJ8qDi8": {"kind": "long",
             "packageDir": "02_Video-Projects/025_Mars/11_Upload-Package", "file": "x/025_MarsRobot_full_rough_v03f.mp4"}}}))
-        self.saved = (ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS)
+        self.saved = (ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS, ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER, os.environ.pop("WATCH_UPLOAD_KEY", None))
         ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS = self.icloud, {"OWB": owb, "HOS": hos}, self.uploads
+        ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER = root / "reg.json", root / "local_reg.json"
 
     def tearDown(self):
-        ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS = self.saved
+        ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS, ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER, key = self.saved
+        if key is not None:
+            os.environ["WATCH_UPLOAD_KEY"] = key
         self.tmp.cleanup()
 
     def links(self, owb_extra=None, briefs=None):
@@ -41,6 +44,15 @@ class WatchLinks(unittest.TestCase):
         w = self.links()["OWB:026"]
         self.assertEqual((w["label"], w["kind"]), ("Watch v04", "files"))
         self.assertTrue(w["url"].startswith("shareddocuments:///private/var/mobile/Library/Mobile%20Documents/com~apple~CloudDocs/OWB%20UAT/026_NearestStar_v04_PHONE.mp4"))
+
+    def test_uploaded_cut_streams_instead_of_files(self):
+        ks.WATCH_REGISTER.write_text(json.dumps({"files": {"OWB UAT/026_NearestStar_v04_PHONE.mp4": "owb-026-v04"}}))
+        w = self.links()["OWB:026"]
+        self.assertEqual((w["kind"], w["url"], w["label"]), ("stream", "https://studio-kanban.vercel.app/api/watch?v=owb-026-v04", "Watch v04"))
+
+    def test_explicit_stream_link_is_accepted(self):
+        w = self.links(briefs={"OWB:026": {"watch": {"url": "https://studio-kanban.vercel.app/api/watch?v=x", "version": "v05"}}})["OWB:026"]
+        self.assertEqual(w["kind"], "stream")
 
     def test_newer_version_beats_older_phone_copy(self):
         self.assertEqual(self.links()["OWB:023"]["version"], "v05d")

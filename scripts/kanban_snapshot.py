@@ -683,7 +683,7 @@ ICLOUD = Path.home() / "Library" / "Mobile Documents" / "com~apple~CloudDocs"
 UAT_DIRS = {"OWB": Path(os.environ.get("OWB_UAT_DIR", str(ICLOUD / "OWB UAT"))),
             "HOS": Path(os.environ.get("HOS_UAT_DIR", str(ICLOUD / "HOS UAT")))}
 PHONE_ROOT = "/private/var/mobile/Library/Mobile Documents/com~apple~CloudDocs"
-WATCH_OK = ("https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
+WATCH_OK = ("https://studio-kanban.vercel.app/api/watch?", "https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
 VIDEO_EXT = (".mp4", ".mov", ".m4v")
 
 
@@ -700,7 +700,7 @@ def version_key(v: str) -> tuple:
 def explicit_watch(w) -> dict | None:
     if not isinstance(w, dict) or not str(w.get("url", "")).startswith(WATCH_OK):
         return None
-    kind = "icloud" if "icloud.com" in w["url"] else "youtube"
+    kind = "icloud" if "icloud.com" in w["url"] else "stream" if "/api/watch?" in w["url"] else "youtube"
     return {"url": w["url"], "version": str(w.get("version", "")), "label": str(w.get("label", "")), "kind": kind,
             "source": "set by hand"}
 
@@ -728,9 +728,76 @@ def newest_uat(ch: str, film: str) -> dict | None:
     phone = [p for p in same if "_phone" in p.stem.lower()]
     pick = max(phone or same, key=lambda p: p.stat().st_mtime)
     rel = pick.relative_to(ICLOUD) if ICLOUD in pick.parents else pick.relative_to(root.parent)
+    streamed = stream_link(ch, film, pick, rel.as_posix())
+    if streamed:
+        return streamed
     from urllib.parse import quote
     return {"url": "shareddocuments://" + quote(f"{PHONE_ROOT}/{rel.as_posix()}"), "version": version_of(pick.name),
             "label": "", "kind": "files", "file": rel.as_posix(), "source": "iCloud Drive"}
+
+
+# Streamed watch links (Ben, 15 Oct: "Clicking watch does not play the film"). Safari can't play a Files-app link, so a
+# cut is uploaded once to the Studio Kanban's Blob store and the button opens /api/watch?v=<id> (plays in the browser;
+# needs Ben's board code, never public in board.json). The register maps the cut's iCloud path (relative to CloudDocs) to
+# its id: WATCH_REGISTER in the repo (committed by whoever uploads by hand) plus WATCH_LOCAL_REGISTER on the Mini (written
+# by the auto-upload below). Auto-upload runs only when env WATCH_UPLOAD_KEY is set and the file is at most
+# WATCH_AUTO_MAX bytes (the Hobby Blob allowance is 1 GB in total; bigger cuts need a phone proxy first, e.g. 720p
+# ~1.3 Mbit/s, uploaded with scripts/watch_upload.mjs and added to the register). Otherwise the Files link stays.
+SITE_URL = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+WATCH_REGISTER = ROOT / "05_Analytics" / "kanban" / "watch_uploads.json"
+WATCH_LOCAL_REGISTER = Path(os.environ.get("WATCH_LOCAL_REGISTER", str(Path.home() / ".config" / "studio-kanban" / "watch_uploads.json")))
+WATCH_AUTO_MAX = int(os.environ.get("WATCH_AUTO_MAX", str(120 * 1024 * 1024)))
+
+
+def watch_id(ch: str, film: str, version: str) -> str:
+    return re.sub(r"[^a-z0-9_-]", "-", f"{ch}-{film}-{version or 'cut'}".lower())
+
+
+def watch_register() -> dict:
+    reg = {}
+    for p in (WATCH_REGISTER, WATCH_LOCAL_REGISTER):
+        try:
+            reg.update((json.loads(p.read_text()) or {}).get("files", {}))
+        except (OSError, ValueError, AttributeError):
+            pass
+    return reg
+
+
+def auto_upload(wid: str, path: Path, rel: str) -> bool:
+    key = os.environ.get("WATCH_UPLOAD_KEY", "")
+    try:
+        if not key or path.stat().st_size > WATCH_AUTO_MAX:
+            return False
+    except OSError:
+        return False
+    import subprocess
+    try:
+        r = subprocess.run(["node", str(ROOT / "scripts" / "watch_upload.mjs"), wid, str(path)], capture_output=True,
+                           text=True, timeout=900, cwd=str(ROOT / "05_Analytics" / "kanban" / "board_site"))
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    if r.returncode != 0:
+        print(f"watch upload {wid} failed: {r.stderr.strip()[-200:]}", file=sys.stderr)
+        return False
+    try:
+        cur = json.loads(WATCH_LOCAL_REGISTER.read_text())
+    except (OSError, ValueError):
+        cur = {}
+    cur.setdefault("files", {})[rel] = wid
+    WATCH_LOCAL_REGISTER.parent.mkdir(parents=True, exist_ok=True)
+    WATCH_LOCAL_REGISTER.write_text(json.dumps(cur, indent=2) + "\n")
+    return True
+
+
+def stream_link(ch: str, film: str, pick: Path, rel: str) -> dict | None:
+    version = version_of(pick.name)
+    wid = watch_register().get(rel)
+    if not wid:
+        wid = watch_id(ch, film, version)
+        if not auto_upload(wid, pick, rel):
+            return None
+    return {"url": f"{SITE_URL}/api/watch?v={wid}", "version": version, "label": "", "kind": "stream", "file": rel,
+            "source": "Studio Kanban (plays in the browser)"}
 
 
 def uploaded_long(film: str) -> dict | None:
