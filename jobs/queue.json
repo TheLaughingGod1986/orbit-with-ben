@@ -21041,13 +21041,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-15T12:48Z",
-      "eta": "2026-10-15T14:48Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T08:09Z",
-      "result": "",
+      "result": "Created /Volumes/data/mac-mini-archive/youtube-staging on the mounted NFS share (192.168.1.119:/volume1/data). README_YOUTUBE_STAGING.txt read back matches the brief (219 bytes). Nothing deleted.",
       "history": [
         {
           "at": "2026-10-15T08:09Z",
@@ -21068,6 +21068,11 @@
           "at": "2026-10-15T12:49Z",
           "by": "cursor",
           "what": "step 3 of 3 done: README read back on NFS"
+        },
+        {
+          "at": "2026-10-15T12:49Z",
+          "by": "cursor",
+          "what": "done: Created /Volumes/data/mac-mini-archive/youtube-staging on the mounted NFS share (192.168.1.119:/volume1/data). README_YOUTUBE_STAGING.txt read back matches the brief (219 bytes). Nothing deleted."
         }
       ],
       "kind": "studio",
