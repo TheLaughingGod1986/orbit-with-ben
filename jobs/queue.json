@@ -22462,13 +22462,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T16:18Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T16:26Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T15:49Z",
-      "result": "parked for Chief: MUST QUOTE rows 1, 9 and 15 are FLAG. Neighbour pool is strong (11 at about 1M+). Gemini gemini-4-argon-high counts OK 1, PARTIAL 13, FLAG 3. Commit 97a11fdd. No PASS. No VO until those lines are cut or softened.",
+      "result": "FIX (Chief, 15 Oct ~17:30 London): neighbour pass PASS (11 at about 1M+, b15b1529). Facts quote pass 97a11fdd not PASS: row 1 re-anchor to Huygens Nature 1,467 hPa / ESA 1.5x, cut swimming-pool analogy, soften no-pressure-suit; row 9 re-anchor to NASA Titan Facts 95/5 + Dragonfly 4x/1/7, cut HCN name and 0.138 g / 5.3 kg/m3 unless quoted; row 15 keep 28x only as labelled on-screen arithmetic, human flapping flight needs an open quoted source or soften to Dragonfly. Fix follow-on J0301 (cloud, script v01 + SOURCES.md, parks for Chief). No VO until Chief PASS. No spend.",
       "history": [
         {
           "at": "2026-10-15T15:49Z",
@@ -22519,16 +22519,25 @@
           "at": "2026-10-15T16:22Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: MUST QUOTE rows 1, 9 and 15 are FLAG. Neighbour pool is strong (11 at about 1M+). Gemini gemini-4-argon-high counts OK 1, PARTIAL 13, FLAG 3. Commit 97a11fdd. No PASS. No VO until those lines are cut or softened."
+        },
+        {
+          "at": "2026-10-15T16:26Z",
+          "by": "chief",
+          "what": "reopened: Chief review of parked J0296 facts pass"
+        },
+        {
+          "at": "2026-10-15T16:26Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T16:26Z",
+          "by": "chief",
+          "what": "done: FIX (Chief, 15 Oct ~17:30 London): neighbour pass PASS (11 at about 1M+, b15b1529). Facts quote pass 97a11fdd not PASS: row 1 re-anchor to Huygens Nature 1,467 hPa / ESA 1.5x, cut swimming-pool analogy, soften no-pressure-suit; row 9 re-anchor to NASA Titan Facts 95/5 + Dragonfly 4x/1/7, cut HCN name and 0.138 g / 5.3 kg/m3 unless quoted; row 15 keep 28x only as labelled on-screen arithmetic, human flapping flight needs an open quoted source or soften to Dragonfly. Fix follow-on J0301 (cloud, script v01 + SOURCES.md, parks for Chief). No VO until Chief PASS. No spend."
         }
       ],
       "kind": "facts",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T16:22Z",
-        "by": "cursor",
-        "note": "SOURCES.md committed 97a11fdd. Parking for Chief: FLAG on must-quote rows 1, 9, 15."
-      }
+      "done_ref": "97a11fdd"
     },
     {
       "id": "J0297",
