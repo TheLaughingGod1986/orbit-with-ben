@@ -19558,13 +19558,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T08:09Z",
-      "eta": "2026-10-15T08:34Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-15T06:22Z",
-      "result": "",
+      "result": "needs Ben: ElevenLabs API key's account (creator tier) reads 5,275 of 209,536 left at 08:15Z, overage disabled, reset 30 Oct 10:50Z. Take 2 (>=450 s, ~6,500 credits at 13.75/s) cannot be made on it; nothing spent. Ben's '83% remaining' must be another account/workspace: Ben to check which account the API key in 04_Audio (el_auth) belongs to, or supply a key for the account with credit. SFX stem + lay script ready (07c096f4); run _lay_score_take2_v01i.py the moment a take exists.",
       "history": [
         {
           "at": "2026-10-15T06:22Z",
@@ -19630,6 +19630,11 @@
           "at": "2026-10-15T08:10Z",
           "by": "cursor",
           "what": "step 1 of 5 done: blocked: API key account has 5,275 credits"
+        },
+        {
+          "at": "2026-10-15T08:10Z",
+          "by": "cursor",
+          "what": "blocked: needs Ben: ElevenLabs API key's account (creator tier) reads 5,275 of 209,536 left at 08:15Z, overage disabled, reset 30 Oct 10:50Z. Take 2 (>=450 s, ~6,500 credits at 13.75/s) cannot be made on it; nothing spent. Ben's '83% remaining' must be another account/workspace: Ben to check which account the API key in 04_Audio (el_auth) belongs to, or supply a key for the account with credit. SFX stem + lay script ready (07c096f4); run _lay_score_take2_v01i.py the moment a take exists."
         }
       ],
       "kind": "assembly",
