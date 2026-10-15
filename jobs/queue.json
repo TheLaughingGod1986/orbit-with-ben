@@ -1,5 +1,5 @@
 {
-  "next_id": 338,
+  "next_id": 339,
   "jobs": [
     {
       "id": "J0001",
@@ -24984,6 +24984,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0338",
+      "title": "028 Gliese 710: build the £0 Codex code graphics from plate boards v02 (19 code beats + card), no mint",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After J0337 merges 028 plate boards v02 (OWB PR #218) to main: build the £0 Codex code graphics for 028 \"A Star Is Coming Toward Us\" from PLATE_BOARDS_v02.json, every plate with route \"code\" (19) plus the r19_subscribe card if it isn't an existing template. Includes the merged beats from the J0310 rulings: K dwarf vs Sun card, Hipparcos card, Oort cloud + shell beat, comet-tail card (r28), and the merged row 4/5 and path/scale beats.\n\nFollow Ben's educational style (11 Oct 2026): real numbers as charts/number objects, date/timeline call-outs, short person cards where a person is named, interesting facts only from the film's FACT_NOTES/SOURCES (no new claims). Match each beat's t_in/t_out/use_s from the boards; 1080p, house fonts/colours, no text in the action-safe edge. Render each to the 028 edit project's code-graphics folder, add a contact sheet, open a PR on OWB and park for Chief review. £0 only: no Flow, no Vertex, no Omni, no spend.\n",
+      "ref": "J0321",
+      "film": "028",
+      "stage": "picture",
+      "after": "J0337",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T23:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T23:02Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [],
