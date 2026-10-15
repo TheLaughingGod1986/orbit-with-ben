@@ -31,7 +31,7 @@ function londonTime(iso) {
 
 export function benLine(id, doc, prev) {
   const [ch, film] = String(id).split("-");
-  if (!THREADS[ch] || !/^\d{3}$/.test(film || "")) return null;
+  if (!THREADS[ch] || !/^(\d{3}|S\d{1,2})$/.test(film || "")) return null;   // S1..S8 = the standalone Shorts (Ben, 15 Oct)
   const what = `${film}${(doc || prev || {}).version ? " " + (doc || prev).version : ""}`;
   const tail = `\n\n(Studio Kanban button, ${londonTime((doc && doc.at) || new Date().toISOString())} London)`;
   if (!doc) return prev && !prev.handled ? `[Ben] undo ${what}: ignore my ${prev.verdict === "ok" ? "OK" : "change request"} from the board.${tail}` : null;
@@ -82,9 +82,14 @@ async function writeStamp(version) {
 async function load() {
   const { all, stamp } = await snapshots();
   if (!all.length) return { all, stamp, state: { checks: {}, history: [] } };
-  const r = await fetch(all[0].url, { cache: "no-store" });
-  if (!r.ok) throw new Error(`blob read ${r.status}`);
-  const j = await r.json();
+  // Take the newest snapshot that reads; a 403/404 on one (15 Oct: the newest returned 403 and every read 500'd) falls back to the next.
+  let j = null, bad = 0;
+  for (const b of all.slice(0, 5)) {
+    const r = await fetch(b.url, { cache: "no-store" });
+    if (r.ok) { j = await r.json(); break; }
+    bad = r.status;
+  }
+  if (!j) throw new Error(`blob read ${bad}`);
   return { all, stamp, state: { checks: j.checks || {}, history: Array.isArray(j.history) ? j.history : [] } };
 }
 
