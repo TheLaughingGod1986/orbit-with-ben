@@ -200,3 +200,24 @@ QA v02 (`qa_compilation_v02/`) failed on three gates. Two are fixed; one needs a
 - **Disk:** v03 left 2.8 GB free. The v04 chain first moves `final_v02` (now the version before last) to `NAS mini-tmp-scratch/2026-10-13/owb_comp/final_v02` by rsync, checks sha256 manifests on both sides, and removes the local copy only on a full match (a mismatch stops the chain and keeps the local copy). final_v03 still holds its own hardlinks to the shared pieces.
 - **Running detached:** tmux `J0167-v04`, script `~/_desk/logs/J0167-v04-chain.sh`, log `~/_desk/logs/J0167-v04.log`, done file `~/_desk/logs/J0167-v04.done`. It runs the archive (about 35 min, like final_v01), then segments_v06 (intro only), then final_v04 (reusing v03's pieces except the intro), then QA into `qa_compilation_v04/`. **Never start a second copy.**
 - **Next run:** if the done file reads 0, read `qa_compilation_v04/qa_summary.json`. Expected: picture_qa PASS, sfx PASS, and only the music_gate gap FAIL. Look at intro_05 and intro_01 on `picture_qa_review.jpg` and `joins_sheet.jpg`. Then step 8: park J0167 for Chief at J0168 with the gap ruling, the sfx_kit silence fault, the push-jitter QA-input note, and the 021 subscribe-beat default. If the done file reads 3, the NAS manifest didn't match: final_v02 is still local, so look at `/tmp/J0167_v02_*.sha256`.
+
+## Step 8: v05 complete per Acting-Chief ruling (Gemini, 15 Oct 02:25Z)
+
+Per Acting-Chief ruling (Claude, 14 Oct 20:55Z):
+0. **NAS scratch & v04 archive:** `/private/tmp/owb_comp` is symlinked to `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/owb_comp`. Because `/private/tmp/owb_comp/final_v04` had been cleaned up by macOS before this run, `final_v04/picture.mp4` and `final_v04/owb_compilation_v04.mp4` were deterministically rebuilt on the NAS from the preserved NAS pieces (`final_v02` + `segments_v06` intro) and `final_v02/master.wav`:
+   - `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/owb_comp/final_v04/owb_compilation_v04.mp4` (2,796,419,427 bytes, SHA-256 `2a3015e857f59015348bd5bae51e5e7b889042a7ed03cd602e7809d21e3952cc`).
+1. **Intro bed gap fixed & `music_gate` / `sfx_kit` on new sections (`_build_compilation_v05.py`):**
+   - Lifted the 28.3 s intro bed dip from 0:25–0:53.3 to match the house bed level used in the other intros/bridges while maintaining ≥10.8 LU margin under the VO.
+   - Measured `music_gate.py` over the concatenated new sections (`05_Music/compilation_new_sections_bed_v05.wav`, 155.0 s: intro, chapter cards, bridges 1–4, closing; five inherited film bodies excluded per ruling):
+     - `music gate PASS: compilation_new_sections_bed_v05.wav, 155.0 s, about None BPM, brief Pace: 60-80 BPM` (`qa_compilation_v05/music_gate.json`, 0 fails, 0.0 s gap).
+   - Measured `sfx_kit.py level` over the new sections:
+     - `SFX level PASS: VO -14.1 LUFS, SFX -46.0 LUFS, 15 hits` (`qa_compilation_v05/sfx_level.json`).
+   - Built `final_v05/master.wav` (−14.4 LUFS integrated, −1.3 dBFS true peak) and muxed `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/owb_comp/final_v05/owb_compilation_v05.mp4` (2,796,439,567 bytes, 2857.77 s / 47:37.8, SHA-256 `ee7850d24601a58f48d8bb4ebac827815c7dc237c4986fceae2271229664e729`).
+   - `picture_qa.py`: `picture QA PASS: 0 of 38 cuts fail, 7 to look at` (`qa_compilation_v05/PICTURE_QA.md`, `qa_compilation_v05/picture_qa_review.jpg`, `qa_compilation_v05/joins_sheet.jpg`).
+2. **Subscribe beat:** Kept only 021's subscribe beat (confirmed).
+3. **Phone encode for Ben's watch:**
+   - Encoded with 023 PHONE settings (`libx264 -preset medium -crf 23 -maxrate 1800k -bufsize 3600k -c:a aac -b:a 160k -movflags +faststart`) to:
+     - OWB UAT: `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/OWB_compilation_v05_PHONE.mp4` (630,386,701 bytes, SHA-256 `02a39242bb96bca844e9178496b6aa58271a472daa267f10b243216bc70bfd9b`)
+     - NAS backup: `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/owb_comp/final_v05/OWB_compilation_v05_PHONE.mp4`
+- **Status:** Parked for Chief / Ben's watch (J0168). No upload or schedule until Ben has watched it and Chief gives the final OK.
+
