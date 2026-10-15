@@ -22550,13 +22550,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T16:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T15:51Z",
-      "result": "parked for Chief: Short PASS (027 earth_40000_years_v01, gate PASS, 24.0s, not uploaded)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T15:51Z",
@@ -22592,17 +22592,15 @@
           "at": "2026-10-15T16:40Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Short PASS (027 earth_40000_years_v01, gate PASS, 24.0s, not uploaded)"
+        },
+        {
+          "at": "2026-10-15T16:44Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
         }
       ],
       "kind": "assembly",
-      "backlog": "owb-short-from-locked",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T16:40Z",
-        "by": "cursor",
-        "note": "posted, parking for Chief PASS"
-      }
+      "backlog": "owb-short-from-locked"
     },
     {
       "id": "J0298",
