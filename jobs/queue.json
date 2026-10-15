@@ -12195,10 +12195,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-15T02:47Z",
-      "eta": "2026-10-15T06:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12467,6 +12467,11 @@
           "at": "2026-10-15T02:48Z",
           "by": "codex",
           "what": "step 4 of 6 done: Checking existing detached NAS renders; no duplicate render"
+        },
+        {
+          "at": "2026-10-15T02:48Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing detached renders still active: tmux J0175-ruling-v03 and J0175-closing-v04; logs ~/_desk/logs/J0175-bridge4-v03.log and J0175-closing-v04.log remain empty; both corresponding .done files absent. No duplicates started. NAS I/O stall documented in HOS PR #300 COMPILATION_CHIEF_RULING_v03.md (2c40585). Next run checks exit files before gates; full assembly waits for 006 master."
         }
       ],
       "kind": "assembly",
