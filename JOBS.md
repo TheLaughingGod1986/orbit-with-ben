@@ -34,7 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0243 | mini | open | – | – | studio · OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) |  |
 | J0244 | mini | open | – | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
-| J0250 | mini | open | – | – | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
+| J0250 | mini | claimed | codex | 2026-10-15T02:02Z | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
 
 Recently finished:
 
