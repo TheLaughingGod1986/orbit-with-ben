@@ -27,6 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
 | J0304 | gemini | open (after J0299) | – | – | facts · HOS 013 Darwin–Wallace: Gemini facts quote pass on FACT_NOTES_v01 (30 rows) | 6197550164 |
 | J0307 | cloud | open (after J0304) | – | – | script · HOS 013 Darwin–Wallace: script v02 after facts pass (J0304 flags + Chief 2nd-look chronology notes) | 9db5a26 |
+| J0308 | mini | open | – | – | studio · HOS 004 s05 Dalton Short v02: package Private + publishAt on next free search-titled slot (J0306 PASS) |  |
 
 Recently finished:
 
