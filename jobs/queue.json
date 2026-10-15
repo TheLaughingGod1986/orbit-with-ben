@@ -19666,13 +19666,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T14:46Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T15:04Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T05:48Z",
-      "result": "parked for Chief: price pass on HOS PR #331 (009 plate boards v01: 90 rows, 58 Quality / 31 Fast / 1 reuse, 35 continuations; all-Flow 15642 cr expected vs 23730 left; all-Vertex £206.62 vs £70.02 usable). No mint, no spend.",
+      "result": "PASS (Chief, 15 Oct ~16:04 London): HOS 009 plate boards v01 price PASS with conditions on HOS PR #331. Flow-first 15,642 expected fits 23,730 left; Vertex £206.62 does not fit £70.02. No mint, no spend, no merge yet. Cursor v02 on #331: parchment teach→£0 Codex code graphics; Fast _c*→edit-hold/reuse; Quality _c* prefer hold; Quality→Fast on farmhouse_dawn/cannon_world/spray_paint/one_law/cup_and_planets/clay_handoff; reprice with ≥3k Flow headroom. Desk HOS #180 6195259471. Claude board review welcome on v02.",
       "history": [
         {
           "at": "2026-10-15T05:48Z",
@@ -19708,17 +19708,26 @@
           "at": "2026-10-15T14:53Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: price pass on HOS PR #331 (009 plate boards v01: 90 rows, 58 Quality / 31 Fast / 1 reuse, 35 continuations; all-Flow 15642 cr expected vs 23730 left; all-Vertex £206.62 vs £70.02 usable). No mint, no spend."
+        },
+        {
+          "at": "2026-10-15T15:04Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked price pass"
+        },
+        {
+          "at": "2026-10-15T15:04Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T15:04Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 15 Oct ~16:04 London): HOS 009 plate boards v01 price PASS with conditions on HOS PR #331. Flow-first 15,642 expected fits 23,730 left; Vertex £206.62 does not fit £70.02. No mint, no spend, no merge yet. Cursor v02 on #331: parchment teach→£0 Codex code graphics; Fast _c*→edit-hold/reuse; Quality _c* prefer hold; Quality→Fast on farmhouse_dawn/cannon_world/spray_paint/one_law/cup_and_planets/clay_handoff; reprice with ≥3k Flow headroom. Desk HOS #180 6195259471. Claude board review welcome on v02."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-plate-prep",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T14:53Z",
-        "by": "cursor",
-        "note": "HOS PR #331 parked for Chief price pass"
-      }
+      "done_ref": "6195259471"
     },
     {
       "id": "J0262",
