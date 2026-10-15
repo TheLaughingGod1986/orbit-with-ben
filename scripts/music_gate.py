@@ -16,6 +16,9 @@ shipped to his watch on the same `jupiter-music.mp3`).
   length    FAIL (with --video) the bed is shorter than the cut: music runs the whole film, never looped or silent.
   pace      WARN the bed's measured tempo is well outside the brief's BPM range (ambient beds have weak beats, so this
             only asks Claude to listen).
+  waiver    A Chief file in this film's 05_Music, music_gate_*_chief_waiver.json, with accept true and bed equal to
+            this file's name, moves a named check off the FAIL list. Only "reused" can be waived. own, brief, gap
+            and length still fail. The waived line is printed and kept in the JSON.
 Exit 1 on any FAIL. Fit itself is judged by ear: Claude's review, then Ben's watch."""
 from __future__ import annotations
 
@@ -119,6 +122,38 @@ def others_default(film_dir: Path) -> list[Path]:
     return out
 
 
+def chief_waiver(music_dir: Path, bed: Path) -> dict | None:
+    """Chief's accept for this bed file only. A waiver for another filename does not apply."""
+    hits = []
+    for p in sorted(music_dir.glob("music_gate_*_chief_waiver.json")):
+        try:
+            w = json.loads(p.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not w.get("accept"):
+            continue
+        if Path(str(w.get("bed") or "")).name != bed.name:
+            continue
+        waive = [x for x in (w.get("waive") or []) if x == "reused"]
+        if not waive:
+            continue
+        hits.append(dict(file=p.name, waive=waive))
+    return hits[0] if hits else None
+
+
+def apply_waiver(fails: list[str], waiver: dict | None) -> tuple[list[str], list[str]]:
+    if not waiver:
+        return fails, []
+    kept, waived = [], []
+    for f in fails:
+        kind = f.split(":", 1)[0]
+        if kind in waiver["waive"]:
+            waived.append(f"{f} (Chief waiver {waiver['file']})")
+        else:
+            kept.append(f)
+    return kept, waived
+
+
 def judge(film_dir: Path, bed: Path, video: Path | None = None, others: list[Path] | None = None) -> dict:
     fails, warns = [], []
     music_dir = film_dir / "05_Music"
@@ -152,6 +187,8 @@ def judge(film_dir: Path, bed: Path, video: Path | None = None, others: list[Pat
             matches.append(dict(file=str(o), similarity=round(s, 3)))
     if matches:
         fails.append("reused: sounds like " + ", ".join(f"{Path(m['file']).name} ({m['similarity']})" for m in matches))
+    waiver = chief_waiver(music_dir, bed)
+    fails, waived = apply_waiver(fails, waiver)
     bed_s = duration(bed)
     if video:
         cut_s = duration(video)
@@ -168,7 +205,8 @@ def judge(film_dir: Path, bed: Path, video: Path | None = None, others: list[Pat
         if not any(lo * 0.85 <= bpm * f <= hi * 1.15 for f in (0.5, 1, 2)):
             warns.append(f"pace: measured about {bpm} BPM against the brief's {lo}-{hi}; Claude listens")
     return dict(verdict="FAIL" if fails else "PASS", bed=str(bed), seconds=round(bed_s, 1), bpm=bpm,
-                brief_pace=pace.group(0) if pace else None, fail=fails, warn=warns, matches=matches,
+                brief_pace=pace.group(0) if pace else None, fail=fails, warn=warns, waived=waived, matches=matches,
+                waiver=waiver["file"] if waiver else None,
                 rules=dict(similarity_fail=SIM_FAIL, compared_seconds=MAX_SECONDS))
 
 
@@ -190,6 +228,8 @@ def main(argv=None) -> int:
         a.out.write_text(json.dumps(res, indent=2))
     for f in res["fail"]:
         print("FAIL", f)
+    for w in res.get("waived") or []:
+        print("WAIVED", w)
     for w in res["warn"]:
         print("WARN", w)
     print(f"music gate {res['verdict']}: {Path(res['bed']).name}, {res['seconds']} s, about {res['bpm']} BPM, brief {res['brief_pace']}")

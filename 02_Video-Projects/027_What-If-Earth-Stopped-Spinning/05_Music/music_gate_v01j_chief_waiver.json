@@ -1,0 +1,29 @@
+{
+  "job": "J0265",
+  "ruled_at": "2026-10-15T11:30Z",
+  "by": "chief",
+  "bed": "earth-spin_score_take2_straight_v01j.wav",
+  "uat": "OWB UAT/027_EarthSpin_rough_v01j.mp4",
+  "uat_sha256_16": "1eebce5b235cfe31",
+  "ruling": "a",
+  "accept": true,
+  "waive": [
+    "reused"
+  ],
+  "still_enforced": [
+    "own",
+    "brief",
+    "gap",
+    "length"
+  ],
+  "pace": "WARN only \u2014 measured 54.5 BPM after atempo fit from 375s take; brief 76-88; ear OK for assembly continue",
+  "evidence": {
+    "mars-robot_score_bed_v01.mp3": 0.831,
+    "mars-robot_score_bed_v01_full.mp3": 0.405,
+    "mars-robot_score_bed_v01b.mp3": 0.219,
+    "mars-robot_score_bed_v02_full.mp3": 0.403,
+    "note": "FAIL was only vs the short Mars stem. Full Mars shipping beds are ~0.40 (well under 0.8)."
+  },
+  "why": "119 ElevenLabs credits left \u2014 not enough for another take. Waiting for 30 Oct reset would park 027 for two weeks. Near-miss is a short-stem false friend; take2 prompt already NOT-listed Mars felt piano. No further spend.",
+  "next": "Lock v01j as 027 rough bed. Commit this waiver beside the bed. music_gate may still print the reused FAIL vs the short stem; treat reused as waived for this bed only when this file is present. Continue SFX-PASS assembly/polish. No second ElevenLabs take until 30 Oct reset unless Ben says otherwise."
+}

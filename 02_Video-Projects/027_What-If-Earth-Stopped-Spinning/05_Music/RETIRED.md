@@ -6,3 +6,7 @@
 - The files stay here so music_gate can keep comparing new beds against them. Never delete them.
 - 027 needs a new bed from a new brief (Pace + NOT lines naming these). Under the credit hold, no bed starts before 30 Oct without the Chief's OK.
 - Other films' music_gate runs may skip these two files as parked (`--others` without them); 024's run is `full_rough_v04_pack/music_gate_v04_without_027_parked.json`.
+
+## Locked rough bed (15 Oct 2026, J0265)
+
+Chief ruling (a) on #99: `earth-spin_score_take2_straight_v01j.wav` is the 027 rough bed. The waiver is `music_gate_v01j_chief_waiver.json` (reused vs 025's short `mars-robot_score_bed_v01.mp3` only). Own, brief, gap and length still apply. No second ElevenLabs take on this bed until the 30 Oct reset. The listen copy is `OWB UAT/027_EarthSpin_rough_v01j.mp4`, sha256 `1eebce5b235cfe31f03b5284fc1c347547096d943f3262514f3d12088f2b666d`.

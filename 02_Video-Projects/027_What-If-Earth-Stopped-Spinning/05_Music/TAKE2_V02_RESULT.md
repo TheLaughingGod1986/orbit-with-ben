@@ -1,6 +1,8 @@
 # 027 take 2, v01j (J0265, 15 Oct 2026)
 
-Cursor. No PASS. Chief decides.
+**Locked.** Chief, 15 Oct 2026 11:30Z, ruling (a): accept this bed. Waiver `music_gate_v01j_chief_waiver.json`. The reused FAIL against 025's short Mars stem is waived for this file only. No further ElevenLabs spend on it until the 30 Oct reset.
+
+Listen: `OWB UAT/027_EarthSpin_rough_v01j.mp4` (sha256 `1eebce5b235cfe31f03b5284fc1c347547096d943f3262514f3d12088f2b666d`). Same bytes as `/private/tmp/027_EarthSpin_rough_v01j.mp4`. The NAS copy was not made: the share still hangs on `ls` (J0267). The iCloud UAT file is the master of record.
 
 ## What was tried
 
@@ -18,6 +20,7 @@ The 375 s take is time-fit to 452 s with one `atempo` (0.830), not looped (`_fit
 | Mix | −13.7 LUFS |
 | music_gate on the full-level fit | FAIL reused only: `mars-robot_score_bed_v01.mp3` 0.825. Measured 80 BPM, inside Pace 76–88 |
 | music_gate on the ducked v01j stem | FAIL reused: same Mars stem, 0.831. WARN pace 54.5 BPM (the tracker on the −22 dB stem; the full-level fit reads 80) |
+| locked re-run (`music_gate_v01j_locked.json`) | PASS. The 0.831 reused line is waived. Pace stays a warning. `--others` was only the short Mars stem |
 
 Similarity of the fit against every other score bed: the only one at 0.8 or more is 025's **short** `mars-robot_score_bed_v01.mp3` (0.825). The full Mars beds are 0.435 and 0.429. Next highest are short stems at 0.767 (024 v01b, 026 v01). Saturn is 0.279. The retired earth-spin lift is 0.648.
 
@@ -29,6 +32,6 @@ iCloud placeholders in OWB UAT (Saturn VO listens, `jupiter-music.mp3`, and othe
 
 sha256 `1eebce5b235cfe31f03b5284fc1c347547096d943f3262514f3d12088f2b666d` (matches `/private/tmp/027_EarthSpin_rough_v01j.mp4`, 275,563,672 bytes). NAS was left alone: J0267's copy of v01i was still hung on the share.
 
-## For Chief
+## Ruling
 
-Accept this near-miss and keep v01j, or wait for the 30 Oct reset and generate again. 119 credits cannot buy another bed. Ben's "83% remaining" is still a different account from this API key; nothing here needs him unless that account should be the one that spends.
+Chief accepted it (15 Oct 11:30Z). See `BED_LOCK_v01j.md`. 119 credits still cannot buy another bed. Ben's "83% remaining" is still a different account from this API key; nothing here needs him.

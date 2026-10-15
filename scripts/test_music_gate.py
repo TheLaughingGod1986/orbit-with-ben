@@ -99,6 +99,30 @@ class MusicGate(unittest.TestCase):
         self.assertEqual(res["verdict"], "PASS")
         self.assertTrue(any("couldn't read missing.mp3" in w for w in res["warn"]))
 
+    def test_a_chief_waiver_drops_only_the_reused_fail_for_the_named_bed(self):
+        bed = self.film / "05_Music/mars_score_bed_v01.mp3"
+        other = self.d / "other/jupiter-music.mp3"
+        waiver = self.film / "05_Music/music_gate_v01_chief_waiver.json"
+        waiver.write_text(json.dumps({
+            "accept": True, "by": "chief", "bed": "some_other_bed.wav", "waive": ["reused"],
+        }))
+        res = mg.judge(self.film, bed, others=[other])
+        self.assertEqual(res["verdict"], "FAIL")
+        self.assertEqual(res["waived"], [])
+        waiver.write_text(json.dumps({
+            "accept": True, "by": "chief", "bed": bed.name, "waive": ["reused"],
+        }))
+        res = mg.judge(self.film, bed, others=[other])
+        self.assertEqual(res["verdict"], "PASS", res["fail"])
+        self.assertTrue(res["waived"][0].startswith("reused: sounds like jupiter-music.mp3"))
+        self.assertIn("music_gate_v01_chief_waiver.json", res["waived"][0])
+        cut = self.d / "cut_short.mp4"
+        sp.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=black:s=64x36:d=100", str(cut)], check=True)
+        res = mg.judge(self.film, bed, video=cut, others=[other])
+        self.assertTrue(any(f.startswith("length:") for f in res["fail"]))
+        self.assertTrue(res["waived"])
+        waiver.unlink()
+
     def test_a_bed_shorter_than_the_cut_fails(self):
         cut = self.d / "cut.mp4"
         sp.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=black:s=64x36:d=100", str(cut)], check=True)
