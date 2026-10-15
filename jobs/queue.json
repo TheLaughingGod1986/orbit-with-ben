@@ -20047,10 +20047,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-15T08:07Z",
-      "eta": "2026-10-15T09:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-15T07:50Z",
       "result": "",
@@ -20069,16 +20069,29 @@
           "at": "2026-10-15T08:07Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-15T08:07Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-auto: Codex out of usage; next in its chain: cursor"
         }
       ],
-      "for": "codex",
+      "for": "cursor",
       "kind": "thumb",
       "progress": {
         "step": 0,
         "of": 4,
         "at": "2026-10-15T08:07Z",
         "by": "codex"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "claimed",
+        "by": "codex"
+      },
+      "model": "cursor-auto"
     },
     {
       "id": "J0275",
