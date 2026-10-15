@@ -1,5 +1,5 @@
 {
-  "next_id": 325,
+  "next_id": 326,
   "jobs": [
     {
       "id": "J0001",
@@ -13849,7 +13849,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: waiting (Chief ruling a, 20:39Z). Rechecked Studio 12 Oct ~22:20Z on CDP 9223, channel UC_esArsDKd3GJvOkeO0DUog: 55AEQwvs36g 'A/B testing titles' still Running (How Long Do Saturn's Rings Have Left? vs What Happens When Saturn Loses Its Rings?). Nothing set, nothing clicked, no Continue. Re-claim when the title test has ended; then thumbnail-only A=live vs B=~/_desk/j0189/saturn_tc_B_rings-are-falling_55AEQwvs36g.jpg. Screenshot ~/_desk/j0189/look.png",
+      "result": "parked for Chief: waiting (Chief ruling a). TITLE A/B on 55AEQwvs36g still expected Running; re-claim when title test has ended; then thumbnail-only A=live vs B=~/_desk/j0189/saturn_tc_B_rings-are-falling_55AEQwvs36g.jpg. No Continue on delete dialogs.",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -13920,6 +13920,11 @@
           "at": "2026-10-15T18:27Z",
           "by": "chief",
           "what": "left parked: ruling (a) stands — wait for TITLE A/B on 55AEQwvs36g to end; no Continue on delete dialogs."
+        },
+        {
+          "at": "2026-10-15T19:27Z",
+          "by": "chief",
+          "what": "left parked: ruling (a) stands — wait for TITLE A/B on 55AEQwvs36g to end; then thumbnail-only A=live vs B RINGS ARE FALLING. Do not press Continue / delete the running title test. No Studio recheck this sweep (last CDP check 12 Oct still Running; no cheap evidence it ended)."
         }
       ],
       "kind": "studio",
@@ -23312,6 +23317,11 @@
           "at": "2026-10-15T18:27Z",
           "by": "chief",
           "what": "left parked: UAT+NAS sha 486321dc verified; dry-run Private publishAt 2026-11-01T18:00:00Z PASS. Final OK waits for Ben watch/KEEP or Fri 16 Oct 23:59 London (else Chief final OK goes ahead). No upload."
+        },
+        {
+          "at": "2026-10-15T19:27Z",
+          "by": "chief",
+          "what": "left parked: UAT+NAS sha 486321dc re-verified (iCloud OWB UAT/024_LightSpeed_v05d.mp4 + NAS youtube-staging/024/). Dry-run Private publishAt 2026-11-01T18:00:00Z PASS. Final OK still waits for Ben watch/KEEP or Fri 16 Oct 23:59 London (else Chief final OK goes ahead). No upload."
         }
       ],
       "kind": "assembly",
@@ -23692,13 +23702,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T18:32Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T19:27Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T18:27Z",
-      "result": "parked for Chief: 027 corner credits PASS. v01l sha 7d51961f, picture_qa 0/88, polish_gate 0/88, NAS hashes match. Stills on #99 comment 6200213333. No PASS from Cursor.",
+      "result": "PASS (Chief, 15 Oct ~20:30 London): 027 corner credits on v01l KEEP. Reviewed credit_stills_v01l.jpg + frames 0:04 NASA, 0:19 CGI, 2:00 ESO, 2:48 NASA vs SUBSCRIBE (clear), 4:00 NASA/JPL, 7:14 Artist's impression (one line, already on plate). Labels bottom-left ~2.7% frame height, off subject, house set (CGI/NASA/NASA/JPL/ESO). picture_qa 0/88, polish_gate 0/88, NAS+UAT sha 7d51961fabfe7e4e66e2e3bfd457b5f0fe9fa995572682cab6ecb5c7f94d4c96 matches MANIFEST. v01l = picture lock with corner credits; v01k stays grain master. No spend. #99 comment 6200213333.",
       "history": [
         {
           "at": "2026-10-15T18:27Z",
@@ -23754,16 +23764,25 @@
           "at": "2026-10-15T19:11Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: 027 corner credits PASS. v01l sha 7d51961f, picture_qa 0/88, polish_gate 0/88, NAS hashes match. Stills on #99 comment 6200213333. No PASS from Cursor."
+        },
+        {
+          "at": "2026-10-15T19:27Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked corner-credit review"
+        },
+        {
+          "at": "2026-10-15T19:27Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T19:27Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 15 Oct ~20:30 London): 027 corner credits on v01l KEEP. Reviewed credit_stills_v01l.jpg + frames 0:04 NASA, 0:19 CGI, 2:00 ESO, 2:48 NASA vs SUBSCRIBE (clear), 4:00 NASA/JPL, 7:14 Artist's impression (one line, already on plate). Labels bottom-left ~2.7% frame height, off subject, house set (CGI/NASA/NASA/JPL/ESO). picture_qa 0/88, polish_gate 0/88, NAS+UAT sha 7d51961fabfe7e4e66e2e3bfd457b5f0fe9fa995572682cab6ecb5c7f94d4c96 matches MANIFEST. v01l = picture lock with corner credits; v01k stays grain master. No spend. #99 comment 6200213333."
         }
       ],
       "kind": "assembly",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-15T19:11Z",
-        "by": "cursor",
-        "note": "parked for Chief corner-credit PASS"
-      }
+      "done_ref": "6200213333"
     },
     {
       "id": "J0320",
@@ -23941,6 +23960,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0325",
+      "title": "027 Earth Stopped Spinning: dry-run Private package for Sun 22 Nov (v01l picture lock, J0319 PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "027 picture lock = v01l (Chief PASS J0319, sha256 7d51961fabfe7e4e66e2e3bfd457b5f0fe9fa995572682cab6ecb5c7f94d4c96): v01k grain + house corner credits. UAT already has OWB UAT/027_EarthSpin_rough_v01l.mp4 (iCloud + NAS); v01k stays grain master.\n1. Confirm UAT/NAS sha still matches MANIFEST_027_v01k_v01l_J0319.sha256; post the watch path on #99.\n2. Build or refresh the long upload package if missing (11_Upload-Package), then dry-run youtube-package-upload with v01l, --schedule 2026-11-22T18:00:00Z, Private. Park for Chief final OK (set a Ben watch-by date on the board). No live upload. No spend. No ElevenLabs.",
+      "ref": "6200213333",
+      "film": "027",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T19:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T19:27Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
