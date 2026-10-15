@@ -24115,13 +24115,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T23:02Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T18:39Z",
-      "result": "",
+      "result": "PASS (Chief, 15 Oct ~23:58 London): 028 plate boards v02 (OWB PR #218 2819288a) apply all ten J0310 rulings. 57 plates: 1 Quality, 1 Fast, 2 Omni, 19 £0 code, 1 card, 33 credited harvest. No holds, gaps or blocked rows, no back-to-back code beats, generation_authorized false on every plate, every harvest row carries a licence (PD / CC BY 4.0 / CC BY-SA 3.0 IGO); Slawik, Hipparcos ©ESA, the labelled Oort diagram and Tafreshi are out. Omni x2 fits (£1.30 + £1.30 late room inside £70.02 usable promo). One correction before merge: the Flow headroom table is stale. 006 is 0 Flow (picture from KEEPs, J0331), and 009 counts only tranche 1 at 7,354 (v04 on main 8f1068d); tranche 2 waits for the ~12 Nov AI Ultra renewal and is not charged to today's balance. Corrected: 23,740 - (007 7,553 + 008 5,605 + 009 t1 7,354 = 20,512) = 3,228 left; after 028's 279 = 2,949, so 028 misses the 3,000 floor by 51 today. Mint order ruling: 028's two Veo plates go after 009 tranche 1 and mint only when a live Flow read leaves >=3,000 after them, else they ride with 009 tranche 2 after the renewal. Nothing mints now. Next: J0337 table fix + merge, J0338 £0 code graphics.",
       "history": [
         {
           "at": "2026-10-15T18:39Z",
@@ -24162,9 +24162,20 @@
           "at": "2026-10-15T23:00Z",
           "by": "chief",
           "what": "reopened: Chief taking parked boards v02 review"
+        },
+        {
+          "at": "2026-10-15T23:02Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T23:02Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 15 Oct ~23:58 London): 028 plate boards v02 (OWB PR #218 2819288a) apply all ten J0310 rulings. 57 plates: 1 Quality, 1 Fast, 2 Omni, 19 £0 code, 1 card, 33 credited harvest. No holds, gaps or blocked rows, no back-to-back code beats, generation_authorized false on every plate, every harvest row carries a licence (PD / CC BY 4.0 / CC BY-SA 3.0 IGO); Slawik, Hipparcos ©ESA, the labelled Oort diagram and Tafreshi are out. Omni x2 fits (£1.30 + £1.30 late room inside £70.02 usable promo). One correction before merge: the Flow headroom table is stale. 006 is 0 Flow (picture from KEEPs, J0331), and 009 counts only tranche 1 at 7,354 (v04 on main 8f1068d); tranche 2 waits for the ~12 Nov AI Ultra renewal and is not charged to today's balance. Corrected: 23,740 - (007 7,553 + 008 5,605 + 009 t1 7,354 = 20,512) = 3,228 left; after 028's 279 = 2,949, so 028 misses the 3,000 floor by 51 today. Mint order ruling: 028's two Veo plates go after 009 tranche 1 and mint only when a live Flow read leaves >=3,000 after them, else they ride with 009 tranche 2 after the renewal. Nothing mints now. Next: J0337 table fix + merge, J0338 £0 code graphics."
         }
       ],
-      "kind": "video"
+      "kind": "video",
+      "done_ref": "2819288a"
     },
     {
       "id": "J0322",
