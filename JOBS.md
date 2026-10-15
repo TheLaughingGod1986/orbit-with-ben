@@ -28,6 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0303 | mini | claimed | cursor | 2026-10-15T18:55Z | assembly · 027 Short FIX v02: stand-alone open (Chief FIX on J0297 v01) |  |
 | J0304 | gemini | open (after J0299) | – | – | facts · HOS 013 Darwin–Wallace: Gemini facts quote pass on FACT_NOTES_v01 (30 rows) | 6197550164 |
 | J0306 | mini | open | – | – | assembly · HOS 004 s05 Dalton Short FIX v02: clean plate (garbled Hp/Hg/Op tiles) + claim-first open (Chief FIX on J0298 v01) | 623c74f8 |
+| J0307 | cloud | open (after J0304) | – | – | script · HOS 013 Darwin–Wallace: script v02 after facts pass (J0304 flags + Chief 2nd-look chronology notes) | 9db5a26 |
 
 Recently finished:
 
