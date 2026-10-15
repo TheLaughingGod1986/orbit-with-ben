@@ -1,6 +1,6 @@
 # J0296 quote pass — still running (15 Oct 2026)
 
-Neighbour pass is committed (`b15b1529`). Pool is strong (eleven Titan videos at about 1M+). Do not redo it.
+Neighbour pass is committed (`999a841a`). Pool is strong (eleven Titan videos at about 1M+). Do not redo it.
 
 Gemini (`agy --model gemini-4-argon-high`) is filling `SOURCES.md`. Do not start a second copy.
 
