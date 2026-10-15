@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0265, J0283.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0265.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -32,11 +32,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0280 | mini | open | – | – | studio · HOS Related fixes ×4 after longs public (from J0245) |  |
 | J0281 | mini | open | – | – | studio · OWB: schedule PASS Shorts (Venus J0232, Saturn late-arrival J0253) |  |
 | J0282 | mini | open | – | – | assembly · HOS 008 PR #322 rebase + squash-merge after J0240 PASS |  |
-| J0283 | mini | claimed | cursor | 2026-10-15T13:27Z | studio · HOS: schedule PASS Shorts (004 s04 cathode; 005 s05 valves) + standalone S1-S4 |  |
 | J0284 | mini | open (after J0226) | – | – | 030 upload · studio · Upload 030 Apophis Short v05: Private, publishAt Thu 22 Oct 2026 11:30 London (J0226 PASS) |  |
 
 Recently finished:
 
+- J0283 done: HOS: schedule PASS Shorts (004 s04 cathode; 005 s05 valves) + standalone S1-S4 (Six HOS Shorts Private+publishAt. Standalone S1-S4: c2q7w0pgcn8 Mon 19 Oct, oKqmnJNGiHg Wed 21 Oct, OnJ8MFu0Mi0 Mon 26 Oct, vEg_tLIm0Co Wed 28 Oct (standaloneTest in UPLOADS). Search-titled: LCZRHUyTiq0 Fri 23 Oct cathode; PlihWC5uA2E Mon 2 Nov valves. Read-back private, not kids, en-GB, Education. Buffer held until public. Related still Studio. Local commit c082cfb (not merged). Desk #180 comment 6191159764.)
 - J0277 done: Thumbnail redo: add Orbit to the OWB B variants (Fermi Mo93x0fxB1Q, Europa NbW5G1BpPY0, JWST ziKBPJ6FY0U), keep HOS house style (T007 running on ziKBPJ6FY0U: thumbnail-only, A live TOO EARLY?, B jwst_B_v03 GALAXIES TOO SOON?. Title unchanged, still Public. Studio report Test running. Ledger T005-T007 running, commit d3fd7d30. No title or privacy change.)
 - J0276 done: Upload OWB compilation v05: Private, publishAt Wed 21 Oct 2026 18:00 London (17:00Z), via youtube:package (Ben GO, Chief OK J0168) (PASS (Chief): OWB compilation v05 m09jUdwC5hk Private + publishAt 2026-10-21T17:00:00Z (Wed 21 Oct 18:00 London). Master sha ee7850d2… matches; duration PT47M38S; chapters×6 + Sources line; cover THE LAST LIGHT; end screen Subscribe + Best-for-viewer saved; altered-content Yes; not Made-for-Kids; UPLOADS + TEST_LOG cohort logged. Stub ZGD5pHs2KKE left untouched (Never-delete). No further upload work.)
 - J0274 done: Thumbnail redo batch 3: Alien Worlds and HOS Germs B candidates (Ruling (Chief): Alien Worlds skip OK (J0099). HOS Germs B: NOT gpt-image-2 — Flow Nano Banana 2 per HOS AGENTS.md. Follow-on image job added; this job closed, no spend.)
@@ -46,4 +46,3 @@ Recently finished:
 - J0270 done: Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at (PASS (Chief): PR #201 already merged f7f265f7 (agy Argon id gemini-4-argon-high). AGENTS.md Best-fit line already shows gemini-4-argon-high. Luna: adopt gpt-6-luna for Codex assembly only when --eta ≤ 30 (JSON/manifest/gate re-runs); Sol stays for real code. Terra gpt-5.6-terra: no lane (older gen; Luna/Sol cover it). Effort tiers deferred.)
 - J0269 cancelled: HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 ()
 - J0268 cancelled: HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 ()
-- J0264 done: Shorts gate gaps: register 23KZK7OjsEE (Jupiter, airs Sat 17 Oct) + lbW2iQ9YvqA (Saturn, 20 Oct), find exports for vlkj8RQKmH8 + oyRcrFTYyDY, gate all four (done)
