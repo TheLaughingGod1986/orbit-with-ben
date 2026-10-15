@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0250 | mini | blocked | codex | – | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
 | J0251 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · OWB ideas + script draft: next film beyond the pipeline |  |
-| J0252 | mini | open | – | – | for gemini · script · `gemini-agy` · HOS ideas + script draft: next film beyond the pipeline |  |
+| J0252 | mini | claimed | gemini | 2026-10-15T05:34Z | for gemini · script · `gemini-agy` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0253 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0254 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0255 | mini | open | – | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
