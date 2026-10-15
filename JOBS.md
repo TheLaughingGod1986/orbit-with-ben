@@ -15,7 +15,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0140 | mini | blocked | gemini | – | for gemini · video · HOS 006 picture: P3:06 + Parts 04 and 05 on Flow after the Chief's price pass, then their roughs |  |
 | J0141 | mini | blocked | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0167 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · OWB compilation film: assemble 45-60 min cut |  |
-| J0168 | any | open (after J0167) | – | – | chief · OWB compilation film: Chief review + schedule |  |
 | J0172 | any | blocked | codex | – | chief · HOS standalone Shorts test: Chief review + schedule |  |
 | J0175 | mini | blocked | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
