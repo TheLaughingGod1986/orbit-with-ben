@@ -22890,13 +22890,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T16:55Z",
-      "eta": "2026-10-15T18:55Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T16:45Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (v02)",
       "history": [
         {
           "at": "2026-10-15T16:45Z",
@@ -22932,6 +22932,11 @@
           "at": "2026-10-15T17:06Z",
           "by": "cursor",
           "what": "step 5 of 5 done: posted #6197762217, parking for Chief"
+        },
+        {
+          "at": "2026-10-15T17:06Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Short PASS (v02)"
         }
       ],
       "kind": "assembly",
