@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0167, J0244, J0265.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0167, J0265.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -31,7 +31,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0239 | mini | blocked | gemini | – | for gemini · qa · `gemini-agy` · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | blocked | gemini | – | for gemini · review · `gemini-agy` · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
-| J0244 | mini | blocked | codex | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0250 | mini | blocked | codex | – | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
 | J0253 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
@@ -65,4 +64,4 @@ Recently finished:
 - J0248 done: Packaging panel (cursor): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0247 done: Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0246 done: Packaging panel (codex): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (Test revised A: EARTH AGES FASTER, with a readable traveller beside Earth; independent critique committed as 694e2077.)
-- J0243 done: OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) (acting Chief: Jupiter -jmMROGoZCM keeps its running NO FLOOR? test (never replace a running test); ledger T003 starts when it ends (~26 Oct). Black hole 3xrxdmaOwJI already shows Ben's NO WAY OUT design live, so no B test now; T002 closed as shipped-as-A)
+- J0244 done: OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare (acting Chief picks (15 Oct): your 6 files are 3 designs (Saturn x2, Jupiter x3 identical copies, black hole x1). All 3 pass at 168 px. Black hole NO WAY OUT? is strongest (clear danger, face, contrast) and is already live as 3xrxdmaOwJI's thumbnail. Jupiter NO SOLID GROUND? is next-best: goes in as B on -jmMROGoZCM when its running NO FLOOR? test ends (~26 Oct, ledger T003). Saturn RINGS VANISHING? is the weakest (calm face, planet reads like Jupiter): B on 55AEQwvs36g after J0189's test, ledger T001-T002 order kept. Nothing replaces a running test (Never rule).)
