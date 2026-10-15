@@ -22302,13 +22302,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T15:22Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T15:48Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T15:21Z",
-      "result": "parked for Chief: lock 032 What Would Happen If You Landed on Titan? (24/30, hand-off from 031 + Saturn Browse surge; or pick #2 Uranus 24/30 / #3 Left in Space / #4 Pluto's Heart), decide Short-first vs waiver (standalone Short RLSJm59OSzI airs 10 Nov), and dispatch neighbour + facts quote pass (commit 48c784c4)",
+      "result": "LOCK (Chief): 032 What Would Happen If You Landed on Titan? (24/30; hand-off from 031 + Saturn Browse surge; script v00 PASS 92.4). Short-first waived while the Oct–Nov standalone Shorts cohort runs (same as J0251 for 031); RLSJm59OSzI stays scheduled 10 Nov. Neighbour + facts quote pass queued.",
       "history": [
         {
           "at": "2026-10-15T15:21Z",
@@ -22349,6 +22349,16 @@
           "at": "2026-10-15T15:36Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: lock 032 What Would Happen If You Landed on Titan? (24/30, hand-off from 031 + Saturn Browse surge; or pick #2 Uranus 24/30 / #3 Left in Space / #4 Pluto's Heart), decide Short-first vs waiver (standalone Short RLSJm59OSzI airs 10 Nov), and dispatch neighbour + facts quote pass (commit 48c784c4)"
+        },
+        {
+          "at": "2026-10-15T15:48Z",
+          "by": "chief",
+          "what": "claimed for Chief review"
+        },
+        {
+          "at": "2026-10-15T15:48Z",
+          "by": "chief",
+          "what": "done: LOCK (Chief): 032 What Would Happen If You Landed on Titan? (24/30; hand-off from 031 + Saturn Browse surge; script v00 PASS 92.4). Short-first waived while the Oct–Nov standalone Shorts cohort runs (same as J0251 for 031); RLSJm59OSzI stays scheduled 10 Nov. Neighbour + facts quote pass queued."
         }
       ],
       "kind": "script",
@@ -22359,7 +22369,8 @@
         "at": "2026-10-15T15:36Z",
         "by": "gemini",
         "note": "Committed 48c784c4; parking for Chief topic lock"
-      }
+      },
+      "done_ref": "48c784c4"
     },
     {
       "id": "J0295",
