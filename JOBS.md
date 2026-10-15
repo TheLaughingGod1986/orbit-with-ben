@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0287 | mini | blocked | chief | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
 | J0288 | mini | blocked | claude | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0289 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0290 | mini | open | – | – | 006 edit · assembly · HOS 006 Part 02 rough v03: fix picture_qa + polish_gate FAILs (reuse tails, replays, 15_desk_candle horizontal seam, freeze-pad removal, no spend) |  |
+| J0290 | mini | claimed | cursor | 2026-10-15T16:30Z | 006 edit · assembly · HOS 006 Part 02 rough v03: fix picture_qa + polish_gate FAILs (reuse tails, replays, 15_desk_candle horizontal seam, freeze-pad removal, no spend) |  |
 
 Recently finished:
 
