@@ -19337,9 +19337,23 @@
           "at": "2026-10-15T06:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T06:24Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Claude out of usage (no Claude run for 139 min (heartbeat 2026-10-15T04:04:53Z)); next in its chain: gemini on its default"
         }
       ],
-      "kind": "qa"
+      "kind": "qa",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0265",
