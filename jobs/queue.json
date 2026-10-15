@@ -23923,6 +23923,11 @@
           "at": "2026-10-15T19:37Z",
           "by": "chief",
           "what": "left parked (Chief review): bytes verified. iCloud OWB UAT/026_NearestStar_v05d.mp4, NAS youtube-staging/026/ and 07_Edit-Project copy all sha256 69c89d83, identical to the Chief-passed v05d in PR #152 158fba69 rough_v05d_pack/SHA256.txt, so the rebuild from NAS v05b via v05c->v05d overlay scripts is the passed picture. Dry-run Private publishAt 2026-11-15T18:00:00Z PASS. Gap: captionsFile and trailer are null (024/025 packages carry both), so queued J0326 (captions + trailer + re-dry-run). Final OK waits for J0326 PASS and Ben's watch/KEEP of OWB UAT/026_NearestStar_v05d.mp4, or Fri 23 Oct 23:59 London if no reply (then Chief final OK goes ahead). No upload. £0."
+        },
+        {
+          "at": "2026-10-15T20:05Z",
+          "by": "chief",
+          "what": "left parked (Chief review): J0326 captions + trailer PASS (merged 64e4dcfd). Final OK now waits only on Ben's watch/KEEP of OWB UAT/026_NearestStar_v05d.mp4, or Fri 23 Oct 23:59 London if no reply (then Chief final OK goes ahead). No upload. £0."
         }
       ],
       "kind": "assembly",
@@ -24041,13 +24046,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T19:55Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T20:05Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T19:37Z",
-      "result": "parked for Chief: captions + trailer ready, dry-run PASS Private 2026-11-15T18:00:00Z, video sha 69c89d83 unchanged. Branch cursor/j0326-026-captions 1e64b5bf (not pushed, not merged). Trailer sha 2cda4aaf on NAS youtube-staging/026. Final OK is Chief's.",
+      "result": "Chief PASS (review sweep 15 Oct ~21:05 London): SRT 129 cues, no overlaps, last cue ends 490.96 s inside v05d 494.476 s; spot cues match (open, 2:21 'Your two eyes are a ruler.', 5:10, 7:00, last line); SRT sha 43c1f529. Trailer 33.57 s cold open cut before the chapter card, 1080x1920 with 'Full film on YouTube' card, sha 2cda4aaf identical on NAS youtube-staging/026 and package Trailer/ (33.5 s instead of ~40 s accepted: the cold open ends at 32.7 s, same build as 024/025). Manifest captionsFile + trailer set; dry-run Private publishAt 2026-11-15T18:00Z PASS on unchanged video sha 69c89d83. Branch cursor/j0326-026-captions merged to main 64e4dcfd. No upload. £0.",
       "history": [
         {
           "at": "2026-10-15T19:37Z",
@@ -24078,6 +24083,11 @@
           "at": "2026-10-15T20:02Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: captions + trailer ready, dry-run PASS Private 2026-11-15T18:00:00Z, video sha 69c89d83 unchanged. Branch cursor/j0326-026-captions 1e64b5bf (not pushed, not merged). Trailer sha 2cda4aaf on NAS youtube-staging/026. Final OK is Chief's."
+        },
+        {
+          "at": "2026-10-15T20:05Z",
+          "by": "chief",
+          "what": "done: Chief PASS, merged 64e4dcfd"
         }
       ],
       "kind": "assembly",
@@ -24087,7 +24097,8 @@
         "at": "2026-10-15T20:02Z",
         "by": "cursor",
         "note": "dry-run PASS; commit 1e64b5bf parked for Chief"
-      }
+      },
+      "done_ref": "64e4dcfd"
     },
     {
       "id": "J0327",
