@@ -37,6 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0334 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v02 per the J0314 price-pass conditions (no mint) | 6203192061 |
 | J0338 | mini | open (after J0337) | – | – | 028 picture · chart · 028 Gliese 710: build the £0 Codex code graphics from plate boards v02 (19 code beats + card), no mint | J0321 |
 | J0340 | cloud | blocked | claude | – | 031 script · review · 031 Magnetic Field Flip: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0339 PASS) | 37eab443 |
+| J0341 | mini | open | – | – | 007 picture · video · HOS 007: drop P3:01c_nelmes_plate on boards v02 then ready PR 337 for Chief merge (J0322 PASS); no mint |  |
 
 Recently finished:
 
