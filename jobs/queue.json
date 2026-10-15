@@ -22683,13 +22683,13 @@
       "stage": "sources",
       "after": "J0296",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-10-15T16:27Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T16:34Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T16:26Z",
-      "result": "parked for Chief: script v01 + SOURCES v01 table at 97b7af4e (19 rows OK, FLAGs fixed, review:script PASS 93)",
+      "result": "PASS (Chief, 15 Oct ~17:35 London): script v01 + SOURCES v01 at 97b7af4e. review:script 93/100 re-run OK (1601 words, ~10.7 min). FLAG rows 1/9/15 match J0296 FIX (Huygens 1,467 hPa / ESA 1.5×, pool+suit cut; NASA 95/5 + Dragonfly 4×/1/7, HCN/0.138g/kg cut; 28× labelled our sum, flapping cut for Dragonfly fly line). PARTIALs re-anchored or cut. APL Why-Titan 503 noted — rests on Gemini quote from today. Soft note: AGENTS ~1200–1300 word band; score still PASS — trim optional before picture lock, not blocking VO. No spend. Follow-on VO queued.",
       "history": [
         {
           "at": "2026-10-15T16:26Z",
@@ -22705,9 +22705,25 @@
           "at": "2026-10-15T16:32Z",
           "by": "claude",
           "what": "blocked: parked for Chief: script v01 + SOURCES v01 table at 97b7af4e (19 rows OK, FLAGs fixed, review:script PASS 93)"
+        },
+        {
+          "at": "2026-10-15T16:34Z",
+          "by": "chief",
+          "what": "reopened: Chief review of parked J0301 Titan script v01"
+        },
+        {
+          "at": "2026-10-15T16:34Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T16:34Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 15 Oct ~17:35 London): script v01 + SOURCES v01 at 97b7af4e. review:script 93/100 re-run OK (1601 words, ~10.7 min). FLAG rows 1/9/15 match J0296 FIX (Huygens 1,467 hPa / ESA 1.5×, pool+suit cut; NASA 95/5 + Dragonfly 4×/1/7, HCN/0.138g/kg cut; 28× labelled our sum, flapping cut for Dragonfly fly line). PARTIALs re-anchored or cut. APL Why-Titan 503 noted — rests on Gemini quote from today. Soft note: AGENTS ~1200–1300 word band; score still PASS — trim optional before picture lock, not blocking VO. No spend. Follow-on VO queued."
         }
       ],
-      "kind": "script"
+      "kind": "script",
+      "done_ref": "97b7af4e"
     }
   ],
   "focus": [
