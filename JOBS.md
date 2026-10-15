@@ -27,7 +27,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0308 | mini | open | – | – | studio · HOS 004 s05 Dalton Short v02: package Private + publishAt on next free search-titled slot (J0306 PASS) |  |
 | J0309 | mini | blocked | cursor | – | 024 edit · assembly · 024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London) |  |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
-| J0318 | gemini | open | – | – | 031 sources · facts · 031 Magnetic Field Flip: Gemini facts quote pass on SOURCES.md (MUST QUOTE rows) | 6198817961 |
 | J0322 | mini | claimed | cursor | 2026-10-16T01:25Z | 007 picture · video · HOS 007: plate boards v02 per Claude review (Flow-first price table; lettering-risk plates to real scans / code graphics), no mint |  |
 | J0323 | mini | blocked | cursor | – | 026 edit · assembly · 026 Nearest Star: put picture-lock v05d (teaching overlays, J0148) in OWB UAT for Ben's watch, then dry-run the Private upload (airs Sun 15 Nov) |  |
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
@@ -38,6 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0332 | mini | open (after J0331) | – | – | 006 edit · chart · HOS 006: Codex £0 teach overlays from TEACH_OVERLAYS_v01.md (after full_join_v02) |  |
 | J0334 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v02 per the J0314 price-pass conditions (no mint) | 6203192061 |
 | J0338 | mini | open (after J0337) | – | – | 028 picture · chart · 028 Gliese 710: build the £0 Codex code graphics from plate boards v02 (19 code beats + card), no mint | J0321 |
+| J0339 | cloud | open | – | – | 031 script · script · 031 Magnetic Field Flip: soft-edit PARTIAL spoken lines after J0318 FIX (script v02 + SOURCES) | 666bacf8 |
 
 Recently finished:
 

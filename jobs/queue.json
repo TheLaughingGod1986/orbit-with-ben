@@ -1,5 +1,5 @@
 {
-  "next_id": 339,
+  "next_id": 340,
   "jobs": [
     {
       "id": "J0001",
@@ -23868,13 +23868,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T23:29Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T18:27Z",
-      "result": "",
+      "result": "FIX (Chief, 16 Oct ~00:25 London): facts quote pass 666bacf8 is 9 OK / 10 PARTIAL / 0 FLAG — not a clean PASS. Must soft-edit before VO: row 10 drop ~1000 km (NASA says ~400 miles/~640 km); row 11 soften Hubble cadence to STScI 7–9 orbits, cut Hitomi-destroyed-by-SAA and ISS-laptops unless sourced; row 15 10% not 10–20%; row 18 drop 4/6/8 poles → multiple poles. Soft hedges: drop August (3), Brazil (9), ~2890/nickel/hotter-than (6); re-anchor 404 BGS URLs (1,6); row 16 water-10m as our conversion or use BGS concrete 13 ft. Follow-on script soft-edit queued. £0.",
       "history": [
         {
           "at": "2026-10-15T18:27Z",
@@ -23935,9 +23935,20 @@
           "at": "2026-10-15T23:28Z",
           "by": "chief",
           "what": "reopened: Chief taking parked facts quote review"
+        },
+        {
+          "at": "2026-10-15T23:29Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-15T23:29Z",
+          "by": "chief",
+          "what": "done: FIX (Chief, 16 Oct ~00:25 London): facts quote pass 666bacf8 is 9 OK / 10 PARTIAL / 0 FLAG — not a clean PASS. Must soft-edit before VO: row 10 drop ~1000 km (NASA says ~400 miles/~640 km); row 11 soften Hubble cadence to STScI 7–9 orbits, cut Hitomi-destroyed-by-SAA and ISS-laptops unless sourced; row 15 10% not 10–20%; row 18 drop 4/6/8 poles → multiple poles. Soft hedges: drop August (3), Brazil (9), ~2890/nickel/hotter-than (6); re-anchor 404 BGS URLs (1,6); row 16 water-10m as our conversion or use BGS concrete 13 ft. Follow-on script soft-edit queued. £0."
         }
       ],
-      "kind": "facts"
+      "kind": "facts",
+      "done_ref": "666bacf8"
     },
     {
       "id": "J0319",
@@ -25087,6 +25098,33 @@
         }
       ],
       "kind": "chart"
+    },
+    {
+      "id": "J0339",
+      "title": "031 Magnetic Field Flip: soft-edit PARTIAL spoken lines after J0318 FIX (script v02 + SOURCES)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Chief review of J0318 (16 Oct 2026 ~00:25 London). Gemini facts quote pass 666bacf8 is not a clean PASS: 9 OK / 10 PARTIAL / 0 FLAG. Soft-edit spoken lines + re-anchor SOURCES named URLs before CLAUDE_QUOTE_CHECK or VO. No VO, no picture mint, no Studio change, no spend, no deletes.\n\nSource of truth:\n- `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/01_Script/SOURCES.md` (666bacf8)\n- `…/GEMINI_QUOTE_PASS_v01.md` (666bacf8)\n- `…/magnetic_field_flip_script_master_v01.md` (draft-lock e034fdc3 / J0259)\n\nProduce `magnetic_field_flip_script_master_v02.md` (copy v01, edit only the lines below) and update SOURCES.md Where-to-look + Exact-quote rows to match. Re-run `npm run review:script` and park for Chief: script soft-PASS. Leave every other line alone.\n\n### Must fix (spoken numbers / unsupported specifics)\n1. **Row 10 (SAA altitudes).** Drop `from ~1,000 km`. Named NASA page says the innermost belt begins about 400 miles (~640 km), not ~1,000 km. Keep reverse-flux / SAA weak-spot language that is quoted. For the dip altitude, either quote Wikipedia SAA `200 kilometres` with that URL in Where-to-look, or soften to \"closer to Earth than usual\" without a km figure. Keep the ISS ~400 km comparison only if a named page states ISS orbit height; else cut that half-sentence.\n2. **Row 11 (Hubble / ISS / Hitomi).** Soften Hubble cadence to STScI's \"seven to nine orbits in a row\" (or \"several times a day\"), not \"up to ~10 times a day\". Do not say Hitomi was destroyed by the SAA — JAXA's official report does not attribute the 2016 anomaly to the SAA; cut Hitomi or hedge to \"some satellites have glitched after SAA passes\" with a page that actually says so. ISS: exterior instruments are on the NASA Goddard page; do not say \"ISS laptops\" unless you keep the Shuttle-laptop Wikipedia line and label it as such.\n3. **Row 15 (backup multipoles %).** Change `10–20%` to about `10%` (BGS reversals.html). Drop `20%` — not on opened pages. Keep \"never vanishes / multipoles remain\".\n4. **Row 18 (4, 6, or 8 poles).** Drop the specific `4, 6, or 8`. Use \"multiple magnetic poles\" / Glatzmaier language (Africa / Tahiti examples OK). Keep 1,000–10,000 year transition and the generations comparison as our own labelled arithmetic if kept.\n\n### Soft hedges (drop or rephrase; keep the rest of the claim)\n5. **Row 3:** drop the month `August` (keep 1905 / published 1906 / Brunhes / Pontfarein / reverse magnetisation).\n6. **Row 4:** keep 1929 / Matuyama / Japan and Manchuria from the 1929 paper; put life years and `about 780,000 years` only where Wikipedia/NASA support them (or move the age to the Brunhes–Matuyama line already OK in row 5).\n7. **Row 6:** say `about 3,000 km` (not `~2,890 km`); `iron-rich` liquid outer core (drop `and-nickel` unless quoted); `temperatures similar to the surface of the Sun` (not `hotter than`). Re-point Where-to-look off the 404 BGS URL onto `geomag.bgs.ac.uk/education/reversals.html` / ESA / NASA.\n8. **Row 9:** say South America / South Atlantic (ESA/NASA wording), not `Brazil`, unless a named page says Brazil.\n9. **Row 1:** re-point Where-to-look to NOAA wandering poles + ESA Swarm + NASA Flip-Flop (the numbers live there). Keep marathon comparison only as labelled our-own arithmetic. Named BGS overview URL is 404 — do not cite it.\n10. **Row 16:** either keep `~1,000 g/cm²` with the NASA Langley PDF and say the 10 m water line is our unit conversion, or switch the spoken analogy to BGS's \"concrete layer some 13 feet thick\". Do not imply a page says \"10 metres of water\" unless it does.\n\nOK rows 2, 5, 7, 8, 12, 13, 14, 17, 19: leave spoken claims as is; you may still refresh Exact-quote cells if cleaner.\n\nWhen done: commit script v02 + SOURCES.md, post paths + review:script score on OWB #99, then `jobs.py block <id> --reason \"parked for Chief: script soft-PASS after J0318 FIX\" --git`.\n",
+      "ref": "666bacf8",
+      "film": "031",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T23:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T23:29Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
     }
   ],
   "focus": [],
