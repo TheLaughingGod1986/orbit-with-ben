@@ -22683,13 +22683,13 @@
       "stage": "sources",
       "after": "J0296",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-10-15T16:27Z",
-      "eta": "2026-10-15T17:57Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T16:26Z",
-      "result": "",
+      "result": "parked for Chief: script v01 + SOURCES v01 table at 97b7af4e (19 rows OK, FLAGs fixed, review:script PASS 93)",
       "history": [
         {
           "at": "2026-10-15T16:26Z",
@@ -22700,6 +22700,11 @@
           "at": "2026-10-15T16:27Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-15T16:32Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: script v01 + SOURCES v01 table at 97b7af4e (19 rows OK, FLAGs fixed, review:script PASS 93)"
         }
       ],
       "kind": "script"
