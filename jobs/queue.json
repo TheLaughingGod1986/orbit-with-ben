@@ -19558,10 +19558,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-15T08:09Z",
+      "eta": "2026-10-15T09:09Z",
       "created_by": "gemini",
       "created_at": "2026-10-15T06:22Z",
       "result": "",
@@ -19610,6 +19610,11 @@
           "at": "2026-10-15T07:22Z",
           "by": "claude",
           "what": "reopened: Ben OK'd the ElevenLabs spend (15 Oct: 'Spend ElevenLabs credit now. 83% remaining. You can spend an hour on redoing the music'). Generate 027 take 2 from 05_Music/BED_BRIEF_take2.md (Pace 76-88 BPM, its own plan), lay it with _lay_score_take2_v01i.py over v01i with the SFX stem, mix -14 LUFS / -1 dBTP, run music_gate + sfx_kit level. Timebox: about an hour of work and one or two takes. Log every credit in ai_spend. Copy the mixed v01j to OWB UAT (not only /private/tmp; the NAS is hung) and park for Chief with the gate output."
+        },
+        {
+          "at": "2026-10-15T08:09Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
