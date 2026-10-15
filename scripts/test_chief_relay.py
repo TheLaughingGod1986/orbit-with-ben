@@ -22,7 +22,7 @@ class Relay(unittest.TestCase):
         notify.write_text(f'#!/bin/sh\necho "$1" >> "{self.posts}"\n')
         notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
         self.env = dict(os.environ)
-        os.environ.update({"CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
+        os.environ.update({"CHIEF_CLAUDE_BEAT_URL": "", "CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
                            "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0"})  # never push a heartbeat from a test run on the Mini
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
@@ -234,6 +234,18 @@ class Relay(unittest.TestCase):
         self.assertFalse(cr.out_of_credit(1, work + "Traceback: KeyError 'slot'"))
         said = cr.credit_phrase(1, work + "Error: You've hit your usage limit. Try again at 4am.")
         self.assertIn("usage limit", said)
+
+    def test_cursor_out_of_its_opus_pool_runs_on_auto_and_stays_up(self):
+        # 15 Oct 2026 03:40Z: "You've hit your usage limit for Opus ... Switch to a different model" benched all of Cursor.
+        self.assertEqual(cr.cli_spec("cursor")[1].count("--model"), 0)
+        cr.write_json(cr.d("cursor_default_out.json"), {"until": cr.iso(cr.now() + dt.timedelta(hours=1))})
+        args = cr.cli_spec("cursor")[1]
+        self.assertEqual(args[args.index("--model") + 1], "auto")
+        self.assertTrue(cr.state_of("cursor", cr.now())[0])
+        cr.write_json(cr.d("cursor_default_out.json"), {"until": cr.iso(cr.now() - dt.timedelta(minutes=1))})
+        self.assertNotIn("--model", cr.cli_spec("cursor")[1])   # the mark ended: back to Cursor's own default
+        self.assertTrue(cr.MODEL_LIMIT_RE.search("ActionRequiredError: You've hit your usage limit for Opus You've saved $780"))
+        self.assertFalse(cr.MODEL_LIMIT_RE.search("ERROR: You've hit your usage limit. Upgrade to Pro"))
 
     def test_the_mark_says_what_the_cli_said(self):
         self.fake("cursor", 'echo "Error: You are out of credits. Upgrade your plan."; exit 1')
@@ -666,6 +678,17 @@ class Relay(unittest.TestCase):
         self.assertFalse(cr.claude_out(T0)[0])
         self.beat(T0 - 95 * MIN)
         self.assertTrue(cr.claude_out(T0)[0])
+
+    def test_the_newest_beat_wins_when_git_is_stale(self):
+        # 15 Oct 2026 03:40Z: the Mini's git read still showed the 01:51 beat after a 03:31 push.
+        old = cr.raw_claude_beat
+        cr.raw_claude_beat = lambda: {"at": cr.iso(T0 - 2 * MIN), "who": "claude"}
+        try:
+            cr.write_json(cr.d("claude_beat.json"), {"beat": {"at": cr.iso(T0 - 120 * MIN)}})
+            cr.fetch_claude_beat(T0)
+            self.assertFalse(cr.claude_out(T0)[0])
+        finally:
+            cr.raw_claude_beat = old
 
     def test_no_heartbeat_yet_changes_nothing(self):
         self.assertFalse(cr.claude_out(T0)[0])
