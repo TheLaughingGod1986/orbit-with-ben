@@ -5,8 +5,19 @@
   "stages": {
     "sources": {
       "state": "blocked"
+    },
+    "vo": {
+      "state": "doing"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "vo",
+      "by": "cursor",
+      "at": "2026-10-15T16:41Z",
+      "eta": "2026-10-15T18:10Z",
+      "note": "J0302 032 Titan: VO from locked script v01 (J0301 PASS)"
+    }
+  ],
   "next": ""
 }
