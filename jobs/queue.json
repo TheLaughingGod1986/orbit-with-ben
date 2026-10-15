@@ -24111,13 +24111,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T20:03Z",
-      "eta": "2026-10-15T22:03Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T19:37Z",
-      "result": "",
+      "result": "parked for Chief: merge cursor/j0327-027-captions (b7c5cc92) and the final OK. Dry-run PASS, private Sun 22 Nov 18:00Z, captions and 45s trailer set. No upload.",
       "history": [
         {
           "at": "2026-10-15T19:37Z",
@@ -24153,6 +24153,11 @@
           "at": "2026-10-15T20:12Z",
           "by": "cursor",
           "what": "step 4 of 4 done: dry-run PASS, posted #6201315859"
+        },
+        {
+          "at": "2026-10-15T20:12Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: merge cursor/j0327-027-captions (b7c5cc92) and the final OK. Dry-run PASS, private Sun 22 Nov 18:00Z, captions and 45s trailer set. No upload."
         }
       ],
       "kind": "assembly",
