@@ -1,5 +1,5 @@
 {
-  "next_id": 286,
+  "next_id": 287,
   "jobs": [
     {
       "id": "J0001",
@@ -21283,6 +21283,33 @@
       "stage": "upload",
       "after": "",
       "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T12:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T12:11Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0286",
+      "title": "030 Apophis Short BbsyFrV8kCY: set Studio Short cover before Thu 22 Oct 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J0284 PASS (Chief). AGENTS.md: every Short's cover must be set in Studio before go-live (API cover often doesn't show). BbsyFrV8kCY has YouTube auto thumbs but no custom package thumbnail (thumbnailPath null). Before Thu 22 Oct 11:30 London, set the Short cover in Studio CDP 9223 from frame 0 of the master (or package social coverMs=0), Orbit channel. Do not change title, privacy, or publishAt. Screenshot proof. No spend.",
+      "ref": "",
+      "film": "030",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 45,
       "status": "open",
       "by": "",
       "since": "",
