@@ -23864,16 +23864,16 @@
       "title": "031 Magnetic Field Flip: Gemini facts quote pass on SOURCES.md (MUST QUOTE rows)",
       "needs": "gemini",
       "repo": "owb",
-      "body": "031 Magnetic Field Flip script v01 is draft-locked (Chief PASS J0259, e034fdc3). SOURCES.md has ~19 MUST QUOTE rows still TO VERIFY (Gemini stand-in notes only; no verbatim quotes yet).\n\nRun the Gemini facts quote pass on SOURCES.md: open each MUST QUOTE source URL, copy a verbatim Exact quote (or FLAG if the page does not support the claim), set Verdict OK/PARTIAL/FLAG, and write GEMINI_QUOTE_PASS (or append Exact quotes) the same way as J0296/J0304. Neighbour pass not required (already past topic lock).\n\nPark for Chief: facts quote PASS. No spoken-line rewrite, no VO, no picture, no spend.\n",
+      "body": "031 Magnetic Field Flip script v01 is draft-locked (Chief PASS J0259, e034fdc3). SOURCES.md has ~19 MUST QUOTE rows still TO VERIFY (Gemini stand-in notes only; no verbatim quotes yet).\n\nRun the Gemini facts quote pass on SOURCES.md: open each MUST QUOTE source URL, copy a verbatim Exact quote (or FLAG if the page does not support the claim), set Verdict OK/PARTIAL/FLAG, and write GEMINI_QUOTE_PASS (or append Exact quotes) the same way as J0296/J0304. Neighbour pass not required (already past topic lock).\n\nPark for Chief: facts quote PASS. No spoken-line rewrite, no VO, no picture, no spend.\n\nRUNNING: Gemini gemini-4-argon-high quote pass is in tmux j0318-facts. Log ~/_desk/logs/j0318-facts.log. Done file ~/_desk/logs/j0318-facts.done. Worktree /private/tmp/j0318-wt. If the done file is missing, it is still running: do not start a second agy. If the done file is present, read the exit code and the log, check SOURCES.md and GEMINI_QUOTE_PASS_v01.md in that worktree (every row has a verdict and a verbatim quote or a FLAG reason, no TO VERIFY left), commit those two files from the worktree, then park for Chief: facts quote PASS. Do not rewrite Gemini's quotes or any spoken line.\n",
       "ref": "6198817961",
       "film": "031",
       "stage": "sources",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-15T22:05Z",
-      "eta": "2026-10-15T23:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T18:27Z",
       "result": "",
@@ -23897,15 +23897,25 @@
           "at": "2026-10-15T22:07Z",
           "by": "cursor",
           "what": "step 1 of 4 done: agy argon-high in tmux j0318-facts"
+        },
+        {
+          "at": "2026-10-15T22:20Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: agy argon-high fetching sources in tmux j0318-facts"
+        },
+        {
+          "at": "2026-10-15T22:20Z",
+          "by": "cursor",
+          "what": "released: RUNNING: Gemini gemini-4-argon-high quote pass is in tmux j0318-facts. Log ~/_desk/logs/j0318-facts.log. Done file ~/_desk/logs/j0318-facts.done. Worktree /private/tmp/j0318-wt. If the done file is missing, it is still running: do not start a second agy. If the done file is present, read the exit code and the log, check SOURCES.md and GEMINI_QUOTE_PASS_v01.md in that worktree (every row has a verdict and a verbatim quote or a FLAG reason, no TO VERIFY left), commit those two files from the worktree, then park for Chief: facts quote PASS. Do not rewrite Gemini's quotes or any spoken line."
         }
       ],
       "kind": "facts",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-15T22:07Z",
+        "at": "2026-10-15T22:20Z",
         "by": "cursor",
-        "note": "agy argon-high in tmux j0318-facts"
+        "note": "agy argon-high fetching sources in tmux j0318-facts"
       }
     },
     {
