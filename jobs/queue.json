@@ -12195,10 +12195,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-15T02:50Z",
-      "eta": "2026-10-15T06:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12487,6 +12487,11 @@
           "at": "2026-10-15T02:51Z",
           "by": "codex",
           "what": "step 4 of 6 done: Both live render exit files absent; logs empty; no duplicate launched"
+        },
+        {
+          "at": "2026-10-15T02:51Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Checked existing detached sessions J0175-ruling-v03 and J0175-closing-v04: both exist; /Users/benjaminoats/_desk/logs/J0175-bridge4-v03.done and J0175-closing-v04.done absent; corresponding logs empty. Prior NAS I/O stall remains unverified/resolving in background. No duplicates, mount changes, spend or PASS. Implementation/evidence already HOS PR #300 2c40585, COMPILATION_CHIEF_RULING_v03.md. Next run check exit files then segment gates/card review; full compilation waits for 006 master."
         }
       ],
       "kind": "assembly",
