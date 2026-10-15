@@ -25,6 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0280 | mini | blocked | cursor | – | studio · HOS Related fixes ×4 after longs public (from J0245) |  |
 | J0287 | mini | blocked | chief | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
 | J0288 | mini | blocked | claude | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
+| J0289 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
 
