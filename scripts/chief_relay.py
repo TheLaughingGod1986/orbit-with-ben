@@ -455,10 +455,23 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     return code, out[-4000:]
 
 
-def out_of_credit(code: int, tail: str) -> bool:
+def credit_phrase(code: int, tail: str) -> str:
+    """The out-of-credit / signed-out phrase a CLI ended its run with, or "". Only the last CHIEF_CREDIT_TAIL (800)
+    characters count: that's where a CLI prints its own error. A run that did real work and quoted a YouTube 429, a
+    Buffer "unauthorized" or an ai_spend "billing" line further up is not the agent being out (Ben, 15 Oct 2026: Cursor
+    and Codex were marked out overnight while both had credit, and only Gemini ran)."""
     if code == 124:
-        return False  # it was working when the cap hit
-    return bool(CREDIT_RE.search(tail)) and (code != 0 or len(tail.strip()) < 600)
+        return ""  # it was working when the cap hit
+    end = tail.strip()[-int(os.environ.get("CHIEF_CREDIT_TAIL", "800")):]
+    m = CREDIT_RE.search(end)
+    if not m or (code == 0 and len(tail.strip()) >= 600):
+        return ""
+    line = next((l for l in end.splitlines() if m.group(0) in l), m.group(0))
+    return line.strip()[:160]
+
+
+def out_of_credit(code: int, tail: str) -> bool:
+    return bool(credit_phrase(code, tail))
 
 
 def handover(new, rows, at: dt.datetime) -> None:
@@ -648,7 +661,8 @@ def fetch_claude_beat(at: dt.datetime):
 
 def claude_beat_state(at: dt.datetime):
     """(out, why) from Claude's heartbeat alone, or None when there is no heartbeat yet (then the other signs decide).
-    Out when the last beat is older than CHIEF_CLAUDE_STALE_MIN (150: two missed hourly runs) or Claude said it's out.
+    Out when the last beat is older than CHIEF_CLAUDE_STALE_MIN (90: one missed hourly run and a half; it was 150 until
+    Ben, 15 Oct 2026: "when your usage ran out, work stopped again") or Claude said it's out.
     A fresh beat after a down mark clears the mark: Claude is back, and its work comes back to it."""
     beat = (read_json(d("claude_beat.json")) or {}).get("beat")
     if not beat or not beat.get("at"):
@@ -667,7 +681,7 @@ def claude_beat_state(at: dt.datetime):
         mark_up("claude")
         log(f"claude: heartbeat {beat['at']} is newer than its down mark: Claude is back")
     age = int((at - bat).total_seconds() // 60)
-    if age > int(os.environ.get("CHIEF_CLAUDE_STALE_MIN", "150")):
+    if age > int(os.environ.get("CHIEF_CLAUDE_STALE_MIN", "90")):
         return True, f"no Claude run for {age} min (heartbeat {beat['at']})"
     return None
 
@@ -1026,7 +1040,8 @@ def run_locked(at: dt.datetime) -> int:
         seen(who, at)
         started = now()
         code, tail = run_cli(who, prompt, cap, model)
-        usage = out_of_credit(code, tail)
+        said = credit_phrase(code, tail)
+        usage = bool(said)
         log_run(at, job, who, model, code, usage)
         if usage:
             until = now() + dt.timedelta(hours=retry_h)
@@ -1037,7 +1052,7 @@ def run_locked(at: dt.datetime) -> int:
                 routing.OUT.add(model)
                 log(f"{who} on {model} looks out of credit: that model is flagged until {iso(until)}; {who} stays up")
             else:
-                mark_down(who, "out of usage, credit or signed out (its last run said so)", until, now())
+                mark_down(who, f"out of usage, credit or signed out (its last run ended: \"{said}\")", until, now())
                 log(f"{who} looks out of usage or signed out: down until {iso(until)}; walking the job's chain")
             if job:
                 walk_on(job, who, model, now())
