@@ -52,6 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0272 | mini | open | – | – | for cursor · assembly · Codex check: Ben says Codex has credit. Clear its down mark and test each Codex model |  |
 | J0273 | mini | open | – | – | for codex · thumb · Thumbnail redo batch 2: Moon, Last Star, Neutron Star B candidates |  |
 | J0274 | mini | open | – | – | for codex · thumb · Thumbnail redo batch 3: Alien Worlds and HOS Germs B candidates |  |
+| J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 
 Recently finished:
 
