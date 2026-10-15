@@ -15318,13 +15318,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-14T09:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-12T21:21Z",
-      "result": "parked for Chief: restore reachable signed-in Studio CDP sessions; 127.0.0.1:9223 and :9222 time out even outside sandbox. No Studio metrics read or tracker values changed.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T21:21Z",
@@ -15390,18 +15390,16 @@
           "at": "2026-10-15T08:47Z",
           "by": "chief",
           "what": "left parked: infra — Studio CDP unreachable; health keeper."
+        },
+        {
+          "at": "2026-10-15T08:52Z",
+          "by": "chief",
+          "what": "reopened: CDP 9222+9223 reachable again (Chrome/155); Studio sessions up. Reopened so daily Studio read can claim."
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-10-14T09:43Z",
-        "by": "codex",
-        "note": "Read brief and checked Studio endpoints; both time out"
-      },
       "escalated_at": "2026-10-14T11:44Z"
     },
     {
