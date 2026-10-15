@@ -4,7 +4,7 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "blocked",
+      "state": "doing",
       "ref": "e034fdc3"
     },
     "sources": {
@@ -12,6 +12,14 @@
       "ref": "666bacf8"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "chief",
+      "at": "2026-10-15T23:37Z",
+      "eta": "2026-10-16T01:36Z",
+      "note": "J0339 031 Magnetic Field Flip: soft-edit PARTIAL spoken lines after J0318 FIX (script v02 + SOURCES)"
+    }
+  ],
   "next": "J0339 soft-edit PARTIAL spoken lines (Chief FIX on J0318)"
 }
