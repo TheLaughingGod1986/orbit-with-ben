@@ -146,10 +146,10 @@
       "limit": ""
     },
     "OWB:024": {
-      "updated": "2026-10-11T22:30Z",
-      "mood": "fixing",
+      "updated": "2026-10-15T18:25Z",
+      "mood": "ready",
       "done": "Script, voice, thumbnails, the upload package and its own music. v05 fixed nearly all of the v04 picture: dark frames down to 14%, no freezes, music sitting under the voice.",
-      "holdup": "The Chief failed v05 on two shots only (11 Oct): a clock graphic reused at 7:19 and one starfield shot that runs 26 s at the end and is a repeat. Cursor fixes those two in v05b (J0132), the Chief checks it, then it comes to you. v05 isn't for you to watch.",
+      "holdup": "Nothing is wrong with it. It sat because no job moved it on after the Chief's pass on 12 Oct. J0309 copies v05d to OWB UAT and gets the Private upload ready for Sun 1 Nov.",
       "steps": [
         {
           "who": "Ben",
@@ -177,28 +177,28 @@
         },
         {
           "who": "Cursor",
-          "what": "v05b: replace the 2 repeated shots",
-          "job": "J0132"
+          "what": "v05b to v05d: the Chief's fixes and teaching overlays",
+          "done": true,
+          "doneText": "picture lock v05d · Mon 12 Oct (J0149)"
         },
         {
-          "who": "Chief",
-          "what": "check v05b",
-          "afterJob": "J0132",
-          "lag": 60
+          "who": "Cursor",
+          "what": "v05d into OWB UAT, Private upload ready",
+          "job": "J0309"
         },
         {
           "who": "Ben",
-          "what": "watch v05b",
-          "whenText": "after the Chief's check"
+          "what": "watch v05d",
+          "when": "2026-10-16"
         }
       ],
-      "you": "",
+      "you": "Watch 024 v05d in OWB UAT once it lands there today (J0309).",
       "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "v05 is nearly there. Cursor swaps two repeated shots in v05b (J0132), then the Chief checks it and it comes to you.",
-      "youWhen": "",
-      "youShort": "",
-      "limit": "It's kept off YouTube until then, for the same reason as 023. If you haven't flagged anything by Fri 16 Oct, the Chief's final OK goes ahead.",
-      "watchFrom": "v05b"
+      "line": "Finished: picture locked as v05d (Chief passed it 12 Oct). The Mac mini puts it in OWB UAT for you today (J0309).",
+      "youWhen": "2026-10-16",
+      "youShort": "watch 024 v05d",
+      "limit": "If you haven't flagged anything by Fri 16 Oct, the Chief's final OK goes ahead and it uploads privately for Sun 1 Nov.",
+      "watchFrom": "v05d"
     },
     "OWB:025": {
       "updated": "2026-10-09T12:58Z",
@@ -317,11 +317,16 @@
       "line": "Rough cut v01k passes every picture, polish and music check (15 Oct). Next: its own music, then it's yours to watch."
     },
     "OWB:028": {
-      "updated": "2026-10-08T16:05Z",
-      "mood": "waiting",
+      "updated": "2026-10-15T18:25Z",
+      "mood": "good",
       "done": "Script, voice, shot list and 7 code graphics.",
       "holdup": "Waiting its turn behind 027 for picture.",
       "steps": [
+        {
+          "who": "Cursor",
+          "what": "gather source footage and write the shot boards (no spend)",
+          "job": "J0310"
+        },
         {
           "who": "Cursor",
           "what": "gather the source footage, then picture (2 Omni clips, 2 Veo props)",
@@ -330,15 +335,20 @@
       ],
       "you": "",
       "timing": "Airs Sun 29 Nov.",
-      "line": "Script and voice done. Picture after 027, about the week of 26 Oct."
+      "line": "Script and voice done. Shot boards are being written now (J0310), then the Chief prices the picture."
     },
     "OWB:029": {
-      "updated": "2026-10-08T16:05Z",
-      "mood": "waiting",
+      "updated": "2026-10-15T18:25Z",
+      "mood": "good",
       "done": "Script, voice, shot list (39 rows) and 6 code graphics.",
       "holdup": "Waiting its turn behind 028 for picture.",
       "limit": "One picture (the Super-Kamiokande detector, row 24) needs its licence checked before it's used.",
       "steps": [
+        {
+          "who": "Cursor",
+          "what": "gather source footage and write the shot boards (no spend)",
+          "job": "J0311"
+        },
         {
           "who": "Cursor",
           "what": "gather the source footage, then picture (2 Omni clips)",
@@ -347,7 +357,7 @@
       ],
       "you": "",
       "timing": "Airs Sun 6 Dec.",
-      "line": "Script and voice done. Picture after 028, early November."
+      "line": "Script and voice done. Shot boards next (J0311), after 028's, then the Chief prices the picture."
     },
     "HOS:005": {
       "updated": "2026-10-08T16:05Z",
@@ -371,12 +381,17 @@
       "line": "Finished and scheduled with its three Shorts."
     },
     "HOS:006": {
-      "updated": "2026-10-15T16:05Z",
+      "updated": "2026-10-15T18:25Z",
       "mood": "good",
       "done": "Script, voice and the Shorts. Picture is about half done: Part 01 is kept, Part 02's rough cut is held, and all 16 Part 03 shots made on the free Vertex trial (Sat 10 Oct) are kept.",
       "holdup": "Rough cuts for Parts 01, 03 and 04 pass the picture and polish checks. Part 02's v02 failed (5 repeated shots and a seam); Cursor fixed it in v03 (J0290), which passes, and the Chief kept it. Part 05 and the full cut come next.",
       "limit": "The Vertex trial has about £4.25 left after Part 03 (it runs down to £0, never onto the card). Flow had 52 credits before the refill; the new balance is read on Monday after 09:00 and priced before anything is spent. The Mac mini is shared with Orbit With Ben, so the two take turns.",
       "steps": [
+        {
+          "who": "Cursor",
+          "what": "join Parts 01-05 into the full film, then teaching graphics",
+          "job": "J0312"
+        },
         {
           "kind": "video",
           "who": "Cursor",
@@ -436,16 +451,21 @@
       "you": "Your final OK on Sun 1 Nov. Nothing before then.",
       "youWhen": "2026-11-01",
       "timing": "Airs Thu 5 Nov. On time if Monday's Flow refill covers Parts 04 and 05.",
-      "line": "Rough cuts of Parts 01 to 04 all pass their checks (15 Oct). Part 02's fixed v03 is the one kept.",
+      "line": "All five parts pass their checks. Next the Mac mini joins them into the full film (J0312).",
       "youShort": "your final OK Sun 1 Nov"
     },
     "HOS:007": {
-      "updated": "2026-10-08T16:05Z",
-      "mood": "waiting",
+      "updated": "2026-10-15T18:25Z",
+      "mood": "good",
       "done": "Script, fact check, long voiceover, and the plate boards (96 rows, priced).",
       "holdup": "Waiting its turn. The Shorts voiceover was due Wed 7 Oct but slipped behind 008's voiceover and today's 006 picture. Picture can't start until the voiceover batch is done and the Flow credits refill.",
       "limit": "Picture costs about £58 for first takes (about £139 with the usual retakes), so it needs the 12 Oct Flow refill.",
       "steps": [
+        {
+          "who": "Claude",
+          "what": "Claude reviews the shot boards before the picture credit",
+          "job": "J0315"
+        },
         {
           "who": "Cursor",
           "what": "Shorts A to C voiceover (about an hour)",
@@ -471,7 +491,7 @@
       "you": "Your final OK on Sun 8 Nov. Nothing before then.",
       "youWhen": "2026-11-08",
       "timing": "Airs Thu 12 Nov.",
-      "line": "Script and voice done. Shorts voice next, then picture after 006's.",
+      "line": "Script and voice done. Claude reviews the shot boards (J0315), then the picture is made on Flow.",
       "youShort": "your final OK Sun 8 Nov"
     },
     "HOS:008": {
@@ -505,11 +525,16 @@
       "youShort": "your final OK Sun 15 Nov"
     },
     "HOS:009": {
-      "updated": "2026-10-15T16:05Z",
+      "updated": "2026-10-15T18:25Z",
       "mood": "good",
       "done": "Script, fact check, upload package, voiceover and the shot boards.",
       "holdup": "Locked voice; shot boards v01 for all 90 rows are done (J0261, HOS PR #331). On Flow they need about 15,600 of the 23,700 credits left, so no money; Vertex would cost more than is left, so it isn't used. The Chief prices it before anything is made.",
       "steps": [
+        {
+          "who": "Cursor",
+          "what": "shot boards v02 with the Chief price-pass changes",
+          "job": "J0313"
+        },
         {
           "who": "Cursor",
           "what": "long voiceover (about 1 to 2 hours)",
@@ -532,15 +557,20 @@
       "you": "Your final OK on Sun 22 Nov.",
       "youWhen": "2026-11-22",
       "timing": "Airs Thu 26 Nov.",
-      "line": "Shot boards for every scene are done (15 Oct). The Chief prices the picture next; it fits in the Flow credits.",
+      "line": "Shot boards passed on price with changes; v02 boards next (J0313). Picture after 006 and 007.",
       "youShort": "your final OK Sun 22 Nov"
     },
     "HOS:010": {
-      "updated": "2026-10-08T16:05Z",
-      "mood": "waiting",
+      "updated": "2026-10-15T18:25Z",
+      "mood": "good",
       "done": "Script, fact check and upload package.",
       "holdup": "Waiting its turn: its voiceover follows 009's.",
       "steps": [
+        {
+          "who": "Cursor",
+          "what": "write the shot boards from the locked voice (no spend)",
+          "job": "J0314"
+        },
         {
           "who": "Cursor",
           "what": "long voiceover",
@@ -561,7 +591,7 @@
       "you": "Your final OK on Sun 29 Nov.",
       "youWhen": "2026-11-29",
       "timing": "Airs Thu 3 Dec.",
-      "line": "Script done. Voiceover after 009's, about Sat 10 Oct.",
+      "line": "Script and voice done. Shot boards are being written now (J0314), then the Chief prices the picture.",
       "youShort": "your final OK Sun 29 Nov"
     }
   }
