@@ -21427,13 +21427,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T12:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T12:11Z",
-      "result": "parked for Chief: Vercel Blob put still returns store_suspended ('This store has been suspended'). List works (23 files, 692 MB). No buy, top-up, or spend. BbsyFrV8kCY not mirrored; YouTube publishAt stays 2026-10-22T10:30:00Z. Chief escalates to Ben only if unsuspending the store needs money.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T12:11Z",
@@ -21459,16 +21459,14 @@
           "at": "2026-10-15T12:28Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Vercel Blob put still returns store_suspended ('This store has been suspended'). List works (23 files, 692 MB). No buy, top-up, or spend. BbsyFrV8kCY not mirrored; YouTube publishAt stays 2026-10-22T10:30:00Z. Chief escalates to Ben only if unsuspending the store needs money."
+        },
+        {
+          "at": "2026-10-15T12:37Z",
+          "by": "chief",
+          "what": "reopened: Chief ruled: Hobby Blob limits-exceeded; no spend; wait for put"
         }
       ],
-      "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-15T12:28Z",
-        "by": "cursor",
-        "note": "Blob put refused: store_suspended; 23 files, 692 MB listed"
-      }
+      "kind": "studio"
     }
   ],
   "focus": [
