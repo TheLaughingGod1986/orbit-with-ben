@@ -1001,6 +1001,9 @@ def run_locked(at: dt.datetime) -> int:
     chain_max = int(os.environ.get("CHIEF_CHAIN_MAX", "12"))
     chained, last_ran = 0, None
     while True:
+        # Re-read Claude's heartbeat each pass (at most every 5 min): a chain of worker jobs can hold this run for
+        # hours, and on 15 Oct 2026 it kept reading the 04:04 beat until 06:03 after fresh beats at 05:49 and 05:51.
+        fetch_claude_beat(now())
         rows, who = acting(at)
         handover(who, rows, at)
         log("chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in rows))
