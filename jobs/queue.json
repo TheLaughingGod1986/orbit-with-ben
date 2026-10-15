@@ -18616,10 +18616,24 @@
           "at": "2026-10-15T03:40Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T04:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "kind": "assembly",
-      "backlog": "owb-short-from-locked"
+      "backlog": "owb-short-from-locked",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0254",
