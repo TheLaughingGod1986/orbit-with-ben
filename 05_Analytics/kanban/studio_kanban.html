@@ -59,7 +59,8 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .vr .vn{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2)}
 .vr .v3{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2px 10px;margin-top:3px;font-size:12px;color:var(--ink-3)}
 .vr .vy{color:var(--accent);font-weight:600}
-.youbar.quiet{display:none}
+.youbar.quiet{border-left-color:var(--line)}
+.youbar .nx{display:block;margin-top:3px;font-size:13px;color:var(--ink-3)}
 .vr .pill.now{background:var(--doing-soft);color:var(--doing)}
 .vr .pill.next{background:var(--accent-soft);color:var(--accent)}
 .vr .pill.bad{background:var(--blocked-soft);color:var(--blocked)}
@@ -1448,7 +1449,8 @@ function renderTracker(films){
   // One line at the top: is anything on Ben, and what airs next.
   const yb = $("youbar"); if(!yb) return;
   const soon = forYou.filter(x=>x.soon);
-  // Ben, 14 Oct: no "Nothing for you right now" box taking space; it shows only when there is something for him.
+  // Ben, 15 Oct 2026: "we used to have a section at the top saying ready for me ... can we add that section back".
+  // It always shows: the cuts to watch (with the player, Approve and timed change notes), or the next one coming.
   yb.className = "youbar" + (soon.length ? " has" : justTicks(ticked, Date.now()).length ? "" : " quiet");
   if(yb.contains(document.activeElement) && ["TEXTAREA","INPUT"].includes(document.activeElement.tagName) && document.activeElement.value) return;   // don't wipe a fix being typed
   const fixList = (fx, id, editable) => fx.length ? `<ol class="fx">${fx.map((f,k)=>`<li>${f.t?`<span class="ft2">${esc(f.t)}</span>`:""}<span>${esc(f.text)}</span>${editable?`<button class="lnk" data-rm="${id}:${k}" aria-label="Remove">remove</button>`:""}</li>`).join("")}</ol>` : "";
@@ -1471,7 +1473,8 @@ function renderTracker(films){
   const justHtml = just.map(x=>justLine(x) + (changeOpen===x.f.key.replace(":","-") && x.c.verdict!=="ok" ? `<ul class="yl"><li class="chg"><span>✎</span>${editor(changeOpen, true)}</li></ul>` : "")).join("");
   yb.innerHTML = (soon.length ? `<b>Ready for you to check (${soon.length})</b><ul class="yl">${soon.map(item).join("")}</ul>
       <div class="why">${soon.every(x=>watchLink(x.f.key))?"Tap <b>▶ Watch</b> to open it on your phone (also in iCloud Drive › <b>OWB UAT</b> / <b>HOS UAT</b>).":"Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder."} ${dbApi?"Watch it, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":`When you've checked one, tell the Chief "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
-    : `<b>Nothing for you right now.</b>`) + justHtml;
+    : (()=>{ const nx = simple.filter(r=>!r.live && !r.isSched && r.ready).sort((a,b)=>(a.air||9e15)-(b.air||9e15))[0];
+        return `<b>Ready for you</b><span class="nx">Nothing to watch right now.${nx?` Next: <b>${esc(nx.f.id)}</b> ${esc(nx.f.title||"")}, ready for you ${esc(String(nx.ready).replace(/<[^>]+>/g,""))}.`:""}</span>`; })()) + justHtml;
   const keyOf = id => id.replace("-",":");
   const saveCheck = async (id, verdict, fixes) => {
     if(!dbApi) return;
