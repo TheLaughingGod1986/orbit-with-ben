@@ -1,5 +1,5 @@
 {
-  "next_id": 333,
+  "next_id": 334,
   "jobs": [
     {
       "id": "J0001",
@@ -24566,6 +24566,33 @@
         }
       ],
       "kind": "chart"
+    },
+    {
+      "id": "J0333",
+      "title": "HOS 009: plate boards v03 — six Fast continuations as own Fast mints (J0313 FIX), no mint",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J0313 Chief FIX (HOS #180 6202998478). HOS 009 plate boards v02 on PR #331 (38bb802) are right on conditions 1, 3 and 4. Fix condition 2: the six Fast continuations marked edit-hold (P1:03_table_three_c1, P1:03_table_three_c2, P3:09_can_he_calculate_c1, P4:06_pretty_nearly_c1, P4:10_write_it_down_c1, P5:03_halley_comet_path_c1) cannot be covered by their parents (2.8-6.2 s short each), and a picture hole is not allowed. In boards v03 make each of them its own Fast mint with a distinct beat (new angle or move, same look as the parent), refresh PICTURE_PLAN/PRICE_REVIEW totals (Flow-first; Vertex does not fit), and push to PR #331. Mint order ruling: 006 -> 007 -> 008 -> 009; 009 mints last and only when a live Flow reading then covers its expected total plus 3,000 headroom, else it waits for the next Flow refresh. No mint, no spend, no merge, no top-up. Park for Chief.\n",
+      "ref": "6202998478",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T21:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T21:49Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [
