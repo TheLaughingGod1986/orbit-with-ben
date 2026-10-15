@@ -21095,13 +21095,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T12:38Z",
-      "eta": "2026-10-15T13:38Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T08:47Z",
-      "result": "",
+      "result": "waits for input: both target longs still private (API 15 Oct). GHZDsiH7L7A publishAt 15 Oct 17:00Z — reopen then to set JyRjM-9Yc8g Related. wwcjcFfC-5M publishAt 29 Oct 18:00Z — 1lszTrYRp-8, mTY67qet7cM and x_3L_IdYgEc wait until that long reads Public. No Studio writes.",
       "history": [
         {
           "at": "2026-10-15T08:47Z",
@@ -21122,6 +21122,11 @@
           "at": "2026-10-15T12:41Z",
           "by": "cursor",
           "what": "step 1 of 2 done: both longs still private on the API"
+        },
+        {
+          "at": "2026-10-15T12:41Z",
+          "by": "cursor",
+          "what": "blocked: waits for input: both target longs still private (API 15 Oct). GHZDsiH7L7A publishAt 15 Oct 17:00Z — reopen then to set JyRjM-9Yc8g Related. wwcjcFfC-5M publishAt 29 Oct 18:00Z — 1lszTrYRp-8, mTY67qet7cM and x_3L_IdYgEc wait until that long reads Public. No Studio writes."
         }
       ],
       "kind": "studio",

@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0278 | mini | open | – | – | studio · NAS: create youtube-staging folder + README (Ben's OK 15 Oct) |  |
 | J0279 | mini | open | – | – | image · HOS Germs thumb B via Flow Nano Banana 2 (not gpt-image-2) |  |
-| J0280 | mini | claimed | cursor | 2026-10-15T13:38Z | studio · HOS Related fixes ×4 after longs public (from J0245) |  |
+| J0280 | mini | blocked | cursor | – | studio · HOS Related fixes ×4 after longs public (from J0245) |  |
 | J0281 | mini | open | – | – | studio · OWB: schedule PASS Shorts (Venus J0232, Saturn late-arrival J0253) |  |
 | J0282 | mini | open | – | – | assembly · HOS 008 PR #322 rebase + squash-merge after J0240 PASS |  |
 | J0287 | mini | blocked | chief | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
