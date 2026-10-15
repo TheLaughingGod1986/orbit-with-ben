@@ -25161,13 +25161,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-10-15T23:31Z",
-      "eta": "2026-10-16T01:31Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T23:29Z",
-      "result": "",
+      "result": "parked for Chief: script soft-PASS after J0318 FIX (37eab443, review:script 95.8)",
       "history": [
         {
           "at": "2026-10-15T23:29Z",
@@ -25178,6 +25178,11 @@
           "at": "2026-10-15T23:31Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-15T23:34Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: script soft-PASS after J0318 FIX (37eab443, review:script 95.8)"
         }
       ],
       "kind": "script"
