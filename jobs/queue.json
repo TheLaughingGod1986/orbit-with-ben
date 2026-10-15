@@ -24015,7 +24015,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T19:27Z",
-      "result": "parked for Chief: final OK before Private upload of 027 v01l. Dry-run complete, publishAt 2026-11-22T18:00:00Z, sha256 7d51961f. J0327 captions+trailer PASS (bc7012b4). Still needs J0328 long thumbnail. Watch OWB UAT/027_EarthSpin_rough_v01l.mp4 by Mon 19 Oct 23:59 London. No upload.",
+      "result": "parked for Chief: final OK before Private upload of 027 v01l. Dry-run complete, publishAt 2026-11-22T18:00:00Z, sha256 7d51961f. J0327 captions+trailer PASS (bc7012b4), J0328 thumbs A/B/C PASS (61003f68). Watch OWB UAT/027_EarthSpin_rough_v01l.mp4 by Mon 19 Oct 23:59 London. No upload.",
       "history": [
         {
           "at": "2026-10-15T19:27Z",
@@ -24056,6 +24056,11 @@
           "at": "2026-10-15T20:17Z",
           "by": "chief",
           "what": "left parked (Chief review): J0327 captions + trailer PASS (merged bc7012b4). Final OK still waits for J0328 long thumbs PASS and Ben's watch/KEEP of OWB UAT/027_EarthSpin_rough_v01l.mp4, or Mon 19 Oct 23:59 London if no reply (then Chief final OK goes ahead). No upload. £0."
+        },
+        {
+          "at": "2026-10-15T20:30Z",
+          "by": "chief",
+          "what": "left parked (Chief review): J0328 long thumbs A/B/C PASS (merged 61003f68); package now has captions, trailer and thumbnails. Final OK now waits only on Ben's watch/KEEP of OWB UAT/027_EarthSpin_rough_v01l.mp4, or Mon 19 Oct 23:59 London if no reply (then Chief final OK goes ahead). No upload. £0."
         }
       ],
       "kind": "assembly",
@@ -24218,13 +24223,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-15T20:13Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T19:38Z",
-      "result": "parked for Chief: review A/B/C contact sheet and hooks, merge codex/j0328-thumbnails (be77ab3b), and decide final approval; private dry-run succeeded, no live changes",
+      "result": "Chief PASS (review sweep 15 Oct ~21:35 London): A OCEANS MOVE / B ONE-YEAR DAYS / C AIR RACES ON on the real DSCOVR EPIC globe (no Orbit), house Arial Black white + one yellow hook word, 2-3 words on the clear left edge, off the subject and out of the duration corner; readable at 168x94 on contact_sheet.jpg. Hooks add to the title (no repeat) and are backed by CLAUDE_CLAIMS_v01 rows 9 (slow stop -> polar oceans), 10 (one day lasts a year) and 6 (equatorial air keeps going). Near-black 2.1-2.6% (cap 30%), score fails none. Blue Earth disc differs from 026's warm starburst (back-to-back look rule OK). JPEG sha256 a4470d96/2e20605b/19e71f1d match META on the mini. Dry-run 20:20:05Z ok, Private publishAt 2026-11-22T18:00Z, thumbnail A + 3 ABC, video sha 7d51961f unchanged. T008 stays planned (no video id). Branch codex/j0328-thumbnails merged to main 61003f68 (manifest conflict resolved to the branch copy, a superset that keeps J0327 captions + trailer). No upload. £0.",
       "history": [
         {
           "at": "2026-10-15T19:38Z",
@@ -24265,6 +24270,11 @@
           "at": "2026-10-15T20:18Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review A/B/C contact sheet and hooks, merge codex/j0328-thumbnails (be77ab3b), and decide final approval; private dry-run succeeded, no live changes"
+        },
+        {
+          "at": "2026-10-15T20:30Z",
+          "by": "chief",
+          "what": "done: Chief PASS, merged 61003f68"
         }
       ],
       "kind": "thumb",
@@ -24274,7 +24284,8 @@
         "at": "2026-10-15T20:18Z",
         "by": "codex",
         "note": "Worker build and checks complete; be77ab3b pushed for Chief review; media verified on NAS"
-      }
+      },
+      "done_ref": "61003f68"
     }
   ],
   "focus": [
