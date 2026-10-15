@@ -16,3 +16,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/core_sync.py check
+      - run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_weekly_public_audit.py" -v

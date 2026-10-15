@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Weekly public audit — run every Monday (25 Sep 2026; see IMPROVEMENTS_BACKLOG.md).
+"""Weekly public audit — run every Monday (25 Sep 2026; see IMPROVEMENTS_BACKLOG.md). Studio core: identical in
+orbit-with-ben and history-of-science (edit it in orbit-with-ben only, scripts/core_sync.py); the channel's own
+settings come from channel_profile.py.
 
 Reads the public channel pages only (no Studio, no login) and writes
   00_Brand/Channel-Setup/audits/weekly/<YYYY-MM-DD>/PUBLIC_SNAPSHOT.json
@@ -8,15 +10,15 @@ Reads the public channel pages only (no Studio, no login) and writes
 Checks
   - subscribers, total Short and long views, and the change since the last snapshot
   - every upload that is new since the last snapshot
-  - frame 0 of each new Short (i.ytimg.com/vi/<id>/frame0.jpg): Orbit at frame 0, or a
-    dark frame 0 (THUMBNAIL_AND_TITLE_RULES.md §3 — world first-frames median 86.5 views,
-    Orbit 23.5, dark cards 16.5)
-  - titles: hashtags, hedged claims, and duplicate titles across the channel
+  - frame 0 of each new Short (i.ytimg.com/vi/<id>/frame0.jpg): a mostly dark frame 0, and on OWB
+    Orbit at frame 0 (THUMBNAIL_AND_TITLE_RULES.md §3 — world first-frames median 86.5 views,
+    Orbit 23.5, dark cards 16.5). The robot detector is off on HOS (it misfires on warm lamp light).
+  - titles: hashtags, hedged claims, duplicate titles, and longs that share a four-word title formula
 Cannot check from public pages: stayed-to-watch, CTR, or a silent soundtrack. Those stay
 Studio / `gate_shorts_open.py check` jobs.
 
 Usage
-  python3 weekly_public_audit.py [--date YYYY-MM-DD] [--handle OrbitWithBen]
+  python3 weekly_public_audit.py [--date YYYY-MM-DD] [--handle <channel handle; default from channel_profile.py>]
 Needs ffmpeg for the frame-0 checks; without it those checks are skipped and the report says so.
 """
 from __future__ import annotations
@@ -33,7 +35,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import gate_shorts_open as gate  # noqa: E402  (orbit_score / raw_frame / VISOR_FAIL)
+import gate_shorts_open as gate  # noqa: E402  (raw_frame; orbit_score / VISOR_FAIL on OWB)
+import channel_profile as channel  # noqa: E402  (this repo's own settings)
 
 ROOT = HERE.parents[2]
 WEEKLY = ROOT / "00_Brand/Channel-Setup/audits/weekly"
@@ -117,7 +120,7 @@ def frame0_flags(vid: str) -> list[str]:
         with urllib.request.urlopen(urllib.request.Request(f"https://i.ytimg.com/vi/{vid}/frame0.jpg", headers=UA), timeout=60) as r:
             p.write_bytes(r.read())
         flags = []
-        if gate.orbit_score(p, None)["visor_frac"] >= gate.VISOR_FAIL:
+        if channel.ROBOT_FRAME0_CHECK and gate.orbit_score(p, None)["visor_frac"] >= gate.VISOR_FAIL:
             flags.append("Orbit at frame 0")
         g = gate.raw_frame(p, 36, 64, None, "gray")
         if sum(1 for x in g if x > BRIGHT_LEVEL) / len(g) < DARK_BRIGHT_FRAC:
@@ -154,7 +157,7 @@ def previous(today: str) -> dict | None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--date", default=date.today().isoformat())
-    ap.add_argument("--handle", default="OrbitWithBen")
+    ap.add_argument("--handle", default=channel.HANDLE)
     ns = ap.parse_args()
 
     base = f"https://www.youtube.com/@{ns.handle}"
@@ -191,6 +194,14 @@ def main() -> int:
     for v in everything:
         seen.setdefault(norm(v["title"] or ""), []).append(v)
     dupes = [vs for vs in seen.values() if len(vs) > 1]
+    # Longs that open with the same four words read as a series label (THUMBNAIL_AND_TITLE_RULES.md §1.3).
+    formulas: dict[str, list[dict]] = {}
+    for v in snap["longs"]:
+        key = " ".join(norm(v["title"] or "").split()[:4])
+        if key:
+            formulas.setdefault(key, []).append(v)
+    formulas = {k: vs for k, vs in formulas.items() if len(vs) > 1}
+    subs = snap["subs"] if snap["subs"] is not None else "hidden"
     flagged = [(v, title_flags(v["title"] or "")) for v in everything]
     flagged = [(v, f) for v, f in flagged if f]
 
@@ -209,12 +220,12 @@ def main() -> int:
         l_gain = sum(v["views"] - prev_views.get(v["id"], 0) for v in snap["longs"])
         lines += [f"Compared with {prev['captured']}.", "",
                   "| | Now | Change |", "|---|---:|---:|",
-                  f"| Subscribers | {snap['subs']} | {(snap['subs'] or 0) - (prev.get('subs') or 0):+d} |",
+                  f"| Subscribers | {subs} | {snap['subs'] - prev['subs']:+d} |" if snap["subs"] is not None and prev.get("subs") is not None else f"| Subscribers | {subs} | — |",
                   f"| Views, newest 48 Shorts | {s_views:,} | {s_gain:+,} (like for like) |",
                   f"| Views, longs | {l_views:,} | {l_gain:+,} |", ""]
     else:
         lines += ["First snapshot — no comparison yet.", "",
-                  f"Subscribers {snap['subs']} · newest 48 Shorts {s_views:,} views · longs {l_views:,} views.", ""]
+                  f"Subscribers {subs} · newest 48 Shorts {s_views:,} views · longs {l_views:,} views.", ""]
 
     lines += ["## New since last week", ""]
     new_longs = [v for v in snap["longs"] if prev and v["id"] not in prev_views]
@@ -238,8 +249,10 @@ def main() -> int:
         lines.append("")
 
     lines += ["## Flags", ""]
-    if not dupes and not flagged:
+    if not dupes and not flagged and not formulas:
         lines += ["None.", ""]
+    for key, vs in formulas.items():
+        lines.append(f"- **Same title formula on {len(vs)} longs** (\"{key} …\"): " + " · ".join(f"`{v['id']}` ({v['views']} views)" for v in vs) + " (THUMBNAIL_AND_TITLE_RULES.md §1)")
     for vs in dupes:
         lines.append("- **Duplicate title:** " + " · ".join(f"`{v['id']}` ({v['kind']}, {v['views']} views)" for v in vs) + f" — *{vs[0]['title']}*")
     for v, f in flagged:
@@ -248,7 +261,7 @@ def main() -> int:
         if s.get("frame0_flags"):
             lines.append(f"- **{', '.join(s['frame0_flags']).capitalize()}:** `{s['id']}` *{s['title']}* (THUMBNAIL_AND_TITLE_RULES.md §3)")
     lines += ["", "## Still needs Studio",
-              "", "Public pages cannot show stayed-to-watch, CTR or a silent soundtrack. Add stayed-to-watch at 48 h for each new Short to `could-orbit-survive/TEST_LOG.md`, and run `gate_shorts_open.py check` on every export before upload.", ""]
+              "", f"Public pages cannot show stayed-to-watch, CTR or a silent soundtrack. Add stayed-to-watch at 48 h for each new Short to `{channel.SHORTS_LOG}`, and run `gate_shorts_open.py check` on every export before upload.", ""]
     (out_dir / "REPORT.md").write_text("\n".join(lines))
     print(out_dir / "REPORT.md")
     return 0
