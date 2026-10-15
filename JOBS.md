@@ -29,7 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0308 | mini | open | – | – | studio · HOS 004 s05 Dalton Short v02: package Private + publishAt on next free search-titled slot (J0306 PASS) |  |
 | J0309 | mini | blocked | cursor | – | 024 edit · assembly · 024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London) |  |
 | J0313 | mini | blocked | cursor | – | 009 picture · video · HOS 009: plate boards v02 per the J0261 price-pass conditions (no mint) |  |
-| J0314 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v01 from the locked script + long VO (Flow-first price table), no mint |  |
+| J0314 | mini | claimed | cursor | 2026-10-15T23:47Z | 010 picture · video · HOS 010: plate boards v01 from the locked script + long VO (Flow-first price table), no mint |  |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
 | J0318 | gemini | open | – | – | 031 sources · facts · 031 Magnetic Field Flip: Gemini facts quote pass on SOURCES.md (MUST QUOTE rows) | 6198817961 |
 | J0320 | mini | blocked | cursor | – | 004 edit · studio · HOS 004 GHZDsiH7L7A: Studio Editor blur garbled weights balls 1:19.7–1:24.5 (Chief ruling) | 6198166917 |
