@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0298 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0299 | cloud | open | – | – | script · HOS 013 Darwin–Wallace: full script v01 from locked opening_and_outline_v00 (review:script ≥ 90) | 6196336541 |
 | J0300 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0301 | cloud | open (after J0296) | – | – | 032 sources · script · 032 Titan: fix FLAG rows 1/9/15 + PARTIALs in SOURCES.md and script v01 (Chief notes on J0296) |  |
+| J0301 | cloud | claimed | claude | 2026-10-15T17:57Z | 032 sources · script · 032 Titan: fix FLAG rows 1/9/15 + PARTIALs in SOURCES.md and script v01 (Chief notes on J0296) |  |
 
 Recently finished:
 
