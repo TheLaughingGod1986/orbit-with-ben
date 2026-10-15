@@ -35,6 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0314 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v01 from the locked script + long VO (Flow-first price table), no mint |  |
 | J0315 | cloud | open | – | – | 007 picture · for claude · review · HOS 007: Claude's review of the picture plate boards (96 rows, 80 mints) before the picture credit |  |
 | J0316 | mini | claimed | cursor | 2026-10-15T20:08Z | 027 upload · studio · 027 Short earth_sudden_air_v02: package Private + publishAt on next free OWB Short slot (J0303 PASS) | 6197845034 |
+| J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
 
 Recently finished:
 
