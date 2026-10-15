@@ -1,5 +1,5 @@
 {
-  "next_id": 272,
+  "next_id": 273,
   "jobs": [
     {
       "id": "J0001",
@@ -19846,6 +19846,34 @@
         "by": "codex",
         "note": "Plan written; three background artworks generated"
       }
+    },
+    {
+      "id": "J0272",
+      "title": "Codex check: Ben says Codex has credit. Clear its down mark and test each Codex model",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 15 Oct 2026: 'we have credit in Codex'. The relay marked Codex down overnight on 'You've hit your usage limit. Upgrade to Pro ... purchase more credits'. On the Mini: (1) python3 scripts/chief_relay.py up codex (clears the mark). (2) Run one tiny prompt ('reply OK') through codex exec -m for each of gpt-6-astra, gpt-6.1-sol, and the Luna and Terra ids from the model list; record which answer and which return the usage-limit text, with the exact text and any reset time it prints. (3) Write the result to 05_Analytics/ai_spend/MODELS_2026-10-15.md (with the model check job) and post one line on #99. If only some models are limited, set a credit_flags.json entry for just those models with the reset time instead of leaving all of Codex marked down. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T07:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T07:49Z",
+          "by": "claude",
+          "what": "added for cursor"
+        }
+      ],
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [
