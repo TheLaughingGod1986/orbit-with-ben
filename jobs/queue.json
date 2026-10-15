@@ -23637,13 +23637,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T21:47Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T22:02Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T17:59Z",
-      "result": "parked for Chief: price pass on 010 plate boards v01 (HOS PR 336). Flow expected 12572 fits alone; Vertex £146.88 does not. No mint.",
+      "result": "PASS with conditions (Chief, 15 Oct ~23:02 London): HOS 010 plate boards v01 price pass on HOS PR #336 (desk #180 comment 6203192061; PR comment 6203192922). Flow-first 12572 fits 23740 alone; Vertex £146.88 does not fit £70.02. No mint, no spend, no merge yet. Boards v02: Fast edit-holds with holes (P1:03_bench_three_c1 2.6s, P5:07_deccan_note_c1/c2 6.22s) → own Fast mints; P3:08_asaro_michel_c1 0.06s → edit-hold/reuse not second Quality; keep 13 £0 code graphics; reprice; mint order 006>007>008>009>010 with live Flow +≥3k after reserved. No generation_authorized.",
       "history": [
         {
           "at": "2026-10-15T17:59Z",
@@ -23684,16 +23684,25 @@
           "at": "2026-10-15T21:55Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: price pass on 010 plate boards v01 (HOS PR 336). Flow expected 12572 fits alone; Vertex £146.88 does not. No mint."
+        },
+        {
+          "at": "2026-10-15T22:02Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked price pass"
+        },
+        {
+          "at": "2026-10-15T22:02Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T22:02Z",
+          "by": "chief",
+          "what": "done: PASS with conditions (Chief, 15 Oct ~23:02 London): HOS 010 plate boards v01 price pass on HOS PR #336 (desk #180 comment 6203192061; PR comment 6203192922). Flow-first 12572 fits 23740 alone; Vertex £146.88 does not fit £70.02. No mint, no spend, no merge yet. Boards v02: Fast edit-holds with holes (P1:03_bench_three_c1 2.6s, P5:07_deccan_note_c1/c2 6.22s) → own Fast mints; P3:08_asaro_michel_c1 0.06s → edit-hold/reuse not second Quality; keep 13 £0 code graphics; reprice; mint order 006>007>008>009>010 with live Flow +≥3k after reserved. No generation_authorized."
         }
       ],
       "kind": "video",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T21:55Z",
-        "by": "cursor",
-        "note": "parked for Chief price pass"
-      }
+      "done_ref": "6203192061"
     },
     {
       "id": "J0315",
