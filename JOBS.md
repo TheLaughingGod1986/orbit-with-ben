@@ -40,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0253 | mini | open | – | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0254 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0255 | mini | open | – | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
+| J0256 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 
 Recently finished:
 
