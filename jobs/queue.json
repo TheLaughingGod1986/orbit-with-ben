@@ -20549,10 +20549,23 @@
           "at": "2026-10-15T07:56Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-10-15T09:09Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-grok-4-7: Codex out of usage; next in its chain: cursor"
         }
       ],
-      "for": "codex",
-      "kind": "thumb"
+      "for": "cursor",
+      "kind": "thumb",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J0278",
