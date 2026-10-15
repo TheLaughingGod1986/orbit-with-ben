@@ -33,6 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0312 | mini | open | – | – | 006 edit · assembly · HOS 006: full join v01 (Parts 01-05 roughs that passed QA) + teaching graphics pass (Codex code graphics), no spend |  |
 | J0313 | mini | open | – | – | 009 picture · video · HOS 009: plate boards v02 per the J0261 price-pass conditions (no mint) |  |
 | J0314 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v01 from the locked script + long VO (Flow-first price table), no mint |  |
+| J0315 | cloud | open | – | – | 007 picture · for claude · review · HOS 007: Claude's review of the picture plate boards (96 rows, 80 mints) before the picture credit |  |
 
 Recently finished:
 
