@@ -27,5 +27,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
+| 032 | sources | cursor | 2026-10-15T16:18Z | 2026-10-15T17:47Z | J0296 032 Titan: neighbour pass + Gemini facts quote pass on SOURCES.md (17 rows) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
