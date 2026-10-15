@@ -19244,6 +19244,11 @@
           "at": "2026-10-15T06:12Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Identified packs needing gates: OWB 025 v03f, 026 v05d, 027 v01i; HOS 006 part03 v01/v02, part04 v01, part05 v01"
+        },
+        {
+          "at": "2026-10-15T06:18Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: OWB gates run (026 v05d music_gate PASS, 027 v01i music_gate FAIL, comp v05 polish_gate+picture_qa PASS)"
         }
       ],
       "kind": "qa",
@@ -19258,11 +19263,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-15T06:12Z",
+        "at": "2026-10-15T06:18Z",
         "by": "gemini",
-        "note": "Identified packs needing gates: OWB 025 v03f, 026 v05d, 027 v01i; HOS 006 part03 v01/v02, part04 v01, part05 v01"
+        "note": "OWB gates run (026 v05d music_gate PASS, 027 v01i music_gate FAIL, comp v05 polish_gate+picture_qa PASS)"
       }
     },
     {
