@@ -18865,13 +18865,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T05:23Z",
-      "eta": "2026-10-15T07:23Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T04:14Z",
-      "result": "",
+      "result": "parked for Chief: overlay PASS: 027 v01i open label 'About 1,000 km/h' 0:06.9 (3e0c8dab; picture_qa + polish_gate PASS, audio = v01g); score NUMBER/WORDS/STYLE/MOTION",
       "history": [
         {
           "at": "2026-10-15T04:14Z",
@@ -18902,6 +18902,11 @@
           "at": "2026-10-15T05:32Z",
           "by": "cursor",
           "what": "step 4 of 4 done: 027 v01i gates PASS, stills on #99"
+        },
+        {
+          "at": "2026-10-15T05:32Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: overlay PASS: 027 v01i open label 'About 1,000 km/h' 0:06.9 (3e0c8dab; picture_qa + polish_gate PASS, audio = v01g); score NUMBER/WORDS/STYLE/MOTION"
         }
       ],
       "kind": "chart",
