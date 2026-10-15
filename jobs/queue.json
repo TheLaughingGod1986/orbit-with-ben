@@ -1,5 +1,5 @@
 {
-  "next_id": 303,
+  "next_id": 304,
   "jobs": [
     {
       "id": "J0001",
@@ -22814,6 +22814,33 @@
         "by": "cursor",
         "note": "dry-run 8139 chars; 119 left"
       }
+    },
+    {
+      "id": "J0303",
+      "title": "027 Short FIX v02: stand-alone open (Chief FIX on J0297 v01)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "FIX v02 of the 027 \"What If Earth Stopped Spinning?\" Short (J0297 v01 earth_40000_years_v01, sha 973b6ad0). Chief ruling 15 Oct ~17:50 London: FIX, not PASS.\n\nWhy: v01 opens mid-thought. \"You were barely moving in the first place\" belongs to the long's North Pole line (\"Stand exactly at the North Pole, and you would hardly notice.\"), which the lift cut. Heard alone, with daylight Africa/Europe in frame, it reads as a false claim (most viewers are moving at hundreds of km/h), and \"And it cannot happen\" has no \"it\". That breaks AGENTS.md 266 (stands alone without the long) and the opening rule \"the claim as the first words\".\n\nWhat v02 must do (choose the route, keep every Short rule):\n- Preferred route: lift the long's own VO from \"Now imagine the impossible. Earth's rock stops turning in an instant. But the air does not. Nothing has told it to stop.\" through \"...several times faster than the strongest gust of wind ever measured.\" (about 61 words, script master v01 lines 27-29). Earth is named in the first words. One overlay only (AGENTS.md 114): a one-number scale bar, more than 1,500 km/h air vs speed of sound about 1,235 km/h vs record gust 408 km/h (TEACH block), after 2 s and not over the 9-14 s title, inside the 16:9 centre band. Picture can come from anywhere in the long's v01k picture, but no Orbit-visor plate at frame 0, no burned-in \"The Sudden Stop\" chapter card, no disaster imagery.\n- Allowed alternative: keep the 40,000-years stretch, but open on the North Pole setup line so line 1 is true on its own, the hook names the pole or Earth, and the cut still lands at 22-27 s and 55-65 words.\n- Either route: hook caption names the thing in frame 0 and that thing is moving; exact long title at 9-14 s; captions throughout; loop; custom cover; house SFX only.\n- Overlay styling: drop the blurred dark box behind the number (it reads as a smudge on the cloud plate). House stroke/shadow text only.\n- 4 s end card: fine as the house end card since 027 has no YouTube id yet, but trim to 3 s if that keeps the cut inside 22-27 s.\n\nChecks: gate_shorts_open.py check PASS, sfx_kit.py level PASS. Spend nothing. Never upload. Post cut, contact sheet and gate output on #99, then block \"parked for Chief: Short PASS (v02)\". Keep v01 on disk (no deletes).\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T16:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T16:45Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
