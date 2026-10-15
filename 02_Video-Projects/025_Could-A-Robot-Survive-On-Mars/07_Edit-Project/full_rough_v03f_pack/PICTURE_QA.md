@@ -1,6 +1,6 @@
 # Picture QA: PASS
 
-/private/tmp/mars025_full_work_v03f/025_MarsRobot_full_rough_v03f.mp4 · 107 cuts · 0 fail · 28 for Claude to look at full size
+02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/09_Final-Export/025_MarsRobot_full_rough_v03f.mp4 · 107 cuts · 0 fail · 28 for Claude to look at full size
 
 ## Claude looks at these full size
 
