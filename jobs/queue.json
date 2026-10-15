@@ -22698,13 +22698,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-10-15T16:52Z",
-      "eta": "2026-10-15T18:52Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T15:55Z",
-      "result": "",
+      "result": "parked for Chief: script v01 review (HOS 9db5a26, review:script 92.6, 1,235 spoken words)",
       "history": [
         {
           "at": "2026-10-15T15:55Z",
@@ -22715,6 +22715,11 @@
           "at": "2026-10-15T16:52Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-15T16:55Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: script v01 review (HOS 9db5a26, review:script 92.6, 1,235 spoken words)"
         }
       ],
       "kind": "script"
