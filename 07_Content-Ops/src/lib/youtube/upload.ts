@@ -1,7 +1,9 @@
 /**
  * YouTube Data API upload for `npm run youtube:package`: resumable upload, private +
  * publishAt scheduling, altered-content disclosure, custom thumbnail. Moved out of the
- * retired ops app (27 Sep 2026); the token comes from getYouTubeAccessToken().
+ * retired ops app (27 Sep 2026). Studio core (15 Oct 2026): shared by Orbit With Ben and
+ * History of Science. What differs per channel (category, language) comes in through
+ * `context.channel`, from each repo's scripts/channel-youtube.ts; the token from its sign-in.
  */
 import fs from "fs";
 import type { PlatformPostRecord, PublishResult } from "@/lib/publishing/types";
@@ -56,9 +58,17 @@ export async function validateYouTubeUpload(post: PlatformPostRecord) {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/** A channel's own upload settings (scripts/channel-youtube.ts UPLOAD). */
+export type ChannelUpload = {
+  /** YouTube category: "28" Science & Technology (OWB), "27" Education (HOS). */
+  categoryId: string;
+  /** Title and audio language, e.g. "en-GB". Left unset when a channel doesn't set one. */
+  defaultLanguage?: string;
+};
+
 export async function uploadToYouTube(
   post: PlatformPostRecord,
-  context: { accessToken: string; dryRun: boolean },
+  context: { accessToken: string; dryRun: boolean; channel: ChannelUpload },
 ): Promise<PublishResult> {
   const schedule = resolveYouTubeSchedule(post.scheduledAt ?? null);
   const requestedPrivacy = (post.privacyStatus || "private") as "private" | "public" | "unlisted";
@@ -96,6 +106,7 @@ export async function uploadToYouTube(
         publishAt: schedule.publishAtIso || null,
         madeForKids: post.madeForKids,
         containsSyntheticMedia: true,
+        categoryId: context.channel.categoryId,
         contentFormat: post.contentFormat || "shorts",
       }),
     };
@@ -114,7 +125,7 @@ export async function uploadToYouTube(
   }
 
   const filePath = resolveVideoFile(post.mediaFilePath || post.exportPath!);
-  const title = (post.title || post.caption || "Orbit Short").slice(0, 100);
+  const title = (post.title || post.caption || "").slice(0, 100);
   const description = post.caption || "";
   const madeForKids = Boolean(post.madeForKids);
 
@@ -143,8 +154,11 @@ export async function uploadToYouTube(
           snippet: {
             title,
             description,
-            categoryId: "28",
+            categoryId: context.channel.categoryId,
             tags: safeTags(post.hashtags),
+            ...(context.channel.defaultLanguage
+              ? { defaultLanguage: context.channel.defaultLanguage, defaultAudioLanguage: context.channel.defaultLanguage }
+              : {}),
           },
           status: statusPayload,
         }),
@@ -209,7 +223,8 @@ export async function uploadToYouTube(
     const videoId = uploadBody.id as string;
     let thumbNote = "";
     if (post.thumbnailPath && fs.existsSync(post.thumbnailPath)) {
-      const thumbOk = await setYouTubeThumbnail(context.accessToken, videoId, post.thumbnailPath);
+      const thumbPath = post.thumbnailPath;
+      const thumbOk = await retryOn403(() => setYouTubeThumbnail(context.accessToken, videoId, thumbPath));
       thumbNote = thumbOk.ok ? "; thumbnail set" : `; thumbnail skipped: ${thumbOk.message}`;
     }
 
@@ -252,11 +267,29 @@ export async function uploadToYouTube(
   }
 }
 
+type ThumbnailResult = { ok: boolean; message: string; status?: number };
+
+/** thumbnails.set answers 403 while a fresh upload is still processing; it succeeds a minute later (022, 9 Oct 2026). */
+export async function retryOn403(
+  attempt: () => Promise<ThumbnailResult>,
+  opts: { tries?: number; delayMs?: number; sleep?: (ms: number) => Promise<void> } = {},
+): Promise<ThumbnailResult> {
+  const tries = opts.tries ?? 3;
+  const delayMs = opts.delayMs ?? 60_000;
+  const sleep = opts.sleep ?? ((ms: number) => new Promise<void>((r) => setTimeout(r, ms)));
+  let result = await attempt();
+  for (let i = 1; i < tries && !result.ok && result.status === 403; i++) {
+    await sleep(delayMs);
+    result = await attempt();
+  }
+  return result;
+}
+
 async function setYouTubeThumbnail(
   accessToken: string,
   videoId: string,
   thumbnailPath: string,
-): Promise<{ ok: boolean; message: string }> {
+): Promise<ThumbnailResult> {
   try {
     const buf = fs.readFileSync(thumbnailPath);
     const lower = thumbnailPath.toLowerCase();
@@ -279,9 +312,9 @@ async function setYouTubeThumbnail(
     );
     if (!res.ok) {
       const text = await res.text();
-      return { ok: false, message: redactSummary(text) };
+      return { ok: false, message: redactSummary(text), status: res.status };
     }
-    return { ok: true, message: "ok" };
+    return { ok: true, message: "ok", status: res.status };
   } catch (err) {
     return { ok: false, message: err instanceof Error ? err.message : "thumbnail upload failed" };
   }

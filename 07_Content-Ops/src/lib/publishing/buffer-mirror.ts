@@ -62,16 +62,8 @@ export type YouTubeVideo = {
  * Per-video copy for social, set in the package manifest (`social`) or with
  * `buffer-mirror.ts register`. Every field is optional.
  */
-export type SocialCopy = {
-  /** First line of every post, written for the feed. Default: the YouTube title. */
-  hook?: string;
-  /** Closing question, to start the comments. Default: DEFAULT_QUESTION. */
-  question?: string;
-  /** What the thumbnail shows, for screen readers. Default: names the film. */
-  alt?: string;
-  /** Instagram Reel cover: this many ms into the video. Default: DEFAULT_COVER_MS. */
-  coverMs?: number;
-};
+import type { SocialCopy } from "@/lib/publishing/youtube-package";
+export type { SocialCopy };
 
 /** Asked at the end of every post that has no question of its own. */
 export const DEFAULT_QUESTION = "What would you want to know next? Tell me below.";

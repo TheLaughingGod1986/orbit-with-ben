@@ -14,7 +14,7 @@ describe("YouTube upload (local, no database)", () => {
     const fetchSpy = vi.spyOn(globalThis, "fetch");
     const result = await uploadToYouTube(
       { id: "x", platform: "youtube_shorts", title: "T", caption: "D", uploadStatus: "ready", privacyStatus: "private", madeForKids: false, scheduledAt: new Date(Date.now() + 86_400_000) },
-      { accessToken: "", dryRun: true },
+      { accessToken: "", dryRun: true, channel: { categoryId: "28" } },
     );
     expect(result.success).toBe(true);
     expect(result.scheduledOnPlatform).toBe(true);
@@ -22,7 +22,7 @@ describe("YouTube upload (local, no database)", () => {
   });
 
   it("refuses a dry run without the kids flag", async () => {
-    const result = await uploadToYouTube({ id: "x", platform: "youtube_shorts", title: "T", uploadStatus: "ready", privacyStatus: "private" }, { accessToken: "", dryRun: true });
+    const result = await uploadToYouTube({ id: "x", platform: "youtube_shorts", title: "T", uploadStatus: "ready", privacyStatus: "private" }, { accessToken: "", dryRun: true, channel: { categoryId: "28" } });
     expect(result.success).toBe(false);
     expect(result.message).toMatch(/madeForKids/);
   });
