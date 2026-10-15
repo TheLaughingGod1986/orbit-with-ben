@@ -13,6 +13,8 @@
 
 const STORE = ["TheLaughingGod1986/orbit-with-ben", 219];
 const HISTORY_KEEP = 150;
+const BODY_MAX = 60000;          // GitHub caps an issue body at 65,536 characters
+const HANDLED_KEEP_DAYS = 30;    // handled ticks older than this are pruned
 // Ben's buttons go straight to the Chief (Ben, 10 Oct): every Approve / Request changes / Undo is also posted on the
 // Chief's thread, OWB on orbit-with-ben #99 and HOS on history-of-science #180, with env BOARD_GH_TOKEN (a fine-grained
 // GitHub token that can comment on those two repos; never in the page or the repo). Prefix: "[Ben] " then OK / changes /
@@ -61,10 +63,25 @@ export function parseStore(body) {
   return { checks: j.checks && typeof j.checks === "object" ? j.checks : {}, history: Array.isArray(j.history) ? j.history : [] };
 }
 
-export function renderStore(state) {
+// Keeps the body under GitHub's cap: drop handled ticks older than HANDLED_KEEP_DAYS, then trim history, then fail loudly.
+export function pruneState(state, now = Date.now()) {
+  const checks = {};
+  for (const [id, d] of Object.entries(state.checks)) {
+    const old = d && d.handled && now - new Date(d.at || 0).getTime() > HANDLED_KEEP_DAYS * 86400000;
+    if (!old) checks[id] = d;
+  }
+  return { checks, history: state.history.slice(-HISTORY_KEEP) };
+}
+
+export function renderStore(state, now = Date.now()) {
+  let st = pruneState(state, now);
+  // Backticks are written as \u0060 so a note can never close the ```json fence (JSON.parse reads them back).
+  const json = s => JSON.stringify(s).replace(/`/g, "\\u0060");
+  while (json(st).length > BODY_MAX && st.history.length) st = { ...st, history: st.history.slice(Math.ceil(st.history.length / 2)) };
+  if (json(st).length > BODY_MAX) throw new Error("store full: too many open ticks for one issue body");
   return "Studio Kanban stores Ben's OK / Request changes buttons in this issue's body (15 Oct 2026: replaces the " +
     "suspended Vercel Blob store). Only the board's `/api/checks` writes it. Don't edit by hand.\n\n```json\n" +
-    JSON.stringify({ checks: state.checks, history: state.history.slice(-HISTORY_KEEP) }) + "\n```\n";
+    json(st) + "\n```\n";
 }
 
 async function load() {
@@ -114,12 +131,16 @@ export default async function handler(req, res) {
     }
     const at = new Date().toISOString();
     state.history = [...state.history, { id: b.id, op: b.delete ? "delete" : "set", at, verdict: b.doc?.verdict || "" }];
-    await save(state);
+    // A failed save never loses Ben's word: the tap still goes to the Chief's thread, and the reply says it wasn't stored.
+    let saved = "";
+    await save(state).catch(e => { saved = String(e && e.message || e).slice(0, 160); });
     // Post once per real change (a re-save of the same tick has the same `at`).
     const doc = b.delete ? null : state.checks[b.id];
     const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);
     let chief = "";
-    if (line) chief = await postToChief(b.id, line).catch(e => `not posted: ${String(e && e.message || e).slice(0, 100)}`);
+    if (line) chief = await postToChief(b.id, saved ? `${line}\n\n(Not saved on the board: ${saved}. Act on this post.)` : line)
+      .catch(e => `not posted: ${String(e && e.message || e).slice(0, 100)}`);
+    if (saved) { console.log(`checks ${b.id} not stored: ${saved}; chief: ${chief}`); return res.status(200).json({ ok: true, stored: false, error: saved, checks: state.checks, chief }); }
     if (line) console.log(`checks ${b.id} ${b.delete ? "delete" : (doc || {}).verdict}: ${chief}`);   // shows in vercel logs
     return res.status(200).json({ ok: true, checks: state.checks, chief });
   } catch (e) {

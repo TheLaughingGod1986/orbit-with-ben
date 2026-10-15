@@ -251,8 +251,8 @@ class ButtonStamp(unittest.TestCase):
         self.assertIn("/api/checks?stamp=1", js)
         # one post per real change, exactly as before, and only after the tick is saved
         self.assertIn("const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);", js)
-        self.assertEqual(js.count("postToChief(b.id, line)"), 1)
-        self.assertLess(js.index("await save(state);"), js.index("postToChief(b.id, line)"))
+        self.assertEqual(js.count("postToChief(b.id, saved ?"), 1)
+        self.assertLess(js.index("await save(state)"), js.index("postToChief(b.id, saved ?"))
 
     def test_the_mini_never_posts(self):
         src = (HERE / "board_publish.py").read_text()
