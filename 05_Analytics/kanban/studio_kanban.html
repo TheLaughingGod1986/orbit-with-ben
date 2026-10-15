@@ -351,7 +351,8 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .nowbar .nx{margin-top:3px;font-size:13px;color:var(--ink-2)}
 .nowbar .one{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nowbar .h.one{font-size:15px;white-space:normal;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:6px}
-.nowbar .h.one .tt{flex:1 1 60%;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nowbar .h.one .tt{flex:1 1 60%;min-width:0;white-space:normal;overflow-wrap:anywhere}
+.nowbar .nowwho{margin:3px 0 4px 16px;font-size:12.5px;color:var(--ink-2);line-height:1.35}
 .nowbar .h.one .meta{flex:0 0 auto;font-size:13px;white-space:nowrap}
 .nowbar .jid{display:inline-block;font:600 11px/1.5 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:9px;background:#e8ecf2;color:#3a4656;vertical-align:1px}
 .nowbar .run{display:inline-block;font-size:11px;font-weight:700;line-height:1.5;padding:0 7px;border-radius:9px;background:#dff3e4;color:#1d7a3a;vertical-align:1px}
@@ -1007,8 +1008,12 @@ function renderNow(){
   let cls = "", head;
   let bar = "";
   if(headJob){ const pr = progressOf(headJob, P);
-    head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 60))}</span>`;
-    bar = `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
+    const who = AGENT(headJob.by) || headJob.routedTo || headJob.by || "", mdl = headJob.model || "";
+    const stp = headJob.progress && headJob.progress.of ? `step ${Math.min(headJob.progress.step+1, headJob.progress.of)} of ${headJob.progress.of}` : "";
+    const lastWhat = (headJob.last && headJob.last.what || "").replace(/<[^>]+>/g,"");
+    const doing = [stp, lastWhat].filter(Boolean).join(" · ");
+    head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 200))}</span>`;
+    bar = `<div class="nowwho">${esc([who, mdl].filter(Boolean).join(" · "))}${doing?`<br>${esc(doing)}`:""}</div>` + `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
   else if(line.length){ const sl = stallOf(); cls = (q && q.quiet) || sl ? "asleep" : "idle";
     head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours"
       : sl ? `<b>Now:</b> <span>nothing running · last job finished <span data-ago="${sl.at}">${ago(sl.at)}</span></span>` : "<b>Now:</b> starting the next job"; }
@@ -1480,7 +1485,7 @@ function renderTracker(films){
       <div class="why">${soon.every(x=>watchLink(x.f.key))?"Tap <b>▶ Watch</b> to open it on your phone (also in iCloud Drive › <b>OWB UAT</b> / <b>HOS UAT</b>).":"Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder."} ${dbApi?"Watch it, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":`When you've checked one, tell the Chief "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
     : (fromDb.extraWatch||[]).length ? ""
     : (()=>{ const nx = simple.filter(r=>!r.live && !r.isSched && r.ready).sort((a,b)=>(a.air||9e15)-(b.air||9e15))[0];
-        return `<b>Ready for you</b><span class="nx">Nothing to watch right now.${nx?` Next: <b>${esc(nx.f.id)}</b> ${esc(nx.f.title||"")}, ready for you ${esc(String(nx.ready).replace(/<[^>]+>/g,""))}.`:""}</span>`; })()) + extraHtml + justHtml;
+        return `<b>Ready for you</b><span class="nx">Nothing to watch right now.${nx?` Next: <b>${esc(nx.f.id)}</b> ${esc(nx.f.title||"")}, ready for you ${esc(String(nx.ready).replace(/<[^>]+>/g,"").replace(/&#39;/g,"'").replace(/&amp;/g,"&"))}.`:""}</span>`; })()) + extraHtml + justHtml;
   const keyOf = id => id.replace("-",":");
   const saveCheck = async (id, verdict, fixes) => {
     if(!dbApi) return;
