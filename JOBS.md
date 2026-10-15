@@ -29,7 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0308 | mini | open | – | – | studio · HOS 004 s05 Dalton Short v02: package Private + publishAt on next free search-titled slot (J0306 PASS) |  |
 | J0309 | mini | blocked | cursor | – | 024 edit · assembly · 024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London) |  |
 | J0311 | mini | blocked | cursor | – | 029 picture · video · 029 Betelgeuse: gather the source footage and write the plate boards v01 (Flow-first price table), no mint |  |
-| J0312 | mini | open | – | – | 006 edit · assembly · HOS 006: full join v01 (Parts 01-05 roughs that passed QA) + teaching graphics pass (Codex code graphics), no spend |  |
+| J0312 | mini | claimed | cursor | 2026-10-15T23:02Z | 006 edit · assembly · HOS 006: full join v01 (Parts 01-05 roughs that passed QA) + teaching graphics pass (Codex code graphics), no spend |  |
 | J0313 | mini | open | – | – | 009 picture · video · HOS 009: plate boards v02 per the J0261 price-pass conditions (no mint) |  |
 | J0314 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v01 from the locked script + long VO (Flow-first price table), no mint |  |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
