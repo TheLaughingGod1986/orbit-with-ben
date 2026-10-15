@@ -17733,7 +17733,7 @@
     {
       "id": "J0249",
       "title": "Packaging panel decision: 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov)",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel decision: 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov).** Read the three critiques in `05_Analytics/tests/panels/owb-024-lightspeed/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.",
       "ref": "",
@@ -17753,9 +17753,23 @@
           "at": "2026-10-14T21:23Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T00:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Claude out of usage (no Claude run for 165 min (heartbeat 2026-10-14T21:28:07Z)); next in its chain: gemini on its default"
         }
       ],
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     }
   ],
   "focus": [
