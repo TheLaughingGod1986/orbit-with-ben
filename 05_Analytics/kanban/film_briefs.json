@@ -41,10 +41,10 @@
   ],
   "films": {
     "OWB:021": {
-      "updated": "2026-10-08T16:05Z",
-      "mood": "ready",
+      "updated": "2026-10-15T21:05Z",
+      "mood": "finished",
       "done": "Everything. It is uploaded and scheduled on YouTube.",
-      "holdup": "None. It goes public on its own on Sunday.",
+      "holdup": "None. It is public.",
       "steps": [
         {
           "who": "YouTube",
@@ -59,13 +59,15 @@
       ],
       "you": "",
       "timing": "Airs Sun 11 Oct 18:00 London.",
-      "line": "Uploaded and scheduled. Goes public on its own on Sunday."
+      "line": "Live since Sun 11 Oct. Nothing for you.",
+      "youShort": "",
+      "youWhen": ""
     },
     "OWB:022": {
-      "updated": "2026-10-09T12:40Z",
+      "updated": "2026-10-15T21:05Z",
       "mood": "ready",
-      "done": "Everything. The film is on YouTube, private and scheduled: the long goes public Sun 18 Oct 18:00 London, and the Shorts Mon 19, Wed 21 and Fri 23 Oct at 11:30. The Instagram, Facebook and Threads posts are queued for the same times.",
-      "holdup": "Nothing is wrong. Small Studio jobs are left: the end screen, cards, the title and thumbnail test, and a check on each Short's link to the long (J0091, before 18 Oct). The pinned comment goes on once the long is public, because YouTube won't take comments on a private video.",
+      "done": "Uploaded Private and scheduled. Studio finish done (J0091): thumbnail A, Shorts covers, end screen, card, thumbnail test A/B/C.",
+      "holdup": "Nothing is wrong. After it goes public: the date gate (J0219), then each Short's Related video set to the long before Mon 19 Oct 11:30 (J0220), and the pinned comment.",
       "steps": [
         {
           "who": "Ben",
@@ -105,7 +107,7 @@
       ],
       "you": "",
       "timing": "Airs Sun 18 Oct 18:00 London.",
-      "line": "It's uploaded and scheduled. Nothing for you.",
+      "line": "Uploaded and scheduled for Sun 18 Oct 18:00 London. Nothing for you.",
       "youWhen": "",
       "youShort": ""
     },
@@ -202,10 +204,10 @@
       "watchFrom": "v05d"
     },
     "OWB:025": {
-      "updated": "2026-10-09T12:58Z",
+      "updated": "2026-10-15T21:05Z",
       "mood": "watched",
       "done": "Script, voice, picture and the film's own music. Your 8 Oct notes fixed (v03f), plus Codex's picture ideas.",
-      "holdup": "Nothing is holding it. The thumbnails and upload details passed Claude's review. Cursor tidies one thumbnail's edge, then uploads it privately, set to go public on Sun 8 Nov.",
+      "holdup": "Nothing is holding it. After it goes public: Related video on the Shorts, pinned comment and Buffer check (J0123, J0124, J0135).",
       "steps": [
         {
           "who": "Ben",
@@ -227,7 +229,7 @@
         }
       ],
       "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
-      "line": "You passed it. It gets uploaded privately and goes public on Sun 8 Nov.",
+      "line": "Uploaded Private, goes public on its own Sun 8 Nov 18:00 London. Nothing for you.",
       "you": "",
       "youShort": "",
       "youWhen": ""
@@ -285,10 +287,10 @@
       "watchFrom": "v05d"
     },
     "OWB:027": {
-      "updated": "2026-10-15T19:36Z",
+      "updated": "2026-10-15T21:05Z",
       "mood": "ready",
       "done": "Picture lock v01l (corner credits, Chief PASS J0319). Dry-run Private package for Sun 22 Nov 18:00 London passed. No upload.",
-      "holdup": "Waiting on your watch and the Chief's final OK. The long thumbnail and trailer are not in the package yet. Its own music still waits until 30 Oct; the cut uses the waived bed.",
+      "holdup": "Waiting on your watch and the Chief's final OK. Captions and trailer passed; the long thumbnails A/B/C are built and wait for the Chief (PR #222). Its own music still waits until 30 Oct; the cut uses the waived bed.",
       "steps": [
         {
           "who": "Cursor",
@@ -316,6 +318,19 @@
           "doneText": "dry-run PASS · Thu 15 Oct"
         },
         {
+          "who": "Cursor",
+          "what": "en-GB captions and a 45 s trailer",
+          "job": "J0327",
+          "done": true,
+          "doneText": "PASS · Thu 15 Oct (Chief)"
+        },
+        {
+          "who": "Codex",
+          "what": "long thumbnails A/B/C",
+          "job": "J0328",
+          "whenText": "built, on PR #222 for the Chief's check"
+        },
+        {
           "who": "Ben",
           "what": "watch v01l",
           "when": "2026-10-19T22:59:00Z",
@@ -323,7 +338,9 @@
         },
         {
           "who": "Chief",
-          "what": "final OK before any upload"
+          "what": "final OK before any upload",
+          "job": "J0325",
+          "whenText": "after your watch, or Mon 19 Oct 23:59 London if no reply"
         },
         {
           "who": "Cursor",
@@ -382,10 +399,10 @@
       "line": "Script and voice done. Shot boards next (J0311), after 028's, then the Chief prices the picture."
     },
     "HOS:005": {
-      "updated": "2026-10-08T16:05Z",
+      "updated": "2026-10-15T21:05Z",
       "mood": "ready",
       "done": "Everything. The long film and its three Shorts are scheduled on YouTube.",
-      "holdup": "None.",
+      "holdup": "None. After the long goes public on Thu 29 Oct: one Short's Related link and the HOS Buffer post (J0241).",
       "steps": [
         {
           "who": "YouTube",
@@ -400,7 +417,7 @@
       ],
       "you": "",
       "timing": "Airs Thu 29 Oct 18:00. Shorts 30 Oct, 8 Nov and 15 Nov.",
-      "line": "Finished and scheduled with its three Shorts."
+      "line": "Finished and scheduled with its three Shorts. Nothing for you."
     },
     "HOS:006": {
       "updated": "2026-10-15T18:25Z",
@@ -517,10 +534,10 @@
       "youShort": "your final OK Sun 8 Nov"
     },
     "HOS:008": {
-      "updated": "2026-10-08T16:05Z",
+      "updated": "2026-10-15T21:05Z",
       "mood": "waiting",
       "done": "Script, fact check, upload package, and the long voiceover (locked 7 Oct).",
-      "holdup": "Waiting its turn in the voiceover queue for the Shorts. The narration runs 9:15, a little over the 9-minute target, so the edit trims pauses to bring it in.",
+      "holdup": "Picture is next: the 11 free code graphics from boards v03 are queued (J0329). The paid picture mint waits its turn after 006 and 007 and a live credit reading. The narration runs 9:15; the edit trims pauses.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
