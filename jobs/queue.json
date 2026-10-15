@@ -22550,13 +22550,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-15T16:23Z",
-      "eta": "2026-10-15T18:23Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T15:51Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (027 earth_40000_years_v01, gate PASS, 24.0s, not uploaded)",
       "history": [
         {
           "at": "2026-10-15T15:51Z",
@@ -22587,6 +22587,11 @@
           "at": "2026-10-15T16:40Z",
           "by": "cursor",
           "what": "step 4 of 4 done: posted, parking for Chief PASS"
+        },
+        {
+          "at": "2026-10-15T16:40Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Short PASS (027 earth_40000_years_v01, gate PASS, 24.0s, not uploaded)"
         }
       ],
       "kind": "assembly",
