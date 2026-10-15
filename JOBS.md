@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0266 | mini | open (after J0140) | – | – | 006 edit · assembly · HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend) |  |
 | J0267 | mini | claimed | cursor | 2026-10-15T07:37Z | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
 | J0268 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
+| J0269 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
 
 Recently finished:
 
