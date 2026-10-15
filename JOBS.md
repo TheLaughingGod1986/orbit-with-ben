@@ -38,7 +38,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0331 | mini | open | – | – | 006 edit · assembly · HOS 006: full_join_v02 — new stretches on 6 picture_qa callback reuses (J0312 FIX), no mint |  |
 | J0332 | mini | open (after J0331) | – | – | 006 edit · chart · HOS 006: Codex £0 teach overlays from TEACH_OVERLAYS_v01.md (after full_join_v02) |  |
 | J0334 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v02 per the J0314 price-pass conditions (no mint) | 6203192061 |
-| J0336 | mini | open | – | – | 009 picture · assembly · HOS 009 PR #331 rebase + squash-merge after J0335 PASS (plate boards v04; no mint) | J0335 |
+| J0336 | mini | claimed | cursor | 2026-10-15T23:50Z | 009 picture · assembly · HOS 009 PR #331 rebase + squash-merge after J0335 PASS (plate boards v04; no mint) | J0335 |
 
 Recently finished:
 
