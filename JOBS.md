@@ -49,7 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0270 | mini | open | – | – | assembly · Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at |  |
 | J0271 | mini | blocked | codex | – | for codex · thumb · Thumbnail redo with gpt-image-2 (Ben, 15 Oct): plan + first 3 B variants for the lowest-CTR live longs |  |
 | J0273 | mini | blocked | codex | – | for codex · thumb · Thumbnail redo batch 2: Moon, Last Star, Neutron Star B candidates |  |
-| J0274 | mini | open | – | – | for codex · thumb · Thumbnail redo batch 3: Alien Worlds and HOS Germs B candidates |  |
+| J0274 | mini | claimed | codex | 2026-10-15T09:07Z | for codex · thumb · Thumbnail redo batch 3: Alien Worlds and HOS Germs B candidates |  |
 | J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0276 | mini | open | – | – | listing · Upload OWB compilation v05: Private, publishAt Wed 21 Oct 2026 18:00 London (17:00Z), via youtube:package (Ben GO, Chief OK J0168) |  |
 | J0277 | mini | open | – | – | for codex · thumb · Thumbnail redo: add Orbit to the OWB B variants (Fermi Mo93x0fxB1Q, Europa NbW5G1BpPY0, JWST ziKBPJ6FY0U), keep HOS house style |  |
