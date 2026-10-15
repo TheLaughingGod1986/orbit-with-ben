@@ -39,7 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0321 | mini | open | – | – | 028 picture · video · 028 Gliese 710: plate boards v02 per the J0310 price-pass conditions (no mint) | 6199532687 |
 | J0322 | mini | open | – | – | 007 picture · video · HOS 007: plate boards v02 per Claude review (Flow-first price table; lettering-risk plates to real scans / code graphics), no mint |  |
 | J0323 | mini | open | – | – | 026 edit · assembly · 026 Nearest Star: put picture-lock v05d (teaching overlays, J0148) in OWB UAT for Ben's watch, then dry-run the Private upload (airs Sun 15 Nov) |  |
-| J0324 | mini | open | – | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
+| J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 
 Recently finished:
 
