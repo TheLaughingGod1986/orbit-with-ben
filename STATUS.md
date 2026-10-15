@@ -27,6 +27,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
-| 028 | picture | cursor | 2026-10-15T22:36Z | 2026-10-16T00:35Z | J0321 028 Gliese 710: plate boards v02 per the J0310 price-pass conditions (no mint) |
+| 028 | picture | cursor | 2026-10-15T22:37Z | 2026-10-16T00:07Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
