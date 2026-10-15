@@ -21986,13 +21986,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T13:32Z",
-      "result": "waits for input: the running Germs title+thumbnail Test & Compare on _C92tIJCk8A to end (about 23:25 London Thu 15 Oct). Then arm the thumbnail-only test, A live vs B v02 INVISIBLE LIFE?",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T13:32Z",
@@ -22023,16 +22023,14 @@
           "at": "2026-10-15T13:51Z",
           "by": "claude",
           "what": "blocked: waits for input: the running Germs title+thumbnail Test & Compare on _C92tIJCk8A to end (about 23:25 London Thu 15 Oct). Then arm the thumbnail-only test, A live vs B v02 INVISIBLE LIFE?"
+        },
+        {
+          "at": "2026-10-15T23:09Z",
+          "by": "chief",
+          "what": "reopened: Chief sweep 00:07 London: Germs title+thumb Test & Compare on _C92tIJCk8A was due to end ~23:25 London Thu 15 Oct; gate passed. Worker: re-check Studio test state first per body; if ended, arm thumbnail-only A live vs B v02 INVISIBLE LIFE?; if still running, release with the new end time. Never Replace/delete. £0."
         }
       ],
-      "kind": "studio",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-15T13:41Z",
-        "by": "cursor",
-        "note": "test already running; no change"
-      }
+      "kind": "studio"
     },
     {
       "id": "J0289",
