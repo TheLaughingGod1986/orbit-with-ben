@@ -19195,10 +19195,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-15T10:45Z",
+      "eta": "2026-10-15T11:45Z",
       "created_by": "refill",
       "created_at": "2026-10-15T04:59Z",
       "result": "",
@@ -19257,6 +19257,11 @@
           "at": "2026-10-15T09:40Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 109 min (heartbeat 2026-10-15T07:51:18Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-15T10:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "listing",
