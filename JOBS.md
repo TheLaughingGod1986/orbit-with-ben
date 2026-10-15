@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0315 | cloud | open | – | – | 007 picture · for claude · review · HOS 007: Claude's review of the picture plate boards (96 rows, 80 mints) before the picture credit |  |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
 | J0318 | gemini | open | – | – | 031 sources · facts · 031 Magnetic Field Flip: Gemini facts quote pass on SOURCES.md (MUST QUOTE rows) | 6198817961 |
-| J0319 | mini | claimed | cursor | 2026-10-15T20:32Z | 027 edit · assembly · 027 Earth Stopped Spinning: corner credit labels on v01k (STATUS next polish) | 6198817961 |
+| J0319 | mini | claimed | cursor | 2026-10-15T19:49Z | 027 edit · assembly · 027 Earth Stopped Spinning: corner credit labels on v01k (STATUS next polish) | 6198817961 |
 | J0320 | mini | open | – | – | 004 edit · studio · HOS 004 GHZDsiH7L7A: Studio Editor blur garbled weights balls 1:19.7–1:24.5 (Chief ruling) | 6198166917 |
 
 Recently finished:
