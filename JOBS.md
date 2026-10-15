@@ -39,6 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0340 | cloud | blocked | claude | – | 031 script · review · 031 Magnetic Field Flip: Claude CLAUDE_QUOTE_CHECK on MUST QUOTE rows (after J0339 PASS) | 37eab443 |
 | J0341 | mini | open | – | – | 007 picture · video · HOS 007: drop P3:01c_nelmes_plate on boards v02 then ready PR 337 for Chief merge (J0322 PASS); no mint |  |
 | J0342 | mini | open | – | – | 009 picture · chart · HOS 009: build the 12 £0 code graphics from boards v04 (PICTURE_PLAN_v04 parchment teach), no mint |  |
+| J0343 | mini | open (after J0341) | – | – | 007 picture · assembly · HOS 007 PR #337 rebase + squash-merge after J0341 drop (J0322 PASS conditions); no mint |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 343,
+  "next_id": 344,
   "jobs": [
     {
       "id": "J0001",
@@ -25345,6 +25345,33 @@
         }
       ],
       "kind": "chart"
+    },
+    {
+      "id": "J0343",
+      "title": "HOS 007 PR #337 rebase + squash-merge after J0341 drop (J0322 PASS conditions); no mint",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After J0341: `P3:01c_nelmes_plate` dropped on HOS PR #337 and 2.0 s returned to `01_sarah_nelmes` (J0322 Chief PASS conditions, desk #180 6204618275 / PR comment 6204619783).\n\nRebase onto main if needed, confirm check_all / CI green on 007, squash-merge PR #337. Boards only: **no mint, no spend, no top-up.** Ken Burns lock stands; Flow-first only.\n\nJ0341 must be marked **done** (not blocked) when the drop is on the PR so this after-link releases.",
+      "ref": "",
+      "film": "007",
+      "stage": "picture",
+      "after": "J0341",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T23:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T23:45Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
