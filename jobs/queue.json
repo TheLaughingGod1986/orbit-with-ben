@@ -18382,10 +18382,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-15T03:32Z",
+      "eta": "2026-10-15T05:02Z",
       "created_by": "refill",
       "created_at": "2026-10-15T03:06Z",
       "result": "",
@@ -18399,6 +18399,11 @@
           "at": "2026-10-15T03:31Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Claude out of usage (no Claude run for 99 min (heartbeat 2026-10-15T01:51:37Z)); next in its chain: gemini on its default"
+        },
+        {
+          "at": "2026-10-15T03:32Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "script",

@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0244 | mini | blocked | codex | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0250 | mini | blocked | codex | – | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
-| J0251 | mini | open | – | – | for gemini · script · `gemini-agy` · OWB ideas + script draft: next film beyond the pipeline |  |
+| J0251 | mini | claimed | gemini | 2026-10-15T05:02Z | for gemini · script · `gemini-agy` · OWB ideas + script draft: next film beyond the pipeline |  |
 
 Recently finished:
 
