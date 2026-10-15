@@ -1,5 +1,5 @@
 {
-  "next_id": 278,
+  "next_id": 279,
   "jobs": [
     {
       "id": "J0001",
@@ -20190,6 +20190,33 @@
       ],
       "for": "codex",
       "kind": "thumb"
+    },
+    {
+      "id": "J0278",
+      "title": "NAS: create youtube-staging folder + README (Ben's OK 15 Oct)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Per AGENTS.md 'YouTube staging folder'. When /Volumes/data is mounted and responsive (do NOT write into an unmounted path): mkdir /Volumes/data/mac-mini-archive/youtube-staging, write README_YOUTUBE_STAGING.txt there saying: 'YouTube staging: finished videos waiting to go out, copied here to free the Mini disk. Delete a film folder only once the video is live on YouTube and nothing still needs it. Nothing else on this share is ever deleted.' Verify by reading it back, then mark done. If the NAS share is still hung, block with that reason.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T08:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T08:09Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [
