@@ -30,6 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0309 | mini | open | – | – | 024 edit · assembly · 024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London) |  |
 | J0310 | mini | open | – | – | 028 picture · video · 028 Gliese 710: gather the source footage and write the plate boards v01 (Flow-first price table), no mint |  |
 | J0311 | mini | open | – | – | 029 picture · video · 029 Betelgeuse: gather the source footage and write the plate boards v01 (Flow-first price table), no mint |  |
+| J0312 | mini | open | – | – | 006 edit · assembly · HOS 006: full join v01 (Parts 01-05 roughs that passed QA) + teaching graphics pass (Codex code graphics), no spend |  |
 
 Recently finished:
 
