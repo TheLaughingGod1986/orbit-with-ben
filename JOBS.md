@@ -38,6 +38,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0319 | mini | claimed | cursor | 2026-10-15T19:49Z | 027 edit · assembly · 027 Earth Stopped Spinning: corner credit labels on v01k (STATUS next polish) | 6198817961 |
 | J0320 | mini | open | – | – | 004 edit · studio · HOS 004 GHZDsiH7L7A: Studio Editor blur garbled weights balls 1:19.7–1:24.5 (Chief ruling) | 6198166917 |
 | J0321 | mini | open | – | – | 028 picture · video · 028 Gliese 710: plate boards v02 per the J0310 price-pass conditions (no mint) | 6199532687 |
+| J0322 | mini | open | – | – | 007 picture · video · HOS 007: plate boards v02 per Claude review (Flow-first price table; lettering-risk plates to real scans / code graphics), no mint |  |
 
 Recently finished:
 
