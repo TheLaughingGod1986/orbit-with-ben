@@ -39,7 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0252 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0253 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0254 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0255 | mini | claimed | cursor | 2026-10-15T06:51Z | for cursor · chart · `cursor-auto` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
+| J0255 | mini | blocked | cursor | – | for cursor · chart · `cursor-auto` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0256 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0257 | any | blocked | gemini | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0258 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
