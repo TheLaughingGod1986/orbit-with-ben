@@ -1,5 +1,5 @@
 {
-  "next_id": 299,
+  "next_id": 300,
   "jobs": [
     {
       "id": "J0001",
@@ -22383,13 +22383,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-15T15:37Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-15T15:55Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T15:36Z",
-      "result": "parked for Chief: lock 013 topic (recommended #1 Evolution: Darwin & Wallace 48/50, #2 Cell Theory: Hooke & Remak 45/50, #3 Mary Anning Fossils 44/50, #4 Herschel Invisible Light 42/50, #5 Ørsted & Faraday 41/50 in IDEAS_2026-10-15_J0295.md, commit 1639623) and pick 013 working title pair for 013_Darwin-Wallace-Evolution/opening_and_outline_v00.md + SOURCES_v00.md before full script v01",
+      "result": "LOCK HOS 013 = Evolution: Darwin's 20-year secret & Wallace's letter from Ternate (48/50). Title pair A 'Evolution: The Letter That Forced Darwin to Publish' / B 'Why Darwin Kept Natural Selection Secret for 20 Years'. Desk HOS #180 comment 6196336541. Follow-on: Claude script v01 (kind script). No spend.",
       "history": [
         {
           "at": "2026-10-15T15:36Z",
@@ -22430,16 +22430,26 @@
           "at": "2026-10-15T15:50Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: lock 013 topic (recommended #1 Evolution: Darwin & Wallace 48/50, #2 Cell Theory: Hooke & Remak 45/50, #3 Mary Anning Fossils 44/50, #4 Herschel Invisible Light 42/50, #5 Ørsted & Faraday 41/50 in IDEAS_2026-10-15_J0295.md, commit 1639623) and pick 013 working title pair for 013_Darwin-Wallace-Evolution/opening_and_outline_v00.md + SOURCES_v00.md before full script v01"
+        },
+        {
+          "at": "2026-10-15T15:55Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked topic lock"
+        },
+        {
+          "at": "2026-10-15T15:55Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T15:55Z",
+          "by": "chief",
+          "what": "done: LOCK HOS 013 = Evolution: Darwin's 20-year secret & Wallace's letter from Ternate (48/50). Title pair A 'Evolution: The Letter That Forced Darwin to Publish' / B 'Why Darwin Kept Natural Selection Secret for 20 Years'. Desk HOS #180 comment 6196336541. Follow-on: Claude script v01 (kind script). No spend."
         }
       ],
       "kind": "script",
       "backlog": "hos-ideas",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T15:50Z",
-        "by": "gemini"
-      }
+      "done_ref": "6196336541"
     },
     {
       "id": "J0296",
@@ -22540,6 +22550,33 @@
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked"
+    },
+    {
+      "id": "J0299",
+      "title": "HOS 013 Darwin–Wallace: full script v01 from locked opening_and_outline_v00 (review:script ≥ 90)",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "J0295 Chief LOCK (HOS #180 comment 6196336541, 15 Oct ~16:55 London).\n\nLock = HOS 013 Evolution: Darwin's 20-year secret & Wallace's letter from Ternate (1835 → 18 June 1858). Working title pair for Test & Compare:\n- A: Evolution: The Letter That Forced Darwin to Publish\n- B: Why Darwin Kept Natural Selection Secret for 20 Years\n\nBuild on (HOS commit 1639623):\n- 00_Brand/Channel-Setup/ideas/013_Darwin-Wallace-Evolution/opening_and_outline_v00.md\n- 00_Brand/Channel-Setup/ideas/013_Darwin-Wallace-Evolution/SOURCES_v00.md\n- 00_Brand/Channel-Setup/ideas/IDEAS_2026-10-15_J0295.md\n\nWrite full script master v01 (5–6 parts, ~7–9 min / 1,200–1,300 spoken words) from the locked outline. Target review:script ≥ 90.\n\nChief notes (must land in v01):\n1. KEEP the v00 teach plan: 5× DATA+SCALE (secrecy bar, 7,000-mile arc, 13 beak-tool chart, Malthus curve + barnacle counter, 1835–1889 timeline + 30 listeners vs 1,250 copies), 14 WHO cards, WHEN stamps, 4 FACT cards — graphs/charts, overlays, date/timeline call-outs, person cards, interesting facts (Ben 11 Oct).\n2. Keep Part 01 cold (no chapter card); answer image by 0:03, title question by 0:07, promise by 0:15, first real fact before 0:45.\n3. Flag for the later Gemini facts pass: Wallace receipt-date debate (van Wyhe 2012 — keep 18 June 1858 as Darwin letter date); elephant 15M vs later editions; hedge \"~10,000 barnacles\" unless primary count locks; Gould 13-species nuance; 7,000-mile arc verify-or-soften. Every MUST QUOTE needs exact URL + verbatim excerpt.\n4. Picture foreshadow only (no mint): finch beak chart + Malthus curve as £0 Codex code-graphics candidates.\n5. After-act hand-off: keep both options tagged (back to 012 Mendel if live, or forward to 014 Mary Anning).\n\nSpend nothing: no TTS, no picture generation, no paid API, no Studio or publish change. Existing free tools only.\n\nEnd with: python3 scripts/jobs.py block <id> --reason \"parked for Chief: script v01 review\" --git\n",
+      "ref": "6196336541",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T15:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T15:55Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "script"
     }
   ],
   "focus": [
