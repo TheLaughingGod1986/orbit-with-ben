@@ -1,5 +1,5 @@
 {
-  "next_id": 304,
+  "next_id": 305,
   "jobs": [
     {
       "id": "J0001",
@@ -22919,6 +22919,33 @@
         "by": "cursor",
         "note": "map v01 and locked long"
       }
+    },
+    {
+      "id": "J0304",
+      "title": "HOS 013 Darwin–Wallace: Gemini facts quote pass on FACT_NOTES_v01 (30 rows)",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "J0299 Chief PASS (OWB #99 comment on Claude park 6197550164; HOS main 9db5a26). No spend, no deletes; park for Chief where a PASS is needed.\n\nGemini facts quote pass on:\n- 02_Video-Projects/013_Darwin-Wallace-Evolution/01_Script/darwin_script_master_v01.md\n- 02_Video-Projects/013_Darwin-Wallace-Evolution/01_Script/FACT_NOTES_v01.md (30 rows)\n\nFor every MUST QUOTE row in FACT_NOTES_v01.md: fill Exact quote with a verbatim excerpt from a real open page plus its URL. FLAG any claim that cannot be found there. Prefer Darwin Correspondence Project, Darwin Online, Wallace Online, Linnean Society.\n\nChief watch-list from J0295 / Claude softens (already cut or hedged in VO — confirm OK or FLAG for rewrite):\n1. Wallace receipt-date debate (van Wyhe 2012) — script has no Ternate and no posting date; Darwin side stays 18 June 1858.\n2. Elephant figure — cut from VO.\n3. Barnacle specimen count — cut; \"about eight years\" only.\n4. Gould \"13 species\" — cut; \"group of close cousins\" only.\n5. 7,000-mile arc — cut; \"the other side of the world\" only.\n6. Malthus date — script keeps Notebook D 28 Sept 1838 (Autobiography says October); quote the notebook.\n7. \"like confessing a murder\" and Lyell \"originality…smashed\" — quote verbatim from DCP.\n8. Origin first printing / day-one wording (trade sale 22 Nov vs publish 24 Nov).\n\nDo not rewrite spoken lines in the script master; list any line that needs cutting or softening for Chief/Claude. Commit FACT_NOTES (or SOURCES) fill to HOS main (or a short branch), then park for Chief. No VO, no picture mint, no Studio change.\n",
+      "ref": "6197550164",
+      "film": "",
+      "stage": "",
+      "after": "J0299",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T17:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T17:00Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "facts"
     }
   ],
   "focus": [
