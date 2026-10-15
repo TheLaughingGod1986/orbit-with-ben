@@ -28,6 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0280 | mini | open | – | – | studio · HOS Related fixes ×4 after longs public (from J0245) |  |
 | J0281 | mini | open | – | – | studio · OWB: schedule PASS Shorts (Venus J0232, Saturn late-arrival J0253) |  |
 | J0282 | mini | open | – | – | assembly · HOS 008 PR #322 rebase + squash-merge after J0240 PASS |  |
+| J0285 | mini | open | – | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: set containsSyntheticMedia=true before go-live |  |
 
 Recently finished:
 

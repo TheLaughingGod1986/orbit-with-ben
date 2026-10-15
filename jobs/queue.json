@@ -1,5 +1,5 @@
 {
-  "next_id": 285,
+  "next_id": 286,
   "jobs": [
     {
       "id": "J0001",
@@ -21268,6 +21268,33 @@
           "at": "2026-10-15T12:11Z",
           "by": "chief",
           "what": "done: PASS (Chief): 030 Apophis Short v05 BbsyFrV8kCY Private + publishAt 2026-10-22T10:30:00Z (Thu 22 Oct 11:30 London). Title matches. Master sha cbb8e9a55e… matches; duration PT23S; uploadStatus processed; not Made-for-Kids; UPLOADS registered. Cover not custom-set (YouTube auto thumbs present; Studio cover before go-live = follow-on). Buffer blocked (Vercel Blob store suspended) = follow-on. Related unset (no Apophis long yet; Short-first). containsSyntheticMedia null on read-back = follow-on to set true."
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0285",
+      "title": "030 Apophis Short BbsyFrV8kCY: set containsSyntheticMedia=true before go-live",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J0284 PASS (Chief). Live read-back on BbsyFrV8kCY had containsSyntheticMedia=null (dry-run package said true). Before go-live Thu 22 Oct 11:30 London, set status.containsSyntheticMedia=true without touching title/description/schedule/privacy:\n\n  cd 07_Content-Ops && npx tsx --env-file=.env scripts/set-synthetic-disclosure.ts --ids BbsyFrV8kCY\n\nRead back and confirm true. No spend. No privacy/publishAt change.",
+      "ref": "",
+      "film": "030",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T12:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T12:11Z",
+          "by": "chief",
+          "what": "added"
         }
       ],
       "kind": "studio"
