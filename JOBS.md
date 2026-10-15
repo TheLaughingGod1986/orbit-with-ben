@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 024, 025, 026, 027.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J0167, J0243, J0244.** Ahead of everything, the focus film included.
+**Urgent, in this order: J0167, J0244.** Ahead of everything, the focus film included.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -31,12 +31,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0239 | mini | blocked | gemini | – | for gemini · qa · `gemini-agy` · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | blocked | gemini | – | for gemini · review · `gemini-agy` · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
-| J0243 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) |  |
 | J0244 | mini | blocked | codex | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0250 | mini | blocked | codex | – | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
-| J0251 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · OWB ideas + script draft: next film beyond the pipeline |  |
-| J0252 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0253 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0254 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0255 | mini | blocked | cursor | – | for cursor · chart · `cursor-auto` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
@@ -46,7 +43,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0259 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0260 | mini | blocked | gemini | – | for gemini · script · `gemini-agy` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0261 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
-| J0262 | mini | blocked | gemini | – | for gemini · qa · `gemini-agy` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0265 | mini | blocked | cursor | – | 027 edit · assembly · 027 Earth Stopped Spinning: fix music_gate FAIL on v01i (prepare chapter awe/explain score plan + house SFX stems, no spend) |  |
 | J0266 | mini | open (after J0140) | – | – | 006 edit · assembly · HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend) |  |
 | J0267 | mini | claimed | cursor | 2026-10-15T07:37Z | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
@@ -56,11 +52,11 @@ Recently finished:
 
 - J0264 done: Shorts gate gaps: register 23KZK7OjsEE (Jupiter, airs Sat 17 Oct) + lbW2iQ9YvqA (Saturn, 20 Oct), find exports for vlkj8RQKmH8 + oyRcrFTYyDY, gate all four (done)
 - J0263 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 3 HOS longs (+54 OWB, 13 HOS Shorts); CTR hits vs 4%: HOS _C92tIJCk8A Germs 6.7% (30 impr). None on OWB: best -jmMROGoZCM 3.2% (31 impr), Saturn 55AEQwvs36g 2.1% on 820. OWB Short buaOI3QGm7U left out (Studio shows no data). HOS read from the channel table (per-video table blank on 9222). Commit 960fa93e.)
+- J0262 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (acting Chief: QA sweep accepted; fixes ride J0265 (027 music) and J0266 (HOS 006 P3/P4))
+- J0252 done: HOS ideas + script draft: next film beyond the pipeline (acting Chief: HOS 012 = Mendel's 28,000 pea plants (47/50), 013 = Darwin & Wallace next; working title 'How a Monk and 28,000 Pea Plants Solved Genetics'; Claude writes script v01 (cloud job))
+- J0251 done: OWB ideas + script draft: next film beyond the pipeline (acting Chief: 031 What Happens When Earth's Magnetic Field Flips? goes forward (24/30); lock after neighbour pass; Short-first waived while the standalone Shorts cohort runs; script v01 review rides J0259)
 - J0249 done: Packaging panel decision: 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (Wrote 05_Analytics/tests/panels/owb-024-lightspeed/DECISION.md (836d4b8e): kept title 'What Happens If You Travel Near Light Speed?' and Variant A 024_answer_j0143_v02.jpg, applied panel description improvements, queued Codex Variant B thumb job J0250 ('7 YEARS GONE' on mirrored j0143_v02 ship plate), and logged T004 in THUMB_LEDGER.json. Ready for Chief PASS on DECISION.md.)
 - J0248 done: Packaging panel (cursor): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0247 done: Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0246 done: Packaging panel (codex): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (Test revised A: EARTH AGES FASTER, with a readable traveller beside Earth; independent critique committed as 694e2077.)
-- J0242 cancelled: HOS 005 s04 5n7xFQRBUvI: set Related video = wwcjcFfC-5M (after the long is public, before 31 Oct 11:30 London) ()
-- J0238 done: Mini: install the CDP browser watchdog (HOS #318) so Studio jobs self-heal; post status (done)
-- J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
-- J0236 done: 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) (v05e master rebuilt to OWB UAT/023_Venus_full_rough_v05e.mp4 (sha256 5d8a8f73, 513.0 s, -14.2 LUFS; phone match: dur diff 0.0s, max dHash dist 1 bit across 10 frames, LUFS diff 0.1 LU); gate:episode PASS 94/100, picture_qa PASS 0 fail, music_gate PASS; uploaded Private as VBaYRPp85Sw (publishAt 2026-10-25T18:00:00Z, thumbnail A set, synthetic disclosure on, not made for kids, registered in UPLOADS.json; Buffer plan saved at buffer-plans/VBaYRPp85Sw.json, queued behind 10-post cap for daily 07:05 check))
+- J0243 done: OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) (acting Chief: Jupiter -jmMROGoZCM keeps its running NO FLOOR? test (never replace a running test); ledger T003 starts when it ends (~26 Oct). Black hole 3xrxdmaOwJI already shows Ben's NO WAY OUT design live, so no B test now; T002 closed as shipped-as-A)
