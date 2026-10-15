@@ -35,6 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0314 | mini | open | – | – | 010 picture · video · HOS 010: plate boards v01 from the locked script + long VO (Flow-first price table), no mint |  |
 | J0315 | cloud | open | – | – | 007 picture · for claude · review · HOS 007: Claude's review of the picture plate boards (96 rows, 80 mints) before the picture credit |  |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
+| J0318 | gemini | open | – | – | 031 sources · facts · 031 Magnetic Field Flip: Gemini facts quote pass on SOURCES.md (MUST QUOTE rows) | 6198817961 |
 
 Recently finished:
 
