@@ -19219,7 +19219,7 @@
     {
       "id": "J0258",
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
       "ref": "",
@@ -19274,10 +19274,24 @@
           "at": "2026-10-15T07:07Z",
           "by": "claude",
           "what": "reopened: acting Chief PASS: (1) set Related on qOZgess30h0 -> _C92tIJCk8A now; (2) before 17:00Z today confirm GHZDsiH7L7A end screen = AL_-qlWko_g + playlist + Subscribe, T&C running; pinned comment at launch; (3) after GHZDsiH7L7A is public, Related on 29bpGAI0wb8 + JyRjM-9Yc8g -> GHZDsiH7L7A, verify TbMMJSRKC3U + clV6E10NLPw; the wwcjcFfC-5M group stays with J0245/J0188 for 29 Oct; (4) optional line-1/hashtag/tag clean-ups: yes, exact text from 2026-10-15.md. Read back each; done when 1-3 are live"
+        },
+        {
+          "at": "2026-10-15T09:40Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 109 min (heartbeat 2026-10-15T07:51:18Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "listing",
-      "backlog": "hos-live-listing-fixes"
+      "backlog": "hos-live-listing-fixes",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J0259",
