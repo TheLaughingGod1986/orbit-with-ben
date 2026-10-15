@@ -1,5 +1,5 @@
 {
-  "next_id": 309,
+  "next_id": 310,
   "jobs": [
     {
       "id": "J0001",
@@ -23248,6 +23248,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0309",
+      "title": "024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "024 picture lock = v05d (Chief PASS 12 Oct, J0149, 6e1a1eb3: 07_Edit-Project/024_LightSpeed_full_rough_v05d.mp4). It has been ready for Ben since 12 Oct but never reached OWB UAT or an upload job (Claude, 15 Oct).\n1. Copy v05d (final mix, captions as packaged by J0249) to OWB UAT as 024_LightSpeed_v05d.mp4 and the NAS youtube-staging folder; record sha256. Post the UAT path on #99 so the board note can point Ben at it.\n2. Dry-run youtube-package-upload on the J0249 package with v05d, --schedule 2026-11-01T18:00:00Z, Private. Park for Chief final OK (Ben by Fri 16 Oct 23:59 London, else the Chief's final OK goes ahead per the board note). No live upload in this job. No spend.",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T17:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T17:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [

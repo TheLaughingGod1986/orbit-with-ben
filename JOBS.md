@@ -27,6 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0304 | gemini | open (after J0299) | – | – | facts · HOS 013 Darwin–Wallace: Gemini facts quote pass on FACT_NOTES_v01 (30 rows) | 6197550164 |
 | J0307 | cloud | open (after J0304) | – | – | script · HOS 013 Darwin–Wallace: script v02 after facts pass (J0304 flags + Chief 2nd-look chronology notes) | 9db5a26 |
 | J0308 | mini | open | – | – | studio · HOS 004 s05 Dalton Short v02: package Private + publishAt on next free search-titled slot (J0306 PASS) |  |
+| J0309 | mini | open | – | – | 024 edit · assembly · 024 Light Speed: put picture-lock v05d in OWB UAT for Ben's watch, then package for Private upload (Sun 1 Nov 18:00 London) |  |
 
 Recently finished:
 
