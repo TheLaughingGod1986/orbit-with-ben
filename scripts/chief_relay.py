@@ -68,6 +68,7 @@ import shutil
 import signal
 import subprocess
 import sys
+import time
 
 HOME = pathlib.Path.home()
 STATE = pathlib.Path(os.environ.get("DESK_STATE", HOME / "_desk" / "state"))
@@ -99,6 +100,11 @@ CREDIT_RE = re.compile(
 # write it in a note or a block reason ("hit the 5-hour limit", "Claude Code out of usage", "weekly limit").
 CLAUDE_LIMIT_RE = re.compile(CREDIT_RE.pattern + r"|out of usage|\bhit (?:the|its|my|our|a) .*limit|"
                              r"(?:5-hour|five-hour|weekly|session|usage) (?:limit|cap)|usage (?:cap|exhausted)", re.I)
+
+
+# A CLI saying one model's pool is spent, not the whole agent (Cursor Ultra: "hit your usage limit for Opus ... Switch
+# to a different model").
+MODEL_LIMIT_RE = re.compile(r"usage limit for \w|switch to a different model", re.I)
 
 
 def now() -> dt.datetime:
@@ -194,6 +200,15 @@ def find_bin(env: str, name: str):
     return next((c for c in cands if c and os.access(c, os.X_OK)), None)
 
 
+def cursor_default_out(at: dt.datetime):
+    """The mark left when Cursor's own default model (Opus on the Mini) ran out, while it lasts; else None."""
+    m = read_json(d("cursor_default_out.json")) or {}
+    try:
+        return m if m.get("until") and at < parse(m["until"]) else None
+    except (ValueError, TypeError):
+        return None
+
+
 def cli_spec(agent: str, model: str = ""):
     """(binary, args) for a CLI agent, or None if it isn't installed. `model` (from scripts/routing.py, AGENTS.md "Who
     does what") is passed to Codex as `-m`. Cursor stays on its own Auto setting unless the model is one it runs by
@@ -202,6 +217,10 @@ def cli_spec(agent: str, model: str = ""):
         b = find_bin("CURSOR_AGENT_BIN", "agent")
         flags = os.environ.get("CURSOR_AGENT_FLAGS", "-p --force")
         cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "cursor" else ""
+        if not cm and cursor_default_out(now()):
+            # Cursor's own default model on the Mini hit its pool limit ("You've hit your usage limit for Opus ...
+            # Switch to a different model", 15 Oct 2026 03:40Z): run on Auto until that mark ends.
+            cm = os.environ.get("CURSOR_FALLBACK_MODEL", "auto")
         if cm:
             flags = f"{flags} --model {shlex.quote(cm)}"
     elif agent == "codex":
@@ -636,6 +655,21 @@ def claude_blocked_on_limit(job: dict) -> bool:
 CLAUDE_BEAT_BRANCH = "claude-heartbeat"
 
 
+def raw_claude_beat():
+    """heartbeat.json straight from GitHub's raw file host (the repo is public), or None."""
+    url = os.environ.get("CHIEF_CLAUDE_BEAT_URL", "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/"
+                         f"{CLAUDE_BEAT_BRANCH}/heartbeat.json")
+    if not url:
+        return None
+    try:
+        import urllib.request
+        with urllib.request.urlopen(f"{url}?t={int(time.time())}", timeout=20) as r:
+            return json.loads(r.read().decode())
+    except Exception as e:   # no network, 404, bad JSON: the git read decides
+        log(f"claude beat: raw read failed: {e.__class__.__name__}")
+        return None
+
+
 def fetch_claude_beat(at: dt.datetime):
     """Claude's heartbeat (Ben, 14 Oct 2026: "if ever an agent like yourself is down, out of usage for a few hours ...
     switch to the next model down, and when it's back, switch back automatically"). Every Claude run (the hourly studio
@@ -655,8 +689,15 @@ def fetch_claude_beat(at: dt.datetime):
                            capture_output=True, text=True, timeout=30)
         if r.returncode == 0:
             beat = json.loads(r.stdout)
-    except (OSError, subprocess.SubprocessError, ValueError):
-        pass
+        else:
+            log(f"claude beat: git read failed: {(r.stderr or '').strip()[-200:]}")
+    except (OSError, subprocess.SubprocessError, ValueError) as e:
+        log(f"claude beat: git fetch failed: {e.__class__.__name__}")
+    # A second road to the same file (15 Oct 2026 03:40Z: the Mini still read the 01:51 beat after a 03:31 one was
+    # pushed). The newest of the two wins.
+    raw = raw_claude_beat()
+    if raw and raw.get("at") and (not beat or str(raw["at"]) > str(beat.get("at", ""))):
+        beat = raw
     write_json(d("claude_beat.json"), {"fetched": iso(at), "beat": beat})
     return beat
 
@@ -1047,7 +1088,15 @@ def run_locked(at: dt.datetime) -> int:
         log_run(at, job, who, model, code, usage)
         if usage:
             until = now() + dt.timedelta(hours=retry_h)
-            if model in routing.SEPARATE_POOLS:
+            on_auto = who == "cursor" and model not in routing.SEPARATE_POOLS and bool(cursor_default_out(now()))
+            if who == "cursor" and MODEL_LIMIT_RE.search(said) and model not in routing.SEPARATE_POOLS and not on_auto:
+                # Only the model Cursor defaults to is out (its Opus pool), not Cursor: run it on Auto for the
+                # mark's length and keep it up (Ben, 15 Oct 2026: Cursor was benched overnight with credit left).
+                write_json(d("cursor_default_out.json"), {"since": iso(now()), "until": iso(until), "said": said})
+                log(f"cursor: its default model is out ({said}); Cursor runs on Auto until {iso(until)}")
+                at = now()
+                continue   # the same job, on Auto, in this same run
+            elif model in routing.SEPARATE_POOLS:
                 # Only this model's pool is empty (Claude-in-Cursor): flag the model, keep the worker up for its other
                 # models, and move the job on down its chain (Ben, 14 Oct 2026: run 24/7 on whoever has credit).
                 mark_model_down(model, f"{NAMES.get(who, who)} on {routing.cli_model(model)} said out of credit", until, now())
