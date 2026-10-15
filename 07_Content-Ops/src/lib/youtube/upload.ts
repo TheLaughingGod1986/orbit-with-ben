@@ -178,14 +178,18 @@ export async function uploadToYouTube(
       };
     }
 
-    const fileBuf = fs.readFileSync(filePath);
+    const fileSize = fs.statSync(filePath).size;
+    const fileBody =
+      fileSize > 2_000_000_000 && typeof fs.openAsBlob === "function"
+        ? await fs.openAsBlob(filePath, { type: "video/mp4" })
+        : fs.readFileSync(filePath);
     const uploadRes = await fetch(uploadUrl, {
       method: "PUT",
       headers: {
         "Content-Type": "video/mp4",
-        "Content-Length": String(fileBuf.length),
+        "Content-Length": String(fileSize),
       },
-      body: fileBuf,
+      body: fileBody,
     });
     const uploadBody = await uploadRes.json().catch(() => ({}));
     if (!uploadRes.ok || !uploadBody.id) {
