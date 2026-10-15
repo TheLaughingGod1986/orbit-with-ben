@@ -352,6 +352,8 @@ a.open.watch{color:#fff;background:var(--doing);border-color:var(--doing);paddin
 .nowbar .one{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nowbar .h.one{font-size:15px;white-space:normal;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:6px}
 .nowbar .h.one .tt{flex:1 1 60%;min-width:0;white-space:normal;overflow-wrap:anywhere}
+.nowbar .nxl{margin:2px 0 0;padding-left:20px}
+.nowbar .nxl li{margin:1px 0}
 .nowbar .nowwho{margin:3px 0 4px 16px;font-size:12.5px;color:var(--ink-2);line-height:1.35}
 .nowbar .h.one .meta{flex:0 0 auto;font-size:13px;white-space:nowrap}
 .nowbar .jid{display:inline-block;font:600 11px/1.5 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:9px;background:#e8ecf2;color:#3a4656;vertical-align:1px}
@@ -1018,7 +1020,7 @@ function renderNow(){
     head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours"
       : sl ? `<b>Now:</b> <span>nothing running · last job finished <span data-ago="${sl.at}">${ago(sl.at)}</span></span>` : "<b>Now:</b> starting the next job"; }
   else { cls = "idle"; head = "<b>Now:</b> nothing to do right now"; }
-  const nx = line.find(j=>j!==headJob);
+  const nxs = line.filter(j=>j!==headJob).slice(0,3);
   const groups = {};
   for(const j of all){ if(j===headJob) continue; const k = jobKind(j); if(!k) continue;
     const r = waitReason(j, k); (groups[r] = groups[r] || []).push(j); }
@@ -1039,8 +1041,8 @@ function renderNow(){
     + `</details>` : "";
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>` + bar
-    + (nx ? `<div class="nx one"><b>Next:</b> ${esc(plainTitle(nx, 60))}</div>` : "")
-    + (headJob ? "" : hbLine()) + details + updatedAt();
+    + (nxs.length ? `<div class="nx"><b>Next up</b><ol class="nxl">${nxs.map(j=>`<li>${esc(plainTitle(j, 90))}</li>`).join("")}</ol></div>` : "")
+    + (headJob ? "" : hbLine()) + updatedAt();
 }
 
 // ---------- Job board (Ben, 12 Oct 15:49) ----------

@@ -139,40 +139,13 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML, className:
         self.assertNotIn("J0129", r["html"])
         self.assertNotIn('class="jid"', r["html"])
 
-    def test_one_next_line_only(self):
+    def test_next_up_lists_three_and_no_dropdown(self):
         r = self.render()
-        self.assertEqual(r["html"].count('<div class="nx one">'), 1)
-        self.assertIn("<b>Next:</b> 027 Earth Stopped Spinning rough v01f – frame-review fixes", r["html"])
-        self.assertNotIn("Saturn Short", r["html"])
-
-    def test_needs_ben_is_one_red_line(self):
-        r = self.render()
-        self.assertIn('<details class="more ben"><summary><span class="chip">1 job waiting: 1 for you</span>', r["html"])
-        self.assertIn('<div class="sh">Waiting for you</div>', r["html"])
-        self.assertIn("Orbit Instagram bio link -&gt; Saturn long", r["html"])
-        self.assertNotIn("needs Ben to sign", r["html"])
-
-    def test_chief_parks_collapse_into_a_chip(self):
-        jobs = self.with_jobs(J0131={"result": "parked for Chief: thumbnail review"}) + [
-            {"id": f"J09{i:02d}", "title": f"Backlog OWB: thing {i}", "needs": "mini", "line": "mini", "status": "blocked",
-             "result": "parked for Chief: review", "last": {}} for i in range(5)]
-        r = self.render(jobs=jobs)
-        self.assertIn('<span class="chip">6 jobs waiting: 6 for my review</span>', r["html"])
-        self.assertIn('<details class="more">', r["html"])
-        self.assertNotIn("more ben", r["html"])
-        self.assertNotIn("Backlog OWB:", r["html"])
-        self.assertIn("OWB – thing 0", r["html"])
-
-    def test_date_bound_job_is_scheduled_not_red(self):
-        jobs = self.with_jobs(J0131=None) + [{"id": "J0135", "title": "025 set Related once the long is public",
-            "needs": "mini", "line": "mini", "status": "blocked", "last": {},
-            "result": "waits for input: 025 long Js6EQJ8qDi8 public"}]
-        r = self.render(jobs=jobs)
-        self.assertIn("1 job waiting: 1 for 025 to go public", r["html"])
-        self.assertIn('<div class="sh">Waiting for 025 to go public</div>', r["html"])
-        self.assertIn("025 set Related", r["html"])
-        self.assertNotIn("waits for input", r["html"])
-        self.assertNotIn("more ben", r["html"])
+        self.assertEqual(r["html"].count('<div class="nx">'), 1)
+        self.assertLessEqual(r["html"].count('<li>'), 3)
+        self.assertIn("<li>027 Earth Stopped Spinning rough v01f – frame-review fixes</li>", r["html"])
+        self.assertNotIn("<details", r["html"])
+        self.assertNotIn("jobs waiting", r["html"])
 
     def test_idle_box_is_plain_too(self):
         r = self.render(jobs=self.with_jobs(J0129=None))
