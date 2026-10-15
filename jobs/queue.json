@@ -22462,10 +22462,10 @@
       "stage": "sources",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-15T15:52Z",
-      "eta": "2026-10-15T17:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T15:49Z",
       "result": "",
@@ -22494,6 +22494,11 @@
           "at": "2026-10-15T16:04Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Neighbour committed b15b1529. Gemini quote pass still in tmux j0296-facts"
+        },
+        {
+          "at": "2026-10-15T16:04Z",
+          "by": "cursor",
+          "what": "released: Gemini quote pass still running. Do not start a second agy. tmux j0296-facts; stdout ~/_desk/logs/j0296-facts.log; live log ~/.gemini/antigravity-cli/log/cli-20261015_165539.log; done ~/_desk/logs/j0296-facts.done. Neighbour pass committed b15b1529 (strong, 11 at 1M+). See 01_Script/J0296_QUOTE_PASS.md. When .done exists: completeness-check SOURCES.md, commit Gemini's file, park for Chief if any MUST QUOTE is FLAG."
         }
       ],
       "kind": "facts",
