@@ -1,5 +1,5 @@
 {
-  "next_id": 306,
+  "next_id": 307,
   "jobs": [
     {
       "id": "J0001",
@@ -22983,6 +22983,33 @@
         }
       ],
       "kind": "script"
+    },
+    {
+      "id": "J0306",
+      "title": "HOS 004 s05 Dalton Short FIX v02: clean plate (garbled Hp/Hg/Op tiles) + claim-first open (Chief FIX on J0298 v01)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "FIX v02 of the HOS 004 s05 Dalton Short (J0298 v01 hos_004_s05_dalton_v01.mp4, sha 623c74f8, PR #333). Chief ruling 15 Oct ~18:00 London: FIX, not PASS. Gate, vo_check, loudness (-19.2 LUFS, -3.8 dBTP), length (23.97 s, 57 words), captions and title draft \"What Is Dalton's Atomic Theory?\" are fine; keep them.\n\nWhy FIX:\n1. HARD FAIL, garbled text in picture (AGENTS.md lines 104/157: plates carry no readable text; garbled letters hard-fail). The 12.26–15.85 s plate `part02/raw/v01/03_weights_line_v01.mp4` shows Veo-baked tiles \"Hp\", \"Hg\" (that's mercury's symbol) and \"Op\" on the balls while the VO says \"Hydrogen ... Oxygen\". Replace it with a clean, text-free KEEP plate from 004 part02 (e.g. 05_fixed_amounts / 06_water_ratio / 07_water_always / 08_ruler_of_weights, whichever has NO letters in any frame; check every frame, not just the still). No new picture generation, spend nothing. Also check that nothing else in v02 shows letters baked into the plate.\n2. First words. v01 opens \"Manchester, eighteen-oh-eight.\" That's a dateline, not a claim: HOS_STRATEGY.md line 60 (\"The first words are the claim. Never 'In 1895…'\") and STUDIO_PLAYBOOK.md line 92. Preferred route: start the lift at the claim, \"Every element is made of its own kind of atom, and each kind has its own weight.\" (cut \"His atomic theory says\" at the word boundary), with Dalton on screen from frame 0 and the JOHN DALTON · Manchester, 1808 card early (after the 2 s hook) so \"Why believe him?\" has a face and a name. Then run on past \"same fixed amounts\" so the question gets its answer: \"Water is always the same mix of hydrogen and oxygen ... That only makes sense if both are made of tiny pieces with fixed weights.\" Drop \"however you make it\" if needed to stay in the 22–27 s / 55–65 word lock. If the gate still can't fit, choose another route that keeps the claim first and a real payoff, and say which.\n3. Soft: the \"Gold is heavier still\" plate shows a wood-grain ball; if a KEEP plate exists with a gold-coloured ball, prefer it. Not blocking.\n\nKeep: hook caption on frame 0 with the yellow word, captions throughout, at most one overlay (the person card), title on screen 9–14 s, loop back to Dalton at the balance, Part 02 bed level. Run gate_shorts_open, vo_check, freezedetect and the caption check. Update PR #333 (v02 files + SHORT json), post before/after stills of the replaced plate on desk #180, then `python3 scripts/jobs.py block <id> --agent <you> --reason \"parked for Chief: Short PASS — HOS 004 s05 Dalton v02\" --git`. Never upload. Spend nothing.\n\nFYI for the record (no action in this job): the same 03_weights_line_v01 plate may also be in the 004 long's Part 02 cut. If it is, note it in the job result so Chief can log the lesson; don't touch the long.\n",
+      "ref": "623c74f8",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T17:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T17:03Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [
