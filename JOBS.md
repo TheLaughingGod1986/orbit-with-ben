@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0288 | mini | blocked | claude | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0300 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
-| J0304 | gemini | claimed | cursor | 2026-10-15T18:36Z | facts · HOS 013 Darwin–Wallace: Gemini facts quote pass on FACT_NOTES_v01 (30 rows) | 6197550164 |
+| J0304 | gemini | open (after J0299) | – | – | facts · HOS 013 Darwin–Wallace: Gemini facts quote pass on FACT_NOTES_v01 (30 rows) | 6197550164 |
 | J0306 | mini | open | – | – | assembly · HOS 004 s05 Dalton Short FIX v02: clean plate (garbled Hp/Hg/Op tiles) + claim-first open (Chief FIX on J0298 v01) | 623c74f8 |
 | J0307 | cloud | open (after J0304) | – | – | script · HOS 013 Darwin–Wallace: script v02 after facts pass (J0304 flags + Chief 2nd-look chronology notes) | 9db5a26 |
 
