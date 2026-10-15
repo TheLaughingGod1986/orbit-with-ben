@@ -19325,13 +19325,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-15T06:25Z",
-      "eta": "2026-10-15T06:50Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T06:12Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-15T06:12Z",
@@ -19372,6 +19372,11 @@
           "at": "2026-10-15T06:31Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed UPLOADS.json, library.json and UPCOMING_SHORTS_GATE.md (17dd12e9); all 8 upcoming Shorts PASS"
+        },
+        {
+          "at": "2026-10-15T06:32Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "kind": "qa",
@@ -19390,7 +19395,8 @@
         "at": "2026-10-15T06:31Z",
         "by": "gemini",
         "note": "Committed UPLOADS.json, library.json and UPCOMING_SHORTS_GATE.md (17dd12e9); all 8 upcoming Shorts PASS"
-      }
+      },
+      "done_ref": "17dd12e9"
     },
     {
       "id": "J0265",

@@ -48,12 +48,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0261 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0262 | mini | blocked | gemini | – | for gemini · qa · `gemini-agy` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0263 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J0264 | mini | claimed | gemini | 2026-10-15T06:50Z | for gemini · qa · `gemini-agy` · Shorts gate gaps: register 23KZK7OjsEE (Jupiter, airs Sat 17 Oct) + lbW2iQ9YvqA (Saturn, 20 Oct), find exports for vlkj8RQKmH8 + oyRcrFTYyDY, gate all four |  |
 | J0265 | mini | open | – | – | 027 edit · assembly · 027 Earth Stopped Spinning: fix music_gate FAIL on v01i (prepare chapter awe/explain score plan + house SFX stems, no spend) |  |
 | J0266 | mini | open (after J0140) | – | – | 006 edit · assembly · HOS 006 Parts 03/04 roughs: fix picture_qa + polish_gate FAILs (P3:16 & P4:09 reuse stretches, P4:11 night_jars near-black, no spend) |  |
 
 Recently finished:
 
+- J0264 done: Shorts gate gaps: register 23KZK7OjsEE (Jupiter, airs Sat 17 Oct) + lbW2iQ9YvqA (Saturn, 20 Oct), find exports for vlkj8RQKmH8 + oyRcrFTYyDY, gate all four (done)
 - J0249 done: Packaging panel decision: 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (Wrote 05_Analytics/tests/panels/owb-024-lightspeed/DECISION.md (836d4b8e): kept title 'What Happens If You Travel Near Light Speed?' and Variant A 024_answer_j0143_v02.jpg, applied panel description improvements, queued Codex Variant B thumb job J0250 ('7 YEARS GONE' on mirrored j0143_v02 ship plate), and logged T004 in THUMB_LEDGER.json. Ready for Chief PASS on DECISION.md.)
 - J0248 done: Packaging panel (cursor): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
 - J0247 done: Packaging panel (gemini): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) (done)
@@ -63,4 +63,3 @@ Recently finished:
 - J0237 done: HOS Atom GHZDsiH7L7A: apply the PASSed Sources line to the description + row-28 quotes on HOS #312, before 15 Oct 17:00Z (done)
 - J0236 done: 023 Venus v05e: package to v05e, gates, Private upload for Sun 25 Oct 18:00Z (Ben OK'd 11 Oct; acting-Chief final OK) (v05e master rebuilt to OWB UAT/023_Venus_full_rough_v05e.mp4 (sha256 5d8a8f73, 513.0 s, -14.2 LUFS; phone match: dur diff 0.0s, max dHash dist 1 bit across 10 frames, LUFS diff 0.1 LU); gate:episode PASS 94/100, picture_qa PASS 0 fail, music_gate PASS; uploaded Private as VBaYRPp85Sw (publishAt 2026-10-25T18:00:00Z, thumbnail A set, synthetic disclosure on, not made for kids, registered in UPLOADS.json; Buffer plan saved at buffer-plans/VBaYRPp85Sw.json, queued behind 10-post cap for daily 07:05 check))
 - J0235 done: HOS 003 X-rays: Test & Compare thumbnail-only A (live) vs B (Codex mockup 2 'INSIDE HER HAND') (HOS 003 thumbnail-only A/B test saved and reload-verified running on frP_YrNShsU; A existing live, B supplied larger-hand INSIDE HER HAND; unchanged title. Preview HOS #180 6177937450; evidence commit 19a9c43. Read-only follow-up Sun 18 Oct. No spend or blockers.)
-- J0231 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (10 OWB + 3 HOS longs; 57 OWB + 12 HOS Shorts. CTR hits vs 4%: OWB 0/10, HOS 1/3 (_C92tIJCk8A 6.7%). Studio lacks avgViewPct for TE_HDKAnqms; omitted. Tracker merge verified and published; commit 71c19296. Read-only, no spend.)
