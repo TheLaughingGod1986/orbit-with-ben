@@ -17662,10 +17662,24 @@
           "at": "2026-10-14T21:07Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T02:27Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "studio",
-      "urgent": 5
+      "urgent": 5,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J0244",

@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0239 | mini | blocked | gemini | – | for gemini · qa · `gemini-agy` · HOS standalone Shorts S1-S4: gates + contact sheets + cover previews for the Chief's PASS (before Fri 16 Oct) |  |
 | J0240 | mini | blocked | gemini | – | for gemini · review · `gemini-agy` · HOS 008 boards v03: fix flagged Fast prompts, code-graphic cards, measured reuse windows (no mint) |  |
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
-| J0243 | mini | open | – | – | studio · OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) |  |
+| J0243 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · OWB Test & Compare (thumbnail only): Ben's mockups on black hole 3xrxdmaOwJI + Jupiter -jmMROGoZCM (Ben asked 14 Oct) |  |
 | J0244 | mini | open | – | – | studio · OWB: Ben's new thumbnails (iCloud OWB/new thumbnails): push previews for the Chief's pick, then Test & Compare |  |
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0250 | mini | blocked | codex | – | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
