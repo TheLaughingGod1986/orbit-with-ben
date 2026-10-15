@@ -20590,13 +20590,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T09:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:56Z",
-      "result": "parked for Chief: KEEP or send back JWST B v03 (GALAXIES TOO SOON?, Webb deep field, surprised Orbit). jwst_B_v03.jpg and jwst_AB_v03.jpg in ~/_desk/J0277-thumbnails. Score PASS sat 170 near-black 5%. T005 Fermi and T006 Europa thumbnail-only tests are running; T007 not armed. Branch cursor/j0277-thumb-orbit 6ea154e1. No title or privacy change.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T07:56Z",
@@ -20682,6 +20682,11 @@
           "at": "2026-10-15T09:55Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: KEEP or send back JWST B v03 (GALAXIES TOO SOON?, Webb deep field, surprised Orbit). jwst_B_v03.jpg and jwst_AB_v03.jpg in ~/_desk/J0277-thumbnails. Score PASS sat 170 near-black 5%. T005 Fermi and T006 Europa thumbnail-only tests are running; T007 not armed. Branch cursor/j0277-thumb-orbit 6ea154e1. No title or privacy change."
+        },
+        {
+          "at": "2026-10-15T10:03Z",
+          "by": "chief",
+          "what": "reopened: Chief review v03: KEEP JWST B v03 (GALAXIES TOO SOON?, Webb deep-field plate with Orbit surprised/open-mouth, JWST craft, score PASS sat 170 near-black 5%). Arm T007 thumbnail-only Test & Compare on ziKBPJ6FY0U: A=live, B=jwst_B_v03.jpg (~/_desk/J0277-thumbnails). Confirm Running; update THUMB_LEDGER T007; then done. No title or privacy change. T005/T006 already running."
         }
       ],
       "for": "cursor",
@@ -20693,14 +20698,7 @@
         "status": "open",
         "by": ""
       },
-      "model": "cursor-grok-4-7",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T09:55Z",
-        "by": "cursor",
-        "note": "JWST v03 scored; parked for Chief"
-      }
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J0278",
