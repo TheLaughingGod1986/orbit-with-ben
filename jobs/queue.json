@@ -19373,13 +19373,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T05:07Z",
-      "result": "waits for input: GHZDsiH7L7A public (publishAt Thu 15 Oct 17:00Z). Then step 3: Related on 29bpGAI0wb8 + JyRjM-9Yc8g -> GHZDsiH7L7A, read back; pinned comment at launch. Steps 1-2 already done.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T05:07Z",
@@ -19460,6 +19460,11 @@
           "at": "2026-10-15T13:44Z",
           "by": "claude",
           "what": "blocked: waits for input: GHZDsiH7L7A public (publishAt Thu 15 Oct 17:00Z). Then step 3: Related on 29bpGAI0wb8 + JyRjM-9Yc8g -> GHZDsiH7L7A, read back; pinned comment at launch. Steps 1-2 already done."
+        },
+        {
+          "at": "2026-10-15T17:22Z",
+          "by": "claude",
+          "what": "reopened: GHZDsiH7L7A public 15 Oct (confirmed 17:21Z). Step 3 now: Related 29bpGAI0wb8 -> GHZDsiH7L7A and read back; pinned comment on GHZDsiH7L7A. JyRjM-9Yc8g moved to J0280 (no double write)."
         }
       ],
       "kind": "listing",
@@ -19472,14 +19477,7 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-15T11:14Z",
-        "by": "gemini",
-        "note": "qOZgess30h0 Related->Germs live; GHZDsiH7L7A 3-element end screen saved+verified; TbMMJSRKC3U+clV6E10NLPw verified"
-      }
+      "model": "gemini-argon"
     },
     {
       "id": "J0259",
