@@ -36,6 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0245 | cloud | open | – | – | chief · Chief: review J0181 evidence and route four HOS Related-video fixes | https://github.com/TheLaughingGod1986/history-of-science/pull/321 |
 | J0246 | mini | open | – | – | for codex · review · Packaging panel (codex): 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
 | J0249 | mini | claimed | gemini | 2026-10-15T00:56Z | for gemini · review · `gemini-agy` · Packaging panel decision: 024 Light Speed: title, thumbnails A/B/C (abc_v03) and upload package (airs Sun 1 Nov) |  |
+| J0250 | mini | open | – | – | for codex · thumb · 024 Light Speed: build Test & Compare B cover ('7 YEARS GONE' over mirrored j0143_v02 ship plate) |  |
 
 Recently finished:
 
