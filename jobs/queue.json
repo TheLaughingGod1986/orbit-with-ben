@@ -1,5 +1,5 @@
 {
-  "next_id": 345,
+  "next_id": 346,
   "jobs": [
     {
       "id": "J0001",
@@ -25415,6 +25415,34 @@
         }
       ],
       "kind": "chart"
+    },
+    {
+      "id": "J0345",
+      "title": "031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS on J0340 (OWB #99): CLAUDE_QUOTE_CHECK_v01 + script v03 at 9334d38a; review:script 95.8 (~9.4 min, ~1355 spoken words / ~7600 chars). Row 18 Africa/Tahiti confirmed on Wayback Glatzmaier 2003. Record the long VO from `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/01_Script/magnetic_field_flip_script_master_v03.md` word for word via the house VO path (Ben Orbit Narrator, eleven_v3). Dry-run first. Use paid ElevenLabs credit down to 0; never buy or top up. Same credit gate as J0302 Titan VO — Titan stays ahead on the reset unless Chief says otherwise. No picture mint. Park the take path + loudness read for Chief before mux.",
+      "ref": "9334d38a",
+      "film": "031",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T23:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T23:47Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "vo",
+      "model": "eleven_v3"
     }
   ],
   "focus": [],
