@@ -1239,6 +1239,7 @@ function tickStands(c, brief, watchVer){
 }
 const xid = x => String(x.id).replace(/\s+/g,"-");
 function extraLeft(){ return (fromDb.extraWatch||[]).filter(x=>x && x.id && x.title && !tickStands((fromDb.checks||{})[xid(x)], null, "")); }
+function extraDone(){ return (fromDb.extraWatch||[]).filter(x=>x && x.id && x.title && tickStands((fromDb.checks||{})[xid(x)], null, "")); }
 function justTicks(list, now){
   const at = x => Date.parse(x.c.at||"");
   return list.filter(x=>x.c && now-at(x) < JUST_MS && at(x)-now < 5*MINUTE).sort((a,b)=>at(b)-at(a));
@@ -1460,7 +1461,7 @@ function renderTracker(films){
   const soon = forYou.filter(x=>x.soon);
   // Ben, 15 Oct 2026: "we used to have a section at the top saying ready for me ... can we add that section back".
   // It always shows: the cuts to watch (with the player, Approve and timed change notes), or the next one coming.
-  yb.className = "youbar" + (soon.length || extraLeft().length ? " has" : justTicks(ticked, Date.now()).length ? "" : " quiet");
+  yb.className = "youbar" + (soon.length || extraLeft().length || extraDone().length ? " has" : justTicks(ticked, Date.now()).length ? "" : " quiet");
   if(yb.contains(document.activeElement) && ["TEXTAREA","INPUT"].includes(document.activeElement.tagName) && document.activeElement.value) return;   // don't wipe a fix being typed
   const fixList = (fx, id, editable) => fx.length ? `<ol class="fx">${fx.map((f,k)=>`<li>${f.t?`<span class="ft2">${esc(f.t)}</span>`:""}<span>${esc(f.text)}</span>${editable?`<button class="lnk" data-rm="${id}:${k}" aria-label="Remove">remove</button>`:""}</li>`).join("")}</ol>` : "";
   const editor = (id, sent) => { const fx = drafts[id] || [];
@@ -1481,19 +1482,21 @@ function renderTracker(films){
   // Ben, 15 Oct 2026: "I'm not seeing the shorts on the board". Things to watch that aren't a film card (the standalone
   // Shorts) are listed in film_briefs.json "extraWatch": id, title, where, airs. Shown with the films, no buttons:
   // he says OK on the thread.
-  const extra = extraLeft();
+  const extra = extraLeft(), done = extraDone();
   const extraItem = x => { const id = xid(x);
     const link = /^(https:|shareddocuments:)/.test(x.url||"") ? `<a class="open watch" href="${esc(x.url)}"${x.url.startsWith("https:")?` target="_blank" rel="noopener"`:""}>▶ Watch it${x.url.startsWith("shareddocuments:")?" (Files)":""}</a>` : "";
     const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Request changes</button></span>${changeOpen===id?editor(id, false):""}` : "";
     return `<li><span>☐</span><span><b>${esc(x.id)}</b> ${esc(x.title)}<span class="why">${esc(x.note||"")}${x.airs?`${x.note?" · ":""}airs ${esc(x.airs)}`:""}</span>${link?`<span class="acts">${link}</span>`:""}${btns}</span></li>`; };
   const extraHtml = extra.length ? `<b>${soon.length?"Also to watch":"Ready for you to watch"} (${extra.length})</b><ul class="yl">${extra.map(extraItem).join("")}</ul><div class="why">${esc(extra[0].where||"iCloud Drive › HOS UAT")}${dbApi?" · watch, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":" · when you've watched, tell the Chief \"OK\" or what to change."}</div>` : "";
+  const doneHtml = done.length ? `<b>You approved (${done.length})</b><ul class="yl">${done.map(x=>{ const c=(fromDb.checks||{})[xid(x)]||{}; const ok=c.verdict==="ok";
+    return `<li><span>${ok?"✓":"✎"}</span><span><b>${esc(x.id)}</b> ${esc(x.title)}<span class="why">${ok?"Approved":"Changes sent"} ${esc(fw(c.at))} · <b>Next:</b> ${esc(x.next||(ok?"the Chief schedules it":"the Chief picks up your changes"))}</span></span></li>`; }).join("")}</ul>` : "";
   const just = justTicks(ticked, Date.now());
   const justHtml = just.map(x=>justLine(x) + (changeOpen===x.f.key.replace(":","-") && x.c.verdict!=="ok" ? `<ul class="yl"><li class="chg"><span>✎</span>${editor(changeOpen, true)}</li></ul>` : "")).join("");
   yb.innerHTML = (soon.length ? `<b>Ready for you to check (${soon.length})</b><ul class="yl">${soon.map(item).join("")}</ul>
       <div class="why">${soon.every(x=>watchLink(x.f.key))?"Tap <b>▶ Watch</b> to open it on your phone (also in iCloud Drive › <b>OWB UAT</b> / <b>HOS UAT</b>).":"Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder."} ${dbApi?"Watch it, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":`When you've checked one, tell the Chief "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
-    : extraLeft().length ? ""
+    : (extraLeft().length||extraDone().length) ? ""
     : (()=>{ const nx = simple.filter(r=>!r.live && !r.isSched && r.ready).sort((a,b)=>(a.air||9e15)-(b.air||9e15))[0];
-        return `<b>Ready for you</b><span class="nx">Nothing to watch right now.${nx?` Next: <b>${esc(nx.f.id)}</b> ${esc(nx.f.title||"")}, ready for you ${esc(String(nx.ready).replace(/<[^>]+>/g,"").replace(/&#39;/g,"'").replace(/&amp;/g,"&"))}.`:""}</span>`; })()) + extraHtml + justHtml;
+        return `<b>Ready for you</b><span class="nx">Nothing to watch right now.${nx?` Next: <b>${esc(nx.f.id)}</b> ${esc(nx.f.title||"")}, ready for you ${esc(String(nx.ready).replace(/<[^>]+>/g,"").replace(/&#39;/g,"'").replace(/&amp;/g,"&"))}.`:""}</span>`; })()) + extraHtml + doneHtml + justHtml;
   const keyOf = id => id.replace("-",":");
   const saveCheck = async (id, verdict, fixes) => {
     if(!dbApi) return;
