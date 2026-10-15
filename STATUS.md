@@ -26,6 +26,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
-| 027 | edit | cursor | 2026-10-15T06:56Z | 2026-10-15T07:55Z | J0265 027 Earth Stopped Spinning: fix music_gate FAIL on v01i (prepare chapter awe/explain score plan + house SFX stems, no spend) |
+| 027 | edit | cursor | 2026-10-15T06:56Z | 2026-10-15T07:20Z | J0265 027 Earth Stopped Spinning: fix music_gate FAIL on v01i (prepare chapter awe/explain score plan + house SFX stems, no spend) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
