@@ -17,4 +17,4 @@ Chief ruling (a), #99, 11:30Z. This file is the lock. It is not a PASS of the pi
 
 Confirming run, 15 Oct: `music_gate_v01j_locked.json` is PASS. `--others` was only the short Mars stem (the known 0.831). The full compare stays in `music_gate_take2_straight_v01j.json`.
 
-Picture is v01i with this bed and the SFX stem. Grain and corner credits are the next polish on a later cut. They are not on v01j.
+Picture on v01j is v01i with this bed and the SFX stem. v01k is that same cut with fine film grain (`noise=alls=4:allf=t`, audio copied). `polish_gate` PASS, 0 of 88 rows failed. It is `OWB UAT/027_EarthSpin_rough_v01k.mp4`, sha256 `4f41806919ef569220c15cd293718c83a900b8be13c508a6479b047980c01ec9`. v01j stays the locked listen copy. Corner credits are the next polish. They are not on v01j or v01k. The NAS share still hangs, so the iCloud UAT files are the masters of record.
