@@ -11427,6 +11427,11 @@
           "at": "2026-10-15T00:13Z",
           "by": "gemini",
           "what": "released: Step 7/8 (ccc62204): pre-verified music_gate PASS (compilation_new_sections_bed_v05.wav, 155.0 s, 0.0 s gap) and sfx_kit level PASS (VO -14.1 LUFS, SFX -46.0 LUFS, 15 hits) after lifting the 0:25-0:53.3 intro bed dip. Running detached: _build_compilation_v05.py (PID 73498; log ~/_desk/logs/J0167-v05.log; done marker ~/_desk/logs/J0167-v05.done) to finish NAS final_v04/final_v05 mux + sha256 manifests, qa_compilation_v05/ outputs, and OWB_compilation_v05_PHONE.mp4 in OWB UAT. Never start a second copy while ~/_desk/logs/J0167-v05.done is missing. Next run: once done=0, commit qa_compilation_v05/ and park J0167 for Chief/Ben watch (J0168)."
+        },
+        {
+          "at": "2026-10-15T00:59Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "kind": "assembly",
@@ -11438,7 +11443,16 @@
         "at": "2026-10-15T00:13Z",
         "by": "gemini",
         "note": "Intro bed gap fixed; music_gate and sfx_kit verified PASS on new sections; v04/v05 NAS mux + PHONE encode running detach"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0168",
