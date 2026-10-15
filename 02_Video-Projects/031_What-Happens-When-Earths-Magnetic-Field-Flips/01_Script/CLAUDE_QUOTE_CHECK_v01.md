@@ -1,0 +1,43 @@
+# 031: Claude's quote check before VO (J0340, 16 Oct 2026)
+
+I checked every MUST QUOTE row in `SOURCES.md` myself against the live pages and PDFs, fetched today. I did not rely on Gemini's quotes. The script is `magnetic_field_flip_script_master_v03.md`: v02 plus the seven hedges below (A to G). `review:script` gives PASS 95.8, the same as v02 (~9.4 min, 6 chapters).
+
+| Row | Spoken claim (v03) | Result | Source checked |
+|---|---|---|---|
+| 1 | pole racing from the Canadian Arctic toward Siberia | ✓ NOAA "moving approximately north-northwest at 55km per year"; ESA "from the Canadian Arctic towards Siberia… 50–60 km a year"; NASA "about 34 miles (55 kilometers) per year". The marathon line is visual only | NOAA wandering poles; ESA Swarm blob; NASA Flip Flop |
+| 2 | life has lived through hundreds of flips | ✓ "at least several hundred times in the past 160 million years"; "nothing remarkable, such as doomsday events or major extinctions"; BGS "reversal patterns do not match patterns in species extinction" | NASA Flip Flop; BGS reversals |
+| 3 | 1905, Brunhes, Pontfarein, lava and baked clay reversed | ✓ Wikipedia "In 1905, he found that rocks in an ancient lava flow at Pontfarin… magnetised in a direction almost opposite"; Eos "basaltic lava flow and… the underlying backed argillaceous sediments from the village of Pontfarein"; "(1867–1910)", "discovered in 1906". Eos needed WebFetch, because curl got a Cloudflare page. **Hedges A, B, C** | Wikipedia Bernard Brunhes; Eos centenary article |
+| 4 | 1929, Matuyama, Japan and Manchuria, younger north / older south | ✓ J-STAGE PDF "On the Direction of Magnetisation of Basalt in Japan, Tyosen and Manchuria… (Rec. April 13, 1929…)"; "another group almost exactly antipodal"; "probably Quarternary eruptions" | J-STAGE PDF (doi 10.2183/pjab1912.5.203) |
+| 5 | last switch about 780,000 years ago; more than twice as long as modern humans | ✓ NASA "about 780,000 years ago"; Wikipedia "780,000 years ago"; PubMed Hublin 2017 "315 ± 34 thousand years" (visual only) | NASA Flip Flop; Wikipedia Geomagnetic reversal; PubMed 28593953 |
+| 6 | about 3,000 km down; iron-rich liquid metal; about as hot as the Sun's surface | ✓ BGS "iron-rich liquid outer core", "some 3000 km beneath our feet", "core temperatures similar to that of the surface of the Sun"; ESA "around 3000 km beneath our feet"; NASA "geodynamo" | BGS reversals; ESA Swarm weakening; NASA Goddard SAA |
+| 7 | 183 flips in 83 million years; barcode on the ocean floor | ✓ "reversed 183 times in the last 83 million years"; BGS "alternating blocks of normal and reversely magnetised oceanic crust". Barcode is our analogy | NASA Flip Flop; BGS earthmag |
+| 8 | since Gauss in the 1830s, down about 9% | ✓ ESA "Over the last 200 years… around 9% of its strength"; NASA "weakened about nine percent"; BGS "Gauss in the 1830s"; Gauss 1777–1855 | ESA; NASA Flip Flop; BGS earthmag; Wikipedia Gauss |
+| 9 | Swarm since 2013, three spacecraft, over South America and the South Atlantic | ✓ "Date: 22 November 2013"; "three-satellite Swarm mission"; ESA "between Africa and South America"; NASA "over South America and the southern Atlantic Ocean" | ESA Swarm; ESA weakening; NASA Goddard SAA |
+| 10 | belt normally beyond 600 km, dips to 200 km, half the Space Station's height; reversed patch | ✓ NASA "begins about 400 miles from the surface" (≈ 644 km); Wikipedia SAA "dipping down to an altitude of 200 kilometres"; Wikipedia ISS "at about 400 kilometres (250 miles) above Earth"; NASA "a localized field with reversed polarity"; BGS "This reverse patch is also responsible for… the South Atlantic Anomaly" | NASA Goddard SAA; Wikipedia SAA; Wikipedia ISS; BGS reversals |
+| 11 | Hubble: seven to nine orbits in a row each day, stops observing; ISS outside instruments; operators shut down non-essential parts | ✓ STScI "intersects the SAA each day for seven to nine orbits in a row"; "No astronomical or calibration observations are possible… during spacecraft passage through the SAA"; NASA "operators commonly shut down non-essential components". ✗ **Gemini's ISS quote is no longer on the page.** It now reads "Instruments like the Global Ecosystem Dynamics Investigation mission, or GEDI, collect data from various positions on the outside of the ISS. The SAA causes 'blips' on GEDI's detectors and resets the instrument's power boards about once a month". The spoken line still holds, and the quote is fixed in SOURCES | STScI HST Primer; NASA Goddard SAA |
+| 12 | since 1970 widened and split into two lobes | ✓ ESA "From 1970 to 2020… the area of the anomaly has grown"; NASA "split into two lobes" | ESA weakening; NASA Goddard SAA |
+| 13 (not MUST QUOTE) | field as strong as in 100,000 years, twice the million-year average | ✗ v02 said "over the past hundred thousand years, today's field is still stronger than average". NASA says "about as strong as it's been in the past 100,000 years, and is twice as intense as its million-year average". **Hedge D** | NASA Flip Flop |
+| 14 | Laschamp ~41,000 years ago, ~6%, kauri, northern New Zealand, few hundred years down, under a thousand years | ✓ Cooper 2021 PDF "Laschamps Excursion [41 to 42 thousand years ago (ka)]"; "as little as 0 to 6% during the preceding transition"; "kauri… preserved in northern New Zealand wetlands"; "relatively short-duration (<1000 year)". ✗ "around a thousand years" and "living in Europe and Australia, painting caves" went past the paper. **Hedge E** | Cooper et al. 2021 PDF (ORA) |
+| 15 | main magnet may fall to about a tenth; never vanishes | ✓ BGS "perhaps to about 10% of its normal value (but not vanish)"; NASA "doesn't completely disappear" | BGS reversals; NASA Flip Flop |
+| 16 | about a kilogram per cm², ten metres of water | ✓ NASA Langley PDF "near the surface ( ~1,000 g/cm 2 )". Kilogram and water are our unit conversion. **Hedge F** (NASA: "there may be a small amount of particulate radiation that makes it down to Earth's surface") | NASA Langley NTRS 20030063010 PDF; NASA Flip Flop |
+| 17 | Mars, just over a third of Earth's gravity, billions of years; a flip takes a few thousand years | ✓ NSSDC "Ratio (Mars/Earth) 0.380"; MAVEN "stripping by the solar wind… billions of years ago"; NASA "hundreds to thousands of years"; Wikipedia "between 1,000 and 10,000 years". **Hedge G** | NSSDC Mars fact sheet; NASA MAVEN; NASA Flip Flop; Wikipedia |
+| 18 | several poles in unexpected places; south over Africa, north over Tahiti | ✓ NASA Flip Flop "multiple magnetic poles can emerge in unexpected places". ⚠ **Africa / Tahiti rest on Gemini's quote.** The 2003 NASA page (Glatzmaier) is only on web.archive.org, which this cloud session cannot reach (curl and WebFetch both refused). **The Mini should re-open that archive URL before VO.** If it fails, line 102 falls back to "a south pole over one ocean and a north pole over another" | NASA Flip Flop; (NASA 2003 via archive, not re-opened) |
+| 19 | WHO years | ✓ Brunhes "3 July 1867 – 10 May 1910"; Matuyama "October 25, 1884 – January 27, 1958"; Gauss "30 April 1777 – 23 February 1855" | Wikipedia ×3; Eos |
+
+## v03 hedges (spoken lines only)
+
+- **A** "climbs down into a road cutting… carrying a hammer and a compass" → "is chipping rock from a hillside near the village of Pontfarein" (the road cutting, hammer and compass aren't on any page).
+- **B** "poured over wet clay millions of years ago" → "long ago" (no page gives the Pontfarein lava's age).
+- **C** "every grain… points south" → "both point almost exactly the opposite way" (Wikipedia: "almost opposite").
+- **D** "over the past hundred thousand years, today's field is still stronger than average" → "about as strong as it has been for a hundred thousand years, and twice its average over the last million" (NASA wording).
+- **E** "weak phase lasted around a thousand years" → "less than a thousand years" (Cooper "<1000 year"). "Living in Europe and Australia, painting caves" → "already arriving in Europe, and people from Europe to Southeast Asia were painting caves" (Cooper: "arrival of AMHs in Europe"; figurative cave art "in Europe and Island Southeast Asia").
+- **F** "The air above you stops every particle" → "stops those particles long before they reach you". "Fast particles… stop dead" → "almost all fast particles… stop".
+- **G** "about a third of Earth's gravity" → "just over a third" (0.380).
+
+## Spoken lines without a row (checked, left as they are)
+
+- "Twenty-three years later, in 1929": 1906 + 23. ✓
+- "forty to four hundred human generations": our own arithmetic, 1,000–10,000 years at 25 years each. ✓
+- The London / Cairo / Mumbai / Sydney aurora picture is a "would" scenario, not a claim of fact. Left as it is.
+
+No VO, no picture, no spend.
