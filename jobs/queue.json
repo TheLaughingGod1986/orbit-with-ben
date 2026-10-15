@@ -1,5 +1,5 @@
 {
-  "next_id": 335,
+  "next_id": 336,
   "jobs": [
     {
       "id": "J0001",
@@ -24674,13 +24674,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T21:58Z",
+      "status": "done",
+      "by": "chief",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T21:49Z",
-      "result": "parked for Chief: 009 boards v03 on PR #331 a27348b. Six Fast continuations are own Fast mints in tranche 1 (120 expected). Tranche 1 is 7493, leaving 3092 after 007 and 008 on the 21:42 read. P5:10_explorer_bench plus 24 Quality continuations (6475) wait for tranche 2. No mint, no PASS.",
+      "result": "FIX (Chief, 15 Oct ~23:10 London): boards v03 (HOS PR #331 a27348b) right on the six Fast mints and the sums. Two fixes in v04 (J0335): six continuations on Fast parents go Fast to match the parent look (saves 1,434); closer P5:10_explorer_bench back into tranche 1, defer P2:10_how_high + P3:07_ball_to_moon (code-graphic fallback). Expected T1 7,354 (3,231 left), T2 5,180, film 12,534. No mint, no spend.",
       "history": [
         {
           "at": "2026-10-15T21:49Z",
@@ -24716,16 +24716,25 @@
           "at": "2026-10-15T22:04Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: 009 boards v03 on PR #331 a27348b. Six Fast continuations are own Fast mints in tranche 1 (120 expected). Tranche 1 is 7493, leaving 3092 after 007 and 008 on the 21:42 read. P5:10_explorer_bench plus 24 Quality continuations (6475) wait for tranche 2. No mint, no PASS."
+        },
+        {
+          "at": "2026-10-15T22:09Z",
+          "by": "chief",
+          "what": "reopened: Chief review"
+        },
+        {
+          "at": "2026-10-15T22:09Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-15T22:09Z",
+          "by": "chief",
+          "what": "done: FIX (Chief, 15 Oct ~23:10 London): boards v03 (HOS PR #331 a27348b) right on the six Fast mints and the sums. Two fixes in v04 (J0335): six continuations on Fast parents go Fast to match the parent look (saves 1,434); closer P5:10_explorer_bench back into tranche 1, defer P2:10_how_high + P3:07_ball_to_moon (code-graphic fallback). Expected T1 7,354 (3,231 left), T2 5,180, film 12,534. No mint, no spend."
         }
       ],
       "kind": "video",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-15T22:04Z",
-        "by": "cursor",
-        "note": "pushed a27348b to PR 331"
-      }
+      "done_ref": "HOS#180"
     },
     {
       "id": "J0334",
@@ -24748,6 +24757,33 @@
       "history": [
         {
           "at": "2026-10-15T22:02Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0335",
+      "title": "HOS 009: plate boards v04 — Fast-parent continuations to Fast, closer back in tranche 1 (J0333 FIX), no mint",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J0333 Chief FIX (15 Oct ~23:10 London, HOS #180). Boards v03 on HOS PR #331 (a27348b) are right: the six edit-holds are now own Fast mints with distinct beats, sums check (tranche 1 7,493 / tranche 2 6,475 / film 13,968; cap 7,585), and the 24-row count is accepted over the 22 in the split note. Two fixes for boards v04 (boards only):\n\n1. Match the parent's model. Six continuations sit on Fast parents but are priced as second Quality mints: P4:02_spray_paint_c1, P4:02_spray_paint_c2, P5:01_one_law_c1, P5:08_cup_and_planets_c1, P5:08_cup_and_planets_c2, P5:12_clay_handoff_c1. A Quality continuation cut against a Fast parent will show a look jump. Make all six Fast (same rule as condition 2: new angle or move, parent's look), 20 expected each. Moves them into tranche 1.\n2. The closer mints first, not last. P5:10_explorer_bench (\"It is falling towards you, right now.\") goes back into tranche 1. Defer instead the two short Quality parents that sit between £0 code graphics: P2:10_how_high (2.58 s, next to 09_pull_heights) and P3:07_ball_to_moon (2.84 s, between 06_orbit_teach and 08_km_a_second). Their slip fallback is a £0 hold or extension of that neighbouring code graphic, so neither leaves a hole if tranche 2 slips. Put that fallback in the slip table.\n\nExpected v04 numbers on the 21:42 read (check them): tranche 1 = 26 Quality + 31 Fast = 7,354 (cap 7,585; 3,231 left after 007, 008 and tranche 1). Tranche 2 = 18 second-Quality continuations + the 2 deferred parents = 20 Quality = 5,180. Film = 46 Quality + 31 Fast = 12,534. Refresh PICTURE_PLAN/PRICE_REVIEW and the part plate files, update the slip table (18 continuation beats + the two code-graphic fallbacks), push to PR #331. Mint order and the >=3,000 live-read rule stand unchanged. No mint, no spend, no merge, no top-up. Park for Chief.",
+      "ref": "J0333",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T22:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T22:09Z",
           "by": "chief",
           "what": "added"
         }
