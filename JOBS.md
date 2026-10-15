@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0267 | mini | blocked | cursor | – | assembly · 027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp) |  |
 | J0268 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
 | J0269 | cloud | open | – | – | script · HOS 012 Mendel: full script v01 from opening_and_outline_v00 (review:script >= 90), then Gemini facts pass on SOURCES_v00 |  |
-| J0270 | mini | claimed | cursor | 2026-10-15T08:47Z | assembly · Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at |  |
+| J0270 | mini | blocked | cursor | – | assembly · Model check: list exact model ids for Cursor (agent --list-models), Codex (models cache: Sol, Luna, Astra, Terra) and Gemini agy (Argon), with what each is best at |  |
 | J0271 | mini | blocked | codex | – | for codex · thumb · Thumbnail redo with gpt-image-2 (Ben, 15 Oct): plan + first 3 B variants for the lowest-CTR live longs |  |
 | J0273 | mini | blocked | codex | – | for codex · thumb · Thumbnail redo batch 2: Moon, Last Star, Neutron Star B candidates |  |
 | J0274 | mini | blocked | cursor | – | for cursor · thumb · `cursor-auto` · Thumbnail redo batch 3: Alien Worlds and HOS Germs B candidates |  |
