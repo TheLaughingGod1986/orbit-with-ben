@@ -11030,13 +11030,13 @@
       "stage": "",
       "after": "J0166",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-15T02:07Z",
-      "eta": "2026-10-15T06:07Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: v05 complete (47:37.8, -14.4 LUFS, -1.3 dBTP) per Acting-Chief ruling (ea55635a); final_v04 and final_v05 archived on NAS with SHA-256; music_gate PASS (155.0s new sections, 0s gap), sfx_kit level PASS (VO -14.1, SFX -46.0 LUFS), picture_qa PASS (0 fails); OWB_compilation_v05_PHONE.mp4 in OWB UAT ready for Ben's watch and Chief final OK (J0168)",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -11452,6 +11452,11 @@
           "at": "2026-10-15T02:26Z",
           "by": "gemini",
           "what": "step 8 of 8 done: v05 NAS master + PHONE UAT encode + QA v05 complete (ea55635a)"
+        },
+        {
+          "at": "2026-10-15T02:26Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: v05 complete (47:37.8, -14.4 LUFS, -1.3 dBTP) per Acting-Chief ruling (ea55635a); final_v04 and final_v05 archived on NAS with SHA-256; music_gate PASS (155.0s new sections, 0s gap), sfx_kit level PASS (VO -14.1, SFX -46.0 LUFS), picture_qa PASS (0 fails); OWB_compilation_v05_PHONE.mp4 in OWB UAT ready for Ben's watch and Chief final OK (J0168)"
         }
       ],
       "kind": "assembly",
