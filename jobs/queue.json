@@ -1,5 +1,5 @@
 {
-  "next_id": 344,
+  "next_id": 345,
   "jobs": [
     {
       "id": "J0001",
@@ -25372,6 +25372,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0344",
+      "title": "HOS 007: build 3 £0 code graphics (P1:07_map_shadows, P4:11_news_spreads, P5:08_body_learns) after PR 337 merge; no mint",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J0322 Chief PASS condition 4. Starts after J0343 squash-merges HOS PR #337 (boards v02 with P3:01c_nelmes_plate dropped).\n\nBuild the three £0 code graphics from the merged 007 boards:\n- `P1:07_map_shadows`\n- `P4:11_news_spreads`\n- `P5:08_body_learns`\n\nCodex/chart route. **No mint, no spend, no Flow, no Vertex.**",
+      "ref": "",
+      "film": "007",
+      "stage": "picture",
+      "after": "J0343",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T23:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T23:45Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [],
