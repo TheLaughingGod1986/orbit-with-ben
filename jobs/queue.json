@@ -1,5 +1,5 @@
 {
-  "next_id": 267,
+  "next_id": 268,
   "jobs": [
     {
       "id": "J0001",
@@ -19535,6 +19535,33 @@
         {
           "at": "2026-10-15T06:22Z",
           "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0267",
+      "title": "027 v01i master: copy out of /private/tmp to the NAS archive + OWB UAT (AGENTS.md: masters never only in /private/tmp)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J0256/J0265 note: 027_EarthSpin_rough_v01i master lives only in /private/tmp. Copy it to the NAS archive (sha256 check) and confirm the OWB UAT copy matches the pack sha (f74ca3e8...). If /Volumes/data is still hanging on reads, run scripts/mini_repair.py first and say so on #99. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-15T06:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T06:59Z",
+          "by": "claude",
           "what": "added"
         }
       ],
