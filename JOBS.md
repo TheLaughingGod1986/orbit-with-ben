@@ -16,7 +16,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
 | J0206 | mini | blocked | cursor | – | 024 upload · studio · 024 Light Speed: set Studio Test & Compare A/B (J0143 v02 answer vs tease) once 024 has a video id | 6131722365 |
 | J0210 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J0219 | cloud | open | – | – | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
+| J0219 | cloud | claimed | claude | 2026-10-15T12:52Z | chief · 022 date gate: mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public | J0192 |
 | J0220 | mini | open (after J0219) | – | – | studio · 022 Sun after go-public: set Related video on 3 Shorts to h8HGfyShEHI (before Mon 19 Oct 11:30 London) | J0192 |
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
 | J0258 | mini | **stalled** | gemini | 2026-10-15T11:27Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
