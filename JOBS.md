@@ -42,6 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0325 | mini | blocked | cursor | – | 027 upload · assembly · 027 Earth Stopped Spinning: dry-run Private package for Sun 22 Nov (v01l picture lock, J0319 PASS) | 6200213333 |
 | J0326 | mini | open | – | – | 026 upload · assembly · 026 Nearest Star: en-GB captions + ~40 s trailer for the v05d package, re-dry-run Private Sun 15 Nov (J0323 gap) |  |
 | J0327 | mini | open (after J0325) | – | – | 027 upload · assembly · 027 Earth Stopped Spinning: en-GB captions + ~40 s trailer for the v01l package, re-dry-run Private Sun 22 Nov (after J0325) |  |
+| J0328 | mini | open | – | – | 027 thumbs · thumb · 027 Earth Stopped Spinning: long thumbs A/B/C (A = J0142 EPIC hero) + set in the v01l package, re-dry-run (J0325 gap) |  |
 
 Recently finished:
 

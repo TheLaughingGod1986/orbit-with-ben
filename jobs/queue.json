@@ -1,5 +1,5 @@
 {
-  "next_id": 328,
+  "next_id": 329,
   "jobs": [
     {
       "id": "J0001",
@@ -24014,6 +24014,11 @@
           "at": "2026-10-15T19:36Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: final OK before Private upload of 027 v01l. Dry-run complete, publishAt 2026-11-22T18:00:00Z, sha256 7d51961f. Watch OWB UAT/027_EarthSpin_rough_v01l.mp4 by Mon 19 Oct 23:59 London. Thumbnail and trailer still unset. No upload."
+        },
+        {
+          "at": "2026-10-15T19:38Z",
+          "by": "chief",
+          "what": "left parked (Chief review): iCloud OWB UAT/027_EarthSpin_rough_v01l.mp4 sha256 7d51961f re-verified = J0319 PASS picture lock. Dry-run Private publishAt 2026-11-22T18:00:00Z PASS. Gaps: captions + trailer null (J0327) and no long thumbnail / no 08_Thumbnail (J0328, A = J0142 EPIC hero). Final OK waits for J0327 + J0328 PASS and Ben's watch/KEEP, or Mon 19 Oct 23:59 London if no reply. No upload. £0."
         }
       ],
       "kind": "assembly",
@@ -24061,7 +24066,7 @@
       "ref": "",
       "film": "027",
       "stage": "upload",
-      "after": "J0325",
+      "after": "",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -24075,9 +24080,41 @@
           "at": "2026-10-15T19:37Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-15T19:38Z",
+          "by": "chief",
+          "what": "after J0325 dropped: J0325 is parked for Chief final OK, which needs these captions + trailer first. Open now."
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0328",
+      "title": "027 Earth Stopped Spinning: long thumbs A/B/C (A = J0142 EPIC hero) + set in the v01l package, re-dry-run (J0325 gap)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**027 Earth Stopped Spinning: long thumbnails A/B/C + set in the upload package (Chief review sweep, J0325 gap). £0 beyond subscription credit (floors 0, never top up).**\nJ0325 parked the 027 Private dry-run (v01l sha256 7d51961f, publishAt 2026-11-22T18:00:00Z) with no long thumbnail; 027 has no `08_Thumbnail/` folder yet.\n1. Thumb A base is fixed by J0142 (`07_Edit-Project/rough_v01g_pack/HERO_THUMB_A_v01g.md`): the DSCOVR EPIC whole-Earth disc (frame 0 of `epic_spin_v01.mp4`, rebuild with `epic_spin_v01.py` if /private/tmp was purged), cropped in toward the disc to stay under the ≤30% near-black cap, graded per `thumb_preview.py long … --score`. Real Earth, no Orbit on A, so the long's 0–10 s and the Shorts' end cards match it.\n2. B and C: house thumb text rules (short, readable at phone size, answer vs tease), same as the 024/026 abc sets; log them in THUMB_LEDGER.json. Prefer existing plates / code graphics; any generation only inside subscription credit.\n3. Save under `08_Thumbnail/abc_v01/`, point PACKAGE_MANIFEST `thumbnail` (A) and `thumbnailAbc` at them, re-run the dry-run (Private, `--schedule 2026-11-22T18:00:00Z`, video unchanged). No live upload.\nDone when: A/B/C with sha256 + preview scores, dry-run PASS with the thumbnail set, posted on #99 with a contact sheet. Park for Chief review. No deletes.\n",
+      "ref": "",
+      "film": "027",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-15T19:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-15T19:38Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "thumb"
     }
   ],
   "focus": [
