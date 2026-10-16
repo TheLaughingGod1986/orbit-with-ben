@@ -1,5 +1,5 @@
 {
-  "next_id": 354,
+  "next_id": 355,
   "jobs": [
     {
       "id": "J0001",
@@ -26647,6 +26647,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0354",
+      "title": "HOS 006: full-film frame review of teach master full_join_v01_teach (no bed, no mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After J0351 PASS (HOS #344 squash-merged bbc073e8 on main): do a full-film frame review of the 006 teach master `07_Edit-Project/full_join_v01_teach/hos_006_full_join_v01_teach.mp4` (sha256 e5054696…, on the Mini; also /private/tmp/j0351-lay/).\n\n- Watch/scan every cut against the locked script and FACT_NOTES_v01: does each picture match the sentence, does each overlay card read right and land on its line, any timing that feels early/late, any plate that looks soft or wrong (start with the 6 low-detail warnings in PICTURE_QA.md: 1:10, 2:03, 2:53, 3:01, 4:37, 5:34).\n- Write REVIEW_v01.md next to the master with KEEP / FIX per cut (FIX notes must be concrete and £0: re-time, re-crop, swap to an already-minted plate). No new mints, no music bed (ElevenLabs hold until 30 Oct), no upload, no schedule.\n- If the NAS share answers, copy the master to the matching NAS folder and check sha256; if the listing hangs, skip it (don't retry for long) and say so.\n- Push REVIEW_v01.md on a PR and park for Chief. Not a film PASS.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-16T04:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T04:39Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "review"
     }
   ],
   "focus": [],
