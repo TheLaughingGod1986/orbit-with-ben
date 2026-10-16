@@ -23092,13 +23092,13 @@
       "stage": "",
       "after": "J0299",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-16T05:59Z",
-      "eta": "2026-10-16T07:29Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T17:00Z",
-      "result": "",
+      "result": "parked for Chief: HOS 013 FACT_NOTES_v01 + GEMINI_QUOTE_PASS_J0304 committed on HOS main acfacfa9 (30 OK, 0 PARTIAL, 0 FLAG; watch-list 1-8 all OK); ready for Chief/Claude PASS before VO",
       "history": [
         {
           "at": "2026-10-15T17:00Z",
@@ -23154,6 +23154,11 @@
           "at": "2026-10-16T06:08Z",
           "by": "gemini",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-16T06:08Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 013 FACT_NOTES_v01 + GEMINI_QUOTE_PASS_J0304 committed on HOS main acfacfa9 (30 OK, 0 PARTIAL, 0 FLAG; watch-list 1-8 all OK); ready for Chief/Claude PASS before VO"
         }
       ],
       "kind": "facts",
