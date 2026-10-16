@@ -1,5 +1,5 @@
 {
-  "next_id": 416,
+  "next_id": 417,
   "jobs": [
     {
       "id": "J0001",
@@ -31475,6 +31475,33 @@
       "needs": "mini",
       "repo": "owb",
       "body": "Fix polish_gate and picture_qa FAILs found in J0414 QA sweep (OWB c49fc17d) with £0 spend and no upload: (1) 021 Short saturn_late_arrival_4_5b_v01 (_assemble_saturn_late_arrival_short_v01.py): 2/6 FAILs — horizontal seam at 0.502 on s02_pia01486 (0:07, unfeathered 4.5B-year scale bar) and horizontal gutter at 0.044 on s05_pia18301 (0:21). Feather the scale bar and crop/grade s05 to remove top gutter. (2) 030 Short 030_apophis_short_v05 (_assemble_apophis_short_v05.py): 3/6 FAILs — horizontal gutter at 0.781 on s01_rock_dusk (0:02) and 0.748 on s06_end_loop (0:21), plus near-black (mean 23.44 < 25) on s05_scale_overlay (0:17). Feather the band edge and lift the dimmed background under the scale overlay so mean >= 26, re-render, and re-run gate_shorts_open.py, polish_gate.py, and picture_qa.py to PASS.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-16T22:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T22:56Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0416",
+      "title": "HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Fix polish_gate and picture_qa FAILs found in J0414 QA sweep (HOS 012b5a44) on unuploaded Test B Shorts with £0 spend (existing plates only, no upload): (1) HOS 004 Short hos_004_s05_dalton_v02 (_build_short_s05_dalton_v02.py): polish_gate 2/7 FAIL (horizontal seam at 0.656 on s02_Hydrogen at 0:07 from unfeathered WHO card shade, and horizontal seam at 0.767 on s04_Why at 0:12 from unfeathered title shade) + picture_qa reuse FAIL at 0:20 (s06_hydrogen repeats 05_fixed_amounts_v01.mp4 from s02). Feather card shades (as in J0399) and swap s06 to an unused existing Part 02 plate. (2) HOS 005 Short hos_005_s05_valves_v01 (_build_short_s05_valves_v01.py): polish_gate 1/8 FAIL (horizontal seam at 0.656 on s03_Each at 0:08 from unfeathered FABRICIUS WHO card shade) + picture_qa reuse FAIL at 0:17 (s06_It repeats 08_knots_valve_t4.mp4 from s03). Feather WHO card shade and swap s06 to an unused existing Part 04 plate. Re-run gate_shorts_open.py, polish_gate.py, and picture_qa.py to PASS.",
       "ref": "",
       "film": "",
       "stage": "",
