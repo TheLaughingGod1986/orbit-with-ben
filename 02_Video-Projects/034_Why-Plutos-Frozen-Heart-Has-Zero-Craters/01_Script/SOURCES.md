@@ -1,8 +1,8 @@
-# Sources — Why Pluto's Frozen Heart Has Zero Craters (034, v00)
+# Sources — Why Pluto's Frozen Heart Has Zero Craters (034, v01)
 
-Spoken claims for the description and script (`pluto_frozen_heart_script_master_v00.md`). Not narration.
+Spoken claims for the description and script (`pluto_frozen_heart_script_master_v01.md`). Not narration.
 
-**Drafted by Gemini (`gemini-argon`, stand-in worker) for J0370, 16 Oct 2026.** Every row below was checked directly against the live open page named in *Where to look* on 16 Oct 2026, with the verbatim quote copied into *Exact quote*. Marked `TO VERIFY` for the formal `facts` pass and `CLAUDE_QUOTE_CHECK` before any VO is locked.
+**Drafted by Gemini (`gemini-argon`, stand-in worker) for J0370 and revised for v01 in J0378, 16 Oct 2026.** Every row below was checked directly against the live open page named in *Where to look* on 16 Oct 2026, with the verbatim quote copied into *Exact quote*. Marked `TO VERIFY` for the formal `facts` pass and `CLAUDE_QUOTE_CHECK` before any VO is locked.
 
 MUST QUOTE = a spoken number, date, name or year (`DATA`, `SCALE`, `WHO`, `WHEN`, `FACT`).
 
