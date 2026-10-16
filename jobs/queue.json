@@ -25579,13 +25579,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-16T01:17Z",
-      "eta": "2026-10-16T02:47Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T23:44Z",
-      "result": "",
+      "result": "Drop is on HOS PR #337 at a845186f. P3:01c_nelmes_plate removed. 01_sarah_nelmes is 5.14 s (2.0 s returned; 02_cow_from_lane still starts at 243.75). 96 rows, 24 Quality + 49 Fast, 2 archive plates, Flow expected 7196 unchanged. generation_authorized false. Ken Burns lock stands. Checks on a845186f SUCCESS (desk guard, no-media, status-board, studio core). Did not merge. J0343 is the squash-merge for Chief.",
       "history": [
         {
           "at": "2026-10-15T23:44Z",
@@ -25626,6 +25626,11 @@
           "at": "2026-10-16T01:22Z",
           "by": "cursor",
           "what": "step 4 of 4 done: drop on PR 337, checks green, no merge"
+        },
+        {
+          "at": "2026-10-16T01:22Z",
+          "by": "cursor",
+          "what": "done: Drop is on HOS PR #337 at a845186f. P3:01c_nelmes_plate removed. 01_sarah_nelmes is 5.14 s (2.0 s returned; 02_cow_from_lane still starts at 243.75). 96 rows, 24 Quality + 49 Fast, 2 archive plates, Flow expected 7196 unchanged. generation_authorized false. Ken Burns lock stands. Checks on a845186f SUCCESS (desk guard, no-media, status-board, studio core). Did not merge. J0343 is the squash-merge for Chief."
         }
       ],
       "kind": "video",
@@ -25635,7 +25640,8 @@
         "at": "2026-10-16T01:22Z",
         "by": "cursor",
         "note": "drop on PR 337, checks green, no merge"
-      }
+      },
+      "done_ref": "a845186f"
     },
     {
       "id": "J0342",
