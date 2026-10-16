@@ -61,7 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0383 | mini | blocked | gemini | – | chart · HOS 007–010 code graphics: fix polish_gate/picture_qa low-detail, seam and noise FAILs (£0, no spend) | cd081035 |
 | J0384 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0385 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0386 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
+| J0386 | mini | claimed | gemini | 2026-10-16T17:08Z | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 
 Recently finished:
 
