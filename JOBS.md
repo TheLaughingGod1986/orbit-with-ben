@@ -73,10 +73,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0396 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0397 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0398 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0399 | mini | claimed | gemini | 2026-10-16T19:40Z | assembly · HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend) |  |
 
 Recently finished:
 
+- J0399 done: HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend) (done)
 - J0393 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos pass chapters, sources, end screens, and Related video checks at 17:56 UTC (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit af9e70aa). Nothing changed in Studio.)
 - J0376 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0361 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 1NeQFVnzO2Q pass chapters, sources, end screens, and Related video checks (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit 67c3c634).)
@@ -86,4 +86,3 @@ Recently finished:
 - J0349 cancelled: 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) ()
 - J0348 done: HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint (PASS (Chief, 16 Oct ~04:40 London): HOS 010 thirteen £0 code graphics v01 on HOS PR #343 squash-merged fb06aa3e. STYLE/MOTION KEEP. P4:07 food_chain meat-eater is a clear side-view theropod (long tail, bipedal, open jaw) verified @ c880c975; sha256 656bce1a matches; 13 silent 1920×1080 near-black PASS. Earlier FIX KEEPs on the other 12 stand. Mini assets synced to code_graphics_v01. £0, no mint. Next is Flow mint after 006→007→008→009 gate (J0352 open for 007) — no £0 follow-on this sweep. No Ben.)
 - J0347 done: 029 Betelgeuse: build the £0 Codex code graphics from plate boards v02 (13 code beats + card), no mint (PASS (Chief, 16 Oct ~04:25 London): 029 Betelgeuse code graphics v01 on OWB PR #225 squash-merged 1624dde6. STYLE/MOTION KEEP. r21 side-view teaspoon (oval bowl, handle along level beam) verified @ 06857764; 14 silent 1080p/50fps sha-checked. Earlier FIX KEEPs stand. £0. Next: 029 harvest (47 plates). No Ben.)
-- J0346 done: 029 Betelgeuse: squash-merge PR #223 plate boards v02 (J0330 PASS; no mint) (DONE (Chief, 16 Oct ~01:10 London): squash-merged OWB PR #223 (0afe3ba9 → merge 7c989c67). Boards only; no mint/spend. Desk #99 6204962881; PR 6204963084. J0347 £0 code graphics open on main.)
