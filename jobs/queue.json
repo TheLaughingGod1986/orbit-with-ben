@@ -30247,13 +30247,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-16T18:51Z",
-      "eta": "2026-10-16T19:51Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T18:51Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 0392127e: comp v05 music_gate PASS, 026 Short walk_900m v01, 024 Short twin_trip v01, 027 Shorts v01/v02, 028/029 code_graphics all PASS; HOS 14dfa4ab: 006 s05 Short PASS, 007 P1 clip PASS, 007-010 code_graphics PASS, 006 s04 Short 1/8 horizontal seam FAIL -> J0399 queued)",
       "history": [
         {
           "at": "2026-10-16T18:51Z",
@@ -30289,6 +30289,11 @@
           "at": "2026-10-16T19:09Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed gate outputs (OWB 0392127e, HOS 14dfa4ab) and queued no-spend fix job J0399 for HOS 006 Short s04 seam FAIL"
+        },
+        {
+          "at": "2026-10-16T19:09Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 0392127e: comp v05 music_gate PASS, 026 Short walk_900m v01, 024 Short twin_trip v01, 027 Shorts v01/v02, 028/029 code_graphics all PASS; HOS 14dfa4ab: 006 s05 Short PASS, 007 P1 clip PASS, 007-010 code_graphics PASS, 006 s04 Short 1/8 horizontal seam FAIL -> J0399 queued)"
         }
       ],
       "kind": "qa",
