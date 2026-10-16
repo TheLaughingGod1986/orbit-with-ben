@@ -40,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0360 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0362 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0363 | any | open | – | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
+| J0364 | any | open | – | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 
 Recently finished:
 
