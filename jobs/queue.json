@@ -27024,13 +27024,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-16T06:35Z",
-      "eta": "2026-10-16T08:35Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T06:11Z",
-      "result": "",
+      "result": "parked for Chief: storage recovery before Short assembly. Mini has 14 GiB free (below required 20 GB); NAS /Volumes/data/mac-mini-archive is mounted via NFS but directory listing hangs (8-second bounded check timed out). Required verified scratch archival cannot proceed. No media moved/deleted, no render, no spend, no upload. Resume at step 0 of 4 after NAS responds and disk headroom is restored; count archived Shorts/manifests too, not only local MP4s.",
       "history": [
         {
           "at": "2026-10-16T06:11Z",
@@ -27051,6 +27051,11 @@
           "at": "2026-10-16T06:36Z",
           "by": "codex",
           "what": "step 0 of 4 done: Preflight blocked: 14 GiB free; mounted NAS directory listing times out, so required scratch archival cannot proceed. No render started."
+        },
+        {
+          "at": "2026-10-16T06:36Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: storage recovery before Short assembly. Mini has 14 GiB free (below required 20 GB); NAS /Volumes/data/mac-mini-archive is mounted via NFS but directory listing hangs (8-second bounded check timed out). Required verified scratch archival cannot proceed. No media moved/deleted, no render, no spend, no upload. Resume at step 0 of 4 after NAS responds and disk headroom is restored; count archived Shorts/manifests too, not only local MP4s."
         }
       ],
       "kind": "assembly",
