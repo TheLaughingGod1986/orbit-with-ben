@@ -26587,10 +26587,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-16T04:37Z",
-      "eta": "2026-10-16T08:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-16T02:36Z",
       "result": "",
@@ -26614,6 +26614,11 @@
           "at": "2026-10-16T04:46Z",
           "by": "cursor",
           "what": "step 1 of 8 done: Flow 23740; headroom 16544; minting Jenner still"
+        },
+        {
+          "at": "2026-10-16T05:07Z",
+          "by": "relay",
+          "what": "rerouted to codex: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "video",
@@ -26624,7 +26629,15 @@
         "at": "2026-10-16T04:46Z",
         "by": "cursor",
         "note": "Flow 23740; headroom 16544; minting Jenner still"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "flow-veo-3.1",
+        "status": "claimed",
+        "by": "cursor"
+      },
+      "for": "codex"
     },
     {
       "id": "J0353",
