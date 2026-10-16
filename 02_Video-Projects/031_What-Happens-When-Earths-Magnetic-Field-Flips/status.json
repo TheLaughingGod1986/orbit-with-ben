@@ -10,8 +10,19 @@
     "sources": {
       "state": "done",
       "ref": "666bacf8"
+    },
+    "vo": {
+      "state": "doing"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "vo",
+      "by": "cursor",
+      "at": "2026-10-16T02:19Z",
+      "eta": "2026-10-16T03:48Z",
+      "note": "J0345 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS)"
+    }
+  ],
   "next": "J0339 soft-edit PARTIAL spoken lines (Chief FIX on J0318)"
 }

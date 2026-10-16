@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0325 | mini | blocked | cursor | – | 027 upload · assembly · 027 Earth Stopped Spinning: dry-run Private package for Sun 22 Nov (v01l picture lock, J0319 PASS) | 6200213333 |
 | J0332 | mini | blocked | cursor | – | 006 edit · chart · HOS 006: Codex £0 teach overlays from TEACH_OVERLAYS_v01.md (after full_join_v02) |  |
-| J0345 | mini | open | – | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
+| J0345 | mini | claimed | cursor | 2026-10-16T03:49Z | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
 | J0347 | mini | open (after J0346) | – | – | 029 picture · chart · 029 Betelgeuse: build the £0 Codex code graphics from plate boards v02 (13 code beats + card), no mint | J0330 |
 | J0348 | mini | open | – | – | 010 picture · chart · HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint | 6204962007 |
 | J0350 | mini | open | – | – | 028 picture · assembly · 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) |  |
