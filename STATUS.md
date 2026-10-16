@@ -27,6 +27,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
-| 031 | vo | cursor | 2026-10-16T02:19Z | 2026-10-16T03:48Z | J0345 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) |
+| 031 | vo | cursor | 2026-10-16T02:20Z | 2026-10-16T02:40Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
