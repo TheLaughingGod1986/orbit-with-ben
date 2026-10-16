@@ -34,6 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0347 | mini | claimed | cursor | 2026-10-16T05:30Z | 029 picture · chart · 029 Betelgeuse: build the £0 Codex code graphics from plate boards v02 (13 code beats + card), no mint | J0330 |
 | J0348 | mini | open | – | – | 010 picture · chart · HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint | 6204962007 |
 | J0350 | mini | open | – | – | 028 picture · assembly · 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) |  |
+| J0351 | mini | open | – | – | 006 edit · assembly · HOS 006: lay teach_overlays_v01 into full_join_v01 (no bed, no mint) |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 351,
+  "next_id": 352,
   "jobs": [
     {
       "id": "J0001",
@@ -26221,6 +26221,33 @@
       "history": [
         {
           "at": "2026-10-16T00:33Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0351",
+      "title": "HOS 006: lay teach_overlays_v01 into full_join_v01 (no bed, no mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After J0332 PASS (HOS #342 fd2b6965 on main): composite the 21 silent teach overlay mp4s from `07_Edit-Project/teach_overlays_v01/` onto `hos_006_full_join_v01.mp4` at the times in TEACH_OVERLAYS_RENDER_v01.json / TEACH_OVERLAYS_v01.md. Keep VO as-is. No music bed (ElevenLabs hold / Chief OK until 30 Oct). No mint, no spend. Run picture_qa + polish_gate on the result, park for Chief with a contact sheet. Not a film PASS.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-16T02:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T02:34Z",
           "by": "chief",
           "what": "added"
         }
