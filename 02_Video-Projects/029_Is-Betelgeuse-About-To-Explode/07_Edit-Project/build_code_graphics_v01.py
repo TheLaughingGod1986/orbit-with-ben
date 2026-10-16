@@ -29,7 +29,8 @@ LABELS = {
     "r03_r04_promise": [(6.2, 9.4, "daytime sky"), (9.6, 12.8, "kind of star"),
                         (13.1, 15.1, "in 2019"), (15.2, 18.6, "giant star actually dies"),
                         (19.5, 21.0, "your garden"), (21.2, 22.98, "honest answer")],
-    "r05_scale": [(0.6, 3.4, "where the Sun is"), (3.5, 6.68, "orbit of Mars")],
+    # Text-free (script v02 line 24). Chief FIX 16 Oct: no "where the Sun is" / "orbit of Mars".
+    "r05_scale": [],
     "r09_finder": [(3.6, 6.2, "three stars"), (6.3, 9.6, "to the left"), (10.6, 12.56, "glows orange")],
     "r10_r11_dip": [(3.6, 5.4, "began to fade"), (5.5, 7.7, "February 2020"),
                     (7.8, 11.0, "about a third"), (12.1, 13.66, "fifty years")],
@@ -152,6 +153,15 @@ class Renderer:
         ], axis=1)
         self.orion = {n: (*orion_px(ra, dec), kind) for n, (ra, dec, kind) in ORION.items()}
 
+    def sun_dot(self, im, xy, r=8):
+        """A small yellow-white Sun. Not the SDO disc."""
+        x, y = xy
+        glow = Image.new("RGBA", im.size)
+        gd = ImageDraw.Draw(glow)
+        gd.ellipse((x - r * 3, y - r * 3, x + r * 3, y + r * 3), fill=(255, 232, 170, 80))
+        gd.ellipse((x - r, y - r, x + r, y + r), fill=(255, 248, 220, 255))
+        im.paste(Image.alpha_composite(im.convert("RGBA"), glow).convert("RGB"))
+
     def body(self, im, xy, r, kind="sun"):
         r = max(4, int(r))
         key = (r, kind)
@@ -241,7 +251,8 @@ class Renderer:
                        cx + rad * k * math.cos(ang) + 1.4, cy + rad * k * math.sin(ang) + 1.4), fill=WHITE)
         d.ellipse((cx - R, cy - R, cx + R, cy + R), outline=ORANGE, width=3)
         ang = t * 0.55
-        self.body(im, (cx, cy), 48, "sun")
+        # Small yellow-white dot. The mottled SDO disc reads as Betelgeuse (Chief FIX 16 Oct).
+        self.sun_dot(im, (cx, cy))
         self.body(im, (cx + k * math.cos(ang), cy + k * math.sin(ang)), 22, "earth")
         self.body(im, (cx + 1.52 * k * math.cos(ang * 0.6 + 1), cy + 1.52 * k * math.sin(ang * 0.6 + 1)), 18, "mars")
 
@@ -274,7 +285,7 @@ class Renderer:
         gd.ellipse((x - pulse, y - pulse, x + pulse, y + pulse), fill=(*ORANGE, 230))
         im.paste(Image.alpha_composite(im.convert("RGBA"), glow).convert("RGB"))
 
-    def shells(self, im, t, grow, snap, shock, zoom=1):
+    def shells(self, im, t, grow, snap, shock, zoom=1, leader=True):
         d = ImageDraw.Draw(im)
         cx, cy = 960, 560
         radii = [330, 270, 215, 165, 120]
@@ -294,8 +305,10 @@ class Renderer:
             d.pieslice((cx - core, cy - core, cx + core, cy + core), ang - wedge / 2, ang + wedge / 2, fill=SHELLS[-1])
         if snap > 0.45:
             d.ellipse((cx - 8, cy - 8, cx + 8, cy + 8), fill=WHITE)
-        arm = radii[0] * (1 - 0.75 * snap) * zoom
-        d.line((cx, cy, cx + arm * math.cos(ang * math.pi / 180), cy + arm * math.sin(ang * math.pi / 180)), fill=WHITE, width=3)
+        # The rotating radius had no label. Chief FIX 16 Oct: off on r17 and r31.
+        if leader:
+            arm = radii[0] * (1 - 0.75 * snap) * zoom
+            d.line((cx, cy, cx + arm * math.cos(ang * math.pi / 180), cy + arm * math.sin(ang * math.pi / 180)), fill=WHITE, width=3)
         if shock > 0:
             rs = 40 + 900 * shock
             width = max(2, int(14 * (1 - 0.7 * shock)))
@@ -333,15 +346,16 @@ class Renderer:
 
     def teaspoon(self, im, t):
         d = ImageDraw.Draw(im)
-        tip = ease(min(1, t / 1.1))
-        # Spoon on the left pan, mountain on the right. The beam tips down toward the mountain.
-        d.line((960, 820, 960, 930), fill=ICE, width=5)
-        d.line((470, 780, 1450, 780 + 70 * tip), fill=ICE, width=5)
-        d.ellipse((430, 500, 610, 680), outline=WHITE, width=6)
-        d.line((520, 500, 520, 780), fill=WHITE, width=6)
-        d.ellipse((498, 570, 542, 614), fill=WHITE)
-        peak = 430 + int(40 * (1 - tip))
-        d.line([(1240, 780 + 70 * tip), (1450, peak), (1660, 780 + 70 * tip)], fill=GOLD, width=6)
+        grow = ease(min(1, t / 1.1))
+        # Level beam. "weigh as much as a mountain" — neither pan sits lower (Chief FIX 16 Oct).
+        beam_y = 750
+        d.line((960, 800, 960, 940), fill=ICE, width=6)
+        d.line((360, beam_y, 1560, beam_y), fill=ICE, width=7)
+        # Teaspoon on the left pan: oval bowl plus a handle. Not a ring or a target.
+        d.ellipse((400, 560, 660, 770), fill=(232, 226, 214), outline=WHITE, width=7)
+        d.rounded_rectangle((498, 340, 562, 600), radius=18, fill=(244, 239, 230))
+        peak = beam_y - int(360 * max(grow, 0.2))
+        d.line([(1160, beam_y), (1360, peak), (1560, beam_y)], fill=GOLD, width=7)
 
     def song(self, im, t):
         d = ImageDraw.Draw(im)
@@ -412,12 +426,14 @@ class Renderer:
             self.dip(im, t, 1, tight=True)
         elif ident == "r17_r20_shells":
             grow = ease(max(0, (t - 5.5) / 30))
-            snap = ease((t - 36.45) / 0.8)
-            shock = 0 if t < 37.3 else ease(min(1, (t - 37.3) / 5.5))
+            # Snap starts on "collapses" (film 215.32 s), not on "In" (211.94 s).
+            snap_at = 215.32 - 175.4
+            snap = ease((t - snap_at) / 0.8)
+            shock = 0 if t < snap_at + 0.85 else ease(min(1, (t - (snap_at + 0.85)) / 5.5))
             zoom = 1 + 0.28 * ease(max(0, (t - 12) / 22))
-            if t > 36.4:
-                zoom = max(0.72, 1.28 - 0.7 * ease((t - 36.4) / 3))
-            self.shells(im, t, grow, snap, shock, zoom)
+            if t > snap_at - 0.05:
+                zoom = max(0.72, 1.28 - 0.7 * ease((t - (snap_at - 0.05)) / 3))
+            self.shells(im, t, grow, snap, shock, zoom, leader=False)
         elif ident == "r21_hero":
             self.teaspoon(im, t)
         elif ident == "r22_subscribe":
@@ -440,7 +456,7 @@ class Renderer:
                     self.astrolabe(im, t, reveal * (1 - fade))
         elif ident == "r31_shells_twins":
             if t < 3.3:
-                self.shells(im, t, grow=0.72, snap=0, shock=0, zoom=1.35)
+                self.shells(im, t, grow=0.72, snap=0, shock=0, zoom=1.35, leader=False)
             else:
                 local = t - 3.3
                 # Open on "deep in the core", close as the two lives "look almost the same".
@@ -505,11 +521,13 @@ def main():
     words = json.loads((HERE.parent / "02_Voiceover" / "words.json").read_text())["words"]
     check_labels(words)
     boards = HERE / "PLATE_BOARDS_v02.json"
-    plates = [p for p in json.loads(boards.read_text())["plates"] if p["route"] in ("code", "card")]
-    if a.only:
-        plates = [p for p in plates if p["id"] == a.only]
-    if len(plates) != (1 if a.only else 14):
-        raise SystemExit(f"expected 14 plates, got {[p['id'] for p in plates]}")
+    all_plates = [p for p in json.loads(boards.read_text())["plates"] if p["route"] in ("code", "card")]
+    if len(all_plates) != 14:
+        raise SystemExit(f"expected 14 plates, got {[p['id'] for p in all_plates]}")
+    want = {s.strip() for s in a.only.split(",")} if a.only else None
+    plates = [p for p in all_plates if want is None or p["id"] in want]
+    if want and len(plates) != len(want):
+        raise SystemExit(f"unknown plate in --only {a.only}: have {[p['id'] for p in plates]}")
     a.out.mkdir(parents=True, exist_ok=True)
     r = Renderer(a.out / "assets")
     records, thumbs = [], []
@@ -562,18 +580,37 @@ def main():
         else:
             print(f"preview {ident} luma {samples}", flush=True)
         r.bodies.clear()
-    sheet = Image.new("RGB", (1440, len(thumbs) // 3 * 300 + 20), (25, 37, 55))
+    # A partial re-render keeps the other plates' stills on the sheet.
+    sheet_thumbs = []
+    for p in all_plates:
+        stem = f"code_graphic_029_{p['id']}_v01"
+        for frac in (0.18, 0.52, 0.82):
+            jpg = a.out / f"{stem}_{int(frac * 100):02}.jpg"
+            if not jpg.exists():
+                continue
+            sheet_thumbs.append((p, frac, Image.open(jpg).convert("RGB").resize((480, 270))))
+    if not sheet_thumbs:
+        sheet_thumbs = thumbs
+    rows = (len(sheet_thumbs) + 2) // 3
+    sheet = Image.new("RGB", (1440, rows * 300 + 20), (25, 37, 55))
     d = ImageDraw.Draw(sheet)
-    for i, (p, frac, thumb) in enumerate(thumbs):
+    for i, (p, frac, thumb) in enumerate(sheet_thumbs):
         x, y = (i % 3) * 480, (i // 3) * 300
         sheet.paste(thumb, (x, y + 8))
         d.text((x + 8, y + 278), f"{p['id']}  {frac:.0%}", font=font(18), fill=WHITE)
     sheet.save(a.out / "CONTACT_SHEET.jpg", quality=90)
     if not a.previews:
+        old_path = a.out / "RENDER_MANIFEST.json"
+        if want and old_path.exists():
+            by_id = {rec["id"]: rec for rec in json.loads(old_path.read_text()).get("renders", [])}
+            for rec in records:
+                by_id[rec["id"]] = rec
+            records = [by_id[p["id"]] for p in all_plates if p["id"] in by_id]
         manifest = dict(job="J0347", film="029", board=boards.name, board_sha256=digest(boards),
                          renderer_sha256=digest(Path(__file__)), fps=FPS, review="pending Chief",
+                         fix="Chief 16 Oct: r05 text-free sun-dot, r03 sun-dot, r21 level beam, r17 snap at 215.32, no leader on r17/r31",
                          renders=records)
-        (a.out / "RENDER_MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n")
+        old_path.write_text(json.dumps(manifest, indent=2) + "\n")
     print("contact sheet written", flush=True)
 
 

@@ -3,14 +3,15 @@
   "film": "029",
   "board": "PLATE_BOARDS_v02.json",
   "board_sha256": "ef33a453a38e98967c99cf8fcd97630d1fac93a9add556b0adac7bc858e8a2bb",
-  "renderer_sha256": "ad1a528f7d4e50a520298c0218ecfb3c6042a5053d8c95a312534a145934bce7",
+  "renderer_sha256": "bed930ea9d07886a28e02138e46f8e9346d28ae07777d5114d58157957276469",
   "fps": 50,
   "review": "pending Chief",
+  "fix": "Chief 16 Oct: r05 text-free sun-dot, r03 sun-dot, r21 level beam, r17 snap at 215.32, no leader on r17/r31",
   "renders": [
     {
       "id": "r03_r04_promise",
       "file": "code_graphic_029_r03_r04_promise_v01.mp4",
-      "sha256": "0327e1e7f8990f5ddde53e4afba87b8eedd7066bd53fa7027256dc2992af063c",
+      "sha256": "33981b763fce7bb98daf5ddfbd24fe5c2993f46c4979e1797fd75430934c565b",
       "t_in_s": 13.96,
       "t_out_s": 36.94,
       "use_s": 22.98,
@@ -22,8 +23,8 @@
           "p95": 77.1
         },
         "0.52": {
-          "mean": 71.3,
-          "p95": 102.6
+          "mean": 71.5,
+          "p95": 102.7
         },
         "0.82": {
           "mean": 90.1,
@@ -37,7 +38,7 @@
     {
       "id": "r05_scale",
       "file": "code_graphic_029_r05_scale_v01.mp4",
-      "sha256": "5201e2ebe6d8a27edec476bb8b1b6b43cc72ad9e6deb78df56f68565b4974134",
+      "sha256": "d56d362bcc9bf2d8ee819268f7246b49e1aa65beebe5b15034e2afa7aefc19e1",
       "t_in_s": 41.9,
       "t_out_s": 48.58,
       "use_s": 6.68,
@@ -45,12 +46,12 @@
       "fps": 50,
       "luma": {
         "0.18": {
-          "mean": 69.9,
-          "p95": 78.1
+          "mean": 69.6,
+          "p95": 77.3
         },
         "0.52": {
-          "mean": 70.1,
-          "p95": 78.1
+          "mean": 70.4,
+          "p95": 79.1
         },
         "0.82": {
           "mean": 75.9,
@@ -145,7 +146,7 @@
     {
       "id": "r17_r20_shells",
       "file": "code_graphic_029_r17_r20_shells_v01.mp4",
-      "sha256": "24bf9a5c736a0ff92d05196ec2c6f5ae71f1bcae57aa360146ec2f07344dd540",
+      "sha256": "9faaf3954770274d704bdc8138195feca9c08d17855ec22bfa130e585d421981",
       "t_in_s": 175.4,
       "t_out_s": 224.02,
       "use_s": 48.62,
@@ -161,8 +162,8 @@
           "p95": 213.2
         },
         "0.82": {
-          "mean": 71.1,
-          "p95": 78.1
+          "mean": 103.4,
+          "p95": 213.2
         }
       },
       "kind": "chart",
@@ -172,7 +173,7 @@
     {
       "id": "r21_hero",
       "file": "code_graphic_029_r21_hero_v01.mp4",
-      "sha256": "ebb79b4f1ac67f8d1f3e12d3e332ebb127c9cbcba207dab52404eb61f8d11a7e",
+      "sha256": "5bcbf63d3043619f1b848942b7865fa593b9c892bc60816b661e1fc284cc8ed3",
       "t_in_s": 232.0,
       "t_out_s": 236.8,
       "use_s": 4.8,
@@ -180,16 +181,16 @@
       "fps": 50,
       "luma": {
         "0.18": {
-          "mean": 70.4,
-          "p95": 78.1
+          "mean": 74.6,
+          "p95": 79.1
         },
         "0.52": {
-          "mean": 70.4,
-          "p95": 78.1
+          "mean": 74.6,
+          "p95": 79.1
         },
         "0.82": {
-          "mean": 70.1,
-          "p95": 78.1
+          "mean": 74.3,
+          "p95": 79.1
         }
       },
       "kind": "chart",
@@ -334,7 +335,7 @@
     {
       "id": "r31_shells_twins",
       "file": "code_graphic_029_r31_shells_twins_v01.mp4",
-      "sha256": "f7aab123144340259d2b8652d5d23704ff5a3efdd944ab2dc7445277ee9fbeed",
+      "sha256": "b6555ae81e4d6668a562cc90ef253b842a0e11a6ea98cf59e44686cfb566d9bf",
       "t_in_s": 359.36,
       "t_out_s": 378.3,
       "use_s": 18.94,
