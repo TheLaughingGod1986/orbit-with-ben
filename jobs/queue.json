@@ -26983,13 +26983,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-16T06:23Z",
-      "eta": "2026-10-16T08:23Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-16T06:19Z",
-      "result": "",
+      "result": "parked for Chief: merge PR #229 (1a98a97d) containing gate-library date, UPLOADS, J0287 mirror-date correction and API/gate evidence. Live reschedule complete: BbsyFrV8kCY private 2026-10-28T11:30:00Z; Saturn unchanged. 3/3 steps done; no worker final PASS.",
       "history": [
         {
           "at": "2026-10-16T06:19Z",
@@ -27020,6 +27020,11 @@
           "at": "2026-10-16T06:26Z",
           "by": "codex",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-10-16T06:26Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: merge PR #229 (1a98a97d) containing gate-library date, UPLOADS, J0287 mirror-date correction and API/gate evidence. Live reschedule complete: BbsyFrV8kCY private 2026-10-28T11:30:00Z; Saturn unchanged. 3/3 steps done; no worker final PASS."
         }
       ],
       "kind": "studio",
