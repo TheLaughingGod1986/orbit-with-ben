@@ -1,0 +1,660 @@
+{
+  "job": "J0350",
+  "film": "028",
+  "by": "cursor",
+  "date": "2026-10-16",
+  "boards": "PLATE_BOARDS_v02.json",
+  "pool": "SOURCE_POOL_v02.json",
+  "spend": "\u00a30",
+  "generation_authorized": false,
+  "plates": 33,
+  "files_ok": 21,
+  "files_rejected": 0,
+  "items": [
+    {
+      "id": "gaia_motion_1_6my",
+      "plates": [
+        "r01_stars_streaming",
+        "r02_gaia_span_2",
+        "r12_stars_move",
+        "r27_leaving",
+        "r38_return"
+      ],
+      "title": "Gaia's stellar motion for the next 1.6 million years (3 Dec 2020)",
+      "page": "https://www.esa.int/ESA_Multimedia/Videos/2020/12/Gaia_s_stellar_motion_for_the_next_1.6_million_years",
+      "boarded_file": "https://dlmultimedia.esa.int/download/public/videos/2020/12/004/2012_004_AR_EN.mp4",
+      "file_url": "https://dlmultimedia.esa.int/download/public/videos/2020/12/004/orig-2012_004_AR_EN.mp4",
+      "rendition": "same-page higher file",
+      "file": "nasa_pool_v01/028_harvest_v01/gaia_motion_1_6my.mp4",
+      "bytes": 285214450,
+      "content_type": "cached",
+      "sha256": "54335c011585719aa89d1d833f864b5175ea0c41b2e317b4d2fef9118447610e",
+      "boarded_licence": "CC BY-SA 3.0 IGO",
+      "boarded_credit": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "picture_qa_flag": "data film; diagram on purpose",
+      "note": "Data animation. picture_qa flag: diagram on purpose. Five stretches in v02 (r35 dropped): r01_stars_streaming, r02_gaia_span_2, r12_stars_move, r27_leaving, r38_return",
+      "width": 3840,
+      "height": 2160,
+      "codec": "h264",
+      "duration_s": 45.48,
+      "licence_check": "PASS",
+      "credit_on_page": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "licence_notes": [
+        "ESA page contains the credit line CC BY-SA 3.0 IGO."
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "gaia_edr3_sky",
+      "plates": [
+        "r03_serpens_sky",
+        "r34_sky_wide"
+      ],
+      "title": "Colour of the sky, Gaia Early Data Release 3 (Dec 2020)",
+      "page": "https://www.esa.int/ESA_Multimedia/Images/2020/12/Interactive_map_of_the_sky_from_Gaia_s_Early_Data_Release_3",
+      "boarded_file": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2020/12/interactive_map_of_the_sky_from_gaia_s_early_data_release_3/25364650-1-eng-GB/Interactive_map_of_the_sky_from_Gaia_s_Early_Data_Release_3.png",
+      "file_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2020/12/interactive_map_of_the_sky_from_gaia_s_early_data_release_3/25364650-1-eng-GB/Interactive_map_of_the_sky_from_Gaia_s_Early_Data_Release_3.png",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/gaia_edr3_sky.png",
+      "bytes": 3885439,
+      "content_type": "cached",
+      "sha256": "a831d1a88ce6df8406f498c2f6a30d3905138f8a6262e870903133c75339f4b9",
+      "boarded_licence": "CC BY-SA 3.0 IGO",
+      "boarded_credit": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "picture_qa_flag": "data film; diagram on purpose",
+      "note": "EDR3 colour sky, not a DR3 chemistry or radial-velocity map (those are labelled). Confirm pixel size at harvest. No DSS2.",
+      "width": 2000,
+      "height": 1000,
+      "codec": "png",
+      "duration_s": null,
+      "licence_check": "PASS",
+      "credit_on_page": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "licence_notes": [
+        "ESA page contains the credit line CC BY-SA 3.0 IGO."
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "ngc3603",
+      "plates": [
+        "r05_cluster_break",
+        "r37_cluster"
+      ],
+      "title": "Starburst cluster (Hubble, GSFC archive e002049)",
+      "page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002049",
+      "boarded_file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002049/GSFC_20171208_Archive_e002049~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002049/GSFC_20171208_Archive_e002049~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/ngc3603.jpg",
+      "bytes": 2988965,
+      "content_type": "cached",
+      "sha256": "8db315eb8ecfd8362372e65f646cf6ef52943badc17abcae828775dd28f3e6aa",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA, ESA, Hubble (public domain)",
+      "picture_qa_flag": null,
+      "note": "Young cluster in gas and dust. Confirm it is clean of caption text at harvest.",
+      "width": 2217,
+      "height": 1983,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA, ESA, Hubble (public domain)",
+      "licence_notes": [
+        "NASA images library: Starburst Cluster Shows Celestial Fireworks (GSFC). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "eso_mw_lasilla",
+      "plates": [
+        "r06_milky_way",
+        "r36_night_2"
+      ],
+      "title": "La Silla Milky Way time-lapse",
+      "page": "https://www.eso.org/public/videos/brunier_la_silla/",
+      "boarded_file": "https://cdn.eso.org/videos/hd_1080p25_screen/brunier_la_silla.mp4",
+      "file_url": "https://cdn.eso.org/videos/hd_1080p25_screen/brunier_la_silla.mp4",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/eso_mw_lasilla.mp4",
+      "bytes": 47610465,
+      "content_type": "cached",
+      "sha256": "41a034531e9bf5f94cb6fd8151fe97ee9c705e758028bc23a3918cba7f744bb9",
+      "boarded_licence": "CC BY 4.0",
+      "boarded_credit": "ESO/S. Brunier (CC BY 4.0)",
+      "picture_qa_flag": null,
+      "note": "Two stretches in v02: r06 and r36. Source 17 s. r06 uses 7.32 s; r36 must use the other window. Do not replay frames.",
+      "width": 1920,
+      "height": 1080,
+      "codec": "h264",
+      "duration_s": 17.6,
+      "licence_check": "PASS",
+      "credit_on_page": "ESO/ S. Brunier",
+      "licence_notes": [
+        "Page credit: ESO/ S. Brunier",
+        "Page points at the ESO usage policy.",
+        "ESO policy page: ideos, and music distributed on the public ESO website , along with the texts of press releases, announcements, pictures of the week, blog posts and captions, are licensed under a Creative Commons Attribution 4.0 International License , and may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible. The license allows adaptation of the material, but any adaptat"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "sdo_hmi_continuum",
+      "plates": [
+        "r07_sun",
+        "r30_sun_limb"
+      ],
+      "title": "SDO/HMI continuum intensitygram, 2024-06-01 00:00 UTC",
+      "page": "https://sdo.gsfc.nasa.gov/assets/img/browse/2024/06/01/",
+      "boarded_file": "https://sdo.gsfc.nasa.gov/assets/img/browse/2024/06/01/20240601_000000_4096_HMIIF.jpg",
+      "file_url": "https://sdo.gsfc.nasa.gov/assets/img/browse/2024/06/01/20240601_000000_4096_HMIIF.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/sdo_hmi_continuum.jpg",
+      "bytes": 4645585,
+      "content_type": "cached",
+      "sha256": "003641c2b2b465fd6c60ab706c24cd589ebcade3a0cd5e2bcaa2512e47e794fe",
+      "boarded_licence": "public domain (NASA images are not copyrighted; https://www.nasa.gov/nasa-brand-center/images-and-media/)",
+      "boarded_credit": "NASA/SDO",
+      "picture_qa_flag": null,
+      "note": "HTTP 200 on the 4096 file. The 1024 preview shows the visible-light disk and a bottom-left stamp, 'SDO/HMI Quick-Look Continuum: 20240601_000000'. Crop that stamp. sdo.gsfc.nasa.gov/data/rules.php was showing a storage-failure banner this run, so the licence line is NASA's media policy, not a quote from that page. Two uses: full disk (r07) and a limb crop (r30).",
+      "width": 4096,
+      "height": 4096,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/SDO",
+      "licence_notes": [
+        "SDO/HMI browse jpeg. Licence is NASA's media policy (images produced by NASA are not copyrighted), as boarded. The file carries an SDO/HMI stamp in the corner; crop it at the edit, not in this pool.",
+        "Boarded licence: public domain (NASA images are not copyrighted; https://www.nasa.gov/nasa-brand-center/images-and-media/)"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "gaia_gliese_encounter",
+      "plates": [
+        "r10_gliese_approach"
+      ],
+      "title": "Waiting for a stellar encounter (Gliese 710, 31 Aug 2017)",
+      "page": "https://www.esa.int/ESA_Multimedia/Videos/2017/08/Waiting_for_a_stellar_encounter",
+      "boarded_file": "https://dlmultimedia.esa.int/download/public/videos/2017/08/022/1708_022_AR_EN.mp4",
+      "file_url": "https://dlmultimedia.esa.int/download/public/videos/2017/08/022/orig-1708_022_AR_EN.mov",
+      "rendition": "same-page higher file",
+      "file": "nasa_pool_v01/028_harvest_v01/gaia_gliese_encounter.mov",
+      "bytes": 107289167,
+      "content_type": "cached",
+      "sha256": "b356744b06f041f28e4dd689a395933da17ccd951c5a8509ad205bae552a07bf",
+      "boarded_licence": "CC BY-SA 3.0 IGO",
+      "boarded_credit": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "picture_qa_flag": "data film; diagram on purpose",
+      "note": "The Gliese 710 flyby. Not the annotated 'Tracking stellar motions' cut (that one draws a circle and a line).",
+      "width": 1920,
+      "height": 1080,
+      "codec": "h264",
+      "duration_s": 44.083333,
+      "licence_check": "PASS",
+      "credit_on_page": "ESA/Gaia/DPAC; CC BY-SA 3.0 IGO",
+      "licence_notes": [
+        "ESA page contains the credit line CC BY-SA 3.0 IGO."
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "proxima",
+      "plates": [
+        "r12_proxima"
+      ],
+      "title": "Hubble image of Proxima Centauri (potw1343a)",
+      "page": "https://esahubble.org/images/potw1343a/",
+      "boarded_file": "https://cdn.esahubble.org/archives/images/large/potw1343a.jpg",
+      "file_url": "https://cdn.esahubble.org/archives/images/large/potw1343a.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/proxima.jpg",
+      "bytes": 69746,
+      "content_type": "cached",
+      "sha256": "163774dc420405e6b15e0cbc3fac0b87dc93f405a7e39c4b5d14dcbcfb19a136",
+      "boarded_licence": "CC BY 4.0",
+      "boarded_credit": "ESA/Hubble & NASA (CC BY 4.0)",
+      "picture_qa_flag": null,
+      "note": "Same plate 026 already uses. No DSS2 companion.",
+      "width": 604,
+      "height": 592,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "ESA/Hubble &amp; NASA",
+      "licence_notes": [
+        "Page credit: ESA/Hubble &amp; NASA",
+        "Hubble policy page: ts \u00d7 Page saved successfully \u00d7 Couldn't save page :( Please try again. Usage of images, videos and web texts Summary ESA/Hubble images, videos and web texts are released under the Creative Commons Attribution 4.0 International license and may on a non-exclusive basis be reproduced without fee provided they are clearly and visibly credited. Detailed conditions are below. Conditions The full image o"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "eso_startrails",
+      "plates": [
+        "r13_star_trails"
+      ],
+      "title": "Time-lapse over La Silla (star trails)",
+      "page": "https://www.eso.org/public/videos/lasilla_timelapse_rw1/",
+      "boarded_file": "https://cdn.eso.org/videos/hd_1080p25_screen/lasilla_timelapse_rw1.mp4",
+      "file_url": "https://cdn.eso.org/videos/hd_1080p25_screen/lasilla_timelapse_rw1.mp4",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/eso_startrails.mp4",
+      "bytes": 84852474,
+      "content_type": "cached",
+      "sha256": "d60dd20c7befd5047644cd6f7e50dd2e6082a901d2b52bd65d4d05c654787743",
+      "boarded_licence": "CC BY 4.0",
+      "boarded_credit": "R. Wesson/ESO (CC BY 4.0)",
+      "picture_qa_flag": null,
+      "note": "Star trails. A different film from the Brunier Milky Way lapse.",
+      "width": 1920,
+      "height": 1080,
+      "codec": "h264",
+      "duration_s": 28.0,
+      "licence_check": "PASS",
+      "credit_on_page": "R. Wesson/ESO",
+      "licence_notes": [
+        "Page credit: R. Wesson/ESO",
+        "Page points at the ESO usage policy.",
+        "ESO policy page: ideos, and music distributed on the public ESO website , along with the texts of press releases, announcements, pictures of the week, blog posts and captions, are licensed under a Creative Commons Attribution 4.0 International License , and may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible. The license allows adaptation of the material, but any adaptat"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "gaia_craft",
+      "plates": [
+        "r15_gaia_craft"
+      ],
+      "title": "The Gaia spacecraft (artist's impression)",
+      "page": "https://www.eso.org/public/images/eso1908d/",
+      "boarded_file": "https://cdn.eso.org/images/large/eso1908d.jpg",
+      "file_url": "https://cdn.eso.org/images/large/eso1908d.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/gaia_craft.jpg",
+      "bytes": 2007483,
+      "content_type": "cached",
+      "sha256": "de1a96add15e5f8e0fbf848152945978e8a958fd0cd599840c0e0a0c779bb74b",
+      "boarded_licence": "CC BY 4.0",
+      "boarded_credit": "ESA/ATG medialab; background: ESO/S. Brunier (CC BY 4.0 via ESO)",
+      "picture_qa_flag": null,
+      "note": "Artist's impression (WARN). Background is Brunier's Milky Way still, not the Brunier video.",
+      "width": 3076,
+      "height": 2040,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "ESA/ATG medialab; background image: ESO/S. Brunier",
+      "licence_notes": [
+        "Page credit: ESA/ATG medialab; background image: ESO/S. Brunier",
+        "Page points at the ESO usage policy.",
+        "ESO policy page: ideos, and music distributed on the public ESO website , along with the texts of press releases, announcements, pictures of the week, blog posts and captions, are licensed under a Creative Commons Attribution 4.0 International License , and may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible. The license allows adaptation of the material, but any adaptat"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "iss_sunrise",
+      "plates": [
+        "r16_sunrise_break",
+        "r24_sunrise"
+      ],
+      "title": "Orbital sunrise above Namibia",
+      "page": "https://images.nasa.gov/details/iss072e487315",
+      "boarded_file": "https://images-assets.nasa.gov/image/iss072e487315/iss072e487315~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/iss072e487315/iss072e487315~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/iss_sunrise.jpg",
+      "bytes": 543052,
+      "content_type": "cached",
+      "sha256": "796f9cc636f8ef228ba8774f480d037377ea9eb0590bac7cc34d58107b9d7b8d",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA (public domain)",
+      "picture_qa_flag": null,
+      "note": "Cloud tops at sunrise from the ISS. A still, not a moving sunrise.",
+      "width": 4928,
+      "height": 2768,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA (public domain)",
+      "licence_notes": [
+        "NASA images library: An orbital sunrise above Namibia in Africa (JSC). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "neptune",
+      "plates": [
+        "r17_neptune"
+      ],
+      "title": "Neptune full disk, Voyager 2 (PIA01492)",
+      "page": "https://science.nasa.gov/photojournal/neptune-full-disk-view/",
+      "boarded_file": "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/neptune.jpg",
+      "bytes": 258997,
+      "content_type": "cached",
+      "sha256": "97b57802f44be2218578a98c8c26f8426ff7a95890d266d34486734f14c1edb6",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/JPL (public domain)",
+      "picture_qa_flag": null,
+      "note": "Green and orange filters, not true colour. Say so in the corner credit.",
+      "width": 2188,
+      "height": 2185,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/JPL (public domain)",
+      "licence_notes": [
+        "NASA images library: PIA01492 (JPL). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "neowise_dc",
+      "plates": [
+        "r22_neowise",
+        "r38_neowise_2"
+      ],
+      "title": "Comet NEOWISE over Washington, 12 Jul 2020",
+      "page": "https://www.nasa.gov/image-article/comet-neowise-over-washington-dc-2/",
+      "boarded_file": "https://images-assets.nasa.gov/image/NHQ202007120002/NHQ202007120002~orig.tif",
+      "file_url": "https://images-assets.nasa.gov/image/NHQ202007120002/NHQ202007120002~orig.tif",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/neowise_dc.tif",
+      "bytes": 17984510,
+      "content_type": "cached",
+      "sha256": "eb4b3582ca82d6e1dae8857d23c9dd183972a5a1b78128162c66acefe213c01d",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/Bill Ingalls (public domain)",
+      "picture_qa_flag": null,
+      "note": "C/2020 F3. Second use is a new crop only.",
+      "width": 4998,
+      "height": 3664,
+      "codec": "tiff",
+      "duration_s": null,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/Bill Ingalls (public domain)",
+      "licence_notes": [
+        "NASA images library: Comet NEOWISE Over Washington (HQ). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "comet_a3",
+      "plates": [
+        "r26_hale_bopp",
+        "r26_a3"
+      ],
+      "title": "Comet C/2023 A3 from the ISS, 28 Sep 2024",
+      "page": "https://www.nasa.gov/image-article/ancient-comet-makes-appearance/",
+      "boarded_file": "https://images-assets.nasa.gov/image/iss072e020907/iss072e020907~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/iss072e020907/iss072e020907~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/comet_a3.jpg",
+      "bytes": 4694817,
+      "content_type": "cached",
+      "sha256": "49791e5be78dd5a9de3f947a05548a4f085cfa59036a6f08bb82003911cb97ad",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/Matthew Dominick (public domain)",
+      "picture_qa_flag": null,
+      "note": "Oort-cloud comet, as the shot list asked.",
+      "width": 8256,
+      "height": 5504,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/Matthew Dominick (public domain)",
+      "licence_notes": [
+        "NASA images library: Comet C/2023 A3 is pictured from the International Space Station (JSC). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "jupiter_juno",
+      "plates": [
+        "r28_jupiter"
+      ],
+      "title": "Jupiter's colourful cloud belts (PIA21974)",
+      "page": "https://images.nasa.gov/details/PIA21974",
+      "boarded_file": "https://images-assets.nasa.gov/image/PIA21974/PIA21974~orig.tif",
+      "file_url": "https://images-assets.nasa.gov/image/PIA21974/PIA21974~orig.tif",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/jupiter_juno.tif",
+      "bytes": 9640436,
+      "content_type": "cached",
+      "sha256": "693f8b87032c671f3fc9407832d30975694387c8f7d85f76cd1dfa89b44c664c",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/JPL-Caltech/SwRI/MSSS (public domain)",
+      "picture_qa_flag": null,
+      "note": "Juno, colour-enhanced, not true colour. Say so in the corner credit.",
+      "width": 3805,
+      "height": 1288,
+      "codec": "tiff",
+      "duration_s": null,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/JPL-Caltech/SwRI/MSSS (public domain)",
+      "licence_notes": [
+        "NASA images library: Jupiter's Colorful Cloud Belts (JPL). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "saturn",
+      "plates": [
+        "r28_saturn"
+      ],
+      "title": "The greatest Saturn portrait (PIA06193)",
+      "page": "https://images.nasa.gov/details/PIA06193",
+      "boarded_file": "https://images-assets.nasa.gov/image/PIA06193/PIA06193~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/PIA06193/PIA06193~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/saturn.jpg",
+      "bytes": 5667919,
+      "content_type": "cached",
+      "sha256": "1095bbfe968cbac1a5b905fac02a244ed4686ff04fb3d55ebc1a71a67b387b77",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/JPL/Space Science Institute (public domain)",
+      "picture_qa_flag": null,
+      "note": "Cassini natural-colour portrait. Chosen over PIA14922, which puts Titan in front.",
+      "width": 8888,
+      "height": 4544,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/JPL/Space Science Institute (public domain)",
+      "licence_notes": [
+        "NASA images library: The Greatest Saturn Portrait ...Yet (JPL). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "eso_chajnantor",
+      "plates": [
+        "r29_night"
+      ],
+      "title": "Milky Way over Chajnantor",
+      "page": "https://www.eso.org/public/videos/chajnantormilkyway/",
+      "boarded_file": "https://cdn.eso.org/videos/medium_podcast/chajnantormilkyway.m4v",
+      "file_url": "https://cdn.eso.org/videos/hd_and_apple/chajnantormilkyway.m4v",
+      "rendition": "same-page higher file",
+      "file": "nasa_pool_v01/028_harvest_v01/eso_chajnantor.m4v",
+      "bytes": 7703404,
+      "content_type": "cached",
+      "sha256": "b3bc5b77bc8ddd752d99086edd272fb069eaec37ad4bf7c5470b85516370e1b0",
+      "boarded_licence": "CC BY 4.0",
+      "boarded_credit": "ESO (CC BY 4.0)",
+      "picture_qa_flag": null,
+      "note": "Southern Milky Way, Coalsack visible. File found is the medium podcast, not 1080p.",
+      "width": 1280,
+      "height": 720,
+      "codec": "h264",
+      "duration_s": 16.36,
+      "licence_check": "PASS",
+      "credit_on_page": "ESO",
+      "licence_notes": [
+        "Page credit: ESO",
+        "Page points at the ESO usage policy.",
+        "ESO policy page: ideos, and music distributed on the public ESO website , along with the texts of press releases, announcements, pictures of the week, blog posts and captions, are licensed under a Creative Commons Attribution 4.0 International License , and may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible. The license allows adaptation of the material, but any adaptat"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "conjunction",
+      "plates": [
+        "r29_twilight"
+      ],
+      "title": "Jupiter and Saturn after sunset, 21 Dec 2020",
+      "page": "https://images.nasa.gov/details/NHQ202012210001",
+      "boarded_file": "https://images-assets.nasa.gov/image/NHQ202012210001/NHQ202012210001~orig.tif",
+      "file_url": "https://images-assets.nasa.gov/image/NHQ202012210001/NHQ202012210001~orig.tif",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/conjunction.tif",
+      "bytes": 22308614,
+      "content_type": "cached",
+      "sha256": "b978f27bcdce3dddb5f1cbe2913acdeaeb47f2f1759e29d039837cf0793a1442",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/Bill Ingalls (public domain)",
+      "picture_qa_flag": null,
+      "note": "The Ingalls conjunction series. Saturn is in the frame with Jupiter.",
+      "width": 5149,
+      "height": 3417,
+      "codec": "tiff",
+      "duration_s": null,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/Bill Ingalls (public domain)",
+      "licence_notes": [
+        "NASA images library: Saturn and Jupiter Conjunction (HQ). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "moon_lro",
+      "plates": [
+        "r30_moon",
+        "r31_moon_2"
+      ],
+      "title": "Full Moon (LRO)",
+      "page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000868",
+      "boarded_file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000868/GSFC_20171208_Archive_e000868~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000868/GSFC_20171208_Archive_e000868~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/moon_lro.jpg",
+      "bytes": 777580,
+      "content_type": "cached",
+      "sha256": "07b0c21e9115bfcc755a5fa91299dd63b44d840a7c24f12a4309d8cf349b9672",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA (public domain)",
+      "picture_qa_flag": null,
+      "note": "Second use is a crop. That is the twice-still cap.",
+      "width": 3240,
+      "height": 3240,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA (public domain)",
+      "licence_notes": [
+        "NASA images library: Full Moon (GSFC). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "wise_sky",
+      "plates": [
+        "r32_wise_sky"
+      ],
+      "title": "Entire WISE sky (PIA15481)",
+      "page": "https://photojournal.jpl.nasa.gov/catalog/PIA15481",
+      "boarded_file": "https://images-assets.nasa.gov/image/PIA15481/PIA15481~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/PIA15481/PIA15481~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/wise_sky.jpg",
+      "bytes": 6833623,
+      "content_type": "cached",
+      "sha256": "1ff04de1a971b1e34329b644a5dc7de6cfd8f8f20fcfa62273a2baec5b884ed3",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/JPL-Caltech/UCLA (public domain)",
+      "picture_qa_flag": null,
+      "note": "Checked 15 Oct 2026 on PIA15481~small.jpg: oval all-sky mosaic, no axis labels and no readable text. Keep.",
+      "width": 10000,
+      "height": 5030,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/JPL-Caltech/UCLA (public domain)",
+      "licence_notes": [
+        "NASA images library: Mapping the Infrared Universe: The Entire WISE Sky (JPL). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "wise_craft",
+      "plates": [
+        "r33_wise_craft"
+      ],
+      "title": "NEOWISE spacecraft, artist concept (PIA17254)",
+      "page": "https://images.nasa.gov/details/PIA17254",
+      "boarded_file": "https://images-assets.nasa.gov/image/PIA17254/PIA17254~orig.jpg",
+      "file_url": "https://images-assets.nasa.gov/image/PIA17254/PIA17254~orig.jpg",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/wise_craft.jpg",
+      "bytes": 1665507,
+      "content_type": "cached",
+      "sha256": "cf7a6f956d6ae2e4a5838313b98210925e98385bfacd2ed7149aaaab94acdd9f",
+      "boarded_licence": "public domain",
+      "boarded_credit": "NASA/JPL-Caltech (public domain)",
+      "picture_qa_flag": null,
+      "note": "Artist's concept (WARN). It is the WISE spacecraft, which flew the NEOWISE mission.",
+      "width": 5334,
+      "height": 3000,
+      "codec": "mjpeg",
+      "duration_s": 0.04,
+      "licence_check": "PASS",
+      "credit_on_page": "NASA/JPL-Caltech (public domain)",
+      "licence_notes": [
+        "NASA images library: NEOWISE: Back to Hunt More Asteroids Artist Concept (JPL). Public domain under NASA media guidelines.",
+        "Boarded licence: public domain"
+      ],
+      "generation_authorized": false
+    },
+    {
+      "id": "eso_lasilla_ntt",
+      "plates": [
+        "r35_lasilla_ntt"
+      ],
+      "title": "Milky Way moves over the NTT, La Silla",
+      "page": "https://www.eso.org/public/videos/bt_lasilla2_ntt/",
+      "boarded_file": "https://cdn.eso.org/videos/hd_1080p25_screen/bt_lasilla2_ntt.mp4",
+      "file_url": "https://cdn.eso.org/videos/hd_1080p25_screen/bt_lasilla2_ntt.mp4",
+      "rendition": "boarded file",
+      "file": "nasa_pool_v01/028_harvest_v01/eso_lasilla_ntt.mp4",
+      "bytes": 50068736,
+      "content_type": "cached",
+      "sha256": "979ddc71b9930464d9e3b7db0eb0e0ef3869b392a21e5efd1fca7fefb948fd3a",
+      "boarded_licence": "ESO copyright page states CC BY 4.0 for ESO videos; this video page states the credit and does not repeat CC BY",
+      "boarded_credit": "ESO/B. Tafreshi (twanight.org)",
+      "picture_qa_flag": null,
+      "note": "HTTP 200. 20 s, 30 fps, La Silla, the NTT. This is not the dropped bt_lasilla_fd2 fulldome. It is still Tafreshi. One stretch, r35, 11.02 s of the 20 s. Do not loop.",
+      "width": 1920,
+      "height": 1080,
+      "codec": "h264",
+      "duration_s": 20.0,
+      "licence_check": "PASS",
+      "credit_on_page": "ESO/ B. Tafreshi ( twanight.org )",
+      "licence_notes": [
+        "Page credit: ESO/ B. Tafreshi ( twanight.org )",
+        "Page points at the ESO usage policy.",
+        "ESO policy page: ideos, and music distributed on the public ESO website , along with the texts of press releases, announcements, pictures of the week, blog posts and captions, are licensed under a Creative Commons Attribution 4.0 International License , and may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible. The license allows adaptation of the material, but any adaptat"
+      ],
+      "generation_authorized": false
+    }
+  ],
+  "rejected": []
+}
