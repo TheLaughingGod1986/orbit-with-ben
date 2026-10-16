@@ -73,6 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0396 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0397 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0398 | mini | claimed | gemini | 2026-10-16T19:51Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0399 | mini | open | – | – | assembly · HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend) |  |
 
 Recently finished:
 

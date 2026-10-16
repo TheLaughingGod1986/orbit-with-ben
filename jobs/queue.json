@@ -1,5 +1,5 @@
 {
-  "next_id": 399,
+  "next_id": 400,
   "jobs": [
     {
       "id": "J0001",
@@ -30295,6 +30295,33 @@
         "by": "gemini",
         "note": "HOS gates run: 006 s05 Short PASS (0/7), 007 P1 clip PASS (0/1), 007-010 code_graphics verified PASS; 006 s04 Short FAIL"
       }
+    },
+    {
+      "id": "J0399",
+      "title": "HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "In 02_Video-Projects/006_Trees-Are-Made-Of-Air/10_Shorts/_build_short_s04_photosynthesis_v01.py (and _build_short_s05_charcoal_gas_v01.py), render_card() draws a lower-third shade from top down to BAND_TOP + BAND_H (y=1264, 0.656 of 1920) where alpha drops abruptly from 140 to 0 across the full width, failing polish_gate.py and picture_qa.py on row s07_About (0:20, 01_willow_air_t1.mp4: split panel: horizontal seam at 0.656). Feather the bottom of the shade or remove the full-width hard band step, re-render hos_006_s04_photosynthesis_v01.mp4 at £0, and re-run gate_shorts_open, vo_check, polish_gate.py, and picture_qa.py into 10_Shorts/qa_s04_photosynthesis_v01/ until 0 fails.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-16T19:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T19:09Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
