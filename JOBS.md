@@ -34,6 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0352 | mini | blocked | codex | – | 007 picture · for codex · video · `flow-veo-3.1` · HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex) | 6206755581 |
 | J0353 | mini | blocked | codex | – | 029 picture · assembly · 029 Betelgeuse: £0 harvest of 47 harvest-route plates from boards v02 (no mint) | 1624dde65effbb6002917390a510e89e15278f82 |
 | J0354 | mini | blocked | gemini | – | 006 edit · review · HOS 006: full-film frame review of teach master full_join_v01_teach (no bed, no mint) |  |
+| J0355 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
