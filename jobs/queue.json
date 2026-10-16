@@ -1,5 +1,5 @@
 {
-  "next_id": 381,
+  "next_id": 382,
   "jobs": [
     {
       "id": "J0001",
@@ -28959,6 +28959,34 @@
         "by": "gemini",
         "note": "Updated HOS PR #348 (f595ef17) with 009 v05, 010 v03, 007-010 Shorts v01, 013 v02, and 011 v01 boards"
       }
+    },
+    {
+      "id": "J0381",
+      "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-16T14:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T14:22Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "qa",
+      "backlog": "both-qa-sweep"
     }
   ],
   "focus": [],
@@ -28977,7 +29005,7 @@
     "owb-next-script": "2026-10-16T13:03Z",
     "hos-next-script": "2026-10-16T13:09Z",
     "hos-plate-prep": "2026-10-16T13:34Z",
-    "both-qa-sweep": "2026-10-16T07:47Z",
+    "both-qa-sweep": "2026-10-16T14:22Z",
     "studio-ctr-daily": "2026-10-16T06:11Z"
   }
 }
