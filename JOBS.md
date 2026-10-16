@@ -35,6 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0350 | mini | blocked | cursor | – | 028 picture · assembly · 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) |  |
 | J0351 | mini | open | – | – | 006 edit · assembly · HOS 006: lay teach_overlays_v01 into full_join_v01 (no bed, no mint) |  |
 | J0352 | mini | open | – | – | 007 picture · video · `flow-veo-3.1` · HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex) | 6206755581 |
+| J0353 | mini | open | – | – | 029 picture · assembly · 029 Betelgeuse: £0 harvest of 47 harvest-route plates from boards v02 (no mint) | 1624dde65effbb6002917390a510e89e15278f82 |
 
 Recently finished:
 
