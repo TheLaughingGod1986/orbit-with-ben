@@ -24715,13 +24715,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-16T01:04Z",
-      "eta": "2026-10-16T03:04Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T20:31Z",
-      "result": "",
+      "result": "parked for Chief: review P5:11 label SAFE PATH DOWN on HOS PR #338 (d8828f5d). Frame at 2.5s shows the three-word label. Other ten graphics unchanged. No PASS, no merge, no NAS retry.",
       "history": [
         {
           "at": "2026-10-15T20:31Z",
@@ -24832,6 +24832,11 @@
           "at": "2026-10-16T01:07Z",
           "by": "cursor",
           "what": "step 5 of 5 done: P5:11 re-rendered SAFE PATH DOWN; d8828f5d pushed"
+        },
+        {
+          "at": "2026-10-16T01:08Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: review P5:11 label SAFE PATH DOWN on HOS PR #338 (d8828f5d). Frame at 2.5s shows the three-word label. Other ten graphics unchanged. No PASS, no merge, no NAS retry."
         }
       ],
       "kind": "chart",
