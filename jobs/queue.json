@@ -22878,13 +22878,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-16T06:33Z",
-      "eta": "2026-10-16T08:33Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-15T16:22Z",
-      "result": "",
+      "result": "parked for Chief: target/input dependency. Newest unuploaded long is 032 Titan; script v01 approved in J0301 but recorded VO J0302 is blocked until 30 Oct (119 characters left vs 8139 required). No aligned cut or shot list exists for before/after overlays or picture_qa. Resume after VO/cut inputs, or Chief names an older target. Progress 1/4; no render, spend or PASS.",
       "history": [
         {
           "at": "2026-10-15T16:22Z",
@@ -22905,6 +22905,11 @@
           "at": "2026-10-16T06:33Z",
           "by": "codex",
           "what": "step 1 of 4 done: Eligibility checked: newest long 032 lacks recorded VO/cut; J0302 blocked until 30 Oct reset"
+        },
+        {
+          "at": "2026-10-16T06:34Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: target/input dependency. Newest unuploaded long is 032 Titan; script v01 approved in J0301 but recorded VO J0302 is blocked until 30 Oct (119 characters left vs 8139 required). No aligned cut or shot list exists for before/after overlays or picture_qa. Resume after VO/cut inputs, or Chief names an older target. Progress 1/4; no render, spend or PASS."
         }
       ],
       "kind": "chart",
