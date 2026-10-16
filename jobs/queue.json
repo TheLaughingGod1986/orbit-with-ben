@@ -30785,13 +30785,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-16T20:19Z",
-      "eta": "2026-10-16T22:19Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T20:18Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (023 venus_heavy_water_100x_v01, 26.9s, 62 words, gate PASS 0 warnings, sfx PASS, sha256 621a869e, commit fe21c13c)",
       "history": [
         {
           "at": "2026-10-16T20:18Z",
@@ -30827,6 +30827,11 @@
           "at": "2026-10-16T20:40Z",
           "by": "gemini",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-16T20:40Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (023 venus_heavy_water_100x_v01, 26.9s, 62 words, gate PASS 0 warnings, sfx PASS, sha256 621a869e, commit fe21c13c)"
         }
       ],
       "kind": "assembly",
