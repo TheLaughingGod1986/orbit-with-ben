@@ -24715,13 +24715,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-16T01:04Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-16T01:23Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T20:31Z",
-      "result": "parked for Chief: review P5:11 label SAFE PATH DOWN on HOS PR #338 (d8828f5d). Frame at 2.5s shows the three-word label. Other ten graphics unchanged. No PASS, no merge, no NAS retry.",
+      "result": "PASS (Chief, 16 Oct ~02:20 London): HOS 008 Franklin code graphics v01. P5:11 label SAFE PATH DOWN (3 words) verified on still + MANIFEST + builder d8828f5d; HOS PR #338 squash-merged 75d53bea7c1a49176db0319f0f736beb72b8c215. Five alpha overlays provisional until plates; NAS mirror infra not a gate. £0. Mint gate unchanged. Desk #180 6205868823; PR 6205868661; #99 6205868965. No Ben.",
       "history": [
         {
           "at": "2026-10-15T20:31Z",
@@ -24837,17 +24837,26 @@
           "at": "2026-10-16T01:08Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: review P5:11 label SAFE PATH DOWN on HOS PR #338 (d8828f5d). Frame at 2.5s shows the three-word label. Other ten graphics unchanged. No PASS, no merge, no NAS retry."
+        },
+        {
+          "at": "2026-10-16T01:23Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked P5:11 re-review"
+        },
+        {
+          "at": "2026-10-16T01:23Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-16T01:23Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 16 Oct ~02:20 London): HOS 008 Franklin code graphics v01. P5:11 label SAFE PATH DOWN (3 words) verified on still + MANIFEST + builder d8828f5d; HOS PR #338 squash-merged 75d53bea7c1a49176db0319f0f736beb72b8c215. Five alpha overlays provisional until plates; NAS mirror infra not a gate. £0. Mint gate unchanged. Desk #180 6205868823; PR 6205868661; #99 6205868965. No Ben."
         }
       ],
       "kind": "chart",
       "urgent": 1,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-16T01:07Z",
-        "by": "cursor",
-        "note": "P5:11 re-rendered SAFE PATH DOWN; d8828f5d pushed"
-      }
+      "done_ref": "75d53bea7c1a49176db0319f0f736beb72b8c215"
     },
     {
       "id": "J0330",
@@ -24919,22 +24928,22 @@
     },
     {
       "id": "J0331",
-      "title": "HOS 006: full_join_v02 — new stretches on 6 picture_qa callback reuses (J0312 FIX), no mint",
+      "title": "HOS 006: apply Chief reuse waiver on full_join_v01 (6 short KEEP plates), re-gate, re-park for merge of #335; no v02, no mint",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief FIX on J0312 (HOS PR #335, full_join_v01 sha 7bf649f8). picture_qa FAIL 6/91 were cross-part same-stretch reuses. For each row below, pick a different stretch of the SAME KEEP plate (no new render, no Flow/Vertex, £0). Stream-copy rebuild hos_006_full_join_v02 from the five passed part roughs with those stretch edits (or rebuild the affected part packs then re-join — whichever is cheaper and keeps VO). Re-run picture_qa + polish_gate + vo_check. Update TEACH_OVERLAYS times only if cut durations change. Park for Chief. No spend. Do not merge #335 until this PASSes.\n\nRows (film clock on v01):\n- 5:12 07_priestley_callback ← 11_candle_tall_t1 (was same stretch as 3:57)\n- 6:55 09_helmont_willow ← 06_garden_years_t2 (was same stretch as 1:33)\n- 7:00 10_air_threads ← 01_willow_air_t1 (was same stretch as 0:02)\n- 7:11 12_scales_barely ← 12_pointer_short_t1 (was same stretch as 1:57)\n- 7:16 13_water_in_tree ← 05_pure_water_t1 (was same stretch as 1:26)\n- 8:04 21_three_objects ← 03_pot_jar_leaf_t1 (was same stretch as 0:11)\n\nCarried waivers from J0312: vo_check fool/fall at 1:08 is ASR (no retake); no music bed until 30 Oct; 5 low-detail WARNs leave.",
+      "body": "Chief ruling (a) on the parked stretch-swap ask (16 Oct ~02:20 London, HOS #180 6205869302 / PR #335 6205869099).\n\nThe six KEEP plates are 6–8 s with the first stretch at offset 0, so picture_qa SAME_STRETCH (10 s) cannot be satisfied by a second stretch without a longer plate (mint — not authorised this job).\n\nDo (£0):\n1. Write `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_desk/006/full_join_v01/picture_qa_reviewed_ok_v01.json` with kinds `[\"reuse\"]` and note \"Chief ruling a 16 Oct: plate too short for a legal second stretch; reuse waived; no mint.\" for sources: 11_candle_tall_t1.mp4, 06_garden_years_t2.mp4, 01_willow_air_t1.mp4, 12_pointer_short_t1.mp4, 05_pure_water_t1.mp4, 03_pot_jar_leaf_t1.mp4.\n2. Re-run picture_qa on full_join_v01 with `--reviewed-ok` that file. Expect PASS. vo_check fool/fall already waived; polish_gate already PASS; no music bed until 30 Oct.\n3. Commit the reviewed-ok + gate outputs on the existing PR #335 branch (or a follow-on commit). Do NOT build full_join_v02. Do NOT mint. Do NOT merge #335.\n4. Park for Chief final OK + squash-merge of #335. Then J0332 teach overlays may run.\n",
       "ref": "",
       "film": "006",
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-16T01:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T21:20Z",
-      "result": "parked for Chief: six KEEP plates are 6-8s with the first stretch at offset 0, so a second stretch cannot be 10s away or non-overlapping. picture_qa cannot PASS on a stretch swap. No v02 built. Needs a reuse waiver or a longer plate (mint, not this job). £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T21:20Z",
@@ -24980,16 +24989,14 @@
           "at": "2026-10-16T01:14Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: six KEEP plates are 6-8s with the first stretch at offset 0, so a second stretch cannot be 10s away or non-overlapping. picture_qa cannot PASS on a stretch swap. No v02 built. Needs a reuse waiver or a longer plate (mint, not this job). £0."
+        },
+        {
+          "at": "2026-10-16T01:23Z",
+          "by": "chief",
+          "what": "reopened: Chief ruling (a) 16 Oct ~02:20 London: waive the six same-stretch reuse FAILs. KEEP plates are 6–8s so a second stretch ≥10s away is impossible without mint (not authorised). No v02. Write picture_qa_reviewed_ok_v01.json with kinds [\"reuse\"] for 11_candle_tall_t1.mp4, 06_garden_years_t2.mp4, 01_willow_air_t1.mp4, 12_pointer_short_t1.mp4, 05_pure_water_t1.mp4, 03_pot_jar_leaf_t1.mp4; re-run picture_qa on full_join_v01 with --reviewed-ok; expect PASS (vo_check fool/fall already waived; polish_gate PASS; no bed until 30 Oct); re-park for Chief final OK + merge of HOS #335. Desk #180 6205869302; PR 6205869099. £0. No Ben."
         }
       ],
-      "kind": "assembly",
-      "progress": {
-        "step": 2,
-        "of": 6,
-        "at": "2026-10-16T01:14Z",
-        "by": "cursor",
-        "note": "plates are 6-8s; no legal second stretch"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J0332",
