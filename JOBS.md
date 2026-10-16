@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0411 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0412 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0413 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
-| J0414 | mini | claimed | gemini | 2026-10-16T23:44Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0414 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0415 | mini | open | – | – | assembly · OWB 021 & 030 Shorts: fix polish_gate/picture_qa seam & near-black FAILs on saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 (£0, no spend) |  |
 | J0416 | mini | open | – | – | assembly · HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend) |  |
 

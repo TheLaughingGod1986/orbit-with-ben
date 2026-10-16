@@ -31420,13 +31420,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-16T22:44Z",
-      "eta": "2026-10-16T23:44Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T22:43Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB c49fc17d: 023 Shorts lift_heavy_water v01 & lift_two_hours v01 PASS, 021 Short late_arrival_4_5b v01 2/6 FAIL & 030 Short apophis v05 3/6 FAIL -> J0415 queued; HOS 012b5a44: 003 s04_unknown_x v01 & 006 s04/s05 Shorts verified PASS, 004 s05_dalton_v02 3/7 FAIL & 005 s05_valves_v01 2/8 FAIL -> J0416 queued)",
       "history": [
         {
           "at": "2026-10-16T22:43Z",
@@ -31462,6 +31462,11 @@
           "at": "2026-10-16T22:57Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed gate outputs (OWB c49fc17d, HOS 012b5a44) and queued no-spend fix jobs J0415 (OWB 021/030 Shorts) + J0416 (HOS 004/005 Test B Shorts)"
+        },
+        {
+          "at": "2026-10-16T22:57Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB c49fc17d: 023 Shorts lift_heavy_water v01 & lift_two_hours v01 PASS, 021 Short late_arrival_4_5b v01 2/6 FAIL & 030 Short apophis v05 3/6 FAIL -> J0415 queued; HOS 012b5a44: 003 s04_unknown_x v01 & 006 s04/s05 Shorts verified PASS, 004 s05_dalton_v02 3/7 FAIL & 005 s05_valves_v01 2/8 FAIL -> J0416 queued)"
         }
       ],
       "kind": "qa",
