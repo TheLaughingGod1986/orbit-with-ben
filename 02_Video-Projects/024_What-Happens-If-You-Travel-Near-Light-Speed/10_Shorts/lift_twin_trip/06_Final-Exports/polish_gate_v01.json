@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/lift_twin_trip/06_Final-Exports/light_speed_twin_trip_v01.mp4",
+  "edge_floor": 0.0054,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s01_iss_earth",
+      "cut": 0,
+      "t": 2.25,
+      "source": "NHQ_2019_0626_iss_earth.mp4",
+      "why": [
+        "low detail: edge density 0.0032 < film p5 0.0054"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_iss_earth",
+      "source": "NHQ_2019_0626_iss_earth.mp4",
+      "t": 2.25,
+      "std": 63.99,
+      "mean": 151.05,
+      "p95": 192.0,
+      "edge": 0.0032,
+      "hf": 2.35,
+      "lf": 63.27,
+      "std8": 63.83,
+      "edge8": 0.0731,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0032 < film p5 0.0054"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "s02_span2",
+      "source": "024_v05d_span_126.85.mp4",
+      "t": 6.62,
+      "std": 56.02,
+      "mean": 108.37,
+      "p95": 249.0,
+      "edge": 0.0184,
+      "hf": 6.73,
+      "lf": 54.19,
+      "std8": 54.96,
+      "edge8": 0.0823,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_span3",
+      "source": "024_v05d_span_263.40.mp4",
+      "t": 11.5,
+      "std": 31.54,
+      "mean": 62.36,
+      "p95": 77.0,
+      "edge": 0.0589,
+      "hf": 16.15,
+      "lf": 15.78,
+      "std8": 20.85,
+      "edge8": 0.1869,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_span4",
+      "source": "024_v05d_span_228.30.mp4",
+      "t": 16.62,
+      "std": 60.45,
+      "mean": 136.0,
+      "p95": 246.0,
+      "edge": 0.0122,
+      "hf": 9.23,
+      "lf": 58.35,
+      "std8": 58.72,
+      "edge8": 0.062,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_span5",
+      "source": "024_v05d_span_483.70.mp4",
+      "t": 21.54,
+      "std": 35.66,
+      "mean": 62.25,
+      "p95": 124.0,
+      "edge": 0.0759,
+      "hf": 17.78,
+      "lf": 19.18,
+      "std8": 23.59,
+      "edge8": 0.2508,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_iss_earth.mp4",
+      "t": 25.38,
+      "std": 47.45,
+      "mean": 92.9,
+      "p95": 136.0,
+      "edge": 0.0244,
+      "hf": 12.53,
+      "lf": 41.88,
+      "std8": 43.71,
+      "edge8": 0.1067,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

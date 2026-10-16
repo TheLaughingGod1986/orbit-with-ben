@@ -1,0 +1,199 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/lift_walk_900m/06_Final-Exports/nearest_star_walk_900m_v01.mp4",
+  "edge_floor": 0.0254,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_triple",
+      "cut": 1,
+      "t": 6.58,
+      "source": "triple_b.mp4",
+      "why": [
+        "low detail: edge density 0.0123 < film p5 0.0254"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "s02_triple",
+      "cut": 1,
+      "t": 6.58,
+      "source": "triple_b.mp4",
+      "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+      "why": [
+        "near-black: mean 8.35, p95 3.0"
+      ]
+    },
+    {
+      "row": "s05_starfield",
+      "cut": 4,
+      "t": 21.73,
+      "source": "starfield.mp4",
+      "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+      "why": [
+        "near-black: mean 21.06, p95 187.0"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_paranal",
+      "source": "uhd_bt_paranal_07.mp4",
+      "t": 2.3,
+      "std": 26.91,
+      "mean": 48.99,
+      "p95": 89.0,
+      "edge": 0.0823,
+      "hf": 11.23,
+      "lf": 21.61,
+      "std8": 22.42,
+      "edge8": 0.0792,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_triple",
+      "source": "triple_b.mp4",
+      "t": 6.58,
+      "std": 33.74,
+      "mean": 8.35,
+      "p95": 3.0,
+      "edge": 0.0123,
+      "hf": 8.75,
+      "lf": 27.76,
+      "std8": 30.05,
+      "edge8": 0.047,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic, near-black space by design; reviewed_ok for near-black and low detail (Claude, #6074131477)",
+        "why": [
+          "near-black: mean 8.35, p95 3.0"
+        ]
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0123 < film p5 0.0254"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_lasilla_crux",
+      "source": "bt_lasilla_crux.mp4",
+      "t": 11.26,
+      "std": 29.0,
+      "mean": 62.93,
+      "p95": 91.0,
+      "edge": 0.0691,
+      "hf": 13.7,
+      "lf": 16.76,
+      "std8": 20.65,
+      "edge8": 0.1098,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_lasilla_tl",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 16.71,
+      "std": 51.34,
+      "mean": 113.33,
+      "p95": 213.0,
+      "edge": 0.1732,
+      "hf": 14.85,
+      "lf": 45.79,
+      "std8": 46.93,
+      "edge8": 0.231,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_starfield",
+      "source": "starfield.mp4",
+      "t": 21.73,
+      "std": 52.96,
+      "mean": 21.06,
+      "p95": 187.0,
+      "edge": 0.1302,
+      "hf": 25.0,
+      "lf": 26.43,
+      "std8": 34.65,
+      "edge8": 0.4678,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "code graphic; 3 uses allowed, the field thins as the scale shrinks (Claude, 9 Oct, rough v02 review)",
+        "why": [
+          "near-black: mean 21.06, p95 187.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_paranal.mp4",
+      "t": 25.25,
+      "std": 25.67,
+      "mean": 49.25,
+      "p95": 77.0,
+      "edge": 0.0645,
+      "hf": 11.86,
+      "lf": 16.98,
+      "std8": 19.42,
+      "edge8": 0.0658,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
