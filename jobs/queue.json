@@ -25256,10 +25256,10 @@
       "stage": "picture",
       "after": "J0337",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-16T00:07Z",
-      "eta": "2026-10-16T03:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T23:02Z",
       "result": "",
@@ -25283,6 +25283,11 @@
           "at": "2026-10-16T00:08Z",
           "by": "codex",
           "what": "step 1 of 4 done: Audited 20 board beats against locked Scribe words and sources"
+        },
+        {
+          "at": "2026-10-16T00:11Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-grok-4-7: Codex out of usage; next in its chain: cursor"
         }
       ],
       "kind": "chart",
@@ -25292,7 +25297,16 @@
         "at": "2026-10-16T00:08Z",
         "by": "codex",
         "note": "Audited 20 board beats against locked Scribe words and sources"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "codex"
+      },
+      "for": "cursor",
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J0339",
