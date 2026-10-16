@@ -1,0 +1,21 @@
+# Script Notes — 035 Why Neptune's Largest Moon Orbits Backwards (`v00`)
+
+- **Draft:** `01_Script/triton_backwards_moon_script_master_v00.md`
+- **Score:** `npm run review:script` → **PASS (95.3 / 100)**
+- **Spoken narration words:** ~1,269 words (~8.5 min at 150 wpm; 0 warnings, 8/8 structure gates)
+- **Continuity:**
+  - Directly answers the closing hand-off at the end of `034_Why-Plutos-Frozen-Heart-Has-Zero-Craters` (`"Next, we travel inward to Neptune's largest moon, Triton — a captured Kuiper Belt cousin of Pluto that orbits backwards and erupts active geysers on a frozen nitrogen crust at minus two hundred and thirty-five degrees Celsius."`).
+  - Closes by handing off to Idea #2 (`Why Is There Ice on the Planet Closest to the Sun? — Mercury`), which is the #2 recommended new topic in `05_Analytics/weekly_audit/OWB_2026-10-16.md`.
+- **Weekly audit & playbook rules enforced:**
+  - **Named celestial object in title (`OWB_2026-10-16.md` item 1):** names `Neptune` explicitly in the title (*Why Neptune's Largest Moon Orbits Backwards*).
+  - **No chapter card in 0:00–0:30 (`OWB_2026-10-16.md` item 2):** 3-paragraph cold open (~145 spoken words) runs over real Voyager 2 footage of Triton (`PIA00317`, `PIA00059`) before the first `[CHAPTER CARD: The Brewer Who Found a World]`.
+  - **No back-to-back code graphics:** every `DATA:` graphic is separated by real NASA Voyager 2 plates (`PIA00317`, `PIA00059`, `PIA01538`, `PIA02215`) or an Omni Orbit shot.
+  - **Teach on screen + Polish pass + HOTU/SEA reference lessons:**
+    - `DATA:` 7 (includes 1 before `[SUBSCRIBE BEAT]` and 1 build-up timeline)
+    - `SCALE:` 7 (every `DATA:` has an everyday scale analogy in the spoken sentence and in `SOURCES.md`)
+    - `NUMBER OBJECT:` 7 (one 1–3 word + number object per `DATA:` beat)
+    - `WHO:` 4 (Urbain Le Verrier `1811–1877`, Johann Gottfried Galle `1812–1910`, William Lassell `1799–1880`, Gerard Kuiper `1905–1973` — every named person in the spoken script has a card at first mention and a verified LOC Name Authority Record in `SOURCES.md`)
+    - `WHEN:` 5 (`25 August 1989`; `23 September 1846, 10 October 1846, 2011`; `1949`; `20 August 1977, 24 January 1986, 14 February 1986, 25 August 1989`; `28 August 1989, November 1998, 10 December 2018`)
+    - `FACT:` 4 (`Financed by a brewery`, `Captured from Kuiper Belt`, `Winds 9× stronger than Earth's`, `Only 4 active volcanic worlds`)
+    - **Orbit beats:** 2 (Chapter 2: flipping a traffic arrow beside spinning Neptune as Triton orbits backwards; Chapter 5: inspecting melon-rind cantaloupe terrain as a nitrogen vent puffs frost across his visor). Never in the first 30 seconds.
+    - **One-breath takeaway:** `"Triton showed that a captured Kuiper Belt moon orbiting backwards at minus two hundred and thirty-five degrees Celsius can resurface itself with icy lava and fire geysers eight kilometres high."`
