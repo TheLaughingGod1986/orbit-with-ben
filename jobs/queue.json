@@ -1,5 +1,5 @@
 {
-  "next_id": 415,
+  "next_id": 416,
   "jobs": [
     {
       "id": "J0001",
@@ -31468,6 +31468,33 @@
         "by": "gemini",
         "note": "HOS gates run: 003 s04_unknown_x v01, 006 s04_photosynthesis v01 & s05_charcoal_gas v01 verified PASS; 004 s05_dalton_v0"
       }
+    },
+    {
+      "id": "J0415",
+      "title": "OWB 021 & 030 Shorts: fix polish_gate/picture_qa seam & near-black FAILs on saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 (£0, no spend)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Fix polish_gate and picture_qa FAILs found in J0414 QA sweep (OWB c49fc17d) with £0 spend and no upload: (1) 021 Short saturn_late_arrival_4_5b_v01 (_assemble_saturn_late_arrival_short_v01.py): 2/6 FAILs — horizontal seam at 0.502 on s02_pia01486 (0:07, unfeathered 4.5B-year scale bar) and horizontal gutter at 0.044 on s05_pia18301 (0:21). Feather the scale bar and crop/grade s05 to remove top gutter. (2) 030 Short 030_apophis_short_v05 (_assemble_apophis_short_v05.py): 3/6 FAILs — horizontal gutter at 0.781 on s01_rock_dusk (0:02) and 0.748 on s06_end_loop (0:21), plus near-black (mean 23.44 < 25) on s05_scale_overlay (0:17). Feather the band edge and lift the dimmed background under the scale overlay so mean >= 26, re-render, and re-run gate_shorts_open.py, polish_gate.py, and picture_qa.py to PASS.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-16T22:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T22:56Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
