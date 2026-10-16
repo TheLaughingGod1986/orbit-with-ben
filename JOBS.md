@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0408 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0410 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0411 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
-| J0412 | any | claimed | gemini | 2026-10-17T00:20Z | script · Backlog HOS: next script or opening draft (009/010 first) |  |
+| J0412 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 
 Recently finished:
 
