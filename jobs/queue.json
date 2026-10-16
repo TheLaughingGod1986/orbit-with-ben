@@ -27585,13 +27585,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-16T07:48Z",
-      "eta": "2026-10-16T08:48Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T07:47Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 1b40c697: 026 v05d, 027 v01l, comp v05 all PASS; HOS 61b33776: 006 full_join_v01_teach, part02_rough_v03, part05_rough_v01 all PASS; 0 FAILs, no fix jobs needed)",
       "history": [
         {
           "at": "2026-10-16T07:47Z",
@@ -27627,6 +27627,11 @@
           "at": "2026-10-16T08:08Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed gate outputs (OWB 1b40c697, HOS 61b33776); 0 FAILs across all newest packs"
+        },
+        {
+          "at": "2026-10-16T08:08Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 1b40c697: 026 v05d, 027 v01l, comp v05 all PASS; HOS 61b33776: 006 full_join_v01_teach, part02_rough_v03, part05_rough_v01 all PASS; 0 FAILs, no fix jobs needed)"
         }
       ],
       "kind": "qa",
