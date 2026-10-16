@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0329 | mini | blocked | cursor | – | 008 picture · chart · HOS 008 Franklin: build the 11 £0 code graphics from boards v03 (PICTURE_PLAN_v03 code_graphics), no mint | 231603f |
 | J0331 | mini | blocked | cursor | – | 006 edit · assembly · HOS 006: full_join_v02 — new stretches on 6 picture_qa callback reuses (J0312 FIX), no mint |  |
 | J0332 | mini | open (after J0331) | – | – | 006 edit · chart · HOS 006: Codex £0 teach overlays from TEACH_OVERLAYS_v01.md (after full_join_v02) |  |
-| J0341 | mini | open | – | – | 007 picture · video · HOS 007: drop P3:01c_nelmes_plate on boards v02 then ready PR 337 for Chief merge (J0322 PASS); no mint |  |
+| J0341 | mini | claimed | cursor | 2026-10-16T02:47Z | 007 picture · video · HOS 007: drop P3:01c_nelmes_plate on boards v02 then ready PR 337 for Chief merge (J0322 PASS); no mint |  |
 | J0343 | mini | open (after J0341) | – | – | 007 picture · assembly · HOS 007 PR #337 rebase + squash-merge after J0341 drop (J0322 PASS conditions); no mint |  |
 | J0344 | mini | open (after J0343) | – | – | 007 picture · chart · HOS 007: build 3 £0 code graphics (P1:07_map_shadows, P4:11_news_spreads, P5:08_body_learns) after PR 337 merge; no mint |  |
 | J0345 | mini | open | – | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
