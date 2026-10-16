@@ -53,7 +53,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0374 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0375 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0377 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J0378 | any | open | – | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
+| J0378 | mini | open | – | – | for gemini · script · `gemini-argon` · Backlog OWB: next script draft for the earliest film without a locked script |  |
 
 Recently finished:
 
