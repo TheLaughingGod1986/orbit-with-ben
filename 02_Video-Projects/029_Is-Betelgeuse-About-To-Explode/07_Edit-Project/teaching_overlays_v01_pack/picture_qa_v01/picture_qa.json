@@ -14,30 +14,17 @@
   "failed": [],
   "warn": [
     {
-      "cut": 4,
-      "row": "r17_r20_shells",
-      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
-      "title": "our own clip or graphic",
-      "t": 25.7,
-      "at": "0:26",
+      "cut": 1,
+      "row": "r07_sdo",
+      "source": "sdo_hmi_continuum.jpg",
+      "title": "SDO/HMI continuum intensitygram, 2024-06-01 00:00 UTC",
+      "t": 8.05,
+      "at": "0:08",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0141 < film p5 0.0152"
+        "low detail: edge density 0.0184 < film p5 0.0332"
       ],
-      "offset": 35.1
-    },
-    {
-      "cut": 5,
-      "row": "r29_span_astrolabe",
-      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
-      "title": "our own clip or graphic",
-      "t": 31.6,
-      "at": "0:32",
-      "fail": [],
-      "warn": [
-        "low detail: luma std 16.78 < 18.0"
-      ],
-      "offset": 9.44
+      "offset": null
     }
   ],
   "rows": [
@@ -60,7 +47,9 @@
       "t": 8.05,
       "at": "0:08",
       "fail": [],
-      "warn": [],
+      "warn": [
+        "low detail: edge density 0.0184 < film p5 0.0332"
+      ],
       "offset": null
     },
     {
@@ -87,33 +76,73 @@
     },
     {
       "cut": 4,
-      "row": "r17_r20_shells",
-      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "row": "r09_finder",
+      "source": "code_graphic_029_r09_finder_v01.mp4",
       "title": "our own clip or graphic",
-      "t": 25.7,
-      "at": "0:26",
+      "t": 25.45,
+      "at": "0:25",
       "fail": [],
-      "warn": [
-        "low detail: edge density 0.0141 < film p5 0.0152"
-      ],
-      "offset": 35.1
+      "warn": [],
+      "offset": 2.08
     },
     {
       "cut": 5,
+      "row": "r17_r20_shells",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 31.2,
+      "at": "0:31",
+      "fail": [],
+      "warn": [],
+      "offset": 35.1
+    },
+    {
+      "cut": 6,
       "row": "r29_span_astrolabe",
       "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
       "title": "our own clip or graphic",
-      "t": 31.6,
-      "at": "0:32",
+      "t": 37.1,
+      "at": "0:37",
       "fail": [],
-      "warn": [
-        "low detail: luma std 16.78 < 18.0"
-      ],
+      "warn": [],
       "offset": 9.44
+    },
+    {
+      "cut": 7,
+      "row": "r33_pair",
+      "source": "companion_orion.jpg",
+      "title": "Betelgeuse and Its Stellar Companion in Orion",
+      "t": 42.75,
+      "at": "0:43",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "r34_dome",
+      "source": "gemini_dome.jpg",
+      "title": "Circumpolar Laser Tests at Gemini North",
+      "t": 48.38,
+      "at": "0:48",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 9,
+      "row": "r35_crab",
+      "source": "crab.jpg",
+      "title": "Most detailed image of the Crab Nebula",
+      "t": 54.02,
+      "at": "0:54",
+      "fail": [],
+      "warn": [],
+      "offset": null
     }
   ],
   "polish": {
-    "edge_floor": 0.0152,
+    "edge_floor": 0.0332,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

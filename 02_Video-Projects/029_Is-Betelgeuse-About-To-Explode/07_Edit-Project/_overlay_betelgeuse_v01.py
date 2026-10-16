@@ -26,6 +26,7 @@ import shutil
 import subprocess as sp
 import sys
 from pathlib import Path
+import numpy as np
 from PIL import Image, ImageDraw, ImageEnhance, ImageFont
 
 Image.MAX_IMAGE_PIXELS = None
@@ -77,7 +78,7 @@ ROWS = [
         67.50,
         "still",
         HDIR / "sdo_hmi_continuum.jpg",
-        {"box": (0.02, 0.08, 0.98, 0.62), "pct": 0.05, "gamma": 1.0},
+        {"box": (0.02, 0.08, 0.98, 0.62), "pct": 0.05, "gamma": 1.0, "lift": 0.0},
         [
             (
                 "4.5 billion years old",
@@ -98,7 +99,7 @@ ROWS = [
         80.00,
         "still",
         HDIR / "westerlund.jpg",
-        {"box": (0.05, 0.12, 0.95, 0.795), "pct": 0.05, "gamma": 1.0},
+        {"box": (0.05, 0.12, 0.95, 0.795), "pct": 0.05, "gamma": 1.0, "lift": 0.0},
         [
             (
                 "15 to 20 times",
@@ -119,7 +120,7 @@ ROWS = [
         86.00,
         "still",
         HDIR / "westerlund.jpg",
-        {"box": (0.22, 0.24, 0.78, 0.66), "pct": 0.05, "gamma": 1.0},
+        {"box": (0.22, 0.24, 0.78, 0.66), "pct": 0.05, "gamma": 1.0, "lift": 0.0},
         [
             (
                 "Around 100,000",
@@ -130,6 +131,27 @@ ROWS = [
                 76,
                 "SOURCES row 6: Joyce et al. 2020 ApJ 902:63 model luminosity 10^5 L_sun (log L = 4.94 +0.06/-0.04); VO 'around a hundred thousand' at 85.02-86.34s",
                 None,
+            )
+        ],
+    ),
+    (
+        "r09_finder",
+        "1 The Star in Orion's Shoulder",
+        95.00,
+        100.50,
+        "code",
+        CDIR / "code_graphic_029_r09_finder_v01.mp4",
+        {"plate_id": "r09_finder", "plate_in": 92.92, "plate_use": 12.56, "offset": 2.08, "upscale": 1.0},
+        [
+            (
+                "3 stars",
+                96.46,
+                99.12,
+                960,
+                860,
+                78,
+                "SOURCES row 7: Orion's Belt asterism (Alnitak, Alnilam, Mintaka); VO 'three stars' at 96.46-97.12s",
+                "three stars",
             )
         ],
     ),
@@ -173,6 +195,69 @@ ROWS = [
                 "SOURCES rows 3 & 18: Joyce et al. 2020 distance 168 +27/-15 pc = 548 ly (>500 yr light travel time); VO 'five hundred years' at 337.70-338.64s",
                 "five hundred years",
             ),
+        ],
+    ),
+    (
+        "r33_pair",
+        "5 So When?",
+        407.00,
+        412.50,
+        "still",
+        HDIR / "companion_orion.jpg",
+        {"box": (0.02, 0.495, 0.98, 0.985), "pct": 0.05, "gamma": 0.78, "lift": 8.0},
+        [
+            (
+                "Every 6 years",
+                409.54,
+                412.10,
+                960,
+                860,
+                78,
+                "SOURCES row 21: Howell et al. 2025 ApJL 982:L37 companion orbit ~5.9 yr (2,100-day LSP); VO 'every six years' at 409.54-410.44s",
+                None,
+            )
+        ],
+    ),
+    (
+        "r34_dome",
+        "5 So When?",
+        425.30,
+        431.08,
+        "still",
+        HDIR / "gemini_dome.jpg",
+        {"box": (0.05, 0.12, 0.95, 0.78), "pct": 0.05, "gamma": 0.85, "lift": 6.0},
+        [
+            (
+                "In late 2027",
+                426.80,
+                429.88,
+                960,
+                860,
+                78,
+                "SOURCES row 21: Howell et al. 2025 ApJL 982:L37 next greatest elongation November 2027; VO 'in late twenty twenty-seven' at 426.80-428.48s",
+                None,
+            )
+        ],
+    ),
+    (
+        "r35_crab",
+        "5 So When?",
+        442.00,
+        447.50,
+        "still",
+        HDIR / "crab.jpg",
+        {"box": (0.05, 0.22, 0.95, 0.72), "pct": 0.05, "gamma": 0.90, "lift": 0.0},
+        [
+            (
+                "More than 3 weeks",
+                444.26,
+                446.80,
+                960,
+                860,
+                76,
+                "SOURCES row 22: SN 1054 Songshi/Song Huiyao recorded visible in daylight for 23 days (>3 weeks); VO 'more than three weeks' at 444.26-445.48s",
+                None,
+            )
         ],
     ),
 ]
@@ -236,6 +321,12 @@ def render_still_push(src: Path, opts: dict, dur: float, dest: Path) -> None:
     w, h = im.size
     b = opts["box"]
     im = im.crop((int(w * b[0]), int(h * b[1]), int(w * b[2]), int(h * b[3])))
+    gamma = float(opts.get("gamma", 1.0))
+    lift = float(opts.get("lift", 0.0))
+    if gamma != 1.0 or lift != 0.0:
+        arr = np.asarray(im, dtype=np.float32) / 255.0
+        arr = np.clip((arr ** gamma) * 255.0 + lift, 0.0, 255.0).astype(np.uint8)
+        im = Image.fromarray(arr)
     im = ImageEnhance.Color(im).enhance(1.06)
     im = ImageEnhance.Contrast(im).enhance(1.04)
     scale = max(2112.0 / im.width, 1188.0 / im.height)
@@ -310,7 +401,7 @@ def render_code_clean(opts: dict, dur: float, suppress: set[str], dest: Path) ->
                 "-i",
                 "-",
                 "-vf",
-                "noise=alls=2:allf=t,setsar=1",
+                "setsar=1",
                 "-frames:v",
                 str(frames),
                 *ENC,
