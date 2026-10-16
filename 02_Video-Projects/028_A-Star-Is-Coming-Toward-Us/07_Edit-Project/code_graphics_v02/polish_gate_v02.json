@@ -1,0 +1,633 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/qa_028_v02/concat_v02.mp4",
+  "edge_floor": 0.0093,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "r04_shower_shell",
+      "cut": 0,
+      "t": 6.06,
+      "source": "code_graphic_028_r04_shower_shell_v02.mp4",
+      "why": [
+        "low detail: luma std 12.58 < 13.44 and edge density 0.0233 < 0.0259 (absolute floor)"
+      ]
+    },
+    {
+      "row": "r05_drift_path_sky",
+      "cut": 1,
+      "t": 14.9,
+      "source": "code_graphic_028_r05_drift_path_sky_v02.mp4",
+      "why": [
+        "low detail: luma std 9.16 < 13.44 and edge density 0.0097 < 0.0259 (absolute floor)",
+        "noise: grain 6.64 over structure 4.08, 8x-downscaled std 5.03 < 13.44 and edge 0.0233 < 0.0259"
+      ]
+    },
+    {
+      "row": "r14_hipparcos_card",
+      "cut": 4,
+      "t": 41.02,
+      "source": "code_graphic_028_r14_hipparcos_card_v02.mp4",
+      "why": [
+        "noise: grain 8.01 over structure 10.05, 8x-downscaled std 10.66 < 13.44 and edge 0.0244 < 0.0259"
+      ]
+    },
+    {
+      "row": "r18_shell",
+      "cut": 8,
+      "t": 77.56,
+      "source": "code_graphic_028_r18_shell_v02.mp4",
+      "why": [
+        "low detail: luma std 8.99 < 13.44 and edge density 0.0189 < 0.0259 (absolute floor)",
+        "noise: grain 6.36 over structure 4.71, 8x-downscaled std 5.5 < 13.44 and edge 0.013 < 0.0259"
+      ]
+    },
+    {
+      "row": "r20_21_oort_shell",
+      "cut": 10,
+      "t": 97.63,
+      "source": "code_graphic_028_r20_21_oort_shell_v02.mp4",
+      "why": [
+        "low detail: luma std 11.94 < 13.44 and edge density 0.0201 < 0.0259 (absolute floor)"
+      ]
+    },
+    {
+      "row": "r28_hale_bopp_2",
+      "cut": 13,
+      "t": 146.08,
+      "source": "code_graphic_028_r28_hale_bopp_2_v02.mp4",
+      "why": [
+        "low detail: luma std 11.83 < 13.44 and edge density 0.0092 < 0.0259 (absolute floor)",
+        "noise: grain 6.51 over structure 6.8, 8x-downscaled std 7.94 < 13.44 and edge 0.0229 < 0.0259"
+      ]
+    },
+    {
+      "row": "r29_sky",
+      "cut": 14,
+      "t": 152.28,
+      "source": "code_graphic_028_r29_sky_v02.mp4",
+      "why": [
+        "low detail: luma std 12.14 < 13.44 and edge density 0.0093 < 0.0259 (absolute floor)",
+        "noise: grain 6.68 over structure 6.95, 8x-downscaled std 8.14 < 13.44 and edge 0.025 < 0.0259"
+      ]
+    },
+    {
+      "row": "r31_sky_fade",
+      "cut": 16,
+      "t": 161.93,
+      "source": "code_graphic_028_r31_sky_fade_v02.mp4",
+      "why": [
+        "low detail: luma std 13.27 < 13.44 and edge density 0.0105 < 0.0259 (absolute floor)"
+      ]
+    },
+    {
+      "row": "r33_traffic",
+      "cut": 17,
+      "t": 168.24,
+      "source": "code_graphic_028_r33_traffic_v02.mp4",
+      "why": [
+        "low detail: luma std 11.82 < 13.44 and edge density 0.0197 < 0.0259 (absolute floor)"
+      ]
+    }
+  ],
+  "warn": [
+    {
+      "row": "r09_drift",
+      "cut": 3,
+      "t": 27.87,
+      "source": "code_graphic_028_r09_drift_v02.mp4",
+      "why": [
+        "low detail: luma std 14.88 < 18.0"
+      ]
+    },
+    {
+      "row": "r15_16_path",
+      "cut": 5,
+      "t": 55.12,
+      "source": "code_graphic_028_r15_16_path_v02.mp4",
+      "why": [
+        "low detail: luma std 16.64 < 18.0"
+      ]
+    },
+    {
+      "row": "r17_scale_a",
+      "cut": 6,
+      "t": 66.02,
+      "source": "code_graphic_028_r17_scale_a_v02.mp4",
+      "why": [
+        "low detail: luma std 16.83 < 18.0"
+      ]
+    },
+    {
+      "row": "r17_scale_b",
+      "cut": 7,
+      "t": 71.27,
+      "source": "code_graphic_028_r17_scale_b_v02.mp4",
+      "why": [
+        "low detail: luma std 15.36 < 18.0"
+      ]
+    },
+    {
+      "row": "r19_subscribe",
+      "cut": 9,
+      "t": 83.99,
+      "source": "code_graphic_028_r19_subscribe_v02.mp4",
+      "why": [
+        "low detail: luma std 13.9 < 18.0"
+      ]
+    },
+    {
+      "row": "r24_25_shower",
+      "cut": 11,
+      "t": 120.67,
+      "source": "code_graphic_028_r24_25_shower_v02.mp4",
+      "why": [
+        "low detail: luma std 17.39 < 18.0"
+      ]
+    },
+    {
+      "row": "r31_sky",
+      "cut": 15,
+      "t": 157.63,
+      "source": "code_graphic_028_r31_sky_v02.mp4",
+      "why": [
+        "low detail: luma std 13.46 < 18.0"
+      ]
+    },
+    {
+      "row": "r34_traffic",
+      "cut": 18,
+      "t": 177.99,
+      "source": "code_graphic_028_r34_traffic_v02.mp4",
+      "why": [
+        "low detail: luma std 17.49 < 18.0"
+      ]
+    },
+    {
+      "row": "r37_shell",
+      "cut": 19,
+      "t": 186.27,
+      "source": "code_graphic_028_r37_shell_v02.mp4",
+      "why": [
+        "low detail: luma std 14.64 < 18.0"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "r04_shower_shell",
+      "source": "code_graphic_028_r04_shower_shell_v02.mp4",
+      "t": 6.06,
+      "std": 12.58,
+      "mean": 46.73,
+      "p95": 50.0,
+      "edge": 0.0233,
+      "hf": 7.92,
+      "lf": 5.58,
+      "std8": 6.97,
+      "edge8": 0.0551,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 12.58 < 13.44 and edge density 0.0233 < 0.0259 (absolute floor)"
+      ],
+      "warn": [
+        "low detail: luma std 12.58 < 18.0"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "r05_drift_path_sky",
+      "source": "code_graphic_028_r05_drift_path_sky_v02.mp4",
+      "t": 14.9,
+      "std": 9.16,
+      "mean": 45.94,
+      "p95": 50.0,
+      "edge": 0.0097,
+      "hf": 6.64,
+      "lf": 4.08,
+      "std8": 5.03,
+      "edge8": 0.0233,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 9.16 < 13.44 and edge density 0.0097 < 0.0259 (absolute floor)",
+        "noise: grain 6.64 over structure 4.08, 8x-downscaled std 5.03 < 13.44 and edge 0.0233 < 0.0259"
+      ],
+      "warn": [
+        "low detail: luma std 9.16 < 18.0"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "r07_kdwarf",
+      "source": "code_graphic_028_r07_kdwarf_v02.mp4",
+      "t": 19.3,
+      "std": 26.78,
+      "mean": 51.08,
+      "p95": 80.0,
+      "edge": 0.0188,
+      "hf": 9.22,
+      "lf": 21.05,
+      "std8": 22.98,
+      "edge8": 0.0727,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "r09_drift",
+      "source": "code_graphic_028_r09_drift_v02.mp4",
+      "t": 27.87,
+      "std": 14.88,
+      "mean": 46.84,
+      "p95": 50.0,
+      "edge": 0.0159,
+      "hf": 8.37,
+      "lf": 8.09,
+      "std8": 9.64,
+      "edge8": 0.042,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.88 < 18.0"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "r14_hipparcos_card",
+      "source": "code_graphic_028_r14_hipparcos_card_v02.mp4",
+      "t": 41.02,
+      "std": 14.52,
+      "mean": 49.13,
+      "p95": 69.0,
+      "edge": 0.0151,
+      "hf": 8.01,
+      "lf": 10.05,
+      "std8": 10.66,
+      "edge8": 0.0244,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "noise: grain 8.01 over structure 10.05, 8x-downscaled std 10.66 < 13.44 and edge 0.0244 < 0.0259"
+      ],
+      "warn": [
+        "low detail: luma std 14.52 < 18.0"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "r15_16_path",
+      "source": "code_graphic_028_r15_16_path_v02.mp4",
+      "t": 55.12,
+      "std": 16.64,
+      "mean": 48.69,
+      "p95": 69.0,
+      "edge": 0.019,
+      "hf": 8.86,
+      "lf": 10.58,
+      "std8": 11.94,
+      "edge8": 0.0553,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.64 < 18.0"
+      ]
+    },
+    {
+      "cut": 6,
+      "row": "r17_scale_a",
+      "source": "code_graphic_028_r17_scale_a_v02.mp4",
+      "t": 66.02,
+      "std": 16.83,
+      "mean": 47.45,
+      "p95": 50.0,
+      "edge": 0.0156,
+      "hf": 8.48,
+      "lf": 9.6,
+      "std8": 11.34,
+      "edge8": 0.0592,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.83 < 18.0"
+      ]
+    },
+    {
+      "cut": 7,
+      "row": "r17_scale_b",
+      "source": "code_graphic_028_r17_scale_b_v02.mp4",
+      "t": 71.27,
+      "std": 15.36,
+      "mean": 47.01,
+      "p95": 50.0,
+      "edge": 0.0149,
+      "hf": 8.47,
+      "lf": 8.5,
+      "std8": 10.09,
+      "edge8": 0.0488,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.36 < 18.0"
+      ]
+    },
+    {
+      "cut": 8,
+      "row": "r18_shell",
+      "source": "code_graphic_028_r18_shell_v02.mp4",
+      "t": 77.56,
+      "std": 8.99,
+      "mean": 46.15,
+      "p95": 50.0,
+      "edge": 0.0189,
+      "hf": 6.36,
+      "lf": 4.71,
+      "std8": 5.5,
+      "edge8": 0.013,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 8.99 < 13.44 and edge density 0.0189 < 0.0259 (absolute floor)",
+        "noise: grain 6.36 over structure 4.71, 8x-downscaled std 5.5 < 13.44 and edge 0.013 < 0.0259"
+      ],
+      "warn": [
+        "low detail: luma std 8.99 < 18.0"
+      ]
+    },
+    {
+      "cut": 9,
+      "row": "r19_subscribe",
+      "source": "code_graphic_028_r19_subscribe_v02.mp4",
+      "t": 83.99,
+      "std": 13.9,
+      "mean": 46.75,
+      "p95": 50.0,
+      "edge": 0.0225,
+      "hf": 8.2,
+      "lf": 6.67,
+      "std8": 7.91,
+      "edge8": 0.0602,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.9 < 18.0"
+      ]
+    },
+    {
+      "cut": 10,
+      "row": "r20_21_oort_shell",
+      "source": "code_graphic_028_r20_21_oort_shell_v02.mp4",
+      "t": 97.63,
+      "std": 11.94,
+      "mean": 46.57,
+      "p95": 50.0,
+      "edge": 0.0201,
+      "hf": 7.54,
+      "lf": 5.25,
+      "std8": 6.59,
+      "edge8": 0.0527,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 11.94 < 13.44 and edge density 0.0201 < 0.0259 (absolute floor)"
+      ],
+      "warn": [
+        "low detail: luma std 11.94 < 18.0"
+      ]
+    },
+    {
+      "cut": 11,
+      "row": "r24_25_shower",
+      "source": "code_graphic_028_r24_25_shower_v02.mp4",
+      "t": 120.67,
+      "std": 17.39,
+      "mean": 47.71,
+      "p95": 51.0,
+      "edge": 0.0304,
+      "hf": 9.54,
+      "lf": 8.96,
+      "std8": 10.84,
+      "edge8": 0.0777,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.39 < 18.0"
+      ]
+    },
+    {
+      "cut": 12,
+      "row": "r27_shower",
+      "source": "code_graphic_028_r27_shower_v02.mp4",
+      "t": 137.72,
+      "std": 18.0,
+      "mean": 47.97,
+      "p95": 51.0,
+      "edge": 0.0372,
+      "hf": 10.49,
+      "lf": 9.31,
+      "std8": 11.03,
+      "edge8": 0.0844,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 13,
+      "row": "r28_hale_bopp_2",
+      "source": "code_graphic_028_r28_hale_bopp_2_v02.mp4",
+      "t": 146.08,
+      "std": 11.83,
+      "mean": 46.24,
+      "p95": 50.0,
+      "edge": 0.0092,
+      "hf": 6.51,
+      "lf": 6.8,
+      "std8": 7.94,
+      "edge8": 0.0229,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 11.83 < 13.44 and edge density 0.0092 < 0.0259 (absolute floor)",
+        "noise: grain 6.51 over structure 6.8, 8x-downscaled std 7.94 < 13.44 and edge 0.0229 < 0.0259"
+      ],
+      "warn": [
+        "low detail: luma std 11.83 < 18.0",
+        "low detail: edge density 0.0092 < film p5 0.0093"
+      ]
+    },
+    {
+      "cut": 14,
+      "row": "r29_sky",
+      "source": "code_graphic_028_r29_sky_v02.mp4",
+      "t": 152.28,
+      "std": 12.14,
+      "mean": 46.12,
+      "p95": 50.0,
+      "edge": 0.0093,
+      "hf": 6.68,
+      "lf": 6.95,
+      "std8": 8.14,
+      "edge8": 0.025,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 12.14 < 13.44 and edge density 0.0093 < 0.0259 (absolute floor)",
+        "noise: grain 6.68 over structure 6.95, 8x-downscaled std 8.14 < 13.44 and edge 0.025 < 0.0259"
+      ],
+      "warn": [
+        "low detail: luma std 12.14 < 18.0"
+      ]
+    },
+    {
+      "cut": 15,
+      "row": "r31_sky",
+      "source": "code_graphic_028_r31_sky_v02.mp4",
+      "t": 157.63,
+      "std": 13.46,
+      "mean": 46.36,
+      "p95": 50.0,
+      "edge": 0.0113,
+      "hf": 7.2,
+      "lf": 7.57,
+      "std8": 9.08,
+      "edge8": 0.0316,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.46 < 18.0"
+      ]
+    },
+    {
+      "cut": 16,
+      "row": "r31_sky_fade",
+      "source": "code_graphic_028_r31_sky_fade_v02.mp4",
+      "t": 161.93,
+      "std": 13.27,
+      "mean": 46.32,
+      "p95": 50.0,
+      "edge": 0.0105,
+      "hf": 7.07,
+      "lf": 7.62,
+      "std8": 9.0,
+      "edge8": 0.0288,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 13.27 < 13.44 and edge density 0.0105 < 0.0259 (absolute floor)"
+      ],
+      "warn": [
+        "low detail: luma std 13.27 < 18.0"
+      ]
+    },
+    {
+      "cut": 17,
+      "row": "r33_traffic",
+      "source": "code_graphic_028_r33_traffic_v02.mp4",
+      "t": 168.24,
+      "std": 11.82,
+      "mean": 46.55,
+      "p95": 50.0,
+      "edge": 0.0197,
+      "hf": 7.45,
+      "lf": 5.26,
+      "std8": 6.55,
+      "edge8": 0.0518,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "low detail: luma std 11.82 < 13.44 and edge density 0.0197 < 0.0259 (absolute floor)"
+      ],
+      "warn": [
+        "low detail: luma std 11.82 < 18.0"
+      ]
+    },
+    {
+      "cut": 18,
+      "row": "r34_traffic",
+      "source": "code_graphic_028_r34_traffic_v02.mp4",
+      "t": 177.99,
+      "std": 17.49,
+      "mean": 49.8,
+      "p95": 68.0,
+      "edge": 0.0251,
+      "hf": 8.73,
+      "lf": 10.69,
+      "std8": 12.22,
+      "edge8": 0.0682,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.49 < 18.0"
+      ]
+    },
+    {
+      "cut": 19,
+      "row": "r37_shell",
+      "source": "code_graphic_028_r37_shell_v02.mp4",
+      "t": 186.27,
+      "std": 14.64,
+      "mean": 47.07,
+      "p95": 50.0,
+      "edge": 0.0231,
+      "hf": 8.35,
+      "lf": 7.34,
+      "std8": 8.95,
+      "edge8": 0.0647,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.64 < 18.0"
+      ]
+    }
+  ]
+}
