@@ -57,6 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0379 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0380 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0381 | mini | claimed | gemini | 2026-10-16T15:23Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0382 | mini | open | – | – | chart · 028 & 029 code graphics: fix polish_gate/picture_qa low-detail and noise FAILs (028 9/20, 029 8/14; £0, no spend) | a02c802e |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 382,
+  "next_id": 383,
   "jobs": [
     {
       "id": "J0001",
@@ -29019,6 +29019,33 @@
         "by": "gemini",
         "note": "HOS gates run: 006 P3 v03 (0/18) and P4 v02 (0/16) PASS; 007 code_graphics_v01 FAIL (2/3), 008 code_graphics_v01 FAIL (4"
       }
+    },
+    {
+      "id": "J0382",
+      "title": "028 & 029 code graphics: fix polish_gate/picture_qa low-detail and noise FAILs (028 9/20, 029 8/14; £0, no spend)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J0381 QA sweep (OWB a02c802e) found polish_gate / picture_qa FAILs on the £0 code graphics packs:\n- 028 Gliese 710 code_graphics_v02 (9/20 FAIL): r04_shower_shell, r05_drift_path_sky, r14_hipparcos_card, r18_shell, r20_21_oort_shell, r28_hale_bopp_2, r29_sky, r31_sky_fade, r33_traffic fail low detail (luma std < 13.44 and edge density < 0.0259) and/or noise (grain > 6 over structure < 12, 8x-downscaled under floor).\n- 029 Betelgeuse code_graphics_v01 (8/14 FAIL): r03_r04_promise, r05_scale, r09_finder, r10_r11_dip, r15_dip, r22_subscribe, r23_paranal, r27_orion fail low detail and/or noise.\nAdjust the £0 Python code graphic renderers to increase real structural contrast and edge density (and smooth out synthetic grain where structure is low) while keeping near-black PASS (mean >= 28, p95 >= 50), re-render at £0, and re-run picture_qa.py + polish_gate.py until both packs PASS with 0 fails. Park for Chief.",
+      "ref": "a02c802e",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-16T14:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T14:42Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
     }
   ],
   "focus": [],
