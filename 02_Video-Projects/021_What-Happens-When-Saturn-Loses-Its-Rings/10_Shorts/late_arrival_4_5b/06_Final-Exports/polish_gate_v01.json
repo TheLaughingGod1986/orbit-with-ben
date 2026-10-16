@@ -36,29 +36,20 @@
     }
   },
   "video": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/late_arrival_4_5b/06_Final-Exports/saturn_late_arrival_4_5b_v01.mp4",
-  "edge_floor": 0.0164,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s02_pia01486",
-      "cut": 1,
-      "t": 7.3,
-      "source": "PIA01486.jpg",
-      "why": [
-        "split panel: horizontal seam at 0.502"
-      ]
-    },
+  "edge_floor": 0.0159,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
     {
       "row": "s05_pia18301",
       "cut": 4,
       "t": 20.65,
       "source": "PIA18301.jpg",
       "why": [
-        "split panel: horizontal gutter at 0.044"
+        "low detail: edge density 0.0137 < film p5 0.0159"
       ]
     }
   ],
-  "warn": [],
   "reviewed_ok": [],
   "rows": [
     {
@@ -67,7 +58,7 @@
       "source": "PIA11141.jpg",
       "t": 2.4,
       "std": 54.58,
-      "mean": 88.74,
+      "mean": 88.73,
       "p95": 167.0,
       "edge": 0.0227,
       "hf": 6.35,
@@ -84,25 +75,17 @@
       "row": "s02_pia01486",
       "source": "PIA01486.jpg",
       "t": 7.3,
-      "std": 65.27,
-      "mean": 88.44,
-      "p95": 173.0,
+      "std": 63.52,
+      "mean": 82.46,
+      "p95": 168.0,
       "edge": 0.0384,
-      "hf": 14.13,
-      "lf": 60.22,
-      "std8": 61.61,
-      "edge8": 0.166,
-      "seams": [
-        {
-          "kind": "horizontal seam",
-          "at": 0.502,
-          "step": 35.0
-        }
-      ],
+      "hf": 13.37,
+      "lf": 58.69,
+      "std8": 60.01,
+      "edge8": 0.1528,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal seam at 0.502"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -146,26 +129,19 @@
       "row": "s05_pia18301",
       "source": "PIA18301.jpg",
       "t": 20.65,
-      "std": 44.86,
-      "mean": 108.2,
-      "p95": 181.0,
-      "edge": 0.0143,
-      "hf": 8.63,
-      "lf": 42.27,
-      "std8": 42.89,
-      "edge8": 0.0863,
-      "seams": [
-        {
-          "kind": "horizontal gutter",
-          "at": 0.044
-        }
-      ],
+      "std": 45.84,
+      "mean": 113.78,
+      "p95": 185.0,
+      "edge": 0.0137,
+      "hf": 8.71,
+      "lf": 43.3,
+      "std8": 43.89,
+      "edge8": 0.0793,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal gutter at 0.044"
-      ],
+      "fail": [],
       "warn": [
-        "low detail: edge density 0.0143 < film p5 0.0164"
+        "low detail: edge density 0.0137 < film p5 0.0159"
       ]
     },
     {

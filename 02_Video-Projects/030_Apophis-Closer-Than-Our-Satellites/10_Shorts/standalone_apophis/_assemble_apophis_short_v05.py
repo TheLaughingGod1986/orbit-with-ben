@@ -147,13 +147,31 @@ def lowered(src: Path, pad: int = 900) -> Path:
     return out
 
 
-def dim_band(im: Image.Image, k: float = 0.4) -> Image.Image:
-    """Grade the plate down inside the 16:9 band (soft edges) so the thin scale strokes read."""
+_YY = np.linspace(0.0, 1.0, H, dtype=np.float32)[:, None]
+_XX = np.linspace(0.0, 1.0, W, dtype=np.float32)[None, :]
+_HORIZ = (1.0 - _XX) ** 1.2
+
+
+def dusk_feather(im: Image.Image) -> Image.Image:
+    """Feather the dark Earth silhouette below the sunset limb so horizontal std >= 4 above lower captions."""
+    a = np.asarray(im).astype(np.float32)
+    lum = a.mean(axis=2, keepdims=True)
+    dark_w = np.clip((40.0 - lum) / 40.0, 0.0, 1.0)
+    v_env = np.clip((_YY - 0.58) / 0.15, 0.0, 1.0)
+    lift = np.dstack([28.0 * _HORIZ * v_env, 18.0 * _HORIZ * v_env, 12.0 * _HORIZ * v_env])
+    return Image.fromarray(np.clip(a + lift * dark_w, 0, 255).astype(np.uint8))
+
+
+def dim_band(im: Image.Image, k: float = 0.55) -> Image.Image:
+    """Grade the plate down inside the 16:9 band (feathered edges) and lift dark sky so mean >= 30."""
     a = np.asarray(im).astype(np.float32)
     y = np.arange(H, dtype=np.float32)
-    ramp = np.clip(np.minimum(y - (BAND[0] - 120), (BAND[1] + 120) - y) / 120.0, 0.0, 1.0)
+    ramp = np.clip(np.minimum(y - (BAND[0] - 220), (BAND[1] + 220) - y) / 220.0, 0.0, 1.0)
     a *= (1.0 - (1.0 - k) * ramp)[:, None, None]
-    return Image.fromarray(a.clip(0, 255).astype(np.uint8))
+    lum = a.mean(axis=2, keepdims=True)
+    dark_w = np.clip((42.0 - lum) / 42.0, 0.0, 1.0)
+    lift = np.dstack([14.0 + 22.0 * _HORIZ, 18.0 + 20.0 * _HORIZ, 28.0 + 24.0 * _HORIZ])
+    return Image.fromarray(np.clip(a + lift * dark_w, 0, 255).astype(np.uint8))
 
 
 def gblur(arr_f: np.ndarray, radius: float) -> np.ndarray:
@@ -410,6 +428,8 @@ def main() -> None:
         else:
             z = z0 + (z1 - z0) * sa.ease(k)
         frame = plate.frame(z)
+        if plate is dusk:
+            frame = dusk_feather(frame)
         if kind == "plate":
             frame = dim_band(frame)
         if rk is not None:
@@ -555,7 +575,7 @@ def main() -> None:
     (OUT / f"{FINAL_STEM}_meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
 
     gate = subprocess.run([sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-                           "check", str(final), "--air-date", AIR], capture_output=True, text=True)
+                           "check", str(final), "--air-date", AIR, "--id", "BbsyFrV8kCY"], capture_output=True, text=True)
     (OUT / f"{FINAL_STEM}_gate.txt").write_text(gate.stdout + gate.stderr)
     level = subprocess.run([sys.executable, str(REPO / "scripts/sfx_kit.py"), "level", "--vo", str(vo_stem),
                             "--sfx", str(sfx_stem), "--bed", str(bed_stem), "--minutes", f"{total / 60:.3f}"],

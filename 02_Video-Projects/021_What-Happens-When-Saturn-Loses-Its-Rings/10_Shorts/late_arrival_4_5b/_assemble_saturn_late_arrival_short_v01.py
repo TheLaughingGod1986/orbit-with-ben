@@ -158,7 +158,7 @@ def bar_frames(dest_dir: Path) -> dict:
     f_lab = font_for(LINE_H)
     f_tick = font_for(LINE_H * 0.82)
     n = round((BAR_OUT - BAR_IN) * FPS)
-    x0, x1 = 120, W - 120
+    x0, x1 = 180, W - 180
     by = BAND_Y0 + BAND_H // 2 + 10
     bh = 34
     t_saturn = 4.22  # "Saturn" spoken
@@ -169,17 +169,21 @@ def bar_frames(dest_dir: Path) -> dict:
         a = min(1.0, (t - BAR_IN) / 0.4, (BAR_OUT - t) / 0.4)
         im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         shade = Image.new("L", (W, H), 0)
-        ImageDraw.Draw(shade).rectangle((0, by - 230, W, by + 170), fill=int(120 * a))
-        shade = shade.filter(ImageFilter.GaussianBlur(50))
+        ImageDraw.Draw(shade).rectangle((0, by - 250, W, by + 180), fill=int(155 * a))
+        shade = shade.filter(ImageFilter.GaussianBlur(55))
         im.paste((0, 0, 0, 255), (0, 0), shade)
-        d = ImageDraw.Draw(im)
+        bar_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        db = ImageDraw.Draw(bar_layer)
         grow = min(1.0, max(0.0, (t - BAR_IN - 0.2) / 0.6))
-        d.rounded_rectangle((x0, by, x0 + (x1 - x0) * grow, by + bh), radius=bh // 2,
-                            fill=(255, 255, 255, int(70 * a)), outline=(255, 255, 255, int(220 * a)), width=3)
+        db.rounded_rectangle((x0, by, x0 + (x1 - x0) * grow, by + bh), radius=bh // 2,
+                             fill=(255, 255, 255, int(70 * a)), outline=(255, 255, 255, int(220 * a)), width=3)
         if t >= t_saturn:
             fill_prog = min(1.0, max(0.05, (t - t_saturn) / max(0.3, (t_45b + 1.1) - t_saturn)))
-            d.rounded_rectangle((x0, by, x0 + (x1 - x0) * fill_prog, by + bh), radius=bh // 2,
-                                fill=(255, 214, 0, int(255 * a)))
+            db.rounded_rectangle((x0, by, x0 + (x1 - x0) * fill_prog, by + bh), radius=bh // 2,
+                                 fill=(255, 214, 0, int(255 * a)))
+        bar_layer = bar_layer.filter(ImageFilter.GaussianBlur(8.0))
+        im = Image.alpha_composite(im, bar_layer)
+        d = ImageDraw.Draw(im)
         if t >= t_45b:
             label = "4.5 BILLION YRS"
             b = d.textbbox((0, 0), label, font=f_tick, stroke_width=4)
@@ -335,7 +339,7 @@ def main() -> None:
         f"[0:v]fps={FPS},crop=ih*9/16:ih,"
         f"scale=w='trunc({W}*(1+{PUSH}*min(t,1.2)/1.2)/2)*2':"
         f"h='trunc({H}*(1+{PUSH}*min(t,1.2)/1.2)/2)*2':eval=frame:flags=lanczos,"
-        f"crop={W}:{H}:'(iw-{W})/2':'(ih-{H})/2',setsar=1,format=yuv420p[a]",
+        f"crop={W}:{H}:0:'if(gte(t,19.7),120,0)',setsar=1,format=yuv420p[a]",
         f"[1:v]scale={W*2}:{H*2},zoompan=z='1.03-0.03*on/{end_frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
         f"d=1:s={W}x{H}:fps={FPS},trim=0:{END_LEN:.3f},setpts=PTS-STARTPTS,format=yuv420p[e]",
         "[e][5:v]overlay=0:0:shortest=1,format=yuv420p[ecard]",
@@ -365,14 +369,14 @@ def main() -> None:
 
     gate = subprocess.run(
         [sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-         "check", str(FINAL), "--air-date", AIR_DATE, "--json"],
+         "check", str(FINAL), "--air-date", AIR_DATE, "--id", "82Ao0v5XiQI", "--json"],
         capture_output=True, text=True, check=True,
     )
     (OUT / f"{STEM}_gate.json").write_text(gate.stdout)
 
     gate_txt = subprocess.run(
         [sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-         "check", str(FINAL), "--air-date", AIR_DATE],
+         "check", str(FINAL), "--air-date", AIR_DATE, "--id", "82Ao0v5XiQI"],
         capture_output=True, text=True, check=True,
     )
     (OUT / f"{STEM}_gate.txt").write_text(gate_txt.stdout)
@@ -385,10 +389,6 @@ def main() -> None:
          "--minutes", f"{TOTAL / 60.0:.3f}"],
         capture_output=True, text=True, check=True,
     )
-
-    UAT.mkdir(parents=True, exist_ok=True)
-    for p in (FINAL, contact_path, cover_path, thumb_sheet, OUT / f"{STEM}_gate.json", OUT / f"{STEM}_gate.txt"):
-        shutil.copy2(p, UAT / p.name)
 
     meta = {
         "file": str(FINAL), "version": "v01", "job": "J0253", "sha256": sha256(FINAL), "duration_s": dur(FINAL),
@@ -405,7 +405,11 @@ def main() -> None:
         "uat_dir": str(UAT), "spend": "none",
     }
     (OUT / f"{STEM}_meta.json").write_text(json.dumps(meta, indent=2) + "\n")
-    shutil.copy2(OUT / f"{STEM}_meta.json", UAT / f"{STEM}_meta.json")
+    UAT.mkdir(parents=True, exist_ok=True)
+    for p in (FINAL, contact_path, cover_path, thumb_sheet, OUT / f"{STEM}_gate.json", OUT / f"{STEM}_gate.txt", OUT / f"{STEM}_meta.json"):
+        dst = UAT / p.name
+        dst.unlink(missing_ok=True)
+        shutil.copy2(p, dst)
     print(gate_txt.stdout)
     print(json.dumps({k: meta[k] for k in ("file", "duration_s", "audio", "sfx_level_check")}, indent=2))
 

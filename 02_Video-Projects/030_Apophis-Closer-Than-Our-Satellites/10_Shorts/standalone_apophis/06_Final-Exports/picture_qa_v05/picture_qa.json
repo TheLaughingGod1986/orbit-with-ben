@@ -1,5 +1,5 @@
 {
-  "verdict": "FAIL",
+  "verdict": "PASS",
   "video": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v05.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
@@ -11,47 +11,7 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 0,
-      "row": "s01_rock_dusk",
-      "source": "iss023e057948_veo_rock_open.mp4",
-      "title": "NASA ISS Earth dusk limb (iss023e057948) with Veo asteroid Apophis flyby",
-      "t": 1.87,
-      "at": "0:02",
-      "fail": [
-        "split panel: horizontal gutter at 0.781"
-      ],
-      "warn": [],
-      "offset": 0.6
-    },
-    {
-      "cut": 4,
-      "row": "s05_scale_overlay",
-      "source": "code_graphic_030short_r05_scale_v01.mov",
-      "title": "Own code graphic: Apophis 32,000 km vs geostationary satellites 36,000 km scale bar",
-      "t": 16.73,
-      "at": "0:17",
-      "fail": [
-        "near-black: mean 23.44, p95 171.0"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 5,
-      "row": "s06_end_loop",
-      "source": "end_card_loop_apophis.mp4",
-      "title": "End-card loop: NASA ISS Earth dusk limb (iss023e057948) with Veo asteroid Apophis",
-      "t": 20.76,
-      "at": "0:21",
-      "fail": [
-        "split panel: horizontal gutter at 0.748"
-      ],
-      "warn": [],
-      "offset": 0.6
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 1,
@@ -62,7 +22,7 @@
       "at": "0:05",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0362 < film p5 0.0374"
+        "low detail: edge density 0.0362 < film p5 0.0370"
       ],
       "offset": 1.6
     }
@@ -75,9 +35,7 @@
       "title": "NASA ISS Earth dusk limb (iss023e057948) with Veo asteroid Apophis flyby",
       "t": 1.87,
       "at": "0:02",
-      "fail": [
-        "split panel: horizontal gutter at 0.781"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.6
     },
@@ -90,7 +48,7 @@
       "at": "0:05",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0362 < film p5 0.0374"
+        "low detail: edge density 0.0362 < film p5 0.0370"
       ],
       "offset": 1.6
     },
@@ -123,9 +81,7 @@
       "title": "Own code graphic: Apophis 32,000 km vs geostationary satellites 36,000 km scale bar",
       "t": 16.73,
       "at": "0:17",
-      "fail": [
-        "near-black: mean 23.44, p95 171.0"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -136,15 +92,13 @@
       "title": "End-card loop: NASA ISS Earth dusk limb (iss023e057948) with Veo asteroid Apophis",
       "t": 20.76,
       "at": "0:21",
-      "fail": [
-        "split panel: horizontal gutter at 0.748"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.6
     }
   ],
   "polish": {
-    "edge_floor": 0.0374,
+    "edge_floor": 0.037,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,
