@@ -14,7 +14,7 @@ Earth and Mars discs (Blue Marble, NASA PIA00407) sit on the scale graphic. The 
 | r10_r11_dip | 13.66 | One light curve for rows 10 and 11 |
 | r15_dip | 4.96 | Same curve, tight on the trough |
 | r17_r20_shells | 48.62 | One shells render; collapse on "collapses" at 215.32 s. No unlabelled leader |
-| r21_hero | 4.8 | Level beam, a teaspoon (bowl and handle) and a mountain |
+| r21_hero | 4.8 | Level beam. Side-view teaspoon (oval bowl, handle along the beam) and a mountain |
 | r22_subscribe | 4.48 | Moving sky, Subscribe lower right |
 | r23_paranal | 6.32 | Night sky for "imagine the night" |
 | r25_orion | 8.04 | Flare from about 276.7 s |

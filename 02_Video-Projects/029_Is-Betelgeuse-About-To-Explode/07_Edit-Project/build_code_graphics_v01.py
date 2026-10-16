@@ -351,9 +351,15 @@ class Renderer:
         beam_y = 750
         d.line((960, 800, 960, 940), fill=ICE, width=6)
         d.line((360, beam_y, 1560, beam_y), fill=ICE, width=7)
-        # Teaspoon on the left pan: oval bowl plus a handle. Not a ring or a target.
-        d.ellipse((400, 560, 660, 770), fill=(232, 226, 214), outline=WHITE, width=7)
-        d.rounded_rectangle((498, 340, 562, 600), radius=18, fill=(244, 239, 230))
+        # Side-view teaspoon on the left pan (Chief FIX 16 Oct, second pass).
+        # Oval bowl, handle running sideways along the beam. Not a vertical flask neck.
+        fill = (232, 226, 214)
+        handle = [(620, 628), (930, 648), (930, 688), (620, 708)]
+        d.polygon(handle, fill=fill)
+        d.line(handle + [handle[0]], fill=WHITE, width=5)
+        bowl = (390, 545, 680, 755)
+        d.ellipse(bowl, fill=fill, outline=WHITE, width=7)
+        d.arc((455, 590, 640, 720), 200, 340, fill=(150, 140, 128), width=4)
         peak = beam_y - int(360 * max(grow, 0.2))
         d.line([(1160, beam_y), (1360, peak), (1560, beam_y)], fill=GOLD, width=7)
 
@@ -608,7 +614,7 @@ def main():
             records = [by_id[p["id"]] for p in all_plates if p["id"] in by_id]
         manifest = dict(job="J0347", film="029", board=boards.name, board_sha256=digest(boards),
                          renderer_sha256=digest(Path(__file__)), fps=FPS, review="pending Chief",
-                         fix="Chief 16 Oct: r05 text-free sun-dot, r03 sun-dot, r21 level beam, r17 snap at 215.32, no leader on r17/r31",
+                         fix="Chief 16 Oct: r21 side-view teaspoon (oval bowl, handle along the beam). Earlier KEEP stands.",
                          renders=records)
         old_path.write_text(json.dumps(manifest, indent=2) + "\n")
     print("contact sheet written", flush=True)
