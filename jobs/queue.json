@@ -24928,13 +24928,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-16T01:11Z",
-      "eta": "2026-10-16T03:11Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T21:20Z",
-      "result": "",
+      "result": "parked for Chief: six KEEP plates are 6-8s with the first stretch at offset 0, so a second stretch cannot be 10s away or non-overlapping. picture_qa cannot PASS on a stretch swap. No v02 built. Needs a reuse waiver or a longer plate (mint, not this job). £0.",
       "history": [
         {
           "at": "2026-10-15T21:20Z",
@@ -24975,6 +24975,11 @@
           "at": "2026-10-16T01:14Z",
           "by": "cursor",
           "what": "step 2 of 6 done: plates are 6-8s; no legal second stretch"
+        },
+        {
+          "at": "2026-10-16T01:14Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: six KEEP plates are 6-8s with the first stretch at offset 0, so a second stretch cannot be 10s away or non-overlapping. picture_qa cannot PASS on a stretch swap. No v02 built. Needs a reuse waiver or a longer plate (mint, not this job). £0."
         }
       ],
       "kind": "assembly",
