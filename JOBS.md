@@ -58,6 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0380 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0381 | mini | claimed | gemini | 2026-10-16T15:23Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0382 | mini | open | – | – | chart · 028 & 029 code graphics: fix polish_gate/picture_qa low-detail and noise FAILs (028 9/20, 029 8/14; £0, no spend) | a02c802e |
+| J0383 | mini | open | – | – | chart · HOS 007–010 code graphics: fix polish_gate/picture_qa low-detail, seam and noise FAILs (£0, no spend) | cd081035 |
 
 Recently finished:
 

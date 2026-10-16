@@ -1,5 +1,5 @@
 {
-  "next_id": 383,
+  "next_id": 384,
   "jobs": [
     {
       "id": "J0001",
@@ -29027,6 +29027,33 @@
       "repo": "owb",
       "body": "J0381 QA sweep (OWB a02c802e) found polish_gate / picture_qa FAILs on the £0 code graphics packs:\n- 028 Gliese 710 code_graphics_v02 (9/20 FAIL): r04_shower_shell, r05_drift_path_sky, r14_hipparcos_card, r18_shell, r20_21_oort_shell, r28_hale_bopp_2, r29_sky, r31_sky_fade, r33_traffic fail low detail (luma std < 13.44 and edge density < 0.0259) and/or noise (grain > 6 over structure < 12, 8x-downscaled under floor).\n- 029 Betelgeuse code_graphics_v01 (8/14 FAIL): r03_r04_promise, r05_scale, r09_finder, r10_r11_dip, r15_dip, r22_subscribe, r23_paranal, r27_orion fail low detail and/or noise.\nAdjust the £0 Python code graphic renderers to increase real structural contrast and edge density (and smooth out synthetic grain where structure is low) while keeping near-black PASS (mean >= 28, p95 >= 50), re-render at £0, and re-run picture_qa.py + polish_gate.py until both packs PASS with 0 fails. Park for Chief.",
       "ref": "a02c802e",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-16T14:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T14:42Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
+    },
+    {
+      "id": "J0383",
+      "title": "HOS 007–010 code graphics: fix polish_gate/picture_qa low-detail, seam and noise FAILs (£0, no spend)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J0381 QA sweep (HOS cd081035) found polish_gate / picture_qa FAILs on the £0 parchment code graphics packs:\n- HOS 007 code_graphics_v01 (2/3 FAIL): 07_map_shadows (std 12.76, edge 0.0218) and 08_body_learns (std 12.43, edge 0.0243) fail low detail.\n- HOS 008 code_graphics_v01 (4/11 FAIL): P3:15_wet_dry, P4:06_same_thing, P5:08_looking_path, P5:10_metal_easy fail low detail (std < 13.44 and edge < 0.0259).\n- HOS 009 code_graphics_v01 (6/12 FAIL): 09_pull_heights fails split panel (horizontal seam at 0.741); 09_pull_heights_c1, 08_km_a_second_c1, 03_sixty_earths, 04_dots_square, 04_dots_square_c1 fail noise (period-paper grain > 8 over structure < 5, 8x-downscaled under floor).\n- HOS 010 code_graphics_v01 (3/13 FAIL): P4:04_supernova_test, P4:07_food_chain, P5:11_why_survive fail low detail.\nAdjust the £0 Python parchment renderers (stronger inked linework/shading contrast, soften synthetic paper grain where structure is sparse, feather the ground line in 009 09_pull_heights so it doesn't trigger horizontal seam), re-render at £0, and re-run picture_qa.py + polish_gate.py until all four packs PASS with 0 fails. Park for Chief.",
+      "ref": "cd081035",
       "film": "",
       "stage": "",
       "after": "",
