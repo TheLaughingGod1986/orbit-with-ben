@@ -1,5 +1,5 @@
 {
-  "next_id": 346,
+  "next_id": 347,
   "jobs": [
     {
       "id": "J0001",
@@ -25514,6 +25514,33 @@
       ],
       "kind": "vo",
       "model": "eleven_v3"
+    },
+    {
+      "id": "J0346",
+      "title": "029 Betelgeuse: squash-merge PR #223 plate boards v02 (J0330 PASS; no mint)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS J0330 (16 Oct ~01:04 London): 029 plate boards v02 on OWB PR #223 (0afe3ba9) accepted. Boards only: no mint, no spend, no top-up.\n\nSquash-merge PR #223 (`cursor/j0311-029-plate-boards`) to main. Headroom table already uses the J0337 numbers (006=0, 007=7553, 008=5605, 009 t1=7354; after 028 → 2949). Optional tidy: align SOURCE_POOL_v02 NOIRLab “not re-read” notes with the plate-line re-read record — not required for merge.\n\nDo not mint Omni, Flow, Quality, Fast or Veo. generation_authorized stays false. After merge, the £0 Codex code-graphics job (after this one) can run from main.\n",
+      "ref": "J0330",
+      "film": "029",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-16T00:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T00:04Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
