@@ -23324,9 +23324,23 @@
           "at": "2026-10-15T17:26Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-16T06:11Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J0309",
