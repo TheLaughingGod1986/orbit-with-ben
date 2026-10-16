@@ -87,10 +87,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0412 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0413 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0414 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0416 | mini | claimed | gemini | 2026-10-17T01:28Z | assembly · HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend) |  |
 
 Recently finished:
 
+- J0416 done: HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend) (done)
 - J0415 done: OWB 021 & 030 Shorts: fix polish_gate/picture_qa seam & near-black FAILs on saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 (£0, no spend) (269040e6: both saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 re-rendered (£0 spend, no upload) and PASS gate_shorts_open, polish_gate (0 FAIL), and picture_qa (0 FAIL))
 - J0409 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0399 done: HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend) (done)
@@ -100,4 +100,3 @@ Recently finished:
 - J0355 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs; 56 OWB + 13 HOS Shorts. CTR >=4%: OWB Jupiter 5.9%, HOS Germs 9.7%; Atom CTR unavailable (0 impressions). Main 401a8fbf; board-data 898e20a6 published and read back. Unavailable retention fields omitted on two low-view OWB Shorts. No spend or video changes.)
 - J0351 done: HOS 006: lay teach_overlays_v01 into full_join_v01 (no bed, no mint) (PASS (Chief, 16 Oct ~05:45 London): all 9 picture_qa/polish_gate seam flags sit inside LAY_TIMES overlay windows and are the card edges (lower-third top 0.73, timeline rule 0.465), not plate seams; checked frames at all 9 cuts plus mid-card stills. 6 low-detail warnings are unchanged base plates (already KEEP). Cards read right (Aristotle plants eat soil; num_500 counts up to 500 experiments; dates correct). Audio byte-matches the join, no bed. Squash-merged HOS #344 -> bbc073e8. Not a film PASS. Next: full-film review of the teach master. £0.)
 - J0350 done: 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) (PASS (Chief, 16 Oct ~04:28 London): 028 Gliese 710 harvest v01 on OWB PR #226 squash-merged 14566db2. 33 plates / 21 files, licence PASS all, £0, generation_authorized false. Edit notes KEEP (SDO stamp crop, Chajnantor slate ~8s, Gaia logos burned in, Proxima 604x592). Not a picture PASS. Mint gate unchanged (006→007→008→009→028 Veo). No £0 follow-on. No Ben.)
-- J0349 cancelled: 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) ()
