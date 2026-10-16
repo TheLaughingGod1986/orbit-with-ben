@@ -35,6 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0354 | mini | blocked | gemini | – | 006 edit · review · HOS 006: full-film frame review of teach master full_join_v01_teach (no bed, no mint) |  |
 | J0356 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0357 | mini | blocked | codex | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: move publishAt from Thu 22 Oct 11:30 (clashes with Saturn 82Ao0v5XiQI) to Wed 28 Oct 11:30 London |  |
+| J0358 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
