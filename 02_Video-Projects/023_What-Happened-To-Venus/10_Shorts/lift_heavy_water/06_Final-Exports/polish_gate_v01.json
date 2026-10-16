@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_heavy_water/06_Final-Exports/venus_heavy_water_100x_v01.mp4",
+  "edge_floor": 0.0245,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s01_wispr",
+      "cut": 0,
+      "t": 2.23,
+      "source": "svs14095_wispr_venus.mp4",
+      "why": [
+        "low detail: edge density 0.0239 < film p5 0.0245"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_wispr",
+      "source": "svs14095_wispr_venus.mp4",
+      "t": 2.23,
+      "std": 86.57,
+      "mean": 122.89,
+      "p95": 237.0,
+      "edge": 0.0239,
+      "hf": 8.89,
+      "lf": 84.56,
+      "std8": 85.23,
+      "edge8": 0.0875,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0239 < film p5 0.0245"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "s02_plains",
+      "source": "PIA00107.jpg",
+      "t": 6.7,
+      "std": 37.18,
+      "mean": 167.91,
+      "p95": 223.0,
+      "edge": 0.047,
+      "hf": 9.56,
+      "lf": 32.1,
+      "std8": 33.59,
+      "edge8": 0.2336,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_limb",
+      "source": "S91-50688.jpg",
+      "t": 11.68,
+      "std": 30.03,
+      "mean": 95.11,
+      "p95": 138.0,
+      "edge": 0.0262,
+      "hf": 10.62,
+      "lf": 23.4,
+      "std8": 25.35,
+      "edge8": 0.1869,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_ovda",
+      "source": "PIA00240.jpg",
+      "t": 16.98,
+      "std": 40.91,
+      "mean": 118.85,
+      "p95": 195.0,
+      "edge": 0.5332,
+      "hf": 19.64,
+      "lf": 28.33,
+      "std8": 30.98,
+      "edge8": 0.5214,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_crater",
+      "source": "S91-50686.jpg",
+      "t": 22.1,
+      "std": 53.21,
+      "mean": 97.82,
+      "p95": 194.0,
+      "edge": 0.0631,
+      "hf": 12.78,
+      "lf": 46.69,
+      "std8": 48.83,
+      "edge8": 0.3495,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_wispr.mp4",
+      "t": 25.77,
+      "std": 56.57,
+      "mean": 58.26,
+      "p95": 159.0,
+      "edge": 0.03,
+      "hf": 11.48,
+      "lf": 51.99,
+      "std8": 53.56,
+      "edge8": 0.0992,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

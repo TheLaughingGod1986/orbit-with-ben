@@ -1,0 +1,210 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v05.mp4",
+  "edge_floor": 0.0374,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "s01_rock_dusk",
+      "cut": 0,
+      "t": 1.87,
+      "source": "iss023e057948_veo_rock_open.mp4",
+      "why": [
+        "split panel: horizontal gutter at 0.781"
+      ]
+    },
+    {
+      "row": "s05_scale_overlay",
+      "cut": 4,
+      "t": 16.73,
+      "source": "code_graphic_030short_r05_scale_v01.mov",
+      "why": [
+        "near-black: mean 23.44, p95 171.0"
+      ]
+    },
+    {
+      "row": "s06_end_loop",
+      "cut": 5,
+      "t": 20.76,
+      "source": "end_card_loop_apophis.mp4",
+      "why": [
+        "split panel: horizontal gutter at 0.748"
+      ]
+    }
+  ],
+  "warn": [
+    {
+      "row": "s02_orbit_sat",
+      "cut": 1,
+      "t": 4.8,
+      "source": "omni_orbit_geo_sat.mp4",
+      "why": [
+        "low detail: edge density 0.0362 < film p5 0.0374"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_rock_dusk",
+      "source": "iss023e057948_veo_rock_open.mp4",
+      "t": 1.87,
+      "std": 78.37,
+      "mean": 57.8,
+      "p95": 225.0,
+      "edge": 0.0944,
+      "hf": 16.7,
+      "lf": 68.14,
+      "std8": 72.19,
+      "edge8": 0.3099,
+      "seams": [
+        {
+          "kind": "horizontal gutter",
+          "at": 0.781
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal gutter at 0.781"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_orbit_sat",
+      "source": "omni_orbit_geo_sat.mp4",
+      "t": 4.8,
+      "std": 41.28,
+      "mean": 33.95,
+      "p95": 123.0,
+      "edge": 0.0362,
+      "hf": 8.53,
+      "lf": 34.89,
+      "std8": 38.04,
+      "edge8": 0.1811,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0362 < film p5 0.0374"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_rock_night",
+      "source": "iss023e058455_veo_rock_mid.mp4",
+      "t": 7.44,
+      "std": 47.31,
+      "mean": 84.36,
+      "p95": 192.0,
+      "edge": 0.0644,
+      "hf": 12.6,
+      "lf": 40.91,
+      "std8": 43.55,
+      "edge8": 0.1561,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_rock_title",
+      "source": "iss023e058455_veo_rock_title.mp4",
+      "t": 11.5,
+      "std": 58.19,
+      "mean": 93.06,
+      "p95": 218.0,
+      "edge": 0.0946,
+      "hf": 17.95,
+      "lf": 48.01,
+      "std8": 51.9,
+      "edge8": 0.2795,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_scale_overlay",
+      "source": "code_graphic_030short_r05_scale_v01.mov",
+      "t": 16.73,
+      "std": 56.62,
+      "mean": 23.44,
+      "p95": 171.0,
+      "edge": 0.0411,
+      "hf": 11.41,
+      "lf": 49.21,
+      "std8": 52.62,
+      "edge8": 0.1802,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "near-black: mean 23.44, p95 171.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_apophis.mp4",
+      "t": 20.76,
+      "std": 70.82,
+      "mean": 45.16,
+      "p95": 210.0,
+      "edge": 0.0791,
+      "hf": 12.1,
+      "lf": 65.21,
+      "std8": 67.89,
+      "edge8": 0.219,
+      "seams": [
+        {
+          "kind": "horizontal gutter",
+          "at": 0.748
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal gutter at 0.748"
+      ],
+      "warn": []
+    }
+  ]
+}

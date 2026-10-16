@@ -1,0 +1,190 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/late_arrival_4_5b/06_Final-Exports/saturn_late_arrival_4_5b_v01.mp4",
+  "edge_floor": 0.0164,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "s02_pia01486",
+      "cut": 1,
+      "t": 7.3,
+      "source": "PIA01486.jpg",
+      "why": [
+        "split panel: horizontal seam at 0.502"
+      ]
+    },
+    {
+      "row": "s05_pia18301",
+      "cut": 4,
+      "t": 20.65,
+      "source": "PIA18301.jpg",
+      "why": [
+        "split panel: horizontal gutter at 0.044"
+      ]
+    }
+  ],
+  "warn": [],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pia11141",
+      "source": "PIA11141.jpg",
+      "t": 2.4,
+      "std": 54.58,
+      "mean": 88.74,
+      "p95": 167.0,
+      "edge": 0.0227,
+      "hf": 6.35,
+      "lf": 52.22,
+      "std8": 53.23,
+      "edge8": 0.1565,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_pia01486",
+      "source": "PIA01486.jpg",
+      "t": 7.3,
+      "std": 65.27,
+      "mean": 88.44,
+      "p95": 173.0,
+      "edge": 0.0384,
+      "hf": 14.13,
+      "lf": 60.22,
+      "std8": 61.61,
+      "edge8": 0.166,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.502,
+          "step": 35.0
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal seam at 0.502"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_pia22418",
+      "source": "PIA22418.jpg",
+      "t": 12.3,
+      "std": 56.13,
+      "mean": 122.09,
+      "p95": 233.0,
+      "edge": 0.0622,
+      "hf": 15.94,
+      "lf": 44.2,
+      "std8": 49.26,
+      "edge8": 0.4873,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_pia18274",
+      "source": "PIA18274.jpg",
+      "t": 17.3,
+      "std": 37.32,
+      "mean": 116.37,
+      "p95": 180.0,
+      "edge": 0.035,
+      "hf": 10.1,
+      "lf": 33.26,
+      "std8": 33.97,
+      "edge8": 0.0637,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_pia18301",
+      "source": "PIA18301.jpg",
+      "t": 20.65,
+      "std": 44.86,
+      "mean": 108.2,
+      "p95": 181.0,
+      "edge": 0.0143,
+      "hf": 8.63,
+      "lf": 42.27,
+      "std8": 42.89,
+      "edge8": 0.0863,
+      "seams": [
+        {
+          "kind": "horizontal gutter",
+          "at": 0.044
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal gutter at 0.044"
+      ],
+      "warn": [
+        "low detail: edge density 0.0143 < film p5 0.0164"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_PIA11141.mp4",
+      "t": 23.25,
+      "std": 42.08,
+      "mean": 55.57,
+      "p95": 116.0,
+      "edge": 0.0312,
+      "hf": 13.1,
+      "lf": 34.46,
+      "std8": 36.73,
+      "edge8": 0.1536,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

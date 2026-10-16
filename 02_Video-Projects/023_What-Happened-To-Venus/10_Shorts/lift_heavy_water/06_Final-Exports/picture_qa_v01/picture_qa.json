@@ -1,0 +1,131 @@
+{
+  "verdict": "PASS",
+  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_heavy_water/06_Final-Exports/venus_heavy_water_100x_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "s01_wispr",
+      "source": "svs14095_wispr_venus.mp4",
+      "title": "NASA Parker Solar Probe WISPR night-side glow of Venus through the clouds (NASA SVS 14095)",
+      "t": 2.23,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0239 < film p5 0.0245"
+      ],
+      "offset": 449.1
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_wispr",
+      "source": "svs14095_wispr_venus.mp4",
+      "title": "NASA Parker Solar Probe WISPR night-side glow of Venus through the clouds (NASA SVS 14095)",
+      "t": 2.23,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0239 < film p5 0.0245"
+      ],
+      "offset": 449.1
+    },
+    {
+      "cut": 1,
+      "row": "s02_plains",
+      "source": "PIA00107.jpg",
+      "title": "NASA Magellan 3D perspective view beneath Venus clouds over volcanic plains",
+      "t": 6.7,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 124.2
+    },
+    {
+      "cut": 2,
+      "row": "s03_limb",
+      "source": "S91-50688.jpg",
+      "title": "NASA Magellan global radar view of Venus hemisphere limb",
+      "t": 11.68,
+      "at": "0:12",
+      "fail": [],
+      "warn": [],
+      "offset": 367.0
+    },
+    {
+      "cut": 3,
+      "row": "s04_ovda",
+      "source": "PIA00240.jpg",
+      "title": "NASA Magellan radar view of Ovda Regio highland ridges on Venus",
+      "t": 16.98,
+      "at": "0:17",
+      "fail": [],
+      "warn": [],
+      "offset": 109.8
+    },
+    {
+      "cut": 4,
+      "row": "s05_crater",
+      "source": "S91-50686.jpg",
+      "title": "NASA Magellan 3D perspective of Venus impact crater and dark plains",
+      "t": 22.1,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 55.2
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_wispr.mp4",
+      "title": "End-card loop: NASA Parker Solar Probe WISPR Venus night-side plate",
+      "t": 25.77,
+      "at": "0:26",
+      "fail": [],
+      "warn": [],
+      "offset": 449.1
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0245,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

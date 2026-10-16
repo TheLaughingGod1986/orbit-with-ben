@@ -1,0 +1,131 @@
+{
+  "verdict": "PASS",
+  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/venus_two_hours_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 4,
+      "row": "s05_pia00108",
+      "source": "PIA00108.jpg",
+      "title": "NASA Magellan 3D perspective view of Sapas Mons on Venus",
+      "t": 21.52,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0335 < film p5 0.0338"
+      ],
+      "offset": 20.53
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pia00254",
+      "source": "PIA00254.jpg",
+      "title": "NASA Magellan radar global view of Venus surface",
+      "t": 2.71,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_pia00106",
+      "source": "PIA00106.jpg",
+      "title": "NASA Magellan 3D perspective view of Maat Mons volcano on Venus",
+      "t": 7.98,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 5.43
+    },
+    {
+      "cut": 2,
+      "row": "s03_pia13001",
+      "source": "PIA13001.jpg",
+      "title": "ESA Venus Express VIRTIS thermal glow of Idunn Mons on Venus",
+      "t": 13.02,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 10.53
+    },
+    {
+      "cut": 3,
+      "row": "s04_pia00241",
+      "source": "PIA00241.jpg",
+      "title": "NASA Magellan radar image of Venus volcanic domes",
+      "t": 18.02,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": 15.5
+    },
+    {
+      "cut": 4,
+      "row": "s05_pia00108",
+      "source": "PIA00108.jpg",
+      "title": "NASA Magellan 3D perspective view of Sapas Mons on Venus",
+      "t": 21.52,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0335 < film p5 0.0338"
+      ],
+      "offset": 20.53
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_PIA00254.mp4",
+      "title": "End-card loop: NASA Magellan radar global view of Venus surface",
+      "t": 24.52,
+      "at": "0:25",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0338,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
