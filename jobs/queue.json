@@ -30086,7 +30086,7 @@
     {
       "id": "J0396",
       "title": "Backlog HOS: next script or opening draft (009/010 first)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Advance the earliest HOS film whose script or opening isn't passed (009 and 010 openings first, then the next idea). Person cards, dates and timeline call-outs marked per beat, SOURCES.md filled. Spend nothing. Post on desk #180, block 'parked for Chief: script review'.",
       "ref": "",
@@ -30106,10 +30106,24 @@
           "at": "2026-10-16T18:05Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-16T18:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 622 min (heartbeat 2026-10-16T07:51:05Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "script",
-      "backlog": "hos-next-script"
+      "backlog": "hos-next-script",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
