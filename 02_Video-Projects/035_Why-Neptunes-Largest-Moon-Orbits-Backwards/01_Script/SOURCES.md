@@ -1,8 +1,8 @@
-# Sources — Why Neptune's Largest Moon Orbits Backwards (035, v00)
+# Sources — Why Neptune's Largest Moon Orbits Backwards (035, v01)
 
-Spoken claims for the description and script (`triton_backwards_moon_script_master_v00.md`). Not narration.
+Spoken claims for the description and script (`triton_backwards_moon_script_master_v01.md`). Not narration.
 
-**Drafted by Gemini (`gemini`, stand-in worker) for J0387, 16 Oct 2026.** Every row below was checked directly against the live open page named in *Where to look* on 16 Oct 2026, with the verbatim quote copied into *Exact quote*. Marked `TO VERIFY` for the formal `facts` pass and `CLAUDE_QUOTE_CHECK` before any VO is locked.
+**Drafted by Gemini (`gemini`, stand-in worker) for J0387 / J0395, 16 Oct 2026.** Every row below was checked directly against the live open page named in *Where to look* on 16 Oct 2026, with the verbatim quote copied into *Exact quote*. Marked `TO VERIFY` for the formal `facts` pass and `CLAUDE_QUOTE_CHECK` before any VO is locked.
 
 MUST QUOTE = a spoken number, date, name or year (`DATA`, `SCALE`, `WHO`, `WHEN`, `FACT`).
 
