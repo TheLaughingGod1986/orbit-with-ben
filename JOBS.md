@@ -30,7 +30,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0323 | mini | blocked | cursor | – | 026 edit · assembly · 026 Nearest Star: put picture-lock v05d (teaching overlays, J0148) in OWB UAT for Ben's watch, then dry-run the Private upload (airs Sun 15 Nov) |  |
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0325 | mini | blocked | cursor | – | 027 upload · assembly · 027 Earth Stopped Spinning: dry-run Private package for Sun 22 Nov (v01l picture lock, J0319 PASS) | 6200213333 |
-| J0331 | mini | blocked | cursor | – | 006 edit · assembly · HOS 006: apply Chief reuse waiver on full_join_v01 (6 short KEEP plates), re-gate, re-park for merge of #335; no v02, no mint |  |
 | J0332 | mini | open (after J0331) | – | – | 006 edit · chart · HOS 006: Codex £0 teach overlays from TEACH_OVERLAYS_v01.md (after full_join_v02) |  |
 | J0344 | mini | claimed | cursor | 2026-10-16T03:27Z | 007 picture · for cursor · chart · `cursor-grok-4-7` · HOS 007: build 3 £0 code graphics (P1:07_map_shadows, P4:11_news_spreads, P5:08_body_learns) after PR 337 merge; no mint |  |
 | J0345 | mini | open | – | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
