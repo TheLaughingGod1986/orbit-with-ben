@@ -1,5 +1,5 @@
 {
-  "next_id": 352,
+  "next_id": 353,
   "jobs": [
     {
       "id": "J0001",
@@ -26258,6 +26258,34 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0352",
+      "title": "HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Chief go (HOS #180, re Claude 6206755581, 16 Oct ~03:40 London).** 006 needs 0 Flow and J0331/J0332 are PASS; 007 boards v02 (HOS main `a5d0696c`, PRICE_REVIEW_v02.md, J0322 price PASS) and its three £0 code graphics (`7808f751`) are on main. 007 is next in the shared Flow order: 006 (0) > **007** > 008 (5,605) > 009 tranche 1 (7,354) > OWB 028 (279). This job is the Chief's authorisation to generate the **Flow** rows of 007 boards v02 only.\n\n**Gate (do this first, every session):** read Flow live and log it (`ai_spend.py`). Proceed only if `live read − remaining 007 expected` is **≥ 3,000**. Before each batch, re-read; if that batch would take the read below 3,000, stop, release with a note, and park for Chief. Floor is 0, but the 3,000 buffer holds. **Never buy, top up or upgrade.**\n\n**Cap:** 007's whole-film Flow spend may not pass **7,550** (the plan allowance; boards expect 7,196). If cumulative spend reaches 7,550 with rows still to mint, stop and park for Chief: the remainder rides with 009 tranche 2 after the ~12 Nov AI Ultra renewal, and 009 tranche 1 shrinks by any overrun (Chief re-sizes it, not this job).\n\n**Scope:**\n- Mint in Flow (Veo 3.1 Quality/Fast and Nano Banana 2 stills, Flow web app on CDP 9222), exactly as boarded: 24 Quality + 49 Fast rows. **No Vertex, no Omni, no paid API.** If Flow isn't reachable, release with a note; don't switch routes.\n- Code (3), archive (2) and reuse (18) rows are £0 and not minted. Archive rows keep the hand-turn plus the Ken Burns lock.\n- Face lock first: mint `P2:08_jenner_window` (master still, page edge-on) and get its KEEP before any later readable Jenner face; later Jenner faces start from that KEEP.\n- Film rules from the boards stand: no sores or pustules anywhere; handwriting plates keep no glyph in focus; spines/titles face away; the kite flash never touches the kite (`11b_storm_builds` → `12_kite_storm`).\n- Board order, one first take per row; retakes only on a clear FAIL, within the cap. Re-read and log Flow after each batch (`ai_spend.py spend --pool flow ...`); `jobs.py progress` per batch.\n- Flip `generation_authorized` to true only on the Flow rows actually minted under this job, in the PR.\n\n**Review:** contact sheets per Part on desk #180 to grok for STYLE/MOTION KEEP (push sheets on a HOS branch and link them). Chief rules KEEP/FIX there. Then part roughs like 006 Part 03 (J0137). HOS PR with spend logs + PIPELINE.json 007 picture row; Chief squash-merges.\n\n**Dates:** 007 picture due Sun 1 Nov; airs Thu 12 Nov.\nLong job: start batches detached and release at stopping points with notes.\n",
+      "ref": "6206755581",
+      "film": "007",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-16T02:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T02:36Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video",
+      "model": "flow-veo-3.1"
     }
   ],
   "focus": [],
