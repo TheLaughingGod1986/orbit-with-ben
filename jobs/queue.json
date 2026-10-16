@@ -1,5 +1,5 @@
 {
-  "next_id": 348,
+  "next_id": 349,
   "jobs": [
     {
       "id": "J0001",
@@ -25641,6 +25641,33 @@
       "history": [
         {
           "at": "2026-10-16T00:04Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "chart"
+    },
+    {
+      "id": "J0348",
+      "title": "HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After J0334 PASS + squash-merge of HOS PR #336 (merge 8afeb066) to main: build the **13** £0 Codex/chart teach code graphics from the merged 010 plate boards v02.\n\nSource: `02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/07_Edit-Project/parts/part-0N_plates_v02.json` — every plate with route `code-graphic` (PRICE_REVIEW_v02 §1). Part counts: P02×2, P03×2, P04×6, P05×3 = 13.\n\nFollow Ben's educational style (11 Oct 2026): real numbers as charts/number objects, date/timeline call-outs, short person cards where a person is named, interesting facts only from the film's FACT_NOTES/SOURCES (no new claims). Match each beat's timing from the boards; 1080p, house fonts/colours.\n\n**No mint, no spend, no Flow, no Vertex.** Picture mint stays held: 006→007→008→009 then 010 after ~12 Nov AI Ultra renewal. Do not queue or run mint from this job.\n\n",
+      "ref": "6204962007",
+      "film": "010",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-16T00:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T00:12Z",
           "by": "chief",
           "what": "added"
         }

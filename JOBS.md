@@ -40,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0344 | mini | open (after J0343) | – | – | 007 picture · chart · HOS 007: build 3 £0 code graphics (P1:07_map_shadows, P4:11_news_spreads, P5:08_body_learns) after PR 337 merge; no mint |  |
 | J0345 | mini | open | – | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
 | J0347 | mini | open (after J0346) | – | – | 029 picture · chart · 029 Betelgeuse: build the £0 Codex code graphics from plate boards v02 (13 code beats + card), no mint | J0330 |
+| J0348 | mini | open | – | – | 010 picture · chart · HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint | 6204962007 |
 
 Recently finished:
 
