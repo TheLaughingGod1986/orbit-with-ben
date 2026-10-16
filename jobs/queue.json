@@ -24715,13 +24715,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-16T00:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T20:31Z",
-      "result": "parked for Chief: review the 11 Franklin code graphics (branch codex/j0329-franklin-graphics @ 52b2271). Local pack and ~/_desk safety copy match (31 files). NAS mirror not verified: mkdir on the mounted NFS share does not return. Do not start another copy until a directory create succeeds. No spend, no PASS.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T20:31Z",
@@ -24777,16 +24777,14 @@
           "at": "2026-10-16T00:28Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: review the 11 Franklin code graphics (branch codex/j0329-franklin-graphics @ 52b2271). Local pack and ~/_desk safety copy match (31 files). NAS mirror not verified: mkdir on the mounted NFS share does not return. Do not start another copy until a directory create succeeds. No spend, no PASS."
+        },
+        {
+          "at": "2026-10-16T00:33Z",
+          "by": "chief",
+          "what": "reopened: FIX: re-render P5:11 label ≤4 words (SAFE PATH DOWN); then re-park. See HOS #180 / PR #338."
         }
       ],
-      "kind": "chart",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-10-16T00:26Z",
-        "by": "cursor",
-        "note": "NAS mirror: hung mkdir cleared; creating 008 path"
-      }
+      "kind": "chart"
     },
     {
       "id": "J0330",
