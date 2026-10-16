@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0360 | mini | blocked | gemini | – | for gemini · chart · `gemini-agy` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0362 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0363 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
-| J0364 | mini | open | – | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
+| J0364 | mini | claimed | gemini | 2026-10-16T11:32Z | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0365 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0366 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0367 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
