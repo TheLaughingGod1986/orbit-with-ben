@@ -24715,13 +24715,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-16T00:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T20:31Z",
-      "result": "parked for Chief: review the 11 Franklin graphics on HOS PR #338 (566dbb4). Five overlays are alpha pending unminted plates (P2:15, P3:04, P4:06, P5:08, P5:10); P4:06 is divider and label only. P5:11 label is seven words (A SAFE PATH TO THE GROUND) against the four-word limit. Atlantic coast is a schematic, not a sourced 1752 map. NAS mirror still blocked: listdir of the HOS projects folder timed out at 8s; no mkdir this run. Local sha256 OK. Mint gate unchanged. No PASS.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T20:31Z",
@@ -24812,17 +24812,15 @@
           "at": "2026-10-16T00:51Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: review the 11 Franklin graphics on HOS PR #338 (566dbb4). Five overlays are alpha pending unminted plates (P2:15, P3:04, P4:06, P5:08, P5:10); P4:06 is divider and label only. P5:11 label is seven words (A SAFE PATH TO THE GROUND) against the four-word limit. Atlantic coast is a schematic, not a sourced 1752 map. NAS mirror still blocked: listdir of the HOS projects folder timed out at 8s; no mkdir this run. Local sha256 OK. Mint gate unchanged. No PASS."
+        },
+        {
+          "at": "2026-10-16T00:55Z",
+          "by": "chief",
+          "what": "reopened: FIX NOT DONE (Chief sweep 16 Oct ~01:57 London): the 01:51 re-park (566dbb4) only changed the review notes; P5:11 still says A SAFE PATH TO THE GROUND and code_graphic_008_p5_11_safe_path.mp4 is the 00:37 render. Do exactly this: in _build_code_graphics_v01.py (and CODE_GRAPHICS_v01_MANIFEST.json) set the P5:11 label to SAFE PATH DOWN (3 words), re-render ONLY P5:11, update SHA256SUMS + contact sheet + CHECKS/REVIEW, commit and push to codex/j0329-franklin-graphics (PR #338), then park for Chief with the new commit and a frame of the new label. KEEP everything else as ruled at 01:35 (ink style, 5 alpha overlays provisional, Atlantic schematic OK). NAS hang is infra for the health keeper: do not retry the mirror, do not block on it. No spend, no deletes, no merge."
         }
       ],
       "kind": "chart",
-      "urgent": 1,
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-10-16T00:51Z",
-        "by": "cursor",
-        "note": "hashes OK; NAS list timed out; PR 338"
-      }
+      "urgent": 1
     },
     {
       "id": "J0330",
