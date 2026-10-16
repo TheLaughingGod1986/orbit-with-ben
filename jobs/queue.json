@@ -23092,10 +23092,10 @@
       "stage": "",
       "after": "J0299",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-16T05:59Z",
+      "eta": "2026-10-16T07:29Z",
       "created_by": "chief",
       "created_at": "2026-10-15T17:00Z",
       "result": "",
@@ -23124,6 +23124,11 @@
           "at": "2026-10-15T17:10Z",
           "by": "cursor",
           "what": "released: Gemini facts pass RUNNING detached. tmux j0304-gemini. worktree /tmp/j0304-wt (HEAD 9db5a26). log ~/_desk/logs/j0304-gemini.log (may be block-buffered). done-file ~/_desk/logs/j0304-gemini.done. prompt ~/_desk/logs/j0304-prompt.md. script ~/_desk/logs/j0304-gemini-run.sh. Model gemini-4-argon-high (complex claim check). NEXT RUN: if .done is missing, leave the tmux session and do not start a second agy. If .done is 0, check /tmp/j0304-wt/.../01_Script/GEMINI_QUOTE_PASS_J0304.md (22 MUST QUOTE rows, each OK/PARTIAL/FLAG with a URL and a verbatim quote or an explicit FLAG, file ends with DONE) and the Exact quotes section appended to FACT_NOTES_v01.md. If complete, commit those two files from the worktree to HOS main or a short branch, then park for Chief (jobs.py block --reason parked for Chief: quote pass ready for PASS). If incomplete or .done is not 0, read the log and rerun once. Do not rewrite spoken lines. No VO, no picture, no Studio, no second copy while tmux j0304-gemini lives."
+        },
+        {
+          "at": "2026-10-16T05:59Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "facts",
