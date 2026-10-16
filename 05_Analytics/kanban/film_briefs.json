@@ -394,10 +394,10 @@
       "line": "Script and voice done. Shot boards are being written now (J0310), then the Chief prices the picture."
     },
     "OWB:029": {
-      "updated": "2026-10-16T00:55Z",
+      "updated": "2026-10-16T02:55Z",
       "mood": "good",
       "done": "Script, voice, shot list (39 rows) and 6 code graphics.",
-      "holdup": "Shot boards v02 passed and are merged: no Flow credits at all, just free footage, free code graphics and two small Omni clips (about £1.30 of free promo credit, not yet authorised). The free code graphics are next (J0347).",
+      "holdup": "Shot boards v02 passed (no Flow credits). 10 of 14 free code graphics passed; Cursor re-renders 4 (J0347). The two small Omni clips (about £1.30 of free promo credit) are still not authorised.",
       "limit": "One picture (the Super-Kamiokande detector, row 24) needs its licence checked before it's used.",
       "steps": [
         {
@@ -451,10 +451,10 @@
       "line": "Finished and scheduled with its three Shorts. Nothing for you."
     },
     "HOS:006": {
-      "updated": "2026-10-16T01:55Z",
+      "updated": "2026-10-16T02:55Z",
       "mood": "good",
       "done": "Script, voice and the Shorts. Picture is about half done: Part 01 is kept, Part 02's rough cut is held, and all 16 Part 03 shots made on the free Vertex trial (Sat 10 Oct) are kept.",
-      "holdup": "The full cut v01 (8:28) stands: the Chief waived the six repeated stretches because the plates are too short for a second stretch without paying for new ones. Cursor re-checks it and parks it for merge (J0331), then the teaching graphics go on (J0332). Music waits until 30 Oct.",
+      "holdup": "All five parts are joined (v01, 8:28; the Chief waived six repeated stretches) and the 21 teaching cards passed and are merged. Next they're laid into the cut (J0351), all free. Music waits until 30 Oct.",
       "limit": "The Vertex trial has about £4.25 left after Part 03 (it runs down to £0, never onto the card). Flow had 52 credits before the refill; the new balance is read on Monday after 09:00 and priced before anything is spent. The Mac mini is shared with Orbit With Ben, so the two take turns.",
       "steps": [
         {
@@ -473,7 +473,9 @@
           "who": "Codex",
           "what": "teaching graphics on the full cut",
           "job": "J0332",
-          "afterJob": "J0331"
+          "afterJob": "J0331",
+          "done": true,
+          "doneText": "cards PASS, merged · Fri 16 Oct"
         },
         {
           "kind": "video",
@@ -529,6 +531,11 @@
           "who": "Ben",
           "what": "final OK",
           "when": "2026-11-01"
+        },
+        {
+          "who": "Cursor",
+          "what": "lay the teaching cards into the full cut",
+          "job": "J0351"
         }
       ],
       "you": "Your final OK on Sun 1 Nov. Nothing before then.",
