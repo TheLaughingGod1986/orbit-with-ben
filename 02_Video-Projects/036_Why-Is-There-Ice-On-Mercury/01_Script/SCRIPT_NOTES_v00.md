@@ -1,0 +1,22 @@
+# Script Notes — 036 Why Is There Ice on Mercury, the Planet Closest to the Sun? (`v00`)
+
+- **Draft:** `01_Script/mercury_polar_ice_script_master_v00.md`
+- **Score:** `npm run review:script` → **PASS (95.8 / 100)**
+- **Spoken narration words:** 1,308 spoken words / 1,328 reviewer words (~8.9 min at 150 wpm; 0 warnings, 8/8 structure gates)
+- **Continuity:**
+  - Directly answers the closing hand-off at the end of `035_Why-Neptunes-Largest-Moon-Orbits-Backwards` (`"Next, we race to the planet closest to the Sun — where daytime temperatures reach four hundred and thirty degrees Celsius, yet shadowed polar craters on Mercury preserve water ice at minus one hundred and eighty degrees Celsius."`).
+  - Closes by handing off to Idea #2 (`What Is Hiding at the Centre of the Milky Way? — Sagittarius A*`), which is the #2 recommended new topic in `05_Analytics/weekly_audit/OWB_2026-10-16.md`.
+- **Weekly audit & playbook rules enforced:**
+  - **Named celestial object in title (`OWB_2026-10-16.md` item 1):** names both `Mercury` and `the Sun` explicitly in the title (*Why Is There Ice on Mercury, the Planet Closest to the Sun?*, 59 characters).
+  - **No chapter card in 0:00–0:30 (`OWB_2026-10-16.md` item 2):** 3-paragraph cold open (~148 spoken words, ~0:55) runs over real MESSENGER footage of Mercury (`PIA19411`, `PIA16523`, `PIA18748`, `PIA15160`) before the first `[CHAPTER CARD: The Day That Lasts Two Years]`.
+  - **No back-to-back code graphics:** every `DATA:` graphic is separated by real NASA MESSENGER / Mariner 10 plates (`PIA19411`, `PIA16523`, `PIA18748`, `PIA16522`, `PIA15160`) or an Omni Orbit shot.
+  - **Subscribe beat line (`templates/SUBSCRIBE_BEAT_LINES.md`):** uses line 4 (`"We make one of these every week. Subscribing is how the next one finds you."`, 15 words at 43% of spoken script), not used in `031`–`035`.
+  - **Teach on screen + Polish pass + HOTU/SEA reference lessons:**
+    - `DATA:` 7 (includes 2 before `[SUBSCRIBE BEAT]` and 1 build-up timeline)
+    - `SCALE:` 7 (every `DATA:` has an everyday scale analogy in the spoken sentence and in `SOURCES.md`)
+    - `NUMBER OBJECT:` 7 (one 1–3 word + number object per `DATA:` beat)
+    - `WHO:` 4 (Giuseppe Colombo `1920–1984`, Sean Solomon `born 1945`, Sergei Prokofiev `1891–1953`, Sergei Rachmaninoff `1873–1943` — every named person in the spoken script has a card at first mention and a verified LOC Name Authority Record in `SOURCES.md`)
+    - `WHEN:` 6 (`2011 to 2015`; `1965`; `3 November 1973, 5 February 1974, 29 March 1974, 21 September 1974, 16 March 1975`; `1991, 3 August 2004, 18 March 2011`; `August 2012`; `30 April 2015, 20 October 2018, October 2021, January 2025, November 2026`)
+    - `FACT:` 4 (`A day lasts 2 years`, `Core is 85% of radius`, `2-degree tilt traps ice`, `Hollows 100,000 years old`)
+    - **Orbit beats:** 2 (Chapter 2: standing on Mercury's sunlit plains with a compass needle in the 1% magnetic field as the morning Sun rises, sets, and rises again; Chapter 5: peering over the 430 °C rim of Prokofiev crater and stepping into the −180 °C permanent shadow beside the 10–20 cm dark organic blanket over water ice). Never in the first 30 seconds.
+    - **One-breath takeaway:** `"Mercury showed that even on a world where sunlit rock bakes at four hundred and thirty degrees Celsius, a two-degree axial tilt and dark organic blankets can preserve pure water ice inside permanently shadowed polar craters."`
