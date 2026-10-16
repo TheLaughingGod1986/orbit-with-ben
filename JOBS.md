@@ -82,10 +82,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0406 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0407 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0408 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0409 | any | claimed | gemini | 2026-10-16T23:00Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J0409 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0399 done: HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend) (done)
 - J0393 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos pass chapters, sources, end screens, and Related video checks at 17:56 UTC (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit af9e70aa). Nothing changed in Studio.)
 - J0376 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -95,4 +95,3 @@ Recently finished:
 - J0350 done: 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) (PASS (Chief, 16 Oct ~04:28 London): 028 Gliese 710 harvest v01 on OWB PR #226 squash-merged 14566db2. 33 plates / 21 files, licence PASS all, £0, generation_authorized false. Edit notes KEEP (SDO stamp crop, Chajnantor slate ~8s, Gaia logos burned in, Proxima 604x592). Not a picture PASS. Mint gate unchanged (006→007→008→009→028 Veo). No £0 follow-on. No Ben.)
 - J0349 cancelled: 028 Gliese 710: £0 harvest of 33 harvest-route plates from boards v02 (no mint) ()
 - J0348 done: HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint (PASS (Chief, 16 Oct ~04:40 London): HOS 010 thirteen £0 code graphics v01 on HOS PR #343 squash-merged fb06aa3e. STYLE/MOTION KEEP. P4:07 food_chain meat-eater is a clear side-view theropod (long tail, bipedal, open jaw) verified @ c880c975; sha256 656bce1a matches; 13 silent 1920×1080 near-black PASS. Earlier FIX KEEPs on the other 12 stand. Mini assets synced to code_graphics_v01. £0, no mint. Next is Flow mint after 006→007→008→009 gate (J0352 open for 007) — no £0 follow-on this sweep. No Ben.)
-- J0347 done: 029 Betelgeuse: build the £0 Codex code graphics from plate boards v02 (13 code beats + card), no mint (PASS (Chief, 16 Oct ~04:25 London): 029 Betelgeuse code graphics v01 on OWB PR #225 squash-merged 1624dde6. STYLE/MOTION KEEP. r21 side-view teaspoon (oval bowl, handle along level beam) verified @ 06857764; 14 silent 1080p/50fps sha-checked. Earlier FIX KEEPs stand. £0. Next: 029 harvest (47 plates). No Ben.)
