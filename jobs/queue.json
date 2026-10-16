@@ -27572,7 +27572,7 @@
     {
       "id": "J0364",
       "title": "Backlog HOS: next script or opening draft (009/010 first)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Advance the earliest HOS film whose script or opening isn't passed (009 and 010 openings first, then the next idea). Person cards, dates and timeline call-outs marked per beat, SOURCES.md filled. Spend nothing. Post on desk #180, block 'parked for Chief: script review'.",
       "ref": "",
@@ -27580,10 +27580,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claude",
-      "since": "2026-10-16T07:51Z",
-      "eta": "2026-10-16T09:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T07:06Z",
       "result": "",
@@ -27597,10 +27597,24 @@
           "at": "2026-10-16T07:51Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-16T09:31Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 99 min (heartbeat 2026-10-16T07:51:05Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "script",
-      "backlog": "hos-next-script"
+      "backlog": "hos-next-script",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "claude"
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J0365",
