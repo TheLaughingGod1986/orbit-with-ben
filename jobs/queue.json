@@ -28971,13 +28971,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-16T14:23Z",
-      "eta": "2026-10-16T15:23Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T14:22Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB a02c802e: 028/029 teaching_overlays_v01_pack PASS, 028 code_graphics_v02 9/20 FAIL & 029 code_graphics_v01 8/14 FAIL -> J0382 queued; HOS cd081035: 006 P3 v03 & P4 v02 PASS, 007-010 code_graphics_v01 FAILs -> J0383 queued)",
       "history": [
         {
           "at": "2026-10-16T14:22Z",
@@ -29013,6 +29013,11 @@
           "at": "2026-10-16T14:42Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed gate outputs (OWB a02c802e, HOS cd081035) and queued no-spend fix jobs J0382 (OWB 028/029 code_graphics) + J0383 (HOS 007-010 code_graphics)"
+        },
+        {
+          "at": "2026-10-16T14:42Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB a02c802e: 028/029 teaching_overlays_v01_pack PASS, 028 code_graphics_v02 9/20 FAIL & 029 code_graphics_v01 8/14 FAIL -> J0382 queued; HOS cd081035: 006 P3 v03 & P4 v02 PASS, 007-010 code_graphics_v01 FAILs -> J0383 queued)"
         }
       ],
       "kind": "qa",
