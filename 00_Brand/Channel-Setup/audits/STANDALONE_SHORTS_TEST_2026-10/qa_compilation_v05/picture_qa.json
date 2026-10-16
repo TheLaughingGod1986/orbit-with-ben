@@ -1,6 +1,6 @@
 {
   "verdict": "PASS",
-  "video": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/OWB_compilation_v05_PHONE.mp4",
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_compilation_v05.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -22,7 +22,7 @@
       "at": "0:02",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0007 < film p5 0.0077"
+        "low detail: edge density 0.0008 < film p5 0.0079"
       ],
       "offset": 319.8
     },
@@ -35,7 +35,7 @@
       "at": "0:09",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.004 < film p5 0.0077"
+        "low detail: edge density 0.0041 < film p5 0.0079"
       ],
       "offset": 165
     },
@@ -115,7 +115,7 @@
       "at": "0:02",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0007 < film p5 0.0077"
+        "low detail: edge density 0.0008 < film p5 0.0079"
       ],
       "offset": 319.8
     },
@@ -150,7 +150,7 @@
       "at": "0:09",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.004 < film p5 0.0077"
+        "low detail: edge density 0.0041 < film p5 0.0079"
       ],
       "offset": 165
     },
@@ -540,7 +540,7 @@
     }
   ],
   "polish": {
-    "edge_floor": 0.0077,
+    "edge_floor": 0.0079,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

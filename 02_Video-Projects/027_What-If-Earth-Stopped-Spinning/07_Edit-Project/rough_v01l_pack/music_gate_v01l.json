@@ -1,0 +1,34 @@
+{
+  "verdict": "PASS",
+  "bed": "02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_take2_straight_v01j.wav",
+  "seconds": 446.3,
+  "bpm": 54.5,
+  "brief_pace": "Pace: 76-88 BPM",
+  "fail": [],
+  "warn": [
+    "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v02_LISTEN.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03_tightened.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read monday_saturn_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.m4a to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others",
+    "reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others",
+    "pace: measured about 54.5 BPM against the brief's 76-88; Claude listens"
+  ],
+  "waived": [
+    "reused: sounds like mars-robot_score_bed_v01.mp3 (0.831) (Chief waiver music_gate_v01j_chief_waiver.json)"
+  ],
+  "matches": [
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v01.mp3",
+      "similarity": 0.831
+    }
+  ],
+  "waiver": "music_gate_v01j_chief_waiver.json",
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  }
+}

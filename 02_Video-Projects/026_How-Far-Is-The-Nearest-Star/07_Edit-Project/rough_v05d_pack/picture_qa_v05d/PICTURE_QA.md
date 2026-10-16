@@ -1,6 +1,6 @@
 # Picture QA: PASS
 
-/private/tmp/026_NearestStar_v05d_PHONE.mp4 · 103 cuts · 0 fail · 38 for Claude to look at full size
+02_Video-Projects/026_How-Far-Is-The-Nearest-Star/07_Edit-Project/026_NearestStar_v05d.mp4 · 103 cuts · 0 fail · 38 for Claude to look at full size
 
 ## Claude looks at these full size
 
