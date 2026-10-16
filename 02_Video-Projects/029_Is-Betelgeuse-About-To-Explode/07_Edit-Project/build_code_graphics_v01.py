@@ -142,10 +142,34 @@ class Renderer:
         self.blobs = {}
         rng = np.random.default_rng(1054)
         y, x = np.mgrid[:H, :W]
-        r = np.sqrt(((x - 960) / 1100) ** 2 + ((y - 540) / 800) ** 2)
-        c = np.clip(r, 0, 1)
-        base = np.stack([46 + 18 * (1 - c), 62 + 20 * (1 - c), 96 + 28 * (1 - c)], axis=-1)
-        self.bg = Image.fromarray(np.uint8(base))
+        rad = np.sqrt(((x - 960) / 840) ** 2 + ((y - 540) / 540) ** 2)
+        g1 = np.exp(-rad ** 2 * 1.4)
+        band_d = ((x - 960) * 0.42 + (y - 540) * 0.91) / 340.0
+        band_l = ((x - 960) * 0.91 - (y - 540) * 0.42) / 780.0
+        mw = np.exp(-band_d ** 2) * np.exp(-band_l ** 2 * 0.7)
+        dust = np.exp(-((band_d - 0.18) / 0.32) ** 2) * np.exp(-band_l ** 2 * 1.1)
+        g2 = np.exp(-(((x - 520) / 400) ** 2 + ((y - 340) / 280) ** 2))
+        g3 = np.exp(-(((x - 1400) / 420) ** 2 + ((y - 720) / 300) ** 2))
+        glow = np.clip(0.68 * g1 + 0.45 * mw - 0.22 * dust + 0.32 * g2 + 0.28 * g3, 0, 1.35)
+        base = np.stack([16 + 64 * glow, 24 + 84 * glow, 38 + 112 * glow], axis=-1)
+        bg = Image.fromarray(np.uint8(np.clip(base, 0, 255)))
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ld = ImageDraw.Draw(layer)
+        for cr in (220, 350, 480, 620, 760, 900):
+            ld.ellipse((960 - cr, 540 - int(cr * 0.62), 960 + cr, 540 + int(cr * 0.62)),
+                       outline=(165, 195, 230, 88), width=2)
+            for deg in range(0, 360, 3):
+                ang = math.radians(deg)
+                r1 = cr - (10 if deg % 12 == 0 else 6)
+                r2 = cr + (10 if deg % 12 == 0 else 6)
+                ld.line((960 + r1 * math.cos(ang), 540 + r1 * 0.62 * math.sin(ang),
+                         960 + r2 * math.cos(ang), 540 + r2 * 0.62 * math.sin(ang)),
+                        fill=(185, 212, 242, 115), width=2)
+        srng = np.random.default_rng(10540)
+        for n_stars, r_px, alpha in [(420, 2.2, 130), (190, 3.2, 155), (55, 4.5, 175)]:
+            for sx, sy in srng.uniform([70, 100], [1850, 980], (n_stars, 2)):
+                ld.ellipse((sx - r_px, sy - r_px, sx + r_px, sy + r_px), fill=(215, 232, 252, alpha))
+        self.bg = Image.alpha_composite(bg.convert("RGBA"), layer).convert("RGB")
         self.field = rng.uniform([8, 8], [1912, 1072], (140, 2))
         self.belt = np.stack([
             rng.uniform(2.2, 3.3, 280),
@@ -558,7 +582,7 @@ def main():
             dest = a.out / f"{stem}.mp4"
             tmp = a.out / f"{stem}.partial.mp4"
             cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
-                   "-s", "1920x1080", "-r", str(FPS), "-i", "pipe:0", "-an", "-vf", "noise=alls=2:allf=t",
+                   "-s", "1920x1080", "-r", str(FPS), "-i", "pipe:0", "-an",
                    "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-threads", "4", "-pix_fmt", "yuv420p",
                    "-movflags", "+faststart", str(tmp)]
             proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)

@@ -68,9 +68,28 @@ class Renderer:
   # Spherical shell, projected in perspective. Ice points encode Oort geometry.
   v=self.rng.normal(size=(420,3));v/=np.linalg.norm(v,axis=1)[:,None]
   self.cloud=v*self.rng.uniform(.72,1,(420,1))
-  y,x=np.mgrid[:H,:W];r=np.sqrt(((x-960)/1100)**2+((y-540)/800)**2)
-  base=np.stack([30+8*(1-r),43+10*(1-r),65+15*(1-r)],axis=-1)
-  self.background=Image.fromarray(np.uint8(np.clip(base,0,255)))
+  y,x=np.mgrid[:H,:W];rad=np.sqrt(((x-960)/840)**2+((y-540)/540)**2)
+  g1=np.exp(-rad**2*1.4)
+  band_d=((x-960)*.42+(y-540)*.91)/340.0
+  band_l=((x-960)*.91-(y-540)*.42)/780.0
+  mw=np.exp(-band_d**2)*np.exp(-band_l**2*.7)
+  dust=np.exp(-((band_d-.18)/.32)**2)*np.exp(-band_l**2*1.1)
+  g2=np.exp(-(((x-520)/400)**2+((y-340)/280)**2))
+  g3=np.exp(-(((x-1400)/420)**2+((y-720)/300)**2))
+  glow=np.clip(.68*g1+.45*mw-.22*dust+.32*g2+.28*g3,0,1.35)
+  base=np.stack([14+64*glow,22+84*glow,36+112*glow],axis=-1)
+  bg=Image.fromarray(np.uint8(np.clip(base,0,255)))
+  layer=Image.new('RGBA',(W,H),(0,0,0,0));ld=ImageDraw.Draw(layer)
+  for cr in (220,350,480,620,760,900):
+   ld.ellipse((960-cr,540-int(cr*.62),960+cr,540+int(cr*.62)),outline=(165,195,230,88),width=2)
+   for deg in range(0,360,3):
+    ang=math.radians(deg);r1=cr-(10 if deg%12==0 else 6);r2=cr+(10 if deg%12==0 else 6)
+    ld.line((960+r1*math.cos(ang),540+r1*.62*math.sin(ang),960+r2*math.cos(ang),540+r2*.62*math.sin(ang)),fill=(185,212,242,115),width=2)
+  srng=np.random.default_rng(7100)
+  for n_stars,r_px,alpha in [(420,2.2,130),(190,3.2,155),(55,4.5,175)]:
+   for sx,sy in srng.uniform([70,100],[1850,980],(n_stars,2)):
+    ld.ellipse((sx-r_px,sy-r_px,sx+r_px,sy+r_px),fill=(215,232,252,alpha))
+  self.background=Image.alpha_composite(bg.convert('RGBA'),layer).convert('RGB')
   self.bodies={}
 
  def body(self,im,xy,r,kind='sun',tint=False):
@@ -246,7 +265,7 @@ def main():
    thumbs.append((p,frac,preview.resize((480,270))))
   if not a.previews:
    dest=a.out/f'{stem}.mp4';tmp=a.out/f'{stem}.partial.mp4'
-   cmd=['ffmpeg','-hide_banner','-loglevel','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1920x1080','-r',str(FPS),'-i','pipe:0','-an','-vf','noise=alls=2:allf=t','-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-pix_fmt','yuv420p','-movflags','+faststart',str(tmp)]
+   cmd=['ffmpeg','-hide_banner','-loglevel','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1920x1080','-r',str(FPS),'-i','pipe:0','-an','-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-pix_fmt','yuv420p','-movflags','+faststart',str(tmp)]
    proc=subprocess.Popen(cmd,stdin=subprocess.PIPE)
    try:
     for i in range(frames):proc.stdin.write(r.frame(p,i/FPS).tobytes())

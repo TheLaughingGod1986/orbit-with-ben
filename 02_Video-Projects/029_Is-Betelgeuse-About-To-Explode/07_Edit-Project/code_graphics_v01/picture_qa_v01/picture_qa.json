@@ -1,5 +1,5 @@
 {
-  "verdict": "FAIL",
+  "verdict": "PASS",
   "video": "/private/tmp/qa_029_v01/concat_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
@@ -11,7 +11,8 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
+  "failed": [],
+  "warn": [
     {
       "cut": 0,
       "row": "r03_r04_promise",
@@ -19,110 +20,12 @@
       "title": "own code graphic r03_r04_promise",
       "t": 11.49,
       "at": "0:11",
-      "fail": [
-        "noise: grain 7.6 over structure 10.33, 8x-downscaled std 10.76 < 13.44 and edge 0.0258 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "reuse: on screen 23.0s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
-    {
-      "cut": 1,
-      "row": "r05_scale",
-      "source": "code_graphic_029_r05_scale_v01.mp4",
-      "title": "own code graphic r05_scale",
-      "t": 26.32,
-      "at": "0:26",
-      "fail": [
-        "low detail: luma std 11.71 < 13.44 and edge density 0.0192 < 0.0259 (absolute floor)",
-        "noise: grain 6.89 over structure 8.54, 8x-downscaled std 8.8 < 13.44 and edge 0.0106 < 0.0259"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 2,
-      "row": "r09_finder",
-      "source": "code_graphic_029_r09_finder_v01.mp4",
-      "title": "own code graphic r09_finder",
-      "t": 35.94,
-      "at": "0:36",
-      "fail": [
-        "low detail: luma std 8.3 < 13.44 and edge density 0.0036 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 3,
-      "row": "r10_r11_dip",
-      "source": "code_graphic_029_r10_r11_dip_v01.mp4",
-      "title": "own code graphic r10_r11_dip",
-      "t": 49.05,
-      "at": "0:49",
-      "fail": [
-        "low detail: luma std 11.21 < 13.44 and edge density 0.0118 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 4,
-      "row": "r15_dip",
-      "source": "code_graphic_029_r15_dip_v01.mp4",
-      "title": "own code graphic r15_dip",
-      "t": 58.36,
-      "at": "0:58",
-      "fail": [
-        "low detail: luma std 11.81 < 13.44 and edge density 0.0134 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 7,
-      "row": "r22_subscribe",
-      "source": "code_graphic_029_r22_subscribe_v01.mp4",
-      "title": "own code graphic r22_subscribe",
-      "t": 116.5,
-      "at": "1:56",
-      "fail": [
-        "low detail: luma std 8.98 < 13.44 and edge density 0.0064 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 8,
-      "row": "r23_paranal",
-      "source": "code_graphic_029_r23_paranal_v01.mp4",
-      "title": "own code graphic r23_paranal",
-      "t": 121.9,
-      "at": "2:02",
-      "fail": [
-        "low detail: luma std 8.97 < 13.44 and edge density 0.0077 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 10,
-      "row": "r27_orion",
-      "source": "code_graphic_029_r27_orion_v01.mp4",
-      "title": "own code graphic r27_orion",
-      "t": 142.34,
-      "at": "2:22",
-      "fail": [
-        "low detail: luma std 9.95 < 13.44 and edge density 0.0072 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "reuse: on screen 18.5s in a row (look at it: 15s is a lot for one picture)"
-      ],
-      "offset": 0.0
-    }
-  ],
-  "warn": [
     {
       "cut": 5,
       "row": "r17_r20_shells",
@@ -132,20 +35,21 @@
       "at": "1:25",
       "fail": [],
       "warn": [
-        "reuse: on screen 48.6s in a row (look at it: 15s is a lot for one picture)"
+        "reuse: on screen 48.6s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: edge density 0.0558 < film p5 0.0583"
       ],
       "offset": 0.0
     },
     {
-      "cut": 9,
-      "row": "r25_orion",
-      "source": "code_graphic_029_r25_orion_v01.mp4",
-      "title": "own code graphic r25_orion",
-      "t": 129.08,
-      "at": "2:09",
+      "cut": 10,
+      "row": "r27_orion",
+      "source": "code_graphic_029_r27_orion_v01.mp4",
+      "title": "own code graphic r27_orion",
+      "t": 142.34,
+      "at": "2:22",
       "fail": [],
       "warn": [
-        "low detail: luma std 13.47 < 18.0"
+        "reuse: on screen 18.5s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
@@ -158,8 +62,7 @@
       "at": "2:43",
       "fail": [],
       "warn": [
-        "reuse: on screen 23.4s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 14.73 < 18.0"
+        "reuse: on screen 23.4s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
@@ -172,8 +75,7 @@
       "at": "3:04",
       "fail": [],
       "warn": [
-        "reuse: on screen 18.9s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 16.5 < 18.0"
+        "reuse: on screen 18.9s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     }
@@ -186,9 +88,7 @@
       "title": "own code graphic r03_r04_promise",
       "t": 11.49,
       "at": "0:11",
-      "fail": [
-        "noise: grain 7.6 over structure 10.33, 8x-downscaled std 10.76 < 13.44 and edge 0.0258 < 0.0259"
-      ],
+      "fail": [],
       "warn": [
         "reuse: on screen 23.0s in a row (look at it: 15s is a lot for one picture)"
       ],
@@ -201,10 +101,7 @@
       "title": "own code graphic r05_scale",
       "t": 26.32,
       "at": "0:26",
-      "fail": [
-        "low detail: luma std 11.71 < 13.44 and edge density 0.0192 < 0.0259 (absolute floor)",
-        "noise: grain 6.89 over structure 8.54, 8x-downscaled std 8.8 < 13.44 and edge 0.0106 < 0.0259"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -215,9 +112,7 @@
       "title": "own code graphic r09_finder",
       "t": 35.94,
       "at": "0:36",
-      "fail": [
-        "low detail: luma std 8.3 < 13.44 and edge density 0.0036 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -228,9 +123,7 @@
       "title": "own code graphic r10_r11_dip",
       "t": 49.05,
       "at": "0:49",
-      "fail": [
-        "low detail: luma std 11.21 < 13.44 and edge density 0.0118 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -241,9 +134,7 @@
       "title": "own code graphic r15_dip",
       "t": 58.36,
       "at": "0:58",
-      "fail": [
-        "low detail: luma std 11.81 < 13.44 and edge density 0.0134 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -256,7 +147,8 @@
       "at": "1:25",
       "fail": [],
       "warn": [
-        "reuse: on screen 48.6s in a row (look at it: 15s is a lot for one picture)"
+        "reuse: on screen 48.6s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: edge density 0.0558 < film p5 0.0583"
       ],
       "offset": 0.0
     },
@@ -278,9 +170,7 @@
       "title": "own code graphic r22_subscribe",
       "t": 116.5,
       "at": "1:56",
-      "fail": [
-        "low detail: luma std 8.98 < 13.44 and edge density 0.0064 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -291,9 +181,7 @@
       "title": "own code graphic r23_paranal",
       "t": 121.9,
       "at": "2:02",
-      "fail": [
-        "low detail: luma std 8.97 < 13.44 and edge density 0.0077 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -305,9 +193,7 @@
       "t": 129.08,
       "at": "2:09",
       "fail": [],
-      "warn": [
-        "low detail: luma std 13.47 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     },
     {
@@ -317,9 +203,7 @@
       "title": "own code graphic r27_orion",
       "t": 142.34,
       "at": "2:22",
-      "fail": [
-        "low detail: luma std 9.95 < 13.44 and edge density 0.0072 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [
         "reuse: on screen 18.5s in a row (look at it: 15s is a lot for one picture)"
       ],
@@ -334,8 +218,7 @@
       "at": "2:43",
       "fail": [],
       "warn": [
-        "reuse: on screen 23.4s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 14.73 < 18.0"
+        "reuse: on screen 23.4s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
@@ -348,8 +231,7 @@
       "at": "3:04",
       "fail": [],
       "warn": [
-        "reuse: on screen 18.9s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 16.5 < 18.0"
+        "reuse: on screen 18.9s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
@@ -366,7 +248,7 @@
     }
   ],
   "polish": {
-    "edge_floor": 0.0048,
+    "edge_floor": 0.0583,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

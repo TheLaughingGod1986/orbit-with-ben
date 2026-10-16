@@ -36,109 +36,17 @@
     }
   },
   "video": "/private/tmp/qa_029_v01/concat_v01.mp4",
-  "edge_floor": 0.0048,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "r03_r04_promise",
-      "cut": 0,
-      "t": 11.49,
-      "source": "code_graphic_029_r03_r04_promise_v01.mp4",
-      "why": [
-        "noise: grain 7.6 over structure 10.33, 8x-downscaled std 10.76 < 13.44 and edge 0.0258 < 0.0259"
-      ]
-    },
-    {
-      "row": "r05_scale",
-      "cut": 1,
-      "t": 26.32,
-      "source": "code_graphic_029_r05_scale_v01.mp4",
-      "why": [
-        "low detail: luma std 11.71 < 13.44 and edge density 0.0192 < 0.0259 (absolute floor)",
-        "noise: grain 6.89 over structure 8.54, 8x-downscaled std 8.8 < 13.44 and edge 0.0106 < 0.0259"
-      ]
-    },
-    {
-      "row": "r09_finder",
-      "cut": 2,
-      "t": 35.94,
-      "source": "code_graphic_029_r09_finder_v01.mp4",
-      "why": [
-        "low detail: luma std 8.3 < 13.44 and edge density 0.0036 < 0.0259 (absolute floor)"
-      ]
-    },
-    {
-      "row": "r10_r11_dip",
-      "cut": 3,
-      "t": 49.05,
-      "source": "code_graphic_029_r10_r11_dip_v01.mp4",
-      "why": [
-        "low detail: luma std 11.21 < 13.44 and edge density 0.0118 < 0.0259 (absolute floor)"
-      ]
-    },
-    {
-      "row": "r15_dip",
-      "cut": 4,
-      "t": 58.36,
-      "source": "code_graphic_029_r15_dip_v01.mp4",
-      "why": [
-        "low detail: luma std 11.81 < 13.44 and edge density 0.0134 < 0.0259 (absolute floor)"
-      ]
-    },
-    {
-      "row": "r22_subscribe",
-      "cut": 7,
-      "t": 116.5,
-      "source": "code_graphic_029_r22_subscribe_v01.mp4",
-      "why": [
-        "low detail: luma std 8.98 < 13.44 and edge density 0.0064 < 0.0259 (absolute floor)"
-      ]
-    },
-    {
-      "row": "r23_paranal",
-      "cut": 8,
-      "t": 121.9,
-      "source": "code_graphic_029_r23_paranal_v01.mp4",
-      "why": [
-        "low detail: luma std 8.97 < 13.44 and edge density 0.0077 < 0.0259 (absolute floor)"
-      ]
-    },
-    {
-      "row": "r27_orion",
-      "cut": 10,
-      "t": 142.34,
-      "source": "code_graphic_029_r27_orion_v01.mp4",
-      "why": [
-        "low detail: luma std 9.95 < 13.44 and edge density 0.0072 < 0.0259 (absolute floor)"
-      ]
-    }
-  ],
+  "edge_floor": 0.0583,
+  "verdict": "PASS",
+  "failed": [],
   "warn": [
     {
-      "row": "r25_orion",
-      "cut": 9,
-      "t": 129.08,
-      "source": "code_graphic_029_r25_orion_v01.mp4",
+      "row": "r17_r20_shells",
+      "cut": 5,
+      "t": 85.15,
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
       "why": [
-        "low detail: luma std 13.47 < 18.0"
-      ]
-    },
-    {
-      "row": "r29_span_astrolabe",
-      "cut": 11,
-      "t": 163.3,
-      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
-      "why": [
-        "low detail: luma std 14.73 < 18.0"
-      ]
-    },
-    {
-      "row": "r31_shells_twins",
-      "cut": 12,
-      "t": 184.49,
-      "source": "code_graphic_029_r31_shells_twins_v01.mp4",
-      "why": [
-        "low detail: luma std 16.5 < 18.0"
+        "low detail: edge density 0.0558 < film p5 0.0583"
       ]
     }
   ],
@@ -149,144 +57,124 @@
       "row": "r03_r04_promise",
       "source": "code_graphic_029_r03_r04_promise_v01.mp4",
       "t": 11.49,
-      "std": 14.27,
-      "mean": 71.2,
-      "p95": 102.0,
-      "edge": 0.0236,
-      "hf": 7.6,
-      "lf": 10.33,
-      "std8": 10.76,
-      "edge8": 0.0258,
-      "seams": [],
-      "video": true,
-      "fail": [
-        "noise: grain 7.6 over structure 10.33, 8x-downscaled std 10.76 < 13.44 and edge 0.0258 < 0.0259"
-      ],
-      "warn": [
-        "low detail: luma std 14.27 < 18.0"
-      ]
-    },
-    {
-      "cut": 1,
-      "row": "r05_scale",
-      "source": "code_graphic_029_r05_scale_v01.mp4",
-      "t": 26.32,
-      "std": 11.71,
-      "mean": 70.46,
-      "p95": 77.0,
-      "edge": 0.0192,
-      "hf": 6.89,
-      "lf": 8.54,
-      "std8": 8.8,
-      "edge8": 0.0106,
-      "seams": [],
-      "video": true,
-      "fail": [
-        "low detail: luma std 11.71 < 13.44 and edge density 0.0192 < 0.0259 (absolute floor)",
-        "noise: grain 6.89 over structure 8.54, 8x-downscaled std 8.8 < 13.44 and edge 0.0106 < 0.0259"
-      ],
-      "warn": [
-        "low detail: luma std 11.71 < 18.0"
-      ]
-    },
-    {
-      "cut": 2,
-      "row": "r09_finder",
-      "source": "code_graphic_029_r09_finder_v01.mp4",
-      "t": 35.94,
-      "std": 8.3,
-      "mean": 69.21,
-      "p95": 77.0,
-      "edge": 0.0036,
-      "hf": 3.25,
-      "lf": 6.12,
-      "std8": 6.84,
-      "edge8": 0.0074,
-      "seams": [],
-      "video": true,
-      "fail": [
-        "low detail: luma std 8.3 < 13.44 and edge density 0.0036 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "low detail: luma std 8.3 < 18.0",
-        "low detail: edge density 0.0036 < film p5 0.0048"
-      ]
-    },
-    {
-      "cut": 3,
-      "row": "r10_r11_dip",
-      "source": "code_graphic_029_r10_r11_dip_v01.mp4",
-      "t": 49.05,
-      "std": 11.21,
-      "mean": 69.87,
-      "p95": 77.0,
-      "edge": 0.0118,
-      "hf": 5.8,
-      "lf": 6.96,
-      "std8": 7.71,
-      "edge8": 0.0286,
-      "seams": [],
-      "video": true,
-      "fail": [
-        "low detail: luma std 11.21 < 13.44 and edge density 0.0118 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "low detail: luma std 11.21 < 18.0"
-      ]
-    },
-    {
-      "cut": 4,
-      "row": "r15_dip",
-      "source": "code_graphic_029_r15_dip_v01.mp4",
-      "t": 58.36,
-      "std": 11.81,
-      "mean": 69.98,
-      "p95": 77.0,
-      "edge": 0.0134,
-      "hf": 5.92,
-      "lf": 7.21,
-      "std8": 7.93,
-      "edge8": 0.0381,
-      "seams": [],
-      "video": true,
-      "fail": [
-        "low detail: luma std 11.81 < 13.44 and edge density 0.0134 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "low detail: luma std 11.81 < 18.0"
-      ]
-    },
-    {
-      "cut": 5,
-      "row": "r17_r20_shells",
-      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
-      "t": 85.15,
-      "std": 57.52,
-      "mean": 98.3,
-      "p95": 213.0,
-      "edge": 0.0136,
-      "hf": 6.17,
-      "lf": 56.19,
-      "std8": 56.76,
-      "edge8": 0.0546,
+      "std": 29.5,
+      "mean": 69.61,
+      "p95": 125.0,
+      "edge": 0.078,
+      "hf": 9.98,
+      "lf": 26.2,
+      "std8": 26.52,
+      "edge8": 0.0558,
       "seams": [],
       "video": true,
       "fail": [],
       "warn": []
     },
     {
+      "cut": 1,
+      "row": "r05_scale",
+      "source": "code_graphic_029_r05_scale_v01.mp4",
+      "t": 26.32,
+      "std": 28.16,
+      "mean": 69.03,
+      "p95": 119.0,
+      "edge": 0.075,
+      "hf": 9.44,
+      "lf": 25.34,
+      "std8": 25.59,
+      "edge8": 0.0427,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "r09_finder",
+      "source": "code_graphic_029_r09_finder_v01.mp4",
+      "t": 35.94,
+      "std": 26.98,
+      "mean": 68.22,
+      "p95": 112.0,
+      "edge": 0.063,
+      "hf": 7.8,
+      "lf": 24.5,
+      "std8": 24.83,
+      "edge8": 0.042,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "r10_r11_dip",
+      "source": "code_graphic_029_r10_r11_dip_v01.mp4",
+      "t": 49.05,
+      "std": 27.73,
+      "mean": 68.76,
+      "p95": 113.0,
+      "edge": 0.0693,
+      "hf": 9.06,
+      "lf": 24.45,
+      "std8": 24.83,
+      "edge8": 0.0579,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "r15_dip",
+      "source": "code_graphic_029_r15_dip_v01.mp4",
+      "t": 58.36,
+      "std": 27.96,
+      "mean": 68.91,
+      "p95": 113.0,
+      "edge": 0.0707,
+      "hf": 9.2,
+      "lf": 24.47,
+      "std8": 24.85,
+      "edge8": 0.068,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "r17_r20_shells",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "t": 85.15,
+      "std": 63.51,
+      "mean": 91.73,
+      "p95": 213.0,
+      "edge": 0.0558,
+      "hf": 8.72,
+      "lf": 61.8,
+      "std8": 62.27,
+      "edge8": 0.084,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0558 < film p5 0.0583"
+      ]
+    },
+    {
       "cut": 6,
       "row": "r21_hero",
       "source": "code_graphic_029_r21_hero_v01.mp4",
       "t": 111.86,
-      "std": 30.32,
-      "mean": 75.01,
-      "p95": 79.0,
-      "edge": 0.0149,
-      "hf": 7.01,
-      "lf": 26.89,
-      "std8": 27.84,
-      "edge8": 0.059,
+      "std": 39.47,
+      "mean": 73.25,
+      "p95": 138.0,
+      "edge": 0.0699,
+      "hf": 9.62,
+      "lf": 36.05,
+      "std8": 36.73,
+      "edge8": 0.0909,
       "seams": [],
       "video": true,
       "fail": [],
@@ -297,140 +185,122 @@
       "row": "r22_subscribe",
       "source": "code_graphic_029_r22_subscribe_v01.mp4",
       "t": 116.5,
-      "std": 8.98,
-      "mean": 69.33,
-      "p95": 77.0,
-      "edge": 0.0064,
-      "hf": 4.33,
-      "lf": 5.88,
-      "std8": 6.57,
-      "edge8": 0.0118,
+      "std": 27.18,
+      "mean": 68.4,
+      "p95": 113.0,
+      "edge": 0.0652,
+      "hf": 8.32,
+      "lf": 24.34,
+      "std8": 24.7,
+      "edge8": 0.0475,
       "seams": [],
       "video": true,
-      "fail": [
-        "low detail: luma std 8.98 < 13.44 and edge density 0.0064 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "low detail: luma std 8.98 < 18.0"
-      ]
+      "fail": [],
+      "warn": []
     },
     {
       "cut": 8,
       "row": "r23_paranal",
       "source": "code_graphic_029_r23_paranal_v01.mp4",
       "t": 121.9,
-      "std": 8.97,
-      "mean": 69.43,
-      "p95": 77.0,
-      "edge": 0.0077,
-      "hf": 4.16,
-      "lf": 6.03,
-      "std8": 6.53,
-      "edge8": 0.0171,
+      "std": 27.22,
+      "mean": 68.46,
+      "p95": 113.0,
+      "edge": 0.0663,
+      "hf": 8.25,
+      "lf": 24.44,
+      "std8": 24.75,
+      "edge8": 0.0527,
       "seams": [],
       "video": true,
-      "fail": [
-        "low detail: luma std 8.97 < 13.44 and edge density 0.0077 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "low detail: luma std 8.97 < 18.0"
-      ]
+      "fail": [],
+      "warn": []
     },
     {
       "cut": 9,
       "row": "r25_orion",
       "source": "code_graphic_029_r25_orion_v01.mp4",
       "t": 129.08,
-      "std": 13.47,
-      "mean": 70.73,
-      "p95": 79.0,
-      "edge": 0.0069,
-      "hf": 4.66,
-      "lf": 11.16,
-      "std8": 11.51,
-      "edge8": 0.0197,
+      "std": 28.81,
+      "mean": 69.8,
+      "p95": 115.0,
+      "edge": 0.0645,
+      "hf": 8.4,
+      "lf": 26.03,
+      "std8": 26.34,
+      "edge8": 0.055,
       "seams": [],
       "video": true,
       "fail": [],
-      "warn": [
-        "low detail: luma std 13.47 < 18.0"
-      ]
+      "warn": []
     },
     {
       "cut": 10,
       "row": "r27_orion",
       "source": "code_graphic_029_r27_orion_v01.mp4",
       "t": 142.34,
-      "std": 9.95,
-      "mean": 69.46,
-      "p95": 77.0,
-      "edge": 0.0072,
-      "hf": 4.7,
-      "lf": 6.54,
-      "std8": 7.0,
-      "edge8": 0.0157,
+      "std": 27.52,
+      "mean": 68.49,
+      "p95": 113.0,
+      "edge": 0.0657,
+      "hf": 8.52,
+      "lf": 24.55,
+      "std8": 24.85,
+      "edge8": 0.0514,
       "seams": [],
       "video": true,
-      "fail": [
-        "low detail: luma std 9.95 < 13.44 and edge density 0.0072 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "low detail: luma std 9.95 < 18.0"
-      ]
+      "fail": [],
+      "warn": []
     },
     {
       "cut": 11,
       "row": "r29_span_astrolabe",
       "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
       "t": 163.3,
-      "std": 14.73,
-      "mean": 70.51,
-      "p95": 78.0,
-      "edge": 0.024,
-      "hf": 8.78,
-      "lf": 8.38,
-      "std8": 9.2,
-      "edge8": 0.0584,
+      "std": 29.33,
+      "mean": 69.24,
+      "p95": 115.0,
+      "edge": 0.0801,
+      "hf": 10.37,
+      "lf": 25.48,
+      "std8": 25.87,
+      "edge8": 0.0758,
       "seams": [],
       "video": true,
       "fail": [],
-      "warn": [
-        "low detail: luma std 14.73 < 18.0"
-      ]
+      "warn": []
     },
     {
       "cut": 12,
       "row": "r31_shells_twins",
       "source": "code_graphic_029_r31_shells_twins_v01.mp4",
       "t": 184.49,
-      "std": 16.5,
-      "mean": 70.09,
-      "p95": 78.0,
-      "edge": 0.0055,
-      "hf": 3.89,
-      "lf": 14.63,
-      "std8": 15.4,
-      "edge8": 0.0232,
+      "std": 28.91,
+      "mean": 67.2,
+      "p95": 113.0,
+      "edge": 0.0606,
+      "hf": 8.05,
+      "lf": 26.06,
+      "std8": 26.68,
+      "edge8": 0.0635,
       "seams": [],
       "video": true,
       "fail": [],
-      "warn": [
-        "low detail: luma std 16.5 < 18.0"
-      ]
+      "warn": []
     },
     {
       "cut": 13,
       "row": "r35_song",
       "source": "code_graphic_029_r35_song_v01.mp4",
       "t": 198.66,
-      "std": 45.5,
-      "mean": 86.24,
+      "std": 51.77,
+      "mean": 81.3,
       "p95": 198.0,
-      "edge": 0.0102,
-      "hf": 5.03,
-      "lf": 44.23,
-      "std8": 44.91,
-      "edge8": 0.0435,
+      "edge": 0.0597,
+      "hf": 8.42,
+      "lf": 49.92,
+      "std8": 50.47,
+      "edge8": 0.0756,
       "seams": [],
       "video": true,
       "fail": [],

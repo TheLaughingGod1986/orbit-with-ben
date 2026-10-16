@@ -1,5 +1,5 @@
 {
-  "verdict": "FAIL",
+  "verdict": "PASS",
   "video": "/private/tmp/qa_028_v02/concat_v02.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
@@ -11,145 +11,8 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 0,
-      "row": "r04_shower_shell",
-      "source": "code_graphic_028_r04_shower_shell_v02.mp4",
-      "title": "own code graphic r04_shower_shell",
-      "t": 6.06,
-      "at": "0:06",
-      "fail": [
-        "low detail: luma std 12.58 < 13.44 and edge density 0.0233 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 1,
-      "row": "r05_drift_path_sky",
-      "source": "code_graphic_028_r05_drift_path_sky_v02.mp4",
-      "title": "own code graphic r05_drift_path_sky",
-      "t": 14.9,
-      "at": "0:15",
-      "fail": [
-        "low detail: luma std 9.16 < 13.44 and edge density 0.0097 < 0.0259 (absolute floor)",
-        "noise: grain 6.64 over structure 4.08, 8x-downscaled std 5.03 < 13.44 and edge 0.0233 < 0.0259"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 4,
-      "row": "r14_hipparcos_card",
-      "source": "code_graphic_028_r14_hipparcos_card_v02.mp4",
-      "title": "own code graphic r14_hipparcos_card",
-      "t": 41.02,
-      "at": "0:41",
-      "fail": [
-        "noise: grain 8.01 over structure 10.05, 8x-downscaled std 10.66 < 13.44 and edge 0.0244 < 0.0259"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 8,
-      "row": "r18_shell",
-      "source": "code_graphic_028_r18_shell_v02.mp4",
-      "title": "own code graphic r18_shell",
-      "t": 77.56,
-      "at": "1:18",
-      "fail": [
-        "low detail: luma std 8.99 < 13.44 and edge density 0.0189 < 0.0259 (absolute floor)",
-        "noise: grain 6.36 over structure 4.71, 8x-downscaled std 5.5 < 13.44 and edge 0.013 < 0.0259"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 10,
-      "row": "r20_21_oort_shell",
-      "source": "code_graphic_028_r20_21_oort_shell_v02.mp4",
-      "title": "own code graphic r20_21_oort_shell",
-      "t": 97.63,
-      "at": "1:38",
-      "fail": [
-        "low detail: luma std 11.94 < 13.44 and edge density 0.0201 < 0.0259 (absolute floor)"
-      ],
-      "warn": [
-        "reuse: on screen 22.5s in a row (look at it: 15s is a lot for one picture)"
-      ],
-      "offset": 0.0
-    },
-    {
-      "cut": 13,
-      "row": "r28_hale_bopp_2",
-      "source": "code_graphic_028_r28_hale_bopp_2_v02.mp4",
-      "title": "own code graphic r28_hale_bopp_2",
-      "t": 146.08,
-      "at": "2:26",
-      "fail": [
-        "low detail: luma std 11.83 < 13.44 and edge density 0.0092 < 0.0259 (absolute floor)",
-        "noise: grain 6.51 over structure 6.8, 8x-downscaled std 7.94 < 13.44 and edge 0.0229 < 0.0259"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 14,
-      "row": "r29_sky",
-      "source": "code_graphic_028_r29_sky_v02.mp4",
-      "title": "own code graphic r29_sky",
-      "t": 152.28,
-      "at": "2:32",
-      "fail": [
-        "low detail: luma std 12.14 < 13.44 and edge density 0.0093 < 0.0259 (absolute floor)",
-        "noise: grain 6.68 over structure 6.95, 8x-downscaled std 8.14 < 13.44 and edge 0.025 < 0.0259"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 16,
-      "row": "r31_sky_fade",
-      "source": "code_graphic_028_r31_sky_fade_v02.mp4",
-      "title": "own code graphic r31_sky_fade",
-      "t": 161.93,
-      "at": "2:42",
-      "fail": [
-        "low detail: luma std 13.27 < 13.44 and edge density 0.0105 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 17,
-      "row": "r33_traffic",
-      "source": "code_graphic_028_r33_traffic_v02.mp4",
-      "title": "own code graphic r33_traffic",
-      "t": 168.24,
-      "at": "2:48",
-      "fail": [
-        "low detail: luma std 11.82 < 13.44 and edge density 0.0197 < 0.0259 (absolute floor)"
-      ],
-      "warn": [],
-      "offset": 0.0
-    }
-  ],
+  "failed": [],
   "warn": [
-    {
-      "cut": 3,
-      "row": "r09_drift",
-      "source": "code_graphic_028_r09_drift_v02.mp4",
-      "title": "own code graphic r09_drift",
-      "t": 27.87,
-      "at": "0:28",
-      "fail": [],
-      "warn": [
-        "low detail: luma std 14.88 < 18.0"
-      ],
-      "offset": 0.0
-    },
     {
       "cut": 5,
       "row": "r15_16_path",
@@ -159,47 +22,20 @@
       "at": "0:55",
       "fail": [],
       "warn": [
-        "reuse: on screen 15.8s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 16.64 < 18.0"
+        "reuse: on screen 15.8s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
     {
-      "cut": 6,
-      "row": "r17_scale_a",
-      "source": "code_graphic_028_r17_scale_a_v02.mp4",
-      "title": "own code graphic r17_scale_a",
-      "t": 66.02,
-      "at": "1:06",
+      "cut": 10,
+      "row": "r20_21_oort_shell",
+      "source": "code_graphic_028_r20_21_oort_shell_v02.mp4",
+      "title": "own code graphic r20_21_oort_shell",
+      "t": 97.63,
+      "at": "1:38",
       "fail": [],
       "warn": [
-        "low detail: luma std 16.83 < 18.0"
-      ],
-      "offset": 0.0
-    },
-    {
-      "cut": 7,
-      "row": "r17_scale_b",
-      "source": "code_graphic_028_r17_scale_b_v02.mp4",
-      "title": "own code graphic r17_scale_b",
-      "t": 71.27,
-      "at": "1:11",
-      "fail": [],
-      "warn": [
-        "low detail: luma std 15.36 < 18.0"
-      ],
-      "offset": 0.0
-    },
-    {
-      "cut": 9,
-      "row": "r19_subscribe",
-      "source": "code_graphic_028_r19_subscribe_v02.mp4",
-      "title": "own code graphic r19_subscribe",
-      "t": 83.99,
-      "at": "1:24",
-      "fail": [],
-      "warn": [
-        "low detail: luma std 13.9 < 18.0"
+        "reuse: on screen 22.5s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
@@ -212,47 +48,20 @@
       "at": "2:01",
       "fail": [],
       "warn": [
-        "reuse: on screen 23.6s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 17.39 < 18.0"
+        "reuse: on screen 23.6s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
     {
-      "cut": 15,
-      "row": "r31_sky",
-      "source": "code_graphic_028_r31_sky_v02.mp4",
-      "title": "own code graphic r31_sky",
-      "t": 157.63,
-      "at": "2:38",
+      "cut": 13,
+      "row": "r28_hale_bopp_2",
+      "source": "code_graphic_028_r28_hale_bopp_2_v02.mp4",
+      "title": "own code graphic r28_hale_bopp_2",
+      "t": 146.08,
+      "at": "2:26",
       "fail": [],
       "warn": [
-        "low detail: luma std 13.46 < 18.0"
-      ],
-      "offset": 0.0
-    },
-    {
-      "cut": 18,
-      "row": "r34_traffic",
-      "source": "code_graphic_028_r34_traffic_v02.mp4",
-      "title": "own code graphic r34_traffic",
-      "t": 177.99,
-      "at": "2:58",
-      "fail": [],
-      "warn": [
-        "low detail: luma std 17.49 < 18.0"
-      ],
-      "offset": 0.0
-    },
-    {
-      "cut": 19,
-      "row": "r37_shell",
-      "source": "code_graphic_028_r37_shell_v02.mp4",
-      "title": "own code graphic r37_shell",
-      "t": 186.27,
-      "at": "3:06",
-      "fail": [],
-      "warn": [
-        "low detail: luma std 14.64 < 18.0"
+        "low detail: edge density 0.069 < film p5 0.0695"
       ],
       "offset": 0.0
     }
@@ -265,9 +74,7 @@
       "title": "own code graphic r04_shower_shell",
       "t": 6.06,
       "at": "0:06",
-      "fail": [
-        "low detail: luma std 12.58 < 13.44 and edge density 0.0233 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -278,10 +85,7 @@
       "title": "own code graphic r05_drift_path_sky",
       "t": 14.9,
       "at": "0:15",
-      "fail": [
-        "low detail: luma std 9.16 < 13.44 and edge density 0.0097 < 0.0259 (absolute floor)",
-        "noise: grain 6.64 over structure 4.08, 8x-downscaled std 5.03 < 13.44 and edge 0.0233 < 0.0259"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -304,9 +108,7 @@
       "t": 27.87,
       "at": "0:28",
       "fail": [],
-      "warn": [
-        "low detail: luma std 14.88 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     },
     {
@@ -316,9 +118,7 @@
       "title": "own code graphic r14_hipparcos_card",
       "t": 41.02,
       "at": "0:41",
-      "fail": [
-        "noise: grain 8.01 over structure 10.05, 8x-downscaled std 10.66 < 13.44 and edge 0.0244 < 0.0259"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -331,8 +131,7 @@
       "at": "0:55",
       "fail": [],
       "warn": [
-        "reuse: on screen 15.8s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 16.64 < 18.0"
+        "reuse: on screen 15.8s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
@@ -344,9 +143,7 @@
       "t": 66.02,
       "at": "1:06",
       "fail": [],
-      "warn": [
-        "low detail: luma std 16.83 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     },
     {
@@ -357,9 +154,7 @@
       "t": 71.27,
       "at": "1:11",
       "fail": [],
-      "warn": [
-        "low detail: luma std 15.36 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     },
     {
@@ -369,10 +164,7 @@
       "title": "own code graphic r18_shell",
       "t": 77.56,
       "at": "1:18",
-      "fail": [
-        "low detail: luma std 8.99 < 13.44 and edge density 0.0189 < 0.0259 (absolute floor)",
-        "noise: grain 6.36 over structure 4.71, 8x-downscaled std 5.5 < 13.44 and edge 0.013 < 0.0259"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -384,9 +176,7 @@
       "t": 83.99,
       "at": "1:24",
       "fail": [],
-      "warn": [
-        "low detail: luma std 13.9 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     },
     {
@@ -396,9 +186,7 @@
       "title": "own code graphic r20_21_oort_shell",
       "t": 97.63,
       "at": "1:38",
-      "fail": [
-        "low detail: luma std 11.94 < 13.44 and edge density 0.0201 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [
         "reuse: on screen 22.5s in a row (look at it: 15s is a lot for one picture)"
       ],
@@ -413,8 +201,7 @@
       "at": "2:01",
       "fail": [],
       "warn": [
-        "reuse: on screen 23.6s in a row (look at it: 15s is a lot for one picture)",
-        "low detail: luma std 17.39 < 18.0"
+        "reuse: on screen 23.6s in a row (look at it: 15s is a lot for one picture)"
       ],
       "offset": 0.0
     },
@@ -436,11 +223,10 @@
       "title": "own code graphic r28_hale_bopp_2",
       "t": 146.08,
       "at": "2:26",
-      "fail": [
-        "low detail: luma std 11.83 < 13.44 and edge density 0.0092 < 0.0259 (absolute floor)",
-        "noise: grain 6.51 over structure 6.8, 8x-downscaled std 7.94 < 13.44 and edge 0.0229 < 0.0259"
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.069 < film p5 0.0695"
       ],
-      "warn": [],
       "offset": 0.0
     },
     {
@@ -450,10 +236,7 @@
       "title": "own code graphic r29_sky",
       "t": 152.28,
       "at": "2:32",
-      "fail": [
-        "low detail: luma std 12.14 < 13.44 and edge density 0.0093 < 0.0259 (absolute floor)",
-        "noise: grain 6.68 over structure 6.95, 8x-downscaled std 8.14 < 13.44 and edge 0.025 < 0.0259"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -465,9 +248,7 @@
       "t": 157.63,
       "at": "2:38",
       "fail": [],
-      "warn": [
-        "low detail: luma std 13.46 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     },
     {
@@ -477,9 +258,7 @@
       "title": "own code graphic r31_sky_fade",
       "t": 161.93,
       "at": "2:42",
-      "fail": [
-        "low detail: luma std 13.27 < 13.44 and edge density 0.0105 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -490,9 +269,7 @@
       "title": "own code graphic r33_traffic",
       "t": 168.24,
       "at": "2:48",
-      "fail": [
-        "low detail: luma std 11.82 < 13.44 and edge density 0.0197 < 0.0259 (absolute floor)"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -504,9 +281,7 @@
       "t": 177.99,
       "at": "2:58",
       "fail": [],
-      "warn": [
-        "low detail: luma std 17.49 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     },
     {
@@ -517,14 +292,12 @@
       "t": 186.27,
       "at": "3:06",
       "fail": [],
-      "warn": [
-        "low detail: luma std 14.64 < 18.0"
-      ],
+      "warn": [],
       "offset": 0.0
     }
   ],
   "polish": {
-    "edge_floor": 0.0093,
+    "edge_floor": 0.0695,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

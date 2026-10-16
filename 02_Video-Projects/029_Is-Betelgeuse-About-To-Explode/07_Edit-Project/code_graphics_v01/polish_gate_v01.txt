@@ -1,15 +1,15 @@
-r03_r04_promise    11.5s code_graphic_029_r03_r04_pro FAIL noise: grain 7.6 over structure 10.33, 8x-downscaled std 10.76 < 13.44 and edge 0.0258 < 0.0259
-r05_scale    26.3s code_graphic_029_r05_scale_v FAIL low detail: luma std 11.71 < 13.44 and edge density 0.0192 < 0.0259 (absolute floor); noise: grain 6.89 over structure 8.54, 8x-downscaled std 8.8 < 13.44 and edge 0.0106 < 0.0259
-r09_finder    35.9s code_graphic_029_r09_finder_ FAIL low detail: luma std 8.3 < 13.44 and edge density 0.0036 < 0.0259 (absolute floor)
-r10_r11_dip    49.0s code_graphic_029_r10_r11_dip FAIL low detail: luma std 11.21 < 13.44 and edge density 0.0118 < 0.0259 (absolute floor)
-r15_dip    58.4s code_graphic_029_r15_dip_v01 FAIL low detail: luma std 11.81 < 13.44 and edge density 0.0134 < 0.0259 (absolute floor)
-r17_r20_shells    85.2s code_graphic_029_r17_r20_she ok
+r03_r04_promise    11.5s code_graphic_029_r03_r04_pro ok
+r05_scale    26.3s code_graphic_029_r05_scale_v ok
+r09_finder    35.9s code_graphic_029_r09_finder_ ok
+r10_r11_dip    49.0s code_graphic_029_r10_r11_dip ok
+r15_dip    58.4s code_graphic_029_r15_dip_v01 ok
+r17_r20_shells    85.2s code_graphic_029_r17_r20_she WARN low detail: edge density 0.0558 < film p5 0.0583
 r21_hero   111.9s code_graphic_029_r21_hero_v0 ok
-r22_subscribe   116.5s code_graphic_029_r22_subscri FAIL low detail: luma std 8.98 < 13.44 and edge density 0.0064 < 0.0259 (absolute floor)
-r23_paranal   121.9s code_graphic_029_r23_paranal FAIL low detail: luma std 8.97 < 13.44 and edge density 0.0077 < 0.0259 (absolute floor)
-r25_orion   129.1s code_graphic_029_r25_orion_v WARN low detail: luma std 13.47 < 18.0
-r27_orion   142.3s code_graphic_029_r27_orion_v FAIL low detail: luma std 9.95 < 13.44 and edge density 0.0072 < 0.0259 (absolute floor)
-r29_span_astrolabe   163.3s code_graphic_029_r29_span_as WARN low detail: luma std 14.73 < 18.0
-r31_shells_twins   184.5s code_graphic_029_r31_shells_ WARN low detail: luma std 16.5 < 18.0
+r22_subscribe   116.5s code_graphic_029_r22_subscri ok
+r23_paranal   121.9s code_graphic_029_r23_paranal ok
+r25_orion   129.1s code_graphic_029_r25_orion_v ok
+r27_orion   142.3s code_graphic_029_r27_orion_v ok
+r29_span_astrolabe   163.3s code_graphic_029_r29_span_as ok
+r31_shells_twins   184.5s code_graphic_029_r31_shells_ ok
 r35_song   198.7s code_graphic_029_r35_song_v0 ok
-polish gate FAIL: 8 of 14 rows failed, 3 to look at -> /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/code_graphics_v01/polish_gate_v01.json
+polish gate PASS: 0 of 14 rows failed, 1 to look at -> 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/code_graphics_v01/polish_gate_v01.json

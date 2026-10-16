@@ -1,21 +1,21 @@
-r04_shower_shell     6.1s code_graphic_028_r04_shower_ FAIL low detail: luma std 12.58 < 13.44 and edge density 0.0233 < 0.0259 (absolute floor)
-r05_drift_path_sky    14.9s code_graphic_028_r05_drift_p FAIL low detail: luma std 9.16 < 13.44 and edge density 0.0097 < 0.0259 (absolute floor); noise: grain 6.64 over structure 4.08, 8x-downscaled std 5.03 < 13.44 and edge 0.0233 < 0.0259
+r04_shower_shell     6.1s code_graphic_028_r04_shower_ ok
+r05_drift_path_sky    14.9s code_graphic_028_r05_drift_p ok
 r07_kdwarf    19.3s code_graphic_028_r07_kdwarf_ ok
-r09_drift    27.9s code_graphic_028_r09_drift_v WARN low detail: luma std 14.88 < 18.0
-r14_hipparcos_card    41.0s code_graphic_028_r14_hipparc FAIL noise: grain 8.01 over structure 10.05, 8x-downscaled std 10.66 < 13.44 and edge 0.0244 < 0.0259
-r15_16_path    55.1s code_graphic_028_r15_16_path WARN low detail: luma std 16.64 < 18.0
-r17_scale_a    66.0s code_graphic_028_r17_scale_a WARN low detail: luma std 16.83 < 18.0
-r17_scale_b    71.3s code_graphic_028_r17_scale_b WARN low detail: luma std 15.36 < 18.0
-r18_shell    77.6s code_graphic_028_r18_shell_v FAIL low detail: luma std 8.99 < 13.44 and edge density 0.0189 < 0.0259 (absolute floor); noise: grain 6.36 over structure 4.71, 8x-downscaled std 5.5 < 13.44 and edge 0.013 < 0.0259
-r19_subscribe    84.0s code_graphic_028_r19_subscri WARN low detail: luma std 13.9 < 18.0
-r20_21_oort_shell    97.6s code_graphic_028_r20_21_oort FAIL low detail: luma std 11.94 < 13.44 and edge density 0.0201 < 0.0259 (absolute floor)
-r24_25_shower   120.7s code_graphic_028_r24_25_show WARN low detail: luma std 17.39 < 18.0
+r09_drift    27.9s code_graphic_028_r09_drift_v ok
+r14_hipparcos_card    41.0s code_graphic_028_r14_hipparc ok
+r15_16_path    55.1s code_graphic_028_r15_16_path ok
+r17_scale_a    66.0s code_graphic_028_r17_scale_a ok
+r17_scale_b    71.3s code_graphic_028_r17_scale_b ok
+r18_shell    77.6s code_graphic_028_r18_shell_v ok
+r19_subscribe    84.0s code_graphic_028_r19_subscri ok
+r20_21_oort_shell    97.6s code_graphic_028_r20_21_oort ok
+r24_25_shower   120.7s code_graphic_028_r24_25_show ok
 r27_shower   137.7s code_graphic_028_r27_shower_ ok
-r28_hale_bopp_2   146.1s code_graphic_028_r28_hale_bo FAIL low detail: luma std 11.83 < 13.44 and edge density 0.0092 < 0.0259 (absolute floor); noise: grain 6.51 over structure 6.8, 8x-downscaled std 7.94 < 13.44 and edge 0.0229 < 0.0259
-r29_sky   152.3s code_graphic_028_r29_sky_v02 FAIL low detail: luma std 12.14 < 13.44 and edge density 0.0093 < 0.0259 (absolute floor); noise: grain 6.68 over structure 6.95, 8x-downscaled std 8.14 < 13.44 and edge 0.025 < 0.0259
-r31_sky   157.6s code_graphic_028_r31_sky_v02 WARN low detail: luma std 13.46 < 18.0
-r31_sky_fade   161.9s code_graphic_028_r31_sky_fad FAIL low detail: luma std 13.27 < 13.44 and edge density 0.0105 < 0.0259 (absolute floor)
-r33_traffic   168.2s code_graphic_028_r33_traffic FAIL low detail: luma std 11.82 < 13.44 and edge density 0.0197 < 0.0259 (absolute floor)
-r34_traffic   178.0s code_graphic_028_r34_traffic WARN low detail: luma std 17.49 < 18.0
-r37_shell   186.3s code_graphic_028_r37_shell_v WARN low detail: luma std 14.64 < 18.0
-polish gate FAIL: 9 of 20 rows failed, 9 to look at -> /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/code_graphics_v02/polish_gate_v02.json
+r28_hale_bopp_2   146.1s code_graphic_028_r28_hale_bo WARN low detail: edge density 0.069 < film p5 0.0695
+r29_sky   152.3s code_graphic_028_r29_sky_v02 ok
+r31_sky   157.6s code_graphic_028_r31_sky_v02 ok
+r31_sky_fade   161.9s code_graphic_028_r31_sky_fad ok
+r33_traffic   168.2s code_graphic_028_r33_traffic ok
+r34_traffic   178.0s code_graphic_028_r34_traffic ok
+r37_shell   186.3s code_graphic_028_r37_shell_v ok
+polish gate PASS: 0 of 20 rows failed, 1 to look at -> 02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/code_graphics_v02/polish_gate_v02.json
