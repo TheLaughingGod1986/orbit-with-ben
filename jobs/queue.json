@@ -23322,7 +23322,7 @@
     {
       "id": "J0307",
       "title": "HOS 013 Darwin–Wallace: script v02 after facts pass (J0304 flags + Chief 2nd-look chronology notes)",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "hos",
       "body": "Script v02 of HOS 013 Darwin–Wallace. v01 (HOS 9db5a26) has Chief PASS on J0299, and the Gemini facts pass J0304 runs on it first. This job runs after J0304 and folds in (a) every line J0304 FLAGs for cutting or softening, as accepted by Chief at J0304's review, and (b) the second-look Chief notes below (Chief review sweep, 15 Oct ~18:05 London): four spoken chronology slips and one age word that the PASS didn't catch. Change only those lines; keep everything else in v01 as is.\n\nFile: 02_Video-Projects/013_Darwin-Wallace-Evolution/01_Script/darwin_script_master_v02.md (copy v01, then edit). Update FACT_NOTES to v02 with the new rows.\n\n1. Part 03, 1844 order. The sealed essay and the letter to Emma (5 July 1844) came BEFORE *Vestiges* (published October 1844). v01's \"In 1844, an unsigned book ... torn apart ... So that year he wrote out his theory\" implies the book caused the essay. Reorder so the essay comes first, then the book: e.g. \"In 1844 he wrote it all out, about 230 pages, sealed it, and left Emma a letter ... A few months later, an unsigned book claiming life had changed over time was torn apart by scientists.\" Keep \"like confessing a murder\" (Hooker, 11 Jan 1844) and the Emma line.\n2. Part 04, grief order. Darwin's \"rather lose the credit than seem unfair\" letter to Lyell is 25 June 1858; Charles Waring Darwin died 28 June. v01's \"that same month, his baby son died ... In grief, Darwin said he would rather lose the credit\" reverses them. Put the fairness line first, then the death (\"Three days later, his baby son died of scarlet fever.\"). Part 05's \"grieving for his son\" on 1 July stays (correct).\n3. Part 05, \"neither had been asked how it should be done\" is wrong for Darwin: he put the matter in Lyell's and Hooker's hands. Say Wallace was never asked (e.g. \"Wallace hadn't even been asked. He was still in the islands, and didn't know for months.\").\n4. Part 05, first printing. The ~1,250 copies were all taken by booksellers at Murray's trade sale on 22 Nov 1859, two days before the 24 Nov publication date. Replace \"took the whole first printing on the first day\" with the stronger true fact: booksellers had ordered every copy before it even went on sale. Fix the 6:25 VISUAL MUST to match (DATA: about 1,250 copies, sold out before publication day; SCALE line likewise).\n5. Wallace was 35 in June 1858 (born 8 Jan 1823). Drop \"young\" for Wallace in Part 01 VO (\"a letter arrived from a collector on the other side of the world\") and in the 0:52 VISUAL (a man in his mid-thirties). \"Young man who didn't even label his birds\" stays (that is Darwin, 26 in 1835).\n\nSoft (no change needed): 11 WHO cards instead of v00's 14 is accepted, since the cut people aren't spoken; don't add names to reach 14.\n\nKeep 1,200–1,300 spoken words, Part 01 cold, both after-act tags. Re-run review:script (must stay >= 90). Spend nothing: no TTS, no picture, no paid API, no Studio change. For the new or reordered claims (Vestiges Oct 1844 vs essay July 1844; 25 June letter vs 28 June death; Murray trade sale 22 Nov), add FACT_NOTES rows with open URL + verbatim excerpt. Commit to HOS main, post a short diff summary on desk HOS #180, then `python3 scripts/jobs.py block <id> --agent <you> --reason \"parked for Chief: 013 script v02 review\" --git`.\n",
       "ref": "9db5a26",
@@ -23342,9 +23342,23 @@
           "at": "2026-10-15T17:04Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-16T09:31Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 99 min (heartbeat 2026-10-16T07:51:05Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
-      "kind": "script"
+      "kind": "script",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J0308",
