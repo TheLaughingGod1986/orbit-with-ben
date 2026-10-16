@@ -60,7 +60,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0382 | mini | blocked | gemini | – | chart · 028 & 029 code graphics: fix polish_gate/picture_qa low-detail and noise FAILs (028 9/20, 029 8/14; £0, no spend) | a02c802e |
 | J0383 | mini | blocked | gemini | – | chart · HOS 007–010 code graphics: fix polish_gate/picture_qa low-detail, seam and noise FAILs (£0, no spend) | cd081035 |
 | J0384 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0385 | any | claimed | gemini | 2026-10-16T17:27Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0385 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
