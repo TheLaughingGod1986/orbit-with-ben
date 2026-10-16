@@ -63,3 +63,17 @@ In `029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/build_code_graphics_v01.p
 - **Chapter 3 (`How a Giant Star Dies`)**: `r17_r20_shells` carries `"less than a second"` (no digit) and `r21_hero` carries `"a mountain"`. At rough-cut overlay time, add a house pill with a numeral on a harvest plate (e.g. `"10 million years"` on `r17_sdo` `170.00–175.40 s`, or `< 1 second` / `"1 teaspoon"` if matching VO words).
 - **Chapter 4 (`The Night It Goes`)**: `r29_span_astrolabe` carries spelled-out `"five hundred years"` (`11.1–14.3 s`) and `"hundred thousand years"` (`21.5–23.44 s`) — converting `"five hundred years"` to `"500 years"` (or `"100,000 years"`) in `LABELS["r29_span_astrolabe"]` gives Chapter 4 an immediate `NUMBER` PASS.
 - **Chapter 5 (`So When?`)**: `r31_shells_twins` carries `"100,000 years"` and `r35_song` carries `"1054"` (`NUMBER` PASS).
+
+---
+
+## 5. Rendered Teaching Overlay Rows (`teaching_overlays_v01_pack/`, `J0375`)
+
+Rendered by `07_Edit-Project/_overlay_gliese_v01.py` (`J0375`): 7 house pill overlays (`code_graphic_028_*.png`) across Chapters `3`–`6`, before/after reel (`/private/tmp/028_teaching_overlays_v01_{before,after}.mp4`), before/after contact sheet (`teaching_overlays_v01_pack/overlay_stills_028_v01.jpg`), and QA gate outputs:
+
+```
+WARN   0:09 row r26_hale_bopp comet_a3.jpg: low detail: edge density 0.0156 < film p5 0.0187
+WARN   0:31 row r33_wise_craft wise_craft.jpg: kind of picture: 'NEOWISE spacecraft, artist concept (PIA17254)' (artist), look at it full size
+picture QA PASS: 0 of 7 cuts fail, 2 to look at -> 02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/teaching_overlays_v01_pack/picture_qa_v01/PICTURE_QA.md, 02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/teaching_overlays_v01_pack/picture_qa_v01/picture_qa_review.jpg
+polish gate PASS: 0 of 7 rows failed, 1 to look at -> 02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/teaching_overlays_v01_pack/polish_gate_v01.json
+```
+
