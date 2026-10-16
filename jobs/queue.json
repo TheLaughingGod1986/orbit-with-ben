@@ -28220,13 +28220,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-16T10:11Z",
-      "eta": "2026-10-16T12:11Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-16T09:51Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (024 light_speed_twin_trip_v01, 26.7s, 61 words, gate PASS 0 warnings, sfx PASS, sha256 d24c4ff9, commit 626521bf)",
       "history": [
         {
           "at": "2026-10-16T09:51Z",
@@ -28277,6 +28277,11 @@
           "at": "2026-10-16T10:59Z",
           "by": "gemini",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-10-16T10:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (024 light_speed_twin_trip_v01, 26.7s, 61 words, gate PASS 0 warnings, sfx PASS, sha256 d24c4ff9, commit 626521bf)"
         }
       ],
       "kind": "assembly",
