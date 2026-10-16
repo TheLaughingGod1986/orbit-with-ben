@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0364 | any | claimed | claude | 2026-10-16T09:51Z | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0365 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0366 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0367 | any | claimed | gemini | 2026-10-16T10:43Z | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0367 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
