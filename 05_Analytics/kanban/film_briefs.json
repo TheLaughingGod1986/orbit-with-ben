@@ -356,10 +356,10 @@
       "watchFrom": "v01l"
     },
     "OWB:028": {
-      "updated": "2026-10-15T23:55Z",
+      "updated": "2026-10-16T00:55Z",
       "mood": "good",
       "done": "Script, voice, shot list and 7 code graphics.",
-      "holdup": "Shot boards v02 passed and are merged. The free code graphics are next (J0338). Its two paid Veo shots (279 credits) wait their turn after HOS 006-009, or for the ~12 Nov credit renewal.",
+      "holdup": "Teaching graphics passed and are merged. Gathering the 33 free licensed shots is next. Its two paid Veo shots (279 credits) wait their turn after HOS 006-009, or for the ~12 Nov credit renewal.",
       "steps": [
         {
           "who": "Cursor",
@@ -379,7 +379,9 @@
         {
           "who": "Cursor",
           "what": "free code graphics from boards v02",
-          "job": "J0338"
+          "job": "J0338",
+          "done": true,
+          "doneText": "PASS, merged · Fri 16 Oct"
         },
         {
           "who": "Cursor",
@@ -392,10 +394,10 @@
       "line": "Script and voice done. Shot boards are being written now (J0310), then the Chief prices the picture."
     },
     "OWB:029": {
-      "updated": "2026-10-15T21:55Z",
+      "updated": "2026-10-16T00:55Z",
       "mood": "good",
       "done": "Script, voice, shot list (39 rows) and 6 code graphics.",
-      "holdup": "The shot boards v01 passed the Chief's price check with changes: no paid credits expected, two Omni clips wait on a fresh price (else free Orbit reuse). Cursor writes boards v02 (J0330). Picture comes after 028.",
+      "holdup": "Shot boards v02 passed and are merged: no Flow credits at all, just free footage, free code graphics and two small Omni clips (about £1.30 of free promo credit, not yet authorised). The free code graphics are next (J0347).",
       "limit": "One picture (the Super-Kamiokande detector, row 24) needs its licence checked before it's used.",
       "steps": [
         {
@@ -408,7 +410,14 @@
         {
           "who": "Cursor",
           "what": "shot boards v02 with the Chief's changes",
-          "job": "J0330"
+          "job": "J0330",
+          "done": true,
+          "doneText": "v02 PASS, merged · Fri 16 Oct"
+        },
+        {
+          "who": "Codex",
+          "what": "free code graphics from boards v02",
+          "job": "J0347"
         },
         {
           "who": "Cursor",
@@ -638,10 +647,10 @@
       "youShort": "your final OK Sun 22 Nov"
     },
     "HOS:010": {
-      "updated": "2026-10-15T18:25Z",
+      "updated": "2026-10-16T00:55Z",
       "mood": "good",
       "done": "Script, fact check and upload package.",
-      "holdup": "Waiting its turn: its voiceover follows 009's.",
+      "holdup": "Shot boards v02 passed and are merged (about 12,400 Flow credits, no money). Picture waits for the ~12 Nov Flow renewal, after 006, 007, 008 and the first half of 009.",
       "steps": [
         {
           "who": "Cursor",
