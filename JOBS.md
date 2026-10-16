@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0325 | mini | blocked | cursor | – | 027 upload · assembly · 027 Earth Stopped Spinning: dry-run Private package for Sun 22 Nov (v01l picture lock, J0319 PASS) | 6200213333 |
 | J0345 | mini | blocked | cursor | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
-| J0348 | mini | open | – | – | 010 picture · chart · HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint | 6204962007 |
+| J0348 | mini | claimed | cursor | 2026-10-16T05:29Z | 010 picture · chart · HOS 010: build the 13 £0 code graphics from boards v02 (PRICE_REVIEW_v02 §1), no mint | 6204962007 |
 | J0351 | mini | open | – | – | 006 edit · assembly · HOS 006: lay teach_overlays_v01 into full_join_v01 (no bed, no mint) |  |
 | J0352 | mini | open | – | – | 007 picture · video · `flow-veo-3.1` · HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex) | 6206755581 |
 | J0353 | mini | open | – | – | 029 picture · assembly · 029 Betelgeuse: £0 harvest of 47 harvest-route plates from boards v02 (no mint) | 1624dde65effbb6002917390a510e89e15278f82 |
