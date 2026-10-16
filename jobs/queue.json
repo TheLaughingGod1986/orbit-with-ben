@@ -1,5 +1,5 @@
 {
-  "next_id": 357,
+  "next_id": 358,
   "jobs": [
     {
       "id": "J0001",
@@ -26960,6 +26960,33 @@
       ],
       "kind": "assembly",
       "backlog": "owb-short-from-locked"
+    },
+    {
+      "id": "J0357",
+      "title": "030 Apophis Short BbsyFrV8kCY: move publishAt from Thu 22 Oct 11:30 (clashes with Saturn 82Ao0v5XiQI) to Wed 28 Oct 11:30 London",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Claude, daily tracker check 16 Oct 2026 (UPCOMING_SHORTS_GATE.md, 06:40 London): two OWB Shorts are scheduled for the same minute, Thu 22 Oct 11:30 London (publishAt 2026-10-22T10:30:00Z):\n- 82Ao0v5XiQI \"Are Saturn's Rings Younger Than Saturn?\" (set in J0236's batch)\n- BbsyFrV8kCY \"An Asteroid Will Skim Past Earth on Friday the 13th\" (030 Apophis Short, J0284 PASS)\n\nThe house cadence is one Short a day at 11:30 London. Wed 28 Oct is the free weekday slot in the next 14 days.\n\nDo: move BbsyFrV8kCY only to publishAt 2026-10-28T11:30:00Z (Wed 28 Oct 11:30 London; GMT from 25 Oct, so 11:30Z). Use videos.update on status.publishAt and keep privacyStatus private. Do not touch the title, description, containsSyntheticMedia (true) or the cover. Read back privacy, publishAt and containsSyntheticMedia and post them on #99. Rerun gate_upcoming.py so the gate shows one Short per slot. If J0287 (Buffer mirror) carries a date for this Short, update it to 28 Oct. No spend, nothing deleted. If the Chief would rather move the Saturn Short, follow the Chief.\n",
+      "ref": "",
+      "film": "030",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-16T06:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-16T06:19Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
