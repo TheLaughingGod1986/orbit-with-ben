@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0430 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0431 | mini | claimed | gemini | 2026-10-17T04:41Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0432 | mini | open | – | – | assembly · OWB Shorts: fix polish_gate/picture_qa seam & near-black FAILs on 020/021/025 Shorts and standalone s1/s3/s4/s6/s8 (£0, no spend, no upload) |  |
+| J0433 | mini | open | – | – | assembly · HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) |  |
 
 Recently finished:
 
