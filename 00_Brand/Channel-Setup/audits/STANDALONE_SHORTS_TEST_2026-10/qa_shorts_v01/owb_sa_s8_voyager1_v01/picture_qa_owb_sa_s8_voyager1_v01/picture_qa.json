@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s8_voyager1_v01.mp4",
+  "verdict": "PASS",
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s8_voyager1_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,7 +11,8 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
+  "failed": [],
+  "warn": [
     {
       "cut": 0,
       "row": "s01_PIA04495",
@@ -19,9 +20,7 @@
       "title": "Artist Concept of Voyager",
       "t": 2.3,
       "at": "0:02",
-      "fail": [
-        "near-black: mean 26.96, p95 118.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: 'Artist Concept of Voyager' (artist), look at it full size"
       ],
@@ -34,13 +33,24 @@
       "title": "Voyager in Space Artist Concept",
       "t": 5.75,
       "at": "0:06",
-      "fail": [
-        "near-black: mean 8.49, p95 51.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: 'Voyager in Space Artist Concept' (artist), look at it full size"
       ],
       "offset": 4.6
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA17464",
+      "source": "PIA17464.jpg",
+      "title": "Voyager 1 Launch 1977",
+      "t": 15.93,
+      "at": "0:16",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0211 < film p5 0.0211"
+      ],
+      "offset": 14.12
     },
     {
       "cut": 5,
@@ -49,16 +59,13 @@
       "title": "End-card loop: Artist Concept of Voyager",
       "t": 19.24,
       "at": "0:19",
-      "fail": [
-        "near-black: mean 20.69, p95 41.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: 'End-card loop: Artist Concept of Voyager' (artist), look at it full size"
       ],
       "offset": 17.74
     }
   ],
-  "warn": [],
   "rows": [
     {
       "cut": 0,
@@ -67,9 +74,7 @@
       "title": "Artist Concept of Voyager",
       "t": 2.3,
       "at": "0:02",
-      "fail": [
-        "near-black: mean 26.96, p95 118.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: 'Artist Concept of Voyager' (artist), look at it full size"
       ],
@@ -82,9 +87,7 @@
       "title": "Voyager in Space Artist Concept",
       "t": 5.75,
       "at": "0:06",
-      "fail": [
-        "near-black: mean 8.49, p95 51.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: 'Voyager in Space Artist Concept' (artist), look at it full size"
       ],
@@ -120,7 +123,9 @@
       "t": 15.93,
       "at": "0:16",
       "fail": [],
-      "warn": [],
+      "warn": [
+        "low detail: edge density 0.0211 < film p5 0.0211"
+      ],
       "offset": 14.12
     },
     {
@@ -130,9 +135,7 @@
       "title": "End-card loop: Artist Concept of Voyager",
       "t": 19.24,
       "at": "0:19",
-      "fail": [
-        "near-black: mean 20.69, p95 41.0"
-      ],
+      "fail": [],
       "warn": [
         "kind of picture: 'End-card loop: Artist Concept of Voyager' (artist), look at it full size"
       ],
@@ -140,7 +143,7 @@
     }
   ],
   "polish": {
-    "edge_floor": 0.0176,
+    "edge_floor": 0.0211,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

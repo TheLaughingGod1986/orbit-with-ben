@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
+  "verdict": "PASS",
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,7 +11,21 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
+  "failed": [],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "s01_webb_weic2310a",
+      "source": "webb_weic2310a.jpg",
+      "title": "NASA webb_weic2310a (This Planet Has 21-Year Winters)",
+      "t": 2.95,
+      "at": "0:03",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0143 < film p5 0.0145"
+      ],
+      "offset": 0.0
+    },
     {
       "cut": 1,
       "row": "s02_PIA00143",
@@ -19,26 +33,11 @@
       "title": "Uranus - Final Image",
       "t": 7.9,
       "at": "0:08",
-      "fail": [
-        "near-black: mean 14.74, p95 120.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.16x, may look soft"
       ],
       "offset": 5.9
-    },
-    {
-      "cut": 2,
-      "row": "s03_PIA18182",
-      "source": "PIA18182.jpg",
-      "title": "Uranus as seen by NASA Voyager 2",
-      "t": 11.3,
-      "at": "0:11",
-      "fail": [
-        "split panel: horizontal gutter at 0.248"
-      ],
-      "warn": [],
-      "offset": 9.9
     },
     {
       "cut": 3,
@@ -47,9 +46,7 @@
       "title": "Uranus",
       "t": 14.45,
       "at": "0:14",
-      "fail": [
-        "near-black: mean 11.15, p95 73.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.07x, may look soft"
       ],
@@ -62,28 +59,11 @@
       "title": "Color Voyager 2 Image Showing Crescent Uranus",
       "t": 17.18,
       "at": "0:17",
-      "fail": [
-        "near-black: mean 13.3, p95 74.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.16x, may look soft"
       ],
       "offset": 16.2
-    }
-  ],
-  "warn": [
-    {
-      "cut": 0,
-      "row": "s01_webb_weic2310a",
-      "source": "webb_weic2310a.jpg",
-      "title": "NASA webb_weic2310a (This Planet Has 21-Year Winters)",
-      "t": 2.95,
-      "at": "0:03",
-      "fail": [],
-      "warn": [
-        "low detail: edge density 0.0142 < film p5 0.0144"
-      ],
-      "offset": 0.0
     }
   ],
   "rows": [
@@ -96,7 +76,7 @@
       "at": "0:03",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0142 < film p5 0.0144"
+        "low detail: edge density 0.0143 < film p5 0.0145"
       ],
       "offset": 0.0
     },
@@ -107,9 +87,7 @@
       "title": "Uranus - Final Image",
       "t": 7.9,
       "at": "0:08",
-      "fail": [
-        "near-black: mean 14.74, p95 120.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.16x, may look soft"
       ],
@@ -122,9 +100,7 @@
       "title": "Uranus as seen by NASA Voyager 2",
       "t": 11.3,
       "at": "0:11",
-      "fail": [
-        "split panel: horizontal gutter at 0.248"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 9.9
     },
@@ -135,9 +111,7 @@
       "title": "Uranus",
       "t": 14.45,
       "at": "0:14",
-      "fail": [
-        "near-black: mean 11.15, p95 73.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.07x, may look soft"
       ],
@@ -150,9 +124,7 @@
       "title": "Color Voyager 2 Image Showing Crescent Uranus",
       "t": 17.18,
       "at": "0:17",
-      "fail": [
-        "near-black: mean 13.3, p95 74.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.16x, may look soft"
       ],
@@ -171,7 +143,7 @@
     }
   ],
   "polish": {
-    "edge_floor": 0.0144,
+    "edge_floor": 0.0145,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

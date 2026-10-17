@@ -35,20 +35,10 @@
       ]
     }
   },
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4",
-  "edge_floor": 0.0009,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s04_PIA21625",
-      "cut": 3,
-      "t": 16.29,
-      "source": "PIA21625.jpg",
-      "why": [
-        "near-black: mean 14.95, p95 65.0"
-      ]
-    }
-  ],
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4",
+  "edge_floor": 0.001,
+  "verdict": "PASS",
+  "failed": [],
   "warn": [
     {
       "row": "s05_PIA14925",
@@ -56,7 +46,7 @@
       "t": 20.46,
       "source": "end_card_loop_PIA14925.jpg",
       "why": [
-        "low detail: edge density 0.0002 < film p5 0.0009"
+        "low detail: edge density 0.0002 < film p5 0.0010"
       ]
     }
   ],
@@ -67,14 +57,14 @@
       "row": "s01_PIA14925",
       "source": "PIA14925.jpg",
       "t": 2.15,
-      "std": 89.38,
-      "mean": 103.63,
+      "std": 89.36,
+      "mean": 106.99,
       "p95": 222.0,
-      "edge": 0.029,
-      "hf": 14.95,
-      "lf": 83.94,
-      "std8": 85.66,
-      "edge8": 0.1359,
+      "edge": 0.028,
+      "hf": 14.71,
+      "lf": 84.25,
+      "std8": 85.86,
+      "edge8": 0.1322,
       "seams": [],
       "video": true,
       "fail": [],
@@ -85,14 +75,14 @@
       "row": "s02_PIA06230",
       "source": "PIA06230.jpg",
       "t": 6.5,
-      "std": 56.47,
-      "mean": 31.7,
-      "p95": 176.0,
-      "edge": 0.0037,
-      "hf": 5.24,
-      "lf": 54.89,
-      "std8": 55.81,
-      "edge8": 0.0555,
+      "std": 54.71,
+      "mean": 39.51,
+      "p95": 178.0,
+      "edge": 0.004,
+      "hf": 5.35,
+      "lf": 53.16,
+      "std8": 54.03,
+      "edge8": 0.0565,
       "seams": [],
       "video": true,
       "fail": [],
@@ -103,14 +93,14 @@
       "row": "s03_PIA09739",
       "source": "PIA09739.jpg",
       "t": 11.16,
-      "std": 91.56,
-      "mean": 95.88,
-      "p95": 232.0,
-      "edge": 0.0246,
-      "hf": 13.87,
-      "lf": 87.41,
-      "std8": 89.25,
-      "edge8": 0.1157,
+      "std": 93.62,
+      "mean": 99.22,
+      "p95": 239.0,
+      "edge": 0.0249,
+      "hf": 13.94,
+      "lf": 89.61,
+      "std8": 91.38,
+      "edge8": 0.1166,
       "seams": [],
       "video": true,
       "fail": [],
@@ -121,19 +111,17 @@
       "row": "s04_PIA21625",
       "source": "PIA21625.jpg",
       "t": 16.29,
-      "std": 34.45,
-      "mean": 14.95,
-      "p95": 65.0,
-      "edge": 0.0125,
-      "hf": 7.65,
-      "lf": 27.96,
-      "std8": 31.86,
-      "edge8": 0.0871,
+      "std": 33.47,
+      "mean": 41.69,
+      "p95": 97.0,
+      "edge": 0.015,
+      "hf": 7.9,
+      "lf": 27.37,
+      "std8": 30.77,
+      "edge8": 0.0909,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 14.95, p95 65.0"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -141,19 +129,19 @@
       "row": "s05_PIA14925",
       "source": "end_card_loop_PIA14925.jpg",
       "t": 20.46,
-      "std": 88.6,
-      "mean": 75.58,
-      "p95": 220.0,
+      "std": 88.38,
+      "mean": 78.22,
+      "p95": 219.0,
       "edge": 0.0002,
-      "hf": 1.01,
-      "lf": 88.37,
-      "std8": 88.62,
-      "edge8": 0.0447,
+      "hf": 1.07,
+      "lf": 88.14,
+      "std8": 88.39,
+      "edge8": 0.0442,
       "seams": [],
       "video": true,
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0002 < film p5 0.0009"
+        "low detail: edge density 0.0002 < film p5 0.0010"
       ]
     }
   ]

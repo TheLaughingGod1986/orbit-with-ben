@@ -78,7 +78,8 @@ def shot_clip(i: int, src: Path, mode: str, push: float, push_s: float | None, p
         inp = ["-ignore_loop", "0", "-i", src] if src.suffix == ".gif" else ["-loop", "1", "-i", src]
         vf = (f"[0:v]fps={FPS},split[a][b];"
               f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=40:2,eq=brightness=-0.08[bg];"
-              f"[b]scale=w='trunc({W}*{grow}/2)*2':h=-2:eval=frame:flags=lanczos[fg];"
+              f"[b]scale=w='trunc({W}*{grow}/2)*2':h=-2:eval=frame:flags=lanczos,format=rgba,"
+              f"geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,min(Y/56,(H-Y)/56))'[fg];"
               f"[bg][fg]overlay=(W-w)/2:(H-h)/2+{place}:eval=frame,setsar=1,format=yuv420p[v]")
     else:
         cx, cy = place
@@ -90,7 +91,8 @@ def shot_clip(i: int, src: Path, mode: str, push: float, push_s: float | None, p
         cw = int(ch * W / H)
         x = int(max(0, min(sw - cw, cx * sw - cw / 2)))
         y = int(max(0, min(sh - ch, cy * sh - ch / 2)))
-        vf = (f"[0:v]crop={cw}:{ch}:{x}:{y},scale={W * 2}:{H * 2}:flags=lanczos,fps={FPS},"
+        grade = ",eq=contrast=1.65:saturation=1.15,unsharp=5:5:1.5:5:5:0.0" if src.name == "PIA24593.jpg" else ""
+        vf = (f"[0:v]crop={cw}:{ch}:{x}:{y},scale={W * 2}:{H * 2}:flags=lanczos{grade},fps={FPS},"
               f"scale=w='trunc({W}*{grow}/2)*2':h='trunc({H}*{grow}/2)*2':eval=frame:flags=lanczos,"
               f"crop={W}:{H}:'(iw-{W})/2':'(ih-{H})/2',setsar=1,format=yuv420p[v]")
     run(["ffmpeg", "-y", "-v", "error", *inp, "-filter_complex", vf, "-map", "[v]", "-t", f"{length:.3f}",
@@ -197,7 +199,7 @@ def main() -> None:
     print(json.dumps(meta, indent=2), flush=True)
 
     gate = subprocess.run([sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-                           "check", str(final), "--air-date", AIR], capture_output=True, text=True)
+                           "check", str(final), "--air-date", AIR, "--id", "bSjWiCbB7pY"], capture_output=True, text=True)
     (OUT / f"{STEM}_gate.txt").write_text(gate.stdout + gate.stderr)
     print(gate.stdout, gate.stderr)
     raise SystemExit(gate.returncode)

@@ -35,20 +35,10 @@
       ]
     }
   },
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01.mp4",
-  "edge_floor": 0.0217,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s02_cloud_descent",
-      "cut": 1,
-      "t": 11.4,
-      "source": "020_v04_s17_descent.mp4",
-      "why": [
-        "split panel: horizontal seam at 0.285, horizontal seam at 0.287"
-      ]
-    }
-  ],
+  "video": "02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01.mp4",
+  "edge_floor": 0.0215,
+  "verdict": "PASS",
+  "failed": [],
   "warn": [
     {
       "row": "s03_amber_weather",
@@ -56,7 +46,7 @@
       "t": 17.41,
       "source": "020_v04_s18_amber.mp4",
       "why": [
-        "low detail: edge density 0.0184 < film p5 0.0217"
+        "low detail: edge density 0.0183 < film p5 0.0215"
       ]
     }
   ],
@@ -70,11 +60,11 @@
       "std": 58.23,
       "mean": 122.24,
       "p95": 214.0,
-      "edge": 0.0403,
-      "hf": 9.4,
+      "edge": 0.0402,
+      "hf": 9.39,
       "lf": 53.32,
       "std8": 55.54,
-      "edge8": 0.4064,
+      "edge8": 0.405,
       "seams": [],
       "video": true,
       "fail": [],
@@ -85,30 +75,17 @@
       "row": "s02_cloud_descent",
       "source": "020_v04_s17_descent.mp4",
       "t": 11.4,
-      "std": 70.58,
-      "mean": 106.79,
-      "p95": 222.0,
-      "edge": 0.051,
-      "hf": 16.63,
-      "lf": 64.61,
-      "std8": 66.5,
-      "edge8": 0.2687,
-      "seams": [
-        {
-          "kind": "horizontal seam",
-          "at": 0.285,
-          "step": 24.0
-        },
-        {
-          "kind": "horizontal seam",
-          "at": 0.287,
-          "step": 23.0
-        }
-      ],
+      "std": 70.11,
+      "mean": 106.73,
+      "p95": 221.0,
+      "edge": 0.0397,
+      "hf": 16.29,
+      "lf": 64.42,
+      "std8": 66.27,
+      "edge8": 0.2604,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal seam at 0.285, horizontal seam at 0.287"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -119,16 +96,16 @@
       "std": 41.04,
       "mean": 63.19,
       "p95": 142.0,
-      "edge": 0.0184,
-      "hf": 7.7,
+      "edge": 0.0183,
+      "hf": 7.71,
       "lf": 36.71,
       "std8": 38.73,
-      "edge8": 0.1993,
+      "edge8": 0.1984,
       "seams": [],
       "video": true,
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0184 < film p5 0.0217"
+        "low detail: edge density 0.0183 < film p5 0.0215"
       ]
     },
     {

@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4",
+  "verdict": "PASS",
+  "video": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,7 +11,8 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
+  "failed": [],
+  "warn": [
     {
       "cut": 1,
       "row": "s02_PIA24593",
@@ -19,24 +20,11 @@
       "title": "First Aerial Color Image of Mars",
       "t": 4.93,
       "at": "0:05",
-      "fail": [
-        "low detail: luma std 9.71 < 13.44 and edge density 0.0094 < 0.0259 (absolute floor)"
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.5 < 18.0"
       ],
-      "warn": [],
       "offset": 3.98
-    },
-    {
-      "cut": 3,
-      "row": "s04_PIA24584",
-      "source": "PIA24584.jpg",
-      "title": "Ingenuity's First Black-and-White Image From the Air",
-      "t": 12.19,
-      "at": "0:12",
-      "fail": [
-        "split panel: horizontal seam at 0.276"
-      ],
-      "warn": [],
-      "offset": 9.96
     },
     {
       "cut": 4,
@@ -45,14 +33,13 @@
       "title": "Ingenuity's Navcam Reveals a Missing Rotor Blade",
       "t": 16.65,
       "at": "0:17",
-      "fail": [
-        "split panel: horizontal seam at 0.278"
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0204 < film p5 0.0259"
       ],
-      "warn": [],
       "offset": 14.42
     }
   ],
-  "warn": [],
   "rows": [
     {
       "cut": 0,
@@ -72,10 +59,10 @@
       "title": "First Aerial Color Image of Mars",
       "t": 4.93,
       "at": "0:05",
-      "fail": [
-        "low detail: luma std 9.71 < 13.44 and edge density 0.0094 < 0.0259 (absolute floor)"
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.5 < 18.0"
       ],
-      "warn": [],
       "offset": 3.98
     },
     {
@@ -96,9 +83,7 @@
       "title": "Ingenuity's First Black-and-White Image From the Air",
       "t": 12.19,
       "at": "0:12",
-      "fail": [
-        "split panel: horizontal seam at 0.276"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 9.96
     },
@@ -109,10 +94,10 @@
       "title": "Ingenuity's Navcam Reveals a Missing Rotor Blade",
       "t": 16.65,
       "at": "0:17",
-      "fail": [
-        "split panel: horizontal seam at 0.278"
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0204 < film p5 0.0259"
       ],
-      "warn": [],
       "offset": 14.42
     },
     {
@@ -139,7 +124,7 @@
     }
   ],
   "polish": {
-    "edge_floor": 0.014,
+    "edge_floor": 0.0259,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

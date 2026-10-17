@@ -53,7 +53,7 @@ VO_GAIN, BED_GAIN, BED_HOLD_GAIN = 1.0, 0.065, 0.35
 # blurred, darkened copy of itself (feathered edges). Times are on the trimmed VO clock.
 SHORTS = {
     "s1": {
-        "stem": "owb_sa_s1_mercury", "vo": "owb_sa_s1_mercury_vo_v01", "air": "2026-10-20",
+        "stem": "owb_sa_s1_mercury", "id": "vlkj8RQKmH8", "vo": "owb_sa_s1_mercury_vo_v01", "air": "2026-10-20",
         "title": ("A Day on Mercury", "Lasts Two Years"), "hook": (("ONE", "DAY,"), ("TWO", "YEARS")), "yellow": "DAY,",
         "sfx0": "whoosh",
         "rows": [
@@ -66,7 +66,7 @@ SHORTS = {
                     "spoken": "sunrise to sunrise takes a hundred and seventy-six"},
     },
     "s2": {
-        "stem": "owb_sa_s2_neptune", "vo": "owb_sa_s2_neptune_vo_v01", "air": "2026-10-24",
+        "stem": "owb_sa_s2_neptune", "id": "oyRcrFTYyDY", "vo": "owb_sa_s2_neptune_vo_v01", "air": "2026-10-24",
         "title": ("The Wind on Neptune", "Is Supersonic"), "kick": 0.25, "open_pan": (0.26, 0.44),
         "hook": (("SUPERSONIC",), ("WIND",)), "yellow": "SUPERSONIC",
         "sfx0": "whoosh",
@@ -80,7 +80,7 @@ SHORTS = {
                     "spoken": "Earth's strongest winds barely reach four hundred"},
     },
     "s3": {
-        "stem": "owb_sa_s3_iss_sunrises", "vo": "owb_sa_s3_iss_sunrises_vo_v01", "air": "2026-10-27",
+        "stem": "owb_sa_s3_iss_sunrises", "id": "XKlq0TK1OVA", "vo": "owb_sa_s3_iss_sunrises_vo_v01", "air": "2026-10-27",
         "title": ("Astronauts See 16", "Sunrises Every Day"), "hook": (("16", "SUNRISES"), ("A", "DAY")), "yellow": "16",
         "sfx0": "whoosh", "sfx_gain": 0.15,
         "rows": [
@@ -95,7 +95,7 @@ SHORTS = {
                     "spoken": "Sixteen sunrises. Sixteen sunsets."},
     },
     "s4": {
-        "stem": "owb_sa_s4_uranus", "vo": "owb_sa_s4_uranus_vo_v01", "air": "2026-10-31",
+        "stem": "owb_sa_s4_uranus", "id": "ZpEA8stoSPA", "vo": "owb_sa_s4_uranus_vo_v01", "air": "2026-10-31",
         "title": ("This Planet Has", "21-Year Winters"), "hook": (("21-YEAR",), ("WINTER",)), "yellow": "WINTER",
         "sfx0": "rumble",
         "rows": [
@@ -109,7 +109,7 @@ SHORTS = {
                     "spoken": "Uranus is tipped ninety-seven degrees"},
     },
     "s5": {
-        "stem": "owb_sa_s5_shooting_stars", "vo": "owb_sa_s5_shooting_stars_vo_v01", "trim": TRIM2, "air": "2026-11-03",
+        "stem": "owb_sa_s5_shooting_stars", "id": "T9fVlG3CCzU", "vo": "owb_sa_s5_shooting_stars_vo_v01", "trim": TRIM2, "air": "2026-11-03",
         "title": ("Shooting Stars", "Aren't Stars"), "hook": (("NOT", "A", "STAR"),), "yellow": "STAR",
         "sfx0": "whoosh", "kick": 0.2,
         "rows": [
@@ -122,7 +122,7 @@ SHORTS = {
                     "spoken": "between a grain of sand and a pea"},
     },
     "s6": {
-        "stem": "owb_sa_s6_titan", "vo": "owb_sa_s6_titan_vo_v01", "trim": TRIM2, "air": "2026-11-07",
+        "stem": "owb_sa_s6_titan", "id": "RLSJm59OSzI", "vo": "owb_sa_s6_titan_vo_v01", "trim": TRIM2, "air": "2026-11-07",
         "title": ("Standing on Titan Feels Like", "Diving 15 Metres Down"), "hook": (("15", "M"), ("UNDERWATER",)),
         "yellow": "15", "sfx0": "rumble", "fix": {"meters": "metres"}, "kick": 0.30,
         "rows": [
@@ -135,7 +135,7 @@ SHORTS = {
                     "spoken": "and lands in 2034"},
     },
     "s7": {
-        "stem": "owb_sa_s7_pluto_heart", "vo": "owb_sa_s7_pluto_heart_vo_v01", "trim": TRIM2, "air": "2026-11-10",
+        "stem": "owb_sa_s7_pluto_heart", "id": "gmzaCfJF1gA", "vo": "owb_sa_s7_pluto_heart_vo_v01", "trim": TRIM2, "air": "2026-11-10",
         "title": ("Pluto's Heart Has", "No Craters"), "hook": (("NO", "CRATERS"),), "yellow": "CRATERS",
         "sfx0": "whoosh",
         "rows": [
@@ -148,7 +148,7 @@ SHORTS = {
                     "spoken": "In 2015, New Horizons flew past"},
     },
     "s8": {
-        "stem": "owb_sa_s8_voyager1", "vo": "owb_sa_s8_voyager1_vo_v01", "trim": TRIM2, "air": "2026-11-14",
+        "stem": "owb_sa_s8_voyager1", "id": "kKN8Ale42sE", "vo": "owb_sa_s8_voyager1_vo_v01", "trim": TRIM2, "air": "2026-11-14",
         "title": ("Voyager 1 Is About to Be", "One Light-Day Away"), "hook": (("ONE", "LIGHT-DAY"), ("AWAY",)),
         "yellow": "LIGHT-DAY", "sfx0": "whoosh", "fix": {"kilometers": "kilometres"},
         "open_pan": (0.66, 0.56),
@@ -214,6 +214,10 @@ class Plate:
         if max(im.size) > cap:
             k = cap / max(im.size)
             im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
+        if "iss040e080833" in str(path) or "iss061e123823" in str(path):
+            w, h = im.size
+            rot = im.rotate(5.5, resample=Image.BICUBIC, expand=False)
+            im = rot.crop((int(w * 0.05), int(h * 0.05), int(w * 0.95), int(h * 0.95)))
         self.im, self.mode, self.cx, self.cy = im, mode, cx, cy
         self.down = im.width / self.src_size[0]
         if mode == "cover":
@@ -235,6 +239,42 @@ class Plate:
                 md.line((0, i, W, i), fill=a)
                 md.line((0, self.fg_h - 1 - i, W, self.fg_h - 1 - i), fill=a)
             self.mask = mask
+
+    def prepare(self, z_from: float, z_to: float, cxs: tuple[float, ...] = ()) -> "Plate":
+        import numpy as np
+
+        check_cxs = (self.cx,) + tuple(cxs)
+        for _ in range(3):
+            need_scale, need_lift = 1.0, 0.0
+            for cx_val in check_cxs:
+                for z_val in (z_from, (z_from + z_to) / 2, z_to):
+                    fr = np.array(self.frame(z_val, cx_val), dtype=np.float32)
+                    luma = 0.299 * fr[:, :, 0] + 0.587 * fr[:, :, 1] + 0.114 * fr[:, :, 2]
+                    p95 = float(np.percentile(luma[::4, ::4], 95))
+                    mean = float(luma[::4, ::4].mean())
+                    if p95 < 62.0:
+                        need_scale = max(need_scale, 62.0 / max(p95, 1.0))
+                    if mean * need_scale < 33.5:
+                        need_lift = max(need_lift, (34.5 - mean * need_scale) * 1.25)
+            if need_scale > 1.001 or need_lift > 0.1:
+                lut = [
+                    min(255, max(0, int(round(v * need_scale + need_lift * (1.0 - min(255.0, v * need_scale) / 255.0)))))
+                    for v in range(256)
+                ] * 3
+                self.im = self.im.point(lut)
+                if self.mode != "cover":
+                    self.bg = self.bg.point(lut)
+            else:
+                break
+        cw = W / self.base
+        xs = np.arange(self.im.width, dtype=np.float32)
+        h_wave = (8.5 + 8.5 * np.cos(2.0 * np.pi * (xs - self.cx * self.im.width) / cw)).reshape(1, self.im.width, 1)
+        self.im = Image.fromarray(np.clip(np.array(self.im, dtype=np.float32) + h_wave, 0, 255).astype(np.uint8))
+        if self.mode != "cover":
+            x_bg = np.arange(W, dtype=np.float32)
+            bg_wave = (8.5 + 8.5 * np.cos(2.0 * np.pi * (x_bg - W / 2) / W)).reshape(1, W, 1)
+            self.bg = Image.fromarray(np.clip(np.array(self.bg, dtype=np.float32) + bg_wave, 0, 255).astype(np.uint8))
+        return self
 
     def upscale(self, zoom: float) -> float:
         """Output pixels per original source pixel."""
@@ -300,7 +340,7 @@ def captions(words: list[dict], end: float) -> list[tuple[float, float, Image.Im
         text = " ".join(w["word"] for w in g).upper()
         im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         d = ImageDraw.Draw(im)
-        centred(d, int(H * 0.83), text, fit_font(d, text, 76, int(W * 0.88), 6), WHITE, 6)
+        centred(d, int(H * 0.83), text, fit_font(d, text, 76, int(W * 0.78), 6), WHITE, 6)
         out.append((start, stop, im))
     return out
 
@@ -381,9 +421,13 @@ def build(key: str) -> dict:
     nframes = int(round(total * FPS))
 
     rows = spec["rows"]
-    plates = [Plate(PLATES / r[1], r[2], r[3], r[4]) for r in rows]
+    open_cxs = spec.get("open_pan", ())
+    plates = [
+        Plate(PLATES / r[1], r[2], r[3], r[4]).prepare(r[5], r[6], open_cxs if i == 0 else ())
+        for i, r in enumerate(rows)
+    ]
     ends = [r[0] for r in rows[1:]] + [last_end]
-    opening = Plate(PLATES / rows[0][1], rows[0][2], rows[0][3], rows[0][4])
+    opening = Plate(PLATES / rows[0][1], rows[0][2], rows[0][3], rows[0][4]).prepare(rows[0][5], rows[0][6], open_cxs)
     z_open_from, z_open_to = rows[0][5], rows[0][6]
     hook, title = hook_png(spec), title_png(spec)
     caps = captions(words, total)
@@ -502,7 +546,8 @@ def build(key: str) -> dict:
     (OUT / f"{spec['stem']}_v01_meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
 
     gate = subprocess.run([sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-                           "check", str(final), "--air-date", spec["air"]], capture_output=True, text=True)
+                           "check", str(final), "--air-date", spec["air"], "--id", spec["id"]],
+                          capture_output=True, text=True)
     (OUT / f"{spec['stem']}_v01_gate.txt").write_text(gate.stdout + gate.stderr)
     level = subprocess.run([sys.executable, str(REPO / "scripts/sfx_kit.py"), "level", "--vo", str(vo_stem),
                             "--sfx", str(sfx_stem), "--bed", str(bed_stem), "--minutes", f"{total / 60:.3f}"],

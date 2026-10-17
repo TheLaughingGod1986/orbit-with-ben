@@ -218,10 +218,11 @@ def end_plate(dest: Path) -> None:
     run(["ffmpeg", "-y", "-v", "error", "-ss", f"{T0 + 0.02:.3f}", "-i", PICTURE, "-frames:v", "1",
          "-vf", "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos", WORK / "plate0.png"])
     im = Image.open(WORK / "plate0.png").convert("RGB")
-    im = ImageEnhance.Brightness(im).enhance(0.7)
+    im = Image.blend(im, im.filter(ImageFilter.GaussianBlur(16)), 0.65)
+    im = ImageEnhance.Brightness(im).enhance(0.82)
     shade = Image.new("L", (W, H), 0)
-    ImageDraw.Draw(shade).rectangle((0, BAND_Y0 - 40, W, BAND_Y0 + BAND_H + 40), fill=100)
-    shade = shade.filter(ImageFilter.GaussianBlur(60))
+    ImageDraw.Draw(shade).ellipse((80, BAND_Y0 - 20, W - 80, BAND_Y0 + BAND_H + 20), fill=95)
+    shade = shade.filter(ImageFilter.GaussianBlur(90))
     im = Image.composite(Image.new("RGB", (W, H)), im, shade)
     im.save(dest)
 
@@ -309,7 +310,7 @@ def main() -> None:
         inputs += ["-loop", "1", "-framerate", FPS, "-t", TOTAL, "-i", WORK / f"cap_{i:02d}.png"]
     end_frames = round(END_LEN * FPS) + 2
     fc = [
-        f"[0:v]fps={FPS},crop=ih*9/16:ih,scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p[a]",
+        f"[0:v]fps={FPS},crop=ih*9/16:ih,scale={W}:{H}:flags=lanczos,eq=brightness=0.02:gamma=1.12:enable='gte(t,10.4)',setsar=1,format=yuv420p[a]",
         f"[1:v]scale={W*2}:{H*2},zoompan=z='1.03-0.03*on/{end_frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
         f"d=1:s={W}x{H}:fps={FPS},trim=0:{END_LEN:.3f},setpts=PTS-STARTPTS,format=yuv420p[e]",
         "[e][5:v]overlay=0:0:shortest=1,format=yuv420p[ecard]",

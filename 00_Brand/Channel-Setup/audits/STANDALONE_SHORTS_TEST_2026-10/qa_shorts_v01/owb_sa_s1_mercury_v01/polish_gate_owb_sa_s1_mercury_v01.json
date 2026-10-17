@@ -35,46 +35,18 @@
       ]
     }
   },
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01.mp4",
-  "edge_floor": 0.0856,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s01_PIA11351",
-      "cut": 0,
-      "t": 2.75,
-      "source": "PIA11351.jpg",
-      "why": [
-        "near-black: mean 20.72, p95 112.0"
-      ]
-    },
-    {
-      "row": "s03_PIA12266",
-      "cut": 2,
-      "t": 12.4,
-      "source": "PIA12266.jpg",
-      "why": [
-        "split panel: horizontal seam at 0.841"
-      ]
-    },
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01.mp4",
+  "edge_floor": 0.0833,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
     {
       "row": "s05_PIA11351",
       "cut": 4,
       "t": 18.94,
       "source": "end_card_loop_PIA11351.jpg",
       "why": [
-        "near-black: mean 17.01, p95 99.0"
-      ]
-    }
-  ],
-  "warn": [
-    {
-      "row": "s02_PIA14083",
-      "cut": 1,
-      "t": 7.6,
-      "source": "PIA14083.jpg",
-      "why": [
-        "low detail: edge density 0.0842 < film p5 0.0856"
+        "low detail: edge density 0.0831 < film p5 0.0833"
       ]
     }
   ],
@@ -85,19 +57,17 @@
       "row": "s01_PIA11351",
       "source": "PIA11351.jpg",
       "t": 2.75,
-      "std": 39.72,
-      "mean": 20.72,
-      "p95": 112.0,
-      "edge": 0.1008,
-      "hf": 11.86,
-      "lf": 32.43,
-      "std8": 35.52,
-      "edge8": 0.1569,
+      "std": 36.35,
+      "mean": 45.84,
+      "p95": 129.0,
+      "edge": 0.0935,
+      "hf": 11.38,
+      "lf": 29.46,
+      "std8": 32.22,
+      "edge8": 0.1406,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 20.72, p95 112.0"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -105,45 +75,35 @@
       "row": "s02_PIA14083",
       "source": "PIA14083.jpg",
       "t": 7.6,
-      "std": 26.47,
-      "mean": 130.11,
-      "p95": 174.0,
-      "edge": 0.0842,
-      "hf": 11.56,
-      "lf": 17.45,
-      "std8": 20.47,
-      "edge8": 0.2387,
+      "std": 26.59,
+      "mean": 135.55,
+      "p95": 180.0,
+      "edge": 0.084,
+      "hf": 11.62,
+      "lf": 17.63,
+      "std8": 20.56,
+      "edge8": 0.2368,
       "seams": [],
       "video": true,
       "fail": [],
-      "warn": [
-        "low detail: edge density 0.0842 < film p5 0.0856"
-      ]
+      "warn": []
     },
     {
       "cut": 2,
       "row": "s03_PIA12266",
       "source": "PIA12266.jpg",
       "t": 12.4,
-      "std": 51.87,
-      "mean": 53.89,
-      "p95": 143.0,
-      "edge": 0.1114,
-      "hf": 17.37,
-      "lf": 39.55,
-      "std8": 44.64,
-      "edge8": 0.2147,
-      "seams": [
-        {
-          "kind": "horizontal seam",
-          "at": 0.841,
-          "step": 38.0
-        }
-      ],
+      "std": 50.61,
+      "mean": 58.42,
+      "p95": 147.0,
+      "edge": 0.1139,
+      "hf": 17.34,
+      "lf": 38.73,
+      "std8": 42.94,
+      "edge8": 0.2111,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal seam at 0.841"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -151,14 +111,14 @@
       "row": "s04_PIA13674",
       "source": "PIA13674.jpg",
       "t": 16.27,
-      "std": 37.29,
-      "mean": 128.25,
-      "p95": 188.0,
-      "edge": 0.0952,
-      "hf": 15.66,
-      "lf": 25.53,
-      "std8": 29.26,
-      "edge8": 0.2405,
+      "std": 38.07,
+      "mean": 129.19,
+      "p95": 192.0,
+      "edge": 0.0955,
+      "hf": 15.69,
+      "lf": 26.66,
+      "std8": 30.23,
+      "edge8": 0.2414,
       "seams": [],
       "video": true,
       "fail": [],
@@ -169,20 +129,20 @@
       "row": "s05_PIA11351",
       "source": "end_card_loop_PIA11351.jpg",
       "t": 18.94,
-      "std": 32.63,
-      "mean": 17.01,
-      "p95": 99.0,
-      "edge": 0.0913,
-      "hf": 9.93,
-      "lf": 28.2,
-      "std8": 29.44,
-      "edge8": 0.1182,
+      "std": 30.2,
+      "mean": 42.27,
+      "p95": 117.0,
+      "edge": 0.0831,
+      "hf": 9.2,
+      "lf": 26.15,
+      "std8": 27.27,
+      "edge8": 0.109,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 17.01, p95 99.0"
-      ],
-      "warn": []
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0831 < film p5 0.0833"
+      ]
     }
   ]
 }

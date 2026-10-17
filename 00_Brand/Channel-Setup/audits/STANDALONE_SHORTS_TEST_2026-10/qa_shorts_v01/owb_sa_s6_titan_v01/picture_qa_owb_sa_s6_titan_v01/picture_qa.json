@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4",
+  "verdict": "PASS",
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,21 +11,7 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 3,
-      "row": "s04_PIA21625",
-      "source": "PIA21625.jpg",
-      "title": "Highlighting Titan's Hazes",
-      "t": 16.29,
-      "at": "0:16",
-      "fail": [
-        "near-black: mean 14.95, p95 65.0"
-      ],
-      "warn": [],
-      "offset": 13.62
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 0,
@@ -75,7 +61,7 @@
       "at": "0:20",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0002 < film p5 0.0009"
+        "low detail: edge density 0.0002 < film p5 0.0010"
       ],
       "offset": 18.96
     }
@@ -127,9 +113,7 @@
       "title": "Highlighting Titan's Hazes",
       "t": 16.29,
       "at": "0:16",
-      "fail": [
-        "near-black: mean 14.95, p95 65.0"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 13.62
     },
@@ -142,13 +126,13 @@
       "at": "0:20",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0002 < film p5 0.0009"
+        "low detail: edge density 0.0002 < film p5 0.0010"
       ],
       "offset": 18.96
     }
   ],
   "polish": {
-    "edge_floor": 0.0009,
+    "edge_floor": 0.001,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

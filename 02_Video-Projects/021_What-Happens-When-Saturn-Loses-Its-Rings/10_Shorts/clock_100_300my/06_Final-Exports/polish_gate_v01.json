@@ -35,38 +35,10 @@
       ]
     }
   },
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01.mp4",
-  "edge_floor": 0.0127,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s03_pia12590",
-      "cut": 2,
-      "t": 12.99,
-      "source": "PIA12590.jpg",
-      "why": [
-        "near-black: mean 23.81, p95 193.0"
-      ]
-    },
-    {
-      "row": "s04_pia20530",
-      "cut": 3,
-      "t": 17.81,
-      "source": "PIA20530.jpg",
-      "why": [
-        "near-black: mean 26.69, p95 178.0"
-      ]
-    },
-    {
-      "row": "s05_end_loop",
-      "cut": 4,
-      "t": 21.88,
-      "source": "end_card_loop_PIA17127.mp4",
-      "why": [
-        "split panel: horizontal seam at 0.772, horizontal gutter at 0.624"
-      ]
-    }
-  ],
+  "video": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01.mp4",
+  "edge_floor": 0.0128,
+  "verdict": "PASS",
+  "failed": [],
   "warn": [
     {
       "row": "s01_pia17127",
@@ -74,7 +46,7 @@
       "t": 2.5,
       "source": "PIA17127.jpg",
       "why": [
-        "low detail: edge density 0.0125 < film p5 0.0127"
+        "low detail: edge density 0.0125 < film p5 0.0128"
       ]
     }
   ],
@@ -97,7 +69,7 @@
       "video": true,
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0125 < film p5 0.0127"
+        "low detail: edge density 0.0125 < film p5 0.0128"
       ]
     },
     {
@@ -123,19 +95,17 @@
       "row": "s03_pia12590",
       "source": "PIA12590.jpg",
       "t": 12.99,
-      "std": 60.13,
-      "mean": 23.81,
-      "p95": 193.0,
-      "edge": 0.0617,
-      "hf": 15.18,
-      "lf": 51.43,
-      "std8": 54.79,
-      "edge8": 0.1928,
+      "std": 59.49,
+      "mean": 36.5,
+      "p95": 206.0,
+      "edge": 0.0598,
+      "hf": 15.14,
+      "lf": 51.13,
+      "std8": 54.3,
+      "edge8": 0.194,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 23.81, p95 193.0"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -143,19 +113,17 @@
       "row": "s04_pia20530",
       "source": "PIA20530.jpg",
       "t": 17.81,
-      "std": 55.01,
-      "mean": 26.69,
-      "p95": 178.0,
-      "edge": 0.0133,
-      "hf": 6.7,
-      "lf": 51.32,
-      "std8": 53.2,
-      "edge8": 0.1584,
+      "std": 54.81,
+      "mean": 40.47,
+      "p95": 193.0,
+      "edge": 0.0141,
+      "hf": 6.76,
+      "lf": 51.33,
+      "std8": 53.11,
+      "edge8": 0.1595,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 26.69, p95 178.0"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -163,29 +131,17 @@
       "row": "s05_end_loop",
       "source": "end_card_loop_PIA17127.mp4",
       "t": 21.88,
-      "std": 60.19,
-      "mean": 54.86,
-      "p95": 171.0,
-      "edge": 0.0464,
-      "hf": 13.38,
-      "lf": 53.14,
-      "std8": 55.44,
-      "edge8": 0.1729,
-      "seams": [
-        {
-          "kind": "horizontal seam",
-          "at": 0.772,
-          "step": 19.0
-        },
-        {
-          "kind": "horizontal gutter",
-          "at": 0.624
-        }
-      ],
+      "std": 66.26,
+      "mean": 64.16,
+      "p95": 199.0,
+      "edge": 0.0183,
+      "hf": 12.67,
+      "lf": 60.69,
+      "std8": 62.43,
+      "edge8": 0.1673,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal seam at 0.772, horizontal gutter at 0.624"
-      ],
+      "fail": [],
       "warn": []
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01.mp4",
+  "verdict": "PASS",
+  "video": "02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,21 +11,7 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 1,
-      "row": "s02_cloud_descent",
-      "source": "020_v04_s17_descent.mp4",
-      "title": "Falling through Jupiter cream and amber cloud bands (020 v04 master s17)",
-      "t": 11.4,
-      "at": "0:11",
-      "fail": [
-        "split panel: horizontal seam at 0.285, horizontal seam at 0.287"
-      ],
-      "warn": [],
-      "offset": 136.0
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 2,
@@ -36,7 +22,7 @@
       "at": "0:17",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0184 < film p5 0.0217"
+        "low detail: edge density 0.0183 < film p5 0.0215"
       ],
       "offset": 144.0
     }
@@ -60,9 +46,7 @@
       "title": "Falling through Jupiter cream and amber cloud bands (020 v04 master s17)",
       "t": 11.4,
       "at": "0:11",
-      "fail": [
-        "split panel: horizontal seam at 0.285, horizontal seam at 0.287"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 136.0
     },
@@ -75,7 +59,7 @@
       "at": "0:17",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0184 < film p5 0.0217"
+        "low detail: edge density 0.0183 < film p5 0.0215"
       ],
       "offset": 144.0
     },
@@ -92,7 +76,7 @@
     }
   ],
   "polish": {
-    "edge_floor": 0.0217,
+    "edge_floor": 0.0215,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

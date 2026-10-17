@@ -35,20 +35,10 @@
       ]
     }
   },
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4",
+  "video": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4",
   "edge_floor": 0.0127,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s07_end_card_loop_PIA11132",
-      "cut": 6,
-      "t": 22.52,
-      "source": "end_card_loop_PIA11132.jpg",
-      "why": [
-        "split panel: horizontal gutter at 0.087"
-      ]
-    }
-  ],
+  "verdict": "PASS",
+  "failed": [],
   "warn": [
     {
       "row": "s02_PIA19400",
@@ -177,24 +167,17 @@
       "row": "s07_end_card_loop_PIA11132",
       "source": "end_card_loop_PIA11132.jpg",
       "t": 22.52,
-      "std": 55.98,
-      "mean": 110.44,
-      "p95": 249.0,
-      "edge": 0.1797,
-      "hf": 19.54,
-      "lf": 44.56,
-      "std8": 47.92,
-      "edge8": 0.3914,
-      "seams": [
-        {
-          "kind": "horizontal gutter",
-          "at": 0.087
-        }
-      ],
+      "std": 39.33,
+      "mean": 96.55,
+      "p95": 140.0,
+      "edge": 0.1709,
+      "hf": 19.34,
+      "lf": 20.13,
+      "std8": 26.79,
+      "edge8": 0.3706,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal gutter at 0.087"
-      ],
+      "fail": [],
       "warn": []
     }
   ]

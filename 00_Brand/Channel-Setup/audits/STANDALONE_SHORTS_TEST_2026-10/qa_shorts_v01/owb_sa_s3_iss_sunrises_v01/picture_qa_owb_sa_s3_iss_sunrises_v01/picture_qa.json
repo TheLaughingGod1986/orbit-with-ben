@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s3_iss_sunrises_v01.mp4",
+  "verdict": "PASS",
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s3_iss_sunrises_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,33 +11,8 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 0,
-      "row": "s01_iss040e080833",
-      "source": "iss040e080833.jpg",
-      "title": "Earth Observation",
-      "t": 2.0,
-      "at": "0:02",
-      "fail": [
-        "split panel: horizontal seam at 0.441"
-      ],
-      "warn": [],
-      "offset": 0.0
-    },
-    {
-      "cut": 1,
-      "row": "s02_iss054e002538",
-      "source": "iss054e002538.jpg",
-      "title": "iss054e002538",
-      "t": 5.55,
-      "at": "0:06",
-      "fail": [
-        "split panel: horizontal gutter at 0.828"
-      ],
-      "warn": [],
-      "offset": 4.0
-    },
+  "failed": [],
+  "warn": [
     {
       "cut": 3,
       "row": "s04_iss059e027932",
@@ -45,40 +20,13 @@
       "title": "iss059e027932",
       "t": 15.2,
       "at": "0:15",
-      "fail": [
-        "near-black: mean 12.92, p95 75.0"
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0135 < film p5 0.0137"
       ],
-      "warn": [],
       "offset": 12.8
-    },
-    {
-      "cut": 4,
-      "row": "s05_iss061e123823",
-      "source": "iss061e123823.jpg",
-      "title": "iss061e123823",
-      "t": 19.8,
-      "at": "0:20",
-      "fail": [
-        "split panel: horizontal seam at 0.7, horizontal seam at 0.774, horizontal seam at 0.776"
-      ],
-      "warn": [],
-      "offset": 17.6
-    },
-    {
-      "cut": 6,
-      "row": "s07_iss040e080833",
-      "source": "end_card_loop_iss040e080833.jpg",
-      "title": "End-card loop: Earth Observation",
-      "t": 26.26,
-      "at": "0:26",
-      "fail": [
-        "split panel: horizontal seam at 0.413"
-      ],
-      "warn": [],
-      "offset": 25.12
     }
   ],
-  "warn": [],
   "rows": [
     {
       "cut": 0,
@@ -87,9 +35,7 @@
       "title": "Earth Observation",
       "t": 2.0,
       "at": "0:02",
-      "fail": [
-        "split panel: horizontal seam at 0.441"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 0.0
     },
@@ -100,9 +46,7 @@
       "title": "iss054e002538",
       "t": 5.55,
       "at": "0:06",
-      "fail": [
-        "split panel: horizontal gutter at 0.828"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 4.0
     },
@@ -124,10 +68,10 @@
       "title": "iss059e027932",
       "t": 15.2,
       "at": "0:15",
-      "fail": [
-        "near-black: mean 12.92, p95 75.0"
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0135 < film p5 0.0137"
       ],
-      "warn": [],
       "offset": 12.8
     },
     {
@@ -137,9 +81,7 @@
       "title": "iss061e123823",
       "t": 19.8,
       "at": "0:20",
-      "fail": [
-        "split panel: horizontal seam at 0.7, horizontal seam at 0.774, horizontal seam at 0.776"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 17.6
     },
@@ -161,15 +103,13 @@
       "title": "End-card loop: Earth Observation",
       "t": 26.26,
       "at": "0:26",
-      "fail": [
-        "split panel: horizontal seam at 0.413"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 25.12
     }
   ],
   "polish": {
-    "edge_floor": 0.0117,
+    "edge_floor": 0.0137,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

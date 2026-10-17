@@ -223,7 +223,10 @@ def main() -> None:
             f"[s2in]trim={SHOT1_END:.3f},setpts=PTS-STARTPTS,crop=608:1080:{CROP_X}:0,"
             f"scale={W}:{H}:flags=lanczos,setsar=1[s2];"
             f"[1:v]setpts=PTS-STARTPTS,crop=608:1080:{CROP_X}:0,scale={W}:{H}:flags=lanczos,setsar=1[s3];"
-            f"[s1][s2][s3]concat=n=3:v=1:a=0,fps={FPS}[base];"
+            f"[s1][s2][s3]concat=n=3:v=1:a=0,fps={FPS},split[b0][bhz];"
+            f"[bhz]crop=1080:160:0:0,boxblur=4:36:4:2,format=rgba,"
+            f"geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,(160-Y)/40)'[hz];"
+            f"[b0][hz]overlay=0:0:enable='between(t,44.0,49.0)',format=yuv420p[base];"
             f"[base][2:v]overlay=0:0:enable='between(t,0,{HOOK_END})'[v1];"
             f"[v1][3:v]overlay=0:0:enable='{title_on}'[v2a];"
             f"[v2a][5:v]overlay=0:0:enable='gte(t,{last_end:.3f})':shortest=1[v2];"
@@ -282,7 +285,7 @@ def main() -> None:
     print(json.dumps(meta, indent=2), flush=True)
 
     gate = subprocess.run([sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-                           "check", str(final), "--air-date", AIR, "--length-test"], capture_output=True, text=True)
+                           "check", str(final), "--air-date", AIR, "--id", "N42gKBbD7tE", "--length-test"], capture_output=True, text=True)
     (OUT / f"{STEM}_gate.txt").write_text(gate.stdout + gate.stderr)
     print(gate.stdout, gate.stderr)
     level = subprocess.run([sys.executable, str(REPO / "scripts/sfx_kit.py"), "level", "--vo", str(vo_stem),

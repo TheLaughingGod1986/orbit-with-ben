@@ -225,7 +225,10 @@ def main() -> None:
             f"h='trunc({H}*(1+{PUSH}*min(t,1.2)/1.2)/2)*2':eval=frame:flags=lanczos,"
             f"crop={W}:{H}:'(iw-{W})/2':'(ih-{H})/2',setsar=1,format=yuv420p[a];"
             f"[1:v]fps={FPS},crop=608:1080:{CROP_X}:0,scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p[b];"
-            f"[a][b]xfade=transition=fade:duration={XFADE}:offset={last_end:.3f}[base];"
+            f"[a][b]xfade=transition=fade:duration={XFADE}:offset={last_end:.3f},split[b0][bhz];"
+            f"[bhz]crop=1080:300:0:410,boxblur=4:40:4:2,format=rgba,"
+            f"geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,min(Y/35,(300-Y)/35))'[hz];"
+            f"[b0][hz]overlay=0:410:enable='between(t,7.4,15.4)',format=yuv420p[base];"
             f"[3:v]format=rgba[hk];[base][hk]overlay=0:0:enable='between(t,0,{HOOK_END})':shortest=1[v1];"
             f"[4:v]format=rgba[tt];[v1][tt]overlay=0:0:enable='{title_on}':shortest=1[v2a];"
             f"[6:v]format=rgba[et];[v2a][et]overlay=0:0:enable='gte(t,{END_TITLE_FROM})':shortest=1[v2b];"
@@ -285,7 +288,7 @@ def main() -> None:
     print(json.dumps(meta, indent=2), flush=True)
 
     gate = subprocess.run([sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-                           "check", str(final), "--air-date", AIR], capture_output=True, text=True)
+                           "check", str(final), "--air-date", AIR, "--id", "23KZK7OjsEE"], capture_output=True, text=True)
     (OUT / f"{STEM}_gate.txt").write_text(gate.stdout + gate.stderr)
     print(gate.stdout, gate.stderr)
     raise SystemExit(gate.returncode)

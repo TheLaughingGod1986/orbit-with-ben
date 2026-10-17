@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01.mp4",
+  "verdict": "PASS",
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,7 +11,8 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
+  "failed": [],
+  "warn": [
     {
       "cut": 0,
       "row": "s01_PIA11351",
@@ -19,13 +20,24 @@
       "title": "A View Over Mercury Horizon",
       "t": 2.75,
       "at": "0:03",
-      "fail": [
-        "near-black: mean 20.72, p95 112.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.23x, may look soft"
       ],
       "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA14083",
+      "source": "PIA14083.jpg",
+      "title": "From Orbit, Looking toward Mercury Horizon",
+      "t": 7.6,
+      "at": "0:08",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.16x, may look soft"
+      ],
+      "offset": 5.5
     },
     {
       "cut": 2,
@@ -34,9 +46,7 @@
       "title": "A High-resolution Look over Mercury Northern Horizon",
       "t": 12.4,
       "at": "0:12",
-      "fail": [
-        "split panel: horizontal seam at 0.841"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.06x, may look soft"
       ],
@@ -49,27 +59,11 @@
       "title": "End-card loop: A View Over Mercury Horizon",
       "t": 18.94,
       "at": "0:19",
-      "fail": [
-        "near-black: mean 17.01, p95 99.0"
-      ],
-      "warn": [],
-      "offset": 17.44
-    }
-  ],
-  "warn": [
-    {
-      "cut": 1,
-      "row": "s02_PIA14083",
-      "source": "PIA14083.jpg",
-      "title": "From Orbit, Looking toward Mercury Horizon",
-      "t": 7.6,
-      "at": "0:08",
       "fail": [],
       "warn": [
-        "sharpness: upscaled 2.16x, may look soft",
-        "low detail: edge density 0.0842 < film p5 0.0856"
+        "low detail: edge density 0.0831 < film p5 0.0833"
       ],
-      "offset": 5.5
+      "offset": 17.44
     }
   ],
   "rows": [
@@ -80,9 +74,7 @@
       "title": "A View Over Mercury Horizon",
       "t": 2.75,
       "at": "0:03",
-      "fail": [
-        "near-black: mean 20.72, p95 112.0"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.23x, may look soft"
       ],
@@ -97,8 +89,7 @@
       "at": "0:08",
       "fail": [],
       "warn": [
-        "sharpness: upscaled 2.16x, may look soft",
-        "low detail: edge density 0.0842 < film p5 0.0856"
+        "sharpness: upscaled 2.16x, may look soft"
       ],
       "offset": 5.5
     },
@@ -109,9 +100,7 @@
       "title": "A High-resolution Look over Mercury Northern Horizon",
       "t": 12.4,
       "at": "0:12",
-      "fail": [
-        "split panel: horizontal seam at 0.841"
-      ],
+      "fail": [],
       "warn": [
         "sharpness: upscaled 2.06x, may look soft"
       ],
@@ -135,15 +124,15 @@
       "title": "End-card loop: A View Over Mercury Horizon",
       "t": 18.94,
       "at": "0:19",
-      "fail": [
-        "near-black: mean 17.01, p95 99.0"
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0831 < film p5 0.0833"
       ],
-      "warn": [],
       "offset": 17.44
     }
   ],
   "polish": {
-    "edge_floor": 0.0856,
+    "edge_floor": 0.0833,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

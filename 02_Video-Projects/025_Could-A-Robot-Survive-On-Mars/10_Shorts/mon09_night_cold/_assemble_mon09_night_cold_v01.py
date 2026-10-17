@@ -59,7 +59,7 @@ SHOTS = [
     (10.55, "spirit/PIA07371.jpg", "fill", 0.10, None, (0.38, 0.64, 0.42)),  # Spirit self-portrait: deck + panels
     (14.55, "spirit/PIA12142.jpg", "fill", 0.10, None, (0.77, 0.50, 0.80)),  # Spirit's view from Troy: its tracks
     (16.90, "spirit/PIA12457.jpg", "fill", 0.08, None, (0.5, 0.55, 1.0)),  # Spirit's wheels dug in for winter
-    (19.55, "frost/PIA11132.jpg", "fill", 0.10, None, (0.5, 0.55, 1.0)),  # back to the opening frost (loop)
+    (19.55, "frost/PIA11132.jpg", "fill", 0.10, None, (0.5, 0.62, 0.88)),  # back to the opening frost (loop, clear of top sky gutter)
 ]
 
 
@@ -182,7 +182,7 @@ def main() -> None:
     print(json.dumps(meta, indent=2), flush=True)
 
     gate = subprocess.run([sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
-                           "check", str(final), "--air-date", AIR], capture_output=True, text=True)
+                           "check", str(final), "--air-date", AIR, "--id", "iyvWYFP_ETA"], capture_output=True, text=True)
     (OUT / f"{STEM}_gate.txt").write_text(gate.stdout + gate.stderr)
     print(gate.stdout, gate.stderr)
     raise SystemExit(gate.returncode)

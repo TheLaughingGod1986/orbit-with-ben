@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
+  "verdict": "PASS",
+  "video": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,21 +11,7 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 10,
-      "row": "s11_r22",
-      "source": "PIA07372.jpg",
-      "title": "Opportunity Self-Portrait, Sols 322-323",
-      "t": 46.48,
-      "at": "0:46",
-      "fail": [
-        "split panel: horizontal seam at 0.046"
-      ],
-      "warn": [],
-      "offset": 298.7
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 6,
@@ -191,9 +177,7 @@
       "title": "Opportunity Self-Portrait, Sols 322-323",
       "t": 46.48,
       "at": "0:46",
-      "fail": [
-        "split panel: horizontal seam at 0.046"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 298.7
     },

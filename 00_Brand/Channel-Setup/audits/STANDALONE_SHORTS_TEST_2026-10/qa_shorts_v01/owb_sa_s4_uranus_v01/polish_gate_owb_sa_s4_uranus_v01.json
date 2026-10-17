@@ -35,47 +35,10 @@
       ]
     }
   },
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
-  "edge_floor": 0.0144,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s02_PIA00143",
-      "cut": 1,
-      "t": 7.9,
-      "source": "PIA00143.jpg",
-      "why": [
-        "near-black: mean 14.74, p95 120.0"
-      ]
-    },
-    {
-      "row": "s03_PIA18182",
-      "cut": 2,
-      "t": 11.3,
-      "source": "PIA18182.jpg",
-      "why": [
-        "split panel: horizontal gutter at 0.248"
-      ]
-    },
-    {
-      "row": "s04_PIA01391",
-      "cut": 3,
-      "t": 14.45,
-      "source": "PIA01391.jpg",
-      "why": [
-        "near-black: mean 11.15, p95 73.0"
-      ]
-    },
-    {
-      "row": "s05_PIA00346",
-      "cut": 4,
-      "t": 17.18,
-      "source": "PIA00346.jpg",
-      "why": [
-        "near-black: mean 13.3, p95 74.0"
-      ]
-    }
-  ],
+  "video": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
+  "edge_floor": 0.0145,
+  "verdict": "PASS",
+  "failed": [],
   "warn": [
     {
       "row": "s01_webb_weic2310a",
@@ -83,7 +46,7 @@
       "t": 2.95,
       "source": "webb_weic2310a.jpg",
       "why": [
-        "low detail: edge density 0.0142 < film p5 0.0144"
+        "low detail: edge density 0.0143 < film p5 0.0145"
       ]
     }
   ],
@@ -94,19 +57,19 @@
       "row": "s01_webb_weic2310a",
       "source": "webb_weic2310a.jpg",
       "t": 2.95,
-      "std": 72.72,
-      "mean": 75.45,
-      "p95": 228.0,
-      "edge": 0.0142,
-      "hf": 6.72,
-      "lf": 70.5,
-      "std8": 71.72,
-      "edge8": 0.1832,
+      "std": 74.85,
+      "mean": 85.09,
+      "p95": 241.0,
+      "edge": 0.0143,
+      "hf": 6.84,
+      "lf": 72.73,
+      "std8": 73.86,
+      "edge8": 0.1847,
       "seams": [],
       "video": true,
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0142 < film p5 0.0144"
+        "low detail: edge density 0.0143 < film p5 0.0145"
       ]
     },
     {
@@ -114,19 +77,17 @@
       "row": "s02_PIA00143",
       "source": "PIA00143.jpg",
       "t": 7.9,
-      "std": 44.28,
-      "mean": 14.74,
-      "p95": 120.0,
-      "edge": 0.0242,
-      "hf": 10.43,
-      "lf": 35.71,
-      "std8": 39.78,
-      "edge8": 0.1423,
+      "std": 43.06,
+      "mean": 50.98,
+      "p95": 163.0,
+      "edge": 0.0295,
+      "hf": 10.97,
+      "lf": 35.01,
+      "std8": 38.58,
+      "edge8": 0.1436,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 14.74, p95 120.0"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -134,24 +95,17 @@
       "row": "s03_PIA18182",
       "source": "PIA18182.jpg",
       "t": 11.3,
-      "std": 90.52,
-      "mean": 81.77,
-      "p95": 236.0,
-      "edge": 0.0329,
-      "hf": 14.78,
-      "lf": 85.99,
-      "std8": 87.94,
-      "edge8": 0.2247,
-      "seams": [
-        {
-          "kind": "horizontal gutter",
-          "at": 0.248
-        }
-      ],
+      "std": 92.53,
+      "mean": 89.04,
+      "p95": 246.0,
+      "edge": 0.0339,
+      "hf": 15.02,
+      "lf": 88.18,
+      "std8": 89.99,
+      "edge8": 0.2271,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal gutter at 0.248"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -159,19 +113,17 @@
       "row": "s04_PIA01391",
       "source": "PIA01391.jpg",
       "t": 14.45,
-      "std": 39.48,
-      "mean": 11.15,
-      "p95": 73.0,
-      "edge": 0.0168,
-      "hf": 8.64,
-      "lf": 32.91,
-      "std8": 36.71,
-      "edge8": 0.0998,
+      "std": 46.23,
+      "mean": 51.68,
+      "p95": 170.0,
+      "edge": 0.0211,
+      "hf": 9.41,
+      "lf": 40.61,
+      "std8": 43.53,
+      "edge8": 0.0975,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 11.15, p95 73.0"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -179,19 +131,17 @@
       "row": "s05_PIA00346",
       "source": "PIA00346.jpg",
       "t": 17.18,
-      "std": 38.34,
-      "mean": 13.3,
-      "p95": 74.0,
-      "edge": 0.0171,
-      "hf": 8.81,
-      "lf": 31.14,
-      "std8": 35.17,
-      "edge8": 0.1071,
+      "std": 43.32,
+      "mean": 47.18,
+      "p95": 136.0,
+      "edge": 0.021,
+      "hf": 9.31,
+      "lf": 36.97,
+      "std8": 40.28,
+      "edge8": 0.1096,
       "seams": [],
       "video": true,
-      "fail": [
-        "near-black: mean 13.3, p95 74.0"
-      ],
+      "fail": [],
       "warn": []
     },
     {
@@ -199,14 +149,14 @@
       "row": "s06_webb_weic2310a",
       "source": "end_card_loop_webb_weic2310a.jpg",
       "t": 19.66,
-      "std": 66.98,
-      "mean": 64.28,
-      "p95": 222.0,
+      "std": 69.56,
+      "mean": 73.39,
+      "p95": 234.0,
       "edge": 0.015,
       "hf": 2.33,
-      "lf": 65.25,
-      "std8": 66.33,
-      "edge8": 0.1855,
+      "lf": 67.9,
+      "std8": 68.95,
+      "edge8": 0.1831,
       "seams": [],
       "video": true,
       "fail": [],

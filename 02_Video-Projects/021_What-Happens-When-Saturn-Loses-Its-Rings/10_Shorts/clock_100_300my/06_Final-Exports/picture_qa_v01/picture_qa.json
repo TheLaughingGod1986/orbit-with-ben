@@ -1,6 +1,6 @@
 {
-  "verdict": "FAIL",
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01.mp4",
+  "verdict": "PASS",
+  "video": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -11,47 +11,7 @@
     "same_stretch": 10.0,
     "pixels": "scripts/polish_gate.py"
   },
-  "failed": [
-    {
-      "cut": 2,
-      "row": "s03_pia12590",
-      "source": "PIA12590.jpg",
-      "title": "Shadow and Ringshine",
-      "t": 12.99,
-      "at": "0:13",
-      "fail": [
-        "near-black: mean 23.81, p95 193.0"
-      ],
-      "warn": [],
-      "offset": 526.66
-    },
-    {
-      "cut": 3,
-      "row": "s04_pia20530",
-      "source": "PIA20530.jpg",
-      "title": "Sliver of Saturn",
-      "t": 17.81,
-      "at": "0:18",
-      "fail": [
-        "near-black: mean 26.69, p95 178.0"
-      ],
-      "warn": [],
-      "offset": 531.66
-    },
-    {
-      "cut": 4,
-      "row": "s05_end_loop",
-      "source": "end_card_loop_PIA17127.mp4",
-      "title": "End-card loop: NASA Cassini Saturn rings plate (PIA17127)",
-      "t": 21.88,
-      "at": "0:22",
-      "fail": [
-        "split panel: horizontal seam at 0.772, horizontal gutter at 0.624"
-      ],
-      "warn": [],
-      "offset": 516.17
-    }
-  ],
+  "failed": [],
   "warn": [
     {
       "cut": 0,
@@ -62,7 +22,7 @@
       "at": "0:02",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0125 < film p5 0.0127"
+        "low detail: edge density 0.0125 < film p5 0.0128"
       ],
       "offset": 516.17
     }
@@ -77,7 +37,7 @@
       "at": "0:02",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0125 < film p5 0.0127"
+        "low detail: edge density 0.0125 < film p5 0.0128"
       ],
       "offset": 516.17
     },
@@ -99,9 +59,7 @@
       "title": "Shadow and Ringshine",
       "t": 12.99,
       "at": "0:13",
-      "fail": [
-        "near-black: mean 23.81, p95 193.0"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 526.66
     },
@@ -112,9 +70,7 @@
       "title": "Sliver of Saturn",
       "t": 17.81,
       "at": "0:18",
-      "fail": [
-        "near-black: mean 26.69, p95 178.0"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 531.66
     },
@@ -125,15 +81,13 @@
       "title": "End-card loop: NASA Cassini Saturn rings plate (PIA17127)",
       "t": 21.88,
       "at": "0:22",
-      "fail": [
-        "split panel: horizontal seam at 0.772, horizontal gutter at 0.624"
-      ],
+      "fail": [],
       "warn": [],
       "offset": 516.17
     }
   ],
   "polish": {
-    "edge_floor": 0.0127,
+    "edge_floor": 0.0128,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

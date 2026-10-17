@@ -35,20 +35,10 @@
       ]
     }
   },
-  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
+  "video": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
   "edge_floor": 0.0088,
-  "verdict": "FAIL",
-  "failed": [
-    {
-      "row": "s11_r22",
-      "cut": 10,
-      "t": 46.48,
-      "source": "PIA07372.jpg",
-      "why": [
-        "split panel: horizontal seam at 0.046"
-      ]
-    }
-  ],
+  "verdict": "PASS",
+  "failed": [],
   "warn": [
     {
       "row": "s10_r21",
@@ -249,25 +239,17 @@
       "row": "s11_r22",
       "source": "PIA07372.jpg",
       "t": 46.48,
-      "std": 55.76,
-      "mean": 60.51,
-      "p95": 212.0,
-      "edge": 0.1562,
-      "hf": 21.5,
-      "lf": 38.51,
-      "std8": 44.34,
-      "edge8": 0.4455,
-      "seams": [
-        {
-          "kind": "horizontal seam",
-          "at": 0.046,
-          "step": 47.0
-        }
-      ],
+      "std": 54.55,
+      "mean": 60.39,
+      "p95": 206.0,
+      "edge": 0.1356,
+      "hf": 20.41,
+      "lf": 38.28,
+      "std8": 43.9,
+      "edge8": 0.423,
+      "seams": [],
       "video": true,
-      "fail": [
-        "split panel: horizontal seam at 0.046"
-      ],
+      "fail": [],
       "warn": []
     },
     {
