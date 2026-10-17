@@ -1,0 +1,142 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/lift_light_4yr/06_Final-Exports/nearest_star_light_4_years_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 3,
+      "row": "s04_sdo_sun",
+      "source": "026_v05d_span_417.65.mp4",
+      "title": "NASA SDO observation of two coronal holes on the Sun (417.65s)",
+      "t": 14.14,
+      "at": "0:14",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0161 < film p5 0.0202"
+      ],
+      "offset": 417.65
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_lasilla_sky",
+      "source": "026_v05d_span_277.45.mp4",
+      "title": "ESO La Silla southern night sky time-lapse (277.45s)",
+      "t": 1.82,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 277.45
+    },
+    {
+      "cut": 1,
+      "row": "s02_paranal_trails",
+      "source": "026_v05d_span_476.30.mp4",
+      "title": "ESO VLT Paranal star trails over the southern sky (476.30s)",
+      "t": 6.5,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 476.3
+    },
+    {
+      "cut": 2,
+      "row": "s03_lro_moon",
+      "source": "026_v05d_span_254.80.mp4",
+      "title": "NASA LRO full Moon view (254.80s)",
+      "t": 11.04,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 254.8
+    },
+    {
+      "cut": 3,
+      "row": "s04_sdo_sun",
+      "source": "026_v05d_span_417.65.mp4",
+      "title": "NASA SDO observation of two coronal holes on the Sun (417.65s)",
+      "t": 14.14,
+      "at": "0:14",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0161 < film p5 0.0202"
+      ],
+      "offset": 417.65
+    },
+    {
+      "cut": 4,
+      "row": "s05_hubble_alpha_cen",
+      "source": "026_v05d_span_73.85.mp4",
+      "title": "NASA/ESA Hubble observation of Alpha Centauri A and B (73.85s)",
+      "t": 17.55,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": 73.85
+    },
+    {
+      "cut": 5,
+      "row": "s06_carina_nebula",
+      "source": "026_v05d_span_104.00.mp4",
+      "title": "ESO VLT Survey Telescope view of the Carina Nebula (104.00s)",
+      "t": 21.27,
+      "at": "0:21",
+      "fail": [],
+      "warn": [],
+      "offset": 104.0
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_lasilla_sky.mp4",
+      "title": "End-card loop: ESO La Silla southern night sky time-lapse (277.45s)",
+      "t": 24.25,
+      "at": "0:24",
+      "fail": [],
+      "warn": [],
+      "offset": 277.45
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0202,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

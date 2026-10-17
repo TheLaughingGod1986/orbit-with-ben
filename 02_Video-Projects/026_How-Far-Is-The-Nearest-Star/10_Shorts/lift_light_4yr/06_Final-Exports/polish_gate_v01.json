@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/lift_light_4yr/06_Final-Exports/nearest_star_light_4_years_v01.mp4",
+  "edge_floor": 0.0202,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s04_sdo_sun",
+      "cut": 3,
+      "t": 14.14,
+      "source": "026_v05d_span_417.65.mp4",
+      "why": [
+        "low detail: edge density 0.0161 < film p5 0.0202"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_lasilla_sky",
+      "source": "026_v05d_span_277.45.mp4",
+      "t": 1.82,
+      "std": 59.68,
+      "mean": 114.34,
+      "p95": 224.0,
+      "edge": 0.1455,
+      "hf": 19.19,
+      "lf": 49.0,
+      "std8": 52.13,
+      "edge8": 0.2772,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_paranal_trails",
+      "source": "026_v05d_span_476.30.mp4",
+      "t": 6.5,
+      "std": 38.24,
+      "mean": 71.48,
+      "p95": 149.0,
+      "edge": 0.2363,
+      "hf": 16.1,
+      "lf": 23.99,
+      "std8": 27.83,
+      "edge8": 0.4669,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_lro_moon",
+      "source": "026_v05d_span_254.80.mp4",
+      "t": 11.04,
+      "std": 40.51,
+      "mean": 164.96,
+      "p95": 227.0,
+      "edge": 0.0384,
+      "hf": 14.47,
+      "lf": 33.71,
+      "std8": 35.3,
+      "edge8": 0.2079,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_sdo_sun",
+      "source": "026_v05d_span_417.65.mp4",
+      "t": 14.14,
+      "std": 33.12,
+      "mean": 99.74,
+      "p95": 149.0,
+      "edge": 0.0161,
+      "hf": 10.06,
+      "lf": 28.01,
+      "std8": 29.65,
+      "edge8": 0.1375,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0161 < film p5 0.0202"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "s05_hubble_alpha_cen",
+      "source": "026_v05d_span_73.85.mp4",
+      "t": 17.55,
+      "std": 37.37,
+      "mean": 41.32,
+      "p95": 94.0,
+      "edge": 0.0299,
+      "hf": 13.7,
+      "lf": 25.63,
+      "std8": 29.48,
+      "edge8": 0.1613,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_carina_nebula",
+      "source": "026_v05d_span_104.00.mp4",
+      "t": 21.27,
+      "std": 48.24,
+      "mean": 110.12,
+      "p95": 186.0,
+      "edge": 0.0883,
+      "hf": 13.05,
+      "lf": 43.07,
+      "std8": 44.26,
+      "edge8": 0.2946,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_lasilla_sky.mp4",
+      "t": 24.25,
+      "std": 29.79,
+      "mean": 71.7,
+      "p95": 118.0,
+      "edge": 0.0729,
+      "hf": 12.47,
+      "lf": 22.33,
+      "std8": 24.23,
+      "edge8": 0.1367,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
