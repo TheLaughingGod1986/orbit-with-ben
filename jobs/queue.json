@@ -34124,13 +34124,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T09:31Z",
-      "eta": "2026-10-17T10:31Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T09:31Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 077e5017: 026 Short lift_red_dwarf v01 0/6 PASS, 028 teaching_overlays_v01 0/12 PASS, 029 teaching_overlays_v01 0/13 PASS, J0432 10 Shorts PASS; HOS 3d0cd465: 002 Short s06_atomic_weights_v01 0/7 PASS, hos_sa_s1/s3_v02/s4_v02/s4_v04 all PASS; 0 FAILs, no fix jobs needed)",
       "history": [
         {
           "at": "2026-10-17T09:31Z",
@@ -34166,6 +34166,11 @@
           "at": "2026-10-17T10:04Z",
           "by": "gemini",
           "what": "step 4 of 4 done: QA sweep complete across newest OWB and HOS packs: 0 FAILs, no fix jobs needed"
+        },
+        {
+          "at": "2026-10-17T10:04Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 077e5017: 026 Short lift_red_dwarf v01 0/6 PASS, 028 teaching_overlays_v01 0/12 PASS, 029 teaching_overlays_v01 0/13 PASS, J0432 10 Shorts PASS; HOS 3d0cd465: 002 Short s06_atomic_weights_v01 0/7 PASS, hos_sa_s1/s3_v02/s4_v02/s4_v04 all PASS; 0 FAILs, no fix jobs needed)"
         }
       ],
       "kind": "qa",
