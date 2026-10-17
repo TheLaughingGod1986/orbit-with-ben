@@ -35290,13 +35290,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T13:55Z",
-      "eta": "2026-10-17T14:55Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T13:55Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB ac911a39: 023 Short venus_90x_thicker_air_v01 0/6 PASS committed, 028 teaching_overlays_v01 0/13 PASS, 029 teaching_overlays_v01 0/15 PASS; HOS 9b51e6c0: 002 Short s07_mendeleev_cards_v01 0/7 PASS; 004 Short s04_cathode_rays_v01 1/8 picture_qa reuse FAIL -> J0465 queued)",
       "history": [
         {
           "at": "2026-10-17T13:55Z",
@@ -35332,6 +35332,11 @@
           "at": "2026-10-17T14:14Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed OWB 023 lift_90x_air gate files (ac911a39), verified newest OWB/HOS packs, and queued no-spend fix job J0465 for HOS 004 s04_cathode_rays_v01 reuse FAIL"
+        },
+        {
+          "at": "2026-10-17T14:14Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB ac911a39: 023 Short venus_90x_thicker_air_v01 0/6 PASS committed, 028 teaching_overlays_v01 0/13 PASS, 029 teaching_overlays_v01 0/15 PASS; HOS 9b51e6c0: 002 Short s07_mendeleev_cards_v01 0/7 PASS; 004 Short s04_cathode_rays_v01 1/8 picture_qa reuse FAIL -> J0465 queued)"
         }
       ],
       "kind": "qa",
