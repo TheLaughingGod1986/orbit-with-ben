@@ -27,7 +27,7 @@ import subprocess as sp
 import sys
 from pathlib import Path
 import numpy as np
-from PIL import Image, ImageDraw, ImageEnhance, ImageFont
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 Image.MAX_IMAGE_PIXELS = None
 HERE = Path(__file__).resolve().parent
@@ -88,6 +88,27 @@ ROWS = [
                 860,
                 76,
                 "SOURCES row 4: Connelly et al. 2012 Science 338:651 CAI age 4567.30 +/- 0.16 Myr; VO 'four and a half billion years old' at 63.36-65.08s",
+                None,
+            )
+        ],
+    ),
+    (
+        "r07_sphere_jan",
+        "1 The Star in Orion's Shoulder",
+        67.50,
+        72.84,
+        "still",
+        HDIR / "sphere_jan.jpg",
+        {"box": (0.0, 0.0, 1.0, 1.0), "pct": 0.05, "feathered_blur": True, "gamma": 0.55, "lift": 22.0},
+        [
+            (
+                "10 million years old",
+                69.24,
+                71.80,
+                960,
+                860,
+                76,
+                "SOURCES row 4: Joyce et al. 2020 ApJ 902:63 age 7-11 Myr & Dolan et al. 2016 ApJ 819:7 age 8.0-8.5 Myr; VO 'ten million years old' at 69.24-70.46s",
                 None,
             )
         ],
@@ -281,6 +302,27 @@ ROWS = [
         ],
     ),
     (
+        "r33_speckle",
+        "5 So When?",
+        395.50,
+        401.50,
+        "still",
+        HDIR / "companion_speckle.jpg",
+        {"box": (0.03, 0.23, 0.97, 0.77), "pct": 0.05, "sub": 10.0, "gain": 5.2, "lift": 20.0},
+        [
+            (
+                "In 2025",
+                397.22,
+                400.20,
+                960,
+                860,
+                78,
+                "SOURCES row 21: Howell et al. 2025 ApJL 982:L37 Gemini North speckle detection; VO 'in twenty twenty-five' at 397.22-398.58s",
+                None,
+            )
+        ],
+    ),
+    (
         "r33_pair",
         "5 So When?",
         407.00,
@@ -368,6 +410,8 @@ def compute_upscale(kind: str, src: Path, opts: dict) -> float:
     cw = w * (b[2] - b[0])
     ch = h * (b[3] - b[1])
     pct = opts.get("pct", 0.05)
+    if opts.get("feathered_blur"):
+        return round((1080.0 / ch) * (1.0 + pct), 3)
     return round(max(1920.0 / cw, 1080.0 / ch) * (1.0 + pct), 3)
 
 
@@ -406,17 +450,40 @@ def render_still_push(src: Path, opts: dict, dur: float, dest: Path) -> None:
     im = im.crop((int(w * b[0]), int(h * b[1]), int(w * b[2]), int(h * b[3])))
     gamma = float(opts.get("gamma", 1.0))
     lift = float(opts.get("lift", 0.0))
-    if gamma != 1.0 or lift != 0.0:
-        arr = np.asarray(im, dtype=np.float32) / 255.0
+    sub = float(opts.get("sub", 0.0))
+    gain = float(opts.get("gain", 1.0))
+    if opts.get("feathered_blur"):
+        bg = im.resize((2112, 1188), Image.Resampling.BICUBIC).filter(ImageFilter.GaussianBlur(radius=38))
+        fg_h = 1188
+        fg_w = round(im.width * (fg_h / im.height))
+        fg = im.resize((fg_w, fg_h), Image.Resampling.LANCZOS)
+        mask = Image.new("L", (fg_w, fg_h), 255)
+        m_arr = np.asarray(mask, dtype=np.float32)
+        feather = 120
+        ramp = np.linspace(0.0, 1.0, feather, dtype=np.float32)
+        m_arr[:, :feather] = ramp[None, :] * 255.0
+        m_arr[:, -feather:] = ramp[::-1][None, :] * 255.0
+        mask = Image.fromarray(m_arr.astype(np.uint8))
+        bg.paste(fg, ((2112 - fg_w) // 2, 0), mask)
+        arr = np.asarray(bg, dtype=np.float32) / 255.0
         arr = np.clip((arr ** gamma) * 255.0 + lift, 0.0, 255.0).astype(np.uint8)
         im = Image.fromarray(arr)
-    im = ImageEnhance.Color(im).enhance(1.06)
-    im = ImageEnhance.Contrast(im).enhance(1.04)
-    scale = max(2112.0 / im.width, 1188.0 / im.height)
-    im = im.resize((round(im.width * scale), round(im.height * scale)), Image.Resampling.LANCZOS)
-    x0 = (im.width - 2112) // 2
-    y0 = (im.height - 1188) // 2
-    im = im.crop((x0, y0, x0 + 2112, y0 + 1188))
+    else:
+        if sub != 0.0 or gain != 1.0:
+            arr = np.asarray(im, dtype=np.float32)
+            arr = np.clip((arr - sub) * gain + lift, 0.0, 255.0).astype(np.uint8)
+            im = Image.fromarray(arr)
+        elif gamma != 1.0 or lift != 0.0:
+            arr = np.asarray(im, dtype=np.float32) / 255.0
+            arr = np.clip((arr ** gamma) * 255.0 + lift, 0.0, 255.0).astype(np.uint8)
+            im = Image.fromarray(arr)
+        im = ImageEnhance.Color(im).enhance(1.06)
+        im = ImageEnhance.Contrast(im).enhance(1.04)
+        scale = max(2112.0 / im.width, 1188.0 / im.height)
+        im = im.resize((round(im.width * scale), round(im.height * scale)), Image.Resampling.LANCZOS)
+        x0 = (im.width - 2112) // 2
+        y0 = (im.height - 1188) // 2
+        im = im.crop((x0, y0, x0 + 2112, y0 + 1188))
     pct = opts.get("pct", 0.05)
     W, H = im.size
     proc = sp.Popen(
@@ -661,7 +728,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0443", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0458", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     # Build side-by-side before/after contact sheet

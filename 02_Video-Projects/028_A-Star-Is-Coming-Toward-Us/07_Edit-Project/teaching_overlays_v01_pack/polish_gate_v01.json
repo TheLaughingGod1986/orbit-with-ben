@@ -36,17 +36,17 @@
     }
   },
   "video": "/private/tmp/028_teaching_overlays_v01_after.mp4",
-  "edge_floor": 0.0108,
+  "edge_floor": 0.0116,
   "verdict": "PASS",
   "failed": [],
   "warn": [
     {
       "row": "r17_neptune",
-      "cut": 4,
-      "t": 28.7,
+      "cut": 5,
+      "t": 31.6,
       "source": "neptune.jpg",
       "why": [
-        "low detail: edge density 0.0017 < film p5 0.0108"
+        "low detail: edge density 0.0017 < film p5 0.0116"
       ]
     }
   ],
@@ -116,9 +116,27 @@
     },
     {
       "cut": 3,
+      "row": "r15_16_path",
+      "source": "code_graphic_028_r15_16_path_v02.mp4",
+      "t": 21.95,
+      "std": 31.76,
+      "mean": 64.47,
+      "p95": 111.0,
+      "edge": 0.0755,
+      "hf": 11.35,
+      "lf": 25.79,
+      "std8": 27.11,
+      "edge8": 0.0949,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
       "row": "r16_sunrise_break",
       "source": "iss_sunrise.jpg",
-      "t": 23.35,
+      "t": 26.25,
       "std": 63.88,
       "mean": 44.02,
       "p95": 195.0,
@@ -141,10 +159,10 @@
       "warn": []
     },
     {
-      "cut": 4,
+      "cut": 5,
       "row": "r17_neptune",
       "source": "neptune.jpg",
-      "t": 28.7,
+      "t": 31.6,
       "std": 41.68,
       "mean": 92.16,
       "p95": 137.0,
@@ -165,14 +183,14 @@
       },
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0017 < film p5 0.0108"
+        "low detail: edge density 0.0017 < film p5 0.0116"
       ]
     },
     {
-      "cut": 5,
+      "cut": 6,
       "row": "r24_sunrise",
       "source": "iss_sunrise.jpg",
-      "t": 34.12,
+      "t": 37.02,
       "std": 70.38,
       "mean": 49.34,
       "p95": 234.0,
@@ -195,10 +213,10 @@
       "warn": []
     },
     {
-      "cut": 6,
+      "cut": 7,
       "row": "r26_hale_bopp",
       "source": "comet_a3.jpg",
-      "t": 39.97,
+      "t": 42.87,
       "std": 37.77,
       "mean": 61.8,
       "p95": 131.0,
@@ -221,10 +239,10 @@
       "warn": []
     },
     {
-      "cut": 7,
+      "cut": 8,
       "row": "r26_a3",
       "source": "comet_a3.jpg",
-      "t": 45.87,
+      "t": 48.77,
       "std": 37.99,
       "mean": 67.48,
       "p95": 134.0,
@@ -247,10 +265,10 @@
       "warn": []
     },
     {
-      "cut": 8,
+      "cut": 9,
       "row": "r29_twilight",
       "source": "conjunction.tif",
-      "t": 51.93,
+      "t": 54.83,
       "std": 43.01,
       "mean": 74.77,
       "p95": 156.0,
@@ -273,10 +291,10 @@
       "warn": []
     },
     {
-      "cut": 9,
+      "cut": 10,
       "row": "r31_moon_2",
       "source": "moon_lro.jpg",
-      "t": 57.13,
+      "t": 60.03,
       "std": 63.23,
       "mean": 127.6,
       "p95": 215.0,
@@ -299,10 +317,10 @@
       "warn": []
     },
     {
-      "cut": 10,
+      "cut": 11,
       "row": "r33_wise_craft",
       "source": "wise_craft.jpg",
-      "t": 62.37,
+      "t": 65.27,
       "std": 54.88,
       "mean": 72.47,
       "p95": 187.0,
@@ -325,10 +343,10 @@
       "warn": []
     },
     {
-      "cut": 11,
+      "cut": 12,
       "row": "r34_sky_wide",
       "source": "gaia_edr3_sky.png",
-      "t": 69.85,
+      "t": 72.75,
       "std": 48.45,
       "mean": 60.36,
       "p95": 160.0,

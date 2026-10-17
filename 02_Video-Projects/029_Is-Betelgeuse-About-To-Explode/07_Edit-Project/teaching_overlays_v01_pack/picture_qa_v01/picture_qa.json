@@ -14,15 +14,15 @@
   "failed": [],
   "warn": [
     {
-      "cut": 1,
-      "row": "r07_sdo",
-      "source": "sdo_hmi_continuum.jpg",
-      "title": "SDO/HMI continuum intensitygram, 2024-06-01 00:00 UTC",
-      "t": 8.05,
-      "at": "0:08",
+      "cut": 11,
+      "row": "r33_speckle",
+      "source": "companion_speckle.jpg",
+      "title": "Betelgeuse and Its Stellar Companion (noirlab2523c)",
+      "t": 73.13,
+      "at": "1:13",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0184 < film p5 0.0381"
+        "low detail: edge density 0.0049 < film p5 0.0058"
       ],
       "offset": null
     }
@@ -47,135 +47,157 @@
       "t": 8.05,
       "at": "0:08",
       "fail": [],
-      "warn": [
-        "low detail: edge density 0.0184 < film p5 0.0381"
-      ],
+      "warn": [],
       "offset": null
     },
     {
       "cut": 2,
-      "row": "r08_westerlund_w",
-      "source": "westerlund.jpg",
-      "title": "Westerlund 2 \u2014 Hubble's 25th anniversary image",
-      "t": 13.63,
-      "at": "0:14",
+      "row": "r07_sphere_jan",
+      "source": "sphere_jan.jpg",
+      "title": "SPHERE's view of Betelgeuse in January 2019",
+      "t": 13.23,
+      "at": "0:13",
       "fail": [],
       "warn": [],
       "offset": null
     },
     {
       "cut": 3,
-      "row": "r08_westerlund_t",
+      "row": "r08_westerlund_w",
       "source": "westerlund.jpg",
       "title": "Westerlund 2 \u2014 Hubble's 25th anniversary image",
-      "t": 19.7,
-      "at": "0:20",
+      "t": 18.97,
+      "at": "0:19",
       "fail": [],
       "warn": [],
       "offset": null
     },
     {
       "cut": 4,
+      "row": "r08_westerlund_t",
+      "source": "westerlund.jpg",
+      "title": "Westerlund 2 \u2014 Hubble's 25th anniversary image",
+      "t": 25.03,
+      "at": "0:25",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 5,
       "row": "r09_finder",
       "source": "code_graphic_029_r09_finder_v01.mp4",
       "title": "our own clip or graphic",
-      "t": 25.45,
-      "at": "0:25",
+      "t": 30.78,
+      "at": "0:31",
       "fail": [],
       "warn": [],
       "offset": 2.08
     },
     {
-      "cut": 5,
+      "cut": 6,
       "row": "r10_span_c",
       "source": "lasilla_startrails.mp4",
       "title": "Time-lapse over La Silla",
-      "t": 29.77,
-      "at": "0:30",
+      "t": 35.1,
+      "at": "0:35",
       "fail": [],
       "warn": [],
       "offset": 12.0
     },
     {
-      "cut": 6,
+      "cut": 7,
       "row": "r10_r11_dip",
       "source": "code_graphic_029_r10_r11_dip_v01.mp4",
       "title": "our own clip or graphic",
-      "t": 34.67,
-      "at": "0:35",
+      "t": 40.0,
+      "at": "0:40",
       "fail": [],
       "warn": [],
       "offset": 7.0
     },
     {
-      "cut": 7,
+      "cut": 8,
       "row": "r17_r20_shells",
       "source": "code_graphic_029_r17_r20_shells_v01.mp4",
       "title": "our own clip or graphic",
-      "t": 41.0,
-      "at": "0:41",
+      "t": 46.33,
+      "at": "0:46",
       "fail": [],
       "warn": [],
       "offset": 35.1
     },
     {
-      "cut": 8,
+      "cut": 9,
       "row": "r29_span_astrolabe",
       "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
       "title": "our own clip or graphic",
-      "t": 51.0,
-      "at": "0:51",
+      "t": 56.33,
+      "at": "0:56",
       "fail": [],
       "warn": [],
       "offset": 9.44
     },
     {
-      "cut": 9,
+      "cut": 10,
       "row": "r31_shells_twins",
       "source": "code_graphic_029_r31_shells_twins_v01.mp4",
       "title": "our own clip or graphic",
-      "t": 61.4,
-      "at": "1:01",
+      "t": 66.73,
+      "at": "1:07",
       "fail": [],
       "warn": [],
       "offset": 12.14
     },
     {
-      "cut": 10,
-      "row": "r33_pair",
-      "source": "companion_orion.jpg",
-      "title": "Betelgeuse and Its Stellar Companion in Orion",
-      "t": 67.55,
-      "at": "1:08",
-      "fail": [],
-      "warn": [],
-      "offset": null
-    },
-    {
       "cut": 11,
-      "row": "r34_dome",
-      "source": "gemini_dome.jpg",
-      "title": "Circumpolar Laser Tests at Gemini North",
-      "t": 73.18,
+      "row": "r33_speckle",
+      "source": "companion_speckle.jpg",
+      "title": "Betelgeuse and Its Stellar Companion (noirlab2523c)",
+      "t": 73.13,
       "at": "1:13",
       "fail": [],
-      "warn": [],
+      "warn": [
+        "low detail: edge density 0.0049 < film p5 0.0058"
+      ],
       "offset": null
     },
     {
       "cut": 12,
+      "row": "r33_pair",
+      "source": "companion_orion.jpg",
+      "title": "Betelgeuse and Its Stellar Companion in Orion",
+      "t": 78.88,
+      "at": "1:19",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 13,
+      "row": "r34_dome",
+      "source": "gemini_dome.jpg",
+      "title": "Circumpolar Laser Tests at Gemini North",
+      "t": 84.52,
+      "at": "1:25",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 14,
       "row": "r35_crab",
       "source": "crab.jpg",
       "title": "Most detailed image of the Crab Nebula",
-      "t": 78.82,
-      "at": "1:19",
+      "t": 90.15,
+      "at": "1:30",
       "fail": [],
       "warn": [],
       "offset": null
     }
   ],
   "polish": {
-    "edge_floor": 0.0381,
+    "edge_floor": 0.0058,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

@@ -113,6 +113,28 @@ ROWS = [
         ],
     ),
     (
+        "r15_16_path",
+        "2 How Close Will It Come?",
+        166.90,
+        169.80,
+        HERE / "code_graphics_v02" / "code_graphic_028_r15_16_path_v02.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "10 to 13,000 times",
+                167.40,
+                169.75,
+                960,
+                90,
+                76,
+                "SOURCES row 10: Bailer-Jones 2022 ApJL 935:L9 0.0636 pc = 13,118 AU & de la Fuente Marcos 2022 RNAAS 6:136 0.051 pc = 10,520 AU; VO 'about 10 to 13,000 times' at 167.30-169.56s",
+            )
+        ],
+    ),
+    (
         "r16_sunrise_break",
         "2 How Close Will It Come?",
         169.80,
@@ -447,7 +469,7 @@ def main() -> None:
         a_seg = WORK / f"after_{seg_i:02d}_{row_id}.mp4"
 
         if box is None:
-            off = 2.0 if row_id == "r13_star_trails" else 0.0
+            off = 12.90 if row_id == "r15_16_path" else (2.0 if row_id == "r13_star_trails" else 0.0)
             sp.run(
                 [
                     "ffmpeg",
@@ -541,7 +563,7 @@ def main() -> None:
                 "film_out": fout,
                 "source": src.name,
                 "upscale": compute_upscale(src, box, pct),
-                "framing": {"offset": 2.0 if row_id == "r13_star_trails" else 0.0} if box is None else {"box": list(box), "pct": pct},
+                "framing": {"offset": 12.90 if row_id == "r15_16_path" else (2.0 if row_id == "r13_star_trails" else 0.0)} if box is None else {"box": list(box), "pct": pct},
                 "overlays": seg_ovs,
             }
         )
@@ -552,7 +574,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0443", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0458", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     tiles = []
