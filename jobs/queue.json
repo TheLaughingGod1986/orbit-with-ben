@@ -35896,13 +35896,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T16:14Z",
-      "eta": "2026-10-17T18:14Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T16:14Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (HOS 001 s07_semmelweis_hands_v01 built, 25.17s, 61w, 145 wpm, 0 spend, gate+vo_check+polish_gate+picture_qa PASS, commit c34d8cd7)",
       "history": [
         {
           "at": "2026-10-17T16:14Z",
@@ -35938,6 +35938,11 @@
           "at": "2026-10-17T16:36Z",
           "by": "gemini",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-17T16:36Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (HOS 001 s07_semmelweis_hands_v01 built, 25.17s, 61w, 145 wpm, 0 spend, gate+vo_check+polish_gate+picture_qa PASS, commit c34d8cd7)"
         }
       ],
       "kind": "assembly",
