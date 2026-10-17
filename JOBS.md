@@ -134,7 +134,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0468 | mini | blocked | gemini | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0469 | any | blocked | gemini | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0470 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
-| J0471 | mini | claimed | gemini | 2026-10-17T17:55Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0471 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
