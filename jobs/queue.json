@@ -1,5 +1,5 @@
 {
-  "next_id": 432,
+  "next_id": 433,
   "jobs": [
     {
       "id": "J0001",
@@ -32818,6 +32818,33 @@
         "by": "gemini",
         "note": "HOS gates complete: comp graphics_v01 (10/10 PASS), standalone Shorts s5-s8 PASS, s2 PASS, s1/s3/s4 seam/gutter FAILs, t"
       }
+    },
+    {
+      "id": "J0432",
+      "title": "OWB Shorts: fix polish_gate/picture_qa seam & near-black FAILs on 020/021/025 Shorts and standalone s1/s3/s4/s6/s8 (£0, no spend, no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Fix polish_gate and picture_qa FAILs found in J0431 QA sweep (OWB 7c86b964) locally with £0 spend and NO YouTube upload/schedule changes: (1) 020 jupiter_no_crust_v01 (1/4 FAIL: s02_cloud_descent seam at 0.285 from 9-14s title overlay); (2) 021 saturn_clock_100_300my_v01 (3/5 FAIL: s03_pia12590 & s04_pia20530 near-black, s05_end_loop seam/gutter at 0.772/0.624 from end-card shade); (3) 025 thu12_length_test_dust_v01 (1/13 FAIL: s11_r22 PIA07372 seam at 0.046), mon09_night_cold_v01 (1/7 FAIL: s07_end_card_loop_PIA11132 gutter at 0.087), fri13_ingenuity_72_v02 (3/7 FAIL: s02_PIA24593 low detail, s04_PIA24584 & s05_PIA26244 fit-mode seam at 0.276/0.278); (4) standalone Shorts owb_sa_s1_mercury_v01 (3/5 FAIL), owb_sa_s3_iss_sunrises_v01 (5/7 FAIL), owb_sa_s4_uranus_v01 (4/6 FAIL), owb_sa_s6_titan_v01 (1/5 FAIL), owb_sa_s8_voyager1_v01 (3/6 FAIL). Feather overlay/end-card shades, replace fit letterboxing with feathered blur fill, lift near-black space plates so mean >= 26, re-render locally, and re-run gate_shorts_open.py, polish_gate.py, and picture_qa.py to PASS.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-17T04:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-17T04:01Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
