@@ -36289,13 +36289,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T17:30Z",
-      "eta": "2026-10-17T19:30Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T17:29Z",
-      "result": "",
+      "result": "parked for Chief: script review",
       "history": [
         {
           "at": "2026-10-17T17:29Z",
@@ -36331,6 +36331,11 @@
           "at": "2026-10-17T17:43Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed 040 script v01 (PASS 95.8/100) + SOURCES v01 at 550c7da4"
+        },
+        {
+          "at": "2026-10-17T17:43Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: script review"
         }
       ],
       "kind": "script",
