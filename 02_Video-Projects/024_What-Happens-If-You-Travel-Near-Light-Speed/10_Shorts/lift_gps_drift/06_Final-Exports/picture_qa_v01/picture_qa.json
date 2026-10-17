@@ -1,0 +1,142 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/lift_gps_drift/06_Final-Exports/light_speed_gps_drift_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "s01_gps_satellite",
+      "source": "024_v05d_span_23.40.mp4",
+      "title": "NASA/USAF GPS Block IIIA satellite in orbit above Earth (23.40s)",
+      "t": 2.46,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0554 < film p5 0.0588"
+      ],
+      "offset": 23.4
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_gps_satellite",
+      "source": "024_v05d_span_23.40.mp4",
+      "title": "NASA/USAF GPS Block IIIA satellite in orbit above Earth (23.40s)",
+      "t": 2.46,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0554 < film p5 0.0588"
+      ],
+      "offset": 23.4
+    },
+    {
+      "cut": 1,
+      "row": "s02_deep_space_clock",
+      "source": "024_v05d_span_49.82.mp4",
+      "title": "NASA Deep Space Atomic Clock spacecraft hardware (49.82s)",
+      "t": 6.62,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 49.82
+    },
+    {
+      "cut": 2,
+      "row": "s03_nasa_aircraft_sky",
+      "source": "024_v05d_span_94.10.mp4",
+      "title": "NASA high-altitude flight sky view (94.10s)",
+      "t": 10.63,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 94.1
+    },
+    {
+      "cut": 3,
+      "row": "s04_iss_orbit",
+      "source": "024_v05d_span_253.80.mp4",
+      "title": "ISS crew in orbit above Earth (253.80s)",
+      "t": 15.35,
+      "at": "0:15",
+      "fail": [],
+      "warn": [],
+      "offset": 253.8
+    },
+    {
+      "cut": 4,
+      "row": "s05_engine_test_plume",
+      "source": "024_v05d_span_465.15.mp4",
+      "title": "NASA spacecraft engine test plume glow (465.15s)",
+      "t": 20.32,
+      "at": "0:20",
+      "fail": [],
+      "warn": [],
+      "offset": 465.15
+    },
+    {
+      "cut": 5,
+      "row": "s06_rs25_engine_test",
+      "source": "024_v05d_span_327.20.mp4",
+      "title": "NASA Stennis RS-25 rocket engine test firing (327.20s)",
+      "t": 23.88,
+      "at": "0:24",
+      "fail": [],
+      "warn": [],
+      "offset": 327.2
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_gps_satellite.mp4",
+      "title": "End-card loop: GPS Block IIIA satellite in orbit (23.40s)",
+      "t": 25.89,
+      "at": "0:26",
+      "fail": [],
+      "warn": [],
+      "offset": 23.4
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0588,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/lift_gps_drift/06_Final-Exports/light_speed_gps_drift_v01.mp4",
+  "edge_floor": 0.0588,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s01_gps_satellite",
+      "cut": 0,
+      "t": 2.46,
+      "source": "024_v05d_span_23.40.mp4",
+      "why": [
+        "low detail: edge density 0.0554 < film p5 0.0588"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_gps_satellite",
+      "source": "024_v05d_span_23.40.mp4",
+      "t": 2.46,
+      "std": 61.95,
+      "mean": 36.98,
+      "p95": 187.0,
+      "edge": 0.0554,
+      "hf": 11.65,
+      "lf": 54.86,
+      "std8": 57.92,
+      "edge8": 0.2083,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0554 < film p5 0.0588"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "s02_deep_space_clock",
+      "source": "024_v05d_span_49.82.mp4",
+      "t": 6.62,
+      "std": 56.09,
+      "mean": 133.0,
+      "p95": 217.0,
+      "edge": 0.1096,
+      "hf": 13.07,
+      "lf": 47.45,
+      "std8": 50.88,
+      "edge8": 0.4393,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_nasa_aircraft_sky",
+      "source": "024_v05d_span_94.10.mp4",
+      "t": 10.63,
+      "std": 46.18,
+      "mean": 122.39,
+      "p95": 221.0,
+      "edge": 0.1443,
+      "hf": 18.69,
+      "lf": 33.87,
+      "std8": 37.65,
+      "edge8": 0.2829,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_iss_orbit",
+      "source": "024_v05d_span_253.80.mp4",
+      "t": 15.35,
+      "std": 46.51,
+      "mean": 106.4,
+      "p95": 173.0,
+      "edge": 0.0935,
+      "hf": 11.19,
+      "lf": 39.02,
+      "std8": 42.08,
+      "edge8": 0.3757,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_engine_test_plume",
+      "source": "024_v05d_span_465.15.mp4",
+      "t": 20.32,
+      "std": 70.06,
+      "mean": 82.04,
+      "p95": 226.0,
+      "edge": 0.0787,
+      "hf": 15.35,
+      "lf": 63.13,
+      "std8": 65.69,
+      "edge8": 0.2928,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_rs25_engine_test",
+      "source": "024_v05d_span_327.20.mp4",
+      "t": 23.88,
+      "std": 48.48,
+      "mean": 133.75,
+      "p95": 213.0,
+      "edge": 0.1089,
+      "hf": 11.94,
+      "lf": 41.87,
+      "std8": 43.93,
+      "edge8": 0.3975,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_gps_satellite.mp4",
+      "t": 25.89,
+      "std": 63.89,
+      "mean": 38.35,
+      "p95": 188.0,
+      "edge": 0.0669,
+      "hf": 16.44,
+      "lf": 53.67,
+      "std8": 57.64,
+      "edge8": 0.2394,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
