@@ -47,6 +47,28 @@ ENC = ["-an", "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-threads", "4
 # Each ov in ovs: (ov_text, ov_in, ov_out, cx, y, px, check)
 ROWS = [
     (
+        "r04_shower_shell",
+        "0 Open",
+        18.02,
+        23.02,
+        HERE / "code_graphics_v02" / "code_graphic_028_r04_shower_shell_v02.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "1.3 million years",
+                18.50,
+                21.50,
+                960,
+                90,
+                78,
+                "SOURCES row 1: Bailer-Jones 2022 ApJL 935:L9 closest approach in 1.292 Myr (90% CI 1.257-1.334 Myr); VO 'one point three million years' at 18.50-20.58s",
+            )
+        ],
+    ),
+    (
         "r06_milky_way",
         "1 The Star Heading Our Way",
         42.78,
@@ -65,6 +87,28 @@ ROWS = [
                 860,
                 78,
                 "SOURCES row 2: Bailer-Jones 2022 ApJL 935:L9 Gaia DR3 parallax 52.433 mas (19.072 pc = 62.20 ly in Serpens); VO 'about 62 light-years away' at 45.08-46.90s",
+            )
+        ],
+    ),
+    (
+        "r07_kdwarf",
+        "1 The Star Heading Our Way",
+        54.30,
+        57.54,
+        HERE / "code_graphics_v02" / "code_graphic_028_r07_kdwarf_v02.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "About 60%",
+                55.54,
+                57.40,
+                960,
+                90,
+                78,
+                "SOURCES row 3: Fernandez-Puig et al. 2026 Table 1 mass 0.595 +/- 0.013 M_sun (~60% Sun's mass); VO 'about 60%' at 55.54-56.52s",
             )
         ],
     ),
@@ -537,7 +581,9 @@ def render_code_clean_028(plate_id: str, plate_use: float, asset: str, off: floa
 
 
 VIDEO_OFFSETS = {
+    "r04_shower_shell": 0.0,
     "r06_milky_way": 0.0,
+    "r07_kdwarf": 0.0,
     "r13_star_trails": 2.0,
     "r15_16_path": 12.90,
     "r33_traffic": 1.50,
@@ -591,8 +637,8 @@ def main() -> None:
                 ],
                 check=True,
             )
-            if row_id == "r33_traffic":
-                render_code_clean_028("r33_traffic", 8.52, "oort_traffic", off, dur, base_after)
+            if row_id in ("r04_shower_shell", "r07_kdwarf", "r33_traffic"):
+                render_code_clean_028(row_id, 0.0, "", off, dur, base_after)
             else:
                 shutil.copyfile(b_seg, base_after)
         else:
@@ -680,7 +726,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0474", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0489", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     tiles = []

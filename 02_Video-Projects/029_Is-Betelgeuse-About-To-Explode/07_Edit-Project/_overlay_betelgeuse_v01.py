@@ -51,6 +51,27 @@ words = json.loads((EP / "02_Voiceover" / "words.json").read_text())["words"]
 # overlay: (text, film_start, film_end, cx, y, px, source_check, suppress_gold_label)
 ROWS = [
     (
+        "r03_r04_promise",
+        "0 Open",
+        27.46,
+        32.26,
+        "code",
+        CDIR / "code_graphic_029_r03_r04_promise_v01.mp4",
+        {"plate_id": "r03_r04_promise", "plate_in": 13.96, "plate_use": 22.98, "offset": 13.50, "upscale": 1.0},
+        [
+            (
+                "In 2019",
+                27.48,
+                29.50,
+                960,
+                90,
+                78,
+                "SOURCES row 8: Guinan et al. 2020 ATel 13512 & Montarges et al. 2021 Nature 594:365 Great Dimming began late 2019; VO 'in 2019' at 27.20-28.28s",
+                "in 2019",
+            )
+        ],
+    ),
+    (
         "r06_paranal",
         "1 The Star in Orion's Shoulder",
         49.46,
@@ -300,6 +321,16 @@ ROWS = [
         {"plate_id": "r31_shells_twins", "plate_in": 359.36, "plate_use": 18.94, "offset": 12.14, "upscale": 1.0},
         [
             (
+                "100,000 years left",
+                372.36,
+                374.80,
+                960,
+                90,
+                78,
+                "SOURCES rows 10 & 19: Joyce et al. 2020 ApJ 902:63 & Montarges et al. 2021 Nature 594:365 core helium burning ~100,000 yr remaining; VO '100,000 years left' at 372.64-374.16s",
+                "100,000 years",
+            ),
+            (
                 "100 years",
                 375.18,
                 376.86,
@@ -308,7 +339,7 @@ ROWS = [
                 78,
                 "SOURCES rows 10 & 19: Joyce et al. 2020 & Woosley et al. 2002 core helium burning (~100,000 yr) vs core carbon burning (~100-600 yr) look nearly identical externally; VO 'a hundred years' at 375.18-376.06s",
                 "a hundred years",
-            )
+            ),
         ],
     ),
     (
@@ -673,6 +704,8 @@ def main() -> None:
                 check=True,
             )
             suppress = {ov[7] for ov in ovs if ov[7]}
+            if opts["plate_id"] == "r03_r04_promise":
+                suppress.add("giant star actually dies")
             render_code_clean(opts, dur, suppress, base_after)
         else:
             raise ValueError(kind)
@@ -759,7 +792,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0474", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0489", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     # Build side-by-side before/after contact sheet
