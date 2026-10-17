@@ -15,24 +15,37 @@
   "warn": [
     {
       "cut": 1,
-      "row": "r26_hale_bopp",
-      "source": "comet_a3.jpg",
-      "title": "Comet C/2023 A3 from the ISS, 28 Sep 2024",
-      "t": 8.77,
-      "at": "0:09",
+      "row": "r15_gaia_craft",
+      "source": "gaia_craft.jpg",
+      "title": "The Gaia spacecraft (artist's impression)",
+      "t": 10.45,
+      "at": "0:10",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0156 < film p5 0.0187"
+        "kind of picture: 'The Gaia spacecraft (artist's impression)' (artist), look at it full size"
       ],
       "offset": null
     },
     {
-      "cut": 5,
+      "cut": 3,
+      "row": "r17_neptune",
+      "source": "neptune.jpg",
+      "title": "Neptune full disk, Voyager 2 (PIA01492)",
+      "t": 21.77,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0017 < film p5 0.0100"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 9,
       "row": "r33_wise_craft",
       "source": "wise_craft.jpg",
       "title": "NEOWISE spacecraft, artist concept (PIA17254)",
-      "t": 31.17,
-      "at": "0:31",
+      "t": 55.43,
+      "at": "0:55",
       "fail": [],
       "warn": [
         "kind of picture: 'NEOWISE spacecraft, artist concept (PIA17254)' (artist), look at it full size"
@@ -43,68 +56,114 @@
   "rows": [
     {
       "cut": 0,
-      "row": "r24_sunrise",
-      "source": "iss_sunrise.jpg",
-      "title": "Orbital sunrise above Namibia",
-      "t": 2.92,
-      "at": "0:03",
+      "row": "r06_milky_way",
+      "source": "eso_mw_lasilla.mp4",
+      "title": "La Silla Milky Way time-lapse",
+      "t": 3.67,
+      "at": "0:04",
       "fail": [],
       "warn": [],
-      "offset": null
+      "offset": 0.0
     },
     {
       "cut": 1,
-      "row": "r26_hale_bopp",
-      "source": "comet_a3.jpg",
-      "title": "Comet C/2023 A3 from the ISS, 28 Sep 2024",
-      "t": 8.77,
-      "at": "0:09",
+      "row": "r15_gaia_craft",
+      "source": "gaia_craft.jpg",
+      "title": "The Gaia spacecraft (artist's impression)",
+      "t": 10.45,
+      "at": "0:10",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0156 < film p5 0.0187"
+        "kind of picture: 'The Gaia spacecraft (artist's impression)' (artist), look at it full size"
       ],
       "offset": null
     },
     {
       "cut": 2,
-      "row": "r26_a3",
-      "source": "comet_a3.jpg",
-      "title": "Comet C/2023 A3 from the ISS, 28 Sep 2024",
-      "t": 14.67,
-      "at": "0:15",
+      "row": "r16_sunrise_break",
+      "source": "iss_sunrise.jpg",
+      "title": "Orbital sunrise above Namibia",
+      "t": 16.42,
+      "at": "0:16",
       "fail": [],
       "warn": [],
       "offset": null
     },
     {
       "cut": 3,
-      "row": "r29_twilight",
-      "source": "conjunction.tif",
-      "title": "Jupiter and Saturn after sunset, 21 Dec 2020",
-      "t": 20.73,
-      "at": "0:21",
+      "row": "r17_neptune",
+      "source": "neptune.jpg",
+      "title": "Neptune full disk, Voyager 2 (PIA01492)",
+      "t": 21.77,
+      "at": "0:22",
       "fail": [],
-      "warn": [],
+      "warn": [
+        "low detail: edge density 0.0017 < film p5 0.0100"
+      ],
       "offset": null
     },
     {
       "cut": 4,
-      "row": "r31_moon_2",
-      "source": "moon_lro.jpg",
-      "title": "Full Moon (LRO)",
-      "t": 25.93,
-      "at": "0:26",
+      "row": "r24_sunrise",
+      "source": "iss_sunrise.jpg",
+      "title": "Orbital sunrise above Namibia",
+      "t": 27.18,
+      "at": "0:27",
       "fail": [],
       "warn": [],
       "offset": null
     },
     {
       "cut": 5,
+      "row": "r26_hale_bopp",
+      "source": "comet_a3.jpg",
+      "title": "Comet C/2023 A3 from the ISS, 28 Sep 2024",
+      "t": 33.03,
+      "at": "0:33",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 6,
+      "row": "r26_a3",
+      "source": "comet_a3.jpg",
+      "title": "Comet C/2023 A3 from the ISS, 28 Sep 2024",
+      "t": 38.93,
+      "at": "0:39",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 7,
+      "row": "r29_twilight",
+      "source": "conjunction.tif",
+      "title": "Jupiter and Saturn after sunset, 21 Dec 2020",
+      "t": 45.0,
+      "at": "0:45",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "r31_moon_2",
+      "source": "moon_lro.jpg",
+      "title": "Full Moon (LRO)",
+      "t": 50.2,
+      "at": "0:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 9,
       "row": "r33_wise_craft",
       "source": "wise_craft.jpg",
       "title": "NEOWISE spacecraft, artist concept (PIA17254)",
-      "t": 31.17,
-      "at": "0:31",
+      "t": 55.43,
+      "at": "0:55",
       "fail": [],
       "warn": [
         "kind of picture: 'NEOWISE spacecraft, artist concept (PIA17254)' (artist), look at it full size"
@@ -112,19 +171,19 @@
       "offset": null
     },
     {
-      "cut": 6,
+      "cut": 10,
       "row": "r34_sky_wide",
       "source": "gaia_edr3_sky.png",
       "title": "Colour of the sky, Gaia Early Data Release 3 (Dec 2020)",
-      "t": 38.65,
-      "at": "0:39",
+      "t": 62.92,
+      "at": "1:03",
       "fail": [],
       "warn": [],
       "offset": null
     }
   ],
   "polish": {
-    "edge_floor": 0.0187,
+    "edge_floor": 0.01,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

@@ -156,6 +156,48 @@ ROWS = [
         ],
     ),
     (
+        "r10_span_c",
+        "2 The Great Dimming",
+        106.38,
+        109.50,
+        "video",
+        HDIR / "lasilla_startrails.mp4",
+        {"offset": 12.0, "upscale": 1.0},
+        [
+            (
+                "End of 2019",
+                106.50,
+                109.10,
+                960,
+                860,
+                78,
+                "SOURCES row 8: Guinan et al. 2020 ATel 13512 & Montarges et al. 2021 Nature 594:365 Great Dimming began late 2019; VO 'At the end of 2019' at 106.38-107.60s",
+                None,
+            )
+        ],
+    ),
+    (
+        "r10_r11_dip",
+        "2 The Great Dimming",
+        118.50,
+        123.16,
+        "code",
+        CDIR / "code_graphic_029_r10_r11_dip_v01.mp4",
+        {"plate_id": "r10_r11_dip", "plate_in": 109.50, "plate_use": 13.66, "offset": 9.00, "upscale": 1.0},
+        [
+            (
+                "More than 50 years",
+                121.50,
+                123.10,
+                960,
+                90,
+                76,
+                "SOURCES row 8: Dupree et al. 2022 ApJ 936:18 & Guinan et al. 2020 photometric minimum deepest in >50-100 yr; VO 'more than fifty years' at 122.00-123.10s",
+                "fifty years",
+            )
+        ],
+    ),
+    (
         "r17_r20_shells",
         "3 How a Giant Star Dies",
         210.50,
@@ -180,7 +222,7 @@ ROWS = [
         "r29_span_astrolabe",
         "4 The Night It Goes",
         336.00,
-        341.80,
+        350.00,
         "code",
         CDIR / "code_graphic_029_r29_span_astrolabe_v01.mp4",
         {"plate_id": "r29_span_astrolabe", "plate_in": 326.56, "plate_use": 23.44, "offset": 9.44, "upscale": 1.0},
@@ -194,6 +236,16 @@ ROWS = [
                 78,
                 "SOURCES rows 3 & 18: Joyce et al. 2020 distance 168 +27/-15 pc = 548 ly (>500 yr light travel time); VO 'five hundred years' at 337.70-338.64s",
                 "five hundred years",
+            ),
+            (
+                "100,000 years",
+                347.88,
+                349.95,
+                960,
+                860,
+                78,
+                "SOURCES row 19: Joyce et al. 2020 ApJ 902:63 & Montarges et al. 2021 Nature 594:365 core helium burning ~100,000 yr remaining; VO 'hundred thousand years left' at 348.34-349.95s",
+                "hundred thousand years",
             ),
         ],
     ),
@@ -576,7 +628,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0375", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0425", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     # Build side-by-side before/after contact sheet

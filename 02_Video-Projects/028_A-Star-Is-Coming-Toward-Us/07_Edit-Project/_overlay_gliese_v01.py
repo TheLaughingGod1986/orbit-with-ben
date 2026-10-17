@@ -46,6 +46,78 @@ ENC = ["-an", "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-threads", "4
 # (row_id, chapter, film_in, film_out, src_file, box, pct, gamma, lift, ov_text, ov_in, ov_out, cx, y, px, check)
 ROWS = [
     (
+        "r06_milky_way",
+        "1 The Star Heading Our Way",
+        42.78,
+        50.10,
+        HDIR / "eso_mw_lasilla.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        "62 light-years away",
+        45.08,
+        48.00,
+        960,
+        860,
+        78,
+        "SOURCES row 2: Bailer-Jones 2022 ApJL 935:L9 Gaia DR3 parallax 52.433 mas (19.072 pc = 62.20 ly in Serpens); VO 'about 62 light-years away' at 45.08-46.90s",
+    ),
+    (
+        "r15_gaia_craft",
+        "2 How Close Will It Come?",
+        147.76,
+        154.00,
+        HDIR / "gaia_craft.jpg",
+        (0.04, 0.08, 0.96, 0.90),
+        0.05,
+        0.95,
+        0.0,
+        "1 billion stars",
+        151.54,
+        153.80,
+        520,
+        860,
+        78,
+        "SOURCES row 9: Gaia Collaboration Vallenari et al. 2023 A&A 674:A1 Gaia DR3 1.806 billion sources; VO 'more than a billion stars' at 151.54-152.90s",
+    ),
+    (
+        "r16_sunrise_break",
+        "2 How Close Will It Come?",
+        169.80,
+        175.50,
+        HDIR / "iss_sunrise.jpg",
+        (0.02, 0.16, 0.74, 0.64),
+        0.05,
+        0.68,
+        8.0,
+        "5 times closer",
+        172.40,
+        175.10,
+        960,
+        860,
+        78,
+        "SOURCES row 10: Bailer-Jones 2022 ApJL 935:L9 Hipparcos ~0.311 pc vs Gaia DR3 0.0636 pc (~4.89x, five times closer); VO 'five times closer' at 172.56-173.65s",
+    ),
+    (
+        "r17_neptune",
+        "2 How Close Will It Come?",
+        181.50,
+        186.50,
+        HDIR / "neptune.jpg",
+        (0.04, 0.22, 0.96, 0.74),
+        0.05,
+        0.85,
+        6.0,
+        "30 centimetres away",
+        184.54,
+        186.35,
+        960,
+        860,
+        76,
+        "SOURCES row 11: NASA Neptune Fact Sheet a = 30.07 AU => 30.1 cm at 1 AU = 1 cm scale; VO '30 centimeters away' at 184.84-186.30s",
+    ),
+    (
         "r24_sunrise",
         "3 Into the Oort Cloud",
         251.18,
@@ -187,7 +259,9 @@ def pill(text: str, px: int, dst: Path) -> tuple[int, int]:
     return img.size
 
 
-def compute_upscale(src: Path, box: tuple[float, float, float, float], pct: float) -> float:
+def compute_upscale(src: Path, box: tuple[float, float, float, float] | None, pct: float) -> float:
+    if box is None:
+        return 1.0
     im = Image.open(src)
     w, h = im.size
     cw = w * (box[2] - box[0])
@@ -214,7 +288,7 @@ def check_plan() -> list[str]:
             problems.append(f"{row_id} {text!r} duration {dur:.2f}s outside 1.5..4.0s")
         if a < fin - 0.01 or b > fout + 0.01:
             problems.append(f"{row_id} {text!r} ({a:.2f}-{b:.2f}) outside row ({fin:.2f}-{fout:.2f})")
-        print(f"{row_id:16s} | {ch:26s} | film {a:6.2f}-{b:6.2f} ({dur:4.2f}s) | {text:24s} | up={up:4.2f}x | {note}")
+        print(f"{row_id:18s} | {ch:26s} | film {a:6.2f}-{b:6.2f} ({dur:4.2f}s) | {text:24s} | up={up:4.2f}x | {note}")
     print("problems:", problems or "none")
     return problems
 
@@ -292,7 +366,29 @@ def main() -> None:
         b_seg = WORK / f"before_{seg_i:02d}_{row_id}.mp4"
         a_seg = WORK / f"after_{seg_i:02d}_{row_id}.mp4"
 
-        render_still_push(src, box, pct, gamma, lift, dur, b_seg)
+        if box is None:
+            sp.run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-hide_banner",
+                    "-loglevel",
+                    "error",
+                    "-ss",
+                    "0.0",
+                    "-i",
+                    str(src),
+                    "-vf",
+                    f"scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps={FPS},setsar=1",
+                    "-frames:v",
+                    str(frames),
+                    *ENC,
+                    str(b_seg),
+                ],
+                check=True,
+            )
+        else:
+            render_still_push(src, box, pct, gamma, lift, dur, b_seg)
 
         pname = f"code_graphic_028_{row_id}_{seg_i:02d}.png"
         w, h = pill(text, px, WORK / pname)
@@ -366,7 +462,7 @@ def main() -> None:
                 "film_out": fout,
                 "source": src.name,
                 "upscale": compute_upscale(src, box, pct),
-                "framing": {"box": list(box), "pct": pct},
+                "framing": {"offset": 0.0} if box is None else {"box": list(box), "pct": pct},
                 "overlays": [pname],
             }
         )
@@ -377,7 +473,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0375", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0425", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     tiles = []
