@@ -101,11 +101,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0429 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0430 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0431 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0432 | mini | claimed | gemini | 2026-10-17T06:03Z | assembly · OWB Shorts: fix polish_gate/picture_qa seam & near-black FAILs on 020/021/025 Shorts and standalone s1/s3/s4/s6/s8 (£0, no spend, no upload) |  |
 | J0433 | mini | open | – | – | assembly · HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) |  |
 
 Recently finished:
 
+- J0432 done: OWB Shorts: fix polish_gate/picture_qa seam & near-black FAILs on 020/021/025 Shorts and standalone s1/s3/s4/s6/s8 (£0, no spend, no upload) (done)
 - J0426 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 23KZK7OjsEE pass chapters, sources, end screens, and Related video checks at 2026-10-17T02:53Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md, commit a822b642). Nothing changed in Studio.)
 - J0416 done: HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend) (done)
 - J0415 done: OWB 021 & 030 Shorts: fix polish_gate/picture_qa seam & near-black FAILs on saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 (£0, no spend) (269040e6: both saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 re-rendered (£0 spend, no upload) and PASS gate_shorts_open, polish_gate (0 FAIL), and picture_qa (0 FAIL))
@@ -115,4 +115,3 @@ Recently finished:
 - J0376 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0361 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 1NeQFVnzO2Q pass chapters, sources, end screens, and Related video checks (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit 67c3c634).)
 - J0355 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs; 56 OWB + 13 HOS Shorts. CTR >=4%: OWB Jupiter 5.9%, HOS Germs 9.7%; Atom CTR unavailable (0 impressions). Main 401a8fbf; board-data 898e20a6 published and read back. Unavailable retention fields omitted on two low-view OWB Shorts. No spend or video changes.)
-- J0351 done: HOS 006: lay teach_overlays_v01 into full_join_v01 (no bed, no mint) (PASS (Chief, 16 Oct ~05:45 London): all 9 picture_qa/polish_gate seam flags sit inside LAY_TIMES overlay windows and are the card edges (lower-third top 0.73, timeline rule 0.465), not plate seams; checked frames at all 9 cuts plus mid-card stills. 6 low-detail warnings are unchanged base plates (already KEEP). Cards read right (Aristotle plants eat soil; num_500 counts up to 500 experiments; dates correct). Audio byte-matches the join, no bed. Squash-merged HOS #344 -> bbc073e8. Not a film PASS. Next: full-film review of the teach master. £0.)
