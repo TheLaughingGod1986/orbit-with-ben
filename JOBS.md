@@ -129,10 +129,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0462 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0463 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0464 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0465 | mini | claimed | gemini | 2026-10-17T15:16Z | assembly · HOS 004 Test B Short: fix picture_qa reuse FAIL on s04_cathode_rays_v01 (£0, no spend, no upload) |  |
 
 Recently finished:
 
+- J0465 done: HOS 004 Test B Short: fix picture_qa reuse FAIL on s04_cathode_rays_v01 (£0, no spend, no upload) (done)
 - J0459 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0444 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 23KZK7OjsEE pass chapters, sources, end screens, and Related video checks at 2026-10-17T08:24Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md, commit aad7af53). Nothing changed in Studio.)
 - J0440 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs, 69 Shorts (56 OWB + 13 HOS; 2 new 16 Oct Shorts not in Studio lifetime yet); CTR hits vs 4%: OWB Jupiter -jmMROGoZCM 5.3% (38 imp), HOS Germs _C92tIJCk8A 9.7% (31 imp); Saturn 55AEQwvs36g 1.9% (1,123 imp), HOS Periodic Table AL_-qlWko_g 3.4% (951 imp), HOS Atom GHZDsiH7L7A 0.0% (181 imp))
@@ -142,4 +142,3 @@ Recently finished:
 - J0416 done: HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend) (done)
 - J0415 done: OWB 021 & 030 Shorts: fix polish_gate/picture_qa seam & near-black FAILs on saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 (£0, no spend) (269040e6: both saturn_late_arrival_4_5b_v01 and 030_apophis_short_v05 re-rendered (£0 spend, no upload) and PASS gate_shorts_open, polish_gate (0 FAIL), and picture_qa (0 FAIL))
 - J0409 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J0399 done: HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend) (done)
