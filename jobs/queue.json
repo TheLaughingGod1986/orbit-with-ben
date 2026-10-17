@@ -36497,13 +36497,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T18:14Z",
-      "eta": "2026-10-17T19:14Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T18:14Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 6b92f9a6/dbdb2b1d: 024 Short light_speed_gps_drift_v01 0/7 PASS, 028 teaching_overlays_v01 0/15 PASS, 029 teaching_overlays_v01 0/16 PASS; HOS 0b7ad501/c34d8cd7: 004 Short s04_cathode_rays_v01 0/8 PASS, 001 Short s07_semmelweis_hands_v01 0/8 PASS; 0 FAILs, no fix jobs needed)",
       "history": [
         {
           "at": "2026-10-17T18:14Z",
@@ -36534,6 +36534,11 @@
           "at": "2026-10-17T18:25Z",
           "by": "gemini",
           "what": "step 3 of 3 done: All newest OWB and HOS packs PASS; 0 fix jobs needed"
+        },
+        {
+          "at": "2026-10-17T18:26Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 6b92f9a6/dbdb2b1d: 024 Short light_speed_gps_drift_v01 0/7 PASS, 028 teaching_overlays_v01 0/15 PASS, 029 teaching_overlays_v01 0/16 PASS; HOS 0b7ad501/c34d8cd7: 004 Short s04_cathode_rays_v01 0/8 PASS, 001 Short s07_semmelweis_hands_v01 0/8 PASS; 0 FAILs, no fix jobs needed)"
         }
       ],
       "kind": "qa",
