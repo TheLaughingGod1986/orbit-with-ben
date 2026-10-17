@@ -107,10 +107,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0437 | any | blocked | gemini | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0438 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0439 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0440 | mini | claimed | gemini | 2026-10-17T07:17Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
+- J0440 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs, 69 Shorts (56 OWB + 13 HOS; 2 new 16 Oct Shorts not in Studio lifetime yet); CTR hits vs 4%: OWB Jupiter -jmMROGoZCM 5.3% (38 imp), HOS Germs _C92tIJCk8A 9.7% (31 imp); Saturn 55AEQwvs36g 1.9% (1,123 imp), HOS Periodic Table AL_-qlWko_g 3.4% (951 imp), HOS Atom GHZDsiH7L7A 0.0% (181 imp))
 - J0433 done: HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) (done)
 - J0432 done: OWB Shorts: fix polish_gate/picture_qa seam & near-black FAILs on 020/021/025 Shorts and standalone s1/s3/s4/s6/s8 (£0, no spend, no upload) (done)
 - J0426 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 23KZK7OjsEE pass chapters, sources, end screens, and Related video checks at 2026-10-17T02:53Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md, commit a822b642). Nothing changed in Studio.)
@@ -120,4 +120,3 @@ Recently finished:
 - J0399 done: HOS 006 Short s04_photosynthesis_v01: fix polish_gate/picture_qa horizontal seam FAIL at 0:20 (£0, no spend) (done)
 - J0393 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos pass chapters, sources, end screens, and Related video checks at 17:56 UTC (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit af9e70aa). Nothing changed in Studio.)
 - J0376 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J0361 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 1NeQFVnzO2Q pass chapters, sources, end screens, and Related video checks (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit 67c3c634).)
