@@ -1,5 +1,5 @@
 {
-  "next_id": 465,
+  "next_id": 466,
   "jobs": [
     {
       "id": "J0001",
@@ -35338,6 +35338,33 @@
         "by": "gemini",
         "note": "HOS gates verified: 002 s07_mendeleev_cards_v01 PASS (0/7 fail); found 1 unqueued FAIL on HOS 004 s04_cathode_rays_v01 ("
       }
+    },
+    {
+      "id": "J0465",
+      "title": "HOS 004 Test B Short: fix picture_qa reuse FAIL on s04_cathode_rays_v01 (£0, no spend, no upload)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Fix the picture_qa 1/8 reuse FAIL on HOS 004 unuploaded Test B Short hos_004_s04_cathode_rays_v01 (02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/_build_short_s04_cathode_rays_v01.py, air_date_draft 2026-10-27) with £0 spend (existing Part 03 plates only, no upload): row s05_Thomson (12.747-16.647s) reuses 05_magnet_bends_v01.mp4 from s01_0 (0.0-2.355s). Swap s05_Thomson (or s01_0 + s08_loop) to an unused existing Part 03 plate, re-render hos_004_s04_cathode_rays_v01.mp4, and re-run gate_shorts_open.py, polish_gate.py, and picture_qa.py to PASS.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-17T14:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-17T14:13Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
