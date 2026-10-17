@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0429 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0430 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0431 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0433 | mini | open | – | – | assembly · HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) |  |
+| J0433 | mini | claimed | gemini | 2026-10-17T06:20Z | assembly · HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) |  |
 
 Recently finished:
 
