@@ -32081,13 +32081,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T01:17Z",
-      "eta": "2026-10-17T03:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T01:16Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (HOS 003 s05_first_xray_v01 built, 24.933 s, 64 words, sha256 f667ee2aad8c, 0 spend; gate_shorts_open + vo_check + polish_gate + picture_qa PASS; posted on HOS desk #180 comment 6228062021, HOS commit 34bd8f5d)",
       "history": [
         {
           "at": "2026-10-17T01:16Z",
@@ -32128,6 +32128,11 @@
           "at": "2026-10-17T01:40Z",
           "by": "gemini",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-10-17T01:40Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (HOS 003 s05_first_xray_v01 built, 24.933 s, 64 words, sha256 f667ee2aad8c, 0 spend; gate_shorts_open + vo_check + polish_gate + picture_qa PASS; posted on HOS desk #180 comment 6228062021, HOS commit 34bd8f5d)"
         }
       ],
       "kind": "assembly",
