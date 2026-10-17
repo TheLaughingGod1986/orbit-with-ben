@@ -1,0 +1,22 @@
+# Script Notes — 037 What Lies Hiding at the Centre of the Milky Way? (`v00`)
+
+- **Draft:** `01_Script/milky_way_centre_script_master_v00.md`
+- **Score:** `npm run review:script` → **PASS (95.4 / 100)**
+- **Spoken narration words:** 1,306 spoken words / 1,326 reviewer words (~8.8 min at 150 wpm; 0 warnings, 8/8 structure gates)
+- **Continuity:**
+  - Directly answers the closing hand-off at the end of `036_Why-Is-There-Ice-On-Mercury` (`"Next, we travel twenty-six thousand light-years to the centre of the Milky Way — where multi-million-degree gas swirls around the supermassive black hole Sagittarius A-star, packing four million times the mass of the Sun."`).
+  - Closes by handing off to Idea #2 (`The Strangest Things We Left in Space — Voyager 1 and the Golden Record`, backlog `019` / `015_Left-In-Space`), which is the next highest-scoring un-scaffolded topic in `IDEAS_2026-10-17_J0420.md` and pairs with scheduled standalone Short `kKN8Ale42sE` (*Voyager 1 Is About to Be One Light-Day Away*, airing 17 Nov 2026).
+- **Weekly audit & playbook rules enforced:**
+  - **Named celestial object in title (`OWB_2026-10-16.md` item 1):** names `the Milky Way` explicitly in the title (*What Lies Hiding at the Centre of the Milky Way?*, 48 characters).
+  - **No chapter card in 0:00–0:30 (`OWB_2026-10-16.md` item 2):** 3-paragraph cold open (~148 spoken words, ~0:55) runs over real NASA Chandra/Hubble (`sgr_lg.jpg`), Event Horizon Telescope (`eso2208-eht-mwa`), and ESO Very Large Telescope (`eso1825a`) plates before the first `[CHAPTER CARD: The Hiss From Sagittarius]`.
+  - **No back-to-back code graphics:** every `DATA:` graphic is separated by real NASA / ESO / NRAO observational plates or an Omni Orbit shot.
+  - **Subscribe beat line (`templates/SUBSCRIBE_BEAT_LINES.md`):** uses line 6 (`"If you've enjoyed the ride so far, subscribing is the best way to help Orbit keep going."`, 17 words at 41% of spoken script), not used in `032`–`036`.
+  - **Teach on screen + Polish pass + HOTU/SEA reference lessons:**
+    - `DATA:` 7 (includes 2 before `[SUBSCRIBE BEAT]` and 1 build-up timeline)
+    - `SCALE:` 7 (every `DATA:` has an everyday scale analogy in the spoken sentence and in `SOURCES.md`)
+    - `NUMBER OBJECT:` 7 (one 1–3 word + number object per `DATA:` beat)
+    - `WHO:` 6 (Harlow Shapley `1885–1972`, Karl Jansky `1905–1950`, Bruce Balick `born 1943`, Reinhard Genzel `born 1952`, Andrea Ghez `born 1965`, Albert Einstein `1879–1955` — every named person in the spoken script has a card at first mention and a verified LOC Name Authority Record in `SOURCES.md`)
+    - `WHEN:` 7 (`1932 to 2022`; `1918, 1932, April 1933, February 1974`; `1990s, 2002, 2020`; `May 2018, 26 July 2018`; `April 2017, 2019, 12 May 2022`; `2012`; `September 1977, 2010, February and March 2022`)
+    - `FACT:` 4 (`Found as telephone static`, `S2 orbits every 16 years`, `Star hits 3% light speed`, `Ejects 99% of captured gas`)
+    - **Orbit beats:** 2 (Chapter 2: standing on a floating observatory platform in the infrared glow of the galactic core, holding a laser pointer toward a shimmering adaptive-optics mirror as star S2 streaks past on its 16-year loop; Chapter 5: hovering half a light-year from Sagittarius A* with an X-ray detector as 99 out of every 100 gas parcels swirl inward and slingshot back out into space). Never in the first 30 seconds.
+    - **One-breath takeaway:** `"Sagittarius A-star showed that at the heart of the Milky Way, twenty-six thousand light-years away, four million Suns sit inside a starving supermassive black hole whose gravity bends starlight and whose past eruptions still echo across the galaxy."`
