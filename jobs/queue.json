@@ -1,5 +1,5 @@
 {
-  "next_id": 476,
+  "next_id": 477,
   "jobs": [
     {
       "id": "J0001",
@@ -36141,6 +36141,34 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J0476",
+      "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-17T17:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-17T17:14Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "listing",
+      "backlog": "hos-live-listing-fixes"
     }
   ],
   "focus": [],
@@ -36155,7 +36183,7 @@
     "hos-weekly-audit": "2026-10-17T14:44Z",
     "owb-ideas": "2026-10-17T15:00Z",
     "hos-ideas": "2026-10-17T15:26Z",
-    "hos-live-listing-fixes": "2026-10-17T12:56Z",
+    "hos-live-listing-fixes": "2026-10-17T17:14Z",
     "owb-next-script": "2026-10-17T13:04Z",
     "hos-next-script": "2026-10-17T13:09Z",
     "hos-plate-prep": "2026-10-17T13:26Z",
