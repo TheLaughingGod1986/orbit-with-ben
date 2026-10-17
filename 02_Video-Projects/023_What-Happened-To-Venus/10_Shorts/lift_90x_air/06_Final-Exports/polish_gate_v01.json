@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_90x_air/06_Final-Exports/venus_90x_thicker_air_v01.mp4",
+  "edge_floor": 0.0566,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_crater_plains",
+      "cut": 1,
+      "t": 8.3,
+      "source": "PIA00103.jpg",
+      "why": [
+        "low detail: edge density 0.0562 < film p5 0.0566"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pancake_domes",
+      "source": "PIA00215.jpg",
+      "t": 2.8,
+      "std": 40.97,
+      "mean": 121.51,
+      "p95": 201.0,
+      "edge": 0.4214,
+      "hf": 18.88,
+      "lf": 30.13,
+      "std8": 32.51,
+      "edge8": 0.2927,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_crater_plains",
+      "source": "PIA00103.jpg",
+      "t": 8.3,
+      "std": 42.74,
+      "mean": 97.07,
+      "p95": 177.0,
+      "edge": 0.0562,
+      "hf": 12.43,
+      "lf": 37.01,
+      "std8": 38.56,
+      "edge8": 0.2266,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0562 < film p5 0.0566"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_blue_marble",
+      "source": "as17-148-22727.jpg",
+      "t": 12.66,
+      "std": 66.35,
+      "mean": 153.69,
+      "p95": 251.0,
+      "edge": 0.3465,
+      "hf": 23.27,
+      "lf": 52.19,
+      "std8": 56.24,
+      "edge8": 0.6392,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_sif_mons",
+      "source": "PIA00272.jpg",
+      "t": 16.55,
+      "std": 24.53,
+      "mean": 138.38,
+      "p95": 171.0,
+      "edge": 0.058,
+      "hf": 9.84,
+      "lf": 18.22,
+      "std8": 19.96,
+      "edge8": 0.1305,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_eistla_ridges",
+      "source": "PIA00084.jpg",
+      "t": 21.12,
+      "std": 32.64,
+      "mean": 119.5,
+      "p95": 175.0,
+      "edge": 0.5078,
+      "hf": 19.98,
+      "lf": 16.64,
+      "std8": 20.2,
+      "edge8": 0.3529,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_PIA00215.mp4",
+      "t": 24.85,
+      "std": 36.96,
+      "mean": 98.45,
+      "p95": 169.0,
+      "edge": 0.326,
+      "hf": 17.37,
+      "lf": 26.4,
+      "std8": 28.92,
+      "edge8": 0.2233,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
