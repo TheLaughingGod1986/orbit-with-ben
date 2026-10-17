@@ -101,10 +101,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0429 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0430 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0431 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0433 | mini | claimed | gemini | 2026-10-17T06:20Z | assembly · HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) |  |
 
 Recently finished:
 
+- J0433 done: HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) (done)
 - J0432 done: OWB Shorts: fix polish_gate/picture_qa seam & near-black FAILs on 020/021/025 Shorts and standalone s1/s3/s4/s6/s8 (£0, no spend, no upload) (done)
 - J0426 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 23KZK7OjsEE pass chapters, sources, end screens, and Related video checks at 2026-10-17T02:53Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md, commit a822b642). Nothing changed in Studio.)
 - J0416 done: HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend) (done)
@@ -114,4 +114,3 @@ Recently finished:
 - J0393 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos pass chapters, sources, end screens, and Related video checks at 17:56 UTC (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit af9e70aa). Nothing changed in Studio.)
 - J0376 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0361 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 1NeQFVnzO2Q pass chapters, sources, end screens, and Related video checks (0 fixes needed, 05_Analytics/live_fixes/2026-10-16.md, commit 67c3c634).)
-- J0355 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs; 56 OWB + 13 HOS Shorts. CTR >=4%: OWB Jupiter 5.9%, HOS Germs 9.7%; Atom CTR unavailable (0 impressions). Main 401a8fbf; board-data 898e20a6 published and read back. Unavailable retention fields omitted on two low-view OWB Shorts. No spend or video changes.)
