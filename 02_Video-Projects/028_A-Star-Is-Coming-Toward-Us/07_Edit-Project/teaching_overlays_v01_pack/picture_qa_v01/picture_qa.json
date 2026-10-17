@@ -35,7 +35,7 @@
       "at": "0:32",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0017 < film p5 0.0116"
+        "low detail: edge density 0.0017 < film p5 0.0133"
       ],
       "offset": null
     },
@@ -120,7 +120,7 @@
       "at": "0:32",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0017 < film p5 0.0116"
+        "low detail: edge density 0.0017 < film p5 0.0133"
       ],
       "offset": null
     },
@@ -194,18 +194,40 @@
     },
     {
       "cut": 12,
+      "row": "r33_traffic",
+      "source": "code_graphic_028_r33_traffic_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 71.15,
+      "at": "1:11",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 13,
       "row": "r34_sky_wide",
       "source": "gaia_edr3_sky.png",
       "title": "Colour of the sky, Gaia Early Data Release 3 (Dec 2020)",
-      "t": 72.75,
-      "at": "1:13",
+      "t": 78.25,
+      "at": "1:18",
       "fail": [],
       "warn": [],
       "offset": null
+    },
+    {
+      "cut": 14,
+      "row": "r35_lasilla_ntt",
+      "source": "eso_lasilla_ntt.mp4",
+      "title": "Milky Way moves over the NTT, La Silla",
+      "t": 85.1,
+      "at": "1:25",
+      "fail": [],
+      "warn": [],
+      "offset": 2.74
     }
   ],
   "polish": {
-    "edge_floor": 0.0116,
+    "edge_floor": 0.0133,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

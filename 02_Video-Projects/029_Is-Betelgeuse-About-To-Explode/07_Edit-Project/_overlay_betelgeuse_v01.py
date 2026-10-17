@@ -200,12 +200,22 @@ ROWS = [
     (
         "r10_r11_dip",
         "2 The Great Dimming",
-        116.50,
+        114.20,
         123.16,
         "code",
         CDIR / "code_graphic_029_r10_r11_dip_v01.mp4",
-        {"plate_id": "r10_r11_dip", "plate_in": 109.50, "plate_use": 13.66, "offset": 7.00, "upscale": 1.0},
+        {"plate_id": "r10_r11_dip", "plate_in": 109.50, "plate_use": 13.66, "offset": 4.70, "upscale": 1.0},
         [
+            (
+                "By February 2020",
+                114.90,
+                116.70,
+                960,
+                90,
+                76,
+                "SOURCES row 8: Guinan et al. 2020 ATel 13512 & Montarges et al. 2021 Nature 594:365 Great Dimming photometric minimum February 2020; VO 'By February 2020' at 115.00-116.40s",
+                "February 2020",
+            ),
             (
                 "About 1/3",
                 117.14,
@@ -361,6 +371,27 @@ ROWS = [
                 78,
                 "SOURCES row 21: Howell et al. 2025 ApJL 982:L37 next greatest elongation November 2027; VO 'in late twenty twenty-seven' at 426.80-428.48s",
                 None,
+            )
+        ],
+    ),
+    (
+        "r35_song",
+        "5 So When?",
+        435.00,
+        440.50,
+        "code",
+        CDIR / "code_graphic_029_r35_song_v01.mp4",
+        {"plate_id": "r35_song", "plate_in": 432.60, "plate_use": 9.40, "offset": 2.40, "upscale": 1.0},
+        [
+            (
+                "Year 1054",
+                436.10,
+                438.60,
+                960,
+                860,
+                78,
+                "SOURCES row 22: SN 1054 Songshi/Song Huiyao recorded guest star on 4 July 1054 CE; VO 'year ten fifty-four' at 436.22-437.58s",
+                "1054",
             )
         ],
     ),
@@ -728,7 +759,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0458", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0474", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     # Build side-by-side before/after contact sheet

@@ -311,6 +311,28 @@ ROWS = [
         ],
     ),
     (
+        "r33_traffic",
+        "6 It Has Happened Before",
+        395.50,
+        401.00,
+        HERE / "code_graphics_v02" / "code_graphic_028_r33_traffic_v02.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "Less than 1 light-year",
+                396.58,
+                399.20,
+                960,
+                860,
+                76,
+                "SOURCES row 21: Mamajek et al. 2015 ApJL 800:L17 Scholz's Star passed 0.25 +0.11/-0.07 pc = 0.82 ly (<1 ly) from the Sun; VO 'less than a light-year' at 396.58-397.66s",
+            )
+        ],
+    ),
+    (
         "r34_sky_wide",
         "6 It Has Happened Before",
         403.30,
@@ -339,6 +361,28 @@ ROWS = [
                 78,
                 "SOURCES row 22: Bailer-Jones 2022 ApJL 935:L9 solar-type G3 dwarf HD 7977 passed within <0.05 pc (P=1/3) 2.8 Myr ago; VO 'called HD 7977' at 408.52-410.50s",
             ),
+        ],
+    ),
+    (
+        "r35_lasilla_ntt",
+        "6 It Has Happened Before",
+        426.50,
+        431.50,
+        HDIR / "eso_lasilla_ntt.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "1 star among billions",
+                427.40,
+                430.50,
+                960,
+                860,
+                76,
+                "SOURCES row 23: Bailer-Jones et al. 2018 A&A 616:A37 encounter rate 19.7 +/- 2.2 per Myr within 1 pc (~0.20 per Myr within 0.1 pc); VO 'one star among billions' at 427.50-429.16s",
+            )
         ],
     ),
 ]
@@ -445,6 +489,62 @@ def render_still_push(src: Path, box: tuple[float, float, float, float], pct: fl
         raise RuntimeError(f"still push failed: {dest}")
 
 
+def render_code_clean_028(plate_id: str, plate_use: float, asset: str, off: float, dur: float, dest: Path) -> None:
+    sys.path.insert(0, str(HERE))
+    import build_code_graphics_v02 as cg
+
+    frames = round(dur * FPS)
+    boards = json.loads((HERE / "PLATE_BOARDS_v02.json").read_text())["plates"]
+    plate = next(p for p in boards if p["id"] == plate_id)
+    orig_labels = list(cg.LABELS.get(plate_id, []))
+    cg.LABELS[plate_id] = []
+    try:
+        r = cg.Renderer(HERE / "code_graphics_v02" / "assets")
+        proc = sp.Popen(
+            [
+                "ffmpeg",
+                "-y",
+                "-hide_banner",
+                "-loglevel",
+                "error",
+                "-f",
+                "rawvideo",
+                "-pix_fmt",
+                "rgb24",
+                "-s",
+                "1920x1080",
+                "-r",
+                str(FPS),
+                "-i",
+                "-",
+                "-vf",
+                "setsar=1",
+                "-frames:v",
+                str(frames),
+                *ENC,
+                str(dest),
+            ],
+            stdin=sp.PIPE,
+        )
+        for n in range(frames):
+            t = off + n / FPS
+            proc.stdin.write(r.frame(plate, t).tobytes())
+        proc.stdin.close()
+        if proc.wait() != 0:
+            raise RuntimeError(f"code render failed: {dest}")
+    finally:
+        cg.LABELS[plate_id] = orig_labels
+
+
+VIDEO_OFFSETS = {
+    "r06_milky_way": 0.0,
+    "r13_star_trails": 2.0,
+    "r15_16_path": 12.90,
+    "r33_traffic": 1.50,
+    "r35_lasilla_ntt": 2.74,
+}
+
+
 def main() -> None:
     problems = check_plan()
     if "--plan" in sys.argv or problems:
@@ -466,10 +566,11 @@ def main() -> None:
         dur = round((fout - fin) * FPS) / FPS
         frames = round(dur * FPS)
         b_seg = WORK / f"before_{seg_i:02d}_{row_id}.mp4"
+        base_after = WORK / f"base_after_{seg_i:02d}_{row_id}.mp4"
         a_seg = WORK / f"after_{seg_i:02d}_{row_id}.mp4"
 
         if box is None:
-            off = 12.90 if row_id == "r15_16_path" else (2.0 if row_id == "r13_star_trails" else 0.0)
+            off = VIDEO_OFFSETS.get(row_id, 0.0)
             sp.run(
                 [
                     "ffmpeg",
@@ -490,10 +591,15 @@ def main() -> None:
                 ],
                 check=True,
             )
+            if row_id == "r33_traffic":
+                render_code_clean_028("r33_traffic", 8.52, "oort_traffic", off, dur, base_after)
+            else:
+                shutil.copyfile(b_seg, base_after)
         else:
             render_still_push(src, box, pct, gamma, lift, dur, b_seg)
+            shutil.copyfile(b_seg, base_after)
 
-        inputs = ["-i", str(b_seg)]
+        inputs = ["-i", str(base_after)]
         fc = "[0:v]null[v0];"
         seg_ovs = []
         for k, (text, a, b, cx, y, px, note) in enumerate(ovs):
@@ -563,7 +669,7 @@ def main() -> None:
                 "film_out": fout,
                 "source": src.name,
                 "upscale": compute_upscale(src, box, pct),
-                "framing": {"offset": 12.90 if row_id == "r15_16_path" else (2.0 if row_id == "r13_star_trails" else 0.0)} if box is None else {"box": list(box), "pct": pct},
+                "framing": {"offset": VIDEO_OFFSETS.get(row_id, 0.0)} if box is None else {"box": list(box), "pct": pct},
                 "overlays": seg_ovs,
             }
         )
@@ -574,7 +680,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0458", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0474", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     tiles = []

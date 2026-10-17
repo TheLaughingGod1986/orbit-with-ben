@@ -36,7 +36,7 @@
     }
   },
   "video": "/private/tmp/028_teaching_overlays_v01_after.mp4",
-  "edge_floor": 0.0116,
+  "edge_floor": 0.0133,
   "verdict": "PASS",
   "failed": [],
   "warn": [
@@ -46,7 +46,7 @@
       "t": 31.6,
       "source": "neptune.jpg",
       "why": [
-        "low detail: edge density 0.0017 < film p5 0.0116"
+        "low detail: edge density 0.0017 < film p5 0.0133"
       ]
     }
   ],
@@ -183,7 +183,7 @@
       },
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0017 < film p5 0.0116"
+        "low detail: edge density 0.0017 < film p5 0.0133"
       ]
     },
     {
@@ -344,9 +344,27 @@
     },
     {
       "cut": 12,
+      "row": "r33_traffic",
+      "source": "code_graphic_028_r33_traffic_v02.mp4",
+      "t": 71.15,
+      "std": 31.8,
+      "mean": 64.05,
+      "p95": 111.0,
+      "edge": 0.0798,
+      "hf": 11.28,
+      "lf": 25.64,
+      "std8": 26.91,
+      "edge8": 0.0913,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 13,
       "row": "r34_sky_wide",
       "source": "gaia_edr3_sky.png",
-      "t": 72.75,
+      "t": 78.25,
       "std": 48.45,
       "mean": 60.36,
       "p95": 160.0,
@@ -365,6 +383,24 @@
         "frames": 233,
         "fail": false
       },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 14,
+      "row": "r35_lasilla_ntt",
+      "source": "eso_lasilla_ntt.mp4",
+      "t": 85.1,
+      "std": 37.94,
+      "mean": 59.08,
+      "p95": 137.0,
+      "edge": 0.0865,
+      "hf": 10.39,
+      "lf": 33.23,
+      "std8": 34.3,
+      "edge8": 0.1142,
+      "seams": [],
+      "video": true,
       "fail": [],
       "warn": []
     }
