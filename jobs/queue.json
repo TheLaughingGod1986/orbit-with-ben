@@ -37379,13 +37379,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T21:00Z",
-      "eta": "2026-10-17T23:00Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T20:59Z",
-      "result": "",
+      "result": "parked for Chief: script review",
       "history": [
         {
           "at": "2026-10-17T20:59Z",
@@ -37421,6 +37421,11 @@
           "at": "2026-10-17T21:10Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed bf2f6494 and released 041 script to review; parking for Chief script review"
+        },
+        {
+          "at": "2026-10-17T21:10Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: script review"
         }
       ],
       "kind": "script",
