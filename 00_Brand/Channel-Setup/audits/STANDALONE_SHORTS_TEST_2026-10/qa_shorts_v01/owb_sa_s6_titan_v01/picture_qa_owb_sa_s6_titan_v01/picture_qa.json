@@ -1,0 +1,181 @@
+{
+  "verdict": "FAIL",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 3,
+      "row": "s04_PIA21625",
+      "source": "PIA21625.jpg",
+      "title": "Highlighting Titan's Hazes",
+      "t": 16.29,
+      "at": "0:16",
+      "fail": [
+        "near-black: mean 14.95, p95 65.0"
+      ],
+      "warn": [],
+      "offset": 13.62
+    }
+  ],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "s01_PIA14925",
+      "source": "PIA14925.jpg",
+      "title": "Polar Vortex in Color",
+      "t": 2.15,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.25x, may look soft"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA06230",
+      "source": "PIA06230.jpg",
+      "title": "Cassini View of Titan: Natural Color Composite",
+      "t": 6.5,
+      "at": "0:06",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Cassini View of Titan: Natural Color Composite' (composite), look at it full size"
+      ],
+      "offset": 4.3
+    },
+    {
+      "cut": 2,
+      "row": "s03_PIA09739",
+      "source": "PIA09739.jpg",
+      "title": "Titan Hazes",
+      "t": 11.16,
+      "at": "0:11",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.02x, may look soft"
+      ],
+      "offset": 8.7
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA14925",
+      "source": "end_card_loop_PIA14925.jpg",
+      "title": "End-card loop: Polar Vortex in Color",
+      "t": 20.46,
+      "at": "0:20",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0009"
+      ],
+      "offset": 18.96
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_PIA14925",
+      "source": "PIA14925.jpg",
+      "title": "Polar Vortex in Color",
+      "t": 2.15,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.25x, may look soft"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA06230",
+      "source": "PIA06230.jpg",
+      "title": "Cassini View of Titan: Natural Color Composite",
+      "t": 6.5,
+      "at": "0:06",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Cassini View of Titan: Natural Color Composite' (composite), look at it full size"
+      ],
+      "offset": 4.3
+    },
+    {
+      "cut": 2,
+      "row": "s03_PIA09739",
+      "source": "PIA09739.jpg",
+      "title": "Titan Hazes",
+      "t": 11.16,
+      "at": "0:11",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.02x, may look soft"
+      ],
+      "offset": 8.7
+    },
+    {
+      "cut": 3,
+      "row": "s04_PIA21625",
+      "source": "PIA21625.jpg",
+      "title": "Highlighting Titan's Hazes",
+      "t": 16.29,
+      "at": "0:16",
+      "fail": [
+        "near-black: mean 14.95, p95 65.0"
+      ],
+      "warn": [],
+      "offset": 13.62
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA14925",
+      "source": "end_card_loop_PIA14925.jpg",
+      "title": "End-card loop: Polar Vortex in Color",
+      "t": 20.46,
+      "at": "0:20",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0009"
+      ],
+      "offset": 18.96
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0009,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

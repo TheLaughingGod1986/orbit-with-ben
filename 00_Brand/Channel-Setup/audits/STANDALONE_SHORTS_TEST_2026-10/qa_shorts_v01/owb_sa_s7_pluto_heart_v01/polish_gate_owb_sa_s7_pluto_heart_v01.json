@@ -1,0 +1,148 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v01.mp4",
+  "edge_floor": 0.0522,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s04_PIA19708",
+      "cut": 3,
+      "t": 16.52,
+      "source": "PIA19708.jpg",
+      "why": [
+        "low detail: edge density 0.0252 < film p5 0.0522"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_PIA19952",
+      "source": "PIA19952.jpg",
+      "t": 2.94,
+      "std": 69.51,
+      "mean": 104.47,
+      "p95": 201.0,
+      "edge": 0.1761,
+      "hf": 11.66,
+      "lf": 67.0,
+      "std8": 67.51,
+      "edge8": 0.1157,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA21863",
+      "source": "PIA21863.jpg",
+      "t": 8.19,
+      "std": 61.5,
+      "mean": 75.48,
+      "p95": 166.0,
+      "edge": 0.1664,
+      "hf": 18.08,
+      "lf": 50.06,
+      "std8": 54.23,
+      "edge8": 0.4282,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_PIA20726",
+      "source": "PIA20726.jpg",
+      "t": 12.06,
+      "std": 51.64,
+      "mean": 156.0,
+      "p95": 214.0,
+      "edge": 0.2416,
+      "hf": 22.28,
+      "lf": 38.39,
+      "std8": 41.75,
+      "edge8": 0.3164,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_PIA19708",
+      "source": "PIA19708.jpg",
+      "t": 16.52,
+      "std": 64.37,
+      "mean": 32.66,
+      "p95": 193.0,
+      "edge": 0.0252,
+      "hf": 9.36,
+      "lf": 60.24,
+      "std8": 62.18,
+      "edge8": 0.1291,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0252 < film p5 0.0522"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA19952",
+      "source": "end_card_loop_PIA19952.jpg",
+      "t": 20.92,
+      "std": 73.92,
+      "mean": 95.33,
+      "p95": 205.0,
+      "edge": 0.1603,
+      "hf": 10.09,
+      "lf": 72.22,
+      "std8": 72.55,
+      "edge8": 0.1275,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

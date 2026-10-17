@@ -1,0 +1,263 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s3_iss_sunrises_v01.mp4",
+  "edge_floor": 0.0117,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "s01_iss040e080833",
+      "cut": 0,
+      "t": 2.0,
+      "source": "iss040e080833.jpg",
+      "why": [
+        "split panel: horizontal seam at 0.441"
+      ]
+    },
+    {
+      "row": "s02_iss054e002538",
+      "cut": 1,
+      "t": 5.55,
+      "source": "iss054e002538.jpg",
+      "why": [
+        "split panel: horizontal gutter at 0.828"
+      ]
+    },
+    {
+      "row": "s04_iss059e027932",
+      "cut": 3,
+      "t": 15.2,
+      "source": "iss059e027932.jpg",
+      "why": [
+        "near-black: mean 12.92, p95 75.0"
+      ]
+    },
+    {
+      "row": "s05_iss061e123823",
+      "cut": 4,
+      "t": 19.8,
+      "source": "iss061e123823.jpg",
+      "why": [
+        "split panel: horizontal seam at 0.7, horizontal seam at 0.774, horizontal seam at 0.776"
+      ]
+    },
+    {
+      "row": "s07_iss040e080833",
+      "cut": 6,
+      "t": 26.26,
+      "source": "end_card_loop_iss040e080833.jpg",
+      "why": [
+        "split panel: horizontal seam at 0.413"
+      ]
+    }
+  ],
+  "warn": [],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_iss040e080833",
+      "source": "iss040e080833.jpg",
+      "t": 2.0,
+      "std": 61.73,
+      "mean": 134.41,
+      "p95": 234.0,
+      "edge": 0.0507,
+      "hf": 16.75,
+      "lf": 53.22,
+      "std8": 55.3,
+      "edge8": 0.1791,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.441,
+          "step": 11.0
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal seam at 0.441"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_iss054e002538",
+      "source": "iss054e002538.jpg",
+      "t": 5.55,
+      "std": 73.23,
+      "mean": 94.95,
+      "p95": 244.0,
+      "edge": 0.1024,
+      "hf": 11.5,
+      "lf": 68.0,
+      "std8": 70.1,
+      "edge8": 0.323,
+      "seams": [
+        {
+          "kind": "horizontal gutter",
+          "at": 0.828
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal gutter at 0.828"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_iss064e044526",
+      "source": "iss064e044526.jpg",
+      "t": 9.95,
+      "std": 78.99,
+      "mean": 57.83,
+      "p95": 235.0,
+      "edge": 0.1215,
+      "hf": 17.7,
+      "lf": 69.4,
+      "std8": 73.85,
+      "edge8": 0.2735,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_iss059e027932",
+      "source": "iss059e027932.jpg",
+      "t": 15.2,
+      "std": 37.38,
+      "mean": 12.92,
+      "p95": 75.0,
+      "edge": 0.0125,
+      "hf": 7.28,
+      "lf": 32.65,
+      "std8": 35.45,
+      "edge8": 0.0903,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "near-black: mean 12.92, p95 75.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_iss061e123823",
+      "source": "iss061e123823.jpg",
+      "t": 19.8,
+      "std": 68.97,
+      "mean": 28.63,
+      "p95": 235.0,
+      "edge": 0.0206,
+      "hf": 11.44,
+      "lf": 62.71,
+      "std8": 65.9,
+      "edge8": 0.1738,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.7,
+          "step": 12.0
+        },
+        {
+          "kind": "horizontal seam",
+          "at": 0.774,
+          "step": 17.5
+        },
+        {
+          "kind": "horizontal seam",
+          "at": 0.776,
+          "step": 23.0
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal seam at 0.7, horizontal seam at 0.774, horizontal seam at 0.776"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_iss064e044526",
+      "source": "iss064e044526.jpg",
+      "t": 23.56,
+      "std": 80.42,
+      "mean": 83.1,
+      "p95": 243.0,
+      "edge": 0.1232,
+      "hf": 13.64,
+      "lf": 75.53,
+      "std8": 77.58,
+      "edge8": 0.2885,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_iss040e080833",
+      "source": "end_card_loop_iss040e080833.jpg",
+      "t": 26.26,
+      "std": 61.64,
+      "mean": 120.27,
+      "p95": 226.0,
+      "edge": 0.0113,
+      "hf": 3.83,
+      "lf": 60.97,
+      "std8": 60.95,
+      "edge8": 0.0703,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.413,
+          "step": 12.0
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal seam at 0.413"
+      ],
+      "warn": [
+        "low detail: edge density 0.0113 < film p5 0.0117"
+      ]
+    }
+  ]
+}

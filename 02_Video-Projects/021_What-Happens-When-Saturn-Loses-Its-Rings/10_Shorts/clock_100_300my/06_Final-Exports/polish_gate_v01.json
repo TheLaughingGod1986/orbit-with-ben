@@ -1,0 +1,192 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/clock_100_300my/06_Final-Exports/saturn_clock_100_300my_v01.mp4",
+  "edge_floor": 0.0127,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "s03_pia12590",
+      "cut": 2,
+      "t": 12.99,
+      "source": "PIA12590.jpg",
+      "why": [
+        "near-black: mean 23.81, p95 193.0"
+      ]
+    },
+    {
+      "row": "s04_pia20530",
+      "cut": 3,
+      "t": 17.81,
+      "source": "PIA20530.jpg",
+      "why": [
+        "near-black: mean 26.69, p95 178.0"
+      ]
+    },
+    {
+      "row": "s05_end_loop",
+      "cut": 4,
+      "t": 21.88,
+      "source": "end_card_loop_PIA17127.mp4",
+      "why": [
+        "split panel: horizontal seam at 0.772, horizontal gutter at 0.624"
+      ]
+    }
+  ],
+  "warn": [
+    {
+      "row": "s01_pia17127",
+      "cut": 0,
+      "t": 2.5,
+      "source": "PIA17127.jpg",
+      "why": [
+        "low detail: edge density 0.0125 < film p5 0.0127"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pia17127",
+      "source": "PIA17127.jpg",
+      "t": 2.5,
+      "std": 55.67,
+      "mean": 41.58,
+      "p95": 163.0,
+      "edge": 0.0125,
+      "hf": 7.87,
+      "lf": 53.12,
+      "std8": 54.1,
+      "edge8": 0.0919,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0125 < film p5 0.0127"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "s02_pia18314",
+      "source": "PIA18314.jpg",
+      "t": 7.74,
+      "std": 48.61,
+      "mean": 42.83,
+      "p95": 145.0,
+      "edge": 0.0228,
+      "hf": 9.73,
+      "lf": 43.36,
+      "std8": 45.47,
+      "edge8": 0.1303,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_pia12590",
+      "source": "PIA12590.jpg",
+      "t": 12.99,
+      "std": 60.13,
+      "mean": 23.81,
+      "p95": 193.0,
+      "edge": 0.0617,
+      "hf": 15.18,
+      "lf": 51.43,
+      "std8": 54.79,
+      "edge8": 0.1928,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "near-black: mean 23.81, p95 193.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_pia20530",
+      "source": "PIA20530.jpg",
+      "t": 17.81,
+      "std": 55.01,
+      "mean": 26.69,
+      "p95": 178.0,
+      "edge": 0.0133,
+      "hf": 6.7,
+      "lf": 51.32,
+      "std8": 53.2,
+      "edge8": 0.1584,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "near-black: mean 26.69, p95 178.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_end_loop",
+      "source": "end_card_loop_PIA17127.mp4",
+      "t": 21.88,
+      "std": 60.19,
+      "mean": 54.86,
+      "p95": 171.0,
+      "edge": 0.0464,
+      "hf": 13.38,
+      "lf": 53.14,
+      "std8": 55.44,
+      "edge8": 0.1729,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.772,
+          "step": 19.0
+        },
+        {
+          "kind": "horizontal gutter",
+          "at": 0.624
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal seam at 0.772, horizontal gutter at 0.624"
+      ],
+      "warn": []
+    }
+  ]
+}

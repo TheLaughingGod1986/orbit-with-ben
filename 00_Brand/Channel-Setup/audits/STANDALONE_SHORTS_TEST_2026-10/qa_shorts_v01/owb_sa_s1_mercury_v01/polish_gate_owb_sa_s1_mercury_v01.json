@@ -1,0 +1,188 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01.mp4",
+  "edge_floor": 0.0856,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "s01_PIA11351",
+      "cut": 0,
+      "t": 2.75,
+      "source": "PIA11351.jpg",
+      "why": [
+        "near-black: mean 20.72, p95 112.0"
+      ]
+    },
+    {
+      "row": "s03_PIA12266",
+      "cut": 2,
+      "t": 12.4,
+      "source": "PIA12266.jpg",
+      "why": [
+        "split panel: horizontal seam at 0.841"
+      ]
+    },
+    {
+      "row": "s05_PIA11351",
+      "cut": 4,
+      "t": 18.94,
+      "source": "end_card_loop_PIA11351.jpg",
+      "why": [
+        "near-black: mean 17.01, p95 99.0"
+      ]
+    }
+  ],
+  "warn": [
+    {
+      "row": "s02_PIA14083",
+      "cut": 1,
+      "t": 7.6,
+      "source": "PIA14083.jpg",
+      "why": [
+        "low detail: edge density 0.0842 < film p5 0.0856"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_PIA11351",
+      "source": "PIA11351.jpg",
+      "t": 2.75,
+      "std": 39.72,
+      "mean": 20.72,
+      "p95": 112.0,
+      "edge": 0.1008,
+      "hf": 11.86,
+      "lf": 32.43,
+      "std8": 35.52,
+      "edge8": 0.1569,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "near-black: mean 20.72, p95 112.0"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA14083",
+      "source": "PIA14083.jpg",
+      "t": 7.6,
+      "std": 26.47,
+      "mean": 130.11,
+      "p95": 174.0,
+      "edge": 0.0842,
+      "hf": 11.56,
+      "lf": 17.45,
+      "std8": 20.47,
+      "edge8": 0.2387,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0842 < film p5 0.0856"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_PIA12266",
+      "source": "PIA12266.jpg",
+      "t": 12.4,
+      "std": 51.87,
+      "mean": 53.89,
+      "p95": 143.0,
+      "edge": 0.1114,
+      "hf": 17.37,
+      "lf": 39.55,
+      "std8": 44.64,
+      "edge8": 0.2147,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.841,
+          "step": 38.0
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal seam at 0.841"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_PIA13674",
+      "source": "PIA13674.jpg",
+      "t": 16.27,
+      "std": 37.29,
+      "mean": 128.25,
+      "p95": 188.0,
+      "edge": 0.0952,
+      "hf": 15.66,
+      "lf": 25.53,
+      "std8": 29.26,
+      "edge8": 0.2405,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA11351",
+      "source": "end_card_loop_PIA11351.jpg",
+      "t": 18.94,
+      "std": 32.63,
+      "mean": 17.01,
+      "p95": 99.0,
+      "edge": 0.0913,
+      "hf": 9.93,
+      "lf": 28.2,
+      "std8": 29.44,
+      "edge8": 0.1182,
+      "seams": [],
+      "video": true,
+      "fail": [
+        "near-black: mean 17.01, p95 99.0"
+      ],
+      "warn": []
+    }
+  ]
+}

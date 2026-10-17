@@ -1,0 +1,120 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 4,
+      "row": "s05_PIA01492",
+      "source": "end_card_loop_PIA01492.jpg",
+      "title": "End-card loop: PIA01492",
+      "t": 23.78,
+      "at": "0:24",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0053"
+      ],
+      "offset": 22.28
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_PIA01492",
+      "source": "PIA01492.jpg",
+      "title": "PIA01492",
+      "t": 2.95,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA00063",
+      "source": "PIA00063.jpg",
+      "title": "Neptune - True Color of Clouds",
+      "t": 8.75,
+      "at": "0:09",
+      "fail": [],
+      "warn": [],
+      "offset": 5.9
+    },
+    {
+      "cut": 2,
+      "row": "s03_PIA00058",
+      "source": "PIA00058.jpg",
+      "title": "Neptune Clouds Showing Vertical Relief",
+      "t": 13.95,
+      "at": "0:14",
+      "fail": [],
+      "warn": [],
+      "offset": 11.6
+    },
+    {
+      "cut": 3,
+      "row": "s04_PIA02210",
+      "source": "PIA02210.jpg",
+      "title": "Neptune",
+      "t": 19.29,
+      "at": "0:19",
+      "fail": [],
+      "warn": [],
+      "offset": 16.3
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA01492",
+      "source": "end_card_loop_PIA01492.jpg",
+      "title": "End-card loop: PIA01492",
+      "t": 23.78,
+      "at": "0:24",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0053"
+      ],
+      "offset": 22.28
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0053,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

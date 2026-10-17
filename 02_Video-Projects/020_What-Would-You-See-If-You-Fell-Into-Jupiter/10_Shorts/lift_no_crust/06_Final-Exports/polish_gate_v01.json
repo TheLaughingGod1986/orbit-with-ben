@@ -1,0 +1,153 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01.mp4",
+  "edge_floor": 0.0217,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "s02_cloud_descent",
+      "cut": 1,
+      "t": 11.4,
+      "source": "020_v04_s17_descent.mp4",
+      "why": [
+        "split panel: horizontal seam at 0.285, horizontal seam at 0.287"
+      ]
+    }
+  ],
+  "warn": [
+    {
+      "row": "s03_amber_weather",
+      "cut": 2,
+      "t": 17.41,
+      "source": "020_v04_s18_amber.mp4",
+      "why": [
+        "low detail: edge density 0.0184 < film p5 0.0217"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_cloud_deck",
+      "source": "020_v04_s16_clouds.mp4",
+      "t": 3.7,
+      "std": 58.23,
+      "mean": 122.24,
+      "p95": 214.0,
+      "edge": 0.0403,
+      "hf": 9.4,
+      "lf": 53.32,
+      "std8": 55.54,
+      "edge8": 0.4064,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_cloud_descent",
+      "source": "020_v04_s17_descent.mp4",
+      "t": 11.4,
+      "std": 70.58,
+      "mean": 106.79,
+      "p95": 222.0,
+      "edge": 0.051,
+      "hf": 16.63,
+      "lf": 64.61,
+      "std8": 66.5,
+      "edge8": 0.2687,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.285,
+          "step": 24.0
+        },
+        {
+          "kind": "horizontal seam",
+          "at": 0.287,
+          "step": 23.0
+        }
+      ],
+      "video": true,
+      "fail": [
+        "split panel: horizontal seam at 0.285, horizontal seam at 0.287"
+      ],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_amber_weather",
+      "source": "020_v04_s18_amber.mp4",
+      "t": 17.41,
+      "std": 41.04,
+      "mean": 63.19,
+      "p95": 142.0,
+      "edge": 0.0184,
+      "hf": 7.7,
+      "lf": 36.71,
+      "std8": 38.73,
+      "edge8": 0.1993,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0184 < film p5 0.0217"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04_end_loop",
+      "source": "end_card_loop_s16.mp4",
+      "t": 20.93,
+      "std": 67.61,
+      "mean": 94.41,
+      "p95": 210.0,
+      "edge": 0.0923,
+      "hf": 17.4,
+      "lf": 58.41,
+      "std8": 61.49,
+      "edge8": 0.5148,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

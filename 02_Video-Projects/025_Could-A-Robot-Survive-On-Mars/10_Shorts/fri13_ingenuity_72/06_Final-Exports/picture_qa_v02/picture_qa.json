@@ -1,0 +1,172 @@
+{
+  "verdict": "FAIL",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 1,
+      "row": "s02_PIA24593",
+      "source": "PIA24593.jpg",
+      "title": "First Aerial Color Image of Mars",
+      "t": 4.93,
+      "at": "0:05",
+      "fail": [
+        "low detail: luma std 9.71 < 13.44 and edge density 0.0094 < 0.0259 (absolute floor)"
+      ],
+      "warn": [],
+      "offset": 3.98
+    },
+    {
+      "cut": 3,
+      "row": "s04_PIA24584",
+      "source": "PIA24584.jpg",
+      "title": "Ingenuity's First Black-and-White Image From the Air",
+      "t": 12.19,
+      "at": "0:12",
+      "fail": [
+        "split panel: horizontal seam at 0.276"
+      ],
+      "warn": [],
+      "offset": 9.96
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA26244",
+      "source": "PIA26244.gif",
+      "title": "Ingenuity's Navcam Reveals a Missing Rotor Blade",
+      "t": 16.65,
+      "at": "0:17",
+      "fail": [
+        "split panel: horizontal seam at 0.278"
+      ],
+      "warn": [],
+      "offset": 14.42
+    }
+  ],
+  "warn": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_PIA24644",
+      "source": "PIA24644.gif",
+      "title": "Ingenuity's Shadow During Third Flight",
+      "t": 1.99,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA24593",
+      "source": "PIA24593.jpg",
+      "title": "First Aerial Color Image of Mars",
+      "t": 4.93,
+      "at": "0:05",
+      "fail": [
+        "low detail: luma std 9.71 < 13.44 and edge density 0.0094 < 0.0259 (absolute floor)"
+      ],
+      "warn": [],
+      "offset": 3.98
+    },
+    {
+      "cut": 2,
+      "row": "s03_PIA26237",
+      "source": "PIA26237.jpg",
+      "title": " Ingenuity at 'Valinor Hills'",
+      "t": 7.92,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 5.88
+    },
+    {
+      "cut": 3,
+      "row": "s04_PIA24584",
+      "source": "PIA24584.jpg",
+      "title": "Ingenuity's First Black-and-White Image From the Air",
+      "t": 12.19,
+      "at": "0:12",
+      "fail": [
+        "split panel: horizontal seam at 0.276"
+      ],
+      "warn": [],
+      "offset": 9.96
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA26244",
+      "source": "PIA26244.gif",
+      "title": "Ingenuity's Navcam Reveals a Missing Rotor Blade",
+      "t": 16.65,
+      "at": "0:17",
+      "fail": [
+        "split panel: horizontal seam at 0.278"
+      ],
+      "warn": [],
+      "offset": 14.42
+    },
+    {
+      "cut": 5,
+      "row": "s06_PIA26243",
+      "source": "PIA26243.jpg",
+      "title": " Ingenuity Spots the Shadow of Its Damaged Rotor Blade",
+      "t": 19.71,
+      "at": "0:20",
+      "fail": [],
+      "warn": [],
+      "offset": 18.88
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_card_loop_PIA24644",
+      "source": "end_card_loop_PIA24644.gif",
+      "title": "Ingenuity's Shadow During Third Flight",
+      "t": 23.47,
+      "at": "0:23",
+      "fail": [],
+      "warn": [],
+      "offset": 20.54
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.014,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

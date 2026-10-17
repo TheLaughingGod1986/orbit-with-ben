@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v02.mp4",
+  "edge_floor": 0.0341,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s04_r3",
+      "cut": 3,
+      "t": 16.45,
+      "source": "PIA21268.jpg",
+      "why": [
+        "low detail: edge density 0.0298 < film p5 0.0341"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_r1",
+      "source": "PIA15115.jpg",
+      "t": 2.83,
+      "std": 25.65,
+      "mean": 100.69,
+      "p95": 125.0,
+      "edge": 0.0649,
+      "hf": 10.51,
+      "lf": 15.86,
+      "std8": 19.67,
+      "edge8": 0.1473,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_r2",
+      "source": "PIA07372.jpg",
+      "t": 7.75,
+      "std": 55.12,
+      "mean": 60.96,
+      "p95": 201.0,
+      "edge": 0.2014,
+      "hf": 21.48,
+      "lf": 37.07,
+      "std8": 43.8,
+      "edge8": 0.4535,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_r3",
+      "source": "PIA22210.jpg",
+      "t": 11.97,
+      "std": 73.68,
+      "mean": 122.74,
+      "p95": 245.0,
+      "edge": 0.0421,
+      "hf": 17.73,
+      "lf": 67.84,
+      "std8": 69.57,
+      "edge8": 0.1221,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_r3",
+      "source": "PIA21268.jpg",
+      "t": 16.45,
+      "std": 25.93,
+      "mean": 69.95,
+      "p95": 120.0,
+      "edge": 0.0298,
+      "hf": 8.59,
+      "lf": 18.23,
+      "std8": 21.83,
+      "edge8": 0.0868,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0298 < film p5 0.0341"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "s05_r4",
+      "source": "PIA11132.jpg",
+      "t": 20.9,
+      "std": 28.73,
+      "mean": 94.81,
+      "p95": 129.0,
+      "edge": 0.0906,
+      "hf": 10.48,
+      "lf": 18.26,
+      "std8": 22.33,
+      "edge8": 0.3734,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_r4",
+      "source": "PIA15115.jpg",
+      "t": 24.4,
+      "std": 42.55,
+      "mean": 85.5,
+      "p95": 151.0,
+      "edge": 0.0717,
+      "hf": 11.35,
+      "lf": 35.19,
+      "std8": 38.34,
+      "edge8": 0.2499,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_r5",
+      "source": "PIA20284.jpg",
+      "t": 27.82,
+      "std": 49.79,
+      "mean": 115.84,
+      "p95": 207.0,
+      "edge": 0.3171,
+      "hf": 23.59,
+      "lf": 31.51,
+      "std8": 37.04,
+      "edge8": 0.5302,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_r5",
+      "source": "PIA17759.jpg",
+      "t": 30.83,
+      "std": 43.56,
+      "mean": 88.68,
+      "p95": 138.0,
+      "edge": 0.0705,
+      "hf": 14.31,
+      "lf": 32.88,
+      "std8": 36.8,
+      "edge8": 0.231,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

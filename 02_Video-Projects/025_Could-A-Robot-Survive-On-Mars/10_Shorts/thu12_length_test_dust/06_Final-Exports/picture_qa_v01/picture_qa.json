@@ -1,0 +1,254 @@
+{
+  "verdict": "FAIL",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 10,
+      "row": "s11_r22",
+      "source": "PIA07372.jpg",
+      "title": "Opportunity Self-Portrait, Sols 322-323",
+      "t": 46.48,
+      "at": "0:46",
+      "fail": [
+        "split panel: horizontal seam at 0.046"
+      ],
+      "warn": [],
+      "offset": 298.7
+    }
+  ],
+  "warn": [
+    {
+      "cut": 6,
+      "row": "s07_r21",
+      "source": "PIA17956.jpg",
+      "title": "Shadow Portrait of NASA Rover Opportunity on Martian Slope",
+      "t": 26.58,
+      "at": "0:27",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.01x, may look soft"
+      ],
+      "offset": 279.3
+    },
+    {
+      "cut": 8,
+      "row": "s09_r21",
+      "source": "PIA26716.jpg",
+      "title": "Goldstone\u2019s 70-Meter Antenna Under the Stars",
+      "t": 36.78,
+      "at": "0:37",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.08x, may look soft"
+      ],
+      "offset": 289.27
+    },
+    {
+      "cut": 9,
+      "row": "s10_r21",
+      "source": "PIA22520.jpg",
+      "title": "Curiosity's View of the June 2018 Dust Storm",
+      "t": 41.5,
+      "at": "0:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0083 < film p5 0.0088"
+      ],
+      "offset": 293.7
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_r20",
+      "source": "PIA22909.jpg",
+      "title": "Opportunity Legacy Pan (True Color)",
+      "t": 2.08,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 254.47
+    },
+    {
+      "cut": 1,
+      "row": "s02_r20",
+      "source": "PIA17759.jpg",
+      "title": "Self-Portrait by Opportunity Mars Rover in January 2014",
+      "t": 5.45,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 258.87
+    },
+    {
+      "cut": 2,
+      "row": "s03_r20",
+      "source": "PIA18079.jpg",
+      "title": "Self-Portrait by Freshly Cleaned Opportunity Mars Rover in March 2014",
+      "t": 9.28,
+      "at": "0:09",
+      "fail": [],
+      "warn": [],
+      "offset": 261.43
+    },
+    {
+      "cut": 3,
+      "row": "s04_r20",
+      "source": "PIA18079.jpg",
+      "title": "Self-Portrait by Freshly Cleaned Opportunity Mars Rover in March 2014",
+      "t": 13.72,
+      "at": "0:14",
+      "fail": [],
+      "warn": [],
+      "offset": 266.53
+    },
+    {
+      "cut": 4,
+      "row": "s05_r20",
+      "source": "PIA06739.jpg",
+      "title": "Opportunity Catches its Shadow on Sol 180",
+      "t": 17.73,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": 270.3
+    },
+    {
+      "cut": 5,
+      "row": "s06_r21",
+      "source": "PIA22330.jpg",
+      "title": "Duluth After Dust Storm",
+      "t": 22.23,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 274.57
+    },
+    {
+      "cut": 6,
+      "row": "s07_r21",
+      "source": "PIA17956.jpg",
+      "title": "Shadow Portrait of NASA Rover Opportunity on Martian Slope",
+      "t": 26.58,
+      "at": "0:27",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.01x, may look soft"
+      ],
+      "offset": 279.3
+    },
+    {
+      "cut": 7,
+      "row": "s08_r21",
+      "source": "PIA22520.jpg",
+      "title": "Curiosity's View of the June 2018 Dust Storm",
+      "t": 31.57,
+      "at": "0:32",
+      "fail": [],
+      "warn": [],
+      "offset": 283.27
+    },
+    {
+      "cut": 8,
+      "row": "s09_r21",
+      "source": "PIA26716.jpg",
+      "title": "Goldstone\u2019s 70-Meter Antenna Under the Stars",
+      "t": 36.78,
+      "at": "0:37",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.08x, may look soft"
+      ],
+      "offset": 289.27
+    },
+    {
+      "cut": 9,
+      "row": "s10_r21",
+      "source": "PIA22520.jpg",
+      "title": "Curiosity's View of the June 2018 Dust Storm",
+      "t": 41.5,
+      "at": "0:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0083 < film p5 0.0088"
+      ],
+      "offset": 293.7
+    },
+    {
+      "cut": 10,
+      "row": "s11_r22",
+      "source": "PIA07372.jpg",
+      "title": "Opportunity Self-Portrait, Sols 322-323",
+      "t": 46.48,
+      "at": "0:46",
+      "fail": [
+        "split panel: horizontal seam at 0.046"
+      ],
+      "warn": [],
+      "offset": 298.7
+    },
+    {
+      "cut": 11,
+      "row": "s12_r22",
+      "source": "PIA22928.jpg",
+      "title": "Looking Back on a Golden Opportunity",
+      "t": 50.78,
+      "at": "0:51",
+      "fail": [],
+      "warn": [],
+      "offset": 303.67
+    },
+    {
+      "cut": 12,
+      "row": "s13_end_loop",
+      "source": "end_card_loop_PIA22909.mp4",
+      "title": "NASA Mars rover plate (end_card_loop_PIA22909.mp4)",
+      "t": 53.62,
+      "at": "0:54",
+      "fail": [],
+      "warn": [],
+      "offset": 254.7
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0088,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

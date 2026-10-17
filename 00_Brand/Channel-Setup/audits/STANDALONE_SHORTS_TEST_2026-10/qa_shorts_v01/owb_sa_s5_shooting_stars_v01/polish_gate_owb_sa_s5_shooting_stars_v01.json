@@ -1,0 +1,148 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s5_shooting_stars_v01.mp4",
+  "edge_floor": 0.0905,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s01_NHQ202108110001",
+      "cut": 0,
+      "t": 2.35,
+      "source": "NHQ202108110001.jpg",
+      "why": [
+        "low detail: edge density 0.0903 < film p5 0.0905"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_NHQ202108110001",
+      "source": "NHQ202108110001.jpg",
+      "t": 2.35,
+      "std": 36.62,
+      "mean": 44.71,
+      "p95": 104.0,
+      "edge": 0.0903,
+      "hf": 12.59,
+      "lf": 31.04,
+      "std8": 32.63,
+      "edge8": 0.0896,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0903 < film p5 0.0905"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "s02_NHQ202108110005",
+      "source": "NHQ202108110005.jpg",
+      "t": 6.8,
+      "std": 40.53,
+      "mean": 68.52,
+      "p95": 123.0,
+      "edge": 0.2718,
+      "hf": 17.9,
+      "lf": 30.32,
+      "std8": 33.29,
+      "edge8": 0.1306,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_NHQ202108100009",
+      "source": "NHQ202108100009.jpg",
+      "t": 11.13,
+      "std": 45.29,
+      "mean": 64.8,
+      "p95": 127.0,
+      "edge": 0.3386,
+      "hf": 22.44,
+      "lf": 31.16,
+      "std8": 34.79,
+      "edge8": 0.165,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_NHQ202108110003",
+      "source": "NHQ202108110003.jpg",
+      "t": 15.18,
+      "std": 36.88,
+      "mean": 62.53,
+      "p95": 105.0,
+      "edge": 0.1903,
+      "hf": 16.02,
+      "lf": 27.87,
+      "std8": 30.36,
+      "edge8": 0.1259,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_NHQ202108110001",
+      "source": "end_card_loop_NHQ202108110001.jpg",
+      "t": 18.5,
+      "std": 33.89,
+      "mean": 37.81,
+      "p95": 100.0,
+      "edge": 0.0913,
+      "hf": 9.97,
+      "lf": 30.9,
+      "std8": 31.45,
+      "edge8": 0.095,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "verdict": "FAIL",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 6,
+      "row": "s07_end_card_loop_PIA11132",
+      "source": "end_card_loop_PIA11132.jpg",
+      "title": "Frost on Mars",
+      "t": 22.52,
+      "at": "0:23",
+      "fail": [
+        "split panel: horizontal gutter at 0.087"
+      ],
+      "warn": [],
+      "offset": 19.55
+    }
+  ],
+  "warn": [
+    {
+      "cut": 1,
+      "row": "s02_PIA19400",
+      "source": "PIA19400.jpg",
+      "title": "Sunset in Mars Gale Crater",
+      "t": 5.05,
+      "at": "0:05",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0087 < film p5 0.0127"
+      ],
+      "offset": 4.1
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_PIA11132",
+      "source": "PIA11132.jpg",
+      "title": "Frost on Mars",
+      "t": 2.05,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_PIA19400",
+      "source": "PIA19400.jpg",
+      "title": "Sunset in Mars Gale Crater",
+      "t": 5.05,
+      "at": "0:05",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0087 < film p5 0.0127"
+      ],
+      "offset": 4.1
+    },
+    {
+      "cut": 2,
+      "row": "s03_PIA11182",
+      "source": "PIA11182.jpg",
+      "title": "Morning Frost in Trench Dug by Phoenix, Sol 113",
+      "t": 8.28,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 3,
+      "row": "s04_PIA07371",
+      "source": "PIA07371.jpg",
+      "title": "Spirit Self-Portrait, Sols 329-330",
+      "t": 12.55,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 10.55
+    },
+    {
+      "cut": 4,
+      "row": "s05_PIA12142",
+      "source": "PIA12142.jpg",
+      "title": "Spirit View from Troy",
+      "t": 15.72,
+      "at": "0:16",
+      "fail": [],
+      "warn": [],
+      "offset": 14.55
+    },
+    {
+      "cut": 5,
+      "row": "s06_PIA12457",
+      "source": "PIA12457.jpg",
+      "title": "Spirit Rear View After Parking for Fourth Winter",
+      "t": 18.23,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": 16.9
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_card_loop_PIA11132",
+      "source": "end_card_loop_PIA11132.jpg",
+      "title": "Frost on Mars",
+      "t": 22.52,
+      "at": "0:23",
+      "fail": [
+        "split panel: horizontal gutter at 0.087"
+      ],
+      "warn": [],
+      "offset": 19.55
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0127,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
