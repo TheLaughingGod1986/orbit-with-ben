@@ -159,7 +159,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0495 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0496 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0497 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0498 | mini | claimed | gemini | 2026-10-17T23:46Z | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
+| J0498 | mini | blocked | gemini | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 
 Recently finished:
 
