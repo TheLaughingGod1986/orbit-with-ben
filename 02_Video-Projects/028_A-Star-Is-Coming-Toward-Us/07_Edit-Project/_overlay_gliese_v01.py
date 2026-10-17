@@ -43,7 +43,8 @@ FONT = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 NAVY = (23, 36, 55, 220)
 ENC = ["-an", "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-threads", "4", "-pix_fmt", "yuv420p"]
 
-# (row_id, chapter, film_in, film_out, src_file, box, pct, gamma, lift, ov_text, ov_in, ov_out, cx, y, px, check)
+# (row_id, chapter, film_in, film_out, src_file, box, pct, gamma, lift, ovs)
+# Each ov in ovs: (ov_text, ov_in, ov_out, cx, y, px, check)
 ROWS = [
     (
         "r06_milky_way",
@@ -55,13 +56,39 @@ ROWS = [
         0.0,
         1.0,
         0.0,
-        "62 light-years away",
-        45.08,
-        48.00,
-        960,
-        860,
-        78,
-        "SOURCES row 2: Bailer-Jones 2022 ApJL 935:L9 Gaia DR3 parallax 52.433 mas (19.072 pc = 62.20 ly in Serpens); VO 'about 62 light-years away' at 45.08-46.90s",
+        [
+            (
+                "62 light-years away",
+                45.08,
+                48.00,
+                960,
+                860,
+                78,
+                "SOURCES row 2: Bailer-Jones 2022 ApJL 935:L9 Gaia DR3 parallax 52.433 mas (19.072 pc = 62.20 ly in Serpens); VO 'about 62 light-years away' at 45.08-46.90s",
+            )
+        ],
+    ),
+    (
+        "r13_star_trails",
+        "2 How Close Will It Come?",
+        126.90,
+        133.84,
+        HDIR / "eso_startrails.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "In 1 million years",
+                128.08,
+                130.80,
+                960,
+                860,
+                78,
+                "SOURCES row 1: Bailer-Jones 2022 ApJL 935:L9 closest approach in 1.292 Myr (90% CI 1.257-1.334 Myr); VO 'in a million years' at 128.08-129.00s",
+            )
+        ],
     ),
     (
         "r15_gaia_craft",
@@ -73,13 +100,17 @@ ROWS = [
         0.05,
         0.95,
         0.0,
-        "1 billion stars",
-        151.54,
-        153.80,
-        520,
-        860,
-        78,
-        "SOURCES row 9: Gaia Collaboration Vallenari et al. 2023 A&A 674:A1 Gaia DR3 1.806 billion sources; VO 'more than a billion stars' at 151.54-152.90s",
+        [
+            (
+                "1 billion stars",
+                151.54,
+                153.80,
+                520,
+                860,
+                78,
+                "SOURCES row 9: Gaia Collaboration Vallenari et al. 2023 A&A 674:A1 Gaia DR3 1.806 billion sources; VO 'more than a billion stars' at 151.54-152.90s",
+            )
+        ],
     ),
     (
         "r16_sunrise_break",
@@ -91,13 +122,17 @@ ROWS = [
         0.05,
         0.68,
         8.0,
-        "5 times closer",
-        172.40,
-        175.10,
-        960,
-        860,
-        78,
-        "SOURCES row 10: Bailer-Jones 2022 ApJL 935:L9 Hipparcos ~0.311 pc vs Gaia DR3 0.0636 pc (~4.89x, five times closer); VO 'five times closer' at 172.56-173.65s",
+        [
+            (
+                "5 times closer",
+                172.40,
+                175.10,
+                960,
+                860,
+                78,
+                "SOURCES row 10: Bailer-Jones 2022 ApJL 935:L9 Hipparcos ~0.311 pc vs Gaia DR3 0.0636 pc (~4.89x, five times closer); VO 'five times closer' at 172.56-173.65s",
+            )
+        ],
     ),
     (
         "r17_neptune",
@@ -109,13 +144,17 @@ ROWS = [
         0.05,
         0.85,
         6.0,
-        "30 centimetres away",
-        184.54,
-        186.35,
-        960,
-        860,
-        76,
-        "SOURCES row 11: NASA Neptune Fact Sheet a = 30.07 AU => 30.1 cm at 1 AU = 1 cm scale; VO '30 centimeters away' at 184.84-186.30s",
+        [
+            (
+                "30 centimetres away",
+                184.54,
+                186.35,
+                960,
+                860,
+                76,
+                "SOURCES row 11: NASA Neptune Fact Sheet a = 30.07 AU => 30.1 cm at 1 AU = 1 cm scale; VO '30 centimeters away' at 184.84-186.30s",
+            )
+        ],
     ),
     (
         "r24_sunrise",
@@ -127,13 +166,17 @@ ROWS = [
         0.05,
         0.72,
         6.0,
-        "In 8 minutes",
-        252.76,
-        255.20,
-        960,
-        860,
-        78,
-        "SOURCES row 13 (MUST QUOTE): NASA Oort Cloud Facts 'takes a little over eight minutes to reach Earth' (499.0 s = 8.32 min at 1 AU); VO 'in eight minutes' at 252.76-253.74s",
+        [
+            (
+                "In 8 minutes",
+                252.76,
+                255.20,
+                960,
+                860,
+                78,
+                "SOURCES row 13 (MUST QUOTE): NASA Oort Cloud Facts 'takes a little over eight minutes to reach Earth' (499.0 s = 8.32 min at 1 AU); VO 'in eight minutes' at 252.76-253.74s",
+            )
+        ],
     ),
     (
         "r26_hale_bopp",
@@ -145,13 +188,17 @@ ROWS = [
         0.05,
         0.55,
         12.0,
-        "About 10 extra comets",
-        285.02,
-        287.45,
-        960,
-        860,
-        76,
-        "SOURCES row 15 (MUST QUOTE): Berski & Dybczynski 2016 A&A 595:L10 'mean density of approximately ten comets per year, lasting for 3 to 4 Myr'; VO 'about 10 extra comets' at 285.02-286.52s",
+        [
+            (
+                "About 10 extra comets",
+                285.02,
+                287.45,
+                960,
+                860,
+                76,
+                "SOURCES row 15 (MUST QUOTE): Berski & Dybczynski 2016 A&A 595:L10 'mean density of approximately ten comets per year, lasting for 3 to 4 Myr'; VO 'about 10 extra comets' at 285.02-286.52s",
+            )
+        ],
     ),
     (
         "r26_a3",
@@ -163,13 +210,17 @@ ROWS = [
         0.05,
         0.55,
         12.0,
-        "3 to 4 million",
-        291.38,
-        293.40,
-        960,
-        860,
-        78,
-        "SOURCES row 15 (MUST QUOTE): Berski & Dybczynski 2016 A&A 595:L10 'lasting for 3 to 4 Myr'; VO 'three to four million' at 291.38-292.90s",
+        [
+            (
+                "3 to 4 million",
+                291.38,
+                293.40,
+                960,
+                860,
+                78,
+                "SOURCES row 15 (MUST QUOTE): Berski & Dybczynski 2016 A&A 595:L10 'lasting for 3 to 4 Myr'; VO 'three to four million' at 291.38-292.90s",
+            )
+        ],
     ),
     (
         "r29_twilight",
@@ -181,13 +232,17 @@ ROWS = [
         0.05,
         0.85,
         0.0,
-        "About 3 times brighter",
-        348.20,
-        351.20,
-        960,
-        860,
-        76,
-        "SOURCES row 18: Berski & Dybczynski 2016 perihelion V = -2.7 mag vs Sirius V = -1.46 mag (3.13x brighter); VO 'about three times brighter' at 348.14-349.38s",
+        [
+            (
+                "About 3 times brighter",
+                348.20,
+                351.20,
+                960,
+                860,
+                76,
+                "SOURCES row 18: Berski & Dybczynski 2016 perihelion V = -2.7 mag vs Sirius V = -1.46 mag (3.13x brighter); VO 'about three times brighter' at 348.14-349.38s",
+            )
+        ],
     ),
     (
         "r31_moon_2",
@@ -199,13 +254,17 @@ ROWS = [
         0.05,
         0.95,
         0.0,
-        "Every 35 years",
-        371.04,
-        373.05,
-        960,
-        860,
-        78,
-        "SOURCES row 20: Berski & Dybczynski 2016 proper motion 52.28 arcsec/yr vs Moon ~1860 arcsec (35.58 yr); VO 'every 35 years' at 371.50-372.96s",
+        [
+            (
+                "Every 35 years",
+                371.04,
+                373.05,
+                960,
+                860,
+                78,
+                "SOURCES row 20: Berski & Dybczynski 2016 proper motion 52.28 arcsec/yr vs Moon ~1860 arcsec (35.58 yr); VO 'every 35 years' at 371.50-372.96s",
+            )
+        ],
     ),
     (
         "r33_wise_craft",
@@ -217,13 +276,17 @@ ROWS = [
         0.05,
         0.95,
         0.0,
-        "About 70,000 years ago",
-        387.72,
-        391.20,
-        960,
-        860,
-        76,
-        "SOURCES row 21: Mamajek et al. 2015 ApJL 800:L17 Scholz's Star flyby 70 +15/-10 kya; VO 'About 70,000 years ago' at 387.72-389.46s",
+        [
+            (
+                "About 70,000 years ago",
+                387.72,
+                391.20,
+                960,
+                860,
+                76,
+                "SOURCES row 21: Mamajek et al. 2015 ApJL 800:L17 Scholz's Star flyby 70 +15/-10 kya; VO 'About 70,000 years ago' at 387.72-389.46s",
+            )
+        ],
     ),
     (
         "r34_sky_wide",
@@ -235,13 +298,26 @@ ROWS = [
         0.05,
         0.90,
         0.0,
-        "2.8 million years ago",
-        403.46,
-        407.20,
-        960,
-        860,
-        76,
-        "SOURCES row 22: Bailer-Jones 2022 ApJL 935:L9 HD 7977 close encounter 2.8 Myr ago (-2.761 Myr); VO 'about 2.8 million years ago' at 403.46-405.62s",
+        [
+            (
+                "2.8 million years ago",
+                403.46,
+                407.20,
+                960,
+                860,
+                76,
+                "SOURCES row 22: Bailer-Jones 2022 ApJL 935:L9 HD 7977 close encounter 2.8 Myr ago (-2.761 Myr); VO 'about 2.8 million years ago' at 403.46-405.62s",
+            ),
+            (
+                "HD 7977",
+                408.80,
+                411.50,
+                960,
+                860,
+                78,
+                "SOURCES row 22: Bailer-Jones 2022 ApJL 935:L9 solar-type G3 dwarf HD 7977 passed within <0.05 pc (P=1/3) 2.8 Myr ago; VO 'called HD 7977' at 408.52-410.50s",
+            ),
+        ],
     ),
 ]
 
@@ -271,24 +347,25 @@ def compute_upscale(src: Path, box: tuple[float, float, float, float] | None, pc
 
 def check_plan() -> list[str]:
     problems = []
-    for row_id, ch, fin, fout, src, box, pct, gamma, lift, text, a, b, cx, y, px, note in ROWS:
+    for row_id, ch, fin, fout, src, box, pct, gamma, lift, ovs in ROWS:
         if not src.exists():
             problems.append(f"missing source {src}")
             continue
         up = compute_upscale(src, box, pct)
         if up > 2.35:
             problems.append(f"{row_id} upscale {up:.2f} > 2.35")
-        n = len(text.split())
-        if n > 4:
-            problems.append(f"{row_id} {text!r} has {n} words (>4)")
-        if not any(c.isdigit() for c in text):
-            problems.append(f"{row_id} {text!r} has no numeral")
-        dur = b - a
-        if dur > 4.05 or dur < 1.5:
-            problems.append(f"{row_id} {text!r} duration {dur:.2f}s outside 1.5..4.0s")
-        if a < fin - 0.01 or b > fout + 0.01:
-            problems.append(f"{row_id} {text!r} ({a:.2f}-{b:.2f}) outside row ({fin:.2f}-{fout:.2f})")
-        print(f"{row_id:18s} | {ch:26s} | film {a:6.2f}-{b:6.2f} ({dur:4.2f}s) | {text:24s} | up={up:4.2f}x | {note}")
+        for text, a, b, cx, y, px, note in ovs:
+            n = len(text.split())
+            if n > 4:
+                problems.append(f"{row_id} {text!r} has {n} words (>4)")
+            if not any(c.isdigit() for c in text):
+                problems.append(f"{row_id} {text!r} has no numeral")
+            dur = b - a
+            if dur > 4.05 or dur < 1.5:
+                problems.append(f"{row_id} {text!r} duration {dur:.2f}s outside 1.5..4.0s")
+            if a < fin - 0.01 or b > fout + 0.01:
+                problems.append(f"{row_id} {text!r} ({a:.2f}-{b:.2f}) outside row ({fin:.2f}-{fout:.2f})")
+            print(f"{row_id:18s} | {ch:26s} | film {a:6.2f}-{b:6.2f} ({dur:4.2f}s) | {text:24s} | up={up:4.2f}x | {note}")
     print("problems:", problems or "none")
     return problems
 
@@ -353,20 +430,24 @@ def main() -> None:
 
     WORK.mkdir(parents=True, exist_ok=True)
     PACK.mkdir(parents=True, exist_ok=True)
+    for old_png in PACK.glob("code_graphic_028_*.png"):
+        old_png.unlink()
 
     before_segs = []
     after_segs = []
     cuts = []
     ov_records = []
     reel_t = 0.0
+    pill_idx = 0
 
-    for seg_i, (row_id, ch, fin, fout, src, box, pct, gamma, lift, text, a, b, cx, y, px, note) in enumerate(ROWS):
+    for seg_i, (row_id, ch, fin, fout, src, box, pct, gamma, lift, ovs) in enumerate(ROWS):
         dur = round((fout - fin) * FPS) / FPS
         frames = round(dur * FPS)
         b_seg = WORK / f"before_{seg_i:02d}_{row_id}.mp4"
         a_seg = WORK / f"after_{seg_i:02d}_{row_id}.mp4"
 
         if box is None:
+            off = 2.0 if row_id == "r13_star_trails" else 0.0
             sp.run(
                 [
                     "ffmpeg",
@@ -375,7 +456,7 @@ def main() -> None:
                     "-loglevel",
                     "error",
                     "-ss",
-                    "0.0",
+                    f"{off:.3f}",
                     "-i",
                     str(src),
                     "-vf",
@@ -390,20 +471,42 @@ def main() -> None:
         else:
             render_still_push(src, box, pct, gamma, lift, dur, b_seg)
 
-        pname = f"code_graphic_028_{row_id}_{seg_i:02d}.png"
-        w, h = pill(text, px, WORK / pname)
-        shutil.copyfile(WORK / pname, PACK / pname)
-        la = round(a - fin, 3)
-        lb = round(b - fin, 3)
-        ldur = round(lb - la, 3)
-        x = cx - w // 2
-        rise = 22
-        fc = (
-            f"[0:v]null[v0];"
-            f"[1:v]format=rgba,fade=t=in:st=0:d=0.35:alpha=1,fade=t=out:st={max(0.0, ldur-0.30):.3f}:d=0.30:alpha=1,"
-            f"setpts=PTS-STARTPTS+{la:.3f}/TB[o0];"
-            f"[v0][o0]overlay=x={x}:y='{y}+{rise}*max(0\\,1-(t-{la:.3f})/0.35)':eval=frame:eof_action=pass,format=yuv420p[v]"
-        )
+        inputs = ["-i", str(b_seg)]
+        fc = "[0:v]null[v0];"
+        seg_ovs = []
+        for k, (text, a, b, cx, y, px, note) in enumerate(ovs):
+            pname = f"code_graphic_028_{row_id}_{pill_idx:02d}.png"
+            pill_idx += 1
+            w, h = pill(text, px, WORK / pname)
+            shutil.copyfile(WORK / pname, PACK / pname)
+            la = round(a - fin, 3)
+            lb = round(b - fin, 3)
+            ldur = round(lb - la, 3)
+            x = cx - w // 2
+            rise = 22
+            inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{ldur:.3f}", "-i", str(WORK / pname)]
+            fc += (
+                f"[{k+1}:v]format=rgba,fade=t=in:st=0:d=0.35:alpha=1,fade=t=out:st={max(0.0, ldur-0.30):.3f}:d=0.30:alpha=1,"
+                f"setpts=PTS-STARTPTS+{la:.3f}/TB[o{k}];"
+                f"[v{k}][o{k}]overlay=x={x}:y='{y}+{rise}*max(0\\,1-(t-{la:.3f})/0.35)':eval=frame:eof_action=pass[v{k+1}];"
+            )
+            rec = {
+                "file": pname,
+                "row": row_id,
+                "chapter": ch,
+                "text": text,
+                "film_start": round(a, 2),
+                "film_end": round(b, 2),
+                "reel_start": round(reel_t + la, 3),
+                "reel_end": round(reel_t + lb, 3),
+                "x": x,
+                "y": y,
+                "size": [w, h],
+                "check": note,
+            }
+            ov_records.append(rec)
+            seg_ovs.append(pname)
+        fc += f"[v{len(ovs)}]format=yuv420p[v]"
         fc_path = WORK / f"fc_{seg_i:02d}.txt"
         fc_path.write_text(fc)
         sp.run(
@@ -413,16 +516,7 @@ def main() -> None:
                 "-hide_banner",
                 "-loglevel",
                 "error",
-                "-i",
-                str(b_seg),
-                "-loop",
-                "1",
-                "-framerate",
-                str(FPS),
-                "-t",
-                f"{ldur:.3f}",
-                "-i",
-                str(WORK / pname),
+                *inputs,
                 "-/filter_complex",
                 str(fc_path),
                 "-map",
@@ -437,21 +531,6 @@ def main() -> None:
 
         before_segs.append(b_seg)
         after_segs.append(a_seg)
-        rec = {
-            "file": pname,
-            "row": row_id,
-            "chapter": ch,
-            "text": text,
-            "film_start": round(a, 2),
-            "film_end": round(b, 2),
-            "reel_start": round(reel_t + la, 3),
-            "reel_end": round(reel_t + lb, 3),
-            "x": x,
-            "y": y,
-            "size": [w, h],
-            "check": note,
-        }
-        ov_records.append(rec)
         cuts.append(
             {
                 "row": row_id,
@@ -462,8 +541,8 @@ def main() -> None:
                 "film_out": fout,
                 "source": src.name,
                 "upscale": compute_upscale(src, box, pct),
-                "framing": {"offset": 0.0} if box is None else {"box": list(box), "pct": pct},
-                "overlays": [pname],
+                "framing": {"offset": 2.0 if row_id == "r13_star_trails" else 0.0} if box is None else {"box": list(box), "pct": pct},
+                "overlays": seg_ovs,
             }
         )
         reel_t = round(reel_t + dur, 3)
@@ -473,7 +552,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0425", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0443", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     tiles = []

@@ -179,12 +179,22 @@ ROWS = [
     (
         "r10_r11_dip",
         "2 The Great Dimming",
-        118.50,
+        116.50,
         123.16,
         "code",
         CDIR / "code_graphic_029_r10_r11_dip_v01.mp4",
-        {"plate_id": "r10_r11_dip", "plate_in": 109.50, "plate_use": 13.66, "offset": 9.00, "upscale": 1.0},
+        {"plate_id": "r10_r11_dip", "plate_in": 109.50, "plate_use": 13.66, "offset": 7.00, "upscale": 1.0},
         [
+            (
+                "About 1/3",
+                117.14,
+                120.50,
+                960,
+                90,
+                76,
+                "SOURCES row 8: Guinan et al. 2020 ATel 13512 & Montarges et al. 2021 Nature 594:365 V dropped to 1.614 mag (35.8% ~ 1/3 normal flux); VO 'about a third' at 117.14-117.88s",
+                "about a third",
+            ),
             (
                 "More than 50 years",
                 121.50,
@@ -194,7 +204,7 @@ ROWS = [
                 76,
                 "SOURCES row 8: Dupree et al. 2022 ApJ 936:18 & Guinan et al. 2020 photometric minimum deepest in >50-100 yr; VO 'more than fifty years' at 122.00-123.10s",
                 "fifty years",
-            )
+            ),
         ],
     ),
     (
@@ -247,6 +257,27 @@ ROWS = [
                 "SOURCES row 19: Joyce et al. 2020 ApJ 902:63 & Montarges et al. 2021 Nature 594:365 core helium burning ~100,000 yr remaining; VO 'hundred thousand years left' at 348.34-349.95s",
                 "hundred thousand years",
             ),
+        ],
+    ),
+    (
+        "r31_shells_twins",
+        "5 So When?",
+        371.50,
+        378.30,
+        "code",
+        CDIR / "code_graphic_029_r31_shells_twins_v01.mp4",
+        {"plate_id": "r31_shells_twins", "plate_in": 359.36, "plate_use": 18.94, "offset": 12.14, "upscale": 1.0},
+        [
+            (
+                "100 years",
+                375.18,
+                376.86,
+                960,
+                90,
+                78,
+                "SOURCES rows 10 & 19: Joyce et al. 2020 & Woosley et al. 2002 core helium burning (~100,000 yr) vs core carbon burning (~100-600 yr) look nearly identical externally; VO 'a hundred years' at 375.18-376.06s",
+                "a hundred years",
+            )
         ],
     ),
     (
@@ -478,6 +509,8 @@ def main() -> None:
 
     WORK.mkdir(parents=True, exist_ok=True)
     PACK.mkdir(parents=True, exist_ok=True)
+    for old_png in PACK.glob("code_graphic_029_*.png"):
+        old_png.unlink()
 
     before_segs = []
     after_segs = []
@@ -628,7 +661,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0425", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0443", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     # Build side-by-side before/after contact sheet
