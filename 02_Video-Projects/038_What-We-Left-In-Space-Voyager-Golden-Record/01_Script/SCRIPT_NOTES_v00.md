@@ -1,0 +1,23 @@
+# Script Notes — 038 Why Will Voyager 1 and the Golden Record Outlive the Earth? (`v00`)
+
+- **Draft:** `01_Script/voyager_golden_record_script_master_v00.md`
+- **Score:** `npm run review:script` → **PASS (95.2 / 100)**
+- **Spoken narration words:** 1,407 spoken words / 1,452 reviewer words (~9.7 min at 150 wpm; 0 warnings, 8/8 structure gates)
+- **Continuity:**
+  - Directly answers the closing hand-off at the end of `037_What-Is-Hiding-At-The-Centre-Of-The-Milky-Way` (`"Next, we follow the farthest object humanity has ever built — NASA's Voyager 1, launched in September 1977 with a thirty-centimetre gold-plated copper record and now racing through interstellar space nearly one light-day from Earth."`).
+  - Pairs with QA-passed standalone Short `kKN8Ale42sE` (*Voyager 1 Is About to Be One Light-Day Away*, scheduled 17 Nov 2026 in `J0431`/`J0432`).
+  - Closes by handing off to Idea #2 (`Every Planet Has a Sound — What NASA's Microphones Actually Heard`, backlog `014` / `014_Planet-Sounds`), moving from the sounds of Earth etched into Voyager's golden grooves to NASA's Perseverance rover microphones in Jezero Crater on Mars.
+- **Weekly audit & playbook rules enforced:**
+  - **Named celestial object / spacecraft in title (`OWB_2026-10-17.md` item 1):** names `Voyager 1`, `the Golden Record`, and `the Earth` explicitly in the title (*Why Will Voyager 1 and the Golden Record Outlive the Earth?*, 59 characters).
+  - **No chapter card in 0:00–0:30 (`OWB_2026-10-17.md` item 2):** 3-paragraph cold open (~148 spoken words, ~0:55) runs over real NASA/JPL Voyager Golden Record (`PIA14113`), Voyager 1 spacecraft, and Pale Blue Dot (`PIA23645`) plates before the first `[CHAPTER CARD: The Breadcrumbs We Left Behind]`.
+  - **No back-to-back code graphics:** every `DATA:` graphic is separated by real NASA/JPL archive photographs or an Omni Orbit shot.
+  - **Subscribe beat line (`templates/SUBSCRIBE_BEAT_LINES.md`):** uses line 1 (`"If you'd like more questions like this one, subscribing really helps a small channel."`, 14 words at 37% of spoken script), not used in `033`–`037`.
+  - **Teach on screen + Polish pass + HOTU/SEA reference lessons:**
+    - `DATA:` 7 (includes 3 before `[SUBSCRIBE BEAT]` and 1 build-up timeline)
+    - `SCALE:` 7 (every `DATA:` has an everyday scale analogy in the spoken sentence and in `SOURCES.md`)
+    - `NUMBER OBJECT:` 7 (one number object per `DATA:` beat)
+    - `WHO:` 6 (Neil Armstrong `1930–2012`, Carl Sagan `1934–1996`, Frank Drake `1930–2022`, Ann Druyan `born 1949`, Jimmy Carter `1924–2024`, Edward C. Stone `1936–2024` — every named person in the spoken script has a card at first mention and a verified LOC Name Authority Record in `SOURCES.md`)
+    - `WHEN:` 7 (`September 5, 1977, March 2012, November 18, 2026, 4.51 billion years`; `20 July 1969, 2 March 1972, 4 December 1973, 13 June 1983, 17 February 1998, 23 January 2003, 2 million years`; `6,000 years ago, 20 August 1977, 23 August 1977, 5 September 1977`; `0.70 billionths of a second, 8 milliseconds, 3.6 seconds, 4.51 billion years`; `1972, 20 August 1977, 5 September 1977, 15 December 1977, 5 March 1979, 12 November 1980, 1981, 14 February 1990, 25 August 2012, 2022`; `1980, December 2004, March 2012, 25 August 2012, April 2013, 5 November 2018`; `5 September 1977, 18 November 2026, 2036, 40,272 AD (40,000 years)`)
+    - `FACT:` 4 (`Last signal took 11 hours`, `Greetings in 55 languages`, `Uranium clock lasts billions of years`, `Cameras turned off in 1990`)
+    - **Orbit beats:** 2 (Chapter 2: floating beside Voyager 1's golden-foiled spacecraft bus in deep space, holding up a magnifying glass to the gleaming aluminium cover of the 30-cm Golden Record; Chapter 6: standing on the rim of Voyager 1's high-gain dish antenna as the Sun shrinks to a bright star behind it, watching a golden radio wave pulse outward on a 24-hour journey back to Earth while Gliese 445 glows 17 light-years ahead). Never in the first 30 seconds.
+    - **One-breath takeaway:** `"Voyager 1 and its Golden Record showed that while human footprints near Earth fade, a thirty-centimetre gold-plated copper disc launched in 1977 is carrying fifty-five languages, ninety minutes of music, and a four-and-a-half-billion-year atomic clock into interstellar space one light-day from home."`
