@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/lift_shrink_10ly/06_Final-Exports/light_speed_shrink_10ly_v01.mp4",
+  "edge_floor": 0.0328,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_acs3_sunrise",
+      "cut": 1,
+      "t": 6.8,
+      "source": "024_v05d_span_389.27.mp4",
+      "why": [
+        "low detail: edge density 0.0311 < film p5 0.0328"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_starfield_f",
+      "source": "024_v05d_span_291.90.mp4",
+      "t": 2.4,
+      "std": 29.11,
+      "mean": 61.96,
+      "p95": 76.0,
+      "edge": 0.0579,
+      "hf": 15.2,
+      "lf": 14.62,
+      "std8": 18.57,
+      "edge8": 0.1979,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_acs3_sunrise",
+      "source": "024_v05d_span_389.27.mp4",
+      "t": 6.8,
+      "std": 66.8,
+      "mean": 102.49,
+      "p95": 239.0,
+      "edge": 0.0311,
+      "hf": 9.08,
+      "lf": 64.22,
+      "std8": 64.97,
+      "edge8": 0.1765,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0311 < film p5 0.0328"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_acs3_earth",
+      "source": "024_v05d_span_393.35.mp4",
+      "t": 11.48,
+      "std": 50.88,
+      "mean": 117.99,
+      "p95": 216.0,
+      "edge": 0.0889,
+      "hf": 19.29,
+      "lf": 40.42,
+      "std8": 43.05,
+      "edge8": 0.2568,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_parker_launch",
+      "source": "024_v05d_span_379.10.mp4",
+      "t": 16.82,
+      "std": 63.22,
+      "mean": 77.43,
+      "p95": 226.0,
+      "edge": 0.038,
+      "hf": 8.21,
+      "lf": 61.0,
+      "std8": 61.08,
+      "edge8": 0.177,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_starfield_h",
+      "source": "024_v05d_span_401.90.mp4",
+      "t": 21.82,
+      "std": 36.87,
+      "mean": 62.63,
+      "p95": 123.0,
+      "edge": 0.0778,
+      "hf": 17.98,
+      "lf": 19.36,
+      "std8": 24.84,
+      "edge8": 0.2503,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_starfield_f.mp4",
+      "t": 25.38,
+      "std": 29.95,
+      "mean": 45.82,
+      "p95": 57.0,
+      "edge": 0.0587,
+      "hf": 14.62,
+      "lf": 15.66,
+      "std8": 20.77,
+      "edge8": 0.1485,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
