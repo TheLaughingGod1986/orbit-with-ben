@@ -34816,13 +34816,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T12:23Z",
-      "eta": "2026-10-17T14:23Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T12:22Z",
-      "result": "",
+      "result": "parked for Chief: overlay PASS",
       "history": [
         {
           "at": "2026-10-17T12:22Z",
@@ -34858,6 +34858,11 @@
           "at": "2026-10-17T12:55Z",
           "by": "gemini",
           "what": "step 4 of 4 done: committed f39868da, ready for Chief review"
+        },
+        {
+          "at": "2026-10-17T12:55Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: overlay PASS"
         }
       ],
       "kind": "chart",
