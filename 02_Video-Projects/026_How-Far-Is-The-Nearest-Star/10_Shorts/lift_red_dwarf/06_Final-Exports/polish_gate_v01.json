@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/lift_red_dwarf/06_Final-Exports/nearest_star_red_dwarf_trillions_v01.mp4",
+  "edge_floor": 0.0292,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s04_sdo_sun_filament",
+      "cut": 3,
+      "t": 17.62,
+      "source": "026_v05d_span_54.40.mp4",
+      "why": [
+        "low detail: edge density 0.0241 < film p5 0.0292"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_paranal_sky",
+      "source": "026_v05d_span_488.05.mp4",
+      "t": 2.91,
+      "std": 36.33,
+      "mean": 78.97,
+      "p95": 126.0,
+      "edge": 0.0642,
+      "hf": 10.14,
+      "lf": 32.35,
+      "std8": 33.11,
+      "edge8": 0.1085,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_proxima_field",
+      "source": "026_v05d_span_59.15.mp4",
+      "t": 8.0,
+      "std": 46.02,
+      "mean": 71.0,
+      "p95": 173.0,
+      "edge": 0.4416,
+      "hf": 22.01,
+      "lf": 36.35,
+      "std8": 37.74,
+      "edge8": 0.2119,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_omega_centauri",
+      "source": "026_v05d_span_93.05.mp4",
+      "t": 12.76,
+      "std": 56.43,
+      "mean": 152.32,
+      "p95": 232.0,
+      "edge": 0.4977,
+      "hf": 25.27,
+      "lf": 43.6,
+      "std8": 45.47,
+      "edge8": 0.512,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_sdo_sun_filament",
+      "source": "026_v05d_span_54.40.mp4",
+      "t": 17.62,
+      "std": 34.43,
+      "mean": 60.88,
+      "p95": 126.0,
+      "edge": 0.0241,
+      "hf": 8.93,
+      "lf": 29.24,
+      "std8": 30.95,
+      "edge8": 0.2299,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0241 < film p5 0.0292"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "s05_carina_nebula",
+      "source": "026_v05d_span_83.05.mp4",
+      "t": 22.52,
+      "std": 52.17,
+      "mean": 106.01,
+      "p95": 199.0,
+      "edge": 0.0814,
+      "hf": 16.67,
+      "lf": 43.15,
+      "std8": 45.31,
+      "edge8": 0.2847,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_end_loop",
+      "source": "end_card_loop_paranal_sky.mp4",
+      "t": 26.02,
+      "std": 32.13,
+      "mean": 59.13,
+      "p95": 110.0,
+      "edge": 0.0445,
+      "hf": 11.03,
+      "lf": 25.98,
+      "std8": 27.81,
+      "edge8": 0.0909,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
