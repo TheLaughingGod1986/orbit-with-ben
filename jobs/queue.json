@@ -36056,13 +36056,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-17T16:49Z",
-      "eta": "2026-10-17T18:49Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-17T16:48Z",
-      "result": "",
+      "result": "parked for Chief: overlay PASS",
       "history": [
         {
           "at": "2026-10-17T16:48Z",
@@ -36098,6 +36098,11 @@
           "at": "2026-10-17T17:21Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed dbdb2b1d, released 028 & 029 edit to review, parking for Chief"
+        },
+        {
+          "at": "2026-10-17T17:21Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: overlay PASS"
         }
       ],
       "kind": "chart",
