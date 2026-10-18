@@ -139,15 +139,16 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML, className:
         self.assertIn('<div class="pbar" data-live>', r["html"])
         self.assertIn("33% done · finished in about 40 min", r["html"])
         self.assertIn('<div class="upd">Updated ', r["html"])
-        self.assertNotIn("J0129", r["html"])
+        self.assertNotIn("J0129", re.sub(r"<[^>]*>", "", r["html"]))
         self.assertNotIn('class="jid"', r["html"])
 
-    def test_next_up_lists_three_and_no_dropdown(self):
+    def test_next_up_stays_visible_with_progress_in_closed_dropdown(self):
         r = self.render()
         self.assertEqual(r["html"].count('<div class="nx">'), 1)
         self.assertLessEqual(r["html"].count('<li>'), 3)
         self.assertIn("<li>027 Earth Stopped Spinning rough v01f – frame-review fixes</li>", r["html"])
-        self.assertNotIn("<details", r["html"])
+        self.assertIn('<details id="now-progress-J0129" class="progress-fold"><summary>Progress details</summary>', r["html"])
+        self.assertNotIn('<details id="now-progress-J0129" class="progress-fold" open', r["html"])
         self.assertNotIn("jobs waiting", r["html"])
 
     def test_idle_box_is_plain_too(self):
