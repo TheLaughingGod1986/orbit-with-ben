@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/lift_one_ton_energy/06_Final-Exports/light_speed_one_ton_energy_v01.mp4",
+  "edge_floor": 0.0369,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s04_sts080_window",
+      "cut": 3,
+      "t": 12.29,
+      "source": "sts080-326-010.jpg",
+      "why": [
+        "low detail: edge density 0.0365 < film p5 0.0369"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_parker_launch",
+      "source": "NHQ201808120013.tif",
+      "t": 1.68,
+      "std": 47.68,
+      "mean": 74.68,
+      "p95": 192.0,
+      "edge": 0.0651,
+      "hf": 15.22,
+      "lf": 35.71,
+      "std8": 40.32,
+      "edge8": 0.2454,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_starfield_g",
+      "source": "starfield_g.mp4",
+      "t": 4.62,
+      "std": 25.06,
+      "mean": 59.38,
+      "p95": 77.0,
+      "edge": 0.0444,
+      "hf": 13.08,
+      "lf": 13.51,
+      "std8": 16.19,
+      "edge8": 0.1566,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_dc8_sierra",
+      "source": "EC98-44444-004.jpg",
+      "t": 8.16,
+      "std": 47.48,
+      "mean": 131.7,
+      "p95": 213.0,
+      "edge": 0.0567,
+      "hf": 12.77,
+      "lf": 40.64,
+      "std8": 42.63,
+      "edge8": 0.2405,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_sts080_window",
+      "source": "sts080-326-010.jpg",
+      "t": 12.29,
+      "std": 39.46,
+      "mean": 116.11,
+      "p95": 175.0,
+      "edge": 0.0365,
+      "hf": 15.13,
+      "lf": 29.87,
+      "std8": 32.89,
+      "edge8": 0.1095,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0365 < film p5 0.0369"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "s05_gaia_milky_way",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "t": 16.77,
+      "std": 50.73,
+      "mean": 59.53,
+      "p95": 171.0,
+      "edge": 0.0377,
+      "hf": 12.7,
+      "lf": 45.7,
+      "std8": 47.16,
+      "edge8": 0.1366,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_iss_expedition19",
+      "source": "iss019e018483.jpg",
+      "t": 20.37,
+      "std": 52.04,
+      "mean": 101.14,
+      "p95": 184.0,
+      "edge": 0.078,
+      "hf": 10.97,
+      "lf": 45.0,
+      "std8": 47.88,
+      "edge8": 0.443,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_NHQ201808120013.mp4",
+      "t": 22.68,
+      "std": 48.0,
+      "mean": 73.01,
+      "p95": 193.0,
+      "edge": 0.0547,
+      "hf": 13.51,
+      "lf": 41.08,
+      "std8": 42.51,
+      "edge8": 0.2227,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
