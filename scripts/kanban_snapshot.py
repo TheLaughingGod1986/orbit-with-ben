@@ -870,7 +870,8 @@ def main(argv: list[str] | None = None) -> int:
         ro = run_order(alljobs, focus)
         gate = gates(alljobs)
         typ = typical_minutes(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model")},
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "repo", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model")},
+                     taskKeys=j.get("taskKeys", []),
                      line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
                      waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),
                      gateOnly=bool(re.search(r"\bdate gate\b", j.get("title", ""), re.I)),
@@ -892,9 +893,12 @@ def main(argv: list[str] | None = None) -> int:
                           "at": next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("done")), "")}
                          for j in alljobs if j.get("status") == "done"), key=lambda r: r["at"], reverse=True)[:5]
         doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"], "recent": recent,
+               "jobStates": {j["id"]: {"status": j.get("status", ""), "by": j.get("by", ""),
+                                      "at": (j.get("history") or [{}])[-1].get("at", "")} for j in alljobs},
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
                "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs), "week": week_numbers(alljobs),
                "done": sorted(({"id": j["id"], "title": j.get("title", ""), "film": j.get("film", ""), "by": j.get("by", ""),
+                                "repo": j.get("repo", ""), "stage": j.get("stage", ""), "taskKeys": j.get("taskKeys", []),
                                 "model": j.get("model", ""), "ref": j.get("ref", ""), "result": j.get("result", ""), "at": _done_at(j)}
                                for j in alljobs if j.get("status") == "done" and _done_at(j)), key=lambda r: r["at"], reverse=True)[:60]}
         if a.chief:

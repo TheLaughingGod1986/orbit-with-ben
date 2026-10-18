@@ -60,6 +60,11 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .donebar .dh{flex-wrap:wrap}.vd .impact{margin:4px 0 10px}
 .todaywork{margin:7px 0;padding:7px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.5;color:var(--ink-2)}
 .todaywork p{margin:2px 0}.todaywork .context{color:var(--ink-3)}
+.vwork{padding:4px 12px 9px;margin:-9px 0 6px;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;background:var(--panel);font-size:12px;line-height:1.5;color:var(--ink-2);overflow-wrap:anywhere}
+.vwork p{margin:3px 0}.vwork .context{color:var(--ink-3)}.vwork .pbar{margin:5px 0}
+.vwork .record{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.unlinkedwork{margin:10px 0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12px;line-height:1.5;background:var(--panel)}
+.unlinkedwork p{margin:4px 0}.unlinkedwork .uwjob{padding:6px 0;border-top:1px solid var(--line)}
 /* Ben, 14 Oct: the simple Videos list at the top */
 .videos{margin:0 0 12px}
 .videos .vh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:700;font-size:15px;margin:2px 2px 6px;color:var(--ink)}
@@ -834,14 +839,16 @@ function autoBrief(f){
 }
 // When a step happens: live from the job queue when it names a job, else the note's own date or words.
 function stepWhen(stp, P){
-  const jobs = fromDb.jobs, byId = Object.fromEntries((jobs||[]).map(j=>[j.id,j]));
+  const jobs = fromDb.jobs, byId = Object.assign({}, fromDb.jobStates||{}, Object.fromEntries(((fromDb.extra||{}).done||[]).map(j=>[j.id,Object.assign({status:"done"},j)])), Object.fromEntries((jobs||[]).map(j=>[j.id,j])));
   const fromDate = w => { const t = String(w).length>10 ? ts(w) : NaN, d = pd(w);
     return !isNaN(t) ? {text:`${clock(t)} (${t<Date.now()?"done or due":rel(t)})`, at:t} : d ? {text:`${fd(d)} (${cd(d)})`, at:d.getTime(), late: days(d)<0} : null; };
-  if(stp.done) return {ok:true, text: stp.doneText || "done"};
+  if(stp.done && (!stp.job || !(jobs||[]).some(j=>j.id===stp.job))) return {ok:true, text: stp.doneText || "done"};
   if(stp.job){
     const j = byId[stp.job];
-    if(jobs && !j) return {ok:true, text:`done (${esc(stp.job)})`};
+    if(jobs && !j) return {kind:"unknown", text:`status not recorded for ${esc(stp.job)}`};
     if(j){ const p=P[j.id]||{}, L=j.last||{};
+      if(j.status==="done") return {ok:true, text:`done (${esc(stp.job)})`};
+      if(j.status==="cancelled") return {kind:"unknown", text:`cancelled (${esc(stp.job)}); next step needs updating`};
       if(isChiefPark(j)) return {kind:"review", reason:blockWhy(j), text:"waiting for Chief review"};
       if(j.status==="blocked") return {kind:"blocked", reason:String(j.result||""), text:`blocked: ${esc(String(j.result||"").slice(0,100))}`, late:true};
       if(p.state==="now") return {kind:"now", by:AGENT(j.by), start:p.start, done:p.done, text:`underway now · ${etaOf(p.done)}`, at:p.done};
@@ -856,7 +863,8 @@ function stepWhen(stp, P){
   }
   if(stp.afterJob){
     const j = byId[stp.afterJob], p = j && P[j.id];
-    if(jobs && !j) return {text:`now (${esc(stp.afterJob)} is done)`, at:Date.now()};
+    if(j && j.status==="done") return {kind:"queue", text:`ready after ${esc(stp.afterJob)}; not started yet`};
+    if(jobs && !j) return {kind:"unknown", text:`status not recorded for ${esc(stp.afterJob)}`};
     if(p && p.done){ const t=p.done+(stp.lag||0)*MINUTE; return {kind:"after", after:stp.afterJob, text:`about ${clock(t)} (${rel(t)}), after ${esc(stp.afterJob)}`, at:t}; }
   }
   const d = stp.when ? fromDate(stp.when) : null;
@@ -1025,6 +1033,8 @@ function plainTitle(j, max){
 // Never infer a film from an unlabelled number in a generic backlog job's result.
 function taskKeysFor(j){
   const keys = new Set(), title = String(j.title||"");
+  for(const key of j.taskKeys||[]) if(/^(HOS|OWB):\d{3}$/.test(key)) keys.add(key);
+  if(keys.size) return [...keys];   // the worker's explicit target takes precedence over an old generic brief
   const explicit = [...title.matchAll(/\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b/gi)];
   for(const m of explicit) keys.add(m[1].toUpperCase()+":"+m[2]);
   for(const m of String(j.result||"").matchAll(/\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b/gi)) keys.add(m[1].toUpperCase()+":"+m[2]);
@@ -1032,13 +1042,42 @@ function taskKeysFor(j){
   if(/^(HOS|OWB):\d{3}$/.test(film)) keys.add(film);
   else if(!explicit.length){
     const no = /^\d{3}$/.test(film) ? film : (/^\s*(\d{3})\b/.exec(title)||[])[1];
-    if(no) keys.add((/\bHOS\b|history of science/i.test(title)?"HOS:":"OWB:")+no);
+    if(no) keys.add((j.repo==="hos" || /\bHOS\b|history of science/i.test(title)?"HOS:":"OWB:")+no);
   }
   for(const [key,b] of Object.entries(fromDb.briefs||{}))
     if((b.steps||[]).some(s=>s.job===j.id || s.afterJob===j.id)) keys.add(key);
   for(const f of (fromDb.hos||{}).films||[])
     if(Object.values(f.stages||{}).some(s=>(s.jobs||[]).includes(j.id))) keys.add("HOS:"+f.id);
   return [...keys].filter(k=>/^(HOS|OWB):\d{3}$/.test(k));
+}
+function runningJob(j){
+  return j.status==="claimed" && !(j.eta && ts(j.eta)<Date.now()-45*MINUTE);
+}
+function linkedJobsFor(key){
+  return (fromDb.jobs||[]).filter(j=>taskKeysFor(j).includes(key)).sort((a,b)=>
+    Number(runningJob(b))-Number(runningJob(a)) || ts((b.progress||{}).at || (b.last||{}).at || b.claimedAt || 0)-ts((a.progress||{}).at || (a.last||{}).at || a.claimedAt || 0));
+}
+function currentFilmBrief(f){
+  const b=(fromDb.briefs||{})[f.key];
+  if(!b) return autoBrief(f);
+  const old=!b.updated || isNaN(ts(b.updated)) || Date.now()-ts(b.updated)>30*3600000;
+  if(!old) return b;
+  return Object.assign(autoBrief(f), {you:b.you||"", youWhen:b.youWhen||"", youShort:b.youShort||"", oldPlanAt:b.updated||"unknown"});
+}
+function videoWorkHtml(key){
+  const jobs=linkedJobsFor(key), j=jobs[0];
+  const done=progressUpdates().filter(j=>j.status==="done" && taskKeysFor(j).includes(key));
+  if(!j && !done.length) return "";
+  const p=j && j.progress, review=jobs.filter(isChiefPark).length;
+  const label=j ? runningJob(j)?"Working now":isChiefPark(j)?"Awaiting review":j.status==="blocked"?"Blocked":j.status==="claimed"?"Worker overdue":"Queued" : "Latest completed job";
+  const latest=j||done[0], text=runningJob(latest)?(p&&p.of?`${p.step} of ${p.of} job steps completed${p.note?": "+p.note:""}`:"No completed steps recorded yet.") : latest.result||jobOutcome(latest);
+  return `<div class="vwork"><p><b>${label}:</b> ${esc(WORKER[latest.by]||latest.by||latest.routedTo||"Team")} · ${esc(plainTitle(latest,100))}</p><p class="record">${esc(text)}</p>${runningJob(latest)?`<div class="job-live" data-job-id="${esc(latest.id)}"></div>`:""}<p class="context">${done.length} recent job${done.length===1?"":"s"} completed${review?` · ${review} awaiting review`:""}. The stage bar records film stages, separately from this job.</p></div>`;
+}
+function unlinkedWorkHtml(videoKeys){
+  const known=new Set(videoKeys||[]);
+  const candidates=(fromDb.jobs||[]).filter(runningJob).concat(progressUpdates().slice(0,3));
+  const jobs=[...new Map(candidates.map(j=>[j.id,j])).values()].filter(j=>(chan==="all"||chanOf(j)===chan) && !taskKeysFor(j).some(k=>known.has(k)));
+  return jobs.length ? `<section class="unlinkedwork"><b>Work outside the recorded video rows (${jobs.length})</b>${jobs.map(j=>{ const keys=taskKeysFor(j); return `<div class="uwjob"><b>${esc(WORKER[j.by]||j.by||"Team")} · ${runningJob(j)?"working":j.status==="done"?"job done":"waiting"}:</b> ${esc(plainTitle(j,160))}<p>${esc(jobOutcome(j))}</p>${j.status==="blocked"?`<p>${esc(j.result||"")}</p>`:""}<p>${keys.length?`Video ${esc(keys.join(", "))} is not in the recorded video list yet.`:"No video link recorded; this job cannot update a video row."}</p>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`; }).join("")}</section>` : "";
 }
 function taskStageInfo(key){
   const [ch,no] = key.split(":"), hos = fromDb.hos||{};
@@ -1113,7 +1152,7 @@ function renderNow(){
   if(box.hidden) return;
   const P = plan(), q = laneQuiet();
   // Ben, 15 Oct 2026: "Still seems to be stuck". A claim whose lease ran out over 45 min ago is a dead worker, not a running job.
-  const busy = jobs.filter(j=>j.status==="claimed" && !(j.eta && Date.parse(j.eta) < Date.now() - 45*MINUTE));
+  const busy = jobs.filter(runningJob);
   const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
   const headJob = busy[0] || null;
   let cls = "", head;
@@ -1160,7 +1199,7 @@ function renderNow(){
 // "Needs you" only for money or irreversible calls. A Running/Review card past 2x its kind's typical time turns amber.
 // The three numbers come from the queue history and the credit reads; anything missing shows "—", never a guess.
 const MONEY_IRREV = /top[- ]?up|payment|pay\b|buy|purchase|upgrade|overage|billing|spend|£|\$\d|delete|irreversible|go(?:es)? public|publish now|make (it )?public/i;
-function chanOf(j){ return /\bHOS\b|history of science/i.test((j.title||"")+" "+(j.for||"")) ? "HOS" : "OWB"; }
+function chanOf(j){ return j.repo==="hos" || /\bHOS\b|history of science/i.test((j.title||"")+" "+(j.for||"")) ? "HOS" : "OWB"; }
 const AIR_RX = /\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*(\s+\d{1,2}:\d{2}Z?)?/;
 function airOf(j){
   const m = AIR_RX.exec(blockWhy(j)+" "+(j.title||""));
@@ -1418,9 +1457,9 @@ function renderVideos(rows, rankOf){
     // airIn() gives a ticking <span data-until> under a day out, so `when` stays HTML; the note texts are plain.
     const when = r.live ? `Live since ${esc(fd(r.air))}` : r.air ? `Airs ${esc(fd(r.air))} · ${airIn(r.air)}` : r.airText ? `Airs ${esc(r.airText)}` : "No air date yet";
     const date = lane==="you" ? (r.you ? short(r.you) : "") : (!r.live && !r.isSched && r.ready) ? `Ready for you ${short(r.ready)}` : r.air ? `${r.live?"Live":"Airs"} ${esc(fd(r.air))}` : r.airText ? `Airs ${esc(r.airText)}` : "";
-    return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp">${r.pct}%</span>`}<span class="chev">▸</span></div>
-      ${r.pct==null?"":`<div class="bar thin">${pcBar(r.pct)}</div>`}
-      <div class="v2${recent?" vwrap":""}">${bad}${badge}<span class="vn">${r.extra&&recent?"Next: ":""}${esc(status)}</span>${date?`<span class="vdt">${lane==="you"||/^Ready/.test(date)?esc(date):date}</span>`:""}</div></button>${open?videoDrop(r, when):""}</div>`; };
+    return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp" title="Recorded film stage progress">Stages ${r.pct}%</span>`}<span class="chev">▸</span></div>
+      ${r.pct==null?"":`<div class="bar thin" aria-label="Recorded film stage progress">${pcBar(r.pct)}</div>`}
+      <div class="v2${recent?" vwrap":""}">${bad}${badge}<span class="vn">${r.extra&&recent?"Next: ":""}${esc(status)}</span>${date?`<span class="vdt">${lane==="you"||/^Ready/.test(date)?esc(date):date}</span>`:""}</div></button>${videoWorkHtml(r.f.key)}${r.oldPlanAt?`<div class="vwork"><p class="context">Older plan from ${esc(fw(r.oldPlanAt))}; using live jobs and recorded stages.</p></div>`:""}${open?videoDrop(r, when):""}</div>`; };
   const groups = Object.fromEntries(LANES.map(l=>[l[0],[]]));
   for(const r of keep) groups[laneOf(r)].push(r);
   for(const k of ["you","now","wait"]) groups[k].sort(byRank);
@@ -1430,7 +1469,8 @@ function renderVideos(rows, rankOf){
     ? LANES.filter(([k])=>groups[k].length).map(([k,label,dflt])=>{
         const open = k in vLane ? vLane[k] : dflt;
         return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${groups[k].length} video${groups[k].length===1?"":"s"}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
-    : `<div class="empty">Nothing in work.</div>`);
+    : `<div class="empty">Nothing in work.</div>`) + unlinkedWorkHtml(keep.map(r=>r.f.key));
+  tickJobBars();
   box.querySelectorAll("[data-vlane]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vlane, d = LANES.find(l=>l[0]===k)[2]; vLane[k] = !(k in vLane ? vLane[k] : d); renderVideos(rows, rankOf); });
   box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; vOpen[k] = !vOpen[k]; renderVideos(rows, rankOf); });
   box.querySelectorAll("[data-vdone]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vdone; vOpen[k+"#done"] = !vOpen[k+"#done"]; renderVideos(rows, rankOf); });
@@ -1470,7 +1510,7 @@ function renderTracker(films){
   ON_CARD.clear();
   const simple = [];
   for(const f of all){
-    let b = briefs[f.key] || autoBrief(f);
+    let b = currentFilmBrief(f);
     // Ben's tick (checks/<OWB-022>) shows on the card straight away: his watch step ticked, nothing left for him, and
     // what happens next. Claude's hourly run then does the next step and rewrites the note.
     const ck0 = (fromDb.checks||{})[f.key.replace(":","-")];
@@ -1489,11 +1529,10 @@ function renderTracker(films){
     const steps = (b.steps||[]).slice();
     // Any queued job for this film that the note doesn't mention yet still shows, with its live time.
     const named = new Set(steps.flatMap(x=>[x.job,x.afterJob]).filter(Boolean));
-    for(const j of (fromDb.jobs||[])) if(f._ch==="OWB" && j.film===f.id && !named.has(j.id))
+    for(const j of linkedJobsFor(f.key)) if(!named.has(j.id))
       steps.push({who: j.status==="claimed" ? AGENT(j.by) : j.routedTo||laneWho[j.needs]||j.needs, what: shortTitle(j.title).replace(/^\d{3}\s*/,""), job:j.id});   // routedTo: scripts/routing.py by kind (Ben, 12 Oct)
     const rows = steps.map(x=>({x, w:stepWhen(x,P)}));
     const live = isLive(f);
-    if(live) for(const r of rows) if(!r.w.ok && r.w.at && r.w.at <= Date.now()) r.w = {ok:true, text:"done"};   // aired: past steps are done
     const youSoon = b.you && (!b.youWhen || days(pd(b.youWhen))<=1) || rows.some(r=>!r.w.ok && r.x.who==="Ben" && r.w.at && r.w.at-Date.now()<2*DAY);
     const moodKey = live ? "live" : youSoon ? "you" : (MOOD[b.mood] ? b.mood : "good");
     const [cls, word] = MOOD[moodKey];
@@ -1505,9 +1544,8 @@ function renderTracker(films){
     const line = live ? `Live since ${fd(pd(f.air))} 18:00.` : b.line || (b.auto ? b.done : "");
     const st = statusOf(b, rows);
     // A job belongs to this card by its film field, or by its title ("025 Mars robot: …", "HOS 006 Part 03 …").
-    const jobFilm = j => j.film ? "OWB:"+j.film : (/^HOS\s+(\d{3})\b/.exec(j.title||"")||[])[1] ? "HOS:"+/^HOS\s+(\d{3})\b/.exec(j.title)[1]
-      : (/^(\d{3})\b/.exec(j.title||"")||[])[1] ? "OWB:"+/^(\d{3})\b/.exec(j.title)[1] : "";
-    const fj = f.key ? (fromDb.jobs||[]).filter(j=>jobFilm(j)===f.key).map(j=>({j,p:P[j.id]||{}})).sort((a,b)=>(a.p.state==="now"?-1:a.p.pos||99)-(b.p.state==="now"?-1:b.p.pos||99))[0] : null;
+    const linked = linkedJobsFor(f.key);
+    const fj = linked.length ? {j:linked[0],p:P[linked[0].id]||{}} : null;
     if(fj) ON_CARD.add(fj.j.id);
     // Ben, 10 Oct: "a number to tell the order and ETA of the task", from the same plan() as the Mac mini box.
     const eta = p => p.done ? ` · ${etaOf(p.done)}` : "";
@@ -1540,8 +1578,6 @@ function renderTracker(films){
     else if(fj && isChiefPark(fj.j)) mk = ["review", `Waiting for Chief review: ${jn(fj.j)}`];
     else if(fj && fj.j.status==="blocked") mk = ["bad", `Blocked: ${jn(fj.j)} · ${esc(String(fj.j.result||"no reason given").slice(0,90))}`];
     else if(fj) mk = ["wait", `Waiting: ${jn(fj.j)} · no estimate: needs ${esc(fj.j.waitsFor||fj.j.after||"another job")} first`];
-    else if(f._ch==="HOS" && doingSt && doingSt[1].status==="doing"){ const [sg,x] = doingSt, due = x.eta || x.due;
-      mk = ["now", `Now: ${esc(x.owner || whoOf(f,sg))}, ${esc(sg.label)} · ${due?`ETA ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
     else if(firstOpen){ const {x,w} = firstOpen, who = x.who==="Ready for you"||x.who==="Ben" ? "you" : x.who, what = esc(x.what);
       mk = w.kind==="now" ? ["now", `Now: ${esc(w.by||who)}, ${what} · ${etaOf(w.done)}`]
         : w.kind==="part" ? ["now", `Now: ${esc(w.by||who)}, ${what} · part done${w.done?` · ${etaOf(w.done)}`:""}`]
@@ -1551,13 +1587,13 @@ function renderTracker(films){
         : w.text && !/no date yet/.test(w.text) ? ["wait", `Waiting: ${esc(who)}, ${what} · ${w.text}${!w.at && who!=="you" && !x.job && !/\d/.test(w.text) ? " · no estimate: not in the job queue yet" : ""}${who==="you"?"":sinceTxt(doingSt&&doingSt[1].since || b.updated)}`]
         : ["wait", `Waiting: ${esc(who)}, ${what} · no estimate: no date in the film note${sinceTxt(b.updated)}`]; }
     else if(doingSt){ const [sg,x] = doingSt, due = x.eta || x.due, who = esc(x.owner || whoOf(f,sg));
-      mk = [x.status==="blocked"?"bad":"now", `${x.status==="blocked"?"Blocked":"Now"}: ${who}, ${esc(sg.label)} · ${due?`ETA ${esc(fd(pd(due)))}`:"no estimate: no due date set"}${sinceTxt(x.since)}`]; }
+      mk = [x.status==="blocked"?"bad":"wait", `${x.status==="blocked"?"Blocked":"Stage recorded in progress; no live job"}: ${who}, ${esc(sg.label)}${sinceTxt(x.since)}`]; }
     else mk = ["wait", `Waiting: nothing queued for it · no estimate: no next step in the film note`];
     const ranked = col==="todo"||col==="doing";
     // Ben, 14 Oct: "a very simple, clean, quick" view: one row per video with its progress, what's happening and when
     // it reaches him. "Ready for you" is the first open step that is his (the watch), from the same times as the card.
     const benRow = rows.find(r=>!r.w.ok && (r.x.who==="Ben"||r.x.who==="Ready for you"));
-    simple.push({f, pct, air, col, live, isSched, mk, you: youSoon ? (b.youShort||b.you) : "", steps: rows.map(r=>({who:r.x.who, what:r.x.what, w:r.w})),
+    simple.push({f, pct, air, col, live, isSched, mk, oldPlanAt:b.oldPlanAt, you: youSoon ? (b.youShort||b.you) : "", steps: rows.map(r=>({who:r.x.who, what:r.x.what, w:r.w})),
       ready: benRow ? (benRow.w.at ? fd(new Date(benRow.w.at)) : benRow.w.text || "") : ""});
     const mkRow = !ranked ? "" : `<div class="rkrow">@@R:${esc(f.key)}@@<div class="mk ${mk[0]}">${mk[1]}</div></div>${optLine?`<div class="mk-opt">${optLine}</div>`:""}`;
     // Ben, 11 Oct 19:03: "1st, 2nd, 3rd": one work order across both channels. Running/part-done jobs first, then queued
@@ -1871,7 +1907,7 @@ function plan(){
   const RO = fromDb.runOrder || null, laneOf = j => RO ? (j.line || j.needs) : j.needs;
   for(const lane of RO ? Object.keys(RO) : ["mini","gemini","cloud"]){
     let t = now, pos = 0;
-    for(const j of jobs.filter(j=>laneOf(j)===lane && j.status==="claimed")){
+    for(const j of jobs.filter(j=>laneOf(j)===lane && runningJob(j))){
       const st = ts(j.claimedAt) || now, est=jobMin(j)*MINUTE, pace = stepPace(j);
       const done = pace ? Math.max(pace.at + pace.left, now+MINUTE) : Math.max(st+est, now+5*MINUTE);
       out[j.id] = {state:"now", start:st, done, pos:0}; t = Math.max(t, done);
@@ -2064,10 +2100,19 @@ document.addEventListener("click", e=>{
   if(target){ target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"}); target.focus({preventScroll:true}); }
 });
 // Between renders, times count by themselves: "12 min ago", "in 1 d 7 h", and the running job's bar and finish time.
+function tickJobBars(){
+  const P=plan();
+  document.querySelectorAll(".job-live[data-job-id]").forEach(el=>{
+    const j=(fromDb.jobs||[]).find(j=>j.id===el.dataset.jobId); if(!j || !runningJob(j)) return;
+    const p=progressOf(j,P), text=`${p.pct}% of current job (estimated) · ${finishIn(p.done)}`;
+    el.innerHTML=`<div class="pbar"><span class="track"><i class="pc" style="width:${p.pct}%;--pc:${pcCol(p.pct)}"></i></span><span class="ptxt">${esc(text)}</span></div>`;
+  });
+}
 function tickTimes(){
+  tickJobBars();
   document.querySelectorAll("[data-ago]").forEach(e=>{ const t = ago(+e.dataset.ago); if(e.textContent!==t) e.textContent = t; });
   document.querySelectorAll("[data-until]").forEach(e=>{ const t = untilTxt(+e.dataset.until); if(e.textContent!==t) e.textContent = t; });
-  const pb = document.querySelector("#nowbar .pbar[data-live]"), j = pb && (fromDb.jobs||[]).find(x=>x.status==="claimed" && (x.needs==="mini" || jobLine(x)==="mini"));   // renderNow's job
+  const pb = document.querySelector("#nowbar .pbar[data-live]"), j = pb && (fromDb.jobs||[]).find(x=>runningJob(x) && (x.needs==="mini" || jobLine(x)==="mini"));   // renderNow's job
   if(j){ const pr = progressOf(j, plan()), i = pb.querySelector(".track i"), s = pb.querySelector(".ptxt"), t = `${pr.pct}% done · ${finishIn(pr.done)}`;
     if(i){ i.style.width = pr.pct+"%"; i.style.setProperty("--pc", pcCol(pr.pct)); } if(s && s.textContent!==t) s.textContent = t; }
 }
@@ -2163,7 +2208,7 @@ async function startDb(){
   db.doc("board/owb").onSnapshot(snap=>{
     const d = snap.exists ? snap.data() : null;
     if(!d || !Array.isArray(d.films)) return;
-    fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : []; fromDb.extra = {typical: d.typical||null, day: d.day||null, week: Array.isArray(d.week) ? d.week : null, done: Array.isArray(d.done) ? d.done : null};
+    fromDb.jobStates = d.jobStates || {}; fromDb.owb = d.films; fromDb.owbAt = d.updatedAt || null; fromDb.jobs = Array.isArray(d.jobs) ? d.jobs : null; fromDb.chief = d.chief || null; fromDb.lanes = d.lanes || null; fromDb.focus = d.focus || []; fromDb.runOrder = d.runOrder || null; fromDb.recent = Array.isArray(d.recent) ? d.recent : []; fromDb.extra = {typical: d.typical||null, day: d.day||null, week: Array.isArray(d.week) ? d.week : null, done: Array.isArray(d.done) ? d.done : null};
     if(owb.state!=="live"){ owb.files = {}; for(const j of d.films) owb.files[j.film] = j; owb.state = "db"; owb.msg = ""; render(); }
   }, ()=>{});
   dbApi = db;

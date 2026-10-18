@@ -169,6 +169,24 @@ class Progress(unittest.TestCase):
         self.assertEqual(j["progress"], {"step": 3, "of": 8, "at": "2026-10-07T12:10Z", "by": "cursor", "note": "grade done"})
         self.assertEqual(j["history"][-1]["what"], "step 3 of 8 done: grade done")
 
+    def test_progress_links_a_shared_job_without_completing_a_film_stage(self):
+        d = queue(("mini", "Teaching overlays", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        jobs.do_progress(j, "cursor", 2, 4, T0 + MIN, films="owb:028,OWB:029,OWB:028")
+        self.assertEqual(j["taskKeys"], ["OWB:028", "OWB:029"])
+        self.assertEqual(j["status"], "claimed")
+        self.assertEqual(j.get("stage", ""), "")
+        jobs.do_release(j, "cursor", "pause", T0 + 2 * MIN)
+        self.assertEqual(j["taskKeys"], ["OWB:028", "OWB:029"])
+
+    def test_bad_film_link_does_not_modify_recorded_progress(self):
+        d = queue(("mini", "Teaching overlays", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "cursor", 1, 4, T0 + MIN, films="006")
+        self.assertNotIn("taskKeys", j)
+        self.assertNotIn("progress", j)
+
     def test_kept_across_a_release_and_cleared_on_reopen(self):
         d = queue(("mini", "027 fixes", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)

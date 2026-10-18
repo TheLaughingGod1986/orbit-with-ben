@@ -47,7 +47,7 @@ def js_function(src: str, name: str) -> str:
         i += 1
 
 
-PROGRESS_FUNCTIONS = ["OWB_STAGES", "taskKeysFor", "taskStageInfo", "jobOutcome", "jobFollowUps", "jobImpact", "progressUpdates", "JOB_KINDS", "jobKindOf", "dailyWorkSummary", "videoTotals"]
+PROGRESS_FUNCTIONS = ["OWB_STAGES", "taskKeysFor", "taskStageInfo", "jobOutcome", "jobFollowUps", "jobImpact", "progressUpdates", "JOB_KINDS", "jobKindOf", "dailyWorkSummary", "videoTotals", "runningJob", "linkedJobsFor"]
 
 
 class OrderOfWorkRemoved(unittest.TestCase):
@@ -342,6 +342,33 @@ class TaskProgress(unittest.TestCase):
     def test_video_totals_exclude_scheduled_and_live_from_unfinished(self):
         summary = self.evaluate('videoTotals({wait:Array(19),sched:Array(2),live:Array(1)})')
         self.assertEqual(summary, "19 unfinished · 2 scheduled · 1 live")
+
+    def test_repo_disambiguates_numeric_video_ids_and_structured_links_are_used(self):
+        self.assertEqual(self.evaluate('taskKeysFor({id:"J1",title:"Edit fixes",repo:"hos",film:"006"})'), ["HOS:006"])
+        self.assertEqual(self.evaluate('taskKeysFor({id:"J1",title:"Shared overlays",taskKeys:["OWB:028","OWB:029"]})'), ["OWB:028", "OWB:029"])
+
+    def test_live_job_wins_over_older_blocked_job_for_same_video(self):
+        board = {"jobs": [
+            {"id": "J1", "title": "HOS 006: older review", "status": "blocked", "last": {"at": "2026-10-17T10:00Z"}},
+            {"id": "J2", "title": "HOS 006: fixes", "status": "claimed", "eta": "2099-10-18T23:00Z"}]}
+        jobs = self.evaluate('linkedJobsFor("HOS:006")', board)
+        self.assertEqual([j["id"] for j in jobs], ["J2", "J1"])
+
+    def test_missing_and_cancelled_jobs_are_not_assumed_complete(self):
+        self.assertIn("stepWhen", page())
+        # Run the actual step resolver with an empty queue and a known terminal-state index.
+        source = js_function(page(), "stepWhen")
+        lib = "\n".join(js_function(page(), n) for n in ["esc", "ts"])
+        script = f'''const fromDb={{jobs:[],extra:{{done:[]}},jobStates:{{J2:{{status:"done"}},J3:{{status:"cancelled"}}}}}};
+{lib}
+{source}
+console.log(JSON.stringify([stepWhen({{job:"J1"}},{{}}),stepWhen({{job:"J2"}},{{}}),stepWhen({{job:"J3"}},{{}})]));'''
+        out = subprocess.run(["node", "-e", script], capture_output=True, text=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        unknown, done, cancelled = json.loads(out.stdout)
+        self.assertFalse(unknown.get("ok", False))
+        self.assertTrue(done["ok"])
+        self.assertFalse(cancelled.get("ok", False))
 
 
 if __name__ == "__main__":

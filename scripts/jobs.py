@@ -44,6 +44,7 @@ import datetime as dt
 import json
 import os
 import pathlib
+import re
 import subprocess
 import sys
 from zoneinfo import ZoneInfo
@@ -310,7 +311,7 @@ def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
     log(job, at, agent, f"renewed to {job['eta']}")
 
 
-def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "") -> None:
+def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "", films: str | None = None) -> None:
     """Ben, 11 Oct 22:09: the board says "Working on X, 20% done, finished in about 30 min". A worker reports each
     finished step: `progress J0130 --step 3 --of 8` = 3 of 8 steps done. The page turns it into % done and an ETA from
     the pace so far. Kept across a release (the next run carries on from it); cleared when the job is reopened.
@@ -323,6 +324,11 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
         raise ValueError(f"{job['id']} is claimed by {job['by']}, not {agent}")
     if job["status"] not in ("claimed", "open"):
         raise ValueError(f"{job['id']} is {job['status']}; progress is for a job in hand")
+    if films is not None:
+        keys = list(dict.fromkeys(x.strip().upper() for x in films.split(",") if x.strip()))
+        if not keys or any(not re.fullmatch(r"(?:HOS|OWB):\d{3}", x) for x in keys):
+            raise ValueError("--films needs channel-qualified video ids, e.g. HOS:006 or OWB:028,OWB:029")
+        job["taskKeys"] = keys
     job["progress"] = {"step": step, "of": of, "at": studio.iso(at), "by": agent}
     if note:
         job["progress"]["note"] = note[:120]
@@ -563,6 +569,7 @@ def main(argv=None) -> int:
         if name == "progress":
             p.add_argument("--step", type=int, required=True, help="steps finished so far (0 at the start)")
             p.add_argument("--of", type=int, required=True, help="steps in the whole job")
+            p.add_argument("--films", default=None, help="video(s) this job advances, e.g. HOS:006 or OWB:028,OWB:029")
         if name == "reroute":
             p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
             p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
@@ -648,7 +655,7 @@ def main(argv=None) -> int:
                 if on_board(job):
                     board_claim(job, args.agent, at)
             elif args.cmd == "progress":
-                do_progress(job, args.agent, args.step, args.of, at, args.note)
+                do_progress(job, args.agent, args.step, args.of, at, args.note, args.films)
                 return job, None, touched  # the film's board stage doesn't change
             elif args.cmd == "reopen":
                 do_reopen(job, args.agent or "claude", args.note, at)
