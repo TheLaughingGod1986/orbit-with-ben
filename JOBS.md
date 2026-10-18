@@ -178,7 +178,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0515 | any | blocked | gemini | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0516 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0517 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0518 | mini | claimed | gemini | 2026-10-18T05:00Z | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
+| J0518 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 
 Recently finished:
 
