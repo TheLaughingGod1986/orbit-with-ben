@@ -44801,13 +44801,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-18T21:12Z",
-      "eta": "2026-10-18T23:12Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-18T21:12Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (HOS 004 s07_outer_electrons_v01 built in HOS 1192609e; gate + vo_check + polish_gate + picture_qa PASS; iCloud HOS UAT copy written)",
       "history": [
         {
           "at": "2026-10-18T21:12Z",
@@ -44843,6 +44843,11 @@
           "at": "2026-10-18T21:30Z",
           "by": "gemini",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-18T21:30Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (HOS 004 s07_outer_electrons_v01 built in HOS 1192609e; gate + vo_check + polish_gate + picture_qa PASS; iCloud HOS UAT copy written)"
         }
       ],
       "kind": "assembly",
