@@ -53,7 +53,7 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .impact .context{font-size:12px;color:var(--ink-3)}
 .impact button{font:inherit;color:var(--doing);background:none;border:0;padding:4px 0;cursor:pointer;text-align:left;text-decoration:underline}
 .impact .record{max-height:4.5em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
-.donebar li{padding:8px 0}.donebar .impact{margin-left:18px;border:0;padding-top:0}
+.donebar li{padding:8px 0}.donebar .impact{margin-left:0;border:0;padding-top:0}
 .donebar li summary{flex-wrap:wrap;white-space:normal;row-gap:3px}
 .donebar li .t{flex-basis:60%;white-space:normal;overflow:visible}
 .donebar li .w{margin-left:auto}.donebar .reviewmark{color:var(--soon);font-weight:700}
@@ -65,6 +65,13 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .vwork .record{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .unlinkedwork{margin:10px 0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12px;line-height:1.5;background:var(--panel)}
 .unlinkedwork p{margin:4px 0}.unlinkedwork .uwjob{padding:6px 0;border-top:1px solid var(--line)}
+/* Keep progress explanations behind a fold so the overview stays compact. */
+.progress-fold{margin:6px 0 0;font-size:12px;color:var(--ink-2)}
+.progress-fold>summary{cursor:pointer;list-style:none;padding:4px 0}
+.progress-fold>summary::-webkit-details-marker{display:none}
+.progress-fold>summary::before,.donebar details[data-did]>summary::before{content:"▸";color:var(--ink-3);flex:none;margin-right:5px}
+.progress-fold[open]>summary::before,.donebar details[data-did][open]>summary::before{content:"▾"}
+.vd .vwork{margin:6px 0;padding:6px 0;border:0;border-radius:0;background:none}
 /* Ben, 14 Oct: the simple Videos list at the top */
 .videos{margin:0 0 12px}
 .videos .vh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:700;font-size:15px;margin:2px 2px 6px;color:var(--ink)}
@@ -1079,7 +1086,7 @@ function unlinkedWorkHtml(videoKeys){
   const known=new Set(videoKeys||[]);
   const candidates=(fromDb.jobs||[]).filter(runningJob).concat(progressUpdates().slice(0,3));
   const jobs=[...new Map(candidates.map(j=>[j.id,j])).values()].filter(j=>(chan==="all"||chanOf(j)===chan) && !taskKeysFor(j).some(k=>known.has(k)));
-  return jobs.length ? `<section class="unlinkedwork"><b>Work outside the recorded video rows (${jobs.length})</b>${jobs.map(j=>{ const keys=taskKeysFor(j); return `<div class="uwjob"><b>${esc(WORKER[j.by]||j.by||"Team")} · ${runningJob(j)?"working":j.status==="done"?"job done":"waiting"}:</b> ${esc(plainTitle(j,160))}<p>${esc(jobOutcome(j))}</p>${j.status==="blocked"?`<p>${esc(j.result||"")}</p>`:""}<p>${keys.length?`Video ${esc(keys.join(", "))} is not in the recorded video list yet.`:"No video link recorded; this job cannot update a video row."}</p>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`; }).join("")}</section>` : "";
+  return jobs.length ? `<details id="unlinked-work" class="unlinkedwork progress-fold"><summary>Work outside the recorded video rows (${jobs.length})</summary>${jobs.map(j=>{ const keys=taskKeysFor(j); return `<div class="uwjob"><b>${esc(WORKER[j.by]||j.by||"Team")} · ${runningJob(j)?"working":j.status==="done"?"job done":"waiting"}:</b> ${esc(plainTitle(j,160))}<p>${esc(jobOutcome(j))}</p>${j.status==="blocked"?`<p>${esc(j.result||"")}</p>`:""}<p>${keys.length?`Video ${esc(keys.join(", "))} is not in the recorded video list yet.`:"No video link recorded; this job cannot update a video row."}</p>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`; }).join("")}</details>` : "";
 }
 function taskStageInfo(key){
   const [ch,no] = key.split(":"), hos = fromDb.hos||{};
@@ -1191,7 +1198,7 @@ function renderNow(){
     + `</details>` : "";
   box.className = "nowbar" + (cls ? " "+cls : "");
   box.innerHTML = `<div class="h one"><span class="dot"></span>${head}</div>` + bar
-    + (headJob ? jobImpact(headJob) : "")
+    + (headJob ? `<details id="now-progress-${esc(headJob.id)}" class="progress-fold"><summary>Progress details</summary>${jobImpact(headJob)}</details>` : "")
     + (nxs.length ? `<div class="nx"><b>Next up</b><ol class="nxl">${nxs.map(j=>`<li>${esc(plainTitle(j, 90))}</li>`).join("")}</ol></div>` : "")
     + (headJob ? "" : hbLine()) + updatedAt();
 }
@@ -1306,14 +1313,14 @@ function renderDone(){
   box.hidden = !updates.length; if(!updates.length) return;
   const day = done.filter(d=>Date.now()-ts(d.at) < 24*60*MINUTE).length, last = ts(updates[0].at);
   box.className = "donebar" + (Date.now()-last > 24*60*MINUTE ? " cold" : "");
-  box.innerHTML = `<div class="dh">Recent progress<span>${day} jobs finished in the last 24 h</span></div>${dailyWorkSummary()}<ul>${updates.slice(0,3).map(d=>{ const k = jobKindOf(d);
+  box.innerHTML = `<div class="dh">Recent progress<span>${day} jobs finished in the last 24 h</span></div>${(()=>{ const summary=dailyWorkSummary(); return summary?`<details id="daily-work" class="progress-fold"><summary>Today’s breakdown</summary>${summary}</details>`:""; })()}<ul>${updates.slice(0,3).map(d=>{ const k = jobKindOf(d);
     // Ben, 15 Oct 2026: tap a finished job to see what it was and what came of it.
     const body = [`<div><b>Job:</b> <span class="mono">${esc(d.id||"")}</span> ${esc(d.title||"")}</div>`,
       `<div><b>Worked on by:</b> ${esc(WORKER[d.by]||d.by||"")}${d.model?` · ${esc(d.model)}`:""} · ${esc(fw(String(d.at).slice(0,16)))}</div>`,
       d.result ? `<div><b>Result:</b> ${esc(d.result)}</div>` : "",
       d.ref ? `<div><b>Ref:</b> <span class="mono">${esc(d.ref)}</span></div>` : ""].join("");
-    return `<li><details data-did="${esc(d.id||"")}"${doneOpen.has(d.id)?" open":""}><summary><span class="${d.status==="done"?"ok":"reviewmark"}">${d.status==="done"?"✓":"◐"}</span><span class="kd ${k.key}">${esc(k.label)}</span><span class="t">${esc(plainTitle(d, 100))}</span><span class="w">${esc(WORKER[d.by]||d.by||"")} · ${d.status==="done"?"job done":"waiting"} · <span data-ago="${ts(d.at)}">${ago(ts(d.at))}</span></span></summary><div class="dd">${body}</div></details>${jobImpact(d)}</li>`; }).join("")}</ul>`;
-  box.querySelectorAll("details[data-did]").forEach(x=>x.addEventListener("toggle",()=>{ x.open ? doneOpen.add(x.dataset.did) : doneOpen.delete(x.dataset.did); }));
+    return `<li><details data-did="${esc(d.id||"")}"${doneOpen.has(d.id)?" open":""}><summary><span class="${d.status==="done"?"ok":"reviewmark"}">${d.status==="done"?"✓":"◐"}</span><span class="kd ${k.key}">${esc(k.label)}</span><span class="t">${esc(plainTitle(d, 100))}</span><span class="w">${esc(WORKER[d.by]||d.by||"")} · ${d.status==="done"?"job done":"waiting"} · <span data-ago="${ts(d.at)}">${ago(ts(d.at))}</span></span></summary><div class="dd">${body}${jobImpact(d)}</div></details></li>`; }).join("")}</ul>`;
+  box.querySelectorAll("details[data-did]").forEach(x=>x.addEventListener("toggle",()=>{ if(x.isConnected) x.open ? doneOpen.add(x.dataset.did) : doneOpen.delete(x.dataset.did); }));
 }
 function renderJobBoard(){
   const box = $("jobboard"), st = $("daystats"), nb = $("needsyou");
@@ -1461,7 +1468,7 @@ function renderVideos(rows, rankOf){
     const date = lane==="you" ? (r.you ? short(r.you) : "") : (!r.live && !r.isSched && r.ready) ? `Ready for you ${short(r.ready)}` : r.air ? `${r.live?"Live":"Airs"} ${esc(fd(r.air))}` : r.airText ? `Airs ${esc(r.airText)}` : "";
     return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp" title="Recorded film stage progress">Stages ${r.pct}%</span>`}<span class="chev">▸</span></div>
       ${r.pct==null?"":`<div class="bar thin" aria-label="Recorded film stage progress">${pcBar(r.pct)}</div>`}
-      <div class="v2${recent?" vwrap":""}">${bad}${badge}<span class="vn">${r.extra&&recent?"Next: ":""}${esc(status)}</span>${date?`<span class="vdt">${lane==="you"||/^Ready/.test(date)?esc(date):date}</span>`:""}</div></button>${videoWorkHtml(r.f.key)}${r.oldPlanAt?`<div class="vwork"><p class="context">Older plan from ${esc(fw(r.oldPlanAt))}; using live jobs and recorded stages.</p></div>`:""}${open?videoDrop(r, when):""}</div>`; };
+      <div class="v2${recent?" vwrap":""}">${bad}${badge}<span class="vn">${r.extra&&recent?"Next: ":""}${esc(status)}</span>${date?`<span class="vdt">${lane==="you"||/^Ready/.test(date)?esc(date):date}</span>`:""}</div></button>${open?videoDrop(r, when):""}</div>`; };
   const groups = Object.fromEntries(LANES.map(l=>[l[0],[]]));
   for(const r of keep) groups[laneOf(r)].push(r);
   for(const k of ["you","now","wait"]) groups[k].sort(byRank);
@@ -1501,7 +1508,7 @@ function videoDrop(r, when){
   const tail = left[left.length-1], last = tail && tail.w.at ? Math.max(...left.filter(s=>s.w.at).map(s=>s.w.at)) : 0;
   const tot = r.live ? "Live" : r.isSched ? "Finished and scheduled" : last ? `All done about <b>${esc(new Date(last).getHours()||new Date(last).getMinutes() ? clock(last) : fd(new Date(last)))}</b>` : left.length ? "No finish time yet: the last task has no date" : "Nothing left to do";
   const head = `<div class="vtot"><span>${tot}${left.length?` · ${left.length} task${left.length===1?"":"s"} left`:""}</span>${r.ready&&!r.live&&!r.isSched?`<span>Ready for you: <b>${esc(String(r.ready).replace(/<[^>]+>/g,""))}</b></span>`:""}<span>${when}</span></div>`;
-  return `<div class="vd">${head}${filmJobUpdates(r.f.key)}${done.length?`<button class="lnk donesum" data-vdone="${esc(r.f.key)}">✓ ${done.length} done${showDone?" (hide)":" (show)"}</button>`:""}<ol>${showDone?dl.join(""):""}${li.join("")}</ol>${!steps.length?`<div class="w">No task list for this video yet.</div>`:""}</div>`;
+  return `<div class="vd">${head}${videoWorkHtml(r.f.key)}${r.oldPlanAt?`<div class="vwork"><p class="context">Older plan from ${esc(fw(r.oldPlanAt))}; using live jobs and recorded stages.</p></div>`:""}${filmJobUpdates(r.f.key)}${done.length?`<button class="lnk donesum" data-vdone="${esc(r.f.key)}">✓ ${done.length} done${showDone?" (hide)":" (show)"}</button>`:""}<ol>${showDone?dl.join(""):""}${li.join("")}</ol>${!steps.length?`<div class="w">No task list for this video yet.</div>`:""}</div>`;
 }
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
@@ -2081,6 +2088,7 @@ function renderVerdict(c){
 // A fold someone opened (the "17 jobs waiting" list, a job card, "+3 more") stays open when the page re-renders.
 function openKey(d){
   if(d.id) return "#"+d.id;
+  if(d.dataset.did) return "job:"+d.dataset.did;
   if(d.dataset.key) return null;   // film cards: openState
   const s = d.querySelector("summary"), box = d.parentElement && d.parentElement.closest("[id]");
   return `${box?box.id:""}|${d.className}|${s?s.textContent.replace(/\d+/g,"#").trim().slice(0,60):""}`;
