@@ -135,6 +135,37 @@ ROWS = [
         ],
     ),
     (
+        "r14_hipparcos_card",
+        "2 How Close Will It Come?",
+        134.58,
+        146.98,
+        HERE / "code_graphics_v02" / "code_graphic_028_r14_hipparcos_card_v02.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "Late 1990s",
+                134.70,
+                136.40,
+                960,
+                860,
+                78,
+                "SOURCES row 8: Garcia-Sanchez et al. 1999 AJ 117:1042 Hipparcos Oort cloud encounter search; VO 'In the late 1990s' at 134.58-136.04s",
+            ),
+            (
+                "About 1 light-year",
+                142.80,
+                146.00,
+                960,
+                860,
+                78,
+                "SOURCES row 8: Bobylev 2010 d_min = 0.311 +/- 0.167 pc = 1.014 +/- 0.545 ly & Bailer-Jones 2022 Hipparcos median 0.267 pc; VO 'about a light-year' at 143.10-143.96s",
+            ),
+        ],
+    ),
+    (
         "r15_gaia_craft",
         "2 How Close Will It Come?",
         147.76,
@@ -201,6 +232,28 @@ ROWS = [
         ],
     ),
     (
+        "r17_scale_a",
+        "2 How Close Will It Come?",
+        175.50,
+        181.50,
+        HERE / "code_graphics_v02" / "code_graphic_028_r17_scale_a_v02.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "1 centimetre",
+                179.80,
+                181.45,
+                960,
+                860,
+                78,
+                "SOURCES row 11: 1 AU = 1 cm scale model (Sun-Earth gap = 1.0 AU = 1 cm); VO 'one centimeter' at 180.30-181.44s",
+            )
+        ],
+    ),
+    (
         "r17_neptune",
         "2 How Close Will It Come?",
         181.50,
@@ -219,6 +272,28 @@ ROWS = [
                 860,
                 76,
                 "SOURCES row 11: NASA Neptune Fact Sheet a = 30.07 AU => 30.1 cm at 1 AU = 1 cm scale; VO '30 centimeters away' at 184.84-186.30s",
+            )
+        ],
+    ),
+    (
+        "r18_shell",
+        "2 How Close Will It Come?",
+        198.96,
+        203.76,
+        HERE / "code_graphics_v02" / "code_graphic_028_r18_shell_v02.mp4",
+        None,
+        0.0,
+        1.0,
+        0.0,
+        [
+            (
+                "100 metres",
+                199.68,
+                202.20,
+                960,
+                860,
+                78,
+                "SOURCES row 11: Gliese 710 perihelion 10,520-13,118 AU => 105.2-131.2 m (>100 m) at 1 AU = 1 cm scale; VO '100 meters' at 200.04-200.80s",
             )
         ],
     ),
@@ -585,7 +660,10 @@ VIDEO_OFFSETS = {
     "r06_milky_way": 0.0,
     "r07_kdwarf": 0.0,
     "r13_star_trails": 2.0,
+    "r14_hipparcos_card": 0.0,
     "r15_16_path": 12.90,
+    "r17_scale_a": 0.0,
+    "r18_shell": 3.28,
     "r33_traffic": 1.50,
     "r35_lasilla_ntt": 2.74,
 }
@@ -637,7 +715,7 @@ def main() -> None:
                 ],
                 check=True,
             )
-            if row_id in ("r04_shower_shell", "r07_kdwarf", "r33_traffic"):
+            if row_id in ("r04_shower_shell", "r07_kdwarf", "r14_hipparcos_card", "r17_scale_a", "r18_shell", "r33_traffic"):
                 render_code_clean_028(row_id, 0.0, "", off, dur, base_after)
             else:
                 shutil.copyfile(b_seg, base_after)
@@ -726,7 +804,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0489", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "028", "job": "J0504", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     tiles = []

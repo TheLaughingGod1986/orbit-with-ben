@@ -1,11 +1,11 @@
 # Picture QA: PASS
 
-/private/tmp/028_teaching_overlays_v01_after.mp4 · 17 cuts · 0 fail · 3 for Claude to look at full size
+/private/tmp/028_teaching_overlays_v01_after.mp4 · 20 cuts · 0 fail · 3 for Claude to look at full size
 
 ## Claude looks at these full size
 
-- **0:26** row r15_gaia_craft · gaia_craft.jpg (The Gaia spacecraft (artist's impression)): kind of picture: 'The Gaia spacecraft (artist's impression)' (artist), look at it full size
-- **0:40** row r17_neptune · neptune.jpg (Neptune full disk, Voyager 2 (PIA01492)): low detail: edge density 0.0019 < film p5 0.0143
-- **1:13** row r33_wise_craft · wise_craft.jpg (NEOWISE spacecraft, artist concept (PIA17254)): kind of picture: 'NEOWISE spacecraft, artist concept (PIA17254)' (artist), look at it full size
+- **0:38** row r15_gaia_craft · gaia_craft.jpg (The Gaia spacecraft (artist's impression)): kind of picture: 'The Gaia spacecraft (artist's impression)' (artist), look at it full size
+- **0:58** row r17_neptune · neptune.jpg (Neptune full disk, Voyager 2 (PIA01492)): low detail: edge density 0.0019 < film p5 0.0166
+- **1:37** row r33_wise_craft · wise_craft.jpg (NEOWISE spacecraft, artist concept (PIA17254)): kind of picture: 'NEOWISE spacecraft, artist concept (PIA17254)' (artist), look at it full size
 
 Claude's own look still covers every cut on the per-row sheet: would a viewer trust this as a real, sharp, finished picture of what the sentence says?

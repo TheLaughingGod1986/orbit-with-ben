@@ -396,13 +396,23 @@ ROWS = [
             (
                 "In late 2027",
                 426.80,
-                429.88,
+                428.70,
                 960,
                 860,
                 78,
                 "SOURCES row 21: Howell et al. 2025 ApJL 982:L37 next greatest elongation November 2027; VO 'in late twenty twenty-seven' at 426.80-428.48s",
                 None,
-            )
+            ),
+            (
+                "The 2 stars",
+                429.04,
+                430.80,
+                960,
+                860,
+                78,
+                "SOURCES row 21: Howell et al. 2025 ApJL 982:L37 Betelgeuse + alpha Ori B binary separation; VO 'the two stars' at 429.04-429.48s",
+                None,
+            ),
         ],
     ),
     (
@@ -792,7 +802,7 @@ def main() -> None:
         lst.write_text("".join(f"file '{p}'\n" for p in seg_list))
         sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(dst)], check=True)
 
-    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0489", "labels": ov_records}, indent=2) + "\n")
+    (PACK / "overlays_v01.json").write_text(json.dumps({"film": "029", "job": "J0504", "labels": ov_records}, indent=2) + "\n")
     (PACK / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
 
     # Build side-by-side before/after contact sheet

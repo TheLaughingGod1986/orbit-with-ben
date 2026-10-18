@@ -36,17 +36,17 @@
     }
   },
   "video": "/private/tmp/028_teaching_overlays_v01_after.mp4",
-  "edge_floor": 0.0143,
+  "edge_floor": 0.0166,
   "verdict": "PASS",
   "failed": [],
   "warn": [
     {
       "row": "r17_neptune",
-      "cut": 7,
-      "t": 39.83,
+      "cut": 9,
+      "t": 58.23,
       "source": "neptune.jpg",
       "why": [
-        "low detail: edge density 0.0019 < film p5 0.0143"
+        "low detail: edge density 0.0019 < film p5 0.0166"
       ]
     }
   ],
@@ -126,9 +126,27 @@
     },
     {
       "cut": 4,
+      "row": "r14_hipparcos_card",
+      "source": "code_graphic_028_r14_hipparcos_card_v02.mp4",
+      "t": 28.7,
+      "std": 29.15,
+      "mean": 68.32,
+      "p95": 115.0,
+      "edge": 0.0725,
+      "hf": 10.04,
+      "lf": 25.88,
+      "std8": 26.24,
+      "edge8": 0.0527,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
       "row": "r15_gaia_craft",
       "source": "gaia_craft.jpg",
-      "t": 25.62,
+      "t": 38.02,
       "std": 34.68,
       "mean": 65.2,
       "p95": 138.0,
@@ -151,10 +169,10 @@
       "warn": []
     },
     {
-      "cut": 5,
+      "cut": 6,
       "row": "r15_16_path",
       "source": "code_graphic_028_r15_16_path_v02.mp4",
-      "t": 30.18,
+      "t": 42.58,
       "std": 31.8,
       "mean": 67.03,
       "p95": 114.0,
@@ -169,10 +187,10 @@
       "warn": []
     },
     {
-      "cut": 6,
+      "cut": 7,
       "row": "r16_sunrise_break",
       "source": "iss_sunrise.jpg",
-      "t": 34.48,
+      "t": 46.88,
       "std": 63.56,
       "mean": 45.18,
       "p95": 196.0,
@@ -195,10 +213,28 @@
       "warn": []
     },
     {
-      "cut": 7,
+      "cut": 8,
+      "row": "r17_scale_a",
+      "source": "code_graphic_028_r17_scale_a_v02.mp4",
+      "t": 52.73,
+      "std": 28.55,
+      "mean": 66.29,
+      "p95": 112.0,
+      "edge": 0.0724,
+      "hf": 10.08,
+      "lf": 24.63,
+      "std8": 25.19,
+      "edge8": 0.0721,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
       "row": "r17_neptune",
       "source": "neptune.jpg",
-      "t": 39.83,
+      "t": 58.23,
       "std": 41.91,
       "mean": 92.88,
       "p95": 139.0,
@@ -219,14 +255,32 @@
       },
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0019 < film p5 0.0143"
+        "low detail: edge density 0.0019 < film p5 0.0166"
       ]
     },
     {
-      "cut": 8,
+      "cut": 10,
+      "row": "r18_shell",
+      "source": "code_graphic_028_r18_shell_v02.mp4",
+      "t": 63.13,
+      "std": 29.31,
+      "mean": 66.09,
+      "p95": 112.0,
+      "edge": 0.0729,
+      "hf": 10.17,
+      "lf": 24.66,
+      "std8": 25.45,
+      "edge8": 0.0646,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
       "row": "r24_sunrise",
       "source": "iss_sunrise.jpg",
-      "t": 45.25,
+      "t": 68.45,
       "std": 70.36,
       "mean": 49.94,
       "p95": 236.0,
@@ -249,10 +303,10 @@
       "warn": []
     },
     {
-      "cut": 9,
+      "cut": 12,
       "row": "r26_hale_bopp",
       "source": "comet_a3.jpg",
-      "t": 51.1,
+      "t": 74.3,
       "std": 38.34,
       "mean": 63.31,
       "p95": 136.0,
@@ -275,10 +329,10 @@
       "warn": []
     },
     {
-      "cut": 10,
+      "cut": 13,
       "row": "r26_a3",
       "source": "comet_a3.jpg",
-      "t": 57.0,
+      "t": 80.2,
       "std": 38.67,
       "mean": 69.08,
       "p95": 138.0,
@@ -301,10 +355,10 @@
       "warn": []
     },
     {
-      "cut": 11,
+      "cut": 14,
       "row": "r29_twilight",
       "source": "conjunction.tif",
-      "t": 63.07,
+      "t": 86.27,
       "std": 42.9,
       "mean": 76.38,
       "p95": 157.0,
@@ -327,10 +381,10 @@
       "warn": []
     },
     {
-      "cut": 12,
+      "cut": 15,
       "row": "r31_moon_2",
       "source": "moon_lro.jpg",
-      "t": 68.27,
+      "t": 91.47,
       "std": 63.45,
       "mean": 128.53,
       "p95": 216.0,
@@ -353,10 +407,10 @@
       "warn": []
     },
     {
-      "cut": 13,
+      "cut": 16,
       "row": "r33_wise_craft",
       "source": "wise_craft.jpg",
-      "t": 73.5,
+      "t": 96.7,
       "std": 55.1,
       "mean": 74.41,
       "p95": 190.0,
@@ -379,10 +433,10 @@
       "warn": []
     },
     {
-      "cut": 14,
+      "cut": 17,
       "row": "r33_traffic",
       "source": "code_graphic_028_r33_traffic_v02.mp4",
-      "t": 79.38,
+      "t": 102.58,
       "std": 31.88,
       "mean": 66.66,
       "p95": 114.0,
@@ -397,10 +451,10 @@
       "warn": []
     },
     {
-      "cut": 15,
+      "cut": 18,
       "row": "r34_sky_wide",
       "source": "gaia_edr3_sky.png",
-      "t": 86.48,
+      "t": 109.68,
       "std": 47.99,
       "mean": 62.75,
       "p95": 161.0,
@@ -423,10 +477,10 @@
       "warn": []
     },
     {
-      "cut": 16,
+      "cut": 19,
       "row": "r35_lasilla_ntt",
       "source": "eso_lasilla_ntt.mp4",
-      "t": 93.33,
+      "t": 116.53,
       "std": 37.94,
       "mean": 59.08,
       "p95": 137.0,
