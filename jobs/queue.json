@@ -42560,13 +42560,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-18T14:15Z",
-      "eta": "2026-10-18T16:15Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-18T14:14Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS",
       "history": [
         {
           "at": "2026-10-18T14:14Z",
@@ -42612,6 +42612,11 @@
           "at": "2026-10-18T14:51Z",
           "by": "gemini",
           "what": "step 5 of 5 done: committed metadata/QA reports and copied pack to OWB UAT"
+        },
+        {
+          "at": "2026-10-18T14:52Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS"
         }
       ],
       "kind": "assembly",
