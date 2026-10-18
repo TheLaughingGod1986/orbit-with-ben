@@ -30,8 +30,8 @@ def js_function(src: str, name: str) -> str:
     if src.startswith("const", start):
         brace = src.find("{", start)
         eol = src.find("\n", start)
-        if brace < 0 or brace > eol:          # one-line arrow
-            return src[start:eol]
+        if brace < 0 or brace > eol:          # arrow or a possibly multi-line constant array
+            return src[start:eol] if ";" in src[start:eol] else src[start:src.find(";\n", start)+1]
         i = brace
     else:
         i = src.find("{", start)
@@ -45,6 +45,9 @@ def js_function(src: str, name: str) -> str:
                 end = src.find("\n", i)
                 return src[start:end if end > 0 else len(src)]
         i += 1
+
+
+PROGRESS_FUNCTIONS = ["OWB_STAGES", "taskKeysFor", "taskStageInfo", "jobOutcome", "jobFollowUps", "jobImpact", "progressUpdates"]
 
 
 class OrderOfWorkRemoved(unittest.TestCase):
@@ -94,7 +97,7 @@ class MacMiniBox(unittest.TestCase):
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "jobMin", "plan", "laneQuiet", "shortTitle", "jobTag",
                  "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
                  "updatedAt", "STALL_MIN", "stallOf", "hbLine", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "pcCol", "renderNow"]
-        lib = "\n".join(js_function(html, n) for n in names)
+        lib = "\n".join(js_function(html, n) for n in dict.fromkeys(names + PROGRESS_FUNCTIONS))
         board = {"jobs": self.JOBS if jobs is None else jobs,
                  "runOrder": {"mini": ["J0130", "J0126", "J0128", "J0132"], "chief": ["J0123"]},
                  "lanes": lanes or {}, "focus": [], "owbAt": "2026-10-11T19:49Z", "extra": extra or {},
@@ -247,6 +250,80 @@ class VenusApproved(unittest.TestCase):
         self.assertTrue(all(s.get("done") for s in j["steps"] if s["who"] == "Ben"))
 
 
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class TaskProgress(unittest.TestCase):
+    """A job outcome must not imply that a film or its review is complete."""
+
+    def evaluate(self, expression, board=None):
+        names = ["esc", "MINUTE", "ts", "WORKER", "cleanTitle", "plainTitle", "pw", "fd", "fw"] + PROGRESS_FUNCTIONS
+        lib = "\n".join(js_function(page(), n) for n in dict.fromkeys(names))
+        script = f"const fromDb = {json.dumps(board or {})};\n{lib}\nconsole.log(JSON.stringify({expression}));"
+        out = subprocess.run(["node", "-e", script], capture_output=True, text=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def test_hos_job_with_numeric_film_never_links_to_owb(self):
+        keys = self.evaluate('taskKeysFor({id:"J1",title:"HOS 006: edit fixes",film:"006"})')
+        self.assertEqual(keys, ["HOS:006"])
+
+    def test_generic_backlog_does_not_guess_a_film_from_result_text(self):
+        job = {"id": "J1", "title": "Backlog HOS: next Short", "status": "done", "result": "Built 006 Short, needs review."}
+        html = self.evaluate(f"jobImpact({json.dumps(job)})")
+        self.assertIn("Built 006 Short, needs review.", html)
+        self.assertIn("No individual film linked", html)
+        self.assertIn("No follow-up recorded", html)
+        self.assertNotIn("data-task-film", html)
+
+    def test_brief_and_stage_job_ids_link_jobs_without_film_numbers(self):
+        board = {"briefs": {"OWB:024": {"steps": [{"job": "J1"}]}},
+                 "hos": {"films": [{"id": "006", "stages": {"edit": {"jobs": ["J1"]}}}]}}
+        self.assertEqual(self.evaluate('taskKeysFor({id:"J1",title:"Teaching graphics"})', board), ["OWB:024", "HOS:006"])
+
+    def test_explicit_result_can_name_the_film_selected_by_a_backlog_job(self):
+        keys = self.evaluate('taskKeysFor({id:"J1",title:"Backlog HOS: next Short",result:"Short PASS (HOS 004 s07 built; gates PASS)"})')
+        self.assertEqual(keys, ["HOS:004"])
+
+    def test_finished_job_keeps_film_review_and_upload_outstanding(self):
+        board = {"owb": [{"film": "024", "title": "Light Speed", "stages": {
+            key: {"state": "done"} for key in ("topic", "script", "sources", "vo", "shots", "picture")}}]}
+        board["owb"][0]["stages"]["edit"] = {"state": "review"}
+        html = self.evaluate('jobImpact({id:"J1",title:"024 edit fixes",status:"done",result:"New cut rendered."})', board)
+        self.assertIn("New cut rendered.", html)
+        self.assertIn("6 of 9 stages marked complete", html)
+        self.assertIn("Edit (review) → Thumbnails → Upload", html)
+        self.assertNotIn("All recorded film stages complete", html)
+
+    def test_active_steps_and_follow_up_are_recorded_separately(self):
+        board = {"jobs": [{"id": "J2", "title": "Chief review", "after": "J1", "status": "open"}]}
+        html = self.evaluate('jobImpact({id:"J1",status:"claimed",progress:{step:3,of:4,note:"Captions complete."}})', board)
+        self.assertIn("3 of 4 job steps recorded complete", html)
+        self.assertIn("Captions complete.", html)
+        self.assertIn("1 of 4 steps", html)
+        self.assertIn("Chief review (queued)", html)
+
+    def test_parked_pass_keeps_review_reason_and_is_not_counted_as_done(self):
+        job = {"id": "J1", "title": "HOS Short", "status": "blocked", "progress": {"step": 4, "of": 4, "at": "2026-10-18T21:30Z"},
+               "result": "parked for Chief: Short PASS", "last": {"at": "2026-10-18T23:30Z", "what": "escalated"}}
+        board = {"jobs": [job], "extra": {"done": []}}
+        updates = self.evaluate("progressUpdates()", board)
+        self.assertEqual(updates[0]["status"], "blocked")
+        self.assertEqual(updates[0]["at"], "2026-10-18T21:30Z")  # not the later escalation
+        html = self.evaluate(f"jobImpact({json.dumps(job)})", board)
+        self.assertIn("Waiting on:", html)
+        self.assertIn("parked for Chief: Short PASS", html)
+        self.assertNotIn("0 of 4 steps", html)
+
+    def test_external_worker_notes_are_escaped(self):
+        html = self.evaluate('jobImpact({status:"done",result:"<img src=x onerror=alert(1)>"})')
+        self.assertIn("&lt;img", html)
+        self.assertNotIn("<img", html)
+
+    def test_unknown_result_does_not_claim_a_film_is_complete(self):
+        html = self.evaluate('jobImpact({status:"done",title:"Read analytics"})')
+        self.assertIn("no result note recorded", html)
+        self.assertNotIn("All recorded film stages complete", html)
+
+
 if __name__ == "__main__":
     unittest.main()
 
@@ -274,7 +351,7 @@ class JobBoard(unittest.TestCase):
                  "shortReason", "stepPace", "progressOf", "finishIn", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER",
                  "readyAt", "jobKind", "plainTitle", "rel", "JOB_KINDS", "jobKindOf", "jobPlan", "MONEY_IRREV", "chanOf", "AIR_RX", "airOf", "sinceMin", "dur", "isStuck", "jobCard",
                  "renderJobBoard"]
-        lib = "\n".join(js_function(html, n) for n in names)
+        lib = "\n".join(js_function(html, n) for n in dict.fromkeys(names + PROGRESS_FUNCTIONS))
         board = {"jobs": self.JOBS if jobs is None else jobs, "runOrder": {"mini": ["J0202"]}, "lanes": {}, "focus": [],
                  "owb": [], "extra": extra if extra is not None else {}, "credits": credits}
         script = f"""
@@ -299,7 +376,7 @@ console.log(JSON.stringify(els));
     def test_five_columns_and_one_line_cards(self):
         r = self.render()
         h = r["jobboard"]["innerHTML"]
-        for col in ("Next", "Running", "Waiting for review", "Ready to ship", "Scheduled"):
+        for col in ("Next", "Running", "Waiting for review", "Jobs done", "Scheduled"):
             self.assertIn(f"<h4>{col}", h)
         self.assertIn('<span class="jid">J0201</span><span class="cdot HOS"', h)
         self.assertIn('<span class="jid">J0202</span><span class="cdot OWB"', h)
@@ -390,7 +467,7 @@ console.log(JSON.stringify(els));
         # Ben, 14 Oct: "I'm not seeing tasks that are done."
         html = page()
         names = ["esc", "MINUTE", "ts", "ago", "WORKER", "cleanTitle", "plainTitle", "JOB_KINDS", "jobKindOf", "pw", "fd", "fw", "doneOpen", "renderDone"]
-        lib = "\n".join(js_function(html, n) for n in names)
+        lib = "\n".join(js_function(html, n) for n in dict.fromkeys(names + PROGRESS_FUNCTIONS))
         done = [{"id": f"J0{i}", "title": t, "by": "cursor", "at": at} for i, (t, at) in enumerate([
             ("HOS 005 Short s04 cover, set in its package manifest", "2026-10-12T14:30Z"),
             ("Upload packages for 3 Shorts: listing + manifest", "2026-10-12T14:00Z"),
@@ -413,11 +490,11 @@ console.log(JSON.stringify(box));
         r = json.loads(out.stdout)
         self.assertFalse(r["hidden"])
         self.assertEqual(r["className"], "donebar")   # something finished in the last day
-        self.assertIn("2 in the last 24 h", r["innerHTML"])
+        self.assertIn("2 jobs finished in the last 24 h", r["innerHTML"])
         self.assertIn('<span class="kd thumb">Thumbnails</span>', r["innerHTML"])
         self.assertIn('<span class="kd vo">Voiceover</span>', r["innerHTML"])
         self.assertLess(r["innerHTML"].index("HOS 005"), r["innerHTML"].index("027 long VO"))   # newest first
-        self.assertIn("Cursor · <span data-ago=", r["innerHTML"])
+        self.assertIn("Cursor · job done · <span data-ago=", r["innerHTML"])
 
     def test_done_over_48h_goes_to_archive(self):
         done = [{"id": "J0190", "title": "OWB new", "at": "2026-10-12T10:00Z"}, {"id": "J0180", "title": "OWB old", "at": "2026-10-08T10:00Z"}]
