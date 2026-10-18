@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/lift_earth_pinhead/06_Final-Exports/nearest_star_earth_pinhead_v01.mp4",
+  "edge_floor": 0.0518,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s06_lro_moon",
+      "cut": 5,
+      "t": 21.77,
+      "source": "026_v05d_span_219.45.mp4",
+      "why": [
+        "low detail: edge density 0.0477 < film p5 0.0518"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_blue_marble_2012",
+      "source": "026_v05d_span_258.58.mp4",
+      "t": 1.84,
+      "std": 55.79,
+      "mean": 153.9,
+      "p95": 251.0,
+      "edge": 0.1843,
+      "hf": 19.27,
+      "lf": 43.81,
+      "std8": 47.21,
+      "edge8": 0.4354,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_blue_marble_2007",
+      "source": "026_v05d_span_263.40.mp4",
+      "t": 6.07,
+      "std": 58.08,
+      "mean": 125.9,
+      "p95": 211.0,
+      "edge": 0.1154,
+      "hf": 14.14,
+      "lf": 50.55,
+      "std8": 53.1,
+      "edge8": 0.5499,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_eso_milky_way",
+      "source": "026_v05d_span_171.40.mp4",
+      "t": 10.44,
+      "std": 52.35,
+      "mean": 55.88,
+      "p95": 162.0,
+      "edge": 0.2813,
+      "hf": 17.46,
+      "lf": 46.37,
+      "std8": 47.67,
+      "edge8": 0.2049,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_hubble_stars",
+      "source": "026_v05d_span_157.62.mp4",
+      "t": 14.49,
+      "std": 52.59,
+      "mean": 70.59,
+      "p95": 190.0,
+      "edge": 0.3545,
+      "hf": 23.26,
+      "lf": 29.42,
+      "std8": 36.77,
+      "edge8": 0.7743,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_eso_carina_nebula",
+      "source": "026_v05d_span_286.70.mp4",
+      "t": 18.54,
+      "std": 43.56,
+      "mean": 102.51,
+      "p95": 179.0,
+      "edge": 0.0614,
+      "hf": 14.53,
+      "lf": 32.95,
+      "std8": 36.29,
+      "edge8": 0.2144,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_lro_moon",
+      "source": "026_v05d_span_219.45.mp4",
+      "t": 21.77,
+      "std": 58.22,
+      "mean": 106.45,
+      "p95": 200.0,
+      "edge": 0.0477,
+      "hf": 12.89,
+      "lf": 53.13,
+      "std8": 54.69,
+      "edge8": 0.2743,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0477 < film p5 0.0518"
+      ]
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_blue_marble_2012.mp4",
+      "t": 24.27,
+      "std": 35.47,
+      "mean": 112.03,
+      "p95": 180.0,
+      "edge": 0.0868,
+      "hf": 12.51,
+      "lf": 29.07,
+      "std8": 30.81,
+      "edge8": 0.1952,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
