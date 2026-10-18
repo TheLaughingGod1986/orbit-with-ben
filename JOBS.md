@@ -256,7 +256,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0600 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0601 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0602 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0603 | any | claimed | gemini | 2026-10-19T01:04Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0603 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
