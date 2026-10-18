@@ -1,5 +1,5 @@
 {
-  "next_id": 512,
+  "next_id": 513,
   "jobs": [
     {
       "id": "J0001",
@@ -38830,6 +38830,34 @@
         "by": "gemini",
         "note": "Committed 294eb369: 05_Analytics/weekly_audit/OWB_2026-10-18.md"
       }
+    },
+    {
+      "id": "J0512",
+      "title": "Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Weekly growth audit for History of Science (aim: numbers up month on month). 1) Last 28 and 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_HOS): views, CTR, AVD/retention, subs per video, Shorts vs longs, search terms, Test & Compare results. 2) What's working and what isn't, with evidence. 3) Competitors: 5 history/science-history channels (e.g. Kings and Generals style explainers, Veritasium history pieces, SciShow, Big Think history, Real Engineering) last 30 days via public metadata only. 4) Write the audit into the HOS repo analytics folder as HOS_<YYYY-MM-DD>.md: findings, 3-5 concrete changes for 006-010 tied to a film, and 3 ranked new ideas. Compare with last week. Post a summary on desk #180. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-18T01:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-18T01:50Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "review",
+      "backlog": "hos-weekly-audit"
     }
   ],
   "focus": [],
@@ -38841,7 +38869,7 @@
     "owb-teach-overlays": "2026-10-18T00:18Z",
     "owb-live-listing-fixes": "2026-10-18T00:38Z",
     "owb-weekly-audit": "2026-10-18T01:41Z",
-    "hos-weekly-audit": "2026-10-17T22:04Z",
+    "hos-weekly-audit": "2026-10-18T01:50Z",
     "owb-ideas": "2026-10-17T22:20Z",
     "hos-ideas": "2026-10-17T22:40Z",
     "hos-live-listing-fixes": "2026-10-18T00:45Z",
