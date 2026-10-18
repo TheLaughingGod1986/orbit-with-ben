@@ -1062,7 +1062,9 @@ function currentFilmBrief(f){
   if(!b) return autoBrief(f);
   const old=!b.updated || isNaN(ts(b.updated)) || Date.now()-ts(b.updated)>30*3600000;
   if(!old) return b;
-  return Object.assign(autoBrief(f), {you:b.you||"", youWhen:b.youWhen||"", youShort:b.youShort||"", oldPlanAt:b.updated||"unknown"});
+  const current=autoBrief(f);
+  if(["ready","finished","watched"].includes(b.mood)) current.mood=b.mood; // an old worker plan does not undo a recorded upload or watch
+  return Object.assign(current, {you:b.you||"", youWhen:b.youWhen||"", youShort:b.youShort||"", oldPlanAt:b.updated||"unknown"});
 }
 function videoWorkHtml(key){
   const jobs=linkedJobsFor(key), j=jobs[0];
