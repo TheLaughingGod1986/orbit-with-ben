@@ -208,10 +208,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0548 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0549 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0550 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0551 | any | claimed | gemini | 2026-10-18T12:41Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J0551 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0536 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0531 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs (plus 57 OWB + 14 HOS Shorts; 23KZK7OjsEE not yet shown in Studio lifetime); CTR hits vs 4%: OWB -jmMROGoZCM Jupiter 5.0% (40 imp), HOS _C92tIJCk8A Germs 8.3% (36 imp))
 - J0520 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed e5b7799ac: re-verified all 10 live public videos + upcoming 022 long h8HGfyShEHI at 2026-10-18T04:06:17Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-18.md). Nothing changed in Studio.)
@@ -221,4 +221,3 @@ Recently finished:
 - J0465 done: HOS 004 Test B Short: fix picture_qa reuse FAIL on s04_cathode_rays_v01 (£0, no spend, no upload) (done)
 - J0459 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0444 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 23KZK7OjsEE pass chapters, sources, end screens, and Related video checks at 2026-10-17T08:24Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md, commit aad7af53). Nothing changed in Studio.)
-- J0440 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs, 69 Shorts (56 OWB + 13 HOS; 2 new 16 Oct Shorts not in Studio lifetime yet); CTR hits vs 4%: OWB Jupiter -jmMROGoZCM 5.3% (38 imp), HOS Germs _C92tIJCk8A 9.7% (31 imp); Saturn 55AEQwvs36g 1.9% (1,123 imp), HOS Periodic Table AL_-qlWko_g 3.4% (951 imp), HOS Atom GHZDsiH7L7A 0.0% (181 imp))
