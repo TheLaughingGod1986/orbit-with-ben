@@ -39226,13 +39226,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-18T03:14Z",
-      "eta": "2026-10-18T05:14Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-18T03:14Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (HOS 005 s06_blood_pressure_cuff_v01 built, commit 81e7c2e1)",
       "history": [
         {
           "at": "2026-10-18T03:14Z",
@@ -39268,6 +39268,11 @@
           "at": "2026-10-18T03:29Z",
           "by": "gemini",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-18T03:29Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (HOS 005 s06_blood_pressure_cuff_v01 built, commit 81e7c2e1)"
         }
       ],
       "kind": "assembly",
