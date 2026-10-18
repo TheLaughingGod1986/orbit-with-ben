@@ -166,10 +166,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0502 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0503 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0504 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0505 | any | claimed | gemini | 2026-10-18T01:39Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J0505 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed 67d0eb63: all 10 live public videos + upcoming 022 long h8HGfyShEHI pass chapters, sources, end screens, and Related video checks at 2026-10-18T00:40:54Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-18.md). Nothing changed in Studio.)
 - J0490 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed 1cb38590: all 10 live public videos pass chapters, sources, end screens, and Related video checks at 20:51Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md). Nothing changed in Studio.)
 - J0475 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed 23cb2378: all 10 live public videos pass chapters, sources, end screens, and Related video checks; 0 fixes needed)
 - J0465 done: HOS 004 Test B Short: fix picture_qa reuse FAIL on s04_cathode_rays_v01 (£0, no spend, no upload) (done)
@@ -179,4 +179,3 @@ Recently finished:
 - J0433 done: HOS standalone Shorts s1/s3/s4: fix polish_gate/picture_qa seam & gutter FAILs (£0, no spend, no upload) (done)
 - J0432 done: OWB Shorts: fix polish_gate/picture_qa seam & near-black FAILs on 020/021/025 Shorts and standalone s1/s3/s4/s6/s8 (£0, no spend, no upload) (done)
 - J0426 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (All 10 live public videos + upcoming 23KZK7OjsEE pass chapters, sources, end screens, and Related video checks at 2026-10-17T02:53Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md, commit a822b642). Nothing changed in Studio.)
-- J0416 done: HOS 004 & 005 Test B Shorts: fix polish_gate/picture_qa seam & reuse FAILs on s05_dalton_v02 and s05_valves_v01 (£0, no spend) (done)
