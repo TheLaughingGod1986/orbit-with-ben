@@ -1,5 +1,11 @@
 # Studio Kanban
 
+Job and video progress (18 Oct 2026): the Now box and video rows use the same live queue and channel-qualified video
+links. Workers record the chosen video(s) with `jobs.py progress ... --films HOS:006` (or `OWB:028,OWB:029`) and a
+concrete `--note` after each step. The snapshot preserves those links and all terminal job states, so an absent job
+is never assumed done. Review is separate from approved film-stage progress. Plans older than 30 hours give way to
+current jobs and stage records; jobs with no video link remain visible outside the recorded video rows.
+
 Live board: https://studio-kanban.vercel.app (self-updating; see `scripts/board_publish.py` and `board_site/build.py`).
 The page is `studio_kanban.html`; its data is built by `scripts/kanban_snapshot.py --db-out` and published by the Mac
 mini to the `board-data` branch after every job change (including each `jobs.py progress` step) and checks every minute.

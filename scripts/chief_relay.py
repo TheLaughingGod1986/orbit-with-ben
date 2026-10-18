@@ -401,6 +401,9 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    Ben watches % done on the board: split the job into n steps (keep n from any earlier `progress` on it) and run
      python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
    with k=0 when you start and again after each finished step (k = steps done), before you release or finish.
+   As soon as you choose the video(s), include --films HOS:006 (or OWB:028,OWB:029 for a shared job) on that progress
+   command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
+   This connects the live job to the video's swim lane. A job parked for review is not an approved film stage.
    If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
    desk, or a Claude message on #99 asking the Chief for something with no Chief reply yet).
    If nothing is waiting anywhere, stop without posting.
