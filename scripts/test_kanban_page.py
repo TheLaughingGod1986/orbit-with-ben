@@ -370,6 +370,18 @@ console.log(JSON.stringify([stepWhen({{job:"J1"}},{{}}),stepWhen({{job:"J2"}},{{
         self.assertTrue(done["ok"])
         self.assertFalse(cancelled.get("ok", False))
 
+    def test_refreshing_old_plan_keeps_recorded_scheduled_or_watched_status(self):
+        source = js_function(page(), "currentFilmBrief")
+        script = f'''const fromDb={{briefs:{{"OWB:025":{{updated:"2020-01-01T00:00Z",mood:"ready",line:"old work plan"}}}}}};
+const ts=s=>Date.parse(s); const autoBrief=()=>({{mood:"good",steps:[]}});
+{source}
+console.log(JSON.stringify(currentFilmBrief({{key:"OWB:025"}})));'''
+        out = subprocess.run(["node", "-e", script], capture_output=True, text=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        brief = json.loads(out.stdout)
+        self.assertEqual(brief["mood"], "ready")
+        self.assertNotIn("line", brief)
+
 
 if __name__ == "__main__":
     unittest.main()
