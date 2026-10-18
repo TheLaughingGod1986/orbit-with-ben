@@ -41466,13 +41466,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-18T10:30Z",
-      "eta": "2026-10-18T12:30Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-18T10:29Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (023 lift_less_sunlight v01, commit f42b6ffed)",
       "history": [
         {
           "at": "2026-10-18T10:29Z",
@@ -41508,6 +41508,11 @@
           "at": "2026-10-18T10:58Z",
           "by": "gemini",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-10-18T10:58Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (023 lift_less_sunlight v01, commit f42b6ffed)"
         }
       ],
       "kind": "assembly",
