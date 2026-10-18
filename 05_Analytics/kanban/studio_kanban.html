@@ -58,6 +58,8 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .donebar li .t{flex-basis:60%;white-space:normal;overflow:visible}
 .donebar li .w{margin-left:auto}.donebar .reviewmark{color:var(--soon);font-weight:700}
 .donebar .dh{flex-wrap:wrap}.vd .impact{margin:4px 0 10px}
+.todaywork{margin:7px 0;padding:7px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.5;color:var(--ink-2)}
+.todaywork p{margin:2px 0}.todaywork .context{color:var(--ink-3)}
 /* Ben, 14 Oct: the simple Videos list at the top */
 .videos{margin:0 0 12px}
 .videos .vh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:700;font-size:15px;margin:2px 2px 6px;color:var(--ink)}
@@ -1193,6 +1195,23 @@ function jobKindOf(j){
   const hit = JOB_KINDS.find(x=>x[2].test(t)) || JOB_KINDS.find(x=>x[3].includes(k));
   return hit ? {key:hit[0], label:hit[1]} : {key:"other", label:"Other"};
 }
+// A finished audit is one job, not one finished video. Use the publisher's London-day boundary, not a rolling 24 h.
+function dailyWorkSummary(){
+  const extra = fromDb.extra||{}, day = extra.day, start = day && ts(day.since);
+  if(!day || isNaN(start) || !Array.isArray(extra.done)) return "";
+  const jobs = extra.done.filter(j=>ts(j.at)>=start && ts(j.at)<=Date.now()), types = new Map();
+  for(const j of jobs){
+    const k=jobKindOf(j), label=/listing check/i.test(j.title||"")?"listing checks":k.key==="data"?"analytics reads":k.label;
+    types.set(label,(types.get(label)||0)+1);
+  }
+  const linked=jobs.filter(j=>taskKeysFor(j).length).length, partial=day.doneToday>jobs.length;
+  const split=[...types].map(([label,n])=>`${n} ${n===1 && ["listing checks","analytics reads"].includes(label)?label.slice(0,-1):label}`).join(" · ") || "No completed jobs recorded yet.";
+  return `<div class="todaywork"><p><b>${partial?"Latest completed work today":"Completed work today"}:</b> ${esc(split)}</p><p class="context">${linked} of ${jobs.length} ${partial?"shown ":""}completed jobs linked to an individual video. Video totals below count whole videos, each with several jobs.</p>${partial?`<p class="context">Showing ${jobs.length} of ${esc(String(day.doneToday))} job completions today.</p>`:""}</div>`;
+}
+function videoTotals(groups){
+  const unfinished=["you","now","wait"].reduce((n,k)=>n+(groups[k]||[]).length,0);
+  return `${unfinished} unfinished · ${(groups.sched||[]).length} scheduled · ${(groups.live||[]).length} live`;
+}
 // % done and the plan of a job: each step with when it finished or should finish. Steps come from `jobs.py progress`
 // (step k of n, at a time); past steps show no time except the latest, future ones are spaced evenly to the finish.
 function jobPlan(j, P){
@@ -1246,7 +1265,7 @@ function renderDone(){
   box.hidden = !updates.length; if(!updates.length) return;
   const day = done.filter(d=>Date.now()-ts(d.at) < 24*60*MINUTE).length, last = ts(updates[0].at);
   box.className = "donebar" + (Date.now()-last > 24*60*MINUTE ? " cold" : "");
-  box.innerHTML = `<div class="dh">Recent progress<span>${day} jobs finished in the last 24 h</span></div><ul>${updates.slice(0,3).map(d=>{ const k = jobKindOf(d);
+  box.innerHTML = `<div class="dh">Recent progress<span>${day} jobs finished in the last 24 h</span></div>${dailyWorkSummary()}<ul>${updates.slice(0,3).map(d=>{ const k = jobKindOf(d);
     // Ben, 15 Oct 2026: tap a finished job to see what it was and what came of it.
     const body = [`<div><b>Job:</b> <span class="mono">${esc(d.id||"")}</span> ${esc(d.title||"")}</div>`,
       `<div><b>Worked on by:</b> ${esc(WORKER[d.by]||d.by||"")}${d.model?` · ${esc(d.model)}`:""} · ${esc(fw(String(d.at).slice(0,16)))}</div>`,
@@ -1407,10 +1426,10 @@ function renderVideos(rows, rankOf){
   for(const k of ["you","now","wait"]) groups[k].sort(byRank);
   groups.sched.sort((a,b)=>(a.air||9e15)-(b.air||9e15));
   groups.live.sort((a,b)=>(b.air||0)-(a.air||0));
-  box.innerHTML = `<div class="vh">Videos<span>${keep.length} in work · tap a video for detail</span></div>` + (keep.length
+  box.innerHTML = `<div class="vh">Video pipeline<span>${videoTotals(groups)}</span></div>` + (keep.length
     ? LANES.filter(([k])=>groups[k].length).map(([k,label,dflt])=>{
         const open = k in vLane ? vLane[k] : dflt;
-        return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${groups[k].length}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
+        return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${groups[k].length} video${groups[k].length===1?"":"s"}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
     : `<div class="empty">Nothing in work.</div>`);
   box.querySelectorAll("[data-vlane]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vlane, d = LANES.find(l=>l[0]===k)[2]; vLane[k] = !(k in vLane ? vLane[k] : d); renderVideos(rows, rankOf); });
   box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; vOpen[k] = !vOpen[k]; renderVideos(rows, rankOf); });
