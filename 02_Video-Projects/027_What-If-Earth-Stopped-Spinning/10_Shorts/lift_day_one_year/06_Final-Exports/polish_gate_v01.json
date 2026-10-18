@@ -1,0 +1,201 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_day_one_year/06_Final-Exports/earth_day_one_year_v01.mp4",
+  "edge_floor": 0.0173,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_iss_sunrise_limb",
+      "cut": 1,
+      "t": 7.1,
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "why": [
+        "low detail: edge density 0.0115 < film p5 0.0173"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "s03_gerst_orbital_pass",
+      "cut": 2,
+      "t": 10.8,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "note": "aurora and city lights (p95 66) (Claude #6087573310)",
+      "why": [
+        "near-black: mean 21.58, p95 103.0"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_epic_earth_spin",
+      "source": "epic_spin_v01.mp4",
+      "t": 2.75,
+      "std": 47.45,
+      "mean": 102.41,
+      "p95": 175.0,
+      "edge": 0.0769,
+      "hf": 10.97,
+      "lf": 41.1,
+      "std8": 43.62,
+      "edge8": 0.4097,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_iss_sunrise_limb",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 7.1,
+      "std": 58.32,
+      "mean": 119.64,
+      "p95": 190.0,
+      "edge": 0.0115,
+      "hf": 7.71,
+      "lf": 56.1,
+      "std8": 57.15,
+      "edge8": 0.1095,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0115 < film p5 0.0173"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_gerst_orbital_pass",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 10.8,
+      "std": 42.51,
+      "mean": 21.58,
+      "p95": 103.0,
+      "edge": 0.0379,
+      "hf": 13.78,
+      "lf": 33.22,
+      "std8": 36.35,
+      "edge8": 0.1356,
+      "seams": [],
+      "video": true,
+      "reviewed_ok": {
+        "note": "aurora and city lights (p95 66) (Claude #6087573310)",
+        "why": [
+          "near-black: mean 21.58, p95 103.0"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_eso_lasilla_day_sky",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 14.65,
+      "std": 56.11,
+      "mean": 108.32,
+      "p95": 219.0,
+      "edge": 0.1095,
+      "hf": 18.41,
+      "lf": 47.6,
+      "std8": 49.62,
+      "edge8": 0.2369,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_eso_lasilla_night_dome",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 17.9,
+      "std": 53.8,
+      "mean": 115.75,
+      "p95": 221.0,
+      "edge": 0.1986,
+      "hf": 18.37,
+      "lf": 45.46,
+      "std8": 47.3,
+      "edge8": 0.2983,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_gerst_terminator_clouds",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 21.15,
+      "std": 35.84,
+      "mean": 54.16,
+      "p95": 100.0,
+      "edge": 0.0307,
+      "hf": 9.71,
+      "lf": 29.15,
+      "std8": 31.61,
+      "edge8": 0.1765,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_epic_earth.mp4",
+      "t": 24.45,
+      "std": 37.54,
+      "mean": 58.02,
+      "p95": 118.0,
+      "edge": 0.0331,
+      "hf": 10.33,
+      "lf": 30.9,
+      "std8": 33.04,
+      "edge8": 0.2685,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

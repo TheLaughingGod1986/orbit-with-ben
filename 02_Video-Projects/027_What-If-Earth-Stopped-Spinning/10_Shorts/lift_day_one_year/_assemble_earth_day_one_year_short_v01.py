@@ -474,11 +474,54 @@ def main() -> None:
     )
     (OUT / f"{STEM}_sfx.txt").write_text((sfx_chk.stdout or "") + (sfx_chk.stderr or ""))
 
+    rev_ok = FILM / "07_Edit-Project/rough_v01i_pack/picture_qa_reviewed_ok_v01g.json"
+    cuts = [
+        {"row": "s01_epic_earth_spin", "timeline_in": 0.0, "timeline_out": 5.50, "source": "epic_spin_v01.mp4", "upscale": 1.0, "framing": {"offset": 4.0}, "video": True},
+        {"row": "s02_iss_sunrise_limb", "timeline_in": 5.50, "timeline_out": 8.70, "source": "ISS_sunrise_to_sunset.ogv", "upscale": 1.5, "framing": {"offset": 2.0}, "video": True},
+        {"row": "s03_gerst_orbital_pass", "timeline_in": 8.70, "timeline_out": 12.90, "source": "Gerst_Earth_timelapses_2017.webm", "upscale": 0.556, "framing": {"offset": 250}, "video": True},
+        {"row": "s04_eso_lasilla_day_sky", "timeline_in": 12.90, "timeline_out": 16.40, "source": "ESO_timelapse_La_Silla.webm", "upscale": 1.0, "framing": {"offset": 7.6}, "video": True},
+        {"row": "s05_eso_lasilla_night_dome", "timeline_in": 16.40, "timeline_out": 19.40, "source": "ESO_timelapse_La_Silla.webm", "upscale": 1.0, "framing": {"offset": 24.0}, "video": True},
+        {"row": "s06_gerst_terminator_clouds", "timeline_in": 19.40, "timeline_out": 22.90, "source": "Gerst_Earth_timelapses_2017.webm", "upscale": 0.556, "framing": {"offset": 278.5}, "video": True},
+        {"row": "s07_end_loop", "timeline_in": 22.90, "timeline_out": 26.00, "source": "end_card_loop_epic_earth.mp4", "upscale": 1.0, "framing": {"offset": 4.0}, "video": True},
+    ]
+    pool = [
+        {"file_id": "epic_spin_v01.mp4", "title": "DSCOVR EPIC full-disk sunlit rotating Earth (epic_spin_v01.mp4)"},
+        {"file_id": "ISS_sunrise_to_sunset.ogv", "title": "ISS Sunrise to Sunset orbital Earth limb (ISS_sunrise_to_sunset.ogv)"},
+        {"file_id": "Gerst_Earth_timelapses_2017.webm", "title": "ESA Alexander Gerst ISS Earth orbital timelapse (Gerst_Earth_timelapses_2017.webm)"},
+        {"file_id": "ESO_timelapse_La_Silla.webm", "title": "ESO La Silla Observatory sky timelapse (ESO_timelapse_La_Silla.webm)"},
+        {"file_id": "end_card_loop_epic_earth.mp4", "title": "End-card loop: DSCOVR EPIC full-disk sunlit rotating Earth"},
+    ]
+    (OUT / "cuts_v01.json").write_text(json.dumps(cuts, indent=2) + "\n")
+    (OUT / "pool_v01.json").write_text(json.dumps(pool, indent=2) + "\n")
+
+    pg_chk = subprocess.run(
+        [sys.executable, str(REPO / "scripts/polish_gate.py"), str(FINAL),
+         "--cuts", str(OUT / "cuts_v01.json"),
+         "--reviewed-ok", str(rev_ok),
+         "--out", str(OUT / "polish_gate_v01.json"), "--no-jitter"],
+        capture_output=True, text=True,
+    )
+    (OUT / "polish_gate_v01.txt").write_text((pg_chk.stdout or "") + (pg_chk.stderr or ""))
+
+    pqa_chk = subprocess.run(
+        [sys.executable, str(REPO / "scripts/picture_qa.py"), str(FINAL),
+         "--cuts", str(OUT / "cuts_v01.json"),
+         "--pool", str(OUT / "pool_v01.json"),
+         "--reviewed-ok", str(rev_ok),
+         "--out-dir", str(OUT / "picture_qa_v01")],
+        capture_output=True, text=True,
+    )
+    (OUT / "picture_qa_v01.txt").write_text((pqa_chk.stdout or "") + (pqa_chk.stderr or ""))
+
     UAT.mkdir(parents=True, exist_ok=True)
     for p in (FINAL, contact_path, cover_path, thumb_sheet,
-              OUT / f"{STEM}_gate.json", OUT / f"{STEM}_gate.txt", OUT / f"{STEM}_sfx.txt"):
+              OUT / f"{STEM}_gate.json", OUT / f"{STEM}_gate.txt", OUT / f"{STEM}_sfx.txt",
+              OUT / "cuts_v01.json", OUT / "pool_v01.json",
+              OUT / "polish_gate_v01.json", OUT / "polish_gate_v01.txt", OUT / "picture_qa_v01.txt"):
         if p.exists():
             shutil.copy2(p, UAT / p.name)
+    if (OUT / "picture_qa_v01").exists():
+        shutil.copytree(OUT / "picture_qa_v01", UAT / "picture_qa_v01", dirs_exist_ok=True)
 
     meta = {
         "file": str(FINAL), "version": "v01", "job": "J0532",
@@ -496,6 +539,8 @@ def main() -> None:
         "audio": aud, "sfx_level_check": (sfx_chk.stdout or sfx_chk.stderr).strip(),
         "sfx_level_ok": sfx_chk.returncode == 0,
         "gate_ok": gate.returncode == 0 and '"verdict": "PASS"' in (gate.stdout or ""),
+        "polish_gate_ok": pg_chk.returncode == 0,
+        "picture_qa_ok": pqa_chk.returncode == 0,
         "cover": str(cover_path), "cover_preview": str(thumb_sheet), "contact_sheet": str(contact_path),
         "uat_dir": str(UAT), "spend": "none",
     }
@@ -504,8 +549,12 @@ def main() -> None:
     print(gate_txt.stdout or gate_txt.stderr)
     print("--- sfx", sfx_chk.returncode)
     print(sfx_chk.stdout or sfx_chk.stderr)
-    print(json.dumps({k: meta[k] for k in ("file", "duration_s", "words", "gate_ok", "sfx_level_ok", "audio")}, indent=2))
-    if gate.returncode != 0 or sfx_chk.returncode != 0:
+    print("--- polish_gate", pg_chk.returncode)
+    print(pg_chk.stdout or pg_chk.stderr)
+    print("--- picture_qa", pqa_chk.returncode)
+    print(pqa_chk.stdout or pqa_chk.stderr)
+    print(json.dumps({k: meta[k] for k in ("file", "duration_s", "words", "gate_ok", "sfx_level_ok", "polish_gate_ok", "picture_qa_ok", "audio")}, indent=2))
+    if gate.returncode != 0 or sfx_chk.returncode != 0 or pg_chk.returncode != 0 or pqa_chk.returncode != 0:
         raise SystemExit(1)
 
 
