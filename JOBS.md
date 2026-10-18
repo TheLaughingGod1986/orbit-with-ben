@@ -236,10 +236,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0578 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0579 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0580 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0581 | any | claimed | gemini | 2026-10-18T19:41Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J0581 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0566 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (0 fixes needed across last 10 live public videos (05_Analytics/live_fixes/2026-10-18.md @ b3f1782ef))
 - J0551 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0536 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -249,4 +249,3 @@ Recently finished:
 - J0490 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed 1cb38590: all 10 live public videos pass chapters, sources, end screens, and Related video checks at 20:51Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-17.md). Nothing changed in Studio.)
 - J0475 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed 23cb2378: all 10 live public videos pass chapters, sources, end screens, and Related video checks; 0 fixes needed)
 - J0465 done: HOS 004 Test B Short: fix picture_qa reuse FAIL on s04_cathode_rays_v01 (£0, no spend, no upload) (done)
-- J0459 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
