@@ -47,7 +47,7 @@ def js_function(src: str, name: str) -> str:
         i += 1
 
 
-PROGRESS_FUNCTIONS = ["OWB_STAGES", "taskKeysFor", "taskStageInfo", "jobOutcome", "jobFollowUps", "jobImpact", "progressUpdates"]
+PROGRESS_FUNCTIONS = ["OWB_STAGES", "taskKeysFor", "taskStageInfo", "jobOutcome", "jobFollowUps", "jobImpact", "progressUpdates", "JOB_KINDS", "jobKindOf", "dailyWorkSummary", "videoTotals"]
 
 
 class OrderOfWorkRemoved(unittest.TestCase):
@@ -322,6 +322,26 @@ class TaskProgress(unittest.TestCase):
         html = self.evaluate('jobImpact({status:"done",title:"Read analytics"})')
         self.assertIn("no result note recorded", html)
         self.assertNotIn("All recorded film stages complete", html)
+
+    def test_eight_audit_jobs_do_not_claim_eight_finished_videos(self):
+        done = [{"id": f"J{i}", "title": "Backlog OWB: listing check on the last 10 live videos", "at": "2026-10-18T10:00Z"} for i in range(7)]
+        done.append({"id": "J7", "title": "Daily Studio read: analytics", "at": "2026-10-18T10:00Z"})
+        board = {"extra": {"day": {"since": "2026-10-17T23:00Z", "doneToday": 8}, "done": done}}
+        html = self.evaluate('(()=>{Date.now=()=>Date.parse("2026-10-18T22:00Z"); return dailyWorkSummary()})()', board)
+        self.assertIn("7 listing checks · 1 analytics read", html)
+        self.assertIn("0 of 8 completed jobs linked to an individual video", html)
+
+    def test_today_breakdown_uses_london_midnight_and_discloses_truncation(self):
+        board = {"extra": {"day": {"since": "2026-10-17T23:00Z", "doneToday": 10}, "done": [
+            {"id": "J1", "title": "Analytics", "at": "2026-10-17T23:30Z"},
+            {"id": "J2", "title": "Analytics", "at": "2026-10-17T22:30Z"}]}}
+        html = self.evaluate('(()=>{Date.now=()=>Date.parse("2026-10-18T22:00Z"); return dailyWorkSummary()})()', board)
+        self.assertIn("Showing 1 of 10 job completions today", html)
+        self.assertIn("1 analytics read", html)
+
+    def test_video_totals_exclude_scheduled_and_live_from_unfinished(self):
+        summary = self.evaluate('videoTotals({wait:Array(19),sched:Array(2),live:Array(1)})')
+        self.assertEqual(summary, "19 unfinished · 2 scheduled · 1 live")
 
 
 if __name__ == "__main__":
