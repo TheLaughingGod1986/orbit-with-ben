@@ -39364,13 +39364,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-18T03:55Z",
-      "eta": "2026-10-18T05:55Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-18T03:54Z",
-      "result": "",
+      "result": "parked for Chief: overlay PASS",
       "history": [
         {
           "at": "2026-10-18T03:54Z",
@@ -39406,6 +39406,11 @@
           "at": "2026-10-18T04:02Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Ready for Chief overlay PASS review (910a5a47)"
+        },
+        {
+          "at": "2026-10-18T04:02Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: overlay PASS"
         }
       ],
       "kind": "chart",

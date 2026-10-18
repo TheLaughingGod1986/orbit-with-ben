@@ -179,7 +179,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0516 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0517 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0518 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
-| J0519 | mini | claimed | gemini | 2026-10-18T05:55Z | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
+| J0519 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 
 Recently finished:
 
