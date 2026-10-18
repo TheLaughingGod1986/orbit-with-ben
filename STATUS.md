@@ -40,6 +40,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 006 | edit | gemini | 2026-10-16T05:22Z | 2026-10-16T05:52Z | J0354 HOS 006 teach master frame review |
 | 021 | upload | claude | 2026-10-07T11:07Z | 2026-10-11T17:37Z | Scheduled on YouTube for Sun 11 Oct 18:00 London; Claude launch check 18:45 |
-| 027 | edit | gemini | 2026-10-18T06:36Z | 2026-10-18T07:16Z | J0532 027 Short lift_bulge_43km v01 |
+| 027 | edit | gemini | 2026-10-18T06:56Z | 2026-10-18T07:26Z | J0532 027 Short lift_day_one_year v01 |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
