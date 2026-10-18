@@ -43212,13 +43212,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-18T16:38Z",
-      "eta": "2026-10-18T17:38Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-18T16:37Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB b59e7775f/f42b6ffed: 024 Short light_speed_one_ton_energy_v01 0/7 PASS, 023 Short venus_less_sunlight_465c_v01 0/7 PASS, 027 Short earth_day_one_year_v01 0/7 PASS, 021 Short saturn_mimas_mass_v01 0/7 PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS; HOS 49843366/439fe8c6: 002 Short hos_002_s08_periodic_table_work_v01 0/8 PASS, 003 Short hos_003_s06_how_xrays_work_v01 0/8 PASS, 006 Short hos_006_s06_ingenhousz_oxygen_v01 0/8 PASS; all recent OWB and HOS packs have gate outputs newer than their last render with 0 FAILs, no fix jobs needed)",
       "history": [
         {
           "at": "2026-10-18T16:37Z",
@@ -43254,6 +43254,11 @@
           "at": "2026-10-18T16:44Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All newest OWB and HOS packs PASS; 0 fix jobs needed"
+        },
+        {
+          "at": "2026-10-18T16:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB b59e7775f/f42b6ffed: 024 Short light_speed_one_ton_energy_v01 0/7 PASS, 023 Short venus_less_sunlight_465c_v01 0/7 PASS, 027 Short earth_day_one_year_v01 0/7 PASS, 021 Short saturn_mimas_mass_v01 0/7 PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS; HOS 49843366/439fe8c6: 002 Short hos_002_s08_periodic_table_work_v01 0/8 PASS, 003 Short hos_003_s06_how_xrays_work_v01 0/8 PASS, 006 Short hos_006_s06_ingenhousz_oxygen_v01 0/8 PASS; all recent OWB and HOS packs have gate outputs newer than their last render with 0 FAILs, no fix jobs needed)"
         }
       ],
       "kind": "qa",
