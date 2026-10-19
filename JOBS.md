@@ -331,6 +331,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0682 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0683 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0684 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J0685 | mini | open | – | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 
 Recently finished:
 
