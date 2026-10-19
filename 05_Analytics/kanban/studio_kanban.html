@@ -1119,7 +1119,7 @@ function filmJobsHtml(key){
   return `<div class="filmjobs"><b>Jobs for this video</b><p class="context">A finished job completes its own steps. The video stays unfinished until its remaining work and release checks are complete.</p>${jobs.map(j=>jobTaskHtml(j,key.replace(":","-"))).join("")}</div>`;
 }
 function jobTargetHtml(j){
-  const keys=taskKeysFor(j), known=new Set((fromDb.owb||[]).map(f=>"OWB:"+f.film).concat(((fromDb.hos||{}).films||[]).map(f=>"HOS:"+f.id)));
+  const keys=taskKeysFor(j), known=new Set((fromDb.owb||[]).filter(f=>f.air || Object.values(f.stages||{}).filter(s=>(s.state||"todo")!=="todo").length>1).map(f=>"OWB:"+f.film).concat(((fromDb.hos||{}).films||[]).map(f=>"HOS:"+f.id)));
   return `<div class="jobtarget">${keys.length?"Updates: "+keys.map(key=>`<button class="lnk" data-task-film="${esc(key)}">${esc(key)}</button>${known.has(key)?"":" (outside the recorded video plan)"}`).join(", "):"Channel/backlog job · no individual video link recorded"}</div>`;
 }
 function unlinkedWorkHtml(videoKeys){
