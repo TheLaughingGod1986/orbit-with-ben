@@ -18,7 +18,7 @@ Copy into each project as:
 | ID / slug | `051_Why-NASAs-DART-Spacecraft-Changed-An-Asteroids-Orbit-By-33-Minutes` |
 | Working title | Why NASA's DART Spacecraft Changed an Asteroid's Orbit by 33 Minutes |
 | Date pulled | 2026-10-19 |
-| Credits used (approx) | 0 (`v00` script draft only; no VO or picture spend) |
+| Credits used (approx) | 0 (`v01` script draft only; no VO or picture spend) |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA |
 
 ---
@@ -29,9 +29,9 @@ Copy into each project as:
 |--------|--------|
 | Title score | ≥ **90** (aim **95+**) |
 | Primary keyword overall | `nasa dart mission` / `dart spacecraft dimorphos` / `planetary defense` |
-| Hook promise | One sentence — NASA aimed a 570-kilogram spacecraft at the asteroid moon Dimorphos expecting a 10-minute orbit change, and moved it by 33 minutes because the ejected boulder cloud pushed back harder than the spacecraft hit. |
+| Hook promise | One sentence — NASA aimed a half-ton spacecraft at the 560-foot asteroid moonlet Dimorphos defining minimum success as a 73-second orbit change, and moved it by 33 minutes (33 minutes 15 seconds) because 35.3 million pounds of ejected rock pushed back like a rocket engine. |
 | Retention design | Chapters that earn the next minute (teach + turn) |
-| Packaging | Thumb readable on mobile; one idea (`33 MIN` / `5× RECOIL`) |
+| Packaging | Thumb readable on mobile; one idea (`33 MINUTES SHORTER`) |
 
 ---
 
@@ -62,7 +62,7 @@ Pull GB (or primary market) research for 5–8 terms.
 |---|-------|------:|-------|
 | A | Why NASA's DART Spacecraft Changed an Asteroid's Orbit by 33 Minutes | 95 | **Keep (Lead)** |
 | B | How NASA's DART Spacecraft Moved an Asteroid Moon by 33 Minutes | 93 | Backup |
-| C | Why Dimorphos Moved 5 Times More Than NASA's DART Spacecraft Hit It | 91 | Backup |
+| C | Why Dimorphos Moved 25 Times More Than NASA's Minimum DART Benchmark | 91 | Backup |
 | Reject (fearbait / off-brand / series-suffix clutter even if high) | Can NASA Stop a Killer Asteroid From Destroying Earth? \| Orbit's Cosmic Journey | — | **Reject** |
 
 **Locked title:** Why NASA's DART Spacecraft Changed an Asteroid's Orbit by 33 Minutes  
@@ -79,10 +79,10 @@ python3 04_Audio/tools/vidiq_title_score_sheet.py --project-dir 02_Video-Project
 ## 3b. Script reviewer (blocking before VO)
 
 ```bash
-cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/051_Why-NASAs-DART-Spacecraft-Changed-An-Asteroids-Orbit-By-33-Minutes/01_Script/dart_asteroid_orbit_script_master_v00.md
+cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/051_Why-NASAs-DART-Spacecraft-Changed-An-Asteroids-Orbit-By-33-Minutes/01_Script/dart_asteroid_orbit_script_master_v01.md
 ```
 
-- [x] Score ≥ **90 / 100** (**PASS 95.6 / 100**)  
+- [x] Score ≥ **90 / 100** (**PASS 95.8 / 100**)  
 - Scorecard: `templates/SCRIPT_REVIEW_SCORECARD.md`  
 - Reject / rewrite if below threshold  
 
@@ -94,10 +94,10 @@ Pull outliers for the primary topic (≤80K–mid sub channels preferred). Ignor
 
 | Outlier / pattern | Views / multiple | Steal (structure) | Do **not** copy |
 |-------------------|------------------|-------------------|-----------------|
-| Veritasium — *How NASA Will Save Earth From Asteroids* / planetary defense explainers | 3.0M+ | Momentum recoil breakdown (`β = 3.61`), binary eclipse clock | Long talking-head interviews |
-| Scott Manley — *NASA's DART Spacecraft Successfully Hits Asteroid — What We Saw* | 1.4M+ | DRACO final-60-seconds approach + LICIACube flyby sequence | Raw livestream commentary format |
+| Veritasium — *How NASA Will Save Earth From Asteroids* / planetary defense explainers | 3.0M+ | Momentum recoil breakdown (`~2×` spacecraft punch), binary eclipse clock | Long talking-head interviews |
+| Scott Manley — *NASA's DART Spacecraft Successfully Hits Asteroid — What We Saw* | 1.4M+ | DRACO final approach + LICIACube flyby sequence | Raw livestream commentary format |
 | Kurzgesagt — *Could We Stop An Asteroid?* | 11.0M+ | Clear kinetic-impactor vs rubble-pile physics contrast | Doomsday extinction focus |
-| NASA / APL — *DART's Impact with Asteroid Dimorphos* | 2.1M+ | Real DRACO + Hubble + Webb visual progression | Unedited press-briefing pacing |
+| NASA / APL — *DART's Impact with Asteroid Dimorphos* | 2.1M+ | Real DRACO + Hubble + LICIACube visual progression | Unedited press-briefing pacing |
 
 **Patterns we will use in this script:**
 
@@ -117,19 +117,19 @@ Translate data → creative decisions **before** writing the full script:
 | Data finding | Change to script / chapters / visuals / packaging |
 |--------------|-----------------------------------------------------|
 | Primary keyword (`DART spacecraft`, `Dimorphos`, `Didymos`) | Title lead + 0:00 spoken question + description first 100 chars |
-| High-volume related term (`planetary defense`, `kinetic impactor`) | Chapters 1 and 3 explain binary eclipse timing and momentum enhancement factor `3.61` |
-| Winning outlier structure | 6-chapter investigation from final DRACO frames → binary clock → rubble recoil → Hubble/Webb plumes → 33-minute orbit change → permanent craterless reshaping |
-| Weak competition angle | Most videos stop on impact day; we include the March 2024 JPL reshaping study (`160 × 174 × 116 m` → `177 × 174 × 100 m`, `2–5%` orbit drop) and July 2023 Hubble 37-boulder swarm |
-| Thumb pattern that works | Split contrast: DART spacecraft striking rubble-pile Dimorphos with radiant ejecta cone (`33 MIN` or `5× RECOIL`) |
+| High-volume related term (`planetary defense`, `kinetic impactor`) | Chapters 1, 3, and 6 explain binary eclipse timing, 35.3-million-lb ejecta recoil (`~2×`), and the 0.15-second solar orbit shift |
+| Winning outlier structure | 6-chapter investigation from final DRACO frames → binary geology → terminal guidance → 35.3-million-lb LICIACube plume → 33m 15s orbit & watermelon shape change → 37 Hubble boulders & 0.15-second solar orbit shift |
+| Weak competition angle | Most videos stop in 2022; we include the March 19, 2024 JPL reshaping study (`33m 15s`, `120 ft` closer, oblong watermelon), July 30, 2024 *Nature Communications* geology (`12.5 Myr` vs `<300,000 yr`, bearing capacity `≥1,000×` lower than dry sand), August 21, 2025 LICIACube plume study (`35.3 million lb` / `30,000×` spacecraft mass), and March 6, 2026 *Science Advances* solar-orbit shift (`0.15 s` / `11.7 µm/s` across `22` stellar occultations) |
+| Thumb pattern that works | Real LICIACube + Hubble impact plume erupting from Dimorphos beside Didymos (`33 MINUTES SHORTER`) |
 
 **Chapter list after audit** (4–6, each with a teach-point):
 
-1. **The Binary Target** — Why NASA tested deflection on a 151-metre moon orbiting a 780-metre parent asteroid 1.19 km apart, using mutual eclipses every 11 hours and 55 minutes as a natural stopwatch.  
-2. **Sixty Seconds on SMART Nav** — How DART's autonomous optical navigation steered a 570 kg spacecraft at 22,530 km/h into a target it could only resolve in its final hour, while LICIACube watched 3 minutes behind.  
-3. **Why Rubble Pushes Back Harder** — Why hitting a weakly bound rubble pile launched 16 million kg of rock and multiplied the spacecraft's momentum push by 3.61.  
-4. **What LICIACube, Hubble, and Webb Saw** — How three space observatories and a CubeSat tracked supersonic ejecta filaments, a 10,000-km dust tail, and 37 boulders up to 6.7 metres wide escaping at half a walking pace.  
-5. **The Thirty-Three-Minute Shift** — How Earth telescopes timed the new 11-hour-22-minute orbit to within ±1 minute and proved Dimorphos dropped 37 metres closer to Didymos.  
-6. **The Moon That Changed Shape** — How the 2024 JPL shape reconstruction proved Dimorphos lost 2 to 5 percent of its orbital radius and deformed globally like an oblong watermelon instead of simply taking a bowl crater.  
+1. **The Twin Asteroid System of Didymos and Dimorphos** — How the 805-metre spinning-top parent Didymos (`2.26-hr` spin, `12.5-Myr` surface age, bearing capacity `≥1,000×` lower than dry sand) spun off the 170-metre (`560-ft`) moonlet Dimorphos (`<300,000-yr` surface age) orbiting 3,900 feet away.  
+2. **Seven Miles and Two Seconds Before Impact** — How DART launched on Nov. 24, 2021, released the shoebox-sized LICIACube 15 days before impact, and steered via DRACO into Dimorphos at ~14,000 mph (`3.8 mi/s`), snapping a 100-foot boulder patch 7 miles (`12 km`) and 2 seconds before contact (`STScI-01H531Y476C3GF8RDHA1J3HBH7`).  
+3. **Thirty-Five Million Pounds of Rocket Debris** — Why LICIACube's 18 flyby images from 53 miles away revealed 35.3 million pounds (`16 million kg`, `30,000×` spacecraft mass, `~45%` in the opaque inner plume) of ejecta acting like a rocket engine to double the spacecraft's momentum punch.  
+4. **From Squashed Ball to Oblong Watermelon** — How the March 19, 2024 JPL study (Steve Chesley) proved the orbital period dropped 32m 42s immediately and settled 33 minutes and 15 seconds shorter (`11h 22m 03s`), pulling Dimorphos 120 feet closer (`3,900 ft` to `3,780 ft`) and reshaping it into an oblong watermelon.  
+5. **Thirty-Seven Boulders Moving Like a Giant Tortoise** — How Hubble (`STScI-01H530K7QNQ9HYV7TVSD6KCV07`, David Jewitt) spotted 37 boulders (`3–22 ft` wide, from a ~160-ft football-field-wide circle) drifting away at >0.5 mph like a giant tortoise ahead of ESA's Hera arrival in late 2026.  
+6. **Shifting an Asteroid's Orbit Around the Sun** — How 22 stellar occultations (Oct. 2022 – Mar. 2025, published Mar. 6, 2026 in *Science Advances*) proved DART altered the binary pair's 770-day solar orbit by 0.15 seconds (`11.7 µm/s` / `1.7 in/hr`) — the first human-made shift of a solar orbit.  
 
 ---
 
@@ -139,17 +139,17 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 | Minute zone | Job | Picture / VO note |
 |-------------|-----|-------------------|
-| 0–0:05 | Curiosity spike | Real DRACO final approach frame (`PIA25558`) + LICIACube plume (`PIA25563`) |
+| 0–0:05 | Curiosity spike | Real DRACO final approach frame (`STScI-01H531Y476C3GF8RDHA1J3HBH7` / `Dimorphos-1.jpeg`) + LICIACube plume (`licia_cube_side_by_side.png`) |
 | ~0:15 | Stakes | 73-second minimum threshold vs 33-minute actual orbit shift |
-| ~0:30 | Journey clear | Cold open runs ~0:55 before Chapter 1 card (no full-frame chapter card in first 30s) |
+| ~0:30 | Journey clear | Cold open runs ~0:57 before Chapter 1 card (no full-frame chapter card in first 30s) |
 | Chapter starts | Re-hook + chapter card | Each chapter ends on a question answered by the next chapter |
-| Mid | Teach while story continues | Orbit braces in the ejecta plume (Ch 3) and paces a 1-mph escaping boulder (Ch 4) |
-| Final chapter | Payoff + bigger question | Global reshaping of Dimorphos + hand-off to `052` (Uranus's Moon Miranda 12-Mile Ice Cliff) |
+| Mid | Teach while story continues | Orbit braces by the DRACO viewfinder (Ch 2) and paces a 22-foot escaping boulder at >0.5 mph (Ch 5) |
+| Final chapter | Payoff + bigger question | 0.15-second solar orbit shift across 22 stellar occultations + hand-off to `052` (Uranus's Moon Miranda 12-Mile Ice Cliff) |
 | Outro | Soft return CTA | Hand-off to Miranda's Verona Rupes |
 
 - [x] No 30s+ stretch without a new teach or turn  
 - [x] Every chapter earns the next one  
-- [x] Runtime target **8–12 min** in trust-building window (~8.6 min)  
+- [x] Runtime target **8–12 min** in trust-building window (~8.7 min)  
 
 ---
 
@@ -157,7 +157,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [ ] Keywords pulled and primary locked  
 - [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
-- [x] Script reviewer ≥ 90 (**95.6 / 100**)  
+- [x] Script reviewer ≥ 90 (**95.8 / 100**)  
 - [x] Outlier patterns mapped into chapter arc  
 - [x] Thumb concepts match title promise (one object · one emotion)  
 - [x] Chapter teach-points listed (4–6 acts)  
