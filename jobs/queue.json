@@ -23362,6 +23362,11 @@
           "at": "2026-10-19T18:20Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-19T18:20Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting HOS 013 script v02 and FACT_NOTES_v02"
         }
       ],
       "kind": "script",
@@ -23373,7 +23378,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "HOS:013"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-19T18:20Z",
+        "by": "gemini",
+        "note": "Starting HOS 013 script v02 and FACT_NOTES_v02"
+      }
     },
     {
       "id": "J0308",
