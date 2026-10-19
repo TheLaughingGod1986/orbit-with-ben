@@ -52235,10 +52235,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-19T21:12Z",
-      "eta": "2026-10-19T23:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T21:00Z",
       "result": "",
@@ -52292,6 +52292,11 @@
           "at": "2026-10-19T21:12Z",
           "by": "codex",
           "what": "step 0 of 4 done: Resumed 0/4; checking existing detached scratch archive before any HOS render; Mini has 11 GiB free."
+        },
+        {
+          "at": "2026-10-19T21:12Z",
+          "by": "codex",
+          "what": "released: Existing prerequisite still running: tmux j0684-scratch; log /Users/benjaminoats/_desk/logs/j0684-scratch.log empty; /Users/benjaminoats/_desk/logs/j0684-scratch.done absent. Mini 11 GiB free. Do not duplicate archive or start a render. Next run check exit code/log, release OWB 028 edit scratch claim after verified success, recheck disk, then select/link HOS film and continue 0/4. No spend, upload or film stage approval."
         }
       ],
       "kind": "assembly",
