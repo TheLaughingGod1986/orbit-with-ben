@@ -23131,13 +23131,13 @@
       "stage": "",
       "after": "J0299",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-16T05:59Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-19T18:09Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T17:00Z",
-      "result": "parked for Chief: HOS 013 FACT_NOTES_v01 + GEMINI_QUOTE_PASS_J0304 committed on HOS main acfacfa9 (30 OK, 0 PARTIAL, 0 FLAG; watch-list 1-8 all OK); ready for Chief/Claude PASS before VO",
+      "result": "PASS (Chief, 19 Oct ~19:10 London): HOS 013 Gemini quote pass acfacfa9. All 30 rows OK with primary URLs and verbatim quotes; Chief watch-list 1-8 all OK (no Ternate/posting date, elephant / 10,000 barnacles / 13 species / 7,000 mi absent, Malthus 28 Sep 1838 kept, Hooker 1844 and Lyell 1858 quotes verbatim, Origin day-one attributed to booksellers). Cosmetic: summary line says OK 22; should read 30 rows + 8 watch-list OK; tidy in J0307. J0307 script v02 may proceed. £0.",
       "history": [
         {
           "at": "2026-10-15T17:00Z",
@@ -23203,16 +23203,26 @@
           "at": "2026-10-16T08:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-19T18:09Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-19T18:09Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-19T18:09Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 19 Oct ~19:10 London): HOS 013 Gemini quote pass acfacfa9. All 30 rows OK with primary URLs and verbatim quotes; Chief watch-list 1-8 all OK (no Ternate/posting date, elephant / 10,000 barnacles / 13 species / 7,000 mi absent, Malthus 28 Sep 1838 kept, Hooker 1844 and Lyell 1858 quotes verbatim, Origin day-one attributed to booksellers). Cosmetic: summary line says OK 22; should read 30 rows + 8 watch-list OK; tidy in J0307. J0307 script v02 may proceed. £0."
         }
       ],
       "kind": "facts",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-16T06:08Z",
-        "by": "gemini"
-      },
-      "escalated_at": "2026-10-16T08:35Z"
+      "escalated_at": "2026-10-16T08:35Z",
+      "done_ref": "acfacfa9"
     },
     {
       "id": "J0305",
