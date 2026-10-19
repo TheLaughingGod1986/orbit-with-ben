@@ -76,6 +76,7 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .filmjobs{margin:10px 0;font-size:12px}.filmjobs p,.unlinkedwork .context{color:var(--ink-3);font-size:11px}
 .jobtask{padding:4px 0;border-top:1px solid var(--line);overflow-wrap:anywhere}.jobtask .substeps{padding-left:18px;margin:5px 0}.jobtask .substeps li{display:list-item;border:0;padding:2px 0}.jobtask .job-live{font-size:11px}
 .jobtask summary{overflow-wrap:anywhere}
+.video-work{margin-top:7px;line-height:1.5;font-size:12px;white-space:normal}.work-state{font-weight:700;color:var(--ink-2)}.work-state.active{color:var(--doing)}.work-name{margin:3px 0;color:var(--ink);overflow-wrap:anywhere}.work-count{margin-top:5px}.finish-outlook,.work-timing,.work-air,.job-queue{margin-top:4px;color:var(--ink-2);font-size:12px}.work-air{font-size:11px;color:var(--ink-3)}.video-work .lastjob{color:var(--done);font-size:11px}.video-work .job-live .pbar{display:flex;gap:7px;flex-wrap:wrap}.video-work .job-live .track{flex:0 0 110px;height:6px;background:var(--panel-2);border-radius:4px;overflow:hidden}.video-work .job-live .track i{display:block;height:100%}.job-queue{font-weight:600;overflow-wrap:anywhere}.schedule-gap{color:var(--soon)}
 .release-hint{font-size:11px;color:var(--soon);margin:-3px 12px 8px;overflow-wrap:anywhere}
 .vd .vwork{margin:6px 0;padding:6px 0;border:0;border-radius:0;background:none}
 /* Ben, 14 Oct: the simple Videos list at the top */
@@ -1109,26 +1110,93 @@ function jobRollupHtml(key){
   const p=r.current && r.current.progress;
   return `<div class="jobrollup">Jobs: ${esc(counts)}${p&&p.of?` · ${p.step}/${p.of} steps complete`:""}${r.last?`<span class="lastjob">✓ ${esc(r.last.id)} done · <span data-ago="${ts(r.last.at)}">${ago(ts(r.last.at))}</span></span>`:""}</div>`;
 }
-function jobTaskHtml(j, scope){
-  const state=runningJob(j)?"Running":j.status==="done"?"✓ Done":isChiefPark(j)?"Review":j.status==="blocked"?"Blocked":"Queued";
-  const p=j.progress, jp=jobPlan(j,plan()), id=`subtask-${scope}-${j.id}`;
-  return `<div class="jobtask" data-jobtask-id="${esc(j.id)}" data-jobtask-keys="${esc(taskKeysFor(j).join(" "))}"><details class="progress-fold" id="${esc(id)}"><summary><b>${esc(state)} · ${esc(j.id)}</b> ${esc(plainTitle(j,130))}${p&&p.of?`<span class="context"> · ${p.step}/${p.of} recorded steps complete</span>`:""}</summary><div class="impact"><p><b>Worker:</b> ${esc(WORKER[j.by]||j.by||j.routedTo||"Unassigned")}</p><ol class="substeps">${jp.rows.map(x=>`<li><b>${esc(x.label)}</b> · ${esc(x.when||"not timed")}${x.note?" · "+esc(x.note):""}</li>`).join("")}</ol>${jobImpact(j)}</div></details>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`;
+// A film's executable jobs, per-worker queue order and unfinished stages answer different questions.
+function supportingJob(j){
+  return !j.stage && !j.film && /^(?:weekly (?:OWB|HOS) audit|(?:backlog\s+)?QA sweep|(?:backlog\s+)?(?:OWB|HOS)?\s*[–:-]?\s*listing check on .*live|daily .*read)/i.test(j.title||"");
 }
-function filmJobsHtml(key){
-  const jobs=filmJobs(key); if(!jobs.length) return `<div class="impact"><p>No jobs linked to this video yet. Its recorded stages are listed below.</p></div>`;
-  return `<div class="filmjobs"><b>Jobs for this video</b><p class="context">A finished job completes its own steps. The video stays unfinished until its remaining work and release checks are complete.</p>${jobs.map(j=>jobTaskHtml(j,key.replace(":","-"))).join("")}</div>`;
+function workLane(j){ return ({mini:"Mac mini",chief:"Chief",cloud:"Chief",gemini:"Gemini",ben:"You",any:"Available worker"})[j.line||j.needs] || "Worker"; }
+function scheduleAt(at){
+  if(!at || !Number.isFinite(at)) return "not scheduled";
+  const opts={timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"};
+  const same=new Date(at).toLocaleDateString("en-GB",{timeZone:"Europe/London"})===new Date().toLocaleDateString("en-GB",{timeZone:"Europe/London"});
+  return (same?"today ":new Date(at).toLocaleDateString("en-GB",{timeZone:"Europe/London",weekday:"short",day:"numeric",month:"short"})+" ")+new Date(at).toLocaleTimeString("en-GB",opts);
+}
+function jobQueueInfo(j,P){
+  const p=P[j.id]||{}, lane=workLane(j), dep=j.after||j.waitsFor;
+  if(j.status==="done") return {state:"done",label:"Done",lane};
+  if(runningJob(j)){ const pr=progressOf(j,P); return {state:"now",label:"Working now",lane,start:p.start,done:pr.done,pct:pr.pct}; }
+  if(j.status==="claimed") return {state:"stalled",label:"Claim overdue; worker not confirmed",lane};
+  if(j.status==="blocked") return {state:isChiefPark(j)?"review":"blocked",label:isChiefPark(j)?"Waiting for Chief review":"Blocked",reason:shortReason(blockWhy(j)),lane};
+  const dependency=dep && ((fromDb.jobs||[]).find(x=>x.id===dep)||(fromDb.jobStates||{})[dep]);
+  if(dep && (!dependency || dependency.status==="cancelled" || dependency.status==="blocked" || (dependency.status!=="done" && !(P[dep]||{}).done)))
+    return {state:"dependency",label:`Waiting for ${dep}`,lane,reason:dependency?`dependency ${dependency.status}`:"dependency status not recorded"};
+  if(p.start && p.done){
+    const pos=typeof j.pos==="number" && j.pos>0?j.pos:p.pos;
+    return {state:p.state==="gated"?"gated":"queued",label:p.state==="gated"?"Date gated":pos?`Queue #${pos} · ${lane}`:`After ${dep||"the preceding job"} · ${lane}`,lane,pos,start:p.start,done:p.done};
+  }
+  return {state:"unplanned",label:"No queue position or start time",lane,reason:dep?`waiting for ${dep}`:"not in an executable queue"};
+}
+function videoWorkPlan(r,P){
+  const all=r.jobRow?[r.taskJob]:filmJobs(r.f.key), related=r.jobRow?[]:all.filter(supportingJob);
+  const jobs=r.jobRow?all:all.filter(j=>!supportingJob(j)), completed=jobs.filter(j=>j.status==="done");
+  const remaining=jobs.filter(j=>j.status!=="done").map(j=>({j,q:jobQueueInfo(j,P)}));
+  const rank=q=>q.state==="now"?0:q.done?1:2;
+  remaining.sort((a,b)=>rank(a.q)-rank(b.q)||(a.q.start||Infinity)-(b.q.start||Infinity)||a.j.id.localeCompare(b.j.id));
+  const active=remaining.filter(x=>x.q.state==="now"), queued=remaining.filter(x=>x.q.done && x.q.state!=="now"), held=remaining.filter(x=>!x.q.done);
+  const stages=(r.f._stages||[]).filter(s=>!["done","skip"].includes(stOf(r.f,s).status));
+  const covers=(j,s)=>j.stage===s.key || (stOf(r.f,s).jobs||[]).includes(j.id);
+  const gaps=(r.live||r.isSched||r.jobRow)?[]:stages.filter(s=>!jobs.some(j=>covers(j,s)));
+  const stageUpdates=(r.live||r.isSched||r.jobRow)?[]:stages.filter(s=>!remaining.some(({j})=>covers(j,s)) && completed.some(j=>covers(j,s)));
+  const manual=(r.steps||[]).filter(x=>!x.w.ok && !x.job && !x.afterJob && !stages.some(s=>s.label.toLowerCase()===String(x.what||"").toLowerCase()));
+  const check=(fromDb.checks||{})[r.f.key.replace(":","-")], changes=check && check.verdict==="change" && !check.handled;
+  let finish=0, finishReason="";
+  if(r.live || r.isSched) finish=ts((r.release||{}).publishAt);
+  else if(changes) finishReason="your requested changes still need review";
+  else if(held.length) finishReason=held.some(x=>x.q.state==="review")?"waiting for Chief review":"one or more jobs have no start time";
+  else if(stageUpdates.length) finishReason="completed work awaits stage confirmation";
+  else if(gaps.length || manual.length) finishReason="remaining work is not fully queued";
+  else if(remaining.length && remaining.every(x=>x.q.done)) finish=Math.max(...remaining.map(x=>x.q.done));
+  else finishReason=r.pct>=100?"upload/schedule not confirmed":"no complete job schedule recorded";
+  return {remaining,completed,related,active,queued,held,gaps,stageUpdates,manual,finish,finishReason};
+}
+function videoWorkSummary(r,P){
+  const w=videoWorkPlan(r,P), current=w.active[0], next=w.queued[0], label=r.jobRow?"Task":"Video";
+  const state=current?`Working now · ${current.j.id}`:r.live?"Live":r.isSched?"Uploaded and scheduled":w.held.length?`Not running · ${w.held[0].j.id} · ${w.held[0].q.label}`:next?`Not running · ${next.q.label}`:"Not running · no executable job queued";
+  const focus=current||next||w.held[0];
+  return `<div class="work-state ${current?"active":""}">${esc(state)}</div>${focus?`<div class="work-name">${current||next?"":"Held: "}${esc(plainTitle(focus.j,130))}</div>`:""}${current?`<div class="job-live" data-job-id="${esc(current.j.id)}"></div>`:next?`<div class="work-timing">Estimated start ${esc(scheduleAt(next.q.start))} · ready ${esc(scheduleAt(next.q.done))}</div>`:""}<div class="work-count"><b>${w.remaining.length} ${r.jobRow?"job":"video job"}${w.remaining.length===1?"":"s"} remaining</b>${w.active.length?` · ${w.active.length} running`:""}${w.queued.length?` · ${w.queued.length} queued`:""}${w.held.length?` · ${w.held.length} waiting`:""}${w.gaps.length?` · ${w.gaps.length} stages need linked jobs`:""}${w.stageUpdates.length?` · ${w.stageUpdates.length} stages await confirmation`:""}${w.related.length?` · ${w.related.length} related checks`:""}</div><div class="finish-outlook">${r.live?"Released":r.isSched?"Releases":label+" work finish"}: ${w.finish?`<b>${esc(scheduleAt(w.finish))}${r.live||r.isSched?"":" (estimate)"}</b>`:`unknown — ${esc(w.finishReason)}`}</div>${w.completed[0]?`<div class="lastjob">✓ ${esc(w.completed[0].id)} done · <span data-ago="${ts(w.completed[0].at)}">${ago(ts(w.completed[0].at))}</span></div>`:""}`;
+}
+const videoScheduleRows=new Map();
+function tickVideoSchedules(P){
+  document.querySelectorAll("[data-video-work]").forEach(el=>{const r=videoScheduleRows.get(el.dataset.videoWork);if(r) el.innerHTML=videoWorkSummary(r,P);});
+}
+function channelWorkRows(videoKeys,P){
+  const known=new Set(videoKeys);
+  return (fromDb.jobs||[]).filter(runningJob).filter(j=>supportingJob(j)||!taskKeysFor(j).some(k=>known.has(k))).map(j=>({
+    f:{key:"job:"+j.id,id:j.id,title:plainTitle(j,180),_ch:chanOf(j),_stages:[],stages:{}},jobRow:true,taskJob:j,pct:null,air:0,live:false,isSched:false,
+    release:{state:"unscheduled"},mk:["now","Working now"],steps:[{job:j.id,who:WORKER[j.by]||j.by,what:j.title,w:{kind:"now"}}],you:"",ready:""
+  }));
+}
+function jobTaskHtml(j, scope, position){
+  const state=runningJob(j)?"Running":j.status==="done"?"✓ Done":isChiefPark(j)?"Review":j.status==="blocked"?"Blocked":"Queued";
+  const P=plan(), qi=jobQueueInfo(j,P), queueLine=qi.state==="now"?`${workLane(j)} · ${finishIn(qi.done)} (estimate)`:qi.done?`${qi.label} · start ${scheduleAt(qi.start)} · ready ${scheduleAt(qi.done)} (estimate)`:`${qi.label}${qi.reason?" · "+qi.reason:""} · start/finish unknown`;
+  const p=j.progress, jp=jobPlan(j,P), id=`subtask-${scope}-${j.id}`;
+  return `<div class="jobtask" data-jobtask-id="${esc(j.id)}" data-jobtask-keys="${esc(taskKeysFor(j).join(" "))}"><details class="progress-fold" id="${esc(id)}"><summary><b>${position?`Video job ${position.index} of ${position.total} · `:""}${esc(state)} · ${esc(j.id)}</b> ${esc(plainTitle(j,130))}${p&&p.of?`<span class="context"> · ${p.step}/${p.of} recorded steps complete</span>`:""}</summary><div class="impact"><p><b>Worker:</b> ${esc(WORKER[j.by]||j.by||j.routedTo||"Unassigned")}</p><ol class="substeps">${jp.rows.map(x=>`<li><b>${esc(x.label)}</b> · ${esc(x.when||"not timed")}${x.note?" · "+esc(x.note):""}</li>`).join("")}</ol>${jobImpact(j)}</div></details><p class="job-queue">${esc(queueLine)}</p>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`;
+}
+function filmJobsHtml(key,r){
+  const w=videoWorkPlan(r,plan()), scope=key.replace(":","-");
+  return `<div class="filmjobs"><b>Remaining job schedule · ${w.remaining.length} jobs</b><p class="context">Queue numbers are per worker lane, across all videos. Estimates can change with priority and review; your air date is separate.</p>${w.remaining.map((x,i)=>jobTaskHtml(x.j,scope,{index:i+1,total:w.remaining.length})).join("")}${w.gaps.length?`<p class="schedule-gap"><b>Still needs linked jobs:</b> ${w.gaps.map(s=>esc(s.label)).join(", ")}. No queue position or finish estimate yet.</p>`:""}${w.stageUpdates.length?`<p class="schedule-gap"><b>Completed jobs await stage confirmation:</b> ${w.stageUpdates.map(s=>esc(s.label)).join(", ")}. The job result is recorded; the stage has not been marked complete.</p>`:""}${w.manual.length?`<p class="schedule-gap"><b>Other remaining actions:</b> ${w.manual.map(s=>esc(s.what)).join("; ")}. Not fully queued.</p>`:""}${w.completed.length?`<details class="progress-fold" id="job-done-${esc(scope)}"><summary>✓ ${w.completed.length} recently completed jobs</summary>${w.completed.map(j=>jobTaskHtml(j,scope)).join("")}</details>`:""}${w.related.length?`<details class="progress-fold" id="job-related-${esc(scope)}"><summary>${w.related.length} related channel checks (outside the video job count)</summary>${w.related.map(j=>jobTaskHtml(j,scope+"-related")).join("")}</details>`:""}</div>`;
 }
 function jobTargetHtml(j){
   const keys=taskKeysFor(j), known=new Set((fromDb.owb||[]).filter(f=>f.air || Object.values(f.stages||{}).filter(s=>(s.state||"todo")!=="todo").length>1).map(f=>"OWB:"+f.film).concat(((fromDb.hos||{}).films||[]).map(f=>"HOS:"+f.id)));
   return `<div class="jobtarget">${keys.length?"Updates: "+keys.map(key=>`<button class="lnk" data-task-film="${esc(key)}">${esc(key)}</button>${known.has(key)?"":" (outside the recorded video plan)"}`).join(", "):"Channel/backlog job · no individual video link recorded"}</div>`;
 }
 function unlinkedWorkHtml(videoKeys){
-  const known=new Set(videoKeys||[]), candidates=(fromDb.jobs||[]).filter(runningJob).concat(progressUpdates().filter(j=>Date.now()-ts(j.at)<DAY));
+  const known=new Set(videoKeys||[]), candidates=progressUpdates().filter(j=>Date.now()-ts(j.at)<DAY);
   const jobs=[...new Map(candidates.map(j=>[j.id,j])).values()].filter(j=>(chan==="all"||chanOf(j)===chan) && !taskKeysFor(j).some(k=>known.has(k)));
   if(!jobs.length) return "";
   const active=jobs.filter(runningJob), history=jobs.filter(j=>!runningJob(j)), latest=history[0];
   const context=j=>{const keys=taskKeysFor(j);return `<p class="context">${keys.length?esc(keys.join(", "))+" has no recorded video row yet.":"No individual video link is recorded."} This job's completion is tracked here; it does not complete one of the waiting video rows.</p>`;};
-  return `<section id="unlinked-work" class="unlinkedwork"><b>Other work · ${active.length} running job${active.length===1?"":"s"}</b><p class="context">Jobs outside the recorded video plan</p>${active.map(j=>jobTaskHtml(j,"other")+context(j)).join("")}${history.length?`<details id="other-work-history" class="progress-fold"><summary>${latest.status==="done"?"✓ Latest job done":"Latest job waiting"}: ${esc(latest.id)} · ${esc(plainTitle(latest,80))} · <span data-ago="${ts(latest.at)}">${ago(ts(latest.at))}</span><br>${history.length} recent finished or parked jobs</summary>${history.map(j=>jobTaskHtml(j,"other")+context(j)).join("")}</details>`:""}</section>`;
+  return `<section id="unlinked-work" class="unlinkedwork"><b>Recent channel/backlog work</b><p class="context">Jobs outside the recorded video plan</p>${active.map(j=>jobTaskHtml(j,"other")+context(j)).join("")}${history.length?`<details id="other-work-history" class="progress-fold"><summary>${latest.status==="done"?"✓ Latest job done":"Latest job waiting"}: ${esc(latest.id)} · ${esc(plainTitle(latest,80))} · <span data-ago="${ts(latest.at)}">${ago(ts(latest.at))}</span><br>${history.length} recent finished or parked jobs</summary>${history.map(j=>jobTaskHtml(j,"other")+context(j)).join("")}</details>`:""}</section>`;
 }
 function taskStageInfo(key){
   const [ch,no] = key.split(":"), hos = fromDb.hos||{};
@@ -1483,7 +1551,7 @@ const vLane = {};   // which lanes Ben has toggled; the others keep their defaul
 const LANES = [["you","Needs you",true],["now","Working",true],["wait","Waiting",false],["sched","Scheduled",false],["live","Live",false]];
 function releaseBlockers(r){
   if(r.live || r.isSched) return [];
-  const out=[], jobs=linkedJobsFor(r.f.key), check=(fromDb.checks||{})[r.f.key.replace(":","-")];
+  const out=[], jobs=linkedJobsFor(r.f.key).filter(j=>!supportingJob(j)), check=(fromDb.checks||{})[r.f.key.replace(":","-")];
   const add=(reason,owner,action,job="")=>out.push({reason,owner,action,job});
   if(check && check.verdict==="change" && !check.handled){
     const fixes=(check.fixes||[]).map(x=>(x.t?x.t+": ":"")+x.text).filter(Boolean).join("; ") || check.note || "Your requested changes";
@@ -1520,7 +1588,7 @@ function releaseDetailsHtml(r){
   const head=r.live?"Live":r.isSched?"Scheduled":rel.state==="uploaded"?"Uploaded; scheduling not confirmed":"Not scheduled";
   const proof=rel.source?`<p class="context">Evidence: ${esc(rel.source)}${rel.videoId?" · video "+esc(rel.videoId):""}${rel.publishAt?" · release "+esc(fw(rel.publishAt)):""}</p>`:"";
   const follow=(r.live||r.isSched)?linkedJobsFor(r.f.key).filter(j=>j.status==="blocked"):[];
-  return `<div class="impact release-details"><p><b>Release status:</b> ${head}</p>${proof}${holds.map(h=>`<p><b>Blocker${h.job?" · "+esc(h.job):""}:</b> ${esc(h.reason)}</p><p><b>Owner:</b> ${esc(h.owner)}</p><p><b>To unblock:</b> ${esc(h.action)}</p>`).join("")}${follow.length?`<p><b>After release:</b> ${follow.map(j=>esc(j.id+": "+blockWhy(j))).join("; ")}. These jobs do not prevent the recorded release.</p>`:""}</div>`;
+  return `<div class="impact release-details"><p><b>Release status:</b> ${head}</p>${proof}${holds.map(h=>`<p><b>Blocker${h.job?" · "+esc(h.job):""}:</b> ${esc(h.reason)}</p><p><b>Owner:</b> ${esc(h.owner)}</p><p><b>To unblock:</b> ${esc(h.action)}</p>`).join("")}${follow.length?`<p><b>Other linked work:</b> ${follow.map(j=>esc(j.id+": "+blockWhy(j))).join("; ")}. These jobs do not prevent the recorded release.</p>`:""}</div>`;
 }
 function blockersOverview(rows){
   const held=rows.filter(r=>r.blockers&&r.blockers.length);
@@ -1539,12 +1607,14 @@ function renderVideos(rows, rankOf){
     return {f:{key:"HOS:"+String(x.id).replace(/^HOS\s+/,""), id:x.id, title:x.title, _ch:"HOS"}, pct: ok ? 75 : 60, air:0, airText:x.airs||"", live:false, isSched:false, extra:true,
       you: ok ? "" : "watch and approve", mk:["wait", ok ? (x.next||"the Chief schedules it") : "waiting for your OK"], ready:"",
       steps: ok && x.next ? [{who:"Mac mini", what:x.next, w:{kind:"next", text:""}}] : []}; });
-  for(const r of rows.concat(xrows)){ r.release=r.release||filmRelease(r.f); r.blockers=releaseBlockers(r); }
-  const keep = rows.concat(xrows).filter(r=>chan==="all"||chan===r.f._ch).filter(r=>!r.live || (r.air && Date.now()-r.air < 3*DAY));
-  const laneOf = r => r.live ? "live" : r.isSched ? "sched" : r.you ? "you" : r.mk[0]==="now" ? "now" : "wait";
+  const P=plan(), base=rows.concat(xrows), activity=channelWorkRows(base.map(r=>r.f.key),P);
+  for(const r of base.concat(activity)){ r.release=r.release||filmRelease(r.f); r.blockers=r.jobRow?[]:releaseBlockers(r); r.work=videoWorkPlan(r,P); }
+  const keep = base.concat(activity).filter(r=>chan==="all"||chan===r.f._ch).filter(r=>!r.live || (r.air && Date.now()-r.air < 3*DAY));
+  const laneOf = r => r.live ? "live" : r.isSched ? "sched" : r.work.active.length ? "now" : r.you ? "you" : "wait";
   const byRank = (a,b)=>(rankOf[a.f.key]||999)-(rankOf[b.f.key]||999) || (a.air||9e15)-(b.air||9e15);
   const row = r => {
     const lane = laneOf(r), open = !!vOpen[r.f.key];
+    videoScheduleRows.set(r.f.key,r);
     const status = lane==="live" ? "" : lane==="sched" ? "" : short(r.extra ? r.mk[1] : strip(r.mk[1]).replace(/^[A-Z][^:]{0,40}:\s*/,""));
     const ck = (fromDb.checks||{})[String(r.f.key).replace(":","-")], recent = ck && ck.verdict==="ok" && Date.now()-Date.parse(ck.at||0) < 2*DAY;
     const badge = recent ? `<span class="vok" title="You approved this ${esc(fw(ck.at))}">✓ Approved</span>` : "";
@@ -1552,19 +1622,19 @@ function renderVideos(rows, rankOf){
     // airIn() gives a ticking <span data-until> under a day out, so `when` stays HTML; the note texts are plain.
     const when = r.live ? `Live since ${esc(fd(r.air))}` : r.air ? `Airs ${esc(fd(r.air))} · ${airIn(r.air)}` : r.airText ? `Airs ${esc(r.airText)}` : "No air date yet";
     const date = lane==="you" ? (r.you ? short(r.you) : "") : (!r.live && !r.isSched && r.ready) ? `Ready for you ${short(r.ready)}` : r.air ? `${r.live?"Live":"Airs"} ${esc(fd(r.air))}` : r.airText ? `Airs ${esc(r.airText)}` : "";
-    return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp" title="${r.isSched||r.live?"Confirmed upload":"Recorded film stage progress"}">${r.isSched||r.live?"Uploaded":"Stages"} ${r.pct}%</span>`}<span class="chev">▸</span></div>
+    return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${r.jobRow?"Task ":""}${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp" title="${r.isSched||r.live?"Confirmed upload":"Recorded film stage progress"}">${r.isSched||r.live?"Uploaded":"Video"} ${r.pct}%</span>`}<span class="chev">▸</span></div>
       ${r.pct==null?"":`<div class="bar thin" aria-label="Recorded film stage progress">${pcBar(r.pct)}</div>`}
-      <div class="v2${recent?" vwrap":""}">${bad}${badge}<span class="vn">${r.extra&&recent?"Next: ":""}${esc(status)}</span>${date?`<span class="vdt">${lane==="you"||/^Ready/.test(date)?esc(date):date}</span>`:""}</div>${jobRollupHtml(r.f.key)}${r.blockers.length?`<div class="release-hint">${esc(r.blockers.length+" release hold"+(r.blockers.length===1?"":"s"))} · ${esc(r.blockers[0].owner)} · tap for next action</div>`:""}</button>${open?videoDrop(r, when):""}</div>`; };
+      ${badge}<div class="video-work" data-video-work="${esc(r.f.key)}">${videoWorkSummary(r,P)}</div>${date?`<div class="work-air">${r.jobRow?"":r.live||r.isSched?esc(date):r.air||r.airText?`Target air: ${esc(r.air?fd(r.air):r.airText)}`:r.you?`Needs you: ${esc(short(r.you))}`:""}</div>`:""}${r.blockers.length?`<div class="release-hint">${r.blockers.length} release holds · tap for actions</div>`:""}</button>${open?videoDrop(r, when):""}</div>`; };
   const groups = Object.fromEntries(LANES.map(l=>[l[0],[]]));
   for(const r of keep) groups[laneOf(r)].push(r);
   for(const k of ["you","now","wait"]) groups[k].sort(byRank);
   groups.sched.sort((a,b)=>(a.air||9e15)-(b.air||9e15));
   groups.live.sort((a,b)=>(b.air||0)-(a.air||0));
-  box.innerHTML = `<div class="vh">Video pipeline<span>${videoTotals(groups)}</span></div>` + blockersOverview(keep) + (keep.length
+  box.innerHTML = `<div class="vh">Video pipeline<span>${videoTotals(Object.fromEntries(Object.entries(groups).map(([k,vs])=>[k,vs.filter(r=>!r.jobRow)])))}</span></div>` + blockersOverview(keep) + (keep.length
     ? LANES.filter(([k])=>groups[k].length).map(([k,label,dflt])=>{
         const open = k in vLane ? vLane[k] : dflt;
-        return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${groups[k].length} video${groups[k].length===1?"":"s"}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
-    : `<div class="empty">Nothing in work.</div>`) + unlinkedWorkHtml(keep.map(r=>r.f.key));
+        return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${(()=>{const n=groups[k].filter(r=>!r.jobRow).length,t=groups[k].length-n;return [n?`${n} video${n===1?"":"s"}`:"",t?`${t} task${t===1?"":"s"}`:""].filter(Boolean).join(" · ");})()}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
+    : `<div class="empty">Nothing in work.</div>`) + unlinkedWorkHtml(keep.filter(r=>!r.jobRow).map(r=>r.f.key));
   tickJobBars();
   box.querySelectorAll("[data-vlane]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vlane, d = LANES.find(l=>l[0]===k)[2]; vLane[k] = !(k in vLane ? vLane[k] : d); renderVideos(rows, rankOf); });
   box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; vOpen[k] = !vOpen[k]; renderVideos(rows, rankOf); });
@@ -1573,28 +1643,10 @@ function renderVideos(rows, rankOf){
 // The drop-down under a video (Ben, 14 Oct 2026): the total ETA, then every task left in order, labelled Working on,
 // Next, 3rd, 4th ..., each with who does it and when; the tasks already done fold into one line.
 function videoDrop(r, when){
-  const steps = r.steps || [], done = steps.filter(s=>s.w.ok), isNowS = s => s.w.kind==="now"||s.w.kind==="part";
-  const left = steps.filter(s=>!s.w.ok && isNowS(s)).concat(steps.filter(s=>!s.w.ok && !isNowS(s)));   // what's running first, then the note's order
-  const ordn = n => n + (n%100>=11&&n%100<=13 ? "th" : ({1:"st",2:"nd",3:"rd"})[n%10] || "th");
-  const working = left.some(s=>s.w.kind==="now"||s.w.kind==="part");
-  let k = 0;
-  const li = left.map(s=>{
-    const w = s.w, isNow = w.kind==="now"||w.kind==="part";
-    let o, c;
-    if(isNow){ o = "Working on"; c = "now"; }
-    else { k++; o = k===1 ? "Next" : ordn(k + (working?1:0)); c = k===1 ? "nx" : ""; }
-    if(w.kind==="blocked"){ c = "bad"; o += " · blocked"; }
-    else if(w.kind==="review"){ c = "rv"; }
-    const who = s.who==="Ready for you"||s.who==="Ben" ? "You" : s.who;
-    return `<li class="${c}"><span class="o">${o}</span><span class="t"><b>${esc(who||"")}</b>${who?": ":""}${esc(s.what||"")}<span class="w">${w.text||""}</span></span></li>`;
-  });
-  const showDone = !!vOpen[r.f.key+"#done"];
-  const dl = done.map(s=>`<li class="ok"><span class="o">✓ Done</span><span class="t"><b>${esc(s.who||"")}</b>${s.who?": ":""}${esc(s.what||"")}<span class="w">${s.w.text||""}</span></span></li>`);
-  // The total ETA is the last task's time; when the last task has none yet, say so rather than guess from an earlier one.
-  const tail = left[left.length-1], last = tail && tail.w.at ? Math.max(...left.filter(s=>s.w.at).map(s=>s.w.at)) : 0;
-  const tot = r.live ? "Live" : r.isSched ? "Finished and scheduled" : (r.blockers||[]).length ? `${r.blockers.length} release hold${r.blockers.length===1?"":"s"} to resolve` : last ? `All done about <b>${esc(new Date(last).getHours()||new Date(last).getMinutes() ? clock(last) : fd(new Date(last)))}</b>` : left.length ? "No finish time yet: the last task has no date" : "Nothing left to do";
-  const head = `<div class="vtot"><span>${tot}${left.length?` · ${left.length} task${left.length===1?"":"s"} left`:""}</span>${r.ready&&!r.live&&!r.isSched?`<span>Ready for you: <b>${esc(String(r.ready).replace(/<[^>]+>/g,""))}</b></span>`:""}<span>${when}</span></div>`;
-  return `<div class="vd">${head}${releaseDetailsHtml(r)}${filmJobsHtml(r.f.key)}${r.oldPlanAt?`<div class="vwork"><p class="context">Older plan from ${esc(fw(r.oldPlanAt))}; using live jobs and recorded stages.</p></div>`:""}${done.length?`<button class="lnk donesum" data-vdone="${esc(r.f.key)}">✓ ${done.length} done${showDone?" (hide)":" (show)"}</button>`:""}<ol>${showDone?dl.join(""):""}${li.join("")}</ol>${!steps.length?`<div class="w">No task list for this video yet.</div>`:""}</div>`;
+  const stages=r.f._stages||[], w=videoWorkPlan(r,plan());
+  const recorded=stages.map(s=>{const st=stOf(r.f,s), label=st.status==="done"?"✓ Done":st.status==="skip"?"Skipped":st.review?"Review":st.status==="blocked"?"Blocked":st.status==="doing"?"In progress":"To do";
+    return `<li><span class="o">${esc(label)}</span><span class="t">${esc(s.label)}${st.note?`<span class="w">${esc(st.note)}</span>`:""}</span></li>`;}).join("");
+  return `<div class="vd">${filmJobsHtml(r.f.key,r)}${r.jobRow?`<p class="context">This is a channel/backlog task. No individual video row is linked, so its progress and ready time are shown here.</p>`:`<details id="release-${esc(r.f.key)}" class="progress-fold"><summary>Release status and ${r.blockers.length} holds</summary>${releaseDetailsHtml(r)}<p class="context">${when}</p></details>`}${stages.length?`<details id="stages-${esc(r.f.key)}" class="progress-fold"><summary>Recorded film stages · ${stages.filter(s=>["done","skip"].includes(stOf(r.f,s).status)).length} of ${stages.length} complete</summary><ol>${recorded}</ol>${r.oldPlanAt?`<p class="context">Older brief from ${esc(fw(r.oldPlanAt))}; queue dates above come from current jobs.</p>`:""}</details>`:""}</div>`;
 }
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
@@ -1688,7 +1740,7 @@ function renderTracker(films){
     // Ben, 14 Oct: "a very simple, clean, quick" view: one row per video with its progress, what's happening and when
     // it reaches him. "Ready for you" is the first open step that is his (the watch), from the same times as the card.
     const benRow = rows.find(r=>!r.w.ok && (r.x.who==="Ben"||r.x.who==="Ready for you"));
-    simple.push({f, pct, air, col, live, isSched, release, mk, oldPlanAt:b.oldPlanAt, you: youSoon ? (b.youShort||b.you) : "", steps: rows.map(r=>({who:r.x.who, what:r.x.what, w:r.w})),
+    simple.push({f, pct, air, col, live, isSched, release, mk, oldPlanAt:b.oldPlanAt, you: youSoon ? (b.youShort||b.you) : "", steps: rows.map(r=>({who:r.x.who, what:r.x.what, job:r.x.job, afterJob:r.x.afterJob, w:r.w})),
       ready: benRow ? (benRow.w.at ? fd(new Date(benRow.w.at)) : benRow.w.text || "") : ""});
     const mkRow = !ranked ? "" : `<div class="rkrow">@@R:${esc(f.key)}@@<div class="mk ${mk[0]}">${mk[1]}</div></div>${optLine?`<div class="mk-opt">${optLine}</div>`:""}`;
     // Ben, 11 Oct 19:03: "1st, 2nd, 3rd": one work order across both channels. Running/part-done jobs first, then queued
@@ -2193,15 +2245,16 @@ document.addEventListener("click", e=>{
   for(const [lane] of LANES) vLane[lane] = true;
   render();
   const target = document.querySelector(`[data-vkey="${key}"]`);
-  if(!target){ const task=[...document.querySelectorAll("[data-jobtask-keys]")].find(x=>x.dataset.jobtaskKeys.split(" ").includes(key)); if(task){ task.querySelector("details").open=true; task.scrollIntoView({block:"start"}); } }
+  if(!target){ const j=(fromDb.jobs||[]).find(j=>runningJob(j)&&taskKeysFor(j).includes(key)); const row=j&&document.querySelector(`[data-vkey="job:${j.id}"]`); if(row){row.click();row.scrollIntoView({block:"start"});return;} const task=[...document.querySelectorAll("[data-jobtask-keys]")].find(x=>x.dataset.jobtaskKeys.split(" ").includes(key)); if(task){ task.querySelector("details").open=true; task.scrollIntoView({block:"start"}); } }
   if(target){ target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"}); target.focus({preventScroll:true}); }
 });
 // Between renders, times count by themselves: "12 min ago", "in 1 d 7 h", and the running job's bar and finish time.
 function tickJobBars(){
   const P=plan();
+  tickVideoSchedules(P);
   document.querySelectorAll(".job-live[data-job-id]").forEach(el=>{
     const j=(fromDb.jobs||[]).find(j=>j.id===el.dataset.jobId); if(!j || !runningJob(j)) return;
-    const p=progressOf(j,P), text=`${p.pct}% of current job (estimated) · ${finishIn(p.done)}`;
+    const p=progressOf(j,P), text=`Current job: ${p.pct}% · ${finishIn(p.done)} (estimate)`;
     el.innerHTML=`<div class="pbar"><span class="track"><i class="pc" style="width:${p.pct}%;--pc:${pcCol(p.pct)}"></i></span><span class="ptxt">${esc(text)}</span></div>`;
   });
 }
