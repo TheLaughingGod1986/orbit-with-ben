@@ -323,7 +323,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0671 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0672 | any | blocked | gemini | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0673 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J0674 | any | claimed | gemini | 2026-10-19T19:16Z | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
+| J0674 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 
 Recently finished:
 
