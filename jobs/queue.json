@@ -50660,7 +50660,7 @@
     {
       "id": "J0667",
       "title": "HOS ideas + script draft: next film beyond the pipeline",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Brainstorm 5 History of Science long ideas (discovery stories with a person, a date and a twist) from the weekly audit and search demand, score each, then draft the top one's opening and outline with SOURCES. Save in the HOS ideas folder. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
       "ref": "",
@@ -50680,10 +50680,24 @@
           "at": "2026-10-19T15:39Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-19T15:40Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4789 min (heartbeat 2026-10-16T07:51:05Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "script",
-      "backlog": "hos-ideas"
+      "backlog": "hos-ideas",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
