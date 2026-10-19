@@ -46293,17 +46293,29 @@
           "at": "2026-10-19T01:23Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only audit of HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-19T01:25Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: channel:audit PASS (43 videos, 0 errors); 19 public + 14 scheduled videos verified via Data API"
         }
       ],
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-19T01:23Z",
+        "at": "2026-10-19T01:25Z",
         "by": "gemini",
-        "note": "Starting read-only audit of HOS live and scheduled videos"
-      }
+        "note": "channel:audit PASS (43 videos, 0 errors); 19 public + 14 scheduled videos verified via Data API"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005"
+      ]
     }
   ],
   "focus": [],
