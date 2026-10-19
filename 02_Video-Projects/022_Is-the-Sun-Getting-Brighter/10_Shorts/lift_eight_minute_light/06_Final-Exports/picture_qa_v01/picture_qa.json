@@ -1,0 +1,153 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_eight_minute_light/06_Final-Exports/sun_eight_minute_light_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 2,
+      "row": "s03_sdo_svs3548_sun",
+      "source": "022_v05_span_73.80.mp4",
+      "title": "NASA SDO full-disk solar observation (SVS 3548, 73.80s)",
+      "t": 8.4,
+      "at": "0:08",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0075 < film p5 0.0083"
+      ],
+      "offset": 73.8
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_sdo_svs3549_sun",
+      "source": "022_v05_span_85.10.mp4",
+      "title": "NASA SDO full-disk solar observation of active sunspots and bright faculae (SVS 3549, 85.10s)",
+      "t": 2.1,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 85.1
+    },
+    {
+      "cut": 1,
+      "row": "s02_iss_orbital_sunrise_earth",
+      "source": "022_v05_span_153.50.mp4",
+      "title": "ISS Expedition 74 view of sunlight illuminating Earth's surface and clouds after orbital sunrise (iss074e0494675, 153.50s)",
+      "t": 5.78,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": 153.5
+    },
+    {
+      "cut": 2,
+      "row": "s03_sdo_svs3548_sun",
+      "source": "022_v05_span_73.80.mp4",
+      "title": "NASA SDO full-disk solar observation (SVS 3548, 73.80s)",
+      "t": 8.4,
+      "at": "0:08",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0075 < film p5 0.0083"
+      ],
+      "offset": 73.8
+    },
+    {
+      "cut": 3,
+      "row": "s04_sdo_svs11853_sun",
+      "source": "022_v05_span_254.60.mp4",
+      "title": "NASA SDO full-disk solar observation (SVS 11853, 254.60s)",
+      "t": 11.05,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 254.6
+    },
+    {
+      "cut": 4,
+      "row": "s05_sdo_svs5649_sun",
+      "source": "022_v05_span_237.00.mp4",
+      "title": "NASA SDO full-disk observation of the restless solar disc (SVS 5649, 237.00s)",
+      "t": 15.25,
+      "at": "0:15",
+      "fail": [],
+      "warn": [],
+      "offset": 237.0
+    },
+    {
+      "cut": 5,
+      "row": "s06_skylab4_south_atlantic_earth",
+      "source": "022_v05_span_268.30.mp4",
+      "title": "Skylab 4 view of sunlit Earth and South Atlantic clouds over South Georgia Island (sl4-142-4577, 268.30s)",
+      "t": 19.05,
+      "at": "0:19",
+      "fail": [],
+      "warn": [],
+      "offset": 268.3
+    },
+    {
+      "cut": 6,
+      "row": "s07_sdo_coronal_loops_limb",
+      "source": "022_v05_span_144.30.mp4",
+      "title": "NASA SDO observation of coronal loops above a solar active region (PIA22645, 144.30s)",
+      "t": 22.12,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 144.3
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_svs3549_sun.mp4",
+      "title": "End-card loop: NASA SDO full-disk solar observation of active sunspots and bright faculae (SVS 3549, 85.10s)",
+      "t": 25.25,
+      "at": "0:25",
+      "fail": [],
+      "warn": [],
+      "offset": 85.1
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0083,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

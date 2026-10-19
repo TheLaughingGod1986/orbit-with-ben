@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_eight_minute_light/06_Final-Exports/sun_eight_minute_light_v01.mp4",
+  "edge_floor": 0.0083,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s03_sdo_svs3548_sun",
+      "cut": 2,
+      "t": 8.4,
+      "source": "022_v05_span_73.80.mp4",
+      "why": [
+        "low detail: edge density 0.0075 < film p5 0.0083"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_sdo_svs3549_sun",
+      "source": "022_v05_span_85.10.mp4",
+      "t": 2.1,
+      "std": 48.69,
+      "mean": 82.42,
+      "p95": 167.0,
+      "edge": 0.0388,
+      "hf": 11.11,
+      "lf": 43.88,
+      "std8": 45.58,
+      "edge8": 0.3024,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_iss_orbital_sunrise_earth",
+      "source": "022_v05_span_153.50.mp4",
+      "t": 5.78,
+      "std": 51.74,
+      "mean": 62.32,
+      "p95": 153.0,
+      "edge": 0.0203,
+      "hf": 9.56,
+      "lf": 48.94,
+      "std8": 49.92,
+      "edge8": 0.0918,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_sdo_svs3548_sun",
+      "source": "022_v05_span_73.80.mp4",
+      "t": 8.4,
+      "std": 30.75,
+      "mean": 69.69,
+      "p95": 105.0,
+      "edge": 0.0075,
+      "hf": 7.18,
+      "lf": 27.94,
+      "std8": 28.85,
+      "edge8": 0.0577,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0075 < film p5 0.0083"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04_sdo_svs11853_sun",
+      "source": "022_v05_span_254.60.mp4",
+      "t": 11.05,
+      "std": 48.37,
+      "mean": 80.2,
+      "p95": 176.0,
+      "edge": 0.0355,
+      "hf": 13.49,
+      "lf": 41.48,
+      "std8": 43.84,
+      "edge8": 0.3435,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_sdo_svs5649_sun",
+      "source": "022_v05_span_237.00.mp4",
+      "t": 15.25,
+      "std": 38.19,
+      "mean": 95.42,
+      "p95": 149.0,
+      "edge": 0.0836,
+      "hf": 15.21,
+      "lf": 23.57,
+      "std8": 29.15,
+      "edge8": 0.5814,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_skylab4_south_atlantic_earth",
+      "source": "022_v05_span_268.30.mp4",
+      "t": 19.05,
+      "std": 52.04,
+      "mean": 105.17,
+      "p95": 190.0,
+      "edge": 0.0552,
+      "hf": 9.81,
+      "lf": 48.47,
+      "std8": 49.49,
+      "edge8": 0.2096,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_sdo_coronal_loops_limb",
+      "source": "022_v05_span_144.30.mp4",
+      "t": 22.12,
+      "std": 40.82,
+      "mean": 71.33,
+      "p95": 152.0,
+      "edge": 0.0097,
+      "hf": 7.39,
+      "lf": 38.02,
+      "std8": 39.16,
+      "edge8": 0.1558,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_svs3549_sun.mp4",
+      "t": 25.25,
+      "std": 38.69,
+      "mean": 56.22,
+      "p95": 118.0,
+      "edge": 0.0246,
+      "hf": 11.86,
+      "lf": 32.45,
+      "std8": 34.42,
+      "edge8": 0.1907,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
