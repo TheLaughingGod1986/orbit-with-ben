@@ -47723,18 +47723,31 @@
           "at": "2026-10-19T06:11Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting Daily Studio read for OWB and HOS"
+        },
+        {
+          "at": "2026-10-19T06:17Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Read 11 OWB longs + 58 OWB Shorts and 4 HOS longs + 14 HOS Shorts from Studio"
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-19T06:11Z",
+        "at": "2026-10-19T06:17Z",
         "by": "gemini",
-        "note": "Starting Daily Studio read for OWB and HOS"
-      }
+        "note": "Read 11 OWB longs + 58 OWB Shorts and 4 HOS longs + 14 HOS Shorts from Studio"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
     }
   ],
   "focus": [],
