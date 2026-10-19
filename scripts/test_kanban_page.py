@@ -47,7 +47,7 @@ def js_function(src: str, name: str) -> str:
         i += 1
 
 
-PROGRESS_FUNCTIONS = ["OWB_STAGES", "taskKeysFor", "taskStageInfo", "jobOutcome", "jobFollowUps", "jobImpact", "progressUpdates", "JOB_KINDS", "jobKindOf", "dailyWorkSummary", "videoTotals", "runningJob", "linkedJobsFor"]
+PROGRESS_FUNCTIONS = ["OWB_STAGES", "taskKeysFor", "taskStageInfo", "jobOutcome", "jobFollowUps", "jobImpact", "progressUpdates", "JOB_KINDS", "jobKindOf", "dailyWorkSummary", "videoTotals", "runningJob", "linkedJobsFor", "jobTargetHtml"]
 
 
 class OrderOfWorkRemoved(unittest.TestCase):
@@ -256,7 +256,7 @@ class TaskProgress(unittest.TestCase):
     """A job outcome must not imply that a film or its review is complete."""
 
     def evaluate(self, expression, board=None):
-        names = ["esc", "MINUTE", "ts", "WORKER", "cleanTitle", "plainTitle", "pw", "fd", "fw"] + PROGRESS_FUNCTIONS
+        names = ["esc", "MINUTE", "ts", "WORKER", "cleanTitle", "plainTitle", "pw", "fd", "fw", "filmJobs", "jobRollup", "jobRollupHtml", "ago"] + PROGRESS_FUNCTIONS
         lib = "\n".join(js_function(page(), n) for n in dict.fromkeys(names))
         script = f"const fromDb = {json.dumps(board or {})};\n{lib}\nconsole.log(JSON.stringify({expression}));"
         out = subprocess.run(["node", "-e", script], capture_output=True, text=True, timeout=30)
@@ -342,7 +342,26 @@ class TaskProgress(unittest.TestCase):
 
     def test_video_totals_exclude_scheduled_and_live_from_unfinished(self):
         summary = self.evaluate('videoTotals({wait:Array(19),sched:Array(2),live:Array(1)})')
-        self.assertEqual(summary, "19 unfinished · 2 scheduled · 1 live")
+        self.assertEqual(summary, "19 unfinished videos · 2 scheduled · 1 live")
+
+    def test_finished_subtask_changes_its_video_job_counts_without_finishing_the_video(self):
+        board = {"jobs": [{"id":"J1", "title":"OWB 024: diagram fixes", "status":"claimed", "progress":{"step":2,"of":4}},
+                          {"id":"J2", "title":"OWB 024: final review", "status":"blocked"}]}
+        expression = """(()=>{const before=jobRollup('OWB:024'); const j=fromDb.jobs.shift();
+          j.status='done';j.at=new Date().toISOString();j.result='New diagrams delivered';fromDb.extra={done:[j]};
+          const after=jobRollup('OWB:024');return {before:[before.active,before.waiting,before.done],
+            after:[after.active,after.waiting,after.done],html:jobRollupHtml('OWB:024')};})()"""
+        result = self.evaluate(expression, board)
+        self.assertEqual(result["before"], [1,1,0])
+        self.assertEqual(result["after"], [0,1,1])
+        self.assertIn("J1 done", result["html"])
+        self.assertIn("1 waiting", result["html"])
+
+    def test_now_box_discloses_work_outside_the_video_plan(self):
+        board = {"owb":[{"film":"024"}]}
+        html = self.evaluate('jobTargetHtml({id:"J1",title:"OWB ideas",taskKeys:["OWB:051"]})', board)
+        self.assertIn("OWB:051", html)
+        self.assertIn("outside the recorded video plan", html)
 
     def test_repo_disambiguates_numeric_video_ids_and_structured_links_are_used(self):
         self.assertEqual(self.evaluate('taskKeysFor({id:"J1",title:"Edit fixes",repo:"hos",film:"006"})'), ["HOS:006"])
