@@ -1,42 +1,95 @@
-# Working title
+# Why Does Uranus's Moon Miranda Have a 12-Mile-High Ice Cliff?
 
-<!-- Cold open first — no "What is X?" / welcome / history -->
+Look across the horizon of Miranda in orbit around Uranus in the images NASA's Voyager 2 captured on January 24, 1986, and you see the sunlit fault wall of Verona Rupes: a sheer cliff of water ice estimated at twenty kilometers, or twelve miles, deep — up to twelve times deeper than Earth's Grand Canyon.
 
-Orbit has just … — why …?
+Not because Miranda was shattered into rubble and glued back together, as scientists first suspected in 1986, but because orbital resonances with neighbouring moons once flexed Miranda's interior like a rubber ball, melting a subsurface ocean at least sixty-two miles deep beneath an icy crust no more than nineteen miles thick that cracked along giant faults.
 
-[CHAPTER CARD: Act 1 Title]
-[VISUAL MUST: … · WHO: Name (1564–1642) — role in 4 words · WHEN: 1610]
-[ORBIT ACTS: Orbit …]
-[TEACH: …]
+What would you see and feel if you stepped off that rim one point eight billion miles from the Sun, where a rock dropped off the highest cliff takes a full ten minutes to reach the foot of the cliff? In Miranda's low gravity, you would fall for about twelve minutes before reaching the bottom at two hundred kilometers per hour — the speed of a racecar, survivable with proper airbag protection. Now why would a moon only two hundred and ninety-three miles wide hold enough heat to tear its surface apart?
 
-But …
+[VISUAL MUST: Frame 0 is a real graded NASA/JPL-Caltech Voyager 2 high-resolution narrow-angle image PIA00044 of Miranda's giant fault scarp and NASA APOD Verona Rupes limb view against deep space, graded to house look with no whole planet as a Veo start frame, no title card, and no Orbit. Cut every four to six seconds: real Voyager 2 close-approach fault frames (`PIA00044`, `PIA00141`) with a low rumble SFX, then our own code graphic in the explainer look on a lifted navy background comparing Verona Rupes's estimated 12-mile (20-kilometer) depth — 10 to 12 times deeper than Earth's Grand Canyon — where a dropped rock takes a full 10 minutes to reach the foot of the cliff and a falling adventurer drops for about 12 minutes to reach 200 km/h, the speed of a racecar. · WHEN: January 24, 1986, 10 minutes, 12 minutes: the first markers on the film's build-up timeline · DATA: Verona Rupes estimated 20-kilometer (12-mile) depth — 10 to 12 times the depth of Earth's Grand Canyon — with a 10-minute rock fall and 12-minute adventurer fall to 200 km/h on a 293.0-mile-wide (471.6 km) moon at 1.8 billion miles (2.9 billion km) from the Sun · SCALE: a 12-mile (20-kilometer) ice cliff — 10 to 12 times deeper than Earth's Grand Canyon — where low gravity stretches a rock's fall to a full 10 minutes and a skydiver's drop to 12 minutes at 200 km/h, the speed of a racecar · FACT: Ten-minute rock fall · NUMBER OBJECT (hook): the 12-mile (20 km) Verona Rupes cliff scale beside Earth's Grand Canyon · LABEL: 12 MILES DEEP]
+[TEACH: First concrete answer lands in the opening seconds; mystery, secret, and lived stakes before 0:45; first chapter card held until after 0:30. NASA Science Miranda overview (science.nasa.gov/uranus/moons/miranda/), NASA Science Uranus Moons Facts (science.nasa.gov/uranus/moons/facts/) & NASA APOD Verona Rupes (Nov. 29, 2020, science.nasa.gov/image-article/apod-2020-november-29-verona-rupes-tallest-known-cliff-in-the-solar-system/).]
 
-[CHAPTER CARD: Act 2 Title]
-[VISUAL MUST: … · DATA: animated bar chart, A vs B, builds on the number]
-[TEACH: …]
+[CHAPTER CARD: The Last Moon Found Before Voyager 2]
 
-<!-- First payoff lands here. One subscribe line, 25–50% through: templates/SUBSCRIBE_BEAT_LINES.md -->
+On February 16, 1948, Dutch-born astronomer Gerard Kuiper discovered Miranda in telescopic photos at the McDonald Observatory in Texas, and named it for Prospero's daughter in William Shakespeare's play The Tempest — the last Uranian moon found before Voyager 2 arrived thirty-eight years later.
+
+Orbiting Uranus one point eight billion miles — two point nine billion kilometers — from the Sun, Miranda has a mean diameter of two hundred and ninety-three miles, or four hundred and seventy-one point six kilometers.
+
+At about five hundred kilometers across, it is only one-seventh as large as Earth's Moon and consists of roughly equal amounts of water ice and silicate rock.
+
+However, even though Miranda's porous surface brightens at opposition, none of the larger Uranian moons reflect more than about one-third of the sunlight striking them, because carbonaceous material darkened their ice. Now how did Voyager 2 capture sharp images in that dim twilight?
+
+[VISUAL MUST: Real telescopic discovery context and NASA/JPL-Caltech Voyager 2 full-disc view `PIA18185` alongside `PIA01361` (Montage of Uranus's Five Largest Satellites: Oberon, Titania, Umbriel, Ariel, and Miranda), followed by our own code graphic in the explainer look: the film's timeline starting on February 16, 1948 with Gerard Kuiper's discovery at McDonald Observatory, paired with Miranda's 293.0-mile (471.6 km) mean diameter scaled at one-seventh the size of Earth's Moon at 1.8 billion miles (2.9 billion km) from the Sun, where the surface reflects no more than about one-third of sunlight. · WHO: Gerard Kuiper (1905–1973) — Dutch-American planetary astronomer · WHO: William Shakespeare (1564–1616) — English playwright and poet · WHEN: February 16, 1948, 38 years, 1986, added to the timeline · DATA: Miranda's 293.0-mile (471.6 km, ~500 km) mean diameter — only one-seventh as large as Earth's Moon — orbiting at 1.8 billion miles (2.9 billion km) from the Sun and reflecting no more than about one-third of incident sunlight · SCALE: a world just 293 miles across — only one-seventh as large as Earth's Moon — orbiting 1.8 billion miles from the Sun where radiation-darkened ice reflects no more than a third of the sunlight hitting it · FACT: Reflects one-third of sunlight · NUMBER OBJECT (ch 1): Miranda's 293.0-mile (471.6 km) sphere beside Earth's Moon (1:7 diameter scale) · LABEL: ONE-SEVENTH OUR MOON]
+[TEACH: NASA Science Miranda overview (science.nasa.gov/uranus/moons/miranda/), NASA Science Uranus Moons Facts (science.nasa.gov/uranus/moons/facts/), NASA Science Gerard Kuiper (science.nasa.gov/people/gerard-kuiper/) & LOC Name Authority n50046182 (Kuiper, Gerard P., 1905–1973) and n78095332 (Shakespeare, William, 1564–1616): discovered Feb. 16, 1948 by Gerard P. Kuiper at McDonald Observatory in western Texas (last moon of Uranus discovered prior to Voyager 2 in 1986), named for Prospero's daughter in Shakespeare's The Tempest; 293.0 miles (471.6 km) mean diameter (~500 km, 1/7 Earth's Moon), roughly equal amounts of water ice and silicate rock, 1.8 billion miles (2.9 billion km) from the Sun, reflecting ≤1/3 of sunlight.]
+
+[CHAPTER CARD: The Flyby at the Edge of the Sunlight]
+
+Of the five major Uranian moons known before Voyager 2 — Miranda, Ariel, Umbriel, Titania, and Oberon — Miranda is the smallest and closest to Uranus, orbiting across the path Voyager 2 threaded on January 24, 1986 toward Neptune.
+
+While Voyager 2 photographed Uranus's largest moon, Titania — more than one thousand miles across — from two hundred and twenty-nine thousand miles away at an eight-mile resolution, it skimmed just twenty-two thousand five hundred miles — thirty-six thousand two hundred and fifty kilometers — from Miranda.
+
+Then to prevent long exposures from blurring the dim moon, engineers at the Jet Propulsion Laboratory's Navigation Ancillary Information Facility developed new camera-pointing techniques, and the U.S. Geological Survey in Flagstaff registered nine images — including seven closest-approach frames — into a south-polar mosaic resolving ridges two thousand one hundred and sixty feet — six hundred and sixty meters — across. Now why did scientists compare Miranda's southern hemisphere to Frankenstein's monster?
+
+[VISUAL MUST: Real NASA/JPL-Caltech and U.S. Geological Survey Flagstaff 9-image south-polar mosaic `PIA01490`, closest-approach fault frame `PIA00044` (36,250 km / 22,500 miles at 660 m / 2,160 ft resolution), and `PIA00039` (Titania at 369,000 km / 229,000 miles and 13 km / 8 mi resolution), followed by our own code graphic in the explainer look: Voyager 2's 22,500-mile (36,250 km) Miranda pass at 2,160-foot (660 m) resolution compared with its 229,000-mile (369,000 km) Titania pass at 8-mile (13 km) resolution. · WHEN: January 24, 1986, added to the timeline · DATA: Voyager 2 Jan. 24, 1986 flyby distance of 22,500 miles (36,250 km) at 2,160-foot (660 m) resolution across 7 high-resolution frames in a 9-image mosaic (`PIA01490`, `PIA00044`) vs 229,000 miles (369,000 km) and 8-mile (13 km) resolution at >1,000-mile (1,600 km) Titania (`PIA00039`) · SCALE: a closest approach of 22,500 miles — more than 10 times closer than Voyager 2's 229,000-mile view of Titania, sharpening surface detail from 8 miles down to 2,160 feet · NUMBER OBJECT (ch 2): the 22,500-mile Miranda pass vs 229,000-mile Titania pass distance and resolution bar · LABEL: 22,500 MILES AWAY]
+[ORBIT ACTS: Orbit floats beside Voyager 2's narrow-angle camera in the dim blue twilight near Uranus, steadying his footing as the tiny 293-mile moon fills the viewfinder below.]
+[TEACH: NASA Photojournal PIA00044 (science.nasa.gov/photojournal/miranda-high-resolution-of-large-fault/), PIA01490 (science.nasa.gov/photojournal/south-polar-view-of-miranda/) & PIA00039 (science.nasa.gov/photojournal/titania-highest-resolution-voyager-picture/): on Jan. 24, 1986, Voyager 2 imaged Miranda from 36,250 km (22,500 mi) at 660 m (2,160 ft) resolution and combined 9 images (7 high-resolution closest-approach images plus distant limb frames) using JPL Navigation Ancillary Information Facility pointing data and USGS Flagstaff registration, compared with 369,000 km (229,000 mi) and 13 km (8 mi) resolution at >1,600 km (1,000 mi) Titania.]
+
 [SUBSCRIBE BEAT]
-If you want the next one, …, subscribing is how you'll see it.
+Every Sunday Orbit goes somewhere new. Subscribe and you'll be there for how NASA's Parker Solar Probe touched the Sun.
 
-Then …
+[CHAPTER CARD: Three Coronae on a Frankenstein Moon]
 
-[CHAPTER CARD: Act 3 Title]
-[VISUAL MUST: … · FACT: card text, 4 words max]
-[TEACH: …]
+Before Voyager 2 arrived in January 1986, scientists thought a moon one-seventh the size of Earth's Moon would be a frozen ball of ice whose formation heat had dissipated long ago.
 
-However …
+Wrong.
 
-[CHAPTER CARD: Act 4 Title]
-[VISUAL MUST: …]
-[ORBIT ACTS: Orbit …]
-[TEACH: …]
+In Voyager 2's colour view — taken from ninety-one thousand miles at a one-point-seven-mile resolution — and its seven-hundred-meter terrain frames, Miranda's southern hemisphere looked like Frankenstein's monster: pieced together from parts that never quite merged properly.
 
-Payoff: …
+Beside ancient plains pockmarked by craters from three to twenty miles — five to thirty kilometers — wide sat three large trapezoidal features known as coronae, unique in our solar system: lightly cratered collections of bands, scarps, and ridges — including a bright chevron — separated from older terrain by sharp boundaries like mismatched patches on a moth-eaten coat, or squares on a quilt.
 
-Bigger question: …
+To explain that mystery, scientists first proposed that Miranda had been smashed apart and haphazardly reassembled, or that meteorite strikes had melted subsurface ice until slushy water rose and refroze. But if Miranda was never blown apart, how did its giant cliffs form?
 
-Next, … <!-- hand-off to the next film; no goodbye, no second ask -->
+[VISUAL MUST: Real NASA/JPL-Caltech highest-resolution colour composite `PIA00042` (taken from 147,000 km / 91,000 miles at 2.7 km / 1.7 mile resolution) and terrain view `PIA00141` (700 m / 2,300 ft resolution) highlighting the ancient cratered terrain (craters 5 to 30 km / 3 to 20 miles across) against the three trapezoidal coronae and bright chevron (`PIA01490`), followed by our own code graphic in the explainer look: mapping the 3 trapezoidal coronae and bright chevron beside the 3-to-20-mile (5-to-30 km) impact craters across Miranda's southern hemisphere. · WHEN: January 1986, added to the timeline · DATA: Voyager 2 southern-hemisphere colour composite (`PIA00042` at 91,000 miles / 147,000 km and 1.7-mile / 2.7-km resolution) and terrain frames (`PIA00141` at 2,300-foot / 700-m resolution): 3 unique trapezoidal coronae (including the bright chevron) bordering ancient terrain with craters 3 to 20 miles (5 to 30 km) wide · SCALE: three giant trapezoidal coronae — unique in the solar system — stitched beside 3-to-20-mile impact craters with sharp boundaries like mismatched patches on a moth-eaten coat or squares on a quilt · NUMBER OBJECT (ch 3): the 3 trapezoidal coronae vs 3-to-20-mile (5-to-30 km) cratered terrain patchwork map · LABEL: 3 UNIQUE CORONAE]
+[TEACH: Midpoint twist ("Wrong.") overturning the dead frozen ball of ice expectation (HOTU/SEA rule). NASA Science Miranda overview (science.nasa.gov/uranus/moons/miranda/), NASA Photojournal PIA00042 (science.nasa.gov/photojournal/miranda-highest-resolution-color-picture/), PIA00141 (science.nasa.gov/photojournal/mirandas-geologic-history-variety-of-terrain/), PIA01490 (science.nasa.gov/photojournal/south-polar-view-of-miranda/) & Johns Hopkins APL Release (Oct. 28, 2024): 3 unique trapezoidal coronae (with ovoid banded regions and the distinctive chevron) separated from heavily cratered terrain (largest craters ~30 km / 20 mi, many 5–10 km / 3–6 mi) like mismatched patches on a moth-eaten coat / squares on a quilt; early collisional breakup/reassembly vs meteorite-triggered slushy water upwelling hypotheses.]
 
-<!-- Teach on screen (Ben, 11 Oct 2026; AGENTS.md): 3+ DATA, a WHO card per named person at first mention, WHEN for every date (timeline for 3+), 2–4 FACT beats, all inside [VISUAL MUST: …] -->
-<!-- Aim 4–6 acts · 8–9 min (about 1,200–1,300 words) · STUDIO_PLAYBOOK.md §3 -->
+[CHAPTER CARD: Slickensides and the Tilted Orbit]
+
+Look closely at Voyager 2's highest-resolution fault image, and you see how Miranda's surface broke through global stretching and faulting rather than a random pile of rubble.
+
+Below and right of centre in frame PIA00044, a fault scarp drops three miles — five kilometers — high, higher than the walls of Earth's Grand Canyon, while beyond it on the limb Verona Rupes plunges twenty kilometers into shadow.
+
+Etched down that three-mile cliff are grooves called slickensides — scrape marks made by fault blocks as they rubbed together while the down-dropped block offset the ridges.
+
+What supplied the force to slide blocks of ice miles high was orbital physics: unlike Uranus's other four main moons, Miranda's orbit is slightly inclined, and in the past it was locked into an orbital resonance with nearby moons — where each moon's period is an exact integer of the others', as Io makes two orbits for every one of Europa — deforming Miranda like a rubber ball. Now when scientists in 2024 reverse-engineered those faults, what secret did they find beneath the ice?
+
+[VISUAL MUST: Real NASA/JPL-Caltech `PIA00044` close-up of the 5-kilometer (3-mile) fault scarp showing slickenside grooves and offset ridges alongside `PIA01354` (36,000 km / 22,000 miles range, 800 m / 2,600 ft resolution across a 250 km / 150 mi area with a 25 km / 15 mi crater), followed by our own code graphic in the explainer look: the 3-mile (5 km) slickenside fault block and 12-mile (20 km) Verona Rupes limb scarp driven by integer-ratio orbital resonance tidal flexing (compared with Io and Europa's 2:1 resonance). · WHEN: 2024, added to the timeline · DATA: 3-mile (5 km) inner slickenside fault scarp (`PIA00044`) and 12-mile (20 km) Verona Rupes limb drop driven by integer-ratio orbital resonance tidal flexing (analogous to Jupiter's 2:1 Io-Europa resonance) · SCALE: fault blocks scraping past each other along a 3-mile (5 km) inner cliff and a 12-mile (20 km) limb scarp — higher than the walls of the Grand Canyon — as integer-ratio orbital resonance flexed the moon like a rubber ball · NUMBER OBJECT (ch 4): the 3-mile (5 km) slickenside fault block and 12-mile (20 km) Verona Rupes scarp diagram · LABEL: 3-MILE FAULT BLOCK]
+[ORBIT ACTS: Orbit braces his magnetic boots on the upper ridge of the PIA00044 fault scarp, shines his headlamp across the parallel slickenside grooves on the sheer ice wall, and watches the lower block slip downward.]
+[TEACH: NASA Photojournal PIA00044 (science.nasa.gov/photojournal/miranda-high-resolution-of-large-fault/), PIA01354 (science.nasa.gov/photojournal/uranus-innermost-satellite-miranda/), NASA Science Miranda (science.nasa.gov/uranus/moons/miranda/) & Johns Hopkins APL Release (Oct. 28, 2024): PIA00044 shows a fault scarp 5 km (3 mi) high — higher than the walls of the Grand Canyon on Earth — with slickensides grooves where fault blocks rubbed together and offset ridges; Miranda's slightly inclined orbit and past integer-ratio orbital resonances with nearby moons (like Io's 2 orbits for every 1 orbit of Europa) deformed the moon like a rubber ball, generating tidal friction, internal heat, and surface stress cracks.]
+
+[CHAPTER CARD: The Sixty-Two-Mile Ocean Beneath the Ice]
+
+In a Planetary Science Journal study published on October 16, 2024 and announced on October 28, 2024 by the Johns Hopkins Applied Physics Laboratory, researchers tested computer models against the cracks, ridges, and coronae mapped by Voyager 2.
+
+The setup matching the observed surface features required a vast ocean beneath Miranda's icy surface some one hundred to five hundred million years ago — at least sixty-two miles, or one hundred kilometers, deep, hidden beneath an icy crust no more than nineteen miles, or thirty kilometers, thick.
+
+Given Miranda's radius of one hundred and forty-six miles — two hundred and thirty-five kilometers — that ocean filled almost half of the moon's body, like Saturn's moon Enceladus, which scientists thought was a frozen ball of ice until Cassini arrived in 2004 and found a global ocean.
+
+However, when the moons' orbital ballet desynchronized and Miranda cooled, its ocean did not leave the telltale surface cracks that expansion would cause if it had completely frozen — suggesting that seventy-six years after Kuiper's 1948 discovery, Miranda may still hold a thin ocean now. Now is Miranda already a confirmed ocean world — or is there a catch in our 1986 data?
+
+[VISUAL MUST: Real Voyager 2 southern-hemisphere imagery (`PIA18185`) paired with our own code graphic in the explainer look: first, a cross-section of Miranda's 146-mile (235 km) radius showing an icy crust no more than 19 miles (30 km) thick over a subsurface ocean at least 62 miles (100 km) deep some 100 to 500 million years ago; second, the film's 76-year timeline building across Feb. 16, 1948 (Kuiper discovery), Jan. 24, 1986 (Voyager 2 22,500-mile flyby), 2004 (Cassini Enceladus parallel), 2023 (Voyager 2 particle reanalysis), and Oct. 16 / Oct. 28, 2024 (62-mile ocean model). · WHEN: October 16, 2024, October 28, 2024, 100 to 500 million years ago, 2004, 76 years, 1948, added to the timeline · DATA: October 16, 2024 Planetary Science Journal model (announced Oct. 28, 2024 by JHU APL): subsurface ocean at least 62 miles (100 km) deep under an ice crust no more than 19 miles (30 km) thick inside Miranda's 146-mile (235 km) radius 100 to 500 million years ago, plus the 76-year (1948–2024) discovery timeline · SCALE: an internal ocean at least 62 miles (100 km) deep beneath a 19-mile (30 km) crust — filling almost half of Miranda's entire 146-mile radius, uncovered 76 years after Kuiper's 1948 telescope discovery · FACT: Ocean filled half its radius · NUMBER OBJECT (ch 5): Miranda's 146-mile radius cut-away showing the 19-mile ice shell and 62-mile ocean depth alongside the 76-year (1948–2024) timeline · LABEL: 62-MILE DEEP OCEAN]
+[TEACH: Johns Hopkins APL News Release (Oct. 28, 2024, jhuapl.edu/news/news-releases/241028-uranus-moon-miranda-with-ocean-beneath-surface-new-study, reporting Planetary Science Journal study published Oct. 16, 2024 by Caleb Strom, Tom Nordheim, and Alex Patthoff): reverse-engineering Miranda's surface stress patterns required a subsurface ocean at least 62 miles (100 km) deep beneath an icy crust no more than 19 miles (30 km) thick some 100–500 million years ago, filling almost half of Miranda's 146-mile (235 km) radius (comparable in size and composition to Enceladus before Cassini arrived in 2004); absence of telltale freeze-expansion cracks suggests the interior has not completely frozen and may still retain a thin ocean today.]
+
+[CHAPTER CARD: The Unseen Half of Miranda]
+
+You might wonder whether Miranda is already a confirmed ocean world, especially after a 2023 Johns Hopkins APL study reanalyzed Voyager 2 particle and magnetic data and found Miranda and Ariel may be releasing material into space, and 2024 James Webb Space Telescope observations concluded Ariel may have an ocean replenishing its carbon-dioxide ice.
+
+Here is why planetary scientists caution that we will not know for sure whether Miranda has an ocean until we go back and collect more data: the few images Voyager 2 captured on January 24, 1986 show only Miranda's southern hemisphere.
+
+We have seen only one of Miranda's two hemispheres — leaving the northern half unmapped in darkness — and because 1986 images cannot detect liquid water underground, proving whether an ocean survives beneath Verona Rupes requires sending a spacecraft to Uranus.
+
+Until a future mission returns to the icy twilight one point eight billion miles from the Sun, another NASA spacecraft has dived in the opposite direction into the solar atmosphere — and next, we ask why NASA's Parker Solar Probe flew inside the Sun's corona without melting.
+
+[VISUAL MUST: Real NASA/JPL-Caltech `PIA18185` southern-hemisphere mosaic rotating into the unmapped dark northern hemisphere (`PIA01361` gray missing-coverage hemisphere) alongside Uranus and Ariel, followed by our own code graphic in the explainer look: 1 imaged southern hemisphere vs 1 unmapped northern hemisphere from Voyager 2's single January 24, 1986 pass, plus the 2023 Voyager 2 particle/magnetic reanalysis and 2024 JWST Ariel carbon-dioxide ice study markers. End on a Veo hero shot: pulling back from the 12-mile sunlit ice wall of Verona Rupes in the cold blue twilight of Uranus all the way inward across 1.8 billion miles to the blazing solar corona where NASA's Parker Solar Probe skims through glowing coronal streamers behind its carbon-composite heat shield. Hold that moving picture for 2–3 seconds past the last word while the music fades. No goodbye card, no subscribe graphic, no Orbit in the last shot. · WHEN: 2023, 2024, January 24, 1986, completing the film's timeline · DATA: Voyager 2 imaged only 1 of Miranda's 2 hemispheres (the southern hemisphere on Jan. 24, 1986), paired with 2023 Voyager 2 particle/magnetic reanalysis (Miranda and Ariel material release) and 2024 JWST Ariel carbon-dioxide ice observations · SCALE: only 1 of Miranda's 2 hemispheres has ever been seen — leaving half of the entire 293-mile world unmapped in darkness, like judging all of Earth from a single hemisphere · FACT: Half the moon unseen · NUMBER OBJECT (ch 6): the 1-imaged-hemisphere vs 1-unmapped-hemisphere globe of Miranda · LABEL: HALF THE MOON UNSEEN]
+[TEACH: Scariest / most sensational claim ("Is Miranda already a confirmed ocean world teeming with life?") raised and explained away using the Johns Hopkins APL Oct. 28, 2024 release (Tom Nordheim, Ian Cohen 2023 Voyager 2 particle/magnetic reanalysis, Richard Cartwright 2024 JWST Ariel carbon-dioxide ice study) & NASA Photojournal PIA01361: Voyager 2's brief Jan. 24, 1986 flyby imaged only Miranda's southern hemisphere ("the only part we've seen"), so confirming whether liquid water remains today and mapping the unseen northern hemisphere requires returning to Uranus with a new spacecraft (HOTU/SEA rule). Hand-off to 053: Why NASA's Parker Solar Probe Flew Inside the Sun's Corona without Melting.]
+
+<!-- HOOK ESCALATION DISCOVERY PAYOFF BIGGER QUESTION -->
