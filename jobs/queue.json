@@ -49280,13 +49280,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-19T11:11Z",
-      "eta": "2026-10-19T12:41Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T11:10Z",
-      "result": "",
+      "result": "parked for Chief: no unreserved live OWB long meets this backlog brief (all 12 live longs in 2026-10-19 snapshot including 022 h8HGfyShEHI have running tests in j0099/notext_test_compare/THUMB_LEDGER T005-T007/studio_thumbs_J0091 or *_tc_b.json on record in j0152/j0234/j0386/j0402/j0419; per Chief J0293 order c7a51a9f do not build duplicate B). Cancel J0650 or retire owb-thumb-b from backlog.json until a running test finishes.",
       "history": [
         {
           "at": "2026-10-19T11:10Z",
@@ -49317,6 +49317,11 @@
           "at": "2026-10-19T11:13Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Per Chief J0293 order (c7a51a9f), no duplicate B built; parking J0650 for Chief"
+        },
+        {
+          "at": "2026-10-19T11:13Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: no unreserved live OWB long meets this backlog brief (all 12 live longs in 2026-10-19 snapshot including 022 h8HGfyShEHI have running tests in j0099/notext_test_compare/THUMB_LEDGER T005-T007/studio_thumbs_J0091 or *_tc_b.json on record in j0152/j0234/j0386/j0402/j0419; per Chief J0293 order c7a51a9f do not build duplicate B). Cancel J0650 or retire owb-thumb-b from backlog.json until a running test finishes."
         }
       ],
       "kind": "chart",
