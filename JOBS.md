@@ -281,6 +281,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0627 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0628 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0629 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
+| J0630 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
