@@ -364,3 +364,36 @@ describe("sign-in target", () => {
     expect(() => authTarget(["--analytics", "x"])).toThrow();
   });
 });
+
+describe("catalog completeness", () => {
+  it("cross-checks playlist IDs against remembered Analytics IDs without duplicates", async () => {
+    const { catalogIds } = await import("../scripts/analytics-snapshot");
+    expect(catalogIds(["playlist001"], ["playlist001", "history0001"], ["analytics01", "bad"])).toEqual(["playlist001", "history0001", "analytics01"]);
+  });
+  it("restores dated public entries without inventing historical growth or rewriting snapshots", async () => {
+    const { loadChannel } = await import("../scripts/analytics-report");
+    const dir=fs.mkdtempSync(path.join(os.tmpdir(),"tracker-catalog-"));
+    try {
+      const ch=path.join(dir,"owb");fs.mkdirSync(path.join(ch,"snapshots"),{recursive:true});
+      const old=snap("2026-10-05",90,1,[video("existing001",90)]),now=snap("2026-10-06",100,1,[video("existing001",100)]);now.totals.videos=2;
+      fs.writeFileSync(path.join(ch,"snapshots/2026-10-05.json"),JSON.stringify(old));
+      const raw=JSON.stringify(now);fs.writeFileSync(path.join(ch,"snapshots/2026-10-06.json"),raw);
+      fs.writeFileSync(path.join(ch,"catalog_recovery.json"),JSON.stringify({channelId:now.channelId,observedAt:"2026-10-06T07:00:00Z",source:"verified public catalog",videos:[video("recovered01",622),video("recovered01",622),{...video("private0001",200),privacy:"private"}]}));
+      const loaded=loadChannel(dir,"owb"),report=buildReport("owb",loaded.snaps,null);
+      expect(report.videos.map(v=>v.id)).toContain("recovered01");expect(report.coverage).toMatchObject({listed:2,reported:2,missing:0});
+      expect(report.videos.find(v=>v.id==="recovered01")?.d1).toBeNull();expect(report.change.d1?.views).toBe(10);
+      expect(report.day1.unknown?.videos).toBe(1);expect(fs.readFileSync(path.join(ch,"snapshots/2026-10-06.json"),"utf8")).toBe(raw);
+    } finally {fs.rmSync(dir,{recursive:true,force:true});}
+  });
+  it("rejects repairs for another channel or older than the latest collection", async () => {
+    const { mergeCatalogRecovery } = await import("../scripts/analytics-report");
+    const dir=fs.mkdtempSync(path.join(os.tmpdir(),"tracker-catalog-"));
+    try {
+      fs.mkdirSync(path.join(dir,"owb"));const snaps=[snap("2026-10-06",100,1,[video("existing001",100)])];
+      for(const repair of [{channelId:"wrong",observedAt:"2026-10-06T07:00:00Z"},{channelId:snaps[0].channelId,observedAt:"2026-10-05T07:00:00Z"}]){
+        fs.writeFileSync(path.join(dir,"owb/catalog_recovery.json"),JSON.stringify({...repair,source:"catalog",videos:[video("recovered01",622)]}));
+        mergeCatalogRecovery(dir,"owb",snaps);expect(snaps[0].videos).toHaveLength(1);
+      }
+    } finally {fs.rmSync(dir,{recursive:true,force:true});}
+  });
+});

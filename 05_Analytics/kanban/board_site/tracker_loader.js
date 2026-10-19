@@ -6,7 +6,7 @@
 //
 // Order: the copy this phone saved last time (instant), then the live file; if the live file differs, it's saved and the
 // page reloads once. With no saved copy and no network, the copy built into this deploy is shown. The line under the
-// snapshot date always says which one you're looking at. Re-checked on return to the app and every 15 minutes.
+// snapshot date always says which one you're looking at. Re-checked on return to the app and every minute.
 (function () {
   const REPO = "TheLaughingGod1986/orbit-with-ben";
   // raw.githubusercontent caches a branch URL for up to 5 min and ignores query strings, so ask the GitHub API which
@@ -47,7 +47,7 @@
       store.set(t);
       if (shown === null) start(t);
       else if (t !== shown) { location.reload(); return; }
-      say(`Live · updates itself after the 06:40 snapshot each morning · checked ${hhmm()}`);
+      say(`Latest saved snapshot fetched ${hhmm()} · source refreshes after the 06:40 collection each morning`);
       return;
     }
     if (shown === null) {
@@ -59,10 +59,12 @@
     }
   }
 
+  const refresh=document.getElementById("tracker-refresh");
+  if(refresh) refresh.onclick=()=>{say("Checking the latest snapshot…");check(false);};
   const saved = store.get();
   if (saved && parse(saved)) { start(saved); say("Saved copy · checking for a newer snapshot…"); }
   else say("Loading the latest snapshot…");
   check(true);
-  setInterval(() => { if (!document.hidden) check(false); }, 15 * 60 * 1000);
+  setInterval(() => { if (!document.hidden) check(false); }, 60 * 1000);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) check(false); });
 })();

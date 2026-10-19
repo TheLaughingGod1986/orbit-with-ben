@@ -21,6 +21,8 @@
   --bg: #111318; --panel: #181b21; --line: #2a2f38; --grid: #23272f;
   --ink: #f2f4f7; --ink-2: #b5bcc8; --ink-3: #868e9c;
   --owb: #3987e5; --hos: #d95926; --up: #4cc26e; --down: #ff7a7a; --chip: #232832; color-scheme: dark; }
+[hidden] { display:none !important; }
+#latestUploads .sub { display:block; color:var(--ink-3); font-size:.82rem; }
 body { background: var(--bg); color: var(--ink); font: 400 14px/1.5 var(--f-body); }
 .wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 48px; display: grid; gap: 20px; }
 h1, h2 { font-family: var(--f-display); font-weight: 600; letter-spacing: .01em; text-wrap: balance; margin: 0; }
@@ -122,6 +124,7 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .miles .track { height: 6px; border-radius: 3px; background: var(--bg); border: 1px solid var(--line); overflow: hidden; } .miles .track i { display: block; height: 100%; background: var(--ink-3); }
 .miles .ms { color: var(--ink-3); font-size: .78rem; }
 .tiers summary { cursor: pointer; color: var(--ink-3); font-size: .8rem; }
+@media (max-width:600px) { .tgt li { grid-template-columns:repeat(2,minmax(0,1fr)); } .tgt .m { white-space:normal; } }
 </style>
 
 <div class="wrap">
@@ -134,7 +137,9 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     <div class="seg" id="gfmt" aria-label="Film type"><button type="button" data-g="all">All</button><button type="button" data-g="long">Long</button><button type="button" data-g="short">Shorts</button></div>
   </header>
   <div class="stamp" id="stamp"></div>
-  <section class="readout" id="readout" aria-label="Totals and growth"></section>
+  <section class="readout" id="readout" aria-label="Whole-channel totals and growth"></section>
+  <div class="stamp" id="coverage"></div>
+  <section class="panel" aria-labelledby="latest-h"><h2 id="latest-h">Latest published uploads</h2><div id="latestUploads"></div></section>
 
   <section class="panel" aria-labelledby="tgt-h">
     <h2 id="tgt-h">Long films vs targets <span class="stamp" id="tgtNote"></span></h2>
@@ -151,7 +156,7 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
   <section class="panel" aria-labelledby="top24-h">
     <div style="display:grid;gap:2px">
-      <h2 id="top24-h">Top videos, last 24 hours</h2>
+      <h2 id="top24-h">Top videos, last 24 hours <span class="stamp">whole channel</span></h2>
       <span class="stamp" id="top24Source"></span>
     </div>
     <ol class="toplist" id="top24"></ol>
@@ -293,7 +298,7 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     const pctTxt = (now, then) => (now == null || then == null) ? null : then === 0 ? (now > 0 ? ["up", "new"] : ["flat", "0%"])
       : ((p) => [p > 0 ? "up" : p < 0 ? "down" : "flat", (p > 0 ? "▲ " : p < 0 ? "▼ " : "") + Math.abs(p).toFixed(Math.abs(p) < 10 ? 1 : 0) + "%"])(100 * (now - then) / then);
     const vsLine = (n, word) => {
-      if (!last || state.gf !== "all") return "";
+      if (!last) return "";
       const nowV = sumDays(shift(last, n), last), first = days[0].day;
       if (nowV == null) return "";
       const prevV = shift(last, 2 * n) >= shift(first, 1) ? sumDays(shift(last, 2 * n), shift(last, n)) : null;
@@ -304,9 +309,17 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     const growth = (label, x, n, word) => `<div class="cell"><span class="eyebrow">${label}</span><span class="big delta ${cls(x && x.views)}">${signed(x && x.views)}</span><span class="sub">views · <span class="delta ${cls(x && x.subscribers)}">${signed(x && x.subscribers)}</span> subs${x && x.source === "analytics" ? " · YT Analytics" : ""}</span>${vsLine(n, word)}</div>`;
     $("readout").innerHTML =
       `<div class="cell"><span class="eyebrow">Subscribers</span><span class="big">${fmt(c.totals.subscribers)}</span><span class="sub">${esc(c.handle)}</span></div>` +
-      `<div class="cell"><span class="eyebrow">Total views</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} videos</span></div>` +
+      `<div class="cell"><span class="eyebrow">Channel views · all videos</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} public videos reported by YouTube</span></div>` +
       growth("Last 24 hours", ch.d1, 1, "the day before") + growth("Last 7 days", ch.d7, 7, "the week before") + growth("Last 30 days", ch.d30, 30, "the 30 days before");
-    $("stamp").textContent = (state.gf !== "all" ? `${state.gf === "short" ? "Shorts" : "Long films"} only (views summed per video; daily chart, weekly totals and sources are whole channel) · ` : "") + `Snapshot ${ukDate(c.date)}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)}` : "") + ` · tracking since ${ukDate(c.firstSnapshot)}`;
+    $("stamp").textContent = `Snapshot ${ukDate(c.date)}${c.snapshotTakenAt?" · collected "+new Date(c.snapshotTakenAt).toLocaleTimeString("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"})+" London":""}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)} (about two days behind)` : "") + ` · Lists: ${state.gf === "all"?"all videos":state.gf === "short"?"Shorts":"long films"}. Channel totals and growth include all videos.`;
+    const listed=c.videos.length, gap=c.totals.videos-listed, sum=sumOf(c.videos,"views");
+    $("coverage").textContent = `Catalog: ${listed} of ${c.totals.videos} reported public videos listed${gap>0?` · ${gap} missing from the latest catalog`:gap<0?" · channel count is still catching up":" · complete"}. Listed video views: ${fmt(sum)}; channel views: ${fmt(c.totals.views)}. YouTube updates these counts separately.`;
+  }
+
+  function drawLatest(c) {
+    const videos=c.videos.slice().sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt)));
+    $("latestUploads").innerHTML = [["Latest long", videos.find(v=>!isShort(v))],["Latest Short",videos.find(isShort)]].map(([label,v])=>
+      `<p><b>${label}:</b> ${v?`<a href="https://youtu.be/${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a><span class="sub">${ukDate(v.publishedAt)} · ${fmt(v.views)} views</span>`:"No published upload recorded"}</p>`).join("");
   }
 
   // ---------------------------------------------------------------- top videos, last 24 hours
@@ -658,7 +671,8 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     const c = cur();
     $("gfmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === state.gf)));
     $("fmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.f === state.f)));
-    drawTabs(); drawReadout(c); drawTargets(c); drawShortTargets(c); drawTop24(c); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
+    const all = DATA.channels.find(x=>x.channel===state.ch);
+    drawTabs(); drawReadout(all); drawLatest(all); drawTargets(c); drawShortTargets(c); drawTop24(all); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
     $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>Top videos, last 24 hours: each video's public view count, compared between the last two daily snapshots — the same two the tile uses. A video those snapshots can't compare reads "unknown" and stays out of the sum. YouTube refreshes the channel's view total and the per-video counts at different times, and a video made private keeps its views in the channel total, so anything the videos don't account for gets its own row instead of being spread over them.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
   }
   render();

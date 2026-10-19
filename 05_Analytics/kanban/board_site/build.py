@@ -84,7 +84,7 @@ TRACKER_HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 TRACKER_PATCHES = [
     ('<span class="eyebrow">YouTube · daily snapshot</span>',
      '<span class="eyebrow">YouTube · daily snapshot · <a href="/">Studio board</a></span>'),
-    ('<div class="stamp" id="stamp"></div>', '<div class="stamp" id="stamp"></div>\n  <div class="stamp" id="livestamp"></div>'),
+    ('<div class="stamp" id="stamp"></div>', '<div class="stamp" id="stamp"></div>\n  <div class="stamp" id="livestamp"></div><button type="button" id="tracker-refresh" class="tab">Refresh data</button>'),
     ('(() => {\n  let DATA = { channels: [] };\n  try { DATA = JSON.parse(document.getElementById("tracker-data").textContent); } catch (e) { /* template without data */ }',
      'window.__trackerStart = (DATA) => {\n  DATA = DATA || { channels: [] };'),
 ]

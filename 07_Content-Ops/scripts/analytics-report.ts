@@ -47,6 +47,21 @@ export function injectData(template: string, data: unknown): string {
   return template.replace("__TRACKER_DATA__", () => json);
 }
 
+/** Apply a dated public-catalog repair without rewriting raw historical snapshots. */
+export function mergeCatalogRecovery(root: string, key: ChannelKey, snaps: Snapshot[]): void {
+  const file = path.join(root, key, "catalog_recovery.json");
+  if (!snaps.length || !fs.existsSync(file)) return;
+  const doc = JSON.parse(fs.readFileSync(file, "utf8")) as { channelId: string; observedAt: string; source: string; videos: Snapshot["videos"] };
+  const latest = snaps[snaps.length - 1], observed = Date.parse(doc.observedAt), taken = Date.parse(latest.takenAt);
+  if (doc.channelId !== CHANNELS[key].id || !Array.isArray(doc.videos) || !Number.isFinite(observed) || observed < taken || observed-taken > 86400000) return;
+  const known = new Set(latest.videos.map(v=>v.id));
+  const added = doc.videos.filter(v=>v.privacy === "public" && /^[A-Za-z0-9_-]{11}$/.test(v.id) && !known.has(v.id) && (known.add(v.id), true));
+  if (added.length) {
+    latest.videos = latest.videos.concat(added);
+    latest.catalogRecovery = { observedAt: doc.observedAt, source: doc.source, addedIds: added.map(v=>v.id) };
+  }
+}
+
 export function loadChannel(root: string, key: ChannelKey): { snaps: Snapshot[]; daily: ChannelDaily | null } {
   const dir = path.join(root, key, "snapshots");
   const snaps = fs.existsSync(dir)
@@ -56,6 +71,7 @@ export function loadChannel(root: string, key: ChannelKey): { snaps: Snapshot[];
         .sort()
         .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) as Snapshot)
     : [];
+  mergeCatalogRecovery(root, key, snaps);
   const dailyPath = path.join(root, key, "channel_daily.json");
   const daily = fs.existsSync(dailyPath) ? (JSON.parse(fs.readFileSync(dailyPath, "utf8")) as ChannelDaily) : null;
   return { snaps, daily };
