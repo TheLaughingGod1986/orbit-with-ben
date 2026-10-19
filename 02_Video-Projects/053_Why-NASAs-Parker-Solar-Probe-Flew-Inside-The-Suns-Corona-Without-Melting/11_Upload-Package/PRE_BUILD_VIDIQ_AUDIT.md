@@ -18,7 +18,7 @@ Copy into each project as:
 | ID / slug | `053_Why-NASAs-Parker-Solar-Probe-Flew-Inside-The-Suns-Corona-Without-Melting` |
 | Working title | Why NASA's Parker Solar Probe Flew Inside the Sun's Corona without Melting |
 | Date pulled | 2026-10-19 |
-| Credits used (approx) | 0 (`v00` script draft only; no VO or picture spend) |
+| Credits used (approx) | 0 (`v01` script draft only; no VO or picture spend) |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA |
 
 ---
@@ -73,10 +73,10 @@ Pull GB (or primary market) research for 5–8 terms.
 ## 3b. Script reviewer (blocking before VO)
 
 ```bash
-cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/053_Why-NASAs-Parker-Solar-Probe-Flew-Inside-The-Suns-Corona-Without-Melting/01_Script/parker_solar_probe_script_master_v00.md
+cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/053_Why-NASAs-Parker-Solar-Probe-Flew-Inside-The-Suns-Corona-Without-Melting/01_Script/parker_solar_probe_script_master_v01.md
 ```
 
-- [x] Score ≥ **90 / 100** (**PASS 92.5 / 100**)  
+- [x] Score ≥ **90 / 100** (**PASS 95.8 / 100**)  
 - Scorecard: `templates/SCRIPT_REVIEW_SCORECARD.md`  
 - Reject / rewrite if below threshold  
 
@@ -118,12 +118,12 @@ Translate data → creative decisions **before** writing the full script:
 
 **Chapter list after audit** (6 acts, each with a teach-point):
 
-1. **The Four-Inch Yardstick and Seven Venus Flybys** — Eugene Parker's (`1927–2022`) mid-1950s solar wind prediction, Oct. 3, 2017 visit, Aug. 12, 2018 Delta IV-Heavy launch (`1,510 lb`), and 7 Venus gravity assists shrinking perihelion to `3.8 million miles` (`475×` Earth solar intensity).  
-2. **Why a Million-Degree Corona Transfers So Little Heat** — Why the million-degree corona doesn't vaporize the spacecraft (`Wrong.`): temperature (particle speed) vs heat (total energy transfer in ultra-thin plasma), 400°F oven vs 212°F boiling water analogy, and `2,500°F` (`1,377°C`) design / `~1,700°F` actual shield temperature vs `1,300–2,200°F` volcanic lava.  
-3. **The Four-and-a-Half-Inch Carbon Foam Shield** — How Betsy Congdon's (`JHU APL`) `8-foot` (`2.4 m`), `4.5-inch` (`11.43 cm`), `160-pound` (`73 kg`) Thermal Protection System uses `97% air` carbon foam between carbon-carbon plates and white ceramic alumina paint (`tested to 3,000°F / 1,650°C`) to hold the spacecraft bus at `85°F` (`30°C`).  
-4. **The Tungsten Cup That Stares Directly at the Sun** — How Justin Kasper's (`SWEAP`) `Solar Probe Cup` peers out from behind the shield using a `4,260°F` (`2,349°C`) Titanium-Zirconium-Molybdenum cup, acid-etched `6,192°F` (`3,422°C`) tungsten grids, sapphire crystal tubes, and niobium wires tested in the `10,000-mirror` Odeillo Solar Furnace.  
-5. **A Gallon of Water and Seven Cell-Phone Sun Sensors** — How two `17.2 sq ft` retractable solar wings (`388 watts`, a kitchen blender) stay cool with `1 gallon` (`3.7 L`) of deionized water (`50–257°F`, living-room cooling power) while cell-phone-sized limb sensors autonomously steer the probe across the `8-minute` radio delay.  
-6. **Crossing the Alfvén Surface and the Switchback Mystery** — Crossing Hannes Alfvén's (`1908–1995`) critical surface at `18.8 solar radii` (`8.127 million miles`) on April 28, 2021, tracing magnetic `switchbacks` with Stuart Bale's (`UC Berkeley`) team to helium-rich supergranule funnels, and completing the `29th close approach` on Sept. 4, 2026 (`40%` of solar circumference in 1 day, zero shield degradation, extended into `2029`).  
+1. **The Sixty-Year Question and Seven Venus Slingshots** — Eugene Parker's (`1927–2022`) mid-1950s solar wind prediction, Oct. 3, 2017 visit, Aug. 12, 2018 Delta IV-Heavy launch (`1,510 lb`), and 7 Venus gravity assists shrinking perihelion from `93 million miles` (`1 AU`) to `3.8 million miles` (`475×` Earth solar intensity).  
+2. **Temperature Versus Heat Inside the Corona** — Why the million-degree corona doesn't vaporize the spacecraft (`Wrong.`): temperature (particle speed) vs heat (total energy transfer in ultra-thin plasma), 400°F oven vs 212°F boiling water analogy, and `2,500°F` (`1,377°C`) design / `~1,700°F` actual shield temperature vs `1,300–2,200°F` volcanic lava.  
+3. **Four and a Half Inches of Carbon Foam** — How Betsy Congdon's (`JHU APL`) `8-foot` (`2.4 m`), `4.5-inch` (`11.43 cm`), `160-pound` (`73 kg`) Thermal Protection System uses `97% air` carbon foam between carbon-carbon plates and white ceramic alumina paint (`tested to 3,000°F / 1,650°C`) to hold the spacecraft bus at `85°F` (`30°C`).  
+4. **The Tungsten Cup That Looks Around the Shield** — How Justin Kasper's (`SWEAP`) `Solar Probe Cup` peers out from behind the shield using a `4,260°F` (`2,349°C`) Titanium-Zirconium-Molybdenum cup, acid-etched `6,192°F` (`3,422°C`) tungsten grids, sapphire crystal tubes, and niobium wires tested in the `10,000-mirror` Odeillo Solar Furnace.  
+5. **One Gallon of Water and Seven Sun Sensors** — How two `17.2 sq ft` retractable solar wings (`388 watts`, a kitchen blender) stay cool with `1 gallon` (`3.7 L`) of deionized water (`50–257°F`, living-room cooling power) while cell-phone-sized limb sensors autonomously steer the probe across the `8-minute` radio delay.  
+6. **Crossing the Alfvén Surface and the Magnetic Switchbacks** — Crossing Hannes Alfvén's (`1908–1995`) critical surface at `18.8 solar radii` (`8.127 million miles`) on April 28, 2021, tracing magnetic `switchbacks` with Stuart Bale's (`UC Berkeley`) team to helium-rich supergranule funnels, and completing the `24th` (June 19, 2025) and `29th close approach` on Sept. 4, 2026 (`40%` of solar circumference in 1 day, zero shield degradation, extended into `2029`).  
 
 ---
 
@@ -135,7 +135,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 |-------------|-----|-------------------|
 | 0–0:05 | Curiosity spike | NASA/JHUAPL Parker Solar Probe behind its 8-foot heat shield + WISPR coronal streamer imagery |
 | ~0:15 | Stakes | 3.8 million miles (4 inches on a 1-yard Earth–Sun stick), 430,000 mph, million-degree corona vs 2,500°F shield vs 85°F spacecraft bus |
-| ~0:30 | Journey clear | 475× Earth solar intensity + Eugene Parker's 1950s solar wind prediction & Aug. 12, 2018 launch; cold open runs ~1:05 before Chapter 1 card (no full-frame chapter card in first 30s) |
+| ~0:30 | Journey clear | 475× Earth solar intensity + Eugene Parker's 1950s solar wind prediction & Aug. 12, 2018 launch; cold open runs ~0:55 before Chapter 1 card (no full-frame chapter card in first 30s) |
 | Chapter starts | Re-hook + chapter card | Each chapter ends on a question answered by the next chapter |
 | Mid | Teach while story continues | Orbit tucks inside the 85°F shadow cone behind the 8-foot heat shield (Ch 2) and peers around the bevelled rim at the glowing red tungsten grids of the Solar Probe Cup (Ch 4) |
 | Final chapter | Payoff + bigger question | Alfvén surface crossing + magnetic switchbacks + Sept. 4, 2026 Encounter 29 / 2029 extension + hand-off to `054` (Are We Living Inside a Simulation?) |
@@ -143,7 +143,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [x] No 30s+ stretch without a new teach or turn  
 - [x] Every chapter earns the next one  
-- [x] Runtime target **8–12 min** in trust-building window (~9.3 min)  
+- [x] Runtime target **8–12 min** in trust-building window (~8.9 min)  
 
 ---
 
@@ -151,7 +151,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [ ] Keywords pulled and primary locked  
 - [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
-- [x] Script reviewer ≥ 90 (**92.5 / 100**)  
+- [x] Script reviewer ≥ 90 (**95.8 / 100**)  
 - [x] Outlier patterns mapped into chapter arc  
 - [x] Thumb concepts match title promise (one object · one emotion)  
 - [x] Chapter teach-points listed (4–6 acts)  
