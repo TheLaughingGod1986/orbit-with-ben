@@ -51562,6 +51562,11 @@
           "at": "2026-10-19T18:41Z",
           "by": "gemini",
           "what": "step 2 of 4 done: HOS newest packs inspected (001 Short s10_miasma_microscope_v01 0/8 PASS, 002 Short s09_dobereiner_triads_v01 0/7 PASS, 003 Short s07_xray_tube_v01 0/7 PASS, 006/005/004 Shorts PASS)"
+        },
+        {
+          "at": "2026-10-19T18:41Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verified gate outputs newer than last render + visual check on WARN sheets for OWB 025 lift_insight_quakes & HOS 001 s10_miasma_microscope"
         }
       ],
       "kind": "qa",
@@ -51576,11 +51581,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
         "at": "2026-10-19T18:41Z",
         "by": "gemini",
-        "note": "HOS newest packs inspected (001 Short s10_miasma_microscope_v01 0/8 PASS, 002 Short s09_dobereiner_triads_v01 0/7 PASS, "
+        "note": "Verified gate outputs newer than last render + visual check on WARN sheets for OWB 025 lift_insight_quakes & HOS 001 s10"
       },
       "taskKeys": [
         "OWB:025",
