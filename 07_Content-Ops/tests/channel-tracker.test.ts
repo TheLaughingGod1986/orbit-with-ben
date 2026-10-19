@@ -5,6 +5,7 @@ import path from "path";
 import {
   addDays,
   buildReport,
+  viewingOverview,
   curveAt,
   gainShare,
   longRetention,
@@ -395,5 +396,32 @@ describe("catalog completeness", () => {
         mergeCatalogRecovery(dir,"owb",snaps);expect(snaps[0].videos).toHaveLength(1);
       }
     } finally {fs.rmSync(dir,{recursive:true,force:true});}
+  });
+});
+
+describe("one-glance viewing and monetization evidence", () => {
+  const day=(day:string,views=10)=>({day,views,minutes:1,subsGained:1,subsLost:0,likes:0,comments:0,shares:0});
+  it("counts no-upload days in Analytics Pacific time and preserves unknown older-video gains",()=>{
+    const now=snap("2026-10-19",100,13,[video("old",30,"2026-08-01T10:00:00Z"),video("new",70,"2026-10-19T00:30:00Z")]);
+    const rows=[day("2026-10-17"),day("2026-10-18",20)];
+    const r=buildReport("owb",[now],{channel:"owb",through:"2026-10-18",rows});
+    expect(r.overview).toMatchObject({noUploadDays:1,noUploadDaysWatched:1,noUploadDayViews:10,olderUnknown:1,olderDayViews:0,eligibleWatchHours:null,eligibleShortViews:null,subscriberEtaDays:null});
+  });
+  it("uses a complete contiguous 28-day window for pace, and excludes Shorts watch time",()=>{
+    const window={views:5,minutes:1680,subs:0,avgViewSeconds:10,avgViewPct:10};
+    const now=snap("2026-10-19",100,13,[video("long",50,"2026-09-01T10:00:00Z","long"),video("short",50)]);
+    now.analytics={through:"2026-10-17",last7:{},last28:{long:window,short:{...window,minutes:99999}},lifetime:{long:window}};
+    const rows=Array.from({length:28},(_,i)=>day(addDays("2026-09-20",i)));
+    const r=buildReport("owb",[now],{channel:"owb",through:"2026-10-17",rows});
+    expect(r.overview?.longHoursEstimate).toBe(28);expect(r.overview?.longHoursPerDay).toBe(1);
+    expect(r.overview?.subscriberEtaDays).toBe(987);
+    const gapped=[...rows];gapped[0]=day("2026-09-18");
+    expect(viewingOverview(now,gapped,r.videos).subscriberEtaDays).toBeNull();
+    expect(viewingOverview(now,gapped,r.videos).longHoursPerDay).toBeNull();
+  });
+  it("never treats lifetime hours of a video older than a year as a 12-month eligible balance",()=>{
+    const now=snap("2026-10-19",100,13,[video("oldlong",100,"2024-01-01T10:00:00Z","long")]);
+    now.analytics={through:"2026-10-17",last7:{},last28:{},lifetime:{oldlong:{views:100,minutes:60000,subs:0,avgViewSeconds:10,avgViewPct:10}}};
+    expect(buildReport("owb",[now],null).overview?.longHoursEstimate).toBeNull();
   });
 });

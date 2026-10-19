@@ -125,6 +125,13 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .miles .ms { color: var(--ink-3); font-size: .78rem; }
 .tiers summary { cursor: pointer; color: var(--ink-3); font-size: .8rem; }
 @media (max-width:600px) { .tgt li { grid-template-columns:repeat(2,minmax(0,1fr)); } .tgt .m { white-space:normal; } }
+
+.explore{border:1px solid var(--line);border-radius:12px;margin:12px 0;background:var(--panel)}
+.explore>summary{padding:17px 20px;cursor:pointer;font-weight:600}.explore>.panel{border:0;margin:0;padding-top:4px}
+.readout{grid-template-columns:repeat(3,minmax(0,1fr))}.readout .cell{min-width:0}.readout .cell:last-child{grid-column:auto}.readout .big{font-size:2rem}
+.older-row,.earnline{display:flex;justify-content:space-between;gap:16px;margin:12px 0}.older-row a{min-width:0}.older-row b{white-space:nowrap}
+progress{width:100%;height:10px;accent-color:var(--accent)}.panel p{line-height:1.5}.tiers p{margin-top:12px}
+@media(max-width:600px){.readout{grid-template-columns:repeat(3,minmax(0,1fr))}.readout .cell{padding:14px 10px}.readout .big{font-size:1.7rem}.readout .eyebrow{font-size:10px}.readout .sub{font-size:11px}.panel{padding:18px}.explore>summary{padding:16px 18px}}
 </style>
 
 <div class="wrap">
@@ -134,35 +141,59 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
       <h1>Channel Tracker</h1>
     </div>
     <div class="tabs" role="tablist" id="tabs"></div>
-    <div class="seg" id="gfmt" aria-label="Film type"><button type="button" data-g="all">All</button><button type="button" data-g="long">Long</button><button type="button" data-g="short">Shorts</button></div>
+
   </header>
   <div class="stamp" id="stamp"></div>
   <section class="readout" id="readout" aria-label="Whole-channel totals and growth"></section>
-  <div class="stamp" id="coverage"></div>
-  <section class="panel" aria-labelledby="latest-h"><h2 id="latest-h">Latest published uploads</h2><div id="latestUploads"></div></section>
 
-  <section class="panel" aria-labelledby="tgt-h">
+  <section class="panel" aria-labelledby="daily-h">
+    <div class="row">
+      <h2 id="daily-h">Daily views</h2>
+      <div class="seg" id="range">
+        <button type="button" data-days="30" aria-pressed="true">30 days</button>
+        <button type="button" data-days="90">90 days</button>
+        <button type="button" data-days="0">All</button>
+      </div>
+    </div>
+    <p class="stamp" id="dailyScope"></p><div class="chart" id="daily"></div>
+  </section>  <section class="panel" aria-labelledby="evergreen-h"><h2 id="evergreen-h">Are older videos still being watched?</h2><p id="evergreenSummary"></p><div id="evergreenLeaders"></div><details class="tiers"><summary>How this is measured</summary><p class="stamp">Older = published at least 30 days before the last snapshot interval began. The counts below compare public video views between the last two snapshots. Days without uploads use YouTube Analytics calendar days (Pacific time) and the current public catalog; missing or formerly public uploads can affect this comparison. This measures views on older videos, not returning viewers.</p></details></section>
+  <section class="panel" aria-labelledby="earn-h"><h2 id="earn-h">Path to monetization</h2><div id="monetization"></div><details class="tiers"><summary>Watch time, pace and eligibility</summary><div id="earnDetails"></div><p class="stamp">Ad revenue requires 1,000 subscribers and either 4,000 qualified public watch hours in 12 months or 10 million qualified Shorts views in 90 days, followed by YouTube review. Public view counts and Analytics hours are not the Earn balance. The lower 500-subscriber entry tier offers some features, not full ad revenue. <a href="https://support.google.com/youtube/answer/72851?hl=en" target="_blank" rel="noopener">YouTube eligibility rules</a>.</p></details></section>
+<details class="explore"><summary>Every video</summary>  <section class="panel" aria-labelledby="videos-h">
+    <div class="row">
+      <h2 id="videos-h">Every video</h2>    <div class="seg" id="gfmt" aria-label="Film type"><button type="button" data-g="all">All</button><button type="button" data-g="long">Long</button><button type="button" data-g="short">Shorts</button></div>
+      <div class="row" style="justify-content:flex-end">
+        <div class="seg" id="fmt" hidden>
+          <button type="button" data-f="all" aria-pressed="true">All</button>
+          <button type="button" data-f="short">Shorts</button>
+          <button type="button" data-f="long">Longs</button>
+        </div>
+        <input type="search" id="q" placeholder="Search titles" aria-label="Search titles">
+      </div>
+    </div>
+    <div class="scroll" style="max-height:640px"><table id="videos"></table></div>
+  </section></details>
+
+<details class="explore"><summary>Latest published uploads</summary>  <section class="panel" aria-labelledby="latest-h"><h2 id="latest-h">Latest published uploads</h2><div id="latestUploads"></div></section></details>
+
+<details class="explore" id="deepAnalytics"><summary>Detailed analytics and sources</summary><details class="explore"><summary>Long films vs targets </summary>  <section class="panel" aria-labelledby="tgt-h">
     <h2 id="tgt-h">Long films vs targets <span class="stamp" id="tgtNote"></span></h2>
     <ol class="miles" id="tgtMiles"></ol>
     <details class="tiers"><summary>Tiers</summary><div class="stamp">CTR: under 2% Below · 2–4% Developing · 4–7% Good · 7%+ Excellent<br>Retention: under 20% Below · 20–35% Developing · 35–50% Good · 50%+ Excellent</div></details>
     <ul class="tgt" id="tgtList"></ul>
-  </section>
-
-  <section class="panel" aria-labelledby="stgt-h" id="shortTgt" hidden>
+  </section></details>
+<details class="explore"><summary>Shorts vs targets </summary>  <section class="panel" aria-labelledby="stgt-h" id="shortTgt" hidden>
     <h2 id="stgt-h">Shorts vs targets <span class="stamp">aim: 80% retention · 70% stayed to watch</span></h2>
     <details class="tiers"><summary>Tiers</summary><div class="stamp">Average retention: 50–70% Developing · Good from 90% (15–20 s), 80% (20–35 s), 70% (35–60 s), 60% (60–180 s) · 100%+ Excellent<br>Stayed to watch: 40–60% Developing · 65–75% Good · 80%+ Excellent<br>Likes per 100 views: 1–2 Developing · 3–5 Good · 6+ Excellent</div></details>
     <ul class="tgt" id="shortList"></ul>
-  </section>
-
-  <section class="panel" aria-labelledby="top24-h">
+  </section></details>
+<details class="explore"><summary>Top videos, last 24 hours </summary>  <section class="panel" aria-labelledby="top24-h">
     <div style="display:grid;gap:2px">
       <h2 id="top24-h">Top videos, last 24 hours <span class="stamp">whole channel</span></h2>
       <span class="stamp" id="top24Source"></span>
     </div>
     <ol class="toplist" id="top24"></ol>
-  </section>
-
-  <section class="panel" aria-labelledby="period-h">
+  </section></details>
+<details class="explore"><summary>Growth or decline</summary>  <section class="panel" aria-labelledby="period-h">
     <div class="row">
       <h2 id="period-h">Growth or decline</h2>
       <div class="seg" id="period">
@@ -173,9 +204,8 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     <div class="compare" id="periodCompare"></div>
     <div class="chart" id="periodChart"></div>
     <div class="scroll"><table id="periodTable"></table></div>
-  </section>
-
-  <section class="panel" aria-labelledby="age-h">
+  </section></details>
+<details class="explore"><summary>Explore older videos and view sources</summary>  <section class="panel" aria-labelledby="age-h">
     <div class="row">
       <h2 id="age-h">New videos vs older videos</h2>
       <div class="seg" id="ageWin">
@@ -195,45 +225,15 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     </div>
     <p class="lede" id="oldLede"></p>
     <div class="scroll" style="max-height:520px"><table id="oldTable"></table></div>
-  </section>
-
-  <section class="panel" aria-labelledby="daily-h">
-    <div class="row">
-      <h2 id="daily-h">Views per day</h2>
-      <div class="seg" id="range">
-        <button type="button" data-days="30">30 days</button>
-        <button type="button" data-days="90" aria-pressed="true">90 days</button>
-        <button type="button" data-days="0">All</button>
-      </div>
-    </div>
-    <div class="chart" id="daily"></div>
-  </section>
-
-
-  <section class="panel" aria-labelledby="sources-h" id="sourcesPanel" hidden>
+  </section></details>
+<details class="explore"><summary>Where views come from </summary>  <section class="panel" aria-labelledby="sources-h" id="sourcesPanel" hidden>
     <h2 id="sources-h">Where views come from <span class="stamp">last 28 days</span></h2>
     <div class="scroll"><table id="sourcesTable"></table></div>
-  </section>
-
-  <section class="panel" aria-labelledby="videos-h">
-    <div class="row">
-      <h2 id="videos-h">Every video</h2>
-      <div class="row" style="justify-content:flex-end">
-        <div class="seg" id="fmt">
-          <button type="button" data-f="all" aria-pressed="true">All</button>
-          <button type="button" data-f="short">Shorts</button>
-          <button type="button" data-f="long">Longs</button>
-        </div>
-        <input type="search" id="q" placeholder="Search titles" aria-label="Search titles">
-      </div>
-    </div>
-    <div class="scroll" style="max-height:640px"><table id="videos"></table></div>
-  </section>
-
-  <section class="panel" aria-labelledby="notes-h">
+  </section></details>
+<details class="explore"><summary>About these numbers</summary>  <section class="panel" aria-labelledby="notes-h">
     <h2 id="notes-h">About these numbers</h2>
-    <ul class="notes" id="notes"></ul>
-  </section>
+    <div class="stamp" id="coverage"></div><ul class="notes" id="notes"></ul>
+  </section></details></details>
 </div>
 
 <script id="tracker-data" type="application/json">__TRACKER_DATA__</script>
@@ -253,7 +253,7 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   const ukDate = (d) => (d ? new Date(String(d).slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "–");
   const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
 
-  const state = { ch: store.get("tracker.ch") || (DATA.channels[0] && DATA.channels[0].channel), days: 90, period: "weekly", ageWin: 30, ageMin: 30, f: store.get("tracker.gf") || "all", gf: store.get("tracker.gf") || "all", q: "", sort: "publishedAt", dir: -1 };
+  const state = { ch: store.get("tracker.ch") || (DATA.channels[0] && DATA.channels[0].channel), days: 30, period: "weekly", ageWin: 30, ageMin: 30, f: store.get("tracker.gf") || "all", gf: store.get("tracker.gf") || "all", q: "", sort: "publishedAt", dir: -1 };
   if (!DATA.channels.some((c) => c.channel === state.ch) && DATA.channels[0]) state.ch = DATA.channels[0].channel;
   // Ben, 12 Oct 22:38: All / Long / Shorts across the page. A Short is format "short", or 180 s or less when the
   // format is missing. Per-video lists, top 24 h, new-vs-older and the readout follow it; the daily trace, period
@@ -287,33 +287,27 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   // ---------------------------------------------------------------- readout
   function drawReadout(c) {
     document.documentElement.style.setProperty("--accent", colorVar(c.channel));
-    const ch = c.change;
-    // Ben, 14 Oct: "the progress and percentage in smaller font ... of the previous week, previous year, previous day, to
-    // show that the channel is growing or declining". Like for like from YouTube Analytics days (c.daily, whole channel):
-    // the latest n days against the n days before them, and against the same n days a year earlier once there are any.
-    const days = (c.daily || []).slice().sort((a, b) => a.day.localeCompare(b.day));
-    const sumDays = (from, to) => { const r = days.filter((d) => d.day > from && d.day <= to); return r.length ? r.reduce((n, d) => n + (d.views || 0), 0) : null; };
-    const shift = (day, n) => { const d = new Date(day + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() - n); return d.toISOString().slice(0, 10); };
-    const last = days.length ? days[days.length - 1].day : null;
-    const pctTxt = (now, then) => (now == null || then == null) ? null : then === 0 ? (now > 0 ? ["up", "new"] : ["flat", "0%"])
-      : ((p) => [p > 0 ? "up" : p < 0 ? "down" : "flat", (p > 0 ? "▲ " : p < 0 ? "▼ " : "") + Math.abs(p).toFixed(Math.abs(p) < 10 ? 1 : 0) + "%"])(100 * (now - then) / then);
-    const vsLine = (n, word) => {
-      if (!last) return "";
-      const nowV = sumDays(shift(last, n), last), first = days[0].day;
-      if (nowV == null) return "";
-      const prevV = shift(last, 2 * n) >= shift(first, 1) ? sumDays(shift(last, 2 * n), shift(last, n)) : null;
-      const yearV = shift(last, 365 + n) >= shift(first, 1) ? sumDays(shift(last, 365 + n), shift(last, 365)) : null;
-      const a = pctTxt(nowV, prevV), y = pctTxt(nowV, yearV);
-      return `<span class="vs" title="YouTube Analytics: ${nowV.toLocaleString("en-GB")} views in the ${n === 1 ? "day" : n + " days"} to ${ukDate(last)}${prevV != null ? `, ${prevV.toLocaleString("en-GB")} in the ${n === 1 ? "day" : n + " days"} before` : ""}">${a ? `<span class="delta ${a[0]}">${a[1]}</span> vs ${word}` : `vs ${word}: not enough days yet`} · ${y ? `<span class="delta ${y[0]}">${y[1]}</span> vs last year` : "last year: no data yet"}</span>`;
-    };
-    const growth = (label, x, n, word) => `<div class="cell"><span class="eyebrow">${label}</span><span class="big delta ${cls(x && x.views)}">${signed(x && x.views)}</span><span class="sub">views · <span class="delta ${cls(x && x.subscribers)}">${signed(x && x.subscribers)}</span> subs${x && x.source === "analytics" ? " · YT Analytics" : ""}</span>${vsLine(n, word)}</div>`;
-    $("readout").innerHTML =
-      `<div class="cell"><span class="eyebrow">Subscribers</span><span class="big">${fmt(c.totals.subscribers)}</span><span class="sub">${esc(c.handle)}</span></div>` +
-      `<div class="cell"><span class="eyebrow">Channel views · all videos</span><span class="big">${fmt(c.totals.views)}</span><span class="sub">${c.totals.videos} public videos reported by YouTube</span></div>` +
-      growth("Last 24 hours", ch.d1, 1, "the day before") + growth("Last 7 days", ch.d7, 7, "the week before") + growth("Last 30 days", ch.d30, 30, "the 30 days before");
-    $("stamp").textContent = `Snapshot ${ukDate(c.date)}${c.snapshotTakenAt?" · collected "+new Date(c.snapshotTakenAt).toLocaleTimeString("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit"})+" London":""}` + (c.analyticsThrough ? ` · YouTube Analytics through ${ukDate(c.analyticsThrough)} (about two days behind)` : "") + ` · Lists: ${state.gf === "all"?"all videos":state.gf === "short"?"Shorts":"long films"}. Channel totals and growth include all videos.`;
+    const o=c.overview, rows=c.daily||[], latest=rows.at(-1), n=o?.days||0;
+    const metric=(label,value,small)=>`<div class="cell"><span class="eyebrow">${label}</span><span class="big">${value}</span><span class="sub">${small}</span></div>`;
+    $("readout").innerHTML = metric("Latest full day",latest?fmt(latest.views):"—",latest?ukDate(latest.day):"No daily data")
+      + metric("Daily average",n?fmt(Math.round(o.views/n)):"—",n?`Last ${n} reported days`:"No history")
+      + metric("Older videos · last interval",o?fmt(o.olderDayViews):"—",o?`${o.olderVideosWatched} video${o.olderVideosWatched===1?"":"s"} · ${ukDate(c.day1?.from)}–${ukDate(c.date)}`:"Waiting for data");
+    $("stamp").textContent = `Updated ${ukDate(c.date)} · daily viewing through ${ukDate(c.overview?.through||c.analyticsThrough||c.date)}`;
     const listed=c.videos.length, gap=c.totals.videos-listed, sum=sumOf(c.videos,"views");
     $("coverage").textContent = `Catalog: ${listed} of ${c.totals.videos} reported public videos listed${gap>0?` · ${gap} missing from the latest catalog`:gap<0?" · channel count is still catching up":" · complete"}. Listed video views: ${fmt(sum)}; channel views: ${fmt(c.totals.views)}. YouTube updates these counts separately.`;
+  }
+
+  function drawOverview(c) {
+    const o=c.overview;
+    $("dailyScope").textContent="Whole channel · all longs and Shorts · hover or tap a day for views";
+    $("evergreenSummary").textContent=o && o.noUploadDays ? `${o.noUploadDaysWatched} of ${o.noUploadDays} days without an upload still had views (${fmt(o.noUploadDayViews)} views across the last ${o.days} reported days).` : "No days without uploads in the available history yet.";
+    const old=c.videos.filter(v=>v.ageDays>=31 && v.d1>0).sort((a,b)=>b.d1-a.d1).slice(0,3);
+    $("evergreenLeaders").innerHTML=old.map(v=>`<div class="older-row"><a href="https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a><b>+${fmt(v.d1)}</b></div>`).join("") + (o?.olderUnknown?`<p class="stamp">${o.olderUnknown} older videos have no comparable previous count.</p>`:"") + (!old.length?'<p class="stamp">No measured views on videos 30+ days old in the latest snapshot interval.</p>':"");
+    const subs=c.totals.subscribers, pct=subs==null?0:Math.min(100,subs/10);
+    $("monetization").innerHTML=`<div class="earnline"><b>${subs==null?"Unknown":fmt(subs)} / 1,000 subscribers</b><span>${subs==null?"":pct.toFixed(1)+"%"}</span></div><progress max="1000" value="${subs||0}" aria-label="Subscribers toward ad revenue threshold"></progress><p class="stamp">${o?.longHoursPerDay>0&&o.longHoursPerDay*365<4000?`Estimated long-watch pace needs ~${Math.ceil(4000/(o.longHoursPerDay*365))}× growth for 4,000 hours/year. `:""}Eligible watch hours / Shorts views: not connected. No reliable monetization date yet.</p>`;
+    const pace=o?.longHoursPerDay, coverage=o?.longHoursCoverage;
+    const subTime=o?.subscriberEtaDays;
+    $("earnDetails").innerHTML=`<p>${subTime!=null?`At the last 28 days’ subscriber pace, 1,000 subscribers would take about ${subTime>730?Math.round(subTime/365)+" years":Math.ceil(subTime/30.44)+" months"} (${o.subscriberNet} net gained in 28 days). This assumes the same pace continues.`:"There is not yet a positive, complete 28-day subscriber trend for a date estimate."}</p><p>${o?.longHoursEstimate!=null?`Known Analytics long-video watch time: ${o.longHoursEstimate.toFixed(1)} hours (${coverage.known} of ${coverage.total} currently public longs have lifetime data). This is an estimate, not verified eligible watch time.`:"A complete 12-month long-video watch-time estimate is unavailable."}</p><p>${pace!=null?`Recent long-video pace: ${pace.toFixed(2)} hours/day. The 4,000-hour rolling threshold needs about 11 hours/day.${pace>0 && pace*365<4000?` About ${Math.ceil(4000/(pace*365))}× the current pace is needed; at this pace the rolling threshold would not be reached.`:" No reliable completion date yet."}`:"Watch-time pace needs a complete 28-day Analytics window."}</p><p class="stamp">To verify progress, connect each channel’s YouTube Studio → Earn balance. Improving long-video watch time and subscriber conversion is required alongside publishing; more total Shorts views alone do not establish eligibility.</p>`;
   }
 
   function drawLatest(c) {
@@ -672,11 +666,12 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
     $("gfmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === state.gf)));
     $("fmt").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.f === state.f)));
     const all = DATA.channels.find(x=>x.channel===state.ch);
-    drawTabs(); drawReadout(all); drawLatest(all); drawTargets(c); drawShortTargets(c); drawTop24(all); drawDaily(c); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
+    drawTabs(); drawReadout(all); drawOverview(all); drawLatest(all); drawTargets(c); drawShortTargets(c); drawTop24(all); drawDaily(DATA.channels.find(x=>x.channel===state.ch)); drawPeriod(c); drawAge(c); drawSources(c); drawVideos(c);
     $("notes").innerHTML = c.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `<li>Growth figures are differences between daily snapshots taken each morning (London). Weeks run Monday to Sunday. A week or month still running is compared with the same number of days at the start of the one before, and is drawn lighter; no % is shown on a base under 20 views or 30 minutes.</li><li>Top videos, last 24 hours: each video's public view count, compared between the last two daily snapshots — the same two the tile uses. A video those snapshots can't compare reads "unknown" and stays out of the sum. YouTube refreshes the channel's view total and the per-video counts at different times, and a video made private keeps its views in the channel total, so anything the videos don't account for gets its own row instead of being spread over them.</li><li>New vs older videos: each video's views in the last 7 or 30 days, grouped by how old the video is today. "Still earning" means a view a day or more over the last 30 days; "Trickling" means some views; "Gone quiet" means none.</li>`;
   }
   render();
+  document.addEventListener("toggle",e=>{if(e.target.tagName==="DETAILS" && e.target.open && $("periodChart").clientWidth) drawPeriod(cur());},true);
   let rt;
-  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { const c = cur(); drawDaily(c); drawPeriod(c); }, 150); });
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { const c = cur(); drawDaily(DATA.channels.find(x=>x.channel===state.ch)); drawPeriod(c); }, 150); });
 })();
 </script>

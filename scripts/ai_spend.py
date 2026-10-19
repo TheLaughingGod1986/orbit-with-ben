@@ -65,6 +65,17 @@ def build_doc(rows: list[dict]) -> dict:
     plans = json.loads(PLANS.read_text()) if PLANS.exists() else {}
     start = plans.get("period", {}).get("start", "2026-10-08")
     starts = plans.get("poolStarts", {})  # each plan is measured from its own reset (Ben, 8 Oct)
+    monthly: dict = {}
+    for row in sorted(rows, key=lambda r: r.get("at", "")):
+        month, pool = row.get("at", "")[:7], row.get("pool")
+        if not month or pool not in POOLS:
+            continue
+        entry = monthly.setdefault(month, {}).setdefault(pool, {"logged": 0, "entries": 0, "unit": POOLS[pool], "latest": None})
+        if row.get("kind") == "spend":
+            entry["logged"] = round(entry["logged"] + float(row.get("amount") or 0), 2)
+            entry["entries"] += 1
+        elif row.get("kind") == "record":
+            entry["latest"] = {k: row.get(k) for k in ("at", "left", "total")}
     rows = [r for r in rows if r.get("at", "") >= starts.get(r.get("pool"), start)]
     pools = {}
     for pool, unit in POOLS.items():
@@ -98,6 +109,7 @@ def build_doc(rows: list[dict]) -> dict:
         "cycleDays": plans.get("cycleDays", 30),
         "pricesNote": plans.get("note", ""),
         "pools": pools,
+        "monthly": monthly,
         "byFilm": {f: {p: round(v, 2) for p, v in d.items()} for f, d in sorted(by_film.items())},
         "lines": len(rows),
     }
