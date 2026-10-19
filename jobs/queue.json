@@ -47001,17 +47001,29 @@
           "at": "2026-10-19T03:35Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J0621: auditing HOS 001-059 and weekly audit to select 5 new discovery stories (060-064)"
+        },
+        {
+          "at": "2026-10-19T03:40Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 PASS: neighbours.py and public_search.py verified for 5 candidates 060-064 (Hormones/Secretin 6+ >=1M, Circadian Clock 19 >=1M, Muscles/Sliding Filament 8 >=1M, Mitochondria/Krebs 10 >=1M, Viruses/Bacteriophage 15 >=1M)"
         }
       ],
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-19T03:35Z",
+        "at": "2026-10-19T03:40Z",
         "by": "gemini",
-        "note": "Starting J0621: auditing HOS 001-059 and weekly audit to select 5 new discovery stories (060-064)"
-      }
+        "note": "Step 1/4 PASS: neighbours.py and public_search.py verified for 5 candidates 060-064 (Hormones/Secretin 6+ >=1M, Circadia"
+      },
+      "taskKeys": [
+        "HOS:060",
+        "HOS:061",
+        "HOS:062",
+        "HOS:063",
+        "HOS:064"
+      ]
     }
   ],
   "focus": [],
