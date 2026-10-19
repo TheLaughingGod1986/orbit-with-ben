@@ -204,3 +204,41 @@ class WeekNumbers(unittest.TestCase):
         from datetime import datetime, timezone
         w = ks.week_numbers([], datetime(2026, 10, 26, 12, 0, tzinfo=timezone.utc))
         self.assertEqual(next(d for d in w if d["date"] == "2026-10-25")["min"], 25 * 60)
+
+
+class ReleaseReceipts(unittest.TestCase):
+    def receipt(self, root, name, **updates):
+        doc = {"ok": True, "dryRun": False, "upload": {"published": True, "scheduledOnPlatform": True,
+               "platformPostId": "abc12345678", "scheduledFor": "2026-11-08T18:00:00Z",
+               "responseSummary": '{"privacyStatus":"private"}'}}
+        doc.update(updates)
+        path = root / "02_Video-Projects/025_Mars/11_Upload-Package" / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(doc))
+
+    def test_actual_schedule_is_distinct_from_uploaded_and_live(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.receipt(root, "PACKAGE_UPLOAD_RESULT_2026-10-09.json")
+            record = ks.release_record("025", root)
+            self.assertEqual(record["state"], "scheduled")  # upload.published means uploaded, not public
+            self.assertEqual(record["videoId"], "abc12345678")
+            self.assertEqual(record["publishAt"], "2026-11-08T18:00:00Z")
+            self.assertTrue(record["source"].endswith("2026-10-09.json"))
+
+    def test_dry_run_failure_and_other_films_are_not_release_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.receipt(root, "PACKAGE_UPLOAD_RESULT_2026-10-09.json", dryRun=True)
+            self.receipt(root, "PACKAGE_UPLOAD_RESULT_2026-10-10.json", ok=False)
+            self.assertIsNone(ks.release_record("025", root))
+            self.assertIsNone(ks.release_record("024", root))
+
+    def test_newer_actual_upload_without_schedule_replaces_old_schedule(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.receipt(root, "PACKAGE_UPLOAD_RESULT_2026-10-09.json")
+            self.receipt(root, "PACKAGE_UPLOAD_RESULT_2026-10-10.json", upload={"platformPostId":"new12345678", "published":True})
+            self.assertEqual(ks.release_record("025", root)["state"], "uploaded")
+            self.receipt(root, "PACKAGE_UPLOAD_RESULT_2026-10-11.json", upload={"platformPostId":"new12345678", "published":True, "responseSummary":'{"privacyStatus":"public"}'})
+            self.assertEqual(ks.release_record("025", root)["state"], "live")

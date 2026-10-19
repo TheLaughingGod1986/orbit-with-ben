@@ -562,3 +562,49 @@ console.log(JSON.stringify(box));
         self.assertIn("Archive (1)", h)
         self.assertLess(h.index("J0190"), h.index("Archive (1)"))
         self.assertGreater(h.index("J0180"), h.index("Archive (1)"))
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class ReleaseReadiness(unittest.TestCase):
+    def evaluate(self, expression, board=None):
+        names = ["RELEASE_RECORDS", "filmRelease", "releaseBlockers", "ts", "stOf", "whoOf", "OWB_OWNER", "AGENT",
+                 "CHIEF_PARK", "blockWhy", "isChiefPark", "linkedJobsFor", "runningJob", "taskKeysFor", "MINUTE"]
+        lib = "\n".join(js_function(page(), n) for n in names)
+        script = f"const fromDb={json.dumps(board or {})};\n{lib}\nconsole.log(JSON.stringify({expression}));"
+        out = subprocess.run(["node", "-e", script], text=True, capture_output=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def test_target_date_all_done_or_ready_note_never_proves_scheduled_or_live(self):
+        film = {"key":"OWB:099", "_ch":"OWB", "air":"2020-01-01", "stages":{"upload":{"status":"done"}}}
+        self.assertEqual(self.evaluate(f"filmRelease({json.dumps(film)})")["state"], "unscheduled")
+
+    def test_actual_future_upload_receipt_is_scheduled(self):
+        film = {"key":"OWB:025", "release":{"state":"scheduled", "publishAt":"2099-11-08T18:00:00Z", "videoId":"Js6EQJ8qDi8"}}
+        self.assertEqual(self.evaluate(f"filmRelease({json.dumps(film)})")["state"], "scheduled")
+
+    def test_post_release_jobs_do_not_block_a_recorded_schedule(self):
+        row = {"f":{"key":"OWB:023"}, "isSched":True}
+        board = {"jobs":[{"id":"J0324", "film":"023", "status":"blocked", "result":"waits for long public"}]}
+        self.assertEqual(self.evaluate(f"releaseBlockers({json.dumps(row)})", board), [])
+
+    def test_100_percent_without_schedule_gets_an_owner_and_verification_action(self):
+        row = {"f":{"key":"OWB:099", "_stages":[]}, "pct":100}
+        holds = self.evaluate(f"releaseBlockers({json.dumps(row)})")
+        self.assertIn("no scheduled upload", holds[0]["reason"])
+        self.assertIn("Chief", holds[0]["owner"])
+        self.assertIn("publishAt", holds[0]["action"])
+
+    def test_unhandled_change_notes_remain_a_blocker(self):
+        row = {"f":{"key":"OWB:024", "_stages":[]}, "pct":100}
+        board = {"checks":{"OWB-024":{"verdict":"change", "handled":False, "fixes":[{"text":"Explain the diagrams more clearly"}]}}}
+        hold = self.evaluate(f"releaseBlockers({json.dumps(row)})", board)[0]
+        self.assertIn("Explain the diagrams", hold["reason"])
+        self.assertIn("revised cut", hold["action"])
+
+    def test_complete_dependency_does_not_silently_unblock_job(self):
+        row = {"f":{"key":"OWB:024", "_stages":[]}, "pct":80}
+        board = {"jobStates":{"J1":{"status":"done"}}, "jobs":[{"id":"J2", "film":"024", "status":"blocked", "after":"J1", "result":"waiting on input"}]}
+        holds = self.evaluate(f"releaseBlockers({json.dumps(row)})", board)
+        self.assertIn("J1 is complete", holds[0]["action"])
+        self.assertEqual(holds[0]["job"], "J2")

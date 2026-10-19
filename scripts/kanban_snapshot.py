@@ -800,6 +800,31 @@ def stream_link(ch: str, film: str, pick: Path, rel: str) -> dict | None:
             "source": "Studio Kanban (plays in the browser)"}
 
 
+def release_record(film: str, root: Path | None = None) -> dict | None:
+    """Read actual upload receipts; a manifest, dry run or due date is not an upload."""
+    root = root or ROOT
+    records = []
+    for path in sorted((root / "02_Video-Projects").glob(f"{film}_*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json")):
+        try:
+            doc = json.loads(path.read_text())
+            upload = doc.get("upload") or {}
+            if doc.get("ok") is not True or doc.get("dryRun") is not False or not upload.get("platformPostId"):
+                continue
+            response = upload.get("responseSummary") or {}
+            if isinstance(response, str):
+                try:
+                    response = json.loads(response)
+                except ValueError:
+                    response = {}
+            publish_at = upload.get("scheduledFor") or response.get("publishAt") or ""
+            state = "live" if response.get("privacyStatus") == "public" else "scheduled" if upload.get("scheduledOnPlatform") is True and publish_at else "uploaded"
+            records.append({"state": state, "videoId": upload["platformPostId"], "publishAt": publish_at,
+                            "source": str(path.relative_to(root))})
+        except (OSError, ValueError, TypeError, AttributeError):
+            continue
+    return records[-1] if records else None
+
+
 def uploaded_long(film: str) -> dict | None:
     try:
         vids = json.loads(UPLOADS.read_text()).get("videos", {})
@@ -855,6 +880,10 @@ def main(argv: list[str] | None = None) -> int:
     if not isinstance(hos.get("films"), list):
         raise SystemExit("PIPELINE.json has no films list; not touching the page")
     owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
+    for film in owb:
+        receipt = release_record(str(film.get("film", "")))
+        if receipt:
+            film["release"] = receipt
     if a.db_out:
         from datetime import datetime, timezone
         now = datetime.now(timezone.utc).isoformat(timespec="seconds")
