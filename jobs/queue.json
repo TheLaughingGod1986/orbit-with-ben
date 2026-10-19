@@ -52576,6 +52576,11 @@
           "at": "2026-10-19T21:59Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J0685: checking HOS films for live/scheduled film needing thumbnail B variant"
+        },
+        {
+          "at": "2026-10-19T22:00Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Selected HOS 001 (_C92tIJCk8A, next in 001->005->002 rotation after J0640/J0655/J0670; no active T&C in THUMB_LEDGER.json)"
         }
       ],
       "kind": "chart",
@@ -52590,12 +52595,15 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-19T21:59Z",
+        "at": "2026-10-19T22:00Z",
         "by": "gemini",
-        "note": "Starting J0685: checking HOS films for live/scheduled film needing thumbnail B variant"
-      }
+        "note": "Selected HOS 001 (_C92tIJCk8A, next in 001->005->002 rotation after J0640/J0655/J0670; no active T&C in THUMB_LEDGER.jso"
+      },
+      "taskKeys": [
+        "HOS:001"
+      ]
     },
     {
       "id": "J0686",
