@@ -315,7 +315,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0663 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0664 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0665 | mini | blocked | gemini | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
-| J0666 | any | claimed | gemini | 2026-10-19T16:44Z | script · OWB ideas + script draft: next film beyond the pipeline |  |
+| J0666 | any | blocked | gemini | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0667 | mini | open | – | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0668 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
