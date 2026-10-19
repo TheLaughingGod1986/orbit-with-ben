@@ -1965,7 +1965,7 @@ function renderSource(){
 }
 
 // ---------- AI spend month (board/credits, written by the studio agent from scripts/ai_spend.py) ----------
-const POOL_NAME = {cursor:"Cursor Ultra", flow:"Google AI Ultra · Flow (Gemini video)", vertex:"Google Cloud trial credit (Vertex)", elevenlabs:"ElevenLabs (voice)", claude:"Claude"};
+const POOL_NAME = {cursor:"Cursor Ultra", flow:"Google AI Ultra · Flow (Gemini video)", vertex:"Google Cloud credit (Vertex)", elevenlabs:"ElevenLabs (voice)", claude:"Claude"};
 const NO_READING = {
   flow: "Its month starts Mon 12 Oct, when the credits refill. The Mac mini reads the balance every morning at 08:30, and every picture take logs its cost against its film.",
   cursor: "Read every morning at 08:30 from cursor.com's spending page: the share of the Other Models pool left (the page shows percentages, no dollars). What Cursor did is below either way.",
@@ -1994,7 +1994,7 @@ function renderSpend(){
   const sub = (cls, name, main, small) => `<div class="sub-i ${cls}"><div class="n">${name}</div><div class="p">${main}</div><div class="g">${small}</div></div>`;
   const totG = plans.reduce((a,p)=>a+Number(p.gbp||0),0), tgt = c && c.target;
   $("subs").innerHTML = plans.length ? plans.map(p=>sub("", esc(p.name), `£${Math.round(p.gbp)}`,
-      [p.usd!=null?`list ${usd(p.usd)}`:"", esc(p.tier||""), p.cycleStart?`renews ${fd(pd(p.cycleStart))}`:""].filter(Boolean).join(" · "))).join("")
+      [p.usd!=null?`list ${usd(p.usd)}`:"", esc(p.tier||""), p.cycleStart?`cycle started ${fd(pd(p.cycleStart))}`:""].filter(Boolean).join(" · "))).join("")
     + sub("tot", "Now, a month", `£${Math.round(totG)}`, "including VAT")
     + (tgt && tgt.gbp ? sub("tgt", "Target", `£${Math.round(tgt.gbp)}`, esc(tgt.label||"")) : "")
     : `<div class="empty">Subscriptions load from the studio agent's next update.</div>`;
@@ -2023,7 +2023,7 @@ function renderSpend(){
         ${rows.map(([f,m])=>{ const [ch,id]=f.split(":"); return `<div class="pvr"><span><span class="ch ${esc(ch)}">${esc(ch)}</span>${esc(id)}</span><span>${hrs(m)}</span></div>`; }).join("")}</div>
         <div class="maxq"><b>Would Claude Max cover it?</b> Claude Max (£90) would have to take on these hours of Mac mini work on top of Claude's own. At the check-in we compare three things: Cursor's dollars used against its $400, these hours, and how often Claude hits its limit. Low on all three means downgrading is safe.</div>`;
     }
-    const price = {flow:"£180", cursor:"£180", elevenlabs:"£20", vertex:"free trial"}[k] || "";
+    const price = {flow:"£180", cursor:"£180", elevenlabs:"£20", vertex:"credit pool"}[k] || "";
     return `<div class="pool"><div class="nm"><span>${POOL_NAME[k]||esc(k)}</span>${price?`<span class="chip">${price}</span>`:""}</div>${body}</div>`;
   }).join("");
   const sums = order.filter(k=>k!=="claude" && pools[k]).map(k=>{ const u=poolUse(k,pools[k],c); return u && !u.future ? `${POOL_NAME[k]} ${u.usedPct}% used, ${u.monthPct}% of its month gone` : null; }).filter(Boolean);
