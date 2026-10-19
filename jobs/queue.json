@@ -52128,13 +52128,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-19T21:02Z",
-      "eta": "2026-10-19T23:02Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T19:54Z",
-      "result": "",
+      "result": "parked for Chief: restore NAS writes so required low-disk scratch archive can finish; Short not rendered or gated",
       "history": [
         {
           "at": "2026-10-19T19:54Z",
@@ -52165,6 +52165,11 @@
           "at": "2026-10-19T21:05Z",
           "by": "codex",
           "what": "step 1 of 4 done: Selected Jupiter; NAS scratch archive stalled in mkdir, stopped with exit 143 before copying or removing files; render not started"
+        },
+        {
+          "at": "2026-10-19T21:05Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: restore NAS writes so required low-disk scratch archive can finish; Short not rendered or gated"
         }
       ],
       "kind": "assembly",
