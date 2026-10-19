@@ -586,7 +586,7 @@ console.log(JSON.stringify(box));
 @unittest.skipUnless(shutil.which("node"), "node not installed")
 class ReleaseReadiness(unittest.TestCase):
     def evaluate(self, expression, board=None):
-        names = ["RELEASE_RECORDS", "filmRelease", "releaseBlockers", "ts", "stOf", "whoOf", "OWB_OWNER", "AGENT",
+        names = ["RELEASE_RECORDS", "filmRelease", "releaseBlockers", "supportingJob", "ts", "stOf", "whoOf", "OWB_OWNER", "AGENT",
                  "CHIEF_PARK", "blockWhy", "isChiefPark", "linkedJobsFor", "runningJob", "taskKeysFor", "MINUTE"]
         lib = "\n".join(js_function(page(), n) for n in names)
         script = f"const fromDb={json.dumps(board or {})};\n{lib}\nconsole.log(JSON.stringify({expression}));"
@@ -627,3 +627,70 @@ class ReleaseReadiness(unittest.TestCase):
         holds = self.evaluate(f"releaseBlockers({json.dumps(row)})", board)
         self.assertIn("J1 is complete", holds[0]["action"])
         self.assertEqual(holds[0]["job"], "J2")
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class VideoWorkSchedule(unittest.TestCase):
+    def evaluate(self, expression, board):
+        names = ["MINUTE", "ts", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "runningJob", "stepPace", "jobMin", "plan", "progressOf", "taskKeysFor", "linkedJobsFor", "progressUpdates", "filmJobs", "supportingJob", "workLane", "jobQueueInfo", "stOf", "videoWorkPlan"]
+        lib = "\n".join(js_function(page(), n) for n in names)
+        script = f"const fromDb={json.dumps(board)};\n{lib}\nconsole.log(JSON.stringify({expression}));"
+        out = subprocess.run(["node", "-e", script], text=True, capture_output=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def board(self):
+        def job(jid, **fields):
+            return dict(id=jid, title=jid, needs="mini", line="mini", status="open", typMin=10, **fields)
+        a=job("J1", film="024", stage="picture"); a["status"]="claimed"
+        fillers=[job(f"F{i}") for i in range(7)]
+        b=job("J2", film="024", stage="edit", pos=6)
+        c=job("J3", film="024", stage="upload", pos=9)
+        jobs=[a,*fillers[:5],b,*fillers[5:],c]
+        return {"jobs":jobs,"runOrder":{"mini":[j["id"] for j in jobs],"chief":[]},"extra":{"done":[]}}
+
+    ROW = {"f":{"key":"OWB:024","_stages":[{"key":k,"label":k} for k in ("picture","edit","upload")],"stages":{}},"steps":[],"pct":89}
+
+    def test_three_video_jobs_use_global_worker_queue_positions_six_and_nine(self):
+        row=json.dumps(self.ROW)
+        r=self.evaluate(f"(()=>{{const P=plan(),w=videoWorkPlan({row},P);return {{ids:w.remaining.map(x=>x.j.id),positions:w.remaining.map(x=>x.q.pos||0),finish:w.finish,last:P.J3.done,active:w.active[0].j.id}};}})()",self.board())
+        self.assertEqual(r["ids"],["J1","J2","J3"])
+        self.assertEqual(r["positions"],[0,6,9])
+        self.assertEqual(r["finish"],r["last"])
+        self.assertEqual(r["active"],"J1")
+
+    def test_review_hold_prevents_a_whole_video_finish_estimate(self):
+        b=self.board();j=next(j for j in b["jobs"] if j["id"]=="J2");j.update(status="blocked",result="parked for Chief: review")
+        w=self.evaluate(f"videoWorkPlan({json.dumps(self.ROW)},plan())",b)
+        self.assertEqual(w["finish"],0)
+        self.assertIn("Chief review",w["finishReason"])
+        self.assertEqual(w["held"][0]["q"]["state"],"review")
+
+    def test_old_stage_dates_do_not_fill_in_an_unqueued_stage(self):
+        row=json.loads(json.dumps(self.ROW));row["f"]["_stages"].append({"key":"thumbs","label":"Thumbnails"});row["f"]["stages"]["thumbs"]={"status":"todo","due":"2020-01-01"}
+        w=self.evaluate(f"videoWorkPlan({json.dumps(row)},plan())",self.board())
+        self.assertEqual(w["finish"],0)
+        self.assertEqual(w["gaps"],[{"key":"thumbs","label":"Thumbnails"}])
+
+    def test_channel_audits_do_not_inflate_remaining_production_jobs(self):
+        b=self.board();b["jobs"].append({"id":"AUDIT","title":"Weekly OWB audit: channel review","taskKeys":["OWB:024"],"status":"blocked","result":"parked for Chief: audit"})
+        w=self.evaluate(f"videoWorkPlan({json.dumps(self.ROW)},plan())",b)
+        self.assertEqual(len(w["remaining"]),3)
+        self.assertEqual(len(w["related"]),1)
+        self.assertGreater(w["finish"],0)
+
+    def test_completed_job_decrements_count_but_does_not_approve_the_stage(self):
+        b=self.board();j=b["jobs"].pop(0);j.update(status="done",at="2026-10-19T10:00Z");b["extra"]["done"]=[j]
+        w=self.evaluate(f"videoWorkPlan({json.dumps(self.ROW)},plan())",b)
+        self.assertEqual(len(w["remaining"]),2)
+        self.assertEqual(len(w["completed"]),1)
+        self.assertEqual(w["gaps"],[])
+        self.assertEqual(w["stageUpdates"][0]["key"],"picture")
+        self.assertEqual(w["finish"],0)
+
+    def test_cancelled_dependency_never_gets_a_start_time(self):
+        b=self.board();j=next(j for j in b["jobs"] if j["id"]=="J2");j["after"]="CANCEL";b["jobStates"]={"CANCEL":{"status":"cancelled"}}
+        w=self.evaluate(f"videoWorkPlan({json.dumps(self.ROW)},plan())",b)
+        q=next(x["q"] for x in w["remaining"] if x["j"]["id"]=="J2")
+        self.assertNotIn("start",q)
+        self.assertEqual(w["finish"],0)
