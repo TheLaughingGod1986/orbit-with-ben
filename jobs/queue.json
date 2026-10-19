@@ -48823,13 +48823,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-19T09:42Z",
-      "eta": "2026-10-19T11:42Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T09:42Z",
-      "result": "",
+      "result": "parked for Chief: script review",
       "history": [
         {
           "at": "2026-10-19T09:42Z",
@@ -48865,6 +48865,11 @@
           "at": "2026-10-19T10:01Z",
           "by": "gemini",
           "what": "step 4 of 4 done: committed 051 script v01 (70a11843b), released 051 script to review, parking J0644 for Chief script review"
+        },
+        {
+          "at": "2026-10-19T10:01Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: script review"
         }
       ],
       "kind": "script",
