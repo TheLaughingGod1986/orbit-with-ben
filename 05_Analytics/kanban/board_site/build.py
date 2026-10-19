@@ -43,7 +43,20 @@ FOOTER = ('<footer>This board updates itself. The Mac mini rebuilds its data fro
           'Your ticks are saved straight away with your board link; the Mac mini picks them up within about a minute. '
           'YouTube numbers: <a href="/tracker">Channel Tracker</a>.</footer>')
 
+# Ship the same receipt evidence as the live snapshot, so it is available while
+# the Mini publisher picks up a new snapshot schema.
+sys.path.insert(0, str(HERE.parents[2] / "scripts"))
+from kanban_snapshot import release_record
+
+RELEASE_RECORDS = {}
+for status_file in (HERE.parents[2] / "02_Video-Projects").glob("*/status.json"):
+    film = json.loads(status_file.read_text()).get("film", "")
+    receipt = release_record(film)
+    if receipt:
+        RELEASE_RECORDS["OWB:" + film] = receipt
+
 PATCHES = [
+    ("const RELEASE_RECORDS = {};", "const RELEASE_RECORDS = " + json.dumps(RELEASE_RECORDS).replace("</", "<\\/") + ";"),
     ('<div class="sub" id="asof">Loading…</div>',
      '<div class="sub" id="asof">Loading…</div><div class="sub"><a href="/tracker" style="color:inherit">Channel Tracker →</a></div>'),
     ("dbApi = db;", "dbApi = db.canWrite===false ? null : db;"),
