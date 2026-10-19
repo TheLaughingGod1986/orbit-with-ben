@@ -310,7 +310,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0658 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0659 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0660 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
-| J0661 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
+| J0661 | mini | claimed | gemini | 2026-10-19T15:42Z | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 
 Recently finished:
 
