@@ -524,10 +524,13 @@ export function periods(unit: "week" | "month", series: DayPoint[], uploads: Map
 /** Operational summary. Analytics days use Pacific time; snapshot gains retain their own interval. */
 export function viewingOverview(now: Snapshot, daily: DailyRow[], videos: VideoRow[]) {
   const rows = daily.slice(-28), last = rows.at(-1)?.day ?? null;
-  const dates = new Set(now.videos.filter(v => v.privacy === "public" && v.publishedAt).map(v =>
+  const dates = new Set(now.videos.filter(v => v.privacy === "public" && v.publishedAt && Number.isFinite(Date.parse(v.publishedAt))).map(v =>
     new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(v.publishedAt!))));
   const quiet = rows.filter(r => !dates.has(r.day));
-  const old = videos.filter(v => v.ageDays != null && v.ageDays >= 31 && v.d1 != null);
+  // Use elapsed hours at the actual snapshot, not calendar dates or the browser clock.
+  const asOf = Date.parse(now.takenAt);
+  const older = videos.filter(v => v.publishedAt != null && asOf - Date.parse(v.publishedAt) > 48 * 3600000);
+  const old = older.filter(v => v.d1 != null);
   const longs = videos.filter(v => v.format === "long");
   const lifetime = longs.filter(v => v.lifetime != null);
   const withinYear = longs.every(v => v.ageDays != null && v.ageDays <= 365);
@@ -541,7 +544,8 @@ export function viewingOverview(now: Snapshot, daily: DailyRow[], videos: VideoR
     noUploadDayViews: quiet.reduce((n,r)=>n+r.views,0),
     olderDayViews: old.reduce((n,v)=>n+Math.max(0,v.d1 ?? 0),0),
     olderVideosWatched: old.filter(v=>(v.d1 ?? 0)>0).length,
-    olderUnknown: videos.filter(v=>v.ageDays != null && v.ageDays>=31 && v.d1==null).length,
+    olderUnknown: older.filter(v=>v.d1==null).length,
+    olderAgeUnknown: videos.filter(v=>!Number.isFinite(asOf) || !v.publishedAt || !Number.isFinite(Date.parse(v.publishedAt))).length,
     longHoursEstimate: withinYear && lifetime.length ? hours : null,
     longHoursCoverage: { known: lifetime.length, total: longs.length },
     longHoursPerDay: now.analytics && complete28 ? hours28/28 : null,

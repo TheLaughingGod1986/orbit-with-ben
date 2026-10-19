@@ -401,6 +401,17 @@ describe("catalog completeness", () => {
 
 describe("one-glance viewing and monetization evidence", () => {
   const day=(day:string,views=10)=>({day,views,minutes:1,subsGained:1,subsLost:0,likes:0,comments:0,shares:0});
+  it("uses exact elapsed hours for the full over-48-hour cohort and keeps missing data unknown",()=>{
+    const dates=["2026-10-17T05:39:59.999Z","2026-10-17T05:40:00Z","2026-10-17T05:40:00.001Z","2026-10-10T00:00:00Z","2026-08-01T00:00:00Z","2026-10-14T00:00:00Z","2026-10-13T00:00:00Z"];
+    const before=snap("2026-10-18",100,13,dates.slice(0,5).map((d,i)=>video(`v${i}`,10,d)));
+    const now=snap("2026-10-19",150,13,dates.map((d,i)=>video(`v${i}`,20,d)));
+    now.videos.push({...video("no-date",5),publishedAt:null});
+    const r=buildReport("owb",[before,now],null);
+    // Only v0, v3 and v4 are both older than 48h and comparable. v1 is exactly 48h.
+    expect(r.overview).toMatchObject({olderDayViews:30,olderVideosWatched:3,olderUnknown:2,olderAgeUnknown:1});
+    r.videos.find(v=>v.id==="v0")!.publishedAt="invalid";
+    expect(viewingOverview(now,[],r.videos)).toMatchObject({olderDayViews:20,olderVideosWatched:2,olderUnknown:2,olderAgeUnknown:2});
+  });
   it("counts no-upload days in Analytics Pacific time and preserves unknown older-video gains",()=>{
     const now=snap("2026-10-19",100,13,[video("old",30,"2026-08-01T10:00:00Z"),video("new",70,"2026-10-19T00:30:00Z")]);
     const rows=[day("2026-10-17"),day("2026-10-18",20)];

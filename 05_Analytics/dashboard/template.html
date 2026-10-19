@@ -156,7 +156,7 @@ progress{width:100%;height:10px;accent-color:var(--accent)}.panel p{line-height:
       </div>
     </div>
     <p class="stamp" id="dailyScope"></p><div class="chart" id="daily"></div>
-  </section>  <section class="panel" aria-labelledby="evergreen-h"><h2 id="evergreen-h">Are older videos still being watched?</h2><p id="evergreenSummary"></p><div id="evergreenLeaders"></div><details class="tiers"><summary>How this is measured</summary><p class="stamp">Older = published at least 30 days before the last snapshot interval began. The counts below compare public video views between the last two snapshots. Days without uploads use YouTube Analytics calendar days (Pacific time) and the current public catalog; missing or formerly public uploads can affect this comparison. This measures views on older videos, not returning viewers.</p></details></section>
+  </section>  <section class="panel" aria-labelledby="evergreen-h"><h2 id="evergreen-h">Videos older than 48 hours</h2><p id="evergreenSummary"></p><div id="evergreenLeaders"></div><details class="tiers"><summary>How this is measured</summary><p class="stamp">Age is measured from the publication timestamp to the latest snapshot, using a strict over-48-hour cutoff. View gains compare public counts between the last two snapshots; for newly qualifying videos, that interval can include views from their first 48 hours. This is not live viewing or a count of returning viewers. All matching videos in the recorded public catalog are included, with longs and Shorts together. Missing comparisons stay unknown; zero or negative changes do not prove nobody watched, because YouTube can adjust counts.</p><p class="stamp" id="noUploadSummary"></p></details></section>
   <section class="panel" aria-labelledby="earn-h"><h2 id="earn-h">Path to monetization</h2><div id="monetization"></div><details class="tiers"><summary>Watch time, pace and eligibility</summary><div id="earnDetails"></div><p class="stamp">Ad revenue requires 1,000 subscribers and either 4,000 qualified public watch hours in 12 months or 10 million qualified Shorts views in 90 days, followed by YouTube review. Public view counts and Analytics hours are not the Earn balance. The lower 500-subscriber entry tier offers some features, not full ad revenue. <a href="https://support.google.com/youtube/answer/72851?hl=en" target="_blank" rel="noopener">YouTube eligibility rules</a>.</p></details></section>
 <details class="explore"><summary>Every video</summary>  <section class="panel" aria-labelledby="videos-h">
     <div class="row">
@@ -284,14 +284,21 @@ progress{width:100%;height:10px;accent-color:var(--accent)}.panel p{line-height:
   }
   $("tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-ch]"); if (!b) return; state.ch = b.dataset.ch; store.set("tracker.ch", state.ch); render(); });
 
+  // Whole-channel cohort, independent of format filters and the viewer's current clock.
+  function olderVideos(c) {
+    const asOf=Date.parse(c.snapshotTakenAt);
+    return c.videos.filter(v=>v.publishedAt && asOf-Date.parse(v.publishedAt)>48*3600000);
+  }
+
   // ---------------------------------------------------------------- readout
   function drawReadout(c) {
     document.documentElement.style.setProperty("--accent", colorVar(c.channel));
     const o=c.overview, rows=c.daily||[], latest=rows.at(-1), n=o?.days||0;
+    const older=olderVideos(c).filter(v=>v.d1>0);
     const metric=(label,value,small)=>`<div class="cell"><span class="eyebrow">${label}</span><span class="big">${value}</span><span class="sub">${small}</span></div>`;
     $("readout").innerHTML = metric("Latest full day",latest?fmt(latest.views):"—",latest?ukDate(latest.day):"No daily data")
       + metric("Daily average",n?fmt(Math.round(o.views/n)):"—",n?`Last ${n} reported days`:"No history")
-      + metric("Older videos · last interval",o?fmt(o.olderDayViews):"—",o?`${o.olderVideosWatched} video${o.olderVideosWatched===1?"":"s"} · ${ukDate(c.day1?.from)}–${ukDate(c.date)}`:"Waiting for data");
+      + metric("Over 48h old · view gains",c.day1?.from?fmt(older.reduce((n,v)=>n+v.d1,0)):"—",c.day1?.from?`${older.length} video${older.length===1?"":"s"} · ${ukDate(c.day1.from)}–${ukDate(c.date)}`:"Waiting for comparison data");
     $("stamp").textContent = `Updated ${ukDate(c.date)} · daily viewing through ${ukDate(c.overview?.through||c.analyticsThrough||c.date)}`;
     const listed=c.videos.length, gap=c.totals.videos-listed, sum=sumOf(c.videos,"views");
     $("coverage").textContent = `Catalog: ${listed} of ${c.totals.videos} reported public videos listed${gap>0?` · ${gap} missing from the latest catalog`:gap<0?" · channel count is still catching up":" · complete"}. Listed video views: ${fmt(sum)}; channel views: ${fmt(c.totals.views)}. YouTube updates these counts separately.`;
@@ -300,9 +307,15 @@ progress{width:100%;height:10px;accent-color:var(--accent)}.panel p{line-height:
   function drawOverview(c) {
     const o=c.overview;
     $("dailyScope").textContent="Whole channel · all longs and Shorts · hover or tap a day for views";
-    $("evergreenSummary").textContent=o && o.noUploadDays ? `${o.noUploadDaysWatched} of ${o.noUploadDays} days without an upload still had views (${fmt(o.noUploadDayViews)} views across the last ${o.days} reported days).` : "No days without uploads in the available history yet.";
-    const old=c.videos.filter(v=>v.ageDays>=31 && v.d1>0).sort((a,b)=>b.d1-a.d1).slice(0,3);
-    $("evergreenLeaders").innerHTML=old.map(v=>`<div class="older-row"><a href="https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a><b>+${fmt(v.d1)}</b></div>`).join("") + (o?.olderUnknown?`<p class="stamp">${o.olderUnknown} older videos have no comparable previous count.</p>`:"") + (!old.length?'<p class="stamp">No measured views on videos 30+ days old in the latest snapshot interval.</p>':"");
+    const older=olderVideos(c), old=older.filter(v=>v.d1>0).sort((a,b)=>b.d1-a.d1), unknown=older.filter(v=>v.d1==null);
+    const unaged=c.videos.filter(v=>!Number.isFinite(Date.parse(c.snapshotTakenAt)) || !v.publishedAt || !Number.isFinite(Date.parse(v.publishedAt)));
+    const gains=old.reduce((n,v)=>n+v.d1,0), measured=older.length-unknown.length;
+    const row=(v,value)=>`<div class="older-row"><a href="https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}" target="_blank" rel="noopener">${esc(v.title)} <span class="stamp">${isShort(v)?"Short":"Long"}</span></a><b>${value}</b></div>`;
+    $("evergreenSummary").textContent=c.day1?.from?`${fmt(gains)} measured view gains · ${old.length} of ${measured} comparable videos gained views · ${ukDate(c.day1.from)}–${ukDate(c.date)}.`:"Waiting for a second snapshot to measure recent views.";
+    $("evergreenLeaders").innerHTML=(old.length?`<details class="tiers" id="olderWatched"><summary>All ${old.length} videos gaining views</summary>${old.map(v=>row(v,`+${fmt(v.d1)}`)).join("")}</details>`:'<p class="stamp">No positive view gains measured for videos older than 48 hours in this interval.</p>')
+      +(unknown.length?`<details class="tiers" id="olderUnknown"><summary>${unknown.length} older videos · recent views unknown</summary><p class="stamp">No comparable previous count is available for these videos.</p>${unknown.map(v=>row(v,"Unknown")).join("")}</details>`:"")
+      +(unaged.length?`<details class="tiers" id="olderAgeUnknown"><summary>${unaged.length} videos · age unknown</summary>${unaged.map(v=>row(v,"Unknown")).join("")}</details>`:"");
+    $("noUploadSummary").textContent=o && o.noUploadDays ? `Separate whole-channel measure: ${o.noUploadDaysWatched} of ${o.noUploadDays} days without an upload had views (${fmt(o.noUploadDayViews)} views across ${o.days} reported days). This includes all video ages. Days use Pacific time and the current public catalog; missing or formerly public uploads can affect this comparison.` : "No days without uploads in the available history yet.";
     const subs=c.totals.subscribers, pct=subs==null?0:Math.min(100,subs/10);
     $("monetization").innerHTML=`<div class="earnline"><b>${subs==null?"Unknown":fmt(subs)} / 1,000 subscribers</b><span>${subs==null?"":pct.toFixed(1)+"%"}</span></div><progress max="1000" value="${subs||0}" aria-label="Subscribers toward ad revenue threshold"></progress><p class="stamp">${o?.longHoursPerDay>0&&o.longHoursPerDay*365<4000?`Estimated long-watch pace needs ~${Math.ceil(4000/(o.longHoursPerDay*365))}× growth for 4,000 hours/year. `:""}Eligible watch hours / Shorts views: not connected. No reliable monetization date yet.</p>`;
     const pace=o?.longHoursPerDay, coverage=o?.longHoursCoverage;
