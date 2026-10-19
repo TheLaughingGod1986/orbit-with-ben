@@ -1172,7 +1172,7 @@ function tickVideoSchedules(P){
 function channelWorkRows(videoKeys,P){
   const known=new Set(videoKeys);
   return (fromDb.jobs||[]).filter(runningJob).filter(j=>supportingJob(j)||!taskKeysFor(j).some(k=>known.has(k))).map(j=>({
-    f:{key:"job:"+j.id,id:j.id,title:plainTitle(j,180),_ch:chanOf(j),_stages:[],stages:{}},jobRow:true,taskJob:j,pct:null,air:0,live:false,isSched:false,
+    f:{key:"job:"+j.id,id:j.id,title:[taskKeysFor(j).join(", "),plainTitle(j,160)].filter(Boolean).join(" · "),_ch:chanOf(j),_stages:[],stages:{}},jobRow:true,taskJob:j,pct:null,air:0,live:false,isSched:false,
     release:{state:"unscheduled"},mk:["now","Working now"],steps:[{job:j.id,who:WORKER[j.by]||j.by,what:j.title,w:{kind:"now"}}],you:"",ready:""
   }));
 }
@@ -1607,7 +1607,7 @@ function renderVideos(rows, rankOf){
     return {f:{key:"HOS:"+String(x.id).replace(/^HOS\s+/,""), id:x.id, title:x.title, _ch:"HOS"}, pct: ok ? 75 : 60, air:0, airText:x.airs||"", live:false, isSched:false, extra:true,
       you: ok ? "" : "watch and approve", mk:["wait", ok ? (x.next||"the Chief schedules it") : "waiting for your OK"], ready:"",
       steps: ok && x.next ? [{who:"Mac mini", what:x.next, w:{kind:"next", text:""}}] : []}; });
-  const P=plan(), base=rows.concat(xrows), activity=channelWorkRows(base.map(r=>r.f.key),P);
+  const P=plan(), base=rows.concat(xrows), activity=channelWorkRows(base.filter(r=>!r.live&&!r.isSched).map(r=>r.f.key),P);
   for(const r of base.concat(activity)){ r.release=r.release||filmRelease(r.f); r.blockers=r.jobRow?[]:releaseBlockers(r); r.work=videoWorkPlan(r,P); }
   const keep = base.concat(activity).filter(r=>chan==="all"||chan===r.f._ch).filter(r=>!r.live || (r.air && Date.now()-r.air < 3*DAY));
   const laneOf = r => r.live ? "live" : r.isSched ? "sched" : r.work.active.length ? "now" : r.you ? "you" : "wait";
