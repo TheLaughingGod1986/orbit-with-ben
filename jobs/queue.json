@@ -1,5 +1,5 @@
 {
-  "next_id": 677,
+  "next_id": 678,
   "jobs": [
     {
       "id": "J0001",
@@ -51468,6 +51468,34 @@
         "by": "gemini",
         "note": "Step 4/4: built HOS 071 (Cell Membranes & Aquaporins) pre-VO plate boards v01 (25 rows; Flow expected 2,750), verified c"
       }
+    },
+    {
+      "id": "J0677",
+      "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-19T18:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-19T18:19Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "qa",
+      "backlog": "both-qa-sweep"
     }
   ],
   "focus": [],
@@ -51486,7 +51514,7 @@
     "owb-next-script": "2026-10-19T17:15Z",
     "hos-next-script": "2026-10-19T17:39Z",
     "hos-plate-prep": "2026-10-19T17:58Z",
-    "both-qa-sweep": "2026-10-19T14:25Z",
+    "both-qa-sweep": "2026-10-19T18:19Z",
     "studio-ctr-daily": "2026-10-19T06:10Z"
   }
 }
