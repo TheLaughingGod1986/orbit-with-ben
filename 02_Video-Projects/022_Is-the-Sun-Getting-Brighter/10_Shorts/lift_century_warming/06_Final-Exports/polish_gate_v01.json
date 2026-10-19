@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_century_warming/06_Final-Exports/sun_century_warming_v01.mp4",
+  "edge_floor": 0.0288,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s03_sdo_canyon_fire_sun",
+      "cut": 2,
+      "t": 6.92,
+      "source": "022_v05_span_68.55.mp4",
+      "why": [
+        "low detail: edge density 0.0272 < film p5 0.0288"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_sdo_filament_sun",
+      "source": "022_v05_span_232.25.mp4",
+      "t": 1.43,
+      "std": 43.26,
+      "mean": 64.42,
+      "p95": 137.0,
+      "edge": 0.0623,
+      "hf": 13.81,
+      "lf": 31.89,
+      "std8": 35.93,
+      "edge8": 0.3349,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_apollo8_earth",
+      "source": "022_v05_span_390.85.mp4",
+      "t": 4.1,
+      "std": 72.99,
+      "mean": 114.09,
+      "p95": 206.0,
+      "edge": 0.0319,
+      "hf": 10.09,
+      "lf": 70.37,
+      "std8": 70.9,
+      "edge8": 0.1879,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_sdo_canyon_fire_sun",
+      "source": "022_v05_span_68.55.mp4",
+      "t": 6.92,
+      "std": 60.87,
+      "mean": 116.89,
+      "p95": 223.0,
+      "edge": 0.0272,
+      "hf": 9.12,
+      "lf": 57.74,
+      "std8": 58.78,
+      "edge8": 0.3602,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0272 < film p5 0.0288"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04_sts36_sunlit_ocean",
+      "source": "022_v05_span_290.95.mp4",
+      "t": 10.1,
+      "std": 52.26,
+      "mean": 101.76,
+      "p95": 205.0,
+      "edge": 0.127,
+      "hf": 16.08,
+      "lf": 43.91,
+      "std8": 46.46,
+      "edge8": 0.3556,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_iss_indian_ocean",
+      "source": "022_v05_span_362.20.mp4",
+      "t": 12.7,
+      "std": 54.27,
+      "mean": 92.68,
+      "p95": 173.0,
+      "edge": 0.1614,
+      "hf": 16.87,
+      "lf": 42.77,
+      "std8": 46.97,
+      "edge8": 0.5191,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_sdo_year6_sun",
+      "source": "022_v05_span_482.55.mp4",
+      "t": 15.7,
+      "std": 75.17,
+      "mean": 108.25,
+      "p95": 239.0,
+      "edge": 0.2566,
+      "hf": 20.42,
+      "lf": 63.76,
+      "std8": 67.49,
+      "edge8": 0.6294,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_iss_south_pacific_clouds",
+      "source": "022_v05_span_423.95.mp4",
+      "t": 19.23,
+      "std": 47.58,
+      "mean": 98.99,
+      "p95": 178.0,
+      "edge": 0.1096,
+      "hf": 11.55,
+      "lf": 42.83,
+      "std8": 44.39,
+      "edge8": 0.2693,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_sdo_filament.mp4",
+      "t": 22.38,
+      "std": 34.01,
+      "mean": 47.87,
+      "p95": 104.0,
+      "edge": 0.0332,
+      "hf": 11.87,
+      "lf": 24.42,
+      "std8": 28.25,
+      "edge8": 0.2454,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

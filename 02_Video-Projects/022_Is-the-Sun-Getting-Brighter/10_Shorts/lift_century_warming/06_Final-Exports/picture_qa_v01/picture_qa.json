@@ -1,0 +1,153 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_century_warming/06_Final-Exports/sun_century_warming_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 2,
+      "row": "s03_sdo_canyon_fire_sun",
+      "source": "022_v05_span_68.55.mp4",
+      "title": "NASA SDO Filament Eruption Creates 'Canyon of Fire' on the Sun (GSFC_20171208_Archive_e001363, 68.55s)",
+      "t": 6.92,
+      "at": "0:07",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0272 < film p5 0.0288"
+      ],
+      "offset": 68.55
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_sdo_filament_sun",
+      "source": "022_v05_span_232.25.mp4",
+      "title": "NASA SDO giant solar filament and active regions across the solar disc (GSFC_20171208_Archive_e000790, 232.25s)",
+      "t": 1.43,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 232.25
+    },
+    {
+      "cut": 1,
+      "row": "s02_apollo8_earth",
+      "source": "022_v05_span_390.85.mp4",
+      "title": "Apollo 8 sunlit view of Earth and clouds over the Atlantic Ocean (as08-16-2588, 390.85s)",
+      "t": 4.1,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 390.85
+    },
+    {
+      "cut": 2,
+      "row": "s03_sdo_canyon_fire_sun",
+      "source": "022_v05_span_68.55.mp4",
+      "title": "NASA SDO Filament Eruption Creates 'Canyon of Fire' on the Sun (GSFC_20171208_Archive_e001363, 68.55s)",
+      "t": 6.92,
+      "at": "0:07",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0272 < film p5 0.0288"
+      ],
+      "offset": 68.55
+    },
+    {
+      "cut": 3,
+      "row": "s04_sts36_sunlit_ocean",
+      "source": "022_v05_span_290.95.mp4",
+      "title": "STS-36 Earth observation of sunlight beaming off cloud-covered ocean (s36-07-012, 290.95s)",
+      "t": 10.1,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": 290.95
+    },
+    {
+      "cut": 4,
+      "row": "s05_iss_indian_ocean",
+      "source": "022_v05_span_362.20.mp4",
+      "title": "ISS Expedition 72 view of cloudy Indian Ocean southwest of Perth (iss072e769023, 362.20s)",
+      "t": 12.7,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 362.2
+    },
+    {
+      "cut": 5,
+      "row": "s06_sdo_year6_sun",
+      "source": "022_v05_span_482.55.mp4",
+      "title": "NASA SDO: Year 6 full-disk solar observation (GSFC_20171208_Archive_e000414, 482.55s)",
+      "t": 15.7,
+      "at": "0:16",
+      "fail": [],
+      "warn": [],
+      "offset": 482.55
+    },
+    {
+      "cut": 6,
+      "row": "s07_iss_south_pacific_clouds",
+      "source": "022_v05_span_423.95.mp4",
+      "title": "ISS Expedition 72 view of storm clouds over the South Pacific Ocean (iss072e617674, 423.95s)",
+      "t": 19.23,
+      "at": "0:19",
+      "fail": [],
+      "warn": [],
+      "offset": 423.95
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_sdo_filament.mp4",
+      "title": "End-card loop: NASA SDO giant solar filament and active regions across the solar disc (GSFC_20171208_Archive_e000790, 232.25s)",
+      "t": 22.38,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 232.25
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0288,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
