@@ -333,7 +333,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0684 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0685 | mini | blocked | gemini | – | for gemini · chart · `gemini-agy` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0686 | mini | open | – | – | for gemini · chart · `gemini-agy` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0687 | mini | claimed | gemini | 2026-10-20T00:51Z | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J0687 | mini | claimed | gemini | 2026-10-20T00:23Z | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0688 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0689 | mini | open | – | – | for gemini · script · `gemini-argon` · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0690 | mini | open | – | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
