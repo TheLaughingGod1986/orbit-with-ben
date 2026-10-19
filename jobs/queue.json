@@ -46547,13 +46547,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-19T02:23Z",
-      "eta": "2026-10-19T03:53Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T01:55Z",
-      "result": "",
+      "result": "parked for Chief: price pass",
       "history": [
         {
           "at": "2026-10-19T01:55Z",
@@ -46589,6 +46589,11 @@
           "at": "2026-10-19T02:38Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4: Built 059 Telomeres/Aging pre-VO plate boards v01 (25 rows, Flow expected 2,750), passed check_all.sh, and pushed 056-059 boards to HOS PR #348 (fc1eb2ac)"
+        },
+        {
+          "at": "2026-10-19T02:38Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: price pass"
         }
       ],
       "kind": "assembly",
