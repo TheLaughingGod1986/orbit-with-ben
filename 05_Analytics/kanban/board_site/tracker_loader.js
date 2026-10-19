@@ -60,7 +60,7 @@
   }
 
   const refresh=document.getElementById("tracker-refresh");
-  if(refresh) refresh.onclick=()=>{say("Checking the latest snapshot…");check(false);};
+  if(refresh) refresh.onclick=async()=>{if(window.__studioCheckVersion && await window.__studioCheckVersion()) return; say("Checking the latest snapshot…");check(false);};
   const saved = store.get();
   if (saved && parse(saved)) { start(saved); say("Saved copy · checking for a newer snapshot…"); }
   else say("Loading the latest snapshot…");

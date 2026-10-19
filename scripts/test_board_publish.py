@@ -98,6 +98,12 @@ class SiteBuild(unittest.TestCase):
             self.assertIn("board-data/board.json", html)
             self.assertTrue((HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").exists())
             self.assertIn('href="/tracker"', html)
+            version=json.loads((Path(d)/"dist/version.json").read_text())["version"]
+            self.assertIn(f'<meta name="studio-version" content="{version}">',html)
+            self.assertIn('src="/updater.js"',html)
+            self.assertTrue((Path(d)/"dist/updater.js").exists())
+            tracker=(Path(d)/"dist/tracker.html").read_text()
+            self.assertIn(f'<meta name="studio-version" content="{version}">',tracker)
 
     def test_build_makes_the_tracker_web_app(self):
         spec = importlib.util.spec_from_file_location("board_build", HERE.parent / "05_Analytics/kanban/board_site/build.py")
@@ -120,6 +126,20 @@ class SiteBuild(unittest.TestCase):
             self.assertTrue((dist / "static/tracker-180.png").exists())
         vercel = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
         self.assertIn({"source": "/tracker", "destination": "/tracker.html"}, vercel["rewrites"])
+
+    def test_daily_data_changes_do_not_trigger_code_update_loops(self):
+        spec=importlib.util.spec_from_file_location("board_version_build",HERE.parent/"05_Analytics/kanban/board_site/build.py")
+        mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);mod.TRACKER_DATA=root/"data.json"
+            mod.TRACKER_DATA.write_text(json.dumps({"channels":[],"generatedAt":"first"}))
+            mod.build(root/"dist")
+            first=json.loads((root/"dist/version.json").read_text())["version"]
+            first_html=(root/"dist/tracker.html").read_text()
+            mod.TRACKER_DATA.write_text(json.dumps({"channels":[],"generatedAt":"second"}))
+            mod.build(root/"dist")
+            self.assertEqual(first,json.loads((root/"dist/version.json").read_text())["version"])
+            self.assertNotEqual(first_html,(root/"dist/tracker.html").read_text())
 
 
 class Tracker(unittest.TestCase):

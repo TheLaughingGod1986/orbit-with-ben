@@ -96,7 +96,7 @@ class MacMiniBox(unittest.TestCase):
         html = page()
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "jobMin", "plan", "laneQuiet", "shortTitle", "jobTag",
                  "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
-                 "updatedAt", "STALL_MIN", "stallOf", "hbLine", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "pcCol", "renderNow"]
+                 "updatedAt", "STALL_MIN", "latestWorkActivity", "activityLine", "stallOf", "workLane", "jobQueueInfo", "hbLine", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "pcCol", "renderNow"]
         lib = "\n".join(js_function(html, n) for n in dict.fromkeys(names + PROGRESS_FUNCTIONS))
         board = {"jobs": self.JOBS if jobs is None else jobs,
                  "runOrder": {"mini": ["J0130", "J0126", "J0128", "J0132"], "chief": ["J0123"]},
@@ -153,24 +153,48 @@ console.log(JSON.stringify({{hidden: box.hidden, html: box.innerHTML, className:
 
     def test_idle_box_is_plain_too(self):
         r = self.render(jobs=self.with_jobs(J0129=None))
-        self.assertIn("<b>Now:</b> starting the next job", r["html"])
+        self.assertIn("<b>Now:</b> next job queued", r["html"])
         self.assertNotIn('<div class="pbar"', r["html"])
 
-    def test_stalled_queue_says_how_long_since_a_job_finished(self):
-        # Ben, 14 Oct: the box read "starting the next job" for hours while nothing ran.
+    def test_recent_review_hand_off_is_activity_even_if_last_fully_done_job_was_yesterday(self):
         lanes = {"mini": {"lastAt": "2026-10-11T19:10Z", "lastBy": "codex", "lastWhat": "blocked: parked for Chief: Studio sign-in",
-                          "heartbeat": {"at": "2026-10-11T19:46Z", "state": "running"}}}
-        r = self.render(jobs=self.with_jobs(J0129=None), extra={"done": [{"id": "J0100", "at": "2026-10-10T15:50Z"}]}, lanes=lanes)
-        self.assertIn("nothing running · last job finished", r["html"])
-        self.assertIn(">1 d ago<", r["html"])
-        self.assertIn("nowbar asleep", r["className"])
-        self.assertIn("Mac mini checked in <span", r["html"])
-        self.assertIn("last: Codex blocked: parked for Chief: Studio sign-in (", r["html"])
-        # a job finished an hour ago: still the plain idle line
-        r = self.render(jobs=self.with_jobs(J0129=None), extra={"done": [{"id": "J0100", "at": "2026-10-11T18:50Z"}]})
-        self.assertIn("<b>Now:</b> starting the next job", r["html"])
-        # a running job: no check-in line, the bar instead
-        self.assertNotIn('class="hb"', self.render(lanes=lanes)["html"])
+                          "heartbeat": {"at": "2026-10-11T19:46Z", "state": "idle"}}}
+        r=self.render(jobs=self.with_jobs(J0129=None),extra={"done":[{"id":"J0100","at":"2026-10-10T15:50Z"}]},lanes=lanes)
+        self.assertIn("Last work sent for review",r["html"])
+        self.assertNotIn("last job finished",r["html"])
+        self.assertNotIn("nowbar asleep",r["className"])
+        self.assertIn("Mac mini checked in <span",r["html"])
+        # A fresh relay check-in alone must not mask genuinely old worker activity.
+        lanes["mini"].update(lastAt="2026-10-10T15:50Z",lastWhat="done: delivered")
+        r=self.render(jobs=self.with_jobs(J0129=None),extra={"done":[{"id":"J0100","at":"2026-10-10T15:50Z"}]},lanes=lanes)
+        self.assertIn("no worker activity for",r["html"])
+        self.assertIn(">1 d ago<",r["html"])
+        self.assertIn("nowbar asleep",r["className"])
+        self.assertNotIn('class="hb"',self.render(lanes=lanes)["html"])
+
+    def test_review_work_is_not_described_as_finished(self):
+        jobs=self.with_jobs(J0129=None)
+        jobs.append({"id":"JREVIEW","title":"Short cut","needs":"mini","status":"blocked","result":"parked for Chief: Short PASS","by":"gemini","last":{"at":"2026-10-11T19:48Z","what":"blocked: parked for Chief: Short PASS"},"progress":{"step":4,"of":4,"at":"2026-10-11T19:47Z"}})
+        r=self.render(jobs=jobs,extra={"done":[{"id":"J0100","at":"2026-10-11T12:50Z"}]})
+        self.assertIn("Last work sent for review",r["html"])
+        self.assertIn("JREVIEW",r["html"])
+        self.assertNotIn("7 h ago",r["html"])
+        self.assertNotIn("asleep",r["className"])
+
+    def test_automatic_review_escalation_does_not_mask_old_worker_activity(self):
+        jobs=self.with_jobs(J0129=None)
+        jobs.append({"id":"JSTALE","title":"Old review","needs":"mini","status":"blocked","result":"parked for Chief: review","last":{"at":"2026-10-11T19:49Z","by":"refill","what":"escalated to Chief: parked 2 h"},"progress":{"step":4,"of":4,"at":"2026-10-10T19:47Z"}})
+        r=self.render(jobs=jobs,extra={"done":[{"id":"J0100","at":"2026-10-11T12:50Z"}]})
+        self.assertIn("no worker activity for",r["html"])
+        self.assertIn("7 h ago",r["html"])
+        self.assertIn("nowbar asleep",r["className"])
+
+    def test_review_hold_without_ready_jobs_is_waiting_not_a_worker_stall(self):
+        jobs=[{"id":"JREVIEW","title":"Awaiting review","needs":"mini","status":"blocked","result":"parked for Chief: Short PASS","last":{"at":"2026-10-11T12:50Z","by":"gemini","what":"blocked: parked for Chief: Short PASS"}}]
+        r=self.render(jobs=jobs)
+        self.assertIn("<b>Now:</b> waiting for review",r["html"])
+        self.assertIn("Last work sent for review",r["html"])
+        self.assertNotIn("asleep",r["className"])
 
     def test_box_shows_on_every_channel(self):
         self.assertNotIn('chan==="HOS"', js_function(page(), "renderNow"))

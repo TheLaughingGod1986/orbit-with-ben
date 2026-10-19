@@ -29,7 +29,7 @@
   function srcLine() {
     const t = $("srctxt"), dot = $("dot"); if (!t) return;
     const bd = window.__boardData || {}, at = ts(bd.dataChangedAt || bd.publishedAt);
-    const when = isNaN(at) ? "" : `Last change ${esc(clock(at))} · <span data-ago="${at}">${esc(ago(at))}</span> · `;
+    const when = isNaN(at) ? "" : `Data changed ${esc(clock(at))} · <span data-ago="${at}">${esc(ago(at))}</span> · `;
     const next = poll.busy ? "checking…" : `next check in <span class="nchk">${secs(poll.next - Date.now())}</span>`;
     const html = poll.ok ? when + next : `${when}<b class="soon">can't reach the data</b> · retrying, ${next}`;
     if (t.dataset.h !== html) { t.dataset.h = html; t.innerHTML = html; }
@@ -43,8 +43,11 @@
     if (!btn || btn.disabled) return;
     const before = (window.__boardData || {}).publishedAt;
     btn.disabled = true; btn.classList.add("spin"); btn.textContent = "Checking…";
-    try { await window.__boardRefresh(); } catch (e) {}
-    btn.textContent = !poll.ok ? "Offline" : (window.__boardData || {}).publishedAt !== before ? "Updated" : "Up to date";
+    try {
+      if (window.__studioCheckVersion && await window.__studioCheckVersion()) return;
+      await window.__boardRefresh();
+    } catch (e) {}
+    btn.textContent = !poll.ok ? "Offline" : (window.__boardData || {}).publishedAt !== before ? "Data refreshed" : "Data checked";
     setTimeout(() => { btn.disabled = false; btn.classList.remove("spin"); btn.textContent = "↻ Refresh"; }, 1800);
   }
   if (btn) { btn.hidden = false; btn.textContent = "↻ Refresh"; btn.onclick = refresh; }

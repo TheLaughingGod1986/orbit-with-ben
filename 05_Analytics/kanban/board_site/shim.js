@@ -120,18 +120,21 @@
   // code (env BOARD_KEY): opening the board link once (#k=...) stores it on that device; if it isn't stored (e.g. the
   // Home Screen copy keeps its own storage), the first tap asks for it once and keeps it.
   async function write(id, body) {
-    if (!key) {
-      const k = (window.prompt("One-time setup on this phone: paste the board code from your board link (the part after #k=).") || "").trim().replace(/^.*#k=/, "");
-      if (!k) throw new Error("no board code");
-      key = k; try { localStorage.setItem("studio-board-key", k); } catch (e) {}
-    }
-    const r = await fetch(API, { method: "POST", headers: { "content-type": "application/json", "x-board-key": key || "" },
-      body: JSON.stringify(Object.assign({ id }, body)) });
-    if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} }
-    if (!r.ok) throw new Error("save failed " + r.status);
-    const j = await r.json();
-    if (j && j.checks) { checksFresh = true; setServer(j.checks); emitChecks(); }
-    if (j && /^not posted/.test(j.chief || "")) alert("Saved on the board, but it didn't reach the Chief's thread (" + j.chief.slice(0, 80) + "). Tell the Chief in the chat as well.");
+    window.__studioPendingWrites=(window.__studioPendingWrites||0)+1;
+    try {
+      if (!key) {
+        const k = (window.prompt("One-time setup on this phone: paste the board code from your board link (the part after #k=).") || "").trim().replace(/^.*#k=/, "");
+        if (!k) throw new Error("no board code");
+        key = k; try { localStorage.setItem("studio-board-key", k); } catch (e) {}
+      }
+      const r = await fetch(API, { method: "POST", headers: { "content-type": "application/json", "x-board-key": key || "" },
+        body: JSON.stringify(Object.assign({ id }, body)) });
+      if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} }
+      if (!r.ok) throw new Error("save failed " + r.status);
+      const j = await r.json();
+      if (j && j.checks) { checksFresh = true; setServer(j.checks); emitChecks(); }
+      if (j && /^not posted/.test(j.chief || "")) alert("Saved on the board, but it didn't reach the Chief's thread (" + j.chief.slice(0, 80) + "). Tell the Chief in the chat as well.");
+    } finally { window.__studioPendingWrites--; }
   }
 
   const db = {
@@ -146,7 +149,7 @@
         async set(v) {
           const id = path.split("/")[1];
           local[id] = v; emitChecks();
-          try { await write(id, { doc: v }); } catch (e) { delete local[id]; emitChecks(); alert("Couldn't save that tick. Try again in a minute."); }
+          try { await write(id, { doc: v }); } catch (e) { delete local[id]; emitChecks(); throw e; }
         },
         async delete() {
           const id = path.split("/")[1];

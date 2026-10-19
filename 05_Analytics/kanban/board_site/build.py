@@ -23,6 +23,7 @@ need a redeploy; only page changes do. Fails loudly if a patch target has moved,
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import pathlib
 import shutil
@@ -90,6 +91,16 @@ TRACKER_PATCHES = [
 ]
 
 
+def app_version() -> str:
+    files = [PAGE, TRACKER, HERE / "build.py", HERE / "shim.js", HERE / "live.js", HERE / "tracker_loader.js", HERE / "updater.js"]
+    return hashlib.sha256(b"\0".join(f.read_bytes() for f in files)).hexdigest()[:16]
+
+
+def versioned_page(html: str) -> str:
+    marker = f'<meta name="studio-version" content="{app_version()}"><script src="/updater.js" defer></script>'
+    return html.replace("</head>", marker + "</head>", 1)
+
+
 def build_tracker(out: pathlib.Path) -> None:
     html = TRACKER.read_text()
     for old, new in TRACKER_PATCHES:
@@ -107,7 +118,7 @@ def build_tracker(out: pathlib.Path) -> None:
     if html.count("__TRACKER_DATA__") != 1:
         sys.exit("build: expected one __TRACKER_DATA__ in dashboard/template.html")
     html = html.replace("__TRACKER_DATA__", baked.replace("<", "\\u003c"))
-    (out / "tracker.html").write_text(TRACKER_HEAD + html + "\n</body></html>\n")
+    (out / "tracker.html").write_text(versioned_page(TRACKER_HEAD + html + "\n</body></html>\n"))
     shutil.copy(HERE / "tracker.webmanifest", out / "tracker.webmanifest")
     shutil.copytree(HERE / "static", out / "static")
     print(f"built {out / 'tracker.html'} ({len(html):,} bytes)")
@@ -134,7 +145,9 @@ def build(out: pathlib.Path) -> None:
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
-    (out / "index.html").write_text(html)
+    (out / "index.html").write_text(versioned_page(html))
+    (out / "version.json").write_text(json.dumps({"version": app_version()}))
+    shutil.copy(HERE / "updater.js", out / "updater.js")
     print(f"built {out} ({len(html):,} bytes index.html)")
     build_tracker(out)
 

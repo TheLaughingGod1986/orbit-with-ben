@@ -1015,13 +1015,30 @@ function updatedAt(){
   const t = ts(bd.publishedAt) || ts(fromDb.owbAt);
   return isNaN(t) ? "" : `<div class="upd">Updated ${clock(t)} · <span data-ago="${t}">${ago(t)}</span></div>`;
 }
-// Ben, 14 Oct (board read "starting the next job" for hours while nothing ran): with jobs waiting and nothing running,
-// say how long since a job last finished once that's over 2 h. From the queue's done list; no list, no claim.
+// Review hand-offs are worker activity, but never count as completed jobs or finished videos.
 const STALL_MIN = 120;
+function latestWorkActivity(){
+  const candidates=progressUpdates().map(j=>{
+    const last=j.last||{}, admin=/^(refill|relay|system)$/i.test(last.by||"")||/^(escalated|rerouted|reopened|added)\b/i.test(last.what||"");
+    if(admin && j.status!=="done") return {at:ts((j.progress||{}).at),id:j.id,kind:"progress"};
+    return {at:Math.max(ts(last.at)||0,ts(j.at)||0),id:j.id,kind:j.status==="done"?"done":isChiefPark(j)?"review":"paused"};
+  });
+  for(const j of fromDb.jobs||[]){
+    const progress=j.progress||{}, last=j.last||{};
+    if(j.status!=="blocked" && progress.of>0 && progress.step>0) candidates.push({at:ts(progress.at||last.at),id:j.id,kind:"progress"});
+  }
+  const lane=(fromDb.lanes||{}).mini||{};
+  if(/^(step|claimed|done|blocked|released)\b/i.test(lane.lastWhat||"")) candidates.push({at:ts(lane.lastAt),kind:/^blocked/i.test(lane.lastWhat)?/parked for Chief/i.test(lane.lastWhat)?"review":"paused":/^done/i.test(lane.lastWhat)?"done":"progress"});
+  return candidates.filter(x=>Number.isFinite(x.at)&&x.at<=Date.now()+MINUTE).sort((a,b)=>b.at-a.at)[0]||null;
+}
 function stallOf(){
-  const x = (fromDb.extra||{}).done || fromDb.recent || [];
-  const at = Math.max(...x.map(d=>ts(d.at)).filter(t=>!isNaN(t)), -Infinity);
-  return isFinite(at) && Date.now()-at > STALL_MIN*MINUTE ? {at, min: Math.round((Date.now()-at)/MINUTE)} : null;
+  const latest=latestWorkActivity(), at=latest&&latest.at;
+  return latest && Date.now()-at > STALL_MIN*MINUTE ? {at,min:Math.round((Date.now()-at)/MINUTE)} : null;
+}
+function activityLine(){
+  const a=latestWorkActivity(); if(!a) return "";
+  const label={done:"Last job completed",review:"Last work sent for review",paused:"Last job paused",progress:"Last worker activity"}[a.kind];
+  return `<div class="last-activity">${esc(label)} <span data-ago="${a.at}">${ago(a.at)}</span>${a.id?` · ${esc(a.id)}`:""}</div>`;
 }
 // When the Mini's relay last checked in (it pushes a heartbeat every 10 min) and the last thing a worker did on its line.
 function hbLine(){
@@ -1316,7 +1333,7 @@ function renderNow(){
   const P = plan(), q = laneQuiet();
   // Ben, 15 Oct 2026: "Still seems to be stuck". A claim whose lease ran out over 45 min ago is a dead worker, not a running job.
   const busy = jobs.filter(runningJob);
-  const line = jobs.filter(j=>j.status==="open" && P[j.id] && P[j.id].start).sort((a,b)=>P[a.id].start-P[b.id].start);
+  const line = jobs.filter(j=>j.status==="open" && jobQueueInfo(j,P).state==="queued").sort((a,b)=>P[a.id].start-P[b.id].start);
   const headJob = busy[0] || null;
   let cls = "", head;
   let bar = "";
@@ -1327,10 +1344,15 @@ function renderNow(){
     const doing = [stp, lastWhat].filter(Boolean).join(" · ");
     head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 200))}</span>`;
     bar = `<div class="nowwho">${esc([who, mdl].filter(Boolean).join(" · "))}</div>` + `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
-  else if(line.length){ const sl = stallOf(); cls = (q && q.quiet) || sl ? "asleep" : "idle";
-    head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours"
-      : sl ? `<b>Now:</b> <span>nothing running · last job finished <span data-ago="${sl.at}">${ago(sl.at)}</span></span>` : "<b>Now:</b> starting the next job"; }
-  else { cls = "idle"; head = "<b>Now:</b> nothing to do right now"; }
+  else {
+    const sl=stallOf(), reviews=jobs.some(j=>j.status==="blocked"&&isChiefPark(j)), blocked=jobs.some(j=>j.status==="blocked");
+    cls=sl&&line.length?"asleep":"idle";
+    head=sl&&line.length?`<b>Now:</b> nothing running · no worker activity for <span data-ago="${sl.at}">${ago(sl.at)}</span>`
+      : line.length?"<b>Now:</b> next job queued"
+      : reviews?"<b>Now:</b> waiting for review"
+      : blocked?"<b>Now:</b> waiting for blockers to clear":"<b>Now:</b> no job queued";
+    bar=activityLine();
+  }
   const nxs = line.filter(j=>j!==headJob).slice(0,3);
   const groups = {};
   for(const j of all){ if(j===headJob) continue; const k = jobKind(j); if(!k) continue;
@@ -1847,7 +1869,7 @@ function renderTracker(films){
   // Ben, 15 Oct 2026: "we used to have a section at the top saying ready for me ... can we add that section back".
   // It always shows: the cuts to watch (with the player, Approve and timed change notes), or the next one coming.
   yb.className = "youbar" + (soon.length || extraLeft().length ? " has" : justTicks(ticked, Date.now()).length ? "" : " quiet");
-  if(yb.contains(document.activeElement) && ["TEXTAREA","INPUT"].includes(document.activeElement.tagName) && document.activeElement.value) return;   // don't wipe a fix being typed
+  if([...yb.querySelectorAll(".fxx,.fxt")].some(x=>x.value.trim())) return;   // polling and Refresh must preserve an unfinished comment even after focus moves
   const fixList = (fx, id, editable) => fx.length ? `<ol class="fx">${fx.map((f,k)=>`<li>${f.t?`<span class="ft2">${esc(f.t)}</span>`:""}<span>${esc(f.text)}</span>${editable?`<button class="lnk" data-rm="${id}:${k}" aria-label="Remove">remove</button>`:""}</li>`).join("")}</ol>` : "";
   const editor = (id, sent) => { const fx = drafts[id] || [];
     return `<span class="chgbox">
@@ -1886,15 +1908,15 @@ function renderTracker(films){
     if(!dbApi) return;
     try {
       await dbApi.doc("checks/"+id).set({film:keyOf(id), version:((fromDb.watch||{})[keyOf(id)]||{}).version||"", verdict, fixes:fixes||[], note:(fixes||[]).map(f=>(f.t?f.t+" ":"")+f.text).join(" | ").slice(0,4000), at:new Date().toISOString(), handled:false});
-      changeOpen=null; delete drafts[id]; render();
+      yb.querySelectorAll(".fxx,.fxt").forEach(x=>x.value=""); changeOpen=null; delete drafts[id]; render();
     } catch(e){ alert("Couldn't save that (" + (e && e.code || "error") + "). Tell the Chief in the chat instead."); }
   };
   const addDraft = id => { const t=$("t-"+id), x=$("x-"+id), text=(x&&x.value||"").trim(); if(!text){ x&&x.focus(); return; }
-    (drafts[id] = drafts[id] || []).push({t:(t&&t.value||"").trim().slice(0,12), text:text.slice(0,1000)}); render(); const nx=$("x-"+id); if(nx) nx.focus(); };
+    (drafts[id] = drafts[id] || []).push({t:(t&&t.value||"").trim().slice(0,12), text:text.slice(0,1000)}); if(t)t.value=""; if(x)x.value=""; render(); const nx=$("x-"+id); if(nx) nx.focus(); };
   const sentFixes = id => { const c=(fromDb.checks||{})[id]; return c && c.verdict==="change" && !c.handled ? (Array.isArray(c.fixes)?c.fixes:(c.note?[{t:"",text:c.note}]:[])) : []; };
   yb.querySelectorAll("[data-ok]").forEach(b=>b.onclick=()=>saveCheck(b.dataset.ok,"ok"));
   yb.querySelectorAll("[data-chg],[data-more]").forEach(b=>b.onclick=()=>{ const id=b.dataset.chg||b.dataset.more; changeOpen=id; render(); const x=$("x-"+id); if(x) x.focus(); });
-  yb.querySelectorAll("[data-cancel]").forEach(b=>b.onclick=()=>{ changeOpen=null; delete drafts[b.dataset.cancel]; render(); });
+  yb.querySelectorAll("[data-cancel]").forEach(b=>b.onclick=()=>{ yb.querySelectorAll(".fxx,.fxt").forEach(x=>x.value=""); changeOpen=null; delete drafts[b.dataset.cancel]; render(); });
   yb.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>addDraft(b.dataset.add));
   yb.querySelectorAll(".fxx").forEach(inp=>inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); addDraft(inp.id.slice(2)); } });
   yb.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>{ const [id,k]=b.dataset.rm.split(":"); (drafts[id]||[]).splice(Number(k),1); render(); });
