@@ -29099,13 +29099,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-16T14:44Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-19T18:12Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-16T14:42Z",
-      "result": "parked for Chief: e4f19a3c — 028 code_graphics_v02 (20/20 PASS, 0 fails) and 029 code_graphics_v01 (14/14 PASS, 0 fails) on polish_gate.py + picture_qa.py; £0",
+      "result": "PASS (Chief, 19 Oct ~19:12 London): 028 code_graphics_v02 20/20 and 029 code_graphics_v01 14/14 pass polish_gate + picture_qa (e4f19a3c on OWB main); only a WARN on 028 r28_hale_bopp_2 edge density 0.069 vs 0.0695 (accept). Look already PASSed in J0338/J0347; this was a gate fix. £0.",
       "history": [
         {
           "at": "2026-10-16T14:42Z",
@@ -29151,16 +29151,26 @@
           "at": "2026-10-16T17:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-19T18:12Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-19T18:12Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-19T18:12Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 19 Oct ~19:12 London): 028 code_graphics_v02 20/20 and 029 code_graphics_v01 14/14 pass polish_gate + picture_qa (e4f19a3c on OWB main); only a WARN on 028 r28_hale_bopp_2 edge density 0.069 vs 0.0695 (accept). Look already PASSed in J0338/J0347; this was a gate fix. £0."
         }
       ],
       "kind": "chart",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-16T14:59Z",
-        "by": "gemini"
-      },
-      "escalated_at": "2026-10-16T17:50Z"
+      "escalated_at": "2026-10-16T17:50Z",
+      "done_ref": "e4f19a3c"
     },
     {
       "id": "J0383",
