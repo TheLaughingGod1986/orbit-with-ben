@@ -52235,10 +52235,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-19T21:17Z",
-      "eta": "2026-10-19T23:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T21:00Z",
       "result": "",
@@ -52322,6 +52322,11 @@
           "at": "2026-10-19T21:18Z",
           "by": "codex",
           "what": "step 0 of 4 done: Existing j0684-scratch tmux active (pane PID 80971); .done absent, log empty, 11 GiB free. Disk prerequisite unfinished; no film selected or render started."
+        },
+        {
+          "at": "2026-10-19T21:18Z",
+          "by": "codex",
+          "what": "released: Scratch prerequisite still running in tmux j0684-scratch (pane PID 80971). Log /Users/benjaminoats/_desk/logs/j0684-scratch.log; completion /Users/benjaminoats/_desk/logs/j0684-scratch.done absent. Do not duplicate. Next run read completion/log, verify archive and free space, release OWB 028 scratch claim after success, then select/link HOS film. Preserved 0/4; no spend or upload."
         }
       ],
       "kind": "assembly",
