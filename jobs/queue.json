@@ -29173,13 +29173,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-16T15:00Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-19T18:12Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-16T14:42Z",
-      "result": "parked for Chief: HOS 007-010 code_graphics_v01 re-rendered at £0 (HOS b5703fcf); all 4 packs now PASS polish_gate.py and picture_qa.py with 0 fails (0/3, 0/11, 0/12, 0/13). Ready for Chief PASS.",
+      "result": "PASS (Chief, 19 Oct ~19:12 London): HOS 007-010 code_graphics_v01 re-render b5703fcf on HOS main; polish_gate + picture_qa 0 fails on all 4 packs; 009 sheet checked by eye (12 parchment diagrams, labels <=4 words, clean, no seams). Nit for the next touch only: 009 label FOR EVER may read FOREVER. Next step for 007-010 stays the gated Flow mint order. £0.",
       "history": [
         {
           "at": "2026-10-16T14:42Z",
@@ -29225,16 +29225,26 @@
           "at": "2026-10-16T17:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-19T18:12Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-19T18:12Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-19T18:12Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 19 Oct ~19:12 London): HOS 007-010 code_graphics_v01 re-render b5703fcf on HOS main; polish_gate + picture_qa 0 fails on all 4 packs; 009 sheet checked by eye (12 parchment diagrams, labels <=4 words, clean, no seams). Nit for the next touch only: 009 label FOR EVER may read FOREVER. Next step for 007-010 stays the gated Flow mint order. £0."
         }
       ],
       "kind": "chart",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-16T15:17Z",
-        "by": "gemini"
-      },
-      "escalated_at": "2026-10-16T17:50Z"
+      "escalated_at": "2026-10-16T17:50Z",
+      "done_ref": "b5703fcf"
     },
     {
       "id": "J0384",
