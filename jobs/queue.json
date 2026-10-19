@@ -50541,17 +50541,26 @@
           "at": "2026-10-19T15:09Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J0665: auditing live longs for missing Test & Compare"
+        },
+        {
+          "at": "2026-10-19T15:12Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Audited all 12 live OWB longs in 2026-10-19 snapshot against THUMB_AUDIT_2026-10-09, THUMB_LEDGER.json, and studio_thumbs_J0091"
         }
       ],
       "kind": "chart",
       "backlog": "owb-thumb-b",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-19T15:09Z",
+        "at": "2026-10-19T15:12Z",
         "by": "gemini",
-        "note": "Started J0665: auditing live longs for missing Test & Compare"
-      }
+        "note": "Audited all 12 live OWB longs in 2026-10-19 snapshot against THUMB_AUDIT_2026-10-09, THUMB_LEDGER.json, and studio_thumb"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022"
+      ]
     }
   ],
   "focus": [],
