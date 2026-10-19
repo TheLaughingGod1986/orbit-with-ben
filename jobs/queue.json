@@ -51848,13 +51848,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-19T19:26Z",
-      "eta": "2026-10-19T20:56Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T19:00Z",
-      "result": "",
+      "result": "parked for Chief: no eligible live long. All 12 public longs in 2026-10-19 snapshot have tests or B variants on record (J0099, J0136, J0189, ledger T005-T007, j0234/j0386/j0402/j0419, Sun studio_thumbs_J0091). Chief J0293 prohibits duplicate B. Cancel J0680 or retire owb-thumb-b refill until eligible. Progress 1/3; no build, spend or Studio change.",
       "history": [
         {
           "at": "2026-10-19T19:00Z",
@@ -51875,6 +51875,11 @@
           "at": "2026-10-19T19:27Z",
           "by": "codex",
           "what": "step 1 of 3 done: Eligibility checked against 2026-10-19 snapshot: all 12 public longs have tests or B variants on record; J0293 Chief ruling prohibits duplicate B. No eligible film selected; build and score cannot start."
+        },
+        {
+          "at": "2026-10-19T19:27Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: no eligible live long. All 12 public longs in 2026-10-19 snapshot have tests or B variants on record (J0099, J0136, J0189, ledger T005-T007, j0234/j0386/j0402/j0419, Sun studio_thumbs_J0091). Chief J0293 prohibits duplicate B. Cancel J0680 or retire owb-thumb-b refill until eligible. Progress 1/3; no build, spend or Studio change."
         }
       ],
       "kind": "chart",
