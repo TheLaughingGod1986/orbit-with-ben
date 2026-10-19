@@ -51170,6 +51170,11 @@
           "at": "2026-10-19T17:11Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only audit of HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-19T17:12Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Ran npm run channel:audit (43 videos, 0 errors); 20 public + 13 scheduled videos verified via Data API"
         }
       ],
       "kind": "listing",
@@ -51182,11 +51187,11 @@
         "HOS:005"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-19T17:11Z",
+        "at": "2026-10-19T17:12Z",
         "by": "gemini",
-        "note": "Starting read-only audit of HOS live and scheduled videos"
+        "note": "Ran npm run channel:audit (43 videos, 0 errors); 20 public + 13 scheduled videos verified via Data API"
       }
     }
   ],
