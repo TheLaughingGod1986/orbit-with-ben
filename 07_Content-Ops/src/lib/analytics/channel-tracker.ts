@@ -60,6 +60,7 @@ export type Snapshot = {
     retention?: Record<string, RetentionPoint[]>;
   };
   note?: string;
+  catalogRecovery?: { observedAt: string; source: string; addedIds: string[] };
 };
 
 export type VideoSources = { last28: Record<string, number>; day1: Record<string, number> | null };
@@ -372,6 +373,8 @@ export type ChannelReport = {
   handle: string;
   date: string;
   firstSnapshot: string;
+  snapshotTakenAt?: string;
+  coverage?: { listed: number; reported: number; missing: number; videoViews: number; channelViews: number };
   analyticsThrough: string | null;
   totals: Snapshot["totals"];
   change: { d1: Change; d7: Change; d30: Change };
@@ -580,6 +583,8 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     })
     .sort((x, y) => (y.publishedAt ?? "").localeCompare(x.publishedAt ?? ""));
 
+  if (now.catalogRecovery?.addedIds.length) notes.push(`${now.catalogRecovery.addedIds.length} public videos absent from the uploads playlist restored from ${now.catalogRecovery.source} (checked ${now.catalogRecovery.observedAt}). Earlier per-video deltas remain unknown where no earlier count exists.`);
+  if (publicVideos.length !== now.totals.videos) notes.push(`Catalog coverage: ${publicVideos.length} public videos listed; YouTube reports ${now.totals.videos}. Missing entries must be verified; their views are not invented or allocated to other videos.`);
   if (!a) notes.push(now.note ?? "YouTube Analytics isn't connected for this channel yet, so watch time, average % viewed and history before the first snapshot are missing.");
   if (snaps.length < 2) notes.push("Day-on-day growth starts with the second daily snapshot.");
   if (!d7Snap && a) notes.push("7-day video growth comes from YouTube Analytics (it runs about 2 days behind) until there are 7 days of snapshots.");
@@ -619,6 +624,8 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     handle: meta.handle,
     date: now.date,
     firstSnapshot: snaps[0].date,
+    snapshotTakenAt: now.takenAt,
+    coverage: { listed: publicVideos.length, reported: now.totals.videos, missing: Math.max(0, now.totals.videos-publicVideos.length), videoViews: publicVideos.reduce((n,v)=>n+v.views,0), channelViews: now.totals.views },
     analyticsThrough: dailyFile?.through ?? null,
     totals: now.totals,
     change,

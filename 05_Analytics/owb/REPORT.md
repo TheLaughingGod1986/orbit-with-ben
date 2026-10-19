@@ -22,8 +22,11 @@ Public view-count change, snapshot 2026-10-18 to 2026-10-19.
 | [Could a Robot Survive Falling Into Jupiter?](https://www.youtube.com/shorts/buaOI3QGm7U) | short | +1 | 1.4% |
 | [What Happens When the Last Star Dies?](https://www.youtube.com/watch?v=REXYxuLOBoI) | long | +1 | 1.4% |
 | Other videos (65) | | 0 | 0.0% |
+| Can't be compared (7) | | unknown | – |
 | Not matched to a listed video | | +33 | 47.8% |
 | **Channel total, last 24 hours** | | **+69** | **100.0%** |
+
+7 public videos are missing from the 2026-10-18 snapshot, so the change can't be worked out and is left out of the sum.
 
 YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
 
@@ -34,13 +37,13 @@ YouTube's channel view total and its per-video counts refresh at different times
 | 2026-10-12 (so far, to 10-16) | 343 | +142% | 0.8 | – | +1 | 5 |
 | 2026-10-05 | 157 | -80% | 0.3 | -90% | 0 | 3 |
 | 2026-09-28 | 798 | -24% | 2.7 | +12% | +3 | 5 |
-| 2026-09-21 | 1,047 | -34% | 2.4 | -35% | +2 | 9 |
+| 2026-09-21 | 1,047 | -34% | 2.4 | -35% | +2 | 11 |
 | 2026-09-14 | 1,591 | +336% | 3.7 | +211% | 0 | 5 |
 | 2026-09-07 | 365 | -84% | 1.2 | -67% | 0 | 8 |
-| 2026-08-31 | 2,238 | +89% | 3.6 | +30% | +3 | 7 |
+| 2026-08-31 | 2,238 | +89% | 3.6 | +30% | +3 | 11 |
 | 2026-08-24 | 1,184 | +119% | 2.8 | +101% | 0 | 9 |
 | 2026-08-17 | 540 | +39% | 1.4 | -63% | +1 | 9 |
-| 2026-08-10 | 389 | +110% | 3.8 | +236% | +2 | 8 |
+| 2026-08-10 | 389 | +110% | 3.8 | +236% | +2 | 9 |
 | 2026-08-03 | 185 | 0% | 1.1 | – | +1 | 1 |
 | 2026-07-27 | 186 | – | 0.4 | – | 0 | 1 |
 
@@ -49,8 +52,8 @@ YouTube's channel view total and its per-video counts refresh at different times
 | Month | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
 | 2026-10 (so far, to 10-16) | 919 | -72% | 3.2 | -51% | +2 | 11 |
-| 2026-09 | 5,589 | +134% | 11.4 | +22% | +7 | 31 |
-| 2026-08 | 2,386 | – | 9.3 | – | +4 | 27 |
+| 2026-09 | 5,589 | +134% | 11.4 | +22% | +7 | 37 |
+| 2026-08 | 2,386 | – | 9.3 | – | +4 | 28 |
 | 2026-07 (part) | 129 | – | 0.2 | – | 0 | 1 |
 
 A period still running is compared with the same number of days at the start of the one before. A part period at launch isn't compared, and no change is shown on a base under 20 views or 30 minutes.
@@ -105,6 +108,8 @@ A period still running is compared with the same number of days at the start of 
 | 2026-09-24 | [How Do Fossils Prove Earth Spun Faster?](https://youtu.be/4P9v_2jx7Yo) | short | 5 | 0 | 0 | +5 | 0.2 | 70% | 0% | YouTube search |
 | 2026-09-24 | [Why Won't Perfect Total Eclipses Last Forever?](https://youtu.be/_WQLVnLETYA) | short | 23 | 0 | 0 | +23 | 0.9 | 83% | 5% | YouTube search |
 | 2026-09-21 | [Is the Moon Leaving Us?](https://youtu.be/eSFhBf2rcZk) | short | 291 | 0 | 0 | +291 | 10.4 | 67% | 97% | Shorts feed |
+| 2026-09-21 | [A Day on Young Earth Lasted Just a Few Hours](https://youtu.be/cmeBDZLzPHs) | short | 103 | – | 0 | +103 | 3.7 | 46% | – | – |
+| 2026-09-21 | [The Moon Gets 3.8 cm Farther Away Every Year](https://youtu.be/rFzqmi8RWCY) | short | 255 | – | 0 | +255 | 9.1 | 73% | – | – |
 | 2026-09-17 | [Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone](https://youtu.be/2fsQcea-voM) | long | 5 | 0 | 0 | +3 | 0.2 | 2% | – | Channel page |
 | 2026-09-17 | [One Second Near a Neutron Star Is Enough](https://youtu.be/BX-z1EkgANg) | short | 20 | 0 | 0 | +1 | 0.6 | 0% | 32% | YouTube search |
 | 2026-09-16 | [Why You Can't Stand on a Neutron Star](https://youtu.be/_8L9jYbDVmQ) | short | 421 | 0 | – | 0 | 12.8 | – | 90% | – |
@@ -125,6 +130,10 @@ A period still running is compared with the same number of days at the start of 
 | 2026-09-03 | [Those Ice Scars Are How You Find It](https://youtu.be/keXe1GNxWSU) | short | 206 | 0 | 0 | 0 | 4.5 | – | 94% | – |
 | 2026-09-03 | [There's an Ocean Under That Ice](https://youtu.be/QNTeou-w-gY) | short | 66 | 0 | +1 | +2 | 1.4 | 12% | 90% | YouTube search |
 | 2026-09-03 | [Could Life Exist Under The Ice Of Europa?](https://youtu.be/NbW5G1BpPY0) | long | 15 | 0 | 0 | 0 | 0.3 | – | – | – |
+| 2026-09-02 | [Star Recycling Isn't Perfect](https://youtu.be/n2WbOfJhOwc) | short | 213 | – | 0 | 0 | 4.5 | – | – | – |
+| 2026-09-01 | [What Remains After the Last Star Dies?](https://youtu.be/9lLZMy8rBJo) | short | 622 | – | 0 | 0 | 13 | – | – | – |
+| 2026-09-01 | [What Happens When the Last Star Furnace Goes Cold](https://youtu.be/KX-XU_AODoI) | short | 75 | – | 0 | +1 | 1.6 | 47% | – | – |
+| 2026-09-01 | [The Sky Is Already Running Out of Light](https://youtu.be/CkSECfUfH2Y) | short | 292 | – | 0 | 0 | 6.1 | – | – | – |
 | 2026-08-30 | [It Rains Glass Sideways on This Alien World](https://youtu.be/GjcZB8826J8) | short | 9 | 0 | 0 | 0 | 0.2 | – | 0% | – |
 | 2026-08-29 | [What's Left When the Last Star Goes Out?](https://youtu.be/xRxhb3vSru4) | short | 412 | 0 | 0 | +1 | 8.1 | 0% | 75% | YouTube search |
 | 2026-08-28 | [The Day the Last Star Goes Out](https://youtu.be/IVbO9XkkDps) | short | 94 | 0 | 0 | +1 | 1.8 | 18% | 23% | Hashtags |
@@ -151,10 +160,12 @@ A period still running is compared with the same number of days at the start of 
 | 2026-08-13 | [A Reply From the Stars Takes Generations](https://youtu.be/iQUbmlaj4vk) | short | 17 | 0 | 0 | 0 | 0.3 | – | – | – |
 | 2026-08-12 | [Is Alien Life Already Hiding in Our Data?](https://youtu.be/ykmoxRJ6BOI) | short | 10 | 0 | 0 | 0 | 0.1 | – | – | – |
 | 2026-08-12 | [Billions of Planets, Zero Signals](https://youtu.be/f8V6wCjWwHA) | short | 16 | 0 | 0 | 0 | 0.2 | – | – | – |
+| 2026-08-12 | [What You Would See Falling Into a Black Hole](https://youtu.be/B2STcIAF1lY) | short | 56 | – | 0 | 0 | 0.8 | – | – | – |
 | 2026-08-05 | [What Happens If You Fall Into a Black Hole?](https://youtu.be/3xrxdmaOwJI) | long | 4 | 0 | 0 | 0 | 0.1 | – | – | – |
 | 2026-07-30 | [Why Haven't We Found Aliens Yet? The Fermi Paradox Explained](https://youtu.be/Mo93x0fxB1Q) | long | 13 | 0 | +1 | +1 | 0.2 | 0% | – | YouTube search |
 
 ## Notes
 
+- 7 public videos absent from the uploads playlist restored from vidIQ public channel catalog and video metadata, cross-checked against missing YouTube Analytics IDs (checked 2026-10-19T07:38:17Z). Earlier per-video deltas remain unknown where no earlier count exists.
 - 30-day video growth is YouTube Analytics' last 28 days until there are 30 days of snapshots.
 - YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact.

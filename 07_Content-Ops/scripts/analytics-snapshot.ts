@@ -71,6 +71,11 @@ function args() {
   return { channels: (ch === "all" ? Object.keys(CHANNELS) : [ch]) as ChannelKey[], date: val("--date") ?? londonDate() };
 }
 
+/** Cross-check playlist enumeration against IDs already observed by Analytics or prior snapshots. */
+export function catalogIds(...sources: string[][]): string[] {
+  return [...new Set(sources.flat())].filter(id=>/^[A-Za-z0-9_-]{11}$/.test(id));
+}
+
 async function snapshot(key: ChannelKey, date: string): Promise<string> {
   const meta = CHANNELS[key];
   const own = process.env[meta.tokenKey];
@@ -91,11 +96,21 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
     page = pl.nextPageToken ?? "";
   } while (page);
   // The uploads playlist can list a video twice; each video is fetched and stored once.
-  const unique = [...new Set(ids)];
+  const previousDir = path.join(ANALYTICS_ROOT, key, "snapshots");
+  const priorIds: string[] = [];
+  if (fs.existsSync(previousDir)) {
+    const files = fs.readdirSync(previousDir).filter(f=>/^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0,10)<=date).sort().slice(-7);
+    for (const f of files) {
+      try { const prev = JSON.parse(fs.readFileSync(path.join(previousDir,f),"utf8")) as Snapshot;
+        priorIds.push(...prev.videos.map(v=>v.id), ...Object.keys(prev.analytics?.lifetime || {}));
+      } catch { /* a damaged old snapshot cannot prevent the current read */ }
+    }
+  }
+  const unique = catalogIds(ids, priorIds);
   const videos = [];
   for (let i = 0; i < unique.length; i += 50) {
     const body = await get(token, `${API}/videos?part=snippet,statistics,contentDetails,status&id=${unique.slice(i, i + 50).join(",")}`);
-    videos.push(...(body.items ?? []).map(toVideoStat));
+    videos.push(...(body.items ?? []).filter((v: ApiJson)=>v.snippet?.channelId===meta.id).map(toVideoStat));
   }
   const s = item.statistics ?? {};
   const snap: Snapshot = {
@@ -131,6 +146,14 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
       const top = (from: string) =>
         get(token, q({ startDate: from, dimensions: "video", sort: "-views", maxResults: "200", metrics: "views,estimatedMinutesWatched,subscribersGained,averageViewDuration,averageViewPercentage" }));
       const [last7, last28, lifetime] = await Promise.all([top(addDays(through, -6)), top(addDays(through, -27)), top(start)]);
+      const known = new Set(videos.map(v=>v.id));
+      const missing = catalogIds(...[last7,last28,lifetime].map(report=>(report.rows||[]).map((row: unknown[])=>String(row[0])))).filter(id=>!known.has(id));
+      try {
+        for (let offset=0;offset<missing.length;offset+=50) {
+          const found = await get(token, `${API}/videos?part=snippet,statistics,contentDetails,status&id=${missing.slice(offset,offset+50).join(",")}`);
+          videos.push(...(found.items||[]).filter((v: ApiJson)=>v.snippet?.channelId===meta.id).map(toVideoStat));
+        }
+      } catch { snap.note = "Some Analytics video IDs could not be refreshed; check catalog coverage."; }
       snap.analytics = { through, last7: toVideoWindows(last7), last28: toVideoWindows(last28), lifetime: toVideoWindows(lifetime) };
       // Traffic sources per video. One video failing never costs the rest, or the snapshot.
       const sources: Record<string, VideoSources> = {};
@@ -180,6 +203,7 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
     }
   }
 
+  snap.videos.sort((a,b)=>(b.publishedAt||"").localeCompare(a.publishedAt||""));
   const out = path.join(dir, "snapshots", `${date}.json`);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, serialiseSnapshot(snap));
