@@ -376,6 +376,7 @@ export type ChannelReport = {
   snapshotTakenAt?: string;
   coverage?: { listed: number; reported: number; missing: number; videoViews: number; channelViews: number };
   analyticsThrough: string | null;
+  overview?: ReturnType<typeof viewingOverview>;
   totals: Snapshot["totals"];
   change: { d1: Change; d7: Change; d30: Change };
   /** Which videos the 'Last 24 hours' tile's views came from. */
@@ -520,6 +521,37 @@ export function periods(unit: "week" | "month", series: DayPoint[], uploads: Map
 }
 
 /** Everything the dashboard and REPORT.md show for one channel. `snaps` in any order. */
+/** Operational summary. Analytics days use Pacific time; snapshot gains retain their own interval. */
+export function viewingOverview(now: Snapshot, daily: DailyRow[], videos: VideoRow[]) {
+  const rows = daily.slice(-28), last = rows.at(-1)?.day ?? null;
+  const dates = new Set(now.videos.filter(v => v.privacy === "public" && v.publishedAt).map(v =>
+    new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(v.publishedAt!))));
+  const quiet = rows.filter(r => !dates.has(r.day));
+  const old = videos.filter(v => v.ageDays != null && v.ageDays >= 31 && v.d1 != null);
+  const longs = videos.filter(v => v.format === "long");
+  const lifetime = longs.filter(v => v.lifetime != null);
+  const withinYear = longs.every(v => v.ageDays != null && v.ageDays <= 365);
+  const hours = lifetime.reduce((n,v) => n + (v.lifetime?.minutes ?? 0), 0) / 60;
+  const hours28 = longs.reduce((n,v) => n + (v.last28?.minutes ?? 0), 0) / 60;
+  const net = rows.reduce((n,r) => n + r.subsGained-r.subsLost, 0);
+  const complete28 = rows.length === 28 && daysBetween(rows[0].day, rows[27].day) === 27;
+  return {
+    through: last, days: rows.length, views: rows.reduce((n,r) => n+r.views,0),
+    noUploadDays: quiet.length, noUploadDaysWatched: quiet.filter(r=>r.views>0).length,
+    noUploadDayViews: quiet.reduce((n,r)=>n+r.views,0),
+    olderDayViews: old.reduce((n,v)=>n+Math.max(0,v.d1 ?? 0),0),
+    olderVideosWatched: old.filter(v=>(v.d1 ?? 0)>0).length,
+    olderUnknown: videos.filter(v=>v.ageDays != null && v.ageDays>=31 && v.d1==null).length,
+    longHoursEstimate: withinYear && lifetime.length ? hours : null,
+    longHoursCoverage: { known: lifetime.length, total: longs.length },
+    longHoursPerDay: now.analytics && complete28 ? hours28/28 : null,
+    subscriberNet: net, subscriberDays: rows.length,
+    subscriberEtaDays: complete28 && net>0 && now.totals.subscribers!=null ? Math.ceil(Math.max(0,1000-now.totals.subscribers)/(net/28)) : null,
+    // Data API views aren't YPP qualified Shorts views; the Studio Earn balance is intentionally unknown.
+    eligibleWatchHours: null, eligibleShortViews: null,
+  };
+}
+
 export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile: ChannelDaily | null): ChannelReport {
   const snaps = [...snapsIn].sort((a, b) => a.date.localeCompare(b.date));
   if (!snaps.length) throw new Error(`no snapshots for ${channel}`);
@@ -627,6 +659,7 @@ export function buildReport(channel: ChannelKey, snapsIn: Snapshot[], dailyFile:
     snapshotTakenAt: now.takenAt,
     coverage: { listed: publicVideos.length, reported: now.totals.videos, missing: Math.max(0, now.totals.videos-publicVideos.length), videoViews: publicVideos.reduce((n,v)=>n+v.views,0), channelViews: now.totals.views },
     analyticsThrough: dailyFile?.through ?? null,
+    overview: viewingOverview(now, daily, videos),
     totals: now.totals,
     change,
     day1: dayGains(change.d1, videos, { from: old(t1, 1)?.date ?? null, to: now.date }),

@@ -33,6 +33,19 @@ class BuildDoc(unittest.TestCase):
         self.assertEqual(d["pools"]["claude"]["notes"][0]["note"], "hit the weekly limit")
         self.assertNotIn("elevenlabs", d["pools"])
 
+    def test_monthly_logs_keep_history_without_counting_balance_or_refills_as_spend(self):
+        rows = self.rows() + [
+            {"at": "2026-09-30T10:00:00Z", "kind": "spend", "pool": "flow", "amount": 70},
+            {"at": "2026-10-15T10:00:00Z", "kind": "record", "pool": "flow", "left": 25000},
+            {"at": "2026-11-01T10:00:00Z", "kind": "spend", "pool": "flow", "amount": 30},
+        ]
+        d = ai_spend.build_doc(rows)
+        self.assertEqual(d["monthly"]["2026-09"]["flow"]["logged"], 70)
+        self.assertEqual(d["monthly"]["2026-10"]["flow"]["logged"], 100)
+        self.assertEqual(d["monthly"]["2026-10"]["flow"]["entries"], 1)
+        self.assertEqual(d["monthly"]["2026-11"]["flow"]["logged"], 30)
+        self.assertEqual(d["monthly"]["2026-10"]["flow"]["latest"]["left"], 25000)
+
     def test_cli_rejects_bad_film_and_missing_balance(self):
         with self.assertRaises(SystemExit):
             ai_spend.main(["spend", "--pool", "flow", "--amount", "1", "--film", "006", "--by", "t"])

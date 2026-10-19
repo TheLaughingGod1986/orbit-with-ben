@@ -236,7 +236,7 @@ class TickedCardsLeaveTheBox(unittest.TestCase):
         self.assertIn("if(b.you) forYou.push(", html)
         # Ben, 15 Oct 2026: the standalone Shorts need the watch link, Approve and Request changes too
         self.assertIn("const extraItem = x =>", html)
-        self.assertIn('data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Request changes', html.split("const extraItem")[1])
+        self.assertIn('data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Comment / request changes', html.split("const extraItem")[1])
         self.assertIn("▶ Watch it", html.split("const extraItem")[1])
         self.assertIn('if(ck) b = Object.assign({}, b, {you:"", youShort:"", youWhen:""});', html)
 

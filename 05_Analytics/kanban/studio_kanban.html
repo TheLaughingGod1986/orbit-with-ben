@@ -152,6 +152,15 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 @keyframes flashIn{0%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:0 0 0 0 transparent}}
 .flash{animation:flashIn 2.4s ease-out 1}
 @media (prefers-reduced-motion:reduce){.flash{animation:none}}
+
+/* One-glance view: review, current work, videos and queue. */
+#asof,#owbnote{display:none}#nowbar>.nx,#nowbar>.upd,#nowbar>.sub{display:none}
+#nowbar .who{font-size:13px}#nowbar .who br{display:none}#youbar .nx{font-size:14px}
+.vr>.work-air,.vr>.release-hint{display:none}.vr{padding:12px 14px}.vr .v1{gap:8px}.vr .vp{font-size:13px}.vr .vt{font-size:15px}.vr .bar.thin{height:3px;margin:8px 0}.video-work{font-size:13px}.video-work .finish-outlook{font-size:12px;color:var(--ink-3)}
+.queue-overview{margin:26px 0}.queue-overview h2,.ai-head h2{font-size:18px;margin:0}.queue-lane,.ai-overview{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 14px}.queue-lane>summary{display:flex;justify-content:space-between;gap:10px;padding:16px 0;cursor:pointer}.queue-lane>summary span{font-size:13px;color:var(--ink-3)}.queue-job{border-top:1px solid var(--line);padding:12px 0}.queue-job>summary{cursor:pointer}.queue-job small{display:block;color:var(--ink-3);margin-top:5px}
+.ai-overview{padding:16px;margin:22px 0}.ai-head{display:flex;justify-content:space-between;gap:12px}.ai-overview>details{margin-top:14px}.ai-overview summary{cursor:pointer}.ai-saving{font-size:14px;line-height:1.5}.ai-row{display:grid;grid-template-columns:1fr auto;gap:8px;border-top:1px solid var(--line);padding:14px 0}.ai-row small{display:block;font-size:12px;line-height:1.6;color:var(--ink-3);margin-top:5px}.ai-row-detail{grid-column:1/-1;font-size:12px;color:var(--ink-3)}
+footer{font-size:12px;line-height:1.6}#foldPlans .pool .fit,#foldPlans #verdict{display:none}
+@media(max-width:600px){.vlh{flex-wrap:wrap}.vlc{font-size:12px}.ai-head{flex-wrap:wrap}.ai-row{grid-template-columns:minmax(0,1fr) auto}.v1 .vt{min-width:0}.vr .vp{font-size:12px}}
 </style></head><body>
 
 <title>Studio Kanban</title>
@@ -607,9 +616,13 @@ footer a{color:var(--ink-2)}
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
-  <div class="donebar" id="donebar" hidden></div>
-  <div class="stats" id="daystats" hidden></div>
+
   <section class="videos" id="videos"><div class="empty">Loading…</div></section>
+  <section id="queueOverview" class="queue-overview" aria-label="Full job queue"></section>
+  <section id="aiOverview" class="ai-overview" aria-label="AI subscriptions"></section>
+  <details id="recentActivity" class="more fold"><summary>Recent activity and studio totals</summary>
+    <div class="donebar" id="donebar" hidden></div><div class="stats" id="daystats" hidden></div>
+  </details>
   <!-- Ben, 14 Oct 2026: "Never open these 3 now. Let's remove": the job list, the lane board and the stage board are
        gone from the page. Their holders stay hidden so the render code that fills them still runs; each video row
        now opens its own task list. -->
@@ -628,7 +641,7 @@ footer a{color:var(--ink-2)}
   </div>
   <div class="agents" id="agents" style="margin-top:14px"></div>
   </div>
-  <details class="more fold" id="foldPlans"><summary>AI plans this month</summary>
+  <details class="more fold" id="foldPlans"><summary>AI usage history and plan detail</summary>
   <section class="plansec">
   <h2 class="sec" style="margin-top:22px"><span class="qsub" id="spendSum"></span></h2>
   <section class="spend" id="spendBox">
@@ -1159,11 +1172,19 @@ function videoWorkPlan(r,P){
   else finishReason=r.pct>=100?"upload/schedule not confirmed":"no complete job schedule recorded";
   return {remaining,completed,related,active,queued,held,gaps,stageUpdates,manual,finish,finishReason};
 }
-function videoWorkSummary(r,P){
+function videoWorkDetail(r,P){
   const w=videoWorkPlan(r,P), current=w.active[0], next=w.queued[0], label=r.jobRow?"Task":"Video";
   const state=current?`Working now · ${current.j.id}`:r.live?"Live":r.isSched?"Uploaded and scheduled":w.held.length?`Not running · ${w.held[0].j.id} · ${w.held[0].q.label}`:next?`Not running · ${next.q.label}`:"Not running · no executable job queued";
   const focus=current||next||w.held[0];
   return `<div class="work-state ${current?"active":""}">${esc(state)}</div>${focus?`<div class="work-name">${current||next?"":"Held: "}${esc(plainTitle(focus.j,130))}</div>`:""}${current?`<div class="job-live" data-job-id="${esc(current.j.id)}"></div>`:next?`<div class="work-timing">Estimated start ${esc(scheduleAt(next.q.start))} · ready ${esc(scheduleAt(next.q.done))}</div>`:""}<div class="work-count"><b>${w.remaining.length} ${r.jobRow?"job":"video job"}${w.remaining.length===1?"":"s"} remaining</b>${w.active.length?` · ${w.active.length} running`:""}${w.queued.length?` · ${w.queued.length} queued`:""}${w.held.length?` · ${w.held.length} waiting`:""}${w.gaps.length?` · ${w.gaps.length} stages need linked jobs`:""}${w.stageUpdates.length?` · ${w.stageUpdates.length} stages await confirmation`:""}${w.related.length?` · ${w.related.length} related checks`:""}</div><div class="finish-outlook">${r.live?"Released":r.isSched?"Releases":label+" work finish"}: ${w.finish?`<b>${esc(scheduleAt(w.finish))}${r.live||r.isSched?"":" (estimate)"}</b>`:`unknown — ${esc(w.finishReason)}`}</div>${w.completed[0]?`<div class="lastjob">✓ ${esc(w.completed[0].id)} done · <span data-ago="${ts(w.completed[0].at)}">${ago(ts(w.completed[0].at))}</span></div>`:""}`;
+}
+// Compact overview; full schedule, holds and progress remain inside the video.
+function videoWorkSummary(r,P){
+  const w=videoWorkPlan(r,P), current=w.active[0], next=w.queued[0];
+  if(r.live||r.isSched) return `<div class="work-count">${r.live?"Live":"Uploaded and scheduled"}</div>`;
+  return `<div class="work-count"><b>${w.remaining.length} ${r.jobRow?"job":"linked job"}${w.remaining.length===1?"":"s"} left</b>${w.gaps.length?` · ${w.gaps.length} stages not queued`:""}${w.stageUpdates.length?` · ${w.stageUpdates.length} stages await confirmation`:""}${w.held.length?` · ${w.held.length} waiting`:""}</div>`
+    + (current?`<div class="work-state active">Working: ${esc(plainTitle(current.j,95))}</div><div class="job-live" data-job-id="${esc(current.j.id)}"></div>`:next?`<div class="work-timing">Next: #${next.q.pos||"?"} · ${esc(scheduleAt(next.q.start))}</div>`:"")
+    + `<div class="finish-outlook">${w.finish?`Estimated ready ${esc(scheduleAt(w.finish))}`:"Ready date pending · tap for next steps"}</div>`;
 }
 const videoScheduleRows=new Map();
 function tickVideoSchedules(P){
@@ -1278,7 +1299,7 @@ function renderNow(){
     const lastWhat = (headJob.last && headJob.last.what || "").replace(/<[^>]+>/g,"");
     const doing = [stp, lastWhat].filter(Boolean).join(" · ");
     head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 200))}</span>`;
-    bar = `<div class="nowwho">${esc([who, mdl].filter(Boolean).join(" · "))}${doing?`<br>${esc(doing)}`:""}</div>` + `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
+    bar = `<div class="nowwho">${esc([who, mdl].filter(Boolean).join(" · "))}</div>` + `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
   else if(line.length){ const sl = stallOf(); cls = (q && q.quiet) || sl ? "asleep" : "idle";
     head = q && q.quiet ? "<b>Now:</b> Mac mini has been quiet for 3 hours"
       : sl ? `<b>Now:</b> <span>nothing running · last job finished <span data-ago="${sl.at}">${ago(sl.at)}</span></span>` : "<b>Now:</b> starting the next job"; }
@@ -1548,7 +1569,7 @@ function pcBar(p){ return `<i class="pc" style="width:${p}%;--pc:${pcCol(p)}"></
 const vOpen = {};   // which video rows are open; kept across the minute re-render
 const vLane = {};   // which lanes Ben has toggled; the others keep their default (Needs you and Working open)
 // Ben, 15 Oct 2026: "clean this up, maybe swim lanes". Lanes by what each film is waiting on, thin one-line rows.
-const LANES = [["you","Needs you",true],["now","Working",true],["wait","Waiting",false],["sched","Scheduled",false],["live","Live",false]];
+const LANES = [["you","Needs your review",false],["now","Working now",true],["wait","Upcoming / waiting",false],["sched","Scheduled",false],["live","Live",false]];
 function releaseBlockers(r){
   if(r.live || r.isSched) return [];
   const out=[], jobs=linkedJobsFor(r.f.key).filter(j=>!supportingJob(j)), check=(fromDb.checks||{})[r.f.key.replace(":","-")];
@@ -1630,11 +1651,11 @@ function renderVideos(rows, rankOf){
   for(const k of ["you","now","wait"]) groups[k].sort(byRank);
   groups.sched.sort((a,b)=>(a.air||9e15)-(b.air||9e15));
   groups.live.sort((a,b)=>(b.air||0)-(a.air||0));
-  box.innerHTML = `<div class="vh">Video pipeline<span>${videoTotals(Object.fromEntries(Object.entries(groups).map(([k,vs])=>[k,vs.filter(r=>!r.jobRow)])))}</span></div>` + blockersOverview(keep) + (keep.length
+  box.innerHTML = `<div class="vh">Videos<span>${videoTotals(Object.fromEntries(Object.entries(groups).map(([k,vs])=>[k,vs.filter(r=>!r.jobRow)])))}</span></div>` + (keep.length
     ? LANES.filter(([k])=>groups[k].length).map(([k,label,dflt])=>{
         const open = k in vLane ? vLane[k] : dflt;
-        return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${(()=>{const n=groups[k].filter(r=>!r.jobRow).length,t=groups[k].length-n;return [n?`${n} video${n===1?"":"s"}`:"",t?`${t} task${t===1?"":"s"}`:""].filter(Boolean).join(" · ");})()}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
-    : `<div class="empty">Nothing in work.</div>`) + unlinkedWorkHtml(keep.filter(r=>!r.jobRow).map(r=>r.f.key));
+        return `<section class="vl ${k}${open?" open":""}"><button class="vlh" data-vlane="${k}" aria-expanded="${open}"><span class="vln">${label}</span><span class="vlc">${(()=>{const n=groups[k].filter(r=>!r.jobRow).length,t=groups[k].length-n;const jobs=new Set(groups[k].flatMap(r=>r.work.remaining.map(x=>x.j.id))).size;return [n?`${n} video${n===1?"":"s"}`:"",t?`${t} task${t===1?"":"s"}`:"",(k==="sched"||k==="live")?"":`${jobs} job${jobs===1?"":"s"} left`].filter(Boolean).join(" · ");})()}</span><span class="chev">▸</span></button>${open?groups[k].map(row).join(""):""}</section>`; }).join("")
+    : `<div class="empty">Nothing in work.</div>`);
   tickJobBars();
   box.querySelectorAll("[data-vlane]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vlane, d = LANES.find(l=>l[0]===k)[2]; vLane[k] = !(k in vLane ? vLane[k] : d); renderVideos(rows, rankOf); });
   box.querySelectorAll("[data-vkey]").forEach(b=>b.onclick=()=>{ const k = b.dataset.vkey; vOpen[k] = !vOpen[k]; renderVideos(rows, rankOf); });
@@ -1646,7 +1667,7 @@ function videoDrop(r, when){
   const stages=r.f._stages||[], w=videoWorkPlan(r,plan());
   const recorded=stages.map(s=>{const st=stOf(r.f,s), label=st.status==="done"?"✓ Done":st.status==="skip"?"Skipped":st.review?"Review":st.status==="blocked"?"Blocked":st.status==="doing"?"In progress":"To do";
     return `<li><span class="o">${esc(label)}</span><span class="t">${esc(s.label)}${st.note?`<span class="w">${esc(st.note)}</span>`:""}</span></li>`;}).join("");
-  return `<div class="vd">${filmJobsHtml(r.f.key,r)}${r.jobRow?`<p class="context">This is a channel/backlog task. No individual video row is linked, so its progress and ready time are shown here.</p>`:`<details id="release-${esc(r.f.key)}" class="progress-fold"><summary>Release status and ${r.blockers.length} holds</summary>${releaseDetailsHtml(r)}<p class="context">${when}</p></details>`}${stages.length?`<details id="stages-${esc(r.f.key)}" class="progress-fold"><summary>Recorded film stages · ${stages.filter(s=>["done","skip"].includes(stOf(r.f,s).status)).length} of ${stages.length} complete</summary><ol>${recorded}</ol>${r.oldPlanAt?`<p class="context">Older brief from ${esc(fw(r.oldPlanAt))}; queue dates above come from current jobs.</p>`:""}</details>`:""}</div>`;
+  return `<div class="vd">${videoWorkDetail(r,plan())}${filmJobsHtml(r.f.key,r)}${r.jobRow?`<p class="context">This is a channel/backlog task. No individual video row is linked, so its progress and ready time are shown here.</p>`:`<details id="release-${esc(r.f.key)}" class="progress-fold"><summary>Release status and ${r.blockers.length} holds</summary>${releaseDetailsHtml(r)}<p class="context">${when}</p></details>`}${stages.length?`<details id="stages-${esc(r.f.key)}" class="progress-fold"><summary>Recorded film stages · ${stages.filter(s=>["done","skip"].includes(stOf(r.f,s).status)).length} of ${stages.length} complete</summary><ol>${recorded}</ol>${r.oldPlanAt?`<p class="context">Older brief from ${esc(fw(r.oldPlanAt))}; queue dates above come from current jobs.</p>`:""}</details>`:""}</div>`;
 }
 function renderTracker(films){
   const box = $("tracker"); if(!box) return;
@@ -1813,7 +1834,7 @@ function renderTracker(films){
     const url = [x.b.uatUrl, fromDb.uatUrl].find(u=>/^https:\/\/www\.icloud\.com\//.test(u||""));
     const wl = watchLink(x.f.key);
     const head = `${chb(x.f)}<b>${esc(x.f.id)}</b> ${esc(x.f.title)}<span class="why">${esc(x.b.youShort||x.b.you)}${url?` <a class="open" href="${esc(url)}" target="_blank" rel="noopener">Open in iCloud ↗</a>`:""}</span>${wl?`<span class="acts">${wl}</span>`:""}`;
-    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Request changes</button></span>${changeOpen===id?editor(id, false):""}` : "";
+    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Comment / request changes</button></span>${changeOpen===id?editor(id, false):""}` : "";
     return `<li><span>☐</span><span>${head}${btns}</span></li>`;
   };
   // Ben, 15 Oct 2026: "I'm not seeing the shorts on the board". Things to watch that aren't a film card (the standalone
@@ -1822,14 +1843,14 @@ function renderTracker(films){
   const extra = extraLeft();
   const extraItem = x => { const id = xid(x);
     const link = /^(https:|shareddocuments:)/.test(x.url||"") ? `<a class="open watch" href="${esc(x.url)}"${x.url.startsWith("https:")?` target="_blank" rel="noopener"`:""}>▶ Watch it${x.url.startsWith("shareddocuments:")?" (Files)":""}</a>` : "";
-    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Request changes</button></span>${changeOpen===id?editor(id, false):""}` : "";
+    const btns = dbApi ? `<span class="acts"><button class="btn ok" data-ok="${id}">✓ Approve</button><button class="btn" data-chg="${id}">Comment / request changes</button></span>${changeOpen===id?editor(id, false):""}` : "";
     return `<li><span>☐</span><span><b>${esc(x.id)}</b> ${esc(x.title)}<span class="why">${esc(x.note||"")}${x.airs?`${x.note?" · ":""}airs ${esc(x.airs)}`:""}</span>${link?`<span class="acts">${link}</span>`:""}${btns}</span></li>`; };
-  const extraHtml = extra.length ? `<b>${soon.length?"Also to watch":"Ready for you to watch"} (${extra.length})</b><ul class="yl">${extra.map(extraItem).join("")}</ul><div class="why">${esc(extra[0].where||"iCloud Drive › HOS UAT")}${dbApi?" · watch, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":" · when you've watched, tell the Chief \"OK\" or what to change."}</div>` : "";
+  const extraHtml = extra.length ? `<b>${soon.length?"Also to watch":"Ready for you to watch"} (${extra.length})</b><ul class="yl">${extra.map(extraItem).join("")}</ul>` : "";
 
   const just = justTicks(ticked, Date.now());
   const justHtml = just.map(x=>justLine(x) + (changeOpen===x.f.key.replace(":","-") && x.c.verdict!=="ok" ? `<ul class="yl"><li class="chg"><span>✎</span>${editor(changeOpen, true)}</li></ul>` : "")).join("");
   yb.innerHTML = (soon.length ? `<b>Ready for you to check (${soon.length})</b><ul class="yl">${soon.map(item).join("")}</ul>
-      <div class="why">${soon.every(x=>watchLink(x.f.key))?"Tap <b>▶ Watch</b> to open it on your phone (also in iCloud Drive › <b>OWB UAT</b> / <b>HOS UAT</b>).":"Where: iCloud Drive (Finder on the Mac, or the Files app on your phone) › <b>OWB UAT</b> folder."} ${dbApi?"Watch it, then tap <b>Approve</b> or <b>Request changes</b>. It goes straight to the Chief.":`When you've checked one, tell the Chief "${esc(soon[0].f.id)} is fine" (or what to change).`}</div>`
+      ${dbApi?"":"<p>Open the video in iCloud Drive, then tell the Chief your approval or changes.</p>"}`
     : extraLeft().length ? ""
     : (()=>{ const nx = simple.filter(r=>!r.live && !r.isSched && r.ready).sort((a,b)=>(a.air||9e15)-(b.air||9e15))[0];
         return `<b>Ready for you</b><span class="nx">Nothing to watch right now.${nx?` Next: <b>${esc(nx.f.id)}</b> ${esc(nx.f.title||"")}, ready for you ${esc(String(nx.ready).replace(/<[^>]+>/g,"").replace(/&#39;/g,"'").replace(/&amp;/g,"&"))}.`:""}</span>`; })()) + extraHtml + justHtml;
@@ -2223,6 +2244,45 @@ function renderVerdict(c){
   v.innerHTML = bits.length ? `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}On this month's pace: ${bits.join(" · ")}.` : `${(()=>{ const pl=(c&&c.plans)||[], tot=Math.round(pl.reduce((a,p)=>a+Number(p.gbp||0),0)), tg=c&&c.target&&c.target.gbp; return pl.length?`Plans cost <b>£${tot}</b> a month${tg?` (target <b>£${Math.round(tg)}</b>)`:""}. `:""; })()}Which plan would fit shows from day 3 of each plan's month.`;
 }
 
+function renderQueueOverview(){
+  const box=$("queueOverview"); if(!box) return;
+  const P=plan(), jobs=[...new Map((fromDb.jobs||[]).map(j=>[j.id,j])).values()].filter(j=>(chan==="all"||chanOf(j)===chan)&&!["done","cancelled"].includes(j.status));
+  const groups={running:[],queued:[],waiting:[]};
+  for(const j of jobs){const q=jobQueueInfo(j,P); groups[q.state==="now"?"running":q.done?"queued":"waiting"].push({j,q});}
+  groups.queued.sort((a,b)=>a.q.start-b.q.start);
+  const labels={running:"Working now",queued:"Queued to start",waiting:"Waiting / blocked"};
+  box.innerHTML=`<h2 class="sec">Full job queue <span class="qsub">${jobs.length} unfinished jobs · includes channel checks</span></h2>`+Object.entries(groups).map(([k,rows])=>`<details id="queue-${k}" class="queue-lane"><summary><b>${labels[k]}</b><span>${rows.length} job${rows.length===1?"":"s"}</span></summary>${rows.length?rows.map(({j,q},i)=>`<details id="queue-job-${esc(j.id)}" class="queue-job"><summary><span>${esc(j.id)} · ${esc(plainTitle(j,110))}</span><small>${esc(q.state==="now"?"Running":q.pos?`#${q.pos} · ${workLane(j)}`:q.label)}</small></summary>${jobTaskHtml(j,"queue")}</details>`).join(""):'<p class="context">No jobs in this list.</p>'}</details>`).join("");
+}
+function renderAIOverview(){
+  const box=$("aiOverview"); if(!box) return;
+  const c=fromDb.credits||{}, plans=c.plans||[], pools=c.pools||{}, total=plans.reduce((n,p)=>n+Number(p.gbp||0),0);
+  const key=p=>/Google AI/i.test(p.name)?"flow":/Cursor/i.test(p.name)?"cursor":/ElevenLabs/i.test(p.name)?"elevenlabs":/Claude/i.test(p.name)?"claude":"chatgpt";
+  const month=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit"}).format(new Date()).slice(0,7), monthly=(c.monthly||{})[month]||{};
+  const units=(v,u)=>u==="%"?`${Math.round(v)}%`:u==="GBP"?`£${Number(v).toFixed(2)}`:u==="USD"?`$${Number(v).toFixed(2)}`:Math.round(v).toLocaleString("en-GB")+" credits";
+  let stale=0, missing=0;
+  const rows=plans.map(p=>{
+    const k=key(p), pool=pools[k], L=pool?.latest, age=L?.at?(Date.now()-ts(L.at))/DAY:Infinity;
+    const read=L?.left!=null; if(!read) missing++; else if(age>2) stale++;
+    const t=((c.tiers||{})[k]||[]).find(t=>t.current), cap=L?.total??t?.allow;
+    const usage=read?(pool.unit==="%"?`${units(100-L.left,"%")} used in measured pool`:cap!=null?`${units(Math.max(0,cap-L.left),pool.unit)} used from ${units(cap,pool.unit)} pool`:`${units(L.left,pool.unit)} remaining`):"Usage not connected";
+    const logged=monthly[k], log=logged?.entries?`${units(logged.logged,logged.unit)} logged in ${month} (${logged.entries} entries; partial)`:"No calendar-month spend entries";
+    return `<div class="ai-row"><div><b>${esc(p.name)}</b><small>${esc(usage)}${read?` · ${age>2?"stale, ":""}read ${esc(fd(pd(L.at.slice(0,10))))}`:""}</small></div><b>£${Number(p.gbp||0).toFixed(0)}/mo</b><div class="ai-row-detail">${esc(log)}${p.renews?` · renewal recorded ${esc(p.renews)}`:""}${((c.tiers||{})[k]||[]).filter(t=>!t.current&&t.gbp<Number(p.gbp||0)).length?`<br>Cheaper options to review: ${((c.tiers||{})[k]||[]).filter(t=>!t.current&&t.gbp<Number(p.gbp||0)).map(t=>esc(t.name)+` (~£${t.gbp}/month, save ~£${Number(p.gbp)-t.gbp})`).join("; ")}. Usage fit not confirmed.`:""}</div></div>`;
+  }).join("");
+  // Forecast only from fresh, contiguous balance readings in one explicitly dated cycle.
+  const saves=[];
+  for(const k of ["flow","cursor","elevenlabs"]){
+    const p=pools[k], u=p&&poolUse(k,p,c), L=p?.latest, series=p?.series||[], start=planStart(k,c)?.getTime();
+    if(!u||u.future||u.days<3||!L?.at||Date.now()-ts(L.at)>2*DAY||!start||series.some((r,i)=>i && ts(r[0])>=start && Number(r[1])>Number(series[i-1][1]))) continue;
+    const observedDays=(ts(L.at)-start)/DAY; if(observedDays<3) continue; const projection=u.used/observedDays*u.cyc;
+    const tiers=(c.tiers||{})[k]||[], current=tiers.find(t=>t.current), scale=p.unit==="%"&&current?100/current.allow:1;
+    const cheaper=tiers.filter(t=>current&&t.gbp<current.gbp&&t.allow*scale>=projection*1.25).sort((a,b)=>a.gbp-b.gbp)[0];
+    if(cheaper) saves.push(`${cheaper.name}: review a possible £${current.gbp-cheaper.gbp}/month saving if this cycle’s pace continues`);
+  }
+  const concentration=plans.filter(p=>/Google AI|Cursor/.test(p.name)).reduce((n,p)=>n+Number(p.gbp||0),0);
+  const review=saves.length?saves.join(". ")+".":`${stale?stale+" stale usage readings. ":""}${missing?missing+" plans need usage connected. ":""}Refresh readings before choosing a cheaper plan.`;
+  box.innerHTML=`<div class="ai-head"><h2>AI subscriptions</h2><b>~£${Math.round(total)}/month</b></div><p class="context">${plans.length} recorded paid plans · estimated prices including VAT</p><p class="ai-saving">${concentration&&total?`Google + Cursor: £${concentration}/month (${Math.round(concentration/total*100)}% of recorded fees). Review these first. `:""}${esc(review)}</p><details id="ai-subscriptions"><summary>All recorded subscriptions and monthly use</summary>${rows}<p class="context">Inventory comes from the recorded studio plans; other subscriptions may be missing. Pool usage follows each provider’s reset, not the calendar month. Calendar-month logs are partial and are never added to balance usage. Vertex credit is tracked below, separately from recurring fees. Prices last checked ${esc((c.fx||{}).checked||"unknown")}; check renewal quotes before changing plans. No plan changes are automatic.</p></details><details id="ai-months"><summary>Monthly usage log</summary>${Object.entries(c.monthly||{}).sort((a,b)=>b[0].localeCompare(a[0])).map(([m,ps])=>`<h3>${esc(m)}</h3>${Object.entries(ps).filter(([k,v])=>v.entries).map(([k,v])=>`<p>${esc(k)}: ${esc(units(v.logged,v.unit))} logged · ${v.entries} entries</p>`).join("")||'<p>No spend entries.</p>'}`).join("")||'<p class="context">Monthly history will appear after the next data publication.</p>'}</details>`;
+}
+
 // A fold someone opened (the "17 jobs waiting" list, a job card, "+3 more") stays open when the page re-renders.
 function openKey(d){
   if(d.id) return "#"+d.id;
@@ -2235,7 +2295,7 @@ function render(){
   const was = new Set([...document.querySelectorAll("details[open]")].map(openKey).filter(Boolean));
   const films = view();
   if(filter && !films.some(f=>f.key===filter)) filter = null;
-  renderSource(); renderTracker(films); renderNow(); renderDone(); renderJobBoard(); renderSpend(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  renderSource(); renderTracker(films); renderNow(); renderDone(); renderJobBoard(); renderSpend(); renderQueueOverview(); renderAIOverview(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
   if(was.size) document.querySelectorAll("details:not([open])").forEach(d=>{ const k = openKey(d); if(k && was.has(k)) d.open = true; });
 }
 document.addEventListener("click", e=>{
