@@ -1567,9 +1567,9 @@ function justLine(x){
 function pcCol(p){ const v = Math.max(0, Math.min(100, +p||0)); return `hsl(${Math.round(v*1.2)} 70% 46%)`; }
 function pcBar(p){ return `<i class="pc" style="width:${p}%;--pc:${pcCol(p)}"></i>`; }
 const vOpen = {};   // which video rows are open; kept across the minute re-render
-const vLane = {};   // which lanes Ben has toggled; the others keep their default (Needs you and Working open)
+const vLane = {};   // Explicit lane toggles; lists stay collapsed until opened.
 // Ben, 15 Oct 2026: "clean this up, maybe swim lanes". Lanes by what each film is waiting on, thin one-line rows.
-const LANES = [["you","Needs your review",false],["now","Working now",true],["wait","Upcoming / waiting",false],["sched","Scheduled",false],["live","Live",false]];
+const LANES = [["you","Needs your review",false],["now","Working now",false],["wait","Upcoming / waiting",false],["sched","Scheduled",false],["live","Live",false]];
 function releaseBlockers(r){
   if(r.live || r.isSched) return [];
   const out=[], jobs=linkedJobsFor(r.f.key).filter(j=>!supportingJob(j)), check=(fromDb.checks||{})[r.f.key.replace(":","-")];
