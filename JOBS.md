@@ -331,10 +331,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0682 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0683 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0684 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0685 | mini | claimed | gemini | 2026-10-19T22:45Z | for gemini · chart · `gemini-agy` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
+| J0685 | mini | **stalled** | gemini | 2026-10-19T22:45Z | for gemini · chart · `gemini-agy` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0686 | mini | open | – | – | for gemini · chart · `gemini-agy` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0687 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
-| J0688 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0688 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
