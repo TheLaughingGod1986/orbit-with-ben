@@ -50226,17 +50226,38 @@
           "at": "2026-10-19T14:27Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting QA sweep of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-19T14:29Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: OWB newest packs inspected (021 Short saturn_keck_ring_rain_v01 0/8 PASS, 022 Short sun_eight_minute_light_v01 0/8 PASS, 021 Short saturn_ten_hour_day_v01 0/7 PASS, 022/027/026/024/023 Shorts PASS, 028/029 overlays PASS)"
         }
       ],
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-19T14:27Z",
+        "at": "2026-10-19T14:29Z",
         "by": "gemini",
-        "note": "Starting QA sweep of newest OWB and HOS packs"
-      }
+        "note": "OWB newest packs inspected (021 Short saturn_keck_ring_rain_v01 0/8 PASS, 022 Short sun_eight_minute_light_v01 0/8 PASS,"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:027",
+        "OWB:026",
+        "OWB:024",
+        "OWB:023",
+        "OWB:028",
+        "OWB:029",
+        "HOS:002",
+        "HOS:003",
+        "HOS:006",
+        "HOS:005",
+        "HOS:004",
+        "HOS:001"
+      ]
     }
   ],
   "focus": [],
