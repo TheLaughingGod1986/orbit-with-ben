@@ -45913,13 +45913,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-19T00:04Z",
-      "eta": "2026-10-19T02:04Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T00:04Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS — 022 lift_century_warming v01 (sun_century_warming_v01.mp4, 24.0s, 58w) in OWB UAT/sun_century_warming_v01; gate_shorts_open, sfx_kit level, polish_gate, picture_qa all PASS; commit fdce6c792",
       "history": [
         {
           "at": "2026-10-19T00:04Z",
@@ -45960,6 +45960,11 @@
           "at": "2026-10-19T00:34Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed metadata/QA reports (fdce6c792) and staged pack in OWB UAT/sun_century_warming_v01"
+        },
+        {
+          "at": "2026-10-19T00:34Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS — 022 lift_century_warming v01 (sun_century_warming_v01.mp4, 24.0s, 58w) in OWB UAT/sun_century_warming_v01; gate_shorts_open, sfx_kit level, polish_gate, picture_qa all PASS; commit fdce6c792"
         }
       ],
       "kind": "assembly",
