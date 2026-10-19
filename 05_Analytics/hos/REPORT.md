@@ -1,26 +1,29 @@
 # History of Science: channel tracker
 
-Generated from the 2026-10-18 snapshot by `npm run analytics:report`. Don't edit by hand.
+Generated from the 2026-10-19 snapshot by `npm run analytics:report`. Don't edit by hand.
 
-**1 subscriber · 1,847 views · 18 videos**
+**1 subscriber · 1,946 views · 19 videos**
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last 24 hours | +1,101 | 0 |
-| Last 7 days | +1,374 | 0 |
-| Last 30 days (YouTube Analytics) | +517 | +1 |
+| Last 24 hours | +99 | 0 |
+| Last 7 days | +1,436 | 0 |
+| Last 30 days (YouTube Analytics) | +1,689 | +1 |
 
 ## Top videos, last 24 hours
 
-Public view-count change, snapshot 2026-10-17 to 2026-10-18.
+Public view-count change, snapshot 2026-10-18 to 2026-10-19.
 
 | Video | Format | Views | Share |
 |---|---|---:|---:|
-| [What happens if you keep cutting gold in half?](https://www.youtube.com/shorts/29bpGAI0wb8) | short | +153 | 13.9% |
-| [What's Really Inside an Atom?](https://www.youtube.com/watch?v=GHZDsiH7L7A) | long | +5 | 0.5% |
-| Other videos (16) | | 0 | 0.0% |
-| Not matched to a listed video | | +943 | 85.6% |
-| **Channel total, last 24 hours** | | **+1,101** | **100.0%** |
+| [He said every eighth element repeats](https://www.youtube.com/shorts/TbMMJSRKC3U) | short | +29 | 29.3% |
+| [What happens if you keep cutting gold in half?](https://www.youtube.com/shorts/29bpGAI0wb8) | short | +26 | 26.3% |
+| [What's Really Inside an Atom?](https://www.youtube.com/watch?v=GHZDsiH7L7A) | long | +6 | 6.1% |
+| [How did Röntgen see bones without cutting](https://www.youtube.com/shorts/xvanpsLeADE) | short | +1 | 1.0% |
+| [The periodic table's empty chairs](https://www.youtube.com/shorts/uU12JA5rMWg) | short | +1 | 1.0% |
+| Other videos (14) | | 0 | 0.0% |
+| Not matched to a listed video | | +36 | 36.4% |
+| **Channel total, last 24 hours** | | **+99** | **100.0%** |
 
 YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
 
@@ -28,7 +31,7 @@ YouTube's channel view total and its per-video counts refresh at different times
 
 | Week of | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-10-12 (so far, to 10-15) | 180 | – | 0.6 | – | 0 | 3 |
+| 2026-10-12 (so far, to 10-16) | 1,352 | – | 2.4 | – | 0 | 4 |
 | 2026-10-05 | 17 | -74% | 0 | -100% | 0 | 0 |
 | 2026-09-28 | 65 | -56% | 0.8 | +39% | 0 | 0 |
 | 2026-09-21 | 147 | +35% | 0.6 | – | +1 | 6 |
@@ -41,7 +44,7 @@ YouTube's channel view total and its per-video counts refresh at different times
 
 | Month | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-10 (so far, to 10-15) | 205 | -26% | 1.2 | – | 0 | 3 |
+| 2026-10 (so far, to 10-16) | 1,377 | +399% | 2.9 | – | 0 | 4 |
 | 2026-09 | 588 | – | 1.5 | – | +1 | 15 |
 | 2026-08 (part) | 0 | – | 0 | – | 0 | 0 |
 
@@ -49,8 +52,8 @@ A period still running is compared with the same number of days at the start of 
 
 ## Where views come from (last 28 days)
 
-- **Shorts:** Shorts feed 56% · YouTube search 42% · Direct / unknown 1% · Other YouTube pages 1% (335 views)
-- **Longs:** Browse features 67% · YouTube search 17% · Suggested 9% · Direct / unknown 5% (145 views)
+- **Shorts:** Shorts feed 88% · YouTube search 11% · Other YouTube pages 0% · Direct / unknown 0% (1,479 views)
+- **Longs:** Browse features 60% · YouTube search 19% · Suggested 10% · Direct / unknown 6% (126 views)
 
 ## Where viewers leave (longs, lifetime)
 
@@ -58,7 +61,7 @@ A period still running is compared with the same number of days at the start of 
 
 | Long | Views | 0:15 | 0:30 | 1:00 | 2:00 | Halfway | End | First 30 s vs similar videos |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| [What's Really Inside an Atom?](https://youtu.be/GHZDsiH7L7A) | 15 | – | – | – | – | – | – | too few views |
+| [What's Really Inside an Atom?](https://youtu.be/GHZDsiH7L7A) | 21 | – | – | – | – | – | – | too few views |
 | [How Did We Discover X-rays?](https://youtu.be/frP_YrNShsU) | 2 | – | – | – | – | – | – | too few views |
 | [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | 145 | 72% | 56% | 48% | 25% | 20% | 12% | lower |
 | [How Did We Discover Germs?](https://youtu.be/_C92tIJCk8A) | 7 | – | – | – | – | – | – | too few views |
@@ -67,23 +70,24 @@ A period still running is compared with the same number of days at the start of 
 
 | Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) | Feed share, day 1 | Top source (28 d) |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-10-16 | [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | short | 1,184 | +153 | +1,184 | 0 | 592 | – | – | – |
-| 2026-10-15 | [What's Really Inside an Atom?](https://youtu.be/GHZDsiH7L7A) | long | 15 | +5 | +8 | +9 | 5 | 18% | – | Direct / unknown |
-| 2026-10-13 | [Invisible life is still everywhere](https://youtu.be/qOZgess30h0) | short | 168 | 0 | +168 | +169 | 33.6 | 40% | 90% | Shorts feed |
+| 2026-10-18 | [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | short | 29 | +29 | +29 | 0 | 29 | – | – | – |
+| 2026-10-16 | [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | short | 1,210 | +26 | +1,210 | +1,170 | 403.3 | 44% | 96% | Shorts feed |
+| 2026-10-15 | [What's Really Inside an Atom?](https://youtu.be/GHZDsiH7L7A) | long | 21 | +6 | +14 | +11 | 5.3 | 15% | – | Related video link (Shorts) |
+| 2026-10-13 | [Invisible life is still everywhere](https://youtu.be/qOZgess30h0) | short | 168 | 0 | +168 | +169 | 28 | 40% | 91% | Shorts feed |
 | 2026-09-27 | [The first X-ray showed a wedding ring](https://youtu.be/zI_eD3vFWmE) | short | 8 | 0 | 0 | +8 | 0.4 | 32% | 0% | YouTube search |
-| 2026-09-26 | [How did Röntgen see bones without cutting](https://youtu.be/xvanpsLeADE) | short | 38 | 0 | 0 | +38 | 1.7 | 52% | 23% | YouTube search |
-| 2026-09-25 | [How X-rays Were Discovered by Accident](https://youtu.be/oowAOWTBoq0) | short | 27 | 0 | 0 | +27 | 1.2 | 67% | 50% | YouTube search |
+| 2026-09-26 | [How did Röntgen see bones without cutting](https://youtu.be/xvanpsLeADE) | short | 39 | +1 | +1 | +38 | 1.7 | 52% | 23% | YouTube search |
+| 2026-09-25 | [How X-rays Were Discovered by Accident](https://youtu.be/oowAOWTBoq0) | short | 27 | 0 | 0 | +27 | 1.1 | 67% | 50% | YouTube search |
 | 2026-09-24 | [How Did We Discover X-rays?](https://youtu.be/frP_YrNShsU) | long | 2 | 0 | 0 | +2 | 0.1 | 45% | – | Direct / unknown |
-| 2026-09-22 | [What other table has empty chairs?](https://youtu.be/LanTHJckYx8) | short | 4 | 0 | 0 | +4 | 0.2 | 23% | 33% | YouTube search |
-| 2026-09-21 | [Why tellurium sat before iodine](https://youtu.be/nba0-f7PPeU) | short | 30 | 0 | +2 | +30 | 1.1 | 46% | 38% | YouTube search |
+| 2026-09-22 | [What other table has empty chairs?](https://youtu.be/LanTHJckYx8) | short | 4 | 0 | 0 | +4 | 0.1 | 23% | 33% | YouTube search |
+| 2026-09-21 | [Why tellurium sat before iodine](https://youtu.be/nba0-f7PPeU) | short | 30 | 0 | +1 | +30 | 1.1 | 46% | 38% | YouTube search |
 | 2026-09-20 | [Gallium sat where the table said](https://youtu.be/CnHwX1L9XHg) | short | 16 | 0 | 0 | +16 | 0.6 | 33% | 53% | Shorts feed |
-| 2026-09-19 | [He predicted a metal before it was found](https://youtu.be/nFQRWmpulTQ) | short | 33 | 0 | 0 | +33 | 1.1 | 53% | 10% | YouTube search |
-| 2026-09-18 | [The periodic table's empty chairs](https://youtu.be/uU12JA5rMWg) | short | 28 | 0 | 0 | +7 | 0.9 | 56% | 8% | YouTube search |
-| 2026-09-17 | [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | long | 145 | 0 | +9 | +137 | 4.7 | 25% | – | Browse features |
+| 2026-09-19 | [He predicted a metal before it was found](https://youtu.be/nFQRWmpulTQ) | short | 33 | 0 | 0 | +11 | 1.1 | 70% | 10% | YouTube search |
+| 2026-09-18 | [The periodic table's empty chairs](https://youtu.be/uU12JA5rMWg) | short | 29 | +1 | +1 | +4 | 0.9 | 14% | 8% | YouTube search |
+| 2026-09-17 | [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | long | 145 | 0 | +9 | +116 | 4.5 | 25% | – | Browse features |
 | 2026-09-06 | [A flask that proved germs come from outside](https://youtu.be/sILtQxgYQk8) | short | 24 | 0 | 0 | 0 | 0.6 | – | 11% | – |
 | 2026-09-06 | [Germs hitch a ride on you](https://youtu.be/8_Edn_HCi1s) | short | 29 | 0 | +2 | +3 | 0.7 | 33% | 77% | YouTube search |
 | 2026-09-06 | [Microbes in a drop of pond water](https://youtu.be/iqToagXnjX0) | short | 110 | 0 | 0 | 0 | 2.6 | – | 16% | – |
-| 2026-09-06 | [Germs don't cast a shadow](https://youtu.be/H1y0DXFVmw8) | short | 78 | 0 | 0 | 0 | 1.9 | – | 76% | – |
+| 2026-09-06 | [Germs don't cast a shadow](https://youtu.be/H1y0DXFVmw8) | short | 78 | 0 | 0 | 0 | 1.8 | – | 76% | – |
 | 2026-09-03 | [How Did We Discover Germs?](https://youtu.be/_C92tIJCk8A) | long | 7 | 0 | +1 | +4 | 0.2 | 65% | – | Direct / unknown |
 
 ## Notes
