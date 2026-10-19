@@ -281,10 +281,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0627 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0628 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0629 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
-| J0630 | mini | claimed | gemini | 2026-10-19T06:56Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
+- J0630 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs (plus 72 Shorts: 58 OWB + 14 HOS; 022 h8HGfyShEHI and HOS Short TbMMJSRKC3U not yet reported in Studio); CTR hits vs 4%: 2/15 (OWB -jmMROGoZCM 4.9% on 41 impr; HOS _C92tIJCk8A 7.9% on 38 impr); top volume: OWB 021 Saturn 55AEQwvs36g 1.8% CTR (1,166 impr, 205 views, 12.1% avg viewed), HOS 002 Periodic Table AL_-qlWko_g 3.3% CTR (958 impr, 145 views, 22.5% avg viewed))
 - J0626 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0611 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0596 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -294,4 +294,3 @@ Recently finished:
 - J0536 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0531 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs (plus 57 OWB + 14 HOS Shorts; 23KZK7OjsEE not yet shown in Studio lifetime); CTR hits vs 4%: OWB -jmMROGoZCM Jupiter 5.0% (40 imp), HOS _C92tIJCk8A Germs 8.3% (36 imp))
 - J0520 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed e5b7799ac: re-verified all 10 live public videos + upcoming 022 long h8HGfyShEHI at 2026-10-18T04:06:17Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-18.md). Nothing changed in Studio.)
-- J0505 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed 67d0eb63: all 10 live public videos + upcoming 022 long h8HGfyShEHI pass chapters, sources, end screens, and Related video checks at 2026-10-18T00:40:54Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-18.md). Nothing changed in Studio.)
