@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_hour_day/06_Final-Exports/saturn_ten_hour_day_v01.mp4",
+  "edge_floor": 0.007,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s06_pia21351_the_north",
+      "cut": 5,
+      "t": 20.5,
+      "source": "021_v03f_span_451.80.mp4",
+      "why": [
+        "low detail: edge density 0.0062 < film p5 0.0070"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pia11613_post_equinox",
+      "source": "021_v03f_span_496.55.mp4",
+      "t": 1.93,
+      "std": 78.84,
+      "mean": 92.18,
+      "p95": 217.0,
+      "edge": 0.0459,
+      "hf": 13.39,
+      "lf": 73.55,
+      "std8": 75.08,
+      "edge8": 0.2042,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_pia21888_dreamy_swirls",
+      "source": "021_v03f_span_447.55.mp4",
+      "t": 5.65,
+      "std": 18.65,
+      "mean": 181.86,
+      "p95": 201.0,
+      "edge": 0.0088,
+      "hf": 8.42,
+      "lf": 13.69,
+      "std8": 14.58,
+      "edge8": 0.0243,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_pia14945_north_pole_spring",
+      "source": "021_v03f_span_456.60.mp4",
+      "t": 9.03,
+      "std": 61.64,
+      "mean": 144.58,
+      "p95": 227.0,
+      "edge": 0.0166,
+      "hf": 8.18,
+      "lf": 59.23,
+      "std8": 60.51,
+      "edge8": 0.0484,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_pia20507_watercolor_swirls",
+      "source": "021_v03f_span_461.60.mp4",
+      "t": 12.2,
+      "std": 39.12,
+      "mean": 127.17,
+      "p95": 183.0,
+      "edge": 0.0343,
+      "hf": 15.32,
+      "lf": 31.08,
+      "std8": 33.01,
+      "edge8": 0.0947,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_pia08265_saturn_hides_rings",
+      "source": "021_v03f_span_326.50.mp4",
+      "t": 15.97,
+      "std": 48.08,
+      "mean": 70.92,
+      "p95": 130.0,
+      "edge": 0.0397,
+      "hf": 14.8,
+      "lf": 39.3,
+      "std8": 41.56,
+      "edge8": 0.1183,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_pia21351_the_north",
+      "source": "021_v03f_span_451.80.mp4",
+      "t": 20.5,
+      "std": 26.68,
+      "mean": 97.98,
+      "p95": 137.0,
+      "edge": 0.0062,
+      "hf": 6.2,
+      "lf": 24.37,
+      "std8": 24.85,
+      "edge8": 0.0152,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0062 < film p5 0.0070"
+      ]
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_pia11613.mp4",
+      "t": 24.43,
+      "std": 54.99,
+      "mean": 60.67,
+      "p95": 147.0,
+      "edge": 0.0338,
+      "hf": 13.88,
+      "lf": 50.16,
+      "std8": 51.26,
+      "edge8": 0.1439,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
