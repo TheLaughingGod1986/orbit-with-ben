@@ -49636,10 +49636,25 @@
           "at": "2026-10-19T12:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-19T12:34Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Selected HOS 002 (tied with 001 at 3 Test B Shorts, next in cycle after 004->005->006->003->002->001); inspecting script, VO, and picture pool"
         }
       ],
       "kind": "assembly",
-      "backlog": "hos-short-from-locked"
+      "backlog": "hos-short-from-locked",
+      "taskKeys": [
+        "HOS:002"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-19T12:34Z",
+        "by": "gemini",
+        "note": "Selected HOS 002 (tied with 001 at 3 Test B Shorts, next in cycle after 004->005->006->003->002->001); inspecting script"
+      }
     }
   ],
   "focus": [],
