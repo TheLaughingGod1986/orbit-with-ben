@@ -632,7 +632,7 @@ class ReleaseReadiness(unittest.TestCase):
 @unittest.skipUnless(shutil.which("node"), "node not installed")
 class VideoWorkSchedule(unittest.TestCase):
     def evaluate(self, expression, board):
-        names = ["MINUTE", "ts", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "runningJob", "stepPace", "jobMin", "plan", "progressOf", "taskKeysFor", "linkedJobsFor", "progressUpdates", "filmJobs", "supportingJob", "workLane", "jobQueueInfo", "stOf", "videoWorkPlan"]
+        names = ["MINUTE", "ts", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "runningJob", "stepPace", "jobMin", "plan", "progressOf", "taskKeysFor", "linkedJobsFor", "progressUpdates", "filmJobs", "supportingJob", "workLane", "jobQueueInfo", "jobPriority", "videoPriority", "stOf", "videoWorkPlan"]
         lib = "\n".join(js_function(page(), n) for n in names)
         script = f"const fromDb={json.dumps(board)};\n{lib}\nconsole.log(JSON.stringify({expression}));"
         out = subprocess.run(["node", "-e", script], text=True, capture_output=True, timeout=30)
@@ -650,6 +650,23 @@ class VideoWorkSchedule(unittest.TestCase):
         return {"jobs":jobs,"runOrder":{"mini":[j["id"] for j in jobs],"chief":[]},"extra":{"done":[]}}
 
     ROW = {"f":{"key":"OWB:024","_stages":[{"key":k,"label":k} for k in ("picture","edit","upload")],"stages":{}},"steps":[],"pct":89}
+
+    def test_badges_follow_worker_queue_and_skip_held_or_gated_jobs(self):
+        b=self.board()
+        badges=self.evaluate("(()=>{const P=plan();return fromDb.jobs.slice(0,4).map(j=>jobPriority(j,P).text)})()",b)
+        self.assertEqual(badges,["Working now","Next","#3","#4"])
+        b["jobs"][1].update(status="blocked",result="parked for Chief: review")
+        b["jobs"][2].update(notBefore="2099-01-01T10:00:00Z")
+        badges=self.evaluate("(()=>{const P=plan();return fromDb.jobs.slice(1,5).map(j=>jobPriority(j,P).text)})()",b)
+        self.assertEqual(badges,["Review","Date gated","Next","#3"])
+
+    def test_held_video_priority_is_not_advertised_as_the_next_executable_job(self):
+        b=self.board()
+        for j in b["jobs"]:
+            if j.get("film")=="024":j.update(status="blocked",result="parked for Chief: review")
+        badge=self.evaluate(f"videoPriority({json.dumps(self.ROW)},plan(),{{'OWB:024':3}})",b)
+        self.assertEqual(badge["text"],"Priority #3 · Review")
+        self.assertIn("not an executable job queue position",badge["title"])
 
     def test_three_video_jobs_use_global_worker_queue_positions_six_and_nine(self):
         row=json.dumps(self.ROW)

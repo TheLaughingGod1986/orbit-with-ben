@@ -161,6 +161,8 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .ai-overview{padding:16px;margin:22px 0}.ai-head{display:flex;justify-content:space-between;gap:12px}.ai-overview>details{margin-top:14px}.ai-overview summary{cursor:pointer}.ai-saving{font-size:14px;line-height:1.5}.ai-row{display:grid;grid-template-columns:1fr auto;gap:8px;border-top:1px solid var(--line);padding:14px 0}.ai-row small{display:block;font-size:12px;line-height:1.6;color:var(--ink-3);margin-top:5px}.ai-row-detail{grid-column:1/-1;font-size:12px;color:var(--ink-3)}
 footer{font-size:12px;line-height:1.6}#foldPlans .pool .fit,#foldPlans #verdict{display:none}
 @media(max-width:600px){.vlh{flex-wrap:wrap}.vlc{font-size:12px}.ai-head{flex-wrap:wrap}.ai-row{grid-template-columns:minmax(0,1fr) auto}.v1 .vt{min-width:0}.vr .vp{font-size:12px}}
+.priority-badge{display:inline-flex;align-items:center;max-width:100%;padding:3px 8px;border-radius:6px;margin:2px 6px 6px 0;font-size:12px;line-height:1.4;font-weight:650;background:var(--todo-soft);color:var(--ink-2);white-space:normal;text-align:left}
+.priority-badge.now{background:var(--doing-soft);color:var(--doing)}.priority-badge.queued{background:var(--doing-soft);color:var(--ink)}.priority-badge.waiting{background:var(--soon-soft,var(--todo-soft));color:var(--ink-2)}.priority-badge.done{background:var(--done-soft);color:var(--done)}
 </style></head><body>
 
 <title>Studio Kanban</title>
@@ -1149,6 +1151,31 @@ function jobQueueInfo(j,P){
   }
   return {state:"unplanned",label:"No queue position or start time",lane,reason:dep?`waiting for ${dep}`:"not in an executable queue"};
 }
+// Execution badges follow the worker's recorded executable order, including current jobs.
+// Video priority remains separate when a held video has no executable queue position.
+function jobPriority(j,P){
+  const q=jobQueueInfo(j,P), lane=j.line||j.needs||"any";
+  if(q.state==="now") return {text:"Working now",kind:"now",title:`${j.id} · ${q.lane} · currently running`};
+  if(q.state==="done") return {text:"Done",kind:"done",title:`${j.id} · completed`};
+  if(q.state!=="queued") return {text:q.state==="review"?"Review":q.state==="gated"?"Date gated":q.state==="blocked"?"Blocked":"Waiting",kind:"waiting",title:`${j.id} · ${q.label}${q.reason?" · "+q.reason:""}`};
+  const same=(fromDb.jobs||[]).filter(x=>(x.line||x.needs||"any")===lane);
+  const waiting=same.map(x=>({j:x,q:jobQueueInfo(x,P)})).filter(x=>x.q.state==="queued").sort((a,b)=>a.q.start-b.q.start||(a.q.pos||Infinity)-(b.q.pos||Infinity)||a.j.id.localeCompare(b.j.id));
+  const index=waiting.findIndex(x=>x.j.id===j.id), active=same.filter(runningJob).length;
+  if(index<0) return {text:"Waiting",kind:"waiting",title:`${j.id} · queue order not confirmed`};
+  const position=index+active+1;
+  return {text:index===0?"Next":`#${position}`,kind:"queued",title:`${j.id} · ${q.lane} · position ${position}, including running jobs; estimates can change`,position};
+}
+function videoPriority(r,P,rankOf){
+  if(r.live||r.isSched) return null;
+  const w=r.work||videoWorkPlan(r,P), current=w.active[0], next=w.queued.find(x=>x.q.state==="queued");
+  if(current||next) return jobPriority((current||next).j,P);
+  const held=w.held[0]||w.queued[0], status=r.you?"Needs you":held?jobPriority(held.j,P).text:"Not queued";
+  const priority=rankOf[r.f.key];
+  return {text:priority?`Priority #${priority} · ${status}`:status,kind:"waiting",title:`${priority?"Video priority in the board order; not an executable job queue position. ":""}${held?jobPriority(held.j,P).title:"Remaining video work needs linked jobs or stage confirmation"}`};
+}
+function priorityBadgeHtml(b){
+  return b?`<span class="priority-badge ${esc(b.kind)}" title="${esc(b.title)}">${esc(b.text)}</span>`:"";
+}
 function videoWorkPlan(r,P){
   const all=r.jobRow?[r.taskJob]:filmJobs(r.f.key), related=r.jobRow?[]:all.filter(supportingJob);
   const jobs=r.jobRow?all:all.filter(j=>!supportingJob(j)), completed=jobs.filter(j=>j.status==="done");
@@ -1201,7 +1228,7 @@ function jobTaskHtml(j, scope, position){
   const state=runningJob(j)?"Running":j.status==="done"?"✓ Done":isChiefPark(j)?"Review":j.status==="blocked"?"Blocked":"Queued";
   const P=plan(), qi=jobQueueInfo(j,P), queueLine=qi.state==="now"?`${workLane(j)} · ${finishIn(qi.done)} (estimate)`:qi.done?`${qi.label} · start ${scheduleAt(qi.start)} · ready ${scheduleAt(qi.done)} (estimate)`:`${qi.label}${qi.reason?" · "+qi.reason:""} · start/finish unknown`;
   const p=j.progress, jp=jobPlan(j,P), id=`subtask-${scope}-${j.id}`;
-  return `<div class="jobtask" data-jobtask-id="${esc(j.id)}" data-jobtask-keys="${esc(taskKeysFor(j).join(" "))}"><details class="progress-fold" id="${esc(id)}"><summary><b>${position?`Video job ${position.index} of ${position.total} · `:""}${esc(state)} · ${esc(j.id)}</b> ${esc(plainTitle(j,130))}${p&&p.of?`<span class="context"> · ${p.step}/${p.of} recorded steps complete</span>`:""}</summary><div class="impact"><p><b>Worker:</b> ${esc(WORKER[j.by]||j.by||j.routedTo||"Unassigned")}</p><ol class="substeps">${jp.rows.map(x=>`<li><b>${esc(x.label)}</b> · ${esc(x.when||"not timed")}${x.note?" · "+esc(x.note):""}</li>`).join("")}</ol>${jobImpact(j)}</div></details><p class="job-queue">${esc(queueLine)}</p>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`;
+  return `<div class="jobtask" data-jobtask-id="${esc(j.id)}" data-jobtask-keys="${esc(taskKeysFor(j).join(" "))}"><details class="progress-fold" id="${esc(id)}"><summary><b>${position?`Video job ${position.index} of ${position.total} · `:""}${esc(state)} · ${esc(j.id)}</b> ${priorityBadgeHtml(jobPriority(j,P))} ${esc(plainTitle(j,130))}${p&&p.of?`<span class="context"> · ${p.step}/${p.of} recorded steps complete</span>`:""}</summary><div class="impact"><p><b>Worker:</b> ${esc(WORKER[j.by]||j.by||j.routedTo||"Unassigned")}</p><ol class="substeps">${jp.rows.map(x=>`<li><b>${esc(x.label)}</b> · ${esc(x.when||"not timed")}${x.note?" · "+esc(x.note):""}</li>`).join("")}</ol>${jobImpact(j)}</div></details><p class="job-queue">${esc(queueLine)}</p>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`;
 }
 function filmJobsHtml(key,r){
   const w=videoWorkPlan(r,plan()), scope=key.replace(":","-");
@@ -1645,10 +1672,10 @@ function renderVideos(rows, rankOf){
     const date = lane==="you" ? (r.you ? short(r.you) : "") : (!r.live && !r.isSched && r.ready) ? `Ready for you ${short(r.ready)}` : r.air ? `${r.live?"Live":"Airs"} ${esc(fd(r.air))}` : r.airText ? `Airs ${esc(r.airText)}` : "";
     return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${r.jobRow?"Task ":""}${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp" title="${r.isSched||r.live?"Confirmed upload":"Recorded film stage progress"}">${r.isSched||r.live?"Uploaded":"Video"} ${r.pct}%</span>`}<span class="chev">▸</span></div>
       ${r.pct==null?"":`<div class="bar thin" aria-label="Recorded film stage progress">${pcBar(r.pct)}</div>`}
-      ${badge}<div class="video-work" data-video-work="${esc(r.f.key)}">${videoWorkSummary(r,P)}</div>${date?`<div class="work-air">${r.jobRow?"":r.live||r.isSched?esc(date):r.air||r.airText?`Target air: ${esc(r.air?fd(r.air):r.airText)}`:r.you?`Needs you: ${esc(short(r.you))}`:""}</div>`:""}${r.blockers.length?`<div class="release-hint">${r.blockers.length} release holds · tap for actions</div>`:""}</button>${open?videoDrop(r, when):""}</div>`; };
+      ${priorityBadgeHtml(videoPriority(r,P,rankOf))}${badge}<div class="video-work" data-video-work="${esc(r.f.key)}">${videoWorkSummary(r,P)}</div>${date?`<div class="work-air">${r.jobRow?"":r.live||r.isSched?esc(date):r.air||r.airText?`Target air: ${esc(r.air?fd(r.air):r.airText)}`:r.you?`Needs you: ${esc(short(r.you))}`:""}</div>`:""}${r.blockers.length?`<div class="release-hint">${r.blockers.length} release holds · tap for actions</div>`:""}</button>${open?videoDrop(r, when):""}</div>`; };
   const groups = Object.fromEntries(LANES.map(l=>[l[0],[]]));
   for(const r of keep) groups[laneOf(r)].push(r);
-  for(const k of ["you","now","wait"]) groups[k].sort(byRank);
+  for(const k of ["you","now","wait"]) groups[k].sort((a,b)=>{const aq=a.work.queued.find(x=>x.q.state==="queued"),bq=b.work.queued.find(x=>x.q.state==="queued");return Number(!!bq)-Number(!!aq)||(aq&&bq?aq.q.start-bq.q.start:0)||byRank(a,b);});
   groups.sched.sort((a,b)=>(a.air||9e15)-(b.air||9e15));
   groups.live.sort((a,b)=>(b.air||0)-(a.air||0));
   box.innerHTML = `<div class="vh">Videos<span>${videoTotals(Object.fromEntries(Object.entries(groups).map(([k,vs])=>[k,vs.filter(r=>!r.jobRow)])))}</span></div>` + (keep.length
@@ -2251,7 +2278,7 @@ function renderQueueOverview(){
   for(const j of jobs){const q=jobQueueInfo(j,P); groups[q.state==="now"?"running":q.done?"queued":"waiting"].push({j,q});}
   groups.queued.sort((a,b)=>a.q.start-b.q.start);
   const labels={running:"Working now",queued:"Queued to start",waiting:"Waiting / blocked"};
-  box.innerHTML=`<h2 class="sec">Full job queue <span class="qsub">${jobs.length} unfinished jobs · includes channel checks</span></h2>`+Object.entries(groups).map(([k,rows])=>`<details id="queue-${k}" class="queue-lane"><summary><b>${labels[k]}</b><span>${rows.length} job${rows.length===1?"":"s"}</span></summary>${rows.length?rows.map(({j,q},i)=>`<details id="queue-job-${esc(j.id)}" class="queue-job"><summary><span>${esc(j.id)} · ${esc(plainTitle(j,110))}</span><small>${esc(q.state==="now"?"Running":q.pos?`#${q.pos} · ${workLane(j)}`:q.label)}</small></summary>${jobTaskHtml(j,"queue")}</details>`).join(""):'<p class="context">No jobs in this list.</p>'}</details>`).join("");
+  box.innerHTML=`<h2 class="sec">Full job queue <span class="qsub">${jobs.length} unfinished jobs · includes channel checks</span></h2>`+Object.entries(groups).map(([k,rows])=>`<details id="queue-${k}" class="queue-lane"><summary><b>${labels[k]}</b><span>${rows.length} job${rows.length===1?"":"s"}</span></summary>${rows.length?rows.map(({j,q},i)=>`<details id="queue-job-${esc(j.id)}" class="queue-job"><summary><span>${esc(j.id)} · ${esc(plainTitle(j,110))}</span><small>${priorityBadgeHtml(jobPriority(j,P))} ${esc(workLane(j))}</small></summary>${jobTaskHtml(j,"queue")}</details>`).join(""):'<p class="context">No jobs in this list.</p>'}</details>`).join("");
 }
 function renderAIOverview(){
   const box=$("aiOverview"); if(!box) return;
