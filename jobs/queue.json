@@ -48546,17 +48546,25 @@
           "at": "2026-10-19T09:22Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting HOS thumbnail B variant search"
+        },
+        {
+          "at": "2026-10-19T09:22Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Selected HOS 001 (next in 002->001->005 rotation, no active Test & Compare in THUMB_LEDGER.json)"
         }
       ],
       "kind": "chart",
       "backlog": "hos-thumb-b",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-19T09:22Z",
         "by": "gemini",
-        "note": "Starting HOS thumbnail B variant search"
-      }
+        "note": "Selected HOS 001 (next in 002->001->005 rotation, no active Test & Compare in THUMB_LEDGER.json)"
+      },
+      "taskKeys": [
+        "HOS:001"
+      ]
     }
   ],
   "focus": [],
