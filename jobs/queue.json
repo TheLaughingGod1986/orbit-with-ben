@@ -23340,13 +23340,13 @@
       "stage": "",
       "after": "J0304",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-19T18:20Z",
-      "eta": "2026-10-19T19:20Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T17:04Z",
-      "result": "",
+      "result": "parked for Chief: 013 script v02 review",
       "history": [
         {
           "at": "2026-10-15T17:04Z",
@@ -23387,6 +23387,11 @@
           "at": "2026-10-19T18:34Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed 60d4f8a9 (and 8bffe788) to HOS main; check_all.sh ALL CHECKS PASS; posted diff summary to HOS #180"
+        },
+        {
+          "at": "2026-10-19T18:34Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: 013 script v02 review"
         }
       ],
       "kind": "script",
