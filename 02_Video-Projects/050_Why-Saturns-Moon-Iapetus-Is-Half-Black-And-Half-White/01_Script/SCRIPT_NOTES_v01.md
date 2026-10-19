@@ -1,0 +1,41 @@
+# 050 Why Saturn's Moon Iapetus Is Half Black and Half White — script v01 notes (J0628)
+
+Drafted by Gemini (`gemini`, stand-in worker) for J0628, 19 Oct 2026. **Draft only.** Revised from `iapetus_half_black_white_script_master_v00.md` (scaffolded in J0620 as #1 in `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-19_J0620.md`, 17/30, directly answering the subscribe promise and closing hand-off at lines 40 and 89 of `049` `bennu_sample_return_script_master_v01.md`), because `030`, `031` and `032` have locked scripts (`030` v02 locked in J0227/J0222; `031` v03 locked in J0340; `032` v01 locked in J0301), `033`–`049` already have `v01` drafted and parked for Chief's script review (`J0363`, `J0378`, `J0395`, `J0411`, `J0428`, `J0446`, `J0461`, `J0477`, `J0492`, `J0507`, `J0522`, `J0538`, `J0553`, `J0568`, `J0583`, `J0598`, `J0613`), and `050` only had a `v00` draft from the ideas pass (`J0620`). The topic isn't locked (Chief locks it after the neighbour pass), and the script isn't locked (Chief's script review, then the Gemini `facts` pass and `CLAUDE_QUOTE_CHECK` before any VO). No spend.
+
+## Result
+
+- `npm run review:script`: **PASS 95.3 / 100** (9.5/10 hook, 9.5/10 curiosity, 9.5/10 storytelling, 10/10 scientificAccuracy, 9.6/10 emotion, 10/10 escalation, 9.0/10 retentionPotential, 9.1/10 searchPotential, 9.5/10 visualOpportunities, 9.6/10 narrationFlow; 8/8 structure gates).
+- Spoken words: **1,235 spoken words** (**1,295 reviewer words**, ~8.6 min), 6 chapters — inside the 1,200–1,300 word / 7–9 min lock on both counts.
+- Subscribe beat at 45% of spoken words (18 words: *"If this is your kind of question, subscribe. Next week is how NASA's DART spacecraft moved an asteroid."* — Line 3 from `templates/SUBSCRIBE_BEAT_LINES.md`, rotated from `046`–`049`).
+- Markers: **DATA 7 · SCALE 7 (SCALE count ≥ DATA count) · WHO 2 · WHEN 7 · FACT 4 · NUMBER OBJECT 7**.
+- First concrete answer (*"When Cassini swept past this nine-hundred-and-twelve-mile-wide world on December 31, 2004 and returned for its closest flyby on September 10, 2007, scientists uncovered a striking paradox: dark terrain called Cassini Regio reflects just three to five percent of sunlight across forty percent of the surface, while the bright icy highlands reflect fifty to sixty percent"*) lands in the opening seconds; stakes and main question before 0:45; first chapter card (`[CHAPTER CARD: The Moon That Vanished on One Side of Saturn]`) held until after 0:30 (`OWB_2026-10-19.md` item 2); no agenda line (Lesson 7).
+
+## Number object per chapter (per-chapter teaching gate)
+
+| Chapter | Number object | People and dates |
+|---|---|---|
+| Hook | 0.03–0.05 coal-dark vs 0.50–0.60 snow-bright albedo meter across 912-mile Iapetus | WHEN December 31, 2004, September 10, 2007, 79 days (timeline starts) |
+| 1 The Moon That Vanished on One Side of Saturn | 2,213,000-mile Iapetus vs 759,200-mile Titan inclined orbit diagram and 1.2× water density gauge | WHO Giovanni Domenico Cassini (1625–1712) — Astronomer; WHO John Herschel (1792–1871) — Astronomer; WHEN October 25, 1671, 1980, 1981 added to timeline; FACT Three quarters ice |
+| 2 The Retrograde Dust Cloud of Phoebe | 8,049,668-mile retrograde Phoebe dust stream vs 2,213,000-mile prograde Iapetus collision diagram | WHEN 2004, October 15, 2004, 9 hours, 18 Earth months added to timeline; FACT Only six percent |
+| 3 Seventy-Nine Days of Sunlight and Thermal Segregation | 1,904-hour (79-day) thermal segregation sublimation and cold-trap feedback diagram | WHEN September 10, 2007, 1,904 hours, 79 days added to timeline (midpoint twist *"Wrong."* opens chapter); FACT Seventy-nine days |
+| 4 A Dark Blanket Only One Foot Thick | 1-foot (tens of centimetres) dark blanket cross-section pierced by 20-to-50-metre bright ice craters | WHEN September 10, 2007 added to timeline |
+| 5 The Twelve-Mile-High Mountains on the Equator | 12-mile (20 km) Iapetus equatorial ridge vs Mount Everest and Olympus Mons elevation chart | WHEN December 25, 2004, December 31, 2004, September 10, 2007 added to timeline; FACT Three times the height |
+| 6 Ancient Giant Basins and a Collapsed Ring | 360-mile Turgis, 313-mile Engelier, and 276-mile Gerin basin map and collapsed-ring vs fast-spin ridge diagram | WHEN October 25, 1671, September 10, 2007, 79 days completing timeline |
+
+The timeline builds across the film, so it counts as one DATA moment. No two code graphics run back to back; real moving imagery sits between them in every chapter.
+
+## What changed from v00
+
+- Aligned every spoken claim, mechanism, person card, date, `SCALE:` analogy, and `FACT:` label 100% verbatim with the quoted sources in `01_Script/SOURCES.md` while keeping spoken words (`1,235`) and reviewer words (`1,295`, `8.6 min`) cleanly inside the 1,200–1,300 word / 7–9 min lock, scoring **95.3 / 100** (`scientificAccuracy` 10/10, `escalation` 10/10, 8/8 structure gates):
+  - Hook: replaced the unquoted `"walnut-shaped moon"` and `"like a walnut shell"` phrases from `v00` with NASA's exact verbatim phrasing (`"the yin and yang of the Saturn moons"`, `"a mountain chain up to twelve miles high girdles Iapetus's equator"`, matching `science.nasa.gov/saturn/moons/iapetus/`).
+  - Chapter 1: added the sourced orbital resonance mechanism between Iapetus (`2,213,000 miles`) and Titan (`759,200 miles`) — `"speeding up and slowing down as they pass"` — directly matching Row 2 of `SOURCES.md` (`"As with some other Saturnian moons, Iapetus is in resonance with Saturn's largest moon, Titan, which orbits at 759,200 miles (1,221,850 kilometers). That means that the two objects speed up and slow down as they pass each other in a complex set of variations."`).
+  - Chapter 3: added the sourced `September 10, 2007` transition-zone imaging distance (`"from three thousand one hundred miles"`, matching `PIA08380`: `"The clear spectral filter images in this mosaic were obtained with the Cassini spacecraft narrow- angle camera on Sept. 10, 2007, at a distance of approximately 5,000 kilometers (3,100 miles) from Iapetus"`) and added the verbatim quotes from `PIA08373` (`3,270 miles`), `PIA08374` (`3,750 miles`), and `PIA08380` (`3,100 miles`) to Row 4 of `SOURCES.md`.
+  - Chapter 5: added the sourced `September 10, 2007` ridge close-up distance (`"from two thousand four hundred miles"`, matching `PIA08372`: `"The image was taken on Sept. 10, 2007, with the Cassini spacecraft narrow-angle camera at a distance of approximately 3,870 kilometers (2,400 miles) from Iapetus. Image scale is 23 meters (75 feet) per pixel"`) and named `"the Voyager Mountains on the anti-Saturn side"` (matching `science.nasa.gov/saturn/moons/iapetus/` and `PIA08379`), adding the verbatim quotes from `PIA08372` and `PIA08379` to Row 6 of `SOURCES.md`.
+  - Chapter 6: removed `v00`'s unquoted `"four billion years"` and `"thirty-three minutes"` figures, replacing them with the verbatim-sourced `"solves a mystery spotted on October 25, 1671 — and next, we travel toward Earth to ask how NASA's DART spacecraft slammed into an asteroid moonlet and changed its orbit"`, so every number in the script is an Iapetus/Phoebe/Cassini figure backed by a verbatim quote in `SOURCES.md`.
+
+## Open items
+
+1. **Chief:** topic lock (`J0620`: lock `050` *Why Saturn's Moon Iapetus Is Half Black and Half White*, or pick another candidate from `IDEAS_2026-10-19_J0620.md`; confirm Short-first waiver; dispatch neighbour pass ≥3 education/space videos at ≈1M+ views on Saturn's Moon Iapetus / Cassini Yin-Yang Moon) and script review of `iapetus_half_black_white_script_master_v01.md` (`J0628`).
+2. **Gemini `facts` pass + `CLAUDE_QUOTE_CHECK`:** all 7 rows in `01_Script/SOURCES.md` were pre-checked against live NASA Science, NASA/JPL/SSI Cassini Photojournal, and LOC Authority pages on 19 Oct 2026 with verbatim quotes; formal `facts` pass and Claude quote check still run before VO lock.
+3. **Archive portraits:** confirm public-domain/NASA/wikimedia portrait files for Giovanni Domenico Cassini (1625–1712) and John Herschel (1792–1871) before the shot list.
+4. **Hand-off line:** Chapter 6 hands off to `051` *Why NASA's DART Spacecraft Changed an Asteroid's Orbit by 33 Minutes* (#2 in `IDEAS_2026-10-19_J0620.md`, 17/30); adjust if Chief picks a different `051` topic.
