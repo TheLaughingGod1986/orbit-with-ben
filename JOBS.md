@@ -348,7 +348,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0699 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0700 | mini | blocked | gemini | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0701 | mini | blocked | gemini | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0702 | any | claimed | gemini | 2026-10-20T04:48Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J0702 | any | blocked | gemini | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
