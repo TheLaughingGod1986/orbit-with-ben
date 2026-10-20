@@ -1,0 +1,153 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/lift_radiation_3months/06_Final-Exports/mars_radiation_3months_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 5,
+      "row": "s06_pia25681_three_forks",
+      "source": "025_v03f_span_122.10.mp4",
+      "title": "NASA/JPL-Caltech Perseverance's Three Forks Sample Depot Selfie (PIA25681, 122.10s)",
+      "t": 16.95,
+      "at": "0:17",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0804 < film p5 0.0838"
+      ],
+      "offset": 122.1
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pia22207_mount_sharp",
+      "source": "025_v03f_span_78.60.mp4",
+      "title": "NASA/JPL-Caltech Mount Sharp 'Photobombs' Curiosity (PIA22207, 78.60s)",
+      "t": 1.4,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 78.6
+    },
+    {
+      "cut": 1,
+      "row": "s02_pia25413_paraitepuy",
+      "source": "025_v03f_span_61.10.mp4",
+      "title": "NASA/JPL-Caltech Curiosity's View of Paraitepuy Pass (PIA25413, 61.10s)",
+      "t": 4.3,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 61.1
+    },
+    {
+      "cut": 2,
+      "row": "s03_pia20284_namib_dune",
+      "source": "025_v03f_span_46.10.mp4",
+      "title": "NASA/JPL-Caltech Full-Circle Panorama Beside Namib Dune on Mars (PIA20284, 46.10s)",
+      "t": 7.35,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 46.1
+    },
+    {
+      "cut": 3,
+      "row": "s04_pia24765_perseverance_office",
+      "source": "025_v03f_span_484.20.mp4",
+      "title": "NASA/JPL-Caltech Perseverance's Office on Mars (PIA24765, 484.20s)",
+      "t": 10.55,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 484.2
+    },
+    {
+      "cut": 4,
+      "row": "s05_pia19920_big_sky",
+      "source": "025_v03f_span_462.20.mp4",
+      "title": "NASA/JPL-Caltech Curiosity Self-Portrait at Big Sky Drilling Site (PIA19920, 462.20s)",
+      "t": 13.8,
+      "at": "0:14",
+      "fail": [],
+      "warn": [],
+      "offset": 462.2
+    },
+    {
+      "cut": 5,
+      "row": "s06_pia25681_three_forks",
+      "source": "025_v03f_span_122.10.mp4",
+      "title": "NASA/JPL-Caltech Perseverance's Three Forks Sample Depot Selfie (PIA25681, 122.10s)",
+      "t": 16.95,
+      "at": "0:17",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0804 < film p5 0.0838"
+      ],
+      "offset": 122.1
+    },
+    {
+      "cut": 6,
+      "row": "s07_pia26344_cheyava_falls",
+      "source": "025_v03f_span_430.35.mp4",
+      "title": "NASA/JPL-Caltech Perseverance's Selfie With 'Cheyava Falls' (PIA26344, 430.35s)",
+      "t": 20.0,
+      "at": "0:20",
+      "fail": [],
+      "warn": [],
+      "offset": 430.35
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_pia22207.mp4",
+      "title": "End-card loop: NASA/JPL-Caltech Mount Sharp 'Photobombs' Curiosity (PIA22207, 78.60s)",
+      "t": 23.05,
+      "at": "0:23",
+      "fail": [],
+      "warn": [],
+      "offset": 78.6
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0838,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
