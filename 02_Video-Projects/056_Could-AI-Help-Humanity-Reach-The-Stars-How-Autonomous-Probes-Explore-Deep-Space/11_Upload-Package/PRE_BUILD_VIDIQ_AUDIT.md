@@ -17,8 +17,8 @@ Copy into each project as:
 |-------|-------|
 | ID / slug | `056_Could-AI-Help-Humanity-Reach-The-Stars-How-Autonomous-Probes-Explore-Deep-Space` |
 | Working title | Could AI Help Humanity Reach the Stars? How Autonomous Probes Explore Deep Space |
-| Date pulled | 2026-10-20 (`J0711`) |
-| Credits used (approx) | 0 (`v00` script draft + `SOURCES.md` verification only; no VO or picture spend) |
+| Date pulled | 2026-10-20 (`J0711` / `J0720`) |
+| Credits used (approx) | 0 (`v01` script draft + 16-row `SOURCES.md` verification only; no VO or picture spend) |
 | Brand guardrails | Wonder over fearbait · no AI doom clickbait · Orbit DNA |
 
 ---
@@ -73,10 +73,10 @@ Pull GB (or primary market) research for 5–8 terms.
 ## 3b. Script reviewer (blocking before VO)
 
 ```bash
-cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/056_Could-AI-Help-Humanity-Reach-The-Stars-How-Autonomous-Probes-Explore-Deep-Space/01_Script/autonomous_probes_script_master_v00.md
+cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/056_Could-AI-Help-Humanity-Reach-The-Stars-How-Autonomous-Probes-Explore-Deep-Space/01_Script/autonomous_probes_script_master_v01.md
 ```
 
-- [x] Score ≥ **90 / 100** (**PASS 95.8 / 100**, Structure gates 8/8, `1,315` spoken words / `1,394` reviewer words, ~`9.3 min`)  
+- [x] Score ≥ **90 / 100** (**PASS 95.8 / 100**, Structure gates 8/8, `1,294` spoken words / `1,375` reviewer words, ~`9.2 min`)  
 - Scorecard: `templates/SCRIPT_REVIEW_SCORECARD.md`  
 - Reject / rewrite if below threshold  
 
@@ -142,7 +142,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [x] No 30s+ stretch without a new teach or turn  
 - [x] Every chapter earns the next one  
-- [x] Runtime target **8–12 min** in trust-building window (~9.3 min, 1,315 spoken words)  
+- [x] Runtime target **8–12 min** in trust-building window (~9.2 min, 1,294 spoken words)  
 
 ---
 
