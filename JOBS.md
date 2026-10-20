@@ -374,7 +374,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0726 | mini | blocked | gemini | – | for gemini · chart · `gemini-agy` · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0727 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0728 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
-| J0729 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0729 | mini | open | – | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0730 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
