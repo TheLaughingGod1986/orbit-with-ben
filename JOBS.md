@@ -401,7 +401,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0753 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0754 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0755 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0756 | mini | open | – | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
+| J0756 | mini | claimed | gemini | 2026-10-21T01:28Z | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 
 Recently finished:
 
