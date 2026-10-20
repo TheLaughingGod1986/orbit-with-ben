@@ -363,7 +363,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0715 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0716 | mini | blocked | codex | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0717 | mini | blocked | gemini | – | for gemini · chart · `gemini-agy` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0718 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J0718 | mini | claimed | gemini | 2026-10-20T09:10Z | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
