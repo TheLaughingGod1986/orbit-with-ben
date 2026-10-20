@@ -57271,6 +57271,11 @@
           "at": "2026-10-20T18:20Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-20T18:20Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting read-only listing check on last 10 live OWB videos"
         }
       ],
       "kind": "listing",
@@ -57283,7 +57288,18 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-20T18:20Z",
+        "by": "gemini",
+        "note": "Starting read-only listing check on last 10 live OWB videos"
+      }
     },
     {
       "id": "J0734",
