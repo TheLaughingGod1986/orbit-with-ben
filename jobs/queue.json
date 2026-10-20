@@ -58401,13 +58401,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-20T21:55Z",
-      "eta": "2026-10-20T23:55Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T21:50Z",
-      "result": "",
+      "result": "Storage prerequisite: 9.8 GiB free, under 20 GB; required NAS scratch directory listing timed out after 8s. Restore NAS access before verified scratch archive and production. No film selected, render started or credit spent.",
       "history": [
         {
           "at": "2026-10-20T21:50Z",
@@ -58423,6 +58423,11 @@
           "at": "2026-10-20T21:55Z",
           "by": "codex",
           "what": "step 0 of 4 done: Preflight: both repos current; HOS inbox empty; 9.8 GiB free; required NAS scratch move blocked by directory timeout. No film selected."
+        },
+        {
+          "at": "2026-10-20T21:56Z",
+          "by": "codex",
+          "what": "blocked: Storage prerequisite: 9.8 GiB free, under 20 GB; required NAS scratch directory listing timed out after 8s. Restore NAS access before verified scratch archive and production. No film selected, render started or credit spent."
         }
       ],
       "kind": "assembly",

@@ -390,7 +390,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0742 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0743 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0744 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0745 | mini | claimed | codex | 2026-10-20T23:55Z | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J0745 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
