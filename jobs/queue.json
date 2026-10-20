@@ -57497,6 +57497,11 @@
           "at": "2026-10-20T18:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-20T18:46Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Selected OWB 057 (Callisto, currently on v00 scaffold) for script v01 revision and primary source verification"
         }
       ],
       "kind": "script",
@@ -57509,7 +57514,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "OWB:057"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-20T18:46Z",
+        "by": "gemini",
+        "note": "Selected OWB 057 (Callisto, currently on v00 scaffold) for script v01 revision and primary source verification"
+      }
     },
     {
       "id": "J0736",
