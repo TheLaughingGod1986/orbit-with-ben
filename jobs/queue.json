@@ -56910,10 +56910,24 @@
           "at": "2026-10-20T10:42Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-20T14:17Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "assembly",
-      "backlog": "owb-short-from-locked"
+      "backlog": "owb-short-from-locked",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
