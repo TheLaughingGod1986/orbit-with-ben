@@ -58842,13 +58842,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-20T22:42Z",
-      "eta": "2026-10-21T00:42Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T22:41Z",
-      "result": "",
+      "result": "parked for Chief: script review (HOS 083 script v01 91.1/100 PASS, 084 script v01 91.4/100 PASS, 085 script v01 90.6/100 PASS + SOURCES_v01/SCRIPT_NOTES_v01, and 086 Pain/Gate Control/Endorphins opening_and_outline_v00 + SOURCES_v00 in commit d4819808)",
       "history": [
         {
           "at": "2026-10-20T22:41Z",
@@ -58884,6 +58884,11 @@
           "at": "2026-10-20T22:58Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 done: drafted HOS 086 (Pain/Gate Control/Endorphins) opening_and_outline_v00 + SOURCES_v00; check_all.sh PASS; committed and pushed d4819808 to history-of-science main"
+        },
+        {
+          "at": "2026-10-20T22:58Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: script review (HOS 083 script v01 91.1/100 PASS, 084 script v01 91.4/100 PASS, 085 script v01 90.6/100 PASS + SOURCES_v01/SCRIPT_NOTES_v01, and 086 Pain/Gate Control/Endorphins opening_and_outline_v00 + SOURCES_v00 in commit d4819808)"
         }
       ],
       "kind": "script",
