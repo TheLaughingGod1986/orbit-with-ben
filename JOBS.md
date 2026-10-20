@@ -369,6 +369,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0721 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0722 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0723 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
+| J0724 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
 
