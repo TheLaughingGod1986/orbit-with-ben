@@ -54527,13 +54527,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-20T04:17Z",
-      "eta": "2026-10-20T06:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T04:16Z",
-      "result": "",
+      "result": "parked for Chief: script review (074 Lungs v01 91.0 PASS, 075 Chromosomes v01 91.9 PASS, 076 Heart v01 90.8 PASS, 077 Digestion/Liver opening v00 — HOS commit 5dd766e5, desk #180)",
       "history": [
         {
           "at": "2026-10-20T04:16Z",
@@ -54569,6 +54569,11 @@
           "at": "2026-10-20T04:37Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed 5dd766e5 to HOS main (074, 075, 076 scripts v01 PASS + 077 opening v00) and posted on desk #180"
+        },
+        {
+          "at": "2026-10-20T04:37Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: script review (074 Lungs v01 91.0 PASS, 075 Chromosomes v01 91.9 PASS, 076 Heart v01 90.8 PASS, 077 Digestion/Liver opening v00 — HOS commit 5dd766e5, desk #180)"
         }
       ],
       "kind": "script",
