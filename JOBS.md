@@ -388,7 +388,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0740 | mini | claimed | gemini | 2026-10-20T21:53Z | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0741 | mini | open | – | – | for gemini · chart · `gemini-agy` · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0742 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
-| J0743 | any | open | – | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
+| J0743 | mini | open | – | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 
 Recently finished:
 
