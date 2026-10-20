@@ -58483,6 +58483,11 @@
           "at": "2026-10-20T22:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-20T22:04Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Selected HOS 001 (_C92tIJCk8A, next in 001->005->002 rotation after J0685/J0700/J0731; no armed Test & Compare in THUMB_LEDGER.json)"
         }
       ],
       "kind": "chart",
@@ -58490,9 +58495,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-20T22:00Z",
-        "by": "codex",
-        "note": "Inspect HOS test records and plates, build and score B, submit advisory review"
+        "at": "2026-10-20T22:04Z",
+        "by": "gemini",
+        "note": "Selected HOS 001 (_C92tIJCk8A, next in 001->005->002 rotation after J0685/J0700/J0731; no armed Test & Compare in THUMB_"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -58502,7 +58507,10 @@
         "by": "codex"
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "taskKeys": [
+        "HOS:001"
+      ]
     },
     {
       "id": "J0747",
