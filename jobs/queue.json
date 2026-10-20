@@ -56898,10 +56898,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-20T14:18Z",
+      "eta": "2026-10-20T16:18Z",
       "created_by": "refill",
       "created_at": "2026-10-20T10:42Z",
       "result": "",
@@ -56920,6 +56920,11 @@
           "at": "2026-10-20T14:17Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-20T14:18Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
