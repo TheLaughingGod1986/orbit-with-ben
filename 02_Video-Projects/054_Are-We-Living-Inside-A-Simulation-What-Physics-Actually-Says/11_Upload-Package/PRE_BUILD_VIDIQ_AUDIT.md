@@ -17,8 +17,8 @@ Copy into each project as:
 |-------|-------|
 | ID / slug | `054_Are-We-Living-Inside-A-Simulation-What-Physics-Actually-Says` |
 | Working title | Are We Living Inside a Simulation? What Physics Actually Says |
-| Date pulled | 2026-10-19 |
-| Credits used (approx) | 0 (`v00` script draft only; no VO or picture spend) |
+| Date pulled | 2026-10-19 (revised `v01` 2026-10-20 in `J0689`) |
+| Credits used (approx) | 0 (`v00` + `v01` script drafts only; no VO or picture spend) |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA |
 
 ---
@@ -73,10 +73,10 @@ Pull GB (or primary market) research for 5–8 terms.
 ## 3b. Script reviewer (blocking before VO)
 
 ```bash
-cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/054_Are-We-Living-Inside-A-Simulation-What-Physics-Actually-Says/01_Script/simulation_hypothesis_script_master_v00.md
+cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/054_Are-We-Living-Inside-A-Simulation-What-Physics-Actually-Says/01_Script/simulation_hypothesis_script_master_v01.md
 ```
 
-- [x] Score ≥ **90 / 100** (**PASS 93.7 / 100**, Structure gates 8/8)  
+- [x] Score ≥ **90 / 100** (**PASS 95.8 / 100**, Structure gates 8/8, `1,258` spoken words / `1,299` reviewer words, ~`8.7 min`)  
 - Scorecard: `templates/SCRIPT_REVIEW_SCORECARD.md`  
 - Reject / rewrite if below threshold  
 
@@ -142,7 +142,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [x] No 30s+ stretch without a new teach or turn  
 - [x] Every chapter earns the next one  
-- [x] Runtime target **8–12 min** in trust-building window (~8.6 min)  
+- [x] Runtime target **8–12 min** in trust-building window (~8.7 min, 1,258 spoken words)  
 
 ---
 
@@ -150,7 +150,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [ ] Keywords pulled and primary locked  
 - [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
-- [x] Script reviewer ≥ 90 (**93.7 / 100**, Structure gates 8/8)  
+- [x] Script reviewer ≥ 90 (**95.8 / 100**, Structure gates 8/8)  
 - [x] Outlier patterns mapped into chapter arc  
 - [x] Thumb concepts match title promise (one object · one emotion)  
 - [x] Chapter teach-points listed (4–6 acts)  
