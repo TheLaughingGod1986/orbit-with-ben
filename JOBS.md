@@ -362,7 +362,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0714 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0715 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0716 | mini | blocked | codex | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
-| J0717 | mini | open | – | – | for cursor · chart · `cursor-grok-4-7` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
+| J0717 | mini | open | – | – | for gemini · chart · `gemini-agy` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 
 Recently finished:
 
