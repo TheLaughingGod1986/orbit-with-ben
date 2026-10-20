@@ -1,5 +1,5 @@
 {
-  "next_id": 712,
+  "next_id": 713,
   "jobs": [
     {
       "id": "J0001",
@@ -55109,6 +55109,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J0712",
+      "title": "Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Free, read-only. Runs daily after the 06:40 snapshot and must finish before 09:00 London (Ben, 12 Oct 22:19). 1) In YouTube Studio, read only, change nothing: Orbit With Ben in the Orbit Studio browser (CDP 9223); History of Science in its own signed-in Studio session (never the 9222 Flow browser for Orbit pages). 2) For every long film (format long in 05_Analytics/dashboard/data.json, both channels), open Analytics > Reach for the video, period Lifetime, and read Impressions and Impressions click-through rate (%), and on Overview/Engagement the lifetime Views, Average view duration (seconds) and Average percentage viewed (%; if Studio shows only duration, compute duration / video length x 100). 2b) For every Short (both channels), read lifetime Views, Average percentage viewed (%) and 'Stayed to watch' (%, Studio's Shorts engagement figure, viewed vs swiped away); write them under the same videos map as \"views\", \"avgViewPct\" and \"stayedToWatch\" (Ben, 12 Oct 22:50). 3) Write 05_Analytics/<owb|hos>/studio_ctr.json: {\"readAt\": <ISO UTC>, \"period\": \"lifetime\", \"videos\": {\"<videoId>\": {\"impressions\": <int>, \"impressionsCtr\": <number, % e.g. 3.8>, \"views\": <int>, \"avgViewSeconds\": <int>, \"avgViewPct\": <number, %>}}}. A film Studio can't show yet: leave it out. 4) Rebuild: cd 07_Content-Ops && npx tsx scripts/analytics-report.ts (it merges studio_ctr.json into data.json; Studio values take priority on the tracker), then python3 scripts/board_publish.py so /tracker's 'Long films vs targets' panel fills in. 5) Commit only those files to main with a message naming the counts, then jobs.py done <id> --result \"<n> OWB + <m> HOS longs; CTR hits vs 4%: ...\" --git. Never: edit any video, title, thumbnail or setting; spend anything; paid API.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-20T06:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-20T06:21Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "backlog": "studio-ctr-daily",
+      "urgent": 0
     }
   ],
   "focus": [],
@@ -55128,6 +55157,6 @@
     "hos-next-script": "2026-10-20T04:16Z",
     "hos-plate-prep": "2026-10-20T04:38Z",
     "both-qa-sweep": "2026-10-20T04:38Z",
-    "studio-ctr-daily": "2026-10-19T06:10Z"
+    "studio-ctr-daily": "2026-10-20T06:21Z"
   }
 }
