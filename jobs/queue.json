@@ -58332,13 +58332,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-20T21:51Z",
-      "eta": "2026-10-20T23:51Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T20:45Z",
-      "result": "",
+      "result": "Storage prerequisite: Mini has 9.8 GiB free (<20 GB); mounted NAS mini-tmp-scratch directory listing hangs (8-second timeout, earlier read still pending). Cannot verify required scratch archive safely. No render, spend, upload or file move. Retry after NAS directory access recovers; resume at step 0/4.",
       "history": [
         {
           "at": "2026-10-20T20:45Z",
@@ -58364,6 +58364,11 @@
           "at": "2026-10-20T21:53Z",
           "by": "codex",
           "what": "step 0 of 4 done: Both repos current; OWB first. Disk 9.8 GiB free. Required scratch archive blocked: NAS mini-tmp-scratch directory listing timed out after 8 s (stat succeeds). No film selected or cut started."
+        },
+        {
+          "at": "2026-10-20T21:53Z",
+          "by": "codex",
+          "what": "blocked: Storage prerequisite: Mini has 9.8 GiB free (<20 GB); mounted NAS mini-tmp-scratch directory listing hangs (8-second timeout, earlier read still pending). Cannot verify required scratch archive safely. No render, spend, upload or file move. Retry after NAS directory access recovers; resume at step 0/4."
         }
       ],
       "kind": "assembly",
