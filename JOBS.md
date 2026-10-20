@@ -340,6 +340,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0691 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0692 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0693 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0694 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
