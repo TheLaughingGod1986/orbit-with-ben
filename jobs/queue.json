@@ -59025,13 +59025,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-20T23:12Z",
-      "eta": "2026-10-21T00:42Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T23:11Z",
-      "result": "",
+      "result": "parked for Chief: price pass (HOS PR #348 c177fed7: 083 synced to v01 script + 084, 085, 086 pre-VO plate boards v01 added; 25 rows / Flow expected 2,750 each; generation_authorized=false; check_all.sh PASS)",
       "history": [
         {
           "at": "2026-10-20T23:11Z",
@@ -59077,6 +59077,11 @@
           "at": "2026-10-20T23:25Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4: built HOS 086 Pain/Gate Control/Endorphins pre-VO plate boards v01, verified check_all.sh PASS, pushed commit c177fed7 to HOS PR #348"
+        },
+        {
+          "at": "2026-10-20T23:25Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: price pass (HOS PR #348 c177fed7: 083 synced to v01 script + 084, 085, 086 pre-VO plate boards v01 added; 25 rows / Flow expected 2,750 each; generation_authorized=false; check_all.sh PASS)"
         }
       ],
       "kind": "assembly",
