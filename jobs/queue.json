@@ -52685,10 +52685,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-20T00:05Z",
+      "eta": "2026-10-20T02:05Z",
       "created_by": "refill",
       "created_at": "2026-10-19T21:58Z",
       "result": "",
@@ -52702,6 +52702,11 @@
           "at": "2026-10-19T22:23Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-20T00:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "chart",
