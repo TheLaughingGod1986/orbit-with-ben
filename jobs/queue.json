@@ -55536,13 +55536,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-20T07:52Z",
-      "eta": "2026-10-20T09:52Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T07:47Z",
-      "result": "",
+      "result": "parked for Chief: storage preflight; 9.6 GiB free (<20 GB). Existing detached scratch archive codex-j0712-scratch has no J0712-scratch.done and empty /Users/benjaminoats/_desk/logs/J0712-scratch.log; pane reports NFS server not responding. Keep local media; do not duplicate archive/render. Resume after NAS archive completes and headroom is restored; check J0684 HOS 005 s08 draft before selecting another lift.",
       "history": [
         {
           "at": "2026-10-20T07:47Z",
@@ -55563,6 +55563,11 @@
           "at": "2026-10-20T07:53Z",
           "by": "codex",
           "what": "step 1 of 4 done: Inventory checked: 004 s08 already built under J0699; 005 s08 draft held under J0684. Assembly stopped at storage preflight: 9.6 GiB free; existing scratch archive tmux codex-j0712-scratch has no completion marker and reports NFS not responding. Do not duplicate."
+        },
+        {
+          "at": "2026-10-20T07:53Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: storage preflight; 9.6 GiB free (<20 GB). Existing detached scratch archive codex-j0712-scratch has no J0712-scratch.done and empty /Users/benjaminoats/_desk/logs/J0712-scratch.log; pane reports NFS server not responding. Keep local media; do not duplicate archive/render. Resume after NAS archive completes and headroom is restored; check J0684 HOS 005 s08 draft before selecting another lift."
         }
       ],
       "kind": "assembly",
