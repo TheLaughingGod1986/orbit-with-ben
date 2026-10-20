@@ -54633,13 +54633,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-20T04:45Z",
-      "eta": "2026-10-20T06:15Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T04:38Z",
-      "result": "",
+      "result": "parked for Chief: price pass",
       "history": [
         {
           "at": "2026-10-20T04:38Z",
@@ -54705,6 +54705,11 @@
           "at": "2026-10-20T05:17Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 011-077 pre-VO and 007-010 post-VO plate boards ready in HOS PR #348 (5ece17b8); check_all.sh ALL CHECKS PASS; generation_authorized=false on all rows"
+        },
+        {
+          "at": "2026-10-20T05:17Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: price pass"
         }
       ],
       "kind": "assembly",
