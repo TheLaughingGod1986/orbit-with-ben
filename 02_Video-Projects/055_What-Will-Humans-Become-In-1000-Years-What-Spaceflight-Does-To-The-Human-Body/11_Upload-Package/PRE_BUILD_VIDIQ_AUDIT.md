@@ -17,8 +17,8 @@ Copy into each project as:
 |-------|-------|
 | ID / slug | `055_What-Will-Humans-Become-In-1000-Years-What-Spaceflight-Does-To-The-Human-Body` |
 | Working title | What Will Humans Become in 1,000 Years? What Spaceflight Does to the Human Body |
-| Date pulled | 2026-10-20 (`J0696`) |
-| Credits used (approx) | 0 (`v00` script draft only; no VO or picture spend) |
+| Date pulled | 2026-10-20 (`J0696` / `J0704`) |
+| Credits used (approx) | 0 (`v01` script revision + `SOURCES.md` verification only; no VO or picture spend) |
 | Brand guardrails | Wonder over fearbait · no body-horror clickbait · Orbit DNA |
 
 ---
@@ -73,10 +73,10 @@ Pull GB (or primary market) research for 5–8 terms.
 ## 3b. Script reviewer (blocking before VO)
 
 ```bash
-cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/055_What-Will-Humans-Become-In-1000-Years-What-Spaceflight-Does-To-The-Human-Body/01_Script/human_spaceflight_evolution_script_master_v00.md
+cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/055_What-Will-Humans-Become-In-1000-Years-What-Spaceflight-Does-To-The-Human-Body/01_Script/human_spaceflight_evolution_script_master_v01.md
 ```
 
-- [x] Score ≥ **90 / 100** (**PASS 95.6 / 100**, Structure gates 8/8, `1,318` spoken words / `1,342` reviewer words, ~`8.9 min`)  
+- [x] Score ≥ **90 / 100** (**PASS 95.8 / 100**, Structure gates 8/8, `1,293` spoken words / `1,350` reviewer words, ~`9.0 min`)  
 - Scorecard: `templates/SCRIPT_REVIEW_SCORECARD.md`  
 - Reject / rewrite if below threshold  
 
@@ -120,8 +120,8 @@ Translate data → creative decisions **before** writing the full script:
 
 1. **Three Hundred and Forty Days in Orbit** — Identical twin astronauts Scott Kelly (`born 1964`, `340 days` on the ISS, March 2015–March 2016) and Mark Kelly (`born 1964`, Earth baseline), tracked by `10` research teams (*Science*, April 2019) and Weill Cornell PI Christopher Mason: `7%` body-mass loss (`30%` fewer calories), telomere lengthening in orbit and rapid shortening on return, and `91.3%` of gene-expression shifts reverting to baseline within `6 months`.  
 2. **Dissolving Bones and Shifting Fluids** — Why removing Earth's `9.82 m/s²` loading causes cephalad fluid shifts (`AQP2` elevation, carotid artery wall thickening, and Spaceflight-Associated Neuro-Ocular Syndrome) and `1%–2%` monthly bone mineral density loss, and how Leigh Gabel's June 2022 `61-micrometer` 3D bone scans of `17 astronauts` (mean age `47 years`) proved that `9 of 17` had incomplete tibial recovery `12 months` after landing (`-3.9%` median bone-strength deficit on missions `>6 months` vs `-0.4%` on `<6 months`).  
-3. **Five Hundred and Sixty Million Kilometers of Cosmic Rays** — Midpoint flip (`Wrong.`): how Cary Zeitlin and Donald Hassler used Curiosity's Radiation Assessment Detector (`RAD`) across its `253-day`, `560-million-kilometer` cruise to Mars (launched Nov. 26, 2011, landed Aug. 7, 2012, followed by `~300 days` of surface tracking) to prove that even the shortest round-trip Mars transit delivers `0.66 ± 0.12 sieverts` (`660 mSv`, equal to `>30` full-body CT scans).  
-4. **Evolution Across Thirty-Five Generations** — From Charles Darwin (`1809–1882`, 1859 natural selection) and Hermann Joseph Muller (`1890–1967`, 1927 radiation mutagenesis) to Xin Yi and Rasmus Nielsen's July 2010 *Science* study (`50` Tibetan exomes covering `92%` of human genes at `18x` coverage): how a `78%` allele frequency shift in the hypoxia gene *EPAS1* occurred in just a few thousand years, modeling how `35 generations` (`1,000 years`) on Mars (`3.73 m/s²` = `0.380 g`) selects for DNA-repair and fluid-balance variants.  
+3. **Five Hundred and Sixty Million Kilometers of Cosmic Rays** — Midpoint flip (`Wrong.`): how Cary Zeitlin and Donald Hassler used Curiosity's Radiation Assessment Detector (`RAD`) across its `253-day`, `560-million-kilometer` cruise to Mars (launched Nov. 26, 2011, landed Aug. 7, 2012, followed by `~300 days` of surface tracking) to prove that even the shortest round-trip Mars transit delivers `0.66 ± 0.12 sieverts` (`660 mSv`, exceeding the `600 mSv` recommended lifetime radiation dose).  
+4. **Evolution Across Thirty-Five Generations** — From Charles Darwin (`1809–1882`, 1859 natural selection) and Hermann Joseph Muller (`1890–1967`, 1927 radiation mutagenesis) to Xin Yi and Rasmus Nielsen's July 2010 *Science* study (`50` Tibetan exomes covering `92%` of human genes at `18x` coverage): how a `78%` allele frequency shift in the hypoxia gene *EPAS1* occurred across a `2,750-year` split (faster than the `7,500-year` lactase-persistence sweep), modeling how `35 generations` (`1,000 years`) on Mars (`3.73 m/s²` = `0.380 g`) selects for DNA-repair and fluid-balance variants.  
 5. **What Humans Will Actually Become in 1,000 Years** — Why `91.3%` epigenetic reversibility, rotating artificial-gravity habitats, subsurface lava-tube radiation shielding, and gradual *EPAS1*-style selection keep humans in `1,000 years` unmistakably human, handing off to `056` (*Could AI Help Humanity Reach the Stars? How Autonomous Probes Explore Deep Space*).  
 
 ---
@@ -142,7 +142,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [x] No 30s+ stretch without a new teach or turn  
 - [x] Every chapter earns the next one  
-- [x] Runtime target **8–12 min** in trust-building window (~8.9 min, 1,318 spoken words)  
+- [x] Runtime target **8–12 min** in trust-building window (~9.0 min, 1,293 spoken words)  
 
 ---
 
@@ -150,7 +150,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [ ] Keywords pulled and primary locked  
 - [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
-- [x] Script reviewer ≥ 90 (**95.6 / 100**, Structure gates 8/8)  
+- [x] Script reviewer ≥ 90 (**95.8 / 100**, Structure gates 8/8)  
 - [x] Outlier patterns mapped into chapter arc  
 - [x] Thumb concepts match title promise (one object · one emotion)  
 - [x] Chapter teach-points listed (4–6 acts)  
