@@ -58451,10 +58451,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-20T22:00Z",
-      "eta": "2026-10-20T23:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T21:58Z",
       "result": "",
@@ -58473,6 +58473,11 @@
           "at": "2026-10-20T22:00Z",
           "by": "codex",
           "what": "step 0 of 3 done: Inspect HOS test records and plates, build and score B, submit advisory review"
+        },
+        {
+          "at": "2026-10-20T22:00Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "kind": "chart",
@@ -58483,7 +58488,16 @@
         "at": "2026-10-20T22:00Z",
         "by": "codex",
         "note": "Inspect HOS test records and plates, build and score B, submit advisory review"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "codex"
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     }
   ],
   "focus": [],
