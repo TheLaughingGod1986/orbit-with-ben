@@ -358,12 +358,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0709 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0710 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0711 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
-| J0712 | mini | claimed | codex | 2026-10-20T08:18Z | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0713 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0714 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
+- J0712 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (12 OWB + 4 HOS longs; 65 OWB + 15 HOS Shorts. CTR hits vs 4%: OWB 1/12 (Jupiter 4.8%), HOS 1/4 (Germs 7.7%). Two newest Shorts unavailable. Main 60b862762; tracker verified; zero spend or YouTube changes.)
 - J0642 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0630 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs (plus 72 Shorts: 58 OWB + 14 HOS; 022 h8HGfyShEHI and HOS Short TbMMJSRKC3U not yet reported in Studio); CTR hits vs 4%: 2/15 (OWB -jmMROGoZCM 4.9% on 41 impr; HOS _C92tIJCk8A 7.9% on 38 impr); top volume: OWB 021 Saturn 55AEQwvs36g 1.8% CTR (1,166 impr, 205 views, 12.1% avg viewed), HOS 002 Periodic Table AL_-qlWko_g 3.3% CTR (958 impr, 145 views, 22.5% avg viewed))
 - J0626 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -373,4 +373,3 @@ Recently finished:
 - J0566 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (0 fixes needed across last 10 live public videos (05_Analytics/live_fixes/2026-10-18.md @ b3f1782ef))
 - J0551 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0536 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J0531 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs (plus 57 OWB + 14 HOS Shorts; 23KZK7OjsEE not yet shown in Studio lifetime); CTR hits vs 4%: OWB -jmMROGoZCM Jupiter 5.0% (40 imp), HOS _C92tIJCk8A Germs 8.3% (36 imp))
