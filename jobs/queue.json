@@ -57937,10 +57937,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-20T19:53Z",
+      "eta": "2026-10-20T21:53Z",
       "created_by": "refill",
       "created_at": "2026-10-20T19:36Z",
       "result": "",
@@ -57954,6 +57954,11 @@
           "at": "2026-10-20T19:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 6465 min (heartbeat 2026-10-16T07:51:05Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-20T19:53Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "review",
