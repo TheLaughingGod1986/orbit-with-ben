@@ -55295,6 +55295,11 @@
           "at": "2026-10-20T07:34Z",
           "by": "codex",
           "what": "step 1 of 4 done: Both channel collectors started; clean worktree created; lifetime advanced-table evidence being saved"
+        },
+        {
+          "at": "2026-10-20T07:36Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Collected 77 OWB and 19 HOS lifetime rows; newest Short on each channel unavailable; cross-checking all 16 longs"
         }
       ],
       "kind": "studio",
@@ -55310,14 +55315,17 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-20T07:34Z",
+        "at": "2026-10-20T07:36Z",
         "by": "codex",
-        "note": "Both channel collectors started; clean worktree created; lifetime advanced-table evidence being saved"
+        "note": "Collected 77 OWB and 19 HOS lifetime rows; newest Short on each channel unavailable; cross-checking all 16 longs"
       },
       "taskKeys": [
-        "OWB:028"
+        "OWB:021",
+        "OWB:022",
+        "HOS:004",
+        "HOS:005"
       ]
     },
     {
