@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-10-19 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-10-20 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-10-19 11:30 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) `y-SPHQ0-VjQ` | yes | PASS |
 | 2026-10-20 11:30 | [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) `lbW2iQ9YvqA` | yes | PASS |
 | 2026-10-21 11:30 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) `n_4XskX0yZk` | yes | PASS |
 | 2026-10-22 11:30 | [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) `82Ao0v5XiQI` | yes | PASS |
