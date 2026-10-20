@@ -57276,6 +57276,11 @@
           "at": "2026-10-20T18:20Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-20T18:22Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified snapshot 2026-10-20.json and live Shorts Related pills/descriptions on top 10 public videos"
         }
       ],
       "kind": "listing",
@@ -57290,15 +57295,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "taskKeys": [
+        "OWB:020",
         "OWB:021",
         "OWB:022"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-20T18:20Z",
+        "at": "2026-10-20T18:22Z",
         "by": "gemini",
-        "note": "Starting read-only listing check on last 10 live OWB videos"
+        "note": "Verified snapshot 2026-10-20.json and live Shorts Related pills/descriptions on top 10 public videos"
       }
     },
     {
