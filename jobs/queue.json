@@ -57583,13 +57583,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-20T18:36Z",
-      "eta": "2026-10-20T19:36Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T17:18Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 302dd45e2/7040d76b1/bc7e04ab2: 025 Short mars_radiation_3months_v01 0/8 PASS, 025 Short mars_curiosity_nuclear_v01 0/8 PASS, 025 Short mars_insight_quakes_v01 0/8 PASS, all 26 lift Shorts PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS; HOS c9dab374/9ca4b69c/09623725/fb6a8f88: 005 Short hos_005_s08_capillaries_v01 0/7 PASS, 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, 001 Short hos_001_s10_miasma_microscope_v01 0/8 PASS, 002 Short hos_002_s09_dobereiner_triads_v01 0/7 PASS, all 25 HOS qa_ Shorts PASS; all recent OWB and HOS packs have gate outputs newer than their last render with 0 FAILs, no fix jobs needed)",
       "history": [
         {
           "at": "2026-10-20T17:18Z",
@@ -57630,6 +57630,11 @@
           "at": "2026-10-20T18:41Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All newest OWB and HOS packs PASS; 0 fix jobs needed"
+        },
+        {
+          "at": "2026-10-20T18:41Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 302dd45e2/7040d76b1/bc7e04ab2: 025 Short mars_radiation_3months_v01 0/8 PASS, 025 Short mars_curiosity_nuclear_v01 0/8 PASS, 025 Short mars_insight_quakes_v01 0/8 PASS, all 26 lift Shorts PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS; HOS c9dab374/9ca4b69c/09623725/fb6a8f88: 005 Short hos_005_s08_capillaries_v01 0/7 PASS, 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, 001 Short hos_001_s10_miasma_microscope_v01 0/8 PASS, 002 Short hos_002_s09_dobereiner_triads_v01 0/7 PASS, all 25 HOS qa_ Shorts PASS; all recent OWB and HOS packs have gate outputs newer than their last render with 0 FAILs, no fix jobs needed)"
         }
       ],
       "kind": "qa",
