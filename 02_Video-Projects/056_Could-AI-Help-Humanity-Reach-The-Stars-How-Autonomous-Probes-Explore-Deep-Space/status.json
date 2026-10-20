@@ -4,10 +4,18 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "01_Script/autonomous_probes_script_master_v00.md"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "gemini",
+      "at": "2026-10-20T08:24Z",
+      "eta": "2026-10-20T09:24Z",
+      "note": "J0720 OWB 056 script v01 revision + primary source verification"
+    }
+  ],
   "next": "Chief topic lock + Gemini facts pass"
 }
