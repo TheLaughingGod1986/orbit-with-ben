@@ -80,8 +80,6 @@
   const toast = document.createElement("div"); toast.className = "toast"; toast.setAttribute("role", "status"); document.body.appendChild(toast);
   let hide = null;
   toast.onclick = () => toast.classList.remove("on");
-  const filmKey = j => { const h = /^HOS\s+(\d{3})\b/.exec(j.title); if (h) return "HOS:" + h[1];
-    const n = j.film || ((/^(?:OWB\s+)?(\d{3})\b/.exec(j.title) || [])[1]); return n ? "OWB:" + n : ""; };
   const flash = el => { if (!el) return; el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); };
   document.addEventListener("board:data", e => {
     const { first, diff } = e.detail || {};
@@ -92,10 +90,14 @@
     toast.classList.add("on"); clearTimeout(hide); hide = setTimeout(() => toast.classList.remove("on"), 9000);
     for (const d of diff) {
       document.querySelectorAll(".jc .jid").forEach(s => { if (s.textContent === d.id) flash(s.closest(".jc")); });
-      const k = filmKey(d); if (k) document.querySelectorAll(`.tf[data-key="${k}"]`).forEach(flash);
+      for (const k of taskKeysFor(d)) {
+        document.querySelectorAll(`[data-vkey="${k}"]`).forEach(el => flash(el.closest(".vw")));
+        document.querySelectorAll(`.tf[data-key="${k}"]`).forEach(flash);
+      }
     }
     if (diff.some(d => ["claimed", "done", "step"].includes(d.what))) flash($("nowbar"));
     if (diff.some(d => d.what === "done")) flash($("daystats"));
+    if (diff.some(d => ["done", "blocked"].includes(d.what))) flash($("latestResult"));
   });
   srcLine();
 })();

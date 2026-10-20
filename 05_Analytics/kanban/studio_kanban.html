@@ -47,6 +47,17 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 .donebar li .w{flex:none;color:var(--ink-3);font-size:12px}
 .donebar .kd{flex:none;font-size:11px;font-weight:600;line-height:1.5;padding:0 7px;border-radius:9px;background:var(--panel-2);color:var(--ink-2)}
 .donebar.cold{border-left-color:var(--soon)}
+/* A completed job leaves a readable result and a route back to its video (Ben, 20 Oct). */
+.latest-result{margin:0 0 16px;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--done);border-radius:10px;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.latest-result.review{border-left-color:var(--soon)}
+.latest-result .result-head{display:flex;justify-content:space-between;gap:8px;color:var(--ink-2);font-size:12px;flex-wrap:wrap}
+.latest-result h2{font-size:14px;line-height:1.45;margin:5px 0;font-weight:650}
+.latest-result p{margin:5px 0}.result-note,.video-result .result-note{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.result-link{font:inherit;text-align:left;color:var(--doing);border:0;background:none;padding:4px 0;cursor:pointer;text-decoration:underline}
+.latest-result .context,.video-result .context{font-size:12px;color:var(--ink-3)}
+.video-result{margin:8px 0 0;padding:7px 0 0;border-top:1px solid var(--line);font-size:12px;line-height:1.45;white-space:normal;color:var(--ink-2)}
+.video-result .result-label{color:var(--done);font-weight:600}.video-result.review .result-label{color:var(--soon)}
+.video-result p{margin:3px 0}.video-result .result-note{-webkit-line-clamp:1}
 /* Job steps and the film's remaining stages are different measures (Ben, 18 Oct). */
 .impact{margin:8px 0 4px;padding-top:7px;border-top:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--ink-2);overflow-wrap:anywhere}
 .impact p{margin:4px 0}.impact b{font-weight:600;color:var(--ink)}
@@ -618,6 +629,7 @@ footer a{color:var(--ink-2)}
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
+  <section id="latestResult" class="latest-result" aria-label="Latest job result" hidden></section>
 
   <section class="videos" id="videos"><div class="empty">Loading…</div></section>
   <section id="queueOverview" class="queue-overview" aria-label="Full job queue"></section>
@@ -1225,9 +1237,10 @@ function videoWorkDetail(r,P){
 // Compact overview; full schedule, holds and progress remain inside the video.
 function videoWorkSummary(r,P){
   const w=videoWorkPlan(r,P), current=w.active[0], next=w.queued[0];
-  if(r.live||r.isSched) return `<div class="work-count">${r.live?"Live":"Uploaded and scheduled"}</div>`;
+  if(r.live||r.isSched) return `<div class="work-count">${r.live?"Live":"Uploaded and scheduled"}</div>`+videoResultHtml(r);
   return `<div class="work-count"><b>${w.remaining.length} ${r.jobRow?"job":"linked job"}${w.remaining.length===1?"":"s"} left</b>${w.gaps.length?` · ${w.gaps.length} stages not queued`:""}${w.stageUpdates.length?` · ${w.stageUpdates.length} stages await confirmation`:""}${w.held.length?` · ${w.held.length} waiting`:""}</div>`
     + (current?`<div class="work-state active">Working: ${esc(plainTitle(current.j,95))}</div><div class="job-live" data-job-id="${esc(current.j.id)}"></div>`:next?`<div class="work-timing">Queued · estimated start ${esc(scheduleAt(next.q.start))}</div>`:"")
+    + videoResultHtml(r)
     + `<div class="finish-outlook">${w.finish?`Estimated ready ${esc(scheduleAt(w.finish))}`:"Ready date pending · tap for next steps"}</div>`;
 }
 const videoScheduleRows=new Map();
@@ -1310,8 +1323,41 @@ function progressUpdates(){
   const parked = (fromDb.jobs||[]).filter(j=>j.status==="blocked" && (j.result || (j.progress||{}).step>0))
     .map(j=>Object.assign({},j,{at:(j.progress||{}).at || (j.last||{}).at || j.claimedAt}));
   const unique = new Map();
-  for(const j of done.concat(parked)) if(j.id && !isNaN(ts(j.at))) unique.set(j.id,j);
+  const live = new Map((fromDb.jobs||[]).map(j=>[j.id,j]));
+  for(const j of done.concat(parked)) if(j.id && !isNaN(ts(j.at)) && !(j.status==="done" && live.has(j.id))) unique.set(j.id,j);
   return [...unique.values()].sort((a,b)=>ts(b.at)-ts(a.at));
+}
+// Results stay visible after a job leaves the running card, including on a fresh page load.
+function resultNote(j){ return j.result || (j.progress||{}).note || jobOutcome(j); }
+function resultState(j){ return j.status==="done"?"Finished":isChiefPark(j)?"Ready for review":"Blocked"; }
+function videoResultHtml(r){
+  if(r.jobRow) return "";
+  const j=progressUpdates().find(j=>taskKeysFor(j).includes(r.f.key) && !supportingJob(j));
+  if(!j) return "";
+  const stage=(r.f._stages||[]).find(s=>s.key===j.stage || (stOf(r.f,s).jobs||[]).includes(j.id));
+  const pending=j.status==="done" && stage && !["done","skip"].includes(stOf(r.f,stage).status);
+  return `<div class="video-result${j.status==="done"?"":" review"}" data-result-job="${esc(j.id)}"><div><span class="result-label">${esc(resultState(j))}: ${esc(plainTitle(j,85))}</span> · <span data-ago="${ts(j.at)}">${ago(ts(j.at))}</span></div><p class="result-note">${esc(resultNote(j))}</p>${pending?`<p class="context">${esc(stage.label)} still needs confirmation before the stage bar can advance.</p>`:""}</div>`;
+}
+function resultContextHtml(j){
+  const keys=taskKeysFor(j), P=plan();
+  if(!keys.length) return `<p class="context">Channel work · no video linked. The video lanes have no recorded change from this job.</p>`;
+  return keys.map(key=>{
+    const r=videoScheduleRows.get(key);
+    if(!r || r.jobRow) return `<p class="context">${esc(key)} · outside the video plan shown below. This result has not been added to a video lane yet.</p>`;
+    const w=videoWorkPlan(r,P), next=w.active[0]||w.queued[0]||w.held[0];
+    const count=`${w.remaining.length} linked job${w.remaining.length===1?"":"s"} left`;
+    const remaining=count;
+    const pending=w.stageUpdates.filter(s=>s.key===j.stage || (stOf(r.f,s).jobs||[]).includes(j.id));
+    const confirmation=pending.length?`<p class="context">Stage bar awaits confirmation: ${esc(pending.map(s=>s.label).join(", "))}.</p>`:"";
+    return `<button type="button" class="result-link" data-task-film="${esc(key)}">${esc(key+" · "+r.f.title)} →</button><p><b>${esc(remaining)}</b>${r.pct==null?"":` · stages ${r.pct}%`}</p>${confirmation}${next?`<p class="context">${w.active.length?"Working now":w.queued.length?"Next":"Waiting"}: ${esc(plainTitle(next.j,95))}</p>`:""}`;
+  }).join("");
+}
+function renderLatestResult(){
+  const box=$("latestResult"); if(!box) return;
+  const j=progressUpdates().find(j=>chan==="all"||taskKeysFor(j).some(k=>k.startsWith(chan+":"))||(!taskKeysFor(j).length&&chanOf(j)===chan));
+  box.hidden=!j; if(!j){box.innerHTML="";return;}
+  box.className="latest-result"+(j.status==="done"?"":" review");
+  box.innerHTML=`<div class="result-head"><b>Latest result · ${esc(resultState(j))}</b><span data-ago="${ts(j.at)}">${ago(ts(j.at))}</span></div><h2>${esc(plainTitle(j,150))}</h2><p class="result-note">${esc(resultNote(j))}</p>${resultContextHtml(j)}<details id="latest-result-${esc(j.id)}" class="progress-fold"><summary>Result and next steps</summary>${jobImpact(j)}</details>`;
 }
 function waitReason(j, kind){
   const w = (blockWhy(j)+" "+(j.title||""));
@@ -1678,6 +1724,8 @@ function renderVideos(rows, rankOf){
       you: ok ? "" : "watch and approve", mk:["wait", ok ? (x.next||"the Chief schedules it") : "waiting for your OK"], ready:"",
       steps: ok && x.next ? [{who:"Mac mini", what:x.next, w:{kind:"next", text:""}}] : []}; });
   const P=plan(), base=rows.concat(xrows), activity=channelWorkRows(base.filter(r=>!r.live&&!r.isSched).map(r=>r.f.key),P);
+  videoScheduleRows.clear();
+  for(const r of base) videoScheduleRows.set(r.f.key,r);
   for(const r of base.concat(activity)){ r.release=r.release||filmRelease(r.f); r.blockers=r.jobRow?[]:releaseBlockers(r); r.work=videoWorkPlan(r,P); }
   const keep = base.concat(activity).filter(r=>chan==="all"||chan===r.f._ch).filter(r=>!r.live || (r.air && Date.now()-r.air < 3*DAY));
   const laneOf = r => r.live ? "live" : r.isSched ? "sched" : r.work.active.length ? "now" : r.you ? "you" : "wait";
@@ -1692,7 +1740,7 @@ function renderVideos(rows, rankOf){
     // airIn() gives a ticking <span data-until> under a day out, so `when` stays HTML; the note texts are plain.
     const when = r.live ? `Live since ${esc(fd(r.air))}` : r.air ? `Airs ${esc(fd(r.air))} · ${airIn(r.air)}` : r.airText ? `Airs ${esc(r.airText)}` : "No air date yet";
     const date = lane==="you" ? (r.you ? short(r.you) : "") : (!r.live && !r.isSched && r.ready) ? `Ready for you ${short(r.ready)}` : r.air ? `${r.live?"Live":"Airs"} ${esc(fd(r.air))}` : r.airText ? `Airs ${esc(r.airText)}` : "";
-    return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${r.jobRow?"Task ":""}${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp" title="${r.isSched||r.live?"Confirmed upload":"Recorded film stage progress"}">${r.isSched||r.live?"Uploaded":"Video"} ${r.pct}%</span>`}<span class="chev">▸</span></div>
+    return `<div class="vw${open?" open":""}"><button class="vr" data-vkey="${esc(r.f.key)}" aria-expanded="${open}"><div class="v1">${chb(r.f)}<b>${r.jobRow?"Task ":""}${esc(r.f.id)}</b><span class="vt">${esc(r.f.title||"")}</span>${r.pct==null?"":`<span class="vp" title="${r.isSched||r.live?"Confirmed upload":"Recorded film stage progress"}">${r.isSched||r.live?"Uploaded":"Stages"} ${r.pct}%</span>`}<span class="chev">▸</span></div>
       ${r.pct==null?"":`<div class="bar thin" aria-label="Recorded film stage progress">${pcBar(r.pct)}</div>`}
       ${priorityBadgeHtml(videoPriority(r,P,rankOf))}${badge}<div class="video-work" data-video-work="${esc(r.f.key)}">${videoWorkSummary(r,P)}</div>${date?`<div class="work-air">${r.jobRow?"":r.live||r.isSched?esc(date):r.air||r.airText?`Target air: ${esc(r.air?fd(r.air):r.airText)}`:r.you?`Needs you: ${esc(short(r.you))}`:""}</div>`:""}${r.blockers.length?`<div class="release-hint">${r.blockers.length} release holds · tap for actions</div>`:""}</button>${open?videoDrop(r, when):""}</div>`; };
   const groups = Object.fromEntries(LANES.map(l=>[l[0],[]]));
@@ -2344,18 +2392,19 @@ function render(){
   const was = new Set([...document.querySelectorAll("details[open]")].map(openKey).filter(Boolean));
   const films = view();
   if(filter && !films.some(f=>f.key===filter)) filter = null;
-  renderSource(); renderTracker(films); renderNow(); renderDone(); renderJobBoard(); renderSpend(); renderQueueOverview(); renderAIOverview(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
+  renderSource(); renderTracker(films); renderNow(); renderDone(); renderJobBoard(); renderLatestResult(); renderSpend(); renderQueueOverview(); renderAIOverview(); renderAgents(films); renderFilms(films); renderBoard(films); renderLower(films);
   if(was.size) document.querySelectorAll("details:not([open])").forEach(d=>{ const k = openKey(d); if(k && was.has(k)) d.open = true; });
 }
 document.addEventListener("click", e=>{
   const button = e.target.closest && e.target.closest("[data-task-film]"); if(!button) return;
   const key = button.dataset.taskFilm; if(!/^(HOS|OWB):\d{3}$/.test(key)) return;
   chan = key.split(":")[0]; filter = null; vOpen[key] = true;
-  for(const [lane] of LANES) vLane[lane] = true;
+  const r=videoScheduleRows.get(key);
+  if(r){ const lane=r.live?"live":r.isSched?"sched":videoWorkPlan(r,plan()).active.length?"now":r.you?"you":"wait"; vLane[lane]=true; }
   render();
   const target = document.querySelector(`[data-vkey="${key}"]`);
   if(!target){ const j=(fromDb.jobs||[]).find(j=>runningJob(j)&&taskKeysFor(j).includes(key)); const row=j&&document.querySelector(`[data-vkey="job:${j.id}"]`); if(row){row.click();row.scrollIntoView({block:"start"});return;} const task=[...document.querySelectorAll("[data-jobtask-keys]")].find(x=>x.dataset.jobtaskKeys.split(" ").includes(key)); if(task){ task.querySelector("details").open=true; task.scrollIntoView({block:"start"}); } }
-  if(target){ target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"}); target.focus({preventScroll:true}); }
+  if(target){ target.closest(".vw").classList.add("flash"); target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"}); target.focus({preventScroll:true}); }
 });
 // Between renders, times count by themselves: "12 min ago", "in 1 d 7 h", and the running job's bar and finish time.
 function tickJobBars(){
