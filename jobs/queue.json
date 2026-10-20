@@ -53724,6 +53724,11 @@
           "at": "2026-10-20T01:56Z",
           "by": "codex",
           "what": "released: Storage prerequisite: 12 GiB free, below mandated 20 GB. Existing detached tmux j0684-scratch remains active; log /Users/benjaminoats/_desk/logs/j0684-scratch.log; completion /Users/benjaminoats/_desk/logs/j0684-scratch.done absent. Do not duplicate. Next run check completion and SHA256 archive result, then resume thumbnail selection/build/review (0/3). No film selected, spend or Studio change."
+        },
+        {
+          "at": "2026-10-20T01:58Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-grok-4-7: Codex out of usage; next in its chain: cursor"
         }
       ],
       "kind": "chart",
@@ -53734,7 +53739,16 @@
         "at": "2026-10-20T01:56Z",
         "by": "codex",
         "note": "Prerequisite unresolved: 12 GiB free. Existing tmux j0684-scratch and rsync PIDs 80976/80977 still active after 4h48; lo"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-grok-4-7"
     }
   ],
   "focus": [],
