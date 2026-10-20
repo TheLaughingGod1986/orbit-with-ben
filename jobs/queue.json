@@ -53708,6 +53708,11 @@
           "at": "2026-10-20T01:56Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking prerequisite: 12 GiB free; existing j0684-scratch archive session must be inspected before thumbnail work."
+        },
+        {
+          "at": "2026-10-20T01:56Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Prerequisite unresolved: 12 GiB free. Existing tmux j0684-scratch and rsync PIDs 80976/80977 still active after 4h48; log empty and j0684-scratch.done absent. No duplicate transfer or thumbnail build started."
         }
       ],
       "kind": "chart",
@@ -53717,7 +53722,7 @@
         "of": 3,
         "at": "2026-10-20T01:56Z",
         "by": "codex",
-        "note": "Checking prerequisite: 12 GiB free; existing j0684-scratch archive session must be inspected before thumbnail work."
+        "note": "Prerequisite unresolved: 12 GiB free. Existing tmux j0684-scratch and rsync PIDs 80976/80977 still active after 4h48; lo"
       }
     }
   ],
