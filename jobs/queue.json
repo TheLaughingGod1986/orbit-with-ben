@@ -53231,6 +53231,11 @@
           "at": "2026-10-20T00:46Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting QA sweep inventory of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-20T00:51Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inventoried newest OWB and HOS packs (including J0684 HOS 005 s08_harvey_book_v01 and J0686 OWB 028/029 overlays)"
         }
       ],
       "kind": "qa",
@@ -53245,12 +53250,29 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-20T00:46Z",
+        "at": "2026-10-20T00:51Z",
         "by": "gemini",
-        "note": "Starting QA sweep inventory of newest OWB and HOS packs"
-      }
+        "note": "Inventoried newest OWB and HOS packs (including J0684 HOS 005 s08_harvey_book_v01 and J0686 OWB 028/029 overlays)"
+      },
+      "taskKeys": [
+        "OWB:025",
+        "OWB:021",
+        "OWB:022",
+        "OWB:027",
+        "OWB:026",
+        "OWB:024",
+        "OWB:023",
+        "OWB:028",
+        "OWB:029",
+        "HOS:005",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:006",
+        "HOS:004"
+      ]
     },
     {
       "id": "J0693",
