@@ -396,7 +396,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0748 | any | blocked | gemini | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0749 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0750 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
-| J0751 | any | open | – | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
+| J0751 | any | claimed | gemini | 2026-10-21T00:42Z | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 
 Recently finished:
 
