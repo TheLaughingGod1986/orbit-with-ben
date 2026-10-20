@@ -55783,6 +55783,11 @@
           "at": "2026-10-20T08:10Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only listing audit of last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-20T08:12Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified last 10 public videos from 2026-10-20 snapshot (y-SPHQ0-VjQ to -jmMROGoZCM)"
         }
       ],
       "kind": "listing",
@@ -55797,12 +55802,17 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-20T08:10Z",
+        "at": "2026-10-20T08:12Z",
         "by": "gemini",
-        "note": "Starting read-only listing audit of last 10 live OWB videos"
-      }
+        "note": "Identified last 10 public videos from 2026-10-20 snapshot (y-SPHQ0-VjQ to -jmMROGoZCM)"
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021",
+        "OWB:022"
+      ]
     }
   ],
   "focus": [],
