@@ -1,0 +1,29 @@
+# 057 — Script Notes (`v00` — Why Jupiter's Moon Callisto Is the Most Heavily Cratered World in the Solar System)
+
+## 1. Continuity & Hand-offs
+- **Incoming hand-off from `056` (*Could AI Help Humanity Reach the Stars? How Autonomous Probes Explore Deep Space*):**
+  - `056` Subscribe beat (Line 26): *"If this is your kind of question, subscribe. Next week is why Jupiter's moon Callisto hides a deep ocean."*
+  - `056` Closing line (Line 79): *"Autonomous probes are our eyes reaching ahead across light-years — and next, we follow those scouts to Jupiter to ask why Jupiter's moon Callisto is the most heavily cratered world in the solar system, and how its ice shell hides a deep ocean."*
+- **Outgoing hand-off to `058` (*What Is the Most Dangerous Place in the Universe? Inside a Magnetar and Quasar Jet*):**
+  - Subscribe beat (Line 7 from `00_Brand/Channel-Setup/templates/SUBSCRIBE_BEAT_LINES.md`, rotated after `053`=Line 1, `054`=Line 5, `055`=Line 10, `056`=Line 3):
+    `Stay for the rest of this one, and subscribe for why magnetars are the most dangerous objects in space.` (19 words, 0 numbers, sits at 35% of spoken words).
+  - Closing line: *"...and next, we leave Jupiter's quietest moon for the most violent environments in the cosmos to ask what is the most dangerous place in the universe, inside a magnetar and a quasar jet."*
+
+## 2. Teach on Screen, Polish Pass & Per-Chapter Teaching Gate Verification
+- **`DATA:` markers:** `6` (Cold Open + Chapters 1–5; ≥ 3 required, at least 1 per chapter).
+- **`SCALE:` markers:** `6` (1:1 paired with `DATA:` markers; every big number has a spoken everyday scale analogy in the narration and in `SOURCES.md`).
+- **`NUMBER OBJECT:` markers:** `6` (`hook` + `ch 1` through `ch 5`, one per chapter).
+- **`WHO:` markers:** `7` (every named person in the spoken narration at first mention: Galileo Galilei `1564–1642`, Pierre-Simon Laplace `1749–1827`, John D. Anderson, Gerald Schubert, Krishan Khurana, Margaret Kivelson `born 1928`, Robert W. Carlson `born 1941`).
+- **`WHEN:` markers:** `6` (building the `1610–2031` timeline across Cold Open and Chapters 1–5).
+- **`FACT:` markers:** `4` (within the 2–4 house target, ≤ 4 words per card: `4-billion-year cratered ice`, `4,000 km Valhalla rings`, `250 km deep ocean`, `100 km CO2 airglow`).
+- **`[ORBIT ACTS:]` beats:** `2` physical micro-stories (Chapter 2 above Valhalla's 4,000-kilometer concentric rings projecting a cross-section of the <350 km ice shell and mixed rock; Chapter 4 standing on a bright water-ice crater peak looking up through the 100 km CO2 airglow as JUICE's 85 m² solar wings glide overhead), both after `1:00`, none in the final shot.
+
+## 3. Chapter-by-Chapter Teaching Breakdown
+| Section | Core Mechanism ("How We Know") | `DATA` / `NUMBER OBJECT` | `WHO` / `WHEN` |
+|---|---|---|---|
+| **Cold Open** | Orbiting outside Jupiter's inner resonance preserved `4 billion years` of craters on a `4,821 km` moon (`98.8%` of Mercury's `4,879 km`, `1,830` vs `5,427 kg/m³`) above a `~250 km` (`155 mi`) subsurface salty ocean | `4,821 km` Callisto vs `4,879 km` Mercury (`15,144 km` / `9,410 mi` circumference, `1,830` vs `5,427 kg/m³`), `1,883,000 km` from Jupiter, `778M km` (`43 min` light) from Sun, `~250 km` ocean | `WHEN: 4 billion years, 43 minutes` |
+| **Ch 1 — The Outer Moon Outside the Resonance** | Sitting at `1,883,000 km` (`16.689 days`) outside Laplace's `4:2:1` orbital resonance of Io (`1.8 d`), Europa (`3.6 d`), and Ganymede (`7.155 d`) prevented tidal heating and resurfacing | `1,883,000 km` orbit (`1.8x` Ganymede, `2.8x` Europa, `4.5x` Io), `16.689 Earth days` (`400.5 hr`) at `8.2 km/s` vs `4:2:1` inner resonance | `WHO: Galileo Galilei (1564–1642), Pierre-Simon Laplace (1749–1827)` · `WHEN: January 7, 1610, 1.8 days, 3.6 days, 7.155 Earth days, 16.689 Earth days, 400.5 hours, 12 Earth years` |
+| **Ch 2 — Valhalla and Four Billion Years of Scars** | Slushy ice relaxation under `-155 °C` + Galileo `C3`/`C9`/`C10` radio Doppler gravity tracking proving partial differentiation (`<350 km` clean ice, `<25%` core) | `4,000 km` (`2,500 mi`) Valhalla multi-ring impact basin (`60 m` resolution over `11 km` from `1,219 km` on `Nov 4, 1996`); `<350 km` outer ice layer & `<25%` core radius | `WHO: John D. Anderson, Gerald Schubert` · `WHEN: 1979, October 18, 1989, December 7, 1995, November 4, 1996, June 5, 1998, September 21, 2003` |
+| **Ch 3 — Why the "Ugly Duckling Moon" Hides an Ocean** | Midpoint flip (`Wrong.`): Galileo's `11 m` magnetometer boom measuring induced magnetic fields from eddy currents in a conducting subsurface salty ocean | `11 m` (`36 ft`) magnetometer induction loop + `~250 km` (`155 mi`) subsurface salty liquid-water ocean (`>20x` deeper than Earth's `11 km` Challenger Deep) | `WHO: Krishan Khurana, Margaret Kivelson (born 1928)` · `WHEN: October 22, 1998` |
+| **Ch 4 — The Four-Year Atmosphere and Europe's Icy Moon Explorer** | Galileo NIMS `4.26 μm` (`nu3`) off-limb airglow scan revealing a `100 km` `CO2` exosphere (`7.5 × 10⁻¹² bar`, `4-year` lifetime) + ESA/NASA `JUICE` (`6,000 kg`, `85 m²` solar panels) | `100 km` `CO2` airglow at `150 K` and `7.5 × 10⁻¹² bar` (`4-year` sweeping lifetime) + `6,000 kg` `JUICE` (`85 m²` solar array, `10` instruments, `July 2031` arrival) | `WHO: Robert W. Carlson (born 1941)` · `WHEN: 1997, February 5, 1999, 4 years, April 14, 2023, July 2031` |
+| **Ch 5 — The Time Capsule That Hid a Sea** | Synthesis of `1610–2031` milestones uniting Callisto's `4-billion-year` cratered crust (`4,000 km` Valhalla) with its `~250 km` deep salty ocean and `4-year` `CO2` sky | `1610–2031` timeline uniting `4 billion years`, `4,000 km` Valhalla, `250 km` ocean depth, `4-year` `CO2` renewal, and `July 2031` `JUICE` arrival | `WHEN: January 7, 1610, 1979, November 4, 1996, June 5, 1998, October 22, 1998, February 5, 1999, April 14, 2023, July 2031` |
