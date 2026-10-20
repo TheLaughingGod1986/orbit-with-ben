@@ -54650,13 +54650,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-20T04:39Z",
-      "eta": "2026-10-20T05:39Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-20T04:38Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 7040d76b1/bc7e04ab2/910a5a47: 025 Short mars_curiosity_nuclear_v01 0/8 PASS, 025 Short mars_insight_quakes_v01 0/8 PASS, 021 Short saturn_keck_ring_rain_v01 0/8 PASS, 022 Short sun_eight_minute_light_v01 0/8 PASS, 021 Short saturn_ten_hour_day_v01 0/7 PASS, 022 Short sun_century_warming_v01 0/8 PASS, 027 Short earth_ancient_eclipses_v01 0/7 PASS, 026 Short nearest_star_earth_pinhead_v01 0/7 PASS, 024 Short light_speed_one_ton_energy_v01 0/7 PASS, 023 Short venus_less_sunlight_465c_v01 0/7 PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS; HOS 9ca4b69c/e4eb2fcc/09623725/fb6a8f88: 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, 005 Short hos_005_s08_harvey_book_v01 0/7 PASS, 001 Short hos_001_s10_miasma_microscope_v01 0/8 PASS, 002 Short hos_002_s09_dobereiner_triads_v01 0/7 PASS, 003 Short hos_003_s07_xray_tube_v01 0/7 PASS, 006 Short hos_006_s07_priestley_mint_v01 0/8 PASS, 005 Short hos_005_s07_heart_pulse_v01 0/8 PASS, 004 Short hos_004_s07_outer_electrons_v01 0/8 PASS, 001 Short hos_001_s09_lister_antiseptic_v01 0/8 PASS, 002 Short hos_002_s08_periodic_table_work_v01 0/8 PASS; all recent OWB and HOS packs have gate outputs newer than their last render with 0 FAILs, no fix jobs needed)",
       "history": [
         {
           "at": "2026-10-20T04:38Z",
@@ -54697,6 +54697,11 @@
           "at": "2026-10-20T04:43Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All newest OWB and HOS packs PASS; 0 fix jobs needed"
+        },
+        {
+          "at": "2026-10-20T04:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 7040d76b1/bc7e04ab2/910a5a47: 025 Short mars_curiosity_nuclear_v01 0/8 PASS, 025 Short mars_insight_quakes_v01 0/8 PASS, 021 Short saturn_keck_ring_rain_v01 0/8 PASS, 022 Short sun_eight_minute_light_v01 0/8 PASS, 021 Short saturn_ten_hour_day_v01 0/7 PASS, 022 Short sun_century_warming_v01 0/8 PASS, 027 Short earth_ancient_eclipses_v01 0/7 PASS, 026 Short nearest_star_earth_pinhead_v01 0/7 PASS, 024 Short light_speed_one_ton_energy_v01 0/7 PASS, 023 Short venus_less_sunlight_465c_v01 0/7 PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS; HOS 9ca4b69c/e4eb2fcc/09623725/fb6a8f88: 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, 005 Short hos_005_s08_harvey_book_v01 0/7 PASS, 001 Short hos_001_s10_miasma_microscope_v01 0/8 PASS, 002 Short hos_002_s09_dobereiner_triads_v01 0/7 PASS, 003 Short hos_003_s07_xray_tube_v01 0/7 PASS, 006 Short hos_006_s07_priestley_mint_v01 0/8 PASS, 005 Short hos_005_s07_heart_pulse_v01 0/8 PASS, 004 Short hos_004_s07_outer_electrons_v01 0/8 PASS, 001 Short hos_001_s09_lister_antiseptic_v01 0/8 PASS, 002 Short hos_002_s08_periodic_table_work_v01 0/8 PASS; all recent OWB and HOS packs have gate outputs newer than their last render with 0 FAILs, no fix jobs needed)"
         }
       ],
       "kind": "qa",
