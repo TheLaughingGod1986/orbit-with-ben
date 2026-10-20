@@ -57610,6 +57610,11 @@
           "at": "2026-10-20T18:36Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting QA sweep of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-20T18:38Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inventoried all newest OWB and HOS packs and renders across both checkouts (incl. new OWB 025 mars_radiation_3months_v01 302dd45e2 and HOS 005 hos_005_s08_capillaries_v01 c9dab374)"
         }
       ],
       "kind": "qa",
@@ -57624,12 +57629,29 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-20T18:36Z",
+        "at": "2026-10-20T18:38Z",
         "by": "gemini",
-        "note": "Starting QA sweep of newest OWB and HOS packs"
-      }
+        "note": "Inventoried all newest OWB and HOS packs and renders across both checkouts (incl. new OWB 025 mars_radiation_3months_v01"
+      },
+      "taskKeys": [
+        "OWB:025",
+        "OWB:021",
+        "OWB:022",
+        "OWB:027",
+        "OWB:026",
+        "OWB:024",
+        "OWB:023",
+        "OWB:028",
+        "OWB:029",
+        "HOS:005",
+        "HOS:004",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:006"
+      ]
     }
   ],
   "focus": [],
