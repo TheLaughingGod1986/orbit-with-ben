@@ -53141,10 +53141,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-20T01:34Z",
-      "eta": "2026-10-20T03:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-19T23:16Z",
       "result": "",
@@ -53233,6 +53233,11 @@
           "at": "2026-10-20T01:34Z",
           "by": "codex",
           "what": "step 0 of 4 done: Mandatory disk prerequisite: 12 GiB free; existing j0684-scratch session present, log empty and completion absent. No duplicate archive or mint."
+        },
+        {
+          "at": "2026-10-20T01:34Z",
+          "by": "codex",
+          "what": "released: 0/4 preserved. Mandatory disk prerequisite unfinished: 12 GiB free. Existing tmux j0684-scratch active; Python 80972 and rsync 80976/80977 present after 4h27m, near-zero CPU. Log /Users/benjaminoats/_desk/logs/j0684-scratch.log empty; /Users/benjaminoats/_desk/logs/j0684-scratch.done absent. NAS mounted over NFS. No duplicate archive. Next run inspect NAS transfer health and completion before selecting/linking HOS film and preparing boards. No film stage claimed, mint, spend or upload."
         }
       ],
       "kind": "assembly",
