@@ -58639,17 +58639,27 @@
           "at": "2026-10-20T22:17Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-20T22:17Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Loaded 2026-10-20 snapshot and checking live YouTube listings for top 10 public videos"
         }
       ],
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-20T22:17Z",
         "by": "gemini",
-        "note": "Starting read-only listing check on last 10 live OWB videos"
-      }
+        "note": "Loaded 2026-10-20 snapshot and checking live YouTube listings for top 10 public videos"
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021",
+        "OWB:022"
+      ]
     }
   ],
   "focus": [],
