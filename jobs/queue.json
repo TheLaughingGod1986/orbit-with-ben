@@ -55235,11 +55235,25 @@
           "at": "2026-10-20T06:21Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-20T07:01Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
-      "urgent": 0
+      "urgent": 0,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
