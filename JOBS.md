@@ -388,7 +388,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0740 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0741 | mini | blocked | gemini | – | for gemini · chart · `gemini-agy` · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0742 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
-| J0743 | mini | claimed | gemini | 2026-10-20T23:02Z | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
+| J0743 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0744 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
