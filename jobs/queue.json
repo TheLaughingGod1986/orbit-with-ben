@@ -56222,6 +56222,11 @@
           "at": "2026-10-20T09:20Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting QA sweep of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-20T09:22Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inventoried all newest OWB and HOS packs and renders across both checkouts"
         }
       ],
       "kind": "qa",
@@ -56236,12 +56241,29 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-20T09:20Z",
+        "at": "2026-10-20T09:22Z",
         "by": "gemini",
-        "note": "Starting QA sweep of newest OWB and HOS packs"
-      }
+        "note": "Inventoried all newest OWB and HOS packs and renders across both checkouts"
+      },
+      "taskKeys": [
+        "OWB:025",
+        "OWB:021",
+        "OWB:022",
+        "OWB:027",
+        "OWB:026",
+        "OWB:024",
+        "OWB:023",
+        "OWB:028",
+        "OWB:029",
+        "HOS:004",
+        "HOS:005",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:006"
+      ]
     }
   ],
   "focus": [],
