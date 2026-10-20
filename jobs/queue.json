@@ -54677,6 +54677,11 @@
           "at": "2026-10-20T04:40Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting QA sweep of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-20T04:42Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inventoried all newest OWB and HOS packs (including new J0698 OWB 025 lift_curiosity_nuclear_v01 and J0699 HOS 004 s08_plum_pudding_v01)"
         }
       ],
       "kind": "qa",
@@ -54691,28 +54696,28 @@
       "for": "gemini",
       "model": "gemini-argon",
       "taskKeys": [
+        "OWB:025",
         "OWB:021",
         "OWB:022",
-        "OWB:023",
-        "OWB:024",
-        "OWB:025",
-        "OWB:026",
         "OWB:027",
+        "OWB:026",
+        "OWB:024",
+        "OWB:023",
         "OWB:028",
         "OWB:029",
+        "HOS:004",
+        "HOS:005",
         "HOS:001",
         "HOS:002",
         "HOS:003",
-        "HOS:004",
-        "HOS:005",
         "HOS:006"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-20T04:40Z",
+        "at": "2026-10-20T04:42Z",
         "by": "gemini",
-        "note": "Starting QA sweep of newest OWB and HOS packs"
+        "note": "Inventoried all newest OWB and HOS packs (including new J0698 OWB 025 lift_curiosity_nuclear_v01 and J0699 HOS 004 s08_p"
       }
     },
     {
