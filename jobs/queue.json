@@ -53263,6 +53263,11 @@
           "at": "2026-10-20T01:39Z",
           "by": "codex",
           "what": "step 0 of 3 done: Inspecting locked HOS VO and existing picture boards; no minting"
+        },
+        {
+          "at": "2026-10-20T01:40Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Eligibility checked: 006-010 already planned; 013 PICTURE_PLAN_v02 is pre-VO and 02_Voiceover is empty. No locked-VO film lacks a plan. Existing j0684-scratch rsync remains active after 4h; no duplicate started."
         }
       ],
       "kind": "assembly",
@@ -53277,12 +53282,15 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-20T01:39Z",
+        "at": "2026-10-20T01:40Z",
         "by": "codex",
-        "note": "Inspecting locked HOS VO and existing picture boards; no minting"
-      }
+        "note": "Eligibility checked: 006-010 already planned; 013 PICTURE_PLAN_v02 is pre-VO and 02_Voiceover is empty. No locked-VO fil"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J0692",
