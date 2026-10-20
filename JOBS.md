@@ -356,7 +356,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0707 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0708 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0709 | mini | claimed | gemini | 2026-10-20T07:29Z | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0710 | mini | claimed | codex | 2026-10-20T07:25Z | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
+| J0710 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 
 Recently finished:
 
