@@ -427,8 +427,7 @@ console.log(JSON.stringify(currentFilmBrief({{key:"OWB:025"}})));'''
         self.assertNotIn("line", brief)
 
 
-if __name__ == "__main__":
-    unittest.main()
+
 
 
 @unittest.skipUnless(shutil.which("node"), "node not installed")
@@ -735,3 +734,53 @@ class VideoWorkSchedule(unittest.TestCase):
         q=next(x["q"] for x in w["remaining"] if x["j"]["id"]=="J2")
         self.assertNotIn("start",q)
         self.assertEqual(w["finish"],0)
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class VisibleJobResults(unittest.TestCase):
+    def evaluate(self, code):
+        names = ["esc", "MINUTE", "ts", "ago", "OWB_STAGES", "taskKeysFor", "jobOutcome", "progressUpdates",
+                 "supportingJob", "cleanTitle", "plainTitle", "CHIEF_PARK", "blockWhy", "isChiefPark",
+                 "stOf", "resultNote", "resultState", "videoResultHtml"]
+        lib = "\n".join(js_function(page(), name) for name in names)
+        script = "const fromDb={jobs:[],extra:{done:[]}};\n" + lib + "\n" + code
+        out = subprocess.run(["node", "--input-type=commonjs"], input=script, text=True, capture_output=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def test_completed_result_names_video_and_explains_pending_stage(self):
+        r = self.evaluate('''
+fromDb.extra.done=[{id:"J1",title:"HOS 006: picture fixes",taskKeys:["HOS:006"],stage:"picture",at:new Date().toISOString(),result:"Two picture fixes delivered."}];
+const row={f:{key:"HOS:006",_stages:[{key:"picture",label:"Picture"}],stages:{picture:{status:"doing"}}}};
+console.log(JSON.stringify(videoResultHtml(row)));
+''')
+        self.assertIn("Finished: HOS 006", r)
+        self.assertIn("Two picture fixes delivered.", r)
+        self.assertIn("Picture still needs confirmation", r)
+        self.assertIn('data-result-job="J1"', r)
+
+    def test_four_of_four_parked_job_stays_in_review_with_its_result(self):
+        r = self.evaluate('''
+const j={id:"J2",title:"HOS 006: script",taskKeys:["HOS:006"],status:"blocked",result:"parked for Chief: script review",progress:{step:4,of:4,at:new Date().toISOString()}};
+fromDb.jobs=[j]; const row={f:{key:"HOS:006",_stages:[],stages:{}}};
+console.log(JSON.stringify({html:videoResultHtml(row),note:resultNote(j)}));
+''')
+        self.assertIn("Ready for review", r["html"])
+        self.assertNotIn("Finished:", r["html"])
+        self.assertEqual(r["note"], "parked for Chief: script review")
+
+    def test_reopened_job_drops_its_old_finished_receipt(self):
+        r = self.evaluate('''
+fromDb.jobs=[{id:"J3",status:"open"}];fromDb.extra.done=[{id:"J3",at:new Date().toISOString()}];
+console.log(JSON.stringify(progressUpdates()));
+''')
+        self.assertEqual(r, [])
+
+    def test_result_card_is_visible_before_the_video_lanes_and_history_is_folded(self):
+        html = page()
+        self.assertLess(html.index('id="latestResult"'), html.index('id="videos"'))
+        self.assertIn('id="recentActivity" class="more fold"', html)
+
+
+if __name__ == "__main__":
+    unittest.main()

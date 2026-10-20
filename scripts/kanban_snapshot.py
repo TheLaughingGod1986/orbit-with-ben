@@ -98,6 +98,38 @@ def _done_at(j: dict) -> str:
     return next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("done")), "")
 
 
+def completed_jobs(alljobs: list[dict], at=None) -> list[dict]:
+    """Recent activity plus the last result per video/stage, so busy channels don't erase it."""
+    from datetime import datetime, timezone, timedelta
+    at = at or datetime.now(timezone.utc)
+    rows = sorted((dict({k: j.get(k, "") for k in
+                         ("id", "title", "film", "by", "repo", "stage", "model", "ref", "result")},
+                        taskKeys=j.get("taskKeys", []), at=_done_at(j))
+                   for j in alljobs if j.get("status") == "done" and _t(_done_at(j))),
+                  key=lambda j: _t(j["at"]), reverse=True)
+    kept, seen = [], set()
+    for i, j in enumerate(rows):
+        keys = set(j["taskKeys"] or [])
+        if not keys:
+            keys.update(m[0].upper() + ":" + m[1] for m in
+                        re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", j["title"], re.I))
+            film = str(j["film"])
+            if re.fullmatch(r"(HOS|OWB):\d{3}", film):
+                keys.add(film)
+            elif not keys:
+                no = film if re.fullmatch(r"\d{3}", film) else (re.match(r"^\s*(\d{3})\b", j["title"]) or [""])[0].strip()
+                if no:
+                    ch = "HOS" if j["repo"] == "hos" or re.search(r"\bHOS\b|history of science", j["title"], re.I) else "OWB"
+                    keys.add(ch + ":" + no)
+            keys.update(m[0].upper() + ":" + m[1] for m in
+                        re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", j["result"], re.I))
+        targets = {(key, j["stage"]) for key in keys if re.fullmatch(r"(HOS|OWB):\d{3}", key)}
+        if i < 60 or _t(j["at"]) >= at - timedelta(days=1) or targets - seen:
+            kept.append(j)
+        seen.update(targets)
+    return kept
+
+
 def kind_key(j: dict) -> str:
     """A job's kind for typical durations: its queue kind if set, else the title keyword family."""
     k = kind_of(j)
@@ -926,10 +958,7 @@ def main(argv: list[str] | None = None) -> int:
                                       "at": (j.get("history") or [{}])[-1].get("at", "")} for j in alljobs},
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
                "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs), "week": week_numbers(alljobs),
-               "done": sorted(({"id": j["id"], "title": j.get("title", ""), "film": j.get("film", ""), "by": j.get("by", ""),
-                                "repo": j.get("repo", ""), "stage": j.get("stage", ""), "taskKeys": j.get("taskKeys", []),
-                                "model": j.get("model", ""), "ref": j.get("ref", ""), "result": j.get("result", ""), "at": _done_at(j)}
-                               for j in alljobs if j.get("status") == "done" and _done_at(j)), key=lambda r: r["at"], reverse=True)[:60]}
+               "done": completed_jobs(alljobs)}
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
                             "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}

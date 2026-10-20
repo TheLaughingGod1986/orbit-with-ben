@@ -74,12 +74,15 @@
     const by = d => Object.fromEntries((((d || {}).owb || {}).jobs || []).map(j => [j.id, j]));
     const a = by(prev), b = by(next), done = new Set((((next || {}).owb || {}).done || []).map(d => d.id)), out = [];
     for (const [id, j] of Object.entries(b)) {
-      const p = a[id], row = { id, title: j.title || "", film: j.film || "", by: j.by || (j.last || {}).by || "" };
+      const p = a[id], row = { id, title: j.title || "", film: j.film || "", repo: j.repo || "", taskKeys: j.taskKeys || [], by: j.by || (j.last || {}).by || "" };
       if (!p) out.push(Object.assign(row, { what: "added" }));
       else if (p.status !== j.status) out.push(Object.assign(row, { what: j.status }));
       else if (j.progress && JSON.stringify(p.progress || null) !== JSON.stringify(j.progress)) out.push(Object.assign(row, { what: "step", step: j.progress.step, of: j.progress.of }));
     }
-    for (const [id, p] of Object.entries(a)) if (!b[id]) out.push({ id, title: p.title || "", film: p.film || "", by: p.by || "", what: done.has(id) ? "done" : "removed" });
+    for (const [id, p] of Object.entries(a)) if (!b[id]) {
+      const receipt = ((((next || {}).owb || {}).done || []).find(j => j.id === id)) || p;
+      out.push({ id, title: receipt.title || p.title || "", film: receipt.film || p.film || "", repo: receipt.repo || p.repo || "", taskKeys: receipt.taskKeys || p.taskKeys || [], by: receipt.by || p.by || "", what: done.has(id) ? "done" : "removed" });
+    }
     return out;
   }
   async function pollData() {

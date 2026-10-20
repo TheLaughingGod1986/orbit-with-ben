@@ -10,6 +10,41 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import kanban_snapshot as ks  # noqa: E402
 
 
+class CompletedResults(unittest.TestCase):
+    def job(self, n, at="2026-10-19T10:00Z", **fields):
+        return {"id": f"J{n}", "title": "Channel check", "status": "done",
+                "history": [{"at": at, "what": "done: passed"}], **fields}
+
+    def test_last_video_result_survives_more_than_sixty_channel_checks(self):
+        from datetime import datetime, timezone
+        jobs = [self.job(i) for i in range(70)] + [
+            self.job(100, "2026-10-18T10:00Z", taskKeys=["HOS:006"], stage="picture", result="Picture fixes delivered"),
+            self.job(101, "2026-10-17T10:00Z", taskKeys=["HOS:006"], stage="picture", result="Older fix"),
+            self.job(102, "2026-10-16T10:00Z", film="024", stage="edit", result="Master delivered")]
+        rows = ks.completed_jobs(jobs, datetime(2026, 10, 21, tzinfo=timezone.utc))
+        ids = {j["id"] for j in rows}
+        self.assertIn("J100", ids)
+        self.assertIn("J102", ids)
+        self.assertNotIn("J101", ids)
+        self.assertEqual(len(rows), 62)
+        self.assertEqual(next(j for j in rows if j["id"] == "J100")["result"], "Picture fixes delivered")
+
+    def test_every_completion_in_last_twenty_four_hours_is_retained(self):
+        from datetime import datetime, timezone
+        jobs = [self.job(i) for i in range(90)]
+        self.assertEqual(len(ks.completed_jobs(jobs, datetime(2026, 10, 19, 12, tzinfo=timezone.utc))), 90)
+
+    def test_explicit_target_wins_over_old_title_and_review_is_not_done(self):
+        from datetime import datetime, timezone
+        jobs = [self.job(i) for i in range(60)] + [
+            self.job(100, "2026-10-18T10:00Z", title="HOS 007 draft", taskKeys=["HOS:006"]),
+            self.job(101, "2026-10-17T10:00Z", title="HOS 007 draft"),
+            self.job(102, status="blocked", taskKeys=["HOS:008"])]
+        rows = ks.completed_jobs(jobs, datetime(2026, 10, 21, tzinfo=timezone.utc))
+        self.assertTrue({"J100", "J101"}.issubset({j["id"] for j in rows}))
+        self.assertNotIn("J102", {j["id"] for j in rows})
+
+
 class Since(unittest.TestCase):
     snaps = [("2026-10-05T10:00:00Z", {"picture": "todo", "edit": "todo"}),
              ("2026-10-06T10:00:00Z", {"picture": "doing", "edit": "todo"}),
