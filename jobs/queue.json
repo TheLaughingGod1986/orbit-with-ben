@@ -62192,7 +62192,7 @@
     {
       "id": "J0789",
       "title": "OWB ideas + script draft: next film beyond the pipeline",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Brainstorm 5 Orbit With Ben long ideas from the latest weekly audit and VIDEO_BACKLOG.json (search demand, competitor gaps, our best retention topics), score each, then draft the top one's script v00 per the playbook (house opening, FACT beats, SOURCES.md started). Save under 00_Brand/Channel-Setup/ideas/ and the next free 02_Video-Projects slot from the template. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
       "ref": "",
@@ -62212,10 +62212,24 @@
           "at": "2026-10-21T09:44Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-21T10:09Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 7338 min (heartbeat 2026-10-16T07:51:05Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "script",
-      "backlog": "owb-ideas"
+      "backlog": "owb-ideas",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
