@@ -1073,6 +1073,22 @@ function hbLine(){
   if(!isNaN(l) && L.lastWhat) bits.push(`last: ${esc(WORKER[L.lastBy]||L.lastBy||"")} ${esc(shortReason(L.lastWhat))} (<span data-ago="${l}">${ago(l)}</span>)`);
   return bits.length ? `<div class="hb">${bits.join(" · ")}</div>` : "";
 }
+// Ben, 21 Oct 2026: "will the kanban show me who's out and who's chief?" From the Mini heartbeat: the acting Chief
+// (Grok Bot, Claude, Cursor, Codex in that order) and each one that is out, with when it's due back if the relay knows.
+const CHIEF_NAME = {chief:"Grok Bot", claude:"Claude", cursor:"Cursor", codex:"Codex"};
+function outWhy(why){
+  const w = String(why||""), m = /(?:retry after|until)\s+(\d{4}-\d\d-\d\dT\d\d:\d\d(?::\d\d)?Z)/.exec(w);
+  const back = m ? ", back about " + new Date(m[1]).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}) : "";
+  const what = /no grok post|no claude run|no heartbeat|quiet/i.test(w) ? "quiet" : /usage|credit|limit|429/i.test(w) ? "out of usage"
+    : /cli not installed/i.test(w) ? "not installed" : w.replace(/^marked down:\s*/,"").split(/[:(;]/)[0].trim().slice(0,40);
+  return what + back;
+}
+function chiefLine(){
+  const hb = ((fromDb.lanes||{}).mini||{}).heartbeat; if(!hb || !hb.chief && !(hb.chain||[]).length) return "";
+  const chief = hb.chief ? `Chief: <b>${esc(CHIEF_NAME[hb.chief]||hb.chief)}</b>` : `<b class="late">No Chief</b>`;
+  const out = (hb.chain||[]).filter(r=>!r.up).map(r=>`${esc(CHIEF_NAME[r.agent]||r.agent)} (${esc(outWhy(r.why))})`);
+  return `<div class="hb chief-line">${chief}${out.length?` · Out: ${out.join(", ")}`:" · everyone is up"}</div>`;
+}
 // Ben, 12 Oct 15:05: "should be one glance: I know what it's currently working on, how long until it's ready." One
 // line for Now (plain title, worker, ready time), one for Next, one summary chip; the full list sits behind "Show all".
 // Only real Ben items (a sign-in, money) show as one red line; date/input-bound jobs read "Scheduled", never red.
@@ -1488,7 +1504,7 @@ function renderNow(){
     + (headJob ? jobTargetHtml(headJob) : "")
     + (headJob ? `<details id="now-progress-${esc(headJob.id)}" class="progress-fold"><summary>Progress details</summary>${jobImpact(headJob)}</details>` : "")
     + (nxs.length ? `<div class="nx"><b>Next up</b><ol class="nxl">${nxs.map(j=>`<li>${esc(plainTitle(j, 90))}</li>`).join("")}</ol></div>` : "")
-    + (headJob ? "" : hbLine()) + updatedAt();
+    + chiefLine() + (headJob ? "" : hbLine()) + updatedAt();
 }
 
 // ---------- Job board (Ben, 12 Oct 15:49) ----------

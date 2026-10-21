@@ -551,7 +551,9 @@ def heartbeat_doc(at: dt.datetime, state: str, agent: str = "", note: str = "") 
     """What the Kanban shows about the Mini: when the relay last ran and what it found (idle, running, busy, paused),
     and who the acting Chief is (Claude's hourly run reads it to know whether the Chief work is its own)."""
     chief = (read_json(d("current.json")) or {}).get("agent") or ""
-    return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief}
+    chain_rows = (read_json(d("chain.json")) or {}).get("rows") or []
+    return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief,
+            "chain": chain_rows}
 
 
 def parked_reviews(data: dict) -> list:
@@ -1087,6 +1089,8 @@ def run_locked(at: dt.datetime) -> int:
         rows, who = acting(at)
         handover(who, rows, at)
         alert_no_chief(who, rows, at)
+        # The board shows who is Chief and who is out, and why (Ben, 21 Oct 2026).
+        write_json(d("chain.json"), {"at": iso(at), "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in rows]})
         log("chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in rows))
         up = workers_up(at)
         worker_only = False
