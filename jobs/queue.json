@@ -1,5 +1,5 @@
 {
-  "next_id": 807,
+  "next_id": 811,
   "jobs": [
     {
       "id": "J0001",
@@ -22052,13 +22052,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-16T05:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T13:32Z",
-      "result": "parked for Chief: restore or verify HOS Studio session. Port 9460 lists Germs tab but Playwright and direct Runtime.evaluate time out; responsive 9222 reports CHANNEL_ID UCXRVwrCxXpN_o9gvuHPKAPQ rather than HOS UCXp7HkBIl1LgaznXuZHJyRg. No mutation made. Progress 1/3.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T13:32Z",
@@ -22119,16 +22119,14 @@
           "at": "2026-10-16T08:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "reopened: Chief FIX (Chief, 21 Oct ~16:50 London): not a Chief decision, a session issue. At 16:40 London CDP 9460 answers /json/list with the HOS tabs (_C92tIJCk8A/edit, GHZDsiH7L7A/editor); 9222 is a different channel (UCXRVwrCxXpN…), never use it for HOS. Worker: on 9460 open a fresh tab via /json/new on studio.youtube.com/video/_C92tIJCk8A/edit (don't reuse the hung tab), confirm the channel id is UCXp7HkBIl1LgaznXuZHJyRg before any click, then follow the body exactly (check test state; if none running, arm thumbnail-only A live vs B v02 INVISIBLE LIFE?; never Replace/delete; record T-id in THUMB_LEDGER). If 9460 still hangs on Runtime.evaluate, block 'waits for input: HOS Studio CDP 9460 hung (Chrome restart on the Mini)' and stop. £0."
         }
       ],
       "kind": "studio",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-16T05:45Z",
-        "by": "codex",
-        "note": "Inspected existing Studio sessions; HOS CDP 9460 unresponsive, 9222 channel identity differs"
-      },
       "escalated_at": "2026-10-16T08:35Z"
     },
     {
@@ -23401,13 +23399,13 @@
       "stage": "",
       "after": "J0304",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-19T18:20Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:34Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T17:04Z",
-      "result": "parked for Chief: 013 script v02 review",
+      "result": "PASS (Chief, 21 Oct ~16:50 London): HOS 013 Darwin–Wallace script v02 LOCKED (HOS 8bffe788 + 60d4f8a9). All five chronology/age fixes land exactly as briefed (1844 essay before Vestiges; 25 Jun fairness letter then 28 Jun death; 'Wallace hadn't even been asked'; booksellers ordered every copy before sale, 6:25 VISUAL matched; 'young' dropped for Wallace in VO + 0:52 visual). FACT_NOTES_v02 rows 12/13/21/22/24/26 carry open URLs + verbatim excerpts (DCP 761/814/2294/2297, Freeman). review:script 92.6, gate:episode PASS, £0. Minor: v02 dropped v01's 'Softened until facts pass' notes block; non-spoken, fine. Next: VO J-new (after the 30 Oct ElevenLabs reset).",
       "history": [
         {
           "at": "2026-10-15T17:04Z",
@@ -23458,6 +23456,21 @@
           "at": "2026-10-19T21:09Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "reopened: Chief review of HOS 013 script v02"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~16:50 London): HOS 013 Darwin–Wallace script v02 LOCKED (HOS 8bffe788 + 60d4f8a9). All five chronology/age fixes land exactly as briefed (1844 essay before Vestiges; 25 Jun fairness letter then 28 Jun death; 'Wallace hadn't even been asked'; booksellers ordered every copy before sale, 6:25 VISUAL matched; 'young' dropped for Wallace in VO + 0:52 visual). FACT_NOTES_v02 rows 12/13/21/22/24/26 carry open URLs + verbatim excerpts (DCP 761/814/2294/2297, Freeman). review:script 92.6, gate:episode PASS, £0. Minor: v02 dropped v01's 'Softened until facts pass' notes block; non-spoken, fine. Next: VO J-new (after the 30 Oct ElevenLabs reset)."
         }
       ],
       "kind": "script",
@@ -23473,14 +23486,8 @@
       "taskKeys": [
         "HOS:013"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-19T18:34Z",
-        "by": "gemini",
-        "note": "Committed 60d4f8a9 (and 8bffe788) to HOS main; check_all.sh ALL CHECKS PASS; posted diff summary to HOS #180"
-      },
-      "escalated_at": "2026-10-19T21:09Z"
+      "escalated_at": "2026-10-19T21:09Z",
+      "done_ref": "60d4f8a9"
     },
     {
       "id": "J0308",
@@ -26901,13 +26908,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-16T05:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-16T02:36Z",
-      "result": "parked for Chief: KEEP/FIX Jenner master before later readable faces; prior cow Quality clip recovered without duplicate charge. HOS codex/j0352-flow a4bae7d0; Flow live 23640, spent 100 already logged. Progress 2/4.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-16T02:36Z",
@@ -26958,17 +26965,15 @@
           "at": "2026-10-16T08:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "reopened: Chief KEEP (Chief, 21 Oct ~16:50 London) on HOS 007 Flow master: P2:08_jenner_window master still (aa7f98b6) KEEP: face reads well, page stack shows no legible glyph, spines face away; the small gold spine marks are fine. P1:01_cow_meadow recovered Quality take (68ed97d9 / silent 91a222ea) KEEP: no sores, clean meadow. Later readable Jenner faces start from this master. Continue minting the Flow rows of boards v02 ONLY (the price-passed set, HOS a5d0696c / PRICE_REVIEW_v02); any v03+ board edits from refill plate-prep are not authorised for mint. Gate unchanged: live Flow read first and before every batch (last logged 23,640 on 16 Oct; 7,096 left to spend fits with 16,544 headroom); stop if a batch would drop the live read below 3,000 or 007's spend would pass 7,550. Never buy, top up or upgrade; if the live read no longer fits, block 'waits for input: Flow AI Ultra renewal ~12 Nov'. Disk: Mini is at ~7 GiB free; check ≥ 10 GiB before each batch and release with a note if not (J0795 frees space). Contact sheets per Part on #180 for STYLE/MOTION KEEP."
         }
       ],
       "kind": "video",
       "model": "flow-veo-3.1",
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-16T05:11Z",
-        "by": "codex",
-        "note": "Live gate checked; prior charged cow shot recovered. Chief master review pending."
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -26990,13 +26995,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-16T05:13Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:34Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-16T03:26Z",
-      "result": "parked for Chief: PR #228 harvest evidence; decide six quarantined assets (nine rows): labelled panels, merger simulation, third-party neutron-wind rights. 31 files/47 mappings collected at £0; no KEEP or mint authorised.",
+      "result": "PASS (Chief, 21 Oct ~16:50 London): 029 harvest v01 on OWB PR #228, squash-merged 3622e3cc (CI green). 31 files / 47 rows, licences and SHA lists correct; contact sheet checked. Rulings on the 6 quarantined assets (no crop of labelled panels, £0): r02_surface -> sphere_jan, r05_surface -> sphere_dec (single SPHERE frames, already in pool); r13_compare -> build our own £0 code split of sphere_jan | sphere_dec with house labels (Jan 2019 / Dec 2019), not ESO's labelled panel; r14_ejection -> dust_impression with an 'Artist's impression' tag + full credit; r32_ejection -> visir_flames (real VISIR observation of the shed material), credit ESO/P. Kervella; r21_bh -> drop neutron_bh (merger sim, wrong context) and use a £0 code graphic of core collapse; r33_pair/r34_pair -> companion_speckle (non-annotated NOIRLab) + orion_over_paranal for the wide; r21_neutron -> drop neutron_wind (third-party rights) and use crab (pulsar at the Crab's heart, full ESA/Hubble credit). Assembly cautions in HARVEST_REVIEW_v01 stand (skip ESO bumper on Chajnantor; full credits in end card). Next: J-new 029 part roughs.",
       "history": [
         {
           "at": "2026-10-16T03:26Z",
@@ -27042,17 +27047,26 @@
           "at": "2026-10-16T08:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "reopened: Chief review of 029 harvest PR #228"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~16:50 London): 029 harvest v01 on OWB PR #228, squash-merged 3622e3cc (CI green). 31 files / 47 rows, licences and SHA lists correct; contact sheet checked. Rulings on the 6 quarantined assets (no crop of labelled panels, £0): r02_surface -> sphere_jan, r05_surface -> sphere_dec (single SPHERE frames, already in pool); r13_compare -> build our own £0 code split of sphere_jan | sphere_dec with house labels (Jan 2019 / Dec 2019), not ESO's labelled panel; r14_ejection -> dust_impression with an 'Artist's impression' tag + full credit; r32_ejection -> visir_flames (real VISIR observation of the shed material), credit ESO/P. Kervella; r21_bh -> drop neutron_bh (merger sim, wrong context) and use a £0 code graphic of core collapse; r33_pair/r34_pair -> companion_speckle (non-annotated NOIRLab) + orion_over_paranal for the wide; r21_neutron -> drop neutron_wind (third-party rights) and use crab (pulsar at the Crab's heart, full ESA/Hubble credit). Assembly cautions in HARVEST_REVIEW_v01 stand (skip ESO bumper on Chajnantor; full credits in end card). Next: J-new 029 part roughs."
         }
       ],
       "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-16T05:16Z",
-        "by": "codex",
-        "note": "Evidence committed 07197487; harvest complete, advisory handoff for Chief"
-      },
-      "escalated_at": "2026-10-16T08:35Z"
+      "escalated_at": "2026-10-16T08:35Z",
+      "done_ref": "3622e3cc8171263e44130cb875a4279ca7e31a1d"
     },
     {
       "id": "J0354",
@@ -27065,13 +27079,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-16T05:18Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:34Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-16T04:39Z",
-      "result": "parked for Chief: HOS 006 full-film frame review REVIEW_v01.md on HOS PR #346 (718b7ab4, 70 KEEP / 21 concrete £0 FIX items; NAS listing timed out after 5s and skipped per brief; not a film PASS)",
+      "result": "PASS (Chief, 21 Oct ~16:50 London): HOS 006 full-film frame review REVIEW_v01 accepted, HOS PR #346 squash-merged 509a1fed (CI green). 70 KEEP / 21 FIX, all £0 and concrete; the Part 02 -5.46 s drift (07_explorer_snow cut without extending 06_garden_years) is the key fix. FIX list approved as written, plus: 1:10 pounds card must be re-rendered in HOS parchment house style (no modern UI card); Part 05 DATA graphics get labels so they read with the sound off. Weekly audit J0787's 006 notes (music crossfade at 1:05 after the 30 Oct bed, question-titled Shorts) ride the same pass where £0. Not a film PASS. Next: J-new 006 teach master v02.",
       "history": [
         {
           "at": "2026-10-16T04:39Z",
@@ -27117,17 +27131,26 @@
           "at": "2026-10-16T08:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "reopened: Chief review of HOS 006 frame review PR #346"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~16:50 London): HOS 006 full-film frame review REVIEW_v01 accepted, HOS PR #346 squash-merged 509a1fed (CI green). 70 KEEP / 21 FIX, all £0 and concrete; the Part 02 -5.46 s drift (07_explorer_snow cut without extending 06_garden_years) is the key fix. FIX list approved as written, plus: 1:10 pounds card must be re-rendered in HOS parchment house style (no modern UI card); Part 05 DATA graphics get labels so they read with the sound off. Weekly audit J0787's 006 notes (music crossfade at 1:05 after the 30 Oct bed, question-titled Shorts) ride the same pass where £0. Not a film PASS. Next: J-new 006 teach master v02."
         }
       ],
       "kind": "review",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-16T05:57Z",
-        "by": "gemini",
-        "note": "REVIEW_v01.md pushed on HOS PR #346 (718b7ab4)"
-      },
-      "escalated_at": "2026-10-16T08:35Z"
+      "escalated_at": "2026-10-16T08:35Z",
+      "done_ref": "509a1fedfffee42fe72a977d3c0cce5d2934ea98"
     },
     {
       "id": "J0355",
@@ -60777,13 +60800,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-21T03:42Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:34Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-21T03:25Z",
-      "result": "parked for Chief: review local commit 32456def7 on codex/j0771 and UAT saturn_ten_metres_thin_j0771; four automated gates report PASS, zero FAILs, 0:08 low-detail WARN. Repair-branch push rejected by automatic approval review (unverified remote); no push or merge performed.",
+      "result": "PASS (Chief, 21 Oct ~16:50 London): OWB 021 Short saturn_ten_metres_thin_v01 repair. Chief pushed codex/j0771 (the worker's push was refused), opened OWB PR #248 and squash-merged 5366e207 (CI green). Contact sheet checked: rings now run diagonal with no horizontal gutter, 18.0 s shows only 'YOU ARE IN', end card carries the long title + id per house rule. 0:08 s03 low-detail WARN: KEEP (fine C-ring detail, reads clearly). gates_shorts_open/sfx/polish/picture_qa PASS, 0 FAIL. Master: OWB UAT/saturn_ten_metres_thin_j0771 (sha256 83375550…). NB the Mini's main checkout had untracked pre-fix copies of the same files; Chief moved them to ~/YouTube/_grok_scratch/chief/j0771_main_checkout_preexisting so git pull works again (nothing deleted). Not an upload OK. Next: J-new package dry run.",
       "history": [
         {
           "at": "2026-10-21T03:25Z",
@@ -60824,20 +60847,29 @@
           "at": "2026-10-21T06:04Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "reopened: Chief review of 021 Short repair 32456def7"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~16:50 London): OWB 021 Short saturn_ten_metres_thin_v01 repair. Chief pushed codex/j0771 (the worker's push was refused), opened OWB PR #248 and squash-merged 5366e207 (CI green). Contact sheet checked: rings now run diagonal with no horizontal gutter, 18.0 s shows only 'YOU ARE IN', end card carries the long title + id per house rule. 0:08 s03 low-detail WARN: KEEP (fine C-ring detail, reads clearly). gates_shorts_open/sfx/polish/picture_qa PASS, 0 FAIL. Master: OWB UAT/saturn_ten_metres_thin_j0771 (sha256 83375550…). NB the Mini's main checkout had untracked pre-fix copies of the same files; Chief moved them to ~/YouTube/_grok_scratch/chief/j0771_main_checkout_preexisting so git pull works again (nothing deleted). Not an upload OK. Next: J-new package dry run."
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:021"
       ],
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-21T03:46Z",
-        "by": "codex",
-        "note": "Repair and QA evidence committed locally as 32456def7; persistent UAT candidate checksummed; branch push rejected by aut"
-      },
-      "escalated_at": "2026-10-21T06:04Z"
+      "escalated_at": "2026-10-21T06:04Z",
+      "done_ref": "5366e2070e99bf3f9b2cbbb3a81bd86beec42256"
     },
     {
       "id": "J0772",
@@ -62115,13 +62147,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T09:06Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:34Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T09:04Z",
-      "result": "parked for Chief: QA sweep complete (OWB 32456def7/d8c594c10/302dd45e2/7040d76b1/bc7e04ab2: 021 Short saturn_ten_metres_thin_j0771 repair candidate on codex/j0771 0/8 PASS with 0:08 C-ring WARN verified clean, 022 Short sun_faint_young_70pct_v01 0/7 PASS, 025 Shorts mars_radiation_3months_v01 / mars_curiosity_nuclear_v01 / mars_insight_quakes_v01 0/8 PASS, all 27 committed lift Shorts PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS, 024/025/026/027 long cuts PASS; HOS 7a4e70f8/c9dab374/9ca4b69c/09623725/fb6a8f88: 006 Short hos_006_s08_willow_pot_v01 0/9 PASS, 005 Short hos_005_s08_capillaries_v01 0/7 PASS, 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, all 26 HOS qa_ Shorts PASS, 006 full_join_v01_teach 0/91 PASS; 0 new fix jobs needed)",
+      "result": "PASS (Chief, 21 Oct ~16:50 London): QA sweep verified: OWB and HOS newest packs 0 FAIL (021 ten_metres_thin repair now merged #248; 022 faint_young, 025 x3, 028/029 overlays; HOS 004/005/006 s08 Shorts, 006 full_join_v01_teach 0/91). No fix jobs needed. Older both-qa-sweep copies cancelled as duplicates of this one.",
       "history": [
         {
           "at": "2026-10-21T09:04Z",
@@ -62172,17 +62204,25 @@
           "at": "2026-10-21T12:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "reopened: Chief review: newest both-qa-sweep copy"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~16:50 London): QA sweep verified: OWB and HOS newest packs 0 FAIL (021 ten_metres_thin repair now merged #248; 022 faint_young, 025 x3, 028/029 overlays; HOS 004/005/006 s08 Shorts, 006 full_join_v01_teach 0/91). No fix jobs needed. Older both-qa-sweep copies cancelled as duplicates of this one."
         }
       ],
       "kind": "qa",
       "backlog": "both-qa-sweep",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T09:11Z",
-        "by": "gemini",
-        "note": "Completed QA sweep across OWB and HOS: all committed packs and J0771 repair candidate PASS with 0 FAILs; 0 new fix jobs "
-      },
       "taskKeys": [
         "OWB:021",
         "OWB:022",
@@ -63669,6 +63709,114 @@
         }
       ],
       "urgent": 2
+    },
+    {
+      "id": "J0807",
+      "title": "HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "VO take of 02_Video-Projects/013_Darwin-Wallace-Evolution/01_Script/darwin_script_master_v02.md (Chief PASS J0307, HOS 60d4f8a9), house HOS voice, eleven_v3, ~1,227 spoken words. Read the ElevenLabs balance first and log it (ai_spend.py record). Runs after J0345 (both J0302 and J0345 wait for the 30 Oct ElevenLabs reset). Order: OWB 032 Titan J0302, OWB 031 J0345, then this. Only if the balance covers this take in full after those two; never buy, top up or let anything spill into billing (Ben, 12 Oct: floor is 0). vo_check + word check, commit the take metadata on HOS main (no media in git), park for Chief VO review. No picture, no upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0345",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-21T15:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "vo"
+    },
+    {
+      "id": "J0808",
+      "title": "029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After J0353 PASS (harvest pool on main 3622e3cc). 1) Apply the Chief source rulings in J0353's result to PLATE_BOARDS (v03, only those 9 rows: r02/r05 -> sphere_jan/sphere_dec, r13 -> own £0 code split, r14 -> dust_impression tagged 'Artist's impression', r32 -> visir_flames, r21_bh -> £0 core-collapse code graphic, r33/r34 -> companion_speckle + orion_over_paranal, r21_neutron -> crab). 2) Assemble part roughs v01 on the locked 029 VO v02 from harvest plates + the PASSed code graphics (1624dde6) + teaching overlays (910a5a47). No full-frame chapter card inside 0:00-0:30 (OWB weekly audit J0804 change 2, Chief approved). Full source credits per HARVEST_REVIEW_v01; skip the ESO bumper on Chajnantor. 3) picture_qa + polish_gate on each part, contact sheets, PR, park for Chief. Disk: needs ≥ 20 GB free, so this waits for J0795. No Flow/Vertex/Omni/Veo/ElevenLabs; generation_authorized stays false; £0.",
+      "ref": "",
+      "film": "029",
+      "stage": "edit",
+      "after": "J0795",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-21T15:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0809",
+      "title": "HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After J0354 PASS (HOS main 509a1fed, 02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/full_join_v01_teach/REVIEW_v01.md). Apply every FIX row exactly as written: Part 02 drift first (insert already-minted 06_garden_years_t1 0.00-5.46 s after cut #18 and re-check #19-#32 land on their VO lines against the VO timings, not by eye), the 4 low-detail re-trims, the 13 overlay re-times to cut boundaries, the #20 crop under the Veo '169' numerals, labels on the two Part 05 DATA graphics, and re-render the 1:10 200-pounds card in HOS parchment house style. Output full_join_v02_teach + sha256, run picture_qa + polish_gate + gate:episode, write REVIEW_v02 delta (each FIX -> done/why not), PR, park for Chief. No new mints, no music bed (ElevenLabs holds until 30 Oct), no upload, no schedule. Needs ≥ 20 GB free, so waits for J0795; NAS copy only if the share answers within 20 s. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0795",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-21T15:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0810",
+      "title": "OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After J0771 PASS (5366e207). From the UAT master OWB UAT/saturn_ten_metres_thin_j0771/saturn_ten_metres_thin_v01.mp4 (sha256 8337555099d6…, verify first): build the Short's upload package (search-question title per the positive-question rule, e.g. 'How Thin Are Saturn's Rings?', description with the full-film link https://www.youtube.com/watch?v=55AEQwvs36g, Related = 55AEQwvs36g, cover from the contact frame, AI disclosure) and run the youtube:package dry run + gate_shorts_open. Propose the next free OWB Short slot with no collisions (read UPLOADS.json and the schedule). Commit the package, post it on #99, park for Chief final OK. No upload, no Studio change, no Buffer post from this job. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-21T15:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T15:34Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],

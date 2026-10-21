@@ -19,16 +19,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0275 | mini | blocked | claude | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0280 | mini | blocked | cursor | – | for cursor · studio · `cursor-auto` · HOS Related fixes ×4 after longs public (from J0245) |  |
 | J0287 | mini | blocked | chief | – | 030 upload · studio · 030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back |  |
-| J0288 | mini | blocked | codex | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
+| J0288 | mini | open | – | – | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0300 | mini | blocked | codex | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
-| J0307 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS 013 Darwin–Wallace: script v02 after facts pass (J0304 flags + Chief 2nd-look chronology notes) | 9db5a26 |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0345 | mini | blocked | cursor | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
-| J0352 | mini | blocked | codex | – | 007 picture · for codex · video · `flow-veo-3.1` · HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex) | 6206755581 |
-| J0353 | mini | blocked | codex | – | 029 picture · assembly · 029 Betelgeuse: £0 harvest of 47 harvest-route plates from boards v02 (no mint) | 1624dde65effbb6002917390a510e89e15278f82 |
-| J0354 | mini | blocked | gemini | – | 006 edit · review · HOS 006: full-film frame review of teach master full_join_v01_teach (no bed, no mint) |  |
+| J0352 | mini | open | – | – | 007 picture · for codex · video · `flow-veo-3.1` · HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex) | 6206755581 |
 | J0356 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0358 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0359 | mini | blocked | codex | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
@@ -412,7 +409,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0768 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0769 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0770 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0771 | mini | blocked | codex | – | assembly · OWB 021 Short: fix polish_gate/picture_qa horizontal gutter FAIL and 18.0s caption overlap on saturn_ten_metres_thin_v01 (£0, no spend) |  |
 | J0772 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0773 | any | blocked | gemini | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0774 | any | blocked | gemini | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
@@ -427,7 +423,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0783 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0784 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0785 | mini | blocked | codex | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
-| J0786 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0787 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0788 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0789 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
@@ -446,16 +441,20 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0804 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0805 | mini | claimed | gemini | 2026-10-21T16:35Z | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0806 | mini | open | – | – | Find the existing HOS Buffer API key on the Mini (names only, never values) |  |
+| J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
+| J0808 | mini | open (after J0795) | – | – | 029 edit · assembly · 029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint) |  |
+| J0809 | mini | open (after J0795) | – | – | assembly · HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) |  |
+| J0810 | mini | open | – | – | listing · OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) |  |
 
 Recently finished:
 
 - J0800 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0796 done: 022 Sun Shorts: add parent long link to descriptions (redescribe-videos.ts, staged payload) (Updated descriptions on y-SPHQ0-VjQ, n_4XskX0yZk, 2e-giqFmfy8 with parent long link; fresh API reads verify all three. Evidence 3245652b0 on codex/j0796-descriptions. No privacy/schedule change; £0.)
+- J0786 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (PASS (Chief, 21 Oct ~16:50 London): QA sweep verified: OWB and HOS newest packs 0 FAIL (021 ten_metres_thin repair now merged #248; 022 faint_young, 025 x3, 028/029 overlays; HOS 004/005/006 s08 Shorts, 006 full_join_v01_teach 0/91). No fix jobs needed. Older both-qa-sweep copies cancelled as duplicates of this one.)
+- J0771 done: OWB 021 Short: fix polish_gate/picture_qa horizontal gutter FAIL and 18.0s caption overlap on saturn_ten_metres_thin_v01 (£0, no spend) (PASS (Chief, 21 Oct ~16:50 London): OWB 021 Short saturn_ten_metres_thin_v01 repair. Chief pushed codex/j0771 (the worker's push was refused), opened OWB PR #248 and squash-merged 5366e207 (CI green). Contact sheet checked: rings now run diagonal with no horizontal gutter, 18.0 s shows only 'YOU ARE IN', end card carries the long title + id per house rule. 0:08 s03 low-detail WARN: KEEP (fine C-ring detail, reads clearly). gates_shorts_open/sfx/polish/picture_qa PASS, 0 FAIL. Master: OWB UAT/saturn_ten_metres_thin_j0771 (sha256 83375550…). NB the Mini's main checkout had untracked pre-fix copies of the same files; Chief moved them to ~/YouTube/_grok_scratch/chief/j0771_main_checkout_preexisting so git pull works again (nothing deleted). Not an upload OK. Next: J-new package dry run.)
 - J0712 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (12 OWB + 4 HOS longs; 65 OWB + 15 HOS Shorts. CTR hits vs 4%: OWB 1/12 (Jupiter 4.8%), HOS 1/4 (Germs 7.7%). Two newest Shorts unavailable. Main 60b862762; tracker verified; zero spend or YouTube changes.)
 - J0642 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0630 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs (plus 72 Shorts: 58 OWB + 14 HOS; 022 h8HGfyShEHI and HOS Short TbMMJSRKC3U not yet reported in Studio); CTR hits vs 4%: 2/15 (OWB -jmMROGoZCM 4.9% on 41 impr; HOS _C92tIJCk8A 7.9% on 38 impr); top volume: OWB 021 Saturn 55AEQwvs36g 1.8% CTR (1,166 impr, 205 views, 12.1% avg viewed), HOS 002 Periodic Table AL_-qlWko_g 3.3% CTR (958 impr, 145 views, 22.5% avg viewed))
 - J0626 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0611 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0596 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J0581 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J0566 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (0 fixes needed across last 10 live public videos (05_Analytics/live_fixes/2026-10-18.md @ b3f1782ef))
