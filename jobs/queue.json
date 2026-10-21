@@ -1,5 +1,5 @@
 {
-  "next_id": 812,
+  "next_id": 813,
   "jobs": [
     {
       "id": "J0001",
@@ -65932,6 +65932,33 @@
           "what": "added"
         }
       ]
+    },
+    {
+      "id": "J0812",
+      "title": "OWB Buffer: first R2 upload + backfill the 4 missed Shorts (82Ao0v5XiQI airs 22 Oct 11:30)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, 21 Oct 2026: \"merge 249\".** PR #249 (merged, d80c9534) moves the Buffer mirror's media host from the suspended Vercel Blob store to Cloudflare R2 (bucket `owb-media`). Ben has put the four R2 keys in this Mini's `07_Content-Ops/.env`. Buffer has missed every OWB Short since 13 Oct; the next one, 82Ao0v5XiQI, airs **Thu 22 Oct 11:30 London**, so this job comes first.\n\nDo, in order, and stop at the first step that fails:\n\n1. `git pull` on main. In `07_Content-Ops`: `npm ci` (picks up `aws4fetch`).\n2. **Keys present, names only.** `grep -oE '^(R2_[A-Z_]+|BUFFER_API_KEY)=' .env`. All of `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_PUBLIC_URL` and `BUFFER_API_KEY` must be listed. Never print, echo or commit a value. Missing one: post one line on #99 naming the missing key, block `needs Ben: R2 key missing in .env`, stop.\n3. **Dry run.** `npm run buffer:check -- --dry-run`. Post the plan summary on #99: which videos it would mirror. It should include 82Ao0v5XiQI (22 Oct), dM1OgGPAYvw (26 Oct), BbsyFrV8kCY (28 Oct) and Jcuiy0a9BFI (29 Oct). If any of the four is missing, say why it was skipped (no registered media file, already aired, …); for a missing media file, `register` it from the film's final Short mp4 and re-run the dry run.\n4. **Real run.** `npm run buffer:check`. Errors with `R2 upload … failed: 403`: the token lacks Object Read & Write on `owb-media`; block `needs Ben: R2 token permissions`, stop.\n5. **Verify.** For each new media URL in `00_Brand/Channel-Setup/social/BUFFER_POSTS.json`: `curl -sI <url>` answers 200 with `content-type: video/mp4` (or image/*), and the host is the `pub-…r2.dev` address. Each of the four Shorts has instagram, facebook and threads posts scheduled at its YouTube publish time.\n6. Commit `BUFFER_POSTS.json` (and any `UPLOADS.json`/registry change) with a message naming the videos. Post on #99: what was scheduled, per video and channel, and anything skipped and why. Mark this job done.\n\n£0 spend (R2 free tier). No Studio or YouTube changes. HOS is not part of this job (it has no Buffer key yet; J0806).\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-21T15:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T15:50Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
