@@ -60397,10 +60397,24 @@
           "at": "2026-10-21T03:14Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-21T03:16Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 6925 min (heartbeat 2026-10-16T07:51:05Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "qa",
-      "backlog": "both-qa-sweep"
+      "backlog": "both-qa-sweep",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
