@@ -60894,10 +60894,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-21T04:31Z",
-      "eta": "2026-10-21T06:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T04:30Z",
       "result": "",
@@ -60926,6 +60926,11 @@
           "at": "2026-10-21T04:32Z",
           "by": "codex",
           "what": "step 0 of 4 done: Storage prerequisite in detached tmux codex-j0775-scratch: 65 superseded OWB028 scratch clips, 414143653 bytes; rsync then SHA-256 verification before local removal. No Short selected/rendered."
+        },
+        {
+          "at": "2026-10-21T04:32Z",
+          "by": "codex",
+          "what": "released: Storage prerequisite runs detached in tmux codex-j0775-scratch. Log /Users/benjaminoats/_desk/logs/J0775-scratch.log; completion /Users/benjaminoats/_desk/logs/J0775-scratch.done. Missing .done means still running: never duplicate. Read exit code/log next run, recheck free space, then resume 0/4 and select eligible locked/live long. No Short rendered, spend or upload."
         }
       ],
       "kind": "assembly",
