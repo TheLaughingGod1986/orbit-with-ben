@@ -24,8 +24,7 @@ class Refill(unittest.TestCase):
         d = empty()
         refill.do_refill(d, ITEMS, T0)
         for j in d["jobs"]:
-            jobs.do_block(j, "cursor", "parked for Chief: x", T0) if j["status"] == "claimed" else None
-            j["status"] = "blocked"
+            j.update(status="blocked", result="parked for Chief: x")
         added = refill.do_refill(d, ITEMS, T0 + H)
         self.assertEqual([d["jobs"][-1]["backlog"]], ["d"])
         self.assertEqual(len(added), 1)
@@ -56,6 +55,16 @@ class Escalate(unittest.TestCase):
         self.assertEqual(len(refill.do_escalate(d, T0 + 3 * H)), 1)
         self.assertEqual(refill.do_escalate(d, T0 + 4 * H), [])
 
+    def test_a_backlog_key_is_posted_at_most_once_a_day(self):
+        d = empty()
+        for i in range(2):
+            j = jobs.do_add(d, title=f"r{i}", needs="mini", body="", by="refill", at=T0)
+            j.update(status="blocked", result="parked for Chief: review", backlog="a")
+            jobs.log(j, T0 + i * H, "cursor", "blocked: parked for Chief: review")
+        self.assertEqual([j["title"] for j in refill.do_escalate(d, T0 + 3 * H)], ["r0"])
+        self.assertEqual(refill.do_escalate(d, T0 + 10 * H), [])
+        self.assertEqual([j["title"] for j in refill.do_escalate(d, T0 + 28 * H)], ["r1"])
+
 
 class NeverEmpty(unittest.TestCase):
     def test_nothing_ready_adds_the_oldest_key_despite_cooldown(self):
@@ -64,20 +73,12 @@ class NeverEmpty(unittest.TestCase):
         d["jobs"][0]["status"] = "done"
         self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)  # cooldown waived: queue was empty
 
-    def test_parked_key_can_run_again(self):
+    def test_nothing_ready_and_every_key_busy_adds_nothing(self):
         d = empty()
-        refill.do_refill(d, ITEMS[:1], T0)
-        d["jobs"][0]["status"] = "blocked"
-        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)
-
-    def test_two_parked_hold_the_key_even_when_nothing_is_ready(self):
-        d = empty()
-        for t in (T0, T0 + H):
-            refill.do_refill(d, ITEMS[:1], t)
-            d["jobs"][-1].update(status="blocked", result="parked for Chief: review")
-        self.assertEqual(refill.do_refill(d, ITEMS[:1], T0 + 30 * H), [])
-        d["jobs"][0].update(status="done", result="Chief PASS")
-        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + 31 * H)), 1)
+        refill.do_refill(d, ITEMS[:2], T0)
+        d["jobs"][0].update(status="blocked", result="parked for Chief: review")
+        d["jobs"][1].update(status="blocked", result="Storage prerequisite: 7.8 GiB free")
+        self.assertEqual(refill.do_refill(d, ITEMS[:2], T0 + 30 * H), [])
 
     def test_paused_item_is_never_added(self):
         d = empty()
@@ -92,6 +93,41 @@ class NeverEmpty(unittest.TestCase):
         self.assertEqual(keys["owb-weekly-audit"]["every_h"], 168)
         for it in refill.load_backlog():
             self.assertNotIn(it["kind"], ("video", "vo"))  # never spends on generation or TTS
+
+
+class OneLiveCopyPerKey(unittest.TestCase):
+    """J0811: 16-21 Oct the refill added 28-30 copies of each of 15 keys, because a parked copy freed its key."""
+
+    def later(self, status, result=""):
+        d = empty()
+        refill.do_refill(d, ITEMS[:1], T0)
+        d["jobs"][0].update(status=status, result=result)
+        jobs.do_add(d, title="pipeline", needs="cloud", body="", by="chief", at=T0)  # not Mini-ready
+        return refill.do_refill(d, ITEMS[:1], T0 + 13 * H)  # past every_h, nothing ready
+
+    def test_open_copy_holds_the_key(self):
+        self.assertEqual(self.later("open"), [])
+
+    def test_claimed_copy_holds_the_key(self):
+        self.assertEqual(self.later("claimed"), [])
+
+    def test_parked_for_chief_holds_the_key(self):
+        self.assertEqual(self.later("blocked", "parked for Chief: script review"), [])
+
+    def test_any_blocked_copy_holds_the_key(self):
+        self.assertEqual(self.later("blocked", "Storage prerequisite: 7.8 GiB free"), [])
+
+    def test_done_or_cancelled_frees_it_after_every_h(self):
+        self.assertEqual(len(self.later("done", "PASS")), 1)
+        self.assertEqual(len(self.later("cancelled", "duplicate")), 1)
+
+    def test_daily_item_waits_for_yesterdays_blocked_copy(self):
+        item = dict(Daily.ITEM)
+        d = empty()
+        day1 = dt.datetime(2026, 10, 13, 7, 0, tzinfo=dt.timezone.utc)  # 08:00 London
+        self.assertEqual(len(refill.do_refill(d, [item], day1)), 1)
+        d["jobs"][-1].update(status="blocked", result="parked for Chief: CTR readout")
+        self.assertEqual(refill.do_refill(d, [item], day1 + 24 * H), [])
 
 
 class Daily(unittest.TestCase):

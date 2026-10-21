@@ -384,8 +384,8 @@ Work goes through `scripts/jobs.py` (`jobs/queue.json`, shown in `JOBS.md` and o
 - A job with `--film/--stage` claims that board stage too, so the board and the queue always agree.
 
 ## Always on (Ben, 12 Oct 2026)
-- **The Mini never idles.** When fewer than 3 Mini jobs are ready, the relay adds the next no-spend items from `jobs/backlog.json` (`scripts/refill.py refill`). Backlog work never spends, deletes or goes public, and ends parked for Chief.
-- **Reviews are done as soon as they land.** No fixed review slot. A parked review holds only its own job; everything else keeps running. A review parked over 2 h is posted once on #99 for Chief (`refill.py escalate`).
+- **The Mini never idles.** When fewer than 3 Mini jobs are ready, the relay adds the next no-spend items from `jobs/backlog.json` (`scripts/refill.py refill`). Backlog work never spends, deletes or goes public, and ends parked for Chief. One live copy per backlog item: no new copy while one is open, claimed or blocked for any reason (Chief J0811, 21 Oct 2026, after 406 duplicates in five days).
+- **Reviews are done as soon as they land.** No fixed review slot. A parked review holds only its own job; everything else keeps running. A review parked over 2 h is posted once on #99 for Chief (`refill.py escalate`), at most once a day per backlog item.
 - **Jobs start as soon as their inputs are ready.** Use `--after <job>` for inputs. A start time (`--not-before`) is allowed only with `--reset "<window>"` naming a real quota, credit or usage reset or an air date; `jobs.py` refuses it otherwise.
 
 ## Chief relay (7 Oct 2026)
