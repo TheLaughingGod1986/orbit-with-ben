@@ -440,7 +440,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0797 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0798 | mini | blocked | codex | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0799 | mini | claimed | codex | 2026-10-21T14:36Z | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0801 | any | claimed | gemini | 2026-10-21T13:46Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0801 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
