@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0808 | mini | open (after J0795) | – | – | 029 edit · assembly · 029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint) |  |
 | J0809 | mini | open (after J0795) | – | – | assembly · HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) |  |
 | J0810 | mini | open | – | – | listing · OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) |  |
-| J0811 | cloud | open | – | – | refill.py: never add a backlog copy while one of that key is open, claimed or blocked (fix the ~28-copies-per-family flood) |  |
+| J0811 | cloud | claimed | claude | 2026-10-21T17:22Z | refill.py: never add a backlog copy while one of that key is open, claimed or blocked (fix the ~28-copies-per-family flood) |  |
 | J0812 | mini | open | – | – | studio · OWB Buffer: first R2 upload + backfill the 4 missed Shorts (82Ao0v5XiQI airs 22 Oct 11:30) |  |
 
 Recently finished:
