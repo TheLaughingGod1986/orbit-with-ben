@@ -61466,6 +61466,11 @@
           "at": "2026-10-21T08:04Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only listing check on HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-21T08:05Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Ran HOS npm run channel:audit: 43 videos (21 public + 12 scheduled + 10 unscheduled private drafts), 0 errors"
         }
       ],
       "kind": "listing",
@@ -61487,11 +61492,11 @@
         "HOS:005"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-21T08:04Z",
+        "at": "2026-10-21T08:05Z",
         "by": "gemini",
-        "note": "Starting read-only listing check on HOS live and scheduled videos"
+        "note": "Ran HOS npm run channel:audit: 43 videos (21 public + 12 scheduled + 10 unscheduled private drafts), 0 errors"
       }
     },
     {
