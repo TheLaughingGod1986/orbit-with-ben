@@ -62721,6 +62721,11 @@
           "at": "2026-10-21T12:12Z",
           "by": "claude",
           "what": "after J0795 (Mini disk under 20 GB; render waits for the NAS move)"
+        },
+        {
+          "at": "2026-10-21T12:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex is down too; next in its chain: gemini on its default"
         }
       ],
       "kind": "assembly",
@@ -62732,8 +62737,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
-      "model": "gpt-6.1-sol",
+      "for": "gemini",
+      "model": "gemini-agy",
       "taskKeys": [
         "OWB:024"
       ],
