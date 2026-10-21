@@ -1,0 +1,2305 @@
+{
+  "verdict": "PASS",
+  "video": "/private/tmp/024_LightSpeed_full_rough_v06.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0,
+      "reviewed_ok": {
+        "note": "0:03 open: real-physics starfield on black, frame 0 reviewed at v03 (Chief to sign)",
+        "passed": [
+          "near-black: mean 14.03, p95 68.0"
+        ]
+      }
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "lightclock_a.mp4",
+      "title": null,
+      "t": 15.97,
+      "at": "0:16",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 6,
+      "row": "6",
+      "source": "lightclock_b.mp4",
+      "title": null,
+      "t": 30.4,
+      "at": "0:30",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 7,
+      "row": "6",
+      "source": "ACS3_LookingDown.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 2",
+      "t": 34.1,
+      "at": "0:34",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 2' (composite), look at it full size",
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "energy_a.mp4",
+      "title": null,
+      "t": 38.62,
+      "at": "0:39",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 10,
+      "row": "7",
+      "source": "gpsclocks_a.mp4",
+      "title": null,
+      "t": 47.02,
+      "at": "0:47",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 12,
+      "row": "8",
+      "source": "gpsclocks_b.mp4",
+      "title": null,
+      "t": 56.2,
+      "at": "0:56",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 14,
+      "row": "8",
+      "source": "gpsclocks_c.mp4",
+      "title": null,
+      "t": 64.62,
+      "at": "1:05",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 16,
+      "row": "9",
+      "source": "mapdrift_a.mp4",
+      "title": null,
+      "t": 74.57,
+      "at": "1:15",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 17,
+      "row": "9",
+      "source": "mapdrift_a.mp4",
+      "title": null,
+      "t": 78.62,
+      "at": "1:19",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.3
+    },
+    {
+      "cut": 18,
+      "row": "10",
+      "source": "iss035e017673.jpg",
+      "title": "Earth Observations taken by the Expedition 35 Crew",
+      "t": 82.25,
+      "at": "1:22",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.48 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "1:22 + 7:27 ISS night still, Expedition 35 (Chief to sign)",
+        "passed": [
+          "near-black: mean 12.97, p95 43.0"
+        ]
+      }
+    },
+    {
+      "cut": 23,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "title": null,
+      "t": 105.52,
+      "at": "1:46",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 24,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "title": null,
+      "t": 108.73,
+      "at": "1:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.8
+    },
+    {
+      "cut": 27,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "title": null,
+      "t": 120.13,
+      "at": "2:00",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 28,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "title": null,
+      "t": 124.22,
+      "at": "2:04",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.433
+    },
+    {
+      "cut": 30,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "title": null,
+      "t": 133.18,
+      "at": "2:13",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 31,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "title": null,
+      "t": 136.77,
+      "at": "2:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.6
+    },
+    {
+      "cut": 32,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "title": null,
+      "t": 139.83,
+      "at": "2:20",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.667
+    },
+    {
+      "cut": 34,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "title": null,
+      "t": 147.68,
+      "at": "2:28",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 35,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "title": null,
+      "t": 152.07,
+      "at": "2:32",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.6
+    },
+    {
+      "cut": 37,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 159.13,
+      "at": "2:39",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 19.4s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 38,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 164.37,
+      "at": "2:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.433
+    },
+    {
+      "cut": 39,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 169.05,
+      "at": "2:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 10.967
+    },
+    {
+      "cut": 40,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 173.5,
+      "at": "2:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 14.8
+    },
+    {
+      "cut": 41,
+      "row": "17",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 177.68,
+      "at": "2:58",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0023 < film p5 0.0060"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 42,
+      "row": "17",
+      "source": "muons_a.mp4",
+      "title": null,
+      "t": 181.98,
+      "at": "3:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 43,
+      "row": "17",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 186.67,
+      "at": "3:07",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0001 < film p5 0.0060"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "17",
+      "source": "muons_b.mp4",
+      "title": null,
+      "t": 190.78,
+      "at": "3:11",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 46,
+      "row": "17",
+      "source": "muons_c.mp4",
+      "title": null,
+      "t": 197.08,
+      "at": "3:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 48,
+      "row": "18",
+      "source": "muons_d.mp4",
+      "title": null,
+      "t": 206.87,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 49,
+      "row": "18",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 211.18,
+      "at": "3:31",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.14 < 18.0",
+        "low detail: edge density 0.0002 < film p5 0.0060"
+      ],
+      "offset": 620.0,
+      "reviewed_ok": {
+        "note": "3:31 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 10.04, p95 14.0"
+        ]
+      }
+    },
+    {
+      "cut": 50,
+      "row": "19",
+      "source": "starfield_a.mp4",
+      "title": null,
+      "t": 214.53,
+      "at": "3:35",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 51,
+      "row": "19",
+      "source": "starfield_a.mp4",
+      "title": null,
+      "t": 217.78,
+      "at": "3:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.433
+    },
+    {
+      "cut": 52,
+      "row": "20",
+      "source": "starfield_a.mp4",
+      "title": null,
+      "t": 221.78,
+      "at": "3:42",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 54,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 230.65,
+      "at": "3:51",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0060"
+      ],
+      "offset": 380.0
+    },
+    {
+      "cut": 56,
+      "row": "22",
+      "source": "twinclocks_a.mp4",
+      "title": null,
+      "t": 238.27,
+      "at": "3:58",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 59,
+      "row": "22",
+      "source": "twinclocks_b.mp4",
+      "title": null,
+      "t": 251.2,
+      "at": "4:11",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 61,
+      "row": "24",
+      "source": "starfield_e.mp4",
+      "title": null,
+      "t": 261.37,
+      "at": "4:21",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 62,
+      "row": "24",
+      "source": "starfield_e.mp4",
+      "title": null,
+      "t": 266.2,
+      "at": "4:26",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.367
+    },
+    {
+      "cut": 64,
+      "row": "25",
+      "source": "contraction_a.mp4",
+      "title": null,
+      "t": 277.05,
+      "at": "4:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 67,
+      "row": "26",
+      "source": "twinclocks_c.mp4",
+      "title": null,
+      "t": 289.32,
+      "at": "4:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 69,
+      "row": "26",
+      "source": "twinclocks_d.mp4",
+      "title": null,
+      "t": 299.5,
+      "at": "5:00",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 75,
+      "row": "30",
+      "source": "energy_b.mp4",
+      "title": null,
+      "t": 331.3,
+      "at": "5:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 78,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 344.15,
+      "at": "5:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 79,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 348.8,
+      "at": "5:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.733
+    },
+    {
+      "cut": 80,
+      "row": "31",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 353.82,
+      "at": "5:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.8
+    },
+    {
+      "cut": 81,
+      "row": "31",
+      "source": "SSC-20240229-s00309.tif",
+      "title": "NASA Caps Off February with RS-25 Engine Certification Test",
+      "t": 357.73,
+      "at": "5:58",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 82,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "title": null,
+      "t": 361.22,
+      "at": "6:01",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 83,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "title": null,
+      "t": 365.88,
+      "at": "6:06",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.6
+    },
+    {
+      "cut": 88,
+      "row": "34",
+      "source": "ACS3_SolarSailSunrise.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 3",
+      "t": 391.27,
+      "at": "6:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 3' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 89,
+      "row": "34",
+      "source": "ACS3_LookingDown.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 2",
+      "t": 396.02,
+      "at": "6:36",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 2' (composite), look at it full size",
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "35",
+      "source": "starfield_b.mp4",
+      "title": null,
+      "t": 400.42,
+      "at": "6:40",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 91,
+      "row": "35",
+      "source": "starfield_b.mp4",
+      "title": null,
+      "t": 404.37,
+      "at": "6:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.8
+    },
+    {
+      "cut": 94,
+      "row": "35",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 418.32,
+      "at": "6:58",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.93 < 18.0",
+        "low detail: edge density 0.0007 < film p5 0.0060"
+      ],
+      "offset": 800.0,
+      "reviewed_ok": {
+        "note": "6:58 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 4.92, p95 15.0"
+        ]
+      }
+    },
+    {
+      "cut": 96,
+      "row": "36",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 427.07,
+      "at": "7:07",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.24 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "low detail: luma std 10.24 < 13.44 and edge density 0.0245 < 0.0259 (absolute floor)",
+          "near-black: mean 6.81, p95 20.0"
+        ]
+      }
+    },
+    {
+      "cut": 99,
+      "row": "36",
+      "source": "ACS3_SolarSailSunrise.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 3",
+      "t": 436.78,
+      "at": "7:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 3' (composite), look at it full size",
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 100,
+      "row": "37",
+      "source": "twinclocks_e.mp4",
+      "title": null,
+      "t": 440.5,
+      "at": "7:20",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 103,
+      "row": "38",
+      "source": "gpsclocks_d.mp4",
+      "title": null,
+      "t": 451.28,
+      "at": "7:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 105,
+      "row": "38",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 461.2,
+      "at": "7:41",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0051 < film p5 0.0060"
+      ],
+      "offset": 176.0,
+      "reviewed_ok": {
+        "note": "7:41 ISS night pass over Earth (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 10.11, p95 13.0"
+        ]
+      }
+    },
+    {
+      "cut": 110,
+      "row": "39",
+      "source": "starfield_i.mp4",
+      "title": null,
+      "t": 487.27,
+      "at": "8:07",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "starfield.mp4",
+      "title": null,
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 12.0,
+      "reviewed_ok": {
+        "note": "0:03 open: real-physics starfield on black, frame 0 reviewed at v03 (Chief to sign)",
+        "passed": [
+          "near-black: mean 14.03, p95 68.0"
+        ]
+      }
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 8.08,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 11.35,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 75.0
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "lightclock_a.mp4",
+      "title": null,
+      "t": 15.97,
+      "at": "0:16",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 4,
+      "row": "4",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "Blue Marble Next Generation Earth",
+      "t": 21.07,
+      "at": "0:21",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 5,
+      "row": "5",
+      "source": "GPS_Block_IIIA.jpg",
+      "title": "File:GPS Block IIIA.jpg",
+      "t": 25.77,
+      "at": "0:26",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 6,
+      "row": "6",
+      "source": "lightclock_b.mp4",
+      "title": null,
+      "t": 30.4,
+      "at": "0:30",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 7,
+      "row": "6",
+      "source": "ACS3_LookingDown.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 2",
+      "t": 34.1,
+      "at": "0:34",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 2' (composite), look at it full size",
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "energy_a.mp4",
+      "title": null,
+      "t": 38.62,
+      "at": "0:39",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 9,
+      "row": "7",
+      "source": "GPS_Block_IIIA.jpg",
+      "title": "File:GPS Block IIIA.jpg",
+      "t": 42.9,
+      "at": "0:43",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 10,
+      "row": "7",
+      "source": "gpsclocks_a.mp4",
+      "title": null,
+      "t": 47.02,
+      "at": "0:47",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 11,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "title": "Deep Space Atomic Clock Hardware",
+      "t": 51.53,
+      "at": "0:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 12,
+      "row": "8",
+      "source": "gpsclocks_b.mp4",
+      "title": null,
+      "t": 56.2,
+      "at": "0:56",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 13,
+      "row": "8",
+      "source": "PIA24573.jpg",
+      "title": "Deep Space Atomic Clock Hardware",
+      "t": 60.62,
+      "at": "1:01",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 14,
+      "row": "8",
+      "source": "gpsclocks_c.mp4",
+      "title": null,
+      "t": 64.62,
+      "at": "1:05",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 15,
+      "row": "9",
+      "source": "iss040e091231.jpg",
+      "title": "Earth Observation",
+      "t": 69.38,
+      "at": "1:09",
+      "fail": [],
+      "warn": [],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "1:09 + 7:14 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "near-black: mean 24.82, p95 76.0"
+        ]
+      }
+    },
+    {
+      "cut": 16,
+      "row": "9",
+      "source": "mapdrift_a.mp4",
+      "title": null,
+      "t": 74.57,
+      "at": "1:15",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 17,
+      "row": "9",
+      "source": "mapdrift_a.mp4",
+      "title": null,
+      "t": 78.62,
+      "at": "1:19",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 6.3
+    },
+    {
+      "cut": 18,
+      "row": "10",
+      "source": "iss035e017673.jpg",
+      "title": "Earth Observations taken by the Expedition 35 Crew",
+      "t": 82.25,
+      "at": "1:22",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.48 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "1:22 + 7:27 ISS night still, Expedition 35 (Chief to sign)",
+        "passed": [
+          "near-black: mean 12.97, p95 43.0"
+        ]
+      }
+    },
+    {
+      "cut": 19,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "title": "DC-8 Airborne Laboratory in flight",
+      "t": 86.38,
+      "at": "1:26",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "11",
+      "source": "EC98-44444-004.jpg",
+      "title": "DC-8 Airborne Laboratory in banked flight over snow-capped Sierra Nevada mountain range",
+      "t": 91.0,
+      "at": "1:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 21,
+      "row": "11",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 96.35,
+      "at": "1:36",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 22,
+      "row": "11",
+      "source": "EC00-0050-001.jpg",
+      "title": "DC-8 Airborne Laboratory in flight",
+      "t": 101.3,
+      "at": "1:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 23,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "title": null,
+      "t": 105.52,
+      "at": "1:46",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 24,
+      "row": "12",
+      "source": "lightclock_c.mp4",
+      "title": null,
+      "t": 108.73,
+      "at": "1:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.8
+    },
+    {
+      "cut": 25,
+      "row": "13",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 112.13,
+      "at": "1:52",
+      "fail": [],
+      "warn": [],
+      "offset": 1200.0
+    },
+    {
+      "cut": 26,
+      "row": "13",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 116.32,
+      "at": "1:56",
+      "fail": [],
+      "warn": [],
+      "offset": 1203.68
+    },
+    {
+      "cut": 27,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "title": null,
+      "t": 120.13,
+      "at": "2:00",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 28,
+      "row": "14",
+      "source": "lightclock_d.mp4",
+      "title": null,
+      "t": 124.22,
+      "at": "2:04",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.433
+    },
+    {
+      "cut": 29,
+      "row": "14",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 128.98,
+      "at": "2:09",
+      "fail": [],
+      "warn": [],
+      "offset": 500.0
+    },
+    {
+      "cut": 30,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "title": null,
+      "t": 133.18,
+      "at": "2:13",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 31,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "title": null,
+      "t": 136.77,
+      "at": "2:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.6
+    },
+    {
+      "cut": 32,
+      "row": "14",
+      "source": "lightclock_e.mp4",
+      "title": null,
+      "t": 139.83,
+      "at": "2:20",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.667
+    },
+    {
+      "cut": 33,
+      "row": "15",
+      "source": "orbit_lightclock_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 143.25,
+      "at": "2:23",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5,
+      "reviewed_ok": {
+        "note": "2:23 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+        "passed": [
+          "near-black: mean 16.43, p95 60.0"
+        ]
+      }
+    },
+    {
+      "cut": 34,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "title": null,
+      "t": 147.68,
+      "at": "2:28",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 35,
+      "row": "15",
+      "source": "lightclock_f.mp4",
+      "title": null,
+      "t": 152.07,
+      "at": "2:32",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.6
+    },
+    {
+      "cut": 36,
+      "row": "15",
+      "source": "iss038e020263.jpg",
+      "title": "ISS Expedition 38 Astronaut Mike Hopkins Spacewalk",
+      "t": 155.28,
+      "at": "2:35",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 37,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 159.13,
+      "at": "2:39",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is",
+        "reuse: on screen 19.4s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 38,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 164.37,
+      "at": "2:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 5.433
+    },
+    {
+      "cut": 39,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 169.05,
+      "at": "2:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 10.967
+    },
+    {
+      "cut": 40,
+      "row": "16",
+      "source": "gammaclocks_a.mp4",
+      "title": null,
+      "t": 173.5,
+      "at": "2:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 14.8
+    },
+    {
+      "cut": 41,
+      "row": "17",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 177.68,
+      "at": "2:58",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0023 < film p5 0.0060"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 42,
+      "row": "17",
+      "source": "muons_a.mp4",
+      "title": null,
+      "t": 181.98,
+      "at": "3:02",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 43,
+      "row": "17",
+      "source": "iss071e439624.jpg",
+      "title": "An orbital sunrise colorfully illuminates the Earth's atmosphere",
+      "t": 186.67,
+      "at": "3:07",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0001 < film p5 0.0060"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "17",
+      "source": "muons_b.mp4",
+      "title": null,
+      "t": 190.78,
+      "at": "3:11",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 45,
+      "row": "17",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 193.98,
+      "at": "3:14",
+      "fail": [],
+      "warn": [],
+      "offset": 50.0
+    },
+    {
+      "cut": 46,
+      "row": "17",
+      "source": "muons_c.mp4",
+      "title": null,
+      "t": 197.08,
+      "at": "3:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 47,
+      "row": "18",
+      "source": "sts33-17-005a.jpg",
+      "title": "STS-33 MS Carter sips drink from a beverage container on OV-103's middeck",
+      "t": 201.75,
+      "at": "3:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "18",
+      "source": "muons_d.mp4",
+      "title": null,
+      "t": 206.87,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 49,
+      "row": "18",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 211.18,
+      "at": "3:31",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.14 < 18.0",
+        "low detail: edge density 0.0002 < film p5 0.0060"
+      ],
+      "offset": 620.0,
+      "reviewed_ok": {
+        "note": "3:31 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 10.04, p95 14.0"
+        ]
+      }
+    },
+    {
+      "cut": 50,
+      "row": "19",
+      "source": "starfield_a.mp4",
+      "title": null,
+      "t": 214.53,
+      "at": "3:35",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 51,
+      "row": "19",
+      "source": "starfield_a.mp4",
+      "title": null,
+      "t": 217.78,
+      "at": "3:38",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.433
+    },
+    {
+      "cut": 52,
+      "row": "20",
+      "source": "starfield_a.mp4",
+      "title": null,
+      "t": 221.78,
+      "at": "3:42",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 53,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 226.12,
+      "at": "3:46",
+      "fail": [],
+      "warn": [],
+      "offset": 260.0
+    },
+    {
+      "cut": 54,
+      "row": "21",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 230.65,
+      "at": "3:51",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0060"
+      ],
+      "offset": 380.0
+    },
+    {
+      "cut": 55,
+      "row": "21",
+      "source": "orbit_thumb_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 234.43,
+      "at": "3:54",
+      "fail": [],
+      "warn": [],
+      "offset": 1.2
+    },
+    {
+      "cut": 56,
+      "row": "22",
+      "source": "twinclocks_a.mp4",
+      "title": null,
+      "t": 238.27,
+      "at": "3:58",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 57,
+      "row": "22",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 243.33,
+      "at": "4:03",
+      "fail": [],
+      "warn": [],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "near-black: mean 8.33, p95 18.0"
+        ]
+      }
+    },
+    {
+      "cut": 58,
+      "row": "22",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 247.33,
+      "at": "4:07",
+      "fail": [],
+      "warn": [],
+      "offset": 1740.0
+    },
+    {
+      "cut": 59,
+      "row": "22",
+      "source": "twinclocks_b.mp4",
+      "title": null,
+      "t": 251.2,
+      "at": "4:11",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 60,
+      "row": "23",
+      "source": "iss019e018483.jpg",
+      "title": "Expedition 19 crew tests water from Recycling system",
+      "t": 256.55,
+      "at": "4:17",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 61,
+      "row": "24",
+      "source": "starfield_e.mp4",
+      "title": null,
+      "t": 261.37,
+      "at": "4:21",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 62,
+      "row": "24",
+      "source": "starfield_e.mp4",
+      "title": null,
+      "t": 266.2,
+      "at": "4:26",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.367
+    },
+    {
+      "cut": 63,
+      "row": "25",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "Blue Marble Next Generation Earth",
+      "t": 271.58,
+      "at": "4:32",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 64,
+      "row": "25",
+      "source": "contraction_a.mp4",
+      "title": null,
+      "t": 277.05,
+      "at": "4:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 65,
+      "row": "25",
+      "source": "orbit_walk_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 281.98,
+      "at": "4:42",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 66,
+      "row": "25",
+      "source": "orbit_walk_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 285.42,
+      "at": "4:45",
+      "fail": [],
+      "warn": [],
+      "offset": 4.4
+    },
+    {
+      "cut": 67,
+      "row": "26",
+      "source": "twinclocks_c.mp4",
+      "title": null,
+      "t": 289.32,
+      "at": "4:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 68,
+      "row": "26",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 294.5,
+      "at": "4:54",
+      "fail": [],
+      "warn": [],
+      "offset": 2400.0
+    },
+    {
+      "cut": 69,
+      "row": "26",
+      "source": "twinclocks_d.mp4",
+      "title": null,
+      "t": 299.5,
+      "at": "5:00",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 70,
+      "row": "26",
+      "source": "iss038e020263.jpg",
+      "title": "ISS Expedition 38 Astronaut Mike Hopkins Spacewalk",
+      "t": 304.3,
+      "at": "5:04",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 71,
+      "row": "26",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 309.78,
+      "at": "5:10",
+      "fail": [],
+      "warn": [],
+      "offset": 110.0
+    },
+    {
+      "cut": 72,
+      "row": "27",
+      "source": "orbit_returns_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 314.88,
+      "at": "5:15",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0,
+      "reviewed_ok": {
+        "note": "5:15 Orbit in dark space (Omni). Not on the Chief's named list: Chief to rule",
+        "passed": [
+          "near-black: mean 19.45, p95 70.0"
+        ]
+      }
+    },
+    {
+      "cut": 73,
+      "row": "28",
+      "source": "ED07-0256-09.jpg",
+      "title": "NASA's DC-8 airborne science laboratory soars over the Dryden Flight Research Center upon its return to the center on Nov. 8, 2007",
+      "t": 320.48,
+      "at": "5:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 74,
+      "row": "29",
+      "source": "SSC-20240229-s00309.tif",
+      "title": "NASA Caps Off February with RS-25 Engine Certification Test",
+      "t": 326.7,
+      "at": "5:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 75,
+      "row": "30",
+      "source": "energy_b.mp4",
+      "title": null,
+      "t": 331.3,
+      "at": "5:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 76,
+      "row": "30",
+      "source": "SSC-2015-00064.jpg",
+      "title": "Lighting up the Night",
+      "t": 335.17,
+      "at": "5:35",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 77,
+      "row": "30",
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "title": "Black Marble - City Lights 2012",
+      "t": 339.63,
+      "at": "5:40",
+      "fail": [],
+      "warn": [],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "5:40 Black Marble city lights (NASA; Chief to sign)",
+        "passed": [
+          "near-black: mean 6.48, p95 26.0"
+        ]
+      }
+    },
+    {
+      "cut": 78,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 344.15,
+      "at": "5:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 79,
+      "row": "30",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 348.8,
+      "at": "5:49",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.733
+    },
+    {
+      "cut": 80,
+      "row": "31",
+      "source": "energy_c.mp4",
+      "title": null,
+      "t": 353.82,
+      "at": "5:54",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 9.8
+    },
+    {
+      "cut": 81,
+      "row": "31",
+      "source": "SSC-20240229-s00309.tif",
+      "title": "NASA Caps Off February with RS-25 Engine Certification Test",
+      "t": 357.73,
+      "at": "5:58",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 82,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "title": null,
+      "t": 361.22,
+      "at": "6:01",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 83,
+      "row": "31",
+      "source": "energy_d.mp4",
+      "title": null,
+      "t": 365.88,
+      "at": "6:06",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 4.6
+    },
+    {
+      "cut": 84,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "title": "Views of the overhead flight deck window showing debris impact damage",
+      "t": 371.05,
+      "at": "6:11",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 85,
+      "row": "32",
+      "source": "sts080-326-010.jpg",
+      "title": "Views of the overhead flight deck window showing debris impact damage",
+      "t": 376.25,
+      "at": "6:16",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 86,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "title": "Parker Solar Probe Launch",
+      "t": 381.83,
+      "at": "6:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 87,
+      "row": "33",
+      "source": "NHQ201808120013.tif",
+      "title": "Parker Solar Probe Launch",
+      "t": 387.02,
+      "at": "6:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 88,
+      "row": "34",
+      "source": "ACS3_SolarSailSunrise.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 3",
+      "t": 391.27,
+      "at": "6:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 3' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 89,
+      "row": "34",
+      "source": "ACS3_LookingDown.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 2",
+      "t": 396.02,
+      "at": "6:36",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 2' (composite), look at it full size",
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "35",
+      "source": "starfield_b.mp4",
+      "title": null,
+      "t": 400.42,
+      "at": "6:40",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 91,
+      "row": "35",
+      "source": "starfield_b.mp4",
+      "title": null,
+      "t": 404.37,
+      "at": "6:44",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 3.8
+    },
+    {
+      "cut": 92,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "title": "File:Gaia\u2019s sky in colour ESA393127.jpg",
+      "t": 409.58,
+      "at": "6:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 93,
+      "row": "35",
+      "source": "Gaia\u2019s_sky_in_colour_ESA393127.jpg",
+      "title": "File:Gaia\u2019s sky in colour ESA393127.jpg",
+      "t": 414.3,
+      "at": "6:54",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 94,
+      "row": "35",
+      "source": "KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595.mp4",
+      "title": "Artemis I Isolated Launch Views",
+      "t": 418.32,
+      "at": "6:58",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.93 < 18.0",
+        "low detail: edge density 0.0007 < film p5 0.0060"
+      ],
+      "offset": 800.0,
+      "reviewed_ok": {
+        "note": "6:58 Artemis I night launch (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 4.92, p95 15.0"
+        ]
+      }
+    },
+    {
+      "cut": 95,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 422.87,
+      "at": "7:03",
+      "fail": [],
+      "warn": [],
+      "offset": 570.0
+    },
+    {
+      "cut": 96,
+      "row": "36",
+      "source": "iss040e085126.jpg",
+      "title": "Earth Observation",
+      "t": 427.07,
+      "at": "7:07",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 10.24 < 18.0"
+      ],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "4:03 + 7:07 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "low detail: luma std 10.24 < 13.44 and edge density 0.0245 < 0.0259 (absolute floor)",
+          "near-black: mean 6.81, p95 20.0"
+        ]
+      }
+    },
+    {
+      "cut": 97,
+      "row": "36",
+      "source": "NHQ_2019_0626_Earth_Views_from_the_ISS.mp4",
+      "title": "Earth Views from the ISS",
+      "t": 430.47,
+      "at": "7:10",
+      "fail": [],
+      "warn": [],
+      "offset": 1830.0
+    },
+    {
+      "cut": 98,
+      "row": "36",
+      "source": "iss040e091231.jpg",
+      "title": "Earth Observation",
+      "t": 433.5,
+      "at": "7:14",
+      "fail": [],
+      "warn": [],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "1:09 + 7:14 ISS night still, Expedition 40 (Chief to sign)",
+        "passed": [
+          "near-black: mean 11.91, p95 53.0"
+        ]
+      }
+    },
+    {
+      "cut": 99,
+      "row": "36",
+      "source": "ACS3_SolarSailSunrise.png",
+      "title": "Advanced Composite Solar Sail System Artist\u2019s Concept 3",
+      "t": 436.78,
+      "at": "7:17",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Advanced Composite Solar Sail System Artist\u2019s Concept 3' (composite), look at it full size",
+        "sharpness: upscaled 2.10x, may look soft"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 100,
+      "row": "37",
+      "source": "twinclocks_e.mp4",
+      "title": null,
+      "t": 440.5,
+      "at": "7:20",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 101,
+      "row": "37",
+      "source": "orbit_looks_back_earth_omni_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 444.22,
+      "at": "7:24",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 102,
+      "row": "37",
+      "source": "iss035e017673.jpg",
+      "title": "Earth Observations taken by the Expedition 35 Crew",
+      "t": 447.3,
+      "at": "7:27",
+      "fail": [],
+      "warn": [],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "1:22 + 7:27 ISS night still, Expedition 35 (Chief to sign)",
+        "passed": [
+          "near-black: mean 14.71, p95 55.0"
+        ]
+      }
+    },
+    {
+      "cut": 103,
+      "row": "38",
+      "source": "gpsclocks_d.mp4",
+      "title": null,
+      "t": 451.28,
+      "at": "7:31",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 104,
+      "row": "38",
+      "source": "sts33-17-005a.jpg",
+      "title": "STS-33 MS Carter sips drink from a beverage container on OV-103's middeck",
+      "t": 455.7,
+      "at": "7:36",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 105,
+      "row": "38",
+      "source": "Earth_Views_from_the_International_Space_Station.mp4",
+      "title": "Earth Views from the International Space Station",
+      "t": 461.2,
+      "at": "7:41",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0051 < film p5 0.0060"
+      ],
+      "offset": 176.0,
+      "reviewed_ok": {
+        "note": "7:41 ISS night pass over Earth (NASA footage; Chief to sign)",
+        "passed": [
+          "near-black: mean 10.11, p95 13.0"
+        ]
+      }
+    },
+    {
+      "cut": 106,
+      "row": "39",
+      "source": "SSC-2015-00064.jpg",
+      "title": "Lighting up the Night",
+      "t": 467.6,
+      "at": "7:48",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 107,
+      "row": "39",
+      "source": "EC98-44444-004.jpg",
+      "title": "DC-8 Airborne Laboratory in banked flight over snow-capped Sierra Nevada mountain range",
+      "t": 472.97,
+      "at": "7:53",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 108,
+      "row": "39",
+      "source": "iss019e018483.jpg",
+      "title": "Expedition 19 crew tests water from Recycling system",
+      "t": 477.73,
+      "at": "7:58",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 109,
+      "row": "39",
+      "source": "GSFC_20171208_Archive_e001593.jpg",
+      "title": "Black Marble - City Lights 2012",
+      "t": 481.63,
+      "at": "8:02",
+      "fail": [],
+      "warn": [],
+      "offset": null,
+      "reviewed_ok": {
+        "note": "5:40 Black Marble city lights (NASA; Chief to sign)",
+        "passed": [
+          "near-black: mean 13.81, p95 57.0"
+        ]
+      }
+    },
+    {
+      "cut": 110,
+      "row": "39",
+      "source": "starfield_i.mp4",
+      "title": null,
+      "t": 487.27,
+      "at": "8:07",
+      "fail": [],
+      "warn": [
+        "kind of picture: no title in the pool, so nobody can tell what it is"
+      ],
+      "offset": 0.5
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.006,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
