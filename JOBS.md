@@ -425,7 +425,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0777 | mini | claimed | gemini | 2026-10-21T06:16Z | for gemini · chart · `gemini-agy` · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0778 | mini | open | – | – | for gemini · chart · `gemini-agy` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0779 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
-| J0780 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0780 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
