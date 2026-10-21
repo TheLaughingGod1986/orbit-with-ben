@@ -62759,6 +62759,11 @@
           "at": "2026-10-21T12:13Z",
           "by": "codex",
           "what": "step 0 of 5 done: Claimed disk recovery; checking NAS mount and timed listing/write before any copy"
+        },
+        {
+          "at": "2026-10-21T12:14Z",
+          "by": "codex",
+          "what": "step 0 of 5 done: NAS mounted via NFS but archive listing timed out after 20 seconds; step 1 failed, no write probe or file moves attempted"
         }
       ],
       "urgent": 1,
@@ -62768,9 +62773,9 @@
       "progress": {
         "step": 0,
         "of": 5,
-        "at": "2026-10-21T12:13Z",
+        "at": "2026-10-21T12:14Z",
         "by": "codex",
-        "note": "Claimed disk recovery; checking NAS mount and timed listing/write before any copy"
+        "note": "NAS mounted via NFS but archive listing timed out after 20 seconds; step 1 failed, no write probe or file moves attempte"
       }
     }
   ],
