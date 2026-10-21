@@ -65963,13 +65963,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
+      "status": "done",
       "by": "claude",
-      "since": "2026-10-21T15:52Z",
+      "since": "2026-10-21T15:57Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-21T15:36Z",
-      "result": "parked for Chief: merge PR #250 (refill one live copy per key + daily escalation cap; 18 refill tests, full scripts suite green locally). Claude merges it itself once CI is green.",
+      "result": "PASS (Claude, 21 Oct): PR #250 squash-merged (2364e31b) with CI green. refill: one live copy per backlog key (open, claimed or blocked for any reason), PARK_CAP removed; escalate posts a backlog key at most once per 24 h. 18 refill tests; today's queue adds 0 copies.",
       "history": [
         {
           "at": "2026-10-21T15:36Z",
@@ -65985,8 +65985,19 @@
           "at": "2026-10-21T15:55Z",
           "by": "claude",
           "what": "blocked: parked for Chief: merge PR #250 (refill one live copy per key + daily escalation cap; 18 refill tests, full scripts suite green locally). Claude merges it itself once CI is green."
+        },
+        {
+          "at": "2026-10-21T15:57Z",
+          "by": "claude",
+          "what": "claimed (to close: PR merged)"
+        },
+        {
+          "at": "2026-10-21T15:57Z",
+          "by": "claude",
+          "what": "done: PASS (Claude, 21 Oct): PR #250 squash-merged (2364e31b) with CI green. refill: one live copy per backlog key (open, claimed or blocked for any reason), PARK_CAP removed; escalate posts a backlog key at most once per 24 h. 18 refill tests; today's queue adds 0 copies."
         }
-      ]
+      ],
+      "done_ref": "2364e31b"
     },
     {
       "id": "J0812",
