@@ -37,7 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0810 | mini | open | – | – | listing · OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) |  |
 | J0812 | mini | open | – | – | studio · OWB Buffer: first R2 upload + backfill the 4 missed Shorts (82Ao0v5XiQI airs 22 Oct 11:30) |  |
 | J0813 | mini | open | – | – | studio · GitHub: delete 110 merged branches + archive-tag and delete 13 finished ones (Ben's go 21 Oct) |  |
-| J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
+| J0814 | cloud | claimed | claude | 2026-10-21T18:52Z | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
 
 Recently finished:
 
