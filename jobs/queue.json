@@ -65174,13 +65174,13 @@
       "stage": "edit",
       "after": "J0795",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-21T21:08Z",
-      "eta": "2026-10-22T01:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T10:14Z",
-      "result": "",
+      "result": "parked for Chief: review before Ben's watch (027_EarthSpin_rough_v01m.mp4 sha256 499e8edc06910cb6 in OWB UAT + NAS; pack @ 6cd70992f; sfx_kit level, music_gate, picture_qa, polish_gate all PASS)",
       "history": [
         {
           "at": "2026-10-21T10:14Z",
@@ -65226,6 +65226,11 @@
           "at": "2026-10-21T21:25Z",
           "by": "gemini",
           "what": "step 5 of 5 done: All gates PASS (music_gate, sfx_kit level, picture_qa, polish_gate); v01m copied to OWB UAT + NAS (sha256 499e8edc06910cb6); pack committed @ 6cd70992f"
+        },
+        {
+          "at": "2026-10-21T21:25Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review before Ben's watch (027_EarthSpin_rough_v01m.mp4 sha256 499e8edc06910cb6 in OWB UAT + NAS; pack @ 6cd70992f; sfx_kit level, music_gate, picture_qa, polish_gate all PASS)"
         }
       ],
       "kind": "assembly",
