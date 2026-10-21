@@ -929,7 +929,9 @@ function stepWhen(stp, P){
   }
   if(stp.afterJob){
     const j = byId[stp.afterJob], p = j && P[j.id];
-    if(j && j.status==="done") return {kind:"queue", text:`ready after ${esc(stp.afterJob)}; not started yet`};
+    // ahead:[] (21 Oct 2026): statusOf reads w.ahead on every queue step; without it the whole render threw and the
+    // board froze the moment a step's afterJob was closed.
+    if(j && j.status==="done") return {kind:"queue", ahead:[], text:`ready after ${esc(stp.afterJob)}; not started yet`};
     if(jobs && !j) return {kind:"unknown", text:`status not recorded for ${esc(stp.afterJob)}`};
     if(p && p.done){ const t=p.done+(stp.lag||0)*MINUTE; return {kind:"after", after:stp.afterJob, text:`about ${clock(t)} (${rel(t)}), after ${esc(stp.afterJob)}`, at:t}; }
   }
@@ -954,7 +956,7 @@ function statusOf(b, rows){
   if(w.kind==="blocked") return {cls:"bad", short:"Blocked", title:"Blocked", lines:[`${who}: ${what}.`, `What's blocking it: ${esc(w.reason||"not given")}`]};
   if(w.kind==="queue") return {cls:"queue", short:`${w.ord} in the queue · ${etaOf(w.done)}`, title:`Not started yet: ${w.ord} in the Mac mini's queue`,
     lines:[`Next job: <b>${who}</b>, ${what}.`,
-      `Why not now: the Mac mini does one job at a time${w.ahead.length?`, and ${w.ahead.length===1?"this goes":"these go"} first: ${esc(w.ahead.join("; "))}`:""}.${busy.length?` It's working on ${esc((busy[0].film?busy[0].film+" ":"")+shortTitle(busy[0].title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim())} right now.`:""}`,
+      `Why not now: the Mac mini does one job at a time${(w.ahead||[]).length?`, and ${w.ahead.length===1?"this goes":"these go"} first: ${esc(w.ahead.join("; "))}`:""}.${busy.length?` It's working on ${esc((busy[0].film?busy[0].film+" ":"")+shortTitle(busy[0].title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim())} right now.`:""}`,
       `Starts about <b>${clock(w.start)}</b>, takes about ${w.est} min, <b>${etaOf(w.done)}</b>.`]};
   if(w.kind==="after") return {cls:"queue", short:`After ${esc(w.after)} · about ${clock(w.at)}`, title:`Waiting for ${esc(w.after)} to finish`,
     lines:[`Next: <b>${who}</b>, ${what}.`, `It can't start until ${esc(w.after)} is done; then it happens about <b>${clock(w.at)}</b> (${rel(w.at)}).`]};
