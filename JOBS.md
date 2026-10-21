@@ -419,7 +419,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0771 | mini | blocked | codex | – | assembly · OWB 021 Short: fix polish_gate/picture_qa horizontal gutter FAIL and 18.0s caption overlap on saturn_ten_metres_thin_v01 (£0, no spend) |  |
 | J0772 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0773 | any | blocked | gemini | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
-| J0774 | any | open | – | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
+| J0774 | any | claimed | gemini | 2026-10-21T05:42Z | script · HOS ideas + script draft: next film beyond the pipeline |  |
 
 Recently finished:
 
