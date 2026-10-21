@@ -1,5 +1,5 @@
 {
-  "next_id": 771,
+  "next_id": 772,
   "jobs": [
     {
       "id": "J0001",
@@ -60492,6 +60492,33 @@
       ],
       "kind": "review",
       "backlog": "hos-weekly-audit"
+    },
+    {
+      "id": "J0771",
+      "title": "OWB 021 Short: fix polish_gate/picture_qa horizontal gutter FAIL and 18.0s caption overlap on saturn_ten_metres_thin_v01 (£0, no spend)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Fix the polish_gate and picture_qa FAIL found in J0769 QA sweep on 02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/_assemble_saturn_ten_metres_thin_short_v01.py with £0 spend and no upload: (1) row s01_pia18367_criss_crossed_rings (0:02, 021_v03f_span_506.45.mp4) fails polish_gate and picture_qa with 'split panel: horizontal gutter at 0.206' from the horizontal Encke gap shadow band across the frame — swap s01 (and s08_end_loop) to an angled/diagonal Cassini ring span without a horizontal gutter or crop/feather so polish_gate and picture_qa PASS with 0 FAILs; (2) fix the overlapping caption timestamps at 18.0s ('TEN METRES AND' / 'YOU ARE IN' rendering on top of each other as 'TEYOU ARE INND' in saturn_ten_metres_thin_v01_contact.jpg); (3) re-render saturn_ten_metres_thin_v01.mp4, verify gate_shorts_open.py, sfx_kit.py level, polish_gate.py, and picture_qa.py all PASS (0 FAIL), and commit metadata/QA outputs.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-21T03:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T03:25Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
