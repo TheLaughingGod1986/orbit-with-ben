@@ -70,6 +70,21 @@ class NeverEmpty(unittest.TestCase):
         d["jobs"][0]["status"] = "blocked"
         self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)
 
+    def test_two_parked_hold_the_key_even_when_nothing_is_ready(self):
+        d = empty()
+        for t in (T0, T0 + H):
+            refill.do_refill(d, ITEMS[:1], t)
+            d["jobs"][-1].update(status="blocked", result="parked for Chief: review")
+        self.assertEqual(refill.do_refill(d, ITEMS[:1], T0 + 30 * H), [])
+        d["jobs"][0].update(status="done", result="Chief PASS")
+        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + 31 * H)), 1)
+
+    def test_paused_item_is_never_added(self):
+        d = empty()
+        items = [dict(ITEMS[0], paused="pipeline full"), ITEMS[1]]
+        refill.do_refill(d, items, T0)
+        self.assertEqual({j["backlog"] for j in d["jobs"]}, {"b"})
+
     def test_backlog_has_weekly_audits_and_ideas_for_both_channels(self):
         keys = {it["key"]: it for it in refill.load_backlog()}
         for k in ("owb-weekly-audit", "hos-weekly-audit", "owb-ideas", "hos-ideas"):

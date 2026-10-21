@@ -1,5 +1,5 @@
 {
-  "_about": "Standing backlog (Chief, 12 Oct 2026; Ben: the Mini works 24/7). scripts/refill.py adds the next of these to the queue whenever fewer than 3 Mini jobs are ready. Every item is no-spend (no Vertex, Flow, ElevenLabs or any paid call), never deletes anything, never makes a video public, never replaces an armed Test & Compare, and ends parked for Chief (PASS gate) unless it only reads. A key is not re-added while a job from it is open or claimed, nor within every_h of the last one; if nothing at all is ready the oldest key is added anyway (never empty). Lowest tier: jobs.order runs backlog jobs only when no pipeline job is ready. Weekly audits and idea/script drafts for both channels lead (Ben, 12 Oct 14:36).",
+  "_about": "Standing backlog (Chief, 12 Oct 2026; Ben: the Mini works 24/7). scripts/refill.py adds the next of these to the queue whenever fewer than 3 Mini jobs are ready. Every item is no-spend (no Vertex, Flow, ElevenLabs or any paid call), never deletes anything, never makes a video public, never replaces an armed Test & Compare, and ends parked for Chief (PASS gate) unless it only reads. A key is not re-added while a job from it is open or claimed, nor within every_h of the last one; if nothing at all is ready the oldest key is added anyway (never empty). Lowest tier: jobs.order runs backlog jobs only when no pipeline job is ready. Weekly audits and idea/script drafts for both channels lead (Ben, 12 Oct 14:36). An item with \"paused\" is skipped until the Chief removes it; a key with 2 jobs parked for Chief is skipped until one is ruled (refill.PARK_CAP, 21 Oct).",
   "items": [
     {
       "key": "studio-ctr-daily",
@@ -39,7 +39,8 @@
       "eta": 90,
       "every_h": 48,
       "title": "OWB ideas + script draft: next film beyond the pipeline",
-      "body": "Brainstorm 5 Orbit With Ben long ideas from the latest weekly audit and VIDEO_BACKLOG.json (search demand, competitor gaps, our best retention topics), score each, then draft the top one's script v00 per the playbook (house opening, FACT beats, SOURCES.md started). Save under 00_Brand/Channel-Setup/ideas/ and the next free 02_Video-Projects slot from the template. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git."
+      "body": "Brainstorm 5 Orbit With Ben long ideas from the latest weekly audit and VIDEO_BACKLOG.json (search demand, competitor gaps, our best retention topics), score each, then draft the top one's script v00 per the playbook (house opening, FACT beats, SOURCES.md started). Save under 00_Brand/Channel-Setup/ideas/ and the next free 02_Video-Projects slot from the template. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "paused": "pipeline full: OWB scripts drafted to 042, VO held until the 30 Oct ElevenLabs reset (Claude, 21 Oct)"
     },
     {
       "key": "hos-ideas",
@@ -49,7 +50,8 @@
       "eta": 90,
       "every_h": 48,
       "title": "HOS ideas + script draft: next film beyond the pipeline",
-      "body": "Brainstorm 5 History of Science long ideas (discovery stories with a person, a date and a twist) from the weekly audit and search demand, score each, then draft the top one's opening and outline with SOURCES. Save in the HOS ideas folder. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git."
+      "body": "Brainstorm 5 History of Science long ideas (discovery stories with a person, a date and a twist) from the weekly audit and search demand, score each, then draft the top one's opening and outline with SOURCES. Save in the HOS ideas folder. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "paused": "pipeline full: HOS scripts drafted to 038 (Claude, 21 Oct)"
     },
     {
       "key": "owb-short-from-locked",
@@ -79,7 +81,8 @@
       "eta": 90,
       "every_h": 24,
       "title": "Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record",
-      "body": "From 00_Brand/Channel-Setup/audits/ and the *_test_compare.json files, pick a live long with no test running or on record. Build B from existing plates only (no image-model spend, never inpaint), Packaging section 2.B. thumb_preview.py long <A> <B> --out <sheet> --score must PASS. Post the sheet on #99, block 'parked for Chief: thumb B review'. Never touch an armed test."
+      "body": "From 00_Brand/Channel-Setup/audits/ and the *_test_compare.json files, pick a live long with no test running or on record. Build B from existing plates only (no image-model spend, never inpaint), Packaging section 2.B. thumb_preview.py long <A> <B> --out <sheet> --score must PASS. Post the sheet on #99, block 'parked for Chief: thumb B review'. Never touch an armed test.",
+      "paused": "every live OWB long has a test running or a B on record until the 25-26 Oct tests end (J0293; Claude, 21 Oct)"
     },
     {
       "key": "hos-thumb-b",
@@ -89,7 +92,8 @@
       "eta": 90,
       "every_h": 24,
       "title": "Backlog HOS: thumbnail B variant for one live or scheduled film with no test",
-      "body": "Pick a HOS film with no Test & Compare on record (never 004's armed test). Build B from existing plates only, no spend, score it, post the sheet on desk #180, block 'parked for Chief: thumb B review'."
+      "body": "Pick a HOS film with no Test & Compare on record (never 004's armed test). Build B from existing plates only, no spend, score it, post the sheet on desk #180, block 'parked for Chief: thumb B review'.",
+      "paused": "HOS 001/002/005 already have post-11-Oct B variants waiting to arm (Claude, 21 Oct)"
     },
     {
       "key": "owb-teach-overlays",
@@ -99,7 +103,8 @@
       "eta": 120,
       "every_h": 12,
       "title": "Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards)",
-      "body": "AGENTS.md Reference lessons item 6 (Chief ruling 12 Oct: a to-scale graphic with no numeral does NOT count as NUMBER). For the newest long not yet uploaded, take the next chapter with no numeral-bearing object and render overlay rows: the VO's own words, 4 words or fewer, numbers checked against 01_Script/SOURCES.md. Overlays only on VO-locked films. picture_qa must PASS. Post the before/after stills on #99, block 'parked for Chief: overlay PASS'."
+      "body": "AGENTS.md Reference lessons item 6 (Chief ruling 12 Oct: a to-scale graphic with no numeral does NOT count as NUMBER). For the newest long not yet uploaded, take the next chapter with no numeral-bearing object and render overlay rows: the VO's own words, 4 words or fewer, numbers checked against 01_Script/SOURCES.md. Overlays only on VO-locked films. picture_qa must PASS. Post the before/after stills on #99, block 'parked for Chief: overlay PASS'.",
+      "paused": "028/029 overlays done; 030+ wait for VO (Claude, 21 Oct)"
     },
     {
       "key": "owb-live-listing-fixes",
@@ -129,7 +134,8 @@
       "eta": 120,
       "every_h": 24,
       "title": "Backlog OWB: next script draft for the earliest film without a locked script",
-      "body": "From STATUS.md pick the earliest OWB film whose script isn't locked (else the top idea in the ideas sort). Draft or revise the script with SOURCES.md, marking for each chapter its number object and any timeline or person-card call-out. Spend nothing. Post on #99, block 'parked for Chief: script review'."
+      "body": "From STATUS.md pick the earliest OWB film whose script isn't locked (else the top idea in the ideas sort). Draft or revise the script with SOURCES.md, marking for each chapter its number object and any timeline or person-card call-out. Spend nothing. Post on #99, block 'parked for Chief: script review'.",
+      "paused": "pipeline full: 033-042 v01 drafts wait for topic lock (Claude, 21 Oct)"
     },
     {
       "key": "hos-next-script",
@@ -139,7 +145,8 @@
       "eta": 120,
       "every_h": 24,
       "title": "Backlog HOS: next script or opening draft (009/010 first)",
-      "body": "Advance the earliest HOS film whose script or opening isn't passed (009 and 010 openings first, then the next idea). Person cards, dates and timeline call-outs marked per beat, SOURCES.md filled. Spend nothing. Post on desk #180, block 'parked for Chief: script review'."
+      "body": "Advance the earliest HOS film whose script or opening isn't passed (009 and 010 openings first, then the next idea). Person cards, dates and timeline call-outs marked per beat, SOURCES.md filled. Spend nothing. Post on desk #180, block 'parked for Chief: script review'.",
+      "paused": "pipeline full: 015-038 drafts wait for topic lock (Claude, 21 Oct)"
     },
     {
       "key": "hos-plate-prep",
@@ -149,7 +156,8 @@
       "eta": 90,
       "every_h": 24,
       "title": "Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint)",
-      "body": "For the next HOS film whose picture plan isn't done, write the plate board rows (prompt, reference, Flow quality, price) from the locked VO. Mint nothing. Commit in a HOS PR and block 'parked for Chief: price pass'."
+      "body": "For the next HOS film whose picture plan isn't done, write the plate board rows (prompt, reference, Flow quality, price) from the locked VO. Mint nothing. Commit in a HOS PR and block 'parked for Chief: price pass'.",
+      "paused": "boards exist through 038 on HOS PR #348; nothing to mint until a price pass (Claude, 21 Oct)"
     },
     {
       "key": "both-qa-sweep",
