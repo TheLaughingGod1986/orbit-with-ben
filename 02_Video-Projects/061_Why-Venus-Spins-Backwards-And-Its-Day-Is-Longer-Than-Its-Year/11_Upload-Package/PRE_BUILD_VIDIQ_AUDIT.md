@@ -141,7 +141,7 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 - [x] No 30s+ stretch without a new teach or turn  
 - [x] Every chapter earns the next one  
-- [x] Runtime target **8–12 min** in trust-building window (~10.0 min, 1,499 reviewer words)  
+- [x] Runtime target **8–12 min** in trust-building window (~8.6 min, 1,269 spoken words / 1,290 reviewer words)  
 
 ---
 
