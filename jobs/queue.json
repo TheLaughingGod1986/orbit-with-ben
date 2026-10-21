@@ -61981,13 +61981,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-21T09:06Z",
-      "eta": "2026-10-21T09:36Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T09:04Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 32456def7/d8c594c10/302dd45e2/7040d76b1/bc7e04ab2: 021 Short saturn_ten_metres_thin_j0771 repair candidate on codex/j0771 0/8 PASS with 0:08 C-ring WARN verified clean, 022 Short sun_faint_young_70pct_v01 0/7 PASS, 025 Shorts mars_radiation_3months_v01 / mars_curiosity_nuclear_v01 / mars_insight_quakes_v01 0/8 PASS, all 27 committed lift Shorts PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS, 024/025/026/027 long cuts PASS; HOS 7a4e70f8/c9dab374/9ca4b69c/09623725/fb6a8f88: 006 Short hos_006_s08_willow_pot_v01 0/9 PASS, 005 Short hos_005_s08_capillaries_v01 0/7 PASS, 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, all 26 HOS qa_ Shorts PASS, 006 full_join_v01_teach 0/91 PASS; 0 new fix jobs needed)",
       "history": [
         {
           "at": "2026-10-21T09:04Z",
@@ -62028,6 +62028,11 @@
           "at": "2026-10-21T09:11Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed QA sweep across OWB and HOS: all committed packs and J0771 repair candidate PASS with 0 FAILs; 0 new fix jobs needed"
+        },
+        {
+          "at": "2026-10-21T09:11Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 32456def7/d8c594c10/302dd45e2/7040d76b1/bc7e04ab2: 021 Short saturn_ten_metres_thin_j0771 repair candidate on codex/j0771 0/8 PASS with 0:08 C-ring WARN verified clean, 022 Short sun_faint_young_70pct_v01 0/7 PASS, 025 Shorts mars_radiation_3months_v01 / mars_curiosity_nuclear_v01 / mars_insight_quakes_v01 0/8 PASS, all 27 committed lift Shorts PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS, 024/025/026/027 long cuts PASS; HOS 7a4e70f8/c9dab374/9ca4b69c/09623725/fb6a8f88: 006 Short hos_006_s08_willow_pot_v01 0/9 PASS, 005 Short hos_005_s08_capillaries_v01 0/7 PASS, 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, all 26 HOS qa_ Shorts PASS, 006 full_join_v01_teach 0/91 PASS; 0 new fix jobs needed)"
         }
       ],
       "kind": "qa",
