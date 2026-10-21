@@ -66829,6 +66829,11 @@
           "at": "2026-10-21T21:41Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting QA sweep of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-21T21:45Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Scanned OWB and HOS packs since 21 Oct 09:11Z: new OWB renders 021 Short v01 (#248), 024 v06 (707304310), 027 v01m (6cd70992f)"
         }
       ],
       "kind": "qa",
@@ -66843,12 +66848,34 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-21T21:41Z",
+        "at": "2026-10-21T21:45Z",
         "by": "gemini",
-        "note": "Starting QA sweep of newest OWB and HOS packs"
-      }
+        "note": "Scanned OWB and HOS packs since 21 Oct 09:11Z: new OWB renders 021 Short v01 (#248), 024 v06 (707304310), 027 v01m (6cd7"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J0816",
