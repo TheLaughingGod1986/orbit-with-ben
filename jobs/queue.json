@@ -61132,6 +61132,11 @@
           "at": "2026-10-21T04:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-21T04:47Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting HOS 002 thumbnail B v12 from existing plates (no spend)"
         }
       ],
       "kind": "chart",
@@ -61139,9 +61144,9 @@
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-10-21T04:44Z",
-        "by": "codex",
-        "note": "Storage preflight: existing J0775 scratch archive checked before film selection; preserving prior four-step plan."
+        "at": "2026-10-21T04:47Z",
+        "by": "gemini",
+        "note": "Starting HOS 002 thumbnail B v12 from existing plates (no spend)"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -61151,7 +61156,10 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J0778",
