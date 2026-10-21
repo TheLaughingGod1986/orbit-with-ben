@@ -426,7 +426,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0778 | mini | blocked | gemini | – | for gemini · chart · `gemini-agy` · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 | J0779 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0780 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J0781 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J0781 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
