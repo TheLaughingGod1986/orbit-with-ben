@@ -7,7 +7,7 @@ import fs from "fs";
 import path from "path";
 import { del, list, put } from "@vercel/blob";
 
-const TYPES: Record<string, string> = {
+export const MEDIA_TYPES: Record<string, string> = {
   ".mp4": "video/mp4",
   ".mov": "video/quicktime",
   ".jpg": "image/jpeg",
@@ -21,7 +21,7 @@ export const hostOnVercelBlob: HostFile = async (localPath, pathname) => {
   const token = process.env.BLOB_READ_WRITE_TOKEN;
   if (!token) throw new Error("BLOB_READ_WRITE_TOKEN is not set (create a public Vercel Blob store and put its token in .env)");
   const ext = path.extname(localPath).toLowerCase();
-  const contentType = TYPES[ext];
+  const contentType = MEDIA_TYPES[ext];
   if (!contentType) throw new Error(`Unsupported media type ${ext}`);
   const size = fs.statSync(localPath).size;
   const blob = await put(pathname, fs.createReadStream(localPath), {
@@ -35,11 +35,13 @@ export const hostOnVercelBlob: HostFile = async (localPath, pathname) => {
   return blob.url;
 };
 
-/** Only files this mirror put on a Vercel Blob store are ever deleted by it. */
-export function isOwnBlobUrl(url: string): boolean {
+/** Only files this mirror put on its media host (the old Vercel Blob store or the R2 bucket) are ever deleted by it. */
+export function isOwnBlobUrl(url: string, r2PublicUrl: string | undefined = process.env.R2_PUBLIC_URL): boolean {
   try {
     const u = new URL(url);
-    return u.protocol === "https:" && /\.public\.blob\.vercel-storage\.com$/i.test(u.hostname) && u.pathname.startsWith("/social/");
+    if (u.protocol !== "https:" || !u.pathname.startsWith("/social/")) return false;
+    if (/\.public\.blob\.vercel-storage\.com$/i.test(u.hostname)) return true;
+    return !!r2PublicUrl && u.hostname === new URL(r2PublicUrl).hostname;
   } catch {
     return false;
   }

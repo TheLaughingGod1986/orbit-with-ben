@@ -66,7 +66,7 @@ python3 scripts/sfx_kit.py make --out-dir <film>/06_Sound-Effects/kit_v01 [--hou
 python3 scripts/sfx_kit.py level --vo <vo stem> --sfx <sfx stem> --bed <music stem> --minutes <len>   # SFX level rule (Polish pass)
 ```
 
-The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), `YT_ANALYTICS_REFRESH_TOKEN_OWB` / `_HOS` (read-only tracker sign-ins), and for the Buffer mirror `BUFFER_API_KEY` and `BLOB_READ_WRITE_TOKEN`. No database. Never print or commit their values.
+The YouTube scripts need `07_Content-Ops/.env`: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN` (from `npm run youtube:auth`), `YT_ANALYTICS_REFRESH_TOKEN_OWB` / `_HOS` (read-only tracker sign-ins), and for the Buffer mirror `BUFFER_API_KEY` plus the Cloudflare R2 media host `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_PUBLIC_URL` (bucket `owb-media`, public r2.dev URL; Ben, 21 Oct 2026, after the Vercel Hobby Blob store was suspended over its limits; `BLOB_READ_WRITE_TOKEN` is used only when R2 isn't set). No database. Never print or commit their values.
 
 ## Standing lessons (Cursor + Claude)
 
