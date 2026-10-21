@@ -26923,10 +26923,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-21T21:29Z",
-      "eta": "2026-10-22T01:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-16T02:36Z",
       "result": "",
@@ -27260,6 +27260,11 @@
           "at": "2026-10-21T21:36Z",
           "by": "gemini",
           "what": "step 7 of 8 done: Parts 01-04 complete (61/73 Flow rows minted: P1 17/17 + P2 21/21 + P3 12/12 + P4 11/11; 2,050 cr cumulative / 7,550 cap; live Flow 21,740, rem_expected 2,152, buffer 19,588 >= 3,000; P4 review sheets pushed on cursor/j0352-007-flow-mint @ 9915b0c5); Part 05 detached batch running in tmux j0352-render"
+        },
+        {
+          "at": "2026-10-21T21:36Z",
+          "by": "gemini",
+          "what": "released: Part 04 complete (11/11 Flow rows minted, 380 cr; 61/73 total across Parts 01-04, 2,050 cr cumulative / 7,550 cap, live Flow 21,740, rem_expected 2,152, after-film buffer 19,588 >= 3,000; review sheets on cursor/j0352-007-flow-mint @ 9915b0c5). Detached Part 05 Flow batch (--until-part 05, final 12 rows: 01_pasteur_1881..12_kite_storm) started in tmux session j0352-render; log: /Users/benjaminoats/_desk/logs/j0352-render.log; done file: /Users/benjaminoats/_desk/logs/j0352-render.done (missing while running; do not start a second copy)"
         }
       ],
       "kind": "video",
