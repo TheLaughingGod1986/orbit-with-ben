@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0781 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0794 | mini | claimed | gemini | 2026-10-22T06:21Z | 026 edit · for gemini · assembly · `gemini-agy` · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
-| J0808 | mini | open (after J0795) | – | – | 029 edit · assembly · 029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint) |  |
+| J0808 | mini | open (after J0795) | – | – | 029 edit · for gemini · assembly · `gemini-agy` · 029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint) |  |
 | J0809 | mini | open (after J0795) | – | – | assembly · HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) |  |
 | J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
