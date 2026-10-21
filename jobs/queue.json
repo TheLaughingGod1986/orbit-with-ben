@@ -65963,13 +65963,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-10-21T15:52Z",
-      "eta": "2026-10-21T17:22Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-21T15:36Z",
-      "result": "",
+      "result": "parked for Chief: merge PR #250 (refill one live copy per key + daily escalation cap; 18 refill tests, full scripts suite green locally). Claude merges it itself once CI is green.",
       "history": [
         {
           "at": "2026-10-21T15:36Z",
@@ -65980,6 +65980,11 @@
           "at": "2026-10-21T15:52Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-21T15:55Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: merge PR #250 (refill one live copy per key + daily escalation cap; 18 refill tests, full scripts suite green locally). Claude merges it itself once CI is green."
         }
       ]
     },
