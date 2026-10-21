@@ -444,7 +444,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0802 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0803 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0804 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0805 | mini | open | – | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
+| J0805 | mini | claimed | gemini | 2026-10-21T16:35Z | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 
 Recently finished:
 
