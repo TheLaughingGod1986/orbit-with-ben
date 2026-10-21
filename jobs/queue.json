@@ -1,5 +1,5 @@
 {
-  "next_id": 795,
+  "next_id": 796,
   "jobs": [
     {
       "id": "J0001",
@@ -62685,6 +62685,32 @@
       ],
       "kind": "assembly",
       "urgent": 3
+    },
+    {
+      "id": "J0795",
+      "title": "URGENT Mini disk: move old render scratch + ready films to the NAS (sha256-verified) to free 20 GB+ for 024 v06 (J0792)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, 21 Oct 2026 (in chat with Claude): \"can we use the nas to help free space now\".** That is Ben's approval for this job, including removing the local copy of each file **after** its NAS copy is sha256-verified (AGENTS.md \"Render scratch\" and \"YouTube staging folder\" rules). It is not approval to delete anything on the NAS, any master that exists only on the Mini, or anything git-tracked.\n\nWhy now: the Mini has ~8.5 GiB free, under the 20 GB render floor. J0792 (024 v06, airs Sun 1 Nov, Private upload by Thu 29 Oct) cannot start until there is room.\n\nDo, in order, and stop at the first step that fails:\n\n1. **Is the NAS really usable?** `/Volumes/data` must be mounted (check `mount | grep /Volumes/data`, never write into an unmounted path: it lands on the Mini disk). Time a listing and a write: `timeout 20 ls /Volumes/data/mac-mini-archive/` and `timeout 20 sh -c 'echo ok > /Volumes/data/mac-mini-archive/.probe && cat /Volumes/data/mac-mini-archive/.probe && rm /Volumes/data/mac-mini-archive/.probe'`. If either hangs or fails: post one line on #99 (\"NAS hung: listing/write timed out; Ben to restart the NAS or remount /Volumes/data on the Mini\"), block this job `needs Ben: NAS hung`, stop.\n2. **The stalled J0775 copy.** Read `~/_desk/logs/J0775-scratch.log` and check for `J0775-scratch.done`. If tmux `codex-j0775-scratch` is still running with an empty log, kill it (nothing local was removed yet). Never start a second copy alongside a running one.\n3. **Measure first.** `du -sh` each candidate and post the list (path, size, film, version) on #99 before moving anything:\n   - render scratch under /private/tmp older than each film's current and previous version (keep those two);\n   - finished films already in OWB UAT / HOS UAT that are scheduled or waiting to go out → `mac-mini-archive/youtube-staging/<film-id>/`, per the staging rule (the upload then reads from the NAS path).\n4. **Move, biggest first, one folder at a time:** write to a fresh dated folder (`mac-mini-archive/mini-tmp-scratch/2026-10-21/<film>/…`); `rsync -a`; make a sha256 manifest on both sides; compare; only on an exact match remove that folder's local copy and leave `MOVED_TO_NAS.txt` (NAS path + manifest path). A mismatch or a timeout: keep the local copy, note it, go on to the next folder.\n5. Stop when the Mini has ≥ 25 GB free, or the candidates run out. Post on #99: GB freed, free space now, what moved where, anything kept and why. Mark this job done; then J0792 can claim.\n\nRun long copies detached (tmux) with a `.done` file, as J0775 did, so the job survives the wake cap. £0 spend; no Studio or YouTube changes.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T12:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T12:07Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [],

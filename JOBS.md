@@ -437,6 +437,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0792 | mini | claimed | codex | 2026-10-21T20:07Z | 024 edit · for codex · assembly · `gpt-6.1-sol` · 024 Light Speed v06: Ben's fixes, diagrams that explain + Orbit back in (airs 1 Nov) | 6214297631 |
 | J0793 | mini | open | – | – | 027 edit · assembly · 027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX |  |
 | J0794 | mini | open | – | – | 026 edit · assembly · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
+| J0795 | mini | open | – | – | URGENT Mini disk: move old render scratch + ready films to the NAS (sha256-verified) to free 20 GB+ for 024 v06 (J0792) |  |
 
 Recently finished:
 
