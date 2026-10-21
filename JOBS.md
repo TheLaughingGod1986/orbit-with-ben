@@ -403,6 +403,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0755 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0756 | mini | blocked | gemini | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0757 | any | blocked | gemini | – | script · OWB ideas + script draft: next film beyond the pipeline |  |
+| J0758 | any | open | – | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
 
 Recently finished:
 
