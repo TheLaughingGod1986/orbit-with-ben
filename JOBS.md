@@ -422,7 +422,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0774 | any | blocked | gemini | – | script · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0775 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0776 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0777 | mini | claimed | codex | 2026-10-21T06:14Z | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
+| J0777 | mini | open | – | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 
 Recently finished:
 
