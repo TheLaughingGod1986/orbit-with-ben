@@ -62737,13 +62737,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-21T12:13Z",
-      "eta": "2026-10-21T14:13Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T12:07Z",
-      "result": "",
+      "result": "needs Ben: NAS hung; /Volumes/data is NFS-mounted but listing /Volumes/data/mac-mini-archive timed out after 20 seconds. No files moved or deleted; about 8.6 GiB free. Restart NAS or remount before retrying step 1; J0792 remains disk-blocked.",
       "history": [
         {
           "at": "2026-10-21T12:07Z",
@@ -62764,6 +62764,11 @@
           "at": "2026-10-21T12:14Z",
           "by": "codex",
           "what": "step 0 of 5 done: NAS mounted via NFS but archive listing timed out after 20 seconds; step 1 failed, no write probe or file moves attempted"
+        },
+        {
+          "at": "2026-10-21T12:14Z",
+          "by": "codex",
+          "what": "blocked: needs Ben: NAS hung; /Volumes/data is NFS-mounted but listing /Volumes/data/mac-mini-archive timed out after 20 seconds. No files moved or deleted; about 8.6 GiB free. Restart NAS or remount before retrying step 1; J0792 remains disk-blocked."
         }
       ],
       "urgent": 1,
