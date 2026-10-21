@@ -65237,18 +65237,27 @@
           "at": "2026-10-21T19:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-21T19:37Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Moved 26 items (12.85 GiB / 13.80 GB sha256-verified) to NAS; Mini free space now 25.59 GiB (27.47 GB), unblocking J0792/J0793/J0794/J0808/J0809"
         }
       ],
       "urgent": 3,
       "taskKeys": [
-        "OWB:024"
+        "HOS:006",
+        "OWB:024",
+        "OWB:026",
+        "OWB:027",
+        "OWB:029"
       ],
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-10-21T18:35Z",
+        "at": "2026-10-21T19:37Z",
         "by": "gemini",
-        "note": "Step 4 NAS move running in detached tmux j0795-move (2.6G/3.5G of item 1 copied; ~15.6 GiB queued)"
+        "note": "Moved 26 items (12.85 GiB / 13.80 GB sha256-verified) to NAS; Mini free space now 25.59 GiB (27.47 GB), unblocking J0792"
       },
       "rerouted_from": {
         "needs": "mini",
