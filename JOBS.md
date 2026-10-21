@@ -35,6 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0810 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) |  |
 | J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
 | J0815 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0816 | mini | open | – | – | studio · OWB Buffer: move the 11 Blob-hosted waiting posts to R2 + schedule 26-29 Oct Shorts (PR #252) |  |
 
 Recently finished:
 

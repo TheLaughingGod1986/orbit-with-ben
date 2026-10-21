@@ -1,5 +1,5 @@
 {
-  "next_id": 816,
+  "next_id": 817,
   "jobs": [
     {
       "id": "J0001",
@@ -66653,6 +66653,33 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J0816",
+      "title": "OWB Buffer: move the 11 Blob-hosted waiting posts to R2 + schedule 26-29 Oct Shorts (PR #252)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "PR #252 (merged 6a8f85be, Claude 21 Oct): the Buffer daily check now (a) schedules only uploads going public within 7 days, earliest first (Buffer holds 10 posts per channel), and (b) takes down waiting posts whose media no longer loads and re-creates them on R2. 11 waiting OWB posts (2e-giqFmfy8 23 Oct ... gmzaCfJF1gA 14 Nov) point at the suspended Vercel Blob store, which answers 403. The first goes out Fri 23 Oct 10:30Z.\n\n1. `git pull` main. In `07_Content-Ops`: `npm run buffer:check -- --dry-run`. Post on #99 the `rehosted`, `deferred` and `autoMirrored` lists (video ids + dates only). Expect: the Blob-hosted posts in `rehosted`; 2e-giqFmfy8, vlkj8RQKmH8, dM1OgGPAYvw, oyRcrFTYyDY, BbsyFrV8kCY and Jcuiy0a9BFI (whatever falls within 7 days) in `autoMirrored`; the rest in `deferred`. Any `rehosted` row with \"no local file recorded\": stop and post it.\n2. `npm run buffer:check`. Then for each new media URL in `00_Brand/Channel-Setup/social/BUFFER_POSTS.json`, `curl -sI` gives 200 and the r2.dev host. Commit BUFFER_POSTS.json.\n3. Post on #99: what was taken down, what was re-created (video, date, channels), what's deferred and why, and any error (LimitReachedError etc.). Mark this job done.\n£0. No Studio or YouTube changes.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T20:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T20:05Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
