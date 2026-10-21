@@ -26923,10 +26923,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-21T18:46Z",
-      "eta": "2026-10-21T22:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-16T02:36Z",
       "result": "",
@@ -27145,6 +27145,11 @@
           "at": "2026-10-21T18:54Z",
           "by": "gemini",
           "what": "step 5 of 8 done: Part 01 17/17 + Part 02 12/21 Flow rows minted (29/73 total, 920 cr / 7,550 cap, live Flow 22,870); sanitised proper names in prompts"
+        },
+        {
+          "at": "2026-10-21T18:58Z",
+          "by": "gemini",
+          "what": "released: Detached Part 02 Flow batch running in tmux session j0352-render after checkpoint 78a480fe (13/21 Part 02 rows + 17/17 Part 01 rows = 30/73 total, including 08_jenner_window sha=9588e3451e0a; 1,020 cr cumulative / 7,550 cap, live Flow 22,770); log: /Users/benjaminoats/_desk/logs/j0352-render.log; done file: /Users/benjaminoats/_desk/logs/j0352-render.done (missing while running; do not start a second copy)"
         }
       ],
       "kind": "video",
