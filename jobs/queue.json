@@ -16099,13 +16099,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
+      "status": "done",
       "by": "claude",
-      "since": "2026-10-15T11:52Z",
+      "since": "2026-10-21T10:52Z",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-13T01:23Z",
-      "result": "waits for input: date gate, mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public (Claude's hourly run checks it)",
+      "result": "acting Chief: h8HGfyShEHI public since 18 Oct 17:00Z; gate met, J0220 unblocked.",
       "history": [
         {
           "at": "2026-10-13T01:23Z",
@@ -16121,6 +16121,16 @@
           "at": "2026-10-15T16:51Z",
           "by": "claude",
           "what": "blocked: waits for input: date gate, mark done on/after Sun 18 Oct 17:00Z once h8HGfyShEHI is public (Claude's hourly run checks it)"
+        },
+        {
+          "at": "2026-10-21T10:52Z",
+          "by": "claude",
+          "what": "claimed by acting Chief to close date gate"
+        },
+        {
+          "at": "2026-10-21T10:52Z",
+          "by": "claude",
+          "what": "done: acting Chief: h8HGfyShEHI public since 18 Oct 17:00Z; gate met, J0220 unblocked."
         }
       ],
       "kind": "chief"
