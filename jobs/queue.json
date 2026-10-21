@@ -61646,13 +61646,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-21T08:17Z",
-      "eta": "2026-10-21T10:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T08:13Z",
-      "result": "",
+      "result": "parked for Chief: script review",
       "history": [
         {
           "at": "2026-10-21T08:13Z",
@@ -61693,6 +61693,11 @@
           "at": "2026-10-21T08:28Z",
           "by": "gemini",
           "what": "step 4 of 4 done: 060 script v01 (95.8/100 PASS) + 16-row SOURCES.md verified and parked for Chief script review"
+        },
+        {
+          "at": "2026-10-21T08:28Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: script review"
         }
       ],
       "kind": "script",
