@@ -61122,6 +61122,11 @@
           "at": "2026-10-21T04:45Z",
           "by": "codex",
           "what": "released: Storage prerequisite: existing tmux codex-j0775-scratch remains running; log /Users/benjaminoats/_desk/logs/J0775-scratch.log empty and /Users/benjaminoats/_desk/logs/J0775-scratch.done absent. Do not duplicate. Check completion and verified archive before thumbnail selection. Progress 0/4 retained; no film selected, no build or spend or Studio change."
+        },
+        {
+          "at": "2026-10-21T04:45Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "kind": "chart",
@@ -61132,7 +61137,16 @@
         "at": "2026-10-21T04:44Z",
         "by": "codex",
         "note": "Storage preflight: existing J0775 scratch archive checked before film selection; preserving prior four-step plan."
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     }
   ],
   "focus": [],
