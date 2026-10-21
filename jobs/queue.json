@@ -66715,13 +66715,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-21T20:59Z",
-      "eta": "2026-10-21T21:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T20:05Z",
-      "result": "",
+      "result": "Removed all 11 Blob-hosted waiting posts (33 channel posts), uploaded and scheduled the 5 Shorts in the 7-day window (2e-giqFmfy8, vlkj8RQKmH8, dM1OgGPAYvw, oyRcrFTYyDY, BbsyFrV8kCY; 15 posts across IG/FB/Threads, 0 LimitReachedError) on R2 (all curl -sI 200 OK on r2.dev), deferred 12 uploads >=29 Oct, committed BUFFER_POSTS.json @ 2f1c04048.",
       "history": [
         {
           "at": "2026-10-21T20:05Z",
@@ -66757,6 +66757,11 @@
           "at": "2026-10-21T21:03Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified post-run dry-run clean (0 rehosted, 0 autoMirrored, 12 deferred >=29 Oct); posting full report on #99"
+        },
+        {
+          "at": "2026-10-21T21:04Z",
+          "by": "gemini",
+          "what": "done: Removed all 11 Blob-hosted waiting posts (33 channel posts), uploaded and scheduled the 5 Shorts in the 7-day window (2e-giqFmfy8, vlkj8RQKmH8, dM1OgGPAYvw, oyRcrFTYyDY, BbsyFrV8kCY; 15 posts across IG/FB/Threads, 0 LimitReachedError) on R2 (all curl -sI 200 OK on r2.dev), deferred 12 uploads >=29 Oct, committed BUFFER_POSTS.json @ 2f1c04048."
         }
       ],
       "kind": "studio",
@@ -66782,7 +66787,8 @@
         "OWB:025",
         "OWB:027",
         "OWB:030"
-      ]
+      ],
+      "done_ref": "2f1c04048"
     },
     {
       "id": "J0817",
