@@ -443,6 +443,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0801 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0802 | any | blocked | gemini | – | script · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0803 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
+| J0804 | any | open | – | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
