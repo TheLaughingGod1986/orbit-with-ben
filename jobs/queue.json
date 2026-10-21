@@ -61755,6 +61755,11 @@
           "at": "2026-10-21T08:31Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-21T08:33Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0783: full script_master_v01 + SCRIPT_NOTES_v01 + SOURCES_v01 for HOS 089, 090, 091 and opening_and_outline_v00 + SOURCES_v00 for HOS 092"
         }
       ],
       "kind": "script",
@@ -61767,7 +61772,20 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "HOS:089",
+        "HOS:090",
+        "HOS:091",
+        "HOS:092"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-21T08:33Z",
+        "by": "gemini",
+        "note": "Starting J0783: full script_master_v01 + SCRIPT_NOTES_v01 + SOURCES_v01 for HOS 089, 090, 091 and opening_and_outline_v0"
+      }
     },
     {
       "id": "J0784",
