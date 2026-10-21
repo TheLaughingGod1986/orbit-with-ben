@@ -714,6 +714,94 @@ class Relay(unittest.TestCase):
         self.beat(T0 - 1 * MIN)
         self.assertEqual(self.chief(), "claude")                 # back: Claude is Chief again
 
+    # ---- Ben, 21 Oct 2026: a standing chain with Claude in it, and one alert when nobody can be Chief ----
+
+    def test_the_default_chain_puts_claude_second(self):
+        del os.environ["CHIEF_CHAIN"]
+        self.assertEqual(cr.chain(), ["chief", "claude", "cursor", "codex"])
+
+    def test_claude_is_chief_after_grok_while_its_heartbeat_is_fresh_and_hands_on_and_back(self):
+        os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
+        cr.seen("chief", T0 - 200 * MIN)                       # Grok quiet
+        self.assertEqual(self.chief(), "cursor")                # no Claude heartbeat yet: Claude isn't up
+        self.assertIn("no heartbeat yet", dict((a, w) for a, _, w in cr.acting(T0)[0])["claude"])
+        self.beat(T0 - 20 * MIN)
+        self.assertEqual(self.chief(), "claude")
+        self.beat(T0 - 100 * MIN)                               # Claude missed its hourly run: next one down
+        self.assertEqual(self.chief(), "cursor")
+        self.beat(T0 - 2 * MIN)                                 # back
+        self.assertEqual(self.chief(), "claude")
+        self.beat(T0, out=True, until=cr.iso(T0 + 120 * MIN), reason="5-hour limit")
+        self.assertEqual(self.chief(T0 + 10 * MIN), "cursor")  # Claude said it's out
+        self.post(T0 + 20 * MIN, "[Chief] Sweep done.")
+        cr.note_grok_posts(T0 + 30 * MIN)
+        self.assertEqual(self.chief(T0 + 30 * MIN), "chief")   # Grok posting takes it back from anyone
+
+    def test_with_claude_chief_the_mini_clis_run_as_workers_and_the_post_says_so(self):
+        os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
+        self.routed_queue('{"jobs": [{"id": "J0403", "kind": "assembly", "status": "open", "needs": "mini"}]}')
+        self.beat(T0 - 5 * MIN)
+        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
+        old = cr.queue_has_work
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+        finally:
+            cr.queue_has_work = old
+        self.assertIn("Claude is Chief (reviews, PASS, merges", (self.tmp / "cursor.args").read_text())
+        posts = self.posts.read_text()
+        self.assertIn("**Claude is acting Chief**", posts)
+        self.assertIn("reviews, PASS, merges and final OKs go to Claude", posts)
+        self.assertIn("Next in line: Cursor, Codex", posts)
+
+    def test_an_override_naming_a_chain_member_defers_to_the_chain(self):
+        import json
+        os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "scripts" / "chief_override.json").write_text(json.dumps(
+            {"agent": "claude", "until": "2026-12-31T00:00:00Z", "reason": "Ben, 21 Oct"}))
+        self.beat(T0 - 5 * MIN)
+        rows, who = cr.acting(T0)
+        self.assertEqual(who, "claude")
+        self.assertEqual([a for a, _, _ in rows].count("claude"), 1)
+
+    def test_nobody_chief_for_three_hours_with_reviews_waiting_pings_ben_once(self):
+        cr.OWB.mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "jobs").mkdir(exist_ok=True)
+        (cr.OWB / "jobs" / "queue.json").write_text(
+            '{"jobs": [{"id": "J0792", "status": "blocked", "result": "parked for Chief: review before Ben\'s watch"}]}')
+        os.environ["CHIEF_ALERT_HOURS"] = "0-24"
+        rows = [("chief", False, "quiet"), ("cursor", False, "out of usage")]
+        cr.alert_no_chief(None, rows, T0)
+        cr.alert_no_chief(None, rows, T0 + 2 * 60 * MIN)
+        self.assertFalse(self.posts.exists())                    # under 3 h: nothing yet
+        cr.alert_no_chief(None, rows, T0 + 3 * 60 * MIN)
+        cr.alert_no_chief(None, rows, T0 + 4 * 60 * MIN)
+        posts = self.posts.read_text()
+        self.assertEqual(posts.count("@TheLaughingGod1986 no Chief"), 1)
+        self.assertIn("J0792", posts)
+        self.assertIn("Cursor: out of usage", posts)
+        cr.alert_no_chief("claude", rows, T0 + 5 * 60 * MIN)     # a Chief is back: the spell ends
+        self.assertFalse(cr.d("no_chief.json").exists())
+
+    def test_no_alert_without_waiting_reviews_or_at_night(self):
+        cr.OWB.mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "jobs").mkdir(exist_ok=True)
+        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": []}')
+        os.environ["CHIEF_ALERT_HOURS"] = "0-24"
+        cr.alert_no_chief(None, [], T0)
+        cr.alert_no_chief(None, [], T0 + 4 * 60 * MIN)
+        self.assertFalse(self.posts.exists())
+        (cr.OWB / "jobs" / "queue.json").write_text(
+            '{"jobs": [{"id": "J1", "status": "blocked", "result": "parked for Chief: x"}]}')
+        os.environ["CHIEF_ALERT_HOURS"] = "0-0"                  # outside the alert hours
+        cr.alert_no_chief(None, [], T0 + 5 * 60 * MIN)
+        self.assertFalse(self.posts.exists())
+
+    def test_the_heartbeat_names_the_acting_chief(self):
+        cr.write_json(cr.d("current.json"), {"agent": "claude", "since": cr.iso(T0)})
+        self.assertEqual(cr.heartbeat_doc(T0, "idle")["chief"], "claude")
+
     def test_a_stuck_mini_repairs_itself_once_and_says_so(self):
         import json
         self.routed_queue('{"jobs": []}')

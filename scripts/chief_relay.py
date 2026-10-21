@@ -50,7 +50,7 @@ Mini heartbeat (Ben, 8 Oct): every `run` also pushes one small file, heartbeat.j
 branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's history stays clean). The Kanban reads
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
-Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
+Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,claude,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
 CHIEF_RETRY_H (1), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
@@ -84,7 +84,10 @@ def first_dir(*cands) -> pathlib.Path:
 # On Ben's Mini the HOS checkout is "History Of Science" (Cursor, 7 Oct); keep the git-style name as a fallback.
 HOS = pathlib.Path(os.environ.get("HOS_REPO") or first_dir(HOME / "YouTube" / "History Of Science",
                                                             HOME / "YouTube" / "history-of-science"))
-DEFAULT_CHAIN = "chief,cursor,codex"
+# Ben, 21 Oct 2026: "build in a method where we identify dynamically if the acting chief is out and delegate a chief
+# until the main one or next in command is back". Claude is a standing link (up while its hourly heartbeat is fresh),
+# not only a dated override, so Grok going quiet hands Chief to Claude before the Mini CLIs.
+DEFAULT_CHAIN = "chief,claude,cursor,codex"
 NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude"}
 
 # What an out-of-credit, over-limit or signed-out CLI says. Only read when the run failed or printed almost nothing,
@@ -337,6 +340,14 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
             return True, f"posted on the thread {age} min ago"
         return False, "no Grok post on the thread in the last {} h".format(fresh // 60) + (
             f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else "")
+    if agent == "claude":
+        out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
+        if out:
+            return False, why
+        beat = ((read_json(d("claude_beat.json")) or {}).get("beat") or {}).get("at")
+        if not beat:
+            return False, "no heartbeat yet"
+        return True, f"heartbeat {int((at - parse(beat)).total_seconds() // 60)} min ago"
     if agent in routing.MINI_WORKERS:
         return (True, "ready") if cli_spec(agent) else (False, "CLI not installed")
     return False, "unknown agent"
@@ -360,6 +371,8 @@ def acting(at: dt.datetime):
     rows = [(a,) + state_of(a, at) for a in chain()]
     first = next((a for a, up, _ in rows if up), None)
     o = override(at)
+    if o and o.get("agent") in chain():
+        return rows, first   # already a link in the chain: its own up/down state decides
     if o and o.get("agent") == "claude" and first != "chief":
         out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
         if out:
@@ -525,16 +538,53 @@ def handover(new, rows, at: dt.datetime) -> None:
                     f"this thread. Grok Bot takes back over by itself once it posts again.")
     else:
         later = [NAMES.get(a, a) for a in chain()[chain().index(new) + 1:]]
-        ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** ({states}). "
+        workers = (f"Cursor, Codex and Gemini run the job queue as workers; reviews, PASS, merges and final OKs go to "
+                   f"{NAMES.get(new, new)} on this thread. ") if cloud_chief(new) else ""
+        ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** ({states}). {workers}"
                     f"{'Next in line: ' + ', '.join(later) + '. ' if later else ''}"
-                    f"Grok Bot takes back over by itself once it posts on the thread again.")
+                    f"Whoever is higher in line takes back over by itself once it is back.")
     if ok:
         write_json(d("current.json"), {"agent": new, "since": iso(at)})
 
 
 def heartbeat_doc(at: dt.datetime, state: str, agent: str = "", note: str = "") -> dict:
-    """What the Kanban shows about the Mini: when the relay last ran and what it found (idle, running, busy, paused)."""
-    return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini"}
+    """What the Kanban shows about the Mini: when the relay last ran and what it found (idle, running, busy, paused),
+    and who the acting Chief is (Claude's hourly run reads it to know whether the Chief work is its own)."""
+    chief = (read_json(d("current.json")) or {}).get("agent") or ""
+    return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief}
+
+
+def parked_reviews(data: dict) -> list:
+    return [j for j in data.get("jobs", []) if j.get("status") == "blocked"
+            and "parked for chief" in (j.get("result") or "").lower()]
+
+
+def alert_no_chief(who, rows, at: dt.datetime) -> None:
+    """Ben, 21 Oct 2026: when every Chief is out, the queue keeps running but reviews wait. After CHIEF_ALERT_H (3) hours
+    with no Chief and reviews parked, tell Ben once per spell (daytime only, CHIEF_ALERT_HOURS 7-22), naming who is out
+    and why. Clears when a Chief is back."""
+    p = d("no_chief.json")
+    if who is not None:
+        if p.exists():
+            p.unlink(missing_ok=True)
+        return
+    spell = read_json(p) or {}
+    if not spell.get("since"):
+        write_json(p, {"since": iso(at)})
+        return
+    if spell.get("alerted") or at - parse(spell["since"]) < dt.timedelta(hours=float(os.environ.get("CHIEF_ALERT_H", "3"))):
+        return
+    lo, hi = (int(x) for x in os.environ.get("CHIEF_ALERT_HOURS", "7-22").split("-"))
+    if not lo <= dt.datetime.now().hour < hi:
+        return
+    waiting = parked_reviews(read_json(OWB / "jobs" / "queue.json") or {})
+    if not waiting:
+        return
+    states = "; ".join(f"{NAMES.get(a, a)}: {why}" for a, up, why in rows)
+    if notify(f"Chief relay: @TheLaughingGod1986 no Chief for {int((at - parse(spell['since'])).total_seconds() // 3600)} h "
+              f"and {len(waiting)} review(s) waiting ({', '.join(j['id'] for j in waiting[:8])}). {states}. Workers keep "
+              f"running the queue; nothing is lost. A top-up is your call."):
+        write_json(p, dict(spell, alerted=iso(at)))
 
 
 def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "") -> None:
@@ -1036,6 +1086,7 @@ def run_locked(at: dt.datetime) -> int:
         fetch_claude_beat(now())
         rows, who = acting(at)
         handover(who, rows, at)
+        alert_no_chief(who, rows, at)
         log("chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in rows))
         up = workers_up(at)
         worker_only = False
