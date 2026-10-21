@@ -1,5 +1,5 @@
 {
-  "next_id": 792,
+  "next_id": 795,
   "jobs": [
     {
       "id": "J0001",
@@ -16150,7 +16150,8 @@
           "what": "added"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "urgent": 4
     },
     {
       "id": "J0221",
@@ -21923,7 +21924,7 @@
       "title": "030 Apophis Short BbsyFrV8kCY: Buffer mirror when Vercel Blob is back",
       "needs": "mini",
       "repo": "owb",
-      "body": "J0284 PASS (Chief). youtube:package Buffer block failed: \"Vercel Blob: This store has been suspended.\" Mirror BbsyFrV8kCY (OWB Apophis Short, publishAt 2026-10-22T10:30:00Z) through Buffer when the Blob store is usable again. Same go-public time as YouTube. Do not buy, top up, or spend. If Blob stays suspended for a billing/account reason, park for Chief (Chief escalates to Ben only if money is required). No Related (no Apophis long yet).",
+      "body": "J0284 PASS (Chief). youtube:package Buffer block failed: \"Vercel Blob: This store has been suspended.\" Mirror BbsyFrV8kCY (OWB Apophis Short, publishAt 2026-10-28T11:30:00Z) through Buffer when the Blob store is usable again. Same go-public time as YouTube. Do not buy, top up, or spend. If Blob stays suspended for a billing/account reason, park for Chief (Chief escalates to Ben only if money is required). No Related (no Apophis long yet).",
       "ref": "",
       "film": "030",
       "stage": "upload",
@@ -23516,8 +23517,8 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-15T18:27Z",
       "eta": "",
       "created_by": "claude",
@@ -23583,6 +23584,11 @@
           "at": "2026-10-15T23:29Z",
           "by": "chief",
           "what": "left parked: UAT+NAS sha 486321dc stands; dry-run Private publishAt 2026-11-01T18:00:00Z PASS. Final OK waits for Ben watch/KEEP or Fri 16 Oct 23:59 London (else Chief final OK goes ahead). No upload."
+        },
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: no final OK. Ben ticked change; superseded by J0792 (new version to OWB UAT, then a fresh final-OK job)."
         }
       ],
       "kind": "assembly",
@@ -24536,8 +24542,8 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-15T19:13Z",
       "eta": "",
       "created_by": "claude",
@@ -24598,6 +24604,11 @@
           "at": "2026-10-15T23:29Z",
           "by": "chief",
           "what": "left parked: Final OK waits on Ben's watch/KEEP of OWB UAT/026_NearestStar_v05d.mp4, or Fri 23 Oct 23:59 London if no reply (then Chief final OK goes ahead). No upload. £0."
+        },
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: no final OK. Ben ticked change; superseded by J0794 (new version to OWB UAT, then a fresh final-OK job)."
         }
       ],
       "kind": "assembly",
@@ -24653,8 +24664,8 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-15T19:28Z",
       "eta": "",
       "created_by": "chief",
@@ -24715,6 +24726,11 @@
           "at": "2026-10-15T23:29Z",
           "by": "chief",
           "what": "left parked: Final OK waits on Ben's watch/KEEP of OWB UAT/027_EarthSpin_rough_v01l.mp4, or Mon 19 Oct 23:59 London if no reply (then Chief final OK goes ahead). No upload. £0."
+        },
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: no final OK. Ben ticked change; superseded by J0793 (new version to OWB UAT, then a fresh final-OK job)."
         }
       ],
       "kind": "assembly",
@@ -27196,13 +27212,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-16T06:23Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-21T10:14Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-16T06:19Z",
-      "result": "parked for Chief: merge PR #229 (1a98a97d) containing gate-library date, UPLOADS, J0287 mirror-date correction and API/gate evidence. Live reschedule complete: BbsyFrV8kCY private 2026-10-28T11:30:00Z; Saturn unchanged. 3/3 steps done; no worker final PASS.",
+      "result": "acting Chief PASS: live reschedule verified in the readback; records landed on main from PR #229 without its stale queue edit (d8a82386). PR #229 closed.",
       "history": [
         {
           "at": "2026-10-16T06:19Z",
@@ -27243,6 +27259,16 @@
           "at": "2026-10-16T08:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "claimed by acting Chief to decide (was claimed by codex)"
+        },
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "done: acting Chief PASS: live reschedule verified in the readback; records landed on main from PR #229 without its stale queue edit (d8a82386). PR #229 closed."
         }
       ],
       "kind": "studio",
@@ -62328,6 +62354,90 @@
       ],
       "kind": "assembly",
       "backlog": "owb-short-from-locked"
+    },
+    {
+      "id": "J0792",
+      "title": "024 Light Speed v06: Ben's fixes, diagrams that explain + Orbit back in (airs 1 Nov)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's change tick on 024 v05d (Studio Kanban, Fri 16 Oct 12:15 London):**\n1. *\"All diagrams should do a better job at explaining.\"*\n2. *\"Include Orbit character too and explained more.\"* (Ben typed \"to heels\"; read as \"too\".)\n\n**Airs Sun 1 Nov 18:00 London, so this goes first.** The Private upload needs to be up by Thu 29 Oct.\n\nDo:\n1. List every code graphic in v05d (row, m:ss, file) beside the VO line it sits under. Mark each one: does it show what that sentence says, so a 12-year-old with the sound off gets it? Post the table on #99 first.\n2. Redraw every graphic marked no, so each one *explains*: the moving ship, the two clocks ticking at different rates, the distance shrinking, labelled with the VO's own words (at most 4) and numbers as objects (e.g. `3 YEARS` vs `20 YEARS` bars growing). Use 026 v05's `lightyear` and `lightrace` redraws (J0085) as the model.\n3. Put Orbit back in and give it a job: at least 2 Orbit beats outside the first 30 s, at the places where the idea turns (the twin trip, the shrinking distance). Reuse the existing 024 Orbit renders (J0043 rows 15 and 27) or Orbit plates from 023/026 before anything new. If a beat needs a new Omni render, park it for the price pass.\n4. Re-cut as v06 from the locked VO and its own bed (J0089). Run the gates and the per-chapter teaching gate (J0145 sheet).\n\n**House rules that apply:** AGENTS.md lesson 7 (a code graphic must read with the sound off: real bodies, labels of at most 4 words from the line being spoken, one idea per graphic) and *Teach on screen* (every number as an object, WHO cards, WHEN call-outs, everything animates). Spend nothing: our own code graphics, existing plates and existing Orbit renders only. A new Orbit or Veo render that needs credit parks for the Chief's price pass first. picture_qa, polish_gate and music_gate must PASS. Then put the new version in OWB UAT for Ben's watch, post the before/after stills sheet on #99, and block 'parked for Chief: review before Ben's watch'. Never upload.",
+      "ref": "6214297631",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 480,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T10:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "urgent": 1
+    },
+    {
+      "id": "J0793",
+      "title": "027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's change tick on 027 v01l (Studio Kanban, Sun 18 Oct):** *\"No music\"* and *\"No sound effects\"*.\n\nBen watched OWB UAT/027 v01l and heard no music bed and no sound effects. That is a defect: every film has its own bed for the whole length and the house SFX kit. Airs Sun 22 Nov 18:00 London.\n\nDo:\n1. Check the OWB UAT copy Ben watched (ffprobe the streams, plus loudness of bed vs VO in 30 s windows). Say on #99 which it was: no bed at all, a bed mixed too low to hear, or the wrong file copied to UAT.\n2. Lay 027's own bed under the whole cut now, the J0079 way for 024 (no wait for the 30 Oct ElevenLabs reset). Use the take-2 brief (05_Music/BED_BRIEF_take2.md, its Pace line) and lay it so it can be heard under the voice (about 18-22 dB below VO, ducked under speech, up in the gaps).\n3. Add house SFX (`scripts/sfx_kit.py make`, no spend): a soft whoosh on each chapter card and a tick on each number overlay; `sfx_kit.py level` must PASS.\n4. Make v01m with the picture of v01l unchanged. music_gate must PASS.\n\n**House rules that apply:** AGENTS.md lesson 7 (a code graphic must read with the sound off: real bodies, labels of at most 4 words from the line being spoken, one idea per graphic) and *Teach on screen* (every number as an object, WHO cards, WHEN call-outs, everything animates). Spend nothing: our own code graphics, existing plates and existing Orbit renders only. A new Orbit or Veo render that needs credit parks for the Chief's price pass first. picture_qa, polish_gate and music_gate must PASS. Then put the new version in OWB UAT for Ben's watch, post the before/after stills sheet on #99, and block 'parked for Chief: review before Ben's watch'. Never upload.",
+      "ref": "",
+      "film": "027",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T10:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "urgent": 2
+    },
+    {
+      "id": "J0794",
+      "title": "026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's change tick on 026 v05d (Studio Kanban, Mon 19 Oct 13:28 London):**\n1. *\"Need more info on diagrams and animation. Make it so a school child could understand.\"*\n2. *\"More information on cards, again need to be educating people who watch.\"*\n\nAirs Sun 15 Nov 18:00 London. This is the second time Ben has asked for 026's graphics to explain more (9 Oct was the first, J0085), so check the whole film, not just the spots he names.\n\nDo:\n1. The same table as 024 (J0792): every code graphic and card in v05d, its VO line, and whether a school child with the sound off would get it. Post it on #99 first.\n2. Diagrams: every one shows its idea step by step as the voice says it (light leaving Proxima, the year marks lighting up, walk/car/jet as moving objects with their numbers), with VO-word labels of at most 4 words.\n3. Cards: every WHO card carries the person's role and why they matter (e.g. `ROBERT INNES · found Proxima, 1915`); every WHEN and FACT card says what happened, not only a date or a number. Check each against SOURCES.md.\n4. Re-cut as v06 from the locked VO and 026's own bed.\n\n**House rules that apply:** AGENTS.md lesson 7 (a code graphic must read with the sound off: real bodies, labels of at most 4 words from the line being spoken, one idea per graphic) and *Teach on screen* (every number as an object, WHO cards, WHEN call-outs, everything animates). Spend nothing: our own code graphics, existing plates and existing Orbit renders only. A new Orbit or Veo render that needs credit parks for the Chief's price pass first. picture_qa, polish_gate and music_gate must PASS. Then put the new version in OWB UAT for Ben's watch, post the before/after stills sheet on #99, and block 'parked for Chief: review before Ben's watch'. Never upload.",
+      "ref": "",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 480,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T10:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T10:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "urgent": 3
     }
   ],
   "focus": [],
