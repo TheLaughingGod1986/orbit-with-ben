@@ -1,5 +1,5 @@
 {
-  "next_id": 817,
+  "next_id": 818,
   "jobs": [
     {
       "id": "J0001",
@@ -66711,6 +66711,33 @@
       ],
       "kind": "studio",
       "urgent": 1
+    },
+    {
+      "id": "J0817",
+      "title": "HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ben, 21 Oct 2026: \"can we look at why buffer for hos and owb is not working\"; he made the HOS Buffer key, J0806 verified it (org 6431f03385378b838b780157 \"Benkays Creative\"; channels instagram 6ac36d3c6a5c39ccb61d3b5f historyofscienceyt, facebook 6ac369f16a5c39ccb61d223b History of Science, tiktok 6ac381bc6a5c39ccb61dd8aa historyofscienceyt). Key in the Mini's orbit-with-ben/07_Content-Ops/.env as BUFFER_HOS_API_KEY.\n\nHOS rules (HOS AGENTS.md \"Social posting\", 5 Oct 2026): HOS **Shorts only** through Buffer, never long films; TikTok through Buffer is allowed (direct TikTok stays paused); no Threads; never the Orbit org; the destination guards in HOS `00_Brand/Channel-Setup/social/destination.py` hold.\n\nBuild (code, PR, tests; reuse the OWB mirror rather than copy it):\n1. A channel profile for the mirror: OWB (org, instagram/facebook/threads, BUFFER_API_KEY, OWB YouTube token, UPLOADS.json, BUFFER_POSTS.json) and HOS (HOS org, instagram/facebook/tiktok, BUFFER_HOS_API_KEY, a read-only HOS YouTube token, HOS's own uploads registry + its own BUFFER_POSTS file, shorts only). `buffer-mirror.ts check --channel hos`.\n2. A guard that refuses any create whose channel id isn't in that profile's org (so an OWB post can never reach HOS or the reverse), with a test.\n3. TikTok post shape in the planner (video + caption; check Buffer's createPost fields for TikTok), with a test.\n4. Same 7-day window and R2 hosting (social/hos/ prefix) as OWB.\n5. Daily Mini run for HOS next to OWB's 07:05.\nFirst HOS post due: 5n7xFQRBUvI (HOS 005 Galen Short) Sat 31 Oct 11:30Z; captions in HOS 005 .../evidence_J0188_20261014/buffer_draft.json. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T20:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T20:51Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
