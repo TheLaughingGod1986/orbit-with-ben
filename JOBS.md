@@ -428,7 +428,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0780 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0781 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0782 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog OWB: next script draft for the earliest film without a locked script |  |
-| J0783 | mini | claimed | gemini | 2026-10-21T10:31Z | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
+| J0783 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0784 | any | open | – | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
