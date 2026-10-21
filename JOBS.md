@@ -31,6 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0818 | mini | open | – | – | studio · Thumbnail tests: read back T001 (HOS X-rays INSIDE HER HAND) + T005-T007 into the ledger, read-only |  |
+| J0819 | mini | open | – | – | studio · 021 Short 'How Thin Are Saturn's Rings?': upload Private, publishAt Fri 30 Oct 11:30 London (J0810 final OK) |  |
 
 Recently finished:
 
