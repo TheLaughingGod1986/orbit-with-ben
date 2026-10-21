@@ -26923,10 +26923,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-21T15:52Z",
-      "eta": "2026-10-21T19:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-16T02:36Z",
       "result": "",
@@ -27010,6 +27010,11 @@
           "at": "2026-10-21T16:10Z",
           "by": "gemini",
           "what": "step 2 of 8 done: Recorded Chief KEEP on P2:08_jenner_window (aa7f98b6) and P1:01_cow_meadow (91a222ea); verified live Flow balance 23,690 (headroom 16,753 >= 3,000) and disk 13.8 GiB (>= 10 GiB); launched detached tmux session j0352-render for Part 01 Flow batch"
+        },
+        {
+          "at": "2026-10-21T16:10Z",
+          "by": "gemini",
+          "what": "released: Detached Part 01 Flow batch running in tmux session j0352-render; log: /Users/benjaminoats/_desk/logs/j0352-render.log; done file: /Users/benjaminoats/_desk/logs/j0352-render.done (missing while running; do not start a second copy)"
         }
       ],
       "kind": "video",
