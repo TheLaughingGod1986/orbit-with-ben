@@ -60921,6 +60921,11 @@
           "at": "2026-10-21T04:31Z",
           "by": "codex",
           "what": "step 0 of 4 done: Preflight: OWB priority; 9.4 GiB free. Checking required NAS scratch archive and existing detached archive before any render."
+        },
+        {
+          "at": "2026-10-21T04:32Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Storage prerequisite in detached tmux codex-j0775-scratch: 65 superseded OWB028 scratch clips, 414143653 bytes; rsync then SHA-256 verification before local removal. No Short selected/rendered."
         }
       ],
       "kind": "assembly",
@@ -60937,10 +60942,13 @@
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-10-21T04:31Z",
+        "at": "2026-10-21T04:32Z",
         "by": "codex",
-        "note": "Preflight: OWB priority; 9.4 GiB free. Checking required NAS scratch archive and existing detached archive before any re"
-      }
+        "note": "Storage prerequisite in detached tmux codex-j0775-scratch: 65 superseded OWB028 scratch clips, 414143653 bytes; rsync th"
+      },
+      "taskKeys": [
+        "OWB:028"
+      ]
     },
     {
       "id": "J0776",
