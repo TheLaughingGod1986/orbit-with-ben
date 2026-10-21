@@ -429,7 +429,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0781 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0782 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog OWB: next script draft for the earliest film without a locked script |  |
 | J0783 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · Backlog HOS: next script or opening draft (009/010 first) |  |
-| J0784 | any | open | – | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0784 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
