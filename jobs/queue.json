@@ -1,5 +1,5 @@
 {
-  "next_id": 818,
+  "next_id": 819,
   "jobs": [
     {
       "id": "J0001",
@@ -67009,6 +67009,33 @@
       "history": [
         {
           "at": "2026-10-21T20:51Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0818",
+      "title": "Thumbnail tests: read back T001 (HOS X-rays INSIDE HER HAND) + T005-T007 into the ledger, read-only",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 21 Oct 2026: \"What ever happened to testing these thumbnails\" (his INSIDE HER HAND / NO WAY OUT? / NO SOLID GROUND? / RINGS VANISHING? designs). The ledger `05_Analytics/tests/THUMB_LEDGER.json` has 4 tests running and no result written for any: T001 HOS frP_YrNShsU (X-rays, INSIDE HER HAND, started 14 Oct, read-back was due 18 Oct and never done), T005 Mo93x0fxB1Q, T006 NbW5G1BpPY0, T007 ziKBPJ6FY0U (started 15 Oct).\n\nRead-only, in YouTube Studio (Ben's Studio sign-in on the Mini), for each of the 4 videos: Test & Compare status (running / ended / winner), estimated time left, and each variant's watch-time share (and impressions/CTR if shown). Unavailable figures are \"not shown\", never 0. Write them into each test's `result` in THUMB_LEDGER.json (with `readAt`), commit, and post one table on #99 plus the verdict line from `python3 scripts/thumb_ledger.py verdict`.\nNever Set/Apply a winner, start, stop or delete a test in this job. £0.\nAlso list the next tests in order with their earliest start: Saturn 55AEQwvs36g after its title test ends 25 Oct 17:00Z (J0189 B RINGS ARE FALLING first, then Ben's RINGS VANISHING? per J0244); Jupiter -jmMROGoZCM Ben's NO SOLID GROUND? when the NO FLOOR? test ends 26 Oct 18:52Z (J0275); 024 once uploaded (J0206).\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T22:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T22:05Z",
           "by": "claude",
           "what": "added"
         }
