@@ -1,5 +1,5 @@
 {
-  "next_id": 806,
+  "next_id": 807,
   "jobs": [
     {
       "id": "J0001",
@@ -63619,6 +63619,32 @@
         "by": "gemini",
         "note": "Synced 086 pre-VO plate board v01 to locked pain_endorphins_script_master_v01.md (90.8/100 PASS) and built 25-row pre-VO"
       }
+    },
+    {
+      "id": "J0806",
+      "title": "Find the existing HOS Buffer API key on the Mini (names only, never values)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 21 Oct 2026: 'api should of been added months ago'. The HOS Buffer draft on 14 Oct (J0188) said not_posted_missing_BUFFER_HOS_API_KEY, so the key is probably on the Mini under another name or in another file.\n\n1. List variable NAMES only (never print or log values) that contain BUFFER in: `~/YouTube/orbit-with-ben/07_Content-Ops/.env`, `~/YouTube/history-of-science/07_Content-Ops/.env` (or wherever the HOS checkout is), and any `.env*` in those two 07_Content-Ops folders. Example: `grep -o '^[A-Z_]*BUFFER[A-Z_]*' <file>`.\n2. For each Buffer key found, check which Buffer organisation it belongs to WITHOUT printing it: call Buffer's account/organisations endpoint with it and report only the org ids and names returned. HOS org is 6431f03385378b838b780157; OWB org is 6ab9206ad1f589b389040174.\n3. If a key for the HOS org exists under another name, add `BUFFER_HOS_API_KEY=<same value>` to orbit-with-ben/07_Content-Ops/.env by copying it file-to-file (never echo it), and post on #99: 'HOS Buffer key found as <NAME> in <file>, copied to BUFFER_HOS_API_KEY'. If none exists, post 'no HOS Buffer key on the Mini; Ben to create one' and block this job needs Ben.\n£0, no posts, no Studio changes.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T15:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T15:25Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ]
     }
   ],
   "focus": [],

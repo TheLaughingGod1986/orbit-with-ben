@@ -445,6 +445,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0803 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0804 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0805 | mini | claimed | gemini | 2026-10-21T16:35Z | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
+| J0806 | mini | open | – | – | Find the existing HOS Buffer API key on the Mini (names only, never values) |  |
 
 Recently finished:
 
