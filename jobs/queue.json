@@ -62946,13 +62946,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-21T12:29Z",
-      "eta": "2026-10-21T14:29Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T12:28Z",
-      "result": "",
+      "result": "parked for Chief: storage prerequisite. Mini has 7.8 GiB free, below required 20 GB; /Volumes/data/mac-mini-archive/mini-tmp-scratch listing timed out after 8 seconds. Restore NAS access for verified scratch archival before Short production. No film selected, render, credit spend or upload.",
       "history": [
         {
           "at": "2026-10-21T12:28Z",
@@ -62973,6 +62973,11 @@
           "at": "2026-10-21T12:30Z",
           "by": "codex",
           "what": "step 0 of 4 done: Storage preflight blocked: 7.8 GiB free; NAS mini-tmp-scratch listing timed out after 8 s. No film selected or render started."
+        },
+        {
+          "at": "2026-10-21T12:30Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: storage prerequisite. Mini has 7.8 GiB free, below required 20 GB; /Volumes/data/mac-mini-archive/mini-tmp-scratch listing timed out after 8 seconds. Restore NAS access for verified scratch archival before Short production. No film selected, render, credit spend or upload."
         }
       ],
       "kind": "assembly",
