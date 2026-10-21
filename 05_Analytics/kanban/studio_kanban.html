@@ -2684,7 +2684,9 @@ setInterval(tickTimes, 10*1000);
       const st = `${task?esc(task.length>40?task.slice(0,39)+"…":task)+" · ":""}${esc(readyAt(pr.done)||"working")}`;
       const html = `<span class="wnow">Working now</span></span></div><div class="kt">${esc(name)}</div><div class="ka"><span>Mac mini job</span><span>${pr.pct}%</span></div><div class="bar"><i style="width:${pr.pct}%"></i></div><div class="st1 now">${st}</div>`;
       let c = t.querySelector(`.tf.runcard[data-run="${j.id}"]`);
-      if(c){ const s2 = c.querySelector(".st1"); if(s2 && s2.innerHTML!==st) s2.innerHTML = st; continue; }
+      // Compare our own string, not innerHTML: innerHTML re-serialises (esc's &#39; comes back as '), so a job title with an
+      // apostrophe ("Ben's fixes") rewrote the chip on every MutationObserver pass and hung the page (21 Oct 2026, HOS tab).
+      if(c){ const s2 = c.querySelector(".st1"); if(s2 && s2.dataset.h!==st){ s2.dataset.h = st; s2.innerHTML = st; } continue; }
       const lane = t.querySelector("section.lane.one") || [...t.querySelectorAll("section.lane")].find(l=>(l.querySelector("h3 .ch")||{}).textContent===ch); if(!lane) continue;
       const col = [...lane.querySelectorAll(".kcol")].find(k=>/In progress/i.test((k.querySelector("h2")||{}).textContent)); if(!col) continue;
       const cards = col.querySelector(".cards"); if(!cards) continue;
