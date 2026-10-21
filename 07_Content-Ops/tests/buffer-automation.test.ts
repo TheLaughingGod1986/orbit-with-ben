@@ -522,3 +522,60 @@ it("refuses create actions when the channel acquired a post ID after planning", 
   expect(d.client!.createPost).toHaveBeenCalledTimes(2);
   expect((await d.store.load()).videos[video().id].channels.instagram?.postId).toBe("existing");
 });
+
+describe("Buffer's 10-post queue and dead media (21 Oct 2026)", () => {
+  const hint = (id: string) => ({ videoId: id, mediaPath: `/tmp/${id}.mp4`, thumbPath: null, longId: "long0000001", standalone: false, source: "social/UPLOADS.json" });
+
+  it("schedules only uploads going public within 7 days, earliest first, and leaves the rest for later", async () => {
+    const mem = memoryStore();
+    const client = fakeClient();
+    const near = video({ id: "near0000001", title: "Near", publishAt: "2026-10-03T10:30:00Z" });
+    const soon = video({ id: "soon0000001", title: "Soon", publishAt: "2026-10-02T10:30:00Z" });
+    const far = video({ id: "far00000001", title: "Far", publishAt: "2026-10-20T10:30:00Z" });
+    const out = await runBufferCheck(deps({ store: mem.store, client, videos: [near, soon, far, LONG], scheduled: [far, near, soon], findMedia: hint }));
+    expect(out.autoMirrored.map((m) => m.videoId)).toEqual(["soon0000001", "near0000001"]);
+    expect(out.deferred).toEqual([{ videoId: "far00000001", title: "Far", publishAt: "2026-10-20T10:30:00Z" }]);
+    expect(out.unmirrored).toEqual([]);
+    expect(mem.get().videos.far00000001).toBeUndefined();
+    expect(client.createPost).toHaveBeenCalledTimes(6);
+  });
+
+  it("an upload beyond the window is deferred by mirrorVideo too, with nothing hosted", async () => {
+    const d = deps({ videos: [video({ publishAt: "2026-10-20T10:30:00Z" }), LONG] });
+    const out = await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, d);
+    expect(out.deferred).toMatch(/7-day window/);
+    expect(d.host).not.toHaveBeenCalled();
+    expect(d.client!.createPost).not.toHaveBeenCalled();
+  });
+
+  it("takes down waiting posts whose media no longer loads and re-creates them on the current host", async () => {
+    const OLD = "https://abc.public.blob.vercel-storage.com/social/short0000001-x.mp4";
+    const mem = memoryStore();
+    await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaUrl: OLD }, deps({ store: mem.store }));
+    await mem.store.setMedia("short0000001", [OLD]);
+    const client = fakeClient();
+    const checkUrl = vi.fn(async (url: string) => (url === OLD ? `${url} answered 403` : null));
+    const host = vi.fn(async (_p: string, pathname: string) => `https://pub-x.r2.dev/${pathname}`);
+    const out = await runBufferCheck(deps({ store: mem.store, client, checkUrl, host, scheduled: [video()], findMedia: hint }));
+    expect(out.rehosted).toEqual([expect.objectContaining({ videoId: "short0000001", url: OLD, removed: true })]);
+    expect(client.deletePost).toHaveBeenCalledTimes(3);
+    expect(client.createPost).toHaveBeenCalledTimes(3);
+    expect(mem.get().videos.short0000001.media).toBe("https://pub-x.r2.dev/social/short0000001.mp4");
+    expect(out.mediaCleaned.filter((m) => m.url === OLD)).toEqual([]);
+  });
+
+  it("leaves a broken post in place when its local file isn't known, and does nothing when dry", async () => {
+    const OLD = "https://abc.public.blob.vercel-storage.com/social/short0000001-x.mp4";
+    const mem = memoryStore();
+    await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaUrl: OLD }, deps({ store: mem.store }));
+    await mem.store.setMedia("short0000001", [OLD]);
+    const checkUrl = vi.fn(async () => "403");
+    const client = fakeClient();
+    const noFile = await runBufferCheck(deps({ store: mem.store, client, checkUrl, scheduled: [video()], findMedia: () => null }));
+    expect(noFile.rehosted).toEqual([expect.objectContaining({ removed: false, error: expect.stringMatching(/no local file/) })]);
+    const dry = await runBufferCheck(deps({ store: mem.store, client, checkUrl, scheduled: [video()], findMedia: hint }), { dryRun: true });
+    expect(dry.rehosted).toEqual([expect.objectContaining({ removed: false })]);
+    expect(client.deletePost).not.toHaveBeenCalled();
+    expect(mem.get().videos.short0000001).toBeDefined();
+  });
+});

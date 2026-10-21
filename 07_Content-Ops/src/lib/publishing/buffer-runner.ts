@@ -52,6 +52,13 @@ export type MirrorDeps = {
 /** A file older than this that no Buffer post links to is an orphan. */
 const ORPHAN_AGE_MS = 2 * 24 * 60 * 60 * 1000;
 
+/**
+ * Buffer's plan holds 10 scheduled posts per channel (Ben's account, 21 Oct 2026: "LimitReachedError ... 10 out of
+ * 10"). Scheduling every upload weeks ahead filled the queue with November posts while the 26-29 Oct Shorts were
+ * refused. Only uploads going public within this window are scheduled; the daily check adds the rest as they come in.
+ */
+export const BUFFER_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+
 /** social/<11-character YouTube id><random suffix>.<ext> → the YouTube id. */
 export function videoIdFromBlobPath(pathname: string): string | null {
   const m = /^social\/([\w-]{11})/.exec(pathname);
@@ -85,8 +92,8 @@ export type ActionResult = {
   reason?: string;
 };
 
-/** Blob copies this run uploaded. */
-export type MirrorOutcome = { plan: Plan; results: ActionResult[]; sent: boolean; hosted: string[] };
+/** Blob copies this run uploaded. `deferred`: goes public beyond BUFFER_WINDOW_MS, so nothing was done yet. */
+export type MirrorOutcome = { plan: Plan; results: ActionResult[]; sent: boolean; hosted: string[]; deferred?: string };
 
 const DRY_HOST = "https://dry-run.invalid/social";
 
@@ -175,6 +182,10 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
   for (const f of files) urls.set(f.role, f.url ?? (f.localPath ? standIn(f) : undefined));
   let plan = planWith();
   const hosted: string[] = [];
+  if (plan.timing.mode === "customScheduled" && Date.parse(plan.timing.dueAt) - now.getTime() > BUFFER_WINDOW_MS && !plan.errors.length) {
+    const deferred = `goes public ${plan.timing.dueAt}, beyond Buffer's 7-day window: the daily check schedules it nearer the time`;
+    return { plan: { ...plan, actions: [] }, results: [], sent: false, hosted, deferred };
+  }
   // Dry, or no Buffer key: plan only, and upload nothing.
   if (plan.errors.length || req.dryRun || !deps.client) {
     return { plan, results: [], sent: false, hosted };
@@ -229,6 +240,10 @@ export type CheckOutcome = {
   changes: { videoId: string; kind: "short" | "long"; title: string; timing: Plan["timing"]; actions: PlanAction[]; results: ActionResult[] }[];
   /** Scheduled uploads that weren't in Buffer and were mirrored (or, dry, would be) by this run. */
   autoMirrored: { videoId: string; title: string; source: string; sent: boolean; results: ActionResult[]; warnings: string[] }[];
+  /** Scheduled uploads beyond the 7-day window: left for a later daily check (not a fault). */
+  deferred: { videoId: string; title: string; publishAt: string | null }[];
+  /** Waiting posts whose media no longer loads, taken down to be re-created on the current media host. */
+  rehosted: { videoId: string; title: string; url: string; problem: string; removed: boolean; error?: string }[];
   /** Scheduled uploads still not in Buffer, and why. */
   unmirrored: { videoId: string; title: string; publishAt: string | null; reason: string }[];
   /** Blob copies removed (or, dry, that would be) because Buffer no longer needs them. */
@@ -246,6 +261,7 @@ async function cleanMedia(
   deps: MirrorDeps,
   now: Date,
   send: boolean,
+  skip: Set<string> = new Set(),
 ): Promise<CheckOutcome["mediaCleaned"]> {
   const out: CheckOutcome["mediaCleaned"] = [];
   const after = await deps.store.load();
@@ -293,7 +309,7 @@ async function cleanMedia(
     }
   }
   for (const c of candidates) {
-    if (!isOwnBlobUrl(c.url)) continue;
+    if (!isOwnBlobUrl(c.url) || skip.has(c.url)) continue;
     if (!send || !deps.deleteMedia) {
       out.push({ ...c, deleted: false });
       continue;
@@ -310,6 +326,41 @@ async function cleanMedia(
       out.push({ ...c, deleted: true });
     } catch (e) {
       out.push({ ...c, deleted: false, error: (e as Error).message });
+    }
+  }
+  return out;
+}
+
+/**
+ * A post still waiting in Buffer whose media no longer loads (the Vercel Blob store was suspended on 15 Oct and now
+ * answers 403) would fail when Buffer fetches it. Take its posts down, so the scheduled-upload pass below creates them
+ * again on the current host. Only when the local file is known, so a post is never removed that can't be re-made.
+ */
+async function takeDownBrokenMedia(deps: MirrorDeps, now: Date, send: boolean): Promise<CheckOutcome["rehosted"]> {
+  const out: CheckOutcome["rehosted"] = [];
+  const ledger = await deps.store.load();
+  for (const [id, entry] of Object.entries(ledger.videos)) {
+    if (entry.mode !== "customScheduled" || !entry.dueAt || Date.parse(entry.dueAt) <= now.getTime()) continue;
+    for (const url of entryMedia(entry)) {
+      const problem = await deps.checkUrl(url, /\.(mp4|mov)$/i.test(new URL(url).pathname) ? "video" : "image");
+      if (!problem) continue;
+      const row = { videoId: id, title: entry.title, url, problem };
+      if (!deps.findMedia?.(id)) {
+        out.push({ ...row, removed: false, error: "no local file recorded, so its posts are left in place" });
+      } else if (!send) {
+        out.push({ ...row, removed: false });
+      } else {
+        const actions = Object.entries(entry.channels).map(([channel, c]) => ({
+          action: "delete_post" as const,
+          channel: channel as BufferChannel,
+          input: { postId: c!.postId },
+        }));
+        const timing: Plan["timing"] = { mode: "customScheduled", dueAt: entry.dueAt };
+        const results = await executeActions({ videoId: id, kind: entry.kind, title: entry.title, timing, actions }, deps.client!, deps.store);
+        const failed = results.filter((r) => !r.ok);
+        out.push({ ...row, removed: !failed.length, ...(failed.length ? { error: failed.map((f) => `${f.channel}: ${f.error}`).join("; ") } : {}) });
+      }
+      break;
     }
   }
   return out;
@@ -338,9 +389,12 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
     changes.push({ videoId: id, kind: entry.kind, title: entry.title, timing, actions, results });
   }
 
+  const rehosted = await takeDownBrokenMedia(deps, now, send);
+
   // Uploads made outside youtube:package: find the local file and mirror them too.
   const autoMirrored: CheckOutcome["autoMirrored"] = [];
   const unmirrored: CheckOutcome["unmirrored"] = [];
+  const deferred: CheckOutcome["deferred"] = [];
   const mirrorFound = async (v: YouTubeVideo, needsRegistry: boolean) => {
     const miss = (reason: string) => unmirrored.push({ videoId: v.id, title: v.title, publishAt: v.publishAt, reason });
     const hint = deps.findMedia?.(v.id) ?? null;
@@ -366,6 +420,10 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
         },
         deps,
       );
+      if (outcome.deferred) {
+        deferred.push({ videoId: v.id, title: v.title, publishAt: v.publishAt });
+        return;
+      }
       if (outcome.plan.errors.length) {
         miss(`${outcome.plan.errors.join("; ")} (from ${hint.source})`);
         return;
@@ -376,7 +434,11 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
     }
   };
   const scheduled = await deps.listScheduled(token, now);
-  for (const v of scheduled.filter((x) => !ledger.videos[x.id])) await mirrorFound(v, false);
+  // Earliest first, so the nearest posts take Buffer's queue slots. Taken-down posts are mirrored again here.
+  const inBuffer = send ? (await deps.store.load()).videos : ledger.videos;
+  const removed = new Set(rehosted.filter((r) => !send || r.removed).map((r) => r.videoId));
+  const due = (v: YouTubeVideo) => (v.publishAt ? Date.parse(v.publishAt) : Infinity);
+  for (const v of scheduled.filter((x) => !inBuffer[x.id] || removed.has(x.id)).sort((a, b) => due(a) - due(b))) await mirrorFound(v, false);
   // Went public without a schedule, or after yesterday's check: shared now, but only for an
   // upload this pipeline knows (UPLOADS.json), so an old video made public again never reaches social.
   if (deps.listRecentlyPublic) {
@@ -386,7 +448,8 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
     }
   }
 
-  const mediaCleaned = await cleanMedia(ledger, deps, now, send);
+  // A copy that no longer loads can't be deleted through its old host either: just forget it.
+  const mediaCleaned = await cleanMedia(ledger, deps, now, send, new Set(rehosted.map((r) => r.url)));
 
-  return { checked: ids.length, changes, autoMirrored, unmirrored, mediaCleaned, sent: send };
+  return { checked: ids.length, changes, autoMirrored, deferred, rehosted, unmirrored, mediaCleaned, sent: send };
 }

@@ -12,7 +12,8 @@
  *   # See what it would do, without hosting or posting (also saves the plan for the MCP route)
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts plan --video <id> …
  *   # Keep Buffer in step with Studio, and mirror scheduled uploads made outside youtube:package
- *   # (daily on the Mac via launchd; run it after any Studio change)
+ *   # (daily on the Mac via launchd; run it after any Studio change). Only uploads going public within 7 days are
+ *   # scheduled (Buffer holds 10 per channel); waiting posts whose media no longer loads are re-made on R2.
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts check [--dry-run]
  *   # Tell the daily check which file an upload came from, when it was uploaded by hand
  *   npx tsx scripts/buffer-mirror.ts register --video <shortId> --media <short.mp4> --long <longId>
@@ -125,7 +126,8 @@ async function check() {
   const failed =
     outcome.changes.some((c) => c.results.some((r) => !r.ok)) ||
     outcome.autoMirrored.some((m) => m.results.some((r) => !r.ok)) ||
-    outcome.mediaCleaned.some((m) => m.error);
+    outcome.mediaCleaned.some((m) => m.error) ||
+    outcome.rehosted.some((r) => r.error);
   // Unmirrored uploads need a person (register the file), so they fail the run too: the log shows why.
   if (failed || outcome.unmirrored.length) process.exit(1);
 }
