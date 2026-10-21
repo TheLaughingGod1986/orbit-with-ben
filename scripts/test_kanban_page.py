@@ -858,3 +858,21 @@ class ChiefLine(unittest.TestCase):
         hb = {"chief": "", "chain": [{"agent": "chief", "up": False, "why": "quiet"}]}
         self.assertIn("No Chief", self.evaluate("chiefLine()", {"lanes": {"mini": {"heartbeat": hb}}}))
         self.assertEqual(self.evaluate("chiefLine()", {}), "")
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class StepAfterADoneJob(unittest.TestCase):
+    """21 Oct 2026: a film step waiting on a job that was then closed made statusOf throw and froze the whole board."""
+    def test_a_step_after_a_done_job_renders(self):
+        names = ["esc", "MINUTE", "ts", "clock", "ago", "etaOf", "shortTitle", "statusOf"]
+        lib = "\n".join(js_function(page(), n) for n in names if n in page())
+        script = ("const fromDb={jobs:[]};\n" + lib + "\n"
+                  "const r = statusOf({mood:'finished'}, [{x:{who:'Claude', what:'check v01m'}, w:{kind:'queue', ahead:[], text:'ready after J0793; not started yet'}}]);\n"
+                  "const r2 = statusOf({mood:'finished'}, [{x:{who:'Claude', what:'check v01m'}, w:{kind:'queue', text:'ready after J0793'}}]);\n"
+                  "console.log(JSON.stringify([r.cls, r2.cls]));")
+        out = subprocess.run(["node", "-e", script], text=True, capture_output=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        self.assertEqual(json.loads(out.stdout), ["queue", "queue"])
+
+    def test_the_after_job_branch_gives_an_empty_ahead_list(self):
+        self.assertIn('if(j && j.status==="done") return {kind:"queue", ahead:[]', page())
