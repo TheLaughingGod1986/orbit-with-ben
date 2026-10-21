@@ -62548,10 +62548,24 @@
           "at": "2026-10-21T10:14Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-21T12:02Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "assembly",
-      "urgent": 1
+      "urgent": 1,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J0793",
