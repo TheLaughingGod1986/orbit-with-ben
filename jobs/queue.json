@@ -65342,10 +65342,24 @@
           "at": "2026-10-21T12:12Z",
           "by": "claude",
           "what": "after J0795 (Mini disk under 20 GB; render waits for the NAS move)"
+        },
+        {
+          "at": "2026-10-21T22:21Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "kind": "assembly",
-      "urgent": 4
+      "urgent": 4,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0795",
