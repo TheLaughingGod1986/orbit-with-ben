@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0781 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0792 | mini | blocked | gemini | – | 024 edit · for gemini · assembly · `gemini-agy` · 024 Light Speed v06: Ben's fixes, diagrams that explain + Orbit back in (airs 1 Nov) | 6214297631 |
 | J0793 | mini | blocked | gemini | – | 027 edit · for gemini · assembly · 027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX |  |
-| J0794 | mini | open (after J0795) | – | – | 026 edit · for gemini · assembly · `gemini-agy` · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
+| J0794 | mini | claimed | gemini | 2026-10-22T06:21Z | 026 edit · for gemini · assembly · `gemini-agy` · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
 | J0805 | mini | blocked | gemini | – | assembly · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
 | J0808 | mini | open (after J0795) | – | – | 029 edit · assembly · 029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint) |  |
