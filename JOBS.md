@@ -23,7 +23,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0345 | mini | blocked | cursor | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
-| J0352 | mini | open | – | – | 007 picture · for gemini · video · `flow-veo-3.1` · HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex) | 6206755581 |
+| J0352 | mini | claimed | gemini | 2026-10-21T23:15Z | 007 picture · for gemini · video · `flow-veo-3.1` · HOS 007 picture: mint the Flow rows of boards v02 (live read first, keep ≥3,000 after; cap 7,550; no Vertex) | 6206755581 |
 | J0781 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0792 | mini | open (after J0795) | – | – | 024 edit · for gemini · assembly · `gemini-agy` · 024 Light Speed v06: Ben's fixes, diagrams that explain + Orbit back in (airs 1 Nov) | 6214297631 |
 | J0793 | mini | open (after J0795) | – | – | 027 edit · assembly · 027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX |  |
