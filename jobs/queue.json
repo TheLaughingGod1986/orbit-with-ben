@@ -1,5 +1,5 @@
 {
-  "next_id": 814,
+  "next_id": 815,
   "jobs": [
     {
       "id": "J0001",
@@ -66104,6 +66104,33 @@
       ],
       "kind": "studio",
       "urgent": 4
+    },
+    {
+      "id": "J0814",
+      "title": "Board: sync film stages from done jobs so 'Since yesterday' shows real progress",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ben, 21 Oct 2026 (Kanban screenshot): \"Since yesterday does not seem to be showing progress\". It showed 0 videos advanced with 26 jobs finished. Cause: the board's percentages come from each film's `02_Video-Projects/<film>/status.json` stages, and those only move when a job carries `film` + `stage` or someone runs `studio.py`. Most jobs (and every Chief PASS) don't, so stages sat in `review`/`doing` for days (021 still said edit=review, upload=doing 10 days after it went live; Claude fixed 021, 025, 030 by hand on 21 Oct).\n\nFix (code, PR, tests):\n1. `scripts/stage_sync.py`: for each OWB film, find stages in `review`/`doing`/`blocked` whose job(s) are done with a Chief PASS/KEEP result (match by film id in title or `film`, stage by `stage` field or the job's `kind` via scripts/routing.py KINDS), and propose `done` (with the job id as ref). Upload receipts (`11_Upload-Package/*UPLOAD_RESULT*.json`) set upload done with the `ref <id> (Private, publishAt …)` note the board reads. Dry-run by default; `--apply --git` writes through `studio.py` and pushes.\n2. Run it from the hourly studio run (Chief's step 5) with `--apply`, and report what moved in one #99 line.\n3. Tests: a PASS-done picture job moves picture review→done; a FIX result does not; a job without a film is ignored; an upload receipt sets the scheduled note.\n4. In `jobs.py add`, warn when a job names a film (`\\b0\\d\\d\\b` with OWB/HOS) but has no `--film/--stage`.\n£0. Merge once CI is green.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T16:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T16:38Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
