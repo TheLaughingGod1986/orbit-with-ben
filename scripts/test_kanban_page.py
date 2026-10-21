@@ -782,5 +782,46 @@ console.log(JSON.stringify(progressUpdates()));
         self.assertIn('id="recentActivity" class="more fold"', html)
 
 
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class DailyVideoProgress(unittest.TestCase):
+    def evaluate(self, code):
+        names=["WORD","OWB_STAGES","AGENT","owbFilm","filmPct","progress","stOf","progressWindow","videoMovement",
+               "supportingJob","taskKeysFor","chanOf","periodWork"]
+        lib="\n".join(js_function(page(),name) for name in names)
+        script='''const fromDb={jobs:[],videoProgress:{periods:{day:{channels:{HOS:{available:true,definitions:[{key:"picture",weight:100}],films:{"HOS:006":{stages:{picture:{status:"doing",progress:0.4}}}}}},work:[]}}}};
+let progressPeriod="day",chan="all";const videoScheduleRows=new Map();
+'''+lib+'''
+const row={f:{key:"HOS:006",_ch:"HOS",_stages:[{key:"picture",label:"Picture",weight:100}],stages:{picture:{status:"doing",progress:0.6}}}};
+'''+code
+        out=subprocess.run(["node"],input=script,text=True,capture_output=True,timeout=30)
+        self.assertEqual(out.returncode,0,out.stderr)
+        return json.loads(out.stdout)
+
+    def test_comparison_uses_historical_stage_progress_and_completed_job_does_not_fill_bar(self):
+        r=self.evaluate('''fromDb.videoProgress.periods.day.work=[{id:"J1",done:true}];console.log(JSON.stringify(videoMovement(row)));''')
+        self.assertEqual((r['previous'],r['current'],r['delta']),(40,60,20))
+        self.assertEqual(r['kind'],'advanced')
+        self.assertEqual(r['changes'][0],{'stage':'Picture','from':'in progress 40%','to':'in progress 60%'})
+
+    def test_unchanged_regression_new_and_missing_history_are_distinct(self):
+        r=self.evaluate('''const h=fromDb.videoProgress.periods.day.channels.HOS;const out=[];
+h.films["HOS:006"].stages.picture.progress=0.6;out.push(videoMovement(row).kind);
+h.films["HOS:006"].stages.picture.progress=0.8;out.push(videoMovement(row).kind);
+delete h.films["HOS:006"];out.push(videoMovement(row).kind);
+h.available=false;out.push(videoMovement(row).kind);console.log(JSON.stringify(out));''')
+        self.assertEqual(r,['unchanged','reduced','new','unavailable'])
+
+    def test_changed_weights_are_not_called_video_progress(self):
+        r=self.evaluate('''fromDb.videoProgress.periods.day.channels.HOS.definitions[0].weight=35;console.log(JSON.stringify(videoMovement(row)));''')
+        self.assertEqual(r['kind'],'unavailable')
+        self.assertIn('not comparable',r['reason'])
+
+    def test_work_categories_do_not_double_count_channel_qa_or_outside_plan(self):
+        r=self.evaluate('''videoScheduleRows.set("HOS:006",row);
+fromDb.videoProgress.periods.day.work=[{id:"QA",title:"Backlog: QA sweep of newest packs on both channels",taskKeys:["HOS:006"],status:"blocked"},{id:"VIDEO",title:"HOS 006 picture fixes",taskKeys:["HOS:006"],done:true},{id:"OTHER",title:"HOS new script",taskKeys:["HOS:099"]}];
+const w=periodWork([row]);console.log(JSON.stringify({video:w.video.map(j=>j.id),outside:w.outside.map(j=>j.id),checks:w.checks.map(j=>j.id),done:w.finished}));''')
+        self.assertEqual(r,{'video':['VIDEO'],'outside':['OTHER'],'checks':['QA'],'done':1})
+
+
 if __name__ == "__main__":
     unittest.main()

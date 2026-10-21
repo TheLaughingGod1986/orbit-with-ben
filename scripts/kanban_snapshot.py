@@ -959,6 +959,8 @@ def main(argv: list[str] | None = None) -> int:
                "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
                "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs), "week": week_numbers(alljobs),
                "done": completed_jobs(alljobs)}
+        from video_progress import progress_document
+        doc["videoProgress"] = progress_document(ROOT, a.hos, alljobs, a.db_out)
         if a.chief:
             doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
                             "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}
