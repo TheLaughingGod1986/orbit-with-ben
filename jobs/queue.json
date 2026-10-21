@@ -65712,13 +65712,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-21T15:05Z",
-      "eta": "2026-10-21T16:35Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T13:54Z",
-      "result": "",
+      "result": "parked for Chief: price pass; per Chief J0785 ruling (21 Oct), no eligible unplanned HOS film with locked VO exists (006-010 already have priced plans; 013 long VO queued J0807; hos-plate-prep paused in backlog.json). Synced HOS draft PR #348 (bcf0e2e5) through 089 with STATUS.md in sync, check_all.sh PASS, generation_authorized=false, zero mint/spend.",
       "history": [
         {
           "at": "2026-10-21T13:54Z",
@@ -65754,6 +65754,11 @@
           "at": "2026-10-21T15:50Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed J0805: confirmed no eligible unplanned locked-VO HOS film per Chief J0785 ruling (006-010 planned; 013 VO queued J0807) and pushed clean HOS draft PR #348 commit bcf0e2e5 (check_all.sh PASS, zero mint)"
+        },
+        {
+          "at": "2026-10-21T15:50Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: price pass; per Chief J0785 ruling (21 Oct), no eligible unplanned HOS film with locked VO exists (006-010 already have priced plans; 013 long VO queued J0807; hos-plate-prep paused in backlog.json). Synced HOS draft PR #348 (bcf0e2e5) through 089 with STATUS.md in sync, check_all.sh PASS, generation_authorized=false, zero mint/spend."
         }
       ],
       "kind": "assembly",
