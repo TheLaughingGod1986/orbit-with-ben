@@ -1,5 +1,5 @@
 {
-  "next_id": 813,
+  "next_id": 814,
   "jobs": [
     {
       "id": "J0001",
@@ -66031,6 +66031,33 @@
       ],
       "kind": "studio",
       "urgent": 1
+    },
+    {
+      "id": "J0813",
+      "title": "GitHub: delete 108 merged branches (list in jobs/data, Ben's go 21 Oct)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, 21 Oct 2026 (in chat with Claude): \"go branches\".** Delete the 108 GitHub branches of orbit-with-ben whose work is already in main. The list with each branch's tip sha is `jobs/data/branch_cleanup_2026-10-21.txt` (Claude checked every one: merged into main, or its merged PR's head is the branch tip). The cloud session can't delete branches (the proxy refuses), so the Mini does it with its own GitHub login.\n\n1. `git pull` main, `git fetch --prune origin`.\n2. For each `branch sha` line (skip the `#` line): only if `git rev-parse origin/<branch>` still equals that sha, `git push origin --delete <branch>`. A different sha (someone pushed since) or a missing branch: skip it and note it. Never delete `main`, `mini-heartbeat`, `claude-heartbeat`, `board-data`, or any branch not in the file.\n3. `git fetch --prune origin`; post on #99: deleted N, skipped (name + why), branches left. Mark this job done.\n\nNothing else: no PR closes, no other branches. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T16:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T16:05Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
