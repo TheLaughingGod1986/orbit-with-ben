@@ -63023,17 +63023,25 @@
           "at": "2026-10-21T12:34Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking HOS test records and local plates; NAS directory read is hanging"
+        },
+        {
+          "at": "2026-10-21T12:34Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Selected HOS 001: no test recorded in shared ledger; 003 running and 004 armed excluded. Disk prerequisite unresolved: 7.8 GiB free and NAS directory read hangs; no build started."
         }
       ],
       "kind": "chart",
       "backlog": "hos-thumb-b",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-21T12:34Z",
         "by": "codex",
-        "note": "Checking HOS test records and local plates; NAS directory read is hanging"
-      }
+        "note": "Selected HOS 001: no test recorded in shared ledger; 003 running and 004 armed excluded. Disk prerequisite unresolved: 7"
+      },
+      "taskKeys": [
+        "HOS:001"
+      ]
     }
   ],
   "focus": [],
