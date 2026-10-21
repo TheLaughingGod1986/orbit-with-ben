@@ -4,7 +4,7 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "01_Script/olympus_mons_script_master_v00.md"
     },
     "topic": {
@@ -16,6 +16,14 @@
       "ref": "01_Script/SOURCES.md"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "gemini",
+      "at": "2026-10-21T02:20Z",
+      "eta": "2026-10-21T03:20Z",
+      "note": "J0765 OWB 059 script v01 draft + SOURCES.md"
+    }
+  ],
   "next": "Chief topic lock + Gemini facts pass"
 }
