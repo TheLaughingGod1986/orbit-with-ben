@@ -33,6 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0818 | mini | open | – | – | studio · Thumbnail tests: read back T001 (HOS X-rays INSIDE HER HAND) + T005-T007 into the ledger, read-only |  |
 | J0819 | mini | open | – | – | studio · 021 Short 'How Thin Are Saturn's Rings?': upload Private, publishAt Fri 30 Oct 11:30 London (J0810 final OK) |  |
 | J0820 | mini | open | – | – | assembly · HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) |  |
+| J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
 
 Recently finished:
 

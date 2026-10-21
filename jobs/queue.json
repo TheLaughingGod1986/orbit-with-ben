@@ -1,5 +1,5 @@
 {
-  "next_id": 821,
+  "next_id": 822,
   "jobs": [
     {
       "id": "J0001",
@@ -67235,6 +67235,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0821",
+      "title": "Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ben, 21 Oct 2026: \"I'll leave the 1 or 2 lane choice to you.\" Claude's call: stay on one Mini lane for now. Tonight only Gemini has credit (Cursor weekly limit, Codex usage limit), so a second lane would have no second agent to run, and heavy renders already run detached in tmux beside the active job.\n\nBuild the second lane once two Mini agents have credit for a week: chief_relay.py runs a \"light\" lane (reviews, packaging, listings, checks, jobs with no render/mint/assembly kind) in a second process with its own lock, alongside the existing heavy lane; the light lane never starts a render, mint or NAS move; CHIEF_LANES=1 switches it back off. Tests for: two agents never take the same job; the light lane skips heavy kinds; one lock per lane; disk floor still stops both.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-21T23:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T23:00Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
