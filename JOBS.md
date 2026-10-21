@@ -33,7 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
 | J0808 | mini | open (after J0795) | – | – | 029 edit · assembly · 029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint) |  |
 | J0809 | mini | open (after J0795) | – | – | assembly · HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) |  |
-| J0810 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) |  |
+| J0810 | mini | claimed | gemini | 2026-10-21T20:00Z | for gemini · listing · `gemini-argon` · OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) |  |
 | J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
 | J0815 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
