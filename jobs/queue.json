@@ -66742,6 +66742,11 @@
           "at": "2026-10-21T20:59Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting J0816: dry-run buffer:check before rehosting Blob posts to R2"
+        },
+        {
+          "at": "2026-10-21T21:00Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Dry-run verified: 11 rehosted (0 missing local files), 5 autoMirrored (23-28 Oct), 12 deferred (>=29 Oct); posted on #99"
         }
       ],
       "kind": "studio",
@@ -66755,12 +66760,19 @@
       },
       "for": "gemini",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-21T20:59Z",
+        "at": "2026-10-21T21:00Z",
         "by": "gemini",
-        "note": "Starting J0816: dry-run buffer:check before rehosting Blob posts to R2"
-      }
+        "note": "Dry-run verified: 11 rehosted (0 missing local files), 5 autoMirrored (23-28 Oct), 12 deferred (>=29 Oct); posted on #99"
+      },
+      "taskKeys": [
+        "OWB:022",
+        "OWB:023",
+        "OWB:025",
+        "OWB:027",
+        "OWB:030"
+      ]
     },
     {
       "id": "J0817",
