@@ -106,10 +106,23 @@ def work_since(jobs, since, until):
         if not worked:
             continue
         finished = [at for at, what in events if what.startswith("done")]
+        last_step = None
+        for h in j.get("history", []):
+            when, what = parse(h.get("at")), h.get("what", "")
+            if not when or when > until:
+                continue
+            if what.startswith(("added", "reopened")):
+                last_step = None
+            match = re.match(r"step (\d+) of (\d+) done", what)
+            if match:
+                last_step = (when, int(match[1]), int(match[2]))
+        reported_complete = bool(last_step and since < last_step[0] <= until and last_step[2] > 0 and last_step[1] >= last_step[2])
+        review_ready = (reported_complete and j.get("status") == "blocked"
+                        and bool(re.search(r"parked for (?:the )?chief\b", j.get("result", ""), re.I)))
         items.append({"id": j["id"], "title": j.get("title", ""), "repo": j.get("repo", ""),
                       "film": j.get("film", ""), "stage": j.get("stage", ""), "taskKeys": job_targets(j),
                       "status": j.get("status", ""), "workedAt": stamp(max(worked)),
-                      "done": bool(finished) and j.get("status") == "done"})
+                      "done": bool(finished) and j.get("status") == "done", "readyForReview": review_ready})
     return items
 
 
@@ -133,4 +146,4 @@ def progress_document(owb, hos, jobs, out_dir, at=None):
         cache_path.write_text(json.dumps({k: v for k, v in cache.items() if k in used}))
     except OSError:
         pass  # Cache failure cannot stop publishing the board.
-    return {"periods": periods}
+    return {"version": 2, "periods": periods}

@@ -78,6 +78,20 @@ class RecordedWork(unittest.TestCase):
         self.assertEqual(vp.job_targets({'title':'Channel check','result':'95 points; 19 videos'}),[])
         self.assertEqual(vp.job_targets({'title':'HOS script','result':'HOS 006 updated'}),['HOS:006'])
 
+    def test_full_steps_awaiting_chief_are_distinct_from_closed_or_partially_blocked_work(self):
+        full = [{'at':'2026-10-20T02:00Z','what':'step 4 of 4 done: draft saved'}]
+        jobs = [
+            {'id':'REVIEW','status':'blocked','result':'parked for Chief: script review','history':full},
+            {'id':'CLOSED','status':'done','result':'done','history':full+[{'at':'2026-10-20T03:00Z','what':'done: approved'}]},
+            {'id':'PARTIAL','status':'blocked','result':'parked for Chief: needs input','history':[{'at':'2026-10-20T02:00Z','what':'step 2 of 4 done'}]},
+            {'id':'OTHER','status':'blocked','result':'waiting for credits','history':full},
+            {'id':'REOPENED','status':'blocked','result':'parked for Chief: review','history':full+[{'at':'2026-10-20T03:00Z','what':'reopened: needs fixes'}]},
+            {'id':'OLD','status':'blocked','result':'parked for Chief: review','history':[{'at':'2026-10-19T02:00Z','what':'step 4 of 4 done'},{'at':'2026-10-20T03:00Z','what':'claimed'}]},
+        ]
+        rows=vp.work_since(jobs,dt.datetime(2026,10,20,tzinfo=UTC),dt.datetime(2026,10,20,12,tzinfo=UTC))
+        self.assertEqual([r['id'] for r in rows if r['readyForReview']],['REVIEW'])
+        self.assertEqual([r['id'] for r in rows if r['done']],['CLOSED'])
+
 
 if __name__ == '__main__':
     unittest.main()

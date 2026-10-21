@@ -811,6 +811,10 @@ delete h.films["HOS:006"];out.push(videoMovement(row).kind);
 h.available=false;out.push(videoMovement(row).kind);console.log(JSON.stringify(out));''')
         self.assertEqual(r,['unchanged','reduced','new','unavailable'])
 
+    def test_ready_for_review_and_closed_jobs_are_counted_separately(self):
+        r=self.evaluate('''fromDb.videoProgress.version=2;fromDb.videoProgress.periods.day.work=[{id:"REVIEW",title:"HOS 006 draft",taskKeys:["HOS:006"],status:"blocked",readyForReview:true,done:false},{id:"CLOSED",title:"HOS 006 fix",taskKeys:["HOS:006"],status:"done",readyForReview:false,done:true}];const w=periodWork([row]);console.log(JSON.stringify({review:w.reviewReady,closed:w.finished}));''')
+        self.assertEqual(r,{'review':1,'closed':1})
+
     def test_changed_weights_are_not_called_video_progress(self):
         r=self.evaluate('''fromDb.videoProgress.periods.day.channels.HOS.definitions[0].weight=35;console.log(JSON.stringify(videoMovement(row)));''')
         self.assertEqual(r['kind'],'unavailable')
