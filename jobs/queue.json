@@ -66039,10 +66039,10 @@
     },
     {
       "id": "J0813",
-      "title": "GitHub: delete 108 merged branches (list in jobs/data, Ben's go 21 Oct)",
+      "title": "GitHub: delete 110 merged branches + archive-tag and delete 13 finished ones (Ben's go 21 Oct)",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Ben, 21 Oct 2026 (in chat with Claude): \"go branches\".** Delete the 108 GitHub branches of orbit-with-ben whose work is already in main. The list with each branch's tip sha is `jobs/data/branch_cleanup_2026-10-21.txt` (Claude checked every one: merged into main, or its merged PR's head is the branch tip). The cloud session can't delete branches (the proxy refuses), so the Mini does it with its own GitHub login.\n\n1. `git pull` main, `git fetch --prune origin`.\n2. For each `branch sha` line (skip the `#` line): only if `git rev-parse origin/<branch>` still equals that sha, `git push origin --delete <branch>`. A different sha (someone pushed since) or a missing branch: skip it and note it. Never delete `main`, `mini-heartbeat`, `claude-heartbeat`, `board-data`, or any branch not in the file.\n3. `git fetch --prune origin`; post on #99: deleted N, skipped (name + why), branches left. Mark this job done.\n\nNothing else: no PR closes, no other branches. £0.\n",
+      "body": "**Ben, 21 Oct 2026 (in chat with Claude): \"go branches\".** Delete the 108 GitHub branches of orbit-with-ben whose work is already in main. The list with each branch's tip sha is `jobs/data/branch_cleanup_2026-10-21.txt` (Claude checked every one: merged into main, or its merged PR's head is the branch tip). The cloud session can't delete branches (the proxy refuses), so the Mini does it with its own GitHub login.\n\n1. `git pull` main, `git fetch --prune origin`.\n2. For each `branch sha` line (skip the `#` line): only if `git rev-parse origin/<branch>` still equals that sha, `git push origin --delete <branch>`. A different sha (someone pushed since) or a missing branch: skip it and note it. Never delete `main`, `mini-heartbeat`, `claude-heartbeat`, `board-data`, or any branch not in the file.\n3. `git fetch --prune origin`; post on #99: deleted N, skipped (name + why), branches left. Mark this job done.\n\n4. **Archive, then delete** (Ben, 21 Oct: \"yes clean up\"): for each `branch sha` line in `jobs/data/branch_archive_2026-10-21.txt`, only if `origin/<branch>` still equals that sha: `git tag archive/<branch> <sha>`, `git push origin archive/<branch>`, check `git ls-remote origin refs/tags/archive/<branch>` returns the sha, and only then `git push origin --delete <branch>`. Nothing is lost: the tag keeps every commit.\n5. Keep the three `backup/...` branches as they are.\n\nNothing else: no PR closes, no other branches. £0.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -66060,6 +66060,11 @@
           "at": "2026-10-21T16:05Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-21T16:08Z",
+          "by": "claude",
+          "what": "body updated: + archive list (Ben: yes clean up)"
         }
       ],
       "kind": "studio",
