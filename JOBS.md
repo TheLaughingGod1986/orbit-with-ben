@@ -437,10 +437,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0793 | mini | open (after J0795) | – | – | 027 edit · assembly · 027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX |  |
 | J0794 | mini | open (after J0795) | – | – | 026 edit · assembly · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
 | J0795 | mini | blocked | codex | – | URGENT Mini disk: move old render scratch + ready films to the NAS (sha256-verified) to free 20 GB+ for 024 v06 (J0792) |  |
-| J0796 | mini | claimed | codex | 2026-10-21T12:50Z | studio · 022 Sun Shorts: add parent long link to descriptions (redescribe-videos.ts, staged payload) |  |
 
 Recently finished:
 
+- J0796 done: 022 Sun Shorts: add parent long link to descriptions (redescribe-videos.ts, staged payload) (Updated descriptions on y-SPHQ0-VjQ, n_4XskX0yZk, 2e-giqFmfy8 with parent long link; fresh API reads verify all three. Evidence 3245652b0 on codex/j0796-descriptions. No privacy/schedule change; £0.)
 - J0712 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (12 OWB + 4 HOS longs; 65 OWB + 15 HOS Shorts. CTR hits vs 4%: OWB 1/12 (Jupiter 4.8%), HOS 1/4 (Germs 7.7%). Two newest Shorts unavailable. Main 60b862762; tracker verified; zero spend or YouTube changes.)
 - J0642 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0630 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (11 OWB + 4 HOS longs (plus 72 Shorts: 58 OWB + 14 HOS; 022 h8HGfyShEHI and HOS Short TbMMJSRKC3U not yet reported in Studio); CTR hits vs 4%: 2/15 (OWB -jmMROGoZCM 4.9% on 41 impr; HOS _C92tIJCk8A 7.9% on 38 impr); top volume: OWB 021 Saturn 55AEQwvs36g 1.8% CTR (1,166 impr, 205 views, 12.1% avg viewed), HOS 002 Periodic Table AL_-qlWko_g 3.3% CTR (958 impr, 145 views, 22.5% avg viewed))
@@ -450,4 +450,3 @@ Recently finished:
 - J0581 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0566 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (0 fixes needed across last 10 live public videos (05_Analytics/live_fixes/2026-10-18.md @ b3f1782ef))
 - J0551 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J0536 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
