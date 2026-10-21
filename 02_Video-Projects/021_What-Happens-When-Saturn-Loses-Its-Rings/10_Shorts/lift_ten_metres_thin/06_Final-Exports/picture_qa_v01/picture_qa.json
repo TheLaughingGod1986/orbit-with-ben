@@ -1,0 +1,153 @@
+{
+  "verdict": "PASS",
+  "video": "/private/tmp/j0771-wt/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/saturn_ten_metres_thin_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 2,
+      "row": "s03_pia09805_outer_c_ring",
+      "source": "021_v03f_span_156.80.mp4",
+      "title": "NASA Cassini Saturn Outer C Ring concentric gaps (PIA09805, 156.80s)",
+      "t": 7.75,
+      "at": "0:08",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0264 < film p5 0.0274"
+      ],
+      "offset": 156.8
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pia18367_criss_crossed_rings",
+      "source": "021_v03f_span_506.45.mp4",
+      "title": "NASA Cassini Criss-Crossed Rings sunlit Saturn and thin ring plane (PIA18367, 506.45s)",
+      "t": 1.98,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 506.45
+    },
+    {
+      "cut": 1,
+      "row": "s02_pia21057_b_ring_edge",
+      "source": "021_v03f_span_141.80.mp4",
+      "title": "NASA Cassini Straw in the B Ring Edge shepherded ring plane (PIA21057, 141.80s)",
+      "t": 5.22,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 141.8
+    },
+    {
+      "cut": 2,
+      "row": "s03_pia09805_outer_c_ring",
+      "source": "021_v03f_span_156.80.mp4",
+      "title": "NASA Cassini Saturn Outer C Ring concentric gaps (PIA09805, 156.80s)",
+      "t": 7.75,
+      "at": "0:08",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0264 < film p5 0.0274"
+      ],
+      "offset": 156.8
+    },
+    {
+      "cut": 3,
+      "row": "s04_pia06092_cassini_division",
+      "source": "021_v03f_span_172.80.mp4",
+      "title": "NASA Cassini Captures the Cassini Division gap and ring lanes (PIA06092, 172.80s)",
+      "t": 10.43,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": 172.8
+    },
+    {
+      "cut": 4,
+      "row": "s05_pia08992_surging_rings",
+      "source": "021_v03f_span_32.70.mp4",
+      "title": "NASA Cassini Surging Across the Rings bright blade (PIA08992, 32.70s)",
+      "t": 13.4,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 32.7
+    },
+    {
+      "cut": 5,
+      "row": "s06_pia07872_small_particles",
+      "source": "021_v03f_span_63.40.mp4",
+      "title": "NASA Cassini Small Particles in Saturn Rings fine lanes (PIA07872, 63.40s)",
+      "t": 17.32,
+      "at": "0:17",
+      "fail": [],
+      "warn": [],
+      "offset": 63.4
+    },
+    {
+      "cut": 6,
+      "row": "s07_pia21886_inside_out_rings",
+      "source": "021_v03f_span_198.15.mp4",
+      "title": "NASA Cassini Inside-Out Rings inner ring edge above Saturn (PIA21886, 198.15s)",
+      "t": 22.2,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 198.15
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_pia18367.mp4",
+      "title": "End-card loop: NASA Cassini Criss-Crossed Rings sunlit Saturn portrait (PIA18367, 506.45s)",
+      "t": 25.77,
+      "at": "0:26",
+      "fail": [],
+      "warn": [],
+      "offset": 506.45
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0274,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
