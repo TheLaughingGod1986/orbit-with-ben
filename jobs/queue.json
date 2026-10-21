@@ -1,5 +1,5 @@
 {
-  "next_id": 785,
+  "next_id": 786,
   "jobs": [
     {
       "id": "J0001",
@@ -61853,6 +61853,34 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J0785",
+      "title": "Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "For the next HOS film whose picture plan isn't done, write the plate board rows (prompt, reference, Flow quality, price) from the locked VO. Mint nothing. Commit in a HOS PR and block 'parked for Chief: price pass'.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-21T08:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-21T08:49Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "hos-plate-prep"
     }
   ],
   "focus": [],
@@ -61870,7 +61898,7 @@
     "hos-live-listing-fixes": "2026-10-21T05:38Z",
     "owb-next-script": "2026-10-21T08:13Z",
     "hos-next-script": "2026-10-21T08:16Z",
-    "hos-plate-prep": "2026-10-21T03:13Z",
+    "hos-plate-prep": "2026-10-21T08:49Z",
     "both-qa-sweep": "2026-10-21T03:14Z",
     "studio-ctr-daily": "2026-10-21T06:04Z"
   }
