@@ -876,3 +876,11 @@ class StepAfterADoneJob(unittest.TestCase):
 
     def test_the_after_job_branch_gives_an_empty_ahead_list(self):
         self.assertIn('if(j && j.status==="done") return {kind:"queue", ahead:[]', page())
+
+
+class NoObserverLoops(unittest.TestCase):
+    """21 Oct 2026: the HOS tab hung the page: the Working-now chip compared innerHTML with an escaped string."""
+    def test_dom_writes_inside_the_observer_compare_their_own_string(self):
+        html = page()
+        self.assertNotIn("s2.innerHTML!==st", html)
+        self.assertIn('s2.dataset.h!==st', html)
