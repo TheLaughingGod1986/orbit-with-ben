@@ -62598,17 +62598,25 @@
           "at": "2026-10-21T12:25Z",
           "by": "codex",
           "what": "step 0 of 4 done: Inspect locked masters and existing Shorts; select an eligible unused excerpt"
+        },
+        {
+          "at": "2026-10-21T12:26Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Inventory complete: Moon has zero local Short exports; master is NAS-only. Disk 7.8 GiB free; checking NAS before required scratch offload."
         }
       ],
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-21T12:25Z",
+        "at": "2026-10-21T12:26Z",
         "by": "codex",
-        "note": "Inspect locked masters and existing Shorts; select an eligible unused excerpt"
-      }
+        "note": "Inventory complete: Moon has zero local Short exports; master is NAS-only. Disk 7.8 GiB free; checking NAS before requir"
+      },
+      "taskKeys": [
+        "OWB:013"
+      ]
     },
     {
       "id": "J0792",
