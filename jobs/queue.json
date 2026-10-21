@@ -65127,12 +65127,25 @@
           "at": "2026-10-21T15:15Z",
           "by": "claude",
           "what": "reopened: Ben restarted NFS on the NAS at 16:13 London on 21 Oct; Mini reconnected on its own, NAS writes now ~51 MB/s. Retry from step 1."
+        },
+        {
+          "at": "2026-10-21T18:16Z",
+          "by": "gemini",
+          "what": "rerouted to gemini: Taking urgent #3 disk-recovery job while J0352 Part 02 batch runs in tmux j0352-render"
         }
       ],
       "urgent": 3,
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini"
     },
     {
       "id": "J0796",
