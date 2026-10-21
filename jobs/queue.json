@@ -66188,9 +66188,23 @@
           "at": "2026-10-21T15:34Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-21T18:37Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 106 min (heartbeat 2026-10-21T16:51:46Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
-      "kind": "listing"
+      "kind": "listing",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J0811",
