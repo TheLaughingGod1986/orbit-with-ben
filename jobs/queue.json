@@ -65140,13 +65140,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-21T19:36Z",
-      "eta": "2026-10-21T21:36Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T12:07Z",
-      "result": "",
+      "result": "Moved 26 items (12.85 GiB / 13.80 GB sha256-verified) to /Volumes/data/mac-mini-archive/{mini-tmp-scratch/2026-10-21,youtube-staging}; Mini free space now 25.59 GiB (27.47 GB >= 25 GB floor). Skipped 2 items (OWB-024 graphics_v01/v02 rsync timeout, kept local). Unblocks J0792, J0793, J0794, J0808, J0809.",
       "history": [
         {
           "at": "2026-10-21T12:07Z",
@@ -65242,6 +65242,11 @@
           "at": "2026-10-21T19:37Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Moved 26 items (12.85 GiB / 13.80 GB sha256-verified) to NAS; Mini free space now 25.59 GiB (27.47 GB), unblocking J0792/J0793/J0794/J0808/J0809"
+        },
+        {
+          "at": "2026-10-21T19:37Z",
+          "by": "gemini",
+          "what": "done: Moved 26 items (12.85 GiB / 13.80 GB sha256-verified) to /Volumes/data/mac-mini-archive/{mini-tmp-scratch/2026-10-21,youtube-staging}; Mini free space now 25.59 GiB (27.47 GB >= 25 GB floor). Skipped 2 items (OWB-024 graphics_v01/v02 rsync timeout, kept local). Unblocks J0792, J0793, J0794, J0808, J0809."
         }
       ],
       "urgent": 3,
