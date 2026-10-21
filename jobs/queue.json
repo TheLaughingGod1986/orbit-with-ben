@@ -65221,6 +65221,11 @@
           "at": "2026-10-21T21:20Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Muxed 027_EarthSpin_rough_v01m.mp4 (-13.9 LUFS, -1.2 dBTP, sha256 499e8edc06910cb6); running music_gate, picture_qa, polish_gate"
+        },
+        {
+          "at": "2026-10-21T21:25Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: All gates PASS (music_gate, sfx_kit level, picture_qa, polish_gate); v01m copied to OWB UAT + NAS (sha256 499e8edc06910cb6); pack committed @ 6cd70992f"
         }
       ],
       "kind": "assembly",
@@ -65237,11 +65242,11 @@
         "OWB:027"
       ],
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-10-21T21:20Z",
+        "at": "2026-10-21T21:25Z",
         "by": "gemini",
-        "note": "Muxed 027_EarthSpin_rough_v01m.mp4 (-13.9 LUFS, -1.2 dBTP, sha256 499e8edc06910cb6); running music_gate, picture_qa, pol"
+        "note": "All gates PASS (music_gate, sfx_kit level, picture_qa, polish_gate); v01m copied to OWB UAT + NAS (sha256 499e8edc06910c"
       }
     },
     {
