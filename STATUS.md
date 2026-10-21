@@ -57,5 +57,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 006 | edit | gemini | 2026-10-16T05:22Z | 2026-10-16T05:52Z | J0354 HOS 006 teach master frame review |
+| 024 | edit | gemini | 2026-10-21T19:38Z | 2026-10-22T03:37Z | J0792 024 Light Speed v06: Ben's fixes, diagrams that explain + Orbit back in (airs 1 Nov) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
