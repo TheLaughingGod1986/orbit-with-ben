@@ -60412,6 +60412,11 @@
           "at": "2026-10-21T03:18Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting QA sweep of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-21T03:21Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inventoried 528 OWB + 510 HOS mp4s: found OWB 021 lift_ten_metres_thin v01 (01:07:44Z render with stale 01:04:55Z gates) plus newest OWB 022 sun_faint_young_70pct_v01 (d8c594c10) and HOS 006 s08_willow_pot_v01 (7a4e70f8)"
         }
       ],
       "kind": "qa",
@@ -60426,12 +60431,29 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-21T03:18Z",
+        "at": "2026-10-21T03:21Z",
         "by": "gemini",
-        "note": "Starting QA sweep of newest OWB and HOS packs"
-      }
+        "note": "Inventoried 528 OWB + 510 HOS mp4s: found OWB 021 lift_ten_metres_thin v01 (01:07:44Z render with stale 01:04:55Z gates)"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006"
+      ]
     },
     {
       "id": "J0770",
