@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/j0771-wt/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/saturn_ten_metres_thin_v01.mp4",
+  "edge_floor": 0.0274,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s03_pia09805_outer_c_ring",
+      "cut": 2,
+      "t": 7.75,
+      "source": "021_v03f_span_156.80.mp4",
+      "why": [
+        "low detail: edge density 0.0264 < film p5 0.0274"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_pia18367_criss_crossed_rings",
+      "source": "021_v03f_span_506.45.mp4",
+      "t": 1.98,
+      "std": 55.59,
+      "mean": 134.34,
+      "p95": 184.0,
+      "edge": 0.0549,
+      "hf": 13.51,
+      "lf": 49.94,
+      "std8": 50.47,
+      "edge8": 0.1839,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_pia21057_b_ring_edge",
+      "source": "021_v03f_span_141.80.mp4",
+      "t": 5.22,
+      "std": 51.05,
+      "mean": 162.74,
+      "p95": 237.0,
+      "edge": 0.0652,
+      "hf": 10.83,
+      "lf": 47.65,
+      "std8": 48.38,
+      "edge8": 0.2443,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_pia09805_outer_c_ring",
+      "source": "021_v03f_span_156.80.mp4",
+      "t": 7.75,
+      "std": 28.49,
+      "mean": 127.08,
+      "p95": 171.0,
+      "edge": 0.0264,
+      "hf": 8.65,
+      "lf": 22.11,
+      "std8": 24.52,
+      "edge8": 0.1839,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0264 < film p5 0.0274"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04_pia06092_cassini_division",
+      "source": "021_v03f_span_172.80.mp4",
+      "t": 10.43,
+      "std": 47.4,
+      "mean": 116.2,
+      "p95": 183.0,
+      "edge": 0.4684,
+      "hf": 22.54,
+      "lf": 34.74,
+      "std8": 37.35,
+      "edge8": 0.3061,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_pia08992_surging_rings",
+      "source": "021_v03f_span_32.70.mp4",
+      "t": 13.4,
+      "std": 94.76,
+      "mean": 104.52,
+      "p95": 238.0,
+      "edge": 0.0447,
+      "hf": 13.9,
+      "lf": 91.02,
+      "std8": 91.94,
+      "edge8": 0.1772,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_pia07872_small_particles",
+      "source": "021_v03f_span_63.40.mp4",
+      "t": 17.32,
+      "std": 73.82,
+      "mean": 157.89,
+      "p95": 245.0,
+      "edge": 0.2291,
+      "hf": 21.74,
+      "lf": 64.68,
+      "std8": 67.14,
+      "edge8": 0.4076,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_pia21886_inside_out_rings",
+      "source": "021_v03f_span_198.15.mp4",
+      "t": 22.2,
+      "std": 102.66,
+      "mean": 107.91,
+      "p95": 255.0,
+      "edge": 0.0306,
+      "hf": 10.5,
+      "lf": 100.13,
+      "std8": 101.38,
+      "edge8": 0.1581,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_pia18367.mp4",
+      "t": 25.77,
+      "std": 56.64,
+      "mean": 90.49,
+      "p95": 150.0,
+      "edge": 0.0292,
+      "hf": 13.45,
+      "lf": 52.09,
+      "std8": 52.79,
+      "edge8": 0.1179,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
