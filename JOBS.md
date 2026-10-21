@@ -432,7 +432,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0787 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0788 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0789 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
-| J0790 | mini | open | – | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
+| J0790 | mini | claimed | gemini | 2026-10-21T13:13Z | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
 | J0791 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0792 | mini | open | – | – | 024 edit · assembly · 024 Light Speed v06: Ben's fixes, diagrams that explain + Orbit back in (airs 1 Nov) | 6214297631 |
 | J0793 | mini | open | – | – | 027 edit · assembly · 027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX |  |
