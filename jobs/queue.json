@@ -65824,10 +65824,10 @@
     },
     {
       "id": "J0806",
-      "title": "Find the existing HOS Buffer API key on the Mini (names only, never values)",
+      "title": "HOS Buffer: check Ben's new BUFFER_HOS_API_KEY belongs to the HOS org (names only)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben, 21 Oct 2026: 'api should of been added months ago'. The HOS Buffer draft on 14 Oct (J0188) said not_posted_missing_BUFFER_HOS_API_KEY, so the key is probably on the Mini under another name or in another file.\n\n1. List variable NAMES only (never print or log values) that contain BUFFER in: `~/YouTube/orbit-with-ben/07_Content-Ops/.env`, `~/YouTube/history-of-science/07_Content-Ops/.env` (or wherever the HOS checkout is), and any `.env*` in those two 07_Content-Ops folders. Example: `grep -o '^[A-Z_]*BUFFER[A-Z_]*' <file>`.\n2. For each Buffer key found, check which Buffer organisation it belongs to WITHOUT printing it: call Buffer's account/organisations endpoint with it and report only the org ids and names returned. HOS org is 6431f03385378b838b780157; OWB org is 6ab9206ad1f589b389040174.\n3. If a key for the HOS org exists under another name, add `BUFFER_HOS_API_KEY=<same value>` to orbit-with-ben/07_Content-Ops/.env by copying it file-to-file (never echo it), and post on #99: 'HOS Buffer key found as <NAME> in <file>, copied to BUFFER_HOS_API_KEY'. If none exists, post 'no HOS Buffer key on the Mini; Ben to create one' and block this job needs Ben.\n£0, no posts, no Studio changes.",
+      "body": "Ben, 21 Oct 2026: he made a new HOS Buffer API key and added it to the Mini's `~/YouTube/orbit-with-ben/07_Content-Ops/.env` as `BUFFER_HOS_API_KEY`.\n\n1. `grep -c '^BUFFER_HOS_API_KEY=.' ~/YouTube/orbit-with-ben/07_Content-Ops/.env` is 1 (never print the value). 0: block `needs Ben: BUFFER_HOS_API_KEY not in .env`, stop.\n2. Without printing it, call Buffer's organisations endpoint with that key and report only the org ids and names returned. It must include the HOS org 6431f03385378b838b780157. If it only returns the OWB org 6ab9206ad1f589b389040174, block `needs Ben: key is for the OWB Buffer account, make it in HOS`.\n3. List the HOS org's channels (service + id + name only) and post them on #99, so Claude can add them to BUFFER_CHANNELS.json. Mark this job done.\n£0, no posts, no Studio changes.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -65845,6 +65845,11 @@
           "at": "2026-10-21T15:25Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-21T16:06Z",
+          "by": "claude",
+          "what": "body updated: Ben added the key himself"
         }
       ],
       "urgent": 3
