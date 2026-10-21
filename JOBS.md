@@ -432,7 +432,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0788 | mini | blocked | codex | – | chart · Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record |  |
 | J0789 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB ideas + script draft: next film beyond the pipeline |  |
 | J0790 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · HOS ideas + script draft: next film beyond the pipeline |  |
-| J0791 | mini | claimed | codex | 2026-10-21T14:25Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0791 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0792 | mini | open (after J0795) | – | – | 024 edit · for codex · assembly · `gpt-6.1-sol` · 024 Light Speed v06: Ben's fixes, diagrams that explain + Orbit back in (airs 1 Nov) | 6214297631 |
 | J0793 | mini | open (after J0795) | – | – | 027 edit · assembly · 027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX |  |
 | J0794 | mini | open (after J0795) | – | – | 026 edit · assembly · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
