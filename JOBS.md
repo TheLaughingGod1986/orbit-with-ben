@@ -437,7 +437,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0793 | mini | open (after J0795) | – | – | 027 edit · assembly · 027 Earth Stopped Spinning v01m: Ben's fix, no music and no SFX heard: lay its own bed + house SFX |  |
 | J0794 | mini | open (after J0795) | – | – | 026 edit · assembly · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
 | J0795 | mini | blocked | codex | – | URGENT Mini disk: move old render scratch + ready films to the NAS (sha256-verified) to free 20 GB+ for 024 v06 (J0792) |  |
-| J0796 | mini | open | – | – | studio · 022 Sun Shorts: add parent long link to descriptions (redescribe-videos.ts, staged payload) |  |
+| J0796 | mini | claimed | codex | 2026-10-21T12:50Z | studio · 022 Sun Shorts: add parent long link to descriptions (redescribe-videos.ts, staged payload) |  |
 
 Recently finished:
 
