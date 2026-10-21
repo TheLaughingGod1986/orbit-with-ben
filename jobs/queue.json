@@ -62845,13 +62845,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-21T12:13Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T12:07Z",
-      "result": "needs Ben: NAS hung; /Volumes/data is NFS-mounted but listing /Volumes/data/mac-mini-archive timed out after 20 seconds. No files moved or deleted; about 8.6 GiB free. Restart NAS or remount before retrying step 1; J0792 remains disk-blocked.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-21T12:07Z",
@@ -62877,19 +62877,17 @@
           "at": "2026-10-21T12:14Z",
           "by": "codex",
           "what": "blocked: needs Ben: NAS hung; /Volumes/data is NFS-mounted but listing /Volumes/data/mac-mini-archive timed out after 20 seconds. No files moved or deleted; about 8.6 GiB free. Restart NAS or remount before retrying step 1; J0792 remains disk-blocked."
+        },
+        {
+          "at": "2026-10-21T15:15Z",
+          "by": "claude",
+          "what": "reopened: Ben restarted NFS on the NAS at 16:13 London on 21 Oct; Mini reconnected on its own, NAS writes now ~51 MB/s. Retry from step 1."
         }
       ],
       "urgent": 1,
       "taskKeys": [
         "OWB:024"
-      ],
-      "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-10-21T12:14Z",
-        "by": "codex",
-        "note": "NAS mounted via NFS but archive listing timed out after 20 seconds; step 1 failed, no write probe or file moves attempte"
-      }
+      ]
     },
     {
       "id": "J0796",
