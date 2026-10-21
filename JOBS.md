@@ -440,10 +440,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0797 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0798 | mini | blocked | codex | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 | J0799 | mini | claimed | codex | 2026-10-21T14:36Z | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
-| J0800 | any | claimed | gemini | 2026-10-21T13:37Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J0800 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0796 done: 022 Sun Shorts: add parent long link to descriptions (redescribe-videos.ts, staged payload) (Updated descriptions on y-SPHQ0-VjQ, n_4XskX0yZk, 2e-giqFmfy8 with parent long link; fresh API reads verify all three. Evidence 3245652b0 on codex/j0796-descriptions. No privacy/schedule change; £0.)
 - J0712 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (12 OWB + 4 HOS longs; 65 OWB + 15 HOS Shorts. CTR hits vs 4%: OWB 1/12 (Jupiter 4.8%), HOS 1/4 (Germs 7.7%). Two newest Shorts unavailable. Main 60b862762; tracker verified; zero spend or YouTube changes.)
 - J0642 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -453,4 +453,3 @@ Recently finished:
 - J0596 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0581 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0566 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (0 fixes needed across last 10 live public videos (05_Analytics/live_fixes/2026-10-18.md @ b3f1782ef))
-- J0551 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
