@@ -438,7 +438,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0794 | mini | open (after J0795) | – | – | 026 edit · assembly · 026 Nearest Star v06: Ben's fixes, diagrams and cards a school child understands |  |
 | J0795 | mini | blocked | codex | – | URGENT Mini disk: move old render scratch + ready films to the NAS (sha256-verified) to free 20 GB+ for 024 v06 (J0792) |  |
 | J0797 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0798 | mini | claimed | codex | 2026-10-21T14:03Z | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
+| J0798 | mini | blocked | codex | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
 
 Recently finished:
 

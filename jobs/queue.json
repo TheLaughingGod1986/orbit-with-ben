@@ -63001,13 +63001,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-21T12:33Z",
-      "eta": "2026-10-21T14:03Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T12:32Z",
-      "result": "",
+      "result": "parked for Chief: storage prerequisite blocks thumb B build; 7.2 GiB free (<20 GB), mounted NAS directory listing hangs. Restore NAS access and archive eligible scratch with SHA-256 verification, then resume HOS:001 at step 1/3. No thumbnail built or scored; final thumb B review remains pending.",
       "history": [
         {
           "at": "2026-10-21T12:32Z",
@@ -63028,6 +63028,11 @@
           "at": "2026-10-21T12:34Z",
           "by": "codex",
           "what": "step 1 of 3 done: Selected HOS 001: no test recorded in shared ledger; 003 running and 004 armed excluded. Disk prerequisite unresolved: 7.8 GiB free and NAS directory read hangs; no build started."
+        },
+        {
+          "at": "2026-10-21T12:35Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: storage prerequisite blocks thumb B build; 7.2 GiB free (<20 GB), mounted NAS directory listing hangs. Restore NAS access and archive eligible scratch with SHA-256 verification, then resume HOS:001 at step 1/3. No thumbnail built or scored; final thumb B review remains pending."
         }
       ],
       "kind": "chart",
