@@ -59790,6 +59790,11 @@
           "at": "2026-10-21T01:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-21T01:52Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Selected HOS 005 (wwcjcFfC-5M, next in 001->005->002 rotation after J0700/J0731/J0746; no armed Test & Compare in THUMB_LEDGER.json)"
         }
       ],
       "kind": "chart",
@@ -59802,7 +59807,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "taskKeys": [
+        "HOS:005"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-21T01:52Z",
+        "by": "gemini",
+        "note": "Selected HOS 005 (wwcjcFfC-5M, next in 001->005->002 rotation after J0700/J0731/J0746; no armed Test & Compare in THUMB_"
+      }
     },
     {
       "id": "J0762",
