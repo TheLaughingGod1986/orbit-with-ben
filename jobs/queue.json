@@ -60417,6 +60417,11 @@
           "at": "2026-10-21T03:21Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inventoried 528 OWB + 510 HOS mp4s: found OWB 021 lift_ten_metres_thin v01 (01:07:44Z render with stale 01:04:55Z gates) plus newest OWB 022 sun_faint_young_70pct_v01 (d8c594c10) and HOS 006 s08_willow_pot_v01 (7a4e70f8)"
+        },
+        {
+          "at": "2026-10-21T03:24Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified OWB newest packs: 022 Short sun_faint_young_70pct_v01 (d8c594c10) 0/7 PASS (0:15 SDO limb WARN verified clean), all 27 committed lift Shorts + 028/029 overlays + 024-027 longs PASS; ran gates on untracked 021 Short saturn_ten_metres_thin_v01 (01:07:44Z render): 1/8 FAIL (s01 PIA18367 horizontal gutter at 0.206 + 18.0s caption overlap)"
         }
       ],
       "kind": "qa",
@@ -60431,11 +60436,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-21T03:21Z",
+        "at": "2026-10-21T03:24Z",
         "by": "gemini",
-        "note": "Inventoried 528 OWB + 510 HOS mp4s: found OWB 021 lift_ten_metres_thin v01 (01:07:44Z render with stale 01:04:55Z gates)"
+        "note": "Verified OWB newest packs: 022 Short sun_faint_young_70pct_v01 (d8c594c10) 0/7 PASS (0:15 SDO limb WARN verified clean),"
       },
       "taskKeys": [
         "OWB:021",
