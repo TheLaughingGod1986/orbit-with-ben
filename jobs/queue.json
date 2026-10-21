@@ -62871,6 +62871,11 @@
           "at": "2026-10-21T12:21Z",
           "by": "codex",
           "what": "step 1 of 3 done: Dry-run matched the exact insertion once in each of three live descriptions; script sends snippet only."
+        },
+        {
+          "at": "2026-10-21T12:22Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Applied all three description insertions; fresh API reads confirm already_fixed for every ID after propagation."
         }
       ],
       "kind": "studio",
@@ -62878,11 +62883,11 @@
         "OWB:022"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-21T12:21Z",
+        "at": "2026-10-21T12:22Z",
         "by": "codex",
-        "note": "Dry-run matched the exact insertion once in each of three live descriptions; script sends snippet only."
+        "note": "Applied all three description insertions; fresh API reads confirm already_fixed for every ID after propagation."
       }
     }
   ],
