@@ -74,6 +74,7 @@ export async function afterUpload(
     );
     buffer = {
       sent: outcome.sent,
+      deferred: outcome.deferred,
       planOnly: !deps.client,
       errors: outcome.plan.errors,
       warnings: outcome.plan.warnings,
@@ -84,7 +85,8 @@ export async function afterUpload(
   }
   const errs = (buffer.errors as string[]) ?? [];
   const failed = ((buffer.results as { ok: boolean }[]) ?? []).filter((r) => !r.ok);
-  if (!buffer.sent || errs.length || failed.length) {
+  if (buffer.deferred) console.log(`Buffer mirror for ${videoId}: ${buffer.deferred}.`);
+  else if (!buffer.sent || errs.length || failed.length) {
     console.error(
       `Buffer mirror incomplete for ${videoId}: ${[...errs, ...failed.map((f) => JSON.stringify(f))].join("; ") || "planning only (no BUFFER_API_KEY)"}. ` +
         "Fix it, then run scripts/buffer-mirror.ts mirror (STUDIO_PLAYBOOK.md §12).",
