@@ -65227,6 +65227,11 @@
           "at": "2026-10-21T18:46Z",
           "by": "gemini",
           "what": "handed back: Clear for=gemini while j0795-move runs in tmux so addressed quick job J0810 can be claimed"
+        },
+        {
+          "at": "2026-10-21T19:36Z",
+          "by": "gemini",
+          "what": "rerouted to gemini: j0795-move.done=0 at 20:31 (25.59 GiB free); completing step 5 and unblocking J0792/J0793/J0794/J0808/J0809 while j0352-render runs"
         }
       ],
       "urgent": 3,
@@ -65239,7 +65244,15 @@
         "at": "2026-10-21T18:35Z",
         "by": "gemini",
         "note": "Step 4 NAS move running in detached tmux j0795-move (2.6G/3.5G of item 1 copied; ~15.6 GiB queued)"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini"
     },
     {
       "id": "J0796",
