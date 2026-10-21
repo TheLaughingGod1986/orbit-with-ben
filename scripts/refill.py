@@ -8,11 +8,11 @@ Two rules, run by chief_relay.py on every 10-minute tick (and by hand):
             drafts for both channels come first in the file, then polish)
             (no-spend standing work for both channels: Shorts cut from locked longs, thumb B variants, teaching
             overlays, listing fixes, next scripts, HOS plate prep, QA sweeps). A key is skipped while a job from it is
-            open or claimed, while PARK_CAP of its jobs wait parked for Chief, while it has "paused" set, and for every_h
+            open, claimed or blocked (parked for Chief or anything else), while it has "paused" set, and for every_h
             hours after its last one. Each backlog job routes by its kind
             (scripts/routing.py), so the fallback chain (Claude Code -> Cursor on Claude -> Gemini -> Codex) applies.
   escalate  A job parked for Chief ("parked for Chief: ...") longer than STALE_H hours is posted once on #99 for the
-            Chief. Parking never blocks other work: a parked job holds only itself (and jobs --after it).
+            Chief, and a backlog key at most once per ESCALATE_EVERY_H. Parking never blocks other work: a parked job holds only itself (and jobs --after it).
 
   python3 scripts/refill.py refill [--min 3] [--git]
   python3 scripts/refill.py escalate [--hours 2] [--git]
@@ -34,10 +34,10 @@ import studio  # noqa: E402
 BACKLOG = jobs.ROOT / "jobs" / "backlog.json"
 MIN_READY = 3
 STALE_H = 2.0
-# Two parked reviews per key at most (Claude, 21 Oct 2026): with no Chief for five days the never-empty rule kept
-# adding the same items and 400 backlog jobs sat parked for a review nobody gave. A parked job still lets the next
-# one start (Ben, 12 Oct); the second parked one holds the key until the Chief rules on one of them.
-PARK_CAP = 2
+# One live copy per key (Chief J0811, 21 Oct 2026): a key counted as busy only while open or claimed, so every copy
+# the workers parked freed it, and 16-21 Oct added 28-30 copies of each of 15 keys (406 jobs). A parked job still
+# holds only itself among the other keys' work (Ben, 12 Oct); it holds the next copy of its own key until it is done.
+ESCALATE_EVERY_H = 24
 LIVE = ("open", "claimed", "blocked")
 
 
@@ -55,18 +55,15 @@ def parked_for_chief(job: dict) -> bool:
 
 
 def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY) -> list:
-    """Top up to min_ready claimable Mini jobs. A key is skipped while a job from it is open or claimed (a job parked
-    for Chief holds only itself, so the next one can start: Ben, 12 Oct), while PARK_CAP of its jobs are parked for
-    Chief, while the item is "paused", and for every_h hours after its last one. Never empty: if after that nothing
-    at all is ready, the key whose last job is oldest is added anyway (still not a full or paused one)."""
+    """Top up to min_ready claimable Mini jobs. A key is skipped while a job from it is open, claimed or blocked
+    (whatever the reason), while the item is "paused", and for every_h hours after its last one. Never empty: if after
+    that nothing at all is ready, the key whose last job is oldest is added anyway (still not a busy or paused one)."""
     added = []
     have = len(ready(data, at))
     last = data.setdefault("backlog_last", {})
 
     def busy(key):
-        mine = [j for j in data["jobs"] if j.get("backlog") == key]
-        return (any(j["status"] in ("open", "claimed") for j in mine)
-                or sum(parked_for_chief(j) for j in mine) >= PARK_CAP)
+        return any(j.get("backlog") == key and j["status"] in LIVE for j in data["jobs"])
 
     items = [it for it in items if not it.get("paused")]
 
@@ -118,12 +115,18 @@ def parked_since(job: dict):
 
 def do_escalate(data: dict, at: dt.datetime, hours: float = STALE_H) -> list:
     out = []
+    recent = studio.iso(at - dt.timedelta(hours=ESCALATE_EVERY_H))
+    posted = {j["backlog"] for j in data["jobs"] if j.get("backlog") and j.get("escalated_at", "") > recent}
     for j in data["jobs"]:
-        if j["status"] != "blocked" or "parked for chief" not in (j.get("result") or "").lower():
+        if not parked_for_chief(j):
             continue
         since = parked_since(j)
         if not since or at - since < dt.timedelta(hours=hours) or j.get("escalated_at", "") >= studio.iso(since):
             continue
+        if j.get("backlog") in posted:
+            continue  # that key was posted for the Chief in the last day (it re-posted the same items for five days)
+        if j.get("backlog"):
+            posted.add(j["backlog"])
         j["escalated_at"] = studio.iso(at)
         jobs.log(j, at, "refill", f"escalated to Chief: parked {int((at - since).total_seconds() // 3600)} h")
         out.append(j)
