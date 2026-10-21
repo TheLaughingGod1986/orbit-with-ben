@@ -62603,6 +62603,11 @@
           "at": "2026-10-21T12:26Z",
           "by": "codex",
           "what": "step 1 of 4 done: Inventory complete: Moon has zero local Short exports; master is NAS-only. Disk 7.8 GiB free; checking NAS before required scratch offload."
+        },
+        {
+          "at": "2026-10-21T12:27Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Preflight complete; no render started. NAS scratch and Moon archive directory reads each timed out (10-15s); only 7.8 GiB free, so required verified scratch offload cannot proceed."
         }
       ],
       "kind": "assembly",
@@ -62610,9 +62615,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-21T12:26Z",
+        "at": "2026-10-21T12:27Z",
         "by": "codex",
-        "note": "Inventory complete: Moon has zero local Short exports; master is NAS-only. Disk 7.8 GiB free; checking NAS before requir"
+        "note": "Preflight complete; no render started. NAS scratch and Moon archive directory reads each timed out (10-15s); only 7.8 Gi"
       },
       "taskKeys": [
         "OWB:013"
