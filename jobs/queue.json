@@ -61038,17 +61038,25 @@
           "at": "2026-10-21T04:38Z",
           "by": "codex",
           "what": "step 0 of 4 done: Checking locked HOS masters, existing Shorts and disk prerequisite"
+        },
+        {
+          "at": "2026-10-21T04:38Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Inventoried locked 004/005/006 Shorts; disk prerequisite unresolved at 9.3 GiB free; no eligible obsolete HOS render scratch established"
         }
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-21T04:38Z",
         "by": "codex",
-        "note": "Checking locked HOS masters, existing Shorts and disk prerequisite"
-      }
+        "note": "Inventoried locked 004/005/006 Shorts; disk prerequisite unresolved at 9.3 GiB free; no eligible obsolete HOS render scr"
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     }
   ],
   "focus": [],
