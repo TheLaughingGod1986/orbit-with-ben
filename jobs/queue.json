@@ -61845,6 +61845,11 @@
           "at": "2026-10-21T08:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-21T08:50Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting weekly OWB audit (checking 2026-10-21 06:41 snapshot & analytics)"
         }
       ],
       "kind": "review",
@@ -61857,7 +61862,21 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-21T08:50Z",
+        "by": "gemini",
+        "note": "Starting weekly OWB audit (checking 2026-10-21 06:41 snapshot & analytics)"
+      }
     },
     {
       "id": "J0785",
