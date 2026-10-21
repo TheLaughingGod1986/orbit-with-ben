@@ -148,10 +148,10 @@
       "limit": ""
     },
     "OWB:024": {
-      "updated": "2026-10-15T18:10Z",
-      "mood": "ready",
-      "done": "Script, voice, thumbnails, the upload package and its own music. v05 fixed nearly all of the v04 picture: dark frames down to 14%, no freezes, music sitting under the voice.",
-      "holdup": "Nothing. The private upload is packaged and tested (dry run passed); it goes up after your watch.",
+      "updated": "2026-10-21T10:40Z",
+      "mood": "fixing",
+      "done": "Script, voice, its own music, thumbnails and the upload package. v05d was picture-locked; your watch asked for clearer diagrams and Orbit.",
+      "holdup": "Your two notes from Fri 16 Oct. No upload until you've seen v06.",
       "steps": [
         {
           "who": "Ben",
@@ -192,15 +192,33 @@
         {
           "who": "Ben",
           "what": "watch v05d",
-          "when": "2026-10-16"
+          "done": true,
+          "doneText": "you watched it · Fri 16 Oct, 2 changes"
+        },
+        {
+          "who": "Cursor",
+          "what": "v06: diagrams that explain + Orbit back in",
+          "job": "J0792",
+          "whenText": "first in line"
+        },
+        {
+          "who": "Claude",
+          "what": "check v06",
+          "afterJob": "J0792",
+          "lag": 120
+        },
+        {
+          "who": "Ben",
+          "what": "watch v06",
+          "whenText": "about Mon 26 Oct"
         }
       ],
-      "you": "Watch OWB UAT/024_LightSpeed_v05d.mp4 and tick OK or change here.",
-      "timing": "Airs Sun 1 Nov 18:00 London.",
-      "line": "Ready for you to watch: OWB UAT/024_LightSpeed_v05d.mp4 (8 min 11 s). Airs Sun 1 Nov.",
-      "youWhen": "2026-10-16",
-      "youShort": "watch 024 v05d",
-      "limit": "If you haven't flagged anything by Fri 16 Oct, the Chief's final OK goes ahead and it uploads privately for Sun 1 Nov.",
+      "you": "",
+      "timing": "v06 for your watch about Mon 26 Oct. Airs Sun 1 Nov 18:00 London.",
+      "line": "Making your changes: every diagram redrawn to explain, and Orbit back in (v06). Airs Sun 1 Nov.",
+      "youWhen": "",
+      "youShort": "",
+      "limit": "v06 has to be up privately by Thu 29 Oct to keep Sun 1 Nov.",
       "watchFrom": "v05d"
     },
     "OWB:025": {
@@ -235,10 +253,10 @@
       "youWhen": ""
     },
     "OWB:026": {
-      "updated": "2026-10-15T19:30Z",
-      "mood": "ready",
+      "updated": "2026-10-21T10:40Z",
+      "mood": "fixing",
       "done": "Your three notes are in: light travelling to Earth past year-marks at 1:52, the Moon/Sun/star light race at 6:02, and Orbit's two scenes. Seven repeated bits of observatory footage were also swapped for fresh night-sky shots, and every check passes.",
-      "holdup": "Nothing. The private upload is packaged and tested; it goes up after your watch and the Chief's final OK.",
+      "holdup": "Your two notes from Mon 19 Oct. It follows 024's fixes, which air first.",
       "steps": [
         {
           "who": "Ben",
@@ -268,29 +286,42 @@
           "doneText": "passed every check · Sat 10 Oct"
         },
         {
+          "who": "Ben",
+          "what": "watch the new version",
+          "done": true,
+          "doneText": "you watched it · Mon 19 Oct, 2 changes"
+        },
+        {
+          "who": "Cursor",
+          "what": "v06: diagrams and cards a school child understands",
+          "job": "J0794",
+          "afterJob": "J0792",
+          "lag": 0
+        },
+        {
           "who": "Claude",
-          "what": "check it",
-          "afterJob": "J0114",
-          "lag": 60
+          "what": "check v06",
+          "afterJob": "J0794",
+          "lag": 120
         },
         {
           "who": "Ben",
-          "what": "watch the new version",
-          "whenText": "about Sun 11 Oct"
+          "what": "watch v06",
+          "whenText": "about Fri 30 Oct"
         }
       ],
-      "you": "Watch OWB UAT/026_NearestStar_v05d.mp4 and reply OK or your changes (board ticks are down, so say it in chat).",
-      "timing": "Ready for you about Sun 11 Oct. Airs Sun 15 Nov.",
-      "line": "Ready for you to watch: OWB UAT/026_NearestStar_v05d.mp4. Airs Sun 15 Nov.",
-      "youShort": "watch 026 v05d",
-      "youWhen": "2026-10-20",
+      "you": "",
+      "timing": "v06 for your watch about Fri 30 Oct. Airs Sun 15 Nov 18:00 London.",
+      "line": "Making your changes: diagrams and cards rewritten so a school child gets them (v06). Airs Sun 15 Nov.",
+      "youShort": "",
+      "youWhen": "",
       "watchFrom": "v05d"
     },
     "OWB:027": {
-      "updated": "2026-10-15T21:05Z",
-      "mood": "ready",
+      "updated": "2026-10-21T10:40Z",
+      "mood": "fixing",
       "done": "Picture lock v01l (corner credits, Chief PASS J0319). Dry-run Private package for Sun 22 Nov 18:00 London passed. No upload.",
-      "holdup": "Waiting on your watch and the Chief's final OK. Captions and trailer passed; the long thumbnails A/B/C are built and wait for the Chief (PR #222). Its own music still waits until 30 Oct; the cut uses the waived bed.",
+      "holdup": "Your note from Sun 18 Oct: no music and no sound effects. The picture stays as it is.",
       "steps": [
         {
           "who": "Cursor",
@@ -333,26 +364,32 @@
         {
           "who": "Ben",
           "what": "watch v01l",
-          "when": "2026-10-19T22:59:00Z",
-          "whenText": "by Mon 19 Oct 23:59 London"
-        },
-        {
-          "who": "Chief",
-          "what": "final OK before any upload",
-          "job": "J0325",
-          "whenText": "after your watch, or Mon 19 Oct 23:59 London if no reply"
+          "done": true,
+          "doneText": "you watched it · Sun 18 Oct, 2 changes"
         },
         {
           "who": "Cursor",
-          "what": "its own music (take 2)",
-          "when": "2026-10-30"
+          "what": "its own music + sound effects laid in (v01m)",
+          "job": "J0793",
+          "whenText": "next after 024"
+        },
+        {
+          "who": "Claude",
+          "what": "check v01m",
+          "afterJob": "J0793",
+          "lag": 60
+        },
+        {
+          "who": "Ben",
+          "what": "watch v01m",
+          "whenText": "about Sat 24 Oct"
         }
       ],
-      "you": "Watch OWB UAT/027_EarthSpin_rough_v01l.mp4 by Mon 19 Oct 23:59 London and reply OK or your changes.",
-      "timing": "Watch by Mon 19 Oct. Airs Sun 22 Nov.",
-      "line": "Ready for you to watch: OWB UAT/027_EarthSpin_rough_v01l.mp4. Airs Sun 22 Nov. No upload until the Chief's final OK.",
-      "youShort": "watch 027 v01l",
-      "youWhen": "2026-10-19",
+      "you": "",
+      "timing": "v01m for your watch about Sat 24 Oct. Airs Sun 22 Nov 18:00 London.",
+      "line": "Fixing what you heard: its own music and sound effects going in now (v01m). Airs Sun 22 Nov.",
+      "youShort": "",
+      "youWhen": "",
       "watchFrom": "v01l"
     },
     "OWB:028": {
