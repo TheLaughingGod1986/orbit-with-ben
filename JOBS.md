@@ -34,7 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0809 | mini | open (after J0795) | – | – | assembly · HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) |  |
 | J0810 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) |  |
 | J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
-| J0815 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0815 | mini | claimed | gemini | 2026-10-21T22:41Z | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 
 Recently finished:
