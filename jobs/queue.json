@@ -59734,13 +59734,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T00:42Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T00:41Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "PASS (Chief, 21 Oct ~17:00 London) for the Short pool: OWB 022 sun_faint_young_70pct_v01 (26.2 s, d8c594c10, UAT pack) gates 0 FAIL, re-confirmed by QA sweep J0786; the 021 ten_metres_thin repair is J0771 (merged #248). Not an upload OK; scheduling + final OK ride the normal Shorts slot job.",
       "history": [
         {
           "at": "2026-10-21T00:41Z",
@@ -59811,6 +59811,21 @@
           "at": "2026-10-21T03:41Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog owb-short-from-locked"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London) for the Short pool: OWB 022 sun_faint_young_70pct_v01 (26.2 s, d8c594c10, UAT pack) gates 0 FAIL, re-confirmed by QA sweep J0786; the 021 ten_metres_thin repair is J0771 (merged #248). Not an upload OK; scheduling + final OK ride the normal Shorts slot job."
         }
       ],
       "kind": "assembly",
@@ -59824,13 +59839,6 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T01:33Z",
-        "by": "gemini",
-        "note": "Committed metadata/QA reports (d8c594c10) and staged pack in OWB UAT/sun_faint_young_70pct_v01"
-      },
       "taskKeys": [
         "OWB:022"
       ],
@@ -59847,13 +59855,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T01:33Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T00:41Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "PASS (Chief, 21 Oct ~17:00 London) for the Short pool: HOS 006 s08_willow_pot_v01 ('Do Plants Eat Soil?', 24.4 s, HOS 7a4e70f8): all gates 0 FAIL, re-confirmed by QA sweep J0786. Not an upload OK; scheduling + final OK ride the normal Shorts slot job. The 26 other QA-passed HOS Test B Shorts from earlier copies stay in the same pool.",
       "history": [
         {
           "at": "2026-10-21T00:41Z",
@@ -59899,6 +59907,21 @@
           "at": "2026-10-21T04:34Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog hos-short-from-locked"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London) for the Short pool: HOS 006 s08_willow_pot_v01 ('Do Plants Eat Soil?', 24.4 s, HOS 7a4e70f8): all gates 0 FAIL, re-confirmed by QA sweep J0786. Not an upload OK; scheduling + final OK ride the normal Shorts slot job. The 26 other QA-passed HOS Test B Shorts from earlier copies stay in the same pool."
         }
       ],
       "kind": "assembly",
@@ -59906,13 +59929,6 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-21T01:48Z",
-        "by": "gemini",
-        "note": "Committed 7a4e70f8 (check_all PASS) and posted s08_willow_pot_v01 report + stills on HOS desk #180 (#6305994644). Parkin"
-      },
       "escalated_at": "2026-10-21T04:34Z"
     },
     {
@@ -61264,13 +61280,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T04:46Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T04:39Z",
-      "result": "parked for Chief: thumb B review",
+      "result": "PASS (Chief, 21 Oct ~17:00 London) for the variant pool: HOS 002 thumb B v12 VACANT CARD SLOT (HOOK/BAND/PHONE PASS, £0). 001 (10), 002 (9) and 005 (8) B/C variants now wait to arm; arming needs HOS Studio CDP 9460 healthy (see J0288). No more HOS thumb B builds until those tests have run (key paused).",
       "history": [
         {
           "at": "2026-10-21T04:39Z",
@@ -61401,17 +61417,25 @@
           "at": "2026-10-21T10:10Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog hos-thumb-b"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London) for the variant pool: HOS 002 thumb B v12 VACANT CARD SLOT (HOOK/BAND/PHONE PASS, £0). 001 (10), 002 (9) and 005 (8) B/C variants now wait to arm; arming needs HOS Studio CDP 9460 healthy (see J0288). No more HOS thumb B builds until those tests have run (key paused)."
         }
       ],
       "kind": "chart",
       "backlog": "hos-thumb-b",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T07:56Z",
-        "by": "gemini",
-        "note": "Posted HOS 002 thumb B v12 VACANT CARD SLOT sheets and HOOK/BAND/PHONE PASS scores on desk #180 (#6311000415); parking f"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -61531,13 +61555,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T07:58Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T05:37Z",
-      "result": "parked for Chief: live fixes",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): OWB last-10 live listing check (05_Analytics/live_fixes/2026-10-21.md): 9/10 PASS; the one gap (022 Short y-SPHQ0-VjQ Related + long URL) was already fixed later today by J0796/J0800 (Related = h8HGfyShEHI on all three 022 Shorts). Nothing left to do.",
       "history": [
         {
           "at": "2026-10-21T05:37Z",
@@ -61583,6 +61607,21 @@
           "at": "2026-10-21T10:10Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog owb-live-listing-fixes"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): OWB last-10 live listing check (05_Analytics/live_fixes/2026-10-21.md): 9/10 PASS; the one gap (022 Short y-SPHQ0-VjQ Related + long URL) was already fixed later today by J0796/J0800 (Related = h8HGfyShEHI on all three 022 Shorts). Nothing left to do."
         }
       ],
       "kind": "listing",
@@ -61601,13 +61640,6 @@
         "OWB:021",
         "OWB:022"
       ],
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-21T08:01Z",
-        "by": "gemini",
-        "note": "Updated 05_Analytics/live_fixes/2026-10-21.md and 2026-10-21_descriptions.json; parking J0779 for Chief: live fixes"
-      },
       "escalated_at": "2026-10-21T10:10Z"
     },
     {
@@ -61718,13 +61750,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-21T08:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T06:04Z",
-      "result": "Storage prerequisite blocked: only 9.6 GiB free (<20 GB). NAS /Volumes/data is mounted via NFS and TCP 2049 responds, but listing /Volumes/data/mac-mini-archive/mini-tmp-scratch hangs. Cannot safely relocate render scratch or verify hashes. Restore NAS filesystem responsiveness, then resume daily Studio collection (progress 1/4). No metrics changed, no spend, no YouTube mutations.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-21T06:04Z",
@@ -61755,6 +61787,11 @@
           "at": "2026-10-21T08:16Z",
           "by": "codex",
           "what": "blocked: Storage prerequisite blocked: only 9.6 GiB free (<20 GB). NAS /Volumes/data is mounted via NFS and TCP 2049 responds, but listing /Volumes/data/mac-mini-archive/mini-tmp-scratch hangs. Cannot safely relocate render scratch or verify hashes. Restore NAS filesystem responsiveness, then resume daily Studio collection (progress 1/4). No metrics changed, no spend, no YouTube mutations."
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief FIX (Chief, 21 Oct ~17:00 London): the 20 GB free-disk floor is for renders, not for a read-only Studio metrics read. Run the daily Studio read now (CDP 9223 OWB / 9460 HOS; if 9460 hangs, do OWB and note HOS skipped), write studio_ctr.json, no media written, no Studio change. £0."
         }
       ],
       "kind": "studio",
@@ -61768,14 +61805,7 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-21T08:15Z",
-        "by": "codex",
-        "note": "Preflight complete: both repos current, thread read to 6311306655, OWB priority. Disk 9.6 GiB; NAS directory probe hung,"
-      }
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J0782",
@@ -62074,13 +62104,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-21T09:01Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T08:49Z",
-      "result": "parked for Chief: price pass; no eligible unplanned HOS film with locked VO. 006-010 already planned; 013 awaits VO lock. Evidence HOS draft PR #350, commit c120c501. Progress 2/3; no boards duplicated, no spend.",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): finding correct: no eligible unplanned HOS film with locked VO (006-010 planned; 013 VO now queued J0807). HOS draft PR #348 (boards to 038) is NOT price-passed and authorises no mint; it stays a draft. J0805 (claimed, gemini) left running; its result will be the same.",
       "history": [
         {
           "at": "2026-10-21T08:49Z",
@@ -62116,17 +62146,25 @@
           "at": "2026-10-21T12:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog hos-plate-prep"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): finding correct: no eligible unplanned HOS film with locked VO (006-010 planned; 013 VO now queued J0807). HOS draft PR #348 (boards to 038) is NOT price-passed and authorises no mint; it stays a draft. J0805 (claimed, gemini) left running; its result will be the same."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-plate-prep",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-21T09:03Z",
-        "by": "codex",
-        "note": "Wrote prerequisite evidence in clean HOS branch; no eligible film, no duplicate boards. Check log records four checks pa"
-      },
       "taskKeys": [
         "HOS:007",
         "HOS:008",
@@ -62253,13 +62291,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T09:14Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T09:13Z",
-      "result": "parked for Chief: 1) approve 5 concrete 006-010 improvements in HOS_2026-10-21.md (23638739); 2) arm 001 (10 B/C), 002 (9 B/C incl. v12) & 005 (8 B/C) thumb Test & Compare when Studio 9460 responds + pick slots/titles for 27 QA-passed 001-006 Test B Shorts; 3) review/lock 013-091 scripts, PR #348 price pass, and 092-094 topic locks (Bioluminescence/GFP 45/50, Echolocation/Ultrasound 44/50, Gecko/Spider Silk 44/50)",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): HOS weekly audit HOS_2026-10-21.md (23638739). The five 006-010 changes are accepted as review notes and ride each film's next edit job where £0 (006 -> J0809). Thumb T&C arming for 001/002/005 waits for CDP 9460 (J0288 first). 013 script v02 now PASS (J0307); 014-091 scripts and 092-094 locks: not reviewed/locked this sweep (pipeline full).",
       "history": [
         {
           "at": "2026-10-21T09:13Z",
@@ -62355,6 +62393,21 @@
           "at": "2026-10-21T13:55Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog hos-weekly-audit"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): HOS weekly audit HOS_2026-10-21.md (23638739). The five 006-010 changes are accepted as review notes and ride each film's next edit job where £0 (006 -> J0809). Thumb T&C arming for 001/002/005 waits for CDP 9460 (J0288 first). 013 script v02 now PASS (J0307); 014-091 scripts and 092-094 locks: not reviewed/locked this sweep (pipeline full)."
         }
       ],
       "kind": "review",
@@ -62366,13 +62419,6 @@
         "HOS:009",
         "HOS:010"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T11:22Z",
-        "by": "gemini",
-        "note": "Step 4/4 done: Committed & pushed HOS_2026-10-21.md (23638739: 2,302 pub views, oKqmnJNGiHg 8v/1L in 36m, c2q7w0pgcn8 12"
-      },
       "escalated_at": "2026-10-21T13:55Z"
     },
     {
@@ -62386,13 +62432,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-21T09:41Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T09:38Z",
-      "result": "parked for Chief: no eligible live long. All 12 public longs in 2026-10-21 05:40Z snapshot have tests or B variants on record (J0099, J0136, T005-T007, j0152/j0234/j0386/j0402/j0419, Sun studio_thumbs_J0091). Chief J0293 prohibits duplicates. Retire or re-scope owb-thumb-b refill. Progress 1/3; no film selected, build, spend or Studio change.",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): finding correct: no eligible live OWB long (all 12 have tests or B variants on record; J0293 bars duplicates). Key stays paused until the 25-26 Oct tests end (J0275 arms Ben's Bs then).",
       "history": [
         {
           "at": "2026-10-21T09:38Z",
@@ -62423,17 +62469,25 @@
           "at": "2026-10-21T12:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog owb-thumb-b"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): finding correct: no eligible live OWB long (all 12 have tests or B variants on record; J0293 bars duplicates). Key stays paused until the 25-26 Oct tests end (J0275 arms Ben's Bs then)."
         }
       ],
       "kind": "chart",
       "backlog": "owb-thumb-b",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-21T09:42Z",
-        "by": "codex",
-        "note": "Checked 2026-10-21 snapshot: all 12 public longs have tests or B records; zero eligible films. Chief J0293 forbids dupli"
-      },
       "escalated_at": "2026-10-21T12:06Z"
     },
     {
@@ -62447,13 +62501,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T11:23Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T09:44Z",
-      "result": "parked for Chief: lock 061 Why Venus Spins Backwards and Its Day Is Longer Than Its Year (30/30 studio / 16/30 audit rubric, direct hand-off from 060) and review script v00 (95.8/100 PASS, 8/8 structure gates, DATA 6, SCALE 6, WHO 15, WHEN 6, FACT 4, NUMBER OBJECT 6, 16 verbatim SOURCES.md rows)",
+      "result": "PASS (Chief, 21 Oct ~17:00 London) as an unlocked candidate: OWB 061 Venus spins backwards v00 (95.8) + IDEAS_2026-10-21_J0789. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main.",
       "history": [
         {
           "at": "2026-10-21T09:44Z",
@@ -62504,6 +62558,21 @@
           "at": "2026-10-21T13:55Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog owb-ideas"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London) as an unlocked candidate: OWB 061 Venus spins backwards v00 (95.8) + IDEAS_2026-10-21_J0789. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main."
         }
       ],
       "kind": "script",
@@ -62520,13 +62589,6 @@
       "taskKeys": [
         "OWB:061"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T11:41Z",
-        "by": "gemini",
-        "note": "Committed and pushed IDEAS_2026-10-21_J0789.md and 02_Video-Projects/061_Why-Venus-Spins-Backwards-And-Its-Day-Is-Longer"
-      },
       "escalated_at": "2026-10-21T13:55Z"
     },
     {
@@ -62540,13 +62602,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T11:43Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T10:09Z",
-      "result": "parked for Chief: pick HOS 093-097 topic sequence & 2-way title pairs from IDEAS_2026-10-21_J0790.md (093 Echolocation & Medical Ultrasound 44/50 + 094 Gecko Van der Waals Adhesion & Spider Silk 44/50 opening_and_outline_v00.md & SOURCES_v00.md ready; 095 Butterfly Metamorphosis 44/50, 096 Axolotl Regeneration 45/50 & 097 Octopus/Chameleon Camouflage 44/50 unlocked; HOS main 33c72843)",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): HOS idea pool 093-097 (IDEAS_2026-10-21_J0790, HOS 33c72843) accepted as unlocked candidates. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main.",
       "history": [
         {
           "at": "2026-10-21T10:09Z",
@@ -62597,6 +62659,21 @@
           "at": "2026-10-21T14:22Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog hos-ideas"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): HOS idea pool 093-097 (IDEAS_2026-10-21_J0790, HOS 33c72843) accepted as unlocked candidates. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main."
         }
       ],
       "kind": "script",
@@ -62610,13 +62687,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T12:01Z",
-        "by": "gemini",
-        "note": "Step 4/4: Committed & pushed J0790 ideas (093-097) + 093/094 opening v00 & SOURCES to HOS main (33c72843); all checks PA"
-      },
       "taskKeys": [
         "HOS:093",
         "HOS:094"
@@ -63132,13 +63202,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T15:00Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T12:35Z",
-      "result": "parked for Chief: overlay PASS",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): 028 (22 pills/20 rows) and 029 (22 pills/17 rows) overlay packs re-verified (910a5a47), picture_qa + polish_gate 0 FAIL. 030+ wait for VO (key paused). 029 overlays are laid in J0808.",
       "history": [
         {
           "at": "2026-10-21T12:35Z",
@@ -63189,17 +63259,25 @@
           "at": "2026-10-21T15:04Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: overlay PASS"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog owb-teach-overlays"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): 028 (22 pills/20 rows) and 029 (22 pills/17 rows) overlay packs re-verified (910a5a47), picture_qa + polish_gate 0 FAIL. 030+ wait for VO (key paused). 029 overlays are laid in J0808."
         }
       ],
       "kind": "chart",
       "backlog": "owb-teach-overlays",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T15:04Z",
-        "by": "gemini",
-        "note": "Ready for Chief overlay PASS review (910a5a47)"
-      },
       "taskKeys": [
         "OWB:028",
         "OWB:029"
@@ -63286,13 +63364,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T12:46Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T12:45Z",
-      "result": "parked for Chief: live fixes",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): read-only HOS live listing check (454d7fde): 22 public + 11 scheduled, 0 errors, 22/22 public Related/end screens PASS. No change needed.",
       "history": [
         {
           "at": "2026-10-21T12:45Z",
@@ -63338,6 +63416,21 @@
           "at": "2026-10-21T15:31Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog hos-live-listing-fixes"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): read-only HOS live listing check (454d7fde): 22 public + 11 scheduled, 0 errors, 22/22 public Related/end screens PASS. No change needed."
         }
       ],
       "kind": "listing",
@@ -63349,13 +63442,6 @@
         "HOS:004",
         "HOS:005"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T12:52Z",
-        "by": "gemini",
-        "note": "Committed and pushed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-21.md (454d7fde); parking J0801 for Chief: liv"
-      },
       "escalated_at": "2026-10-21T15:31Z"
     },
     {
@@ -63369,13 +63455,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T12:54Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T12:53Z",
-      "result": "parked for Chief: script review",
+      "result": "PASS (Chief, 21 Oct ~17:00 London) as an unlocked draft: OWB 061 script v01 (95.8, 1,269 words, 16-row SOURCES, 0df984b9f). Not locked, not for VO. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main.",
       "history": [
         {
           "at": "2026-10-21T12:53Z",
@@ -63421,6 +63507,21 @@
           "at": "2026-10-21T15:31Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog owb-next-script"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London) as an unlocked draft: OWB 061 script v01 (95.8, 1,269 words, 16-row SOURCES, 0df984b9f). Not locked, not for VO. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main."
         }
       ],
       "kind": "script",
@@ -63428,13 +63529,6 @@
       "taskKeys": [
         "OWB:061"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T13:08Z",
-        "by": "gemini",
-        "note": "061 script v01 (95.8/100 PASS, 1,269 spoken words) + 16-row SOURCES.md verified and parked for Chief script review"
-      },
       "escalated_at": "2026-10-21T15:31Z"
     },
     {
@@ -63448,13 +63542,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T13:09Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T13:08Z",
-      "result": "parked for Chief: script review",
+      "result": "PASS (Chief, 21 Oct ~17:00 London) as unlocked drafts: HOS 092/093/094 script v01 (91.8/90.8/91.9) + 095 opening v00 (32a6e4fa), check_all PASS. Not locked, not for VO; Chief script review only when a topic is locked. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main.",
       "history": [
         {
           "at": "2026-10-21T13:08Z",
@@ -63500,6 +63594,21 @@
           "at": "2026-10-21T15:31Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog hos-next-script"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London) as unlocked drafts: HOS 092/093/094 script v01 (91.8/90.8/91.9) + 095 opening v00 (32a6e4fa), check_all PASS. Not locked, not for VO; Chief script review only when a topic is locked. No new topic locks this sweep: both pipelines are full (Claude paused this key 21 Oct) and nothing past HOS 013 / OWB 032 can reach VO before the 30 Oct ElevenLabs reset; the drafts stay as unlocked candidates on main."
         }
       ],
       "kind": "script",
@@ -63510,13 +63619,6 @@
         "HOS:094",
         "HOS:095"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T13:27Z",
-        "by": "gemini",
-        "note": "Step 4/4 done: drafted HOS 095 (Butterfly Metamorphosis) opening_and_outline_v00 + SOURCES_v00; check_all.sh PASS (commi"
-      },
       "escalated_at": "2026-10-21T15:31Z"
     },
     {
@@ -63530,13 +63632,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-21T13:30Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-21T15:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T13:29Z",
-      "result": "parked for Chief: approve or adjust changes 1-4 (rename 033 to Uranus & surface Proxima Centauri/Gliese 710 on 026/028; hold chapter 1 card past 0:30 on 025/028/029; post 022 pinned comment on h8HGfyShEHI while n_4XskX0yZk surges at 502 views + 6 likes in 4.4h & arm built B thumbs j0152/j0234/j0386/j0402/j0419 + brighter 021 Saturn B thumb; positive question/scale Shorts rule) and lock 035-061 + pick 062 (16 Psyche, Valles Marineris, or Haumea) in 05_Analytics/weekly_audit/OWB_2026-10-21.md (25caa5f97)",
+      "result": "PASS (Chief, 21 Oct ~17:00 London): OWB weekly audit OWB_2026-10-21.md (25caa5f97). Rulings: (1) YES, name Uranus in 033's title, rides 033's script review; (2) YES, no full-frame chapter card inside 0:00-0:30 on 028/029 (added to J0808); 025 is already uploaded/scheduled, so no re-cut; (3) pinned comment on 022 h8HGfyShEHI and arming built B thumbs: not queued this sweep; B arming rides J0275 after the 25-26 Oct tests end; (4) YES, positive question / scale-at-frame-0 rule for new Shorts titles and covers (no re-renders of PASSed Shorts). Locks 035-061 / pick 062: not this sweep (pipeline full).",
       "history": [
         {
           "at": "2026-10-21T13:29Z",
@@ -63597,6 +63699,21 @@
           "at": "2026-10-21T14:59Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: approve or adjust changes 1-4 (rename 033 to Uranus & surface Proxima Centauri/Gliese 710 on 026/028; hold chapter 1 card past 0:30 on 025/028/029; post 022 pinned comment on h8HGfyShEHI while n_4XskX0yZk surges at 502 views + 6 likes in 4.4h & arm built B thumbs j0152/j0234/j0386/j0402/j0419 + brighter 021 Saturn B thumb; positive question/scale Shorts rule) and lock 035-061 + pick 062 (16 Psyche, Valles Marineris, or Haumea) in 05_Analytics/weekly_audit/OWB_2026-10-21.md (25caa5f97)"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "reopened: Chief review: kept copy of backlog owb-weekly-audit"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-21T15:35Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 21 Oct ~17:00 London): OWB weekly audit OWB_2026-10-21.md (25caa5f97). Rulings: (1) YES, name Uranus in 033's title, rides 033's script review; (2) YES, no full-frame chapter card inside 0:00-0:30 on 028/029 (added to J0808); 025 is already uploaded/scheduled, so no re-cut; (3) pinned comment on 022 h8HGfyShEHI and arming built B thumbs: not queued this sweep; B arming rides J0275 after the 25-26 Oct tests end; (4) YES, positive question / scale-at-frame-0 rule for new Shorts titles and covers (no re-renders of PASSed Shorts). Locks 035-061 / pick 062: not this sweep (pipeline full)."
         }
       ],
       "kind": "review",
@@ -63607,14 +63724,7 @@
         "OWB:027",
         "OWB:028",
         "OWB:029"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-21T14:59Z",
-        "by": "gemini",
-        "note": "Updated 05_Analytics/weekly_audit/OWB_2026-10-21.md (25caa5f97) with 14:52Z live metrics (n_4XskX0yZk 502 views + 6 like"
-      }
+      ]
     },
     {
       "id": "J0805",
