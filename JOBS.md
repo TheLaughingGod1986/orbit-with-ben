@@ -439,6 +439,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0795 | mini | blocked | codex | – | URGENT Mini disk: move old render scratch + ready films to the NAS (sha256-verified) to free 20 GB+ for 024 v06 (J0792) |  |
 | J0797 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0798 | mini | blocked | codex | – | chart · Backlog HOS: thumbnail B variant for one live or scheduled film with no test |  |
+| J0799 | mini | open | – | – | chart · Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards) |  |
 
 Recently finished:
 
