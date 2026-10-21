@@ -60924,13 +60924,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-21T04:34Z",
-      "eta": "2026-10-21T06:34Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T04:30Z",
-      "result": "",
+      "result": "parked for Chief: disk prerequisite requires approved scratch archive target. 9.4 GiB free (<20 GB); automatic approval review rejected claiming non-selected film 025 edit for test_mars_spans archive. No files moved or deleted. Selected OWB:023 (4 concepts, earliest tied eligible long; v05e master available). Resume at step 1/4 after disk prerequisite is cleared.",
       "history": [
         {
           "at": "2026-10-21T04:30Z",
@@ -60976,6 +60976,11 @@
           "at": "2026-10-21T04:36Z",
           "by": "codex",
           "what": "step 1 of 4 done: Inventory complete: 023/024/026/027 each have 4 built Short concepts; 028/029 have 0 but no local master. Earliest eligible 023 has approved v05e master in OWB UAT. Disk precondition unresolved at 9.4 GiB free; no cut started."
+        },
+        {
+          "at": "2026-10-21T04:36Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: disk prerequisite requires approved scratch archive target. 9.4 GiB free (<20 GB); automatic approval review rejected claiming non-selected film 025 edit for test_mars_spans archive. No files moved or deleted. Selected OWB:023 (4 concepts, earliest tied eligible long; v05e master available). Resume at step 1/4 after disk prerequisite is cleared."
         }
       ],
       "kind": "assembly",
