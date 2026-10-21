@@ -414,7 +414,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0766 | any | blocked | gemini | – | script · Backlog HOS: next script or opening draft (009/010 first) |  |
 | J0767 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0768 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint) |  |
-| J0769 | mini | claimed | gemini | 2026-10-21T04:17Z | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0769 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0770 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0771 | mini | open | – | – | assembly · OWB 021 Short: fix polish_gate/picture_qa horizontal gutter FAIL and 18.0s caption overlap on saturn_ten_metres_thin_v01 (£0, no spend) |  |
 

@@ -60385,13 +60385,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-21T03:17Z",
-      "eta": "2026-10-21T04:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T03:14Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB d8c594c10/302dd45e2/7040d76b1/bc7e04ab2: 022 Short sun_faint_young_70pct_v01 0/7 PASS, 025 Short mars_radiation_3months_v01 0/8 PASS, 025 Short mars_curiosity_nuclear_v01 0/8 PASS, 025 Short mars_insight_quakes_v01 0/8 PASS, all 27 committed lift Shorts PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS, 024/025/026/027 long cuts PASS; untracked 021 Short saturn_ten_metres_thin_v01 1/8 FAIL s01 horizontal gutter at 0.206 + 18.0s caption overlap -> J0771 queued; HOS 7a4e70f8/c9dab374/9ca4b69c: 006 Short hos_006_s08_willow_pot_v01 0/9 PASS, 005 Short hos_005_s08_capillaries_v01 0/7 PASS, 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, all 26 HOS qa_ Shorts PASS, 006 full_join_v01_teach 0/91 PASS)",
       "history": [
         {
           "at": "2026-10-21T03:14Z",
@@ -60432,6 +60432,11 @@
           "at": "2026-10-21T03:25Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed QA sweep across OWB and HOS: all committed packs PASS; queued no-spend fix job J0771 for untracked OWB 021 Short saturn_ten_metres_thin_v01 (1/8 FAIL horizontal gutter + 18.0s caption overlap)"
+        },
+        {
+          "at": "2026-10-21T03:25Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB d8c594c10/302dd45e2/7040d76b1/bc7e04ab2: 022 Short sun_faint_young_70pct_v01 0/7 PASS, 025 Short mars_radiation_3months_v01 0/8 PASS, 025 Short mars_curiosity_nuclear_v01 0/8 PASS, 025 Short mars_insight_quakes_v01 0/8 PASS, all 27 committed lift Shorts PASS, 028 teaching_overlays_v01 0/20 PASS, 029 teaching_overlays_v01 0/17 PASS, 024/025/026/027 long cuts PASS; untracked 021 Short saturn_ten_metres_thin_v01 1/8 FAIL s01 horizontal gutter at 0.206 + 18.0s caption overlap -> J0771 queued; HOS 7a4e70f8/c9dab374/9ca4b69c: 006 Short hos_006_s08_willow_pot_v01 0/9 PASS, 005 Short hos_005_s08_capillaries_v01 0/7 PASS, 004 Short hos_004_s08_plum_pudding_v01 0/8 PASS, all 26 HOS qa_ Shorts PASS, 006 full_join_v01_teach 0/91 PASS)"
         }
       ],
       "kind": "qa",
