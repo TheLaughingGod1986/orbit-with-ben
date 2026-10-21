@@ -96,7 +96,7 @@ class MacMiniBox(unittest.TestCase):
         html = page()
         names = ["esc", "AGENT", "MINUTE", "ts", "clock", "etaOf", "ago", "jobMin", "plan", "laneQuiet", "shortTitle", "jobTag",
                  "jobName", "jobLabel", "jobLine", "CHIEF_PARK", "blockWhy", "isChiefPark", "shortReason", "stepPace", "progressOf", "finishIn", "plainJob",
-                 "updatedAt", "STALL_MIN", "latestWorkActivity", "activityLine", "stallOf", "workLane", "jobQueueInfo", "hbLine", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "pcCol", "renderNow"]
+                 "updatedAt", "STALL_MIN", "latestWorkActivity", "activityLine", "stallOf", "workLane", "jobQueueInfo", "hbLine", "CHIEF_NAME", "outWhy", "chiefLine", "NEEDS_BEN", "WAITS_INPUT", "cleanTitle", "WORKER", "readyAt", "jobKind", "plainTitle", "waitReason", "WAIT_WORD", "pcCol", "renderNow"]
         lib = "\n".join(js_function(html, n) for n in dict.fromkeys(names + PROGRESS_FUNCTIONS))
         board = {"jobs": self.JOBS if jobs is None else jobs,
                  "runOrder": {"mini": ["J0130", "J0126", "J0128", "J0132"], "chief": ["J0123"]},
@@ -829,3 +829,32 @@ const w=periodWork([row]);console.log(JSON.stringify({video:w.video.map(j=>j.id)
 
 if __name__ == "__main__":
     unittest.main()
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class ChiefLine(unittest.TestCase):
+    """Ben, 21 Oct 2026: will the kanban show me who's out and who's chief?"""
+    def evaluate(self, expression, board):
+        names = ["esc", "CHIEF_NAME", "outWhy", "chiefLine"]
+        lib = "\n".join(js_function(page(), n) for n in names)
+        script = f"const fromDb={json.dumps(board)};\n{lib}\nconsole.log(JSON.stringify({expression}));"
+        out = subprocess.run(["node", "-e", script], text=True, capture_output=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def test_names_the_chief_and_who_is_out_with_when_they_are_back(self):
+        hb = {"chief": "claude", "chain": [
+            {"agent": "chief", "up": False, "why": "no Grok post on the thread in the last 3 h"},
+            {"agent": "claude", "up": True, "why": "heartbeat 4 min ago"},
+            {"agent": "cursor", "up": True, "why": "ready"},
+            {"agent": "codex", "up": False, "why": "marked down: out of usage (retry after 2026-10-21T19:11:47Z)"}]}
+        h = self.evaluate("chiefLine()", {"lanes": {"mini": {"heartbeat": hb}}})
+        self.assertIn("Chief: <b>Claude</b>", h)
+        self.assertIn("Grok Bot (quiet)", h)
+        self.assertIn("Codex (out of usage, back about 20:11)", h)
+        self.assertNotIn("Cursor", h)
+
+    def test_no_chief_says_so_and_no_heartbeat_shows_nothing(self):
+        hb = {"chief": "", "chain": [{"agent": "chief", "up": False, "why": "quiet"}]}
+        self.assertIn("No Chief", self.evaluate("chiefLine()", {"lanes": {"mini": {"heartbeat": hb}}}))
+        self.assertEqual(self.evaluate("chiefLine()", {}), "")

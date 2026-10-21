@@ -802,6 +802,16 @@ class Relay(unittest.TestCase):
         cr.write_json(cr.d("current.json"), {"agent": "claude", "since": cr.iso(T0)})
         self.assertEqual(cr.heartbeat_doc(T0, "idle")["chief"], "claude")
 
+    def test_a_run_records_who_is_up_and_out_for_the_board(self):
+        os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
+        self.beat(T0 - 5 * MIN)
+        cr.mark_down("codex", "out of usage", T0 + 60 * MIN, T0)
+        cr.cmd_run(T0)
+        chain = cr.heartbeat_doc(T0, "idle")["chain"]
+        self.assertEqual([r["agent"] for r in chain], ["chief", "claude", "cursor", "codex"])
+        self.assertEqual([r["up"] for r in chain], [False, True, True, False])
+        self.assertIn("retry after", chain[3]["why"])
+
     def test_a_stuck_mini_repairs_itself_once_and_says_so(self):
         import json
         self.routed_queue('{"jobs": []}')
