@@ -61936,17 +61936,29 @@
           "at": "2026-10-21T09:01Z",
           "by": "codex",
           "what": "step 0 of 3 done: Inspect locked HOS VO and existing picture plans; no mint authorized."
+        },
+        {
+          "at": "2026-10-21T09:02Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Inventory complete: 007-010 locked VO already have priced plans; 013 draft v02 explicitly awaits VO lock. No eligible unplanned locked-VO film."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-plate-prep",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-21T09:01Z",
+        "at": "2026-10-21T09:02Z",
         "by": "codex",
-        "note": "Inspect locked HOS VO and existing picture plans; no mint authorized."
-      }
+        "note": "Inventory complete: 007-010 locked VO already have priced plans; 013 draft v02 explicitly awaits VO lock. No eligible un"
+      },
+      "taskKeys": [
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010",
+        "HOS:013"
+      ]
     }
   ],
   "focus": [],
