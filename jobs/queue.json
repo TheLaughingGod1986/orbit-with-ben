@@ -61914,13 +61914,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-21T09:01Z",
-      "eta": "2026-10-21T10:31Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-21T08:49Z",
-      "result": "",
+      "result": "parked for Chief: price pass; no eligible unplanned HOS film with locked VO. 006-010 already planned; 013 awaits VO lock. Evidence HOS draft PR #350, commit c120c501. Progress 2/3; no boards duplicated, no spend.",
       "history": [
         {
           "at": "2026-10-21T08:49Z",
@@ -61946,6 +61946,11 @@
           "at": "2026-10-21T09:03Z",
           "by": "codex",
           "what": "step 2 of 3 done: Wrote prerequisite evidence in clean HOS branch; no eligible film, no duplicate boards. Check log records four checks passed and two missing-dependency checks failed."
+        },
+        {
+          "at": "2026-10-21T09:04Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: price pass; no eligible unplanned HOS film with locked VO. 006-010 already planned; 013 awaits VO lock. Evidence HOS draft PR #350, commit c120c501. Progress 2/3; no boards duplicated, no spend."
         }
       ],
       "kind": "assembly",
