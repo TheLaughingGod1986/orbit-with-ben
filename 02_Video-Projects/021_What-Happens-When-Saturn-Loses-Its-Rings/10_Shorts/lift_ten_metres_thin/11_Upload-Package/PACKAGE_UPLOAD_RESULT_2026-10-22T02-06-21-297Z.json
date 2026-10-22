@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-30T11:30:00.000Z",
+    "platformPostId": "RxErxlXim1Q",
+    "platformUrl": "https://youtu.be/RxErxlXim1Q",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-30T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"RxErxlXim1Q\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-30T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/11_Upload-Package",
+    "sha256": "8337555099d673140e119a09f281e4f82947a7823fbd0b9231e8e2ffaba11ccf",
+    "title": "How Thin Are Saturn's Rings?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_ten_metres_thin_j0771/saturn_ten_metres_thin_v01_cover.jpg",
+    "scheduledAt": "2026-10-30T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_ten_metres_thin_j0771/saturn_ten_metres_thin_v01.mp4",
+      "thumbnail": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/saturn_ten_metres_thin_j0771/saturn_ten_metres_thin_v01_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-10-30T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "RxErxlXim1Q",
+    "studioEditUrl": "https://studio.youtube.com/video/RxErxlXim1Q/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/RxErxlXim1Q/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/RxErxlXim1Q/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/RxErxlXim1Q/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/RxErxlXim1Q/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "studio_done",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to 55AEQwvs36g (How Long Do Saturn's Rings Have Left?) and custom cover uploaded + saved on CDP 9223.",
+        "studioUrlHint": "https://studio.youtube.com/video/RxErxlXim1Q/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/RxErxlXim1Q/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload + Studio finish done (RxErxlXim1Q). 0 required Studio finish step(s) remain."
+  }
+}

@@ -24,7 +24,7 @@ Weeks and dates are the four-week plan in `FAMILIAR_DANGER_STRATEGY.md` (12 Oct 
 |---|---|---|---|---|---|---|---|---|
 | Mon 26 Oct |  |  |  |  |  |  |  |  |
 | Wed 28 Oct |  | Could a Robot Land on a Neutron Star? |  |  |  |  |  |  |
-| Fri 30 Oct |  |  |  |  |  |  |  |  |
+| Fri 30 Oct | RxErxlXim1Q | How Thin Are Saturn's Rings? | Saturn's rings close-up (PIA21057), no Orbit |  |  |  |  |  |
 
 ## Week 4 — 2 / 4 / 6 Nov — Friday is Ben’s own voice
 
