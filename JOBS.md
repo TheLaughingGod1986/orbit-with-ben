@@ -27,11 +27,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0825 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0830 | mini | blocked | claude | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
 | J0831 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0834 | mini | claimed | cursor | 2026-10-22T13:50Z | studio · 027 Earth Stopped Spinning v01m: package to v01m, gates, Private upload for Sun 22 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
 | J0835 | mini | blocked | claude | – | assembly · HOS 006 Trees: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief |  |
 
 Recently finished:
 
+- J0834 done: 027 Earth Stopped Spinning v01m: package to v01m, gates, Private upload for Sun 22 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (6bbbvfCx6zY Private, publishAt Sun 22 Nov 2026 18:00 London (2026-11-22T18:00:00Z). sha 499e8edc, 446.300s. gate:episode PASS. Thumb A set. en-GB, category 28, not made for kids. Buffer deferred. Pin API 403. J0317 reopened for Related on dM1OgGPAYvw. No spend.)
 - J0833 done: 026 Nearest Star v06: package to v06, gates, Private upload for Sun 15 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (Private c5AdqQsnnys, publishAt 2026-11-15T18:00:00Z, thumbnail A set, Buffer deferred)
 - J0832 done: 024 Light Speed v06: package to v06, gates, Private upload for Sun 1 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (Private rVqgtkBV3jc, publishAt 2026-11-01T18:00:00Z, thumbnail A set, Buffer deferred. gate:episode PASS. sha 8d0b1317.)
 - J0829 done: HOS 006: #62 start night_jars after the silhouette (>=4.30 s), check every 0.5 s, then merge HOS PR #352 (HOS PR #352 merged at 7c4038b443ddd91d601ef8952e37947a2730fa27. #62 is night_jars 4.30-8.00s at 0.635x plus dark_window 4.00-6.00s. All 188 frames min mean luma 40.81, min edge 0.0217. picture_qa and polish_gate PASS 0/91. Master d24a08ee on checkout and NAS. Film final OK still with Chief.)
@@ -41,4 +41,3 @@ Recently finished:
 - J0823 done: 029 Betelgeuse: full rough v01 join, Orbit beats back from existing renders (J0808 KEEP) (Chief: rough sound, gates PASS; FIX long holds -> J0828)
 - J0822 done: HOS gold Short 29bpGAI0wb8: stayed-to-watch %, where viewers leave and what's on screen there (read-only) (done)
 - J0820 done: HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) (Chief PASS part roughs v01 (PR #353); full join + 2 repeat-shot fixes -> J0827)
-- J0819 done: 021 Short 'How Thin Are Saturn's Rings?': upload Private, publishAt Fri 30 Oct 11:30 London (J0810 final OK) (Uploaded 021 Short RxErxlXim1Q ('How Thin Are Saturn's Rings?') Private publishAt 2026-10-30T11:30:00Z (Fri 30 Oct 11:30 London); Studio finish complete (Related=55AEQwvs36g, custom cover set, en-GB, containsSyntheticMedia=true); recorded in UPLOADS.json + shorts_open_library + TEST_LOG (805d46fc3).)
