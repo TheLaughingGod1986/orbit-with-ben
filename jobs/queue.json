@@ -68202,10 +68202,10 @@
       "stage": "",
       "after": "J0826",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-22T06:49Z",
-      "eta": "2026-10-22T10:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T05:51Z",
       "result": "",
@@ -68284,6 +68284,11 @@
           "at": "2026-10-22T09:22Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Composited hos_006_full_join_v03_teach.mp4 (sha256 d24a08ee); 0.5s check PASS (min_mean_luma=40.9, min_edge=0.0217), polish_gate PASS (0/91), picture_qa PASS (0/91)"
+        },
+        {
+          "at": "2026-10-22T10:54Z",
+          "by": "chief",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Gemini stalled past ETA (claimed 06:49, ETA 10:01, restarts on 25-min cap). Use the no-search Chief fallback in the body: night_jars_t1 4.30-8.00 s at 0.635x (140 frames, frame-blended) + dark_window_t1 4.00-6.00 s (48 frames) = 188. Gemini's last note (09:22): composited hos_006_full_join_v03_teach.mp4 sha256 d24a08ee, 0.5 s check PASS min_mean_luma 40.9, min_edge 0.0217; verify it really is the fallback build, then picture_qa + polish_gate, merge HOS #352 if green, done with the merge sha."
         }
       ],
       "kind": "assembly",
@@ -68294,8 +68299,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-agy",
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5",
       "taskKeys": [
         "HOS:006"
       ],
