@@ -31,6 +31,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0843 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0848 | any | blocked | gemini | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0849 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0850 | mini | open | – | – | 028 picture · video · 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint |  |
+| J0851 | mini | blocked | claude | – | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
 
 Recently finished:
 

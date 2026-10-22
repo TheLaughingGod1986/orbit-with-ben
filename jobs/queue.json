@@ -1,5 +1,5 @@
 {
-  "next_id": 850,
+  "next_id": 852,
   "jobs": [
     {
       "id": "J0001",
@@ -70067,6 +70067,65 @@
         "by": "gemini",
         "note": "Committed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (db1c85dc); all checks pass; parking for Chief"
       }
+    },
+    {
+      "id": "J0850",
+      "title": "028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "028 Gliese 710: everything £0 is done (boards v02 on main b13f05db, code graphics v02 20/20 PASS, harvest v01 33 plates on main 14566db2). Next is the Flow picture for the remaining rows of plate boards v02 (Quality/Fast/Omni per the J0310 price table).\n\nStep 1 (this job): read the live Flow balance, price the remaining 028 rows from boards v02 against the current pool (HOS 007 has drawn on it since 15 Oct), and park \"parked for Chief: 028 Flow price pass\" with the table (rows, credits, balance after, headroom for HOS). No minting before the Chief's price pass; no £ spend (Flow credits within the plan only; anything needing a top-up goes to Ben). Step 2 after the pass: mint, KEEP/FIX sheets, part roughs.",
+      "ref": "",
+      "film": "028",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T16:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T16:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0851",
+      "title": "026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "026 Nearest Star weekday Shorts (J0141 pack, youtube-staging/026/shorts_j0141: Mon 16 Nov 26.50 s, Wed 18 Nov 23.60 s, Fri 20 Nov 22.67 s; all gates PASS; long c5AdqQsnnys). Needs the Chief's Short PASS on the pack first: parked for Chief.\n\nAfter the PASS: upload each Private with publishAt Mon 16 / Wed 18 / Fri 20 Nov 2026 11:30 London (check slots are free), the listing titles from SHORTS_PLAN, cover from the pack, synthetic disclosure on, not made for kids, en-GB; register in UPLOADS.json; Buffer deferred per its rule; Related -> c5AdqQsnnys once the long is public (15 Nov 18:00), as a date-gated step. No Public, £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0141",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T16:52Z",
+      "result": "parked for Chief: Short PASS on the 026 J0141 pack (3 Shorts)",
+      "history": [
+        {
+          "at": "2026-10-22T16:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-22T16:52Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: Short PASS on the 026 J0141 pack (3 Shorts)"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
