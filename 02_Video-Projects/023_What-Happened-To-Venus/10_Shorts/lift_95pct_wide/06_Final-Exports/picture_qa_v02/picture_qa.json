@@ -1,0 +1,142 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v02.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 5,
+      "row": "s06_venus_transit",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "NASA SDO AIA 171 Venus transit of the Sun (67.40s)",
+      "t": 20.96,
+      "at": "0:21",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0078 < film p5 0.0091"
+      ],
+      "offset": 67.4
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_cloudy_venus",
+      "source": "PIA23791.jpg",
+      "title": "NASA full-disk cloudy Venus globe (24.62s)",
+      "t": 2.45,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 24.62
+    },
+    {
+      "cut": 1,
+      "row": "s02_radar_globe",
+      "source": "PIA00257.jpg",
+      "title": "NASA Magellan radar global view of Venus (35.68s)",
+      "t": 6.8,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 35.68
+    },
+    {
+      "cut": 2,
+      "row": "s03_volcanic_terrain",
+      "source": "PIA00200.jpg",
+      "title": "NASA Magellan volcanic terrain on Venus (207.82s)",
+      "t": 10.85,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 207.82
+    },
+    {
+      "cut": 3,
+      "row": "s04_full_globe",
+      "source": "S91-50688.jpg",
+      "title": "NASA Magellan full-disk Venus globe (221.00s)",
+      "t": 14.45,
+      "at": "0:14",
+      "fail": [],
+      "warn": [],
+      "offset": 221.0
+    },
+    {
+      "cut": 4,
+      "row": "s05_ridged_highlands",
+      "source": "PIA00109.jpg",
+      "title": "NASA Magellan ridged highlands on Venus (338.87s)",
+      "t": 17.8,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": 338.87
+    },
+    {
+      "cut": 5,
+      "row": "s06_venus_transit",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "NASA SDO AIA 171 Venus transit of the Sun (67.40s)",
+      "t": 20.96,
+      "at": "0:21",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0078 < film p5 0.0091"
+      ],
+      "offset": 67.4
+    },
+    {
+      "cut": 6,
+      "row": "s07_end_loop",
+      "source": "end_card_loop_PIA23791.mp4",
+      "title": "End-card loop: NASA full-disk cloudy Venus globe (24.62s)",
+      "t": 23.36,
+      "at": "0:23",
+      "fail": [],
+      "warn": [],
+      "offset": 24.62
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0091,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
