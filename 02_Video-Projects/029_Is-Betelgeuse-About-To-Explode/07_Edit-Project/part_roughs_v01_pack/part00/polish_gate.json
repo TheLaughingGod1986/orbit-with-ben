@@ -1,0 +1,138 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/029_part_roughs_v01/029_Betelgeuse_part00_rough_v01.mp4",
+  "edge_floor": 0.008,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "2",
+      "cut": 2,
+      "t": 12.02,
+      "source": "sphere_jan.jpg",
+      "why": [
+        "low detail: edge density 0.003 < film p5 0.0080"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "orion_rise_vlt.mp4",
+      "t": 3.07,
+      "std": 22.84,
+      "mean": 76.73,
+      "p95": 106.0,
+      "edge": 0.0366,
+      "hf": 7.59,
+      "lf": 20.45,
+      "std8": 20.99,
+      "edge8": 0.0499,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "orion_over_paranal.mp4",
+      "t": 8.1,
+      "std": 27.62,
+      "mean": 68.34,
+      "p95": 96.0,
+      "edge": 0.0963,
+      "hf": 13.99,
+      "lf": 22.55,
+      "std8": 23.09,
+      "edge8": 0.059,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "sphere_jan.jpg",
+      "t": 12.02,
+      "std": 34.79,
+      "mean": 37.95,
+      "p95": 101.0,
+      "edge": 0.003,
+      "hf": 5.18,
+      "lf": 34.05,
+      "std8": 34.41,
+      "edge8": 0.0449,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.02,
+        "reversals": 0,
+        "frames": 89,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.003 < film p5 0.0080"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "code_graphic_029_r03_r04_promise_v01.mp4",
+      "t": 25.45,
+      "std": 29.54,
+      "mean": 67.07,
+      "p95": 124.0,
+      "edge": 0.0786,
+      "hf": 10.02,
+      "lf": 26.23,
+      "std8": 26.55,
+      "edge8": 0.0563,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

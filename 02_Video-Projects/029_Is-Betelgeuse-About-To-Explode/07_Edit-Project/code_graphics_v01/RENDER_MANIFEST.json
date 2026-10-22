@@ -1,9 +1,9 @@
 {
   "job": "J0347",
   "film": "029",
-  "board": "PLATE_BOARDS_v02.json",
-  "board_sha256": "ef33a453a38e98967c99cf8fcd97630d1fac93a9add556b0adac7bc858e8a2bb",
-  "renderer_sha256": "b3fcb0a34ac7911e3d73c11b83f53519c7643f51dbf310a743f1f2fe9aa2e045",
+  "board": "PLATE_BOARDS_v03.json",
+  "board_sha256": "d7e687c5afc59d1f4afa982a5b89ab50340d51017dd2e2c5214b11a6247c80da",
+  "renderer_sha256": "9d8638a62aba0c0022df06b4c664023a7f6164f434567def267aff6d7c89f5e0",
   "fps": 50,
   "review": "pending Chief",
   "fix": "Chief 16 Oct: r21 side-view teaspoon (oval bowl, handle along the beam). Earlier KEEP stands.",
@@ -117,6 +117,33 @@
       "review": "pending Chief"
     },
     {
+      "id": "r13_compare",
+      "file": "code_graphic_029_r13_compare_v01.mp4",
+      "sha256": "1f413fec4b14018187c52c8ea5df96f2a03b427588a3bd6a31e1c77b6e73ba5a",
+      "t_in_s": 130.42,
+      "t_out_s": 137.8,
+      "use_s": 7.38,
+      "frames": 369,
+      "fps": 50,
+      "luma": {
+        "0.18": {
+          "mean": 52.0,
+          "p95": 115.7
+        },
+        "0.52": {
+          "mean": 52.0,
+          "p95": 115.7
+        },
+        "0.82": {
+          "mean": 49.3,
+          "p95": 110.8
+        }
+      },
+      "kind": "chart",
+      "source": "own_code",
+      "review": "pending Chief"
+    },
+    {
       "id": "r15_dip",
       "file": "code_graphic_029_r15_dip_v01.mp4",
       "sha256": "4b93163738e09368fd2ee5a5899470b338c51474e456c249ec824a2c7e54bfbd",
@@ -191,6 +218,33 @@
         "0.82": {
           "mean": 73.3,
           "p95": 141.7
+        }
+      },
+      "kind": "chart",
+      "source": "own_code",
+      "review": "pending Chief"
+    },
+    {
+      "id": "r21_bh",
+      "file": "code_graphic_029_r21_bh_v01.mp4",
+      "sha256": "5e384cd027dd5e59f49be69be9892a146a72044908cc77b6e09a06a97ed6d214",
+      "t_in_s": 236.8,
+      "t_out_s": 241.88,
+      "use_s": 5.08,
+      "frames": 254,
+      "fps": 50,
+      "luma": {
+        "0.18": {
+          "mean": 69.7,
+          "p95": 114.9
+        },
+        "0.52": {
+          "mean": 69.3,
+          "p95": 115.7
+        },
+        "0.82": {
+          "mean": 69.1,
+          "p95": 115.7
         }
       },
       "kind": "chart",

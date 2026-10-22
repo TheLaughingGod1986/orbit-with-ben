@@ -51,6 +51,8 @@ LABELS = {
     "r31_shells_twins": [(5.1, 8.4, "deep in the core"), (13.0, 15.6, "100,000 years"),
                          (15.8, 17.5, "a hundred years"), (17.6, 18.94, "almost the same")],
     "r35_song": [(3.5, 6.0, "1054"), (6.1, 9.4, "in China")],
+    "r13_compare": [],
+    "r21_bh": [(1.9, 5.08, "black hole")],
 }
 SKY = {"r09_finder", "r23_paranal", "r25_orion", "r27_orion", "r35_song"}
 ORION = {
@@ -138,6 +140,9 @@ class Renderer:
         self.sun = sun
         self.earth = Image.open(assets / "earth.jpg").convert("RGB")
         self.mars = Image.open(assets / "mars.jpg").convert("RGB")
+        hdir = HERE / "harvest_v01"
+        self.sphere_jan = Image.open(hdir / "sphere_jan.jpg").convert("RGB")
+        self.sphere_dec = Image.open(hdir / "sphere_dec.jpg").convert("RGB")
         self.bodies = {}
         self.blobs = {}
         rng = np.random.default_rng(1054)
@@ -216,7 +221,10 @@ class Renderer:
         return im
 
     def credit(self, im, kind):
-        text(im, "NASA · CGI" if kind == "nasa" else "CGI", (120, 990), 28, ICE, anchor="lm")
+        if kind == "eso_cgi":
+            text(im, "ESO/M. Montargès et al. · CGI", (120, 990), 28, ICE, anchor="lm")
+        else:
+            text(im, "NASA · CGI" if kind == "nasa" else "CGI", (120, 990), 28, ICE, anchor="lm")
 
     def stars(self, im, t, flare=0, fade=0, zoom=1, focus=None, hide=False):
         if hide:
@@ -405,6 +413,78 @@ class Renderer:
             tw = 0.55 + 0.45 * math.sin(t * 3)
             d.ellipse((930, 250, 948, 268), fill=tuple(int(c * tw) for c in (180, 40, 36)))
 
+    def sphere_split(self, im, t, dur):
+        # J0353 Chief ruling: our own £0 code split of sphere_jan | sphere_dec with house labels (Jan 2019 / Dec 2019),
+        # then push into the December half (no vertical seam/gutter across full height).
+        push = ease(max(0.0, (t - 3.6) / max(0.1, dur - 3.6)))
+        s_jan = int(round(560 * (1.0 - 0.18 * push)))
+        s_dec = int(round(560 * (1.0 + 0.28 * push)))
+        x_jan = int(round(540 - 240 * push))
+        x_dec = int(round(1380 - 420 * push))
+        y_c = 520
+        for src_im, sz, cx, lbl, col in (
+            (self.sphere_jan, s_jan, x_jan, "Jan 2019", ICE),
+            (self.sphere_dec, s_dec, x_dec, "Dec 2019", GOLD),
+        ):
+            key = ("sphere_card", id(src_im), sz)
+            if key not in self.bodies:
+                tile = src_im.resize((sz, sz), Image.Resampling.LANCZOS)
+                arr = np.asarray(tile, dtype=np.float32) / 255.0
+                arr = np.clip((arr ** 0.72) * 255.0 + 14.0, 0.0, 255.0).astype(np.uint8)
+                tile = Image.fromarray(arr)
+                mask = Image.new("L", (sz, sz), 0)
+                ImageDraw.Draw(mask).rounded_rectangle((2, 2, sz - 3, sz - 3), radius=28, fill=255)
+                rgba = tile.convert("RGBA")
+                rgba.putalpha(mask)
+                self.bodies[key] = rgba
+            card = self.bodies[key]
+            x0, y0 = cx - sz // 2, y_c - sz // 2
+            im.paste(card, (x0, y0), card)
+            d = ImageDraw.Draw(im)
+            d.rounded_rectangle((x0 + 2, y0 + 2, x0 + sz - 3, y0 + sz - 3), radius=28, outline=col, width=4)
+            text(im, lbl, (cx, max(96, y0 - 42)), 52, col, 1.0)
+
+    def core_collapse_bh(self, im, t, dur):
+        # J0353 Chief ruling: £0 code graphic of single-star core collapse into a black hole.
+        cx, cy = 960, 560
+        collapse = ease(min(1.0, t / 2.2))
+        bh_reveal = ease(max(0.0, (t - 1.5) / 1.4))
+        d = ImageDraw.Draw(im)
+        # Infalling core shells & streamlines
+        for i, col in enumerate(SHELLS):
+            r_start = 320 - i * 42
+            r_end = 52 + i * 6
+            rr = r_start * (1.0 - collapse) + r_end * collapse
+            if rr > 54:
+                d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), outline=col, width=4)
+        for k in range(16):
+            ang = k * (math.pi / 8.0) + t * 0.45
+            r_outer = 380 - 220 * ((t * 0.65 + k * 0.13) % 1.0)
+            r_inner = max(58, r_outer - 65)
+            d.line(
+                (
+                    cx + r_outer * math.cos(ang),
+                    cy + r_outer * math.sin(ang),
+                    cx + r_inner * math.cos(ang + 0.12),
+                    cy + r_inner * math.sin(ang + 0.12),
+                ),
+                fill=ICE if k % 2 == 0 else GOLD,
+                width=3,
+            )
+        # Accretion photon ring + black hole shadow
+        if bh_reveal > 0.02:
+            ring_r = int(84 + 28 * bh_reveal + 4 * math.sin(t * 4.0))
+            glow = Image.new("RGBA", im.size, (0, 0, 0, 0))
+            gd = ImageDraw.Draw(glow)
+            for dr, a_mul, c_rgb in ((44, 55, ORANGE), (22, 120, GOLD), (8, 220, WHITE)):
+                rr = ring_r + dr
+                gd.ellipse((cx - rr, cy - int(rr * 0.38), cx + rr, cy + int(rr * 0.38)), outline=(*c_rgb, int(a_mul * bh_reveal)), width=6)
+                gd.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), outline=(*c_rgb, int(a_mul * 0.85 * bh_reveal)), width=5)
+            sh_r = int(58 * bh_reveal)
+            gd.ellipse((cx - sh_r, cy - sh_r, cx + sh_r, cy + sh_r), fill=(8, 11, 18, int(255 * bh_reveal)))
+            gd.ellipse((cx - sh_r - 3, cy - sh_r - 3, cx + sh_r + 3, cy + sh_r + 3), outline=(*GOLD, int(240 * bh_reveal)), width=4)
+            im.paste(Image.alpha_composite(im.convert("RGBA"), glow).convert("RGB"))
+
     def subscribe(self, im, t):
         a = min(ease((t - 1.9) / 0.4), ease((4.2 - t) / 0.35))
         if a > 0:
@@ -413,7 +493,7 @@ class Renderer:
     def frame(self, plate, t):
         ident = plate["id"]
         dur = plate["use_s"]
-        chart = ident in ("r05_scale", "r10_r11_dip", "r15_dip", "r17_r20_shells", "r21_hero", "r31_shells_twins")
+        chart = ident in ("r05_scale", "r10_r11_dip", "r13_compare", "r15_dip", "r17_r20_shells", "r21_hero", "r21_bh", "r31_shells_twins")
         if ident == "r03_r04_promise":
             chart = t >= 8.7
         if ident == "r29_span_astrolabe":
@@ -494,19 +574,29 @@ class Renderer:
                 self.twins(im, t, open_)
         elif ident == "r35_song":
             self.song(im, t)
+        elif ident == "r13_compare":
+            self.sphere_split(im, t, dur)
+        elif ident == "r21_bh":
+            self.core_collapse_bh(im, t, dur)
         else:
             raise ValueError(ident)
         for start, end, label in LABELS.get(ident, []):
             if start <= t <= end:
                 alpha = min(ease((t - start) / 0.4), ease((end - t) / 0.4))
                 text(im, label, (960, label_y(ident, t)), 64, GOLD, alpha)
-        kind = "nasa" if ident in ("r05_scale", "r31_shells_twins") or (ident == "r03_r04_promise" and 8.7 <= t < 13.5) else "cgi"
+        if ident == "r13_compare":
+            kind = "eso_cgi"
+        elif ident in ("r05_scale", "r31_shells_twins") or (ident == "r03_r04_promise" and 8.7 <= t < 13.5):
+            kind = "nasa"
+        else:
+            kind = "cgi"
         self.credit(im, kind)
         return im
 
 
 def check_labels(words):
-    plates = {p["id"]: p for p in json.loads((HERE / "PLATE_BOARDS_v02.json").read_text())["plates"]}
+    board_file = HERE / ("PLATE_BOARDS_v03.json" if (HERE / "PLATE_BOARDS_v03.json").exists() else "PLATE_BOARDS_v02.json")
+    plates = {p["id"]: p for p in json.loads(board_file.read_text())["plates"]}
     for ident, rows in LABELS.items():
         prev = -1
         for start, end, label in rows:
@@ -550,10 +640,10 @@ def main():
     assert abs(scale_s(4.1) * 3.55 - 1.52) < 0.03, scale_s(4.1) * 3.55
     words = json.loads((HERE.parent / "02_Voiceover" / "words.json").read_text())["words"]
     check_labels(words)
-    boards = HERE / "PLATE_BOARDS_v02.json"
+    boards = HERE / ("PLATE_BOARDS_v03.json" if (HERE / "PLATE_BOARDS_v03.json").exists() else "PLATE_BOARDS_v02.json")
     all_plates = [p for p in json.loads(boards.read_text())["plates"] if p["route"] in ("code", "card")]
-    if len(all_plates) != 14:
-        raise SystemExit(f"expected 14 plates, got {[p['id'] for p in all_plates]}")
+    if len(all_plates) not in (14, 16):
+        raise SystemExit(f"expected 14 or 16 plates, got {[p['id'] for p in all_plates]}")
     want = {s.strip() for s in a.only.split(",")} if a.only else None
     plates = [p for p in all_plates if want is None or p["id"] in want]
     if want and len(plates) != len(want):
