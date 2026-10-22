@@ -1,5 +1,5 @@
 {
-  "next_id": 827,
+  "next_id": 828,
   "jobs": [
     {
       "id": "J0001",
@@ -67505,13 +67505,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T03:14Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T22:52Z",
-      "result": "parked for Chief: review HOS 007 Part roughs v01 Parts 01-05 (all 5 PASS polish_gate + picture_qa, 0 freezes) and merge HOS PR #353 (commit f50872fa)",
+      "result": "Chief PASS part roughs v01 (PR #353); full join + 2 repeat-shot fixes -> J0827",
       "history": [
         {
           "at": "2026-10-21T22:52Z",
@@ -67572,6 +67572,16 @@
           "at": "2026-10-22T04:18Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review HOS 007 Part roughs v01 Parts 01-05 (all 5 PASS polish_gate + picture_qa, 0 freezes) and merge HOS PR #353 (commit f50872fa)"
+        },
+        {
+          "at": "2026-10-22T04:19Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T04:19Z",
+          "by": "claude",
+          "what": "done: Chief PASS part roughs v01 (PR #353); full join + 2 repeat-shot fixes -> J0827"
         }
       ],
       "kind": "assembly",
@@ -67827,6 +67837,33 @@
       "history": [
         {
           "at": "2026-10-22T03:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0827",
+      "title": "HOS 007 First Vaccine: land PR #353, full join v01 (Parts 01-05) + 2 £0 repeat-shot fixes, gates, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS J0820 (Claude, acting Chief, 22 Oct 2026): HOS 007 part roughs v01 (HOS PR #353, f50872fa). All 5 parts pass polish_gate and picture_qa with 0 fails. Every reuse is the board's reuse_of. Land HOS PR #353 if its checks are still green, then join Parts 01-05 into full_join_v01 on the locked VO, with the teaching cards as laid. £0, no new mints, no music bed, no upload.\n\nFold in two £0 fixes. Both are the same clip shown twice within about a minute, so the second showing reads as a repeat:\n1) P5 06c_assembly_again (7:35) shows 06_assembly_1980_t1 0.86-7.90 s, which overlaps 5.3 s of what 06_assembly_1980 showed at 7:24, 10 s earlier, with an almost identical frame. Use the plate's unused tail only and make up the rest of the length from another moving P5 plate. If no plate is free, use a clearly different framing of the tail (a 1.3x push-in on the clapping front row, or a slow pan), never the same wide shot.\n2) P1 09c_case_again (1:03) repeats the 02_doctor_case frame from 0:04 (overlap 3.56-7.38 s). Reframe it so it reads as a new shot: a tight crop on the lancet, or a slow push. Keep the VO timing.\nRe-run picture_qa + polish_gate on the full join, write REVIEW_v01 (cut list, both fixes done or why not, gate output), PR, park for Chief.\n",
+      "ref": "TheLaughingGod1986/history-of-science#353",
+      "film": "",
+      "stage": "",
+      "after": "J0820",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T04:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T04:19Z",
           "by": "claude",
           "what": "added"
         }
