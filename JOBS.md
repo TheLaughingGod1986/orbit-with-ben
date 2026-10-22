@@ -30,6 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0840 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0842 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0843 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0846 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
