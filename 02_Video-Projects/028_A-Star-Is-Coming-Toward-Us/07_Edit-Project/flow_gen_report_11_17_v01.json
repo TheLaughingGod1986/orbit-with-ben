@@ -1,0 +1,78 @@
+{
+  "startedAt": "2026-10-22T18:36:18+00:00",
+  "job": "J0850",
+  "film": "028",
+  "engine": "flow-cdp-9222",
+  "request": "Chief J0850 price PASS (Claude, acting Chief, 22 Oct 2026): r11_night_road 1 Quality + r17_pitch 1 Fast",
+  "rows": [
+    {
+      "row": 11,
+      "plate_id": "r11_night_road",
+      "id": "night_road_veo_v01",
+      "quality": "Quality",
+      "model": "Veo 3.1 - Quality",
+      "prompt": "Photorealistic cinema shot: a long straight empty two-lane country road at night. One car's warm headlights far down the road come straight toward the camera and slowly grow brighter as the car approaches along the asphalt. Dark open fields on both sides under a dark night sky. No brands, no number plates, no text, no people, no road signs, no buildings with signs. Continuous smooth motion through the final frame. No robot, no cartoon. Silent.",
+      "credits_before": 20950,
+      "submitted_at": "2026-10-22T18:36:21+00:00",
+      "status": "ok",
+      "project_url": "https://flow.google.com/project/5eca16bc-30ac-4370-af3e-48bfb55c46e9",
+      "wall_seconds": 117.6,
+      "file": "04_Generated-Clips/01_Raw/veo_v01/night_road_veo_v01.mp4",
+      "sheet_6frame": "04_Generated-Clips/01_Raw/veo_v01/sheets/night_road_veo_v01_6frame.jpg",
+      "sheet_3x2": "04_Generated-Clips/01_Raw/veo_v01/sheets/night_road_veo_v01_sheet.jpg",
+      "bytes": 5477195,
+      "duration_s": 8.0,
+      "sha256": "6dfb64f68399870509c713a4cc985786b52e4d658fbaee139c3768c91fdba59d",
+      "freeze_events_0p8s": 0,
+      "credits_after": 20850,
+      "credits_used": 100,
+      "credits_ui_drop": 100,
+      "account": "benoats@googlemail.com",
+      "finished_at": "2026-10-22T18:38:19+00:00"
+    },
+    {
+      "row": 17,
+      "plate_id": "r17_pitch",
+      "id": "football_pitch_veo_v01",
+      "quality": "Fast",
+      "model": "Veo 3.1 - Fast",
+      "prompt": "Photorealistic cinema shot: an empty green grass football pitch at dusk, seen from a high wide angle with a gentle slow aerial drift across the turf. Crisp white touchlines and centre circle only. No crowds, no players, no club colours, no banners, no text, no logos. Natural twilight fading, nothing glowing. Continuous smooth camera drift through the final frame. No robot, no cartoon. Silent.",
+      "credits_before": 20850,
+      "submitted_at": "2026-10-22T18:38:19+00:00",
+      "status": "ok",
+      "project_url": "https://flow.google.com/project/b1805a69-71a4-4fa9-811f-a95405eba2ad",
+      "wall_seconds": 118.4,
+      "file": "04_Generated-Clips/01_Raw/veo_v01/football_pitch_veo_v01.mp4",
+      "sheet_6frame": "04_Generated-Clips/01_Raw/veo_v01/sheets/football_pitch_veo_v01_6frame.jpg",
+      "sheet_3x2": "04_Generated-Clips/01_Raw/veo_v01/sheets/football_pitch_veo_v01_sheet.jpg",
+      "bytes": 10910100,
+      "duration_s": 8.0,
+      "sha256": "d224e0445967665e668aacf4310c7fa234d60b73744d8652c492175af6db1515",
+      "freeze_events_0p8s": 0,
+      "credits_after": 20840,
+      "credits_used": 10,
+      "credits_ui_drop": 10,
+      "account": "benoats@googlemail.com",
+      "finished_at": "2026-10-22T18:40:18+00:00"
+    }
+  ],
+  "balance_reads": [
+    {
+      "at": "2026-10-22T18:36:21+00:00",
+      "credits": 20950,
+      "when": "start"
+    },
+    {
+      "at": "2026-10-22T18:38:19+00:00",
+      "credits": 20850,
+      "after": "night_road_veo_v01"
+    },
+    {
+      "at": "2026-10-22T18:40:18+00:00",
+      "credits": 20840,
+      "after": "football_pitch_veo_v01"
+    }
+  ],
+  "finishedAt": "2026-10-22T18:40:18+00:00",
+  "credits_end": 20840
+}
