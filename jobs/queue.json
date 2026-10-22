@@ -8668,10 +8668,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-22T10:39Z",
-      "eta": "2026-10-22T13:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:38Z",
       "result": "",
@@ -8720,6 +8720,11 @@
           "at": "2026-10-22T10:46Z",
           "by": "cursor",
           "what": "step 3 of 4 done: spans moved off v06 overlay windows; fix render running in tmux j0141-fix"
+        },
+        {
+          "at": "2026-10-22T10:46Z",
+          "by": "cursor",
+          "what": "released: Fix render in tmux j0141-fix. Log ~/_desk/logs/j0141-fix.log. Done file ~/_desk/logs/j0141-fix.done. Missing .done means still running: do not start a second copy. Present: read the exit code and the three gate txt files. First cut clipped v06 overlay cards in the 9:16 frame. Spans now sit in overlay-free windows. On success, spot 9-14s and the last frame for clipped cards, then jobs.py done. Quote times unchanged (Mon 141.400, Wed 421.904, Fri 309.800, v06 captions). Long id c5AdqQsnnys. No upload. Not a PASS."
         }
       ],
       "kind": "assembly",
