@@ -22067,10 +22067,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-22T01:27Z",
+      "eta": "2026-10-22T02:12Z",
       "created_by": "chief",
       "created_at": "2026-10-15T13:32Z",
       "result": "",
@@ -22139,6 +22139,11 @@
           "at": "2026-10-21T15:34Z",
           "by": "chief",
           "what": "reopened: Chief FIX (Chief, 21 Oct ~16:50 London): not a Chief decision, a session issue. At 16:40 London CDP 9460 answers /json/list with the HOS tabs (_C92tIJCk8A/edit, GHZDsiH7L7A/editor); 9222 is a different channel (UCXRVwrCxXpN…), never use it for HOS. Worker: on 9460 open a fresh tab via /json/new on studio.youtube.com/video/_C92tIJCk8A/edit (don't reuse the hung tab), confirm the channel id is UCXp7HkBIl1LgaznXuZHJyRg before any click, then follow the body exactly (check test state; if none running, arm thumbnail-only A live vs B v02 INVISIBLE LIFE?; never Replace/delete; record T-id in THUMB_LEDGER). If 9460 still hangs on Runtime.evaluate, block 'waits for input: HOS Studio CDP 9460 hung (Chrome restart on the Mini)' and stop. £0."
+        },
+        {
+          "at": "2026-10-22T01:27Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
