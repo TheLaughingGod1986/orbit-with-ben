@@ -30,8 +30,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0859 | mini | open (after J0855) | – | – | 028 edit · assembly · 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief |  |
 | J0860 | any | open | – | – | 010 picture · review · HOS 010: confirm the 8 period details (P1-P8) on SHOT_LIST_v01, no spend, park for Chief |  |
 | J0861 | mini | open | – | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, A6TW_6CXhcs) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
-| J0862 | mini | open | – | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
-| J0863 | any | open | – | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
+| J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
+| J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 
 Recently finished:
 

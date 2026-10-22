@@ -70975,18 +70975,23 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "blocked",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
-      "result": "",
+      "result": "waits for input: ElevenLabs characters (reset 30 Oct); reopen after the reset",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-22T20:56Z",
+          "by": "claude",
+          "what": "blocked: waits for input: ElevenLabs characters (reset 30 Oct); reopen after the reset"
         }
       ],
       "kind": "vo"
@@ -71002,18 +71007,23 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "blocked",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:56Z",
-      "result": "",
+      "result": "waits for input: Google Flow credit renewal (~12 Nov); reopen once renewed",
       "history": [
         {
           "at": "2026-10-22T20:56Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-22T20:56Z",
+          "by": "claude",
+          "what": "blocked: waits for input: Google Flow credit renewal (~12 Nov); reopen once renewed"
         }
       ],
       "kind": "chief"
