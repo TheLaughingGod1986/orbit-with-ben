@@ -1,11 +1,15 @@
 {
   "about": "Out-of-credit flags (Ben, 14 Oct 2026: 'add a flag onto the system to run out of credits and switch it then to Codex or to Cursor or to Gemini'). Keys are a model id from scripts/routing.py MODELS (one lane) or an agent id (all its lanes). scripts/chief_relay.py skips flagged lanes until out_until (UTC), so each job goes to the next worker and model in its chain that has credit. Claude or Chief keeps this current from the credit readings (scripts/ai_spend.py); the relay adds its own short marks when a run says it is out. Remove a flag early when the pool is topped up.",
-  "updated": "2026-10-15T16:35:00Z",
+  "updated": "2026-10-22T17:45:00Z",
   "by": "claude",
   "flags": {
     "cursor-claude-opus-5-5": {
       "out_until": "2026-11-06T00:00:00Z",
       "reason": "Cursor's Other Models pool 100% used (cursor.com spending page, read 13 Oct 07:30Z); its own models (Auto) still have credit; limits reset 6 Nov"
+    },
+    "cursor": {
+      "out_until": "2026-10-29T17:30:00Z",
+      "reason": "Cursor weekly usage limit reached (relay, #99 6347140483, 22 Oct 17:35Z: 'Weekly usage limit reached. It resets in 7 days'); all Cursor lanes off until the reset, no credit top-up without Ben"
     }
   }
 }
