@@ -67259,13 +67259,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-10-22T15:58Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T16:38Z",
-      "result": "",
+      "result": "PR #258 merged (Ben, 22 Oct). stage_sync applied: 15 stages moved on 024/026/027/030/031; runs every hourly studio run with --apply --git",
       "history": [
         {
           "at": "2026-10-21T16:38Z",
@@ -67296,6 +67296,11 @@
           "at": "2026-10-22T15:58Z",
           "by": "claude",
           "what": "claimed: Ben said go ('your choice', 22 Oct); PR #258 open, CI running"
+        },
+        {
+          "at": "2026-10-22T16:32Z",
+          "by": "claude",
+          "what": "done: PR #258 merged (Ben, 22 Oct). stage_sync applied: 15 stages moved on 024/026/027/030/031; runs every hourly studio run with --apply --git"
         }
       ],
       "kind": "studio"
@@ -68579,6 +68584,11 @@
           "at": "2026-10-22T06:24Z",
           "by": "claude",
           "what": "blocked: waits for HOS PR #354 on main (Ben merges) and ElevenLabs credit back (30 Oct)"
+        },
+        {
+          "at": "2026-10-22T16:32Z",
+          "by": "claude",
+          "what": "HOS PR #354 merged by Claude on Ben's go (786e631e); still waits for ElevenLabs credit (30 Oct)"
         }
       ],
       "kind": "assembly"
