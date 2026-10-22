@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0829 | mini | claimed | gemini | 2026-10-22T10:01Z | for gemini · assembly · `gemini-agy` · HOS 006: #62 start night_jars after the silhouette (>=4.30 s), check every 0.5 s, then merge HOS PR #352 | TheLaughingGod1986/history-of-science#352 |
 | J0830 | mini | blocked | claude | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
 | J0831 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0832 | mini | claimed | cursor | 2026-10-22T11:34Z | studio · 024 Light Speed v06: package to v06, gates, Private upload for Sun 1 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
+| J0832 | mini | blocked | cursor | – | studio · 024 Light Speed v06: package to v06, gates, Private upload for Sun 1 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
 | J0833 | mini | open | – | – | studio · 026 Nearest Star v06: package to v06, gates, Private upload for Sun 15 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
 | J0834 | mini | open | – | – | studio · 027 Earth Stopped Spinning v01m: package to v01m, gates, Private upload for Sun 22 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
 

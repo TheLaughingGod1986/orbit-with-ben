@@ -68318,13 +68318,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-22T09:34Z",
-      "eta": "2026-10-22T11:34Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T09:18Z",
-      "result": "",
+      "result": "parked for Chief: gate:episode FAIL on prebuild_vidiq. The 4 Oct audit leaves keyword and title boxes unticked and has no Signed off by line (it says the BLOCK is by design while vidIQ is waived). 025 unblocked the same check with a Signed off by line. v06 master matches sha 8d0b1317 (491.053 s) on the NAS and in the edit project. Package manifest is now final and the last caption cue ends 490.553 s. Chapters already match. Not uploaded.",
       "history": [
         {
           "at": "2026-10-22T09:18Z",
@@ -68350,6 +68350,11 @@
           "at": "2026-10-22T09:40Z",
           "by": "cursor",
           "what": "step 2 of 4 done: gate:episode FAIL: prebuild_vidiq sign-off incomplete (4 Oct waiver, no Signed off by). Checksum matches so J0792 picture/polish/music gates still apply. No upload."
+        },
+        {
+          "at": "2026-10-22T09:40Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: gate:episode FAIL on prebuild_vidiq. The 4 Oct audit leaves keyword and title boxes unticked and has no Signed off by line (it says the BLOCK is by design while vidIQ is waived). 025 unblocked the same check with a Signed off by line. v06 master matches sha 8d0b1317 (491.053 s) on the NAS and in the edit project. Package manifest is now final and the last caption cue ends 490.553 s. Chapters already match. Not uploaded."
         }
       ],
       "kind": "studio",
