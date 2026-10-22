@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0820 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) |  |
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
-| J0823 | mini | open | – | – | for gemini · assembly · `gemini-agy` · 029 Betelgeuse: full rough v01 join, Orbit beats back from existing renders (J0808 KEEP) |  |
+| J0823 | mini | claimed | gemini | 2026-10-22T06:19Z | for gemini · assembly · `gemini-agy` · 029 Betelgeuse: full rough v01 join, Orbit beats back from existing renders (J0808 KEEP) |  |
 | J0824 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0825 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0826 | mini | open (after J0809) | – | – | assembly · HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief | TheLaughingGod1986/history-of-science#352 |
