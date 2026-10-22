@@ -66686,13 +66686,13 @@
       "stage": "",
       "after": "J0795",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-22T02:23Z",
-      "eta": "2026-10-22T05:23Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-21T15:34Z",
-      "result": "",
+      "result": "parked for Chief: HOS 006 full_join_v02_teach (21 £0 fixes applied, sha256 09c1364b, polish_gate PASS 0/91 failed, picture_qa PASS 0/91 failed, gate:episode PASS 93.7/100) + REVIEW_v02.md on HOS PR #352 (4176776d)",
       "history": [
         {
           "at": "2026-10-21T15:34Z",
@@ -66733,6 +66733,11 @@
           "at": "2026-10-22T03:12Z",
           "by": "gemini",
           "what": "step 6 of 6 done: All 21 £0 fixes applied in hos_006_full_join_v02_teach.mp4 (sha256 09c1364b); polish_gate + picture_qa + gate:episode PASS; HOS PR #352 (4176776d) opened and parked for Chief"
+        },
+        {
+          "at": "2026-10-22T03:12Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 006 full_join_v02_teach (21 £0 fixes applied, sha256 09c1364b, polish_gate PASS 0/91 failed, picture_qa PASS 0/91 failed, gate:episode PASS 93.7/100) + REVIEW_v02.md on HOS PR #352 (4176776d)"
         }
       ],
       "kind": "assembly",
