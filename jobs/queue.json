@@ -67986,10 +67986,25 @@
           "at": "2026-10-22T12:28Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T12:28Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Inventory: 023/024/027 tied at 4 Shorts; 028/029 have none and no master. Picking earliest eligible with a local master."
         }
       ],
       "kind": "assembly",
-      "backlog": "owb-short-from-locked"
+      "backlog": "owb-short-from-locked",
+      "taskKeys": [
+        "OWB:023"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-22T12:28Z",
+        "by": "cursor",
+        "note": "Inventory: 023/024/027 tied at 4 Shorts; 028/029 have none and no master. Picking earliest eligible with a local master."
+      }
     },
     {
       "id": "J0825",
