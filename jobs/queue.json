@@ -68060,13 +68060,13 @@
       "stage": "",
       "after": "J0823",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T06:24Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T05:18Z",
-      "result": "parked for Chief: 029_Betelgeuse_full_rough_v02.mp4 (sha256 b093e04f, 517.06s, 80 cuts, max single picture 13.66s, 0 holds >15s) ready for Chief review before Ben's watch",
+      "result": "Chief PASS full_rough_v02 (b093e04f): 80 cuts, max hold 13.7 s, no new sources, all gates PASS; to Ben's watch",
       "history": [
         {
           "at": "2026-10-22T05:18Z",
@@ -68107,6 +68107,16 @@
           "at": "2026-10-22T06:48Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 029_Betelgeuse_full_rough_v02.mp4 (sha256 b093e04f, 517.06s, 80 cuts, max single picture 13.66s, 0 holds >15s) ready for Chief review before Ben's watch"
+        },
+        {
+          "at": "2026-10-22T06:53Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T06:53Z",
+          "by": "claude",
+          "what": "done: Chief PASS full_rough_v02 (b093e04f): 80 cuts, max hold 13.7 s, no new sources, all gates PASS; to Ben's watch"
         }
       ],
       "kind": "assembly",
