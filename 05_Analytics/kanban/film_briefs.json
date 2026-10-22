@@ -435,40 +435,26 @@
       "line": "Script and voice done. Shot boards are being written now (J0310), then the Chief prices the picture."
     },
     "OWB:029": {
-      "updated": "2026-10-16T05:55Z",
+      "updated": "2026-10-22T02:55Z",
       "mood": "good",
-      "done": "Script, voice, shot list (39 rows) and 6 code graphics.",
-      "holdup": "Boards and all 14 free code graphics are merged. The free licensed footage is gathered (31 files for 47 shots, PR #228); six files (nine shots) are held for the Chief to replace, crop or clear rights. The two small Omni clips (about £1.30 of free promo credit) are still not authorised.",
+      "done": "Script, voice, code graphics (J0347), plate boards and part roughs (J0808).",
+      "holdup": "",
       "limit": "One picture (the Super-Kamiokande detector, row 24) needs its licence checked before it's used.",
       "steps": [
         {
-          "who": "Cursor",
-          "what": "gather source footage and write the shot boards (no spend)",
-          "job": "J0311",
-          "done": true,
-          "doneText": "v01 · Thu 15 Oct (Chief price PASS with changes)"
+          "who": "Mac mini",
+          "what": "full rough cut v01, Orbit beats back in from existing renders",
+          "job": "J0823"
         },
         {
-          "who": "Cursor",
-          "what": "shot boards v02 with the Chief's changes",
-          "job": "J0330",
-          "done": true,
-          "doneText": "v02 PASS, merged · Fri 16 Oct"
-        },
-        {
-          "who": "Codex",
-          "what": "free code graphics from boards v02",
-          "job": "J0347"
-        },
-        {
-          "who": "Cursor",
-          "what": "gather the source footage, then picture (2 Omni clips)",
-          "whenText": "after 028's picture, early November"
+          "who": "Chief",
+          "what": "review the full rough cut",
+          "afterJob": "J0823"
         }
       ],
       "you": "",
       "timing": "Airs Sun 6 Dec.",
-      "line": "Script and voice done. Shot boards next (J0311), after 028's, then the Chief prices the picture."
+      "line": "Script, voice, graphics and part rough cuts done. Next the Mac mini joins the full rough cut (J0823)."
     },
     "HOS:005": {
       "updated": "2026-10-15T21:05Z",
@@ -492,70 +478,21 @@
       "line": "Finished and scheduled with its three Shorts. Nothing for you."
     },
     "HOS:006": {
-      "updated": "2026-10-16T04:55Z",
+      "updated": "2026-10-22T02:55Z",
       "mood": "good",
-      "done": "Script, voice and the Shorts. Picture is about half done: Part 01 is kept, Part 02's rough cut is held, and all 16 Part 03 shots made on the free Vertex trial (Sat 10 Oct) are kept.",
-      "holdup": "The 21 teaching cards are laid into the full cut (HOS PR #344). The picture and polish checks flag 9 rough card-edge joins; the Chief rules on them next. Music waits until 30 Oct.",
+      "done": "All five parts pictured and cut, full join v01 (J0312), teaching cards laid in (J0351).",
+      "holdup": "",
       "limit": "The Vertex trial has about £4.25 left after Part 03 (it runs down to £0, never onto the card). Flow had 52 credits before the refill; the new balance is read on Monday after 09:00 and priced before anything is spent. The Mac mini is shared with Orbit With Ben, so the two take turns.",
       "steps": [
         {
-          "who": "Cursor",
-          "what": "join Parts 01-05 into the full film",
-          "job": "J0312",
-          "done": true,
-          "doneText": "v01 joined · Thu 15 Oct (Chief FIX: 6 repeated stretches)"
+          "who": "Gemini",
+          "what": "apply the review's 21 free fixes, re-check, full cut v02",
+          "job": "J0809"
         },
         {
-          "who": "Cursor",
-          "what": "re-check full cut v01 with the Chief's waiver, then merge",
-          "job": "J0331"
-        },
-        {
-          "who": "Codex",
-          "what": "teaching graphics on the full cut",
-          "job": "J0332",
-          "afterJob": "J0331",
-          "done": true,
-          "doneText": "cards PASS, merged · Fri 16 Oct"
-        },
-        {
-          "kind": "video",
-          "who": "Cursor",
-          "what": "Part 03 picture on the free Vertex trial: all 16 shots made and kept",
-          "done": true,
-          "doneText": "done Sat 10 Oct (J0107)"
-        },
-        {
-          "kind": "assembly",
-          "job": "J0137",
-          "what": "Part 03 rough cut from the 16 kept shots (the Flow shot's slot held)"
-        },
-        {
-          "kind": "video",
-          "job": "J0138",
-          "what": "read the Flow balance after the refill and price the last Part 03 shot and Parts 04 and 05"
-        },
-        {
-          "kind": "chief",
-          "job": "J0139",
-          "what": "pass the prices before anything is spent"
-        },
-        {
-          "kind": "video",
-          "job": "J0140",
-          "what": "the last Part 03 shot and Parts 04 and 05 picture on Flow, then their rough cuts",
-          "when": "2026-10-25",
-          "whenText": "picture by Sun 25 Oct"
-        },
-        {
-          "kind": "chart",
-          "what": "teaching graphics: charts, people cards and date stamps",
-          "when": "2026-10-27"
-        },
-        {
-          "kind": "facts",
-          "what": "check every number and date on the graphics",
-          "when": "2026-10-28"
+          "who": "Chief",
+          "what": "review full cut v02",
+          "afterJob": "J0809"
         },
         {
           "kind": "assembly",
@@ -572,49 +509,30 @@
           "who": "Ben",
           "what": "final OK",
           "when": "2026-11-01"
-        },
-        {
-          "who": "Cursor",
-          "what": "lay the teaching cards into the full cut",
-          "job": "J0351",
-          "whenText": "laid in · Fri 16 Oct · 9 card-edge joins with the Chief"
         }
       ],
       "you": "Your final OK on Sun 1 Nov. Nothing before then.",
       "youWhen": "2026-11-01",
       "timing": "Airs Thu 5 Nov. On time if Monday's Flow refill covers Parts 04 and 05.",
-      "line": "All five parts pass their checks. Next the Mac mini joins them into the full film (J0312).",
+      "line": "Full cut with teaching cards is joined. Gemini is applying the review's 21 free fixes (J0809), then the Chief reviews v02.",
       "youShort": "your final OK Sun 1 Nov"
     },
     "HOS:007": {
-      "updated": "2026-10-16T01:55Z",
+      "updated": "2026-10-22T02:55Z",
       "mood": "good",
-      "done": "Script, fact check, long voiceover, and the plate boards (96 rows, priced).",
-      "holdup": "Shot boards v02 are merged (about 7,200 Flow credits, no money; the 1798 sores plate dropped). The three free code graphics are next (J0344). Picture waits its turn in the Flow plan after 006.",
+      "done": "Script, voice, board review (J0315), Flow picture (J0352).",
+      "holdup": "",
       "limit": "Picture costs about £58 for first takes (about £139 with the usual retakes), so it needs the 12 Oct Flow refill.",
       "steps": [
         {
-          "who": "Claude",
-          "what": "Claude reviews the shot boards before the picture credit",
-          "job": "J0315",
-          "done": true,
-          "doneText": "done (Chief) · boards v02 on HOS PR #337"
+          "who": "Mac mini",
+          "what": "part rough cuts v01, Parts 01 to 05",
+          "job": "J0820"
         },
         {
-          "who": "Cursor",
-          "what": "Shorts A to C voiceover (about an hour)",
-          "whenText": "after 006 Part 03, about Fri 9 Oct"
-        },
-        {
-          "who": "Claude",
-          "what": "review the plate boards",
-          "whenText": "before picture starts"
-        },
-        {
-          "who": "Cursor",
-          "what": "picture, after 006's picture",
-          "when": "2026-11-01",
-          "whenText": "due Sun 1 Nov"
+          "who": "Chief",
+          "what": "review the part roughs",
+          "afterJob": "J0820"
         },
         {
           "who": "Ben",
@@ -625,7 +543,7 @@
       "you": "Your final OK on Sun 8 Nov. Nothing before then.",
       "youWhen": "2026-11-08",
       "timing": "Airs Thu 12 Nov.",
-      "line": "Script and voice done. Claude reviews the shot boards (J0315), then the picture is made on Flow.",
+      "line": "Script, voice, boards and Flow picture done. Next the Mac mini cuts the five part roughs (J0820).",
       "youShort": "your final OK Sun 8 Nov"
     },
     "HOS:008": {
