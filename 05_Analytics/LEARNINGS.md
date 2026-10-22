@@ -17,6 +17,7 @@ The weekly audits (`owb-weekly-audit`, `hos-weekly-audit` in `jobs/backlog.json`
 | 2 | **Start on the action**: the payoff image in frame 0, no build-up. | Gemini on HOS `29bpGAI0wb8` (gold): hook held past 1 s but the Short lost viewers by 11 s. Needs the stayed-to-watch figure (J0822). | test |
 | 3 | **Change something every 3-4 s** (text pop, sound, zoom, angle) so attention is re-won before people swipe. | Gemini on HOS `29bpGAI0wb8`: 44% viewed on 25 s. | test |
 | 4 | **Shorter Shorts**: where viewers leave at about 11 s, cut to 12-15 s so the same attention reads as 75-90% viewed. | Gemini on HOS `29bpGAI0wb8`. Run on the next 2 HOS Shorts cut from 006-007 and compare with the 25 s ones. | test |
+| 5 | **Thumbnail tests only on videos YouTube is still showing**: Test & Compare needs impressions to decide; put new designs on new uploads (first 2 weeks) or videos with 1k+ impressions a fortnight, not quiet back-catalogue. | J0818 read-back 22 Oct: T001 X-rays 34 impressions, T005 Fermi 94, T006 Europa 74, T007 JWST 129 in ~7 days, all "not enough information"; the earlier HOS 001 test (1-16 Oct) ended with no winner. Saturn 55AEQwvs36g has 1.2k. | test |
 
 ## Shorts lab
 
