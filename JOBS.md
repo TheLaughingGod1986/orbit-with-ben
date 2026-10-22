@@ -33,6 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0830 | mini | blocked | claude | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
 | J0831 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0832 | mini | open | – | – | studio · 024 Light Speed v06: package to v06, gates, Private upload for Sun 1 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
+| J0833 | mini | open | – | – | studio · 026 Nearest Star v06: package to v06, gates, Private upload for Sun 15 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
 
 Recently finished:
 

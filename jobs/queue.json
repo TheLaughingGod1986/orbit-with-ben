@@ -1,5 +1,5 @@
 {
-  "next_id": 833,
+  "next_id": 834,
   "jobs": [
     {
       "id": "J0001",
@@ -68329,6 +68329,33 @@
       ],
       "kind": "studio",
       "urgent": 1
+    },
+    {
+      "id": "J0833",
+      "title": "026 Nearest Star v06: package to v06, gates, Private upload for Sun 15 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben approved v06 on the board (Thu 22 Oct 10:22 London, checks/OWB-026 verdict ok; #99 comment 6337324360). Acting-Chief final OK (Claude, acting Chief per Ben 21 Oct), on condition that steps 1-3 pass:\n\n1. Package to v06: in 02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package, point PACKAGE_MANIFEST.json `film` at the v06 master (OWB UAT/026_NearestStar_v06.mp4, or its CRF 18 export if one exists on the NAS; the Chief PASS J0794 recorded sha 62456225..., 494.48 s, -14.2 LUFS). Record its full sha256 and duration, and set status from DRAFT to final. Rebuild the captions for v06 (_build_captions_v01.py, en-GB) and re-time the description's chapter marks to v06. Title \"How Far Is the Nearest Star?\", tags, thumbnail ../08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg (A), pinned comment, trailer and captions setup stay as packaged (J0326).\n2. Gates on the v06 master: gate:episode; the J0792 picture_qa / polish_gate / music_gate results still apply if the checksum matches; captions line up (last cue within 1 s of the end, no cue past it). If you upload a re-export rather than the checked file, verify it against the checked v06 first: duration ±0.1 s, the same dHash (±4 bits) on 10 evenly spaced frames, and loudness within 0.5 LU. Never upload a phone/low-bitrate encode.\n3. Upload Private with publishAt 2026-11-15T18:00:00Z (Sun 15 Nov 18:00 London, the dry-run slot), set thumbnail A, synthetic disclosure on, not made for kids, category 28, en-GB, register in UPLOADS.json, Buffer mirror per its rule (it will defer: beyond the 7-day window). No Public, no Replace, £0.\n4. status.json upload stage done with the video id; post the id and slot on #99; then J0141 (the three 026 Shorts) can start; jobs.py done.\n\nIf any gate fails: block \"parked for Chief: <what failed>\" and stop. Do not re-render. Ben approved as is; no further changes.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T09:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T09:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
