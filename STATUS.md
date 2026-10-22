@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 006 | edit | gemini | 2026-10-16T05:22Z | 2026-10-16T05:52Z | J0354 HOS 006 teach master frame review |
+| 006 | edit | gemini | 2026-10-22T02:26Z | 2026-10-22T02:51Z | J0809 HOS 006 full_join_v02_teach assembly |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
