@@ -68059,10 +68059,25 @@
           "at": "2026-10-22T13:00Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T13:00Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. Counting locked HOS longs and built search-titled Shorts."
         }
       ],
       "kind": "assembly",
-      "backlog": "hos-short-from-locked"
+      "backlog": "hos-short-from-locked",
+      "taskKeys": [
+        "HOS:001"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 5,
+        "at": "2026-10-22T13:00Z",
+        "by": "cursor",
+        "note": "Claimed. Counting locked HOS longs and built search-titled Shorts."
+      }
     },
     {
       "id": "J0826",
