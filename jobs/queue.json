@@ -1,5 +1,5 @@
 {
-  "next_id": 864,
+  "next_id": 865,
   "jobs": [
     {
       "id": "J0001",
@@ -24327,10 +24327,10 @@
     },
     {
       "id": "J0317",
-      "title": "027 Short: set Related video to the 027 long once its id exists",
+      "title": "027 Shorts (dM1OgGPAYvw, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z",
       "needs": "mini",
       "repo": "owb",
-      "body": "Short dM1OgGPAYvw (What If Earth Stopped Spinning?, earth_sudden_air_v02, sha 4ab2b658) is Private, publishAt Monday 26 October 2026 11:30 London (2026-10-26T11:30:00Z). Custom cover 1,500 KM/H is set. The burned-in house end card stays.\n\nThe 027 long is now 6bbbvfCx6zY (Private, publishAt Sun 22 Nov 2026 18:00 London, J0834). Set Related video on dM1OgGPAYvw to 6bbbvfCx6zY in Orbit Studio (CDP 9223). Do not re-upload. Do not change privacy or the schedule. Buffer still waits until the Short is public, then points at the full film.\n",
+      "body": "Short 1: dM1OgGPAYvw (What If Earth Stopped Spinning?, earth_sudden_air_v02, sha 4ab2b658) is Private, publishAt Monday 26 October 2026 11:30 London (2026-10-26T11:30:00Z). Custom cover 1,500 KM/H is set. The burned-in house end card stays.\n\nShort 2: emwQsPxnRGM (Why Do You Weigh Less at Earth's Equator?, earth_equator_weight_v01, sha 9781e967, J0853) is Private, publishAt Monday 23 November 2026 11:30 London (2026-11-23T11:30:00Z). Custom cover 0.5% LIGHTER AT THE EQUATOR is set.\n\nThe 027 long is 6bbbvfCx6zY (Private, publishAt Sun 22 Nov 2026 18:00 London, J0834). Once 6bbbvfCx6zY goes public (Sun 22 Nov 18:00Z, before Mon 23 Nov 11:30Z), set Related video on both emwQsPxnRGM and dM1OgGPAYvw to 6bbbvfCx6zY in Orbit Studio (CDP 9223). Do not re-upload. Do not change privacy or the schedule. Buffer still waits until each Short is public, then points at the full film.\n",
       "ref": "6197845034",
       "film": "",
       "stage": "",
@@ -67560,13 +67560,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-10-22T21:00Z",
-      "eta": "2026-10-23T01:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T20:51Z",
-      "result": "",
+      "result": "waits for input: PR #260 merge (built and green locally: HOS profile, org guard, TikTok, social/hos/, 07:05 run). Needs to land before the 24 Oct 07:05 run so 5n7xFQRBUvI (Sat 31 Oct) goes in",
       "history": [
         {
           "at": "2026-10-21T20:51Z",
@@ -67577,6 +67577,11 @@
           "at": "2026-10-22T21:00Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T21:08Z",
+          "by": "claude",
+          "what": "blocked: waits for input: PR #260 merge (built and green locally: HOS profile, org guard, TikTok, social/hos/, 07:05 run). Needs to land before the 24 Oct 07:05 run so 5n7xFQRBUvI (Sat 31 Oct) goes in"
         }
       ],
       "kind": "studio"
@@ -67842,18 +67847,33 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-10-22T21:51Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T23:00Z",
-      "result": "",
+      "result": "waits for input: two Mini agents able to work for a whole week (Cursor back 29 Oct, Codex not steady yet); reopen after ~5 Nov",
       "history": [
         {
           "at": "2026-10-21T23:00Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-22T21:51Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T21:51Z",
+          "by": "claude",
+          "what": "blocked: waits for input: two Mini agents with credit for a week (Cursor weekly limit until 29 Oct, Codex hitting its usage limit tonight); reopen after ~5 Nov if both hold"
+        },
+        {
+          "at": "2026-10-22T21:52Z",
+          "by": "claude",
+          "what": "blocked: waits for input: two Mini agents able to work for a whole week (Cursor back 29 Oct, Codex not steady yet); reopen after ~5 Nov"
         }
       ],
       "kind": "studio"
@@ -70663,21 +70683,67 @@
       "stage": "",
       "after": "J0843",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-22T22:25Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T17:36Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-22T17:36Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-22T22:25Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T22:25Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting package and Private upload for 027 Short lift_equator_weight v01"
+        },
+        {
+          "at": "2026-10-22T22:29Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified slot Mon 23 Nov 11:30Z free, sha 9781e967, gate PASS; wrote PACKAGE_MANIFEST.json"
+        },
+        {
+          "at": "2026-10-22T22:29Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Dry-run PASS for Why Do You Weigh Less at Earth's Equator? (2026-11-23T11:30:00.000Z)"
+        },
+        {
+          "at": "2026-10-22T22:32Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Uploaded Private emwQsPxnRGM for Mon 23 Nov 11:30Z, cover + en-GB + synthetic disclosure set, Buffer deferred"
+        },
+        {
+          "at": "2026-10-22T22:34Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Registered emwQsPxnRGM in UPLOADS.json + library.json, updated J0317 + status.json (46943d094)"
+        },
+        {
+          "at": "2026-10-22T22:34Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:027"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-22T22:34Z",
+        "by": "gemini",
+        "note": "Registered emwQsPxnRGM in UPLOADS.json + library.json, updated J0317 + status.json (46943d094)"
+      },
+      "done_ref": "46943d094"
     },
     {
       "id": "J0854",
@@ -70702,9 +70768,23 @@
           "at": "2026-10-22T17:36Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-22T23:00Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0855",
@@ -70915,13 +70995,13 @@
       "stage": "edit",
       "after": "J0855",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T21:00Z",
-      "eta": "2026-10-22T23:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:45Z",
-      "result": "",
+      "result": "Chief FIX: v02 needed for 4 picture faults (ESA end slate at 7:48, comet out of frame 7:40/3:57, faint conjunction 5:51, comet_a3 twice 4:27/4:44); fix job queued",
       "history": [
         {
           "at": "2026-10-22T20:45Z",
@@ -70937,6 +71017,41 @@
           "at": "2026-10-22T21:01Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Starting 028 full join v01 + 3 fixes + £0 score bed/SFX master"
+        },
+        {
+          "at": "2026-10-22T21:16Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Audited 028 full join reuse + pill midpoint opacity; building £0 score bed & house SFX"
+        },
+        {
+          "at": "2026-10-22T21:21Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: 028 £0 score bed (70.6 BPM, -35.4 LUFS) + house SFX (36 hits, -31.6 LUFS) + master mix (-14.1 LUFS / -1.3 dBTP) PASS"
+        },
+        {
+          "at": "2026-10-22T21:58Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: 61 video segments & master audio muxed; running gates & review sheets"
+        },
+        {
+          "at": "2026-10-22T21:59Z",
+          "by": "gemini",
+          "what": "renewed to 2026-10-22T23:59Z"
+        },
+        {
+          "at": "2026-10-22T22:23Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: 028 full master v01 (472.83s, 61 cuts, -14.1 LUFS / -1.3 dBTP, SHA256 42d5c760...) + 3 £0 fixes + £0 score bed/SFX + all gates PASS + REVIEW_master_v01.md committed (eae00b496)"
+        },
+        {
+          "at": "2026-10-22T22:23Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: 028 Gliese 710 full master v01 (472.83s, 61 cuts, -14.1 LUFS / -1.3 dBTP, £0 spend, SHA256 42d5c760...) + 3 £0 fixes + £0 score bed/SFX + all gates PASS in full_master_v01_pack/REVIEW_master_v01.md (eae00b496)"
+        },
+        {
+          "at": "2026-10-22T22:25Z",
+          "by": "claude",
+          "what": "done: Chief FIX: v02 needed for 4 picture faults (ESA end slate at 7:48, comet out of frame 7:40/3:57, faint conjunction 5:51, comet_a3 twice 4:27/4:44); fix job queued"
         }
       ],
       "kind": "assembly",
@@ -70944,11 +71059,11 @@
         "OWB:028"
       ],
       "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-10-22T21:01Z",
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-22T22:23Z",
         "by": "gemini",
-        "note": "Starting 028 full join v01 + 3 fixes + £0 score bed/SFX master"
+        "note": "028 full master v01 (472.83s, 61 cuts, -14.1 LUFS / -1.3 dBTP, SHA256 42d5c760...) + 3 £0 fixes + £0 score bed/SFX + all"
       }
     },
     {
@@ -71083,6 +71198,68 @@
         }
       ],
       "kind": "chief"
+    },
+    {
+      "id": "J0864",
+      "title": "028 Gliese 710: master v02, Chief's 4 picture fixes (ESA end slate, NEOWISE framing, conjunction, comet repeat), gates, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief FIX on J0859 (028 full master v01, eae00b496). Gates all pass and the three fixes landed (pills 22/22 full, gaia_motion 3 uses, r19 no repeat). Four picture faults on per_row_sheet_v01.jpg, all £0:\n1. 7:48 r38_return (gaia_motion_1_6my.mp4 offset 31.0): the clip runs into ESA's end slate, so the film ends on the ESA logo + \"Copyright 2020\". Pick an offset whose 9.2 s window ends before the slate (check the clip's last frames), or hold its last starfield frame. Must not end on a logo.\n2. 7:40 r38_neowise_2 and 3:57 r22_neowise (neowise_dc.tif): the crop misses the comet (7:40 is empty dusk sky; 3:57 has it faint in a corner). Re-frame on the comet so a phone viewer sees it; a slow push-in is fine.\n3. 5:51 r29_twilight (conjunction.tif, 0.55x) under \"About 3 times brighter\": the bright points are near invisible. Crop tighter on the pair, or swap to a £0 still that shows one bright point clearly.\n4. 4:27 r25 + 4:44 r26: comet_a3.jpg twice in a row. Give one of them a different £0 comet still (Hale-Bopp or NEOWISE, not adjacent to their other uses).\nThen master v02 (same audio; re-run sfx level only if timing moves), all gates, a fresh per-row sheet, copy to OWB UAT, park for Chief. Ben watches v02.\n",
+      "ref": "",
+      "film": "028",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-22T22:35Z",
+      "eta": "2026-10-23T00:35Z",
+      "created_by": "claude",
+      "created_at": "2026-10-22T22:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T22:25Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-22T22:35Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T22:36Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Started J0864: inspecting 028 master v01 assembly script and pool"
+        },
+        {
+          "at": "2026-10-22T22:54Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Inspected all 4 picture faults on v01, verified gaia_motion_1_6my starfield window (3.8-25.25s), harvested sts083_hale_bopp.jpg, and validated polish_gate/jitter on all 5 still cuts"
+        },
+        {
+          "at": "2026-10-22T23:03Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Prepared _assemble_028_full_master_v02.py and sts083_hale_bopp.jpg for Chief's 4 £0 picture fixes"
+        },
+        {
+          "at": "2026-10-22T23:13Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Rendered 028_Gliese710_full_master_v02.mp4 and passed clip_check, picture_qa, polish_gate, music_gate, sfx_kit level, and gate:episode"
+        }
+      ],
+      "kind": "assembly",
+      "taskKeys": [
+        "OWB:028"
+      ],
+      "progress": {
+        "step": 2,
+        "of": 4,
+        "at": "2026-10-22T23:13Z",
+        "by": "gemini",
+        "note": "Rendered 028_Gliese710_full_master_v02.mp4 and passed clip_check, picture_qa, polish_gate, music_gate, sfx_kit level, an"
+      }
     }
   ],
   "focus": [],

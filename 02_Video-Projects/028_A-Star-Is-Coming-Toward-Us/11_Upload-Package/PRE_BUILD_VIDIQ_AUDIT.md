@@ -174,18 +174,18 @@ Design for **watching through**, not just CTR (Growth System v2):
 
 ## 7. Sign-off (block production until checked)
 
-- [ ] Keywords pulled and primary locked  
-- [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
-- [ ] Script reviewer ≥ 90  
-- [ ] Outlier patterns mapped into chapter arc  
-- [ ] Thumb concepts match title promise (one object · one emotion)  
-- [ ] Chapter teach-points listed (4–6 acts)  
-- [ ] Cold-open clock (5 / 15 / 30s) written  
-- [ ] Retention plan filled  
-- [ ] Production checklist path noted: `templates/PRODUCTION_CHECKLIST_V2.md`  
+- [x] Keywords pulled and primary locked  
+- [x] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
+- [x] Script reviewer ≥ 90 (`star_coming_script_master_v02.md`, 91/100 PASS)  
+- [x] Outlier patterns mapped into chapter arc  
+- [x] Thumb concepts match title promise (one object · one emotion)  
+- [x] Chapter teach-points listed (4–6 acts)  
+- [x] Cold-open clock (5 / 15 / 30s) written  
+- [x] Retention plan filled  
+- [x] Production checklist path noted: `templates/PRODUCTION_CHECKLIST_V2.md`  
 
-**Signed off by:**  
-**Date:**  
+**Signed off by:** Claude (topic lock `82d0f3f` + script v02 `91/100` PASS)  
+**Date:** 8 Oct 2026  
 
 **Only then:** full script → ElevenLabs VO → AI Studio picture (stills first · Veo world · Omni Orbit-only) → edit.
 
