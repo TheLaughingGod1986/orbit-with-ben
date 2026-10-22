@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 028 | edit | gemini | 2026-10-22T22:35Z | 2026-10-23T00:34Z | J0864 028 Gliese 710: master v02, Chief's 4 picture fixes (ESA end slate, NEOWISE framing, conjunction, comet repeat), gates, park for Chief |
+| 028 | edit | gemini | 2026-10-22T22:36Z | 2026-10-22T23:36Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
