@@ -1,0 +1,238 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/028_part_roughs_v01/028_Gliese710_part03_rough_v01.mp4",
+  "edge_floor": 0.0117,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "22",
+      "cut": 3,
+      "t": 27.58,
+      "source": "neowise_dc.tif",
+      "why": [
+        "low detail: luma std 17.34 < 18.0",
+        "low detail: edge density 0.0022 < film p5 0.0117"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "20",
+      "source": "code_graphic_028_r20_21_oort_shell_v02.mp4",
+      "t": 4.92,
+      "std": 26.29,
+      "mean": 72.98,
+      "p95": 114.0,
+      "edge": 0.0853,
+      "hf": 9.93,
+      "lf": 22.2,
+      "std8": 22.67,
+      "edge8": 0.0838,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "20",
+      "source": "eso_lasilla_ntt.mp4",
+      "t": 12.07,
+      "std": 32.97,
+      "mean": 52.79,
+      "p95": 120.0,
+      "edge": 0.088,
+      "hf": 10.12,
+      "lf": 29.95,
+      "std8": 30.62,
+      "edge8": 0.0877,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "21",
+      "source": "code_graphic_028_r20_21_oort_shell_v02.mp4",
+      "t": 18.95,
+      "std": 28.24,
+      "mean": 66.75,
+      "p95": 113.0,
+      "edge": 0.0791,
+      "hf": 9.89,
+      "lf": 24.55,
+      "std8": 25.03,
+      "edge8": 0.0698,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "22",
+      "source": "neowise_dc.tif",
+      "t": 27.58,
+      "std": 17.34,
+      "mean": 75.01,
+      "p95": 94.0,
+      "edge": 0.0022,
+      "hf": 3.43,
+      "lf": 16.58,
+      "std8": 16.83,
+      "edge8": 0.0061,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.006,
+        "reversals": 0,
+        "frames": 212,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.34 < 18.0",
+        "low detail: edge density 0.0022 < film p5 0.0117"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "23",
+      "source": "orbit_ice_omni_v01.mp4",
+      "t": 36.08,
+      "std": 32.38,
+      "mean": 33.15,
+      "p95": 112.0,
+      "edge": 0.0488,
+      "hf": 6.16,
+      "lf": 28.07,
+      "std8": 29.77,
+      "edge8": 0.2046,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "24",
+      "source": "iss_sunrise.jpg",
+      "t": 43.73,
+      "std": 70.32,
+      "mean": 49.86,
+      "p95": 236.0,
+      "edge": 0.0259,
+      "hf": 7.09,
+      "lf": 68.09,
+      "std8": 69.02,
+      "edge8": 0.1449,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 161,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "24",
+      "source": "code_graphic_028_r24_25_shower_v02.mp4",
+      "t": 50.68,
+      "std": 29.47,
+      "mean": 67.26,
+      "p95": 114.0,
+      "edge": 0.0841,
+      "hf": 10.72,
+      "lf": 24.93,
+      "std8": 25.58,
+      "edge8": 0.0784,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "25",
+      "source": "gaia_gliese_encounter.mov",
+      "t": 57.73,
+      "std": 30.32,
+      "mean": 70.94,
+      "p95": 120.0,
+      "edge": 0.1316,
+      "hf": 8.77,
+      "lf": 18.55,
+      "std8": 23.64,
+      "edge8": 0.7124,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "25",
+      "source": "code_graphic_028_r24_25_shower_v02.mp4",
+      "t": 66.1,
+      "std": 29.26,
+      "mean": 67.12,
+      "p95": 114.0,
+      "edge": 0.0889,
+      "hf": 10.65,
+      "lf": 25.26,
+      "std8": 25.78,
+      "edge8": 0.0786,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

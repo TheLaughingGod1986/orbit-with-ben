@@ -1,0 +1,254 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/028_part_roughs_v01/028_Gliese710_part01_rough_v01.mp4",
+  "edge_floor": 0.0113,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "7",
+      "cut": 1,
+      "t": 10.1,
+      "source": "sdo_hmi_continuum.jpg",
+      "why": [
+        "low detail: edge density 0.0107 < film p5 0.0113"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "6",
+      "source": "eso_mw_lasilla.mp4",
+      "t": 4.13,
+      "std": 28.88,
+      "mean": 64.47,
+      "p95": 106.0,
+      "edge": 0.1558,
+      "hf": 12.65,
+      "lf": 21.79,
+      "std8": 22.83,
+      "edge8": 0.0772,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "7",
+      "source": "sdo_hmi_continuum.jpg",
+      "t": 10.1,
+      "std": 59.47,
+      "mean": 178.69,
+      "p95": 206.0,
+      "edge": 0.0107,
+      "hf": 5.71,
+      "lf": 58.05,
+      "std8": 58.8,
+      "edge8": 0.027,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 84,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0107 < film p5 0.0113"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "7",
+      "source": "code_graphic_028_r07_kdwarf_v02.mp4",
+      "t": 13.85,
+      "std": 34.6,
+      "mean": 64.29,
+      "p95": 112.0,
+      "edge": 0.0717,
+      "hf": 11.33,
+      "lf": 29.0,
+      "std8": 30.43,
+      "edge8": 0.0969,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "8",
+      "source": "orbit_binoculars_omni_v01.mp4",
+      "t": 20.62,
+      "std": 26.97,
+      "mean": 51.44,
+      "p95": 93.0,
+      "edge": 0.0214,
+      "hf": 4.71,
+      "lf": 24.14,
+      "std8": 25.36,
+      "edge8": 0.0954,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "9",
+      "source": "code_graphic_028_r09_drift_v02.mp4",
+      "t": 32.8,
+      "std": 27.38,
+      "mean": 72.27,
+      "p95": 112.0,
+      "edge": 0.0881,
+      "hf": 11.2,
+      "lf": 21.66,
+      "std8": 22.51,
+      "edge8": 0.0867,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "10",
+      "source": "gaia_gliese_encounter.mov",
+      "t": 46.08,
+      "std": 22.79,
+      "mean": 35.04,
+      "p95": 83.0,
+      "edge": 0.0662,
+      "hf": 7.08,
+      "lf": 13.73,
+      "std8": 17.69,
+      "edge8": 0.3304,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "11",
+      "source": "eso_lasilla_ntt.mp4",
+      "t": 55.45,
+      "std": 33.61,
+      "mean": 53.46,
+      "p95": 123.0,
+      "edge": 0.0877,
+      "hf": 10.11,
+      "lf": 30.65,
+      "std8": 31.3,
+      "edge8": 0.0936,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "11",
+      "source": "night_road_veo_v01.mp4",
+      "t": 62.87,
+      "std": 54.28,
+      "mean": 93.44,
+      "p95": 191.0,
+      "edge": 0.0267,
+      "hf": 4.33,
+      "lf": 53.39,
+      "std8": 53.76,
+      "edge8": 0.123,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "12",
+      "source": "proxima.jpg",
+      "t": 70.88,
+      "std": 33.36,
+      "mean": 51.43,
+      "p95": 110.0,
+      "edge": 0.012,
+      "hf": 5.32,
+      "lf": 31.95,
+      "std8": 32.44,
+      "edge8": 0.0751,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 214,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "12",
+      "source": "gaia_motion_1_6my.mp4",
+      "t": 79.52,
+      "std": 51.97,
+      "mean": 79.35,
+      "p95": 178.0,
+      "edge": 0.5522,
+      "hf": 22.47,
+      "lf": 44.08,
+      "std8": 44.83,
+      "edge8": 0.334,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/028_part_roughs_v01/028_Gliese710_part05_rough_v01.mp4",
+  "edge_floor": 0.0163,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "30",
+      "cut": 4,
+      "t": 26.17,
+      "source": "sdo_hmi_continuum.jpg",
+      "why": [
+        "low detail: edge density 0.0113 < film p5 0.0163"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "29",
+      "source": "eso_chajnantor.m4v",
+      "t": 3.35,
+      "std": 30.71,
+      "mean": 87.78,
+      "p95": 128.0,
+      "edge": 0.0951,
+      "hf": 10.63,
+      "lf": 27.75,
+      "std8": 27.65,
+      "edge8": 0.0558,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "29",
+      "source": "code_graphic_028_r29_sky_v02.mp4",
+      "t": 9.57,
+      "std": 27.93,
+      "mean": 64.12,
+      "p95": 108.0,
+      "edge": 0.0697,
+      "hf": 9.67,
+      "lf": 24.35,
+      "std8": 24.84,
+      "edge8": 0.0565,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "29",
+      "source": "conjunction.tif",
+      "t": 15.97,
+      "std": 39.53,
+      "mean": 86.37,
+      "p95": 163.0,
+      "edge": 0.0257,
+      "hf": 5.41,
+      "lf": 38.99,
+      "std8": 38.73,
+      "edge8": 0.016,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 185,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "30",
+      "source": "moon_lro.jpg",
+      "t": 21.62,
+      "std": 67.43,
+      "mean": 126.24,
+      "p95": 219.0,
+      "edge": 0.0775,
+      "hf": 7.47,
+      "lf": 65.99,
+      "std8": 66.37,
+      "edge8": 0.2288,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 99,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "30",
+      "source": "sdo_hmi_continuum.jpg",
+      "t": 26.17,
+      "std": 49.41,
+      "mean": 185.17,
+      "p95": 206.0,
+      "edge": 0.0113,
+      "hf": 5.53,
+      "lf": 48.06,
+      "std8": 48.76,
+      "edge8": 0.0224,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 119,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0113 < film p5 0.0163"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "31",
+      "source": "code_graphic_028_r31_sky_v02.mp4",
+      "t": 31.33,
+      "std": 28.36,
+      "mean": 64.28,
+      "p95": 108.0,
+      "edge": 0.0716,
+      "hf": 9.97,
+      "lf": 24.45,
+      "std8": 25.03,
+      "edge8": 0.0624,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "31",
+      "source": "moon_lro.jpg",
+      "t": 35.97,
+      "std": 42.83,
+      "mean": 148.53,
+      "p95": 222.0,
+      "edge": 0.062,
+      "hf": 8.53,
+      "lf": 38.72,
+      "std8": 39.95,
+      "edge8": 0.248,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 87,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "31",
+      "source": "code_graphic_028_r31_sky_fade_v02.mp4",
+      "t": 40.13,
+      "std": 28.32,
+      "mean": 64.3,
+      "p95": 108.0,
+      "edge": 0.0708,
+      "hf": 9.93,
+      "lf": 24.49,
+      "std8": 25.04,
+      "edge8": 0.0597,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/028_part_roughs_v01/028_Gliese710_part06_rough_v01.mp4",
+  "edge_floor": 0.0232,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "38",
+      "cut": 9,
+      "t": 82.73,
+      "source": "neowise_dc.tif",
+      "why": [
+        "low detail: luma std 13.95 < 18.0",
+        "low detail: edge density 0.0017 < film p5 0.0232"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "32",
+      "source": "wise_sky.jpg",
+      "t": 4.72,
+      "std": 32.85,
+      "mean": 55.57,
+      "p95": 127.0,
+      "edge": 0.0573,
+      "hf": 7.05,
+      "lf": 30.6,
+      "std8": 31.43,
+      "edge8": 0.1171,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 255,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "33",
+      "source": "wise_craft.jpg",
+      "t": 12.72,
+      "std": 55.12,
+      "mean": 74.42,
+      "p95": 190.0,
+      "edge": 0.0981,
+      "hf": 11.48,
+      "lf": 50.25,
+      "std8": 51.59,
+      "edge8": 0.1762,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 170,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "33",
+      "source": "code_graphic_028_r33_traffic_v02.mp4",
+      "t": 20.55,
+      "std": 31.87,
+      "mean": 66.65,
+      "p95": 114.0,
+      "edge": 0.0797,
+      "hf": 11.26,
+      "lf": 25.74,
+      "std8": 27.01,
+      "edge8": 0.0909,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "34",
+      "source": "gaia_edr3_sky.png",
+      "t": 29.42,
+      "std": 48.01,
+      "mean": 62.75,
+      "p95": 161.0,
+      "edge": 0.0447,
+      "hf": 5.49,
+      "lf": 47.2,
+      "std8": 47.42,
+      "edge8": 0.0744,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 231,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "34",
+      "source": "code_graphic_028_r34_traffic_v02.mp4",
+      "t": 39.65,
+      "std": 27.19,
+      "mean": 76.5,
+      "p95": 120.0,
+      "edge": 0.0847,
+      "hf": 9.67,
+      "lf": 23.37,
+      "std8": 23.93,
+      "edge8": 0.0824,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "35",
+      "source": "eso_lasilla_ntt.mp4",
+      "t": 51.78,
+      "std": 38.11,
+      "mean": 58.58,
+      "p95": 138.0,
+      "edge": 0.0878,
+      "hf": 10.45,
+      "lf": 33.42,
+      "std8": 34.49,
+      "edge8": 0.114,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "36",
+      "source": "eso_mw_lasilla.mp4",
+      "t": 62.75,
+      "std": 27.61,
+      "mean": 61.86,
+      "p95": 110.0,
+      "edge": 0.1466,
+      "hf": 11.54,
+      "lf": 23.89,
+      "std8": 24.26,
+      "edge8": 0.0672,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "37",
+      "source": "ngc3603.jpg",
+      "t": 71.6,
+      "std": 44.39,
+      "mean": 68.64,
+      "p95": 165.0,
+      "edge": 0.0951,
+      "hf": 9.67,
+      "lf": 37.86,
+      "std8": 40.07,
+      "edge8": 0.3541,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 218,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "37",
+      "source": "code_graphic_028_r37_shell_v02.mp4",
+      "t": 77.68,
+      "std": 28.39,
+      "mean": 66.73,
+      "p95": 113.0,
+      "edge": 0.0797,
+      "hf": 10.07,
+      "lf": 24.57,
+      "std8": 25.11,
+      "edge8": 0.0712,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "38",
+      "source": "neowise_dc.tif",
+      "t": 82.73,
+      "std": 13.95,
+      "mean": 76.75,
+      "p95": 95.0,
+      "edge": 0.0017,
+      "hf": 3.19,
+      "lf": 13.5,
+      "std8": 13.56,
+      "edge8": 0.0036,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 156,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: luma std 13.95 < 18.0",
+        "low detail: edge density 0.0017 < film p5 0.0232"
+      ]
+    },
+    {
+      "cut": 10,
+      "row": "38",
+      "source": "gaia_motion_1_6my.mp4",
+      "t": 90.42,
+      "std": 52.02,
+      "mean": 79.29,
+      "p95": 178.0,
+      "edge": 0.5532,
+      "hf": 22.53,
+      "lf": 44.09,
+      "std8": 44.85,
+      "edge8": 0.3349,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

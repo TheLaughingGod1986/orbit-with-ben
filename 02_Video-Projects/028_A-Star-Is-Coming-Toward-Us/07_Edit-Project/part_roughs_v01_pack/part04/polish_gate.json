@@ -1,0 +1,216 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/028_part_roughs_v01/028_Gliese710_part04_rough_v01.mp4",
+  "edge_floor": 0.0215,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "26",
+      "cut": 0,
+      "t": 3.17,
+      "source": "comet_a3.jpg",
+      "why": [
+        "low detail: edge density 0.0199 < film p5 0.0215"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "26",
+      "source": "comet_a3.jpg",
+      "t": 3.17,
+      "std": 38.68,
+      "mean": 63.52,
+      "p95": 136.0,
+      "edge": 0.0199,
+      "hf": 6.29,
+      "lf": 37.38,
+      "std8": 37.94,
+      "edge8": 0.0629,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.001,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 162,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0199 < film p5 0.0215"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "26",
+      "source": "comet_a3.jpg",
+      "t": 9.6,
+      "std": 39.0,
+      "mean": 69.1,
+      "p95": 139.0,
+      "edge": 0.0477,
+      "hf": 7.01,
+      "lf": 37.73,
+      "std8": 38.19,
+      "edge8": 0.0521,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 168,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "27",
+      "source": "code_graphic_028_r27_shower_v02.mp4",
+      "t": 18.38,
+      "std": 29.17,
+      "mean": 67.23,
+      "p95": 114.0,
+      "edge": 0.0901,
+      "hf": 10.56,
+      "lf": 25.23,
+      "std8": 25.7,
+      "edge8": 0.0816,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "27",
+      "source": "gaia_motion_1_6my.mp4",
+      "t": 29.42,
+      "std": 51.9,
+      "mean": 80.14,
+      "p95": 178.0,
+      "edge": 0.5564,
+      "hf": 22.62,
+      "lf": 43.86,
+      "std8": 44.64,
+      "edge8": 0.3439,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "28",
+      "source": "jupiter_juno.tif",
+      "t": 38.37,
+      "std": 70.12,
+      "mean": 128.99,
+      "p95": 236.0,
+      "edge": 0.0793,
+      "hf": 8.8,
+      "lf": 68.0,
+      "std8": 68.84,
+      "edge8": 0.2805,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 179,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "28",
+      "source": "saturn.jpg",
+      "t": 44.73,
+      "std": 79.75,
+      "mean": 88.72,
+      "p95": 231.0,
+      "edge": 0.0252,
+      "hf": 7.07,
+      "lf": 78.06,
+      "std8": 78.78,
+      "edge8": 0.1565,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.02,
+        "reversals": 0,
+        "frames": 149,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "28",
+      "source": "code_graphic_028_r28_hale_bopp_2_v02.mp4",
+      "t": 50.98,
+      "std": 28.07,
+      "mean": 66.86,
+      "p95": 112.0,
+      "edge": 0.0695,
+      "hf": 9.61,
+      "lf": 24.59,
+      "std8": 25.05,
+      "edge8": 0.054,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

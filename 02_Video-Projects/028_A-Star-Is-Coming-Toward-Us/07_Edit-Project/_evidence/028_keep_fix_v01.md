@@ -20,7 +20,7 @@ Audited all 17 existing Orbit Omni clips across `023`–`027` (`orbit_venus_omni
 |---:|---|---|---|---|---:|---:|---|---|
 | **8** | `r08_orbit_binoculars` | Ch 1 (`58.64–66.52 s`, `7.88 s`) | Vertex `global` · `gemini-omni-flash-preview` | **£0.65** est. (promo) | `8.0 s` | `0` | `a7793cfce266c192` | **CANDIDATE KEEP** — Canonical matte-orange Orbit (1 body, curved black visor, 2 cream eyes, stubby arms, 3-finger hands, glowing antenna bulb, underside glow, NO LEGS) hovers over dark hill under starfield (no planet), lifts binoculars to visor, sweeps sky toward faint orange star, lowers them, tilts visor thoughtfully. Silent stripped. |
 | **11** | `r11_night_road` | Ch 1 (`95.08–109.20 s`, `14.12 s`) | Flow CDP `:9222` · `Veo 3.1 - Quality` | **100 cr** (`20,950 -> 20,850`) | `8.0 s` | `0` | `6dfb64f683998705` | **CANDIDATE KEEP** — Straight empty country road at night under stars; one car's warm headlights approach straight down the lane and grow brighter. No number plate, no brand logo, no road signs, no text, no people. Covers `"like a car on a long, straight road at night. Its headlights do not move left or right. They just grow."` (`101.00–109.20 s`), with `95.08–101.00 s` covered by the planned star cutaway per Chief's ruling. Silent stripped. |
-| **17** | `r17_pitch` | Ch 2 (`191.00–194.82 s`, `3.82 s`) | Flow CDP `:9222` · `Veo 3.1 - Fast` | **10 cr** (`20,850 -> 20,840`) | `8.0 s` | `0` | `d224e0445967665e` | **CANDIDATE KEEP w/ CROP (or FIX 10 cr)** — Empty green grass pitch at dusk, no players, no text/logos. Note: in the middle (`1.5–6.2 s`) the camera pulls back behind and then passes through the goal net, and empty stadium stands/floodlights sit on the left/right edges. Row `r17_pitch` only needs `3.82 s` (`191.00–194.82 s`): we can either (a) use a clean turf crop (`6.0–8.0 s` + `0.0–1.5 s` or centre turf crop) for £0/0 cr, or (b) mint 1 Fast retake (`10 cr`) if Chief marks FIX. |
+| **17** | `r17_pitch` | Ch 2 (`191.00–194.82 s`, `3.82 s`) | Flow CDP `:9222` · `Veo 3.1 - Fast` | **10 cr** Take 1 + **10 cr** Take 2 (`20,850 -> 20,830`) | `8.0 s` | `0` | `c2a0aa340d3a0486` | **KEEP (Take 2 retake, `J0855`)** — Chief ruled FIX on Take 1 (`d224e0445967665e`, goal net at `1.5–6.2 s`). Take 2 (`football_pitch_veo_v02.mp4`, promoted to `football_pitch_veo_v01.mp4`) glides low and slow along the white halfway line on empty dusk turf with soft distant stands, no goals or nets in frame, no text/logos/people. Silent stripped. |
 | **23** | `r23_orbit_ice` | Ch 3 (`241.88–249.84 s`, `7.96 s`) | Vertex `global` · `gemini-omni-flash-preview` | **£0.65** est. (promo) | `8.0 s` | `0` | `8c509d86cc18dbed` | **CANDIDATE KEEP** — Canonical matte-orange Orbit (1 body, black visor, cream eyes, 3-finger hands, antenna bulb, underside glow, NO LEGS) floats in deep space beside dark grey craggy Oort ice lumps on a starfield (no planet, no ground), reaches out and gently taps the ice lump, watches it turn slowly. Silent stripped. |
 
 ---
@@ -29,9 +29,9 @@ Audited all 17 existing Orbit Omni clips across `023`–`027` (`orbit_venus_omni
 
 - **Flow (`benoats@googlemail.com`, CDP `:9222`):**
   - Before `J0850` mint: **20,950** credits
-  - Spent in `J0850`: **110** credits (`100` cr Quality `r11_night_road` + `10` cr Fast `r17_pitch` — **169 cr under** the `279` cr expected reserve)
-  - Live Flow balance after `J0850`: **20,840** credits
-  - Remaining HOS (`008` `5,605` exp + `009` tranche 1 `7,354` exp = `12,959` exp): leaves **7,881** expected credits after HOS `008` + `009 T1` (**+4,881 cr above** the `3,000` floor).
+  - Spent in `J0850` + `J0855` retake: **120** credits (`100` cr Quality `r11_night_road` + `10` cr Fast `r17_pitch` Take 1 + `10` cr Fast `r17_pitch` Take 2 — **159 cr under** the `279` cr expected reserve)
+  - Live Flow balance after `J0855`: **20,830** credits
+  - Remaining HOS (`008` `5,605` exp + `009` tranche 1 `7,354` exp = `12,959` exp): leaves **7,871** expected credits after HOS `008` + `009 T1` (**+4,871 cr above** the `3,000` floor).
 - **Vertex (`Google Developer Program premium benefit - CREDIT_TYPE_MONTHLY`):**
   - Available before `J0850`: **£71.02** (`£70.02` usable after £1.00 margin; Free Trial `£0.00 Used`)
   - Estimated `J0850` Omni spend: **£1.30** (`2 × £0.65`, 0 retries used, well within the `£2.60` cap)

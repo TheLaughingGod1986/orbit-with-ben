@@ -1,0 +1,182 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/028_part_roughs_v01/028_Gliese710_part00_rough_v01.mp4",
+  "edge_floor": 0.0575,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "3",
+      "cut": 2,
+      "t": 15.63,
+      "source": "gaia_edr3_sky.png",
+      "why": [
+        "low detail: edge density 0.0519 < film p5 0.0575"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "gaia_motion_1_6my.mp4",
+      "t": 3.07,
+      "std": 57.9,
+      "mean": 94.04,
+      "p95": 200.0,
+      "edge": 0.6955,
+      "hf": 34.06,
+      "lf": 40.71,
+      "std8": 42.29,
+      "edge8": 0.5761,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "gaia_motion_1_6my.mp4",
+      "t": 9.9,
+      "std": 51.69,
+      "mean": 92.91,
+      "p95": 188.0,
+      "edge": 0.6422,
+      "hf": 25.9,
+      "lf": 40.38,
+      "std8": 41.62,
+      "edge8": 0.4729,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "gaia_edr3_sky.png",
+      "t": 15.63,
+      "std": 48.92,
+      "mean": 62.65,
+      "p95": 163.0,
+      "edge": 0.0519,
+      "hf": 7.9,
+      "lf": 47.58,
+      "std8": 47.85,
+      "edge8": 0.0831,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 90,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0519 < film p5 0.0575"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "4",
+      "source": "code_graphic_028_r04_shower_shell_v02.mp4",
+      "t": 24.15,
+      "std": 27.44,
+      "mean": 63.77,
+      "p95": 109.0,
+      "edge": 0.0781,
+      "hf": 9.53,
+      "lf": 24.19,
+      "std8": 24.58,
+      "edge8": 0.0632,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "5",
+      "source": "ngc3603.jpg",
+      "t": 33.48,
+      "std": 42.75,
+      "mean": 66.21,
+      "p95": 156.0,
+      "edge": 0.0966,
+      "hf": 10.15,
+      "lf": 36.7,
+      "std8": 38.52,
+      "edge8": 0.324,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 140,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "5",
+      "source": "code_graphic_028_r05_drift_path_sky_v02.mp4",
+      "t": 39.28,
+      "std": 27.22,
+      "mean": 63.8,
+      "p95": 108.0,
+      "edge": 0.0744,
+      "hf": 9.79,
+      "lf": 23.77,
+      "std8": 24.17,
+      "edge8": 0.0623,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
