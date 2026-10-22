@@ -173,6 +173,11 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
     return job
 
 
+def film_named(title: str) -> bool:
+    """A title that starts with a film number or names one with its channel (OWB 027, HOS 006)."""
+    return bool(re.match(r"\s*0\d\d\b", title) or re.search(r"\b(?:OWB|HOS)[ :]*0\d\d\b", title))
+
+
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
     if job["needs"] not in can:
         return False
@@ -613,6 +618,9 @@ def main(argv=None) -> int:
         try:
             if args.cmd == "add":
                 body = args.body_file.read_text() if args.body_file else args.body
+                if not args.film and film_named(args.title):
+                    print(f"jobs: warning: '{args.title[:60]}' names a film but has no --film/--stage, so the board "
+                          "won't move that film's stage when it's done (J0814)", file=sys.stderr)
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
                              for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset)
