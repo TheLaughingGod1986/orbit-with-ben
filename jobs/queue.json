@@ -68299,6 +68299,11 @@
           "at": "2026-10-22T10:54Z",
           "by": "chief",
           "what": "rerouted to cursor on cursor-claude-opus-5-5: Gemini stalled past ETA (claimed 06:49, ETA 10:01, restarts on 25-min cap). Use the no-search Chief fallback in the body: night_jars_t1 4.30-8.00 s at 0.635x (140 frames, frame-blended) + dark_window_t1 4.00-6.00 s (48 frames) = 188. Gemini's last note (09:22): composited hos_006_full_join_v03_teach.mp4 sha256 d24a08ee, 0.5 s check PASS min_mean_luma 40.9, min_edge 0.0217; verify it really is the fallback build, then picture_qa + polish_gate, merge HOS #352 if green, done with the merge sha."
+        },
+        {
+          "at": "2026-10-22T10:55Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-grok-4-7: Cursor is down too; next in its chain: cursor on grok-4.7"
         }
       ],
       "kind": "assembly",
@@ -68310,7 +68315,7 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-claude-opus-5-5",
+      "model": "cursor-grok-4-7",
       "taskKeys": [
         "HOS:006"
       ],
