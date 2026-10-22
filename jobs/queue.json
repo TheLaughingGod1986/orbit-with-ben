@@ -1,5 +1,5 @@
 {
-  "next_id": 853,
+  "next_id": 855,
   "jobs": [
     {
       "id": "J0001",
@@ -68118,13 +68118,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T13:00Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T03:13Z",
-      "result": "parked for Chief: Short PASS — HOS 001 s11_curved_flask_v01, 22.37s, 58 words, sha 92bda59586ea, HOS e7aeddb9. Title draft: What Is the Pasteur Swan Neck Flask Experiment? Slot is Chief's call. Nothing uploaded.",
+      "result": "Chief FIX (captions between() -> gte/lt) -> J0854",
       "history": [
         {
           "at": "2026-10-22T03:13Z",
@@ -68160,6 +68160,16 @@
           "at": "2026-10-22T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "done: Chief FIX (captions between() -> gte/lt) -> J0854"
         }
       ],
       "kind": "assembly",
@@ -68646,13 +68656,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T12:17Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T06:49Z",
-      "result": "parked for Chief: QA sweep complete (OWB 9e8eae5a3/b093e04f/b34975a5d/9440c0075/324b91b94: ran picture_qa + polish_gate on 3 new 026 Shorts mon16_cant_see_nearest_star_v01 0/6 PASS, wed18_robot_reach_nearest_star_v01 0/7 PASS, fri20_grapefruit_cherry_v01 0/5 PASS with all WARNs visually verified clean; 026 rough_v06_pack picture_qa 0/103 PASS + polish_gate 0/103 PASS + music_gate PASS; 029 full_rough_v02_pack picture_qa 0/80 PASS + polish_gate 0/80 PASS + music_gate PASS + part_roughs_v01 6/6 PASS + code_graphics_v01 0/14 PASS; 024 full_rough_v06_pack 0/111 PASS + music_gate PASS; 027 rough_v01m_pack 0/88 PASS + music_gate PASS; 021 Short saturn_ten_metres_thin_v01 0/8 PASS; HOS 7c4038b4/130ade6f: 006 full_join_v03_teach picture_qa 0/91 PASS + polish_gate 0/91 PASS, all 26 HOS qa_ Shorts PASS, 007-010 code_graphics_v01 PASS; 0 FAILs, 0 new fix jobs needed)",
+      "result": "Chief PASS (Claude, acting): QA sweep 0 fails across newest OWB+HOS packs; no fix jobs.",
       "history": [
         {
           "at": "2026-10-22T06:49Z",
@@ -68698,6 +68708,16 @@
           "at": "2026-10-22T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Claude, acting): QA sweep 0 fails across newest OWB+HOS packs; no fix jobs."
         }
       ],
       "kind": "qa",
@@ -69334,13 +69354,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T13:35Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T13:34Z",
-      "result": "parked for Chief: 1) adopt 3 proven Shorts rules (#1 positive question title, #2 close-up action at frame 0, #3 3-4s plate cuts / no freeze-hold) + #6 payoff-timing test in LEARNINGS.md (1ccdd4866); 2) approve 5 concrete 006-010 changes in HOS_2026-10-22.md (058a67e0); 3) pick 092-094 topic locks when pipeline opens",
+      "result": "Chief PASS (Grok ruling on J0842 applies): adopt rules #1-3 into the HOS Shorts brief/playbook; #6 stays a TEST; #4 12-15 s cut test OK on 006-007.",
       "history": [
         {
           "at": "2026-10-22T13:34Z",
@@ -69386,6 +69406,16 @@
           "at": "2026-10-22T16:04Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Grok ruling on J0842 applies): adopt rules #1-3 into the HOS Shorts brief/playbook; #6 stays a TEST; #4 12-15 s cut test OK on 006-007."
         }
       ],
       "kind": "review",
@@ -69485,13 +69515,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T14:10Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T14:09Z",
-      "result": "parked for Chief: review OWB_2026-10-22.md (5bdd9e522) + 26 OWB Shorts lab rows & Rules #1-3, #6-7 in LEARNINGS.md, 5 changes for 023-033, and 062-064 topic locks",
+      "result": "Chief PASS with notes (Grok, #99 6343252405): rules #1-3 adopted; #6 a TEST; #7 approved on the next 4 uncut Shorts (028/029 first); 024/026/027 not reopened.",
       "history": [
         {
           "at": "2026-10-22T14:09Z",
@@ -69532,6 +69562,16 @@
           "at": "2026-10-22T16:27Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "done: Chief PASS with notes (Grok, #99 6343252405): rules #1-3 adopted; #6 a TEST; #7 approved on the next 4 uncut Shorts (028/029 first); 024/026/027 not reopened."
         }
       ],
       "kind": "review",
@@ -69563,13 +69603,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T14:47Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T14:28Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "Chief PASS; upload -> J0853",
       "history": [
         {
           "at": "2026-10-22T14:28Z",
@@ -69640,6 +69680,16 @@
           "at": "2026-10-22T17:36Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "done: Chief PASS; upload -> J0853"
         }
       ],
       "kind": "assembly",
@@ -69975,13 +70025,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T15:50Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T15:48Z",
-      "result": "parked for Chief: PASS sign-off on 2026-10-22 OWB live listing audit (10/10 public videos clean after J0839; 0 fixes needed, a0a00f036)",
+      "result": "Chief PASS (Claude, acting): OWB 10/10 live listings clean; 0 fixes.",
       "history": [
         {
           "at": "2026-10-22T15:48Z",
@@ -70017,6 +70067,16 @@
           "at": "2026-10-22T15:54Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PASS sign-off on 2026-10-22 OWB live listing audit (10/10 public videos clean after J0839; 0 fixes needed, a0a00f036)"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Claude, acting): OWB 10/10 live listings clean; 0 fixes."
         }
       ],
       "kind": "listing",
@@ -70045,13 +70105,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T15:56Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T15:55Z",
-      "result": "parked for Chief: live fixes (HOS db1c85dc, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md: 22/22 public + 11/11 scheduled pass; 5 Blood Shorts Related -> wwcjcFfC-5M deferred to 29 Oct in J0280/J0241; Chief PASS sign-off)",
+      "result": "Chief PASS (Claude, acting): HOS 22/22 public + 11/11 scheduled clean; Blood Shorts Related stays in J0280/J0241 for 29 Oct.",
       "history": [
         {
           "at": "2026-10-22T15:55Z",
@@ -70097,6 +70157,16 @@
           "at": "2026-10-22T16:01Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: live fixes (HOS db1c85dc, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md: 22/22 public + 11/11 scheduled pass; 5 Blood Shorts Related -> wwcjcFfC-5M deferred to 29 Oct in J0280/J0241; Chief PASS sign-off)"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Claude, acting): HOS 22/22 public + 11/11 scheduled clean; Blood Shorts Related stays in J0280/J0241 for 29 Oct."
         }
       ],
       "kind": "listing",
@@ -70127,13 +70197,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-22T16:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T16:52Z",
-      "result": "parked for Chief: 028 Flow price pass",
+      "result": "",
       "history": [
         {
           "at": "2026-10-22T16:52Z",
@@ -70174,6 +70244,11 @@
           "at": "2026-10-22T17:02Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 028 Flow price pass"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "reopened: Chief price pass (Claude, acting): Flow rows PASS: r11_night_road 1 Quality take (expected 259 cr) + r17_pitch 1 Fast (20 cr) against 20,950 live (headroom for HOS 008/009 intact); r11 is one 8 s take, cover the 14.12 s span with the planned cutaways (no second take). Omni rows r08_orbit_binoculars + r23_orbit_ice: first look for existing Orbit Omni renders that fit (as 029 did, £0); mint on Vertex only if none fits, max 1 take + 1 retry each (£2.60 cap), from the monthly promo credit only, and stop if Billing shows any charge beyond promo. Then KEEP/FIX sheets, park for Chief."
         }
       ],
       "kind": "video",
@@ -70187,14 +70262,7 @@
       "for": "gemini",
       "taskKeys": [
         "OWB:028"
-      ],
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-22T17:02Z",
-        "by": "gemini",
-        "note": "Committed and pushed 028 Flow price table (279 cr expected / 110 cr try-1 + 2 Omni £1.30; 7,712 cr left after HOS 008 + "
-      }
+      ]
     },
     {
       "id": "J0851",
@@ -70207,13 +70275,13 @@
       "stage": "",
       "after": "J0141",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T16:52Z",
-      "result": "parked for Chief: Short PASS on the 026 J0141 pack (3 Shorts)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-22T16:52Z",
@@ -70224,6 +70292,11 @@
           "at": "2026-10-22T16:52Z",
           "by": "claude",
           "what": "blocked: parked for Chief: Short PASS on the 026 J0141 pack (3 Shorts)"
+        },
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "reopened: Chief PASS (Claude, acting) on the 026 J0141 pack: all gates PASS, QA sweep J0831 re-ran 0 fails, the clipped long-film cards are gone (cuts only in overlay-free stretches), Wed frame 0 starts on the clean Voyager plate. Non-blocking: title overlay uses inclusive between() (one extra title frame, nothing starts at that edge). Go ahead with the three Private uploads."
         }
       ],
       "kind": "studio"
@@ -70311,6 +70384,60 @@
         "HOS:003",
         "HOS:004"
       ]
+    },
+    {
+      "id": "J0853",
+      "title": "027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS J0843 (Claude, acting Chief, 22 Oct): 027 Short lift_equator_weight v01 (earth_equator_weight_v01.mp4, sha 9781e967, 23.50 s, -14.4 LUFS; 8 distinct sources, gte/lt captions, payoff at 65-90%, exact long title 9-14 s, end card + 6bbbvfCx6zY). Package as 'Why Do You Weigh Less at Earth's Equator?' and upload Private for the next free OWB Short slot at 11:30 London on or after Mon 23 Nov (after the long goes public Sun 22 Nov 18:00), checked against UPLOADS.json. Cover from the pack, synthetic disclosure on, not made for kids, en-GB, UPLOADS.json, Buffer deferred. Related -> 6bbbvfCx6zY is date-gated (with J0317) after the long is public. No Public, £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0843",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T17:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0854",
+      "title": "HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief FIX on J0825 (Claude, acting Chief, 22 Oct): HOS 001 Short s11_curved_flask v01 is good on picture (7 distinct shots, 0 fails; the 0:13 08_passengers low-detail WARN is accepted) and title 'What Is the Pasteur Swan Neck Flask Experiment?' (positive question naming the subject; keep it). One defect: _build_short_s11_curved_flask_v01.py lines 479 and 482 use enable='between(t,s,e)', which is inclusive at both ends, so every word-caption handover shows two captions for one frame (the defect Chief found in OWB J0824). Change both to enable='gte(t,s)*lt(t,e)', re-render v02, re-run gate_shorts_open + picture_qa + polish_gate, sample 10 caption handovers (one caption each), commit, park for Chief: Short PASS. Note for the brief, not a change here: atempo 1.12 is the fastest HOS Short so far; keep future lifts at 1.08 or below. £0, no upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0825",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T17:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
