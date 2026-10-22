@@ -1,0 +1,153 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_iss_sunrise.mp4",
+      "title": "End-card loop: NASA ISS Sunrise to Sunset orbital Earth limb",
+      "t": 22.31,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0424 < film p5 0.0428"
+      ],
+      "offset": 28.3
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_iss_sunrise_limb",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "title": "NASA ISS Sunrise to Sunset orbital Earth limb (ISS_sunrise_to_sunset.ogv)",
+      "t": 1.15,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 28.3
+    },
+    {
+      "cut": 1,
+      "row": "s02_noaa_daylight_disk",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "title": "NOAA GOES-16 satellite sunlit Earth disk (NOAA_sat_eclipse_2024_notext.webm)",
+      "t": 4.16,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 322.8
+    },
+    {
+      "cut": 2,
+      "row": "s03_eso_lasilla_stars",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "title": "ESO La Silla Observatory night sky timelapse (ESO_timelapse_La_Silla.webm)",
+      "t": 7.68,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 120.8
+    },
+    {
+      "cut": 3,
+      "row": "s04_foucault_pendulum",
+      "source": "Foucault_pendulum_1.webm",
+      "title": "Foucault pendulum swinging over floor in Paris (Foucault_pendulum_1.webm)",
+      "t": 10.47,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": 144.2
+    },
+    {
+      "cut": 4,
+      "row": "s05_gerst_orbital_pass",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "title": "ESA/NASA Alexander Gerst ISS Earth orbital timelapse (Gerst_Earth_timelapses_2017.webm)",
+      "t": 13.29,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 226.3
+    },
+    {
+      "cut": 5,
+      "row": "s06_nasa_blue_marble",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "title": "NASA GSFC Blue Marble equatorial Earth (GSFC_20171208_Archive_e002130.jpg)",
+      "t": 17.02,
+      "at": "0:17",
+      "fail": [],
+      "warn": [],
+      "offset": 138.2
+    },
+    {
+      "cut": 6,
+      "row": "s07_epic_earth_spin",
+      "source": "epic_spin_v01.mp4",
+      "title": "NASA DSCOVR EPIC full-disk sunlit rotating Earth (epic_spin_v01.mp4)",
+      "t": 20.09,
+      "at": "0:20",
+      "fail": [],
+      "warn": [],
+      "offset": 438.0
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop",
+      "source": "end_card_loop_iss_sunrise.mp4",
+      "title": "End-card loop: NASA ISS Sunrise to Sunset orbital Earth limb",
+      "t": 22.31,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0424 < film p5 0.0428"
+      ],
+      "offset": 28.3
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0428,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
