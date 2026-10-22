@@ -1,0 +1,233 @@
+{
+  "verdict": "PASS",
+  "video": "/private/tmp/029_part_roughs_v01/029_Betelgeuse_part04_rough_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 1,
+      "row": "24",
+      "source": "chajnantor_mw.m4v",
+      "title": "Milky Way over Chajnantor",
+      "t": 10.43,
+      "at": "0:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0066 < film p5 0.0378"
+      ],
+      "offset": 3.25
+    },
+    {
+      "cut": 7,
+      "row": "27",
+      "source": "code_graphic_029_r27_orion_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 52.6,
+      "at": "0:53",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 18.5s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 11,
+      "row": "29",
+      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 90.9,
+      "at": "1:31",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 23.9s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "23",
+      "source": "code_graphic_029_r23_paranal_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 3.6,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "24",
+      "source": "chajnantor_mw.m4v",
+      "title": "Milky Way over Chajnantor",
+      "t": 10.43,
+      "at": "0:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0066 < film p5 0.0378"
+      ],
+      "offset": 3.25
+    },
+    {
+      "cut": 2,
+      "row": "24",
+      "source": "dscovr_epic.jpg",
+      "title": "NASA Captures EPIC Earth Image",
+      "t": 16.5,
+      "at": "0:17",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 3,
+      "row": "24",
+      "source": "chajnantor_mw.m4v",
+      "title": "Milky Way over Chajnantor",
+      "t": 22.92,
+      "at": "0:23",
+      "fail": [],
+      "warn": [],
+      "offset": 6.1,
+      "reviewed_ok": {
+        "note": "J0808 Chief brief: skip ESO logo bumpers on Chajnantor (0.00-3.25s and 13.30-16.41s on 16.41s source = 10.05s clean sky window); r24_superk (3.25s wide) and r24_superk_2 (6.10s, 1.20x core crop) split the clean sky window.",
+        "passed": [
+          "reuse: same stretch as 0:10 (give it a new stretch, or a new render)"
+        ]
+      }
+    },
+    {
+      "cut": 4,
+      "row": "25",
+      "source": "code_graphic_029_r25_orion_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 30.52,
+      "at": "0:31",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 5,
+      "row": "26",
+      "source": "orion_over_paranal.mp4",
+      "title": "Orion over Paranal",
+      "t": 36.5,
+      "at": "0:37",
+      "fail": [],
+      "warn": [],
+      "offset": 2.4
+    },
+    {
+      "cut": 6,
+      "row": "26",
+      "source": "half_moon.jpg",
+      "title": "First Quarter Moon",
+      "t": 40.92,
+      "at": "0:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 7,
+      "row": "27",
+      "source": "code_graphic_029_r27_orion_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 52.6,
+      "at": "0:53",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 18.5s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 8,
+      "row": "28",
+      "source": "dscovr_epic.jpg",
+      "title": "NASA Captures EPIC Earth Image",
+      "t": 64.83,
+      "at": "1:05",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 9,
+      "row": "28",
+      "source": "lasilla_mw.mp4",
+      "title": "La Silla Milky Way time-lapse",
+      "t": 70.45,
+      "at": "1:10",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 10,
+      "row": "28",
+      "source": "gemini_earth_sky.jpg",
+      "title": "Caught Between Earth and Sky",
+      "t": 76.0,
+      "at": "1:16",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 11,
+      "row": "29",
+      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 90.9,
+      "at": "1:31",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 23.9s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0378,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/029_part_roughs_v01/029_Betelgeuse_part03_rough_v01.mp4",
+  "edge_floor": 0.0308,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "17",
+      "cut": 0,
+      "t": 2.95,
+      "source": "sdo_hmi_continuum.jpg",
+      "why": [
+        "low detail: edge density 0.0199 < film p5 0.0308"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "17",
+      "source": "sdo_hmi_continuum.jpg",
+      "t": 2.95,
+      "std": 39.6,
+      "mean": 193.04,
+      "p95": 210.0,
+      "edge": 0.0199,
+      "hf": 5.87,
+      "lf": 38.04,
+      "std8": 38.74,
+      "edge8": 0.0196,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 149,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0199 < film p5 0.0308"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "17",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "t": 30.22,
+      "std": 63.53,
+      "mean": 91.73,
+      "p95": 213.0,
+      "edge": 0.0561,
+      "hf": 8.76,
+      "lf": 61.8,
+      "std8": 62.27,
+      "edge8": 0.0837,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "20",
+      "source": "crab.jpg",
+      "t": 55.57,
+      "std": 69.25,
+      "mean": 126.51,
+      "p95": 224.0,
+      "edge": 0.2292,
+      "hf": 11.83,
+      "lf": 65.62,
+      "std8": 66.84,
+      "edge8": 0.4997,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.004,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 35,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "21",
+      "source": "crab.jpg",
+      "t": 59.52,
+      "std": 44.31,
+      "mean": 175.82,
+      "p95": 239.0,
+      "edge": 0.1358,
+      "hf": 9.51,
+      "lf": 40.21,
+      "std8": 41.64,
+      "edge8": 0.4316,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 148,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "21",
+      "source": "code_graphic_029_r21_hero_v01.mp4",
+      "t": 64.93,
+      "std": 39.5,
+      "mean": 73.24,
+      "p95": 139.0,
+      "edge": 0.0703,
+      "hf": 9.67,
+      "lf": 36.06,
+      "std8": 36.73,
+      "edge8": 0.0912,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "21",
+      "source": "code_graphic_029_r21_bh_v01.mp4",
+      "t": 70.22,
+      "std": 29.31,
+      "mean": 68.76,
+      "p95": 115.0,
+      "edge": 0.0769,
+      "hf": 9.55,
+      "lf": 25.67,
+      "std8": 26.18,
+      "edge8": 0.0721,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "22",
+      "source": "code_graphic_029_r22_subscribe_v01.mp4",
+      "t": 75.55,
+      "std": 27.3,
+      "mean": 68.4,
+      "p95": 113.0,
+      "edge": 0.0657,
+      "hf": 8.47,
+      "lf": 24.36,
+      "std8": 24.73,
+      "edge8": 0.047,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

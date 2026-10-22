@@ -12,9 +12,11 @@ Earth and Mars discs (Blue Marble, NASA PIA00407) sit on the scale graphic. The 
 | r05_scale | 6.68 | Text-free. Sun is a dot. Outline passes Mars at about 46 s |
 | r09_finder | 12.56 | Belt, trail up and left, orange star |
 | r10_r11_dip | 13.66 | One light curve for rows 10 and 11 |
+| r13_compare | 7.38 | J0353/J0808 £0 code split of single SPHERE frames (`sphere_jan.jpg` \| `sphere_dec.jpg`) with house labels `Jan 2019` / `Dec 2019`, pushing into December |
 | r15_dip | 4.96 | Same curve, tight on the trough |
 | r17_r20_shells | 48.62 | One shells render; collapse on "collapses" at 215.32 s. No unlabelled leader |
 | r21_hero | 4.8 | Level beam. Side-view teaspoon (oval bowl, handle along the beam) and a mountain |
+| r21_bh | 5.08 | J0353/J0808 £0 single-star core collapse into a black hole with accretion ring (`black hole` label) |
 | r22_subscribe | 4.48 | Moving sky, Subscribe lower right |
 | r23_paranal | 6.32 | Night sky for "imagine the night" |
 | r25_orion | 8.04 | Flare from about 276.7 s |

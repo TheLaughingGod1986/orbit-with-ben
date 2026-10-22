@@ -1,0 +1,157 @@
+{
+  "verdict": "PASS",
+  "video": "/private/tmp/029_part_roughs_v01/029_Betelgeuse_part03_rough_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "17",
+      "source": "sdo_hmi_continuum.jpg",
+      "title": "SDO/HMI continuum intensitygram, 2024-06-01 00:00 UTC",
+      "t": 2.95,
+      "at": "0:03",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0199 < film p5 0.0308"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 1,
+      "row": "17",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 30.22,
+      "at": "0:30",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 48.6s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "17",
+      "source": "sdo_hmi_continuum.jpg",
+      "title": "SDO/HMI continuum intensitygram, 2024-06-01 00:00 UTC",
+      "t": 2.95,
+      "at": "0:03",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0199 < film p5 0.0308"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 1,
+      "row": "17",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 30.22,
+      "at": "0:30",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 48.6s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 2,
+      "row": "20",
+      "source": "crab.jpg",
+      "title": "Most detailed image of the Crab Nebula",
+      "t": 55.57,
+      "at": "0:56",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 3,
+      "row": "21",
+      "source": "crab.jpg",
+      "title": "Most detailed image of the Crab Nebula",
+      "t": 59.52,
+      "at": "1:00",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 4,
+      "row": "21",
+      "source": "code_graphic_029_r21_hero_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 64.93,
+      "at": "1:05",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 5,
+      "row": "21",
+      "source": "code_graphic_029_r21_bh_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 70.22,
+      "at": "1:10",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 6,
+      "row": "22",
+      "source": "code_graphic_029_r22_subscribe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 75.55,
+      "at": "1:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0308,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
