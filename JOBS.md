@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0830 | mini | blocked | claude | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
 | J0831 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0835 | mini | blocked | claude | – | assembly · HOS 006 Trees: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief |  |
-| J0836 | any | claimed | gemini | 2026-10-22T13:40Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J0836 | any | blocked | gemini | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
