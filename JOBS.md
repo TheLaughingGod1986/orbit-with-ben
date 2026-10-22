@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0830 | mini | blocked | claude | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
 | J0831 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0835 | mini | blocked | claude | – | assembly · HOS 006 Trees: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief |  |
-| J0840 | any | claimed | gemini | 2026-10-22T15:35Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0840 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0841 | mini | open | – | – | studio · 023 Venus Short venus_95pct_wide v02 'How Big Is Venus Compared to Earth?': package + Private upload, publishAt Mon 2 Nov 11:30 London (J0838 PASS) |  |
 
 Recently finished:
