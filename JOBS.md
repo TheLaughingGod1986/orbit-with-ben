@@ -16,7 +16,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0241 | mini | blocked | claude | – | studio · HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188) |  |
 | J0275 | mini | blocked | claude | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0280 | mini | blocked | cursor | – | for cursor · studio · `cursor-auto` · HOS Related fixes ×4 after longs public (from J0245) |  |
-| J0288 | mini | claimed | gemini | 2026-10-22T02:12Z | studio · HOS Germs _C92tIJCk8A: arm thumbnail Test & Compare, A live vs B v02 INVISIBLE LIFE? |  |
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
 | J0317 | mini | blocked | cursor | – | studio · 027 Short: set Related video to the 027 long once its id exists | 6197845034 |
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
