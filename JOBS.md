@@ -28,6 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0857 | mini | open (after J0835) | – | – | studio · HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha) |  |
 | J0858 | mini | open | – | – | thumb · HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) |  |
 | J0859 | mini | open (after J0855) | – | – | 028 edit · assembly · 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief |  |
+| J0860 | any | open | – | – | 010 picture · review · HOS 010: confirm the 8 period details (P1-P8) on SHOT_LIST_v01, no spend, park for Chief |  |
 
 Recently finished:
 
