@@ -55,7 +55,12 @@ export function loadRegistry(file: string): Registry {
 
 export function registerUpload(file: string, repoRoot: string, videoId: string, rec: UploadRecord, now = new Date()): Registry {
   const reg = loadRegistry(file);
-  const rel = (p?: string) => (p ? path.relative(repoRoot, path.resolve(p)) : undefined);
+  // Repo-relative when the file is in the repo; a file outside it (History of Science's UAT folder) stays absolute.
+  const rel = (p?: string) => {
+    if (!p) return undefined;
+    const r = path.relative(repoRoot, path.resolve(p));
+    return r.startsWith("..") ? path.resolve(p) : r;
+  };
   const prev = reg.videos[videoId] ?? {};
   const next: UploadRecord = {
     ...prev,

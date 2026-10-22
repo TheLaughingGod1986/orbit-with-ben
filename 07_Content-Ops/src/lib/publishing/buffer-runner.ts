@@ -12,6 +12,7 @@ import type { BufferClient } from "@/lib/publishing/buffer-api";
 import type { BufferStore } from "@/lib/publishing/buffer-store";
 import { isOwnBlobUrl, type HostFile, type StoredMedia } from "@/lib/publishing/media-host";
 import type { MediaHint } from "@/lib/publishing/media-finder";
+import { videoIdFromMediaPath } from "@/lib/publishing/buffer-profile";
 import {
   type Ledger,
   type BufferChannel,
@@ -47,6 +48,16 @@ export type MirrorDeps = {
   deleteMedia?: (url: string) => Promise<void>;
   /** Lists the mirror's Blob files, to adopt untracked ones and sweep orphans. */
   listMedia?: () => Promise<StoredMedia[]>;
+  /** The profile's networks (buffer-profile.ts). Default: Orbit's. */
+  networks?: readonly BufferChannel[];
+  /** History of Science mirrors Shorts only: longs are never planned or reported. */
+  shortsOnly?: boolean;
+  /** Where this profile's hosted files live ("social/" for Orbit, "social/hos/" for HOS). */
+  mediaPrefix?: string;
+  /** A hosted file that belongs to another profile: never adopted or swept here. */
+  foreignMedia?: (pathname: string) => boolean;
+  /** Why a create to this Buffer channel id is refused (not the profile's org), or null. */
+  refuseChannel?: (channelId: unknown) => string | null;
 };
 
 /** A file older than this that no Buffer post links to is an orphan. */
@@ -60,9 +71,8 @@ const ORPHAN_AGE_MS = 2 * 24 * 60 * 60 * 1000;
 export const BUFFER_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
 
 /** social/<11-character YouTube id><random suffix>.<ext> → the YouTube id. */
-export function videoIdFromBlobPath(pathname: string): string | null {
-  const m = /^social\/([\w-]{11})/.exec(pathname);
-  return m ? m[1] : null;
+export function videoIdFromBlobPath(pathname: string, prefix = "social/"): string | null {
+  return videoIdFromMediaPath(pathname, prefix);
 }
 
 export type MirrorRequest = {
@@ -101,6 +111,7 @@ export async function executeActions(
   plan: Pick<Plan, "videoId" | "kind" | "title" | "timing" | "actions">,
   client: BufferClient,
   store: BufferStore,
+  refuseChannel?: MirrorDeps["refuseChannel"],
 ): Promise<ActionResult[]> {
   const results: ActionResult[] = [];
   for (const a of plan.actions) {
@@ -112,6 +123,9 @@ export async function executeActions(
         const current = await store.load();
         const existing = current.videos[plan.videoId]?.channels[a.channel]?.postId;
         if (existing) throw new Error(`Refusing duplicate Buffer post for ${plan.videoId}/${a.channel}: ${existing}`);
+        // The last check before Buffer: a channel outside the profile's org is never posted to.
+        const refused = refuseChannel?.(a.input.channelId);
+        if (refused) throw new Error(refused);
         const post = await client.createPost(a.input);
         await store.record(plan, a.channel, post.id);
         results.push({ channel: a.channel, action: a.action, ok: true, postId: post.id });
@@ -175,6 +189,8 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
       parentLong: long ? { id: long.id, goesPublicAt: long.privacyStatus === "public" ? long.publishedAt : long.publishAt } : null,
       standalone: req.standalone,
       allowLate: req.allowLate,
+      channels: deps.networks,
+      shortsOnly: deps.shortsOnly,
     });
 
   // Plan once with stand-in URLs, so a refused video never gets its files uploaded.
@@ -207,7 +223,8 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
   try {
     for (const f of toHost) {
       const suffix = f.role === "media" ? "" : `-${f.role}`;
-      const url = await deps.host!(f.localPath!, `social/${video.id}${suffix}${path.extname(f.localPath!).toLowerCase()}`);
+      const prefix = deps.mediaPrefix ?? "social/";
+      const url = await deps.host!(f.localPath!, `${prefix}${video.id}${suffix}${path.extname(f.localPath!).toLowerCase()}`);
       hosted.push(url);
       urls.set(f.role, url);
     }
@@ -225,7 +242,7 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
     await dropHosted();
     return { plan, results: [], sent: false, hosted };
   }
-  const results = await executeActions(plan, deps.client, deps.store);
+  const results = await executeActions(plan, deps.client, deps.store, deps.refuseChannel);
   if (hosted.length) {
     if (results.some((r) => r.ok && r.action === "create_post")) {
       const current = await deps.store.load();
@@ -270,9 +287,10 @@ async function cleanMedia(
   // Files the record doesn't know about: link them to their video, or sweep them once old.
   if (deps.listMedia) {
     const known = new Set(Object.keys(after.videos).flatMap(media));
+    const prefix = deps.mediaPrefix ?? "social/";
     for (const blob of await deps.listMedia()) {
-      if (known.has(blob.url)) continue;
-      const id = videoIdFromBlobPath(blob.pathname);
+      if (known.has(blob.url) || !blob.pathname.startsWith(prefix) || deps.foreignMedia?.(blob.pathname)) continue;
+      const id = videoIdFromBlobPath(blob.pathname, prefix);
       const entry = id ? after.videos[id] : undefined;
       if (id && entry) {
         // A copy uploaded for a video that is in Buffer: keep it with that video's posts.
@@ -356,7 +374,7 @@ async function takeDownBrokenMedia(deps: MirrorDeps, now: Date, send: boolean): 
           input: { postId: c!.postId },
         }));
         const timing: Plan["timing"] = { mode: "customScheduled", dueAt: entry.dueAt };
-        const results = await executeActions({ videoId: id, kind: entry.kind, title: entry.title, timing, actions }, deps.client!, deps.store);
+        const results = await executeActions({ videoId: id, kind: entry.kind, title: entry.title, timing, actions }, deps.client!, deps.store, deps.refuseChannel);
         const failed = results.filter((r) => !r.ok);
         out.push({ ...row, removed: !failed.length, ...(failed.length ? { error: failed.map((f) => `${f.channel}: ${f.error}`).join("; ") } : {}) });
       }
@@ -385,7 +403,7 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
         ? { mode: "customScheduled", dueAt: new Date(video.publishAt).toISOString() }
         : { mode: "none", reason: "no longer going public" };
     const plan = { videoId: id, kind: entry.kind, title: entry.title, timing, actions };
-    const results = send ? await executeActions(plan, deps.client!, deps.store) : [];
+    const results = send ? await executeActions(plan, deps.client!, deps.store, deps.refuseChannel) : [];
     changes.push({ videoId: id, kind: entry.kind, title: entry.title, timing, actions, results });
   }
 
@@ -433,7 +451,9 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
       miss((e as Error).message);
     }
   };
-  const scheduled = await deps.listScheduled(token, now);
+  // A Shorts-only channel's longs are not the mirror's business: never mirrored, never reported.
+  const wanted = (v: YouTubeVideo) => !deps.shortsOnly || isShort(v);
+  const scheduled = (await deps.listScheduled(token, now)).filter(wanted);
   // Earliest first, so the nearest posts take Buffer's queue slots. Taken-down posts are mirrored again here.
   const inBuffer = send ? (await deps.store.load()).videos : ledger.videos;
   const removed = new Set(rehosted.filter((r) => !send || r.removed).map((r) => r.videoId));
@@ -443,7 +463,7 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
   // upload this pipeline knows (UPLOADS.json), so an old video made public again never reaches social.
   if (deps.listRecentlyPublic) {
     const seen = new Set(scheduled.map((v) => v.id));
-    for (const v of await deps.listRecentlyPublic(token, now)) {
+    for (const v of (await deps.listRecentlyPublic(token, now)).filter(wanted)) {
       if (!ledger.videos[v.id] && !seen.has(v.id)) await mirrorFound(v, true);
     }
   }

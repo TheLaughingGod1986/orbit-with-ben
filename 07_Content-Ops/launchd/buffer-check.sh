@@ -2,7 +2,8 @@
 # Daily Buffer check on the posting Mac (LaunchAgent dev.orbit.buffer-check, STUDIO_PLAYBOOK.md §12).
 #   1. Runs the latest main: pulls first, but only on main with no local code changes, so
 #      work in progress in this checkout is never touched.
-#   2. Runs buffer-mirror.ts check (keeps Buffer in step with YouTube, mirrors new uploads).
+#   2. Runs buffer-mirror.ts check (keeps Buffer in step with YouTube, mirrors new uploads) for Orbit, then
+#      for History of Science (--channel hos: HOS Shorts to HOS's Instagram/Facebook/TikTok, J0817).
 #   3. Commits and pushes the Buffer record (social/) so GitHub and the Mac agree.
 #   4. If the check failed, shows a notification. The details are in the log.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
@@ -22,8 +23,16 @@ main() {
 
   (
     cd 07_Content-Ops || exit 1
-    unset DATABASE_URL GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN BUFFER_API_KEY BLOB_READ_WRITE_TOKEN
+    unset DATABASE_URL GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN BUFFER_API_KEY BLOB_READ_WRITE_TOKEN \
+      BUFFER_HOS_API_KEY YT_ANALYTICS_REFRESH_TOKEN_HOS
     bash scripts/desk-lock.sh youtube-buffer -- npx tsx --env-file=.env scripts/buffer-mirror.ts check
+    owb=$?
+    (( owb == 75 )) && exit 75
+    echo "--- History of Science"
+    bash scripts/desk-lock.sh youtube-buffer -- npx tsx --env-file=.env scripts/buffer-mirror.ts check --channel hos
+    hos=$?
+    (( owb != 0 )) && exit $owb
+    exit $hos
   )
   local code=$?
   # Persist contention across LaunchAgent runs; never commit on a collision.
