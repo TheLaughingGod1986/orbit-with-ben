@@ -31,6 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0820 | mini | open | – | – | assembly · HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) |  |
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
 | J0822 | mini | open | – | – | studio · HOS gold Short 29bpGAI0wb8: stayed-to-watch %, where viewers leave and what's on screen there (read-only) |  |
+| J0823 | mini | open | – | – | assembly · 029 Betelgeuse: full rough v01 join, Orbit beats back from existing renders (J0808 KEEP) |  |
 
 Recently finished:
 
