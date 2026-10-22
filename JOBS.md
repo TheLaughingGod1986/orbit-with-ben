@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0849 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0850 | mini | blocked | gemini | – | 028 picture · for gemini · video · 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint |  |
 | J0851 | mini | blocked | claude | – | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
-| J0852 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J0852 | mini | claimed | codex | 2026-10-22T18:06Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
