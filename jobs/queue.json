@@ -68479,13 +68479,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-22T12:17Z",
-      "eta": "2026-10-22T13:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T06:49Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 9e8eae5a3/b093e04f/b34975a5d/9440c0075/324b91b94: ran picture_qa + polish_gate on 3 new 026 Shorts mon16_cant_see_nearest_star_v01 0/6 PASS, wed18_robot_reach_nearest_star_v01 0/7 PASS, fri20_grapefruit_cherry_v01 0/5 PASS with all WARNs visually verified clean; 026 rough_v06_pack picture_qa 0/103 PASS + polish_gate 0/103 PASS + music_gate PASS; 029 full_rough_v02_pack picture_qa 0/80 PASS + polish_gate 0/80 PASS + music_gate PASS + part_roughs_v01 6/6 PASS + code_graphics_v01 0/14 PASS; 024 full_rough_v06_pack 0/111 PASS + music_gate PASS; 027 rough_v01m_pack 0/88 PASS + music_gate PASS; 021 Short saturn_ten_metres_thin_v01 0/8 PASS; HOS 7c4038b4/130ade6f: 006 full_join_v03_teach picture_qa 0/91 PASS + polish_gate 0/91 PASS, all 26 HOS qa_ Shorts PASS, 007-010 code_graphics_v01 PASS; 0 FAILs, 0 new fix jobs needed)",
       "history": [
         {
           "at": "2026-10-22T06:49Z",
@@ -68521,6 +68521,11 @@
           "at": "2026-10-22T12:26Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed QA sweep across OWB and HOS: all newest packs pass picture_qa, polish_gate and music_gate with 0 FAILs; 0 new fix jobs needed"
+        },
+        {
+          "at": "2026-10-22T12:26Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 9e8eae5a3/b093e04f/b34975a5d/9440c0075/324b91b94: ran picture_qa + polish_gate on 3 new 026 Shorts mon16_cant_see_nearest_star_v01 0/6 PASS, wed18_robot_reach_nearest_star_v01 0/7 PASS, fri20_grapefruit_cherry_v01 0/5 PASS with all WARNs visually verified clean; 026 rough_v06_pack picture_qa 0/103 PASS + polish_gate 0/103 PASS + music_gate PASS; 029 full_rough_v02_pack picture_qa 0/80 PASS + polish_gate 0/80 PASS + music_gate PASS + part_roughs_v01 6/6 PASS + code_graphics_v01 0/14 PASS; 024 full_rough_v06_pack 0/111 PASS + music_gate PASS; 027 rough_v01m_pack 0/88 PASS + music_gate PASS; 021 Short saturn_ten_metres_thin_v01 0/8 PASS; HOS 7c4038b4/130ade6f: 006 full_join_v03_teach picture_qa 0/91 PASS + polish_gate 0/91 PASS, all 26 HOS qa_ Shorts PASS, 007-010 code_graphics_v01 PASS; 0 FAILs, 0 new fix jobs needed)"
         }
       ],
       "kind": "qa",
