@@ -1,5 +1,5 @@
 {
-  "next_id": 826,
+  "next_id": 827,
   "jobs": [
     {
       "id": "J0001",
@@ -66686,13 +66686,13 @@
       "stage": "",
       "after": "J0795",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T02:23Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-21T15:34Z",
-      "result": "parked for Chief: HOS 006 full_join_v02_teach (21 £0 fixes applied, sha256 09c1364b, polish_gate PASS 0/91 failed, picture_qa PASS 0/91 failed, gate:episode PASS 93.7/100) + REVIEW_v02.md on HOS PR #352 (4176776d)",
+      "result": "Chief FIX 3 £0 items -> J0826 (21/21 v01 fixes verified; #33/#62 repeat earlier shots inside composites; #86 label 5 words)",
       "history": [
         {
           "at": "2026-10-21T15:34Z",
@@ -66738,6 +66738,16 @@
           "at": "2026-10-22T03:12Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 006 full_join_v02_teach (21 £0 fixes applied, sha256 09c1364b, polish_gate PASS 0/91 failed, picture_qa PASS 0/91 failed, gate:episode PASS 93.7/100) + REVIEW_v02.md on HOS PR #352 (4176776d)"
+        },
+        {
+          "at": "2026-10-22T03:14Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T03:14Z",
+          "by": "claude",
+          "what": "done: Chief FIX 3 £0 items -> J0826 (21/21 v01 fixes verified; #33/#62 repeat earlier shots inside composites; #86 label 5 words)"
         }
       ],
       "kind": "assembly",
@@ -67706,6 +67716,33 @@
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked"
+    },
+    {
+      "id": "J0826",
+      "title": "HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After J0809 (HOS PR #352, 4176776d, full_join_v02_teach/REVIEW_v02.md). Chief ruling: FIX, three £0 items, then re-gate and merge #352 with them. No new mints, no music bed, no upload.\n\n1) #33 22_shimmer_willow_v02 (2:53.29) ends on 15_desk_candle_t1_above_desk_v03 0.00-2.54 s: that is the same opening #26 shows at 2:15.25, 38 s earlier, and a desk candle doesn't fit \"the very thing his tree was made of\". Fill the 2.54 s from an unused window of 22_shimmer_willow_t1 (for example 2.63-5.17 s, if it is clean), so #33 stays all willow. Only if that window fails picture_qa, use desk candle 5.46 s to the end (the stretch #26 doesn't show), never 0.00.\n2) #62 11_night_jars_v02 (5:30.46) ends on 18_dark_window_t1 for 4.33 s: #51 (4:29.5) already shows that clip from 0.00 for 4.0 s, 61 s earlier. Use the part #51 doesn't show: 18_dark_window_t1 from 4.00 s to the end, and make up the length from 11_night_jars_t1 (start it earlier than 4.50 s but after the bright-sun stretch, which ends at 2.3 s), so #62 stays 188 frames and still opens moonlit.\n3) #86 label \"4 in 10,000 · Carbon Dioxide\" is 5 words; the house rule is 4 or fewer. Use \"CO2: 4 in 10,000\".\nAlso correct the REVIEW_v02 §4 note: 15_desk_candle at 2:18 is our own crop, not a Veo Chief-KEEP plate.\n\nThen picture_qa + polish_gate (no new fails), REVIEW_v03 delta (each item done/why not), push to #352, park for Chief.\n",
+      "ref": "TheLaughingGod1986/history-of-science#352",
+      "film": "",
+      "stage": "",
+      "after": "J0809",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T03:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T03:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],

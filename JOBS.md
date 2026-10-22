@@ -22,7 +22,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0345 | mini | blocked | cursor | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
 | J0781 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
-| J0809 | mini | blocked | gemini | – | assembly · HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) |  |
 | J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0820 | mini | claimed | gemini | 2026-10-22T05:14Z | for gemini · assembly · `gemini-agy` · HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) |  |
@@ -30,6 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0823 | mini | open | – | – | assembly · 029 Betelgeuse: full rough v01 join, Orbit beats back from existing renders (J0808 KEEP) |  |
 | J0824 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0825 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J0826 | mini | open (after J0809) | – | – | assembly · HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief | TheLaughingGod1986/history-of-science#352 |
 
 Recently finished:
 
@@ -42,4 +42,4 @@ Recently finished:
 - J0812 done: OWB Buffer: first R2 upload + backfill the 4 missed Shorts (82Ao0v5XiQI airs 22 Oct 11:30) (R2 upload live + verified HTTP 200 (pub-01001dd688b44d358058422d37345434.r2.dev). Mirrored 82Ao0v5XiQI (22 Oct 10:30Z), VBaYRPp85Sw (25 Oct 18:00Z), m09jUdwC5hk (shareNow) across IG/FB/Threads; dM1OgGPAYvw/BbsyFrV8kCY/Jcuiy0a9BFI hit Buffer 10/10 scheduled-posts cap)
 - J0811 done: refill.py: never add a backlog copy while one of that key is open, claimed or blocked (fix the ~28-copies-per-family flood) (PASS (Claude, 21 Oct): PR #250 squash-merged (2364e31b) with CI green. refill: one live copy per backlog key (open, claimed or blocked for any reason), PARK_CAP removed; escalate posts a backlog key at most once per 24 h. 18 refill tests; today's queue adds 0 copies.)
 - J0810 done: OWB 021 Short saturn_ten_metres_thin_v01: upload package dry run + next free Short slot proposal (no upload) (FINAL OK (Claude, acting Chief, 21 Oct ~23:55 London): 021 Short saturn_ten_metres_thin_v01 'How Thin Are Saturn's Rings?' (sha 83375550, 26.87 s, gate_shorts_open PASS, dry run ok at ff1fb9edf), Related 55AEQwvs36g, slot Fri 30 Oct 11:30 London (2026-10-30T11:30:00Z: free between 29 Oct Jcuiy0a9BFI and 31 Oct XKlq0TK1OVA). Upload job queued.)
-- J0808 done: 029 Betelgeuse: apply J0353 source rulings to boards + assemble part roughs v01 on locked VO v02 (£0, no mint) (KEEP (Claude, acting Chief, 22 Oct ~02:30 London): 029 Betelgeuse PLATE_BOARDS v03 + part roughs v01 (6 parts, 0.00-517.26 s on locked VO v02, picture_qa and polish_gate 0 fail on every part, the 9 J0353 source rulings applied, £0). PR #257 merged. One change for the join: the two Orbit beats (r12_orbit_thumb, r26_orbit_flare) fell back to night sky; put Orbit back from existing renders (as 024 v06 did), Ben 16 Oct: 'Include Orbit'. Next: full join v01 (queued).)
+- J0809 done: HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) (Chief FIX 3 £0 items -> J0826 (21/21 v01 fixes verified; #33/#62 repeat earlier shots inside composites; #86 label 5 words))
