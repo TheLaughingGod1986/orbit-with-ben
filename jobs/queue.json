@@ -1,5 +1,5 @@
 {
-  "next_id": 855,
+  "next_id": 856,
   "jobs": [
     {
       "id": "J0001",
@@ -70316,13 +70316,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T17:38Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T16:52Z",
-      "result": "parked for Chief: 028 picture KEEP/FIX pass (_evidence/028_keep_fix_v01_contact.jpg, _evidence/028_keep_fix_v01.md)",
+      "result": "Chief KEEP r08/r11/r23, FIX r17 (goal net) -> J0855 (retake + part roughs)",
       "history": [
         {
           "at": "2026-10-22T16:52Z",
@@ -70408,6 +70408,16 @@
           "at": "2026-10-22T18:44Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 028 picture KEEP/FIX pass (_evidence/028_keep_fix_v01_contact.jpg, _evidence/028_keep_fix_v01.md)"
+        },
+        {
+          "at": "2026-10-22T18:46Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T18:46Z",
+          "by": "claude",
+          "what": "done: Chief KEEP r08/r11/r23, FIX r17 (goal net) -> J0855 (retake + part roughs)"
         }
       ],
       "kind": "video",
@@ -70599,6 +70609,33 @@
       "history": [
         {
           "at": "2026-10-22T17:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0855",
+      "title": "028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J0850 (Claude, acting Chief, 22 Oct; sheet 763e5b8e _evidence/028_keep_fix_v01_contact.jpg):\n- KEEP r08_orbit_binoculars (Omni, a7793cfc): canonical Orbit, no planet, clear binocular sweep.\n- KEEP r11_night_road (Flow Quality, 6dfb64f6): no plate/logo/text; 95.08-101.00 s covered by the planned star cutaway.\n- KEEP r23_orbit_ice (Omni, 8c509d86): canonical Orbit among Oort ice lumps, no planet.\n- FIX r17_pitch (Flow Fast, d224e044): the camera passes through a goal net at 1.5-6.2 s, and the clean stretches (0-1.5 s, 6-8 s) can't cover 3.82 s without a visible jump. One Fast retake (10 cr): an empty grass pitch at dusk, the camera gliding low and slow over the centre circle towards halfway, no goals or nets in frame, stands soft and distant, no text/logos/people. KEEP it if clean.\n\nThen assemble 028 part roughs v01 from boards v02 (harvest + code graphics + these 4 plates + teaching overlays) on the locked VO, house edit rules (no back-to-back code graphics; a change every 3-4 s; the first chapter card at 0:30 or later, per the J0842 ruling), picture_qa + polish_gate per part, contact sheets, park for Chief. £0 apart from the one 10 cr retake.",
+      "ref": "",
+      "film": "028",
+      "stage": "edit",
+      "after": "J0850",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T18:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T18:46Z",
           "by": "claude",
           "what": "added"
         }

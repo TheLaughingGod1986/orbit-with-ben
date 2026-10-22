@@ -23,14 +23,15 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
 | J0830 | mini | blocked | codex | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
 | J0835 | mini | open (after J0829) | – | – | for gemini · assembly · `gemini-agy` · HOS 006 Trees: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief |  |
-| J0850 | mini | blocked | gemini | – | 028 picture · for gemini · video · 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint |  |
 | J0851 | mini | open (after J0141) | – | – | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
 | J0853 | mini | open (after J0843) | – | – | studio · 027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30 |  |
 | J0854 | mini | open (after J0825) | – | – | assembly · HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief |  |
+| J0855 | mini | open (after J0850) | – | – | 028 edit · assembly · 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief |  |
 
 Recently finished:
 
 - J0852 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (13 OWB + 4 HOS longs; 68 OWB + 18 HOS Shorts. CTR hits >=4%: OWB 2/13 (Sun 4.2%, Jupiter 6.3%); HOS 1/4 (Germs 7.5%). 103/103 catalogue IDs read. Analytics commit acf98babc; published tracker verified byte for byte. No YouTube settings changed or credits spent.)
+- J0850 done: 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint (Chief KEEP r08/r11/r23, FIX r17 (goal net) -> J0855 (retake + part roughs))
 - J0849 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Chief PASS (Claude, acting): HOS 22/22 public + 11/11 scheduled clean; Blood Shorts Related stays in J0280/J0241 for 29 Oct.)
 - J0848 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Chief PASS (Claude, acting): OWB 10/10 live listings clean; 0 fixes.)
 - J0847 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS live listing check (c49707d1, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md): channel:audit 43 videos 0 errors; all 22 public videos (4 longs end screens + 18 Shorts Related pills) and 11 scheduled videos verified; Chief J0837 rulings recorded (Blood Shorts Related in J0280/J0241 after 29 Oct; 0 Studio changes needed now).)
@@ -39,4 +40,3 @@ Recently finished:
 - J0844 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0843 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS; upload -> J0853)
 - J0842 done: Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements (Chief PASS with notes (Grok, #99 6343252405): rules #1-3 adopted; #6 a TEST; #7 approved on the next 4 uncut Shorts (028/029 first); 024/026/027 not reopened.)
-- J0841 done: 023 Venus Short venus_95pct_wide v02 'How Big Is Venus Compared to Earth?': package + Private upload, publishAt Mon 2 Nov 11:30 London (J0838 PASS) (Private YC65mdh6Hgg, publishAt Mon 2 Nov 2026 11:30 London. Cover set. Related pending_studio for J0324. Buffer deferred. #99 6342803965. £0.)
