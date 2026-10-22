@@ -1,5 +1,5 @@
 {
-  "next_id": 841,
+  "next_id": 842,
   "jobs": [
     {
       "id": "J0001",
@@ -21604,7 +21604,7 @@
       "title": "HOS Related fixes ×4 after longs public (from J0245)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) 1lszTrYRp-8 → wwcjcFfC-5M\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) JyRjM-9Yc8g → GHZDsiH7L7A\nWait until long is public. No other Studio writes.",
+      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) 1lszTrYRp-8 → wwcjcFfC-5M\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) JyRjM-9Yc8g → GHZDsiH7L7A\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `5n7xFQRBUvI` stays with J0241. Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -21682,6 +21682,11 @@
           "at": "2026-10-15T17:40Z",
           "by": "cursor",
           "what": "blocked: waits for input: six Related links set and read back (c2q7w0pgcn8→frP_YrNShsU, oKqmnJNGiHg→AL_-qlWko_g, OnJ8MFu0Mi0→_C92tIJCk8A, LCZRHUyTiq0→GHZDsiH7L7A, vEg_tLIm0Co→GHZDsiH7L7A, JyRjM-9Yc8g→GHZDsiH7L7A). GHZDsiH7L7A title Test & Compare reads Running, unchanged. Blood Shorts 1lszTrYRp-8, mTY67qet7cM, x_3L_IdYgEc wait until wwcjcFfC-5M is public 29 Oct 18:00 London. No other Studio writes."
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "chief: added PlihWC5uA2E -> wwcjcFfC-5M (J0837 PASS)"
         }
       ],
       "kind": "studio",
@@ -24912,7 +24917,7 @@
       "title": "023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z)",
       "needs": "mini",
       "repo": "owb",
-      "body": "**023 Venus, after go-public: Studio finish on the long `VBaYRPp85Sw` and Related on its Short.** Queued by the Chief review sweep (15 Oct) because 023 had no open or blocked job after J0236 uploaded the long; status.json `next` says \"Studio finish + pinned comment after go-public\".\n\n- Runs once `VBaYRPp85Sw` is **public** (publishAt Sun 25 Oct 2026 18:00Z, which is 18:00 London after the clocks go back). Studio's picker only lists public videos. If it isn't public by 18:30 London, block with `parked for Chief: 023 long not public` and post on #99.\n- **Related video:** set the Venus Short `Jcuiy0a9BFI` (\"Why Venus Melts Lead\", Private, publishAt Thu 29 Oct 11:30Z) Related video to `VBaYRPp85Sw`. **Deadline: before Thu 29 Oct 11:30Z.** Change only the Related field; leave file, schedule, privacy, title, description and cover alone. No Test & Compare \"Continue\".\n- **Pinned comment on the long:** if `VBaYRPp85Sw` doesn't already carry the packaged pinned comment (02_Video-Projects/023_What-Happened-To-Venus/11_Upload-Package, as passed on 8 Oct, ac6b9d5), post it as the channel and pin it. Don't edit anything else on the long.\n- Orbit Studio on CDP **9223**; check the channel is Orbit With Ben first. Related pattern: the J0220 / `_finish_monday_cdp.py` Related block.\n- Reload, read back both, write `02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/RELATED_SET_<date>.json`, set status.json `next` accordingly, post the result on #99. No spend.\n",
+      "body": "**023 Venus, after go-public: Studio finish on the long `VBaYRPp85Sw` and Related on its Short.** Queued by the Chief review sweep (15 Oct) because 023 had no open or blocked job after J0236 uploaded the long; status.json `next` says \"Studio finish + pinned comment after go-public\".\n\n- Runs once `VBaYRPp85Sw` is **public** (publishAt Sun 25 Oct 2026 18:00Z, which is 18:00 London after the clocks go back). Studio's picker only lists public videos. If it isn't public by 18:30 London, block with `parked for Chief: 023 long not public` and post on #99.\n- **Related video:** set the Venus Short `Jcuiy0a9BFI` (\"Why Venus Melts Lead\", Private, publishAt Thu 29 Oct 11:30Z) Related video to `VBaYRPp85Sw`. **Deadline: before Thu 29 Oct 11:30Z.** Change only the Related field; leave file, schedule, privacy, title, description and cover alone. No Test & Compare \"Continue\".\n- **Pinned comment on the long:** if `VBaYRPp85Sw` doesn't already carry the packaged pinned comment (02_Video-Projects/023_What-Happened-To-Venus/11_Upload-Package, as passed on 8 Oct, ac6b9d5), post it as the channel and pin it. Don't edit anything else on the long.\n- Orbit Studio on CDP **9223**; check the channel is Orbit With Ben first. Related pattern: the J0220 / `_finish_monday_cdp.py` Related block.\n- Reload, read back both, write `02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/RELATED_SET_<date>.json`, set status.json `next` accordingly, post the result on #99. No spend.\n\n**Added by Chief, 22 Oct (J0838 PASS):** in the same pass, also set Related video -> `VBaYRPp85Sw` on the new 023 Short `venus_95pct_wide_v02` ('How Big Is Venus Compared to Earth?', Private, publishAt Mon 2 Nov 11:30Z), uploaded by J0841. Take its video id from UPLOADS.json. If J0841 hasn't uploaded it yet when this runs, do the Jcuiy0a9BFI part and leave a note on #99; J0841 will then set Related itself if the long is public by then. Change only the Related field on it too. Include it in RELATED_SET_<date>.json.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -24935,6 +24940,11 @@
           "at": "2026-10-15T19:03Z",
           "by": "chief",
           "what": "blocked: waits for input: 023 long VBaYRPp85Sw public (its YouTube publishAt Sun 25 Oct 18:00Z is a release date, not a job start); reopen when public; must finish before Thu 29 Oct 11:30Z when Short Jcuiy0a9BFI airs"
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "chief: added venus_95pct_wide Related -> VBaYRPp85Sw (J0841 uploads it; J0838 PASS)"
         }
       ],
       "kind": "studio"
@@ -69026,13 +69036,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-22T12:50Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-22T13:39Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-22T12:49Z",
-      "result": "parked for Chief: live fixes",
+      "result": "PASS (Chief, 22 Oct ~14:45 London): HOS audit accepted (00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md, 6da204e6): 22/22 public videos pass on chapters, sources, end screens and Related. Fix 1 (Blood Shorts Related -> wwcjcFfC-5M after 29 Oct): accepted, date-gated. 1lszTrYRp-8, mTY67qet7cM and x_3L_IdYgEc are already in J0280 and 5n7xFQRBUvI in J0241; PlihWC5uA2E was in neither, so Chief added it to J0280. No new job. Fix 2a-2c (description layout on LCZRHUyTiq0, PlihWC5uA2E, -sa2t7dAtCk): declined. They match their PACKAGE_MANIFEST verbatim and the current search-titled Short layout (long title + full-film link first), so there's nothing to fix. No Studio change now.",
       "history": [
         {
           "at": "2026-10-22T12:49Z",
@@ -69073,6 +69083,21 @@
           "at": "2026-10-22T12:58Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: live fixes"
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "reopened: Chief ruling"
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 22 Oct ~14:45 London): HOS audit accepted (00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md, 6da204e6): 22/22 public videos pass on chapters, sources, end screens and Related. Fix 1 (Blood Shorts Related -> wwcjcFfC-5M after 29 Oct): accepted, date-gated. 1lszTrYRp-8, mTY67qet7cM and x_3L_IdYgEc are already in J0280 and 5n7xFQRBUvI in J0241; PlihWC5uA2E was in neither, so Chief added it to J0280. No new job. Fix 2a-2c (description layout on LCZRHUyTiq0, PlihWC5uA2E, -sa2t7dAtCk): declined. They match their PACKAGE_MANIFEST verbatim and the current search-titled Short layout (long title + full-film link first), so there's nothing to fix. No Studio change now."
         }
       ],
       "kind": "listing",
@@ -69083,14 +69108,7 @@
         "HOS:003",
         "HOS:004",
         "HOS:005"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-22T12:58Z",
-        "by": "gemini",
-        "note": "Committed and pushed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6); parking J0837 for Chief: liv"
-      }
+      ]
     },
     {
       "id": "J0838",
@@ -69103,13 +69121,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-22T13:27Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-22T13:39Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-22T13:05Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "PASS (Chief, 22 Oct ~14:45 London): v02 (sha 60f3e7f0c5ce, 24.5 s, bd1d2ccc4) clears both J0824 defects. Chief frame check at full frame rate on the master: the s04->s05 cut at 15.9 s is clean (s04 221.00 s, s05 338.87 s; no 'Alpha Regio' label, no dissolve ghost), every other cut +/-0.2 s has no long-film labels, and 14 caption handovers show one caption each (gte(t,s)*lt(t,e)). -14.7 LUFS integrated, true peak -1.5 dBTP. Ending: VO to 22.2 s, then a 2.3 s titled end card ('What Happened to Venus?' + VBaYRPp85Sw), not a wordless tail. gate_shorts_open, sfx_kit, polish_gate and picture_qa PASS; the 0:21 SDO soft-sun WARN is still accepted. Upload queued as J0841 (Private, publishAt Mon 2 Nov 11:30 London); Related -> VBaYRPp85Sw added to J0324 (date-gated on the long going public 25 Oct).",
       "history": [
         {
           "at": "2026-10-22T13:05Z",
@@ -69145,19 +69163,27 @@
           "at": "2026-10-22T13:34Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Short PASS"
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "reopened: Chief ruling"
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "done: PASS (Chief, 22 Oct ~14:45 London): v02 (sha 60f3e7f0c5ce, 24.5 s, bd1d2ccc4) clears both J0824 defects. Chief frame check at full frame rate on the master: the s04->s05 cut at 15.9 s is clean (s04 221.00 s, s05 338.87 s; no 'Alpha Regio' label, no dissolve ghost), every other cut +/-0.2 s has no long-film labels, and 14 caption handovers show one caption each (gte(t,s)*lt(t,e)). -14.7 LUFS integrated, true peak -1.5 dBTP. Ending: VO to 22.2 s, then a 2.3 s titled end card ('What Happened to Venus?' + VBaYRPp85Sw), not a wordless tail. gate_shorts_open, sfx_kit, polish_gate and picture_qa PASS; the 0:21 SDO soft-sun WARN is still accepted. Upload queued as J0841 (Private, publishAt Mon 2 Nov 11:30 London); Related -> VBaYRPp85Sw added to J0324 (date-gated on the long going public 25 Oct)."
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:023"
-      ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-22T13:34Z",
-        "by": "cursor",
-        "note": "v02 rendered 24.5s. Gates PASS. s04 at 221.00, s05 at 338.87. Caption boundary exclusive. Commit bd1d2ccc4. Parked for C"
-      }
+      ]
     },
     {
       "id": "J0839",
@@ -69273,6 +69299,36 @@
         "by": "gemini",
         "note": "Starting HOS weekly audit + Shorts lab + Learnings (2026-10-22)"
       }
+    },
+    {
+      "id": "J0841",
+      "title": "023 Venus Short venus_95pct_wide v02 'How Big Is Venus Compared to Earth?': package + Private upload, publishAt Mon 2 Nov 11:30 London (J0838 PASS)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**023 Venus Short `venus_95pct_wide_v02`: package + Private upload, publishAt Mon 2 Nov 2026 11:30 London (2026-11-02T11:30:00Z).** Chief PASS on J0838 (22 Oct, #99). Master `02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v02.mp4`, 24.5 s, sha256 must start **60f3e7f0c5ce** (verify first; any other hash: block 'parked for Chief: master hash'). Builder + sidecars bd1d2ccc4.\n\n1. **Slot check.** Read `00_Brand/Channel-Setup/social/UPLOADS.json` and the OWB schedule: 2 Nov 11:30Z must be free (22 Oct snapshot: 26-31 Oct and 3 Nov taken, Sun 1 Nov is the 024 long). If it's taken, use the next free 11:30Z OWB Short slot after 2 Nov and say so on #99.\n2. **Package** `02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/11_Upload-Package/PACKAGE_MANIFEST.json`, same shape as 021 `lift_ten_metres_thin/11_Upload-Package/PACKAGE_MANIFEST.json`:\n   - title **\"How Big Is Venus Compared to Earth?\"** (search-question, positive-question rule; Chief-approved)\n   - description: `What Happened to Venus?` / `https://www.youtube.com/watch?v=VBaYRPp85Sw` / blank / one-line hook on Venus being 95% as wide as Earth with about four-fifths of its mass / Sources (NASA Venus fact sheet) / Pictures + AI-assisted voice and editing line / image credits (NASA/JPL-Caltech; NASA SDO), as the 021 package\n   - 5-6 tags, privacy private, madeForKids false, schedule 2026-11-02T11:30:00.000Z, thumbnail `venus_95pct_wide_v02_cover.jpg`, social hook/question/alt, en-GB.\n   - `relatedVideoId`: the 023 long VBaYRPp85Sw is still private until Sun 25 Oct 18:00Z and Studio only lists public videos, so record Related as `pending_studio`; J0324 sets it after go-public (Chief added this Short to J0324).\n3. `npm run youtube:package` dry run first, plus gate_shorts_open on the master. Then the real upload with `PUBLISHING_DRY_RUN=false` on that one command line only (AGENTS.md: never edit .env).\n4. Read back in Studio (Orbit, CDP 9223; check the channel name): Private, scheduled Mon 2 Nov 11:30, title, cover. Record in UPLOADS.json and SHORTS_LOG (Related pending_studio -> J0324). Buffer mirror defers it (beyond 7 days).\n5. Commit the package + result, post the new video id and slot on #99, then done.\n\nPrivate only, never Public. No Test & Compare. No re-upload of anything else. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-22T13:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T13:39Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:023"
+      ]
     }
   ],
   "focus": [],
