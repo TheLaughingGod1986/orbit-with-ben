@@ -70260,18 +70260,41 @@
           "at": "2026-10-22T17:30Z",
           "by": "codex",
           "what": "step 1 of 3 done: Captured exact lifetime Studio metrics for all 81 OWB and 22 HOS videos; no missing catalogue IDs"
+        },
+        {
+          "at": "2026-10-22T17:31Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Validated 103 Studio rows: 13 OWB + 4 HOS longs and 86 Shorts; CTR at least 4% for 2 OWB and 1 HOS long; rebuilding tracker in clean worktree"
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-22T17:30Z",
+        "at": "2026-10-22T17:31Z",
         "by": "codex",
-        "note": "Captured exact lifetime Studio metrics for all 81 OWB and 22 HOS videos; no missing catalogue IDs"
-      }
+        "note": "Validated 103 Studio rows: 13 OWB + 4 HOS longs and 86 Shorts; CTR at least 4% for 2 OWB and 1 HOS long; rebuilding trac"
+      },
+      "taskKeys": [
+        "OWB:001",
+        "OWB:002",
+        "OWB:003",
+        "OWB:004",
+        "OWB:005",
+        "OWB:006",
+        "OWB:007",
+        "OWB:013",
+        "OWB:019",
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
     }
   ],
   "focus": [],
