@@ -30,8 +30,10 @@ Weeks and dates are the four-week plan in `FAMILIAR_DANGER_STRATEGY.md` (12 Oct 
 
 | Day | Id | Title | 0 s frame | Stayed-to-watch at 48 h | AVD | Graph ends >100% (y/n) | Subs gained | Comments |
 |---|---|---|---|---|---|---|---|---|
-| Mon 2 Nov |  |  |  |  |  |  |  |  |
+| Mon 2 Nov | YC65mdh6Hgg | How Big Is Venus Compared to Earth? | Full-disk cloudy Venus (PIA23791), captioned 95% AS WIDE, no Orbit |  |  |  |  |  |
 | Wed 4 Nov |  |  |  |  |  |  |  |  |
 | Fri 6 Nov |  |  |  |  |  |  |  |  |
+
+Mon 2 Nov `YC65mdh6Hgg` Related video is `pending_studio` (long `VBaYRPp85Sw` is still private until Sun 25 Oct 18:00Z). J0324 sets it after the long is public.
 
 Friday 6 Nov is Ben’s own voice. Record it. Do not generate it.

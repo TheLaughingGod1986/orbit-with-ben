@@ -1,0 +1,99 @@
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-02T11:30:00.000Z",
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. Would upload now with publishAt=2026-11-02T11:30:00.000Z.",
+    "responseSummary": "{\"title\":\"How Big Is Venus Compared to Earth?\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-02T11:30:00.000Z\",\"madeForKids\":false,\"containsSyntheticMedia\":true,\"categoryId\":\"28\",\"contentFormat\":\"shorts\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/11_Upload-Package",
+    "sha256": "60f3e7f0c5ce30e29ddb55c02a083d3f4e533362b897004dc2c760711082464a",
+    "title": "How Big Is Venus Compared to Earth?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 6,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v02_cover.jpg",
+    "scheduledAt": "2026-11-02T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v02.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v02_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to VBaYRPp85Sw (its own full film). No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}
