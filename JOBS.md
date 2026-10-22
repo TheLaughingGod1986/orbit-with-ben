@@ -28,7 +28,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
 | J0824 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0825 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0829 | mini | claimed | cursor | 2026-10-22T12:57Z | for cursor · assembly · `cursor-grok-4-7` · HOS 006: #62 start night_jars after the silhouette (>=4.30 s), check every 0.5 s, then merge HOS PR #352 | TheLaughingGod1986/history-of-science#352 |
 | J0830 | mini | blocked | claude | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
 | J0831 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0832 | mini | open | – | – | studio · 024 Light Speed v06: package to v06, gates, Private upload for Sun 1 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) |  |
@@ -37,6 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J0833 done: 026 Nearest Star v06: package to v06, gates, Private upload for Sun 15 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (Private c5AdqQsnnys, publishAt 2026-11-15T18:00:00Z, thumbnail A set, Buffer deferred)
+- J0829 done: HOS 006: #62 start night_jars after the silhouette (>=4.30 s), check every 0.5 s, then merge HOS PR #352 (HOS PR #352 merged at 7c4038b443ddd91d601ef8952e37947a2730fa27. #62 is night_jars 4.30-8.00s at 0.635x plus dark_window 4.00-6.00s. All 188 frames min mean luma 40.81, min edge 0.0217. picture_qa and polish_gate PASS 0/91. Master d24a08ee on checkout and NAS. Film final OK still with Chief.)
 - J0828 done: 029 Betelgeuse: full rough v02, break the 5 long code-graphic holds (48.6 s r17_r20 etc.) with cut-aways at sentence ends, gates, park for Chief (Chief PASS full_rough_v02 (b093e04f): 80 cuts, max hold 13.7 s, no new sources, all gates PASS; to Ben's watch)
 - J0827 done: HOS 007 First Vaccine: land PR #353, full join v01 (Parts 01-05) + 2 £0 repeat-shot fixes, gates, park for Chief (Chief PASS full_join_v01 (#354, both repeat fixes read as new shots); merge #354 needs Ben; master -> J0830)
 - J0826 done: HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief (Chief: #33/#86/note PASS; #62 still opens on the 2.3-4.3 s silhouette -> J0829 then merge #352)
@@ -45,4 +45,3 @@ Recently finished:
 - J0820 done: HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) (Chief PASS part roughs v01 (PR #353); full join + 2 repeat-shot fixes -> J0827)
 - J0819 done: 021 Short 'How Thin Are Saturn's Rings?': upload Private, publishAt Fri 30 Oct 11:30 London (J0810 final OK) (Uploaded 021 Short RxErxlXim1Q ('How Thin Are Saturn's Rings?') Private publishAt 2026-10-30T11:30:00Z (Fri 30 Oct 11:30 London); Studio finish complete (Related=55AEQwvs36g, custom cover set, en-GB, containsSyntheticMedia=true); recorded in UPLOADS.json + shorts_open_library + TEST_LOG (805d46fc3).)
 - J0818 done: Thumbnail tests: read back T001 (HOS X-rays INSIDE HER HAND) + T005-T007 into the ledger, read-only (done)
-- J0816 done: OWB Buffer: move the 11 Blob-hosted waiting posts to R2 + schedule 26-29 Oct Shorts (PR #252) (Removed all 11 Blob-hosted waiting posts (33 channel posts), uploaded and scheduled the 5 Shorts in the 7-day window (2e-giqFmfy8, vlkj8RQKmH8, dM1OgGPAYvw, oyRcrFTYyDY, BbsyFrV8kCY; 15 posts across IG/FB/Threads, 0 LimitReachedError) on R2 (all curl -sI 200 OK on r2.dev), deferred 12 uploads >=29 Oct, committed BUFFER_POSTS.json @ 2f1c04048.)
