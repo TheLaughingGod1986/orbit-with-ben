@@ -1,5 +1,5 @@
 {
-  "next_id": 857,
+  "next_id": 859,
   "jobs": [
     {
       "id": "J0001",
@@ -69081,13 +69081,13 @@
       "stage": "",
       "after": "J0829",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T18:47Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T11:06Z",
-      "result": "parked for Chief: HOS 006 master v01 listening review, final PASS and merge of HOS PR #356 (e6b9156c; sha bcafbf4e; 66.7 BPM harp pulse, 0 pace WARN; 24 SFX cues; -14.0 LUFS / -1.5 dBTP)",
+      "result": "Chief PASS master v01 (£0 bed 66.7 BPM read by music_gate, 16 dB under VO, 24 SFX cues, -14.0 LUFS/-1.5 dBTP, picture byte-identical); HOS #356 merged 1946ac4d; UAT copy -> J0857, thumbnails -> J0858",
       "history": [
         {
           "at": "2026-10-22T11:06Z",
@@ -69163,6 +69163,16 @@
           "at": "2026-10-22T19:09Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 006 master v01 listening review, final PASS and merge of HOS PR #356 (e6b9156c; sha bcafbf4e; 66.7 BPM harp pulse, 0 pace WARN; 24 SFX cues; -14.0 LUFS / -1.5 dBTP)"
+        },
+        {
+          "at": "2026-10-22T19:11Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T19:11Z",
+          "by": "claude",
+          "what": "done: Chief PASS master v01 (£0 bed 66.7 BPM read by music_gate, 16 dB under VO, 24 SFX cues, -14.0 LUFS/-1.5 dBTP, picture byte-identical); HOS #356 merged 1946ac4d; UAT copy -> J0857, thumbnails -> J0858"
         }
       ],
       "kind": "assembly",
@@ -70698,6 +70708,60 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0857",
+      "title": "HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After Chief PASS J0835 (Claude, acting Chief, 22 Oct; HOS PR #356 merged 1946ac4d): copy the HOS 006 master to Ben's watch folder. Source: NAS .../006_Trees-Are-Made-Of-Air/09_Final-Export/master_v01/hos_006_master_v01.mp4 (sha256 bcafbf4e...). Destination: iCloud HOS UAT/006_Trees_master_v01.mp4. Verify sha256 after copy (iCloud placeholder files don't count: the copy must be fully downloaded and its hash must match). Post the path on #99. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0835",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T19:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T19:11Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0858",
+      "title": "HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 006 Trees Are Made of Air thumbnails (due 29 Oct, before Ben's final OK on 1 Nov): house HOS thumbnail style, art on Flow, lettering from the cover builder. Step 1: 3 concepts from the film's hook (a willow growing out of 'air', van Helmont's scales) with 2-4 word lettering, positive-question framing per LEARNINGS rule #1, priced in Flow credits (expect Fast/Nano Banana stills, tens of credits). Park \"parked for Chief: 006 thumbnail price + concept pick\". Step 2 after the pass: mint, letter, gates, A/B pair for Test & Compare.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T19:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T19:11Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "thumb"
     }
   ],
   "focus": [],
