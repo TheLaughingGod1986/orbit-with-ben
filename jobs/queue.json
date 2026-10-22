@@ -1,5 +1,5 @@
 {
-  "next_id": 859,
+  "next_id": 860,
   "jobs": [
     {
       "id": "J0001",
@@ -70686,13 +70686,13 @@
       "stage": "edit",
       "after": "J0850",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T19:11Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T18:46Z",
-      "result": "parked for Chief: 028 part roughs v01 review",
+      "result": "Chief PASS part roughs v01; full join + 3 fixes + master -> J0859",
       "history": [
         {
           "at": "2026-10-22T18:46Z",
@@ -70768,6 +70768,16 @@
           "at": "2026-10-22T20:34Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 028 part roughs v01 review"
+        },
+        {
+          "at": "2026-10-22T20:45Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T20:45Z",
+          "by": "claude",
+          "what": "done: Chief PASS part roughs v01; full join + 3 fixes + master -> J0859"
         }
       ],
       "kind": "assembly",
@@ -70862,6 +70872,33 @@
         }
       ],
       "kind": "thumb"
+    },
+    {
+      "id": "J0859",
+      "title": "028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS on J0855 (Claude, acting Chief, 22 Oct): 028 part roughs v01 (7 parts, 62 cuts, 0 fails; the r17 pitch retake is clean, the first chapter card is at 0:42.5, no back-to-back code graphics). Fold these £0 fixes into the full join v01, then lay a £0 score bed + house SFX and master (029 / HOS 006 method: synthesised bed, music_gate reads the tempo, `sfx_kit.py level --bed` 16-21 dB under VO with 0 breaches, an SFX tick on every teaching pill and chapter card, -14 LUFS / -1 dBTP):\n1) r19_subscribe (3:27) repeats the eso_startrails frame from r13 (2:10, 77 s earlier). Put the SUBSCRIBE pill on a different moving plate from the pool (not star trails).\n2) gaia_motion_1_6my.mp4 is used 5 times (0:00, 0:06, 1:57, ~5:05, ~7:43). Keep at most 3, never two in a row: merge r01+r02 into one continuous shot or swap one, and replace the part04 or part06 use with another moving pool plate.\n3) Pill legibility: on the sheet, '5 times closer' (2:52) and '100 metres' (3:19) read much fainter than '1 billion stars' or 'In 1 million years'. Check a frame at each pill's midpoint; every pill must reach full opacity with the same dark backing box.\nThen picture_qa + polish_gate + music_gate + sfx level + gate:episode on the full master, REVIEW_master_v01 (each fix before/after), commit, park for Chief. £0.",
+      "ref": "",
+      "film": "028",
+      "stage": "edit",
+      "after": "J0855",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T20:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T20:45Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],

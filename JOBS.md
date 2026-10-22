@@ -24,13 +24,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0851 | mini | claimed | gemini | 2026-10-22T22:36Z | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
 | J0853 | mini | open (after J0843) | – | – | studio · 027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30 |  |
 | J0854 | mini | open (after J0825) | – | – | assembly · HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief |  |
-| J0855 | mini | blocked | gemini | – | 028 edit · assembly · 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief |  |
 | J0856 | mini | open (after J0830) | – | – | assembly · HOS 007 master v02: sound effects on every card/stamp + prove the music bed is heard (bed level, tempo), update HOS PR #355, park for Chief |  |
 | J0857 | mini | open (after J0835) | – | – | studio · HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha) |  |
 | J0858 | mini | open | – | – | thumb · HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) |  |
+| J0859 | mini | open (after J0855) | – | – | 028 edit · assembly · 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief |  |
 
 Recently finished:
 
+- J0855 done: 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief (Chief PASS part roughs v01; full join + 3 fixes + master -> J0859)
 - J0852 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (13 OWB + 4 HOS longs; 68 OWB + 18 HOS Shorts. CTR hits >=4%: OWB 2/13 (Sun 4.2%, Jupiter 6.3%); HOS 1/4 (Germs 7.5%). 103/103 catalogue IDs read. Analytics commit acf98babc; published tracker verified byte for byte. No YouTube settings changed or credits spent.)
 - J0850 done: 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint (Chief KEEP r08/r11/r23, FIX r17 (goal net) -> J0855 (retake + part roughs))
 - J0849 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Chief PASS (Claude, acting): HOS 22/22 public + 11/11 scheduled clean; Blood Shorts Related stays in J0280/J0241 for 29 Oct.)
@@ -40,4 +41,3 @@ Recently finished:
 - J0845 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS live listing check (27bb4bc9, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md): channel:audit 43 videos 0 errors; all 22 public videos (4 longs end screens + 18 Shorts Related pills) and 11 scheduled videos verified; Chief J0837 rulings recorded (Blood Shorts Related in J0280/J0241 after 29 Oct; 0 Studio changes needed now).)
 - J0844 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0843 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS; upload -> J0853)
-- J0842 done: Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements (Chief PASS with notes (Grok, #99 6343252405): rules #1-3 adopted; #6 a TEST; #7 approved on the next 4 uncut Shorts (028/029 first); 024/026/027 not reopened.)
