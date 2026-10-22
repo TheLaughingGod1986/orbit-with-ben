@@ -1,5 +1,5 @@
 {
-  "next_id": 829,
+  "next_id": 830,
   "jobs": [
     {
       "id": "J0001",
@@ -67872,13 +67872,13 @@
       "stage": "",
       "after": "J0809",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T05:19Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T03:14Z",
-      "result": "parked for Chief: HOS 006 full_join_v03_teach (sha256 9a8efcef, 3 £0 items fixed: #33 all willow, #62 night jars + 4.00-6.00s dark window, #86 CO2: 4 in 10,000, plus REVIEW_v02 §4 note + REVIEW_v03.md) pushed to HOS PR #352 (ebb8d8e6); picture_qa + polish_gate PASS (0 fail); ready for Chief review and merge of #352",
+      "result": "Chief: #33/#86/note PASS; #62 still opens on the 2.3-4.3 s silhouette -> J0829 then merge #352",
       "history": [
         {
           "at": "2026-10-22T03:14Z",
@@ -67924,6 +67924,16 @@
           "at": "2026-10-22T05:51Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 006 full_join_v03_teach (sha256 9a8efcef, 3 £0 items fixed: #33 all willow, #62 night jars + 4.00-6.00s dark window, #86 CO2: 4 in 10,000, plus REVIEW_v02 §4 note + REVIEW_v03.md) pushed to HOS PR #352 (ebb8d8e6); picture_qa + polish_gate PASS (0 fail); ready for Chief review and merge of #352"
+        },
+        {
+          "at": "2026-10-22T05:51Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T05:51Z",
+          "by": "claude",
+          "what": "done: Chief: #33/#86/note PASS; #62 still opens on the 2.3-4.3 s silhouette -> J0829 then merge #352"
         }
       ],
       "kind": "assembly",
@@ -68000,6 +68010,33 @@
       "history": [
         {
           "at": "2026-10-22T05:18Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0829",
+      "title": "HOS 006: #62 start night_jars after the silhouette (>=4.30 s), check every 0.5 s, then merge HOS PR #352",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief ruling on J0826 (Claude, acting Chief, 22 Oct 2026), HOS PR #352 at ebb8d8e6: items 1 (#33 all willow), 3 (#86 label) and 4 (note) PASS.\n\nItem 2 (#62) needs one more trim, my brief's fault: REVIEW_v01 found 11_night_jars_t1 has the bright sun at 0.0-2.3 s and a black silhouette blocking the frame at 2.3-4.3 s (edge_density 0.0127). v03 starts at 2.75 s, so about 1.5 s of the silhouette now opens the shot. picture_qa only samples the midpoint, so it didn't see it.\n\nFix, £0: start night_jars_t1 at 4.30 s or later (it runs to 8.00 s). Keep 18_dark_window_t1 4.00-6.00 s. Make up the remaining ~2.1 s with an unused window of another night or moonlit plate in the 006 pool. Never reuse a window shown elsewhere in the film. Keep #62 at 188 frames.\n\nCheck the luma and edge density on #62 at every 0.5 s (not just the midpoint): min_mean_luma >= 28 and no frame under edge_density 0.02. Paste those numbers. Re-run picture_qa + polish_gate, then merge HOS PR #352 once its checks are green, and mark it done with the merge sha. Don't park it again unless a check fails.\n",
+      "ref": "TheLaughingGod1986/history-of-science#352",
+      "film": "",
+      "stage": "",
+      "after": "J0826",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T05:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T05:51Z",
           "by": "claude",
           "what": "added"
         }

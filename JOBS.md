@@ -27,12 +27,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
 | J0824 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0825 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0826 | mini | blocked | gemini | – | assembly · HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief | TheLaughingGod1986/history-of-science#352 |
 | J0827 | mini | open (after J0820) | – | – | for gemini · assembly · `gemini-agy` · HOS 007 First Vaccine: land PR #353, full join v01 (Parts 01-05) + 2 £0 repeat-shot fixes, gates, park for Chief | TheLaughingGod1986/history-of-science#353 |
 | J0828 | mini | open (after J0823) | – | – | assembly · 029 Betelgeuse: full rough v02, break the 5 long code-graphic holds (48.6 s r17_r20 etc.) with cut-aways at sentence ends, gates, park for Chief |  |
+| J0829 | mini | open (after J0826) | – | – | assembly · HOS 006: #62 start night_jars after the silhouette (>=4.30 s), check every 0.5 s, then merge HOS PR #352 | TheLaughingGod1986/history-of-science#352 |
 
 Recently finished:
 
+- J0826 done: HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief (Chief: #33/#86/note PASS; #62 still opens on the 2.3-4.3 s silhouette -> J0829 then merge #352)
 - J0823 done: 029 Betelgeuse: full rough v01 join, Orbit beats back from existing renders (J0808 KEEP) (Chief: rough sound, gates PASS; FIX long holds -> J0828)
 - J0822 done: HOS gold Short 29bpGAI0wb8: stayed-to-watch %, where viewers leave and what's on screen there (read-only) (done)
 - J0820 done: HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) (Chief PASS part roughs v01 (PR #353); full join + 2 repeat-shot fixes -> J0827)
@@ -42,4 +43,3 @@ Recently finished:
 - J0815 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (PASS (Claude, acting Chief): QA sweep of the newest packs on both channels, 0 FAIL, no fix jobs needed.)
 - J0813 done: GitHub: delete 110 merged branches + archive-tag and delete 13 finished ones (Ben's go 21 Oct) (Deleted 110 merged branches + archive-tagged and deleted 19 finished branches (129 total deleted, 0 skipped); 9 branches remain on origin (main, board-data, claude-heartbeat, mini-heartbeat, 3 backup/*, claude/youtube-channel-audit-pa4n3b, codex/review-handoff-count).)
 - J0812 done: OWB Buffer: first R2 upload + backfill the 4 missed Shorts (82Ao0v5XiQI airs 22 Oct 11:30) (R2 upload live + verified HTTP 200 (pub-01001dd688b44d358058422d37345434.r2.dev). Mirrored 82Ao0v5XiQI (22 Oct 10:30Z), VBaYRPp85Sw (25 Oct 18:00Z), m09jUdwC5hk (shareNow) across IG/FB/Threads; dM1OgGPAYvw/BbsyFrV8kCY/Jcuiy0a9BFI hit Buffer 10/10 scheduled-posts cap)
-- J0811 done: refill.py: never add a backlog copy while one of that key is open, claimed or blocked (fix the ~28-copies-per-family flood) (PASS (Claude, 21 Oct): PR #250 squash-merged (2364e31b) with CI green. refill: one live copy per backlog key (open, claimed or blocked for any reason), PARK_CAP removed; escalate posts a backlog key at most once per 24 h. 18 refill tests; today's queue adds 0 copies.)
