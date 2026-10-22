@@ -1,5 +1,5 @@
 {
-  "next_id": 828,
+  "next_id": 829,
   "jobs": [
     {
       "id": "J0001",
@@ -67710,13 +67710,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T04:19Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T01:28Z",
-      "result": "parked for Chief: 029_Betelgeuse_full_rough_v01.mp4 (sha256 b406543e, 517.26 s, 63 cuts, -14.0 LUFS / -1.2 dBTP, £0) with both Orbit beats restored from existing Omni renders (r12_orbit_thumb + r26_orbit_flare) and all gates PASS; staged in OWB UAT and NAS youtube-staging/029 for Chief review before Ben's watch",
+      "result": "Chief: rough sound, gates PASS; FIX long holds -> J0828",
       "history": [
         {
           "at": "2026-10-22T01:28Z",
@@ -67772,6 +67772,16 @@
           "at": "2026-10-22T05:17Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 029_Betelgeuse_full_rough_v01.mp4 (sha256 b406543e, 517.26 s, 63 cuts, -14.0 LUFS / -1.2 dBTP, £0) with both Orbit beats restored from existing Omni renders (r12_orbit_thumb + r26_orbit_flare) and all gates PASS; staged in OWB UAT and NAS youtube-staging/029 for Chief review before Ben's watch"
+        },
+        {
+          "at": "2026-10-22T05:18Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T05:18Z",
+          "by": "claude",
+          "what": "done: Chief: rough sound, gates PASS; FIX long holds -> J0828"
         }
       ],
       "kind": "assembly",
@@ -67899,6 +67909,33 @@
       "history": [
         {
           "at": "2026-10-22T04:19Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0828",
+      "title": "029 Betelgeuse: full rough v02, break the 5 long code-graphic holds (48.6 s r17_r20 etc.) with cut-aways at sentence ends, gates, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J0823 (Claude, acting Chief, 22 Oct 2026): 029 full rough v01 (6c8d9d8a, 517.26 s, 63 cuts). The rough is sound: every gate passes, the mix is -14.0 LUFS, both Orbit beats are back, and all 6 chapters pass the teaching gate. FIX one thing, £0, before Ben's watch: long holds. Five code graphics hold the screen far past the 15 s picture_qa flag:\n- r17_r20_shells: 48.6 s (2:55-3:44)\n- r29_span_astrolabe: 23.9 s\n- r03_r04_promise: 23.0 s, in the first 40 s, where viewers decide whether to stay\n- r31_shells_twins: 18.9 s\n- r27_orion: 18.5 s\n\nBreak each into stretches of 12 s or less by cutting away at sentence boundaries (words.json) to moving plates already in the pool. Use clips not yet seen, or non-overlapping windows: the ESO time-lapses, visir_flames and sphere crops with a slow push, or the Crab. Then return to the graphic where its animation continues. Keep every teaching pill on its spoken word, keep the graphic's numeral moments on screen, and never put two code graphics back to back. r17_r20 should get at least 3 cut-aways. No new mints, no new licences.\n\nOutput full_rough_v02, re-run clip_check + picture_qa + polish_gate (no single picture over 15 s), a short REVIEW_v02 (each hold before and after), park for Chief. Super-K is not in the cut (r24 uses the Chajnantor sky), so the licence check is no longer needed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0823",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T05:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T05:18Z",
           "by": "claude",
           "what": "added"
         }
