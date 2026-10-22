@@ -68136,7 +68136,7 @@
       "title": "HOS 006: #62 start night_jars after the silhouette (>=4.30 s), check every 0.5 s, then merge HOS PR #352",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief ruling on J0826 (Claude, acting Chief, 22 Oct 2026), HOS PR #352 at ebb8d8e6: items 1 (#33 all willow), 3 (#86 label) and 4 (note) PASS.\n\nItem 2 (#62) needs one more trim, my brief's fault: REVIEW_v01 found 11_night_jars_t1 has the bright sun at 0.0-2.3 s and a black silhouette blocking the frame at 2.3-4.3 s (edge_density 0.0127). v03 starts at 2.75 s, so about 1.5 s of the silhouette now opens the shot. picture_qa only samples the midpoint, so it didn't see it.\n\nFix, £0: start night_jars_t1 at 4.30 s or later (it runs to 8.00 s). Keep 18_dark_window_t1 4.00-6.00 s. Make up the remaining ~2.1 s with an unused window of another night or moonlit plate in the 006 pool. Never reuse a window shown elsewhere in the film. Keep #62 at 188 frames.\n\nCheck the luma and edge density on #62 at every 0.5 s (not just the midpoint): min_mean_luma >= 28 and no frame under edge_density 0.02. Paste those numbers. Re-run picture_qa + polish_gate, then merge HOS PR #352 once its checks are green, and mark it done with the merge sha. Don't park it again unless a check fails.\n",
+      "body": "Chief ruling on J0826 (Claude, acting Chief, 22 Oct 2026), HOS PR #352 at ebb8d8e6: items 1 (#33 all willow), 3 (#86 label) and 4 (note) PASS.\n\nItem 2 (#62) needs one more trim, my brief's fault: REVIEW_v01 found 11_night_jars_t1 has the bright sun at 0.0-2.3 s and a black silhouette blocking the frame at 2.3-4.3 s (edge_density 0.0127). v03 starts at 2.75 s, so about 1.5 s of the silhouette now opens the shot. picture_qa only samples the midpoint, so it didn't see it.\n\nFix, £0: start night_jars_t1 at 4.30 s or later (it runs to 8.00 s). Keep 18_dark_window_t1 4.00-6.00 s. Make up the remaining ~2.1 s with an unused window of another night or moonlit plate in the 006 pool. Never reuse a window shown elsewhere in the film. Keep #62 at 188 frames.\n\nCheck the luma and edge density on #62 at every 0.5 s (not just the midpoint): min_mean_luma >= 28 and no frame under edge_density 0.02. Paste those numbers. Re-run picture_qa + polish_gate, then merge HOS PR #352 once its checks are green, and mark it done with the merge sha. Don't park it again unless a check fails.\n\n\nChief fallback (Claude, 22 Oct 09:55 London; the job has restarted 3 times on the 25-min cap): stop searching the pool. Build #62 as 11_night_jars_t1 4.30-8.00 s played at 0.635x speed (3.70 s -> 5.83 s, 140 frames, frame-blended; a slow candle dim reads naturally) + 18_dark_window_t1 4.00-6.00 s (48 frames) = 188 frames. Run the 0.5 s luma/edge check, picture_qa + polish_gate, merge #352 if green, done.",
       "ref": "TheLaughingGod1986/history-of-science#352",
       "film": "",
       "stage": "",
@@ -68199,6 +68199,11 @@
           "at": "2026-10-22T08:34Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J0829: checking HOS PR #352 and #62 night_jars trim"
+        },
+        {
+          "at": "2026-10-22T08:51Z",
+          "by": "claude",
+          "what": "Chief fallback added: slow night_jars 4.30-8.00 s to 0.635x, no pool search"
         }
       ],
       "kind": "assembly",
