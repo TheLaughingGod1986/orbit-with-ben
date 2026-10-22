@@ -19,25 +19,27 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0324 | mini | blocked | chief | – | studio · 023 Venus after go-public: Related on Short Jcuiy0a9BFI -> VBaYRPp85Sw + pinned comment on the long (before Thu 29 Oct 11:30Z) |  |
 | J0345 | mini | blocked | cursor | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
-| J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
+| J0817 | cloud | claimed | claude | 2026-10-23T01:00Z | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
-| J0851 | mini | claimed | gemini | 2026-10-22T22:36Z | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
 | J0853 | mini | open (after J0843) | – | – | studio · 027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30 |  |
 | J0854 | mini | open (after J0825) | – | – | assembly · HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief |  |
 | J0856 | mini | open (after J0830) | – | – | assembly · HOS 007 master v02: sound effects on every card/stamp + prove the music bed is heard (bed level, tempo), update HOS PR #355, park for Chief |  |
 | J0857 | mini | open (after J0835) | – | – | studio · HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha) |  |
 | J0858 | mini | open | – | – | thumb · HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) |  |
 | J0859 | mini | open (after J0855) | – | – | 028 edit · assembly · 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief |  |
+| J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, A6TW_6CXhcs) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
+| J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
+| J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 
 Recently finished:
 
+- J0860 done: HOS 010: confirm the 8 period details (P1-P8) on SHOT_LIST_v01, no spend, park for Chief (P4-P8 confirmed against FACT_NOTES_v01 sources; SHOT_LIST_v01 and PIPELINE picture note updated (history-of-science 4ebf6b4). Next for 010: J0862 Shorts VO after the 30 Oct reset.)
 - J0855 done: 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief (Chief PASS part roughs v01; full join + 3 fixes + master -> J0859)
 - J0852 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (13 OWB + 4 HOS longs; 68 OWB + 18 HOS Shorts. CTR hits >=4%: OWB 2/13 (Sun 4.2%, Jupiter 6.3%); HOS 1/4 (Germs 7.5%). 103/103 catalogue IDs read. Analytics commit acf98babc; published tracker verified byte for byte. No YouTube settings changed or credits spent.)
+- J0851 done: 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov (Private uploads scheduled for 11:30 London: Mon 16 Nov HZGTovJu_TQ, Wed 18 Nov cwU_0WWeNZ4, Fri 20 Nov A6TW_6CXhcs. Covers set, en-GB set, synthetic disclosure on, Buffer deferred. Related -> c5AdqQsnnys date-gated in J0861 (after Sun 15 Nov 18:00Z). 9f34d8276. £0.)
 - J0850 done: 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint (Chief KEEP r08/r11/r23, FIX r17 (goal net) -> J0855 (retake + part roughs))
 - J0849 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Chief PASS (Claude, acting): HOS 22/22 public + 11/11 scheduled clean; Blood Shorts Related stays in J0280/J0241 for 29 Oct.)
 - J0848 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Chief PASS (Claude, acting): OWB 10/10 live listings clean; 0 fixes.)
 - J0847 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS live listing check (c49707d1, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md): channel:audit 43 videos 0 errors; all 22 public videos (4 longs end screens + 18 Shorts Related pills) and 11 scheduled videos verified; Chief J0837 rulings recorded (Blood Shorts Related in J0280/J0241 after 29 Oct; 0 Studio changes needed now).)
 - J0846 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed c1e952bfd: all 10 live public videos (82Ao0v5XiQI through Cka7_TVVOUQ, plus #11 55AEQwvs36g) pass chapters, sources, end screens, and Related video checks at 2026-10-22T15:41Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-22.md). Nothing changed in Studio.)
 - J0845 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS live listing check (27bb4bc9, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md): channel:audit 43 videos 0 errors; all 22 public videos (4 longs end screens + 18 Shorts Related pills) and 11 scheduled videos verified; Chief J0837 rulings recorded (Blood Shorts Related in J0280/J0241 after 29 Oct; 0 Studio changes needed now).)
-- J0844 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J0843 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (Chief PASS; upload -> J0853)

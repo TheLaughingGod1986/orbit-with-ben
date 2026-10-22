@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-16T11:30:00.000Z",
+    "platformPostId": "HZGTovJu_TQ",
+    "platformUrl": "https://youtu.be/HZGTovJu_TQ",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-16T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"HZGTovJu_TQ\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-16T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/11_Upload-Package",
+    "sha256": "24a5552baec19feec7ec45e47f0e3ce3d6b2a3309b7ad935c32309220b03b5ad",
+    "title": "If You Can't See the Nearest Star, How Far Away Is It?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 7,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/mon16_cant_see_nearest_star_v01_cover.jpg",
+    "scheduledAt": "2026-11-16T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/mon16_cant_see_nearest_star_v01_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-11-16T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "HZGTovJu_TQ",
+    "studioEditUrl": "https://studio.youtube.com/video/HZGTovJu_TQ/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/HZGTovJu_TQ/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/HZGTovJu_TQ/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/HZGTovJu_TQ/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/HZGTovJu_TQ/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to c5AdqQsnnys (its own full film). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/HZGTovJu_TQ/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/HZGTovJu_TQ/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (HZGTovJu_TQ). 1 required Studio finish step(s) remain."
+  }
+}
