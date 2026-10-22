@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 028 | picture | gemini | 2026-10-22T17:38Z | 2026-10-22T19:37Z | J0850 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint |
+| 028 | picture | gemini | 2026-10-22T17:39Z | 2026-10-22T18:39Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
