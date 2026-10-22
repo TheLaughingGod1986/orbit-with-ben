@@ -67560,13 +67560,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-10-22T21:00Z",
-      "eta": "2026-10-23T01:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T20:51Z",
-      "result": "",
+      "result": "waits for input: PR #260 merge (built and green locally: HOS profile, org guard, TikTok, social/hos/, 07:05 run). Needs to land before the 24 Oct 07:05 run so 5n7xFQRBUvI (Sat 31 Oct) goes in",
       "history": [
         {
           "at": "2026-10-21T20:51Z",
@@ -67577,6 +67577,11 @@
           "at": "2026-10-22T21:00Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-22T21:08Z",
+          "by": "claude",
+          "what": "blocked: waits for input: PR #260 merge (built and green locally: HOS profile, org guard, TikTok, social/hos/, 07:05 run). Needs to land before the 24 Oct 07:05 run so 5n7xFQRBUvI (Sat 31 Oct) goes in"
         }
       ],
       "kind": "studio"
