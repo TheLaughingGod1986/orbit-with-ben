@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""en-GB captions for the Earth Spin 027 long, timed to the v01l picture lock.
+"""en-GB captions for the Earth Spin 027 long, timed to the v01m picture.
+
+v01m is the v01l picture with the music and SFX mix (J0793). Word times are unchanged.
 
 The locked script's wording (01_Script/earth_spin_script_master_v01.md) is aligned
 to the picture-order VO (02_Voiceover/words_v02order.json). words.json is the v01
@@ -16,8 +18,9 @@ HERE = Path(__file__).resolve().parent
 PROJ = HERE.parent
 SCRIPT = PROJ / "01_Script" / "earth_spin_script_master_v01.md"
 WORDS = PROJ / "02_Voiceover" / "words_v02order.json"
-OUT = HERE / "Captions" / "earth_spin_long_v01l_en-GB.srt"
+OUT = HERE / "Captions" / "earth_spin_long_v01m_en-GB.srt"
 MAX = 84  # two lines of 42
+PICTURE_END = 446.3  # v01m container duration. Last cue must end within 1 s and not past it.
 
 # Spoken year-words in words_v02order.json. 1851 is stored as the digits on both sides.
 YEARS = {
@@ -128,6 +131,10 @@ def main():
         rows[c][1] = max(rows[c][1], rows[c][0] + 1.0)
         if c + 1 < len(rows) and rows[c + 1][0] is not None:
             rows[c][1] = min(rows[c][1] + 0.4, max(rows[c + 1][0], rows[c][0] + 1.0))
+    if rows and rows[-1][1] < PICTURE_END - 1.0:
+        rows[-1][1] = round(PICTURE_END - 0.1, 3)
+    if rows and rows[-1][1] > PICTURE_END:
+        rows[-1][1] = PICTURE_END
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(f"{i}\n{srt_time(a)} --> {srt_time(b)}\n{two_lines(t)}\n"
                              for i, (t, (a, b)) in enumerate(zip(caps, rows), 1)) + "\n")
