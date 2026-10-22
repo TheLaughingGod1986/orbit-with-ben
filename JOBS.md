@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0809 | mini | open (after J0795) | – | – | assembly · HOS 006: apply REVIEW_v01's 21 £0 FIXes -> full_join_v02_teach, re-gate, park for Chief (no bed, no mint) |  |
 | J0814 | cloud | open | – | – | studio · Board: sync film stages from done jobs so 'Since yesterday' shows real progress |  |
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
-| J0819 | mini | open | – | – | studio · 021 Short 'How Thin Are Saturn's Rings?': upload Private, publishAt Fri 30 Oct 11:30 London (J0810 final OK) |  |
+| J0819 | mini | claimed | gemini | 2026-10-22T02:44Z | studio · 021 Short 'How Thin Are Saturn's Rings?': upload Private, publishAt Fri 30 Oct 11:30 London (J0810 final OK) |  |
 | J0820 | mini | open | – | – | assembly · HOS 007 First Vaccine: part roughs v01 Parts 01-05 from Flow v02 rows + locked VO (J0352 KEEP) |  |
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
 | J0822 | mini | open | – | – | studio · HOS gold Short 29bpGAI0wb8: stayed-to-watch %, where viewers leave and what's on screen there (read-only) |  |
