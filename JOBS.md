@@ -21,7 +21,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
-| J0851 | mini | open (after J0141) | – | – | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
+| J0851 | mini | claimed | gemini | 2026-10-22T22:36Z | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
 | J0853 | mini | open (after J0843) | – | – | studio · 027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30 |  |
 | J0854 | mini | open (after J0825) | – | – | assembly · HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief |  |
 | J0855 | mini | blocked | gemini | – | 028 edit · assembly · 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief |  |
