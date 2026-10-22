@@ -69523,19 +69523,24 @@
           "at": "2026-10-22T14:50Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J0843: auditing locked/live OWB longs for fewest Shorts built"
+        },
+        {
+          "at": "2026-10-22T15:05Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Selected OWB 027 (fewest Shorts built: 4 vs 5-9 on 021-026) and VO span 116.36-137.48s (61w, 21.12s VO + 2.38s end = 23.50s: equator spin & 0.5% weight loss)"
         }
       ],
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "taskKeys": [
-        "OWB:024"
+        "OWB:027"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-22T14:50Z",
+        "at": "2026-10-22T15:05Z",
         "by": "gemini",
-        "note": "Starting J0843: auditing locked/live OWB longs for fewest Shorts built"
+        "note": "Selected OWB 027 (fewest Shorts built: 4 vs 5-9 on 021-026) and VO span 116.36-137.48s (61w, 21.12s VO + 2.38s end = 23."
       },
       "rerouted_from": {
         "needs": "mini",
