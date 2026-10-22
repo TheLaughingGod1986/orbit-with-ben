@@ -884,3 +884,35 @@ class NoObserverLoops(unittest.TestCase):
         html = page()
         self.assertNotIn("s2.innerHTML!==st", html)
         self.assertIn('s2.dataset.h!==st', html)
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class UploadedFilmsShowAsProgress(unittest.TestCase):
+    """Ben, 22 Oct 2026: the 3 films approved that morning vanished from progress once they were uploaded."""
+    def evaluate(self, expression):
+        lib = "\n".join(js_function(page(), n) for n in ["receiptAt", "releasedSince"])
+        rows = [
+            {"f": {"key": "OWB:026"}, "isSched": True, "release": {"source": "02_Video-Projects/026_x/11_Upload-Package/PACKAGE_UPLOAD_RESULT_2026-10-22T10-03-47-020Z.json"}},
+            {"f": {"key": "OWB:025"}, "isSched": True, "release": {"source": "02_Video-Projects/025_x/11_Upload-Package/PACKAGE_UPLOAD_RESULT_2026-10-09T20-14-55-649Z.json"}},
+            {"f": {"key": "OWB:028"}, "isSched": False, "release": {"state": "unscheduled"}},
+            {"f": {"key": "HOS:005"}, "isSched": True, "release": {"source": "HOS scheduled stage"}},
+        ]
+        script = f"const rows={json.dumps(rows)};\n{lib}\nconsole.log(JSON.stringify({expression}));"
+        out = subprocess.run(["node", "-e", script], text=True, capture_output=True, timeout=30)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        return json.loads(out.stdout)
+
+    def test_receipt_time_comes_from_the_receipt_file_name(self):
+        self.assertEqual(self.evaluate("new Date(receiptAt(rows[0].release)).toISOString()"), "2026-10-22T10:03:47.000Z")
+
+    def test_only_films_uploaded_in_the_period_count(self):
+        self.assertEqual(self.evaluate("releasedSince(rows,'2026-10-21T21:00:00Z').map(r=>r.f.key)"), ["OWB:026"])
+        self.assertEqual(self.evaluate("releasedSince(rows,'2026-10-08T00:00:00Z').map(r=>r.f.key)"), ["OWB:026", "OWB:025"])
+
+    def test_bad_period_counts_nothing(self):
+        self.assertEqual(self.evaluate("releasedSince(rows,'')"), [])
+
+    def test_progress_card_names_them(self):
+        html = page()
+        self.assertIn("uploaded and scheduled · ", html)
+        self.assertIn("Uploaded and scheduled ${progressPeriod===", html)
