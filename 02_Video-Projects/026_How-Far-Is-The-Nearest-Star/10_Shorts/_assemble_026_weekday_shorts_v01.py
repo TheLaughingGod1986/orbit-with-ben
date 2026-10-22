@@ -90,12 +90,20 @@ SHORTS = [
         "quote": "Could we ever go and look?",
         "quote_s": 421.904,
         "voyager": False,
+        # 9:16 centre crop. Stay off v06 cards and the crossfades that carry them:
+        # PIA17049 is clean 296.7–299.6 (card "1977 · VOYAGER" is on screen by 300.0);
+        # PIA14111 is clean after the Journey-to-Proxima fade, 337.4–340.9;
+        # flare stays in the full-disc stretch (letterbox by 413.8);
+        # star trails from 346.5 (launch dissolve is gone);
+        # paranal_01 ends before the "LIGHT FROM PROXIMA" card at 12.0;
+        # paranal_06 13.8–17.0 is the observatory with no card.
         "spans": [
-            (336.57, 4.60, "NASA Voyager plate (PIA14111)"),
-            (295.90, 3.85, "NASA Voyager plate (PIA17049)"),
-            (408.10, 4.60, "NASA SDO solar flare"),
-            (345.95, 3.70, "ESO star trails at Paranal"),
-            (13.53, 3.00, "ESO Paranal night sky (uhd_bt_paranal_06)"),
+            (296.75, 2.85, "NASA Voyager plate (PIA17049)"),
+            (337.45, 3.50, "NASA Voyager plate (PIA14111)"),
+            (408.25, 4.20, "NASA SDO solar flare"),
+            (346.50, 3.10, "ESO star trails at Paranal"),
+            (8.40, 2.90, "ESO Paranal night sky (uhd_bt_paranal_01)"),
+            (13.80, 3.20, "ESO Paranal observatory (uhd_bt_paranal_06)"),
         ],
     },
     {
