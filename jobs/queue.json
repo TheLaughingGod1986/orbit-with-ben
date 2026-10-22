@@ -8668,13 +8668,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T23:38Z",
-      "result": "waits for the 026 long's upload id (no 026 upload job yet); Chief reopens when the id exists. Never render with a placeholder id.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T23:38Z",
@@ -8685,6 +8685,11 @@
           "at": "2026-10-11T23:38Z",
           "by": "chief",
           "what": "blocked: waits for the 026 long's upload id (no 026 upload job yet); Chief reopens when the id exists. Never render with a placeholder id."
+        },
+        {
+          "at": "2026-10-22T10:06Z",
+          "by": "cursor",
+          "what": "reopened: 026 long is Private c5AdqQsnnys, publishAt 2026-11-15T18:00:00Z. End card can use that id."
         }
       ],
       "kind": "assembly"
