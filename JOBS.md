@@ -30,10 +30,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0840 | any | blocked | gemini | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0842 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0843 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0846 | any | claimed | gemini | 2026-10-22T16:37Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J0846 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Committed c1e952bfd: all 10 live public videos (82Ao0v5XiQI through Cka7_TVVOUQ, plus #11 55AEQwvs36g) pass chapters, sources, end screens, and Related video checks at 2026-10-22T15:41Z (0 fixes needed, 05_Analytics/live_fixes/2026-10-22.md). Nothing changed in Studio.)
 - J0845 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS live listing check (27bb4bc9, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md): channel:audit 43 videos 0 errors; all 22 public videos (4 longs end screens + 18 Shorts Related pills) and 11 scheduled videos verified; Chief J0837 rulings recorded (Blood Shorts Related in J0280/J0241 after 29 Oct; 0 Studio changes needed now).)
 - J0844 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J0841 done: 023 Venus Short venus_95pct_wide v02 'How Big Is Venus Compared to Earth?': package + Private upload, publishAt Mon 2 Nov 11:30 London (J0838 PASS) (Private YC65mdh6Hgg, publishAt Mon 2 Nov 2026 11:30 London. Cover set. Related pending_studio for J0324. Buffer deferred. #99 6342803965. £0.)
@@ -43,4 +43,3 @@ Recently finished:
 - J0836 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (PASS (Chief, 22 Oct): audit accepted, 9/10 live videos clean. One fix: 82Ao0v5XiQI Related video -> 55AEQwvs36g, a reversible £0 Studio field in line with every other OWB Short. Studio job queued as J0839. Report 05_Analytics/live_fixes/2026-10-22.md (d71fb3cfa).)
 - J0834 done: 027 Earth Stopped Spinning v01m: package to v01m, gates, Private upload for Sun 22 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (6bbbvfCx6zY Private, publishAt Sun 22 Nov 2026 18:00 London (2026-11-22T18:00:00Z). sha 499e8edc, 446.300s. gate:episode PASS. Thumb A set. en-GB, category 28, not made for kids. Buffer deferred. Pin API 403. J0317 reopened for Related on dM1OgGPAYvw. No spend.)
 - J0833 done: 026 Nearest Star v06: package to v06, gates, Private upload for Sun 15 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (Private c5AdqQsnnys, publishAt 2026-11-15T18:00:00Z, thumbnail A set, Buffer deferred)
-- J0832 done: 024 Light Speed v06: package to v06, gates, Private upload for Sun 1 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (Private rVqgtkBV3jc, publishAt 2026-11-01T18:00:00Z, thumbnail A set, Buffer deferred. gate:episode PASS. sha 8d0b1317.)
