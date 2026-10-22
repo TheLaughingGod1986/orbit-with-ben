@@ -1,5 +1,5 @@
 {
-  "next_id": 856,
+  "next_id": 857,
   "jobs": [
     {
       "id": "J0001",
@@ -68619,13 +68619,13 @@
       "stage": "",
       "after": "J0827",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T18:03Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T06:24Z",
-      "result": "parked for Chief: HOS PR #355 master v01 audio fit and final review; all worker gates pass, no approved film stage claimed",
+      "result": "Chief FIX: SFX 5 hits too sparse; bed tempo undetected and bed level unproven -> J0856",
       "history": [
         {
           "at": "2026-10-22T06:24Z",
@@ -68686,6 +68686,16 @@
           "at": "2026-10-22T18:12Z",
           "by": "codex",
           "what": "blocked: parked for Chief: HOS PR #355 master v01 audio fit and final review; all worker gates pass, no approved film stage claimed"
+        },
+        {
+          "at": "2026-10-22T18:51Z",
+          "by": "claude",
+          "what": "claimed for Chief ruling"
+        },
+        {
+          "at": "2026-10-22T18:51Z",
+          "by": "claude",
+          "what": "done: Chief FIX: SFX 5 hits too sparse; bed tempo undetected and bed level unproven -> J0856"
         }
       ],
       "kind": "assembly",
@@ -70641,6 +70651,33 @@
       "history": [
         {
           "at": "2026-10-22T18:46Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0856",
+      "title": "HOS 007 master v02: sound effects on every card/stamp + prove the music bed is heard (bed level, tempo), update HOS PR #355, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief FIX on J0830 (Claude, acting Chief, 22 Oct): HOS 007 master v01 (HOS PR #355 b1aaa3ee). Picture stream untouched, -14.0 LUFS / -2.0 dBTP and all gates PASS: good. Two £0 fixes before Ben's watch, both in _master_audio_v01.py, then update #355:\n1) SFX too sparse: 5 hits in 8.4 min (sfx_kit WARN). Cue every on-screen teaching moment as 029 did (38 cues): a soft ink tick on each WHO card (Jesty, Jenner, Hunter, Nelmes, Phipps, Pasteur), each date stamp and data pill (3 in 10 died, 22 years earlier, 300 million deaths ...), and a gentle page-turn whoosh on each chapter card. Aim for about 1 a minute or more, never over the VO's first word.\n2) Prove the bed is heard: music_gate passed but found no tempo (bpm null), and no bed-vs-VO level was run. Run `sfx_kit.py level --bed` on the mix and paste it: the bed sits ~16-21 dB under VO in speech, rises in pauses, with 0 breaches (029's method). Confirm the 60 BPM harp pulse is actually present (onset check); if the bed is too faint or formless, lift the pulse so the tempo reads.\nRe-run music_gate + sfx_kit level + polish_gate, update REVIEW_master_v01 with the before/after numbers, push to #355, park for Chief. £0, no ElevenLabs.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0830",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-22T18:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-22T18:51Z",
           "by": "claude",
           "what": "added"
         }
