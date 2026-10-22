@@ -17,3 +17,6 @@ Short form of `00_Brand/Channel-Setup/PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`. Packag
 - [x] Nothing public yet. This package is a dry-run draft until the Chief's final OK.
 
 **This file does not waive vidIQ.** The 5 Oct neighbour pass is the demand check already on the film. Title and thumbnail Test & Compare are still unset.
+
+**Signed off by:** Chief (Grok), Thu 22 Oct 2026 11:41 London. vidIQ waived; title, tags and description stay as packaged (Ben OK 22 Oct, acting-Chief Final OK).
+**Date:** 22 Oct 2026

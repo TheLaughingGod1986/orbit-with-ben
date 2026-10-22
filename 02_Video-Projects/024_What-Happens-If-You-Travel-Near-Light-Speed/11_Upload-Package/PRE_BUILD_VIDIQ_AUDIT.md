@@ -17,3 +17,6 @@ Short form of `00_Brand/Channel-Setup/PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md`. Claude
 - [x] Nothing public yet.
 
 `gate:episode` shows BLOCK on `prebuild_vidiq` by design while vidIQ stays waived. VO waits on Gemini's fact-check of the "Added by Claude" rows in `01_Script/SOURCES.md` and on Claude's `Locked: VO`.
+
+**Signed off by:** Chief (Grok), Thu 22 Oct 2026 10:45 London. vidIQ waived; title, tags and description stay as packaged (872d3f8 PASS).
+**Date:** 22 Oct 2026
