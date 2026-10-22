@@ -70683,13 +70683,13 @@
       "stage": "",
       "after": "J0843",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-22T22:25Z",
-      "eta": "2026-10-23T00:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T17:36Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-22T17:36Z",
@@ -70725,6 +70725,11 @@
           "at": "2026-10-22T22:34Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Registered emwQsPxnRGM in UPLOADS.json + library.json, updated J0317 + status.json (46943d094)"
+        },
+        {
+          "at": "2026-10-22T22:34Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "kind": "studio",
@@ -70737,7 +70742,8 @@
         "at": "2026-10-22T22:34Z",
         "by": "gemini",
         "note": "Registered emwQsPxnRGM in UPLOADS.json + library.json, updated J0317 + status.json (46943d094)"
-      }
+      },
+      "done_ref": "46943d094"
     },
     {
       "id": "J0854",
