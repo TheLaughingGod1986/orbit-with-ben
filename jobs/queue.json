@@ -68622,10 +68622,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-22T11:50Z",
+      "eta": "2026-10-22T13:50Z",
       "created_by": "claude",
       "created_at": "2026-10-22T09:39Z",
       "result": "",
@@ -68659,6 +68659,11 @@
           "at": "2026-10-22T10:54Z",
           "by": "chief",
           "what": "reopened: Chief signed off the 027 prebuild_vidiq audit (commit 8c8d30de8, ruling #99 6338773719; vidIQ waived). Re-run gate:episode; if green, package to v01m (NAS master sha 499e8edc, 446.300 s), captions and chapters re-timed, Private upload publishAt 2026-11-22T18:00:00Z, thumbnail A, UPLOADS.json, Buffer deferred, then J0317. CRF 18 CFR delivery copy if the uploader refuses VFR. No Public, no Replace, GBP0."
+        },
+        {
+          "at": "2026-10-22T11:50Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
