@@ -64322,6 +64322,11 @@
           "at": "2026-10-22T17:16Z",
           "by": "codex",
           "what": "step 2 of 4 done: Collected and checked lifetime Studio rows for all 103 videos: OWB 13 longs + 68 Shorts; HOS 4 longs + 18 Shorts. No missing videos."
+        },
+        {
+          "at": "2026-10-22T17:17Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Tracker rebuilt and all 103 Studio records verified against merged output. CTR >=4%: 2/13 OWB longs, 1/4 HOS longs. One OWB Short has unavailable retention/duration; omitted those fields."
         }
       ],
       "kind": "studio",
@@ -64337,12 +64342,17 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-22T17:16Z",
+        "at": "2026-10-22T17:17Z",
         "by": "codex",
-        "note": "Collected and checked lifetime Studio rows for all 103 videos: OWB 13 longs + 68 Shorts; HOS 4 longs + 18 Shorts. No mis"
-      }
+        "note": "Tracker rebuilt and all 103 Studio records verified against merged output. CTR >=4%: 2/13 OWB longs, 1/4 HOS longs. One "
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "HOS:004"
+      ]
     },
     {
       "id": "J0782",
