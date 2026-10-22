@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0824 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0825 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0826 | mini | claimed | gemini | 2026-10-22T07:19Z | assembly · HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief | TheLaughingGod1986/history-of-science#352 |
-| J0827 | mini | open (after J0820) | – | – | assembly · HOS 007 First Vaccine: land PR #353, full join v01 (Parts 01-05) + 2 £0 repeat-shot fixes, gates, park for Chief | TheLaughingGod1986/history-of-science#353 |
+| J0827 | mini | open (after J0820) | – | – | for gemini · assembly · `gemini-agy` · HOS 007 First Vaccine: land PR #353, full join v01 (Parts 01-05) + 2 £0 repeat-shot fixes, gates, park for Chief | TheLaughingGod1986/history-of-science#353 |
 | J0828 | mini | open (after J0823) | – | – | assembly · 029 Betelgeuse: full rough v02, break the 5 long code-graphic holds (48.6 s r17_r20 etc.) with cut-aways at sentence ends, gates, park for Chief |  |
 
 Recently finished:
