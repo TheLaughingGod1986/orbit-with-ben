@@ -68505,6 +68505,11 @@
           "at": "2026-10-22T10:31Z",
           "by": "cursor",
           "what": "step 0 of 4 done: locating v01m master and package"
+        },
+        {
+          "at": "2026-10-22T10:36Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: NAS master sha 499e8edc matches J0793, 446.300s, 1920x1080. gate:episode FAIL prebuild_vidiq. Stopped before package and upload."
         }
       ],
       "kind": "studio",
@@ -68512,11 +68517,11 @@
         "OWB:027"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-22T10:31Z",
+        "at": "2026-10-22T10:36Z",
         "by": "cursor",
-        "note": "locating v01m master and package"
+        "note": "NAS master sha 499e8edc matches J0793, 446.300s, 1920x1080. gate:episode FAIL prebuild_vidiq. Stopped before package and"
       }
     }
   ],
