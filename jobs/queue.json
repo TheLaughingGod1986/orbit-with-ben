@@ -15152,13 +15152,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-12T20:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T20:05Z",
-      "result": "waiting on 024 upload: no YouTube video id yet (only the 8 Oct dry run; not in UPLOADS.json) and no 024 upload job in the queue. Final OK Mon 26 Oct, airs Sun 1 Nov. Chief: when the 024 upload job is queued, reopen this --after it.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T20:05Z",
@@ -15184,16 +15184,14 @@
           "at": "2026-10-12T20:09Z",
           "by": "cursor",
           "what": "blocked: waiting on 024 upload: no YouTube video id yet (only the 8 Oct dry run; not in UPLOADS.json) and no 024 upload job in the queue. Final OK Mon 26 Oct, airs Sun 1 Nov. Chief: when the 024 upload job is queued, reopen this --after it."
+        },
+        {
+          "at": "2026-10-22T11:26Z",
+          "by": "cursor",
+          "what": "reopened: 024 is Private rVqgtkBV3jc, publishAt 2026-11-01T18:00:00Z, thumbnail A set. Set Test & Compare A/B (answer vs tease). No public change."
         }
       ],
-      "kind": "studio",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-12T20:09Z",
-        "by": "cursor",
-        "note": "checked: 024 has no video id"
-      }
+      "kind": "studio"
     },
     {
       "id": "J0207",
