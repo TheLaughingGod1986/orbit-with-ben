@@ -29,10 +29,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0835 | mini | blocked | claude | – | assembly · HOS 006 Trees: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief |  |
 | J0837 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0838 | mini | open | – | – | assembly · 023 Venus Short venus_95pct_wide v02: fix leaked 'Alpha Regio' label at 15.9 s + one-frame double captions (Chief FIX on J0824) |  |
-| J0839 | mini | claimed | cursor | 2026-10-22T13:38Z | studio · 021 Short 82Ao0v5XiQI: set Related video to 55AEQwvs36g in Studio + verify on the public Short (J0836 PASS) |  |
 
 Recently finished:
 
+- J0839 done: 021 Short 82Ao0v5XiQI: set Related video to 55AEQwvs36g in Studio + verify on the public Short (J0836 PASS) (Related on 82Ao0v5XiQI is 55AEQwvs36g. Studio reload and public reelCarouselViewModel both read the Saturn long. Title and description unchanged. 21982f833.)
 - J0836 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (PASS (Chief, 22 Oct): audit accepted, 9/10 live videos clean. One fix: 82Ao0v5XiQI Related video -> 55AEQwvs36g, a reversible £0 Studio field in line with every other OWB Short. Studio job queued as J0839. Report 05_Analytics/live_fixes/2026-10-22.md (d71fb3cfa).)
 - J0834 done: 027 Earth Stopped Spinning v01m: package to v01m, gates, Private upload for Sun 22 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (6bbbvfCx6zY Private, publishAt Sun 22 Nov 2026 18:00 London (2026-11-22T18:00:00Z). sha 499e8edc, 446.300s. gate:episode PASS. Thumb A set. en-GB, category 28, not made for kids. Buffer deferred. Pin API 403. J0317 reopened for Related on dM1OgGPAYvw. No spend.)
 - J0833 done: 026 Nearest Star v06: package to v06, gates, Private upload for Sun 15 Nov 18:00Z (Ben OK'd 22 Oct; acting-Chief final OK) (Private c5AdqQsnnys, publishAt 2026-11-15T18:00:00Z, thumbnail A set, Buffer deferred)
@@ -42,4 +42,3 @@ Recently finished:
 - J0827 done: HOS 007 First Vaccine: land PR #353, full join v01 (Parts 01-05) + 2 £0 repeat-shot fixes, gates, park for Chief (Chief PASS full_join_v01 (#354, both repeat fixes read as new shots); merge #354 needs Ben; master -> J0830)
 - J0826 done: HOS 006: J0809 Chief FIX, 3 £0 items on full_join_v02_teach (#33 + #62 no repeat clips, #86 label) -> v03, push to HOS PR #352, park for Chief (Chief: #33/#86/note PASS; #62 still opens on the 2.3-4.3 s silhouette -> J0829 then merge #352)
 - J0824 done: Backlog OWB: next Short cut from a locked long (existing VO + picture only) (FIX (Chief, 22 Oct): v01 is close. Hook, title card, stand-alone opening and the gates are good, and the SDO soft-sun WARN is accepted. Two defects: (1) at 15.87-16.00 s, the s04->s05 cut leaks the long's baked 'Alpha Regio' lower-third and a dissolve ghost; (2) a one-frame double caption at caption boundaries, because between(t,s,e) is inclusive (2.00 s). v02 fix queued as J0838.)
-- J0823 done: 029 Betelgeuse: full rough v01 join, Orbit beats back from existing renders (J0808 KEEP) (Chief: rough sound, gates PASS; FIX long holds -> J0828)
