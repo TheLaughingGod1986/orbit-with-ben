@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 028 | edit | gemini | 2026-10-22T21:58Z | 2026-10-22T22:23Z | - |
+| 028 | edit | gemini | 2026-10-22T21:59Z | 2026-10-22T23:58Z | J0859 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
