@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0851 | mini | open (after J0141) | – | – | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
 | J0853 | mini | open (after J0843) | – | – | studio · 027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30 |  |
 | J0854 | mini | open (after J0825) | – | – | assembly · HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief |  |
-| J0855 | mini | claimed | gemini | 2026-10-22T22:12Z | 028 edit · assembly · 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief |  |
+| J0855 | mini | claimed | gemini | 2026-10-22T22:19Z | 028 edit · assembly · 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief |  |
 | J0856 | mini | open (after J0830) | – | – | assembly · HOS 007 master v02: sound effects on every card/stamp + prove the music bed is heard (bed level, tempo), update HOS PR #355, park for Chief |  |
 | J0857 | mini | open (after J0835) | – | – | studio · HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha) |  |
 | J0858 | mini | open | – | – | thumb · HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) |  |
