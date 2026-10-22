@@ -16,11 +16,11 @@ EDIT = Path(__file__).resolve().parent
 V01 = EDIT / "PLATE_BOARDS_v01.json"
 POOL_V01 = EDIT / "SOURCE_POOL_v01.json"
 
-# Fresh readings this run (ai_spend_daily.py --dry-run --pools flow,vertex), 15 Oct 2026.
-FLOW_LEFT = 23740
-FLOW_READ_AT = "2026-10-15T22:38:00Z"
+# Fresh readings this run (ai_spend_daily.py --dry-run --pools flow,vertex), 22 Oct 2026 (J0850).
+FLOW_LEFT = 20950
+FLOW_READ_AT = "2026-10-22T16:56:01Z"
 VERTEX_PROMO = 71.02
-VERTEX_READ_AT = "2026-10-15T22:38:00Z"
+VERTEX_READ_AT = "2026-10-22T16:56:01Z"
 VERTEX_MARGIN = 1.0
 GBP_PER_USD = 0.8
 
@@ -38,15 +38,19 @@ OMNI_GBP = round(OMNI_USD * GBP_PER_USD, 2)  # one take
 Q_EXP = 259  # 100 * 2.59
 F_EXP = 20  # round(10 * 1.96) — v01's 279 = 259 + 20
 
-# Expected Flow already reserved for earlier films, charged against today's
-# balance. J0337 (Chief, 15 Oct): 006 is 0 (picture from existing KEEPs,
-# J0331 full_join_v02; the old 3,182 is stale). 009 is tranche 1 only
-# (boards v04 on HOS main 8f1068d). Tranche 2 is not in the sum.
+# Expected Flow still reserved for HOS films in this cycle, charged against
+# today's live balance (J0850, 22 Oct 2026):
+# - HOS 006: 0 (picture from existing KEEPs, full_join_v03_teach on main 130ade6f)
+# - HOS 007: 0 remaining (all 73/73 Flow rows of boards v02 minted & KEEP in J0352
+#   on 21 Oct for 2,890 cr actual vs 7,553/7,196 reserve, already drawn from the
+#   live 20,950 balance; full_join_v01 assembled in J0827 786e631e)
+# - HOS 008: 5,605 (PRICE_REVIEW_v03: 15 Quality + 86 Fast = 2,360 try-1 / 5,605 expected)
+# - HOS 009: 7,354 (tranche 1 only, boards v04/v05: 26 Quality + 31 Fast = 2,910 try-1 / 7,354 expected)
 HOS_EXPECTED = {
-    "006": 0,  # picture from existing KEEPs, J0331; not a Flow mint
-    "007": 7553,  # stays for now; J0322 boards v02 may change it
-    "008": 5605,  # PRICE_REVIEW_v03
-    "009": 7354,  # tranche 1 only, boards v04 on HOS main 8f1068d
+    "006": 0,  # picture from existing KEEPs; not a Flow mint
+    "007": 0,  # all 73/73 Flow rows minted & KEEP (J0352, 2,890 cr already drawn)
+    "008": 5605,  # PRICE_REVIEW_v03 (15 Quality + 86 Fast)
+    "009": 7354,  # tranche 1 only, boards v04/v05 on HOS main
 }
 HOS_009_TRANCHE2 = 5180  # ~12 Nov AI Ultra renewal; not charged today
 
@@ -447,25 +451,29 @@ def main() -> None:
     hos_sum = sum(HOS_EXPECTED.values())
     after_hos = FLOW_LEFT - hos_sum
     after_028 = after_hos - flow_exp
+    after_028_first_try1 = FLOW_LEFT - flow_try
+    after_028_first_exp = FLOW_LEFT - flow_exp
     headroom_ok = after_028 >= 3000
-    misses_by = 3000 - after_028
-    if (hos_sum, after_hos, after_028, flow_exp, misses_by) != (20512, 3228, 2949, 279, 51):
+    misses_by = max(0, 3000 - after_028)
+    surplus_over_3000 = after_028 - 3000
+    if (hos_sum, after_hos, after_028, flow_exp, misses_by, surplus_over_3000) != (12959, 7991, 7712, 279, 0, 4712):
         raise SystemExit(
             f"headroom drift: sum={hos_sum} after_hos={after_hos} "
-            f"after_028={after_028} flow_exp={flow_exp} misses_by={misses_by}"
+            f"after_028={after_028} flow_exp={flow_exp} misses_by={misses_by} surplus={surplus_over_3000}"
         )
 
     def nroute(name: str) -> int:
         return sum(1 for p in plates if p["route"] == name)
 
     boards["version"] = "v02"
-    boards["job"] = "J0321"
+    boards["job"] = "J0850"
     boards["mint"] = False
     boards["status"] = (
-        "Chief PASS J0321; J0337 headroom corrected; no mint. "
-        "028's two Veo plates mint only when a live Flow read leaves >=3000 after them."
+        "Chief PASS J0321; J0337 headroom corrected; J0850 live Flow re-price after HOS 007 (20,950 cr left, "
+        "7,712 cr after HOS 008 + 009 tranche 1 + 028's 279 cr, clearing the 3,000 gate by +4,712 cr); "
+        "no mint before Chief J0850 price PASS."
     )
-    boards["built"] = "2026-10-15"
+    boards["built"] = "2026-10-22"
     boards["readings"] = {
         "flow_credits_left": FLOW_LEFT,
         "flow_read_at": FLOW_READ_AT,
@@ -475,9 +483,9 @@ def main() -> None:
         "vertex_usable_gbp": usable,
         "vertex_free_trial_gbp": 0.0,
         "note": (
-            "Flow account picker, benoats@googlemail.com, CDP :9222. "
+            "Flow account picker, benoats@googlemail.com, CDP :9222 (after HOS 007 J0352 minted 73/73 rows for 2,890 cr). "
             "Vertex: Google Developer Program premium benefit CREDIT_TYPE_MONTHLY £71.02 Available; "
-            "Free Trial £0.00 Used. No spend logged after either reading."
+            "Free Trial £0.00 Used. No spend in J0850."
         ),
     }
     boards["rates"]["omni"] = {
@@ -511,8 +519,15 @@ def main() -> None:
         "flow_headroom_after_006_009": headroom_ok,
         "vertex_omni": omni_fits,
         "flow_left": FLOW_LEFT,
+        "flow_after_028_only_try1": after_028_first_try1,
+        "flow_after_028_only_expected": after_028_first_exp,
         "hos_006_009_expected": HOS_EXPECTED,
         "hos_006_009_sum": hos_sum,
+        "hos_007_minted_actual": 2890,
+        "hos_007_note": (
+            "All 73/73 Flow rows of HOS 007 boards v02 minted & Chief KEEP in J0352 (21 Oct, 2,890 cr actual vs 7,553/7,196 reserve, "
+            "already drawn from the live 20,950 balance); full_join_v01 assembled in J0827."
+        ),
         "hos_009_tranche": 1,
         "hos_009_tranche_2_expected_not_in_sum": HOS_009_TRANCHE2,
         "hos_009_tranche_2_note": (
@@ -522,17 +537,18 @@ def main() -> None:
         "after_028": after_028,
         "headroom_required": 3000,
         "misses_3000_gate_by": misses_by,
+        "surplus_over_3000_gate": surplus_over_3000,
         "mint_order": [
-            "HOS 006 (0)",
-            "HOS 007",
-            "HOS 008",
-            "HOS 009 tranche 1",
-            "OWB 028 two Veo plates (279)",
+            "HOS 006 (0, done)",
+            "HOS 007 (0 remaining; 2,890 cr minted & KEEP in J0352)",
+            "HOS 008 (5,605 expected)",
+            "HOS 009 tranche 1 (7,354 expected)",
+            "OWB 028 two Veo plates (279 expected / 110 try-1)",
         ],
         "mint_rule": (
-            "028 mints only when a live Flow read leaves >=3000 after it; "
-            "otherwise it rides with 009 tranche 2 after the renewal. "
-            "Omni x2 is priced and fits but is not authorised until Chief queues the 028 picture-mint job."
+            "028 mints only when a live Flow read leaves >=3000 after it (now 7,712 left after HOS 008 + 009 tranche 1 + 028's 279, "
+            "or 20,671 left if 028 mints first, leaving 7,712 after HOS 008 + 009 tranche 1). "
+            "Parked for Chief's J0850 price pass before any mint."
         ),
     }
     boards["harvest_stretches"] = {k: v for k, v in stretches.items()}
@@ -658,18 +674,36 @@ def main() -> None:
     (EDIT / "PLATE_BOARDS_v02.json").write_text(json.dumps(boards, indent=2) + "\n")
     (EDIT / "SOURCE_POOL_v02.json").write_text(json.dumps(pool, indent=2) + "\n")
 
-    review = f"""# 028 price review v02
+    review = f"""# 028 price review v02 (updated for J0850 live Flow read, 22 Oct 2026)
 
-Cursor, 15 Oct 2026, J0321. Applies Chief's price PASS with conditions on PR #218 (comment 6199532687). J0337 corrects the Flow headroom table before merge (Chief, 15 Oct). **No mint. No spend.** Omni x2 is priced and fits, and is not authorised until Chief queues the 028 picture-mint job.
+Gemini (`gemini`), 22 Oct 2026, J0850 (updating Cursor's 15 Oct J0321 / J0337 `PRICE_REVIEW_v02.md` with today's live Flow reading after HOS 007's J0352 mint). **No mint. No spend.** Parked for Chief (`parked for Chief: 028 Flow price pass`).
 
-v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`.
+v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`. Also written: `FLOW_PRICE_TABLE_J0850.md`.
 
-## Readings this run
+## Readings this run (22 Oct 2026)
 
-- Flow: **{FLOW_LEFT}** credits at {FLOW_READ_AT}. Account picker, the Ultra account, CDP :9222. No spend logged after it.
-- Vertex promo: **£{VERTEX_PROMO:.2f}** Available (Developer Program monthly). Free Trial **£0.00 Used**. Usable **£{usable:.2f}** after the £1 margin. No spend logged after it.
+- Flow: **{FLOW_LEFT}** credits at `{FLOW_READ_AT}` (`ai_spend_daily.py --dry-run --pools flow,vertex`, account picker, `benoats@googlemail.com`, CDP `:9222`). Down `2,790` net from the 15 Oct reading (`23,740`) after HOS 007 minted all `73/73` Flow rows in `J0352` (`46d59506`) for `2,890` credits (`24 Quality × 100 + 49 Fast × 10 = 2,890 cr`, 100% try-1 KEEP, plus two `+50` Flow allotment adjustments).
+- Vertex promo: **£{VERTEX_PROMO:.2f}** Available at `{VERTEX_READ_AT}` (`Google Developer Program premium benefit - CREDIT_TYPE_MONTHLY`). Free Trial **£0.00 Used**. Usable **£{usable:.2f}** after the £1.00 margin. No spend logged in this run.
 
-## What the ten rulings did
+## Remaining 028 picture rows to mint (`boards v02`)
+
+All £0 rows are already built and PASS on `main`:
+- **33 harvest rows** (21 NASA/ESA/ESO files): `J0350` PASS (`14566db2`), **0 Flow credits / £0.00**.
+- **20 code graphics + subscribe card** (`19` code beats + `1` card in `code_graphics_v02`, plus `teaching_overlays_v01_pack`): `J0338` + `J0382` `20/20` PASS, **0 Flow credits / £0.00**.
+
+Only **4 plates** remain on `PLATE_BOARDS_v02.json` (**2 Flow Veo** + **2 Vertex Omni**):
+
+| Plate ID | Row | Ch | Span (`t_in–t_out`) | `use_s` | Route / Model | Clip s | Flow Try-1 | Flow Expected | Vertex Try-1 | Vertex Expected / Hold | Status |
+|---|---:|---:|---|---:|---|---:|---:|---:|---:|---:|---|
+| `r11_night_road` | 11 | 1 | `95.08–109.20 s` | `14.12 s` | **Flow · Veo 3.1 Quality** (`night_road_veo_v01`) | 8 s | **100 cr** | **259 cr** | £0.00 *(fallback £1.28)* | £0.00 *(fallback £3.32)* | Unminted (`generation_authorized: false`) |
+| `r17_pitch` | 17 | 2 | `191.00–194.82 s` | `3.82 s` | **Flow · Veo 3.1 Fast** (`football_pitch_veo_v01`) | 8 s | **10 cr** | **20 cr** | £0.00 *(fallback £0.64)* | £0.00 *(fallback £1.25)* | Unminted (`generation_authorized: false`) |
+| `r08_orbit_binoculars` | 8 | 1 | `58.64–66.52 s` | `7.88 s` | **Vertex `global` · `gemini-omni-flash-preview`** (`orbit_binoculars_omni_v01`) | 8 s | **0 cr** | **0 cr** | **£0.65** | **£0.65** *(+£0.65 retry hold)* | Unminted (`generation_authorized: false`) |
+| `r23_orbit_ice` | 23 | 3 | `241.88–249.84 s` | `7.96 s` | **Vertex `global` · `gemini-omni-flash-preview`** (`orbit_ice_omni_v01`) | 8 s | **0 cr** | **0 cr** | **£0.65** | **£0.65** *(+£0.65 retry hold)* | Unminted (`generation_authorized: false`) |
+| **Remaining Total (4 rows)** | | | | `33.78 s` | **1 Quality + 1 Fast (Flow) · 2 Omni (Vertex)** | | **110 cr** | **279 cr** | **£1.30** | **£1.30** *(£2.60 w/ retry)* | **Parked for Chief** |
+
+*Note on `r11_night_road` (`14.12 s` span across 3 cuts in `SHOT_LIST_v01.md`):* `PLATE_BOARDS_v02.json` prices one 8 s Quality take (`100` try-1 / `259` expected). If Chief wants a second 8 s continuation clip (`r11_night_road_c1`) so the 14.12 s span needs no slow-stretch or cutaway, adding `+1 Fast` is `+10` try-1 / `+20` expected (`120` try-1 / `299` expected total), or `+1 Quality` is `+100` try-1 / `+259` expected (`210` try-1 / `538` expected total). All three options easily clear the `3,000` Flow floor by more than `+4,450` credits.
+
+## What the ten J0310/J0321 rulings did
 
 1. Night road stays **Quality**. Dusk pitch stays **Fast**. Both planned on Flow. Neither is authorised to mint.
 2. Both Orbit Omni takes are priced at the Gemini Omni Flash list price, 720p with audio, 8 s: **£{OMNI_GBP:.2f}** a take, **£{omni_gbp:.2f}** for the pair. Late-billing room held equal to that pair (£{late_room:.2f}), on top of the £1 margin. £{omni_gbp + late_room:.2f} fits inside £{usable:.2f} usable. They stay Omni. No KEEP-pose fallback.
@@ -681,52 +715,55 @@ v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`.
 8. WISE all-sky (PIA15481 small) has no axis labels and no readable text. Kept. Gaia motion, the Gliese encounter and the EDR3 sky are flagged for picture_qa as diagrams on purpose. Neptune's corner credit says green and orange filters. Juno's says colour-enhanced.
 9. Code-graphic stacks are broken by merging each named stack into one beat. A second NGC 3603 crop sits between the row 4 beat and the row 5 beat. A second ISS sunrise crop sits between the path beat and the scale card, which was the other back-to-back pair (row 16 into row 17). A rebuild check refuses two code routes in a row.
 
-## Flow headroom
+## Flow balance after 028 & headroom for HOS
 
-Expected credits charged against today's Flow balance (Chief, 15 Oct, J0337). The old 3,182 for HOS 006 is stale: picture comes from existing KEEPs (J0331 full_join_v02), so 006 is 0. HOS 009 is tranche 1 only.
+On 15 Oct (`J0337`), HOS 007 was reserved at `7,553` expected credits against `23,740` left, leaving `2,949` after 028 (`51` cr short of the `3,000` gate).
+On 21 Oct (`J0352`, HOS `#351`), HOS 007 minted all `73/73` Flow rows on take 1 for **`2,890` actual credits** (all Chief KEEP; `full_join_v01` assembled in `J0827` with 0 new mints), freeing **`4,663` credits** vs the `7,553` reserve (plus `+100` cr net Flow adjustment).
 
-| Film | Expected | Where it comes from |
-|---|---:|---|
-| HOS 006 | {HOS_EXPECTED['006']} | Picture from existing KEEPs, J0331 full_join_v02. Not a Flow mint. |
-| HOS 007 | {HOS_EXPECTED['007']} | Stays for now. J0322 boards v02 may change it. |
-| HOS 008 | {HOS_EXPECTED['008']} | PRICE_REVIEW_v03 |
-| HOS 009 | {HOS_EXPECTED['009']} | Tranche 1 only. Boards v04 on HOS main 8f1068d. |
-| **Sum** | **{hos_sum}** | |
-| OWB 028 | {flow_exp} | one Quality ({Q_EXP}) and one Fast ({F_EXP}) |
+| Pool / Film | Try-1 Credits | Expected Credits | Balance After (Try-1) | Balance After (Expected) | Notes |
+|---|---:|---:|---:|---:|---|
+| **Live Flow balance (22 Oct 16:56Z)** | — | — | **20,950** | **20,950** | `benoats@googlemail.com` (CDP `:9222`) |
+| **HOS 006** | 0 | {HOS_EXPECTED['006']} | 20,950 | 20,950 | Done (`full_join_v03_teach` on HOS `main`, 0 Flow) |
+| **HOS 007** | 0 | {HOS_EXPECTED['007']} | 20,950 | 20,950 | Done (`73/73` rows minted & KEEP in `J0352` for `2,890` cr, already deducted from `20,950`; `full_join_v01` in `J0827`) |
+| **OWB 028 (if minted next)** | **110** | **{flow_exp}** | **20,840** | **20,671** | 1 Quality (`{Q_EXP}` exp) + 1 Fast (`{F_EXP}` exp) |
+| **HOS 008** (`PRICE_REVIEW_v03`) | 2,360 | {HOS_EXPECTED['008']} | 18,480 | 15,066 | 15 Quality + 86 Fast (11 £0 code graphics done in `J0329`/`J0383`) |
+| **HOS 009 tranche 1** (`PRICE_REVIEW_v04`/`v05`) | 2,910 | {HOS_EXPECTED['009']} | **15,570** | **{after_028}** | 26 Quality + 31 Fast (12 £0 code graphics done in `J0342`/`J0383`) |
+| **Remaining HOS sum (`006–009 T1`)** | **5,270** | **{hos_sum}** | 15,680 *(before 028)* | **{after_hos}** *(before 028)* | Leaves **{after_hos} cr** before 028 |
+| **After HOS (`006–009 T1`) + OWB 028 (`279`)** | **5,380** | **{hos_sum + flow_exp}** | **15,570** | **{after_028}** | **PASSES the 3,000 gate by +{surplus_over_3000} cr** (`{after_028} >= 3,000`) |
 
-Note, not in the sum: HOS 009 tranche 2 is {HOS_009_TRANCHE2} expected. It waits for the ~12 Nov AI Ultra renewal and is not charged against today's balance.
+*Deferred to the ~12 Nov AI Ultra renewal (not charged against today's `20,950` pool):*
+- **HOS 009 tranche 2:** `{HOS_009_TRANCHE2}` expected (`2,000` try-1, 20 Quality rows).
+- **HOS 010 (`PRICE_REVIEW_v03`):** `12,393` expected (`4,810` try-1, 47 Quality + 11 Fast rows).
+- **HOS 007–010 Shorts (`SHORTS_PRICE_REVIEW_v01`) & OWB 029 (`PRICE_REVIEW_v03`):** `0` Flow credits.
 
-Flow left {FLOW_LEFT}. After 006/007/008/009 tranche 1: **{after_hos}**. After 028's {flow_exp}: **{after_028}**.
+## Vertex (`£71.02` Available, `£70.02` Usable)
 
-The gate is 3,000 left after those spends. **It misses by {misses_by} today** ({after_028} left). The two Veo plates stay planned on Flow. They are not moved to Vertex, and they are not authorised to mint.
-
-Mint order (Chief ruling): 006 (0) > 007 > 008 > 009 tranche 1 > 028's two Veo plates ({flow_exp}). 028 mints only when a live Flow read leaves 3,000 or more after it. Otherwise it rides with 009 tranche 2 after the renewal.
-
-## Vertex
-
-| | £ |
+| Item | £ |
 |---|---:|
-| Promo available | {VERTEX_PROMO:.2f} |
+| Promo available (`CREDIT_TYPE_MONTHLY`) | {VERTEX_PROMO:.2f} |
 | Margin | {VERTEX_MARGIN:.2f} |
 | Usable | {usable:.2f} |
-| Omni ×2, one take each | {omni_gbp:.2f} |
-| Late-billing room (one retry of both) | {late_room:.2f} |
-| Held | {omni_gbp + late_room + VERTEX_MARGIN:.2f} |
+| 028 Omni ×2 (`r08_orbit_binoculars`, `r23_orbit_ice`), one take each | {omni_gbp:.2f} |
+| Late-billing room (one retry of both takes) | {late_room:.2f} |
+| Total held for 028 (incl. £1.00 margin) | {omni_gbp + late_room + VERTEX_MARGIN:.2f} |
+| **Usable promo remaining after 028 Omni hold** | **{usable - (omni_gbp + late_room):.2f}** |
 
-Omni **fits**. Veo stays on Flow. The two Flow rows still carry v01's Vertex fallback (£1.92 try-1, £4.57 expected). That is not the route, and it is not in the hold above. Nothing is authorised to generate.
+Omni **fits** (`£1.30` expected, `£2.60` with retry reserve vs `£70.02` usable). Veo stays on Flow (`279` expected credits). Nothing is authorised to generate until Chief passes `J0850`.
 
-## Totals
+## Full-Film Totals (`PLATE_BOARDS_v02.json`)
 
-| plates | Quality | Fast | Omni | code | harvest | Flow try-1 | Flow expected | Omni £ |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| {len(plates)} | {boards['totals']['quality']} | {boards['totals']['fast']} | {boards['totals']['omni']} | {boards['totals']['code']} | {boards['totals']['harvest_ok']} | {flow_try} | {flow_exp} | {omni_gbp:.2f} |
+| plates | Quality (Flow) | Fast (Flow) | Omni (Vertex) | code (£0) | card (£0) | harvest (£0) | Flow try-1 | Flow expected | Omni £ |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| {len(plates)} | {boards['totals']['quality']} | {boards['totals']['fast']} | {boards['totals']['omni']} | {boards['totals']['code']} | {boards['totals']['card']} | {boards['totals']['harvest_ok']} | {flow_try} | {flow_exp} | {omni_gbp:.2f} |
 
-Holds, gaps and blocked rows from v01 are cleared or replaced. `generation_authorized` is false on every plate.
+`generation_authorized` is `false` on every plate. Parked for Chief (`parked for Chief: 028 Flow price pass`).
 """
     (EDIT / "PRICE_REVIEW_v02.md").write_text(review)
+    (EDIT / "FLOW_PRICE_TABLE_J0850.md").write_text(review)
     print(
         f"plates={len(plates)} flow_exp={flow_exp} omni=£{omni_gbp:.2f} "
-        f"headroom_ok={headroom_ok} after_028={after_028} omni_fits={omni_fits}"
+        f"headroom_ok={headroom_ok} after_hos={after_hos} after_028={after_028} "
+        f"surplus_over_3000={surplus_over_3000} omni_fits={omni_fits}"
     )
 
 

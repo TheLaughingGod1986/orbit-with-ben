@@ -2,21 +2,21 @@
   "film": "028",
   "title": "A Star Is Coming Into Our Solar System (Gliese 710)",
   "version": "v02",
-  "job": "J0321",
+  "job": "J0850",
   "mint": false,
-  "status": "Chief PASS J0321; J0337 headroom corrected; no mint. 028's two Veo plates mint only when a live Flow read leaves >=3000 after them.",
-  "built": "2026-10-15",
+  "status": "Chief PASS J0321; J0337 headroom corrected; J0850 live Flow re-price after HOS 007 (20,950 cr left, 7,712 cr after HOS 008 + 009 tranche 1 + 028's 279 cr, clearing the 3,000 gate by +4,712 cr); no mint before Chief J0850 price PASS.",
+  "built": "2026-10-22",
   "vo": "02_Voiceover/star_coming_vo_v01.wav",
   "shot_list": "07_Edit-Project/SHOT_LIST_v01.md",
   "readings": {
-    "flow_credits_left": 23740,
-    "flow_read_at": "2026-10-15T22:38:00Z",
+    "flow_credits_left": 20950,
+    "flow_read_at": "2026-10-22T16:56:01Z",
     "vertex_promo_gbp": 71.02,
-    "vertex_read_at": "2026-10-15T22:38:00Z",
+    "vertex_read_at": "2026-10-22T16:56:01Z",
     "vertex_margin_gbp": 1.0,
     "vertex_usable_gbp": 70.02,
     "vertex_free_trial_gbp": 0.0,
-    "note": "Flow account picker, benoats@googlemail.com, CDP :9222. Vertex: Google Developer Program premium benefit CREDIT_TYPE_MONTHLY \u00a371.02 Available; Free Trial \u00a30.00 Used. No spend logged after either reading."
+    "note": "Flow account picker, benoats@googlemail.com, CDP :9222 (after HOS 007 J0352 minted 73/73 rows for 2,890 cr). Vertex: Google Developer Program premium benefit CREDIT_TYPE_MONTHLY \u00a371.02 Available; Free Trial \u00a30.00 Used. No spend in J0850."
   },
   "rates": {
     "flow_credits_per_take": {
@@ -62,31 +62,36 @@
   },
   "fits_now": {
     "flow_two_veo_alone": true,
-    "flow_headroom_after_006_009": false,
+    "flow_headroom_after_006_009": true,
     "vertex_omni": true,
-    "flow_left": 23740,
+    "flow_left": 20950,
+    "flow_after_028_only_try1": 20840,
+    "flow_after_028_only_expected": 20671,
     "hos_006_009_expected": {
       "006": 0,
-      "007": 7553,
+      "007": 0,
       "008": 5605,
       "009": 7354
     },
-    "hos_006_009_sum": 20512,
+    "hos_006_009_sum": 12959,
+    "hos_007_minted_actual": 2890,
+    "hos_007_note": "All 73/73 Flow rows of HOS 007 boards v02 minted & Chief KEEP in J0352 (21 Oct, 2,890 cr actual vs 7,553/7,196 reserve, already drawn from the live 20,950 balance); full_join_v01 assembled in J0827.",
     "hos_009_tranche": 1,
     "hos_009_tranche_2_expected_not_in_sum": 5180,
     "hos_009_tranche_2_note": "Waits for the ~12 Nov AI Ultra renewal. Not charged against today's balance.",
-    "after_hos_before_028": 3228,
-    "after_028": 2949,
+    "after_hos_before_028": 7991,
+    "after_028": 7712,
     "headroom_required": 3000,
-    "misses_3000_gate_by": 51,
+    "misses_3000_gate_by": 0,
+    "surplus_over_3000_gate": 4712,
     "mint_order": [
-      "HOS 006 (0)",
-      "HOS 007",
-      "HOS 008",
-      "HOS 009 tranche 1",
-      "OWB 028 two Veo plates (279)"
+      "HOS 006 (0, done)",
+      "HOS 007 (0 remaining; 2,890 cr minted & KEEP in J0352)",
+      "HOS 008 (5,605 expected)",
+      "HOS 009 tranche 1 (7,354 expected)",
+      "OWB 028 two Veo plates (279 expected / 110 try-1)"
     ],
-    "mint_rule": "028 mints only when a live Flow read leaves >=3000 after it; otherwise it rides with 009 tranche 2 after the renewal. Omni x2 is priced and fits but is not authorised until Chief queues the 028 picture-mint job."
+    "mint_rule": "028 mints only when a live Flow read leaves >=3000 after it (now 7,712 left after HOS 008 + 009 tranche 1 + 028's 279, or 20,671 left if 028 mints first, leaving 7,712 after HOS 008 + 009 tranche 1). Parked for Chief's J0850 price pass before any mint."
   },
   "harvest_stretches": {
     "gaia_motion_1_6my": [
