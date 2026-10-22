@@ -10,7 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0123 | cloud | blocked | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | blocked | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0135 | mini | blocked | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
-| J0141 | mini | claimed | cursor | 2026-10-22T13:19Z | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
+| J0141 | mini | open | – | – | 026 edit · assembly · 026 Nearest Star Shorts (Mon16/Wed18/Fri20): new titles + long-thumb end card with VO quote, assembly only; WAITS for the 026 long's upload id (Orbit Desk test, Chief OK 12 Oct) | 026_shorts_pack_v01.md (Orbit Creator, main 90f223f) |
 | J0175 | mini | blocked | – | – | assembly · HOS compilation film: assemble 45-60 min cut |  |
 | J0176 | any | open (after J0175) | – | – | chief · HOS compilation film: Chief review + schedule |  |
 | J0189 | mini | blocked | cursor | – | studio · Saturn 55AEQwvs36g: set Test & Compare A (live) vs B 'RINGS ARE FALLING' in Studio (J0152 PASS) |  |
