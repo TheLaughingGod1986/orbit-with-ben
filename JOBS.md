@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0817 | cloud | open | – | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0821 | cloud | open | – | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
 | J0830 | mini | blocked | codex | – | assembly · HOS 007 First Vaccine: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief | TheLaughingGod1986/history-of-science#354 |
-| J0835 | mini | open (after J0829) | – | – | assembly · HOS 006 Trees: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief |  |
+| J0835 | mini | claimed | codex | 2026-10-22T20:13Z | assembly · HOS 006 Trees: edit + master v01 (music bed + SFX once ElevenLabs credit is back, -14 LUFS, gates), park for Chief |  |
 | J0850 | mini | claimed | gemini | 2026-10-22T19:38Z | 028 picture · for gemini · video · 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint |  |
 | J0851 | mini | open (after J0141) | – | – | studio · 026 Nearest Star Shorts: Chief Short PASS on the J0141 pack, then Private uploads for Mon 16 / Wed 18 / Fri 20 Nov |  |
 | J0853 | mini | open (after J0843) | – | – | studio · 027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30 |  |
