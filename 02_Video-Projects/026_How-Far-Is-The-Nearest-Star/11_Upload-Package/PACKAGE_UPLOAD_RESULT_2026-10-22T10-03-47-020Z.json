@@ -1,0 +1,117 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-15T18:00:00.000Z",
+    "platformPostId": "c5AdqQsnnys",
+    "platformUrl": "https://youtu.be/c5AdqQsnnys",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-15T18:00:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"c5AdqQsnnys\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-15T18:00:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package",
+    "sha256": "6e587bb5ac33552cef55ac897d89f5516a90acef9473155254dd313fc73e09d3",
+    "title": "How Far Is the Nearest Star?",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 19,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg",
+    "scheduledAt": "2026-11-15T18:00:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "descriptionFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/Descriptions/nearest_star_long_description_v01.txt",
+      "tagsFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/Tags/nearest_star_long_tags_v01.txt",
+      "pinnedCommentFile": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/Pinned-Comments/nearest_star_long_pinned_v01.txt",
+      "video": "/Volumes/data/mac-mini-archive/youtube-staging/026/026_NearestStar_v06_cfr18.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg",
+      "trailer": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/11_Upload-Package/Trailer/nearest_star_long_trailer_v01_34s.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": "{\"error\":{\"code\":403,\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"errors\":[{\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"domain\":\"youtube.commentThread\",\"reason\":\"forbidden\",\"location\":\"body\",\"locationType\":\"other\"}]}}",
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-11-15T18:00:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "c5AdqQsnnys",
+    "studioEditUrl": "https://studio.youtube.com/video/c5AdqQsnnys/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/c5AdqQsnnys/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (0) · thumbs (3). Not available via Data API.",
+        "studioUrlHint": "https://studio.youtube.com/video/c5AdqQsnnys/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)",
+        "studioUrlHint": "https://studio.youtube.com/video/c5AdqQsnnys/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/c5AdqQsnnys/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/c5AdqQsnnys/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/c5AdqQsnnys/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (c5AdqQsnnys). 4 required Studio finish step(s) remain."
+  }
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""en-GB captions for the Nearest Star 026 long, timed to the v05d picture lock.
+"""en-GB captions for the Nearest Star 026 long, timed to the v06 picture lock.
 
 The locked script's wording (01_Script/nearest_star_script_master_v01.md) is aligned
 to the locked long VO (02_Voiceover/words.json, same 97,688 bytes as
@@ -15,7 +15,7 @@ HERE = Path(__file__).resolve().parent
 PROJ = HERE.parent
 SCRIPT = PROJ / "01_Script" / "nearest_star_script_master_v01.md"
 WORDS = PROJ / "02_Voiceover" / "words.json"
-OUT = HERE / "Captions" / "nearest_star_long_v05d_en-GB.srt"
+OUT = HERE / "Captions" / "nearest_star_long_v06_en-GB.srt"
 MAX = 84  # two lines of 42
 
 
