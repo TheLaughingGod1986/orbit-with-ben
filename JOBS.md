@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0856 | mini | open (after J0830) | – | – | assembly · HOS 007 master v02: sound effects on every card/stamp + prove the music bed is heard (bed level, tempo), update HOS PR #355, park for Chief |  |
 | J0857 | mini | open (after J0835) | – | – | studio · HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha) |  |
 | J0858 | mini | open | – | – | thumb · HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) |  |
-| J0859 | mini | claimed | gemini | 2026-10-22T23:59Z | 028 edit · assembly · 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief |  |
+| J0859 | mini | blocked | gemini | – | 028 edit · assembly · 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief |  |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, A6TW_6CXhcs) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
