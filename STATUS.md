@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 028 | edit | gemini | 2026-10-22T19:11Z | 2026-10-22T21:10Z | J0855 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief |
+| 028 | edit | gemini | 2026-10-22T19:11Z | 2026-10-22T20:11Z | J0855: r17_pitch retake + part roughs v01 |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
