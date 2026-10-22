@@ -1,0 +1,44 @@
+{
+  "film": "029_Is-Betelgeuse-About-To-Explode",
+  "job": "J0823",
+  "master": "029_Betelgeuse_full_rough_v01.mp4",
+  "sha256": "b406543e6e5bdde2be93641454e46ea9df84050dd8366890f169e147c676e0ce",
+  "duration_s": 517.095,
+  "integrated_lufs": -14.0,
+  "true_peak_dbtp": -1.2,
+  "cuts": 63,
+  "orbit_beats": [
+    {
+      "plate_id": "r12_orbit_thumb",
+      "film_in": 123.16,
+      "film_out": 130.42,
+      "source": "sun_orbit_row67_omni_v01.mp4",
+      "offset": 1.8,
+      "upscale": 1.5
+    },
+    {
+      "plate_id": "r26_orbit_flare",
+      "film_in": 282.16,
+      "film_out": 286.08,
+      "source": "orbit_thumb_omni_v01.mp4",
+      "offset": 1.5,
+      "upscale": 1.5
+    }
+  ],
+  "gates": {
+    "clip_check": "PASS (63 rows, 0 words clipped)",
+    "picture_qa": "PASS (0 fail, 12 warn)",
+    "polish_gate": "PASS (0 fail, 4 warn)",
+    "music_gate": "PASS (betelgeuse_score_bed_v01.mp3, 517.3 s, 75.0 BPM)",
+    "sfx_level": "PASS (vo -14.9 LUFS, sfx -31.8 LUFS, 38 hits, 0 fails)",
+    "teaching_gate": "PASS (6/6 chapters PASS on NUMBER and WORDS, 22 pills)",
+    "back_to_back_code_graphics": 0,
+    "full_frame_card_0_30s": 0
+  },
+  "copies": {
+    "tmp": "/private/tmp/029_Betelgeuse_full_rough_v01.mp4",
+    "owb_uat": "/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/029_Betelgeuse_full_rough_v01.mp4",
+    "nas_staging": "/Volumes/data/mac-mini-archive/youtube-staging/029/029_Betelgeuse_full_rough_v01.mp4"
+  },
+  "spend_gbp": 0.0
+}
