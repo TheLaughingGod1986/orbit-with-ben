@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-23T08:02Z",
-      "eta": "2026-10-23T12:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -13049,6 +13049,11 @@
           "at": "2026-10-23T08:22Z",
           "by": "gemini",
           "what": "step 5 of 6 done: HOS #300 dc845aba: measured and wired mid-film end-card trims for 001 (359.35s), 002 (530.15s), 003 (406.20s); detached tmux J0175-v02-0921 running prep+assemble+gates for v02"
+        },
+        {
+          "at": "2026-10-23T08:22Z",
+          "by": "gemini",
+          "what": "released: Step 5/6 (v02 Chief FIX); HOS PR #300 dc845aba. Measured and wired mid-film end-card trims: 001 keep_to=359.35s (before end_card_dissolve_start 359.405s, silence 359.03-364.54s), 002 keep_to=530.15s (pause 529.53-530.35s after 'empty in?', drops spoken stage direction + hand-off + brown end card), 003 keep_to=406.20s (pause 405.48-406.86s after 'cardboard lesson.', drops clipped fragment + 18s frozen Studio end-screen hold). Detached tmux J0175-v02-0921 running (~/_desk/logs/J0175-v02-0921.log, exit ~/_desk/logs/J0175-v02-0921.done) to re-prep 001/002/003, assemble hos_compilation_full_v02.mp4 (~49:18), and run whole-cut polish_gate, picture_qa, and sfx_kit level. Next run: check J0175-v02-0921.done, commit v02 gate reports to #300, and park for Chief."
         }
       ],
       "kind": "assembly",
