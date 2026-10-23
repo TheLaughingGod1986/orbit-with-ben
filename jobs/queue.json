@@ -12322,13 +12322,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-23T04:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: closing polish FAIL at 32.84s (2.635px jitter); PNG overlay is classified as still while composite atom moves. HOS contract requires approved separate PR for check correction. Card also needs contrast/layout revision. Evidence on HOS PR #300; progress 4/6.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -12729,6 +12729,11 @@
           "at": "2026-10-23T04:07Z",
           "by": "codex",
           "what": "blocked: parked for Chief: closing polish FAIL at 32.84s (2.635px jitter); PNG overlay is classified as still while composite atom moves. HOS contract requires approved separate PR for check correction. Card also needs contrast/layout revision. Evidence on HOS PR #300; progress 4/6."
+        },
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "reopened: Chief FIX: don't change the gate. Redo the closing card: higher contrast and a cleaner layout, and render it so the composite under it is either still or moves with the card as one layer (the 2.6 px jitter at 32.84 s is a still PNG over a moving atom). Re-run polish_gate on the closing piece, then assemble the cut, gates, park for Chief (J0176)."
         }
       ],
       "kind": "assembly",
@@ -12740,14 +12745,7 @@
         "HOS:004",
         "HOS:005",
         "HOS:006"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 6,
-        "at": "2026-10-23T04:07Z",
-        "by": "codex",
-        "note": "Closing FAIL diagnosed: overlay classified as still over moving atom; contrast issue recorded, Chief gate decision requi"
-      }
+      ]
     },
     {
       "id": "J0176",
