@@ -41,9 +41,11 @@ OV_JSON = OV_PACK / "overlays_v01.json"
 
 SR = 48000
 LAST_WORD = 514.260
-HOLD = 2.000
-FADE = 1.000
-TOTAL = 517.260  # matches 6-part rough total (517.26s)
+HOLD = 3.000
+CLOSING_CARD_DUR = 5.000
+END_SCREEN_DUR = 20.000
+FADE = 1.500
+TOTAL = 542.260  # 514.26s VO + 3.00s breathe + 5.00s closing card + 20.00s moving-picture end screen
 BPM = 75.0  # 0.800s per beat (exact 16 x 50ms hops -> 75.0 BPM)
 
 CHAPTER_CARDS = [
@@ -52,6 +54,7 @@ CHAPTER_CARDS = [
     (170.000, "How a Giant Star Dies", "explain"),
     (248.060, "The Night It Goes", "awe"),
     (342.920, "So When?", "explain"),
+    (517.760, "Next Week: What Happens When Earth's Magnetic Field Flips?", "awe"),
 ]
 
 WHOOSH_PASSES = [
@@ -72,6 +75,7 @@ CODE_TICKS = [
     (92.920, "r09_finder Orion belt finder graphic"),
     (130.420, "r13_compare SPHERE Jan 2019 vs Dec 2019 split"),
     (236.950, "r21_bh core collapse to black hole graphic"),
+    (517.760, "r40_closing_card Next Week card tick"),
 ]
 
 GAIN_DB = {"tick": -1.5, "whoosh_card": -8.0, "whoosh_pass": -9.0, "rumble": -3.5}
@@ -223,9 +227,9 @@ def main() -> int:
     MUSIC_DIR.mkdir(parents=True, exist_ok=True)
     SFX_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 1. Prepare normalized VO stem (517.26s, -14 LUFS)
+    # 1. Prepare normalized VO stem (542.26s, -14 LUFS)
     vo_wav = WORK / "stem_vo_v01.wav"
-    af_vo = f"apad=whole_dur={TOTAL:.3f},loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=out:st={TOTAL-1.0:.3f}:d=1.0"
+    af_vo = f"apad=whole_dur={TOTAL:.3f},loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=out:st={TOTAL-FADE:.3f}:d={FADE:.3f}"
     sp.run(
         [
             "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
@@ -294,18 +298,18 @@ def main() -> int:
             {"chapter": 2, "title": "The Great Dimming", "start_s": 109.60, "end_s": 170.00, "mood": "awe"},
             {"chapter": 3, "title": "How a Giant Star Dies", "start_s": 170.00, "end_s": 248.06, "mood": "explain"},
             {"chapter": 4, "title": "The Night It Goes", "start_s": 248.06, "end_s": 342.92, "mood": "awe"},
-            {"chapter": 5, "title": "So When?", "start_s": 342.92, "end_s": 517.26, "mood": "explain_to_awe"},
+            {"chapter": 5, "title": "So When?", "start_s": 342.92, "end_s": 542.26, "mood": "explain_to_awe"},
         ],
         "integrated_lufs": round(bi_final, 2),
         "sha256": sha256_file(bed_mp3),
     }
     (MUSIC_DIR / "betelgeuse_score_bed_v01_plan.json").write_text(json.dumps(plan_data, indent=2) + "\n")
     (MUSIC_DIR / "BED_BRIEF_v01.md").write_text(
-        "# 029 Betelgeuse Score Bed v01 (`J0823`, £0)\n\n"
+        "# 029 Betelgeuse Score Bed v01 (`J0823` / `J0885`, £0)\n\n"
         f"- **File:** `05_Music/{bed_mp3.name}` (`{TOTAL:.2f} s`, `{bi_final:.1f} LUFS` integrated)\n"
         f"- **Prompt / Pace:** `{prompt_txt}`\n"
         "- **Chapters:** `awe` (0:00–0:37.7) → `explain` (0:37.7–1:49.6) → `awe` (1:49.6–2:50.0) → "
-        "`explain` (2:50.0–4:08.1) → `awe` (4:08.1–5:42.9) → `explain/awe` (5:42.9–8:37.3)\n"
+        "`explain` (2:50.0–4:08.1) → `awe` (4:08.1–5:42.9) → `explain/awe` (5:42.9–9:02.3)\n"
     )
 
     # 3. Synthesize house SFX kit and build 029 SFX stem
@@ -419,11 +423,12 @@ def main() -> int:
         f"measured_LRA={st['input_lra']}:measured_thresh={st['input_thresh']}:offset={st['target_offset']}:linear=true"
     )
     master_m4a = WORK / "audio_master_v01.m4a"
+    fade_st = TOTAL - FADE
     sp.run(
         [
             "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
             "-i", str(vo_wav), "-i", str(bed_mp3), "-i", str(sfx_out),
-            "-filter_complex", mix_fc + "," + norm + "[a]",
+            "-filter_complex", f"{mix_fc},{norm},afade=t=out:st={fade_st:.3f}:d={FADE:.3f}[a]",
             "-map", "[a]", "-ar", str(SR), "-c:a", "aac", "-b:a", "256k", str(master_m4a),
         ],
         check=True,

@@ -41,7 +41,7 @@ LABELS = {
                        (25.4, 28.6, "is iron"), (29.2, 32.4, "costs energy"),
                        (34.4, 36.5, "gravity wins"), (36.6, 39.8, "less than a second"),
                        (41.2, 44.4, "size of a city"), (46.8, 48.62, "into space")],
-    "r21_hero": [(0.0, 3.4, "a mountain")],
+    "r21_hero": [],
     "r23_paranal": [(0.1, 3.4, "imagine the night"), (4.8, 6.32, "not be light")],
     "r25_orion": [(0.3, 2.3, "the light arrives"), (2.4, 5.8, "Within days"), (6.6, 8.04, "at half phase")],
     "r27_orion": [(0.7, 4.0, "bright for weeks"), (4.2, 7.4, "over months"),
@@ -55,12 +55,63 @@ LABELS = {
     "r21_bh": [(1.9, 5.08, "black hole")],
 }
 SKY = {"r09_finder", "r23_paranal", "r25_orion", "r27_orion", "r35_song"}
+# Real J2000 coordinates (RA hours, Dec degrees) of Orion's main stars (Hipparcos / Yale Bright Star Catalog)
 ORION = {
-    "betelgeuse": (5.919, 7.41, "orange"), "bellatrix": (5.418, 6.35, "blue"),
-    "meissa": (5.585, 9.93, "white"), "alnitak": (5.679, -1.94, "belt"),
-    "alnilam": (5.604, -1.20, "belt"), "mintaka": (5.533, -0.30, "belt"),
-    "saiph": (5.796, -9.67, "white"), "rigel": (5.242, -8.20, "blue"),
+    "betelgeuse": (5.9195, 7.407, "orange"),
+    "bellatrix": (5.4189, 6.350, "blue"),
+    "meissa": (5.5856, 9.934, "white"),
+    "alnitak": (5.6793, -1.943, "belt"),
+    "alnilam": (5.6036, -1.202, "belt"),
+    "mintaka": (5.5334, -0.299, "belt"),
+    "saiph": (5.7959, -9.669, "white"),
+    "rigel": (5.2423, -8.202, "blue"),
 }
+# Real J2000 cataloged field stars in Orion, Taurus, Eridanus, Monoceros & Lepus (RA_h, Dec_deg, V_mag, kind) — no invented stars
+ORION_CATALOG_FIELD = [
+    (5.5906, -5.910, 2.77, "blue"),    # Hatysa (iota Ori, Sword)
+    (5.5881, -5.389, 3.70, "nebula"),  # Theta1 Ori / M42 Trapezium
+    (5.5885, -4.838, 4.59, "blue"),    # c Ori (42 Ori, Sword)
+    (5.6450, -2.600, 3.80, "blue"),    # sigma Ori
+    (5.4079, -2.397, 3.35, "blue"),    # eta Ori
+    (5.2931, -6.844, 3.59, "blue"),    # tau Ori
+    (5.4950, -1.092, 4.71, "orange"),  # 31 Ori
+    (5.4472, 3.096, 4.59, "blue"),     # psi Ori
+    (5.3881, 1.846, 4.95, "blue"),     # 25 Ori
+    (5.6533, 4.065, 4.57, "blue"),     # omega Ori
+    (5.5806, 9.490, 4.41, "blue"),     # phi1 Ori
+    (5.6150, 9.291, 4.09, "orange"),   # phi2 Ori
+    (4.8308, 6.961, 3.19, "white"),    # pi3 Ori (Tabit, Shield)
+    (4.8542, 5.605, 3.69, "blue"),     # pi4 Ori (Shield)
+    (4.9042, 2.441, 3.72, "blue"),     # pi5 Ori (Shield)
+    (4.8436, 8.900, 4.36, "white"),    # pi2 Ori (Shield)
+    (4.9147, 10.151, 4.65, "white"),   # pi1 Ori (Shield)
+    (4.9761, 1.714, 4.47, "orange"),   # pi6 Ori (Shield)
+    (6.0397, 9.647, 4.12, "white"),    # mu Ori (Club)
+    (5.8744, 1.856, 4.76, "orange"),   # 56 Ori
+    (5.9797, 0.553, 5.10, "white"),    # 60 Ori
+    (5.1308, -5.086, 2.79, "white"),   # Cursa (beta Eri)
+    (5.1481, -8.754, 4.27, "blue"),    # lambda Eri
+    (4.8831, -5.452, 4.39, "white"),   # omega Eri
+    (4.7583, -3.255, 4.00, "blue"),    # mu Eri
+    (4.6053, -3.352, 3.93, "blue"),    # nu Eri
+    (5.4000, -7.808, 4.14, "orange"),  # 29 Ori
+    (6.4800, -7.033, 3.76, "blue"),    # beta Mon
+    (6.3953, 4.593, 4.39, "white"),    # epsilon Mon
+    (6.5480, 7.330, 4.50, "white"),    # 13 Mon
+    (6.7500, -0.500, 4.15, "white"),   # delta Mon
+    (6.7940, 2.410, 4.48, "orange"),   # 18 Mon
+]
+# Constellation stick-figure segments (ordered for progressive draw-in)
+ORION_LINES = [
+    ("betelgeuse", "bellatrix", True),
+    ("betelgeuse", "alnitak", True),
+    ("bellatrix", "mintaka", False),
+    ("alnitak", "alnilam", False),
+    ("alnilam", "mintaka", False),
+    ("alnitak", "saiph", False),
+    ("mintaka", "rigel", False),
+    ("saiph", "rigel", False),
+]
 SHELLS = [(255, 176, 122), (255, 210, 122), (242, 226, 160), (183, 217, 138), (143, 208, 216), (176, 182, 194)]
 
 
@@ -119,9 +170,9 @@ def luma(im):
 
 
 def orion_px(ra, dec):
-    x = -(ra - 5.58) * 15 * 0.42
-    y = (dec - -0.5) * 0.42
-    return 960 + x * 120, 540 - y * 120
+    x = -(ra - 5.56) * 15 * 34.0
+    y = (dec - -1.1) * 34.0
+    return 960 + x, 505 - y
 
 
 def label_y(ident, t):
@@ -175,12 +226,23 @@ class Renderer:
             for sx, sy in srng.uniform([70, 100], [1850, 980], (n_stars, 2)):
                 ld.ellipse((sx - r_px, sy - r_px, sx + r_px, sy + r_px), fill=(215, 232, 252, alpha))
         self.bg = Image.alpha_composite(bg.convert("RGBA"), layer).convert("RGB")
+        # Clean sky background with subtle celestial RA/Dec grid and zero invented stars
+        sky_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        sld = ImageDraw.Draw(sky_layer)
+        for ra_h in (5.0, 5.25, 5.5, 5.75, 6.0, 6.25):
+            gx, _ = orion_px(ra_h, 0.0)
+            sld.line((gx, 60, gx, 1020), fill=(110, 145, 185, 34), width=1)
+        for dec_d in (-10, -5, 0, 5, 10):
+            _, gy = orion_px(5.56, dec_d)
+            sld.line((96, gy, 1824, gy), fill=(110, 145, 185, 34), width=1)
+        self.sky_bg = Image.alpha_composite(bg.convert("RGBA"), sky_layer).convert("RGB")
         self.field = rng.uniform([8, 8], [1912, 1072], (140, 2))
         self.belt = np.stack([
             rng.uniform(2.2, 3.3, 280),
             rng.uniform(0, 2 * math.pi, 280),
         ], axis=1)
         self.orion = {n: (*orion_px(ra, dec), kind) for n, (ra, dec, kind) in ORION.items()}
+        self.catalog_field = [(*orion_px(ra, dec), mag, kind) for ra, dec, mag, kind in ORION_CATALOG_FIELD]
 
     def sun_dot(self, im, xy, r=8):
         """A small yellow-white Sun. Not the SDO disc."""
@@ -205,7 +267,9 @@ class Renderer:
             self.bodies[key] = sprite
         im.paste(self.bodies[key], (int(xy[0] - r), int(xy[1] - r)), self.bodies[key])
 
-    def base(self, t, grid=False):
+    def base(self, t, grid=False, sky=False):
+        if sky:
+            return self.sky_bg.copy()
         im = self.bg.copy()
         d = ImageDraw.Draw(im)
         shift = (t * 18) % 40
@@ -226,25 +290,80 @@ class Renderer:
         else:
             text(im, "NASA · CGI" if kind == "nasa" else "CGI", (120, 990), 28, ICE, anchor="lm")
 
-    def stars(self, im, t, flare=0, fade=0, zoom=1, focus=None, hide=False):
+    def stars(self, im, t, flare=0, fade=0, zoom=1, focus=None, hide=False,
+              lines_prog=0.0, label_betelgeuse=False, label_constellation=False):
         if hide:
             return
-        d = ImageDraw.Draw(im)
-        fx, fy = focus or self.orion["betelgeuse"][:2]
+        fx, fy = focus or (960, 505)
         def Z(x, y):
             return fx + (x - fx) * zoom, fy + (y - fy) * zoom
+
+        # 1. Real catalog field stars in Orion (Hipparcos / Yale Bright Star Catalog J2000; no invented stars)
+        d = ImageDraw.Draw(im)
+        for sx, sy, mag, kind in self.catalog_field:
+            px, py = Z(sx, sy)
+            if not (20 <= px <= W - 20 and 20 <= py <= H - 20):
+                continue
+            r_s = max(2.2, 6.2 - 0.82 * mag)
+            if kind == "blue":
+                col = (195, 220, 255)
+            elif kind == "orange":
+                col = (255, 205, 165)
+            else:
+                col = (232, 240, 252)
+            d.ellipse((px - r_s, py - r_s, px + r_s, py + r_s), fill=col)
+
+        # 2. Progressive Orion constellation stick-figure lines
+        if lines_prog > 0.01:
+            line_layer = Image.new("RGBA", im.size, (0, 0, 0, 0))
+            ld = ImageDraw.Draw(line_layer)
+            n_seg = len(ORION_LINES)
+            for idx, (s1, s2, is_shoulder) in enumerate(ORION_LINES):
+                seg_u = max(0.0, min(1.0, lines_prog * n_seg - idx))
+                if seg_u <= 0.01:
+                    continue
+                x1, y1 = Z(*self.orion[s1][:2])
+                x2, y2 = Z(*self.orion[s2][:2])
+                xe = x1 + (x2 - x1) * ease(seg_u)
+                ye = y1 + (y2 - y1) * ease(seg_u)
+                if is_shoulder and fade > 0.35:
+                    # Dashed missing-shoulder line when Betelgeuse fades out
+                    dist = math.hypot(xe - x1, ye - y1)
+                    steps = max(1, int(dist // 18))
+                    for k in range(0, steps, 2):
+                        u0 = k / steps
+                        u1 = min(1.0, (k + 1.1) / steps)
+                        ld.line(
+                            (x1 + (xe - x1) * u0, y1 + (ye - y1) * u0,
+                             x1 + (xe - x1) * u1, y1 + (ye - y1) * u1),
+                            fill=(*GOLD, 210), width=4
+                        )
+                else:
+                    col_line = (*GOLD, 215) if is_shoulder else (*ICE, 205)
+                    ld.line((x1, y1, xe, ye), fill=col_line, width=4)
+            im.paste(Image.alpha_composite(im.convert("RGBA"), line_layer).convert("RGB"))
+            d = ImageDraw.Draw(im)
+
+        # 3. Orion main stars (Bellatrix, Alnitak, Alnilam, Mintaka, Saiph, Rigel, Meissa)
+        star_glow = Image.new("RGBA", im.size, (0, 0, 0, 0))
+        sgd = ImageDraw.Draw(star_glow)
         for name, (x, y, kind) in self.orion.items():
             if name == "betelgeuse":
                 continue
             x, y = Z(x, y)
-            col = (210, 226, 255) if kind == "blue" else WHITE
-            r = 9 if kind == "belt" else 6
-            d.ellipse((x - r, y - r, x + r, y + r), fill=col)
-        x, y = Z(*self.orion["betelgeuse"][:2])
+            col = (210, 228, 255) if kind == "blue" else WHITE
+            r = 9 if kind == "belt" else (10 if name == "rigel" else 7)
+            sgd.ellipse((x - r * 2.4, y - r * 2.4, x + r * 2.4, y + r * 2.4), fill=(*col, 68))
+            sgd.ellipse((x - r, y - r, x + r, y + r), fill=(*col, 255))
+        im.paste(Image.alpha_composite(im.convert("RGBA"), star_glow).convert("RGB"))
+        d = ImageDraw.Draw(im)
+
+        # 4. Betelgeuse (or missing-shoulder ring when faded)
+        bx, by = Z(*self.orion["betelgeuse"][:2])
         a = max(0, 1 - fade)
         if a > 0.03:
             col = WHITE if flare > 0.55 else ORANGE
-            radius = int(28 + 210 * flare * a)
+            radius = int(28 + 190 * flare * a)
             key = (radius, col)
             if key not in self.blobs:
                 s = radius * 2
@@ -256,15 +375,43 @@ class Renderer:
                 arr[..., 3] = (alpha * 255).astype(np.uint8)
                 self.blobs[key] = Image.fromarray(arr, "RGBA")
             glow = Image.new("RGBA", im.size)
-            glow.paste(self.blobs[key], (int(x - radius), int(y - radius)), self.blobs[key])
-            # Fade the whole glow with the shoulder.
+            glow.paste(self.blobs[key], (int(bx - radius), int(by - radius)), self.blobs[key])
             if a < 0.98:
                 band = glow.getchannel("A").point(lambda p: int(p * a))
                 glow.putalpha(band)
             im.paste(Image.alpha_composite(im.convert("RGBA"), glow).convert("RGB"))
+            d = ImageDraw.Draw(im)
+            r_core = max(6, int(10 * a))
+            d.ellipse((bx - r_core, by - r_core, bx + r_core, by + r_core), fill=WHITE if flare > 0.4 else (255, 220, 185))
 
-    def sky(self, im, t, flare=0, fade=0, zoom=1, hide=False):
-        self.stars(im, t, flare, fade, zoom, hide=hide)
+        if fade > 0.45:
+            # Dashed open circle marking where Betelgeuse (Orion's shoulder) stood
+            ring_r = 22
+            for deg in range(0, 360, 30):
+                d.arc((bx - ring_r, by - ring_r, bx + ring_r, by + ring_r), deg, deg + 16, fill=GOLD, width=3)
+
+        # 5. Star & constellation labels (clamped inside title-safe)
+        if label_betelgeuse:
+            lx = max(320, min(1600, int(bx - 38)))
+            ly = max(110, min(920, int(by - 12)))
+            d.line((bx - 18, by - 4, lx + 10, ly), fill=GOLD, width=3)
+            text(im, "Betelgeuse", (lx, ly), 44, GOLD if fade > 0.4 else ORANGE, 1.0, anchor="rm")
+        if label_constellation and lines_prog > 0.35:
+            a_lbl = ease((lines_prog - 0.35) / 0.45)
+            blx, bly = Z(*self.orion["bellatrix"][:2])
+            text(im, "Bellatrix", (min(1760, int(blx + 26)), max(110, int(bly - 8))), 40, ICE, a_lbl, anchor="lm")
+            alx, aly = Z(*self.orion["alnitak"][:2])
+            text(im, "Orion's Belt", (max(260, int(alx - 28)), int(aly + 6)), 40, ICE, a_lbl, anchor="rm")
+            rgx, rgy = Z(*self.orion["rigel"][:2])
+            text(im, "Rigel", (min(1760, int(rgx + 26)), min(835, int(rgy))), 40, ICE, a_lbl, anchor="lm")
+            spx, spy = Z(*self.orion["saiph"][:2])
+            text(im, "Saiph", (max(240, int(spx - 26)), min(835, int(spy))), 40, ICE, a_lbl, anchor="rm")
+
+    def sky(self, im, t, flare=0, fade=0, zoom=1, hide=False,
+            lines_prog=0.0, label_betelgeuse=False, label_constellation=False):
+        self.stars(im, t, flare, fade, zoom, hide=hide,
+                   lines_prog=lines_prog, label_betelgeuse=label_betelgeuse,
+                   label_constellation=label_constellation)
 
     def scale(self, im, t, s, moving=True):
         d = ImageDraw.Draw(im)
@@ -377,23 +524,117 @@ class Renderer:
         d.ellipse((cx - 8, cy - 8, cx + 8, cy + 8), fill=ORANGE)
 
     def teaspoon(self, im, t):
-        d = ImageDraw.Draw(im)
-        grow = ease(min(1, t / 1.1))
-        # Level beam. "weigh as much as a mountain" — neither pan sits lower (Chief FIX 16 Oct).
-        beam_y = 750
-        d.line((960, 800, 960, 940), fill=ICE, width=6)
-        d.line((360, beam_y, 1560, beam_y), fill=ICE, width=7)
-        # Side-view teaspoon on the left pan (Chief FIX 16 Oct, second pass).
-        # Oval bowl, handle running sideways along the beam. Not a vertical flask neck.
-        fill = (232, 226, 214)
-        handle = [(620, 628), (930, 648), (930, 688), (620, 708)]
-        d.polygon(handle, fill=fill)
-        d.line(handle + [handle[0]], fill=WHITE, width=5)
-        bowl = (390, 545, 680, 755)
-        d.ellipse(bowl, fill=fill, outline=WHITE, width=7)
-        d.arc((455, 590, 640, 720), 200, 340, fill=(150, 140, 128), width=4)
-        peak = beam_y - int(360 * max(grow, 0.2))
-        d.line([(1160, beam_y), (1360, peak), (1560, beam_y)], fill=GOLD, width=7)
+        grow = ease(min(1.0, t / 0.9))
+        # Clean dark comparison stage so background radar circles do not clutter the diagram
+        stage = Image.new("RGBA", im.size, (0, 0, 0, 0))
+        sd = ImageDraw.Draw(stage)
+        sd.rounded_rectangle((96, 68, 1824, 946), radius=28, fill=(14, 24, 42, 232), outline=(88, 122, 162, 180), width=3)
+        for gx in range(180, 1800, 120):
+            sd.line((gx, 165, gx, 925), fill=(36, 56, 84, 90), width=1)
+        for gy in range(200, 920, 120):
+            sd.line((120, gy, 1800, gy), fill=(36, 56, 84, 90), width=1)
+
+        # Top header using the VO's own words (inside title-safe: y=118)
+        beam_y = 650
+        # Balance scale pedestal + level beam ("weigh as much as a mountain")
+        sd.polygon([(910, 895), (1010, 895), (982, beam_y + 18), (938, beam_y + 18)],
+                   fill=(46, 68, 96, 255), outline=(*ICE, 230))
+        sd.rounded_rectangle((855, 885, 1065, 915), radius=10, fill=(64, 90, 124, 255), outline=(*ICE, 240), width=3)
+        # Main horizontal balance beam
+        sd.line((480, beam_y, 1440, beam_y), fill=(*ICE, 255), width=12)
+        # Vertical pan risers & pans
+        for px in (480, 1440):
+            sd.line((px, beam_y - 26, px, beam_y + 10), fill=(*ICE, 255), width=8)
+            sd.arc((px - 195, beam_y - 62, px + 195, beam_y - 10), 10, 170, fill=(*ICE, 255), width=8)
+            sd.line((px - 185, beam_y - 26, px + 185, beam_y - 26), fill=(*WHITE, 235), width=5)
+
+        # Fulcrum equality badge
+        sd.ellipse((960 - 34, beam_y - 34, 960 + 34, beam_y + 34), fill=(20, 34, 58, 255), outline=(*GOLD, 255), width=4)
+
+        # LEFT SIDE (cx = 480): Neutron star callout + 1 teaspoon with glowing dense core sample
+        ns_x, ns_y, ns_r = 330, 315, 38
+        for mr in (66, 52):
+            sd.arc((ns_x - mr, ns_y - int(mr * 0.65), ns_x + mr, ns_y + int(mr * 0.65)), 150, 390, fill=(*ICE, 150), width=2)
+            sd.arc((ns_x - mr, ns_y - int(mr * 0.65), ns_x + mr, ns_y + int(mr * 0.65)), -30, 150, fill=(*ICE, 150), width=2)
+        for gr, ga in ((64, 55), (48, 110)):
+            sd.ellipse((ns_x - gr, ns_y - gr, ns_x + gr, ns_y + gr), fill=(155, 225, 255, ga))
+        sd.ellipse((ns_x - ns_r, ns_y - ns_r, ns_x + ns_r, ns_y + ns_r), fill=(225, 248, 255, 255), outline=(*WHITE, 255), width=3)
+        # Arrow from neutron star into teaspoon bowl
+        sd.line([(ns_x + 28, ns_y + 38), (395, 470)], fill=(*GOLD, 220), width=4)
+        sd.polygon([(402, 480), (380, 468), (398, 454)], fill=(*GOLD, 240))
+
+        # Glowing neutron-star matter scoop inside the teaspoon bowl
+        scoop_x, scoop_y = 430, 526
+        pulse = int(5 * math.sin(t * 4.5))
+        for sr, sa, scol in ((76 + pulse, 55, ORANGE), (56 + pulse // 2, 120, GOLD)):
+            sd.ellipse((scoop_x - sr, scoop_y - int(sr * 0.65), scoop_x + sr, scoop_y + int(sr * 0.65)), fill=(*scol, sa))
+        # Dense glowing core mounded inside the spoon bowl (drawn before bowl front rim so it sits inside)
+        sd.ellipse((358, 496, 502, 566), fill=(255, 224, 132, 255), outline=(*WHITE, 255), width=3)
+        sd.ellipse((376, 504, 484, 544), fill=(255, 248, 210, 255))
+
+        # Silver/metallic teaspoon in profile resting on left pan
+        spoon_fill = (204, 218, 234, 255)
+        spoon_rim = (248, 252, 255, 255)
+        # Neck + handle extending smoothly from right side of bowl
+        handle_pts = [(500, 542), (706, 506), (720, 518), (712, 536), (504, 566)]
+        sd.polygon(handle_pts, fill=spoon_fill, outline=spoon_rim)
+        sd.line(handle_pts + [handle_pts[0]], fill=spoon_rim, width=3)
+        # Spoon bowl (lower hemisphere cradling the neutron star scoop)
+        sd.chord((335, 488, 525, 616), 0, 180, fill=spoon_fill, outline=spoon_rim, width=5)
+        sd.arc((335, 526, 525, 568), 0, 180, fill=spoon_rim, width=4)
+
+        # RIGHT SIDE (cx = 1440): Multi-peak snow-capped mountain on right pan
+        base_y = beam_y - 28
+        h_scale = 0.25 + 0.75 * grow
+        def my(y_target):
+            return int(base_y - (base_y - y_target) * h_scale)
+
+        # Left peak, Main central peak, Right peak
+        # Back/left peak
+        sd.polygon([(1215, base_y), (1325, my(410)), (1415, base_y)], fill=(78, 96, 122, 255), outline=(*ICE, 200))
+        sd.polygon([(1325, my(410)), (1368, my(495)), (1415, base_y), (1325, base_y)], fill=(52, 68, 92, 255))
+        # Snow cap on left peak
+        sd.polygon([(1325, my(410)), (1294, my(468)), (1318, my(460)), (1336, my(472)), (1352, my(456))], fill=(242, 248, 255, 255))
+
+        # Right shoulder peak
+        sd.polygon([(1435, base_y), (1555, my(395)), (1665, base_y)], fill=(84, 104, 132, 255), outline=(*ICE, 200))
+        sd.polygon([(1555, my(395)), (1665, base_y), (1545, base_y)], fill=(56, 72, 98, 255))
+        # Snow cap on right peak
+        sd.polygon([(1555, my(395)), (1522, my(458)), (1548, my(448)), (1568, my(462)), (1588, my(450))], fill=(242, 248, 255, 255))
+
+        # Main central summit
+        sd.polygon([(1265, base_y), (1440, my(290)), (1610, base_y)], fill=(108, 128, 156, 255), outline=(*WHITE, 230))
+        # Shadowed right face of main summit
+        sd.polygon([(1440, my(290)), (1465, my(430)), (1430, my(515)), (1455, base_y), (1610, base_y)], fill=(64, 82, 110, 255))
+        # Snow cap on main summit
+        sd.polygon([
+            (1440, my(290)),
+            (1386, my(392)),
+            (1415, my(378)),
+            (1442, my(404)),
+            (1468, my(382)),
+            (1494, my(394)),
+        ], fill=(250, 252, 255, 255), outline=(*WHITE, 255))
+        # Mountain outline & base
+        sd.line([(1215, base_y), (1325, my(410)), (1362, my(455)), (1440, my(290)), (1516, my(440)), (1555, my(395)), (1665, base_y)],
+                fill=(*GOLD, 245), width=4)
+
+        # Bottom label cards (left & right)
+        for x0, x1 in ((150, 810), (1110, 1770)):
+            sd.rounded_rectangle((x0, 710, x1, 912), radius=20, fill=(18, 31, 52, 245), outline=(*GOLD, 225), width=3)
+
+        im.paste(Image.alpha_composite(im.convert("RGBA"), stage).convert("RGB"))
+
+        # Crisp house typography (all inside title-safe [95..1825, 54..1026])
+        text(im, "A teaspoon of it would weigh as much as a mountain", (960, 118), 46, GOLD, 1.0)
+        text(im, "=", (960, beam_y), 46, GOLD, 1.0)
+        text(im, "Neutron star", (525, 315), 40, ICE, 1.0)
+
+        text(im, "1 teaspoon", (480, 768), 52, GOLD, 1.0)
+        text(im, "5 ml · 1 tsp", (480, 852), 40, WHITE, 1.0)
+
+        text(im, "1 mountain", (1440, 768), 52, GOLD, 1.0)
+        text(im, "1 billion tonnes · 1.1 billion US tons", (1440, 852), 40, WHITE, 1.0)
 
     def song(self, im, t):
         d = ImageDraw.Draw(im)
@@ -498,10 +739,12 @@ class Renderer:
             chart = t >= 8.7
         if ident == "r29_span_astrolabe":
             chart = 7.6 <= t <= 15.4
-        im = self.base(t, grid=chart)
+        sky_plate = (ident in SKY) or (ident == "r21_hero") or (ident == "r22_subscribe") or (ident == "r03_r04_promise" and t < 8.7) or (ident == "r29_span_astrolabe" and not (7.5 <= t <= 15.6))
+        im = self.base(t, grid=chart, sky=sky_plate)
         if ident == "r03_r04_promise":
             if t < 8.7:
-                self.sky(im, t, flare=ease((t - 4.2) / 2.4), zoom=1 + 0.18 * ease(t / 8))
+                self.sky(im, t, flare=ease((t - 4.2) / 2.4), zoom=1 + 0.10 * ease(t / 8),
+                         lines_prog=ease((t - 0.5) / 3.0), label_betelgeuse=True)
             elif t < 13.5:
                 self.scale(im, t, ease((t - 8.7) / 4.6) * 0.48)
             elif t < 18.3:
@@ -513,17 +756,23 @@ class Renderer:
             self.scale(im, t, scale_s(t))
         elif ident == "r09_finder":
             u = t / dur
-            self.sky(im, t, flare=0, zoom=1 + 0.45 * ease((u - 0.62) / 0.38))
+            zm = 1 + 0.14 * ease((u - 0.62) / 0.38)
+            self.sky(im, t, flare=0, zoom=zm,
+                     lines_prog=ease((u - 0.08) / 0.48),
+                     label_betelgeuse=(u > 0.40), label_constellation=True)
             d = ImageDraw.Draw(im)
             belt = ease(u / 0.28)
             trail = ease((u - 0.28) / 0.34)
+            fx, fy = 960, 505
+            def Zf(x, y):
+                return fx + (x - fx) * zm, fy + (y - fy) * zm
             for name in ("alnitak", "alnilam", "mintaka"):
-                x, y, _ = self.orion[name]
+                x, y = Zf(*self.orion[name][:2])
                 r = 8 + 7 * belt
                 d.ellipse((x - r, y - r, x + r, y + r), fill=WHITE)
             if trail > 0:
-                bx, by = self.orion["alnilam"][:2]
-                tx, ty = self.orion["betelgeuse"][:2]
+                bx, by = Zf(*self.orion["alnilam"][:2])
+                tx, ty = Zf(*self.orion["betelgeuse"][:2])
                 n = max(2, int(16 * trail))
                 for i in range(n):
                     m = 0.08 + 0.84 * (i / max(1, n - 1)) * trail
@@ -547,18 +796,32 @@ class Renderer:
         elif ident == "r21_hero":
             self.teaspoon(im, t)
         elif ident == "r22_subscribe":
-            self.sky(im, t, zoom=1 + 0.06 * (t / dur))
+            self.sky(im, t, zoom=1 + 0.06 * (t / dur), lines_prog=1.0, label_betelgeuse=True)
             self.subscribe(im, t)
         elif ident == "r23_paranal":
-            self.sky(im, t, zoom=1 + 0.08 * (t / dur))
+            self.sky(im, t, zoom=1 + 0.08 * (t / dur), lines_prog=1.0, label_betelgeuse=True)
         elif ident == "r25_orion":
             flare = ease((t - 2.58) / 1.5)
-            self.sky(im, t, flare=flare, zoom=1 + 0.32 * ease(t / dur))
+            self.sky(im, t, flare=flare, zoom=1 + 0.14 * ease(t / dur),
+                     lines_prog=ease((t - 0.2) / 2.2), label_betelgeuse=True, label_constellation=True)
         elif ident == "r27_orion":
-            fade = ease(t / dur)
-            self.sky(im, t, flare=1 - fade, fade=fade, zoom=1.25 - 0.25 * ease(t / dur))
+            if t < 10.5:
+                # r27_orion_a (290.98-299.90s): "stay that bright for weeks, then fade slowly... until the shoulder of Orion was simply gone"
+                fade = ease((t - 3.6) / 4.2)
+                flare = 1.0 - ease((t - 2.8) / 2.6)
+                lines_prog = ease((t - 0.3) / 2.8)
+                zm = 1.0 + 0.08 * ease(t / 8.9)
+            else:
+                # r27_orion_b (303.32-309.46s, 5:03-5:09, local t=12.34..18.48s): "and every person who looked up afterwards would see a different Orion from the one we know"
+                fade = 1.0
+                flare = 0.0
+                lines_prog = ease((t - 12.40) / 2.60)
+                zm = 1.08 - 0.08 * ease((t - 12.34) / 6.14)
+            self.sky(im, t, flare=flare, fade=fade, zoom=zm,
+                     lines_prog=lines_prog, label_betelgeuse=True, label_constellation=True)
         elif ident == "r29_span_astrolabe":
-            self.sky(im, t, zoom=1 + 0.08 * math.sin(t * 0.15), hide=7.5 <= t <= 15.6)
+            self.sky(im, t, zoom=1 + 0.08 * math.sin(t * 0.15), hide=7.5 <= t <= 15.6,
+                     lines_prog=1.0, label_betelgeuse=True)
             if 7.5 <= t <= 15.6:
                 reveal = ease((t - 7.5) / 1.3)
                 fade = ease((t - 14.6) / 1.0) if t > 14.6 else 0
