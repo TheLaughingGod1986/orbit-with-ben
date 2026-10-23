@@ -1,5 +1,5 @@
 {
-  "next_id": 892,
+  "next_id": 893,
   "jobs": [
     {
       "id": "J0001",
@@ -74109,6 +74109,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0892",
+      "title": "HOS 007 v03: put the phone copy on the Watch button (R2 upload, as J0888)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ben's box has HOS 007 v03 but the board's Watch v03 still opens iCloud Files: the auto upload hasn't happened in 10 min (006 v05 went up within minutes). On the Mini: 1) brctl download '~/Library/Mobile Documents/com~apple~CloudDocs/HOS UAT/007_The-First-Vaccine/hos_007_master_v03_PHONE.mp4' and wait until it is local (du shows ~103 MB). 2) If watch_uploads.json has a 'failed' entry for hos-007-v03, say why in the job note. 3) From the main checkout: node scripts/watch_upload.mjs hos-007-v03 <that file>. 4) Check https://studio-kanban.vercel.app/api/watch?v=hos-007-v03 (with the board key) gives a 302 to r2.dev, then add 'HOS UAT/007_The-First-Vaccine/hos_007_master_v03_PHONE.mp4': 'hos-007-v03' to the register so the board shows Watch v03 as a stream. Never delete anything. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T20:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T20:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
