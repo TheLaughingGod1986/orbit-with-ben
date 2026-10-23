@@ -1,5 +1,5 @@
 {
-  "next_id": 867,
+  "next_id": 868,
   "jobs": [
     {
       "id": "J0001",
@@ -70959,13 +70959,13 @@
       "stage": "",
       "after": "J0830",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T00:24Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T18:51Z",
-      "result": "parked for Chief: HOS 007 master v02 (43 SFX cues, 60.0 BPM harp pulse ac20/ac0=0.8926, bed 18.12 dB under VO in speech with 0 breaches, -14.0 LUFS / -1.4 dBTP) pushed to HOS PR #355 (30f9033e); needs Chief review, PASS and merge",
+      "result": "Chief PASS: 43 SFX hits, sfx_kit level PASS (SFX -35.0 vs VO -16.1 LUFS); bed read at 60 BPM by music_gate, 18.1 dB under VO in speech, 0 breaches; -14.0 LUFS / -1.4 dBTP; picture untouched; check_all PASS. HOS PR #355 green and clean: merge is Ben's. UAT copy queued.",
       "history": [
         {
           "at": "2026-10-22T18:51Z",
@@ -71016,6 +71016,11 @@
           "at": "2026-10-23T00:55Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 007 master v02 (43 SFX cues, 60.0 BPM harp pulse ac20/ac0=0.8926, bed 18.12 dB under VO in speech with 0 breaches, -14.0 LUFS / -1.4 dBTP) pushed to HOS PR #355 (30f9033e); needs Chief review, PASS and merge"
+        },
+        {
+          "at": "2026-10-23T01:33Z",
+          "by": "claude",
+          "what": "done: Chief PASS: 43 SFX hits, sfx_kit level PASS (SFX -35.0 vs VO -16.1 LUFS); bed read at 60 BPM by music_gate, 18.1 dB under VO in speech, 0 breaches; -14.0 LUFS / -1.4 dBTP; picture untouched; check_all PASS. HOS PR #355 green and clean: merge is Ben's. UAT copy queued."
         }
       ],
       "kind": "assembly",
@@ -71505,6 +71510,33 @@
         "note": "All 4 steps done: 1-BZaFIMwYU Private Tue 27 Oct 11:30 London, Related -> _C92tIJCk8A, HOS commit 4765f58f, UPLOADS.json"
       },
       "done_ref": "4765f58f"
+    },
+    {
+      "id": "J0867",
+      "title": "HOS 007: copy master v02 to HOS UAT for Ben's watch (J0856 PASS)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0856 (HOS 007 master v02, sha e55f680d, 505.1 s, -14.0 LUFS / -1.4 dBTP; HOS PR #355 30f9033e). Copy /Volumes/data/mac-mini-archive/hos-007-vaccine/master_v02_J0856/hos_007_master_v02.mp4 to iCloud HOS UAT/007_<slug>/ for Ben's watch, check the SHA-256 matches, record the path in HOS PIPELINE.json (007 edit note) and in the job result. £0. Do not delete the NAS copy.",
+      "ref": "",
+      "film": "007",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T01:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T01:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
