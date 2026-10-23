@@ -73535,10 +73535,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-23T16:03Z",
+      "eta": "2026-10-23T18:03Z",
       "created_by": "claude",
       "created_at": "2026-10-23T12:46Z",
       "result": "",
@@ -73547,9 +73547,48 @@
           "at": "2026-10-23T12:46Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-23T16:03Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-23T16:03Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T16:04Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Starting 029 v03 assembly updates (3:53 diagram, 5:08 constellation lines, top-safe text, proper ending)"
+        },
+        {
+          "at": "2026-10-23T16:35Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Extended 029 audio master & score bed to 542.26s (3s breathe + 5s closing card + 20s end screen, sfx_kit level PASS)"
         }
       ],
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy",
+      "taskKeys": [
+        "OWB:029"
+      ],
+      "progress": {
+        "step": 1,
+        "of": 5,
+        "at": "2026-10-23T16:35Z",
+        "by": "gemini",
+        "note": "Extended 029 audio master & score bed to 542.26s (3s breathe + 5s closing card + 20s end screen, sfx_kit level PASS)"
+      }
     },
     {
       "id": "J0886",
@@ -73562,13 +73601,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "gemini",
+      "since": "2026-10-23T15:16Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T13:52Z",
-      "result": "",
+      "result": "parked for Chief: HOS 006 master v05 review (all 4 Ben v04 changes + v03 bubble checks resolved at 0 Flow credits, check sheet verified, _PHONE.mp4 in HOS UAT, all gates PASS)",
       "history": [
         {
           "at": "2026-10-23T13:52Z",
@@ -73624,6 +73663,41 @@
           "at": "2026-10-23T14:46Z",
           "by": "codex",
           "what": "released: 2/5 complete. Existing first Flow clip recovered (8s, no freeze); checkpoint 1b03a23d on HOS PR #359. Remaining three takes detached in tmux j0886-motion-resume; log /Users/benjaminoats/_desk/logs/j0886-motion-resume.log; completion /Users/benjaminoats/_desk/logs/j0886-motion-resume.done. Missing .done with live tmux means leave running; never duplicate. Resume /private/tmp/j0886-hos-wt and master_v05/RESUME_J0886.md. Motion inspection, master rebuild, all gates, phone/UAT and Chief review remain."
+        },
+        {
+          "at": "2026-10-23T15:16Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T15:17Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Starting J0886: inspecting HOS 006 master v04 at 0:07, 1:26, 4:28, 5:29"
+        },
+        {
+          "at": "2026-10-23T15:26Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Step 1/6 done: inspected v04 at 0:07 (#02), 1:26 (#17 + callback #80), 4:28 (#50), 5:29 (#61 + #59); preparing Flow Nano Banana 2 replacement stills (0 cr)"
+        },
+        {
+          "at": "2026-10-23T15:32Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 2/6 done: minted and verified all 4 replacement Flow Nano Banana 2.1 16:9 stills at 0 Flow credits (02_balance_trunk_v05, 05_pure_water_v05, 17_notebook_tick_v05, 10_only_green_v05)"
+        },
+        {
+          "at": "2026-10-23T15:47Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Step 3/6 done: rendered and polish-verified all 7 replacement clips in master_v05/clips"
+        },
+        {
+          "at": "2026-10-23T15:57Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Step 4/6 done: assembled hos_006_master_v05.mp4, hos_006_master_v05_PHONE.mp4 (109.85 MB), and passed all gates"
+        },
+        {
+          "at": "2026-10-23T16:02Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 006 master v05 review (all 4 Ben v04 changes + v03 bubble checks resolved at 0 Flow credits, check sheet verified, _PHONE.mp4 in HOS UAT, all gates PASS)"
         }
       ],
       "kind": "assembly",
@@ -73632,11 +73706,11 @@
         "HOS:006"
       ],
       "progress": {
-        "step": 2,
-        "of": 5,
-        "at": "2026-10-23T14:46Z",
-        "by": "codex",
-        "note": "Recovered existing 8s scale clip without duplicate spend; remaining three takes running in tmux j0886-motion-resume; reb"
+        "step": 4,
+        "of": 6,
+        "at": "2026-10-23T15:57Z",
+        "by": "gemini",
+        "note": "Step 4/6 done: assembled hos_006_master_v05.mp4, hos_006_master_v05_PHONE.mp4 (109.85 MB), and passed all gates"
       }
     },
     {
