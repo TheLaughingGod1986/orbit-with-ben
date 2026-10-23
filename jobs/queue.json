@@ -1,5 +1,5 @@
 {
-  "next_id": 875,
+  "next_id": 876,
   "jobs": [
     {
       "id": "J0001",
@@ -72316,6 +72316,38 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0875",
+      "title": "HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 007 Short -I_GHK-GcFs ('What Was the Edward Jenner Experiment?', Private, publishAt 2026-11-13T11:30Z, J0873) has Related = None because the 007 long had no id yet. Once the 007 long ('Why Vaccines Are Named After a Cow', airs Thu 12 Nov 18:00) is uploaded: set Related video on -I_GHK-GcFs to the long, read it back in Studio, update the HOS records, and register the Short for the HOS Buffer mirror (buffer-mirror.ts register --channel hos ... --long <id>, see J0873's #99 post; needs orbit-with-ben PR #260 merged). Must be done before Fri 13 Nov 11:30Z. £0.",
+      "ref": "",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T05:20Z",
+      "result": "waits for input: the 007 long's YouTube id (its upload); reopen when the long is uploaded",
+      "history": [
+        {
+          "at": "2026-10-23T05:20Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T05:20Z",
+          "by": "claude",
+          "what": "blocked: waits for input: the 007 long's YouTube id (its upload); reopen when the long is uploaded"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
