@@ -1,5 +1,5 @@
 {
-  "next_id": 873,
+  "next_id": 875,
   "jobs": [
     {
       "id": "J0001",
@@ -71554,13 +71554,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T02:52Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T00:23Z",
-      "result": "parked for Chief: Short PASS — HOS 007 s04_smallpox_test_v01, 26.13s, 62 words, sha 3daff43d04bc, HOS 994d5a7b, desk #6356949417. Title draft: What Was the Edward Jenner Experiment? Slot is Chief's call. Nothing uploaded.",
+      "result": "Chief PASS (Gemini's gates). Upload queued: first free HOS slot on/after Fri 13 Nov 11:30, after the 007 long airs Thu 12 Nov.",
       "history": [
         {
           "at": "2026-10-23T00:23Z",
@@ -71606,6 +71606,11 @@
           "at": "2026-10-23T03:52Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Short PASS — HOS 007 s04_smallpox_test_v01, 26.13s, 62 words, sha 3daff43d04bc, HOS 994d5a7b, desk #6356949417. Title draft: What Was the Edward Jenner Experiment? Slot is Chief's call. Nothing uploaded."
+        },
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Gemini's gates). Upload queued: first free HOS slot on/after Fri 13 Nov 11:30, after the 007 long airs Thu 12 Nov."
         }
       ],
       "kind": "assembly",
@@ -72063,13 +72068,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T04:26Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T04:25Z",
-      "result": "parked for Chief: review HOS_2026-10-23.md (8c7974d0) + LEARNINGS.md (038298a09), approve proven Learnings #1/#2/#3/#6 for Shorts brief & playbook, 006-010 changes (12-15s Short cut test & launch T&C), and ranked ideas 092-094",
+      "result": "Chief: Learnings #1, #2, #3, #6, #7 approved as Shorts rules (small samples, keep re-reading weekly); #4 and #5 stay tests; ideas 092-094 go to the next topic pass. Brief update queued.",
       "history": [
         {
           "at": "2026-10-23T04:25Z",
@@ -72110,6 +72115,11 @@
           "at": "2026-10-23T04:39Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review HOS_2026-10-23.md (8c7974d0) + LEARNINGS.md (038298a09), approve proven Learnings #1/#2/#3/#6 for Shorts brief & playbook, 006-010 changes (12-15s Short cut test & launch T&C), and ranked ideas 092-094"
+        },
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "done: Chief: Learnings #1, #2, #3, #6, #7 approved as Shorts rules (small samples, keep re-reading weekly); #4 and #5 stay tests; ideas 092-094 go to the next topic pass. Brief update queued."
         }
       ],
       "kind": "review",
@@ -72188,6 +72198,60 @@
         "by": "gemini",
         "note": "Pulled 7d/28d/Oct YTA settled through 20 Oct (7d 366v/65m, Shorts 72.1% avg viewed, Search #1 7d watch time at 27m; live"
       }
+    },
+    {
+      "id": "J0873",
+      "title": "HOS 007 Short 'What Was the Edward Jenner Experiment?': Private upload for the first HOS slot on/after Fri 13 Nov 11:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0865 (HOS 007 Short s04_smallpox_test_v01, 26.13 s, sha 3daff43d04bc, HOS 994d5a7b). Title: 'What Was the Edward Jenner Experiment?'. Upload Private now via the HOS upload package for the first free HOS weekday Short slot at 11:30 London on or after Fri 13 Nov (the 007 long airs Thu 12 Nov 18:00), en-GB, synthetic disclosure as the other HOS Shorts, not made for kids. Related -> the 007 long once it has an id (set it after the long is uploaded, before the Short goes public). Read back publishAt, record it like J0866, and register it for the HOS Buffer mirror once orbit-with-ben PR #260 is merged. £0.",
+      "ref": "",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T04:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
+    },
+    {
+      "id": "J0874",
+      "title": "Shorts briefs: add the approved Learnings checklist (#1 #2 #3 #6 #7 rules, #4 #5 tests) to OWB + HOS brief templates",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief on J0871: write the approved Learnings into the Shorts briefs. Rules now: #1 positive-question titles naming the subject; #2 start on the moving payoff object at frame 0; #3 a change every 3-4 s, no freeze under VO; #6 withhold the payoff until >=70% of runtime and never answer the title question as the 9 s promo banner shows; #7 bridge the 4-5 s seam into a number or mechanism, no Orbit reaction / meta-promise. Tests (not rules): #4 12-15 s cuts on the next 2 HOS Shorts from 006-007, compared with the 25 s ones; #5 Test & Compare only on new uploads or videos with 1k+ impressions a fortnight. Add them as a short checklist to the OWB and HOS Shorts brief templates and the cursor rules that load them (python3 scripts/sync_rules.py --check must pass), one PR per repo. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T04:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
