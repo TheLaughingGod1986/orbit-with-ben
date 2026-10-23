@@ -1,5 +1,5 @@
 {
-  "next_id": 895,
+  "next_id": 896,
   "jobs": [
     {
       "id": "J0001",
@@ -74322,6 +74322,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0895",
+      "title": "028 Gliese 710: build 3 Shorts from SHORTS_PLAN_v01 (Mon 30 Nov comets / Wed 2 Dec opening Test A / Fri 4 Dec scale), gates, covers, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow 02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/SHORTS_PLAN_v01.md exactly: lifts from the locked master v03 (no new VO, £0), 9:16, cut on sentence ends, picture changes every 3-4 s and never holds a shot past 6 s (re-pace the long's 13 s holds with non-overlapping stretches or crops), frame-0 captions as planned, no Orbit at frame 0, 9-14 s title banner, end card with the long's exact listing title. Gates per Short: gate_shorts_open.py check --air-date, sfx_kit.py level, picture_qa, caption and title-safe audit. Covers with no Orbit. Phone copies to OWB UAT. Commit a 10_Shorts/shorts_v01_pack with per-Short frame sheets (0 s, 4.5 s, 10 s, payoff, end) and park for Chief. Upload is a later job.",
+      "ref": "",
+      "film": "028",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T20:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T20:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
