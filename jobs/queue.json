@@ -1,5 +1,5 @@
 {
-  "next_id": 866,
+  "next_id": 867,
   "jobs": [
     {
       "id": "J0001",
@@ -70756,13 +70756,13 @@
       "stage": "",
       "after": "J0825",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T00:00Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T17:36Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "Chief: Short PASS. v02 (f60e1c53) has one caption on every frame across all 16 handovers (worst one-frame ghost 0.15 alpha), gate_shorts_open/polish/picture_qa PASS; civilisation/civilization is the transcriber. Upload job queued.",
       "history": [
         {
           "at": "2026-10-22T17:36Z",
@@ -70803,6 +70803,11 @@
           "at": "2026-10-23T00:22Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Short PASS"
+        },
+        {
+          "at": "2026-10-23T00:23Z",
+          "by": "claude",
+          "what": "done: Chief: Short PASS. v02 (f60e1c53) has one caption on every frame across all 16 handovers (worst one-frame ghost 0.15 alpha), gate_shorts_open/polish/picture_qa PASS; civilisation/civilization is the transcriber. Upload job queued."
         }
       ],
       "kind": "assembly",
@@ -71362,6 +71367,33 @@
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked"
+    },
+    {
+      "id": "J0866",
+      "title": "HOS 001 Short s11 Pasteur swan neck flask v02: package + Private upload in the next HOS Short slot, Related -> 001 long",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0854 (HOS 001 Short s11_curved_flask v02, sha f60e1c53, 22.37 s; one caption on every frame, all gates PASS). Package it with the HOS upload package and upload Private for the next free HOS weekday Short slot (11:30 London) that is after the HOS 001 long is public, title 'What Is the Pasteur Swan Neck Flask Experiment?', en-GB, synthetic disclosure as the other HOS Shorts, not made for kids, Related -> the HOS 001 long. Read back publishAt from the API, record the upload in the HOS repo as the other Shorts are, and register it for the HOS Buffer mirror (once orbit-with-ben PR #260 is merged: npx tsx scripts/buffer-mirror.ts register --channel hos --video <id> --media <mp4> --long <001 long id>). £0. HOS rule: Shorts only through the HOS Buffer org.",
+      "ref": "",
+      "film": "001",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T00:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T00:23Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
