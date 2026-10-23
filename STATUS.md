@@ -57,6 +57,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 006 | edit | gemini | 2026-10-23T12:09Z | 2026-10-23T13:39Z | - |
-| 028 | edit | gemini | 2026-10-23T13:40Z | 2026-10-23T15:39Z | J0884 028 Gliese 710: Ben's 2 changes on master v02 (1:20 top text cut off, abrupt 7:53 ending) -> master v03 |
+| 028 | edit | gemini | 2026-10-23T13:40Z | 2026-10-23T14:40Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
