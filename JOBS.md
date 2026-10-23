@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0892 | mini | open | – | – | studio · Watch button: R2 upload of HOS 007 v03 and 029 v03b phone copies, and find why auto upload stopped (as J0888) |  |
 | J0894 | mini | open | – | – | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
-| J0895 | mini | open | – | – | 028 upload · assembly · 028 Gliese 710: build 3 Shorts from SHORTS_PLAN_v01 (Mon 30 Nov comets / Wed 2 Dec opening Test A / Fri 4 Dec scale), gates, covers, park for Chief |  |
+| J0895 | mini | open | – | – | 028 upload · for gemini · assembly · `gemini-agy` · 028 Gliese 710: build 3 Shorts from SHORTS_PLAN_v01 (Mon 30 Nov comets / Wed 2 Dec opening Test A / Fri 4 Dec scale), gates, covers, park for Chief |  |
 
 Recently finished:
 
