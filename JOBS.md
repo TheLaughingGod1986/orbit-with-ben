@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0878 | mini | open | – | – | listing · HOS compilation v02: package (title, chapters, Sources, £0 thumbnail) + Private upload for Thu 10 Dec 18:00 UK, park for Chief |  |
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0890 | mini | open (after J0889) | – | – | 028 upload · listing · 028 Gliese 710: Private upload of master v03 for Sun 29 Nov 18:00 London, read back, record |  |
-| J0892 | mini | open | – | – | studio · HOS 007 v03: put the phone copy on the Watch button (R2 upload, as J0888) |  |
+| J0892 | mini | open | – | – | studio · Watch button: R2 upload of HOS 007 v03 and 029 v03b phone copies, and find why auto upload stopped (as J0888) |  |
 
 Recently finished:
 
