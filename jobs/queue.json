@@ -72328,13 +72328,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-23T05:26Z",
-      "eta": "2026-10-23T07:26Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T04:52Z",
-      "result": "",
+      "result": "parked for Chief: review and merge OWB PR #261 and HOS PR #357. Checklist implemented in both templates and Cursor rules; 3/3 steps complete; both sync_rules checks rules OK; HOS check_all ALL CHECKS PASS. No spend or film-stage approval.",
       "history": [
         {
           "at": "2026-10-23T04:52Z",
@@ -72365,6 +72365,11 @@
           "at": "2026-10-23T05:29Z",
           "by": "codex",
           "what": "step 3 of 3 done: OWB PR #261 open; HOS companion PR prepared. Both sync checks rules OK; required HOS check_all ALL CHECKS PASS (20 contract tests). Implementation complete, Chief review/merge remains."
+        },
+        {
+          "at": "2026-10-23T05:29Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review and merge OWB PR #261 and HOS PR #357. Checklist implemented in both templates and Cursor rules; 3/3 steps complete; both sync_rules checks rules OK; HOS check_all ALL CHECKS PASS. No spend or film-stage approval."
         }
       ],
       "kind": "studio",

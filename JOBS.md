@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0872 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0874 | any | claimed | codex | 2026-10-23T07:26Z | studio · Shorts briefs: add the approved Learnings checklist (#1 #2 #3 #6 #7 rules, #4 #5 tests) to OWB + HOS brief templates |  |
+| J0874 | any | blocked | codex | – | studio · Shorts briefs: add the approved Learnings checklist (#1 #2 #3 #6 #7 rules, #4 #5 tests) to OWB + HOS brief templates |  |
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 
 Recently finished:
