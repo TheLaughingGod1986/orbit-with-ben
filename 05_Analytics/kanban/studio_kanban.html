@@ -175,6 +175,12 @@ details.jl .jw{color:var(--ink-3);text-align:right}
 @media (prefers-reduced-motion:reduce){.flash{animation:none}}
 
 /* One-glance view: review, current work, videos and queue. */
+#nowbar .jobtarget,#nowbar .chief-line{display:none}
+.studio-details{margin:26px 0 8px;border-top:1px solid var(--line)}
+.studio-details>summary{display:flex;align-items:baseline;gap:10px;padding:16px 2px;cursor:pointer;font-size:16px;font-weight:600;color:var(--ink-2)}
+.studio-details>summary span{font-size:12px;font-weight:400;color:var(--ink-3)}
+.studio-details[open]>summary{margin-bottom:6px}
+.studio-details>summary::-webkit-details-marker{display:none}.studio-details>summary::before{content:"▸";font-size:13px;color:var(--ink-3)}.studio-details[open]>summary::before{content:"▾"}
 #asof,#owbnote{display:none}#nowbar>.nx,#nowbar>.upd,#nowbar>.sub{display:none}
 #nowbar .who{font-size:13px}#nowbar .who br{display:none}#youbar .nx{font-size:14px}
 .vr>.work-air,.vr>.release-hint{display:none}.vr{padding:12px 14px}.vr .v1{gap:8px}.vr .vp{font-size:13px}.vr .vt{font-size:15px}.vr .bar.thin{height:3px;margin:8px 0}.video-work{font-size:13px}.video-work .finish-outlook{font-size:12px;color:var(--ink-3)}
@@ -639,10 +645,13 @@ footer a{color:var(--ink-2)}
   <div class="chnote" id="owbnote"></div>
   <div class="youbar" id="youbar">Loading…</div>
   <div class="nowbar" id="nowbar" hidden></div>
-  <section id="videoProgress" class="video-progress" aria-label="Video progress over time"></section>
-  <details id="latestResultFold" class="progress-fold result-fold"><summary>Latest job result</summary><section id="latestResult" class="latest-result" aria-label="Latest job result" hidden></section></details>
 
   <section class="videos" id="videos"><div class="empty">Loading…</div></section>
+  <!-- Ben, 23 Oct 2026: "the UI just needs to be clean, feel information overload at the moment". The front page is
+       his box, what's running now and the videos; everything else sits in this one fold, closed by default. -->
+  <details id="studioDetails" class="studio-details"><summary>Studio details<span>progress, job queue, AI costs</span></summary>
+  <section id="videoProgress" class="video-progress" aria-label="Video progress over time"></section>
+  <details id="latestResultFold" class="progress-fold result-fold"><summary>Latest job result</summary><section id="latestResult" class="latest-result" aria-label="Latest job result" hidden></section></details>
   <section id="queueOverview" class="queue-overview" aria-label="Full job queue"></section>
   <section id="aiOverview" class="ai-overview" aria-label="AI subscriptions"></section>
   <details id="recentActivity" class="more fold"><summary>Recent activity and studio totals</summary>
@@ -680,6 +689,7 @@ footer a{color:var(--ink-2)}
     </details>
   </section>
   </section>
+  </details>
   </details>
   <footer>The studio agent refreshes this page every hour, round the clock, and again whenever the Mac mini posts a finished or paused job. Times like "done about" recount every minute. The film-by-film notes are Claude's, from <span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben, refreshed on the same run; job times come live from the job queue. <b>HOS</b> comes from <span class="mono">00_Brand/Channel-Setup/PIPELINE.json</span> in history-of-science (the file behind <a href="https://github.com/TheLaughingGod1986/history-of-science/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>). <b>OWB</b> from each film's <span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span> in orbit-with-ben (the files behind its <a href="https://github.com/TheLaughingGod1986/orbit-with-ben/blob/main/STATUS.md" target="_blank" rel="noopener">STATUS.md</a>; "chief" is shown as Grok). Both from <span class="mono">main</span>.</footer>
 </div>
@@ -1473,12 +1483,12 @@ function renderNow(){
   let cls = "", head;
   let bar = "";
   if(headJob){ const pr = progressOf(headJob, P);
-    const who = AGENT(headJob.by) || headJob.routedTo || headJob.by || "", mdl = headJob.model || "";
+    const who = AGENT(headJob.by) || headJob.routedTo || headJob.by || "";
     const stp = headJob.progress && headJob.progress.of ? `step ${Math.min(headJob.progress.step+1, headJob.progress.of)} of ${headJob.progress.of}` : "";
     const lastWhat = (headJob.last && headJob.last.what || "").replace(/<[^>]+>/g,"");
     const doing = [stp, lastWhat].filter(Boolean).join(" · ");
     head = `<span class="tt"><b>Now:</b> ${esc(plainTitle(headJob, 200))}</span>`;
-    bar = `<div class="nowwho">${esc([who, mdl].filter(Boolean).join(" · "))}</div>` + `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
+    bar = `<div class="nowwho">${esc(who||"")}</div>` + `<div class="pbar" data-live><span class="track"><i class="pc" style="width:${pr.pct}%;--pc:${pcCol(pr.pct)}"></i></span><span class="ptxt">${pr.pct}% done · ${esc(finishIn(pr.done))}</span></div>`; }
   else {
     const sl=stallOf(), reviews=jobs.some(j=>j.status==="blocked"&&isChiefPark(j)), blocked=jobs.some(j=>j.status==="blocked");
     cls=sl&&line.length?"asleep":"idle";

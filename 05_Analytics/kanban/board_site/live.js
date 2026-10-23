@@ -1,6 +1,6 @@
 // Studio Kanban, live layer for the self-updating host (Ben, 14 Oct: "make it more dynamic"). Runs after the page's own
 // script and leans on shim.js (window.__boardPoll, window.__boardRefresh, the "board:poll" / "board:data" events):
-//   - the source line says when the data last changed and counts down to the next check, with a Refresh button;
+//   - the source line says when the data last changed (the next-check countdown only while offline), with a Refresh button;
 //   - pull down at the top of the page to check now (the Home Screen app has no browser pull-to-refresh);
 //   - when a read brings changes, a short note says which jobs moved (started, done, blocked, a step) and their cards
 //     flash once, so a change is visible without comparing numbers.
@@ -29,9 +29,10 @@
   function srcLine() {
     const t = $("srctxt"), dot = $("dot"); if (!t) return;
     const bd = window.__boardData || {}, at = ts(bd.dataChangedAt || bd.publishedAt);
-    const when = isNaN(at) ? "" : `Data changed ${esc(clock(at))} · <span data-ago="${at}">${esc(ago(at))}</span> · `;
+    // Ben, 23 Oct: keep it clean. Just when the data last changed; the countdown only shows while the data can't be reached.
+    const when = isNaN(at) ? "" : `Updated <span data-ago="${at}">${esc(ago(at))}</span>`;
     const next = poll.busy ? "checking…" : `next check in <span class="nchk">${secs(poll.next - Date.now())}</span>`;
-    const html = poll.ok ? when + next : `${when}<b class="soon">can't reach the data</b> · retrying, ${next}`;
+    const html = poll.ok ? when : `${when}${when ? " · " : ""}<b class="soon">can't reach the data</b> · retrying, ${next}`;
     if (t.dataset.h !== html) { t.dataset.h = html; t.innerHTML = html; }
     if (dot) dot.className = "dot " + (poll.ok ? "live" : "warn");
   }

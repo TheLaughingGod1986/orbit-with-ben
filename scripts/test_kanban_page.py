@@ -776,9 +776,15 @@ console.log(JSON.stringify(progressUpdates()));
 ''')
         self.assertEqual(r, [])
 
-    def test_result_card_is_visible_before_the_video_lanes_and_history_is_folded(self):
+    def test_front_page_is_ben_now_and_videos_with_the_rest_in_one_fold(self):
+        # Ben, 23 Oct 2026: "the UI just needs to be clean, feel information overload at the moment".
         html = page()
-        self.assertLess(html.index('id="latestResult"'), html.index('id="videos"'))
+        order = [html.index(f'id="{i}"') for i in ("youbar", "nowbar", "videos", "studioDetails")]
+        self.assertEqual(order, sorted(order))
+        start, end = html.index('id="studioDetails"'), html.index("<footer>")
+        for inner in ("videoProgress", "latestResult", "queueOverview", "aiOverview", "recentActivity", "foldPlans"):
+            self.assertTrue(start < html.index(f'id="{inner}"') < end, inner)
+        self.assertNotIn("open", html[start:html.index(">", start)])
         self.assertIn('id="recentActivity" class="more fold"', html)
 
 
