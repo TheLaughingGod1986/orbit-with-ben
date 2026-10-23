@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0878 | mini | open | – | – | listing · HOS compilation v02: package (title, chapters, Sources, £0 thumbnail) + Private upload for Thu 10 Dec 18:00 UK, park for Chief |  |
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0885 | mini | open | – | – | 029 edit · for gemini · assembly · `gemini-agy` · 029 Betelgeuse: Ben's 2 changes on full rough v02 (3:53 diagram rebuild, 5:08 Orion constellation lines) -> v03 |  |
+| J0885 | mini | claimed | gemini | 2026-10-23T18:03Z | 029 edit · for gemini · assembly · `gemini-agy` · 029 Betelgeuse: Ben's 2 changes on full rough v02 (3:53 diagram rebuild, 5:08 Orion constellation lines) -> v03 |  |
 | J0886 | mini | blocked | gemini | – | 006 edit · assembly · HOS 006 Trees: Ben's 4 changes on master v04 (0:07 tree on scales, 1:26 tree in pot, 4:28 hand with no body, 5:29 bubbles) -> v05 |  |
 | J0887 | mini | open | – | – | 007 edit · assembly · HOS 007 Vaccine: Ben's 3 changes on master v02 (1:48 milking hand, 3:50 mascot too big, 8:25 ending + subscribe line) -> v03 |  |
 | J0889 | mini | open | – | – | 028 thumbs · thumb · 028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief |  |
