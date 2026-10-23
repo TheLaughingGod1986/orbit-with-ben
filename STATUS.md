@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 028 | edit | gemini | 2026-10-23T13:40Z | 2026-10-23T14:40Z | - |
+| 028 | edit | gemini | 2026-10-23T14:06Z | 2026-10-23T15:06Z | J0884: 028 master v03 (fix 1:20 clipped top text + 7:53 ending) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
