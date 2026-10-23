@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0865 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0867 | mini | open | – | – | 007 edit · listing · HOS 007: copy master v02 to HOS UAT for Ben's watch (J0856 PASS) |  |
+| J0867 | mini | claimed | gemini | 2026-10-23T03:38Z | 007 edit · listing · HOS 007: copy master v02 to HOS UAT for Ben's watch (J0856 PASS) |  |
 
 Recently finished:
 
