@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0865 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0868 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0869 | mini | open | – | – | 006 thumbs · thumb · HOS 006 Trees thumbnails step 2: make A + B (0 Flow credits), cover lettering, thumb_preview + style_sheet, stage Test & Compare, park for Chief |  |
+| J0869 | mini | claimed | gemini | 2026-10-23T04:06Z | 006 thumbs · thumb · HOS 006 Trees thumbnails step 2: make A + B (0 Flow credits), cover lettering, thumb_preview + style_sheet, stage Test & Compare, park for Chief |  |
 
 Recently finished:
 
