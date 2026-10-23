@@ -1,5 +1,5 @@
 {
-  "next_id": 891,
+  "next_id": 892,
   "jobs": [
     {
       "id": "J0001",
@@ -73928,6 +73928,33 @@
         }
       ],
       "kind": "listing"
+    },
+    {
+      "id": "J0891",
+      "title": "029 Betelgeuse: re-render r21_hero (3:53 card text fix, 04bab9a9) -> full rough v03b, gates, phone copy, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief FIX on J0885 v03. Pull main (04bab9a9 changes Renderer.teaspoon: the right card's '1 billion tonnes · 1.1 billion US tons' becomes two 36 px lines). 1) build_code_graphics_v01.py --out <code_graphics_v01> --only r21_hero; check the frames show both lines inside the gold card border. 2) Rebuild the full rough as v03b with _assemble_029_full_rough_v03.py (only r21_hero changes; everything else identical to v03). 3) clip_check, picture_qa, polish_gate, music_gate, sfx level, title-safe audit. 4) 029_Betelgeuse_full_rough_v03b.mp4 + _PHONE.mp4 (<120 MB) to OWB UAT and NAS youtube-staging/029/. 5) Commit a full_rough_v03b_pack with the r21_hero before/after frame. Park for Chief. £0.",
+      "ref": "",
+      "film": "029",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T18:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T18:02Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
