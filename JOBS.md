@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0889 | mini | blocked | gemini | – | 028 thumbs · for gemini · thumb · `gemini-agy` · 028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief |  |
 | J0890 | mini | open (after J0889) | – | – | 028 upload · listing · 028 Gliese 710: Private upload of master v03 for Sun 29 Nov 18:00 London, read back, record |  |
-| J0891 | mini | open | – | – | 029 edit · for gemini · assembly · `gemini-agy` · 029 Betelgeuse: re-render r21_hero (3:53 card text fix, 04bab9a9) -> full rough v03b, gates, phone copy, park for Chief |  |
+| J0891 | mini | claimed | gemini | 2026-10-23T22:19Z | 029 edit · for gemini · assembly · `gemini-agy` · 029 Betelgeuse: re-render r21_hero (3:53 card text fix, 04bab9a9) -> full rough v03b, gates, phone copy, park for Chief |  |
 | J0892 | mini | open | – | – | studio · HOS 007 v03: put the phone copy on the Watch button (R2 upload, as J0888) |  |
 
 Recently finished:
