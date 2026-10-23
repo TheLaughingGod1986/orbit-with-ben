@@ -1,5 +1,5 @@
 {
-  "next_id": 884,
+  "next_id": 885,
   "jobs": [
     {
       "id": "J0001",
@@ -73339,6 +73339,33 @@
       ],
       "kind": "studio",
       "urgent": true
+    },
+    {
+      "id": "J0884",
+      "title": "028 Gliese 710: Ben's 2 changes on master v02 (1:20 top text cut off, abrupt 7:53 ending) -> master v03",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's change tick on OWB 028 Gliese 710 master v02 (board, Fri 23 Oct 13:10 London). His words:\n1. '1:20 Top text cut off' -> find the overlay/label/card on screen at 1:20 (cuts_v02.json row) and keep it fully inside title-safe (top margin >= 5% of height, nothing clipped at any frame of its slide-in). Check every other overlay for the same clipping (scan all text-bearing rows, not just 1:20).\n2. '7:53 Very prompt ending' -> the film must not stop dead. End like the other OWB films: let the last line breathe, music resolves, then a closing card naming next week's film ('Is Betelgeuse About to Explode?', Sun 6 Dec) over moving picture, and ~20 s of moving picture for the YouTube end screen, then a 1.5 s fade. No new VO (ElevenLabs is out until 30 Oct); use the existing score bed and house SFX.\nKeep the four Chief fixes from v02. £0. Master v03, all gates (clip_check, picture_qa, polish_gate, music_gate, sfx level), per-row sheet committed (git add -f), copy to OWB UAT plus a 720p _PHONE.mp4 copy under 120 MB (see J0883), park for Chief. 028 airs Sun 29 Nov: v03 by Tue 27 Oct.",
+      "ref": "",
+      "film": "028",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T12:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T12:11Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
