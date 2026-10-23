@@ -1,0 +1,109 @@
+
+> content-ops@0.1.0 youtube:package
+> tsx --env-file=.env scripts/youtube-package-upload.ts --package /private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package --video /Volumes/data/mac-mini-archive/youtube-staging/028/028_Gliese710_full_master_v03.mp4 --dry-run
+
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": false,
+    "scheduledFor": null,
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. YouTube upload request prepared but not sent.",
+    "responseSummary": "{\"title\":\"Why Will Gliese 710 Brighten Our Night Sky?\",\"privacyStatus\":\"private\",\"publishAt\":null,\"madeForKids\":false,\"containsSyntheticMedia\":true,\"categoryId\":\"28\",\"contentFormat\":\"longform\"}"
+  },
+  "package": {
+    "packageDir": "../../../../private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package",
+    "sha256": "a9780e548a2775f4e7a1acecb6ac24308927f0b58ab1d606e67d27741e3db824",
+    "title": "Why Will Gliese 710 Brighten Our Night Sky?",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 8,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/08_Thumbnail/abc_v01/gliese_thumb_A.jpg",
+    "scheduledAt": null,
+    "sources": {
+      "manifest": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "titleFile": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package/Titles/gliese_title_v01.txt",
+      "descriptionFile": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package/Descriptions/gliese_long_description_v01.txt",
+      "chaptersFile": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package/Chapters/gliese_chapters_v03.txt",
+      "tagsFile": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package/Tags/gliese_long_tags_v01.txt",
+      "pinnedCommentFile": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package/Pinned-Comments/gliese_pinned_v01.txt",
+      "video": "/Volumes/data/mac-mini-archive/youtube-staging/028/028_Gliese710_full_master_v03.mp4",
+      "thumbnail": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/08_Thumbnail/abc_v01/gliese_thumb_A.jpg",
+      "trailer": "/private/tmp/j0889-wt/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/11_Upload-Package/Trailer/gliese_trailer_v01.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (1) · thumbs (3). Not available via Data API."
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}
