@@ -74082,13 +74082,13 @@
       "stage": "upload",
       "after": "J0889",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-23T20:35Z",
-      "eta": "2026-10-23T22:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T15:14Z",
-      "result": "",
+      "result": "Uploaded 028 master v03 Private as F-jImX5h7ws (publishAt 2026-11-29T18:00:00Z, title 'What Happens When a Star Passes Through Our Solar System?', thumb A set, Buffer deferred); read back via API; recorded in PACKAGE_UPLOAD_RESULT (d4da1330f) and UPLOADS.json; queued J0893 Shorts plan",
       "history": [
         {
           "at": "2026-10-23T15:14Z",
@@ -74124,6 +74124,11 @@
           "at": "2026-10-23T20:44Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Queued 028 Shorts plan job (J0893) and completed all 4 steps of J0890"
+        },
+        {
+          "at": "2026-10-23T20:44Z",
+          "by": "gemini",
+          "what": "done: Uploaded 028 master v03 Private as F-jImX5h7ws (publishAt 2026-11-29T18:00:00Z, title 'What Happens When a Star Passes Through Our Solar System?', thumb A set, Buffer deferred); read back via API; recorded in PACKAGE_UPLOAD_RESULT (d4da1330f) and UPLOADS.json; queued J0893 Shorts plan"
         }
       ],
       "kind": "listing",
@@ -74136,7 +74141,8 @@
         "at": "2026-10-23T20:44Z",
         "by": "gemini",
         "note": "Queued 028 Shorts plan job (J0893) and completed all 4 steps of J0890"
-      }
+      },
+      "done_ref": "d4da1330f"
     },
     {
       "id": "J0891",
