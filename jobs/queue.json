@@ -71985,13 +71985,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T04:09Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T02:30Z",
-      "result": "parked for Chief: Short PASS review; picture QA FAIL, source/hook/stem repairs required. Evidence local at f55fff4bd; public branch push rejected by automatic approval review.",
+      "result": "Chief: shelved, not repaired. The 020 Jupiter cut fails picture_qa (replayed frames 0:20/0:25), its 0:09-0:17.5 imagery and descriptive opening need new picture and words, and 020 has no separated score, so the SFX/music level rule can't be met from this long. Keep the draft and evidence local (don't publish the branch: it carries NAS paths). The next backlog OWB Short comes from a locked long that has a separated music stem (024, 026, 027, 029 or 028).",
       "history": [
         {
           "at": "2026-10-23T02:30Z",
@@ -72032,6 +72032,11 @@
           "at": "2026-10-23T04:24Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Short PASS review; picture QA FAIL, source/hook/stem repairs required. Evidence local at f55fff4bd; public branch push rejected by automatic approval review."
+        },
+        {
+          "at": "2026-10-23T04:28Z",
+          "by": "claude",
+          "what": "done: Chief: shelved, not repaired. The 020 Jupiter cut fails picture_qa (replayed frames 0:20/0:25), its 0:09-0:17.5 imagery and descriptive opening need new picture and words, and 020 has no separated score, so the SFX/music level rule can't be met from this long. Keep the draft and evidence local (don't publish the branch: it carries NAS paths). The next backlog OWB Short comes from a locked long that has a separated music stem (024, 026, 027, 029 or 028)."
         }
       ],
       "kind": "assembly",
