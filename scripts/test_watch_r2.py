@@ -86,5 +86,34 @@ class AutoUpload(unittest.TestCase):
         self.assertNotIn("hos-007-v02", json.loads(self.reg.read_text()).get("failed", {}))
 
 
+class MiniPaths(unittest.TestCase):
+    """J0888: board_publish runs from a sparse worktree with no .env, and iCloud evicts the _PHONE copies."""
+
+    def setUp(self):
+        self.tmp = pathlib.Path(tempfile.mkdtemp())
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp)
+
+    def test_env_falls_back_to_the_main_checkout(self):
+        home = self.tmp / "home"
+        env = home / "YouTube" / "orbit-with-ben" / "07_Content-Ops" / ".env"
+        env.parent.mkdir(parents=True)
+        env.write_text("R2_ACCOUNT_ID=a\nR2_ACCESS_KEY_ID=b\nR2_SECRET_ACCESS_KEY=c\nR2_PUBLIC_URL=https://p.r2.dev\n")
+        with mock.patch.object(ks, "ROOT", self.tmp / "worktree"), mock.patch.dict(os.environ, {"HOME": str(home)}, clear=True):
+            self.assertIn(env, ks.env_files())
+            self.assertTrue(ks.r2_ready())
+        with mock.patch.object(ks, "ROOT", self.tmp / "worktree"), mock.patch.dict(os.environ, {"HOME": str(self.tmp / "nobody")}, clear=True):
+            self.assertFalse(ks.r2_ready())
+
+    def test_a_local_file_is_ready_and_an_evicted_one_without_brctl_is_not(self):
+        f = self.tmp / "cut_PHONE.mp4"
+        f.write_bytes(b"x" * 4096)
+        self.assertTrue(ks.materialise(f))
+        fake = mock.Mock(st_size=90_000_000, st_blocks=0)
+        with mock.patch.object(pathlib.Path, "stat", return_value=fake), mock.patch("shutil.which", return_value=None):
+            self.assertFalse(ks.materialise(f, wait_s=0))
+
+
 if __name__ == "__main__":
     unittest.main()
