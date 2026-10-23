@@ -795,12 +795,35 @@ def watch_register() -> dict:
     return reg
 
 
+R2_KEYS = ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_PUBLIC_URL")
+WATCH_RETRY_S = 6 * 3600   # a failed upload isn't tried again for this long (not a 90 MB upload every minute)
+
+
+def r2_ready(env_file: Path | None = None) -> bool:
+    """The R2 keys watch_upload.mjs needs, from the environment or 07_Content-Ops/.env (23 Oct 2026: Blob suspended)."""
+    if all(os.environ.get(k) for k in R2_KEYS):
+        return True
+    try:
+        text = (env_file or ROOT / "07_Content-Ops" / ".env").read_text()
+    except OSError:
+        return False
+    found = {m.group(1) for m in re.finditer(r"^\s*(?:export\s+)?(R2_[A-Z_]+)\s*=\s*\S", text, flags=re.M)}
+    return all(k in found or os.environ.get(k) for k in R2_KEYS)
+
+
 def auto_upload(wid: str, path: Path, rel: str) -> bool:
     key = os.environ.get("WATCH_UPLOAD_KEY", "")
     try:
-        if not key or path.stat().st_size > WATCH_AUTO_MAX:
+        if not (key or r2_ready()) or path.stat().st_size > WATCH_AUTO_MAX:
             return False
     except OSError:
+        return False
+    try:
+        cur = json.loads(WATCH_LOCAL_REGISTER.read_text())
+    except (OSError, ValueError):
+        cur = {}
+    from time import time
+    if time() - float((cur.get("failed") or {}).get(wid, 0)) < WATCH_RETRY_S:
         return False
     import subprocess
     try:
@@ -810,12 +833,12 @@ def auto_upload(wid: str, path: Path, rel: str) -> bool:
         return False
     if r.returncode != 0:
         print(f"watch upload {wid} failed: {r.stderr.strip()[-200:]}", file=sys.stderr)
+        cur.setdefault("failed", {})[wid] = time()
+        WATCH_LOCAL_REGISTER.parent.mkdir(parents=True, exist_ok=True)
+        WATCH_LOCAL_REGISTER.write_text(json.dumps(cur, indent=2) + "\n")
         return False
-    try:
-        cur = json.loads(WATCH_LOCAL_REGISTER.read_text())
-    except (OSError, ValueError):
-        cur = {}
     cur.setdefault("files", {})[rel] = wid
+    (cur.get("failed") or {}).pop(wid, None)
     WATCH_LOCAL_REGISTER.parent.mkdir(parents=True, exist_ok=True)
     WATCH_LOCAL_REGISTER.write_text(json.dumps(cur, indent=2) + "\n")
     return True
