@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, A6TW_6CXhcs) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
-| J0872 | any | claimed | gemini | 2026-10-23T06:40Z | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0872 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0873 | mini | open | – | – | 007 upload · listing · HOS 007 Short 'What Was the Edward Jenner Experiment?': Private upload for the first HOS slot on/after Fri 13 Nov 11:30 |  |
 | J0874 | any | open | – | – | studio · Shorts briefs: add the approved Learnings checklist (#1 #2 #3 #6 #7 rules, #4 #5 tests) to OWB + HOS brief templates |  |
 
