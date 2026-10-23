@@ -1,5 +1,5 @@
 {
-  "next_id": 885,
+  "next_id": 886,
   "jobs": [
     {
       "id": "J0001",
@@ -73371,6 +73371,33 @@
       "history": [
         {
           "at": "2026-10-23T12:11Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0885",
+      "title": "029 Betelgeuse: Ben's 2 changes on full rough v02 (3:53 diagram rebuild, 5:08 Orion constellation lines) -> v03",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's change tick on OWB 029 Betelgeuse full rough v02 (board, Fri 23 Oct 13:46 London). His words:\n1. '3:53 Diagram needs rebuilt' -> rebuild the code graphic at 3:53 (find its row in the v02 cut list): read the VO line it sits under and make one clear, school-child-readable diagram of exactly that (house style, labelled with the VO's own words, numerals for spoken numbers, metric + imperial for any size/weight, nothing clipped at the top: keep text inside title-safe). Check it against 01_Script/SOURCES.md.\n2. '5:08 Let's draw the line between the stars to show the constellation' -> at 5:08 animate thin constellation lines joining Orion's main stars (Betelgeuse, Bellatrix, the belt Alnitak/Alnilam/Mintaka, Saiph, Rigel) over the sky picture, drawn in as the VO names it, with Betelgeuse labelled. Positions must match the real sky in the plate (plate-solve or match by eye against a star chart; no invented stars).\nAlso apply the two lessons from Ben's 028 notes (23 Oct) before he sees it: no text clipped at the top anywhere, and a proper ending (closing card naming the next film + ~20 s of moving picture for the end screen), not a dead stop. £0. Full rough v03, all gates, per-row sheet committed (git add -f), copy to OWB UAT with a 720p _PHONE.mp4 copy under 120 MB (J0883), park for Chief. 029 airs Sun 6 Dec: v03 by Thu 29 Oct.",
+      "ref": "",
+      "film": "029",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T12:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T12:46Z",
           "by": "claude",
           "what": "added"
         }

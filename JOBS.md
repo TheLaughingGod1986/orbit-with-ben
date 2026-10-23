@@ -30,6 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0882 | mini | claimed | gemini | 2026-10-23T14:09Z | 006 edit · assembly · HOS 006 Trees: Ben's 11 changes on master v03 (picture fixes, imperial+metric weights, 6:07 date card, proper ending) -> master v04 |  |
 | J0883 | mini | open | – | – | studio · Board watch links: 720p _PHONE copies (<120 MB) for HOS 007, 028, 029 so Watch plays on Ben's phone (Ben: 'Won't load the video') |  |
 | J0884 | mini | open | – | – | 028 edit · assembly · 028 Gliese 710: Ben's 2 changes on master v02 (1:20 top text cut off, abrupt 7:53 ending) -> master v03 |  |
+| J0885 | mini | open | – | – | 029 edit · assembly · 029 Betelgeuse: Ben's 2 changes on full rough v02 (3:53 diagram rebuild, 5:08 Orion constellation lines) -> v03 |  |
 
 Recently finished:
 
