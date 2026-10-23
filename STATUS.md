@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 029 | edit | gemini | 2026-10-23T20:19Z | 2026-10-23T22:18Z | J0891 029 Betelgeuse: re-render r21_hero (3:53 card text fix, 04bab9a9) -> full rough v03b, gates, phone copy, park for Chief |
+| 029 | edit | gemini | 2026-10-23T20:20Z | 2026-10-23T21:20Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
