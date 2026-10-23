@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 028 | upload | gemini | 2026-10-23T21:20Z | 2026-10-23T23:19Z | J0895 028 Gliese 710: build 3 Shorts from SHORTS_PLAN_v01 (Mon 30 Nov comets / Wed 2 Dec opening Test A / Fri 4 Dec scale), gates, covers, park for Chief |
+| 028 | upload | gemini | 2026-10-23T21:21Z | 2026-10-23T22:21Z | J0895: building 3 Shorts from SHORTS_PLAN_v01 |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
