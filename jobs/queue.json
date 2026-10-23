@@ -1,5 +1,5 @@
 {
-  "next_id": 869,
+  "next_id": 870,
   "jobs": [
     {
       "id": "J0001",
@@ -71122,13 +71122,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T01:51Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T19:11Z",
-      "result": "parked for Chief: 006 thumbnail price + concept pick",
+      "result": "Chief: A (WOOD FROM SKY?) primary + B (DO PLANTS EAT SOIL?) for Test & Compare, C dropped; Option 1 at 0 Flow credits, Fast tier up to 20 cr only on two failed checks; step 2 queued.",
       "history": [
         {
           "at": "2026-10-22T19:11Z",
@@ -71154,6 +71154,11 @@
           "at": "2026-10-23T02:04Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 006 thumbnail price + concept pick"
+        },
+        {
+          "at": "2026-10-23T02:05Z",
+          "by": "claude",
+          "what": "done: Chief: A (WOOD FROM SKY?) primary + B (DO PLANTS EAT SOIL?) for Test & Compare, C dropped; Option 1 at 0 Flow credits, Fast tier up to 20 cr only on two failed checks; step 2 queued."
         }
       ],
       "kind": "thumb",
@@ -71670,6 +71675,33 @@
       ],
       "kind": "qa",
       "backlog": "both-qa-sweep"
+    },
+    {
+      "id": "J0869",
+      "title": "HOS 006 Trees thumbnails step 2: make A + B (0 Flow credits), cover lettering, thumb_preview + style_sheet, stage Test & Compare, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief pick on J0858 (HOS 006 Trees thumbnails, HOS 9fad9745). Concept A 'WOOD / FROM / SKY?' (gold SKY?, willow by the window with air ribbons turning into wood rings) is the primary; Concept B 'DO PLANTS / EAT / SOIL?' (gold SOIL?, van Helmont's brass scale, willow pan down, soil pot barely moves) is the Test & Compare second. Concept C is not made. Price: Option 1, 0 Flow credits (Nano Banana 2 16:9 stills on the AI Ultra plan + the £0 cover-builder lettering). The Fast tier (up to 20 cr for the A/B pair) only if a still fails thumb_preview/style_sheet twice; £0 cash either way. Keep the scale plate free of written numbers (no 169 lb / 200 lb on the image). Make both, run thumb_preview.py long and style_sheet.py long, stage the A/B pair for Test & Compare, commit, park for Chief before Ben's 1 Nov watch.",
+      "ref": "",
+      "film": "006",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T02:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T02:05Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "thumb"
     }
   ],
   "focus": [],

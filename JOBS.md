@@ -21,12 +21,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
 | J0817 | cloud | blocked | claude | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0821 | cloud | blocked | claude | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
-| J0858 | mini | blocked | gemini | – | thumb · HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) |  |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, A6TW_6CXhcs) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0865 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0868 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0869 | mini | open | – | – | 006 thumbs · thumb · HOS 006 Trees thumbnails step 2: make A + B (0 Flow credits), cover lettering, thumb_preview + style_sheet, stage Test & Compare, park for Chief |  |
 
 Recently finished:
 
@@ -35,8 +35,8 @@ Recently finished:
 - J0864 done: 028 Gliese 710: master v02, Chief's 4 picture fixes (ESA end slate, NEOWISE framing, conjunction, comet repeat), gates, park for Chief (Chief PASS on master v02 (6c9addd15, sha cde81a6a): the 4 fixes are in the cut list (r38_return offset 16-25.2 s, NEOWISE crops on the comet, conjunction 1.7x, Hale-Bopp own still), all gates PASS. To Ben's watch. Commit the v02 sheets with git add -f for the record.)
 - J0860 done: HOS 010: confirm the 8 period details (P1-P8) on SHOT_LIST_v01, no spend, park for Chief (P4-P8 confirmed against FACT_NOTES_v01 sources; SHOT_LIST_v01 and PIPELINE picture note updated (history-of-science 4ebf6b4). Next for 010: J0862 Shorts VO after the 30 Oct reset.)
 - J0859 done: 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief (Chief FIX: v02 needed for 4 picture faults (ESA end slate at 7:48, comet out of frame 7:40/3:57, faint conjunction 5:51, comet_a3 twice 4:27/4:44); fix job queued)
+- J0858 done: HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) (Chief: A (WOOD FROM SKY?) primary + B (DO PLANTS EAT SOIL?) for Test & Compare, C dropped; Option 1 at 0 Flow credits, Fast tier up to 20 cr only on two failed checks; step 2 queued.)
 - J0857 done: HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha) (Copied HOS 006 master v01 to /Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/HOS UAT/006_Trees_master_v01.mp4 (649,659,944 bytes); verified full download and SHA-256 bcafbf4e04ce72f230569f9c4050b9d43b6a364374c4d7e14360c4b62c8e67ee matches NAS/master_v01. £0.)
 - J0856 done: HOS 007 master v02: sound effects on every card/stamp + prove the music bed is heard (bed level, tempo), update HOS PR #355, park for Chief (Chief PASS: 43 SFX hits, sfx_kit level PASS (SFX -35.0 vs VO -16.1 LUFS); bed read at 60 BPM by music_gate, 18.1 dB under VO in speech, 0 breaches; -14.0 LUFS / -1.4 dBTP; picture untouched; check_all PASS. HOS PR #355 green and clean: merge is Ben's. UAT copy queued.)
 - J0855 done: 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief (Chief PASS part roughs v01; full join + 3 fixes + master -> J0859)
 - J0854 done: HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief (Chief: Short PASS. v02 (f60e1c53) has one caption on every frame across all 16 handovers (worst one-frame ghost 0.15 alpha), gate_shorts_open/polish/picture_qa PASS; civilisation/civilization is the transcriber. Upload job queued.)
-- J0853 done: 027 Short 'Why Do You Weigh Less at Earth's Equator?': package + Private upload, next free slot on/after Mon 23 Nov 11:30 (done)
