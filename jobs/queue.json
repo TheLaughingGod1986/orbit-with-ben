@@ -12322,13 +12322,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-23T07:16Z",
-      "eta": "2026-10-23T11:16Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "parked for Chief: 6-film HOS compilation cut assembled on NAS (/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540/hos_compilation_full_v01.mp4, 49:53 / 2993.49s, -14.32 LUFS / -1.19 dBTP, sha256 4166f5b8...); whole-cut polish_gate (0/51 fail), picture_qa (0/51 fail, 3 card blur WARNs inspected), and sfx_kit level (-16.0/-49.1 LUFS, 16 hits) all PASS on HOS PR #300 (00f8bed3); needs Chief review/PASS (J0176), merge of #300, and confirm 001/002/003 mid-film end cards + 004 bed reuse under new bridges",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -13024,6 +13024,11 @@
           "at": "2026-10-23T07:59Z",
           "by": "gemini",
           "what": "step 6 of 6 done: 6/6 done: HOS #300 00f8bed3; 6-film compilation assembled (49:53, -14.32 LUFS, -1.19 dBTP, sha256 4166f5b8...); whole-cut polish_gate + picture_qa + sfx_kit level PASS"
+        },
+        {
+          "at": "2026-10-23T07:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: 6-film HOS compilation cut assembled on NAS (/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540/hos_compilation_full_v01.mp4, 49:53 / 2993.49s, -14.32 LUFS / -1.19 dBTP, sha256 4166f5b8...); whole-cut polish_gate (0/51 fail), picture_qa (0/51 fail, 3 card blur WARNs inspected), and sfx_kit level (-16.0/-49.1 LUFS, 16 hits) all PASS on HOS PR #300 (00f8bed3); needs Chief review/PASS (J0176), merge of #300, and confirm 001/002/003 mid-film end cards + 004 bed reuse under new bridges"
         }
       ],
       "kind": "assembly",
