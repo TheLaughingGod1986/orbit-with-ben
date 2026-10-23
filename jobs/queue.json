@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-23T06:50Z",
+      "eta": "2026-10-23T10:50Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12989,6 +12989,11 @@
           "at": "2026-10-23T06:46Z",
           "by": "gemini",
           "what": "released: Step 5/6; HOS PR #300 2e15829d. J0175-prep-0540 finished exit 0 (all 6 masters normalized). Measured 006 hand-off trim (493.55s: 'air.' ends 492.94s, silence 493.13-493.76s, cut #89 ends 493.583s) and wired Bridge 1 & Bridge 2 shots (checked on contact sheet ~/_desk/logs/J0175-b1-b2-sheets-0743.jpg and J0175-001-b2-edges.jpg). Detached tmux J0175-b1b2-0746 running (~/_desk/logs/J0175-b1b2-0746.log, exit ~/_desk/logs/J0175-b1b2-0746.done) to re-prep 006 trimmed, render bridges 1-5 + closing, and run polish/SFX gates on Bridge 1/2. Next: check J0175-b1b2-0746.done, wire intro shots, build full concat + chapters + whole-cut gates, park for Chief."
+        },
+        {
+          "at": "2026-10-23T06:50Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
