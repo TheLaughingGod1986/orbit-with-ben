@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-23T06:20Z",
-      "eta": "2026-10-23T10:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12959,6 +12959,11 @@
           "at": "2026-10-23T06:21Z",
           "by": "codex",
           "what": "step 4 of 6 done: Existing prep session live; 005/006/001 normalized, 002 processing; completion absent; NAS scratch retained, no duplicate"
+        },
+        {
+          "at": "2026-10-23T06:21Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing tmux J0175-prep-0540 live; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 done 489.20s -14.20 LUFS TP -0.85; 006 done 508.00s -14.01 LUFS TP -1.47; 001 done 364.64s -14.25 LUFS TP -0.89; 002 processing since 07:12:11 London. No duplicate started. Scratch on NAS /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. Next check completion/prep_report.json then remaining segments, assembly and gates. No spend, upload, final PASS or merge. One-job run stops here."
         }
       ],
       "kind": "assembly",
