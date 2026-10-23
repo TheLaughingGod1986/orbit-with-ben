@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0878 | mini | open | – | – | listing · HOS compilation v02: package (title, chapters, Sources, £0 thumbnail) + Private upload for Thu 10 Dec 18:00 UK, park for Chief |  |
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0887 | mini | claimed | gemini | 2026-10-23T20:01Z | 007 edit · for gemini · assembly · `gemini-agy` · HOS 007 Vaccine: Ben's 3 changes on master v02 (1:48 milking hand, 3:50 mascot too big, 8:25 ending + subscribe line) -> v03 |  |
-| J0889 | mini | open | – | – | 028 thumbs · thumb · 028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief |  |
+| J0889 | mini | claimed | codex | 2026-10-23T20:26Z | 028 thumbs · thumb · 028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief |  |
 | J0890 | mini | open (after J0889) | – | – | 028 upload · listing · 028 Gliese 710: Private upload of master v03 for Sun 29 Nov 18:00 London, read back, record |  |
 | J0891 | mini | open | – | – | 029 edit · assembly · 029 Betelgeuse: re-render r21_hero (3:53 card text fix, 04bab9a9) -> full rough v03b, gates, phone copy, park for Chief |  |
 
