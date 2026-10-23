@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0865 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0866 | mini | open | – | – | 001 upload · listing · HOS 001 Short s11 Pasteur swan neck flask v02: package + Private upload in the next HOS Short slot, Related -> 001 long |  |
+| J0866 | mini | claimed | gemini | 2026-10-23T02:56Z | 001 upload · listing · HOS 001 Short s11 Pasteur swan neck flask v02: package + Private upload in the next HOS Short slot, Related -> 001 long |  |
 
 Recently finished:
 
