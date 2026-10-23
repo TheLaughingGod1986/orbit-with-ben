@@ -1,5 +1,5 @@
 {
-  "next_id": 888,
+  "next_id": 889,
   "jobs": [
     {
       "id": "J0001",
@@ -73575,6 +73575,34 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0888",
+      "title": "Watch streaming: verify the R2 uploads of the four _PHONE copies after PR #260 (hand run, clear back-off, check 302 + video/mp4)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "PR #260 is merged (72c1aac5) and the board is redeployed with R2 Watch streaming; Ben added the R2_* env vars to Vercel. The four _PHONE copies (HOS 006 v04, HOS 007 v02, OWB 028 v02, OWB 029 v02) should now upload to R2 and their board.json watch links turn kind 'stream', but 10 min after the merge none had.\nOn the Mini, in the orbit-with-ben checkout on main:\n1. git pull; confirm scripts/watch_upload.mjs is the R2 version (mentions r2sign.js).\n2. Run once by hand for HOS 007: node scripts/watch_upload.mjs hos-007-v02 \"<HOS UAT path>/007_The-First-Vaccine/hos_007_master_v02_PHONE.mp4\". Paste the exact stderr (never print key values).\n3. If ~/.config/studio-kanban/watch_uploads.json has a \"failed\" entry for any of the four ids, delete those entries so the 6 h back-off doesn't block them, then let board_publish run (or run it once) and confirm board.json shows kind 'stream' for all four.\n4. Check the playback path: curl -sI \"https://studio-kanban.vercel.app/api/watch?v=hos-007-v02&k=$BOARD_KEY\" (BOARD_KEY from the Mini's own config, never printed) answers 302 to an r2.dev URL, and that URL answers 200/206 with content-type video/mp4.\n5. Post the result on #99. £0. Don't delete anything else.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T14:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T14:16Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "urgent": true
     }
   ],
   "focus": [],
