@@ -70756,13 +70756,13 @@
       "stage": "",
       "after": "J0825",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-23T00:00Z",
-      "eta": "2026-10-23T02:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T17:36Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS",
       "history": [
         {
           "at": "2026-10-22T17:36Z",
@@ -70798,6 +70798,11 @@
           "at": "2026-10-23T00:22Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed HOS c2a85e6e: s11_curved_flask v02 (gte/lt handovers, 10/10 sampled handovers 1 caption each, gate + QA PASS)"
+        },
+        {
+          "at": "2026-10-23T00:22Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS"
         }
       ],
       "kind": "assembly",

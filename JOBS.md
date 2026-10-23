@@ -21,7 +21,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
 | J0817 | cloud | blocked | claude | – | studio · HOS Buffer: mirror HOS Shorts to Instagram/Facebook/TikTok through the HOS org (first post 31 Oct) |  |
 | J0821 | cloud | blocked | claude | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
-| J0854 | mini | claimed | gemini | 2026-10-23T02:00Z | for gemini · assembly · `gemini-agy` · HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief |  |
+| J0854 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · HOS 001 Short s11_curved_flask v02: captions gte/lt (no double caption at handovers), re-gate, park for Chief |  |
 | J0856 | mini | open (after J0830) | – | – | assembly · HOS 007 master v02: sound effects on every card/stamp + prove the music bed is heard (bed level, tempo), update HOS PR #355, park for Chief |  |
 | J0857 | mini | open (after J0835) | – | – | studio · HOS 006 Trees: copy master v01 to HOS UAT for Ben's watch (verify sha) |  |
 | J0858 | mini | open | – | – | thumb · HOS 006 Trees: thumbnail concepts + Flow price, park for Chief (due 29 Oct) |  |
