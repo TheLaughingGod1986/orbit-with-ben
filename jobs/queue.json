@@ -1,5 +1,5 @@
 {
-  "next_id": 865,
+  "next_id": 886,
   "jobs": [
     {
       "id": "J0001",
@@ -12322,13 +12322,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T09:09Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "waits for input: NAS I/O stall (tmux J0175-ruling-v03 / J0175-closing-v04 live, check their .done files first) and 006 master (picture due 25 Oct). Parked by Claude so it stops being re-handed every few minutes (HOS #180 6183327401).",
+      "result": "Chief PASS on v02 (8282ffa8, 49:18): mid-film end cards on 001/002/003 trimmed at the measured pauses, chapters updated, polish/picture_qa/sfx level PASS. HOS PR #300 merge is Ben's. Upload queued.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -12664,16 +12664,498 @@
           "at": "2026-10-15T02:57Z",
           "by": "claude",
           "what": "blocked: waits for input: NAS I/O stall (tmux J0175-ruling-v03 / J0175-closing-v04 live, check their .done files first) and 006 master (picture due 25 Oct). Parked by Claude so it stops being re-handed every few minutes (HOS #180 6183327401)."
+        },
+        {
+          "at": "2026-10-23T03:51Z",
+          "by": "claude",
+          "what": "reopened: inputs ready: HOS 006 master v01 passed and merged (#356, 1946ac4d), master in HOS UAT 23 Oct. First check the old tmux J0175-ruling-v03 / J0175-closing-v04 .done files and logs (15 Oct NAS stall); rerun those pieces if absent, then assemble the 45-60 min cut, gates, park for Chief (J0176)."
+        },
+        {
+          "at": "2026-10-23T03:53Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T03:54Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume prior 4/6: inspect detached render results and newly ready 006 master"
+        },
+        {
+          "at": "2026-10-23T03:57Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: HOS PR #300 554a53a1: relocated 004/005/006 master paths; old renders exit 137; replacements detached on NAS, gates pending"
+        },
+        {
+          "at": "2026-10-23T03:57Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. HOS PR #300 554a53a1. Old render exit files both 137; no surviving sessions. Replacements live: tmux J0175-bridge4-20261023 and J0175-closing-20261023; logs /Users/benjaminoats/_desk/logs/J0175-bridge4-20261023.log and J0175-closing-20261023.log; corresponding .done files absent at handoff. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175. Check exit files before any rerun, never duplicate. Corrected archived 004/005 inputs and wired approved 006 master. Next gates/card review, 006 trim/plates, missing segments and whole-cut assembler. No spend/PASS/upload."
+        },
+        {
+          "at": "2026-10-23T04:00Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T04:00Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: check existing detached render results before continuing assembly"
+        },
+        {
+          "at": "2026-10-23T04:02Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Both segment renders exit 0; Bridge4 SFX/polish tool checks clear; closing QA detached; HOS #300 2923da19"
+        },
+        {
+          "at": "2026-10-23T04:03Z",
+          "by": "codex",
+          "what": "released: Step 4/6; HOS PR #300 2923da19. Both renders exit 0. Completed QA: bridge4 SFX/polish exit 0; closing SFX exit 0, polish exit 1. Reports /Users/benjaminoats/_desk/logs/J0175-{bridge4,closing}-{sfx,polish}-20261023.json. Next inspect closing failure and segment frames/listen, then remaining segments/full assembler. QA done file /Users/benjaminoats/_desk/logs/J0175-gates-local-20261023.done. No duplicate render, spend, PASS or publishing."
+        },
+        {
+          "at": "2026-10-23T04:05Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T04:05Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: inspect closing polish failure; existing renders complete, no duplicate"
+        },
+        {
+          "at": "2026-10-23T04:07Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Closing FAIL diagnosed: overlay classified as still over moving atom; contrast issue recorded, Chief gate decision required"
+        },
+        {
+          "at": "2026-10-23T04:07Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: closing polish FAIL at 32.84s (2.635px jitter); PNG overlay is classified as still while composite atom moves. HOS contract requires approved separate PR for check correction. Card also needs contrast/layout revision. Evidence on HOS PR #300; progress 4/6."
+        },
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "reopened: Chief FIX: don't change the gate. Redo the closing card: higher contrast and a cleaner layout, and render it so the composite under it is either still or moves with the card as one layer (the 2.6 px jitter at 32.84 s is a still PNG over a moving atom). Re-run polish_gate on the closing piece, then assemble the cut, gates, park for Chief (J0176)."
+        },
+        {
+          "at": "2026-10-23T05:21Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:21Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: Chief closing-card contrast and unified-motion fix; inspect existing assembly worktree"
+        },
+        {
+          "at": "2026-10-23T05:24Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: HOS #300 ac53076e: closing contrast/freeze fix rendered; polish 0 failures, SFX exit 0, repository checks clear; remaining segments/full assembly next"
+        },
+        {
+          "at": "2026-10-23T05:24Z",
+          "by": "codex",
+          "what": "released: Step 4/6: HOS PR #300 ac53076e pushed. Chief 04:52Z closing fix complete: feathered navy contrast wash, larger cream type, plate held exactly 3.5s during card then resumes. Render/QA finished exit 0; unchanged polish 0 failures (existing timeline low-detail WARN), SFX exit 0; full-size card inspected; check_all ALL CHECKS PASS. Output NAS mini-tmp-scratch/2026-10-23/hos_comp_j0175_fix0521/segments/closing/hos_comp_closing_v01.mp4; SHA and evidence COMPILATION_CLOSING_FIX_2026-10-23.md. Sessions J0175-closing-fix-0521 and -qa completed; logs/done ~/_desk/logs/J0175-closing-fix-0521*. No active render to duplicate. Next: 006 trim/plate inspection, willow replacement in closing, intro/B1/B2 shots and renders, whole-cut assembler and gates. Remaining work exceeds 20 min; clean checkpoint. No spend, final PASS, upload or merge."
+        },
+        {
+          "at": "2026-10-23T05:30Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:30Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: inspect 006 master and remaining segment inputs after closing fix"
+        },
+        {
+          "at": "2026-10-23T05:34Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: HOS #300 06584e76: approved 006 willow replaces closing placeholder; NAS render and QA detached; repo checks clear"
+        },
+        {
+          "at": "2026-10-23T05:34Z",
+          "by": "codex",
+          "what": "released: Step 4/6; HOS PR #300 commit 06584e76. Closing willow replacement implemented and source window inspected; check_all ALL CHECKS PASS. Detached render tmux J0175-willow-0530, log /Users/benjaminoats/_desk/logs/J0175-willow-0530.log, completion /Users/benjaminoats/_desk/logs/J0175-willow-0530.done; QA session J0175-willow-0530-qa with corresponding -qa.log/-qa.done. Both done files absent at handoff; render ffmpeg active, do not duplicate. NAS output mini-tmp-scratch/2026-10-23/hos_comp_j0175_willow0530/segments/closing. Read completion/gates and inspect willow transition next, then 006 trim, intro/B1/B2, full assembly and gates. No spend, upload, final PASS or merge."
+        },
+        {
+          "at": "2026-10-23T05:36Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:37Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: check detached willow closing render and QA before remaining assembly"
+        },
+        {
+          "at": "2026-10-23T05:39Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: HOS #300 04991e63: closing render/QA exit 0, polish 0 failures and SFX clear; six-master NAS normalization detached"
+        },
+        {
+          "at": "2026-10-23T05:40Z",
+          "by": "codex",
+          "what": "released: Step 4/6; HOS PR #300 04991e63. Closing render/QA exit 0; unchanged polish 0 failures, 1 timeline warning; SFX clear; repo ALL CHECKS PASS. Detached normalization tmux J0175-prep-0540; log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540 with prep_report.json. Check completion/session before retry; never duplicate. 006 provisional full-length prep; trim and remaining segments/full assembly/gates next. HOS desk report 6358267832. No spend, upload, merge or final approval."
+        },
+        {
+          "at": "2026-10-23T05:43Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:43Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: inspect six-master NAS normalization before continuing; no duplicate render"
+        },
+        {
+          "at": "2026-10-23T05:44Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Checked existing J0175-prep-0540: session live, completion absent, log at 005 prep start; NAS scratch retained; no duplicate started"
+        },
+        {
+          "at": "2026-10-23T05:44Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds; HOS PR #300 at 04991e63. Existing normalization tmux J0175-prep-0540 is live; /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent; log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log says 005: prep start 06:38:02. No duplicate started. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. Next run check completion and prep_report.json, then 006 trim/remaining segments/full assembly/gates. No spend, final approval, upload or merge."
+        },
+        {
+          "at": "2026-10-23T05:47Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:48Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: inspect existing six-master normalization; preserve live render and NAS scratch"
+        },
+        {
+          "at": "2026-10-23T05:48Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing normalization tmux J0175-prep-0540 remains live; /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent, log J0175-prep-0540.log at 005 prep start. No duplicate started. Scratch already on NAS /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. HOS PR #300 checkpoint 04991e63. Next check completion/prep_report.json, then 006 trim, remaining segments, assembly and gates. No spend, publishing, merge or final approval."
+        },
+        {
+          "at": "2026-10-23T05:51Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:52Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: check existing NAS normalization session and completion; no duplicate render"
+        },
+        {
+          "at": "2026-10-23T05:52Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Existing J0175-prep-0540 live; 005 normalized 489.20s at -14.20 LUFS/-0.85 TP, 006 started; completion absent, no duplicate"
+        },
+        {
+          "at": "2026-10-23T05:52Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing tmux J0175-prep-0540 remains live; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 finished (489.20s, -14.20 LUFS, TP -0.85); 006 prep started. No duplicate render. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540; inspect prep_report.json after completion. HOS PR #300 checkpoint 04991e63. Next: completion check, 006 trim, remaining segments/full assembly and gates. No spend, publishing, merge or final approval."
+        },
+        {
+          "at": "2026-10-23T06:02Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T06:03Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: checking existing detached normalization before remaining assembly; no duplicate render"
+        },
+        {
+          "at": "2026-10-23T06:03Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Existing prep live: 005 and 006 normalized; 001 started; completion absent; NAS scratch retained, no duplicate"
+        },
+        {
+          "at": "2026-10-23T06:03Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing tmux J0175-prep-0540 live; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 finished 489.20s -14.20 LUFS TP -0.85; 006 finished 508.00s -14.01 LUFS TP -1.47; 001 started 07:01:44. No duplicate started. Scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. HOS PR #300 checkpoint 04991e63. Next check completion/prep_report.json then 006 trim, remaining segments/full assembly/gates. No spend, publishing, final approval or merge."
+        },
+        {
+          "at": "2026-10-23T06:06Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T06:06Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: check existing detached normalization and NAS scratch before remaining assembly"
+        },
+        {
+          "at": "2026-10-23T06:06Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Existing J0175-prep-0540 live; completion absent; 005/006 normalized, 001 processing; scratch on NAS, no duplicate"
+        },
+        {
+          "at": "2026-10-23T06:06Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing normalization tmux J0175-prep-0540 is live; /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 done 489.20s -14.20 LUFS TP -0.85; 006 done 508.00s -14.01 LUFS TP -1.47; 001 processing. No duplicate started. Scratch already on NAS /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. HOS PR #300 checkpoint 04991e63. Next check completion/prep_report.json then 006 trim, remaining segments/full assembly/gates. No spend, upload, merge or final approval."
+        },
+        {
+          "at": "2026-10-23T06:09Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T06:09Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: check existing detached normalization and completion before assembly; NAS scratch retained"
+        },
+        {
+          "at": "2026-10-23T06:09Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing normalization tmux J0175-prep-0540 is live; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 normalized 489.20s -14.20 LUFS TP -0.85; 006 normalized 508.00s -14.01 LUFS TP -1.47; 001 processing. No duplicate started. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. HOS PR #300 checkpoint 04991e63. Next check completion/prep_report.json then 006 trim, remaining segments, full assembly and gates. No spend, publishing, merge or final approval."
+        },
+        {
+          "at": "2026-10-23T06:12Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T06:13Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: inspect existing detached normalization before assembly; all job scratch on NAS"
+        },
+        {
+          "at": "2026-10-23T06:13Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Existing prep live: 005,006,001 normalized; 002 processing; done file absent. NAS scratch, no duplicate."
+        },
+        {
+          "at": "2026-10-23T06:13Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing tmux J0175-prep-0540 live; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 done 489.20s -14.20 LUFS TP -0.85; 006 done 508.00s -14.01 LUFS TP -1.47; 001 done 364.64s -14.25 LUFS TP -0.89; 002 processing since 07:12:11 London. No duplicate started. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. Clean HOS worktree checkpoint 04991e63 on PR #300. Next read completion/prep_report.json then remaining assembly and gates. No spend, upload, final PASS or merge. One-job run stops here."
+        },
+        {
+          "at": "2026-10-23T06:16Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T06:16Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: inspect existing detached normalization before remaining assembly; retain NAS scratch"
+        },
+        {
+          "at": "2026-10-23T06:17Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Existing prep session live; 005/006/001 normalized, 002 processing; completion absent; no duplicate started"
+        },
+        {
+          "at": "2026-10-23T06:17Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing tmux J0175-prep-0540 live; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 done 489.20s -14.20 LUFS TP -0.85; 006 done 508.00s -14.01 LUFS TP -1.47; 001 done 364.64s -14.25 LUFS TP -0.89; 002 processing since 07:12:11 London. No duplicate started. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. Next inspect completion/prep_report.json then remaining segments, full assembly and gates. No spend, upload, final PASS or merge. One-job run stops here."
+        },
+        {
+          "at": "2026-10-23T06:20Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T06:20Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Resume 4/6: inspect existing detached normalization and completion; retain NAS scratch"
+        },
+        {
+          "at": "2026-10-23T06:21Z",
+          "by": "codex",
+          "what": "step 4 of 6 done: Existing prep session live; 005/006/001 normalized, 002 processing; completion absent; NAS scratch retained, no duplicate"
+        },
+        {
+          "at": "2026-10-23T06:21Z",
+          "by": "codex",
+          "what": "released: Step 4/6 holds. Existing tmux J0175-prep-0540 live; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 done 489.20s -14.20 LUFS TP -0.85; 006 done 508.00s -14.01 LUFS TP -1.47; 001 done 364.64s -14.25 LUFS TP -0.89; 002 processing since 07:12:11 London. No duplicate started. Scratch on NAS /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. Next check completion/prep_report.json then remaining segments, assembly and gates. No spend, upload, final PASS or merge. One-job run stops here."
+        },
+        {
+          "at": "2026-10-23T06:23Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-23T06:23Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T06:28Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Resuming 4/6: prep tmux live (005,006,001,002 done, 003 running); checking 006 trim and remaining segments"
+        },
+        {
+          "at": "2026-10-23T06:46Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: HOS #300 2e15829d: J0175-prep-0540 exit 0; 006 trim 493.55s + Bridge 1/2 shots wired; J0175-b1b2-0746 detached"
+        },
+        {
+          "at": "2026-10-23T06:46Z",
+          "by": "gemini",
+          "what": "released: Step 5/6; HOS PR #300 2e15829d. J0175-prep-0540 finished exit 0 (all 6 masters normalized). Measured 006 hand-off trim (493.55s: 'air.' ends 492.94s, silence 493.13-493.76s, cut #89 ends 493.583s) and wired Bridge 1 & Bridge 2 shots (checked on contact sheet ~/_desk/logs/J0175-b1-b2-sheets-0743.jpg and J0175-001-b2-edges.jpg). Detached tmux J0175-b1b2-0746 running (~/_desk/logs/J0175-b1b2-0746.log, exit ~/_desk/logs/J0175-b1b2-0746.done) to re-prep 006 trimmed, render bridges 1-5 + closing, and run polish/SFX gates on Bridge 1/2. Next: check J0175-b1b2-0746.done, wire intro shots, build full concat + chapters + whole-cut gates, park for Chief."
+        },
+        {
+          "at": "2026-10-23T06:50Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T07:13Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: 006 trimmed prep PASS (493.57s, -14.01 LUFS); bridges 1-5 + closing rendered; Bridge 1 polish+SFX PASS, Bridge 2 polish PASS; 14 intro windows eye-checked on contact sheets"
+        },
+        {
+          "at": "2026-10-23T07:13Z",
+          "by": "gemini",
+          "what": "released: Step 5/6. J0175-b1b2-0746 finished: 006 trimmed prep done (493.57s, -14.01 LUFS TP -1.48); bridges 1-5 + closing rendered in /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540/segments/. Bridge 1 polish PASS + SFX PASS (-16.5/-49.1 LUFS, 1 hit); Bridge 2 polish PASS, SFX needs 1 motivated tick at starts[2]+0.25s like Bridge 4. Scanned and eye-checked all 14 intro windows on ~/_desk/logs/J0175-intro-{candidates,refinements,refinements2}.jpg: [(005,234.3,239.0),(006,487.0,492.0),(001,128.0,133.0),(004,192.0,197.0),(005,302.6,306.1),(006,146.5,149.3),(001,282.0,285.0),(002,96.0,99.0),(003,129.8,132.8),(004,287.0,291.3),(002,148.0,152.7),(005,363.4,367.9),(004,173.5,178.5),(005,183.5,189.1)]. Next run: wire intro + bridge2 tick + card_01..06 + whole-cut concat in _assemble_hos_compilation_v01.py, run gates, park for Chief."
+        },
+        {
+          "at": "2026-10-23T07:16Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T07:17Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Resuming 5/6: wiring intro + bridge2 tick + card_01..06 + whole-cut concat in _assemble_hos_compilation_v01.py"
+        },
+        {
+          "at": "2026-10-23T07:44Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Resuming 5/6: active assemble PID 96565 finishing hos_compilation_full_v01.mp4 + stems + report; checking segment gates"
+        },
+        {
+          "at": "2026-10-23T07:59Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: 6/6 done: HOS #300 00f8bed3; 6-film compilation assembled (49:53, -14.32 LUFS, -1.19 dBTP, sha256 4166f5b8...); whole-cut polish_gate + picture_qa + sfx_kit level PASS"
+        },
+        {
+          "at": "2026-10-23T07:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: 6-film HOS compilation cut assembled on NAS (/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540/hos_compilation_full_v01.mp4, 49:53 / 2993.49s, -14.32 LUFS / -1.19 dBTP, sha256 4166f5b8...); whole-cut polish_gate (0/51 fail), picture_qa (0/51 fail, 3 card blur WARNs inspected), and sfx_kit level (-16.0/-49.1 LUFS, 16 hits) all PASS on HOS PR #300 (00f8bed3); needs Chief review/PASS (J0176), merge of #300, and confirm 001/002/003 mid-film end cards + 004 bed reuse under new bridges"
+        },
+        {
+          "at": "2026-10-23T08:00Z",
+          "by": "claude",
+          "what": "reopened: Chief FIX on v01 (4166f5b8, 49:53, gates PASS): (1) trim the mid-film end cards on 001, 002 and 003 like the 005/006/004 hand-offs, so nothing mid-film looks like an ending or points away; (2) the 004 score bed under the new intro/cards/bridges/closing is APPROVED (own £0 score, ducked, gap check PASS). Render v02, re-run the whole-cut gates (polish, picture_qa, sfx level, music gap), push the report to HOS PR #300, park for Chief. Upload (J0176) after PASS: Private, publishAt Sun 8 Nov 18:00 London (after 006 airs Thu 5 Nov; no new long that day)."
+        },
+        {
+          "at": "2026-10-23T08:02Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T08:04Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Starting Chief FIX for v02: trim mid-film end cards on 001, 002, 003; re-render v02 and re-run whole-cut gates"
+        },
+        {
+          "at": "2026-10-23T08:22Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: HOS #300 dc845aba: measured and wired mid-film end-card trims for 001 (359.35s), 002 (530.15s), 003 (406.20s); detached tmux J0175-v02-0921 running prep+assemble+gates for v02"
+        },
+        {
+          "at": "2026-10-23T08:22Z",
+          "by": "gemini",
+          "what": "released: Step 5/6 (v02 Chief FIX); HOS PR #300 dc845aba. Measured and wired mid-film end-card trims: 001 keep_to=359.35s (before end_card_dissolve_start 359.405s, silence 359.03-364.54s), 002 keep_to=530.15s (pause 529.53-530.35s after 'empty in?', drops spoken stage direction + hand-off + brown end card), 003 keep_to=406.20s (pause 405.48-406.86s after 'cardboard lesson.', drops clipped fragment + 18s frozen Studio end-screen hold). Detached tmux J0175-v02-0921 running (~/_desk/logs/J0175-v02-0921.log, exit ~/_desk/logs/J0175-v02-0921.done) to re-prep 001/002/003, assemble hos_compilation_full_v02.mp4 (~49:18), and run whole-cut polish_gate, picture_qa, and sfx_kit level. Next run: check J0175-v02-0921.done, commit v02 gate reports to #300, and park for Chief."
+        },
+        {
+          "at": "2026-10-23T08:25Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T08:33Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: 001 trimmed master prepped (359.37s, -14.25 LUFS); 002/003 prep + v02 assembly + gates running in J0175-v02-0921"
+        },
+        {
+          "at": "2026-10-23T08:42Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: 001 trimmed master done (359.37s, -14.25 LUFS); 002 (555 MB) finishing; 003 + v02 assembly + gates in tmux J0175-v02-0921"
+        },
+        {
+          "at": "2026-10-23T08:42Z",
+          "by": "gemini",
+          "what": "released: Step 5/6 (v02 Chief FIX): detached tmux J0175-v02-0921 still running (~/_desk/logs/J0175-v02-0921.log, exit ~/_desk/logs/J0175-v02-0921.done). 001 trimmed master done (359.37s, -14.25 LUFS, -0.89 dBTP); 002 (555 MB) finishing; 003 prep + hos_compilation_full_v02.mp4 assembly + whole-cut gates next. Next run: check ~/_desk/logs/J0175-v02-0921.done, commit v02 gate reports to HOS PR #300, and park for Chief."
+        },
+        {
+          "at": "2026-10-23T08:45Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T08:48Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: 001 (359.37s) and 002 (530.17s) trimmed masters done; 003 prep + v02 assembly + gates running in tmux J0175-v02-0921"
+        },
+        {
+          "at": "2026-10-23T08:49Z",
+          "by": "gemini",
+          "what": "released: Step 5/6 (v02 Chief FIX): detached tmux J0175-v02-0921 still running (~/_desk/logs/J0175-v02-0921.log, exit ~/_desk/logs/J0175-v02-0921.done). 001 (359.37s, -14.25 LUFS) and 002 (530.17s, -14.13 LUFS) trimmed masters done; 003 encoding now, then hos_compilation_full_v02.mp4 assembly + whole-cut gates. Taking J0877 meanwhile."
+        },
+        {
+          "at": "2026-10-23T08:50Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T08:54Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: 001/002/003 trimmed masters prepped (49:18 total); hos_compilation_full_v02.mp4 assembling + gates next"
+        },
+        {
+          "at": "2026-10-23T09:07Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: 001/002/003 trimmed masters prepped + cut_plan_v02 (49:18); v02 concat + gates running in tmux J0175-v02-0921"
+        },
+        {
+          "at": "2026-10-23T09:07Z",
+          "by": "gemini",
+          "what": "released: Step 5/6 (v02 Chief FIX): 001 (359.37s, -14.25 LUFS), 002 (530.17s, -14.13 LUFS), and 003 (406.20s, -14.22 LUFS) trimmed masters finished; cut_plan_v02.json written (19 segments, 49:18 / 2958.17s). Detached tmux J0175-v02-0921 (~/_desk/logs/J0175-v02-0921.log, exit ~/_desk/logs/J0175-v02-0921.done) is currently finishing hos_compilation_full_v02.mp4 +faststart flush on NAS and running polish_gate, picture_qa, and sfx_kit level. Next run: check ~/_desk/logs/J0175-v02-0921.done, commit v02 gate reports to HOS PR #300, and park for Chief."
+        },
+        {
+          "at": "2026-10-23T09:09Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T09:17Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: hos_compilation_full_v02.mp4 (49:18, -14.32 LUFS / -1.16 dBTP) assembled with 001/002/003 mid-film end cards trimmed; polish_gate, picture_qa, sfx_kit level PASS (HOS PR #300 3ba58733)"
+        },
+        {
+          "at": "2026-10-23T09:17Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review 6-film compilation v02 (49:18, HOS PR #300 3ba58733, NAS hos_compilation_full_v02.mp4) with 001/002/003 mid-film end cards trimmed + polish/picture/sfx gates PASS"
+        },
+        {
+          "at": "2026-10-23T09:18Z",
+          "by": "claude",
+          "what": "done: Chief PASS on v02 (8282ffa8, 49:18): mid-film end cards on 001/002/003 trimmed at the measured pauses, chapters updated, polish/picture_qa/sfx level PASS. HOS PR #300 merge is Ben's. Upload queued."
         }
       ],
       "kind": "assembly",
       "escalated_at": "2026-10-14T11:15Z",
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006"
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy",
       "progress": {
-        "step": 4,
+        "step": 6,
         "of": 6,
-        "at": "2026-10-15T02:56Z",
-        "by": "codex",
-        "note": "Both existing render sessions live; exit files absent, logs empty; no duplicate"
+        "at": "2026-10-23T09:17Z",
+        "by": "gemini",
+        "note": "hos_compilation_full_v02.mp4 (49:18, -14.32 LUFS / -1.16 dBTP) assembled with 001/002/003 mid-film end cards trimmed; po"
       }
     },
     {
@@ -12687,13 +13169,13 @@
       "stage": "",
       "after": "J0175",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "Chief decision: compilation v02 passed (J0175); upload Private for Sun 8 Nov 18:00 London (after 006 airs Thu 5 Nov, no new long that day) via the queued package+upload job; 4-week measure per the brief.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -12704,6 +13186,11 @@
           "at": "2026-10-15T08:47Z",
           "by": "chief",
           "what": "left open: waits on J0175 (not Chief)."
+        },
+        {
+          "at": "2026-10-23T09:18Z",
+          "by": "claude",
+          "what": "done: Chief decision: compilation v02 passed (J0175); upload Private for Sun 8 Nov 18:00 London (after 006 airs Thu 5 Nov, no new long that day) via the queued package+upload job; 4-week measure per the brief."
         }
       ],
       "kind": "chief"
@@ -70756,13 +71243,13 @@
       "stage": "",
       "after": "J0825",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T00:00Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T17:36Z",
-      "result": "",
+      "result": "Chief: Short PASS. v02 (f60e1c53) has one caption on every frame across all 16 handovers (worst one-frame ghost 0.15 alpha), gate_shorts_open/polish/picture_qa PASS; civilisation/civilization is the transcriber. Upload job queued.",
       "history": [
         {
           "at": "2026-10-22T17:36Z",
@@ -70773,6 +71260,41 @@
           "at": "2026-10-22T23:00Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-23T00:00Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T00:01Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0854: inspect s11_curved_flask build script and fix caption gte/lt"
+        },
+        {
+          "at": "2026-10-23T00:05Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected _build_short_s11_curved_flask_v01.py and timeline handovers"
+        },
+        {
+          "at": "2026-10-23T00:19Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Rendered s11_curved_flask v02 (sha f60e1c53ab0c) with gte(t,s)*lt(t,e); gate_shorts_open, vo_check, polish_gate, picture_qa PASS; 10/10 sampled handovers verified 1 caption each"
+        },
+        {
+          "at": "2026-10-23T00:22Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Committed HOS c2a85e6e: s11_curved_flask v02 (gte/lt handovers, 10/10 sampled handovers 1 caption each, gate + QA PASS)"
+        },
+        {
+          "at": "2026-10-23T00:22Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS"
+        },
+        {
+          "at": "2026-10-23T00:23Z",
+          "by": "claude",
+          "what": "done: Chief: Short PASS. v02 (f60e1c53) has one caption on every frame across all 16 handovers (worst one-frame ghost 0.15 alpha), gate_shorts_open/polish/picture_qa PASS; civilisation/civilization is the transcriber. Upload job queued."
         }
       ],
       "kind": "assembly",
@@ -70784,7 +71306,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "taskKeys": [
+        "HOS:001"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T00:22Z",
+        "by": "gemini",
+        "note": "Committed HOS c2a85e6e: s11_curved_flask v02 (gte/lt handovers, 10/10 sampled handovers 1 caption each, gate + QA PASS)"
+      }
     },
     {
       "id": "J0855",
@@ -70914,21 +71446,90 @@
       "stage": "",
       "after": "J0830",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T00:24Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T18:51Z",
-      "result": "",
+      "result": "Chief PASS: 43 SFX hits, sfx_kit level PASS (SFX -35.0 vs VO -16.1 LUFS); bed read at 60 BPM by music_gate, 18.1 dB under VO in speech, 0 breaches; -14.0 LUFS / -1.4 dBTP; picture untouched; check_all PASS. HOS PR #355 green and clean: merge is Ben's. UAT copy queued.",
       "history": [
         {
           "at": "2026-10-22T18:51Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-23T00:23Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-23T00:24Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T00:24Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J0856: inspecting HOS PR #355 (codex/J0830-master-v01) and _master_audio_v01.py"
+        },
+        {
+          "at": "2026-10-23T00:30Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected PR #355 and mapped all 43 teaching/chapter SFX cues (WHO, WHEN, DATA, labels, code graphics, chapter cards) + 60 BPM score pulse"
+        },
+        {
+          "at": "2026-10-23T00:45Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Built HOS 007 master v02 (-14.0 LUFS / -1.4 dBTP) with 43 SFX hits + 60.0 BPM score (J0079 ducking); all gates PASS (music_gate, sfx_kit level --bed, polish_gate, picture_qa, gate:episode)"
+        },
+        {
+          "at": "2026-10-23T00:50Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J0856; inspecting HOS PR #355 and _master_audio_v01.py"
+        },
+        {
+          "at": "2026-10-23T00:52Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Master v02 rendered (43 SFX cues, 60.0 BPM harp pulse ac20/ac0=0.8926, bed 18.1 dB under VO in speech with 0 breaches, -14.0 LUFS / -1.4 dBTP) and all gates PASS; updating REVIEW_master_v01.md and production-status.md"
+        },
+        {
+          "at": "2026-10-23T00:55Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Pushed master v02 + updated REVIEW_master_v01.md + all gates PASS to HOS PR #355 (commit 30f9033e, comment 6354755058); check_all.sh 007 ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-10-23T00:55Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 007 master v02 (43 SFX cues, 60.0 BPM harp pulse ac20/ac0=0.8926, bed 18.12 dB under VO in speech with 0 breaches, -14.0 LUFS / -1.4 dBTP) pushed to HOS PR #355 (30f9033e); needs Chief review, PASS and merge"
+        },
+        {
+          "at": "2026-10-23T01:33Z",
+          "by": "claude",
+          "what": "done: Chief PASS: 43 SFX hits, sfx_kit level PASS (SFX -35.0 vs VO -16.1 LUFS); bed read at 60 BPM by music_gate, 18.1 dB under VO in speech, 0 breaches; -14.0 LUFS / -1.4 dBTP; picture untouched; check_all PASS. HOS PR #355 green and clean: merge is Ben's. UAT copy queued."
         }
       ],
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy",
+      "taskKeys": [
+        "HOS:007"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T00:55Z",
+        "by": "gemini",
+        "note": "Pushed master v02 + updated REVIEW_master_v01.md + all gates PASS to HOS PR #355 (commit 30f9033e, comment 6354755058); "
+      }
     },
     {
       "id": "J0857",
@@ -70941,21 +71542,61 @@
       "stage": "",
       "after": "J0835",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-23T01:33Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T19:11Z",
-      "result": "",
+      "result": "Copied HOS 006 master v01 to /Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/HOS UAT/006_Trees_master_v01.mp4 (649,659,944 bytes); verified full download and SHA-256 bcafbf4e04ce72f230569f9c4050b9d43b6a364374c4d7e14360c4b62c8e67ee matches NAS/master_v01. £0.",
       "history": [
         {
           "at": "2026-10-22T19:11Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-23T01:33Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T01:34Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J0857: locate NAS source and HOS UAT destination"
+        },
+        {
+          "at": "2026-10-23T01:36Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Copied HOS 006 master v01 to HOS UAT/006_Trees_master_v01.mp4 (649,659,944 bytes)"
+        },
+        {
+          "at": "2026-10-23T01:36Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified SHA-256 of HOS UAT/006_Trees_master_v01.mp4 matches bcafbf4e04ce72f230569f9c4050b9d43b6a364374c4d7e14360c4b62c8e67ee"
+        },
+        {
+          "at": "2026-10-23T01:36Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Ready to mark done and post path on #99"
+        },
+        {
+          "at": "2026-10-23T01:36Z",
+          "by": "gemini",
+          "what": "done: Copied HOS 006 master v01 to /Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/HOS UAT/006_Trees_master_v01.mp4 (649,659,944 bytes); verified full download and SHA-256 bcafbf4e04ce72f230569f9c4050b9d43b6a364374c4d7e14360c4b62c8e67ee matches NAS/master_v01. £0."
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-10-23T01:36Z",
+        "by": "gemini",
+        "note": "Ready to mark done and post path on #99"
+      }
     },
     {
       "id": "J0858",
@@ -70968,21 +71609,56 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T01:51Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T19:11Z",
-      "result": "",
+      "result": "Chief: A (WOOD FROM SKY?) primary + B (DO PLANTS EAT SOIL?) for Test & Compare, C dropped; Option 1 at 0 Flow credits, Fast tier up to 20 cr only on two failed checks; step 2 queued.",
       "history": [
         {
           "at": "2026-10-22T19:11Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-23T01:51Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T01:51Z",
+          "by": "gemini",
+          "what": "step 0 of 2 done: Starting Step 1: 3 thumbnail concepts + Flow credit price for HOS 006"
+        },
+        {
+          "at": "2026-10-23T02:04Z",
+          "by": "gemini",
+          "what": "step 1 of 2 done: Step 1/2 done: committed 3 positive-question thumbnail concepts (WOOD FROM SKY?, DO PLANTS EAT SOIL?, GROWN ON WATER?) + Flow credit price table (0 cr Nano Banana 2 / 20-60 cr Fast reserve, 20,830 cr live) in HOS 9fad9745"
+        },
+        {
+          "at": "2026-10-23T02:04Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: 006 thumbnail price + concept pick"
+        },
+        {
+          "at": "2026-10-23T02:05Z",
+          "by": "claude",
+          "what": "done: Chief: A (WOOD FROM SKY?) primary + B (DO PLANTS EAT SOIL?) for Test & Compare, C dropped; Option 1 at 0 Flow credits, Fast tier up to 20 cr only on two failed checks; step 2 queued."
         }
       ],
-      "kind": "thumb"
+      "kind": "thumb",
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "progress": {
+        "step": 1,
+        "of": 2,
+        "at": "2026-10-23T02:04Z",
+        "by": "gemini",
+        "note": "Step 1/2 done: committed 3 positive-question thumbnail concepts (WOOD FROM SKY?, DO PLANTS EAT SOIL?, GROWN ON WATER?) +"
+      }
     },
     {
       "id": "J0859",
@@ -71210,13 +71886,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T22:35Z",
-      "eta": "2026-10-23T00:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T22:25Z",
-      "result": "",
+      "result": "Chief PASS on master v02 (6c9addd15, sha cde81a6a): the 4 fixes are in the cut list (r38_return offset 16-25.2 s, NEOWISE crops on the comet, conjunction 1.7x, Hale-Bopp own still), all gates PASS. To Ben's watch. Commit the v02 sheets with git add -f for the record.",
       "history": [
         {
           "at": "2026-10-22T22:25Z",
@@ -71247,6 +71923,26 @@
           "at": "2026-10-22T23:13Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Rendered 028_Gliese710_full_master_v02.mp4 and passed clip_check, picture_qa, polish_gate, music_gate, sfx_kit level, and gate:episode"
+        },
+        {
+          "at": "2026-10-22T23:54Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J0864: inspecting 028 master v01 build script and 4 picture fixes"
+        },
+        {
+          "at": "2026-10-22T23:58Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Verified 028_Gliese710_full_master_v02.mp4 (sha256 cde81a6a..., 61 cuts, 472.83s, -14.1 LUFS / -1.3 dBTP, £0 spend), all 4 picture fixes + all gates PASS, 3 identical copies in /tmp + OWB UAT + NAS"
+        },
+        {
+          "at": "2026-10-22T23:58Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: 028 Gliese 710 full master v02 (6c9addd15, sha256 cde81a6a...) built with all 4 £0 picture fixes, all gates PASS (clip_check 61 rows, picture_qa 0 fail, polish_gate 0 fail, music_gate PASS, sfx_level PASS, 22/22 pills p99=255), copied to OWB UAT + NAS for Ben's watch"
+        },
+        {
+          "at": "2026-10-23T00:00Z",
+          "by": "claude",
+          "what": "done: Chief PASS on master v02 (6c9addd15, sha cde81a6a): the 4 fixes are in the cut list (r38_return offset 16-25.2 s, NEOWISE crops on the comet, conjunction 1.7x, Hale-Bopp own still), all gates PASS. To Ben's watch. Commit the v02 sheets with git add -f for the record."
         }
       ],
       "kind": "assembly",
@@ -71254,31 +71950,1580 @@
         "OWB:028"
       ],
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-22T23:13Z",
+        "at": "2026-10-22T23:58Z",
         "by": "gemini",
-        "note": "Rendered 028_Gliese710_full_master_v02.mp4 and passed clip_check, picture_qa, polish_gate, music_gate, sfx_kit level, an"
+        "note": "Verified 028_Gliese710_full_master_v02.mp4 (sha256 cde81a6a..., 61 cuts, 472.83s, -14.1 LUFS / -1.3 dBTP, £0 spend), all"
       }
+    },
+    {
+      "id": "J0865",
+      "title": "Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Test B rule (HOS PR #261): two search-titled Shorts per film. Pick the locked HOS long (004, 005, then the next locked) with the fewest built Shorts. Lift one stretch of its own VO and picture, 9:16, person card or date call-out on screen, captions throughout, search-shaped title draft. Spend nothing. Post on desk #180, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T02:52Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T00:23Z",
+      "result": "Chief PASS (Gemini's gates). Upload queued: first free HOS slot on/after Fri 13 Nov 11:30, after the 007 long airs Thu 12 Nov.",
+      "history": [
+        {
+          "at": "2026-10-23T00:23Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T02:51Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-23T02:52Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T02:59Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Picked HOS 007 (now locked: VO + 73/73 Flow plates KEEP + master v02 Chief PASS; 0 built search-titled Shorts vs 5 on 004/005/006/001 and 4 on 002/003). Inspecting 007 script, VO, and plates."
+        },
+        {
+          "at": "2026-10-23T03:08Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Selected Part 04 1 July 1796 smallpox test stretch (s04_smallpox_test_v01, 62 words 0..61, zero overlap with Short B/C; title draft 'What Was the Edward Jenner Experiment?'). Writing builder script."
+        },
+        {
+          "at": "2026-10-23T03:11Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Wrote _build_short_s04_smallpox_test_v01.py (62w Part 04 lift, 7 Chief-KEPT plates, EDWARD JENNER · 1 July 1796 card, gte/lt caption handovers, own-synthesis D-major pad); running build and QA gates."
+        },
+        {
+          "at": "2026-10-23T03:48Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Build and all QA gates (gate_shorts_open, vo_check, polish_gate, picture_qa, 19/19 caption handovers, 0 freezes) PASS on hos_007_s04_smallpox_test_v01.mp4."
+        },
+        {
+          "at": "2026-10-23T03:52Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Committed HOS 994d5a7b and posted s04_smallpox_test_v01 report + stills on HOS desk #180 (#6356949417). Parking for Chief: Short PASS."
+        },
+        {
+          "at": "2026-10-23T03:52Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS — HOS 007 s04_smallpox_test_v01, 26.13s, 62 words, sha 3daff43d04bc, HOS 994d5a7b, desk #6356949417. Title draft: What Was the Edward Jenner Experiment? Slot is Chief's call. Nothing uploaded."
+        },
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Gemini's gates). Upload queued: first free HOS slot on/after Fri 13 Nov 11:30, after the 007 long airs Thu 12 Nov."
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "hos-short-from-locked",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy",
+      "taskKeys": [
+        "HOS:007"
+      ],
+      "progress": {
+        "step": 5,
+        "of": 5,
+        "at": "2026-10-23T03:52Z",
+        "by": "gemini",
+        "note": "Committed HOS 994d5a7b and posted s04_smallpox_test_v01 report + stills on HOS desk #180 (#6356949417). Parking for Chie"
+      }
+    },
+    {
+      "id": "J0866",
+      "title": "HOS 001 Short s11 Pasteur swan neck flask v02: package + Private upload in the next HOS Short slot, Related -> 001 long",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0854 (HOS 001 Short s11_curved_flask v02, sha f60e1c53, 22.37 s; one caption on every frame, all gates PASS). Package it with the HOS upload package and upload Private for the next free HOS weekday Short slot (11:30 London) that is after the HOS 001 long is public, title 'What Is the Pasteur Swan Neck Flask Experiment?', en-GB, synthetic disclosure as the other HOS Shorts, not made for kids, Related -> the HOS 001 long. Read back publishAt from the API, record the upload in the HOS repo as the other Shorts are, and register it for the HOS Buffer mirror (once orbit-with-ben PR #260 is merged: npx tsx scripts/buffer-mirror.ts register --channel hos --video <id> --media <mp4> --long <001 long id>). £0. HOS rule: Shorts only through the HOS Buffer org.",
+      "ref": "",
+      "film": "001",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-23T00:56Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T00:23Z",
+      "result": "Uploaded Private 1-BZaFIMwYU (publishAt 2026-10-27T11:30:00Z, Tue 27 Oct 11:30 London, en-GB, not kids, synthetic Yes, Related -> _C92tIJCk8A); recorded in HOS 4765f58f (SHORTS_LOG, SHORTS_RELEASE, SHORTS_UPLOAD_INDEX, shorts_open_library, social/UPLOADS.json); check_all.sh + channel:audit PASS (44 videos, 0 errors); ready for OWB buffer-mirror register once PR #260 merges",
+      "history": [
+        {
+          "at": "2026-10-23T00:23Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T00:56Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T00:57Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0866: inspecting HOS 001 Shorts, slot schedule, and s11_curved_flask v02"
+        },
+        {
+          "at": "2026-10-23T01:11Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Built upload package and SHORTS_RELEASE.json for Tue 27 Oct 2026 11:30 London (2026-10-27T11:30:00Z); lint:package, gate_shorts_open.py, and youtube:package --dry-run PASS"
+        },
+        {
+          "at": "2026-10-23T01:17Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Uploaded Private 1-BZaFIMwYU (publishAt=2026-10-27T11:30:00Z, en-GB, not Made for Kids, alteredContent=true), set & verified Studio Related video -> _C92tIJCk8A, channel:audit 44 videos 0 errors"
+        },
+        {
+          "at": "2026-10-23T01:24Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0866: inspect HOS 001 Short s11 v02 and schedule slots"
+        },
+        {
+          "at": "2026-10-23T01:27Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified s11_curved_flask package + Private upload 1-BZaFIMwYU (2026-10-27T11:30:00Z, en-GB, not kids, synthetic Yes, Related -> _C92tIJCk8A)"
+        },
+        {
+          "at": "2026-10-23T01:28Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed HOS 001 s11 upload records (4765f58f); check_all.sh + channel:audit PASS (44 videos, 0 errors)"
+        },
+        {
+          "at": "2026-10-23T01:32Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: All 4 steps done: 1-BZaFIMwYU Private Tue 27 Oct 11:30 London, Related -> _C92tIJCk8A, HOS commit 4765f58f, UPLOADS.json"
+        },
+        {
+          "at": "2026-10-23T01:32Z",
+          "by": "gemini",
+          "what": "done: Uploaded Private 1-BZaFIMwYU (publishAt 2026-10-27T11:30:00Z, Tue 27 Oct 11:30 London, en-GB, not kids, synthetic Yes, Related -> _C92tIJCk8A); recorded in HOS 4765f58f (SHORTS_LOG, SHORTS_RELEASE, SHORTS_UPLOAD_INDEX, shorts_open_library, social/UPLOADS.json); check_all.sh + channel:audit PASS (44 videos, 0 errors); ready for OWB buffer-mirror register once PR #260 merges"
+        }
+      ],
+      "kind": "listing",
+      "taskKeys": [
+        "HOS:001"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T01:32Z",
+        "by": "gemini",
+        "note": "All 4 steps done: 1-BZaFIMwYU Private Tue 27 Oct 11:30 London, Related -> _C92tIJCk8A, HOS commit 4765f58f, UPLOADS.json"
+      },
+      "done_ref": "4765f58f"
+    },
+    {
+      "id": "J0867",
+      "title": "HOS 007: copy master v02 to HOS UAT for Ben's watch (J0856 PASS)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0856 (HOS 007 master v02, sha e55f680d, 505.1 s, -14.0 LUFS / -1.4 dBTP; HOS PR #355 30f9033e). Copy /Volumes/data/mac-mini-archive/hos-007-vaccine/master_v02_J0856/hos_007_master_v02.mp4 to iCloud HOS UAT/007_<slug>/ for Ben's watch, check the SHA-256 matches, record the path in HOS PIPELINE.json (007 edit note) and in the job result. £0. Do not delete the NAS copy.",
+      "ref": "",
+      "film": "007",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-23T01:38Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T01:33Z",
+      "result": "Copied HOS 007 master v02 to /Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/HOS UAT/007_The-First-Vaccine/hos_007_master_v02.mp4 (516,099,607 bytes); verified SHA-256 e55f680db246e12620a7827599415e6d9f513d614563bd213c0b2a42f9c69c97 matches NAS master_v02 (retained on NAS). Recorded in HOS PIPELINE.json (548ed0ac, check_all PASS). £0.",
+      "history": [
+        {
+          "at": "2026-10-23T01:33Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T01:38Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T01:38Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J0867: inspect source master v02 and iCloud HOS UAT path"
+        },
+        {
+          "at": "2026-10-23T01:41Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified NAS master_v02 sha256 e55f680db246e12620a7827599415e6d9f513d614563bd213c0b2a42f9c69c97 (516,099,607 bytes)"
+        },
+        {
+          "at": "2026-10-23T01:47Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Copied hos_007_master_v02.mp4 to iCloud HOS UAT/007_The-First-Vaccine/hos_007_master_v02.mp4 and verified sha256 e55f680db246e12620a7827599415e6d9f513d614563bd213c0b2a42f9c69c97"
+        },
+        {
+          "at": "2026-10-23T01:49Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Updated HOS PIPELINE.json (548ed0ac), check_all PASS; ready to mark J0867 done"
+        },
+        {
+          "at": "2026-10-23T01:49Z",
+          "by": "gemini",
+          "what": "done: Copied HOS 007 master v02 to /Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/HOS UAT/007_The-First-Vaccine/hos_007_master_v02.mp4 (516,099,607 bytes); verified SHA-256 e55f680db246e12620a7827599415e6d9f513d614563bd213c0b2a42f9c69c97 matches NAS master_v02 (retained on NAS). Recorded in HOS PIPELINE.json (548ed0ac, check_all PASS). £0."
+        }
+      ],
+      "kind": "listing",
+      "taskKeys": [
+        "HOS:007"
+      ],
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-10-23T01:49Z",
+        "by": "gemini",
+        "note": "Updated HOS PIPELINE.json (548ed0ac), check_all PASS; ready to mark J0867 done"
+      }
+    },
+    {
+      "id": "J0868",
+      "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T02:38Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T01:50Z",
+      "result": "Chief: sweep accepted. Every newest OWB + HOS pack (028 v02, 027/023 Shorts, HOS 006, 007 v02, 001 s11 Short) passes picture_qa, polish_gate and music_gate with 0 fails. The aborted 024 lift_seven_years scratch on the Mini is untracked; the Mini's own cleanup can take it.",
+      "history": [
+        {
+          "at": "2026-10-23T01:50Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T02:38Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T02:38Z",
+          "by": "gemini",
+          "what": "renewed to 2026-10-23T02:58Z"
+        },
+        {
+          "at": "2026-10-23T02:38Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting QA sweep of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-23T02:42Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Scanned OWB and HOS packs since 22 Oct 12:26Z: found new packs OWB 028 master v01/v02 & part_roughs_v01, 027 Short equator_weight v01, 023 Short venus_95pct_wide v02, HOS 006 master v01, HOS 007 full_join_v01 & master v02, HOS 001 Short s11 v01/v02"
+        },
+        {
+          "at": "2026-10-23T02:44Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified OWB newest packs: 028 full_master_v02 (0/61 PASS + music/sfx PASS), 028 full_master_v01 & part_roughs_v01 (7/7 PASS), 027 Short equator_weight v01 (0/8 PASS), 023 Short venus_95pct_wide v02 (0/7 PASS), plus 024 v06, 026 v06 & 3 Shorts, 027 v01m, 029 v02"
+        },
+        {
+          "at": "2026-10-23T02:46Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verified HOS newest packs: 006 master_v01 (0/91 PASS + music/sfx PASS), 007 full_join_v01 & master_v02 (0/97 PASS + music/sfx PASS), 001 Short s11_curved_flask v01/v02 (0/7 PASS), all 28 HOS qa_ Shorts + 007-010 code graphics PASS"
+        },
+        {
+          "at": "2026-10-23T02:46Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Completed QA sweep across OWB and HOS: all newest packs have up-to-date gate outputs with 0 FAILs; 0 new fix jobs needed"
+        },
+        {
+          "at": "2026-10-23T02:46Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 6c9addd15/eae00b496/0d8a96e87/8f23e4613/bd1d2ccc4: 028 full_master_v02_pack picture_qa 0/61 PASS + polish_gate 0/61 PASS + music_gate PASS + sfx_level PASS, 028 full_master_v01_pack 0/61 PASS, 028 part_roughs_v01_pack 7/7 PASS, 027 Short earth_equator_weight_v01 0/8 PASS, 023 Short venus_95pct_wide_v02 0/7 PASS, all 38 committed OWB Shorts + 024 v06 / 026 v06 / 027 v01m / 029 v02 PASS; HOS 1946ac4d/786e631e/30f9033e/c2a85e6e: 006 master_v01 picture_qa 0/91 PASS + polish_gate 0/91 PASS + music_gate PASS + sfx_level PASS, 007 full_join_v01 & master_v02 picture_qa 0/97 PASS + polish_gate 0/97 PASS + music_gate PASS + sfx_level PASS, 001 Short hos_001_s11_curved_flask_v02 0/7 PASS, all 28 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)"
+        },
+        {
+          "at": "2026-10-23T02:50Z",
+          "by": "claude",
+          "what": "done: Chief: sweep accepted. Every newest OWB + HOS pack (028 v02, 027/023 Shorts, HOS 006, 007 v02, 001 s11 Short) passes picture_qa, polish_gate and music_gate with 0 fails. The aborted 024 lift_seven_years scratch on the Mini is untracked; the Mini's own cleanup can take it."
+        }
+      ],
+      "kind": "qa",
+      "backlog": "both-qa-sweep",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T02:46Z",
+        "by": "gemini",
+        "note": "Completed QA sweep across OWB and HOS: all newest packs have up-to-date gate outputs with 0 FAILs; 0 new fix jobs needed"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
+    },
+    {
+      "id": "J0869",
+      "title": "HOS 006 Trees thumbnails step 2: make A + B (0 Flow credits), cover lettering, thumb_preview + style_sheet, stage Test & Compare, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief pick on J0858 (HOS 006 Trees thumbnails, HOS 9fad9745). Concept A 'WOOD / FROM / SKY?' (gold SKY?, willow by the window with air ribbons turning into wood rings) is the primary; Concept B 'DO PLANTS / EAT / SOIL?' (gold SOIL?, van Helmont's brass scale, willow pan down, soil pot barely moves) is the Test & Compare second. Concept C is not made. Price: Option 1, 0 Flow credits (Nano Banana 2 16:9 stills on the AI Ultra plan + the £0 cover-builder lettering). The Fast tier (up to 20 cr for the A/B pair) only if a still fails thumb_preview/style_sheet twice; £0 cash either way. Keep the scale plate free of written numbers (no 169 lb / 200 lb on the image). Make both, run thumb_preview.py long and style_sheet.py long, stage the A/B pair for Test & Compare, commit, park for Chief before Ben's 1 Nov watch.",
+      "ref": "",
+      "film": "006",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T02:06Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T02:05Z",
+      "result": "Chief PASS on checks (HOS 0621a945): A WOOD FROM SKY? + B DO PLANTS EAT SOIL? made at 0 Flow credits, HOOK/BAND/PHONE PASS on both, lettering clear of Explorer and hero, no numbers on the scale plate, staged as thumbnailAbc [A, B], check_all PASS. Images are in HOS UAT (no media in the repo), so Ben's 006 watch is the visual check.",
+      "history": [
+        {
+          "at": "2026-10-23T02:05Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T02:06Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T02:06Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting HOS 006 Trees thumbnails step 2 (Concepts A + B, 0 Flow credits)"
+        },
+        {
+          "at": "2026-10-23T02:18Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Minted Concept A + B 16:9 key-art plates on Flow Image (Nano Banana 2.1, 0 Flow credits, balance 20,830)"
+        },
+        {
+          "at": "2026-10-23T02:27Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Composed cover lettering on A (WOOD / FROM / SKY?) + B (DO PLANTS / EAT / SOIL?) and passed thumb_preview.py + style_sheet.py"
+        },
+        {
+          "at": "2026-10-23T02:32Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0869: inspecting 006 THUMB_BRIEF_v01.md and cover-builder tools"
+        },
+        {
+          "at": "2026-10-23T02:36Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Minted plates A (WOOD/FROM/SKY?, sha256 7e7a9877) + B (DO PLANTS/EAT/SOIL?, blank scale, sha256 9ea89834) on Flow Nano Banana 2 at 0 cr (20,830 -> 20,830 cr)"
+        },
+        {
+          "at": "2026-10-23T02:36Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Applied deterministic Georgia Bold cream/gold lettering + flourishes via _compose_hos_006_thumbs_v01.py (A sha256 904d2f58, B sha256 ee5f2605)"
+        },
+        {
+          "at": "2026-10-23T02:36Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Ran thumb_preview.py long and style_sheet.py long (HOOK/BAND/PHONE PASS on A and B)"
+        },
+        {
+          "at": "2026-10-23T02:36Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Staged A+B in PACKAGE_MANIFEST.json + HOS UAT, check_all.sh PASS, pushed HOS 0621a945"
+        },
+        {
+          "at": "2026-10-23T02:36Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 006 thumbnails A + B review before Ben's 1 Nov watch (HOS 0621a945)"
+        },
+        {
+          "at": "2026-10-23T02:40Z",
+          "by": "claude",
+          "what": "done: Chief PASS on checks (HOS 0621a945): A WOOD FROM SKY? + B DO PLANTS EAT SOIL? made at 0 Flow credits, HOOK/BAND/PHONE PASS on both, lettering clear of Explorer and hero, no numbers on the scale plate, staged as thumbnailAbc [A, B], check_all PASS. Images are in HOS UAT (no media in the repo), so Ben's 006 watch is the visual check."
+        }
+      ],
+      "kind": "thumb",
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T02:36Z",
+        "by": "gemini",
+        "note": "Staged A+B in PACKAGE_MANIFEST.json + HOS UAT, check_all.sh PASS, pushed HOS 0621a945"
+      }
+    },
+    {
+      "id": "J0870",
+      "title": "Backlog OWB: next Short cut from a locked long (existing VO + picture only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Pick the locked or live OWB long with the fewest Shorts built (STATUS.md, 10_Shorts/). Lift one self-contained 22-27 s stretch of its own VO and picture, reframe 9:16 the house way, house SFX kit only. Every Short rule applies (frame-0 named thing, hook caption, exact long title at 9-14 s, captions, loop, custom cover). Teach on screen: a number object or timeline call-out in frame. gate_shorts_open.py check must PASS. Spend nothing. Post the cut, contact sheet and gate output on #99, then block 'parked for Chief: Short PASS'. Never upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T04:09Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T02:30Z",
+      "result": "Chief: shelved, not repaired. The 020 Jupiter cut fails picture_qa (replayed frames 0:20/0:25), its 0:09-0:17.5 imagery and descriptive opening need new picture and words, and 020 has no separated score, so the SFX/music level rule can't be met from this long. Keep the draft and evidence local (don't publish the branch: it carries NAS paths). The next backlog OWB Short comes from a locked long that has a separated music stem (024, 026, 027, 029 or 028).",
+      "history": [
+        {
+          "at": "2026-10-23T02:30Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T04:09Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T04:09Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Inspect source films and storage, select extract, build, verify and submit for Chief"
+        },
+        {
+          "at": "2026-10-23T04:10Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Selected live Jupiter long: one current Short build; source master on mounted NAS; clean worktree created"
+        },
+        {
+          "at": "2026-10-23T04:12Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Selected unused 56-word cloud-bands and Great Red Spot passage 43.50–68.20s; local Whisper timestamps, own source mix and house kit, no spend"
+        },
+        {
+          "at": "2026-10-23T04:15Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: 26.7s draft, 56 words, own-master mix, captions, title/id, animated number and custom cover rendered. Open gate PASS with motion warning; strengthening frame-0 motion before final QA."
+        },
+        {
+          "at": "2026-10-23T04:24Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Draft and evidence complete: open/polish gates PASS, picture QA FAIL at 0:20/0:25; local f55fff4bd, NAS backup verified. Not approved. Public evidence push rejected by automatic approval review."
+        },
+        {
+          "at": "2026-10-23T04:24Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: Short PASS review; picture QA FAIL, source/hook/stem repairs required. Evidence local at f55fff4bd; public branch push rejected by automatic approval review."
+        },
+        {
+          "at": "2026-10-23T04:28Z",
+          "by": "claude",
+          "what": "done: Chief: shelved, not repaired. The 020 Jupiter cut fails picture_qa (replayed frames 0:20/0:25), its 0:09-0:17.5 imagery and descriptive opening need new picture and words, and 020 has no separated score, so the SFX/music level rule can't be met from this long. Keep the draft and evidence local (don't publish the branch: it carries NAS paths). The next backlog OWB Short comes from a locked long that has a separated music stem (024, 026, 027, 029 or 028)."
+        }
+      ],
+      "kind": "assembly",
+      "backlog": "owb-short-from-locked",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T04:24Z",
+        "by": "codex",
+        "note": "Draft and evidence complete: open/polish gates PASS, picture QA FAIL at 0:20/0:25; local f55fff4bd, NAS backup verified."
+      },
+      "taskKeys": [
+        "OWB:020"
+      ]
+    },
+    {
+      "id": "J0871",
+      "title": "Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Weekly growth audit for History of Science (aim: numbers up month on month). 1) Last 28 and 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_HOS): views, CTR, AVD/retention, subs per video, Shorts vs longs, search terms, Test & Compare results. 2) What's working and what isn't, with evidence. 3) Competitors: 5 history/science-history channels (e.g. Kings and Generals style explainers, Veritasium history pieces, SciShow, Big Think history, Real Engineering) last 30 days via public metadata only. 4) Write the audit into the HOS repo analytics folder as HOS_<YYYY-MM-DD>.md: findings, 3-5 concrete changes for 006-010 tied to a film, and 3 ranked new ideas. Compare with last week. Post a summary on desk #180. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 70%+, average viewed 70%+ (100%+ means rewatches). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T04:26Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T04:25Z",
+      "result": "Chief: Learnings #1, #2, #3, #6, #7 approved as Shorts rules (small samples, keep re-reading weekly); #4 and #5 stay tests; ideas 092-094 go to the next topic pass. Brief update queued.",
+      "history": [
+        {
+          "at": "2026-10-23T04:25Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T04:26Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T04:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting Weekly HOS audit (2026-10-23)"
+        },
+        {
+          "at": "2026-10-23T04:30Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: fetched YTA settled through 20 Oct (7d 1,565v +779% vs 178; 28d 1,911v +343% vs 431; clV6E10NLPw 126v +1 sub 54.6% AVD; c2q7w0pgcn8 119v 107.5% AVD) and live Data API v3 (2,418 channel views, 2,477 video views; oKqmnJNGiHg 149v/7L)"
+        },
+        {
+          "at": "2026-10-23T04:33Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 done: mapped 20 Oct settled 100-pt YTA retention curves & 22 Oct 17:30Z Studio stayed-to-watch across all 18 HOS Shorts (clV6E10NLPw -12.0pp cliff at 12.00-12.25s on 'Afterwards, about one in seven' + 9-14s banner, 21.3% stayed, 54.6% AVD, +1 sub; c2q7w0pgcn8 40.2% stayed, 107.5% YTA / 107.3% Studio AVD; oKqmnJNGiHg 149v/7L, 35.9% stayed, 98.8% Studio AVD)"
+        },
+        {
+          "at": "2026-10-23T04:34Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 done: compiled 30-day competitor metadata across Veritasium (NiCgcUTL9_Q 12.26M, wxLc-gFORPQ 426.7k in 15.5h), SciShow (ua29hkUXwg4 81.8k in 11.5h, p7Tb0GNawdM 315.6k, 16-xQ-Dt2mk 379k), TED-Ed (a_4eFB8pPwI 131.9k, NPJ9KZqrl50 278.7k), Kings & Generals (VKZRmSTqI0U 98.9k, kd-ZNqGaajg 315.1k), Big Think & Real Engineering"
+        },
+        {
+          "at": "2026-10-23T04:39Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Step 4 done: committed HOS_2026-10-23.md (8c7974d0) & LEARNINGS.md (038298a09), posted summary on HOS desk #180"
+        },
+        {
+          "at": "2026-10-23T04:39Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review HOS_2026-10-23.md (8c7974d0) + LEARNINGS.md (038298a09), approve proven Learnings #1/#2/#3/#6 for Shorts brief & playbook, 006-010 changes (12-15s Short cut test & launch T&C), and ranked ideas 092-094"
+        },
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "done: Chief: Learnings #1, #2, #3, #6, #7 approved as Shorts rules (small samples, keep re-reading weekly); #4 and #5 stay tests; ideas 092-094 go to the next topic pass. Brief update queued."
+        }
+      ],
+      "kind": "review",
+      "backlog": "hos-weekly-audit",
+      "taskKeys": [
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T04:39Z",
+        "by": "gemini",
+        "note": "Step 4 done: committed HOS_2026-10-23.md (8c7974d0) & LEARNINGS.md (038298a09), posted summary on HOS desk #180"
+      }
+    },
+    {
+      "id": "J0872",
+      "title": "Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 70%+, average viewed 70%+ (100%+ means rewatches). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T04:40Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T04:40Z",
+      "result": "Chief: (1) Shorts rules already approved under J0871/J0874 (PRs #261/#357). (2) Retitle of 6 scheduled statement Shorts approved, Mercury and sunrise titles tightened; file audits/retitle_2026-10-23_J0872.json; job queued for before Sat 24 Oct 10:30Z. (3) Changes 2-5 approved as editing/topic guidance (no Short shot held past 5 s; payoff >= 70% runtime; Related on 023 Shorts at go-live is J0324; T&C on 021/022/023 per Learning #5; 033 long rename and 037 retitle lesson to the next topic pass); ideas 062 Psyche, 063 Valles Marineris, 064 Haumea added to the topic queue in that order.",
+      "history": [
+        {
+          "at": "2026-10-23T04:40Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T04:40Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T04:42Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting 23 Oct OWB weekly growth audit (YTA 7d/28d, Shorts lab, competitors, OWB_2026-10-23.md)"
+        },
+        {
+          "at": "2026-10-23T04:46Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Pulled 7d/28d/Oct YTA settled through 20 Oct (7d 366v/65m, Shorts 72.1% avg viewed, Search #1 7d watch time at 27m; live 8,305 ch views, n_4XskX0yZk 877v, 82Ao0v5XiQI 83v, h8HGfyShEHI 7v/4.2% CTR)"
+        },
+        {
+          "at": "2026-10-23T04:55Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Updated 05_Analytics/LEARNINGS.md Shorts lab (31 OWB Shorts incl. n_4XskX0yZk 877v/31.1% stayed/62.5% viewed & 22 Oct Studio read on y-SPHQ0-VjQ 55.6% stayed/83.6% YTA viewed, lbW2iQ9YvqA 33.3% stayed/30.9% viewed, buaOI3QGm7U 80.0% stayed) and Learnings rules"
+        },
+        {
+          "at": "2026-10-23T04:56Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Pulled 5 competitor channels last 30d (Astrum retitled T9HLYPn59S4 to We Stared Into The Heart Of Our Galaxy at 274.1k; Kurzgesagt RQprZZJIb6Y crossed 500k; HOTU cqGhCCDC_Sw 476.7k; SEA 7oR0Pmd-WIk 505.7k)"
+        },
+        {
+          "at": "2026-10-23T04:59Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Wrote 05_Analytics/weekly_audit/OWB_2026-10-23.md and synced 31 OWB Shorts in 05_Analytics/LEARNINGS.md; parking for Chief"
+        },
+        {
+          "at": "2026-10-23T04:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review 05_Analytics/weekly_audit/OWB_2026-10-23.md & LEARNINGS.md (1: adopt proven Shorts rules 1/2/3/6 into Shorts brief & playbook; 2: approve retitle-videos.ts on 6 upcoming statement Shorts in UPCOMING_SHORTS_GATE.md starting tomorrow Sat 24 Oct vlkj8RQKmH8; 3: approve 5 next-video changes across OWB:021-061 and 3 ranked new ideas 062-064)"
+        },
+        {
+          "at": "2026-10-23T05:53Z",
+          "by": "claude",
+          "what": "done: Chief: (1) Shorts rules already approved under J0871/J0874 (PRs #261/#357). (2) Retitle of 6 scheduled statement Shorts approved, Mercury and sunrise titles tightened; file audits/retitle_2026-10-23_J0872.json; job queued for before Sat 24 Oct 10:30Z. (3) Changes 2-5 approved as editing/topic guidance (no Short shot held past 5 s; payoff >= 70% runtime; Related on 023 Shorts at go-live is J0324; T&C on 021/022/023 per Learning #5; 033 long rename and 037 retitle lesson to the next topic pass); ideas 062 Psyche, 063 Valles Marineris, 064 Haumea added to the topic queue in that order."
+        }
+      ],
+      "kind": "review",
+      "backlog": "owb-weekly-audit",
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T04:59Z",
+        "by": "gemini",
+        "note": "Wrote 05_Analytics/weekly_audit/OWB_2026-10-23.md and synced 31 OWB Shorts in 05_Analytics/LEARNINGS.md; parking for Chi"
+      }
+    },
+    {
+      "id": "J0873",
+      "title": "HOS 007 Short 'What Was the Edward Jenner Experiment?': Private upload for the first HOS slot on/after Fri 13 Nov 11:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0865 (HOS 007 Short s04_smallpox_test_v01, 26.13 s, sha 3daff43d04bc, HOS 994d5a7b). Title: 'What Was the Edward Jenner Experiment?'. Upload Private now via the HOS upload package for the first free HOS weekday Short slot at 11:30 London on or after Fri 13 Nov (the 007 long airs Thu 12 Nov 18:00), en-GB, synthetic disclosure as the other HOS Shorts, not made for kids. Related -> the 007 long once it has an id (set it after the long is uploaded, before the Short goes public). Read back publishAt, record it like J0866, and register it for the HOS Buffer mirror once orbit-with-ben PR #260 is merged. £0.",
+      "ref": "",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-23T05:03Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T04:52Z",
+      "result": "done",
+      "history": [
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T05:03Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:03Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0873: checking HOS 007 Short s04_smallpox_test_v01 package and schedule slots"
+        },
+        {
+          "at": "2026-10-23T05:09Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Packaged s04_smallpox_test_v01 for Fri 13 Nov 11:30 London (2026-11-13T11:30:00Z); lint:package, gate_shorts_open, and dry-run PASS"
+        },
+        {
+          "at": "2026-10-23T05:15Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Uploaded Private -I_GHK-GcFs (publishAt 2026-11-13T11:30:00Z, Fri 13 Nov 11:30 London); API + Studio readbacks verified (en-GB, not kids, synthetic Yes)"
+        },
+        {
+          "at": "2026-10-23T05:19Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed HOS 007 s04_smallpox_test upload records (bf6c5cf8); check_all.sh + channel:audit PASS (45 videos, 0 errors)"
+        },
+        {
+          "at": "2026-10-23T05:19Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: All 4 steps done: -I_GHK-GcFs Private Fri 13 Nov 11:30 London, HOS commit bf6c5cf8, UPLOADS.json"
+        },
+        {
+          "at": "2026-10-23T05:19Z",
+          "by": "gemini",
+          "what": "done: done"
+        }
+      ],
+      "kind": "listing",
+      "taskKeys": [
+        "HOS:007"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T05:19Z",
+        "by": "gemini",
+        "note": "All 4 steps done: -I_GHK-GcFs Private Fri 13 Nov 11:30 London, HOS commit bf6c5cf8, UPLOADS.json"
+      },
+      "done_ref": "bf6c5cf8"
+    },
+    {
+      "id": "J0874",
+      "title": "Shorts briefs: add the approved Learnings checklist (#1 #2 #3 #6 #7 rules, #4 #5 tests) to OWB + HOS brief templates",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief on J0871: write the approved Learnings into the Shorts briefs. Rules now: #1 positive-question titles naming the subject; #2 start on the moving payoff object at frame 0; #3 a change every 3-4 s, no freeze under VO; #6 withhold the payoff until >=70% of runtime and never answer the title question as the 9 s promo banner shows; #7 bridge the 4-5 s seam into a number or mechanism, no Orbit reaction / meta-promise. Tests (not rules): #4 12-15 s cuts on the next 2 HOS Shorts from 006-007, compared with the 25 s ones; #5 Test & Compare only on new uploads or videos with 1k+ impressions a fortnight. Add them as a short checklist to the OWB and HOS Shorts brief templates and the cursor rules that load them (python3 scripts/sync_rules.py --check must pass), one PR per repo. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T05:26Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T04:52Z",
+      "result": "Chief PASS: OWB PR #261 (afefaf267) and HOS PR #357 (09ef92eb) carry #1 #2 #3 #6 #7 as rules and #4 #5 as tests, matching the J0871 ruling; checks green, mergeable. Merges are Ben's.",
+      "history": [
+        {
+          "at": "2026-10-23T04:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T05:26Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:26Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Locate both Shorts brief templates and approved rule scope; prepare isolated worktrees"
+        },
+        {
+          "at": "2026-10-23T05:27Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Located templates; clean worktrees created. Scratch check found only current/previous 028 and 029 masters, so no version-before-last eligible to move."
+        },
+        {
+          "at": "2026-10-23T05:27Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Both template/rule pairs updated; sync_rules --check reports rules OK in each repo; diff whitespace checks clean. No film selected: shared templates only."
+        },
+        {
+          "at": "2026-10-23T05:29Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: OWB PR #261 open; HOS companion PR prepared. Both sync checks rules OK; required HOS check_all ALL CHECKS PASS (20 contract tests). Implementation complete, Chief review/merge remains."
+        },
+        {
+          "at": "2026-10-23T05:29Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review and merge OWB PR #261 and HOS PR #357. Checklist implemented in both templates and Cursor rules; 3/3 steps complete; both sync_rules checks rules OK; HOS check_all ALL CHECKS PASS. No spend or film-stage approval."
+        },
+        {
+          "at": "2026-10-23T05:30Z",
+          "by": "claude",
+          "what": "done: Chief PASS: OWB PR #261 (afefaf267) and HOS PR #357 (09ef92eb) carry #1 #2 #3 #6 #7 as rules and #4 #5 as tests, matching the J0871 ruling; checks green, mergeable. Merges are Ben's."
+        }
+      ],
+      "kind": "studio",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-10-23T05:29Z",
+        "by": "codex",
+        "note": "OWB PR #261 open; HOS companion PR prepared. Both sync checks rules OK; required HOS check_all ALL CHECKS PASS (20 contr"
+      }
+    },
+    {
+      "id": "J0875",
+      "title": "HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 007 Short -I_GHK-GcFs ('What Was the Edward Jenner Experiment?', Private, publishAt 2026-11-13T11:30Z, J0873) has Related = None because the 007 long had no id yet. Once the 007 long ('Why Vaccines Are Named After a Cow', airs Thu 12 Nov 18:00) is uploaded: set Related video on -I_GHK-GcFs to the long, read it back in Studio, update the HOS records, and register the Short for the HOS Buffer mirror (buffer-mirror.ts register --channel hos ... --long <id>, see J0873's #99 post; needs orbit-with-ben PR #260 merged). Must be done before Fri 13 Nov 11:30Z. £0.",
+      "ref": "",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T05:20Z",
+      "result": "waits for input: the 007 long's YouTube id (its upload); reopen when the long is uploaded",
+      "history": [
+        {
+          "at": "2026-10-23T05:20Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T05:20Z",
+          "by": "claude",
+          "what": "blocked: waits for input: the 007 long's YouTube id (its upload); reopen when the long is uploaded"
+        }
+      ],
+      "kind": "listing"
+    },
+    {
+      "id": "J0876",
+      "title": "OWB: retitle 6 scheduled statement Shorts as questions (Mercury first, before Sat 24 Oct 10:30Z)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (J0872): retitle the 6 scheduled statement-titled OWB Shorts as positive questions (Learning #1). The first goes public Sat 24 Oct 11:30 London, so do it before Sat 24 Oct 10:30Z. cd 07_Content-Ops && npx tsx --env-file=.env scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/retitle_2026-10-23_J0872.json --dry-run, check the 6 rows match, then run it without --dry-run. Rows whose live title differs are skipped: report them, don't guess. Read back each title and that privacy/publishAt are unchanged; update UPLOADS.json / UPCOMING_SHORTS_GATE.md and the shorts library titles; post the read-back on #99. £0. Note: the Shorts' own burned-in captions and the promoted long's title at 9-14 s are unchanged by this.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-23T05:54Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T05:53Z",
+      "result": "done",
+      "history": [
+        {
+          "at": "2026-10-23T05:53Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T05:54Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T05:55Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0876: dry-run retitle-videos.ts on 6 scheduled Shorts"
+        },
+        {
+          "at": "2026-10-23T05:55Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Dry-run passed: all 6 rows matched expected live titles"
+        },
+        {
+          "at": "2026-10-23T06:00Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Updated UPLOADS.json, UPCOMING_SHORTS_GATE.md, shorts_open_library/library.json, and PACKAGE_MANIFEST.json for all 6 Shorts"
+        },
+        {
+          "at": "2026-10-23T06:00Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Committed and pushed repo updates and live readback for all 6 retitled Shorts"
+        },
+        {
+          "at": "2026-10-23T06:00Z",
+          "by": "gemini",
+          "what": "done: done"
+        }
+      ],
+      "kind": "listing",
+      "taskKeys": [
+        "OWB:023",
+        "OWB:030"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T06:00Z",
+        "by": "gemini",
+        "note": "Committed and pushed repo updates and live readback for all 6 retitled Shorts"
+      }
+    },
+    {
+      "id": "J0877",
+      "title": "Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Free, read-only. Runs daily after the 06:40 snapshot and must finish before 09:00 London (Ben, 12 Oct 22:19). 1) In YouTube Studio, read only, change nothing: Orbit With Ben in the Orbit Studio browser (CDP 9223); History of Science in its own signed-in Studio session (never the 9222 Flow browser for Orbit pages). 2) For every long film (format long in 05_Analytics/dashboard/data.json, both channels), open Analytics > Reach for the video, period Lifetime, and read Impressions and Impressions click-through rate (%), and on Overview/Engagement the lifetime Views, Average view duration (seconds) and Average percentage viewed (%; if Studio shows only duration, compute duration / video length x 100). 2b) For every Short (both channels), read lifetime Views, Average percentage viewed (%) and 'Stayed to watch' (%, Studio's Shorts engagement figure, viewed vs swiped away); write them under the same videos map as \"views\", \"avgViewPct\" and \"stayedToWatch\" (Ben, 12 Oct 22:50). 3) Write 05_Analytics/<owb|hos>/studio_ctr.json: {\"readAt\": <ISO UTC>, \"period\": \"lifetime\", \"videos\": {\"<videoId>\": {\"impressions\": <int>, \"impressionsCtr\": <number, % e.g. 3.8>, \"views\": <int>, \"avgViewSeconds\": <int>, \"avgViewPct\": <number, %>}}}. A film Studio can't show yet: leave it out. 4) Rebuild: cd 07_Content-Ops && npx tsx scripts/analytics-report.ts (it merges studio_ctr.json into data.json; Studio values take priority on the tracker), then python3 scripts/board_publish.py so /tracker's 'Long films vs targets' panel fills in. 5) Commit only those files to main with a message naming the counts, then jobs.py done <id> --result \"<n> OWB + <m> HOS longs; CTR hits vs 4%: ...\" --git. Never: edit any video, title, thumbnail or setting; spend anything; paid API.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-10-23T09:29Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T06:01Z",
+      "result": "13 OWB + 4 HOS longs; 69 OWB + 18 HOS Shorts. CTR hits vs 4%: OWB 2/13, HOS 1/4. Main a5727fa68; tracker published ed6e40ba. OWB TE_HDKAnqms has 2 views and no retention yet; unavailable fields omitted.",
+      "history": [
+        {
+          "at": "2026-10-23T06:01Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T09:29Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T09:29Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Inspect Studio sessions and existing read-only collection tools"
+        },
+        {
+          "at": "2026-10-23T09:31Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Verified OWB CDP 9223 and HOS CDP 9460; collecting lifetime Studio metrics with read-only advanced tables"
+        },
+        {
+          "at": "2026-10-23T09:32Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Read 13 OWB longs + 69 Shorts and 4 HOS longs + 18 Shorts; one 2-view OWB Short has no Studio retention yet"
+        },
+        {
+          "at": "2026-10-23T09:33Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Rebuilt reports and dashboard; verified all 104 fresh Studio rows merged; CTR at least 4%: OWB 2/13, HOS 1/4"
+        },
+        {
+          "at": "2026-10-23T09:35Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Analytics commit a5727fa68 on main; board-data ed6e40ba published fresh tracker successfully"
+        },
+        {
+          "at": "2026-10-23T09:35Z",
+          "by": "codex",
+          "what": "done: 13 OWB + 4 HOS longs; 69 OWB + 18 HOS Shorts. CTR hits vs 4%: OWB 2/13, HOS 1/4. Main a5727fa68; tracker published ed6e40ba. OWB TE_HDKAnqms has 2 views and no retention yet; unavailable fields omitted."
+        }
+      ],
+      "kind": "studio",
+      "backlog": "studio-ctr-daily",
+      "urgent": 0,
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T09:35Z",
+        "by": "codex",
+        "note": "Analytics commit a5727fa68 on main; board-data ed6e40ba published fresh tracker successfully"
+      },
+      "taskKeys": [
+        "OWB:001",
+        "OWB:002",
+        "OWB:003",
+        "OWB:004",
+        "OWB:005",
+        "OWB:006",
+        "OWB:007",
+        "OWB:013",
+        "OWB:019",
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
+    },
+    {
+      "id": "J0878",
+      "title": "HOS compilation v02: package (title, chapters, Sources, £0 thumbnail) + Private upload for Thu 10 Dec 18:00 UK, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0175 v02 (HOS 6-film compilation, 49:18, sha 8282ffa8, -14.32 LUFS / -1.16 dBTP, polish/picture_qa/sfx PASS; HOS PR #300 3ba58733). Make its upload package with the HOS youtube:package flow: a positive-question title naming the subject (e.g. 'How Did Six Experiments Change What We Know About Life?' or better from the films; no clickbait), the description with COMPILATION_CHAPTERS_v02.txt chapters and each film's Sources line, a £0 cover-builder thumbnail in HOS house style (thumb_preview + style_sheet PASS), synthetic disclosure as the source films, en-GB, not made for kids, category 27. Run lint:package and the dry run, then upload Private with publishAt Thu 10 Dec 2026 18:00 UK (18:00Z), the first Thursday with no new HOS long (Chief, 23 Oct; replaces Sun 8 Nov, which failed the Thu 18:00 long-slot rule). Read back privacy/publishAt, record the upload, and log the 4-week measure plan in STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (views, APV/AVD, subs vs the channel's Shorts and longs over the same weeks). Keep the master on the NAS (don't delete scratch). Park for Chief with the title, thumbnail and read-back. £0. No HOS Buffer post (longs are never cross-posted).",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T09:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T09:18Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T09:19Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T09:20Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Locate approved compilation v02 master and chapters; check NAS before scratch handling"
+        },
+        {
+          "at": "2026-10-23T09:22Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Located approved v02 on NAS and reviewed PR 300; package draft exposes Sunday-slot contract failure and four absent source-film Sources lines"
+        },
+        {
+          "at": "2026-10-23T09:25Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Built question-title package draft, exact v02 chapters, £0 FLASK PROOF cover with inspected phone/style sheets; dry run succeeds; release lint blocks Sunday"
+        },
+        {
+          "at": "2026-10-23T09:26Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: Sunday 8 Nov authorization conflicts with required lint schedule.slot (Thu 18:00); 001-004 source descriptions lack required Sources lines. Draft, cover sheets and successful dry run committed in HOS 93264778; no upload or YouTube changes."
+        },
+        {
+          "at": "2026-10-23T09:52Z",
+          "by": "claude",
+          "what": "reopened: Chief decision: keep the house rule. Slot is Thu 10 Dec 2026 18:00 UK (18:00Z), the first Thursday with no new HOS long (005-010 take 29 Oct-3 Dec); this replaces Sun 8 Nov. Sources: build the missing lines for 001-004 from each film's own 01_Script SOURCES.md / FACT_NOTES (4-6 papers or official sources per film, author, year, journal, what it backs), one 'Sources (<chapter name>):' line per film in the compilation description, same format as 005/006. Then lint:package (must PASS with no override), dry run, upload Private for 10 Dec 18:00, read back, record, update TEST_LOG.md (4-week measure from 10 Dec), park for Chief. £0."
+        }
+      ],
+      "kind": "listing",
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006"
+      ]
+    },
+    {
+      "id": "J0879",
+      "title": "Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Read-only audit: chapter timestamps against the cut, source links in descriptions, end screen present, Shorts' Related pill set to their long. Write the fix list to 05_Analytics/live_fixes/<date>.md with exact proposed text. Block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T09:36Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T09:35Z",
+      "result": "Chief PASS: 10/10 recent public OWB videos have chapters, Sources lines, end screens and Shorts Related set; 0 fixes (05_Analytics/live_fixes/2026-10-23.md, c94dafce7).",
+      "history": [
+        {
+          "at": "2026-10-23T09:35Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T09:36Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T09:37Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: starting live listing audit of last 10 public OWB videos"
+        },
+        {
+          "at": "2026-10-23T09:38Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: verified live YouTube metadata, chapters, sources, end screens, and Related video pills on top 11 public videos"
+        },
+        {
+          "at": "2026-10-23T09:41Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: wrote 05_Analytics/live_fixes/2026-10-23.md: 10/10 live public videos pass chapters, sources, end screens, and Related checks (0 fixes needed)"
+        },
+        {
+          "at": "2026-10-23T09:42Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: committed 05_Analytics/live_fixes/2026-10-23.md (c94dafce7); 10/10 live public videos pass chapters, sources, end screens, and Related checks"
+        },
+        {
+          "at": "2026-10-23T09:42Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PASS sign-off on 2026-10-23 OWB live listing audit (10/10 public videos clean; 0 fixes needed, 05_Analytics/live_fixes/2026-10-23.md, commit c94dafce7)"
+        },
+        {
+          "at": "2026-10-23T09:44Z",
+          "by": "claude",
+          "what": "done: Chief PASS: 10/10 recent public OWB videos have chapters, Sources lines, end screens and Shorts Related set; 0 fixes (05_Analytics/live_fixes/2026-10-23.md, c94dafce7)."
+        }
+      ],
+      "kind": "listing",
+      "backlog": "owb-live-listing-fixes",
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:020"
+      ],
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-10-23T09:42Z",
+        "by": "gemini",
+        "note": "committed 05_Analytics/live_fixes/2026-10-23.md (c94dafce7); 10/10 live public videos pass chapters, sources, end screen"
+      }
+    },
+    {
+      "id": "J0880",
+      "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T09:44Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T09:43Z",
+      "result": "Chief PASS: HOS channel:audit 45 videos 0 errors; 4/4 public long end screens and 18/18 Shorts Related verified live; the two 23 Oct uploads read back correctly. The -I_GHK-GcFs Related + watch link follow-up is J0875 (blocked on the 007 long). The 10 unscheduled private drafts/duplicates stay private; nothing deleted.",
+      "history": [
+        {
+          "at": "2026-10-23T09:43Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T09:44Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T09:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting read-only listing check on HOS live and scheduled videos (2026-10-23)"
+        },
+        {
+          "at": "2026-10-23T09:46Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: channel:audit PASS (45 videos, 0 errors: 22 public, 13 scheduled incl. S5 1-BZaFIMwYU & S6 -I_GHK-GcFs, 10 unscheduled private)"
+        },
+        {
+          "at": "2026-10-23T09:48Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 4/4 public long end screens, 18/18 public Shorts Related video pills, and 13/13 scheduled videos (incl. 1-BZaFIMwYU and -I_GHK-GcFs)"
+        },
+        {
+          "at": "2026-10-23T09:50Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote 00_Brand/Channel-Setup/audits/live_fixes/2026-10-23.md with full 45-video audit and exact deferred text for -I_GHK-GcFs"
+        },
+        {
+          "at": "2026-10-23T09:51Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Committed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-23.md (789311d4); all checks pass; parking for Chief"
+        },
+        {
+          "at": "2026-10-23T09:51Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: live fixes (HOS 789311d4, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-23.md: 45 videos 0 errors, 22/22 public + 13/13 scheduled pass; new 001 Short 1-BZaFIMwYU Related=_C92tIJCk8A verified; new 007 Short -I_GHK-GcFs Related + desc link deferred until 007 long upload on 12 Nov; 5 Blood Shorts Related deferred to 29 Oct in J0280/J0241; Chief PASS sign-off)"
+        },
+        {
+          "at": "2026-10-23T09:55Z",
+          "by": "claude",
+          "what": "done: Chief PASS: HOS channel:audit 45 videos 0 errors; 4/4 public long end screens and 18/18 Shorts Related verified live; the two 23 Oct uploads read back correctly. The -I_GHK-GcFs Related + watch link follow-up is J0875 (blocked on the 007 long). The 10 unscheduled private drafts/duplicates stay private; nothing deleted."
+        }
+      ],
+      "kind": "listing",
+      "backlog": "hos-live-listing-fixes",
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:007"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T09:51Z",
+        "by": "gemini",
+        "note": "Committed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-23.md (789311d4); all checks pass; parking for Chief"
+      }
+    },
+    {
+      "id": "J0881",
+      "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T09:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T09:52Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "qa",
+      "backlog": "both-qa-sweep"
+    },
+    {
+      "id": "J0882",
+      "title": "HOS 006 Trees: Ben's 11 changes on master v03 (picture fixes, imperial+metric weights, 6:07 date card, proper ending) -> master v04",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ben's change tick on HOS 006 Trees master v03 (board, 23 Oct 09:49Z). His words, each to fix:\n- 0:09 'The middle container the seedling looks like it's growing out of the table' -> re-frame or replace so the pot sits on the table and the seedling grows out of its soil.\n- 0:49 'Bag of soil disappears when added to the scale' -> replace the plate so the soil stays visible on the scale (no object vanishing).\n- 1:14 'Not sure that willow branch represents the weights talked about' -> show what the VO weighs (the willow tree, roots and all, on the scale), with the weight label.\n- 'When weights are mentioned can we use imperial and metric' -> every on-screen weight label shows both, from the script's values: e.g. '5 lb (about 2.3 kg)', '169 lb (about 77 kg)', '200 lb (about 91 kg)', '2 oz (about 57 g)'. Check each number against FACT_NOTES; say 'about' for converted values. VO stays as it is.\n- 1:22 'Looks a bit strange, can do better here' -> replace the plate with a clean, readable picture of what the line says.\n- 3:15 'Test tube and branch seems off' -> replace (period-correct glassware, sprig placed sensibly in water).\n- 4:54 and 5:21 'bubbles seem to come out the jar' -> bubbles must rise from the leaves through the water and stay inside the vessel; replace or crop both plates.\n- 5:57 'Plant is rotating, looks a bit strange' -> no spinning plant: still plate with a slow push-in or a natural move.\n- 6:07 'No date and location card' -> add the house WHEN/WHERE card for this scene (from the script/FACT_NOTES).\n- 8:28 'Cuts off without explanation on where to watch or video name' -> end like the other HOS films: a closing line card naming next week's film ('Why Vaccines Are Named After a Cow', Thu 12 Nov) and room for the 20 s end screen, picture still moving under it.\nBudget: £0 cash. Try £0 first (other takes already minted, crops, reframes, code graphics). Re-mints on the AI Ultra plan (Nano Banana stills, 0 credits) preferred; Flow Veo only where motion is needed, up to 600 Flow credits in total, logged per shot. Keep the music/SFX/VO as approved; re-run sfx level only if timing moves.\nThen master v04, all gates (picture_qa, polish_gate, music_gate, sfx level, check_all), a per-row sheet, copy to HOS UAT, park for Chief. Target: v04 by Wed 28 Oct so Ben can rewatch before the Thu 5 Nov air date.",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-23T09:53Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T09:53Z",
+      "result": "Chief PASS on master v04 (HOS 958f1227, sha 65aa7e1c, 8:51.8, -14.0 LUFS / -1.4 dBTP): all 11 of Ben's changes addressed at 0 credits; every imperial/metric pair checked (5 lb 2.3 kg, 200 lb 91 kg, 169 lb 77 kg, 2 oz 57 g, 164 lb 74 kg, 62 lb 28 kg, 1 lb 0.45 kg); picture_qa/polish/music/sfx/episode gates PASS. To Ben's rewatch; phone copy via J0883.",
+      "history": [
+        {
+          "at": "2026-10-23T09:53Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T09:53Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T09:53Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Starting HOS 006 v04: auditing v03 assembly script and 11 Ben feedback items"
+        },
+        {
+          "at": "2026-10-23T10:05Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Step 1/6: Audited all 8 picture plates (0:09, 0:49, 1:14, 1:22, 3:15, 4:54/5:21, 5:57), imperial+metric weight rows, 6:07 WHEN card, and 8:28 closing tail against NAS UAT sheets and raw clips"
+        },
+        {
+          "at": "2026-10-23T10:20Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Starting HOS 006 master v04 audit & plan for Ben's 11 changes"
+        },
+        {
+          "at": "2026-10-23T10:41Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Visual audit of all 11 Ben items complete; root-caused missing Part 05 overlays + mapped all 11 fixes"
+        },
+        {
+          "at": "2026-10-23T10:45Z",
+          "by": "gemini",
+          "what": "renewed to 2026-10-23T11:45Z"
+        },
+        {
+          "at": "2026-10-23T11:05Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 2/6: Minted all 7 Nano Banana 2 16:9 replacement stills on Flow at 0 credits (balance 20830 unchanged) and visually verified each still."
+        },
+        {
+          "at": "2026-10-23T11:12Z",
+          "by": "gemini",
+          "what": "renewed to 2026-10-23T13:12Z"
+        },
+        {
+          "at": "2026-10-23T11:29Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Step 3/6: Built and polish-verified all 12 v04 replacement/updated clips (03_pot_jar_leaf, 21_three_objects, 10_van_helmont_sack, 02_balance_200_house, 03_willow_shoot_scale, 04_lid_rain, 02_hales_branch, 03_water_level, 04_sunny_window, 08_explorer_shade, 15_leaf_turns_sun, 24_gold_foil_crop) with seams=[], edge_density 0.050-0.110, 0 credits."
+        },
+        {
+          "at": "2026-10-23T11:53Z",
+          "by": "gemini",
+          "what": "renewed to 2026-10-23T13:53Z"
+        },
+        {
+          "at": "2026-10-23T12:09Z",
+          "by": "gemini",
+          "what": "renewed to 2026-10-23T14:09Z"
+        },
+        {
+          "at": "2026-10-23T12:27Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Assembled hos_006_full_join_v04_teach.mp4 (96 cuts, 12764f / 531.833s) with all 12 replacement clips, 28 overlays (imperial+metric weights, 6:07 Geneva 1782 card, 8:28 closing card), and 20s moving end-screen tail"
+        },
+        {
+          "at": "2026-10-23T12:42Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Step 5/6: Built hos_006_master_v04.mp4 (-14.0 LUFS, -1.4 dBTP) and passed all gates (picture_qa 0/96 fail, polish_gate 0/96 fail, music_gate PASS, sfx_kit level PASS, gate:episode PASS)"
+        },
+        {
+          "at": "2026-10-23T12:48Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: Step 6/6: All gates PASS, copied to iCloud HOS UAT & NAS, production-status.md + PIPELINE.json committed (958f1227), parking for Chief"
+        },
+        {
+          "at": "2026-10-23T12:48Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 006 master v04 review (all 11 Ben changes applied at 0 Flow credits, all gates PASS)"
+        },
+        {
+          "at": "2026-10-23T12:49Z",
+          "by": "claude",
+          "what": "done: Chief PASS on master v04 (HOS 958f1227, sha 65aa7e1c, 8:51.8, -14.0 LUFS / -1.4 dBTP): all 11 of Ben's changes addressed at 0 credits; every imperial/metric pair checked (5 lb 2.3 kg, 200 lb 91 kg, 169 lb 77 kg, 2 oz 57 g, 164 lb 74 kg, 62 lb 28 kg, 1 lb 0.45 kg); picture_qa/polish/music/sfx/episode gates PASS. To Ben's rewatch; phone copy via J0883."
+        }
+      ],
+      "kind": "assembly",
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "progress": {
+        "step": 6,
+        "of": 6,
+        "at": "2026-10-23T12:48Z",
+        "by": "gemini",
+        "note": "Step 6/6: All gates PASS, copied to iCloud HOS UAT & NAS, production-status.md + PIPELINE.json committed (958f1227), par"
+      }
+    },
+    {
+      "id": "J0883",
+      "title": "Board watch links: 720p _PHONE copies (<120 MB) for HOS 007, 028, 029 so Watch plays on Ben's phone (Ben: 'Won't load the video')",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 23 Oct 13:00 on the board: HOS 007 'Watch v02 (Files)' \"Won't load the video\". The button is a Files-app link to the 516 MB master in iCloud (hos_007_master_v02.mp4): over WATCH_AUTO_MAX (120 MB), so kanban_snapshot.py never streams it.\nFor every cut in Ben's box (HOS 007 master v02, OWB 028 master v02, OWB 029 full rough v02, and HOS 006 v04 when it lands), make a phone copy next to the master in the same UAT folder:\n  ffmpeg -i <master> -vf scale=-2:720 -c:v libx264 -preset slow -b:v 1300k -maxrate 1600k -bufsize 3200k -c:a aac -b:a 128k -movflags +faststart <same name>_PHONE.mp4   (stays under 120 MB for ~8.5 min)\nnewest_uat() prefers *_PHONE.mp4, and auto_upload() streams it via /api/watch when WATCH_UPLOAD_KEY is set on the Mini. Then:\n1. Confirm board.json's watch entry for each film now has kind 'stream' (/api/watch?v=...), not 'files'.\n2. If the upload fails (the Vercel Blob store was suspended on 15 Oct over Hobby limits), say so exactly with the error. Don't spend anything, and leave the _PHONE copy in UAT so Files opens a small file.\n3. Post on #99 which films now stream. £0. Don't delete or move any master.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-23T12:50Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T12:01Z",
+      "result": "done",
+      "history": [
+        {
+          "at": "2026-10-23T12:01Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T12:50Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T12:51Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Locating UAT masters and inspecting kanban_snapshot.py"
+        },
+        {
+          "at": "2026-10-23T13:17Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Locating UAT folders and inspecting kanban_snapshot.py"
+        },
+        {
+          "at": "2026-10-23T13:31Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: HOS 007 _PHONE.mp4 (85.4 MB) in HOS UAT; Blob upload fails: 'Vercel Blob: This store has been suspended.' Encoding OWB 028 _PHONE.mp4"
+        },
+        {
+          "at": "2026-10-23T13:33Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: OWB 028 _PHONE.mp4 (79 MB) in OWB UAT; encoding OWB 029 _PHONE.mp4"
+        },
+        {
+          "at": "2026-10-23T13:34Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: OWB 029 _PHONE.mp4 (87 MB) in OWB UAT; encoding HOS 006 v04 _PHONE.mp4"
+        },
+        {
+          "at": "2026-10-23T13:37Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: All 4 720p _PHONE.mp4 copies (<90 MB) in UAT and live in board.json; Blob store upload fails: 'Vercel Blob: This store has been suspended.'"
+        },
+        {
+          "at": "2026-10-23T13:37Z",
+          "by": "gemini",
+          "what": "done: done"
+        }
+      ],
+      "kind": "studio",
+      "urgent": 1,
+      "taskKeys": [
+        "HOS:007",
+        "OWB:028",
+        "OWB:029",
+        "HOS:006"
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-10-23T13:37Z",
+        "by": "gemini",
+        "note": "All 4 720p _PHONE.mp4 copies (<90 MB) in UAT and live in board.json; Blob store upload fails: 'Vercel Blob: This store h"
+      }
+    },
+    {
+      "id": "J0884",
+      "title": "028 Gliese 710: Ben's 2 changes on master v02 (1:20 top text cut off, abrupt 7:53 ending) -> master v03",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's change tick on OWB 028 Gliese 710 master v02 (board, Fri 23 Oct 13:10 London). His words:\n1. '1:20 Top text cut off' -> find the overlay/label/card on screen at 1:20 (cuts_v02.json row) and keep it fully inside title-safe (top margin >= 5% of height, nothing clipped at any frame of its slide-in). Check every other overlay for the same clipping (scan all text-bearing rows, not just 1:20).\n2. '7:53 Very prompt ending' -> the film must not stop dead. End like the other OWB films: let the last line breathe, music resolves, then a closing card naming next week's film ('Is Betelgeuse About to Explode?', Sun 6 Dec) over moving picture, and ~20 s of moving picture for the YouTube end screen, then a 1.5 s fade. No new VO (ElevenLabs is out until 30 Oct); use the existing score bed and house SFX.\nKeep the four Chief fixes from v02. £0. Master v03, all gates (clip_check, picture_qa, polish_gate, music_gate, sfx level), per-row sheet committed (git add -f), copy to OWB UAT plus a 720p _PHONE.mp4 copy under 120 MB (see J0883), park for Chief. 028 airs Sun 29 Nov: v03 by Tue 27 Oct.",
+      "ref": "",
+      "film": "028",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-23T13:40Z",
+      "eta": "2026-10-23T15:40Z",
+      "created_by": "claude",
+      "created_at": "2026-10-23T12:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T12:11Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-23T13:15Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-23T13:40Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-23T13:40Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J0884: inspecting 028 Gliese 710 master v02 cuts, overlays, and ending"
+        }
+      ],
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy",
+      "taskKeys": [
+        "OWB:028"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-23T13:40Z",
+        "by": "gemini",
+        "note": "Starting J0884: inspecting 028 Gliese 710 master v02 cuts, overlays, and ending"
+      }
+    },
+    {
+      "id": "J0885",
+      "title": "029 Betelgeuse: Ben's 2 changes on full rough v02 (3:53 diagram rebuild, 5:08 Orion constellation lines) -> v03",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's change tick on OWB 029 Betelgeuse full rough v02 (board, Fri 23 Oct 13:46 London). His words:\n1. '3:53 Diagram needs rebuilt' -> rebuild the code graphic at 3:53 (find its row in the v02 cut list): read the VO line it sits under and make one clear, school-child-readable diagram of exactly that (house style, labelled with the VO's own words, numerals for spoken numbers, metric + imperial for any size/weight, nothing clipped at the top: keep text inside title-safe). Check it against 01_Script/SOURCES.md.\n2. '5:08 Let's draw the line between the stars to show the constellation' -> at 5:08 animate thin constellation lines joining Orion's main stars (Betelgeuse, Bellatrix, the belt Alnitak/Alnilam/Mintaka, Saiph, Rigel) over the sky picture, drawn in as the VO names it, with Betelgeuse labelled. Positions must match the real sky in the plate (plate-solve or match by eye against a star chart; no invented stars).\nAlso apply the two lessons from Ben's 028 notes (23 Oct) before he sees it: no text clipped at the top anywhere, and a proper ending (closing card naming the next film + ~20 s of moving picture for the end screen), not a dead stop. £0. Full rough v03, all gates, per-row sheet committed (git add -f), copy to OWB UAT with a 720p _PHONE.mp4 copy under 120 MB (J0883), park for Chief. 029 airs Sun 6 Dec: v03 by Thu 29 Oct.",
+      "ref": "",
+      "film": "029",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T12:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T12:46Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
   "backlog_last": {
-    "owb-short-from-locked": "2026-10-22T14:28Z",
-    "hos-short-from-locked": "2026-10-22T03:13Z",
+    "owb-short-from-locked": "2026-10-23T02:30Z",
+    "hos-short-from-locked": "2026-10-23T00:23Z",
     "owb-thumb-b": "2026-10-21T09:38Z",
     "hos-thumb-b": "2026-10-21T12:32Z",
     "owb-teach-overlays": "2026-10-21T12:35Z",
-    "owb-live-listing-fixes": "2026-10-22T15:48Z",
-    "owb-weekly-audit": "2026-10-22T14:09Z",
-    "hos-weekly-audit": "2026-10-22T13:34Z",
+    "owb-live-listing-fixes": "2026-10-23T09:35Z",
+    "owb-weekly-audit": "2026-10-23T04:40Z",
+    "hos-weekly-audit": "2026-10-23T04:25Z",
     "owb-ideas": "2026-10-21T09:44Z",
     "hos-ideas": "2026-10-21T10:09Z",
-    "hos-live-listing-fixes": "2026-10-22T15:55Z",
+    "hos-live-listing-fixes": "2026-10-23T09:43Z",
     "owb-next-script": "2026-10-21T12:53Z",
     "hos-next-script": "2026-10-21T13:08Z",
     "hos-plate-prep": "2026-10-21T13:54Z",
-    "both-qa-sweep": "2026-10-22T06:49Z",
-    "studio-ctr-daily": "2026-10-22T17:20Z"
+    "both-qa-sweep": "2026-10-23T09:52Z",
+    "studio-ctr-daily": "2026-10-23T06:01Z"
   }
 }
