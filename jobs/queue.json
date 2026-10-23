@@ -74116,9 +74116,23 @@
           "at": "2026-10-23T18:02Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-23T20:18Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0892",
