@@ -71659,13 +71659,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T02:38Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T01:50Z",
-      "result": "parked for Chief: QA sweep complete (OWB 6c9addd15/eae00b496/0d8a96e87/8f23e4613/bd1d2ccc4: 028 full_master_v02_pack picture_qa 0/61 PASS + polish_gate 0/61 PASS + music_gate PASS + sfx_level PASS, 028 full_master_v01_pack 0/61 PASS, 028 part_roughs_v01_pack 7/7 PASS, 027 Short earth_equator_weight_v01 0/8 PASS, 023 Short venus_95pct_wide_v02 0/7 PASS, all 38 committed OWB Shorts + 024 v06 / 026 v06 / 027 v01m / 029 v02 PASS; HOS 1946ac4d/786e631e/30f9033e/c2a85e6e: 006 master_v01 picture_qa 0/91 PASS + polish_gate 0/91 PASS + music_gate PASS + sfx_level PASS, 007 full_join_v01 & master_v02 picture_qa 0/97 PASS + polish_gate 0/97 PASS + music_gate PASS + sfx_level PASS, 001 Short hos_001_s11_curved_flask_v02 0/7 PASS, all 28 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)",
+      "result": "Chief: sweep accepted. Every newest OWB + HOS pack (028 v02, 027/023 Shorts, HOS 006, 007 v02, 001 s11 Short) passes picture_qa, polish_gate and music_gate with 0 fails. The aborted 024 lift_seven_years scratch on the Mini is untracked; the Mini's own cleanup can take it.",
       "history": [
         {
           "at": "2026-10-23T01:50Z",
@@ -71711,6 +71711,11 @@
           "at": "2026-10-23T02:46Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: QA sweep complete (OWB 6c9addd15/eae00b496/0d8a96e87/8f23e4613/bd1d2ccc4: 028 full_master_v02_pack picture_qa 0/61 PASS + polish_gate 0/61 PASS + music_gate PASS + sfx_level PASS, 028 full_master_v01_pack 0/61 PASS, 028 part_roughs_v01_pack 7/7 PASS, 027 Short earth_equator_weight_v01 0/8 PASS, 023 Short venus_95pct_wide_v02 0/7 PASS, all 38 committed OWB Shorts + 024 v06 / 026 v06 / 027 v01m / 029 v02 PASS; HOS 1946ac4d/786e631e/30f9033e/c2a85e6e: 006 master_v01 picture_qa 0/91 PASS + polish_gate 0/91 PASS + music_gate PASS + sfx_level PASS, 007 full_join_v01 & master_v02 picture_qa 0/97 PASS + polish_gate 0/97 PASS + music_gate PASS + sfx_level PASS, 001 Short hos_001_s11_curved_flask_v02 0/7 PASS, all 28 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)"
+        },
+        {
+          "at": "2026-10-23T02:50Z",
+          "by": "claude",
+          "what": "done: Chief: sweep accepted. Every newest OWB + HOS pack (028 v02, 027/023 Shorts, HOS 006, 007 v02, 001 s11 Short) passes picture_qa, polish_gate and music_gate with 0 fails. The aborted 024 lift_seven_years scratch on the Mini is untracked; the Mini's own cleanup can take it."
         }
       ],
       "kind": "qa",
