@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-23T05:30Z",
-      "eta": "2026-10-23T09:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12769,6 +12769,11 @@
           "at": "2026-10-23T05:34Z",
           "by": "codex",
           "what": "step 4 of 6 done: HOS #300 06584e76: approved 006 willow replaces closing placeholder; NAS render and QA detached; repo checks clear"
+        },
+        {
+          "at": "2026-10-23T05:34Z",
+          "by": "codex",
+          "what": "released: Step 4/6; HOS PR #300 commit 06584e76. Closing willow replacement implemented and source window inspected; check_all ALL CHECKS PASS. Detached render tmux J0175-willow-0530, log /Users/benjaminoats/_desk/logs/J0175-willow-0530.log, completion /Users/benjaminoats/_desk/logs/J0175-willow-0530.done; QA session J0175-willow-0530-qa with corresponding -qa.log/-qa.done. Both done files absent at handoff; render ffmpeg active, do not duplicate. NAS output mini-tmp-scratch/2026-10-23/hos_comp_j0175_willow0530/segments/closing. Read completion/gates and inspect willow transition next, then 006 trim, intro/B1/B2, full assembly and gates. No spend, upload, final PASS or merge."
         }
       ],
       "kind": "assembly",
