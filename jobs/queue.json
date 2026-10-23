@@ -73714,6 +73714,11 @@
           "at": "2026-10-23T15:05Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Step 3 done: uploaded all _PHONE copies to R2 (hos-006-v04, hos-007-v02, owb-028-v02/v03, owb-029-v02), updated ~/.config/studio-kanban/watch_uploads.json, ran board_publish.py, and confirmed board.json shows kind stream for all four"
+        },
+        {
+          "at": "2026-10-23T15:15Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Step 4 done: verified GET /api/watch?v=<id>&k=$BOARD_KEY returns 302 to r2.dev and r2.dev returns 200 OK / 206 Partial Content with Content-Type: video/mp4 for all five _PHONE cuts"
         }
       ],
       "kind": "studio",
@@ -73725,11 +73730,11 @@
         "OWB:029"
       ],
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-23T15:05Z",
+        "at": "2026-10-23T15:15Z",
         "by": "gemini",
-        "note": "Step 3 done: uploaded all _PHONE copies to R2 (hos-006-v04, hos-007-v02, owb-028-v02/v03, owb-029-v02), updated ~/.confi"
+        "note": "Step 4 done: verified GET /api/watch?v=<id>&k=$BOARD_KEY returns 302 to r2.dev and r2.dev returns 200 OK / 206 Partial C"
       }
     },
     {
