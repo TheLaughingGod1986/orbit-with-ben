@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-23T07:16Z",
+      "eta": "2026-10-23T11:16Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -13004,6 +13004,11 @@
           "at": "2026-10-23T07:13Z",
           "by": "gemini",
           "what": "released: Step 5/6. J0175-b1b2-0746 finished: 006 trimmed prep done (493.57s, -14.01 LUFS TP -1.48); bridges 1-5 + closing rendered in /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540/segments/. Bridge 1 polish PASS + SFX PASS (-16.5/-49.1 LUFS, 1 hit); Bridge 2 polish PASS, SFX needs 1 motivated tick at starts[2]+0.25s like Bridge 4. Scanned and eye-checked all 14 intro windows on ~/_desk/logs/J0175-intro-{candidates,refinements,refinements2}.jpg: [(005,234.3,239.0),(006,487.0,492.0),(001,128.0,133.0),(004,192.0,197.0),(005,302.6,306.1),(006,146.5,149.3),(001,282.0,285.0),(002,96.0,99.0),(003,129.8,132.8),(004,287.0,291.3),(002,148.0,152.7),(005,363.4,367.9),(004,173.5,178.5),(005,183.5,189.1)]. Next run: wire intro + bridge2 tick + card_01..06 + whole-cut concat in _assemble_hos_compilation_v01.py, run gates, park for Chief."
+        },
+        {
+          "at": "2026-10-23T07:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
