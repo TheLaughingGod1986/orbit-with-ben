@@ -1,5 +1,5 @@
 {
-  "next_id": 883,
+  "next_id": 884,
   "jobs": [
     {
       "id": "J0001",
@@ -73306,6 +73306,34 @@
         "by": "gemini",
         "note": "Step 3/6: Built and polish-verified all 12 v04 replacement/updated clips (03_pot_jar_leaf, 21_three_objects, 10_van_helm"
       }
+    },
+    {
+      "id": "J0883",
+      "title": "Board watch links: 720p _PHONE copies (<120 MB) for HOS 007, 028, 029 so Watch plays on Ben's phone (Ben: 'Won't load the video')",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 23 Oct 13:00 on the board: HOS 007 'Watch v02 (Files)' \"Won't load the video\". The button is a Files-app link to the 516 MB master in iCloud (hos_007_master_v02.mp4): over WATCH_AUTO_MAX (120 MB), so kanban_snapshot.py never streams it.\nFor every cut in Ben's box (HOS 007 master v02, OWB 028 master v02, OWB 029 full rough v02, and HOS 006 v04 when it lands), make a phone copy next to the master in the same UAT folder:\n  ffmpeg -i <master> -vf scale=-2:720 -c:v libx264 -preset slow -b:v 1300k -maxrate 1600k -bufsize 3200k -c:a aac -b:a 128k -movflags +faststart <same name>_PHONE.mp4   (stays under 120 MB for ~8.5 min)\nnewest_uat() prefers *_PHONE.mp4, and auto_upload() streams it via /api/watch when WATCH_UPLOAD_KEY is set on the Mini. Then:\n1. Confirm board.json's watch entry for each film now has kind 'stream' (/api/watch?v=...), not 'files'.\n2. If the upload fails (the Vercel Blob store was suspended on 15 Oct over Hobby limits), say so exactly with the error. Don't spend anything, and leave the _PHONE copy in UAT so Files opens a small file.\n3. Post on #99 which films now stream. £0. Don't delete or move any master.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T12:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T12:01Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "urgent": true
     }
   ],
   "focus": [],
