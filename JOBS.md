@@ -26,6 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0878 | mini | open | – | – | listing · HOS compilation v02: package (title, chapters, Sources, £0 thumbnail) + Private upload for Thu 10 Dec 18:00 UK, park for Chief |  |
 | J0880 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0882 | mini | open | – | – | 006 edit · assembly · HOS 006 Trees: Ben's 11 changes on master v03 (picture fixes, imperial+metric weights, 6:07 date card, proper ending) -> master v04 |  |
 
 Recently finished:
 
