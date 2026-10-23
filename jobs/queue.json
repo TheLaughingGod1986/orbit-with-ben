@@ -1,5 +1,5 @@
 {
-  "next_id": 881,
+  "next_id": 882,
   "jobs": [
     {
       "id": "J0001",
@@ -73186,6 +73186,34 @@
         "by": "gemini",
         "note": "Committed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-23.md (789311d4); all checks pass; parking for Chief"
       }
+    },
+    {
+      "id": "J0881",
+      "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-10-23T09:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T09:52Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "kind": "qa",
+      "backlog": "both-qa-sweep"
     }
   ],
   "focus": [],
@@ -73204,7 +73232,7 @@
     "owb-next-script": "2026-10-21T12:53Z",
     "hos-next-script": "2026-10-21T13:08Z",
     "hos-plate-prep": "2026-10-21T13:54Z",
-    "both-qa-sweep": "2026-10-23T01:50Z",
+    "both-qa-sweep": "2026-10-23T09:52Z",
     "studio-ctr-daily": "2026-10-23T06:01Z"
   }
 }
