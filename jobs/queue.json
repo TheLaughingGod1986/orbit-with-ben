@@ -71493,10 +71493,24 @@
           "at": "2026-10-23T00:23Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-23T02:51Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "kind": "assembly",
-      "backlog": "hos-short-from-locked"
+      "backlog": "hos-short-from-locked",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0866",
