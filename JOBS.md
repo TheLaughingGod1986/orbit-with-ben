@@ -31,6 +31,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0886 | mini | open | – | – | 006 edit · assembly · HOS 006 Trees: Ben's 4 changes on master v04 (0:07 tree on scales, 1:26 tree in pot, 4:28 hand with no body, 5:29 bubbles) -> v05 |  |
 | J0887 | mini | open | – | – | 007 edit · assembly · HOS 007 Vaccine: Ben's 3 changes on master v02 (1:48 milking hand, 3:50 mascot too big, 8:25 ending + subscribe line) -> v03 |  |
 | J0888 | mini | claimed | gemini | 2026-10-23T16:55Z | studio · Watch streaming: verify the R2 uploads of the four _PHONE copies after PR #260 (hand run, clear back-off, check 302 + video/mp4) |  |
+| J0889 | mini | open | – | – | 028 thumbs · thumb · 028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief |  |
+| J0890 | mini | open (after J0889) | – | – | 028 upload · listing · 028 Gliese 710: Private upload of master v03 for Sun 29 Nov 18:00 London, read back, record |  |
 
 Recently finished:
 

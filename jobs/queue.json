@@ -1,5 +1,5 @@
 {
-  "next_id": 889,
+  "next_id": 891,
   "jobs": [
     {
       "id": "J0001",
@@ -73731,6 +73731,60 @@
         "by": "gemini",
         "note": "Step 3 done: uploaded all _PHONE copies to R2 (hos-006-v04, hos-007-v02, owb-028-v02/v03, owb-029-v02), updated ~/.confi"
       }
+    },
+    {
+      "id": "J0889",
+      "title": "028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK on 028 Gliese 710 master v03 (board, Fri 23 Oct 16:13 London; 3a25e2bb4, OWB UAT/028_Gliese710_full_master_v03.mp4, 8:18). Build its release package like 026/027 (J0833/J0834): 3 thumbnail concepts A/B/C in house style at 0 Flow credits (Nano Banana on the plan + cover builder), thumb_preview + style_sheet PASS, A primary, B/C for Test & Compare; title as a positive question naming the subject (draft from the script; avoid clickbait), description with chapters from the v03 cut list, one Sources line from 01_Script/SOURCES.md (4-6 papers/official sources), tags, en-GB captions from the locked VO, synthetic disclosure, not made for kids; lint:package PASS and a youtube:package --dry-run. Commit (git add -f for review sheets), park for Chief with the title, thumbnails and dry-run output. £0.",
+      "ref": "",
+      "film": "028",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T15:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T15:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "thumb"
+    },
+    {
+      "id": "J0890",
+      "title": "028 Gliese 710: Private upload of master v03 for Sun 29 Nov 18:00 London, read back, record",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After Chief PASS on the 028 package: upload master v03 Private via youtube:package with publishAt Sun 29 Nov 2026 18:00 London (18:00Z), read back privacy/publishAt/title/thumbnail, record the upload in 11_Upload-Package (PACKAGE_UPLOAD_RESULT) and UPLOADS.json, set Test & Compare if the API allows, and post the read-back on #99. Then queue the 028 Shorts plan (2-3 Shorts from the locked long, Learnings checklist) as its own job. £0.",
+      "ref": "",
+      "film": "028",
+      "stage": "upload",
+      "after": "J0889",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T15:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T15:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
