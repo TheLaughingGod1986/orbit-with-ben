@@ -28,10 +28,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, A6TW_6CXhcs) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
-| J0864 | mini | blocked | gemini | – | 028 edit · assembly · 028 Gliese 710: master v02, Chief's 4 picture fixes (ESA end slate, NEOWISE framing, conjunction, comet repeat), gates, park for Chief |  |
 
 Recently finished:
 
+- J0864 done: 028 Gliese 710: master v02, Chief's 4 picture fixes (ESA end slate, NEOWISE framing, conjunction, comet repeat), gates, park for Chief (Chief PASS on master v02 (6c9addd15, sha cde81a6a): the 4 fixes are in the cut list (r38_return offset 16-25.2 s, NEOWISE crops on the comet, conjunction 1.7x, Hale-Bopp own still), all gates PASS. To Ben's watch. Commit the v02 sheets with git add -f for the record.)
 - J0860 done: HOS 010: confirm the 8 period details (P1-P8) on SHOT_LIST_v01, no spend, park for Chief (P4-P8 confirmed against FACT_NOTES_v01 sources; SHOT_LIST_v01 and PIPELINE picture note updated (history-of-science 4ebf6b4). Next for 010: J0862 Shorts VO after the 30 Oct reset.)
 - J0859 done: 028 Gliese 710: full join v01 + 3 £0 fixes (r19 repeat, Gaia clip x5, faint pills) + £0 score bed/SFX master, gates, park for Chief (Chief FIX: v02 needed for 4 picture faults (ESA end slate at 7:48, comet out of frame 7:40/3:57, faint conjunction 5:51, comet_a3 twice 4:27/4:44); fix job queued)
 - J0855 done: 028 Gliese 710: r17_pitch Fast retake (no goal net), then part roughs v01 from boards v02, gates, park for Chief (Chief PASS part roughs v01; full join + 3 fixes + master -> J0859)
@@ -41,4 +41,3 @@ Recently finished:
 - J0850 done: 028 Gliese 710: Flow price table for the remaining picture rows (boards v02), park for Chief price pass before any mint (Chief KEEP r08/r11/r23, FIX r17 (goal net) -> J0855 (retake + part roughs))
 - J0849 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Chief PASS (Claude, acting): HOS 22/22 public + 11/11 scheduled clean; Blood Shorts Related stays in J0280/J0241 for 29 Oct.)
 - J0848 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Chief PASS (Claude, acting): OWB 10/10 live listings clean; 0 fixes.)
-- J0847 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS live listing check (c49707d1, 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md): channel:audit 43 videos 0 errors; all 22 public videos (4 longs end screens + 18 Shorts Related pills) and 11 scheduled videos verified; Chief J0837 rulings recorded (Blood Shorts Related in J0280/J0241 after 29 Oct; 0 Studio changes needed now).)

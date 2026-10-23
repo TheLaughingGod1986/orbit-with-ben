@@ -71215,13 +71215,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-22T22:35Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T22:25Z",
-      "result": "parked for Chief: 028 Gliese 710 full master v02 (6c9addd15, sha256 cde81a6a...) built with all 4 £0 picture fixes, all gates PASS (clip_check 61 rows, picture_qa 0 fail, polish_gate 0 fail, music_gate PASS, sfx_level PASS, 22/22 pills p99=255), copied to OWB UAT + NAS for Ben's watch",
+      "result": "Chief PASS on master v02 (6c9addd15, sha cde81a6a): the 4 fixes are in the cut list (r38_return offset 16-25.2 s, NEOWISE crops on the comet, conjunction 1.7x, Hale-Bopp own still), all gates PASS. To Ben's watch. Commit the v02 sheets with git add -f for the record.",
       "history": [
         {
           "at": "2026-10-22T22:25Z",
@@ -71267,6 +71267,11 @@
           "at": "2026-10-22T23:58Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 028 Gliese 710 full master v02 (6c9addd15, sha256 cde81a6a...) built with all 4 £0 picture fixes, all gates PASS (clip_check 61 rows, picture_qa 0 fail, polish_gate 0 fail, music_gate PASS, sfx_level PASS, 22/22 pills p99=255), copied to OWB UAT + NAS for Ben's watch"
+        },
+        {
+          "at": "2026-10-23T00:00Z",
+          "by": "claude",
+          "what": "done: Chief PASS on master v02 (6c9addd15, sha cde81a6a): the 4 fixes are in the cut list (r38_return offset 16-25.2 s, NEOWISE crops on the comet, conjunction 1.7x, Hale-Bopp own still), all gates PASS. To Ben's watch. Commit the v02 sheets with git add -f for the record."
         }
       ],
       "kind": "assembly",
