@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-23T06:09Z",
+      "eta": "2026-10-23T10:09Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12889,6 +12889,11 @@
           "at": "2026-10-23T06:06Z",
           "by": "codex",
           "what": "released: Step 4/6 holds. Existing normalization tmux J0175-prep-0540 is live; /Users/benjaminoats/_desk/logs/J0175-prep-0540.done absent. Log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log: 005 done 489.20s -14.20 LUFS TP -0.85; 006 done 508.00s -14.01 LUFS TP -1.47; 001 processing. No duplicate started. Scratch already on NAS /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540. HOS PR #300 checkpoint 04991e63. Next check completion/prep_report.json then 006 trim, remaining segments/full assembly/gates. No spend, upload, merge or final approval."
+        },
+        {
+          "at": "2026-10-23T06:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
