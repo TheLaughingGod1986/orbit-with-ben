@@ -72918,18 +72918,41 @@
           "at": "2026-10-23T09:31Z",
           "by": "codex",
           "what": "step 1 of 4 done: Verified OWB CDP 9223 and HOS CDP 9460; collecting lifetime Studio metrics with read-only advanced tables"
+        },
+        {
+          "at": "2026-10-23T09:32Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Read 13 OWB longs + 69 Shorts and 4 HOS longs + 18 Shorts; one 2-view OWB Short has no Studio retention yet"
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-23T09:31Z",
+        "at": "2026-10-23T09:32Z",
         "by": "codex",
-        "note": "Verified OWB CDP 9223 and HOS CDP 9460; collecting lifetime Studio metrics with read-only advanced tables"
-      }
+        "note": "Read 13 OWB longs + 69 Shorts and 4 HOS longs + 18 Shorts; one 2-view OWB Short has no Studio retention yet"
+      },
+      "taskKeys": [
+        "OWB:001",
+        "OWB:002",
+        "OWB:003",
+        "OWB:004",
+        "OWB:005",
+        "OWB:006",
+        "OWB:007",
+        "OWB:013",
+        "OWB:019",
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
     },
     {
       "id": "J0878",
