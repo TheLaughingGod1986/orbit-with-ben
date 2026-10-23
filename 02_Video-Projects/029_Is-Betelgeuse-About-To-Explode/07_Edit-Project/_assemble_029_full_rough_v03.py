@@ -76,16 +76,19 @@ CDIR = HERE / "code_graphics_v01"
 OV_PACK = HERE / "teaching_overlays_v01_pack"
 PACK_V01 = HERE / "full_rough_v01_pack"
 PACK_V02 = HERE / "full_rough_v02_pack"
-PACK = HERE / "full_rough_v03_pack"
+PACK_V03 = HERE / "full_rough_v03_pack"
+PACK = HERE / "full_rough_v03b_pack"
 V02_MP4 = Path("/private/tmp/029_Betelgeuse_full_rough_v02.mp4")
-WORK = Path("/private/tmp/betelgeuse029_full_rough_work_v03")
+V03_MP4 = Path("/private/tmp/029_Betelgeuse_full_rough_v03.mp4")
+WORK = Path("/private/tmp/betelgeuse029_full_rough_work_v03b")
 AUDIO_WORK = Path("/private/tmp/betelgeuse029_audio_work_v01")
 
-OUT_MP4 = Path("/private/tmp/029_Betelgeuse_full_rough_v03.mp4")
-UAT_MP4 = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/029_Betelgeuse_full_rough_v03.mp4"
-UAT_PHONE_MP4 = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/029_Betelgeuse_full_rough_v03_PHONE.mp4"
+OUT_MP4 = Path("/private/tmp/029_Betelgeuse_full_rough_v03b.mp4")
+UAT_MP4 = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/029_Betelgeuse_full_rough_v03b.mp4"
+UAT_PHONE_MP4 = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/029_Betelgeuse_full_rough_v03b_PHONE.mp4"
 NAS_DIR = Path("/Volumes/data/mac-mini-archive/youtube-staging/029")
-NAS_MP4 = NAS_DIR / "029_Betelgeuse_full_rough_v03.mp4"
+NAS_MP4 = NAS_DIR / "029_Betelgeuse_full_rough_v03b.mp4"
+NAS_PHONE_MP4 = NAS_DIR / "029_Betelgeuse_full_rough_v03b_PHONE.mp4"
 
 VO_WAV = EP / "02_Voiceover" / "betelgeuse_vo_v01.wav"
 WORDS_JSON = EP / "02_Voiceover" / "words.json"
@@ -972,12 +975,43 @@ def verify_all_text_title_safe() -> dict:
             }
         )
 
+    checked_teaspoon_cards = []
+    for card_side, card_box, items in (
+        ("left", (150, 710, 810, 912), [(480, 768, 52, "1 teaspoon"), (480, 852, 40, "5 ml · 1 tsp")]),
+        (
+            "right",
+            (1110, 710, 1770, 912),
+            [(1440, 768, 52, "1 mountain"), (1440, 836, 36, "1 billion tonnes"), (1440, 880, 36, "1.1 billion US tons")],
+        ),
+    ):
+        cx0, cy0, cx1, cy1 = card_box
+        for tx, ty, fsz, txt in items:
+            b = d.textbbox((tx, ty), txt, font=cg.font(fsz), anchor="mm", stroke_width=2)
+            x0, y0, x1, y1 = b[0], b[1], b[2], b[3]
+            assert x0 >= cx0 + 16 and x1 <= cx1 - 16 and y0 >= cy0 + 12 and y1 <= cy1 - 12, (
+                f"Teaspoon {card_side} card text '{txt}' ({x0},{y0},{x1},{y1}) overruns card border {card_box}"
+            )
+            checked_teaspoon_cards.append(
+                {
+                    "card": card_side,
+                    "card_box": list(card_box),
+                    "text": txt,
+                    "font_px": fsz,
+                    "bbox": [x0, y0, x1, y1],
+                    "left_pad_px": x0 - cx0,
+                    "right_pad_px": cx1 - x1,
+                    "top_pad_px": y0 - cy0,
+                    "bottom_pad_px": cy1 - y1,
+                }
+            )
+
     return {
         "title_safe_box": [90, 54, 1830, 1026],
         "code_graphic_labels_checked": len(checked_cg_labels),
         "teaching_pills_checked": len(checked_pills),
         "chapter_cards_checked": len(CHAPTER_CARDS),
         "closing_card_bbox_with_slide": [240, 360, 1680, 738],
+        "r21_hero_teaspoon_card_lines": checked_teaspoon_cards,
         "all_title_safe": True,
         "code_graphic_labels": checked_cg_labels,
     }
@@ -1005,21 +1039,61 @@ def make_contact_sheet(video_mp4: Path, cuts: list[dict], dst: Path, cols: int =
     sheet.save(dst, quality=88)
 
 
+def make_r21_before_after_sheet(video_mp4: Path, dst: Path) -> None:
+    ref_v03 = V03_MP4 if V03_MP4.exists() else video_mp4
+    raw_before = sp.run(
+        ["ffmpeg", "-v", "error", "-ss", "232.000", "-i", str(ref_v03), "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+        capture_output=True,
+        check=True,
+    ).stdout
+    raw_after = sp.run(
+        ["ffmpeg", "-v", "error", "-ss", "232.000", "-i", str(video_mp4), "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+        capture_output=True,
+        check=True,
+    ).stdout
+    im_before = Image.frombytes("RGB", (1920, 1080), raw_before)
+    im_after = Image.frombytes("RGB", (1920, 1080), raw_after)
+
+    w, h, bar = 940, 529, 44
+    crop_h = 260
+    sheet = Image.new("RGB", (w * 2 + 24, h + bar + crop_h + bar + 16), (14, 20, 30))
+    d = ImageDraw.Draw(sheet)
+    f = ImageFont.truetype(FONT, 20)
+
+    sheet.paste(im_before.resize((w, h), Image.Resampling.LANCZOS), (8, 8))
+    d.text((16, 8 + h + 10), "BEFORE v03 (3:52.0 r21_hero): 1-line 40px US-tons text overruns right card border", font=f, fill=(255, 160, 140))
+
+    sheet.paste(im_after.resize((w, h), Image.Resampling.LANCZOS), (16 + w, 8))
+    d.text((24 + w, 8 + h + 10), "AFTER v03b (3:52.0 r21_hero, 04bab9a9): two 36px lines sit cleanly inside right gold card", font=f, fill=(170, 245, 185))
+
+    # 1:1 crop of the right card (x=1060..1820, y=690..940 -> 760x250 scaled to 940x260)
+    card_before = im_before.crop((1060, 690, 1820, 940)).resize((w, crop_h), Image.Resampling.LANCZOS)
+    card_after = im_after.crop((1060, 690, 1820, 940)).resize((w, crop_h), Image.Resampling.LANCZOS)
+    y2 = 8 + h + bar
+    sheet.paste(card_before, (8, y2))
+    d.text((16, y2 + crop_h + 10), "BEFORE v03 right card zoom: '1 billion tonnes · 1.1 billion US tons' clips gold border", font=f, fill=(255, 160, 140))
+    sheet.paste(card_after, (16 + w, y2))
+    d.text((24 + w, y2 + crop_h + 10), "AFTER v03b right card zoom: '1 billion tonnes' / '1.1 billion US tons' (166px+ side margin)", font=f, fill=(170, 245, 185))
+
+    sheet.save(dst, quality=92)
+
+
 def make_fixes_sheet(video_mp4: Path, dst: Path) -> None:
     ref_v02 = V02_MP4 if V02_MP4.exists() else video_mp4
+    ref_v03 = V03_MP4 if V03_MP4.exists() else video_mp4
     tiles = [
         (ref_v02, 231.0, "BEFORE v02 (3:51.0 r21_hero): abstract line-triangle sketch"),
-        (video_mp4, 231.0, "AFTER v03 (3:51.0 r21_hero): 1 teaspoon (5 ml) vs 1 mountain (1B tonnes)"),
-        (video_mp4, 232.6, "AFTER v03 (3:52.6 r21_hero): full balance-scale diagram + metric/imperial"),
+        (ref_v03, 232.0, "BEFORE v03 (3:52.0 r21_hero): 1-line 40px text overran right card"),
+        (video_mp4, 232.0, "AFTER v03b (3:52.0 r21_hero): two 36px lines inside gold card border"),
         (ref_v02, 306.5, "BEFORE v02 (5:06.5 r27_orion_b): unlabelled star dots, no constellation lines"),
-        (video_mp4, 295.0, "AFTER v03 (4:55.0 r27_orion_a): Orion constellation lines + Betelgeuse labelled"),
-        (video_mp4, 306.5, "AFTER v03 (5:06.5 r27_orion_b): Orion constellation lines + missing shoulder"),
-        (video_mp4, 99.0, "AFTER v03 (1:39.0 r09_finder): Orion belt finder + constellation stick lines"),
-        (video_mp4, 278.5, "AFTER v03 (4:38.5 r25_orion): Supernova flare over Orion constellation lines"),
-        (video_mp4, 515.5, "AFTER v03 (8:35.5 r39_return): 3.0s post-VO breathe on moving Milky Way"),
-        (video_mp4, 519.6, "AFTER v03 (8:39.6 r40_closing_card): 'What Happens When Earth's Magnetic Field Flips?'"),
-        (video_mp4, 525.5, "AFTER v03 (8:45.5 r41_end_screen_a): 20s end screen 1/3 (Orion rising)"),
-        (video_mp4, 538.5, "AFTER v03 (8:58.5 r41_end_screen_c): 20s end screen 3/3 (Chajnantor + fade)"),
+        (video_mp4, 295.0, "AFTER v03b (4:55.0 r27_orion_a): Orion constellation lines + Betelgeuse labelled"),
+        (video_mp4, 306.5, "AFTER v03b (5:06.5 r27_orion_b): Orion constellation lines + missing shoulder"),
+        (video_mp4, 99.0, "AFTER v03b (1:39.0 r09_finder): Orion belt finder + constellation stick lines"),
+        (video_mp4, 278.5, "AFTER v03b (4:38.5 r25_orion): Supernova flare over Orion constellation lines"),
+        (video_mp4, 515.5, "AFTER v03b (8:35.5 r39_return): 3.0s post-VO breathe on moving Milky Way"),
+        (video_mp4, 519.6, "AFTER v03b (8:39.6 r40_closing_card): 'What Happens When Earth's Magnetic Field Flips?'"),
+        (video_mp4, 525.5, "AFTER v03b (8:45.5 r41_end_screen_a): 20s end screen 1/3 (Orion rising)"),
+        (video_mp4, 538.5, "AFTER v03b (8:58.5 r41_end_screen_c): 20s end screen 3/3 (Chajnantor + fade)"),
     ]
     cols = 3
     w, h, bar = 480, 270, 28
@@ -1061,9 +1135,9 @@ def main() -> None:
         sp.run([sys.executable, str(EP / "05_Music" / "_build_betelgeuse_audio_v01.py")], check=True)
 
     title_safe_report = verify_all_text_title_safe()
-    (PACK / "title_safe_audit_v03.json").write_text(json.dumps(title_safe_report, indent=2) + "\n")
+    (PACK / "title_safe_audit_v03b.json").write_text(json.dumps(title_safe_report, indent=2) + "\n")
 
-    rev_path = PACK / "reviewed_ok_v03.json"
+    rev_path = PACK / "reviewed_ok_v03b.json"
     rev_path.write_text(json.dumps(REVIEWED_OK, indent=2) + "\n")
 
     flat_items = []
@@ -1071,7 +1145,7 @@ def main() -> None:
         for pid, rnum, fin, fout, kind, sname, opts in rows:
             flat_items.append((part_id, ch_name, p_in, pid, rnum, fin, fout, kind, sname, opts))
 
-    print(f">>> Rendering {len(flat_items)} segments ({len(V03_NEW_PLATES)} re-rendered for v03, {len(flat_items)-len(V03_NEW_PLATES)} sliced from v02) <<<", flush=True)
+    print(f">>> Rendering {len(flat_items)} segments ({len(V03_NEW_PLATES)} re-rendered for v03b, {len(flat_items)-len(V03_NEW_PLATES)} sliced from v02) <<<", flush=True)
 
     def _build_one(idx_item):
         idx, (part_id, ch_name, p_in, pid, rnum, fin, fout, kind, sname, opts) = idx_item
@@ -1104,7 +1178,7 @@ def main() -> None:
     seg_files = [r[1] for r in results]
     cuts = [r[2] for r in results]
 
-    v_concat = WORK / "video_full_v03.mp4"
+    v_concat = WORK / "video_full_v03b.mp4"
     lst = WORK / "concat_full.txt"
     lst.write_text("".join(f"file '{p}'\n" for p in seg_files))
     sp.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(v_concat)], check=True)
@@ -1133,7 +1207,7 @@ def main() -> None:
         check=True,
     )
 
-    cuts_json = PACK / "cuts_v03.json"
+    cuts_json = PACK / "cuts_v03b.json"
     cuts_json.write_text(json.dumps(cuts, indent=2) + "\n")
 
     # 1. clip_check.py
@@ -1143,7 +1217,7 @@ def main() -> None:
     for c in cuts:
         txt = " ".join(w["word"] for w in WORDS if c["timeline_in"] <= 0.5 * (w["start"] + w["end"]) < c["timeline_out"])
         wr.writerow([c["row"], c["source"], f"{c['timeline_in']:.3f}", f"{c['timeline_out']:.3f}", txt or "[no VO]"])
-    csv_path = PACK / "betelgeuse_full_v03_assembled.csv"
+    csv_path = PACK / "betelgeuse_full_v03b_assembled.csv"
     csv_path.write_text(csv_buf.getvalue())
     words_list_path = PACK / "betelgeuse_words_list.json"
     words_list_path.write_text(json.dumps([{"text": w["word"], "start": w["start"], "end": w["end"]} for w in WORDS]))
@@ -1161,15 +1235,15 @@ def main() -> None:
     import picture_qa as pqa
     import polish_gate as pg
 
-    pqa_dir = PACK / "picture_qa_v03"
+    pqa_dir = PACK / "picture_qa_v03b"
     pqa_dir.mkdir(parents=True, exist_ok=True)
     pool = pqa.load_pool([str(POOL_JSON)])
     rows_qa = pqa.source_checks(cuts, pool)
     pqa.apply_reviewed(rows_qa, REVIEWED_OK)
     polish_res = pg.judge(str(OUT_MP4), cuts, REVIEWED_OK, True)
-    (PACK / "polish_gate_v03.json").write_text(json.dumps(polish_res, indent=2) + "\n")
-    pg_txt = f"polish gate {polish_res['verdict']}: {len(polish_res['failed'])} of {len(cuts)} rows failed, {len(polish_res['warn'])} to look at -> {PACK / 'polish_gate_v03.json'}\n"
-    (PACK / "polish_gate_v03.txt").write_text(pg_txt)
+    (PACK / "polish_gate_v03b.json").write_text(json.dumps(polish_res, indent=2) + "\n")
+    pg_txt = f"polish gate {polish_res['verdict']}: {len(polish_res['failed'])} of {len(cuts)} rows failed, {len(polish_res['warn'])} to look at -> {PACK / 'polish_gate_v03b.json'}\n"
+    (PACK / "polish_gate_v03b.txt").write_text(pg_txt)
     print(pg_txt.strip())
 
     pqa.merge_polish(rows_qa, polish_res)
@@ -1186,7 +1260,7 @@ def main() -> None:
     (pqa_dir / "PICTURE_QA.md").write_text(pqa.report_md(rows_qa, pqa_verdict, str(OUT_MP4)))
     pqa.review_sheet(str(OUT_MP4), rows_qa, pqa_dir / "picture_qa_review.jpg")
     pqa_txt = f"picture QA {pqa_verdict}: {len(pqa_res['failed'])} of {len(rows_qa)} cuts fail, {len(pqa_res['warn'])} to look at -> {pqa_dir / 'PICTURE_QA.md'}\n"
-    (PACK / "picture_qa_v03.txt").write_text(pqa_txt)
+    (PACK / "picture_qa_v03b.txt").write_text(pqa_txt)
     print(pqa_txt.strip())
     if pqa_verdict != "PASS" or polish_res["verdict"] != "PASS":
         raise RuntimeError(f"QA failed: picture_qa={pqa_verdict}, polish_gate={polish_res['verdict']}")
@@ -1207,21 +1281,22 @@ def main() -> None:
             "--video",
             str(OUT_MP4),
             "--out",
-            str(PACK / "music_gate_v03.json"),
+            str(PACK / "music_gate_v03b.json"),
         ],
         capture_output=True,
         text=True,
         check=True,
     )
-    (PACK / "music_gate_v03.txt").write_text(mg.stdout + mg.stderr)
+    (PACK / "music_gate_v03b.txt").write_text(mg.stdout + mg.stderr)
     print(mg.stdout.strip())
 
     # 4. Copy sfx_level_v01.json into pack
-    shutil.copy2(EP / "06_Sound-Effects/sfx_level_v01.json", PACK / "sfx_level_v03.json")
+    shutil.copy2(EP / "06_Sound-Effects/sfx_level_v01.json", PACK / "sfx_level_v03b.json")
 
-    # 5. Contact sheets
-    make_contact_sheet(OUT_MP4, cuts, PACK / "per_row_sheet_v03.jpg", cols=3)
-    make_fixes_sheet(OUT_MP4, PACK / "sheet_fixes_v03.jpg")
+    # 5. Contact sheets + r21_hero before/after frame
+    make_contact_sheet(OUT_MP4, cuts, PACK / "per_row_sheet_v03b.jpg", cols=3)
+    make_fixes_sheet(OUT_MP4, PACK / "sheet_fixes_v03b.jpg")
+    make_r21_before_after_sheet(OUT_MP4, PACK / "r21_hero_before_after_v03b.jpg")
 
     # 6. Copy master to OWB UAT and NAS youtube-staging, verify SHA-256, and build 720p _PHONE.mp4 (<120 MB)
     sha_local = sha256_file(OUT_MP4)
@@ -1247,6 +1322,8 @@ def main() -> None:
         ],
         check=True,
     )
+    NAS_PHONE_MP4.unlink(missing_ok=True)
+    shutil.copy2(UAT_PHONE_MP4, NAS_PHONE_MP4)
     phone_mb = round(UAT_PHONE_MP4.stat().st_size / (1024 * 1024), 2)
     sha_phone = sha256_file(UAT_PHONE_MP4)
     assert phone_mb < 120.0, f"Phone copy too large: {phone_mb} MB >= 120 MB"
@@ -1254,8 +1331,8 @@ def main() -> None:
 
     (PACK / "SHA256.txt").write_text(f"{sha_local}  {OUT_MP4.name}\n{sha_phone}  {UAT_PHONE_MP4.name}\n")
 
-    # 7. Write TEACHING_GATE_v03.md, REVIEW_v03.md, MASTER_COPIES.md, and summary_v03.json
-    shutil.copy2(HERE / "TEACHING_GATE_PREP_v01.md", PACK / "TEACHING_GATE_v03.md")
+    # 7. Write TEACHING_GATE_v03b.md, REVIEW_v03b.md, MASTER_COPIES.md, and summary_v03b.json
+    shutil.copy2(HERE / "TEACHING_GATE_PREP_v01.md", PACK / "TEACHING_GATE_v03b.md")
 
     ll = sp.run(["ffmpeg", "-hide_banner", "-i", str(OUT_MP4), "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True, check=True).stderr
     lufs = float(re.findall(r"I:\s*([-\d.]+) LUFS", ll)[-1])
@@ -1266,7 +1343,7 @@ def main() -> None:
 
     summary = {
         "film": "029_Is-Betelgeuse-About-To-Explode",
-        "job": "J0885",
+        "job": "J0891",
         "master": OUT_MP4.name,
         "sha256": sha_local,
         "phone_copy": UAT_PHONE_MP4.name,
@@ -1278,7 +1355,7 @@ def main() -> None:
         "cuts": len(cuts),
         "max_cut_duration_s": max_cut_dur,
         "long_hold_warnings_over_15s": 0,
-        "title_safe_audit": "PASS (all code labels, diagram labels, constellation labels, 22 teaching pills, 5 chapter cards, subscribe pill & closing card 100% inside [90, 54, 1830, 1026])",
+        "title_safe_audit": "PASS (all code labels, r21_hero two-line 36px card labels inside [1110, 710, 1770, 912], constellation labels, 22 teaching pills, 5 chapter cards, subscribe pill & closing card 100% inside [90, 54, 1830, 1026])",
         "gates": {
             "clip_check": f"PASS ({len(cuts)} rows, 0 words clipped)",
             "picture_qa": f"{pqa_verdict} ({len(pqa_res['failed'])} fail, {len(pqa_res['warn'])} warn, 0 holds >15s)",
@@ -1294,25 +1371,25 @@ def main() -> None:
             "owb_uat": str(UAT_MP4),
             "owb_uat_phone": str(UAT_PHONE_MP4),
             "nas_staging": str(NAS_MP4),
+            "nas_staging_phone": str(NAS_PHONE_MP4),
         },
         "spend_gbp": 0.0,
     }
-    (PACK / "summary_v03.json").write_text(json.dumps(summary, indent=2) + "\n")
+    (PACK / "summary_v03b.json").write_text(json.dumps(summary, indent=2) + "\n")
 
-    review_md = f"""# 029 Is Betelgeuse About to Explode? — Full Rough v03 Review (`J0885`, 23 Oct 2026)
+    review_md = f"""# 029 Is Betelgeuse About to Explode? — Full Rough v03b Review (`J0891`, 23 Oct 2026)
 
 **Cut:** `{OUT_MP4.name}` (`{dur_out:.2f} s`, `{len(cuts)}` cuts, max single picture `{max_cut_dur:.2f} s`, `{lufs:.1f} LUFS` / `{tp:.1f} dBTP`, **£0 spend**)
 **SHA-256 (all 3 master copies identical):** `{sha_local}`
 **Phone Copy (`< 120 MB`):** `{UAT_PHONE_MP4.name}` (`{phone_mb:.2f} MB`, sha256 `{sha_phone}`)
 
-## 1. Ben's Two Changes + Two Standing Lessons from 028 (Before vs After — see `sheet_fixes_v03.jpg` & `per_row_sheet_v03.jpg`)
+## 1. Chief FIX on `J0885` v03 (`04bab9a9`: `r21_hero` 3:53 right card text on two 36 px lines)
 
-| Item | Before (`full_rough_v02` / `J0828`) | After (`full_rough_v03` / `J0885`) | Verification |
+See `r21_hero_before_after_v03b.jpg`, `sheet_fixes_v03b.jpg`, and `per_row_sheet_v03b.jpg`.
+
+| Item | Before (`full_rough_v03` / `J0885`) | After (`full_rough_v03b` / `J0891`, `04bab9a9`) | Verification |
 |---|---|---|---|
-| **1. `3:53 Diagram needs rebuilt` (`r21_hero`, `228.95–233.00 s`)** | Abstract line-triangle outline and oval spoon over radar rings with only `'a mountain'` at top (`code_graphic_029_r21_hero_v01.mp4`). | Rebuilt `Renderer.teaspoon` in `build_code_graphics_v01.py` into a school-child-readable balance-scale comparison diagram in house style (`#121F34` stage, gold/white/ice typography, 100% inside title-safe):<br>• Header (`y=118`): **`A teaspoon of it would weigh as much as a mountain`** (VO's own words)<br>• Left pan (`cx=480`): **`Neutron star`** callout + arrow into a silver metallic teaspoon holding a glowing golden neutron-star scoop; card below: **`1 teaspoon`** / **`5 ml · 1 tsp`**<br>• Fulcrum (`cx=960, y=650`): level beam + **`=`** badge<br>• Right pan (`cx=1440`): snow-capped three-peak mountain range; card below: **`1 mountain`** / **`1 billion tonnes · 1.1 billion US tons`** | Checked against `01_Script/SOURCES.md` Row 13 (Lattimer & Prakash 2004 *Science* 304:536; NASA GSFC *"A teaspoon of neutron star material would weigh about 1 billion to 4 billion tons on Earth"*, `5 mL = 1–2.5 × 10⁹ tonnes`). |
-| **2. `5:08 Let's draw the line between the stars to show the constellation` (`r27_orion_b` `303.32–309.46 s`, `r27_orion_a`, `r25_orion`, `r09_finder`, `r03_promise_a`)** | Unlabelled star dots over random background dots; no constellation lines connecting Orion's stars. | Replaced random background dots with real J2000 cataloged stars from the Hipparcos / Yale Bright Star Catalog (`ORION` + `ORION_CATALOG_FIELD`, zero invented stars, matching the real sky geometry in the ESO Paranal plates) and animated thin constellation stick-figure lines (`ORION_LINES`) joining **`Betelgeuse`**, **`Bellatrix`**, the belt (**`Alnitak`** / **`Alnilam`** / **`Mintaka`**), **`Saiph`**, and **`Rigel`** as the VO names Orion, with **`Betelgeuse`**, **`Bellatrix`**, **`Orion's Belt`**, **`Saiph`**, and **`Rigel`** labelled (shoulder lines become dashed gold with an open shoulder ring when Betelgeuse fades out at `5:03–5:09`). | Positions match J2000 RA/Dec coordinates (`orion_px`) and the real ESO Paranal sky plates (`sheet_fixes_v03.jpg`). |
-| **3. Standing lesson from 028: No text clipped at the top anywhere** | Audited all text-bearing plates and overlays. | Verified every code-graphic label (`y=150` top / `y=900` bottom), diagram header (`y=118`), constellation star label (`y in [110, 835]`), all 22 teaching pills (`overlays_v01.json`), all 5 chapter cards, subscribe pill, and closing card across every frame of slide-in and hold. | `title_safe_audit_v03.json` **PASS**: 100% inside `[90, 54, 1830, 1026]` (`>= 5%` top/bottom margin). |
-| **4. Standing lesson from 028: Proper ending (closing card naming next film + 20 s moving picture)** | Film stopped at `517.26 s` (`8:37.26`) only `3.00 s` after the last spoken word (`514.26 s`), with no closing card and no 20 s end screen. | Kept the `3.00 s` post-VO breathe (`514.26–517.26 s`) on `r39_return` (`lasilla_mw.mp4` without early fade); added `r40_closing_card` (`517.26–522.26 s`, `5.00 s` over moving `orion_over_paranal.mp4`) with the house closing card (`NEXT ON ORBIT WITH BEN` / **`What Happens When Earth's Magnetic Field Flips?`** / `@OrbitWithBen`, `517.76–521.56 s` + soft whoosh & UI tick); followed by `20.00 s` (`522.26–542.26 s`) of moving picture across 3 cuts (`r41_end_screen_a` `orion_rise_vlt.mp4`, `r41_end_screen_b` `blue_marble.jpg` push-in, `r41_end_screen_c` `chajnantor_mw.m4v`) and a `1.5 s` video + audio fade to black (`540.76–542.26 s`). | Full runtime `542.26 s` (`9:02.26`), `{lufs:.1f} LUFS` / `{tp:.1f} dBTP`, 0 new VO, £0 spend. |
+| **`r21_hero` (`228.95–233.00 s`, `3:48.95–3:53.00`) right-hand mountain card** | `'1 billion tonnes · 1.1 billion US tons'` on a single `40 px` line at `(1440, 852)`, which overran the `660 px` gold card border (`x=1110..1770`) on both sides. | Re-rendered `r21_hero` (`code_graphic_029_r21_hero_v01.mp4`, sha `84aae456b419`) from `04bab9a9`:<br>• Line 1 (`y=768`, `52 px` gold): **`1 mountain`**<br>• Line 2 (`y=836`, `36 px` white): **`1 billion tonnes`** (`x=1299..1581`, `189 px` left/right card padding)<br>• Line 3 (`y=880`, `36 px` white): **`1.1 billion US tons`** (`x=1274..1606`, `164 px` left/right card padding) | Both lines sit cleanly inside the gold card border `[1110, 710, 1770, 912]` with `>= 164 px` horizontal margin and `>= 18 px` bottom margin (`title_safe_audit_v03b.json` + `r21_hero_before_after_v03b.jpg`). Every other cut is identical to `v03`. |
 
 ## 2. Gate Results (All PASS)
 
@@ -1320,17 +1397,17 @@ def main() -> None:
 - **`picture_qa.py`:** `{pqa_txt.strip()}` (`0` holds over 15 s)
 - **`polish_gate.py`:** `{pg_txt.strip()}`
 - **`music_gate.py --video`:** `{mg.stdout.strip()}`
-- **`sfx_kit.py level`:** `PASS (vo -15.1 LUFS, sfx -32.0 LUFS, 39 hits, 0 fails)` (`sfx_level_v03.json`)
-- **Title-safe audit (`title_safe_audit_v03.json`):** `PASS` (100% of labels, pills, and cards inside `[90, 54, 1830, 1026]`)
-- **Per-chapter teaching gate (`TEACHING_GATE_v03.md`):** `6/6` chapters PASS on `NUMBER` and `WORDS` (all 22 pills intact on their exact spoken words).
+- **`sfx_kit.py level`:** `PASS (vo -15.1 LUFS, sfx -32.0 LUFS, 39 hits, 0 fails)` (`sfx_level_v03b.json`)
+- **Title-safe & card-border audit (`title_safe_audit_v03b.json`):** `PASS` (100% of labels, pills, cards, and `r21_hero` card lines inside their borders and `[90, 54, 1830, 1026]`)
+- **Per-chapter teaching gate (`TEACHING_GATE_v03b.md`):** `6/6` chapters PASS on `NUMBER` and `WORDS` (all 22 pills intact on their exact spoken words).
 - **Back-to-back code graphics:** `0`.
 """
-    (PACK / "REVIEW_v03.md").write_text(review_md)
+    (PACK / "REVIEW_v03b.md").write_text(review_md)
 
-    master_md = f"""# 029 Is Betelgeuse About to Explode? — Full Rough v03 Master Copies (`J0885`, 23 Oct 2026)
+    master_md = f"""# 029 Is Betelgeuse About to Explode? — Full Rough v03b Master Copies (`J0891`, 23 Oct 2026)
 
 Cut is `{OUT_MP4.name}` (`{dur_out:.2f} s`, `{len(cuts)}` cuts, max single picture `{max_cut_dur:.2f} s`, `{lufs:.1f} LUFS` / `{tp:.1f} dBTP`, **£0 spend**).
-Same bytes verified in all three master locations, plus 720p `_PHONE.mp4` (`{phone_mb:.2f} MB < 120 MB`) in OWB UAT:
+Same bytes verified in all three master locations, plus 720p `_PHONE.mp4` (`{phone_mb:.2f} MB < 120 MB`) in OWB UAT and NAS:
 
 | Copy | Path | SHA-256 |
 |---|---|---|
@@ -1338,12 +1415,13 @@ Same bytes verified in all three master locations, plus 720p `_PHONE.mp4` (`{pho
 | OWB UAT (Ben's watch) | `{UAT_MP4}` | `{sha_uat}` |
 | OWB UAT 720p Phone (`{phone_mb:.2f} MB`) | `{UAT_PHONE_MP4}` | `{sha_phone}` |
 | NAS youtube-staging | `{NAS_MP4}` | `{sha_nas}` |
+| NAS youtube-staging Phone (`{phone_mb:.2f} MB`) | `{NAS_PHONE_MP4}` | `{sha_phone}` |
 
-See `REVIEW_v03.md`, `sheet_fixes_v03.jpg`, and `per_row_sheet_v03.jpg` for the full before/after breakdown and gate outputs.
+See `REVIEW_v03b.md`, `r21_hero_before_after_v03b.jpg`, `sheet_fixes_v03b.jpg`, and `per_row_sheet_v03b.jpg` for the full before/after breakdown and gate outputs.
 """
     (PACK / "MASTER_COPIES.md").write_text(master_md)
     shutil.rmtree(WORK, ignore_errors=True)
-    print(f"=== FULL ROUGH v03 DONE: {OUT_MP4} sha256={sha_local} ===", flush=True)
+    print(f"=== FULL ROUGH v03b DONE: {OUT_MP4} sha256={sha_local} ===", flush=True)
 
 
 if __name__ == "__main__":
