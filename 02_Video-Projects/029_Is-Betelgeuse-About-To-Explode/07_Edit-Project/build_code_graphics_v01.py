@@ -634,7 +634,9 @@ class Renderer:
         text(im, "5 ml · 1 tsp", (480, 852), 40, WHITE, 1.0)
 
         text(im, "1 mountain", (1440, 768), 52, GOLD, 1.0)
-        text(im, "1 billion tonnes · 1.1 billion US tons", (1440, 852), 40, WHITE, 1.0)
+        # Chief J0885 v03 review: on one line at 40 px this overran the 660 px card on both sides; two lines fit.
+        text(im, "1 billion tonnes", (1440, 836), 36, WHITE, 1.0)
+        text(im, "1.1 billion US tons", (1440, 880), 36, WHITE, 1.0)
 
     def song(self, im, t):
         d = ImageDraw.Draw(im)
