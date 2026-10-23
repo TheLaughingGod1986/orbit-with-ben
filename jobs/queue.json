@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-23T04:00Z",
+      "eta": "2026-10-23T08:00Z",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12689,6 +12689,11 @@
           "at": "2026-10-23T03:57Z",
           "by": "codex",
           "what": "released: Step 4/6 holds. HOS PR #300 554a53a1. Old render exit files both 137; no surviving sessions. Replacements live: tmux J0175-bridge4-20261023 and J0175-closing-20261023; logs /Users/benjaminoats/_desk/logs/J0175-bridge4-20261023.log and J0175-closing-20261023.log; corresponding .done files absent at handoff. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175. Check exit files before any rerun, never duplicate. Corrected archived 004/005 inputs and wired approved 006 master. Next gates/card review, 006 trim/plates, missing segments and whole-cut assembler. No spend/PASS/upload."
+        },
+        {
+          "at": "2026-10-23T04:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
