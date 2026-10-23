@@ -24,7 +24,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0877 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J0878 | mini | claimed | codex | 2026-10-23T11:19Z | listing · HOS compilation v02: package (title, chapters, £0 thumbnail) + Private upload for Sun 8 Nov 18:00 London, park for Chief |  |
+| J0878 | mini | blocked | codex | – | listing · HOS compilation v02: package (title, chapters, £0 thumbnail) + Private upload for Sun 8 Nov 18:00 London, park for Chief |  |
 
 Recently finished:
 
