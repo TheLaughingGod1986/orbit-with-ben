@@ -30,6 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0894 | mini | open | – | – | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
 | J0895 | mini | blocked | gemini | – | 028 upload · for gemini · assembly · `gemini-agy` · 028 Gliese 710: build 3 Shorts from SHORTS_PLAN_v01 (Mon 30 Nov comets / Wed 2 Dec opening Test A / Fri 4 Dec scale), gates, covers, park for Chief |  |
 | J0896 | mini | claimed | gemini | 2026-10-24T00:47Z | studio · HOS compilation: stop the 0-second stub Hmw4iMDfWFE going public 10 Dec, and a clearer £0 cover for uAomPaOBrM8 |  |
+| J0897 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
