@@ -12322,10 +12322,10 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-23T05:36Z",
-      "eta": "2026-10-23T09:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
       "result": "",
@@ -12789,6 +12789,11 @@
           "at": "2026-10-23T05:39Z",
           "by": "codex",
           "what": "step 4 of 6 done: HOS #300 04991e63: closing render/QA exit 0, polish 0 failures and SFX clear; six-master NAS normalization detached"
+        },
+        {
+          "at": "2026-10-23T05:40Z",
+          "by": "codex",
+          "what": "released: Step 4/6; HOS PR #300 04991e63. Closing render/QA exit 0; unchanged polish 0 failures, 1 timeline warning; SFX clear; repo ALL CHECKS PASS. Detached normalization tmux J0175-prep-0540; log /Users/benjaminoats/_desk/logs/J0175-prep-0540.log; completion /Users/benjaminoats/_desk/logs/J0175-prep-0540.done. NAS scratch /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540 with prep_report.json. Check completion/session before retry; never duplicate. 006 provisional full-length prep; trim and remaining segments/full assembly/gates next. HOS desk report 6358267832. No spend, upload, merge or final approval."
         }
       ],
       "kind": "assembly",
