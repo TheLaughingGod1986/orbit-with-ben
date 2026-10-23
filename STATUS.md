@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 029 | edit | gemini | 2026-10-23T16:03Z | 2026-10-23T18:02Z | J0885 029 Betelgeuse: Ben's 2 changes on full rough v02 (3:53 diagram rebuild, 5:08 Orion constellation lines) -> v03 |
+| 029 | edit | gemini | 2026-10-23T16:04Z | 2026-10-23T17:04Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
