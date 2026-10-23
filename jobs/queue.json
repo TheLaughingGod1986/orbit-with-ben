@@ -1,5 +1,5 @@
 {
-  "next_id": 876,
+  "next_id": 877,
   "jobs": [
     {
       "id": "J0001",
@@ -72270,13 +72270,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T04:40Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T04:40Z",
-      "result": "parked for Chief: review 05_Analytics/weekly_audit/OWB_2026-10-23.md & LEARNINGS.md (1: adopt proven Shorts rules 1/2/3/6 into Shorts brief & playbook; 2: approve retitle-videos.ts on 6 upcoming statement Shorts in UPCOMING_SHORTS_GATE.md starting tomorrow Sat 24 Oct vlkj8RQKmH8; 3: approve 5 next-video changes across OWB:021-061 and 3 ranked new ideas 062-064)",
+      "result": "Chief: (1) Shorts rules already approved under J0871/J0874 (PRs #261/#357). (2) Retitle of 6 scheduled statement Shorts approved, Mercury and sunrise titles tightened; file audits/retitle_2026-10-23_J0872.json; job queued for before Sat 24 Oct 10:30Z. (3) Changes 2-5 approved as editing/topic guidance (no Short shot held past 5 s; payoff >= 70% runtime; Related on 023 Shorts at go-live is J0324; T&C on 021/022/023 per Learning #5; 033 long rename and 037 retitle lesson to the next topic pass); ideas 062 Psyche, 063 Valles Marineris, 064 Haumea added to the topic queue in that order.",
       "history": [
         {
           "at": "2026-10-23T04:40Z",
@@ -72317,6 +72317,11 @@
           "at": "2026-10-23T04:59Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review 05_Analytics/weekly_audit/OWB_2026-10-23.md & LEARNINGS.md (1: adopt proven Shorts rules 1/2/3/6 into Shorts brief & playbook; 2: approve retitle-videos.ts on 6 upcoming statement Shorts in UPCOMING_SHORTS_GATE.md starting tomorrow Sat 24 Oct vlkj8RQKmH8; 3: approve 5 next-video changes across OWB:021-061 and 3 ranked new ideas 062-064)"
+        },
+        {
+          "at": "2026-10-23T05:53Z",
+          "by": "claude",
+          "what": "done: Chief: (1) Shorts rules already approved under J0871/J0874 (PRs #261/#357). (2) Retitle of 6 scheduled statement Shorts approved, Mercury and sunrise titles tightened; file audits/retitle_2026-10-23_J0872.json; job queued for before Sat 24 Oct 10:30Z. (3) Changes 2-5 approved as editing/topic guidance (no Short shot held past 5 s; payoff >= 70% runtime; Related on 023 Shorts at go-live is J0324; T&C on 021/022/023 per Learning #5; 033 long rename and 037 retitle lesson to the next topic pass); ideas 062 Psyche, 063 Valles Marineris, 064 Haumea added to the topic queue in that order."
         }
       ],
       "kind": "review",
@@ -72509,6 +72514,33 @@
           "at": "2026-10-23T05:20Z",
           "by": "claude",
           "what": "blocked: waits for input: the 007 long's YouTube id (its upload); reopen when the long is uploaded"
+        }
+      ],
+      "kind": "listing"
+    },
+    {
+      "id": "J0876",
+      "title": "OWB: retitle 6 scheduled statement Shorts as questions (Mercury first, before Sat 24 Oct 10:30Z)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (J0872): retitle the 6 scheduled statement-titled OWB Shorts as positive questions (Learning #1). The first goes public Sat 24 Oct 11:30 London, so do it before Sat 24 Oct 10:30Z. cd 07_Content-Ops && npx tsx --env-file=.env scripts/retitle-videos.ts --file ../00_Brand/Channel-Setup/audits/retitle_2026-10-23_J0872.json --dry-run, check the 6 rows match, then run it without --dry-run. Rows whose live title differs are skipped: report them, don't guess. Read back each title and that privacy/publishAt are unchanged; update UPLOADS.json / UPCOMING_SHORTS_GATE.md and the shorts library titles; post the read-back on #99. £0. Note: the Shorts' own burned-in captions and the promoted long's title at 9-14 s are unchanged by this.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T05:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T05:53Z",
+          "by": "claude",
+          "what": "added"
         }
       ],
       "kind": "listing"
