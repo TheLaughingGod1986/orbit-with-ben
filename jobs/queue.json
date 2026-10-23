@@ -73542,10 +73542,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-23T14:44Z",
-      "eta": "2026-10-23T16:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T13:52Z",
       "result": "",
@@ -73599,6 +73599,11 @@
           "at": "2026-10-23T14:46Z",
           "by": "codex",
           "what": "step 2 of 5 done: Recovered existing 8s scale clip without duplicate spend; remaining three takes running in tmux j0886-motion-resume; rebuild and gates still pending"
+        },
+        {
+          "at": "2026-10-23T14:46Z",
+          "by": "codex",
+          "what": "released: 2/5 complete. Existing first Flow clip recovered (8s, no freeze); checkpoint 1b03a23d on HOS PR #359. Remaining three takes detached in tmux j0886-motion-resume; log /Users/benjaminoats/_desk/logs/j0886-motion-resume.log; completion /Users/benjaminoats/_desk/logs/j0886-motion-resume.done. Missing .done with live tmux means leave running; never duplicate. Resume /private/tmp/j0886-hos-wt and master_v05/RESUME_J0886.md. Motion inspection, master rebuild, all gates, phone/UAT and Chief review remain."
         }
       ],
       "kind": "assembly",
