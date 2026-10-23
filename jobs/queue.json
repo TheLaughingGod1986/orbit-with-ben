@@ -12322,13 +12322,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-23T07:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: 6-film HOS compilation cut assembled on NAS (/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540/hos_compilation_full_v01.mp4, 49:53 / 2993.49s, -14.32 LUFS / -1.19 dBTP, sha256 4166f5b8...); whole-cut polish_gate (0/51 fail), picture_qa (0/51 fail, 3 card blur WARNs inspected), and sfx_kit level (-16.0/-49.1 LUFS, 16 hits) all PASS on HOS PR #300 (00f8bed3); needs Chief review/PASS (J0176), merge of #300, and confirm 001/002/003 mid-film end cards + 004 bed reuse under new bridges",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -13029,6 +13029,11 @@
           "at": "2026-10-23T07:59Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 6-film HOS compilation cut assembled on NAS (/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-23/hos_comp_j0175_prep0540/hos_compilation_full_v01.mp4, 49:53 / 2993.49s, -14.32 LUFS / -1.19 dBTP, sha256 4166f5b8...); whole-cut polish_gate (0/51 fail), picture_qa (0/51 fail, 3 card blur WARNs inspected), and sfx_kit level (-16.0/-49.1 LUFS, 16 hits) all PASS on HOS PR #300 (00f8bed3); needs Chief review/PASS (J0176), merge of #300, and confirm 001/002/003 mid-film end cards + 004 bed reuse under new bridges"
+        },
+        {
+          "at": "2026-10-23T08:00Z",
+          "by": "claude",
+          "what": "reopened: Chief FIX on v01 (4166f5b8, 49:53, gates PASS): (1) trim the mid-film end cards on 001, 002 and 003 like the 005/006/004 hand-offs, so nothing mid-film looks like an ending or points away; (2) the 004 score bed under the new intro/cards/bridges/closing is APPROVED (own £0 score, ducked, gap check PASS). Render v02, re-run the whole-cut gates (polish, picture_qa, sfx level, music gap), push the report to HOS PR #300, park for Chief. Upload (J0176) after PASS: Private, publishAt Sun 8 Nov 18:00 London (after 006 airs Thu 5 Nov; no new long that day)."
         }
       ],
       "kind": "assembly",
@@ -13041,13 +13046,6 @@
         "HOS:005",
         "HOS:006"
       ],
-      "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-10-23T07:59Z",
-        "by": "gemini",
-        "note": "6/6 done: HOS #300 00f8bed3; 6-film compilation assembled (49:53, -14.32 LUFS, -1.19 dBTP, sha256 4166f5b8...); whole-cu"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
