@@ -14,8 +14,11 @@
  * blocked in the publishing worker (`isBufferOnlyPlatform`).
  */
 
-export const BUFFER_CHANNELS = ["instagram", "facebook", "threads"] as const;
-export type BufferChannel = (typeof BUFFER_CHANNELS)[number];
+/** Every network the mirror knows. Which ones a channel posts to is its profile's list (buffer-profile.ts). */
+export const ALL_BUFFER_CHANNELS = ["instagram", "facebook", "threads", "tiktok"] as const;
+export type BufferChannel = (typeof ALL_BUFFER_CHANNELS)[number];
+/** Orbit With Ben's networks. TikTok stays paused for Orbit. */
+export const BUFFER_CHANNELS: readonly BufferChannel[] = ["instagram", "facebook", "threads"];
 
 /** App platforms that no longer publish directly. Social goes through Buffer. */
 const BUFFER_ONLY_PLATFORMS = new Set([
@@ -34,8 +37,9 @@ export function isBufferOnlyPlatform(platform: string): boolean {
 }
 
 /** Hashtags per post. Instagram caps at 5; Threads takes one topic tag. */
-export const HASHTAG_LIMIT: Record<BufferChannel, number> = { instagram: 5, facebook: 3, threads: 1 };
-export const TEXT_LIMIT: Record<BufferChannel, number> = { instagram: 2200, facebook: 5000, threads: 500 };
+export const HASHTAG_LIMIT: Record<BufferChannel, number> = { instagram: 5, facebook: 3, threads: 1, tiktok: 5 };
+/** TikTok allows 2,200 with a video attached (Buffer's character-limits guide). */
+export const TEXT_LIMIT: Record<BufferChannel, number> = { instagram: 2200, facebook: 5000, threads: 500, tiktok: 2200 };
 
 /** A Short is anything this short; the channel's Shorts are under 40 s. */
 export const SHORT_MAX_SECONDS = 60;
@@ -124,6 +128,10 @@ export type PlanOptions = {
   standalone?: boolean;
   /** Mirror a video that has been public for more than a day. */
   allowLate?: boolean;
+  /** The networks to post to (the profile's). Default: Orbit's BUFFER_CHANNELS. */
+  channels?: readonly BufferChannel[];
+  /** Refuse longs (History of Science mirrors Shorts only). */
+  shortsOnly?: boolean;
 };
 
 export function isShort(video: YouTubeVideo, kind?: "short" | "long"): boolean {
@@ -229,7 +237,8 @@ export type TextOptions = {
  * a Facebook link card needs none.
  */
 function longLead(channel: BufferChannel, opts: TextOptions): string {
-  if (channel === "instagram") return `${opts.trailer ? "Full film on YouTube." : "New film on YouTube."} Link in bio.`;
+  // Instagram and TikTok captions have no clickable links.
+  if (channel === "instagram" || channel === "tiktok") return `${opts.trailer ? "Full film on YouTube." : "New film on YouTube."} Link in bio.`;
   return opts.youtubeUrl ? `${opts.trailer ? "Full film" : "Watch the film"}: ${opts.youtubeUrl}` : "";
 }
 
@@ -333,9 +342,12 @@ function createInput(opts: {
 
   if (reel) {
     const coverMs = social?.coverMs ?? DEFAULT_COVER_MS;
-    input.assets = [{ video: { url: reel, ...(channel === "instagram" ? { metadata: { thumbnailOffset: coverMs } } : {}) } }];
+    const cover = channel === "instagram" || channel === "tiktok";
+    input.assets = [{ video: { url: reel, ...(cover ? { metadata: { thumbnailOffset: coverMs } } : {}) } }];
     if (channel === "instagram") {
       input.metadata = { instagram: { type: "reel", shouldShareToFeed: true, isAiGenerated: video.containsSyntheticMedia } };
+    } else if (channel === "tiktok") {
+      input.metadata = { tiktok: { isAiGenerated: video.containsSyntheticMedia } };
     } else if (channel === "facebook") {
       // No first comment: Buffer's free plan rejects it. The film link is in the text.
       input.metadata = { facebook: { type: "reel" } };
@@ -369,6 +381,12 @@ export function planBufferMirror(opts: PlanOptions): Plan {
   const warnings: string[] = [];
   const actions: PlanAction[] = [];
   const entry = ledger.videos[video.id];
+  const channels = opts.channels ?? BUFFER_CHANNELS;
+
+  if (opts.shortsOnly && kind === "long") {
+    errors.push("this channel mirrors Shorts only; long films are never cross-posted");
+    return { videoId: video.id, kind, title: video.title, youtubeUrl, timing, actions, errors, warnings };
+  }
 
   if (timing.mode === "none") {
     // Already mirrored: only keep Buffer in step (moved time, or no longer going public).
@@ -382,7 +400,7 @@ export function planBufferMirror(opts: PlanOptions): Plan {
   }
 
   // Media and the long-first rule only matter when something new is being posted.
-  const needsCreate = BUFFER_CHANNELS.some((c) => !entry?.channels[c]);
+  const needsCreate = channels.some((c) => !entry?.channels[c]);
   // The manifest template's placeholders must never reach a post.
   for (const [field, value] of Object.entries(opts.social ?? {})) {
     if (needsCreate && typeof value === "string" && /\bREPLACE\b/.test(value)) errors.push(`social.${field} is still the template placeholder`);
@@ -420,7 +438,7 @@ export function planBufferMirror(opts: PlanOptions): Plan {
     }
   }
 
-  for (const channel of BUFFER_CHANNELS) {
+  for (const channel of channels) {
     const rec = entry?.channels[channel];
     if (rec) {
       if (timing.mode === "customScheduled" && entry?.dueAt !== timing.dueAt) {
@@ -436,6 +454,10 @@ export function planBufferMirror(opts: PlanOptions): Plan {
       continue;
     }
     const thumbUrl = checkPublicUrl(opts.thumbUrl, "--thumb-url") ? undefined : opts.thumbUrl;
+    if (kind === "long" && channel === "tiktok") {
+      actions.push({ action: "skip", channel, reason: "TikTok takes Shorts only" });
+      continue;
+    }
     if (kind === "long" && channel === "instagram" && !opts.trailerUrl && !thumbUrl) {
       actions.push({ action: "skip", channel, reason: "no public thumbnail or trailer URL" });
       continue;
@@ -515,7 +537,7 @@ export const MEDIA_MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000;
  * Buffer posts, and a video that no longer goes public takes them down.
  */
 export function reconcileEntry(videoId: string, entry: LedgerEntry, video: YouTubeVideo | null, now: Date): PlanAction[] {
-  const recorded = BUFFER_CHANNELS.filter((c) => entry.channels[c]);
+  const recorded = ALL_BUFFER_CHANNELS.filter((c) => entry.channels[c]);
   const alreadyOut = entry.mode === "shareNow" || (entry.dueAt !== null && Date.parse(entry.dueAt) <= now.getTime());
   if (alreadyOut) return [];
   if (video && video.id !== videoId) throw new Error(`reconcile: ${video.id} is not ${videoId}`);

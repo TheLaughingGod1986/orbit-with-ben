@@ -21,7 +21,14 @@
  *   # Social copy for a video (before it goes out; posts already in Buffer keep their text)
  *   npx tsx scripts/buffer-mirror.ts register --video <id> --hook "…" --question "…" [--alt "…"] [--cover-ms 1500]
  *   # Only when a plan was sent by hand through the Buffer MCP
- *   npx tsx --env-file=.env scripts/buffer-mirror.ts record --video <id> --channel instagram --post-id <bufferPostId>
+ *   npx tsx --env-file=.env scripts/buffer-mirror.ts record --video <id> --network instagram --post-id <bufferPostId>
+ *
+ * History of Science (J0817): add --channel hos to any command. It mirrors HOS Shorts only, to HOS's Instagram,
+ * Facebook and TikTok in the HOS Buffer org (BUFFER_HOS_API_KEY), reads YouTube with YT_ANALYTICS_REFRESH_TOKEN_HOS
+ * (checked to be the HOS channel), and keeps its record in social/hos/. Any create to a channel outside the
+ * profile's org is refused. Without --channel it is Orbit With Ben, as before.
+ *   npx tsx --env-file=.env scripts/buffer-mirror.ts check --channel hos [--dry-run]
+ *   npx tsx scripts/buffer-mirror.ts register --channel hos --video <shortId> --media <short.mp4> --long <longId>
  *
  * Needs .env: GOOGLE_CLIENT_ID/SECRET, YOUTUBE_REFRESH_TOKEN (scripts/youtube-auth.ts),
  * BUFFER_API_KEY, BLOB_READ_WRITE_TOKEN. Without the Buffer key it plans only.
@@ -33,13 +40,12 @@
 import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
 import path from "path";
-import { BUFFER_CHANNELS, type BufferChannel, type Plan } from "../src/lib/publishing/buffer-mirror";
-import { REPO_ROOT, SOCIAL_DIR, UPLOADS_FILE, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
+import { ALL_BUFFER_CHANNELS, type BufferChannel, type Plan } from "../src/lib/publishing/buffer-mirror";
+import { REPO_ROOT, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
+import { PROFILES, getProfile, profileFiles } from "../src/lib/publishing/buffer-profile";
 import { loadRegistry, registerUpload } from "../src/lib/publishing/media-finder";
 import type { SocialCopy } from "../src/lib/publishing/buffer-mirror";
 import { mirrorVideo, runBufferCheck } from "../src/lib/publishing/buffer-runner";
-
-const PLANS_DIR = path.join(SOCIAL_DIR, "buffer-plans");
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -47,6 +53,13 @@ function arg(name: string): string | undefined {
   return process.argv[idx + 1];
 }
 const flag = (name: string) => process.argv.includes(`--${name}`);
+
+// --channel owb|hos picks the YouTube channel. `record` used to take the network as --channel; that still works.
+const channelArg = arg("channel");
+const PROFILE = getProfile(channelArg && channelArg in PROFILES ? channelArg : "owb");
+const FILES = profileFiles(PROFILE, REPO_ROOT);
+const PLANS_DIR = FILES.plans;
+const UPLOADS_FILE = FILES.uploads;
 
 function localFile(p: string | undefined): string | null {
   if (!p) return null;
@@ -78,8 +91,8 @@ function savePlan(plan: Plan) {
 async function mirror(dryRun: boolean) {
   const videoId = arg("video");
   if (!videoId) throw new Error("needs --video <youtube id>");
-  const deps = createMirrorDeps();
-  if (!dryRun && !deps.client) console.error("BUFFER_API_KEY not set: planning only.");
+  const deps = createMirrorDeps({ profile: PROFILE });
+  if (!dryRun && !deps.client) console.error(`${PROFILE.keyEnv} not set: planning only.`);
   const registered = loadRegistry(UPLOADS_FILE).videos[videoId];
   const given = socialArgs();
   const social = given || registered?.social ? { ...registered?.social, ...given } : undefined;
@@ -108,7 +121,7 @@ async function mirror(dryRun: boolean) {
 }
 
 async function check() {
-  const deps = createMirrorDeps();
+  const deps = createMirrorDeps({ profile: PROFILE });
   const outcome = await runBufferCheck(deps, { dryRun: flag("dry-run") });
   for (const c of outcome.changes) {
     savePlan({
@@ -162,16 +175,17 @@ function register() {
 
 async function record() {
   const videoId = arg("video");
-  const channel = arg("channel") as BufferChannel | undefined;
+  const network = arg("network") ?? (channelArg && !(channelArg in PROFILES) ? channelArg : undefined);
+  const channel = network as BufferChannel | undefined;
   const postId = arg("post-id");
   const deleted = flag("deleted");
-  if (!videoId || !channel || !BUFFER_CHANNELS.includes(channel) || (!postId && !deleted)) {
-    throw new Error("record needs --video <id> --channel instagram|facebook|threads and --post-id <id> or --deleted");
+  if (!videoId || !channel || !ALL_BUFFER_CHANNELS.includes(channel) || !PROFILE.networks.includes(channel) || (!postId && !deleted)) {
+    throw new Error(`record needs --video <id> --network ${PROFILE.networks.join("|")} and --post-id <id> or --deleted`);
   }
   const planFile = path.join(PLANS_DIR, `${videoId}.json`);
   if (!fs.existsSync(planFile)) throw new Error(`No saved plan for ${videoId}; run plan first`);
   const plan = JSON.parse(fs.readFileSync(planFile, "utf8")) as Plan;
-  await createMirrorDeps().store.record(plan, channel, deleted ? null : postId!);
+  await createMirrorDeps({ profile: PROFILE }).store.record(plan, channel, deleted ? null : postId!);
   console.log(JSON.stringify({ recorded: videoId, channel, postId: deleted ? null : postId }));
 }
 

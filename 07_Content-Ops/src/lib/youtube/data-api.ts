@@ -19,6 +19,28 @@ export async function getYouTubeAccessToken(): Promise<string> {
   return cached.token;
 }
 
+const channelCache = new Map<string, { token: string; expiresAt: number }>();
+
+/**
+ * An access token from the refresh token in .env `envKey`, checked to belong to `channelId` (a read-only
+ * login is enough to list a channel's own uploads). Used by the History of Science Buffer mirror, so a
+ * wrong token can never mirror Orbit's uploads to HOS's networks.
+ */
+export async function getChannelAccessToken(envKey: string, channelId: string | null): Promise<string> {
+  const hit = channelCache.get(envKey);
+  if (hit && hit.expiresAt > Date.now() + 60_000) return hit.token;
+  const refresh = process.env[envKey];
+  if (!refresh) throw new Error(`${envKey} missing from .env: run \`npx tsx --env-file=.env scripts/youtube-auth.ts --analytics hos\` once`);
+  const fresh = await refreshAccessToken(refresh);
+  if (channelId) {
+    const ch = await get(fresh.token, `${API}/channels?part=id&mine=true`);
+    const mine: string | undefined = ch.items?.[0]?.id;
+    if (mine !== channelId) throw new Error(`${envKey} signs in as channel ${mine ?? "(none)"}, not ${channelId}: refusing to use it`);
+  }
+  channelCache.set(envKey, fresh);
+  return fresh.token;
+}
+
 /** Trade a refresh token for an access token with the .env OAuth client. Never logs either. */
 export async function refreshAccessToken(refreshToken: string): Promise<{ token: string; expiresAt: number }> {
   const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;

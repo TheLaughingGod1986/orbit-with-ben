@@ -8,8 +8,14 @@
 //     The board code is Ben's (env BOARD_KEY, saved on his phone from the board link); the page adds it when he taps.
 //   POST /api/watch?v=<id>  header x-watch-key (env WATCH_UPLOAD_KEY): client-upload token handshake for
 //     scripts/watch_upload.mjs, so a file of any size goes straight to Blob. Nothing is ever deleted here.
+//
+// 23 Oct 2026: the Blob store was suspended (15 Oct, Hobby limits), so new cuts go to the Cloudflare R2 bucket instead
+// (watch/<id>/<random>-<file>.mp4, uploaded straight from the Mini by watch_upload.mjs with its own R2 keys). GET looks in
+// R2 first when this project has R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and R2_PUBLIC_URL set, and falls
+// back to Blob for older cuts. The random part keeps a cut's URL unguessable; board.json only ever holds the id.
 import { list } from "@vercel/blob";
 import { handleUpload } from "@vercel/blob/client";
+import { newestWatchUrl, r2Config } from "../r2sign.js";
 
 const ID = /^[a-z0-9][a-z0-9_-]{0,63}$/;
 
@@ -32,8 +38,19 @@ export default async function handler(req, res) {
       const k = String((req.query || {}).k || "");
       if (!keyOk(k, process.env.BOARD_KEY, process.env.WATCH_UPLOAD_KEY))
         return res.status(401).send("Open the board from your board link once on this phone, then tap Watch again.");
-      const { blobs } = await list({ prefix: `watch/${v}/`, limit: 20 });
-      const mp4 = blobs.filter(b => /\.mp4$/i.test(b.pathname)).sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt))[0];
+      const r2 = r2Config();
+      const fromR2 = r2 ? await newestWatchUrl(r2, v) : null;
+      if (fromR2) {
+        res.setHeader("Location", fromR2);
+        return res.status(302).send("");
+      }
+      let mp4 = null;
+      try {
+        const { blobs } = await list({ prefix: `watch/${v}/`, limit: 20 });
+        mp4 = blobs.filter(b => /\.mp4$/i.test(b.pathname)).sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt))[0];
+      } catch (e) {
+        if (!r2) throw e;  // the suspended Blob store: with R2 set up, a cut that isn't there is simply not uploaded yet
+      }
       if (!mp4) return res.status(404).send("That cut isn't uploaded yet.");
       res.setHeader("Location", mp4.url);
       return res.status(302).send("");
