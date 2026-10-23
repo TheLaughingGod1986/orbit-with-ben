@@ -71429,13 +71429,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-23T00:56Z",
-      "eta": "2026-10-23T02:56Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T00:23Z",
-      "result": "",
+      "result": "Uploaded Private 1-BZaFIMwYU (publishAt 2026-10-27T11:30:00Z, Tue 27 Oct 11:30 London, en-GB, not kids, synthetic Yes, Related -> _C92tIJCk8A); recorded in HOS 4765f58f (SHORTS_LOG, SHORTS_RELEASE, SHORTS_UPLOAD_INDEX, shorts_open_library, social/UPLOADS.json); check_all.sh + channel:audit PASS (44 videos, 0 errors); ready for OWB buffer-mirror register once PR #260 merges",
       "history": [
         {
           "at": "2026-10-23T00:23Z",
@@ -71481,6 +71481,11 @@
           "at": "2026-10-23T01:32Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps done: 1-BZaFIMwYU Private Tue 27 Oct 11:30 London, Related -> _C92tIJCk8A, HOS commit 4765f58f, UPLOADS.json"
+        },
+        {
+          "at": "2026-10-23T01:32Z",
+          "by": "gemini",
+          "what": "done: Uploaded Private 1-BZaFIMwYU (publishAt 2026-10-27T11:30:00Z, Tue 27 Oct 11:30 London, en-GB, not kids, synthetic Yes, Related -> _C92tIJCk8A); recorded in HOS 4765f58f (SHORTS_LOG, SHORTS_RELEASE, SHORTS_UPLOAD_INDEX, shorts_open_library, social/UPLOADS.json); check_all.sh + channel:audit PASS (44 videos, 0 errors); ready for OWB buffer-mirror register once PR #260 merges"
         }
       ],
       "kind": "listing",
@@ -71493,7 +71498,8 @@
         "at": "2026-10-23T01:32Z",
         "by": "gemini",
         "note": "All 4 steps done: 1-BZaFIMwYU Private Tue 27 Oct 11:30 London, Related -> _C92tIJCk8A, HOS commit 4765f58f, UPLOADS.json"
-      }
+      },
+      "done_ref": "4765f58f"
     }
   ],
   "focus": [],
