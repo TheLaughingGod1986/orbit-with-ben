@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0878 | mini | open | – | – | listing · HOS compilation v02: package (title, chapters, Sources, £0 thumbnail) + Private upload for Thu 10 Dec 18:00 UK, park for Chief |  |
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0882 | mini | claimed | gemini | 2026-10-23T11:45Z | 006 edit · assembly · HOS 006 Trees: Ben's 11 changes on master v03 (picture fixes, imperial+metric weights, 6:07 date card, proper ending) -> master v04 |  |
+| J0882 | mini | claimed | gemini | 2026-10-23T13:12Z | 006 edit · assembly · HOS 006 Trees: Ben's 11 changes on master v03 (picture fixes, imperial+metric weights, 6:07 date card, proper ending) -> master v04 |  |
 
 Recently finished:
 
