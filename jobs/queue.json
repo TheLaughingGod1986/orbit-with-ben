@@ -72228,13 +72228,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-23T05:03Z",
-      "eta": "2026-10-23T07:03Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T04:52Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-23T04:52Z",
@@ -72270,6 +72270,11 @@
           "at": "2026-10-23T05:19Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps done: -I_GHK-GcFs Private Fri 13 Nov 11:30 London, HOS commit bf6c5cf8, UPLOADS.json"
+        },
+        {
+          "at": "2026-10-23T05:19Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "kind": "listing",
@@ -72282,7 +72287,8 @@
         "at": "2026-10-23T05:19Z",
         "by": "gemini",
         "note": "All 4 steps done: -I_GHK-GcFs Private Fri 13 Nov 11:30 London, HOS commit bf6c5cf8, UPLOADS.json"
-      }
+      },
+      "done_ref": "bf6c5cf8"
     },
     {
       "id": "J0874",
