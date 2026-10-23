@@ -1,5 +1,5 @@
 {
-  "next_id": 878,
+  "next_id": 879,
   "jobs": [
     {
       "id": "J0001",
@@ -12322,13 +12322,13 @@
       "stage": "",
       "after": "J0174",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T09:09Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "parked for Chief: review 6-film compilation v02 (49:18, HOS PR #300 3ba58733, NAS hos_compilation_full_v02.mp4) with 001/002/003 mid-film end cards trimmed + polish/picture/sfx gates PASS",
+      "result": "Chief PASS on v02 (8282ffa8, 49:18): mid-film end cards on 001/002/003 trimmed at the measured pauses, chapters updated, polish/picture_qa/sfx level PASS. HOS PR #300 merge is Ben's. Upload queued.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -13124,6 +13124,11 @@
           "at": "2026-10-23T09:17Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review 6-film compilation v02 (49:18, HOS PR #300 3ba58733, NAS hos_compilation_full_v02.mp4) with 001/002/003 mid-film end cards trimmed + polish/picture/sfx gates PASS"
+        },
+        {
+          "at": "2026-10-23T09:18Z",
+          "by": "claude",
+          "what": "done: Chief PASS on v02 (8282ffa8, 49:18): mid-film end cards on 001/002/003 trimmed at the measured pauses, chapters updated, polish/picture_qa/sfx level PASS. HOS PR #300 merge is Ben's. Upload queued."
         }
       ],
       "kind": "assembly",
@@ -13164,13 +13169,13 @@
       "stage": "",
       "after": "J0175",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T13:51Z",
-      "result": "",
+      "result": "Chief decision: compilation v02 passed (J0175); upload Private for Sun 8 Nov 18:00 London (after 006 airs Thu 5 Nov, no new long that day) via the queued package+upload job; 4-week measure per the brief.",
       "history": [
         {
           "at": "2026-10-12T13:51Z",
@@ -13181,6 +13186,11 @@
           "at": "2026-10-15T08:47Z",
           "by": "chief",
           "what": "left open: waits on J0175 (not Chief)."
+        },
+        {
+          "at": "2026-10-23T09:18Z",
+          "by": "claude",
+          "what": "done: Chief decision: compilation v02 passed (J0175); upload Private for Sun 8 Nov 18:00 London (after 006 airs Thu 5 Nov, no new long that day) via the queued package+upload job; 4-week measure per the brief."
         }
       ],
       "kind": "chief"
@@ -72898,6 +72908,33 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J0878",
+      "title": "HOS compilation v02: package (title, chapters, £0 thumbnail) + Private upload for Sun 8 Nov 18:00 London, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS on J0175 v02 (HOS 6-film compilation, 49:18, sha 8282ffa8, -14.32 LUFS / -1.16 dBTP, polish/picture_qa/sfx PASS; HOS PR #300 3ba58733). Make its upload package with the HOS youtube:package flow: a positive-question title naming the subject (e.g. 'How Did Six Experiments Change What We Know About Life?' or better from the films; no clickbait), the description with COMPILATION_CHAPTERS_v02.txt chapters and each film's Sources line, a £0 cover-builder thumbnail in HOS house style (thumb_preview + style_sheet PASS), synthetic disclosure as the source films, en-GB, not made for kids, category 27. Run lint:package and the dry run, then upload Private with publishAt Sun 8 Nov 2026 18:00 London (18:00Z), after 006 airs Thu 5 Nov and 005 Thu 29 Oct; no new HOS long that day. Read back privacy/publishAt, record the upload, and log the 4-week measure plan in STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md (views, APV/AVD, subs vs the channel's Shorts and longs over the same weeks). Keep the master on the NAS (don't delete scratch). Park for Chief with the title, thumbnail and read-back. £0. No HOS Buffer post (longs are never cross-posted).",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-23T09:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-23T09:18Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
