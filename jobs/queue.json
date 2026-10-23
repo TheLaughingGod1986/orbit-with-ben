@@ -72328,13 +72328,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-23T05:26Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T04:52Z",
-      "result": "parked for Chief: review and merge OWB PR #261 and HOS PR #357. Checklist implemented in both templates and Cursor rules; 3/3 steps complete; both sync_rules checks rules OK; HOS check_all ALL CHECKS PASS. No spend or film-stage approval.",
+      "result": "Chief PASS: OWB PR #261 (afefaf267) and HOS PR #357 (09ef92eb) carry #1 #2 #3 #6 #7 as rules and #4 #5 as tests, matching the J0871 ruling; checks green, mergeable. Merges are Ben's.",
       "history": [
         {
           "at": "2026-10-23T04:52Z",
@@ -72370,6 +72370,11 @@
           "at": "2026-10-23T05:29Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review and merge OWB PR #261 and HOS PR #357. Checklist implemented in both templates and Cursor rules; 3/3 steps complete; both sync_rules checks rules OK; HOS check_all ALL CHECKS PASS. No spend or film-stage approval."
+        },
+        {
+          "at": "2026-10-23T05:30Z",
+          "by": "claude",
+          "what": "done: Chief PASS: OWB PR #261 (afefaf267) and HOS PR #357 (09ef92eb) carry #1 #2 #3 #6 #7 as rules and #4 #5 as tests, matching the J0871 ruling; checks green, mergeable. Merges are Ben's."
         }
       ],
       "kind": "studio",
