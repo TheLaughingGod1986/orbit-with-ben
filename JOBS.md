@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0878 | mini | open | – | – | listing · HOS compilation v02: package (title, chapters, Sources, £0 thumbnail) + Private upload for Thu 10 Dec 18:00 UK, park for Chief |  |
 | J0881 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0889 | mini | claimed | gemini | 2026-10-23T21:58Z | 028 thumbs · for gemini · thumb · `gemini-agy` · 028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief |  |
+| J0889 | mini | blocked | gemini | – | 028 thumbs · for gemini · thumb · `gemini-agy` · 028 Gliese 710: thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions) + dry run, park for Chief |  |
 | J0890 | mini | open (after J0889) | – | – | 028 upload · listing · 028 Gliese 710: Private upload of master v03 for Sun 29 Nov 18:00 London, read back, record |  |
 | J0891 | mini | open | – | – | 029 edit · assembly · 029 Betelgeuse: re-render r21_hero (3:53 card text fix, 04bab9a9) -> full rough v03b, gates, phone copy, park for Chief |  |
 | J0892 | mini | open | – | – | studio · HOS 007 v03: put the phone copy on the Watch button (R2 upload, as J0888) |  |
