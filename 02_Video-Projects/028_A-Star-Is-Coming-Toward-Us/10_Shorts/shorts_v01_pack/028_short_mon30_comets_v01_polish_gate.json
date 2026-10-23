@@ -1,0 +1,270 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v01.mp4",
+  "edge_floor": 0.0341,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s03_comet_a3_core",
+      "cut": 2,
+      "t": 6.85,
+      "source": "comet_a3.jpg",
+      "why": [
+        "low detail: edge density 0.0224 < film p5 0.0341"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_hale_bopp_close",
+      "source": "sts083_hale_bopp.jpg",
+      "t": 1.44,
+      "std": 59.74,
+      "mean": 64.64,
+      "p95": 200.0,
+      "edge": 0.2354,
+      "hf": 16.88,
+      "lf": 50.57,
+      "std8": 53.46,
+      "edge8": 0.2266,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": 0.004,
+        "max_off_trend_px": 0.109,
+        "reversals": 0,
+        "frames": 59,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_hale_bopp_wide",
+      "source": "sts083_hale_bopp.jpg",
+      "t": 4.26,
+      "std": 46.95,
+      "mean": 49.48,
+      "p95": 161.0,
+      "edge": 0.2041,
+      "hf": 12.02,
+      "lf": 42.26,
+      "std8": 43.81,
+      "edge8": 0.1409,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.004,
+        "max_off_trend_px": 0.01,
+        "reversals": 0,
+        "frames": 56,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_comet_a3_core",
+      "source": "comet_a3.jpg",
+      "t": 6.85,
+      "std": 39.43,
+      "mean": 52.38,
+      "p95": 133.0,
+      "edge": 0.0224,
+      "hf": 8.29,
+      "lf": 35.48,
+      "std8": 37.19,
+      "edge8": 0.1068,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 46,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0224 < film p5 0.0341"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04_comet_a3_tail",
+      "source": "comet_a3.jpg",
+      "t": 10.07,
+      "std": 46.88,
+      "mean": 57.23,
+      "p95": 152.0,
+      "edge": 0.0484,
+      "hf": 15.27,
+      "lf": 37.3,
+      "std8": 40.31,
+      "edge8": 0.1705,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 93,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_r27_shower_s1",
+      "source": "code_graphic_028_mon_r27_s1.mp4",
+      "t": 13.86,
+      "std": 33.77,
+      "mean": 68.46,
+      "p95": 123.0,
+      "edge": 0.0924,
+      "hf": 13.45,
+      "lf": 27.07,
+      "std8": 28.51,
+      "edge8": 0.123,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_r27_shower_s2",
+      "source": "code_graphic_028_mon_r27_s2.mp4",
+      "t": 17.12,
+      "std": 28.78,
+      "mean": 67.48,
+      "p95": 117.0,
+      "edge": 0.0726,
+      "hf": 10.49,
+      "lf": 25.37,
+      "std8": 25.74,
+      "edge8": 0.0718,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_r27_shower_s3",
+      "source": "code_graphic_028_mon_r27_s3.mp4",
+      "t": 20.61,
+      "std": 32.7,
+      "mean": 68.38,
+      "p95": 119.0,
+      "edge": 0.0797,
+      "hf": 12.87,
+      "lf": 26.6,
+      "std8": 27.85,
+      "edge8": 0.0949,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_r27_leaving_a",
+      "source": "eso_startrails.mp4",
+      "t": 23.91,
+      "std": 49.65,
+      "mean": 113.12,
+      "p95": 208.0,
+      "edge": 0.1337,
+      "hf": 14.03,
+      "lf": 43.78,
+      "std8": 45.26,
+      "edge8": 0.2096,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "s09_r27_leaving_b",
+      "source": "eso_startrails.mp4",
+      "t": 26.9,
+      "std": 54.25,
+      "mean": 109.1,
+      "p95": 212.0,
+      "edge": 0.1602,
+      "hf": 15.87,
+      "lf": 47.08,
+      "std8": 48.37,
+      "edge8": 0.2576,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "s10_r27_leaving_c",
+      "source": "eso_startrails.mp4",
+      "t": 30.62,
+      "std": 43.77,
+      "mean": 90.69,
+      "p95": 171.0,
+      "edge": 0.145,
+      "hf": 15.42,
+      "lf": 35.17,
+      "std8": 36.84,
+      "edge8": 0.2639,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
