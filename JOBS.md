@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
-| J0876 | mini | open | – | – | listing · OWB: retitle 6 scheduled statement Shorts as questions (Mercury first, before Sat 24 Oct 10:30Z) |  |
+| J0876 | mini | claimed | gemini | 2026-10-23T07:54Z | listing · OWB: retitle 6 scheduled statement Shorts as questions (Mercury first, before Sat 24 Oct 10:30Z) |  |
 
 Recently finished:
 
