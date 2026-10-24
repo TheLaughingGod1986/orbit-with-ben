@@ -27,7 +27,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0904 | mini | open | – | – | studio · 028 Gliese 710: upload the 3 PASSed Shorts (J0895) Private with publishAt Mon 30 Nov / Wed 2 Dec / Fri 4 Dec 11:30 London + covers, read back |  |
 | J0905 | mini | open | – | – | studio · 028 night-sky Short (J0897 PASS): upload Private in the first free OWB Short slot after Fri 4 Dec 11:30 London, read back |  |
 | J0906 | mini | open | – | – | video · HOS 007 s05 'Why Is It Called a Vaccine?' (J0898 PASS): re-wrap the title banner inside title-safe, gates, upload Private in the first free HOS Short slot after Fri 13 Nov |  |
-| J0907 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB: retitle the 5 Nov Shorts to positive questions (J0900 PASS), titles only, read back |  |
+| J0907 | mini | claimed | gemini | 2026-10-24T17:29Z | for gemini · listing · `gemini-argon` · OWB: retitle the 5 Nov Shorts to positive questions (J0900 PASS), titles only, read back |  |
 | J0908 | mini | open | – | – | thumb · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
 | J0909 | mini | open | – | – | for gemini · listing · `gemini-argon` · HOS J0899 changes 1-5 into the 006-010 packages (0 spend, no live edits) |  |
 
