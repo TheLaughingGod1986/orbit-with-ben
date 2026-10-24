@@ -74708,10 +74708,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-24T00:24Z",
+      "eta": "2026-10-24T02:24Z",
       "created_by": "refill",
       "created_at": "2026-10-23T23:11Z",
       "result": "",
@@ -74760,6 +74760,11 @@
           "at": "2026-10-24T00:22Z",
           "by": "codex",
           "what": "released: STOP at storage checkpoint: j0897-archive completed exit 0, log confirms source/destination SHA-256 match and 438891110 bytes moved. Existing tmux j0898-scratch still running; /Users/benjaminoats/_desk/logs/J0898-scratch.done absent, log J0898-scratch.log. Do not duplicate transfer. Disk remains 7.5 GiB; restore 20 GB headroom before rendering. No Short chosen or rendered. Keep four-step plan at 0/4; OWB:028 link refers to disk prerequisite only."
+        },
+        {
+          "at": "2026-10-24T00:24Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
