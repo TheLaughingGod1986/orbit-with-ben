@@ -74473,13 +74473,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-24T00:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T20:45Z",
-      "result": "parked for Chief: low disk 7.1 GiB; user requires scratch move before work. Auto-review rejected SHA256-verified obsolete 028 v01 scratch archive because removal of local MP4 interpreted as never-delete-video violation. No archive ran; no Studio or privacy/schedule changes. Resolve archive authorization restriction, then finish captions, ABC, end screen/cards, and private-video pinned comment check. Progress 1/5.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-23T20:45Z",
@@ -74510,19 +74510,17 @@
           "at": "2026-10-24T02:26Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:33Z",
+          "by": "chief",
+          "what": "reopened: Chief (Grok, 24 Oct 17:45 London): reopen. Disk is now 18 GB free (was 7.1), so no scratch archive is needed for this job: it is Studio-only (captions, Test & Compare A/B/C, end screen + cards, pinned comment). Do not archive or remove any video file. No privacy/schedule changes."
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:028"
       ],
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-10-24T00:12Z",
-        "by": "codex",
-        "note": "Preflight complete: 7.1 GiB free; NAS mounted; obsolete v01 identified, v03/v02 retained. Auto-review rejected verified "
-      },
       "escalated_at": "2026-10-24T02:26Z"
     },
     {
