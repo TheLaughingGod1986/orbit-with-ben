@@ -127,8 +127,6 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 .job .jnote { font-size: 0.8rem; color: var(--muted); }
 .bar { height: 10px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; position: relative; }
 .bar > i { display: block; height: 100%; background: var(--hos); border-radius: 999px; transition: width .4s; }
-.bar.indet > i { width: 35%; position: absolute; animation: indet 1.6s ease-in-out infinite; }
-@keyframes indet { 0% { left: -35%; } 100% { left: 100%; } }
 .nextlist { display: flex; flex-direction: column; gap: 8px; }
 @media (min-width: 900px) {
   .strip .row.jobs { flex-direction: row; } .strip .row.jobs > * { flex: 1 1 0; min-width: 0; }

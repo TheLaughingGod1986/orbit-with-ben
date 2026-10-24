@@ -217,14 +217,19 @@
     return last ? last[0].toUpperCase() + last.slice(1) : "";
   };
   // Same maths as the classic board's progressOf: step k of n done at a time → pace per step; never 100% until done.
+  // Ben, 24 Oct 23:57: one filled bar with a number, e.g. "26% · ~57 min left". Completed-step pace when a step is
+  // done; otherwise time since work started over the job's usual length. Capped at 95% until the job is done; past the
+  // usual length it reads "95% · running over". % and time left come from the same total, so they always agree.
   function jobProgress(j) {
     const p = j.progress || {}, s = tsOf(j.workStart || j.claimedAt), at = tsOf(p.at), now = Date.now();
-    if (p.of >= 1 && p.step >= 1 && p.step <= p.of && !isNaN(s) && !isNaN(at) && at > s) {
-      const per = (at - s) / p.step, left = per * (p.of - p.step);
-      const frac = Math.min(0.99, (p.step + Math.min(0.9, Math.max(0, now - at) / per)) / p.of);
-      return { pct: Math.max(1, Math.floor(frac * 100)), done: Math.max(at + left, now + MIN), start: s };
-    }
-    return { pct: null, done: NaN, start: s };
+    const est = (+j.estMin || +j.typMin || 25) * MIN;
+    if (isNaN(s)) return { pct: 0, left: est, over: false, start: s, total: est };
+    const elapsed = Math.max(0, now - s);
+    let total = est;  // expected total working time
+    if (p.of >= 1 && p.step >= 1 && p.step <= p.of && !isNaN(at) && at > s) total = (at - s) / p.step * p.of;
+    const frac = elapsed / total, over = frac >= 0.95;
+    const pct = Math.max(1, Math.min(95, Math.round(frac * 100)));
+    return { pct, left: Math.max(0, total - elapsed), over, start: s, total };
   }
   function filmOf(j) {
     const t = String(j.title || "").replace(/^URGENT:?\s*/i, "");
@@ -254,13 +259,9 @@
     if (kind === "now") {
       const pr = jobProgress(j), p = j.progress || {}, step = p.of ? `Step ${Math.min((p.step || 0) + 1, p.of)} of ${p.of}` : (j.stage ? `Stage: ${j.stage}` : "");
       const since = isNaN(pr.start) ? "" : `started ${hm(pr.start)} · ${dur(Date.now() - pr.start)} so far`;
-      if (pr.pct !== null) {
-        bar = `<div class="bar" role="progressbar" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
-        note = `${pr.pct}% · ${step} · ${since} · done about ${hm(pr.done)}`;
-      } else {
-        bar = `<div class="bar indet" role="progressbar" aria-label="in progress"><i></i></div>`;
-        note = [step, j.stage && p.of ? `stage ${j.stage}` : "", since, (j.typMin || j.estMin) ? `usually ~${j.estMin || j.typMin} min` : ""].filter(Boolean).join(" · ");
-      }
+      const tail = pr.over ? "running over" : `~${dur(pr.left)} left`;
+      bar = `<div class="bar" role="progressbar" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
+      note = `<b style="color:var(--ink)">${pr.pct}% · ${tail}</b> · ${[step, since, `usually ~${dur(pr.total)}`].filter(Boolean).join(" · ")}`;
       if (p.note) note += `<br>Last step: ${esc(String(p.note).slice(0, 140))}`;
     } else {
       note = j.urgent ? "Urgent — goes first" : (j.after ? `after ${esc(j.after)}` : "");
