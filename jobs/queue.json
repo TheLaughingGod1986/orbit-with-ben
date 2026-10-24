@@ -1,5 +1,5 @@
 {
-  "next_id": 916,
+  "next_id": 917,
   "jobs": [
     {
       "id": "J0001",
@@ -76340,6 +76340,33 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0916",
+      "title": "60% stayed-to-watch audit: 11 upcoming non-public OWB Shorts (read-only, 6 brief fields, re-cut list)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "60% stayed-to-watch audit of the upcoming OWB Shorts that are not yet public (Chief, 24 Oct 2026). This is a read-only review.\n\nFor each scheduled private Short in 05_Analytics/owb/UPCOMING_SHORTS_GATE.md that is not a standalone S2–S8 (those have their own re-cut jobs): dM1OgGPAYvw, BbsyFrV8kCY, Jcuiy0a9BFI, RxErxlXim1Q, YC65mdh6Hgg, iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY, HZGTovJu_TQ, cwU_0WWeNZ4, plus any added since. Use the cut list, meta.json and VO words in UPLOADS.json packageDir, and ffprobe/ffmpeg frames from the export on the mini or the NAS (read-only).\n\nRecord the six brief fields from .cursor/rules/orbit-build-shorts.mdc → \"60% stayed-to-watch\": frame-0 source (moving video, or a still and its zoom), first-word onset (s, from silencedetect), surprise-word time, first cut (s), gap from last word to loop (s), and whether a meta-promise is present. Give each Short PASS or FAIL per rule.\n\nWrite 05_Analytics/owb/STAYED60_UPCOMING_AUDIT_2026-10-25.md: one table, then a ranked list of re-cut candidates by air date. Add a £0 fix for each: VO trim only, a free public-domain motion plate, or a re-cut order.\n\nHard rules: no Studio change, no upload, no Public, no Replace, no deletions, £0.\n\nEnd with: jobs.py block <id> --reason \"parked for Chief: pick re-cuts from STAYED60 audit\" --git\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T19:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T19:01Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "review"
     }
   ],
   "focus": [],
