@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
-| J0894 | mini | claimed | codex | 2026-10-24T18:34Z | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
+| J0894 | mini | blocked | codex | – | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
 | J0903 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0904 | mini | open | – | – | studio · 028 Gliese 710: upload the 3 PASSed Shorts (J0895) Private with publishAt Mon 30 Nov / Wed 2 Dec / Fri 4 Dec 11:30 London + covers, read back |  |
 | J0905 | mini | open | – | – | studio · 028 night-sky Short (J0897 PASS): upload Private in the first free OWB Short slot after Fri 4 Dec 11:30 London, read back |  |
