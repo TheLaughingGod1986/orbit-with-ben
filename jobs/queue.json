@@ -74708,10 +74708,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-24T00:28Z",
-      "eta": "2026-10-24T02:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T23:11Z",
       "result": "",
@@ -74790,6 +74790,11 @@
           "at": "2026-10-24T00:28Z",
           "by": "codex",
           "what": "step 0 of 4 done: Inspect locked longs, existing Shorts and usable source media"
+        },
+        {
+          "at": "2026-10-24T00:29Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "kind": "assembly",
@@ -74804,7 +74809,16 @@
       "taskKeys": [
         "OWB:028",
         "OWB:029"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "codex"
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0898",
