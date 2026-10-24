@@ -1,0 +1,226 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v01.mp4",
+  "edge_floor": 0.0541,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_serpens_sky",
+      "cut": 1,
+      "t": 5.22,
+      "source": "wise_sky.jpg",
+      "why": [
+        "low detail: edge density 0.0473 < film p5 0.0541"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_mw_lasilla_open",
+      "source": "eso_mw_lasilla.mp4",
+      "t": 1.77,
+      "std": 47.49,
+      "mean": 36.1,
+      "p95": 148.0,
+      "edge": 0.1519,
+      "hf": 18.19,
+      "lf": 33.87,
+      "std8": 37.45,
+      "edge8": 0.1847,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_serpens_sky",
+      "source": "wise_sky.jpg",
+      "t": 5.22,
+      "std": 39.61,
+      "mean": 32.52,
+      "p95": 116.0,
+      "edge": 0.0473,
+      "hf": 9.55,
+      "lf": 34.55,
+      "std8": 36.43,
+      "edge8": 0.1336,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 74,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0473 < film p5 0.0541"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_r29_sky_bright",
+      "source": "code_graphic_028_lift_r29_sky_bright.mp4",
+      "t": 8.11,
+      "std": 32.6,
+      "mean": 65.39,
+      "p95": 114.0,
+      "edge": 0.0668,
+      "hf": 12.91,
+      "lf": 25.91,
+      "std8": 27.62,
+      "edge8": 0.0915,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_jupiter_juno",
+      "source": "jupiter_juno.tif",
+      "t": 11.46,
+      "std": 69.72,
+      "mean": 156.37,
+      "p95": 253.0,
+      "edge": 0.123,
+      "hf": 19.08,
+      "lf": 63.42,
+      "std8": 64.69,
+      "edge8": 0.2782,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 101,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_startrails",
+      "source": "eso_startrails.mp4",
+      "t": 14.95,
+      "std": 54.54,
+      "mean": 101.6,
+      "p95": 207.0,
+      "edge": 0.0989,
+      "hf": 12.09,
+      "lf": 50.06,
+      "std8": 50.85,
+      "edge8": 0.2035,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_r31_sky_creep",
+      "source": "code_graphic_028_lift_r31_sky_creep.mp4",
+      "t": 17.51,
+      "std": 33.68,
+      "mean": 65.68,
+      "p95": 116.0,
+      "edge": 0.0793,
+      "hf": 14.19,
+      "lf": 26.9,
+      "std8": 28.09,
+      "edge8": 0.101,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_moon_lro",
+      "source": "moon_lro.jpg",
+      "t": 20.45,
+      "std": 59.6,
+      "mean": 166.58,
+      "p95": 243.0,
+      "edge": 0.0771,
+      "hf": 11.31,
+      "lf": 55.72,
+      "std8": 55.53,
+      "edge8": 0.2631,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.002,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.007,
+        "reversals": 0,
+        "frames": 78,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop_mw",
+      "source": "eso_mw_lasilla.mp4",
+      "t": 23.35,
+      "std": 31.67,
+      "mean": 42.38,
+      "p95": 74.0,
+      "edge": 0.1028,
+      "hf": 16.15,
+      "lf": 16.7,
+      "std8": 23.03,
+      "edge8": 0.0921,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
