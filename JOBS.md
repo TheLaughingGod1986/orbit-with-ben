@@ -28,6 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0908 | mini | open | – | – | for gemini · thumb · `gemini-agy` · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
 | J0910 | mini | blocked | gemini | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0911 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0912 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
