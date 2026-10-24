@@ -40,6 +40,48 @@ export function mergeStudioCtr(root: string, key: string, r: ChannelReport): voi
   }
 }
 
+/** Ben's Shorts target (24 Oct 2026): Studio "Stayed to watch" 60% or more at the 48 h read, on both channels.
+ *  Rules for hitting it: .cursor/rules/orbit-build-shorts.mdc -> "60% stayed-to-watch". */
+export const STAYED_TARGET = 60;
+export const STAYED_WATCH = 45;
+export const STAYED_MIN_VIEWS = 100;
+
+type StayedRow = ChannelReport["videos"][number] & { studioStayedPct?: number; studioViews?: number };
+
+/** The verdict for one Short's Studio read: too few views to judge, PASS (>= 60%), WATCH (45-59.9%) or MISS (< 45%). */
+export function stayedVerdict(stayed: number, views: number | undefined): string {
+  if ((views ?? 0) < STAYED_MIN_VIEWS) return "too few to judge";
+  if (stayed >= STAYED_TARGET) return "PASS";
+  return stayed >= STAYED_WATCH ? "WATCH" : "MISS";
+}
+
+/** Every Short aired in the last `days` days that has a Studio stayed-to-watch read, checked against the 60% target. */
+export function renderStayedCheck(r: ChannelReport, now = Date.now(), days = 14): string {
+  const rows = (r.videos as StayedRow[])
+    .filter((v) => v.format === "short" && typeof v.studioStayedPct === "number" && v.publishedAt)
+    .map((v) => ({ v, ageH: (now - Date.parse(v.publishedAt!)) / 3_600_000 }))
+    .filter(({ ageH }) => ageH >= 0 && ageH <= days * 24)
+    .sort((a, b) => a.ageH - b.ageH);
+  const lines = [
+    "",
+    `## Shorts: stayed-to-watch vs the ${STAYED_TARGET}% target`,
+    "",
+    `Studio "Stayed to watch" for Shorts aired in the last ${days} days. PASS ${STAYED_TARGET}%+, WATCH ${STAYED_WATCH}-${STAYED_TARGET}%, MISS under ${STAYED_WATCH}%; under ${STAYED_MIN_VIEWS} Studio views is too few to judge. Reads before 48 h are early. Rules: .cursor/rules/orbit-build-shorts.mdc -> "60% stayed-to-watch".`,
+    "",
+  ];
+  if (!rows.length) return [...lines, "No Short aired in this window has a Studio read yet.", ""].join("\n");
+  lines.push("| Short | Age | Studio views | Stayed | Verdict |", "|---|---:|---:|---:|---|");
+  let pass = 0, judged = 0;
+  for (const { v, ageH } of rows) {
+    const verdict = stayedVerdict(v.studioStayedPct!, v.studioViews ?? v.views);
+    if (verdict !== "too few to judge") { judged++; if (verdict === "PASS") pass++; }
+    const age = ageH < 48 ? `${Math.round(ageH)} h (early)` : `${Math.floor(ageH / 24)} d`;
+    lines.push(`| [${v.title.replace(/\|/g, "/")}](https://youtu.be/${v.id}) | ${age} | ${v.studioViews ?? v.views} | ${v.studioStayedPct!.toFixed(1)}% | ${verdict} |`);
+  }
+  lines.push("", `${pass} of ${judged} judged Shorts at ${STAYED_TARGET}%+.`, "");
+  return lines.join("\n");
+}
+
 /** Embed the data in the page. `<` is escaped so a title can never close the script tag. */
 export function injectData(template: string, data: unknown): string {
   const json = JSON.stringify(data).replace(/</g, "\\u003c");
@@ -89,7 +131,7 @@ export function run(root = ANALYTICS_ROOT): string[] {
     const r = buildReport(key, snaps, daily);
     mergeStudioCtr(root, key, r);
     reports.push(r);
-    fs.writeFileSync(path.join(root, key, "REPORT.md"), renderMarkdown(r));
+    fs.writeFileSync(path.join(root, key, "REPORT.md"), renderMarkdown(r) + renderStayedCheck(r));
     out.push(`${key}: REPORT.md from ${snaps.length} snapshot(s), latest ${r.date}`);
   }
   if (!reports.length) return out;
