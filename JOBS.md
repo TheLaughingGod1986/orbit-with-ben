@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0896 | mini | blocked | gemini | – | studio · HOS compilation: stop the 0-second stub Hmw4iMDfWFE going public 10 Dec, and a clearer £0 cover for uAomPaOBrM8 |  |
 | J0897 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0898 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0899 | mini | claimed | gemini | 2026-10-24T03:30Z | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0899 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0900 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0901 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
