@@ -23,7 +23,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Shorts -I_GHK-GcFs & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0894 | mini | blocked | codex | – | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
-| J0903 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J0903 | mini | claimed | gemini | 2026-10-24T19:18Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0908 | mini | blocked | gemini | – | for gemini · thumb · `gemini-agy` · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
 | J0910 | mini | blocked | gemini | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0911 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
