@@ -75394,13 +75394,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-24T06:00Z",
-      "eta": "2026-10-24T06:45Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T06:00Z",
-      "result": "",
+      "result": "parked for Chief: required storage preflight could not complete; verify HOS Studio session before resuming daily analytics read. Preflight 1/4; no metrics overwritten or settings changed.",
       "history": [
         {
           "at": "2026-10-24T06:00Z",
@@ -75421,6 +75421,11 @@
           "at": "2026-10-24T06:01Z",
           "by": "codex",
           "what": "step 1 of 4 done: Preflight complete: 8.9 GiB free; NAS listing hangs, preventing required scratch offload. CDP 9222 is on UCXRVwrCxXpN_o9gvuHPKAPQ, not HOS. No analytics files changed."
+        },
+        {
+          "at": "2026-10-24T06:02Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: required storage preflight could not complete; verify HOS Studio session before resuming daily analytics read. Preflight 1/4; no metrics overwritten or settings changed."
         }
       ],
       "kind": "studio",
