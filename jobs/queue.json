@@ -76204,10 +76204,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-24T21:52Z",
+      "eta": "2026-10-24T23:52Z",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
       "result": "",
@@ -76231,6 +76231,11 @@
           "at": "2026-10-24T21:50Z",
           "by": "codex",
           "what": "released: Preflight only, 0/3 steps. Estimated 120-minute assembly exceeds this run window. Mini has 6.4 GiB free; archive eligible version-before-last render scratch with verified SHA-256 before build. NAS is mounted. No film selected, no media changed, no detached process started. Next run: select locked long with fewest built Shorts, claim HOS stage, work in clean worktree; build/gate/report then park for Chief."
+        },
+        {
+          "at": "2026-10-24T21:52Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",

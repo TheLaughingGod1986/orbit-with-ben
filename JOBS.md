@@ -26,7 +26,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0908 | mini | blocked | gemini | – | for gemini · thumb · `gemini-agy` · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
 | J0910 | mini | blocked | gemini | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0911 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0912 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J0912 | mini | claimed | codex | 2026-10-24T23:52Z | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0913 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0914 | mini | blocked | codex | – | video · 60% re-cut v02 (local only): standalone S2 Neptune oyRcrFTYyDY + S3 ISS XKlq0TK1OVA: frame-0 motion, drop 'Stay, and I'll show you', first cut ≤3 s |  |
 | J0915 | mini | open (after J0914) | – | – | video · 60% re-cut v02 batch 2 (local only): standalone S4 Uranus, S5 Shooting stars, S7 Pluto, S8 Voyager (+ check S6 Titan RLSJm59OSzI) |  |
