@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0905 | mini | claimed | gemini | 2026-10-24T18:17Z | studio · 028 night-sky Short (J0897 PASS): upload Private in the first free OWB Short slot after Fri 4 Dec 11:30 London, read back |  |
 | J0906 | mini | open | – | – | video · HOS 007 s05 'Why Is It Called a Vaccine?' (J0898 PASS): re-wrap the title banner inside title-safe, gates, upload Private in the first free HOS Short slot after Fri 13 Nov |  |
 | J0908 | mini | open | – | – | thumb · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
-| J0910 | mini | open | – | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
+| J0910 | mini | blocked | gemini | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 
 Recently finished:
 
