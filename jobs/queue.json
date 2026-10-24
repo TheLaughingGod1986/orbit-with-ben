@@ -76181,13 +76181,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-24T18:39Z",
-      "eta": "2026-10-24T19:39Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:38Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete (OWB 74a8e44d9/228ab85db/519b44293/3a25e2bb4/170c28a17: 028 lift_night_sky_35yr v01 picture_qa 0/8 PASS + polish_gate 0/8 PASS + sfx PASS, 028 shorts_v01_pack 3 Shorts mon30_comets 0/10 PASS / wed02_opening_testA 0/9 PASS / fri04_scale 0/7 PASS, 028 full_master_v03_pack 0/65 PASS + music/sfx PASS, 029 full_rough_v03b_pack 0/84 PASS + music/sfx PASS, plus all earlier OWB packs & 42 Shorts PASS; HOS 92f7d954/2278fb3a/cf348000/7196b52a: 007 Short s05_vacca_jesty v02 & v01 picture_qa 0/8 PASS + polish_gate 0/8 PASS, 007 master_v03_pack 0/102 PASS + music/sfx PASS, 006 master_v05 0/96 PASS + music/sfx PASS, all 31 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)",
       "history": [
         {
           "at": "2026-10-24T18:38Z",
@@ -76223,6 +76223,11 @@
           "at": "2026-10-24T18:48Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed QA sweep across OWB and HOS: all newest packs have up-to-date gate outputs newer than their renders with 0 FAILs; 0 new fix jobs needed"
+        },
+        {
+          "at": "2026-10-24T18:48Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete (OWB 74a8e44d9/228ab85db/519b44293/3a25e2bb4/170c28a17: 028 lift_night_sky_35yr v01 picture_qa 0/8 PASS + polish_gate 0/8 PASS + sfx PASS, 028 shorts_v01_pack 3 Shorts mon30_comets 0/10 PASS / wed02_opening_testA 0/9 PASS / fri04_scale 0/7 PASS, 028 full_master_v03_pack 0/65 PASS + music/sfx PASS, 029 full_rough_v03b_pack 0/84 PASS + music/sfx PASS, plus all earlier OWB packs & 42 Shorts PASS; HOS 92f7d954/2278fb3a/cf348000/7196b52a: 007 Short s05_vacca_jesty v02 & v01 picture_qa 0/8 PASS + polish_gate 0/8 PASS, 007 master_v03_pack 0/102 PASS + music/sfx PASS, 006 master_v05 0/96 PASS + music/sfx PASS, all 31 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)"
         }
       ],
       "kind": "qa",
