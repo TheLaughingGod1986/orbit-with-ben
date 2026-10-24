@@ -76324,13 +76324,13 @@
       "stage": "",
       "after": "",
       "eta_min": 300,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-24T21:45Z",
-      "eta": "2026-10-25T02:45Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "",
+      "result": "parked for Chief: disk preflight cannot meet under-20-GB scratch-relocation order safely. Only ~6.4 GiB free after safe repair; identified older 028/029 scratch already archived, remaining audio versions are current/previous. Need eligible archive target or approved disk plan before S2/S3 v02 renders. No v02 PASS claimed.",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76351,6 +76351,11 @@
           "at": "2026-10-24T21:48Z",
           "by": "codex",
           "what": "step 0 of 4 done: Disk preflight unresolved: ~6.4 GiB free; no eligible older scratch found; standalone /tmp plates absent"
+        },
+        {
+          "at": "2026-10-24T21:48Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: disk preflight cannot meet under-20-GB scratch-relocation order safely. Only ~6.4 GiB free after safe repair; identified older 028/029 scratch already archived, remaining audio versions are current/previous. Need eligible archive target or approved disk plan before S2/S3 v02 renders. No v02 PASS claimed."
         }
       ],
       "kind": "video",
