@@ -72787,10 +72787,10 @@
     },
     {
       "id": "J0875",
-      "title": "HOS 007 Short -I_GHK-GcFs: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register",
+      "title": "HOS 007 Shorts -I_GHK-GcFs & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register",
       "needs": "mini",
       "repo": "hos",
-      "body": "HOS 007 Short -I_GHK-GcFs ('What Was the Edward Jenner Experiment?', Private, publishAt 2026-11-13T11:30Z, J0873) has Related = None because the 007 long had no id yet. Once the 007 long ('Why Vaccines Are Named After a Cow', airs Thu 12 Nov 18:00) is uploaded: set Related video on -I_GHK-GcFs to the long, read it back in Studio, update the HOS records, and register the Short for the HOS Buffer mirror (buffer-mirror.ts register --channel hos ... --long <id>, see J0873's #99 post; needs orbit-with-ben PR #260 merged). Must be done before Fri 13 Nov 11:30Z. £0.",
+      "body": "HOS 007 Shorts -I_GHK-GcFs ('What Was the Edward Jenner Experiment?', Private, publishAt 2026-11-13T11:30Z, J0873) and 4WUs0beKn0A ('Why Is It Called a Vaccine?', Private, publishAt 2026-11-17T11:30Z, J0906) have Related = None because the 007 long had no id yet. Once the 007 long ('Why Vaccines Are Named After a Cow', airs Thu 12 Nov 18:00) is uploaded: set Related video on -I_GHK-GcFs and 4WUs0beKn0A to the long, read both back in Studio, update the HOS records, and register both Shorts for the HOS Buffer mirror (buffer-mirror.ts register --channel hos ... --long <id>, see J0873's and J0906's #99 posts; needs orbit-with-ben PR #260 merged). Must be done before Fri 13 Nov 11:30Z. £0.",
       "ref": "",
       "film": "007",
       "stage": "upload",
@@ -72813,6 +72813,11 @@
           "at": "2026-10-23T05:20Z",
           "by": "claude",
           "what": "blocked: waits for input: the 007 long's YouTube id (its upload); reopen when the long is uploaded"
+        },
+        {
+          "at": "2026-10-24T18:22Z",
+          "by": "gemini",
+          "what": "added HOS 007 Short 4WUs0beKn0A ('Why Is It Called a Vaccine?', Private, publishAt 2026-11-17T11:30Z, J0906) to J0875"
         }
       ],
       "kind": "listing"
@@ -75735,6 +75740,11 @@
           "at": "2026-10-24T18:20Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Built s05_vacca_jesty_v02 (2-line title banner inside title-safe), all gates PASS, uploaded Private as 4WUs0beKn0A for Tue 17 Nov 11:30Z, API + Studio readback verified"
+        },
+        {
+          "at": "2026-10-24T18:23Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Recorded in HOS commit 92f7d954 (check_all + channel:audit 0 errors) and added 4WUs0beKn0A to J0875"
         }
       ],
       "kind": "video",
@@ -75742,11 +75752,11 @@
         "HOS:007"
       ],
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-24T18:20Z",
+        "at": "2026-10-24T18:23Z",
         "by": "gemini",
-        "note": "Built s05_vacca_jesty_v02 (2-line title banner inside title-safe), all gates PASS, uploaded Private as 4WUs0beKn0A for T"
+        "note": "Recorded in HOS commit 92f7d954 (check_all + channel:audit 0 errors) and added 4WUs0beKn0A to J0875"
       }
     },
     {
