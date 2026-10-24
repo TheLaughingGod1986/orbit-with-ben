@@ -1,5 +1,5 @@
 {
-  "next_id": 904,
+  "next_id": 910,
   "jobs": [
     {
       "id": "J0001",
@@ -68047,13 +68047,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "claude",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-22T21:00Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-21T20:51Z",
-      "result": "waits for input: PR #260 merge (built and green locally: HOS profile, org guard, TikTok, social/hos/, 07:05 run). Needs to land before the 24 Oct 07:05 run so 5n7xFQRBUvI (Sat 31 Oct) goes in",
+      "result": "Chief (Grok, 24 Oct 17:45 London): done. PR #260 merged (HOS Buffer profile, org guard, TikTok). 5n7xFQRBUvI's Buffer registration for 31 Oct stays in J0241 step 2.",
       "history": [
         {
           "at": "2026-10-21T20:51Z",
@@ -68069,6 +68069,11 @@
           "at": "2026-10-22T21:08Z",
           "by": "claude",
           "what": "blocked: waits for input: PR #260 merge (built and green locally: HOS profile, org guard, TikTok, social/hos/, 07:05 run). Needs to land before the 24 Oct 07:05 run so 5n7xFQRBUvI (Sat 31 Oct) goes in"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): done. PR #260 merged (HOS Buffer profile, org guard, TikTok). 5n7xFQRBUvI's Buffer registration for 31 Oct stays in J0241 step 2."
         }
       ],
       "kind": "studio"
@@ -73245,13 +73250,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-23T22:39Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T09:52Z",
-      "result": "parked for Chief: QA sweep complete (OWB 3a25e2bb4/9e1061676/2cc888fe4/fb14da14d/170c28a17/5270c29d3: 028 full_master_v03_pack picture_qa 0/65 PASS + polish_gate 0/65 PASS + music_gate PASS + sfx_level PASS, 028 shorts_v01_pack 3 Shorts mon30_comets 0/10 PASS / wed02_opening_testA 0/9 PASS / fri04_scale 0/7 PASS, 029 full_rough_v03b_pack & v03_pack picture_qa 0/84 PASS + polish_gate 0/84 PASS + music_gate PASS + sfx_level PASS, plus all earlier OWB packs & 41 Shorts PASS; HOS 7196b52a/958f1227/994d5a7b: 006 master_v05 & master_v04 picture_qa 0/96 PASS + polish_gate 0/96 PASS + music_gate PASS + sfx_level PASS, 007 Short s04_smallpox_test_v01 0/8 PASS, 007 full_join_v01 & master_v02 0/97 PASS, all 29 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS. QA sweep 0 FAILs on both channels; no fix jobs needed.",
       "history": [
         {
           "at": "2026-10-23T09:52Z",
@@ -73302,6 +73307,11 @@
           "at": "2026-10-24T01:24Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS. QA sweep 0 FAILs on both channels; no fix jobs needed."
         }
       ],
       "kind": "qa",
@@ -74362,13 +74372,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T00:04Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T20:03Z",
-      "result": "parked for Chief: runtime Watch fix complete and verified for HOS 007 v03 + OWB 029 v03b; review/merge PR #263 (e3dc52029) for durable mappings and diagnosis, and pending #262 for auto-upload hardening. No final OK or film PASS issued.",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS. Watch fix verified for HOS 007 v03 + OWB 029 v03b; PR #262 and #263 both merged on main.",
       "history": [
         {
           "at": "2026-10-23T20:03Z",
@@ -74414,6 +74424,11 @@
           "at": "2026-10-24T02:26Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS. Watch fix verified for HOS 007 v03 + OWB 029 v03b; PR #262 and #263 both merged on main."
         }
       ],
       "kind": "studio",
@@ -74539,13 +74554,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-23T21:20Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T20:53Z",
-      "result": "parked for Chief: 028 3 Shorts v01 (Mon 30 Nov comets 32.67s, Wed 2 Dec opening Test A 32.13s, Fri 4 Dec scale 26.83s) built from SHORTS_PLAN_v01 (£0 spend), all gates PASS (gate_shorts_open, sfx_kit level, picture_qa, polish_gate, cover score, caption/title-safe), shorts_v01_pack committed, phone copies in OWB UAT",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS. 3 Shorts (comets 30 Nov, opening Test A 2 Dec, scale 4 Dec) checked on the frame sheet: hook at frame 0, long title at 9-14 s, end card matches house (title + long id). Upload follow-on queued; private only.",
       "history": [
         {
           "at": "2026-10-23T20:53Z",
@@ -74606,6 +74621,11 @@
           "at": "2026-10-24T00:23Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS. 3 Shorts (comets 30 Nov, opening Test A 2 Dec, scale 4 Dec) checked on the frame sheet: hook at frame 0, long title at 9-14 s, end card matches house (title + long id). Upload follow-on queued; private only."
         }
       ],
       "kind": "assembly",
@@ -74641,13 +74661,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-23T22:47Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T21:20Z",
-      "result": "parked for Chief: review compilation_thumb_v02.jpg (3 objects: swan-neck flask, gold-foil atom, tied arm + '6 EXPERIMENTS'), PHONE_v02.jpg, STYLE_v02.jpg on uAomPaOBrM8 and stub Hmw4iMDfWFE unschedule in HOS PR #358 (e1a005a2)",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS. Stub Hmw4iMDfWFE read back private, no publishAt, retitled DUPLICATE STUB (not deleted; deleting is Ben's call). Cover compilation_thumb_v02 (flask, atom, tied arm, 6 EXPERIMENTS) PASS on uAomPaOBrM8. End screen + Altered content check stay before 10 Dec.",
       "history": [
         {
           "at": "2026-10-23T21:20Z",
@@ -74723,6 +74743,11 @@
           "at": "2026-10-24T02:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS. Stub Hmw4iMDfWFE read back private, no publishAt, retitled DUPLICATE STUB (not deleted; deleting is Ben's call). Cover compilation_thumb_v02 (flask, atom, tied arm, 6 EXPERIMENTS) PASS on uAomPaOBrM8. End screen + Altered content check stay before 10 Dec."
         }
       ],
       "kind": "studio",
@@ -74750,13 +74775,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T00:36Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-23T23:11Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS. 028 lift_night_sky_35yr v01 (3X BRIGHTER THAN SIRIUS hook, long title banner, house end card). Upload follow-on queued; private only.",
       "history": [
         {
           "at": "2026-10-23T23:11Z",
@@ -74867,6 +74892,11 @@
           "at": "2026-10-24T02:57Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS. 028 lift_night_sky_35yr v01 (3X BRIGHTER THAN SIRIUS hook, long title banner, house end card). Upload follow-on queued; private only."
         }
       ],
       "kind": "assembly",
@@ -74903,13 +74933,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T00:59Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T00:10Z",
-      "result": "parked for Chief: Short PASS — HOS 007 s05_vacca_jesty_v01, 24.17s, 60 words, sha c3eece7477de, HOS 2278fb3a, desk #6378167162. Title draft: Why Is It Called a Vaccine? Slot is Chief's call. Nothing uploaded.",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS with one fix. HOS 007 s05 vacca_jesty v01: title banner 'Why Vaccines Are Named After a / Cow' runs to the frame edge and orphans 'Cow'; re-wrap to 'Why Vaccines Are / Named After a Cow' inside title-safe, re-run gates. Title 'Why Is It Called a Vaccine?' approved. Fix + private upload follow-on queued.",
       "history": [
         {
           "at": "2026-10-24T00:10Z",
@@ -74980,6 +75010,11 @@
           "at": "2026-10-24T03:28Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS with one fix. HOS 007 s05 vacca_jesty v01: title banner 'Why Vaccines Are Named After a / Cow' runs to the frame edge and orphans 'Cow'; re-wrap to 'Why Vaccines Are / Named After a Cow' inside title-safe, re-run gates. Title 'Why Is It Called a Vaccine?' approved. Fix + private upload follow-on queued."
         }
       ],
       "kind": "assembly",
@@ -75007,13 +75042,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T01:30Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T01:23Z",
-      "result": "parked for Chief: review HOS_2026-10-24.md (5b6472be) + LEARNINGS.md (a29e21698), confirm 5 concrete 006-010 updates (incl. 009 gravity-apparatus neighbour terms & 006-007 12-15s Short cut test), and keep 092-094 queued for next topic pass",
+      "result": "Chief (Grok, 24 Oct 17:45 London): approved. All 5 HOS changes for 006-010 (T&C on 006/007/010 launches, 008 pause trims + links, 009 search terms in lines 1-2 + tags, 010 Shorts titles/payoff). 092-094 stay queued for the next topic pass. Applied by the new follow-on job.",
       "history": [
         {
           "at": "2026-10-24T01:23Z",
@@ -75064,6 +75099,11 @@
           "at": "2026-10-24T03:44Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): approved. All 5 HOS changes for 006-010 (T&C on 006/007/010 launches, 008 pause trims + links, 009 search terms in lines 1-2 + tags, 010 Shorts titles/payoff). 092-094 stay queued for the next topic pass. Applied by the new follow-on job."
         }
       ],
       "kind": "review",
@@ -75104,13 +75144,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T02:11Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T01:24Z",
-      "result": "parked for Chief: review 05_Analytics/weekly_audit/OWB_2026-10-24.md & 05_Analytics/LEARNINGS.md; decide on (1) retitling the 5 remaining Nov statement/negative Shorts (T9fVlG3CCzU 7 Nov, RLSJm59OSzI 10 Nov, N42gKBbD7tE 12 Nov, gmzaCfJF1gA 14 Nov, kKN8Ale42sE 17 Nov) to positive questions, (2) locking the 82Ao0v5XiQI (13.8% stayed on mid-chapter lift with no planet noun in 0-3.5s) & n_4XskX0yZk (-43.8pp at 4.11-7.50s on 0.50s pause + 10.20s static zoom) rules into the Shorts brief, (3) arming Long Test & Compare on 021/022/023, and (4) 062-064 topic picks",
+      "result": "Chief (Grok, 24 Oct 17:45 London): approved. (1) Retitle the 5 Nov Shorts to the positive questions in OWB_2026-10-24.md section 4 (follow-on job). (2) Lock both Shorts-brief rules (planet noun spoken in 0-2.5 s on moving video; no 0.5 s pauses / static zooms in 4-8 s). (3) 021 stays with J0189/J0275; 022/023 long Test & Compare: draft B variants at 0 spend and park (follow-on job). (4) Topic order 062 Psyche, 063 Valles Marineris, 064 Haumea.",
       "history": [
         {
           "at": "2026-10-24T01:24Z",
@@ -75161,6 +75201,11 @@
           "at": "2026-10-24T04:23Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): approved. (1) Retitle the 5 Nov Shorts to the positive questions in OWB_2026-10-24.md section 4 (follow-on job). (2) Lock both Shorts-brief rules (planet noun spoken in 0-2.5 s on moving video; no 0.5 s pauses / static zooms in 4-8 s). (3) 021 stays with J0189/J0275; 022/023 long Test & Compare: draft B variants at 0 spend and park (follow-on job). (4) Topic order 062 Psyche, 063 Valles Marineris, 064 Haumea."
         }
       ],
       "kind": "review",
@@ -75208,13 +75253,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T01:51Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T01:29Z",
-      "result": "parked for Chief: PASS sign-off on 2026-10-24 OWB live listing audit (10/10 public videos clean; 0 fixes needed, 05_Analytics/live_fixes/2026-10-24.md, commit 02eb14c75)",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS. OWB live listing audit 10/10 clean (02eb14c75); nothing to change.",
       "history": [
         {
           "at": "2026-10-24T01:29Z",
@@ -75255,6 +75300,11 @@
           "at": "2026-10-24T03:58Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS. OWB live listing audit 10/10 clean (02eb14c75); nothing to change."
         }
       ],
       "kind": "listing",
@@ -75293,13 +75343,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T02:01Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T01:49Z",
-      "result": "parked for Chief: PASS sign-off on 2026-10-24 HOS live listing audit (47 videos, 0 errors; 23/23 public clean incl. newly public LCZRHUyTiq0; 13 scheduled verified incl. uAomPaOBrM8 compilation; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-24.md, commit 4c732cd8)",
+      "result": "Chief (Grok, 24 Oct 17:45 London): PASS. HOS live listing audit 47 videos 0 errors (4c732cd8); nothing to change.",
       "history": [
         {
           "at": "2026-10-24T01:49Z",
@@ -75355,6 +75405,11 @@
           "at": "2026-10-24T04:08Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "done: Chief (Grok, 24 Oct 17:45 London): PASS. HOS live listing audit 47 videos 0 errors (4c732cd8); nothing to change."
         }
       ],
       "kind": "listing",
@@ -75445,6 +75500,168 @@
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "escalated_at": "2026-10-24T08:02Z"
+    },
+    {
+      "id": "J0904",
+      "title": "028 Gliese 710: upload the 3 PASSed Shorts (J0895) Private with publishAt Mon 30 Nov / Wed 2 Dec / Fri 4 Dec 11:30 London + covers, read back",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS J0895 (24 Oct). Upload 028_short_mon30_comets_v01, wed02_opening_testA_v01, fri04_scale_v01 from 02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/shorts_v01_pack with the titles in SHORTS_PLAN_v01 (positive questions), Private with publishAt 2026-11-30T11:30Z / 2026-12-02T11:30Z / 2026-12-04T11:30Z, house descriptions linking F-jImX5h7ws, custom covers from the pack. Never Public, never Replace, never delete. Read back privacyStatus=private + publishAt, record ids in UPLOADS.json. Then add one blocked follow-on job: Related video -> F-jImX5h7ws on all three once the long is public (29 Nov 18:00 London), before 30 Nov 11:30. 0 spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0905",
+      "title": "028 night-sky Short (J0897 PASS): upload Private in the first free OWB Short slot after Fri 4 Dec 11:30 London, read back",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief PASS J0897 (24 Oct). Upload 02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v01.mp4 Private, title 'What Will the Night Sky Look Like When Gliese 710 Arrives?', publishAt = the first free OWB Short slot after 2026-12-04T11:30Z on the house Mon/Wed/Fri 11:30 grid (check UPLOADS.json/calendar for clashes), house description linking F-jImX5h7ws, custom cover. Never Public/Replace/delete. Read back, record in UPLOADS.json, and add its Related -> F-jImX5h7ws to the 028 after-go-public Related job. 0 spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0906",
+      "title": "HOS 007 s05 'Why Is It Called a Vaccine?' (J0898 PASS): re-wrap the title banner inside title-safe, gates, upload Private in the first free HOS Short slot after Fri 13 Nov",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief PASS with one fix on J0898 (24 Oct). In 02_Video-Projects/007_The-First-Vaccine/10_Shorts/_build_short_s05_vacca_jesty_v01.py re-wrap the 9-14 s title banner to two lines 'Why Vaccines Are' / 'Named After a Cow' inside title-safe (it currently runs to the frame edge and orphans 'Cow'); nothing else changes. Re-run gate + picture_qa + polish_gate as v02. If all PASS: upload Private, title 'Why Is It Called a Vaccine?', publishAt = the first free HOS Short slot after 2026-11-13T11:30Z (check the HOS calendar), HOS description + AI disclosure + Altered content Yes, custom cover. Never Public/Replace/delete. Read back, record, and add this Short to J0875 (Related -> the 007 long once it exists). If any gate FAILs, block 'parked for Chief: s05 v02 gate'. 0 spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0907",
+      "title": "OWB: retitle the 5 Nov Shorts to positive questions (J0900 PASS), titles only, read back",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief approved J0900 item 1 (24 Oct), same pattern as the 24 Oct-3 Nov batch. Change the title only (no privacy, schedule, description, thumbnail or Related change) via the YouTube Data API or Studio, then read back:\n- T9fVlG3CCzU -> What Are Shooting Stars Really Made Of?\n- RLSJm59OSzI -> What Would Standing on Saturn's Moon Titan Feel Like?\n- N42gKBbD7tE -> How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?\n- gmzaCfJF1gA -> Why Does Pluto's Giant Ice Heart Have Zero Craters?\n- kKN8Ale42sE -> How Far From Earth Is Voyager 1 Right Now?\nUpdate UPCOMING_SHORTS_GATE.md and UPLOADS.json. Also add the two J0900 Shorts-brief rules (planet/star named in spoken sentence 1 within 0-2.5 s on moving video; no 0.5 s pauses or static zooms in 4-8 s) to the Shorts brief. 0 spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
+    },
+    {
+      "id": "J0908",
+      "title": "OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief approved J0900 items 3-5 (24 Oct). (a) 021 Saturn stays with J0189/J0275. (b) For 022 h8HGfyShEHI and 023 VBaYRPp85Sw draft one thumbnail B each at 0 spend (house style, existing art only) and park 'parked for Chief: long T&C B' with the A/B sheet; do not arm anything until PASS; 023 only after it is public (25 Oct 18:00 London). (c) Rename the 033 working title to 'Why Uranus Has 21-Year Winters After Being Knocked Sideways' in its folder docs. (d) Topic order in the ideas file: 062 Psyche, 063 Valles Marineris, 064 Haumea. Never Replace, never delete.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "thumb"
+    },
+    {
+      "id": "J0909",
+      "title": "HOS J0899 changes 1-5 into the 006-010 packages (0 spend, no live edits)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief approved all five J0899 changes (24 Oct; HOS 02_Video-Projects/_analytics/HOS_2026-10-24.md section 4). Apply them to the 006-010 upload packages and plans only: 006 and 007 2-way thumbnail T&C plan on launch; 008 trim notes + links to GHZDsiH7L7A; 009 gravity-apparatus search terms in description lines 1-2 and tags; 010 Shorts title + payoff past 15 s notes and launch title T&C plan. Change nothing on YouTube now. Commit and close with the list; park only if something conflicts with a locked package. 0 spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T16:35Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
