@@ -74782,17 +74782,25 @@
           "at": "2026-10-24T00:18Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking existing HOS Shorts and disk prerequisite before choosing a film"
+        },
+        {
+          "at": "2026-10-24T00:19Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Storage preflight: archived superseded 028 v01 part roughs with SHA-256; current v02/v03 masters retained. HOS film selection/render paused until 20 GB headroom."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-24T00:18Z",
+        "at": "2026-10-24T00:19Z",
         "by": "codex",
-        "note": "Checking existing HOS Shorts and disk prerequisite before choosing a film"
-      }
+        "note": "Storage preflight: archived superseded 028 v01 part roughs with SHA-256; current v02/v03 masters retained. HOS film sele"
+      },
+      "taskKeys": [
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
