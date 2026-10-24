@@ -75416,17 +75416,22 @@
           "at": "2026-10-24T06:01Z",
           "by": "codex",
           "what": "step 0 of 4 done: Claimed daily read; checking disk and existing read-only collectors before Studio extraction"
+        },
+        {
+          "at": "2026-10-24T06:01Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Preflight complete: 8.9 GiB free; NAS listing hangs, preventing required scratch offload. CDP 9222 is on UCXRVwrCxXpN_o9gvuHPKAPQ, not HOS. No analytics files changed."
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-24T06:01Z",
         "by": "codex",
-        "note": "Claimed daily read; checking disk and existing read-only collectors before Studio extraction"
+        "note": "Preflight complete: 8.9 GiB free; NAS listing hangs, preventing required scratch offload. CDP 9222 is on UCXRVwrCxXpN_o9"
       }
     }
   ],
