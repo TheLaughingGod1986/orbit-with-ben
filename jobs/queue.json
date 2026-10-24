@@ -1,5 +1,5 @@
 {
-  "next_id": 922,
+  "next_id": 923,
   "jobs": [
     {
       "id": "J0001",
@@ -76838,6 +76838,33 @@
         }
       ],
       "kind": "thumb"
+    },
+    {
+      "id": "J0922",
+      "title": "029 Betelgeuse: Private upload of the release master for Sun 6 Dec 18:00 London (after Chief PASS on J0921), read back, record",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After Chief PASS on the 029 package (previous job): upload the 029 release master Private via youtube:package with publishAt Sun 6 Dec 2026 18:00 London (2026-12-06T18:00:00Z, GMT), unless the Chief's package PASS names a different slot. Read back privacy/publishAt/title/thumbnail, record in 11_Upload-Package (PACKAGE_UPLOAD_RESULT) and UPLOADS.json, and post the read-back on OWB desk #264. Never Public. Then queue the 029 Shorts plan (2-3 Shorts from the locked long, Learnings checklist + 60% stayed / 70% viewed rules) as its own job. Chief ruling HOS #180 6384887788.\nDisk (Mac mini ~6 GB free on 24 Oct): preflight df -h /; stop and block if free space is under 3 GB. Put scratch/intermediates on the NAS (/Volumes/data/mac-mini-archive/scratch/<job>/) when it is mounted and writable, else /private/tmp with encoded intermediates only. Delete, move or archive nothing; no Replace, nothing Public. £0.\n",
+      "ref": "6384887788",
+      "film": "029",
+      "stage": "upload",
+      "after": "J0921",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-10-24T22:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T22:04Z",
+          "by": "grok",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
