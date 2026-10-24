@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-10-23 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-10-24 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-10-23 11:30 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) `2e-giqFmfy8` | yes | PASS |
 | 2026-10-24 11:30 | [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) `vlkj8RQKmH8` | yes | PASS |
 | 2026-10-26 11:30 | [What If Earth Stopped Spinning?](https://youtu.be/dM1OgGPAYvw) `dM1OgGPAYvw` | yes | PASS |
 | 2026-10-27 11:30 | [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/oyRcrFTYyDY) `oyRcrFTYyDY` | yes | PASS |
