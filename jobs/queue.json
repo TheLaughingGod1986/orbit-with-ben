@@ -1,5 +1,5 @@
 {
-  "next_id": 915,
+  "next_id": 916,
   "jobs": [
     {
       "id": "J0001",
@@ -76298,6 +76298,33 @@
       "stage": "",
       "after": "",
       "eta_min": 300,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T19:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T19:01Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0915",
+      "title": "60% re-cut v02 batch 2 (local only): standalone S4 Uranus, S5 Shooting stars, S7 Pluto, S8 Voyager (+ check S6 Titan RLSJm59OSzI)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "60% stayed-to-watch re-cuts, batch 2 (Chief, 24 Oct 2026). Follow the same steps and hard rules as batch 1 (the job this one waits for; .cursor/rules/orbit-build-shorts.mdc → \"60% stayed-to-watch\").\n\nShorts in this batch:\n- S4 Uranus ZpEA8stoSPA (Tue 3 Nov)\n- S5 Shooting stars T9fVlG3CCzU (Sat 7 Nov)\n- S7 Pluto heart gmzaCfJF1gA (Sat 14 Nov)\n- S8 Voyager 1 kKN8Ale42sE (Tue 17 Nov)\n- S6 Titan RLSJm59OSzI (Tue 10 Nov, the corrected cut Ben approved). Check it against the six rules from its files first, and re-cut it only if it still has the pushed-still opening or the \"Stay, and I'll show you\" line.\n\nAll five use the v01 template: frame 0 is a NASA still pushed 1.00–1.08 for 4.3–5.9 s (S4 1.25→1.42 over 5.9 s), and the meta-promise sits at ~2–3 s. VO trims only (£0, no TTS). Local v02 renders next to v01. Every gate must PASS. Write the six brief fields into each v02 meta.\n\nHard rules: £0, no upload, no Studio, no Public, no Replace, no deletions.\n\nEnd with: jobs.py block <id> --reason \"parked for Chief: S4-S8 v02 gate results; Ben to OK each swap\" --git\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0914",
+      "eta_min": 480,
       "status": "open",
       "by": "",
       "since": "",
