@@ -74760,10 +74760,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-24T00:18Z",
-      "eta": "2026-10-24T02:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T00:10Z",
       "result": "",
@@ -74792,6 +74792,11 @@
           "at": "2026-10-24T00:19Z",
           "by": "codex",
           "what": "step 0 of 3 done: Correction: archive is running, not yet verified. tmux j0898-scratch; log ~/. _desk/logs/J0898-scratch.log (actual path /Users/benjaminoats/_desk/logs/J0898-scratch.log); completion J0898-scratch.done. HOS rendering paused."
+        },
+        {
+          "at": "2026-10-24T00:20Z",
+          "by": "codex",
+          "what": "released: Storage prerequisite in flight: tmux j0898-scratch archives only /private/tmp/028_part_roughs_v01 to /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-24/j0898-028-parts-v01 with SHA-256 before local removal; retains v02/v03 masters. Log /Users/benjaminoats/_desk/logs/J0898-scratch.log; completion /Users/benjaminoats/_desk/logs/J0898-scratch.done. Missing .done means running: do not duplicate. 7.5 GiB free; restore 20 GB headroom before HOS rendering. No HOS film chosen, no spend/upload. Keep progress 0/3 until verification finishes."
         }
       ],
       "kind": "assembly",
