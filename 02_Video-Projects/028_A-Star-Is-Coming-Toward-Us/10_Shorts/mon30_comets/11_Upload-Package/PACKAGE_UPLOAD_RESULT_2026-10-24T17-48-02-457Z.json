@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-30T11:30:00.000Z",
+    "platformPostId": "bizlhspnVvY",
+    "platformUrl": "https://youtu.be/bizlhspnVvY",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-30T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"bizlhspnVvY\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-30T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/11_Upload-Package",
+    "sha256": "ded054fbda7cc89113c82c5499a847c5a58575b188e496270f7d48a287caed32",
+    "title": "Why Will Gliese 710's Comets Arrive After It Has Gone?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 7,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v01_cover.jpg",
+    "scheduledAt": "2026-11-30T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v01.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v01_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-11-30T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "bizlhspnVvY",
+    "studioEditUrl": "https://studio.youtube.com/video/bizlhspnVvY/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/bizlhspnVvY/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/bizlhspnVvY/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/bizlhspnVvY/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/bizlhspnVvY/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to F-jImX5h7ws (its own full film). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/bizlhspnVvY/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/bizlhspnVvY/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (bizlhspnVvY). 1 required Studio finish step(s) remain."
+  }
+}
