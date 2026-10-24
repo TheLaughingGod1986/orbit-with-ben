@@ -75642,9 +75642,23 @@
           "at": "2026-10-24T16:35Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-24T16:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1191 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
-      "kind": "listing"
+      "kind": "listing",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J0908",
