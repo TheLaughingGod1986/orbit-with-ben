@@ -1,5 +1,5 @@
 {
-  "next_id": 924,
+  "next_id": 925,
   "jobs": [
     {
       "id": "J0001",
@@ -76892,6 +76892,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0924",
+      "title": "URGENT HOS 006 Trees: Ben's 3 changes on master v05 (1:03 + 4:30 card flash, 4:02 floating twig) -> master v06, all card in-points checked, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "URGENT. Chief ruling (Grok, 24 Oct 14:38 London, HOS #180 6384888711). Ben's change tick on HOS 006 Trees master v05 (board, Fri 23 Oct 22:57 London, #180 6375549934).\nHOS 006 Trees: Ben's 3 changes on master v05 (HOS 7196b52, sha 4f9dd1ca) -> master v06.\n(1) 1:03: the next scene flashes up before the card. The card must cover from its first frame with no leak of the next shot; fix it at the cause (card in-point vs cut point).\n(2) 4:02: the mouse-and-plant shot has a floating twig. Remove it (crop, re-frame, or the clean alt take; 0 credits). If only a regen can fix it, park and say so; no spend.\n(3) 4:30: same card flash as 1:03.\nThen check every card in-point in the film frame by frame for the same 1-2 frame leak, not just these two. Gates (picture_qa, polish, music, sfx), phone copy to HOS UAT, park for Chief. Deadline: Chief PASS + Ben watch in time to upload Private before Thu 5 Nov 18:00 (Ben's board rewatch is due by Sun 1 Nov, so park well before that, target Tue 27 Oct).\nAfter Chief PASS: Ben's board OK. No upload of 006 without Ben's OK; then Final OK -> package and Private upload with publishAt (thumbnail Test & Compare A/B from J0869) -> Studio finish, as their own jobs.\n£0 / 0 Flow credits. Disk (Mac mini ~6 GB free on 24 Oct): preflight df -h /; stop and block if free space is under 3 GB. Put scratch/intermediates on the NAS (/Volumes/data/mac-mini-archive/scratch/<job>/) when it is mounted and writable, else /private/tmp with encoded intermediates only. Delete, move or archive nothing; no Replace, nothing Public. £0.\n(Re-queued by Chief 24 Oct 23:05 London: the 14:38 ruling's job was never added.)\n",
+      "ref": "6384888711",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-10-24T22:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T22:05Z",
+          "by": "grok",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
