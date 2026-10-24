@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0911 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0912 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0913 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J0914 | mini | open | – | – | video · 60% re-cut v02 (local only): standalone S2 Neptune oyRcrFTYyDY + S3 ISS XKlq0TK1OVA: frame-0 motion, drop 'Stay, and I'll show you', first cut ≤3 s |  |
+| J0914 | mini | claimed | codex | 2026-10-25T02:45Z | video · 60% re-cut v02 (local only): standalone S2 Neptune oyRcrFTYyDY + S3 ISS XKlq0TK1OVA: frame-0 motion, drop 'Stay, and I'll show you', first cut ≤3 s |  |
 | J0915 | mini | open (after J0914) | – | – | video · 60% re-cut v02 batch 2 (local only): standalone S4 Uranus, S5 Shooting stars, S7 Pluto, S8 Voyager (+ check S6 Titan RLSJm59OSzI) |  |
 | J0916 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 60% stayed-to-watch audit: 11 upcoming non-public OWB Shorts (read-only, 6 brief fields, re-cut list) |  |
 | J0917 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS 60% stayed-to-watch audit: upcoming non-public HOS Shorts + 3-Short baseline (read-only) |  |
