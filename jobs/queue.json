@@ -1,5 +1,5 @@
 {
-  "next_id": 918,
+  "next_id": 919,
   "jobs": [
     {
       "id": "J0001",
@@ -76394,6 +76394,33 @@
         }
       ],
       "kind": "review"
+    },
+    {
+      "id": "J0918",
+      "title": "Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ship gate for the 60% stayed-to-watch rules (Chief, 24 Oct 2026). Code work on both repos' copies of 00_Brand/Channel-Setup/tools/gate_shorts_open.py, with tests.\n\nMercury vlkj8RQKmH8 passed the gate with frame 0 a still pushed only 1.00→1.04 over 5.5 s, and it got 32.1% stayed. Add these checks:\n(a) FAIL \"pushed still at frame 0\" when mean frame difference across 0–1.5 s is below a calibrated threshold. Calibrate on the v01 standalone exports (should FAIL) against mon19_brighter_fuel_short_v02 / y-SPHQ0-VjQ (should PASS).\n(b) FAIL when the first cut comes after 3.0 s (scene-change detect).\n(c) WARN when the first VO word starts after 0.15 s (silencedetect on the VO stem or mix).\n(d) WARN when the gap from the last word to the end is over 1.5 s.\n(e) A text lint: FAIL if the script or meta \"spoken\" field contains a meta-promise (\"stay, and i'll show you\", \"stay and i'll show you\", \"did you know\", \"wait for it\").\n\nKeep existing PASS results stable for Shorts already uploaded: report-only mode for gate_upcoming.py so nothing scheduled flips to FAIL silently. List any that would now fail.\n\nRun the tests and push a PR. £0. No Studio or upload.\n\nEnd with: jobs.py block <id> --reason \"parked for Chief: review gate PR\" --git\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T19:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T19:01Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "qa"
     }
   ],
   "focus": [],
