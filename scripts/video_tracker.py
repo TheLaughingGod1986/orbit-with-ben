@@ -21,6 +21,8 @@ from video_progress import job_targets
 ROOT = Path(__file__).resolve().parents[1]
 OVERRIDES = ROOT / "05_Analytics" / "kanban" / "video_overrides.json"
 UPLOADS = ROOT / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
+PUBLIC_DATA = ROOT / "05_Analytics" / "dashboard" / "data.json"  # Channel Tracker: real public YouTube videos
+PROJECTS = ROOT / "02_Video-Projects"
 LONDON = ZoneInfo("Europe/London")
 
 LANES = ("upcoming", "progress", "changes", "ready", "done")
@@ -189,6 +191,22 @@ def _receipt_privacy(root: Path, package_dir: str) -> tuple[str, str]:
     return best
 
 
+def _receipt_title(root: Path, package_dir: str) -> str:
+    """The uploaded title from the newest upload receipt (or the package manifest) in a package dir."""
+    folder = root / package_dir if package_dir else None
+    if not folder or not folder.is_dir():
+        return ""
+    for path in sorted(folder.glob("PACKAGE_UPLOAD_RESULT*.json"), reverse=True) + [folder / "PACKAGE_MANIFEST.json"]:
+        try:
+            doc = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        title = (doc.get("package") or {}).get("title") or doc.get("title") or ""
+        if title:
+            return str(title)
+    return ""
+
+
 def uploads_index(root: Path | None = None) -> dict:
     """Map film key / short id → upload meta from UPLOADS.json (+ receipt privacy)."""
     root = root or ROOT
@@ -199,9 +217,12 @@ def uploads_index(root: Path | None = None) -> dict:
         return {}
     by_film: dict[str, list] = {}
     for vid, meta in vids.items():
+        if meta.get("retired"):
+            continue  # replaced/retired upload (e.g. black-dwarf v02/v04 → canonical 1NeQFVnzO2Q)
         kind = meta.get("kind") or "long"
         pkg = str(meta.get("packageDir") or meta.get("file") or "")
-        m = re.search(r"02_Video-Projects/(\d{3})_", pkg)
+        m = (re.search(r"02_Video-Projects/(\d{3})_", pkg)
+             or re.search(r"02_Video-Projects/(\d{3})_", str(meta.get("thumb") or "")))
         if not m:
             continue
         film = m.group(1)
@@ -221,11 +242,76 @@ def uploads_index(root: Path | None = None) -> dict:
             "packageDir": meta.get("packageDir") or "",
             "privacyStatus": privacy,
             "publishAt": publish_at,
-            "title": meta.get("title") or "",
+            "title": meta.get("title") or _receipt_title(root, meta.get("packageDir") or ""),
         }
         key = f"OWB:{film}" if kind == "long" else f"OWB:{film}:S:{vid}"
         by_film.setdefault(key, []).append(row)
     return by_film
+
+
+def _norm_title(t: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", (t or "").lower().replace("’", "'").replace("'", ""))
+
+
+def public_index(root: Path | None = None) -> tuple[dict, str]:
+    """videoId → {channel, title, format, publishedAt} from the Channel Tracker's public YouTube read."""
+    path = (root / "05_Analytics" / "dashboard" / "data.json") if root else PUBLIC_DATA
+    try:
+        doc = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return {}, ""
+    out = {}
+    for ch in doc.get("channels") or []:
+        channel = "HOS" if str(ch.get("channel") or "").lower() == "hos" else "OWB"
+        for v in ch.get("videos") or []:
+            if v.get("id"):
+                out[v["id"]] = {"channel": channel, "title": v.get("title") or "",
+                                "format": v.get("format") or "", "publishedAt": v.get("publishedAt") or ""}
+    return out, str(doc.get("generatedAt") or "")
+
+
+def folder_titles(root: Path | None = None) -> dict:
+    """'004' → 'JWST Discoveries That Change Everything' from 02_Video-Projects/<NNN>_<Slug>."""
+    base = (root / "02_Video-Projects") if root else PROJECTS
+    out = {}
+    try:
+        for d in base.iterdir():
+            m = re.match(r"(\d{3})_(.+)$", d.name)
+            if m and d.is_dir():
+                out.setdefault(m.group(1), m.group(2).replace("-", " ").strip())
+    except OSError:
+        pass
+    return out
+
+
+def match_public_long(title: str, channel: str, public: dict, used: set) -> str:
+    """Video id of an unclaimed public long whose title matches (equal, or one a prefix of the other)."""
+    n = _norm_title(title)
+    if len(n) < 12:
+        return ""
+    for vid, p in public.items():
+        if vid in used or p["channel"] != channel or p["format"] != "long":
+            continue
+        pn = _norm_title(p["title"])
+        if pn == n or (len(n) >= 20 and (pn.startswith(n) or n.startswith(pn))):
+            return vid
+    return ""
+
+
+def live_state(vid: str, pub: dict) -> dict:
+    at = pub.get("publishedAt") or ""
+    return {"state": "live", "videoId": vid, "publishAt": at, "privacy": "public",
+            "url": f"https://youtu.be/{vid}", "publishAtLondon": london_slot(at)}
+
+
+def clean_short_slug(slug: str) -> str:
+    """'friday_2026-10-16_last_star' → 'Last star'; 'mon30_comets' → 'Comets'."""
+    s = re.sub(r"^(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\d*_", "", slug, flags=re.I)
+    s = re.sub(r"^\d{4}-\d{2}-\d{2}_", "", s)
+    s = re.sub(r"^(?:lift|tease|cover|standalone|from_studio)_", "", s, flags=re.I)
+    s = re.sub(r"_(?:cover|tease|v\d+)$", "", s, flags=re.I)
+    s = s.replace("_", " ").strip()
+    return (s[:1].upper() + s[1:]) if s else ""
 
 
 def job_is_channel_wide(job: dict, keys: list[str]) -> bool:
@@ -260,7 +346,8 @@ def waiting_on(lane: str, check: dict | None, jobs: list[dict], brief: dict, you
     """(who, plain English line)."""
     if lane == "done" and youtube:
         if youtube["state"] == "live":
-            return "YouTube", f"Public on YouTube ({youtube['videoId']})."
+            since = (youtube.get("publishAtLondon") or "").rsplit(" ", 2)[0]
+            return "YouTube", (f"Public on YouTube since {since}." if since else "Public on YouTube.")
         if youtube.get("publishAtLondon"):
             return "YouTube", f"Private, scheduled {youtube['publishAtLondon']}."
         return "YouTube", f"On YouTube as {youtube.get('privacy') or 'private'} ({youtube['videoId']})."
@@ -386,13 +473,16 @@ def flags_for(
 
 
 def short_title_from_path(meta: dict) -> str:
+    if meta.get("title"):
+        return str(meta["title"])
     pkg = str(meta.get("packageDir") or meta.get("file") or "")
-    # …/10_Shorts/mon30_comets/…
     m = re.search(r"10_Shorts/([^/]+)", pkg)
-    if m:
-        slug = m.group(1).replace("_", " ")
-        return slug[:60]
-    return meta.get("title") or meta.get("videoId") or "Short"
+    if m and m.group(1) != "from_studio":
+        return clean_short_slug(m.group(1))[:60] or "Short"
+    m = re.search(r"/([^/]+?)(?:_short)?(?:_v\d+)?\.mp4$", pkg)
+    if m and not re.fullmatch(r"[A-Za-z0-9_-]{11}", m.group(1)):
+        return clean_short_slug(m.group(1))[:60] or "Short"
+    return ""
 
 
 def build_videos(
@@ -406,6 +496,8 @@ def build_videos(
     uploads: dict | None = None,
     overrides: dict | None = None,
     now: datetime | None = None,
+    public: dict | None = None,
+    titles: dict | None = None,
 ) -> dict:
     """Return {updatedAt, lanes, videos} for board/tracker."""
     now = now or datetime.now(timezone.utc)
@@ -414,6 +506,30 @@ def build_videos(
     uploads = uploads if uploads is not None else uploads_index()
     by_jobs = job_index(jobs, overrides)
     film_lanes = (overrides.get("lanes") or {}) if overrides else {}
+    if public is None:
+        public, public_at = public_index()
+    else:
+        public_at = ""
+    titles = titles if titles is not None else folder_titles()
+    yt_force = dict((overrides.get("youtube") or {}) if overrides else {})
+    used: set = set()  # public video ids already on a card
+    for rows in uploads.values():
+        for r in rows:
+            used.add(r.get("videoId"))
+    used.update(yt_force.values())
+
+    def long_hit(key: str, channel: str, title: str, upload_rows: list) -> str:
+        """Public video id for a long, from overrides, its upload row, or a title match."""
+        if key in yt_force:
+            return yt_force[key] if yt_force[key] in public else ""
+        for r in upload_rows:
+            if r.get("videoId") in public:
+                return r["videoId"]
+        vid = match_public_long(title, channel, public, used)
+        if vid:
+            used.add(vid)
+        return vid
+
     videos = []
 
     # --- Longs: HOS ---
@@ -422,12 +538,15 @@ def build_videos(
         if not re.fullmatch(r"\d{3}", num):
             continue
         key = f"HOS:{num}"
+        title = f.get("title") or ""
+        hit = long_hit(key, "HOS", title, uploads.get(key) or [])
         videos.append(_card(
-            key=key, channel="HOS", number=num, title=f.get("title") or "",
+            key=key, channel="HOS", number=num, title=title,
             vtype="long", air=f.get("air") or "", brief=briefs.get(key) or {},
             release=None, upload_rows=uploads.get(key) or [],
             jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
             watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
+            public_vid=hit, public=public, public_at=public_at,
         ))
 
     # --- Longs: OWB ---
@@ -436,12 +555,17 @@ def build_videos(
         if not re.fullmatch(r"\d{3}", num):
             continue
         key = f"OWB:{num}"
+        title = f.get("title") or titles.get(num) or ""
+        hit = long_hit(key, "OWB", title, uploads.get(key) or [])
+        if hit:
+            title = public[hit]["title"]  # what viewers actually see (021 was retitled on YouTube)
         videos.append(_card(
-            key=key, channel="OWB", number=num, title=f.get("title") or "",
+            key=key, channel="OWB", number=num, title=title,
             vtype="long", air=f.get("air") or "", brief=briefs.get(key) or {},
             release=f.get("release"), upload_rows=uploads.get(key) or [],
             jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
             watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
+            public_vid=hit, public=public, public_at=public_at,
         ))
 
     # --- Shorts from UPLOADS (each Short its own card) ---
@@ -453,7 +577,8 @@ def build_videos(
         vid = meta["videoId"]
         parent = f"OWB:{num}"
         parent_title = next((v["title"] for v in videos if v["key"] == parent), f"{num}")
-        title = short_title_from_path(meta) or f"Short · {parent_title}"
+        title = ((public.get(vid) or {}).get("title") or short_title_from_path(meta)
+                 or (f"Short · {parent_title}" if parent_title != num else "Short"))
         skey = f"OWB:{num}:S:{vid}"
         # Attach jobs that mention this Short id or the parent film's Shorts work
         sjobs = list(by_jobs.get(skey) or [])
@@ -467,12 +592,35 @@ def build_videos(
             release=None, upload_rows=[meta],
             jobs=sjobs, check=None,  # Ben's OK/changes attach to the long, not each Short
             watch=None, override_lane=film_lanes.get(skey), now=now,
-            short_id=vid, parent=parent,
+            short_id=vid, parent=parent, public=public, public_at=public_at,
         ))
 
     # --- Standalone / extraWatch Shorts (HOS S1…) ---
-    for extra in (briefs.get("_extraWatch") or []):
-        pass  # briefs.json nests extraWatch at top level; caller may pass via overrides
+    # Forced long ids (overrides.youtube) for films with no pipeline/status row, e.g. HOS 001–003 (aired before PIPELINE).
+    have = {v["key"] for v in videos}
+    for key, vid in yt_force.items():
+        if key in have or vid not in public:
+            continue
+        ch, num = key.split(":", 1)
+        videos.append(_card(
+            key=key, channel=ch, number=num, title=public[vid]["title"], vtype="long",
+            air=public[vid]["publishedAt"][:10], brief={}, release=None, upload_rows=[], jobs=[],
+            check=None, watch=None, override_lane=film_lanes.get(key), now=now,
+            public_vid=vid, public=public, public_at=public_at,
+        ))
+    # Every other public video (Shorts and longs the repo has no record of): its own Done card, deduped by id.
+    on_cards = {(v.get("youtube") or {}).get("videoId") for v in videos}
+    for vid, p in sorted(public.items(), key=lambda kv: kv[1]["publishedAt"]):
+        if vid in on_cards:
+            continue
+        vtype = "short" if p["format"] == "short" else "long"
+        key = f"{p['channel']}:YT:{vid}"
+        videos.append(_card(
+            key=key, channel=p["channel"], number="", title=p["title"], vtype=vtype,
+            air=p["publishedAt"][:10], brief={}, release=None, upload_rows=[], jobs=[],
+            check=None, watch=None, override_lane=film_lanes.get(key), now=now,
+            short_id=vid if vtype == "short" else "", public_vid=vid, public=public, public_at=public_at,
+        ))
 
     # Collapse old public Done items for the page (keep data; mark collapsed)
     cutoff = now - timedelta(days=DONE_PUBLIC_DAYS)
@@ -499,7 +647,7 @@ def build_videos(
 def _card(
     *,
     key, channel, number, title, vtype, air, brief, release, upload_rows, jobs, check,
-    watch, override_lane, now, short_id="", parent="",
+    watch, override_lane, now, short_id="", parent="", public_vid="", public=None, public_at="",
 ) -> dict:
     upload_meta = None
     if upload_rows:
@@ -514,6 +662,16 @@ def _card(
     # Prefer PACKAGE receipt over a bare UPLOADS row with no privacy
     if not youtube and release:
         youtube = youtube_state(release, None)
+    # Real YouTube state wins: anything in the Channel Tracker's public read is Public (scheduled ones have aired).
+    public = public or {}
+    if youtube and youtube.get("videoId") in public:
+        youtube = live_state(youtube["videoId"], public[youtube["videoId"]])
+    elif not (youtube and youtube.get("videoId")) and public_vid and public_vid in public:
+        youtube = live_state(public_vid, public[public_vid])
+    stale_schedule = False
+    if youtube and youtube.get("state") == "scheduled":
+        when, read = _parse_iso(youtube.get("publishAt")), _parse_iso(public_at)
+        stale_schedule = bool(when and read and when < read)
     # Older longs may lack a local receipt/UPLOADS row; trust the brief only when it says the film is public.
     if not youtube:
         blob = " ".join(str(brief.get(k) or "") for k in ("holdup", "line", "done"))
@@ -549,6 +707,9 @@ def _card(
         version = version_of(str((upload_rows or [{}])[0].get("file") or ""))
 
     who, line = waiting_on(lane, check, jobs, brief, youtube)
+    if stale_schedule:
+        line = (f"Was scheduled {youtube.get('publishAtLondon')}, but not Public in the last YouTube read "
+                f"({london_slot(public_at)}). Check Studio.")
     # Ready for OK: label Ben vs Chief clearly
     ready_for = ""
     if lane == "ready":
