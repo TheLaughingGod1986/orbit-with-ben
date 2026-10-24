@@ -74702,10 +74702,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-24T00:21Z",
+      "eta": "2026-10-24T02:21Z",
       "created_by": "refill",
       "created_at": "2026-10-23T23:11Z",
       "result": "",
@@ -74734,6 +74734,11 @@
           "at": "2026-10-24T00:16Z",
           "by": "codex",
           "what": "released: STOP checkpoint: prerequisite disk archive running in tmux j0897-archive. Log /Users/benjaminoats/_desk/logs/j0897-archive.log; exit file /Users/benjaminoats/_desk/logs/j0897-archive.done. Missing done means still running: do not start another copy. Script /private/tmp/j0897-archive.py rsyncs only version-before-last /private/tmp/028_Gliese710_full_master_v01.mp4 to /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-24/j0897-028-v01, writes both SHA-256 manifests, then removes verified local scratch and leaves MOVED_TO_NAS_028_v01_J0897.txt. v02/v03 retained. 028 edit restored to its pre-existing done state; no new PASS. Next: inspect exit/log and disk, then choose eligible locked/live long with fewest built Shorts and build one 22-27s Short; keep 4 progress steps. No render/upload/spend."
+        },
+        {
+          "at": "2026-10-24T00:21Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
