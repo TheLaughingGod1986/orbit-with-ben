@@ -63,7 +63,9 @@
     const m = checksMerged();
     return videos.map(v => {
       const c = m[v.checkId] || null;
-      const lane = deriveLane(v, c);
+      let lane = deriveLane(v, c);
+      // Ready for OK only with a cut to play (Ben, 25 Oct 00:03); otherwise it's still being made.
+      if (lane === "ready" && !(v.watch && v.watch.url)) lane = v.lane !== "ready" ? v.lane : ((v.jobs || []).length ? "progress" : "upcoming");
       const notes = (c && c.verdict === "change" && Array.isArray(c.fixes) && c.fixes.length)
         ? c.fixes.map(f => ({ t: f.t || "", text: f.text || "", done: false }))
         : (v.notes || []);
@@ -71,15 +73,18 @@
       if (c && !c.handled && (c.verdict === "ok" || c.verdict === "change") && !(v.jobs || []).length) {
         if (!flags.some(f => f.kind === "stuck")) flags.push({ kind: "stuck", text: "No job queued" });
       }
-      let readyFor = v.readyFor || "";
+      // One field drives both the "Waits on" badge and the "Waiting on" line (Ben's 009 screenshot, 25 Oct 00:03).
+      const okd = !!(c && c.verdict === "ok" && !c.handled);
+      let readyFor = "", waitingOn = v.waitingOn || "", line = v.line;
       if (lane === "ready") {
-        readyFor = (c && c.verdict === "ok" && !c.handled) ? "Chief" : "Ben";
+        readyFor = okd ? "Chief" : (v.lane === "ready" && v.readyFor ? v.readyFor : "Ben");
+        waitingOn = readyFor;
+        if (readyFor === "Ben") line = "Waiting on your OK.";
+        else if (okd) line = "You OK'd it — waiting on Chief PASS.";
+        else if (!/chief/i.test(line || "")) line = "Waiting on Chief PASS.";
       }
-      let line = v.line;
-      if (lane === "ready" && readyFor === "Ben") line = "Waiting on your OK.";
-      if (lane === "ready" && readyFor === "Chief") line = "You OK'd it — waiting on Chief PASS.";
       if (lane === "changes" && notes.length) line = `${notes.length} change${notes.length === 1 ? "" : "s"} to make.`;
-      return Object.assign({}, v, { lane, notes, flags, readyFor, line, check: c ? { verdict: c.verdict, version: c.version, at: c.at, handled: !!c.handled } : v.check });
+      return Object.assign({}, v, { lane, notes, flags, readyFor, waitingOn, line, check: c ? { verdict: c.verdict, version: c.version, at: c.at, handled: !!c.handled } : v.check });
     });
   }
 
@@ -177,11 +182,14 @@
     ).join("");
     const flagHtml = (v.flags || []).map(f => `<div class="flag">${esc(f.text)}</div>`).join("");
     const showActions = v.lane === "ready" && v.readyFor === "Ben" && v.type === "long";
+    // Big Play button for UAT (Ben, 25 Oct 00:03): the exact cut under review via the board's /api/watch link (plays in
+    // the browser), YouTube for Done. Review lanes without a link say so instead of hiding the button.
+    const review = v.lane === "ready" || v.lane === "changes";
     const watch = v.watch && v.watch.url
-      ? `<a class="btn watch" href="${esc(v.watch.url)}" target="_blank" rel="noopener">▶ Watch ${esc(v.watch.version || v.version || "")}</a>`
-      : "";
+      ? `<a class="btn ${review ? "play" : "watch"}" href="${esc(v.watch.url)}" target="_blank" rel="noopener">▶ Play ${esc(v.watch.version || v.version || "cut")}</a>`
+      : (review ? `<span class="btn play none" aria-disabled="true">No preview link yet</span>` : "");
     const yt = v.youtube && v.youtube.url
-      ? `<a class="btn yt" href="${esc(v.youtube.url)}" target="_blank" rel="noopener">YouTube</a>`
+      ? `<a class="btn ${v.lane === "done" ? "play yt" : "yt"}" href="${esc(v.youtube.url)}" target="_blank" rel="noopener">▶ Play on YouTube</a>`
       : "";
     return `<article class="card${flagged ? " flagged" : ""}" data-key="${esc(v.key)}">
       <div class="top">
@@ -196,10 +204,11 @@
       <p class="meta">Waiting on: ${esc(v.waitingOn || "—")}</p>
       ${flagHtml ? `<div class="flags">${flagHtml}</div>` : ""}
       ${notes ? `<ul class="notes">${notes}</ul>` : ""}
+      ${review ? `<div class="actions">${watch}</div>` : ""}
       <div class="actions">
         ${showActions ? `<button type="button" class="ok" data-ok="${esc(v.key)}">Approve</button>
           <button type="button" class="chg" data-chg="${esc(v.key)}">Request changes</button>` : ""}
-        ${watch}${yt}
+        ${review ? "" : watch}${yt}
       </div>
     </article>`;
   }
@@ -260,7 +269,9 @@
       const pr = jobProgress(j), p = j.progress || {}, step = p.of ? `Step ${Math.min((p.step || 0) + 1, p.of)} of ${p.of}` : (j.stage ? `Stage: ${j.stage}` : "");
       const since = isNaN(pr.start) ? "" : `started ${hm(pr.start)} · ${dur(Date.now() - pr.start)} so far`;
       const tail = pr.over ? "running over" : `~${dur(pr.left)} left`;
-      bar = `<div class="bar" role="progressbar" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
+      // Colour moves with progress (Ben, 25 Oct 00:03): red-orange < 34, amber 34-66, green > 66; running over is purple.
+      const band = pr.over ? "over" : pr.pct < 34 ? "low" : pr.pct <= 66 ? "mid" : "high";
+      bar = `<div class="bar ${band}" role="progressbar" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
       note = `<b style="color:var(--ink)">${pr.pct}% · ${tail}</b> · ${[step, since, `usually ~${dur(pr.total)}`].filter(Boolean).join(" · ")}`;
       if (p.note) note += `<br>Last step: ${esc(String(p.note).slice(0, 140))}`;
     } else {

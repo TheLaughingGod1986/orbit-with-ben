@@ -132,6 +132,21 @@ class RealYouTubeState(unittest.TestCase):
         self.assertEqual(len(shorts), 1)
         self.assertEqual(shorts[0]["title"], "What Are Cathode Rays?")
 
+    def test_ready_needs_a_playable_cut(self):
+        by = self.build(
+            hos={"films": [{"id": "009", "title": "Why Doesn't the Moon Fall to Earth?", "air": "2026-11-26"},
+                           {"id": "006", "title": "Willow", "air": "2026-11-05"}]},
+            briefs={"HOS:009": {"you": "Your final OK on Sun 22 Nov.", "youShort": "your final OK Sun 22 Nov", "youWhen": "2026-11-22"},
+                    "HOS:006": {"you": "Watch v06 and OK it."}},
+            watch={"HOS:006": {"url": "https://studio-kanban.vercel.app/api/watch?v=hos-006-v06", "version": "v06"}},
+            jobs=[{"id": "J0862", "status": "blocked", "title": "HOS 009 + 010: Shorts voiceover from the v02 Shorts scripts, park for Chief", "taskKeys": ["HOS:009"]}],
+            overrides={"jobFilms": {"J0862": ["HOS:009"]}},
+        )
+        self.assertEqual(by["HOS:009"]["lane"], "progress")
+        self.assertTrue(by["HOS:009"]["line"].startswith("No cut to watch yet"))
+        self.assertEqual(by["HOS:009"]["version"], "")  # v02 was the Shorts scripts, not a cut
+        self.assertEqual((by["HOS:006"]["lane"], by["HOS:006"]["version"]), ("ready", "v06"))
+
     def test_short_slug_titles_are_clean(self):
         self.assertEqual(vt.clean_short_slug("friday_2026-10-16_last_star"), "Last star")
         self.assertEqual(vt.clean_short_slug("mon30_comets"), "Comets")
