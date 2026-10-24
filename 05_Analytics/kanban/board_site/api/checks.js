@@ -16,10 +16,11 @@ const HISTORY_KEEP = 150;
 const BODY_MAX = 60000;          // GitHub caps an issue body at 65,536 characters
 const HANDLED_KEEP_DAYS = 30;    // handled ticks older than this are pruned
 // Ben's buttons go straight to the Chief (Ben, 10 Oct): every Approve / Request changes / Undo is also posted on the
-// Chief's thread, OWB on orbit-with-ben #99 and HOS on history-of-science #180, with env BOARD_GH_TOKEN (a fine-grained
-// GitHub token that can comment on those two repos; never in the page or the repo). Prefix: "[Ben] " then OK / changes /
-// undo, so the Chief's thread watch takes it as Ben's word.
-const THREADS = { OWB: ["TheLaughingGod1986/orbit-with-ben", 99], HOS: ["TheLaughingGod1986/history-of-science", 180] };
+// Chief's thread, OWB on orbit-with-ben #264 (rolled from #99 on 24 Oct 2026 when #99 hit the comment cap) and HOS on
+// history-of-science #180, with env BOARD_GH_TOKEN (a fine-grained GitHub token that can comment on those two repos;
+// never in the page or the repo). Prefix: "[Ben] " then OK / changes / undo, so the Chief's thread watch takes it as
+// Ben's word. Number kept in sync with scripts/thread.json.
+const THREADS = { OWB: ["TheLaughingGod1986/orbit-with-ben", 264], HOS: ["TheLaughingGod1986/history-of-science", 180] };
 
 function londonTime(iso) {
   try { return new Date(iso).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); }
