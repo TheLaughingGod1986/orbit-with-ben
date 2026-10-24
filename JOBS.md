@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0894 | mini | blocked | codex | – | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
 | J0903 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0906 | mini | claimed | gemini | 2026-10-24T19:22Z | video · HOS 007 s05 'Why Is It Called a Vaccine?' (J0898 PASS): re-wrap the title banner inside title-safe, gates, upload Private in the first free HOS Short slot after Fri 13 Nov |  |
-| J0908 | mini | open | – | – | thumb · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
+| J0908 | mini | open | – | – | for gemini · thumb · `gemini-agy` · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
 | J0910 | mini | blocked | gemini | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0911 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
