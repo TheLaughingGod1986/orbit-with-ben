@@ -34,6 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0917 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS 60% stayed-to-watch audit: upcoming non-public HOS Shorts + 3-Short baseline (read-only) |  |
 | J0918 | mini | claimed | gemini | 2026-10-25T01:20Z | for gemini · qa · `gemini-argon` · Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled) |  |
 | J0920 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0921 | mini | open | – | – | 029 thumbs · thumb · 029 Betelgeuse: release master from v03b + thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions, pinned comment) + dry run, park for Chief (Chief Final OK 24 Oct) | 6384887788 |
 
 Recently finished:
 
