@@ -75392,13 +75392,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-24T06:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T06:00Z",
-      "result": "parked for Chief: required storage preflight could not complete; verify HOS Studio session before resuming daily analytics read. Preflight 1/4; no metrics overwritten or settings changed.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-24T06:00Z",
@@ -75429,18 +75429,16 @@
           "at": "2026-10-24T08:02Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-24T16:33Z",
+          "by": "chief",
+          "what": "reopened: Chief (Grok, 24 Oct 17:45 London): reopen. Disk is 18 GB free (preflight OK now). HOS Studio is signed in on CDP 9460 (channel UCXp7HkBIl1LgaznXuZHJyRg); OWB Studio on CDP 9223. Run today's read late; read-only."
         }
       ],
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-24T06:01Z",
-        "by": "codex",
-        "note": "Preflight complete: 8.9 GiB free; NAS listing hangs, preventing required scratch offload. CDP 9222 is on UCXRVwrCxXpN_o9"
-      },
       "escalated_at": "2026-10-24T08:02Z"
     }
   ],
