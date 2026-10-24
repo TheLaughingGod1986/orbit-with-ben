@@ -2,13 +2,13 @@
 
 Generated from the 2026-10-24 snapshot by `npm run analytics:report`. Don't edit by hand.
 
-**15 subscribers · 8,367 views · 83 videos**
+**15 subscribers · 8,383 views · 84 videos**
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last 24 hours | +70 | 0 |
-| Last 7 days | +1,346 | +2 |
-| Last 30 days (YouTube Analytics) | +2,791 | +7 |
+| Last 24 hours | +902 | 0 |
+| Last 7 days | +2,111 | +2 |
+| Last 30 days (YouTube Analytics) | +2,857 | +7 |
 
 ## Top videos, last 24 hours
 
@@ -16,18 +16,20 @@ Public view-count change, snapshot 2026-10-23 to 2026-10-24.
 
 | Video | Format | Views | Share |
 |---|---|---:|---:|
-| [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://www.youtube.com/shorts/2e-giqFmfy8) | short | +55 | 78.6% |
-| [Are Saturn's Rings Younger Than Saturn?](https://www.youtube.com/shorts/82Ao0v5XiQI) | short | +6 | 8.6% |
-| [Could a Robot Survive Touching the Sun?](https://www.youtube.com/shorts/n_4XskX0yZk) | short | +3 | 4.3% |
-| [Your Last Clear Image Near a Neutron Star](https://www.youtube.com/shorts/o7ykyTDZKiE) | short | +2 | 2.9% |
-| [How Long Will Anything in Space Last?](https://www.youtube.com/watch?v=m09jUdwC5hk) | long | +1 | 1.4% |
-| [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://www.youtube.com/shorts/y-SPHQ0-VjQ) | short | +1 | 1.4% |
-| [Could a Robot Survive Falling Into Jupiter?](https://www.youtube.com/shorts/buaOI3QGm7U) | short | +1 | 1.4% |
-| [The Moon Gets 3.8 cm Farther Away Every Year](https://www.youtube.com/shorts/rFzqmi8RWCY) | short | +1 | 1.4% |
-| [Did You Know the Moon Is Leaving?](https://www.youtube.com/shorts/dQlOgsDGmtA) | short | -1 | -1.4% |
-| Other videos (74) | | 0 | 0.0% |
-| Not matched to a listed video | | +1 | 1.4% |
-| **Channel total, last 24 hours** | | **+70** | **100.0%** |
+| [Why Does a Day on Mercury Last Two of Its Years?](https://www.youtube.com/shorts/vlkj8RQKmH8) | short | +813 | 90.1% |
+| [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://www.youtube.com/shorts/2e-giqFmfy8) | short | +72 | 8.0% |
+| [Are Saturn's Rings Younger Than Saturn?](https://www.youtube.com/shorts/82Ao0v5XiQI) | short | +7 | 0.8% |
+| [Could a Robot Survive Touching the Sun?](https://www.youtube.com/shorts/n_4XskX0yZk) | short | +4 | 0.4% |
+| [Your Last Clear Image Near a Neutron Star](https://www.youtube.com/shorts/o7ykyTDZKiE) | short | +2 | 0.2% |
+| [How Long Will Anything in Space Last?](https://www.youtube.com/watch?v=m09jUdwC5hk) | long | +1 | 0.1% |
+| [Could a Robot Survive Falling Into Jupiter?](https://www.youtube.com/shorts/buaOI3QGm7U) | short | +1 | 0.1% |
+| [How Long Do Saturn's Rings Have Left?](https://www.youtube.com/watch?v=55AEQwvs36g) | long | +1 | 0.1% |
+| [The Moon Gets 3.8 cm Farther Away Every Year](https://www.youtube.com/shorts/rFzqmi8RWCY) | short | +1 | 0.1% |
+| [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://www.youtube.com/shorts/y-SPHQ0-VjQ) | short | -1 | -0.1% |
+| [Did You Know the Moon Is Leaving?](https://www.youtube.com/shorts/dQlOgsDGmtA) | short | -1 | -0.1% |
+| Other videos (73) | | 0 | 0.0% |
+| Not matched to a listed video | | +2 | 0.2% |
+| **Channel total, last 24 hours** | | **+902** | **100.0%** |
 
 YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
 
@@ -35,7 +37,7 @@ YouTube's channel view total and its per-video counts refresh at different times
 
 | Week of | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-10-19 (so far, to 10-21) | 1,008 | +303% | 2.1 | +242% | +2 | 6 |
+| 2026-10-19 (so far, to 10-22) | 1,108 | +333% | 2.2 | +240% | +2 | 7 |
 | 2026-10-12 | 439 | +180% | 0.9 | – | +1 | 5 |
 | 2026-10-05 | 157 | -80% | 0.3 | -90% | 0 | 3 |
 | 2026-09-28 | 798 | -24% | 2.7 | +12% | +3 | 5 |
@@ -52,7 +54,7 @@ YouTube's channel view total and its per-video counts refresh at different times
 
 | Month | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-10 (so far, to 10-21) | 2,023 | -58% | 5.3 | -45% | +4 | 17 |
+| 2026-10 (so far, to 10-22) | 2,123 | -56% | 5.4 | -44% | +4 | 18 |
 | 2026-09 | 5,589 | +134% | 11.4 | +22% | +7 | 37 |
 | 2026-08 | 2,386 | – | 9.3 | – | +4 | 28 |
 | 2026-07 (part) | 129 | – | 0.2 | – | 0 | 1 |
@@ -61,8 +63,8 @@ A period still running is compared with the same number of days at the start of 
 
 ## Where views come from (last 28 days)
 
-- **Shorts:** Shorts feed 79% · YouTube search 18% · Other YouTube pages 1% · Channel page 0% (2,215 views)
-- **Longs:** Browse features 83% · Suggested 5% · YouTube search 4% · Direct / unknown 3% (232 views)
+- **Shorts:** Shorts feed 80% · YouTube search 18% · Other YouTube pages 1% · Channel page 0% (2,307 views)
+- **Longs:** Browse features 82% · YouTube search 6% · Suggested 5% · Direct / unknown 3% (235 views)
 
 ## Where viewers leave (longs, lifetime)
 
@@ -72,7 +74,7 @@ A period still running is compared with the same number of days at the start of 
 |---|---:|---:|---:|---:|---:|---:|---:|---|
 | [How Long Will Anything in Space Last?](https://youtu.be/m09jUdwC5hk) | 3 | – | – | – | – | – | – | too few views |
 | [Is the Sun Getting Brighter?](https://youtu.be/h8HGfyShEHI) | 7 | – | – | – | – | – | – | too few views |
-| [How Long Do Saturn's Rings Have Left?](https://youtu.be/55AEQwvs36g) | 206 | 59% | 32% | 16% | 13% | 6% | 3% | lower |
+| [How Long Do Saturn's Rings Have Left?](https://youtu.be/55AEQwvs36g) | 207 | 59% | 32% | 16% | 13% | 6% | 3% | lower |
 | [Why You Can't Stand On Jupiter](https://youtu.be/-jmMROGoZCM) | 5 | – | – | – | – | – | – | too few views |
 | [What Happens When Andromeda Hits the Milky Way?](https://youtu.be/ojk-dfOpAmw) | 4 | – | – | – | – | – | – | too few views |
 | [Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone](https://youtu.be/2fsQcea-voM) | 5 | – | – | – | – | – | – | too few views |
@@ -88,18 +90,19 @@ A period still running is compared with the same number of days at the start of 
 
 | Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) | Feed share, day 1 | Top source (28 d) |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-10-23 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | short | 55 | +55 | +55 | 0 | 55 | – | – | – |
-| 2026-10-22 | [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | short | 89 | +6 | +89 | 0 | 44.5 | – | – | – |
-| 2026-10-21 | [How Long Will Anything in Space Last?](https://youtu.be/m09jUdwC5hk) | long | 3 | +1 | +3 | +2 | 1 | 1% | – | Direct / unknown |
-| 2026-10-21 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | short | 880 | +3 | +880 | +868 | 293.3 | 63% | 96% | Shorts feed |
-| 2026-10-20 | [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | short | 12 | 0 | +12 | +9 | 3 | 31% | 56% | Shorts feed |
-| 2026-10-19 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | short | 110 | +1 | +110 | +111 | 22 | 79% | 27% | YouTube search |
-| 2026-10-18 | [Is the Sun Getting Brighter?](https://youtu.be/h8HGfyShEHI) | long | 7 | 0 | +7 | +5 | 1.2 | 31% | – | YouTube search |
+| 2026-10-24 | [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | short | 813 | +813 | +813 | 0 | 813 | – | – | – |
+| 2026-10-23 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | short | 72 | +72 | +72 | 0 | 72 | – | – | – |
+| 2026-10-22 | [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | short | 90 | +7 | +90 | +83 | 45 | 56% | – | Shorts feed |
+| 2026-10-21 | [How Long Will Anything in Space Last?](https://youtu.be/m09jUdwC5hk) | long | 3 | +1 | +3 | +3 | 1 | 1% | – | YouTube search |
+| 2026-10-21 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | short | 881 | +4 | +881 | +878 | 293.7 | 62% | 95% | Shorts feed |
+| 2026-10-20 | [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | short | 12 | 0 | +12 | +12 | 3 | 31% | 56% | Shorts feed |
+| 2026-10-19 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | short | 108 | -1 | +108 | +112 | 21.6 | 78% | 26% | YouTube search |
+| 2026-10-18 | [Is the Sun Getting Brighter?](https://youtu.be/h8HGfyShEHI) | long | 7 | 0 | +7 | +7 | 1.2 | 24% | – | YouTube search |
 | 2026-10-17 | [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | short | 8 | 0 | +8 | +8 | 1.1 | 34% | 43% | YouTube search |
 | 2026-10-16 | [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | short | 161 | 0 | +94 | +161 | 20.1 | 61% | 89% | Shorts feed |
 | 2026-10-14 | [Could a Robot Survive Falling Into Jupiter?](https://youtu.be/buaOI3QGm7U) | short | 17 | +1 | +8 | +16 | 1.7 | 75% | 0% | YouTube search |
 | 2026-10-12 | [Saturn's Rings Are Already Falling](https://youtu.be/Cka7_TVVOUQ) | short | 53 | 0 | +1 | +53 | 4.4 | 110% | 81% | Shorts feed |
-| 2026-10-11 | [How Long Do Saturn's Rings Have Left?](https://youtu.be/55AEQwvs36g) | long | 206 | 0 | +2 | +206 | 15.8 | 13% | – | Browse features |
+| 2026-10-11 | [How Long Do Saturn's Rings Have Left?](https://youtu.be/55AEQwvs36g) | long | 207 | +1 | +3 | +206 | 15.9 | 13% | – | Browse features |
 | 2026-10-07 | [This Star Is 20 km Wide and Heavier Than the Sun](https://youtu.be/pL339HhjDwo) | short | 126 | 0 | +1 | +126 | 7.4 | 68% | 87% | Shorts feed |
 | 2026-10-05 | [Did You Know the Moon Is Leaving?](https://youtu.be/dQlOgsDGmtA) | short | 3 | -1 | 0 | +3 | 0.2 | 26% | 0% | YouTube search |
 | 2026-10-04 | [Why You Can't Stand On Jupiter](https://youtu.be/-jmMROGoZCM) | long | 5 | 0 | +1 | +5 | 0.3 | 9% | – | Suggested |
@@ -176,3 +179,22 @@ A period still running is compared with the same number of days at the start of 
 
 - 30-day video growth is YouTube Analytics' last 28 days until there are 30 days of snapshots.
 - YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact.
+
+## Shorts: stayed-to-watch 60%+ and average viewed 70%+
+
+Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, WATCH 45-60%, MISS under 45%. Average viewed: LOOP 100%+ (the aim), PASS 70%+, WATCH 50-70%, MISS under 50%. Under 100 Studio views is too few to judge; reads before 48 h are early. Rules: .cursor/rules/orbit-build-shorts.mdc -> "60% stayed-to-watch" and "70% average viewed".
+
+| Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
+|---|---:|---:|---:|---|---:|---|
+| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 10 h (early) | 837 | 32.2% | MISS | 73.4% | PASS |
+| [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 34 h (early) | 59 | 38.5% | too few to judge | 62.1% | too few to judge |
+| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 2 d | 90 | 14.1% | too few to judge | 53.3% | too few to judge |
+| [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 3 d | 881 | 31.6% | MISS | 62.3% | WATCH |
+| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 4 d | 12 | 25.0% | too few to judge | 30.9% | too few to judge |
+| [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | 5 d | 113 | 56.0% | WATCH | 78.4% | PASS |
+| [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | 7 d | 8 | 33.3% | too few to judge | 34.2% | too few to judge |
+| [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | 8 d | 161 | 25.3% | MISS | 60.8% | WATCH |
+| [Could a Robot Survive Falling Into Jupiter?](https://youtu.be/buaOI3QGm7U) | 10 d | 17 | 81.8% | too few to judge | 68.1% | too few to judge |
+| [Saturn's Rings Are Already Falling](https://youtu.be/Cka7_TVVOUQ) | 12 d | 53 | 33.3% | too few to judge | 110.3% | too few to judge |
+
+Stayed to watch: 0 of 4 judged Shorts at 60%+. Average viewed: 2 of 4 at 70%+.

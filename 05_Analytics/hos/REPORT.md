@@ -101,3 +101,19 @@ A period still running is compared with the same number of days at the start of 
 
 - 30-day video growth is YouTube Analytics' last 28 days until there are 30 days of snapshots.
 - YouTube rounds the public subscriber total to 3 significant figures; subscriber gains from YouTube Analytics are exact.
+
+## Shorts: stayed-to-watch 60%+ and average viewed 70%+
+
+Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, WATCH 45-60%, MISS under 45%. Average viewed: LOOP 100%+ (the aim), PASS 70%+, WATCH 50-70%, MISS under 50%. Under 100 Studio views is too few to judge; reads before 48 h are early. Rules: .cursor/rules/orbit-build-shorts.mdc -> "60% stayed-to-watch" and "70% average viewed".
+
+| Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
+|---|---:|---:|---:|---|---:|---|
+| [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 34 h (early) | 37 | 31.6% | too few to judge | 48.2% | too few to judge |
+| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 3 d | 160 | 38.6% | MISS | 89.1% | PASS |
+| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 4 d | 144 | 22.2% | MISS | 53.2% | WATCH |
+| [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | 5 d | 130 | 41.4% | MISS | 108.4% | LOOP |
+| [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | 6 d | 59 | 23.1% | too few to judge | 117.7% | too few to judge |
+| [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | 8 d | 1219 | 40.6% | MISS | 44.0% | MISS |
+| [Invisible life is still everywhere](https://youtu.be/qOZgess30h0) | 11 d | 168 | 25.2% | MISS | 39.8% | MISS |
+
+Stayed to watch: 0 of 5 judged Shorts at 60%+. Average viewed: 2 of 5 at 70%+.
