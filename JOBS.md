@@ -29,7 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0906 | mini | open | – | – | video · HOS 007 s05 'Why Is It Called a Vaccine?' (J0898 PASS): re-wrap the title banner inside title-safe, gates, upload Private in the first free HOS Short slot after Fri 13 Nov |  |
 | J0907 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB: retitle the 5 Nov Shorts to positive questions (J0900 PASS), titles only, read back |  |
 | J0908 | mini | open | – | – | thumb · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
-| J0909 | mini | open | – | – | listing · HOS J0899 changes 1-5 into the 006-010 packages (0 spend, no live edits) |  |
+| J0909 | mini | open | – | – | for gemini · listing · `gemini-argon` · HOS J0899 changes 1-5 into the 006-010 packages (0 spend, no live edits) |  |
 
 Recently finished:
 
