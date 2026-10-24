@@ -75546,6 +75546,11 @@
           "at": "2026-10-24T18:34Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting Daily Studio read for OWB and HOS"
+        },
+        {
+          "at": "2026-10-24T18:37Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Rebuilt reports and dashboard; verified all 106 fresh Studio rows merged (13 OWB + 4 HOS longs, 70 OWB + 19 HOS Shorts); CTR >= 4%: OWB 2/13, HOS 1/4"
         }
       ],
       "kind": "studio",
@@ -75553,12 +75558,30 @@
       "urgent": 0,
       "escalated_at": "2026-10-24T08:02Z",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-24T18:34Z",
+        "at": "2026-10-24T18:37Z",
         "by": "gemini",
-        "note": "Starting Daily Studio read for OWB and HOS"
-      }
+        "note": "Rebuilt reports and dashboard; verified all 106 fresh Studio rows merged (13 OWB + 4 HOS longs, 70 OWB + 19 HOS Shorts);"
+      },
+      "taskKeys": [
+        "OWB:001",
+        "OWB:002",
+        "OWB:003",
+        "OWB:004",
+        "OWB:005",
+        "OWB:006",
+        "OWB:007",
+        "OWB:013",
+        "OWB:019",
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
     },
     {
       "id": "J0904",
