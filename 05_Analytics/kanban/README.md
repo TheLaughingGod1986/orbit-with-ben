@@ -1,14 +1,18 @@
 # Studio Kanban
 
-Job and video progress (18 Oct 2026): the Now box and video rows use the same live queue and channel-qualified video
-links. Workers record the chosen video(s) with `jobs.py progress ... --films HOS:006` (or `OWB:028,OWB:029`) and a
-concrete `--note` after each step. The snapshot preserves those links and all terminal job states, so an absent job
-is never assumed done. Review is separate from approved film-stage progress. Plans older than 30 hours give way to
-current jobs and stage records; jobs with no video link remain visible outside the recorded video rows.
+**Simple per-video board (Ben, 24 Oct 2026):** https://studio-kanban.vercel.app shows one card per long/Short across
+five lanes — Upcoming · In progress · Changes requested · Ready for OK · Done on YouTube. Lane derivation lives in
+`scripts/video_tracker.py` (checks, `jobs/queue.json`, upload receipts, `film_briefs.json`). Optional mapping overrides:
+`video_overrides.json`. The previous job/swim-lane board stays at `/classic` (`studio_kanban.html`).
 
-Live board: https://studio-kanban.vercel.app (self-updating; see `scripts/board_publish.py` and `board_site/build.py`).
-The page is `studio_kanban.html`; its data is built by `scripts/kanban_snapshot.py --db-out` and published by the Mac
-mini to the `board-data` branch after every job change (including each `jobs.py progress` step) and checks every minute.
+Approve / Request changes still post `[Ben] OK/changes …` via `/api/checks` (OWB desk issue **#264**, HOS **#180**).
+
+Job and video progress (18 Oct 2026, classic board): the Now box and video rows use the same live queue and
+channel-qualified video links. Workers record the chosen video(s) with `jobs.py progress ... --films HOS:006` and a
+concrete `--note` after each step.
+
+Live data: `scripts/kanban_snapshot.py --db-out` → `scripts/board_publish.py` → `board-data` branch (`board.json` now
+includes a `tracker` section). Page deploys are separate (Chief after review).
 
 ## Channel Tracker web app (Ben, 10 Oct 2026)
 

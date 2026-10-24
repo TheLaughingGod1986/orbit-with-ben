@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Studio · videos</title>
+<style>
+:root {
+  --bg: #0f1419;
+  --panel: #1a222c;
+  --panel2: #222c38;
+  --ink: #f2f5f8;
+  --muted: #9aa7b5;
+  --line: #2c3846;
+  --orbit: #f0a35e;
+  --hos: #6eb5ff;
+  --flag: #ff6b6b;
+  --ok: #3ecf8e;
+  --ready: #f5d76e;
+  --changes: #ff9f6b;
+  --radius: 14px;
+  --pad: 14px;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+a { color: var(--hos); }
+header { margin-bottom: 14px; }
+header h1 { font-size: 1.35rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+header .sub { color: var(--muted); font-size: 0.85rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.filters button {
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  border-radius: 999px; padding: 8px 14px; font-size: 0.9rem; min-height: 40px;
+}
+.filters button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 600; }
+.board {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-bottom: 8px; -webkit-overflow-scrolling: touch;
+}
+.lane {
+  flex: 0 0 min(86vw, 320px); scroll-snap-align: start;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  display: flex; flex-direction: column; max-height: calc(100vh - 160px);
+}
+.lane h2 {
+  margin: 0; padding: 12px var(--pad) 8px; font-size: 0.95rem;
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--panel); z-index: 1;
+}
+.lane h2 .n { color: var(--muted); font-weight: 500; font-size: 0.85rem; }
+.lane[data-lane="changes"] h2 { color: var(--changes); }
+.lane[data-lane="ready"] h2 { color: var(--ready); }
+.lane[data-lane="done"] h2 { color: var(--ok); }
+.cards { padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.card {
+  background: var(--panel2); border: 1px solid var(--line); border-radius: 12px;
+  padding: 12px; display: flex; flex-direction: column; gap: 8px;
+}
+.card.flagged { border-color: var(--flag); box-shadow: inset 0 0 0 1px rgba(255,107,107,0.25); }
+.top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.badge {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 6px;
+}
+.badge.orbit { background: rgba(240,163,94,0.2); color: var(--orbit); }
+.badge.hos { background: rgba(110,181,255,0.18); color: var(--hos); }
+.badge.type { background: rgba(255,255,255,0.08); color: var(--muted); }
+.badge.ver { background: rgba(255,255,255,0.06); color: var(--ink); }
+.title { font-size: 1.05rem; font-weight: 650; line-height: 1.25; margin: 0; }
+.title .num { color: var(--muted); font-weight: 600; margin-right: 4px; }
+.line { margin: 0; font-size: 0.92rem; line-height: 1.35; color: var(--ink); }
+.meta { margin: 0; font-size: 0.8rem; color: var(--muted); }
+.flags { display: flex; flex-direction: column; gap: 4px; }
+.flag {
+  background: rgba(255,107,107,0.15); color: #ffc9c9; border-radius: 8px;
+  padding: 6px 8px; font-size: 0.82rem; font-weight: 600;
+}
+.notes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.notes li {
+  display: flex; gap: 8px; align-items: flex-start; font-size: 0.88rem; line-height: 1.3;
+  background: rgba(0,0,0,0.2); border-radius: 8px; padding: 8px;
+}
+.notes .box {
+  flex: 0 0 18px; height: 18px; margin-top: 1px; border: 2px solid var(--muted); border-radius: 4px;
+}
+.notes li.done .box { background: var(--ok); border-color: var(--ok); }
+.notes li.done { opacity: 0.65; text-decoration: line-through; }
+.notes .t { color: var(--changes); font-weight: 700; margin-right: 4px; white-space: nowrap; }
+.ready-tag {
+  display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 4px 8px;
+  border-radius: 6px; background: rgba(245,215,110,0.18); color: var(--ready);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+.actions button, .actions a.btn {
+  flex: 1 1 auto; min-height: 44px; border-radius: 10px; border: none;
+  font-size: 0.95rem; font-weight: 650; padding: 10px 12px; text-align: center;
+  text-decoration: none; cursor: pointer;
+}
+.actions .ok { background: var(--ok); color: #062414; }
+.actions .chg { background: var(--changes); color: #2a1200; }
+.actions .watch, .actions .yt { background: var(--panel); color: var(--ink); border: 1px solid var(--line); }
+.collapsed-toggle {
+  margin: 4px 10px 10px; border: 1px dashed var(--line); background: transparent;
+  color: var(--muted); border-radius: 8px; padding: 8px; font-size: 0.85rem;
+}
+.empty { color: var(--muted); font-size: 0.9rem; padding: 16px 8px; text-align: center; }
+footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
+footer a { color: inherit; }
+.modal-bg {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: flex;
+  align-items: flex-end; justify-content: center; z-index: 20; padding: 16px;
+}
+.modal {
+  background: var(--panel); border-radius: 16px 16px 12px 12px; width: min(480px, 100%);
+  padding: 16px; border: 1px solid var(--line);
+}
+.modal h3 { margin: 0 0 8px; }
+.modal textarea {
+  width: 100%; min-height: 120px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--bg); color: var(--ink); padding: 10px; font: inherit;
+}
+.modal .row { display: flex; gap: 8px; margin-top: 10px; }
+@media (min-width: 900px) {
+  .board { display: grid; grid-template-columns: repeat(5, 1fr); overflow: visible; }
+  .lane { flex: none; max-height: calc(100vh - 140px); min-width: 0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Studio videos</h1>
+  <div class="sub" id="asof">Loading…</div>
+  <div class="filters" id="filters"></div>
+</header>
+<div class="board" id="board"></div>
+<footer>
+  One card per video. Classic board: <a href="/classic">/classic</a> ·
+  <a href="/tracker">Channel Tracker</a>
+</footer>
+<script>
+/* VIDEO_TRACKER_BOOT */
+</script>
+</body>
+</html>

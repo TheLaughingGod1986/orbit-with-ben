@@ -1042,8 +1042,13 @@ def main(argv: list[str] | None = None) -> int:
         watch = watch_links(hos, owb, briefs)
         briefs = ben_handoffs(chief_reviews(route_steps(hos_job_steps(briefs, alljobs), alljobs)), watch)
         (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, **links}, ensure_ascii=False))
+        # Per-video five-lane tracker (Ben, 24 Oct 2026). Checks are empty here; board_publish re-derives with live ticks.
+        from video_tracker import build_videos
+        tracker = build_videos(hos=hos, owb=owb, briefs=briefs, jobs=alljobs, checks={}, watch=watch)
+        (a.db_out / "tracker.json").write_text(json.dumps(tracker, ensure_ascii=False))
         print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
-              f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')})")
+              f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')}), "
+              f"{a.db_out}/tracker.json ({len(tracker.get('videos') or [])} videos)")
         if not a.page:
             return 0
     if not a.page:

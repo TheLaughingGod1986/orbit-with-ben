@@ -23,7 +23,7 @@ Triggers (all on the Mini):
 Ben's buttons (Approve / Request changes / Undo, stored by the site's /api/checks): every run reads the store's small
 change stamp from the CDN and re-reads the ticks only when it moved (and hourly regardless), so a tap is on the board
 within one run, about a minute. Running every minute doesn't add Blob operations: the stamp is a CDN hit, and the
-list call stays hourly plus once per real tap (at most once a minute). This script never posts anywhere; the [Ben] comments on #99/#180 come from the site.
+list call stays hourly plus once per real tap (at most once a minute). This script never posts anywhere; the [Ben] comments on OWB #264 / HOS #180 come from the site.
 It never blocks or fails a job: the hook is fire-and-forget and every error here is logged and swallowed.
 
 Each section keeps the time its content last changed (`changedAt`), so the page header shows the real last change,
@@ -63,10 +63,11 @@ FULL_EVERY_S = 5 * 60     # a full rebuild at least this often even when no ref 
 
 OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
+              "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
               "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
 HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json"]
-SECTIONS = ("hos", "owb", "briefs", "credits")
+SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude"}
 
 
@@ -131,7 +132,22 @@ def build(out: pathlib.Path) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     subprocess.run([sys.executable, str(WT / "owb" / "scripts" / "kanban_snapshot.py"), "--hos", str(WT / "hos"),
                     "--db-out", str(out), *chief_args()], capture_output=True, text=True, timeout=300, check=True)
-    return {s: json.loads((out / f"{s}.json").read_text()) for s in SECTIONS}
+    docs = {s: json.loads((out / f"{s}.json").read_text()) for s in SECTIONS if (out / f"{s}.json").exists()}
+    if "tracker" not in docs:
+        docs["tracker"] = {"updatedAt": "", "lanes": [], "videos": []}
+    return docs
+
+
+def refresh_tracker(docs: dict, checks: dict) -> dict:
+    """Re-derive the five-lane tracker with Ben's live ticks (snapshot wrote it with checks={})."""
+    sys.path.insert(0, str(WT / "owb" / "scripts"))
+    try:
+        from video_tracker import build_from_docs
+        docs["tracker"] = build_from_docs(docs, checks=checks or {})
+    except Exception as e:  # noqa: BLE001 — a tracker failure must never block the board push
+        log(f"tracker not rebuilt: {e}")
+        docs.setdefault("tracker", {"updatedAt": "", "lanes": [], "videos": [], "error": str(e)[:200]})
+    return docs
 
 
 TRACKER_SRC = "05_Analytics/dashboard/data.json"
@@ -298,6 +314,7 @@ def run_once(a) -> int:
         return 0
     docs = build(STATE / "out")
     checks, checks_at, checks_meta = fetch_checks(prev, at, a.force, due=due)
+    docs = refresh_tracker(docs, checks)
     board, hashes = assemble(docs, prev, checks, at)
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current

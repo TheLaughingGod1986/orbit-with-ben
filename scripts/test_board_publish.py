@@ -19,7 +19,8 @@ def docs(job_status="open", heartbeat="2026-10-09T20:00:00Z"):
             "owb": {"updatedAt": "x", "films": [{"film": "027"}], "jobs": [{"id": "J1", "status": job_status}],
                     "lanes": {"mini": {"busy": 1, "heartbeat": {"at": heartbeat}}}},
             "briefs": {"updatedAt": "x", "films": {"027": "note"}},
-            "credits": {"pools": {"flow": {}}}}
+            "credits": {"pools": {"flow": {}}},
+            "tracker": {"updatedAt": "x", "lanes": [], "videos": []}}
 
 
 T0 = dt.datetime(2026, 10, 9, 20, 0, tzinfo=dt.timezone.utc)
@@ -92,15 +93,22 @@ class SiteBuild(unittest.TestCase):
         spec.loader.exec_module(mod)
         with tempfile.TemporaryDirectory() as d:
             mod.build(Path(d) / "dist")
-            html = (Path(d) / "dist" / "index.html").read_text()
-            self.assertIn("window.claude = { use:", html)
-            self.assertIn("dbApi = db.canWrite===false ? null : db;", html)
-            self.assertIn("board-data/board.json", html)
+            simple = (Path(d) / "dist" / "index.html").read_text()
+            classic = (Path(d) / "dist" / "classic.html").read_text()
+            # Home page is the five-lane per-video tracker (Ben, 24 Oct 2026)
+            self.assertIn("Studio videos", simple)
+            self.assertIn("Changes requested", simple)
+            self.assertIn("board-data/board.json", simple)
+            self.assertIn("/classic", simple)
+            # Classic board kept at /classic
+            self.assertIn("window.claude = { use:", classic)
+            self.assertIn("dbApi = db.canWrite===false ? null : db;", classic)
+            self.assertIn("board-data/board.json", classic)
             self.assertTrue((HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").exists())
-            self.assertIn('href="/tracker"', html)
+            self.assertIn('href="/tracker"', classic)
             version=json.loads((Path(d)/"dist/version.json").read_text())["version"]
-            self.assertIn(f'<meta name="studio-version" content="{version}">',html)
-            self.assertIn('src="/updater.js"',html)
+            self.assertIn(f'<meta name="studio-version" content="{version}">', simple)
+            self.assertIn('src="/updater.js"', simple)
             self.assertTrue((Path(d)/"dist/updater.js").exists())
             tracker=(Path(d)/"dist/tracker.html").read_text()
             self.assertIn(f'<meta name="studio-version" content="{version}">',tracker)
@@ -126,6 +134,7 @@ class SiteBuild(unittest.TestCase):
             self.assertTrue((dist / "static/tracker-180.png").exists())
         vercel = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
         self.assertIn({"source": "/tracker", "destination": "/tracker.html"}, vercel["rewrites"])
+        self.assertIn({"source": "/classic", "destination": "/classic.html"}, vercel["rewrites"])
 
     def test_daily_data_changes_do_not_trigger_code_update_loops(self):
         spec=importlib.util.spec_from_file_location("board_version_build",HERE.parent/"05_Analytics/kanban/board_site/build.py")
@@ -269,6 +278,10 @@ class ButtonStamp(unittest.TestCase):
         self.assertNotIn("@vercel/blob", js)
         self.assertIn("version, stampUrl", js)
         self.assertIn("/api/checks?stamp=1", js)
+        # 24 Oct 2026: OWB desk thread rolled from #99 (full) to issue #264; HOS stays #180
+        self.assertIn('OWB: ["TheLaughingGod1986/orbit-with-ben", 264]', js)
+        self.assertIn('HOS: ["TheLaughingGod1986/history-of-science", 180]', js)
+        self.assertNotIn(', 99]', js)
         # one post per real change, exactly as before, and only after the tick is saved
         self.assertIn("const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);", js)
         self.assertEqual(js.count("postToChief(b.id, saved ?"), 1)
