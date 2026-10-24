@@ -1,0 +1,55 @@
+{
+  "job": "J0892",
+  "uploads": [
+    {
+      "id": "hos-007-v03",
+      "source": "HOS UAT/007_The-First-Vaccine/hos_007_master_v03_PHONE.mp4",
+      "bytes": 107953693,
+      "sha256": "db612314a3ed83e5a498d9bc6e8090e5212c21618f1084969efd51467be953e2",
+      "upload_exit": 0
+    },
+    {
+      "id": "owb-029-v03b",
+      "source": "OWB UAT/029_Betelgeuse_full_rough_v03b_PHONE.mp4",
+      "bytes": 95903864,
+      "sha256": "9e6452e4b6459c5962c231fb037d79f205cebaec8bbae66f624774a1b82119b7",
+      "upload_exit": 0
+    }
+  ],
+  "diagnosis": {
+    "observed": "Both phone proxies were compressed,dataless before brctl download. Both had failed timestamps in local register. Publisher continued to push board data throughout.",
+    "limitation": "Exact earlier stderr unavailable: board_publish.build captures snapshot stderr and discards it on success; publish.log contains no matching upload error. Installed board-publish launchd output log is empty.",
+    "env": "The sparse board worktree currently has a symlink to main 07_Content-Ops/.env, created 23 Oct 16:13 local, so a currently missing .env is ruled out. No R2 service error was reproduced; both manual uploads exited 0.",
+    "recommendation": "Chief review/merge pending PR #262 for durable iCloud materialization and env handling. Do not infer one exact historical cause from failed timestamps alone."
+  },
+  "board": {
+    "commit": "6b055707",
+    "both_streams": true
+  },
+  "scratch": {
+    "destination": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-24/j0892-029-v02",
+    "checksum_verified": true,
+    "local_retained": "J0892 says never delete anything; current v03b and previous v03 untouched",
+    "log": "/Users/benjaminoats/_desk/logs/j0892-archive.log",
+    "exit_code": 0
+  },
+  "playback": [
+    {
+      "id": "hos-007-v03",
+      "watch_status": 302,
+      "redirect_r2": true,
+      "media_status": 206,
+      "content_type": "video/mp4",
+      "range_bytes": 1024
+    },
+    {
+      "id": "owb-029-v03b",
+      "watch_status": 302,
+      "redirect_r2": true,
+      "media_status": 206,
+      "content_type": "video/mp4",
+      "range_bytes": 1024
+    }
+  ],
+  "playback_note": "Browser User-Agent used for R2 byte-range checks; urllib default User-Agent returned 403."
+}
