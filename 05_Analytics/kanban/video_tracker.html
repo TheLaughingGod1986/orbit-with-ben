@@ -107,6 +107,32 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
   color: var(--muted); border-radius: 8px; padding: 8px; font-size: 0.85rem;
 }
 .empty { color: var(--muted); font-size: 0.9rem; padding: 16px 8px; text-align: center; }
+.strip { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; margin: 0 0 12px; display: flex; flex-direction: column; gap: 10px; }
+.strip h2 { margin: 0; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.strip .row { display: flex; flex-direction: column; gap: 8px; }
+.models { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.mchip { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; padding: 5px 10px; font-size: 0.85rem; font-weight: 650; border: 1px solid var(--line); background: var(--panel2); }
+.mchip .dot { font-weight: 800; }
+.mchip.green { border-color: rgba(62,207,142,0.5); } .mchip.green .dot { color: var(--ok); }
+.mchip.red { border-color: rgba(255,107,107,0.6); } .mchip.red .dot { color: var(--flag); }
+.mchip.amber { border-color: rgba(245,215,110,0.5); } .mchip.amber .dot { color: var(--ready); }
+.mmeta { color: var(--muted); font-size: 0.8rem; }
+.mmeta b { color: var(--ink); }
+.job { background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 5px; }
+.job.now { border-color: rgba(110,181,255,0.55); }
+.job .jtop { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.8rem; color: var(--muted); }
+.job .jid { font-weight: 700; color: var(--ink); }
+.job .jfilm { font-weight: 650; font-size: 0.98rem; line-height: 1.25; }
+.job .jtask { font-size: 0.88rem; line-height: 1.3; }
+.job .jnote { font-size: 0.8rem; color: var(--muted); }
+.bar { height: 10px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; position: relative; }
+.bar > i { display: block; height: 100%; background: var(--hos); border-radius: 999px; transition: width .4s; }
+.bar.indet > i { width: 35%; position: absolute; animation: indet 1.6s ease-in-out infinite; }
+@keyframes indet { 0% { left: -35%; } 100% { left: 100%; } }
+.nextlist { display: flex; flex-direction: column; gap: 8px; }
+@media (min-width: 900px) {
+  .strip .row.jobs { flex-direction: row; } .strip .row.jobs > * { flex: 1 1 0; min-width: 0; }
+}
 footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
 footer a { color: inherit; }
 .modal-bg {
@@ -135,6 +161,7 @@ footer a { color: inherit; }
   <div class="sub" id="asof">Loading…</div>
   <div class="filters" id="filters"></div>
 </header>
+<section class="strip" id="strip" aria-label="Now working"></section>
 <div class="board" id="board"></div>
 <footer>
   One card per video. Classic board: <a href="/classic">/classic</a> ·

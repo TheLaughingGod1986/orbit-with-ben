@@ -69,6 +69,11 @@ OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_
 HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json"]
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude"}
+CHIEF_STATE = pathlib.Path(os.environ.get("CHIEF_STATE", str(HOME / "_desk" / "state" / "chief")))
+# The board's Models row (Ben, 24 Oct 2026 23:40): a traffic light per worker plus voice and picture services.
+MODEL_ROWS = (("claude", "Claude"), ("codex", "Codex"), ("cursor", "Cursor"), ("gemini", "Gemini"),
+              ("elevenlabs", "ElevenLabs"), ("vertex", "Vertex/Flow"))
+MODEL_STALE_MIN = 60    # the relay re-checks its chain every 10-20 min; older than this reads amber (unknown)
 
 
 def now() -> dt.datetime:
@@ -95,6 +100,98 @@ def git(repo: pathlib.Path, *args: str, inp: str | None = None, timeout: int = 1
 
 def digest(obj) -> str:
     return hashlib.sha256(json.dumps(obj, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
+
+
+def _read_json(path: pathlib.Path):
+    try:
+        return json.loads(path.read_text())
+    except (OSError, ValueError):
+        return None
+
+
+def _when(s) -> dt.datetime | None:
+    try:
+        return dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+
+
+def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path | None = None,
+                  flags_file: pathlib.Path | None = None) -> dict:
+    """Traffic lights for the board's Models row from what the relay already records on the Mini (read-only):
+    ~/_desk/state/chief/{chain.json, current.json, down/*.json, heartbeat/*, runs.jsonl}, scripts/credit_flags.json and
+    live jobs blocked on a provider's credit. green = available, red = out of usage/credit or not running (the relay
+    routes round it), amber = no recent reading."""
+    state = state or CHIEF_STATE
+    flags_file = flags_file or (WT / "owb" / "scripts" / "credit_flags.json")
+    chain = _read_json(state / "chain.json") or {}
+    rows = {r.get("agent"): r for r in chain.get("rows") or [] if isinstance(r, dict)}
+    checked = _when(chain.get("at"))
+    fresh = bool(checked and (at - checked) <= dt.timedelta(minutes=MODEL_STALE_MIN))
+    flags = {}
+    for k, v in ((_read_json(flags_file) or {}).get("flags") or {}).items():
+        until = _when((v or {}).get("out_until"))
+        if until and until > at:
+            flags[k] = {"why": (v or {}).get("reason") or "out of credit", "until": iso(until)}
+    runs = {}
+    try:
+        lines = (state / "runs.jsonl").read_text().splitlines()[-400:]
+    except OSError:
+        lines = []
+    for line in lines:
+        try:
+            r = json.loads(line)
+        except ValueError:
+            continue
+        if r.get("worker"):
+            runs[r["worker"]] = r  # newest per worker wins
+    out = []
+    for key, label in MODEL_ROWS:
+        row = {"id": key, "name": label, "status": "amber", "why": "no recent reading", "until": "", "lastSeen": ""}
+        seen = None
+        try:
+            seen = _when((state / "heartbeat" / key).read_text().strip())
+        except OSError:
+            pass
+        row["lastSeen"] = iso(seen) if seen else ""
+        down = _read_json(state / "down" / f"{key}.json") or {}
+        down_until = _when(down.get("until"))
+        last = runs.get(key) or {}
+        last_at = _when(last.get("at"))
+        if key in flags:
+            row.update(status="red", why=flags[key]["why"], until=flags[key]["until"])
+        elif down and (down_until is None or down_until > at):
+            row.update(status="red", why=down.get("reason") or "marked down", until=iso(down_until) if down_until else "")
+        elif key in rows and not rows[key].get("up"):
+            row.update(status="red" if fresh else "amber", why=str(rows[key].get("why") or "down"))
+        elif last.get("out_of_usage") and last_at and at - last_at < dt.timedelta(hours=12):
+            row.update(status="red", why=f"last run out of usage ({last.get('job', '')})")
+        elif key in rows and rows[key].get("up"):
+            row.update(status="green" if fresh else "amber", why=str(rows[key].get("why") or "ready"))
+        elif last_at and at - last_at < dt.timedelta(hours=24) and last.get("exit") == 0:
+            row.update(status="green", why=f"ran {last.get('job', '')} on {last.get('model') or key}")
+        elif seen and at - seen < dt.timedelta(hours=6):
+            row.update(status="green", why="active in the last 6 h")
+        if key in ("elevenlabs", "vertex"):
+            pat = "eleven" if key == "elevenlabs" else ("vertex", "flow", "veo", "omni")
+            hit = next((v for k, v in flags.items() if any(t in k.lower() for t in ((pat,) if isinstance(pat, str) else pat))), None)
+            blocked = next((j for j in jobs or [] if j.get("status") == "blocked" and key == "elevenlabs" and
+                            "elevenlabs" in ((j.get("result") or "") + " " + ((j.get("last") or {}).get("what") or "")).lower()
+                            and any(w in ((j.get("result") or "") + ((j.get("last") or {}).get("what") or "")).lower()
+                                    for w in ("characters left", "credit", "quota", "reset"))), None)
+            if hit:
+                row.update(status="red", why=hit["why"], until=hit["until"])
+            elif blocked:
+                txt = (blocked.get("last") or {}).get("what") or blocked.get("result") or ""
+                row.update(status="red", why=f"{blocked.get('id')}: {txt.replace('blocked: ', '')[:120]}")
+            else:
+                row.update(status="amber", why="not tracked yet")
+        out.append(row)
+    cur = _read_json(state / "current.json") or {}
+    agent = cur.get("agent") or ""
+    chief = {"agent": agent, "name": NAMES.get(agent, agent.capitalize() if agent else ""), "acting": bool(agent and agent != "chief"),
+             "since": cur.get("since") or ""}
+    return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out}
 
 
 def stable(section: str, doc: dict) -> dict:
@@ -316,6 +413,10 @@ def run_once(a) -> int:
     checks, checks_at, checks_meta = fetch_checks(prev, at, a.force, due=due)
     docs = refresh_tracker(docs, checks)
     board, hashes = assemble(docs, prev, checks, at)
+    try:  # Models row + acting Chief (Ben, 24 Oct 23:40); never blocks the board push
+        board["models"] = models_status(at, (docs.get("owb") or {}).get("jobs") or [])
+    except Exception as e:  # noqa: BLE001
+        log(f"models not read: {e}")
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
