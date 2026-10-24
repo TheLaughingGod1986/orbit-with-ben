@@ -1,6 +1,6 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-10-24 17:55 London for Shorts scheduled in the next 25 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-10-24 23:15 London for Shorts scheduled in the next 25 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
@@ -22,3 +22,98 @@ Written by `gate_upcoming.py` at 2026-10-24 17:55 London for Shorts scheduled in
 | 2026-11-16 11:30 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/HZGTovJu_TQ) `HZGTovJu_TQ` | yes | PASS |
 | 2026-11-17 11:30 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/kKN8Ale42sE) `kKN8Ale42sE` | yes | PASS |
 | 2026-11-18 11:30 | [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/cwU_0WWeNZ4) `cwU_0WWeNZ4` | yes | PASS |
+
+## Details
+
+### dM1OgGPAYvw: report-only (would fail 60% stayed gate)
+
+- first cut at 4.20s > 3.0s (scene-change detect)
+
+### oyRcrFTYyDY: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.13 < 1.50) — use moving footage
+- first cut at 5.90s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay and i'll show you")
+
+### BbsyFrV8kCY: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 1.00 < 1.50) — use moving footage
+- first cut at 3.77s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
+
+### Jcuiy0a9BFI: report-only (would fail 60% stayed gate)
+
+- first cut > 3.0s (no scene change in first 10.0s)
+
+### RxErxlXim1Q: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.29 < 1.50) — use moving footage
+- first cut at 3.97s > 3.0s (scene-change detect)
+
+### XKlq0TK1OVA: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.41 < 1.50) — use moving footage
+- first cut at 4.00s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
+
+### YC65mdh6Hgg: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.08 < 1.50) — use moving footage
+- first cut at 4.90s > 3.0s (scene-change detect)
+
+### ZpEA8stoSPA: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 1.07 < 1.50) — use moving footage
+- first cut at 5.90s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
+
+### T9fVlG3CCzU: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.49 < 1.50) — use moving footage
+- first cut at 4.70s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
+
+### iyvWYFP_ETA: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.01 < 1.50) — use moving footage
+- first cut at 4.10s > 3.0s (scene-change detect)
+
+### RLSJm59OSzI: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.13 < 1.50) — use moving footage
+- first cut at 4.30s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
+
+### TtgHNLXfDSs: report-only (would fail 60% stayed gate)
+
+- first cut at 5.70s > 3.0s (scene-change detect)
+
+### N42gKBbD7tE: report-only (would fail 60% stayed gate)
+
+- first cut > 3.0s (no scene change in first 10.0s)
+
+### bSjWiCbB7pY: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 1.36 < 1.50) — use moving footage
+- first cut at 3.30s > 3.0s (scene-change detect)
+
+### gmzaCfJF1gA: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.64 < 1.50) — use moving footage
+- first cut at 5.90s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
+
+### HZGTovJu_TQ: report-only (would fail 60% stayed gate)
+
+- first cut at 4.80s > 3.0s (scene-change detect)
+
+### kKN8Ale42sE: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.33 < 1.50) — use moving footage
+- first cut at 4.60s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
+
+### cwU_0WWeNZ4: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.46 < 1.50) — use moving footage
+
