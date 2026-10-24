@@ -63,10 +63,12 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 
 ### Short (22–27 s, about 55–65 words)
 
-- **Two lines, then one hard fact.** Line 1 (5–7 words) is the familiar thing in danger, said in the first second. Line 2 is what they get if they stay.
+- **Two lines, then one hard fact.** Line 1 (5–7 words) is the familiar thing in danger, said in the first second. Line 2 bridges into a concrete number or mechanism (`02_Video-Projects/_template_NNN_Episode-Slug/10_Shorts/README.md`).
+- **Planet/star named in spoken sentence 1 (`0–2.5 s`) on moving video (Chief, J0900/J0907, 24 Oct 2026):** spoken sentence 1 (`0–2.5 s`) must name the planet, moon or star directly over moving picture — never start a lifted Short mid-paragraph on pronoun/anaphoric phrasing ("The rings look like…", "The mass is…") or over a pushed still (`82Ao0v5XiQI` 13.8% stayed vs `buaOI3QGm7U` 80.0% stayed).
+- **No `0.5 s` pauses or static zooms in `4–8 s` (Chief, J0900/J0907, 24 Oct 2026):** trim the sentence-1 VO pause at `4–5 s` to `<0.25 s` and cut at `2.8–4.5 s` to a fresh moving plate (`≤5 s` max hold) — never a `0.5 s` pause into a static crop-zoom hold in `4–8 s` (`n_4XskX0yZk` `−43.8 pp`).
 - **The first two seconds** (`FAMILIAR_DANGER_STRATEGY.md` → *The first two seconds*):
   1. start mid-action;
-  2. the named thing is on screen at frame 0, moving;
+  2. the named thing is on screen at frame 0, moving, and spoken sentence 1 names the planet/star within `0–2.5 s`;
   3. the first words are the claim;
   4. a visible change by about 1 s, with a sound effect on frame 0;
   5. a hook caption on frame 0 (2–4 words, cap height about 8–10% of frame);
