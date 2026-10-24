@@ -1,5 +1,5 @@
 {
-  "next_id": 923,
+  "next_id": 924,
   "jobs": [
     {
       "id": "J0001",
@@ -76865,6 +76865,33 @@
         }
       ],
       "kind": "listing"
+    },
+    {
+      "id": "J0923",
+      "title": "029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After the 029 Private upload (previous job), as J0894: Studio-only steps, none of which change privacy or schedule: 1) upload the en-GB captions as English (UK); 2) arm thumbnail-only Test & Compare with the Chief-passed A/B/C; 3) end screen over the last 20 s (subscribe + best-for-viewer video) and cards per the house checklist; 4) pinned comment from Pinned-Comments/ (if Studio won't post it on a private video, block this step until Sun 6 Dec 18:05 London and say so). Read back each in Studio, record in 11_Upload-Package/PACKAGE_UPLOAD_RESULT.md. If Studio needs a sign-in, block for Ben. Never change privacy or publishAt. Chief ruling HOS #180 6384887788.\nDisk (Mac mini ~6 GB free on 24 Oct): preflight df -h /; stop and block if free space is under 3 GB. Put scratch/intermediates on the NAS (/Volumes/data/mac-mini-archive/scratch/<job>/) when it is mounted and writable, else /private/tmp with encoded intermediates only. Delete, move or archive nothing; no Replace, nothing Public. £0.\n",
+      "ref": "6384887788",
+      "film": "",
+      "stage": "",
+      "after": "J0922",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-10-24T22:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T22:04Z",
+          "by": "grok",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],

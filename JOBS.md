@@ -36,6 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0920 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0921 | mini | open | – | – | 029 thumbs · thumb · 029 Betelgeuse: release master from v03b + thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions, pinned comment) + dry run, park for Chief (Chief Final OK 24 Oct) | 6384887788 |
 | J0922 | mini | open (after J0921) | – | – | 029 upload · listing · 029 Betelgeuse: Private upload of the release master for Sun 6 Dec 18:00 London (after Chief PASS on J0921), read back, record | 6384887788 |
+| J0923 | mini | open (after J0922) | – | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 
 Recently finished:
 
