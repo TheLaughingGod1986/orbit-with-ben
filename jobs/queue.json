@@ -75218,6 +75218,11 @@
           "at": "2026-10-24T02:01Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only listing check on HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-24T02:03Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: channel:audit PASS (47 videos, 0 errors: 23 public + 13 scheduled + 11 private duplicates/stubs)"
         }
       ],
       "kind": "listing",
@@ -75237,14 +75242,15 @@
         "HOS:003",
         "HOS:004",
         "HOS:005",
-        "HOS:007"
+        "HOS:007",
+        "HOS:099"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-24T02:01Z",
+        "at": "2026-10-24T02:03Z",
         "by": "gemini",
-        "note": "Starting read-only listing check on HOS live and scheduled videos"
+        "note": "channel:audit PASS (47 videos, 0 errors: 23 public + 13 scheduled + 11 private duplicates/stubs)"
       }
     }
   ],
