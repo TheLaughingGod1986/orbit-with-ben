@@ -57,3 +57,15 @@
 2. **First / Pinned Comment:** Data API `commentThreads.insert` returned 403 (`forbidden` on private scheduled video) and has no official pin endpoint. Post and pin `Pinned-Comments/gliese_pinned_v01.txt` in Studio Comments (`https://studio.youtube.com/video/F-jImX5h7ws/comments`).
 3. **End Screen + Cards:** Studio only — add subscribe + best next video.
 4. **Captions (`en-GB`):** Upload `Captions/gliese_long_v03_en-GB.srt` (126 cues) in Studio Subtitles.
+
+## 4. Studio finish — J0894, Codex, 24 October 2026
+
+Authorised by the J0894 job brief; £0 spent. Read back in the Orbit Studio browser (CDP 9223) after saving and reloading. No privacy or schedule controls were changed. Studio still shows **Scheduled**; the existing 29 November 18:00Z schedule remains the upload record above.
+
+- **Captions:** set this video's language to **English (United Kingdom)** (it was unset). Uploaded `Captions/gliese_long_v03_en-GB.srt` using **With timing**, then **Done**. Reopened the subtitle editor: English (United Kingdom), timed captions, first two cues “There is a star coming towards us.” / “So how close will it get, and should you worry?”. The supplied file has 126 cues; the editor virtualises rows, so only its visible cues were read back.
+- **Thumbnail test:** selected **Thumbnail only**, uploaded `gliese_thumb_A.jpg`, `gliese_thumb_B.jpg`, `gliese_thumb_C.jpg` to slots 1–3, selected **Set test**, then saved the details page. Reopening A/B testing after reload prompted **Run a new test? Your current test will be deleted.** Selected **Cancel** and left the existing test alone. No title test or title edit.
+- **End screen:** saved the 1 video + 1 subscribe template. Reopened editor confirms **Subscribe: Orbit With Ben** and **Video: Best for viewer**, with the selected element spanning **7:57:25–8:17:25** (last 20 seconds, Studio frame time). Studio warns that end screens will not display on private videos.
+- **Card:** saved **How Far Is the Nearest Star?** (`c5AdqQsnnys`, OWB 026) at **1:30:00**. Reopened Cards confirms that title and time. This related long is scheduled before 028. Optional teaser/custom copy left empty.
+- **Pinned comment: blocked until 29 November 2026 18:05 London.** Studio Comments shows no comments and no new-comment composer for this scheduled private video. The upload record already reports API 403. `Pinned-Comments/gliese_pinned_v01.txt` remains the exact copy to post and pin after go-public. No comment was posted.
+
+Next: Chief reviews this record/PR; after go-public, post and pin the supplied comment and read it back. This worker makes no final OK or PASS.
