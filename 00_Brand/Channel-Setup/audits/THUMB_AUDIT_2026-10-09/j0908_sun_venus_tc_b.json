@@ -1,0 +1,97 @@
+{
+  "job": "J0908",
+  "files_local": "/Users/benjaminoats/_desk/j0908 (Mini, not in git); combined sheet j0908_022_023_tc_AB_sheet.jpg",
+  "status": "parked for Chief: long T&C B",
+  "variants": [
+    {
+      "job": "J0908",
+      "video": "h8HGfyShEHI",
+      "title": "Is the Sun Getting Brighter?",
+      "A_live": "live_A_h8HGfyShEHI.jpg",
+      "A_source_repo": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png",
+      "A_text": "BURNING HARDER",
+      "B_new": "sun_tc_B_10pct-hotter_h8HGfyShEHI.jpg",
+      "B_text": "10% HOTTER",
+      "yellow": "10%",
+      "plates": [
+        "NASA SVS 11517 (SDO AIA 304 full solar disc with limb prominences at t=56.0s)",
+        "NASA Apollo 17 Blue Marble (as17-148-22727), lower-left scale reference"
+      ],
+      "sun_center": [
+        690,
+        434
+      ],
+      "sun_disc_px": 520,
+      "sun_top_y": 174,
+      "earth_center": [
+        176,
+        548
+      ],
+      "earth_px": 78,
+      "earth_scale": 0.03,
+      "band_h": 150,
+      "band_clear_of_sun": true,
+      "duration_badge_clear": true,
+      "near_black": 0.179,
+      "near_black_live": 0.283,
+      "saturation": 186.5,
+      "saturation_live": 174.7,
+      "kb": 228,
+      "score": {
+        "A_live": "PASS saturation 174.7, near-black 28%",
+        "B": "PASS saturation 186.5, near-black 18%"
+      },
+      "sheet": "sun_tc_B_10pct-hotter_AB_sheet.jpg",
+      "test_state": "Public since 18 Oct 2026; do not arm until Chief PASS",
+      "status": "parked for Chief: long T&C B",
+      "fails": []
+    },
+    {
+      "job": "J0908",
+      "video": "VBaYRPp85Sw",
+      "title": "What Happened to Venus?",
+      "A_live": "live_A_VBaYRPp85Sw.jpg",
+      "A_source_repo": "02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/abc_v03/venus_thumb_A_melts-lead.png",
+      "A_text": "MELTS LEAD",
+      "B_new": "venus_tc_B_earths-twin_VBaYRPp85Sw.jpg",
+      "B_text": "EARTH'S TWIN",
+      "yellow": "TWIN",
+      "plates": [
+        "NASA AS17-148-22727 (Apollo 17 Blue Marble Earth)",
+        "NASA S91-50688 (Magellan radar global mosaic of Venus, 0.95x Earth diameter)"
+      ],
+      "earth_center": [
+        349,
+        517
+      ],
+      "earth_d_px": 560,
+      "venus_center": [
+        945,
+        517
+      ],
+      "venus_d_px": 532,
+      "venus_to_earth": 0.95,
+      "planet_top_y": 237,
+      "band_clear_of_planets": true,
+      "duration_badge_clear": true,
+      "font_size": 119,
+      "cap_px": 85,
+      "cap_share": 0.118,
+      "min_gap_px": 82.0,
+      "tracking_px": -4,
+      "near_black": 0.193,
+      "near_black_live": 0.266,
+      "saturation": 154.1,
+      "saturation_live": 165.3,
+      "kb": 542,
+      "score": {
+        "A_live": "PASS saturation 165.3, near-black 27%",
+        "B": "PASS saturation 154.1, near-black 19%"
+      },
+      "sheet": "venus_tc_B_earths-twin_AB_sheet.jpg",
+      "test_state": "Scheduled Private for Sun 25 Oct 2026 18:00 London; do not arm until Chief PASS and after 023 is public",
+      "status": "parked for Chief: long T&C B",
+      "fails": []
+    }
+  ]
+}

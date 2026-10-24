@@ -1,8 +1,9 @@
-# Production status — 033 Why This Planet Has 21-Year Winters
+# Production status — 033 Why Uranus Has 21-Year Winters After Being Knocked Sideways
 
 | Field | Value |
 |-------|-------|
 | Slug | `033_Why-This-Planet-Has-21-Year-Winters` |
+| Working title | `Why Uranus Has 21-Year Winters After Being Knocked Sideways` |
 | Gate | not run (topic not locked; parked for Chief in J0363) |
 | Script review | PASS 95.2 / 100 (`uranus_21_year_winter_script_master_v01.md`, 1,338 spoken words / 1,365 reviewer words, 6 chapters, J0363) |
 | VO | pending (blocked until Chief topic lock, Gemini `facts` pass, `CLAUDE_QUOTE_CHECK` and script lock) |

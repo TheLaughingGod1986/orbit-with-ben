@@ -1,4 +1,4 @@
-# Sources — Why This Planet Has 21-Year Winters (033, v01)
+# Sources — Why Uranus Has 21-Year Winters After Being Knocked Sideways (033, v01)
 
 Spoken claims for the description and script (`uranus_21_year_winter_script_master_v01.md`). Not narration.
 

@@ -15,8 +15,8 @@ Copy into each project as:
 
 | Field | Value |
 |-------|-------|
-| ID / slug | |
-| Working title | |
+| ID / slug | `033_Why-This-Planet-Has-21-Year-Winters` |
+| Working title | `Why Uranus Has 21-Year Winters After Being Knocked Sideways` |
 | Date pulled | |
 | Credits used (approx) | |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA |

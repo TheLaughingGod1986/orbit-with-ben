@@ -1,6 +1,6 @@
 # Production checklist — Orbit With Ben
 
-**Episode:**  
+**Episode:** `033` — *Why Uranus Has 21-Year Winters After Being Knocked Sideways*  
 **Date:**  
 **Script review score:** ____ / 100 (must be 90 or more)
 

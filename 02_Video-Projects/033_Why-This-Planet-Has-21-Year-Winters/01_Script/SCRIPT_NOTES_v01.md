@@ -1,4 +1,6 @@
-# 033 Why This Planet Has 21-Year Winters — script v01 notes (J0363)
+# 033 Why Uranus Has 21-Year Winters After Being Knocked Sideways — script v01 notes (J0363 / J0908)
+
+- **Working title (updated in J0908, 24 Oct 2026):** `Why Uranus Has 21-Year Winters After Being Knocked Sideways`
 
 Drafted by Gemini (`gemini-argon`, stand-in worker) for J0363, 16 Oct 2026. **Draft only.** Selected from `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-15_J0294.md` (#2, tied at 24/30 with `032` Titan, and the direct closing hand-off at line 110 of locked `032` script `titan_landing_script_master_v01.md`), because `030`, `031` and `032` all have locked scripts (`030` v02 locked in J0227/J0222; `031` v03 locked in J0340 with VO job J0345 queued; `032` v01 locked in J0301 with VO job J0302 queued). The topic isn't locked (Chief locks it after the neighbour pass), and the script isn't locked (Chief's script review, then the Gemini `facts` pass and `CLAUDE_QUOTE_CHECK_v01.md` before any VO). No spend.
 
