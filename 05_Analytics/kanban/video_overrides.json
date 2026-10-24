@@ -1,5 +1,11 @@
 {
-  "_note": "Optional overrides for the per-video Studio tracker (Ben, 24 Oct 2026). Prefer fixing job taskKeys / film fields over adding rows here. jobFilms: force which video key(s) a job id attaches to. lanes: force a video into a lane id (upcoming|progress|changes|ready|done).",
+  "_note": "Optional overrides for the per-video Studio tracker (Ben, 24 Oct 2026). Prefer fixing job taskKeys / film fields over adding rows here. jobFilms: force which video key(s) a job id attaches to. lanes: force a video into a lane id (upcoming|progress|changes|ready|done). youtube: force a long's public video id (HOS 001-003 aired before PIPELINE.json; OWB 004 was retitled on YouTube).",
   "jobFilms": {},
-  "lanes": {}
+  "lanes": {},
+  "youtube": {
+    "HOS:001": "_C92tIJCk8A",
+    "HOS:002": "AL_-qlWko_g",
+    "HOS:003": "frP_YrNShsU",
+    "OWB:004": "ziKBPJ6FY0U"
+  }
 }

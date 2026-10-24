@@ -37,7 +37,7 @@
 
   // Mirror of scripts/video_tracker.py derive_lane (keep in sync for instant taps).
   function deriveLane(v, check) {
-    if (v.youtube && v.youtube.videoId) return "done";
+    if ((v.youtube && v.youtube.videoId) || v.lane === "done") return "done";
     const jobs = v.jobs || [];
     const unhandled = check && !check.handled;
     const changeCheck = unhandled && check.verdict === "change";

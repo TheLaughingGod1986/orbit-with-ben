@@ -87,6 +87,57 @@ class LaneRules(unittest.TestCase):
         self.assertTrue(any(f["kind"] == "stuck" for f in flags))
 
 
+class RealYouTubeState(unittest.TestCase):
+    """Board must match YouTube (Ben, 24 Oct 23:23): public read wins, old films and Shorts get real titles."""
+    NOW = datetime(2026, 10, 24, 22, 0, tzinfo=timezone.utc)
+    PUBLIC = {
+        "GHZDsiH7L7A": {"channel": "HOS", "title": "What's Really Inside an Atom?", "format": "long", "publishedAt": "2026-10-15T17:00:00Z"},
+        "_C92tIJCk8A": {"channel": "HOS", "title": "How Did We Discover Germs?", "format": "long", "publishedAt": "2026-09-03T17:00:00Z"},
+        "h8HGfyShEHI": {"channel": "OWB", "title": "Is the Sun Getting Brighter?", "format": "long", "publishedAt": "2026-10-18T17:00:00Z"},
+        "LCZRHUyTiq0": {"channel": "HOS", "title": "What Are Cathode Rays?", "format": "short", "publishedAt": "2026-10-23T10:30:00Z"},
+    }
+
+    def build(self, **kw):
+        args = dict(
+            hos={"films": [{"id": "004", "title": "What's Really Inside an Atom?", "air": "2026-10-15"}]},
+            owb=[{"film": "022", "title": "Is the Sun Getting Brighter?", "air": "2026-10-18"},
+                 {"film": "031", "title": "", "air": ""}],
+            briefs={}, jobs=[], checks={}, now=self.NOW, public=self.PUBLIC,
+            titles={"031": "What Happens When Earths Magnetic Field Flips"},
+            uploads={"OWB:022": [{"videoId": "h8HGfyShEHI", "privacyStatus": "private", "publishAt": "2026-10-18T17:00:00Z"}]},
+            overrides={"youtube": {"HOS:001": "_C92tIJCk8A"}},
+        )
+        args.update(kw)
+        return {v["key"]: v for v in vt.build_videos(**args)["videos"]}
+
+    def test_scheduled_that_aired_is_public_done(self):
+        v = self.build()["OWB:022"]
+        self.assertEqual((v["lane"], v["youtube"]["state"]), ("done", "live"))
+        self.assertTrue(v["line"].startswith("Public on YouTube since"))
+
+    def test_title_match_moves_aired_hos_long_to_done(self):
+        v = self.build()["HOS:004"]
+        self.assertEqual((v["lane"], v["youtube"]["videoId"]), ("done", "GHZDsiH7L7A"))
+
+    def test_forced_id_adds_missing_old_film(self):
+        v = self.build()["HOS:001"]
+        self.assertEqual((v["lane"], v["title"], v["number"]), ("done", "How Did We Discover Germs?", "001"))
+
+    def test_untitled_film_gets_folder_title(self):
+        self.assertEqual(self.build()["OWB:031"]["title"], "What Happens When Earths Magnetic Field Flips")
+
+    def test_public_short_without_record_gets_one_card(self):
+        by = self.build()
+        shorts = [v for v in by.values() if v["shortId"] == "LCZRHUyTiq0"]
+        self.assertEqual(len(shorts), 1)
+        self.assertEqual(shorts[0]["title"], "What Are Cathode Rays?")
+
+    def test_short_slug_titles_are_clean(self):
+        self.assertEqual(vt.clean_short_slug("friday_2026-10-16_last_star"), "Last star")
+        self.assertEqual(vt.clean_short_slug("mon30_comets"), "Comets")
+        self.assertEqual(vt.short_title_from_path({"file": "x/10_Shorts/wednesday_neutron_cover/a.mp4"}), "Neutron")
+
+
 class LiveMapping(unittest.TestCase):
     """Real queue + checks as of the 24 Oct rebuild brief."""
 

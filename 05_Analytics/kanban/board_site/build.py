@@ -101,6 +101,14 @@ def baked_tracker() -> dict:
         from video_tracker import build_videos
         hos_path = pathlib.Path("/tmp/hos-sparse/00_Brand/Channel-Setup/PIPELINE.json")
         if not hos_path.exists():
+            # On Vercel there is no HOS checkout: bake the Mini's last published tracker instead (offline fallback).
+            import urllib.request
+            url = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json"
+            with urllib.request.urlopen(url, timeout=15) as r:
+                live = json.loads(r.read().decode())
+            tracker = live.get("tracker") or {}
+            if tracker.get("videos"):
+                return tracker
             return {"updatedAt": "", "lanes": [], "videos": [], "note": "no HOS PIPELINE at build time"}
         hos = json.loads(hos_path.read_text())
         owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
