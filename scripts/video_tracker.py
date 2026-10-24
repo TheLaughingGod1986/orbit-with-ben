@@ -681,6 +681,11 @@ def _card(
                            "url": "", "publishAtLondon": ""}
 
     lane = derive_lane(youtube=youtube, check=check, jobs=jobs, brief=brief, override_lane=override_lane)
+    # Ready for OK means a cut Ben can play now (Ben, 25 Oct 00:03: "if I'm to UAT these videos I need a button to play").
+    # A future "your final OK on <date>" with nothing to watch yet is still work in progress, not ready.
+    no_cut = lane == "ready" and not (watch and watch.get("url")) and override_lane != "ready"
+    if no_cut:
+        lane = "progress" if jobs else "upcoming"
 
     notes = notes_from_check(check) if check and check.get("verdict") == "change" else []
     if not notes:
@@ -698,15 +703,18 @@ def _card(
         version = str(check["version"])
     if not version and brief.get("you"):
         version = version_of(brief["you"])
-    if not version:
-        for j in jobs:
-            version = version_of(j.get("title") or "")
-            if version:
-                break
+    if not version and watch and watch.get("version"):
+        version = str(watch["version"])  # the cut under review, never a script/Shorts version from a job title
     if not version and youtube:
         version = version_of(str((upload_rows or [{}])[0].get("file") or ""))
 
     who, line = waiting_on(lane, check, jobs, brief, youtube)
+    if no_cut:
+        due = brief.get("youShort") or brief.get("you") or ""
+        line = "No cut to watch yet" + (f" — {due[0].lower() + due[1:]}" if due else "") + "."
+        blocked = next((j for j in jobs if j.get("status") == "blocked"), None)
+        if blocked:
+            line += f" Held up: {(blocked.get('title') or '')[:90]}."
     if stale_schedule:
         line = (f"Was scheduled {youtube.get('publishAtLondon')}, but not Public in the last YouTube read "
                 f"({london_slot(public_at)}). Check Studio.")
