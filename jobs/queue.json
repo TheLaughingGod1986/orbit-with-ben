@@ -75426,6 +75426,11 @@
           "at": "2026-10-24T06:02Z",
           "by": "codex",
           "what": "blocked: parked for Chief: required storage preflight could not complete; verify HOS Studio session before resuming daily analytics read. Preflight 1/4; no metrics overwritten or settings changed."
+        },
+        {
+          "at": "2026-10-24T08:02Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "studio",
@@ -75437,7 +75442,8 @@
         "at": "2026-10-24T06:01Z",
         "by": "codex",
         "note": "Preflight complete: 8.9 GiB free; NAS listing hangs, preventing required scratch offload. CDP 9222 is on UCXRVwrCxXpN_o9"
-      }
+      },
+      "escalated_at": "2026-10-24T08:02Z"
     }
   ],
   "focus": [],
