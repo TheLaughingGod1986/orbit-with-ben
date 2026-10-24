@@ -245,7 +245,10 @@
   }
   function jobHtml(j, kind) {
     const f = filmOf(j);
-    const who = j.status === "claimed" ? agentName(j.by) : (j.routedTo || agentName(j.by) || (j.needs === "mini" ? "Mac mini worker" : j.needs || ""));
+    let who = j.status === "claimed" ? agentName(j.by) : (j.routedTo || agentName(j.by) || (j.needs === "mini" ? "Mac mini worker" : j.needs || ""));
+    // The queue's planned worker may be out of usage: say the relay will fall back rather than show a red worker as next.
+    const out = (((board && board.models) || {}).models || []).find(m => m.status === "red" && m.name.toLowerCase() === String(who).toLowerCase());
+    if (out && j.status !== "claimed") who = `${who} is out → next worker in its chain`;
     const model = j.model ? ` · ${esc(j.model)}` : "";
     let bar = "", note = "";
     if (kind === "now") {
