@@ -76470,13 +76470,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-24T20:42Z",
-      "eta": "2026-10-24T23:42Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "",
+      "result": "parked for Chief: HOS STAYED60 audit",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76527,6 +76527,11 @@
           "at": "2026-10-24T21:18Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed and pushed 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md (ALL CHECKS PASS)"
+        },
+        {
+          "at": "2026-10-24T21:18Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS STAYED60 audit"
         }
       ],
       "kind": "review",
