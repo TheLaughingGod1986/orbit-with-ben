@@ -77039,6 +77039,11 @@
           "at": "2026-10-24T23:03Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J0924; preflighting disk and inspecting HOS 006 master v05 assembly"
+        },
+        {
+          "at": "2026-10-24T23:26Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Diagnosed 1-frame card flash root cause (floating-point setpts + concat PTS drift), verified reframed #45 12_mouse_mint_v06.mp4 (0 floating twig, £0), wrote _build_master_v06.py and started detached tmux J0924-render"
         }
       ],
       "kind": "assembly",
@@ -77047,11 +77052,11 @@
         "HOS:006"
       ],
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 6,
-        "at": "2026-10-24T23:03Z",
+        "at": "2026-10-24T23:26Z",
         "by": "gemini",
-        "note": "Claimed J0924; preflighting disk and inspecting HOS 006 master v05 assembly"
+        "note": "Diagnosed 1-frame card flash root cause (floating-point setpts + concat PTS drift), verified reframed #45 12_mouse_mint_"
       }
     },
     {
