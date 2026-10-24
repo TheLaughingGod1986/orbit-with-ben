@@ -76648,13 +76648,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-24T21:20Z",
-      "eta": "2026-10-25T01:20Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "",
+      "result": "parked for Chief: review gate PR",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76705,6 +76705,11 @@
           "at": "2026-10-24T22:19Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Opened OWB PR #268 (69056ae06) and HOS PR #362 (22cacfcb); all tests pass"
+        },
+        {
+          "at": "2026-10-24T22:19Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review gate PR"
         }
       ],
       "kind": "qa",
