@@ -73297,6 +73297,11 @@
           "at": "2026-10-23T22:44Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: QA sweep complete (OWB 3a25e2bb4/9e1061676/2cc888fe4/fb14da14d/170c28a17/5270c29d3: 028 full_master_v03_pack picture_qa 0/65 PASS + polish_gate 0/65 PASS + music_gate PASS + sfx_level PASS, 028 shorts_v01_pack 3 Shorts mon30_comets 0/10 PASS / wed02_opening_testA 0/9 PASS / fri04_scale 0/7 PASS, 029 full_rough_v03b_pack & v03_pack picture_qa 0/84 PASS + polish_gate 0/84 PASS + music_gate PASS + sfx_level PASS, plus all earlier OWB packs & 41 Shorts PASS; HOS 7196b52a/958f1227/994d5a7b: 006 master_v05 & master_v04 picture_qa 0/96 PASS + polish_gate 0/96 PASS + music_gate PASS + sfx_level PASS, 007 Short s04_smallpox_test_v01 0/8 PASS, 007 full_join_v01 & master_v02 0/97 PASS, all 29 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)"
+        },
+        {
+          "at": "2026-10-24T01:24Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "qa",
@@ -73338,7 +73343,8 @@
         "at": "2026-10-23T22:44Z",
         "by": "gemini",
         "note": "Completed QA sweep across OWB and HOS: all newest packs have up-to-date gate outputs newer than their renders with 0 FAI"
-      }
+      },
+      "escalated_at": "2026-10-24T01:24Z"
     },
     {
       "id": "J0882",
