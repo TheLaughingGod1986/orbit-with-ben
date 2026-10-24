@@ -38,6 +38,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0922 | mini | open (after J0921) | – | – | 029 upload · listing · 029 Betelgeuse: Private upload of the release master for Sun 6 Dec 18:00 London (after Chief PASS on J0921), read back, record | 6384887788 |
 | J0923 | mini | open (after J0922) | – | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0924 | mini | open | – | – | 006 edit · assembly · URGENT HOS 006 Trees: Ben's 3 changes on master v05 (1:03 + 4:30 card flash, 4:02 floating twig) -> master v06, all card in-points checked, park for Chief | 6384888711 |
+| J0925 | mini | open | – | – | 007 edit · assembly · HOS 007 Vaccine: Ben's 3 changes on master v03 (0:38 figures through shelf, 2:40 lancet scratch not needle, 4:22 arm artefact) -> master v04, park for Chief | 6384888711 |
 
 Recently finished:
 
