@@ -74724,6 +74724,11 @@
           "at": "2026-10-24T00:14Z",
           "by": "codex",
           "what": "step 0 of 4 done: Queue claimed; prerequisite disk recovery before Short selection"
+        },
+        {
+          "at": "2026-10-24T00:16Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Disk prerequisite detached: j0897-archive; older 028 v01 copying to NAS with SHA-256 verification. Short selection/build not completed."
         }
       ],
       "kind": "assembly",
@@ -74731,10 +74736,13 @@
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-10-24T00:14Z",
+        "at": "2026-10-24T00:16Z",
         "by": "codex",
-        "note": "Queue claimed; prerequisite disk recovery before Short selection"
-      }
+        "note": "Disk prerequisite detached: j0897-archive; older 028 v01 copying to NAS with SHA-256 verification. Short selection/build"
+      },
+      "taskKeys": [
+        "OWB:028"
+      ]
     },
     {
       "id": "J0898",
