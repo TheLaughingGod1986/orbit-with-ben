@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Message channel between the Chief of Staff (via the Mini) and Claude: the studio thread named in scripts/thread.json
-(draft PR #99 until the first monthly rollover, 1 Nov 2026).
+(issue #264 since 24 Oct 2026; #99 hit the 2,500-comment limit).
 
   python3 scripts/owb_thread.py post "message text"        # posts as [Chief]
   python3 scripts/owb_thread.py post -f report.md           # post a file
