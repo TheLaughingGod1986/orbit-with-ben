@@ -76385,7 +76385,7 @@
     {
       "id": "J0917",
       "title": "HOS 60% stayed-to-watch audit: upcoming non-public HOS Shorts + 3-Short baseline (read-only)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "HOS 60% stayed-to-watch audit of the upcoming HOS Shorts that are not yet public (Chief, 24 Oct 2026). This is a read-only review.\n\nRules: HOS repo .cursor/rules/hos-build-shorts.mdc → \"60% stayed-to-watch\" (history-of-science PR #360).\n\nHOS baseline (Studio, 24 Oct 18:35Z): of the Shorts with 100+ views, the best are c2q7w0pgcn8 at 41.4% and 29bpGAI0wb8 at 40.6%; the worst is clV6E10NLPw at 22.2%. Start with a short note on what those three show in 0–1.5 s (frame-0 source, first words, first cut), as the baseline.\n\nThen, for every HOS Short that is scheduled private (HOS UPLOADS.json plus the HOS upcoming list, e.g. 5n7xFQRBUvI, -I_GHK-GcFs, 4WUs0beKn0A, and any in 006–010), record the six brief fields and give each rule PASS or FAIL. Write 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md in the HOS repo, with re-cut candidates by air date and a £0 fix for each (VO trim only, existing Veo/Flow clips, no new generation).\n\nHard rules: no Studio change, no upload, no Public, no Replace, no deletions, £0.\n\nEnd with: jobs.py block <id> --reason \"parked for Chief: HOS STAYED60 audit\" --git\n",
       "ref": "",
@@ -76405,9 +76405,23 @@
           "at": "2026-10-24T19:01Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-24T19:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1342 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J0918",
