@@ -76241,17 +76241,26 @@
           "at": "2026-10-24T21:52Z",
           "by": "codex",
           "what": "step 0 of 4 done: Inspect locked longs and existing Shorts; check disk before render"
+        },
+        {
+          "at": "2026-10-24T21:53Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Inventory complete: 007 Test B pair already built/scheduled; 008 has no completed long. Retain original 3-step plan from prior run."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
       "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-10-24T21:52Z",
+        "step": 1,
+        "of": 3,
+        "at": "2026-10-24T21:53Z",
         "by": "codex",
-        "note": "Inspect locked longs and existing Shorts; check disk before render"
-      }
+        "note": "Inventory complete: 007 Test B pair already built/scheduled; 008 has no completed long. Retain original 3-step plan from"
+      },
+      "taskKeys": [
+        "HOS:007",
+        "HOS:008"
+      ]
     },
     {
       "id": "J0913",
