@@ -1,5 +1,5 @@
 {
-  "next_id": 914,
+  "next_id": 915,
   "jobs": [
     {
       "id": "J0001",
@@ -76286,6 +76286,33 @@
         "by": "gemini",
         "note": "Completed QA sweep across OWB and HOS: all newest packs have up-to-date gate outputs newer than their renders with 0 FAI"
       }
+    },
+    {
+      "id": "J0914",
+      "title": "60% re-cut v02 (local only): standalone S2 Neptune oyRcrFTYyDY + S3 ISS XKlq0TK1OVA: frame-0 motion, drop 'Stay, and I'll show you', first cut ≤3 s",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "60% stayed-to-watch re-cuts, batch 1 (Chief, 24 Oct 2026; Ben's target is 60%+ stayed-to-watch on every Short). This is a local v02 render only.\n\nWhy: standalone S1 Mercury vlkj8RQKmH8 aired 24 Oct at 32.1% stayed (Studio). Its opening is the template every standalone Short shares: a grey NASA still with a slow push (PIA11351 1.00→1.04 over 5.5 s, top ~45% black), the setting said first (\"On Mercury, [0.33 s pause] one day lasts two years\", so the payoff words land at ~2.0 s), a meta-promise at ~2.2–3.2 s (\"Stay, and I'll show you how\"), a first cut at 5.5 s and a 3.0 s tail after the last word. The best Short with 100+ views, y-SPHQ0-VjQ (56.0%), opens on full-frame moving SDO video. Rules: .cursor/rules/orbit-build-shorts.mdc → \"60% stayed-to-watch\" (PR #266).\n\nShorts in this batch, by air date:\n- S2 Neptune oyRcrFTYyDY (Tue 27 Oct 11:30 London). Must be ready by Mon 26 Oct 12:00 London so Ben can decide on a swap.\n- S3 ISS sunrises XKlq0TK1OVA (Sat 31 Oct 11:30 London).\n\nFiles: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/ (SCRIPTS_v01.md, 06_Final-Exports/owb_sa_s{2,3}_*_v01_meta.json, _assemble_standalone_shorts_v01.py, vo_v01/trim/).\n\nFor each Short:\n1) VO, spending £0 (no new TTS). Cut the \"Stay, and I'll show you…\" sentence out of the existing trimmed VO with ffmpeg. Close the gap to a breath of 0.15 s or less. Keep the first spoken word at 0.15 s or earlier.\n2) Frame 0 must be moving payoff footage, full-bleed. Use public-domain NASA/JPL/SVS motion that is free to download (e.g. Voyager 2 Neptune approach or cloud-band animation; ISS Earth-terminator timelapse from the ISS crew-earth-observations video library), or a clip already on disk. Only if no motion exists at all: a fast move (≥15% scale or a clear pan inside 1.0 s) plus a visible event by 0.5 s. A still pushed ≤1.10 fails. The subject fills ≥60% of the frame.\n3) First cut by 3.0 s, every later plate held 4 s at most. Hook caption on frame 0 as now. Gap from last word to loop point 1.5 s or less. Matched loop cut back to the frame-0 picture (crossfade 0.3 s at most).\n4) Render owb_sa_s{2,3}_*_v02.mp4 next to v01. v01 stays untouched. Write a v02 meta.json with the six brief fields (frame-0 source and zoom, first-word onset, surprise-word time, first cut, last word→loop, meta-promise n). Make a frames sheet. Run gate_shorts_open.py check --air-date, polish_gate, music_gate and sfx_kit level. All must PASS.\n\nHard rules: £0 (no paid API, TTS or picture generation), no upload, no Studio change, no Public, no Replace, no deletions, no force-push. Commit only the v02 meta, gate text and frames sheet (media stays out of git, as now).\n\nEnd with: jobs.py block <id> --reason \"parked for Chief: S2/S3 v02 PASS; Ben to OK swap (new Private upload on the same slot, v01 kept private and unscheduled, nothing deleted)\" --git\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 300,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-24T19:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-24T19:01Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [],

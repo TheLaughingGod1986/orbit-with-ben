@@ -28,6 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0911 | mini | claimed | gemini | 2026-10-24T20:50Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0912 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0913 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J0914 | mini | open | – | – | video · 60% re-cut v02 (local only): standalone S2 Neptune oyRcrFTYyDY + S3 ISS XKlq0TK1OVA: frame-0 motion, drop 'Stay, and I'll show you', first cut ≤3 s |  |
 
 Recently finished:
 
