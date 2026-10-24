@@ -33,6 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0916 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 60% stayed-to-watch audit: 11 upcoming non-public OWB Shorts (read-only, 6 brief fields, re-cut list) |  |
 | J0917 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS 60% stayed-to-watch audit: upcoming non-public HOS Shorts + 3-Short baseline (read-only) |  |
 | J0918 | mini | claimed | gemini | 2026-10-25T01:20Z | for gemini · qa · `gemini-argon` · Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled) |  |
+| J0920 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
