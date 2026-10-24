@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0895 | mini | blocked | gemini | – | 028 upload · for gemini · assembly · `gemini-agy` · 028 Gliese 710: build 3 Shorts from SHORTS_PLAN_v01 (Mon 30 Nov comets / Wed 2 Dec opening Test A / Fri 4 Dec scale), gates, covers, park for Chief |  |
 | J0896 | mini | blocked | gemini | – | studio · HOS compilation: stop the 0-second stub Hmw4iMDfWFE going public 10 Dec, and a clearer £0 cover for uAomPaOBrM8 |  |
 | J0897 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0898 | mini | claimed | gemini | 2026-10-24T02:59Z | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J0898 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0899 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0900 | any | open | – | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
