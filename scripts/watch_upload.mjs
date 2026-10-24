@@ -7,6 +7,7 @@
 import { randomBytes } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { putWatchFile, r2Config } from "../05_Analytics/kanban/board_site/r2sign.js";
@@ -26,8 +27,12 @@ function envFileR2(text) {
   return out;
 }
 
+// Same places as kanban_snapshot.env_files(): this checkout, $ORBIT_REPO, then ~/YouTube/orbit-with-ben (board_publish.py
+// runs from a sparse worktree that has no .env of its own, J0888).
 let fromFile = {};
-try { fromFile = envFileR2(readFileSync(path.join(ROOT, "07_Content-Ops", ".env"), "utf8")); } catch { /* no .env here */ }
+for (const root of [ROOT, process.env.ORBIT_REPO, path.join(os.homedir(), "YouTube", "orbit-with-ben")].filter(Boolean)) {
+  try { fromFile = envFileR2(readFileSync(path.join(root, "07_Content-Ops", ".env"), "utf8")); break; } catch { /* next */ }
+}
 const r2 = r2Config({ ...fromFile, ...process.env });
 const data = await readFile(file);
 

@@ -799,13 +799,50 @@ R2_KEYS = ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_PUBL
 WATCH_RETRY_S = 6 * 3600   # a failed upload isn't tried again for this long (not a 90 MB upload every minute)
 
 
+def env_files() -> list[Path]:
+    """Where 07_Content-Ops/.env may be. board_publish.py runs this from a sparse worktree with no .env of its own
+    (J0888, 23 Oct 2026), so the main checkout's is tried too: $ORBIT_REPO, then ~/YouTube/orbit-with-ben.
+    scripts/watch_upload.mjs looks in the same places, in the same order."""
+    roots = [ROOT, Path(os.environ["ORBIT_REPO"]) if os.environ.get("ORBIT_REPO") else None,
+             Path.home() / "YouTube" / "orbit-with-ben"]
+    return [r / "07_Content-Ops" / ".env" for r in roots if r]
+
+
+def materialise(path: Path, wait_s: int = 300) -> bool:
+    """macOS evicts iCloud Drive files when the disk is low (J0888: the _PHONE copies were 'dataless' and Node's read
+    failed with error -11). Ask iCloud for the file and wait until its bytes are on disk. True when readable."""
+    import shutil, subprocess, time as _t
+    def local() -> bool:
+        try:
+            st = path.stat()
+        except OSError:
+            return False
+        return st.st_size > 0 and getattr(st, "st_blocks", 1) * 512 >= st.st_size * 0.9
+    if local():
+        return True
+    if not shutil.which("brctl"):
+        return False
+    subprocess.run(["brctl", "download", str(path)], capture_output=True, timeout=60)
+    end = _t.time() + wait_s
+    while _t.time() < end:
+        if local():
+            return True
+        _t.sleep(5)
+    return False
+
+
 def r2_ready(env_file: Path | None = None) -> bool:
     """The R2 keys watch_upload.mjs needs, from the environment or 07_Content-Ops/.env (23 Oct 2026: Blob suspended)."""
     if all(os.environ.get(k) for k in R2_KEYS):
         return True
-    try:
-        text = (env_file or ROOT / "07_Content-Ops" / ".env").read_text()
-    except OSError:
+    text = None
+    for f in ([env_file] if env_file else env_files()):
+        try:
+            text = f.read_text()
+            break
+        except OSError:
+            continue
+    if text is None:
         return False
     found = {m.group(1) for m in re.finditer(r"^\s*(?:export\s+)?(R2_[A-Z_]+)\s*=\s*\S", text, flags=re.M)}
     return all(k in found or os.environ.get(k) for k in R2_KEYS)
@@ -826,6 +863,10 @@ def auto_upload(wid: str, path: Path, rel: str) -> bool:
     if time() - float((cur.get("failed") or {}).get(wid, 0)) < WATCH_RETRY_S:
         return False
     import subprocess
+    if not materialise(path):
+        print(f"watch upload {wid}: {path.name} is still only in iCloud (not downloaded); trying again next run",
+              file=sys.stderr)
+        return False
     try:
         r = subprocess.run(["node", str(ROOT / "scripts" / "watch_upload.mjs"), wid, str(path)], capture_output=True,
                            text=True, timeout=900, cwd=str(ROOT / "05_Analytics" / "kanban" / "board_site"))
