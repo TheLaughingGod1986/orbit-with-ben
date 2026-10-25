@@ -77359,13 +77359,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T02:26Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-25T01:46Z",
-      "result": "parked for Chief: PASS sign-off on 2026-10-25 OWB live listing audit (10/10 public videos clean; 0 fixes needed, 05_Analytics/live_fixes/2026-10-25.md, commit 148105ebf)",
+      "result": "Chief PASS (Grok, 25 Oct 03:00 London) on the 2026-10-25 OWB live listing audit (148105ebf). The 10 newest public videos (longs m09jUdwC5hk + h8HGfyShEHI, 8 Shorts) match the channel's public list. Chief re-checked live pages: m09jUdwC5hk 6 chapters + Sources line, end screen channel + h8HGfyShEHI from 2837.8 s (of 2858 s); h8HGfyShEHI 6 chapters + Sources, end screen channel + REXYxuLOBoI from 498.7 s; 55AEQwvs36g end screen 2fsQcea-voM + channel + playlist from 539.1 s; Shorts 82Ao0v5XiQI -> 55AEQwvs36g and 2e-giqFmfy8 -> h8HGfyShEHI on the Related pill, descriptions carry the long's title + link. Mercury vlkj8RQKmH8 standalone (no Related, by rule). 0 fixes, nothing to change in Studio. Note only: older OWB Sources lines are citations without URLs (house style, accepted before); new longs carry DOI/arXiv links as in J0921.",
       "history": [
         {
           "at": "2026-10-25T01:46Z",
@@ -77406,6 +77406,11 @@
           "at": "2026-10-25T02:37Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PASS sign-off on 2026-10-25 OWB live listing audit (10/10 public videos clean; 0 fixes needed, 05_Analytics/live_fixes/2026-10-25.md, commit 148105ebf)"
+        },
+        {
+          "at": "2026-10-25T02:59Z",
+          "by": "chief",
+          "what": "done: Chief PASS (Grok, 25 Oct 03:00 London) on the 2026-10-25 OWB live listing audit (148105ebf). The 10 newest public videos (longs m09jUdwC5hk + h8HGfyShEHI, 8 Shorts) match the channel's public list. Chief re-checked live pages: m09jUdwC5hk 6 chapters + Sources line, end screen channel + h8HGfyShEHI from 2837.8 s (of 2858 s); h8HGfyShEHI 6 chapters + Sources, end screen channel + REXYxuLOBoI from 498.7 s; 55AEQwvs36g end screen 2fsQcea-voM + channel + playlist from 539.1 s; Shorts 82Ao0v5XiQI -> 55AEQwvs36g and 2e-giqFmfy8 -> h8HGfyShEHI on the Related pill, descriptions carry the long's title + link. Mercury vlkj8RQKmH8 standalone (no Related, by rule). 0 fixes, nothing to change in Studio. Note only: older OWB Sources lines are citations without URLs (house style, accepted before); new longs carry DOI/arXiv links as in J0921."
         }
       ],
       "kind": "listing",
@@ -77429,7 +77434,8 @@
       "taskKeys": [
         "OWB:021",
         "OWB:022"
-      ]
+      ],
+      "done_ref": "148105ebf"
     },
     {
       "id": "J0927",
@@ -77442,13 +77448,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T02:39Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-25T02:13Z",
-      "result": "parked for Chief: PASS sign-off on 2026-10-25 HOS live listing audit (48 videos, 0 errors; 23/23 public clean; 14 scheduled verified incl. newly uploaded 4WUs0beKn0A and Chief PASS on J0896 uAomPaOBrM8; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-25.md, commit 3ae18fe3)",
+      "result": "Chief PASS (Grok, 25 Oct 03:00 London) on the 2026-10-25 HOS live listing audit (3ae18fe3), with a count correction (HOS bc6dee91): Chief re-ran channel:audit, 48 videos 0 errors = 23 public (4 longs + 19 Shorts) + 15 scheduled (2 longs + 13 Shorts) + 10 private stubs, not 14/12/11; all 15 scheduled already have a row, so coverage was complete. Spot checks live: LCZRHUyTiq0 Related -> GHZDsiH7L7A; GHZDsiH7L7A 5 chapters + 6-work Sources, end screen channel + AL_-qlWko_g + playlist 518.7-524.7 s. Deferred items stay with their jobs: 5 005 Blood Shorts Related -> wwcjcFfC-5M after 29 Oct 18:00Z (J0280/J0241); 007 Shorts -I_GHK-GcFs + 4WUs0beKn0A Related + description link after the 007 long is up (J0875); uAomPaOBrM8 Studio end screen + Altered content before 10 Dec. 0 fixes now; nothing to change in Studio.",
       "history": [
         {
           "at": "2026-10-25T02:13Z",
@@ -77494,6 +77500,11 @@
           "at": "2026-10-25T02:46Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PASS sign-off on 2026-10-25 HOS live listing audit (48 videos, 0 errors; 23/23 public clean; 14 scheduled verified incl. newly uploaded 4WUs0beKn0A and Chief PASS on J0896 uAomPaOBrM8; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-25.md, commit 3ae18fe3)"
+        },
+        {
+          "at": "2026-10-25T02:59Z",
+          "by": "chief",
+          "what": "done: Chief PASS (Grok, 25 Oct 03:00 London) on the 2026-10-25 HOS live listing audit (3ae18fe3), with a count correction (HOS bc6dee91): Chief re-ran channel:audit, 48 videos 0 errors = 23 public (4 longs + 19 Shorts) + 15 scheduled (2 longs + 13 Shorts) + 10 private stubs, not 14/12/11; all 15 scheduled already have a row, so coverage was complete. Spot checks live: LCZRHUyTiq0 Related -> GHZDsiH7L7A; GHZDsiH7L7A 5 chapters + 6-work Sources, end screen channel + AL_-qlWko_g + playlist 518.7-524.7 s. Deferred items stay with their jobs: 5 005 Blood Shorts Related -> wwcjcFfC-5M after 29 Oct 18:00Z (J0280/J0241); 007 Shorts -I_GHK-GcFs + 4WUs0beKn0A Related + description link after the 007 long is up (J0875); uAomPaOBrM8 Studio end screen + Altered content before 10 Dec. 0 fixes now; nothing to change in Studio."
         }
       ],
       "kind": "listing",
@@ -77522,7 +77533,8 @@
         "at": "2026-10-25T02:46Z",
         "by": "gemini",
         "note": "Committed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-25.md (3ae18fe3); all checks pass; parking for Chief"
-      }
+      },
+      "done_ref": "3ae18fe3"
     }
   ],
   "focus": [],
