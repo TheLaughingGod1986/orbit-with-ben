@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/saturn_ten_metres_thin_v03.mp4",
+  "edge_floor": 0.0093,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s06",
+      "cut": 5,
+      "t": 17.28,
+      "source": "cassini_rings_120.mp4",
+      "why": [
+        "low detail: edge density 0.0078 < film p5 0.0093"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01",
+      "source": "cassini_rings_close_072.mp4",
+      "t": 1.3,
+      "std": 48.14,
+      "mean": 134.97,
+      "p95": 209.0,
+      "edge": 0.0847,
+      "hf": 16.37,
+      "lf": 34.63,
+      "std8": 39.19,
+      "edge8": 0.5331,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02",
+      "source": "cassini_rings_160.mp4",
+      "t": 4.23,
+      "std": 29.84,
+      "mean": 127.55,
+      "p95": 168.0,
+      "edge": 0.0301,
+      "hf": 10.15,
+      "lf": 22.35,
+      "std8": 24.66,
+      "edge8": 0.1957,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03",
+      "source": "cassini_saturn_260.mp4",
+      "t": 7.49,
+      "std": 71.11,
+      "mean": 109.75,
+      "p95": 215.0,
+      "edge": 0.012,
+      "hf": 6.11,
+      "lf": 69.74,
+      "std8": 69.92,
+      "edge8": 0.1537,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04",
+      "source": "cassini_rings_pale_344.mp4",
+      "t": 10.75,
+      "std": 56.62,
+      "mean": 179.78,
+      "p95": 238.0,
+      "edge": 0.0739,
+      "hf": 20.27,
+      "lf": 46.28,
+      "std8": 49.47,
+      "edge8": 0.2648,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05",
+      "source": "cassini_rings_039.mp4",
+      "t": 14.02,
+      "std": 64.81,
+      "mean": 123.47,
+      "p95": 195.0,
+      "edge": 0.083,
+      "hf": 12.59,
+      "lf": 60.99,
+      "std8": 62.02,
+      "edge8": 0.1748,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06",
+      "source": "cassini_rings_120.mp4",
+      "t": 17.28,
+      "std": 22.51,
+      "mean": 199.85,
+      "p95": 225.0,
+      "edge": 0.0078,
+      "hf": 8.57,
+      "lf": 18.37,
+      "std8": 18.9,
+      "edge8": 0.0241,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0078 < film p5 0.0093"
+      ]
+    },
+    {
+      "cut": 6,
+      "row": "s07",
+      "source": "cassini_rings_arc_376.mp4",
+      "t": 20.54,
+      "std": 75.03,
+      "mean": 92.86,
+      "p95": 238.0,
+      "edge": 0.1332,
+      "hf": 13.8,
+      "lf": 69.76,
+      "std8": 71.15,
+      "edge8": 0.2878,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "saturn_rings_loop_v03.mp4",
+      "t": 22.8,
+      "std": 40.33,
+      "mean": 135.27,
+      "p95": 198.0,
+      "edge": 0.0459,
+      "hf": 3.59,
+      "lf": 35.25,
+      "std8": 37.92,
+      "edge8": 0.4804,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
