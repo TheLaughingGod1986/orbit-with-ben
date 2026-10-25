@@ -80781,10 +80781,10 @@
       "stage": "",
       "after": "",
       "eta_min": 360,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-25T22:38Z",
-      "eta": "2026-10-26T04:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T16:50Z",
       "result": "",
@@ -80808,6 +80808,11 @@
           "at": "2026-10-25T22:59Z",
           "by": "cursor",
           "what": "step 1 of 6 done: code rock rendering in tmux j0954-build; log ~/_desk/logs/j0954-build.log; .done appears when gates and UAT/NAS copy finish"
+        },
+        {
+          "at": "2026-10-25T23:00Z",
+          "by": "cursor",
+          "what": "released: v11 build detached: tmux j0954-build, log ~/_desk/logs/j0954-build.log, done file ~/_desk/logs/j0954-build.done. Missing .done means still running: do not start a second copy. .done 0 means gates passed and master+_PHONE+sheet are on iCloud OWB UAT/030_apophis_short_v11 and NAS YouTube/orbit-with-ben/OWB UAT/030_apophis_short_v11; then commit sidecars, push, and block parked for Chief: BbsyFrV8kCY v11; Ben to OK swap. Nonzero .done is the fail code (11 rock, 12 assemble, 13 shorts gate, 14 picture_qa, 15 polish, 16 music, 17 sfx, 20 sha). Builders are dd94042e6. v10 and v05 untouched. GBP0. No upload."
         }
       ],
       "kind": "video",
