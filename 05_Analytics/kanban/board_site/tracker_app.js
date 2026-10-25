@@ -59,9 +59,26 @@
     return "upcoming";
   }
 
+  // A card for a job waiting on Ben (awaits_ben in the queue; video_tracker.py apply_ask): always Ready for OK with its
+  // own ask line and deadline, Short or long, uploaded or not. A tick on an older version doesn't count against it.
+  function applyAsk(v, m) {
+    const a = v.ask;
+    let c = m[v.checkId] || null;
+    if (c && a.version && c.version && c.version !== a.version) c = null;
+    const open = c && !c.handled;
+    let lane = "ready", readyFor = "Ben", line = a.line || v.line;
+    if (open && c.verdict === "change") { lane = "changes"; readyFor = ""; line = `You asked for changes on ${a.version || "this cut"}; ${a.job} is held.`; }
+    else if (open && c.verdict === "ok") { readyFor = "Chief"; line = `You OK'd ${a.version || "it"}. The Chief now runs ${a.job}.`; }
+    const notes = (c && c.verdict === "change" && Array.isArray(c.fixes)) ? c.fixes.map(f => ({ t: f.t || "", text: f.text || "", done: false })) : [];
+    const flags = (v.flags || []).filter(f => f.audience !== "chief" && f.kind !== "chief" && f.kind !== "stale" && (readyFor === "Ben" || f.kind !== "deadline"));
+    return Object.assign({}, v, { lane, readyFor, waitingOn: readyFor || "worker", line, notes, flags, okNote: "",
+      check: c ? { verdict: c.verdict, version: c.version, at: c.at, handled: !!c.handled } : null });
+  }
+
   function applyChecks(videos) {
     const m = checksMerged();
     return videos.map(v => {
+      if (v.ask) return applyAsk(v, m);
       const c = m[v.checkId] || null;
       let lane = deriveLane(v, c);
       // Ready for OK only with a cut to play (Ben, 25 Oct 00:03); otherwise it's still being made.
@@ -165,6 +182,7 @@
         note: raw,
         at: new Date().toISOString(),
       };
+      if (v.ask) Object.assign(doc, { job: v.ask.job, what: v.ask.what });
       local[v.checkId] = doc;
       bg.remove();
       render();
@@ -182,6 +200,7 @@
       note: "",
       at: new Date().toISOString(),
     };
+    if (v.ask) Object.assign(doc, { job: v.ask.job, what: v.ask.what });
     local[v.checkId] = doc;
     render();
     try { await postCheck(v.checkId, doc); }
@@ -196,7 +215,7 @@
       `<li class="${n.done ? "done" : ""}"><span class="box" aria-hidden="true"></span><span>${n.t ? `<span class="t">${esc(n.t)}</span>` : ""}${esc(n.text)}</span></li>`
     ).join("");
     const flagHtml = (v.flags || []).map(f => `<div class="flag">${esc(f.text)}</div>`).join("");
-    const showActions = v.lane === "ready" && v.readyFor === "Ben" && v.type === "long";
+    const showActions = v.lane === "ready" && v.readyFor === "Ben" && (v.type === "long" || !!v.ask);
     // Big Play button for UAT (Ben, 25 Oct 00:03): the exact cut under review via the board's /api/watch link (plays in
     // the browser), YouTube for Done. Review lanes without a link say so instead of hiding the button.
     const review = v.lane === "ready" || v.lane === "changes";
@@ -216,6 +235,7 @@
       <h3 class="title"><span class="num">${esc(v.number)}</span>${esc(v.title)}</h3>
       ${v.airText ? `<p class="meta">${v.lane === "done" ? esc(v.airText) : "Airs " + esc(v.airText)}</p>` : ""}
       <p class="line">${esc(v.line)}</p>
+      ${v.ask && v.ask.dueText && v.lane === "ready" && v.readyFor === "Ben" ? `<p class="meta"><b>OK by ${esc(v.ask.dueText)} London</b> · ${esc(v.ask.job)}</p>` : ""}
       <p class="meta">Waiting on: ${esc(v.waitingOn || "—")}</p>
       ${flagHtml ? `<div class="flags">${flagHtml}</div>` : ""}
       ${v.okNote ? `<div class="okline">✓ ${esc(v.okNote)}</div>` : ""}

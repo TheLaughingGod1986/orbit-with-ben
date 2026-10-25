@@ -453,6 +453,120 @@ def ok_note_for(lane: str, check: dict | None) -> str:
     return f"You OK'd {what}{on}. Nothing needed from you."
 
 
+# ---- Waiting on Ben: one explicit signal on the job (Ben, 25 Oct 2026 08:39: "the ones needed from me I can't see
+# them on the board"). A job that is held until Ben OKs something, or that has a Chief PASS and waits on his watch,
+# carries `awaits_ben` in jobs/queue.json (set with `jobs.py awaits <id> ...`). Every entry is one card in Ready for OK
+# with a Play link to its file and its deadline, whether or not the Short is uploaded yet. Nothing here guesses from
+# job titles. An entry is shown while its job is open/claimed/blocked, or, for a done job (a PASS waiting on Ben's
+# watch), until Ben's tick for that version has been handled by the Chief.
+AWAITS_FIELDS = ("what", "file", "version", "due", "airs", "ifNot", "card", "title", "channel", "number", "type")
+
+
+def ask_entries(alljobs: list[dict]) -> list[dict]:
+    """[{id, job, jobStatus, channel, number, title, type, what, file, version, due, airs, ifNot, card}] from every job
+    whose `awaits_ben` is set (a dict, or a list of dicts for a job that holds several cuts)."""
+    out = []
+    for j in alljobs:
+        raw = j.get("awaits_ben")
+        if not raw or j.get("status") not in LIVE_STATUSES | {"done"}:
+            continue
+        items = raw if isinstance(raw, list) else [raw]
+        items = [x for x in items if isinstance(x, dict) and not x.get("cleared")]
+        for n, x in enumerate(items, 1):
+            e = {k: str(x.get(k) or "") for k in AWAITS_FIELDS}
+            e["id"] = j["id"] + (f".{n}" if len(items) > 1 else "")
+            e["job"] = j["id"]
+            e["jobStatus"] = j.get("status") or ""
+            e["channel"] = (e["channel"] or ("HOS" if j.get("repo") == "hos" else "OWB")).upper()
+            e["number"] = e["number"] or str(j.get("film") or "")
+            e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
+            e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))
+            out.append(e)
+    return out
+
+
+def ask_check_id(e: dict) -> str:
+    return check_id(e["card"]) if e.get("card") else f"{e['channel']}-{e['id']}"
+
+
+def _london_short(iso: str) -> str:
+    t = _parse_iso(iso)
+    return t.astimezone(LONDON).strftime("%a %-d %b %H:%M") if t else ""
+
+
+def ask_line(e: dict) -> str:
+    due = _london_short(e.get("due") or "")
+    line = f"Your OK: {e.get('what') or 'watch this cut'}."
+    if due:
+        line += f" Needed by {due} London."
+    if e.get("ifNot"):
+        line += f" {e['ifNot'].rstrip('.')}."
+    return line
+
+
+def ask_live(e: dict, checks: dict) -> bool:
+    """Still asks Ben? A done job's entry ends once the Chief has handled Ben's tick on that version."""
+    if e.get("jobStatus") in LIVE_STATUSES:
+        return True
+    c = checks.get(ask_check_id(e)) or {}
+    same = not e.get("version") or not c.get("version") or str(c.get("version")) == e["version"]
+    return not (c and same and c.get("handled"))
+
+
+def apply_ask(card: dict, e: dict, checks: dict, now: datetime) -> dict:
+    """Put a card in Ready for OK for this entry. A tick on an older version (HOS 007's v03 change request) doesn't
+    count against the new cut."""
+    cid = ask_check_id(e)
+    c = checks.get(cid)
+    if c and e.get("version") and c.get("version") and str(c["version"]) != e["version"]:
+        c = None
+    unhandled = bool(c) and not c.get("handled")
+    lane, ready_for, line = "ready", "Ben", ask_line(e)
+    if unhandled and c.get("verdict") == "change":
+        lane, ready_for, line = "changes", "", f"You asked for changes on {e.get('version') or 'this cut'}; {e['job']} is held."
+    elif unhandled and c.get("verdict") == "ok":
+        ready_for, line = "Chief", f"You OK'd {e.get('version') or 'it'}. The Chief now runs {e['job']}."
+    flags = [f for f in card.get("flags") or [] if f.get("kind") not in ("deadline", "stuck")]
+    due = _parse_iso(e.get("due"))
+    if lane == "ready" and ready_for == "Ben" and due and now <= due <= now + timedelta(days=2):
+        flags.append({"kind": "deadline", "text": f"OK needed by {_london_short(e['due'])}"})
+    if lane == "ready" and not ((e.get("watch") or {}).get("url")):
+        flags.append({"kind": "nofile", "text": f"Play link missing: {e.get('file') or 'no file named'}"})
+    card.update(lane=lane, readyFor=ready_for, waitingOn=ready_for or "worker", line=line, flags=flags,
+                version=e.get("version") or card.get("version") or "", checkId=cid, okNote="", collapsed=False,
+                watch=e.get("watch") or card.get("watch"),
+                ask={k: e.get(k, "") for k in ("id", "job", "what", "due", "file", "version", "ifNot")},
+                check=({"verdict": c.get("verdict"), "version": c.get("version"), "at": c.get("at"),
+                        "handled": bool(c.get("handled"))} if c else None))
+    card["ask"]["dueText"] = _london_short(e.get("due") or "")
+    card["ask"]["line"] = ask_line(e)
+    return card
+
+
+def ask_card(e: dict) -> dict:
+    """A card of its own for an entry with no existing card (a Short not uploaded yet, a re-cut swap)."""
+    airs = e.get("airs") or ""
+    return {"key": f"{e['channel']}:ASK:{e['id']}", "checkId": ask_check_id(e), "channel": e["channel"],
+            "number": e.get("number") or "", "title": e.get("title") or e.get("what") or e["id"], "type": e["type"],
+            "version": e.get("version") or "", "air": airs[:10], "airText": london_slot(airs) if airs else "",
+            "lane": "ready", "line": "", "waitingOn": "Ben", "readyFor": "Ben", "notes": [], "flags": [], "okNote": "",
+            "youtube": None, "watch": e.get("watch"), "jobs": [{"id": e["job"], "status": e.get("jobStatus"), "title": "",
+            "by": "", "kind": ""}], "check": None, "shortId": "", "parent": "", "collapsed": False}
+
+
+def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime) -> None:
+    by_key = {v["key"]: v for v in videos}
+    for e in asks or []:
+        if not ask_live(e, checks):
+            continue
+        card = by_key.get(e.get("card") or "")
+        if card is None:
+            card = ask_card(e)
+            videos.append(card)
+            by_key[card["key"]] = card
+        apply_ask(card, e, checks, now)
+
+
 def flags_for(
     *,
     key: str,
@@ -511,6 +625,7 @@ def build_videos(
     now: datetime | None = None,
     public: dict | None = None,
     titles: dict | None = None,
+    asks: list[dict] | None = None,
 ) -> dict:
     """Return {updatedAt, lanes, videos} for board/tracker."""
     now = now or datetime.now(timezone.utc)
@@ -647,7 +762,11 @@ def build_videos(
         else:
             v["collapsed"] = False
 
-    videos.sort(key=lambda v: (LANES.index(v["lane"]), v.get("air") or "9999", v["key"]))
+    # Jobs waiting on Ben (awaits_ben on the job): their cards go to Ready for OK, soonest deadline first.
+    add_asks(videos, asks or [], checks, now)
+
+    videos.sort(key=lambda v: (LANES.index(v["lane"]), 0 if v.get("ask") else 1, (v.get("ask") or {}).get("due") or "9999",
+                               v.get("air") or "9999", v["key"]))
     counts = {lane: sum(1 for v in videos if v["lane"] == lane and not v.get("collapsed")) for lane in LANES}
     return {
         "updatedAt": now.astimezone(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
@@ -805,6 +924,14 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
             live_jobs = [j for j in json.loads(qpath.read_text())["jobs"] if j.get("status") in LIVE_STATUSES]
         except (OSError, ValueError, KeyError):
             pass
+    # The snapshot resolved each awaits_ben entry's Play link (signed) into briefs.json "asks"; without it (tests,
+    # elsewhere) fall back to the queue's entries with no link.
+    asks = briefs_doc.get("asks") if isinstance(briefs_doc, dict) and isinstance(briefs_doc.get("asks"), list) else None
+    if asks is None and qpath.exists():
+        try:
+            asks = ask_entries(json.loads(qpath.read_text())["jobs"])
+        except (OSError, ValueError, KeyError):
+            asks = []
     return build_videos(
         hos=hos if "films" in hos else {"films": []},
         owb=owb,
@@ -813,6 +940,7 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
         checks=checks or {},
         watch=briefs_doc.get("watch") or {},
         overrides=overrides,
+        asks=asks or [],
     )
 
 

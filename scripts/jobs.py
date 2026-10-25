@@ -388,6 +388,32 @@ def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     log(job, at, agent, "handed back" + (": " + note if note else ""))
 
 
+def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: str = "", version: str = "", due: str = "",
+              airs: str = "", if_not: str = "", card: str = "", title: str = "", number: str = "", vtype: str = "",
+              add: bool = False, clear: bool = False) -> None:
+    """Mark a job as waiting on Ben (Ben, 25 Oct 2026: every cut he has to OK shows on the board, with Play and its
+    deadline). `awaits_ben` is the one signal the Studio Kanban builds Ready for OK cards from (video_tracker.py
+    ask_entries); scripts/board_check.py checks every entry reached the published board. --add appends another cut to
+    the same job (J0937 holds three Shorts); --clear removes the signal (Ben answered, or the hold was dropped)."""
+    if clear:
+        job.pop("awaits_ben", None)
+        log(job, at, agent, "no longer waits on Ben")
+        return
+    if not what or not file:
+        raise ValueError("awaits needs --what (what Ben is OKing) and --file (the cut to play)")
+    entry = {"what": what, "file": file}
+    for k, v in (("version", version), ("due", parse_not_before(due) if due else ""), ("airs", parse_not_before(airs) if airs else ""),
+                 ("ifNot", if_not), ("card", card), ("title", title), ("number", number), ("type", vtype)):
+        if v:
+            entry[k] = v
+    cur = job.get("awaits_ben")
+    cur = cur if isinstance(cur, list) else ([cur] if isinstance(cur, dict) else [])
+    job["awaits_ben"] = (cur + [entry]) if add else [entry]
+    if len(job["awaits_ben"]) == 1:
+        job["awaits_ben"] = job["awaits_ben"][0]
+    log(job, at, agent, f"waits on Ben: {what}" + (f" (by {due} London)" if due else ""))
+
+
 def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     if job["status"] == "done":
         raise ValueError(f"{job['id']} is already done")
@@ -578,6 +604,21 @@ def main(argv=None) -> int:
         if name == "reroute":
             p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
             p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
+    aw = sub.add_parser("awaits", help="mark a job as waiting on Ben's OK/watch: a Ready for OK card with Play + deadline")
+    aw.add_argument("id")
+    aw.add_argument("--agent", default="")
+    aw.add_argument("--what", default="", help="what Ben is OKing, in plain words, e.g. 'swap the 027 Short to v05'")
+    aw.add_argument("--file", default="", help="the cut to play: iCloud path from CloudDocs ('OWB UAT/...mp4'), or absolute")
+    aw.add_argument("--version", default="", help="the cut's version, e.g. v05 (Ben's tick is matched on it)")
+    aw.add_argument("--due", default="", help='"YYYY-MM-DD HH:MM" London: Ben\'s OK is needed by then')
+    aw.add_argument("--airs", default="", help='"YYYY-MM-DD HH:MM" London: when it airs, if scheduled')
+    aw.add_argument("--if-not", dest="if_not", default="", help="what happens with no OK by the deadline")
+    aw.add_argument("--card", default="", help="an existing board card to move, e.g. HOS:007 (longs); else a new card")
+    aw.add_argument("--title", default="", help="card title (new cards)")
+    aw.add_argument("--number", default="", help="film number or S2 etc. shown on the card")
+    aw.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
+    aw.add_argument("--add", action="store_true", help="add another cut to this job's list instead of replacing it")
+    aw.add_argument("--clear", action="store_true", help="the job no longer waits on Ben")
     w = sub.add_parser("watch", help="JSON for Claude's 2-hourly check: is the Mini quiet, what waits on Ben")
     w.add_argument("--quiet-hours", type=float, default=3)
     fo = sub.add_parser("focus", help="the film(s) every agent works on first, e.g. `focus 025`; no films clears it")
@@ -669,6 +710,10 @@ def main(argv=None) -> int:
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "schedule":
                 do_schedule(job, args.agent or "claude", args.not_before, at, args.reset)
+            elif args.cmd == "awaits":
+                do_awaits(job, args.agent or "chief", at, what=args.what, file=args.file, version=args.version, due=args.due,
+                          airs=args.airs, if_not=args.if_not, card=args.card, title=args.title, number=args.number,
+                          vtype=args.vtype, add=args.add, clear=args.clear)
             elif args.cmd == "cancel":
                 do_cancel(job, args.agent or "claude", args.note, at)
             elif args.cmd == "handback":

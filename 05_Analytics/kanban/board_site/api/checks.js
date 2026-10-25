@@ -29,12 +29,16 @@ function londonTime(iso) {
 
 export function benLine(id, doc, prev) {
   const [ch, film] = String(id).split("-");
-  if (!THREADS[ch] || !/^(\d{3}|S\d{1,2})$/.test(film || "")) return null;   // S1..S8 = the standalone Shorts (Ben, 15 Oct)
-  const what = `${film}${(doc || prev || {}).version ? " " + (doc || prev).version : ""}`;
+  // S1..S8 = the standalone Shorts (Ben, 15 Oct); J0940 / J0937.2 = a job waiting on Ben (awaits_ben, 25 Oct 2026)
+  if (!THREADS[ch] || !/^(\d{3}|S\d{1,2}|J\d{3,5}(\.\d{1,2})?)$/.test(film || "")) return null;
+  const d0 = doc || prev || {};
+  const about = d0.what ? ` (${String(d0.what).slice(0, 200)})` : "";
+  const what = `${film}${d0.version ? " " + d0.version : ""}${about}`;
   const tail = `\n\n(Studio Kanban button, ${londonTime((doc && doc.at) || new Date().toISOString())} London)`;
   if (!doc) return prev && !prev.handled ? `[Ben] undo ${what}: ignore my ${prev.verdict === "ok" ? "OK" : "change request"} from the board.${tail}` : null;
   if (doc.handled) return null;
-  if (doc.verdict === "ok") return `[Ben] OK ${what}: watched it, looks good.${tail}`;
+  const job = /^J/.test(film) ? `\n\nRelease held job ${String(d0.job || film.split(".")[0]).slice(0, 12)}.` : "";
+  if (doc.verdict === "ok") return `[Ben] OK ${what}: watched it, looks good.${job}${tail}`;
   const fx = Array.isArray(doc.fixes) ? doc.fixes : [];
   const list = fx.map((f, i) => `${i + 1}. ${f.t ? f.t + " " : ""}${String(f.text || "").slice(0, 1000)}`).join("\n") || String(doc.note || "").slice(0, 4000);
   return `[Ben] changes ${what}:\n${list}${tail}`;
