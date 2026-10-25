@@ -79025,10 +79025,10 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-25T21:41Z",
-      "eta": "2026-10-26T07:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
       "result": "",
@@ -79052,6 +79052,11 @@
           "at": "2026-10-25T21:58Z",
           "by": "cursor",
           "what": "step 0 of 6 done: mon09 v02 VO+picture cut (90 at 1.38s, couldnt at 14.82s, 17.6s). Stopped: mars-robot_score_bed_v02_full.mp3 missing, no new ElevenLabs bed. v01 untouched."
+        },
+        {
+          "at": "2026-10-25T21:58Z",
+          "by": "cursor",
+          "what": "released: mon09 v02 picture+VO stems in /private/tmp/j0935_mon09_v02 (exit 3). 90 at 1.38s, couldnt at 14.82s, 17.6s. BLOCKER: 05_Music/mars-robot_score_bed_v02_full.mp3 is not on disk, NAS, or UAT. Do not generate a new ElevenLabs bed (credit hold, Chief OK). 026 bed mp3 also absent. v01 untouched. No upload. Assembler: 10_Shorts/mon09_night_cold/_assemble_mon09_night_cold_v02.py"
         }
       ],
       "kind": "video",
