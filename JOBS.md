@@ -38,13 +38,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0923 | mini | blocked | cursor | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
 | J0932 | mini | claimed | cursor | 2026-10-25T21:16Z | video · 60% re-cut batch A2 c37 FIX (local only): BbsyFrV8kCY Apophis v07, Jcuiy0a9BFI Venus lead v03, RxErxlXim1Q Saturn thin v03, YC65mdh6Hgg Venus size v04 - park by Tue 27 Oct 20:00 London | 6397168754 |
-| J0934 | mini | blocked | cursor | – | video · HOS 60% re-cut batch HA2 FIX (local only): Curie vEg_tLIm0Co v06 by Tue 27 Oct 20:00, heart sum 1lszTrYRp-8 v04 by Thu 29 Oct 20:00, Galen 5n7xFQRBUvI v03 by Fri 30 Oct 20:00 London | 6396578643 |
+| J0934 | mini | open | – | – | video · HOS 60% re-cut batch HA2 FIX (local only): Curie vEg_tLIm0Co v07 by Tue 27 Oct 20:00, Galen 5n7xFQRBUvI v04 by Fri 30 Oct 20:00 London (heart sum v04 PASS -> swap job) | 6398198455 |
 | J0935 | mini | open | – | – | video · 60% re-cut v02 batch B (local only): 025 iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY + 026 HZGTovJu_TQ, cwU_0WWeNZ4 - start by Sat 31 Oct, each parked by 20:00 London the day before it airs (from Mon 9 Nov) | 6389353471 |
 | J0936 | mini | open | – | – | video · 60% re-cut v02 batch C (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - start by Sat 14 Nov, each parked by 20:00 London the day before it airs (from Fri 20 Nov) | 6389353471 |
 | J0937 | mini | blocked | chief | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v02 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6394562857 |
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0939 | mini | open | – | – | video · HOS flask v07 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v06 -> v07 (one audio gap) - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30) | 6397432514 |
 | J0940 | mini | open (after J0931) | – | – | studio · 027 Short dM1OgGPAYvw: swap to earth_sudden_air_v05 (Private, Mon 26 Oct 11:30 London) after Ben's OK by Sun 20:00 | 6395360875 |
+| J0941 | mini | blocked | – | – | studio · HOS 005 Short 1lszTrYRp-8: swap to the_sum_v04 (Private, Fri 30 Oct 11:30 London) after Ben's OK by Thu 29 Oct 20:00 | 6398198455 |
 
 Recently finished:
 
