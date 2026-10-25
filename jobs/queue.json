@@ -78014,10 +78014,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-25T07:24Z",
+      "eta": "2026-10-25T11:24Z",
       "created_by": "chief",
       "created_at": "2026-10-25T06:25Z",
       "result": "",
@@ -78081,6 +78081,11 @@
           "at": "2026-10-25T07:17Z",
           "by": "chief",
           "what": "reopened: reopened: Chief (Grok) 25 Oct 07:17 London, OWB #264 6394789032: FIX v03 -> render earth_sudden_air_v04 (v03 + scheduled v02 4ab2b658 untouched); re-park by 20:00 London today or v02 airs. (1) Frame 0 is the SDO blue-Sun -> EPIC cross-dissolve (v01l 83.0 s, clears ~83.5 s): Earth absent frames 0-7. Use epic_earth_rotation.mp4 itself or v01l >=83.6 s; f0 and f15 same plate, Earth >=60%, no Sun in 0-2.5 s. (2) Payoff '1,500' at 14.04 s = 60% (need >=70%) and a padded 0.89 s gap 10.06-10.95 (oceans taken to 50.18). Re-order stem_vo_v01i.wav, gaps 0.12-0.18: 25.02-27.64, 28.24-29.38, 30.22-31.62, oceans 44.96-49.50, 'Why east?' 50.14-50.90, 'Because...going.' 51.34-53.92, equator/1,500 32.40-37.68, 'That is faster than the speed of sound.' 38.36-40.24, +1.0 s loop: ~22.4 s, 'one' ~17.1 s (~76%); drop the gust clause (GUST row may stay on card). Any other on-disk order must keep 'one' >=70%, no title answer 9-14 s, 18-24 s, no gap >0.18. (3) Picture follows words, spans <=3.5 s moving: oceans -> v01k_span_45.30 ocean; Why east/Because -> Gerst; equator/1,500 -> row10_air arrows; km/h + speed of sound -> epic_spin_v01 + AIR/SOUND/GUST card re-timed in on 'thousand' to ~21.3 s; drop Foucault (off-topic, near-static). (4) De-judder s02 ISS 2.50-3.83 s (~6 fps steps, diffs 13-21): smooth stretch or tblend/minterpolate. (5) Loop: last 1.0 s from the new EPIC frame 0 at frame-0 framing, stays on Earth, last-vs-f0 <=15 whole and text-masked, loop_diff in meta. (6) Same strict gates; meta gets six brief fields, LUFS, loop_diff, payoff_vs_70pct, 'frame 0 plate = EPIC, no dissolve'; git add -f sheets; _PHONE + sheets to OWB UAT/NAS; re-park for Chief. GBP0, no upload/Replace/Public."
+        },
+        {
+          "at": "2026-10-25T07:24Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "video",
