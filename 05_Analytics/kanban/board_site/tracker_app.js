@@ -127,23 +127,20 @@
     return true;
   }
 
-  async function ensureKey() {
-    if (key) return key;
-    const k = (window.prompt("One-time setup on this phone: paste the board code from your board link (the part after #k=).") || "").trim().replace(/^.*#k=/, "");
-    if (!k) throw new Error("no board code");
-    key = k;
-    try { localStorage.setItem("studio-board-key", k); } catch (e) {}
-    return key;
-  }
+  // Ben, 25 Oct 2026: "Just need to approve no need for code". Never asks for a code: Ben's phone is recognised by the
+  // studio_ben cookie (set once by the "link this phone" link, renewed on every load; ../benauth.js). An old board code
+  // in this phone's storage still works and turns into the cookie on the next load.
+  const NOT_LINKED = "This phone isn't linked to your board yet, so nothing was sent. Open the one-time \"link this phone\" link Grok Bot sent you (no code to type), then tap again.";
+  const authHeaders = () => (key ? { "x-board-key": key } : {});
 
   async function postCheck(id, doc) {
-    await ensureKey();
     const r = await fetch(API, {
       method: "POST",
-      headers: { "content-type": "application/json", "x-board-key": key },
+      credentials: "same-origin",
+      headers: Object.assign({ "content-type": "application/json" }, authHeaders()),
       body: JSON.stringify({ id, doc }),
     });
-    if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} throw new Error("bad board code"); }
+    if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} throw new Error(NOT_LINKED); }
     if (!r.ok) throw new Error("save failed " + r.status);
     const j = await r.json();
     if (j && j.checks) checks = j.checks;
@@ -425,9 +422,10 @@
 
   async function pollChecks() {
     try {
-      const r = await fetch(API + "?t=" + Date.now(), { cache: "no-store" });
+      const r = await fetch(API + "?t=" + Date.now(), { cache: "no-store", credentials: "same-origin", headers: authHeaders() });
       if (!r.ok) return;
       const j = await r.json();
+      window.__benLinked = !!(j && j.ben);
       if (j && typeof j.checks === "object") { checks = j.checks; render(); }
     } catch (e) {}
   }

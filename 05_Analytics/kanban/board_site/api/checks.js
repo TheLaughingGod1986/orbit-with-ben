@@ -11,6 +11,8 @@
 // The change stamp: the issue's updated_at is the version. GET ?stamp=1 answers {version} only, and GET returns
 // stampUrl pointing there, so the Mini's every-minute check stays one small read (scripts/board_publish.py).
 
+import { benAuth, renewCookie } from "../benauth.js";
+
 const STORE = ["TheLaughingGod1986/orbit-with-ben", 219];
 const HISTORY_KEEP = 150;
 const BODY_MAX = 60000;          // GitHub caps an issue body at 65,536 characters
@@ -65,7 +67,8 @@ const ID = /^[A-Za-z0-9_.-]{1,48}$/;
 export function parseStore(body) {
   const m = String(body || "").match(/```json\s*([\s\S]*?)```/);
   const j = m ? JSON.parse(m[1]) : {};
-  return { checks: j.checks && typeof j.checks === "object" ? j.checks : {}, history: Array.isArray(j.history) ? j.history : [] };
+  return { checks: j.checks && typeof j.checks === "object" ? j.checks : {}, history: Array.isArray(j.history) ? j.history : [],
+    pairs: Array.isArray(j.pairs) ? j.pairs : [] };
 }
 
 // Keeps the body under GitHub's cap: drop handled ticks older than HANDLED_KEEP_DAYS, then trim history, then fail loudly.
@@ -75,7 +78,9 @@ export function pruneState(state, now = Date.now()) {
     const old = d && d.handled && now - new Date(d.at || 0).getTime() > HANDLED_KEEP_DAYS * 86400000;
     if (!old) checks[id] = d;
   }
-  return { checks, history: state.history.slice(-HISTORY_KEEP) };
+  // pairs: used one-time "link this phone" nonces (api/pair.js), kept until their link would have expired anyway
+  const pairs = (state.pairs || []).filter(p => p && Number(p.e) * 1000 > now).slice(-50);
+  return { checks, history: state.history.slice(-HISTORY_KEEP), pairs };
 }
 
 export function renderStore(state, now = Date.now()) {
@@ -88,6 +93,9 @@ export function renderStore(state, now = Date.now()) {
     "suspended Vercel Blob store). Only the board's `/api/checks` writes it. Don't edit by hand.\n\n```json\n" +
     json(st) + "\n```\n";
 }
+
+export async function loadStore() { return load(); }
+export async function saveStore(state) { return save(state); }
 
 async function load() {
   const r = await gh(`repos/${STORE[0]}/issues/${STORE[1]}`);
@@ -114,17 +122,24 @@ export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
   res.setHeader("Access-Control-Allow-Origin", "*");
   try {
+    // Ben is the phone with the studio_ben cookie (or the old board code); see ../benauth.js. Renewed on every load.
+    const how = benAuth(req);
+    renewCookie(res, req, how);
     if (req.method === "GET") {
       const { version, state } = await load();
       if (req.query && req.query.stamp) return res.status(200).json({ version });
       const stampUrl = `https://${req.headers.host}/api/checks?stamp=1`;
-      return res.status(200).json({ checks: state.checks, at: new Date().toISOString(), version, stampUrl });
+      return res.status(200).json({ checks: state.checks, at: new Date().toISOString(), version, stampUrl, ben: !!how });
     }
     if (req.method !== "POST") return res.status(405).json({ error: "GET or POST" });
-    const key = process.env.BOARD_KEY;
-    if (!key || req.headers["x-board-key"] !== key) return res.status(401).json({ error: "this link can't save ticks" });
+    if (!how) return res.status(401).json({ error: "not linked", linked: false });
     const b = await readBody(req);
     if (!ID.test(String(b.id || ""))) return res.status(400).json({ error: "bad id" });
+    // dryRun: proves this phone can post (auth + id + the line it would post) without saving or posting anything.
+    if (b.dryRun) {
+      const doc = b.doc && typeof b.doc === "object" ? b.doc : null;
+      return res.status(200).json({ ok: true, dryRun: true, auth: how, wouldPost: doc ? benLine(b.id, doc, null) : null });
+    }
     const { state } = await load();
     const prev = state.checks[b.id] || null;
     if (b.delete) {

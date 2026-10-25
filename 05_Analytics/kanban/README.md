@@ -7,6 +7,14 @@ five lanes — Upcoming · In progress · Changes requested · Ready for OK · D
 
 Approve / Request changes still post `[Ben] OK/changes …` via `/api/checks` (OWB desk issue **#264**, HOS **#180**).
 
+**One tap, no code (25 Oct 2026, Ben: "Just need to approve no need for code"):** the page never asks for a code. Ben's
+phone is recognised by an HttpOnly cookie `studio_ben` (400 days, renewed on every board load; `board_site/benauth.js`).
+It's set once by a one-time "link this phone" link from `python3 scripts/board_pair_link.py` on the Mini (written to
+`~/.config/studio-kanban/ben_pair_link`, 0600, never printed; works once, expires in 7 days; send it only in Ben's private
+chat). A phone that still has the old `#k=` board code upgrades to the cookie by itself. Anyone else gets 401 and nothing
+posts. Test without approving: `POST /api/checks {"id": "...", "doc": {...}, "dryRun": true}` returns the line it would post.
+Revoke every linked phone by rotating `BOARD_KEY` in Vercel.
+
 Job and video progress (18 Oct 2026, classic board): the Now box and video rows use the same live queue and
 channel-qualified video links. Workers record the chosen video(s) with `jobs.py progress ... --films HOS:006` and a
 concrete `--note` after each step.
