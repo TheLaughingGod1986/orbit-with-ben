@@ -78191,10 +78191,10 @@
       "stage": "",
       "after": "",
       "eta_min": 480,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-25T07:09Z",
-      "eta": "2026-10-25T15:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
       "result": "",
@@ -78223,6 +78223,11 @@
           "at": "2026-10-25T07:23Z",
           "by": "cursor",
           "what": "step 1 of 4 done: 1-BZaFIMwYU flask v03 local gates PASS, 23.5s, sha 338463b384a1. No upload. Next: Curie vEg_tLIm0Co."
+        },
+        {
+          "at": "2026-10-25T07:23Z",
+          "by": "cursor",
+          "what": "released: Pasteur 1-BZaFIMwYU v03 PASS locally (hos_001_s11_curved_flask_v03.mp4, 23.5s, sha 338463b384a1, commit afa78d61). Gates: shorts open, polish, picture_qa, music, sfx. One WARN: passengers plate low detail at 0:09. No upload, v02 untouched. Next in this job: vEg_tLIm0Co Curie notebooks v04 to v05. Do not rebuild the flask."
         }
       ],
       "kind": "video",
