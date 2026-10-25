@@ -11,6 +11,7 @@
     ["progress", "In progress"],
     ["changes", "Changes requested"],
     ["ready", "Ready for OK"],
+    ["approved", "Approved, on its way"],   // Ben, 25 Oct 14:13: what he OK'd, until YouTube has it (video_tracker.py)
     ["done", "Done on YouTube"],
   ];
 
@@ -59,6 +60,19 @@
     return "upcoming";
   }
 
+  // Ben's OK on a card in Ready for OK: straight into "Approved, on its way" (the next board publish fills in the job).
+  function approvedStub(v, c, job) {
+    const at = c && c.at ? new Date(c.at) : null;
+    const on = at && !isNaN(at) ? " on " + at.toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" }).replace(",", "") : "";
+    const version = (c && c.version) || v.version || "";
+    const status = job ? `Waiting for the Chief to start ${job}.` : "Waiting for the Chief to queue it.";
+    return Object.assign({}, v, { lane: "approved", readyFor: "", waitingOn: "Chief", okNote: "", notes: [],
+      line: `You OK'd ${version || "it"}${on}. ${status}`,
+      flags: (v.flags || []).filter(f => f.audience !== "chief" && f.kind !== "chief" && f.kind !== "stale" && f.kind !== "deadline" && f.kind !== "stuck" && f.kind !== "nofile"),
+      approved: Object.assign({ job: job || "", state: "waiting", status, warn: "", version, okAt: (c && c.at) || "" }, v.approved || {}, { state: "waiting", status }),
+      check: c ? { verdict: c.verdict, version: c.version, at: c.at, handled: !!c.handled } : v.check });
+  }
+
   // A card for a job waiting on Ben (awaits_ben in the queue; video_tracker.py apply_ask): always Ready for OK with its
   // own ask line and deadline, Short or long, uploaded or not. A tick on an older version doesn't count against it.
   function applyAsk(v, m) {
@@ -68,7 +82,7 @@
     const open = c && !c.handled;
     let lane = "ready", readyFor = "Ben", line = a.line || v.line;
     if (open && c.verdict === "change") { lane = "changes"; readyFor = ""; line = `You asked for changes on ${a.version || "this cut"}; ${a.job} is held.`; }
-    else if (open && c.verdict === "ok") { readyFor = "Chief"; line = `You OK'd ${a.version || "it"}. The Chief now runs ${a.job}.`; }
+    else if (open && c.verdict === "ok") return approvedStub(v, c, a.job);
     const notes = (c && c.verdict === "change" && Array.isArray(c.fixes)) ? c.fixes.map(f => ({ t: f.t || "", text: f.text || "", done: false })) : [];
     const flags = (v.flags || []).filter(f => f.audience !== "chief" && f.kind !== "chief" && f.kind !== "stale" && (readyFor === "Ben" || f.kind !== "deadline"));
     return Object.assign({}, v, { lane, readyFor, waitingOn: readyFor || "worker", line, notes, flags, okNote: "",
@@ -78,6 +92,8 @@
   function applyChecks(videos) {
     const m = checksMerged();
     return videos.map(v => {
+      // On its way (approved_from on the delivering job): the server knows the job's state; show it as published.
+      if (v.lane === "approved" && v.approved) return Object.assign({}, v, { flags: (v.flags || []).filter(f => f.audience !== "chief" && f.kind !== "chief") });
       if (v.ask) return applyAsk(v, m);
       const c = m[v.checkId] || null;
       let lane = deriveLane(v, c);
@@ -94,6 +110,9 @@
       }
       // One field drives both the "Waits on" badge and the "Waiting on" line (Ben's 009 screenshot, 25 Oct 00:03).
       const okd = !!(c && c.verdict === "ok" && !c.handled);
+      // Ready for OK holds only what waits on Ben (video_tracker.settle_ready).
+      if (lane === "ready" && okd) return approvedStub(Object.assign({}, v, { flags }), c, ((v.jobs || [])[0] || {}).id || "");
+      if (lane === "ready" && v.lane === "ready" && v.readyFor && v.readyFor !== "Ben") lane = "progress";
       let readyFor = "", waitingOn = v.waitingOn || "", line = v.line;
       if (lane === "ready") {
         readyFor = okd ? "Chief" : (v.lane === "ready" && v.readyFor ? v.readyFor : "Ben");
@@ -212,6 +231,18 @@
     catch (e) { delete local[v.checkId]; render(); toast("Not sent: " + String(e.message || e), true); }
   }
 
+  // "Approved, on its way": what Ben OK'd, the job carrying it, and that job's live state.
+  function approvedHtml(a) {
+    const label = { waiting: "Waiting on Chief", queued: "Queued", working: "Working", blocked: "Blocked", uploaded: "Uploaded", cancelled: "Cancelled" }[a.state] || a.state || "";
+    const pct = a.state === "working" && a.of ? Math.max(5, Math.min(100, Math.round(100 * (a.step || 0) / a.of))) : 0;
+    return `<div class="appr ${esc(a.state || "")}${a.warn ? " warn" : ""}">
+      <div class="appr-top"><span class="appr-state">${esc(label)}</span>${a.job ? `<span class="mono">${esc(a.job)}</span>` : ""}${a.version ? `<span>· OK'd ${esc(a.version)}</span>` : ""}</div>
+      <div class="appr-line">${esc(a.status || "")}</div>
+      ${pct ? `<div class="appr-bar"><span style="width:${pct}%"></span></div>` : ""}
+      ${a.airsText ? `<div class="appr-line">Airs ${esc(a.airsText)} London</div>` : ""}
+    </div>`;
+  }
+
   function cardHtml(v) {
     const flagged = (v.flags || []).length;
     const chClass = v.channel === "HOS" ? "hos" : "orbit";
@@ -223,7 +254,7 @@
     const showActions = v.lane === "ready" && v.readyFor === "Ben" && (v.type === "long" || !!v.ask);
     // Big Play button for UAT (Ben, 25 Oct 00:03): the exact cut under review via the board's /api/watch link (plays in
     // the browser), YouTube for Done. Review lanes without a link say so instead of hiding the button.
-    const review = v.lane === "ready" || v.lane === "changes";
+    const review = v.lane === "ready" || v.lane === "changes" || v.lane === "approved";
     const watch = v.watch && v.watch.url
       ? `<a class="btn ${review ? "play" : "watch"}" href="${esc(v.watch.url)}" target="_blank" rel="noopener">▶ Play ${esc(v.watch.version || v.version || "cut")}</a>`
       : (review ? `<span class="btn play none" aria-disabled="true">No preview link yet</span>` : "");
@@ -244,6 +275,7 @@
       <p class="meta">Waiting on: ${esc(v.waitingOn || "—")}</p>
       ${flagHtml ? `<div class="flags">${flagHtml}</div>` : ""}
       ${v.okNote ? `<div class="okline">✓ ${esc(v.okNote)}</div>` : ""}
+      ${v.lane === "approved" && v.approved ? approvedHtml(v.approved) : ""}
       ${notes ? `<ul class="notes">${notes}</ul>` : ""}
       ${review ? `<div class="actions">${watch}</div>` : ""}
       <div class="actions">

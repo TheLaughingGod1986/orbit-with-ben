@@ -1042,6 +1042,21 @@ def asks_doc(alljobs: list[dict]) -> list[dict]:
     return out
 
 
+def approved_doc(alljobs: list[dict]) -> list[dict]:
+    """Jobs delivering a cut Ben OK'd (approved_from), each with the Play link of the cut he approved (the same file as
+    his ask, so the same watch id is reused)."""
+    from video_tracker import approved_entries
+    out = []
+    for e in approved_entries(alljobs):
+        try:
+            e["watch"] = ask_watch({**e, "id": e.get("askId") or e.get("askJob") or e["id"]})
+        except (OSError, ValueError) as err:
+            print(f"approved {e['id']}: no Play link ({err})", file=sys.stderr)
+            e["watch"] = None
+        out.append(e)
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("page", type=Path, nargs="?")
@@ -1123,11 +1138,14 @@ def main(argv: list[str] | None = None) -> int:
         watch = watch_links(hos, owb, briefs)
         briefs = ben_handoffs(chief_reviews(route_steps(hos_job_steps(briefs, alljobs), alljobs)), watch)
         asks = asks_doc(alljobs)  # jobs waiting on Ben (awaits_ben), with their Play links
-        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, "asks": asks, **links},
+        approved = approved_doc(alljobs)  # cuts Ben OK'd, on their way (approved_from), with their Play links
+        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, "asks": asks,
+                                                          "approved": approved, **links},
                                                          ensure_ascii=False))
         # Per-video five-lane tracker (Ben, 24 Oct 2026). Checks are empty here; board_publish re-derives with live ticks.
         from video_tracker import build_videos
-        tracker = build_videos(hos=hos, owb=owb, briefs=briefs, jobs=alljobs, checks={}, watch=watch, asks=asks)
+        tracker = build_videos(hos=hos, owb=owb, briefs=briefs, jobs=alljobs, checks={}, watch=watch, asks=asks,
+                               approved=approved, alljobs=alljobs)
         (a.db_out / "tracker.json").write_text(json.dumps(tracker, ensure_ascii=False))
         print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
               f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')}), "

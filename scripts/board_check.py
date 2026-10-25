@@ -5,6 +5,8 @@ Compares the queue's jobs waiting on Ben (`awaits_ben` on a job, see `jobs.py aw
 with the cards actually published on the board-data branch, and checks the live site:
   - every entry that still asks Ben has a card in Ready for OK (or Changes, if he asked for changes)
   - that card has a Play link, the cut's file is on the Mini, and the signed link answers 302 (it opens the video)
+  - every cut Ben OK'd that is still on its way (`approved_from` on the delivering job, `jobs.py approved`) has a card in
+    "Approved, on its way" for that job (Ben, 25 Oct 14:13), unless the upload already read back (then it's in Done)
   - the live site (studio-kanban.vercel.app) answers 200
 
 Result, every run (for a routine to watch): ~/_desk/state/board/board_check.json
@@ -106,7 +108,7 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
             cards.append({**row, "card": "missing"})
             continue
         row.update(card=v.get("key"), lane=v.get("lane"), readyFor=v.get("readyFor"))
-        if v.get("lane") not in ("ready", "changes"):
+        if v.get("lane") not in ("ready", "changes", "approved"):
             problems.append(f"{e['id']}: card is in {v.get('lane')}, not Ready for OK")
         url = (v.get("watch") or {}).get("url") or ""
         if not file_on_mini(e.get("file", "")):
@@ -119,10 +121,28 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
             if code not in (301, 302, 303, 307, 308, 200, 206):
                 problems.append(f"{e['id']}: Play link answers {code or 'no response'}")
         cards.append(row)
+    # Approved, on its way: every delivering job not yet read back as Private + scheduled has its card there.
+    by_job = {(v.get("approved") or {}).get("job"): v for v in vids if v.get("lane") == "approved" and v.get("approved")}
+    by_key = {v.get("key"): v for v in vids}
+    approved = vt.approved_entries(queue_jobs)
+    for e in approved:
+        card = by_key.get(e.get("card") or "") or by_key.get(f"{e['channel']}:OK:{e['job']}")
+        if vt.read_back(e, card) or e.get("jobStatus") == "cancelled":
+            continue  # on YouTube (Done), or cancelled: that card carries its own warning while it's shown
+        v = by_job.get(e["job"])
+        row = {"id": e["job"], "job": e["job"], "what": e.get("what") or e.get("title"), "approved": True}
+        if not v:
+            problems.append(f"approved {e['job']}: no card in Approved, on its way ({(e.get('what') or e.get('title'))[:70]})")
+            cards.append({**row, "card": "missing"})
+            continue
+        row.update(card=v.get("key"), lane=v.get("lane"), state=(v.get("approved") or {}).get("state"))
+        if not (v.get("watch") or {}).get("url"):
+            problems.append(f"approved {e['job']}: card has no Play link")
+        cards.append(row)
     code = site_status(SITE + "/", follow=True)
     if code != 200:
         problems.append(f"live site {SITE}/ answers {code or 'no response'}, not 200")
-    return {"ok": not problems, "expected": len(expected), "problems": problems, "cards": cards, "site": code,
+    return {"ok": not problems, "expected": len(expected), "approved": len(approved), "problems": problems, "cards": cards, "site": code,
             "boardPublishedAt": board.get("publishedAt", "")}
 
 

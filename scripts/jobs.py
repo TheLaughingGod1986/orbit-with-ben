@@ -24,6 +24,8 @@ is alive and able claims it. The thread stays for discussion and reports; this q
   python3 scripts/jobs.py progress J0003 --agent cursor --step 3 --of 8 --git   # finished step 3 of 8 (the board's % done)
   python3 scripts/jobs.py schedule J0003 --not-before "2026-10-12 09:00" --reset "AI Ultra credit renews" --agent chief --git
   python3 scripts/jobs.py list [--all]                                          # open and claimed jobs (JOBS.md too)
+  python3 scripts/jobs.py approved J0945 --from J0924 --ok-at "2026-10-25 14:10" --ref 6398691247 --agent chief --git
+          # Ben OK'd the cut J0924 asked about; J0945 delivers it: board lane "Approved, on its way" until it's on YouTube
   python3 scripts/jobs.py reroute J0003 --agent relay --to cursor --model cursor-claude-opus-5-5 --note "Claude out of usage" --git
           # Claude Code out of usage (Ben, 11 Oct 23:40): hand a Claude job to Cursor on the Claude model
 
@@ -396,7 +398,9 @@ def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: s
     ask_entries); scripts/board_check.py checks every entry reached the published board. --add appends another cut to
     the same job (J0937 holds three Shorts); --clear removes the signal (Ben answered, or the hold was dropped)."""
     if clear:
-        job.pop("awaits_ben", None)
+        # Keep what was asked (awaits_was), so `jobs.py approved <follow-on> --from <this job>` can still link it.
+        if job.get("awaits_ben"):
+            job["awaits_was"] = job.pop("awaits_ben")
         log(job, at, agent, "no longer waits on Ben")
         return
     if not what or not file:
@@ -412,6 +416,52 @@ def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: s
     if len(job["awaits_ben"]) == 1:
         job["awaits_ben"] = job["awaits_ben"][0]
     log(job, at, agent, f"waits on Ben: {what}" + (f" (by {due} London)" if due else ""))
+
+
+APPROVED_FIELDS = ("what", "file", "version", "airs", "card", "title", "number", "type", "channel")
+
+
+def do_approved(job: dict, src: dict, agent: str, at: dt.datetime, *, entry: int = 0, ok_at: str = "", ref: str = "",
+                over: dict | None = None) -> None:
+    """Ben OK'd a cut; `job` is the follow-on that delivers it (the swap, package or upload). Sets job["approved_from"]
+    (Ben, 25 Oct 2026 14:13: "Ones I approve ... need to know they're still in the pipeline"): the Studio Kanban shows
+    the job in "Approved, on its way" with its status until it's done and the upload reads back Private + scheduled
+    (video_tracker.approved_entries). `src` is the job that asked Ben (its awaits_ben, or awaits_was once cleared); it
+    is `job` itself when the held job just reopens (J0940). Asking it clears src's awaits_ben: Ben has answered."""
+    raw = src.get("awaits_ben") or src.get("awaits_was") or {}
+    items = [x for x in (raw if isinstance(raw, list) else [raw]) if isinstance(x, dict)]
+    if entry:
+        if not 1 <= entry <= len(items):
+            raise ValueError(f"{src['id']} has {len(items)} awaits entr{'y' if len(items) == 1 else 'ies'}; --entry {entry} is out of range")
+        base = items[entry - 1]
+    elif len(items) > 1:
+        raise ValueError(f"{src['id']} asked Ben about {len(items)} cuts; say which with --entry N")
+    else:
+        base = items[0] if items else {}
+    rec = {k: str(base.get(k) or "") for k in APPROVED_FIELDS if base.get(k)}
+    for k, v in (over or {}).items():
+        if v:
+            rec[k] = parse_not_before(v) if k == "airs" else v
+    if not rec.get("what") and not rec.get("title"):
+        raise ValueError(f"nothing to say what Ben approved: {src['id']} has no awaits entry; give --what (and --version, --airs)")
+    rec["channel"] = (rec.get("channel") or ("HOS" if (src.get("repo") or job.get("repo")) == "hos" else "OWB")).upper()
+    rec.setdefault("number", str(src.get("film") or job.get("film") or ""))
+    rec["job"] = src["id"]
+    if len(items) > 1 and entry:
+        rec["askId"] = f"{src['id']}.{entry}"  # video_tracker.ask_entries' id for that cut (its Play link is reused)
+    rec["okAt"] = parse_not_before(ok_at) if ok_at else studio.iso(at)
+    if ref:
+        rec["okRef"] = ref
+    job["approved_from"] = rec
+    if src.get("awaits_ben"):
+        if len(items) > 1 and entry:
+            rest = [x for i, x in enumerate(items, 1) if i != entry]
+            src["awaits_ben"] = rest[0] if len(rest) == 1 else rest
+        else:
+            src["awaits_was"] = src.pop("awaits_ben")
+        log(src, at, agent, "no longer waits on Ben" + (f" (entry {entry})" if entry else "") + f": OK'd, delivered by {job['id']}")
+    log(job, at, agent, f"approved by Ben: {rec.get('what') or rec.get('title')}" + (f" {rec['version']}" if rec.get("version") else "")
+        + (f" (asked in {src['id']})" if src is not job else ""))
 
 
 def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
@@ -578,6 +628,9 @@ def main(argv=None) -> int:
     a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
     a.add_argument("--not-before", default="", help='"YYYY-MM-DD HH:MM" London time: nobody is handed it before then')
     a.add_argument("--reset", default="", help="the real window --not-before waits for (quota/credit reset, air date)")
+    a.add_argument("--approved-from", dest="approved_from", default="",
+                   help="this job delivers a cut Ben OK'd that job asked about (awaits_ben), e.g. J0924; see `approved`")
+    a.add_argument("--entry", type=int, default=0, help="with --approved-from: which cut, when it asked about several")
     sc = sub.add_parser("schedule", help="set or clear a job's not-before time")
     sc.add_argument("id")
     sc.add_argument("--agent", default="")
@@ -619,6 +672,20 @@ def main(argv=None) -> int:
     aw.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
     aw.add_argument("--add", action="store_true", help="add another cut to this job's list instead of replacing it")
     aw.add_argument("--clear", action="store_true", help="the job no longer waits on Ben")
+    aw.add_argument("--ok", action="store_true", help="with --clear: Ben OK'd it and this job now delivers it (as `approved`); "
+                    "the default when the job is still open/claimed/blocked")
+    aw.add_argument("--dropped", action="store_true", help="with --clear: the hold was dropped (no OK), so nothing goes to "
+                    "the board's Approved, on its way lane")
+    ap_ = sub.add_parser("approved", help="Ben OK'd a cut: this job delivers it (board lane \"Approved, on its way\")")
+    ap_.add_argument("id", help="the follow-on job (swap / package / upload), e.g. J0945")
+    ap_.add_argument("--from", dest="from_job", default="", help="the job that asked Ben (awaits_ben), e.g. J0924; default: this job")
+    ap_.add_argument("--entry", type=int, default=0, help="which cut, when that job asked about several (1-based)")
+    ap_.add_argument("--ok-at", dest="ok_at", default="", help='"YYYY-MM-DD HH:MM" London: when Ben OK\'d (default now)')
+    ap_.add_argument("--ref", default="", help="where Ben said it (comment id)")
+    ap_.add_argument("--agent", default="")
+    for f_ in ("what", "file", "version", "airs", "card", "title", "number"):
+        ap_.add_argument(f"--{f_}", default="", help="override / fill in the approved cut's " + f_)
+    ap_.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
     w = sub.add_parser("watch", help="JSON for Claude's 2-hourly check: is the Mini quiet, what waits on Ben")
     w.add_argument("--quiet-hours", type=float, default=3)
     fo = sub.add_parser("focus", help="the film(s) every agent works on first, e.g. `focus 025`; no films clears it")
@@ -665,6 +732,11 @@ def main(argv=None) -> int:
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
                              for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset)
+                if args.approved_from:
+                    src = find(data, args.approved_from)
+                    if not src:
+                        return None, f"no {args.approved_from}", touched
+                    do_approved(job, src, args.by, at, entry=args.entry, ref=args.ref)
                 return job, None, touched
             if args.cmd == "focus":
                 data["focus"] = [f.strip() for f in args.films if f.strip()]
@@ -710,10 +782,26 @@ def main(argv=None) -> int:
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "schedule":
                 do_schedule(job, args.agent or "claude", args.not_before, at, args.reset)
+            elif args.cmd == "awaits" and args.clear and not args.dropped and job.get("awaits_ben") and (
+                    args.ok or job["status"] in ("open", "claimed", "blocked")):
+                # Clearing a held job that goes on = Ben OK'd it (Ben, 25 Oct 14:13): it shows in "Approved, on its
+                # way" until it's on YouTube. A job that asked about several cuts needs `approved --entry N`.
+                raw = job["awaits_ben"]
+                if isinstance(raw, list) and len(raw) > 1:
+                    return None, (f"{job['id']} asked Ben about {len(raw)} cuts: use `jobs.py approved {job['id']} --entry N`"
+                                  " for the one he OK'd, or --dropped"), touched
+                do_approved(job, job, args.agent or "chief", at)
             elif args.cmd == "awaits":
                 do_awaits(job, args.agent or "chief", at, what=args.what, file=args.file, version=args.version, due=args.due,
                           airs=args.airs, if_not=args.if_not, card=args.card, title=args.title, number=args.number,
                           vtype=args.vtype, add=args.add, clear=args.clear)
+            elif args.cmd == "approved":
+                src = find(data, args.from_job) if args.from_job else job
+                if not src:
+                    return None, f"no {args.from_job}", touched
+                do_approved(job, src, args.agent or "chief", at, entry=args.entry, ok_at=args.ok_at, ref=args.ref,
+                            over={"what": args.what, "file": args.file, "version": args.version, "airs": args.airs,
+                                  "card": args.card, "title": args.title, "number": args.number, "type": args.vtype})
             elif args.cmd == "cancel":
                 do_cancel(job, args.agent or "claude", args.note, at)
             elif args.cmd == "handback":
