@@ -72811,13 +72811,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-25T20:56Z",
-      "eta": "2026-10-25T22:56Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T05:20Z",
-      "result": "",
+      "result": "waits for input: HOS 007 long ETynHpIYLeY public (publishAt Thu 12 Nov 2026 18:00Z; Studio picker lists 23 public videos only, 0 matches while Private). HOS Buffer mirror registered for -I_GHK-GcFs & 4WUs0beKn0A with long=ETynHpIYLeY (OWB b8507a906) and HOS records updated (HOS 9b715232). Reopen on/after Thu 12 Nov 18:05Z (before Fri 13 Nov 11:30Z).",
       "history": [
         {
           "at": "2026-10-23T05:20Z",
@@ -72868,6 +72868,11 @@
           "at": "2026-10-25T21:06Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Updated HOS 007 records with long=ETynHpIYLeY and Studio readbacks; lint:package + channel:audit (54 videos, 0 errors) PASS"
+        },
+        {
+          "at": "2026-10-25T21:07Z",
+          "by": "gemini",
+          "what": "blocked: waits for input: HOS 007 long ETynHpIYLeY public (publishAt Thu 12 Nov 2026 18:00Z; Studio picker lists 23 public videos only, 0 matches while Private). HOS Buffer mirror registered for -I_GHK-GcFs & 4WUs0beKn0A with long=ETynHpIYLeY (OWB b8507a906) and HOS records updated (HOS 9b715232). Reopen on/after Thu 12 Nov 18:05Z (before Fri 13 Nov 11:30Z)."
         }
       ],
       "kind": "listing",
