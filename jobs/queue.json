@@ -1,5 +1,5 @@
 {
-  "next_id": 960,
+  "next_id": 961,
   "jobs": [
     {
       "id": "J0001",
@@ -80858,6 +80858,33 @@
         "by": "cursor",
         "note": "A/B set Ineligible: A milkmaid secret + cow title, B IMMUNE + How Was the First Vaccine Made. Still Scheduled."
       }
+    },
+    {
+      "id": "J0960",
+      "title": "HOS 007 ETynHpIYLeY pinned comment once public",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 007 long ETynHpIYLeY (Why Vaccines Are Named After a Cow) is Private, publishAt Thu 12 Nov 2026 18:00 London. J0959 set the end screen and the title test. The pinned comment could not be posted: `update-pinned-comment.ts --create` returned 403 forbidden, and the Studio comment box on CDP 9460 says this account doesn't have permission to create comments. Same pattern as HOS 006 while the video is private.\n\nDo this once the video reads back public, from Thu 12 Nov 2026 18:05 London:\n\n1. Read the video. If it is not public yet, wait and retry. Do not change the schedule.\n2. Post this exact text with `npx tsx --env-file=.env scripts/update-pinned-comment.ts --create --video ETynHpIYLeY --question \"So how did a cow end up inside the most important medicine ever made?\"` from the HOS `07_Content-Ops` checkout, then pin it in Studio and read it back.\n   The built text is: \"So how did a cow end up inside the most important medicine ever made?\" then a blank line, then \"Thank you for being here this early. It genuinely helps. A new film every Thursday.\"\n3. No links, no /go/ link, no subscriber count.\n\nNever make it Public by hand. No Replace. No delete. Buffer stays deferred. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-25T21:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T21:16Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
