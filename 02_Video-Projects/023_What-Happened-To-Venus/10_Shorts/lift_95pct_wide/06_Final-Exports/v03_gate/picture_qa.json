@@ -1,0 +1,153 @@
+{
+  "verdict": "PASS",
+  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v03.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 6,
+      "row": "s07",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "NASA SDO AIA 171 Venus transit of the Sun",
+      "t": 19.65,
+      "at": "0:20",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0076 < film p5 0.0082"
+      ],
+      "offset": 24.4
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01",
+      "source": "svs14095_WISPR_Magellan_3rdFlyby.mp4",
+      "title": "NASA SVS 14095 WISPR Magellan 3rd flyby, Venus limb",
+      "t": 1.25,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.05
+    },
+    {
+      "cut": 1,
+      "row": "s02",
+      "source": "venus_ch3_plateB_steam_lid_v01.mp4",
+      "title": "Venus globe, steam-lid plate",
+      "t": 4.06,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 2,
+      "row": "s03",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "title": "NASA SVS 13887 DAVINCI glowing Venus atmosphere",
+      "t": 7.18,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 100.0
+    },
+    {
+      "cut": 3,
+      "row": "s04",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "title": "NASA SDO HMI Venus transit of the Sun",
+      "t": 10.3,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": 24.4
+    },
+    {
+      "cut": 4,
+      "row": "s05",
+      "source": "svs14095_ParkerVenus.mp4",
+      "title": "NASA SVS 14095 Parker Venus surface",
+      "t": 13.41,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 192.4
+    },
+    {
+      "cut": 5,
+      "row": "s06",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "title": "Venus globe plate",
+      "t": 16.53,
+      "at": "0:17",
+      "fail": [],
+      "warn": [],
+      "offset": 8.4
+    },
+    {
+      "cut": 6,
+      "row": "s07",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "title": "NASA SDO AIA 171 Venus transit of the Sun",
+      "t": 19.65,
+      "at": "0:20",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0076 < film p5 0.0082"
+      ],
+      "offset": 24.4
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "wispr_limb_loop_v03.mp4",
+      "title": "NASA SVS 14095 WISPR Venus limb returned to frame 0",
+      "t": 21.71,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 0.05
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0082,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
