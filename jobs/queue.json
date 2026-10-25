@@ -79488,13 +79488,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-25T18:52Z",
-      "eta": "2026-10-25T22:52Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T14:10Z",
-      "result": "",
+      "result": "parked for Chief: Neptune v07 c47 fixes, gates PASS; Ben to OK swap",
       "history": [
         {
           "at": "2026-10-25T14:10Z",
@@ -79620,6 +79620,11 @@
           "at": "2026-10-25T19:32Z",
           "by": "cursor",
           "what": "step 6 of 6 done: v07 gates PASS, cut 2.7s, loop 1.95/1.73, -14.4 LUFS. UAT iCloud and NAS. VO unchanged."
+        },
+        {
+          "at": "2026-10-25T19:32Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Neptune v07 c47 fixes, gates PASS; Ben to OK swap"
         }
       ],
       "kind": "video",
