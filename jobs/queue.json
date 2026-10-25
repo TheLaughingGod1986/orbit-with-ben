@@ -78014,13 +78014,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T07:57Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:25Z",
-      "result": "parked for Chief: dM1OgGPAYvw earth_sudden_air_v05 PASS; Ben to OK swap. 21.5s sha 666ab5b1, one at 16.28s (76%), loop_diff whole 18.04 masked 9.66, max_vo_gap 0.16s, ISS dejuddered (no 6fps steps), air arrows min motion 1.93. COAST caption 9.20-9.68. Loop low-detail WARN matches v04. Scheduled v02 untouched. No upload.",
+      "result": "Chief PASS v05 (Grok, 25 Oct 08:24 London, OWB #264 6395360875, c33): s02 ISS + s04 de-juddered (0 step spikes, no >=3-frame freezes), s06 arrows min 0.5 s motion 2.43; one 16.28 s (76%), gaps 0.12-0.16, -14.3 LUFS. Meta loop_diff 18.04/9.66 were v04's; true v05 21.26/12.39 (worker method), Chief RGB 21.6/15.3 accepted; J0940 corrects meta. Ben to OK swap by Sun 20:00 London, then J0940. Master sha 666ab5b1, GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T06:25Z",
@@ -78151,6 +78151,11 @@
           "at": "2026-10-25T08:07Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: dM1OgGPAYvw earth_sudden_air_v05 PASS; Ben to OK swap. 21.5s sha 666ab5b1, one at 16.28s (76%), loop_diff whole 18.04 masked 9.66, max_vo_gap 0.16s, ISS dejuddered (no 6fps steps), air arrows min motion 1.93. COAST caption 9.20-9.68. Loop low-detail WARN matches v04. Scheduled v02 untouched. No upload."
+        },
+        {
+          "at": "2026-10-25T08:23Z",
+          "by": "chief",
+          "what": "done: Chief PASS v05 (Grok, 25 Oct 08:24 London, OWB #264 6395360875, c33): s02 ISS + s04 de-juddered (0 step spikes, no >=3-frame freezes), s06 arrows min 0.5 s motion 2.43; one 16.28 s (76%), gaps 0.12-0.16, -14.3 LUFS. Meta loop_diff 18.04/9.66 were v04's; true v05 21.26/12.39 (worker method), Chief RGB 21.6/15.3 accepted; J0940 corrects meta. Ben to OK swap by Sun 20:00 London, then J0940. Master sha 666ab5b1, GBP0, no upload."
         }
       ],
       "kind": "video",
@@ -78164,7 +78169,8 @@
         "at": "2026-10-25T08:07Z",
         "by": "cursor",
         "note": "parked for Chief: earth_sudden_air_v05 gates PASS; Ben to OK any swap"
-      }
+      },
+      "done_ref": "6395360875"
     },
     {
       "id": "J0932",
@@ -78549,23 +78555,28 @@
       "needs": "mini",
       "repo": "owb",
       "body": "Chief (Grok) 25 Oct 08:25 London, J0931 v05 PASS (ruling c33, OWB #264).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap to earth_sudden_air_v05 (OWB UAT/earth_sudden_air_v05/earth_sudden_air_v05.mp4) on the board or the thread. Deadline for that OK: Sun 25 Oct 20:00 London. If Ben sends notes, or there is no OK by 20:00, this job is cancelled and the scheduled v02 (sha 4ab2b658, dM1OgGPAYvw) airs Mon 26 Oct 11:30 London as is.\n\nAfter Ben's OK:\n1. Meta truth (c33 FIX 4): in 02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v05_meta.json set loop_diff_whole 21.26, loop_diff_masked 12.39, loop_diff 12.39 (180x320 gray, rows 110:240, true frame 0 vs last frame; the 18.04/9.66 logged were v04's), add loop_diff_chief_rgb \"21.6/15.3\". Commit the meta only; the master is unchanged (sha 666ab5b1...bb6903).\n2. Verify the master sha256 = 666ab5b1b16db297c501c044be281435b5a9a269c1850fa6349eb5139bbb6903, then upload it to OWB as a new Private video with publishAt Mon 26 Oct 2026 11:30 London (2026-10-26T11:30:00Z). Copy the title, description, tags, cover and Related video (long 6bbbvfCx6zY) from dM1OgGPAYvw.\n3. Only after step 2 reads back Private + correct publishAt: set dM1OgGPAYvw (v02) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back privacy, publishAt, title, cover and Related for both videos; record in UPLOADS.json and post the read-back on the OWB thread (#264). Buffer cross-posts stay deferred per house rules.\nIf any step fails after 10:30 London Mon 26 Oct, leave v02 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
-      "ref": "",
+      "ref": "6395360875",
       "film": "",
       "stage": "",
       "after": "J0931",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-25T08:23Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T08:22Z",
-      "result": "",
+      "result": "waits on Ben's OK of the 027 Short swap to earth_sudden_air_v05 (OWB UAT) by Sun 25 Oct 20:00 London; no OK = cancel, v02 airs. Chief PASS 6395360875.",
       "history": [
         {
           "at": "2026-10-25T08:22Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-25T08:23Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the 027 Short swap to earth_sudden_air_v05 (OWB UAT) by Sun 25 Oct 20:00 London; no OK = cancel, v02 airs. Chief PASS 6395360875."
         }
       ],
       "kind": "studio"
