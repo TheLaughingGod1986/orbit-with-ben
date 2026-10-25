@@ -1,5 +1,5 @@
 {
-  "next_id": 929,
+  "next_id": 930,
   "jobs": [
     {
       "id": "J0001",
@@ -77621,6 +77621,33 @@
         "by": "gemini",
         "note": "Committed 029/10_Shorts/SHORTS_PLAN_v01.md (9ade53ae9): Wed 9 Dec Great Dimming (23.48s), Fri 11 Dec Test A Opening (36."
       }
+    },
+    {
+      "id": "J0929",
+      "title": "029 Betelgeuse: build 3 Shorts from SHORTS_PLAN_v01 (Wed 9 Dec dimming / Fri 11 Dec opening Test A / Mon 14 Dec half-Moon daylight), gates, covers, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/SHORTS_PLAN_v01.md (9ade53ae9) exactly: lifts from the locked master v03b (/Volumes/data/mac-mini-archive/youtube-staging/029/029_Betelgeuse_full_rough_v03b.mp4, VO + existing score, no new VO, £0 spend), 9:16 (1080x1920 @ 30fps CFR), cut on sentence/clause ends, first cut <=3.0 s, picture changes every 2.2-4.0 s and never holds a shot past 6 s, frame-0 concrete captions with yellow hook word (#FFE000, hue >42 deg) and lifted navy background (B >= 50 so visor_frac == 0.0000), no Orbit at frame 0, 9-14 s title banner ('Is Betelgeuse About to Explode?'), single Teach overlay per Short inside y=656..1264, and 2.0 s end card with the long's exact listing title ('Is Betelgeuse About to Explode?') + video id ('vP1BbqZ_dnM'). Gates per Short: gate_shorts_open.py check --air-date (including stayed-to-watch --transcript check from PR #268), sfx_kit.py level, picture_qa.py, polish_gate.py, thumb_preview.py short --score, and caption/title-safe bounding-box audit. Covers with no Orbit. Copy <120 MB _PHONE.mp4 copies, covers, and 5-point frame sheets (0 s, 4.5 s, 10 s, payoff, end) to OWB UAT and NAS staging (/Volumes/data/mac-mini-archive/youtube-staging/029/shorts_v01/). Commit 10_Shorts/shorts_v01_pack/ and park for Chief. Upload is a later job.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-25T03:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T03:15Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
