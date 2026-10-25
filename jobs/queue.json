@@ -81458,6 +81458,11 @@
           "at": "2026-10-25T23:32Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Gold foil card is up. Building Pp5LmjsduI4 four-elements v02 (atempo 1.40 so aren't lands by 1.5s)."
+        },
+        {
+          "at": "2026-10-25T23:36Z",
+          "by": "cursor",
+          "what": "waits on Ben: swap the HOS Short The Four Elements Were Wrong (Pp5LmjsduI4, airs Tue 3 Nov 11:30) to re-cut v02. aren't lands at 1.47s by speeding the existing open 1.40x, pitch unchanged. Low-detail warning at 0:04 on the iron-and-flame plate. (by 2026-11-02 20:00 London)"
         }
       ],
       "kind": "video",
@@ -81474,17 +81479,30 @@
         "by": "cursor",
         "note": "Gold foil card is up. Building Pp5LmjsduI4 four-elements v02 (atempo 1.40 so aren't lands by 1.5s)."
       },
-      "awaits_ben": {
-        "what": "swap the HOS Short Why Gold Foil Bounced Rutherford's Particles Back (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v02. Tissue plate stays the KEEP v02: v01 is the rejected projector shot, not a sharper shell. Low-detail warning at 0:16 for Ben to see. 05_flash_in_dark is missing; thin gold foil covers that split.",
-        "file": "HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v02_PHONE.mp4",
-        "version": "v02",
-        "due": "2026-10-31T20:00Z",
-        "airs": "2026-11-01T11:30Z",
-        "ifNot": "No OK by Sat 31 Oct 20:00 London: v01 airs Sun 1 Nov 11:30 as scheduled and v02 parks",
-        "title": "Gold foil Short re-cut v02 (swap)",
-        "number": "004",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "swap the HOS Short Why Gold Foil Bounced Rutherford's Particles Back (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v02. Tissue plate stays the KEEP v02: v01 is the rejected projector shot, not a sharper shell. Low-detail warning at 0:16 for Ben to see. 05_flash_in_dark is missing; thin gold foil covers that split.",
+          "file": "HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v02_PHONE.mp4",
+          "version": "v02",
+          "due": "2026-10-31T20:00Z",
+          "airs": "2026-11-01T11:30Z",
+          "ifNot": "No OK by Sat 31 Oct 20:00 London: v01 airs Sun 1 Nov 11:30 as scheduled and v02 parks",
+          "title": "Gold foil Short re-cut v02 (swap)",
+          "number": "004",
+          "type": "short"
+        },
+        {
+          "what": "swap the HOS Short The Four Elements Were Wrong (Pp5LmjsduI4, airs Tue 3 Nov 11:30) to re-cut v02. aren't lands at 1.47s by speeding the existing open 1.40x, pitch unchanged. Low-detail warning at 0:04 on the iron-and-flame plate.",
+          "file": "HOS UAT/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/hos_002_backcat_four_elements_v02_PHONE.mp4",
+          "version": "v02",
+          "due": "2026-11-02T20:00Z",
+          "airs": "2026-11-03T11:30Z",
+          "ifNot": "No OK by Mon 2 Nov 20:00 London: v01 airs Tue 3 Nov 11:30 as scheduled and v02 parks",
+          "title": "Four elements Short re-cut v02 (swap)",
+          "number": "002",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J0966",
