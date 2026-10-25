@@ -79021,13 +79021,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-25T15:10Z",
-      "eta": "2026-10-25T17:10Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T07:37Z",
-      "result": "",
+      "result": "parked for Chief: 1-BZaFIMwYU flask v07 one audio gap (0.14s under -45 dB); Ben to OK swap",
       "history": [
         {
           "at": "2026-10-25T07:37Z",
@@ -79163,6 +79163,11 @@
           "at": "2026-10-25T15:18Z",
           "by": "cursor",
           "what": "step 5 of 6 done: v07 gates PASS, 18.167s, sha 5de76a82, HOS 3e04e2e7; parking for Chief"
+        },
+        {
+          "at": "2026-10-25T15:18Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: 1-BZaFIMwYU flask v07 one audio gap (0.14s under -45 dB); Ben to OK swap"
         }
       ],
       "kind": "video",
