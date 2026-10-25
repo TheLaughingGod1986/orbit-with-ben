@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v03.mp4",
+  "edge_floor": 0.0211,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s08_loop_epic",
+      "cut": 7,
+      "t": 22.73,
+      "source": "end_card_loop_epic_earth.mp4",
+      "why": [
+        "low detail: edge density 0.0139 < film p5 0.0211"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_epic",
+      "source": "epic_earth_rotation.mp4",
+      "t": 1.25,
+      "std": 43.5,
+      "mean": 115.47,
+      "p95": 201.0,
+      "edge": 0.0346,
+      "hf": 10.36,
+      "lf": 35.24,
+      "std8": 38.51,
+      "edge8": 0.3107,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_iss",
+      "source": "027_v01k_span_28.40.mp4",
+      "t": 4.1,
+      "std": 50.11,
+      "mean": 149.57,
+      "p95": 222.0,
+      "edge": 0.0518,
+      "hf": 9.8,
+      "lf": 46.43,
+      "std8": 47.5,
+      "edge8": 0.2199,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_gerst",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 7.3,
+      "std": 29.17,
+      "mean": 48.68,
+      "p95": 104.0,
+      "edge": 0.0876,
+      "hf": 11.52,
+      "lf": 20.22,
+      "std8": 22.69,
+      "edge8": 0.2361,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_air",
+      "source": "row10_air.mp4",
+      "t": 10.5,
+      "std": 46.54,
+      "mean": 34.29,
+      "p95": 144.0,
+      "edge": 0.0843,
+      "hf": 15.43,
+      "lf": 34.52,
+      "std8": 38.67,
+      "edge8": 0.3038,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_ocean",
+      "source": "027_v01k_span_45.30.mp4",
+      "t": 13.75,
+      "std": 39.89,
+      "mean": 82.79,
+      "p95": 136.0,
+      "edge": 0.0662,
+      "hf": 12.8,
+      "lf": 31.15,
+      "std8": 34.37,
+      "edge8": 0.2536,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_globe",
+      "source": "epic_spin_v01.mp4",
+      "t": 17.0,
+      "std": 50.54,
+      "mean": 110.82,
+      "p95": 205.0,
+      "edge": 0.096,
+      "hf": 12.98,
+      "lf": 42.97,
+      "std8": 45.33,
+      "edge8": 0.4982,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_foucault",
+      "source": "Foucault_pendulum_1.webm",
+      "t": 20.41,
+      "std": 50.69,
+      "mean": 135.32,
+      "p95": 196.0,
+      "edge": 0.0896,
+      "hf": 12.75,
+      "lf": 43.63,
+      "std8": 46.12,
+      "edge8": 0.3415,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_loop_epic",
+      "source": "end_card_loop_epic_earth.mp4",
+      "t": 22.73,
+      "std": 34.93,
+      "mean": 110.19,
+      "p95": 180.0,
+      "edge": 0.0139,
+      "hf": 3.29,
+      "lf": 31.73,
+      "std8": 33.37,
+      "edge8": 0.2482,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0139 < film p5 0.0211"
+      ]
+    }
+  ]
+}
