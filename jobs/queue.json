@@ -78536,22 +78536,39 @@
           "at": "2026-10-25T08:54Z",
           "by": "chief",
           "what": "waits on Ben: upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v02 Private for Wed 9 Dec 11:30"
+        },
+        {
+          "at": "2026-10-25T08:54Z",
+          "by": "chief",
+          "what": "waits on Ben: upload 029 Short \"Is Betelgeuse Really About to Explode?\" v02 Private for Fri 11 Dec 11:30"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:029"
       ],
-      "awaits_ben": {
-        "what": "upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v02 Private for Wed 9 Dec 11:30",
-        "file": "OWB UAT/029_short_wed09_great_dimming_v02_PHONE.mp4",
-        "version": "v02",
-        "airs": "2026-12-09T11:30Z",
-        "ifNot": "Nothing is uploaded until you OK it",
-        "title": "Betelgeuse Short: Great Dimming v02",
-        "number": "029",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v02 Private for Wed 9 Dec 11:30",
+          "file": "OWB UAT/029_short_wed09_great_dimming_v02_PHONE.mp4",
+          "version": "v02",
+          "airs": "2026-12-09T11:30Z",
+          "ifNot": "Nothing is uploaded until you OK it",
+          "title": "Betelgeuse Short: Great Dimming v02",
+          "number": "029",
+          "type": "short"
+        },
+        {
+          "what": "upload 029 Short \"Is Betelgeuse Really About to Explode?\" v02 Private for Fri 11 Dec 11:30",
+          "file": "OWB UAT/029_short_fri11_opening_testA_v02_PHONE.mp4",
+          "version": "v02",
+          "airs": "2026-12-11T11:30Z",
+          "ifNot": "Nothing is uploaded until you OK it",
+          "title": "Betelgeuse Short: About to explode? v02",
+          "number": "029",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J0938",
