@@ -77536,6 +77536,11 @@
           "at": "2026-10-25T00:16Z",
           "by": "chief",
           "what": "done: Chief PASS (Grok, 25 Oct 01:25 London) on HOS 007 master v04 (HOS PR #355 8eafbbde, sha256 c7f62adb, 531.1 s, -14.0 LUFS / -1.4 dBTP, £0 / 0 Flow cr): Ben's 3 v03 notes fixed. 0:38 peg dolls rest on a solid oak sill (nothing passes through); 2:40 flat lancet surface scratch, no needle; 4:22 clean arm, no artefact. v04 vs v03 PSNR: only the 3 replaced cuts differ, rest bit-identical. Gates PASS. To Ben for his watch (hos_007_master_v04_PHONE.mp4 in HOS UAT/007_The-First-Vaccine). PR #355 merge is Ben's."
+        },
+        {
+          "at": "2026-10-25T08:54Z",
+          "by": "chief",
+          "what": "waits on Ben: watch HOS 007 Vaccine master v04 (your 3 fixes in) and give the Final OK, so it uploads Private for Thu 12 Nov 18:00 (by 2026-11-08 23:59 London)"
         }
       ],
       "kind": "assembly",
@@ -77550,7 +77555,16 @@
         "by": "gemini",
         "note": "Pushed 8eafbbde to HOS PR #355 (codex/J0830-master-v01) with master_v04_pack and production-status.md; parking for Chief"
       },
-      "done_ref": "8eafbbde"
+      "done_ref": "8eafbbde",
+      "awaits_ben": {
+        "what": "watch HOS 007 Vaccine master v04 (your 3 fixes in) and give the Final OK, so it uploads Private for Thu 12 Nov 18:00",
+        "file": "HOS UAT/007_The-First-Vaccine/hos_007_master_v04_PHONE.mp4",
+        "version": "v04",
+        "due": "2026-11-08T23:59Z",
+        "ifNot": "No upload of 007 without your OK",
+        "card": "HOS:007",
+        "type": "long"
+      }
     },
     {
       "id": "J0926",
