@@ -2,7 +2,8 @@
 """Per-video Studio tracker (Ben, 24 Oct 2026): five lanes, one card per long/Short.
 
 Lanes (left → right):
-  upcoming → progress → changes → ready → done
+  upcoming → progress → changes → ready → approved → done
+  ("approved" = "Approved, on its way", Ben 25 Oct 14:13: what he OK'd, still in the pipeline until YouTube has it)
 
 Derived from jobs/queue.json, UPLOADS.json / PACKAGE_UPLOAD_RESULT, film_briefs, HOS PIPELINE,
 OWB status.json, and Ben's board checks (`[Ben] OK/changes` via /api/checks). Optional overrides
@@ -25,12 +26,13 @@ PUBLIC_DATA = ROOT / "05_Analytics" / "dashboard" / "data.json"  # Channel Track
 PROJECTS = ROOT / "02_Video-Projects"
 LONDON = ZoneInfo("Europe/London")
 
-LANES = ("upcoming", "progress", "changes", "ready", "done")
+LANES = ("upcoming", "progress", "changes", "ready", "approved", "done")
 LANE_LABELS = {
     "upcoming": "Upcoming",
     "progress": "In progress",
     "changes": "Changes requested",
     "ready": "Ready for OK",
+    "approved": "Approved, on its way",
     "done": "Done on YouTube",
 }
 LIVE_STATUSES = frozenset({"open", "claimed", "blocked"})
@@ -525,7 +527,12 @@ def apply_ask(card: dict, e: dict, checks: dict, now: datetime) -> dict:
     if unhandled and c.get("verdict") == "change":
         lane, ready_for, line = "changes", "", f"You asked for changes on {e.get('version') or 'this cut'}; {e['job']} is held."
     elif unhandled and c.get("verdict") == "ok":
-        ready_for, line = "Chief", f"You OK'd {e.get('version') or 'it'}. The Chief now runs {e['job']}."
+        # Ben has answered: out of Ready for OK into "Approved, on its way" until a follow-on job carries it.
+        card.update(checkId=cid, ask={k: e.get(k, "") for k in ("id", "job", "what", "due", "file", "version", "ifNot")},
+                    check={"verdict": c.get("verdict"), "version": c.get("version"), "at": c.get("at"), "handled": False})
+        return mark_approved(card, {"job": e["job"], "jobStatus": e.get("jobStatus") or "", "version": e.get("version") or "",
+                                    "okAt": c.get("at") or "", "airs": e.get("airs") or "", "watch": e.get("watch"),
+                                    "askJob": e["job"], "waiting": True}, now)
     flags = [f for f in card.get("flags") or [] if f.get("kind") not in ("deadline", "stuck")]
     due = _parse_iso(e.get("due"))
     if lane == "ready" and ready_for == "Ben" and due and now <= due <= now + timedelta(days=2):
@@ -565,6 +572,183 @@ def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime) 
             videos.append(card)
             by_key[card["key"]] = card
         apply_ask(card, e, checks, now)
+
+
+# ---- Approved, on its way (Ben, 25 Oct 2026 14:13: "Ones I approve can they go into a waiting for deployment lane or
+# something? Need to know the ones I approve are still in the pipeline"). A job that delivers a cut Ben OK'd carries
+# `approved_from` in jobs/queue.json (`jobs.py approved <job> --from <asking job>`, or `jobs.py add --approved-from`,
+# or `jobs.py awaits <job> --clear --ok`). Its card sits in this lane with the job's live status until the job is done
+# and the upload reads back Private + scheduled (or Public); then it moves to Done. Warning style when the job is
+# blocked or cancelled, when it is done but nothing read back, or when it will miss the air time.
+APPROVED_FIELDS = ("what", "file", "version", "airs", "card", "title", "number", "type", "channel", "job", "askId",
+                   "okAt", "okRef")
+READBACK_RE = re.compile(r"\b(?:private|public)\b[^\n]{0,160}?\b(?:publishAt|scheduled|read ?back|live)\b"
+                         r"|\b(?:publishAt|scheduled|read ?back)\b[^\n]{0,160}?\b(?:private|public)\b", re.I)
+
+
+def approved_entries(alljobs: list[dict]) -> list[dict]:
+    """One entry per job with `approved_from`: what Ben OK'd plus the delivering job's live state."""
+    out = []
+    for j in alljobs:
+        a = j.get("approved_from")
+        if not isinstance(a, dict) or j.get("status") not in LIVE_STATUSES | {"done", "cancelled"}:
+            continue
+        e = {k: str(a.get(k) or "") for k in APPROVED_FIELDS}
+        e["askJob"] = e.pop("job") or j["id"]
+        e["id"] = e["job"] = j["id"]
+        e["jobStatus"] = j.get("status") or ""
+        e["channel"] = (e["channel"] or ("HOS" if j.get("repo") == "hos" else "OWB")).upper()
+        e["number"] = e["number"] or str(j.get("film") or "")
+        e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
+        e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))
+        e["by"] = j.get("by") or ""
+        e["after"] = j.get("after") or ""
+        e["notBefore"] = j.get("not_before") or ""
+        e["etaMin"] = int(j.get("eta_min") or 0)
+        e["progress"] = j.get("progress") if isinstance(j.get("progress"), dict) else {}
+        e["result"] = str(j.get("result") or "")[:600]
+        hist = [h for h in (j.get("history") or []) if isinstance(h, dict)]
+        e["blockedWhy"] = next((str(h.get("what") or "")[9:160] for h in reversed(hist) if str(h.get("what") or "").startswith("blocked:")), "")
+        e["doneAt"] = next((str(h.get("at") or "") for h in reversed(hist) if str(h.get("what") or "").startswith("done")), "")
+        e["cancelledAt"] = next((str(h.get("at") or "") for h in reversed(hist) if str(h.get("what") or "").startswith("cancelled")), "")
+        out.append(e)
+    return out
+
+
+def read_back(e: dict, card: dict | None) -> bool:
+    """Done and on YouTube as Private + scheduled (or Public): the card's own YouTube state says so, or the job's result
+    reports the read-back."""
+    if e.get("jobStatus") != "done":
+        return False
+    yt = (card or {}).get("youtube") or {}
+    if yt.get("state") == "live" or (yt.get("state") == "scheduled" and yt.get("publishAt")
+                                     and (not e.get("airs") or str(yt.get("publishAt"))[:16] == str(e.get("airs"))[:16])):
+        return True
+    return bool(READBACK_RE.search(e.get("result") or ""))
+
+
+def approved_state(e: dict, jobs_by_id: dict, now: datetime) -> tuple[str, str, str]:
+    """(state, plain status line, warning or "")."""
+    st, job = e.get("jobStatus") or "", e.get("job") or ""
+    warn = ""
+    if e.get("waiting"):
+        state, line = "waiting", ("Waiting for the Chief to queue it." if not job
+                                  else f"Waiting for the Chief to start {job}." if st in LIVE_STATUSES or not st
+                                  else f"Waiting for the Chief to queue the upload after {job}.")
+    elif st == "claimed":
+        p = e.get("progress") or {}
+        step = f", step {p.get('step')} of {p.get('of')}" if p.get("of") else ""
+        state, line = "working", f"{e.get('by') or 'A worker'} is on it{step}."
+    elif st == "open":
+        dep = jobs_by_id.get(e.get("after") or "")
+        nb = _parse_iso(e.get("notBefore"))
+        if dep and dep.get("status") != "done":
+            state, line = "queued", f"Queued after {dep['id']}."
+        elif nb and nb > now:
+            state, line = "queued", f"Queued; starts {_london_short(e['notBefore'])} London."
+        else:
+            state, line = "queued", "Queued; the next free worker picks it up."
+    elif st == "blocked":
+        state, line = "blocked", "Blocked" + (f": {e['blockedWhy']}" if e.get("blockedWhy") else ".")
+        warn = line
+    elif st == "cancelled":
+        state, line = "cancelled", "Cancelled after your OK."
+        warn = f"{job} was cancelled: what you OK'd is not on its way"
+    else:  # done, not read back yet
+        state, line = "uploaded", "Done; waiting for YouTube to read back Private + scheduled."
+        done_at = _parse_iso(e.get("doneAt"))
+        if done_at and now - done_at > timedelta(hours=6):
+            warn = "Done over 6 h ago but no Private + scheduled read-back"
+    airs = _parse_iso(e.get("airs"))
+    if not warn and airs and state in ("waiting", "queued", "working", "blocked"):
+        need = timedelta(minutes=max(2 * (e.get("etaMin") or 60), 120))
+        if airs - now < need:
+            warn = (f"Will miss its air time ({_london_short(e['airs'])} London)" if airs > now
+                    else f"Air time {_london_short(e['airs'])} London has passed")
+    return state, line, warn
+
+
+def mark_approved(card: dict, e: dict, now: datetime, jobs_by_id: dict | None = None) -> dict:
+    state, status, warn = approved_state(e, jobs_by_id or {}, now)
+    ok_at = _parse_iso(e.get("okAt"))
+    ok_txt = ok_at.astimezone(LONDON).strftime("%a %-d %b %H:%M") if ok_at else ""
+    version = e.get("version") or card.get("version") or ""
+    flags = [f for f in card.get("flags") or [] if f.get("kind") not in ("deadline", "stuck", "nofile", "approved")]
+    if warn:
+        flags.append({"kind": "approved", "text": warn})
+    airs = e.get("airs") or ""
+    p = e.get("progress") or {}
+    card.update(lane="approved", readyFor="", waitingOn=e.get("by") or ("Chief" if state == "waiting" else "queue"),
+                line=f"You OK'd {version or 'it'}" + (f" on {ok_txt}" if ok_txt else "") + ". "
+                     + (f"{e['job']}: {status}" if e.get("job") and state != "waiting" else status),
+                flags=flags, okNote="", collapsed=False, version=version, watch=e.get("watch") or card.get("watch"),
+                approved={"job": e.get("job") or "", "askJob": e.get("askJob") or "", "state": state, "status": status,
+                          "warn": warn, "version": version, "okAt": e.get("okAt") or "", "okAtText": ok_txt,
+                          "airs": airs, "airsText": _london_short(airs), "what": e.get("what") or "",
+                          "step": p.get("step") if state == "working" else None, "of": p.get("of") if state == "working" else None})
+    if airs and not card.get("airText"):
+        card["airText"] = london_slot(airs)
+        card["air"] = airs[:10]
+    return card
+
+
+def approved_card(e: dict) -> dict:
+    airs = e.get("airs") or ""
+    return {"key": f"{e['channel']}:OK:{e['job']}", "checkId": f"{e['channel']}-{e['job']}", "channel": e["channel"],
+            "number": e.get("number") or "", "title": e.get("title") or e.get("what") or e["job"], "type": e["type"],
+            "version": e.get("version") or "", "air": airs[:10], "airText": london_slot(airs) if airs else "",
+            "lane": "approved", "line": "", "waitingOn": "", "readyFor": "", "notes": [], "flags": [], "okNote": "",
+            "youtube": None, "watch": e.get("watch"), "jobs": [{"id": e["job"], "status": e.get("jobStatus"),
+            "title": "", "by": e.get("by") or "", "kind": ""}], "check": None, "shortId": "", "parent": "", "collapsed": False}
+
+
+def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now: datetime) -> None:
+    by_key = {v["key"]: v for v in videos}
+    for e in entries or []:
+        if e.get("jobStatus") == "cancelled":
+            # shown with a warning for 2 days (or until it would have aired), so Ben sees it didn't go ahead
+            gone, airs = _parse_iso(e.get("cancelledAt")), _parse_iso(e.get("airs"))
+            if (airs and now > airs) or not gone or now - gone > timedelta(days=2):
+                continue
+        card = by_key.get(e.get("card") or "")
+        if card is not None and card.get("lane") == "ready" and card.get("readyFor") == "Ben" and \
+                (card.get("ask") or {}).get("version") not in ("", None, e.get("version")):
+            continue  # a newer cut of the same video asks Ben again: that ask wins
+        if read_back(e, card):
+            if card is None:
+                airs = _parse_iso(e.get("airs"))
+                if airs and now > airs + timedelta(days=1):
+                    continue  # aired: the Channel Tracker's public read has it
+                card = approved_card(e)
+                videos.append(card)
+                by_key[card["key"]] = card
+            if card.get("lane") != "done":
+                card.update(lane="done", readyFor="", waitingOn="YouTube", flags=[], okNote="", collapsed=False,
+                            line=f"Private, scheduled {london_slot(e.get('airs'))}." if e.get("airs") else "On YouTube.")
+                card["youtube"] = card.get("youtube") or {"state": "scheduled", "videoId": "", "publishAt": e.get("airs") or "",
+                                                          "privacy": "private", "url": "", "publishAtLondon": london_slot(e.get("airs"))}
+            card.pop("ask", None)
+            continue
+        if card is None:
+            card = approved_card(e)
+            videos.append(card)
+            by_key[card["key"]] = card
+        mark_approved(card, e, now, jobs_by_id)
+
+
+def settle_ready(videos: list[dict], now: datetime) -> None:
+    """Ready for OK holds only what waits on Ben: an OK'd card waiting on the Chief goes to Approved, on its way; a
+    card parked for a Chief PASS that Ben hasn't seen yet is still in progress."""
+    for v in videos:
+        if v.get("lane") != "ready" or v.get("readyFor") in ("", "Ben"):
+            continue
+        c = v.get("check") or {}
+        if c.get("verdict") == "ok" and not c.get("handled"):
+            mark_approved(v, {"job": next((j.get("id") for j in v.get("jobs") or []), ""),
+                              "jobStatus": "", "waiting": True, "version": c.get("version") or v.get("version") or "",
+                              "okAt": c.get("at") or ""}, now)
+        else:
+            v.update(lane="progress", readyFor="", waitingOn="Chief", line="Waiting on the Chief's check.")
 
 
 def flags_for(
@@ -626,6 +810,8 @@ def build_videos(
     public: dict | None = None,
     titles: dict | None = None,
     asks: list[dict] | None = None,
+    approved: list[dict] | None = None,
+    alljobs: list[dict] | None = None,
 ) -> dict:
     """Return {updatedAt, lanes, videos} for board/tracker."""
     now = now or datetime.now(timezone.utc)
@@ -764,9 +950,12 @@ def build_videos(
 
     # Jobs waiting on Ben (awaits_ben on the job): their cards go to Ready for OK, soonest deadline first.
     add_asks(videos, asks or [], checks, now)
+    # Cuts Ben OK'd, still on their way (approved_from on the delivering job), then nothing but Ben's asks stays in Ready.
+    add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now)
+    settle_ready(videos, now)
 
     videos.sort(key=lambda v: (LANES.index(v["lane"]), 0 if v.get("ask") else 1, (v.get("ask") or {}).get("due") or "9999",
-                               v.get("air") or "9999", v["key"]))
+                               (v.get("approved") or {}).get("airs") or v.get("air") or "9999", v["key"]))
     counts = {lane: sum(1 for v in videos if v["lane"] == lane and not v.get("collapsed")) for lane in LANES}
     return {
         "updatedAt": now.astimezone(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
@@ -917,11 +1106,13 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
         films = dict(films)
         films["_extraWatch"] = briefs_doc["extraWatch"]
     live_jobs = owb_doc.get("jobs") or []
+    all_jobs = list(live_jobs)
     # Prefer full queue when available (live jobs only lack done ones; enough for lanes)
     qpath = ROOT / "jobs" / "queue.json"
     if qpath.exists():
         try:
-            live_jobs = [j for j in json.loads(qpath.read_text())["jobs"] if j.get("status") in LIVE_STATUSES]
+            all_jobs = json.loads(qpath.read_text())["jobs"]
+            live_jobs = [j for j in all_jobs if j.get("status") in LIVE_STATUSES]
         except (OSError, ValueError, KeyError):
             pass
     # The snapshot resolved each awaits_ben entry's Play link (signed) into briefs.json "asks"; without it (tests,
@@ -932,6 +1123,12 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
             asks = ask_entries(json.loads(qpath.read_text())["jobs"])
         except (OSError, ValueError, KeyError):
             asks = []
+    # Approved, on its way: the queue is the truth for each job's state (it moves every minute); the snapshot's copy
+    # in briefs.json only adds the Play links.
+    links = {e.get("id"): e.get("watch") for e in (briefs_doc.get("approved") or [])} if isinstance(briefs_doc, dict) else {}
+    approved = approved_entries(all_jobs)
+    for e in approved:
+        e["watch"] = links.get(e["id"])
     return build_videos(
         hos=hos if "films" in hos else {"films": []},
         owb=owb,
@@ -941,6 +1138,8 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
         watch=briefs_doc.get("watch") or {},
         overrides=overrides,
         asks=asks or [],
+        approved=approved,
+        alljobs=all_jobs,
     )
 
 

@@ -19,6 +19,7 @@
   --ok: #3ecf8e;
   --ready: #f5d76e;
   --changes: #ff9f6b;
+  --approved: #7dd3fc;
   --radius: 14px;
   --pad: 14px;
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -53,6 +54,16 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 .lane h2 .n { color: var(--muted); font-weight: 500; font-size: 0.85rem; }
 .lane[data-lane="changes"] h2 { color: var(--changes); }
 .lane[data-lane="ready"] h2 { color: var(--ready); }
+.lane[data-lane="approved"] h2 { color: var(--approved); }
+.appr { margin: 8px 0; padding: 8px 10px; border-radius: 10px; background: rgba(125,211,252,0.08); border: 1px solid rgba(125,211,252,0.25); font-size: 0.85rem; }
+.appr .appr-top { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; color: var(--muted); }
+.appr .appr-state { font-weight: 700; color: var(--approved); }
+.appr .appr-line { margin-top: 4px; color: var(--ink); }
+.appr .appr-bar { margin-top: 6px; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.appr .appr-bar span { display: block; height: 100%; background: var(--approved); }
+.appr .mono { font-family: ui-monospace, Menlo, monospace; }
+.appr.warn { background: rgba(255,107,107,0.10); border-color: var(--flag); }
+.appr.warn .appr-state { color: var(--flag); }
 .lane[data-lane="done"] h2 { color: var(--ok); }
 .cards { padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 .card {
@@ -157,7 +168,7 @@ footer a { color: inherit; }
 }
 .modal .row { display: flex; gap: 8px; margin-top: 10px; }
 @media (min-width: 900px) {
-  .board { display: grid; grid-template-columns: repeat(5, 1fr); overflow: visible; }
+  .board { display: grid; grid-template-columns: repeat(6, 1fr); overflow: visible; }
   .lane { flex: none; max-height: calc(100vh - 140px); min-width: 0; }
 }
 </style>
