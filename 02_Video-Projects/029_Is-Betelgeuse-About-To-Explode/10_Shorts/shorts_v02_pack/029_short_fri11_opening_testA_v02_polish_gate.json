@@ -1,0 +1,285 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v02.mp4",
+  "edge_floor": 0.0178,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s04_sphere",
+      "cut": 3,
+      "t": 10.35,
+      "source": "sphere_jan.jpg",
+      "why": [
+        "low detail: edge density 0.0163 < film p5 0.0178"
+      ]
+    },
+    {
+      "row": "s07_alma",
+      "cut": 6,
+      "t": 19.94,
+      "source": "alma_orion_set.mp4",
+      "why": [
+        "low detail: luma std 14.51 < 18.0"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_visir",
+      "source": "visir_flames.jpg",
+      "t": 1.11,
+      "std": 65.66,
+      "mean": 86.92,
+      "p95": 232.0,
+      "edge": 0.032,
+      "hf": 12.88,
+      "lf": 59.34,
+      "std8": 61.71,
+      "edge8": 0.194,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_orion_b",
+      "source": "orion_rise_vlt.mp4",
+      "t": 3.47,
+      "std": 28.26,
+      "mean": 83.51,
+      "p95": 114.0,
+      "edge": 0.0354,
+      "hf": 9.25,
+      "lf": 23.45,
+      "std8": 24.84,
+      "edge8": 0.0657,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_paranal",
+      "source": "orion_over_paranal.mp4",
+      "t": 6.64,
+      "std": 21.96,
+      "mean": 65.38,
+      "p95": 81.0,
+      "edge": 0.0339,
+      "hf": 10.13,
+      "lf": 14.46,
+      "std8": 16.85,
+      "edge8": 0.0536,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_sphere",
+      "source": "sphere_jan.jpg",
+      "t": 10.35,
+      "std": 31.55,
+      "mean": 50.31,
+      "p95": 98.0,
+      "edge": 0.0163,
+      "hf": 11.36,
+      "lf": 26.69,
+      "std8": 27.76,
+      "edge8": 0.0698,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0163 < film p5 0.0178"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "s05_promise_a",
+      "source": "code_graphic_029_fri_promise_a.mp4",
+      "t": 13.7,
+      "std": 25.65,
+      "mean": 82.97,
+      "p95": 116.0,
+      "edge": 0.0197,
+      "hf": 10.73,
+      "lf": 20.22,
+      "std8": 21.05,
+      "edge8": 0.0427,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_promise_b",
+      "source": "code_graphic_029_fri_promise_b.mp4",
+      "t": 17.0,
+      "std": 28.67,
+      "mean": 87.82,
+      "p95": 132.0,
+      "edge": 0.0242,
+      "hf": 9.94,
+      "lf": 23.86,
+      "std8": 24.93,
+      "edge8": 0.0485,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_alma",
+      "source": "alma_orion_set.mp4",
+      "t": 19.94,
+      "std": 14.51,
+      "mean": 85.62,
+      "p95": 93.0,
+      "edge": 0.0191,
+      "hf": 6.8,
+      "lf": 8.43,
+      "std8": 10.32,
+      "edge8": 0.0298,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.51 < 18.0"
+      ]
+    },
+    {
+      "cut": 7,
+      "row": "s08_promise_c",
+      "source": "code_graphic_029_fri_promise_c.mp4",
+      "t": 22.67,
+      "std": 28.3,
+      "mean": 87.5,
+      "p95": 129.0,
+      "edge": 0.0399,
+      "hf": 10.45,
+      "lf": 23.2,
+      "std8": 24.36,
+      "edge8": 0.0508,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "s09_promise_d",
+      "source": "code_graphic_029_fri_promise_d.mp4",
+      "t": 25.55,
+      "std": 26.2,
+      "mean": 86.59,
+      "p95": 125.0,
+      "edge": 0.039,
+      "hf": 10.22,
+      "lf": 20.95,
+      "std8": 22.1,
+      "edge8": 0.0466,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "s10_lasilla",
+      "source": "lasilla_mw.mp4",
+      "t": 28.16,
+      "std": 31.72,
+      "mean": 92.1,
+      "p95": 138.0,
+      "edge": 0.1199,
+      "hf": 13.38,
+      "lf": 25.52,
+      "std8": 26.43,
+      "edge8": 0.0912,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "s10_lasillab",
+      "source": "lasilla_mw_b.mp4",
+      "t": 30.65,
+      "std": 30.17,
+      "mean": 100.17,
+      "p95": 144.0,
+      "edge": 0.1613,
+      "hf": 14.85,
+      "lf": 22.52,
+      "std8": 23.62,
+      "edge8": 0.1001,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "s11_end",
+      "source": "visir_flames.jpg",
+      "t": 32.88,
+      "std": 54.49,
+      "mean": 73.96,
+      "p95": 203.0,
+      "edge": 0.0217,
+      "hf": 12.47,
+      "lf": 50.75,
+      "std8": 51.91,
+      "edge8": 0.1523,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
