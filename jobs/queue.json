@@ -76670,13 +76670,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-25T00:56Z",
-      "eta": "2026-10-25T04:56Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "",
+      "result": "parked for Chief: review gate PR v2",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76767,6 +76767,11 @@
           "at": "2026-10-25T02:24Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Pushed OWB PR #268 (b5e33b69a) + HOS PR #362 (aaf34df5); core_sync, unit tests, and check_all.sh PASS"
+        },
+        {
+          "at": "2026-10-25T02:24Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review gate PR v2"
         }
       ],
       "kind": "qa",
