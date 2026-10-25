@@ -49,7 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0945 | mini | open | – | – | 006 upload · studio · HOS 006 Trees: Final OK -> package master v06, gates, Private upload publishAt Thu 5 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:10) | 6398691247 |
 | J0946 | mini | open | – | – | 007 upload · studio · HOS 007 Vaccine: Final OK -> package master v04, gates, Private upload publishAt Thu 12 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:25) | 6398845411 |
 | J0947 | mini | open | – | – | studio · HOS Short vEg_tLIm0Co: swap to curie v07 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Tue 27 Oct 20:00 | 6399338457 |
-| J0948 | mini | blocked | chief | – | studio · HOS Short 5n7xFQRBUvI: swap to galen v04 (Private, Sat 31 Oct 11:30 London) after Ben's OK by Fri 30 Oct 20:00 | 6399338457 |
+| J0948 | mini | open | – | – | studio · HOS Short 5n7xFQRBUvI: swap to galen v04 (Private, Sat 31 Oct 11:30 London) after Ben's OK by Fri 30 Oct 20:00 | 6399338457 |
 
 Recently finished:
 
