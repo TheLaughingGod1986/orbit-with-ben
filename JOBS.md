@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0944 | mini | open | – | – | assembly · 029 Betelgeuse Shorts v03 x3: remove YouTube id 'vP1BbqZ_dnM' from end cards (Ben 0:23 note), nothing else changes | 6398586032 |
 | J0945 | mini | open | – | – | 006 upload · studio · HOS 006 Trees: Final OK -> package master v06, gates, Private upload publishAt Thu 5 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:10) | 6398691247 |
 | J0946 | mini | open | – | – | 007 upload · studio · HOS 007 Vaccine: Final OK -> package master v04, gates, Private upload publishAt Thu 12 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:25) | 6398845411 |
-| J0952 | mini | open | – | – | studio · HOS Short 1-BZaFIMwYU: swap to flask v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Mon 26 Oct 20:00 | 6399701162 |
+| J0952 | mini | claimed | cursor | 2026-10-25T20:54Z | studio · HOS Short 1-BZaFIMwYU: swap to flask v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Mon 26 Oct 20:00 | 6399701162 |
 | J0954 | mini | open | – | – | video · Apophis Short BbsyFrV8kCY v11 (Ben 25 Oct 16:35: asteroid not fully rendered): whole lit rock, re-park for Chief by Tue 27 Oct 12:00 | 6400248794 |
 | J0955 | mini | open | – | – | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
 | J0956 | mini | blocked | chief | – | studio · OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30 | 6402300872 |
