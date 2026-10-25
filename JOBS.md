@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0922 | mini | open (after J0921) | – | – | 029 upload · for gemini · listing · `gemini-argon` · 029 Betelgeuse: Private upload of the release master for Sun 6 Dec 18:00 London (after Chief PASS on J0921), read back, record | 6384887788 |
 | J0923 | mini | open (after J0922) | – | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0926 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
-| J0927 | mini | claimed | gemini | 2026-10-25T03:39Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0927 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
