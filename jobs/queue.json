@@ -77800,9 +77800,24 @@
           "at": "2026-10-25T05:06Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-25T05:06Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: claimed; reading SHORTS_PLAN_v01 and master"
         }
       ],
-      "kind": "assembly"
+      "kind": "assembly",
+      "taskKeys": [
+        "OWB:029"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 6,
+        "at": "2026-10-25T05:06Z",
+        "by": "cursor",
+        "note": "claimed; reading SHORTS_PLAN_v01 and master"
+      }
     }
   ],
   "focus": [],
