@@ -34,8 +34,12 @@ under `board_site/` or the pages it builds does. After such a merge, deploy main
 
 - **Vercel MCP** `create_deployment`: `{"teamId": "team_UPErYpfb3ww71LYTIWUoKvcH", "requestBody": {"name": "studio-kanban",
   "project": "studio-kanban", "target": "production", "gitSource": {"type": "github", "org": "TheLaughingGod1986",
-  "repo": "orbit-with-ben", "ref": "main", "sha": "<merge sha>"}}}`. The project's saved settings (root directory,
-  build) apply.
+  "repo": "orbit-with-ben", "ref": "main", "sha": "<merge sha>"}, "projectSettings": {"framework": null,
+  "rootDirectory": "05_Analytics/kanban/board_site", "installCommand": "npm install", "buildCommand": "python3 build.py",
+  "outputDirectory": "dist", "sourceFilesOutsideRootDirectory": true}}, "forceNew": "1", "skipAutoDetectionConfirmation": "1"}`.
+  **Always pass `projectSettings`.** Without them Vercel builds the repo root, finds nothing to serve, and the live site
+  returns 404 on every path. That happened on 25 Oct 2026 08:54 London (dpl_8Ca8ziAEVP6s9FGrsxHmrH6CgoAE). The fix was
+  redeploying with the settings above (dpl_8dxxvQKf9cic7UqvR1ND5Ko5ZdNg, 200 again by 08:57).
 - **CLI** (where `vercel` is signed in): `cd 05_Analytics/kanban/board_site && npx vercel deploy --prod --scope bens-projects-11c93b15`
   (uses `.vercel/project.json`).
 
