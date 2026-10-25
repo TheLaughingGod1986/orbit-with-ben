@@ -1,5 +1,5 @@
 {
-  "next_id": 945,
+  "next_id": 946,
   "jobs": [
     {
       "id": "J0001",
@@ -79190,6 +79190,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0945",
+      "title": "HOS 006 Trees: Final OK -> package master v06, gates, Private upload publishAt Thu 5 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:10)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) Final OK, 25 Oct 2026 14:15 London. Ben OK'd HOS 006 Trees master v06 via the Studio Kanban button at 14:10 London (HOS #180 6398691247), after Chief PASS on J0924 (HOS fd1a3813).\n\nMaster: HOS 006 Trees master v06, sha256 36c54e68... (verify the full hash against the master_v06 meta/build JSON before upload), 531.83 s, -14.0 LUFS / -1.4 dBTP. PHONE copy 9b3dde01 (HOS UAT/006_Trees-Are-Made-Of-Air/hos_006_master_v06_PHONE.mp4).\n\nDo:\n1. Package v06: point 02_Video-Projects/006_Trees-Are-Made-Of-Air/11_Upload-Package/PACKAGE_MANIFEST.json at master v06; re-time captions (en-GB) and chapters to v06 (v06 audio is bit-identical to v05, so timings should carry; confirm). Run the package gates / check_all.sh; all PASS.\n2. Check the slot in 00_Brand/Channel-Setup/social/UPLOADS.json is still free, then upload to the HOS channel as a new Private video with publishAt Thu 5 Nov 2026 18:00 London (2026-11-05T18:00:00Z). Thumbnail Test & Compare A (WOOD / FROM / SKY?, sha 904d2f58) + B (DO PLANTS / EAT / SOIL?, sha ee5f2605) from J0869 (11_Upload-Package / HOS UAT 08_Thumbnail); if Studio won't take Test & Compare via the uploader, set A as the cover and do the A/B in the Studio finish job.\n3. Read back privacy, publishAt, title, description, tags, chapters, captions and thumbnail; record the new video id in UPLOADS.json and PIPELINE.json; post the read-back on HOS #180 (from=cursor/worker header) with a pointer on OWB #264.\n4. Then queue the Studio finish (end screen + cards, pinned comment, Test & Compare if not done in step 2) as its own job.\nBuffer cross-posts stay deferred (long films are never cross-posted through Buffer). Never Public, no Replace, no delete, no force-push. GBP0, 0 Flow credits. Disk preflight: stop and block if under 3 GB free; scratch on the NAS when mounted.\nDeadline: uploaded Private and read back by Thu 29 Oct 20:00 London (hard stop Wed 4 Nov 18:00).\n",
+      "ref": "6398691247",
+      "film": "006",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T14:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T14:12Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
