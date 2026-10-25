@@ -79954,10 +79954,34 @@
           "at": "2026-10-25T16:20Z",
           "by": "chief",
           "what": "reopened: Ben OK'd the swap to flask v07 via the Studio Kanban button Sun 25 Oct 16:19 London (HOS #180 6400071733). Go: Private upload with publishAt Tue 27 Oct 11:30 London per steps 1-4."
+        },
+        {
+          "at": "2026-10-25T16:20Z",
+          "by": "chief",
+          "what": "no longer waits on Ben: OK'd, delivered by J0952"
+        },
+        {
+          "at": "2026-10-25T16:20Z",
+          "by": "chief",
+          "what": "approved by Ben: swap the HOS Short \"What Is the Pasteur Swan Neck Flask Experiment?\" (1-BZaFIMwYU, airs Tue 27 Oct 11:30) to re-cut v07 v07"
         }
       ],
       "kind": "studio",
-      "awaits_ben": {
+      "urgent": 8,
+      "approved_from": {
+        "what": "swap the HOS Short \"What Is the Pasteur Swan Neck Flask Experiment?\" (1-BZaFIMwYU, airs Tue 27 Oct 11:30) to re-cut v07",
+        "file": "HOS UAT/001_How-Did-We-Discover-Germs/10_Shorts/hos_001_s11_curved_flask_v07_PHONE.mp4",
+        "version": "v07",
+        "airs": "2026-10-27T11:30Z",
+        "title": "Swan-neck flask Short re-cut v07 (swap)",
+        "number": "001",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0952",
+        "okAt": "2026-10-25T16:19Z",
+        "okRef": "6400071733"
+      },
+      "awaits_was": {
         "what": "swap the HOS Short \"What Is the Pasteur Swan Neck Flask Experiment?\" (1-BZaFIMwYU, airs Tue 27 Oct 11:30) to re-cut v07",
         "file": "HOS UAT/001_How-Did-We-Discover-Germs/10_Shorts/hos_001_s11_curved_flask_v07_PHONE.mp4",
         "version": "v07",
@@ -79967,8 +79991,7 @@
         "title": "Swan-neck flask Short re-cut v07 (swap)",
         "number": "001",
         "type": "short"
-      },
-      "urgent": 8
+      }
     }
   ],
   "focus": [],
