@@ -39,7 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0962 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: arm thumbnail-only Test & Compare A (live MELTS LEAD) vs B EARTH'S TWIN (J0908 PASS), read back, ledger |  |
 | J0963 | mini | open | – | – | thumb · 022 Sun h8HGfyShEHI: Test & Compare B v02 '10% BRIGHTER' (fix of J0908 B), park for Chief |  |
 | J0964 | mini | open | – | – | assembly · 028 Oort marbles Short v02: end card without YouTube id, free slot, J0918 gate (fix of J0911 v01), park for Chief |  |
-| J0965 | mini | open (after J0934) | – | – | video · HOS 60% re-cut batch HB (local only): JyRjM-9Yc8g (Sun 1 Nov), Pp5LmjsduI4 (3 Nov), PlihWC5uA2E (5 Nov), mTY67qet7cM (8 Nov) - each parked by 20:00 London the day before it airs |  |
+| J0965 | mini | claimed | cursor | 2026-10-26T01:13Z | video · HOS 60% re-cut batch HB (local only): JyRjM-9Yc8g (Sun 1 Nov), Pp5LmjsduI4 (3 Nov), PlihWC5uA2E (5 Nov), mTY67qet7cM (8 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0966 | mini | open (after J0965) | – | – | video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0967 | mini | open | – | – | assembly · HOS build-rule fix for unbuilt Shorts (006 A-C + s04-s08, 007-010 SHORTS_PICTURE_PLAN, S5-S8): audit fixes #14-#16, plans and assemblers only |  |
 
