@@ -42,6 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0932 | mini | open | – | – | video · 60% re-cut v02 batch A2 (local only): BbsyFrV8kCY Apophis, Jcuiy0a9BFI Venus lead, RxErxlXim1Q Saturn thin, YC65mdh6Hgg Venus size - park by Tue 27 Oct 20:00 London | 6394372406 |
 | J0933 | mini | open | – | – | video · HOS 60% re-cut batch HA1 (local only): OnJ8MFu0Mi0 'How Did John Snow Stop Cholera?' - park by Sun 25 Oct 20:00 London (airs Mon 26 Oct 11:30); if late, the original airs as scheduled | 6389673078 |
 | J0934 | mini | open | – | – | video · HOS 60% re-cut batch HA2 (local only): 1-BZaFIMwYU Pasteur flask, vEg_tLIm0Co Curie notebooks, 1lszTrYRp-8 heart sum, 5n7xFQRBUvI Galen stove - each parked by 20:00 London the day before it airs (first Mon 26 Oct) | 6389673078 |
+| J0935 | mini | open | – | – | video · 60% re-cut v02 batch B (local only): 025 iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY + 026 HZGTovJu_TQ, cwU_0WWeNZ4 - start by Sat 31 Oct, each parked by 20:00 London the day before it airs (from Mon 9 Nov) | 6389353471 |
 
 Recently finished:
 

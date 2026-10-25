@@ -1,5 +1,5 @@
 {
-  "next_id": 935,
+  "next_id": 936,
   "jobs": [
     {
       "id": "J0001",
@@ -78093,6 +78093,33 @@
       ],
       "kind": "video",
       "urgent": 3
+    },
+    {
+      "id": "J0935",
+      "title": "60% re-cut v02 batch B (local only): 025 iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY + 026 HZGTovJu_TQ, cwU_0WWeNZ4 - start by Sat 31 Oct, each parked by 20:00 London the day before it airs (from Mon 9 Nov)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 06:40 London: applies J0916 batch B (Chief ruling OWB #264 6389353471, 24 Oct 21:55 London; ruled but never queued; batch A = J0931 + J0932). Fixes = 05_Analytics/owb/STAYED60_UPCOMING_AUDIT_2026-10-25.md #6–#11 (the audit text is the spec).\n\nTiming: no fixed start time (jobs.py refuses --not-before, Ben 12 Oct), so this starts when a mini worker is free after the urgent jobs; target start by Sat 31 Oct. Ruling order: batch A, J0914, rest of A, then this batch, then J0915, then batch C. Work in air-date order; each Short parked by 20:00 London the day before it airs:\n1. iyvWYFP_ETA \"Could a Robot Survive a Night on Mars?\" (025 mon09_night_cold, airs Mon 9 Nov 11:30) — park by Sun 8 Nov 20:00. Audit #6: trim the sentence-1 pauses so \"minus 90\" lands by 1.45 s, cut \"Could a robot survive one?\" and the spoken \"The full film…\" CTA; open on moving PIA26673 dusk clouds / JPL-20200303-MSLf-0001.mp4 (no Orbit at frame 0) instead of the PIA11132 still; first cut ≤2.6 s, all cuts ≤3.8 s, no end card, 1.0 s matched loop.\n2. TtgHNLXfDSs \"Why Did a 90-Day Mars Rover Last 14 Years?\" (025 wed11_opening_testA, airs Wed 11 Nov) — park by Tue 10 Nov 20:00. Audit #7: \"fourteen years\" inside 1.5 s using words already on disk (e.g. mon09_opportunity_90_days VO), cut both agenda questions, runtime 23–25 s; open on moving gale_desert/JPL-20200303-MSLf-0001.mp4 or launch_edl clip instead of PIA15115; first cut ≤2.6 s, holds ≤3.8 s, no end card/ID overlay, 1.0 s loop.\n3. N42gKBbD7tE \"How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?\" (025 thu12_length_test_dust, airs Thu 12 Nov) — park by Wed 11 Nov 20:00. Audit #8. Ruling: keep the length test's purpose (~54 s); fix only the opening, the holds and the tail: \"Martian wind … swept its panels clean\" first (\"wind\" ≤1.5 s), moving dust-devil/dusk plate at frame 0 instead of PIA22909, first cut ≤2.5 s, split holds >4.0 s, no end card, 1.0 s loop.\n4. bSjWiCbB7pY \"How Did a Helicopter Fly 72 Times on Mars?\" (025 fri13_ingenuity_72, airs Fri 13 Nov) — park by Thu 12 Nov 20:00. Audit #9: reorder so \"Mars\" and \"seventy-two\" land by 1.5 s, cut the spoken CTA; keep PIA24644.gif at frame 0, replace s03/s04 still holds with the nasa_pool_v01/ingenuity JPL flight videos; first cut ≤2.6 s, holds ≤3.8 s, no end card, 0.9 s loop to PIA24644.\n5. HZGTovJu_TQ \"If You Can't See the Nearest Star, How Far Away Is It?\" (026 mon16_cant_see_nearest_star, airs Mon 16 Nov) — park by Sun 15 Nov 20:00. Audit #10: pause-trimmed VO, \"can't see it\" by ~1.5 s, all pauses ≤0.18 s, cut \"The full film…\"; keep v06_98.17.mp4 at frame 0; cut every 2.6–3.5 s, drop end_card_thumb_A.png, 1.0 s matched loop.\n6. cwU_0WWeNZ4 \"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\" (026 wed18_robot_reach_nearest_star, airs Wed 18 Nov) — park by Tue 17 Nov 20:00. Audit #11: cut the 0.14–8.02 s setup/question, lead with the 17 km/s / 75,000 years clause by 1.5 s from this Short's own VO, cut \"The full film…\"; replace the 72.2%-black PIA17049 frame 0 with a moving <5%-black plate (v06_408.25.mp4 / journey_a.mp4 / v06_98.17.mp4); first cut ≤2.7 s, cap s03 at 3.6 s, no end card, 1.0 s loop.\n\nIf a Short can't pass by its deadline, move on and name it in the park note as airing as v01. Record each pass with jobs.py progress. Park once all six are done: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK each swap\" --git\n\nSame rules for every re-cut (J0916 ruling OWB #264 6389353471, J0918 strict ship gate 6392833473, J0914/J0929 loop rule):\n- Local v02 next to v01 in the Short's own 10_Shorts/<slug>/ folder; v01 stays untouched.\n- £0: VO trims, reorders and splices from words already recorded on disk only (the Short's own VO stem or the film's locked long VO). No new TTS, Veo, Flow, Omni, Vertex or paid API. If a fix needs words that are not on disk, trim instead.\n- Frame 0 is moving, full-bleed footage, ≤30% black, ≥60% subject, no Orbit at frame 0. Subject named and surprise claim spoken by 1.5 s; first word by 0.15 s.\n- First cut by 3.0 s (strict gate (b), no moving-shot waiver). Later plates 4.0 s max. No still-to-still cuts.\n- No meta-promise (\"Stay, and I'll show you…\"), no agenda question, no spoken \"The full film…\" CTA, no end card. The long's title + ID go in the description / Related link, not the picture.\n- Payoff number lands at ≥70% of runtime; never answer the title question under the 9–14 s banner.\n- Matched loop: last word to loop ≤1.5 s, last frame built from the frame-0 plate at frame-0 framing. Last-vs-frame-0 mean diff ≤15 (text masked); log loop_diff in meta.\n- Educational (Ben 11 Oct): keep the existing number/Teach card or code graphic where the v01 has one (inside y=656..1264); don't add new generated assets.\n- Keep the v01 title and air slot. Length 18–24 s unless the audit says otherwise.\n- Gates: gate_shorts_open --air-date (strict, incl. stayed transcript check), picture_qa, polish_gate, music_gate, sfx level; all PASS. Write the six brief fields, measured LUFS and loop_diff into each v02 meta.\n- Commit meta, gate text and 2 fps frame sheets (git add -f). Copy _PHONE + sheets to OWB UAT and NAS.\n- No upload, no Studio change, no Public, no Replace, no delete, no force-push. Park as \"parked for Chief: <id> v02 PASS; Ben to OK swap\". A swap is a new Private upload on the same slot after Chief PASS and Ben's OK, v01 kept private and unscheduled, nothing deleted. If a Short isn't OK'd by 10:30 London on its air day, v01 airs as scheduled; don't slip the slot.\n",
+      "ref": "6389353471",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 600,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T06:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T06:33Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [],
