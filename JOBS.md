@@ -37,6 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
 | J0929 | mini | claimed | cursor | 2026-10-25T08:10Z | assembly · 029 Betelgeuse: build 3 Shorts from SHORTS_PLAN_v01 (Wed 9 Dec dimming / Fri 11 Dec opening Test A / Mon 14 Dec half-Moon daylight), gates, covers, park for Chief |  |
 | J0930 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0931 | mini | open | – | – | video · 60% re-cut v02 batch A1 (local only): 027 dM1OgGPAYvw 'What If Earth Stopped Spinning?' - park by Sun 25 Oct 20:00 London (airs Mon 26 Oct 11:30) | 6389353471 |
 
 Recently finished:
 

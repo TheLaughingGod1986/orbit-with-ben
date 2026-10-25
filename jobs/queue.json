@@ -1,5 +1,5 @@
 {
-  "next_id": 931,
+  "next_id": 932,
   "jobs": [
     {
       "id": "J0001",
@@ -77954,6 +77954,33 @@
         "by": "gemini",
         "note": "Wrote OWB_2026-10-25.md (10-Short 4d two-target check, 82Ao0v5XiQI 100-pt YTA curve, 2e-giqFmfy8 lab row, 5 film actions"
       }
+    },
+    {
+      "id": "J0931",
+      "title": "60% re-cut v02 batch A1 (local only): 027 dM1OgGPAYvw 'What If Earth Stopped Spinning?' - park by Sun 25 Oct 20:00 London (airs Mon 26 Oct 11:30)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 06:30 London, J0930 ruling c27 on OWB #264 (applies J0916 batch A, ruled 24 Oct 21:55 London, 6389353471, never queued).\n\ndM1OgGPAYvw \"What If Earth Stopped Spinning?\" (027 lift_sudden_air, airs Mon 26 Oct 11:30 London). MUST be parked by Sun 25 Oct 20:00 London. If late, v01 airs as scheduled.\n\nFix = STAYED60_UPCOMING_AUDIT_2026-10-25.md #1:\n1. Trim \"Now imagine the impossible.\" (0.00–1.80 s) from _work_v02/stem_vo.wav so \"Earth's\" starts ≤0.15 s and \"stops turning\" lands by 1.74 s. Tighten the 4.38→4.98 s and 6.12→6.96 s pauses to ≤0.18 s. If the Short drops under 18 s, add the next sentence from the 027 master VO (44.66–49.50 s) at matched level/room tone.\n2. Keep epic_earth_rotation.mp4 at frame 0 (moving, 3.1% black).\n3. First cut ≤2.5 s. Split s04 (5.80 s) into two ≤3.5 s moving spans (027 code_out_v06/row10/air.mp4 + Gerst_Earth_timelapses_2017.webm).\n4. Remove the 4.0 s end card; matched 1.0 s loop back to the frame-0 EPIC framing.\n\nSame rules for every re-cut (J0916 ruling OWB #264 6389353471, J0918 strict ship gate 6392833473, J0914/J0929 loop rule):\n- Local v02 next to v01 in the Short's own 10_Shorts/<slug>/ folder; v01 stays untouched.\n- £0: VO trims, reorders and splices from words already recorded on disk only (the Short's own VO stem or the film's locked long VO). No new TTS, Veo, Flow, Omni, Vertex or paid API. If a fix needs words that are not on disk, trim instead.\n- Frame 0 is moving, full-bleed footage, ≤30% black, ≥60% subject, no Orbit at frame 0. Subject named and surprise claim spoken by 1.5 s; first word by 0.15 s.\n- First cut by 3.0 s (strict gate (b), no moving-shot waiver). Later plates 4.0 s max. No still-to-still cuts.\n- No meta-promise (\"Stay, and I'll show you…\"), no agenda question, no spoken \"The full film…\" CTA, no end card. The long's title + ID go in the description / Related link, not the picture.\n- Payoff number lands at ≥70% of runtime; never answer the title question under the 9–14 s banner.\n- Matched loop: last word to loop ≤1.5 s, last frame built from the frame-0 plate at frame-0 framing. Last-vs-frame-0 mean diff ≤15 (text masked); log loop_diff in meta.\n- Educational (Ben 11 Oct): keep the existing number/Teach card or code graphic where the v01 has one (inside y=656..1264); don't add new generated assets.\n- Keep the v01 title and air slot. Length 18–24 s unless the audit says otherwise.\n- Gates: gate_shorts_open --air-date (strict, incl. stayed transcript check), picture_qa, polish_gate, music_gate, sfx level; all PASS. Write the six brief fields, measured LUFS and loop_diff into each v02 meta.\n- Commit meta, gate text and 2 fps frame sheets (git add -f). Copy _PHONE + sheets to OWB UAT and NAS.\n- No upload, no Studio change, no Public, no Replace, no delete, no force-push. Park as \"parked for Chief: <id> v02 PASS; Ben to OK swap\". A swap is a new Private upload on the same slot after Chief PASS and Ben's OK, v01 kept private and unscheduled, nothing deleted. If a Short isn't OK'd by 10:30 London on its air day, v01 airs as scheduled; don't slip the slot.\n",
+      "ref": "6389353471",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T06:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T06:25Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [],
