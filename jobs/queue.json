@@ -77783,13 +77783,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-25T05:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-25T03:15Z",
-      "result": "parked for Chief: visual PASS on the three 029 Shorts (Wed 9 Dec great dimming, Fri 11 Dec Test A opening, Mon 14 Dec half-Moon). Gates PASS, £0, no upload.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T03:15Z",
@@ -77830,19 +77830,17 @@
           "at": "2026-10-25T05:47Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: visual PASS on the three 029 Shorts (Wed 9 Dec great dimming, Fri 11 Dec Test A opening, Mon 14 Dec half-Moon). Gates PASS, £0, no upload."
+        },
+        {
+          "at": "2026-10-25T06:02Z",
+          "by": "chief",
+          "what": "reopened: reopened: Chief (Grok) 25 Oct 06:02 London, OWB #264 6394189992: FIX v01 -> render v02 into shorts_v02_pack (v01 untouched). Wed09: (1) drop s29 'It was not.' (10.85-11.41 s, under the 9-14 s banner; J0928 fix 1), go s28 -> s31, re-time, beats 2.1-4.0 s; (2) s07_eject 14.01-16.31 s mass_ejection crop [0.30,0.52,0.72,0.80] is unreadable lines - wider crop showing star + bubble or a real ejection plate. Fri11: (3) log meta_promise_lint: waived (Test A arm, SHORTS_TESTS.md) in meta + pack; (4) s07_alma 17.60-20.67 s clipped neon-green blocks (~3% frame) - check source, crop/swap/grade; hold s06_promise_b to 18.76 s ('In') so DAYTIME SKY pill sits on the daytime-sky plate, pill ends ~19.0 s. All three: (6) matched loop - end card background = frame-0 plate at frame-0 framing (sphere_jan / visir_flames / casa), last-vs-f0 diff <=15 text-masked (now 40.2/50.1/52.4), log loop_diff. Mon14 needs only (6). Same gates (open --air-date incl transcript, sfx, picture_qa, polish, thumb score, safe-area), measured LUFS + loop_diff in meta, commit frame sheets (git add -f), _PHONE + sheets to OWB UAT + NAS 029/shorts_v02/, re-park for Chief. GBP0, no upload."
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
-      ],
-      "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-10-25T05:47Z",
-        "by": "cursor",
-        "note": "three Shorts gate PASS, masters on NAS youtube-staging/029/shorts_v01, parked for Chief visual PASS"
-      }
+      ]
     },
     {
       "id": "J0930",
