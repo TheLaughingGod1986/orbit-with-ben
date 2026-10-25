@@ -78014,10 +78014,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-25T07:57Z",
+      "eta": "2026-10-25T11:57Z",
       "created_by": "chief",
       "created_at": "2026-10-25T06:25Z",
       "result": "",
@@ -78116,6 +78116,11 @@
           "at": "2026-10-25T07:46Z",
           "by": "chief",
           "what": "reopened: Chief (Grok) 25 Oct 07:46 London, OWB #264 6395031992 (c31): FIX v04 -> render earth_sudden_air_v05 (v04/v03 + scheduled v02 4ab2b658 untouched); RE-PARK BY SUN 25 OCT 20:00 LONDON or v02 airs Mon 26 Oct 11:30. Keep v04 VO/order/captions/card/title/frame 0/loop exactly. Fixed in v04: EPIC frame 0, payoff 75.7%, gaps 0.12-0.16, picture-to-words, loop (masked 12.2). Still wrong: (1) s02 ISS 2.50-5.47 still steps at 6 fps (diffs 13-21 every 5th frame, rest 0) - the dejudder minterpolate=fps=30 runs on a 30 fps plate of repeats so is a no-op. Drop repeats first: mpdecimate,setpts=N/(6*TB) (or fps=6 phase-aligned) -> minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir (blend fallback). Pass: no frame diff >2x its +/-5-frame median, no >=3 identical-frame run. (2) s04 span_56.00 8.63-9.83 same stepping: same fix, or a smooth span_45.30 ocean stretch (<=3.5 s). (3) s06 row10 arrows freeze 15.67-16.73 (diff 0-1) under 'more than one and a half': code_out_v03/row10/air.mp4 only animates 0-2.8 s. Stretch 0.00-2.80 to the span (setpts~1.24*PTS + minterpolate blend) or re-time; 'one' stays on arrows; min 0.5 s motion >=1.5. (4) Meta: loop_diff whole + hook/caption-masked from one measure (mine 18.4/12.2, not 2.41), max_vo_gap_s, per-span min_motion_0.5s. (5) Same strict gates (--air-date 2026-10-26), git add -f sheets, _PHONE + sheets to OWB UAT/NAS, re-park for Chief. Nits: caption 'coast.' 9.20-9.68 missing; listen-check final 'sound,' inflection. GBP0, no upload/Replace/Public/delete/force-push."
+        },
+        {
+          "at": "2026-10-25T07:57Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "video",
