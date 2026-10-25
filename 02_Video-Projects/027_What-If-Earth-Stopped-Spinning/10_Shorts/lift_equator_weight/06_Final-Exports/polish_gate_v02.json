@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v02.mp4",
+  "edge_floor": 0.0399,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s05",
+      "cut": 4,
+      "t": 13.94,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "why": [
+        "low detail: edge density 0.0387 < film p5 0.0399"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_iss_sunrise_limb",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 1.15,
+      "std": 66.24,
+      "mean": 147.64,
+      "p95": 224.0,
+      "edge": 0.1143,
+      "hf": 17.75,
+      "lf": 56.26,
+      "std8": 59.72,
+      "edge8": 0.3487,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "t": 3.96,
+      "std": 66.56,
+      "mean": 75.54,
+      "p95": 203.0,
+      "edge": 0.2323,
+      "hf": 18.58,
+      "lf": 56.07,
+      "std8": 59.32,
+      "edge8": 0.506,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 7.29,
+      "std": 53.02,
+      "mean": 103.72,
+      "p95": 207.0,
+      "edge": 0.0938,
+      "hf": 12.49,
+      "lf": 48.18,
+      "std8": 49.53,
+      "edge8": 0.1837,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04",
+      "source": "Foucault_pendulum_1.webm",
+      "t": 10.61,
+      "std": 53.38,
+      "mean": 134.19,
+      "p95": 197.0,
+      "edge": 0.1057,
+      "hf": 17.99,
+      "lf": 42.99,
+      "std8": 46.19,
+      "edge8": 0.3648,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 13.94,
+      "std": 34.8,
+      "mean": 51.36,
+      "p95": 101.0,
+      "edge": 0.0387,
+      "hf": 9.56,
+      "lf": 29.09,
+      "std8": 31.06,
+      "edge8": 0.1784,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0387 < film p5 0.0399"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "s06",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "t": 17.26,
+      "std": 52.04,
+      "mean": 101.68,
+      "p95": 190.0,
+      "edge": 0.2853,
+      "hf": 17.59,
+      "lf": 42.16,
+      "std8": 44.98,
+      "edge8": 0.5494,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07",
+      "source": "epic_spin_v01.mp4",
+      "t": 20.59,
+      "std": 51.97,
+      "mean": 91.38,
+      "p95": 178.0,
+      "edge": 0.0676,
+      "hf": 10.27,
+      "lf": 46.32,
+      "std8": 47.99,
+      "edge8": 0.4022,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "loop_ISS_sunrise_to_sunset.ogv",
+      "t": 22.75,
+      "std": 62.53,
+      "mean": 133.54,
+      "p95": 217.0,
+      "edge": 0.0422,
+      "hf": 6.08,
+      "lf": 60.92,
+      "std8": 61.8,
+      "edge8": 0.1536,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
