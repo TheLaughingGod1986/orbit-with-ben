@@ -45,6 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0937 | mini | blocked | chief | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v02 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6394562857 |
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0939 | mini | open | – | – | video · HOS flask v04 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v03 -> v04 - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30) | 6394964444 |
+| J0940 | mini | open (after J0931) | – | – | studio · 027 Short dM1OgGPAYvw: swap to earth_sudden_air_v05 (Private, Mon 26 Oct 11:30 London) after Ben's OK by Sun 20:00 |  |
 
 Recently finished:
 

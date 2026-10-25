@@ -1,5 +1,5 @@
 {
-  "next_id": 940,
+  "next_id": 941,
   "jobs": [
     {
       "id": "J0001",
@@ -78542,6 +78542,33 @@
       "taskKeys": [
         "HOS:001"
       ]
+    },
+    {
+      "id": "J0940",
+      "title": "027 Short dM1OgGPAYvw: swap to earth_sudden_air_v05 (Private, Mon 26 Oct 11:30 London) after Ben's OK by Sun 20:00",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 08:25 London, J0931 v05 PASS (ruling c33, OWB #264).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap to earth_sudden_air_v05 (OWB UAT/earth_sudden_air_v05/earth_sudden_air_v05.mp4) on the board or the thread. Deadline for that OK: Sun 25 Oct 20:00 London. If Ben sends notes, or there is no OK by 20:00, this job is cancelled and the scheduled v02 (sha 4ab2b658, dM1OgGPAYvw) airs Mon 26 Oct 11:30 London as is.\n\nAfter Ben's OK:\n1. Meta truth (c33 FIX 4): in 02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v05_meta.json set loop_diff_whole 21.26, loop_diff_masked 12.39, loop_diff 12.39 (180x320 gray, rows 110:240, true frame 0 vs last frame; the 18.04/9.66 logged were v04's), add loop_diff_chief_rgb \"21.6/15.3\". Commit the meta only; the master is unchanged (sha 666ab5b1...bb6903).\n2. Verify the master sha256 = 666ab5b1b16db297c501c044be281435b5a9a269c1850fa6349eb5139bbb6903, then upload it to OWB as a new Private video with publishAt Mon 26 Oct 2026 11:30 London (2026-10-26T11:30:00Z). Copy the title, description, tags, cover and Related video (long 6bbbvfCx6zY) from dM1OgGPAYvw.\n3. Only after step 2 reads back Private + correct publishAt: set dM1OgGPAYvw (v02) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back privacy, publishAt, title, cover and Related for both videos; record in UPLOADS.json and post the read-back on the OWB thread (#264). Buffer cross-posts stay deferred per house rules.\nIf any step fails after 10:30 London Mon 26 Oct, leave v02 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0931",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T08:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T08:22Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
