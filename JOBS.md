@@ -40,6 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0923 | mini | open (after J0922) | – | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0924 | mini | blocked | gemini | – | 006 edit · assembly · URGENT HOS 006 Trees: Ben's 3 changes on master v05 (1:03 + 4:30 card flash, 4:02 floating twig) -> master v06, all card in-points checked, park for Chief | 6384888711 |
 | J0926 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J0927 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
