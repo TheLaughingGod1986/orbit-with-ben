@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v06.mp4",
+  "edge_floor": 0.0753,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "aurora_rock_watch",
+      "cut": 5,
+      "t": 16.39,
+      "source": "aurora_rock_watch.mp4",
+      "why": [
+        "low detail: edge density 0.0743 < film p5 0.0753"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "aurora_rock_open",
+      "source": "aurora_rock_open.mp4",
+      "t": 1.2,
+      "std": 60.59,
+      "mean": 92.15,
+      "p95": 221.0,
+      "edge": 0.1214,
+      "hf": 19.17,
+      "lf": 48.51,
+      "std8": 52.53,
+      "edge8": 0.2972,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "day_rock_wide",
+      "source": "day_rock_wide.mp4",
+      "t": 4.1,
+      "std": 54.19,
+      "mean": 165.61,
+      "p95": 245.0,
+      "edge": 0.1328,
+      "hf": 17.06,
+      "lf": 45.81,
+      "std8": 48.31,
+      "edge8": 0.3149,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "aurora_rock_date",
+      "source": "aurora_rock_date.mp4",
+      "t": 7.4,
+      "std": 46.37,
+      "mean": 91.59,
+      "p95": 201.0,
+      "edge": 0.0775,
+      "hf": 12.38,
+      "lf": 40.86,
+      "std8": 42.76,
+      "edge8": 0.1761,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "day_rock_title",
+      "source": "day_rock_title.mp4",
+      "t": 10.7,
+      "std": 58.51,
+      "mean": 164.15,
+      "p95": 249.0,
+      "edge": 0.1359,
+      "hf": 21.12,
+      "lf": 47.47,
+      "std8": 50.36,
+      "edge8": 0.3363,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "day_scale",
+      "source": "day_scale.mp4",
+      "t": 14.05,
+      "std": 52.4,
+      "mean": 169.72,
+      "p95": 247.0,
+      "edge": 0.0905,
+      "hf": 17.57,
+      "lf": 43.72,
+      "std8": 45.91,
+      "edge8": 0.2511,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "aurora_rock_watch",
+      "source": "aurora_rock_watch.mp4",
+      "t": 16.39,
+      "std": 45.7,
+      "mean": 91.23,
+      "p95": 203.0,
+      "edge": 0.0743,
+      "hf": 12.45,
+      "lf": 38.99,
+      "std8": 41.63,
+      "edge8": 0.2083,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0743 < film p5 0.0753"
+      ]
+    },
+    {
+      "cut": 6,
+      "row": "aurora_rock_loop",
+      "source": "aurora_rock_loop.mp4",
+      "t": 17.58,
+      "std": 52.65,
+      "mean": 88.46,
+      "p95": 210.0,
+      "edge": 0.0887,
+      "hf": 12.51,
+      "lf": 47.92,
+      "std8": 49.6,
+      "edge8": 0.2175,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
