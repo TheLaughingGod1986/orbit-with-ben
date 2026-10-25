@@ -1007,6 +1007,41 @@ def watch_links(hos: dict, owb: list[dict], briefs: dict) -> dict:
     return out
 
 
+def ask_watch(e: dict) -> dict | None:
+    """The Play link for one awaits_ben entry (video_tracker.ask_entries): its `file` is a path in iCloud Drive
+    (relative to CloudDocs, e.g. "OWB UAT/earth_sudden_air_v05/earth_sudden_air_v05.mp4"), an absolute path, or a
+    repo path. Registered cuts reuse their id; others are uploaded once (auto_upload) under a per-entry id. Signed."""
+    f = (e.get("file") or "").strip()
+    if not f:
+        return None
+    cands = [Path(f)] if f.startswith("/") else [ICLOUD / f, ROOT / f, Path.home() / "YouTube" / "orbit-with-ben" / f]
+    pick = next((c for c in cands if c.is_file()), None)
+    if pick is None:
+        return None
+    rel = pick.relative_to(ICLOUD).as_posix() if ICLOUD in pick.parents else str(pick)
+    wid = watch_register().get(rel)
+    if not wid:
+        wid = re.sub(r"[^a-z0-9_-]", "-", f"{e.get('channel', 'owb')}-{e['id']}-{e.get('version') or 'cut'}".lower())
+        if not auto_upload(wid, pick, rel):
+            return None
+    return {"url": sign_watch_url(f"{SITE_URL}/api/watch?v={wid}"), "version": e.get("version") or version_of(pick.name),
+            "label": f"Watch {e.get('version') or 'cut'}", "kind": "stream", "file": rel,
+            "source": "Studio Kanban (plays in the browser)"}
+
+
+def asks_doc(alljobs: list[dict]) -> list[dict]:
+    from video_tracker import ask_entries
+    out = []
+    for e in ask_entries(alljobs):
+        try:
+            e["watch"] = ask_watch(e)
+        except (OSError, ValueError) as err:  # a missing link is flagged on the card and by board_check.py
+            print(f"ask {e['id']}: no Play link ({err})", file=sys.stderr)
+            e["watch"] = None
+        out.append(e)
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("page", type=Path, nargs="?")
@@ -1087,10 +1122,12 @@ def main(argv: list[str] | None = None) -> int:
         links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k in ("uatFolderUrl", "extraWatch")} if BRIEFS.exists() else {}
         watch = watch_links(hos, owb, briefs)
         briefs = ben_handoffs(chief_reviews(route_steps(hos_job_steps(briefs, alljobs), alljobs)), watch)
-        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, **links}, ensure_ascii=False))
+        asks = asks_doc(alljobs)  # jobs waiting on Ben (awaits_ben), with their Play links
+        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, "asks": asks, **links},
+                                                         ensure_ascii=False))
         # Per-video five-lane tracker (Ben, 24 Oct 2026). Checks are empty here; board_publish re-derives with live ticks.
         from video_tracker import build_videos
-        tracker = build_videos(hos=hos, owb=owb, briefs=briefs, jobs=alljobs, checks={}, watch=watch)
+        tracker = build_videos(hos=hos, owb=owb, briefs=briefs, jobs=alljobs, checks={}, watch=watch, asks=asks)
         (a.db_out / "tracker.json").write_text(json.dumps(tracker, ensure_ascii=False))
         print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
               f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')}), "

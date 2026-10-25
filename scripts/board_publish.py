@@ -447,6 +447,29 @@ def run_once(a) -> int:
     return 0
 
 
+BOARD_CHECK_EVERY_S = 5 * 60
+
+
+def kick_board_check(at: dt.datetime | None = None) -> bool:
+    """Start scripts/board_check.py (from the origin/main worktree) in the background, at most every 5 min: are all
+    the jobs waiting on Ben on the published board with a working Play link, and is the site up? Its result is
+    ~/_desk/state/board/board_check.json. Fire-and-forget, like everything here."""
+    at = at or now()
+    script = WT / "owb" / "scripts" / "board_check.py"
+    result = STATE / "board_check.json"
+    try:
+        if result.exists() and at.timestamp() - result.stat().st_mtime < BOARD_CHECK_EVERY_S:
+            return False
+        if not script.exists():
+            return False
+        subprocess.Popen([sys.executable, str(script), "--quiet"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                         stderr=subprocess.DEVNULL, start_new_session=True, cwd=str(WT / "owb"))
+        return True
+    except OSError as e:
+        log(f"board check not started: {e}")
+        return False
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true")
@@ -471,6 +494,8 @@ def main(argv: list[str] | None = None) -> int:
                 return 0
             if not (STATE / "again").exists():
                 break
+    if not a.dry_run:
+        kick_board_check()
     return 0
 
 
