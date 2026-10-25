@@ -1,5 +1,5 @@
 {
-  "next_id": 937,
+  "next_id": 938,
   "jobs": [
     {
       "id": "J0001",
@@ -77804,13 +77804,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T06:10Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-25T03:15Z",
-      "result": "parked for Chief: visual PASS on the three 029 Shorts v02 (Wed 9 Dec great dimming 22.70s, Fri 11 Dec Test A opening 33.90s, Mon 14 Dec half-Moon 23.93s). Gates PASS, loop_diff 1.38/1.2/2.61, £0, no upload. Commit 9a870a93d. Look at: Wed opening 30% block match with bizlhspnVvY; Fri visor_frac 0.0008 on the orange VISIR plate; all three warn that the 2.0s end card leaves a 2.3s gap after the last word.",
+      "result": "Chief PASS v02 (Grok, 25 Oct 06:50 London, OWB #264 6394562857): all v01 notes applied (Wed s29 dropped, eject crop reads, Fri Test A waiver logged, ALMA green gone + pill on daytime plate, matched loops masked 9.5/9.0/10.3). bizlhspnVvY 30% match, Fri visor 0.0008 and 2.3 s end-card tail accepted. Pack 9a870a93d; _PHONE in OWB UAT + NAS 029/shorts_v02. Ben to OK the three cuts; then J0937 Private uploads. GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T03:15Z",
@@ -77886,6 +77886,11 @@
           "at": "2026-10-25T06:41Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: visual PASS on the three 029 Shorts v02 (Wed 9 Dec great dimming 22.70s, Fri 11 Dec Test A opening 33.90s, Mon 14 Dec half-Moon 23.93s). Gates PASS, loop_diff 1.38/1.2/2.61, £0, no upload. Commit 9a870a93d. Look at: Wed opening 30% block match with bizlhspnVvY; Fri visor_frac 0.0008 on the orange VISIR plate; all three warn that the 2.0s end card leaves a 2.3s gap after the last word."
+        },
+        {
+          "at": "2026-10-25T06:52Z",
+          "by": "chief",
+          "what": "done: Chief PASS v02 (Grok, 25 Oct 06:50 London, OWB #264 6394562857): all v01 notes applied (Wed s29 dropped, eject crop reads, Fri Test A waiver logged, ALMA green gone + pill on daytime plate, matched loops masked 9.5/9.0/10.3). bizlhspnVvY 30% match, Fri visor 0.0008 and 2.3 s end-card tail accepted. Pack 9a870a93d; _PHONE in OWB UAT + NAS 029/shorts_v02. Ben to OK the three cuts; then J0937 Private uploads. GBP0, no upload."
         }
       ],
       "kind": "assembly",
@@ -77898,7 +77903,8 @@
         "at": "2026-10-25T06:41Z",
         "by": "cursor",
         "note": "v02 gates PASS. Mon loop hold is its own source (picture_qa PASS, loop_diff 2.61). Pack commit 9a870a93d. Phones and she"
-      }
+      },
+      "done_ref": "6394562857"
     },
     {
       "id": "J0930",
@@ -78202,6 +78208,41 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0937",
+      "title": "029 Betelgeuse: Private upload of the 3 Shorts v02 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 06:50 London, J0929 v02 PASS (OWB #264 6394562857).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the three 029 Shorts v02 (OWB UAT: 029_short_wed09_great_dimming_v02_PHONE.mp4, 029_short_fri11_opening_testA_v02_PHONE.mp4, 029_short_mon14_half_moon_daylight_v02_PHONE.mp4) on the board or the thread. If Ben sends notes instead, this job is cancelled and a v03 fix job is queued.\n\nAfter Ben's OK:\n1. Upload the three v02 masters from 10_Shorts/shorts_v02_pack (sha256 in SHA256.txt: wed d5de52dd..., fri 3f4a8e8d..., mon 7c1857fb...) to OWB as Private with publishAt: Wed 9 Dec 2026 11:30 London (2026-12-09T11:30:00Z) 'Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?'; Fri 11 Dec 2026 11:30 London (2026-12-11T11:30:00Z) 'Is Betelgeuse Really About to Explode?' (Test A opening arm); Mon 14 Dec 2026 11:30 London (2026-12-14T11:30:00Z) 'How Bright Will Betelgeuse Get When It Explodes?'. Check each slot is still free in UPLOADS.json first.\n2. Covers from the v02 pack (no Orbit). Description carries the long's title 'Is Betelgeuse About to Explode?' + link to vP1BbqZ_dnM. Related video vP1BbqZ_dnM (it goes public Sun 6 Dec 18:00 London; if Studio won't take it on a private long yet, block that step until 6 Dec 18:05).\n3. Read back privacy, publishAt, title, cover and Related for each; record in UPLOADS.json and post the read-back on the OWB thread. Buffer cross-posts stay deferred per house rules.\nNever Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6394562857",
+      "film": "",
+      "stage": "",
+      "after": "J0929",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-25T06:52Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T06:52Z",
+      "result": "waits on Ben's OK of the three 029 Shorts v02 (_PHONE in OWB UAT). Chief PASS 6394562857.",
+      "history": [
+        {
+          "at": "2026-10-25T06:52Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-25T06:52Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the three 029 Shorts v02 (_PHONE in OWB UAT). Chief PASS 6394562857."
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:029"
+      ]
     }
   ],
   "focus": [],
