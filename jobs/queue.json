@@ -76393,13 +76393,13 @@
       "stage": "",
       "after": "",
       "eta_min": 300,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-25T03:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "parked for Chief: S2/S3 v02 PASS; Ben to OK swap (new Private upload on the same slot, v01 kept private and unscheduled, nothing deleted)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76465,20 +76465,18 @@
           "at": "2026-10-25T03:53Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: S2/S3 v02 PASS; Ben to OK swap (new Private upload on the same slot, v01 kept private and unscheduled, nothing deleted)"
+        },
+        {
+          "at": "2026-10-25T04:03Z",
+          "by": "chief",
+          "what": "reopened: Chief (Grok) 25 Oct 04:03 London, OWB #264 6393231349: FIX v02 -> render v03 (v01/v02 untouched). S2 Neptune (by Mon 12:00): (1) row 2 top-limb plate is ~45% black, keep <=30% black 0-6 s, make the ~1.9 s cut a framing jump inside SVS 14397; (2) loop must end on the frame-0 SVS 14397 picture, matched cut <=0.3 s; (3) <=2.5x upscale per plate, no disc-edge black, log max_upscale. S3 ISS: (4) green rotate-fill wedges on left/right edges: fillcolor=black plus overscale/crop, check 4 corners; (5) cut false line 'So roughly every 45 minutes, another night ends' from VO (breath <=0.15 s), re-time captions/counter/plates. Strict gates + polish/music/sfx, meta with measured LUFS, then re-park with the same block reason. GBP0, no upload."
         }
       ],
       "kind": "video",
       "escalated_at": "2026-10-24T23:53Z",
       "taskKeys": [
         "OWB:030"
-      ],
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-10-25T03:53Z",
-        "by": "cursor",
-        "note": "S2 and S3 v02 gates PASS. Neptune first cut 1.93s. Committed 2a1672c6e. Frames jpg stays on disk (gitignored, same as v0"
-      }
+      ]
     },
     {
       "id": "J0915",
