@@ -110,26 +110,23 @@
   let checksFresh = false;
   async function pollChecks() {
     try {
-      const r = await fetch(API + "?t=" + Date.now(), { cache: "no-store" });
+      const r = await fetch(API + "?t=" + Date.now(), { cache: "no-store", credentials: "same-origin", headers: key ? { "x-board-key": key } : {} });
       if (!r.ok) return;
       const j = await r.json();
       if (j && typeof j.checks === "object") { checksFresh = true; setServer(j.checks); emitChecks(); }
     } catch (e) {}
   }
-  // Ben, 10 Oct: "we used to have a button to add changes or approve". The buttons always show. Saving needs the board
-  // code (env BOARD_KEY): opening the board link once (#k=...) stores it on that device; if it isn't stored (e.g. the
-  // Home Screen copy keeps its own storage), the first tap asks for it once and keeps it.
+  // Ben, 10 Oct: "we used to have a button to add changes or approve". The buttons always show. 25 Oct 2026 ("Just need
+  // to approve no need for code"): never asks for a code. Ben's phone is recognised by the studio_ben cookie (set once
+  // by the "link this phone" link, renewed on every load; benauth.js); an old stored board code still works.
+  const NOT_LINKED = "This phone isn't linked to your board yet, so nothing was sent. Open the one-time \"link this phone\" link Grok Bot sent you (no code to type), then tap again.";
   async function write(id, body) {
     window.__studioPendingWrites=(window.__studioPendingWrites||0)+1;
     try {
-      if (!key) {
-        const k = (window.prompt("One-time setup on this phone: paste the board code from your board link (the part after #k=).") || "").trim().replace(/^.*#k=/, "");
-        if (!k) throw new Error("no board code");
-        key = k; try { localStorage.setItem("studio-board-key", k); } catch (e) {}
-      }
-      const r = await fetch(API, { method: "POST", headers: { "content-type": "application/json", "x-board-key": key || "" },
+      const r = await fetch(API, { method: "POST", credentials: "same-origin",
+        headers: Object.assign({ "content-type": "application/json" }, key ? { "x-board-key": key } : {}),
         body: JSON.stringify(Object.assign({ id }, body)) });
-      if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} }
+      if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} alert(NOT_LINKED); }
       if (!r.ok) throw new Error("save failed " + r.status);
       const j = await r.json();
       if (j && j.checks) { checksFresh = true; setServer(j.checks); emitChecks(); }

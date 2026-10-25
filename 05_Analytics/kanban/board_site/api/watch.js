@@ -22,6 +22,7 @@ import { list } from "@vercel/blob";
 import { handleUpload } from "@vercel/blob/client";
 import { newestWatchUrl, r2Config } from "../r2sign.js";
 import { signedOk } from "../watchsign.js";
+import { benAuth } from "../benauth.js";
 
 const ID = /^[a-z0-9][a-z0-9_-]{0,63}$/;
 
@@ -44,9 +45,10 @@ export default async function handler(req, res) {
       if (!ID.test(v)) return res.status(400).send("bad id");
       const q = req.query || {};
       const k = String(q.k || "");
-      if (!signedOk(v, q.e, q.s, process.env.WATCH_LINK_SECRET) && !keyOk(k, process.env.BOARD_KEY, process.env.WATCH_UPLOAD_KEY))
+      if (!signedOk(v, q.e, q.s, process.env.WATCH_LINK_SECRET) && !keyOk(k, process.env.BOARD_KEY, process.env.WATCH_UPLOAD_KEY)
+          && !benAuth(req))   // Ben's linked phone (studio_ben cookie) plays any cut, even an expired link
         return res.status(401).send(q.s ? "This Play link has expired. Reload the board and tap Play again."
-          : "Open the board from your board link once on this phone, then tap Watch again.");
+          : "Reload the board and tap Play again.");
       const r2 = r2Config();
       const fromR2 = r2 ? await newestWatchUrl(r2, v) : null;
       if (fromR2) {
