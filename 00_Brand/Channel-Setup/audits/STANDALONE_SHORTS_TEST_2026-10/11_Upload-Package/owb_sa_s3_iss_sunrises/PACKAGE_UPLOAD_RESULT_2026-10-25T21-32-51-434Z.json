@@ -1,0 +1,106 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-10-31T11:30:00.000Z",
+    "platformPostId": "VfDm3E2bUgU",
+    "platformUrl": "https://youtu.be/VfDm3E2bUgU",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-10-31T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"VfDm3E2bUgU\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-10-31T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s3_iss_sunrises",
+    "sha256": "433ce60e09d4e6c31f7f44e501cc5de9baf710dc162186ca745f041d4ad48f77",
+    "title": "Why Do Astronauts See 16 Sunrises a Day?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 3,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/08_Covers/cover_owb_sa_s3_iss_sunrises.jpg",
+    "scheduledAt": "2026-10-31T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s3_iss_sunrises/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s3_iss_sunrises_v04.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/08_Covers/cover_owb_sa_s3_iss_sunrises.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": null,
+  "studioFinish": {
+    "videoId": "VfDm3E2bUgU",
+    "studioEditUrl": "https://studio.youtube.com/video/VfDm3E2bUgU/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/VfDm3E2bUgU/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/VfDm3E2bUgU/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/VfDm3E2bUgU/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/VfDm3E2bUgU/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/VfDm3E2bUgU/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/VfDm3E2bUgU/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (VfDm3E2bUgU). 1 required Studio finish step(s) remain."
+  }
+}
