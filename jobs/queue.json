@@ -76375,13 +76375,13 @@
       "stage": "",
       "after": "",
       "eta_min": 300,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-24T21:45Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "parked for Chief: disk preflight cannot meet under-20-GB scratch-relocation order safely. Only ~6.4 GiB free after safe repair; identified older 028/029 scratch already archived, remaining audio versions are current/previous. Need eligible archive target or approved disk plan before S2/S3 v02 renders. No v02 PASS claimed.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76412,16 +76412,14 @@
           "at": "2026-10-24T23:53Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-25T00:16Z",
+          "by": "chief",
+          "what": "reopened: Chief (Grok) 24 Oct 22:50 London, OWB #264 6389972583: 6.4 GiB free is enough; scratch on NAS /Volumes/data/mac-mini-archive/scratch/J0914/ if mounted, else encoded local intermediates; stop and block if free disk < 3 GiB; no deletions or archiving in this job. Render S2/S3 v02 now (Neptune by Mon 12:00)."
         }
       ],
       "kind": "video",
-      "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-10-24T21:48Z",
-        "by": "codex",
-        "note": "Disk preflight unresolved: ~6.4 GiB free; no eligible older scratch found; standalone /tmp plates absent"
-      },
       "escalated_at": "2026-10-24T23:53Z"
     },
     {
@@ -76666,13 +76664,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-24T21:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "parked for Chief: review gate PR",
+      "result": "",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76728,6 +76726,11 @@
           "at": "2026-10-24T22:19Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review gate PR"
+        },
+        {
+          "at": "2026-10-25T00:16Z",
+          "by": "chief",
+          "what": "reopened: Chief (Grok) 24 Oct 23:30 London, FIX before merge (OWB #264 6390280449): same branches (OWB PR #268, HOS PR #362). 1) scope VO/transcript/words lookups to this export's stem only (else vo_src=mix) + sibling-file test; 2) strict-mode lines for mon19 v02 + plume open + HOS c2q7w0pgcn8/29bpGAI0wb8 (stop for Chief if mon19 fails (b)); 3) HOS report-only table for the 13 scheduled Shorts committed to #362; 4) vo_timing meta vo_s fallback only when VO starts at 0 s. Then check_all + tests, re-park 'parked for Chief: review gate PR v2'. Do not merge."
         }
       ],
       "kind": "qa",
@@ -76739,14 +76742,7 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-24T22:19Z",
-        "by": "gemini",
-        "note": "Opened OWB PR #268 (69056ae06) and HOS PR #362 (22cacfcb); all tests pass"
-      }
+      "model": "gemini-argon"
     },
     {
       "id": "J0919",
@@ -76833,13 +76829,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T22:20Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T21:54Z",
-      "result": "parked for Chief: review HOS_2026-10-25.md (38abd80c) + LEARNINGS.md (6d6063bee) — 1) approve £0 pre-assembly SHORTS_PICTURE_PLAN_v01.json splits for 007-010 + 006 Short B/C assembly (first cut <=2.65s, holds <=3.8s, <=1.0s loop tail, no CTA); 2) decide whether to build local v02/v03 re-cuts in _work/ for scheduled private Shorts (1lszTrYRp-8, mTY67qet7cM, x_3L_IdYgEc, -sa2t7dAtCk, 4WUs0beKn0A pass 6/6 at £0; any YouTube swap goes to Ben); 3) confirm 092-094 ranked ideas.",
+      "result": "Chief PASS 24 Oct; splits and re-cuts ride J0917 jobs; 092–094 backlog, not locked (Grok ruling HOS #180 6390493852)",
       "history": [
         {
           "at": "2026-10-24T21:54Z",
@@ -76885,6 +76881,11 @@
           "at": "2026-10-24T22:35Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review HOS_2026-10-25.md (38abd80c) + LEARNINGS.md (6d6063bee) — 1) approve £0 pre-assembly SHORTS_PICTURE_PLAN_v01.json splits for 007-010 + 006 Short B/C assembly (first cut <=2.65s, holds <=3.8s, <=1.0s loop tail, no CTA); 2) decide whether to build local v02/v03 re-cuts in _work/ for scheduled private Shorts (1lszTrYRp-8, mTY67qet7cM, x_3L_IdYgEc, -sa2t7dAtCk, 4WUs0beKn0A pass 6/6 at £0; any YouTube swap goes to Ben); 3) confirm 092-094 ranked ideas."
+        },
+        {
+          "at": "2026-10-25T00:16Z",
+          "by": "chief",
+          "what": "done: Chief PASS 24 Oct; splits and re-cuts ride J0917 jobs; 092–094 backlog, not locked (Grok ruling HOS #180 6390493852)"
         }
       ],
       "kind": "review",
@@ -76911,7 +76912,8 @@
         "at": "2026-10-24T22:35Z",
         "by": "gemini",
         "note": "Step 4/4 done: pushed HOS_2026-10-25.md (38abd80c) + LEARNINGS.md (6d6063bee), parking for Chief"
-      }
+      },
+      "done_ref": "6390493852"
     },
     {
       "id": "J0921",
@@ -77122,13 +77124,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T23:28Z",
       "eta": "",
       "created_by": "grok",
       "created_at": "2026-10-24T22:05Z",
-      "result": "parked for Chief: HOS 007 master v04 (sha256 c7f62adb, PHONE 102.49 MB sha256 58e89a6f) with Ben's 3 changes on v03 (0:38 peg dolls on solid oak shelf, 2:40 flat lancet scratch no needle, 4:22 clean arm no artefact) at £0 / 0 Flow cr; HOS PR #355 8eafbbde, NAS master_v04_J0925 + iCloud HOS UAT",
+      "result": "Chief PASS (Grok, 25 Oct 01:25 London) on HOS 007 master v04 (HOS PR #355 8eafbbde, sha256 c7f62adb, 531.1 s, -14.0 LUFS / -1.4 dBTP, £0 / 0 Flow cr): Ben's 3 v03 notes fixed. 0:38 peg dolls rest on a solid oak sill (nothing passes through); 2:40 flat lancet surface scratch, no needle; 4:22 clean arm, no artefact. v04 vs v03 PSNR: only the 3 replaced cuts differ, rest bit-identical. Gates PASS. To Ben for his watch (hos_007_master_v04_PHONE.mp4 in HOS UAT/007_The-First-Vaccine). PR #355 merge is Ben's.",
       "history": [
         {
           "at": "2026-10-24T22:05Z",
@@ -77179,6 +77181,11 @@
           "at": "2026-10-25T00:01Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 007 master v04 (sha256 c7f62adb, PHONE 102.49 MB sha256 58e89a6f) with Ben's 3 changes on v03 (0:38 peg dolls on solid oak shelf, 2:40 flat lancet scratch no needle, 4:22 clean arm no artefact) at £0 / 0 Flow cr; HOS PR #355 8eafbbde, NAS master_v04_J0925 + iCloud HOS UAT"
+        },
+        {
+          "at": "2026-10-25T00:16Z",
+          "by": "chief",
+          "what": "done: Chief PASS (Grok, 25 Oct 01:25 London) on HOS 007 master v04 (HOS PR #355 8eafbbde, sha256 c7f62adb, 531.1 s, -14.0 LUFS / -1.4 dBTP, £0 / 0 Flow cr): Ben's 3 v03 notes fixed. 0:38 peg dolls rest on a solid oak sill (nothing passes through); 2:40 flat lancet surface scratch, no needle; 4:22 clean arm, no artefact. v04 vs v03 PSNR: only the 3 replaced cuts differ, rest bit-identical. Gates PASS. To Ben for his watch (hos_007_master_v04_PHONE.mp4 in HOS UAT/007_The-First-Vaccine). PR #355 merge is Ben's."
         }
       ],
       "kind": "assembly",
@@ -77192,7 +77199,8 @@
         "at": "2026-10-25T00:01Z",
         "by": "gemini",
         "note": "Pushed 8eafbbde to HOS PR #355 (codex/J0830-master-v01) with master_v04_pack and production-status.md; parking for Chief"
-      }
+      },
+      "done_ref": "8eafbbde"
     }
   ],
   "focus": [],
