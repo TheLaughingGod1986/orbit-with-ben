@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v02.mp4",
+  "edge_floor": 0.0293,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02",
+      "cut": 2,
+      "t": 6.71,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "why": [
+        "low detail: edge density 0.0232 < film p5 0.0293"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "uhd_bt_paranal_07.mp4",
+      "t": 1.15,
+      "std": 41.32,
+      "mean": 51.87,
+      "p95": 113.0,
+      "edge": 0.0968,
+      "hf": 14.4,
+      "lf": 31.19,
+      "std8": 34.28,
+      "edge8": 0.1578,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "vltfromvistatimelapse.mp4",
+      "t": 3.77,
+      "std": 32.92,
+      "mean": 99.73,
+      "p95": 163.0,
+      "edge": 0.0476,
+      "hf": 11.91,
+      "lf": 26.56,
+      "std8": 28.53,
+      "edge8": 0.0889,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "t": 6.71,
+      "std": 32.8,
+      "mean": 43.85,
+      "p95": 94.0,
+      "edge": 0.0232,
+      "hf": 9.91,
+      "lf": 25.7,
+      "std8": 27.83,
+      "edge8": 0.1994,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0232 < film p5 0.0293"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "bt_lasilla_crux.mp4",
+      "t": 9.65,
+      "std": 40.93,
+      "mean": 65.98,
+      "p95": 134.0,
+      "edge": 0.1079,
+      "hf": 18.33,
+      "lf": 23.81,
+      "std8": 29.54,
+      "edge8": 0.2144,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "uhd_bt_paranal_06.mp4",
+      "t": 12.59,
+      "std": 44.06,
+      "mean": 51.12,
+      "p95": 108.0,
+      "edge": 0.089,
+      "hf": 17.92,
+      "lf": 30.01,
+      "std8": 34.5,
+      "edge8": 0.179,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s_loop",
+      "source": "loop_uhd_bt_paranal_07.mp4",
+      "t": 14.56,
+      "std": 27.41,
+      "mean": 47.76,
+      "p95": 92.0,
+      "edge": 0.0802,
+      "hf": 10.29,
+      "lf": 23.7,
+      "std8": 24.11,
+      "edge8": 0.0803,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
