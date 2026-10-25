@@ -1,5 +1,5 @@
 {
-  "next_id": 946,
+  "next_id": 947,
   "jobs": [
     {
       "id": "J0001",
@@ -79324,6 +79324,33 @@
         "okAt": "2026-10-25T14:10Z",
         "okRef": "6398691247"
       }
+    },
+    {
+      "id": "J0946",
+      "title": "HOS 007 Vaccine: Final OK -> package master v04, gates, Private upload publishAt Thu 12 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:25)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) Final OK, 25 Oct 2026 14:30 London. Ben OK'd HOS 007 Vaccine master v04 via the Studio Kanban button at 14:25 London (HOS #180 6398845411), after Chief PASS on J0925 (HOS PR #355 8eafbbde, branch codex/J0830-master-v01; ruling HOS #180 6391312662).\n\nMaster: hos_007_master_v04.mp4, sha256 c7f62adb...c163e810 (verify the full hash against 07_Edit-Project/master_v04_pack/MASTER_META_v04.json before upload), 531.1 s, 1920x1080 24 fps, -14.0 LUFS / -1.4 dBTP. PHONE copy 58e89a6f (HOS UAT/007_The-First-Vaccine/hos_007_master_v04_PHONE.mp4). The v04 metadata lives on HOS PR #355 (not yet on main); work from that branch or a worktree of it. Do NOT merge PR #355 (that merge is Ben's).\n\nDo:\n1. Package v04: point 02_Video-Projects/007_The-First-Vaccine/11_Upload-Package/PACKAGE_MANIFEST.json at master v04 (title A \"Why Vaccines Are Named After a Cow\", titleAbc as in the manifest, privacy private, schedule 2026-11-12T18:00:00Z, relatedVideoId as in the manifest). Re-time captions (en-GB) and chapters to v04 (v04 duration and audio match v03; only 3 picture windows changed, so timings should carry; confirm). Run the package gates / check_all.sh; all PASS.\n2. Thumbnails: the manifest has none set. Use the 007 A/B thumbnails if they exist (11_Upload-Package, 08_Thumbnail, HOS UAT, or the J0899 follow-on); if none exist, build A/B to the HOS thumbnail rules at GBP0 (no paid generation), set A as the cover and leave B for Test & Compare in the Studio finish job; post both on #180 for a Chief look.\n3. Check the Thu 12 Nov 18:00 slot in 00_Brand/Channel-Setup/social/UPLOADS.json is still free, then upload to the HOS channel as a new Private video with publishAt Thu 12 Nov 2026 18:00 London (2026-11-12T18:00:00Z).\n4. Read back privacy, publishAt, title, description, tags, chapters, captions and thumbnail; record the new video id in UPLOADS.json and PIPELINE.json; post the read-back on HOS #180 (from=cursor/worker header) with a pointer on OWB #264. Then reopen J0875 (007 Shorts -I_GHK-GcFs and 4WUs0beKn0A Related -> the new 007 long id).\n5. Queue the Studio finish (end screen + cards, pinned comment, Test & Compare A/B) as its own job.\nBuffer cross-posts stay deferred (long films are never cross-posted through Buffer). Never Public, no Replace, no delete, no force-push. GBP0, 0 Flow credits. Disk preflight: stop and block if under 3 GB free; scratch on the NAS when mounted.\nDeadline: uploaded Private and read back by Thu 5 Nov 20:00 London (hard stop Wed 11 Nov 18:00).\n",
+      "ref": "6398845411",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T14:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T14:27Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],

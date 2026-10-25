@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0943 | mini | open | – | – | video · Standalone Neptune Short S2 v05: picture built for the Short (Ben: v04 is just blue blur), VO kept; re-park by Mon 26 Oct 12:00 | 6398539398 |
 | J0944 | mini | open | – | – | assembly · 029 Betelgeuse Shorts v03 x3: remove YouTube id 'vP1BbqZ_dnM' from end cards (Ben 0:23 note), nothing else changes | 6398586032 |
 | J0945 | mini | open | – | – | 006 upload · studio · HOS 006 Trees: Final OK -> package master v06, gates, Private upload publishAt Thu 5 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:10) | 6398691247 |
+| J0946 | mini | open | – | – | 007 upload · studio · HOS 007 Vaccine: Final OK -> package master v04, gates, Private upload publishAt Thu 12 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:25) | 6398845411 |
 
 Recently finished:
 
