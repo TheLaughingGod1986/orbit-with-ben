@@ -76664,10 +76664,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-25T00:56Z",
+      "eta": "2026-10-25T04:56Z",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
       "result": "",
@@ -76731,6 +76731,11 @@
           "at": "2026-10-25T00:16Z",
           "by": "chief",
           "what": "reopened: Chief (Grok) 24 Oct 23:30 London, FIX before merge (OWB #264 6390280449): same branches (OWB PR #268, HOS PR #362). 1) scope VO/transcript/words lookups to this export's stem only (else vo_src=mix) + sibling-file test; 2) strict-mode lines for mon19 v02 + plume open + HOS c2q7w0pgcn8/29bpGAI0wb8 (stop for Chief if mon19 fails (b)); 3) HOS report-only table for the 13 scheduled Shorts committed to #362; 4) vo_timing meta vo_s fallback only when VO starts at 0 s. Then check_all + tests, re-park 'parked for Chief: review gate PR v2'. Do not merge."
+        },
+        {
+          "at": "2026-10-25T00:56Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "qa",
