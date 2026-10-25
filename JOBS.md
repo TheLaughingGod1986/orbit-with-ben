@@ -51,6 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0947 | mini | open | – | – | studio · HOS Short vEg_tLIm0Co: swap to curie v07 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Tue 27 Oct 20:00 | 6399338457 |
 | J0948 | mini | open | – | – | studio · HOS Short 5n7xFQRBUvI: swap to galen v04 (Private, Sat 31 Oct 11:30 London) after Ben's OK by Fri 30 Oct 20:00 | 6399338457 |
 | J0949 | mini | open | – | – | studio · OWB Venus size Short YC65mdh6Hgg: swap to venus_95pct_wide_v05 (Private, Mon 2 Nov 11:30 London) - Ben OK'd 25 Oct 15:19 | 6399075485 |
+| J0950 | mini | open | – | – | studio · OWB Saturn ten-metres Short RxErxlXim1Q: swap to saturn_ten_metres_thin_v04 (Private, Fri 30 Oct 11:30 London) - Ben OK'd 25 Oct 15:18 | 6399075485 |
 
 Recently finished:
 
