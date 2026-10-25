@@ -79853,13 +79853,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-25T22:17Z",
-      "eta": "2026-10-25T23:47Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T14:10Z",
-      "result": "",
+      "result": "parked for Chief: 029 Shorts v03 (no id on end card) gates PASS",
       "history": [
         {
           "at": "2026-10-25T14:10Z",
@@ -79885,6 +79885,11 @@
           "at": "2026-10-25T22:29Z",
           "by": "cursor",
           "what": "step 5 of 5 done: v03 x3 gates PASS, OCR 0 id hits, UAT and NAS copies in"
+        },
+        {
+          "at": "2026-10-25T22:29Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: 029 Shorts v03 (no id on end card) gates PASS"
         }
       ],
       "kind": "assembly",
