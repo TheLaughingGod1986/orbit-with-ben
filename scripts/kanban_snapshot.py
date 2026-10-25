@@ -1057,6 +1057,32 @@ def approved_doc(alljobs: list[dict]) -> list[dict]:
     return out
 
 
+def attach_hos_uploads(hos_root: Path, hos: dict) -> None:
+    """Give each HOS film its long's YouTube read-back from HOS UPLOADS.json (Ben, 25 Oct 2026 22:54: "Why is it in
+    progress on the board"). Without it a Private + scheduled HOS long had no YouTube state on the board, so a job that
+    only waits for the film to go public kept the card in In progress."""
+    try:
+        vids = json.loads((hos_root / "00_Brand/Channel-Setup/social/UPLOADS.json").read_text()).get("videos", {})
+    except (OSError, ValueError, AttributeError):
+        return
+    best: dict[str, dict] = {}
+    for vid, meta in vids.items():
+        if not isinstance(meta, dict) or meta.get("retired") or (meta.get("kind") or "long") != "long":
+            continue
+        film = str(meta.get("film") or "")
+        if not re.fullmatch(r"\d{3}", film):
+            continue
+        row = {"videoId": vid, "privacyStatus": meta.get("privacyStatus") or meta.get("privacy") or "",
+               "publishAt": meta.get("publishAt") or "", "registeredAt": meta.get("registeredAt") or ""}
+        cur = best.get(film)
+        if not cur or (bool(row["publishAt"]), row["registeredAt"]) > (bool(cur["publishAt"]), cur["registeredAt"]):
+            best[film] = row
+    for f in hos.get("films") or []:
+        row = best.get(str(f.get("id") or ""))
+        if row:
+            f["upload"] = row
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("page", type=Path, nargs="?")
@@ -1071,6 +1097,7 @@ def main(argv: list[str] | None = None) -> int:
     hos = json.loads((a.hos / "00_Brand/Channel-Setup/PIPELINE.json").read_text())
     if not isinstance(hos.get("films"), list):
         raise SystemExit("PIPELINE.json has no films list; not touching the page")
+    attach_hos_uploads(a.hos, hos)
     owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
     for film in owb:
         receipt = release_record(str(film.get("film", "")))

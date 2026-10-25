@@ -139,6 +139,16 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
         if not (v.get("watch") or {}).get("url"):
             problems.append(f"approved {e['job']}: card has no Play link")
         cards.append(row)
+    # A long its pipeline calls scheduled must read back from YouTube (Done), never sit in In progress because a job
+    # only waits for it to go public (HOS 005, Ben 25 Oct 2026 22:54: "Why is it in progress on the board").
+    hos = (board.get("hos") or {}).get("pipeline") or board.get("hos") or {}
+    for f in hos.get("films") or []:
+        st = ((f.get("stages") or {}).get("scheduled") or {}).get("status")
+        key = f"HOS:{f.get('id')}"
+        v = by_key.get(key)
+        if st == "done" and v and v.get("lane") not in ("done", "approved"):
+            problems.append(f"{key}: scheduled in PIPELINE but the card is in {v.get('lane')}; "
+                            "no YouTube read-back (add the long to HOS UPLOADS.json)")
     code = site_status(SITE + "/", follow=True)
     if code != 200:
         problems.append(f"live site {SITE}/ answers {code or 'no response'}, not 200")
