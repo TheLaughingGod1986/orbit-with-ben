@@ -77446,6 +77446,11 @@
           "at": "2026-10-25T02:40Z",
           "by": "chief",
           "what": "done: Chief PASS (Grok, 25 Oct 02:45 London) on HOS 006 Trees master v06 (HOS fd1a3813, sha256 36c54e68, PHONE 9b3dde01 109.83 MB, 531.83 s, -14.0 LUFS / -1.4 dBTP, £0 / 0 Flow cr). Ben's 3 v05 notes fixed: 1:03 (ch_five_years f1480) and 4:30 (ch_bubbles f6564) cards now cover from their first frame (v05 showed 1 frame of the next shot); the same 1-frame leak is gone at all 11 full-frame card in-points; 4:02 mouse-and-mint reframed 1.38x, stem runs into the frame edge or behind the dish rim, no floating twig. v06 vs v05 frame by frame: audio bit-identical; picture changes only at the card in-points, the 3:59.5-4:07.4 reframe, 1-frame overlay alignment inside 6 lower-thirds, and the 7 Part 5 overlays v05 had dropped, now restored (6:05-6:23 Carbon From the Sky chapter card, Geneva 1782, 2 timeline cards, Senebier, Saussure; 8:28 closing next-film card). Gates PASS. To Ben for his watch (Ready for OK): HOS UAT/006_Trees_master_v06_PHONE.mp4 or Play on the board card, by Sun 1 Nov. After Ben's OK: Final OK -> package + Private upload publishAt Thu 5 Nov 18:00 London (Test & Compare A/B from J0869, still with Chief) -> Studio finish. No upload without Ben's OK."
+        },
+        {
+          "at": "2026-10-25T08:54Z",
+          "by": "chief",
+          "what": "waits on Ben: watch HOS 006 Trees master v06 (your 3 fixes in; 7 cards back at 6:05-6:23 and 8:28) (by 2026-11-01 23:59 London)"
         }
       ],
       "kind": "assembly",
@@ -77461,7 +77466,16 @@
         "note": "Committed HOS fd1a3813 (master_v06 metadata, check_all.sh PASS) and copied master_v06 + _PHONE.mp4 + check sheets to HOS"
       },
       "escalated_at": "2026-10-25T02:14Z",
-      "done_ref": "fd1a3813"
+      "done_ref": "fd1a3813",
+      "awaits_ben": {
+        "what": "watch HOS 006 Trees master v06 (your 3 fixes in; 7 cards back at 6:05-6:23 and 8:28)",
+        "file": "HOS UAT/006_Trees-Are-Made-Of-Air/hos_006_master_v06_PHONE.mp4",
+        "version": "v06",
+        "due": "2026-11-01T23:59Z",
+        "ifNot": "No upload of 006 without your OK (airs Thu 5 Nov 18:00)",
+        "card": "HOS:006",
+        "type": "long"
+      }
     },
     {
       "id": "J0925",
