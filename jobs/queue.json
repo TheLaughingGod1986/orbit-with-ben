@@ -79473,13 +79473,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-25T16:19Z",
-      "eta": "2026-10-25T20:19Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T14:10Z",
-      "result": "",
+      "result": "parked for Chief: Neptune v05 built for the Short, gates PASS; Ben to OK swap",
       "history": [
         {
           "at": "2026-10-25T14:10Z",
@@ -79515,6 +79515,11 @@
           "at": "2026-10-25T16:52Z",
           "by": "cursor",
           "what": "step 4 of 4 done: v05 gates PASS, sha b0a1d2cb1125, copied to OWB UAT and NAS"
+        },
+        {
+          "at": "2026-10-25T16:52Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Neptune v05 built for the Short, gates PASS; Ben to OK swap"
         }
       ],
       "kind": "video",
