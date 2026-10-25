@@ -1,5 +1,5 @@
 {
-  "next_id": 961,
+  "next_id": 962,
   "jobs": [
     {
       "id": "J0001",
@@ -79869,7 +79869,7 @@
     },
     {
       "id": "J0944",
-      "title": "029 Betelgeuse Shorts v03 x3: remove YouTube id 'vP1BbqZ_dnM' from end cards (Ben 0:23 note), nothing else changes",
+      "title": "029 Betelgeuse Shorts v03 x3 c50 PASS -> held Private upload J0961 (Ben OK on the board)",
       "needs": "mini",
       "repo": "owb",
       "body": "Chief (Grok) 25 Oct 14:15 London. Ben's changes on the 029 Wed 9 Dec Short v02 (J0937 item 1, OWB #264 6398586032, 14:01 London): \"0:23 shows a code in text, does not mean anything to a viewer.\"\n\nCause (Chief checked frames at 20.5–22.7 s): the end card prints the long film's YouTube id \"vP1BbqZ_dnM\" in yellow under \"Is Betelgeuse About to Explode?\". It comes from END_ROWS in 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/_assemble_029_shorts_v02.py (line 65, LONG_ID row). The Fri 11 Dec and Mon 14 Dec v02 Shorts have the same end card with the same id, so all three get fixed now, before Ben sees them again.\n\nFix, all three 029 Shorts -> v03 (wed09_great_dimming, fri11_opening_testA, mon14_half_moon_daylight):\n1. Drop the id row from the end card. Keep the film title, and replace the yellow row with words a viewer understands, e.g. \"Full film on the channel\" (the Related video link does the linking). No ids, codes, file names or job tags anywhere on screen. Scan every frame's text (OCR) on all three to prove it.\n2. Change nothing else: same VO, picture, timing and loudness. Keep the loop and end timing within the v02 gate values.\n3. Render v03 next to v02 (v02 untouched), with meta, gates (gate_shorts_open, polish_gate, music_gate, sfx_kit level) all PASS, frames sheets, _PHONE copies in OWB UAT and the NAS UAT, and sha256 in shorts_v03_pack/SHA256.txt.\nJ0937 (v02 upload) is cancelled. After Chief PASSes v03, Chief queues the held Private-upload job for the three v03 masters (same slots Wed 9 / Fri 11 / Mon 14 Dec 11:30 London, same titles, covers and Related vP1BbqZ_dnM) and puts them on Ben's board.\nHard rules: GBP0, no upload, no Studio change, no Public, no Replace, no deletions, no force-push.\nEnd with: jobs.py block <id> --reason \"parked for Chief: 029 Shorts v03 (no id on end card) gates PASS\" --git\n",
@@ -79878,13 +79878,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T22:17Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T14:10Z",
-      "result": "parked for Chief: 029 Shorts v03 (no id on end card) gates PASS",
+      "result": "Chief PASS c50 (Grok, 25 Oct 23:05 London, OWB #264 6404618803): 029 Shorts v03 x3 PASS - end card yellow row 'Full film on the channel', no id/code on any frame (tesseract all 681/1017/718 frames 0 hits, control reads id on v02; Vision OCR 0 hits); decoded PCM = v02 (338b7c8c / 5f91c4ac / 6943f57a), -15.0/-14.4/-14.4 LUFS TP -1.5; frames 681/1017/718, cuts and loop (1.39/1.19/2.62) = v02; wed/mon bit-identical to v02 before the end card, fri hook fade to 2.20 (accepted); gates PASS; sha fc3c1b30 / c12dc177 / 1e3d9ba6 on repo/iCloud/NAS; v02 untouched -> held upload J0961 (Ben OK on the board). GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T14:10Z",
@@ -79915,6 +79915,11 @@
           "at": "2026-10-25T22:29Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: 029 Shorts v03 (no id on end card) gates PASS"
+        },
+        {
+          "at": "2026-10-25T23:02Z",
+          "by": "chief",
+          "what": "done: Chief PASS c50 (Grok, 25 Oct 23:05 London, OWB #264 6404618803): 029 Shorts v03 x3 PASS - end card yellow row 'Full film on the channel', no id/code on any frame (tesseract all 681/1017/718 frames 0 hits, control reads id on v02; Vision OCR 0 hits); decoded PCM = v02 (338b7c8c / 5f91c4ac / 6943f57a), -15.0/-14.4/-14.4 LUFS TP -1.5; frames 681/1017/718, cuts and loop (1.39/1.19/2.62) = v02; wed/mon bit-identical to v02 before the end card, fri hook fade to 2.20 (accepted); gates PASS; sha fc3c1b30 / c12dc177 / 1e3d9ba6 on repo/iCloud/NAS; v02 untouched -> held upload J0961 (Ben OK on the board). GBP0, no upload."
         }
       ],
       "kind": "assembly",
@@ -79927,7 +79932,8 @@
         "at": "2026-10-25T22:29Z",
         "by": "cursor",
         "note": "v03 x3 gates PASS, OCR 0 id hits, UAT and NAS copies in"
-      }
+      },
+      "done_ref": "6404618803"
     },
     {
       "id": "J0945",
@@ -80843,13 +80849,13 @@
       "stage": "",
       "after": "",
       "eta_min": 25,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-25T21:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T17:08Z",
-      "result": "waits for input: HOS Studio CDP 9460 hung",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T17:08Z",
@@ -80875,19 +80881,17 @@
           "at": "2026-10-25T21:41Z",
           "by": "cursor",
           "what": "blocked: waits for input: HOS Studio CDP 9460 hung"
+        },
+        {
+          "at": "2026-10-25T23:02Z",
+          "by": "chief",
+          "what": "reopened: Chief c50 (6404618803): CDP 9460 was up and signed in; 4 frozen background tabs hung Playwright. Chief un-froze them with /json/activate (nothing closed); Playwright connect_over_cdp now attaches in 0.2 s. Retry: set Related on AMSriTQ-lcQ to GHZDsiH7L7A and read back after reload. If connect hangs again, /json/activate each tab, then ~/_desk/bin/cdp_browsers.sh restart 9460 (same profile, no sign-out). No upload, no privacy/publishAt change. Done by Tue 27 Oct 20:00 London (hard stop before 10:30 Wed 28 Oct)."
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:004"
-      ],
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-25T21:41Z",
-        "by": "cursor",
-        "note": "CDP 9460 websocket connected then Playwright timed out"
-      }
+      ]
     },
     {
       "id": "J0956",
@@ -81161,6 +81165,88 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0961",
+      "title": "029 Betelgeuse: Private upload of the 3 Shorts v03 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 23:05 London, J0944 029 Shorts v03 PASS (ruling c50, OWB #264 6404618803). Replaces cancelled J0937 (v02).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the three 029 Shorts v03 (OWB UAT: 029_short_wed09_great_dimming_v03_PHONE.mp4, 029_short_fri11_opening_testA_v03_PHONE.mp4, 029_short_mon14_half_moon_daylight_v03_PHONE.mp4) on the board or the thread. If Ben sends notes instead, this job is cancelled and a v04 fix job is queued.\n\nAfter Ben's OK:\n1. Verify each master sha256 against 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/shorts_v03_pack/SHA256.txt (masters in 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/<slug>/06_Final-Exports/), then upload the three v03 masters to OWB as Private with publishAt: Wed 9 Dec 2026 11:30 London (2026-12-09T11:30:00Z) 'Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?' = 029_short_wed09_great_dimming_v03.mp4 sha256 fc3c1b30be442e9a8853ba9f99c632f8e9fe3c1a23fa0860df6b24f6b0e9e5a4; Fri 11 Dec 2026 11:30 London (2026-12-11T11:30:00Z) 'Is Betelgeuse Really About to Explode?' (Test A opening arm) = 029_short_fri11_opening_testA_v03.mp4 sha256 c12dc1774e689b17f757f1b6c0e9ad58516f8dd4add4075e7316970196860939; Mon 14 Dec 2026 11:30 London (2026-12-14T11:30:00Z) 'How Bright Will Betelgeuse Get When It Explodes?' = 029_short_mon14_half_moon_daylight_v03.mp4 sha256 1e3d9ba6830b4e28991216b1404b66cce4e4401f075bae06a7d7ee5624c63a4e. Check each slot is still free in UPLOADS.json first.\n2. Covers from the v03 pack (029_short_<slug>_v03_cover.jpg, byte-identical to v02; no Orbit). Description carries the long's title 'Is Betelgeuse About to Explode?' + link to vP1BbqZ_dnM. Related video vP1BbqZ_dnM (it goes public Sun 6 Dec 18:00 London; if Studio won't take it on a private long yet, block that step until 6 Dec 18:05 London).\n3. Read back privacy, publishAt, title, cover and Related for each; record in UPLOADS.json and post the read-back on the OWB thread. Buffer cross-posts stay deferred per house rules.\nNever Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6404618803",
+      "film": "",
+      "stage": "",
+      "after": "J0944",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-25T23:02Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T23:02Z",
+      "result": "waits on Ben's OK of the three 029 Shorts v03 (_PHONE in OWB UAT). Chief PASS c50 6404618803.",
+      "history": [
+        {
+          "at": "2026-10-25T23:02Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-25T23:02Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the three 029 Shorts v03 (_PHONE in OWB UAT). Chief PASS c50 6404618803."
+        },
+        {
+          "at": "2026-10-25T23:02Z",
+          "by": "chief",
+          "what": "waits on Ben: upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v03 Private for Wed 9 Dec 11:30"
+        },
+        {
+          "at": "2026-10-25T23:02Z",
+          "by": "chief",
+          "what": "waits on Ben: upload 029 Short \"Is Betelgeuse Really About to Explode?\" v03 Private for Fri 11 Dec 11:30"
+        },
+        {
+          "at": "2026-10-25T23:02Z",
+          "by": "chief",
+          "what": "waits on Ben: upload 029 Short \"How Bright Will Betelgeuse Get When It Explodes?\" v03 Private for Mon 14 Dec 11:30"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:029"
+      ],
+      "awaits_ben": [
+        {
+          "what": "upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v03 Private for Wed 9 Dec 11:30",
+          "file": "OWB UAT/029_short_wed09_great_dimming_v03_PHONE.mp4",
+          "version": "v03",
+          "airs": "2026-12-09T11:30Z",
+          "ifNot": "Nothing is uploaded until you OK it",
+          "title": "Betelgeuse Short: Great Dimming v03",
+          "number": "029",
+          "type": "short"
+        },
+        {
+          "what": "upload 029 Short \"Is Betelgeuse Really About to Explode?\" v03 Private for Fri 11 Dec 11:30",
+          "file": "OWB UAT/029_short_fri11_opening_testA_v03_PHONE.mp4",
+          "version": "v03",
+          "airs": "2026-12-11T11:30Z",
+          "ifNot": "Nothing is uploaded until you OK it",
+          "title": "Betelgeuse Short: Opening Test A v03",
+          "number": "029",
+          "type": "short"
+        },
+        {
+          "what": "upload 029 Short \"How Bright Will Betelgeuse Get When It Explodes?\" v03 Private for Mon 14 Dec 11:30",
+          "file": "OWB UAT/029_short_mon14_half_moon_daylight_v03_PHONE.mp4",
+          "version": "v03",
+          "airs": "2026-12-14T11:30Z",
+          "ifNot": "Nothing is uploaded until you OK it",
+          "title": "Betelgeuse Short: Half-Moon Daylight v03",
+          "number": "029",
+          "type": "short"
+        }
+      ]
     }
   ],
   "focus": [],
