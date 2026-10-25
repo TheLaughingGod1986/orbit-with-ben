@@ -69,7 +69,9 @@
       const notes = (c && c.verdict === "change" && Array.isArray(c.fixes) && c.fixes.length)
         ? c.fixes.map(f => ({ t: f.t || "", text: f.text || "", done: false }))
         : (v.notes || []);
-      const flags = [...(v.flags || [])];
+      // Chief-only flags (and the old "Brief still asks for your OK" text) never reach Ben's board: on a card he has
+      // already OK'd it read as an ask (Ben, 25 Oct 01:00). The Chief still has them in tracker.json.
+      const flags = (v.flags || []).filter(f => f.audience !== "chief" && f.kind !== "chief" && f.kind !== "stale");
       if (c && !c.handled && (c.verdict === "ok" || c.verdict === "change") && !(v.jobs || []).length) {
         if (!flags.some(f => f.kind === "stuck")) flags.push({ kind: "stuck", text: "No job queued" });
       }
@@ -84,7 +86,20 @@
         else if (!/chief/i.test(line || "")) line = "Waiting on Chief PASS.";
       }
       if (lane === "changes" && notes.length) line = `${notes.length} change${notes.length === 1 ? "" : "s"} to make.`;
-      return Object.assign({}, v, { lane, notes, flags, readyFor, waitingOn, line, check: c ? { verdict: c.verdict, version: c.version, at: c.at, handled: !!c.handled } : v.check });
+      // Outside Ready for OK / Changes nothing asks Ben (older data said "No cut to watch yet — your final OK Sun 15 Nov").
+      if (lane !== "ready" && lane !== "changes" && /\byour (?:final )?OK\b|needs your OK|asks for your OK/i.test(line || "")) {
+        const d = (line.match(/\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*\s+\d{1,2}\s+[A-Z][a-z]{2}/) || [""])[0];
+        const held = (line.match(/ Held up: .*$/) || [""])[0];
+        line = "No cut to watch yet. Nothing needed from you now" + (d ? `; review planned ${d}` : "") + "." + held;
+      }
+      // OK'd and back in the works: say so calmly, ask nothing.
+      let okNote = "";
+      if (okd && lane !== "ready" && lane !== "changes" && lane !== "done") {
+        const at = c.at ? new Date(c.at) : null;
+        const on = at && !isNaN(at) ? " on " + at.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/London" }).replace(",", "") : "";
+        okNote = `You OK'd ${c.version || "this"}${on}. Nothing needed from you.`;
+      }
+      return Object.assign({}, v, { lane, notes, flags, okNote, readyFor, waitingOn, line, check: c ? { verdict: c.verdict, version: c.version, at: c.at, handled: !!c.handled } : v.check });
     });
   }
 
@@ -203,6 +218,7 @@
       <p class="line">${esc(v.line)}</p>
       <p class="meta">Waiting on: ${esc(v.waitingOn || "—")}</p>
       ${flagHtml ? `<div class="flags">${flagHtml}</div>` : ""}
+      ${v.okNote ? `<div class="okline">✓ ${esc(v.okNote)}</div>` : ""}
       ${notes ? `<ul class="notes">${notes}</ul>` : ""}
       ${review ? `<div class="actions">${watch}</div>` : ""}
       <div class="actions">
@@ -377,14 +393,12 @@
       render();
     });
 
+    // Play opens the signed link as is: no code prompt (Ben, 25 Oct). Older unsigned links get the code if the phone has it.
     document.querySelectorAll("a[href*='/api/watch?']").forEach(a => {
-      a.addEventListener("click", ev => {
-        if (!key) {
-          const k = (window.prompt("Paste the board code from your board link (#k=…).") || "").trim().replace(/^.*#k=/, "");
-          if (!k) { ev.preventDefault(); return; }
-          key = k; try { localStorage.setItem("studio-board-key", k); } catch (e) {}
-        }
-        const u = new URL(a.href, location.href); u.searchParams.set("k", key); a.href = u.toString();
+      a.addEventListener("click", () => {
+        const u = new URL(a.href, location.href);
+        if (u.searchParams.get("s") || !key) return;
+        u.searchParams.set("k", key); a.href = u.toString();
       }, true);
     });
   }

@@ -86,6 +86,23 @@ class LaneRules(unittest.TestCase):
         )
         self.assertTrue(any(f["kind"] == "stuck" for f in flags))
 
+    def test_ok_note(self):
+        note = vt.ok_note_for("progress", {"verdict": "ok", "version": "v03b", "at": "2026-10-23T22:44:31.887Z"})
+        self.assertEqual(note, "You OK'd v03b on Fri 23 Oct. Nothing needed from you.")
+        self.assertEqual(vt.ok_note_for("ready", {"verdict": "ok"}), "")
+        self.assertEqual(vt.ok_note_for("progress", {"verdict": "change"}), "")
+
+
+    def test_okd_brief_flag_is_chief_only(self):
+        flags = vt.flags_for(key="OWB:029", lane="progress",
+                             check={"verdict": "ok", "handled": False},
+                             jobs=[{"id": "J1", "status": "open"}], brief={"you": "Watch v03b and OK."},
+                             now=datetime.now(timezone.utc))
+        self.assertTrue(flags)
+        for f in flags:
+            self.assertEqual(f.get("audience"), "chief", msg=f)
+            self.assertNotIn("your OK", f["text"])
+
 
 class RealYouTubeState(unittest.TestCase):
     """Board must match YouTube (Ben, 24 Oct 23:23): public read wins, old films and Shorts get real titles."""
@@ -183,7 +200,19 @@ class LiveMapping(unittest.TestCase):
         v = self.by["OWB:029"]
         self.assertTrue(v["flags"], msg=v)
         kinds = {f["kind"] for f in v["flags"]}
-        self.assertTrue(kinds & {"stale", "stuck", "deadline"})
+        self.assertTrue(kinds & {"chief", "stuck", "deadline"})
+
+    def test_okd_card_never_asks_ben(self):
+        # Ben, 25 Oct 01:00: a red "Brief still asks for your OK" on OK'd 029 read as an ask.
+        for v in self.by.values():
+            if v["lane"] in ("ready", "changes"):
+                continue
+            ben_flags = [f for f in v["flags"] if f.get("audience") != "chief"]
+            for text in [v["line"]] + [f["text"] for f in ben_flags]:
+                self.assertNotRegex(text, r"(?i)your (final )?ok|asks for your|needs your|approve", msg=v["key"])
+        for f in self.by["OWB:029"]["flags"]:
+            if "brief" in f["text"].lower():
+                self.assertEqual(f.get("audience"), "chief")
 
 
 if __name__ == "__main__":

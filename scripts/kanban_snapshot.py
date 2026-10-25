@@ -935,6 +935,50 @@ def uploaded_long(film: str) -> dict | None:
             "version": version_of(str(v.get("file", ""))), "label": "", "kind": "youtube", "source": "YouTube upload (private until it airs)"}
 
 
+# Signed Play links (Ben, 25 Oct 2026: "Play should just open the video", no board code). Every /api/watch link in
+# board.json gets &e=<unix expiry>&s=<HMAC-SHA256(secret, "<id>.<e>") base64url>, checked by api/watch.js against the
+# Vercel env WATCH_LINK_SECRET. The Mini keeps the same value in env WATCH_LINK_SECRET or WATCH_LINK_SECRET_FILE (0600,
+# never in git). The expiry is the next 3-hour boundary + 12 h, so a link lives 12-15 h and board.json only changes
+# when the bucket rolls (a few pushes a day, not one a minute). board-data is public: an expired link opens nothing.
+WATCH_LINK_SECRET_FILE = Path(os.environ.get("WATCH_LINK_SECRET_FILE",
+                                             str(Path.home() / ".config" / "studio-kanban" / "watch_link_secret")))
+WATCH_LINK_BUCKET_S = 3 * 3600
+WATCH_LINK_TTL_S = 12 * 3600
+
+
+def watch_link_secret() -> str:
+    env = os.environ.get("WATCH_LINK_SECRET", "").strip()
+    if env:
+        return env
+    try:
+        return WATCH_LINK_SECRET_FILE.read_text().strip()
+    except OSError:
+        return ""
+
+
+def sign_watch_url(url: str, now: float | None = None, secret: str | None = None) -> str:
+    """Add e/s to a /api/watch?v=<id> link. Unchanged when there's no secret or it isn't a watch link."""
+    import base64
+    import hashlib
+    import hmac
+    import time
+    from urllib.parse import parse_qs, urlencode, urlsplit, urlunsplit
+    secret = watch_link_secret() if secret is None else secret
+    parts = urlsplit(url or "")
+    if not secret or not parts.path.endswith("/api/watch"):
+        return url
+    q = {k: v[0] for k, v in parse_qs(parts.query).items()}
+    vid = q.get("v", "")
+    if not vid:
+        return url
+    now = time.time() if now is None else now
+    exp = (int(now) // WATCH_LINK_BUCKET_S + 1) * WATCH_LINK_BUCKET_S + WATCH_LINK_TTL_S
+    sig = base64.urlsafe_b64encode(hmac.new(secret.encode(), f"{vid}.{exp}".encode(), hashlib.sha256).digest())
+    q.pop("k", None)
+    q.update({"v": vid, "e": str(exp), "s": sig.decode().rstrip("=")})
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(q), ""))
+
+
 def watch_links(hos: dict, owb: list[dict], briefs: dict) -> dict:
     """{"OWB:026": {url, version, label, kind, source[, alt, file]}} for every film with something to watch."""
     out = {}
@@ -957,6 +1001,8 @@ def watch_links(hos: dict, owb: list[dict], briefs: dict) -> dict:
         if w:
             if not w["label"]:
                 w["label"] = f"Watch {w['version']}" if w.get("version") else "Watch it"
+            if w.get("url"):
+                w["url"] = sign_watch_url(w["url"])
             out[key] = w
     return out
 

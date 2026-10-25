@@ -443,6 +443,16 @@ def derive_lane(
     return "upcoming"
 
 
+def ok_note_for(lane: str, check: dict | None) -> str:
+    """Calm line for a card Ben already OK'd that sits outside Ready for OK: nothing is asked of him."""
+    if lane in ("ready", "changes", "done") or not check or check.get("handled") or check.get("verdict") != "ok":
+        return ""
+    when = _parse_iso(check.get("at"))
+    what = str(check.get("version") or "this")
+    on = f" on {when.astimezone(LONDON).strftime('%a %-d %b')}" if when else ""
+    return f"You OK'd {what}{on}. Nothing needed from you."
+
+
 def flags_for(
     *,
     key: str,
@@ -459,7 +469,10 @@ def flags_for(
 
     you = (brief.get("you") or "").strip()
     if you and unhandled and check.get("verdict") == "ok":
-        flags.append({"kind": "stale", "text": "Brief still asks for your OK (you already OK'd)"})
+        # Chief-only housekeeping (Ben, 25 Oct 01:00: a red "asks for your OK" on an OK'd card read as an ask).
+        # Ben's board hides audience=chief flags; the Chief still sees it in tracker.json and the CLI print.
+        flags.append({"kind": "chief", "audience": "chief",
+                      "text": "Chief: brief text still asks Ben for an OK he already gave; update the brief"})
 
     # Deadline: youWhen / you deadline within 2 days, or air within 3 days while not done.
     if lane == "ready":
@@ -710,8 +723,10 @@ def _card(
 
     who, line = waiting_on(lane, check, jobs, brief, youtube)
     if no_cut:
+        # Outside Ready for OK / Changes the card never asks Ben for anything (Ben, 25 Oct 01:00).
         due = brief.get("youShort") or brief.get("you") or ""
-        line = "No cut to watch yet" + (f" — {due[0].lower() + due[1:]}" if due else "") + "."
+        m = re.search(r"\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*\s+\d{1,2}\s+[A-Z][a-z]{2}", due)
+        line = "No cut to watch yet. Nothing needed from you now" + (f"; review planned {m.group(0)}" if m else "") + "."
         blocked = next((j for j in jobs if j.get("status") == "blocked"), None)
         if blocked:
             line += f" Held up: {(blocked.get('title') or '')[:90]}."
@@ -729,6 +744,7 @@ def _card(
             ready_for = "Ben"
 
     flags = flags_for(key=key, lane=lane, check=check, jobs=jobs, brief=brief, now=now)
+    ok_note = ok_note_for(lane, check)
 
     air_text = ""
     if air:
@@ -757,6 +773,7 @@ def _card(
         "readyFor": ready_for,
         "notes": notes,
         "flags": flags,
+        "okNote": ok_note,
         "youtube": youtube,
         "watch": watch,
         "jobs": [{"id": j.get("id"), "status": j.get("status"), "title": (j.get("title") or "")[:120],
