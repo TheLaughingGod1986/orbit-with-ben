@@ -448,13 +448,43 @@ def silence_intervals(audio_path: Path, noise_db: float = -35.0, min_dur: float 
     return out
 
 
+def _export_stem_prefix(path: Path) -> str:
+    """Export stem with trailing version suffix (_vNN[a-z]) stripped."""
+    stripped = re.sub(r"_v\d+[a-z]?$", "", path.stem, flags=re.IGNORECASE)
+    return stripped or path.stem
+
+
+def _export_stem_prefixes(path: Path) -> tuple[str, ...]:
+    """Candidate scoped prefixes for this export (full stem, version-stripped stem, and slug without trailing _short)."""
+    base = _export_stem_prefix(path)
+    out = [base.lower(), path.stem.lower()]
+    no_short = re.sub(r"_short$", "", base, flags=re.IGNORECASE)
+    if no_short != base and len(no_short) >= 4 and not no_short.isdigit():
+        out.append(no_short.lower())
+    return tuple(dict.fromkeys(p for p in out if p))
+
+
+def _is_scoped_to_export(cand: Path, path: Path) -> bool:
+    """True when cand's filename starts with this export's stem (version suffix stripped)."""
+    cname = cand.name.lower()
+    for prefix in _export_stem_prefixes(path):
+        if cname.startswith(prefix) and (len(cname) == len(prefix) or not cname[len(prefix)].isalnum()):
+            return True
+    return False
+
+
 def load_sidecar_meta(path: Path, meta_path: Path | None = None) -> dict:
-    """Load <stem>_meta.json or meta.json beside the Short export if present."""
-    candidates = [meta_path] if meta_path else [
-        path.with_name(f"{path.stem}_meta.json"),
-        path.parent / "meta.json",
-        path.parent.parent / f"{path.stem}_meta.json",
-    ]
+    """Load <stem>_meta.json beside the Short export if present (or explicit --meta)."""
+    if meta_path:
+        candidates = [meta_path]
+    else:
+        prefix = _export_stem_prefix(path)
+        candidates = [
+            path.with_name(f"{path.stem}_meta.json"),
+            path.with_name(f"{prefix}_meta.json"),
+            path.parent.parent / f"{path.stem}_meta.json",
+            path.parent.parent / f"{prefix}_meta.json",
+        ]
     for p in candidates:
         if p and p.is_file():
             try:
@@ -478,7 +508,7 @@ def _resolve_candidate(raw: object, path: Path) -> Path | None:
 
 
 def find_vo_stem(path: Path, meta: dict, vo_path: Path | None = None) -> Path | None:
-    """Locate the isolated VO stem if available on disk; returns None to fall back to the mix."""
+    """Locate the isolated VO stem scoped to this export if available on disk; returns None to fall back to the mix."""
     if vo_path and vo_path.is_file():
         return vo_path
     audio_meta = meta.get("audio")
@@ -489,9 +519,9 @@ def find_vo_stem(path: Path, meta: dict, vo_path: Path | None = None) -> Path | 
         if p is not None:
             return p
     for base in (path.parent, path.parent.parent):
-        for pat in ("_work*/stem_vo.wav", "*_vo_v*.wav", "*_vo_v*.mp3"):
+        for pat in ("*_vo*.wav", "*_vo*.mp3"):
             for cand in sorted(base.glob(pat)):
-                if cand.is_file() and "_raw" not in cand.name:
+                if cand.is_file() and "_raw" not in cand.name and _is_scoped_to_export(cand, path):
                     return cand
     return None
 
@@ -500,23 +530,33 @@ def _words_for(path: Path, meta: dict) -> list[dict]:
     caps = meta.get("captions")
     if isinstance(caps, list) and caps and isinstance(caps[0], dict):
         return caps
+    for raw in (meta.get("words_file"), meta.get("words_path")):
+        p = _resolve_candidate(raw, path)
+        if p is not None:
+            try:
+                data = json.loads(p.read_text())
+                words = data.get("words", data) if isinstance(data, dict) else data
+                if isinstance(words, list) and words:
+                    return words
+            except ValueError:
+                pass
     for base in (path.parent, path.parent.parent):
-        for pat in ("words.json", "*_words.json", "_work*/words.json"):
-            for cand in sorted(base.glob(pat)):
-                if cand.is_file():
-                    try:
-                        raw = json.loads(cand.read_text())
-                        words = raw.get("words", raw) if isinstance(raw, dict) else raw
-                        if isinstance(words, list) and words:
-                            return words
-                    except ValueError:
-                        pass
+        for cand in sorted(base.glob("*_words.json")):
+            if cand.is_file() and _is_scoped_to_export(cand, path):
+                try:
+                    raw = json.loads(cand.read_text())
+                    words = raw.get("words", raw) if isinstance(raw, dict) else raw
+                    if isinstance(words, list) and words:
+                        return words
+                except ValueError:
+                    pass
     return []
 
 
-def vo_timing(path: Path, dur: float, meta: dict, vo_path: Path | None = None) -> tuple[float, float]:
-    """Return (vo_onset_s, last_word_end_s) from silencedetect on the VO stem or mix, plus metadata."""
+def vo_timing(path: Path, dur: float, meta: dict, vo_path: Path | None = None) -> tuple[float, float, str]:
+    """Return (vo_onset_s, last_word_end_s, vo_src) from silencedetect on the VO stem or mix, plus metadata."""
     vo_src = find_vo_stem(path, meta, vo_path)
+    vo_src_str = str(vo_src) if vo_src is not None else "mix"
     src = vo_src or path
     src_dur = duration_s(src) if src != path else dur
     intervals = silence_intervals(src, noise_db=-35.0)
@@ -533,21 +573,27 @@ def vo_timing(path: Path, dur: float, meta: dict, vo_path: Path | None = None) -
         raw_on = first.get("start") if "start" in first else first.get("s")
         if isinstance(raw_on, (int, float)):
             meta_onset = float(raw_on)
-    raw_last = meta.get("last_word_end_s") if isinstance(meta.get("last_word_end_s"), (int, float)) else meta.get("vo_s")
-    meta_last_end = float(raw_last) if isinstance(raw_last, (int, float)) else None
-    if meta_last_end is None and words:
+
+    if vo_src is not None:
+        onset_s = float(sd_onset)
+    else:
+        onset_s = max(float(sd_onset), float(meta_onset)) if meta_onset is not None else float(sd_onset)
+
+    meta_last_end: float | None = None
+    if isinstance(meta.get("last_word_end_s"), (int, float)):
+        meta_last_end = float(meta["last_word_end_s"])
+    elif words:
         last = words[-1]
         raw_e = last.get("end") if "end" in last else last.get("e")
         if isinstance(raw_e, (int, float)):
             meta_last_end = float(raw_e)
+    elif isinstance(meta.get("vo_s"), (int, float)):
+        vo_start = meta.get("vo_start_s")
+        if onset_s == 0.0 and (vo_start is None or (isinstance(vo_start, (int, float)) and float(vo_start) == 0.0)):
+            meta_last_end = float(meta["vo_s"])
 
-    if vo_src is not None:
-        onset_s = float(sd_onset)
-        last_end_s = float(meta_last_end) if meta_last_end is not None else float(sd_last_end)
-    else:
-        onset_s = max(float(sd_onset), float(meta_onset)) if meta_onset is not None else float(sd_onset)
-        last_end_s = float(meta_last_end) if meta_last_end is not None else float(sd_last_end)
-    return round(onset_s, 3), round(min(dur, max(0.0, last_end_s)), 3)
+    last_end_s = float(meta_last_end) if meta_last_end is not None else float(sd_last_end)
+    return round(onset_s, 3), round(min(dur, max(0.0, last_end_s)), 3), vo_src_str
 
 
 def vo_timing_verdict(onset_s: float | None, last_word_end_s: float | None, dur: float) -> tuple[list[str], float | None]:
@@ -567,7 +613,7 @@ def vo_timing_verdict(onset_s: float | None, last_word_end_s: float | None, dur:
 
 
 def spoken_text_for(path: Path, meta: dict, script_path: Path | None = None, spoken: str | None = None) -> str:
-    """Gather spoken text from explicit args, <stem>_meta.json, captions, or sibling VO transcript."""
+    """Gather spoken text from explicit args, <stem>_meta.json, captions, or this export's VO transcript."""
     parts: list[str] = []
     if spoken:
         parts.append(spoken)
@@ -580,9 +626,9 @@ def spoken_text_for(path: Path, meta: dict, script_path: Path | None = None, spo
     if words:
         parts.append(" ".join(str(w.get("word") or w.get("text") or "").strip() for w in words))
     for base in (path.parent, path.parent.parent):
-        for pat in ("*_vo*.txt", "stt/*_transcript.txt"):
+        for pat in ("*_vo*.txt", "stt/*_transcript.txt", "*_transcript.txt"):
             for cand in sorted(base.glob(pat)):
-                if cand.is_file():
+                if cand.is_file() and _is_scoped_to_export(cand, path):
                     parts.append(cand.read_text(errors="replace"))
     return "\n".join(p for p in parts if p)
 
@@ -646,8 +692,9 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
         elif opening < OPEN_AUDIO_WARN_DB:
             res["warns"].append(f"first {OPEN_AUDIO_S:.1f}s mean {opening:.1f} dB — hook line may start late")
         if whole >= AUDIO_FAIL_DB:
-            onset_s, last_end_s = vo_timing(path, dur, meta, vo_path)
+            onset_s, last_end_s, vo_src = vo_timing(path, dur, meta, vo_path)
             vo_warns, tail_gap_s = vo_timing_verdict(onset_s, last_end_s, dur)
+            res["vo_src"] = vo_src
             res["vo_onset_s"] = onset_s
             res["last_word_end_s"] = last_end_s
             res["tail_gap_s"] = tail_gap_s
@@ -787,9 +834,13 @@ def main(argv: list[str] | None = None) -> int:
                 db = r["audio"].get("mean_db")
                 audio = f"{db:.1f}dB" if db is not None else "none"
                 cut_s = f"{r['first_cut_s']}s" if r.get("first_cut_s") is not None else "none"
+                vo_on = f"{r['vo_onset_s']:.2f}s" if r.get("vo_onset_s") is not None else "none"
+                tail_s = f"{r['tail_gap_s']:.2f}s" if r.get("tail_gap_s") is not None else "none"
+                vo_src = r.get("vo_src", "none")
                 print(
                     f"{r['verdict']}  {Path(r['file']).name}  dur={r['duration_s']}s  audio={audio}  "
-                    f"motion={r['motion_0_1s']}  f0diff={r.get('frame0_diff_0_1_5s')}  cut1={cut_s}  dhash={r['dhash']}"
+                    f"motion={r['motion_0_1s']}  f0diff={r.get('frame0_diff_0_1_5s')}  cut1={cut_s}  "
+                    f"vo_onset={vo_on}  tail_gap={tail_s}  vo_src={vo_src}  dhash={r['dhash']}"
                     + (f"  visor={r['orbit']['visor_frac']}" if r.get("orbit") else "")
                 )
                 for x in r["fails"]:
