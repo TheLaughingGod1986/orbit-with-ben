@@ -77084,6 +77084,11 @@
           "at": "2026-10-25T02:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-25T02:49Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Preflight: 20Gi free on /, J0921 done by chief; checking 029 package and release master"
         }
       ],
       "kind": "listing",
@@ -77095,7 +77100,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "OWB:029"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-25T02:49Z",
+        "by": "gemini",
+        "note": "Preflight: 20Gi free on /, J0921 done by chief; checking 029 package and release master"
+      }
     },
     {
       "id": "J0923",
