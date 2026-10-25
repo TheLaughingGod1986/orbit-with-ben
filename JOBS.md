@@ -33,7 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0916 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 60% stayed-to-watch audit: 11 upcoming non-public OWB Shorts (read-only, 6 brief fields, re-cut list) |  |
 | J0917 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS 60% stayed-to-watch audit: upcoming non-public HOS Shorts + 3-Short baseline (read-only) |  |
 | J0918 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled) |  |
-| J0923 | mini | open (after J0922) | – | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
+| J0923 | mini | claimed | cursor | 2026-10-25T05:54Z | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
 | J0929 | mini | open | – | – | assembly · 029 Betelgeuse: build 3 Shorts from SHORTS_PLAN_v01 (Wed 9 Dec dimming / Fri 11 Dec opening Test A / Mon 14 Dec half-Moon daylight), gates, covers, park for Chief |  |
 
