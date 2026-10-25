@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v05.mp4",
+  "edge_floor": 0.0111,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s03",
+      "cut": 2,
+      "t": 7.14,
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "why": [
+        "low detail: edge density 0.0094 < film p5 0.0111"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01",
+      "source": "svs14095_WISPR_Magellan_3rdFlyby.mp4",
+      "t": 1.12,
+      "std": 76.49,
+      "mean": 97.78,
+      "p95": 218.0,
+      "edge": 0.0442,
+      "hf": 14.33,
+      "lf": 70.48,
+      "std8": 72.36,
+      "edge8": 0.1672,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02",
+      "source": "venus_ch3_plateB_steam_lid_v01.mp4",
+      "t": 3.88,
+      "std": 42.5,
+      "mean": 101.91,
+      "p95": 142.0,
+      "edge": 0.0149,
+      "hf": 10.13,
+      "lf": 38.99,
+      "std8": 39.94,
+      "edge8": 0.0387,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "t": 7.14,
+      "std": 27.85,
+      "mean": 168.12,
+      "p95": 198.0,
+      "edge": 0.0094,
+      "hf": 8.18,
+      "lf": 24.47,
+      "std8": 25.02,
+      "edge8": 0.0258,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0094 < film p5 0.0111"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04",
+      "source": "HMIVenusTransit_HD1080.mp4",
+      "t": 10.39,
+      "std": 104.88,
+      "mean": 147.51,
+      "p95": 252.0,
+      "edge": 0.0351,
+      "hf": 16.67,
+      "lf": 101.27,
+      "std8": 101.9,
+      "edge8": 0.1576,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05",
+      "source": "svs14095_ParkerVenus.mp4",
+      "t": 13.65,
+      "std": 23.33,
+      "mean": 117.55,
+      "p95": 124.0,
+      "edge": 0.027,
+      "hf": 14.05,
+      "lf": 7.67,
+      "std8": 12.35,
+      "edge8": 0.0663,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06",
+      "source": "venus_ch3_plateA_ocean_nasa_v01.mp4",
+      "t": 16.91,
+      "std": 46.34,
+      "mean": 115.62,
+      "p95": 206.0,
+      "edge": 0.0569,
+      "hf": 9.05,
+      "lf": 41.69,
+      "std8": 43.21,
+      "edge8": 0.321,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s_loop",
+      "source": "wispr_limb_loop_v04.mp4",
+      "t": 19.1,
+      "std": 53.21,
+      "mean": 77.95,
+      "p95": 161.0,
+      "edge": 0.1186,
+      "hf": 9.03,
+      "lf": 50.32,
+      "std8": 51.17,
+      "edge8": 0.2967,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

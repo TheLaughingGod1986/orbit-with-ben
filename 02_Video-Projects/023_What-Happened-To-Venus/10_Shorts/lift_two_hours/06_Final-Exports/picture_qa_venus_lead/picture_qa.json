@@ -1,6 +1,6 @@
 {
   "verdict": "PASS",
-  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/venus_two_hours_v03.mp4",
+  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/venus_two_hours_v04.mp4",
   "rules": {
     "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
     "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
@@ -16,15 +16,15 @@
     {
       "cut": 5,
       "row": "s_loop",
-      "source": "davinci_atmosphere_loop_v03.mp4",
+      "source": "davinci_atmosphere_loop_v04.mp4",
       "title": "NASA SVS 13887 DAVINCI atmosphere returned to frame 0",
-      "t": 17.08,
+      "t": 16.81,
       "at": "0:17",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0 < film p5 0.0019"
+        "low detail: edge density 0.0011 < film p5 0.0027"
       ],
-      "offset": 0.0
+      "offset": 100.0
     }
   ],
   "rows": [
@@ -37,13 +37,13 @@
       "at": "0:01",
       "fail": [],
       "warn": [],
-      "offset": 100.0
+      "offset": 101.0
     },
     {
       "cut": 1,
       "row": "s02",
       "source": "svs14095_ParkerVenus.mp4",
-      "title": "NASA SVS 14095 Parker spacecraft at Venus",
+      "title": "Venera lander on the surface of Venus",
       "t": 4.03,
       "at": "0:04",
       "fail": [],
@@ -53,13 +53,13 @@
     {
       "cut": 2,
       "row": "s03",
-      "source": "svs14095_ParkerVenus.mp4",
-      "title": "NASA SVS 14095 Parker spacecraft at Venus",
+      "source": "venus_ch3_row39b_magellan_alpha_regio_tessera_PIA00215_v02.mp4",
+      "title": "NASA Magellan radar of Venus tessera, Alpha Regio",
       "t": 7.51,
       "at": "0:08",
       "fail": [],
       "warn": [],
-      "offset": 180.0
+      "offset": 0.15
     },
     {
       "cut": 3,
@@ -75,30 +75,30 @@
     {
       "cut": 4,
       "row": "s05",
-      "source": "AIA171VenusTransit_HD1080.mp4",
-      "title": "NASA SDO AIA 171 Venus transit of the Sun",
+      "source": "svs14095_ParkerVenus.mp4",
+      "title": "Venera lander on the surface of Venus",
       "t": 14.48,
       "at": "0:14",
       "fail": [],
       "warn": [],
-      "offset": 15.0
+      "offset": 157.0
     },
     {
       "cut": 5,
       "row": "s_loop",
-      "source": "davinci_atmosphere_loop_v03.mp4",
+      "source": "davinci_atmosphere_loop_v04.mp4",
       "title": "NASA SVS 13887 DAVINCI atmosphere returned to frame 0",
-      "t": 17.08,
+      "t": 16.81,
       "at": "0:17",
       "fail": [],
       "warn": [
-        "low detail: edge density 0.0 < film p5 0.0019"
+        "low detail: edge density 0.0011 < film p5 0.0027"
       ],
-      "offset": 0.0
+      "offset": 100.0
     }
   ],
   "polish": {
-    "edge_floor": 0.0019,
+    "edge_floor": 0.0027,
     "low_detail_floor": {
       "std": 13.44,
       "edge": 0.0259,

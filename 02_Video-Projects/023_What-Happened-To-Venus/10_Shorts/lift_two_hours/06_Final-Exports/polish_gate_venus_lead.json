@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/venus_two_hours_v04.mp4",
+  "edge_floor": 0.0027,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s_loop",
+      "cut": 5,
+      "t": 16.81,
+      "source": "davinci_atmosphere_loop_v04.mp4",
+      "why": [
+        "low detail: edge density 0.0011 < film p5 0.0027"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "t": 1.15,
+      "std": 35.2,
+      "mean": 171.64,
+      "p95": 200.0,
+      "edge": 0.0352,
+      "hf": 15.99,
+      "lf": 22.52,
+      "std8": 25.39,
+      "edge8": 0.0982,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02",
+      "source": "svs14095_ParkerVenus.mp4",
+      "t": 4.03,
+      "std": 67.73,
+      "mean": 122.59,
+      "p95": 186.0,
+      "edge": 0.0074,
+      "hf": 7.29,
+      "lf": 66.31,
+      "std8": 66.6,
+      "edge8": 0.0322,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03",
+      "source": "venus_ch3_row39b_magellan_alpha_regio_tessera_PIA00215_v02.mp4",
+      "t": 7.51,
+      "std": 46.83,
+      "mean": 137.55,
+      "p95": 229.0,
+      "edge": 0.4731,
+      "hf": 20.49,
+      "lf": 33.77,
+      "std8": 36.87,
+      "edge8": 0.5644,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04",
+      "source": "13887_DAVINCI_PEVAA.mp4",
+      "t": 11.0,
+      "std": 42.87,
+      "mean": 200.27,
+      "p95": 242.0,
+      "edge": 0.034,
+      "hf": 17.79,
+      "lf": 32.74,
+      "std8": 34.73,
+      "edge8": 0.1253,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05",
+      "source": "svs14095_ParkerVenus.mp4",
+      "t": 14.48,
+      "std": 56.67,
+      "mean": 77.13,
+      "p95": 190.0,
+      "edge": 0.1505,
+      "hf": 12.25,
+      "lf": 48.26,
+      "std8": 51.82,
+      "edge8": 0.4584,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s_loop",
+      "source": "davinci_atmosphere_loop_v04.mp4",
+      "t": 16.81,
+      "std": 23.32,
+      "mean": 159.82,
+      "p95": 199.0,
+      "edge": 0.0011,
+      "hf": 1.5,
+      "lf": 22.93,
+      "std8": 23.13,
+      "edge8": 0.0112,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0011 < film p5 0.0027"
+      ]
+    }
+  ]
+}
