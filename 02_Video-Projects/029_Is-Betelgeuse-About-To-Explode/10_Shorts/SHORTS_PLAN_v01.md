@@ -1,5 +1,10 @@
 # 029 Shorts plan v01 (Gemini covering on `gemini-4-argon-high`, 25 Oct 2026, `J0928`)
 
+> **Status — Chief reconciliation (Grok, 25 Oct 2026 23:20 London, J0928 done).** This plan is locked for the three weekday Shorts (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London, titles and hooks as below) and the Reserve. Two later rulings supersede parts of it:
+> 1. **Built cuts:** J0929 built v01 then v02 (Chief PASS 6394562857); the v02 upload job J0937 was **cancelled** after Ben's 25 Oct 14:01 note on the Wed v02 ("0:23 shows a code in text, does not mean anything to a viewer"). J0944 built **v03** (`shorts_v03_pack/`), Chief PASS c50 (OWB #264 6404618803); the held Private upload is **J0961**, waiting on Ben's OK on the Studio board.
+> 2. **Rule 7 / end card corrected:** the end card shows the exact long title *Is Betelgeuse About to Explode?* and the words **"Full film on the channel"** — **never the video ID or any code**. The link to `vP1BbqZ_dnM` is the Studio **Related video** (plus the description), not on-screen text. Every "`+ vP1BbqZ_dnM`" end-card mention in the cut tables below is v01/v02 history only.
+> 3. Ship gate (J0918, OWB #268 / HOS #362, merged): v03 passes with one WARN each (last word to end 2.29–2.32 s > 1.5 s, the 2 s end card) — accepted for these three; new 029-style Shorts keep the end card inside the 1.5 s loop tail.
+
 Three weekday Shorts (plus one Reserve Short) lifted from the locked 029 long. All use the long's own locked voice and score bed plus the house SFX kit (`06_Sound-Effects/kit_v01`): no new VO, no mints, **£0 spend**.
 
 - **Long:** `vP1BbqZ_dnM`, `"Is Betelgeuse About to Explode?"` (uploaded Private in `J0922`; goes public **Sun 6 Dec 2026 18:00Z**).
@@ -38,7 +43,7 @@ Every Short applies `05_Analytics/LEARNINGS.md` rules 1–3, 6 and 7, plus the 6
 6. **Single Teach overlay (`AGENTS.md` *Teach on screen*):**
    - Each Short carries one animated house pill overlay (`≤4` words from the VO at that moment, `11–12%` of the `16:9` band height, inside `y=656..1264`, clear of `0–2.2 s` hook caption and `9.0–14.0 s` title banner, duration `2.5–3.3 s` ≤ `4.0 s`).
 7. **End card & Related video:**
-   - Keep the long's score bed under the entire Short with a `0.30 s` VO tail after the last spoken word, followed by the `2.00 s` house end card inside the `16:9` centre band showing the exact long listing title **`Is Betelgeuse About to Explode?`** and video ID **`vP1BbqZ_dnM`**.
+   - Keep the long's score bed under the entire Short with a `0.30 s` VO tail after the last spoken word, followed by the `2.00 s` house end card inside the `16:9` centre band showing the exact long listing title **`Is Betelgeuse About to Explode?`** and "Full film on the channel" (**no video ID or code on screen**; Chief 25 Oct, Ben's v02 note).
    - Related video in Studio: **`vP1BbqZ_dnM`** (set automatically on upload or in Studio since `vP1BbqZ_dnM` goes public Sun 6 Dec 18:00Z, before all three Shorts air).
 
 ---
