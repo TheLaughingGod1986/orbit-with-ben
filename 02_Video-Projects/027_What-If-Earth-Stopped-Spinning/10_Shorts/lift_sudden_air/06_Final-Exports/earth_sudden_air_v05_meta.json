@@ -21,11 +21,12 @@
     "meta_promise": false,
     "payoff_number_s": 16.28,
     "payoff_vs_70pct": 15.04,
-    "loop_diff_whole": 18.04,
-    "loop_diff_masked": 9.66,
-    "loop_diff": 9.66,
+    "loop_diff_whole": 21.26,
+    "loop_diff_masked": 12.39,
+    "loop_diff": 12.39,
     "max_vo_gap_s": 0.16,
-    "lufs": -14.3
+    "lufs": -14.3,
+    "loop_diff_chief_rgb": "21.6/15.3"
   },
   "vo": {
     "source": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-15/earth027_v_before_last/earth027_score_v01i/stem_vo_v01i.wav",
@@ -520,9 +521,10 @@
   "music_ok": true,
   "polish_ok": true,
   "picture_qa_ok": true,
-  "loop_diff_whole": 18.04,
-  "loop_diff_masked": 9.66,
-  "loop_diff": 9.66,
+  "loop_diff_whole": 21.26,
+  "loop_diff_masked": 12.39,
+  "loop_diff": 12.39,
   "lufs": -14.3,
-  "loop_measure": "180x320 gray, frame 0.04 vs last-0.08; masked = rows 110:240 (hook and caption excluded)"
+  "loop_measure": "180x320 gray, rows 110:240, true frame 0 vs last frame (18.04/9.66 were v04's). Chief RGB 21.6/15.3.",
+  "loop_diff_chief_rgb": "21.6/15.3"
 }
