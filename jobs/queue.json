@@ -1,5 +1,5 @@
 {
-  "next_id": 947,
+  "next_id": 949,
   "jobs": [
     {
       "id": "J0001",
@@ -78609,13 +78609,13 @@
       "stage": "",
       "after": "",
       "eta_min": 480,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T14:30Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
-      "result": "parked for Chief: vEg_tLIm0Co v07 PASS, 5n7xFQRBUvI v04 PASS; Ben to OK swap",
+      "result": "Chief PASS c42 (Grok, 25 Oct 15:20 London, HOS #180 6399338457, OWB #264 6399340362): Curie vEg_tLIm0Co v07 PASS (1898 Po/Ra element-tile code graphic 5.10-8.00, Ra pulse 9.27-9.97, no X-ray/Rontgen, tail 0.93, masked loop 3.45 fwd, J0918 committed, sha 38d64347) -> held swap J0947 (OK by Tue 27 Oct 20:00); Galen 5n7xFQRBUvI v04 PASS (milky juice restored in order, onset 0.03, gaps <=0.15, no digital silence, 21.5 s, payoff 77%, sha f15fb5ba; nit: 'For' splice 27 ms late, masked by bed) -> held swap J0948 (OK by Fri 30 Oct 20:00). Heart sum v04 already via J0941. Batch HA2 complete. GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T06:33Z",
@@ -78846,6 +78846,11 @@
           "at": "2026-10-25T14:43Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: vEg_tLIm0Co v07 PASS, 5n7xFQRBUvI v04 PASS; Ben to OK swap"
+        },
+        {
+          "at": "2026-10-25T15:11Z",
+          "by": "chief",
+          "what": "done: Chief PASS c42 (Grok, 25 Oct 15:20 London, HOS #180 6399338457, OWB #264 6399340362): Curie vEg_tLIm0Co v07 PASS (1898 Po/Ra element-tile code graphic 5.10-8.00, Ra pulse 9.27-9.97, no X-ray/Rontgen, tail 0.93, masked loop 3.45 fwd, J0918 committed, sha 38d64347) -> held swap J0947 (OK by Tue 27 Oct 20:00); Galen 5n7xFQRBUvI v04 PASS (milky juice restored in order, onset 0.03, gaps <=0.15, no digital silence, 21.5 s, payoff 77%, sha f15fb5ba; nit: 'For' splice 27 ms late, masked by bed) -> held swap J0948 (OK by Fri 30 Oct 20:00). Heart sum v04 already via J0941. Batch HA2 complete. GBP0, no upload."
         }
       ],
       "kind": "video",
@@ -78859,7 +78864,8 @@
         "at": "2026-10-25T14:43Z",
         "by": "cursor",
         "note": "Galen v04 gates PASS, committed and pushed 2387b4f8. Master, phone and sheet in HOS UAT and on the NAS. Parked for Chief"
-      }
+      },
+      "done_ref": "6399338457"
     },
     {
       "id": "J0935",
@@ -79483,6 +79489,101 @@
         "job": "J0925",
         "okAt": "2026-10-25T14:25Z",
         "okRef": "6398845411"
+      }
+    },
+    {
+      "id": "J0947",
+      "title": "HOS Short vEg_tLIm0Co: swap to curie v07 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Tue 27 Oct 20:00",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 15:20 London, J0934 item 1 Curie notebooks v07 PASS (ruling c42, HOS #180 6399338457, OWB #264 6399340362).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the HOS Short vEg_tLIm0Co (\"Are Marie Curie's Notebooks Still Radioactive?\", airs Wed 28 Oct 11:30 London) to re-cut v07 (HOS UAT/standalone_s4_curie_v07/hos_sa_s4_curie_notebooks_v07_PHONE.mp4, sha256 38d643470b2d96210c55a5a9a43bdab6424ab403933f90bab54215e715958c64) on the board or the thread. Deadline for that OK: Tue 27 Oct 20:00 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v04 airs Wed 28 Oct 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back vEg_tLIm0Co (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Wed 28 Oct 11:30 London (2026-10-28T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (HOS UAT/standalone_s4_curie_v07/hos_sa_s4_curie_notebooks_v07.mp4), then upload it to HOS as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from vEg_tLIm0Co. Captions en-GB from the v07 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set vEg_tLIm0Co (v04) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in HOS UPLOADS.json (and repoint any job that names vEg_tLIm0Co, e.g. Related/Buffer follow-ups, to the new id); post the read-back on HOS #180 and a pointer on OWB #264. Buffer cross-posts per HOS house rules (Short -> full film link, TikTok/IG 'Full film on YouTube, link in bio'), deferred until the long is public.\nIf any step fails after 10:30 London on the air day, leave v04 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.",
+      "ref": "6399338457",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-25T15:11Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T15:11Z",
+      "result": "waits on Ben's OK of the HOS Short vEg_tLIm0Co swap to v07 (HOS UAT) by Tue 27 Oct 20:00 London; no OK = cancel, v04 airs Wed 28 Oct 11:30. Chief PASS c42 6399338457.",
+      "history": [
+        {
+          "at": "2026-10-25T15:11Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-25T15:11Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the HOS Short vEg_tLIm0Co swap to v07 (HOS UAT) by Tue 27 Oct 20:00 London; no OK = cancel, v04 airs Wed 28 Oct 11:30. Chief PASS c42 6399338457."
+        },
+        {
+          "at": "2026-10-25T15:11Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the HOS Short \"Are Marie Curie's Notebooks Still Radioactive?\" (vEg_tLIm0Co, airs Wed 28 Oct 11:30) to re-cut v07 (by 2026-10-27 20:00 London)"
+        }
+      ],
+      "kind": "studio",
+      "awaits_ben": {
+        "what": "swap the HOS Short \"Are Marie Curie's Notebooks Still Radioactive?\" (vEg_tLIm0Co, airs Wed 28 Oct 11:30) to re-cut v07",
+        "file": "HOS UAT/standalone_s4_curie_v07/hos_sa_s4_curie_notebooks_v07_PHONE.mp4",
+        "version": "v07",
+        "due": "2026-10-27T20:00Z",
+        "airs": "2026-10-28T11:30Z",
+        "ifNot": "No OK by then: v04 airs as scheduled",
+        "title": "Curie notebooks Short re-cut v07 (swap)",
+        "type": "short"
+      }
+    },
+    {
+      "id": "J0948",
+      "title": "HOS Short 5n7xFQRBUvI: swap to galen v04 (Private, Sat 31 Oct 11:30 London) after Ben's OK by Fri 30 Oct 20:00",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 15:20 London, J0934 item 2 Galen stove v04 PASS (ruling c42, HOS #180 6399338457, OWB #264 6399340362).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the HOS Short 5n7xFQRBUvI (\"Is the Heart a Pump?\", airs Sat 31 Oct 11:30 London) to re-cut v04 (HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s04_galen_stove_v04_PHONE.mp4, sha256 f15fb5ba050b8842c30fec4fde51a83eda7055bd8d5e39b018cf7aba9e769a8f) on the board or the thread. Deadline for that OK: Fri 30 Oct 20:00 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Sat 31 Oct 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back 5n7xFQRBUvI (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Sat 31 Oct 11:30 London (2026-10-31T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s04_galen_stove_v04.mp4), then upload it to HOS as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from 5n7xFQRBUvI. Captions en-GB from the v04 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set 5n7xFQRBUvI (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in HOS UPLOADS.json (and repoint any job that names 5n7xFQRBUvI, e.g. Related/Buffer follow-ups, to the new id); post the read-back on HOS #180 and a pointer on OWB #264. Buffer cross-posts per HOS house rules (Short -> full film link, TikTok/IG 'Full film on YouTube, link in bio'), deferred until the long is public.\nIf any step fails after 10:30 London on the air day, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.",
+      "ref": "6399338457",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-25T15:11Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T15:11Z",
+      "result": "waits on Ben's OK of the HOS Short 5n7xFQRBUvI swap to v04 (HOS UAT) by Fri 30 Oct 20:00 London; no OK = cancel, v01 airs Sat 31 Oct 11:30. Chief PASS c42 6399338457.",
+      "history": [
+        {
+          "at": "2026-10-25T15:11Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-25T15:11Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the HOS Short 5n7xFQRBUvI swap to v04 (HOS UAT) by Fri 30 Oct 20:00 London; no OK = cancel, v01 airs Sat 31 Oct 11:30. Chief PASS c42 6399338457."
+        },
+        {
+          "at": "2026-10-25T15:11Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the HOS Short \"Is the Heart a Pump?\" (5n7xFQRBUvI, airs Sat 31 Oct 11:30) to re-cut v04 (by 2026-10-30 20:00 London)"
+        }
+      ],
+      "kind": "studio",
+      "awaits_ben": {
+        "what": "swap the HOS Short \"Is the Heart a Pump?\" (5n7xFQRBUvI, airs Sat 31 Oct 11:30) to re-cut v04",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s04_galen_stove_v04_PHONE.mp4",
+        "version": "v04",
+        "due": "2026-10-30T20:00Z",
+        "airs": "2026-10-31T11:30Z",
+        "ifNot": "No OK by then: v01 airs as scheduled",
+        "title": "Galen stove Short re-cut v04 (swap)",
+        "number": "005",
+        "type": "short"
       }
     }
   ],
