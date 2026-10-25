@@ -79620,10 +79620,34 @@
           "at": "2026-10-25T15:20Z",
           "by": "chief",
           "what": "reopened: reopened: Ben OK'd the swap to Galen v04 on the board 25 Oct 15:19 London (HOS #180 6399423733); go: steps 1-4"
+        },
+        {
+          "at": "2026-10-25T15:20Z",
+          "by": "chief",
+          "what": "no longer waits on Ben: OK'd, delivered by J0948"
+        },
+        {
+          "at": "2026-10-25T15:20Z",
+          "by": "chief",
+          "what": "approved by Ben: swap the HOS Short \"Is the Heart a Pump?\" (5n7xFQRBUvI, airs Sat 31 Oct 11:30) to re-cut v04 v04"
         }
       ],
       "kind": "studio",
-      "awaits_ben": {
+      "urgent": 7,
+      "approved_from": {
+        "what": "swap the HOS Short \"Is the Heart a Pump?\" (5n7xFQRBUvI, airs Sat 31 Oct 11:30) to re-cut v04",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s04_galen_stove_v04_PHONE.mp4",
+        "version": "v04",
+        "airs": "2026-10-31T11:30Z",
+        "title": "Galen stove Short re-cut v04 (swap)",
+        "number": "005",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0948",
+        "okAt": "2026-10-25T15:19Z",
+        "okRef": "6399423733"
+      },
+      "awaits_was": {
         "what": "swap the HOS Short \"Is the Heart a Pump?\" (5n7xFQRBUvI, airs Sat 31 Oct 11:30) to re-cut v04",
         "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s04_galen_stove_v04_PHONE.mp4",
         "version": "v04",
@@ -79633,8 +79657,7 @@
         "title": "Galen stove Short re-cut v04 (swap)",
         "number": "005",
         "type": "short"
-      },
-      "urgent": 7
+      }
     }
   ],
   "focus": [],
