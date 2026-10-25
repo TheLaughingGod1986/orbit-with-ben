@@ -393,14 +393,12 @@
       render();
     });
 
+    // Play opens the signed link as is: no code prompt (Ben, 25 Oct). Older unsigned links get the code if the phone has it.
     document.querySelectorAll("a[href*='/api/watch?']").forEach(a => {
-      a.addEventListener("click", ev => {
-        if (!key) {
-          const k = (window.prompt("Paste the board code from your board link (#k=…).") || "").trim().replace(/^.*#k=/, "");
-          if (!k) { ev.preventDefault(); return; }
-          key = k; try { localStorage.setItem("studio-board-key", k); } catch (e) {}
-        }
-        const u = new URL(a.href, location.href); u.searchParams.set("k", key); a.href = u.toString();
+      a.addEventListener("click", () => {
+        const u = new URL(a.href, location.href);
+        if (u.searchParams.get("s") || !key) return;
+        u.searchParams.set("k", key); a.href = u.toString();
       }, true);
     });
   }

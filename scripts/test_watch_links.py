@@ -29,8 +29,16 @@ class WatchLinks(unittest.TestCase):
         self.saved = (ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS, ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER, os.environ.pop("WATCH_UPLOAD_KEY", None))
         ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS = self.icloud, {"OWB": owb, "HOS": hos}, self.uploads
         ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER = root / "reg.json", root / "local_reg.json"
+        self.saved_sign = (ks.WATCH_LINK_SECRET_FILE, os.environ.pop("WATCH_LINK_SECRET", None), ks.r2_ready)
+        # Never upload from a test: on the Mini the main checkout's .env has real R2 keys (25 Oct: a run here
+        # sent the 1-byte fixtures to R2 as owb-026-v04 etc.).
+        ks.r2_ready = lambda *a, **k: False
+        ks.WATCH_LINK_SECRET_FILE = root / "no_secret"
 
     def tearDown(self):
+        ks.WATCH_LINK_SECRET_FILE, ks.r2_ready = self.saved_sign[0], self.saved_sign[2]
+        if self.saved_sign[1] is not None:
+            os.environ["WATCH_LINK_SECRET"] = self.saved_sign[1]
         ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS, ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER, key = self.saved
         if key is not None:
             os.environ["WATCH_UPLOAD_KEY"] = key
@@ -49,6 +57,23 @@ class WatchLinks(unittest.TestCase):
         ks.WATCH_REGISTER.write_text(json.dumps({"files": {"OWB UAT/026_NearestStar_v04_PHONE.mp4": "owb-026-v04"}}))
         w = self.links()["OWB:026"]
         self.assertEqual((w["kind"], w["url"], w["label"]), ("stream", "https://studio-kanban.vercel.app/api/watch?v=owb-026-v04", "Watch v04"))
+
+    def test_stream_link_is_signed_and_expires(self):
+        # Ben, 25 Oct: Play opens the cut with no board code. Same HMAC as api/watch.js signWatch().
+        import base64, hashlib, hmac
+        (ks.WATCH_LINK_SECRET_FILE).write_text("test-secret\n")
+        ks.WATCH_REGISTER.write_text(json.dumps({"files": {"OWB UAT/026_NearestStar_v04_PHONE.mp4": "owb-026-v04"}}))
+        w = self.links()["OWB:026"]
+        from urllib.parse import parse_qs, urlsplit
+        q = {k: v[0] for k, v in parse_qs(urlsplit(w["url"]).query).items()}
+        self.assertEqual(set(q), {"v", "e", "s"})
+        self.assertNotIn("k=", w["url"])
+        want = base64.urlsafe_b64encode(hmac.new(b"test-secret", f"owb-026-v04.{q['e']}".encode(), hashlib.sha256).digest()).decode().rstrip("=")
+        self.assertEqual(q["s"], want)
+        url = ks.sign_watch_url("https://studio-kanban.vercel.app/api/watch?v=x", now=1_000_000_000, secret="k")
+        e = int(parse_qs(urlsplit(url).query)["e"][0])
+        self.assertTrue(12 * 3600 < e - 1_000_000_000 <= 15 * 3600)
+        self.assertEqual(ks.sign_watch_url("https://youtu.be/abc", secret="k"), "https://youtu.be/abc")
 
     def test_explicit_stream_link_is_accepted(self):
         w = self.links(briefs={"OWB:026": {"watch": {"url": "https://studio-kanban.vercel.app/api/watch?v=x", "version": "v05"}}})["OWB:026"]
