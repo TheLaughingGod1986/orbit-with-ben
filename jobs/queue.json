@@ -1,5 +1,5 @@
 {
-  "next_id": 944,
+  "next_id": 945,
   "jobs": [
     {
       "id": "J0001",
@@ -79202,6 +79202,33 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0944",
+      "title": "029 Betelgeuse Shorts v03 x3: remove YouTube id 'vP1BbqZ_dnM' from end cards (Ben 0:23 note), nothing else changes",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 14:15 London. Ben's changes on the 029 Wed 9 Dec Short v02 (J0937 item 1, OWB #264 6398586032, 14:01 London): \"0:23 shows a code in text, does not mean anything to a viewer.\"\n\nCause (Chief checked frames at 20.5–22.7 s): the end card prints the long film's YouTube id \"vP1BbqZ_dnM\" in yellow under \"Is Betelgeuse About to Explode?\". It comes from END_ROWS in 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/_assemble_029_shorts_v02.py (line 65, LONG_ID row). The Fri 11 Dec and Mon 14 Dec v02 Shorts have the same end card with the same id, so all three get fixed now, before Ben sees them again.\n\nFix, all three 029 Shorts -> v03 (wed09_great_dimming, fri11_opening_testA, mon14_half_moon_daylight):\n1. Drop the id row from the end card. Keep the film title, and replace the yellow row with words a viewer understands, e.g. \"Full film on the channel\" (the Related video link does the linking). No ids, codes, file names or job tags anywhere on screen. Scan every frame's text (OCR) on all three to prove it.\n2. Change nothing else: same VO, picture, timing and loudness. Keep the loop and end timing within the v02 gate values.\n3. Render v03 next to v02 (v02 untouched), with meta, gates (gate_shorts_open, polish_gate, music_gate, sfx_kit level) all PASS, frames sheets, _PHONE copies in OWB UAT and the NAS UAT, and sha256 in shorts_v03_pack/SHA256.txt.\nJ0937 (v02 upload) is cancelled. After Chief PASSes v03, Chief queues the held Private-upload job for the three v03 masters (same slots Wed 9 / Fri 11 / Mon 14 Dec 11:30 London, same titles, covers and Related vP1BbqZ_dnM) and puts them on Ben's board.\nHard rules: GBP0, no upload, no Studio change, no Public, no Replace, no deletions, no force-push.\nEnd with: jobs.py block <id> --reason \"parked for Chief: 029 Shorts v03 (no id on end card) gates PASS\" --git\n",
+      "ref": "6398586032",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T14:10Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
