@@ -2056,7 +2056,7 @@ function renderTracker(films){
     try {
       await dbApi.doc("checks/"+id).set({film:keyOf(id), version:((fromDb.watch||{})[keyOf(id)]||{}).version||"", verdict, fixes:fixes||[], note:(fixes||[]).map(f=>(f.t?f.t+" ":"")+f.text).join(" | ").slice(0,4000), at:new Date().toISOString(), handled:false});
       yb.querySelectorAll(".fxx,.fxt").forEach(x=>x.value=""); changeOpen=null; delete drafts[id]; render();
-    } catch(e){ alert("Couldn't save that (" + (e && e.code || "error") + "). Tell the Chief in the chat instead."); }
+    } catch(e){ const m = "Not sent (" + (e && (e.message || e.code) || "error") + "). Tell the Chief in the chat instead."; if (window.__studioToast) window.__studioToast(m, true); else console.warn(m); }
   };
   const addDraft = id => { const t=$("t-"+id), x=$("x-"+id), text=(x&&x.value||"").trim(); if(!text){ x&&x.focus(); return; }
     (drafts[id] = drafts[id] || []).push({t:(t&&t.value||"").trim().slice(0,12), text:text.slice(0,1000)}); if(t)t.value=""; if(x)x.value=""; render(); const nx=$("x-"+id); if(nx) nx.focus(); };

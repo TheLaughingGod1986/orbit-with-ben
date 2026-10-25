@@ -12,7 +12,7 @@
 //   - any request that still carries the old board code (x-board-key), so a phone that has it upgrades silently.
 // The cookie is "v1.<issued unix>.<HMAC-SHA256(HMAC-SHA256(BOARD_KEY, "studio-session-v1"), "v1.<issued>")>":
 // nothing secret in it, and rotating BOARD_KEY in Vercel logs every phone out. An anonymous visitor to the public board
-// has neither, so their taps get 401 and post nothing.
+// has neither; since 25 Oct 13:34 their taps are accepted as "open" taps unless BOARD_OPEN_TAPS=0 (see the end of this file).
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 export const COOKIE = "studio_ben";
@@ -71,4 +71,55 @@ export function renewCookie(res, req, how, env = process.env) {
   if (!how || !env.BOARD_KEY) return;
   const cur = readCookie(req);
   res.setHeader("Set-Cookie", cookieHeader(how === "cookie" && sessionValid(cur, env.BOARD_KEY) ? cur : makeSession(env.BOARD_KEY)));
+}
+
+// ---- open taps (Ben, 25 Oct 2026 13:34: "I should just be able to click add comment, sent to agent or approve
+// without this confirmation"). With env BOARD_OPEN_TAPS unset or "1" (the default), a tap from a browser with no
+// studio_ben cookie (a Home Screen copy, the Gmail in-app browser, a new phone) is accepted: no dialog, no linking
+// step. That browser is given the 400-day cookie on the same response (and on its next board load), and the post plus
+// the #219 audit list say "new device" with a short device name and a hashed IP, so a stray tap is easy to spot and undo.
+// Guards: same-origin only (Origin / Referer must be this board), at most OPEN_TAPS_PER_HOUR unlinked taps an hour.
+// To lock the board again: set BOARD_OPEN_TAPS=0 in Vercel and redeploy; unlinked taps then get 401 as before.
+export const OPEN_TAPS_PER_HOUR = 20;
+export function openTaps(env = process.env) { return String(env.BOARD_OPEN_TAPS ?? "1").trim() !== "0"; }
+
+export function sameOrigin(req) {
+  const h = req.headers || {}, host = String(h["x-forwarded-host"] || h.host || "").toLowerCase();
+  const src = String(h.origin || h.referer || "");
+  if (!host || !src) return false;
+  try { return new URL(src).host.toLowerCase() === host; } catch (e) { return false; }
+}
+
+// Short, readable device name from the user agent ("iPhone Safari", "iPhone Gmail app", "Mac Chrome", …).
+export function deviceName(ua) {
+  const u = String(ua || "");
+  const os = /iPhone/.test(u) ? "iPhone" : /iPad/.test(u) ? "iPad" : /Android/.test(u) ? "Android"
+    : /Macintosh|Mac OS X/.test(u) ? "Mac" : /Windows/.test(u) ? "Windows" : /Linux/.test(u) ? "Linux" : "unknown device";
+  const app = /GSA\//.test(u) ? "Google app" : /Gmail|GoogleMail/i.test(u) ? "Gmail app" : /CriOS|Chrome\//.test(u) ? "Chrome"
+    : /FxiOS|Firefox\//.test(u) ? "Firefox" : /EdgiOS|Edg\//.test(u) ? "Edge"
+    : /Version\/[\d.]+.*Safari\//.test(u) ? "Safari" : /AppleWebKit/.test(u) && /Mobile\//.test(u) ? "web app / in-app browser" : "browser";
+  return `${os} ${app}`;
+}
+
+// The repo is public, so the IP is never written in clear: first 10 chars of HMAC(BOARD_KEY, ip).
+export function clientIp(req) {
+  const h = req.headers || {};
+  return String(h["x-real-ip"] || String(h["x-forwarded-for"] || "").split(",")[0] || "").trim();
+}
+export function ipTag(ip, boardKey) {
+  return ip ? "ip#" + createHmac("sha256", String(boardKey || "studio")).update("ip-v1:" + ip).digest("hex").slice(0, 10) : "ip#unknown";
+}
+
+// Ben's request? Like benAuth, but when open taps are on, a same-origin request without the cookie counts as "open".
+export function tapAuth(req, env = process.env) {
+  const how = benAuth(req, env);
+  if (how) return how;
+  return openTaps(env) && sameOrigin(req) ? "open" : "";
+}
+
+// Give a browser the cookie: renew for cookie/key, first issue for "open".
+export function setBenCookie(res, req, how, env = process.env) {
+  if (!how || !env.BOARD_KEY) return;
+  if (how === "open") return res.setHeader("Set-Cookie", cookieHeader(makeSession(env.BOARD_KEY)));
+  return renewCookie(res, req, how, env);
 }
