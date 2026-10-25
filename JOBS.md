@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0955 | mini | open | – | – | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
 | J0956 | mini | blocked | chief | – | studio · OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30 | 6402300872 |
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
-| J0959 | mini | open | – | – | 007 thumbs · studio · HOS 007 ETynHpIYLeY Studio finish: end screen, pinned comment, Test & Compare |  |
+| J0959 | mini | claimed | cursor | 2026-10-25T21:53Z | 007 thumbs · studio · HOS 007 ETynHpIYLeY Studio finish: end screen, pinned comment, Test & Compare |  |
 
 Recently finished:
 
