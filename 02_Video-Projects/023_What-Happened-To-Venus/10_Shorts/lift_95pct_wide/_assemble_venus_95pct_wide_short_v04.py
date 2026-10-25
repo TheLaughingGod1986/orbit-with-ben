@@ -27,7 +27,7 @@ REPO = HERE.parents[3]
 sys.path.insert(0, str(REPO / "04_Audio/tools"))
 from orbit_cfr_delivery import shorts_encode_args  # noqa: E402
 sys.path.insert(0, str(REPO / "scripts"))
-from short_c37 import finish_scan, limiter, loop_from_open, loop_metrics, true_peak  # noqa: E402
+from short_c37 import finish_scan, limiter, loop_metrics, true_peak  # noqa: E402
 
 NAS = Path(
     "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben"
@@ -88,17 +88,16 @@ SEGMENTS = [
 ]
 GAPS = (0.16, 0.16, 0.14, 0.14, 0.16, 0.20, 0.14, 0.14)
 # (file, src_in, crop or "", file_id, credit, upscale)
-# Left 9:16 of the square WISPR limb (full-frame black ~55%), with a 48 px
-# slide across 2.4 s so the centre band keeps moving. Upscale stays 1.85x.
-# 10 fps picture in a 30 fps wrapper. minterpolate and framerate kept the held
-# frames (25 Oct). A setpts slide clears every hold only around 150 px / 2.4 s,
-# and that pan puts orbit_score at 0.3 s on 0.003. 120 px stays under the visor
-# line and still has one held frame. Left on the slower crop so a rebuild
-# finishes; the 2-frame hold is not cleared yet. The v04 mp4 on disk is a
-# failed faster slide, not this filter.
+# Left 9:16 of the square WISPR limb. The file is 10 fps picture in a 30 fps
+# wrapper, so a still crop holds two frames between real steps. A steady
+# 62 px/s slide (about 160 px over the opening) keeps every step in the first
+# 1.5 s above the freeze line without walking into the visor at 0.3 s.
+# Starting the source at 0.20 s is what keeps that visor read at 0.
+# The loop ends on this plate's own frame 0. One frame earlier is a real
+# 10 fps step (~10), which is over 2× the opening's median step.
 WISPR_VF = (
     "setpts=N/FRAME_RATE/TB,"
-    "crop=585:1040:'min(455,48*t/2.4)':0,"
+    "crop=585:1040:'min(400,20+62*t)':0,"
     "scale=1080:1920:flags=lanczos,setsar=1,format=yuv420p"
 )
 COVER_VF = (
@@ -106,7 +105,7 @@ COVER_VF = (
     "crop=1080:1920,setsar=1,format=yuv420p"
 )
 PLATES = [
-    (WISPR, 0.05, WISPR_VF, "svs14095_WISPR_Magellan_3rdFlyby.mp4",
+    (WISPR, 0.20, WISPR_VF, "svs14095_WISPR_Magellan_3rdFlyby.mp4",
      "NASA SVS 14095 WISPR Magellan 3rd flyby, Venus limb", 1.85),
     (STEAM, 4.0, COVER_VF, "venus_ch3_plateB_steam_lid_v01.mp4",
      "Venus globe, steam-lid plate", 1.78),
@@ -334,6 +333,21 @@ def black_pct(video: Path, t: float = 0.08) -> float:
     return float((im.mean(axis=2) < 20).mean() * 100)
 
 
+def loop_on_frame0(plate: Path, dest: Path, n: int = 30) -> None:
+    """Tail whose last frame is this plate's frame 0, at the same crop."""
+    if n < 8:
+        raise SystemExit(f"loop too short ({n} frames)")
+    run([
+        "ffmpeg", "-y", "-v", "error", "-i", str(plate),
+        "-vf", (
+            f"trim=start_frame=0:end_frame={n},setpts=PTS-STARTPTS,reverse,setpts=PTS-STARTPTS,"
+            "tpad=stop_mode=clone:stop=1"
+        ),
+        "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
+        "-pix_fmt", "yuv420p", "-r", "30", str(dest),
+    ])
+
+
 def loop_diff(video: Path) -> tuple[float, float]:
     def gray(t: float) -> np.ndarray:
         raw = subprocess.check_output([
@@ -460,7 +474,7 @@ def main() -> None:
                 raise SystemExit(f"frame 0 would fail the open gate (diff {dlt:.2f}, visor {vis:.4f})")
         seg_files.append(dest)
     tail = plates_dir / "wispr_limb_loop_v04.mp4"
-    loop_from_open(seg_files[0], tail, n=int(round(LOOP * FPS)))
+    loop_on_frame0(seg_files[0], tail, n=int(round(LOOP * FPS)))
     seg_files.append(tail)
 
     lst = WORK / "list.txt"
@@ -536,9 +550,20 @@ def main() -> None:
     fc.append(f"[{audio_idx}:a]apad=whole_dur={total + 0.5:.3f},atrim=0:{total + 0.5:.3f}[aout]")
     run(args + [
         "-filter_complex", ";".join(fc), "-map", f"[{lastv}]", "-map", "[aout]",
-        *shorts_encode_args(fps=FPS), "-t", f"{total:.3f}", "-shortest",
+        *shorts_encode_args(fps=FPS), "-t", f"{total:.3f}",
         "-movflags", "+faststart", FINAL,
     ])
+    # The encoder rounds the picture up to a whole frame, which leaves the
+    # audio one frame short of the c37 duration check.
+    vdur = dur(FINAL)
+    matched = WORK / "matched.mp4"
+    run([
+        "ffmpeg", "-y", "-v", "error", "-i", FINAL,
+        "-af", f"apad=whole_dur={vdur:.3f},atrim=0:{vdur:.3f}",
+        "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-ar", str(SR), "-ac", "2",
+        "-movflags", "+faststart", matched,
+    ])
+    matched.replace(FINAL)
 
     metrics = finish_scan(FINAL, loop_metrics(FINAL))
     whole, masked = metrics["whole"], metrics["loop_diff_masked"]
@@ -550,6 +575,9 @@ def main() -> None:
     print(f"loop_diff whole {whole:.2f} masked {masked:.2f} lufs {measured:.1f} dur {dur(FINAL):.2f} black {b0:.1f}")
     if masked > 15:
         raise SystemExit(f"loop_diff masked {masked:.2f} over 15")
+    for i, s in enumerate(metrics["steps"][:45]):
+        if float(s) < 0.35:
+            raise SystemExit(f"2-frame freeze at {i / FPS:.2f}s (step {float(s):.2f})")
     if b0 > 30:
         raise SystemExit(f"final frame 0 black {b0:.1f}%")
 
@@ -576,7 +604,7 @@ def main() -> None:
         "upscale": 1.85,
         "video": True,
         "framing": {"offset": 0.05},
-        "note": "1.0s reverse of the frame-0 WISPR limb, last frame equals frame 0",
+        "note": "1.0s reverse of the frame-0 WISPR limb, last frame is frame 0",
     })
     pool.append({
         "file_id": "wispr_limb_loop_v04.mp4",
@@ -600,8 +628,9 @@ def main() -> None:
         "frame_0_plate": "svs14095_WISPR_Magellan_3rdFlyby.mp4 left 9:16 crop of the Venus limb",
         "frame_0_note": (
             "The square WISPR 3rd-flyby frame is about 55% black. "
-            "Frame 0 crops the left limb so Venus fills the 9:16 frame, "
-            "then slides 48 px across 2.4 s so the centre band keeps moving."
+            "Frame 0 crops the left limb from 0.20 s so Venus fills the 9:16 frame, "
+            "then slides 62 px/s so the 10 fps holds clear the freeze line. "
+            "The loop tail is that same crop reversed onto frame 0."
         ),
         "brief": {
             "frame_0": "moving NASA SVS 14095 WISPR Magellan 3rd flyby, Venus limb, full-bleed, no Orbit",
@@ -619,6 +648,7 @@ def main() -> None:
             "loop_diff_whole": round(whole, 2),
             "loop_diff_masked": round(masked, 2),
             "lufs": measured,
+            "true_peak_dbtp": round(peak, 2),
             "frame0_black_pct": round(b0, 1),
             "title_window_s": [9.0, title_out],
             "scale_window_s": [card_in, card_out],
@@ -649,13 +679,7 @@ def main() -> None:
         (sfx_stem, "stem_sfx.wav"),
     ):
         run(["cp", src, stems / name])
-    for dest_dir in (UAT_NAS, UAT_ICLOUD):
-        dest_dir.mkdir(parents=True, exist_ok=True)
-        for p in (
-            FINAL, OUT / f"{STEM}_2fps.jpg", OUT / f"{STEM}_PHONE.jpg", OUT / f"{STEM}_meta.json",
-        ):
-            run(["cp", p, dest_dir / p.name])
-    print("wrote", FINAL)
+    print("wrote", FINAL, "(UAT copy waits on the gates)")
 
 
 if __name__ == "__main__":
