@@ -283,7 +283,8 @@ class ButtonStamp(unittest.TestCase):
         self.assertIn('HOS: ["TheLaughingGod1986/history-of-science", 180]', js)
         self.assertNotIn(', 99]', js)
         # one post per real change, exactly as before, and only after the tick is saved
-        self.assertIn("const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);", js)
+        # 25 Oct 2026: `via` adds "new device: …" to the tail for open taps (test_board_benauth.py); the prefix is unchanged
+        self.assertIn("const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev, via);", js)
         self.assertEqual(js.count("postToChief(b.id, saved ?"), 1)
         self.assertLess(js.index("await save(state)"), js.index("postToChief(b.id, saved ?"))
 
