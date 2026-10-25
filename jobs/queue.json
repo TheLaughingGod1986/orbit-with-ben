@@ -1,5 +1,5 @@
 {
-  "next_id": 942,
+  "next_id": 943,
   "jobs": [
     {
       "id": "J0001",
@@ -79148,6 +79148,33 @@
       ],
       "kind": "studio",
       "urgent": 5
+    },
+    {
+      "id": "J0942",
+      "title": "Standalone ISS Short XKlq0TK1OVA: swap to owb_sa_s3_iss_sunrises_v04 (Private, Sat 31 Oct 11:30 London) - Ben OK'd 25 Oct 13:59",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 14:15 London. Ben OK'd the ISS swap on the board (\"watched it, looks good\", OWB #264 6398570984, 13:59 London). Ben's OK is in, so this job is open now.\n\nSwap the standalone ISS Short XKlq0TK1OVA (\"Why Do Astronauts See 16 Sunrises a Day?\", airs Sat 31 Oct 11:30 London, v01 sha 3ab16465...) to re-cut v04.\nMaster: OWB UAT/standalone_shorts_v04/owb_sa_s3_iss_sunrises_v04.mp4, sha256 433ce60e09d4e6c31f7f44e501cc5de9baf710dc162186ca745f041d4ad48f77 (v04 meta and gate under 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/).\n\n1. Read back XKlq0TK1OVA (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Sat 31 Oct 2026 11:30 London (2026-10-31T11:30:00Z). If not, park for Chief.\n2. Verify the master sha256 above, then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from XKlq0TK1OVA. Captions en-GB from the v04 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set XKlq0TK1OVA (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record the new id in 00_Brand/Channel-Setup/social/UPLOADS.json (standaloneTest true, sha 433ce60e...), repoint any job that names XKlq0TK1OVA to the new id, and post the read-back on OWB #264. Buffer cross-posts stay deferred per house rules.\nIf any step fails after 10:30 London Sat 31 Oct, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6398570984",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T14:10Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
