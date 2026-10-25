@@ -78250,13 +78250,13 @@
       "stage": "",
       "after": "",
       "eta_min": 480,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-25T11:08Z",
-      "eta": "2026-10-25T19:08Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:26Z",
-      "result": "",
+      "result": "parked for Chief: BbsyFrV8kCY v06 PASS, Jcuiy0a9BFI v02 PASS, RxErxlXim1Q v02 PASS, YC65mdh6Hgg v03 PASS; Ben to OK swaps. Venus size is v03 because scheduled v02 must stay. AIA low-detail warn at 0:20 only. No upload.",
       "history": [
         {
           "at": "2026-10-25T06:26Z",
@@ -78347,6 +78347,11 @@
           "at": "2026-10-25T11:20Z",
           "by": "cursor",
           "what": "step 5 of 5 done: All four PASS. Venus size v03 sha 99f24f81, 22.23s, ninety-five at 1.22s, second Earth at 16.03s (72%), loop_diff 13.37, -14.2 LUFS. Commit 0826c32cf. Scheduled v02 untouched. No upload."
+        },
+        {
+          "at": "2026-10-25T11:20Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: BbsyFrV8kCY v06 PASS, Jcuiy0a9BFI v02 PASS, RxErxlXim1Q v02 PASS, YC65mdh6Hgg v03 PASS; Ben to OK swaps. Venus size is v03 because scheduled v02 must stay. AIA low-detail warn at 0:20 only. No upload."
         }
       ],
       "kind": "video",
