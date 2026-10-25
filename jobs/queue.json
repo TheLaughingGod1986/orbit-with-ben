@@ -78250,10 +78250,10 @@
       "stage": "",
       "after": "",
       "eta_min": 480,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-25T09:29Z",
-      "eta": "2026-10-25T17:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:26Z",
       "result": "",
@@ -78322,6 +78322,11 @@
           "at": "2026-10-25T10:04Z",
           "by": "cursor",
           "what": "step 3 of 5 done: Saturn RxErxlXim1Q v02 gates PASS. 22.43s, ten at 1.04s, payoff ten metres at 18.2s (81%), loop_diff 9.13, sha c83a20af, commit 03cd5ff74. v01 untouched. One polish warn on s02 low detail. Next is Venus size YC65mdh6Hgg as v03: do not overwrite scheduled v02. Do not restart Apophis, Venus lead, or Saturn."
+        },
+        {
+          "at": "2026-10-25T10:05Z",
+          "by": "cursor",
+          "what": "released: Saturn RxErxlXim1Q v02 gates PASS (sha c83a20af, commit 03cd5ff74, NAS+iCloud UAT). v01 untouched, no upload. Apophis v06 and Venus lead v02 stay PASS. Do not restart those renders. Next is YC65mdh6Hgg Venus size: the scheduled file is already venus_95pct_wide_v02, so the re-cut is v03 and must not overwrite v02. One polish warn on Saturn s02 low detail."
         }
       ],
       "kind": "video",
