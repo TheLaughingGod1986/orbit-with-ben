@@ -1,5 +1,5 @@
 {
-  "next_id": 954,
+  "next_id": 955,
   "jobs": [
     {
       "id": "J0001",
@@ -80061,6 +80061,33 @@
         "number": "030",
         "type": "short"
       }
+    },
+    {
+      "id": "J0954",
+      "title": "Apophis Short BbsyFrV8kCY v11 (Ben 25 Oct 16:35: asteroid not fully rendered): whole lit rock, re-park for Chief by Tue 27 Oct 12:00",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Chief (Grok) 25 Oct 16:55 London, ruling c45 (OWB #264): Ben's change on Apophis v10 → v11.** Ben, Studio board Request changes, Sun 25 Oct 16:35 London (OWB #264 6400248794): \"The asteroid is not fully rendered.\"\n\n**What Chief sees (frames from master v10, sha 9f9d460b):** the rock is the Veo clip `04_Generated-Clips/veo_v01/apophis_rock_tumble_veo_v01.mp4` run through the `rock24_matte`. In that Veo clip the rock is half in black shadow and runs off the frame edge. The matte keeps only the sunlit half, so on screen the rock is a flat, thin sliver with a chopped, straight-cut end (clear at 7 s and 17.5 s, top right) and no dark side or volume. It reads as a half-made cut-out, not a whole asteroid. v05 (scheduled) has the same fault, so v05 is not a safe fallback.\n\n**Do this (v11, built next to v10; leave v10, v05 and every older file untouched):**\n1. Replace the rock with a **whole, fully lit asteroid**: every edge inside the frame on every shot, no straight or chopped matte edge, a lit side plus a soft terminator and a visible rim-lit dark side so it reads as a solid 3D body. Apophis is a peanut-shaped (two-lobed) rock about 340 m long; keep it that shape, not a long worm.\n2. Source, in this order, at GBP0: (a) a code-rendered 3D rock (procedural two-lobed mesh or the public radar shape model of Apophis), rendered with alpha so no matting is needed; (b) a Veo re-mint on existing credit only, prompted for the whole rock fully in frame, front-lit, on pure black, slow tumble; then matte. Any new spend above GBP0: stop and park for Chief.\n3. Keep the v10 audio, VO SEGMENTS, captions, cut times (2.40 / 5.91 / 9.37 / 12.85 / 16.15, watch→loop at VO end), overlays, title window, hook and the 1.00 s forward loop exactly as v10. Only the rock layer changes (same motion path, scale and timing).\n4. **New gate in the builder (hard fail):** per frame, the rock alpha must not touch any frame edge (≥24 px margin) and its bounding box must hold ≥90% of the rock's full silhouette area from its own source; the matte edge must have no straight run longer than 40 px. Write the numbers into the meta.\n5. Then the usual: strict gates `--air-date 2026-10-28` (keep the 32,000 and 340 ASR gates and the splice gate), picture_qa, polish, music, sfx, finish_scan + loop_metrics (forward, no frame-0 copy), meta with sha256, a 1 fps contact sheet, commit and push, copy master + _PHONE + sheet to OWB UAT (iCloud) and NAS.\n6. Re-park as \"parked for Chief: BbsyFrV8kCY v11; Ben to OK swap\". **Re-park by Tue 27 Oct 12:00 London** so Chief can PASS it and Ben can OK it by Tue 27 Oct 20:00. Hard stop as before: no swap read back by 10:30 London Wed 28 Oct means no swap.\nLocal only, no upload, never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6400248794",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 360,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T16:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T16:50Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [],
