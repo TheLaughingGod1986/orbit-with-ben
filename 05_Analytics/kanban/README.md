@@ -14,6 +14,33 @@ concrete `--note` after each step.
 Live data: `scripts/kanban_snapshot.py --db-out` → `scripts/board_publish.py` → `board-data` branch (`board.json` now
 includes a `tracker` section). Page deploys are separate (Chief after review).
 
+## Ready for OK = jobs waiting on Ben (25 Oct 2026)
+
+A card is in **Ready for OK** for every job that sets `awaits_ben` (`python3 scripts/jobs.py awaits <id> --what ... --file
+"<OWB UAT/...mp4>" --version vNN --due "YYYY-MM-DD HH:MM" [--card HOS:007] [--add] --agent chief --git`). Shorts that aren't
+uploaded get their own card; `--card` moves an existing long's card. Each card has a signed Play link and its deadline.
+Approve posts `[Ben] OK <id> vNN (...)` plus "Release held job <id>" on #264 / HOS #180. `scripts/board_check.py` runs
+every 5 min, started by board_publish.py. It writes `~/_desk/state/board/board_check.json` (`ok`, `problems`, `cards`)
+and `~/_desk/state/board/BOARD_CHECK_FLAG` (`OK <time>` / `FAIL <time>: ...`). A repeat failure posts one
+`[Chief] board-check` note on #264.
+
+## Deploying the page (studio-kanban has no Git link)
+
+The Vercel project `studio-kanban` (prj_vZED3mMIu9NfPnBdoME18ALtfVNk, team bens-projects-11c93b15, Hobby) is **not
+connected to GitHub** (checked 25 Oct 2026), so a merge never auto-builds it. That is on purpose: main takes dozens of
+`jobs:` pushes a day, and on Hobby every triggered build, ignored or cancelled ones included, counts toward the
+100-a-day deploy cap (the same reason `orbit-content-ops` has git auto-deploy off). Data needs no deploy. Only a change
+under `board_site/` or the pages it builds does. After such a merge, deploy main by hand at its merge sha:
+
+- **Vercel MCP** `create_deployment`: `{"teamId": "team_UPErYpfb3ww71LYTIWUoKvcH", "requestBody": {"name": "studio-kanban",
+  "project": "studio-kanban", "target": "production", "gitSource": {"type": "github", "org": "TheLaughingGod1986",
+  "repo": "orbit-with-ben", "ref": "main", "sha": "<merge sha>"}}}`. The project's saved settings (root directory,
+  build) apply.
+- **CLI** (where `vercel` is signed in): `cd 05_Analytics/kanban/board_site && npx vercel deploy --prod --scope bens-projects-11c93b15`
+  (uses `.vercel/project.json`).
+
+Then check the deployment is READY and that `curl -s -o /dev/null -w '%{http_code}' https://studio-kanban.vercel.app/` prints 200.
+
 ## Channel Tracker web app (Ben, 10 Oct 2026)
 
 https://studio-kanban.vercel.app/tracker is the Channel Tracker (`05_Analytics/dashboard/template.html`, the page behind
