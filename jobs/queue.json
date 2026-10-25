@@ -76974,13 +76974,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T00:16Z",
       "eta": "",
       "created_by": "grok",
       "created_at": "2026-10-24T22:04Z",
-      "result": "parked for Chief: 029 Betelgeuse release package v01 (title 'Is Betelgeuse About to Explode?', 0-credit thumbnails A/B/C BRIGHT AS MOON / PAST MARS / IT WAS DUST, 6 chapters, 5-paper Sources, 174-cue en-GB captions, 40.4s vertical trailer, youtube:package dry-run PASS, proposed slot Sun 6 Dec 2026 18:00 London free in UPLOADS.json; commit 926dd979a)",
+      "result": "Chief PASS (Grok, 25 Oct 02:45 London) on 029 Betelgeuse release package v01 (OWB 926dd979a, £0). Master = locked v03b, NAS sha256 54e04d3b re-hashed and matches the manifest + dry run (542.23 s, -14.0 LUFS). Title 'Is Betelgeuse About to Explode?'; thumbnails A BRIGHT AS MOON (primary) / B PAST MARS / C IT WAS DUST pass; 6 chapters match the v03b chapter cuts (0:37, 1:45, 2:50, 4:08, 5:43); 174 en-GB cues, no overlaps, <=42 chars x 2 lines, last cue 514.26 s; 5-paper Sources line with DOIs/arXiv + CC BY credits; trailer 40.4 s 608x1080 -13.9 LUFS. Slot Sun 6 Dec 2026 18:00 London (2026-12-06T18:00:00Z) is free: OWB longs hold 1/8/15/22/29 Nov, 6 Dec only has none. J0922 may upload Private with that publishAt; then J0923. Note (no re-park): manifest 'category: 27' is ignored by the uploader (channel categoryId 28, same as 021-028); leave it or set it to 28 in the J0922 commit. Nothing Public, no Replace.",
       "history": [
         {
           "at": "2026-10-24T22:04Z",
@@ -77031,6 +77031,11 @@
           "at": "2026-10-25T00:54Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 029 Betelgeuse release package v01 (title 'Is Betelgeuse About to Explode?', 0-credit thumbnails A/B/C BRIGHT AS MOON / PAST MARS / IT WAS DUST, 6 chapters, 5-paper Sources, 174-cue en-GB captions, 40.4s vertical trailer, youtube:package dry-run PASS, proposed slot Sun 6 Dec 2026 18:00 London free in UPLOADS.json; commit 926dd979a)"
+        },
+        {
+          "at": "2026-10-25T02:40Z",
+          "by": "chief",
+          "what": "done: Chief PASS (Grok, 25 Oct 02:45 London) on 029 Betelgeuse release package v01 (OWB 926dd979a, £0). Master = locked v03b, NAS sha256 54e04d3b re-hashed and matches the manifest + dry run (542.23 s, -14.0 LUFS). Title 'Is Betelgeuse About to Explode?'; thumbnails A BRIGHT AS MOON (primary) / B PAST MARS / C IT WAS DUST pass; 6 chapters match the v03b chapter cuts (0:37, 1:45, 2:50, 4:08, 5:43); 174 en-GB cues, no overlaps, <=42 chars x 2 lines, last cue 514.26 s; 5-paper Sources line with DOIs/arXiv + CC BY credits; trailer 40.4 s 608x1080 -13.9 LUFS. Slot Sun 6 Dec 2026 18:00 London (2026-12-06T18:00:00Z) is free: OWB longs hold 1/8/15/22/29 Nov, 6 Dec only has none. J0922 may upload Private with that publishAt; then J0923. Note (no re-park): manifest 'category: 27' is ignored by the uploader (channel categoryId 28, same as 021-028); leave it or set it to 28 in the J0922 commit. Nothing Public, no Replace."
         }
       ],
       "kind": "thumb",
@@ -77043,7 +77048,8 @@
         "at": "2026-10-25T00:54Z",
         "by": "gemini",
         "note": "Committed release package + review sheets (926dd979a), backed up to NAS release-package-v01 (36 files), parked for Chief"
-      }
+      },
+      "done_ref": "926dd979a"
     },
     {
       "id": "J0922",
@@ -77124,13 +77130,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T00:03Z",
       "eta": "",
       "created_by": "grok",
       "created_at": "2026-10-24T22:05Z",
-      "result": "parked for Chief: HOS 006 master v06 review (1:03 + 4:30 card flash fixed at root cause across all 28 overlays with 0-frame leak, 4:02 mouse-and-mint reframed 1.38x with 0 floating twig, £0 / 0 credits, _PHONE.mp4 109.83 MB in HOS UAT, all gates PASS, HOS fd1a3813)",
+      "result": "Chief PASS (Grok, 25 Oct 02:45 London) on HOS 006 Trees master v06 (HOS fd1a3813, sha256 36c54e68, PHONE 9b3dde01 109.83 MB, 531.83 s, -14.0 LUFS / -1.4 dBTP, £0 / 0 Flow cr). Ben's 3 v05 notes fixed: 1:03 (ch_five_years f1480) and 4:30 (ch_bubbles f6564) cards now cover from their first frame (v05 showed 1 frame of the next shot); the same 1-frame leak is gone at all 11 full-frame card in-points; 4:02 mouse-and-mint reframed 1.38x, stem runs into the frame edge or behind the dish rim, no floating twig. v06 vs v05 frame by frame: audio bit-identical; picture changes only at the card in-points, the 3:59.5-4:07.4 reframe, 1-frame overlay alignment inside 6 lower-thirds, and the 7 Part 5 overlays v05 had dropped, now restored (6:05-6:23 Carbon From the Sky chapter card, Geneva 1782, 2 timeline cards, Senebier, Saussure; 8:28 closing next-film card). Gates PASS. To Ben for his watch (Ready for OK): HOS UAT/006_Trees_master_v06_PHONE.mp4 or Play on the board card, by Sun 1 Nov. After Ben's OK: Final OK -> package + Private upload publishAt Thu 5 Nov 18:00 London (Test & Compare A/B from J0869, still with Chief) -> Studio finish. No upload without Ben's OK.",
       "history": [
         {
           "at": "2026-10-24T22:05Z",
@@ -77201,6 +77207,11 @@
           "at": "2026-10-25T02:14Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-25T02:40Z",
+          "by": "chief",
+          "what": "done: Chief PASS (Grok, 25 Oct 02:45 London) on HOS 006 Trees master v06 (HOS fd1a3813, sha256 36c54e68, PHONE 9b3dde01 109.83 MB, 531.83 s, -14.0 LUFS / -1.4 dBTP, £0 / 0 Flow cr). Ben's 3 v05 notes fixed: 1:03 (ch_five_years f1480) and 4:30 (ch_bubbles f6564) cards now cover from their first frame (v05 showed 1 frame of the next shot); the same 1-frame leak is gone at all 11 full-frame card in-points; 4:02 mouse-and-mint reframed 1.38x, stem runs into the frame edge or behind the dish rim, no floating twig. v06 vs v05 frame by frame: audio bit-identical; picture changes only at the card in-points, the 3:59.5-4:07.4 reframe, 1-frame overlay alignment inside 6 lower-thirds, and the 7 Part 5 overlays v05 had dropped, now restored (6:05-6:23 Carbon From the Sky chapter card, Geneva 1782, 2 timeline cards, Senebier, Saussure; 8:28 closing next-film card). Gates PASS. To Ben for his watch (Ready for OK): HOS UAT/006_Trees_master_v06_PHONE.mp4 or Play on the board card, by Sun 1 Nov. After Ben's OK: Final OK -> package + Private upload publishAt Thu 5 Nov 18:00 London (Test & Compare A/B from J0869, still with Chief) -> Studio finish. No upload without Ben's OK."
         }
       ],
       "kind": "assembly",
@@ -77215,7 +77226,8 @@
         "by": "gemini",
         "note": "Committed HOS fd1a3813 (master_v06 metadata, check_all.sh PASS) and copied master_v06 + _PHONE.mp4 + check sheets to HOS"
       },
-      "escalated_at": "2026-10-25T02:14Z"
+      "escalated_at": "2026-10-25T02:14Z",
+      "done_ref": "fd1a3813"
     },
     {
       "id": "J0925",
