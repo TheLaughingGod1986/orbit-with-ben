@@ -35,6 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0918 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled) |  |
 | J0922 | mini | claimed | gemini | 2026-10-25T04:48Z | 029 upload · for gemini · listing · `gemini-argon` · 029 Betelgeuse: Private upload of the release master for Sun 6 Dec 18:00 London (after Chief PASS on J0921), read back, record | 6384887788 |
 | J0923 | mini | open (after J0922) | – | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
+| J0928 | any | open | – | – | review · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
 
 Recently finished:
 
