@@ -117,20 +117,29 @@
     } catch (e) {}
   }
   // Ben, 10 Oct: "we used to have a button to add changes or approve". The buttons always show. 25 Oct 2026 ("Just need
-  // to approve no need for code"): never asks for a code. Ben's phone is recognised by the studio_ben cookie (set once
-  // by the "link this phone" link, renewed on every load; benauth.js); an old stored board code still works.
-  const NOT_LINKED = "This phone isn't linked to your board yet, so nothing was sent. Open the one-time \"link this phone\" link Grok Bot sent you (no code to type), then tap again.";
+  // to approve no need for code"; 13:34: no linking step, no confirmation): taps just go. A browser without the
+  // studio_ben cookie is accepted and given it on that tap (open taps, benauth.js); an old stored board code still works.
+  // Brief inline note instead of a dialog (Ben, 25 Oct 13:34: no confirmations): "Sent ✓", or what went wrong.
+  const toast = (msg, bad) => { try {
+    let t = document.getElementById("studio-toast");
+    if (!t) { t = document.createElement("div"); t.id = "studio-toast"; t.setAttribute("role", "status");
+      t.style.cssText = "position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);transform:translateX(-50%);z-index:9999;padding:10px 18px;border-radius:12px;font:600 15px -apple-system,system-ui,sans-serif;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.35);max-width:90vw;text-align:center;transition:opacity .25s;pointer-events:none;opacity:0";
+      document.body.appendChild(t); }
+    t.style.background = bad ? "#b3261e" : "#1f7a3a"; t.textContent = msg; t.style.opacity = "1";
+    clearTimeout(t._h); t._h = setTimeout(() => { t.style.opacity = "0"; }, bad ? 6000 : 1800);
+  } catch (e) {} };
+  window.__studioToast = toast;
   async function write(id, body) {
     window.__studioPendingWrites=(window.__studioPendingWrites||0)+1;
     try {
       const r = await fetch(API, { method: "POST", credentials: "same-origin",
         headers: Object.assign({ "content-type": "application/json" }, key ? { "x-board-key": key } : {}),
         body: JSON.stringify(Object.assign({ id }, body)) });
-      if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} alert(NOT_LINKED); }
-      if (!r.ok) throw new Error("save failed " + r.status);
+      if (!r.ok) { const j = await r.json().catch(() => ({})); const e = new Error((j && j.error) || ("save failed " + r.status)); e.code = r.status; throw e; }
       const j = await r.json();
       if (j && j.checks) { checksFresh = true; setServer(j.checks); emitChecks(); }
-      if (j && /^not posted/.test(j.chief || "")) alert("Saved on the board, but it didn't reach the Chief's thread (" + j.chief.slice(0, 80) + "). Tell the Chief in the chat as well.");
+      if (j && /^not posted/.test(j.chief || "")) toast("Saved on the board, but it didn't reach the Chief's thread (" + j.chief.slice(0, 80) + "). Tell the Chief in the chat as well.", true);
+      else toast("Sent ✓");
     } finally { window.__studioPendingWrites--; }
   }
 
@@ -151,7 +160,7 @@
         async delete() {
           const id = path.split("/")[1];
           const before = local[id]; local[id] = null; emitChecks();
-          try { await write(id, { delete: true }); } catch (e) { if (before === undefined) delete local[id]; else local[id] = before; emitChecks(); }
+          try { await write(id, { delete: true }); } catch (e) { if (before === undefined) delete local[id]; else local[id] = before; emitChecks(); toast("Not sent: " + String(e.message || e), true); }
         },
       };
     },

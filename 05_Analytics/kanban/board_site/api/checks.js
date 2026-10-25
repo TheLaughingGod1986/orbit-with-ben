@@ -11,10 +11,11 @@
 // The change stamp: the issue's updated_at is the version. GET ?stamp=1 answers {version} only, and GET returns
 // stampUrl pointing there, so the Mini's every-minute check stays one small read (scripts/board_publish.py).
 
-import { benAuth, renewCookie } from "../benauth.js";
+import { tapAuth, setBenCookie, deviceName, clientIp, ipTag, OPEN_TAPS_PER_HOUR } from "../benauth.js";
 
 const STORE = ["TheLaughingGod1986/orbit-with-ben", 219];
 const HISTORY_KEEP = 150;
+const AUDIT_KEEP = 100;
 const BODY_MAX = 60000;          // GitHub caps an issue body at 65,536 characters
 const HANDLED_KEEP_DAYS = 30;    // handled ticks older than this are pruned
 // Ben's buttons go straight to the Chief (Ben, 10 Oct): every Approve / Request changes / Undo is also posted on the
@@ -29,14 +30,14 @@ function londonTime(iso) {
   catch (e) { return iso; }
 }
 
-export function benLine(id, doc, prev) {
+export function benLine(id, doc, prev, via = "") {
   const [ch, film] = String(id).split("-");
   // S1..S8 = the standalone Shorts (Ben, 15 Oct); J0940 / J0937.2 = a job waiting on Ben (awaits_ben, 25 Oct 2026)
   if (!THREADS[ch] || !/^(\d{3}|S\d{1,2}|J\d{3,5}(\.\d{1,2})?)$/.test(film || "")) return null;
   const d0 = doc || prev || {};
   const about = d0.what ? ` (${String(d0.what).slice(0, 200)})` : "";
   const what = `${film}${d0.version ? " " + d0.version : ""}${about}`;
-  const tail = `\n\n(Studio Kanban button, ${londonTime((doc && doc.at) || new Date().toISOString())} London)`;
+  const tail = `\n\n(Studio Kanban button, ${londonTime((doc && doc.at) || new Date().toISOString())} London${via ? "; " + via : ""})`;
   if (!doc) return prev && !prev.handled ? `[Ben] undo ${what}: ignore my ${prev.verdict === "ok" ? "OK" : "change request"} from the board.${tail}` : null;
   if (doc.handled) return null;
   const job = /^J/.test(film) ? `\n\nRelease held job ${String(d0.job || film.split(".")[0]).slice(0, 12)}.` : "";
@@ -68,7 +69,7 @@ export function parseStore(body) {
   const m = String(body || "").match(/```json\s*([\s\S]*?)```/);
   const j = m ? JSON.parse(m[1]) : {};
   return { checks: j.checks && typeof j.checks === "object" ? j.checks : {}, history: Array.isArray(j.history) ? j.history : [],
-    pairs: Array.isArray(j.pairs) ? j.pairs : [] };
+    pairs: Array.isArray(j.pairs) ? j.pairs : [], audit: Array.isArray(j.audit) ? j.audit : [] };
 }
 
 // Keeps the body under GitHub's cap: drop handled ticks older than HANDLED_KEEP_DAYS, then trim history, then fail loudly.
@@ -80,7 +81,9 @@ export function pruneState(state, now = Date.now()) {
   }
   // pairs: used one-time "link this phone" nonces (api/pair.js), kept until their link would have expired anyway
   const pairs = (state.pairs || []).filter(p => p && Number(p.e) * 1000 > now).slice(-50);
-  return { checks, history: state.history.slice(-HISTORY_KEEP), pairs };
+  // audit: taps from browsers without the studio_ben cookie ("open" taps, ../benauth.js): when, card, device, hashed IP
+  const audit = (state.audit || []).slice(-AUDIT_KEEP);
+  return { checks, history: state.history.slice(-HISTORY_KEEP), pairs, audit };
 }
 
 export function renderStore(state, now = Date.now()) {
@@ -123,8 +126,12 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   try {
     // Ben is the phone with the studio_ben cookie (or the old board code); see ../benauth.js. Renewed on every load.
-    const how = benAuth(req);
-    renewCookie(res, req, how);
+    // Open taps (Ben, 25 Oct 13:34, default on, BOARD_OPEN_TAPS=0 locks it): any same-origin browser without the
+    // cookie gets it on its first tap (not on a plain load, so that first tap is recorded as "new device" in the post
+    // and in the #219 audit list), and its taps go through with no dialog or link.
+    const how = tapAuth(req);
+    if (how !== "open" || req.method === "POST") setBenCookie(res, req, how);
+    const via = how === "open" ? `new device: ${deviceName(req.headers["user-agent"])}, ${ipTag(clientIp(req), process.env.BOARD_KEY)}` : "";
     if (req.method === "GET") {
       const { version, state } = await load();
       if (req.query && req.query.stamp) return res.status(200).json({ version });
@@ -132,16 +139,21 @@ export default async function handler(req, res) {
       return res.status(200).json({ checks: state.checks, at: new Date().toISOString(), version, stampUrl, ben: !!how });
     }
     if (req.method !== "POST") return res.status(405).json({ error: "GET or POST" });
-    if (!how) return res.status(401).json({ error: "not linked", linked: false });
+    if (!how) return res.status(401).json({ error: "board locked (BOARD_OPEN_TAPS=0) or not from the board page", linked: false });
     const b = await readBody(req);
     if (!ID.test(String(b.id || ""))) return res.status(400).json({ error: "bad id" });
     // dryRun: proves this phone can post (auth + id + the line it would post) without saving or posting anything.
     if (b.dryRun) {
       const doc = b.doc && typeof b.doc === "object" ? b.doc : null;
-      return res.status(200).json({ ok: true, dryRun: true, auth: how, wouldPost: doc ? benLine(b.id, doc, null) : null });
+      return res.status(200).json({ ok: true, dryRun: true, auth: how, wouldPost: doc ? benLine(b.id, doc, null, via) : null });
     }
     const { state } = await load();
     const prev = state.checks[b.id] || null;
+    if (how === "open") {
+      const hourAgo = Date.now() - 3600000;
+      if ((state.audit || []).filter(a => Date.parse(a.at) > hourAgo).length >= OPEN_TAPS_PER_HOUR)
+        return res.status(429).json({ error: "Too many taps from new devices this hour. Try again later." });
+    }
     if (b.delete) {
       delete state.checks[b.id];
     } else {
@@ -151,17 +163,19 @@ export default async function handler(req, res) {
     }
     const at = new Date().toISOString();
     state.history = [...state.history, { id: b.id, op: b.delete ? "delete" : "set", at, verdict: b.doc?.verdict || "" }];
+    if (how === "open") state.audit = [...(state.audit || []), { at, id: b.id, op: b.delete ? "delete" : (b.doc?.verdict || "set"),
+      device: deviceName(req.headers["user-agent"]), ip: ipTag(clientIp(req), process.env.BOARD_KEY) }];
     // A failed save never loses Ben's word: the tap still goes to the Chief's thread, and the reply says it wasn't stored.
     let saved = "";
     await save(state).catch(e => { saved = String(e && e.message || e).slice(0, 160); });
     // Post once per real change (a re-save of the same tick has the same `at`).
     const doc = b.delete ? null : state.checks[b.id];
-    const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev);
+    const line = doc && prev && prev.at === doc.at && prev.verdict === doc.verdict ? null : benLine(b.id, doc, prev, via);
     let chief = "";
     if (line) chief = await postToChief(b.id, saved ? `${line}\n\n(Not saved on the board: ${saved}. Act on this post.)` : line)
       .catch(e => `not posted: ${String(e && e.message || e).slice(0, 100)}`);
     if (saved) { console.log(`checks ${b.id} not stored: ${saved}; chief: ${chief}`); return res.status(200).json({ ok: true, stored: false, error: saved, checks: state.checks, chief }); }
-    if (line) console.log(`checks ${b.id} ${b.delete ? "delete" : (doc || {}).verdict}: ${chief}`);   // shows in vercel logs
+    if (line) console.log(`checks ${b.id} ${b.delete ? "delete" : (doc || {}).verdict} (${how}${via ? ", " + via : ""}): ${chief}`);   // shows in vercel logs
     return res.status(200).json({ ok: true, checks: state.checks, chief });
   } catch (e) {
     return res.status(500).json({ error: String(e && e.message || e).slice(0, 300) });

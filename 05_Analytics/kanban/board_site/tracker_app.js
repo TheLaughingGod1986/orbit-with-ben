@@ -127,10 +127,18 @@
     return true;
   }
 
-  // Ben, 25 Oct 2026: "Just need to approve no need for code". Never asks for a code: Ben's phone is recognised by the
-  // studio_ben cookie (set once by the "link this phone" link, renewed on every load; ../benauth.js). An old board code
-  // in this phone's storage still works and turns into the cookie on the next load.
-  const NOT_LINKED = "This phone isn't linked to your board yet, so nothing was sent. Open the one-time \"link this phone\" link Grok Bot sent you (no code to type), then tap again.";
+  // Ben, 25 Oct 2026: "Just need to approve no need for code", and 13:34: no linking step, no confirmation. Taps just
+  // go: a browser without the studio_ben cookie is accepted and given it on that tap (open taps, ../benauth.js).
+  // Brief inline note instead of a dialog (Ben, 25 Oct 13:34: no confirmations): "Sent ✓", or what went wrong.
+  const toast = (msg, bad) => { try {
+    let t = document.getElementById("studio-toast");
+    if (!t) { t = document.createElement("div"); t.id = "studio-toast"; t.setAttribute("role", "status");
+      t.style.cssText = "position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);transform:translateX(-50%);z-index:9999;padding:10px 18px;border-radius:12px;font:600 15px -apple-system,system-ui,sans-serif;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.35);max-width:90vw;text-align:center;transition:opacity .25s;pointer-events:none;opacity:0";
+      document.body.appendChild(t); }
+    t.style.background = bad ? "#b3261e" : "#1f7a3a"; t.textContent = msg; t.style.opacity = "1";
+    clearTimeout(t._h); t._h = setTimeout(() => { t.style.opacity = "0"; }, bad ? 6000 : 1800);
+  } catch (e) {} };
+  window.__studioToast = toast;
   const authHeaders = () => (key ? { "x-board-key": key } : {});
 
   async function postCheck(id, doc) {
@@ -140,11 +148,11 @@
       headers: Object.assign({ "content-type": "application/json" }, authHeaders()),
       body: JSON.stringify({ id, doc }),
     });
-    if (r.status === 401) { key = null; try { localStorage.removeItem("studio-board-key"); } catch (e) {} throw new Error(NOT_LINKED); }
-    if (!r.ok) throw new Error("save failed " + r.status);
+    if (!r.ok) { const j = await r.json().catch(() => ({})); throw new Error((j && j.error) || ("save failed " + r.status)); }
     const j = await r.json();
     if (j && j.checks) checks = j.checks;
-    if (j && /^not posted/.test(j.chief || "")) alert("Saved, but it didn't reach the Chief's thread. Tell the Chief in chat too.");
+    if (j && /^not posted/.test(j.chief || "")) toast("Saved, but it didn't reach the Chief's thread. Tell the Chief in chat too.", true);
+    else toast("Sent ✓");
     delete local[id];
     render();
   }
@@ -184,7 +192,7 @@
       bg.remove();
       render();
       try { await postCheck(v.checkId, doc); }
-      catch (e) { delete local[v.checkId]; render(); alert(String(e.message || e)); }
+      catch (e) { delete local[v.checkId]; render(); toast("Not sent: " + String(e.message || e), true); }
     };
   }
 
@@ -201,7 +209,7 @@
     local[v.checkId] = doc;
     render();
     try { await postCheck(v.checkId, doc); }
-    catch (e) { delete local[v.checkId]; render(); alert(String(e.message || e)); }
+    catch (e) { delete local[v.checkId]; render(); toast("Not sent: " + String(e.message || e), true); }
   }
 
   function cardHtml(v) {
