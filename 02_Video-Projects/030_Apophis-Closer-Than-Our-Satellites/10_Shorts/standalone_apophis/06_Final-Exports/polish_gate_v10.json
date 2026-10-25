@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v10.mp4",
+  "edge_floor": 0.0435,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "aurora_rock_loop",
+      "cut": 6,
+      "t": 18.32,
+      "source": "aurora_rock_loop.mp4",
+      "why": [
+        "low detail: edge density 0.0371 < film p5 0.0435"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "aurora_rock_open",
+      "source": "aurora_rock_open.mp4",
+      "t": 1.2,
+      "std": 60.83,
+      "mean": 93.5,
+      "p95": 220.0,
+      "edge": 0.1199,
+      "hf": 18.49,
+      "lf": 49.12,
+      "std8": 53.1,
+      "edge8": 0.3012,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "day_rock_wide",
+      "source": "day_rock_wide.mp4",
+      "t": 4.16,
+      "std": 53.98,
+      "mean": 165.72,
+      "p95": 245.0,
+      "edge": 0.1297,
+      "hf": 16.71,
+      "lf": 45.71,
+      "std8": 48.21,
+      "edge8": 0.3132,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "aurora_rock_date",
+      "source": "aurora_rock_date.mp4",
+      "t": 7.64,
+      "std": 45.84,
+      "mean": 91.28,
+      "p95": 199.0,
+      "edge": 0.0706,
+      "hf": 10.94,
+      "lf": 40.78,
+      "std8": 42.66,
+      "edge8": 0.1762,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "day_rock_title",
+      "source": "day_rock_title.mp4",
+      "t": 11.11,
+      "std": 58.39,
+      "mean": 164.0,
+      "p95": 249.0,
+      "edge": 0.1337,
+      "hf": 20.87,
+      "lf": 47.43,
+      "std8": 50.32,
+      "edge8": 0.3365,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "day_scale",
+      "source": "day_scale.mp4",
+      "t": 14.5,
+      "std": 52.37,
+      "mean": 169.85,
+      "p95": 247.0,
+      "edge": 0.0897,
+      "hf": 17.53,
+      "lf": 43.71,
+      "std8": 45.89,
+      "edge8": 0.251,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "aurora_rock_watch",
+      "source": "aurora_rock_watch.mp4",
+      "t": 16.98,
+      "std": 45.14,
+      "mean": 90.67,
+      "p95": 202.0,
+      "edge": 0.0584,
+      "hf": 11.11,
+      "lf": 39.01,
+      "std8": 41.58,
+      "edge8": 0.1867,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "aurora_rock_loop",
+      "source": "aurora_rock_loop.mp4",
+      "t": 18.32,
+      "std": 44.32,
+      "mean": 91.18,
+      "p95": 190.0,
+      "edge": 0.0371,
+      "hf": 8.11,
+      "lf": 41.56,
+      "std8": 42.66,
+      "edge8": 0.1309,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0371 < film p5 0.0435"
+      ]
+    }
+  ]
+}
