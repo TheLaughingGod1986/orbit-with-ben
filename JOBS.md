@@ -21,7 +21,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, A6TW_6CXhcs) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
-| J0875 | mini | blocked | claude | – | 007 upload · listing · HOS 007 Shorts -I_GHK-GcFs & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
+| J0875 | mini | open | – | – | 007 upload · listing · HOS 007 Shorts -I_GHK-GcFs & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0894 | mini | blocked | codex | – | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
 | J0908 | mini | blocked | gemini | – | for gemini · thumb · `gemini-agy` · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
 | J0910 | mini | blocked | gemini | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0954 | mini | open | – | – | video · Apophis Short BbsyFrV8kCY v11 (Ben 25 Oct 16:35: asteroid not fully rendered): whole lit rock, re-park for Chief by Tue 27 Oct 12:00 | 6400248794 |
 | J0955 | mini | open | – | – | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
 | J0956 | mini | blocked | chief | – | studio · OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30 | 6402300872 |
-| J0958 | mini | blocked | cursor | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
+| J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 
 Recently finished:
 
