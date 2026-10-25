@@ -1,5 +1,5 @@
 {
-  "next_id": 956,
+  "next_id": 957,
   "jobs": [
     {
       "id": "J0001",
@@ -79479,7 +79479,7 @@
     },
     {
       "id": "J0943",
-      "title": "Standalone Neptune Short S2 v07 c47 FIX: no plate wrap inside the disc, no throb/bob, chart flicker off + bigger bars, spot disc centred, 30 AU label after move; VO kept; re-park by Mon 26 Oct 12:00",
+      "title": "Standalone Neptune Short S2 v07 c48 PASS -> held swap J0956 (Ben OK by Tue 27 Oct 10:30 London; else v01 airs 11:30)",
       "needs": "mini",
       "repo": "owb",
       "body": "**Chief (Grok) 25 Oct 18:50 London, c47 (OWB #264): Neptune S2 v06 FIX -> v07 (picture only). Re-park by Mon 26 Oct 12:00 London (deadline kept). oyRcrFTYyDY (v01) airs Tue 27 Oct 11:30 London as is unless v07 is PASSed and Ben OKs the swap by 10:30 that morning. GBP0, local only, no upload.**\n\nv06 got most of c46 right. The limb fit is clean (no black crescent on frame 0), the blur halo is gone (dark navy plus a thin limb glow), there's a GDS card with the ring on the dark oval, the chart is two shots with km/h at 48-64 px timed to 6.51 and 11.31 (ratio 0.20), Neptune moves out to 30 AU once and holds, \"HARDLY ANY SUNLIGHT\" fades in from 16.17, the level is -14.1 LUFS / TP -1.4, and the deliverables and _PHONE are in place. But the picture now has a worse fault than v05. Keep exactly: the v04 VO and stem (sha 5a63d510 / 490d4c98, byte-identical), the 44 captions and words (equal to v05), the cut times 2.70 / 6.30 / 8.933 / 12.40 / 16.10 / 19.467, the 20.6 s length, the hook, the bed and SFX, the mix level, the forward loop, the GDS card, the chart timings and labels, and the 30 AU one-way move and its timing.\n\n1. **The planet is split in two inside its circle (blocker).** `slide_disc()` `np.roll`s the whole masked PIA01492 sprite sideways (`slide=` on open/tail/wide, SLIDE_PX 14 and `cycle*2*w/PERIOD`). The planet's own left and right limbs wrap into the middle of the disc. Through 0-2.7 and 16.1-20.6 (about 8 s, including the last frame and the loop), almost every frame shows two half-planets with their own curved limbs and a flat (40,84,176) blue lens between them. Only frames near 0.0 and 2.0 are clean. See j0943v06 split_strip.jpg and t1.4 / t17.8. Never move the base plate inside the mask: keep the PIA01492 cloud deck fixed (or a true sphere rotation by UV remap, not a 2D roll). Motion comes from the wisp layer and a slow push. The wisp layer `np.roll`s CIRRUS across the full width too, so fade the wisp alpha to 0 within ~12% of the limb so nothing pops from one limb to the other. New builder assert on every disc frame: the inner 92% of the disc must match the static plate at that scale (wisps excluded, mean abs diff ≤ 6 on luma), and no pixel within ±6 of the slide fill colour.\n2. **Stop the throb and bob.** In open/tail the diameter pulses 760<->878 px on a 10-frame (0.33 s) sine, and the centre bobs y 904<->1013 (±54 px) on a 12-frame sine. On a phone the planet vibrates. c46 item 2 was drift ≤10 px. Keep the size change ≤3% across the whole shot as a slow monotonic push (no sine), with the centre drift ≤10 px. Don't buy the frame-0 motion number with shake: the wisps plus the push are enough, and a gate *warn* on first-second motion (as before, 8.5 < 10) is acceptable. A gate *fail* is not.\n3. **Keep the loop forward and seamless after 1-2.** The tail stays the open cycle just before frame 0 (no reverse, no f0 copy). Masked last->f0 must stay ≤1.3x the in-shot step. v06 is 7.39 against 6.96 in the disc band, gate 4.82 against 4.59.\n4. **Charts: remove the flicker and make the bars readable.** `chart_a`/`chart_b` multiply the whole frame by a `breath` brightness (±5%, two sines, one at ~6 Hz). On the flat navy that reads as flicker. Remove it and keep the sheen and a slow grid/star drift for motion. The bars are small: Neptune is 280 / 260 px on a 1920 frame and Earth tops out at 52 px. Make Neptune ~650-700 px tall and Earth exactly 0.20 of it (~130-140 px), on the same baseline, inside the 16:9 centre band. Labels, km/h, the count-up and the timings stay as they are.\n5. **Spot shot (2.7-6.3) composition.** The disc is centred at y=1479 (bottom at 1866), the top half is empty, and the \"CLOUDS OF FROZEN / METHANE RACE PAST\" captions sit across the disc. The lower disc is under the Shorts UI. Centre the disc at y≈900-980 (≤960 px, ≥50 px margins, as now ≤1.0x). Keep the ring and card where they are relative to the GDS (ring on the dark oval ✓) and clear of the caption band.\n6. **30 AU graphic tidy.** (a) From 12.40 to 13.51 Neptune sits beside Earth at x=420 while labelled \"NEPTUNE 30 AU\". Show the \"NEPTUNE 30 AU\" label only once the move has landed (~15.0), or label it \"NEPTUNE\" until then. (b) The twinkling dot bands above and below read as noise/rain. Use a sparse, slow-drifting star field. (c) Optional: put the Sun at the left end of the line (Sun -> Earth 1 AU -> Neptune 30 AU), since the line says \"thirty times farther from the sun\".\n7. **Deliverables.** Render owb_sa_s2_neptune_v07.mp4 next to v06 (v04-v06 untouched) plus owb_sa_s2_neptune_v07_PHONE.mp4, the meta, the frames sheet and the 2 fps sheet. Run the gates (gate_shorts_open.py check --air-date 2026-10-27, polish, music, sfx level, loop_metrics) plus the limb assert and the new no-split assert from item 1. Copy them with a MANIFEST.sha256 to OWB UAT/standalone_shorts_v07/ (iCloud) and the NAS UAT. Gemini only re-checks if on-screen text changes (e.g. the \"NEPTUNE\" label in 6a).\n\nHard rules unchanged: GBP0, no upload, no Studio change, no Public, no Replace, no deletions, no force-push. End with: jobs.py block J0943 --reason \"parked for Chief: Neptune v07 c47 fixes, gates PASS; Ben to OK swap\" --git\n\n---\n**Chief (Grok) 25 Oct 17:15 London, c46 (OWB #264): Neptune S2 v05 FIX -> v06 (picture only). Re-park by Mon 26 Oct 12:00 London (deadline kept). oyRcrFTYyDY (v01) airs Tue 27 Oct 11:30 London as is unless v06 is PASSed and Ben OKs the swap by 10:30 that morning. GBP0, local only, no upload.**\n\nv05 fixed the v04 crop (the whole planet is back, 0.57x / 1.25x, no source past 1.25x), and the audio, timing, loop and facts are right. But the picture still has the faults Ben called out: a blurred blue glow around the planet, a mis-fitted disc mask, and flat white bars that read as UI, not clouds. Keep exactly: the v04 VO and stem (byte-identical, sha 5a63d510 / 490d4c98), the caption words and timings, the cut times 2.70 / 6.30 / 8.933 / 12.40 / 16.10 / 19.467, the 20.6 s length, the hook, the bed and SFX, and the forward loop design (masked last->f0 2.22 against an in-shot step of 2.15).\n\n1. **Fit the disc mask to the real limb.** In every PIA01492 shot (0-2.7, 6.3-8.93, 16.1-20.6, frame 0 included) a ~12 px black crescent of space shows inside the circle on the left/top-left limb, the streaks run over it, and the right limb is cut off by the mask. `disc_sprite()` takes a bbox from r+g+b>90 at stride 2, which sits off-centre on this plate. Fit the circle to the limb instead (full-res threshold, contour, least-squares circle), inset ~1%, feather 2-3 px. Builder assert: no pixel darker than luma 40 in the ring 2-20 px inside the mask on any disc shot.\n2. **Margin.** PIA01492 is drawn 1040 px wide on a 1080 frame with ±20 px drift, so the limb touches x=0. Max diameter 960 px, drift ≤10 px, so the whole disc always sits ≥50 px inside both edges.\n3. **Remove the blur halo.** `fill_canvas()` is the planet itself under GaussianBlur(36). It makes the bright blue bloom around the disc, which is the \"blue blur\" again. On the spot/title shots it stays centred while the disc is lifted +160 / −80 px, so a pale ghost haze floats above the planet (2.7-6.3, 8.93-12.4). Use dark space (navy-to-black, optional faint static stars). At most add a thin 6-10 px limb glow that moves with the disc.\n4. **Rebuild the methane streaks.** The opaque rounded white bars (alpha 210/150, 16-26 px, full-width) look like loading bars, cover the Great Dark Spot and the real cirrus, and share a shape with the chart bars. Make them thin, tapered, soft-edged wisps at alpha ≤90. They should follow latitude curves (elliptical arcs that foreshorten towards the limb), sit at the real bright-cloud latitudes, and stay clipped to the disc and off the Great Dark Spot. Or animate feathered copies of the real white cirrus from the plate. Hide them under the chart. Frame 0 must already move (the gate warned motion 8.5 < 10), so start the streak phase mid-travel.\n5. **Replace the soft PIA00046 shots.** At 1.25x (~675 px) the disc is pale and soft (Laplacian variance ~210, against ~380 on PIA01492). 2.7-6.3 (\"clouds of frozen methane race past\"): use the 2188 px PIA01492, which already shows the Great Dark Spot and its white companion. Use the whole disc at ≤1.0x with a call-out ring and a short card: \"Great Dark Spot - Voyager 2, Aug 1989\". Ben's standing order is that a card explains each thing named or shown. A slow push-in on the native plate ending ≤1.0x is fine too, if the shot starts on the whole disc.\n6. **Make the wind chart its own two shots, timed to the words, with units.** Today the chart is an overlay from 6.45 to 8.9 and is gone before \"Earth's strongest winds barely reach four hundred\" (8.75-12.01). The Earth bar shows before Earth is mentioned, and nothing on screen shows 400 when it's said.\n   - 6.30-8.933, full-frame chart shot A: the Neptune bar grows to **2,000 km/h** on \"two thousand\" (6.51), with a small Neptune disc icon.\n   - 8.933-12.40, chart shot B (different framing, so the cut reads): Neptune stays at 2,000. The Earth bar grows to **400 km/h** on \"four hundred\" (11.31), with a small Earth icon. The ratio stays 0.20.\n   - Labels ≥48 px with \"km/h\" on both. Keep them inside the 16:9 centre band and clear of the 9-14 s title. These are code-graphic shots, not overlays, as with the 30 AU shot.\n7. **Fix the 30 AU graphic.** Neptune's x is `200 + 520·(0.5+0.5·sin(0.09·i))` (2.3 s period). It swings back onto Earth (overlapping it at ~14.2 s) while labelled \"NEPTUNE 30 AU\", which reads as Neptune coming close to Earth. Move Neptune out once (ease over ~1.5 s from \"thirty\", 13.51) and hold it at the far end. Avoid a freeze with the sun dimming and a sub-pixel drift. Show \"HARDLY ANY SUNLIGHT\" no earlier than 16.1 (VO 16.15), or drop it, because row 6 says it. Today it shows from ~13.6 and crowds the caption band at y 1460. Centre the graphic vertically in the 16:9 band (the lower half is empty now).\n8. **Level.** The mix is −15.5 LUFS / TP −1.4 (same as v04). Bring the final mix to −14.0 ±0.5 LUFS with TP ≤ −1.0 using a mix-bus gain plus a true-peak limiter. The VO take is not re-made or edited.\n9. **Deliverables.** Render owb_sa_s2_neptune_v06.mp4 next to v05 (v04 and v05 untouched), plus **owb_sa_s2_neptune_v06_PHONE.mp4** (the board's Play file; v05 had none), the meta, a frames sheet and a 2 fps sheet. Run gates: gate_shorts_open.py check --air-date 2026-10-27, polish_gate, music_gate, sfx_kit level, loop_metrics, plus the new mask assert from item 1. All must PASS. Copy them, with a MANIFEST.sha256, to OWB UAT/standalone_shorts_v06/ (iCloud) and the NAS UAT. Gemini re-checks any new on-screen text (km/h labels, the GDS card date).\n\nHard rules unchanged: GBP0, no upload, no Studio change, no Public, no Replace, no deletions, no force-push. End with: jobs.py block J0943 --reason \"parked for Chief: Neptune v06 c46 fixes, gates PASS; Ben to OK swap\" --git\n\n\n---\nChief (Grok) 25 Oct 14:15 London. Ben's changes on the Neptune swap (J0914 item 1, OWB #264 6398539398, 13:56 London): \"The vo is fine, the video is just blue blur though, maybe build the video specifically for this short.\"\n\nChief checked v04 at 1 fps (~/chief_tmp/tw1406/nep.png): from about 5 s to the end, almost every frame is one over-enlarged crop of Neptune's cloud deck. It's a flat cyan blur with no planet, no features and nothing that follows the words. Only 2.0–5.0 s shows the planet's limb.\n\nGoal: owb_sa_s2_neptune_v05, a Short whose picture is built for this script. Keep the v04 VO exactly as is (Ben: the VO is fine), and keep its timing, captions, hook and loudness.\nPicture brief (Ben's standing order: educational, graphs, overlays, call-outs):\n- Every shot shows what the words say, with the real subject sharp at phone size. Don't enlarge any source beyond its native resolution by more than ~1.3x; when a source is small, show it smaller over a dark background or as a card rather than blowing it up.\n- Use free public-domain NASA/JPL sources (Voyager 2 1989 Neptune: full-disc colour, Great Dark Spot and \"Scooter\" approach sequences/animations, bright methane cirrus over the blue deck, PIA01492/PIA00046-type plates), plus code graphics:\n  * an animated wind-speed bar chart: Earth's strongest winds ~400 km/h against Neptune's ~2,000 km/h, plus the speed of sound on Earth for scale (only if the VO says it; otherwise no extra number),\n  * a Sun-to-Neptune distance graphic for \"thirty times farther from the Sun\" (Earth 1 AU against Neptune ~30 AU), with the sunlight fading (~1/900),\n  * moving cloud streaks or arrows over the real disc for \"clouds of frozen methane race past\".\n- Frame 0 is moving payoff footage that fills the frame (house 60% stayed rules, .cursor/rules/orbit-build-shorts.mdc); first cut by 3.0 s, no plate longer than 4 s, no ≥3-frame freezes, no flashes or shots under 0.5 s, and a forward seamless loop (no reversed tail, no frame-0 copies; see c40 rule 0 on J0932).\n- Gemini fact-checks every on-screen number before render.\nRender owb_sa_s2_neptune_v05.mp4 next to v04 (v04 untouched), plus the v05 meta.json, a frames sheet and the gates (gate_shorts_open.py check --air-date 2026-10-27, polish_gate, music_gate, sfx_kit level, loop_metrics). All must PASS. Copy to OWB UAT/standalone_shorts_v05/ and the NAS UAT.\n\nDeadline: re-park for Chief by Mon 26 Oct 12:00 London. The scheduled v01 (oyRcrFTYyDY) airs Tue 27 Oct 11:30 London as is unless v05 is PASSed and Ben OKs it by 10:30 Tue.\nHard rules: GBP0 (no paid TTS, picture or video generation), no upload, no Studio change, no Public, no Replace, no deletions, no force-push. Commit only meta, gate text and frames sheet.\nEnd with: jobs.py block <id> --reason \"parked for Chief: Neptune v05 built for the Short, gates PASS; Ben to OK swap\" --git\n",
@@ -79488,13 +79488,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T18:52Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T14:10Z",
-      "result": "parked for Chief: Neptune v07 c47 fixes, gates PASS; Ben to OK swap",
+      "result": "Chief PASS c48 (Grok, 25 Oct 19:50 London, OWB #264 6402300872): Neptune S2 oyRcrFTYyDY v07 PASS - one whole disc on every open/wide/tail frame (no plate wrap), open push 862->886 px with 8 px drift (no throb/bob), loop 1.95/1.73 (disc band 3.14 vs 2.4-2.7), chart no breath with bars 679/136 (0.20), spot disc 600 px at y 930, NEPTUNE 30 AU only from 15.0 with the Sun at the left; VO 5a63d510 / stem 490d4c98 byte-identical and decoded audio = v06, 44 captions, cuts 2.70/6.30/8.933/12.40/16.10/19.467, 20.6 s A=V, -14.1 LUFS TP -1.4, gates PASS, sha 0919db03 on repo/iCloud/NAS -> held swap J0956 (OK by Tue 27 Oct 10:30). GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T14:10Z",
@@ -79625,6 +79625,11 @@
           "at": "2026-10-25T19:32Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Neptune v07 c47 fixes, gates PASS; Ben to OK swap"
+        },
+        {
+          "at": "2026-10-25T19:44Z",
+          "by": "chief",
+          "what": "done: Chief PASS c48 (Grok, 25 Oct 19:50 London, OWB #264 6402300872): Neptune S2 oyRcrFTYyDY v07 PASS - one whole disc on every open/wide/tail frame (no plate wrap), open push 862->886 px with 8 px drift (no throb/bob), loop 1.95/1.73 (disc band 3.14 vs 2.4-2.7), chart no breath with bars 679/136 (0.20), spot disc 600 px at y 930, NEPTUNE 30 AU only from 15.0 with the Sun at the left; VO 5a63d510 / stem 490d4c98 byte-identical and decoded audio = v06, 44 captions, cuts 2.70/6.30/8.933/12.40/16.10/19.467, 20.6 s A=V, -14.1 LUFS TP -1.4, gates PASS, sha 0919db03 on repo/iCloud/NAS -> held swap J0956 (OK by Tue 27 Oct 10:30). GBP0, no upload."
         }
       ],
       "kind": "video",
@@ -79635,7 +79640,8 @@
         "at": "2026-10-25T19:32Z",
         "by": "cursor",
         "note": "v07 gates PASS, cut 2.7s, loop 1.95/1.73, -14.4 LUFS. UAT iCloud and NAS. VO unchanged."
-      }
+      },
+      "done_ref": "6402300872"
     },
     {
       "id": "J0944",
@@ -80410,6 +80416,54 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0956",
+      "title": "OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 19:50 London, J0943 Neptune S2 v07 PASS (ruling c48, OWB #264 6402300872).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB standalone Short oyRcrFTYyDY (\"The Wind on Neptune Is Supersonic\", airs Tue 27 Oct 11:30 London) to re-cut v07 (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4, sha256 of master 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d) on the board or the thread. Deadline for that OK: Tue 27 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Tue 27 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Tue 27 Oct; if both videos are not read back by 11:15 London, set the NEW v07 upload to private/unscheduled (not v01) so only v01 airs.\n\nAfter Ben's OK:\n1. Read back oyRcrFTYyDY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Tue 27 Oct 11:30 London (2026-10-27T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07.mp4; repo copy 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from oyRcrFTYyDY. Captions en-GB from the v07 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set oyRcrFTYyDY (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names oyRcrFTYyDY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.",
+      "ref": "6402300872",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-25T19:44Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T19:44Z",
+      "result": "waits on Ben's OK of the OWB Neptune Short S2 oyRcrFTYyDY swap to v07 (OWB UAT) by Tue 27 Oct 10:30 London; no OK = cancel, v01 airs Tue 27 Oct 11:30. Chief PASS c48 6402300872.",
+      "history": [
+        {
+          "at": "2026-10-25T19:44Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-25T19:44Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the OWB Neptune Short S2 oyRcrFTYyDY swap to v07 (OWB UAT) by Tue 27 Oct 10:30 London; no OK = cancel, v01 airs Tue 27 Oct 11:30. Chief PASS c48 6402300872."
+        },
+        {
+          "at": "2026-10-25T19:44Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the Neptune Short \"The Wind on Neptune Is Supersonic\" (oyRcrFTYyDY, airs Tue 27 Oct 11:30) to re-cut v07 (by 2026-10-27 10:30 London)"
+        }
+      ],
+      "kind": "studio",
+      "awaits_ben": {
+        "what": "swap the Neptune Short \"The Wind on Neptune Is Supersonic\" (oyRcrFTYyDY, airs Tue 27 Oct 11:30) to re-cut v07",
+        "file": "OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4",
+        "version": "v07",
+        "due": "2026-10-27T10:30Z",
+        "airs": "2026-10-27T11:30Z",
+        "ifNot": "No OK by then: v01 airs as scheduled",
+        "title": "Neptune Short S2 re-cut v07 (swap)",
+        "number": "S2",
+        "type": "short"
+      }
     }
   ],
   "focus": [],
