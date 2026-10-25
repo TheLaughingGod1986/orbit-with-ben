@@ -1,5 +1,5 @@
 {
-  "next_id": 952,
+  "next_id": 953,
   "jobs": [
     {
       "id": "J0001",
@@ -79042,13 +79042,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T15:10Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T07:37Z",
-      "result": "parked for Chief: 1-BZaFIMwYU flask v07 one audio gap (0.14s under -45 dB); Ben to OK swap",
+      "result": "Chief PASS c43 (Grok, 25 Oct 15:50 London, HOS #180 6399701162, OWB #264 6399703185): flask 1-BZaFIMwYU v07 PASS - cloudiness.->Keep 0.15 s under -45 dB (builder 0.14, silencedetect 0.138; insert 0.11 + s-decay + Keep lead), xfade on room tone; Keep/caption/result/loop shifted; all sentence joins 0.14-0.165, none >0.20; 18.167 s, payoff 74.4%, -14.2 LUFS TP -1.5, loop last->f0 masked 3.24, 12/12 captions, gate PASS, sha 5de76a82 on repo/UAT/NAS -> held swap J0952 (OK by Mon 26 Oct 20:00). GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T07:37Z",
@@ -79189,6 +79189,11 @@
           "at": "2026-10-25T15:18Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: 1-BZaFIMwYU flask v07 one audio gap (0.14s under -45 dB); Ben to OK swap"
+        },
+        {
+          "at": "2026-10-25T15:45Z",
+          "by": "chief",
+          "what": "done: Chief PASS c43 (Grok, 25 Oct 15:50 London, HOS #180 6399701162, OWB #264 6399703185): flask 1-BZaFIMwYU v07 PASS - cloudiness.->Keep 0.15 s under -45 dB (builder 0.14, silencedetect 0.138; insert 0.11 + s-decay + Keep lead), xfade on room tone; Keep/caption/result/loop shifted; all sentence joins 0.14-0.165, none >0.20; 18.167 s, payoff 74.4%, -14.2 LUFS TP -1.5, loop last->f0 masked 3.24, 12/12 captions, gate PASS, sha 5de76a82 on repo/UAT/NAS -> held swap J0952 (OK by Mon 26 Oct 20:00). GBP0, no upload."
         }
       ],
       "kind": "video",
@@ -79202,7 +79207,8 @@
         "at": "2026-10-25T15:18Z",
         "by": "cursor",
         "note": "v07 gates PASS, 18.167s, sha 5de76a82, HOS 3e04e2e7; parking for Chief"
-      }
+      },
+      "done_ref": "6399701162"
     },
     {
       "id": "J0940",
@@ -79854,6 +79860,54 @@
         "okRef": "6399397319"
       },
       "urgent": 8
+    },
+    {
+      "id": "J0952",
+      "title": "HOS Short 1-BZaFIMwYU: swap to flask v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Mon 26 Oct 20:00",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 15:50 London, J0939 flask v07 PASS (ruling c43, HOS #180 6399701162, OWB #264 6399703185).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the HOS Short 1-BZaFIMwYU (\"What Is the Pasteur Swan Neck Flask Experiment?\", airs Tue 27 Oct 11:30 London) to re-cut v07 (HOS UAT/001_How-Did-We-Discover-Germs/10_Shorts/hos_001_s11_curved_flask_v07_PHONE.mp4, sha256 of master 5de76a824e885785909d3327f9230e9eef2a42b1943441e41546e97525adaaf5) on the board or the thread. Deadline for that OK: Mon 26 Oct 20:00 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v02 airs Tue 27 Oct 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back 1-BZaFIMwYU (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Tue 27 Oct 11:30 London (2026-10-27T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (HOS UAT/001_How-Did-We-Discover-Germs/10_Shorts/hos_001_s11_curved_flask_v07.mp4), then upload it to HOS as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from 1-BZaFIMwYU. Captions en-GB from the v07 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set 1-BZaFIMwYU (v02) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in HOS UPLOADS.json (and repoint any job that names 1-BZaFIMwYU, e.g. Related/Buffer follow-ups, to the new id); post the read-back on HOS #180 and a pointer on OWB #264. Buffer cross-posts per HOS house rules (Short -> full film link, TikTok/IG 'Full film on YouTube, link in bio'), deferred until the long is public.\nIf any step fails after 10:30 London on the air day, leave v02 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.",
+      "ref": "6399701162",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-25T15:45Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T15:45Z",
+      "result": "waits on Ben's OK of the HOS Short 1-BZaFIMwYU swap to v07 (HOS UAT) by Mon 26 Oct 20:00 London; no OK = cancel, v02 airs Tue 27 Oct 11:30. Chief PASS c43 6399701162.",
+      "history": [
+        {
+          "at": "2026-10-25T15:45Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-25T15:45Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the HOS Short 1-BZaFIMwYU swap to v07 (HOS UAT) by Mon 26 Oct 20:00 London; no OK = cancel, v02 airs Tue 27 Oct 11:30. Chief PASS c43 6399701162."
+        },
+        {
+          "at": "2026-10-25T15:45Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the HOS Short \"What Is the Pasteur Swan Neck Flask Experiment?\" (1-BZaFIMwYU, airs Tue 27 Oct 11:30) to re-cut v07 (by 2026-10-26 20:00 London)"
+        }
+      ],
+      "kind": "studio",
+      "awaits_ben": {
+        "what": "swap the HOS Short \"What Is the Pasteur Swan Neck Flask Experiment?\" (1-BZaFIMwYU, airs Tue 27 Oct 11:30) to re-cut v07",
+        "file": "HOS UAT/001_How-Did-We-Discover-Germs/10_Shorts/hos_001_s11_curved_flask_v07_PHONE.mp4",
+        "version": "v07",
+        "due": "2026-10-26T20:00Z",
+        "airs": "2026-10-27T11:30Z",
+        "ifNot": "No OK by then: v02 airs as scheduled",
+        "title": "Swan-neck flask Short re-cut v07 (swap)",
+        "number": "001",
+        "type": "short"
+      }
     }
   ],
   "focus": [],
