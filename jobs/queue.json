@@ -18756,10 +18756,10 @@
     },
     {
       "id": "J0241",
-      "title": "HOS 005 s04 5n7xFQRBUvI: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188)",
+      "title": "HOS 005 s04 BW_CFAX-mxc: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188, repointed by J0948)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Follow-on from J0188 (acting-Chief close, Claude 14 Oct). The HOS 005 Short s04 `5n7xFQRBUvI` is private with publishAt 31 Oct 11:30 London. Its long `wwcjcFfC-5M` goes public on Thu 29 Oct 18:00 London.\n1. After the long is public, check it reads Public in the API. Then, in HOS Studio (CDP 9460, check the channel name first), set `5n7xFQRBUvI`'s **Related video** to `wwcjcFfC-5M`. Change nothing else.\n2. HOS Buffer for the s04 Short (the HOS Buffer org only, with `BUFFER_HOS_API_KEY`; never the Orbit org or the Buffer connector). Use the approved captions in HOS `evidence_J0188_20261014/buffer_draft.json`, timed for the Short's air on 31 Oct 11:30 London. Look for the key in the HOS checkout's `07_Content-Ops/.env` and in the launchd env. If it isn't anywhere, block with \"needs Ben: BUFFER_HOS_API_KEY for the HOS Buffer org\".\n3. Read back the Related video and the Buffer queue, post on HOS #180, and mark done. No re-upload, no spend.\n",
+      "body": "Follow-on from J0188, repointed by J0948 (25 Oct). The HOS 005 Short s04 that airs is `BW_CFAX-mxc` (galen stove v04), private with publishAt 31 Oct 11:30 London. `5n7xFQRBUvI` (v01) is Private and unscheduled; do not set Related or Buffer on it. Its long `wwcjcFfC-5M` goes public on Thu 29 Oct 18:00 London.\n1. After the long is public, check it reads Public in the API. Then, in HOS Studio (CDP 9460, check the channel name first), set `BW_CFAX-mxc`'s **Related video** to `wwcjcFfC-5M`. Change nothing else.\n2. HOS Buffer for the s04 Short (the HOS Buffer org only, with `BUFFER_HOS_API_KEY`; never the Orbit org or the Buffer connector). Use the approved captions in HOS `evidence_J0188_20261014/buffer_draft.json`, timed for the Short's air on 31 Oct 11:30 London. The media is the v04 file on `BW_CFAX-mxc` in HOS UPLOADS.json. Look for the key in the HOS checkout's `07_Content-Ops/.env` and in the launchd env. If it isn't anywhere, block with \"needs Ben: BUFFER_HOS_API_KEY for the HOS Buffer org\".\n3. Read back the Related video and the Buffer queue, post on HOS #180, and mark done. No re-upload, no spend.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -18782,6 +18782,11 @@
           "at": "2026-10-14T20:55Z",
           "by": "claude",
           "what": "blocked: waits for input: HOS 005 long wwcjcFfC-5M public (publishAt Thu 29 Oct 18:00 London); reopen then"
+        },
+        {
+          "at": "2026-10-25T18:41Z",
+          "by": "cursor",
+          "what": "note: J0948: Galen v04 airs as BW_CFAX-mxc (Private, 2026-10-31T11:30:00Z). 5n7xFQRBUvI is Private and unscheduled. Related and Buffer stay on this job, now for BW_CFAX-mxc, after wwcjcFfC-5M is public."
         }
       ],
       "kind": "studio"
@@ -22091,7 +22096,7 @@
       "title": "HOS Related fixes ×4 after longs public (from J0245)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) JyRjM-9Yc8g → GHZDsiH7L7A\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `5n7xFQRBUvI` stays with J0241. Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n",
+      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) JyRjM-9Yc8g → GHZDsiH7L7A\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -22174,6 +22179,11 @@
           "at": "2026-10-22T13:39Z",
           "by": "chief",
           "what": "chief: added PlihWC5uA2E -> wwcjcFfC-5M (J0837 PASS)"
+        },
+        {
+          "at": "2026-10-25T18:41Z",
+          "by": "cursor",
+          "what": "note: J0948: Galen v04 airs as BW_CFAX-mxc (Private, 2026-10-31T11:30:00Z). 5n7xFQRBUvI is Private and unscheduled. Related and Buffer stay on this job, now for BW_CFAX-mxc, after wwcjcFfC-5M is public."
         }
       ],
       "kind": "studio",
