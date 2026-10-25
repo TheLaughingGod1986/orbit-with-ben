@@ -70,6 +70,12 @@ def fail_lines(output: str) -> list[str]:
     return [ln.strip()[len("FAIL"):].strip() for ln in output.splitlines() if ln.startswith(" ") and ln.strip().startswith("FAIL ")]
 
 
+def report_only_lines(output: str) -> list[str]:
+    """60% stayed-to-watch findings printed under `--report-only` (`warn  [report-only] ...`) for already-scheduled Shorts."""
+    tag = "warn  [report-only]"
+    return [ln.strip()[len(tag):].strip() for ln in output.splitlines() if ln.startswith(" ") and ln.strip().startswith(tag)]
+
+
 def waived(export: Path, fails: list[str]) -> list[dict] | None:
     """Waivers recorded beside the export (<stem>_gate.json, `waivers: [{fail, waived_by}]`) that cover every current
     FAIL exactly. A waiver is for one exact finding on one exact file: a changed number means a changed cut, so it
@@ -134,14 +140,19 @@ def main(argv: list[str] | None = None) -> int:
                     if code:
                         details.append(f"### {r['id']}: library add failed\n\n```\n{out[-1500:]}\n```\n")
                 # The one Chief-OK'd 50-60 s length-test Short (UPLOADS.json "lengthTest": true; AGENTS.md Packaging, 11 Oct 2026)
-                code, out = run([sys.executable, str(GATE), "check", str(f), "--air-date", r["air"], "--id", r["id"]]
+                # Run with --report-only so already-uploaded scheduled Shorts keep their existing PASS verdict while
+                # listing any new 60% stayed-to-watch rules they would fail under Details (J0918, 24 Oct 2026).
+                code, out = run([sys.executable, str(GATE), "check", str(f), "--air-date", r["air"], "--id", r["id"], "--report-only"]
                                 + (["--length-test"] if r.get("length_test") else []))
                 used = waived(f, fail_lines(out)) if code else None
+                stayed_notes = report_only_lines(out)
                 verdict = "PASS" if code == 0 else ("PASS (waived)" if used else "**FAIL**")
                 if used:
                     details.append(f"### {r['id']}: FAIL waived\n\n" + "\n".join(f"- {w['fail']}: waived by {w.get('waived_by', '?')}" for w in used) + "\n")
                 elif code:
                     details.append(f"### {r['id']}: FAIL\n\n```\n{out[-3000:]}\n```\n")
+                if stayed_notes:
+                    details.append(f"### {r['id']}: report-only (would fail 60% stayed gate)\n\n" + "\n".join(f"- {n}" for n in stayed_notes) + "\n")
             lines.append(f"| {r['air']} {london_time(r['publishAt'])} | [{r['title']}](https://youtu.be/{r['id']}) `{r['id']}` | {'yes' if lib else '**no**'} | {verdict} |")
         lines.append("")
         if details:

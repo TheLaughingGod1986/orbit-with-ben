@@ -81,6 +81,21 @@ class Waivers(unittest.TestCase):
     def test_reads_only_the_indented_fail_reasons(self):
         self.assertEqual(g.fail_lines(self.OUT), ["Orbit in frame at 0 s (visor 0.0048 \u2265 0.003) \u2014 picture-first lock"])
 
+    def test_reads_report_only_lines(self):
+        out = (
+            "PASS  sa.mp4  dur=20.4s\n"
+            "   warn  [report-only] pushed still at frame 0 (mean 0–1.5 s frame diff 0.53 < 1.50) — use moving footage\n"
+            "   warn  [report-only] first cut at 5.50s > 3.0s (scene-change detect)\n"
+            "   warn  duration 20.4s outside 22–27s band\n"
+        )
+        self.assertEqual(
+            g.report_only_lines(out),
+            [
+                "pushed still at frame 0 (mean 0–1.5 s frame diff 0.53 < 1.50) — use moving footage",
+                "first cut at 5.50s > 3.0s (scene-change detect)",
+            ],
+        )
+
     def test_a_recorded_waiver_covers_the_exact_fail_only(self):
         with tempfile.TemporaryDirectory() as d:
             f = Path(d) / "bd_v04.mp4"
