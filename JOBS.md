@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0936 | mini | open | – | – | video · 60% re-cut v02 batch C (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - start by Sat 14 Nov, each parked by 20:00 London the day before it airs (from Fri 20 Nov) | 6389353471 |
 | J0937 | mini | blocked | chief | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v02 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6394562857 |
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J0939 | mini | claimed | cursor | 2026-10-25T12:21Z | video · HOS flask v05 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v04 -> v05 (audio+captions) - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30) | 6396130591 |
+| J0939 | mini | blocked | cursor | – | video · HOS flask v05 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v04 -> v05 (audio+captions) - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30) | 6396130591 |
 | J0940 | mini | blocked | chief | – | studio · 027 Short dM1OgGPAYvw: swap to earth_sudden_air_v05 (Private, Mon 26 Oct 11:30 London) after Ben's OK by Sun 20:00 | 6395360875 |
 
 Recently finished:
