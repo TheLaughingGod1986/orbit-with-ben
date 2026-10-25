@@ -1,5 +1,5 @@
 {
-  "next_id": 955,
+  "next_id": 956,
   "jobs": [
     {
       "id": "J0001",
@@ -80138,6 +80138,33 @@
         }
       ],
       "kind": "video"
+    },
+    {
+      "id": "J0955",
+      "title": "HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J0947 (Cursor, 25 Oct) already swapped the Curie notebooks Short. Do not upload again. Do not change privacy or publishAt on either id.\n\nAMSriTQ-lcQ is the v07 that airs: Private, publishAt Wed 28 Oct 11:30 London (2026-10-28T11:30:00Z), title \"Are Marie Curie's Notebooks Still Radioactive?\", thumbnail set, en-GB captions serving. vEg_tLIm0Co is the v04: Private, schedule cleared. Nothing deleted.\n\nOnly remaining Studio step: set Related video on AMSriTQ-lcQ to GHZDsiH7L7A (What's Really Inside an Atom?, already public) and read it back. HOS Studio is CDP 9460. During J0947 the websocket connected and Playwright then timed out, so Related is still unset. If 9460 hangs again, block with \"waits for input: HOS Studio CDP 9460 hung\" and stop. No other Studio writes. GBP0. Deadline: before 10:30 London on Wed 28 Oct.\n",
+      "ref": "6399390568",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-10-25T17:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T17:08Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],

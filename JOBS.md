@@ -51,6 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0951 | mini | open | – | – | studio · OWB Venus lead Short Jcuiy0a9BFI: swap to venus_two_hours_v04 (Private, Thu 29 Oct 11:30 London) - Ben OK'd 25 Oct 15:17 | 6399075485 |
 | J0952 | mini | open | – | – | studio · HOS Short 1-BZaFIMwYU: swap to flask v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Mon 26 Oct 20:00 | 6399701162 |
 | J0954 | mini | open | – | – | video · Apophis Short BbsyFrV8kCY v11 (Ben 25 Oct 16:35: asteroid not fully rendered): whole lit rock, re-park for Chief by Tue 27 Oct 12:00 | 6400248794 |
+| J0955 | mini | open | – | – | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
 
 Recently finished:
 
