@@ -37,7 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0918 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled) |  |
 | J0923 | mini | blocked | cursor | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
-| J0931 | mini | blocked | cursor | – | video · 60% re-cut v02 batch A1 (local only): 027 dM1OgGPAYvw 'What If Earth Stopped Spinning?' - park by Sun 25 Oct 20:00 London (airs Mon 26 Oct 11:30) | 6394372406 |
+| J0931 | mini | open | – | – | video · 60% re-cut v02 batch A1 (local only): 027 dM1OgGPAYvw 'What If Earth Stopped Spinning?' - park by Sun 25 Oct 20:00 London (airs Mon 26 Oct 11:30) | 6394372406 |
 | J0932 | mini | claimed | cursor | 2026-10-25T15:35Z | video · 60% re-cut v02 batch A2 (local only): BbsyFrV8kCY Apophis, Jcuiy0a9BFI Venus lead, RxErxlXim1Q Saturn thin, YC65mdh6Hgg Venus size - park by Tue 27 Oct 20:00 London | 6394372406 |
 | J0933 | mini | blocked | cursor | – | video · HOS 60% re-cut batch HA1 (local only): OnJ8MFu0Mi0 'How Did John Snow Stop Cholera?' - park by Sun 25 Oct 20:00 London (airs Mon 26 Oct 11:30); if late, the original airs as scheduled | 6389732009 |
 | J0934 | mini | open | – | – | video · HOS 60% re-cut batch HA2 (local only): 1-BZaFIMwYU Pasteur flask, vEg_tLIm0Co Curie notebooks, 1lszTrYRp-8 heart sum, 5n7xFQRBUvI Galen stove - each parked by 20:00 London the day before it airs (first Mon 26 Oct) | 6389732009 |
@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0936 | mini | open | – | – | video · 60% re-cut v02 batch C (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - start by Sat 14 Nov, each parked by 20:00 London the day before it airs (from Fri 20 Nov) | 6389353471 |
 | J0937 | mini | blocked | chief | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v02 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6394562857 |
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J0939 | mini | open | – | – | video · HOS flask v04 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v03 -> v04 - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30) | 6389732009 |
+| J0939 | mini | open | – | – | video · HOS flask v04 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v03 -> v04 - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30) | 6394964444 |
 
 Recently finished:
 
