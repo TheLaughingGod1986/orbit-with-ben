@@ -853,11 +853,14 @@ def build_videos(
             continue
         key = f"HOS:{num}"
         title = f.get("title") or ""
-        hit = long_hit(key, "HOS", title, uploads.get(key) or [])
+        # HOS UPLOADS.json read-back, attached by kanban_snapshot.attach_hos_uploads (OWB's own UPLOADS has no HOS rows).
+        up = f.get("upload") if isinstance(f.get("upload"), dict) and (f.get("upload") or {}).get("videoId") else None
+        rows = uploads.get(key) or ([{"file": "", **up}] if up else [])
+        hit = long_hit(key, "HOS", title, rows)
         videos.append(_card(
             key=key, channel="HOS", number=num, title=title,
             vtype="long", air=f.get("air") or "", brief=briefs.get(key) or {},
-            release=None, upload_rows=uploads.get(key) or [],
+            release=None, upload_rows=rows,
             jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
             watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
             public_vid=hit, public=public, public_at=public_at,

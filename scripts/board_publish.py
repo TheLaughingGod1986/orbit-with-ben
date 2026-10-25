@@ -66,7 +66,8 @@ OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_
               "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
               "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
-HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json"]
+HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json",
+              "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude"}
 CHIEF_STATE = pathlib.Path(os.environ.get("CHIEF_STATE", str(HOME / "_desk" / "state" / "chief")))
