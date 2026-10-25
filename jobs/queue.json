@@ -1,5 +1,5 @@
 {
-  "next_id": 932,
+  "next_id": 933,
   "jobs": [
     {
       "id": "J0001",
@@ -77976,6 +77976,33 @@
       "history": [
         {
           "at": "2026-10-25T06:25Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0932",
+      "title": "60% re-cut v02 batch A2 (local only): BbsyFrV8kCY Apophis, Jcuiy0a9BFI Venus lead, RxErxlXim1Q Saturn thin, YC65mdh6Hgg Venus size - park by Tue 27 Oct 20:00 London",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 06:30 London, J0930 ruling c27 on OWB #264 (applies J0916 batch A, ruled 24 Oct 21:55 London, 6389353471, never queued). Work in air-date order and park the job once all four PASS. Deadline: parked by Tue 27 Oct 20:00 London (BbsyFrV8kCY airs Wed 28 Oct 11:30). If one Short can't pass by then, park with the ones that did and name the one that airs as v01.\n\nFixes = STAYED60_UPCOMING_AUDIT_2026-10-25.md #2–#5 (the audit text is the spec; where the J0930 weekly report differs, the audit wins):\n1. BbsyFrV8kCY \"How Close Will Asteroid Apophis Pass Earth on Friday the 13th?\" (030 standalone_apophis, airs Wed 28 Oct 11:30). Cut \"Stay, and I'll show you how close.\" (3.50–5.95 s) and drop the Orbit reaction shot (s02). Frame 0 reframed so Earth limb + Apophis fill ≥70% (≤25% black; now 64.7% black). First cut ≤2.5 s, plates ≤3.8 s, keep the 0.51 s loop tail.\n2. Jcuiy0a9BFI \"Why Is Venus Hot Enough to Melt Lead?\" (023 lift_two_hours, airs Thu 29 Oct 11:30). Reorder from 023's locked VO so \"Venus … is hot enough to melt lead\" opens (melt by 1.5 s); cut \"So what happened to it?\". Frame 0 = moving 13887_DAVINCI_PEVAA.mp4 (or the steam-lid / WISPR plates in the audit) replacing the PIA00254 still. First cut ≤2.3 s, plates 2.8–3.8 s, no end card, 1.0 s matched loop. End on \"…for much more than two hours.\" (payoff ≥70%). Note: the J0930 report's \"PIA00271\" and \"Venus is 465 degrees\" belong to a different 023 Short (lift_less_sunlight); don't use them here.\n3. RxErxlXim1Q \"How Thin Are Saturn's Rings?\" (021 lift_ten_metres_thin, airs Fri 30 Oct 11:30). Lead with \"Saturn's … main rings are only about ten metres thick\" from 021's locked VO (the fact is TEN metres; the J0930 report's \"twenty meters\" is wrong). Trim the 0.29 s lead silence and the 0.94/0.90 s pauses to <0.15 s. Frame 0 = moving veo_open_rings_v01.mp4 (on NAS) or a continuous ≥15% move that never stops; replace the PIA18367 still. First cut ≤2.6 s, split s06/s07 so nothing exceeds 3.8 s, strip the end card, 1.0 s matched loop. If the reorder puts the number at the front, keep a second beat (the shepherd-moons mechanism) and loop back into line 1, with no answer-and-done line before 70%.\n4. YC65mdh6Hgg \"How Big Is Venus Compared to Earth?\" (023 lift_95pct_wide, airs Mon 2 Nov 11:30). Keep the VO (it passes the hook); trim the 3.50→3.96 s and 6.06→6.88 s pauses. Frame 0 = moving svs14095_WISPR_Magellan_3rdFlyby.mp4 (or the steam-lid plate) replacing the PIA23791 still. First cut ≤2.8 s, plates ≤3.8 s, remove the 2.28 s end card, 1.0 s matched loop.\n\nSame rules for every re-cut (J0916 ruling OWB #264 6389353471, J0918 strict ship gate 6392833473, J0914/J0929 loop rule):\n- Local v02 next to v01 in the Short's own 10_Shorts/<slug>/ folder; v01 stays untouched.\n- £0: VO trims, reorders and splices from words already recorded on disk only (the Short's own VO stem or the film's locked long VO). No new TTS, Veo, Flow, Omni, Vertex or paid API. If a fix needs words that are not on disk, trim instead.\n- Frame 0 is moving, full-bleed footage, ≤30% black, ≥60% subject, no Orbit at frame 0. Subject named and surprise claim spoken by 1.5 s; first word by 0.15 s.\n- First cut by 3.0 s (strict gate (b), no moving-shot waiver). Later plates 4.0 s max. No still-to-still cuts.\n- No meta-promise (\"Stay, and I'll show you…\"), no agenda question, no spoken \"The full film…\" CTA, no end card. The long's title + ID go in the description / Related link, not the picture.\n- Payoff number lands at ≥70% of runtime; never answer the title question under the 9–14 s banner.\n- Matched loop: last word to loop ≤1.5 s, last frame built from the frame-0 plate at frame-0 framing. Last-vs-frame-0 mean diff ≤15 (text masked); log loop_diff in meta.\n- Educational (Ben 11 Oct): keep the existing number/Teach card or code graphic where the v01 has one (inside y=656..1264); don't add new generated assets.\n- Keep the v01 title and air slot. Length 18–24 s unless the audit says otherwise.\n- Gates: gate_shorts_open --air-date (strict, incl. stayed transcript check), picture_qa, polish_gate, music_gate, sfx level; all PASS. Write the six brief fields, measured LUFS and loop_diff into each v02 meta.\n- Commit meta, gate text and 2 fps frame sheets (git add -f). Copy _PHONE + sheets to OWB UAT and NAS.\n- No upload, no Studio change, no Public, no Replace, no delete, no force-push. Park as \"parked for Chief: <id> v02 PASS; Ben to OK swap\". A swap is a new Private upload on the same slot after Chief PASS and Ben's OK, v01 kept private and unscheduled, nothing deleted. If a Short isn't OK'd by 10:30 London on its air day, v01 airs as scheduled; don't slip the slot.\n",
+      "ref": "6389353471",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 480,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T06:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T06:26Z",
           "by": "chief",
           "what": "added"
         }
