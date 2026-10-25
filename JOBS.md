@@ -34,7 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0917 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS 60% stayed-to-watch audit: upcoming non-public HOS Shorts + 3-Short baseline (read-only) |  |
 | J0918 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled) |  |
 | J0923 | mini | open (after J0922) | – | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0928 | mini | open | – | – | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
+| J0928 | mini | claimed | gemini | 2026-10-25T05:05Z | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
 
 Recently finished:
 
