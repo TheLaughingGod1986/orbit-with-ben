@@ -76393,13 +76393,13 @@
       "stage": "",
       "after": "",
       "eta_min": 300,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-25T03:17Z",
-      "eta": "2026-10-25T08:17Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "",
+      "result": "parked for Chief: S2/S3 v02 PASS; Ben to OK swap (new Private upload on the same slot, v01 kept private and unscheduled, nothing deleted)",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76460,6 +76460,11 @@
           "at": "2026-10-25T03:53Z",
           "by": "cursor",
           "what": "step 3 of 4 done: S2 and S3 v02 gates PASS. Neptune first cut 1.93s. Committed 2a1672c6e. Frames jpg stays on disk (gitignored, same as v01)."
+        },
+        {
+          "at": "2026-10-25T03:53Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: S2/S3 v02 PASS; Ben to OK swap (new Private upload on the same slot, v01 kept private and unscheduled, nothing deleted)"
         }
       ],
       "kind": "video",
