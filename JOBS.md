@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0939 | mini | open | – | – | video · HOS flask v07 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v06 -> v07 (one audio gap) - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30) | 6397432514 |
 | J0940 | mini | open (after J0931) | – | – | studio · 027 Short dM1OgGPAYvw: swap to earth_sudden_air_v05 (Private, Mon 26 Oct 11:30 London) after Ben's OK by Sun 20:00 | 6395360875 |
-| J0941 | mini | blocked | – | – | studio · HOS 005 Short 1lszTrYRp-8: swap to the_sum_v04 (Private, Fri 30 Oct 11:30 London) after Ben's OK by Thu 29 Oct 20:00 | 6398198455 |
+| J0941 | mini | open | – | – | studio · HOS 005 Short 1lszTrYRp-8: swap to the_sum_v04 (Private, Fri 30 Oct 11:30 London) after Ben's OK by Thu 29 Oct 20:00 | 6398198455 |
 
 Recently finished:
 
