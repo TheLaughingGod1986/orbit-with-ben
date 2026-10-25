@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 029 | thumbs | gemini | 2026-10-25T00:16Z | 2026-10-25T02:15Z | J0921 029 Betelgeuse: release master from v03b + thumbnails A/B/C (0 credits) + release package (title, chapters, Sources, captions, pinned comment) + dry run, park for Chief (Chief Final OK 24 Oct) |
+| 029 | thumbs | gemini | 2026-10-25T00:16Z | 2026-10-25T01:16Z | J0921: 029 release master + thumbnails A/B/C + release package + dry run |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
