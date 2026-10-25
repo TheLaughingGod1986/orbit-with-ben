@@ -21,18 +21,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | claude | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0863 | any | blocked | claude | – | 008 picture · chief · HOS 008 + 009 tranche 1: Chief price pass for the Flow picture mint after the Flow renewal |  |
 | J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts -I_GHK-GcFs & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
-| J0894 | mini | blocked | codex | – | studio · 028 Gliese 710 F-jImX5h7ws: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back |  |
-| J0908 | mini | blocked | gemini | – | for gemini · thumb · `gemini-agy` · OWB J0900 items 3-5: draft 022/023 long Test & Compare B variants (0 spend), 033 rename, 062-064 topic order |  |
-| J0910 | mini | open | – | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
-| J0911 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0913 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0915 | mini | open (after J0914) | – | – | video · 60% re-cut v02 batch 2 (local only): standalone S4 Uranus, S5 Shooting stars, S7 Pluto, S8 Voyager (+ check S6 Titan RLSJm59OSzI) |  |
-| J0916 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 60% stayed-to-watch audit: 11 upcoming non-public OWB Shorts (read-only, 6 brief fields, re-cut list) |  |
-| J0917 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS 60% stayed-to-watch audit: upcoming non-public HOS Shorts + 3-Short baseline (read-only) |  |
-| J0918 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Ship gate: fail pushed-still frame 0, first cut >3 s, meta-promise lint; warn VO onset >0.15 s, tail >1.5 s (both repos, report-only for scheduled) |  |
 | J0923 | mini | blocked | cursor | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
 | J0935 | mini | open | – | – | video · 60% re-cut v02 batch B (local only): 025 iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY + 026 HZGTovJu_TQ, cwU_0WWeNZ4 - start by Sat 31 Oct, each parked by 20:00 London the day before it airs (from Mon 9 Nov) | 6389353471 |
 | J0936 | mini | claimed | cursor | 2026-10-26T09:01Z | video · 60% re-cut v02 batch C (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - start by Sat 14 Nov, each parked by 20:00 London the day before it airs (from Fri 20 Nov) | 6389353471 |
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
@@ -42,6 +34,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
 | J0961 | mini | blocked | chief | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v03 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6404618803 |
+| J0962 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: arm thumbnail-only Test & Compare A (live MELTS LEAD) vs B EARTH'S TWIN (J0908 PASS), read back, ledger |  |
+| J0963 | mini | open | – | – | thumb · 022 Sun h8HGfyShEHI: Test & Compare B v02 '10% BRIGHTER' (fix of J0908 B), park for Chief |  |
+| J0964 | mini | open | – | – | assembly · 028 Oort marbles Short v02: end card without YouTube id, free slot, J0918 gate (fix of J0911 v01), park for Chief |  |
+| J0965 | mini | open (after J0934) | – | – | video · HOS 60% re-cut batch HB (local only): JyRjM-9Yc8g (Sun 1 Nov), Pp5LmjsduI4 (3 Nov), PlihWC5uA2E (5 Nov), mTY67qet7cM (8 Nov) - each parked by 20:00 London the day before it airs |  |
+| J0966 | mini | open (after J0965) | – | – | video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
+| J0967 | mini | open | – | – | assembly · HOS build-rule fix for unbuilt Shorts (006 A-C + s04-s08, 007-010 SHORTS_PICTURE_PLAN, S5-S8): audit fixes #14-#16, plans and assemblers only |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 962,
+  "next_id": 968,
   "jobs": [
     {
       "id": "J0001",
@@ -74613,13 +74613,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T16:34Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T20:45Z",
-      "result": "parked for Chief: worker Studio steps saved and read back; pinned comment waits until 2026-11-29 18:05 London. Readback commit 926f046e1 on local codex/j0894-studio-readback at /private/tmp/j0894-wt; automatic approval review rejected public evidence-branch push, requiring user approval to publish.",
+      "result": "Chief (Grok) 25 Oct 23:25 London: PASS. Studio finish read back on 028 F-jImX5h7ws: captions en-GB (126 cues), thumbnail-only T&C A/B/C (Continue-on-new-test correctly Cancelled), end screen Subscribe + Best for viewer over the last 20 s, card 026 c5AdqQsnnys at 1:30. Privacy/publishAt untouched. Evidence 926f046e1 landed on main via PR #282 (cherry-pick d1f834c48, normal merge d87c70395). Pinned comment remainder rides on J0910 (blocked until 028 is public Sun 29 Nov 18:00; run from 18:05 London). GBP0.",
       "history": [
         {
           "at": "2026-10-23T20:45Z",
@@ -74695,6 +74695,11 @@
           "at": "2026-10-24T19:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: PASS. Studio finish read back on 028 F-jImX5h7ws: captions en-GB (126 cues), thumbnail-only T&C A/B/C (Continue-on-new-test correctly Cancelled), end screen Subscribe + Best for viewer over the last 20 s, card 026 c5AdqQsnnys at 1:30. Privacy/publishAt untouched. Evidence 926f046e1 landed on main via PR #282 (cherry-pick d1f834c48, normal merge d87c70395). Pinned comment remainder rides on J0910 (blocked until 028 is public Sun 29 Nov 18:00; run from 18:05 London). GBP0."
         }
       ],
       "kind": "studio",
@@ -76037,13 +76042,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T18:24Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T16:35Z",
-      "result": "parked for Chief: long T&C B",
+      "result": "Chief (Grok) 25 Oct 23:25 London: (c) 033 rename and (d) 062-064 topic order PASS (704ab318b). (b) 023 Venus B 'EARTH'S TWIN' PASS (Earth vs Venus 0.95x, reads at 168 px, badge clear) -> arm job J0962. 022 Sun B '10% HOTTER' FIX: the film's number is 'about ten percent brighter' (luminosity), not hotter, and the Earth (78 px) is lost at 168 px -> v02 job J0963. Nothing armed on 022.",
       "history": [
         {
           "at": "2026-10-24T16:35Z",
@@ -76084,6 +76089,11 @@
           "at": "2026-10-24T21:07Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: (c) 033 rename and (d) 062-064 topic order PASS (704ab318b). (b) 023 Venus B 'EARTH'S TWIN' PASS (Earth vs Venus 0.95x, reads at 168 px, badge clear) -> arm job J0962. 022 Sun B '10% HOTTER' FIX: the film's number is 'about ten percent brighter' (luminosity), not hotter, and the Earth (78 px) is lost at 168 px -> v02 job J0963. Nothing armed on 022."
         }
       ],
       "kind": "thumb",
@@ -76216,13 +76226,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "blocked",
+      "by": "chief",
       "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-24T17:29Z",
-      "result": "",
+      "result": "waits for 028 long F-jImX5h7ws to go public Sun 29 Nov 2026 18:00 London (Studio picker only lists public videos); run from 18:05 London. Carries J0894's pinned comment: post + pin Pinned-Comments/gliese_pinned_v01.txt on F-jImX5h7ws and read back, then Related on the 4 Shorts (bizlhspnVvY first, before Mon 30 Nov 11:30). Chief 25 Oct 23:25 (reopen at 23:13 was a slip; nothing claimed it).",
       "history": [
         {
           "at": "2026-10-24T17:29Z",
@@ -76243,6 +76253,11 @@
           "at": "2026-10-25T23:04Z",
           "by": "chief",
           "what": "reopened: Chief (Grok) 25 Oct 23:15 London: dated, not-before Sun 29 Nov 18:05 London (028 public 18:00). Also carries J0894's pinned comment: post + pin Pinned-Comments/gliese_pinned_v01.txt on F-jImX5h7ws and read back, then Related on the 4 Shorts (bizlhspnVvY first, before Mon 30 Nov 11:30). Never change privacy/publishAt. GBP0."
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "blocked: waits for 028 long F-jImX5h7ws to go public Sun 29 Nov 2026 18:00 London (Studio picker only lists public videos); run from 18:05 London. Carries J0894's pinned comment: post + pin Pinned-Comments/gliese_pinned_v01.txt on F-jImX5h7ws and read back, then Related on the 4 Shorts (bizlhspnVvY first, before Mon 30 Nov 11:30). Chief 25 Oct 23:25 (reopen at 23:13 was a slip; nothing claimed it)."
         }
       ],
       "kind": "studio",
@@ -76261,13 +76276,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T18:50Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:17Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "Chief (Grok) 25 Oct 23:25 London: FIX (not PASS) -> v02 job J0964. 028_short_lift_oort_marbles_v01 (91dfe201e): (1) end card prints the YouTube id 'F-jImX5h7ws' in yellow (frames 21-22 s) - the exact fault Ben flagged on 029 v02; (2) README target air 2026-12-09 clashes with 029 Wed 9 Dec Short (one Short a day); (3) gate run predates the J0918 ship gate (no f0diff/cut1/tail fields); (4) s04 NEOWISE + s05 La Silla plates read near-black on the phone. Hook, 22.37 s length, first cut 2.96 s, payoff at 80% and 1.44 s loop tail are good.",
       "history": [
         {
           "at": "2026-10-24T18:17Z",
@@ -76308,6 +76323,11 @@
           "at": "2026-10-25T03:43Z",
           "by": "refill",
           "what": "escalated to Chief: parked 7 h"
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: FIX (not PASS) -> v02 job J0964. 028_short_lift_oort_marbles_v01 (91dfe201e): (1) end card prints the YouTube id 'F-jImX5h7ws' in yellow (frames 21-22 s) - the exact fault Ben flagged on 029 v02; (2) README target air 2026-12-09 clashes with 029 Wed 9 Dec Short (one Short a day); (3) gate run predates the J0918 ship gate (no f0diff/cut1/tail fields); (4) s04 NEOWISE + s05 La Silla plates read near-black on the phone. Hook, 22.37 s length, first cut 2.96 s, payoff at 80% and 1.44 s loop tail are good."
         }
       ],
       "kind": "assembly",
@@ -76420,13 +76440,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T18:39Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:38Z",
-      "result": "parked for Chief: QA sweep complete (OWB 74a8e44d9/228ab85db/519b44293/3a25e2bb4/170c28a17: 028 lift_night_sky_35yr v01 picture_qa 0/8 PASS + polish_gate 0/8 PASS + sfx PASS, 028 shorts_v01_pack 3 Shorts mon30_comets 0/10 PASS / wed02_opening_testA 0/9 PASS / fri04_scale 0/7 PASS, 028 full_master_v03_pack 0/65 PASS + music/sfx PASS, 029 full_rough_v03b_pack 0/84 PASS + music/sfx PASS, plus all earlier OWB packs & 42 Shorts PASS; HOS 92f7d954/2278fb3a/cf348000/7196b52a: 007 Short s05_vacca_jesty v02 & v01 picture_qa 0/8 PASS + polish_gate 0/8 PASS, 007 master_v03_pack 0/102 PASS + music/sfx PASS, 006 master_v05 0/96 PASS + music/sfx PASS, all 31 HOS qa_ Shorts + 007-010 code graphics PASS; 0 FAILs, 0 new fix jobs needed)",
+      "result": "Chief (Grok) 25 Oct 23:25 London: PASS. QA sweep both channels: newest OWB packs (028 lift_night_sky v01, 028 shorts_v01 x3, 028 master v03, 029 rough v03b) and HOS packs (007 s05 v01/v02, 007 master v03, 006 master v05) all 0 FAIL on picture_qa/polish_gate/music_gate/sfx; commits 74a8e44d9/228ab85db/519b44293/3a25e2bb4/170c28a17 verified. No fix jobs needed.",
       "history": [
         {
           "at": "2026-10-24T18:38Z",
@@ -76472,6 +76492,11 @@
           "at": "2026-10-25T01:47Z",
           "by": "refill",
           "what": "escalated to Chief: parked 6 h"
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: PASS. QA sweep both channels: newest OWB packs (028 lift_night_sky v01, 028 shorts_v01 x3, 028 master v03, 029 rough v03b) and HOS packs (007 s05 v01/v02, 007 master v03, 006 master v05) all 0 FAIL on picture_qa/polish_gate/music_gate/sfx; commits 74a8e44d9/228ab85db/519b44293/3a25e2bb4/170c28a17 verified. No fix jobs needed."
         }
       ],
       "kind": "qa",
@@ -76715,13 +76740,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T20:21Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "parked for Chief: pick re-cuts from STAYED60 audit",
+      "result": "Chief (Grok) 25 Oct 23:25 London: done. All three re-cut batches from the STAYED60 audit are queued (A = J0931 + J0932, B = J0935, C = J0936), per Chief notes 25 Oct 06:26/06:45. Not re-added.",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76782,6 +76807,11 @@
           "at": "2026-10-25T06:34Z",
           "by": "chief",
           "what": "note: Chief (Grok) 25 Oct 06:45 London: J0916 batch B is now queued as J0935 and batch C as J0936 (batch A = J0931 + J0932). All three batches are queued; don't add them again. J0916 can be marked done."
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: done. All three re-cut batches from the STAYED60 audit are queued (A = J0931 + J0932, B = J0935, C = J0936), per Chief notes 25 Oct 06:26/06:45. Not re-added."
         }
       ],
       "kind": "review",
@@ -76823,13 +76853,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-24T20:42Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "parked for Chief: HOS STAYED60 audit",
+      "result": "Chief (Grok) 25 Oct 23:25 London: Chief PASS 24 Oct (OWB #264 6389730716); HOS re-cuts queued in batches HA (J0933 + J0934, done), HB J0965, HC J0966 + build-rule fix J0967. HB/HC/build-rule had never been added (checked queue 25 Oct 23:20); added now.",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -76895,6 +76925,11 @@
           "at": "2026-10-25T06:34Z",
           "by": "chief",
           "what": "note: Chief (Grok) 25 Oct 06:45 London: J0917 batch HA is now queued as J0933 (OnJ8MFu0Mi0, urgent, park by 25 Oct 20:00 London) + J0934 (1-BZaFIMwYU, vEg_tLIm0Co, 1lszTrYRp-8, 5n7xFQRBUvI, urgent) (don't add HA again). Batches HB, HC and the build-rule fix (#14-#16) are still to add per HOS #180 6389732009, then mark J0917 done."
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: Chief PASS 24 Oct (OWB #264 6389730716); HOS re-cuts queued in batches HA (J0933 + J0934, done), HB J0965, HC J0966 + build-rule fix J0967. HB/HC/build-rule had never been added (checked queue 25 Oct 23:20); added now."
         }
       ],
       "kind": "review",
@@ -76934,13 +76969,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T00:56Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-24T19:01Z",
-      "result": "parked for Chief: review gate PR v2",
+      "result": "Chief (Grok) 25 Oct 23:25 London: PASS. OWB PR #268 (b5e33b69a) and HOS PR #362 (aaf34df5) were already merged normally at 25 Oct 03:12 London (6aba90676 / 5466e9726); CI green. Reviewed diff: FAIL pushed-still frame 0 (f0diff < 1.50, calibrated S1-S8 v01 vs mon19 v02), FAIL first cut > 3.0 s (scdet on picture band), FAIL meta-promise lint, WARN VO onset > 0.15 s and tail > 1.5 s; --report-only for scheduled Shorts; core_sync lock updated in both. Sound. Live on 029 v03 gate output already.",
       "history": [
         {
           "at": "2026-10-24T19:01Z",
@@ -77041,6 +77076,11 @@
           "at": "2026-10-25T04:43Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: PASS. OWB PR #268 (b5e33b69a) and HOS PR #362 (aaf34df5) were already merged normally at 25 Oct 03:12 London (6aba90676 / 5466e9726); CI green. Reviewed diff: FAIL pushed-still frame 0 (f0diff < 1.50, calibrated S1-S8 v01 vs mon19 v02), FAIL first cut > 3.0 s (scdet on picture band), FAIL meta-promise lint, WARN VO onset > 0.15 s and tail > 1.5 s; --report-only for scheduled Shorts; core_sync lock updated in both. Sound. Live on 029 v03 gate output already."
         }
       ],
       "kind": "qa",
@@ -77896,13 +77936,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-25T03:05Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-25T03:02Z",
-      "result": "parked for Chief: 029 SHORTS_PLAN_v01.md committed (9ade53ae9) for 3 weekday Shorts (Wed 9 Dec Great Dimming 23.48s, Fri 11 Dec Test A Opening 36.08s, Mon 14 Dec Half-Moon Daylight 23.94s + Reserve 23.44s, £0 spend, all 7 Learnings/60%/70% rules verified); £0 assembly/gate job queued as J0929",
+      "result": "Chief (Grok) 25 Oct 23:25 London: done. SHORTS_PLAN_v01 (9ade53ae9) stays the locked plan (slots, titles, hooks, lifts); reconciled in 30e12e129: status block names J0929 v02 -> J0937 cancelled -> J0944 v03 PASS c50 -> held upload J0961, and rule 7 corrected (end card = long title + 'Full film on the channel', never the id; link is the Related video). v03 pack evidence committed in the same commit.",
       "history": [
         {
           "at": "2026-10-25T03:02Z",
@@ -77948,6 +77988,11 @@
           "at": "2026-10-25T06:30Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) 25 Oct 23:25 London: done. SHORTS_PLAN_v01 (9ade53ae9) stays the locked plan (slots, titles, hooks, lifts); reconciled in 30e12e129: status block names J0929 v02 -> J0937 cancelled -> J0944 v03 PASS c50 -> held upload J0961, and rule 7 corrected (end card = long title + 'Full film on the channel', never the id; link is the Related video). v03 pack evidence committed in the same commit."
         }
       ],
       "kind": "review",
@@ -81252,6 +81297,168 @@
           "type": "short"
         }
       ]
+    },
+    {
+      "id": "J0962",
+      "title": "023 Venus VBaYRPp85Sw: arm thumbnail-only Test & Compare A (live MELTS LEAD) vs B EARTH'S TWIN (J0908 PASS), read back, ledger",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 23:25 London, J0908 PASS on the 023 B.\n1. Check VBaYRPp85Sw 'What Happened to Venus?' reads back Public (it went public Sun 25 Oct 18:00 London). If not, block naming that.\n2. Copy ~/_desk/j0908/venus_tc_B_earths-twin_VBaYRPp85Sw.jpg into 02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_j0908/ (sha256 in a SHA256.txt beside it) and commit.\n3. Orbit Studio (CDP 9223) -> A/B testing -> Thumbnail only: A = the live thumbnail (MELTS LEAD), B = that file. If Studio shows 'Run a new test? Your current test will be deleted', press Cancel and block 'parked for Chief: test already running on 023'. No title test.\n4. Read back the test as set; thumb_ledger.py add --video VBaYRPp85Sw --channel owb --title \"What Happened to Venus?\" --a-maker house --b-maker gemini --b-file <repo path> --job J0908, then thumb_ledger.py start <T id>.\n5. done with the readback. If Studio needs a sign-in, block for Ben.\nNo privacy, schedule, title or description change. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0963",
+      "title": "022 Sun h8HGfyShEHI: Test & Compare B v02 '10% BRIGHTER' (fix of J0908 B), park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 23:25 London, J0908 fix notes on the 022 B '10% HOTTER'.\n1. Text: '10% BRIGHTER' (yellow '10%', white 'BRIGHTER'). The film says the Sun will be 'about ten percent brighter' in roughly a billion years; 'hotter' is wrong (that is luminosity, not temperature).\n2. Make the Earth a readable scale cue: at least ~2x its v01 size (v01 78 px), still clearly tiny next to the Sun, clear of the text band and the duration badge; check legibility in the 168 px preview.\n3. Same plates (NASA SVS 11517 Sun, Apollo 17 Blue Marble), same builder 00_Brand/Channel-Setup/tools/build_sun_venus_tc_b_j0908.py (add a v02 option, v01 kept), saturation/near-black scores in the sheet. Output to ~/_desk/j0908/ as sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg + A/B sheet with the live A; commit the builder and json.\n4. Do not arm anything. End: jobs.py block <id> --reason \"parked for Chief: 022 T&C B v02\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "thumb"
+    },
+    {
+      "id": "J0964",
+      "title": "028 Oort marbles Short v02: end card without YouTube id, free slot, J0918 gate (fix of J0911 v01), park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 23:25 London, J0911 fix notes on 028_short_lift_oort_marbles_v01 (pack 91dfe201e). Build v02 beside v01 (v01 untouched) with _assemble_028_oort_marbles_short_v01.py copied to _v02.py:\n1. End card: drop the 'F-jImX5h7ws' row. Keep the long title 'What Happens When a Star Passes Through Our Solar System?' and put 'Full film on the channel' in the yellow row, as 029 v03 (J0944). No ids, codes, file names or job tags on any frame: OCR every frame (tesseract) and record 0 hits in _v02_ocr.txt.\n2. Air slot: not Wed 9 Dec (029 Short holds it; one Short a day). Pick the first free OWB Short weekday 11:30 London slot after Mon 7 Dec in 00_Brand/Channel-Setup/social/UPLOADS.json that no queued job (J0961 holds 9/11/14 Dec) claims, and write it in README/meta.\n3. s04 NEOWISE (9.6-11.9 s) and s05 La Silla (11.9-14.2 s) read near-black on the phone: lift exposure/contrast within the polish_gate limits, or swap to another already-on-disk 028 plate (comet or Oort graphic) under the same VO; keep every plate hold <= 4.0 s and the 9-14 s long-title banner.\n4. Keep VO, timing (22.37 s), hook, payoff, loop tail <= 1.5 s and matched loop to frame 0. Make the last loop frame match frame 0 (same SDO clip time) so the loop is seamless.\n5. Gates on v02: gate_shorts_open check --air-date <slot> (the J0918 ship gate: f0diff, cut1 <= 3.0 s, vo_onset, tail_gap all in the gate line), polish_gate, picture_qa, music_gate, sfx_kit level: all PASS. _PHONE copy to OWB UAT/028_short_lift_oort_marbles_v02/ and the NAS OWB UAT, sha256 checked, SHA256.txt. Commit meta/gates/sheets only (no media).\nNo upload, no Studio change. End: jobs.py block <id> --reason \"parked for Chief: 028 Oort Short v02 PASS\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
+    },
+    {
+      "id": "J0965",
+      "title": "HOS 60% re-cut batch HB (local only): JyRjM-9Yc8g (Sun 1 Nov), Pp5LmjsduI4 (3 Nov), PlihWC5uA2E (5 Nov), mTY67qet7cM (8 Nov) - each parked by 20:00 London the day before it airs",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 23:25 London. J0917 batch HB (never queued before; HA was J0933 + J0934). Audit: HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md fixes #6-#9.\n- JyRjM-9Yc8g airs Sun 1 Nov 11:30: park it first, by Sat 31 Oct 20:00 London; bring it in at 22-25 s.\n- Pp5LmjsduI4 (Tue 3 Nov), PlihWC5uA2E (Thu 5 Nov: 'Inside your veins are tiny one-way doors - valves' only if those exact words are on disk, else open on 'Along the swollen veins...' with the pause trimmed), mTY67qet7cM (Sun 8 Nov).\nSame rules for every HOS re-cut (Chief ruling OWB #264 6389730716 / HOS #180 6389732009): local v02 next to v01, v01 untouched. GBP0: VO trims, reorders and splices from existing audio only (only words already on disk), no new TTS, Veo, Flow, Vertex or paid API. Frame 0 moving and full-bleed at 30% black or less (no zoom/pan on a still), subject named in 0-1.5 s, first word by 0.15 s, first cut by 3.0 s, later plates 4.0 s max. Drop 'watch the full film' overlays, spoken CTAs and agenda questions; no video ID or code anywhere on screen (Ben 25 Oct). Last word to a matched loop back to frame 0 in 1.5 s or less; no answer-and-done line before 70% of runtime. Write the six brief fields into each v02 meta. Gates: gate_shorts_open check --air-date (incl. the J0918 ship gate, now merged), picture_qa, polish_gate, music_gate, sfx level, all PASS. _PHONE copies to HOS UAT + NAS, sha256 checked. Commit meta, gate text and frame sheets only. No upload, no Studio change. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd the swap by 10:30 on its air day, v01 airs as scheduled; don't slip the slot.\nPark each as it's ready: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK swap\" --git (release and continue for the rest). Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0934",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0966",
+      "title": "HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 23:25 London. J0917 batch HC (after HB). Audit fixes #10-#13 (HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md).\n- -I_GHK-GcFs (Fri 13 Nov): where the reorder moves the payoff forward, the last line must still loop into line 1 with a matched cut to frame 0. Note J0875 sets its Related to the 007 long.\n- x_3L_IdYgEc (Sun 15 Nov), -sa2t7dAtCk (Mon 16 Nov), 4WUs0beKn0A (Tue 17 Nov; also in J0875).\nSame rules for every HOS re-cut (Chief ruling OWB #264 6389730716 / HOS #180 6389732009): local v02 next to v01, v01 untouched. GBP0: VO trims, reorders and splices from existing audio only (only words already on disk), no new TTS, Veo, Flow, Vertex or paid API. Frame 0 moving and full-bleed at 30% black or less (no zoom/pan on a still), subject named in 0-1.5 s, first word by 0.15 s, first cut by 3.0 s, later plates 4.0 s max. Drop 'watch the full film' overlays, spoken CTAs and agenda questions; no video ID or code anywhere on screen (Ben 25 Oct). Last word to a matched loop back to frame 0 in 1.5 s or less; no answer-and-done line before 70% of runtime. Write the six brief fields into each v02 meta. Gates: gate_shorts_open check --air-date (incl. the J0918 ship gate, now merged), picture_qa, polish_gate, music_gate, sfx level, all PASS. _PHONE copies to HOS UAT + NAS, sha256 checked. Commit meta, gate text and frame sheets only. No upload, no Studio change. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd the swap by 10:30 on its air day, v01 airs as scheduled; don't slip the slot.\nPark: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK swap\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0965",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
+    },
+    {
+      "id": "J0967",
+      "title": "HOS build-rule fix for unbuilt Shorts (006 A-C + s04-s08, 007-010 SHORTS_PICTURE_PLAN, S5-S8): audit fixes #14-#16, plans and assemblers only",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 23:25 London. J0917 item 4, low priority. Apply HOS STAYED60 audit fixes #14-#16 to plans and assemblers only (no renders beyond gate checks): 006 Short A-C and s04-s08, SHORTS_PICTURE_PLAN_v01.json for 007-010, standalone S5-S8. S01 ends by 2.85 s; rows unbundled to 2.5-3.8 s cuts; loop tail 1.0 s or less; no full-film banner; datelines trimmed; no video ID or code text on any end card (Ben 25 Oct). S5-S8 still-opens get existing moving plates or stay unbuilt (no generation). Commit, then jobs.py block <id> --reason \"parked for Chief: HOS build-rule fix\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T23:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T23:08Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
