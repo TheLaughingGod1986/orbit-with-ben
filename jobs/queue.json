@@ -78484,6 +78484,11 @@
           "at": "2026-10-25T15:09Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: BbsyFrV8kCY v09; Ben to OK swap"
+        },
+        {
+          "at": "2026-10-25T15:27Z",
+          "by": "chief",
+          "what": "no longer waits on Ben (entry 3): OK'd, delivered by J0949"
         }
       ],
       "kind": "video",
@@ -78512,17 +78517,6 @@
           "ifNot": "the scheduled v01 airs as is",
           "title": "Saturn rings ten metres Short re-cut v04 (RxErxlXim1Q)",
           "number": "021",
-          "type": "short"
-        },
-        {
-          "what": "swap the Venus size Short (YC65mdh6Hgg) to re-cut v05 before it airs Mon 2 Nov 11:30",
-          "file": "OWB UAT/venus_95pct_wide_v05/venus_95pct_wide_v05_PHONE.mp4",
-          "version": "v05",
-          "due": "2026-11-02T10:30Z",
-          "airs": "2026-11-02T11:30Z",
-          "ifNot": "the scheduled v02 airs as is",
-          "title": "Venus size Short re-cut v05 (YC65mdh6Hgg)",
-          "number": "023",
           "type": "short"
         }
       ],
@@ -79707,9 +79701,28 @@
           "at": "2026-10-25T15:27Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-25T15:27Z",
+          "by": "chief",
+          "what": "approved by Ben: swap the Venus size Short (YC65mdh6Hgg) to re-cut v05 before it airs Mon 2 Nov 11:30 v05 (asked in J0932)"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap the Venus size Short (YC65mdh6Hgg) to re-cut v05 before it airs Mon 2 Nov 11:30",
+        "file": "OWB UAT/venus_95pct_wide_v05/venus_95pct_wide_v05_PHONE.mp4",
+        "version": "v05",
+        "airs": "2026-11-02T11:30Z",
+        "title": "Venus size Short re-cut v05 (YC65mdh6Hgg)",
+        "number": "023",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0932",
+        "askId": "J0932.3",
+        "okAt": "2026-10-25T15:19Z",
+        "okRef": "6399428928"
+      }
     },
     {
       "id": "J0950",
