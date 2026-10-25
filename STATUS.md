@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 029 | upload | gemini | 2026-10-25T02:48Z | 2026-10-25T04:47Z | J0922 029 Betelgeuse: Private upload of the release master for Sun 6 Dec 18:00 London (after Chief PASS on J0921), read back, record |
+| 029 | upload | gemini | 2026-10-25T02:49Z | 2026-10-25T03:49Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
