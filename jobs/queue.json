@@ -79025,10 +79025,10 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-25T22:30Z",
-      "eta": "2026-10-26T08:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
       "result": "",
@@ -79072,6 +79072,11 @@
           "at": "2026-10-25T22:37Z",
           "by": "cursor",
           "what": "step 1 of 6 done: iyvWYFP_ETA mon09 v02 gates PASS. 17.6s, 90 at 1.38s, couldn't at 14.82s, loop_diff 0.95, sha 0ed62579. b70196d9a. UAT + NAS. Next: TtgHNLXfDSs."
+        },
+        {
+          "at": "2026-10-25T22:37Z",
+          "by": "cursor",
+          "what": "released: mon09 iyvWYFP_ETA v02 gates PASS (sha 0ed62579, 17.6s, 90 at 1.38s, couldn't 14.82s = 84%, loop_diff 0.95, -14.7 LUFS). Commit b70196d9a. Master: iCloud OWB UAT/025_mon09_night_cold_v02 and NAS youtube-staging/025/mon09_night_cold_v02. Gate warns: duration 17.6s (audit ~18.5; banned question and CTA are the only extra words on this stem; long VO wav is not on disk). Open-plate 16 bits from bSjWiCbB7pY is a warn. v01 untouched. No upload. Mars bed restored from owbextra.tar into 05_Music, not committed. Next Short: TtgHNLXfDSs wed11_opening_testA."
         }
       ],
       "kind": "video",
