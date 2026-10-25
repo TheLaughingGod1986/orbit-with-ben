@@ -76515,6 +76515,11 @@
           "at": "2026-10-25T05:05Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: S2/S3 v04 PASS (v02 and v03 failed the first-cut gate). Ben to OK swap: new Private upload on the same slot, scheduled copies kept private and unscheduled, nothing deleted."
+        },
+        {
+          "at": "2026-10-25T08:54Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the Neptune Short (oyRcrFTYyDY, airs Tue 27 Oct 11:30) to re-cut v04 (by 2026-10-27 11:30 London)"
         }
       ],
       "kind": "video",
@@ -76525,6 +76530,17 @@
         "at": "2026-10-25T05:05Z",
         "by": "cursor",
         "note": "Parked for Chief. v04 PASS on both Shorts. Swap waits on Ben."
+      },
+      "awaits_ben": {
+        "what": "swap the Neptune Short (oyRcrFTYyDY, airs Tue 27 Oct 11:30) to re-cut v04",
+        "file": "OWB UAT/standalone_shorts_v04/owb_sa_s2_neptune_v04.mp4",
+        "version": "v04",
+        "due": "2026-10-27T11:30Z",
+        "airs": "2026-10-27T11:30Z",
+        "ifNot": "No OK before it airs: the current cut airs",
+        "title": "Neptune Short re-cut v04 (swap)",
+        "number": "S2",
+        "type": "short"
       }
     },
     {
