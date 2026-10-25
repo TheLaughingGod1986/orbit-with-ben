@@ -1,5 +1,5 @@
 {
-  "next_id": 933,
+  "next_id": 934,
   "jobs": [
     {
       "id": "J0001",
@@ -78037,6 +78037,33 @@
       ],
       "kind": "video",
       "urgent": 2
+    },
+    {
+      "id": "J0933",
+      "title": "HOS 60% re-cut batch HA1 (local only): OnJ8MFu0Mi0 'How Did John Snow Stop Cholera?' - park by Sun 25 Oct 20:00 London (airs Mon 26 Oct 11:30); if late, the original airs as scheduled",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 06:40 London: applies J0917 batch HA (Chief ruling 24 Oct 22:30 London, HOS #180; ruled but never queued). Audit = HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md, fix #1, with ruling correction 1.\n\nURGENT. OnJ8MFu0Mi0 \"How Did John Snow Stop Cholera?\" (HOS standalone S3, docs/STANDALONE_SHORTS_TEST_2026-10/, uploaded file hos_sa_s3_snow_pump_v02.mp4, airs Mon 26 Oct 11:30 London). MUST be parked by today, Sun 25 Oct 20:00 London. If late (or the swap isn't OK'd by Mon 10:30 London), the original airs as scheduled; don't slip the slot.\n\nFix (audit #1 + correction 1):\n1. VO (£0): in vo_v01/hos_sa_s3_snow_pump_vo_v02.wav, trim \"In 1854,\" (0.00–1.60 s) so \"A killer was hiding in a water pump\" starts ≤0.15 s (\"water pump\" by ~1.15–2.10 s, the surprise claim inside 1.5 s as far as the words allow). Tighten the 1.14 s pause (3.61→4.75 s) to ≤0.18 s. Runtime ~19.7 s.\n2. Frame 0: replace the NB2 still 05_handle_off_v03.jpg with existing MOVING footage: HOS 001 London street / water-pump Veo/Flow plates (001 Part 01/03 raw, on the mini or NAS), full-bleed, ≤30% black. The audit's \"fast ≥15% zoom on the still\" option is ruled out. If no fitting moving plate exists on disk, don't generate one: park saying so, and v02 airs as scheduled.\n3. First cut ≤2.3 s (≤3.0 s hard). Split s02 (6.38 s) and any other hold so nothing exceeds 3.6 s (4.0 s hard).\n4. Payoff (the pump handle / cholera stops) at ≥70% of runtime; last line loops back into line 1 with a matched ≤1.0 s cut to the frame-0 plate.\n\nOutput: hos_sa_s3_snow_pump_v03.mp4 (+ _PHONE, meta, gates, 2 fps sheet) next to v02 in docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/. Park this job on its own as soon as it passes: jobs.py block <id> --reason \"parked for Chief: OnJ8MFu0Mi0 v03 PASS; Ben to OK swap\" --git\n\nSame rules for every HOS re-cut (J0917 ruling HOS #180 / chief_sweep c13, 24 Oct 22:30 London; HOS J0918 ship gate PR #362; J0914/J0929 loop rule; HOS .cursor/rules/hos-build-shorts.mdc \"60% stayed-to-watch\"):\n- Work in the HOS repo (history-of-science). New local version next to the uploaded one (next number up: e.g. snow_pump v02 -> v03, curie_notebooks v04 -> v05). The uploaded file stays untouched.\n- £0: VO trims, reorders and splices from words already recorded on disk only (the Short's own VO, or the 001 Part 04 / 005 long VO the audit names). No new TTS, Veo, Flow, Omni, Vertex or paid API. Long-VO splices must match level and room tone and pass the sfx/music level checks. If a fix needs words that aren't on disk, trim instead.\n- Frame 0 is moving, full-bleed footage, ≤30% black, ≥60% subject. A zoom or pan on an NB2 still is NOT a fix (J0917 correction 1). If no fitting moving plate exists on the mini or NAS, don't generate one: say so in the park note and the uploaded version airs as scheduled.\n- Subject named and surprise claim spoken by 1.5 s; first word by 0.15 s. First cut by 3.0 s (strict, no moving-shot waiver). Later plates 4.0 s max. No still-to-still cuts.\n- No meta-promise or setup line (\"In 1854,\", \"Here is what Galen taught.\"), no agenda/rhetorical questions, no spoken \"Watch…/The full story…\" CTA, no \"watch the full film →\" overlay, no end card. The long's title + ID go in the description / Related link, not the picture.\n- 70% viewed rule: payoff lands at ≥70% of runtime, with no answer-and-done line before 70%. Where a reorder moves the payoff to the front, keep a second beat after it and loop the last line back into line 1.\n- Matched loop: last word to loop ≤1.5 s (aim 1.0 s), last frame built from the frame-0 plate at frame-0 framing. Last-vs-frame-0 mean diff ≤15 (text masked); log loop_diff in meta.\n- Educational (Ben 11 Oct): keep any existing date/person card, number card or code graphic the uploaded cut has (inside y=656..1264); don't add new generated assets.\n- Keep the uploaded title and air slot. Length 18–24 s unless the audit says otherwise.\n- Aims: ≥60% stayed-to-watch and ≥70% average viewed (aim >100% via the loop).\n- Gates: gate_shorts_open --air-date (strict, incl. stayed transcript check), picture_qa, polish_gate, music_gate, sfx level, plus the J0918 HOS ship gate; all PASS. Write the six brief fields, measured LUFS and loop_diff into each new meta.\n- Commit meta, gate text and 2 fps frame sheets (git add -f) in the HOS repo. Copy _PHONE + sheets to HOS UAT and NAS.\n- No upload, no Studio change, no Public, no Replace, no swap, no delete, no reset, no force-push. Park as \"parked for Chief: <id> v0N PASS; Ben to OK swap\". A swap is a new Private upload on the same slot after Chief PASS and Ben's OK on the board, the old upload kept private and unscheduled, nothing deleted. If a Short isn't OK'd by 10:30 London on its air day, the uploaded version airs as scheduled; don't slip the slot.\n",
+      "ref": "6389673078",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T06:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T06:33Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [],
