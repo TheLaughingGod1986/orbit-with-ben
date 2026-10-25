@@ -1,0 +1,733 @@
+{
+  "job": "J0932",
+  "version": "v09",
+  "c41": "32,000 segment starts at 9.66 so thir- (source ~9.68) is in the mix; v08 started at 9.92",
+  "splice_check": [
+    {
+      "a": 6.12,
+      "b": 6.8,
+      "peak_db": -47.0,
+      "peak_t": 6.11,
+      "uncovered_voiced": [],
+      "ok": true
+    },
+    {
+      "a": 0.82,
+      "b": 3.34,
+      "peak_db": -19.6,
+      "peak_t": 0.68,
+      "uncovered_voiced": [],
+      "ok": true
+    },
+    {
+      "a": 0.1,
+      "b": 0.78,
+      "peak_db": -32.7,
+      "peak_t": 0.09,
+      "uncovered_voiced": [],
+      "ok": true
+    },
+    {
+      "a": 7.2,
+      "b": 8.84,
+      "peak_db": -15.7,
+      "peak_t": 7.16,
+      "uncovered_voiced": [
+        {
+          "t": 7.07,
+          "db": -23.6
+        },
+        {
+          "t": 7.08,
+          "db": -18.5
+        },
+        {
+          "t": 7.09,
+          "db": -17.6
+        },
+        {
+          "t": 7.1,
+          "db": -16.4
+        },
+        {
+          "t": 7.11,
+          "db": -16.9
+        },
+        {
+          "t": 7.12,
+          "db": -16.2
+        },
+        {
+          "t": 7.13,
+          "db": -16.6
+        },
+        {
+          "t": 7.14,
+          "db": -16.1
+        },
+        {
+          "t": 7.15,
+          "db": -16.4
+        },
+        {
+          "t": 7.16,
+          "db": -15.7
+        },
+        {
+          "t": 7.17,
+          "db": -17.4
+        },
+        {
+          "t": 7.18,
+          "db": -16.9
+        },
+        {
+          "t": 7.19,
+          "db": -16.6
+        }
+      ],
+      "ok": false
+    },
+    {
+      "a": 12.0,
+      "b": 14.52,
+      "peak_db": -30.9,
+      "peak_t": 11.98,
+      "uncovered_voiced": [],
+      "ok": true
+    },
+    {
+      "a": 14.92,
+      "b": 17.72,
+      "peak_db": -21.7,
+      "peak_t": 14.91,
+      "uncovered_voiced": [
+        {
+          "t": 14.89,
+          "db": -25.0
+        },
+        {
+          "t": 14.9,
+          "db": -24.1
+        },
+        {
+          "t": 14.91,
+          "db": -21.7
+        }
+      ],
+      "ok": false
+    },
+    {
+      "a": 18.12,
+      "b": 18.78,
+      "peak_db": -18.4,
+      "peak_t": 18.11,
+      "uncovered_voiced": [
+        {
+          "t": 18.09,
+          "db": -24.0
+        },
+        {
+          "t": 18.1,
+          "db": -19.2
+        },
+        {
+          "t": 18.11,
+          "db": -18.4
+        }
+      ],
+      "ok": false
+    },
+    {
+      "a": 9.24,
+      "b": 9.66,
+      "peak_db": -45.4,
+      "peak_t": 9.22,
+      "uncovered_voiced": [],
+      "ok": true
+    },
+    {
+      "a": 9.66,
+      "b": 11.66,
+      "peak_db": -23.2,
+      "peak_t": 9.52,
+      "uncovered_voiced": [],
+      "ok": true
+    },
+    {
+      "a": 19.18,
+      "b": 20.52,
+      "peak_db": -37.9,
+      "peak_t": 19.17,
+      "uncovered_voiced": [],
+      "ok": true
+    },
+    {
+      "a": 20.88,
+      "b": 21.56,
+      "peak_db": -32.9,
+      "peak_t": 20.87,
+      "uncovered_voiced": [],
+      "ok": true
+    }
+  ],
+  "asr": [
+    {
+      "model": "small.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        15.0
+      ],
+      "text": "passes 32,000km up.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        14.0
+      ],
+      "text": "passes 32 foul",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        13.6,
+        15.0
+      ],
+      "text": "2,000 km up.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        16.0
+      ],
+      "text": "it will miss. Passes 32,000 kilometers up. Half the world",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        13.2
+      ],
+      "text": "It will miss. Passes.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        12.8,
+        14.4
+      ],
+      "text": "as 32,000.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        14.0,
+        15.6
+      ],
+      "text": "thousand kilometers up, half the",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        15.2,
+        16.0
+      ],
+      "text": "past the world.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        15.0
+      ],
+      "text": "passes 32,000 kilometers up.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        14.0
+      ],
+      "text": "Passes 32,000...",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        13.6,
+        15.0
+      ],
+      "text": "2,000 km up.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        16.0
+      ],
+      "text": "it will miss passes 32,000 kilometers up half the world",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        13.2
+      ],
+      "text": "it will miss.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        12.8,
+        14.4
+      ],
+      "text": "This is 32,000.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        14.0,
+        15.6
+      ],
+      "text": "1,000 kilometers up.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        15.2,
+        16.0
+      ],
+      "text": "half the world",
+      "ok": false,
+      "wrong": false
+    }
+  ],
+  "replaces_for_review": "scheduled v05 BbsyFrV8kCY stays untouched",
+  "air_date": "2026-10-28",
+  "youtube_id": "BbsyFrV8kCY",
+  "title_on_screen": "An Asteroid Will Skim Past Earth on Friday the 13th",
+  "file": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v09.mp4",
+  "sha256": "6b804f770d9cbec7786171ed1348f101aba4124bfdbb21dc5756fc6454e017c4",
+  "duration_s": 18.34,
+  "spoken": "Apophis, will fly closer than some of our satellites. An asteroid 340 metres wide, on Friday the 13th, 2029. Many satellites orbit at 36,000. It will miss. passes 32,000 kilometres up Half the world can look up and watch",
+  "words": [
+    {
+      "word": "Apophis,",
+      "start": 0.08,
+      "end": 0.76
+    },
+    {
+      "word": "will",
+      "start": 0.88,
+      "end": 1.0
+    },
+    {
+      "word": "fly",
+      "start": 1.04,
+      "end": 1.26
+    },
+    {
+      "word": "closer",
+      "start": 1.3,
+      "end": 1.84
+    },
+    {
+      "word": "than",
+      "start": 1.94,
+      "end": 2.12
+    },
+    {
+      "word": "some",
+      "start": 2.18,
+      "end": 2.32
+    },
+    {
+      "word": "of",
+      "start": 2.36,
+      "end": 2.44
+    },
+    {
+      "word": "our",
+      "start": 2.48,
+      "end": 2.56
+    },
+    {
+      "word": "satellites.",
+      "start": 2.66,
+      "end": 3.4
+    },
+    {
+      "word": "An",
+      "start": 3.54,
+      "end": 3.64
+    },
+    {
+      "word": "asteroid",
+      "start": 3.72,
+      "end": 4.22
+    },
+    {
+      "word": "340",
+      "start": 4.36,
+      "end": 5.18
+    },
+    {
+      "word": "metres",
+      "start": 5.22,
+      "end": 5.52
+    },
+    {
+      "word": "wide,",
+      "start": 5.62,
+      "end": 6.0
+    },
+    {
+      "word": "on",
+      "start": 6.16,
+      "end": 6.3
+    },
+    {
+      "word": "Friday",
+      "start": 6.36,
+      "end": 6.72
+    },
+    {
+      "word": "the",
+      "start": 6.76,
+      "end": 6.86
+    },
+    {
+      "word": "13th,",
+      "start": 6.88,
+      "end": 7.48
+    },
+    {
+      "word": "2029.",
+      "start": 7.7,
+      "end": 8.68
+    },
+    {
+      "word": "Many",
+      "start": 8.84,
+      "end": 9.02
+    },
+    {
+      "word": "satellites",
+      "start": 9.1,
+      "end": 9.68
+    },
+    {
+      "word": "orbit",
+      "start": 9.82,
+      "end": 10.08
+    },
+    {
+      "word": "at",
+      "start": 10.1,
+      "end": 10.24
+    },
+    {
+      "word": "36,000.",
+      "start": 10.28,
+      "end": 11.64
+    },
+    {
+      "word": "It",
+      "start": 11.8,
+      "end": 11.88
+    },
+    {
+      "word": "will",
+      "start": 11.9,
+      "end": 12.0
+    },
+    {
+      "word": "miss.",
+      "start": 12.06,
+      "end": 12.46
+    },
+    {
+      "word": "passes",
+      "start": 12.58,
+      "end": 13.0
+    },
+    {
+      "word": "32,000",
+      "start": 13.12,
+      "end": 14.2
+    },
+    {
+      "word": "kilometres",
+      "start": 14.28,
+      "end": 14.76
+    },
+    {
+      "word": "up",
+      "start": 14.9,
+      "end": 15.1
+    },
+    {
+      "word": "Half",
+      "start": 15.22,
+      "end": 15.48
+    },
+    {
+      "word": "the",
+      "start": 15.52,
+      "end": 15.58
+    },
+    {
+      "word": "world",
+      "start": 15.62,
+      "end": 15.84
+    },
+    {
+      "word": "can",
+      "start": 15.9,
+      "end": 16.04
+    },
+    {
+      "word": "look",
+      "start": 16.08,
+      "end": 16.24
+    },
+    {
+      "word": "up",
+      "start": 16.34,
+      "end": 16.56
+    },
+    {
+      "word": "and",
+      "start": 16.66,
+      "end": 16.8
+    },
+    {
+      "word": "watch",
+      "start": 16.92,
+      "end": 17.34
+    }
+  ],
+  "spend": "none",
+  "frame_0_plate": "iss023e058455 aurora limb + Veo rock, not the dusk plate (dusk stays over 25% black inside 2.35x)",
+  "brief": {
+    "frame_0": "moving Veo Apophis on NASA iss023e058455 aurora limb, full-bleed, no Orbit",
+    "first_word_s": 0.08,
+    "surprise_s": 1.3,
+    "first_cut_s": 2.4,
+    "last_word_to_loop_s": 1.0,
+    "meta_promise": false,
+    "payoff_number_s": 13.12,
+    "payoff_vs_70pct": 12.84,
+    "loop_diff": 8.68,
+    "loop_diff_masked": 8.68,
+    "open_median_step": 11.63,
+    "head_matches": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "loop": "forward into frame 0, rock src ends one frame before frame 0",
+    "true_peak_db": -1.3,
+    "lufs": -14.7,
+    "frame0_black_pct": 1.8,
+    "title_window_s": [
+      9.0,
+      12.55
+    ],
+    "scale_window_s": [
+      12.97,
+      16.57
+    ]
+  },
+  "audio": {
+    "stems": {
+      "vo": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v09_stems/stem_vo.wav"
+    },
+    "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+    "mix": "two-pass loudnorm -14 LUFS"
+  },
+  "cuts": [
+    {
+      "row": "aurora_rock_open",
+      "timeline_in": 0.0,
+      "timeline_out": 2.4,
+      "source": "aurora_rock_open.mp4",
+      "upscale": 1.78,
+      "video": true,
+      "framing": {
+        "offset": 1.5
+      },
+      "plate": "iss023e058455"
+    },
+    {
+      "row": "day_rock_wide",
+      "timeline_in": 2.4,
+      "timeline_out": 5.8,
+      "source": "day_rock_wide.mp4",
+      "upscale": 1.12,
+      "video": true,
+      "framing": {
+        "offset": 2.5
+      },
+      "plate": "iss034e048455"
+    },
+    {
+      "row": "aurora_rock_date",
+      "timeline_in": 5.8,
+      "timeline_out": 9.0,
+      "source": "aurora_rock_date.mp4",
+      "upscale": 1.69,
+      "video": true,
+      "framing": {
+        "offset": 4.4
+      },
+      "plate": "iss023e058455"
+    },
+    {
+      "row": "day_rock_title",
+      "timeline_in": 9.0,
+      "timeline_out": 12.4,
+      "source": "day_rock_title.mp4",
+      "upscale": 1.14,
+      "video": true,
+      "framing": {
+        "offset": 6.2
+      },
+      "plate": "iss034e048455"
+    },
+    {
+      "row": "day_scale",
+      "timeline_in": 12.4,
+      "timeline_out": 15.7,
+      "source": "day_scale.mp4",
+      "upscale": 1.14,
+      "video": true,
+      "framing": {
+        "offset": 0.0
+      },
+      "plate": "iss034e048455"
+    },
+    {
+      "row": "aurora_rock_watch",
+      "timeline_in": 15.7,
+      "timeline_out": 17.34,
+      "source": "aurora_rock_watch.mp4",
+      "upscale": 1.72,
+      "video": true,
+      "framing": {
+        "offset": 6.8
+      },
+      "plate": "iss023e058455"
+    },
+    {
+      "row": "aurora_rock_loop",
+      "timeline_in": 17.34,
+      "timeline_out": 18.34,
+      "source": "aurora_rock_loop.mp4",
+      "upscale": 1.59,
+      "video": true,
+      "framing": {
+        "offset": 0.5383333333333326
+      },
+      "plate": "iss023e058455"
+    }
+  ],
+  "loop_sentence": "\u2026and watch. Apophis will fly closer than some of our satellites."
+}
