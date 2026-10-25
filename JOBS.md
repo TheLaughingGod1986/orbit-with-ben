@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0940 | mini | open (after J0931) | – | – | studio · 027 Short dM1OgGPAYvw: swap to earth_sudden_air_v05 (Private, Mon 26 Oct 11:30 London) after Ben's OK by Sun 20:00 | 6395360875 |
 | J0941 | mini | open | – | – | studio · HOS 005 Short 1lszTrYRp-8: swap to the_sum_v04 (Private, Fri 30 Oct 11:30 London) after Ben's OK by Thu 29 Oct 20:00 | 6398198455 |
 | J0942 | mini | open | – | – | studio · Standalone ISS Short XKlq0TK1OVA: swap to owb_sa_s3_iss_sunrises_v04 (Private, Sat 31 Oct 11:30 London) - Ben OK'd 25 Oct 13:59 | 6398570984 |
+| J0943 | mini | open | – | – | video · Standalone Neptune Short S2 v05: picture built for the Short (Ben: v04 is just blue blur), VO kept; re-park by Mon 26 Oct 12:00 | 6398539398 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 943,
+  "next_id": 944,
   "jobs": [
     {
       "id": "J0001",
@@ -79175,6 +79175,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0943",
+      "title": "Standalone Neptune Short S2 v05: picture built for the Short (Ben: v04 is just blue blur), VO kept; re-park by Mon 26 Oct 12:00",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 14:15 London. Ben's changes on the Neptune swap (J0914 item 1, OWB #264 6398539398, 13:56 London): \"The vo is fine, the video is just blue blur though, maybe build the video specifically for this short.\"\n\nChief checked v04 at 1 fps (~/chief_tmp/tw1406/nep.png): from about 5 s to the end, almost every frame is one over-enlarged crop of Neptune's cloud deck. It's a flat cyan blur with no planet, no features and nothing that follows the words. Only 2.0–5.0 s shows the planet's limb.\n\nGoal: owb_sa_s2_neptune_v05, a Short whose picture is built for this script. Keep the v04 VO exactly as is (Ben: the VO is fine), and keep its timing, captions, hook and loudness.\nPicture brief (Ben's standing order: educational, graphs, overlays, call-outs):\n- Every shot shows what the words say, with the real subject sharp at phone size. Don't enlarge any source beyond its native resolution by more than ~1.3x; when a source is small, show it smaller over a dark background or as a card rather than blowing it up.\n- Use free public-domain NASA/JPL sources (Voyager 2 1989 Neptune: full-disc colour, Great Dark Spot and \"Scooter\" approach sequences/animations, bright methane cirrus over the blue deck, PIA01492/PIA00046-type plates), plus code graphics:\n  * an animated wind-speed bar chart: Earth's strongest winds ~400 km/h against Neptune's ~2,000 km/h, plus the speed of sound on Earth for scale (only if the VO says it; otherwise no extra number),\n  * a Sun-to-Neptune distance graphic for \"thirty times farther from the Sun\" (Earth 1 AU against Neptune ~30 AU), with the sunlight fading (~1/900),\n  * moving cloud streaks or arrows over the real disc for \"clouds of frozen methane race past\".\n- Frame 0 is moving payoff footage that fills the frame (house 60% stayed rules, .cursor/rules/orbit-build-shorts.mdc); first cut by 3.0 s, no plate longer than 4 s, no ≥3-frame freezes, no flashes or shots under 0.5 s, and a forward seamless loop (no reversed tail, no frame-0 copies; see c40 rule 0 on J0932).\n- Gemini fact-checks every on-screen number before render.\nRender owb_sa_s2_neptune_v05.mp4 next to v04 (v04 untouched), plus the v05 meta.json, a frames sheet and the gates (gate_shorts_open.py check --air-date 2026-10-27, polish_gate, music_gate, sfx_kit level, loop_metrics). All must PASS. Copy to OWB UAT/standalone_shorts_v05/ and the NAS UAT.\n\nDeadline: re-park for Chief by Mon 26 Oct 12:00 London. The scheduled v01 (oyRcrFTYyDY) airs Tue 27 Oct 11:30 London as is unless v05 is PASSed and Ben OKs it by 10:30 Tue.\nHard rules: GBP0 (no paid TTS, picture or video generation), no upload, no Studio change, no Public, no Replace, no deletions, no force-push. Commit only meta, gate text and frames sheet.\nEnd with: jobs.py block <id> --reason \"parked for Chief: Neptune v05 built for the Short, gates PASS; Ben to OK swap\" --git\n",
+      "ref": "6398539398",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T14:10Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [],
