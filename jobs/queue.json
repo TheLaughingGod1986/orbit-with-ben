@@ -1,5 +1,5 @@
 {
-  "next_id": 939,
+  "next_id": 940,
   "jobs": [
     {
       "id": "J0001",
@@ -78419,6 +78419,33 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J0939",
+      "title": "HOS flask v04 FIX (local only): 1-BZaFIMwYU 'What Is the Pasteur Swan Neck Flask Experiment?' s11_curved_flask v03 -> v04 - park by Mon 26 Oct 20:00 London (airs Tue 27 Oct 11:30)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 25 Oct 07:40 London, J0934 item 1 v03 ruling c30 (HOS #180): FIX v03 -> v04. Split out of J0934 so that batch keeps moving (J0934 continues with items 2-4).\n\n1-BZaFIMwYU \"What Is the Pasteur Swan Neck Flask Experiment?\" (HOS 001 s11_curved_flask, airs Tue 27 Oct 11:30 London). Render hos_001_s11_curved_flask_v04 beside v03 (sha 338463b3) and the uploaded v02; both untouched. MUST park for Chief by Mon 26 Oct 20:00 London. If late, or not OK'd by Ben by 10:30 London on 27 Oct, the uploaded v02 airs as scheduled.\n\nKeep from v03: the \"a flask stays clear.\" opener (Part 04 4.12-4.72 + 16.23-16.96), frame 0 01_question_mark_flask_v17.mp4 (moving, 15% black), first cut <=2.6 s, Pasteur who-card, captions, 9-14 s promo title, no overlay/end card, loop span on the frame-0 plate ending at frame 0's in-point.\n\nFix list:\n1. VO from 02_Voiceover/part04_proof_in_a_flask_v01.wav in this order. Trim every span to its REAL speech onset (silencedetect/RMS on the raw wav; the ElevenLabs alignment folds the pre-word breath into the first word, which gave v03 ~5.2 s of 0.38-0.73 s digital-silence gaps). Sentence gaps 0.12-0.18 s, comma pauses <=0.20 s, 20-30 ms crossfades, room tone/bed continuous, no digital silence:\n   4.12-4.72 \"a flask\" + 16.23-16.96 \"stays clear.\" -> ~7.3-8.16 \"Boil broth.\" -> ~10.7-14.96 \"Air can drift but dust and microbes settle in the curve.\" -> ~37.8-43.36 \"If life arrives as passengers from the outside, then disease can be a passenger too.\" (replaces the glued \"...outside, emptiness that stays empty until contact.\") -> ~17.6-22.56 \"Break the neck, or tip the trap, and life blooms into cloudiness.\" -> ~8.5-10.40 \"Keep the swan neck intact.\" -> 1.0 s loop.\n   Target ~20.6 s, \"life blooms\" ~15.7 s (~76%). Any other on-disk order must still give payoff >=70%, no gap >0.20 s, 18-24 s, no half-sentences.\n2. Level-match the hook (0-1.45 s within +/-1 dB short-term of \"Boil broth\"; v03 hook was ~2.5 dB low). Master -14.0 +/-0.5 LUFS, TP <= -1.0 dBTP (v03 -15.2).\n3. Picture follows words, each span <=3.0 s, moving: Boil -> 02_boil_broth_v04; Air/dust -> 03_dust_in_the_curve_v23; \"If life arrives... passenger too.\" -> 08_passengers_v20 (<=3.0 s) then 04_still_clear_v21 or 09_sceptics_watch_v17; \"Break the neck, or tip the trap,\" -> 05_tip_the_trap_v20 (hands tilting the flask); \"and life blooms into cloudiness.\" -> 07_bloom_cloud_v02 from an in-point where the broth is visibly cloudy (~2 s+); \"Keep the swan neck intact.\" -> 11_result_returns_v01; then the loop span. Drop 05_tip_the_trap_v17 and 07_bloom_cloud_v13 (intact clear flask under the payoff in v03). Plates are in NAS .../001_How-Did-We-Discover-Germs/04_Generated-Clips/part04/raw/v01_fast_probe/. The 9-14 s promo title must not sit over \"life blooms\".\n4. Loop tail <=1.0 s (end of \"intact.\" to end of file; v03 1.10 s). Masked last-vs-frame-0 <=15; log loop_diff whole and masked.\n5. Meta word times from a re-measured pass on the v04 stem (not the aligned-character map). Include payoff_vs_70pct, measured LUFS, max inter-sentence gap, six brief fields.\n6. Gates: gate_shorts_open --air-date 2026-10-27 strict incl. transcript, picture_qa, polish, music, sfx, J0918 HOS ship gate; all PASS. Commit meta, gate text, 2 fps sheet (git add -f) in HOS. Copy _PHONE + sheet to HOS UAT and NAS 10_Shorts/s11_curved_flask_v04/.\nNit (optional): hook text \"FLASK STAYS\" -> \"FLASK STAYS CLEAR\" if it fits.\n\nPark: jobs.py block J0939 --agent <you> --reason \"parked for Chief: 1-BZaFIMwYU flask v04 PASS; Ben to OK swap\" --git, and post on HOS #180.\nGBP0: words already on disk only; no new TTS/Veo/Flow/Omni/Vertex/paid API. No upload, no Studio change, no Public, no Replace, no swap, no delete, no reset, no force-push.\n",
+      "ref": "6389732009",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T07:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T07:37Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "video"
     }
   ],
   "focus": [],
