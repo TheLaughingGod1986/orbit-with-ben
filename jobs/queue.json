@@ -78494,6 +78494,11 @@
           "at": "2026-10-25T15:27Z",
           "by": "chief",
           "what": "no longer waits on Ben (entry 2): OK'd, delivered by J0950"
+        },
+        {
+          "at": "2026-10-25T15:27Z",
+          "by": "chief",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J0951"
         }
       ],
       "kind": "video",
@@ -78501,7 +78506,14 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "awaits_ben": {
+      "progress": {
+        "step": 4,
+        "of": 5,
+        "at": "2026-10-25T15:08Z",
+        "by": "cursor",
+        "note": "v09 gates PASS; master sha 6b804f770d9cbec7 on iCloud UAT and NAS"
+      },
+      "awaits_was": {
         "what": "swap the Venus lead Short (Jcuiy0a9BFI) to re-cut v04 before it airs Thu 29 Oct 11:30",
         "file": "OWB UAT/venus_two_hours_v04/venus_two_hours_v04_PHONE.mp4",
         "version": "v04",
@@ -78511,13 +78523,6 @@
         "title": "Venus lead Short re-cut v04 (Jcuiy0a9BFI)",
         "number": "023",
         "type": "short"
-      },
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-10-25T15:08Z",
-        "by": "cursor",
-        "note": "v09 gates PASS; master sha 6b804f770d9cbec7 on iCloud UAT and NAS"
       }
     },
     {
@@ -79785,9 +79790,27 @@
           "at": "2026-10-25T15:27Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-25T15:27Z",
+          "by": "chief",
+          "what": "approved by Ben: swap the Venus lead Short (Jcuiy0a9BFI) to re-cut v04 before it airs Thu 29 Oct 11:30 v04 (asked in J0932)"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap the Venus lead Short (Jcuiy0a9BFI) to re-cut v04 before it airs Thu 29 Oct 11:30",
+        "file": "OWB UAT/venus_two_hours_v04/venus_two_hours_v04_PHONE.mp4",
+        "version": "v04",
+        "airs": "2026-10-29T11:30Z",
+        "title": "Venus lead Short re-cut v04 (Jcuiy0a9BFI)",
+        "number": "023",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0932",
+        "okAt": "2026-10-25T15:17Z",
+        "okRef": "6399397319"
+      }
     }
   ],
   "focus": [],
