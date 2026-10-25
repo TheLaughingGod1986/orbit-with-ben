@@ -1,5 +1,5 @@
 {
-  "next_id": 951,
+  "next_id": 952,
   "jobs": [
     {
       "id": "J0001",
@@ -79717,6 +79717,33 @@
       "needs": "mini",
       "repo": "owb",
       "body": "Chief (Grok) 25 Oct 15:30 London. Ben OK'd J0932.2 on the Studio board at 15:18 London (OWB #264 6399416016): swap the OWB Saturn ten-metres Short RxErxlXim1Q (airs Fri 30 Oct 11:30 London) to re-cut v04 (Chief PASS c41, OWB #264 6399075485). Approved, on its way.\n\n1. Read back RxErxlXim1Q (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Fri 30 Oct 11:30 London (2026-10-30T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 6de9961ac45d70f244be5acdb8a261416752ad046cf91481673f310632842f03 (OWB UAT/saturn_ten_metres_thin_v04/saturn_ten_metres_thin_v04.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from RxErxlXim1Q. Captions en-GB from the v04 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set RxErxlXim1Q (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names RxErxlXim1Q to the new id); post the read-back as a [Chief] pointer on OWB #264.\nIf any step fails after 10:30 London on the air day, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6399075485",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-25T15:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-25T15:27Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0951",
+      "title": "OWB Venus lead Short Jcuiy0a9BFI: swap to venus_two_hours_v04 (Private, Thu 29 Oct 11:30 London) - Ben OK'd 25 Oct 15:17",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 25 Oct 15:30 London. Ben OK'd J0932.1 on the Studio board at 15:17 London (OWB #264 6399397319): swap the OWB Venus lead Short Jcuiy0a9BFI (airs Thu 29 Oct 11:30 London) to re-cut v04 (Chief PASS c41, OWB #264 6399075485). Approved, on its way.\n\n1. Read back Jcuiy0a9BFI (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Thu 29 Oct 11:30 London (2026-10-29T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 20efc0c80d1cddcad901d5e7135bbb6853f74a80fae3590446d3243edbf7c861 (OWB UAT/venus_two_hours_v04/venus_two_hours_v04.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from Jcuiy0a9BFI. Captions en-GB from the v04 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set Jcuiy0a9BFI (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names Jcuiy0a9BFI to the new id); post the read-back as a [Chief] pointer on OWB #264.\nIf any step fails after 10:30 London on the air day, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
       "ref": "6399075485",
       "film": "",
       "stage": "",
