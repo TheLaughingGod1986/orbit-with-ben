@@ -44,6 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0954 | mini | open | – | – | video · Apophis Short BbsyFrV8kCY v11 (Ben 25 Oct 16:35: asteroid not fully rendered): whole lit rock, re-park for Chief by Tue 27 Oct 12:00 | 6400248794 |
 | J0955 | mini | open | – | – | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
 | J0956 | mini | blocked | chief | – | studio · OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30 | 6402300872 |
+| J0957 | mini | open | – | – | studio · HOS Short -3L6HzJ_d_4: set Related to _C92tIJCk8A (flask v07, do not re-upload) | 6400071733 |
 
 Recently finished:
 
