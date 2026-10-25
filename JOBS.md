@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0923 | mini | blocked | cursor | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · 029 Betelgeuse: Shorts plan (2-3 Shorts from locked long vP1BbqZ_dnM, Learnings checklist, £0) | 6384887788 |
 | J0929 | mini | blocked | cursor | – | assembly · 029 Betelgeuse: build 3 Shorts from SHORTS_PLAN_v01 (Wed 9 Dec dimming / Fri 11 Dec opening Test A / Mon 14 Dec half-Moon daylight), gates, covers, park for Chief |  |
-| J0930 | mini | claimed | gemini | 2026-10-25T07:48Z | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0930 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
