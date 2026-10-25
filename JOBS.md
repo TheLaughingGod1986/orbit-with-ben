@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0946 | mini | open | – | – | 007 upload · studio · HOS 007 Vaccine: Final OK -> package master v04, gates, Private upload publishAt Thu 12 Nov 18:00 London, read back (Ben OK'd 25 Oct 14:25) | 6398845411 |
 | J0949 | mini | open | – | – | studio · OWB Venus size Short YC65mdh6Hgg: swap to venus_95pct_wide_v05 (Private, Mon 2 Nov 11:30 London) - Ben OK'd 25 Oct 15:19 | 6399075485 |
 | J0950 | mini | open | – | – | studio · OWB Saturn ten-metres Short RxErxlXim1Q: swap to saturn_ten_metres_thin_v04 (Private, Fri 30 Oct 11:30 London) - Ben OK'd 25 Oct 15:18 | 6399075485 |
-| J0951 | mini | open | – | – | studio · OWB Venus lead Short Jcuiy0a9BFI: swap to venus_two_hours_v04 (Private, Thu 29 Oct 11:30 London) - Ben OK'd 25 Oct 15:17 | 6399075485 |
+| J0951 | mini | claimed | cursor | 2026-10-25T19:42Z | studio · OWB Venus lead Short Jcuiy0a9BFI: swap to venus_two_hours_v04 (Private, Thu 29 Oct 11:30 London) - Ben OK'd 25 Oct 15:17 | 6399075485 |
 | J0952 | mini | open | – | – | studio · HOS Short 1-BZaFIMwYU: swap to flask v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Mon 26 Oct 20:00 | 6399701162 |
 | J0954 | mini | open | – | – | video · Apophis Short BbsyFrV8kCY v11 (Ben 25 Oct 16:35: asteroid not fully rendered): whole lit rock, re-park for Chief by Tue 27 Oct 12:00 | 6400248794 |
 | J0955 | mini | open | – | – | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
