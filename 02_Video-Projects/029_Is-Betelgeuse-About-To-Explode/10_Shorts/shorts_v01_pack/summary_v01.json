@@ -1,0 +1,121 @@
+{
+  "job": "J0929",
+  "master": "/Volumes/data/mac-mini-archive/youtube-staging/029/029_Betelgeuse_full_rough_v03b.mp4",
+  "long_id": "vP1BbqZ_dnM",
+  "note": "All three gate PASS. Fri 11 is the Test A opening (33.9s, under the 40s fail). The 2.0s end card is why the last-word gap warns on every Short. Wed frame 0 is the SPHERE disc at 2.32x (warn, under 2.35). Fri frame 0 is the VISIR plume because the VLT starfield matched jJ5LkFGyzLI. Parked for Chief visual PASS. No upload.",
+  "shorts": [
+    {
+      "stem": "029_short_wed09_great_dimming_v01",
+      "day": "Wed 9 Dec",
+      "air_date": "2026-12-09",
+      "title": "Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?",
+      "duration_s": 23.47,
+      "words": 71,
+      "sha256": "4ec7aec0eaf265b29335b3c4b30641f135919a7689e71449444f0c52e08aa370",
+      "phone_bytes": 2287446,
+      "gates": {
+        "gate_shorts_open": "PASS",
+        "gate_shorts_open_warns": [
+          "gap from last word to end is 2.32s > 1.5s (last word 21.15s, duration 23.47s)",
+          "same opening background as bizlhspnVvY (2026-11-30 \u00b7 Why Will Gliese 710's Comets Arrive After It Has Gone?): 30% of blocks match, dHash 25 bits"
+        ],
+        "gate_shorts_open_fails": [],
+        "motion_0_1s": 11.7,
+        "visor_frac": 0.0,
+        "first_cut_s": 2.43,
+        "sfx_kit_level": "PASS",
+        "polish_gate": "PASS",
+        "picture_qa": "PASS",
+        "cover_score": "PASS",
+        "caption_title_safe": "PASS"
+      },
+      "teach": {
+        "text": "CLOUD OF DUST",
+        "s": 17.45,
+        "e": 20.45,
+        "bbox": [
+          264,
+          719,
+          815,
+          777
+        ]
+      },
+      "spend": "\u00a30"
+    },
+    {
+      "stem": "029_short_fri11_opening_testA_v01",
+      "day": "Fri 11 Dec (Test A)",
+      "air_date": "2026-12-11",
+      "title": "Is Betelgeuse Really About to Explode?",
+      "duration_s": 33.9,
+      "words": 102,
+      "sha256": "717cf570f127ff1585339f8c2b60b00118bddd5e061dc88f668a4e59d0c48c6f",
+      "phone_bytes": 6185288,
+      "gates": {
+        "gate_shorts_open": "PASS",
+        "gate_shorts_open_warns": [
+          "duration 33.9s outside 22\u201327s band",
+          "gap from last word to end is 2.32s > 1.5s (last word 31.58s, duration 33.90s)"
+        ],
+        "gate_shorts_open_fails": [],
+        "motion_0_1s": 13.21,
+        "visor_frac": 0.0007,
+        "first_cut_s": 2.23,
+        "sfx_kit_level": "PASS",
+        "polish_gate": "PASS",
+        "picture_qa": "PASS",
+        "cover_score": "PASS",
+        "caption_title_safe": "PASS"
+      },
+      "teach": {
+        "text": "DAYTIME SKY",
+        "s": 17.62,
+        "e": 20.62,
+        "bbox": [
+          307,
+          719,
+          772,
+          777
+        ]
+      },
+      "spend": "\u00a30"
+    },
+    {
+      "stem": "029_short_mon14_half_moon_daylight_v01",
+      "day": "Mon 14 Dec",
+      "air_date": "2026-12-14",
+      "title": "How Bright Will Betelgeuse Get When It Explodes?",
+      "duration_s": 23.97,
+      "words": 55,
+      "sha256": "c486148e261eac23d4ffbb893bf2e55ef57e790c37f8c3ab1745e8984283f071",
+      "phone_bytes": 3817875,
+      "gates": {
+        "gate_shorts_open": "PASS",
+        "gate_shorts_open_warns": [
+          "gap from last word to end is 2.33s > 1.5s (last word 21.64s, duration 23.97s)"
+        ],
+        "gate_shorts_open_fails": [],
+        "motion_0_1s": 30.7,
+        "visor_frac": 0.0,
+        "first_cut_s": 3.0,
+        "sfx_kit_level": "PASS",
+        "polish_gate": "PASS",
+        "picture_qa": "PASS",
+        "cover_score": "PASS",
+        "caption_title_safe": "PASS"
+      },
+      "teach": {
+        "text": "HALF MOON BRIGHT",
+        "s": 18.9,
+        "e": 21.79,
+        "bbox": [
+          197,
+          719,
+          883,
+          777
+        ]
+      },
+      "spend": "\u00a30"
+    }
+  ]
+}
