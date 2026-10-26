@@ -44,6 +44,7 @@ import fcntl
 import hashlib
 import json
 import os
+import re
 import pathlib
 import subprocess
 import sys
@@ -129,6 +130,31 @@ def chief_work(at: dt.datetime, state: pathlib.Path, agent: str, jobs: list) -> 
             live = False
     active = active if live else None
     inbox = _read_json(state / "inbox.json") or {}
+    # A relay started before the visibility upgrade cannot write active.json yet.
+    # Observe its actual CLI prompt until that run exits; never infer work from a heartbeat.
+    if not active and agent in ("codex", "gemini") and inbox.get("agent") == agent:
+        try:
+            processes = subprocess.check_output(["ps", "-axo", "pid=,etime=,command="], text=True, timeout=5)
+            for line in processes.splitlines():
+                fields = line.strip().split(None, 2)
+                if len(fields) != 3 or not any(cli in fields[2] for cli in ("codex exec ", "/agy ")):
+                    continue
+                match = re.search(r"CHIEF REVIEW PRIORITY: before taking an ordinary job, review (J[0-9]+):", fields[2])
+                if not match or not any(j.get("id") == match[1] for j in inbox.get("jobs", [])):
+                    continue
+                elapsed = fields[1].split("-")
+                seconds = sum(int(n) * 60**i for i, n in enumerate(reversed(elapsed[-1].split(":"))))
+                seconds += int(elapsed[0]) * 86400 if len(elapsed) == 2 else 0
+                if seconds > 26 * 60:
+                    continue
+                title = next(j.get("title", "") for j in inbox["jobs"] if j.get("id") == match[1])
+                started = at - dt.timedelta(seconds=seconds)
+                active = {"job": match[1], "title": title, "agent": agent, "pid": int(fields[0]),
+                          "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(minutes=26)),
+                          "kind": "chief-review"}
+                break
+        except (OSError, ValueError, subprocess.SubprocessError):
+            pass
     queued = {j.get("id"): j for j in jobs}
     pending = [j for j in inbox.get("jobs", []) if j.get("id") != (active or {}).get("job")
                and queued.get(j.get("id"), {}).get("status") in ("blocked", "open")]
