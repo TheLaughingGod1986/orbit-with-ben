@@ -41,7 +41,7 @@ console.log('Tracker activity regression checks passed');
 const chiefReview={job:'J0956',title:'Neptune <review>',agent:'codex',startedAt:new Date().toISOString(),expiresAt:new Date(Date.now()+60000).toISOString()};
 t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:chiefReview,next:[{id:'J0974',title:'Apophis review'}]}}});
 t.renderStrip();html=elements.strip.innerHTML;
-assert(html.includes('J0956')&&html.includes('Neptune &lt;review&gt;')&&html.includes('bar indeterminate'));
+assert(html.includes('J0956')&&html.includes('Neptune &lt;review&gt;')&&html.includes('aria-valuenow="0"'));
 assert(html.includes('J0974'));
 assert(!html.includes('No job is currently claimed')&&!html.includes('Nothing else queued'));
 t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:{...chiefReview,expiresAt:new Date(Date.now()-60000).toISOString()},next:[]}}});
@@ -62,3 +62,8 @@ t.setBoard({owb:{jobs:[{...liveJob,status:'blocked',result:'waiting for inputs'}
 assert(!t.cardHtml(activeVideo).includes('live-dot'),'blocked cards must not pulse');
 assert(t.jobHtml(liveJob,'now').includes('aria-valuenow="25"'),'keep confirmed-step progress');
 assert(!t.jobHtml({...liveJob,progress:null},'now').includes('aria-valuenow='),'unknown progress must never imply a percentage');
+
+const reviewProgress={...chiefReview,progress:{step:2,of:3,note:'Evidence checked'}};
+t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:reviewProgress,next:[]}}});
+t.renderStrip();html=elements.strip.innerHTML;
+assert(html.includes('aria-valuenow="67"')&&html.includes('67%'),'Chief review uses its own confirmed steps');

@@ -491,7 +491,7 @@
       const next = nextJobs(owb);
       const chiefWork = M?.chiefWork || {}, review = chiefWork.active;
       const reviewLive = review && tsOf(review.expiresAt) > Date.now();
-      const reviewHtml = reviewLive ? jobHtml({id:review.job,title:review.title,by:review.agent,status:"claimed",claimedAt:review.startedAt}, "now") : "";
+      const reviewHtml = reviewLive ? jobHtml({id:review.job,title:review.title,by:review.agent,status:"claimed",claimedAt:review.startedAt,progress:review.progress || {step:0,of:3,note:"No review steps completed yet"}}, "now") : "";
       const chiefNext = (chiefWork.next || []).filter(j => !reviewLive || j.id !== review.job);
       const chiefNextHtml = chiefNext.slice(0, 1).map(j => jobHtml({id:j.id,title:j.title,by:M?.chief?.agent,status:"open"}, "next")).join("");
       jobsHtml = `<div class="row jobs">

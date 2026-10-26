@@ -464,6 +464,18 @@ def record_chief_attempt(job: dict, agent: str, at: dt.datetime) -> None:
     write_json(d("duties.json"), state)
 
 
+def review_progress(agent: str, job: str, step: int, note: str, at: dt.datetime) -> None:
+    active = read_json(d("active.json")) or {}
+    if not is_elected_chief(agent, at) or active.get("agent") != agent or active.get("job") != job or not active.get("expiresAt") or parse(active["expiresAt"]) <= at:
+        raise ValueError("Only the elected Chief may update its active review")
+    if not 0 <= step <= 3:
+        raise ValueError("Review steps are 0-3: inputs checked, evidence reviewed, ruling recorded")
+    if step < (active.get("progress") or {}).get("step", 0):
+        raise ValueError("Review progress cannot move backwards")
+    active["progress"] = {"step": step, "of": 3, "note": note, "at": iso(at)}
+    write_json(d("active.json"), active)
+
+
 def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime) -> None:
     """A durable inbox for app/cloud Chiefs too, with bounded repeated delivery."""
     previous = read_json(d("inbox.json")) or {}
@@ -1329,6 +1341,9 @@ def run_locked(at: dt.datetime) -> int:
         priority = ("CHIEF REVIEW PRIORITY: before taking an ordinary job, review " + reviews[0]["id"] + ": "
                     + str(reviews[0].get("title") or "") + ". Read its body, result and history plus the evidence. "
                     "Keep the original work held until the decision is recorded. Resolve or delegate the next step; "
+                    f"Report this review's own progress with python3 scripts/chief_relay.py review-progress --agent {who} --job {reviews[0]['id']} --step N --note 'outcome': "
+                    "step 1 after checking inputs/approval, step 2 after reviewing evidence and choosing the ruling, "
+                    "step 3 only after recording the ruling and follow-up. Do not reuse the worker's completed steps. "
                     "record the ruling and concrete follow-up on the queue job, including a dependency or retry date "
                     "for a real external wait. Do not just repeat parked-for-Chief or ask an absent Chief. "
                     f"For an open Chief job, use jobs.py next --id {reviews[0]['id']} --agent {who} --can mini,gemini,any --git to claim that exact job. "
@@ -1344,7 +1359,8 @@ def run_locked(at: dt.datetime) -> int:
         if review_work:
             write_json(d("active.json"), {"job": reviews[0]["id"], "title": reviews[0].get("title", ""),
                        "agent": who, "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(seconds=cap + 60)),
-                       "pid": os.getpid(), "kind": "chief-review"})
+                       "pid": os.getpid(), "kind": "chief-review",
+                       "progress": {"step": 0, "of": 3, "at": iso(started), "note": "Review started"}})
         try:
             code, tail = run_cli(who, prompt, cap, model)
         finally:
@@ -1467,6 +1483,11 @@ def main(argv=None) -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
     sub.add_parser("run")
+    rp = sub.add_parser("review-progress")
+    rp.add_argument("--agent", required=True)
+    rp.add_argument("--job", required=True)
+    rp.add_argument("--step", required=True, type=int)
+    rp.add_argument("--note", required=True)
     s = sub.add_parser("seen")
     s.add_argument("agent")
     dn = sub.add_parser("down")
@@ -1477,6 +1498,9 @@ def main(argv=None) -> int:
     u.add_argument("agent")
     a = ap.parse_args(argv)
     at = now()
+    if a.cmd == "review-progress":
+        review_progress(a.agent, a.job, a.step, a.note, at)
+        return 0
     if a.cmd == "status":
         return cmd_status(at)
     if a.cmd == "run":
