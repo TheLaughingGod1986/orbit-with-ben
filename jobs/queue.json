@@ -79075,10 +79075,10 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-26T03:32Z",
-      "eta": "2026-10-26T13:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
       "result": "",
@@ -79187,6 +79187,11 @@
           "at": "2026-10-26T03:48Z",
           "by": "cursor",
           "what": "step 4 of 6 done: bSjWiCbB7pY fri13 v03 gates PASS. 19.17s, Mars 0.27s, seventy-two 1.42s, cut 2.5s, loop_diff 1.79, sha f080895c. 3e2de9c0d. UAT + NAS. v02 untouched. Next: HZGTovJu_TQ."
+        },
+        {
+          "at": "2026-10-26T03:48Z",
+          "by": "cursor",
+          "what": "released: fri13 bSjWiCbB7pY v03 gates PASS (sha f080895c, 19.17s, Mars 0.27s, seventy-two 1.42s, first cut 2.5s, loop_diff 1.79, -14.9 LUFS). Commit 3e2de9c0d. Master: iCloud OWB UAT/025_fri13_ingenuity_72_v03 and NAS youtube-staging/025/fri13_ingenuity_72_v03 (sha256 checked). v01 and v02 untouched. No upload. 2024 at 13.22s is 0.19s before 70% of 19.17s; audit #9 requires seventy-two by 1.5s, so that number stays early. Gate warns only: duration 19.2s outside 22-27, motion 8.7. No render running. Next: HZGTovJu_TQ mon16."
         }
       ],
       "kind": "video",
