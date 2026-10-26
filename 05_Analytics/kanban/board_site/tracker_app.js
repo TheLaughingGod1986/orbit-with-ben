@@ -38,6 +38,8 @@
 
   // Mirror of scripts/video_tracker.py derive_lane (keep in sync for instant taps).
   function deriveLane(v, check) {
+    // Keep the server's decision when an uploaded video has actionable work.
+    if (v.working && v.lane === "progress") return "progress";
     if ((v.youtube && v.youtube.videoId) || v.lane === "done") return "done";
     const jobs = v.jobs || [];
     const unhandled = check && !check.handled;
@@ -270,9 +272,10 @@
       </div>
       <h3 class="title"><span class="num">${esc(v.number)}</span>${esc(v.title)}</h3>
       ${v.airText ? `<p class="meta">${v.lane === "done" ? esc(v.airText) : "Airs " + esc(v.airText)}</p>` : ""}
-      <p class="line">${esc(v.line)}</p>
+      <p class="line">${esc(cardHeadline(v))}</p>
+      ${cardWorkHtml(v)}
       ${v.ask && v.ask.dueText && v.lane === "ready" && v.readyFor === "Ben" ? `<p class="meta"><b>OK by ${esc(v.ask.dueText)} London</b> · ${esc(v.ask.job)}</p>` : ""}
-      <p class="meta">Waiting on: ${esc(v.waitingOn || "—")}</p>
+      <p class="meta">Waiting on: ${esc(cardWaiting(v))}</p>
       ${flagHtml ? `<div class="flags">${flagHtml}</div>` : ""}
       ${v.okNote ? `<div class="okline">✓ ${esc(v.okNote)}</div>` : ""}
       ${v.lane === "approved" && v.approved ? approvedHtml(v.approved) : ""}
@@ -294,24 +297,114 @@
   const dur = ms => { const m = Math.max(0, Math.round(ms / MIN)); return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h${m % 60 ? ` ${m % 60} min` : ""}`; };
   const agentName = by => {
     const b = String(by || "").toLowerCase(), last = b.split("/").pop();
+    if (last === "codex-dashboard") return "Codex";
     if (last === "gemini" || last === "agy") return "Gemini";
     if (b === "chief" || b.startsWith("chief/")) return "Grok";
     return last ? last[0].toUpperCase() + last.slice(1) : "";
   };
-  // Same maths as the classic board's progressOf: step k of n done at a time → pace per step; never 100% until done.
-  // Ben, 24 Oct 23:57: one filled bar with a number, e.g. "26% · ~57 min left". Completed-step pace when a step is
-  // done; otherwise time since work started over the job's usual length. Capped at 95% until the job is done; past the
-  // usual length it reads "95% · running over". % and time left come from the same total, so they always agree.
+  // Percent is confirmed steps, never elapsed time presented as completed work.
   function jobProgress(j) {
-    const p = j.progress || {}, s = tsOf(j.workStart || j.claimedAt), at = tsOf(p.at), now = Date.now();
+    const p = j.progress || {}, s = tsOf(j.workStart || j.claimedAt);
     const est = (+j.estMin || +j.typMin || 25) * MIN;
-    if (isNaN(s)) return { pct: 0, left: est, over: false, start: s, total: est };
-    const elapsed = Math.max(0, now - s);
-    let total = est;  // expected total working time
-    if (p.of >= 1 && p.step >= 1 && p.step <= p.of && !isNaN(at) && at > s) total = (at - s) / p.step * p.of;
-    const frac = elapsed / total, over = frac >= 0.95;
-    const pct = Math.max(1, Math.min(95, Math.round(frac * 100)));
-    return { pct, left: Math.max(0, total - elapsed), over, start: s, total };
+    const elapsed = isNaN(s) ? 0 : Math.max(0, Date.now() - s);
+    const reported = Number.isInteger(p.step) && Number.isInteger(p.of) && p.of > 0 && p.step >= 0 && p.step <= p.of;
+    return { pct: reported ? Math.round(100 * p.step / p.of) : null,
+      left: Math.max(0, est - elapsed), over: elapsed > est, start: s, total: est };
+  }
+  function jobState(j) {
+    if (j.status === "claimed") return j.eta && tsOf(j.eta) < Date.now() - 45 * MIN ? "stalled" : "running";
+    if (j.status === "blocked" && /reset|renewal|waits? (?:for |until ).*public|date gate|test.*(?:running|ends?)/i.test(j.result || "")) return "waiting";
+    if (j.status === "blocked") return /parked for (?:the )?chief|chief (?:review|pass|ruling)/i.test(j.result || "") ? "review" : "waiting";
+    const states = ((board || {}).owb || {}).jobStates || {};
+    if (tsOf(j.notBefore) > Date.now() || (j.after && states[j.after]?.status !== "done")) return "waiting";
+    return "queued";
+  }
+  function blockReason(j) {
+    if (j.status === "blocked") return j.result || j.last?.what || "No blocker reason recorded.";
+    if (j.after) return `Waiting for ${j.after}.`;
+    if (j.notBefore) return `Starts after ${new Date(j.notBefore).toLocaleString("en-GB", { timeZone: "Europe/London" })} London.`;
+    return "Claim is overdue; waiting for the relay to check or reassign it.";
+  }
+  function supportingJob(j) {
+    return /\bBacklog\b|Weekly .*audit|Daily Studio read|QA sweep|listing check.*(?:live videos|last \d+)/i.test(j.title || "");
+  }
+  function matchesVideo(j, v) {
+    if (supportingJob(j)) return false;
+    if ((v.jobs || []).some(x => x.id === j.id)) return true;
+    const vid = v.shortId || v.youtube?.videoId;
+    if (vid && String(j.title || "").includes(vid)) return true;
+    // Parent-film completions are not completions of every Short.
+    if (v.type === "short") return false;
+    if ((j.taskKeys || []).includes(v.key) || j.film === v.key) return true;
+    const f = filmOf(j);
+    return f.key === v.key;
+  }
+  function cardWork(v) {
+    const owb = (board || {}).owb || {};
+    const live = (owb.jobs || []).filter(j => matchesVideo(j, v));
+    // Baked data still supplies live ids before the full queue arrives.
+    for (const j of v.jobs || []) if (!supportingJob(j) && !live.some(x => x.id === j.id)) live.push(j);
+    const done = (owb.done || []).filter(j => matchesVideo(j, v)).sort((a,b) => tsOf(b.at)-tsOf(a.at));
+    return { live, done };
+  }
+  function cardWaiting(v) {
+    if (!["progress","changes"].includes(v.lane)) return v.waitingOn || "—";
+    const live=cardWork(v).live;
+    const running=live.find(j=>jobState(j)==="running");
+    if(running) return agentName(running.by);
+    if(live.some(j=>jobState(j)==="queued")) return "next available worker";
+    if(live.length) return [...new Set(live.map(j=>jobState(j)==="review"?"Chief review":/ElevenLabs|Flow.*credit|credit.*renew/i.test(j.result||"")?"credit reset":"input / date"))].join(" · ");
+    return v.waitingOn || "—";
+  }
+  function cardHeadline(v) {
+    if (!["progress", "changes"].includes(v.lane)) return v.line;
+    const live=cardWork(v).live;
+    const running=live.find(j=>jobState(j)==="running");
+    if(running) return `${agentName(running.by)} is working on ${running.id}: ${taskOf(running)}`;
+    const queued=live.find(j=>jobState(j)==="queued");
+    if(queued) return `Next: ${queued.id} — ${taskOf(queued)}`;
+    if(live.length) return `Work is paused — ${live.some(j=>jobState(j)==="review")?"awaiting Chief review":"waiting on inputs, a release date or credits"}.`;
+    return v.line;
+  }
+  function cardWorkHtml(v) {
+    const w = cardWork(v);
+    if (!w.live.length && !w.done.length) return "";
+    const counts = w.live.reduce((a,j) => { const k=jobState(j); a[k]=(a[k]||0)+1; return a; }, {});
+    const summary = [["running","running"],["queued","queued"],["waiting","waiting"],["review","awaiting Chief"],["stalled","stalled"]]
+      .filter(([k])=>counts[k]).map(([k,label])=>`${counts[k]} ${label}`).join(" · ");
+    const running = w.live.filter(j=>jobState(j)==="running");
+    const latest = w.done[0];
+    return `<div class="card-work"><b>${w.live.length} ${w.live.length===1?"job":"jobs"} remaining</b>${summary?`<p class="meta">${esc(summary)}</p>`:""}
+      ${running.map(j=>jobHtml(j,"now")).join("")}
+      ${w.live.length?`<details id="remaining-${esc(v.key)}"><summary>Remaining tasks and blockers</summary>${w.live.filter(j=>jobState(j)!=="running").map(waitingJobHtml).join("")}</details>`:""}
+      ${latest?`<div class="last-result">✓ Last completed: ${esc(latest.id)} · ${esc(agentName(latest.by))} · ${esc(new Date(latest.at).toLocaleString("en-GB",{timeZone:"Europe/London"}))} London<br>${esc(taskOf(latest))}</div>`:""}
+      ${w.done.length?`<details id="completed-${esc(v.key)}"><summary>Recent completed jobs (${w.done.length})</summary>${w.done.slice(0,8).map(doneJobHtml).join("")}</details>`:""}
+    </div>`;
+  }
+  function waitingJobHtml(j) {
+    const state=jobState(j), labels={queued:"Queued",waiting:"Waiting on input/date",review:"Awaiting Chief review",stalled:"Stalled claim",running:"Running"};
+    return `<div class="task-row"><b>${esc(j.id)} · ${labels[state]}</b><div>${esc(taskOf(j))}</div>
+      ${state!=="queued"?`<p class="block-reason">${esc(blockReason(j))}</p>`:""}
+      ${j.progress?.of?`<div class="meta">${j.progress.step} of ${j.progress.of} steps recorded complete${j.progress.note?` · ${esc(j.progress.note)}`:""}</div>`:""}
+      ${j.last?.at?`<div class="meta">Updated ${esc(new Date(j.last.at).toLocaleString("en-GB",{timeZone:"Europe/London"}))} London · ${esc(agentName(j.last.by || j.by))}</div>`:""}</div>`;
+  }
+  function doneJobHtml(j) {
+    return `<div class="task-row"><b>✓ ${esc(j.id)} · ${esc(agentName(j.by))} · ${esc(new Date(j.at).toLocaleString("en-GB",{timeZone:"Europe/London"}))} London</b><div>${esc(taskOf(j))}</div>${j.result?`<p class="meta">${esc(j.result)}</p>`:""}</div>`;
+  }
+  function renderActivity() {
+    const el=document.getElementById("activity"), owb=(board||{}).owb;
+    if (!el || !owb) return;
+    const opened=[...el.querySelectorAll("details[open]")].map(x=>x.id);
+    const jobs=owb.jobs||[], counts=jobs.reduce((a,j)=>{const k=jobState(j);a[k]=(a[k]||0)+1;return a;},{});
+    const today=new Date().toLocaleDateString("en-CA",{timeZone:"Europe/London"});
+    const done=(owb.done||[]).filter(j=>new Date(j.at).toLocaleDateString("en-CA",{timeZone:"Europe/London"})===today).sort((a,b)=>tsOf(b.at)-tsOf(a.at));
+    const waiting=jobs.filter(j=>["waiting","review","stalled"].includes(jobState(j)));
+    el.innerHTML=`<h2>Studio job activity <span class="meta">Both channels · all jobs</span></h2>
+      <div class="activity-counts"><span><b>${counts.running||0}</b> running</span><span><b>${counts.queued||0}</b> queued</span><span><b>${waiting.length}</b> waiting / review</span><span><b>${owb.day?.doneToday ?? done.length}</b> completed today</span></div>
+      <p class="meta">Lane numbers count videos. These numbers count jobs; one video can need several jobs.</p>
+      <details id="activity-done"><summary>Completed today · ${owb.day?.doneToday ?? done.length}</summary>${done.map(doneJobHtml).join("")||'<p class="meta">No completion records available yet.</p>'}</details>
+      <details id="activity-waiting"><summary>Waiting and blockers · ${waiting.length}</summary>${waiting.map(waitingJobHtml).join("")}</details>`;
+    opened.forEach(id=>{const d=document.getElementById(id);if(d)d.open=true;});
   }
   function filmOf(j) {
     const t = String(j.title || "").replace(/^URGENT:?\s*/i, "");
@@ -339,14 +432,14 @@
     const model = j.model ? ` · ${esc(j.model)}` : "";
     let bar = "", note = "";
     if (kind === "now") {
-      const pr = jobProgress(j), p = j.progress || {}, step = p.of ? `Step ${Math.min((p.step || 0) + 1, p.of)} of ${p.of}` : (j.stage ? `Stage: ${j.stage}` : "");
+      const pr = jobProgress(j), p = j.progress || {}, step = p.of ? `${p.step || 0} of ${p.of} steps complete` : (j.stage ? `Stage: ${j.stage}` : "");
       const since = isNaN(pr.start) ? "" : `started ${hm(pr.start)} · ${dur(Date.now() - pr.start)} so far`;
       const tail = pr.over ? "running over" : `~${dur(pr.left)} left`;
       // Colour moves with progress (Ben, 25 Oct 00:03): red-orange < 34, amber 34-66, green > 66; running over is purple.
       const band = pr.over ? "over" : pr.pct < 34 ? "low" : pr.pct <= 66 ? "mid" : "high";
-      bar = `<div class="bar ${band}" role="progressbar" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
-      note = `<b style="color:var(--ink)">${pr.pct}% · ${tail}</b> · ${[step, since, `usually ~${dur(pr.total)}`].filter(Boolean).join(" · ")}`;
-      if (p.note) note += `<br>Last step: ${esc(String(p.note).slice(0, 140))}`;
+      bar = pr.pct === null ? "" : `<div class="bar ${band}" role="progressbar" aria-label="Confirmed job steps" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
+      note = `<b style="color:var(--ink)">${pr.pct === null ? "Progress not reported" : `${pr.pct}% confirmed`} · ${tail} (estimate)</b> · ${[step, since, `usually ~${dur(pr.total)}`].filter(Boolean).join(" · ")}`;
+      if (p.note) note += `<br>Latest update${p.at ? ` at ${hm(tsOf(p.at))}` : ""}: ${esc(String(p.note).slice(0, 240))}`;
     } else {
       note = j.urgent ? "Urgent — goes first" : (j.after ? `after ${esc(j.after)}` : "");
     }
@@ -361,7 +454,7 @@
     const jobs = owb.jobs || [], byId = Object.fromEntries(jobs.map(j => [j.id, j])), now = Date.now();
     const order = ((owb.runOrder || {}).mini) || jobs.filter(j => (j.line || j.needs) === "mini" && j.status === "open")
       .sort((a, b) => (b.urgent ? 1 : 0) - (a.urgent ? 1 : 0) || (a.pos ?? 9e9) - (b.pos ?? 9e9)).map(j => j.id);
-    return order.map(id => byId[id]).filter(j => j && j.status === "open" && !(tsOf(j.notBefore) > now)).slice(0, 2);
+    return order.map(id => byId[id]).filter(j => j && j.status === "open" && jobState(j) === "queued").slice(0, 2);
   }
   function renderStrip() {
     const el = document.getElementById("strip");
@@ -386,11 +479,11 @@
     }
     let jobsHtml = "";
     if (owb) {
-      const now = (owb.jobs || []).filter(j => j.status === "claimed" && !(j.eta && tsOf(j.eta) < Date.now() - 45 * MIN))
+      const now = (owb.jobs || []).filter(j => jobState(j) === "running")
         .sort((a, b) => (b.urgent ? 1 : 0) - (a.urgent ? 1 : 0) || tsOf(a.claimedAt) - tsOf(b.claimedAt));
       const next = nextJobs(owb);
       jobsHtml = `<div class="row jobs">
-        <div class="row"><h2>Now working</h2>${now.length ? now.map(j => jobHtml(j, "now")).join("") : '<p class="mmeta">Nothing claimed right now — the Mac mini picks the next job within a few minutes.</p>'}</div>
+        <div class="row"><h2>Now working</h2>${now.length ? now.map(j => jobHtml(j, "now")).join("") : '<p class="mmeta">No job is currently claimed. See queued work and waiting reasons below.</p>'}</div>
         <div class="row"><h2>Next</h2><div class="nextlist">${next.length ? next.map(j => jobHtml(j, "next")).join("") : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
       </div>`;
     }
@@ -399,6 +492,7 @@
 
   function render() {
     renderStrip();
+    renderActivity();
     const root = board && board.tracker;
     if (!root || !Array.isArray(root.videos)) {
       document.getElementById("board").innerHTML = `<p class="empty">No tracker data yet. The Mini publishes it on the next board-data push.</p>`;
@@ -425,6 +519,7 @@
     });
 
     const boardEl = document.getElementById("board");
+    const opened=[...boardEl.querySelectorAll("details[open]")].map(x=>x.id);
     boardEl.innerHTML = LANES.map(([id, label]) => {
       const all = videos.filter(v => v.lane === id);
       const shown = id === "done" && !showOldDone ? all.filter(v => !v.collapsed) : all;
@@ -434,9 +529,12 @@
         ? `<button type="button" class="collapsed-toggle" data-old="1">Show ${hidden} older public</button>`
         : (id === "done" && showOldDone
           ? `<button type="button" class="collapsed-toggle" data-old="0">Hide older public</button>` : "");
-      return `<section class="lane" data-lane="${id}"><h2>${label}<span class="n">${shown.length}</span></h2><div class="cards">${body}${more}</div></section>`;
+      const running=all.filter(v=>cardWork(v).live.some(j=>jobState(j)==="running")).length;
+      const sub=id==="progress"?`<p class="lane-summary">${running} being worked on · ${all.length-running} queued / waiting</p>`:"";
+      return `<section class="lane" data-lane="${id}"><h2>${label}<span class="n">${shown.length} videos</span></h2>${sub}<div class="cards">${body}${more}</div></section>`;
     }).join("");
 
+    opened.forEach(id=>{const d=document.getElementById(id);if(d)d.open=true;});
     boardEl.querySelectorAll("[data-ok]").forEach(b => b.onclick = () => {
       const v = videos.find(x => x.key === b.dataset.ok);
       if (v) approve(v);
@@ -515,6 +613,6 @@
   pollData();
   pollChecks();
   setInterval(() => { pollData(); pollChecks(); }, 60 * 1000);
-  setInterval(renderStrip, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
+  setInterval(() => { renderStrip(); renderActivity(); }, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { pollData(); pollChecks(); } });
 })();

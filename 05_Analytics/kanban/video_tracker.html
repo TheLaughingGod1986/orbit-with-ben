@@ -65,6 +65,7 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 .appr.warn { background: rgba(255,107,107,0.10); border-color: var(--flag); }
 .appr.warn .appr-state { color: var(--flag); }
 .lane[data-lane="done"] h2 { color: var(--ok); }
+.lane-summary { font-size: .8rem; color: var(--muted); margin: 0; padding: 8px 14px; border-bottom: 1px solid var(--line); }
 .cards { padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 .card {
   background: var(--panel2); border: 1px solid var(--line); border-radius: 12px;
@@ -151,6 +152,20 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 @media (min-width: 900px) {
   .strip .row.jobs { flex-direction: row; } .strip .row.jobs > * { flex: 1 1 0; min-width: 0; }
 }
+.activity { margin-bottom: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.activity h2 { margin: 0 0 10px; font-size: 1rem; }
+.activity-counts { display: flex; flex-wrap: wrap; gap: 8px; }
+.activity-counts span { background: var(--panel2); border-radius: 8px; padding: 8px 12px; font-size: .85rem; }
+.activity-counts b { font-size: 1.1rem; }
+.activity details, .card-work details { margin-top: 10px; }
+.activity summary, .card-work summary { cursor: pointer; color: var(--hos); font-size: .85rem; padding: 7px 0; }
+.activity details[open] { max-height: 420px; overflow: auto; }
+.task-row { padding: 10px 0; border-top: 1px solid var(--line); font-size: .85rem; line-height: 1.4; overflow-wrap: anywhere; }
+.task-row b { display: block; margin-bottom: 4px; }
+.block-reason { margin: 6px 0; color: #f5d8a2; }
+.card-work { border-top: 1px solid var(--line); padding-top: 10px; font-size: .85rem; }
+.card-work > .job { margin: 8px 0; }
+.last-result { margin-top: 8px; color: #bff0d8; font-size: .8rem; }
 footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
 footer a { color: inherit; }
 .modal-bg {
@@ -180,6 +195,7 @@ footer a { color: inherit; }
   <div class="filters" id="filters"></div>
 </header>
 <section class="strip" id="strip" aria-label="Now working"></section>
+<section class="activity" id="activity" aria-label="Studio job activity"></section>
 <div class="board" id="board"></div>
 <footer>
   One card per video. Classic board: <a href="/classic">/classic</a> ·
