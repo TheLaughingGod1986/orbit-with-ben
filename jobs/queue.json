@@ -1,5 +1,5 @@
 {
-  "next_id": 989,
+  "next_id": 991,
   "jobs": [
     {
       "id": "J0001",
@@ -83683,11 +83683,11 @@
       "title": "OWB Apophis Short BbsyFrV8kCY: swap to v13 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Wed 28 Oct 10:30",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief (Grok) 26 Oct 07:35 London, J0954 Apophis v13 PASS (ruling c62, OWB #264 6410661010).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB Short BbsyFrV8kCY (\"An Asteroid Will Skim Past Earth on Friday the 13th\", airs Wed 28 Oct 11:30 London) to re-cut v13 (OWB UAT/030_apophis_short_v13/030_apophis_short_v13_PHONE.mp4, sha256 of master 2b276eb295dffbf4df0e81d874bce98295cfc8a3b94b4e6da945b162b5898abd) on the board or the thread. Deadline for that OK: Wed 28 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v05 airs Wed 28 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Wed 28 Oct; if both videos are not read back by 11:15 London, set the NEW v13 upload to private/unscheduled (not v05) so only v05 airs.\n\nAfter Ben's OK:\n1. Read back BbsyFrV8kCY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Wed 28 Oct 11:30 London (2026-10-28T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/030_apophis_short_v13/030_apophis_short_v13.mp4; repo copy 02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from BbsyFrV8kCY. Captions en-GB from the v13 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set BbsyFrV8kCY (v05) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names BbsyFrV8kCY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.\n\nCHIEF RE-CONFIRM 26 Oct 08:22 London: Apophis is not in the J0216 test, so the earlier 'no Related' note is withdrawn. Related VBaYRPp85Sw + description link go on the NEW v13 copy (J0975 item 3).",
+      "body": "Chief (Grok) 26 Oct 07:35 London, J0954 Apophis v13 PASS (ruling c62, OWB #264 6410661010).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB Short BbsyFrV8kCY (\"An Asteroid Will Skim Past Earth on Friday the 13th\", airs Wed 28 Oct 11:30 London) to re-cut v13 (OWB UAT/030_apophis_short_v13/030_apophis_short_v13_PHONE.mp4, sha256 of master 2b276eb295dffbf4df0e81d874bce98295cfc8a3b94b4e6da945b162b5898abd) on the board or the thread. Deadline for that OK: Wed 28 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v05 airs Wed 28 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Wed 28 Oct; if both videos are not read back by 11:15 London, set the NEW v13 upload to private/unscheduled (not v05) so only v05 airs.\n\nAfter Ben's OK:\n1. Read back BbsyFrV8kCY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Wed 28 Oct 11:30 London (2026-10-28T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/030_apophis_short_v13/030_apophis_short_v13.mp4; repo copy 02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from BbsyFrV8kCY. Captions en-GB from the v13 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set BbsyFrV8kCY (v05) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names BbsyFrV8kCY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.\n\nCHIEF RE-CONFIRM 26 Oct 08:22 London: Apophis is not in the J0216 test, so the earlier 'no Related' note is withdrawn. Related VBaYRPp85Sw + description link go on the NEW v13 copy (J0975 item 3).\n\nACTING-CHIEF RULING 26 Oct (codex): Acting-Chief FIX recorded 26 Oct: exact approved v13 fails current loudness/true-peak gate. Local audio-only v13a delegated to J0989 (assembly), then J0990 (Chief exact-hash/gates review). Swap remains blocked on J0990; Ben's v13 content OK 6411210906 retained. No upload or gate override. Review target 27 Oct 12:00 London; hard cutoff 28 Oct 10:30, upload start <=10:45, both readbacks <=11:15; original fallback unchanged.\nSee follow-up briefs for proof and approval conditions. Existing progress 1/4 remains upload progress, not review completion.",
       "ref": "6410661010",
       "film": "",
       "stage": "",
-      "after": "J0954",
+      "after": "J0990",
       "eta_min": 60,
       "status": "blocked",
       "by": "codex",
@@ -83695,7 +83695,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T07:32Z",
-      "result": "parked for Chief: approved hash-locked v13 fails current gate_shorts_open (-14.7 LUFS outside -14.5..-13.5; true peak -1.4 above -1.6 dBTP). Decide corrected master and approval path; no gate override or upload performed. Old BbsyFrV8kCY remains Private scheduled 2026-10-28T11:30:00Z.",
+      "result": "Acting-Chief FIX recorded 26 Oct: exact approved v13 fails current loudness/true-peak gate. Local audio-only v13a delegated to J0989 (assembly), then J0990 (Chief exact-hash/gates review). Swap remains blocked on J0990; Ben's v13 content OK 6411210906 retained. No upload or gate override. Review target 27 Oct 12:00 London; hard cutoff 28 Oct 10:30, upload start <=10:45, both readbacks <=11:15; original fallback unchanged.",
       "history": [
         {
           "at": "2026-10-26T07:32Z",
@@ -83766,6 +83766,11 @@
           "at": "2026-10-26T18:45Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T21:46Z",
+          "by": "codex",
+          "what": "Acting-Chief FIX recorded 26 Oct: exact approved v13 fails current loudness/true-peak gate. Local audio-only v13a delegated to J0989 (assembly), then J0990 (Chief exact-hash/gates review). Swap remains blocked on J0990; Ben's v13 content OK 6411210906 retained. No upload or gate override. Review target 27 Oct 12:00 London; hard cutoff 28 Oct 10:30, upload start <=10:45, both readbacks <=11:15; original fallback unchanged."
         }
       ],
       "kind": "studio",
@@ -85068,6 +85073,68 @@
       ],
       "kind": "assembly",
       "urgent": 6
+    },
+    {
+      "id": "J0989",
+      "title": "OWB 030 J0974 audio-only v13a correction: current loudness gate",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief Codex ruling on J0974, 26 Oct 2026. Local audio-only correction authorised, GBP0. Ben approved the content at OWB #264 comment 6411210906 (08:07); c62 picture PASS is 6410661010. Exact v13 sha256 2b276eb295dffbf4df0e81d874bce98295cfc8a3b94b4e6da945b162b5898abd freshly verified. Current gate FAIL: integrated -14.7 LUFS (must be -14.5..-13.5) and true peak -1.4 dBTP (must be <=-1.6). Evidence jobs/reviews/J0974_v13_gate_2026-10-26.txt. No gate override.\n\nBuild 030_apophis_short_v13a.mp4 beside v13 from 02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/. Preserve v13 and all older masters. Stream-copy video: decoded frames, 565-frame count, duration, timestamps, captions, rock, cuts and loop must match exactly. No new VO, picture, music, words, title or timing. Correct audio using two-pass loudness normalisation/limiting; target -14.0 integrated and conservative true peak target <=-2.0 before AAC, then measure final AAC with ebur128=peak=true. No clipping, pumping, cut words, changed sync or silence. Retain 48k stereo; verify duration and audio alignment against v13. Do not infer success from filter settings. Preserve stems and verify VO intelligibility, music coverage and SFX level rules on corrected output.\n\nRun current strict gate --air-date 2026-10-28, picture_qa, polish, music, SFX, finish_scan and loop checks with correctly named v13a sidecars. Preserve v13's approved 18.83 s cut and statement hook under orbit-build-shorts.mdc Keeper score item 7 (already approved ships as is); duration warning is recorded, not padded away. This is an audio conformity correction to the existing approved cut, not a new Short. If any content/timing change is needed, stop and return it for Ben's review; this brief does not authorise it.\n\nRecord old/new SHA256, ffprobe specs, final audio measurements, decoded video/frame-timestamp equality, sync and listening checks. Copy master, PHONE and evidence to fresh OWB UAT/030_apophis_short_v13a and NAS with SHA256 manifests; no media in git. Check any j0974-archive tmux session first; log ~/_desk/logs/j0974-archive.log and .done. It archives only obsolete v11 scratch; do not duplicate it. Keep v12/v13 scratch.\n\nFinish the local build job only with all evidence committed and gates passing; its dependent Chief job reviews the new exact hash before any upload. Aim Tue 27 Oct 12:00 London. No upload or YouTube/Buffer mutations here. For long work use detached tmux with log/.done, release and name them. Do not claim approval for v13a from Ben: his recorded content approval is for v13; the technical derivative needs the dependent Chief decision.",
+      "ref": "",
+      "film": "030",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T21:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T21:46Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "taskKeys": [
+        "OWB:030"
+      ],
+      "urgent": 7
+    },
+    {
+      "id": "J0990",
+      "title": "OWB 030 J0974 audio-only v13a: Chief technical release review",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Review the J0974 audio-only v13a correction after its assembly dependency completes. Check chief_relay.py status; only the elected Chief decides. Verify every gate, original/new SHA256, exact decoded video and timestamps, audio sync and intelligibility and final AAC -14.0 +/-0.5 LUFS, peak <=-1.6 dBTP. No gate override. Ben's existing content OK is comment 6411210906; c62 picture PASS 6410661010. Acting Chief authorises a strictly technical audio derivative, subject to this verification; do not invent Ben approval of its new hash. Keeper score item 7 preserves the already-approved cut/slot; no padding, title/VO or picture change.\n\nPASS: record the exact v13a master path/hash and Chief technical sign-off in J0974, superseding only its v13 path/hash, then reopen J0974 for its existing studio worker. Existing Ben approval remains recorded. Any change beyond technical audio conformity returns the concrete cut to Ben via jobs.py awaits with working Play link and Wed 28 Oct 10:30 London deadline; keep J0974 blocked. FAIL: return concrete fixes to assembly, retain dependency. Aim review Tue 27 Oct 12:00 London. Recheck at the existing 28 Oct 10:30 deadline if unresolved; never upload failing or unapproved media. No upload after 10:45; if both copies are not verified by 11:15, new upload private/unscheduled, old v05 unchanged. With no eligible corrected master by cutoff, cancel swap under original fallback. This review does not change YouTube. J0975 remains dependent on J0974 and supplies Related VBaYRPp85Sw plus description link on new copy only.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0989",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T21:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T21:46Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:030"
+      ],
+      "urgent": 7
     }
   ],
   "focus": [],
