@@ -292,8 +292,53 @@ def _mine(job: dict, agent: str) -> None:
         raise ValueError(f"{job['id']} is {job['status']}" + (f" by {job['by']}" if job.get("by") else "") + f", not claimed by {agent}")
 
 
+SWAP_RE = re.compile(r"\b([A-Za-z0-9_-]{11}):\s*swap to\b", re.I)
+READBACKS = pathlib.Path(__file__).resolve().parents[1] / "jobs" / "readbacks"
+
+
+def swap_old_id(job: dict) -> str:
+    """The old copy a swap job replaces, from its title ("... Short dM1OgGPAYvw: swap to v05 ..."), else ""."""
+    m = SWAP_RE.search(job.get("title") or "")
+    return m.group(1) if m else ""
+
+
+def swap_readback_problem(job: dict, at: dt.datetime, folder: pathlib.Path | None = None) -> str:
+    """Why a swap job can't close yet, or "". Its old copy must read back from YouTube as Private with no publishAt,
+    and the new copy Private + scheduled, in jobs/readbacks/<id>.json written by
+    07_Content-Ops/scripts/verify-swap.ts within the last 2 hours (26 Oct 2026: four swaps closed as "unscheduled"
+    while the board still showed both copies scheduled for one slot)."""
+    old = swap_old_id(job)
+    if not old:
+        return ""
+    path = (folder or READBACKS) / f"{job['id']}.json"
+    try:
+        rb = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return (f"swap job: no read-back at jobs/readbacks/{job['id']}.json; run "
+                f"`npx tsx --env-file=.env scripts/verify-swap.ts --job {job['id']} --old {old} --new <new id>` in 07_Content-Ops")
+    o, n = rb.get("old") or {}, rb.get("new") or {}
+    if o.get("id") != old:
+        return f"swap job: read-back is for old copy {o.get('id') or '?'}, not {old}"
+    if o.get("privacyStatus") != "private" or o.get("publishAt"):
+        return f"swap job: old copy {old} reads {o.get('privacyStatus')} publishAt {o.get('publishAt')}; it must be private and unscheduled"
+    if n.get("privacyStatus") != "private" or not n.get("publishAt"):
+        return f"swap job: new copy {n.get('id')} reads {n.get('privacyStatus')} publishAt {n.get('publishAt')}; it must be private and scheduled"
+    try:
+        when = dt.datetime.fromisoformat(str(rb.get("at") or "").replace("Z", "+00:00"))
+    except ValueError:
+        return "swap job: read-back has no time"
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=dt.timezone.utc)
+    if at - when > dt.timedelta(hours=2):
+        return f"swap job: read-back is from {rb.get('at')}; read both copies back again"
+    return ""
+
+
 def do_done(job: dict, agent: str, result: str, at: dt.datetime, ref: str = "") -> None:
     _mine(job, agent)
+    problem = swap_readback_problem(job, at)
+    if problem:
+        raise ValueError(f"{job['id']}: {problem}")
     job.update(status="done", result=result, eta="")
     if ref:
         job["done_ref"] = ref

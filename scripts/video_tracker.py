@@ -164,8 +164,9 @@ def youtube_state(release: dict | None, upload_meta: dict | None) -> dict | None
     return None
 
 
-def _receipt_privacy(root: Path, package_dir: str) -> tuple[str, str]:
-    """Best privacy/publishAt from the newest PACKAGE_UPLOAD_RESULT in a package dir."""
+def _receipt_privacy(root: Path, package_dir: str, video_id: str = "") -> tuple[str, str]:
+    """Best privacy/publishAt from the newest PACKAGE_UPLOAD_RESULT in a package dir (only receipts for `video_id`
+    when given: one folder can hold the receipts of an old copy and its swap)."""
     if not package_dir:
         return "", ""
     folder = root / package_dir
@@ -184,6 +185,9 @@ def _receipt_privacy(root: Path, package_dir: str) -> tuple[str, str]:
                     response = json.loads(response)
                 except ValueError:
                     response = {}
+            rid = response.get("id") or upload.get("platformPostId") or ""
+            if video_id and rid and rid != video_id:
+                continue
             privacy = response.get("privacyStatus") or ""
             publish_at = upload.get("scheduledFor") or response.get("publishAt") or ""
             if privacy or publish_at:
@@ -230,10 +234,15 @@ def uploads_index(root: Path | None = None) -> dict:
         film = m.group(1)
         privacy = meta.get("privacyStatus") or meta.get("privacy") or ""
         publish_at = meta.get("publishAt") or ""
-        if not privacy or not publish_at:
-            rp, ra = _receipt_privacy(root, meta.get("packageDir") or "")
+        # A swap's old copy is recorded with publishAt null (unscheduled) and supersededBy the new id. That null is a
+        # read-back, not a gap: never fill it from a receipt. The package folder is shared with the new copy, so its
+        # newest receipt is the NEW upload's slot (26 Oct 2026: dM1OgGPAYvw + OVLv9dxTcpE both showed scheduled).
+        superseded = str(meta.get("supersededBy") or "")
+        unscheduled = superseded or meta.get("unscheduledAt") or ("publishAt" in meta and meta.get("publishAt") is None)
+        if not privacy or (not publish_at and not unscheduled):
+            rp, ra = _receipt_privacy(root, meta.get("packageDir") or "", vid)
             privacy = privacy or rp
-            publish_at = publish_at or ra
+            publish_at = publish_at or ("" if unscheduled else ra)
         row = {
             "videoId": vid,
             "kind": kind,
@@ -245,6 +254,7 @@ def uploads_index(root: Path | None = None) -> dict:
             "privacyStatus": privacy,
             "publishAt": publish_at,
             "title": meta.get("title") or _receipt_title(root, meta.get("packageDir") or ""),
+            "supersededBy": superseded,
         }
         key = f"OWB:{film}" if kind == "long" else f"OWB:{film}:S:{vid}"
         by_film.setdefault(key, []).append(row)
@@ -957,6 +967,8 @@ def build_videos(
         if ":S:" not in key:
             continue
         meta = rows[0]
+        if meta.get("supersededBy"):
+            continue  # a swap's old copy (Private, unscheduled): only the new copy holds the slot on the board
         num = meta["film"]
         vid = meta["videoId"]
         parent = f"OWB:{num}"
