@@ -82606,13 +82606,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-26T13:29Z",
-      "eta": "2026-10-26T14:59Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "",
+      "result": "parked for Chief: HOS build-rule fix v2",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -82688,6 +82688,11 @@
           "at": "2026-10-26T14:29Z",
           "by": "gemini",
           "what": "step 8 of 8 done: Committed and pushed c91a3633 to HOS origin/main; hos_build_rule_v02.py --check PASS and check_all.sh PASS"
+        },
+        {
+          "at": "2026-10-26T14:29Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS build-rule fix v2"
         }
       ],
       "kind": "assembly",
