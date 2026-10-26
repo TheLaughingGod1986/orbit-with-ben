@@ -82483,6 +82483,11 @@
           "at": "2026-10-26T08:02Z",
           "by": "cursor",
           "what": "released: Step 2/5. Do not rebuild -I_GHK-GcFs or 4WUs0beKn0A. s04 v02 (sha 745de3f56a11, HOS c7aefc18) open/picture/polish/music/sfx PASS, -14.2 LUFS, phone+UAT+NAS copied; whoosh stem passes level but is not mixed into the master. s05 v03 (sha c94af4f919a4) open PASS with onset warn 0.16s, -14.4 LUFS / -1.9 dBTP, whoosh is in the mix, music+sfx PASS, phone+UAT+NAS copied. Scheduled v01 (-I_GHK) and v02 (4WUs) untouched. Still to build: x_3L_IdYgEc never_saw v03 and -sa2t7dAtCk dalton v03 (script at 004 10_Shorts/_build_short_s05_dalton_v03.py, untracked). No upload. Not parked: two Shorts remain, and this is not a Chief PASS."
+        },
+        {
+          "at": "2026-10-26T12:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "kind": "video",
@@ -82497,7 +82502,15 @@
         "at": "2026-10-26T08:02Z",
         "by": "cursor",
         "note": "s04 v02 and s05 v03 open gates PASS; Dalton and capillary Short still to build"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini"
     },
     {
       "id": "J0967",
