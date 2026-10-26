@@ -1,5 +1,5 @@
 {
-  "next_id": 999,
+  "next_id": 1000,
   "jobs": [
     {
       "id": "J0001",
@@ -85512,6 +85512,33 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0999",
+      "title": "HOS 099: compilation end screen and altered-content readback",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief Codex ruling J0981 / HOS #180 6428572814, following J0896. On uAomPaOBrM8 only, before 10 Dec 18:00 London: lint:package must PASS before writes; verify HOS channel UCXp7HkBIl1LgaznXuZHJyRg, scheduled active compilation not stub Hmw4iMDfWFE. Confirm Altered content Yes; set final-20-second end screen 48:58-49:18 with a relevant public long from the approved package, the full HOS playlist ID resolved from package (audit prefix is not enough), and Subscribe. Read back after reload, Not Made for Kids, unchanged title/privacy/publishAt and test. Complete channel:audit and Studio checklist; failed gates remain blocking. Save evidence via HOS PR and desk. No upload, schedule, retitle, privacy change, reset of tests or spend. If duplicate-id audit error persists, depend on J0987 approval/fix rather than waive it.",
+      "ref": "6428572814",
+      "film": "",
+      "stage": "",
+      "after": "J0981",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:14Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],

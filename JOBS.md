@@ -54,6 +54,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J0997 | mini | open (after J0981) | – | – | studio · HOS 007: correct scheduled Shorts description watch URLs | 6428572814 |
 | J0998 | mini | open (after J0981) | – | – | assembly · HOS audit: reproduce playlist boundary duplicate and draft narrow dedup fix | 6428572814 |
+| J0999 | mini | open (after J0981) | – | – | studio · HOS 099: compilation end screen and altered-content readback | 6428572814 |
 
 Recently finished:
 
