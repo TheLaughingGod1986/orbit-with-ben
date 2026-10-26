@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v03.mp4",
+  "edge_floor": 0.0196,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s_loop",
+      "cut": 6,
+      "t": 19.42,
+      "source": "loop_GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "why": [
+        "low detail: edge density 0.0132 < film p5 0.0196"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "t": 1.15,
+      "std": 39.4,
+      "mean": 45.39,
+      "p95": 100.0,
+      "edge": 0.0345,
+      "hf": 11.55,
+      "lf": 30.09,
+      "std8": 33.45,
+      "edge8": 0.2459,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "vltfromvistatimelapse.mp4",
+      "t": 3.6,
+      "std": 53.93,
+      "mean": 70.29,
+      "p95": 194.0,
+      "edge": 0.3806,
+      "hf": 25.84,
+      "lf": 28.73,
+      "std8": 36.4,
+      "edge8": 0.7879,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "uhd_bt_paranal_07.mp4",
+      "t": 6.6,
+      "std": 34.35,
+      "mean": 48.39,
+      "p95": 96.0,
+      "edge": 0.0879,
+      "hf": 13.29,
+      "lf": 26.16,
+      "std8": 27.93,
+      "edge8": 0.1128,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "bt_lasilla_crux.mp4",
+      "t": 10.08,
+      "std": 40.24,
+      "mean": 65.35,
+      "p95": 131.0,
+      "edge": 0.1068,
+      "hf": 17.88,
+      "lf": 23.36,
+      "std8": 29.49,
+      "edge8": 0.2159,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "uhd_bt_paranal_06.mp4",
+      "t": 13.55,
+      "std": 70.25,
+      "mean": 135.74,
+      "p95": 252.0,
+      "edge": 0.0428,
+      "hf": 18.12,
+      "lf": 64.04,
+      "std8": 65.28,
+      "edge8": 0.2212,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s05",
+      "source": "vltfromvistatimelapse.mp4",
+      "t": 17.09,
+      "std": 57.74,
+      "mean": 157.69,
+      "p95": 235.0,
+      "edge": 0.0645,
+      "hf": 19.01,
+      "lf": 46.56,
+      "std8": 49.49,
+      "edge8": 0.3648,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s_loop",
+      "source": "loop_GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "t": 19.42,
+      "std": 24.76,
+      "mean": 40.67,
+      "p95": 85.0,
+      "edge": 0.0132,
+      "hf": 4.72,
+      "lf": 21.66,
+      "std8": 22.82,
+      "edge8": 0.2119,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0132 < film p5 0.0196"
+      ]
+    }
+  ]
+}
