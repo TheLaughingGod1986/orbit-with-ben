@@ -82432,13 +82432,37 @@
           "at": "2026-10-26T08:14Z",
           "by": "chief",
           "what": "reopened: Ben OK'd v03 via Kanban button 26 Oct 08:10 London (OWB #264 6411268151)"
+        },
+        {
+          "at": "2026-10-26T08:14Z",
+          "by": "chief",
+          "what": "no longer waits on Ben: OK'd, delivered by J0968"
+        },
+        {
+          "at": "2026-10-26T08:14Z",
+          "by": "chief",
+          "what": "approved by Ben: upload 028 Short \"What Happens When Gliese 710 Passes Through the Oort Cloud?\" v03 Private for Wed 16 Dec 11:30 v03"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:028"
       ],
-      "awaits_ben": {
+      "urgent": 8,
+      "approved_from": {
+        "what": "upload 028 Short \"What Happens When Gliese 710 Passes Through the Oort Cloud?\" v03 Private for Wed 16 Dec 11:30",
+        "file": "OWB UAT/028_short_lift_oort_marbles_v03/028_short_lift_oort_marbles_v03_PHONE.mp4",
+        "version": "v03",
+        "airs": "2026-12-16T11:30Z",
+        "title": "Gliese 710 Short: Oort Marbles v03",
+        "number": "028",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0968",
+        "okAt": "2026-10-26T08:10Z",
+        "okRef": "6411268151"
+      },
+      "awaits_was": {
         "what": "upload 028 Short \"What Happens When Gliese 710 Passes Through the Oort Cloud?\" v03 Private for Wed 16 Dec 11:30",
         "file": "OWB UAT/028_short_lift_oort_marbles_v03/028_short_lift_oort_marbles_v03_PHONE.mp4",
         "version": "v03",
@@ -82447,8 +82471,7 @@
         "title": "Gliese 710 Short: Oort Marbles v03",
         "number": "028",
         "type": "short"
-      },
-      "urgent": 8
+      }
     },
     {
       "id": "J0969",
