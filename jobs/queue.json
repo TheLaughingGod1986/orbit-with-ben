@@ -82857,13 +82857,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-26T22:34Z",
-      "eta": "2026-10-27T00:04Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: HOS build-rule fix v2",
+      "result": "Acting-Chief PASS plans/checker correction only, HOS e1bbcfb9; ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6428936303. PASS build-rule v02 plans including 7 negative checks; check_all.sh ALL CHECKS PASS. No film/VO/proposal/render/release approval. All duration, hook, missing-media and unbuilt states retained. Next: J1004 (review, after J0967) computes exact lawful hook/duration proposals or retain/retire recommendations and maps media dependencies. No external wait for that paper review; unrelated credit/date/Ben holds untouched. GBP0.",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -83074,6 +83074,11 @@
           "at": "2026-10-26T22:34Z",
           "by": "codex",
           "what": "step 8 of 8 done: PASS plans/checker e1bbcfb9 only: seven negative checks and check_all PASS. Ruling 6428936303. J1004 after J0967 handles unresolved proposals; all production holds remain."
+        },
+        {
+          "at": "2026-10-26T22:35Z",
+          "by": "codex",
+          "what": "done: Acting-Chief PASS plans/checker correction only, HOS e1bbcfb9; ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6428936303. PASS build-rule v02 plans including 7 negative checks; check_all.sh ALL CHECKS PASS. No film/VO/proposal/render/release approval. All duration, hook, missing-media and unbuilt states retained. Next: J1004 (review, after J0967) computes exact lawful hook/duration proposals or retain/retire recommendations and maps media dependencies. No external wait for that paper review; unrelated credit/date/Ben holds untouched. GBP0."
         }
       ],
       "kind": "assembly",
@@ -83100,7 +83105,8 @@
         "at": "2026-10-26T22:34Z",
         "by": "codex",
         "note": "PASS plans/checker e1bbcfb9 only: seven negative checks and check_all PASS. Ruling 6428936303. J1004 after J0967 handles"
-      }
+      },
+      "done_ref": "e1bbcfb9"
     },
     {
       "id": "J0968",
