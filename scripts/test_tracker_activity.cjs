@@ -1,12 +1,12 @@
 const fs = require('fs'), vm = require('vm'), assert = require('assert');
 const path = require('path');
 const source = fs.readFileSync(path.join(__dirname, '../05_Analytics/kanban/board_site/tracker_app.js'), 'utf8');
-const elements = {activity: {innerHTML:'',querySelectorAll:()=>[]}};
+const elements = {strip: {innerHTML:''},activity: {innerHTML:'',querySelectorAll:()=>[]}};
 const context = {Date, console, localStorage:{getItem:()=>null},location:{hash:''},
   document:{getElementById:id=>elements[id]||null}, window:{}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf('  // Boot with any baked tracker')) + `
-  globalThis.test = {deriveLane, jobProgress, jobState, matchesVideo, cardWorkHtml, cardHeadline, cardWaiting, renderActivity,
+  globalThis.test = {deriveLane, jobProgress, jobState, matchesVideo, cardWorkHtml, cardHeadline, cardWaiting, renderActivity, renderStrip,
     setBoard:b=>{board=b;}};
 })();`, context);
 const t=context.test;
@@ -37,3 +37,12 @@ assert(t.cardHeadline(paused).startsWith('Work is paused'));
 assert.equal(t.cardWaiting(paused),'credit reset');
 assert(!t.matchesVideo({id:'AUDIT',title:'Weekly OWB audit',taskKeys:['OWB:032']},paused));
 console.log('Tracker activity regression checks passed');
+
+const chiefReview={job:'J0956',title:'Neptune <review>',agent:'codex',startedAt:new Date().toISOString(),expiresAt:new Date(Date.now()+60000).toISOString()};
+t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:chiefReview,next:[{id:'J0974',title:'Apophis review'}]}}});
+t.renderStrip();html=elements.strip.innerHTML;
+assert(html.includes('J0956 · Chief review')&&html.includes('Neptune &lt;review&gt;'));
+assert(html.includes('J0974 · Next Chief task'));
+assert(!html.includes('No job is currently claimed')&&!html.includes('Nothing else queued'));
+t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:{...chiefReview,expiresAt:new Date(Date.now()-60000).toISOString()},next:[]}}});
+t.renderStrip();assert(!elements.strip.innerHTML.includes('J0956 · Chief review'),'expired Chief reviews must not look active');

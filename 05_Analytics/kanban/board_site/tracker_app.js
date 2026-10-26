@@ -482,9 +482,15 @@
       const now = (owb.jobs || []).filter(j => jobState(j) === "running")
         .sort((a, b) => (b.urgent ? 1 : 0) - (a.urgent ? 1 : 0) || tsOf(a.claimedAt) - tsOf(b.claimedAt));
       const next = nextJobs(owb);
+      const chiefWork = M?.chiefWork || {}, review = chiefWork.active;
+      const reviewLive = review && tsOf(review.expiresAt) > Date.now();
+      const reviewHtml = reviewLive ? `<div class="job now"><b>${esc(review.job)} · Chief review</b>
+        <p>${esc(review.title)}</p><p class="mmeta">${esc(agentName(review.agent))} reviewing · started ${esc(hm(tsOf(review.startedAt)))} London. Production remains held until the decision is recorded.</p></div>` : "";
+      const chiefNext = (chiefWork.next || []).filter(j => !reviewLive || j.id !== review.job);
+      const chiefNextHtml = chiefNext.slice(0, 3).map(j => `<div class="job"><b>${esc(j.id)} · Next Chief task</b><p>${esc(j.title)}</p><p class="mmeta">Awaiting ${esc(M?.chief?.name || "the elected Chief")}</p></div>`).join("");
       jobsHtml = `<div class="row jobs">
-        <div class="row"><h2>Now working</h2>${now.length ? now.map(j => jobHtml(j, "now")).join("") : '<p class="mmeta">No job is currently claimed. See queued work and waiting reasons below.</p>'}</div>
-        <div class="row"><h2>Next</h2><div class="nextlist">${next.length ? next.map(j => jobHtml(j, "next")).join("") : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
+        <div class="row"><h2>Now working</h2>${reviewHtml}${now.length ? now.map(j => jobHtml(j, "now")).join("") : reviewLive ? "" : '<p class="mmeta">No job is currently claimed. See queued work and waiting reasons below.</p>'}</div>
+        <div class="row"><h2>Next</h2><div class="nextlist">${chiefNextHtml}${next.length ? next.map(j => jobHtml(j, "next")).join("") : chiefNext.length ? "" : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
       </div>`;
     }
     el.innerHTML = models + jobsHtml;

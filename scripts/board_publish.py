@@ -117,6 +117,24 @@ def _when(s) -> dt.datetime | None:
         return None
 
 
+def chief_work(at: dt.datetime, state: pathlib.Path, agent: str, jobs: list) -> dict:
+    active = _read_json(state / "active.json") or {}
+    expires = _when(active.get("expiresAt"))
+    live = bool(active and active.get("agent") == agent and expires and expires > at)
+    if live:
+        try:
+            os.kill(int(active.get("pid", 0)), 0)
+            live = int(active.get("pid", 0)) > 0
+        except (ValueError, TypeError, ProcessLookupError, PermissionError):
+            live = False
+    active = active if live else None
+    inbox = _read_json(state / "inbox.json") or {}
+    queued = {j.get("id"): j for j in jobs}
+    pending = [j for j in inbox.get("jobs", []) if j.get("id") != (active or {}).get("job")
+               and queued.get(j.get("id"), {}).get("status") in ("blocked", "open")]
+    return {"active": active, "next": pending, "checkedAt": iso(at)}
+
+
 def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path | None = None,
                   flags_file: pathlib.Path | None = None) -> dict:
     """Traffic lights for the board's Models row from what the relay already records on the Mini (read-only):
@@ -195,6 +213,7 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
     chief = {"agent": agent, "name": NAMES.get(agent, agent.capitalize() if agent else ""), "acting": bool(agent and agent != "chief"),
              "since": cur.get("since") or ""}
     return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out,
+            "chiefWork": chief_work(at, state, agent, jobs or []),
             "chiefChain": [{"agent": r.get("agent"), "name": NAMES.get(r.get("agent"), r.get("agent")),
                             "up": bool(r.get("up")), "why": str(r.get("why") or "")[:120]}
                            for r in chain.get("rows") or [] if isinstance(r, dict)]}
@@ -393,6 +412,13 @@ def quick_key(remote=ls_remote) -> str | None:
         parts.append((HOME / "_desk" / "state" / "chief" / "current.json").read_text())
     except OSError:
         parts.append("")
+    for name in ("active.json", "inbox.json"):
+        try:
+            parts.append((CHIEF_STATE / name).read_text())
+        except OSError:
+            parts.append("")
+    # Process liveness and lease expiry can change without a queue commit.
+    parts.append(chief_work(now(), CHIEF_STATE, (_read_json(CHIEF_STATE / "current.json") or {}).get("agent", ""), [])["active"])
     return digest(parts)
 
 

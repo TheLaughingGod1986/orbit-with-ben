@@ -1341,7 +1341,15 @@ def run_locked(at: dt.datetime) -> int:
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
         seen(who, at)
         started = now()
-        code, tail = run_cli(who, prompt, cap, model)
+        if review_work:
+            write_json(d("active.json"), {"job": reviews[0]["id"], "title": reviews[0].get("title", ""),
+                       "agent": who, "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(seconds=cap + 60)),
+                       "pid": os.getpid(), "kind": "chief-review"})
+        try:
+            code, tail = run_cli(who, prompt, cap, model)
+        finally:
+            if review_work:
+                d("active.json").unlink(missing_ok=True)
         said = credit_phrase(code, tail)
         usage = bool(said)
         log_run(at, reviews[0] if review_work else job, who, model, code, usage)
