@@ -82853,6 +82853,11 @@
           "at": "2026-10-26T19:37Z",
           "by": "gemini",
           "what": "step 5 of 8 done: Regenerated all v02 Short plans with hos_build_rule_v02.py --write; --check and all 5 negative checks PASS"
+        },
+        {
+          "at": "2026-10-26T19:38Z",
+          "by": "gemini",
+          "what": "step 6 of 8 done: Verified updated checker fails on both c91a3633 (FAIL 194) and 9e23d71a (FAIL 533), catching 21.60s Short_B mismatch, board-only 008-010 clips, and unfinished hooks"
         }
       ],
       "kind": "assembly",
@@ -82874,11 +82879,11 @@
       "model": "gemini-agy",
       "escalated_at": "2026-10-26T17:20Z",
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 8,
-        "at": "2026-10-26T19:37Z",
+        "at": "2026-10-26T19:38Z",
         "by": "gemini",
-        "note": "Regenerated all v02 Short plans with hos_build_rule_v02.py --write; --check and all 5 negative checks PASS"
+        "note": "Verified updated checker fails on both c91a3633 (FAIL 194) and 9e23d71a (FAIL 533), catching 21.60s Short_B mismatch, bo"
       }
     },
     {
