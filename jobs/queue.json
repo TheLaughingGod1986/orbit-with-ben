@@ -81817,6 +81817,11 @@
           "at": "2026-10-26T09:59Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J0961: verifying 029 Shorts v03 masters, sha256, gate_shorts_open, and free slots in UPLOADS.json"
+        },
+        {
+          "at": "2026-10-26T10:04Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified 3 v03 master SHA256s + free slots in UPLOADS.json + committed 3 PACKAGE_MANIFEST.json files; gate_shorts_open fails under c61 (-1.5 dBTP on all 3, -15.0 LUFS + 44% bg_sim vs f17XCtUmN-g on wed09)"
         }
       ],
       "kind": "studio",
@@ -81848,11 +81853,11 @@
         "type": "short"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-26T09:59Z",
+        "at": "2026-10-26T10:04Z",
         "by": "gemini",
-        "note": "Starting J0961: verifying 029 Shorts v03 masters, sha256, gate_shorts_open, and free slots in UPLOADS.json"
+        "note": "Verified 3 v03 master SHA256s + free slots in UPLOADS.json + committed 3 PACKAGE_MANIFEST.json files; gate_shorts_open f"
       }
     },
     {
