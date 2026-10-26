@@ -1,5 +1,5 @@
 {
-  "next_id": 969,
+  "next_id": 970,
   "jobs": [
     {
       "id": "J0001",
@@ -81522,7 +81522,7 @@
     },
     {
       "id": "J0963",
-      "title": "022 Sun h8HGfyShEHI: Test & Compare B v02 '10% BRIGHTER' (fix of J0908 B), park for Chief",
+      "title": "022 Sun T&C B v02 '10% BRIGHTER' c54 PASS -> arm A/B on h8HGfyShEHI (J0969)",
       "needs": "mini",
       "repo": "owb",
       "body": "Chief (Grok) 25 Oct 23:25 London, J0908 fix notes on the 022 B '10% HOTTER'.\n1. Text: '10% BRIGHTER' (yellow '10%', white 'BRIGHTER'). The film says the Sun will be 'about ten percent brighter' in roughly a billion years; 'hotter' is wrong (that is luminosity, not temperature).\n2. Make the Earth a readable scale cue: at least ~2x its v01 size (v01 78 px), still clearly tiny next to the Sun, clear of the text band and the duration badge; check legibility in the 168 px preview.\n3. Same plates (NASA SVS 11517 Sun, Apollo 17 Blue Marble), same builder 00_Brand/Channel-Setup/tools/build_sun_venus_tc_b_j0908.py (add a v02 option, v01 kept), saturation/near-black scores in the sheet. Output to ~/_desk/j0908/ as sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg + A/B sheet with the live A; commit the builder and json.\n4. Do not arm anything. End: jobs.py block <id> --reason \"parked for Chief: 022 T&C B v02\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
@@ -81531,13 +81531,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-26T00:14Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: 022 T&C B v02",
+      "result": "Chief PASS c54 (Grok, 26 Oct 03:25 London, OWB #264 6407490330): 022 Sun T&C B v02 '10% BRIGHTER' (yellow 10%, white BRIGHTER; OCR reads it) - Earth 156 px = 2.0x v01, 0.30x the 520 px Sun, reads at 168 px, clear of band and duration badge; Sun plate unchanged (68 dB, right half bit-identical); sat 176.6 / near-black 16.1%; sha e7247c52 = META/PR #283 json; v01 681bbe08 untouched -> arm job J0969 (no Ben card: B tests go straight in). GBP0.",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -81578,6 +81578,11 @@
           "at": "2026-10-26T02:23Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "done: Chief PASS c54 (Grok, 26 Oct 03:25 London, OWB #264 6407490330): 022 Sun T&C B v02 '10% BRIGHTER' (yellow 10%, white BRIGHTER; OCR reads it) - Earth 156 px = 2.0x v01, 0.30x the 520 px Sun, reads at 168 px, clear of band and duration badge; Sun plate unchanged (68 dB, right half bit-identical); sat 176.6 / near-black 16.1%; sha e7247c52 = META/PR #283 json; v01 681bbe08 untouched -> arm job J0969 (no Ben card: B tests go straight in). GBP0."
         }
       ],
       "kind": "thumb",
@@ -81591,7 +81596,8 @@
         "by": "codex",
         "note": "Phone preview inspected; scored A/B sheet and hashes saved; builder and JSON committed in PR #283; Chief decision pendin"
       },
-      "escalated_at": "2026-10-26T02:23Z"
+      "escalated_at": "2026-10-26T02:23Z",
+      "done_ref": "6407490330"
     },
     {
       "id": "J0964",
@@ -82049,6 +82055,36 @@
         "number": "028",
         "type": "short"
       }
+    },
+    {
+      "id": "J0969",
+      "title": "022 Sun h8HGfyShEHI: arm thumbnail-only Test & Compare A (live BURNING HARDER) vs B v02 10% BRIGHTER (J0963 PASS), read back, ledger",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 26 Oct 03:25 London, J0963 022 Sun T&C B v02 '10% BRIGHTER' PASS (ruling c54, OWB #264 6407490330).\n1. Check h8HGfyShEHI 'Is the Sun Getting Brighter?' reads back Public (public since 18 Oct). If not, block naming that.\n2. Copy ~/_desk/j0908/sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg (sha256 e7247c5232a3ec78b7413722e184bfdfc15a1e9ee6070dd63a3acbf6981021bf) into 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/tc_B_j0963/ with a SHA256.txt beside it, verify the sha, and commit.\n3. Orbit Studio (CDP 9223) -> A/B testing -> Thumbnail only: A = the live thumbnail (BURNING HARDER), B = that file. If Studio shows 'Run a new test? Your current test will be deleted', press Cancel and block 'parked for Chief: test already running on 022'. No title test.\n4. Read back the test as set; thumb_ledger.py add --video h8HGfyShEHI --channel owb --title \"Is the Sun Getting Brighter?\" --a-maker house --b-maker codex --b-file <repo path> --job J0963, then thumb_ledger.py start <T id>.\n5. done with the read-back. If Studio needs a sign-in, block for Ben.\nNo privacy, schedule, title or description change. B tests need no Ben OK (AGENTS.md thumb row; J0962 precedent). PR #283 (builder + json) is not a dependency. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.\n",
+      "ref": "6407490330",
+      "film": "",
+      "stage": "",
+      "after": "J0963",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T03:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:022"
+      ]
     }
   ],
   "focus": [],
