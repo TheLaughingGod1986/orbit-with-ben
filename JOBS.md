@@ -38,7 +38,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0963 | mini | blocked | codex | – | thumb · 022 Sun h8HGfyShEHI: Test & Compare B v02 '10% BRIGHTER' (fix of J0908 B), park for Chief |  |
 | J0965 | mini | blocked | cursor | – | video · HOS 60% re-cut batch HB c51 FIX (local only): gold foil v03 by Sat 31 Oct 20:00, four elements v03 by Mon 2 Nov 20:00, valves v03 by Wed 4 Nov 20:00, tied arm v05 by Sat 7 Nov 20:00 (level + person cards) | 6405428090 |
 | J0966 | mini | open (after J0965) | – | – | video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
-| J0967 | mini | open | – | – | assembly · HOS build-rule fix for unbuilt Shorts (006 A-C + s04-s08, 007-010 SHORTS_PICTURE_PLAN, S5-S8): audit fixes #14-#16, plans and assemblers only |  |
+| J0967 | mini | claimed | cursor | 2026-10-26T04:41Z | assembly · HOS build-rule fix for unbuilt Shorts (006 A-C + s04-s08, 007-010 SHORTS_PICTURE_PLAN, S5-S8): audit fixes #14-#16, plans and assemblers only |  |
 | J0968 | mini | blocked | chief | – | studio · 028 Gliese 710: Private upload of the Oort marbles Short v03 (Wed 16 Dec 11:30 London) after Ben's OK | 6406845498 |
 
 Recently finished:
