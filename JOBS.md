@@ -39,7 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0968 | mini | open (after J0964) | – | – | studio · 028 Gliese 710: Private upload of the Oort marbles Short v03 (Wed 16 Dec 11:30 London) after Ben's OK | 6406845498 |
 | J0969 | mini | blocked | chief | – | studio · 022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI | 6407771727 |
 | J0972 | mini | open (after J0965) | – | – | studio · HOS Short PlihWC5uA2E: swap to valves v03 (Private, Thu 5 Nov 11:30 London) after Ben's OK by Thu 5 Nov 10:30 | 6407490572 |
-| J0973 | mini | open (after J0965) | – | – | studio · HOS Short mTY67qet7cM: swap to tied arm v05 (Private, Sun 8 Nov 11:30 London) after Ben's OK by Sun 8 Nov 10:30 | 6407490572 |
+| J0973 | mini | claimed | cursor | 2026-10-26T10:19Z | studio · HOS Short mTY67qet7cM: swap to tied arm v05 (Private, Sun 8 Nov 11:30 London) after Ben's OK by Sun 8 Nov 10:30 | 6407490572 |
 | J0974 | mini | open (after J0954) | – | – | studio · OWB Apophis Short BbsyFrV8kCY: swap to v13 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Wed 28 Oct 10:30 | 6410661010 |
 | J0975 | mini | open (after J0974) | – | – | studio · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
 | J0976 | mini | open | – | – | studio · READ-ONLY Studio: why m09jUdwC5hk + VBaYRPp85Sw analytics show 'Subscribers (OpptiAI)' with a dash |  |
