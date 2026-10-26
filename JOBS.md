@@ -59,6 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1004 | mini | open (after J0967) | – | – | for gemini · review · `gemini-argon` · HOS J0967 follow-up: resolve remaining hook and duration proposals on paper, preserve production holds |  |
 | J1005 | mini | open | – | – | for gemini · qa · `gemini-argon` · J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0) |  |
 | J1006 | any | open | – | – | chief · Chief: resolve cancelled:J0914 |  |
+| J1007 | mini | open | – | – | review · J0915 preparation: recorded question openings, motion plan, corrected Titan identity |  |
 
 Recently finished:
 
