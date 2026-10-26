@@ -82668,13 +82668,37 @@
           "at": "2026-10-26T08:09Z",
           "by": "chief",
           "what": "reopened: Ben OK'd v03 swap via Studio Kanban button Mon 26 Oct 08:08 London (HOS #180 6411226902)"
+        },
+        {
+          "at": "2026-10-26T08:10Z",
+          "by": "chief",
+          "what": "no longer waits on Ben: OK'd, delivered by J0972"
+        },
+        {
+          "at": "2026-10-26T08:10Z",
+          "by": "chief",
+          "what": "approved by Ben: swap the HOS Short \"Why Do Veins Have Valves?\" (PlihWC5uA2E, airs Thu 5 Nov 11:30) to re-cut v03 v03"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:005"
       ],
-      "awaits_ben": {
+      "urgent": 6,
+      "approved_from": {
+        "what": "swap the HOS Short \"Why Do Veins Have Valves?\" (PlihWC5uA2E, airs Thu 5 Nov 11:30) to re-cut v03",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s05_valves_v03_PHONE.mp4",
+        "version": "v03",
+        "airs": "2026-11-05T11:30Z",
+        "title": "Valves Short re-cut v03 (swap)",
+        "number": "005",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0972",
+        "okAt": "2026-10-26T08:08Z",
+        "okRef": "6411226902"
+      },
+      "awaits_was": {
         "what": "swap the HOS Short \"Why Do Veins Have Valves?\" (PlihWC5uA2E, airs Thu 5 Nov 11:30) to re-cut v03",
         "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s05_valves_v03_PHONE.mp4",
         "version": "v03",
@@ -82684,8 +82708,7 @@
         "title": "Valves Short re-cut v03 (swap)",
         "number": "005",
         "type": "short"
-      },
-      "urgent": 6
+      }
     },
     {
       "id": "J0973",
