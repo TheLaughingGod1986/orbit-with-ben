@@ -49,6 +49,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0989 | mini | open | – | – | 030 edit · assembly · OWB 030 J0974 audio-only v13a correction: current loudness gate |  |
 | J0990 | any | open (after J0989) | – | – | chief · OWB 030 J0974 audio-only v13a: Chief technical release review |  |
 | J0991 | mini | open | – | – | assembly · 029 Shorts v04: fix J0961 AAC levels and Wednesday opening; gates and Chief review | 0d132cd27 |
+| J0992 | any | open | – | – | review · OWB 026/027/028 J0936 FIX: map five Keeper question openings to existing VO; v04 shot corrections | 82959ad1f |
+| J0993 | any | open (after J0992) | – | – | chief · J0936 Chief: lock no-spend v04 corrections and dispatch assembly after preparation | 82959ad1f |
 
 Recently finished:
 

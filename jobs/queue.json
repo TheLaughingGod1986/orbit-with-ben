@@ -1,5 +1,5 @@
 {
-  "next_id": 992,
+  "next_id": 994,
   "jobs": [
     {
       "id": "J0001",
@@ -79411,7 +79411,7 @@
       "ref": "6409202315",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J0993",
       "eta_min": 600,
       "status": "blocked",
       "by": "gemini",
@@ -79419,7 +79419,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
-      "result": "parked for Chief: A6TW_6CXhcs, emwQsPxnRGM, bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs v03 PASS; Ben to OK each swap",
+      "result": "Codex acting-Chief FIX x6 v03 (82959ad1f): picture/source provenance defects plus current Keeper question/length failures. Audio and master/PHONE local-UAT-NAS hashes PASS. No swap or Ben watch cards. Held on J0992 (recorded-VO/shot preparation) -> J0993 (Chief lock and dispatch assembly); re-review after corrected v04 evidence. Target 2026-11-01 20:00 London. Existing v01 schedules untouched; no external wait or Ben action now.",
       "history": [
         {
           "at": "2026-10-25T06:33Z",
@@ -79640,6 +79640,16 @@
           "at": "2026-10-26T16:26Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-26T22:04Z",
+          "by": "codex",
+          "what": "Codex acting-Chief FIX x6 v03 (82959ad1f): picture/source provenance defects plus current Keeper question/length failures. Audio and master/PHONE local-UAT-NAS hashes PASS. No swap or Ben watch cards. Held on J0992 (recorded-VO/shot preparation) -> J0993 (Chief lock and dispatch assembly); re-review after corrected v04 evidence. Target 2026-11-01 20:00 London. Existing v01 schedules untouched; no external wait or Ben action now."
+        },
+        {
+          "at": "2026-10-26T22:04Z",
+          "by": "codex",
+          "what": "Chief review complete: six of six checked; 6-step production history preserved. Full ruling jobs/reviews/J0936_2026-10-26.md."
         }
       ],
       "kind": "video",
@@ -79653,7 +79663,7 @@
         "of": 6,
         "at": "2026-10-26T12:53Z",
         "by": "gemini",
-        "note": "6/6 X768qs8sNQs (028 lift_night_sky_35yr_v03) PASS: 18.233s, -14.1 LUFS / -2.0 dBTP, clean Gaia (0 ESA slate/URL frames,"
+        "note": "Six v03s reviewed: FIX all six; dependencies J0992 -> J0993; no approved replacement"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -79663,7 +79673,10 @@
         "by": ""
       },
       "for": "gemini",
-      "escalated_at": "2026-10-26T16:26Z"
+      "escalated_at": "2026-10-26T16:26Z",
+      "review_ref": "82959ad1f",
+      "review_by": "codex",
+      "review_verdict": "FIX"
     },
     {
       "id": "J0937",
@@ -85207,6 +85220,70 @@
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
+      ]
+    },
+    {
+      "id": "J0992",
+      "title": "OWB 026/027/028 J0936 FIX: map five Keeper question openings to existing VO; v04 shot corrections",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Codex acting-Chief ruling 26 Oct; local preparation only. Read jobs/reviews/J0936_2026-10-26.md (82959ad1f). Prepare exact question-first-line splices and local title proposals for the five non-Test-A Shorts in J0936, with recorded source paths/timecodes, coherent grammar, duration >=22 s, original late payoff/loop and no padding. Test A stays exempt. Prepare corrected shot list for all six, removing unrelated baked-in long cards/portrait and all sourced Gaia simulations; source paths/types must match actual pixels. No TTS or other generation, no spend, no render before Chief locks edits, no YouTube/Buffer changes. If words are unavailable, document exactly which and present a no-spend alternative for Chief. Deliver proposal under jobs/reviews/J0936_v04_PREP.md with per-Short acceptance matrix. Target batch ready by 1 Nov 20:00 London; original air slots/v01 fallback unchanged. Do not execute swaps. Chief-lock job is the dependency consumer.\n\n# J0936 — Codex acting-Chief ruling, 26 October 2026\n\n**FIX all six v03s. No Chief PASS, no Ben watch cards, no swap authorisation.** Original J0936 remains held until the local-only follow-up is complete and the elected Chief reviews it. Existing v01 schedules and all v01/v02/v03 files remain untouched. No money or credit spent.\n\n## Review evidence\n\nRead the complete job body, result and history, six v03 metadata files, cuts/pools, opening gates, picture/polish/music/SFX reports, dark/OCR reports and all six 2 fps sheets. Extracted fresh frames from the actual masters to confirm the visible defects, and independently measured each AAC with ffmpeg ebur128=peak=true. All six local master hashes match their metadata. Storage verification is in J0936_2026-10-26_verification.json; it records actual paths and hash matches, not merely the worker assertions. Fresh review frames/audio logs are retained locally under /Users/benjaminoats/_desk/reviews/J0936_2026-10-26/ (no media committed).\n\n| Short | Duration | Measured LUFS / TP | Ruling |\n|---|---:|---:|---|\n| A6TW_6CXhcs grapefruit | 19.933 s | -14.4 / -2.0 | FIX |\n| emwQsPxnRGM equator | 23.033 s | -14.1 / -2.0 | FIX |\n| bizlhspnVvY comets | 25.633 s | -14.3 / -1.9 | FIX |\n| DETI0HV2jlI Test A | 24.533 s | -14.2 / -1.9 | FIX |\n| jJ5LkFGyzLI scale | 20.167 s | -14.2 / -1.8 | FIX |\n| X768qs8sNQs night sky | 18.233 s | -14.1 / -2.0 | FIX |\n\nAudio levels now meet c59. PHONE exports exist. These partial successes do not approve the picture or current packaging.\n\n## Blocking findings and exact next work\n\n1. **Grapefruit:** fresh master frame at 16.50 s shows a Tycho portrait and cropped pre-existing lower-third behind SUN = GRAPEFRUIT / NEAREST STAR = CHERRY / 4,000 KM. The sheet also shows unrelated diagram labels around 14–15 s. `cuts_v03.json` calls 15.252–18.921 s `vltfromvistatimelapse.mp4`, but the builder actually extracts from the finished `026_NearestStar_v06.mp4` at 168 s. That source description does not describe the pixels. Replace these intervals with verified clean original footage; no baked-in long labels, portraits or unrelated diagram. Record the actual source path, source in/out, kind and hash. Inspect every source interval before rendering. Keep the useful star-field cherry fix and late 4,000 km payoff.\n2. **Equator:** hook now fits, and the speed sentence is restored. It still begins “You weigh about half of one percent less…” rather than the title question. Bring the opening into the current Keeper rule using recorded words only; keep the coherent speed subject and current audio fixes. No approval of the entire cut is implied by these checks.\n3. **Comets:** the orphan sentence is repaired. However the master at 8.00 s is the ESA/Gaia projected proper-motion diagram, including dense trajectory lines; cuts 6.23–9.91 s and 20.95–24.632 s use it. This is a sourced simulation/diagram, not real moving star-field footage. Replace it with suitable existing real footage; classify the pool truthfully so picture QA can detect this. Opening is a statement and must become the title question under Keeper.\n4. **Test A:** the old black payoff is replaced, but fresh frame at 18.90 s still shows the Gaia trajectory diagram under 1.3 MILLION YEARS. Replace every Gaia simulation interval with suitable real moving footage. Test A remains explicitly exempt from the Keeper question-first-line and 22–27 s requirements; do not silently convert it to another format or add a new length requirement.\n5. **Scale:** broken sentence and opening flash are addressed in the v03 record, but the 9.00 s master shows Gaia trajectories behind the Neptune/ruler line. The sheet shows SDO Sun imagery while Neptune is named. Replace the diagram and make the picture match that scale explanation, using existing approved assets. It is only 20.167 s and opens with a statement, so the new version also needs the Keeper question and >=22 s runtime without padding.\n6. **Night sky:** the ESA slate is removed from the reviewed sheet; the fresh 12.00 s frame is still Gaia trajectories. Replace that sourced simulation. The cut is 18.233 s and opens with a statement; fix question-first-line and >=22 s runtime. Preserve the future-arrival context when splicing the question so “is the brightest” cannot read as a present-day claim.\n\n**Rule precedence:** Ben’s 26 Oct Keeper rule applies to cuts made from 26 Oct, as explicitly recorded in `.cursor/rules/orbit-build-shorts.mdc` items 1, 3 and 7. It supersedes the earlier 18–24 s batch allowance for these unapproved new cuts. Thus grapefruit, scale and night sky need >=22 s; all five non-Test-A cuts need the title’s one question in line 1. Grapefruit’s statement-plus-question title also needs a local question-led proposal. Do not retitle any YouTube listing. Chief must lock the exact local script/title edits before the assembly worker renders; use only words already recorded on disk, with a source/timecode map. If unavailable, report the specific missing words and stop that cut with no TTS spend. No unrelated credit/date/Ben holds are reopened.\n\n## Follow-up and acceptance\n\nQueue a review-kind preparation task to map the five question openings to existing VO and propose exact local titles/scripts, preserving the established late-payoff and loop requirements. Then a Chief-kind dependent task locks those edits and queues an assembly-kind v04 fix task covering the picture defects and complete gates. These are immediately actionable local work, not an external wait. J0936 stays blocked on that explicit dependency; no repeated “waiting for Chief” with unchanged evidence.\n\nFor the v04 assembly: truthful cuts/pools; 2 fps sheets covering the WHOLE runtime (the four 028 sheets shown here end after 32 tiles/about 16 s); every flagged frame inspected full-size; all original c59 gates plus complete OCR/dark-run logs, measured AAC audio, matched-loop evidence, PHONE 720x1280, UAT/NAS hash verification. Include source intervals and asset types; a filename alone cannot certify real footage. Review the complete output against its spoken line, not just automatic PASS text. No sourced simulations or diagrams. No new paid generation. Preserve existing versions.\n\nTarget batch return by Sun 1 Nov 20:00 London; retain each original per-Short day-before-air deadline and the no-swap-without-Ben rule. If a replacement fails, the existing v01 slot remains as already instructed in J0936. No upload, Studio/Buffer write, privacy change, deletion or swap is authorised by this ruling. Nothing is needed from Ben at this fix stage.\n",
+      "ref": "82959ad1f",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:04Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "review",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
+    },
+    {
+      "id": "J0993",
+      "title": "J0936 Chief: lock no-spend v04 corrections and dispatch assembly after preparation",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J0936_2026-10-26.md and the preparation result from J0992. Check chief_relay.py status before ruling. Lock exact local VO/title/shot corrections within current Keeper rules, Test A exceptions and GBP0. If preparation passes, create an assembly-kind mini job for all six v04s using the detailed acceptance list in the ruling; set J0936 after that assembly job and keep J0936 held until new evidence is reviewed. If preparation fails, give concrete corrections and queue the correct specialist. Do not merely park for an absent Chief. No upload, retitle, privacy, Buffer, swap, media deletion or paid generation. Ben swap approval remains required only after replacement PASS. No Ready for OK cards on current v03s. Target 1 Nov 20:00 London; original per-Short deadlines and v01 fallback remain. This task is a dependency, not authority to reopen unrelated holds.",
+      "ref": "82959ad1f",
+      "film": "",
+      "stage": "",
+      "after": "J0992",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:04Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
       ]
     }
   ],
