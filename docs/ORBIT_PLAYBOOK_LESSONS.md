@@ -117,10 +117,10 @@ Source: Chief's read of YouTube Analytics for 60 public Orbit Shorts after Moon 
 | **R1 · Score by feed share** | Judge a Short by its **day-1 Shorts-feed share** in Analytics: 50% or more means fed. Under ~50 views, % viewed is noise; don't use it to call a Short. This is a post-publish read, not a ship gate. |
 | **R2 · Topic fatigue** | At most 6 Shorts in a row on one topic. Stop a topic after **2 not-fed Shorts in a row**, then give it a 2-week break. (Moon #1–#6 were fed; #7–#10 were not.) |
 | **R3 · Own open** | Every Short gets its own open. Frame 0 shows the subject the title names. Never reuse an opening background from the last 10 Shorts. The Auditor ship gate checks frame 0 against the last 10. |
-| **R4 · Orbit early, never at frame 0** | Orbit may arrive from about 1 s (`Ih2zhZTbIR0` was fed with an Orbit slide-in). The Never list still bans Orbit at frame 0. |
+| **R4 · Orbit early, never at frame 0** | Orbit may arrive from about 1 s (`Ih2zhZTbIR0` was fed with an Orbit slide-in). The Never list still bans Orbit at frame 0. From 26 Oct 2026 Orbit is also never the hero: small, never big on screen in the hook (AGENTS.md → *Audit rules*). |
 | **R5 · Retention target** | Aim for a day-1 average viewed of 60% or more. Fed Shorts above it had a median of 142 day-1 views; fed Shorts below it, 61. This is a target, not a gate. |
 | **R6 · One at a time** | Already covered by the Never list: one Short a day, and never re-upload an idea that already went public. The 24 Sep Moon batch broke both, so treat it as a warning, not a method. |
-| **R7 · Ending** | The last card shows the **exact listing title** of that week's long, and the end screen links **that long's id**. Never a generic "watch the full film". (`dQlOgsDGmtA`, Auditor 6 Oct: generic title, no `2fsQcea-voM` id.) |
+| **R7 · Ending** | The last card shows the **exact listing title** of that week's long, and the end screen links **that long's id**. Never a generic "watch the full film". (`dQlOgsDGmtA`, Auditor 6 Oct: generic title, no `2fsQcea-voM` id.) From 26 Oct 2026 the card is burned into the last ~4 s with the long's exact title and its id in house yellow (AGENTS.md → *Audit rules*). |
 | **R8 · Music bed** | Every Short carries a music bed for its full length, under the VO and through the loop hold. A VO-only Short fails the Auditor gate. |
 
 `dQlOgsDGmtA`: leave it alone (no delete, re-upload or retitle). Read its Analytics on Wed 7 or Thu 8 Oct. Moon Shorts are paused for at least 2 weeks; the next Short is Jupiter `buaOI3QGm7U` on 14 Oct.

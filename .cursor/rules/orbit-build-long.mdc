@@ -1,5 +1,5 @@
 ---
-description: Building an Orbit long — topic pick, script gates, voice and assembly checks
+description: Building an Orbit long — topic pick, script gates, voice and assembly checks, one plate per beat, own end plate, no burned-in SUBSCRIBE
 globs:
   - 02_Video-Projects/**/01_Script/**
   - 02_Video-Projects/**/02_Voiceover/**
@@ -18,7 +18,8 @@ Full steps: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2–§4 and §7. Hooks
   - The first 3 s of picture are the danger. Sentence one is the promise, with the payoff named by 30 s.
   - 4–6 acts told as cause and effect. The world does the science; Orbit is in 1–2 beats only.
   - Picture changes every 4–6 s. Every number sourced. No goodbye; the last line hands off to the next film.
-  - One `[SUBSCRIBE BEAT]` right after the first payoff (25–50% of spoken words): one line of 20 words or fewer from `templates/SUBSCRIBE_BEAT_LINES.md`, with no numbers and no stock phrases. It's gate-checked. A 4-second lower-right cue plays under it while the picture keeps moving.
+  - **Each beat gets its own plate (Audit rules, 26 Oct 2026):** never the same plate in two beats unless it's a deliberate callback marked `callback: <time of the first use>` in the shot list. The end hold is never the opening plate.
+  - One `[SUBSCRIBE BEAT]` right after the first payoff (25–50% of spoken words): one line of 20 words or fewer from `templates/SUBSCRIBE_BEAT_LINES.md`, with no numbers and no stock phrases. It's gate-checked. It's spoken only, over moving picture: **never burn SUBSCRIBE into the video** (no button, cue or card); the end screen does that job (Audit rules, 26 Oct 2026).
   - `[VISUAL MUST]` + `[TEACH]` on every scene; `[ORBIT ACTS]` on Orbit beats only.
   - **Teach on screen (Ben, 11 Oct 2026):** inside `[VISUAL MUST: …]`, mark at least 3 `· DATA:` moments, a `· WHO:` card (name, years, role) for each named person at first mention, `· WHEN:` for every date (a timeline for 3 or more dates) and 2–4 `· FACT:` beats. Full rule: AGENTS.md → *Teach on screen*.
   - **Polish pass (Astrum ref, 11 Oct 2026):** every big number gets a `· SCALE:` comparison on its DATA marker (no extra words); hook = the claim with its mystery, huge claim and first answer before 0:30, the film's question by ~0:50. In the edit: house SFX kit (`scripts/sfx_kit.py make`; rumble, soft whoosh, tick) with `sfx_kit.py level` PASS (12 LU under VO, 10 LU while it speaks), music changes awe → explain at chapter cards, 0.5–1.5 s crossfades where they suit, fine grain on dark space, small corner credits. No long holds: 4–6 s picture change, 4 s max hold. AGENTS.md → *Polish pass*.
@@ -37,7 +38,33 @@ Full steps: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2–§4 and §7. Hooks
   - normalise inputs to 1920×1080 stereo and check A/V lengths match; fill 16:9 (no flat bars; feathered blur OK; upscale ≤~2.35×);
   - a remint is picture only (keep the original audio);
   - chapter cards: VO sentence finishes → 0.5–0.8 s breath → ~0.4 s xfade; never clip a line;
-  - end: picture+music past last VO word, hold 2–3 s, then fade; music full runtime; mix ~−14 LUFS;
+  - end: picture+music past last VO word, hold 2–3 s, then fade; music full runtime; mix ~−14 LUFS; the end plate is never the opening plate;
   - pre-delivery: `python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> [--words vo_words.json]`;
+  - plate check (blocking before review): `python3 00_Brand/Channel-Setup/tools/plate_check.py long <broadcast.mp4> [--callback SEC ...]` must PASS (repeated plates, end hold = opening, burned-in SUBSCRIBE);
   - export `09_Final-Export/<slug>_broadcast_v0N.mp4`.
 - **Publish:** normal publish, Sunday 18:00 UK. Test & Compare with 3 thumbs; end screen = best related long + Subscribe; captions via auto-sync; a pinned comment (question + subscriber thank-you) via `scripts/update-pinned-comment.ts --create`, then pinned in Studio.
+
+## Audit rules (Orbit Auditor, 26 Oct 2026)
+
+Generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`.
+
+<!-- SYNC: AGENTS.md#Audit rules (Orbit Auditor, 26 Oct 2026) -->
+Ben, 26 Oct 2026: audit and scoreboard findings are written into the studio rules, not just reported. Source: the Orbit Auditor's 26 Oct audit of the live Sun long `h8HGfyShEHI`, the Venus long `VBaYRPp85Sw` and the 12–24 Oct Shorts (notes and frames on the box at `/workspace/audit26/f`). Where an older line differs, these win.
+
+**Long films**
+1. **Each beat gets its own plate.** A plate (the same image or clip, at any crop or push) is never repeated in another beat unless it's a deliberate callback, and a callback is written in the shot list as `callback: <time of the first use>`. The Sun film reused its grey-disk plate about 6 times and its sunspot inset 3 times.
+2. **The end hold is never the opening plate.** The slow end plate is its own picture. Sun and Venus both ended on their opening plate (SSIM 0.98).
+3. **Never burn SUBSCRIBE into the video.** No subscribe button, cue or card in the picture; end screens do that job. The one spoken `[SUBSCRIBE BEAT]` line stays. The 4-second subscribe cue graphic is retired (it sat in Sun at about 4:00 and Venus at about 3:30).
+4. **Check before review:** `python3 00_Brand/Channel-Setup/tools/plate_check.py long <broadcast.mp4> [--callback SEC ...]` must PASS. It FAILs on a plate seen again 20 s or more later (SSIM ≥ 0.90 on 1 fps samples, black and flat card frames skipped), an end hold matching the opening (SSIM ≥ 0.90), or SUBSCRIBE read by OCR (full frame plus the lower-right corner).
+
+**Shorts**
+5. **Captions run the whole way through,** from frame 0 to the last frame, under the end card too.
+6. **22–27 s.** Exceptions are only the named ones: the compilation, the J0216 test Shorts until 20 Nov, Test A opening Shorts until Test A's final readout, and the one 50–60 s length-test Short (*Packaging*).
+7. **The last ~4 s show the end card, burned in:** the linked long's exact live title and that long's YouTube id in house yellow (`#FFD600`), as in 026's `end_card` (`02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/_assemble_026_weekday_shorts_v01.py`). An ending that's only spoken fails. The card sits over the loop-back picture, the music bed runs through the seam, and nothing is spoken about it (no CTA, no "watch the full film").
+8. **Orbit is never the hero.** The planet, moon or star the title names is the subject of every plate. Orbit is a small figure caught in the danger: never big on screen in the hook (the audit caught Orbit large at 2.5 s), never filling the frame, never on the cover or the end card, and never at frame 0.
+9. **Check next to `gate_shorts_open.py`:** `python3 00_Brand/Channel-Setup/tools/plate_check.py short <mp4> --long-id <id> --long-title "<exact live title>" [--exempt <named exception>]`. It FAILs outside 22–27 s or when OCR can't find the title and the id in the last ~4 s. It WARNs when captions are missing from more than 20% of 1 s samples, when there's no house yellow in the last ~4 s, and when Orbit looks big in the first 5 s or appears in most of the Short (heuristic: check those by eye on the contact sheet).
+
+**What this doesn't change**
+10. **Already approved ships as is** (*Keeper score* rule 7, PR #287): anything Ben OK'd and scheduled before 26 Oct keeps its cut and slot. These rules apply to scripts, shot lists and cuts made from 26 Oct on.
+11. **Live videos aren't re-cut by this rule.** The live fails are re-cut candidates only, logged in `05_Analytics/live_fixes/AUDIT_2026-10-26_CANDIDATES.md`; any fix is its own job with Chief's OK, and the Never list still applies (no file swap on an existing id).
+<!-- /SYNC -->

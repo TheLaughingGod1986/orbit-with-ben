@@ -33,14 +33,18 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 - [ ] Chapter cards: soft starfield, about 1.5 s breath lead-in, music continues under the card
 - [ ] End hold 15–20 s, music fades over about 10 s, picture fades to black over the last 2 s. No silent hold.
 - [ ] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most (mid-plate frame checked).
-- [ ] 4-second lower-right subscribe cue under the beat, with the picture still moving
+- [ ] Subscribe beat spoken only: no SUBSCRIBE button, cue or card burned into the picture (Audit rules, 26 Oct 2026)
+- [ ] Each beat its own plate (callbacks marked in the shot list); end plate is not the opening plate
+- [ ] `plate_check.py long` PASS on the broadcast export
 - [ ] Watched once on a phone with the sound on
 
 ## Shorts (3 a week)
 
-- [ ] 22–27 s. First-two-seconds rules. Orbit not at frame 0.
+- [ ] 22–27 s. First-two-seconds rules. Orbit not at frame 0, and never the hero (never big on screen in the hook).
 - [ ] `gate_shorts_open.py check` PASS for each export
-- [ ] Exact live film title on screen at 9–14 s. Last 4 s loop to the opening.
+- [ ] Exact live film title on screen at 9–14 s. Captions the whole way through.
+- [ ] Last ~4 s: burned-in end card with the long's exact live title and its YouTube id in house yellow, over the loop back to the opening
+- [ ] `plate_check.py short --long-id … --long-title …` PASS for each export
 
 ## Packaging and Studio
 
