@@ -46,3 +46,10 @@ assert(html.includes('J0974 · Next Chief task'));
 assert(!html.includes('No job is currently claimed')&&!html.includes('Nothing else queued'));
 t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:{...chiefReview,expiresAt:new Date(Date.now()-60000).toISOString()},next:[]}}});
 t.renderStrip();assert(!elements.strip.innerHTML.includes('J0956 · Chief review'),'expired Chief reviews must not look active');
+
+// Keep the header to one real current job and one next task, with review fallback only when no job is claimed.
+t.setBoard({owb:{jobs:[{...job,eta:new Date(Date.now()+60000).toISOString()}, {...job,id:'JSECOND',eta:new Date(Date.now()+60000).toISOString()}]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:chiefReview,next:[{id:'J0974',title:'Apophis review'},{id:'JNEXT2',title:'Later review'}]}}});
+t.renderStrip();html=elements.strip.innerHTML;
+assert(!html.includes('J0956 · Chief review'),'claimed work replaces the separate Chief-review card');
+assert(!html.includes('JSECOND')&&!html.includes('JNEXT2'),'show only one current and one next');
+assert(html.includes('J0974 · Next Chief task'));
