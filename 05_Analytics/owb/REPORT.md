@@ -184,15 +184,14 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 44 h (early) | 837 | 32.2% | MISS | 73.4% | PASS |
-| [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 2 d | 59 | 38.5% | too few to judge | 62.1% | too few to judge |
-| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 3 d | 90 | 14.1% | too few to judge | 53.3% | too few to judge |
-| [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 4 d | 881 | 31.6% | MISS | 62.3% | WATCH |
-| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 5 d | 12 | 25.0% | too few to judge | 30.9% | too few to judge |
-| [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | 6 d | 113 | 56.0% | WATCH | 78.4% | PASS |
-| [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | 8 d | 8 | 33.3% | too few to judge | 34.2% | too few to judge |
-| [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | 9 d | 161 | 25.3% | MISS | 60.8% | WATCH |
-| [Could a Robot Survive Falling Into Jupiter?](https://youtu.be/buaOI3QGm7U) | 11 d | 17 | 81.8% | too few to judge | 68.1% | too few to judge |
-| [Saturn's Rings Are Already Falling](https://youtu.be/Cka7_TVVOUQ) | 13 d | 53 | 33.3% | too few to judge | 110.3% | too few to judge |
+| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 2 d | 848 | 32.1% | MISS | 76.2% | PASS |
+| [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 3 d | 81 | 34.3% | too few to judge | 58.3% | too few to judge |
+| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 4 d | 90 | 14.1% | too few to judge | 53.3% | too few to judge |
+| [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 5 d | 883 | 31.6% | MISS | 62.2% | WATCH |
+| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 6 d | 12 | 25.0% | too few to judge | 30.9% | too few to judge |
+| [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | 7 d | 109 | 56.8% | WATCH | 78.6% | PASS |
+| [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | 9 d | 8 | 33.3% | too few to judge | 34.2% | too few to judge |
+| [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | 10 d | 161 | 25.3% | MISS | 60.8% | WATCH |
+| [Could a Robot Survive Falling Into Jupiter?](https://youtu.be/buaOI3QGm7U) | 12 d | 17 | 81.8% | too few to judge | 68.1% | too few to judge |
 
 Stayed to watch: 0 of 4 judged Shorts at 60%+. Average viewed: 2 of 4 at 70%+.
