@@ -1,0 +1,234 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/lift_die_young_10my/06_Final-Exports/029_short_lift_die_young_10my_v01.mp4",
+  "edge_floor": 0.0139,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_sphere_jan",
+      "cut": 1,
+      "t": 4.07,
+      "source": "sphere_jan.jpg",
+      "why": [
+        "low detail: edge density 0.0075 < film p5 0.0139"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_r01_scale_open",
+      "source": "code_graphic_029_lift_r01_scale.mp4",
+      "t": 1.48,
+      "std": 49.52,
+      "mean": 119.27,
+      "p95": 208.0,
+      "edge": 0.1522,
+      "hf": 18.7,
+      "lf": 37.35,
+      "std8": 41.0,
+      "edge8": 0.3659,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_sphere_jan",
+      "source": "sphere_jan.jpg",
+      "t": 4.07,
+      "std": 40.92,
+      "mean": 47.08,
+      "p95": 150.0,
+      "edge": 0.0075,
+      "hf": 6.92,
+      "lf": 38.18,
+      "std8": 39.31,
+      "edge8": 0.0899,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.134,
+        "reversals": 0,
+        "frames": 39,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0075 < film p5 0.0139"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_lasilla_mw",
+      "source": "lasilla_mw.mp4",
+      "t": 6.38,
+      "std": 33.35,
+      "mean": 91.6,
+      "p95": 146.0,
+      "edge": 0.2724,
+      "hf": 18.44,
+      "lf": 24.73,
+      "std8": 25.59,
+      "edge8": 0.0809,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_westerlund_cluster",
+      "source": "westerlund.jpg",
+      "t": 9.55,
+      "std": 62.64,
+      "mean": 113.59,
+      "p95": 227.0,
+      "edge": 0.1299,
+      "hf": 17.2,
+      "lf": 55.28,
+      "std8": 57.42,
+      "edge8": 0.3987,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.007,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.144,
+        "reversals": 0,
+        "frames": 92,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_visir_plume",
+      "source": "visir_flames.jpg",
+      "t": 12.95,
+      "std": 64.63,
+      "mean": 83.1,
+      "p95": 222.0,
+      "edge": 0.0257,
+      "hf": 13.16,
+      "lf": 60.65,
+      "std8": 61.85,
+      "edge8": 0.1658,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 58,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_r06_luminosity",
+      "source": "code_graphic_029_lift_r06_luminosity.mp4",
+      "t": 16.24,
+      "std": 33.95,
+      "mean": 125.93,
+      "p95": 187.0,
+      "edge": 0.1496,
+      "hf": 15.88,
+      "lf": 23.28,
+      "std8": 26.37,
+      "edge8": 0.2844,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_tarantula_nursery",
+      "source": "tarantula.jpg",
+      "t": 19.53,
+      "std": 55.92,
+      "mean": 149.74,
+      "p95": 231.0,
+      "edge": 0.1293,
+      "hf": 11.47,
+      "lf": 52.56,
+      "std8": 53.57,
+      "edge8": 0.341,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.163,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.045,
+        "reversals": 0,
+        "frames": 58,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_end_loop_scale",
+      "source": "code_graphic_029_lift_r01_scale_loop.mp4",
+      "t": 21.68,
+      "std": 37.93,
+      "mean": 116.88,
+      "p95": 180.0,
+      "edge": 0.1337,
+      "hf": 13.46,
+      "lf": 31.32,
+      "std8": 32.98,
+      "edge8": 0.2811,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
