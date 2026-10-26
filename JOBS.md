@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
 | J0961 | mini | blocked | chief | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v03 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6404618803 |
-| J0963 | mini | open | – | – | thumb · 022 Sun h8HGfyShEHI: Test & Compare B v02 '10% BRIGHTER' (fix of J0908 B), park for Chief |  |
+| J0963 | mini | claimed | codex | 2026-10-26T00:59Z | thumb · 022 Sun h8HGfyShEHI: Test & Compare B v02 '10% BRIGHTER' (fix of J0908 B), park for Chief |  |
 | J0964 | mini | open | – | – | assembly · 028 Oort marbles Short v02: end card without YouTube id, free slot, J0918 gate (fix of J0911 v01), park for Chief |  |
 | J0965 | mini | blocked | cursor | – | video · HOS 60% re-cut batch HB (local only): JyRjM-9Yc8g (Sun 1 Nov), Pp5LmjsduI4 (3 Nov), PlihWC5uA2E (5 Nov), mTY67qet7cM (8 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0966 | mini | open (after J0965) | – | – | video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
