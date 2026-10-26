@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0988 | mini | open | – | – | assembly · Neptune S2 J0956: audio-only v07a correction and fresh gate evidence (review by 27 Oct 10:30) | 6411201182 |
 | J0989 | mini | open | – | – | 030 edit · assembly · OWB 030 J0974 audio-only v13a correction: current loudness gate |  |
 | J0990 | any | open (after J0989) | – | – | chief · OWB 030 J0974 audio-only v13a: Chief technical release review |  |
+| J0991 | mini | open | – | – | assembly · 029 Shorts v04: fix J0961 AAC levels and Wednesday opening; gates and Chief review | 0d132cd27 |
 
 Recently finished:
 

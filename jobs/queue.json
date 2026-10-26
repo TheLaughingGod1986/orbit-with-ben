@@ -1,5 +1,5 @@
 {
-  "next_id": 991,
+  "next_id": 992,
   "jobs": [
     {
       "id": "J0001",
@@ -85135,6 +85135,33 @@
         "OWB:030"
       ],
       "urgent": 7
+    },
+    {
+      "id": "J0991",
+      "title": "029 Shorts v04: fix J0961 AAC levels and Wednesday opening; gates and Chief review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex ruling 26 Oct 2026: jobs/reviews/J0961/RULING.md. J0961 stays held; Ben approved v03, but current c61 shipping gates FAIL. GBP0. This is the concrete repair dependency, not permission to upload.\n\nBuild 029 Shorts v04 from the verified v03 masters. All three need encoded AAC true peak <= -1.6 dBTP and integrated loudness -14.0 +/-0.5 LUFS (aim for margin, verify final encoded files). Wed09 is currently -15.0 LUFS; all peaks -1.5. Preserve narration words, cuts/timing, own full-length music and SFX balance. No new voice/music/generation spend.\nWed09 also needs a genuinely distinct moving subject-correct opening from existing approved media: current 44% background match to f17XCtUmN-g (16 Dec). Keep first cut <=3s, frame-0 subject, no Orbit, original hook and all house rules. Do not modify the comparator, thresholds, other scheduled videos or library status to force PASS. If no suitable existing media exists, return specific evidence for an elected-Chief decision.\nFri11 remains the 33.9s Test A arm with its existing exemptions. Do not rewrite spoken lines or change titles/slots/end-card words. v03 files and approval evidence remain untouched.\nRun current gate_shorts_open with actual air dates 2026-12-09 / 11 / 14 and full comparison library, picture_qa, polish_gate, music_gate, SFX level and audio/timing/OCR checks. Deliver v04 masters, PHONE copies and frame sheets to durable UAT/NAS paths with matching SHA256s; update versioned manifests without uploading. Keep no sole master in tmp. Record per-cut before/after and all gate results.\nReturn for elected-Chief changed-audio and Wednesday-opening review. This job must not be marked done until Chief accepts the repair. Chief sets any required changed-picture watch card (do not claim Ben approved v04), amends J0961 with exact v04 hashes and only then releases it after the watch resolves. J0961 remains blocked meanwhile. No YouTube/Buffer actions, no spend, no deletes. Use normal assembly specialist routing and detached rendering if needed.\n",
+      "ref": "0d132cd27",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T21:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T21:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
