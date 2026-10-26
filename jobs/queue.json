@@ -22096,7 +22096,7 @@
       "title": "HOS Related fixes ×4 after longs public (from J0245)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) JyRjM-9Yc8g → GHZDsiH7L7A\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n",
+      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) pWySvZsneZg → GHZDsiH7L7A (J0970: v03 is the scheduled copy. JyRjM-9Yc8g is Private and unscheduled. Related was read back on the old id; Studio CDP 9460 did not answer for the new id, so set it on pWySvZsneZg before 1 Nov.)\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -22184,6 +22184,11 @@
           "at": "2026-10-25T18:41Z",
           "by": "cursor",
           "what": "note: J0948: Galen v04 airs as BW_CFAX-mxc (Private, 2026-10-31T11:30:00Z). 5n7xFQRBUvI is Private and unscheduled. Related and Buffer stay on this job, now for BW_CFAX-mxc, after wwcjcFfC-5M is public."
+        },
+        {
+          "at": "2026-10-26T08:47:15Z",
+          "agent": "cursor",
+          "what": "J0970 repoint: gold foil Related target is pWySvZsneZg (v03). JyRjM-9Yc8g is Private and unscheduled."
         }
       ],
       "kind": "studio",
@@ -82633,6 +82638,11 @@
           "at": "2026-10-26T08:36Z",
           "by": "cursor",
           "what": "step 1 of 4 done: JyRjM-9Yc8g Private publishAt 2026-11-01T11:30:00Z. v03 sha f1cb7ec0 matches UAT and NAS."
+        },
+        {
+          "at": "2026-10-26T08:47Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: pWySvZsneZg Private publishAt 2026-11-01T11:30:00Z. JyRjM-9Yc8g private unscheduled. en-GB captions serving. Related not set: CDP 9460 hung. J0280 repointed."
         }
       ],
       "kind": "studio",
@@ -82665,11 +82675,11 @@
         "type": "short"
       },
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-26T08:36Z",
+        "at": "2026-10-26T08:47Z",
         "by": "cursor",
-        "note": "JyRjM-9Yc8g Private publishAt 2026-11-01T11:30:00Z. v03 sha f1cb7ec0 matches UAT and NAS."
+        "note": "pWySvZsneZg Private publishAt 2026-11-01T11:30:00Z. JyRjM-9Yc8g private unscheduled. en-GB captions serving. Related not"
       }
     },
     {
