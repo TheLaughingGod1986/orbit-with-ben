@@ -65,6 +65,7 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 .appr.warn { background: rgba(255,107,107,0.10); border-color: var(--flag); }
 .appr.warn .appr-state { color: var(--flag); }
 .lane[data-lane="done"] h2 { color: var(--ok); }
+.lane-summary { font-size: .8rem; color: var(--muted); margin: 0; padding: 8px 14px; border-bottom: 1px solid var(--line); }
 .cards { padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 .card {
   background: var(--panel2); border: 1px solid var(--line); border-radius: 12px;
@@ -151,6 +152,56 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 @media (min-width: 900px) {
   .strip .row.jobs { flex-direction: row; } .strip .row.jobs > * { flex: 1 1 0; min-width: 0; }
 }
+.activity { margin-bottom: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.activity h2 { margin: 0 0 10px; font-size: 1rem; }
+.activity-counts { display: flex; flex-wrap: wrap; gap: 8px; }
+.activity-counts span { background: var(--panel2); border-radius: 8px; padding: 8px 12px; font-size: .85rem; }
+.activity-counts b { font-size: 1.1rem; }
+.activity details, .card-work details { margin-top: 10px; }
+.activity summary, .card-work summary { cursor: pointer; color: var(--hos); font-size: .85rem; padding: 7px 0; }
+.activity details[open] { max-height: 420px; overflow: auto; }
+.task-row { padding: 10px 0; border-top: 1px solid var(--line); font-size: .85rem; line-height: 1.4; overflow-wrap: anywhere; }
+.task-row b { display: block; margin-bottom: 4px; }
+.block-reason { margin: 6px 0; color: #f5d8a2; }
+.card-work { border-top: 1px solid var(--line); padding-top: 10px; font-size: .85rem; }
+.card-work > .job { margin: 8px 0; }
+.last-result { margin-top: 8px; color: #bff0d8; font-size: .8rem; }
+.strip { margin-bottom: 12px; }
+.strip > details > summary { cursor: pointer; color: var(--muted); font-size: .85rem; }
+.strip > details[open] > .row { margin-top: 12px; }
+.activity { padding: 0; border: 0; background: transparent; }
+.view-tabs, .status-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.view-tabs button, .status-tabs button { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; min-height: 44px; background: var(--panel); color: var(--ink); font: inherit; font-size: .85rem; cursor: pointer; }
+.view-tabs button { flex: 1 1 140px; text-align: left; }
+.view-tabs button b { float: right; margin-left: 10px; }
+.view-tabs .on, .status-tabs .on { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 650; }
+.process { color: var(--muted); font-size: .8rem; line-height: 1.7; margin: 12px 0 18px; }
+.workflow-heading h2 { margin: 0 0 6px; font-size: 1.15rem; }
+.workflow-heading > p { font-size: .85rem; color: var(--muted); line-height: 1.5; max-width: 800px; }
+.work-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,340px),1fr)); gap: 12px; align-items: start; }
+.work-card { min-width: 0; overflow-wrap: anywhere; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; font-size: .9rem; line-height: 1.45; }
+.work-card h3 { font-size: 1rem; line-height: 1.35; margin: 10px 0; }
+.work-card p { margin: 7px 0; }
+.work-card details { margin-top: 10px; color: var(--muted); font-size: .8rem; }
+.work-card summary { cursor: pointer; }
+.work-card .job { padding: 8px; }
+.status-chip { display: inline-block; font-size: .73rem; border-radius: 6px; padding: 3px 7px; color: var(--muted); background: var(--panel2); }
+.status-chip.blocked, .status-chip.stalled { background: rgba(255,107,107,.14); color: #ffc9c9; }
+.status-chip.working { background: rgba(62,207,142,.16); color: #bff0d8; }
+.status-chip.approved { background: rgba(125,211,252,.14); color: var(--approved); }
+.status-chip.review { color: var(--ready); }
+.job-id { margin-left: auto; font-size: .8rem; }
+.why { border-left: 3px solid var(--flag); padding: 8px 10px; margin-top: 10px; font-size: .85rem; background: rgba(255,107,107,.06); }
+.why > b, .next-action > b { font-size: .75rem; text-transform: uppercase; letter-spacing: .035em; color: var(--muted); }
+.next-action { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 10px; font-size: .85rem; }
+.search-label { display: block; color: var(--muted); font-size: .8rem; margin-top: 14px; }
+.search-label input { display: block; margin-top: 6px; width: min(100%,580px); padding: 11px 12px; min-height: 44px; font: inherit; font-size: .9rem; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; }
+.result-count { font-size: .8rem; color: var(--muted); margin: 10px 0; }
+.publication { min-width: 0; }
+.publication-state { padding: 9px 12px; font-size: .8rem; color: var(--hos); background: var(--panel); border: 1px solid var(--line); border-radius: 10px 10px 0 0; }
+.publication-state.live { color: var(--ok); }
+.publication > .card { border-top-left-radius: 0; border-top-right-radius: 0; }
+.record-link { display: inline-block; padding: 10px 0; }
 footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
 footer a { color: inherit; }
 .modal-bg {
@@ -175,14 +226,15 @@ footer a { color: inherit; }
 </head>
 <body>
 <header>
-  <h1>Studio videos</h1>
+  <h1>Studio workflow</h1>
   <div class="sub" id="asof">Loading…</div>
   <div class="filters" id="filters"></div>
 </header>
 <section class="strip" id="strip" aria-label="Now working"></section>
+<section class="activity" id="activity" aria-label="Studio job activity"></section>
 <div class="board" id="board"></div>
 <footer>
-  One card per video. Classic board: <a href="/classic">/classic</a> ·
+  Jobs, decisions and YouTube status. Classic board: <a href="/classic">/classic</a> ·
   <a href="/tracker">Channel Tracker</a>
 </footer>
 <script>
