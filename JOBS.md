@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0961 | mini | blocked | chief | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v03 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6404618803 |
 | J0966 | mini | open (after J0965) | – | – | video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0967 | mini | open | – | – | assembly · HOS build-rule fix v2 (c56 FIX, low priority, plans only, park by Thu 29 Oct 20:00 London): cuts on word ends, no back-to-back same plate (11 Shorts), plate length, S7 on NAS mint/candle plates, checker + push 9e23d71a | 6407764884 |
-| J0968 | mini | blocked | chief | – | studio · 028 Gliese 710: Private upload of the Oort marbles Short v03 (Wed 16 Dec 11:30 London) after Ben's OK | 6406845498 |
+| J0968 | mini | open (after J0964) | – | – | studio · 028 Gliese 710: Private upload of the Oort marbles Short v03 (Wed 16 Dec 11:30 London) after Ben's OK | 6406845498 |
 | J0969 | mini | blocked | chief | – | studio · 022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI | 6407771727 |
 | J0970 | mini | open (after J0965) | – | – | studio · HOS Short JyRjM-9Yc8g: swap to gold foil v03 (Private, Sun 1 Nov 11:30 London) after Ben's OK by Sun 1 Nov 10:30 | 6407490572 |
 | J0971 | mini | open (after J0965) | – | – | studio · HOS Short Pp5LmjsduI4: swap to four elements v03 (Private, Tue 3 Nov 11:30 London) after Ben's OK by Tue 3 Nov 10:30 | 6407490572 |
