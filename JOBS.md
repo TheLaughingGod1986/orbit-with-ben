@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0974 | mini | open (after J0954) | – | – | studio · OWB Apophis Short BbsyFrV8kCY: swap to v13 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Wed 28 Oct 10:30 | 6410661010 |
 | J0975 | mini | open | – | – | studio · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
 | J0976 | mini | open | – | – | studio · READ-ONLY Studio: why m09jUdwC5hk + VBaYRPp85Sw analytics show 'Subscribers (OpptiAI)' with a dash |  |
-| J0977 | mini | open | – | – | qa · 023 Venus lifts (heavy_water, 90x_air, less_sunlight): run 60% stayed gate; PASS -> jobs.py awaits as Venus-week candidates (no schedule) |  |
+| J0977 | mini | open | – | – | for gemini · qa · `gemini-argon` · 023 Venus lifts (heavy_water, 90x_air, less_sunlight): run 60% stayed gate; PASS -> jobs.py awaits as Venus-week candidates (no schedule) |  |
 
 Recently finished:
 
