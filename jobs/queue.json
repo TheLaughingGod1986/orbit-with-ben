@@ -84010,13 +84010,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-26T14:56Z",
-      "eta": "2026-10-26T15:56Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T13:29Z",
-      "result": "",
+      "result": "parked for Chief: QA sweep complete across OWB and HOS since 24 Oct 18:48Z (OWB 3b96a2d1a/ab2b85646/3b1f185b4/e3bec67c5/071826b53/83cb31c8d/2aeb0a4fd/adef924b9/ff2ef19c0/b5abd1fc6/7b0a3eb78/d9ccb8bc6/94e4e69fb/3c708b863/30e12e129/447a06234/8e3542898: 021 ten_metres v04 0/8 PASS, 023 95pct_wide v05 0/7 & two_hours v04 0/6 PASS, 025 mon09 v03 0/7 / wed11 v04 0/8 / thu12 v03 0/16 / fri13 v04 0/8 PASS, 026 mon16 v03 0/8 / wed18 v03 0/8 / fri20 v03 0/7 PASS, 027 sudden_air v05 0/8 & equator_weight v03 0/8 PASS, 028 mon30/wed02/fri04/night_sky/oort_marbles v03 all PASS, 029 shorts_v03_pack 3 Shorts PASS, 030 Apophis v13 0/7 PASS, standalone S2 v07 0/7 & S3 v04 0/6 PASS, 023-029 longs PASS; HOS 02b8d4aa/c7aefc18/b8880cbf/71bbdb96/5e5ddf87/3e04e2e7/2387b4f8/57dc88d0/fd1a3813/8eafbbde: 006 master_v06 0/96 PASS + music/sfx PASS, 007 master_v04_pack 0/102 PASS + music/sfx PASS, 001 s11 v07 0/10 PASS, 002 four_elements v03 0/10 PASS, 004 gold_foil v03 0/10 & dalton v03 0/9 PASS, 005 s01 v04 0/10 / s02 v05 0/12 / s03 v03 0/10 / s04 v04 0/9 / s05 v03 0/9 PASS, 007 s04 v02 0/10 & s05 v03 0/10 PASS; 0 FAILs, 0 new fix jobs needed)",
       "history": [
         {
           "at": "2026-10-26T13:29Z",
@@ -84057,6 +84057,11 @@
           "at": "2026-10-26T15:09Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed QA sweep across OWB and HOS: all newest packs have up-to-date gate outputs with 0 FAILs on picture_qa, polish_gate, music_gate and sfx_level; 0 new fix jobs needed"
+        },
+        {
+          "at": "2026-10-26T15:09Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: QA sweep complete across OWB and HOS since 24 Oct 18:48Z (OWB 3b96a2d1a/ab2b85646/3b1f185b4/e3bec67c5/071826b53/83cb31c8d/2aeb0a4fd/adef924b9/ff2ef19c0/b5abd1fc6/7b0a3eb78/d9ccb8bc6/94e4e69fb/3c708b863/30e12e129/447a06234/8e3542898: 021 ten_metres v04 0/8 PASS, 023 95pct_wide v05 0/7 & two_hours v04 0/6 PASS, 025 mon09 v03 0/7 / wed11 v04 0/8 / thu12 v03 0/16 / fri13 v04 0/8 PASS, 026 mon16 v03 0/8 / wed18 v03 0/8 / fri20 v03 0/7 PASS, 027 sudden_air v05 0/8 & equator_weight v03 0/8 PASS, 028 mon30/wed02/fri04/night_sky/oort_marbles v03 all PASS, 029 shorts_v03_pack 3 Shorts PASS, 030 Apophis v13 0/7 PASS, standalone S2 v07 0/7 & S3 v04 0/6 PASS, 023-029 longs PASS; HOS 02b8d4aa/c7aefc18/b8880cbf/71bbdb96/5e5ddf87/3e04e2e7/2387b4f8/57dc88d0/fd1a3813/8eafbbde: 006 master_v06 0/96 PASS + music/sfx PASS, 007 master_v04_pack 0/102 PASS + music/sfx PASS, 001 s11 v07 0/10 PASS, 002 four_elements v03 0/10 PASS, 004 gold_foil v03 0/10 & dalton v03 0/9 PASS, 005 s01 v04 0/10 / s02 v05 0/12 / s03 v03 0/10 / s04 v04 0/9 / s05 v03 0/9 PASS, 007 s04 v02 0/10 & s05 v03 0/10 PASS; 0 FAILs, 0 new fix jobs needed)"
         }
       ],
       "kind": "qa",
