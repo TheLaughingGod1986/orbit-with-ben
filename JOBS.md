@@ -52,6 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0992 | mini | open | – | – | for gemini · review · `gemini-argon` · OWB 026/027/028 J0936 FIX: map five Keeper question openings to existing VO; v04 shot corrections | 82959ad1f |
 | J0993 | any | open (after J0992) | – | – | chief · J0936 Chief: lock no-spend v04 corrections and dispatch assembly after preparation | 82959ad1f |
 | J0994 | any | claimed | codex | 2026-10-26T22:27Z | chief · Chief review J0980: live listing fixes ruling |  |
+| J0995 | mini | open (after J0994) | – | – | 023 upload · studio · OWB 023: verified Venus end screen and Sun card (J0980 ruling) |  |
 
 Recently finished:
 

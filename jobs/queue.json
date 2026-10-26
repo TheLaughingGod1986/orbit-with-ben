@@ -1,5 +1,5 @@
 {
-  "next_id": 995,
+  "next_id": 996,
   "jobs": [
     {
       "id": "J0001",
@@ -85352,6 +85352,33 @@
         "by": "codex",
         "note": "Read audit, original history, J0975 exception and J0317; no duplicate Venus finish job"
       }
+    },
+    {
+      "id": "J0995",
+      "title": "OWB 023: verified Venus end screen and Sun card (J0980 ruling)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex authorisation, J0980 review (26 Oct 2026). GBP0. Implement the reversible Venus Studio finish only, on VBaYRPp85Sw. Evidence: 05_Analytics/live_fixes/2026-10-26.md; public-player absence plus status.json pending Studio work. Public-player absence alone is not conclusive: inspect Studio first and preserve any correct existing elements.\nUse Orbit CDP 9223; verify channel UC_esArsDKd3GJvOkeO0DUog. Claim upload stage as codex/actual worker id before edits if not automatically claimed. Save pre-change evidence. Add missing end-screen Subscribe element for Orbit With Ben and a specific video element to h8HGfyShEHI (Is the Sun Getting Brighter?), final 20 s (nominal 493-513 s; use actual Studio duration). Place clear of existing picture/text. Add missing video card to h8HGfyShEHI at 373 s, corroborated by assembled CSV row 44a 373.233-383.733. Do not duplicate existing correct cards/elements; report any conflicting setup before replacement.\nSave and reload Studio; read back actual element IDs/times, card target/time, unchanged title, description, privacy, schedule and audience. Record screenshot/JSON evidence and public-player end screen when exposed (its absence alone cannot override a successful Studio readback). Preserve Test & Compare, all media and other metadata. No upload, retitle, privacy/schedule change, pinned-comment change or spend.\nUpdate 023 status.json next to name this completion only after verified; preserve unrelated outstanding work. Write evidence under jobs/readbacks and report on thread. Done only on verified Studio readback. If sign-in required, block explicitly for Ben; otherwise report concrete failure. Starts after J0994 review closes; target next available studio worker, 27 Oct.\n",
+      "ref": "",
+      "film": "023",
+      "stage": "upload",
+      "after": "J0994",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:08Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
     }
   ],
   "focus": [],
