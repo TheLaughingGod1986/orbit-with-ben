@@ -1,5 +1,5 @@
 {
-  "next_id": 1003,
+  "next_id": 1004,
   "jobs": [
     {
       "id": "J0001",
@@ -84979,11 +84979,11 @@
       "title": "Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements",
       "needs": "mini",
       "repo": "owb",
-      "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.\n\nACTING CHIEF RULING 26 Oct 2026:\nActing Chief Codex FIX (26 Oct 2026), review J1001 / PR #294: verified Studio readings retained; unsupported causal, AVD-exit and payoff-threshold claims require correction. J1002 owns audit/OWB LEARNINGS correction and reproducible evidence; J0985 remains blocked after J1002, then elected-Chief re-review. No blanket recut, rename, topic lock or swap authorized. J0956->J0988 and J0974->J0990/J0989 gates, Ben approvals and deadlines remain unchanged. All three proposed media-path fixes are obsolete: existing staged caches resolve and master SHA256 matches. See 05_Analytics/weekly_audit/OWB_2026-10-26_CHIEF_REVIEW.md. Mature data follow-up J1003 has external-data retry 28 Oct 11:35 London (29 Oct 16:00 fallback).",
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J1002",
       "eta_min": 120,
       "status": "blocked",
       "by": "gemini",
@@ -84991,7 +84991,7 @@
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T16:25Z",
-      "result": "parked for Chief: review 05_Analytics/weekly_audit/OWB_2026-10-26.md + updated 05_Analytics/LEARNINGS.md (OVLv9dxTcpE v05 at 832 live views in 5.6h, vlkj8RQKmH8 48h+ Studio read at 76.2% PASS, 2e-giqFmfy8 100-pt curve settled at -28.6pp across 9.75-11.37s, y-SPHQ0-VjQ stayed up to 56.8%) and decide on swapping oyRcrFTYyDY (27 Oct) / BbsyFrV8kCY (28 Oct) + fixing UPLOADS.json repo paths for 6dcL5rBmHPM / VfDm3E2bUgU / hZH0C7fpCk4",
+      "result": "Acting Chief Codex FIX (26 Oct 2026), review J1001 / PR #294: verified Studio readings retained; unsupported causal, AVD-exit and payoff-threshold claims require correction. J1002 owns audit/OWB LEARNINGS correction and reproducible evidence; J0985 remains blocked after J1002, then elected-Chief re-review. No blanket recut, rename, topic lock or swap authorized. J0956->J0988 and J0974->J0990/J0989 gates, Ben approvals and deadlines remain unchanged. All three proposed media-path fixes are obsolete: existing staged caches resolve and master SHA256 matches. See 05_Analytics/weekly_audit/OWB_2026-10-26_CHIEF_REVIEW.md. Mature data follow-up J1003 has external-data retry 28 Oct 11:35 London (29 Oct 16:00 fallback).",
       "history": [
         {
           "at": "2026-10-26T16:25Z",
@@ -85047,6 +85047,11 @@
           "at": "2026-10-26T19:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T22:30Z",
+          "by": "codex",
+          "what": "Acting Chief Codex FIX (26 Oct 2026), review J1001 / PR #294: verified Studio readings retained; unsupported causal, AVD-exit and payoff-threshold claims require correction. J1002 owns audit/OWB LEARNINGS correction and reproducible evidence; J0985 remains blocked after J1002, then elected-Chief re-review. No blanket recut, rename, topic lock or swap authorized. J0956->J0988 and J0974->J0990/J0989 gates, Ben approvals and deadlines remain unchanged. All three proposed media-path fixes are obsolete: existing staged caches resolve and master SHA256 matches. See 05_Analytics/weekly_audit/OWB_2026-10-26_CHIEF_REVIEW.md. Mature data follow-up J1003 has external-data retry 28 Oct 11:35 London (29 Oct 16:00 fallback)."
         }
       ],
       "kind": "review",
@@ -85792,11 +85797,65 @@
           "at": "2026-10-26T22:28Z",
           "by": "codex",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-10-26T22:30Z",
+          "by": "codex",
+          "what": "Linked audit films; original J0985 remains held until corrections and Chief review; mature-read job J1003 is independent."
         }
       ],
       "for": "gemini",
       "kind": "review",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032"
+      ]
+    },
+    {
+      "id": "J1003",
+      "title": "Earth Short OVLv9dxTcpE: mature 48-hour measurement (J0985 follow-up)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up from Acting Chief Codex J0985 ruling. Read-only Earth Short OVLv9dxTcpE 48-hour measurement, earliest 28 Oct 2026 11:35 London (aired 26 Oct 11:30Z). Use the first Studio readAt at or after 28 Oct 11:30Z, not a morning read below 48h. Record lifetime Studio views, stayedToWatch and avgViewPct with actual capture time; grade only if >=100 Studio views (otherwise too few). Keep live views, YTA reporting window and Studio lifetime separate. Fetch/persist retention curve if available and map observed drops to actual cut/VO timestamps; never substitute AVD for a curve. Compare descriptively with y-SPHQ0-VjQ and vlkj8RQKmH8; no causal/proven conclusion from 3 heterogeneous Shorts. Update OWB audit appendix/lab and report. Existing subscriptions/free tools only, GBP0, no Studio write, recut, upload, title/privacy/schedule change or new rule. If a mature Studio read/curve is unavailable, record the missing source and schedule a retry 29 Oct 2026 16:00 London (and a concrete next daily retry if still absent). J0985 correction proceeds independently.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "blocked",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:30Z",
+      "result": "External data wait: OVLv9dxTcpE aired 26 Oct 11:30Z; require Studio readAt >=28 Oct 11:30Z. Reopen on 28 Oct 2026 11:35 London; if mature data unavailable retry 29 Oct 16:00 London. Read-only, GBP0.",
+      "history": [
+        {
+          "at": "2026-10-26T22:30Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-26T22:30Z",
+          "by": "codex",
+          "what": "blocked on 48-hour Studio data; retry 2026-10-28 11:35 London, then 2026-10-29 16:00 London"
+        }
+      ],
+      "kind": "review",
+      "taskKeys": [
+        "OWB:027"
+      ]
     }
   ],
   "focus": [],

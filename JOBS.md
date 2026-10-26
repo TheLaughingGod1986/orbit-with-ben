@@ -57,6 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1000 | any | open | – | – | review · J0979 follow-up: find Keeper-compliant opening in existing locked VO | 2cbadfe1a |
 | J1001 | mini | claimed | codex | 2026-10-26T22:46Z | chief · Chief review of held J0985 weekly OWB audit |  |
 | J1002 | mini | open | – | – | for gemini · review · `gemini-argon` · J0985 FIX: correct OWB audit inferences and persist reproducible evidence |  |
+| J1003 | mini | blocked | – | – | review · Earth Short OVLv9dxTcpE: mature 48-hour measurement (J0985 follow-up) |  |
 
 Recently finished:
 
